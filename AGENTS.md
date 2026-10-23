@@ -134,12 +134,15 @@ illustrations or brand colours into something that ships
   again. Change a wording only with a rubric version bump, and re-review every
   package whose platform it touches: a wording edit on its own does not raise
   that warning.
-- **The published site never includes the gallery.** The Pages workflow
-  removes `site/gallery/` and encrypts every page with StatiCrypt before it
-  deploys, and fails if readable text or a search index entry remains. Search
-  and instant navigation stay off for that reason. Never publish `systems/`,
-  screenshots or the gallery, and never commit `.env` (it holds the site
-  password).
+- **The published site never includes the gallery.** The Pages workflow builds
+  with `tools/site.py --publish`, which leaves the gallery, its nav links and
+  its home-page card out (a guard step still removes `site/gallery/`), and
+  encrypts every page with StatiCrypt before it deploys, and fails if readable
+  text or a search index entry remains. `make check` runs first in the same
+  job, so a commit that skipped `make brief`/`make grade` fails the deploy.
+  Search and instant navigation stay off for that reason. Never publish
+  `systems/`, screenshots or the gallery, and never commit `.env` (it holds
+  the site password).
 - **Private material never enters the repo**: raw page copies, redaction
   lists, account names, signed URLs, proprietary fonts. `systems/*/fonts/`
   is gitignored for this reason.

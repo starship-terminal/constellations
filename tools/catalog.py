@@ -23,8 +23,10 @@ import functools
 import http.server
 import json
 import math
+import os
 import re
 import shutil
+import tempfile
 import posixpath
 import subprocess
 import sys
@@ -55,6 +57,22 @@ REQUIRED_FIELDS = ("slug", "name", "url", "category", "platform", "goodFor", "sh
 # What the product runs on. The scorecard grades a package against its platform's wording
 # of each criterion (scorecard/criteria.json); web is the base wording, `doneWhen`.
 PLATFORMS = ("web", "mobile", "desktop")
+
+
+def atomic_write(path: Path, text: str) -> None:
+    """Write text to path through a temp file and a rename, so a concurrent reader,
+    or a deploy building while a generator runs, never sees a half-written file.
+    The temp file is unique to the call: two writers of the same path cannot steal
+    each other's rename. Every generator that writes a committed or generated file
+    uses this."""
+    fd, tmp = tempfile.mkstemp(dir=str(path.parent), prefix=path.name + ".", suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w") as f:
+            f.write(text)
+        os.replace(tmp, path)
+    except BaseException:
+        Path(tmp).unlink(missing_ok=True)
+        raise
 
 
 def load_catalog() -> dict:
@@ -935,6 +953,20 @@ def _thumb_name(path: str) -> Path:
     return THUMBS / (path.replace("/", "__").rsplit(".", 1)[0] + ".jpg")
 
 
+def _thumb_ok(dst: Path) -> bool:
+    """A cached thumbnail is only kept when it looks complete: non-empty and ending in
+    the JPEG end-of-image marker. A file cut off mid-write regenerates below instead
+    of being kept by the mtime short-circuit forever."""
+    try:
+        if dst.stat().st_size < 4:
+            return False
+        with dst.open("rb") as f:
+            f.seek(-2, os.SEEK_END)
+            return f.read() == b"\xff\xd9"
+    except OSError:
+        return False
+
+
 @functools.lru_cache(maxsize=1)
 def _thumb_backend() -> str | None:
     """What makes thumbnails: macOS `sips`, Pillow, or neither. Probed once per run."""
@@ -948,7 +980,7 @@ def _thumb_backend() -> str | None:
 
 
 def _make_thumb(src: Path, dst: Path) -> bool:
-    if dst.exists() and dst.stat().st_mtime >= src.stat().st_mtime:
+    if dst.exists() and dst.stat().st_mtime >= src.stat().st_mtime and _thumb_ok(dst):
         return True
     backend = _thumb_backend()
     if backend == "sips":
@@ -973,6 +1005,13 @@ def attach_thumbs(images: list[dict]) -> None:
     # A cover is usually also in the screenshot list. Make each thumbnail once so
     # two workers never write the same file.
     paths = sorted({item["path"] for item in images})
+
+    # Drop thumbnails whose source image is gone, so a removed screenshot does not
+    # leave its thumb behind.
+    keep = {_thumb_name(p).name for p in paths}
+    for stale in THUMBS.glob("*.jpg"):
+        if stale.name not in keep:
+            stale.unlink()
 
     def one(path):
         dst = _thumb_name(path)
@@ -1190,16 +1229,25 @@ def latest_scores() -> dict[str, dict]:
     """Each package's grade counts from the newest scorecard audit, plus its contrast
     result when that criterion is not met, for the gallery cards and detail pages."""
     import scorecard  # tools/ is on the path; imported here so `check` never needs it
-    _, audits = scorecard.load()
+    criteria, audits = scorecard.load()
+    # Malformed audit data must fail here with its clean report, not as a KeyError
+    # mid-build or, worse, silently wrong score cells.
+    problems = scorecard.check(criteria, audits)
+    if problems:
+        sys.exit("scorecard data problems:\n  " + "\n  ".join(problems))
     audit = audits[-1]
     out = {}
     for s in audit["systems"]:
         counts = {g: 0 for g in scorecard.GRADES}
-        for g in s["grades"].values():
-            counts[g["grade"]] += 1
-        f15 = s["grades"].get("F15", {})
-        out[s["slug"]] = {**counts, "applicable": len(s["grades"]) - counts["na"], "date": audit["date"],
-                          "contrast": None if f15.get("grade") in (None, "meets", "na")
+        grades = s["grades"] if isinstance(s.get("grades"), dict) else {}
+        for g in grades.values():
+            if isinstance(g, dict) and isinstance(g.get("grade"), str) and g["grade"] in counts:
+                counts[g["grade"]] += 1
+        f15 = grades.get("F15") or {}
+        out[s["slug"]] = {**counts, "applicable": len(grades) - counts["na"], "date": audit["date"],
+                          "contrast": None if not isinstance(f15, dict)
+                          or f15.get("grade") in (None, "meets", "na")
+                          or not isinstance(f15.get("evidence"), str)
                           else f15["evidence"].removeprefix("Script: ")}
     return out
 
@@ -1353,9 +1401,9 @@ def build_refero() -> Path | None:
     """Write docs/gallery/refero/index.json and one style/<slug>.json per style.
     Entities sit under style/ so no slug can collide with the index (a real
     style is slugged `index`). Returns the index path, or None when there is no
-    refero/ folder or nothing valid in it."""
+    refero/ folder; an empty or unparseable one clears the generated output."""
     styles = load_refero()
-    if not styles:
+    if not (ROOT / "refero").is_dir():
         return None
     out_dir = SITE / "refero"
     ent_dir = out_dir / "style"
@@ -1380,15 +1428,23 @@ def build_refero() -> Path | None:
         print(f"refero: {dropped} similar links left unlinked; "
               f"{len(ambiguous)} business names are not unique", file=sys.stderr)
     index = []
+    written = set()
     for folder, meta, ds in styles:
         slug = meta.get("slug") or folder.name
-        (ent_dir / f"{slug}.json").write_text(
-            json.dumps(refero_entry(folder, meta, ds, slug_of), separators=(",", ":")))
+        atomic_write(ent_dir / f"{slug}.json",
+                     json.dumps(refero_entry(folder, meta, ds, slug_of), separators=(",", ":")))
+        written.add(slug)
         index.append(refero_card(slug, meta, ds))
+    # Prune after writing, not before: a style deleted from refero/ loses its page,
+    # while a crash mid-build leaves retained styles' entities in place.
+    for stale in ent_dir.glob("*.json"):
+        if stale.stem not in written:
+            stale.unlink()
     index.sort(key=lambda s: str(s["name"] or "").lower())
     out = out_dir / "index.json"
-    out.write_text(json.dumps({"version": 2, "cdn": REFERO_CDN, "count": len(index), "styles": index},
-                              separators=(",", ":")))
+    atomic_write(out, json.dumps({"version": 2, "cdn": REFERO_CDN, "count": len(index),
+                                  "styles": index},
+                                 separators=(",", ":")))
     return out
 
 
@@ -1425,9 +1481,9 @@ def build() -> Path:
         })
     attach_thumbs(all_shots)
     out = SITE / "data.json"
-    out.write_text(json.dumps({"root": str(ROOT), "categories": catalog.get("categories", {}),
-                               "systems": systems},
-                              separators=(",", ":")))
+    atomic_write(out, json.dumps({"root": str(ROOT), "categories": catalog.get("categories", {}),
+                                  "systems": systems},
+                                 separators=(",", ":")))
     build_refero()
     return out
 
@@ -1570,7 +1626,7 @@ def main() -> None:
             if args.stdout:
                 print(text)
             else:
-                design_md_path(s).write_text(text)
+                atomic_write(design_md_path(s), text)
                 print(f"wrote {design_md_path(s).relative_to(ROOT)}")
     if args.cmd == "export":
         if not args.file and not args.slug:

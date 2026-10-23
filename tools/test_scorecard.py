@@ -45,6 +45,39 @@ class CheckTest(unittest.TestCase):
         problems = bp.check(CRITERIA, [audit(broken)])
         self.assertEqual(len(problems), 2)
 
+    def test_a_grade_without_evidence_fails(self):
+        broken = copy.deepcopy(SYSTEM)
+        del broken["grades"]["F1"]["evidence"]
+        problems = bp.check(CRITERIA, [audit(broken)])
+        self.assertEqual(len(problems), 1)
+        self.assertIn("F1", problems[0])
+        self.assertIn('"evidence"', problems[0])
+
+    def test_a_grade_entry_of_the_wrong_shape_fails(self):
+        for bad in ("meets", {"evidence": "e"}, {"grade": ["meets"], "evidence": "e"},
+                    {"grade": {"x": 1}, "evidence": "e"}):
+            broken = copy.deepcopy(SYSTEM)
+            broken["grades"]["F2"] = bad
+            problems = bp.check(CRITERIA, [audit(broken)])
+            self.assertEqual(len(problems), 1, bad)
+            self.assertIn("F2", problems[0])
+
+    def test_malformed_grades_do_not_crash_check(self):
+        broken = copy.deepcopy(SYSTEM)
+        broken["grades"] = ["meets"]
+        problems = bp.check(CRITERIA, [audit(broken)])
+        self.assertEqual(len(problems), 1)
+        self.assertIn("grades must be an object", problems[0])
+
+    def test_a_missing_systems_list_or_slug_fails(self):
+        self.assertEqual(len(bp.check(CRITERIA, [{"date": "2026-10-16"}])), 1)
+        self.assertEqual(len(bp.check(CRITERIA, [{"date": "2026-10-16", "systems": {"a": {}}}])), 1)
+        noslug = copy.deepcopy(SYSTEM)
+        del noslug["slug"]
+        problems = bp.check(CRITERIA, [audit(noslug)])
+        self.assertEqual(len(problems), 1)
+        self.assertIn("slug", problems[0])
+
 
 PLATFORM_CRITERIA = {"layers": {"F": "Foundations"}, "criteria": [
     {"id": "F1", "layer": "Foundations", "title": "Ramps", "doneWhen": "Web ramps.",

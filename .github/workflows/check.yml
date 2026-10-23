@@ -1,0 +1,21 @@
+# Run the repo's freshness gates on every push to main and every pull request.
+# pages.yml only watches the site's inputs, so without this a commit that forgot
+# `make brief`/`make grade` (a systems/**, catalog.json or tools change, say) ran
+# no CI at all. `make check` covers catalog.json, Brief sections, scorecard data
+# and scripted grades, and every README's Health section.
+name: Check
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - run: make check

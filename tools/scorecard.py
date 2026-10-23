@@ -21,7 +21,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from catalog import PLATFORMS  # noqa: E402
+from catalog import PLATFORMS, atomic_write  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "scorecard"
@@ -110,21 +110,41 @@ def check(criteria: dict, audits: list[dict]) -> list[str]:
             problems.append(f"criteria {c['id']}: platforms has {', '.join(wrong)}; "
                             f"list only {', '.join(p for p in PLATFORMS if p != BASE_PLATFORM)}")
     for audit in audits:
-        slugs = [s["slug"] for s in audit["systems"]]
+        systems = audit.get("systems")
+        if not isinstance(systems, list):
+            problems.append(f"{audit.get('date', '?')}: systems must be a list of graded packages")
+            continue
+        slugs = [s["slug"] for s in systems if isinstance(s, dict) and isinstance(s.get("slug"), str)]
         for slug in sorted({x for x in slugs if slugs.count(x) > 1}):
             problems.append(f"{audit['date']}: slug {slug!r} appears {slugs.count(slug)} times; each page needs its own")
-        for s in audit["systems"]:
-            if platform_of(s) not in PLATFORMS:
-                problems.append(f"{audit['date']} {s['slug']}: unknown platform {s['platform']!r}")
-            missing = [i for i in ids if i not in s["grades"]]
+        for s in systems:
+            if not isinstance(s, dict) or not isinstance(s.get("slug"), str) or not s["slug"]:
+                problems.append(f"{audit['date']}: a systems entry is not an object with a slug")
+                continue
+            slug = s["slug"]
+            if "platform" in s and platform_of(s) not in PLATFORMS:
+                problems.append(f"{audit['date']} {slug}: unknown platform {s['platform']!r}")
+            grades = s.get("grades")
+            if not isinstance(grades, dict):
+                problems.append(f"{audit['date']} {slug}: grades must be an object of "
+                                "criterion -> {\"grade\", \"evidence\"}")
+                continue
+            missing = [i for i in ids if i not in grades]
             if missing:
-                problems.append(f"{audit['date']} {s['slug']}: missing {', '.join(missing)}")
-            unknown = [i for i in s["grades"] if i not in ids]
+                problems.append(f"{audit['date']} {slug}: missing {', '.join(missing)}")
+            unknown = [i for i in grades if i not in ids]
             if unknown:
-                problems.append(f"{audit['date']} {s['slug']}: grades for criteria not in the rubric: {', '.join(unknown)}")
-            for cid, g in s["grades"].items():
-                if g["grade"] not in GRADES:
-                    problems.append(f"{audit['date']} {s['slug']} {cid}: unknown grade {g['grade']!r}")
+                problems.append(f"{audit['date']} {slug}: grades for criteria not in the rubric: {', '.join(unknown)}")
+            for cid, g in grades.items():
+                if not isinstance(g, dict):
+                    problems.append(f"{audit['date']} {slug} {cid}: a grade must be "
+                                    "{\"grade\": ..., \"evidence\": ...}")
+                    continue
+                if not isinstance(g.get("grade"), str) or g["grade"] not in GRADES:
+                    problems.append(f"{audit['date']} {slug} {cid}: unknown grade {g.get('grade')!r}")
+                if not isinstance(g.get("evidence"), str):
+                    problems.append(f"{audit['date']} {slug} {cid}: every grade needs an "
+                                    "\"evidence\" string saying what backs it")
     return problems
 
 
@@ -335,11 +355,11 @@ def build() -> None:
     systems_dir.mkdir(parents=True, exist_ok=True)
     for old in systems_dir.glob("*.md"):
         old.unlink()
-    (OUT / "index.md").write_text(index_page(criteria, audit))
-    (OUT / "criteria.md").write_text(criteria_page(criteria, audit))
-    (OUT / "changelog.md").write_text(changelog_page(criteria, audits))
+    atomic_write(OUT / "index.md", index_page(criteria, audit))
+    atomic_write(OUT / "criteria.md", criteria_page(criteria, audit))
+    atomic_write(OUT / "changelog.md", changelog_page(criteria, audits))
     for rank, s in enumerate(ranked(audit["systems"]), 1):
-        (systems_dir / f"{s['slug']}.md").write_text(system_page(criteria, audit, s, rank))
+        atomic_write(systems_dir / f"{s['slug']}.md", system_page(criteria, audit, s, rank))
     print(f"wrote {len(audit['systems'])} system pages from the {audit['date']} audit")
 
 

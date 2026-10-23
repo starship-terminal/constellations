@@ -1,12 +1,14 @@
 """Build the docs site: render docs/**/*.md into site/ with the gallery's chrome.
 
-    python3 tools/site.py            write site/ (run tools/scorecard.py first)
+    python3 tools/site.py              write site/ (run tools/scorecard.py first)
+    python3 tools/site.py --publish    the same, for the published site: the gallery
+                                       copy, its nav links and its card are left out
 
 Replaces the Zensical/Material build with a small static renderer: every page is
 one markdown file wrapped in the same bar the gallery uses — full-bleed top bar
 with the mark, the site nav, the search field and the ds-theme toggle — plus a
 left rail for the Scorecard and Docs sections. site/ is gitignored; the Pages
-workflow builds it, drops site/gallery/ and encrypts the rest.
+workflow builds it with --publish and encrypts the rest.
 """
 import argparse
 import html
@@ -18,6 +20,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import scorecard  # noqa: E402
+from catalog import atomic_write  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
@@ -40,6 +43,9 @@ THEME_SVG = ('<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"
              '<path d="M8 1.5a6.5 6.5 0 1 0 0 13z" fill="currentColor"/>'
              '<circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>')
 
+# A grid-cards item that links into the gallery (the home page's Gallery card): the
+# item marker, its `**[title](gallery/…)**` heading and the indented body under it.
+GALLERY_CARD = re.compile(r"^ *- +\*\*\[[^\]\n]*\]\(gallery/[^\n]*\)\*\*[^\n]*\n(?: +[^\n]*\n|\n)*", re.M)
 FRONT_RE = re.compile(r"\A---\s*\n(.*?)\n---\s*\n", re.S)
 HIDE_RE = re.compile(r"^\s*-\s*(navigation|toc)\s*$", re.M)
 HEADING_RE = re.compile(r"^#\s+(.+)$", re.M)
@@ -132,7 +138,7 @@ def rail(page: Page, rel: str) -> str:
     return f'<aside class="rail"><nav aria-label="Section">{links}</nav></aside>'
 
 
-def render(page: Page, rendered: str, hidden: set[str]) -> str:
+def render(page: Page, rendered: str, hidden: set[str], publish: bool = False) -> str:
     rel = "../" * page.url.count("/")
     home = rel if rel else "./"
     current = lambda sec: ' aria-current="page"' if page.section == sec or (sec == "home" and not page.url) else ""
@@ -140,6 +146,19 @@ def render(page: Page, rendered: str, hidden: set[str]) -> str:
     body = f'<main class="doc">{rendered}</main>'
     if has_rail:
         body = f'<div class="wrap has-rail">{rail(page, rel)}{body}</div>'
+    # The published site drops site/gallery/ (it shows the captures), so the nav
+    # links and the search form that submits into it are left out too.
+    nav = [f'<a href="{home}"{current("home")}>Home</a>']
+    if not publish:
+        nav += [f'<a href="{rel}gallery/index.html">Gallery</a>',
+                f'<a href="{rel}gallery/index.html#/refero">Refero</a>']
+    nav += [f'<a href="{rel}scorecard/"{current("scorecard")}>Scorecard</a>',
+            f'<a href="{rel}DESIGN-SYSTEM/"{current("docs")}>Docs</a>']
+    nav = "\n    ".join(nav)
+    search = "" if publish else f"""<form class="search" role="search" action="{rel}gallery/index.html" method="get">
+    {SEARCH_SVG}
+    <input name="q" type="search" placeholder="Search name, use, tag…" autocomplete="off" aria-label="Search design systems">
+  </form>"""
     return f"""<!doctype html>
 <html lang="en" data-theme="dark">
 <head>
@@ -166,16 +185,9 @@ def render(page: Page, rendered: str, hidden: set[str]) -> str:
     <span>Design systems</span>
   </a>
   <nav class="site-nav" aria-label="Site">
-    <a href="{home}"{current("home")}>Home</a>
-    <a href="{rel}gallery/index.html">Gallery</a>
-    <a href="{rel}gallery/index.html#/refero">Refero</a>
-    <a href="{rel}scorecard/"{current("scorecard")}>Scorecard</a>
-    <a href="{rel}DESIGN-SYSTEM/"{current("docs")}>Docs</a>
+    {nav}
   </nav>
-  <form class="search" role="search" action="{rel}gallery/index.html" method="get">
-    {SEARCH_SVG}
-    <input name="q" type="search" placeholder="Search name, use, tag…" autocomplete="off" aria-label="Search design systems">
-  </form>
+{search}
   <button id="theme" class="icon-btn" type="button" aria-label="Toggle colour theme" title="Toggle theme">
     {THEME_SVG}
   </button>
@@ -186,8 +198,8 @@ def render(page: Page, rendered: str, hidden: set[str]) -> str:
 <script>
   /* The theme toggle shares the gallery's ds-theme store, so a choice made on
      either side carries over. The search field submits to the gallery's own
-     client-side search; on the published site the gallery is removed before
-     encryption, so the field is dropped when nothing answers there. */
+     client-side search; --publish emits no form, and this drops the field when
+     nothing answers there anyway. */
   document.getElementById('theme').onclick = function () {{
     var root = document.documentElement;
     var current = root.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -207,12 +219,14 @@ def render(page: Page, rendered: str, hidden: set[str]) -> str:
 """
 
 
-def build() -> None:
+def build(publish: bool = False) -> None:
     import markdown
 
     # site/ is fully generated; start clean so removed pages and assets leave.
     shutil.rmtree(OUT, ignore_errors=True)
-    statics = ["assets", "stylesheets", "gallery", "site.webmanifest"]
+    # --publish leaves the gallery out entirely: it shows the captures, so the Pages
+    # workflow never ships it.
+    statics = ["assets", "stylesheets", "site.webmanifest"] + ([] if publish else ["gallery"])
     for name in statics:
         src, dst = DOCS / name, OUT / name
         if not src.exists():
@@ -228,11 +242,13 @@ def build() -> None:
         if not page.src.exists():
             continue
         hidden, md = frontmatter(page.src.read_text())
+        if publish:
+            md = GALLERY_CARD.sub("", md)  # a card linking to the dropped gallery is dead nav
         page.title = page_title(md, page.src.stem)
         body = rewrite_links(markdown.markdown(md, extensions=MD_EXTENSIONS, extension_configs=MD_CONFIGS), page)
         dest = OUT / page.url / "index.html" if page.url else OUT / "index.html"
         dest.parent.mkdir(parents=True, exist_ok=True)
-        dest.write_text(render(page, body, hidden))
+        atomic_write(dest, render(page, body, hidden, publish))
         count += 1
 
     # A 404 is served at the missing URL, whatever its depth, so the page's
@@ -245,15 +261,17 @@ def build() -> None:
                 "  document.write('<base href=\"/' + (__seg[0] === 'design-systems' ? 'design-systems/' : '') + '\">');\n"
                 "</script>")
     html_404 = render(not_found, "<h1>Page not found</h1><p><a href='./'>Back to the library home</a>.</p>",
-                      {"navigation"}).replace("<head>", "<head>\n" + base_fix, 1)
-    (OUT / "404.html").write_text(html_404)
+                      {"navigation"}, publish).replace("<head>", "<head>\n" + base_fix, 1)
+    atomic_write(OUT / "404.html", html_404)
     print(f"site: wrote {count} pages to {OUT.relative_to(ROOT)}/")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.parse_args()
-    build()
+    parser.add_argument("--publish", action="store_true",
+                        help="build for publishing: leave out the gallery, its nav links and its card")
+    args = parser.parse_args()
+    build(publish=args.publish)
 
 
 if __name__ == "__main__":

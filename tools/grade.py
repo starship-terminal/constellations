@@ -300,9 +300,17 @@ def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str,
     for slug, grades in (reviews or {}).items():
         if slug not in by_slug:
             raise SystemExit(f"review for {slug}: not in catalog.json")
+        if not isinstance(grades, dict):
+            raise SystemExit(f"review for {slug}: must be a dict of criterion -> grade")
         wrong = sorted(set(grades) - allowed)
         if wrong:
             raise SystemExit(f"review for {slug} sets {', '.join(wrong)}, which are scripted or not in the rubric")
+        for cid, g in grades.items():
+            if not isinstance(g, dict) or not isinstance(g.get("grade"), str) \
+                    or g["grade"] not in scorecard.GRADES \
+                    or not isinstance(g.get("evidence"), str):
+                raise SystemExit(f"review for {slug} {cid}: every grade needs "
+                                 "{\"grade\": meets|partly|missing|na, \"evidence\": \"what backs it\"}")
         # A review dates the whole package, so it must grade every reviewed criterion.
         missing = sorted(reviewed_ids - set(grades), key=lambda c: (c[0], int(c[1:]) if c[1:].isdigit() else 0))
         if missing:
@@ -348,11 +356,16 @@ def stale(criteria: dict, audit: dict, catalog_systems: list[dict], categories: 
         if not source:
             problems.append(f"{system['slug']}: in the scorecard but not in catalog.json")
             continue
+        # Malformed grade entries are scorecard.check's job; skip rather than crash so
+        # its report is what a --check run shows.
+        grades = system["grades"] if isinstance(system.get("grades"), dict) else {}
         for cid, fresh in scripted(source).items():
-            saved = system["grades"].get(cid, {})
+            saved = grades.get(cid, {})
             if saved != fresh:
-                problems.append(f"{system['slug']} {cid}: scorecard has {saved.get('grade')} "
-                                f"({saved.get('evidence', '')!r}), the package now gives {fresh['grade']} "
+                was = (f"{saved.get('grade')} ({saved.get('evidence', '')!r})"
+                       if isinstance(saved, dict) else repr(saved))
+                problems.append(f"{system['slug']} {cid}: scorecard has {was}, "
+                                f"the package now gives {fresh['grade']} "
                                 f"({fresh['evidence']!r})")
         for key in META:
             if system.get(key) != source.get(key):
@@ -407,8 +420,13 @@ def main() -> None:
         return
     if args.check:
         criteria, audits = scorecard.load()
-        problems, warnings = stale(criteria, audits[-1], systems, categories)
-        problems += health.problems(criteria, audits[-1], systems)
+        # A malformed snapshot reaches the generators as a KeyError mid-write; report
+        # every snapshot's shape problems here first (staleness stays on the newest).
+        problems = scorecard.check(criteria, audits)
+        if problems:
+            sys.exit("scorecard data problems:\n  " + "\n  ".join(problems))
+        stale_problems, warnings = stale(criteria, audits[-1], systems, categories)
+        problems = stale_problems + health.problems(criteria, audits[-1], systems)
         for w in warnings:
             print(f"warning: {w}")
         if problems:
@@ -430,7 +448,7 @@ def main() -> None:
     if problems:
         sys.exit("snapshot problems:\n  " + "\n  ".join(problems))
     path = next_path(args.date)
-    path.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
+    catalog.atomic_write(path, json.dumps(out, indent=1, ensure_ascii=False) + "\n")
     missing = sorted({s["slug"] for s in systems} - {s["slug"] for s in out["systems"]})
     print(f"wrote {path.relative_to(ROOT)}" + (f"; not in any review yet: {', '.join(missing)}" if missing else ""))
     for readme in health.write(criteria, out, systems):

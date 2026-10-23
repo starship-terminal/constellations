@@ -51,4 +51,4 @@ test: ## Run the tools' tests
 	@$(PYTHON) -m unittest discover -s tools -p 'test_*.py'
 
 clean: ## Remove generated files
-	rm -rf site docs/gallery/data.json docs/gallery/thumbs docs/scorecard
+	rm -rf site docs/gallery/data.json docs/gallery/thumbs docs/gallery/refero docs/scorecard refero/.work
