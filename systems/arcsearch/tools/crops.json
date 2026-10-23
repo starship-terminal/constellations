@@ -1,0 +1,561 @@
+{
+ "_doc": "Element crops cut from screenshots/<theme>/<capture>.png by tools/crops.py into components/crops/{component}-{state}[-light].png. box is [x, y, w, h] in capture pixels (2 px per pt). A crop listed with themes [\"dark\", \"light\"] is cut from both captures at the same box; one whose light capture is laid out differently has a second entry for light. Pages shown inside the browser (YouTube, Google, other sites) are those sites' content, not Arc's: they show layout only.",
+ "crops": [
+  {
+   "name": "search-field-empty",
+   "capture": "01-launch-search-focused-pinned",
+   "box": [
+    16,
+    1170,
+    780,
+    130
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "search-field-typed",
+   "capture": "02-search-typed-suggestions",
+   "box": [
+    16,
+    1170,
+    780,
+    130
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "launcher-rows-pinned",
+   "capture": "01-launch-search-focused-pinned",
+   "box": [
+    16,
+    1300,
+    780,
+    464
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "suggestion-rows",
+   "capture": "02-search-typed-suggestions",
+   "box": [
+    16,
+    1300,
+    780,
+    464
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "button-browse-for-me",
+   "capture": "02-search-typed-suggestions",
+   "box": [
+    540,
+    1310,
+    240,
+    100
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "toolbar-bottom",
+   "capture": "03-page-bottom-toolbar",
+   "box": [
+    16,
+    1600,
+    780,
+    164
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "tab-switcher",
+   "capture": "04-tab-switcher-cards",
+   "box": [
+    16,
+    240,
+    780,
+    1524
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "nav-bar-sheet",
+   "capture": "05-settings-sheet",
+   "box": [
+    16,
+    170,
+    780,
+    110
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "button-pair",
+   "capture": "05-settings-sheet",
+   "box": [
+    16,
+    310,
+    780,
+    110
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "list-group",
+   "capture": "05-settings-sheet",
+   "box": [
+    16,
+    620,
+    780,
+    340
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "list-row-value",
+   "capture": "05-settings-sheet",
+   "box": [
+    16,
+    1000,
+    780,
+    230
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "switch-on",
+   "capture": "05-settings-sheet",
+   "box": [
+    560,
+    1300,
+    236,
+    90
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "nav-bar-scrolled-blur",
+   "capture": "06-settings-scrolled-header-blur",
+   "box": [
+    16,
+    160,
+    780,
+    150
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "list-row-subtitle",
+   "capture": "06-settings-scrolled-header-blur",
+   "box": [
+    16,
+    1600,
+    780,
+    110
+   ],
+   "themes": [
+    "dark"
+   ]
+  },
+  {
+   "name": "list-row-subtitle",
+   "capture": "06-settings-scrolled-header-blur",
+   "box": [
+    16,
+    1640,
+    780,
+    110
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "popup-menu",
+   "capture": "07-popup-menu-archive-tabs",
+   "box": [
+    130,
+    880,
+    560,
+    500
+   ],
+   "themes": [
+    "dark"
+   ]
+  },
+  {
+   "name": "popup-menu",
+   "capture": "07-popup-menu-archive-tabs",
+   "box": [
+    130,
+    910,
+    560,
+    500
+   ],
+   "themes": [
+    "light"
+   ]
+  },
+  {
+   "name": "nav-bar-back",
+   "capture": "08-settings-search-engine-checklist",
+   "box": [
+    16,
+    170,
+    780,
+    110
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "choice-list-check",
+   "capture": "08-settings-search-engine-checklist",
+   "box": [
+    16,
+    360,
+    780,
+    720
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "switch-group-helper",
+   "capture": "09-site-settings-switches",
+   "box": [
+    16,
+    290,
+    780,
+    370
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "sheet-app-icon",
+   "capture": "10-app-icon-sheet",
+   "box": [
+    16,
+    1150,
+    780,
+    614
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "page-menu",
+   "capture": "12-page-menu-address-actions",
+   "box": [
+    16,
+    520,
+    780,
+    1244
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "address-bar",
+   "capture": "12-page-menu-address-actions",
+   "box": [
+    16,
+    560,
+    780,
+    130
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "menu-tile-buttons",
+   "capture": "12-page-menu-address-actions",
+   "box": [
+    16,
+    690,
+    780,
+    230
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "menu-list-stepper",
+   "capture": "12-page-menu-address-actions",
+   "box": [
+    16,
+    920,
+    780,
+    520
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "stepper-page-zoom",
+   "capture": "12-page-menu-address-actions",
+   "box": [
+    540,
+    1240,
+    240,
+    90
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "notice",
+   "capture": "12-page-menu-address-actions",
+   "box": [
+    16,
+    1570,
+    780,
+    150
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "page-menu-collapsed",
+   "capture": "13-page-menu-collapsed",
+   "box": [
+    16,
+    940,
+    780,
+    824
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "find-bar-focused",
+   "capture": "14-find-bar-focused",
+   "box": [
+    16,
+    1600,
+    780,
+    164
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "find-bar-match",
+   "capture": "15-find-bar-typed-match",
+   "box": [
+    16,
+    1600,
+    780,
+    164
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "find-bar-no-results",
+   "capture": "16-find-bar-no-results",
+   "box": [
+    16,
+    1600,
+    780,
+    164
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "space-sheet",
+   "capture": "17-space-sheet-gradient",
+   "box": [
+    16,
+    170,
+    780,
+    1594
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "context-menu-destructive",
+   "capture": "19-longpress-favorite-menu",
+   "box": [
+    16,
+    1150,
+    780,
+    420
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "archive-header",
+   "capture": "20-archive-history-list",
+   "box": [
+    16,
+    200,
+    780,
+    130
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "archive-list",
+   "capture": "20-archive-history-list",
+   "box": [
+    16,
+    370,
+    780,
+    460
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "archive-search-bar",
+   "capture": "20-archive-history-list",
+   "box": [
+    16,
+    1590,
+    780,
+    150
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "edit-menu-destructive",
+   "capture": "21-edit-menu-destructive-item",
+   "box": [
+    16,
+    200,
+    780,
+    160
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "archive-search-result",
+   "capture": "22-archive-search-typed",
+   "box": [
+    16,
+    250,
+    780,
+    170
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "archive-search-field-typed",
+   "capture": "22-archive-search-typed",
+   "box": [
+    16,
+    1600,
+    780,
+    164
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "archive-search-field-focused",
+   "capture": "24-archive-search-focused-empty",
+   "box": [
+    16,
+    1600,
+    780,
+    164
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  }
+ ]
+}
