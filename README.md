@@ -73,6 +73,7 @@ what is open, with the evidence.
 | [duolingo](systems/duolingo/README.md) | Gamified learning: lesson flow, streaks, leaderboards, chunky 3D buttons, a mascot-led brand | 2026-10-17 | light, dark | 14 of 24 met, 10 partly, 0 missing | none |
 | [grokbot](systems/grokbot/README.md) | Native iOS agent chat: near-black or near-white page, grouped grey cards, iOS 26 glass controls over content, one colour per bot tinting its avatar, switches and the owner's bubbles, ink-coloured primary buttons | 2026-10-23 | light, dark | 12 of 25 met, 12 partly, 1 missing | `icons/` |
 | [linear](systems/linear/README.md) | Dense, keyboard-first product UI in dark and light: issue boards, issue detail, menus, settings tables; plus the public marketing site | 2026-10-17 | dark, light | 12 of 25 met, 10 partly, 3 missing | `patterns.md` |
+| [chatgpt-ios](systems/chatgpt-ios/README.md) | Native iOS assistant chat: black or near-white page, replies as plain text with only the owner's messages in an accent-tinted bubble, a two-row glass composer, a sidebar instead of a tab bar, iOS grouped settings, one user-chosen accent on send and primary pills | 2026-10-24 | light, dark | 10 of 25 met, 14 partly, 1 missing | `icons/` |
 | [hevy](systems/hevy/README.md) | Native iOS workout logging: dense set table, one blue accent, pale grey fills, small corners, iOS 26 glass chrome, rest timer | 2026-10-10 | light, dark | 6 of 25 met, 17 partly, 2 missing | `patterns.md`, `components/`, `icons/` |
 
 <!-- catalog:end -->

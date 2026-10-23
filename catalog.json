@@ -871,6 +871,68 @@
       "layoutGaps": {
         "icons/": "Grok Bot's icons and bot characters are its artwork and are not kept here (docs/RIGHTS.md)"
       }
+    },
+    {
+      "slug": "chatgpt-ios",
+      "name": "ChatGPT for iOS",
+      "url": "https://apps.apple.com/app/chatgpt/id6448311069",
+      "category": "ai-chat",
+      "platform": "mobile",
+      "goodFor": "Native iOS assistant chat: black or near-white page, replies as plain text with only the owner's messages in an accent-tinted bubble, a two-row glass composer, a sidebar instead of a tab bar, iOS grouped settings, one user-chosen accent on send and primary pills",
+      "tags": [
+        "ios",
+        "mobile",
+        "ai",
+        "chat",
+        "composer",
+        "glass",
+        "sidebar",
+        "grouped-list",
+        "minimal"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-24",
+      "access": "signed in, workspace seat, iPhone Mirroring",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        390
+      ],
+      "entry": "systems/chatgpt-ios/README.md",
+      "tokens": "systems/chatgpt-ios/tokens.json",
+      "styleGuide": "systems/chatgpt-ios/style-guide.html",
+      "preview": {
+        "cover": "systems/chatgpt-ios/screenshots/dark/06-chat-thread-blue-bubble-math.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.surface.card",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.muted",
+            "accent": "light.color.accent.default",
+            "border": "light.color.border.divider"
+          },
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.surface.card",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.muted",
+            "accent": "dark.color.accent.default",
+            "border": "dark.color.border.divider"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.base"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/chatgpt-ios/raw-shots (full-colour captures, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "ChatGPT's icons are OpenAI's artwork and are not kept here (docs/RIGHTS.md)"
+      }
     }
   ]
 }

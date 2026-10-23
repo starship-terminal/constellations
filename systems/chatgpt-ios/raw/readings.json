@@ -1,0 +1,4293 @@
+{
+ "accent.caret": {
+  "dark": {
+   "args": [
+    203,
+    1608,
+    2,
+    35
+   ],
+   "capture": "screenshots/dark/19-search-no-results-empty-state.png",
+   "evidence": "Derived",
+   "note": "Search field caret, two pixel columns",
+   "op": "fill",
+   "share": 0.09,
+   "value": "#476CF6"
+  }
+ },
+ "accent.caretLight": {
+  "light": {
+   "args": [
+    71,
+    1550,
+    2,
+    38
+   ],
+   "capture": "screenshots/light/02-chat-mode-suggestions-composer.png",
+   "evidence": "Derived",
+   "note": "Composer caret, two pixel columns",
+   "op": "fill",
+   "share": 0.29,
+   "value": "#3566F0"
+  }
+ },
+ "accent.chatPill": {
+  "dark": {
+   "args": [
+    130,
+    1615,
+    20,
+    10
+   ],
+   "capture": "screenshots/dark/05-sidebar-nav-recents-unread-dot.png",
+   "evidence": "Sampled",
+   "note": "Sidebar 'Chat' (new chat) pill",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#3465EF"
+  },
+  "light": {
+   "args": [
+    130,
+    1615,
+    20,
+    10
+   ],
+   "capture": "screenshots/light/05-sidebar-nav-recents-unread-dot.png",
+   "evidence": "Sampled",
+   "note": "Sidebar 'Chat' (new chat) pill",
+   "op": "fill",
+   "share": 0.99,
+   "value": "#3364EE"
+  }
+ },
+ "accent.chatPillLabel": {
+  "dark": {
+   "args": [
+    190,
+    1625,
+    80,
+    45,
+    "light"
+   ],
+   "capture": "screenshots/dark/05-sidebar-nav-recents-unread-dot.png",
+   "evidence": "Sampled (text)",
+   "note": "Sidebar 'Chat' label",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    190,
+    1625,
+    80,
+    45,
+    "light"
+   ],
+   "capture": "screenshots/light/05-sidebar-nav-recents-unread-dot.png",
+   "evidence": "Sampled (text)",
+   "note": "Sidebar 'Chat' label",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "accent.newTask": {
+  "dark": {
+   "args": [
+    530,
+    1615,
+    12,
+    20
+   ],
+   "capture": "screenshots/dark/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Sampled",
+   "note": "'New task' pill",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#3465EF"
+  },
+  "light": {
+   "args": [
+    530,
+    1615,
+    12,
+    20
+   ],
+   "capture": "screenshots/light/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Derived",
+   "note": "'New task' pill",
+   "op": "fill",
+   "share": 0.57,
+   "value": "#3364EE"
+  }
+ },
+ "accent.newTaskLabel": {
+  "dark": {
+   "args": [
+    545,
+    1615,
+    150,
+    50,
+    "light"
+   ],
+   "capture": "screenshots/dark/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Sampled (text)",
+   "note": "'New task' label",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    545,
+    1615,
+    150,
+    50,
+    "light"
+   ],
+   "capture": "screenshots/light/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Sampled (text)",
+   "note": "'New task' label",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "accent.progress": {
+  "dark": {
+   "args": [
+    200,
+    472,
+    200,
+    8
+   ],
+   "capture": "screenshots/dark/14-usage-progress-bar.png",
+   "evidence": "Sampled",
+   "note": "Usage meter fill",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#339CFF"
+  },
+  "light": {
+   "args": [
+    200,
+    472,
+    200,
+    8
+   ],
+   "capture": "screenshots/light/14-usage-progress-bar.png",
+   "evidence": "Sampled",
+   "note": "Usage meter fill",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#339CFF"
+  }
+ },
+ "accent.send": {
+  "dark": {
+   "args": [
+    705,
+    1660,
+    15,
+    10
+   ],
+   "capture": "screenshots/dark/03-composer-typed-send.png",
+   "evidence": "Sampled",
+   "note": "Send button",
+   "op": "fill",
+   "share": 0.98,
+   "value": "#3566F0"
+  },
+  "light": {
+   "args": [
+    705,
+    1660,
+    15,
+    10
+   ],
+   "capture": "screenshots/light/03-composer-typed-send.png",
+   "evidence": "Sampled",
+   "note": "Send button",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#3566F0"
+  }
+ },
+ "accent.sendGlyph": {
+  "dark": {
+   "args": [
+    705,
+    1610,
+    40,
+    60,
+    "light"
+   ],
+   "capture": "screenshots/dark/03-composer-typed-send.png",
+   "evidence": "Sampled (text)",
+   "note": "Send arrow",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    705,
+    1610,
+    40,
+    60,
+    "light"
+   ],
+   "capture": "screenshots/light/03-composer-typed-send.png",
+   "evidence": "Sampled (text)",
+   "note": "Send arrow",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "accent.slider": {
+  "dark": {
+   "args": [
+    110,
+    1595,
+    20,
+    10
+   ],
+   "capture": "screenshots/dark/16-effort-slider-stepped.png",
+   "evidence": "Sampled",
+   "note": "Effort slider, filled part",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#3566F0"
+  },
+  "light": {
+   "args": [
+    110,
+    1595,
+    20,
+    10
+   ],
+   "capture": "screenshots/light/16-effort-slider-stepped.png",
+   "evidence": "Sampled",
+   "note": "Effort slider, filled part",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#3566F0"
+  }
+ },
+ "accent.swatchBlue": {
+  "dark": {
+   "args": [
+    327,
+    685,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/10-accent-color-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Accent colour menu, Blue swatch",
+   "op": "fill",
+   "share": 0.99,
+   "value": "#3566F0"
+  },
+  "light": {
+   "args": [
+    327,
+    685,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/10-accent-color-popup-menu.png",
+   "evidence": "Derived",
+   "note": "Accent colour menu, Blue swatch",
+   "op": "fill",
+   "share": 0.9,
+   "value": "#3566F0"
+  }
+ },
+ "accent.unread": {
+  "dark": {
+   "args": [
+    556,
+    1082,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/05-sidebar-nav-recents-unread-dot.png",
+   "evidence": "Sampled",
+   "note": "Unread dot after a recent chat",
+   "op": "fill",
+   "share": 0.99,
+   "value": "#0090FF"
+  },
+  "light": {
+   "args": [
+    556,
+    1082,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/05-sidebar-nav-recents-unread-dot.png",
+   "evidence": "Derived",
+   "note": "Unread dot after a recent chat",
+   "op": "fill",
+   "share": 0.77,
+   "value": "#0088FE"
+  }
+ },
+ "accent.voice": {
+  "dark": {
+   "args": [
+    705,
+    1665,
+    15,
+    8
+   ],
+   "capture": "screenshots/dark/02-chat-mode-suggestions-composer.png",
+   "evidence": "Sampled",
+   "note": "Voice button (the composer's blue circle when empty)",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#3566F0"
+  },
+  "light": {
+   "args": [
+    705,
+    1665,
+    15,
+    8
+   ],
+   "capture": "screenshots/light/02-chat-mode-suggestions-composer.png",
+   "evidence": "Sampled",
+   "note": "Voice button (the composer's blue circle when empty)",
+   "op": "fill",
+   "share": 0.98,
+   "value": "#3566F0"
+  }
+ },
+ "bg.grouped": {
+  "dark": {
+   "args": [
+    300,
+    250,
+    200,
+    20
+   ],
+   "capture": "screenshots/dark/09-settings-grouped-popup-values.png",
+   "evidence": "Sampled",
+   "note": "Settings page behind the grouped cards",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#000000"
+  },
+  "light": {
+   "args": [
+    300,
+    250,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/09-settings-grouped-popup-values.png",
+   "evidence": "Sampled",
+   "note": "Settings page behind the grouped cards",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F2F2F6"
+  }
+ },
+ "bg.page": {
+  "dark": {
+   "args": [
+    300,
+    700,
+    200,
+    20
+   ],
+   "capture": "screenshots/dark/02-chat-mode-suggestions-composer.png",
+   "evidence": "Sampled",
+   "note": "New chat page, above the suggestions",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#000000"
+  },
+  "light": {
+   "args": [
+    300,
+    700,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/02-chat-mode-suggestions-composer.png",
+   "evidence": "Sampled",
+   "note": "New chat page, above the suggestions",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FCFCFC"
+  }
+ },
+ "bg.sidebar": {
+  "dark": {
+   "args": [
+    300,
+    1550,
+    200,
+    20
+   ],
+   "capture": "screenshots/dark/05-sidebar-nav-recents-unread-dot.png",
+   "evidence": "Sampled",
+   "note": "Sidebar background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#000000"
+  },
+  "light": {
+   "args": [
+    300,
+    1550,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/05-sidebar-nav-recents-unread-dot.png",
+   "evidence": "Sampled",
+   "note": "Sidebar background",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FCFCFC"
+  }
+ },
+ "bg.thread": {
+  "dark": {
+   "args": [
+    300,
+    1500,
+    200,
+    20
+   ],
+   "capture": "screenshots/dark/06-chat-thread-blue-bubble-math.png",
+   "evidence": "Sampled",
+   "note": "Chat thread background, below the action row",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#000000"
+  },
+  "light": {
+   "args": [
+    300,
+    1500,
+    200,
+    20
+   ],
+   "capture": "screenshots/light/06-chat-thread-blue-bubble-math.png",
+   "evidence": "Sampled",
+   "note": "Chat thread background, below the action row",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FCFCFC"
+  }
+ },
+ "border.divider": {
+  "dark": {
+   "args": [
+    300,
+    461,
+    200,
+    1
+   ],
+   "capture": "screenshots/dark/09-settings-grouped-popup-values.png",
+   "evidence": "Sampled",
+   "note": "Hairline between grouped rows, one pixel row",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#353537"
+  },
+  "light": {
+   "args": [
+    300,
+    461,
+    200,
+    1
+   ],
+   "capture": "screenshots/light/09-settings-grouped-popup-values.png",
+   "evidence": "Sampled",
+   "note": "Hairline between grouped rows, one pixel row",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EAEAEA"
+  }
+ },
+ "border.sidebar": {
+  "dark": {
+   "args": [
+    200,
+    893,
+    200,
+    1
+   ],
+   "capture": "screenshots/dark/05-sidebar-nav-recents-unread-dot.png",
+   "evidence": "Sampled",
+   "note": "Rule between sidebar nav and recents",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#090909"
+  },
+  "light": {
+   "args": [
+    200,
+    893,
+    200,
+    1
+   ],
+   "capture": "screenshots/light/05-sidebar-nav-recents-unread-dot.png",
+   "evidence": "Sampled",
+   "note": "Rule between sidebar nav and recents",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F8F8F8"
+  }
+ },
+ "border.taskCard": {
+  "dark": {
+   "args": [
+    251,
+    543,
+    14,
+    1
+   ],
+   "capture": "screenshots/dark/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Derived",
+   "note": "One dash of a recommended task card's rim, one pixel row",
+   "op": "fill",
+   "share": 0.71,
+   "value": "#373737"
+  }
+ },
+ "border.taskCardLight": {
+  "light": {
+   "args": [
+    251,
+    542,
+    14,
+    1
+   ],
+   "capture": "screenshots/light/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Derived",
+   "note": "One dash of a recommended task card's rim, one pixel row",
+   "op": "fill",
+   "share": 0.64,
+   "value": "#E7E7E7"
+  }
+ },
+ "button.dialogLabel": {
+  "dark": {
+   "args": [
+    505,
+    1005,
+    95,
+    45
+   ],
+   "capture": "screenshots/dark/12-error-dialog-cancel-retry.png",
+   "evidence": "Sampled (text)",
+   "note": "'Retry' label",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    505,
+    1005,
+    95,
+    45
+   ],
+   "capture": "screenshots/light/12-error-dialog-cancel-retry.png",
+   "evidence": "Sampled (text)",
+   "note": "'Retry' label",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "button.ink": {
+  "dark": {
+   "args": [
+    318,
+    740,
+    15,
+    25
+   ],
+   "capture": "screenshots/dark/19-search-no-results-empty-state.png",
+   "evidence": "Sampled",
+   "note": "'New chat' pill on the empty state",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    318,
+    740,
+    15,
+    25
+   ],
+   "capture": "screenshots/light/19-search-no-results-empty-state.png",
+   "evidence": "Sampled",
+   "note": "'New chat' pill on the empty state",
+   "op": "fill",
+   "share": 0.96,
+   "value": "#0D0D0D"
+  }
+ },
+ "button.inkLabel": {
+  "dark": {
+   "args": [
+    340,
+    752,
+    135,
+    40,
+    "inverse"
+   ],
+   "capture": "screenshots/dark/19-search-no-results-empty-state.png",
+   "evidence": "Sampled (text)",
+   "note": "'New chat' label",
+   "op": "text",
+   "value": "#0C0C0C"
+  },
+  "light": {
+   "args": [
+    340,
+    752,
+    135,
+    40,
+    "inverse"
+   ],
+   "capture": "screenshots/light/19-search-no-results-empty-state.png",
+   "evidence": "Sampled (text)",
+   "note": "'New chat' label",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
+ "lines.dialogBody": {
+  "dark": {
+   "args": [
+    147,
+    862,
+    667,
+    942
+   ],
+   "bands": [
+    [
+     867,
+     894
+    ],
+    [
+     907,
+     934
+    ]
+   ],
+   "capture": "screenshots/dark/12-error-dialog-cancel-retry.png",
+   "evidence": "Derived",
+   "note": "Two-line alert body",
+   "op": "lines",
+   "value": "20.0pt"
+  }
+ },
+ "lines.footnote": {
+  "dark": {
+   "args": [
+    88,
+    470,
+    718,
+    530
+   ],
+   "bands": [
+    [
+     473,
+     497
+    ],
+    [
+     505,
+     529
+    ]
+   ],
+   "capture": "screenshots/dark/13-personalization-popups-text-field-empty.png",
+   "evidence": "Derived",
+   "note": "Two-line helper text",
+   "op": "lines",
+   "value": "16.0pt"
+  }
+ },
+ "lines.recents": {
+  "dark": {
+   "args": [
+    80,
+    970,
+    540,
+    1400
+   ],
+   "bands": [
+    [
+     979,
+     1010
+    ],
+    [
+     1075,
+     1101
+    ],
+    [
+     1171,
+     1203
+    ],
+    [
+     1267,
+     1299
+    ],
+    [
+     1363,
+     1389
+    ]
+   ],
+   "capture": "screenshots/dark/05-sidebar-nav-recents-unread-dot.png",
+   "evidence": "Derived",
+   "note": "Recent chats",
+   "op": "lines",
+   "value": "48.0pt"
+  }
+ },
+ "lines.sidebar": {
+  "dark": {
+   "args": [
+    80,
+    290,
+    330,
+    830
+   ],
+   "bands": [
+    [
+     297,
+     338
+    ],
+    [
+     394,
+     433
+    ],
+    [
+     489,
+     532
+    ],
+    [
+     589,
+     623
+    ],
+    [
+     680,
+     723
+    ],
+    [
+     777,
+     818
+    ]
+   ],
+   "capture": "screenshots/dark/05-sidebar-nav-recents-unread-dot.png",
+   "evidence": "Derived",
+   "note": "Sidebar nav items",
+   "op": "lines",
+   "value": "48.0pt"
+  }
+ },
+ "lines.suggestions": {
+  "dark": {
+   "args": [
+    135,
+    1230,
+    755,
+    1470
+   ],
+   "bands": [
+    [
+     1240,
+     1271
+    ],
+    [
+     1333,
+     1365
+    ],
+    [
+     1428,
+     1459
+    ]
+   ],
+   "capture": "screenshots/dark/02-chat-mode-suggestions-composer.png",
+   "evidence": "Derived",
+   "note": "Suggestion rows",
+   "op": "lines",
+   "value": "47.0pt"
+  }
+ },
+ "lines.taskBody": {
+  "dark": {
+   "args": [
+    168,
+    625,
+    693,
+    735
+   ],
+   "bands": [
+    [
+     632,
+     655
+    ],
+    [
+     668,
+     691
+    ],
+    [
+     704,
+     727
+    ]
+   ],
+   "capture": "screenshots/dark/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Derived",
+   "note": "Three-line task description",
+   "op": "lines",
+   "value": "18.0pt"
+  }
+ },
+ "lines.thread": {
+  "dark": {
+   "args": [
+    50,
+    905,
+    290,
+    1045
+   ],
+   "bands": [
+    [
+     914,
+     939
+    ],
+    [
+     961,
+     992
+    ],
+    [
+     1009,
+     1041
+    ]
+   ],
+   "capture": "screenshots/dark/06-chat-thread-blue-bubble-math.png",
+   "evidence": "Derived",
+   "note": "Three lines of reply text",
+   "op": "lines",
+   "value": "23.8pt"
+  }
+ },
+ "lines.userBubble": {
+  "dark": {
+   "args": [
+    257,
+    405,
+    737,
+    905
+   ],
+   "bands": [
+    [
+     412,
+     443
+    ],
+    [
+     463,
+     489
+    ],
+    [
+     514,
+     546
+    ],
+    [
+     565,
+     597
+    ],
+    [
+     617,
+     648
+    ],
+    [
+     668,
+     699
+    ],
+    [
+     720,
+     751
+    ],
+    [
+     771,
+     803
+    ],
+    [
+     822,
+     848
+    ],
+    [
+     874,
+     904
+    ]
+   ],
+   "capture": "screenshots/dark/08-find-in-chat-no-results.png",
+   "evidence": "Derived",
+   "note": "Lines in the owner's bubble",
+   "op": "lines",
+   "value": "25.7pt"
+  }
+ },
+ "palette.blue": {
+  "dark": {
+   "args": [
+    327,
+    685,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/10-accent-color-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Accent colour menu, blue swatch",
+   "op": "fill",
+   "share": 0.99,
+   "value": "#3566F0"
+  },
+  "light": {
+   "args": [
+    327,
+    685,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/10-accent-color-popup-menu.png",
+   "evidence": "Derived",
+   "note": "Accent colour menu, blue swatch",
+   "op": "fill",
+   "share": 0.9,
+   "value": "#3566F0"
+  }
+ },
+ "palette.cyan": {
+  "dark": {
+   "args": [
+    327,
+    769,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/10-accent-color-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Accent colour menu, cyan swatch",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#02B1FF"
+  },
+  "light": {
+   "args": [
+    327,
+    769,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/10-accent-color-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Accent colour menu, cyan swatch",
+   "op": "fill",
+   "share": 0.99,
+   "value": "#02B1FF"
+  }
+ },
+ "palette.green": {
+  "dark": {
+   "args": [
+    327,
+    853,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/10-accent-color-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Accent colour menu, green swatch",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#02BB9E"
+  },
+  "light": {
+   "args": [
+    327,
+    853,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/10-accent-color-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Accent colour menu, green swatch",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#02BB9E"
+  }
+ },
+ "palette.ink": {
+  "dark": {
+   "args": [
+    327,
+    1441,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/10-accent-color-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Accent colour menu, ink swatch",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    327,
+    1441,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/10-accent-color-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Accent colour menu, ink swatch",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0D0D0D"
+  }
+ },
+ "palette.lime": {
+  "dark": {
+   "args": [
+    327,
+    937,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/10-accent-color-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Accent colour menu, lime swatch",
+   "op": "fill",
+   "share": 0.9,
+   "value": "#B8D80C"
+  },
+  "light": {
+   "args": [
+    327,
+    937,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/10-accent-color-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Accent colour menu, lime swatch",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#B8D80C"
+  }
+ },
+ "palette.magenta": {
+  "dark": {
+   "args": [
+    327,
+    1273,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/10-accent-color-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Accent colour menu, magenta swatch",
+   "op": "fill",
+   "share": 0.92,
+   "value": "#DE69DC"
+  },
+  "light": {
+   "args": [
+    327,
+    1273,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/10-accent-color-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Accent colour menu, magenta swatch",
+   "op": "fill",
+   "share": 0.97,
+   "value": "#DE69DC"
+  }
+ },
+ "palette.orange": {
+  "dark": {
+   "args": [
+    327,
+    1105,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/10-accent-color-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Accent colour menu, orange swatch",
+   "op": "fill",
+   "share": 0.92,
+   "value": "#FE8066"
+  },
+  "light": {
+   "args": [
+    327,
+    1105,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/10-accent-color-popup-menu.png",
+   "evidence": "Derived",
+   "note": "Accent colour menu, orange swatch",
+   "op": "fill",
+   "share": 0.9,
+   "value": "#FE8066"
+  }
+ },
+ "palette.pink": {
+  "dark": {
+   "args": [
+    327,
+    1189,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/10-accent-color-popup-menu.png",
+   "evidence": "Derived",
+   "note": "Accent colour menu, pink swatch",
+   "op": "fill",
+   "share": 0.88,
+   "value": "#FF49AC"
+  },
+  "light": {
+   "args": [
+    327,
+    1189,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/10-accent-color-popup-menu.png",
+   "evidence": "Derived",
+   "note": "Accent colour menu, pink swatch",
+   "op": "fill",
+   "share": 0.9,
+   "value": "#FF49AC"
+  }
+ },
+ "palette.purple": {
+  "dark": {
+   "args": [
+    327,
+    1357,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/10-accent-color-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Accent colour menu, purple swatch",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#A35CFF"
+  },
+  "light": {
+   "args": [
+    327,
+    1357,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/10-accent-color-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Accent colour menu, purple swatch",
+   "op": "fill",
+   "share": 0.98,
+   "value": "#A35CFF"
+  }
+ },
+ "palette.yellow": {
+  "dark": {
+   "args": [
+    327,
+    1021,
+    12,
+    12
+   ],
+   "capture": "screenshots/dark/10-accent-color-popup-menu.png",
+   "evidence": "Derived",
+   "note": "Accent colour menu, yellow swatch",
+   "op": "fill",
+   "share": 0.85,
+   "value": "#FFCC39"
+  },
+  "light": {
+   "args": [
+    327,
+    1021,
+    12,
+    12
+   ],
+   "capture": "screenshots/light/10-accent-color-popup-menu.png",
+   "evidence": "Sampled",
+   "note": "Accent colour menu, yellow swatch",
+   "op": "fill",
+   "share": 0.99,
+   "value": "#FFCC39"
+  }
+ },
+ "radius.card": {
+  "dark": {
+   "args": [
+    400,
+    380,
+    150,
+    455
+   ],
+   "capture": "screenshots/dark/09-settings-grouped-popup-values.png",
+   "corner": [
+    48,
+    359
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Settings card",
+   "op": "diag",
+   "value": "25.6pt"
+  },
+  "light": {
+   "args": [
+    400,
+    380,
+    150,
+    455
+   ],
+   "capture": "screenshots/light/09-settings-grouped-popup-values.png",
+   "corner": [
+    48,
+    359
+   ],
+   "evidence": "Derived",
+   "inset": 15,
+   "note": "Settings card",
+   "op": "diag",
+   "value": "25.6pt"
+  }
+ },
+ "radius.composer": {
+  "dark": {
+   "args": [
+    400,
+    1540,
+    60,
+    1600
+   ],
+   "capture": "screenshots/dark/02-chat-mode-suggestions-composer.png",
+   "corner": [
+    40,
+    1514
+   ],
+   "evidence": "Derived",
+   "inset": 13,
+   "note": "Composer",
+   "op": "diag",
+   "value": "22.2pt"
+  }
+ },
+ "radius.dialog": {
+  "dark": {
+   "args": [
+    400,
+    790,
+    110,
+    950
+   ],
+   "capture": "screenshots/dark/12-error-dialog-cancel-retry.png",
+   "corner": [
+    86,
+    763
+   ],
+   "evidence": "Derived",
+   "inset": 19,
+   "note": "Alert",
+   "op": "diag",
+   "value": "32.4pt"
+  }
+ },
+ "radius.menuChat": {
+  "dark": {
+   "args": [
+    500,
+    185,
+    290,
+    860
+   ],
+   "capture": "screenshots/dark/07-chat-menu-destructive-glass.png",
+   "corner": [
+    264,
+    172
+   ],
+   "evidence": "Derived",
+   "inset": 18,
+   "note": "Chat menu",
+   "op": "diag",
+   "value": "30.7pt"
+  }
+ },
+ "radius.menuPlus": {
+  "dark": {
+   "args": [
+    300,
+    1010,
+    50,
+    1150
+   ],
+   "capture": "screenshots/dark/04-plus-menu-selected-item.png",
+   "corner": [
+    24,
+    986
+   ],
+   "evidence": "Derived",
+   "inset": 26,
+   "note": "Plus menu",
+   "op": "diag",
+   "value": "44.4pt"
+  }
+ },
+ "radius.userBubble": {
+  "dark": {
+   "args": [
+    700,
+    395,
+    240,
+    450
+   ],
+   "capture": "screenshots/dark/08-find-in-chat-no-results.png",
+   "corner": [
+    224,
+    377
+   ],
+   "evidence": "Derived",
+   "inset": 13,
+   "note": "The owner's bubble",
+   "op": "diag",
+   "value": "22.2pt"
+  }
+ },
+ "rows.settings": {
+  "dark": {
+   "args": [
+    "col",
+    400,
+    340,
+    700,
+    null,
+    0
+   ],
+   "capture": "screenshots/dark/09-settings-grouped-popup-values.png",
+   "evidence": "Sampled",
+   "note": "Row edges down the first settings card",
+   "op": "find",
+   "value": [
+    358,
+    359,
+    460,
+    461,
+    462,
+    463,
+    564,
+    565,
+    566,
+    567,
+    670,
+    671
+   ]
+  },
+  "light": {
+   "args": [
+    "col",
+    400,
+    340,
+    700,
+    null,
+    0
+   ],
+   "capture": "screenshots/light/09-settings-grouped-popup-values.png",
+   "evidence": "Sampled",
+   "note": "Row edges down the first settings card",
+   "op": "find",
+   "value": [
+    359,
+    460,
+    461,
+    462,
+    463,
+    564,
+    565,
+    567,
+    670,
+    671
+   ]
+  }
+ },
+ "scrim.dim": {
+  "dark": {
+   "args": [
+    500,
+    1265,
+    200,
+    15
+   ],
+   "capture": "screenshots/dark/12-error-dialog-cancel-retry.png",
+   "evidence": "Sampled",
+   "note": "The same field under the alert's scrim",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0F0F11"
+  },
+  "light": {
+   "args": [
+    500,
+    1265,
+    200,
+    15
+   ],
+   "capture": "screenshots/light/12-error-dialog-cancel-retry.png",
+   "evidence": "Sampled",
+   "note": "The same field under the alert's scrim",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#CCCCCC"
+  }
+ },
+ "scrim.ref": {
+  "dark": {
+   "args": [
+    500,
+    1265,
+    200,
+    15
+   ],
+   "capture": "screenshots/dark/13-personalization-popups-text-field-empty.png",
+   "evidence": "Sampled",
+   "note": "Custom instructions field, undimmed",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1C1C1E"
+  },
+  "light": {
+   "args": [
+    500,
+    1265,
+    200,
+    15
+   ],
+   "capture": "screenshots/light/13-personalization-popups-text-field-empty.png",
+   "evidence": "Sampled",
+   "note": "Custom instructions field, undimmed",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "size.card": {
+  "dark": {
+   "args": [
+    [
+     420,
+     375
+    ],
+    [
+     30,
+     340,
+     760,
+     350
+    ],
+    3
+   ],
+   "box": [
+    48,
+    359,
+    763,
+    669
+   ],
+   "capture": "screenshots/dark/09-settings-grouped-popup-values.png",
+   "colour": "#1C1C1E",
+   "evidence": "Sampled",
+   "note": "Settings card, three rows",
+   "op": "bbox",
+   "value": "358x155.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     420,
+     375
+    ],
+    [
+     30,
+     340,
+     760,
+     350
+    ],
+    3
+   ],
+   "box": [
+    48,
+    359,
+    763,
+    669
+   ],
+   "capture": "screenshots/light/09-settings-grouped-popup-values.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Settings card, three rows",
+   "op": "bbox",
+   "value": "358x155.5pt"
+  }
+ },
+ "size.cardOneRow": {
+  "dark": {
+   "args": [
+    [
+     450,
+     370
+    ],
+    [
+     30,
+     330,
+     760,
+     140
+    ],
+    3
+   ],
+   "box": [
+    49,
+    348,
+    762,
+    455
+   ],
+   "capture": "screenshots/dark/11-general-switches-on-popup-rows.png",
+   "colour": "#1C1C1E",
+   "evidence": "Sampled",
+   "note": "One-row card (Start screen)",
+   "op": "bbox",
+   "value": "357x54pt"
+  },
+  "light": {
+   "args": [
+    [
+     450,
+     370
+    ],
+    [
+     30,
+     330,
+     760,
+     140
+    ],
+    3
+   ],
+   "box": [
+    48,
+    348,
+    763,
+    455
+   ],
+   "capture": "screenshots/light/11-general-switches-on-popup-rows.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "One-row card (Start screen)",
+   "op": "bbox",
+   "value": "358x54pt"
+  }
+ },
+ "size.chatPill": {
+  "dark": {
+   "args": [
+    [
+     130,
+     1615
+    ],
+    [
+     60,
+     1580,
+     270,
+     140
+    ],
+    24
+   ],
+   "box": [
+    84,
+    1600,
+    307,
+    1695
+   ],
+   "capture": "screenshots/dark/05-sidebar-nav-recents-unread-dot.png",
+   "colour": "#3465EF",
+   "evidence": "Sampled",
+   "note": "Sidebar 'Chat' pill",
+   "op": "bbox",
+   "value": "112x48pt"
+  },
+  "light": {
+   "args": [
+    [
+     130,
+     1615
+    ],
+    [
+     60,
+     1580,
+     270,
+     140
+    ],
+    24
+   ],
+   "box": [
+    83,
+    1600,
+    308,
+    1695
+   ],
+   "capture": "screenshots/light/05-sidebar-nav-recents-unread-dot.png",
+   "colour": "#3364EE",
+   "evidence": "Sampled",
+   "note": "Sidebar 'Chat' pill",
+   "op": "bbox",
+   "value": "113x48pt"
+  }
+ },
+ "size.composer.h": {
+  "dark": {
+   "args": [
+    "col",
+    400,
+    1480,
+    1740,
+    [
+     400,
+     1490
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/02-chat-mode-suggestions-composer.png",
+   "evidence": "Sampled",
+   "from": 1512,
+   "note": "Composer, height",
+   "op": "extent",
+   "to": 1695,
+   "value": "92pt"
+  }
+ },
+ "size.composer.w": {
+  "dark": {
+   "args": [
+    "row",
+    1600,
+    20,
+    800,
+    [
+     25,
+     1600
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/02-chat-mode-suggestions-composer.png",
+   "evidence": "Sampled",
+   "from": 40,
+   "note": "Composer, width",
+   "op": "extent",
+   "to": 771,
+   "value": "366pt"
+  }
+ },
+ "size.dialog.h": {
+  "dark": {
+   "args": [
+    "col",
+    400,
+    700,
+    1150,
+    [
+     400,
+     705
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/12-error-dialog-cancel-retry.png",
+   "evidence": "Sampled",
+   "from": 760,
+   "note": "Alert, height",
+   "op": "extent",
+   "to": 1149,
+   "value": "195pt"
+  }
+ },
+ "size.dialog.w": {
+  "dark": {
+   "args": [
+    "row",
+    955,
+    40,
+    780,
+    [
+     60,
+     955
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/12-error-dialog-cancel-retry.png",
+   "evidence": "Sampled",
+   "from": 40,
+   "note": "Alert, width",
+   "op": "extent",
+   "to": 779,
+   "value": "370pt"
+  }
+ },
+ "size.dialogButton": {
+  "dark": {
+   "args": [
+    [
+     140,
+     995
+    ],
+    [
+     100,
+     960,
+     310,
+     130
+    ],
+    6
+   ],
+   "box": [
+    118,
+    978,
+    396,
+    1072
+   ],
+   "capture": "screenshots/dark/12-error-dialog-cancel-retry.png",
+   "colour": "#4A4A4C",
+   "evidence": "Sampled",
+   "note": "Alert button (Cancel)",
+   "op": "bbox",
+   "value": "139.5x47.5pt"
+  }
+ },
+ "size.inkButton": {
+  "dark": {
+   "args": [
+    [
+     318,
+     740
+    ],
+    [
+     290,
+     710,
+     240,
+     120
+    ],
+    24
+   ],
+   "box": [
+    307,
+    728,
+    504,
+    807
+   ],
+   "capture": "screenshots/dark/19-search-no-results-empty-state.png",
+   "colour": "#999999",
+   "evidence": "Sampled",
+   "note": "'New chat' pill",
+   "op": "bbox",
+   "value": "99x40pt"
+  },
+  "light": {
+   "args": [
+    [
+     318,
+     740
+    ],
+    [
+     290,
+     710,
+     240,
+     120
+    ],
+    24
+   ],
+   "box": [
+    307,
+    728,
+    504,
+    807
+   ],
+   "capture": "screenshots/light/19-search-no-results-empty-state.png",
+   "colour": "#6E6E6E",
+   "evidence": "Sampled",
+   "note": "'New chat' pill",
+   "op": "bbox",
+   "value": "99x40pt"
+  }
+ },
+ "size.menu.w": {
+  "dark": {
+   "args": [
+    "row",
+    1150,
+    20,
+    800,
+    [
+     700,
+     1150
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/04-plus-menu-selected-item.png",
+   "evidence": "Sampled",
+   "from": 24,
+   "note": "Plus menu, width",
+   "op": "extent",
+   "to": 583,
+   "value": "280pt"
+  }
+ },
+ "size.menuIcon": {
+  "dark": {
+   "args": [
+    [
+     80,
+     1100
+    ],
+    [
+     55,
+     1015,
+     130,
+     130
+    ],
+    6
+   ],
+   "box": [
+    72,
+    1032,
+    159,
+    1119
+   ],
+   "capture": "screenshots/dark/04-plus-menu-selected-item.png",
+   "colour": "#313131",
+   "evidence": "Sampled",
+   "note": "Round icon well in the plus menu",
+   "op": "bbox",
+   "value": "44x44pt"
+  }
+ },
+ "size.navButton.w": {
+  "dark": {
+   "args": [
+    "row",
+    215,
+    650,
+    790,
+    [
+     655,
+     215
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/09-settings-grouped-popup-values.png",
+   "evidence": "Sampled",
+   "from": 676,
+   "note": "Round glass close button, width",
+   "op": "extent",
+   "to": 763,
+   "value": "44pt"
+  }
+ },
+ "size.newTask": {
+  "dark": {
+   "args": [
+    [
+     530,
+     1615
+    ],
+    [
+     480,
+     1570,
+     290,
+     140
+    ],
+    24
+   ],
+   "box": [
+    506,
+    1591,
+    731,
+    1684
+   ],
+   "capture": "screenshots/dark/21-scheduled-tabs-cards-primary-pill.png",
+   "colour": "#3465EF",
+   "evidence": "Sampled",
+   "note": "'New task' pill",
+   "op": "bbox",
+   "value": "113x47pt"
+  },
+  "light": {
+   "args": [
+    [
+     530,
+     1615
+    ],
+    [
+     480,
+     1570,
+     290,
+     140
+    ],
+    24
+   ],
+   "box": [
+    504,
+    1590,
+    732,
+    1685
+   ],
+   "capture": "screenshots/light/21-scheduled-tabs-cards-primary-pill.png",
+   "colour": "#3364EE",
+   "evidence": "Sampled",
+   "note": "'New task' pill",
+   "op": "bbox",
+   "value": "114.5x48pt"
+  }
+ },
+ "size.progress.h": {
+  "dark": {
+   "args": [
+    "col",
+    600,
+    455,
+    500,
+    [
+     600,
+     458
+    ],
+    6
+   ],
+   "capture": "screenshots/dark/14-usage-progress-bar.png",
+   "evidence": "Sampled",
+   "from": 468,
+   "note": "Usage meter track, height",
+   "op": "extent",
+   "to": 484,
+   "value": "8.5pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    600,
+    455,
+    500,
+    [
+     600,
+     458
+    ],
+    6
+   ],
+   "capture": "screenshots/light/14-usage-progress-bar.png",
+   "evidence": "Sampled",
+   "from": 468,
+   "note": "Usage meter track, height",
+   "op": "extent",
+   "to": 484,
+   "value": "8.5pt"
+  }
+ },
+ "size.searchBar.h": {
+  "dark": {
+   "args": [
+    "col",
+    400,
+    1540,
+    1720,
+    [
+     400,
+     1545
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/20-search-focused-empty-prompt.png",
+   "evidence": "Sampled",
+   "from": 1576,
+   "note": "Search field, height",
+   "op": "extent",
+   "to": 1671,
+   "value": "48pt"
+  }
+ },
+ "size.searchBar.w": {
+  "dark": {
+   "args": [
+    "row",
+    1590,
+    20,
+    665,
+    [
+     25,
+     1590
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/20-search-focused-empty-prompt.png",
+   "evidence": "Sampled",
+   "from": 53,
+   "note": "Search field, width",
+   "op": "extent",
+   "to": 638,
+   "value": "293pt"
+  }
+ },
+ "size.searchTile": {
+  "dark": {
+   "args": [
+    [
+     370,
+     520
+    ],
+    [
+     350,
+     440,
+     110,
+     110
+    ],
+    6
+   ],
+   "box": [
+    367,
+    456,
+    444,
+    535
+   ],
+   "capture": "screenshots/dark/19-search-no-results-empty-state.png",
+   "colour": "#414141",
+   "evidence": "Sampled",
+   "note": "Empty-state magnifier tile",
+   "op": "bbox",
+   "value": "39x40pt"
+  },
+  "light": {
+   "args": [
+    [
+     370,
+     520
+    ],
+    [
+     350,
+     440,
+     110,
+     110
+    ],
+    6
+   ],
+   "box": [
+    366,
+    456,
+    445,
+    535
+   ],
+   "capture": "screenshots/light/19-search-no-results-empty-state.png",
+   "colour": "#F3F3F3",
+   "evidence": "Sampled",
+   "note": "Empty-state magnifier tile",
+   "op": "bbox",
+   "value": "40x40pt"
+  }
+ },
+ "size.segmentThumb": {
+  "dark": {
+   "args": [
+    [
+     300,
+     240
+    ],
+    [
+     240,
+     160,
+     180,
+     110
+    ],
+    3
+   ],
+   "box": [
+    247,
+    166,
+    396,
+    263
+   ],
+   "capture": "screenshots/dark/02-chat-mode-suggestions-composer.png",
+   "colour": "#0A0A0A",
+   "evidence": "Sampled",
+   "note": "Chat / Work thumb",
+   "op": "bbox",
+   "value": "75x49pt"
+  }
+ },
+ "size.segmented.h": {
+  "dark": {
+   "args": [
+    "col",
+    400,
+    140,
+    290,
+    [
+     400,
+     145
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/02-chat-mode-suggestions-composer.png",
+   "evidence": "Sampled",
+   "from": 166,
+   "note": "Chat / Work control, height",
+   "op": "extent",
+   "to": 263,
+   "value": "49pt"
+  }
+ },
+ "size.segmented.w": {
+  "dark": {
+   "args": [
+    "row",
+    215,
+    225,
+    590,
+    [
+     230,
+     215
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/02-chat-mode-suggestions-composer.png",
+   "evidence": "Sampled",
+   "from": 247,
+   "note": "Chat / Work control, width",
+   "op": "extent",
+   "to": 564,
+   "value": "159pt"
+  }
+ },
+ "size.sendButton": {
+  "dark": {
+   "args": [
+    [
+     705,
+     1660
+    ],
+    [
+     670,
+     1590,
+     110,
+     120
+    ],
+    20
+   ],
+   "box": [
+    692,
+    1616,
+    754,
+    1679
+   ],
+   "capture": "screenshots/dark/03-composer-typed-send.png",
+   "colour": "#3566F0",
+   "evidence": "Sampled",
+   "note": "Send button",
+   "op": "bbox",
+   "value": "31.5x32pt"
+  },
+  "light": {
+   "args": [
+    [
+     705,
+     1660
+    ],
+    [
+     670,
+     1590,
+     110,
+     120
+    ],
+    20
+   ],
+   "box": [
+    693,
+    1617,
+    755,
+    1679
+   ],
+   "capture": "screenshots/light/03-composer-typed-send.png",
+   "colour": "#3566F0",
+   "evidence": "Sampled",
+   "note": "Send button",
+   "op": "bbox",
+   "value": "31.5x31.5pt"
+  }
+ },
+ "size.slider.h": {
+  "dark": {
+   "args": [
+    "col",
+    470,
+    1530,
+    1720,
+    [
+     470,
+     1535
+    ],
+    10
+   ],
+   "capture": "screenshots/dark/16-effort-slider-stepped.png",
+   "evidence": "Sampled",
+   "from": 1552,
+   "note": "Effort slider track, height",
+   "op": "extent",
+   "to": 1719,
+   "value": "84pt"
+  }
+ },
+ "size.sliderThumb": {
+  "dark": {
+   "args": [
+    [
+     345,
+     1615
+    ],
+    [
+     300,
+     1560,
+     110,
+     120
+    ],
+    20
+   ],
+   "box": [
+    314,
+    1584,
+    392,
+    1663
+   ],
+   "capture": "screenshots/dark/16-effort-slider-stepped.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Effort slider thumb",
+   "op": "bbox",
+   "value": "39.5x40pt"
+  }
+ },
+ "size.switch": {
+  "dark": {
+   "args": [
+    [
+     615,
+     700
+    ],
+    [
+     580,
+     660,
+     180,
+     100
+    ],
+    20
+   ],
+   "box": [
+    603,
+    679,
+    727,
+    733
+   ],
+   "capture": "screenshots/dark/11-general-switches-on-popup-rows.png",
+   "colour": "#2ED158",
+   "evidence": "Sampled",
+   "note": "Switch track",
+   "op": "bbox",
+   "value": "62.5x27.5pt"
+  },
+  "light": {
+   "args": [
+    [
+     615,
+     700
+    ],
+    [
+     580,
+     660,
+     180,
+     100
+    ],
+    20
+   ],
+   "box": [
+    603,
+    679,
+    726,
+    733
+   ],
+   "capture": "screenshots/light/11-general-switches-on-popup-rows.png",
+   "colour": "#37C759",
+   "evidence": "Sampled",
+   "note": "Switch track",
+   "op": "bbox",
+   "value": "62x27.5pt"
+  }
+ },
+ "size.switchThumb": {
+  "dark": {
+   "args": [
+    [
+     670,
+     700
+    ],
+    [
+     640,
+     670,
+     100,
+     80
+    ],
+    10
+   ],
+   "box": [
+    651,
+    683,
+    722,
+    729
+   ],
+   "capture": "screenshots/dark/11-general-switches-on-popup-rows.png",
+   "colour": "#FFFFFF",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "bbox",
+   "value": "36x23.5pt"
+  }
+ },
+ "size.tab": {
+  "dark": {
+   "args": [
+    "row",
+    330,
+    30,
+    240,
+    [
+     40,
+     290
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Sampled",
+   "from": 54,
+   "note": "Selected tab pill, width",
+   "op": "extent",
+   "to": 202,
+   "value": "74.5pt"
+  }
+ },
+ "size.tab.h": {
+  "dark": {
+   "args": [
+    "col",
+    90,
+    290,
+    420,
+    [
+     90,
+     292
+    ],
+    12
+   ],
+   "capture": "screenshots/dark/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Sampled",
+   "from": 310,
+   "note": "Selected tab pill, height",
+   "op": "extent",
+   "to": 397,
+   "value": "44pt"
+  }
+ },
+ "size.userBubble": {
+  "dark": {
+   "args": [
+    [
+     600,
+     560
+    ],
+    [
+     200,
+     360,
+     600,
+     600
+    ],
+    4
+   ],
+   "box": [
+    225,
+    378,
+    762,
+    929
+   ],
+   "capture": "screenshots/dark/08-find-in-chat-no-results.png",
+   "colour": "#030562",
+   "evidence": "Sampled",
+   "note": "The owner's bubble (nine lines)",
+   "op": "bbox",
+   "value": "269x276pt"
+  }
+ },
+ "slider.step": {
+  "dark": {
+   "args": [
+    455,
+    1620,
+    6,
+    6
+   ],
+   "capture": "screenshots/dark/16-effort-slider-stepped.png",
+   "evidence": "Sampled",
+   "note": "Effort slider step dot",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#707070"
+  },
+  "light": {
+   "args": [
+    455,
+    1620,
+    6,
+    6
+   ],
+   "capture": "screenshots/light/16-effort-slider-stepped.png",
+   "evidence": "Sampled",
+   "note": "Effort slider step dot",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#CBCBCB"
+  }
+ },
+ "slider.thumb": {
+  "dark": {
+   "args": [
+    345,
+    1615,
+    15,
+    15
+   ],
+   "capture": "screenshots/dark/16-effort-slider-stepped.png",
+   "evidence": "Sampled",
+   "note": "Effort slider thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    345,
+    1615,
+    15,
+    15
+   ],
+   "capture": "screenshots/light/16-effort-slider-stepped.png",
+   "evidence": "Sampled",
+   "note": "Effort slider thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.banner": {
+  "light": {
+   "args": [
+    420,
+    315,
+    250,
+    10
+   ],
+   "capture": "screenshots/light/06-chat-thread-blue-bubble-math.png",
+   "evidence": "Derived",
+   "note": "'Share Message' banner over the thread",
+   "op": "fill",
+   "share": 0.3,
+   "value": "#E8EFFF"
+  }
+ },
+ "surface.card": {
+  "dark": {
+   "args": [
+    420,
+    375,
+    250,
+    20
+   ],
+   "capture": "screenshots/dark/09-settings-grouped-popup-values.png",
+   "evidence": "Sampled",
+   "note": "Grouped card (Personalization row, right of the label)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1C1C1E"
+  },
+  "light": {
+   "args": [
+    420,
+    375,
+    250,
+    20
+   ],
+   "capture": "screenshots/light/09-settings-grouped-popup-values.png",
+   "evidence": "Sampled",
+   "note": "Grouped card (Personalization row, right of the label)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.composer": {
+  "dark": {
+   "args": [
+    400,
+    1540,
+    100,
+    10
+   ],
+   "capture": "screenshots/dark/02-chat-mode-suggestions-composer.png",
+   "evidence": "Sampled",
+   "note": "Composer (glass; centre reading above the placeholder)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#202020"
+  },
+  "light": {
+   "args": [
+    400,
+    1540,
+    100,
+    10
+   ],
+   "capture": "screenshots/light/02-chat-mode-suggestions-composer.png",
+   "evidence": "Derived",
+   "note": "Composer (glass; centre reading above the placeholder)",
+   "op": "fill",
+   "share": 0.32,
+   "value": "#FBFBFB"
+  }
+ },
+ "surface.dialog": {
+  "dark": {
+   "args": [
+    400,
+    955,
+    200,
+    10
+   ],
+   "capture": "screenshots/dark/12-error-dialog-cancel-retry.png",
+   "evidence": "Derived",
+   "note": "Alert card (glass), between body and buttons",
+   "op": "fill",
+   "share": 0.64,
+   "value": "#2B2B2D"
+  },
+  "light": {
+   "args": [
+    400,
+    955,
+    200,
+    10
+   ],
+   "capture": "screenshots/light/12-error-dialog-cancel-retry.png",
+   "evidence": "Derived",
+   "note": "Alert card (glass), between body and buttons",
+   "op": "fill",
+   "share": 0.69,
+   "value": "#EDEDED"
+  }
+ },
+ "surface.dialogButton": {
+  "dark": {
+   "args": [
+    140,
+    995,
+    40,
+    15
+   ],
+   "capture": "screenshots/dark/12-error-dialog-cancel-retry.png",
+   "evidence": "Derived",
+   "note": "Cancel button inside the alert",
+   "op": "fill",
+   "share": 0.69,
+   "value": "#4A4A4C"
+  },
+  "light": {
+   "args": [
+    140,
+    995,
+    40,
+    15
+   ],
+   "capture": "screenshots/light/12-error-dialog-cancel-retry.png",
+   "evidence": "Derived",
+   "note": "Cancel button inside the alert",
+   "op": "fill",
+   "share": 0.42,
+   "value": "#CBCBCD"
+  }
+ },
+ "surface.glassButton": {
+  "dark": {
+   "args": [
+    690,
+    245,
+    60,
+    6
+   ],
+   "capture": "screenshots/dark/09-settings-grouped-popup-values.png",
+   "evidence": "Derived",
+   "note": "Round glass close button, below its glyph",
+   "op": "fill",
+   "share": 0.24,
+   "value": "#212121"
+  },
+  "light": {
+   "args": [
+    690,
+    245,
+    60,
+    6
+   ],
+   "capture": "screenshots/light/09-settings-grouped-popup-values.png",
+   "evidence": "Derived",
+   "note": "Round glass close button, below its glyph",
+   "op": "fill",
+   "share": 0.27,
+   "value": "#F8F8FC"
+  }
+ },
+ "surface.menu": {
+  "dark": {
+   "args": [
+    400,
+    1040,
+    100,
+    20
+   ],
+   "capture": "screenshots/dark/04-plus-menu-selected-item.png",
+   "evidence": "Sampled",
+   "note": "Plus menu (glass over the page)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#202020"
+  },
+  "light": {
+   "args": [
+    400,
+    1040,
+    100,
+    20
+   ],
+   "capture": "screenshots/light/04-plus-menu-selected-item.png",
+   "evidence": "Sampled",
+   "note": "Plus menu (glass over the page)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FDFDFD"
+  }
+ },
+ "surface.menuIcon": {
+  "dark": {
+   "args": [
+    80,
+    1100,
+    20,
+    10
+   ],
+   "capture": "screenshots/dark/04-plus-menu-selected-item.png",
+   "evidence": "Derived",
+   "note": "Round icon well beside a plus-menu item",
+   "op": "fill",
+   "share": 0.72,
+   "value": "#323232"
+  },
+  "light": {
+   "args": [
+    80,
+    1100,
+    20,
+    10
+   ],
+   "capture": "screenshots/light/04-plus-menu-selected-item.png",
+   "evidence": "Derived",
+   "note": "Round icon well beside a plus-menu item",
+   "op": "fill",
+   "share": 0.76,
+   "value": "#F3F3F3"
+  }
+ },
+ "surface.menuOverBubble": {
+  "dark": {
+   "args": [
+    560,
+    300,
+    150,
+    20
+   ],
+   "capture": "screenshots/dark/07-chat-menu-destructive-glass.png",
+   "evidence": "Derived",
+   "note": "Chat menu over the blue bubble: the glass takes its colour",
+   "op": "fill",
+   "share": 0.13,
+   "value": "#313691"
+  },
+  "light": {
+   "args": [
+    560,
+    300,
+    150,
+    20
+   ],
+   "capture": "screenshots/light/07-chat-menu-destructive-glass.png",
+   "evidence": "Derived",
+   "note": "Chat menu over the blue bubble: the glass takes its colour",
+   "op": "fill",
+   "share": 0.25,
+   "value": "#ECF5FF"
+  }
+ },
+ "surface.progressTrack": {
+  "dark": {
+   "args": [
+    600,
+    472,
+    100,
+    8
+   ],
+   "capture": "screenshots/dark/14-usage-progress-bar.png",
+   "evidence": "Sampled",
+   "note": "Usage meter track, unfilled part",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#213447"
+  },
+  "light": {
+   "args": [
+    600,
+    472,
+    100,
+    8
+   ],
+   "capture": "screenshots/light/14-usage-progress-bar.png",
+   "evidence": "Sampled",
+   "note": "Usage meter track, unfilled part",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#DBEDFE"
+  }
+ },
+ "surface.searchBar": {
+  "dark": {
+   "args": [
+    300,
+    1590,
+    300,
+    10
+   ],
+   "capture": "screenshots/dark/20-search-focused-empty-prompt.png",
+   "evidence": "Sampled",
+   "note": "Search field at the bottom of search (glass)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1F1F1F"
+  }
+ },
+ "surface.searchTile": {
+  "dark": {
+   "args": [
+    370,
+    520,
+    70,
+    10
+   ],
+   "capture": "screenshots/dark/19-search-no-results-empty-state.png",
+   "evidence": "Sampled",
+   "note": "Rounded tile behind the empty-state magnifier",
+   "op": "fill",
+   "share": 0.96,
+   "value": "#414141"
+  },
+  "light": {
+   "args": [
+    370,
+    520,
+    70,
+    10
+   ],
+   "capture": "screenshots/light/19-search-no-results-empty-state.png",
+   "evidence": "Sampled",
+   "note": "Rounded tile behind the empty-state magnifier",
+   "op": "fill",
+   "share": 0.98,
+   "value": "#F3F3F3"
+  }
+ },
+ "surface.segmentThumb": {
+  "dark": {
+   "args": [
+    300,
+    240,
+    40,
+    6
+   ],
+   "capture": "screenshots/dark/02-chat-mode-suggestions-composer.png",
+   "evidence": "Sampled",
+   "note": "Chat / Work control, the selected thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#0A0A0A"
+  },
+  "light": {
+   "args": [
+    300,
+    240,
+    40,
+    6
+   ],
+   "capture": "screenshots/light/02-chat-mode-suggestions-composer.png",
+   "evidence": "Sampled",
+   "note": "Chat / Work control, the selected thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EAEAEA"
+  }
+ },
+ "surface.segmentTrack": {
+  "dark": {
+   "args": [
+    470,
+    240,
+    40,
+    6
+   ],
+   "capture": "screenshots/dark/02-chat-mode-suggestions-composer.png",
+   "evidence": "Sampled",
+   "note": "Chat / Work control, the unselected half",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#202020"
+  },
+  "light": {
+   "args": [
+    470,
+    240,
+    40,
+    6
+   ],
+   "capture": "screenshots/light/02-chat-mode-suggestions-composer.png",
+   "evidence": "Sampled",
+   "note": "Chat / Work control, the unselected half",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FCFCFC"
+  }
+ },
+ "surface.sliderTrack": {
+  "dark": {
+   "args": [
+    470,
+    1580,
+    150,
+    8
+   ],
+   "capture": "screenshots/dark/16-effort-slider-stepped.png",
+   "evidence": "Derived",
+   "note": "Effort slider track (glass)",
+   "op": "fill",
+   "share": 0.59,
+   "value": "#3D3D3D"
+  },
+  "light": {
+   "args": [
+    470,
+    1580,
+    150,
+    8
+   ],
+   "capture": "screenshots/light/16-effort-slider-stepped.png",
+   "evidence": "Derived",
+   "note": "Effort slider track (glass)",
+   "op": "fill",
+   "share": 0.18,
+   "value": "#F9F9F9"
+  }
+ },
+ "surface.tabSelected": {
+  "dark": {
+   "args": [
+    85,
+    320,
+    20,
+    8
+   ],
+   "capture": "screenshots/dark/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Sampled",
+   "note": "Selected tab pill (Active)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#414141"
+  },
+  "light": {
+   "args": [
+    85,
+    320,
+    20,
+    8
+   ],
+   "capture": "screenshots/light/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Sampled",
+   "note": "Selected tab pill (Active)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F3F3F3"
+  }
+ },
+ "surface.taskCard": {
+  "dark": {
+   "args": [
+    715,
+    640,
+    30,
+    60
+   ],
+   "capture": "screenshots/dark/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Sampled",
+   "note": "Recommended task card, right padding",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#212121"
+  },
+  "light": {
+   "args": [
+    715,
+    640,
+    30,
+    60
+   ],
+   "capture": "screenshots/light/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Sampled",
+   "note": "Recommended task card, right padding",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "surface.userBubble": {
+  "dark": {
+   "args": [
+    600,
+    560,
+    100,
+    20
+   ],
+   "capture": "screenshots/dark/06-chat-thread-blue-bubble-math.png",
+   "evidence": "Sampled",
+   "note": "The owner's message bubble",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#030562"
+  },
+  "light": {
+   "args": [
+    600,
+    560,
+    100,
+    20
+   ],
+   "capture": "screenshots/light/06-chat-thread-blue-bubble-math.png",
+   "evidence": "Sampled",
+   "note": "The owner's message bubble",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EDF4FF"
+  }
+ },
+ "switch.on": {
+  "dark": {
+   "args": [
+    615,
+    700,
+    20,
+    15
+   ],
+   "capture": "screenshots/dark/11-general-switches-on-popup-rows.png",
+   "evidence": "Sampled",
+   "note": "Switch on (Auto-correct spelling)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2ED158"
+  },
+  "light": {
+   "args": [
+    615,
+    700,
+    20,
+    15
+   ],
+   "capture": "screenshots/light/11-general-switches-on-popup-rows.png",
+   "evidence": "Sampled",
+   "note": "Switch on (Auto-correct spelling)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#37C759"
+  }
+ },
+ "switch.thumb": {
+  "dark": {
+   "args": [
+    670,
+    700,
+    30,
+    15
+   ],
+   "capture": "screenshots/dark/11-general-switches-on-popup-rows.png",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    670,
+    700,
+    30,
+    15
+   ],
+   "capture": "screenshots/light/11-general-switches-on-popup-rows.png",
+   "evidence": "Sampled",
+   "note": "Switch thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "text.bannerBody": {
+  "light": {
+   "args": [
+    76,
+    372,
+    300,
+    30
+   ],
+   "capture": "screenshots/light/06-chat-thread-blue-bubble-math.png",
+   "evidence": "Sampled (text)",
+   "note": "Banner body",
+   "op": "text",
+   "value": "#5E5E5E"
+  }
+ },
+ "text.bannerTitle": {
+  "light": {
+   "args": [
+    76,
+    335,
+    195,
+    35
+   ],
+   "capture": "screenshots/light/06-chat-thread-blue-bubble-math.png",
+   "evidence": "Sampled (text)",
+   "note": "Banner title",
+   "op": "text",
+   "value": "#0B0B0D"
+  }
+ },
+ "text.chevron": {
+  "dark": {
+   "args": [
+    700,
+    395,
+    30,
+    35
+   ],
+   "capture": "screenshots/dark/09-settings-grouped-popup-values.png",
+   "evidence": "Sampled (text)",
+   "note": "Disclosure chevron",
+   "op": "text",
+   "value": "#5A5A5E"
+  },
+  "light": {
+   "args": [
+    700,
+    395,
+    30,
+    35
+   ],
+   "capture": "screenshots/light/09-settings-grouped-popup-values.png",
+   "evidence": "Sampled (text)",
+   "note": "Disclosure chevron",
+   "op": "text",
+   "value": "#C4C4C6"
+  }
+ },
+ "text.danger": {
+  "dark": {
+   "args": [
+    390,
+    895,
+    110,
+    40
+   ],
+   "capture": "screenshots/dark/07-chat-menu-destructive-glass.png",
+   "evidence": "Sampled (text)",
+   "note": "'Delete' in the chat menu",
+   "op": "text",
+   "value": "#FD6264"
+  },
+  "light": {
+   "args": [
+    390,
+    895,
+    110,
+    40
+   ],
+   "capture": "screenshots/light/07-chat-menu-destructive-glass.png",
+   "evidence": "Sampled (text)",
+   "note": "'Delete' in the chat menu",
+   "op": "text",
+   "value": "#FC353B"
+  }
+ },
+ "text.dialogBody": {
+  "dark": {
+   "args": [
+    147,
+    865,
+    510,
+    35
+   ],
+   "capture": "screenshots/dark/12-error-dialog-cancel-retry.png",
+   "evidence": "Sampled (text)",
+   "note": "Alert body",
+   "op": "text",
+   "value": "#7D7D7F"
+  },
+  "light": {
+   "args": [
+    147,
+    865,
+    510,
+    35
+   ],
+   "capture": "screenshots/light/12-error-dialog-cancel-retry.png",
+   "evidence": "Sampled (text)",
+   "note": "Alert body",
+   "op": "text",
+   "value": "#828282"
+  }
+ },
+ "text.dialogTitle": {
+  "dark": {
+   "args": [
+    147,
+    808,
+    80,
+    40
+   ],
+   "capture": "screenshots/dark/12-error-dialog-cancel-retry.png",
+   "evidence": "Sampled (text)",
+   "note": "Alert title",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    147,
+    808,
+    80,
+    40
+   ],
+   "capture": "screenshots/light/12-error-dialog-cancel-retry.png",
+   "evidence": "Sampled (text)",
+   "note": "Alert title",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.emptyBody": {
+  "dark": {
+   "args": [
+    195,
+    625,
+    425,
+    35
+   ],
+   "capture": "screenshots/dark/19-search-no-results-empty-state.png",
+   "evidence": "Sampled (text)",
+   "note": "Empty-state body",
+   "op": "text",
+   "value": "#B0B0B0"
+  },
+  "light": {
+   "args": [
+    195,
+    625,
+    425,
+    35
+   ],
+   "capture": "screenshots/light/19-search-no-results-empty-state.png",
+   "evidence": "Sampled (text)",
+   "note": "Empty-state body",
+   "op": "text",
+   "value": "#8E8E8E"
+  }
+ },
+ "text.emptyLine": {
+  "dark": {
+   "args": [
+    280,
+    920,
+    255,
+    35
+   ],
+   "capture": "screenshots/dark/22-scheduled-paused-empty-tab-selected.png",
+   "evidence": "Sampled (text)",
+   "note": "One-line empty state ('No paused tasks')",
+   "op": "text",
+   "value": "#B0B0B0"
+  },
+  "light": {
+   "args": [
+    280,
+    920,
+    255,
+    35
+   ],
+   "capture": "screenshots/light/22-scheduled-paused-empty-tab-selected.png",
+   "evidence": "Sampled (text)",
+   "note": "One-line empty state ('No paused tasks')",
+   "op": "text",
+   "value": "#8E8E8E"
+  }
+ },
+ "text.emptyTitle": {
+  "dark": {
+   "args": [
+    330,
+    575,
+    155,
+    35
+   ],
+   "capture": "screenshots/dark/19-search-no-results-empty-state.png",
+   "evidence": "Sampled (text)",
+   "note": "Empty-state title ('No results')",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    330,
+    575,
+    155,
+    35
+   ],
+   "capture": "screenshots/light/19-search-no-results-empty-state.png",
+   "evidence": "Sampled (text)",
+   "note": "Empty-state title ('No results')",
+   "op": "text",
+   "value": "#0C0C0C"
+  }
+ },
+ "text.fieldPlaceholder": {
+  "dark": {
+   "args": [
+    80,
+    1275,
+    370,
+    40
+   ],
+   "capture": "screenshots/dark/13-personalization-popups-text-field-empty.png",
+   "evidence": "Sampled (text)",
+   "note": "Custom instructions placeholder",
+   "op": "text",
+   "value": "#AFAFB1"
+  },
+  "light": {
+   "args": [
+    80,
+    1275,
+    370,
+    40
+   ],
+   "capture": "screenshots/light/13-personalization-popups-text-field-empty.png",
+   "evidence": "Sampled (text)",
+   "note": "Custom instructions placeholder",
+   "op": "text",
+   "value": "#928E8F"
+  }
+ },
+ "text.findCount": {
+  "dark": {
+   "args": [
+    405,
+    200,
+    155,
+    35
+   ],
+   "capture": "screenshots/dark/08-find-in-chat-no-results.png",
+   "evidence": "Sampled (text)",
+   "note": "Find in chat result count ('No results')",
+   "op": "text",
+   "value": "#AFAFAF"
+  },
+  "light": {
+   "args": [
+    405,
+    200,
+    155,
+    35
+   ],
+   "capture": "screenshots/light/08-find-in-chat-no-results.png",
+   "evidence": "Sampled (text)",
+   "note": "Find in chat result count ('No results')",
+   "op": "text",
+   "value": "#8F8F8F"
+  }
+ },
+ "text.footnote": {
+  "dark": {
+   "args": [
+    88,
+    475,
+    600,
+    30
+   ],
+   "capture": "screenshots/dark/11-general-switches-on-popup-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Helper text under a card",
+   "op": "text",
+   "value": "#8D8C91"
+  },
+  "light": {
+   "args": [
+    88,
+    475,
+    600,
+    30
+   ],
+   "capture": "screenshots/light/11-general-switches-on-popup-rows.png",
+   "evidence": "Sampled (text)",
+   "note": "Helper text under a card",
+   "op": "text",
+   "value": "#86858C"
+  }
+ },
+ "text.menuHeader": {
+  "dark": {
+   "args": [
+    320,
+    195,
+    150,
+    30
+   ],
+   "capture": "screenshots/dark/07-chat-menu-destructive-glass.png",
+   "evidence": "Sampled (text)",
+   "note": "Chat menu header (chat title)",
+   "op": "text",
+   "value": "#7374B2"
+  },
+  "light": {
+   "args": [
+    320,
+    195,
+    150,
+    30
+   ],
+   "capture": "screenshots/light/07-chat-menu-destructive-glass.png",
+   "evidence": "Sampled (text)",
+   "note": "Chat menu header (chat title)",
+   "op": "text",
+   "value": "#8E9298"
+  }
+ },
+ "text.menuSelected": {
+  "dark": {
+   "args": [
+    190,
+    1600,
+    230,
+    45
+   ],
+   "capture": "screenshots/dark/04-plus-menu-selected-item.png",
+   "evidence": "Sampled (text)",
+   "note": "Selected plus-menu item ('Think harder'), accent-tinted",
+   "op": "text",
+   "value": "#AFC9FD"
+  },
+  "light": {
+   "args": [
+    190,
+    1600,
+    230,
+    45
+   ],
+   "capture": "screenshots/light/04-plus-menu-selected-item.png",
+   "evidence": "Sampled (text)",
+   "note": "Selected plus-menu item ('Think harder'), accent-tinted",
+   "op": "text",
+   "value": "#244FD9"
+  }
+ },
+ "text.modelEffort": {
+  "dark": {
+   "args": [
+    455,
+    1632,
+    110,
+    30
+   ],
+   "capture": "screenshots/dark/15-work-mode-suggestions-model-pill.png",
+   "evidence": "Sampled (text)",
+   "note": "Model pill, effort ('Medium')",
+   "op": "text",
+   "value": "#AFAEAF"
+  },
+  "light": {
+   "args": [
+    455,
+    1632,
+    110,
+    30
+   ],
+   "capture": "screenshots/light/15-work-mode-suggestions-model-pill.png",
+   "evidence": "Sampled (text)",
+   "note": "Model pill, effort ('Medium')",
+   "op": "text",
+   "value": "#8F8F8F"
+  }
+ },
+ "text.modelName": {
+  "dark": {
+   "args": [
+    355,
+    1632,
+    90,
+    30
+   ],
+   "capture": "screenshots/dark/15-work-mode-suggestions-model-pill.png",
+   "evidence": "Sampled (text)",
+   "note": "Model pill, model name",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    355,
+    1632,
+    90,
+    30
+   ],
+   "capture": "screenshots/light/15-work-mode-suggestions-model-pill.png",
+   "evidence": "Sampled (text)",
+   "note": "Model pill, model name",
+   "op": "text",
+   "value": "#0C0C0C"
+  }
+ },
+ "text.onUserBubble": {
+  "dark": {
+   "args": [
+    250,
+    445,
+    470,
+    40
+   ],
+   "capture": "screenshots/dark/06-chat-thread-blue-bubble-math.png",
+   "evidence": "Sampled (text)",
+   "note": "Text in the owner's bubble",
+   "op": "text",
+   "value": "#DCE6FF"
+  },
+  "light": {
+   "args": [
+    250,
+    445,
+    470,
+    40
+   ],
+   "capture": "screenshots/light/06-chat-thread-blue-bubble-math.png",
+   "evidence": "Sampled (text)",
+   "note": "Text in the owner's bubble",
+   "op": "text",
+   "value": "#1E4CD0"
+  }
+ },
+ "text.placeholder": {
+  "dark": {
+   "args": [
+    75,
+    1550,
+    200,
+    40
+   ],
+   "capture": "screenshots/dark/02-chat-mode-suggestions-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Composer placeholder",
+   "op": "text",
+   "value": "#838383"
+  },
+  "light": {
+   "args": [
+    75,
+    1550,
+    200,
+    40
+   ],
+   "capture": "screenshots/light/02-chat-mode-suggestions-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Composer placeholder",
+   "op": "text",
+   "value": "#8C8C8C"
+  }
+ },
+ "text.primary": {
+  "dark": {
+   "args": [
+    160,
+    395,
+    230,
+    40
+   ],
+   "capture": "screenshots/dark/09-settings-grouped-popup-values.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row label ('Personalization')",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    160,
+    395,
+    230,
+    40
+   ],
+   "capture": "screenshots/light/09-settings-grouped-popup-values.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row label ('Personalization')",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "text.sectionHeader": {
+  "dark": {
+   "args": [
+    88,
+    300,
+    320,
+    40
+   ],
+   "capture": "screenshots/dark/09-settings-grouped-popup-values.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings section header",
+   "op": "text",
+   "value": "#B0AFAF"
+  },
+  "light": {
+   "args": [
+    88,
+    300,
+    320,
+    40
+   ],
+   "capture": "screenshots/light/09-settings-grouped-popup-values.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings section header",
+   "op": "text",
+   "value": "#8D8D8D"
+  }
+ },
+ "text.seeAll": {
+  "dark": {
+   "args": [
+    80,
+    1455,
+    140,
+    40
+   ],
+   "capture": "screenshots/dark/05-sidebar-nav-recents-unread-dot.png",
+   "evidence": "Sampled (text)",
+   "note": "'See all...' under the recents",
+   "op": "text",
+   "value": "#AFAFAF"
+  },
+  "light": {
+   "args": [
+    80,
+    1455,
+    140,
+    40
+   ],
+   "capture": "screenshots/light/05-sidebar-nav-recents-unread-dot.png",
+   "evidence": "Sampled (text)",
+   "note": "'See all...' under the recents",
+   "op": "text",
+   "value": "#8E8E8E"
+  }
+ },
+ "text.suggestion": {
+  "dark": {
+   "args": [
+    135,
+    1235,
+    500,
+    40
+   ],
+   "capture": "screenshots/dark/02-chat-mode-suggestions-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Suggestion row above the composer",
+   "op": "text",
+   "value": "#CECECE"
+  },
+  "light": {
+   "args": [
+    135,
+    1235,
+    500,
+    40
+   ],
+   "capture": "screenshots/light/02-chat-mode-suggestions-composer.png",
+   "evidence": "Sampled (text)",
+   "note": "Suggestion row above the composer",
+   "op": "text",
+   "value": "#5C5C5C"
+  }
+ },
+ "text.tabUnselected": {
+  "dark": {
+   "args": [
+    258,
+    340,
+    115,
+    35
+   ],
+   "capture": "screenshots/dark/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected tab label ('Paused')",
+   "op": "text",
+   "value": "#AFAFAF"
+  },
+  "light": {
+   "args": [
+    258,
+    340,
+    115,
+    35
+   ],
+   "capture": "screenshots/light/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Sampled (text)",
+   "note": "Unselected tab label ('Paused')",
+   "op": "text",
+   "value": "#8E8E8E"
+  }
+ },
+ "text.taskBody": {
+  "dark": {
+   "args": [
+    168,
+    625,
+    520,
+    35
+   ],
+   "capture": "screenshots/dark/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Sampled (text)",
+   "note": "Task card description",
+   "op": "text",
+   "value": "#AEAEAE"
+  },
+  "light": {
+   "args": [
+    168,
+    625,
+    520,
+    35
+   ],
+   "capture": "screenshots/light/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Sampled (text)",
+   "note": "Task card description",
+   "op": "text",
+   "value": "#909090"
+  }
+ },
+ "text.thread": {
+  "dark": {
+   "args": [
+    50,
+    905,
+    240,
+    45
+   ],
+   "capture": "screenshots/dark/06-chat-thread-blue-bubble-math.png",
+   "evidence": "Sampled (text)",
+   "note": "Assistant reply text",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    50,
+    905,
+    240,
+    45
+   ],
+   "capture": "screenshots/light/06-chat-thread-blue-bubble-math.png",
+   "evidence": "Sampled (text)",
+   "note": "Assistant reply text",
+   "op": "text",
+   "value": "#0D0D0D"
+  }
+ },
+ "text.timestamp": {
+  "dark": {
+   "args": [
+    330,
+    300,
+    150,
+    30
+   ],
+   "capture": "screenshots/dark/08-find-in-chat-no-results.png",
+   "evidence": "Sampled (text)",
+   "note": "Thread date line ('Today 15:42')",
+   "op": "text",
+   "value": "#AFAFAF"
+  }
+ },
+ "text.value": {
+  "dark": {
+   "args": [
+    515,
+    1030,
+    210,
+    40
+   ],
+   "capture": "screenshots/dark/09-settings-grouped-popup-values.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row value ('Premium seat')",
+   "op": "text",
+   "value": "#9998A0"
+  },
+  "light": {
+   "args": [
+    515,
+    1030,
+    210,
+    40
+   ],
+   "capture": "screenshots/light/09-settings-grouped-popup-values.png",
+   "evidence": "Sampled (text)",
+   "note": "Settings row value ('Premium seat')",
+   "op": "text",
+   "value": "#89898B"
+  }
+ },
+ "type.body": {
+  "dark": {
+   "args": [
+    160,
+    395,
+    183,
+    435
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/09-settings-grouped-popup-values.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'P' of a settings row",
+   "op": "cap",
+   "top": 399,
+   "value": "17pt"
+  }
+ },
+ "type.cardBody": {
+  "dark": {
+   "args": [
+    170,
+    872,
+    187,
+    902
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/dark/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'E' of a task-card description",
+   "op": "cap",
+   "top": 876,
+   "value": "12pt"
+  }
+ },
+ "type.cardTitle": {
+  "dark": {
+   "args": [
+    170,
+    585,
+    200,
+    617
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'M' of a task-card title",
+   "op": "cap",
+   "top": 586,
+   "value": "17pt"
+  }
+ },
+ "type.composer": {
+  "dark": {
+   "args": [
+    74,
+    1550,
+    100,
+    1590
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/02-chat-mode-suggestions-composer.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'A' of the composer placeholder",
+   "op": "cap",
+   "top": 1554,
+   "value": "17pt"
+  }
+ },
+ "type.dialogBody": {
+  "dark": {
+   "args": [
+    147,
+    903,
+    166,
+    935
+   ],
+   "capHeight": "10pt",
+   "capture": "screenshots/dark/12-error-dialog-cancel-retry.png",
+   "evidence": "Derived",
+   "inkPx": 21,
+   "note": "'P' of the alert body",
+   "op": "cap",
+   "top": 908,
+   "value": "14pt"
+  }
+ },
+ "type.dialogButton": {
+  "dark": {
+   "args": [
+    513,
+    1010,
+    533,
+    1045
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/12-error-dialog-cancel-retry.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'R' of 'Retry'",
+   "op": "cap",
+   "top": 1013,
+   "value": "17pt"
+  }
+ },
+ "type.dialogTitle": {
+  "dark": {
+   "args": [
+    148,
+    810,
+    170,
+    845
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/12-error-dialog-cancel-retry.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'E' of the alert title",
+   "op": "cap",
+   "top": 813,
+   "value": "17pt"
+  }
+ },
+ "type.emptyBody": {
+  "dark": {
+   "args": [
+    195,
+    625,
+    217,
+    656
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/19-search-no-results-empty-state.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'Y' of an empty-state body",
+   "op": "cap",
+   "top": 627,
+   "value": "15pt"
+  }
+ },
+ "type.emptyTitle": {
+  "dark": {
+   "args": [
+    330,
+    575,
+    352,
+    608
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/19-search-no-results-empty-state.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'N' of an empty-state title",
+   "op": "cap",
+   "top": 578,
+   "value": "17pt"
+  }
+ },
+ "type.footnote": {
+  "dark": {
+   "args": [
+    88,
+    470,
+    115,
+    505
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/dark/13-personalization-popups-text-field-empty.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'M' of helper text",
+   "op": "cap",
+   "top": 474,
+   "value": "12pt"
+  }
+ },
+ "type.menuHeader": {
+  "dark": {
+   "args": [
+    320,
+    198,
+    338,
+    226
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/07-chat-menu-destructive-glass.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'T' of the chat-menu header",
+   "op": "cap",
+   "top": 200,
+   "value": "17pt"
+  }
+ },
+ "type.menuItem": {
+  "dark": {
+   "args": [
+    393,
+    393,
+    411,
+    428
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/07-chat-menu-destructive-glass.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'P' of a chat-menu item",
+   "op": "cap",
+   "top": 396,
+   "value": "17pt"
+  }
+ },
+ "type.navTitle": {
+  "dark": {
+   "args": [
+    285,
+    195,
+    308,
+    240
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/13-personalization-popups-text-field-empty.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'P' of a nav title ('Personalization')",
+   "op": "cap",
+   "top": 202,
+   "value": "17pt"
+  }
+ },
+ "type.pillButton": {
+  "dark": {
+   "args": [
+    546,
+    1622,
+    570,
+    1656
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'N' of 'New task'",
+   "op": "cap",
+   "top": 1626,
+   "value": "17pt"
+  }
+ },
+ "type.plusItem": {
+  "dark": {
+   "args": [
+    193,
+    1332,
+    212,
+    1368
+   ],
+   "capHeight": "14.5pt",
+   "capture": "screenshots/dark/04-plus-menu-selected-item.png",
+   "evidence": "Derived",
+   "inkPx": 30,
+   "note": "'F' of a plus-menu item",
+   "op": "cap",
+   "top": 1333,
+   "value": "20pt"
+  }
+ },
+ "type.recent": {
+  "dark": {
+   "args": [
+    80,
+    975,
+    104,
+    1012
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/05-sidebar-nav-recents-unread-dot.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'T' of a recent chat",
+   "op": "cap",
+   "top": 980,
+   "value": "17pt"
+  }
+ },
+ "type.sectionHeader": {
+  "dark": {
+   "args": [
+    88,
+    1262,
+    112,
+    1300
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/09-settings-grouped-popup-values.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'T' of a section header ('Theme')",
+   "op": "cap",
+   "top": 1265,
+   "value": "17pt"
+  }
+ },
+ "type.segment": {
+  "dark": {
+   "args": [
+    450,
+    200,
+    486,
+    235
+   ],
+   "capHeight": "10.5pt",
+   "capture": "screenshots/dark/02-chat-mode-suggestions-composer.png",
+   "evidence": "Derived",
+   "inkPx": 22,
+   "note": "'W' of a segment label",
+   "op": "cap",
+   "top": 204,
+   "value": "15pt"
+  }
+ },
+ "type.sidebarItem": {
+  "dark": {
+   "args": [
+    153,
+    303,
+    178,
+    338
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/05-sidebar-nav-recents-unread-dot.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'Y' of a sidebar item",
+   "op": "cap",
+   "top": 306,
+   "value": "17pt"
+  }
+ },
+ "type.sidebarTitle": {
+  "dark": {
+   "args": [
+    232,
+    195,
+    264,
+    240
+   ],
+   "capHeight": "15.5pt",
+   "capture": "screenshots/dark/05-sidebar-nav-recents-unread-dot.png",
+   "evidence": "Derived",
+   "inkPx": 32,
+   "note": "'T' of the sidebar title ('ChatGPT')",
+   "op": "cap",
+   "top": 198,
+   "value": "22pt"
+  }
+ },
+ "type.suggestion": {
+  "dark": {
+   "args": [
+    135,
+    1235,
+    160,
+    1275
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/02-chat-mode-suggestions-composer.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'S' of a suggestion",
+   "op": "cap",
+   "top": 1240,
+   "value": "17pt"
+  }
+ },
+ "type.tab": {
+  "dark": {
+   "args": [
+    82,
+    340,
+    110,
+    372
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/21-scheduled-tabs-cards-primary-pill.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'A' of a tab label",
+   "op": "cap",
+   "top": 342,
+   "value": "17pt"
+  }
+ },
+ "type.thread": {
+  "dark": {
+   "args": [
+    50,
+    908,
+    76,
+    950
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/06-chat-thread-blue-bubble-math.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'A' of reply text",
+   "op": "cap",
+   "top": 914,
+   "value": "17pt"
+  }
+ },
+ "type.threadBold": {
+  "dark": {
+   "args": [
+    50,
+    1308,
+    74,
+    1345
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/06-chat-thread-blue-bubble-math.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'K' of bold reply text",
+   "op": "cap",
+   "top": 1312,
+   "value": "17pt"
+  }
+ },
+ "type.timestamp": {
+  "dark": {
+   "args": [
+    330,
+    302,
+    349,
+    330
+   ],
+   "capHeight": "9pt",
+   "capture": "screenshots/dark/08-find-in-chat-no-results.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'T' of the thread date line",
+   "op": "cap",
+   "top": 304,
+   "value": "12pt"
+  }
+ },
+ "type.usageFoot": {
+  "dark": {
+   "args": [
+    89,
+    506,
+    104,
+    533
+   ],
+   "capHeight": "8.5pt",
+   "capture": "screenshots/dark/14-usage-progress-bar.png",
+   "evidence": "Derived",
+   "inkPx": 18,
+   "note": "'R' of 'Resets'",
+   "op": "cap",
+   "top": 510,
+   "value": "12pt"
+  }
+ },
+ "type.usageRow": {
+  "dark": {
+   "args": [
+    89,
+    413,
+    126,
+    447
+   ],
+   "capHeight": "12pt",
+   "capture": "screenshots/dark/14-usage-progress-bar.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'W' of a usage row",
+   "op": "cap",
+   "top": 416,
+   "value": "17pt"
+  }
+ },
+ "type.userBubble": {
+  "dark": {
+   "args": [
+    257,
+    410,
+    292,
+    445
+   ],
+   "capHeight": "12.5pt",
+   "capture": "screenshots/dark/08-find-in-chat-no-results.png",
+   "evidence": "Derived",
+   "inkPx": 26,
+   "note": "'W' of bubble text",
+   "op": "cap",
+   "top": 412,
+   "value": "17pt"
+  }
+ }
+}
