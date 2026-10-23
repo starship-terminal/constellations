@@ -210,7 +210,8 @@ Checklist item: sheet. Glass sheets rise from the bottom, inset 8 pt from the si
 | item type | `typography.sheetItem` |
 | header type | `typography.sheetHeader` |
 | selected item | `color.text.accentOnSheet` |
-| backdrop | `color.bg.scrim` |
+| sort backdrop | `color.bg.scrim` |
+| context backdrop | `color.bg.scrimContext` |
 
 Crops: [sort (dark)](components/crops/sheet-sort.png), [artist context (dark)](components/crops/sheet-context-artist.png), [track context (dark)](components/crops/sheet-context-track.png).
 
@@ -244,7 +245,8 @@ Checklist item: radio or segmented control. Two segments in a glass capsule; the
 | selected | `color.segmented.selectedBg` |
 | selected label | `color.segmented.selectedText` |
 | label | `color.segmented.text` |
-| type | `typography.body` |
+| label type | `typography.body` |
+| selected label type | `typography.bodyBold` |
 
 Crops: [Song selected (dark)](components/crops/segmented-song-selected.png).
 
@@ -408,7 +410,8 @@ Checklist item: badge. A plan badge (Family, lavender), a green 'Beta' tag, a bl
 | plan height | `size.badge` |
 | dot | `color.accent.dot` |
 | dot size | `size.dot` |
-| type | `typography.label` |
+| plan type | `typography.label` |
+| Beta type | `typography.tag` |
 
 Crops: [plan (dark)](components/crops/badge-plan.png), [Beta (dark)](components/crops/badge-beta.png), [unread dot (dark)](components/crops/badge-unread-dot.png), [verified (dark)](components/crops/badge-verified.png).
 

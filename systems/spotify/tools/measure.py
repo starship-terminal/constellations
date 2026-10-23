@@ -156,7 +156,7 @@ R = {
     "size.artSearch2":    ("09-search-results-rows", "extent", ("col", 60, 400, 525, (60, 400), 12), "Search result artwork, second row"),
     "size.navButton.w":   ("20-settings", "extent", ("row", 214, 30, 150, (30, 214), 12), "Round glass back button, width"),
     "size.navButton.h":   ("20-settings", "extent", ("col", 92, 150, 275, (92, 150), 12), "Round glass back button, height"),
-    "size.settingsTile":  ("20-settings", "bbox", ((60, 305), (30, 280, 270, 170), 3), "Settings quick tile"),
+    "size.settingsTile":  ("20-settings", "bbox", ((60, 305), (30, 280, 255, 170), 3), "Settings quick tile (the window stops before the second tile)"),
     "size.switch":        ("21-settings-playback-switches-slider", "bbox", ((655, 460), (620, 420, 170, 100), 14), "Switch track"),
     "size.switchThumb":   ("21-settings-playback-switches-slider", "bbox", ((720, 465), (680, 430, 100, 80), 30), "Switch thumb"),
     "size.sliderTrack":   ("21-settings-playback-switches-slider", "extent", ("col", 500, 850, 880, (500, 850), 20), "Slider track thickness"),

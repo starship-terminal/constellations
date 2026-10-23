@@ -204,12 +204,13 @@ def core():
         "sectionTitle": ty("type.sectionTitle", "bold", None, "Home and search section titles, 'Recent searches', 'Popular', the drawer's 'Messages'.", ("type.sectionTitle2", "type.drawerSection")),
         "navTitle": ty("type.navTitle", "bold", None, "Centred title of a pushed page (Settings, Playback)."),
         "body": ty("type.rowTitle", "regular", None, "Row titles, settings rows, drawer rows, the search placeholder, segment labels.", ("type.settingsRow", "type.settingsRow3", "type.searchPlaceholder", "type.drawerRow", "type.segmented")),
-        "bodyBold": ty("type.tab", "bold", lines("lines.category"), "The selected artist-page tab and browse tile titles.", ("type.category",)),
+        "bodyBold": ty("type.tab", "bold", lines("lines.category"), "The selected artist-page tab, browse tile titles and the selected segment's label.", ("type.category",)),
         "sheetItem": ty("type.sheetItem", "regular", None, "Items in context and sort sheets.", ("type.sortItem",)),
         "subtitle": ty("type.subtitle", "regular", lines("lines.settingsSubtitle"), "Row subtitles, chip labels, setting descriptions, the promo card eyebrow, the mini player's lines, the notification card.", ("type.chip", "type.eyebrow", "type.miniPlayer")),
         "label": ty("type.tileTitle", "bold", lines("lines.tileTitle"), "Shortcut tile titles, pill labels (Pre-save, Following), the promo card title, the plan badge.", ("type.button", "type.buttonOutline", "type.cardTitle", "type.badgeFamily")),
         "sheetHeader": ty("type.sheetHeader", "regular", None, "A sheet's small header ('Sort by')."),
-        "caption": ty("type.settingsTile", "regular", None, "Settings quick tile labels and the 'Beta' tag (bold).", ("type.badge",)),
+        "caption": ty("type.settingsTile", "regular", None, "Settings quick tile labels."),
+        "tag": ty("type.badge", "bold", None, "The 'Beta' tag in a sheet item."),
         "tabLabel": ty("type.tabLabel", "regular", None, "Tab bar labels under the icons."),
     }
     c["$extensions"] = {"notTokenised": [

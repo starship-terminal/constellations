@@ -130,6 +130,10 @@ typography:
     fontFamily: "system"
     fontSize: "11px"
     fontWeight: 400
+  tag:
+    fontFamily: "system"
+    fontSize: "11px"
+    fontWeight: 700
   tabLabel:
     fontFamily: "system"
     fontSize: "10px"
@@ -181,7 +185,7 @@ The roles below are the catalog's swatches for the `dark` theme. The front matte
 
 ## Typography
 
-12 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: system.
+13 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: system.
 
 ### Fonts (from README.md)
 
@@ -189,7 +193,7 @@ The roles below are the catalog's swatches for the `dark` theme. The front matte
 |---|---|
 | Unknown (Spotify's own geometric sans) | Everything. The style guide uses the platform sans; nothing is committed or needed |
 
-Type roles, in points: the artist's name over its header photo 47 bold; page titles 24 bold; section titles 20 bold; nav titles 16 bold; row titles, settings rows, the search placeholder and segment labels 16 (17 in two readings); the selected artist tab and browse tile titles 16 bold; sheet items 15; subtitles, chip labels and the mini player 13; tile titles and pill labels 13 bold; the sort sheet's header 12; settings tile labels and the Beta tag 11; tab bar labels 10. Subtitles run on an 18 pt line, tile titles on 17.5 pt, browse tile titles on 22.5 pt.
+Type roles, in points: the artist's name over its header photo 47 bold; page titles 24 bold; section titles 20 bold; nav titles 16 bold; row titles, settings rows, the search placeholder and segment labels 16 (17 in two readings); the selected artist tab, browse tile titles and the selected segment 16 bold; sheet items 15; subtitles, chip labels and the mini player 13; tile titles and pill labels 13 bold; the sort sheet's header 12; settings tile labels 11 and the Beta tag 11 bold; tab bar labels 10. Subtitles run on an 18 pt line, tile titles on 17.5 pt, browse tile titles on 22.5 pt.
 
 ## Layout
 

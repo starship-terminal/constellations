@@ -111,7 +111,7 @@ def build():
     sample = {  # PRODUCT (adapt): specimen text per type style
         "display": "Artist Name", "pageTitle": "Your Library", "sectionTitle": "Recently played", "navTitle": "Playback",
         "body": "What do you want to listen to?", "bodyBold": "Music", "sheetItem": "Add to queue", "subtitle": "Playlist • 12 songs",
-        "label": "Liked Songs", "sheetHeader": "Sort by", "caption": "Offline mode", "tabLabel": "Home"}
+        "label": "Liked Songs", "sheetHeader": "Sort by", "caption": "Offline mode", "tag": "Beta", "tabLabel": "Home"}
     type_rows = "".join('<tr><th scope="row"><code>%s</code><span class="desc">%s</span></th><td class="meta">%s, %s%s</td>'
                         '<td><span class="type-%s">%s</span></td></tr>'
                         % (esc(".".join(p)), esc(t["$description"]), esc(t["$value"]["fontSize"]), esc(t["$value"]["fontWeight"]),
@@ -164,8 +164,8 @@ def build():
   <p class="type-display disp">Artist</p>
   <div class="acts"><span class="pillo type-label">Following</span><span class="sec">&#8943;</span><span class="play">&#9654;</span></div>
   <div class="ptabs"><span class="type-bodyBold on">Music</span><span class="type-bodyBold">Video</span><span class="type-bodyBold">Events</span></div>
-  <div class="seg"><span class="segs type-body">Song</span><span class="type-body">Lyrics</span></div>
-  <div class="sheet"><i class="grab"></i><p class="type-sheetHeader sh">Sort by</p><p class="type-sheetItem selo">Recents <span>&#10003;</span></p><p class="type-sheetItem">Recently added</p><p class="type-sheetItem">Alphabetical <span class="beta type-caption">Beta</span></p></div>
+  <div class="seg"><span class="segs type-bodyBold">Song</span><span class="type-body">Lyrics</span></div>
+  <div class="sheet"><i class="grab"></i><p class="type-sheetHeader sh">Sort by</p><p class="type-sheetItem selo">Recents <span>&#10003;</span></p><p class="type-sheetItem">Recently added</p><p class="type-sheetItem">Alphabetical <span class="beta type-tag">Beta</span></p></div>
   <p class="note">typography.display, button.outline, button.primary, tab.indicator, segmented.*, surface.sheetSort, radius.sheet, text.accentOnSheet, badge.beta</p>
  </div>
 </div>
@@ -250,12 +250,12 @@ table.tokens th[scope=row]{font-weight:500;width:55%}
 .ptabs{display:flex;gap:var(--space-xl);margin:var(--space-lg) 0;color:var(--color-tab-unselected)}
 .ptabs .on{color:var(--color-tab-selected);border-bottom:var(--size-tabIndicator) solid var(--color-tab-indicator);padding-bottom:4px}
 .seg{display:inline-flex;align-items:center;height:var(--size-segmented);border-radius:var(--radius-capsule);background:var(--color-segmented-track);color:var(--color-segmented-text);padding-right:16px;gap:16px}
-.segs{display:inline-flex;align-items:center;height:100%;padding:0 18px;border-radius:var(--radius-capsule);background:var(--color-segmented-selectedBg);color:var(--color-segmented-selectedText);font-weight:700}
+.segs{display:inline-flex;align-items:center;height:100%;padding:0 18px;border-radius:var(--radius-capsule);background:var(--color-segmented-selectedBg);color:var(--color-segmented-selectedText)}
 .sheet{margin-top:var(--space-lg);background:var(--color-surface-sheetSort);border-radius:var(--radius-sheet) var(--radius-sheet) var(--radius-md) var(--radius-md);padding:8px 24px 16px}
 .sheet p{margin:10px 0}.sh{color:var(--color-text-sheetHeader)}
 .grab{display:block;margin:0 auto;width:var(--size-grabber-width);height:var(--size-grabber-height);border-radius:var(--radius-capsule);background:var(--color-border-grabber)}
 .selo{color:var(--color-text-accentOnSheet);display:flex;justify-content:space-between}
-.beta{margin-left:8px;padding:1px 6px;border-radius:4px;background:var(--color-badge-beta);color:var(--color-text-onBadge);font-weight:700}
+.beta{margin-left:8px;padding:1px 6px;border-radius:4px;background:var(--color-badge-beta);color:var(--color-text-onBadge)}
 footer{margin-top:48px;color:var(--color-text-secondary);font-size:12px}
 """.strip()
 

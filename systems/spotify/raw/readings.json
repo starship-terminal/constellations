@@ -1775,7 +1775,7 @@
     [
      30,
      280,
-     270,
+     255,
      170
     ],
     3
@@ -1783,15 +1783,15 @@
    "box": [
     40,
     294,
-    299,
+    272,
     434
    ],
    "capture": "screenshots/dark/20-settings.png",
    "colour": "#1F1F1F",
    "evidence": "Sampled",
-   "note": "Settings quick tile",
+   "note": "Settings quick tile (the window stops before the second tile)",
    "op": "bbox",
-   "value": "130x70.5pt"
+   "value": "116.5x70.5pt"
   }
  },
  "size.shareTarget": {
