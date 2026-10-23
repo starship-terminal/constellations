@@ -2676,6 +2676,36 @@
    "value": "#F0F0F0"
   }
  },
+ "surface.chipSelected": {
+  "dark": {
+   "args": [
+    60,
+    310,
+    15,
+    10
+   ],
+   "capture": "screenshots/dark/08-search-focused-chips-trending.png",
+   "evidence": "Sampled",
+   "note": "Selected topic chip ('Suggested') fill",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    60,
+    310,
+    15,
+    10
+   ],
+   "capture": "screenshots/light/08-search-focused-chips-trending.png",
+   "evidence": "Sampled",
+   "note": "Selected topic chip ('Suggested') fill",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#171719"
+  }
+ },
  "surface.glass": {
   "dark": {
    "args": [
@@ -3180,6 +3210,36 @@
    "note": "Tick on the chosen row of a checklist (Default tab: Home)",
    "op": "text",
    "value": "#0277FE"
+  }
+ },
+ "text.chipSelected": {
+  "dark": {
+   "args": [
+    70,
+    312,
+    140,
+    35,
+    "inverse"
+   ],
+   "capture": "screenshots/dark/08-search-focused-chips-trending.png",
+   "evidence": "Sampled (text)",
+   "note": "Label on the selected topic chip",
+   "op": "text",
+   "value": "#363636"
+  },
+  "light": {
+   "args": [
+    70,
+    312,
+    140,
+    35,
+    "inverse"
+   ],
+   "capture": "screenshots/light/08-search-focused-chips-trending.png",
+   "evidence": "Sampled (text)",
+   "note": "Label on the selected topic chip",
+   "op": "text",
+   "value": "#EFEFEF"
   }
  },
  "text.danger": {

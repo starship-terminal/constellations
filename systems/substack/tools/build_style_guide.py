@@ -148,9 +148,9 @@ def build():
    <hr class="div">
    <p class="type-reader rd">Get my system design playbook for free on newsletter signup:</p>
    <button class="pub type-headline" type="button">Subscribe</button>
-   <div class="fab">+</div>
+   <div class="abar glass type-headline"><span>&#9825; 645</span><span>&#9633; 9</span><span>&#8635; 90</span><span>&#8679;</span></div>
   </div>
-  <p class="note">typography.kicker / postTitle / postSubtitle / reader, accent.publication / publicationGlass, radius.publicationButton, accent.brandFab, size.fab</p>
+  <p class="note">typography.kicker / postTitle / postSubtitle / reader, accent.publication / publicationGlass, radius.publicationButton, surface.glass (floating action bar)</p>
  </div>
  <div class="spec">
   <h3>Grouped settings</h3>
@@ -172,10 +172,10 @@ def build():
   <div class="row-btns"><button class="btn brand type-headline" type="button">Share</button><button class="btn sec2 type-headline" type="button">Edit</button></div>
   <div class="banner"><div class="type-headline">&#9888; Notifications are off</div><div class="type-footnote ter">Turn on so you don't miss a message</div>
    <div class="row-btns"><button class="bb sec2 type-headline" type="button">Later</button><button class="bb brand type-headline" type="button">Turn on</button></div></div>
-  <div class="row-btns"><span class="small brand type-headline">Subscribe back</span><span class="chip on type-subheadline">Suggested</span><span class="chip type-subheadline">Technology</span></div>
+  <div class="row-btns"><span class="small brand type-headline">Subscribe back</span><span class="chip on type-subheadline">Suggested</span><span class="chip type-subheadline">Technology</span><span class="fab">+</span></div>
   <div class="row-btns"><span class="opt on type-reader">New York</span><span class="opt type-reader">Messina</span></div>
   <div class="sheet"><div class="type-headline">Options</div><hr class="div sh"><div class="type-headline mi">Search in post</div><div class="type-headline mi">Archive</div><hr class="div sh"><div class="type-headline mi danger">Report</div></div>
-  <p class="note">accent.brand, accent.brandShare, surface.secondary, surface.banner, radius.button / small / option / sheet, surface.optionSelected, control.optionRim, border.option, surface.sheet, border.sheet</p>
+  <p class="note">accent.brand, accent.brandShare, surface.secondary, surface.banner, radius.button / small / option / sheet, surface.optionSelected, control.optionRim, border.option, surface.chipSelected, accent.brandFab, size.fab, surface.sheet, border.sheet</p>
  </div>
 </div>
 """
@@ -235,7 +235,8 @@ table.tokens th[scope=row]{font-weight:500;width:40%}
 .sec{color:var(--color-text-secondary)}.ter{color:var(--color-text-tertiary)}.danger{color:var(--color-text-danger)}.rd{color:var(--color-text-reader)}
 .div{border:0;border-top:var(--border-width-hairline) solid var(--color-border-divider);margin:16px 0}.div.sh{border-top-color:var(--color-border-sheet);margin:10px 0}
 .pub{display:block;margin:12px auto;height:var(--size-buttonPublication);padding:0 22px;border:0;border-radius:var(--radius-publicationButton);background:var(--color-accent-publication);color:var(--color-text-onPublication)}
-.fab{position:absolute;right:16px;bottom:16px;width:var(--size-fab);height:var(--size-fab);border-radius:50%;background:var(--color-accent-brandFab);color:var(--color-text-onBrand);display:flex;align-items:center;justify-content:center;font-size:30px}
+.abar{display:flex;justify-content:space-around;margin-top:16px;height:var(--size-navButton);border-radius:var(--radius-capsule);padding:0 12px}
+.fab{width:var(--size-fab);height:var(--size-fab);border-radius:50%;background:var(--color-accent-brandFab);color:var(--color-text-onBrand);display:flex;align-items:center;justify-content:center;font-size:30px}
 .grp{background:var(--color-bg-grouped);border-radius:var(--radius-sheet);padding:16px;max-width:390px}
 .card{background:var(--color-surface-card);border-radius:var(--radius-card);overflow:hidden;margin-bottom:var(--space-lg)}
 .srow{display:flex;align-items:center;gap:var(--space-md);min-height:var(--size-row);padding:0 16px;border-bottom:var(--border-width-hairline) solid var(--color-border-grouped)}.srow:last-child{border-bottom:0}.srow.c{justify-content:center}.grow{flex:1}
@@ -255,7 +256,7 @@ table.tokens th[scope=row]{font-weight:500;width:40%}
 .bb{flex:1;height:var(--size-buttonBanner);border:0;border-radius:var(--radius-button);font-family:var(--font-base)}
 .small{height:var(--size-buttonSmall);padding:0 12px;border-radius:var(--radius-small);display:inline-flex;align-items:center}
 .chip{height:var(--size-chip);padding:0 14px;border-radius:var(--radius-capsule);border:var(--border-width-hairline) solid var(--color-border-raised);background:var(--color-surface-tile);display:inline-flex;align-items:center}
-.chip.on{background:var(--color-text-primary);color:var(--color-bg-page)}
+.chip.on{background:var(--color-surface-chipSelected);color:var(--color-text-chipSelected);border-color:var(--color-surface-chipSelected)}
 .opt{height:var(--size-option);padding:0 20px;border-radius:var(--radius-option);border:var(--border-width-option) solid var(--color-border-option);color:var(--color-text-tertiary);display:inline-flex;align-items:center}
 .opt.on{border:var(--border-width-optionSelected) solid var(--color-control-optionRim);background:var(--color-surface-optionSelected);color:var(--color-text-selected)}
 .sheet{margin-top:14px;background:var(--color-surface-sheet);border-radius:var(--radius-sheet) var(--radius-sheet) 0 0;padding:20px;max-width:358px}

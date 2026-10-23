@@ -61,7 +61,7 @@ Checklist item: link. Blue text set alone in a grouped card (Restore in-app purc
 | colour | `color.text.link` |
 | type | `typography.link` |
 
-Crops: [in a card (dark)](components/crops/button-link-restore.png), [in a card (light)](components/crops/button-link-restore-light.png), [inline (dark)](components/crops/empty-state-payments.png), [inline (light)](components/crops/empty-state-payments-light.png).
+Crops: [in a card (dark)](components/crops/button-link-restore.png), [in a card (light)](components/crops/button-link-restore-light.png), [inline (dark)](components/crops/link-inline-learn-more.png), [inline (light)](components/crops/link-inline-learn-more-light.png).
 
 ## Destructive button
 
@@ -85,9 +85,10 @@ Checklist item: icon button. Round glass buttons for back, close and more; the o
 |---|---|
 | size | `size.navButton` |
 | fill | `color.surface.glass` |
+| glyph | `color.text.primary` |
 | compose size | `size.fab` |
 | compose fill | `color.accent.brandFab` |
-| glyph | `color.text.onBrand` |
+| compose glyph | `color.text.onBrand` |
 
 Crops: [back (dark)](components/crops/icon-button-back.png), [back (light)](components/crops/icon-button-back-light.png), [compose (dark)](components/crops/fab-compose.png), [compose (light)](components/crops/fab-compose-light.png).
 
@@ -160,6 +161,8 @@ Checklist item: chip. Topic chips under search: the selected one is filled with 
 | height | `size.chip` |
 | fill | `color.surface.tile` |
 | rim | `color.border.raised` |
+| selected fill | `color.surface.chipSelected` |
+| selected label | `color.text.chipSelected` |
 | type | `typography.subheadline` |
 | corner | `radius.capsule` |
 

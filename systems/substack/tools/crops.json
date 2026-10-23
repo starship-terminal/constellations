@@ -13,6 +13,7 @@
   {"name": "button-subscribe-back", "capture": "12-activity-feed-primary-secondary-buttons", "box": [520, 385, 260, 85], "themes": ["dark", "light"]},
   {"name": "button-outline-message", "capture": "12-activity-feed-primary-secondary-buttons", "box": [600, 815, 180, 85], "themes": ["dark", "light"]},
   {"name": "button-link-restore", "capture": "15-payments-empty-state-link-button", "box": [40, 875, 735, 115], "themes": ["dark", "light"]},
+  {"name": "link-inline-learn-more", "capture": "15-payments-empty-state-link-button", "box": [40, 505, 735, 115], "themes": ["dark", "light"]},
   {"name": "button-danger-disable-all", "capture": "16-notification-checkbox-grid-destructive-button", "box": [40, 1170, 735, 115], "themes": ["dark", "light"]},
   {"name": "search-field-focused", "capture": "08-search-focused-chips-trending", "box": [140, 160, 640, 110], "themes": ["dark", "light"]},
   {"name": "search-field-typed", "capture": "09-search-typed-highlighted-results", "box": [140, 160, 640, 110], "themes": ["dark", "light"]},

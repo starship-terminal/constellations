@@ -85,6 +85,8 @@ R = {
     "surface.tabBar":     (SAVED, "fill", (100, 1700, 20, 10), "Floating tab bar (glass)"),
     "surface.tabBarSelected": (SAVED, "fill", (210, 1620, 20, 10), "Selected item's pill inside the tab bar"),
     "surface.tabSelected": (READ, "fill", (55, 340, 10, 10), "Selected top tab pill ('For you', glass)"),
+    "surface.chipSelected": (SFOC, "fill", (60, 310, 15, 10), "Selected topic chip ('Suggested') fill"),
+    "text.chipSelected":  (SFOC, "text", (70, 312, 140, 35, "inverse"), "Label on the selected topic chip"),
     "surface.optionSelected": (DISP, "fill", (320, 1640, 20, 8), "Selected option button ('Default') fill"),
     "surface.highlight":  (STYP, "fill", (340, 815, 6, 6), "Highlight behind the matched word in a search result"),
     "surface.promptButton": ("dark/" + PRE, "fill", (80, 1600, 30, 10), "'Enable notifications' button (orange tint)"),
