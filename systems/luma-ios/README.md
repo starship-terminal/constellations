@@ -18,7 +18,7 @@ This package contains no Luma code, and none of its artwork has been redrawn. Th
 | [components/crops/](components/crops) | 124 element crops, `{component}-{state}.png` and `-light.png`, cut from the screenshots by `tools/crops.py` |
 | [screenshots/](screenshots) | `dark/` (33) and `light/` (33) captures, `01-home-...png` to `33-your-events-filter-menu-icons.png`, quantised to 256 colours with alpha |
 | [raw/](raw) | `readings.json`: every value read from the full-colour captures, with its file, box, method and evidence label. `luma-ios-measured.md`: the same as tables |
-| [tools/](tools) | `measure.py` (readings), `build_tokens.py`, `build_style_guide.py`, `build_components_md.py`, `crops.py` with `crops.json`, `test_build_tokens.py`, and `capture/` (`native/shot.sh`, `native/sample.py`, `native/winid.swift`, `quantize.py`) |
+| [tools/](tools) | `measure.py` (readings), `build_tokens.py`, `build_style_guide.py`, `build_components_md.py`, `crops.py` with `crops.json`, `test_build_tokens.py`, `test_measure.py` (the `mean` op and per-theme entries), and `capture/` (`native/shot.sh`, `native/sample.py`, `native/winid.swift`, `quantize.py`) |
 
 ## Brief
 
