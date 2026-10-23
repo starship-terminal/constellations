@@ -871,69 +871,6 @@
       "layoutGaps": {
         "icons/": "Grok Bot's icons and bot characters are its artwork and are not kept here (docs/RIGHTS.md)"
       }
-    },
-    {
-      "slug": "gemini",
-      "name": "Gemini",
-      "url": "https://gemini.google.com",
-      "category": "ai-chat",
-      "platform": "mobile",
-      "goodFor": "Native iOS AI assistant: a near-empty black or off-white page with a glow behind a floating glass composer, glass circles for navigation, the owner's messages in bubbles and replies as plain text, rimless grouped settings cards, Material primary blue for filled actions",
-      "tags": [
-        "ios",
-        "mobile",
-        "ai",
-        "chat",
-        "assistant",
-        "glass",
-        "gradient",
-        "sidebar",
-        "grouped-list",
-        "material"
-      ],
-      "shape": "reference",
-      "captured": "2026-10-24",
-      "access": "signed in, Google AI Pro, iPhone Mirroring",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        390
-      ],
-      "entry": "systems/gemini/README.md",
-      "tokens": "systems/gemini/tokens.json",
-      "styleGuide": "systems/gemini/style-guide.html",
-      "preview": {
-        "cover": "systems/gemini/screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
-        "swatches": {
-          "light": {
-            "page": "light.color.bg.page",
-            "surface": "light.color.surface.card",
-            "text": "light.color.text.primary",
-            "muted": "light.color.text.secondary",
-            "accent": "light.color.accent.primary",
-            "border": "light.color.border.divider"
-          },
-          "dark": {
-            "page": "dark.color.bg.page",
-            "surface": "dark.color.surface.card",
-            "text": "dark.color.text.primary",
-            "muted": "dark.color.text.secondary",
-            "accent": "dark.color.accent.primary",
-            "border": "dark.color.border.divider"
-          }
-        },
-        "fonts": [
-          "core.fontFamily.base"
-        ]
-      },
-      "source": {
-        "path": "~/.design-systems/gemini/raw-shots (full-colour captures, outside the repo)"
-      },
-      "layoutGaps": {
-        "icons/": "Gemini's icons and the Gemini spark are Google's artwork and are not kept here (docs/RIGHTS.md)"
-      }
     }
   ]
 }
