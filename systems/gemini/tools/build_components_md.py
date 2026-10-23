@@ -91,11 +91,11 @@ INVENTORY = [
      [("Settings header", "sheet-settings-header"), ("+ sheet", "sheet-plus"), ("Create images intro", "sheet-images-intro"), ("account", "sheet-account")],
      "The + sheet holds three large tiles (Photos, Camera, Avatar) above a list of tools, each with an icon, a title and a description."),
     ("Dialog", "dialog or alert", "The iOS permission alert (notifications), drawn by the system.",
-     [("message", "color.text.secondary")],
+     [],
      [("open", "dialog-permission")],
-     "System UI, not Gemini's; it shows how the app looks behind an alert. Its values are in raw/readings.json (surface.alert, radius.alert) and are not tokenised."),
+     "System UI, not Gemini's; it shows how the app looks behind an alert. Its values are in raw/readings.json (surface.alert, radius.alert, text.onAlert) and are not tokenised."),
     ("Grouped card", "card", "Rows grouped in a rounded card with hairline dividers inset to the row text, under a section header. Each row has a line icon, a title, and a chevron, a value or a switch.",
-     [("fill", "color.surface.card"), ("corner", "radius.card"), ("divider", "color.border.divider"), ("row", "size.row"), ("two-line row", "size.rowTwoLine"), ("header", "color.text.tertiary"), ("subtitle", "color.text.secondary")],
+     [("fill", "color.surface.card"), ("corner", "radius.card"), ("divider", "color.border.divider"), ("row", "size.row"), ("row with a subtitle", "size.rowSubtitle"), ("row with a two-line subtitle", "size.rowSubtitleTwoLine"), ("header", "color.text.tertiary"), ("subtitle", "color.text.secondary")],
      [("Voice", "card-grouped"), ("Account section", "card-grouped-section")],
      "Cards have no rim; in light they are white on the warm off-white sheet."),
     ("Suggestion card", "card", "A title and a two-line description in a rounded card, stacked 12 pt apart (Scheduled); the study-notebook card adds a text button at the bottom right.",
@@ -120,9 +120,13 @@ INVENTORY = [
     ("Avatar", "avatar", "The account photo in a circle with a blue ring (sidebar, account sheet), plain in the nav bar.",
      [("ring", "color.accent.ring"), ("nav size", "size.navButton")],
      [("account sheet, with edit", "avatar-ring")], ""),
-    ("Badge", "badge", "PRO as grey text on a container chip beside the Usage limits title; Pro as a glassy blue chip under the account name.",
+    ("Badge", "badge", "PRO as grey text on a container chip beside the Usage limits title.",
      [("fill", "color.surface.container"), ("label", "color.text.badge"), ("type", "typography.subheadline")],
-     [("PRO", "badge-pro"), ("Pro on the account", "badge-pro-account")], ""),
+     [("PRO", "badge-pro")], ""),
+    ("Plan badge", "badge", "Pro as a glassy blue chip under the account name on the account sheet.",
+     [],
+     [("Pro on the account", "badge-pro-account")],
+     "Not tokenised: the chip is a blue gradient with no flat fill (no colour covers more than 2% of it), so no value was read. Its label is near the theme's primary text."),
     ("Empty state", "pattern", "A centred magnifier, a medium title and a secondary line (search); one centred secondary line (Memory).",
      [("title", "typography.bodyStrong"), ("line", "typography.subheadline"), ("line colour", "color.text.secondary")],
      [("no search results", "empty-state-search"), ("Memory", "empty-state-memory")], ""),
@@ -152,9 +156,11 @@ def main():
         for _, path in props:
             if path not in KNOWN:
                 raise SystemExit(f"{name}: unknown token {path}")
-        out += [f"## {name}", "", f"Checklist item: {item}. {what}", "", "| Property | Token |", "|---|---|"]
-        out += [f"| {p} | `{path}` |" for p, path in props]
-        out.append("")
+        out += [f"## {name}", "", f"Checklist item: {item}. {what}", ""]
+        if props:
+            out += ["| Property | Token |", "|---|---|"] + [f"| {p} | `{path}` |" for p, path in props] + [""]
+        else:
+            out += ["No tokens: see the note below.", ""]
         cells = []
         for state, stem in states:
             for suffix, theme in (("", "dark"), ("-light", "light")):

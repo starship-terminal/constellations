@@ -124,11 +124,14 @@ def core():
         "xxl": derived("28px", "dimension", f"Inner horizontal padding of the owner's bubble: text starts {(168 - bub[0]) / 2:g} pt from its edge."),
         "screenMargin": alias("space.lg", "dimension", "Left and right margin of cards, menus and the composer when typing."),
     }
+    voice = rd("size.card")["box"]
+    voice_div = rd("border.divider")["args"][1]
     rows = rd("rows.settings")["value"]
     pitch = (rows[4] - rows[0]) / 2 if len(rows) >= 5 else 54
     c["size"] = {
         "row": tok(px(pitch), "dimension", "Single-line settings row, divider to divider (rows.settings: dividers every 108 px).", "Sampled", rd("rows.settings")["capture"]),
-        "rowTwoLine": tok(px(round(pt_of("size.card", "dark", 1) / 2)), "dimension", f"Settings row with a subtitle: the two-row Voice card is {rd('size.card')['value']}.", "Sampled", rd("size.card")["capture"]),
+        "rowSubtitle": derived(px((voice_div - voice[1]) / 2), "dimension", f"Settings row with a one-line subtitle (Gemini's voice): the Voice card's top edge (y {voice[1]}) to its divider (y {voice_div}).", rd("size.card")["capture"]),
+        "rowSubtitleTwoLine": derived(px((voice[3] + 1 - voice_div) / 2), "dimension", f"Settings row with a two-line subtitle (Interrupt Live responses): the Voice card's divider (y {voice_div}) to its bottom edge (y {voice[3]}).", rd("size.card")["capture"]),
         "sidebarRow": derived(px(round(float(rd("lines.sidebar")["value"].rstrip("pt")))), "dimension", f"Sidebar row pitch: {rd('lines.sidebar')['value']} between label tops."),
         "searchRow": derived(px(round(float(rd("lines.search")["value"].rstrip("pt")))), "dimension", f"Search result row pitch: {rd('lines.search')['value']}."),
         "menuRow": derived(px(round(float(rd("lines.menu")["value"].rstrip("pt")))), "dimension", f"Single-line menu item pitch: {rd('lines.menu')['value']}. The model picker's two-line items are 60 pt."),

@@ -238,13 +238,11 @@ The + sheet holds three large tiles (Photos, Camera, Avatar) above a list of too
 
 Checklist item: dialog or alert. The iOS permission alert (notifications), drawn by the system.
 
-| Property | Token |
-|---|---|
-| message | `color.text.secondary` |
+No tokens: see the note below.
 
 Crops: [open (dark)](components/crops/dialog-permission.png).
 
-System UI, not Gemini's; it shows how the app looks behind an alert. Its values are in raw/readings.json (surface.alert, radius.alert) and are not tokenised.
+System UI, not Gemini's; it shows how the app looks behind an alert. Its values are in raw/readings.json (surface.alert, radius.alert, text.onAlert) and are not tokenised.
 
 ## Grouped card
 
@@ -256,7 +254,8 @@ Checklist item: card. Rows grouped in a rounded card with hairline dividers inse
 | corner | `radius.card` |
 | divider | `color.border.divider` |
 | row | `size.row` |
-| two-line row | `size.rowTwoLine` |
+| row with a subtitle | `size.rowSubtitle` |
+| row with a two-line subtitle | `size.rowSubtitleTwoLine` |
 | header | `color.text.tertiary` |
 | subtitle | `color.text.secondary` |
 
@@ -360,7 +359,7 @@ Crops: [account sheet, with edit (dark)](components/crops/avatar-ring.png), [acc
 
 ## Badge
 
-Checklist item: badge. PRO as grey text on a container chip beside the Usage limits title; Pro as a glassy blue chip under the account name.
+Checklist item: badge. PRO as grey text on a container chip beside the Usage limits title.
 
 | Property | Token |
 |---|---|
@@ -368,7 +367,17 @@ Checklist item: badge. PRO as grey text on a container chip beside the Usage lim
 | label | `color.text.badge` |
 | type | `typography.subheadline` |
 
-Crops: [PRO (dark)](components/crops/badge-pro.png), [PRO (light)](components/crops/badge-pro-light.png), [Pro on the account (dark)](components/crops/badge-pro-account.png), [Pro on the account (light)](components/crops/badge-pro-account-light.png).
+Crops: [PRO (dark)](components/crops/badge-pro.png), [PRO (light)](components/crops/badge-pro-light.png).
+
+## Plan badge
+
+Checklist item: badge. Pro as a glassy blue chip under the account name on the account sheet.
+
+No tokens: see the note below.
+
+Crops: [Pro on the account (dark)](components/crops/badge-pro-account.png), [Pro on the account (light)](components/crops/badge-pro-account-light.png).
+
+Not tokenised: the chip is a blue gradient with no flat fill (no colour covers more than 2% of it), so no value was read. Its label is near the theme's primary text.
 
 ## Empty state
 
