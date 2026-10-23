@@ -80,6 +80,7 @@ Search each file for `PRODUCT (adapt)` first, then work down this list.
 | `native/build_tokens.py` | `core()` and `semantic()`: the mapping from readings to tokens. Keep the helpers, `check()` and `build()` |
 | `native/build_style_guide.py` | `NAME`, `OWNER`, `LEDE`, the specimen text and the Components specimens, drawn from tokens only |
 | `native/build_components_md.py` | `NAME`, `INVENTORY` (one row per checklist component, with its crops) and `GAPS` |
+| `native/test_build_tokens.py` | Nothing: its fixture is product-free, and it also checks the package's own `tokens.json` once one exists |
 | `native/crops.json` | One box per component state, in capture pixels; Grok Bot's boxes are the example |
 | `build/build_style_guide.py` | Usually nothing; it renders a light-only package too, and the template then starts in light with the theme toggle hidden |
 

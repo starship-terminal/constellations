@@ -20,7 +20,8 @@ import pathlib
 import re
 
 PKG = pathlib.Path(__file__).resolve().parent.parent
-READ = json.loads((PKG / "raw" / "readings.json").read_text())
+_READINGS = PKG / "raw" / "readings.json"
+READ = json.loads(_READINGS.read_text()) if _READINGS.exists() else {}  # empty in the kit copy, for its tests
 MEASURED = f"raw/{PKG.name}-measured.md"
 
 
@@ -321,8 +322,9 @@ def aliases(v):
 
 
 def check(doc):
-    paths = {".".join(p) for name in ("core", "light", "dark") for p, _ in walk(doc[name])}
-    for name in ("core", "light", "dark"):
+    sets = [s for s in ("core", "light", "dark") if s in doc]  # a one-theme app has no light or no dark
+    paths = {".".join(p) for name in sets for p, _ in walk(doc[name])}
+    for name in sets:
         for p, t in walk(doc[name]):
             where = name + "." + ".".join(p)
             src = t.get("$extensions", {}).get("source", {})
@@ -337,7 +339,8 @@ def check(doc):
             elif t["$type"] == "dimension":
                 assert re.fullmatch(r"-?\d+(\.\d+)?px", v), f"{where}: bad dimension {v}"
     keys = lambda s: sorted(".".join(p) for p, _ in walk(doc[s]))
-    assert keys("light") == keys("dark"), "light and dark keys differ"
+    if "light" in doc and "dark" in doc:
+        assert keys("light") == keys("dark"), "light and dark keys differ"
 
 
 def build():
@@ -345,7 +348,7 @@ def build():
         "core": core(),
         "light": semantic("light"),
         "dark": semantic("dark"),
-        "$themes": [
+        "$themes": [  # PRODUCT (adapt): how each theme was set for the capture; drop a theme the app lacks
             {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
              "$description": "Settings > Appearance > Light, set for the capture and put back afterwards. Read from screenshots/light/."},
             {"id": "dark", "name": "Dark", "selectedTokenSets": {"core": "source", "dark": "enabled"},
@@ -360,4 +363,6 @@ def build():
 
 
 if __name__ == "__main__":
+    if not READ:
+        raise SystemExit("no raw/readings.json: run tools/measure.py first")
     build()

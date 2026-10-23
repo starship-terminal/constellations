@@ -1,4 +1,7 @@
-"""Tests for build_tokens.check. Run: python3 -m unittest discover -s tools (from this package)."""
+"""Tests for build_tokens.check. Run: python3 -m unittest discover -s tools (from this package).
+
+The fixture below is the smallest token file check() reads, so these tests hold for any product's
+mapping. test_committed_tokens_pass runs the check on the package's own tokens.json."""
 import copy
 import json
 import pathlib
@@ -8,29 +11,59 @@ import unittest
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import build_tokens  # noqa: E402
 
-DOC = json.loads((pathlib.Path(__file__).resolve().parent.parent / "tokens.json").read_text())
+TOKENS = pathlib.Path(__file__).resolve().parent.parent / "tokens.json"
+SRC = {"$extensions": {"source": {"evidence": "Sampled", "capture": "dark/01-home"}}}
+
+
+def tok(type_, value):
+    return {"$type": type_, "$value": value, **copy.deepcopy(SRC)}
+
+
+def theme(page):
+    return {"color": {"bg": {"page": tok("color", page)}, "text": {"primary": tok("color", "{color.neutral.0}")}}}
+
+
+FIXTURE = {
+    "core": {
+        "color": {"neutral": {"0": tok("color", "#FFFFFF")}},
+        "fontWeight": {"regular": tok("fontWeight", 400)},
+        "typography": {"body": tok("typography", {"fontWeight": "{fontWeight.regular}", "fontSize": "17px"})},
+    },
+    "light": theme("#FCFCFC"),
+    "dark": theme("#141414"),
+}
 
 
 class CheckTest(unittest.TestCase):
+    @unittest.skipUnless(TOKENS.exists(), "no tokens.json yet (kit copy)")
     def test_committed_tokens_pass(self):
-        build_tokens.check(copy.deepcopy(DOC))
+        build_tokens.check(json.loads(TOKENS.read_text()))
+
+    def test_fixture_passes(self):
+        build_tokens.check(copy.deepcopy(FIXTURE))
+
+    def test_one_theme_passes(self):
+        doc = copy.deepcopy(FIXTURE)
+        del doc["dark"]
+        build_tokens.check(doc)
 
     def test_missing_alias_inside_a_typography_style_fails(self):
-        doc = copy.deepcopy(DOC)
+        doc = copy.deepcopy(FIXTURE)
         doc["core"]["typography"]["body"]["$value"]["fontWeight"] = "{fontWeight.doesNotExist}"
         with self.assertRaisesRegex(AssertionError, "doesNotExist"):
             build_tokens.check(doc)
 
     def test_missing_top_level_alias_fails(self):
-        doc = copy.deepcopy(DOC)
-        doc["light"]["color"]["status"]["info"]["$value"] = "{color.accent.nothing}"
+        doc = copy.deepcopy(FIXTURE)
+        doc["light"]["color"]["text"]["primary"]["$value"] = "{color.accent.nothing}"
         with self.assertRaisesRegex(AssertionError, "nothing"):
             build_tokens.check(doc)
 
-    def test_neutral_list_keeps_the_readings_evidence(self):
-        labels = {t["$extensions"]["source"]["evidence"] for t in DOC["core"]["color"]["neutral"].values()}
-        self.assertLessEqual(labels, {"Sampled", "Sampled (text)", "Derived"})
-        self.assertGreater(len(labels), 1)
+    def test_theme_keys_must_match(self):
+        doc = copy.deepcopy(FIXTURE)
+        doc["dark"]["color"]["bg"]["sheet"] = tok("color", "#1E1E1E")
+        with self.assertRaisesRegex(AssertionError, "keys differ"):
+            build_tokens.check(doc)
 
 
 if __name__ == "__main__":
