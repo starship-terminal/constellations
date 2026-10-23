@@ -27,7 +27,9 @@ for (const job of jobs) {
     fs.mkdirSync(job.outDir, { recursive: true });
     for (const [fn, content] of Object.entries(artifacts)) {
       if (fn === 'raw-result.json' || fn === 'prompt.txt') continue; // db-only
-      fs.writeFileSync(path.join(job.outDir, fn), content);
+      const dest = path.join(job.outDir, fn);
+      fs.writeFileSync(dest + '.tmp', content);
+      fs.renameSync(dest + '.tmp', dest);
     }
     out.write(JSON.stringify({ uuid: job.uuid, slug: job.slug, artifacts }) + '\n');
     ok++;
