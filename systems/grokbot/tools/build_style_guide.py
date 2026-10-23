@@ -45,18 +45,29 @@ def esc(t):
     return html.escape(str(t), quote=True)
 
 
-def swatch_cell(tok):
+def resolve(v, *sets):
+    """Follow an alias through the given token sets (its own theme first, then core) to a value."""
+    while isinstance(v, str) and v.startswith("{") and v.endswith("}"):
+        path = tuple(v[1:-1].split("."))
+        v = next(s[path]["$value"] for s in sets if path in s)
+    return v
+
+
+def swatch_cell(tok, *sets):
     ev = tok["$extensions"]["source"]["evidence"]
     v = tok["$value"]
+    shown = resolve(v, *sets)       # a swatch shows its own theme's value, whatever theme the page is in
+    label = v if v == shown else f"{v} = {shown}"
     return ('<td><span class="sw" title="%s"><i style="background:%s"></i></span><code>%s</code> '
-            '<span class="ev %s">%s</span></td>' % (esc(tok["$extensions"]["source"]["capture"]), esc(css(v)),
-                                                    esc(v), EV_CLASS[ev], esc(ev)))
+            '<span class="ev %s">%s</span></td>' % (esc(tok["$extensions"]["source"]["capture"]), esc(shown),
+                                                    esc(label), EV_CLASS[ev], esc(ev)))
 
 
 def build():
     data = json.loads(TOKENS.read_text())
     core, light, dark = (list(walk(data[s])) for s in ("core", "light", "dark"))
     dark_by = dict(dark)
+    core_by, light_by = dict(core), dict(light)
 
     core_css, type_css = [], []
     for p, t in core:
@@ -79,7 +90,7 @@ def build():
     colour_html = []
     for g, items in groups.items():
         rows = "".join('<tr><th scope="row"><code>%s</code><span class="desc">%s</span></th>%s%s</tr>'
-                       % (esc(".".join(p)), esc(t["$description"]), swatch_cell(t), swatch_cell(dark_by[p]))
+                       % (esc(".".join(p)), esc(t["$description"]), swatch_cell(t, light_by, core_by), swatch_cell(dark_by[p], dark_by, core_by))
                        for p, t in items)
         colour_html.append('<h3>%s</h3><div class="scroll"><table class="tokens"><thead><tr><th>Token</th><th>Light</th>'
                            '<th>Dark</th></tr></thead><tbody>%s</tbody></table></div>' % (esc(g), rows))

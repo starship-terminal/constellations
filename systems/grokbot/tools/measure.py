@@ -280,6 +280,8 @@ def op_lines(rows, x0, y0, x1, y1):
 
 def run(raw):
     raw = pathlib.Path(raw).expanduser()
+    if not (raw / "dark").is_dir():
+        raise SystemExit(f"{raw}: no dark/ captures; nothing written")
     cache, out = {}, {}
     for rid, (cap, op, args, note) in R.items():
         themes = [cap.split("/")[0]] if "/" in cap else ["dark", "light"]
@@ -326,5 +328,8 @@ def write(readings):
 
 if __name__ == "__main__":
     readings = run(sys.argv[1] if len(sys.argv) > 1 else "~/.design-systems/grokbot/raw-shots")
+    missing = sorted(rid for rid in R if rid not in readings)
+    if missing:   # a light-only gap is fine; a reading with no theme at all means a capture is absent
+        raise SystemExit(f"no capture for {len(missing)} readings ({', '.join(missing[:5])}...); nothing written")
     write(readings)
     print(f"{sum(len(v) for v in readings.values())} readings of {len(readings)} ids")

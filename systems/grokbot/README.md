@@ -190,6 +190,7 @@ python3 tools/measure.py ~/.design-systems/grokbot/raw-shots
 python3 tools/build_tokens.py
 python3 tools/build_style_guide.py
 python3 tools/build_components_md.py
+python3 -m unittest discover -s tools
 git status --short .
 ```
 

@@ -81,12 +81,15 @@ def neutral_ramp():
             v = r["value"]
             rr, gg, bb = int(v[1:3], 16), int(v[3:5], 16), int(v[5:7], 16)
             if max(rr, gg, bb) - min(rr, gg, bb) <= 12:     # neutral enough
-                seen.setdefault(v, []).append(f"{theme} {rid}")
+                seen.setdefault(v, []).append((f"{theme} {rid}", r["evidence"], r["capture"]))
     lum = lambda h: sum(int(h[i:i + 2], 16) for i in (1, 3, 5))
+    rank = ["Sampled", "Sampled (text)", "Derived"]   # the most exact reading of the value wins
     out = {}
     for i, v in enumerate(sorted(seen, key=lum, reverse=True)):
-        uses = ", ".join(sorted(set(seen[v])))
-        out[f"{i * 50:03d}"] = tok(v, "color", f"Used by: {uses}.", "Sampled", MEASURED + "#readings")
+        uses = sorted(set(seen[v]))
+        best = min(uses, key=lambda u: rank.index(u[1]))
+        listed = ", ".join(f"{name} ({ev})" for name, ev, _ in uses)
+        out[f"{i * 50:03d}"] = tok(v, "color", f"Used by: {listed}.", best[1], best[2])
     return out
 
 
@@ -304,6 +307,15 @@ def walk(node, path=()):
                 yield from walk(v, path + (k,))
 
 
+def aliases(v):
+    """Every {alias} in a value, including those inside a composite (a typography style)."""
+    if isinstance(v, str):
+        return re.findall(r"\{([^{}]+)\}", v)
+    if isinstance(v, dict):
+        return [a for x in v.values() for a in aliases(x)]
+    return []
+
+
 def check(doc):
     paths = {".".join(p) for name in ("core", "light", "dark") for p, _ in walk(doc[name])}
     for name in ("core", "light", "dark"):
@@ -312,8 +324,10 @@ def check(doc):
             src = t.get("$extensions", {}).get("source", {})
             assert src.get("evidence") and src.get("capture"), f"{where}: no source"
             v = t["$value"]
+            for a in aliases(v):
+                assert a in paths, f"{where}: alias {{{a}}} points at nothing"
             if isinstance(v, str) and v.startswith("{"):
-                assert v[1:-1] in paths, f"{where}: alias {v} points at nothing"
+                continue
             elif t["$type"] == "color":
                 assert re.fullmatch(r"#[0-9A-F]{6}([0-9A-F]{2})?", v), f"{where}: bad colour {v}"
             elif t["$type"] == "dimension":
