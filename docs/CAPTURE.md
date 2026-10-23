@@ -110,9 +110,9 @@ package was made this way and its README shows the evidence labels to use.
    sizes, padding and radii (exact for sizes, Derived for radii). Font
    family is usually not determinable; mark it Not captured.
 5. **Mask what [AGENTS.md](../AGENTS.md) still bans before anything enters
-   the package.** The owner's own name, email and chat text may stay; a
-   password, a code, a phone number, an address or another person's name or
-   face may not. A native capture is pixels, so `scan` cannot see any of it.
+   the package.** Names, avatars, chat text and published content may stay;
+   a password, a code, a phone number, an address or another person's
+   email may not. A native capture is pixels, so `scan` cannot see any of it.
    Look at every capture and paint those regions over with `sample.py mask
    shot.png X,Y,W,H ...`, which fills each box with the surface colour
    around it. Sample values first, mask second, then quantise.
