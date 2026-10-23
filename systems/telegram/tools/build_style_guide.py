@@ -149,7 +149,7 @@ def build():
   <h3>Grouped settings</h3>
   <p class="secthead type-footnote">MESSAGE NOTIFICATIONS</p>
   <div class="card">
-   <div class="srow"><span class="tile" style="background:var(--color-iconTile-blue)"></span><span class="grow type-body">Private Chats<span class="type-subheadline sec blk">173 exceptions</span></span><span class="type-body val">On &#8250;</span></div>
+   <div class="srow two"><span class="tile" style="background:var(--color-iconTile-blue)"></span><span class="grow type-body">Private Chats<span class="type-subheadline sec blk">173 exceptions</span></span><span class="type-body val">On &#8250;</span></div>
    <div class="srow"><span class="tile" style="background:var(--color-iconTile-green)"></span><span class="grow type-body">Group Chats</span><span class="type-body val">Off &#8250;</span></div>
    <div class="srow"><span class="grow type-body">In-App Sounds</span><span class="sw-ctl on"></span></div>
    <div class="srow"><span class="grow type-body">In-App Vibrate</span><span class="sw-ctl"></span></div>
@@ -230,7 +230,7 @@ table.tokens th[scope=row]{font-weight:500;width:40%}
 .bout{margin-left:auto;background:linear-gradient(var(--color-surface-bubbleOut),var(--color-surface-bubbleOutEnd));color:var(--color-text-onBubbleOut)}
 .blink{color:var(--color-text-bubbleLink);text-decoration:underline}
 .quote{background:var(--color-surface-quote);border-left:3px solid var(--color-text-quoteTitle);border-radius:6px;padding:6px 8px;margin:6px 0;display:flex;flex-direction:column}
-.qt{color:var(--color-text-quoteTitle)}.meta{display:block;text-align:right;color:var(--color-text-bubbleMeta)}
+.qt{color:var(--color-text-quoteTitle)}.bout .meta{display:block;text-align:right;color:var(--color-text-bubbleMeta)}
 .composer{display:flex;gap:8px;align-items:center;margin-top:14px}
 .field-c{flex:1;height:var(--size-navButton);border-radius:var(--radius-capsule);background:var(--color-surface-glass);color:var(--color-text-primary);display:flex;align-items:center;padding:0 16px}
 .caret{display:inline-block;width:2px;height:20px;background:var(--color-focus-caret);margin-left:1px}
@@ -239,7 +239,7 @@ table.tokens th[scope=row]{font-weight:500;width:40%}
 .card{background:var(--color-surface-card);border-radius:var(--radius-card);max-width:358px;overflow:hidden}
 .spec>.card{box-shadow:0 0 0 12px var(--color-bg-grouped)}
 .srow{display:flex;align-items:center;gap:var(--space-md);min-height:var(--size-row);padding:6px 16px;border-bottom:var(--border-width-hairline) solid var(--color-border-divider)}
-.srow:last-child{border-bottom:0}.grow{flex:1}
+.srow:last-child{border-bottom:0}.srow.two{min-height:var(--size-rowTwoLine)}.grow{flex:1}
 .tile{width:var(--size-iconTile);height:var(--size-iconTile);border-radius:var(--radius-iconTile);flex:none}
 .sec{color:var(--color-text-secondary)}.val{color:var(--color-text-value)}.blk{display:block}
 .danger{color:var(--color-text-danger)}.link{color:var(--color-text-link)}.dis{color:var(--color-text-disabled)}
