@@ -1487,69 +1487,6 @@
       "layoutGaps": {
         "icons/": "ChatGPT's icons are OpenAI's artwork and are not kept here (docs/RIGHTS.md)"
       }
-    },
-    {
-      "slug": "cursor-ios",
-      "name": "Cursor for iOS",
-      "url": "https://cursor.com",
-      "category": "ai-agent",
-      "platform": "mobile",
-      "goodFor": "Native iOS coding-agent client: near-black or off-white page, plain-text agent replies with no bubbles, two-line agent rows with status dots and red-green diffstats, a 2x2 grid of rounded Inbox tiles with coloured icons, iOS 26 glass circles and a glass composer over the content, grey-on-grey sheets, one blue accent and an orange chart colour",
-      "tags": [
-        "ios",
-        "mobile",
-        "ai",
-        "agent",
-        "coding",
-        "glass",
-        "grouped-list",
-        "minimal",
-        "dashboard"
-      ],
-      "shape": "reference",
-      "captured": "2026-10-24",
-      "access": "signed in, iPhone Mirroring",
-      "themes": [
-        "light",
-        "dark"
-      ],
-      "widths": [
-        390
-      ],
-      "entry": "systems/cursor-ios/README.md",
-      "tokens": "systems/cursor-ios/tokens.json",
-      "styleGuide": "systems/cursor-ios/style-guide.html",
-      "preview": {
-        "cover": "systems/cursor-ios/screenshots/dark/02-inbox-tiles-projects-workspaces.png",
-        "swatches": {
-          "light": {
-            "page": "light.color.bg.page",
-            "surface": "light.color.surface.card",
-            "text": "light.color.text.primary",
-            "muted": "light.color.text.secondary",
-            "accent": "light.color.accent.default",
-            "border": "light.color.border.divider"
-          },
-          "dark": {
-            "page": "dark.color.bg.page",
-            "surface": "dark.color.surface.card",
-            "text": "dark.color.text.primary",
-            "muted": "dark.color.text.secondary",
-            "accent": "dark.color.accent.default",
-            "border": "dark.color.border.divider"
-          }
-        },
-        "fonts": [
-          "core.fontFamily.base",
-          "core.fontFamily.mono"
-        ]
-      },
-      "source": {
-        "path": "~/.design-systems/cursor-ios/raw-shots (full-colour captures, outside the repo)"
-      },
-      "layoutGaps": {
-        "icons/": "Cursor's icons are its artwork and are not kept here (docs/RIGHTS.md)"
-      }
     }
   ]
 }
