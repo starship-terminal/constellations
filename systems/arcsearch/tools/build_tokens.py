@@ -59,6 +59,13 @@ def pt_of(rid, theme="dark", index=0):
     return float(v.split("x")[index])
 
 
+def measured(rid, value_pt, desc):
+    """A size from a reading: Sampled when the token is the reading itself, Derived when it was rounded."""
+    exact = value_pt == pt_of(rid, "dark", 1)
+    return tok(px(value_pt), "dimension", desc if exact else desc + " Rounded to the nearest point.",
+               "Sampled" if exact else "Derived", rd(rid)["capture"])
+
+
 def derived(value, typ, desc, capture=MEASURED):
     return tok(value, typ, desc, "Derived", capture)
 
@@ -142,16 +149,16 @@ def core():
         "rowHistory": tok(px(pt("rows.archive")), "dimension", "Archive history row (favicon, title, URL), favicon to favicon.", "Derived", rd("rows.archive")["capture"]),
         "rowMenu": tok(px(pt("rows.menu")), "dimension", "Page menu list row (Display Options to Request Desktop Site), label to label.", "Derived", rd("rows.menu")["capture"]),
         "tile": derived("28px", "dimension", f"Settings icon tile: {rd('size.tile')['value']} with its anti-aliased edge left out."),
-        "button": tok(px(round(pt_of("size.button", "dark", 1))), "dimension", f"Downloads and Archive buttons: {rd('size.button')['value']}, two side by side.", "Sampled", rd("size.button")["capture"]),
+        "button": measured("size.button", round(pt_of("size.button", "dark", 1)), f"Downloads and Archive buttons: {rd('size.button')['value']}, two side by side."),
         "searchField": tok(px(pt_of("size.search", "dark", 1)), "dimension", f"Search field in the launcher: {rd('size.search')['value']}.", "Sampled", rd("size.search")["capture"]),
         "addressBar": derived(px(round(pt("size.address"))), "dimension", f"Address bar at the top of the page menu: {rd('size.address')['value']} between its rims in both themes.", rd("size.address")["capture"]),
         "findField": derived("48px", "dimension", f"Find field: {rd('size.findField')['value']} dark, {rd('size.findField', 'light')['value']} light between its rims. Plus or minus 1 pt.", rd("size.findField")["capture"]),
         "iconButton": derived("48px", "dimension", f"Round glass icon buttons in the find bar: the close button reads {rd('size.findClose')['value']} dark and {rd('size.findClose', 'light')['value']} light between its rims, the find field beside it 48."),
-        "pill": tok(px(round(pt_of("size.pill", "dark", 1))), "dimension", f"Browse for Me button: {rd('size.pill')['value']} dark, {rd('size.pill', 'light')['value']} light.", "Sampled", rd("size.pill")["capture"]),
-        "plus": tok(px(round(pt_of("size.plus", "dark", 1))), "dimension", f"The + (new tab) button in the bottom toolbar: {rd('size.plus')['value']}.", "Sampled", rd("size.plus")["capture"]),
+        "pill": measured("size.pill", round(pt_of("size.pill", "dark", 1)), f"Browse for Me button: {rd('size.pill')['value']} dark, {rd('size.pill', 'light')['value']} light."),
+        "plus": measured("size.plus", round(pt_of("size.plus", "dark", 1)), f"The + (new tab) button in the bottom toolbar: {rd('size.plus')['value']}."),
         "plusWidth": tok(px(pt_of("size.plus")), "dimension", "Width of the + button.", "Sampled", rd("size.plus")["capture"]),
-        "tileButton": tok(px(round(pt_of("size.tileButton", "dark", 1))), "dimension", f"Square buttons in the page menu (Find on Page, Summarize, Pin, Share): {rd('size.tileButton')['value']}, four across.", "Sampled", rd("size.tileButton")["capture"]),
-        "closeButton": tok(px(round(pt_of("size.close", "dark", 1))), "dimension", f"Round close button in a sheet's header (App Icon): {rd('size.close')['value']}.", "Sampled", rd("size.close")["capture"]),
+        "tileButton": measured("size.tileButton", round(pt_of("size.tileButton", "dark", 1)), f"Square buttons in the page menu (Find on Page, Summarize, Pin, Share): {rd('size.tileButton')['value']}, four across."),
+        "closeButton": measured("size.close", round(pt_of("size.close", "dark", 1)), f"Round close button in a sheet's header (App Icon): {rd('size.close')['value']}."),
         "confirmButton": derived("44px", "dimension", f"Round accent button at the Archive's top right: {rd('size.confirm')['value']} dark, {rd('size.confirm', 'light')['value']} light with the anti-aliased edge left out, so 44 pt.", rd("size.confirm")["capture"]),
         "navButtonHeight": tok(px(pt_of("size.edit", "dark", 1)), "dimension", f"Edit and Done capsules in a nav bar: Edit is {rd('size.edit')['value']}.", "Sampled", rd("size.edit")["capture"]),
         "searchBar": tok(px(pt_of("size.searchBar", "dark", 1)), "dimension", f"Archive search field at the bottom of the screen: {rd('size.searchBar')['value']} with a 48 pt round close button beside it.", "Sampled", rd("size.searchBar")["capture"]),
@@ -211,7 +218,7 @@ def semantic(theme):
     s = {"color": {
         "bg": {
             "page": f("bg.page", "Full-screen pages: the Archive and its search. The iOS grouped background."),
-            "sheet": f("bg.sheet", "Settings and its sub-pages, a sheet over the browser. Lighter than bg.page in dark, darker in light."),
+            "sheet": f("bg.sheet", "Settings and its sub-pages, a sheet over the browser. Lighter than bg.page in both themes."),
             "dimmed": f("bg.behindSheet", "The page behind the Settings sheet, darkened (dark) or greyed (light) while the sheet is up. A mean over one moment's page."),
         },
         "surface": {

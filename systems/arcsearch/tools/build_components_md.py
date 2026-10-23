@@ -153,7 +153,7 @@ def main():
                 f = CROPS / f"{stem}{suffix}.png"
                 if f.exists():
                     cells.append(f"[{state} ({theme})](components/crops/{f.name})")
-                elif not suffix:
+                else:   # every state was captured in both themes
                     raise SystemExit(f"{name}: no crop {f.name}")
         out += ["Crops: " + ", ".join(cells) + ".", ""]
         if notes:
