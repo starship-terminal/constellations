@@ -295,16 +295,20 @@ def op_rimdiag(rows, xin, ymid, xcol, yin, thr):
     x = xin
     while d(rows[ymid][x - 1], f) <= thr:
         x -= 1
+        if x == 0:
+            raise ValueError(f"rimdiag: no rim left of ({xin}, {ymid})")
     x0 = x - 1
     y = yin
     while d(rows[y - 1][xcol], f) <= thr:
         y -= 1
+        if y == 0:
+            raise ValueError(f"rimdiag: no rim above ({xcol}, {yin})")
     y0 = y - 1
-    t = 0
-    while d(rows[y0 + t][x0 + t], f) > thr:   # step off the corner pixel if it is rim
-        t += 1
+    t = 0                                     # page-coloured steps outside the arc; 0 for a square corner
     while d(rows[y0 + t][x0 + t], f) <= thr:
         t += 1
+        if y0 + t >= ymid or x0 + t >= xin:
+            raise ValueError(f"rimdiag: no corner rim between ({x0}, {y0}) and ({xin}, {ymid})")
     r = t / (1 - 2 ** -0.5) / SCALE
     return {"value": f"{r:.1f}pt", "inset": t, "corner": [x0, y0], "evidence": "Derived"}
 

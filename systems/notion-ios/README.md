@@ -16,7 +16,7 @@ This package contains no Notion code, and none of its artwork has been redrawn. 
 | [components/crops/](components/crops) | 88 element crops, `{component}-{state}.png` and `-light.png`, cut from the screenshots by `tools/crops.py` |
 | [screenshots/](screenshots) | `dark/` (29) and `light/` (17) captures, `01-home-sidebar-tree.png` to `29-theme-choice-sheet.png`, quantised to 256 colours with alpha |
 | [raw/](raw) | `readings.json`: every value read from the full-colour captures, with its file, box, method and evidence label. `notion-ios-measured.md`: the same as tables |
-| [tools/](tools) | `measure.py` (readings), `build_tokens.py`, `build_style_guide.py`, `build_components_md.py`, `crops.py` with `crops.json`, `test_build_tokens.py`, and `capture/` (`native/shot.sh`, `native/sample.py`, `native/winid.swift`, `quantize.py`) |
+| [tools/](tools) | `measure.py` (readings), `build_tokens.py`, `build_style_guide.py`, `build_components_md.py`, `crops.py` with `crops.json`, `test_build_tokens.py`, `test_measure.py` (rimdiag on synthetic shapes), and `capture/` (`native/shot.sh`, `native/sample.py`, `native/winid.swift`, `quantize.py`) |
 
 ## Brief
 

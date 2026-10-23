@@ -62,7 +62,7 @@ table.tokens th[scope=row]{font-weight:500;width:40%}
 .tab.round{background:var(--color-surface-glass);width:var(--size-avatarButton);padding:0}
 .hdr{color:var(--color-text-secondary);margin:18px 0 4px var(--space-xs)}
 .srow0{min-height:var(--size-row);display:flex;align-items:center;padding-left:var(--space-xs)}
-.bar{display:flex;gap:var(--space-sm);align-items:center;margin-top:24px}
+.bottombar{display:flex;gap:var(--space-sm);align-items:center;margin-top:24px}
 .glass{background:var(--color-surface-glass);color:var(--color-text-iconMuted);display:inline-flex;align-items:center;justify-content:center}
 .circ{width:var(--size-barButton);height:var(--size-barButton);border-radius:50%;flex:none;font-size:20px}
 .barpill{flex:1;height:var(--size-barPill);border-radius:var(--radius-capsule);justify-content:flex-start;padding:0 16px;color:var(--color-text-secondary)}
@@ -127,13 +127,13 @@ footer{margin-top:48px;color:var(--color-text-secondary);font-size:12px}
  <div class="spec phone">
   <h3>Sidebar and bars</h3>
   <div class="screen side">
-   <div class="tabs"><span class="tab round">&#9679;</span><span class="tab sel type-callout">&#8962; Home</span><span class="tab">&#9675;</span><span class="tab">&#9633;</span></div>
+   <div class="tabs"><span class="tab round">&#9679;</span><span class="tab sel type-callout">&#8962; Home</span><span class="tab">&#9675;</span><span class="tab">&#9633;</span><span class="tab">&#9643;</span></div>
    <p class="hdr type-subheadline">Favourites &#8964;</p>
    <div class="srow0 type-bodyLarge">Setup call Logs</div>
    <div class="srow0 type-bodyLarge">Operating System</div>
    <p class="hdr type-subheadline">Private &#8964;</p>
    <div class="srow0 type-bodyLarge">local-models-inventory</div>
-   <div class="bar"><span class="glass circ">&#9906;</span><span class="glass barpill type-callout">Ask AI</span><span class="glass circ">&#9998;</span></div>
+   <div class="bottombar"><span class="glass circ">&#9906;</span><span class="glass barpill type-callout">Ask AI</span><span class="glass circ">&#9998;</span></div>
   </div>
   <p class="note">bg.sidebar, surface.tab / tabSelected, size.tab, size.row, text.secondary, surface.glass, size.barButton / barPill</p>
  </div>
