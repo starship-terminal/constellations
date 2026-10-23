@@ -143,13 +143,22 @@ illustrations or brand colours into something that ships
   Search and instant navigation stay off for that reason. Never publish
   `systems/`, screenshots or the gallery, and never commit `.env` (it holds
   the site password).
-- **Private material never enters the repo**: raw page copies, redaction
-  lists, account names, signed URLs, proprietary fonts. `systems/*/fonts/`
-  is gitignored for this reason.
+- **Secrets and personal data never enter the repo; the owner's own account
+  details may.** The owner (the person whose account a package was captured
+  from) agreed on 2026-10-23 that their own name, email, handle, avatar and
+  initials, their chat, document and project text, and their time zone may
+  show in screenshots and crops. Still never committed: passwords, one-time
+  and recovery codes, API keys, tokens and session cookies, signed URLs;
+  phone numbers, street addresses and precise locations; government,
+  payment-card and bank numbers; health details; and other people's names,
+  faces and contact details. Raw page copies, redaction lists and proprietary
+  fonts stay outside the repo too; `systems/*/fonts/` is gitignored for this
+  reason.
   Images count: `python3 tools/redact_images.py check systems/<slug> --patterns
   ~/.design-systems/cleanup-redact.json` must report no match before a commit
   that touches a signed-in package's screenshots or crops
-  ([docs/CAPTURE.md](docs/CAPTURE.md)).
+  ([docs/CAPTURE.md](docs/CAPTURE.md)). That pattern file lists only what is
+  still banned, so it holds no entry for the owner's own name or email.
 - **Do not make this repository public**, and do not push it anywhere but
   its private GitHub remote.
 - Run Python as `python3`.

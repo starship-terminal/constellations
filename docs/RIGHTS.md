@@ -26,7 +26,9 @@ colours, logo, icons or illustrations into something that ships.
 - The signed-in captures (manus, chatgpt, claude, coursera, notebooklm,
   researchrabbit, duolingo, brilliant) come from the owner's own accounts.
   Names and emails were redacted where each README says so, but chat
-  titles, course choices and library contents still show.
+  titles, course choices and library contents still show. Since
+  2026-10-23 the owner's own name, email and chat text may show; what is
+  still masked is listed in [AGENTS.md](../AGENTS.md).
 
 ## Rules
 
