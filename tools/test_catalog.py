@@ -816,14 +816,17 @@ class ReferoBuildTest(unittest.TestCase):
 
     def test_index_rows_and_name_sort(self):
         index, _ = self.build([("beta", self.BETA, self.BETA_DS), ("alpha", self.ALPHA, self.ALPHA_DS)])
-        self.assertEqual(index["version"], 1)
+        self.assertEqual(index["version"], 2)
+        self.assertEqual(index["cdn"], catalog.REFERO_CDN)
         self.assertEqual(index["count"], 2)
         alpha, beta = index["styles"]
         self.assertEqual([s["slug"] for s in index["styles"]], ["alpha", "beta"])
         self.assertEqual(alpha["src"], "alpha.example.com")
-        self.assertEqual(alpha["card"], "/refero-media/posters/alpha.jpg")
+        self.assertEqual(alpha["card"], "p")
         self.assertEqual(alpha["cardRemote"], "https://img/p.jpg")
         self.assertTrue(alpha["video"])
+        self.assertEqual(alpha["videoRemote"], "https://img/v.mp4")
+        self.assertNotIn("videoSrc", alpha)
         self.assertEqual(beta["industry"], "other")
         self.assertEqual(alpha["type"], "devtools")
         self.assertEqual(alpha["style"], "technical")
@@ -837,8 +840,18 @@ class ReferoBuildTest(unittest.TestCase):
     def test_card_remote_falls_back_to_thumbnail_then_shot(self):
         meta = {**self.BETA, "screenshot_url": "https://img/s.jpg"}
         index, _ = self.build([("beta", meta, {"meta": {"thumbnailUrl": "https://img/t.jpg"}})])
-        self.assertEqual(index["styles"][0]["card"], "/refero-media/shots/beta.jpg")
+        self.assertEqual(index["styles"][0]["card"], "s")
         self.assertEqual(index["styles"][0]["cardRemote"], "https://img/t.jpg")
+
+    def test_cdn_urls_emit_suffixes(self):
+        cdn = catalog.REFERO_CDN
+        meta = {**self.BETA, "screenshot_url": f"{cdn}image/s.jpg",
+                "video_url": f"{cdn}video/v.mp4", "video_poster_url": f"{cdn}image/p.jpg"}
+        index, _ = self.build([("beta", meta, self.BETA_DS)])
+        row = index["styles"][0]
+        self.assertEqual(row["card"], "p")
+        self.assertEqual(row["cardRemote"], "image/p.jpg")
+        self.assertEqual(row["videoRemote"], "video/v.mp4")
 
     def test_entry_file_media_docs_ds_and_similar(self):
         _, files = self.build([("beta", self.BETA, self.BETA_DS), ("alpha", self.ALPHA, self.ALPHA_DS)])

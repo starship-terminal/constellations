@@ -8,7 +8,6 @@
   --void: #08090a;
   --carbon: #0f1011;
   --obsidian: #161718;
-  --slate: #23252a;
   --graphite: #23252a;
   --smoke: #383b3f;
   --ash: #62666d;
@@ -19,9 +18,6 @@
   --lime: #e4f222;
   --green: #27a644;
   --coral: #eb5757;
-  --teal: #02b8cc;
-  --iris: #6366f1;
-  --lavender: #8b5cf6;
 
   --bg: var(--void);
   --panel: var(--carbon);
@@ -41,7 +37,6 @@
   --field-line: rgba(255, 255, 255, .08);
   --shadow: rgba(0, 0, 0, .4) 0 2px 4px;
   --ring: 0 0 0 1px var(--graphite) inset;
-  --shadow-hover: rgba(0, 0, 0, .2) 0 0 12px inset;
   --radius-card: 12px;
   --radius-ctl: 6px;
   --radius-badge: 4px;
