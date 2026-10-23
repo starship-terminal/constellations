@@ -155,7 +155,7 @@ def build():
   <div class="type-title">Sidebar dropdown is displaying incorrectly</div>
   <div class="badges"><span class="badge open type-caption">&#9737; Open</span><span class="badge muted type-caption">Locked</span></div>
   <div class="badges"><span class="badge draft type-caption">Draft</span><span class="badge merged type-caption">Merged</span><span class="branch type-code">main</span><span class="sec">&#8592;</span><span class="branch type-code">chore/update</span></div>
-  <div class="card stat"><span class="type-body">1 file changed</span><span class="type-body"><span class="add">+30</span> <span class="del">-26</span></span></div>
+  <div class="card stat"><span class="type-body">1 file changed</span><span class="type-body"><span class="plus">+30</span> <span class="minus">-26</span></span></div>
   <div class="banner type-headline">Archived by owner &#183; Read-only</div>
   <p class="note">success.emphasis, neutral.emphasis, done.emphasis, surface.muted, accent.subtle (branch), success.fg, danger.fg, attention.*</p>
  </div>
@@ -253,7 +253,7 @@ table.tokens th[scope=row]{font-weight:500;width:40%}
 .badge.muted{background:var(--color-surface-muted);color:var(--color-text-secondary)}
 .branch{height:var(--size-branch);padding:0 6px;border-radius:var(--radius-branch);background:var(--color-accent-subtle);color:var(--color-text-link);display:inline-flex;align-items:center}
 .stat{border:1px solid var(--color-border-divider);display:flex;justify-content:space-between;padding:14px var(--space-cardPadding);margin-top:12px}
-.add{color:var(--color-success-fg)}.del{color:var(--color-danger-fg)}
+.plus{color:var(--color-success-fg)}.minus{color:var(--color-danger-fg)}
 .banner{margin-top:12px;padding:12px;text-align:center;background:var(--color-attention-subtle);color:var(--color-attention-fg)}
 .btn{display:block;width:100%;max-width:326px;height:var(--size-button);margin:12px 0 0;border:0;border-radius:var(--radius-button);background:var(--color-button-neutral-bg);color:var(--color-button-neutral-text);font-family:var(--font-base)}
 .pair{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap}.pair .btn{margin:0;flex:1}

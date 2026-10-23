@@ -25,7 +25,7 @@
   {"name": "card-settings", "capture": "21-settings-grouped-values-new-badge", "box": [40, 340, 732, 660], "themes": ["dark", "light"]},
   {"name": "card-status", "capture": "20-profile-status-achievements-rows", "box": [40, 470, 732, 135], "themes": ["dark", "light"]},
   {"name": "card-promo", "capture": "06-copilot-promo-card-status-badges", "box": [40, 375, 732, 400], "themes": ["dark", "light"]},
-  {"name": "card-activity", "capture": "05-explore-activity-card-merged-badge-code", "box": [40, 840, 740, 350], "themes": ["dark", "light"]},
+  {"name": "card-activity", "capture": "05-explore-activity-card-merged-badge-code", "box": [40, 840, 740, 660], "themes": ["dark", "light"]},
   {"name": "banner-archived", "capture": "11-repo-page-archived-banner-star-button-rows", "box": [16, 272, 780, 96], "themes": ["dark", "light"]},
   {"name": "banner-notification", "capture": "03-inbox-chips-banner-unread-rows", "box": [30, 520, 750, 370], "themes": ["dark", "light"]},
   {"name": "list-row-inbox", "capture": "03-inbox-chips-banner-unread-rows", "box": [16, 950, 780, 255], "themes": ["dark", "light"]},
