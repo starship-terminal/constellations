@@ -1059,6 +1059,68 @@
       "layoutGaps": {
         "icons/": "Gemini's icons and the Gemini spark are Google's artwork and are not kept here (docs/RIGHTS.md)"
       }
+    },
+    {
+      "slug": "github-ios",
+      "name": "GitHub Mobile",
+      "url": "https://github.com/mobile",
+      "category": "productivity",
+      "platform": "mobile",
+      "goodFor": "Native iOS developer tools: grouped cards on a near-black or pale grey page, full-bleed lists on the card colour, a floating iOS 26 glass tab bar, grey neutral buttons, coloured icon tiles per object type, filled state badges, monospace diffs with line and syntax colours",
+      "tags": [
+        "ios",
+        "mobile",
+        "developer-tools",
+        "code",
+        "glass",
+        "tab-bar",
+        "grouped-list",
+        "per-item-colour"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-24",
+      "access": "signed in, Copilot Pro, iPhone Mirroring",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        390
+      ],
+      "entry": "systems/github-ios/README.md",
+      "tokens": "systems/github-ios/tokens.json",
+      "styleGuide": "systems/github-ios/style-guide.html",
+      "preview": {
+        "cover": "systems/github-ios/screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.page",
+            "surface": "light.color.surface.card",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.accent.fg",
+            "border": "light.color.border.divider"
+          },
+          "dark": {
+            "page": "dark.color.bg.page",
+            "surface": "dark.color.surface.card",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.color.accent.fg",
+            "border": "dark.color.border.divider"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.base",
+          "core.fontFamily.mono"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/github-ios/raw-shots (full-colour captures, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "GitHub's icons are its artwork and were not extracted from the captures (docs/RIGHTS.md)"
+      }
     }
   ]
 }
