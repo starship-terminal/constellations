@@ -9,6 +9,7 @@
     "productivity": "Productivity",
     "fitness": "Fitness",
     "component-library": "Component libraries",
+    "messaging": "Messaging",
     "media": "Media"
   },
   "systems": [
@@ -871,6 +872,67 @@
       },
       "layoutGaps": {
         "icons/": "Grok Bot's icons and bot characters are its artwork and are not kept here (docs/RIGHTS.md)"
+      }
+    },
+    {
+      "slug": "telegram",
+      "name": "Telegram",
+      "url": "https://telegram.org",
+      "category": "messaging",
+      "platform": "mobile",
+      "goodFor": "Native iOS messaging: black or white chat list with a grey pinned band, grouped settings cards led by gradient icon tiles, iOS 26 glass nav buttons, folder chips and a floating tab bar, one blue accent, violet-to-blue (dark) or pale green (light) outgoing bubbles over a wallpaper",
+      "tags": [
+        "ios",
+        "mobile",
+        "chat",
+        "messaging",
+        "glass",
+        "grouped-list",
+        "tab-bar",
+        "dense"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-23",
+      "access": "signed in, iPhone Mirroring",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        390
+      ],
+      "entry": "systems/telegram/README.md",
+      "tokens": "systems/telegram/tokens.json",
+      "styleGuide": "systems/telegram/style-guide.html",
+      "preview": {
+        "cover": "systems/telegram/screenshots/dark/02-chat-list-folders-tabbar.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.chats",
+            "surface": "light.color.surface.card",
+            "text": "light.color.text.primary",
+            "muted": "light.color.text.secondary",
+            "accent": "light.color.accent.default",
+            "border": "light.color.border.divider"
+          },
+          "dark": {
+            "page": "dark.color.bg.chats",
+            "surface": "dark.color.surface.card",
+            "text": "dark.color.text.primary",
+            "muted": "dark.color.text.secondary",
+            "accent": "dark.color.accent.default",
+            "border": "dark.color.border.divider"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.base"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/telegram/raw-shots (full-colour captures, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Telegram's icons, stickers and illustrations are its artwork and are not kept here (docs/RIGHTS.md)"
       }
     },
     {
