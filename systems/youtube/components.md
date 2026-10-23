@@ -14,11 +14,12 @@ Checklist item: button. The primary call to action: a capsule in the theme's ink
 | label | `color.button.filled.text` |
 | label type | `typography.label` |
 | large fill | `color.button.large.bg` |
+| large label | `color.button.large.text` |
 | large height | `size.buttonLarge` |
 
 Crops: [ad pair (dark)](components/crops/button-ad-pair.png), [ad pair (light)](components/crops/button-ad-pair-light.png), [Premium interstitial (dark)](components/crops/button-large-upsell.png).
 
-White in dark, near-black in light; never red or blue. The interstitial's large button is dark grey over its own light gradient.
+White in dark, near-black in light; never red or blue. The interstitial's large button is the exception: dark grey with a white label, over its own light gradient.
 
 ## Tonal button
 

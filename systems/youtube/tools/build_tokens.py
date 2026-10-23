@@ -145,7 +145,7 @@ def core():
         "avatarProfile": tok(px(pt_of("size.avatarProfile")), "dimension", "The owner's avatar on the You tab.", "Sampled", rd("size.avatarProfile")["capture"]),
         "switch": {
             "width": tok(px(pt_of("size.switch")), "dimension", f"Switch track: {rd('size.switch')['value']} dark, {rd('size.switch', 'light')['value']} light, anti-aliased edge excluded.", "Sampled", rd("size.switch")["capture"]),
-            "height": tok(px(round(pt_of("size.switch", "dark", 1))), "dimension", f"Switch track height ({rd('size.switch')['value']}).", "Sampled", rd("size.switch")["capture"]),
+            "height": tok(px(pt_of("size.switchTrack.h")), "dimension", f"Switch track height, read beside the thumb ({rd('size.switchTrack.h')['value']} dark, {rd('size.switchTrack.h', 'light')['value']} light). The thumb is taller and overhangs it.", "Sampled", rd("size.switchTrack.h")["capture"]),
             "thumb": tok(px(pt_of("size.switchThumb")), "dimension", f"Round switch thumb ({rd('size.switchThumb')['value']} in dark), wider than the track is tall. The light thumb sits on a shadow and could not be bounded.", "Sampled", rd("size.switchThumb")["capture"]),
         },
         "menuWidth": tok(px(round(span("size.menu.w"))), "dimension", f"Video overflow menu width: {span('size.menu.w'):g} pt dark, {span('size.menu.w', 'light'):g} pt light; nine items make it {span('size.menu.h'):g} pt tall in dark.", "Sampled", rd("size.menu.w")["capture"]),
@@ -274,7 +274,8 @@ def semantic(theme):
             "outlined": {"bg": f("surface.outlined", "Get Premium: the page colour with an outline."),
                          "border": alias("color.border.outline", "color", "The outline of Get Premium.")},
             "subscribe": {"bg": dark_only(theme, "surface.subscribe", "Subscribe pill on a Short, white over the video.", None, on_media)},
-            "large": {"bg": dark_only(theme, "surface.upsellButton", "The '1 month free' button on the Premium interstitial, dark over a light gradient.", None, "the interstitial was seen once, in dark; it draws its own light background.")},
+            "large": {"bg": dark_only(theme, "surface.upsellButton", "The '1 month free' button on the Premium interstitial, dark over a light gradient.", None, "the interstitial was seen once, in dark; it draws its own light background."),
+                      "text": dark_only(theme, "button.largeLabel", "The '1 month free' label: white on the dark button.", None, "the interstitial was seen once, in dark; it draws its own light background.")},
         },
         "switch": {
             "onTrack": f("switch.onTrack", "Switch on, track: a pale blue."),

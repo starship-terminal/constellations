@@ -49,6 +49,7 @@ colors:
   color-button-outlined-border: "#D0D0D0"
   color-button-subscribe-bg: "#FFFFFF"
   color-button-large-bg: "#212121"
+  color-button-large-text: "#FFFFFF"
   color-switch-onTrack: "#82AEEA"
   color-switch-onThumb: "#055ED4"
   color-switch-offTrack: "#BDBDBD"
@@ -190,7 +191,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **My Ad Centre stays dark in light.** Only its header row turns white ([03 light](screenshots/light/03-ad-centre-sheet-accordions.png)), so its tokens (`surface.adSheet`, `border.accordion`, `text.linkOnSheet`) carry the dark value in both sets. Take sheet values from the sort sheet.
 - **Light nav titles are not captured.** On the pushed Settings pages the light title reads nearly white on white ([10 light](screenshots/light/10-settings-icon-list.png), [11 light](screenshots/light/11-general-switches-on-off.png)), likely mid-transition. Use `text.primary`.
 - **The player controls are not shown.** 17-player-controls-overlay-scrubber is the same paused watch page as 16; the controls and scrubber had faded before the capture.
-- **Radii are estimates**, plus or minus 2 pt: chips read 8.5, thumbnails 8.5 and 6.8, cards and sheets 11.9, the menu 17.1.
+- **Radii are estimates**, plus or minus 2 pt: chips read 8.5, thumbnails 7.7 and 6.0, cards and sheets 11.9, the menu 17.1.
 - **Type sizes are estimates**, plus or minus 1 pt, from cap heights at an assumed 0.72 em; weights are judged by eye. Only multi-line blocks have line heights (helper text 17 pt, a two-line title 20 pt).
 - **The light caret may be mid-blink.** It reads #BABABA where the dark caret reads #F1F1F1.
 - **The neutral list is a list.** `core.color.neutral` holds every grey the two themes use, sorted and numbered by order. It is not a published ramp.

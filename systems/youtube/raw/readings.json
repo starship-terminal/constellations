@@ -298,6 +298,21 @@
    "value": "#F2F2F2"
   }
  },
+ "button.largeLabel": {
+  "dark": {
+   "args": [
+    300,
+    1360,
+    210,
+    45
+   ],
+   "capture": "screenshots/dark/01-premium-upsell-interstitial.png",
+   "evidence": "Sampled (text)",
+   "note": "'1 month free' label",
+   "op": "text",
+   "value": "#FFFFFF"
+  }
+ },
  "button.pill": {
   "dark": {
    "args": [
@@ -772,7 +787,7 @@
    "inset": 4,
    "note": "Shorts shelf card, top-left corner",
    "op": "corner",
-   "value": "6.8pt"
+   "value": "6.0pt"
   }
  },
  "radius.thumbnail": {
@@ -795,7 +810,7 @@
    "inset": 5,
    "note": "History thumbnail, top-left corner",
    "op": "corner",
-   "value": "8.5pt"
+   "value": "7.7pt"
   }
  },
  "rows.search": {
@@ -4637,7 +4652,7 @@
    "capture": "screenshots/dark/11-general-switches-on-off.png",
    "colour": "#575757",
    "evidence": "Sampled",
-   "note": "Switch track",
+   "note": "Switch track and the thumb's edge (its width)",
    "op": "bbox",
    "value": "36x18.5pt"
   },
@@ -4664,7 +4679,7 @@
    "capture": "screenshots/light/11-general-switches-on-off.png",
    "colour": "#BDBDBD",
    "evidence": "Sampled",
-   "note": "Switch track",
+   "note": "Switch track and the thumb's edge (its width)",
    "op": "bbox",
    "value": "33x18pt"
   }
@@ -4723,6 +4738,48 @@
    "note": "Switch thumb",
    "op": "bbox",
    "value": "39.5x27pt"
+  }
+ },
+ "size.switchTrack.h": {
+  "dark": {
+   "args": [
+    "col",
+    752,
+    410,
+    470,
+    [
+     752,
+     410
+    ],
+    20
+   ],
+   "capture": "screenshots/dark/11-general-switches-on-off.png",
+   "evidence": "Sampled",
+   "from": 425,
+   "note": "Switch track height, right of the thumb",
+   "op": "extent",
+   "to": 452,
+   "value": "14pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    752,
+    410,
+    470,
+    [
+     752,
+     410
+    ],
+    20
+   ],
+   "capture": "screenshots/light/11-general-switches-on-off.png",
+   "evidence": "Sampled",
+   "from": 425,
+   "note": "Switch track height, right of the thumb",
+   "op": "extent",
+   "to": 452,
+   "value": "14pt"
   }
  },
  "size.upsellButton": {

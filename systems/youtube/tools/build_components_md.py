@@ -34,9 +34,9 @@ NAME = "YouTube"  # PRODUCT (adapt)
 INVENTORY = [
     ("Filled button", "button", "The primary call to action: a capsule in the theme's ink (Install, Shop now, Learn more on ads; '1 month free' on the Premium interstitial).",
      [("height", "size.button"), ("corner", "radius.capsule"), ("fill", "color.button.filled.bg"), ("label", "color.button.filled.text"), ("label type", "typography.label"),
-      ("large fill", "color.button.large.bg"), ("large height", "size.buttonLarge")],
+      ("large fill", "color.button.large.bg"), ("large label", "color.button.large.text"), ("large height", "size.buttonLarge")],
      [("ad pair", "button-ad-pair"), ("Premium interstitial", "button-large-upsell")],
-     "White in dark, near-black in light; never red or blue. The interstitial's large button is dark grey over its own light gradient."),
+     "White in dark, near-black in light; never red or blue. The interstitial's large button is the exception: dark grey with a white label, over its own light gradient."),
     ("Tonal button", "button", "The secondary action beside a filled one (Watch on an ad).",
      [("height", "size.button"), ("fill", "color.button.tonal.bg"), ("label", "color.button.tonal.text")],
      [("ad pair", "button-ad-pair")],

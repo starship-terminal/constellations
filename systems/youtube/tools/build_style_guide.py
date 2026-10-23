@@ -227,7 +227,7 @@ table.tokens th[scope=row]{font-weight:500;width:40%}
 .list{background:var(--color-bg-page);max-width:358px}
 .srow{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:var(--size-row);padding:6px 0}
 .secthead{margin:16px 0 0}
-.sw-ctl{position:relative;flex:none;width:var(--size-switch-width);height:14px;border-radius:var(--radius-capsule);background:var(--color-switch-offTrack)}
+.sw-ctl{position:relative;flex:none;width:var(--size-switch-width);height:var(--size-switch-height);border-radius:var(--radius-capsule);background:var(--color-switch-offTrack)}
 .sw-ctl::after{content:"";position:absolute;top:50%;left:-2px;width:var(--size-switch-thumb);height:var(--size-switch-thumb);margin-top:calc(var(--size-switch-thumb) / -2);border-radius:50%;background:var(--color-switch-offThumb)}
 .sw-ctl.on{background:var(--color-switch-onTrack)}.sw-ctl.on::after{left:auto;right:-2px;background:var(--color-switch-onThumb)}
 .sheet{background:var(--color-bg-sheet);border-radius:var(--radius-sheet) var(--radius-sheet) 0 0;padding:10px 16px 12px;max-width:358px;border:1px solid var(--color-border-outline)}

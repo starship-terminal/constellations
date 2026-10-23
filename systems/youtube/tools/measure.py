@@ -91,6 +91,7 @@ R = {
     "overlay.durationRef": ("dark/" + CHIP, "fill", (676, 950, 6, 14), "The white thumbnail beside the duration badge"),
     "surface.subscribe":  ("dark/" + SHORTS, "fill", (370, 1470, 20, 10), "Subscribe pill over a Short"),
     "surface.upsellButton": ("dark/" + UPSELL, "fill", (150, 1380, 30, 10), "'1 month free' button on the Premium interstitial"),
+    "button.largeLabel":  ("dark/" + UPSELL, "text", (300, 1360, 210, 45), "'1 month free' label"),
     # ---------------------------------------------------------------- text
     "text.title":         {"dark": (CHIP, "text", (130, 1015, 530, 45)), "light": (CHIP, "text", (128, 1005, 520, 45)),
                            "note": "Video title under a feed card"},
@@ -142,7 +143,8 @@ R = {
                            "light": (OVERFLOW, "find", ("row", 600, 190, 790, (255, 255, 255), 0)), "note": "Overflow menu, positions of its fill along a row"},
     "size.menu.h":        {"dark": (OVERFLOW, "find", ("col", 600, 540, 1560, (40, 40, 40), 2)),
                            "light": (OVERFLOW, "find", ("col", 700, 160, 1040, (255, 255, 255), 1)), "note": "Overflow menu, positions of its fill down a column"},
-    "size.switch":        (GENERAL, "bbox", ((740, 437), (680, 400, 110, 80), 12), "Switch track"),
+    "size.switch":        (GENERAL, "bbox", ((740, 437), (680, 400, 110, 80), 12), "Switch track and the thumb's edge (its width)"),
+    "size.switchTrack.h": (GENERAL, "extent", ("col", 752, 410, 470, (752, 410), 20), "Switch track height, right of the thumb"),
     "size.switchThumb":   {"dark": (GENERAL, "bbox", ((712, 437), (680, 400, 110, 80), 12)),
                            "light": (GENERAL, "bbox", ((712, 437), (680, 400, 110, 80), 3)), "note": "Switch thumb"},
     "size.createButton":  {"dark": (YOU, "extent", ("row", 1648, 345, 470, (345, 1648), 14)),
@@ -270,12 +272,13 @@ def op_diag(rows, cx, cyc, cxr, cy):
 
 def op_corner(rows, x0, y0, bgpt, thr):
     """A corner with no flat fill inside (a thumbnail): x0, y0 is where its straight edges meet; the
-    inset is how far along the diagonal the first pixel that differs from the background sits."""
+    inset is how far along the diagonal the first pixel that differs from the background sits, less
+    half a pixel so it measures to the edge rather than to that pixel's far side."""
     bg = rows[bgpt[1]][bgpt[0]]
     t = 0
     while d(rows[y0 + t][x0 + t], bg) <= thr:
         t += 1
-    r = t / (1 - 2 ** -0.5) / SCALE
+    r = max(t - 0.5, 0) / (1 - 2 ** -0.5) / SCALE
     return {"value": f"{r:.1f}pt", "inset": t, "corner": [x0, y0], "evidence": "Derived"}
 
 

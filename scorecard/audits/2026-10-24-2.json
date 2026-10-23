@@ -1867,7 +1867,7 @@
     },
     "F11": {
      "grade": "partly",
-     "evidence": "Control heights in core.size (chip 32, search field 32, button 40, pill 33, Subscribe 32, large button 55, rows 50 and 56, tab bar 48, Create 36, switch 36 x 18 with a 19 pt thumb) and core.size.touchTarget 44 with the smaller controls named; no icon sizes."
+     "evidence": "Control heights in core.size (chip 32, search field 32, button 40, pill 33, Subscribe 32, large button 55, rows 50 and 56, tab bar 48, Create 36, switch track 36 x 14 with a 19 pt thumb) and core.size.touchTarget 44 with the smaller controls named; no icon sizes."
     },
     "F12": {
      "grade": "partly",
@@ -1915,7 +1915,7 @@
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 162 of 162 tokens name their source"
+     "evidence": "Script: 164 of 164 tokens name their source"
     },
     "K2": {
      "grade": "meets",
