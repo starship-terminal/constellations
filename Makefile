@@ -47,8 +47,9 @@ design-md: brief ## Rewrite every Brief, then regenerate every package's DESIGN.
 lint-design-md: ## Lint every DESIGN.md with Google's pinned linter (needs Node.js; runs npx in a temp dir)
 	@$(PYTHON) tools/catalog.py design-md --lint
 
-test: ## Run the tools' tests
+test: ## Run the tools' tests, then every package's own tests (systems/*/tools/test_*.py)
 	@$(PYTHON) -m unittest discover -s tools -p 'test_*.py'
+	@$(PYTHON) tools/package_tests.py
 
 clean: ## Remove generated files
 	rm -rf site docs/gallery/data.json docs/gallery/thumbs docs/gallery/refero docs/scorecard refero/.work
