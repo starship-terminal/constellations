@@ -15,6 +15,7 @@ Standard library only.
 """
 from __future__ import annotations
 
+import importlib.util
 import re
 import subprocess
 import sys
@@ -34,6 +35,12 @@ def packages(root: Path = ROOT, only: list[str] | None = None) -> list[Path]:
     return found
 
 
+def installed(module: str) -> bool:
+    """Whether this interpreter can import `module`, so a bad import of an installed
+    package (a name Pillow does not have, say) stays an error."""
+    return importlib.util.find_spec(module) is not None
+
+
 class Result(unittest.TextTestResult):
     """Counts an error raised because an optional module is missing as a skip."""
 
@@ -45,7 +52,7 @@ class Result(unittest.TextTestResult):
             found = re.search(r"No module named '([^']+)'", str(err[1]))
             missing = found and found.group(1)
         top = (missing or "").split(".")[0]
-        if top in NEEDS:
+        if top in NEEDS and not installed(top):
             self.addSkip(test, f"needs {NEEDS[top]}, which {sys.executable} lacks")
         else:
             super().addError(test, err)
@@ -62,10 +69,10 @@ def run_here() -> int:
     return 0 if result.wasSuccessful() else 1
 
 
-def main(argv: list[str]) -> int:
+def main(argv: list[str], root: Path = ROOT) -> int:
     if argv[:1] == ["--here"]:
         return run_here()
-    dirs = packages(only=argv or None)
+    dirs = packages(root, argv or None)
     if argv and len(dirs) != len(set(argv)):
         missing = set(argv) - {d.parent.name for d in dirs}
         print(f"no tests for: {', '.join(sorted(missing))}", file=sys.stderr)
