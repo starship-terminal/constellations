@@ -81,7 +81,7 @@ Circles: 36px in the sidebar header and footer (Search, New Bot, Connect apps) o
 
 ## Link
 
-Links in replies are underlined text in the reply's colour; a pull request is a pill with the GitHub mark (`pr-pill`).
+Links in replies are underlined text in the reply's colour; a pull request is a pill with the GitHub mark (`pr-pill`). Both were measured while scrolled above the window, so neither has a crop.
 
 | Part | State | Crops | Values |
 |---|---|---|---|

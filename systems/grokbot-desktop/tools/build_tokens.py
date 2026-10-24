@@ -136,18 +136,33 @@ def semantic(t):
         else:
             put(tree, p, tok(value, "color", "Measured", where(t, n), formula=decl or comp[n]))
     # Focus: Grok Bot paints its focus tokens transparent until a Tab press sets [data-sand-keyboard-nav]
-    # on the root (`:root:not([data-sand-keyboard-nav]) { --sand-border-focus-primary: transparent !important }`).
-    # The value it switches to is the theme element's declaration.
-    for n, p in (("--sand-border-focus-primary", ("border", "focus-primary")), ("--cursor-stroke-focus-ring", ("kit", "stroke", "focus-ring"))):
-        decl, sheet = effective(t, n)
-        target = re.fullmatch(r"var\((--[\w-]+)\)", (decl or "").strip())
-        if target and target.group(1) in paths:
-            put(tree, p, tok("{%s}" % ".".join(paths[target.group(1)]), "color", "Measured",
-                f"{n} = {decl} on :root ({sheet}), {THEME_NAME[t]} theme, {DATE}; painted only while [data-sand-keyboard-nav] is set",
-                formula=decl))
-        elif decl and LITERAL.match(decl.strip()):
-            put(tree, p, tok(color(decl.strip()), "color", "Measured",
-                f"{n} = {decl} on :root ({sheet}), {THEME_NAME[t]} theme, {DATE}; painted only while [data-sand-keyboard-nav] is set"))
+    # on the root (`:root:not([data-sand-keyboard-nav]) { --sand-border-focus-primary: transparent !important; ... }`).
+    # Every name that rule hides gets the value it switches to: the theme's own declaration, resolved
+    # in order so a var() of a restored name follows it (a literal, a var(), or a color-mix with transparent).
+    hidden = sorted({d["name"] for d in V[t]["decls"] if d["selector"].startswith(":root:not([data-sand-keyboard-nav])")})
+    keyboard = {}
+    for _ in range(3):
+        for n in hidden:
+            if n not in paths:
+                continue
+            decl, sheet = effective(t, n)
+            decl = (decl or "").strip()
+            src = f"{n} = {decl} on :root ({sheet}), {THEME_NAME[t]} theme, {DATE}; painted only while [data-sand-keyboard-nav] is set"
+            ref = re.fullmatch(r"var\((--[\w-]+)\)", decl)
+            mix = re.fullmatch(r"color-mix\(in srgb, var\((--[\w-]+)\) ([\d.]+)%, transparent\)", decl)
+            if LITERAL.match(decl):
+                keyboard[n] = color(decl)
+                put(tree, paths[n], tok(keyboard[n], "color", "Measured", src))
+            elif ref and ref.group(1) in paths:
+                keyboard[n] = keyboard.get(ref.group(1)) or color(painted[ref.group(1)])
+                put(tree, paths[n], tok("{%s}" % ".".join(paths[ref.group(1)]), "color", "Measured", src, formula=decl))
+            elif mix and mix.group(1) in paths:
+                base = keyboard.get(mix.group(1)) or color(painted[mix.group(1)])
+                m = re.fullmatch(r"#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})|rgba\((\d+), (\d+), (\d+), ([\d.]+)\)", base)
+                rgb = [int(x, 16) for x in m.groups()[:3]] if m.group(1) else [int(x) for x in m.groups()[3:6]]
+                alpha = (1 if m.group(1) else float(m.group(7))) * float(mix.group(2)) / 100
+                keyboard[n] = "rgba(%d, %d, %d, %s)" % (rgb[0], rgb[1], rgb[2], "%g" % round(alpha, 3))
+                put(tree, paths[n], tok(keyboard[n], "color", "Derived", src + "; mixed here from the restored colour", formula=decl))
     for n in SHADOWS:
         if n in V[t]["shadows"]:
             key = n.replace("--sand-shadow-", "").replace("--ui-", "").replace("-box-shadow", "")
@@ -191,8 +206,15 @@ def parts(t):
 P = {t: parts(t) for t in THEMES}
 
 
+BASE_STATES = ["default", "selected", "hover"]
+
+
 def style(t, part, state="default"):
+    """A part's reading in a state. For "default", a part never read at rest (a selected row, a tooltip
+    that only exists under the pointer) falls back to its base state: selected, then hover."""
     hit = P[t].get((part, state))
+    if not hit and state == "default":
+        hit = next((P[t][(part, s)] for s in BASE_STATES if (part, s) in P[t]), None)
     return hit if hit else (None, None)
 
 
@@ -352,7 +374,7 @@ ROLE = {
     "scrim": ("{bg.scrim}", "dialog backdrop"),
     "text.primary": ("{text.primary}", ""), "text.secondary": ("{text.secondary}", ""),
     "text.tertiary": ("{text.tertiary}", ""), "text.disabled": ("{text.quaternary}", "the quaternary tier is the faintest text"),
-    "text.on-accent": ("{text.on-primary}", "text on the ink-filled primary button"), "text.link": ("{text.accent-primary}", ""),
+    "text.on-accent": ("{text.on-primary}", "text on the accent and danger fills (the Update button, the switch, Delete); the ink primary button uses text.inverted"), "text.link": ("{text.accent-primary}", ""),
     "border.default": ("{border.secondary-translucent}", "composer, dialogs, fields"), "border.strong": ("{border.primary-translucent}", ""),
     "border.subtle": ("{border.tertiary-translucent}", "separators"), "border.focus": ("{border.focus-primary}", "drawn only after a Tab press"),
     "accent.default": ("{bg.accent-primary}", "the Accent setting's default blue; with Accent set to Bot color the open Bot's hue replaces it"),

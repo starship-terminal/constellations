@@ -153,15 +153,15 @@ def specimens():  # PRODUCT (adapt)
   <div class="sp-menu"><div class="sp-mrow">Weekly usage <span class="sp-end">0% used ›</span></div><div class="sp-mrow hi">Settings</div><hr><div class="sp-mrow">Add account</div><div class="sp-mrow danger">Delete</div></div>
  </figure>
  <figure><figcaption>Confirmation over the scrim</figcaption>
-  <div class="sp-scrim"><div class="sp-dialog"><div class="t-heading">Delete “Design Capture”</div>
+  <div class="sp-scrim"><div class="sp-dialog"><div class="t-body" style="font-weight:var(--fontWeight-semibold)">Delete “Design Capture”</div>
    <div class="t-body" style="color:var(--text-secondary)">This permanently deletes the Bot and its chat history.</div>
    <div style="display:flex;gap:8px;margin-top:14px"><span class="sp-btn secondary" style="flex:1">Cancel</span><span class="sp-btn danger" style="flex:1">Delete</span></div></div></div>
  </figure>
  <figure><figcaption>Settings: a grouped card of rows with a select and a switch</figcaption>
   <div class="sp-group-card">
-   <div class="sp-field"><span class="t-label">Theme</span><span class="sp-select">Follow System ⌄</span></div>
-   <div class="sp-field"><span class="t-label">Check Spelling While Typing</span><span class="sp-switch on"></span></div>
-   <div class="sp-field"><span class="t-label">Automatic Updates</span><span class="sp-switch"></span></div>
+   <div class="sp-field"><span class="t-list">Theme</span><span class="sp-select">Follow System ⌄</span></div>
+   <div class="sp-field"><span class="t-list">Check Spelling While Typing</span><span class="sp-switch on"></span></div>
+   <div class="sp-field"><span class="t-list">Automatic Updates</span><span class="sp-switch"></span></div>
   </div>
  </figure>
 </div>"""
@@ -195,7 +195,7 @@ figcaption { font-size:12px; color:var(--text-tertiary); margin-bottom:12px; }
 .sp-voice { width:28px; height:28px; border-radius:99px; background:var(--bg-magenta-bright); flex:none; }
 .sp-buttons { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
 .sp-btn { display:inline-flex; align-items:center; justify-content:center; height:var(--size-control-button); padding:0 14px; border-radius:99px; font-weight:var(--fontWeight-medium); border:1px solid transparent; }
-.sp-btn.primary { background:var(--bg-primary); color:var(--text-on-primary); }
+.sp-btn.primary { background:var(--component-button-primary-bg); color:var(--component-button-primary-text); }
 .sp-btn.primary.disabled { background:var(--bg-primary-disabled); color:var(--text-quaternary); }
 .sp-btn.secondary { background:var(--component-button-secondary-bg); color:var(--component-button-secondary-text); border-color:var(--role-border-default); }
 .sp-btn.danger { background:var(--component-button-danger-bg); color:var(--component-button-danger-text); }

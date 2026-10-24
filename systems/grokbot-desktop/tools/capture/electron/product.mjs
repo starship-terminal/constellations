@@ -360,18 +360,27 @@ async function sendPrompt({ page }, text) {
   await page.keyboard.press('Enter'); await wait(page, 900);
 }
 const transcript = page => page.locator('.sand-virtual-transcript');
+let idleSamples = 0;
 const approveButton = page => transcript(page).locator('button').filter({ visible: true }).filter({ hasText: /^(Allow|Approve|Run|Accept|Yes)\b/ }).last();
 const rejectButton = page => transcript(page).locator('button').filter({ visible: true }).filter({ hasText: /^(Deny|Reject|Skip|Cancel|No)\b/ }).last();
 export const RUN = {
   window: 'main',
   async start(h) { await home(h); },
   async finish(h) { await closeAll(h.page); },
+  // A step is done only when the Bot has answered the prompt just sent and stayed idle for two
+  // samples in a row: while it works the transcript ends in an activity row (its mark and a shimmering
+  // label), and until it answers the newest row is the owner's. No mark alone is not enough, since the
+  // mark appears a moment after the prompt and between a progress message and the next tool call.
   async state({ page }) {
     if (await approveButton(page).count()) return 'approval';
     const stop = page.locator('button[aria-label*="Stop" i], button[aria-label*="Cancel" i]').filter({ visible: true });
-    // While a Bot works, the transcript ends in an activity row: the Bot's mark and a shimmering label.
     const working = page.locator('.sand-virtual-transcript .sand-activity-mark').filter({ visible: true });
-    return (await stop.count()) || (await working.count()) ? 'running' : 'done';
+    const newestIsOwner = await page.locator('.sand-transcript-row').evaluateAll(rows => {
+      const last = rows.reduce((a, r) => (!a || +r.dataset.index > +a.dataset.index ? r : a), null);
+      return !!last && last.getAttribute('data-role') === 'user';
+    }).catch(() => true);
+    if ((await stop.count()) || (await working.count()) || newestIsOwner) { idleSamples = 0; return 'running'; }
+    return ++idleSamples >= 2 ? 'done' : 'running';
   },
   async reject({ page }) { await rejectButton(page).click().catch(() => {}); await wait(page, 800); },
   steps: [],

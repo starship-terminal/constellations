@@ -3639,7 +3639,7 @@
     },
     "F3": {
      "grade": "meets",
-     "evidence": "role.text.primary, secondary, tertiary, disabled ({text.quaternary}), on-accent ({text.on-primary}, the text on the ink primary) and link ({text.accent-primary}) in both themes, read on :root."
+     "evidence": "role.text.primary, secondary, tertiary, disabled ({text.quaternary}), on-accent ({text.on-primary}, the text on the accent and danger fills) and link ({text.accent-primary}) in both themes, read on :root; the ink primary button's own text is text.inverted (component.button-primary.text)."
     },
     "F4": {
      "grade": "meets",
@@ -3687,7 +3687,7 @@
     },
     "C1": {
      "grade": "partly",
-     "evidence": "15 of the 19 checklist components captured (button, icon button, link, text field, text area, select, switch, tabs, menu, tooltip, dialog, card, list row, avatar, badge), plus toolbar (the floating conversation title), context menu and inspector. Checkbox, radio and table are not present in the product (switches and the New Bot dialog's shape and colour grids take their place) and toast was not captured, so it falls two short of 17."
+     "evidence": "15 of the 19 checklist components captured (button, icon button, link (values only: the reply link and pull request pill were measured off screen), text field, text area, select, switch, tabs, menu, tooltip, dialog, card, list row, avatar, badge), plus toolbar (the floating conversation title), context menu and inspector. Checkbox, radio and table are not present in the product (switches and the New Bot dialog's shape and colour grids take their place) and toast was not captured, so it falls two short of 17."
     },
     "C2": {
      "grade": "partly",
@@ -3699,7 +3699,7 @@
     },
     "C4": {
      "grade": "meets",
-     "evidence": "components.md writes 76% of its values as tokens (1265 of 1672), and every colour in component.* (70 per theme) is an alias to a sand token."
+     "evidence": "components.md writes 76% of its values as tokens (1265 of 1672), and every colour in component.* (75 per theme) is an alias to a sand token."
     },
     "P1": {
      "grade": "partly",
@@ -3719,7 +3719,7 @@
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 2102 of 2102 tokens name their source"
+     "evidence": "Script: 2119 of 2119 tokens name their source"
     },
     "K2": {
      "grade": "meets",
