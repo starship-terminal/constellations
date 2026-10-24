@@ -174,8 +174,9 @@ PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs \
 ```
 
 `shot.mjs` connects to the running app, screenshots the window's page at
-its own size and pixel ratio, and writes every custom property on `:root`,
-`html` and `body` beside it. `--hover=<selector>` forces `:hover` through
+its own size and pixel ratio, and writes beside it every custom property
+declared on `:root`, `html` or `body`, with the value it computes to in the
+theme on screen. `--hover=<selector>` forces `:hover` through
 the DevTools protocol, so no pointer moves. It only reads: navigating,
 opening menus and switching themes stay with the person driving the app.
 Quit the app and open it normally when done, because any local process can
@@ -186,7 +187,7 @@ ignore the switch, and then the native route below is the fallback.
 
 **Native and Catalyst.** As for iOS, every value comes from the window's
 pixels: `screencapture -o -x -l "$(swift
-tools/kit/capture/native/winid.swift '<App>')"`, converted from Display P3
+tools/kit/capture/native/winid.swift '<App>')" shot.png`, converted from Display P3
 to sRGB, read with `sample.py`. Hover exists on the desktop, so each hover
 state is one more capture with the pointer really over the control.
 
