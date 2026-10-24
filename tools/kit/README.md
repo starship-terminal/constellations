@@ -39,6 +39,8 @@ See [docs/CAPTURE.md](../../docs/CAPTURE.md#dependencies) for the full table.
 | Public web pages | Headless Playwright straight from the URL | `capture/public/` (from gauth), with its own `build-measurements.mjs`; use `build/build_components_md.public.py` as the package's `build_components_md.py` |
 | Signed-in web app | The owner signs in to a real browser; `snapshot.js` copies each state to disk, then everything is rendered and measured headless from the copies | `capture/signed-in/` (from claude, with chatgpt's measurement builder) |
 | Native iOS app | iPhone Mirroring on the Mac; values are sampled from window screenshots | `capture/native/` to capture, `native/` to measure and build (from grokbot) |
+| Electron desktop app | The owner opens the app with `--remote-debugging-port`; screenshots and CSS variables are read live from the running app | `capture/electron/shot.mjs` ([docs/CAPTURE.md](../../docs/CAPTURE.md#desktop-apps)) |
+| Native desktop app | As the iOS route, with the app's own window | `capture/native/winid.swift`, `sample.py`, `native/` |
 
 `vars.mjs`, `layout.mjs`, `icons.mjs` and `quantize.py` serve both web routes.
 The `build/` scripts serve every route.

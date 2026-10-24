@@ -77,6 +77,12 @@ before opening the product, so every page you visit is there for a reason.
 - **Themes and widths.** Light and dark where the product has both; desktop
   (1440) and phone (390) widths for a web product.
 
+**Screenshots are the shot list; CSS is the values.** Every route captures
+every screen and state on the checklist as a full screenshot, in each
+theme the product has. Reading CSS adds exact values on top of those
+screenshots and never replaces one. A package whose values are all exact
+but whose screens are missing cannot show how the product is laid out.
+
 The package README ends with a coverage table: one row per checklist item,
 marked captured (with the file that shows it), not present in the product,
 or not captured (with the reason, such as "behind a paid plan"). A blank
@@ -136,6 +142,54 @@ package was made this way and its README shows the evidence labels to use.
 6. **Do not break the mirror.** Turning off the phone's network or locking
    it ends the session, so offline and lock-screen states cannot be
    captured this way.
+
+## Desktop apps
+
+First find out what the app is built with. Many desktop apps are a web app
+in a native shell, and those have CSS to read.
+
+| In `<App>.app/Contents` | Built with | Route |
+|---|---|---|
+| `Frameworks/Electron Framework.framework` | Electron (Linear, Notion, Slack, Cursor) | Electron, below |
+| `Frameworks/Chromium Embedded Framework.framework` | Chromium in a native shell (Spotify) | Native |
+| The binary (`otool -L Contents/MacOS/<exe>`) links `UIKit` or `iOSSupport` | The iPad app on the Mac (Catalyst) | Native |
+| None of these | AppKit or SwiftUI (Raycast, Things) | Native |
+
+An app installed from Chrome as a web app is a small launcher that opens
+Chrome, so it shows none of these; capture it as a web app.
+
+**When the product also has a web version**, the desktop app shows the
+same screens. Capture the web version for those and use the desktop app
+only for what exists there alone: the window frame and title bar, native
+menus, settings windows, menu-bar popovers.
+
+**Electron.** Quit the app and open it with Chromium's debugging switch;
+the owner signs in inside the app itself:
+
+```bash
+osascript -e 'tell application "Linear" to quit'
+open -a Linear --args --remote-debugging-port=9333
+PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs \
+  node tools/kit/capture/electron/shot.mjs <out-dir> <name> https://linear.app
+```
+
+`shot.mjs` connects to the running app, screenshots the window's page at
+its own size and pixel ratio, and writes beside it every custom property
+declared on `:root`, `html` or `body`, with the value it computes to in the
+theme on screen. `--hover=<selector>` forces `:hover` through
+the DevTools protocol, so no pointer moves. It only reads: navigating,
+opening menus and switching themes stay with the person driving the app.
+Quit the app and open it normally when done, because any local process can
+drive an app whose port is open. Linear 1.32.4 accepted the switch on
+2026-10-25 and kept its session across relaunches (the first relaunch came
+back signed out, and after one sign-in the session held); an app may
+ignore the switch, and then the native route below is the fallback.
+
+**Native and Catalyst.** As for iOS, every value comes from the window's
+pixels: `screencapture -o -x -l "$(swift
+tools/kit/capture/native/winid.swift '<App>')" shot.png`, converted from Display P3
+to sRGB, read with `sample.py`. Hover exists on the desktop, so each hover
+state is one more capture with the pointer really over the control.
 
 ## What stays outside the repo
 
