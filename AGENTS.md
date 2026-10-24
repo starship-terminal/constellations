@@ -193,6 +193,17 @@ agree (`tools/refero/check.py`; skips the db side on a clone without
 `git lfs pull`).
 
 ```bash
+make test
+```
+
+It runs the top-level `tools/` tests, then every package's own
+`systems/<slug>/tools/test_*.py` through
+[tools/package_tests.py](tools/package_tests.py), each package in its own
+interpreter from its `tools/` folder. A package test that needs Pillow is
+reported as skipped when the interpreter lacks it; run
+`make test PYTHON=<a python3 with Pillow>` to cover those too.
+
+```bash
 git lfs status
 ```
 
