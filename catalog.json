@@ -1618,6 +1618,73 @@
       }
     },
     {
+      "slug": "cursor-desktop",
+      "name": "Cursor (desktop)",
+      "url": "https://cursor.com",
+      "category": "ai-agent",
+      "platform": "desktop",
+      "goodFor": "Desktop coding-agent app in Electron: a near-black or off-white window with a quiet sidebar of agents and projects, one raised composer, plain-text agent replies under a raised prompt bubble, translucent alpha tiers of one base colour for every text, fill and edge, an accent-blue primary button with ink-filled pill buttons beside it, 8px-radius rows and 12px raised menus and dialogs",
+      "tags": [
+        "desktop",
+        "electron",
+        "macos",
+        "coding",
+        "ai",
+        "agent",
+        "ide",
+        "sidebar",
+        "dense",
+        "glass",
+        "dark",
+        "light",
+        "alpha-tiers"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-25",
+      "access": "signed in (the owner's Team plan); read live from the running app over its remote-debugging port",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1280
+      ],
+      "entry": "systems/cursor-desktop/README.md",
+      "tokens": "systems/cursor-desktop/tokens.json",
+      "styleGuide": "systems/cursor-desktop/style-guide.html",
+      "preview": {
+        "cover": "systems/cursor-desktop/screenshots/dark/home-default.png",
+        "swatches": {
+          "light": {
+            "page": "light.role.page",
+            "surface": "light.role.surface",
+            "text": "light.role.text.primary",
+            "muted": "light.role.text.secondary",
+            "accent": "light.role.accent.default",
+            "border": "light.role.border.default"
+          },
+          "dark": {
+            "page": "dark.role.page",
+            "surface": "dark.role.surface",
+            "text": "dark.role.text.primary",
+            "muted": "dark.role.text.secondary",
+            "accent": "dark.role.accent.default",
+            "border": "dark.role.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans",
+          "core.fontFamily.mono"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/cursor-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Cursor's icons are its own icon font (cursor-icons) and artwork, and are not kept here (docs/RIGHTS.md)"
+      }
+    },
+    {
       "slug": "luma-ios",
       "name": "Luma",
       "url": "https://luma.com",
