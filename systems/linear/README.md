@@ -18,7 +18,7 @@ The 2026-10-17 refresh re-read the app from its own CSS, in both themes, from re
 | [components/](components) | 30 SVG redraws from the first capture (reconstructions) with `manifest.json`, written by `tools/build_library.py`; `crops/` holds 178 crops of the measured app components per state and theme, at 2x |
 | [boards/](boards) | Five SVG reference sheets (colours, type and geometry, controls, components, icons) for importing into a vector editor. Reconstructions, written by `tools/build_library.py` |
 | [icons/](icons) | `reference/`: 39 SVG extracts from visible buttons in Linear's public homepage demos (see Icons) |
-| [screenshots/](screenshots) | 35 full-page public captures (2026-09-23); `app-2026-10/`: 22 renders of the redacted app copies (256 colours); `app/`: 47 anonymised accessibility snapshots from the first capture, with no images (three of them are settings pages that redirected or did not load, which the style guide leaves out) |
+| [screenshots/](screenshots) | 35 full-page public captures (2026-09-23); `app-2026-10/`: 22 renders of the redacted app copies (256 colours); `app/`: 47 anonymised accessibility snapshots from the first capture, with no images (three of them are settings pages that redirected or did not load, which the style guide leaves out); `desktop/login-dark.png`: the login screen in the macOS desktop app (Linear 1.32.4, Electron), 1280 by 800 at 2x, 256 colours, 2026-10-25 |
 | [previews/](previews) | PNG renders of the five boards, `all-boards.png`, `aligned-buttons.png` and a public contact sheet |
 | [thumbnails/](thumbnails) | JPEG thumbnails of the public screenshots for the style guide, written by `tools/build_guide.py` |
 | [preview.html](preview.html) | Every board on one page, for checking the SVGs in a browser. Written by `tools/build_guide.py` |
@@ -135,6 +135,8 @@ Primary sources: Linear's live pages and signed-in workspace; https://linear.app
 Status colours depend on the team's workflow; feedback.warning is the "At risk" health label, a muted text colour, not a warning banner (none appeared); the checkbox is invisible in the copies (script shows it on row hover), so only its 12px box was read; avatar fills are this package's grey disc, only their size and shape are Linear's.
 
 Some crops do not show the state their name gives. Keyboard focus reached the board card, the sub-issue row and the description editor, but nothing changed in the copies: `raw/components-computed.json` reads outline none, and `card-focus-visible`, `list-row-focus-visible` and `text-area-focus-visible` (both themes) are byte-identical to their default crops. Whether the live app marks focus on these some other way is not known. The hover crops of the card and the toast are also identical to their defaults, with no computed change.
+
+The public `screenshots/login.png` (2026-09-23) is blank: it was taken before the page drew. Use `screenshots/desktop/login-dark.png` for the login layout; the page's CSS is still in `raw/styles/login-styles.json`.
 
 No disabled control appeared, so `text.quaternary` is the faintest text colour, not a confirmed disabled colour. The focus offset differs by control (see Do and don't 6), so `core.focusRing.offset-button` (2px) fits primary buttons and the switch only; the secondary and destructive buttons measured 0. The redraws `button-primary-disabled.svg` and `field-error.svg` show states this capture never reached.
 

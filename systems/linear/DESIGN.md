@@ -350,6 +350,8 @@ Status colours depend on the team's workflow; feedback.warning is the "At risk" 
 
 Some crops do not show the state their name gives. Keyboard focus reached the board card, the sub-issue row and the description editor, but nothing changed in the copies: `raw/components-computed.json` reads outline none, and `card-focus-visible`, `list-row-focus-visible` and `text-area-focus-visible` (both themes) are byte-identical to their default crops. Whether the live app marks focus on these some other way is not known. The hover crops of the card and the toast are also identical to their defaults, with no computed change.
 
+The public `screenshots/login.png` (2026-09-23) is blank: it was taken before the page drew. Use `screenshots/desktop/login-dark.png` for the login layout; the page's CSS is still in `raw/styles/login-styles.json`.
+
 No disabled control appeared, so `text.quaternary` is the faintest text colour, not a confirmed disabled colour. The focus offset differs by control (see Do and don't 6), so `core.focusRing.offset-button` (2px) fits primary buttons and the switch only; the secondary and destructive buttons measured 0. The redraws `button-primary-disabled.svg` and `field-error.svg` show states this capture never reached.
 
 ### Do and don't (from README.md)
