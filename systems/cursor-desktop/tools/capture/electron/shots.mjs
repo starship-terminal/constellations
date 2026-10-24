@@ -36,7 +36,13 @@ const [theme, ...only] = args;
 if (!theme) { console.error('usage: shots.mjs <theme> [name ...] | --set-theme=<label>'); process.exit(2); }
 const out = `${RAW}/${theme}/captures.json`;
 const all = existsSync(out) ? JSON.parse(readFileSync(out, 'utf8')) : {};
-const failures = [];
+// failures: what a shot could not capture. A part the shot lists as optional (shot.optionalParts) or
+// a whole optional shot (shot.optional) is reported but does not fail the run.
+const failures = [], fatal = [];
+const fail = (shot, msg, part) => {
+  failures.push(`${shot.name}: ${msg}`);
+  if (!shot.optional && !(part && (shot.optionalParts || []).includes(part))) fatal.push(`${shot.name}: ${msg}`);
+};
 
 for (const shot of P.SHOTS.filter(s => !only.length || only.includes(s.name))) {
   const h = await session(shot.window);
@@ -50,7 +56,7 @@ for (const shot of P.SHOTS.filter(s => !only.length || only.includes(s.name))) {
     const sel = {};
     for (const [name, spec] of Object.entries(shot.parts || {})) {
       const loc = resolve(page, spec);
-      if (!(await loc.count()) || !(await loc.isVisible().catch(() => false))) { failures.push(`${shot.name}: ${name} not found`); continue; }
+      if (!(await loc.count()) || !(await loc.isVisible().catch(() => false))) { fail(shot, `${name} not found`, name); continue; }
       sel[name] = await tag(loc, `${shot.name}--${name}`);
     }
     // A real pointer over one part (hover), or real keyboard focus on one part (focus-visible:
@@ -72,12 +78,14 @@ for (const shot of P.SHOTS.filter(s => !only.length || only.includes(s.name))) {
       let loc = page.locator(s);
       if (!(await loc.count())) loc = resolve(page, shot.parts[name]);
       try { parts[name] = { box: await box(loc), style: await computed(loc) }; }
-      catch (e) { failures.push(`${shot.name}: ${name} not measured: ${e.message.split('\n')[0]}`); }
+      catch (e) { fail(shot, `${name} not measured: ${e.message.split('\n')[0]}`, name); }
     }
     all[shot.name] = { window: shot.window, state: shot.state || 'default', file: file.split('/').slice(-2).join('/'), viewport: await viewport(page), parts };
     console.log(shot.name, Object.keys(parts).length, 'parts');
   } catch (e) {
-    failures.push(`${shot.name}: ${e.message.split('\n')[0]}`);
+    // A failed shot drops any entry an earlier run left under its name, so no stale reading survives.
+    delete all[shot.name];
+    fail(shot, e.message.split('\n')[0]);
     console.error('FAILED', shot.name, e.message.split('\n')[0]);
   } finally {
     for (const u of undo) await u();
@@ -95,3 +103,4 @@ for (const shot of P.SHOTS.filter(s => !only.length || only.includes(s.name))) {
 writeJson(out, all);
 if (failures.length) { console.log('\nnot captured:'); failures.forEach(f => console.log('  ' + f)); }
 for (const s of Object.values(sessions)) await disconnect(s.browser);
+if (fatal.length) { console.error(`\n${fatal.length} required part(s) or shot(s) not captured`); process.exit(1); }

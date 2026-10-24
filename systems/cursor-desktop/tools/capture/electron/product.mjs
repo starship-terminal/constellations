@@ -208,7 +208,7 @@ export const SHOTS = [
     reveal: async ({ page }) => { await navRow(page, 'Customize').click(); await wait(page, 1600); },
     parts: { banner: S.banner, 'search-field': '.ui-customize-view .ui-input-group', 'filter-pill': nth('.ui-customize-view button.ui-pill', 1),
       'select-outline': '.ui-customize-view .ui-select-trigger', 'list-row': nth('[data-mcp-manage-server]', 0), badge: '[data-mcp-manage-server] .ui-pill',
-      'text-button-accent': 'button[data-tone=accent][data-variant=text]', 'button-secondary': page => page.locator('.ui-customize-view button').filter({ hasText: /^Browse Marketplace$/ }).first() } },
+      'text-button-accent': 'button[data-tone=accent][data-variant=text]', 'button-primary-inverse': page => page.locator('.ui-customize-view button').filter({ hasText: /^Browse Marketplace$/ }).first() } },
   { name: 'automations', window: A,
     reveal: async ({ page }) => { await navRow(page, 'Automations').click(); await wait(page, 1600); },
     parts: { 'page-header': '.ui-page-header', 'button-primary-inverse': newAutomation, 'feature-banner': dc('managed-agents-get-started-banner'),
@@ -224,12 +224,12 @@ export const SHOTS = [
       const bs = row.locator('button'); await bs.nth((await bs.count()) - 1).click(); await wait(page, 600);
       await page.locator('[role=menuitem]').filter({ hasText: /^Delete/ }).first().click(); await wait(page, 1000); },
     parts: { 'confirm-dialog': page => page.locator('[role=dialog], [role=alertdialog]').last(), 'button-danger': page => page.locator('[role=dialog] button, [role=alertdialog] button').filter({ hasText: /^Delete/ }).first(),
-      'button-secondary': page => page.locator('[role=dialog] button, [role=alertdialog] button').filter({ hasText: /^Cancel$/ }).first() },
+      'button-quiet': page => page.locator('[role=dialog] button, [role=alertdialog] button').filter({ hasText: /^Cancel$/ }).first() },
     after: async ({ page }) => { await page.locator('[role=dialog] button').filter({ hasText: /^Cancel$/ }).first().click().catch(() => {}); } },
   { name: 'settings-general', window: A, reveal: async h => settings(h, 'General'),
     parts: { 'settings-nav': S.settingsNav, 'settings-nav-selected': S.settingsNavSelected, 'settings-search': S.settingsSearch, 'info-banner': S.banner,
       'field-group': nth(S.fieldGroup, 0), 'field-row': S.fieldRow, 'field-label': nth('.ui-field-group__entry-label', 0), 'field-description': nth('.ui-field-group__entry-description', 0),
-      'switch-on': S.switchOn, 'switch-off': S.switchOff, 'button-secondary': openButton, 'button-accent': page => page.locator('button').filter({ hasText: /Invite/ }).first(),
+      'switch-on': S.switchOn, 'switch-off': S.switchOff, 'button-outline': openButton, 'button-accent': page => page.locator('button').filter({ hasText: /Invite/ }).first(),
       'select-outline': S.selectOutline, 'page-title': nth('[data-component=glass-settings-tab] h1, [data-component=glass-settings-tab] h2', 0) } },
   { name: 'settings-appearance', window: A, reveal: async h => settings(h, 'Appearance'),
     parts: { 'select-outline': S.selectOutline, slider: nth(dc('slider'), 0), 'number-field': nth(dc('number-field'), 0), 'switch-on': S.switchOn, 'switch-off': S.switchOff,
@@ -261,7 +261,7 @@ export const SHOTS = [
     ['home', A, async () => {}, { 'icon-button': S.iconButton, pill: S.pill, 'select-text': S.selectText, 'model-button': S.modelButton,
       'sidebar-row': S.navRow, 'agent-row': S.agentRow, 'button-update': S.updateButton, 'voice-button': S.voice }, ['hover', 'focus-visible', 'pressed']],
     ['dialog', A, openProjectDialog, { 'button-primary': createButton, 'dialog-close': dialogClose, 'icon-picker': dc('popover-trigger') }, ['hover', 'focus-visible', 'pressed']],
-    ['settings', A, async h => settings(h, 'General'), { 'switch-on': S.switchOn, 'switch-off': S.switchOff, 'button-secondary': openButton,
+    ['settings', A, async h => settings(h, 'General'), { 'switch-on': S.switchOn, 'switch-off': S.switchOff, 'button-outline': openButton,
       'select-outline': S.selectOutline, 'settings-nav': S.settingsNav, 'button-accent': page => page.locator('button').filter({ hasText: /Invite/ }).first() }, ['hover', 'focus-visible', 'pressed']],
     ['settings', A, async h => settings(h, 'General'), { 'settings-search': S.settingsSearchInput }, ['hover', 'focus-visible']],
     ['automations', A, async ({ page }) => { await navRow(page, 'Automations').click(); await wait(page, 1600); },
@@ -296,7 +296,7 @@ const openTestChat = async ({ page }) => {
 SHOTS.push(
   { name: 'ide-editor', window: I, reveal: async ({ page }) => { await page.keyboard.press('Meta+P'); await wait(page, 800); await page.keyboard.type('hello.txt'); await wait(page, 800); await page.keyboard.press('Enter'); await wait(page, 1200); },
     parts: { 'editor-tab': '.tabs-container .tab.active', 'explorer-row': '.explorer-folders-view .monaco-list-row', editor: '.monaco-editor .view-lines', 'line-numbers': '.monaco-editor .margin' } },
-  { name: 'conversation', window: A, reveal: openTestChat, parts: { ...CONVERSATION, composer: '.ui-prompt-input__container', 'apps-rail': dc('collapsed-apps-rail-top-label-text') } },
+  { name: 'conversation', window: A, reveal: openTestChat, optionalParts: ['file-card', 'file-card-row', 'tool-call', 'inline-code', 'link'], parts: { ...CONVERSATION, composer: '.ui-prompt-input__container', 'apps-rail': dc('collapsed-apps-rail-top-label-text') } },
   { name: 'conversation-top', window: A, reveal: async h => { await openTestChat(h); await h.page.mouse.move(760, 400); await h.page.mouse.wheel(0, -3000); await wait(h.page, 900); },
     parts: { 'user-message': '.ui-agent-transcript-human-bubble', 'step-group-header': '.ui-step-group-header' } },
   { name: 'conversation-turn-actions-hover', window: A, state: 'hover', reveal: openTestChat, hover: 'turn-actions', parts: { 'turn-actions': nth('.agent-transcript-turn-actions', 0) } },
@@ -339,9 +339,16 @@ export const RUN = {
     { name: 'run-command', send: h => sendPrompt(h, 'Run ls -la in this folder in the terminal and show me the output.'),
       // Approve only a plain listing of the scratch folder.
       approve: async ({ page }) => {
-        const block = await panel(page).innerText();
-        const tail = block.slice(-600);
-        if (!/\bls -la\b/.test(tail) || /\b(rm|mv|curl|sudo|git|npm|cd \/|>)\b/.test(tail.replace(/ls -la/g, ''))) return false;
+        // The pending command is the code shown in the approval card around the approve button. Approve
+        // only when it is exactly one command, `ls -la` with no path (the chat's folder is the scratch
+        // folder); anything else, including a redirect or another directory, is rejected.
+        const commands = await approveButton(page).evaluate(b => {
+          let card = b;
+          for (let i = 0; i < 8 && card && !card.querySelector('code, pre'); i++) card = card.parentElement;
+          return card ? [...card.querySelectorAll('code, pre')].map(e => e.innerText.trim()).filter(Boolean) : [];
+        });
+        const unique = [...new Set(commands)];
+        if (unique.length !== 1 || !/^ls -la$/.test(unique[0])) return false;
         await approveButton(page).click(); await wait(page, 800); return true;
       } },
   ],

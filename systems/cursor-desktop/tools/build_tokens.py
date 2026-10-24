@@ -380,7 +380,7 @@ COMPONENTS = [
     ("button-primary", "button-primary", {"bg": "background-color", "text": "color", "radius": "border-top-left-radius", "height": "height", "padding": "padding-right"}),
     ("button-inverse", "button-primary-inverse", {"bg": "background-color", "text": "color", "radius": "border-top-left-radius", "height": "height", "padding": "padding-right"}),
     ("button-update", "button-update", {"bg": "background-color", "text": "color", "radius": "border-top-left-radius", "height": "height"}),
-    ("button-outline", "button-secondary", {"border": "border-top-color", "text": "color", "radius": "border-top-left-radius"}),
+    ("button-outline", "button-outline", {"border": "border-top-color", "text": "color", "radius": "border-top-left-radius"}),
     ("icon-button", "icon-button", {"text": "color", "radius": "border-top-left-radius", "size": "height"}),
     ("pill", "pill", {"border": "border-top-color", "text": "color", "radius": "border-top-left-radius", "height": "height", "padding": "padding-right"}),
     ("composer", "composer", {"bg": "background-color", "border": "border-top-color", "radius": "border-top-left-radius"}),

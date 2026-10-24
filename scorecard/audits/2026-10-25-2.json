@@ -3521,8 +3521,8 @@
      "evidence": "role.accent.default, hover and pressed ({bg.accent-primary}, -hover, -pressed); hover and pressed are the same color-mix, as the product declares, and the pressed button crop shows it."
     },
     "F6": {
-     "grade": "meets",
-     "evidence": "role.status.success, warning and danger each with fill, subtle, text and border (border from the matching hue's stroke tier, noted on the token); info uses the blue hue with all four, noted as Cursor having no info status."
+     "grade": "partly",
+     "evidence": "role.status.success, warning and danger each have fill, subtle and text from Cursor's own status tokens, but their borders are borrowed from the green, yellow and red hues' stroke tiers (Cursor has no status stroke), and info is reassigned to the blue hue because Cursor has no info status; under the scorecard's rule a reassigned role counts as partly."
     },
     "F7": {
      "grade": "meets",

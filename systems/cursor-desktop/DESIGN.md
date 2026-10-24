@@ -731,9 +731,9 @@ colors:
   component-button-update-bg-hover: "#256eb0"
   component-button-update-bg-pressed: "#256eb0"
   component-button-update-outline-focus: "#2678c1"
-  component-button-outline-text: "#fcfcfc"
+  component-button-outline-border: "rgba(20, 20, 20, 0.12)"
+  component-button-outline-text: "#141414"
   component-button-outline-bg-hover: "rgba(20, 20, 20, 0.08)"
-  component-button-outline-text-hover: "#141414"
   component-button-outline-bg-pressed: "rgba(20, 20, 20, 0.08)"
   component-button-outline-outline-focus: "#2678c1"
   component-icon-button-text: "rgba(20, 20, 20, 0.66)"
@@ -912,7 +912,7 @@ components:
     height: "24px"
   button-outline:
     textColor: "{colors.component-button-outline-text}"
-    rounded: "9999px"
+    rounded: "6px"
   icon-button:
     textColor: "{colors.component-icon-button-text}"
     rounded: "6px"

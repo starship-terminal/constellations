@@ -4071,7 +4071,7 @@
      "_role": null
     }
    },
-   "button-secondary": {
+   "button-primary-inverse": {
     "box": [
      1862,
      252,
@@ -4944,7 +4944,7 @@
      "_role": null
     }
    },
-   "button-secondary": {
+   "button-quiet": {
     "box": [
      1409,
      842,
@@ -5559,7 +5559,7 @@
      "_role": "switch"
     }
    },
-   "button-secondary": {
+   "button-outline": {
     "box": [
      1943,
      319,
@@ -9935,10 +9935,10 @@
    }
   }
  },
- "settings-button-secondary-hover": {
+ "settings-button-outline-hover": {
   "window": "agents",
   "state": "hover",
-  "file": "light/settings-button-secondary-hover.png",
+  "file": "light/settings-button-outline-hover.png",
   "viewport": {
    "dpr": 1.6799999475479126,
    "css": [
@@ -9954,7 +9954,7 @@
    "htmlClass": "ui-1p7gv7q ui-1uburmg"
   },
   "parts": {
-   "button-secondary": {
+   "button-outline": {
     "box": [
      1943,
      319,
@@ -10010,10 +10010,10 @@
    }
   }
  },
- "settings-button-secondary-focus-visible": {
+ "settings-button-outline-focus-visible": {
   "window": "agents",
   "state": "focus-visible",
-  "file": "light/settings-button-secondary-focus-visible.png",
+  "file": "light/settings-button-outline-focus-visible.png",
   "viewport": {
    "dpr": 1.6799999475479126,
    "css": [
@@ -10029,7 +10029,7 @@
    "htmlClass": "ui-1p7gv7q ui-1uburmg"
   },
   "parts": {
-   "button-secondary": {
+   "button-outline": {
     "box": [
      1943,
      319,
@@ -10085,10 +10085,10 @@
    }
   }
  },
- "settings-button-secondary-pressed": {
+ "settings-button-outline-pressed": {
   "window": "agents",
   "state": "pressed",
-  "file": "light/settings-button-secondary-pressed.png",
+  "file": "light/settings-button-outline-pressed.png",
   "viewport": {
    "dpr": 1.6799999475479126,
    "css": [
@@ -10104,7 +10104,7 @@
    "htmlClass": "ui-1p7gv7q ui-1uburmg"
   },
   "parts": {
-   "button-secondary": {
+   "button-outline": {
     "box": [
      1943,
      319,
@@ -12349,7 +12349,7 @@
     2560,
     1600
    ],
-   "title": "hello.txt — harness-scratch",
+   "title": "hello.txt \u2014 harness-scratch",
    "bodyClass": "glass-typography-refresh sidebarvisible unifiedsidebarhidden chat-editor-group-enabled",
    "htmlClass": "ui-1p7gv7q ui-1uburmg"
   },
@@ -12640,7 +12640,7 @@
     2560,
     1600
    ],
-   "title": "hello.txt — harness-scratch",
+   "title": "hello.txt \u2014 harness-scratch",
    "bodyClass": "glass-typography-refresh sidebarvisible unifiedsidebarhidden chat-editor-group-enabled",
    "htmlClass": "ui-1p7gv7q ui-1uburmg"
   },
@@ -12769,7 +12769,7 @@
     2560,
     1600
    ],
-   "title": "hello.txt — harness-scratch",
+   "title": "hello.txt \u2014 harness-scratch",
    "bodyClass": "glass-typography-refresh sidebarvisible unifiedsidebarhidden chat-editor-group-enabled",
    "htmlClass": "ui-1p7gv7q ui-1uburmg"
   },
@@ -13006,7 +13006,7 @@
     2560,
     1600
    ],
-   "title": "hello.txt — harness-scratch",
+   "title": "hello.txt \u2014 harness-scratch",
    "bodyClass": "glass-typography-refresh sidebarvisible unifiedsidebarhidden chat-editor-group-enabled",
    "htmlClass": "ui-1p7gv7q ui-1uburmg"
   },

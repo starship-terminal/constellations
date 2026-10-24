@@ -24,8 +24,8 @@ STATE_ORDER = ["default", "hover", "focus-visible", "focus", "pressed", "filled"
 
 # PRODUCT (adapt): checklist component -> (parts that show it, note)
 INVENTORY = [
-    ("Button", ["button-primary", "button-primary-inverse", "button-secondary", "button-accent", "button-update", "button-danger"],
-     "Four looks. Accent-filled (`button-primary`: Create Project, Invite, and the Delete in the delete confirmation); ink-filled pill (`button-primary-inverse`: New Automation, Browse Marketplace); outline (`button-secondary` in Settings: Open); the accent Update pill in the sidebar footer. Hover and pressed share one fill (`bg.accent-primary-hover` = `bg.accent-primary-pressed`). Disabled and loading were not seen."),
+    ("Button", ["button-primary", "button-primary-inverse", "button-outline", "button-quiet", "button-accent", "button-update", "button-danger"],
+     "Five looks. Accent-filled (`button-primary`: Create Project, Invite, and the Delete in the delete confirmation); ink-filled pill (`button-primary-inverse`: New Automation, Browse Marketplace); outline (`button-outline` in Settings: Open); quiet text (`button-quiet`: Cancel); the accent Update pill in the sidebar footer. Hover and pressed share one fill (`bg.accent-primary-hover` = `bg.accent-primary-pressed`). Disabled and loading were not seen."),
     ("Icon button", ["icon-button", "dialog-close", "voice-button", "send-button", "icon-picker"],
      "Ghost 24 x 24 squares with a 6px radius (`radius.base`); the icon is `text.secondary`-ish at 66% and turns `text.primary` on a `bg.tertiary` wash under the pointer. The voice and send buttons are ink circles."),
     ("Link", ["text-link", "text-button-accent", "link"],

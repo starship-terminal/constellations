@@ -149,7 +149,7 @@ def specimens():  # PRODUCT (adapt)
    <span class="sp-btn quiet">Cancel</span><span class="sp-icon-btn">⋯</span><span class="sp-btn primary focus">Focus ring</span>
   </div>
  </figure>
- <figure><figcaption>Menu (raised surface, 8px rows)</figcaption>
+ <figure><figcaption>Menu (raised surface, 8px rows; no shadow of its own)</figcaption>
   <div class="sp-menu"><div class="sp-mrow">Rename</div><div class="sp-mrow hi">Mark as Read</div><hr><div class="sp-mrow">Copy <span class="sp-end">›</span></div>
    <div class="sp-mrow"><span>Fast</span><span class="sp-end"><span class="sp-switch sm"></span></span></div></div>
  </figure>
@@ -211,7 +211,7 @@ figcaption { font-size:12px; color:var(--text-tertiary); margin-bottom:12px; }
 .sp-btn.quiet { color:var(--text-secondary); }
 .sp-btn.focus { outline:var(--focusRing-width) solid var(--role-border-focus); outline-offset:var(--focusRing-offset-default); }
 .sp-icon-btn { width:24px; height:24px; border-radius:var(--radius-base); display:inline-grid; place-items:center; color:var(--text-secondary); background:var(--bg-tertiary); }
-.sp-menu { background:var(--component-menu-bg); border-radius:var(--radius-xl); padding:4px; box-shadow:var(--shadow-popup); max-width:220px; }
+.sp-menu { background:var(--component-menu-bg); border-radius:var(--radius-xl); padding:4px; max-width:220px; }
 .sp-menu hr { border:0; border-top:1px solid var(--stroke-tertiary); margin:4px 10px; }
 .sp-mrow { display:flex; align-items:center; height:28px; padding:0 10px; border-radius:var(--radius-lg); }
 .sp-mrow.hi { background:var(--bg-tertiary); }
@@ -220,7 +220,7 @@ figcaption { font-size:12px; color:var(--text-tertiary); margin-bottom:12px; }
 .sp-switch.on { background:var(--bg-success-primary); } .sp-switch.on::after { left:14px; }
 .sp-switch.sm { width:26px; height:16px; } .sp-switch.sm::after { width:12px; height:12px; }
 .sp-scrim { background:var(--role-scrim); padding:24px; border-radius:var(--radius-lg); }
-.sp-dialog { background:var(--component-dialog-bg); border:1px solid var(--component-dialog-border); border-radius:var(--component-dialog-radius); padding:16px; box-shadow:var(--shadow-xl); }
+.sp-dialog { background:var(--component-dialog-bg); border:1px solid var(--component-dialog-border); border-radius:var(--component-dialog-radius); padding:16px; }
 .sp-tabs { display:flex; gap:4px; margin-bottom:10px; } .sp-tab { padding:5px 10px; border-radius:99px; color:var(--text-secondary); } .sp-tab.sel { background:var(--bg-tertiary); color:var(--text-primary); }
 .sp-field-group { border-radius:var(--radius-xl); background:var(--bg-card); }
 .sp-field { display:flex; align-items:center; justify-content:space-between; padding:12px; border-bottom:1px solid var(--stroke-quaternary); }
@@ -263,7 +263,7 @@ for p, _ in light.items():
     if p[0] not in groups:
         groups.append(p[0])
 groups.sort(key=lambda g: (GROUP_ORDER.index(g) if g in GROUP_ORDER else 99, g))
-sections.append('<div class="scroll">' + "".join(colour_table(g) for g in groups if g not in ("shadow",)) + "</div>")
+sections.append('<div class="scroll">' + "".join(colour_table(g) for g in groups) + "</div>")
 sections.append("<h2>Type</h2>" + "".join(
     f'<div style="margin:8px 0"><div class="t-{p[-1]}">{esc(p[-1].capitalize())}: The agent listed the files in this folder</div>'
     f'<code>{esc(json.dumps(t["$value"]))}</code> {ev(t)}</div>' for p, t in core.items() if t["$type"] == "typography"))
@@ -273,7 +273,7 @@ sections.append("<h2>Control heights, sizes and layout</h2>" + scale_rows("contr
                 + scale_rows("size", lambda p, t: "") + scale_rows("layout", lambda p, t: "") + scale_rows("focusRing", lambda p, t: "")
                 + scale_rows("zIndex", lambda p, t: "") + scale_rows("borderWidth", lambda p, t: ""))
 shadow_rows = "".join(f"<tr><th><code>{esc('.'.join(p))}</code></th><td><span class=\"shadow-box\" style=\"box-shadow:var({var(p)})\"></span></td><td>{ev(t)}</td></tr>"
-                      for p, t in light.items() if p[0] == "shadow")
+                      for p, t in light.items() if p[0] == "shadow" and t["$type"] == "shadow")
 sections.append(f'<h2>Elevation</h2><table class="tok">{shadow_rows}</table>')
 sections.append("<h2>Motion</h2>" + scale_rows("duration", lambda p, t: "") + scale_rows("easing", lambda p, t: ""))
 sections.append("<h2>Components</h2><p>Rebuilt from component.* and the semantic tokens. The crops in components/crops/ show the real ones.</p>" + specimens())
