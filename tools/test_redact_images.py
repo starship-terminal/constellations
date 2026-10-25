@@ -1,4 +1,6 @@
 """Tests for tools/redact_images.py. Run with `make test`; skipped when Pillow or numpy is missing."""
+import contextlib
+import io
 import json
 import re
 import sys
@@ -128,6 +130,53 @@ class Commands(unittest.TestCase):
             self.assertEqual(run("a", ([], True)), 0)                 # listed, wrapped only: passes
             self.assertEqual(run("b", ([], True)), 1)                 # not listed: still fails
             self.assertEqual(run("c", ([(0, 0, 1, 1)], True)), 1)     # listed, but a direct match: still fails
+
+    def test_check_loads_the_packages_own_rules_file(self):
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            pkg = Path(d) / "systems" / "demo"
+            (pkg / "screenshots").mkdir(parents=True)
+            Image.new("RGB", (4, 4)).save(pkg / "screenshots/a.png")
+            pats = Path(d) / "p.json"
+            pats.write_text(json.dumps({"replace": [["x", "y"]]}))
+            rules_dir = Path(d) / "redact-rules"
+            rules_dir.mkdir()
+            own = rules_dir / "demo.json"
+            own.write_text(json.dumps({"ocr": {"email_allow": ["@own\\.test$"]}}))
+            other = Path(d) / "other.json"
+            other.write_text(json.dumps({"ocr": {"email_allow": ["@other\\.test$"]}}))
+
+            def run(*extra, pkg_dir=pkg):
+                seen = []
+                def fake_hits(patterns, cfg, reads):
+                    seen.append(cfg["email_allow"])
+                    return [], False
+                with mock.patch.object(R, "RULES_DIR", rules_dir), \
+                     mock.patch.object(R, "ocr_words", return_value=[]), \
+                     mock.patch.object(R, "ocr_hits", side_effect=fake_hits), \
+                     contextlib.redirect_stdout(io.StringIO()) as out, \
+                     self.assertRaises(SystemExit) as cm:
+                    R.main(["check", str(pkg_dir), "--patterns", str(pats), *extra])
+                self.assertEqual(cm.exception.code, 0)
+                return seen[0], out.getvalue()
+
+            allow, out = run()                                      # no --rules: the package's own file
+            self.assertEqual(allow, ["@own\\.test$"])
+            self.assertEqual(out.count("rules: tools/redact-rules/demo.json"), 1)
+            allow, out = run("--rules", str(other))                 # an explicit file wins
+            self.assertEqual(allow, ["@other\\.test$"])
+            self.assertIn(f"rules: {other}", out)
+            self.assertNotIn("demo.json", out)
+            own.unlink()                                            # no file for the package: nothing loaded
+            allow, out = run()
+            self.assertEqual(allow, [])
+            self.assertNotIn("rules:", out)
+
+    def test_apply_still_requires_rules(self):
+        with tempfile.TemporaryDirectory() as d, contextlib.redirect_stderr(io.StringIO()):
+            with self.assertRaises(SystemExit) as cm:
+                R.main(["apply", d])
+            self.assertEqual(cm.exception.code, 2)
 
     def test_only_limits_deletions_too(self):
         with tempfile.TemporaryDirectory() as d:
