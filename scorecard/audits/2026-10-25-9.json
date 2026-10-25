@@ -4171,7 +4171,7 @@
     },
     "F7": {
      "grade": "meets",
-     "evidence": "light and dark hold the same 507 token names (build_tokens.py refuses otherwise; none had to be moved to notTokenised)."
+     "evidence": "light and dark hold the same 511 token names (build_tokens.py refuses otherwise; none had to be moved to notTokenised)."
     },
     "F8": {
      "grade": "partly",
@@ -4215,7 +4215,7 @@
     },
     "C4": {
      "grade": "meets",
-     "evidence": "components.md writes 70% of its values as tokens (1432 of 2038), and 59 of the 60 colours in component.* per theme are aliases to v2 or role tokens (the one raw value is the search field's own focus outline)."
+     "evidence": "components.md writes 70% of its values as tokens (1432 of 2038), and 60 of the 61 colours in component.* per theme are aliases to v2 or role tokens (the one raw value is the search field's own focus outline)."
     },
     "P1": {
      "grade": "partly",
@@ -4235,7 +4235,7 @@
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 1284 of 1284 tokens name their source"
+     "evidence": "Script: 1292 of 1292 tokens name their source"
     },
     "K2": {
      "grade": "meets",

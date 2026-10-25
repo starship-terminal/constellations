@@ -121,8 +121,12 @@ def ramps():  # PRODUCT (adapt): OpenCode's ramps are core colours, the same in 
     for p, t in core.items():
         if p[0] == "color" and p[1:2] not in [(n,) for n in names]:
             names.append(p[1])
+    # neutral first, the hues in hue order, the translucent steps last; each ramp light to dark
+    order = ["grey", "red", "orange", "yellow", "green", "cyan", "blue", "purple", "pink", "alpha"]
+    names.sort(key=lambda n: order.index(n) if n in order else len(order))
+    step = lambda p: [int(x) if x.isdigit() else x for x in p[2:]]
     for name in names:
-        steps = [(p, t) for p, t in core.items() if p[:2] == ("color", name) and t["$type"] == "color"]
+        steps = sorted(((p, t) for p, t in core.items() if p[:2] == ("color", name) and t["$type"] == "color"), key=lambda pt: step(pt[0]))
         cells = "".join(f'<span class="ramp-step" title="{esc(".".join(p))} {esc(t["$value"])}"><i style="background:{esc(t["$value"])}"></i>'
                         f'<code>{esc(".".join(p[2:]))}</code></span>' for p, t in steps)
         out.append(f'<div class="ramp"><code class="ramp-name">color.{esc(name)}</code>{cells}</div>')
@@ -159,7 +163,7 @@ def specimens():  # PRODUCT (adapt)
  </figure>
  <figure><figcaption>Composer: a raised card with the floating ring, the model button and the ink Send button</figcaption>
   <div class="sp-composer"><div class="t-prompt" style="color:var(--text-faint)">Ask anything, / for commands, @ for context...</div>
-   <div class="sp-cbar"><span class="sp-icon-btn">+</span><span class="sp-pill">MiniMax-M3 ⌄</span><span class="sp-pill">Default ⌄</span><span class="sp-send">↑</span></div></div>
+   <div class="sp-cbar"><span class="sp-icon-btn">+</span><span class="sp-pill">MiniMax-M3 ⌄</span><span class="sp-pill">Default ⌄</span><span class="sp-send empty">↑</span></div></div>
  </figure>
  <figure><figcaption>Buttons: neutral, secondary, danger (red text, not a red fill), the contrast Send, and the focus outline</figcaption>
   <div class="sp-buttons">
@@ -209,7 +213,8 @@ figcaption { font-size:12px; color:var(--text-faint); margin-bottom:12px; }
 .sp-composer { background:var(--component-composer-bg); border-radius:var(--component-composer-radius); box-shadow:var(--shadow-raised); padding:12px 8px 8px 16px; }
 .sp-cbar { display:flex; align-items:center; gap:4px; margin:16px 0 0 -8px; }
 .sp-pill { height:var(--size-control-button); padding:0 10px; display:inline-flex; align-items:center; border-radius:var(--radius-measured-6); color:var(--component-model-button-text); }
-.sp-send { margin-left:auto; width:28px; height:28px; border-radius:var(--component-send-button-radius); display:inline-grid; place-items:center; background:var(--role-contrast); color:var(--component-send-button-text); box-shadow:var(--shadow-button-contrast); flex:none; }
+.sp-send { margin-left:auto; width:28px; height:28px; border-radius:var(--component-send-button-radius); display:inline-grid; place-items:center; background:linear-gradient(var(--component-send-button-highlight), transparent), var(--component-send-button-bg); color:var(--component-send-button-text); box-shadow:var(--shadow-button-contrast); opacity:var(--component-send-button-opacity-filled); flex:none; }
+.sp-send.empty { opacity:var(--component-send-button-opacity-empty); }
 .sp-buttons { display:flex; flex-wrap:wrap; gap:8px; align-items:center; } .sp-buttons .sp-send { margin-left:0; }
 .sp-btn { display:inline-flex; align-items:center; justify-content:center; gap:6px; height:var(--size-control-button); padding:0 var(--component-button-secondary-padding); border-radius:var(--radius-measured-6); font-weight:var(--fontWeight-label); }
 .sp-btn.neutral { color:var(--component-button-neutral-text); padding:0 var(--component-button-neutral-padding); }

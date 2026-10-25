@@ -9,11 +9,9 @@
 // frame. Frames go to $RAW/<theme>/run/; the step's `approve` decides whether an approval prompt may
 // be accepted (only for actions inside the scratch folder).
 import { rmSync } from 'node:fs';
-import { connect, disconnect, shoot, viewport, box, computed, writeJson } from './cdp.mjs';
+import { connect, disconnect, shoot, viewport, box, computed, writeJson, RAW } from './cdp.mjs';
 import * as P from './product.mjs';
 
-const SLUG = process.env.SLUG || 'cursor-desktop';
-const RAW = process.env.RAW || `${process.env.HOME}/.design-systems/${SLUG}/raw-shots`;
 const INTERVAL = +(process.env.INTERVAL || 1500), TIMEOUT = +(process.env.TIMEOUT || 120000);
 const theme = process.argv[2];
 if (!theme) { console.error('usage: run.mjs <theme>'); process.exit(2); }

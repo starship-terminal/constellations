@@ -406,12 +406,17 @@ export const RUN = {
     'bash-output': dc('bash-output'), 'write-tool': dc('write-tool'), 'progress-indicator': dc('session-progress-indicator-v2'),
   },
 };
-// Approve once, and only an action whose visible text names no path outside the scratch folder.
+// Approve once, and only an action whose visible text names at least one path and every path it
+// names is the scratch folder itself or inside it (a sibling such as .../opencode-backup is outside).
+// A request whose target cannot be read from its text is rejected, never approved.
+const insideScratch = p => {
+  const abs = p.startsWith('~/') ? `${process.env.HOME}${p.slice(1)}` : p;
+  return abs === SCRATCH || abs.startsWith(`${SCRATCH}/`);
+};
 const approveInScratch = async ({ page }) => {
   const text = await permission(page).innerText().catch(() => '');
-  const paths = text.match(/(~|\/)[\w.\/-]+/g) || [];
-  const outside = paths.some(p => !p.includes('harness-scratch/opencode'));
-  if (outside || /\brm\b|sudo|\.\.\//.test(text)) return false;
+  const paths = (text.match(/(~\/|\/)[\w.\/-]+/g) || []).map(p => p.replace(/[.,:;]+$/, ''));
+  if (!paths.length || !paths.every(insideScratch) || /\brm\b|sudo|\.\.\//.test(text)) return false;
   await approveButton(page).click(); await wait(page, 800); return true;
 };
 export const RUN_STEPS = {

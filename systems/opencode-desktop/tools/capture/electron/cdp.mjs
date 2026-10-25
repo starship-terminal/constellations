@@ -5,10 +5,15 @@
 //   open -a <App> --args --remote-debugging-port=<PORT>
 // Env: PLAYWRIGHT (path to playwright's index.mjs), PORT (default 9401).
 import { writeFileSync, mkdirSync } from 'node:fs';
-import { dirname } from 'node:path';
+import { basename, dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const pw = await import(process.env.PLAYWRIGHT || `${process.env.HOME}/.design-systems/pw/node_modules/playwright/index.mjs`);
 export const PORT = process.env.PORT || '9401';
+// The package these scripts live in (systems/<slug>/tools/capture/electron), so a copy in another
+// package never writes to, or empties, the folder of the package it was copied from. SLUG overrides it.
+export const SLUG = process.env.SLUG || basename(resolve(dirname(fileURLToPath(import.meta.url)), '../../..'));
+export const RAW = process.env.RAW || `${process.env.HOME}/.design-systems/${SLUG}/raw-shots`;
 
 // Connect and pick the window whose document title matches `title` (a string or RegExp).
 // Electron windows of one app share a URL, so the title is what tells them apart.

@@ -32,7 +32,7 @@ import re
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from colour import color, is_color, ms, px, shadow  # noqa: E402
+from colour import COLOR_RE, color, is_color, ms, px, shadow, split_top  # noqa: E402
 
 PKG = pathlib.Path(__file__).resolve().parent.parent
 RAW = PKG / "raw"
@@ -143,8 +143,10 @@ PATHS = {}
 
 
 def core_colours():
-    """The ramps and alpha steps: identical in both schemes, so core."""
-    for n in sorted(dark_comp):
+    """The ramps and alpha steps: identical in both schemes, so core. Written in step order (50, 100,
+    ... 1200), not in the text order of their names, so each ramp reads light to dark."""
+    natural = lambda n: [int(x) if x.isdigit() else x for x in re.split(r"(\d+)", n)]
+    for n in sorted(dark_comp, key=natural):
         p = path_of(n)
         if not p or not is_core(p) or n not in V["dark"]["colors"]:
             continue
@@ -535,6 +537,21 @@ def build_roles_and_components(t):
             sh, ss = style(t, part, state)
             if ss and ss[prop] != s[prop] and color(ss[prop]) != "rgba(0, 0, 0, 0)" and not (prop == "outline-color" and ss.get("outline-style") == "none"):
                 put(tree, ("component", name, key), value_for(part, sh, prop, ss[prop]))
+    # Send paints its fill as background-image (a white highlight gradient over a flat gradient of one
+    # colour; background-color is transparent) and dims to opacity 0.4 while the prompt is empty.
+    shot, s = style(t, "send-button")
+    layers = split_top(s["background-image"])
+    solid = re.findall(COLOR_RE, layers[-1])
+    if len(layers) == 2 and len(set(solid)) == 1:
+        put(tree, ("component", "send-button", "bg"), value_for("send-button", shot, "background-color", solid[0]))
+        top = re.findall(COLOR_RE, layers[0])[0]
+        put(tree, ("component", "send-button", "highlight"), tok(color(top), "color", "Measured",
+            f"top stop of the first background-image layer of send-button in {shot}, {THEME_NAME[t]} theme, {DATE}; it fades to transparent",
+            gradient=s["background-image"]))
+    for state, key in (("default", "opacity-empty"), ("filled", "opacity-filled")):
+        sh, ss = style(t, "send-button", state)
+        put(tree, ("component", "send-button", key), tok(float(ss["opacity"]), "number", "Measured",
+            f"computed opacity of send-button in {sh}, {THEME_NAME[t]} theme, {DATE}"))
     tree["$extensions"] = {"componentValues": {"measured": measured_n, "aliased": aliased_n}}
 
 

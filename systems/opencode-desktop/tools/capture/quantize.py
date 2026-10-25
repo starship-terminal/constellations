@@ -37,8 +37,15 @@ def store(src, dst):
 
 
 def main():
+    # Every run frame the package links must be there before anything is replaced or deleted: a
+    # shorter recapture would otherwise drop run-*.png screenshots the README and patterns.md link.
+    themes = sorted(p for p in RAW.iterdir() if p.is_dir())
+    missing = [f"{t.name}/run/{frame}.png" for t in themes for frame in RUN_FRAMES.get(t.name, {})
+               if not (t / "run" / f"{frame}.png").exists()]
+    if missing:
+        sys.exit("run frames missing, nothing written (update RUN_FRAMES for this capture):\n  " + "\n  ".join(missing))
     n = 0
-    for theme_dir in sorted(p for p in RAW.iterdir() if p.is_dir()):
+    for theme_dir in themes:
         theme = theme_dir.name
         out = PKG / "screenshots" / theme
         keep = set()
