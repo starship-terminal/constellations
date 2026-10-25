@@ -191,6 +191,42 @@ tools/kit/capture/native/winid.swift '<App>')" shot.png`, converted from Display
 to sRGB, read with `sample.py`. Hover exists on the desktop, so each hover
 state is one more capture with the pointer really over the control.
 
+### The scratch folder for test prompts
+
+A coding harness only shows its running states (streaming output, a tool
+call in progress, an approval prompt, the finished result) when an agent
+actually runs. The owner allowed test prompts on 2026-10-25, on one
+condition: the agent works only in `~/.design-systems/harness-scratch`, a
+folder that holds nothing of the owner's.
+
+- **One subfolder per app**, named after the package without `-desktop`
+  (`codex/`, `devin/`, `orca/`), so two captures never touch each other's
+  files. Cursor, the pilot, used the folder's root (its `hello.txt` and
+  `.cursor/`). Create the subfolder, and `git init` it when the app only
+  opens repositories.
+- **Open it as a new project or workspace, in a fresh agent or thread.**
+  Never point an agent at the owner's projects, and never open the owner's
+  existing sessions: on 2026-10-25 opening a sleeping Devin cloud session
+  woke its agent, which posted a message.
+- **Harmless prompts only:** "List the files in this folder", "Create
+  hello.txt here with one line". Approve an action only when it stays
+  inside the subfolder; deny anything else. The owner's harnesses often
+  auto-approve (Cursor's auto-run, Superset's and Orca's skip-permissions
+  modes, Devin's Bypass Permissions), so an approval prompt often never
+  appears; record that in the coverage table rather than changing the
+  setting.
+- **Keep the folder and what the agents wrote.** It is small, and the
+  package READMEs of `cursor-desktop`, `devin-desktop`, `grokbot-desktop`,
+  `codex-desktop`, `superset-desktop`, `orca-desktop`, `opencode-desktop`
+  and `conductor-desktop` name it in their re-capture steps: some scripts
+  reopen the test chat or the `hello.txt` an earlier run wrote. Delete an
+  app's subfolder only when its package no longer needs it (Zed's was
+  removed on 2026-10-25), and say so in that package's README.
+- **It stays outside the repository**, like the raw captures. Nothing in it
+  is ever committed; the screenshots that show it are the record.
+- **List what each capture created** in the app (test projects, chats,
+  bots, workspaces) in the package README, so the owner can delete them.
+
 ## What stays outside the repo
 
 | Thing | Why | Where it lives |
