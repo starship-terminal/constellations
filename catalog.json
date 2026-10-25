@@ -2223,6 +2223,74 @@
       "layoutGaps": {
         "icons/": "Codex's icons are OpenAI's own inline SVG artwork and are not kept here (docs/RIGHTS.md)"
       }
+    },
+    {
+      "slug": "notion-calendar-desktop",
+      "name": "Notion Calendar (desktop)",
+      "url": "https://www.notion.com/product/calendar",
+      "category": "productivity",
+      "platform": "desktop",
+      "goodFor": "Desktop calendar app (Notion Calendar for macOS, Electron around the calendar.notion.so web app): a 240px wash sidebar with a mini month, scheduling and per-account calendar lists beside a week grid of 48px hours with two time-zone columns, event chips in each calendar's colour with a left ribbon, a translucent 284px event popover and a centred command menu, hairline edges drawn as 1px inset shadows, 13px medium labels on 30px controls with 6px corners, one blue for primary actions, switches and focus, red only for today, and menus and tooltips that stay dark in both themes",
+      "tags": [
+        "desktop",
+        "electron",
+        "macos",
+        "calendar",
+        "scheduling",
+        "productivity",
+        "notion",
+        "sidebar",
+        "grid",
+        "dense",
+        "dark",
+        "light",
+        "keyboard-first",
+        "translucent"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-25",
+      "access": "signed in (the owner's account, two Google calendar accounts and four Notion workspaces); read live from the running app over its remote-debugging port",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1063
+      ],
+      "entry": "systems/notion-calendar-desktop/README.md",
+      "tokens": "systems/notion-calendar-desktop/tokens.json",
+      "styleGuide": "systems/notion-calendar-desktop/style-guide.html",
+      "preview": {
+        "cover": "systems/notion-calendar-desktop/screenshots/dark/week-default.png",
+        "swatches": {
+          "light": {
+            "page": "light.role.page",
+            "surface": "light.role.surface",
+            "text": "light.role.text.primary",
+            "muted": "light.role.text.secondary",
+            "accent": "light.role.accent.default",
+            "border": "light.role.border.default"
+          },
+          "dark": {
+            "page": "dark.role.page",
+            "surface": "dark.role.surface",
+            "text": "dark.role.text.primary",
+            "muted": "dark.role.text.secondary",
+            "accent": "dark.role.accent.default",
+            "border": "dark.role.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans",
+          "core.fontFamily.compact"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/notion-calendar-desktop/raw-shots (full-colour captures, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Notion Calendar's icons are Notion's own inline SVG artwork and are not kept here (docs/RIGHTS.md)"
+      }
     }
   ]
 }
