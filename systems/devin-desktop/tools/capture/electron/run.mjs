@@ -12,7 +12,8 @@ import { rmSync } from 'node:fs';
 import { connect, disconnect, shoot, viewport, box, computed, writeJson } from './cdp.mjs';
 import * as P from './product.mjs';
 
-const SLUG = process.env.SLUG || 'cursor-desktop';
+// The package this script belongs to (systems/<slug>/tools/capture/electron/), so it never writes into another package's folder.
+const SLUG = process.env.SLUG || new URL('../../..', import.meta.url).pathname.replace(/\/$/, '').split('/').pop();
 const RAW = process.env.RAW || `${process.env.HOME}/.design-systems/${SLUG}/raw-shots`;
 const INTERVAL = +(process.env.INTERVAL || 1500), TIMEOUT = +(process.env.TIMEOUT || 120000);
 const theme = process.argv[2];

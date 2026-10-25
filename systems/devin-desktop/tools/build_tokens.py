@@ -457,11 +457,13 @@ COMPONENTS = [
     ("segment", "segment", {"text": "color", "radius": "border-top-left-radius", "height": "height"}),
     ("segment-selected", "segment-selected", {"bg": "background-color", "border": "border-top-color", "text": "color"}),
     ("composer", "composer", {"bg": "background-color", "border": "border-top-color", "radius": "border-top-left-radius"}),
-    ("menu", "menu", {"bg": "background-color", "text": "color", "radius": "border-top-left-radius", "outline": "outline-color"}),
+    ("menu", "menu", {"bg": "background-color", "text": "color", "radius": "border-top-left-radius", "outline": "outline-color", "shadow": "box-shadow"}),
     ("menu-row", "menu-row", {"text": "color", "radius": "border-top-left-radius", "height": "height", "padding": "padding-left"}),
     ("palette", "palette", {"bg": "background-color", "border": "border-top-color", "radius": "border-top-left-radius"}),
     ("palette-row-selected", "palette-row-selected", {"bg": "background-color", "text": "color", "radius": "border-top-left-radius"}),
-    ("tooltip", "tooltip", {"bg": "background-color", "text": "color", "border": "border-top-color", "radius": "border-top-left-radius"}),
+    ("tooltip", "tooltip", {"bg": "background-color", "text": "color", "border": "border-top-color", "radius": "border-top-left-radius", "shadow": "box-shadow"}),
+    ("diff-added", "diff-line-added", {"layer": "background-image"}),
+    ("diff-removed", "diff-line-removed", {"layer": "background-image"}),
     ("dialog", "dialog", {"bg": "background-color", "text": "color", "border": "border-top-color", "radius": "border-top-left-radius"}),
     ("toast", "toast", {"bg": "background-color", "text": "color", "radius": "border-top-left-radius"}),
     ("select", "select", {"border": "border-top-color", "text": "color", "radius": "border-top-left-radius", "height": "height"}),
@@ -481,7 +483,8 @@ COMPONENTS = [
     ("link", "link", {"text": "color"}),
     ("kbd", "kbd", {"text": "color"}),
 ]
-STATES = [("hover", "bg-hover", "background-color"), ("hover", "text-hover", "color"), ("pressed", "bg-pressed", "background-color"),
+STATES = [("hover", "bg-hover", "background-color"), ("hover", "layer-hover", "background-image"), ("hover", "text-hover", "color"),
+          ("pressed", "bg-pressed", "background-color"), ("pressed", "layer-pressed", "background-image"),
           ("focus-visible", "outline-focus", "outline-color")]
 CORE_NAMES = re.compile(r"^(text|bg|border|tint)\.(primary|secondary|tertiary|disabled|page|wash|elevated|elevated-wax|accent-primary|accent-neutral|link|primary-inverse|always-white)$")
 PREFER = ["role", "text", "bg", "border", "tint", "hue", "shadow-color", "ide"]
@@ -504,6 +507,21 @@ def index(t):
     return idx
 
 
+def visible_layers(layers):
+    """Tailwind paints its ring and ring-offset layers (transparent, zero size) before the shadow; drop them."""
+    return [l for l in layers if l["color"] != "rgba(0, 0, 0, 0)"]
+
+
+def gradient_layers(v):
+    """The colours of a background-image made only of flat linear-gradient(c, c) layers, top first; [] otherwise."""
+    if not v or v == "none":
+        return []
+    layers = re.findall(r"linear-gradient\((rgba?\([^)]*\)), (rgba?\([^)]*\))\)", v)
+    if not layers or any(a != b for a, b in layers) or len(layers) != v.count("linear-gradient("):
+        return []
+    return [a for a, _ in layers]
+
+
 def build_roles_and_components(t):
     tree = SETS[t]
     for key, spec in ROLE.items():
@@ -516,6 +534,18 @@ def build_roles_and_components(t):
     def value_for(part, shot, prop, raw):
         nonlocal measured_n, aliased_n
         src = f"computed {prop} of {part} in {shot}, {THEME_NAME[t]}, {DATE}"
+        if prop == "box-shadow":
+            layers = visible_layers(shadow(raw))
+            hit = next((k for k, tk in sorted(SETS[t].get("shadow", {}).items()) if isinstance(tk, dict) and "$value" in tk
+                        and visible_layers(tk["$value"]) == layers), None)
+            if hit:
+                return tok("{shadow.%s}" % hit, "shadow", "Measured", src)
+            return tok(layers, "shadow", "Measured", src)
+        if prop == "background-image":
+            # The top layer of a stack of flat linear-gradient() washes (Tailwind's hover and diff tints).
+            raw = gradient_layers(raw)[0]
+            prop = "background-color"
+            src += " (top flat gradient layer)"
         if prop in ("background-color", "color", "border-top-color", "outline-color"):
             v = color(raw)
             measured_n += 1
@@ -535,6 +565,10 @@ def build_roles_and_components(t):
             continue
         for key, prop in props.items():
             raw = s[prop]
+            if prop == "background-image" and not gradient_layers(raw):
+                continue
+            if prop == "box-shadow" and not visible_layers(shadow(raw) if raw != "none" else []):
+                continue
             if prop in ("background-color", "border-top-color", "outline-color") and color(raw) == "rgba(0, 0, 0, 0)":
                 continue
             if prop == "border-top-color" and s.get("border-top-width") == "0px":
@@ -544,7 +578,10 @@ def build_roles_and_components(t):
             put(tree, ("component", name, key), value_for(part, shot, prop, raw))
         for state, key, prop in STATES:
             sh, ss = style(t, part, state)
-            if ss and ss[prop] != s[prop] and color(ss[prop]) != "rgba(0, 0, 0, 0)" and not (prop == "outline-color" and ss.get("outline-style") == "none"):
+            if prop == "background-image" and not (ss and gradient_layers(ss[prop])):
+                continue
+            painted = gradient_layers(ss[prop])[0] if ss and prop == "background-image" else (ss or {}).get(prop)
+            if ss and ss[prop] != s[prop] and color(painted) != "rgba(0, 0, 0, 0)" and not (prop == "outline-color" and ss.get("outline-style") == "none"):
                 put(tree, ("component", name, key), value_for(part, sh, prop, ss[prop]))
     tree["$extensions"] = {"componentValues": {"measured": measured_n, "aliased": aliased_n}}
 
@@ -558,10 +595,8 @@ def shadow_uses(t):
     for key, tokn in SETS[t].get("shadow", {}).items():
         if not isinstance(tokn, dict) or tokn.get("$type") != "shadow":
             continue
-        # Tailwind paints its ring and ring-offset layers (transparent, zero size) before the shadow; drop them.
-        visible = lambda layers: [l for l in layers if l["color"] != "rgba(0, 0, 0, 0)"]
         uses = sorted({part for (part, state), (shot, s) in P[t].items() if state == "default"
-                       and s["box-shadow"] != "none" and visible(shadow(s["box-shadow"])) == visible(tokn["$value"])})
+                       and s["box-shadow"] != "none" and visible_layers(shadow(s["box-shadow"])) == visible_layers(tokn["$value"])})
         tokn["$extensions"]["usedBy"] = uses or "no captured part paints exactly this shadow"
 
 

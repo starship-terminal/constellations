@@ -344,7 +344,8 @@ export const SHOTS = [
     ['home', A, async () => {}, { segment: S.segment }, ['hover', 'focus-visible']],
     ['settings', A, async h => settings(h, 'Notifications'), { 'switch-on': S.switchOn, checkbox: S.checkbox, 'settings-nav': settingsNavRow('Preferences') }, ['hover', 'focus-visible', 'pressed']],
     ['settings', A, async h => settings(h, 'Preferences'), { select: S.select }, ['hover', 'focus-visible', 'pressed']],
-    ['settings', A, async h => settings(h, 'Preferences'), { 'settings-search': S.settingsSearchInput }, ['hover', 'focus-visible']],
+    // The search group is not focusable; its input takes the pointer and the focus, so it is its own part.
+    ['settings', A, async h => settings(h, 'Preferences'), { 'settings-search-input': S.settingsSearchInput }, ['hover', 'focus-visible']],
     ['settings', A, async h => settings(h, 'App settings'), { 'button-outline': textButton(/^Customize$/) }, ['hover', 'focus-visible', 'pressed']],
     ['automations', A, goNav('Automations'), { 'button-primary-inverse': textButton(/^Create automation/), 'filter-chip': S.chip }, ['hover', 'focus-visible', 'pressed']],
     ['palette', A, openPalette, { 'palette-row': nth(`${S.palette} [cmdk-item][aria-selected=false]`, 1) }, ['hover']],

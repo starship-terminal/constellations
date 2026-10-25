@@ -77,17 +77,20 @@ function merge(data, screen) {
   prev.screens = [...new Set([...(prev.screens || []), screen])];
   console.log(screen, Object.keys(data.classes).length, 'classes');
 }
+const failed = [];
 if (shotNames.length) {
   const P = await import('./product.mjs');
   for (const name of shotNames) {
     const shot = P.SHOTS.find(s => s.name === name);
-    if (!shot) { console.error('no shot', name); continue; }
+    if (!shot) { console.error('no shot', name); failed.push(name); continue; }
     try { await P.reset(h, shot.window); await shot.reveal(h); merge(await read(), name); }
-    catch (e) { console.error('FAILED', name, e.message.split('\n')[0]); }
+    catch (e) { console.error('FAILED', name, e.message.split('\n')[0]); failed.push(name); }
     finally { if (shot.after) await shot.after(h).catch(() => {}); }
   }
   await P.reset(h, 'agents');
 } else merge(await read(), (await viewport(page)).title);
+// A failed screen fails the run and writes nothing, so no older reading survives under a new date.
+if (failed.length) { console.error(`${failed.length} screen(s) not read: ${failed.join(', ')}; ${out} not written`); await disconnect(browser); process.exit(1); }
 prev.meta = { ...(await viewport(page)), read: new Date().toISOString().slice(0, 10) };
 prev.scope = scope;
 writeJson(out, prev);

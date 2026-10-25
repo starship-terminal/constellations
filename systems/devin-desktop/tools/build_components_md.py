@@ -25,13 +25,13 @@ STATE_ORDER = ["default", "hover", "focus-visible", "focus", "pressed", "filled"
 # PRODUCT (adapt): checklist component -> (parts that show it, note)
 INVENTORY = [
     ("Button", ["button-primary", "button-primary-inverse", "button-primary-inverse-sm", "button-inverse-sm", "button-secondary", "button-outline", "button-quiet", "button-danger-outline"],
-     "Five looks. Ink-filled (`button-primary-inverse`: Create automation, Add wiki, Generate, Go to Customize; `bg.accent-neutral` with `text.primary-inverse`, so white on dark and near-black on light); outlined (`button-outline`: Customize, Comment; a `border.primary` hairline); a quiet text button (Reset all); the danger outline (Unlink user, `text.red` on the same hairline); and the accent-blue primary, which only the workbench's own dialogs use (Trust Workspace & Continue, 32px, white text). All have a 6px radius (`radius.6`); heights are 24, 28 and 32px. Disabled and loading were not seen."),
+     "Five looks. Ink-filled (`button-primary-inverse`: Create automation, Add wiki, Generate, Go to Customize; `bg.accent-neutral` with `text.primary-inverse`, so white on dark and near-black on light); outlined (`button-outline`: Customize, Comment; a `border.primary` hairline, with a `tint.tertiary` wash layered on under the pointer); a quiet text button (Reset all); the danger outline (Unlink user, `text.red` on the same hairline); and the accent-blue primary, which only the workbench's own dialogs use (Trust Workspace & Continue, 32px, white text). All have a 6px radius (`radius.6`); heights are 24, 28 and 32px. Disabled and loading were not seen."),
     ("Icon button", ["icon-button", "composer-tool", "voice-button", "send-button", "send-more", "dialog-close", "toast-close", "expand-button", "sidebar-trigger"],
      "28 x 28 ghost squares, 6px radius, `text.secondary` at rest; under the pointer and when pressed they take a `tint.secondary` wash and `text.primary`. The send button is a split pill: Send and More send options share one ink fill, greyed while the composer is empty."),
     ("Link", ["link", "text-link", "dialog-link", "text-button-warning"],
      "Links in replies and settings are `text.link` (blue at 85%) and turn `text.link-strong` under the pointer; the Restricted Mode banner's Trust workspace is a text button in the warning hue."),
-    ("Text field", ["settings-search", "search-field", "text-field", "palette-input", "number-field"],
-     "28px fields on a `tint.secondary` wash (dark) or `bg.elevated` (light) with a `border.secondary` hairline and a 6px radius; focus draws the 1px accent ring. The number field is a stepper (minus, value, plus)."),
+    ("Text field", ["settings-search", "settings-search-input", "search-field", "text-field", "palette-input", "number-field"],
+     "28px fields on a `tint.secondary` wash (dark) or `bg.elevated` (light) with a `border.secondary` hairline and a 6px radius; focus draws the 1px accent ring, which the search field's input (`settings-search-input`) carries on hover and focus inside the group. The number field is a stepper (minus, value, plus)."),
     ("Text area", ["composer", "composer-editor"],
      "The composer: `bg.elevated`, a `border.primary` hairline, 20px radius (`radius.20`), 14px prompt text with a rotating tip as its placeholder. Typing enables the split send button; Local mode adds a footer of chips (machine, folder, agent)."),
     ("Select", ["select", "listbox", "option", "option-selected", "mode-button", "capability-button", "view-switch"],
@@ -132,7 +132,20 @@ for group in ("radius", "controlHeight", "spacing", "fontSize", "lineHeight", "l
 stats = {"written": 0, "token": 0}
 
 
+def top_layer(v):
+    """The top colour of a background-image made only of flat linear-gradient(c, c) washes, else None."""
+    layers = re.findall(r"linear-gradient\((rgba?\([^)]*\)), (rgba?\([^)]*\))\)", v or "")
+    if not layers or any(a != b for a, b in layers) or len(layers) != (v or "").count("linear-gradient("):
+        return None
+    return layers[0][0]
+
+
 def as_token(t, prop, raw):
+    if prop == "background-image":
+        raw = top_layer(raw)
+        if raw is None:
+            return None
+        prop = "background-color"
     stats["written"] += 1
     if prop in ("background-color", "color", "border-top-color") and is_color(raw):
         v = color(raw)
@@ -162,7 +175,7 @@ def as_token(t, prop, raw):
     return None
 
 
-PROPS = [("background-color", "fill"), ("color", "text"), ("border-top-color", "edge"), ("border-top-left-radius", "radius"),
+PROPS = [("background-color", "fill"), ("background-image", "layer"), ("color", "text"), ("border-top-color", "edge"), ("border-top-left-radius", "radius"),
          ("height", "height"), ("padding-left", "padding"), ("font-size", "size"), ("line-height", "line")]
 
 

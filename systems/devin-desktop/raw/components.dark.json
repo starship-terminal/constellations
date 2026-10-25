@@ -10481,10 +10481,10 @@
    }
   }
  },
- "settings-settings-search-hover": {
+ "settings-settings-search-input-hover": {
   "window": "agents",
   "state": "hover",
-  "file": "dark/settings-settings-search-hover.png",
+  "file": "dark/settings-settings-search-input-hover.png",
   "viewport": {
    "dpr": 2,
    "css": [
@@ -10500,7 +10500,7 @@
    "htmlClass": ""
   },
   "parts": {
-   "settings-search": {
+   "settings-search-input": {
     "box": [
      66,
      250,
@@ -10556,10 +10556,10 @@
    }
   }
  },
- "settings-settings-search-focus-visible": {
+ "settings-settings-search-input-focus-visible": {
   "window": "agents",
   "state": "focus-visible",
-  "file": "dark/settings-settings-search-focus-visible.png",
+  "file": "dark/settings-settings-search-input-focus-visible.png",
   "viewport": {
    "dpr": 2,
    "css": [
@@ -10575,7 +10575,7 @@
    "htmlClass": ""
   },
   "parts": {
-   "settings-search": {
+   "settings-search-input": {
     "box": [
      66,
      250,
@@ -13582,7 +13582,7 @@
     2880,
     1800
    ],
-   "title": "devin — hello.txt",
+   "title": "devin \u2014 hello.txt",
    "bodyClass": "",
    "htmlClass": ""
   },

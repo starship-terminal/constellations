@@ -202,7 +202,7 @@ figcaption { font-size:12px; color:var(--text-tertiary); margin-bottom:12px; }
 .sp-btn.primary { background:var(--bg-accent-primary); color:var(--text-always-white); height:var(--controlHeight-lg); padding:0 12px; }
 .sp-btn.focus { outline:var(--focusRing-width) solid var(--role-border-focus); outline-offset:var(--focusRing-offset); }
 .sp-icon-btn { width:28px; height:28px; border-radius:var(--radius-6); display:inline-grid; place-items:center; color:var(--text-secondary); }
-.sp-menu { background:var(--component-menu-bg); outline:1px solid var(--component-menu-outline); border-radius:var(--component-menu-radius); padding:4px; max-width:240px; box-shadow:var(--shadow-L3); }
+.sp-menu { background:var(--component-menu-bg); outline:1px solid var(--component-menu-outline); border-radius:var(--component-menu-radius); padding:4px; max-width:240px; box-shadow:var(--component-menu-shadow); }
 .sp-menu hr { border:0; border-top:1px solid var(--border-secondary); margin:4px 8px; }
 .sp-mtitle { padding:4px 8px; color:var(--text-secondary); font-size:var(--fontSize-12); font-weight:500; }
 .sp-mrow { display:flex; align-items:center; height:var(--size-control-menu-row); padding:0 8px; border-radius:var(--radius-6); }
@@ -218,7 +218,7 @@ figcaption { font-size:12px; color:var(--text-tertiary); margin-bottom:12px; }
 .sp-select { border:1px solid var(--component-select-border); border-radius:var(--radius-6); padding:3px 8px; color:var(--text-primary); }
 .sp-input { margin-top:10px; height:var(--controlHeight-base); display:flex; align-items:center; padding:0 8px; border-radius:var(--radius-6); background:var(--component-text-field-bg); border:1px solid var(--component-text-field-border); color:var(--text-secondary); }
 .sp-badge { display:inline-flex; height:22px; align-items:center; padding:0 10px; border-radius:99px; background:var(--component-badge-merged-bg); color:var(--component-badge-merged-text); font-weight:500; }
-.sp-tip { display:inline-flex; align-items:center; gap:6px; padding:3px 6px 3px 8px; border-radius:var(--radius-6); background:#252525; color:rgba(255,255,255,0.9); font-size:12px; box-shadow:var(--shadow-L1); }
+.sp-tip { display:inline-flex; align-items:center; gap:6px; padding:3px 6px 3px 8px; border-radius:var(--component-tooltip-radius); background:var(--component-tooltip-bg); color:var(--component-tooltip-text); border:1px solid var(--component-tooltip-border); font-size:12px; box-shadow:var(--component-tooltip-shadow); }
 .sp-tip kbd { font:inherit; padding:0 4px; border-radius:4px; background:rgba(255,255,255,0.08); }
 .sp-user { margin-left:auto; width:fit-content; max-width:80%; background:var(--tint-tertiary); border-radius:var(--radius-16); padding:8px 14px; font-size:var(--fontSize-14); }
 .sp-code-inline { font-family:var(--fontFamily-mono); font-size:12px; padding:0 3px; border-radius:var(--radius-4); background:var(--component-inline-code-bg); }

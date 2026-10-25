@@ -13,7 +13,8 @@ import { existsSync, readFileSync } from 'node:fs';
 import { connect, disconnect, shoot, viewport, force, box, computed, tag, untagAll, writeJson } from './cdp.mjs';
 import * as P from './product.mjs';
 
-const SLUG = process.env.SLUG || 'cursor-desktop';
+// The package this script belongs to (systems/<slug>/tools/capture/electron/), so it never writes into another package's folder.
+const SLUG = process.env.SLUG || new URL('../../..', import.meta.url).pathname.replace(/\/$/, '').split('/').pop();
 const RAW = process.env.RAW || `${process.env.HOME}/.design-systems/${SLUG}/raw-shots`;
 const args = process.argv.slice(2);
 const setTheme = args.find(a => a.startsWith('--set-theme='))?.slice(12);

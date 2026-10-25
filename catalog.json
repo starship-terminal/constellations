@@ -1685,12 +1685,12 @@
       }
     },
     {
-      "slug": "devin-desktop",
-      "name": "Devin (desktop)",
-      "url": "https://devin.ai",
+      "slug": "orca-desktop",
+      "name": "Orca (desktop)",
+      "url": "https://www.stably.ai",
       "category": "ai-agent",
       "platform": "desktop",
-      "goodFor": "Desktop coding-agent app in Electron on a VS Code workbench: a near-black or near-white page shared by the sidebar and the content, two-line session rows, one 20px-radius raised composer with a Cloud / Local segmented control, a right-aligned tinted prompt bubble over plain replies and muted work rows, every neutral one colour at fixed alphas, ink-filled page buttons with blue kept for focus and links, 6px controls and 10px popups and cards",
+      "goodFor": "Desktop coding-agent harness in Electron on shadcn/ui: white or near-black panes beside a grey sidebar of projects and worktree cards, a tab strip of terminals and agent chats, an inspector on the right and a usage status bar, ink (not a hue) for the primary button and switches, shadcn's 3px focus ring everywhere, 8px controls and 14px bordered cards in Geist, red only for removal",
       "tags": [
         "desktop",
         "electron",
@@ -1698,29 +1698,31 @@
         "coding",
         "ai",
         "agent",
-        "ide",
+        "terminal",
         "sidebar",
+        "tabs",
+        "shadcn",
+        "tailwind",
+        "neutral",
         "dense",
         "dark",
-        "light",
-        "alpha-tiers",
-        "tailwind"
+        "light"
       ],
       "shape": "reference",
       "captured": "2026-10-25",
-      "access": "signed in (the owner's cortexairobot organisation); read live from the running app over its remote-debugging port",
+      "access": "not signed in to an Orca account (not needed); read live from the running app over its remote-debugging port, on a scratch project the capture added and removed",
       "themes": [
         "light",
         "dark"
       ],
       "widths": [
-        1440
+        1512
       ],
-      "entry": "systems/devin-desktop/README.md",
-      "tokens": "systems/devin-desktop/tokens.json",
-      "styleGuide": "systems/devin-desktop/style-guide.html",
+      "entry": "systems/orca-desktop/README.md",
+      "tokens": "systems/orca-desktop/tokens.json",
+      "styleGuide": "systems/orca-desktop/style-guide.html",
       "preview": {
-        "cover": "systems/devin-desktop/screenshots/dark/conversation.png",
+        "cover": "systems/orca-desktop/screenshots/dark/conversation.png",
         "swatches": {
           "light": {
             "page": "light.role.page",
@@ -1745,10 +1747,10 @@
         ]
       },
       "source": {
-        "path": "~/.design-systems/devin-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
+        "path": "~/.design-systems/orca-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
       },
       "layoutGaps": {
-        "icons/": "Devin's icons are its own inline SVG artwork and the workbench's codicons, and are not kept here (docs/RIGHTS.md)"
+        "icons/": "Orca's icons and agent logos are its own artwork and third-party icon sets, and are not kept here (docs/RIGHTS.md)"
       }
     },
     {
@@ -1813,6 +1815,72 @@
       },
       "layoutGaps": {
         "icons/": "Luma's icons, wordmark and app icons are its artwork and were not extracted from the captures (docs/RIGHTS.md)"
+      }
+    },
+    {
+      "slug": "grokbot-desktop",
+      "name": "Grok Bot (desktop)",
+      "url": "https://x.ai/bot",
+      "category": "ai-agent",
+      "platform": "desktop",
+      "goodFor": "Desktop chat app for AI agents in Electron: a near-black or white window with a darker sidebar of coloured agent characters (a pinned grid over groups), one conversation per agent with the owner's bubbles in that agent's colour and neutral raised reply bubbles, a shimmering activity line while it works, pill and circle controls, an ink primary button, surfaces separated by fill rather than borders",
+      "tags": [
+        "desktop",
+        "electron",
+        "macos",
+        "coding",
+        "ai",
+        "agent",
+        "chat",
+        "sidebar",
+        "per-item-colour",
+        "pill",
+        "dark",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-25",
+      "access": "signed in (the owner's account); read live from the running app over its remote-debugging port",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1120
+      ],
+      "entry": "systems/grokbot-desktop/README.md",
+      "tokens": "systems/grokbot-desktop/tokens.json",
+      "styleGuide": "systems/grokbot-desktop/style-guide.html",
+      "preview": {
+        "cover": "systems/grokbot-desktop/screenshots/dark/home-default.png",
+        "swatches": {
+          "light": {
+            "page": "light.role.page",
+            "surface": "light.role.surface",
+            "text": "light.role.text.primary",
+            "muted": "light.role.text.secondary",
+            "accent": "light.role.accent.default",
+            "border": "light.role.border.default"
+          },
+          "dark": {
+            "page": "dark.role.page",
+            "surface": "dark.role.surface",
+            "text": "dark.role.text.primary",
+            "muted": "dark.role.text.secondary",
+            "accent": "dark.role.accent.default",
+            "border": "dark.role.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans",
+          "core.fontFamily.mono"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/grokbot-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Grok Bot's icons (the cursor-icons font) and Bot characters are its artwork and are not kept here (docs/RIGHTS.md)"
       }
     }
   ]
