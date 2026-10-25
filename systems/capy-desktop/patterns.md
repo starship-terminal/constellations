@@ -1,0 +1,65 @@
+# Capy desktop: patterns
+
+How Capy's components combine on its main screens. Every screen exists in `screenshots/dark/` and `screenshots/light/` under the same name; values are tokens from [tokens.json](tokens.json), components are in [components.md](components.md). Screens named `design-*`, and `conversation`, `tool-rows`, `delete-confirmation`, `toast`, `toast-error`, `markdown`, `diff`, `desktop-request`, `device-access`, `clarify` and `crash-card`, come from Capy's own component gallery at `capy://app/design`, on the product's fixture data; the rest are the app on the owner's account.
+
+## App shell and navigation
+
+The window is the window colour (`base.chrome`) with a rounded content panel inset into it (`base.panel`, `radius.panel` 12px, a 0.5px `base.border-1` edge). Across the top runs the desktop tab strip, 40px (`core.layout.tab-strip-height`): the macOS traffic lights over its left end, Back and Forward, one tab per open page (the active one raised on `base.popover` with `shadow.card`), New tab, and a teal Update on the right when an update is waiting. The 240px sidebar (`core.layout.sidebar`) sits on the window colour, not in the panel: the Capy mark with Search and Close sidebar, the main rows (New thread with its shortcut, Threads, Pull requests, Automations, More), then the thread list grouped by project, a Finish setting up card, and the account button at the bottom. Hiding the sidebar gives the panel the full width. Settings swaps the sidebar for its own navigation (a search field and about twenty panes in groups: the account, Agent, Review, Organization) and puts a 752px column of cards in the panel (`core.layout.settings-card`).
+
+Screens: [home](screenshots/dark/home.png), [window-frame](screenshots/dark/window-frame.png) (the native window with its traffic lights), [sidebar-hidden](screenshots/light/sidebar-hidden.png), [tabs-two](screenshots/dark/tabs-two.png), [threads](screenshots/light/threads.png), [settings-general](screenshots/dark/settings-general.png).
+
+## Starting a thread and following the agent
+
+A thread starts from the New thread page: a dot-grid shader fills the top of the panel (`base.shader-ink`), and the composer sits in the middle. Above it, three ghost pickers choose the project, where it runs (Cloud, or a paired Mac and its worktree) and which repositories and branches it gets; the composer itself is a `base.popover` card with `shadow.composer`, a Lexical editor, and a toolbar of add, thread configuration and the model picker, with voice and the teal Start on the right. The model name is drawn in `base.warning-fg` when no connection can serve it.
+
+Pressing Start opens the thread's page at once in a loading state (a skeleton tab strip, "Loading" in the model picker, the composer docked at the bottom) and the thread runs in the cloud. In this account it went no further: Capy came back to the New thread page with the prompt still in the composer and an error toast, Failed to start thread, because the organization's model settings allow only connections that are not set up. The thread itself is shown by the gallery's fixtures: the user's message is a rounded bubble with a small square avatar, name and time; the agent's reply sits on the page as 13px markdown; each stretch of work folds into a muted Worked for 1m 14s line that expands into tool rows (Thought for 8s, Ran test in @capy/core 0.9s, Editing event-store.ts +2 -2); update lines record outside events (CI finished, a review comment, a merged PR); requests that need the person (Desktop request, Device access with Deny and Allow, Clarify with numbered choices and a free answer) are cards inside the transcript.
+
+Screens: [home](screenshots/light/home.png), [run-loading](screenshots/dark/run-loading.png), [run-refused](screenshots/light/run-refused.png), [conversation](screenshots/dark/conversation.png), [tool-rows](screenshots/light/tool-rows.png), [tool-rows-more](screenshots/dark/tool-rows-more.png), [update-error-rows](screenshots/light/update-error-rows.png), [desktop-request](screenshots/dark/desktop-request.png), [device-access](screenshots/light/device-access.png), [clarify](screenshots/dark/clarify.png), [diff](screenshots/light/diff.png), [markdown](screenshots/dark/markdown.png), [markdown-code](screenshots/light/markdown-code.png).
+
+## Forms and settings
+
+Settings apply on change; there is nothing to submit. A pane is a 22px medium title (`typography.heading`) and a muted description, then sections: a 14px medium title and a muted line, over a card of 67px rows, each a 13px medium label over a muted description with the control on the right (a switch, a menu-trigger select, an input, a ghost or outline button, a stepper pill). Values the organization sets carry a muted Org beside them, and a You and Org segmented control switches the scope of a pane. The gallery's Inputs and Form fields sections show the invalid input (a `base.destructive` border from `aria-invalid`); no validation error was reachable in the app.
+
+Screens: [settings-capy](screenshots/dark/settings-capy.png), [settings-general](screenshots/light/settings-general.png), [settings-appearance](screenshots/dark/settings-appearance.png), [settings-notifications](screenshots/light/settings-notifications.png), [settings-profile](screenshots/dark/settings-profile.png), [design-inputs](screenshots/light/design-inputs.png), [design-form-fields](screenshots/dark/design-form-fields.png), [design-switch-and-checkbox](screenshots/light/design-switch-and-checkbox.png).
+
+## Menus and selects
+
+Every popup is one Base UI menu: `base.popover`, the 8px overlay radius, `shadow.overlay`, 28px rows with a 14px muted icon, a `base.popover-hover` highlight, section labels, shortcuts right-aligned, and a check on the chosen row. Pickers add a search row at the top and sticky actions at the bottom (the project picker's No project, New project, Manage projects). Rows that open more carry a chevron and a value (Machine size, Access). Destructive rows are red text. The model picker, when nothing can serve, is an empty state inside the menu with a Model settings button.
+
+Screens: [user-menu](screenshots/dark/user-menu.png), [more-menu](screenshots/light/more-menu.png), [add-menu](screenshots/dark/add-menu.png), [config-menu](screenshots/light/config-menu.png), [model-menu](screenshots/dark/model-menu.png), [project-menu](screenshots/light/project-menu.png), [run-on-menu](screenshots/dark/run-on-menu.png), [repos-menu](screenshots/light/repos-menu.png), [thread-options-menu](screenshots/dark/thread-options-menu.png), [tab-context-menu](screenshots/light/tab-context-menu.png), [thread-context-menu](screenshots/dark/thread-context-menu.png), [settings-select-open](screenshots/light/settings-select-open.png), [design-menus](screenshots/dark/design-menus.png).
+
+## Dialogs and confirmation
+
+Dialogs centre over the `base.overlay` scrim on `base.popover` with `shadow.overlay`, the same level as menus (`shadow.sheet` is declared for sheets and drawers, which were not measured). The destructive confirmation (the gallery's Delete a thread) is small: a medium title, one sentence that names what will be lost and what survives (the branch stays on GitHub), then a ghost Cancel and the red Delete thread. Paged dialogs push sub-pages with a back chevron; Customize sidebar is a list of rows with a select each. Sheets slide from the left (the phone navigation), side sheets from the right, drawers from the bottom.
+
+Screens: [delete-confirmation](screenshots/dark/delete-confirmation.png), [paged-dialog](screenshots/light/paged-dialog.png), [customize-sidebar-dialog](screenshots/dark/customize-sidebar-dialog.png), [design-dialog](screenshots/light/design-dialog.png), [design-sheet-and-drawer](screenshots/dark/design-sheet-and-drawer.png).
+
+## Empty, loading and error states
+
+Empty states are one muted line in the content (No automations yet, No review bots, No API keys) or, for a page with nothing in it, a short title, a line and one inverse button (Memory: No memories yet, Start a thread). Loading is a skeleton of pulsing bars on the card (`--animate-skeleton-pulse`; Settings > Models while connections load), a dot grid inside buttons, a progress edge along a surface, a progress ring, shimmer text and the sleeping-capybara pane. Errors are a toast (Failed to start thread), an alert card in the transcript (Provider overloaded), a failed row in tool and update lines, and the crash card (Something went wrong, with Reload and Copy report).
+
+Screens: [automations](screenshots/light/automations.png), [memory](screenshots/dark/memory.png), [settings-models](screenshots/light/settings-models.png), [run-loading](screenshots/light/run-loading.png), [design-loading](screenshots/dark/design-loading.png), [design-connect-wait](screenshots/light/design-connect-wait.png), [run-refused](screenshots/dark/run-refused.png), [toast-error](screenshots/light/toast-error.png), [design-alerts](screenshots/dark/design-alerts.png), [crash-card](screenshots/light/crash-card.png), [search-palette-empty](screenshots/dark/search-palette-empty.png).
+
+## Search and filtering
+
+Search opens a 720px command palette (`core.layout.palette`) (Command K) over the scrim: a search field with New thread on the right, filter tabs (All, Captains, Threads, Pull requests, Automations, Actions, Settings), sections of recent threads, actions with their shortcuts and Go to rows, and a footer of key hints. An empty result offers New thread with the typed text. List pages filter with segmented views (My threads, All threads, Archived; Open, Ready to merge, Merged, All) and removable filter chips that read as a sentence (Participants is Me, State is either of 4 states). Settings has its own search.
+
+Screens: [search-palette](screenshots/light/search-palette.png), [search-palette-empty](screenshots/dark/search-palette-empty.png), [threads](screenshots/dark/threads.png), [pull-requests](screenshots/light/pull-requests.png), [design-filter-chips](screenshots/dark/design-filter-chips.png), [settings-search-filled](screenshots/light/settings-search-filled.png).
+
+## Data display
+
+Lists are grouped and collapsible: Threads by project, Pull requests by state (Ready to merge 3) with the diff stat in `base.diff-add` and `base.diff-del` and the age right-aligned. Tables are grids with muted 12px headers, hairline rows and a pinned first column (Members, Drive, the review bot list, the audit log); charts are stacked bars on the card in the eight chart colours (`chart.*`), and the activity view draws a year of contributions as a grid of cells.
+
+Screens: [pull-requests](screenshots/dark/pull-requests.png), [design-table](screenshots/light/design-table.png), [settings-org-members](screenshots/dark/settings-org-members.png), [drive](screenshots/light/drive.png), [settings-org-usage](screenshots/dark/settings-org-usage.png), [settings-org-activity](screenshots/light/settings-org-activity.png), [settings-org-audit-log](screenshots/dark/settings-org-audit-log.png).
+
+## Feedback after an action
+
+Capy confirms with a toast, bottom right, of constant width: an icon, a medium title and a muted description always, and an action when there is one (Thread created with Open thread; Failed to start thread with Connect). Inside a thread, outcomes are update lines and the status glyphs on thread rows (needs attention, ready for review, active, waiting, idle) and on pull requests (ready, pending, merged, failed, draft).
+
+Screens: [toast](screenshots/dark/toast.png), [toast-error](screenshots/light/toast-error.png), [run-refused](screenshots/dark/run-refused.png), [design-thread-status](screenshots/light/design-thread-status.png).
+
+## Onboarding
+
+A signed-in account keeps a Finish setting up card at the bottom of the sidebar: a progress bar with 1 of 6, a checklist (Connect GitHub done, Ship a PR with Capy, Run a review, Set up environment, Connect Slack, Invite a teammate) and one outline button for the next step. Automations opens on templates (Slack customer bug triage, CI failure fixer, Linear issue to PR), and the gallery's Provider card and Connect wait sections show the GitHub install and device-pairing steps. The sign-in screen was not shown: the account was already signed in.
+
+Screens: [home](screenshots/dark/home.png), [automations](screenshots/dark/automations.png), [design-provider-card](screenshots/light/design-provider-card.png), [design-connect-wait](screenshots/dark/design-connect-wait.png).
