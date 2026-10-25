@@ -1,0 +1,8 @@
+{
+  "families": [
+    {"name": "Settings > Connections: the linked Slack account's address",
+     "files": ["screenshots/*/settings-connections.png"],
+     "size": [[2880, 1800]],
+     "rects": [[1140, 880, 1440, 940, "rows"]]}
+  ]
+}

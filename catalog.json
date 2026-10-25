@@ -1685,6 +1685,73 @@
       }
     },
     {
+      "slug": "devin-desktop",
+      "name": "Devin (desktop)",
+      "url": "https://devin.ai",
+      "category": "ai-agent",
+      "platform": "desktop",
+      "goodFor": "Desktop coding-agent app in Electron on a VS Code workbench: a near-black or near-white page shared by the sidebar and the content, two-line session rows, one 20px-radius raised composer with a Cloud / Local segmented control, a right-aligned tinted prompt bubble over plain replies and muted work rows, every neutral one colour at fixed alphas, ink-filled page buttons with blue kept for focus and links, 6px controls and 10px popups and cards",
+      "tags": [
+        "desktop",
+        "electron",
+        "macos",
+        "coding",
+        "ai",
+        "agent",
+        "ide",
+        "sidebar",
+        "dense",
+        "dark",
+        "light",
+        "alpha-tiers",
+        "tailwind"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-25",
+      "access": "signed in (the owner's cortexairobot organisation); read live from the running app over its remote-debugging port",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440
+      ],
+      "entry": "systems/devin-desktop/README.md",
+      "tokens": "systems/devin-desktop/tokens.json",
+      "styleGuide": "systems/devin-desktop/style-guide.html",
+      "preview": {
+        "cover": "systems/devin-desktop/screenshots/dark/conversation.png",
+        "swatches": {
+          "light": {
+            "page": "light.role.page",
+            "surface": "light.role.surface",
+            "text": "light.role.text.primary",
+            "muted": "light.role.text.secondary",
+            "accent": "light.role.accent.default",
+            "border": "light.role.border.default"
+          },
+          "dark": {
+            "page": "dark.role.page",
+            "surface": "dark.role.surface",
+            "text": "dark.role.text.primary",
+            "muted": "dark.role.text.secondary",
+            "accent": "dark.role.accent.default",
+            "border": "dark.role.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans",
+          "core.fontFamily.mono"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/devin-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Devin's icons are its own inline SVG artwork and the workbench's codicons, and are not kept here (docs/RIGHTS.md)"
+      }
+    },
+    {
       "slug": "luma-ios",
       "name": "Luma",
       "url": "https://luma.com",
