@@ -1,0 +1,14 @@
+{
+  "_note": "Orca desktop: Settings > SSH Hosts lists the owner's ~/.ssh/config (user@host:port, addresses, key names), painted out row by row with the row structure kept; the Orca Mobile promo's sample account addresses are painted too, because the email net flags them. Coordinates are for the 3024 x 1898 window.",
+  "families": [
+    {"name": "ssh host list",
+     "files": ["screenshots/*/settings-ssh-hosts.png"],
+     "size": [[3024, 1898]],
+     "rects": [[1028, 528, 2520, 1515, "rows"]]},
+    {"name": "mobile promo sample accounts",
+     "files": ["screenshots/*/orca-mobile.png"],
+     "size": [[3024, 1898]],
+     "rects": [[2236, 1630, 2700, 1782, "rows"]]}
+  ],
+  "ocr": {"emails": true}
+}
