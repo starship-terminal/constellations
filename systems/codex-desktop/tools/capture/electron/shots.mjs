@@ -10,7 +10,7 @@
 // $RAW/<theme>/captures.json: { <name>: { window, state, file, viewport, parts: { <part>: { box, style } } } }.
 // box is in screenshot pixels; style is the computed style (cdp.mjs PROPS) in the shot's state.
 // RAW defaults to ~/.design-systems/<slug>/raw-shots, outside the repository.
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, rmSync } from 'node:fs';
 import { connect, disconnect, shoot, viewport, force, box, computed, tag, untagAll, writeJson } from './cdp.mjs';
 import * as P from './product.mjs';
 
@@ -91,6 +91,8 @@ for (const shot of P.SHOTS.slice(start).filter(s => !only.length || only.include
   } catch (e) {
     // A failed shot drops any entry an earlier run left under its name, so no stale reading survives.
     delete all[shot.name];
+    // ... and its image from an earlier run, so quantize.py cannot publish a picture with no reading behind it.
+    rmSync(`${RAW}/${theme}/${shot.name}.png`, { force: true });
     fail(shot, e.message.split('\n')[0]);
     console.error('FAILED', shot.name, e.message.split('\n')[0]);
   } finally {
