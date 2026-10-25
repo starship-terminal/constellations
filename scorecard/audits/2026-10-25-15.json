@@ -4949,7 +4949,7 @@
     },
     "F8": {
      "grade": "partly",
-     "evidence": "Families (InterVariable and JetBrains Mono, from @font-face and font-family declarations, with fallbacks), six sizes (8, 11, 13, 16, 18, 24), four weights, and 14 named styles from the Text component's table with per-size letter spacing, all Measured; no line heights beyond the list row's 1.8, noted in a description."
+     "evidence": "Families (InterVariable and JetBrains Mono, from @font-face and font-family declarations, with fallbacks), six sizes (8, 11, 13, 16, 18, 24), four weights, and 15 named styles from the Text component's table with per-size letter spacing, all Measured; no line heights beyond the list row's 1.8, noted in a description."
     },
     "F9": {
      "grade": "meets",
@@ -5009,7 +5009,7 @@
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 453 of 453 tokens name their source"
+     "evidence": "Script: 454 of 454 tokens name their source"
     },
     "K2": {
      "grade": "meets",

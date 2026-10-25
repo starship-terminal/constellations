@@ -239,6 +239,11 @@ typography:
     fontSize: "13px"
     fontWeight: 600
     letterSpacing: "0px"
+  smallMonoText:
+    fontFamily: "JetBrainsMono"
+    fontSize: "11px"
+    fontWeight: 400
+    letterSpacing: "0px"
 rounded:
   "2": "2px"
   "4": "4px"
@@ -340,7 +345,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Typography
 
-14 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: InterVariable, JetBrainsMono.
+15 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: InterVariable, JetBrainsMono.
 
 ### Fonts (from README.md)
 

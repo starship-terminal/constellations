@@ -90,7 +90,11 @@ def build():
                 t = theme_set[p]
                 shown = resolve(t["$value"], theme_set, core)
                 label = t["$value"] if t["$value"] == shown else f"{t['$value']} = {shown}"
-                cells.append('<td><i class="sw" style="background:%s"></i><code>%s</code> %s</td>' % (esc(shown), esc(label), ev(t)))
+                # A translucent swatch is drawn over its own theme's painted window, not over the page
+                # the guide happens to show, so each column previews what that theme paints.
+                ground = resolve(theme_set[("page",)]["$value"], theme_set, core)
+                cells.append('<td><i class="sw" style="background:linear-gradient(%s,%s),%s"></i><code>%s</code> %s</td>' % (
+                    esc(shown), esc(shown), esc(ground), esc(label), ev(t)))
             rows.append("<tr><th><code>%s</code></th>%s<td class=d>%s</td></tr>" % (esc(".".join(p)), "".join(cells), esc(light[p]["$description"])))
         return "\n".join(rows)
 
@@ -129,7 +133,7 @@ def build():
     kbd = lambda k: f'<span class="kbd">{k}</span>'
     specimens = f"""
 <div class="win">
- <div class="search"><span class="mut">Search for apps and commands...</span></div>
+ <div class="search"><span class="ph">Search for apps and commands...</span></div>
  <div class="list">
   <div class="row sel"><i class="ico" style="background:var(--theme-red)"></i><span>See what's new</span><span class="mut">v2.9.0</span><span class="acc">Changelog</span></div>
   <div class="hdr">Suggestions</div>
@@ -142,14 +146,14 @@ def build():
 </div>
 <div class="row2">
  <div class="panel"><div class="mut small">Digital Color Meter</div><div class="mi sel">Open Application<span class="r">{kbd("&#8629;")}</span></div><div class="mi">Show in Finder<span class="r">{kbd("&#8984;")}{kbd("&#8629;")}</span></div><div class="mi">Show Info in Finder<span class="r">{kbd("&#8984;")}{kbd("I")}</span></div><div class="msearch mut">Search for actions...</div></div>
- <div class="card">
+ <div class="spage"><div class="card">
   <div class="srow"><span>Open at Login</span><i class="switch on"></i></div>
   <div class="srow"><span>Show In Menu Bar</span><i class="switch"></i></div>
   <div class="srow"><span>Dark Theme</span><span class="dd">Raycast Dark &#8964;</span></div>
   <div class="srow"><span>Theme Studio<br><span class="mut small">Edit or create themes for Raycast</span></span><span class="btn">Upgrade to Pro</span></div>
   <div class="srow"><span>Name</span><span class="field err">Required</span></div>
   <div class="srow"><span>Show "What's New" after an update</span><i class="cb on">&#10003;</i></div>
- </div>
+ </div></div>
 </div>"""
     page = f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -161,7 +165,7 @@ def build():
 body{{margin:0;font-family:var(--fontFamily-ui);font-size:13px;background:var(--page);color:var(--text-primary);padding:16px 24px}}
 h1{{font-size:24px}} h2{{margin-top:40px;font-size:18px;border-bottom:1px solid var(--border-separator);padding-bottom:6px}}
 table{{border-collapse:collapse;width:100%;font-size:12px}} td,th{{text-align:left;vertical-align:top;padding:4px 6px;border-bottom:1px solid var(--border-tertiary)}}
-.wrap{{overflow-x:auto}} .d{{color:var(--text-secondary);max-width:520px}} .mut{{color:var(--text-secondary)}} .small{{font-size:var(--fontSize-11)}}
+.wrap{{overflow-x:auto}} .d{{color:var(--text-secondary);max-width:520px}} .mut{{color:var(--text-secondary)}} .ph{{color:var(--text-placeholder)}} .small{{font-size:var(--fontSize-11)}}
 .sw{{display:inline-block;width:18px;height:18px;border-radius:4px;vertical-align:middle;margin-right:6px;box-shadow:0 0 0 1px var(--border-secondary)}}
 .ev{{font-size:10px;padding:1px 4px;border-radius:4px;box-shadow:0 0 0 1px var(--border-secondary)}} .ev-measured{{color:var(--theme-green)}} .ev-derived{{color:var(--theme-orange)}} .ev-sampled{{color:var(--theme-blue)}}
 .rad{{display:inline-block;width:40px;height:28px;box-shadow:0 0 0 1px var(--border-secondary);background:var(--surface)}} .spc{{display:inline-block;height:10px;background:var(--accent-default)}}
@@ -181,7 +185,8 @@ table{{border-collapse:collapse;width:100%;font-size:12px}} td,th{{text-align:le
 .panel{{width:340px;max-width:100%;border-radius:var(--radius-12);background:var(--dialog);box-shadow:var(--shadow-panel),0 0 0 1px var(--border-separator);padding:var(--spacing-8)}}
 .panel .small{{padding:4px 8px}} .mi{{height:32px;display:flex;align-items:center;padding:0 var(--spacing-8);border-radius:var(--radius-8)}} .mi.sel{{background:var(--component-list-row-selectedBg)}} .r{{margin-left:auto}}
 .msearch{{border-top:1px solid var(--border-separator);margin-top:6px;padding:10px 8px 2px}}
-.card{{flex:1;min-width:300px;max-width:560px;background:var(--surface);border-radius:var(--radius-10);padding:0 var(--spacing-12)}}
+.spage{{flex:1;min-width:300px;max-width:584px;background:var(--settingsPage);border-radius:var(--radius-12);padding:var(--spacing-12)}}
+.card{{background:var(--surface);border-radius:var(--radius-10);padding:0 var(--spacing-12)}}
 .srow{{min-height:var(--component-settings-rowHeight);display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--component-settings-separator)}} .srow:last-child{{border:0}}
 .switch{{box-sizing:border-box;display:inline-block;width:var(--component-switch-width);height:var(--component-switch-height);border-radius:var(--radius-full);background:var(--component-switch-offBg);position:relative}}
 .switch:after{{content:"";position:absolute;top:1.5px;left:1.5px;width:var(--component-switch-thumbWidth);height:13px;border-radius:var(--radius-full);background:var(--component-switch-thumb)}} .switch.on{{background:var(--component-switch-onBg)}} .switch.on:after{{left:auto;right:1.5px}}
@@ -192,7 +197,7 @@ table{{border-collapse:collapse;width:100%;font-size:12px}} td,th{{text-align:le
 </style></head><body>
 <button class="toggle" onclick="var r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'">Light / Dark</button>
 <h1>Raycast 2.9: Raycast Light and Raycast Dark</h1>
-<p class="d">Every colour and size is Raycast's own declaration, read from the stylesheets and theme definitions shipped in the app (Measured), with the alpha steps worked out from them (Derived) and checked against the window's pixels (raw/pixel-check.json). The window fills (page, settingsPage, sidebar) are pixels (Sampled): the windows are translucent over the macOS window material, so no declaration gives them. Specimens are drawn from tokens only; none of Raycast's icons or artwork is used (the coloured squares stand in for app icons).</p>
+<p class="d">Swatches in each theme's column are drawn over that theme's painted launcher window (page), so translucent roles preview as the app paints them. Every colour and size is Raycast's own declaration, read from the stylesheets and theme definitions shipped in the app (Measured), with the alpha steps worked out from them (Derived) and checked against the window's pixels (raw/pixel-check.json). The window fills (page, settingsPage, sidebar) are pixels (Sampled): the windows are translucent over the macOS window material, so no declaration gives them. Specimens are drawn from tokens only; none of Raycast's icons or artwork is used (the coloured squares stand in for app icons).</p>
 <h2>Specimens</h2>
 {specimens}
 <h2>Roles (light, dark)</h2><div class="wrap"><table>{swatch_rows(roles)}</table></div>

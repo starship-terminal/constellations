@@ -238,9 +238,10 @@ def settings_open():
 def side(scroll, y):
     """Click a sidebar row: scroll the sidebar (lines, negative is down) from the top, then click at y pt."""
     settings_open()
-    mouse("scroll", 120, origin("Settings")[1] + 500, 80, wait=0.6)
+    sx, sy = at("Settings", 120, 500)      # a point inside the sidebar, wherever the window sits
+    mouse("scroll", sx, sy, 80, wait=0.6)
     if scroll:
-        mouse("scroll", 120, origin("Settings")[1] + 500, scroll, wait=0.8)
+        mouse("scroll", sx, sy, scroll, wait=0.8)
     x, yy = at("Settings", 77, y)
     mouse("click", x, yy, wait=1.5)
     park()

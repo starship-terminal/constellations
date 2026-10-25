@@ -34,10 +34,9 @@ import plistlib
 import re
 import sys
 
-APP = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "/Applications/Raycast.app")
+APP = pathlib.Path(sys.argv[1] if __name__ == "__main__" and len(sys.argv) > 1 else "/Applications/Raycast.app")
 FRONT = APP / "Contents/Resources/macos-app_RaycastDesktopApp.bundle/Contents/Resources/frontend"
 RAW = pathlib.Path(__file__).resolve().parents[2] / "raw"
-VERSION = plistlib.loads((APP / "Contents/Info.plist").read_bytes())["CFBundleShortVersionString"]
 REL = "Raycast.app/Contents/Resources/macos-app_RaycastDesktopApp.bundle/Contents/Resources/frontend/"
 
 MODULES = [
@@ -131,14 +130,23 @@ def themes():
     return src[0].name, found, template
 
 
+def style_table(js):
+    """The Text component's named styles, from the object literal that starts with heading1. The
+    capture keeps the last entry's own closing brace, so the final style is not dropped."""
+    m = re.search(r"\{(heading1:\{.*?\})\};function", js, re.S)
+    if not m:
+        raise SystemExit("no text style table found")
+    styles = {}
+    for name, font, size, weight in re.findall(r'"?([\w-]+)"?:\{font:`(\w+)`,size:(\d+),weight:(\d+)\}', m.group(1)):
+        styles[name] = {"font": font, "size": int(size), "weight": int(weight)}
+    return styles
+
+
 def text_styles():
     src = [p for p in sorted(FRONT.glob("text-*.js")) if '"small-text":{font:' in p.read_text()]
     if len(src) != 1:
         raise SystemExit("expected one chunk defining the text styles")
-    table = re.search(r"\{(heading1:\{.*?)\}\};function", src[0].read_text(), re.S).group(1)
-    styles = {}
-    for name, font, size, weight in re.findall(r'"?([\w-]+)"?:\{font:`(\w+)`,size:(\d+),weight:(\d+)\}', table):
-        styles[name] = {"font": font, "size": int(size), "weight": int(weight)}
+    styles = style_table(src[0].read_text())
     spacing = []
     for css in sorted(FRONT.glob("text-*.css")):
         for media, sel, body in parse_css(css.read_text()):
@@ -152,7 +160,8 @@ def text_styles():
 
 def main():
     RAW.mkdir(exist_ok=True)
-    meta = {"app": "Raycast", "version": VERSION, "bundle": REL}
+    version = plistlib.loads((APP / "Contents/Info.plist").read_bytes())["CFBundleShortVersionString"]
+    meta = {"app": "Raycast", "version": version, "bundle": REL}
     name, found, template = themes()
     (RAW / "bundled-themes.json").write_text(json.dumps({
         **meta, "file": name,
@@ -200,7 +209,7 @@ def main():
     json.loads(text)
     (RAW / "components-css.json").write_text(text)
     print(f"{len(found)} themes, {len(styles)} text styles, {len(toks)} token declarations, {sum(len(v) for v in comp.values())} component rules "
-          f"in {len(comp)} modules (Raycast {VERSION})")
+          f"in {len(comp)} modules (Raycast {version})")
 
 
 if __name__ == "__main__":

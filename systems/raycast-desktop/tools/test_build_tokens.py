@@ -66,5 +66,31 @@ class CheckTest(unittest.TestCase):
             build_tokens.check(doc)
 
 
+class RaycastReadersTest(unittest.TestCase):
+    """The bundle reader and the component-rule check, on fixtures and on the committed files."""
+
+    def test_style_table_keeps_the_last_entry(self):
+        sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "capture"))
+        import read_bundle  # noqa: E402  (reads the installed app only when run as a script)
+        js = 'u={heading1:{font:`inter`,size:24,weight:600},text:{font:`inter`,size:13,weight:400},"small-mono-text":{font:`mono`,size:11,weight:400}};function d(e){}'
+        styles = read_bundle.style_table(js)
+        self.assertEqual(list(styles), ["heading1", "text", "small-mono-text"])
+        self.assertEqual(styles["small-mono-text"], {"font": "mono", "size": 11, "weight": 400})
+
+    @unittest.skipUnless(TOKENS.exists(), "no tokens.json yet")
+    def test_committed_tokens_name_live_component_rules(self):
+        build_tokens.verify_rules(json.loads(TOKENS.read_text()))
+
+    @unittest.skipUnless(TOKENS.exists(), "no tokens.json yet")
+    def test_a_changed_component_rule_fails(self):
+        saved = build_tokens.RULES["component.switch.width"]
+        try:
+            build_tokens.RULES["component.switch.width"] = saved[:3] + ("round(calc(37 * var(--spx)), 1px)",)
+            with self.assertRaisesRegex(AssertionError, "switch.width"):
+                build_tokens.verify_rules(json.loads(TOKENS.read_text()))
+        finally:
+            build_tokens.RULES["component.switch.width"] = saved
+
+
 if __name__ == "__main__":
     unittest.main()

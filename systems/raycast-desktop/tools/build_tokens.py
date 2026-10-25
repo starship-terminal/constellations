@@ -46,6 +46,7 @@ READ = _load("readings.json") or {}  # empty in the kit copy, for its tests
 THEMES_FILE = _load("bundled-themes.json")
 CSS = _load("css-tokens.json")
 TEXT = _load("text-styles.json")
+COMPONENTS = _load("components-css.json")
 MEASURED = f"raw/{PKG.name}-measured.md"
 NAMES = {"dark": "Raycast Dark", "light": "Raycast Light"}
 INTER_CAP = 0.727   # Inter's cap height / em, the assumption behind a size Derived from a capital
@@ -527,6 +528,100 @@ def pixel_check(doc):
                     "furthest from the fill, so it matches only where a glyph has a fully covered pixel.", "worst": worst, "rows": rows}
 
 
+# ---------------------------------------------------------------- component declarations behind each token
+
+# Every token whose value was transcribed from a component rule names that rule here, as (module,
+# a substring of its selector, property, a substring of its value). verify_rules() fails the build
+# when a rule is gone or its value no longer matches, so a re-read bundle cannot leave a stale token.
+RULES = {
+    "easing.switchThumb": ("switch", ".switch__root", "--switch-thumb-transition", "cubic-bezier(.16, -.12, .29, 1.31)"),
+    "duration.control": ("base-button", ".base-button__root", "transition", "background-color .15s ease-out"),
+    "duration.switchTrack": ("switch", "[macos] .switch__root", "--switch-transition", "background-color .216s ease-out"),
+    "duration.switchThumb": ("switch", "[macos] .switch__root", "--switch-thumb-transition", "transform .366s"),
+    "duration.toastHoverIn": ("toast", ".toast__root", "--toast-hover-in-duration", ".1s"),
+    "duration.toastHoverOut": ("toast", ".toast__root", "--toast-hover-out-duration", ".35s"),
+    "duration.hotkeyHint": ("list", ".list__item", "--item-number-hotkey-hint-duration", ".15s"),
+    "size.settingsRow": ("settings-ui", ".settings-ui__row", "min-height", "round(calc(46 * var(--spx)), 1px)"),
+    "size.actionBarPill": ("action-bar-ui", ".action-bar-ui__root", "--action-bar-macos-pill-height", "round(calc(36 * var(--spx)), 1px)"),
+    "size.focusRingOffset": ("switch", ".switch__root:focus-visible", "outline-offset", "2px"),
+    "size.control.mini": ("base-button", "[data-size=mini])", "height", "var(--space-16)"),
+    "size.control.small": ("base-button", "[data-size=small])", "height", "var(--space-24)"),
+    "size.control.medium": ("base-button", "[data-size=medium])", "height", "var(--space-32)"),
+    "size.control.large": ("base-button", "[data-size=large])", "height", "var(--space-40)"),
+    "size.control.actionButton": ("action-button", "[macos] .action-button__button", "height", "round(calc(28 * var(--spx)), 1px)"),
+    "size.control.kbdSmall": ("shortcut", "[data-size=small]", "height", "round(calc(18 * var(--spx)), 1px)"),
+    "size.control.kbdMedium": ("shortcut", "[data-size=medium]", "height", "round(calc(20 * var(--spx)), 1px)"),
+    "fontFamily.mono": ("text", ".text__font-mono", "font-family", "JetBrainsMono,monospace"),
+    "borderWidth.default": ("settings-ui", ".settings-ui__separator", "height", "1px"),
+    "scrim": ("dialog-primitive", ".dialog-primitive__overlay", "background-color", "#0000004d"),
+    "surface": ("settings-ui", ".settings-ui__sectionContent", "background-color", "rgb(from var(--fg) r g b / 2.5%)"),
+    "dialog": ("dialog-primitive", ".dialog-primitive__panelWeb", "--dialog-panel-bg-color", "hsl(from var(--bg) h s "),
+    "accent.pressed": ("switch", ".switch__root[aria-checked=true]:not(:disabled):active", "background-color", "color-mix(in srgb, var(--accent), white 10%)"),
+    "component.list.row.hoverBg": ("list", ".list__item", "--list-item-hover-background-color", "var(--selection-5)"),
+    "component.list.row.selectedBg": ("list", ".list__item:where([data-state=selected])", "background-color", "var(--selection-10)"),
+    "component.switch.width": ("switch", "[data-size=medium]:is([macos] .switch__root)", "--switch-width", "round(calc(36 * var(--spx)), 1px)"),
+    "component.switch.height": ("switch", "[data-size=medium]:is([macos] .switch__root)", "--switch-height", "var(--space-16)"),
+    "component.switch.thumbWidth": ("switch", "[data-size=medium]:is([macos] .switch__root)", "--switch-thumb-width", "round(calc(21 * var(--spx)), 1px)"),
+    "component.switch.offBg": ("switch", ".switch__root", "background-color", "var(--fg-20)"),
+    "component.switch.onBg": ("switch", ".switch__root[aria-checked=true]", "background-color", "var(--accent)"),
+    "component.switch.thumb": ("switch", ".switch__thumb", "background-color", "#ffffffe6"),
+    "component.button.bg": ("base-button", "[data-variant=default])", "background-color", "var(--color-surface-control)"),
+    "component.button.ghostHoverBg": ("base-button", "[data-variant=ghost])", "background-color", "var(--fg-5)"),
+    "component.button.destructiveBg": ("base-button", "[data-variant=destructive])", "background-color", "var(--red-20)"),
+    "component.button.padding": ("button-primitive", "[data-size=medium])", "padding-inline", "var(--space-16)"),
+    "component.input.bg": ("input-field-primitive", ".input-field-primitive__background", "background-color", "var(--color-surface-input-field)"),
+    "component.input.border": ("input-field-primitive", ".input-field-primitive__root", "--input-field-border-color", "var(--color-border-secondary)"),
+    "component.input.focusRing": ("input-field-primitive", "[data-state=focus]", "outline", "var(--focus-ring-width) solid var(--input-field-focus-ring-color)"),
+    "component.input.errorBorder": ("input-field-primitive", "[data-variant=error]", "--input-field-border-color", "var(--red-40)"),
+    "component.input.padding": ("input-field-primitive", "[data-size=default]", "--input-field-padding-x", "var(--space-12)"),
+    "component.dropdown.bg": ("dropdown-button", "[data-variant=default])", "background-color", "var(--color-surface-input-field)"),
+    "component.dropdown.border": ("dropdown-button", "[data-variant=default])", "--dropdown-button-border-color", "var(--color-border-secondary)"),
+    "component.dropdown.openBg": ("dropdown-button", "[data-state=open])", "background-color", "var(--fg-10)"),
+    "component.checkbox.size": ("checkbox", ".checkbox__checkbox", "width", "round(calc(14 * var(--spx)), 1px)"),
+    "component.checkbox.border": ("checkbox", ".checkbox__checkbox", "box-shadow", "0 0 0 1px var(--fg-20)"),
+    "component.checkbox.check": ("checkbox", ".checkbox__checkmark", "stroke", "var(--fg-80)"),
+    "component.kbd.border": ("shortcut", "[data-variant=default]", "box-shadow", "var(--color-border-token)"),
+    "component.kbd.text": ("shortcut", "[data-variant=default]", "color", "var(--color-text-secondary)"),
+    "component.badge.bg": ("base-badge", "[data-color=gray])", "background-color", "var(--color-surface-token)"),
+    "component.badge.text": ("base-badge", "[data-color=gray])", "color", "var(--color-text-secondary)"),
+    "component.badge.radius": ("base-badge", ".base-badge__root", "border-radius", "var(--radius-full)"),
+    "component.settings.separator": ("settings-ui", ".settings-ui__separator", "background-color", "var(--color-border-tertiary)"),
+    "component.settings.padding": ("settings-ui", ".settings-ui__row", "padding-top", "var(--space-12)"),
+    "component.settings.radius": ("settings-ui", ".settings-ui__row", "border-radius", "var(--space-8)"),
+    "component.actionBar.pillRadius": ("action-bar-ui", ".action-bar-ui__right", "border-radius", "var(--radius-full)"),
+    "component.dialog.width": ("dialog-primitive", ".dialog-primitive__panel", "width", "round(calc(400 * var(--spx)), 1px)"),
+    "component.dialog.headerHeight": ("dialog-primitive", ".dialog-primitive__header", "height", "round(calc(64 * var(--spx)), 1px)"),
+    "component.dialog.footerHeight": ("dialog-primitive", ".dialog-primitive__footer", "height", "var(--space-56)"),
+    "component.grid.itemBg": ("grid", ".grid__itemContent", "background-color", "var(--fg-5)"),
+    "component.grid.selectedRing": ("grid", "[data-state=selected]", "--item-box-shadow-color1", "var(--selection-80)"),
+    "component.toast.padding": ("toast", ".toast__root", "padding-inline", "var(--space-12)"),
+    "component.toast.successGlow": ("toast", "[data-variant=success]", "--gradient-base-color", "rgb(from var(--green) r g b / 26%)"),
+    "component.toast.failureGlow": ("toast", "[data-variant=failure]", "--gradient-base-color", "rgb(from var(--red) r g b / 26%)"),
+}
+
+
+def find_rule(module, selector, prop, value):
+    for r in COMPONENTS["modules"].get(module, []):
+        if selector in r["selector"] and any(n == prop and value in v for n, v in r["decls"]):
+            return r
+    return None
+
+
+def verify_rules(doc):
+    """Every non-alias token sourced from raw/components-css.json has a RULES entry whose rule exists."""
+    for name in ("core", "light", "dark"):
+        for p, t in walk(doc[name]):
+            path = ".".join(p)
+            src = t["$extensions"]["source"]
+            if src["capture"] != "raw/components-css.json":
+                continue
+            if isinstance(t["$value"], str) and t["$value"].startswith("{") and src["evidence"] == "Derived":
+                continue          # a reference to another token, not a transcribed value
+            assert path in RULES, f"{name}.{path}: transcribed from a component rule but names none in RULES"
+            assert find_rule(*RULES[path]), f"{name}.{path}: no rule {RULES[path]} in raw/components-css.json"
+    return len(RULES)
+
+
 # ---------------------------------------------------------------- helpers, check, build
 
 def walk(node, path=()):
@@ -585,6 +680,7 @@ def build():
                       "source": f"Raycast {THEMES_FILE['version']} for macOS, {THEMES_FILE['bundle']}"},
     }
     check(doc)
+    verify_rules(doc)
     pc = pixel_check(doc)
     (RAW / "pixel-check.json").write_text(json.dumps(pc, indent=1) + "\n")
     (PKG / "tokens.json").write_text(json.dumps(doc, indent=1, ensure_ascii=False) + "\n")

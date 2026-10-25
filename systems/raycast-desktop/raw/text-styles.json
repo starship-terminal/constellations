@@ -73,6 +73,11 @@
    "font": "mono",
    "size": 13,
    "weight": 600
+  },
+  "small-mono-text": {
+   "font": "mono",
+   "size": 11,
+   "weight": 400
   }
  },
  "letterSpacing": [
