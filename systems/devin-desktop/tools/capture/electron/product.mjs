@@ -96,7 +96,7 @@ async function clearPrompt(page) {
 // it is closed, and its close button only shows while the pointer is over it, so each one is
 // hovered and closed (Escape if the button does not show). Throws if one is still on screen.
 const TOAST = '.notifications-toasts .notification-toast';
-const toastsOnScreen = page => page.locator(TOAST).filter({ visible: true }).count().catch(() => 0);
+const toastsOnScreen = page => page.locator(TOAST).filter({ visible: true }).count();
 async function closeToasts(page) {
   for (let i = 0; i < 6 && await toastsOnScreen(page); i++) {
     const t = page.locator(TOAST).filter({ visible: true }).first();
@@ -407,7 +407,8 @@ export const SHOTS = [
 // cloud session from the owner's history, to show a reply, a PR and its diff review. Opening that
 // session woke the agent (it was asleep) and made it post a message, so those two shots are no longer
 // in this list: the capture never opens a session it did not create. Their screenshots and readings
-// are kept from the first capture (the dark pair still shows the stray toast, see the README).
+// are kept from the first capture (the dark pair still shows the stray toast, see the README);
+// quantize.py's KEPT carries them through a capture that does not have them.
 const CONVERSATION = {
   'agent-name': '[data-find-exclude=true] span.font-medium', 'inline-code': 'p[data-md-source-start] code', link: 'a[data-streamdown=link]',
   'status-line': page => page.getByText(/^Devin (is awaiting instructions|went to sleep)/).filter({ visible: true }).last(),
