@@ -1,0 +1,563 @@
+[
+ {
+  "name": "home",
+  "reveal": "await P.home();",
+  "parts": "'home-search': () => C.$('input[role=combobox]').find(e => e.getBoundingClientRect().x > 260), 'filter-select': () => C.$('button[role=combobox]').find(e => e.getBoundingClientRect().x > 260 && e.getBoundingClientRect().y < 40), 'display-button': () => C.byText('Display', 'span')[0] && C.byText('Display', 'span')[0].closest('button'), 'button-primary-sm': () => C.byText('Create', 'button').find(b => b.getBoundingClientRect().x > 260), 'list-row': () => C.$('[role=option]').find(o => o.getBoundingClientRect().x > 250), 'list-meta': () => C.$('[role=option] span.text-xs')[0], 'sidebar-nav-item': () => { const s = P.sideText('Home'); return s && s.parentElement; }, 'repo-row': () => { const s = P.sideText('conductor'); return s && s.parentElement; }, 'count-badge': () => C.$('span.text-2xs').find(e => e.getBoundingClientRect().x < 250)"
+ },
+ {
+  "name": "home-hover",
+  "state": "hover",
+  "reveal": "await P.home(); C.$('[role=option]').forEach(o => o.removeAttribute('data-highlighted'));",
+  "parts": "'list-row': () => C.$('[role=option]').find(o => o.getBoundingClientRect().x > 250), 'filter-select': () => C.$('button[role=combobox]').find(e => e.getBoundingClientRect().x > 260 && e.getBoundingClientRect().y < 40), 'button-primary-sm': () => C.byText('Create', 'button').find(b => b.getBoundingClientRect().x > 260)",
+  "force": {
+   "filter-select": [
+    "hover"
+   ],
+   "button-primary-sm": [
+    "hover"
+   ]
+  }
+ },
+ {
+  "name": "update-toast",
+  "toast": true,
+  "optional": true,
+  "reveal": "await P.home();",
+  "parts": "toast: '.conductor-toast', 'toast-title': '.conductor-toast h2', 'toast-close': 'button[aria-label=\"Close toast\"]', 'toast-button': () => C.byText('See changes', 'button')[0], 'toast-button-primary': () => C.byText('Restart', 'button')[0]"
+ },
+ {
+  "name": "account-menu",
+  "reveal": "await P.home(); C.click(document.querySelector('button[aria-label=\"Account menu\"]'));",
+  "parts": "...P.menuParts(), 'account-button': 'button[aria-label=\"Account menu\"]'"
+ },
+ {
+  "name": "help-menu",
+  "reveal": "await P.workspace('new'); C.click(P.btnAt(185, 192, 760, 780));",
+  "parts": "...P.menuParts(), 'menu-footer': () => C.$('[role=menu] *').filter(e => /Conductor v/.test(e.innerText) && e.children.length < 3).slice(-1)[0]"
+ },
+ {
+  "name": "tooltip",
+  "reveal": "await P.workspace('new'); window.__n = document.body.children.length; P.hover(document.querySelector('button[aria-label=Settings]')); await C.sleep(1400);",
+  "parts": "tooltip: () => { const p = [...document.body.children].slice(window.__n).pop(); return p && [p, ...p.querySelectorAll('*')].find(e => getComputedStyle(e).backgroundColor !== 'rgba(0, 0, 0, 0)'); }, 'tooltip-kbd': () => { const p = [...document.body.children].slice(window.__n).pop(); return p && p.querySelector('kbd, span:last-child'); }, 'settings-icon-button': 'button[aria-label=Settings]'",
+  "after": "P.unhover(document.querySelector('button[aria-label=Settings]')); await C.sleep(400);"
+ },
+ {
+  "name": "tooltip-composer",
+  "reveal": "await P.workspace('new'); window.__n = document.body.children.length; P.hover(P.addButton()); await C.sleep(1400);",
+  "parts": "tooltip: () => { const p = [...document.body.children].slice(window.__n).pop(); return p && [p, ...p.querySelectorAll('*')].find(e => getComputedStyle(e).backgroundColor !== 'rgba(0, 0, 0, 0)'); }, 'composer-add': P.addButton",
+  "after": "P.unhover(P.addButton()); await C.sleep(400);"
+ },
+ {
+  "name": "keyboard-shortcuts",
+  "reveal": "await P.workspace('new'); C.click(P.btnAt(185, 192, 760, 780)); await C.sleep(500); C.click(C.byText('Keyboard shortcuts', '[role=menuitem]')[0] || C.$('[role=menuitem]')[0]); await C.sleep(800);",
+  "parts": "dialog: () => P.open().find(e => /dialog/.test(e.getAttribute('role'))), 'dialog-title': () => { const d = P.open().find(e => /dialog/.test(e.getAttribute('role'))); return d && d.querySelector('h2, h1'); }, kbd: () => C.$('kbd')[0]"
+ },
+ {
+  "name": "search-palette",
+  "reveal": "await P.workspace('new'); C.click(P.sideText('Search').parentElement);",
+  "parts": "dialog: '[role=dialog]', listbox: '[role=listbox]', 'palette-input': '[role=dialog] input', 'palette-tab-selected': () => C.$('[role=dialog] [role=tab][aria-selected=true], [role=dialog] [role=radio][aria-checked=true]')[0] || C.byText('All', '[role=dialog] button')[0], 'palette-tab': () => C.byText('Workspaces', '[role=dialog] button, [role=dialog] [role=tab]')[0], 'palette-group': () => C.byText('Recent workspaces', '[role=dialog] *')[0], 'palette-item-highlighted': '[role=option][data-highlighted], [role=option][aria-selected=true]', 'palette-item': () => C.$('[role=option]')[2], kbd: () => C.$('[role=dialog] kbd')[0]"
+ },
+ {
+  "name": "search-palette-typed",
+  "state": "typed",
+  "reveal": "await P.workspace('new'); C.click(P.sideText('Search').parentElement); await C.sleep(600); C.type('[role=dialog] input', 'theme'); await C.sleep(600);",
+  "parts": "dialog: '[role=dialog]', 'palette-input': '[role=dialog] input', 'palette-item-highlighted': '[role=option][data-highlighted], [role=option][aria-selected=true]', 'palette-item': () => C.$('[role=option]')[1]"
+ },
+ {
+  "name": "search-palette-empty",
+  "state": "empty",
+  "reveal": "await P.workspace('new'); C.click(P.sideText('Search').parentElement); await C.sleep(600); C.type('[role=dialog] input', 'zzqx'); await C.sleep(700);",
+  "parts": "dialog: '[role=dialog]', 'palette-empty': () => C.$('[role=dialog] *').find(e => /No results|Nothing|No matches/i.test(e.innerText) && e.children.length === 0)"
+ },
+ {
+  "name": "workspace",
+  "reveal": "await P.workspace('new');",
+  "parts": "...P.wsParts()"
+ },
+ {
+  "name": "workspace-hover",
+  "state": "hover",
+  "reveal": "await P.workspace('new');",
+  "parts": "'sidebar-nav-item': () => { const s = P.sideText('Home'); return s && s.parentElement; }, 'repo-row': () => { const s = P.sideText('conductor'); return s && s.parentElement; }, 'suggestion-chip': () => C.byText('Fix a TODO', 'button')[0], 'tree-row': () => C.$('[role=treeitem]')[1], 'panel-tab': () => C.$('button').find(b => /^Changes/.test(b.innerText.trim())), 'button-secondary': () => C.byText('Add run script', 'button')[0], 'bottom-tab': () => C.$('[role=tab]').find(t => t.innerText.trim() === 'Setup'), 'header-icon-button': () => document.querySelector('button[aria-label=\"Toggle left sidebar\"]'), 'model-button': P.modelButton, 'composer-add': P.addButton",
+  "force": {
+   "sidebar-nav-item": [
+    "hover"
+   ],
+   "repo-row": [
+    "hover"
+   ],
+   "suggestion-chip": [
+    "hover"
+   ],
+   "tree-row": [
+    "hover"
+   ],
+   "panel-tab": [
+    "hover"
+   ],
+   "button-secondary": [
+    "hover"
+   ],
+   "bottom-tab": [
+    "hover"
+   ],
+   "header-icon-button": [
+    "hover"
+   ],
+   "model-button": [
+    "hover"
+   ],
+   "composer-add": [
+    "hover"
+   ]
+  }
+ },
+ {
+  "name": "workspace-focus",
+  "state": "focus-visible",
+  "reveal": "await P.workspace('new');",
+  "parts": "'suggestion-chip': () => C.byText('Fix a TODO', 'button')[0], 'button-secondary': () => C.byText('Add run script', 'button')[0], 'chat-tab-selected': () => C.$('[role=tab][aria-selected=true]')[0], 'panel-tab': () => C.$('button').find(b => /^Changes/.test(b.innerText.trim())), 'model-button': P.modelButton, 'workspace-row-selected': P.wsRow",
+  "force": {
+   "suggestion-chip": [
+    "focus-visible",
+    "focus"
+   ],
+   "button-secondary": [
+    "focus-visible",
+    "focus"
+   ],
+   "chat-tab-selected": [
+    "focus-visible",
+    "focus"
+   ],
+   "panel-tab": [
+    "focus-visible",
+    "focus"
+   ],
+   "model-button": [
+    "focus-visible",
+    "focus"
+   ],
+   "workspace-row-selected": [
+    "focus-visible",
+    "focus"
+   ]
+  }
+ },
+ {
+  "name": "workspace-pressed",
+  "state": "pressed",
+  "reveal": "await P.workspace('new');",
+  "parts": "'suggestion-chip': () => C.byText('Fix a TODO', 'button')[0], 'button-secondary': () => C.byText('Add run script', 'button')[0], 'model-button': P.modelButton",
+  "force": {
+   "suggestion-chip": [
+    "active",
+    "hover"
+   ],
+   "button-secondary": [
+    "active",
+    "hover"
+   ],
+   "model-button": [
+    "active",
+    "hover"
+   ]
+  }
+ },
+ {
+  "name": "conversation",
+  "reveal": "await P.workspace('run'); const sc = (() => { let p = P.inPane('h2')[0]; while (p && !(p.scrollHeight > p.clientHeight + 4 && /auto|scroll/.test(getComputedStyle(p).overflowY))) p = p.parentElement; return p; })(); if (sc) sc.scrollTop = sc.scrollHeight;",
+  "parts": "...P.convParts(), 'workspace-row-selected': P.wsRow, 'sidebar-diff-count': () => { const r = P.wsRow(); return r && [...r.querySelectorAll('span')].find(s => /^\\+\\d/.test(s.innerText.trim())); }, 'panel-tab-selected': () => C.byText('All files', 'button')[0], 'review-button': () => C.$('button').find(b => /^Review$/.test(b.innerText.trim())), 'tree-row': () => C.$('[role=treeitem]').find(e => /hello/.test(e.innerText)), 'status-warning': () => C.$('[role=status]')[0]"
+ },
+ {
+  "name": "conversation-top",
+  "reveal": "await P.workspace('run'); const sc = (() => { let p = P.inPane('h2')[0]; while (p && !(p.scrollHeight > p.clientHeight + 4 && /auto|scroll/.test(getComputedStyle(p).overflowY))) p = p.parentElement; return p; })(); if (sc) sc.scrollTop = 0; await C.sleep(300);",
+  "parts": "'user-message': () => { const s = P.inPane('span').find(e => /^List the files/.test(e.innerText.trim())); let p = s; while (p && getComputedStyle(p).backgroundColor === 'rgba(0, 0, 0, 0)') p = p.parentElement; return p; }, 'tool-call': () => { const s = P.inPane('span').find(e => /^List files/.test(e.innerText.trim())); return s && s.parentElement; }, 'tool-arg': () => P.inPane('span').find(e => /bg-muted/.test(e.className) && /font-mono/.test(e.className)), 'list-item': () => P.inPane('li')[0], 'file-link': () => P.inPane('button').find(b => /hover:unde/.test(b.className)), 'assistant-heading': () => P.inPane('h2')[0], 'assistant-text': () => P.inPane('p')[0]",
+  "after": "const sc = (() => { let p = P.inPane('h2')[0]; while (p && !(p.scrollHeight > p.clientHeight + 4 && /auto|scroll/.test(getComputedStyle(p).overflowY))) p = p.parentElement; return p; })(); if (sc) sc.scrollTop = sc.scrollHeight;"
+ },
+ {
+  "name": "conversation-expanded",
+  "reveal": "await P.workspace('run'); const sc = (() => { let p = P.inPane('h2')[0]; while (p && !(p.scrollHeight > p.clientHeight + 4 && /auto|scroll/.test(getComputedStyle(p).overflowY))) p = p.parentElement; return p; })(); if (sc) sc.scrollTop = sc.scrollHeight; C.click(P.convParts()['tool-summary']()); await C.sleep(900); if (sc) sc.scrollTop = sc.scrollHeight;",
+  "parts": "'tool-summary': () => P.convParts()['tool-summary'](), 'tool-call': () => { const s = P.inPane('span').find(e => /^Write/.test(e.innerText.trim())); return s && s.parentElement; }, 'tool-call-read': () => { const s = P.inPane('span').find(e => /^Read/.test(e.innerText.trim())); return s && s.parentElement; }, 'tool-arg': () => P.inPane('span').filter(e => /font-mono/.test(e.className) && /hello/.test(e.innerText)).slice(-1)[0] || P.inPane('span').find(e => /bg-muted/.test(e.className)), 'assistant-text': () => P.inPane('p').filter(e => /create/i.test(e.innerText)).slice(-1)[0]",
+  "after": "const b = P.convParts()['tool-summary'](); if (b) C.click(b); await C.sleep(500);"
+ },
+ {
+  "name": "conversation-hover",
+  "state": "hover",
+  "reveal": "await P.workspace('run'); const sc = (() => { let p = P.inPane('h2')[0]; while (p && !(p.scrollHeight > p.clientHeight + 4 && /auto|scroll/.test(getComputedStyle(p).overflowY))) p = p.parentElement; return p; })(); if (sc) sc.scrollTop = sc.scrollHeight;",
+  "parts": "'file-link': () => P.convParts()['file-link'](), 'tool-summary': () => P.convParts()['tool-summary'](), 'message-meta': () => P.convParts()['message-meta'](), 'message-action': () => P.convParts()['message-action'](), 'diff-chip': () => P.convParts()['diff-chip'](), 'review-button': () => C.$('button').find(b => /^Review$/.test(b.innerText.trim()))",
+  "force": {
+   "file-link": [
+    "hover"
+   ],
+   "tool-summary": [
+    "hover"
+   ],
+   "message-meta": [
+    "hover"
+   ],
+   "message-action": [
+    "hover"
+   ],
+   "diff-chip": [
+    "hover"
+   ],
+   "review-button": [
+    "hover"
+   ]
+  }
+ },
+ {
+  "name": "diff-view",
+  "reveal": "await P.workspace('run'); C.click(P.convParts()['diff-chip']()); await C.sleep(1500);",
+  "parts": "'diff-tab': () => C.$('[role=tab]').find(t => /Latest turn/.test(t.innerText)), 'file-chip': () => C.$('button').find(b => b.getBoundingClientRect().y > 80 && b.getBoundingClientRect().y < 120 && /hello/.test(b.innerText) && b.getBoundingClientRect().x < 400), 'segmented': () => C.$('button').filter(b => b.getBoundingClientRect().y > 80 && b.getBoundingClientRect().y < 120 && b.getBoundingClientRect().x > 800 && b.getBoundingClientRect().x < 880)[0], 'segmented-off': () => C.$('button').filter(b => b.getBoundingClientRect().y > 80 && b.getBoundingClientRect().y < 120 && b.getBoundingClientRect().x > 800 && b.getBoundingClientRect().x < 880)[1], checkbox: () => C.byText('Viewed', 'button')[0], 'checkbox-box': () => { const b = C.byText('Viewed', 'button')[0]; return b && (b.querySelector('[role=checkbox], [class*=border]') || b.firstElementChild); }, 'diff-code': () => { const r = document.querySelector('diffs-container').shadowRoot; return r.querySelector('pre'); }, 'diff-line-added': () => document.querySelector('diffs-container').shadowRoot.querySelector('[data-line][data-line-type=change-addition]'), 'diff-gutter-added': () => document.querySelector('diffs-container').shadowRoot.querySelector('[data-column-number][data-line-type=change-addition]'), 'changes-row': () => C.$('div, button, a').find(e => e.getBoundingClientRect().x > 1015 && e.getBoundingClientRect().y > 70 && e.getBoundingClientRect().y < 90 && /hello/.test(e.innerText) && getComputedStyle(e).backgroundColor !== 'rgba(0, 0, 0, 0)'), 'filter-chip': () => C.$('button').find(b => /Latest turn/.test(b.innerText) && b.getBoundingClientRect().x > 1015), 'panel-tab-selected': () => C.$('button').find(b => /^Changes/.test(b.innerText.trim()))",
+  "after": "const t = C.$('[role=tab]').find(t => /Latest turn/.test(t.innerText)); const x = t && t.querySelector('svg.lucide-x'); if (x) C.click(x.parentElement); await C.sleep(500); const f = C.$('button').find(b => /Latest turn/.test(b.innerText) && b.getBoundingClientRect().x > 1015); if (f) C.click(f); await C.sleep(400); C.click(C.byText('All files', 'button')[0]); await C.sleep(400);"
+ },
+ {
+  "name": "diff-view-split",
+  "reveal": "await P.workspace('run'); C.click(P.convParts()['diff-chip']()); await C.sleep(1500); const bs = C.$('button').filter(b => b.getBoundingClientRect().y > 80 && b.getBoundingClientRect().y < 120 && b.getBoundingClientRect().x > 800 && b.getBoundingClientRect().x < 880); C.click(bs[1]); await C.sleep(1000);",
+  "parts": "'diff-code': () => document.querySelector('diffs-container').shadowRoot.querySelector('pre'), 'diff-line-added': () => document.querySelector('diffs-container').shadowRoot.querySelector('[data-line][data-line-type=change-addition]'), 'diff-line-empty': () => document.querySelector('diffs-container').shadowRoot.querySelector('[data-line-type=empty], [data-content-buffer], [data-line-type=context-expanded]')",
+  "after": "const bs = C.$('button').filter(b => b.getBoundingClientRect().y > 80 && b.getBoundingClientRect().y < 120 && b.getBoundingClientRect().x > 800 && b.getBoundingClientRect().x < 880); C.click(bs[0]); await C.sleep(700); const t = C.$('[role=tab]').find(t => /Latest turn/.test(t.innerText)); const x = t && t.querySelector('svg.lucide-x'); if (x) C.click(x.parentElement); await C.sleep(500); const f = C.$('button').find(b => /Latest turn/.test(b.innerText) && b.getBoundingClientRect().x > 1015); if (f) C.click(f); await C.sleep(400); C.click(C.byText('All files', 'button')[0]); await C.sleep(400);"
+ },
+ {
+  "name": "diff-states",
+  "state": "hover",
+  "reveal": "await P.workspace('run'); C.click(P.convParts()['diff-chip']()); await C.sleep(1500);",
+  "parts": "checkbox: () => C.byText('Viewed', 'button')[0], 'file-chip': () => C.$('button').find(b => b.getBoundingClientRect().y > 80 && b.getBoundingClientRect().y < 120 && /hello/.test(b.innerText) && b.getBoundingClientRect().x < 400), 'changes-row': () => C.$('div, button, a').find(e => e.getBoundingClientRect().x > 1015 && e.getBoundingClientRect().y > 70 && e.getBoundingClientRect().y < 90 && /hello/.test(e.innerText))",
+  "force": {
+   "checkbox": [
+    "hover"
+   ],
+   "file-chip": [
+    "hover"
+   ]
+  },
+  "after": "const t = C.$('[role=tab]').find(t => /Latest turn/.test(t.innerText)); const x = t && t.querySelector('svg.lucide-x'); if (x) C.click(x.parentElement); await C.sleep(500); const f = C.$('button').find(b => /Latest turn/.test(b.innerText) && b.getBoundingClientRect().x > 1015); if (f) C.click(f); await C.sleep(400); C.click(C.byText('All files', 'button')[0]); await C.sleep(400);"
+ },
+ {
+  "name": "composer-focus",
+  "state": "focus",
+  "reveal": "await P.workspace('new'); document.querySelector('.composer-tiptap-editor').focus();",
+  "parts": "composer: P.composer, 'composer-editor': '.composer-tiptap-editor', 'send-button': P.sendButton"
+ },
+ {
+  "name": "composer-typed",
+  "state": "typed",
+  "reveal": "await P.workspace('new'); C.type('.composer-tiptap-editor', 'List the files in this folder'); await C.sleep(400);",
+  "parts": "composer: P.composer, 'composer-editor': '.composer-tiptap-editor', 'composer-text': '.composer-tiptap-editor p', 'send-button': P.sendButton",
+  "after": "const e = document.querySelector('.composer-tiptap-editor'); e.focus(); document.execCommand('selectAll'); document.execCommand('delete'); e.blur(); await C.sleep(300);"
+ },
+ {
+  "name": "composer-send-hover",
+  "state": "hover",
+  "reveal": "await P.workspace('new'); C.type('.composer-tiptap-editor', 'List the files in this folder'); await C.sleep(400);",
+  "parts": "'send-button': P.sendButton",
+  "force": {
+   "send-button": [
+    "hover"
+   ]
+  },
+  "after": "const e = document.querySelector('.composer-tiptap-editor'); e.focus(); document.execCommand('selectAll'); document.execCommand('delete'); e.blur(); await C.sleep(300);"
+ },
+ {
+  "name": "model-menu",
+  "reveal": "await P.workspace('new'); C.click(P.modelButton());",
+  "parts": "...P.menuParts(), 'menu-search': '[role=menu] input', 'menu-switch': '[role=menu] [role=switch], [role=menu] [role=menuitemcheckbox] [class*=rounded-full]', 'callout': () => C.$('[role=presentation]').find(e => /New:/.test(e.innerText) && e.getBoundingClientRect().width < 300), 'menu-footer': () => C.$('[role=menu] *').filter(e => /Cycle effort/.test(e.innerText) && e.children.length > 1).slice(-1)[0]"
+ },
+ {
+  "name": "model-effort-submenu",
+  "reveal": "await P.workspace('new'); C.click(P.modelButton()); await C.sleep(500); const t = C.byText('Effort', '[role=menuitem] *')[0]; const it = t && t.closest('[role=menuitem]'); P.hover(it); C.click(it); await C.sleep(600);",
+  "parts": "...P.menuParts(), submenu: () => C.$('[role=menu]').slice(-1)[0]"
+ },
+ {
+  "name": "composer-add-menu",
+  "reveal": "await P.workspace('new'); C.click(P.addButton());",
+  "parts": "...P.menuParts(), kbd: () => C.$('[role=menu] kbd')[0]"
+ },
+ {
+  "name": "add-project-menu",
+  "reveal": "await P.workspace('new'); C.click(P.sideText('Search').parentElement); await C.sleep(600); C.click(C.$('[role=option]').find(o => /^Add project/.test(o.innerText.trim()))); await C.sleep(700);",
+  "parts": "...P.menuParts(), 'menu-group-label': () => C.byText('Recents', '[role=menu] *')[0]"
+ },
+ {
+  "name": "workspace-context-menu",
+  "reveal": "await P.workspace('new'); P.context(P.wsRow());",
+  "parts": "...P.menuParts(), 'menu-item-destructive': () => C.byText('Archive', '[role=menu] *')[0]"
+ },
+ {
+  "name": "workspace-status-submenu",
+  "reveal": "await P.workspace('new'); P.context(P.wsRow()); await C.sleep(500); const t = C.byText('Set status', '[role=menu] *')[0]; const it = t && t.closest('[role=menuitem]'); P.hover(it); C.click(it); await C.sleep(600);",
+  "parts": "...P.menuParts(), submenu: () => C.$('[role=menu]').slice(-1)[0], 'status-dot': () => C.$('[role=menu]').slice(-1)[0].querySelector('svg')"
+ },
+ {
+  "name": "target-branch-popover",
+  "reveal": "await P.workspace('new'); C.click(C.$('button').find(b => b.getBoundingClientRect().y < 20 && b.querySelector('svg.lucide-ellipsis')));",
+  "parts": "popover: () => P.open().find(e => e.getAttribute('role') === 'dialog'), 'popover-label': () => C.byText('Target branch', '[role=dialog] *')[0]"
+ },
+ {
+  "name": "open-in-menu",
+  "reveal": "await P.workspace('new'); C.click(C.$('button').find(b => b.getBoundingClientRect().y < 20 && b.getBoundingClientRect().x > 800 && b.getBoundingClientRect().x < 1000 && b.querySelector('svg.lucide-chevron-down')));",
+  "parts": "...P.menuParts(), 'open-in-button': () => { const c = C.$('button').find(b => b.getBoundingClientRect().y < 20 && b.getBoundingClientRect().x > 800 && b.getBoundingClientRect().x < 1000 && b.querySelector('svg.lucide-chevron-down')); return c && c.previousElementSibling; }, 'open-in-chevron': () => C.$('button').find(b => b.getBoundingClientRect().y < 20 && b.getBoundingClientRect().x > 800 && b.getBoundingClientRect().x < 1000 && b.querySelector('svg.lucide-chevron-down'))"
+ },
+ {
+  "name": "file-view",
+  "reveal": "await P.workspace('new'); C.click(P.sideText('Search').parentElement); await C.sleep(600); C.click(C.$('[role=option]').find(o => /^File picker/.test(o.innerText.trim()))); await C.sleep(900); C.click(C.$('[role=option]').find(o => /^README/.test(o.innerText.trim()))); await C.sleep(1500);",
+  "parts": "'file-tab': () => C.$('[role=tab]').find(t => /README/.test(t.innerText)), 'chat-tab': () => C.$('[role=tab]').find(t => /Untitled/.test(t.innerText)), 'file-chip': () => C.$('button, div').find(e => e.getBoundingClientRect().y > 60 && e.getBoundingClientRect().y < 90 && e.getBoundingClientRect().x > 260 && /README/.test(e.innerText) && parseFloat(getComputedStyle(e).borderTopWidth) > 0), 'markdown-h1': 'h1', 'markdown-p': () => C.$('h1 ~ p')[0], 'toggle-on': () => C.$('button').find(b => b.getBoundingClientRect().y > 60 && b.getBoundingClientRect().y < 90 && b.getBoundingClientRect().x > 650 && b.getBoundingClientRect().x < 700 && getComputedStyle(b).backgroundColor !== 'rgba(0, 0, 0, 0)'), 'tree-row-selected': () => C.$('[role=treeitem]').find(e => /README/.test(e.innerText)), 'composer-compact': P.composer",
+  "after": "const t = C.$('[role=tab]').find(t => /README/.test(t.innerText)); const x = t && t.querySelector('svg.lucide-x'); if (x) C.click(x.parentElement); await C.sleep(600);"
+ },
+ {
+  "name": "changes-empty",
+  "state": "empty",
+  "reveal": "await P.workspace('new'); C.click(C.$('button').find(b => /^Changes/.test(b.innerText.trim()))); await C.sleep(800);",
+  "parts": "'panel-tab-selected': () => C.$('button').find(b => /^Changes/.test(b.innerText.trim())), 'empty-text': () => C.$('*').find(e => e.getBoundingClientRect().x > 1015 && e.getBoundingClientRect().y < 400 && e.children.length === 0 && /no|clean|changes/i.test(e.innerText) && e.innerText.length < 80)",
+  "after": "C.click(C.byText('All files', 'button')[0]); await C.sleep(500);"
+ },
+ {
+  "name": "checks",
+  "reveal": "await P.workspace('new'); C.click(C.byText('Checks', 'button')[0]); await C.sleep(900);",
+  "parts": "'panel-tab-selected': () => C.byText('Checks', 'button')[0]",
+  "after": "C.click(C.byText('All files', 'button')[0]); await C.sleep(500);"
+ },
+ {
+  "name": "setup-tab",
+  "reveal": "await P.workspace('new'); C.click(P.bottomTab('Setup')); await C.sleep(800);",
+  "parts": "'bottom-tab-selected': () => P.bottomTab('Setup'), 'bottom-tab': () => P.bottomTab('Run')",
+  "after": "C.click(P.bottomTab('Run')); await C.sleep(400);"
+ },
+ {
+  "name": "terminal",
+  "reveal": "await P.workspace('new'); C.click(P.bottomTab('Terminal')); await C.sleep(2500);",
+  "parts": "'bottom-tab-selected': () => P.bottomTab('Terminal'), terminal: () => C.$('.xterm, .xterm-screen, canvas').find(e => e.getBoundingClientRect().x > 1015), 'terminal-rows': '.xterm-rows'",
+  "after": "C.click(P.bottomTab('Run')); await C.sleep(400);"
+ },
+ {
+  "name": "remove-confirm",
+  "reveal": "await P.settings('conductor/Misc'); P.scrollMain(99999); await C.sleep(400); C.click(C.byText('Remove repository', 'button')[0]); await C.sleep(800);",
+  "parts": "dialog: '[role=alertdialog]', backdrop: () => C.$('[role=presentation]').find(e => e.getBoundingClientRect().width > 1300), 'dialog-title': '[role=alertdialog] h2', 'dialog-body': '[role=alertdialog] p', 'button-outline': () => C.byText('Cancel', '[role=alertdialog] button')[0], 'button-destructive': () => C.byText('Remove', '[role=alertdialog] button')[0], 'button-destructive-trigger': () => C.byText('Remove repository', 'button')[0]",
+  "after": "C.click(C.byText('Cancel', '[role=alertdialog] button')[0]); await C.sleep(500);"
+ },
+ {
+  "name": "remove-confirm-states",
+  "state": "hover",
+  "reveal": "await P.settings('conductor/Misc'); P.scrollMain(99999); await C.sleep(400); C.click(C.byText('Remove repository', 'button')[0]); await C.sleep(800);",
+  "parts": "'button-outline': () => C.byText('Cancel', '[role=alertdialog] button')[0], 'button-destructive': () => C.byText('Remove', '[role=alertdialog] button')[0]",
+  "force": {
+   "button-outline": [
+    "focus-visible",
+    "focus"
+   ],
+   "button-destructive": [
+    "hover"
+   ]
+  },
+  "after": "C.click(C.byText('Cancel', '[role=alertdialog] button')[0]); await C.sleep(500);",
+  "partState": {
+   "button-outline": "focus-visible"
+  }
+ },
+ {
+  "name": "repo-dialog",
+  "manual": true,
+  "keepOpen": true,
+  "note": "Reached with open_project.sh: Add project on a folder with no remote (harness-scratch/conductor/no-remote) opens this offer to create a GitHub repo. Measured, then cancelled; never confirmed.",
+  "reveal": "",
+  "parts": "dialog: '[role=alertdialog]', backdrop: () => C.$('[role=presentation]').find(e => e.getBoundingClientRect().width > 1300), 'dialog-title': '[role=alertdialog] h2', 'dialog-body': '[role=alertdialog] p', 'inline-code': '[role=alertdialog] code', label: '[role=alertdialog] label', 'select-dialog': '[role=alertdialog] [role=combobox]', 'text-field-dialog': '[role=alertdialog] input', helper: () => C.$('[role=alertdialog] p.text-xs')[0], 'button-outline-dialog': () => C.byText('Cancel', 'button')[0], 'button-primary': () => C.byText('Create repo and add project', 'button')[0]"
+ },
+ {
+  "name": "repo-dialog-focus",
+  "manual": true,
+  "keepOpen": true,
+  "state": "focus-visible",
+  "reveal": "",
+  "parts": "'text-field-dialog': '[role=alertdialog] input', 'select-dialog': '[role=alertdialog] [role=combobox]', 'button-primary': () => C.byText('Create repo and add project', 'button')[0]",
+  "force": {
+   "text-field-dialog": [
+    "focus",
+    "focus-visible"
+   ],
+   "button-primary": [
+    "focus-visible",
+    "focus"
+   ]
+  }
+ },
+ {
+  "name": "repo-dialog-hover",
+  "manual": true,
+  "keepOpen": true,
+  "state": "hover",
+  "reveal": "",
+  "parts": "'button-outline-dialog': () => C.byText('Cancel', 'button')[0], 'button-primary': () => C.byText('Create repo and add project', 'button')[0], 'select-dialog': '[role=alertdialog] [role=combobox]'",
+  "force": {
+   "button-outline-dialog": [
+    "hover"
+   ],
+   "button-primary": [
+    "hover"
+   ],
+   "select-dialog": [
+    "hover"
+   ]
+  }
+ },
+ {
+  "name": "repo-dialog-error",
+  "manual": true,
+  "keepOpen": true,
+  "state": "error",
+  "reveal": "",
+  "parts": "'text-field-dialog': '[role=alertdialog] input', 'error-text': () => C.$('[role=alertdialog] p').find(p => /already exists/.test(p.innerText)), helper: () => C.$('[role=alertdialog] p.text-xs')[0], 'button-primary-disabled': () => C.byText('Create repo and add project', 'button')[0]",
+  "note": "Before this shot the repository name field is given a name that already exists on the owner's account (`designs`), typed with real keystrokes (key.applescript) because the field ignores script input; the dialog checks GitHub and shows its error. Never submitted."
+ },
+ {
+  "name": "settings-general",
+  "reveal": "await P.settings('General');",
+  "parts": "...P.settingsParts()"
+ },
+ {
+  "name": "settings-general-bottom",
+  "reveal": "await P.settings('General'); P.scrollMain(99999);",
+  "parts": "...P.settingsParts()"
+ },
+ {
+  "name": "settings-account",
+  "reveal": "await P.settings('Account');",
+  "parts": "...P.settingsParts(), avatar: () => C.$('img').find(i => i.getBoundingClientRect().x > 260)"
+ },
+ {
+  "name": "settings-appearance",
+  "reveal": "await P.settings('Appearance');",
+  "parts": "...P.settingsParts(), 'code-sample': () => C.$('pre, code').find(e => e.getBoundingClientRect().x > 260 && e.getBoundingClientRect().height > 60)"
+ },
+ {
+  "name": "settings-appearance-bottom",
+  "reveal": "await P.settings('Appearance'); P.scrollMain(99999);",
+  "parts": "...P.settingsParts()"
+ },
+ {
+  "name": "settings-models",
+  "reveal": "await P.settings('Default models');",
+  "parts": "...P.settingsParts()"
+ },
+ {
+  "name": "settings-git",
+  "reveal": "await P.settings('Git');",
+  "parts": "...P.settingsParts()"
+ },
+ {
+  "name": "settings-agents",
+  "reveal": "await P.settings('Agents');",
+  "parts": "...P.settingsParts()"
+ },
+ {
+  "name": "settings-agents-bottom",
+  "reveal": "await P.settings('Agents'); P.scrollMain(99999);",
+  "parts": "...P.settingsParts()"
+ },
+ {
+  "name": "settings-environment",
+  "reveal": "await P.settings('Environment');",
+  "parts": "...P.settingsParts(), 'empty-card': () => { const t = C.byText('No variables set')[0]; let p = t; while (p && parseFloat(getComputedStyle(p).borderTopWidth) === 0) p = p.parentElement; return p; }"
+ },
+ {
+  "name": "settings-experimental",
+  "reveal": "await P.settings('Experimental');",
+  "parts": "...P.settingsParts()"
+ },
+ {
+  "name": "settings-advanced",
+  "reveal": "await P.settings('Advanced');",
+  "parts": "...P.settingsParts()"
+ },
+ {
+  "name": "settings-repo-git",
+  "reveal": "await P.settings('conductor/Git');",
+  "parts": "...P.settingsParts()"
+ },
+ {
+  "name": "settings-repo-scripts",
+  "reveal": "await P.settings('conductor/Scripts');",
+  "parts": "...P.settingsParts(), 'text-area': () => C.$('textarea, .cm-editor').find(e => e.getBoundingClientRect().x > 260)"
+ },
+ {
+  "name": "settings-repo-actions",
+  "reveal": "await P.settings('conductor/Actions');",
+  "parts": "...P.settingsParts()"
+ },
+ {
+  "name": "settings-repo-misc",
+  "reveal": "await P.settings('conductor/Misc');",
+  "parts": "...P.settingsParts()"
+ },
+ {
+  "name": "settings-select-open",
+  "reveal": "await P.settings('General'); C.click(C.$('[role=combobox]').find(e => e.getBoundingClientRect().x > 260)); await C.sleep(600);",
+  "parts": "listbox: '[role=listbox]', option: () => C.$('[role=option]')[1], 'option-selected': '[role=option][aria-selected=true], [role=option][data-selected]', 'option-highlighted': '[role=option][data-highlighted]'"
+ },
+ {
+  "name": "settings-search-typed",
+  "state": "typed",
+  "reveal": "await P.settings('General'); const i = C.$('input').find(e => e.getBoundingClientRect().x < 20); C.type(i, 'theme'); await C.sleep(800);",
+  "parts": "...P.settingsParts(), 'search-hit': () => C.$('mark')[0]",
+  "after": "const i = C.$('input').find(e => e.getBoundingClientRect().x < 20); C.type(i, ''); i.blur(); await C.sleep(500);"
+ },
+ {
+  "name": "settings-search-empty",
+  "state": "empty",
+  "reveal": "await P.settings('General'); const i = C.$('input').find(e => e.getBoundingClientRect().x < 20); C.type(i, 'zzqx'); await C.sleep(800);",
+  "parts": "'settings-search': () => C.$('input').find(e => e.getBoundingClientRect().x < 20)",
+  "after": "const i = C.$('input').find(e => e.getBoundingClientRect().x < 20); C.type(i, ''); i.blur(); await C.sleep(500);"
+ },
+ {
+  "name": "settings-states",
+  "state": "hover",
+  "reveal": "await P.settings('General');",
+  "parts": "'settings-nav-item': () => P.navItems().find(e => !/General/.test(e.innerText) && getComputedStyle(e).backgroundColor === 'rgba(0, 0, 0, 0)'), select: () => C.$('[role=combobox]').find(e => e.getBoundingClientRect().x > 260), 'switch-on': '[role=switch][aria-checked=true], [role=switch][data-checked]', 'button-outline': () => C.byText('Open System Settings', 'button')[0]",
+  "force": {
+   "settings-nav-item": [
+    "hover"
+   ],
+   "select": [
+    "hover"
+   ],
+   "switch-on": [
+    "focus-visible",
+    "focus"
+   ],
+   "button-outline": [
+    "hover"
+   ]
+  },
+  "partState": {
+   "switch-on": "focus-visible"
+  }
+ },
+ {
+  "name": "settings-focus",
+  "state": "focus-visible",
+  "reveal": "await P.settings('General');",
+  "parts": "select: () => C.$('[role=combobox]').find(e => e.getBoundingClientRect().x > 260), 'button-outline': () => C.byText('Open System Settings', 'button')[0], 'settings-search': () => C.$('input').find(e => e.getBoundingClientRect().x < 20)",
+  "force": {
+   "select": [
+    "focus-visible",
+    "focus"
+   ],
+   "button-outline": [
+    "focus-visible",
+    "focus"
+   ],
+   "settings-search": [
+    "focus-visible",
+    "focus"
+   ]
+  }
+ },
+ {
+  "name": "workspace-not-found",
+  "manual": true,
+  "state": "error",
+  "note": "Shown after the duplicate project the capture added by mistake was removed while its workspace was open (README, What was created). Reached once, in light.",
+  "reveal": "",
+  "parts": "'error-title': () => C.byText('Workspace not found')[0], 'error-text': () => C.$('p, div').find(e => /^It may have been deleted/.test(e.innerText.trim()) && e.children.length === 0), 'button-outline': () => C.byText('Try again', 'button')[0]"
+ }
+]

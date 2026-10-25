@@ -1890,6 +1890,76 @@
       }
     },
     {
+      "slug": "conductor-desktop",
+      "name": "Conductor (desktop)",
+      "url": "https://conductor.build",
+      "category": "ai-agent",
+      "platform": "desktop",
+      "goodFor": "Desktop coding-agent app in Tauri on Tailwind and Base UI: a warm stone palette (a brown-grey ramp, not neutral grey), a 256px sidebar of repositories and workspaces, chat tabs over a conversation whose prompt sits on a rose tint, a right panel of files, changes and run scripts, ink (not a hue) for primary buttons and switches, tan for links, the special accent and input focus, 6px controls and 12px dialogs in Geist and Geist Mono",
+      "tags": [
+        "desktop",
+        "tauri",
+        "webkit",
+        "macos",
+        "coding",
+        "ai",
+        "agent",
+        "workspaces",
+        "sidebar",
+        "tabs",
+        "diff",
+        "tailwind",
+        "warm",
+        "dense",
+        "dark",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-25",
+      "access": "the owner's signed-in account on the Free plan; read live from the app's WKWebView through Safari's Web Inspector, on a scratch repository the capture added",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1400
+      ],
+      "entry": "systems/conductor-desktop/README.md",
+      "tokens": "systems/conductor-desktop/tokens.json",
+      "styleGuide": "systems/conductor-desktop/style-guide.html",
+      "preview": {
+        "cover": "systems/conductor-desktop/screenshots/dark/conversation.png",
+        "swatches": {
+          "light": {
+            "page": "light.role.page",
+            "surface": "light.role.surface",
+            "text": "light.role.text.primary",
+            "muted": "light.role.text.secondary",
+            "accent": "light.role.accent.default",
+            "border": "light.role.border.default"
+          },
+          "dark": {
+            "page": "dark.role.page",
+            "surface": "dark.role.surface",
+            "text": "dark.role.text.primary",
+            "muted": "dark.role.text.secondary",
+            "accent": "dark.role.accent.default",
+            "border": "dark.role.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans",
+          "core.fontFamily.mono"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/conductor-desktop/raw-shots (full-colour captures, the P3 originals and run frames, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Conductor's icons are lucide plus its own artwork and logos, and are not kept here (docs/RIGHTS.md)"
+      }
+    },
+    {
       "slug": "luma-ios",
       "name": "Luma",
       "url": "https://luma.com",
