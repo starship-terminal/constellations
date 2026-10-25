@@ -1685,12 +1685,12 @@
       }
     },
     {
-      "slug": "devin-desktop",
-      "name": "Devin (desktop)",
-      "url": "https://devin.ai",
+      "slug": "superset-desktop",
+      "name": "Superset (desktop)",
+      "url": "https://superset.sh",
       "category": "ai-agent",
       "platform": "desktop",
-      "goodFor": "Desktop coding-agent app in Electron on a VS Code workbench: a near-black or near-white page shared by the sidebar and the content, two-line session rows, one 20px-radius raised composer with a Cloud / Local segmented control, a right-aligned tinted prompt bubble over plain replies and muted work rows, every neutral one colour at fixed alphas, ink-filled page buttons with blue kept for focus and links, 6px controls and 10px popups and cards",
+      "goodFor": "Desktop app for running coding agents in parallel workspaces, in Electron: a warm near-black or near-white window with a slightly darker sidebar of projects and workspaces, one rounded composer with small chips, ink primary buttons instead of a brand hue, shadcn/ui components on Tailwind's scale (8px controls, 10px popovers, a 3px focus ring), foreground-wash hover and selection, and each agent's CLI in a terminal pane inside a tabbed workspace",
       "tags": [
         "desktop",
         "electron",
@@ -1698,29 +1698,31 @@
         "coding",
         "ai",
         "agent",
-        "ide",
+        "terminal",
+        "workspaces",
         "sidebar",
         "dense",
+        "shadcn",
+        "tailwind",
         "dark",
         "light",
-        "alpha-tiers",
-        "tailwind"
+        "warm"
       ],
       "shape": "reference",
       "captured": "2026-10-25",
-      "access": "signed in (the owner's cortexairobot organisation); read live from the running app over its remote-debugging port",
+      "access": "signed in (the owner's organisation on the free plan); read live from the running app over its remote-debugging port",
       "themes": [
         "light",
         "dark"
       ],
       "widths": [
-        1440
+        1512
       ],
-      "entry": "systems/devin-desktop/README.md",
-      "tokens": "systems/devin-desktop/tokens.json",
-      "styleGuide": "systems/devin-desktop/style-guide.html",
+      "entry": "systems/superset-desktop/README.md",
+      "tokens": "systems/superset-desktop/tokens.json",
+      "styleGuide": "systems/superset-desktop/style-guide.html",
       "preview": {
-        "cover": "systems/devin-desktop/screenshots/dark/conversation.png",
+        "cover": "systems/superset-desktop/screenshots/dark/workspace-default.png",
         "swatches": {
           "light": {
             "page": "light.role.page",
@@ -1745,10 +1747,10 @@
         ]
       },
       "source": {
-        "path": "~/.design-systems/devin-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
+        "path": "~/.design-systems/superset-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
       },
       "layoutGaps": {
-        "icons/": "Devin's icons are its own inline SVG artwork and the workbench's codicons, and are not kept here (docs/RIGHTS.md)"
+        "icons/": "Superset's icons are Lucide and the agents' own logos, and are not kept here (docs/RIGHTS.md)"
       }
     },
     {
