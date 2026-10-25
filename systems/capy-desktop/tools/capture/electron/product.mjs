@@ -20,6 +20,8 @@
 // dialogs) on the owner's account, where nothing is sent, created or changed; and /design, the gallery of
 // Capy's own components that ships in the bundle ("Every component in the system, on the surface it ships
 // on"), whose sample data is the product's fixtures. The owner's own threads are never opened.
+import { resolve as resolvePath, sep } from 'node:path';
+
 export const NAME = 'Capy';
 export const WINDOWS = { app: /\bCapy$/ };
 export const SCOPES = { app: ['body'] };
@@ -367,17 +369,24 @@ export const SHOTS = [
   ]),
 ];
 
+
 // ---- the agent run, taken by run.mjs. The owner approved (2026-10-25) harmless test prompts in a fresh
-// thread only. Capy runs threads in the cloud on a project's repositories; the only throwaway place it
-// offers is its own Scratchpad project (no repositories), so the run starts a new thread there. The draft
-// the owner left in the new-thread composer and the composer's project are put back by finish().
-// In this account the organization limits models to connections that are not set up, so Capy refuses to
-// start the thread ("Failed to start thread"); the run records that refusal, the one state reachable.
-const SCRATCHPAD = 'Scratchpad';
+// thread only, in a project of its own on the scratch repository ~/.design-systems/harness-scratch/capy/
+// (docs/CAPTURE.md), running on This Mac: never the owner's projects, repositories or threads, and never the
+// cloud. The project is made once by hand (New project > Folder on a machine > that folder, named
+// RUN_PROJECT); each theme's run starts one new thread in it, so the thread view is a real run, not the gallery.
+// Capy 0.5.0 runs the thread in the folder itself (Run on: the paired Mac, Current checkout), with the
+// account's connected Claude Code and the model the composer already holds; neither is changed here.
+// finish() puts the composer's project and draft back; the run-on choice and the model are only compared.
+const RUN_PROJECT = process.env.RUN_PROJECT || 'Capture scratch';
+const RUN_DIR = '/.design-systems/harness-scratch/capy';
 const TOAST = { toast: '[data-sonner-toast] [class*="z-(--z-toast)"]', 'toast-title': '[data-sonner-toast] p.font-medium', 'toast-description': '[data-sonner-toast] div.text-muted-foreground-2' };
 const DRAFT_KEY = 'capy-web:new-thread-draft';
-let before = null, refused = false;
+const KEPT = ['capy-web:new-thread-run-on', 'capy-web:last-model'];
+let before = null;
+const kept = page => page.evaluate(keys => keys.map(k => `${k}=${localStorage.getItem(k)}`).join('\n'), KEPT);
 async function pickProject(page, name) {
+  if ((await btn(page, 'Project').innerText()).trim() === name) return;
   await btn(page, 'Project').click(); await wait(page, 700);
   // The name is matched literally: a project called `Client (web)` must not be read as a pattern.
   const literal = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -388,14 +397,49 @@ async function pickProject(page, name) {
 async function clearEditor(page) {
   await vis(page, S.editor).click(); await page.keyboard.press('Meta+A'); await page.keyboard.press('Backspace'); await wait(page, 400);
 }
+async function type(page, text, label) {
+  const composer = page.locator(S.composer).filter({ visible: true }).last();
+  await composer.locator(S.editor).click(); await page.keyboard.type(text, { delay: 10 }); await wait(page, 300);
+  await composer.locator(`button[aria-label=${label}]`).click(); await wait(page, 300);
+}
+// An approval is allowed only when every path its card names resolves inside the scratch folder (a directory
+// boundary, not a string prefix: `capy-other/` and `../` are outside), and the card names at least one path.
+// A card whose target cannot be checked is denied.
+const RUN_ROOT = resolvePath(process.env.HOME || '', RUN_DIR.slice(1));
+export function insideRun(text) {
+  // A bare `/` or `~` counts too: a command on the root or the home folder is outside.
+  const paths = text.match(/(?:~|\/)[^\s'"`,;)]*/g) || [];
+  if (!paths.length) return false;
+  return paths.every(p => {
+    const abs = resolvePath(p.startsWith('~') ? (process.env.HOME || '') + p.slice(1) : p);
+    return abs === RUN_ROOT || abs.startsWith(RUN_ROOT + sep);
+  });
+}
+async function approveInside({ page }) {
+  const allow = page.locator('button').filter({ visible: true }).filter({ hasText: /^(Allow|Approve|Accept)\b/ }).last();
+  // The request card: the nearest ancestor that holds more than the button's own label.
+  const text = await allow.evaluate(b => {
+    let e = b;
+    for (let i = 0; i < 8 && e.parentElement; i++) { e = e.parentElement; if (e.innerText.trim().length > b.innerText.trim().length + 20) break; }
+    return e.innerText;
+  }).catch(() => '');
+  if (!insideRun(text)) return false;
+  await allow.click(); await wait(page, 800);
+  return true;
+}
 export const RUN = {
   window: 'app',
   async start(h) {
     const { page } = h;
     await home(h);
-    before = { draft: await page.evaluate(k => localStorage.getItem(k), DRAFT_KEY), project: (await btn(page, 'Project').innerText()).trim(),
-      rows: await page.locator('[data-slot=sidebar-thread-row]').count() };
-    await pickProject(page, SCRATCHPAD);
+    before = { draft: await page.evaluate(k => localStorage.getItem(k), DRAFT_KEY), project: (await btn(page, 'Project').innerText()).trim(), kept: await kept(page) };
+    await pickProject(page, RUN_PROJECT);
+    // The project must run on this Mac in the scratch folder, never in the cloud or another checkout.
+    await btn(page, 'Run on').click(); await wait(page, 700);
+    const target = await page.locator('[role=menuitem]').filter({ visible: true }).filter({ hasText: 'This Mac' }).first().innerText().catch(() => '');
+    await closeAll(page);
+    const runOn = (await btn(page, 'Run on').innerText()).trim();
+    if (!target.includes(RUN_DIR.slice(1)) || /^Cloud/.test(runOn)) throw new Error(`Run on is ${runOn} (${target.replace(/\s+/g, ' ')}), not this Mac in ~${RUN_DIR}`);
     await clearEditor(page);
   },
   async finish(h) {
@@ -403,30 +447,58 @@ export const RUN = {
     if (!before) return;
     await closeAll(page);
     for (const t of await page.locator('[data-sonner-toast] button[aria-label^=Close], [data-sonner-toast] [data-close-button]').all()) await t.click().catch(() => {});
+    // The inspector pane was opened in the run's own thread; close it there before leaving.
+    const close = page.locator('button[aria-label="Close pane"]').filter({ visible: true });
+    if ((await path(page)).startsWith('/thread/') && await close.count()) { await close.first().click(); await wait(page, 600); }
     await home(h);
     await pickProject(page, before.project);
     await clearEditor(page);
-    const draft = before.draft ? JSON.parse(before.draft).text : '';
+    // Capy stores an empty draft as the JSON text null.
+    const text = v => (v && JSON.parse(v)?.text) || '';
+    const draft = text(before.draft);
     if (draft) { await vis(page, S.editor).click(); await page.keyboard.type(draft, { delay: 5 }); await wait(page, 1200); }
     const now = await page.evaluate(k => localStorage.getItem(k), DRAFT_KEY);
-    const nowText = now ? JSON.parse(now).text : '';
+    const nowText = text(now);
     if (nowText !== draft) throw new Error(`the draft was not restored: ${nowText.slice(0, 60)}`);
+    if (await kept(page) !== before.kept) throw new Error(`run-on or model changed:\n${await kept(page)}\nwas\n${before.kept}`);
     await page.mouse.move(700, 790);
   },
   async state({ page }) {
-    // The refusal is a toast that fades after a few seconds; once seen, the run is over.
-    if (await page.locator('[data-sonner-toast]').filter({ visible: true }).filter({ hasText: /^Failed/ }).count()) refused = true;
-    if (refused) return 'done';
-    if ((await path(page)).startsWith('/thread/')) {
-      if (await page.locator('button').filter({ visible: true }).filter({ hasText: /^(Allow|Approve|Accept)\b/ }).count()) return 'approval';
-      return (await page.locator('button[aria-label*="Stop" i], button[aria-label*="Interrupt" i]').filter({ visible: true }).count()) ? 'running' : 'done';
-    }
-    return 'running';
+    // A refusal (the plan dialog Cloud shows without a plan, or a failed start) ends the run at once.
+    if (await page.getByText('Put Capy to work').filter({ visible: true }).count()) throw new Error('Capy asked for a plan: the thread was going to the cloud');
+    const failed = page.locator('[data-sonner-toast]').filter({ visible: true }).filter({ hasText: /^Failed/ });
+    if (await failed.count()) throw new Error(`Capy refused: ${(await failed.first().innerText()).replace(/\s+/g, ' ')}`);
+    if (!(await path(page)).startsWith('/thread/')) return 'starting';
+    if (await page.locator('button').filter({ visible: true }).filter({ hasText: /^(Allow|Approve|Accept)\b/ }).count()) return 'approval';
+    const running = await page.locator('button[aria-label="Stop run"], svg[aria-label=Working][data-state=working]').filter({ visible: true }).count();
+    return page.evaluate(running => {
+      const live = [...document.querySelectorAll('[data-slot=shimmer-text][data-state=live]')].map(e => e.textContent.trim());
+      const msgs = [...document.querySelectorAll('[data-slot=user-message], [data-slot=agent-message]')];
+      const replied = msgs.length && msgs.at(-1).getAttribute('data-slot') === 'agent-message';
+      // Between two turns the Stop button can drop for a moment; the run is over only once a reply follows the
+      // last prompt and nothing is still shimmering.
+      if (!running && !live.length && replied) return 'done';
+      const work = live.filter(t => !/^Work/.test(t));
+      if (work.some(t => !/^Think/.test(t))) return 'tool';
+      if (replied) return 'streaming';
+      return work.length ? 'thinking' : 'working';
+    }, running);
   },
   async reject({ page }) { await page.locator('button').filter({ visible: true }).filter({ hasText: /^(Deny|Reject|Skip)\b/ }).last().click().catch(() => {}); await wait(page, 800); },
   steps: [
-    { name: 'start-thread', send: async ({ page }) => { await vis(page, S.editor).click(); await page.keyboard.type('List the files in this folder.', { delay: 10 }); await wait(page, 300); await btn(page, 'Start').click(); await wait(page, 300); } },
+    { name: 'list-files', send: async ({ page }) => type(page, 'List the files in this folder.', 'Start'), approve: approveInside },
+    { name: 'create-file', send: async ({ page }) => type(page, 'Create hello.txt here with one line.', 'Send'), approve: approveInside },
+    // Not a prompt: the thread's right pane (Overview, Diffs), Capy's inspector, opened once the run is over.
+    { name: 'inspector', send: async ({ page }) => { await btn(page, 'Open pane').click(); await wait(page, 1200); } },
   ],
-  parts: { composer: S.composer, 'send-button': S.send, 'project-button': S.project, ...TOAST },
+  parts: {
+    composer: S.composer, 'send-button': `${S.composer} button[aria-label=Send], ${S.send}`, 'stop-button': 'button[aria-label="Stop run"]',
+    'user-message': slot('user-message'), 'agent-message': slot('agent-message'), 'message-section': slot('message-section'),
+    'message-footer': slot('message-footer'), 'chat-stamp': slot('chat-stamp'), 'activity-line': slot('activity-line'),
+    'work-row': `${slot('work-group-panel')} ${slot('collapsible')}`, 'shimmer-live': `${slot('shimmer-text')}[data-state=live]`,
+    'working-indicator': 'svg[aria-label=Working]', 'thread-tab': slot('preview-card-trigger'), 'thread-cost': 'button[aria-label^="Thread cost"]',
+    'token-budget': 'button[aria-label*="token budget"]', 'machine-button': 'button[aria-label=Machine]', 'inline-code': `${slot('agent-message')} code`,
+    'right-panel': slot('right-panel-content'), ...TOAST,
+  },
   inventory: '[data-slot], [role], [aria-label]',
 };

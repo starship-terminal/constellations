@@ -1917,7 +1917,7 @@
       ],
       "shape": "reference",
       "captured": "2026-10-25",
-      "access": "the owner's signed-in account (personal workspace, no plan); read live from the running app over its remote-debugging port, plus Capy's component gallery at capy://app/design on fixture data",
+      "access": "the owner's signed-in account (personal workspace, no plan); read live from the running app over its remote-debugging port, plus Capy's component gallery at capy://app/design on fixture data, and a real agent run (Capy 0.5.0, Claude Code) in a project made for the capture on a scratch folder, run on the paired Mac",
       "themes": [
         "light",
         "dark"
