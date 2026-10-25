@@ -1720,7 +1720,7 @@
       "tokens": "systems/devin-desktop/tokens.json",
       "styleGuide": "systems/devin-desktop/style-guide.html",
       "preview": {
-        "cover": "systems/devin-desktop/screenshots/dark/conversation.png",
+        "cover": "systems/devin-desktop/screenshots/dark/conversation-local.png",
         "swatches": {
           "light": {
             "page": "light.role.page",
