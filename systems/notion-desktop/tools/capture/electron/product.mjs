@@ -210,39 +210,44 @@ const lastTop = async page => {
   if (i < 0) throw new Error('no top-level text block');
   return page.locator(TEXT).nth(i);
 };
-// The block being typed in: the text block holding the caret (focus sits on Notion's editor root, not the block).
-let typedAt = -1;
-const caretBlock = page => page.evaluate(sel => { const n = getSelection().anchorNode; const b = n && (n.nodeType === 1 ? n : n.parentElement).closest(sel); return b ? [...document.querySelectorAll(sel)].indexOf(b) : -1; }, TEXT);
+// The block being typed in: the text block holding the caret (focus sits on Notion's editor root, not the block),
+// remembered by its block id, which Notion keeps stable, so cleanup can only ever touch the block the shot made.
+let typedId = null;
+const TYPED = () => `.notion-page-content [data-block-id="${typedId}"]`;
+const caretBlockId = page => page.evaluate(sel => { const n = getSelection().anchorNode; const b = n && (n.nodeType === 1 ? n : n.parentElement).closest(sel); return b ? b.getAttribute('data-block-id') : null; }, TEXT);
 const topCount = page => page.evaluate(sel => [...document.querySelectorAll(sel)].filter(e => !e.parentElement.closest('.notion-page-content [data-block-id]')).length, TEXT);
 const typedBlock = async ({ page }, text) => {
   // A new empty block at the end of the scratch page: click the last paragraph's end, Enter.
   const last = (await lastTop(page)).locator('[contenteditable=true]').first();
+  const lastId = await (await lastTop(page)).getAttribute('data-block-id');
   await last.click(); await wait(page, 200);
   // The caret goes to the end through the DOM (Notion ignores a synthetic End key).
   await last.evaluate(e => { const r = document.createRange(); r.selectNodeContents(e); r.collapse(false); const s = getSelection(); s.removeAllRanges(); s.addRange(r); });
   await wait(page, 200);
   await page.keyboard.press('Enter'); await wait(page, 500);
-  typedAt = await caretBlock(page);
-  if (typedAt < 0) throw new Error('the caret is not in a new text block');
+  typedId = await caretBlockId(page);
+  if (!typedId || typedId === lastId) { typedId = null; throw new Error('the caret is not in a new text block'); }
   if (text) { await page.keyboard.type(text, { delay: 25 }); await wait(page, 1100); }
 };
-// Undo the typed block: Escape any menu, then remove the empty or typed block the shot added.
+// Undo the typed block: Escape any menu, then remove the one block this shot created (by its id), and only
+// while it holds nothing or what the capture typed into it.
 async function removeTyped({ page }) {
   await closeAll(page);
-  for (let i = 0; i < 4; i++) {
-    // Only a block the capture added: empty, a slash command, or the capture's own typed sentence.
-    const k = await page.evaluate(sel => [...document.querySelectorAll(sel)].findIndex(e => !e.parentElement.closest('.notion-page-content [data-block-id]')
-      && /^(|\/.*|Text typed by the capture.*)$/.test(e.textContent.trim())), TEXT);
-    if (k < 0) break;
-    const blockLoc = page.locator(TEXT).nth(k), ed = blockLoc.locator('[contenteditable=true]').first();
-    const len = (await blockLoc.textContent()).length;
+  if (!typedId) return blur(page);
+  const blockLoc = page.locator(TYPED());
+  if (await blockLoc.count()) {
+    const text = (await blockLoc.textContent()).trim();
+    if (!/^(|\/.*|Text typed by the capture.*)$/.test(text)) throw new Error(`the capture's block holds text it did not type: ${text.slice(0, 40)}`);
+    const ed = blockLoc.locator('[contenteditable=true]').first();
     // Caret at the text's end by clicking its right edge, then Backspace once per character and once more
     // to remove the block. Never Cmd+A: in an empty block Notion selects every block on the page.
     const b = await ed.boundingBox();
     await page.mouse.click(b.x + b.width - 2, b.y + b.height / 2); await wait(page, 300);
-    for (let j = 0; j <= len; j++) { await page.keyboard.press('Backspace'); await wait(page, 40); }
+    for (let j = 0; j <= text.length; j++) { await page.keyboard.press('Backspace'); await wait(page, 40); }
     await wait(page, 600); await closeAll(page);
+    if (await page.locator(TYPED()).count()) throw new Error('the capture\'s block could not be removed');
   }
+  typedId = null;
   await blur(page);
 }
 const hoverBlock = sel => async ({ page }) => { await page.locator(sel).first().hover(); await wait(page, 700); };
@@ -321,7 +326,7 @@ export const SHOTS = [
     parts: { toast: page => page.locator('[role=status], [role=alert]').filter({ hasText: /./ }).filter({ visible: true }).first() } },
   // ---- editing states in the scratch page: a new block at its end, removed afterwards
   { name: 'block-empty', window: M, state: 'focused', reveal: async h => typedBlock(h, ''),
-    parts: { 'paragraph-empty': page => page.locator(TEXT).nth(typedAt) }, after: removeTyped },
+    parts: { 'paragraph-empty': page => page.locator(TYPED()) }, after: removeTyped },
   { name: 'slash-menu', window: M, reveal: async h => typedBlock(h, '/'),
     parts: { menu: lastPopup, 'menu-row-selected': page => lastPopup(page).locator('[role=option]').first(), 'menu-row': page => lastPopup(page).locator('[role=option]').nth(2),
       'menu-heading': page => lastPopup(page).getByText(/^(Basic blocks|Suggested)$/).first() },
@@ -329,7 +334,7 @@ export const SHOTS = [
   { name: 'slash-menu-filtered', window: M, state: 'filled', reveal: async h => typedBlock(h, '/tab'),
     parts: { menu: lastPopup }, after: removeTyped },
   { name: 'block-typed', window: M, state: 'filled', reveal: async h => typedBlock(h, 'Text typed by the capture, then removed'),
-    parts: { paragraph: page => page.locator(TEXT).nth(typedAt) }, after: removeTyped },
+    parts: { paragraph: page => page.locator(TYPED()) }, after: removeTyped },
   { name: 'block-hover', window: M, state: 'hover', reveal: hoverBlock(S.text),
     parts: { 'drag-handle': dragHandle, paragraph: S.text }, optionalParts: ['drag-handle'] },
   { name: 'block-menu', window: M,
@@ -444,11 +449,15 @@ async function openAi(page) {
   if (!(await aiInput(page).isVisible().catch(() => false))) throw new Error('the AI panel did not open with an input');
 }
 // Empty the AI input: caret to its end through the DOM, then one Backspace per character.
+// Only text the capture typed is cleared: a draft of the owner's stops the capture instead.
+const AI_TYPED = [/^Typed by the capture, never sent$/, /^Summarise this page in two sentences\.$/];
 async function clearAi(page) {
   const inp = aiInput(page);
   if (!(await inp.isVisible().catch(() => false))) return;
-  const n = (await inp.innerText()).length;
+  const text = (await inp.innerText()).trim();
+  const n = text.length;
   if (!n) return;
+  if (!AI_TYPED.some(re => re.test(text))) throw new Error(`the AI input holds a draft the capture did not type: ${text.slice(0, 40)}`);
   await inp.click();
   await inp.evaluate(e => { const r = document.createRange(); r.selectNodeContents(e); r.collapse(false); const s = getSelection(); s.removeAllRanges(); s.addRange(r); });
   for (let i = 0; i <= n; i++) await page.keyboard.press('Backspace');

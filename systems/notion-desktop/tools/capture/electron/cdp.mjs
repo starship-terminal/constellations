@@ -48,7 +48,13 @@ async function endpoint() {
     });
     const close = () => { try { up.close(); } catch {} try { client.close(); } catch {} };
     up.on('close', close); client.on('close', close);
+    // A refused or broken socket closes both ends, so Playwright's call fails and the capture's own cleanup
+    // runs, instead of an unhandled 'error' event ending the process.
+    up.on('error', e => { console.error('cdp proxy upstream:', e.message); close(); });
+    client.on('error', e => { console.error('cdp proxy client:', e.message); close(); });
   });
+  wss.on('error', e => console.error('cdp proxy:', e.message));
+  http.on('error', e => console.error('cdp proxy server:', e.message));
   await new Promise(r => http.listen(0, '127.0.0.1', r));
   http.unref();
   return { url: `ws://127.0.0.1:${http.address().port}/devtools/browser/proxy`, http, silent: [...silent] };
