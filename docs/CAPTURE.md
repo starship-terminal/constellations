@@ -267,6 +267,13 @@ python3 -m venv /tmp/redact-venv && /tmp/redact-venv/bin/pip install pillow nump
 /tmp/redact-venv/bin/python tools/redact_images.py check systems/<slug> --patterns ~/.design-systems/cleanup-redact.json
 ```
 
+`check` loads `tools/redact-rules/<slug>.json` for the package by itself when
+the file exists, and prints a `rules:` line saying so. That file's `ocr` block
+allows a product's own published addresses and sets `wrap_ignore`, so a
+package with a rules file needs no `--rules` to pass. `--rules <file>` loads
+that file instead. `apply` always needs `--rules`, because it edits images in
+place.
+
 A rules file (see [manus.json](../tools/redact-rules/manus.json) and
 [notebooklm.json](../tools/redact-rules/notebooklm.json); duolingo.json and
 coursera.json show the net-first style) lists pixel

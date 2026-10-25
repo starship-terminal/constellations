@@ -1258,7 +1258,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **`role.overlay` is a tint in dark.** It maps to `app.background-elevated-secondary`, which is a near-opaque fill in light but the ink at 2.7% in dark.
 - **Component values are one element each.** `component.*` and components.md read the first element that matched each part (or the shot [prefer.py](tools/prefer.py) names), not counts across pages.
 - **Run frames are timed, not chosen.** The `run-*` screenshots are frames 1.5 s apart; the states named (started, working, tool call, finished, command, file created) are what was on screen then. The dark run's frames measured only the composer; the light run's measured the conversation parts.
-- **Redacted:** the account's email on the [settings-account](screenshots/dark/settings-account.png) screens is painted out (the image check reads it as an address the shared pattern file does not allow, though it is the owner's own); [tools/redact-rules/codex-desktop.json](../../tools/redact-rules/codex-desktop.json) holds the rectangle. Re-running `quantize.py` brings it back; run the redaction again after it.
+- **The owner's email shows.** The [settings-account](screenshots/dark/settings-account.png) screens show the account's email, which is the owner's own address; it is left unmasked in both themes (the owner approved this on 2026-10-25).
 - Screenshots are 256-colour PNGs. Flat UI colours are exact; read values from tokens.json.
 
 ### Do and don't (from README.md)
