@@ -201,13 +201,22 @@ folder that holds nothing of the owner's.
 
 - **One subfolder per app**, named after the package without `-desktop`
   (`codex/`, `devin/`, `orca/`), so two captures never touch each other's
-  files. Cursor, the pilot, used the folder's root (its `hello.txt` and
-  `.cursor/`). Create the subfolder, and `git init` it when the app only
-  opens repositories.
+  files. Create the subfolder, and `git init` it when the app only opens
+  repositories. Two packages differ: Cursor, the pilot, used the folder's
+  root (its `hello.txt` and `.cursor/`), and Superset's capture script
+  names the root as `SCRATCH_DIR` because Superset itself creates the
+  `superset/` project folder inside it. Give a new capture its own
+  subfolder rather than copying either.
 - **Open it as a new project or workspace, in a fresh agent or thread.**
   Never point an agent at the owner's projects, and never open the owner's
   existing sessions: on 2026-10-25 opening a sleeping Devin cloud session
   woke its agent, which posted a message.
+- **Apps that copy the project elsewhere.** Conductor turns every project
+  into git worktrees under `~/conductor/workspaces/<project>/`, so its
+  agent writes there, not in the scratch folder. That copy holds only the
+  scratch repository, so it is allowed, but the README must name the
+  worktree path and the capture must not let the agent act outside it.
+  Check for this before the first prompt in any app that makes worktrees.
 - **Harmless prompts only:** "List the files in this folder", "Create
   hello.txt here with one line". Approve an action only when it stays
   inside the subfolder; deny anything else. The owner's harnesses often
