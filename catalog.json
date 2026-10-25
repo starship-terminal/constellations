@@ -2154,6 +2154,75 @@
       "layoutGaps": {
         "icons/": "OpenCode's icons (an inline SVG sprite) and wordmark are its artwork and are not kept here (docs/RIGHTS.md)"
       }
+    },
+    {
+      "slug": "codex-desktop",
+      "name": "Codex (desktop)",
+      "url": "https://openai.com/codex",
+      "category": "ai-agent",
+      "platform": "desktop",
+      "goodFor": "Desktop coding-agent app (OpenAI's Codex for macOS, Electron): a 52px navigation rail beside a sidebar of projects and chats on a slightly darker surface, a centred new-chat heading over one raised 22px-radius composer with pill chips, a right-aligned soft prompt bubble over plain replies and folded Worked for rows, menus and cards at 15 to 25px squircle radii, every neutral built from one ink colour at fixed alphas over four theme seeds (surface, ink, accent, contrast), an ink pill for the primary action and the accent kept for switches, focus and links",
+      "tags": [
+        "desktop",
+        "electron",
+        "macos",
+        "coding",
+        "ai",
+        "agent",
+        "chat",
+        "sidebar",
+        "rail",
+        "dense",
+        "dark",
+        "light",
+        "alpha-tiers",
+        "themeable",
+        "tailwind"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-25",
+      "access": "signed in (the owner's second Codex account, Codex 2.app); read live from the running app over its remote-debugging port",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1512
+      ],
+      "entry": "systems/codex-desktop/README.md",
+      "tokens": "systems/codex-desktop/tokens.json",
+      "styleGuide": "systems/codex-desktop/style-guide.html",
+      "preview": {
+        "cover": "systems/codex-desktop/screenshots/dark/conversation.png",
+        "swatches": {
+          "light": {
+            "page": "light.role.page",
+            "surface": "light.role.surface",
+            "text": "light.role.text.primary",
+            "muted": "light.role.text.secondary",
+            "accent": "light.role.accent.default",
+            "border": "light.role.border.default"
+          },
+          "dark": {
+            "page": "dark.role.page",
+            "surface": "dark.role.surface",
+            "text": "dark.role.text.primary",
+            "muted": "dark.role.text.secondary",
+            "accent": "dark.role.accent.default",
+            "border": "dark.role.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans-default",
+          "core.fontFamily.mono"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/codex-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Codex's icons are OpenAI's own inline SVG artwork and are not kept here (docs/RIGHTS.md)"
+      }
     }
   ]
 }
