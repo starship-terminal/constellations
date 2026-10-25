@@ -2018,6 +2018,72 @@
       "layoutGaps": {
         "icons/": "Grok Bot's icons (the cursor-icons font) and Bot characters are its artwork and are not kept here (docs/RIGHTS.md)"
       }
+    },
+    {
+      "slug": "opencode-desktop",
+      "name": "OpenCode (desktop)",
+      "url": "https://opencode.ai",
+      "category": "ai-agent",
+      "platform": "desktop",
+      "goodFor": "Desktop coding agent in Electron: a near-black or white rounded panel under a title bar of session tabs, no sidebar (Home lists projects and sessions), a single transcript column with the prompt as a faint blue bubble and the reply on the page, tool calls folded into one muted line, a raised composer with an ink Send button, Inter at 440 and IBM Plex Mono, grey and hue ramps behind every role",
+      "tags": [
+        "desktop",
+        "electron",
+        "macos",
+        "coding",
+        "ai",
+        "agent",
+        "chat",
+        "tabs",
+        "dense",
+        "ramps",
+        "dark",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-25",
+      "access": "signed in (the owner's providers already connected); read live from the running app over its remote-debugging port",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1280
+      ],
+      "entry": "systems/opencode-desktop/README.md",
+      "tokens": "systems/opencode-desktop/tokens.json",
+      "styleGuide": "systems/opencode-desktop/style-guide.html",
+      "preview": {
+        "cover": "systems/opencode-desktop/screenshots/dark/conversation.png",
+        "swatches": {
+          "light": {
+            "page": "light.role.page",
+            "surface": "light.role.surface",
+            "text": "light.role.text.primary",
+            "muted": "light.role.text.secondary",
+            "accent": "light.role.accent.default",
+            "border": "light.role.border.default"
+          },
+          "dark": {
+            "page": "dark.role.page",
+            "surface": "dark.role.surface",
+            "text": "dark.role.text.primary",
+            "muted": "dark.role.text.secondary",
+            "accent": "dark.role.accent.default",
+            "border": "dark.role.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans",
+          "core.fontFamily.mono"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/opencode-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "OpenCode's icons (an inline SVG sprite) and wordmark are its artwork and are not kept here (docs/RIGHTS.md)"
+      }
     }
   ]
 }
