@@ -20,6 +20,8 @@
 // dialogs) on the owner's account, where nothing is sent, created or changed; and /design, the gallery of
 // Capy's own components that ships in the bundle ("Every component in the system, on the surface it ships
 // on"), whose sample data is the product's fixtures. The owner's own threads are never opened.
+import { resolve as resolvePath, sep } from 'node:path';
+
 export const NAME = 'Capy';
 export const WINDOWS = { app: /\bCapy$/ };
 export const SCOPES = { app: ['body'] };
@@ -400,15 +402,28 @@ async function type(page, text, label) {
   await composer.locator(S.editor).click(); await page.keyboard.type(text, { delay: 10 }); await wait(page, 300);
   await composer.locator(`button[aria-label=${label}]`).click(); await wait(page, 300);
 }
-// An absolute path or ~/ path in an approval card must lie inside the scratch folder; with no path at all,
-// only the file the prompt names is allowed.
+// An approval is allowed only when every path its card names resolves inside the scratch folder (a directory
+// boundary, not a string prefix: `capy-other/` and `../` are outside), and the card names at least one path.
+// A card whose target cannot be checked is denied.
+const RUN_ROOT = resolvePath(process.env.HOME || '', RUN_DIR.slice(1));
+export function insideRun(text) {
+  // A bare `/` or `~` counts too: a command on the root or the home folder is outside.
+  const paths = text.match(/(?:~|\/)[^\s'"`,;)]*/g) || [];
+  if (!paths.length) return false;
+  return paths.every(p => {
+    const abs = resolvePath(p.startsWith('~') ? (process.env.HOME || '') + p.slice(1) : p);
+    return abs === RUN_ROOT || abs.startsWith(RUN_ROOT + sep);
+  });
+}
 async function approveInside({ page }) {
   const allow = page.locator('button').filter({ visible: true }).filter({ hasText: /^(Allow|Approve|Accept)\b/ }).last();
-  const card = allow.locator('xpath=ancestor::*[.//button[normalize-space()!=""]][3]');
-  const text = await card.innerText().catch(() => '');
-  const paths = text.match(/(~|\/Users\/[^/\s]+)\/[^\s'"`]*/g) || [];
-  const inside = paths.every(p => p.replace(/^\/Users\/[^/\s]+/, '~').startsWith(`~${RUN_DIR}`));
-  if (!inside || (!paths.length && !/hello\.txt/.test(text))) return false;
+  // The request card: the nearest ancestor that holds more than the button's own label.
+  const text = await allow.evaluate(b => {
+    let e = b;
+    for (let i = 0; i < 8 && e.parentElement; i++) { e = e.parentElement; if (e.innerText.trim().length > b.innerText.trim().length + 20) break; }
+    return e.innerText;
+  }).catch(() => '');
+  if (!insideRun(text)) return false;
   await allow.click(); await wait(page, 800);
   return true;
 }

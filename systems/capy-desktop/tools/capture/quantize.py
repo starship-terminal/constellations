@@ -27,26 +27,31 @@ RAW = pathlib.Path(sys.argv[1]).expanduser()
 # A pick is a frame-name suffix ("00", "done") or a function of the step's frames [(name, state), ...] that
 # returns one name. Capy 0.5.0 ran each prompt on this Mac in a few seconds: the thread page loads, the agent
 # thinks, runs one tool, streams its reply and stops; the inspector step only opens the right pane.
+# A pick returns None when its state never showed: a brief state can fall between two frames, and then that
+# screenshot is skipped (with a note) instead of stopping the build.
 def _before_first(state, then):
     """The last `state` frame before the first `then` frame."""
     def pick(frames):
-        i = next(i for i, (_, s) in enumerate(frames) if s == then)
-        return [n for n, s in frames[:i] if s == state][-1]
+        i = next((i for i, (_, s) in enumerate(frames) if s == then), len(frames))
+        hits = [n for n, s in frames[:i] if s == state]
+        return hits[-1] if hits else None
     return pick
 
 
 def _first_after_last(state, after):
     """The first `state` frame after the last `after` frame: the reply a moment after its first words."""
     def pick(frames):
-        i = max(i for i, (_, s) in enumerate(frames) if s == after)
-        return next(n for n, s in frames[i:] if s == state)
+        i = max((i for i, (_, s) in enumerate(frames) if s == after), default=0)
+        return next((n for n, s in frames[i:] if s == state), None)
     return pick
 
 
 def _end_of_first(state):
     """The last frame of the first unbroken run of `state` frames: the tool row as late as it still runs."""
     def pick(frames):
-        i = next(i for i, (_, s) in enumerate(frames) if s == state)
+        i = next((i for i, (_, s) in enumerate(frames) if s == state), None)
+        if i is None:
+            return None
         while i + 1 < len(frames) and frames[i + 1][1] == state:
             i += 1
         return frames[i][0]
@@ -88,7 +93,11 @@ def run_frames(frames):
     out = {}
     for shot, (step, pick) in RUN_FRAMES.items():
         fr = steps.get(step, [])
-        out[shot] = f"{step}-{pick}" if isinstance(pick, str) else pick(fr)
+        frame = f"{step}-{pick}" if isinstance(pick, str) else pick(fr)
+        if frame is None or frame not in frames:
+            print(f"no frame for {shot} ({step}): skipped")
+            continue
+        out[shot] = frame
     return out
 
 
@@ -121,6 +130,10 @@ def main():
         theme = theme_dir.name
         out = PKG / "screenshots" / theme
         keep = set()
+        # The run frames are chosen before anything is written, so a run that cannot be read leaves the folder as it was.
+        frames_json = theme_dir / "run" / "frames.json"
+        frames = json.loads(frames_json.read_text()) if frames_json.exists() else {}
+        picks = run_frames(frames)
         # Only shots captures.json records: a shot that failed on a later run is dropped from it, and its
         # older PNG must not be published again without a current reading.
         shots = json.loads((theme_dir / "captures.json").read_text()) if (theme_dir / "captures.json").exists() else {}
@@ -129,10 +142,8 @@ def main():
                 print("skipped (no reading in captures.json):", f.name)
                 continue
             store(f, out / f.name); keep.add(f.name); n += 1
-        frames_json = theme_dir / "run" / "frames.json"
-        frames = json.loads(frames_json.read_text()) if frames_json.exists() else {}
         kept = {}
-        for name, frame in run_frames(frames).items():
+        for name, frame in picks.items():
             f = theme_dir / "run" / f"{frame}.png"
             if f.exists():
                 store(f, out / f"{name}.png"); keep.add(f"{name}.png"); n += 1
