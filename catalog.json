@@ -2223,6 +2223,77 @@
       "layoutGaps": {
         "icons/": "Codex's icons are OpenAI's own inline SVG artwork and are not kept here (docs/RIGHTS.md)"
       }
+    },
+    {
+      "slug": "zed-desktop",
+      "name": "Zed (desktop)",
+      "url": "https://zed.dev",
+      "category": "ai-agent",
+      "platform": "desktop",
+      "goodFor": "Native code editor drawn with Metal (GPUI) with an agent panel: Zed's own One Dark and One Light theme keys as declared in its open-source theme file, checked against the window's pixels; a grey title and status bar around a darker panel tier and the darkest editor, one blue accent for links, the cursor and active icons, ghost buttons that change fill on hover, 4/6/8 pt radii, 26 pt tree rows, 28 pt controls, a 610 pt command palette, IBM Plex Sans (Zed's .ZedSans) for the UI and the owner's Menlo 11 for code",
+      "tags": [
+        "desktop",
+        "native",
+        "gpui",
+        "metal",
+        "macos",
+        "editor",
+        "coding",
+        "ai",
+        "agent",
+        "palette",
+        "panels",
+        "tabs",
+        "diff",
+        "terminal",
+        "dense",
+        "dark",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-25",
+      "access": "the owner's signed-in Zed (Free plan) on a scratch folder; colours from Zed's published theme file at the v1.25.2 commit, sizes and type from 2x window pixels",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1512
+      ],
+      "entry": "systems/zed-desktop/README.md",
+      "tokens": "systems/zed-desktop/tokens.json",
+      "styleGuide": "systems/zed-desktop/style-guide.html",
+      "preview": {
+        "cover": "systems/zed-desktop/screenshots/dark/52-agent-result.png",
+        "swatches": {
+          "light": {
+            "page": "light.role.page",
+            "surface": "light.role.surface",
+            "text": "light.role.text.primary",
+            "muted": "light.role.text.secondary",
+            "accent": "light.role.accent.default",
+            "border": "light.role.border.default"
+          },
+          "dark": {
+            "page": "dark.role.page",
+            "surface": "dark.role.surface",
+            "text": "dark.role.text.primary",
+            "muted": "dark.role.text.secondary",
+            "accent": "dark.role.accent.default",
+            "border": "dark.role.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.ui",
+          "core.fontFamily.buffer"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/zed-desktop/raw-shots (full-colour captures and the Display P3 originals, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Zed's icons are its own artwork and are not kept here (docs/RIGHTS.md)"
+      }
     }
   ]
 }
