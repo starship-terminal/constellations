@@ -30,7 +30,7 @@ Screens: [user-menu](screenshots/dark/user-menu.png), [more-menu](screenshots/li
 
 ## Dialogs and confirmation
 
-Dialogs centre over the `base.overlay` scrim on `base.popover` with `shadow.overlay`, the same level as menus (`shadow.sheet` is declared for sheets and drawers, which were not measured). The destructive confirmation (the gallery's Delete a thread) is small: a medium title, one sentence that names what will be lost and what survives (the branch stays on GitHub), then a ghost Cancel and the red Delete thread. Paged dialogs push sub-pages with a back chevron; Customize sidebar is a list of rows with a select each. Sheets slide from the left (the phone navigation), side sheets from the right, drawers from the bottom.
+Dialogs centre over the `base.overlay` scrim on `base.popover` with a 12px radius and `shadow.overlay`, the same level as menus (`shadow.sheet` is declared for sheets and drawers, which were not measured). The destructive confirmation (the gallery's Delete a thread) is small: a medium title, one sentence that names what will be lost and what survives (the branch stays on GitHub), then a ghost Cancel and the red Delete thread. Paged dialogs push sub-pages with a back chevron; Customize sidebar is a list of rows with a select each. Sheets slide from the left (the phone navigation), side sheets from the right, drawers from the bottom.
 
 Screens: [delete-confirmation](screenshots/dark/delete-confirmation.png), [paged-dialog](screenshots/light/paged-dialog.png), [customize-sidebar-dialog](screenshots/dark/customize-sidebar-dialog.png), [design-dialog](screenshots/light/design-dialog.png), [design-sheet-and-drawer](screenshots/dark/design-sheet-and-drawer.png).
 

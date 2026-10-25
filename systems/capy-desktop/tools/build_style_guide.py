@@ -21,7 +21,8 @@ OUT = PKG / "style-guide.html"
 NAME = "Capy desktop"  # PRODUCT (adapt)
 LEDE = ("Capy 0.4.7 for macOS (Electron), Scrapybara's cloud coding-agent app, read live from the running app over its "
         "remote-debugging port on 2026-10-25, in its light and dark themes with the default colour theme. Every value below is a token "
-        "from tokens.json; the specimens are rebuilt from those tokens in Inter, Capy's interface font, not copied from the app.")  # PRODUCT (adapt)
+        "from tokens.json; the specimens are rebuilt from those tokens, not copied from the app. Type is set in core.fontFamily.sans: "
+        "Inter where it is installed, the stack's fallbacks otherwise (this page loads no font files).")  # PRODUCT (adapt)
 GROUP_ORDER = ["role", "base", "diff", "chart", "shadow", "component"]
 
 
@@ -210,7 +211,7 @@ figcaption { font-size:var(--fontSize-xs); color:var(--base-muted-foreground-2);
 .sp-btn { display:inline-flex; align-items:center; height:var(--controlHeight-sm); padding:0 10px; border-radius:var(--radius-button); font-weight:500; border:0.5px solid transparent; color:var(--base-fg); }
 .sp-btn.soft { background:var(--base-secondary); } .sp-btn.outline { border-color:var(--base-border-2); }
 .sp-btn.solid { background:var(--base-button); border-color:var(--base-border-2); box-shadow:var(--shadow-plate); }
-.sp-btn.selected { background:var(--base-secondary-hover); } .sp-btn.accent { background:var(--base-primary); color:var(--base-primary-text); }
+.sp-btn.selected { background:var(--component-button-selected-bg); } .sp-btn.accent { background:var(--base-primary); color:var(--base-primary-text); }
 .sp-btn.inverse { background:var(--base-inverse); color:var(--base-inverse-text); } .sp-btn.danger { background:var(--base-destructive); color:var(--base-destructive-text); }
 .sp-btn.ghost:hover, .sp-btn.outline:hover { background:var(--base-secondary); }
 .sp-btn.focus { outline:var(--focusRing-width) solid var(--base-ring); outline-offset:var(--focusRing-offset); }
@@ -221,7 +222,7 @@ figcaption { font-size:var(--fontSize-xs); color:var(--base-muted-foreground-2);
 .sp-mrow.hi { background:var(--base-popover-hover); } .sp-mrow.danger { color:var(--base-destructive); }
 .sp-end { margin-left:auto; color:var(--base-muted-foreground-2); font-size:var(--fontSize-xs); }
 .sp-scrim { background:var(--base-overlay); padding:24px; border-radius:var(--radius-card); }
-.sp-dialog { background:var(--base-popover); border-radius:var(--radius-overlay); padding:20px; box-shadow:var(--shadow-overlay); }
+.sp-dialog { background:var(--component-confirm-dialog-bg); border-radius:var(--component-confirm-dialog-radius); padding:20px; box-shadow:var(--shadow-overlay); }
 .sp-seg { display:inline-flex; gap:4px; margin-bottom:10px; } .sp-seg span { padding:4px 10px; border-radius:var(--radius-button); color:var(--base-muted-foreground-1); } .sp-seg span.on { background:var(--base-secondary); color:var(--base-fg); }
 .sp-card { background:var(--base-card); border:0.5px solid var(--base-card-hairline); box-shadow:var(--shadow-card); border-radius:var(--radius-card); }
 .sp-field { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:var(--spacing-4); border-bottom:0.5px solid var(--base-border-1); }

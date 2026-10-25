@@ -379,7 +379,9 @@ const DRAFT_KEY = 'capy-web:new-thread-draft';
 let before = null, refused = false;
 async function pickProject(page, name) {
   await btn(page, 'Project').click(); await wait(page, 700);
-  await page.locator('[role=menuitem]').filter({ hasText: new RegExp(`^${name}$`) }).first().click(); await wait(page, 1200);
+  // The name is matched literally: a project called `Client (web)` must not be read as a pattern.
+  const literal = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  await page.locator('[role=menuitem]').filter({ hasText: new RegExp(`^${literal}$`) }).first().click(); await wait(page, 1200);
   const now = (await btn(page, 'Project').innerText()).trim();
   if (now !== name) throw new Error(`project is ${now}, not ${name}`);
 }

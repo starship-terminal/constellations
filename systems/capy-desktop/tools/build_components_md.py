@@ -28,7 +28,7 @@ INVENTORY = [
     ("Button", ["button-accent", "button-outline", "button-soft", "button-solid", "button-ghost", "button-selected", "button-inverse", "button-danger", "button-danger-text",
                 "button-xs", "button-base", "button-loading", "row-button", "setup-button", "toast-button"],
      "Capy's button has seven looks, which its gallery shows on each surface it ships on (card, window, panel, overlay): ghost (text only), soft (`base.secondary`), "
-     "outline (a `base.border-2` hairline), solid (`base.button`), selected (the inset `base.secondary-hover` fill), accent (`base.primary` teal with white text) and "
+     "outline (a `base.border-2` hairline), solid (`base.button`), selected (`base.secondary`, the soft look's fill, marked `data-selected`), accent (`base.primary` teal with white text) and "
      "inverse (`base.inverse`, the ink). Painted intents add a red fill (`base.destructive`) and red text for Discard and Remove key. Sizes are the control "
      "heights, xs 24, sm 28 and base 32 (`controlHeight.*`); every button has the 6px radius (`radius.button`). Loading replaces the first icon with a dot grid "
      "and lowers the opacity. Hover deepens the fill (`base.button-hover`, `base.secondary-hover`); focus-visible draws a `base.ring` outline. In the app, "
@@ -66,8 +66,8 @@ INVENTORY = [
      "Move to, Tags, Rename, Archive A, Delete D in red)."),
     ("Tooltip", ["tooltip"], "A small raised label on `base.popover` with a `base.border-2` hairline, the 6px radius and 12px text, after a 300ms hover delay (the gallery's note), with the shortcut beside the name (Search, Command K)."),
     ("Dialog", ["confirm-dialog", "dialog", "dialog-title", "dialog-description", "scrim", "palette", "palette-row", "palette-row-selected"],
-     "Dialogs sit on `base.popover` with the 8px overlay radius and `shadow.overlay`, the menus' level, over the `base.overlay` scrim. The delete confirmation (from the gallery, on "
-     "fixture data) has a title, a sentence that names what is lost, a ghost Cancel and a red Delete thread. The search palette is a 640px command menu with "
+     "Dialogs sit on `base.popover` with a 12px radius (`component.confirm-dialog.radius`, the panel's radius) and `shadow.overlay`, the menus' level, over the `base.overlay` scrim. The delete confirmation (from the gallery, on "
+     "fixture data) has a title, a sentence that names what is lost, a ghost Cancel and a red Delete thread. The search palette is a 720px command menu (`core.layout.palette`, 12px radius) with "
      "filter tabs, sections and a footer of keyboard hints; Customize sidebar is a plain modal."),
     ("Toast", ["toast", "toast-title", "toast-description", "toast-error"],
      "Sonner toasts restyled: constant width, an icon, a medium title and a muted description always, on `base.popover` with `shadow.overlay`, bottom right. The "
@@ -182,15 +182,17 @@ def as_token(t, prop, raw):
         return f"{v}"
     m = re.fullmatch(r"([\d.]+)px", raw)
     if m:
-        v = "%gpx" % round(float(m.group(1)))
+        exact, v = "%gpx" % float(m.group(1)), "%gpx" % round(float(m.group(1)))
         group = {"border-top-left-radius": "radius", "height": "controlHeight", "padding-right": "spacing", "padding-left": "spacing",
                  "padding-top": "spacing", "font-size": "fontSize", "line-height": "lineHeight", "letter-spacing": "letterSpacing"}.get(prop)
         if v == "9999px" and prop == "border-top-left-radius":
             stats["token"] += 1
             return "`radius.full`"
-        if (group, v) in DIDX:
-            stats["token"] += 1
-            return f"`{DIDX[(group, v)]}` {v}"
+        # Look the measured length up as measured (16.25px is lineHeight.sm), then rounded.
+        for key in (exact, v):
+            if (group, key) in DIDX:
+                stats["token"] += 1
+                return f"`{DIDX[(group, key)]}` {key}"
         if prop == "font-weight":
             stats["written"] -= 1
             return None

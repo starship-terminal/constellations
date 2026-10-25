@@ -21,6 +21,8 @@ DEFAULT_SHOT = {
     "menu-item": "more-menu",
     "icon-button": "home",
     "tab": "home",
+    # The sidebar's shortcut hint is drawn at opacity 0 until its row is hovered; the gallery's Kbd section shows it.
+    "kbd": "design-kbd",
 }
 
 
