@@ -1,0 +1,248 @@
+{
+ "note": "Each translucent token composited over the painted fill under it, against the pixel. A text reading is the glyph pixel furthest from the fill, so it matches only where a glyph has a fully covered pixel.",
+ "worst": 2,
+ "rows": [
+  {
+   "theme": "dark",
+   "reading": "px.list.selected",
+   "token": "dark.component.list.row.selectedBg",
+   "declared": "#FFFFFF1A",
+   "over": "px.window.main #1A1A1A",
+   "expected": "#313131",
+   "pixel": "#303030",
+   "maxChannelDiff": 1,
+   "capture": "screenshots/dark/00-root.png"
+  },
+  {
+   "theme": "dark",
+   "reading": "px.list.hover",
+   "token": "dark.component.list.row.hoverBg",
+   "declared": "#FFFFFF0D",
+   "over": "px.window.main #1A1A1A",
+   "expected": "#262626",
+   "pixel": "#262626",
+   "maxChannelDiff": 0,
+   "capture": "screenshots/dark/04-root-hover.png"
+  },
+  {
+   "theme": "dark",
+   "reading": "px.text.primary",
+   "token": "dark.text.primary",
+   "declared": "#FFFFFF",
+   "over": "px.window.main #1A1A1A",
+   "expected": "#FFFFFF",
+   "pixel": "#FFFFFF",
+   "maxChannelDiff": 0,
+   "capture": "screenshots/dark/00-root.png"
+  },
+  {
+   "theme": "dark",
+   "reading": "px.text.secondary",
+   "token": "dark.text.secondary",
+   "declared": "#FFFFFF99",
+   "over": "px.window.main #1A1A1A",
+   "expected": "#A3A3A3",
+   "pixel": "#A3A3A3",
+   "maxChannelDiff": 0,
+   "capture": "screenshots/dark/00-root.png"
+  },
+  {
+   "theme": "dark",
+   "reading": "px.text.sectionHeader",
+   "token": "dark.component.list.sectionHeader.text",
+   "declared": "#FFFFFF99",
+   "over": "px.window.main #1A1A1A",
+   "expected": "#A3A3A3",
+   "pixel": "#A3A3A3",
+   "maxChannelDiff": 0,
+   "capture": "screenshots/dark/00-root.png"
+  },
+  {
+   "theme": "dark",
+   "reading": "px.text.placeholder",
+   "token": "dark.text.placeholder",
+   "declared": "#FFFFFF66",
+   "over": "px.window.main #1A1A1A",
+   "expected": "#767676",
+   "pixel": "#767676",
+   "maxChannelDiff": 0,
+   "capture": "screenshots/dark/00-root.png"
+  },
+  {
+   "theme": "dark",
+   "reading": "px.settings.card",
+   "token": "dark.surface",
+   "declared": "#FFFFFF06",
+   "over": "px.window.settings #121212",
+   "expected": "#181818",
+   "pixel": "#181818",
+   "maxChannelDiff": 0,
+   "capture": "screenshots/dark/20-settings-general.png"
+  },
+  {
+   "theme": "dark",
+   "reading": "px.settings.separator",
+   "token": "dark.border.tertiary",
+   "declared": "#FFFFFF0D",
+   "over": "px.settings.card #181818",
+   "expected": "#242424",
+   "pixel": "#232323",
+   "maxChannelDiff": 1,
+   "capture": "screenshots/dark/20-settings-general.png"
+  },
+  {
+   "theme": "dark",
+   "reading": "px.sidebar.selected",
+   "token": "dark.surfaceFill.listSelection",
+   "declared": "#FFFFFF1A",
+   "over": "px.sidebar #141414",
+   "expected": "#2C2C2C",
+   "pixel": "#2B2B2B",
+   "maxChannelDiff": 1,
+   "capture": "screenshots/dark/20-settings-general.png"
+  },
+  {
+   "theme": "dark",
+   "reading": "px.switch.on",
+   "token": "dark.component.switch.onBg",
+   "declared": "#4FA3F8",
+   "over": null,
+   "expected": "#4FA3F8",
+   "pixel": "#4FA3F8",
+   "maxChannelDiff": 0,
+   "capture": "screenshots/dark/20-settings-general.png"
+  },
+  {
+   "theme": "dark",
+   "reading": "px.switch.off",
+   "token": "dark.component.switch.offBg",
+   "declared": "#FFFFFF33",
+   "over": "px.settings.card #181818",
+   "expected": "#464646",
+   "pixel": "#464646",
+   "maxChannelDiff": 0,
+   "capture": "screenshots/dark/20-settings-general.png"
+  },
+  {
+   "theme": "light",
+   "reading": "px.list.selected",
+   "token": "light.component.list.row.selectedBg",
+   "declared": "#0000001A",
+   "over": "px.window.main #F2F2F2",
+   "expected": "#D9D9D9",
+   "pixel": "#DADADA",
+   "maxChannelDiff": 1,
+   "capture": "screenshots/light/00-root.png"
+  },
+  {
+   "theme": "light",
+   "reading": "px.list.hover",
+   "token": "light.component.list.row.hoverBg",
+   "declared": "#0000000D",
+   "over": "px.window.main #F2F2F2",
+   "expected": "#E6E6E6",
+   "pixel": "#E6E6E6",
+   "maxChannelDiff": 0,
+   "capture": "screenshots/light/04-root-hover.png"
+  },
+  {
+   "theme": "light",
+   "reading": "px.text.primary",
+   "token": "light.text.primary",
+   "declared": "#000000",
+   "over": "px.window.main #F2F2F2",
+   "expected": "#000000",
+   "pixel": "#000000",
+   "maxChannelDiff": 0,
+   "capture": "screenshots/light/00-root.png"
+  },
+  {
+   "theme": "light",
+   "reading": "px.text.secondary",
+   "token": "light.text.secondary",
+   "declared": "#00000099",
+   "over": "px.window.main #F2F2F2",
+   "expected": "#616161",
+   "pixel": "#616161",
+   "maxChannelDiff": 0,
+   "capture": "screenshots/light/00-root.png"
+  },
+  {
+   "theme": "light",
+   "reading": "px.text.sectionHeader",
+   "token": "light.component.list.sectionHeader.text",
+   "declared": "#00000099",
+   "over": "px.window.main #F2F2F2",
+   "expected": "#616161",
+   "pixel": "#616161",
+   "maxChannelDiff": 0,
+   "capture": "screenshots/light/00-root.png"
+  },
+  {
+   "theme": "light",
+   "reading": "px.text.placeholder",
+   "token": "light.text.placeholder",
+   "declared": "#00000066",
+   "over": "px.window.main #F2F2F2",
+   "expected": "#919191",
+   "pixel": "#919191",
+   "maxChannelDiff": 0,
+   "capture": "screenshots/light/00-root.png"
+  },
+  {
+   "theme": "light",
+   "reading": "px.settings.card",
+   "token": "light.surface",
+   "declared": "#00000006",
+   "over": "px.window.settings #FFFFFF",
+   "expected": "#F9F9F9",
+   "pixel": "#F9F9F9",
+   "maxChannelDiff": 0,
+   "capture": "screenshots/light/20-settings-general.png"
+  },
+  {
+   "theme": "light",
+   "reading": "px.settings.separator",
+   "token": "light.border.tertiary",
+   "declared": "#0000000D",
+   "over": "px.settings.card #F9F9F9",
+   "expected": "#ECECEC",
+   "pixel": "#EDEDED",
+   "maxChannelDiff": 1,
+   "capture": "screenshots/light/20-settings-general.png"
+  },
+  {
+   "theme": "light",
+   "reading": "px.sidebar.selected",
+   "token": "light.surfaceFill.listSelection",
+   "declared": "#0000001A",
+   "over": "px.sidebar #F2F2F2",
+   "expected": "#D9D9D9",
+   "pixel": "#DADADA",
+   "maxChannelDiff": 1,
+   "capture": "screenshots/light/20-settings-general.png"
+  },
+  {
+   "theme": "light",
+   "reading": "px.switch.on",
+   "token": "light.component.switch.onBg",
+   "declared": "#138AF2",
+   "over": null,
+   "expected": "#138AF2",
+   "pixel": "#158AF2",
+   "maxChannelDiff": 2,
+   "capture": "screenshots/light/20-settings-general.png"
+  },
+  {
+   "theme": "light",
+   "reading": "px.switch.off",
+   "token": "light.component.switch.offBg",
+   "declared": "#00000033",
+   "over": "px.settings.card #F9F9F9",
+   "expected": "#C7C7C7",
+   "pixel": "#C7C7C7",
+   "maxChannelDiff": 0,
+   "capture": "screenshots/light/20-settings-general.png"
+  }
+ ]
+}

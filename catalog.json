@@ -2435,6 +2435,74 @@
       }
     },
     {
+      "slug": "raycast-desktop",
+      "name": "Raycast (desktop)",
+      "url": "https://www.raycast.com",
+      "category": "productivity",
+      "platform": "desktop",
+      "goodFor": "Keyboard-first launcher and command palette for macOS: one floating 750 x 475 pt window with a borderless 64 pt search field, 38 pt result rows inset 8 pt, a footer action bar naming the primary action and Command-K for the rest; Raycast Dark and Raycast Light as declared in the app's own shipped stylesheet and theme definitions, where every fill is the foreground or selection colour at 5, 10, 20, 40 or 60% over a translucent grey window, checked against the window's pixels; a 13/11 Inter type scale, 46 pt settings rows on 2.5% cards, pill buttons and macOS switches in the theme's blue",
+      "tags": [
+        "desktop",
+        "native",
+        "macos",
+        "launcher",
+        "command-palette",
+        "productivity",
+        "keyboard",
+        "search",
+        "list",
+        "settings",
+        "dense",
+        "translucent",
+        "dark",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-25",
+      "access": "the owner's signed-in Raycast 2.9.0 (free plan, AI trial ended); colours, sizes and type from the stylesheets and theme definitions shipped in the app bundle, window fills and the pixel check from 2x window captures",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        750
+      ],
+      "entry": "systems/raycast-desktop/README.md",
+      "tokens": "systems/raycast-desktop/tokens.json",
+      "styleGuide": "systems/raycast-desktop/style-guide.html",
+      "preview": {
+        "cover": "systems/raycast-desktop/screenshots/dark/00-root.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.accent.default",
+            "border": "light.border.secondary"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.accent.default",
+            "border": "dark.border.secondary"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.ui",
+          "core.fontFamily.mono"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/raycast-desktop/raw-shots (full-colour captures and the Display P3 originals, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Raycast's icons are its own artwork and are not kept here (docs/RIGHTS.md)"
+      }
+    },
+    {
       "slug": "notion-desktop",
       "name": "Notion (desktop)",
       "url": "https://www.notion.com/desktop",
