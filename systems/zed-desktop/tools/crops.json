@@ -1,0 +1,900 @@
+{
+ "crops": [
+  {
+   "name": "title-bar-default",
+   "capture": "00-launch",
+   "box": [
+    0,
+    0,
+    3024,
+    70
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "button-default",
+   "capture": "00-launch",
+   "box": [
+    2640,
+    0,
+    384,
+    70
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "button-hover",
+   "capture": "22-hover-button",
+   "box": [
+    2640,
+    0,
+    384,
+    70
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "icon-button-default",
+   "capture": "01-editor-python",
+   "box": [
+    2800,
+    66,
+    224,
+    70
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "icon-button-hover",
+   "capture": "21-hover-icon-button",
+   "box": [
+    2800,
+    66,
+    224,
+    70
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "tab-bar-default",
+   "capture": "02-editor-markdown-tabs",
+   "box": [
+    478,
+    66,
+    1100,
+    70
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "tab-hover",
+   "capture": "23-hover-tab",
+   "box": [
+    478,
+    66,
+    1100,
+    70
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "breadcrumb-toolbar",
+   "capture": "01-editor-python",
+   "box": [
+    478,
+    132,
+    2546,
+    92
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "status-bar-default",
+   "capture": "01-editor-python",
+   "box": [
+    0,
+    1836,
+    3024,
+    62
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "file-tree-default",
+   "capture": "01-editor-python",
+   "box": [
+    0,
+    66,
+    480,
+    300
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "editor-gutter-git",
+   "capture": "01-editor-python",
+   "box": [
+    478,
+    220,
+    1500,
+    760
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "editor-multi-cursor",
+   "capture": "28-multi-cursor-selection",
+   "box": [
+    478,
+    380,
+    1500,
+    360
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "diagnostic-hover",
+   "capture": "08-hover-diagnostic",
+   "box": [
+    600,
+    820,
+    1100,
+    270
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "diagnostics-panel",
+   "capture": "09-diagnostics-panel",
+   "box": [
+    478,
+    132,
+    1500,
+    500
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "buffer-search-bar",
+   "capture": "10-buffer-search",
+   "box": [
+    478,
+    132,
+    2546,
+    620
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "project-search",
+   "capture": "11-project-search",
+   "box": [
+    478,
+    66,
+    2546,
+    700
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "completions-menu",
+   "capture": "12-completions-menu",
+   "box": [
+    600,
+    200,
+    1400,
+    600
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "palette-empty",
+   "capture": "05-command-palette",
+   "box": [
+    880,
+    140,
+    1270,
+    960
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "palette-typed",
+   "capture": "06-command-palette-typed",
+   "box": [
+    880,
+    140,
+    1270,
+    1000
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "palette-selected",
+   "capture": "07-command-palette-selected",
+   "box": [
+    880,
+    140,
+    1270,
+    1000
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "file-finder-empty",
+   "capture": "03-file-finder",
+   "box": [
+    900,
+    140,
+    1240,
+    380
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "file-finder-typed",
+   "capture": "04-file-finder-typed",
+   "box": [
+    900,
+    140,
+    1240,
+    440
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "terminal-panel",
+   "capture": "13-terminal-panel",
+   "box": [
+    478,
+    1180,
+    2546,
+    660
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "git-panel",
+   "capture": "14-git-panel",
+   "box": [
+    2300,
+    66,
+    724,
+    1780
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "diff-split",
+   "capture": "15-project-diff",
+   "box": [
+    478,
+    66,
+    1700,
+    1100
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "menu-file",
+   "capture": "16-context-menu-file",
+   "box": [
+    0,
+    180,
+    600,
+    1100
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "tooltip-path",
+   "capture": "16-context-menu-file",
+   "box": [
+    0,
+    180,
+    760,
+    160
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "menu-editor",
+   "capture": "17-context-menu-editor",
+   "box": [
+    1000,
+    560,
+    540,
+    1040
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "menu-tab",
+   "capture": "18-context-menu-tab",
+   "box": [
+    900,
+    60,
+    480,
+    1020
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "dialog-confirm-trash",
+   "capture": "19-delete-confirm",
+   "box": [
+    1150,
+    840,
+    780,
+    280
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "tooltip-default",
+   "capture": "20-tooltip",
+   "box": [
+    2300,
+    1700,
+    724,
+    198
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "theme-selector",
+   "capture": "24-theme-selector",
+   "box": [
+    940,
+    140,
+    1150,
+    880
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "table-keymap",
+   "capture": "25-keymap-editor",
+   "box": [
+    478,
+    66,
+    2546,
+    800
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "markdown-preview",
+   "capture": "26-markdown-preview",
+   "box": [
+    1760,
+    66,
+    1264,
+    680
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "outline-picker",
+   "capture": "29-outline-symbols",
+   "box": [
+    940,
+    140,
+    1150,
+    460
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "branch-picker-tabs",
+   "capture": "30-branch-picker",
+   "box": [
+    150,
+    50,
+    1150,
+    340
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "menu-user",
+   "capture": "31-user-menu",
+   "box": [
+    2460,
+    40,
+    564,
+    640
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "settings-nav-selected",
+   "capture": "32-settings-general",
+   "box": [
+    0,
+    60,
+    460,
+    200
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "switch-off",
+   "capture": "32-settings-general",
+   "box": [
+    1630,
+    460,
+    140,
+    90
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "switch-on",
+   "capture": "32-settings-general",
+   "box": [
+    1630,
+    1266,
+    140,
+    90
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "select-default",
+   "capture": "32-settings-general",
+   "box": [
+    1430,
+    640,
+    350,
+    110
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "banner-warning",
+   "capture": "32-settings-general",
+   "box": [
+    500,
+    90,
+    1260,
+    140
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "list-row-settings",
+   "capture": "32-settings-general",
+   "box": [
+    500,
+    410,
+    1260,
+    190
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "button-edit-json",
+   "capture": "32-settings-general",
+   "box": [
+    1440,
+    30,
+    330,
+    80
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "stepper-default",
+   "capture": "34-settings-editor",
+   "box": [
+    1480,
+    900,
+    300,
+    90
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "search-settings-typed",
+   "capture": "39-settings-search",
+   "box": [
+    0,
+    50,
+    460,
+    440
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "list-row-hover",
+   "capture": "40-settings-search-hover",
+   "box": [
+    460,
+    410,
+    1320,
+    120
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "card-extension",
+   "capture": "41-extensions",
+   "box": [
+    480,
+    420,
+    2544,
+    270
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "segmented-tabs-extensions",
+   "capture": "41-extensions",
+   "box": [
+    480,
+    240,
+    2544,
+    160
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "onboarding-panel",
+   "capture": "42-onboarding",
+   "box": [
+    1040,
+    200,
+    1420,
+    1600
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "agent-loading",
+   "capture": "43-agent-panel",
+   "box": [
+    1740,
+    60,
+    1284,
+    1840
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "composer-empty",
+   "capture": "44-agent-thread-empty",
+   "box": [
+    1740,
+    60,
+    1284,
+    1838
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "menu-agent-mode",
+   "capture": "45-agent-mode-menu",
+   "box": [
+    1500,
+    1100,
+    1524,
+    798
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "select-agent-model",
+   "capture": "46-agent-model-picker",
+   "box": [
+    1740,
+    1100,
+    1284,
+    798
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "menu-agent-effort",
+   "capture": "47-agent-effort-menu",
+   "box": [
+    1740,
+    1100,
+    1284,
+    798
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "menu-agent-profile",
+   "capture": "48-agent-profile-menu",
+   "box": [
+    1740,
+    900,
+    1284,
+    998
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "menu-agent-attach",
+   "capture": "49-agent-attach-menu",
+   "box": [
+    1740,
+    1300,
+    1284,
+    598
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "composer-typed",
+   "capture": "50-agent-composer-typed",
+   "box": [
+    1740,
+    60,
+    1284,
+    300
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "agent-running",
+   "capture": "51-agent-running",
+   "box": [
+    1740,
+    60,
+    1284,
+    1838
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "agent-result",
+   "capture": "52-agent-result",
+   "box": [
+    1740,
+    60,
+    1284,
+    1200
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "tool-card-running",
+   "capture": "53-agent-tool-running",
+   "box": [
+    1740,
+    1100,
+    1284,
+    798
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "agent-edit-result",
+   "capture": "55-agent-edit-result",
+   "box": [
+    1740,
+    60,
+    1284,
+    1838
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "menu-agent-new-thread",
+   "capture": "56-agent-new-thread-menu",
+   "box": [
+    2500,
+    60,
+    524,
+    540
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  },
+  {
+   "name": "menu-agent-options",
+   "capture": "57-agent-options-menu",
+   "box": [
+    2540,
+    60,
+    484,
+    840
+   ],
+   "themes": [
+    "dark",
+    "light"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,2248 @@
+{
+ "cap.agentBody": {
+  "dark": {
+   "args": [
+    1795,
+    700,
+    1809,
+    745
+   ],
+   "capture": "screenshots/dark/52-agent-result.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'T' of an agent reply paragraph",
+   "op": "cap",
+   "top": 714,
+   "value": "9.5pt"
+  }
+ },
+ "cap.agentHeading": {
+  "dark": {
+   "args": [
+    1795,
+    640,
+    1807,
+    690
+   ],
+   "capture": "screenshots/dark/52-agent-result.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'D' of an agent reply heading ('Done')",
+   "op": "cap",
+   "top": 656,
+   "value": "9.5pt"
+  }
+ },
+ "cap.buffer": {
+  "dark": {
+   "args": [
+    610,
+    300,
+    624,
+    345
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "evidence": "Derived",
+   "inkPx": 17,
+   "note": "'M' of 'MAX_ITEMS' in the buffer (Menlo)",
+   "op": "cap",
+   "top": 313,
+   "value": "8pt"
+  },
+  "light": {
+   "args": [
+    610,
+    300,
+    624,
+    345
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "evidence": "Derived",
+   "inkPx": 17,
+   "note": "'M' of 'MAX_ITEMS' in the buffer (Menlo)",
+   "op": "cap",
+   "top": 313,
+   "value": "8pt"
+  }
+ },
+ "cap.mdBody": {
+  "dark": {
+   "args": [
+    1811,
+    262,
+    1823,
+    300
+   ],
+   "capture": "screenshots/dark/26-markdown-preview.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'A' of a Markdown preview paragraph",
+   "op": "cap",
+   "top": 274,
+   "value": "9.5pt"
+  },
+  "light": {
+   "args": [
+    1811,
+    262,
+    1823,
+    300
+   ],
+   "capture": "screenshots/light/26-markdown-preview.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'A' of a Markdown preview paragraph",
+   "op": "cap",
+   "top": 274,
+   "value": "9.5pt"
+  }
+ },
+ "cap.mdH1": {
+  "dark": {
+   "args": [
+    1808,
+    160,
+    1820,
+    225
+   ],
+   "capture": "screenshots/dark/26-markdown-preview.png",
+   "evidence": "Derived",
+   "inkPx": 35,
+   "note": "'C' of the Markdown preview's H1",
+   "op": "cap",
+   "top": 176,
+   "value": "17pt"
+  },
+  "light": {
+   "args": [
+    1808,
+    160,
+    1820,
+    225
+   ],
+   "capture": "screenshots/light/26-markdown-preview.png",
+   "evidence": "Derived",
+   "inkPx": 35,
+   "note": "'C' of the Markdown preview's H1",
+   "op": "cap",
+   "top": 176,
+   "value": "17pt"
+  }
+ },
+ "cap.settingsDesc": {
+  "dark": {
+   "args": [
+    516,
+    470,
+    532,
+    510
+   ],
+   "capture": "screenshots/dark/32-settings-general.png",
+   "evidence": "Derived",
+   "inkPx": 18,
+   "note": "'O' of the row description",
+   "op": "cap",
+   "top": 480,
+   "value": "8.5pt"
+  },
+  "light": {
+   "args": [
+    516,
+    470,
+    532,
+    510
+   ],
+   "capture": "screenshots/light/32-settings-general.png",
+   "evidence": "Derived",
+   "inkPx": 19,
+   "note": "'O' of the row description",
+   "op": "cap",
+   "top": 480,
+   "value": "9pt"
+  }
+ },
+ "cap.settingsRow": {
+  "dark": {
+   "args": [
+    518,
+    425,
+    532,
+    470
+   ],
+   "capture": "screenshots/dark/32-settings-general.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'A' of the 'Accessible Mode' row label",
+   "op": "cap",
+   "top": 438,
+   "value": "9.5pt"
+  },
+  "light": {
+   "args": [
+    518,
+    425,
+    532,
+    470
+   ],
+   "capture": "screenshots/light/32-settings-general.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'A' of the 'Accessible Mode' row label",
+   "op": "cap",
+   "top": 438,
+   "value": "9.5pt"
+  }
+ },
+ "cap.settingsTitle": {
+  "dark": {
+   "args": [
+    516,
+    265,
+    528,
+    320
+   ],
+   "capture": "screenshots/dark/32-settings-general.png",
+   "evidence": "Derived",
+   "inkPx": 25,
+   "note": "'G' of the 'General' page title",
+   "op": "cap",
+   "top": 278,
+   "value": "12pt"
+  },
+  "light": {
+   "args": [
+    516,
+    265,
+    528,
+    320
+   ],
+   "capture": "screenshots/light/32-settings-general.png",
+   "evidence": "Derived",
+   "inkPx": 24,
+   "note": "'G' of the 'General' page title",
+   "op": "cap",
+   "top": 279,
+   "value": "11.5pt"
+  }
+ },
+ "cap.tree": {
+  "dark": {
+   "args": [
+    59,
+    125,
+    73,
+    175
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'N' of 'NOTES.md' in the file tree",
+   "op": "cap",
+   "top": 138,
+   "value": "9.5pt"
+  }
+ },
+ "cap.treeL": {
+  "light": {
+   "args": [
+    59,
+    177,
+    73,
+    227
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'N' of 'NOTES.md' in the file tree",
+   "op": "cap",
+   "top": 190,
+   "value": "9.5pt"
+  }
+ },
+ "inset.menuItem": {
+  "dark": {
+   "args": [
+    "row",
+    396,
+    122
+   ],
+   "capture": "screenshots/dark/16-context-menu-file.png",
+   "evidence": "Sampled",
+   "from": 122,
+   "note": "Menu border to an item label",
+   "op": "inset",
+   "to": 143,
+   "value": "10.5pt"
+  }
+ },
+ "inset.paletteRowMargin": {
+  "dark": {
+   "args": [
+    "row",
+    276,
+    906,
+    3
+   ],
+   "capture": "screenshots/dark/05-command-palette.png",
+   "colour": "#2F343E",
+   "evidence": "Sampled",
+   "from": 904,
+   "note": "Palette border to the selected row's fill",
+   "op": "span",
+   "to": 911,
+   "value": "4pt"
+  }
+ },
+ "inset.paletteRowText": {
+  "dark": {
+   "args": [
+    "row",
+    276,
+    912
+   ],
+   "capture": "screenshots/dark/05-command-palette.png",
+   "evidence": "Sampled",
+   "from": 912,
+   "note": "Selected row's left edge to its label",
+   "op": "inset",
+   "to": 934,
+   "value": "11pt"
+  }
+ },
+ "inset.settingsPage": {
+  "dark": {
+   "args": [
+    "row",
+    290,
+    452
+   ],
+   "capture": "screenshots/dark/32-settings-general.png",
+   "evidence": "Sampled",
+   "from": 452,
+   "note": "Settings sidebar border to the page title",
+   "op": "inset",
+   "to": 517,
+   "value": "32.5pt"
+  }
+ },
+ "inset.tabLabel": {
+  "dark": {
+   "args": [
+    "row",
+    100,
+    481
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "evidence": "Sampled",
+   "from": 481,
+   "note": "Tab's left edge to its label (close button slot on the left)",
+   "op": "inset",
+   "to": 528,
+   "value": "23.5pt"
+  }
+ },
+ "inset.treeIcon": {
+  "dark": {
+   "args": [
+    "row",
+    148,
+    2
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "evidence": "Sampled",
+   "from": 2,
+   "note": "Window edge to a file-tree icon",
+   "op": "inset",
+   "to": 19,
+   "value": "8.5pt"
+  }
+ },
+ "inset.userMessage": {
+  "dark": {
+   "args": [
+    "row",
+    190,
+    1772
+   ],
+   "capture": "screenshots/dark/52-agent-result.png",
+   "evidence": "Sampled",
+   "from": 1772,
+   "note": "User message border to its text",
+   "op": "inset",
+   "to": 1796,
+   "value": "12pt"
+  }
+ },
+ "px.border": {
+  "dark": {
+   "args": [
+    1500,
+    68,
+    300,
+    2
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Line under the title bar (2 px = 1 pt)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#464B57"
+  },
+  "light": {
+   "args": [
+    1500,
+    68,
+    300,
+    2
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Line under the title bar (2 px = 1 pt)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#C9C9CA"
+  }
+ },
+ "px.border.variant": {
+  "dark": {
+   "args": [
+    1500,
+    222,
+    300,
+    2
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Line under the breadcrumb toolbar",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#363C46"
+  },
+  "light": {
+   "args": [
+    1500,
+    222,
+    300,
+    2
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Line under the breadcrumb toolbar",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#DFDFE0"
+  }
+ },
+ "px.editor.active_line.background": {
+  "dark": {
+   "args": [
+    2400,
+    228,
+    400,
+    20
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Line 1 (the cursor's line), right of the inline blame",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2D323B"
+  },
+  "light": {
+   "args": [
+    2400,
+    228,
+    400,
+    20
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Line 1 (the cursor's line), right of the inline blame",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EFEFF0"
+  }
+ },
+ "px.editor.background": {
+  "dark": {
+   "args": [
+    1600,
+    1300,
+    600,
+    300
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Editor below the last line",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#282C33"
+  },
+  "light": {
+   "args": [
+    1600,
+    1300,
+    600,
+    300
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Editor below the last line",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FAFAFA"
+  }
+ },
+ "px.editor.gutter.background": {
+  "dark": {
+   "args": [
+    490,
+    1300,
+    60,
+    300
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Gutter below the last line number",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#282C33"
+  },
+  "light": {
+   "args": [
+    490,
+    1300,
+    60,
+    300
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Gutter below the last line number",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FAFAFA"
+  }
+ },
+ "px.element.selected": {
+  "dark": {
+   "args": [
+    1500,
+    250,
+    300,
+    50
+   ],
+   "capture": "screenshots/dark/05-command-palette.png",
+   "evidence": "Sampled",
+   "note": "Command palette, selected row",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#454A56"
+  },
+  "light": {
+   "args": [
+    1500,
+    250,
+    300,
+    50
+   ],
+   "capture": "screenshots/light/05-command-palette.png",
+   "evidence": "Sampled",
+   "note": "Command palette, selected row",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#CACACA"
+  }
+ },
+ "px.elevated_surface.background": {
+  "dark": {
+   "args": [
+    1700,
+    700,
+    300,
+    200
+   ],
+   "capture": "screenshots/dark/05-command-palette.png",
+   "evidence": "Sampled",
+   "note": "Command palette list, right of the labels",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2F343E"
+  },
+  "light": {
+   "args": [
+    1700,
+    700,
+    300,
+    200
+   ],
+   "capture": "screenshots/light/05-command-palette.png",
+   "evidence": "Sampled",
+   "note": "Command palette list, right of the labels",
+   "op": "fill",
+   "share": 0.98,
+   "value": "#EBEBEC"
+  }
+ },
+ "px.panel.background": {
+  "dark": {
+   "args": [
+    100,
+    1200,
+    300,
+    300
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Project panel below the rows",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2F343E"
+  },
+  "light": {
+   "args": [
+    100,
+    1200,
+    300,
+    300
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Project panel below the rows",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EBEBEC"
+  }
+ },
+ "px.status_bar.background": {
+  "dark": {
+   "args": [
+    1000,
+    1845,
+    400,
+    10
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Status bar",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#3B414D"
+  },
+  "light": {
+   "args": [
+    1000,
+    1845,
+    400,
+    10
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Status bar",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#DCDCDD"
+  }
+ },
+ "px.switch.off": {
+  "dark": {
+   "args": [
+    1700,
+    498,
+    24,
+    6
+   ],
+   "capture": "screenshots/dark/32-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Switch off, track",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2E343E"
+  },
+  "light": {
+   "args": [
+    1700,
+    498,
+    24,
+    6
+   ],
+   "capture": "screenshots/light/32-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Switch off, track",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EBEBEC"
+  }
+ },
+ "px.switch.on": {
+  "dark": {
+   "args": [
+    1670,
+    1300,
+    24,
+    10
+   ],
+   "capture": "screenshots/dark/32-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Switch on, track (Use System Path Prompts)",
+   "op": "fill",
+   "share": 0.91,
+   "value": "#45607B"
+  },
+  "light": {
+   "args": [
+    1670,
+    1300,
+    24,
+    10
+   ],
+   "capture": "screenshots/light/32-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Switch on, track (Use System Path Prompts)",
+   "op": "fill",
+   "share": 0.91,
+   "value": "#BBC6F1"
+  }
+ },
+ "px.tab.active_background": {
+  "dark": {
+   "args": [
+    500,
+    74,
+    120,
+    8
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Active tab, above its label",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#282C33"
+  },
+  "light": {
+   "args": [
+    500,
+    74,
+    120,
+    8
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Active tab, above its label",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FAFAFA"
+  }
+ },
+ "px.tab_bar.background": {
+  "dark": {
+   "args": [
+    1300,
+    80,
+    300,
+    40
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Tab bar right of the only tab",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2F343E"
+  },
+  "light": {
+   "args": [
+    1300,
+    80,
+    300,
+    40
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Tab bar right of the only tab",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EBEBEC"
+  }
+ },
+ "px.terminal.background": {
+  "dark": {
+   "args": [
+    1500,
+    1500,
+    600,
+    200
+   ],
+   "capture": "screenshots/dark/13-terminal-panel.png",
+   "evidence": "Sampled",
+   "note": "Terminal panel, empty area",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#282C34"
+  },
+  "light": {
+   "args": [
+    1500,
+    1500,
+    600,
+    200
+   ],
+   "capture": "screenshots/light/13-terminal-panel.png",
+   "evidence": "Sampled",
+   "note": "Terminal panel, empty area",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FAFAFA"
+  }
+ },
+ "px.text": {
+  "dark": {
+   "args": [
+    930,
+    390,
+    400,
+    40
+   ],
+   "capture": "screenshots/dark/05-command-palette.png",
+   "evidence": "Sampled (text)",
+   "note": "Command palette item label",
+   "op": "text",
+   "value": "#DCE0E4"
+  },
+  "light": {
+   "args": [
+    930,
+    390,
+    400,
+    40
+   ],
+   "capture": "screenshots/light/05-command-palette.png",
+   "evidence": "Sampled (text)",
+   "note": "Command palette item label",
+   "op": "text",
+   "value": "#24252A"
+  }
+ },
+ "px.text.status": {
+  "dark": {
+   "args": [
+    2170,
+    1850,
+    90,
+    34
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "evidence": "Sampled (text)",
+   "note": "Status bar cursor position ('1:1')",
+   "op": "text",
+   "value": "#DCE0E4"
+  },
+  "light": {
+   "args": [
+    2170,
+    1850,
+    90,
+    34
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "evidence": "Sampled (text)",
+   "note": "Status bar cursor position ('1:1')",
+   "op": "text",
+   "value": "#24252A"
+  }
+ },
+ "px.title_bar.background": {
+  "dark": {
+   "args": [
+    1500,
+    16,
+    300,
+    40
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Title bar",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#3B414D"
+  },
+  "light": {
+   "args": [
+    1500,
+    16,
+    300,
+    40
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Title bar",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#DCDCDD"
+  }
+ },
+ "px.toolbar.background": {
+  "dark": {
+   "args": [
+    1200,
+    140,
+    300,
+    10
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Breadcrumb toolbar",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#282C33"
+  },
+  "light": {
+   "args": [
+    1200,
+    140,
+    300,
+    10
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Breadcrumb toolbar",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FAFAFA"
+  }
+ },
+ "px.version_control.added": {
+  "dark": {
+   "args": [
+    481,
+    648,
+    5,
+    76
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Gutter bar, added lines 16 to 18",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#27A657"
+  },
+  "light": {
+   "args": [
+    481,
+    648,
+    5,
+    76
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Gutter bar, added lines 16 to 18",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#27A657"
+  }
+ },
+ "px.version_control.modified": {
+  "dark": {
+   "args": [
+    481,
+    310,
+    5,
+    24
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Gutter bar, modified line 4",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#D3B021"
+  },
+  "light": {
+   "args": [
+    481,
+    310,
+    5,
+    24
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "evidence": "Sampled",
+   "note": "Gutter bar, modified line 4",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#D3B021"
+  }
+ },
+ "radius.button": {
+  "dark": {
+   "args": [
+    2664,
+    10
+   ],
+   "capture": "screenshots/dark/00-launch.png",
+   "evidence": "Derived",
+   "insets": [
+    4,
+    3,
+    2,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "note": "'Restart to Update' corner (top left)",
+   "op": "corner",
+   "value": "3.5pt"
+  },
+  "light": {
+   "args": [
+    2664,
+    10
+   ],
+   "capture": "screenshots/light/00-launch.png",
+   "evidence": "Derived",
+   "insets": [
+    4,
+    3,
+    2,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "note": "'Restart to Update' corner (top left)",
+   "op": "corner",
+   "value": "3.5pt"
+  }
+ },
+ "radius.menu": {
+  "dark": {
+   "args": [
+    940,
+    100
+   ],
+   "capture": "screenshots/dark/18-context-menu-tab.png",
+   "evidence": "Derived",
+   "insets": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    3,
+    2
+   ],
+   "note": "Tab context menu corner (top left)",
+   "op": "corner",
+   "value": "5.5pt"
+  },
+  "light": {
+   "args": [
+    940,
+    100
+   ],
+   "capture": "screenshots/light/18-context-menu-tab.png",
+   "evidence": "Derived",
+   "insets": [
+    4,
+    4,
+    3,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "note": "Tab context menu corner (top left)",
+   "op": "corner",
+   "value": "3.875pt"
+  }
+ },
+ "radius.navRow": {
+  "dark": {
+   "args": [
+    20,
+    160
+   ],
+   "capture": "screenshots/dark/32-settings-general.png",
+   "evidence": "Derived",
+   "insets": [
+    4,
+    3,
+    2,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "note": "Settings nav, selected row corner (top left)",
+   "op": "corner",
+   "value": "3.5pt"
+  },
+  "light": {
+   "args": [
+    20,
+    160
+   ],
+   "capture": "screenshots/light/32-settings-general.png",
+   "evidence": "Derived",
+   "insets": [
+    4,
+    3,
+    2,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "note": "Settings nav, selected row corner (top left)",
+   "op": "corner",
+   "value": "3.5pt"
+  }
+ },
+ "radius.palette": {
+  "dark": {
+   "args": [
+    902,
+    160
+   ],
+   "capture": "screenshots/dark/05-command-palette.png",
+   "evidence": "Derived",
+   "insets": [
+    11,
+    9,
+    7,
+    6,
+    4,
+    4,
+    2,
+    1
+   ],
+   "note": "Palette corner (top left)",
+   "op": "corner",
+   "value": "7.5pt"
+  },
+  "light": {
+   "args": [
+    902,
+    160
+   ],
+   "capture": "screenshots/light/05-command-palette.png",
+   "evidence": "Derived",
+   "insets": [
+    4,
+    3,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "note": "Palette corner (top left)",
+   "op": "corner",
+   "value": "3.25pt"
+  }
+ },
+ "radius.select": {
+  "dark": {
+   "args": [
+    1460,
+    667
+   ],
+   "capture": "screenshots/dark/32-settings-general.png",
+   "evidence": "Derived",
+   "insets": [
+    4,
+    3,
+    2,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "note": "Select corner (top left)",
+   "op": "corner",
+   "value": "3.5pt"
+  },
+  "light": {
+   "args": [
+    1460,
+    667
+   ],
+   "capture": "screenshots/light/32-settings-general.png",
+   "evidence": "Derived",
+   "insets": [
+    4,
+    3,
+    2,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "note": "Select corner (top left)",
+   "op": "corner",
+   "value": "3.5pt"
+  }
+ },
+ "radius.switch": {
+  "dark": {
+   "args": [
+    1666,
+    488
+   ],
+   "capture": "screenshots/dark/32-settings-general.png",
+   "evidence": "Derived",
+   "insets": [
+    9,
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2
+   ],
+   "note": "Switch track corner (top left)",
+   "op": "corner",
+   "value": "7.5pt"
+  },
+  "light": {
+   "args": [
+    1666,
+    488
+   ],
+   "capture": "screenshots/light/32-settings-general.png",
+   "evidence": "Derived",
+   "insets": [
+    9,
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2
+   ],
+   "note": "Switch track corner (top left)",
+   "op": "corner",
+   "value": "7.5pt"
+  }
+ },
+ "radius.tooltip": {
+  "dark": {
+   "args": [
+    2678,
+    1799
+   ],
+   "capture": "screenshots/dark/20-tooltip.png",
+   "evidence": "Derived",
+   "insets": [
+    11,
+    8,
+    7,
+    5,
+    4,
+    3,
+    3,
+    2
+   ],
+   "note": "Tooltip corner (top left)",
+   "op": "corner",
+   "value": "7.375pt"
+  },
+  "light": {
+   "args": [
+    2678,
+    1799
+   ],
+   "capture": "screenshots/light/20-tooltip.png",
+   "evidence": "Derived",
+   "insets": [
+    5,
+    4,
+    2,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "note": "Tooltip corner (top left)",
+   "op": "corner",
+   "value": "3.875pt"
+  }
+ },
+ "radius.userMessage": {
+  "dark": {
+   "args": [
+    1770,
+    150
+   ],
+   "capture": "screenshots/dark/52-agent-result.png",
+   "evidence": "Derived",
+   "insets": [
+    8,
+    6,
+    4,
+    3,
+    2,
+    2,
+    1,
+    1
+   ],
+   "note": "User message corner (top left)",
+   "op": "corner",
+   "value": "5.625pt"
+  },
+  "light": {
+   "args": [
+    1770,
+    150
+   ],
+   "capture": "screenshots/light/52-agent-result.png",
+   "evidence": "Derived",
+   "insets": [
+    8,
+    6,
+    4,
+    3,
+    2,
+    2,
+    1,
+    1
+   ],
+   "note": "User message corner (top left)",
+   "op": "corner",
+   "value": "5.625pt"
+  }
+ },
+ "size.activeTab": {
+  "dark": {
+   "args": [
+    "row",
+    76,
+    600,
+    3
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "colour": "#282C33",
+   "evidence": "Sampled",
+   "from": 480,
+   "note": "Active tab width ('inventory.py')",
+   "op": "span",
+   "to": 719,
+   "value": "120pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    76,
+    600,
+    3
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "colour": "#FAFAFA",
+   "evidence": "Sampled",
+   "from": 480,
+   "note": "Active tab width ('inventory.py')",
+   "op": "span",
+   "to": 719,
+   "value": "120pt"
+  }
+ },
+ "size.button.h": {
+  "dark": {
+   "args": [
+    "col",
+    2850,
+    0,
+    68,
+    [
+     2850,
+     10
+    ],
+    4
+   ],
+   "capture": "screenshots/dark/00-launch.png",
+   "colour": "#535964",
+   "evidence": "Sampled",
+   "from": 10,
+   "note": "'Restart to Update' button height, border to border",
+   "op": "outer",
+   "to": 57,
+   "value": "24pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    2850,
+    0,
+    68,
+    [
+     2850,
+     10
+    ],
+    4
+   ],
+   "capture": "screenshots/light/00-launch.png",
+   "colour": "#C0C1C2",
+   "evidence": "Sampled",
+   "from": 10,
+   "note": "'Restart to Update' button height, border to border",
+   "op": "outer",
+   "to": 57,
+   "value": "24pt"
+  }
+ },
+ "size.button.w": {
+  "dark": {
+   "args": [
+    "row",
+    15,
+    2600,
+    2950,
+    [
+     2665,
+     15
+    ],
+    4
+   ],
+   "capture": "screenshots/dark/00-launch.png",
+   "colour": "#535964",
+   "evidence": "Sampled",
+   "from": 2665,
+   "note": "'Restart to Update' button with its dismiss part, border to border",
+   "op": "outer",
+   "to": 2942,
+   "value": "139pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    15,
+    2600,
+    2950,
+    [
+     2665,
+     15
+    ],
+    4
+   ],
+   "capture": "screenshots/light/00-launch.png",
+   "colour": "#C0C1C2",
+   "evidence": "Sampled",
+   "from": 2665,
+   "note": "'Restart to Update' button with its dismiss part, border to border",
+   "op": "outer",
+   "to": 2942,
+   "value": "139pt"
+  }
+ },
+ "size.gutterLine": {
+  "dark": {
+   "args": [
+    "col",
+    483,
+    320,
+    12
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "colour": "#D3B021",
+   "evidence": "Sampled",
+   "from": 308,
+   "note": "One buffer line, from the modified bar on line 4",
+   "op": "span",
+   "to": 335,
+   "value": "14pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    483,
+    320,
+    12
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "colour": "#D3B021",
+   "evidence": "Sampled",
+   "from": 308,
+   "note": "One buffer line, from the modified bar on line 4",
+   "op": "span",
+   "to": 335,
+   "value": "14pt"
+  }
+ },
+ "size.menu.w": {
+  "dark": {
+   "args": [
+    "row",
+    700,
+    100,
+    560,
+    [
+     120,
+     700
+    ],
+    4
+   ],
+   "capture": "screenshots/dark/16-context-menu-file.png",
+   "colour": "#363C46",
+   "evidence": "Sampled",
+   "from": 120,
+   "note": "File context menu width, border to border",
+   "op": "outer",
+   "to": 543,
+   "value": "212pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    700,
+    100,
+    560,
+    [
+     120,
+     700
+    ],
+    4
+   ],
+   "capture": "screenshots/light/16-context-menu-file.png",
+   "colour": "#DFDFE0",
+   "evidence": "Sampled",
+   "from": 116,
+   "note": "File context menu width, border to border",
+   "op": "outer",
+   "to": 543,
+   "value": "214pt"
+  }
+ },
+ "size.navRow.h": {
+  "dark": {
+   "args": [
+    "col",
+    200,
+    150,
+    230,
+    [
+     200,
+     160
+    ],
+    4
+   ],
+   "capture": "screenshots/dark/32-settings-general.png",
+   "colour": "#3F444F",
+   "evidence": "Sampled",
+   "from": 160,
+   "note": "Settings nav, selected row height, border to border",
+   "op": "outer",
+   "to": 215,
+   "value": "28pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    200,
+    150,
+    230,
+    [
+     200,
+     160
+    ],
+    4
+   ],
+   "capture": "screenshots/light/32-settings-general.png",
+   "colour": "#D4D4D4",
+   "evidence": "Sampled",
+   "from": 160,
+   "note": "Settings nav, selected row height, border to border",
+   "op": "outer",
+   "to": 215,
+   "value": "28pt"
+  }
+ },
+ "size.palette.query": {
+  "dark": {
+   "args": [
+    "col",
+    1500,
+    200,
+    3
+   ],
+   "capture": "screenshots/dark/05-command-palette.png",
+   "colour": "#2F343E",
+   "evidence": "Sampled",
+   "from": 162,
+   "note": "Palette query field height",
+   "op": "span",
+   "to": 233,
+   "value": "36pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    1500,
+    200,
+    3
+   ],
+   "capture": "screenshots/light/05-command-palette.png",
+   "colour": "#EBEBEC",
+   "evidence": "Sampled",
+   "from": 162,
+   "note": "Palette query field height",
+   "op": "span",
+   "to": 233,
+   "value": "36pt"
+  }
+ },
+ "size.palette.row": {
+  "dark": {
+   "args": [
+    "col",
+    2060,
+    270,
+    3
+   ],
+   "capture": "screenshots/dark/05-command-palette.png",
+   "colour": "#454A56",
+   "evidence": "Sampled",
+   "from": 244,
+   "note": "Palette row height (selected row)",
+   "op": "span",
+   "to": 308,
+   "value": "32.5pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    2060,
+    270,
+    3
+   ],
+   "capture": "screenshots/light/05-command-palette.png",
+   "colour": "#CACACA",
+   "evidence": "Sampled",
+   "from": 244,
+   "note": "Palette row height (selected row)",
+   "op": "span",
+   "to": 308,
+   "value": "32.5pt"
+  }
+ },
+ "size.palette.w": {
+  "dark": {
+   "args": [
+    "row",
+    240,
+    1500,
+    3
+   ],
+   "capture": "screenshots/dark/05-command-palette.png",
+   "colour": "#2F343E",
+   "evidence": "Sampled",
+   "from": 904,
+   "note": "Command palette inner width",
+   "op": "span",
+   "to": 2119,
+   "value": "608pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    240,
+    1500,
+    3
+   ],
+   "capture": "screenshots/light/05-command-palette.png",
+   "colour": "#EBEBEC",
+   "evidence": "Sampled",
+   "from": 904,
+   "note": "Command palette inner width",
+   "op": "span",
+   "to": 2119,
+   "value": "608pt"
+  }
+ },
+ "size.projectPanel": {
+  "dark": {
+   "args": [
+    "row",
+    1200,
+    200,
+    3
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "colour": "#2F343E",
+   "evidence": "Sampled",
+   "from": 0,
+   "note": "Project panel width, border excluded",
+   "op": "span",
+   "to": 477,
+   "value": "239pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    1200,
+    200,
+    3
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "colour": "#EBEBEC",
+   "evidence": "Sampled",
+   "from": 0,
+   "note": "Project panel width, border excluded",
+   "op": "span",
+   "to": 477,
+   "value": "239pt"
+  }
+ },
+ "size.search.h": {
+  "dark": {
+   "args": [
+    "col",
+    300,
+    60,
+    150,
+    [
+     300,
+     80
+    ],
+    4
+   ],
+   "capture": "screenshots/dark/32-settings-general.png",
+   "colour": "#464B57",
+   "evidence": "Sampled",
+   "from": 80,
+   "note": "Settings search field height, border to border",
+   "op": "outer",
+   "to": 135,
+   "value": "28pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    300,
+    60,
+    150,
+    [
+     300,
+     80
+    ],
+    4
+   ],
+   "capture": "screenshots/light/32-settings-general.png",
+   "colour": "#C9C9CA",
+   "evidence": "Sampled",
+   "from": 80,
+   "note": "Settings search field height, border to border",
+   "op": "outer",
+   "to": 135,
+   "value": "28pt"
+  }
+ },
+ "size.select.h": {
+  "dark": {
+   "args": [
+    "col",
+    1600,
+    650,
+    740,
+    [
+     1600,
+     667
+    ],
+    4
+   ],
+   "capture": "screenshots/dark/32-settings-general.png",
+   "colour": "#363C46",
+   "evidence": "Sampled",
+   "from": 667,
+   "note": "Select ('Platform Default') height, border to border",
+   "op": "outer",
+   "to": 722,
+   "value": "28pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    1600,
+    650,
+    740,
+    [
+     1600,
+     667
+    ],
+    4
+   ],
+   "capture": "screenshots/light/32-settings-general.png",
+   "colour": "#DFDFE0",
+   "evidence": "Sampled",
+   "from": 667,
+   "note": "Select ('Platform Default') height, border to border",
+   "op": "outer",
+   "to": 722,
+   "value": "28pt"
+  }
+ },
+ "size.sendButton": {
+  "dark": {
+   "args": [
+    [
+     2965,
+     1780
+    ],
+    [
+     2940,
+     1760,
+     84,
+     70
+    ],
+    3
+   ],
+   "box": [
+    2960,
+    1772,
+    3007,
+    1815
+   ],
+   "capture": "screenshots/dark/44-agent-thread-empty.png",
+   "colour": "#2E343E",
+   "evidence": "Sampled",
+   "note": "Send button",
+   "op": "bbox",
+   "value": "24x22pt"
+  },
+  "light": {
+   "args": [
+    [
+     2965,
+     1780
+    ],
+    [
+     2940,
+     1760,
+     84,
+     70
+    ],
+    3
+   ],
+   "box": [
+    2960,
+    1772,
+    3007,
+    1815
+   ],
+   "capture": "screenshots/light/44-agent-thread-empty.png",
+   "colour": "#EBEBEC",
+   "evidence": "Sampled",
+   "note": "Send button",
+   "op": "bbox",
+   "value": "24x22pt"
+  }
+ },
+ "size.settingsSidebar": {
+  "dark": {
+   "args": [
+    "row",
+    1300,
+    300,
+    3
+   ],
+   "capture": "screenshots/dark/32-settings-general.png",
+   "colour": "#2F343E",
+   "evidence": "Sampled",
+   "from": 0,
+   "note": "Settings sidebar width, border excluded",
+   "op": "span",
+   "to": 449,
+   "value": "225pt"
+  }
+ },
+ "size.statusBar": {
+  "dark": {
+   "args": [
+    "col",
+    2000,
+    1860,
+    3
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "colour": "#3B414D",
+   "evidence": "Sampled",
+   "from": 1838,
+   "note": "Status bar height",
+   "op": "span",
+   "to": 1897,
+   "value": "30pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    2000,
+    1860,
+    3
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "colour": "#DCDCDD",
+   "evidence": "Sampled",
+   "from": 1838,
+   "note": "Status bar height",
+   "op": "span",
+   "to": 1897,
+   "value": "30pt"
+  }
+ },
+ "size.switch.h": {
+  "dark": {
+   "args": [
+    "col",
+    1718,
+    470,
+    540,
+    [
+     1718,
+     488
+    ],
+    4
+   ],
+   "capture": "screenshots/dark/32-settings-general.png",
+   "colour": "#464B57",
+   "evidence": "Sampled",
+   "from": 488,
+   "note": "Switch track height, border to border",
+   "op": "outer",
+   "to": 523,
+   "value": "18pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    1718,
+    470,
+    540,
+    [
+     1718,
+     488
+    ],
+    4
+   ],
+   "capture": "screenshots/light/32-settings-general.png",
+   "colour": "#C9C9CA",
+   "evidence": "Sampled",
+   "from": 488,
+   "note": "Switch track height, border to border",
+   "op": "outer",
+   "to": 523,
+   "value": "18pt"
+  }
+ },
+ "size.switch.thumb": {
+  "dark": {
+   "args": [
+    "row",
+    506,
+    1680,
+    3
+   ],
+   "capture": "screenshots/dark/32-settings-general.png",
+   "colour": "#858A92",
+   "evidence": "Sampled",
+   "from": 1672,
+   "note": "Switch thumb width (off)",
+   "op": "span",
+   "to": 1695,
+   "value": "12pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    506,
+    1680,
+    3
+   ],
+   "capture": "screenshots/light/32-settings-general.png",
+   "colour": "#87888A",
+   "evidence": "Sampled",
+   "from": 1672,
+   "note": "Switch thumb width (off)",
+   "op": "span",
+   "to": 1695,
+   "value": "12pt"
+  }
+ },
+ "size.switch.w": {
+  "dark": {
+   "args": [
+    "row",
+    506,
+    1600,
+    1760,
+    [
+     1666,
+     506
+    ],
+    4
+   ],
+   "capture": "screenshots/dark/32-settings-general.png",
+   "colour": "#464B57",
+   "evidence": "Sampled",
+   "from": 1666,
+   "note": "Switch track width, border to border",
+   "op": "outer",
+   "to": 1729,
+   "value": "32pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    506,
+    1600,
+    1760,
+    [
+     1666,
+     506
+    ],
+    4
+   ],
+   "capture": "screenshots/light/32-settings-general.png",
+   "colour": "#C9C9CA",
+   "evidence": "Sampled",
+   "from": 1666,
+   "note": "Switch track width, border to border",
+   "op": "outer",
+   "to": 1729,
+   "value": "32pt"
+  }
+ },
+ "size.tabBar": {
+  "dark": {
+   "args": [
+    "col",
+    2000,
+    100,
+    3
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "colour": "#2F343E",
+   "evidence": "Sampled",
+   "from": 70,
+   "note": "Tab bar height",
+   "op": "span",
+   "to": 131,
+   "value": "31pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    2000,
+    100,
+    3
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "colour": "#EBEBEC",
+   "evidence": "Sampled",
+   "from": 70,
+   "note": "Tab bar height",
+   "op": "span",
+   "to": 131,
+   "value": "31pt"
+  }
+ },
+ "size.titleBar": {
+  "dark": {
+   "args": [
+    "col",
+    2000,
+    30,
+    3
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "colour": "#3B414D",
+   "evidence": "Sampled",
+   "from": 0,
+   "note": "Title bar height",
+   "op": "span",
+   "to": 67,
+   "value": "34pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    2000,
+    30,
+    3
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "colour": "#DCDCDD",
+   "evidence": "Sampled",
+   "from": 0,
+   "note": "Title bar height",
+   "op": "span",
+   "to": 67,
+   "value": "34pt"
+  }
+ },
+ "size.toolCardHeader": {
+  "dark": {
+   "args": [
+    "col",
+    2600,
+    290,
+    3
+   ],
+   "capture": "screenshots/dark/52-agent-result.png",
+   "colour": "#313741",
+   "evidence": "Sampled",
+   "from": 272,
+   "note": "Terminal tool card header (dark)",
+   "op": "span",
+   "to": 346,
+   "value": "37.5pt"
+  }
+ },
+ "size.toolbar": {
+  "dark": {
+   "args": [
+    "col",
+    2000,
+    180,
+    3
+   ],
+   "capture": "screenshots/dark/01-editor-python.png",
+   "colour": "#282C33",
+   "evidence": "Sampled",
+   "from": 134,
+   "note": "Breadcrumb toolbar height",
+   "op": "span",
+   "to": 221,
+   "value": "44pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    2000,
+    180,
+    3
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "colour": "#FAFAFA",
+   "evidence": "Sampled",
+   "from": 134,
+   "note": "Breadcrumb toolbar height",
+   "op": "span",
+   "to": 221,
+   "value": "44pt"
+  }
+ },
+ "size.tooltip.h": {
+  "dark": {
+   "args": [
+    "col",
+    2800,
+    1780,
+    1870,
+    [
+     2800,
+     1799
+    ],
+    4
+   ],
+   "capture": "screenshots/dark/20-tooltip.png",
+   "colour": "#363C46",
+   "evidence": "Sampled",
+   "from": 1799,
+   "note": "Tooltip height, border to border",
+   "op": "outer",
+   "to": 1869,
+   "value": "35.5pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    2800,
+    1780,
+    1870,
+    [
+     2800,
+     1799
+    ],
+    4
+   ],
+   "capture": "screenshots/light/20-tooltip.png",
+   "colour": "#DFDFE0",
+   "evidence": "Sampled",
+   "from": 1799,
+   "note": "Tooltip height, border to border",
+   "op": "outer",
+   "to": 1863,
+   "value": "32.5pt"
+  }
+ },
+ "size.treeRow": {
+  "light": {
+   "args": [
+    "col",
+    300,
+    150,
+    3
+   ],
+   "capture": "screenshots/light/01-editor-python.png",
+   "colour": "#CACACA",
+   "evidence": "Sampled",
+   "from": 122,
+   "note": "Selected file-tree row (light; in dark the first row's fill runs into the title bar's border)",
+   "op": "span",
+   "to": 173,
+   "value": "26pt"
+  }
+ },
+ "size.userMessage.h": {
+  "dark": {
+   "args": [
+    "col",
+    2600,
+    140,
+    240,
+    [
+     2600,
+     150
+    ],
+    4
+   ],
+   "capture": "screenshots/dark/52-agent-result.png",
+   "colour": "#464B57",
+   "evidence": "Sampled",
+   "from": 150,
+   "note": "User message box height, border to border",
+   "op": "outer",
+   "to": 233,
+   "value": "42pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    2600,
+    140,
+    240,
+    [
+     2600,
+     150
+    ],
+    4
+   ],
+   "capture": "screenshots/light/52-agent-result.png",
+   "colour": "#C9C9CA",
+   "evidence": "Sampled",
+   "from": 150,
+   "note": "User message box height, border to border",
+   "op": "outer",
+   "to": 233,
+   "value": "42pt"
+  }
+ }
+}

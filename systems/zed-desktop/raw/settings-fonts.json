@@ -1,0 +1,81 @@
+{
+ "defaults": {
+  "comments": {
+   "ZedMono": {
+    "line": 29,
+    "value": "Lilex"
+   },
+   "ZedSans": {
+    "line": 57,
+    "value": "IBM Plex Sans"
+   },
+   "comfortable": {
+    "line": 46,
+    "value": "1.618"
+   },
+   "standard": {
+    "line": 48,
+    "value": "1.3"
+   }
+  },
+  "commit": "d25fa01ccd788d812f236810b71af4feff6b2e38",
+  "file": "assets/settings/default.json",
+  "keys": {
+   "agent_buffer_font_size": {
+    "line": 79,
+    "value": 12
+   },
+   "agent_ui_font_size": {
+    "line": 75,
+    "value": null
+   },
+   "buffer_font_family": {
+    "line": 31,
+    "value": ".ZedMono"
+   },
+   "buffer_font_size": {
+    "line": 41,
+    "value": 15
+   },
+   "buffer_font_weight": {
+    "line": 43,
+    "value": 400
+   },
+   "buffer_line_height": {
+    "line": 54,
+    "value": "comfortable"
+   },
+   "ui_font_family": {
+    "line": 59,
+    "value": ".ZedSans"
+   },
+   "ui_font_size": {
+    "line": 71,
+    "value": 16
+   },
+   "ui_font_weight": {
+    "line": 69,
+    "value": 400
+   }
+  },
+  "repo": "zed-industries/zed",
+  "tag": "v1.25.2"
+ },
+ "owner": {
+  "file": "~/.config/zed/settings.json (the owner's; only these keys were read)",
+  "keys": {
+   "agent_ui_font_size": 16.0,
+   "buffer_font_family": "Menlo",
+   "buffer_font_size": 11.0,
+   "buffer_font_weight": 400,
+   "buffer_line_height": "standard",
+   "markdown_preview_font_size": 14.0,
+   "theme": {
+    "dark": "One Dark",
+    "light": "One Light",
+    "mode": "system"
+   },
+   "ui_font_size": 16.0
+  }
+ }
+}
