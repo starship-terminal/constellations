@@ -1,0 +1,19 @@
+{
+  "families": [
+    {"name": "Event popover: two participants' email addresses (coworkers; the shared pattern file allows the whole domain for the owner's own address)",
+     "files": ["screenshots/*/event-popover.png"],
+     "size": [[2126, 1896]],
+     "rects": [[1200, 972, 1548, 1014, "rows"], [1200, 1036, 1548, 1078, "rows"]]},
+    {"name": "Event popover: the Google Meet meeting code (a joinable meeting link)",
+     "files": ["screenshots/*/event-popover.png"],
+     "size": [[2126, 1896]],
+     "rects": [[1372, 1476, 1548, 1512, "rows"]]},
+    {"name": "Month view: an event title naming a hospital and a condition (Mon 26 Oct, 10:00)",
+     "files": ["screenshots/*/month-view.png"],
+     "size": [[2126, 1896]],
+     "rects": [[604, 1477, 726, 1509, "rows"]]}
+  ],
+  "delete_stems": ["account-header"],
+  "delete": ["components/crops/account-header-*-light.png"],
+  "_delete_why": "The account header crops (delete_stems matches the dark names, delete the light ones) are the owner's own work address, which the image check's boosted OCR misreads into an address the shared allow list does not cover; the full screenshots show the same header and pass."
+}
