@@ -106,7 +106,7 @@ Superset is an Electron app (`Contents/Frameworks/Electron Framework.framework`)
 - **The terminal content is not Superset's design.** What streams in a pane is Claude Code's own interface in Superset's terminal palette; Superset's design is the chrome around it.
 - **Component values are one element each.** `component.*` and components.md read the first element that matched each part; they are not counts across pages.
 - **Run frames are timed, not chosen.** The `run-*` screenshots are frames 1.2 s apart; the states named (thinking, tool call, editing) are what was on screen at that moment.
-- **Two addresses are painted out.** Settings > Usage lists the agent accounts signed in on this Mac; the two addresses the shared pattern file does not list as the owner's are masked in both themes ([tools/redact-rules/superset-desktop.json](../../tools/redact-rules/superset-desktop.json)).
+- **The owner's addresses show.** Settings > Usage lists the agent accounts signed in on this Mac, including the owner's two own email addresses; they are left unmasked in both themes (the owner approved this on 2026-10-25).
 - Screenshots are 256-colour PNGs. Flat UI colours are exact; read values from tokens.json.
 
 ## Fonts
@@ -205,7 +205,7 @@ node tools/capture/electron/theme.mjs raw/theme.dark.json
 node tools/capture/electron/shots.mjs --set-theme=Light
 ```
 
-Repeat with `light`, set the theme back with `--set-theme=Dark`, quit Superset (`osascript -e 'tell application "Superset" to quit'`, then confirm its Quit dialog) and stop the terminal daemon it leaves running, then `python3 tools/capture/quantize.py ~/.design-systems/superset-desktop/raw-shots`, which also copies the readings into `raw/`, `python3 tools/capture/rename_parts.py ~/.design-systems/superset-desktop/raw-shots`, the redaction rules (`python3 tools/redact_images.py apply systems/superset-desktop --rules tools/redact-rules/superset-desktop.json --patterns ~/.design-systems/cleanup-redact.json` from the repository root), and the builders. The window title is the organisation's name. `run.mjs` goes before `shots.mjs` in each theme: the workspace shots show the files the run writes. Both scripts exit non-zero when a required part, a shot or a run step fails. On 2026-10-25 the dialog shots were retaken in each theme after the scrim was added to their parts.
+Repeat with `light`, set the theme back with `--set-theme=Dark`, quit Superset (`osascript -e 'tell application "Superset" to quit'`, then confirm its Quit dialog) and stop the terminal daemon it leaves running, then `python3 tools/capture/quantize.py ~/.design-systems/superset-desktop/raw-shots`, which also copies the readings into `raw/`, `python3 tools/capture/rename_parts.py ~/.design-systems/superset-desktop/raw-shots`, the image check (`python3 tools/redact_images.py check systems/superset-desktop --patterns ~/.design-systems/cleanup-redact.json` from the repository root; [tools/redact-rules/superset-desktop.json](../../tools/redact-rules/superset-desktop.json) now holds no rectangles, only the OCR pass that `apply` runs), and the builders. The window title is the organisation's name. `run.mjs` goes before `shots.mjs` in each theme: the workspace shots show the files the run writes. Both scripts exit non-zero when a required part, a shot or a run step fails. On 2026-10-25 the dialog shots were retaken in each theme after the scrim was added to their parts.
 
 ## The Electron route, as it went
 
