@@ -1816,6 +1816,72 @@
       "layoutGaps": {
         "icons/": "Luma's icons, wordmark and app icons are its artwork and were not extracted from the captures (docs/RIGHTS.md)"
       }
+    },
+    {
+      "slug": "grokbot-desktop",
+      "name": "Grok Bot (desktop)",
+      "url": "https://x.ai/bot",
+      "category": "ai-agent",
+      "platform": "desktop",
+      "goodFor": "Desktop chat app for AI agents in Electron: a near-black or white window with a darker sidebar of coloured agent characters (a pinned grid over groups), one conversation per agent with the owner's bubbles in that agent's colour and neutral raised reply bubbles, a shimmering activity line while it works, pill and circle controls, an ink primary button, surfaces separated by fill rather than borders",
+      "tags": [
+        "desktop",
+        "electron",
+        "macos",
+        "coding",
+        "ai",
+        "agent",
+        "chat",
+        "sidebar",
+        "per-item-colour",
+        "pill",
+        "dark",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-25",
+      "access": "signed in (the owner's account); read live from the running app over its remote-debugging port",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1120
+      ],
+      "entry": "systems/grokbot-desktop/README.md",
+      "tokens": "systems/grokbot-desktop/tokens.json",
+      "styleGuide": "systems/grokbot-desktop/style-guide.html",
+      "preview": {
+        "cover": "systems/grokbot-desktop/screenshots/dark/home-default.png",
+        "swatches": {
+          "light": {
+            "page": "light.role.page",
+            "surface": "light.role.surface",
+            "text": "light.role.text.primary",
+            "muted": "light.role.text.secondary",
+            "accent": "light.role.accent.default",
+            "border": "light.role.border.default"
+          },
+          "dark": {
+            "page": "dark.role.page",
+            "surface": "dark.role.surface",
+            "text": "dark.role.text.primary",
+            "muted": "dark.role.text.secondary",
+            "accent": "dark.role.accent.default",
+            "border": "dark.role.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans",
+          "core.fontFamily.mono"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/grokbot-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Grok Bot's icons (the cursor-icons font) and Bot characters are its artwork and are not kept here (docs/RIGHTS.md)"
+      }
     }
   ]
 }
