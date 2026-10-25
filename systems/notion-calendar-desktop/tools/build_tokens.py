@@ -43,8 +43,8 @@ THEME_NAME = {"light": "Light (Settings > General > Theme: Light mode)",
               "dark": "Dark (Settings > General > Theme: Dark mode, the owner's setting)"}
 # name prefix -> token group, in order; the first match wins.
 GROUPS = [("--nds-text-", "text"), ("--nds-icon-", "icon"), ("--nds-surface-", "surface"), ("--nds-fill-", "fill"),
-          ("--nds-tint-", "tint"), ("--nds-state-", "state"), ("--nds-stroke-", "stroke"), ("--nds-pageGlass-", "glass"),
-          ("--nds-washGlass-", "glass"), ("--nds-", "palette"), ("--public-", "public"), ("--layout-", "layout"),
+          ("--nds-tint-", "tint"), ("--nds-state-", "state"), ("--nds-stroke-", "stroke"), ("--nds-pageGlass-", "glass.page"),
+          ("--nds-washGlass-", "glass.wash"), ("--nds-", "palette"), ("--public-", "public"), ("--layout-", "layout"),
           ("--calendar-", "calendar"), ("--object-", "object"), ("--text-", "appText"), ("--material-", "material"),
           ("--", "app")]
 HUES = ["gray", "transparentGray", "translucentGray", "uiBlue", "blue", "brown", "green", "orange", "pink", "purple", "red", "yellow"]
@@ -124,7 +124,7 @@ def path_of(name):
                 m = re.fullmatch(r"(%s)-(\d+)" % "|".join(HUES), rest)
                 if m:
                     return (group, m.group(1), m.group(2))
-            return (group, rest)
+            return tuple(group.split(".")) + (rest,)
     raise KeyError(name)
 
 
@@ -263,6 +263,11 @@ def semantic(t):
     (or of a core colour) that paints the same."""
     tree, comp, painted = {}, computed(t), V[t]["colors"]
     kept = {n for n in comp if keep(n, painted)}
+    paths = {}
+    for n in sorted(kept):          # two names must never land on one token path
+        if path_of(n) in paths:
+            raise ValueError(f"{n} and {paths[path_of(n)]} both map to {'.'.join(path_of(n))}")
+        paths[path_of(n)] = n
     for n in sorted(kept):
         value = color(painted[n])
         f = formula(t, n)
@@ -288,6 +293,26 @@ def resolve(t, value, depth=0):
         raise KeyError(f"{t}: {value} points at nothing")
     return resolve(t, node["$value"], depth + 1)
 
+
+# Gradients per theme: Notion's buttons and segmented controls paint a faint top-to-bottom fill (--neutral-gradient-bg).
+GRADIENTS = {"--neutral-gradient-bg": "neutral", "--neutral-gradient-contr-bg": "neutral-contr",
+             "--neutral-gradient-contr-elevated-bg": "neutral-contr-elevated", "--object-gradient-bg": "object"}
+
+
+def gradient(css):
+    """`linear-gradient(#a,#b)` (top to bottom, two stops) -> DTCG gradient stops; None for anything else."""
+    import re as _re
+    m = _re.fullmatch(r"linear-gradient\(\s*([^,()]+(?:\([^()]*\))?)\s*,\s*([^,()]+(?:\([^()]*\))?)\s*\)", css.strip())
+    if not m or not (is_color(m.group(1)) and is_color(m.group(2))):
+        return None
+    return [{"color": color(m.group(1)), "position": 0}, {"color": color(m.group(2)), "position": 1}]
+
+
+for t in THEMES:
+    for n, key in GRADIENTS.items():
+        g = gradient(computed(t)[n])
+        if g:
+            put(SETS[t], ("gradient", key), tok(g, "gradient", "Measured", f"{n} as computed on <html> (top to bottom), {THEME_NAME[t]}, {DATE}", css=computed(t)[n]))
 
 # Shadows per theme, from the computed value on <html> (custom properties compute with their var()s replaced).
 SHADOWS = ["--nds-shadow-2xs", "--nds-shadow-xs", "--nds-shadow-sm", "--nds-shadow-md", "--nds-shadow-lg",
@@ -418,7 +443,7 @@ ROLE = {
     "overlay": ("{surface.elevated-wax}", "translucent floating panels: the event popover, the command menu, the shortcuts panel (with the wax blur)"),
     "scrim": ("{material.dim}", "the tint behind the settings dialog and the command menu"),
     "text.primary": ("{text.primary}", ""), "text.secondary": ("{text.secondary}", ""), "text.disabled": ("{text.tertiary}", "also the dimmed section labels"),
-    "text.on-accent": ("{text.contr-primary}", "light text on the accent fill; the primary button's label paints white"),
+    "text.on-accent": ("{text.contrastPrimary}", "opaque white, as the primary button's label paints in both themes"),
     "text.link": ("{text.uiBluePrimary}", "Notion's link blue; settings links are underlined secondary text instead"),
     "border.default": ("{stroke.secondary}", "the hairline every button, field, menu and the sidebar draw (an inset 1px shadow)"),
     "border.strong": ("{stroke.primary}", "the hovered or highlighted field edge (--input-highlight-border)"),
@@ -549,6 +574,15 @@ def build_roles_and_components(t):
                 m = re.search(r"linear-gradient\([^,]+,\s*(rgba?\([^)]+\))", ss["background-image"])
                 if m:
                     put(tree, ("component", name, key), value_for(part, sh, prop, m.group(1)))
+    # A button whose rest fill is a gradient: name the gradient token it paints.
+    for name, part in (("button-secondary", "today-button"),):
+        shot, s = style(t, part)
+        g = gradient(s.get("background-image", "")) if s else None
+        for key, tk in (tree.get("gradient") or {}).items():
+            if g and tk["$value"] == g:
+                put(tree, ("component", name, "bg-gradient"), tok("{gradient.%s}" % key, "gradient", "Measured",
+                    f"computed background-image of {part} in {shot}, {THEME_NAME[t]}, {DATE}", css=s["background-image"]))
+                break
     for key, comp_path, why in (("accent.hover", "component.switch-on.bg-hover", "the on switch under the pointer"),
                                 ("accent.pressed", "component.switch-on.bg-pressed", "the on switch while pressed")):
         hit = get(tree, comp_path)

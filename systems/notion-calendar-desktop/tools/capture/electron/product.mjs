@@ -41,6 +41,7 @@ function dayMs(offset) {               // offset 0 = Monday of this week
   const d = new Date(); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() - (d.getDay() + 6) % 7 + offset); return d.getTime();
 }
 const COL = offset => `[data-grid-date="${dayMs(offset)}"]`;
+const TODAY = (new Date().getDay() + 6) % 7;   // today's offset from Monday: the day view home() leads to
 const markAllDay = async ({ page }) => page.evaluate(() => {
   const c = [...document.querySelectorAll('.sc-5i99wb-12 [data-event-chip-key]')].find(e => { const r = e.getBoundingClientRect(); return r.x > 340 && r.right < innerWidth; });
   c?.setAttribute('data-cap-allday', '');
@@ -251,7 +252,7 @@ const WEEK_PARTS = {
 export const SHOTS = [
   { name: 'week-default', window: M, reveal: markAllDay, parts: WEEK_PARTS,
     after: async ({ page }) => page.evaluate(() => document.querySelectorAll('[data-cap-allday]').forEach(e => e.removeAttribute('data-cap-allday'))), optionalParts: ['now-badge', 'all-day-chip', 'add-timezone', 'days-button', 'calendar-swatch'] },
-  { name: 'day-view', window: M, reveal: key('d'), parts: { 'day-header': page => page.locator(`${COL(6)} .sc-ia3tqw-0`).first(), 'event-chip': page => page.locator(`${COL(6)} [data-event-chip-key]`).first() }, optionalParts: ['event-chip'], after: key('w') },
+  { name: 'day-view', window: M, reveal: key('d'), parts: { 'day-header': page => page.locator(`${COL(TODAY)} .sc-ia3tqw-0`).first(), 'event-chip': page => page.locator(`${COL(TODAY)} [data-event-chip-key]`).first() }, optionalParts: ['event-chip'], after: key('w') },
   { name: 'month-view', window: M, reveal: key('m'),
     // In month view each week row is one grid container, keyed by its Monday.
     parts: { 'month-week-row': page => page.locator(COL(0)).first(), 'month-chip': page => page.locator(`${COL(0)} [data-event-chip-key]`).nth(1) },

@@ -49,6 +49,8 @@ def css_value(t):
         return ", ".join(("inset " if l["inset"] else "") + f"{l['offsetX']} {l['offsetY']} {l['blur']} {l['spread']} {l['color']}" for l in v) or "none"
     if t["$type"] == "fontFamily":
         return ", ".join(f'"{f}"' if " " in f else f for f in v)
+    if t["$type"] == "gradient":
+        return "linear-gradient(%s)" % ", ".join(f"{s['color']} {s['position'] * 100:g}%" for s in v)
     if t["$type"] == "cubicBezier":
         return "cubic-bezier(%s)" % ", ".join("%g" % x for x in v)
     if t["$type"] == "typography":
@@ -85,8 +87,8 @@ type_css = []
 for p, t in core.items():
     if t["$type"] == "typography":
         v = t["$value"]
-        # The specimens use the stack that rendered (sans-default), not the owner's uninstalled Garamond in front of it.
-        fam = "var(--fontFamily-mono)" if "mono" in v["fontFamily"] else "var(--fontFamily-sans)"
+        # Each role's own family alias ({fontFamily.compact} for key caps) becomes its CSS variable.
+        fam = "var(%s)" % var(tuple(v["fontFamily"][1:-1].split(".")))
         # A role may alias a scale step ({fontSize.chat-code}); resolve it, since a brace is not CSS.
         r = {k: resolve(v[k], core) for k in ("fontSize", "fontWeight", "lineHeight", "letterSpacing")}
         type_css.append(f".t-{p[-1]} {{ font-family: {fam}; font-size: {r['fontSize']}; font-weight: {r['fontWeight']}; "
@@ -206,8 +208,8 @@ figcaption { font-size:12px; color:var(--role-text-secondary); margin-bottom:12p
 .sp-buttons { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
 .sp-btn { display:inline-flex; align-items:center; height:var(--size-button); padding:0 var(--spacing-button-x); border-radius:var(--radius-control); font-size:var(--fontSize-button); font-weight:var(--fontWeight-button); }
 .sp-btn.primary { background:var(--component-button-primary-bg); color:var(--component-button-primary-text); box-shadow:var(--shadow-input-highlight-border); }
-.sp-btn.secondary { color:var(--component-button-secondary-text); box-shadow:var(--shadow-input-border); }
-.sp-btn.danger { color:var(--component-button-danger-text); box-shadow:var(--shadow-input-border); }
+.sp-btn.secondary { color:var(--component-button-secondary-text); background:var(--component-button-secondary-bg-gradient); box-shadow:var(--shadow-input-border); }
+.sp-btn.danger { color:var(--component-button-danger-text); background:var(--component-button-secondary-bg-gradient); box-shadow:var(--shadow-input-border); }
 .sp-btn.icon { width:var(--size-icon-button); justify-content:center; padding:0; color:var(--component-icon-button-text); }
 .sp-btn.focus { box-shadow:var(--shadow-highlight-focus); }
 .sp-menu { background:var(--component-menu-bg); color:var(--component-menu-text); border-radius:var(--component-menu-radius); padding:4px; max-width:220px; box-shadow:var(--shadow-elevation-middle); }
