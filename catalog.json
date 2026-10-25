@@ -1890,6 +1890,77 @@
       }
     },
     {
+      "slug": "capy-desktop",
+      "name": "Capy (desktop)",
+      "url": "https://capy.ai",
+      "category": "ai-agent",
+      "platform": "desktop",
+      "goodFor": "Desktop app for cloud coding agents in Electron, the capy.ai web app in a desktop frame: an off-white or near-black window with a rounded content panel set into it, browser-like tabs in the title bar, a sidebar of threads by project, one composer with project, Run on and model pickers, 0.5px hairlines and Inter at 13px, muted text mixed from one ink, teal only for starting work and on-states, red only for deletion",
+      "tags": [
+        "desktop",
+        "electron",
+        "macos",
+        "coding",
+        "ai",
+        "agent",
+        "cloud",
+        "sidebar",
+        "tabs",
+        "tailwind",
+        "base-ui",
+        "oklch",
+        "neutral",
+        "dense",
+        "teal",
+        "dark",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-25",
+      "access": "the owner's signed-in account (personal workspace, no plan); read live from the running app over its remote-debugging port, plus Capy's component gallery at capy://app/design on fixture data",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1280
+      ],
+      "entry": "systems/capy-desktop/README.md",
+      "tokens": "systems/capy-desktop/tokens.json",
+      "styleGuide": "systems/capy-desktop/style-guide.html",
+      "preview": {
+        "cover": "systems/capy-desktop/screenshots/dark/home.png",
+        "swatches": {
+          "light": {
+            "page": "light.role.page",
+            "surface": "light.role.surface",
+            "text": "light.role.text.primary",
+            "muted": "light.role.text.secondary",
+            "accent": "light.role.accent.default",
+            "border": "light.role.border.default"
+          },
+          "dark": {
+            "page": "dark.role.page",
+            "surface": "dark.role.surface",
+            "text": "dark.role.text.primary",
+            "muted": "dark.role.text.secondary",
+            "accent": "dark.role.accent.default",
+            "border": "dark.role.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans",
+          "core.fontFamily.mono"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/capy-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Capy's icons are its own inline SVG artwork and are not kept here (docs/RIGHTS.md)"
+      }
+    },
+    {
       "slug": "conductor-desktop",
       "name": "Conductor (desktop)",
       "url": "https://conductor.build",
