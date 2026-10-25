@@ -9,7 +9,7 @@ run-<state>.png. CDP's captureScreenshot tags the PNG with the display's profile
 the page's sRGB values (a check: Devin's --bg-page 20 20 20 reads (20, 20, 20) in the dark home screenshot), so the profile is
 dropped, not converted. Flat UI colours survive the 256-colour palette exactly; read values from
 tokens.json, never from these files. Also copies <theme>/captures.json and <theme>/run/frames.json
-into raw/ as components.<theme>.json and run.<theme>.json, and the readings vars.mjs and utilities.mjs
+into raw/ as components.<theme>.json (keeping the KEPT shots' readings) and run.<theme>.json, and the readings vars.mjs and utilities.mjs
 wrote beside them (<theme>/css-vars.json, css-vars.ide.json, utilities.json) as css-vars.<theme>.json,
 css-vars.ide-<theme>.json and utilities.<theme>.json. Needs Pillow. Deterministic for the same
 inputs.
@@ -31,6 +31,26 @@ RUN_FRAMES = {
               "create-file-01": "run-editing", "create-file-02": "run-file-changed"},
 }
 
+# PRODUCT (adapt): shots retired from product.mjs's shot list whose screenshots and readings are kept
+# from an earlier capture, because taking them again would open a session the capture did not create
+# (the owner's cloud session). A RAW folder without them leaves their committed screenshots in place
+# and carries their readings from the committed components.<theme>.json into the new one.
+KEPT = ("conversation", "conversation-code-hover")
+
+
+def readings(theme_dir, theme):
+    """captures.json's text, with KEPT entries it lacks carried over from the committed readings."""
+    text = (theme_dir / "captures.json").read_text()
+    old_path = PKG / "raw" / f"components.{theme}.json"
+    if not old_path.exists():
+        return text
+    caps, old = json.loads(text), json.loads(old_path.read_text())
+    carry = {k: old[k] for k in KEPT if k not in caps and k in old}
+    if not carry:
+        return text
+    caps.update(carry)
+    return json.dumps(caps, indent=1) + "\n"
+
 
 def store(src, dst):
     dst.parent.mkdir(parents=True, exist_ok=True)
@@ -51,10 +71,10 @@ def main():
             if f.exists():
                 store(f, out / f"{name}.png"); keep.add(f"{name}.png"); n += 1
         for stale in out.glob("*.png"):
-            if stale.name not in keep:
+            if stale.name not in keep and stale.stem not in KEPT:
                 stale.unlink()
         if (theme_dir / "captures.json").exists():
-            (PKG / "raw" / f"components.{theme}.json").write_text((theme_dir / "captures.json").read_text())
+            (PKG / "raw" / f"components.{theme}.json").write_text(readings(theme_dir, theme))
         for src, dst in (("css-vars.json", f"css-vars.{theme}.json"), ("css-vars.ide.json", f"css-vars.ide-{theme}.json"),
                          ("utilities.json", f"utilities.{theme}.json")):
             if (theme_dir / src).exists():

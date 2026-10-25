@@ -72,6 +72,8 @@ for (const shot of P.SHOTS.filter(s => !only.length || only.includes(s.name))) {
       undo.push(await force(cdp, sel[name], states));
     }
     await page.waitForTimeout(400);
+    // The product's last check before the screenshot (a stray toast, say); it throws to fail the shot.
+    if (P.beforeShoot) await P.beforeShoot(h, shot);
     const file = await shoot(cdp, `${RAW}/${theme}/${shot.name}.png`);
     const parts = {};
     for (const [name, s] of Object.entries(sel)) {

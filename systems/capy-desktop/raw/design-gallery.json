@@ -1,0 +1,908 @@
+{
+ "meta": {
+  "read": "2026-10-25",
+  "url": "capy://app/design"
+ },
+ "title": "Design",
+ "lede": "Every component in the system, on the surface it ships on",
+ "sections": [
+  {
+   "section": "Buttons",
+   "notes": [
+    {
+     "label": "Painted intents",
+     "note": "Only the combos the product ships"
+    },
+    {
+     "label": "Sizes",
+     "note": "xs 24, sm 28, base 32 on desktop"
+    },
+    {
+     "label": "Icon buttons",
+     "note": "Square controls on the same size tiers"
+    },
+    {
+     "label": "Loading",
+     "note": "The dot grid inherits the size tier and replaces the first icon"
+    },
+    {
+     "label": "Tabs are buttons",
+     "note": "Selected gets the inset fill and hairline ring"
+    },
+    {
+     "label": "Segmented track",
+     "note": "The selected row raises on the card fill (ruling 198)"
+    },
+    {
+     "label": "Copy value",
+     "note": "Quiet mono beside a ghost copy button"
+    },
+    {
+     "label": "Copy chip",
+     "note": "The show-once value is the button"
+    },
+    {
+     "caption": "On a card"
+    },
+    {
+     "caption": "On the window"
+    },
+    {
+     "caption": "On the panel"
+    },
+    {
+     "caption": "On an overlay"
+    },
+    {
+     "caption": "user_31ylNu7cIWhPhqJ8MKwAT0N2fpL"
+    }
+   ]
+  },
+  {
+   "section": "Badges",
+   "notes": [
+    {
+     "label": "Icons",
+     "note": "Icons inherit the color, no class needed"
+    },
+    {
+     "label": "Sizes",
+     "note": "xs, sm, base, auto"
+    },
+    {
+     "label": "Count",
+     "note": "Filled accent chip; width follows the digit count"
+    },
+    {
+     "label": "Interactive",
+     "note": "Clickable badges gain hover and focus"
+    },
+    {
+     "caption": "default"
+    },
+    {
+     "caption": "ghost"
+    },
+    {
+     "caption": "filled"
+    }
+   ]
+  },
+  {
+   "section": "Thread marks",
+   "notes": [
+    {
+     "label": "Machine",
+     "note": "Cloud or paired device, with size and subagents on hover"
+    },
+    {
+     "label": "Status",
+     "note": "The trailing slot's grid: comet working, wave waiting, ripple needs-you and failed"
+    }
+   ]
+  },
+  {
+   "section": "Avatar",
+   "notes": [
+    {
+     "label": "Photo",
+     "note": "xs 16 and sm 24, the image edge to edge"
+    },
+    {
+     "label": "Initials",
+     "note": "Fallback on the muted fill, never the accent"
+    },
+    {
+     "label": "Shape",
+     "note": "A rounded square, never a circle"
+    }
+   ]
+  },
+  {
+   "section": "Alerts",
+   "notes": []
+  },
+  {
+   "section": "Cards",
+   "notes": [
+    {
+     "label": "Repository",
+     "note": "Connected through the capy GitHub App"
+    },
+    {
+     "label": "Default branch",
+     "note": "New threads branch from here"
+    },
+    {
+     "label": "GitHub",
+     "note": "Open pull requests and sync attribution"
+    },
+    {
+     "label": "Slack",
+     "note": "Start threads from Slack"
+    },
+    {
+     "label": "Build machine",
+     "note": "Region and machine size for new threads"
+    },
+    {
+     "label": "Footer triggers",
+     "note": "Bare, up chevron, sits on a bottom edge"
+    }
+   ]
+  },
+  {
+   "section": "Inputs",
+   "notes": [
+    {
+     "label": "Placeholder",
+     "note": ""
+    },
+    {
+     "label": "Filled",
+     "note": ""
+    },
+    {
+     "label": "Invalid",
+     "note": "aria-invalid paints the danger border"
+    },
+    {
+     "label": "Disabled",
+     "note": ""
+    },
+    {
+     "label": "With icon",
+     "note": ""
+    },
+    {
+     "label": "Blank",
+     "note": "No box chrome, for inline edits"
+    },
+    {
+     "label": "Ghost",
+     "note": "For label-like fields: content-sized, the placeholder reads as the label at rest, hover and focus reveal the field"
+    },
+    {
+     "label": "Small",
+     "note": ""
+    },
+    {
+     "label": "Extra small",
+     "note": "Chip-height, for inline sentence controls"
+    },
+    {
+     "label": "Color",
+     "note": "Saturation, hue, Hex/RGB values, and theme colors"
+    },
+    {
+     "label": "Disabled color",
+     "note": ""
+    },
+    {
+     "label": "Textarea",
+     "note": "Multi-line input, rows-sized, no resize"
+    }
+   ]
+  },
+  {
+   "section": "Chip menu",
+   "notes": []
+  },
+  {
+   "section": "Form fields",
+   "notes": [
+    {
+     "label": "Labeled input",
+     "note": "Label pairs with any control via htmlFor"
+    },
+    {
+     "label": "OTP",
+     "note": "Type or paste, onComplete fires on the last digit"
+    },
+    {
+     "label": "OTP filled",
+     "note": ""
+    },
+    {
+     "label": "OTP invalid",
+     "note": "invalid paints the danger border"
+    },
+    {
+     "label": "OTP disabled",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "section": "Breadcrumb",
+   "notes": [
+    {
+     "caption": "One level only, above a nested settings page header (rulings 157/159)"
+    }
+   ]
+  },
+  {
+   "section": "Table",
+   "notes": []
+  },
+  {
+   "section": "Token list",
+   "notes": []
+  },
+  {
+   "section": "Charts",
+   "notes": []
+  },
+  {
+   "section": "Switch and checkbox",
+   "notes": [
+    {
+     "label": "Automatic titles",
+     "note": "Name new threads from their first message"
+    },
+    {
+     "label": "Sound on completion",
+     "note": "Play a chime when a thread finishes"
+    },
+    {
+     "label": "Usage alerts",
+     "note": "Requires a billing admin"
+    },
+    {
+     "label": "Run checks before push",
+     "note": "Lint and type-check every branch capy pushes"
+    },
+    {
+     "label": "Delete branch after merge",
+     "note": ""
+    },
+    {
+     "label": "Allow force push",
+     "note": "Locked by workspace policy"
+    }
+   ]
+  },
+  {
+   "section": "Sortable list",
+   "notes": []
+  },
+  {
+   "section": "Kbd",
+   "notes": [
+    {
+     "label": "Bare glyphs",
+     "note": "Shortcut hints inline with text"
+    },
+    {
+     "label": "Chips",
+     "note": "Raised chips for standalone hints"
+    },
+    {
+     "label": "On a filled button",
+     "note": "The chip takes the button's own text color"
+    }
+   ]
+  },
+  {
+   "section": "Tooltip",
+   "notes": [
+    {
+     "label": "On hover",
+     "note": "300ms delay, skipped when moving between triggers"
+    },
+    {
+     "label": "With shortcut",
+     "note": "A Kbd chip rides after the label"
+    }
+   ]
+  },
+  {
+   "section": "Preview card",
+   "notes": [
+    {
+     "caption": "Hover card on the shared overlay surface, pinned open here, open and close are instant and one card shows at a time"
+    }
+   ]
+  },
+  {
+   "section": "Dialog",
+   "notes": [
+    {
+     "label": "Delete a thread",
+     "note": "Confirm dialog with a danger action"
+    },
+    {
+     "label": "Media scrim",
+     "note": "The media viewer's near-black backdrop, the same in both themes"
+    },
+    {
+     "label": "Relaxed body spacing",
+     "note": "Form-dense dialogs pick the relaxed body variant"
+    },
+    {
+     "label": "Large title",
+     "note": "Full-page dialog surfaces step the title up with size lg"
+    },
+    {
+     "label": "Sub pages",
+     "note": "One dialog with a page stack: a back chevron on sub pages, the body cross-fades and the height eases"
+    }
+   ]
+  },
+  {
+   "section": "Sheet and drawer",
+   "notes": [
+    {
+     "label": "Sheet",
+     "note": "Left mobile nav on the panel surface, content stays mounted"
+    },
+    {
+     "label": "Side sheet",
+     "note": "Right form sheet on the panel surface, bottom drawer on mobile"
+    },
+    {
+     "label": "Drawer",
+     "note": "Bottom drawer on the overlay surface, sized by its content"
+    },
+    {
+     "caption": "Sheet, open"
+    },
+    {
+     "caption": "Drawer, open"
+    },
+    {
+     "caption": "Fast for everyday tasks"
+    },
+    {
+     "caption": "Deep reasoning for long tasks"
+    },
+    {
+     "caption": "Cheapest for quick edits"
+    }
+   ]
+  },
+  {
+   "section": "Right panel",
+   "notes": []
+  },
+  {
+   "section": "Bulk bar",
+   "notes": []
+  },
+  {
+   "section": "Toast",
+   "notes": [
+    {
+     "label": "Fire a toast",
+     "note": "Constant width, icon and description always"
+    }
+   ]
+  },
+  {
+   "section": "Loading",
+   "notes": [
+    {
+     "label": "Dot grid",
+     "note": "xs, sm, base, plus inherit inside buttons"
+    },
+    {
+     "label": "Progress edge",
+     "note": "Edge-of-surface loading, layout-inert"
+    },
+    {
+     "label": "Progress ring",
+     "note": "Determinate upload progress, 0 to 100"
+    },
+    {
+     "label": "Shimmer text",
+     "note": "The streaming affordance"
+    },
+    {
+     "label": "Pane waiting state",
+     "note": "An empty pane still expecting its content, before the resolved miss"
+    },
+    {
+     "label": "Animated number",
+     "note": "Digits roll through place values"
+    },
+    {
+     "label": "Skeleton group",
+     "note": "Dense compositions pulse as one layer, static fills inside"
+    },
+    {
+     "label": "Skeleton card rows",
+     "note": "The settings lists' shared loading card"
+    }
+   ]
+  },
+  {
+   "section": "Connect wait",
+   "notes": []
+  },
+  {
+   "section": "Provider card",
+   "notes": []
+  },
+  {
+   "section": "Separator",
+   "notes": []
+  },
+  {
+   "section": "Scroll fade",
+   "notes": []
+  },
+  {
+   "section": "Collapsible",
+   "notes": [
+    {
+     "caption": "Default trigger, trailing chevron like a button icon"
+    },
+    {
+     "caption": "Custom row, chevron off"
+    },
+    {
+     "caption": "Muted tone, secondary disclosure"
+    }
+   ]
+  },
+  {
+   "section": "Menus",
+   "notes": [
+    {
+     "label": "Adaptive menu",
+     "note": "Dropdown on desktop, bottom drawer below md; one composition"
+    },
+    {
+     "label": "Context menu",
+     "note": "The same rows anchored to a right click"
+    },
+    {
+     "label": "Action popover",
+     "note": "Pressable rows driven by hover and focus"
+    },
+    {
+     "label": "Select",
+     "note": "A form value on the menu surface"
+    },
+    {
+     "label": "Combobox",
+     "note": "Filters as you type"
+    },
+    {
+     "caption": "Dropdown, pinned open"
+    },
+    {
+     "caption": "Row states, from the exported constants"
+    },
+    {
+     "caption": "Deep reasoning for long tasks"
+    }
+   ]
+  },
+  {
+   "section": "Inherited menu",
+   "notes": [
+    {
+     "label": "Inheriting",
+     "note": "Effective value with the scope tag; ruling 232"
+    },
+    {
+     "label": "Overridden",
+     "note": "Explicit value drops the tag"
+    },
+    {
+     "label": "Pending",
+     "note": "Scope value not yet known keeps the default row"
+    },
+    {
+     "label": "Scope owner",
+     "note": "No inheritance, plain select"
+    },
+    {
+     "label": "Project scope",
+     "note": "Custom label, tag, and disabled option"
+    },
+    {
+     "caption": "Project"
+    }
+   ]
+  },
+  {
+   "section": "Inherited number",
+   "notes": [
+    {
+     "label": "Inheriting",
+     "note": "A pill with the effective value and scope tag; click to edit"
+    },
+    {
+     "label": "Overridden",
+     "note": "A field with the reset inside; reset clears the override"
+    },
+    {
+     "label": "Scope owner",
+     "note": "Platform default underneath"
+    },
+    {
+     "label": "Disabled",
+     "note": "Non-admin on the org scope"
+    },
+    {
+     "caption": "Default"
+    }
+   ]
+  },
+  {
+   "section": "Composer",
+   "notes": [
+    {
+     "caption": "The primitive with fixture sources; type @ or / for inline menus"
+    },
+    {
+     "caption": "Slash command root"
+    },
+    {
+     "caption": "Model child stage"
+    },
+    {
+     "caption": "Root search with direct skill hits"
+    },
+    {
+     "caption": "Audit motion for timing, easing, and reduced-motion coverage"
+    },
+    {
+     "caption": "Render a component in both themes with pnpm render"
+    },
+    {
+     "caption": "Compact fold at panel width; the picker absorbs the reasoning selector"
+    },
+    {
+     "caption": "Attachment strip states, static: ready, preparing, uploading, finishing, failed"
+    },
+    {
+     "caption": "Voice states (specs/web-voice.md; live flow needs the mic)"
+    },
+    {
+     "caption": "Context meter at zero, mid, warning, full (specs/web-composer.md)"
+    },
+    {
+     "caption": "Thread cost tracker (specs/web-thread.md decision 18)"
+    },
+    {
+     "caption": "Captain: its own family first, then each crew thread by spend"
+    },
+    {
+     "caption": "Mention chips"
+    },
+    {
+     "caption": "Mention menu states, static"
+    },
+    {
+     "caption": "Files in the project's repositories"
+    },
+    {
+     "caption": "Reference another thread"
+    },
+    {
+     "caption": "Skills available to the agent"
+    },
+    {
+     "caption": "packages/web/src/shared/markdown"
+    },
+    {
+     "caption": "packages/web/src/ui"
+    }
+   ]
+  },
+  {
+   "section": "Jam chat",
+   "notes": [
+    {
+     "caption": "The virtualized transcript over the fixture with the real row components; group headers toggle"
+    },
+    {
+     "caption": "Compacted the conversation"
+    },
+    {
+     "caption": "Aug 4, 10:02 PM"
+    },
+    {
+     "caption": "Aug 4, 10:09 PM"
+    },
+    {
+     "caption": "Subagent machine"
+    },
+    {
+     "caption": "Aug 4, 10:05 PM"
+    },
+    {
+     "caption": "Aug 4, 10:09 PM"
+    },
+    {
+     "caption": "Aug 4, 10:09 PM"
+    }
+   ]
+  },
+  {
+   "section": "Tool rows",
+   "notes": [
+    {
+     "caption": "Work group, collapsed"
+    },
+    {
+     "caption": "Work group, expanded"
+    },
+    {
+     "caption": "Live group, tail window with shimmer on the newest row"
+    },
+    {
+     "caption": "Work group, flat"
+    },
+    {
+     "caption": "Reasoning: summary, displayed"
+    },
+    {
+     "caption": "Shell body"
+    },
+    {
+     "caption": "References: tasks, threads, and the delivered text a message row opens"
+    },
+    {
+     "caption": "Message body"
+    },
+    {
+     "caption": "Diff body"
+    },
+    {
+     "caption": "Diff body over the cap: View full diff folds it open in place"
+    },
+    {
+     "caption": "Work group with folded batches"
+    },
+    {
+     "caption": "Execute settlements that are not batches, with the body each opens"
+    },
+    {
+     "caption": "Work group with folded batches, expanded"
+    }
+   ]
+  },
+  {
+   "section": "Update, error, and divider rows",
+   "notes": [
+    {
+     "caption": "Update lines: an external event arriving mid-work, one line, the source mark carrying the outcome"
+    },
+    {
+     "caption": "Without link targets: the same lines where no children read and no PR list have resolved"
+    },
+    {
+     "caption": "Error and warning rows: one Alert card, severity in the glyph"
+    },
+    {
+     "caption": "Machine episode card: one card per episode, changed in place"
+    },
+    {
+     "caption": "Machine reconnected after 4m 11s"
+    },
+    {
+     "caption": "Markers, centered between rules: a linked fork origin, a side thread origin, a summary fork origin, a handoff, a device offline in flight, a device that went offline and was handed off, a workspace Capy moved, a device permission decision, a review round opening on a push, a promotion to Captain, a thread joining a Captain's crew as the Captain sees it, as the thread sees it, the New marker before the first unread message, a takeover, and a personal thread's access changes; a compaction in flight and a settled one with no activity line to join stand plain, without rules or icon"
+    },
+    {
+     "caption": "Forked fromRetry backoff for the webhook lane"
+    },
+    {
+     "caption": "Side thread ofRetry backoff for the webhook lane"
+    },
+    {
+     "caption": "Forked with a summary fromRetry backoff for the webhook lane"
+    },
+    {
+     "caption": "Handed off to cloud"
+    },
+    {
+     "caption": "Device offline"
+    },
+    {
+     "caption": "Device offline, handed off to cloud"
+    },
+    {
+     "caption": "Capy moved the workspace to cloud"
+    },
+    {
+     "caption": "Allowed on Maya's MacBook Pro"
+    },
+    {
+     "caption": "Compacting the conversation"
+    },
+    {
+     "caption": "Compacted from 142K tokens"
+    },
+    {
+     "caption": "Reviewing push e33254e"
+    },
+    {
+     "caption": "Promoted to Captain as Platform"
+    },
+    {
+     "caption": "Prune dead stacking tokensjoined the crew"
+    },
+    {
+     "caption": "Joined the crew ofPlatform"
+    },
+    {
+     "caption": "Akhil Gupta took over the thread from Maya Chen"
+    },
+    {
+     "caption": "Priya Natarajan made this thread personal"
+    },
+    {
+     "caption": "Priya Natarajan shared this thread with Anand Rao and Maya Chen"
+    },
+    {
+     "caption": "Priya Natarajan left 🦄 kai chen, Anand Rao now owns this thread"
+    }
+   ]
+  },
+  {
+   "section": "MCP setup",
+   "notes": []
+  },
+  {
+   "section": "Plugin proposal",
+   "notes": []
+  },
+  {
+   "section": "Desktop request",
+   "notes": [
+    {
+     "caption": "Primary machine · Needs you"
+    },
+    {
+     "caption": "Subagent 2 machine · Needs you"
+    },
+    {
+     "caption": "Primary machine · Done"
+    },
+    {
+     "caption": "Primary machine · Expired"
+    }
+   ]
+  },
+  {
+   "section": "Feedback request",
+   "notes": []
+  },
+  {
+   "section": "Device access",
+   "notes": [
+    {
+     "caption": "Access request"
+    },
+    {
+     "caption": "Access request"
+    }
+   ]
+  },
+  {
+   "section": "Clarify",
+   "notes": [
+    {
+     "caption": "1 of 2"
+    }
+   ]
+  },
+  {
+   "section": "Video player",
+   "notes": [
+    {
+     "caption": "Inline in the transcript, expand opens the lightbox"
+    },
+    {
+     "caption": "Overlay register, the pane file viewer"
+    }
+   ]
+  },
+  {
+   "section": "Command menu",
+   "notes": [
+    {
+     "caption": "FRO-12h"
+    },
+    {
+     "caption": "FRO-43d"
+    }
+   ]
+  },
+  {
+   "section": "Filter menu",
+   "notes": [
+    {
+     "caption": "Search in a submenu, multi-select rows keep the menu open"
+    }
+   ]
+  },
+  {
+   "section": "Filter chips",
+   "notes": []
+  },
+  {
+   "section": "Thread status",
+   "notes": [
+    {
+     "caption": "Bucket glyphs, idle carries nothing"
+    },
+    {
+     "caption": "PR states, the state lives in the icon color"
+    }
+   ]
+  },
+  {
+   "section": "Diff",
+   "notes": [
+    {
+     "caption": "Multi-file patch, hydrated for context expansion, deleted file starts collapsed"
+    },
+    {
+     "caption": "Expanded context, every unchanged line rendered"
+    },
+    {
+     "caption": "Unparseable patch falls back to raw text"
+    }
+   ]
+  },
+  {
+   "section": "Diff selection",
+   "notes": [
+    {
+     "caption": "Select text in the diff, the toolbar anchors above the selection · last action: none yet"
+    }
+   ]
+  },
+  {
+   "section": "Editable file",
+   "notes": [
+    {
+     "caption": "Uncontrolled script editor on the diff theme bridge; click into it for the focus outline"
+    },
+    {
+     "caption": "Empty editor"
+    }
+   ]
+  },
+  {
+   "section": "Markdown",
+   "notes": [
+    {
+     "caption": "Static document, block-cached prose and worker-highlighted code"
+    },
+    {
+     "caption": "Streaming replay, healed tail and incremental highlighting"
+    }
+   ]
+  },
+  {
+   "section": "Crash card",
+   "notes": []
+  }
+ ]
+}
