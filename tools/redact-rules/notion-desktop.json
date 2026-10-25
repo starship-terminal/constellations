@@ -1,0 +1,5 @@
+{
+  "_note": "No rectangles: nothing in notion-desktop is masked. The boosted OCR read of the light switcher menu cuts the owner's school address (on the shared email_allow list) to 'chenwenlong@u.nus.ed', which the anchored allow pattern misses; this allows that truncated read only. Check with --rules tools/redact-rules/notion-desktop.json.",
+  "families": [],
+  "ocr": {"email_allow": ["^chenwenlong@u\\.nus\\.ed$"]}
+}
