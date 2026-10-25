@@ -1,0 +1,4197 @@
+{
+ "classes": {
+  "monaco-split-view2": {
+   "props": {
+    "width": "100%",
+    "height": "100%"
+   },
+   "selector": ".monaco-split-view2",
+   "condition": "",
+   "sheet": "workbench.desktop.main.css",
+   "used": 1
+  },
+  "desktop-shell-root:focus-visible": {
+   "props": {
+    "outline-width": "initial"
+   },
+   "selector": ".monaco-workbench .desktop-shell-root:focus-visible",
+   "condition": "",
+   "sheet": "workbench.desktop.main.css",
+   "used": 1
+  },
+  "windsurf-devin-app-mount": {
+   "props": {
+    "min-height": "0px"
+   },
+   "selector": ".monaco-workbench .windsurf-devin-app-mount",
+   "condition": "",
+   "sheet": "workbench.desktop.main.css",
+   "used": 1
+  },
+  "sr-only": {
+   "props": {
+    "width": "1px",
+    "height": "1px",
+    "padding-top": "0px",
+    "padding-right": "0px",
+    "padding-bottom": "0px",
+    "padding-left": "0px"
+   },
+   "selector": ".devin-app-root .sr-only",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 21
+  },
+  "!z-[60]": {
+   "props": {
+    "z-index": "60"
+   },
+   "selector": ".devin-app-root .\\!z-\\[60\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "z-10": {
+   "props": {
+    "z-index": "10"
+   },
+   "selector": ".devin-app-root .z-10",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 85
+  },
+  "z-20": {
+   "props": {
+    "z-index": "20"
+   },
+   "selector": ".devin-app-root .z-20",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 10
+  },
+  "z-50": {
+   "props": {
+    "z-index": "50"
+   },
+   "selector": ".devin-app-root .z-50",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 5
+  },
+  "z-[1]": {
+   "props": {
+    "z-index": "1"
+   },
+   "selector": ".devin-app-root .z-\\[1\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 69
+  },
+  "z-[49]": {
+   "props": {
+    "z-index": "49"
+   },
+   "selector": ".devin-app-root .z-\\[49\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "z-[9999]": {
+   "props": {
+    "z-index": "9999"
+   },
+   "selector": ".devin-app-root .z-\\[9999\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "z-auto": {
+   "props": {
+    "z-index": "auto"
+   },
+   "selector": ".devin-app-root .z-auto",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "size-0": {
+   "props": {
+    "width": "0px",
+    "height": "0px"
+   },
+   "selector": ".devin-app-root .size-0",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "size-1.5": {
+   "props": {
+    "width": "0.375rem",
+    "height": "0.375rem"
+   },
+   "selector": ".devin-app-root .size-1\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "size-2": {
+   "props": {
+    "width": "0.5rem",
+    "height": "0.5rem"
+   },
+   "selector": ".devin-app-root .size-2",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 6
+  },
+  "size-3": {
+   "props": {
+    "width": "0.75rem",
+    "height": "0.75rem"
+   },
+   "selector": ".devin-app-root .size-3",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 28
+  },
+  "size-3.5": {
+   "props": {
+    "width": "0.875rem",
+    "height": "0.875rem"
+   },
+   "selector": ".devin-app-root .size-3\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 13
+  },
+  "size-4": {
+   "props": {
+    "width": "1rem",
+    "height": "1rem"
+   },
+   "selector": ".devin-app-root .size-4",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 173
+  },
+  "size-5": {
+   "props": {
+    "width": "1.25rem",
+    "height": "1.25rem"
+   },
+   "selector": ".devin-app-root .size-5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 5
+  },
+  "size-6": {
+   "props": {
+    "width": "1.5rem",
+    "height": "1.5rem"
+   },
+   "selector": ".devin-app-root .size-6",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 243
+  },
+  "size-7": {
+   "props": {
+    "width": "1.75rem",
+    "height": "1.75rem"
+   },
+   "selector": ".devin-app-root .size-7",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 165
+  },
+  "size-[18px]": {
+   "props": {
+    "width": "18px",
+    "height": "18px"
+   },
+   "selector": ".devin-app-root .size-\\[18px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 85
+  },
+  "size-[22px]": {
+   "props": {
+    "width": "22px",
+    "height": "22px"
+   },
+   "selector": ".devin-app-root .size-\\[22px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 5
+  },
+  "size-full": {
+   "props": {
+    "width": "100%",
+    "height": "100%"
+   },
+   "selector": ".devin-app-root .size-full",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 80
+  },
+  "h-0": {
+   "props": {
+    "height": "0px"
+   },
+   "selector": ".devin-app-root .h-0",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 9
+  },
+  "h-10": {
+   "props": {
+    "height": "2.5rem"
+   },
+   "selector": ".devin-app-root .h-10",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "h-4": {
+   "props": {
+    "height": "1rem"
+   },
+   "selector": ".devin-app-root .h-4",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 16
+  },
+  "h-7": {
+   "props": {
+    "height": "1.75rem"
+   },
+   "selector": ".devin-app-root .h-7",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 10
+  },
+  "h-8": {
+   "props": {
+    "height": "2rem"
+   },
+   "selector": ".devin-app-root .h-8",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 5
+  },
+  "h-[18px]": {
+   "props": {
+    "height": "18px"
+   },
+   "selector": ".devin-app-root .h-\\[18px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 56
+  },
+  "h-[20px]": {
+   "props": {
+    "height": "20px"
+   },
+   "selector": ".devin-app-root .h-\\[20px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 23
+  },
+  "h-[22px]": {
+   "props": {
+    "height": "22px"
+   },
+   "selector": ".devin-app-root .h-\\[22px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "h-[24px]": {
+   "props": {
+    "height": "24px"
+   },
+   "selector": ".devin-app-root .h-\\[24px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 51
+  },
+  "h-[28px]": {
+   "props": {
+    "height": "28px"
+   },
+   "selector": ".devin-app-root .h-\\[28px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 26
+  },
+  "h-[30px]": {
+   "props": {
+    "height": "30px"
+   },
+   "selector": ".devin-app-root .h-\\[30px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 21
+  },
+  "h-[var(--window-header-height,44px)]": {
+   "props": {
+    "height": "var(--window-header-height,44px)"
+   },
+   "selector": ".devin-app-root .h-\\[var\\(--window-header-height\\,44px\\)\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 5
+  },
+  "h-auto": {
+   "props": {
+    "height": "auto"
+   },
+   "selector": ".devin-app-root .h-auto",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "h-full": {
+   "props": {
+    "height": "100%"
+   },
+   "selector": ".devin-app-root .h-full",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 248
+  },
+  "h-px": {
+   "props": {
+    "height": "1px"
+   },
+   "selector": ".devin-app-root .h-px",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "min-h-0": {
+   "props": {
+    "min-height": "0px"
+   },
+   "selector": ".devin-app-root .min-h-0",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 68
+  },
+  "min-h-6": {
+   "props": {
+    "min-height": "1.5rem"
+   },
+   "selector": ".devin-app-root .min-h-6",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "min-h-7": {
+   "props": {
+    "min-height": "1.75rem"
+   },
+   "selector": ".devin-app-root .min-h-7",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 12
+  },
+  "min-h-[1lh]": {
+   "props": {
+    "min-height": "1lh"
+   },
+   "selector": ".devin-app-root .min-h-\\[1lh\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "min-h-full": {
+   "props": {
+    "min-height": "100%"
+   },
+   "selector": ".devin-app-root .min-h-full",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "min-h-min": {
+   "props": {
+    "min-height": "min-content"
+   },
+   "selector": ".devin-app-root .min-h-min",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "w-0": {
+   "props": {
+    "width": "0px"
+   },
+   "selector": ".devin-app-root .w-0",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "w-5": {
+   "props": {
+    "width": "1.25rem"
+   },
+   "selector": ".devin-app-root .w-5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "w-6": {
+   "props": {
+    "width": "1.5rem"
+   },
+   "selector": ".devin-app-root .w-6",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 60
+  },
+  "w-7": {
+   "props": {
+    "width": "1.75rem"
+   },
+   "selector": ".devin-app-root .w-7",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 6
+  },
+  "w-8": {
+   "props": {
+    "width": "2rem"
+   },
+   "selector": ".devin-app-root .w-8",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "w-[10px]": {
+   "props": {
+    "width": "10px"
+   },
+   "selector": ".devin-app-root .w-\\[10px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "w-[320px]": {
+   "props": {
+    "width": "320px"
+   },
+   "selector": ".devin-app-root .w-\\[320px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "w-[var(--split-segment-w)]": {
+   "props": {
+    "width": "var(--split-segment-w)"
+   },
+   "selector": ".devin-app-root .w-\\[var\\(--split-segment-w\\)\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "w-auto": {
+   "props": {
+    "width": "auto"
+   },
+   "selector": ".devin-app-root .w-auto",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "w-fit": {
+   "props": {
+    "width": "fit-content"
+   },
+   "selector": ".devin-app-root .w-fit",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 24
+  },
+  "w-full": {
+   "props": {
+    "width": "100%"
+   },
+   "selector": ".devin-app-root .w-full",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 159
+  },
+  "w-px": {
+   "props": {
+    "width": "1px"
+   },
+   "selector": ".devin-app-root .w-px",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 5
+  },
+  "gap-0.5": {
+   "props": {
+    "row-gap": "0.125rem",
+    "column-gap": "0.125rem"
+   },
+   "selector": ".devin-app-root .gap-0\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 255
+  },
+  "gap-1": {
+   "props": {
+    "row-gap": "0.25rem",
+    "column-gap": "0.25rem"
+   },
+   "selector": ".devin-app-root .gap-1",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 269
+  },
+  "gap-2": {
+   "props": {
+    "row-gap": "0.5rem",
+    "column-gap": "0.5rem"
+   },
+   "selector": ".devin-app-root .gap-2",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 277
+  },
+  "gap-2.5": {
+   "props": {
+    "row-gap": "0.625rem",
+    "column-gap": "0.625rem"
+   },
+   "selector": ".devin-app-root .gap-2\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 274
+  },
+  "gap-3": {
+   "props": {
+    "row-gap": "0.75rem",
+    "column-gap": "0.75rem"
+   },
+   "selector": ".devin-app-root .gap-3",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 60
+  },
+  "gap-4": {
+   "props": {
+    "row-gap": "1rem",
+    "column-gap": "1rem"
+   },
+   "selector": ".devin-app-root .gap-4",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "gap-6": {
+   "props": {
+    "row-gap": "1.5rem",
+    "column-gap": "1.5rem"
+   },
+   "selector": ".devin-app-root .gap-6",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "gap-[2px]": {
+   "props": {
+    "row-gap": "2px",
+    "column-gap": "2px"
+   },
+   "selector": ".devin-app-root .gap-\\[2px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 163
+  },
+  "gap-[3px]": {
+   "props": {
+    "row-gap": "3px",
+    "column-gap": "3px"
+   },
+   "selector": ".devin-app-root .gap-\\[3px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 51
+  },
+  "gap-[4px]": {
+   "props": {
+    "row-gap": "4px",
+    "column-gap": "4px"
+   },
+   "selector": ".devin-app-root .gap-\\[4px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "gap-[8px]": {
+   "props": {
+    "row-gap": "8px",
+    "column-gap": "8px"
+   },
+   "selector": ".devin-app-root .gap-\\[8px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 59
+  },
+  "gap-px": {
+   "props": {
+    "row-gap": "1px",
+    "column-gap": "1px"
+   },
+   "selector": ".devin-app-root .gap-px",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 36
+  },
+  "gap-x-1.5": {
+   "props": {
+    "column-gap": "0.375rem"
+   },
+   "selector": ".devin-app-root .gap-x-1\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "gap-x-3": {
+   "props": {
+    "column-gap": "0.75rem"
+   },
+   "selector": ".devin-app-root .gap-x-3",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "gap-y-1": {
+   "props": {
+    "row-gap": "0.25rem"
+   },
+   "selector": ".devin-app-root .gap-y-1",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 59
+  },
+  "!rounded-[inherit]": {
+   "props": {
+    "border-top-left-radius": "inherit",
+    "border-top-right-radius": "inherit",
+    "border-bottom-right-radius": "inherit",
+    "border-bottom-left-radius": "inherit"
+   },
+   "selector": ".devin-app-root .\\!rounded-\\[inherit\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "rounded-[10px]": {
+   "props": {
+    "border-top-left-radius": "10px",
+    "border-top-right-radius": "10px",
+    "border-bottom-right-radius": "10px",
+    "border-bottom-left-radius": "10px"
+   },
+   "selector": ".devin-app-root .rounded-\\[10px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 44
+  },
+  "rounded-[12px]": {
+   "props": {
+    "border-top-left-radius": "12px",
+    "border-top-right-radius": "12px",
+    "border-bottom-right-radius": "12px",
+    "border-bottom-left-radius": "12px"
+   },
+   "selector": ".devin-app-root .rounded-\\[12px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 236
+  },
+  "rounded-[16px]": {
+   "props": {
+    "border-top-left-radius": "16px",
+    "border-top-right-radius": "16px",
+    "border-bottom-right-radius": "16px",
+    "border-bottom-left-radius": "16px"
+   },
+   "selector": ".devin-app-root .rounded-\\[16px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "rounded-[18px]": {
+   "props": {
+    "border-top-left-radius": "18px",
+    "border-top-right-radius": "18px",
+    "border-bottom-right-radius": "18px",
+    "border-bottom-left-radius": "18px"
+   },
+   "selector": ".devin-app-root .rounded-\\[18px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "rounded-[20px]": {
+   "props": {
+    "border-top-left-radius": "20px",
+    "border-top-right-radius": "20px",
+    "border-bottom-right-radius": "20px",
+    "border-bottom-left-radius": "20px"
+   },
+   "selector": ".devin-app-root .rounded-\\[20px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "rounded-[2px]": {
+   "props": {
+    "border-top-left-radius": "2px",
+    "border-top-right-radius": "2px",
+    "border-bottom-right-radius": "2px",
+    "border-bottom-left-radius": "2px"
+   },
+   "selector": ".devin-app-root .rounded-\\[2px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 149
+  },
+  "rounded-[4px]": {
+   "props": {
+    "border-top-left-radius": "4px",
+    "border-top-right-radius": "4px",
+    "border-bottom-right-radius": "4px",
+    "border-bottom-left-radius": "4px"
+   },
+   "selector": ".devin-app-root .rounded-\\[4px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 34
+  },
+  "rounded-[6px]": {
+   "props": {
+    "border-top-left-radius": "6px",
+    "border-top-right-radius": "6px",
+    "border-bottom-right-radius": "6px",
+    "border-bottom-left-radius": "6px"
+   },
+   "selector": ".devin-app-root .rounded-\\[6px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 297
+  },
+  "rounded-[inherit]": {
+   "props": {
+    "border-top-left-radius": "inherit",
+    "border-top-right-radius": "inherit",
+    "border-bottom-right-radius": "inherit",
+    "border-bottom-left-radius": "inherit"
+   },
+   "selector": ".devin-app-root .rounded-\\[inherit\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 236
+  },
+  "rounded-full": {
+   "props": {
+    "border-top-left-radius": "9999px",
+    "border-top-right-radius": "9999px",
+    "border-bottom-right-radius": "9999px",
+    "border-bottom-left-radius": "9999px"
+   },
+   "selector": ".devin-app-root .rounded-full",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 80
+  },
+  "rounded-md": {
+   "props": {
+    "border-top-left-radius": "calc(-2px + 0.5rem)",
+    "border-top-right-radius": "calc(-2px + 0.5rem)",
+    "border-bottom-right-radius": "calc(-2px + 0.5rem)",
+    "border-bottom-left-radius": "calc(-2px + 0.5rem)"
+   },
+   "selector": ".devin-app-root .rounded-md",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 87
+  },
+  "rounded-none": {
+   "props": {
+    "border-top-left-radius": "0px",
+    "border-top-right-radius": "0px",
+    "border-bottom-right-radius": "0px",
+    "border-bottom-left-radius": "0px"
+   },
+   "selector": ".devin-app-root .rounded-none",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "rounded-sm": {
+   "props": {
+    "border-top-left-radius": "calc(-4px + 0.5rem)",
+    "border-top-right-radius": "calc(-4px + 0.5rem)",
+    "border-bottom-right-radius": "calc(-4px + 0.5rem)",
+    "border-bottom-left-radius": "calc(-4px + 0.5rem)"
+   },
+   "selector": ".devin-app-root .rounded-sm",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "rounded-xl": {
+   "props": {
+    "border-top-left-radius": "0.75rem",
+    "border-top-right-radius": "0.75rem",
+    "border-bottom-right-radius": "0.75rem",
+    "border-bottom-left-radius": "0.75rem"
+   },
+   "selector": ".devin-app-root .rounded-xl",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 22
+  },
+  "p-0": {
+   "props": {
+    "padding-top": "0px",
+    "padding-right": "0px",
+    "padding-bottom": "0px",
+    "padding-left": "0px"
+   },
+   "selector": ".devin-app-root .p-0",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 41
+  },
+  "p-1": {
+   "props": {
+    "padding-top": "0.25rem",
+    "padding-right": "0.25rem",
+    "padding-bottom": "0.25rem",
+    "padding-left": "0.25rem"
+   },
+   "selector": ".devin-app-root .p-1",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 5
+  },
+  "p-2": {
+   "props": {
+    "padding-top": "0.5rem",
+    "padding-right": "0.5rem",
+    "padding-bottom": "0.5rem",
+    "padding-left": "0.5rem"
+   },
+   "selector": ".devin-app-root .p-2",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 238
+  },
+  "p-3": {
+   "props": {
+    "padding-top": "0.75rem",
+    "padding-right": "0.75rem",
+    "padding-bottom": "0.75rem",
+    "padding-left": "0.75rem"
+   },
+   "selector": ".devin-app-root .p-3",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "p-[--sidebar-padding]": {
+   "props": {
+    "padding-top": "",
+    "padding-right": "",
+    "padding-bottom": "",
+    "padding-left": ""
+   },
+   "selector": ".devin-app-root .p-\\[--sidebar-padding\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "p-[7px]": {
+   "props": {
+    "padding-top": "7px",
+    "padding-right": "7px",
+    "padding-bottom": "7px",
+    "padding-left": "7px"
+   },
+   "selector": ".devin-app-root .p-\\[7px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "px-0": {
+   "props": {
+    "padding-left": "0px",
+    "padding-right": "0px"
+   },
+   "selector": ".devin-app-root .px-0",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "px-0.5": {
+   "props": {
+    "padding-left": "0.125rem",
+    "padding-right": "0.125rem"
+   },
+   "selector": ".devin-app-root .px-0\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 5
+  },
+  "px-1": {
+   "props": {
+    "padding-left": "0.25rem",
+    "padding-right": "0.25rem"
+   },
+   "selector": ".devin-app-root .px-1",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "px-1.5": {
+   "props": {
+    "padding-left": "0.375rem",
+    "padding-right": "0.375rem"
+   },
+   "selector": ".devin-app-root .px-1\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 11
+  },
+  "px-2": {
+   "props": {
+    "padding-left": "0.5rem",
+    "padding-right": "0.5rem"
+   },
+   "selector": ".devin-app-root .px-2",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 49
+  },
+  "px-2.5": {
+   "props": {
+    "padding-left": "0.625rem",
+    "padding-right": "0.625rem"
+   },
+   "selector": ".devin-app-root .px-2\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 41
+  },
+  "px-3": {
+   "props": {
+    "padding-left": "0.75rem",
+    "padding-right": "0.75rem"
+   },
+   "selector": ".devin-app-root .px-3",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 10
+  },
+  "px-4": {
+   "props": {
+    "padding-left": "1rem",
+    "padding-right": "1rem"
+   },
+   "selector": ".devin-app-root .px-4",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "px-[--sidebar-padding]": {
+   "props": {
+    "padding-left": "var(--sidebar-padding)",
+    "padding-right": "var(--sidebar-padding)"
+   },
+   "selector": ".devin-app-root .px-\\[--sidebar-padding\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 5
+  },
+  "px-[10px]": {
+   "props": {
+    "padding-left": "10px",
+    "padding-right": "10px"
+   },
+   "selector": ".devin-app-root .px-\\[10px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 5
+  },
+  "px-[4px]": {
+   "props": {
+    "padding-left": "4px",
+    "padding-right": "4px"
+   },
+   "selector": ".devin-app-root .px-\\[4px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 8
+  },
+  "px-[6px]": {
+   "props": {
+    "padding-left": "6px",
+    "padding-right": "6px"
+   },
+   "selector": ".devin-app-root .px-\\[6px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "px-[8px]": {
+   "props": {
+    "padding-left": "8px",
+    "padding-right": "8px"
+   },
+   "selector": ".devin-app-root .px-\\[8px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 55
+  },
+  "py-1": {
+   "props": {
+    "padding-top": "0.25rem",
+    "padding-bottom": "0.25rem"
+   },
+   "selector": ".devin-app-root .py-1",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 8
+  },
+  "py-1.5": {
+   "props": {
+    "padding-top": "0.375rem",
+    "padding-bottom": "0.375rem"
+   },
+   "selector": ".devin-app-root .py-1\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 13
+  },
+  "py-2": {
+   "props": {
+    "padding-top": "0.5rem",
+    "padding-bottom": "0.5rem"
+   },
+   "selector": ".devin-app-root .py-2",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 57
+  },
+  "py-3": {
+   "props": {
+    "padding-top": "0.75rem",
+    "padding-bottom": "0.75rem"
+   },
+   "selector": ".devin-app-root .py-3",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "py-[5px]": {
+   "props": {
+    "padding-top": "5px",
+    "padding-bottom": "5px"
+   },
+   "selector": ".devin-app-root .py-\\[5px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "py-[6px]": {
+   "props": {
+    "padding-top": "6px",
+    "padding-bottom": "6px"
+   },
+   "selector": ".devin-app-root .py-\\[6px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 59
+  },
+  "pb-1": {
+   "props": {
+    "padding-bottom": "0.25rem"
+   },
+   "selector": ".devin-app-root .pb-1",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "pb-16": {
+   "props": {
+    "padding-bottom": "4rem"
+   },
+   "selector": ".devin-app-root .pb-16",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pb-2.5": {
+   "props": {
+    "padding-bottom": "0.625rem"
+   },
+   "selector": ".devin-app-root .pb-2\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pb-3": {
+   "props": {
+    "padding-bottom": "0.75rem"
+   },
+   "selector": ".devin-app-root .pb-3",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "pb-px": {
+   "props": {
+    "padding-bottom": "1px"
+   },
+   "selector": ".devin-app-root .pb-px",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pl-1": {
+   "props": {
+    "padding-left": "0.25rem"
+   },
+   "selector": ".devin-app-root .pl-1",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 34
+  },
+  "pl-2": {
+   "props": {
+    "padding-left": "0.5rem"
+   },
+   "selector": ".devin-app-root .pl-2",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 9
+  },
+  "pl-4": {
+   "props": {
+    "padding-left": "1rem"
+   },
+   "selector": ".devin-app-root .pl-4",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pl-[4px]": {
+   "props": {
+    "padding-left": "4px"
+   },
+   "selector": ".devin-app-root .pl-\\[4px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pl-px": {
+   "props": {
+    "padding-left": "1px"
+   },
+   "selector": ".devin-app-root .pl-px",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pr-0.5": {
+   "props": {
+    "padding-right": "0.125rem"
+   },
+   "selector": ".devin-app-root .pr-0\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 30
+  },
+  "pr-1": {
+   "props": {
+    "padding-right": "0.25rem"
+   },
+   "selector": ".devin-app-root .pr-1",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 5
+  },
+  "pr-1.5": {
+   "props": {
+    "padding-right": "0.375rem"
+   },
+   "selector": ".devin-app-root .pr-1\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 17
+  },
+  "pr-3": {
+   "props": {
+    "padding-right": "0.75rem"
+   },
+   "selector": ".devin-app-root .pr-3",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "pr-[5px]": {
+   "props": {
+    "padding-right": "5px"
+   },
+   "selector": ".devin-app-root .pr-\\[5px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pr-[7px]": {
+   "props": {
+    "padding-right": "7px"
+   },
+   "selector": ".devin-app-root .pr-\\[7px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pt-16": {
+   "props": {
+    "padding-top": "4rem"
+   },
+   "selector": ".devin-app-root .pt-16",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pt-2.5": {
+   "props": {
+    "padding-top": "0.625rem"
+   },
+   "selector": ".devin-app-root .pt-2\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pt-4": {
+   "props": {
+    "padding-top": "1rem"
+   },
+   "selector": ".devin-app-root .pt-4",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pt-px": {
+   "props": {
+    "padding-top": "1px"
+   },
+   "selector": ".devin-app-root .pt-px",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "font-sans": {
+   "props": {
+    "font-family": "var(--font-ui,Inter), ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+   },
+   "selector": ".devin-app-root .font-sans",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 157
+  },
+  "text-11": {
+   "props": {
+    "font-size": "calc(.6875rem * var(--text-scale,1))",
+    "line-height": "calc(.875rem * var(--text-scale,1))",
+    "letter-spacing": "0.01em"
+   },
+   "selector": ".devin-app-root .text-11",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 149
+  },
+  "text-12": {
+   "props": {
+    "font-size": "calc(.75rem * var(--text-scale,1))",
+    "line-height": "calc(1rem * var(--text-scale,1))"
+   },
+   "selector": ".devin-app-root .text-12",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 295
+  },
+  "text-13": {
+   "props": {
+    "font-size": "calc(.8125rem * var(--text-scale,1))",
+    "line-height": "calc(1.125rem * var(--text-scale,1))",
+    "letter-spacing": "-0.005em"
+   },
+   "selector": ".devin-app-root .text-13",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 274
+  },
+  "text-14": {
+   "props": {
+    "font-size": "calc(.875rem * var(--text-scale,1))",
+    "line-height": "calc(1.25rem * var(--text-scale,1))",
+    "letter-spacing": "-0.005em"
+   },
+   "selector": ".devin-app-root .text-14",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 82
+  },
+  "text-17": {
+   "props": {
+    "font-size": "calc(1.0625rem * var(--text-scale,1))",
+    "line-height": "calc(1.625rem * var(--text-scale,1))",
+    "letter-spacing": "-0.015em"
+   },
+   "selector": ".devin-app-root .text-17",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 9
+  },
+  "font-medium": {
+   "props": {
+    "font-weight": "500"
+   },
+   "selector": ".devin-app-root .font-medium",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 85
+  },
+  "leading-[20px]": {
+   "props": {
+    "line-height": "20px"
+   },
+   "selector": ".devin-app-root .leading-\\[20px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "leading-normal": {
+   "props": {
+    "line-height": "1.5"
+   },
+   "selector": ".devin-app-root .leading-normal",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "opacity-0": {
+   "props": {
+    "opacity": "0"
+   },
+   "selector": ".devin-app-root .opacity-0",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 124
+  },
+  "opacity-100": {
+   "props": {
+    "opacity": "1"
+   },
+   "selector": ".devin-app-root .opacity-100",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "opacity-40": {
+   "props": {
+    "opacity": "0.4"
+   },
+   "selector": ".devin-app-root .opacity-40",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 13
+  },
+  "shadow": {
+   "props": {
+    "--tw-shadow": "0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a",
+    "box-shadow": "var(--tw-ring-offset-shadow,0 0 #0000), var(--tw-ring-shadow,0 0 #0000), var(--tw-shadow)"
+   },
+   "selector": ".devin-app-root .shadow",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "shadow-shadow-L4-wax": {
+   "props": {
+    "--tw-shadow": "var(--shadow-L4-wax)",
+    "box-shadow": "var(--tw-ring-offset-shadow,0 0 #0000), var(--tw-ring-shadow,0 0 #0000), var(--tw-shadow)"
+   },
+   "selector": ".devin-app-root .shadow-shadow-L4-wax",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "backdrop-blur": {
+   "props": {
+    "--tw-backdrop-blur": "blur(8px)",
+    "backdrop-filter": "var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)"
+   },
+   "selector": ".devin-app-root .backdrop-blur",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "backdrop-blur-sm": {
+   "props": {
+    "--tw-backdrop-blur": "blur(4px)",
+    "backdrop-filter": "var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)"
+   },
+   "selector": ".devin-app-root .backdrop-blur-sm",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "duration-100": {
+   "props": {
+    "animation-duration": "0.1s"
+   },
+   "selector": ".devin-app-root .duration-100",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "outline-none": {
+   "props": {
+    "outline-offset": "2px",
+    "outline-width": "2px"
+   },
+   "selector": ".devin-app-root .outline-none",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 341
+  },
+  "pt-safe": {
+   "props": {
+    "padding-top": "calc(0px + env(safe-area-inset-top))"
+   },
+   "selector": ".devin-app-root .pt-safe",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "pb-safe": {
+   "props": {
+    "padding-bottom": "calc(0px + env(safe-area-inset-bottom))"
+   },
+   "selector": ".devin-app-root .pb-safe",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "focus-ring:focus-visible": {
+   "props": {
+    "outline-width": "1px"
+   },
+   "selector": ".devin-app-root .focus-ring:focus-visible",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 265
+  },
+  "focus-ring-inset": {
+   "props": {
+    "outline-offset": "2px",
+    "outline-width": "2px"
+   },
+   "selector": ".devin-app-root .focus-ring-inset",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 82
+  },
+  "focus-ring-inset:focus-visible": {
+   "props": {
+    "outline-offset": "-1px"
+   },
+   "selector": ".devin-app-root .focus-ring-inset:focus-visible",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 82
+  },
+  "[box-shadow:0_0_calc(var(--sidebar-fade-b)*0.75)_calc(var(--sidebar-fade-b)*0.75)_var(--sidebar-bg,rgb(var(--bg-page)))]": {
+   "props": {
+    "box-shadow": "0 0 calc(var(--sidebar-fade-b) * .75) calc(var(--sidebar-fade-b) * .75) var(--sidebar-bg,rgb(var(--bg-page)))"
+   },
+   "selector": ".devin-app-root .\\[box-shadow\\:0_0_calc\\(var\\(--sidebar-fade-b\\)\\*0\\.75\\)_calc\\(var\\(--sidebar-fade-b\\)\\*0\\.75\\)_var\\(--sidebar-bg\\,rgb\\(var\\(--bg-page\\)\\)\\)\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "[box-shadow:0_0_calc(var(--sidebar-fade-m)*0.75)_calc(var(--sidebar-fade-m)*0.75)_var(--sidebar-bg,rgb(var(--bg-page)))]": {
+   "props": {
+    "box-shadow": "0 0 calc(var(--sidebar-fade-m) * .75) calc(var(--sidebar-fade-m) * .75) var(--sidebar-bg,rgb(var(--bg-page)))"
+   },
+   "selector": ".devin-app-root .\\[box-shadow\\:0_0_calc\\(var\\(--sidebar-fade-m\\)\\*0\\.75\\)_calc\\(var\\(--sidebar-fade-m\\)\\*0\\.75\\)_var\\(--sidebar-bg\\,rgb\\(var\\(--bg-page\\)\\)\\)\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "![transition-duration:250ms]": {
+   "props": {
+    "transition-duration": "0.25s"
+   },
+   "selector": ".devin-app-root .\\!\\[transition-duration\\:250ms\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "first:rounded-l-[inherit]:first-child": {
+   "props": {
+    "border-top-left-radius": "inherit",
+    "border-bottom-left-radius": "inherit"
+   },
+   "selector": ".devin-app-root .first\\:rounded-l-\\[inherit\\]:first-child",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "last:rounded-r-[inherit]:last-child": {
+   "props": {
+    "border-top-right-radius": "inherit",
+    "border-bottom-right-radius": "inherit"
+   },
+   "selector": ".devin-app-root .last\\:rounded-r-\\[inherit\\]:last-child",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "focus:not-sr-only:focus": {
+   "props": {
+    "width": "auto",
+    "height": "auto",
+    "padding-top": "0px",
+    "padding-right": "0px",
+    "padding-bottom": "0px",
+    "padding-left": "0px"
+   },
+   "selector": ".devin-app-root .focus\\:not-sr-only:focus",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "focus:z-50:focus": {
+   "props": {
+    "z-index": "50"
+   },
+   "selector": ".devin-app-root .focus\\:z-50:focus",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "focus:outline-none:focus": {
+   "props": {
+    "outline-offset": "2px",
+    "outline-width": "2px"
+   },
+   "selector": ".devin-app-root .focus\\:outline-none:focus",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "focus-visible:opacity-100:focus-visible": {
+   "props": {
+    "opacity": "1"
+   },
+   "selector": ".devin-app-root .focus-visible\\:opacity-100:focus-visible",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 7
+  },
+  "focus-visible:outline-none:focus-visible": {
+   "props": {
+    "outline-offset": "2px",
+    "outline-width": "2px"
+   },
+   "selector": ".devin-app-root .focus-visible\\:outline-none:focus-visible",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "focus-visible:outline-2:focus-visible": {
+   "props": {
+    "outline-width": "2px"
+   },
+   "selector": ".devin-app-root .focus-visible\\:outline-2:focus-visible",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 7
+  },
+  "disabled:opacity-50:disabled": {
+   "props": {
+    "opacity": "0.5"
+   },
+   "selector": ".devin-app-root .disabled\\:opacity-50:disabled",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 277
+  },
+  "has-[[data-slot=sidebar-menu-button-two-line-content]]:h-11:has([data-slot=\"sidebar-menu-button-two-line-content\"])": {
+   "props": {
+    "height": "2.75rem"
+   },
+   "selector": ".devin-app-root .has-\\[\\[data-slot\\=sidebar-menu-button-two-line-content\\]\\]\\:h-11:has([data-slot=\"sidebar-menu-button-two-line-content\"])",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 21
+  },
+  "has-[[data-slot=input-group]]:px-0:has([data-slot=\"input-group\"])": {
+   "props": {
+    "padding-left": "0px",
+    "padding-right": "0px"
+   },
+   "selector": ".devin-app-root .has-\\[\\[data-slot\\=input-group\\]\\]\\:px-0:has([data-slot=\"input-group\"])",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 5
+  },
+  "has-[[disabled]]:opacity-50:has([disabled])": {
+   "props": {
+    "opacity": "0.5"
+   },
+   "selector": ".devin-app-root .has-\\[\\[disabled\\]\\]\\:opacity-50:has([disabled])",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "motion-safe:transition-[color,box-shadow]": {
+   "props": {
+    "transition-duration": "0.15s",
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)"
+   },
+   "selector": ".devin-app-root .motion-safe\\:transition-\\[color\\,box-shadow\\]",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 7
+  },
+  "motion-safe:transition-[opacity,transform]": {
+   "props": {
+    "transition-duration": "0.15s",
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)"
+   },
+   "selector": ".devin-app-root .motion-safe\\:transition-\\[opacity\\,transform\\]",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "motion-safe:transition-[transform,opacity]": {
+   "props": {
+    "transition-duration": "0.15s",
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)"
+   },
+   "selector": ".devin-app-root .motion-safe\\:transition-\\[transform\\,opacity\\]",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "motion-safe:transition-[width,opacity,visibility]": {
+   "props": {
+    "transition-duration": "0.15s",
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)"
+   },
+   "selector": ".devin-app-root .motion-safe\\:transition-\\[width\\,opacity\\,visibility\\]",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "motion-safe:transition-colors": {
+   "props": {
+    "transition-duration": "0.15s",
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)"
+   },
+   "selector": ".devin-app-root .motion-safe\\:transition-colors",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 24
+  },
+  "motion-safe:transition-opacity": {
+   "props": {
+    "transition-duration": "0.15s",
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)"
+   },
+   "selector": ".devin-app-root .motion-safe\\:transition-opacity",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "motion-safe:duration-100": {
+   "props": {
+    "transition-duration": "0.1s"
+   },
+   "selector": ".devin-app-root .motion-safe\\:duration-100",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 15
+  },
+  "motion-safe:duration-150": {
+   "props": {
+    "transition-duration": "0.15s"
+   },
+   "selector": ".devin-app-root .motion-safe\\:duration-150",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 48
+  },
+  "motion-safe:duration-200": {
+   "props": {
+    "transition-duration": "0.2s"
+   },
+   "selector": ".devin-app-root .motion-safe\\:duration-200",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 5
+  },
+  "motion-safe:ease-out": {
+   "props": {
+    "transition-timing-function": "cubic-bezier(0, 0, 0.2, 1)"
+   },
+   "selector": ".devin-app-root .motion-safe\\:ease-out",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "motion-safe:[transition-duration:50ms]": {
+   "props": {
+    "transition-duration": "50ms"
+   },
+   "selector": ".devin-app-root .motion-safe\\:\\[transition-duration\\:50ms\\]",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "motion-safe:[transition-timing-function:cubic-bezier(0.25,1,0.5,1)]": {
+   "props": {
+    "transition-timing-function": "cubic-bezier(0.25, 1, 0.5, 1)"
+   },
+   "selector": ".devin-app-root .motion-safe\\:\\[transition-timing-function\\:cubic-bezier\\(0\\.25\\,1\\,0\\.5\\,1\\)\\]",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "motion-safe:[transition-timing-function:cubic-bezier(0.87,0,0.13,1)]": {
+   "props": {
+    "transition-timing-function": "cubic-bezier(0.87, 0, 0.13, 1)"
+   },
+   "selector": ".devin-app-root .motion-safe\\:\\[transition-timing-function\\:cubic-bezier\\(0\\.87\\,0\\,0\\.13\\,1\\)\\]",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "dark:shadow-shadow-L4:is(.dark *)": {
+   "props": {
+    "--tw-shadow": "var(--shadow-L4)",
+    "box-shadow": "var(--tw-ring-offset-shadow,0 0 #0000), var(--tw-ring-shadow,0 0 #0000), var(--tw-shadow)"
+   },
+   "selector": ".devin-app-root .dark\\:shadow-shadow-L4:is(.dark *)",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "max-[600px]:w-full": {
+   "props": {
+    "width": "100%"
+   },
+   "selector": ".devin-app-root .max-\\[600px\\]\\:w-full",
+   "condition": "(width <= 600px)",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "sm:px-8": {
+   "props": {
+    "padding-left": "2rem",
+    "padding-right": "2rem"
+   },
+   "selector": ".devin-app-root .sm\\:px-8",
+   "condition": "(width >= 640px)",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "md:w-0": {
+   "props": {
+    "width": "0px"
+   },
+   "selector": ".devin-app-root .md\\:w-0",
+   "condition": "(width >= 768px)",
+   "sheet": "index.css",
+   "used": 39
+  },
+  "md:rounded-lg": {
+   "props": {
+    "border-top-left-radius": "0.5rem",
+    "border-top-right-radius": "0.5rem",
+    "border-bottom-right-radius": "0.5rem",
+    "border-bottom-left-radius": "0.5rem"
+   },
+   "selector": ".devin-app-root .md\\:rounded-lg",
+   "condition": "(width >= 768px)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "md:pb-0": {
+   "props": {
+    "padding-bottom": "0px"
+   },
+   "selector": ".devin-app-root .md\\:pb-0",
+   "condition": "(width >= 768px)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "md:opacity-0": {
+   "props": {
+    "opacity": "0"
+   },
+   "selector": ".devin-app-root .md\\:opacity-0",
+   "condition": "(width >= 768px)",
+   "sheet": "index.css",
+   "used": 39
+  },
+  "lg:w-auto": {
+   "props": {
+    "width": "auto"
+   },
+   "selector": ".devin-app-root .lg\\:w-auto",
+   "condition": "(width >= 1024px)",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "lg:px-0": {
+   "props": {
+    "padding-left": "0px",
+    "padding-right": "0px"
+   },
+   "selector": ".devin-app-root .lg\\:px-0",
+   "condition": "(width >= 1024px)",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "[@media(any-pointer:coarse)]:!w-6": {
+   "props": {
+    "width": "1.5rem"
+   },
+   "selector": ".devin-app-root .\\[\\@media\\(any-pointer\\:coarse\\)\\]\\:\\!w-6",
+   "condition": "(any-pointer: coarse)",
+   "sheet": "index.css",
+   "used": 13
+  },
+  "[@media(any-pointer:coarse)]:!opacity-100": {
+   "props": {
+    "opacity": "1"
+   },
+   "selector": ".devin-app-root .\\[\\@media\\(any-pointer\\:coarse\\)\\]\\:\\!opacity-100",
+   "condition": "(any-pointer: coarse)",
+   "sheet": "index.css",
+   "used": 22
+  },
+  "[@media(any-pointer:coarse)]:disabled:!opacity-50:disabled": {
+   "props": {
+    "opacity": "0.5"
+   },
+   "selector": ".devin-app-root .\\[\\@media\\(any-pointer\\:coarse\\)\\]\\:disabled\\:\\!opacity-50:disabled",
+   "condition": "(any-pointer: coarse)",
+   "sheet": "index.css",
+   "used": 13
+  },
+  "size-8": {
+   "props": {
+    "width": "2rem",
+    "height": "2rem"
+   },
+   "selector": ".devin-app-root .size-8",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "h-[13px]": {
+   "props": {
+    "height": "13px"
+   },
+   "selector": ".devin-app-root .h-\\[13px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "h-[16px]": {
+   "props": {
+    "height": "16px"
+   },
+   "selector": ".devin-app-root .h-\\[16px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 40
+  },
+  "h-fit": {
+   "props": {
+    "height": "fit-content"
+   },
+   "selector": ".devin-app-root .h-fit",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "min-h-[60px]": {
+   "props": {
+    "min-height": "60px"
+   },
+   "selector": ".devin-app-root .min-h-\\[60px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 35
+  },
+  "w-[16px]": {
+   "props": {
+    "width": "16px"
+   },
+   "selector": ".devin-app-root .w-\\[16px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 23
+  },
+  "w-[176px]": {
+   "props": {
+    "width": "176px"
+   },
+   "selector": ".devin-app-root .w-\\[176px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 8
+  },
+  "w-[200px]": {
+   "props": {
+    "width": "200px"
+   },
+   "selector": ".devin-app-root .w-\\[200px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "w-[36px]": {
+   "props": {
+    "width": "36px"
+   },
+   "selector": ".devin-app-root .w-\\[36px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 23
+  },
+  "gap-1.5": {
+   "props": {
+    "row-gap": "0.375rem",
+    "column-gap": "0.375rem"
+   },
+   "selector": ".devin-app-root .gap-1\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 124
+  },
+  "gap-[12px]": {
+   "props": {
+    "row-gap": "12px",
+    "column-gap": "12px"
+   },
+   "selector": ".devin-app-root .gap-\\[12px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 61
+  },
+  "gap-[14px]": {
+   "props": {
+    "row-gap": "14px",
+    "column-gap": "14px"
+   },
+   "selector": ".devin-app-root .gap-\\[14px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 59
+  },
+  "gap-[36px]": {
+   "props": {
+    "row-gap": "36px",
+    "column-gap": "36px"
+   },
+   "selector": ".devin-app-root .gap-\\[36px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "rounded": {
+   "props": {
+    "border-top-left-radius": "0.25rem",
+    "border-top-right-radius": "0.25rem",
+    "border-bottom-right-radius": "0.25rem",
+    "border-bottom-left-radius": "0.25rem"
+   },
+   "selector": ".devin-app-root .rounded",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 31
+  },
+  "p-[2px]": {
+   "props": {
+    "padding-top": "2px",
+    "padding-right": "2px",
+    "padding-bottom": "2px",
+    "padding-left": "2px"
+   },
+   "selector": ".devin-app-root .p-\\[2px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 23
+  },
+  "p-[6px]": {
+   "props": {
+    "padding-top": "6px",
+    "padding-right": "6px",
+    "padding-bottom": "6px",
+    "padding-left": "6px"
+   },
+   "selector": ".devin-app-root .p-\\[6px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 12
+  },
+  "px-8": {
+   "props": {
+    "padding-left": "2rem",
+    "padding-right": "2rem"
+   },
+   "selector": ".devin-app-root .px-8",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "px-[12px]": {
+   "props": {
+    "padding-left": "12px",
+    "padding-right": "12px"
+   },
+   "selector": ".devin-app-root .px-\\[12px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 59
+  },
+  "px-px": {
+   "props": {
+    "padding-left": "1px",
+    "padding-right": "1px"
+   },
+   "selector": ".devin-app-root .px-px",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "py-[10px]": {
+   "props": {
+    "padding-top": "10px",
+    "padding-bottom": "10px"
+   },
+   "selector": ".devin-app-root .py-\\[10px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 35
+  },
+  "pb-4": {
+   "props": {
+    "padding-bottom": "1rem"
+   },
+   "selector": ".devin-app-root .pb-4",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pl-[--sidebar-content-button-x-padding]": {
+   "props": {
+    "padding-left": "var(--sidebar-content-button-x-padding)"
+   },
+   "selector": ".devin-app-root .pl-\\[--sidebar-content-button-x-padding\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "pl-[8px]": {
+   "props": {
+    "padding-left": "8px"
+   },
+   "selector": ".devin-app-root .pl-\\[8px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 14
+  },
+  "pr-2": {
+   "props": {
+    "padding-right": "0.5rem"
+   },
+   "selector": ".devin-app-root .pr-2",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 8
+  },
+  "pr-[6px]": {
+   "props": {
+    "padding-right": "6px"
+   },
+   "selector": ".devin-app-root .pr-\\[6px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 14
+  },
+  "font-mono": {
+   "props": {
+    "font-family": "var(--font-code,Devin Mono), SF Mono, Roboto Mono, ui-monospace, monospace"
+   },
+   "selector": ".devin-app-root .font-mono",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 40
+  },
+  "leading-[16px]": {
+   "props": {
+    "line-height": "16px"
+   },
+   "selector": ".devin-app-root .leading-\\[16px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 50
+  },
+  "opacity-10": {
+   "props": {
+    "opacity": "0.1"
+   },
+   "selector": ".devin-app-root .opacity-10",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "shadow-none": {
+   "props": {
+    "--tw-shadow": "0 0 #0000",
+    "box-shadow": "var(--tw-ring-offset-shadow,0 0 #0000), var(--tw-ring-shadow,0 0 #0000), var(--tw-shadow)"
+   },
+   "selector": ".devin-app-root .shadow-none",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "shadow-shadow-L1": {
+   "props": {
+    "--tw-shadow": "var(--shadow-L1)",
+    "box-shadow": "var(--tw-ring-offset-shadow,0 0 #0000), var(--tw-ring-shadow,0 0 #0000), var(--tw-shadow)"
+   },
+   "selector": ".devin-app-root .shadow-shadow-L1",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 235
+  },
+  "focus-visible:outline-0:focus-visible": {
+   "props": {
+    "outline-width": "0px"
+   },
+   "selector": ".devin-app-root .focus-visible\\:outline-0:focus-visible",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "has-[>[data-align=block-end]]:h-auto:has(> [data-align=\"block-end\"])": {
+   "props": {
+    "height": "auto"
+   },
+   "selector": ".devin-app-root .has-\\[\\>\\[data-align\\=block-end\\]\\]\\:h-auto:has(> [data-align=\"block-end\"])",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "has-[>[data-align=block-start]]:h-auto:has(> [data-align=\"block-start\"])": {
+   "props": {
+    "height": "auto"
+   },
+   "selector": ".devin-app-root .has-\\[\\>\\[data-align\\=block-start\\]\\]\\:h-auto:has(> [data-align=\"block-start\"])",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "has-[textarea]:h-auto:has(textarea)": {
+   "props": {
+    "height": "auto"
+   },
+   "selector": ".devin-app-root .has-\\[textarea\\]\\:h-auto:has(textarea)",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "motion-safe:transition-transform": {
+   "props": {
+    "transition-duration": "0.15s",
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)"
+   },
+   "selector": ".devin-app-root .motion-safe\\:transition-transform",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 23
+  },
+  "sm:px-12": {
+   "props": {
+    "padding-left": "3rem",
+    "padding-right": "3rem"
+   },
+   "selector": ".devin-app-root .sm\\:px-12",
+   "condition": "(width >= 640px)",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "sm:pb-12": {
+   "props": {
+    "padding-bottom": "3rem"
+   },
+   "selector": ".devin-app-root .sm\\:pb-12",
+   "condition": "(width >= 640px)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "lg:w-fit": {
+   "props": {
+    "width": "fit-content"
+   },
+   "selector": ".devin-app-root .lg\\:w-fit",
+   "condition": "(width >= 1024px)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "z-[70]": {
+   "props": {
+    "z-index": "70"
+   },
+   "selector": ".devin-app-root .z-\\[70\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "h-[9px]": {
+   "props": {
+    "height": "9px"
+   },
+   "selector": ".devin-app-root .h-\\[9px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "w-[220px]": {
+   "props": {
+    "width": "220px"
+   },
+   "selector": ".devin-app-root .w-\\[220px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "shadow-shadow-L4": {
+   "props": {
+    "--tw-shadow": "var(--shadow-L4)",
+    "box-shadow": "var(--tw-ring-offset-shadow,0 0 #0000), var(--tw-ring-shadow,0 0 #0000), var(--tw-shadow)"
+   },
+   "selector": ".devin-app-root .shadow-shadow-L4",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "backdrop-blur-[8px]": {
+   "props": {
+    "--tw-backdrop-blur": "blur(8px)",
+    "backdrop-filter": "var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)"
+   },
+   "selector": ".devin-app-root .backdrop-blur-\\[8px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "outline-1": {
+   "props": {
+    "outline-width": "1px"
+   },
+   "selector": ".devin-app-root .outline-1",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "[transition:transform_40ms_cubic-bezier(0.76,0,0.24,1),scale_40ms_cubic-bezier(0.76,0,0.24,1),opacity_40ms_cubic-bezier(0.76,0,0.24,1)]": {
+   "props": {
+    "transition-duration": "40ms, 40ms, 40ms",
+    "transition-timing-function": "cubic-bezier(0.76, 0, 0.24, 1), cubic-bezier(0.76, 0, 0.24, 1), cubic-bezier(0.76, 0, 0.24, 1)"
+   },
+   "selector": ".devin-app-root .\\[transition\\:transform_40ms_cubic-bezier\\(0\\.76\\,0\\,0\\.24\\,1\\)\\,scale_40ms_cubic-bezier\\(0\\.76\\,0\\,0\\.24\\,1\\)\\,opacity_40ms_cubic-bezier\\(0\\.7",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "dark:-outline-offset-1:is(.dark *)": {
+   "props": {
+    "outline-offset": "-1px"
+   },
+   "selector": ".devin-app-root .dark\\:-outline-offset-1:is(.dark *)",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "opacity-60": {
+   "props": {
+    "opacity": "0.6"
+   },
+   "selector": ".devin-app-root .opacity-60",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 7
+  },
+  "focus-visible:ring-1:focus-visible": {
+   "props": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+    "box-shadow": "var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow,0 0 #0000)"
+   },
+   "selector": ".devin-app-root .focus-visible\\:ring-1:focus-visible",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "z-0": {
+   "props": {
+    "z-index": "0"
+   },
+   "selector": ".devin-app-root .z-0",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "h-11": {
+   "props": {
+    "height": "2.75rem"
+   },
+   "selector": ".devin-app-root .h-11",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "gap-[10px]": {
+   "props": {
+    "row-gap": "10px",
+    "column-gap": "10px"
+   },
+   "selector": ".devin-app-root .gap-\\[10px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "gap-[6px]": {
+   "props": {
+    "row-gap": "6px",
+    "column-gap": "6px"
+   },
+   "selector": ".devin-app-root .gap-\\[6px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 86
+  },
+  "rounded-[8px]": {
+   "props": {
+    "border-top-left-radius": "8px",
+    "border-top-right-radius": "8px",
+    "border-bottom-right-radius": "8px",
+    "border-bottom-left-radius": "8px"
+   },
+   "selector": ".devin-app-root .rounded-\\[8px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 235
+  },
+  "p-[10px]": {
+   "props": {
+    "padding-top": "10px",
+    "padding-right": "10px",
+    "padding-bottom": "10px",
+    "padding-left": "10px"
+   },
+   "selector": ".devin-app-root .p-\\[10px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "p-px": {
+   "props": {
+    "padding-top": "1px",
+    "padding-right": "1px",
+    "padding-bottom": "1px",
+    "padding-left": "1px"
+   },
+   "selector": ".devin-app-root .p-px",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 12
+  },
+  "pb-2": {
+   "props": {
+    "padding-bottom": "0.5rem"
+   },
+   "selector": ".devin-app-root .pb-2",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "pl-1.5": {
+   "props": {
+    "padding-left": "0.375rem"
+   },
+   "selector": ".devin-app-root .pl-1\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pl-2.5": {
+   "props": {
+    "padding-left": "0.625rem"
+   },
+   "selector": ".devin-app-root .pl-2\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pt-2": {
+   "props": {
+    "padding-top": "0.5rem"
+   },
+   "selector": ".devin-app-root .pt-2",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "pt-[8px]": {
+   "props": {
+    "padding-top": "8px"
+   },
+   "selector": ".devin-app-root .pt-\\[8px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "shadow-shadow-L3": {
+   "props": {
+    "--tw-shadow": "var(--shadow-L3)",
+    "box-shadow": "var(--tw-ring-offset-shadow,0 0 #0000), var(--tw-ring-shadow,0 0 #0000), var(--tw-shadow)"
+   },
+   "selector": ".devin-app-root .shadow-shadow-L3",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "has-[:focus-visible]:opacity-100:has(:focus-visible)": {
+   "props": {
+    "opacity": "1"
+   },
+   "selector": ".devin-app-root .has-\\[\\:focus-visible\\]\\:opacity-100:has(:focus-visible)",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 12
+  },
+  "has-[[data-popup-open]]:opacity-100:has([data-popup-open])": {
+   "props": {
+    "opacity": "1"
+   },
+   "selector": ".devin-app-root .has-\\[\\[data-popup-open\\]\\]\\:opacity-100:has([data-popup-open])",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 12
+  },
+  "[@media(any-pointer:coarse)]:opacity-100": {
+   "props": {
+    "opacity": "1"
+   },
+   "selector": ".devin-app-root .\\[\\@media\\(any-pointer\\:coarse\\)\\]\\:opacity-100",
+   "condition": "(any-pointer: coarse)",
+   "sheet": "index.css",
+   "used": 12
+  },
+  "z-[100]": {
+   "props": {
+    "z-index": "100"
+   },
+   "selector": ".devin-app-root .z-\\[100\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "has-[>kbd:last-child]:pr-1:has(> kbd:last-child)": {
+   "props": {
+    "padding-right": "0.25rem"
+   },
+   "selector": ".devin-app-root .has-\\[\\>kbd\\:last-child\\]\\:pr-1:has(> kbd:last-child)",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "motion-safe:duration-75": {
+   "props": {
+    "transition-duration": "75ms"
+   },
+   "selector": ".devin-app-root .motion-safe\\:duration-75",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "size-[16px]": {
+   "props": {
+    "width": "16px",
+    "height": "16px"
+   },
+   "selector": ".devin-app-root .size-\\[16px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "min-h-[126px]": {
+   "props": {
+    "min-height": "126px"
+   },
+   "selector": ".devin-app-root .min-h-\\[126px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 21
+  },
+  "w-[5px]": {
+   "props": {
+    "width": "5px"
+   },
+   "selector": ".devin-app-root .w-\\[5px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "gap-12": {
+   "props": {
+    "row-gap": "3rem",
+    "column-gap": "3rem"
+   },
+   "selector": ".devin-app-root .gap-12",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "gap-5": {
+   "props": {
+    "row-gap": "1.25rem",
+    "column-gap": "1.25rem"
+   },
+   "selector": ".devin-app-root .gap-5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "rounded-[3px]": {
+   "props": {
+    "border-top-left-radius": "3px",
+    "border-top-right-radius": "3px",
+    "border-bottom-right-radius": "3px",
+    "border-bottom-left-radius": "3px"
+   },
+   "selector": ".devin-app-root .rounded-\\[3px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 6
+  },
+  "p-4": {
+   "props": {
+    "padding-top": "1rem",
+    "padding-right": "1rem",
+    "padding-bottom": "1rem",
+    "padding-left": "1rem"
+   },
+   "selector": ".devin-app-root .p-4",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 43
+  },
+  "px-[5px]": {
+   "props": {
+    "padding-left": "5px",
+    "padding-right": "5px"
+   },
+   "selector": ".devin-app-root .px-\\[5px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 23
+  },
+  "py-0.5": {
+   "props": {
+    "padding-top": "0.125rem",
+    "padding-bottom": "0.125rem"
+   },
+   "selector": ".devin-app-root .py-0\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 23
+  },
+  "py-4": {
+   "props": {
+    "padding-top": "1rem",
+    "padding-bottom": "1rem"
+   },
+   "selector": ".devin-app-root .py-4",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pt-6": {
+   "props": {
+    "padding-top": "1.5rem"
+   },
+   "selector": ".devin-app-root .pt-6",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "text-18": {
+   "props": {
+    "font-size": "calc(1.125rem * var(--text-scale,1))",
+    "line-height": "calc(1.8125rem * var(--text-scale,1))",
+    "letter-spacing": "-0.01em"
+   },
+   "selector": ".devin-app-root .text-18",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "leading-[18px]": {
+   "props": {
+    "line-height": "18px"
+   },
+   "selector": ".devin-app-root .leading-\\[18px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 43
+  },
+  "leading-snug": {
+   "props": {
+    "line-height": "1.375"
+   },
+   "selector": ".devin-app-root .leading-snug",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 21
+  },
+  "sm:px-6": {
+   "props": {
+    "padding-left": "1.5rem",
+    "padding-right": "1.5rem"
+   },
+   "selector": ".devin-app-root .sm\\:px-6",
+   "condition": "(width >= 640px)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "sm:py-8": {
+   "props": {
+    "padding-top": "2rem",
+    "padding-bottom": "2rem"
+   },
+   "selector": ".devin-app-root .sm\\:py-8",
+   "condition": "(width >= 640px)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "h-[4.5rem]": {
+   "props": {
+    "height": "4.5rem"
+   },
+   "selector": ".devin-app-root .h-\\[4\\.5rem\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 43
+  },
+  "pb-[12vh]": {
+   "props": {
+    "padding-bottom": "12vh"
+   },
+   "selector": ".devin-app-root .pb-\\[12vh\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "w-4": {
+   "props": {
+    "width": "1rem"
+   },
+   "selector": ".devin-app-root .w-4",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 12
+  },
+  "size-[14px]": {
+   "props": {
+    "width": "14px",
+    "height": "14px"
+   },
+   "selector": ".devin-app-root .size-\\[14px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 65
+  },
+  "w-[52px]": {
+   "props": {
+    "width": "52px"
+   },
+   "selector": ".devin-app-root .w-\\[52px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 59
+  },
+  "rounded-[7px]": {
+   "props": {
+    "border-top-left-radius": "7px",
+    "border-top-right-radius": "7px",
+    "border-bottom-right-radius": "7px",
+    "border-bottom-left-radius": "7px"
+   },
+   "selector": ".devin-app-root .rounded-\\[7px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 155
+  },
+  "pr-9": {
+   "props": {
+    "padding-right": "2.25rem"
+   },
+   "selector": ".devin-app-root .pr-9",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "ring-1": {
+   "props": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+    "box-shadow": "var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow,0 0 #0000)"
+   },
+   "selector": ".devin-app-root .ring-1",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 65
+  },
+  "ring-border-secondary": {
+   "props": {
+    "--tw-ring-color": "rgb(var(--border-secondary))"
+   },
+   "selector": ".devin-app-root .ring-border-secondary",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 235
+  },
+  "gap-x-4": {
+   "props": {
+    "column-gap": "1rem"
+   },
+   "selector": ".devin-app-root .gap-x-4",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 8
+  },
+  "size-12": {
+   "props": {
+    "width": "3rem",
+    "height": "3rem"
+   },
+   "selector": ".devin-app-root .size-12",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "size-[32px]": {
+   "props": {
+    "width": "32px",
+    "height": "32px"
+   },
+   "selector": ".devin-app-root .size-\\[32px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 43
+  },
+  "h-[120px]": {
+   "props": {
+    "height": "120px"
+   },
+   "selector": ".devin-app-root .h-\\[120px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "min-h-[120px]": {
+   "props": {
+    "min-height": "120px"
+   },
+   "selector": ".devin-app-root .min-h-\\[120px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "min-h-[28px]": {
+   "props": {
+    "min-height": "28px"
+   },
+   "selector": ".devin-app-root .min-h-\\[28px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 10
+  },
+  "p-0.5": {
+   "props": {
+    "padding-top": "0.125rem",
+    "padding-right": "0.125rem",
+    "padding-bottom": "0.125rem",
+    "padding-left": "0.125rem"
+   },
+   "selector": ".devin-app-root .p-0\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 20
+  },
+  "p-1.5": {
+   "props": {
+    "padding-top": "0.375rem",
+    "padding-right": "0.375rem",
+    "padding-bottom": "0.375rem",
+    "padding-left": "0.375rem"
+   },
+   "selector": ".devin-app-root .p-1\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "px-[30px]": {
+   "props": {
+    "padding-left": "30px",
+    "padding-right": "30px"
+   },
+   "selector": ".devin-app-root .px-\\[30px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "py-[12px]": {
+   "props": {
+    "padding-top": "12px",
+    "padding-bottom": "12px"
+   },
+   "selector": ".devin-app-root .py-\\[12px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 43
+  },
+  "py-[14px]": {
+   "props": {
+    "padding-top": "14px",
+    "padding-bottom": "14px"
+   },
+   "selector": ".devin-app-root .py-\\[14px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "py-[40px]": {
+   "props": {
+    "padding-top": "40px",
+    "padding-bottom": "40px"
+   },
+   "selector": ".devin-app-root .py-\\[40px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "py-[4px]": {
+   "props": {
+    "padding-top": "4px",
+    "padding-bottom": "4px"
+   },
+   "selector": ".devin-app-root .py-\\[4px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "text-16": {
+   "props": {
+    "font-size": "calc(1rem * var(--text-scale,1))",
+    "line-height": "calc(1.625rem * var(--text-scale,1))"
+   },
+   "selector": ".devin-app-root .text-16",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 43
+  },
+  "leading-[26px]": {
+   "props": {
+    "line-height": "26px"
+   },
+   "selector": ".devin-app-root .leading-\\[26px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 8
+  },
+  "!outline-none": {
+   "props": {
+    "outline-offset": "2px",
+    "outline-width": "2px"
+   },
+   "selector": ".devin-app-root .\\!outline-none",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "devin-persona-wake-l1": {
+   "props": {
+    "animation-duration": "var(--devin-persona-duration)"
+   },
+   "selector": ".devin-app-root .devin-persona-wake-l1",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "devin-persona-wake-l2": {
+   "props": {
+    "animation-duration": "var(--devin-persona-duration)"
+   },
+   "selector": ".devin-app-root .devin-persona-wake-l2",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "devin-persona-wake-l3": {
+   "props": {
+    "animation-duration": "var(--devin-persona-duration)"
+   },
+   "selector": ".devin-app-root .devin-persona-wake-l3",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "devin-persona-wake-l4": {
+   "props": {
+    "animation-duration": "var(--devin-persona-duration)"
+   },
+   "selector": ".devin-app-root .devin-persona-wake-l4",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "devin-persona-wake-l5": {
+   "props": {
+    "animation-duration": "var(--devin-persona-duration)"
+   },
+   "selector": ".devin-app-root .devin-persona-wake-l5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "devin-persona-wake-l6": {
+   "props": {
+    "animation-duration": "var(--devin-persona-duration)"
+   },
+   "selector": ".devin-app-root .devin-persona-wake-l6",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "z-30": {
+   "props": {
+    "z-index": "30"
+   },
+   "selector": ".devin-app-root .z-30",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "z-[11]": {
+   "props": {
+    "z-index": "11"
+   },
+   "selector": ".devin-app-root .z-\\[11\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "z-[12]": {
+   "props": {
+    "z-index": "12"
+   },
+   "selector": ".devin-app-root .z-\\[12\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "z-[21]": {
+   "props": {
+    "z-index": "21"
+   },
+   "selector": ".devin-app-root .z-\\[21\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "z-[48]": {
+   "props": {
+    "z-index": "48"
+   },
+   "selector": ".devin-app-root .z-\\[48\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "!size-4": {
+   "props": {
+    "width": "1rem",
+    "height": "1rem"
+   },
+   "selector": ".devin-app-root .\\!size-4",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "size-2.5": {
+   "props": {
+    "width": "0.625rem",
+    "height": "0.625rem"
+   },
+   "selector": ".devin-app-root .size-2\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "size-[17px]": {
+   "props": {
+    "width": "17px",
+    "height": "17px"
+   },
+   "selector": ".devin-app-root .size-\\[17px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "h-12": {
+   "props": {
+    "height": "3rem"
+   },
+   "selector": ".devin-app-root .h-12",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "h-2": {
+   "props": {
+    "height": "0.5rem"
+   },
+   "selector": ".devin-app-root .h-2",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "h-3": {
+   "props": {
+    "height": "0.75rem"
+   },
+   "selector": ".devin-app-root .h-3",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "h-5": {
+   "props": {
+    "height": "1.25rem"
+   },
+   "selector": ".devin-app-root .h-5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "h-9": {
+   "props": {
+    "height": "2.25rem"
+   },
+   "selector": ".devin-app-root .h-9",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "h-[1.5px]": {
+   "props": {
+    "height": "1.5px"
+   },
+   "selector": ".devin-app-root .h-\\[1\\.5px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "h-[32px]": {
+   "props": {
+    "height": "32px"
+   },
+   "selector": ".devin-app-root .h-\\[32px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "h-[42px]": {
+   "props": {
+    "height": "42px"
+   },
+   "selector": ".devin-app-root .h-\\[42px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "h-[calc(var(--composer-height,0px)_+_var(--eyebrow-height,0px))]": {
+   "props": {
+    "height": "calc(var(--composer-height,0px) + var(--eyebrow-height,0px))"
+   },
+   "selector": ".devin-app-root .h-\\[calc\\(var\\(--composer-height\\,0px\\)_\\+_var\\(--eyebrow-height\\,0px\\)\\)\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "h-[var(--composer-height,0px)]": {
+   "props": {
+    "height": "var(--composer-height,0px)"
+   },
+   "selector": ".devin-app-root .h-\\[var\\(--composer-height\\,0px\\)\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "min-h-9": {
+   "props": {
+    "min-height": "2.25rem"
+   },
+   "selector": ".devin-app-root .min-h-9",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "min-h-[17px]": {
+   "props": {
+    "min-height": "17px"
+   },
+   "selector": ".devin-app-root .min-h-\\[17px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "min-h-[44px]": {
+   "props": {
+    "min-height": "44px"
+   },
+   "selector": ".devin-app-root .min-h-\\[44px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "w-0.5": {
+   "props": {
+    "width": "0.125rem"
+   },
+   "selector": ".devin-app-root .w-0\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "w-12": {
+   "props": {
+    "width": "3rem"
+   },
+   "selector": ".devin-app-root .w-12",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "w-3": {
+   "props": {
+    "width": "0.75rem"
+   },
+   "selector": ".devin-app-root .w-3",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "w-9": {
+   "props": {
+    "width": "2.25rem"
+   },
+   "selector": ".devin-app-root .w-9",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "w-[32px]": {
+   "props": {
+    "width": "32px"
+   },
+   "selector": ".devin-app-root .w-\\[32px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "w-max": {
+   "props": {
+    "width": "max-content"
+   },
+   "selector": ".devin-app-root .w-max",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "gap-0": {
+   "props": {
+    "row-gap": "0px",
+    "column-gap": "0px"
+   },
+   "selector": ".devin-app-root .gap-0",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "gap-3.5": {
+   "props": {
+    "row-gap": "0.875rem",
+    "column-gap": "0.875rem"
+   },
+   "selector": ".devin-app-root .gap-3\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 10
+  },
+  "gap-8": {
+   "props": {
+    "row-gap": "2rem",
+    "column-gap": "2rem"
+   },
+   "selector": ".devin-app-root .gap-8",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "gap-[5px]": {
+   "props": {
+    "row-gap": "5px",
+    "column-gap": "5px"
+   },
+   "selector": ".devin-app-root .gap-\\[5px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 7
+  },
+  "!rounded-[9px]": {
+   "props": {
+    "border-top-left-radius": "9px",
+    "border-top-right-radius": "9px",
+    "border-bottom-right-radius": "9px",
+    "border-bottom-left-radius": "9px"
+   },
+   "selector": ".devin-app-root .\\!rounded-\\[9px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "rounded-2xl": {
+   "props": {
+    "border-top-left-radius": "1rem",
+    "border-top-right-radius": "1rem",
+    "border-bottom-right-radius": "1rem",
+    "border-bottom-left-radius": "1rem"
+   },
+   "selector": ".devin-app-root .rounded-2xl",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "rounded-lg": {
+   "props": {
+    "border-top-left-radius": "0.5rem",
+    "border-top-right-radius": "0.5rem",
+    "border-bottom-right-radius": "0.5rem",
+    "border-bottom-left-radius": "0.5rem"
+   },
+   "selector": ".devin-app-root .rounded-lg",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 4
+  },
+  "rounded-b-[10px]": {
+   "props": {
+    "border-bottom-right-radius": "10px",
+    "border-bottom-left-radius": "10px"
+   },
+   "selector": ".devin-app-root .rounded-b-\\[10px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "rounded-b-lg": {
+   "props": {
+    "border-bottom-right-radius": "0.5rem",
+    "border-bottom-left-radius": "0.5rem"
+   },
+   "selector": ".devin-app-root .rounded-b-lg",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "rounded-b-none": {
+   "props": {
+    "border-bottom-right-radius": "0px",
+    "border-bottom-left-radius": "0px"
+   },
+   "selector": ".devin-app-root .rounded-b-none",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "!p-0": {
+   "props": {
+    "padding-top": "0px",
+    "padding-right": "0px",
+    "padding-bottom": "0px",
+    "padding-left": "0px"
+   },
+   "selector": ".devin-app-root .\\!p-0",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "px-3.5": {
+   "props": {
+    "padding-left": "0.875rem",
+    "padding-right": "0.875rem"
+   },
+   "selector": ".devin-app-root .px-3\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 6
+  },
+  "px-[11px]": {
+   "props": {
+    "padding-left": "11px",
+    "padding-right": "11px"
+   },
+   "selector": ".devin-app-root .px-\\[11px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "px-[14px]": {
+   "props": {
+    "padding-left": "14px",
+    "padding-right": "14px"
+   },
+   "selector": ".devin-app-root .px-\\[14px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "px-[3px]": {
+   "props": {
+    "padding-left": "3px",
+    "padding-right": "3px"
+   },
+   "selector": ".devin-app-root .px-\\[3px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 8
+  },
+  "py-2.5": {
+   "props": {
+    "padding-top": "0.625rem",
+    "padding-bottom": "0.625rem"
+   },
+   "selector": ".devin-app-root .py-2\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "py-[20px]": {
+   "props": {
+    "padding-top": "20px",
+    "padding-bottom": "20px"
+   },
+   "selector": ".devin-app-root .py-\\[20px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "py-[3px]": {
+   "props": {
+    "padding-top": "3px",
+    "padding-bottom": "3px"
+   },
+   "selector": ".devin-app-root .py-\\[3px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "pb-[30vh]": {
+   "props": {
+    "padding-bottom": "30vh"
+   },
+   "selector": ".devin-app-root .pb-\\[30vh\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pl-3": {
+   "props": {
+    "padding-left": "0.75rem"
+   },
+   "selector": ".devin-app-root .pl-3",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "pl-3.5": {
+   "props": {
+    "padding-left": "0.875rem"
+   },
+   "selector": ".devin-app-root .pl-3\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pl-[2ch]": {
+   "props": {
+    "padding-left": "2ch"
+   },
+   "selector": ".devin-app-root .pl-\\[2ch\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 46
+  },
+  "pl-[3px]": {
+   "props": {
+    "padding-left": "3px"
+   },
+   "selector": ".devin-app-root .pl-\\[3px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "pl-[calc(1rem+var(--chat-left-content-offset))]": {
+   "props": {
+    "padding-left": "calc(1rem + var(--chat-left-content-offset))"
+   },
+   "selector": ".devin-app-root .pl-\\[calc\\(1rem\\+var\\(--chat-left-content-offset\\)\\)\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pr-11": {
+   "props": {
+    "padding-right": "2.75rem"
+   },
+   "selector": ".devin-app-root .pr-11",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pr-4": {
+   "props": {
+    "padding-right": "1rem"
+   },
+   "selector": ".devin-app-root .pr-4",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 235
+  },
+  "pr-[1ch]": {
+   "props": {
+    "padding-right": "1ch"
+   },
+   "selector": ".devin-app-root .pr-\\[1ch\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 37
+  },
+  "pt-0.5": {
+   "props": {
+    "padding-top": "0.125rem"
+   },
+   "selector": ".devin-app-root .pt-0\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 8
+  },
+  "pt-12": {
+   "props": {
+    "padding-top": "3rem"
+   },
+   "selector": ".devin-app-root .pt-12",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pt-20": {
+   "props": {
+    "padding-top": "5rem"
+   },
+   "selector": ".devin-app-root .pt-20",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "text-15": {
+   "props": {
+    "font-size": "calc(.9375rem * var(--text-scale,1))",
+    "line-height": "calc(1.375rem * var(--text-scale,1))",
+    "letter-spacing": "-0.005em"
+   },
+   "selector": ".devin-app-root .text-15",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "text-[8px]": {
+   "props": {
+    "font-size": "8px"
+   },
+   "selector": ".devin-app-root .text-\\[8px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "text-[calc(1em-1px)]": {
+   "props": {
+    "font-size": "calc(1em - 1px)"
+   },
+   "selector": ".devin-app-root .text-\\[calc\\(1em-1px\\)\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "text-markdown-paragraph": {
+   "props": {
+    "font-size": "calc(.875rem * var(--text-scale,1))",
+    "line-height": "calc(1.25rem * var(--text-scale,1))",
+    "font-weight": "400"
+   },
+   "selector": ".devin-app-root .text-markdown-paragraph",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "font-semibold": {
+   "props": {
+    "font-weight": "600"
+   },
+   "selector": ".devin-app-root .font-semibold",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "!leading-[18px]": {
+   "props": {
+    "line-height": "18px"
+   },
+   "selector": ".devin-app-root .\\!leading-\\[18px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 37
+  },
+  "leading-5": {
+   "props": {
+    "line-height": "1.25rem"
+   },
+   "selector": ".devin-app-root .leading-5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "leading-[inherit]": {
+   "props": {
+    "line-height": "inherit"
+   },
+   "selector": ".devin-app-root .leading-\\[inherit\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 37
+  },
+  "opacity-50": {
+   "props": {
+    "opacity": "0.5"
+   },
+   "selector": ".devin-app-root .opacity-50",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "opacity-80": {
+   "props": {
+    "opacity": "0.8"
+   },
+   "selector": ".devin-app-root .opacity-80",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "shadow-[0_-1px_0_rgb(var(--bg-page))]": {
+   "props": {
+    "--tw-shadow": "0 -1px 0 rgb(var(--bg-page))",
+    "box-shadow": "var(--tw-ring-offset-shadow,0 0 #0000), var(--tw-ring-shadow,0 0 #0000), var(--tw-shadow)"
+   },
+   "selector": ".devin-app-root .shadow-\\[0_-1px_0_rgb\\(var\\(--bg-page\\)\\)\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "shadow-shadow-L2": {
+   "props": {
+    "--tw-shadow": "var(--shadow-L2)",
+    "box-shadow": "var(--tw-ring-offset-shadow,0 0 #0000), var(--tw-ring-shadow,0 0 #0000), var(--tw-shadow)"
+   },
+   "selector": ".devin-app-root .shadow-shadow-L2",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "ring-[1.5px]": {
+   "props": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(1.5px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+    "box-shadow": "var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow,0 0 #0000)"
+   },
+   "selector": ".devin-app-root .ring-\\[1\\.5px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "ring-text-primary-inverse": {
+   "props": {
+    "--tw-ring-color": "rgb(var(--text-primary-inverse))"
+   },
+   "selector": ".devin-app-root .ring-text-primary-inverse",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "hover:z-[23]:hover": {
+   "props": {
+    "z-index": "23"
+   },
+   "selector": ".devin-app-root .hover\\:z-\\[23\\]:hover",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "hover:opacity-100:hover": {
+   "props": {
+    "opacity": "1"
+   },
+   "selector": ".devin-app-root .hover\\:opacity-100:hover",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "hover:opacity-80:hover": {
+   "props": {
+    "opacity": "0.8"
+   },
+   "selector": ".devin-app-root .hover\\:opacity-80:hover",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "focus-visible:outline-offset-[-1px]:focus-visible": {
+   "props": {
+    "outline-offset": "-1px"
+   },
+   "selector": ".devin-app-root .focus-visible\\:outline-offset-\\[-1px\\]:focus-visible",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "focus-visible:ring-border-accent-primary:focus-visible": {
+   "props": {
+    "--tw-ring-color": "rgb(var(--border-accent-primary))"
+   },
+   "selector": ".devin-app-root .focus-visible\\:ring-border-accent-primary:focus-visible",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "has-[table]:w-full:has(table)": {
+   "props": {
+    "width": "100%"
+   },
+   "selector": ".devin-app-root .has-\\[table\\]\\:w-full:has(table)",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 5
+  },
+  "has-[:focus-visible]:-outline-offset-1:has(:focus-visible)": {
+   "props": {
+    "outline-offset": "-1px"
+   },
+   "selector": ".devin-app-root .has-\\[\\:focus-visible\\]\\:-outline-offset-1:has(:focus-visible)",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "has-[:focus-visible]:outline-1:has(:focus-visible)": {
+   "props": {
+    "outline-width": "1px"
+   },
+   "selector": ".devin-app-root .has-\\[\\:focus-visible\\]\\:outline-1:has(:focus-visible)",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "@[328px]/chat-history-container:pr-[calc(var(--chat-gutter-timestamp-gap)+var(--chat-nested-offset))]": {
+   "props": {
+    "padding-right": "calc(var(--chat-gutter-timestamp-gap) + var(--chat-nested-offset))"
+   },
+   "selector": ".devin-app-root .\\@\\[328px\\]\\/chat-history-container\\:pr-\\[calc\\(var\\(--chat-gutter-timestamp-gap\\)\\+var\\(--chat-nested-offset\\)\\)\\]",
+   "condition": "chat-history-container (width >= 328px)",
+   "sheet": "index.css",
+   "used": 14
+  },
+  "@[448px]/chat-pane:pl-[calc(1.5rem+var(--chat-left-content-offset))]": {
+   "props": {
+    "padding-left": "calc(1.5rem + var(--chat-left-content-offset))"
+   },
+   "selector": ".devin-app-root .\\@\\[448px\\]\\/chat-pane\\:pl-\\[calc\\(1\\.5rem\\+var\\(--chat-left-content-offset\\)\\)\\]",
+   "condition": "chat-pane (width >= 448px)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "@[448px]/chat-pane:pr-6": {
+   "props": {
+    "padding-right": "1.5rem"
+   },
+   "selector": ".devin-app-root .\\@\\[448px\\]\\/chat-pane\\:pr-6",
+   "condition": "chat-pane (width >= 448px)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "motion-safe:transition": {
+   "props": {
+    "transition-duration": "0.15s",
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)"
+   },
+   "selector": ".devin-app-root .motion-safe\\:transition",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "motion-safe:transition-[background-color]": {
+   "props": {
+    "transition-duration": "0.15s",
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)"
+   },
+   "selector": ".devin-app-root .motion-safe\\:transition-\\[background-color\\]",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "motion-safe:transition-[max-height]": {
+   "props": {
+    "transition-duration": "0.15s",
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)"
+   },
+   "selector": ".devin-app-root .motion-safe\\:transition-\\[max-height\\]",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "motion-safe:transition-[transform,color,opacity]": {
+   "props": {
+    "transition-duration": "0.15s",
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)"
+   },
+   "selector": ".devin-app-root .motion-safe\\:transition-\\[transform\\,color\\,opacity\\]",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "motion-safe:transition-all": {
+   "props": {
+    "transition-duration": "0.15s",
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)"
+   },
+   "selector": ".devin-app-root .motion-safe\\:transition-all",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "motion-safe:transition-shadow": {
+   "props": {
+    "transition-duration": "0.15s",
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)"
+   },
+   "selector": ".devin-app-root .motion-safe\\:transition-shadow",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "motion-safe:duration-300": {
+   "props": {
+    "transition-duration": "0.3s"
+   },
+   "selector": ".devin-app-root .motion-safe\\:duration-300",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "motion-safe:duration-700": {
+   "props": {
+    "transition-duration": "0.7s"
+   },
+   "selector": ".devin-app-root .motion-safe\\:duration-700",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "motion-safe:ease-in-out": {
+   "props": {
+    "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)"
+   },
+   "selector": ".devin-app-root .motion-safe\\:ease-in-out",
+   "condition": "(prefers-reduced-motion: no-preference)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "dark:opacity-30:is(.dark *)": {
+   "props": {
+    "opacity": "0.3"
+   },
+   "selector": ".devin-app-root .dark\\:opacity-30:is(.dark *)",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "sm:h-[20px]": {
+   "props": {
+    "height": "20px"
+   },
+   "selector": ".devin-app-root .sm\\:h-\\[20px\\]",
+   "condition": "(width >= 640px)",
+   "sheet": "index.css",
+   "used": 37
+  },
+  "sm:text-12": {
+   "props": {
+    "font-size": "calc(.75rem * var(--text-scale,1))",
+    "line-height": "calc(1rem * var(--text-scale,1))"
+   },
+   "selector": ".devin-app-root .sm\\:text-12",
+   "condition": "(width >= 640px)",
+   "sheet": "index.css",
+   "used": 37
+  },
+  "sm:!leading-[20px]": {
+   "props": {
+    "line-height": "20px"
+   },
+   "selector": ".devin-app-root .sm\\:\\!leading-\\[20px\\]",
+   "condition": "(width >= 640px)",
+   "sheet": "index.css",
+   "used": 37
+  },
+  "sm:tracking-normal": {
+   "props": {
+    "letter-spacing": "0px"
+   },
+   "selector": ".devin-app-root .sm\\:tracking-normal",
+   "condition": "(width >= 640px)",
+   "sheet": "index.css",
+   "used": 37
+  },
+  "[&:not(:empty)]:[padding-bottom:var(--row-gap)]:not(:empty)": {
+   "props": {
+    "padding-bottom": "var(--row-gap)"
+   },
+   "selector": ".devin-app-root .\\[\\&\\:not\\(\\:empty\\)\\]\\:\\[padding-bottom\\:var\\(--row-gap\\)\\]:not(:empty)",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 25
+  },
+  "[@media(any-pointer:coarse)]:!opacity-0": {
+   "props": {
+    "opacity": "0"
+   },
+   "selector": ".devin-app-root .\\[\\@media\\(any-pointer\\:coarse\\)\\]\\:\\!opacity-0",
+   "condition": "(any-pointer: coarse)",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "[@media(pointer:coarse)]:w-5": {
+   "props": {
+    "width": "1.25rem"
+   },
+   "selector": ".devin-app-root .\\[\\@media\\(pointer\\:coarse\\)\\]\\:w-5",
+   "condition": "(pointer: coarse)",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "h-[12px]": {
+   "props": {
+    "height": "12px"
+   },
+   "selector": ".devin-app-root .h-\\[12px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "w-[12px]": {
+   "props": {
+    "width": "12px"
+   },
+   "selector": ".devin-app-root .w-\\[12px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "w-[245px]": {
+   "props": {
+    "width": "245px"
+   },
+   "selector": ".devin-app-root .w-\\[245px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "w-[28px]": {
+   "props": {
+    "width": "28px"
+   },
+   "selector": ".devin-app-root .w-\\[28px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "h-[var(--positioner-height)]": {
+   "props": {
+    "height": "var(--positioner-height)"
+   },
+   "selector": ".devin-app-root .h-\\[var\\(--positioner-height\\)\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "w-[var(--popup-width)]": {
+   "props": {
+    "width": "var(--popup-width)"
+   },
+   "selector": ".devin-app-root .w-\\[var\\(--popup-width\\)\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "w-[var(--positioner-width)]": {
+   "props": {
+    "width": "var(--positioner-width)"
+   },
+   "selector": ".devin-app-root .w-\\[var\\(--positioner-width\\)\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "[transition:opacity_40ms_cubic-bezier(0.76,0,0.24,1)]": {
+   "props": {
+    "transition-duration": "40ms",
+    "transition-timing-function": "cubic-bezier(0.76, 0, 0.24, 1)"
+   },
+   "selector": ".devin-app-root .\\[transition\\:opacity_40ms_cubic-bezier\\(0\\.76\\,0\\,0\\.24\\,1\\)\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "pb-6": {
+   "props": {
+    "padding-bottom": "1.5rem"
+   },
+   "selector": ".devin-app-root .pb-6",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "font-[500]": {
+   "props": {
+    "font-weight": "500"
+   },
+   "selector": ".devin-app-root .font-\\[500\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "max-md:w-7": {
+   "props": {
+    "width": "1.75rem"
+   },
+   "selector": ".devin-app-root .max-md\\:w-7",
+   "condition": "not all and (width >= 768px)",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "max-md:px-0": {
+   "props": {
+    "padding-left": "0px",
+    "padding-right": "0px"
+   },
+   "selector": ".devin-app-root .max-md\\:px-0",
+   "condition": "not all and (width >= 768px)",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "sm:w-[30vw]": {
+   "props": {
+    "width": "30vw"
+   },
+   "selector": ".devin-app-root .sm\\:w-\\[30vw\\]",
+   "condition": "(width >= 640px)",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "lg:w-[400px]": {
+   "props": {
+    "width": "400px"
+   },
+   "selector": ".devin-app-root .lg\\:w-\\[400px\\]",
+   "condition": "(width >= 1024px)",
+   "sheet": "index.css",
+   "used": 2
+  },
+  "size-9": {
+   "props": {
+    "width": "2.25rem",
+    "height": "2.25rem"
+   },
+   "selector": ".devin-app-root .size-9",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 235
+  },
+  "gap-16": {
+   "props": {
+    "row-gap": "4rem",
+    "column-gap": "4rem"
+   },
+   "selector": ".devin-app-root .gap-16",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "gap-y-0.5": {
+   "props": {
+    "row-gap": "0.125rem"
+   },
+   "selector": ".devin-app-root .gap-y-0\\.5",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 3
+  },
+  "text-[length:inherit]": {
+   "props": {
+    "font-size": "inherit"
+   },
+   "selector": ".devin-app-root .text-\\[length\\:inherit\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 1
+  },
+  "ring-[0.5px]": {
+   "props": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(.5px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+    "box-shadow": "var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow,0 0 #0000)"
+   },
+   "selector": ".devin-app-root .ring-\\[0\\.5px\\]",
+   "condition": "",
+   "sheet": "index.css",
+   "used": 235
+  },
+  "md:pt-12": {
+   "props": {
+    "padding-top": "3rem"
+   },
+   "selector": ".devin-app-root .md\\:pt-12",
+   "condition": "(width >= 768px)",
+   "sheet": "index.css",
+   "used": 1
+  }
+ },
+ "fonts": {
+  "Inter, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"": 554,
+  "Inter, system-ui, sans-serif": 1,
+  "\"Devin Mono\", ui-monospace, monospace": 1,
+  "\"Devin Mono\", \"SF Mono\", \"Roboto Mono\", ui-monospace, monospace": 155
+ },
+ "sizes": {
+  "13px/18px/500": 49,
+  "12px/16px/400": 280,
+  "13px/18px/400": 255,
+  "12px/16px/500": 58,
+  "14px/20px/400": 41,
+  "11px/14px/400": 62,
+  "12px/20px/400": 115,
+  "17px/26px/500": 8,
+  "14px/20px/500": 12,
+  "18px/29px/500": 1,
+  "13px/17.875px/500": 21,
+  "13px/18.2px/400": 9,
+  "8px/16px/400": 2,
+  "13px/20px/400": 3,
+  "17px/26px/600": 1,
+  "11px/20px/400": 37
+ },
+ "screens": [
+  "home-default",
+  "settings-preferences",
+  "home-composer-typed",
+  "attach-menu",
+  "mode-menu",
+  "capability-menu",
+  "search-palette",
+  "notifications",
+  "session-context-menu",
+  "tooltip",
+  "automations",
+  "wiki",
+  "settings-preferences-scrolled",
+  "settings-theme-select",
+  "settings-shortcuts",
+  "settings-notifications",
+  "settings-connections",
+  "settings-app",
+  "settings-app-agents",
+  "conversation",
+  "sessions-properties-menu",
+  "more-menu",
+  "review",
+  "customize"
+ ],
+ "meta": {
+  "dpr": 2,
+  "css": [
+   1440,
+   900
+  ],
+  "device": [
+   2880,
+   1800
+  ],
+  "title": "Sessions devin",
+  "bodyClass": "",
+  "htmlClass": "",
+  "read": "2026-10-24"
+ },
+ "scope": ".desktop-shell-root"
+}
