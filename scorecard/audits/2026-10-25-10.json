@@ -4312,7 +4312,7 @@
     },
     "F10": {
      "grade": "meets",
-     "evidence": "core.radius: ten steps (2xs to 4xl and full) as computed with the 1.25 corner-radius scale, the scale itself, component radii (menu 20, menu-item 15, dialog 15, popover 15, tooltip 20, row full) and the superellipse corner shape in $extensions; core.borderWidth hairline 0.5px, default 1px and focus."
+     "evidence": "core.radius: ten steps (2xs to 4xl and full) as computed, each a base times the 1.25 corner multiplier (core.cornerScale), component radii (menu 20, menu-item 15, dialog 15, popover 15, tooltip 20, row full) and the superellipse corner shape in $extensions; core.borderWidth hairline 0.5px, default 1px and focus."
     },
     "F11": {
      "grade": "partly",
@@ -4344,7 +4344,7 @@
     },
     "C4": {
      "grade": "meets",
-     "evidence": "components.md writes 1481 of 1941 values as tokens (76%), and component.* in tokens.json aliases 65 to 66 of 73 to 74 measured colours per theme to semantic tokens; the rest are translucent fills no token paints exactly (the menu and dialog fill at 90%)."
+     "evidence": "components.md writes 1571 of 1941 values as tokens (81%), and component.* in tokens.json aliases 65 to 66 of 73 to 74 measured colours per theme to semantic tokens; the rest are translucent fills no token paints exactly (the menu and dialog fill at 90%)."
     },
     "P1": {
      "grade": "partly",

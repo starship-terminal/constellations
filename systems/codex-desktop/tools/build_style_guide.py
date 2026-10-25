@@ -85,7 +85,8 @@ type_css = []
 for p, t in core.items():
     if t["$type"] == "typography":
         v = t["$value"]
-        fam = "var(--fontFamily-mono)" if "mono" in v["fontFamily"] else "var(--fontFamily-sans)"
+        # The specimens use the stack that rendered (sans-default), not the owner's uninstalled Garamond in front of it.
+        fam = "var(--fontFamily-mono)" if "mono" in v["fontFamily"] else "var(--fontFamily-sans-default)"
         # A role may alias a scale step ({fontSize.chat-code}); resolve it, since a brace is not CSS.
         r = {k: resolve(v[k], core) for k in ("fontSize", "fontWeight", "lineHeight", "letterSpacing")}
         type_css.append(f".t-{p[-1]} {{ font-family: {fam}; font-size: {r['fontSize']}; font-weight: {r['fontWeight']}; "
@@ -177,7 +178,7 @@ def specimens():  # PRODUCT (adapt)
 
 SPEC_CSS = """
 .spec-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:20px; }
-figure { margin:0; padding:16px; background:var(--role-page); border:1px solid var(--role-border-default); border-radius:var(--radius-xl); color:var(--role-text-primary); font-family:var(--fontFamily-sans); font-size:var(--fontSize-ui); }
+figure { margin:0; padding:16px; background:var(--role-page); border:1px solid var(--role-border-default); border-radius:var(--radius-xl); color:var(--role-text-primary); font-family:var(--fontFamily-sans-default); font-size:var(--fontSize-ui); }
 figcaption { font-size:12px; color:var(--role-text-secondary); margin-bottom:12px; }
 .sp-sidebar { background:var(--role-surface); border-radius:var(--radius-lg); padding:8px; }
 .sp-row { display:flex; align-items:center; height:var(--component-project-row-height); padding:0 10px; border-radius:var(--radius-row); color:var(--component-thread-row-text); }
@@ -217,7 +218,7 @@ figcaption { font-size:12px; color:var(--role-text-secondary); margin-bottom:12p
 PAGE_CSS = """
 :root { color-scheme: light dark; }
 html[data-theme="dark"] { color-scheme: dark; }
-body { margin:0; background:var(--role-page); color:var(--role-text-primary); font:14px/1.45 var(--fontFamily-sans); }
+body { margin:0; background:var(--role-page); color:var(--role-text-primary); font:14px/1.45 var(--fontFamily-sans-default); }
 main { max-width:1180px; margin:0 auto; padding:24px 16px 64px; }
 header { display:flex; gap:16px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; }
 h1 { font-size:22px; margin:0 0 6px; } h2 { font-size:17px; margin:36px 0 12px; } p { color:var(--role-text-secondary); max-width:820px; }

@@ -966,7 +966,6 @@ typography:
     lineHeight: "22.75px"
     letterSpacing: "0px"
 rounded:
-  scale: "1.25px"
   "2xs": "2.5px"
   xs: "5px"
   sm: "7.5px"
@@ -1019,30 +1018,30 @@ components:
   button-primary:
     backgroundColor: "{colors.component-button-primary-bg}"
     textColor: "{colors.component-button-primary-text}"
-    rounded: "12px"
+    rounded: "12.5px"
     height: "32px"
     padding: "16px"
   button-ghost:
     textColor: "{colors.component-button-ghost-text}"
-    rounded: "12px"
+    rounded: "12.5px"
     height: "32px"
   button-danger:
     backgroundColor: "{colors.component-button-danger-bg}"
     textColor: "{colors.component-button-danger-text}"
-    rounded: "12px"
+    rounded: "12.5px"
     height: "32px"
   button-secondary:
     backgroundColor: "{colors.component-button-secondary-bg}"
     textColor: "{colors.component-button-secondary-text}"
-    rounded: "12px"
+    rounded: "12.5px"
     height: "28px"
   icon-button:
     textColor: "{colors.component-icon-button-text}"
-    rounded: "9px"
+    rounded: "9.38px"
     size: "28px"
   rail-button:
     textColor: "{colors.component-rail-button-text}"
-    rounded: "12px"
+    rounded: "12.5px"
     size: "36px"
   rail-button-selected:
     textColor: "{colors.component-rail-button-selected-text}"
@@ -1069,7 +1068,7 @@ components:
   menu-row:
     textColor: "{colors.component-menu-row-text}"
     rounded: "15px"
-    height: "29px"
+    height: "28.57px"
     padding: "8px"
   composer-menu:
     backgroundColor: "{colors.component-composer-menu-bg}"
@@ -1084,7 +1083,7 @@ components:
   palette-row-selected:
     backgroundColor: "{colors.component-palette-row-selected-bg}"
     textColor: "{colors.component-palette-row-selected-text}"
-    rounded: "12px"
+    rounded: "12.5px"
   tooltip:
     backgroundColor: "{colors.component-tooltip-bg}"
     textColor: "{colors.component-tooltip-text}"
@@ -1101,7 +1100,7 @@ components:
   select:
     backgroundColor: "{colors.component-select-bg}"
     textColor: "{colors.component-select-text}"
-    rounded: "12px"
+    rounded: "12.5px"
     height: "28px"
   switch-on:
     backgroundColor: "{colors.component-switch-on-bg}"
@@ -1115,21 +1114,21 @@ components:
     rounded: "20px"
   settings-nav:
     textColor: "{colors.component-settings-nav-text}"
-    rounded: "12px"
+    rounded: "12.5px"
     height: "30px"
   settings-nav-selected:
     backgroundColor: "{colors.component-settings-nav-selected-bg}"
     textColor: "{colors.component-settings-nav-selected-text}"
   project-row:
     textColor: "{colors.component-project-row-text}"
-    rounded: "12px"
+    rounded: "12.5px"
     height: "30px"
   project-row-selected:
     backgroundColor: "{colors.component-project-row-selected-bg}"
     textColor: "{colors.component-project-row-selected-text}"
   thread-row:
     textColor: "{colors.component-thread-row-text}"
-    rounded: "12px"
+    rounded: "12.5px"
     height: "30px"
   user-message:
     backgroundColor: "{colors.component-user-message-bg}"
@@ -1156,7 +1155,7 @@ components:
   utility-bar:
     rounded: "0px"
   radio-thumb:
-    rounded: "12px"
+    rounded: "12.5px"
     width: "80px"
 ---
 
@@ -1233,7 +1232,7 @@ Shadows, resolved to CSS:
 
 ## Shapes
 
-Corner radii from `core.radius`: `scale` 1.25px, `2xs` 2.5px, `xs` 5px, `sm` 7.5px, `md` 10px, `lg` 12.5px, `xl` 15px, `2xl` 20px, `3xl` 25px, `4xl` 30px, `full` 9999px, `menu` 20px, `menu-item` 15px, `dialog` 15px, `popover` 15px, `tooltip` 20px, `row` 9999px, `composer-single-line` 22px, `form-dialog` 30px, `unread-badge` 4px.
+Corner radii from `core.radius`: `2xs` 2.5px, `xs` 5px, `sm` 7.5px, `md` 10px, `lg` 12.5px, `xl` 15px, `2xl` 20px, `3xl` 25px, `4xl` 30px, `full` 9999px, `menu` 20px, `menu-item` 15px, `dialog` 15px, `popover` 15px, `tooltip` 20px, `row` 9999px, `composer-single-line` 22px, `form-dialog` 30px, `unread-badge` 4px.
 
 ## Components
 

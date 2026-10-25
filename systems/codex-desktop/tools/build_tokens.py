@@ -175,10 +175,23 @@ def applies(d, t):
 
 
 def formula(t, name):
+    """The declaration of `name` that wins on <html> in theme t: of the declarations that apply to the Electron
+    window, the one whose value (this theme's branch) paints the captured colour; failing that, a theme-named
+    rule, then the last declaration in sheet order, which is the one the cascade keeps among equal selectors."""
     ds = [d for d in V[t]["decls"] if d["name"] == name and applies(d, t)]
+    if not ds:
+        return None
+    painted = V[t]["colors"].get(name)
+    if painted and is_color(painted):
+        want = color(painted)
+        for d in reversed(ds):
+            v = (branch(d["value"], t) or "").strip()
+            m = re.fullmatch(r"var\((--[\w-]+)(?:,[^()]*)?\)", v)
+            ref = V[t]["colors"].get(m.group(1)) if m else (v if is_color(v) else None)
+            if ref and is_color(ref) and color(ref) == want:
+                return v
     own = [d for d in ds if 'data-theme="%s"' % t in d["selector"]]
-    pick = (own or [d for d in ds if "color-mix" in d["condition"]] or ds or [{"value": None}])[-1 if own else 0]["value"]
-    return branch(pick, t) if pick else None
+    return branch((own or ds)[-1]["value"], t)
 
 
 def path_of(name):
@@ -225,7 +238,7 @@ put(CORE, ("seed", "contrast", "light"), tok(int(light_comp["--codex-base-contra
     f"--codex-base-contrast on <html>, {THEME_NAME['light']}, {DATE}"))
 CORE["seed"]["$extensions"] = {"codexDefault": {"source": {"evidence": "Measured", "from": DEFAULTS["from"] + ", " + DEFAULTS["read"]},
     "value": DEFAULTS["source"], "note": DEFAULTS["note"]}}
-put(CORE, ("radius", "scale"), tok(float(dark_comp["--corner-radius-scale"]), "number", "Measured",
+put(CORE, ("cornerScale",), tok(float(dark_comp["--corner-radius-scale"]), "number", "Measured",
     f"--corner-radius-scale on <html> ({DATE}): every radius is its -base value times this; 1.25 is Codex's default"))
 for key in ("2xs", "xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "full"):
     core_dim("radius", key, f"--radius-{key}")
@@ -438,8 +451,8 @@ SIZES = [("size.control.icon-button", "icon-button", "height", "Sidebar icon but
 for path, part, prop, use in SIZES:
     shot, v = dim_of(part, prop)
     if v:
-        put(CORE, tuple(path.split(".")), tok(px("%gpx" % round(float(v[:-2]))), "dimension", "Measured",
-            f"computed {prop} of {part} in {shot}, dark, {DATE} ({use}); {v} before rounding"))
+        put(CORE, tuple(path.split(".")), tok(px(v), "dimension", "Measured",
+            f"computed {prop} of {part} in {shot}, dark, {DATE} ({use})"))
 WINDOW = C["dark"]["home-default"]["viewport"]
 put(CORE, ("layout", "window-width"), tok(f"{WINDOW['css'][0]}px", "dimension", "Measured",
     f"the window's viewport, {WINDOW['css'][0]} x {WINDOW['css'][1]} CSS px at devicePixelRatio {WINDOW['dpr']} (unzoomed), {DATE}"))
@@ -587,10 +600,7 @@ def build_roles_and_components(t):
                     pref = [x for x in fits if x.split(".")[0] == first]
                     return tok("{%s}" % (pref or fits)[0], "color", "Measured", src, painted=v)
             return tok(v, "color", "Measured", src)
-        v = px(raw) if raw.endswith("px") else raw
-        if re.fullmatch(r"[\d.]+px", v):
-            v = px("%gpx" % round(float(v[:-2])))
-        return tok(v, "dimension", "Measured", src + f" ({raw})")
+        return tok(px(raw) if raw.endswith("px") else raw, "dimension", "Measured", src)
     for name, part, props in COMPONENTS:
         shot, s = style(t, part)
         if not s:

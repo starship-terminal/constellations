@@ -144,7 +144,7 @@ def as_token(t, prop, raw):
         return f"{v}"
     m = re.fullmatch(r"([\d.]+)px", raw)
     if m:
-        v = "%gpx" % round(float(m.group(1)))
+        v = "%gpx" % round(float(m.group(1)), 2)   # CSS px as computed, not rounded to whole pixels
         group = {"border-top-left-radius": "radius", "height": "controlHeight", "padding-right": "spacing", "padding-left": "spacing",
                  "padding-top": "spacing", "font-size": "fontSize", "line-height": "lineHeight", "letter-spacing": "letterSpacing"}.get(prop)
         if v == "9999px" and prop == "border-top-left-radius":

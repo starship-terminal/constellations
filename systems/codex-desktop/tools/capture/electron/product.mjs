@@ -412,7 +412,18 @@ export const RUN = {
     if (!chip.endsWith(PROJECT)) throw new Error('composer is not on the capture project: ' + chip);
     if ((await vis(h.page, S.workIn).innerText()).trim() !== 'This computer') throw new Error('composer is not on This computer');
   },
-  async finish(h) { await closeAll(h.page); },
+  // Called after the steps, and also when one failed or timed out: stop a run this script left going and
+  // wait for the agent to go idle, so nothing keeps working after the capture exits.
+  async finish(h) {
+    const { page } = h;
+    await closeAll(page);
+    const stop = page.locator('button[aria-label*="Stop" i]:visible');
+    for (let i = 0; i < 30 && await stop.count(); i++) {
+      if (i === 0) await stop.first().click().catch(() => {});
+      await wait(page, 1000);
+    }
+    if (await stop.count()) throw new Error('the agent is still running after Stop');
+  },
   async state({ page }) {
     if (await approveButton(page).count()) return 'approval';
     const stop = page.locator('button[aria-label*="Stop" i]:visible, button[aria-label*="Interrupt" i]:visible, button[aria-label*="Cancel" i]:visible');
