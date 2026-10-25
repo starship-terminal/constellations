@@ -98,9 +98,17 @@ def ev(t):
 def colour_table(group):
     rows = []
     for p, t in light.items():
-        if p[0] != group or t["$type"] != "color":
+        if p[0] != group or t["$type"] not in ("color", "dimension"):
             continue
         cells = []
+        if t["$type"] == "dimension":     # component heights, radii, padding: shown as values, no swatch
+            for sets in ((light, core), (dark, core)):
+                tok = sets[0][p]
+                shown = resolve(tok["$value"], *sets)
+                label = tok["$value"] if tok["$value"] == shown else f"{tok['$value']} = {shown}"
+                cells.append(f'<td><code>{esc(label)}</code> {ev(tok)}</td>')
+            rows.append(f"<tr><th><code>{esc('.'.join(p))}</code></th>{''.join(cells)}</tr>")
+            continue
         for sets in ((light, core), (dark, core)):
             tok = sets[0][p]
             shown = resolve(tok["$value"], *sets)
@@ -282,6 +290,9 @@ page = f"""<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(NAME)} style guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
 <style>
 {block(':root', core)}
 {block(':root, html[data-theme="light"]', light)}

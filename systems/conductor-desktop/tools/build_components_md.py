@@ -144,6 +144,8 @@ def as_token(t, prop, raw):
             stats["token"] += 1
             return f"`{pick(CIDX[t][v], prop)}` {v}"
         return f"{v}"
+    if prop == "border-top-left-radius" and (raw.endswith("%") or (re.fullmatch(r"[\d.e+]+px", raw) and float(raw[:-2]) >= 9999)):
+        raw = "9999px"                 # rounded-full: WebKit computes the float maximum (3.4e38px), some parts 50%
     m = re.fullmatch(r"([\d.]+)px", raw)
     if m:
         v = "%gpx" % round(float(m.group(1)))

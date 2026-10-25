@@ -35,8 +35,21 @@ P.scrollMain = (y) => {
   while (p && !(p.scrollHeight > p.clientHeight + 4 && /auto|scroll/.test(getComputedStyle(p).overflowY))) p = p.parentElement;
   if (p) p.scrollTop = y; return !!p;
 };
-// The scratch workspace is the only one the capture opens; Conductor named it after a city.
+// The scratch workspace is the only one the capture opens; Conductor named it after a city and renames it
+// after the first prompt. P.REPO is the scratch repository's folder name (harness-scratch/conductor).
 P.WS = 'Dalat';
+P.REPO = 'conductor';
+// Refuse to go on unless the sidebar lists exactly one project, the scratch one, with exactly one workspace, and
+// the open workspace's breadcrumb names it: nothing is typed or sent anywhere else.
+P.repoNames = () => __cap.$('span.font-semibold').filter(e => e.getBoundingClientRect().x < 250 && e.closest('div') && !/workspaces/i.test(e.innerText)).map(e => e.innerText.trim());
+P.onlyScratch = () => {
+  const repos = P.repoNames();
+  if (repos.length !== 1 || repos[0] !== P.REPO) throw new Error(`Conductor lists projects ${JSON.stringify(repos)}; the capture runs only when the scratch project (${P.REPO}) is the only one`);
+};
+P.inScratch = () => {
+  const crumb = __cap.$('button span.text-sm.font-medium').find(e => e.getBoundingClientRect().y < 30 && e.getBoundingClientRect().x > 250);
+  if (!crumb || crumb.innerText.trim() !== P.REPO) throw new Error(`the open workspace is in ${crumb ? crumb.innerText.trim() : 'no project'}, not ${P.REPO}`);
+};
 P.sideText = (t, sel = 'span') => __cap.byText(t, sel).filter(e => e.getBoundingClientRect().x < 250)[0];
 // The scratch repository has one workspace, so its row is the only workspace link in the sidebar (Conductor
 // renames it after the first prompt).
@@ -53,11 +66,14 @@ P.bottomTab = (t) => [...document.querySelectorAll('[role=tab]')].find(e => e.in
 // chat that holds the test prompts; omitted, whichever tab is open.
 P.workspace = async (chat) => {
   await P.closeAll(); await P.back();
+  P.onlyScratch();
   // Home lists workspaces in the page and folds them out of the sidebar: open the scratch one from the list.
   if (!P.wsRow()) { const s = P.sideText('conductor'); if (s) { __cap.click(s.parentElement); await __cap.sleep(700); } }
   if (!P.wsRow()) { const o = __cap.$('[role=option]').find(o => o.getBoundingClientRect().x > 250); if (o) { __cap.click(o); await __cap.sleep(1000); } }
   const r = P.wsRow(); if (!r) throw new Error('no scratch workspace row');
-  if (!P.composer()) { __cap.click(r); await __cap.sleep(900); }
+  if (__cap.$('a').filter(a => { const b = a.getBoundingClientRect(); return b.x < 20 && b.y > 170; }).length !== 1) throw new Error('the scratch project shows more than one workspace');
+  __cap.click(r); await __cap.sleep(900);
+  P.inScratch();
   const chats = () => __cap.$('[role=tab]').filter(t => t.getBoundingClientRect().y < 90 && t.getBoundingClientRect().x < 1015);
   if (chat === 'new') {
     let t = chats().find(t => t.innerText.trim() === 'Untitled');

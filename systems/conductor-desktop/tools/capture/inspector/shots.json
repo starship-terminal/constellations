@@ -350,7 +350,10 @@
     "hover"
    ]
   },
-  "after": "C.click(C.byText('Cancel', '[role=alertdialog] button')[0]); await C.sleep(500);"
+  "after": "C.click(C.byText('Cancel', '[role=alertdialog] button')[0]); await C.sleep(500);",
+  "partState": {
+   "button-outline": "focus-visible"
+  }
  },
  {
   "name": "repo-dialog",
@@ -524,6 +527,9 @@
    "button-outline": [
     "hover"
    ]
+  },
+  "partState": {
+   "switch-on": "focus-visible"
   }
  },
  {

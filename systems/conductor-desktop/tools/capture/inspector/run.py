@@ -54,6 +54,7 @@ def main():
     chat = os.environ.get("CHAT", "")
     run_js(f"await P.ready(); await P.workspace({json.dumps(chat) if chat else ''}); return 'ok';")
     send = f"""
+P.onlyScratch(); P.inScratch();
 C.type('.composer-tiptap-editor', {json.dumps(prompt)});
 await C.sleep(500);
 const b = P.sendButton(); if (!b || b.disabled) throw new Error('send button not ready');

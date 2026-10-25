@@ -141,7 +141,7 @@ colors:
   role-text-primary: "#2c2826"
   role-text-secondary: "#8e8885"
   role-text-faint: "#a5a09c"
-  role-text-on-accent: "#f3f2f1"
+  role-text-on-accent: "#ffffff"
   role-text-link: "#a4847f"
   role-text-disabled: "rgba(44, 40, 38, 0.5)"
   role-border-default: "#eae8e6"

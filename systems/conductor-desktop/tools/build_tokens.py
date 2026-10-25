@@ -379,7 +379,7 @@ ROLE = {
     "overlay": (None, "search-palette:dialog", "the command palette"),
     "text.primary": ("{base.foreground}", ""), "text.secondary": ("{base.muted-foreground}", ""),
     "text.faint": ("{base.faint}", "hints such as the composer's focus shortcut"),
-    "text.on-accent": ("{base.primary-foreground}", ""),
+    "text.on-accent": ("{base.background}", "the primary button's text is the page colour (white in light, #141110 in dark); --primary-foreground goes with the unpainted --primary"),
     "text.link": ("{link.foreground}", "file links in agent replies and the README link colour: the warm tan, not blue"),
     "border.default": ("{base.border}", "cards, dialogs, separators"), "border.input": ("{base.input-border}", "inputs, selects, outline buttons"),
     "border.strong": ("{base.prose-border}", "the stronger edge used in rendered markdown"),

@@ -57,15 +57,30 @@ return {{ state: {json.dumps(shot.get('state', 'default'))}, viewport: C.viewpor
     res = run_js(body)
     data = json.loads(res)
     path = shoot(theme, shot["name"])
+    data["file"] = f"{theme}/{shot['name']}.png"
+    # A shot that forces different states on different parts (hover on most, focus-visible on one) records each
+    # part under the state it was in: `partState` names them, and they go to `<shot>~<state>` (same screenshot).
+    entries = {shot["name"]: data}
+    for part, st in shot.get("partState", {}).items():
+        if part in data["parts"]:
+            key = f"{shot['name']}~{'focus' if st == 'focus-visible' else st}"
+            entries.setdefault(key, {"state": st, "viewport": data["viewport"], "parts": {}, "file": data["file"],
+                                     "note": f"split from {shot['name']}: this part was forced to {st}"})
+            entries[key]["parts"][part] = data["parts"].pop(part)
+    write(theme, shot["name"], entries)
     if shot.get("after") or shot.get("force"):
         run_js("C.unforce();\n" + shot.get("after", "") + "\nreturn 'after ok';")
+    return path, sorted(data["parts"])
+
+
+def write(theme, name, entries):
+    """Replace every reading of shot `name` (and its `~` splits) with `entries`; {} removes them."""
     out = RAW / theme / "captures.json"
     allc = json.loads(out.read_text()) if out.exists() else {}
-    data["file"] = f"{theme}/{shot['name']}.png"
-    allc[shot["name"]] = data
+    allc = {k: v for k, v in allc.items() if k != name and not k.startswith(name + "~")}
+    allc.update(entries)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(allc, indent=1) + "\n")
-    return path, sorted(data["parts"])
 
 
 def main():
@@ -97,6 +112,7 @@ def main():
         except Exception as e:  # one failed shot never stops the rest
             failed.append(shot["name"])
             print("FAILED", shot["name"], str(e)[:600])
+            write(theme, shot["name"], {})   # no stale reading survives a failed attempt; quantize.py then drops its image
             try:
                 run_js("await P.closeAll(); return 'closed';")
             except Exception:
