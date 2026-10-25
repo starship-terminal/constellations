@@ -73,7 +73,7 @@ Scorecard: **13 of 25 met, 12 partly, 0 missing**; C5, V1, V2 are optional for a
 |---|---|---|
 | F1 Colour ramps | Partly | core.color holds Tailwind's palette as Orca loads it: 81 values, partial ramps of 17 hues plus black and white (blue 300 to 800, zinc 200 to 800, neutral only 500), each painted and with its declared hex. Only the steps Orca's stylesheet uses ship, so no hue has about 10 steps, and shadcn's neutrals are separate hex values (base.*), not a ramp. |
 | F3 Text roles | Partly | role.text.primary ({base.foreground}), secondary ({base.muted-foreground}) and on-accent ({base.primary-foreground}) are Orca's own; disabled is derived (the foreground at the 50% opacity shadcn applies) and link is reassigned to callout.note, because Orca's links are underlined foreground text. |
-| F6 Status colours | Partly | role.status.success, warning and danger have fill and text from Orca's tokens (status.success, status.warning, base.destructive) but no separate subtle or border tokens (status.*-border is the same colour), and info is reassigned to callout.note because Orca has no info status. |
+| F6 Status colours | Partly | role.status.success and warning each have fill, text, subtle and border from Orca's own tokens (status.success and status.success-background at 10% and status.success-border at 25%, the same for warning) in both themes. Danger has fill, text and on-colour (base.destructive and its foreground) but no subtle or border token, and info is reassigned to callout.note because Orca has no info status. |
 | F8 Type | Partly | Geist and SF Mono named with their stacks, five weights, line heights per size, leading, letter spacing and eleven roles (display 24, heading 14, body, label, caption 10, small 12, prompt, message, code 12, terminal 14). The size scale is Tailwind's eleven steps (10 to 36px plus chat-code), more than the 6 to 8 the rule asks. |
 | F9 Spacing | Partly | core.spacing.unit is Tailwind's --spacing (4px), measured; the steps (2 to 64px) are derived as calc(var(--spacing) * n), which is how Tailwind builds them, not read from the product one by one. |
 | F11 Sizing | Partly | Control heights (core.controlHeight default 36, sm 32, xs 28, input 36) and measured controls (core.size.control.*), the focus ring's width and offset (3px box-shadow, 0 offset, read on a focused outline button). Icon sizes are not tokenised. |
@@ -200,11 +200,11 @@ python3 tools/build_tokens.py && python3 tools/build_style_guide.py && python3 t
 
 `build_tokens.py` reads `raw/css-vars.*.json` and `raw/components.*.json` and writes `tokens.json`; it refuses a token without a source, an alias that points at nothing, a dimension that is not one length and a colour that is not hex or rgba, and moves a name present in only one theme to `$extensions.notTokenised`. `build_style_guide.py` renders `style-guide.html` from `tokens.json`; `build_components_md.py` writes `components.md` from the readings, `tokens.json` and the crops. All three are deterministic, standard library only. `python3 tools/crops.py` (needs Pillow) cuts `components/crops/` from the screenshots.
 
-To capture again (Orca must not be running; Playwright from `~/.design-systems/pw`; the scratch folder must be a git repository added with `orca repo add --path ~/.design-systems/harness-scratch/orca`):
+To capture again (Orca must not be running; Playwright from `~/.design-systems/pw`). Once Orca is open, the scratch folder must be a git repository added with `orca repo add --path ~/.design-systems/harness-scratch/orca`, it must be the only project Orca lists (`home()` refuses otherwise), and its workspace needs one empty chat for the composer shots (`orca agent launch --agent claude --surface chat --worktree path:<scratch folder>`, no prompt):
 
 ```bash
 open -a Orca --args --remote-debugging-port=9405
-export SLUG=orca-desktop PORT=9405
+export PORT=9405   # SLUG defaults to this package's folder name
 SCHEME=dark  KEEP='^--(?!tw-)' node tools/capture/electron/vars.mjs raw/css-vars.dark.json Orca body
 SCHEME=light KEEP='^--(?!tw-)' node tools/capture/electron/vars.mjs raw/css-vars.light.json Orca body
 SCHEME=dark  node tools/capture/electron/run.mjs dark

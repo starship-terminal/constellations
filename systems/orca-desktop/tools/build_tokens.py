@@ -31,6 +31,7 @@ import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from colour import bezier, color, is_color, ms, px, shadow  # noqa: E402
+from prefer import skip  # noqa: E402
 
 PKG = pathlib.Path(__file__).resolve().parent.parent
 RAW = PKG / "raw"
@@ -250,7 +251,8 @@ def parts(t):
     out = {}
     for shot, d in C[t].items():
         for part, v in d["parts"].items():
-            out.setdefault((part, d["state"]), (shot, v["style"]))
+            if not skip(shot, part, d["state"]):
+                out.setdefault((part, d["state"]), (shot, v["style"]))
     return out
 
 
@@ -378,10 +380,11 @@ ROLE = {
     "accent.subtle": ("{base.accent}", "shadcn's accent: the hover and highlight wash"),
     "brand": ("{sidebar.primary}", "the one saturated blue in the dark theme (sidebar-primary); light keeps it ink"),
 }
-ROLE["status.success.fill"] = ("{status.success}", "")
-ROLE["status.success.text"] = ("{status.success}", "")
-ROLE["status.warning.fill"] = ("{status.warning}", "")
-ROLE["status.warning.text"] = ("{status.warning}", "")
+for s_ in ("success", "warning"):
+    ROLE[f"status.{s_}.fill"] = ("{status.%s}" % s_, "")
+    ROLE[f"status.{s_}.text"] = ("{status.%s}" % s_, "")
+    ROLE[f"status.{s_}.subtle"] = ("{status.%s-background}" % s_, "the status colour at 10%")
+    ROLE[f"status.{s_}.border"] = ("{status.%s-border}" % s_, "the status colour at 25%")
 ROLE["status.danger.fill"] = ("{base.destructive}", "")
 ROLE["status.danger.text"] = ("{base.destructive}", "")
 ROLE["status.danger.on"] = ("{base.destructive-foreground}", "")

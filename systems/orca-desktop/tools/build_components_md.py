@@ -15,6 +15,7 @@ import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from colour import color, is_color  # noqa: E402
+from prefer import skip  # noqa: E402
 
 PKG = pathlib.Path(__file__).resolve().parent.parent
 TOK = json.loads((PKG / "tokens.json").read_text())
@@ -33,7 +34,7 @@ INVENTORY = [
     ("Text field", ["input", "settings-search", "find-field", "filter-field", "search-field", "palette-input"],
      "shadcn's input: 36px, `base.input` edge, 8px radius; focus turns the edge `base.ring` and adds a 3px ring of `base.ring` at 50%. Settings search carries a shortcut hint (Command F)."),
     ("Text area", ["composer", "composer-editor", "textarea"],
-     "The chat composer is a 12px-radius box on `chat.composer-surface` with a `chat.composer-border` edge and a toolbar row (attach, permission mode, model, dictation, send). The Add Quick Command dialog has a plain textarea for the command."),
+     "The chat composer is a 14px-radius box on `chat.composer-surface` with a `chat.composer-border` edge and a toolbar row (attach, permission mode, model, dictation, send). The Add Quick Command dialog has a plain textarea for the command."),
     ("Select", ["select", "listbox", "option", "option-selected", "permission-button", "model-button"],
      "shadcn's select: an outlined 36px trigger with a chevron; its listbox is a raised popover (`base.popover`) with a check on the selected option. The composer's permission and model pickers are ghost triggers that open menus."),
     ("Checkbox", ["checkbox"], "shadcn's checkbox, 16px with a 4px radius, in Settings > SSH Hosts. Most yes or no settings are switches instead."),
@@ -43,19 +44,19 @@ INVENTORY = [
     ("Tabs", ["tab", "tab-active", "right-tab", "right-tab-active", "toggle-item", "toggle-item-on", "segmented-item", "segmented-active"],
      "Three kinds. Workspace tabs across the top (terminal, chat, browser), the active one marked by an underline; icon tabs in the right sidebar (Explorer, Agents, Source Control, Checks), also underlined; and segmented toggles (Names and Contents, Issues and PRs) where the selected item takes a filled chip."),
     ("Menu", ["menu", "menu-item", "menu-item-checked", "menu-item-destructive", "menu-separator", "menu-shortcut", "popover"],
-     "shadcn's dropdown menu: `base.popover` fill, `base.border` edge, a medium shadow; items with a `base.accent` highlight, shortcuts right-aligned in `base.muted-foreground`, separators of `base.border`. The destructive item (Remove Project) is red text. The new-tab menu lists every installed agent with its logo."),
+     "shadcn's dropdown menu, restyled: a translucent fill (`component.menu.bg`, black at 72% in dark, white at 82% in light) with a backdrop blur, a 14% edge, an 11px radius and its own shadow (`shadow.menu`); 32px items with a 7px radius and a translucent highlight, shortcuts right-aligned in `base.muted-foreground`, separators of `base.border`. The destructive item (Remove Project) is red text. The new-tab menu lists every installed agent with its logo."),
     ("Context menu", ["context-menu", "context-item", "context-separator", "context-label"],
      "Right-clicking a workspace opens the same menu component with a section label (Workspace), submenus (Move to Status, Open in) and a red Remove at the bottom."),
-    ("Tooltip", ["tooltip"], "A small inverted label (`base.primary` fill, `base.primary-foreground` text, 12px text) with an arrow, beside the trigger after a hover delay."),
+    ("Tooltip", ["tooltip"], "A small inverted label (`base.foreground` fill, `base.background` text, 8px radius, 12px text) with an arrow, beside the trigger after a hover delay."),
     ("Dialog", ["dialog", "confirm-dialog", "overlay", "palette", "palette-row", "palette-filter", "palette-section-heading"],
-     "shadcn's dialog: `base.background` fill, 1px `base.border`, a large shadow, over a black overlay with a light blur. The removal confirmation is the small variant: title, one sentence with the project name in bold, Cancel (outline) and Remove (destructive). The search palette is a dialog with a search row, a Filter button, sections and keyboard hints."),
+     "shadcn's dialog, restyled: the popover colour at 96% (`role.overlay`), a 14% edge, a 10px radius and a deep shadow (`shadow.dialog`), over a black 55% overlay with a light blur. The removal confirmation is the small variant: title, one sentence with the project name in bold, Cancel (outline) and Remove (destructive). The search palette is a dialog with a search row, a Filter button, sections and keyboard hints."),
     ("Toast", ["toast"],
      "Orca's update notice is a card pinned bottom right (`role=complementary`, `base.card`, the floating shadow) with a title, close button, two lines and a full-width default button. Orca also mounts a Sonner toaster (its variables are in raw/css-vars.*.json); no action raised one."),
     ("Card", ["card", "card-title", "setup-card", "template-card", "activity-card", "card-header", "step-row", "step-row-selected"],
      "Settings groups are bordered, rounded cards on `base.card` with an h3 title; the Appearance pane nests collapsible cards with an icon tile. The onboarding callout (Add a setup script) and the Automations templates are smaller cards with a `base.border` edge."),
     ("List row", ["nav-row", "nav-row-selected", "workspace-row", "settings-nav", "settings-nav-selected", "back-to-app", "project-header", "field-label", "field-description"],
      "Sidebar rows have an 8px radius: `base.foreground` text with a muted icon and a `worktreeSidebar.accent` wash on hover and when selected. The workspace card (main, primary) is a taller row with a status dot, a badge, the branch and its agents. Settings rows put a 14px medium label over a 12px muted description, with the control on the right."),
-    ("Table", ["segmented-item"], "Tasks shows a table header (ID, Title / Context, Assignees, Status, Updated) over an empty state; no rows were reachable without connecting a task source."),
+    ("Table", [], "Not measured: Tasks shows a table header (ID, Title / Context, Assignees, Status, Updated) over an empty state, in [tasks](screenshots/dark/tasks.png) and [tasks light](screenshots/light/tasks.png); the header was not matched as a part, and no rows were reachable without connecting a task source."),
     ("Avatar", [], "Not present: Orca shows no people. Agent logos sit in rounded tiles in Settings > Agents and the onboarding checklist."),
     ("Badge", ["workspace-badge", "badge"], "Small outlined pills (primary on the main workspace, 11 detected) and plain uppercase labels (OPTIONAL, BETA; New in an ink pill)."),
     ("Toolbar", ["status-bar", "status-chip", "command-button"],
@@ -63,7 +64,7 @@ INVENTORY = [
     ("Inspector", ["right-tab", "right-tab-active", "find-field", "toggle-item"],
      "The right sidebar (350px) is the inspector: Explorer with a file filter and a Names and Contents toggle, the agent session history, Source Control with untracked changes, and Checks."),
     ("Conversation", ["user-message", "assistant-message", "turn-status", "tool-call", "code-block", "context-usage"],
-     "Not on the checklist; Orca's structured chat. The user's prompt is a right-aligned bubble (`chat.user-surface`, `chat.user-border`, 12px radius); the reply is plain text on the canvas; the turn collapses into a Worked for 11s line that expands to tool calls (a terminal icon, the command, a check) and the agent's narration in mono; code blocks sit on `chat.code-surface`."),
+     "Not on the checklist; Orca's structured chat. The user's prompt is a right-aligned bubble (`chat.user-surface`, `chat.user-border`, 14px radius); the reply is plain text on the canvas; the turn collapses into a Worked for 11s line that expands to tool calls (a terminal icon, the command, a check) and the agent's narration in mono; code blocks sit on `chat.code-surface` with a 10px radius."),
     ("Terminal", ["terminal", "terminal-pane-title"],
      "The terminal pane is xterm drawn with the owner's terminal themes (Ghostty Default Style Dark, Builtin Tango Light) in 14px SF Mono; its colours come from the terminal theme, not the app's tokens."),
     ("Progress and sliders", ["slider", "slider-thumb", "collapsible"], "A shadcn slider in Settings > Terminal and collapsible sections."),
@@ -171,7 +172,7 @@ PROPS = [("background-color", "fill"), ("color", "text"), ("border-top-color", "
 
 def first(t, part, state):
     for shot, d in CAP[t].items():
-        if d["state"] == state and part in d["parts"]:
+        if d["state"] == state and part in d["parts"] and not skip(shot, part, state):
             return shot, d["parts"][part]["style"]
     return None, None
 

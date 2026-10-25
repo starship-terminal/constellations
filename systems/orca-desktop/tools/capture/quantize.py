@@ -3,8 +3,8 @@
 
     python3 tools/capture/quantize.py ~/.design-systems/orca-desktop/raw-shots
 
-RAW holds <theme>/<shot>.png from shots.mjs and <theme>/run/<frame>.png from run.mjs. Every shot is
-kept; of the run frames only those named in RUN_FRAMES (PRODUCT, adapt) are, renamed to
+RAW holds <theme>/<shot>.png from shots.mjs and <theme>/run/<frame>.png from run.mjs. Every shot that
+<theme>/captures.json records is kept; of the run frames only those named in RUN_FRAMES (PRODUCT, adapt) are, renamed to
 run-<state>.png. CDP's captureScreenshot tags the PNG with the display's profile, but its pixels are
 the page's sRGB values (a check: Orca's dark --worktree-sidebar #2a2a2a reads (42, 42, 42)), so the profile is
 dropped, not converted. Flat UI colours survive the 256-colour palette exactly; read values from
@@ -44,7 +44,13 @@ def main():
         theme = theme_dir.name
         out = PKG / "screenshots" / theme
         keep = set()
+        # Only shots captures.json records: a shot that failed on a later run is dropped from it, and its
+        # older PNG must not be published again without a current reading.
+        shots = json.loads((theme_dir / "captures.json").read_text()) if (theme_dir / "captures.json").exists() else {}
         for f in sorted(theme_dir.glob("*.png")):
+            if f.stem not in shots:
+                print("skipped (no reading in captures.json):", f.name)
+                continue
             store(f, out / f.name); keep.add(f.name); n += 1
         for frame, name in RUN_FRAMES.get(theme, {}).items():
             f = theme_dir / "run" / f"{frame}.png"

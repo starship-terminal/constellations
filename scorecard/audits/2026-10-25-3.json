@@ -3651,11 +3651,11 @@
     },
     "F6": {
      "grade": "partly",
-     "evidence": "role.status.success, warning and danger have fill and text from Orca's tokens (status.success, status.warning, base.destructive) but no separate subtle or border tokens (status.*-border is the same colour), and info is reassigned to callout.note because Orca has no info status."
+     "evidence": "role.status.success and warning each have fill, text, subtle and border from Orca's own tokens (status.success and status.success-background at 10% and status.success-border at 25%, the same for warning) in both themes. Danger has fill, text and on-colour (base.destructive and its foreground) but no subtle or border token, and info is reassigned to callout.note because Orca has no info status."
     },
     "F7": {
      "grade": "meets",
-     "evidence": "light and dark hold the same 294 token names (the builder refuses otherwise; seven component states seen in one theme only are moved to notTokenised)."
+     "evidence": "light and dark hold the same 298 token names (the builder refuses otherwise; seven component states seen in one theme only are moved to notTokenised)."
     },
     "F8": {
      "grade": "partly",
@@ -3719,7 +3719,7 @@
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 794 of 794 tokens name their source"
+     "evidence": "Script: 802 of 802 tokens name their source"
     },
     "K2": {
      "grade": "meets",

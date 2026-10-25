@@ -14,6 +14,12 @@ import pathlib
 
 from PIL import Image
 
+try:  # a package may name the shot that holds a part's default reading (tools/prefer.py)
+    from prefer import skip
+except ImportError:
+    def skip(shot, part, state):
+        return False
+
 PKG = pathlib.Path(__file__).resolve().parent.parent
 OUT = PKG / "components" / "crops"
 PAD = 12
@@ -29,6 +35,8 @@ def crops(theme):
         im = None
         for part, v in d["parts"].items():
             key = f"{part}-{d['state']}"
+            if skip(shot, part, d["state"]):
+                continue
             if key in done or not v.get("box"):
                 continue
             x, y, w, h = v["box"]

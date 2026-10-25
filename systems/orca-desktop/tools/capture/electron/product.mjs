@@ -16,6 +16,7 @@
 // The theme is not switched in the app: Orca's Theme setting is System, which follows
 // prefers-color-scheme, so the capture runs with SCHEME=light or SCHEME=dark (cdp.mjs emulates it).
 import { execFileSync } from 'node:child_process';
+import { basename } from 'node:path';
 
 export const NAME = 'Orca';
 export const WINDOWS = { app: 'Orca' };
@@ -56,11 +57,23 @@ const workspaceRow = page => page.locator('[data-worktree-card-surface]').first(
 const chatTabs = page => page.locator('[data-tab-strip-slot^="structured-agent-session"]');
 const terminalTab = page => page.locator('[data-tab-strip-slot]:not([data-tab-strip-slot^="structured-agent-session"])').first();
 
+// The capture only ever selects the scratch project's workspace, so it refuses to run while Orca lists any
+// other project: with only the scratch project in the sidebar, its workspace is the first card.
+async function onlyScratch(page) {
+  const projects = await page.locator('button[aria-label^="Project actions for "]').evaluateAll(bs => bs.map(b => b.getAttribute('aria-label').slice(20)));
+  if (projects.length !== 1 || projects[0] !== basename(SCRATCH))
+    throw new Error(`Orca lists projects ${JSON.stringify(projects)}; the capture runs only when the scratch project (${basename(SCRATCH)}) is the only one`);
+}
+
 // Called before every shot: the scratch workspace, on its first (empty) chat tab, overlays hidden.
+// The empty chat is made once before capturing (`orca agent launch --agent claude --surface chat`, no prompt).
 export async function home({ page }, tab = 'chat') {
   await closeAll(page);
   if (await inSettings(page).isVisible().catch(() => false)) { await inSettings(page).click(); await wait(page, 800); }
+  await onlyScratch(page);
   await workspaceRow(page).click(); await wait(page, 700);
+  if (tab !== 'terminal' && !(await chatTabs(page).count()))
+    throw new Error('the scratch workspace has no chat tab; open one first with `orca agent launch --agent claude --surface chat`');
   await (tab === 'chat' ? chatTabs(page).first() : tab === 'run' ? chatTabs(page).last() : terminalTab(page)).click(); await wait(page, 700);
   await overlays(page);
   await page.mouse.move(760, 940);
@@ -215,7 +228,11 @@ export const SHOTS = [
       'attach-button': S.attach, 'dictation-button': S.dictation, 'empty-title': page => page.getByText(/^Start a chat with/).filter({ visible: true }).first(),
       'empty-description': page => page.getByText(/^Ask .* to inspect code/).filter({ visible: true }).first() } },
   { name: 'chat-composer-typed', window: A, state: 'filled',
-    reveal: async ({ page }) => { await page.locator(S.editor).first().click(); await page.keyboard.type('Draft text, never sent'); await wait(page, 500); },
+    reveal: async ({ page }) => {
+      // Never type over a draft: clearComposer() would select it all and delete it afterwards.
+      if ((await page.locator(S.editor).first().innerText()).trim()) throw new Error('the empty chat holds a draft; not typing over it');
+      await page.locator(S.editor).first().click(); await page.keyboard.type('Draft text, never sent'); await wait(page, 500);
+    },
     parts: { composer: S.composer, 'composer-editor': S.editor, 'send-button': S.send },
     after: async ({ page }) => clearComposer(page) },
   { name: 'permission-menu', window: A,
@@ -376,7 +393,7 @@ async function sendPrompt({ page }, text) {
 export const RUN = {
   window: 'app',
   async start(h) {
-    await home(h);
+    await home(h, 'terminal');
     const before = await chatTabs(h.page).count();
     execFileSync(ORCA, ['agent', 'launch', '--agent', 'claude', '--surface', 'chat', '--worktree', `path:${SCRATCH}`, '--focus', '--json'], { cwd: SCRATCH });
     for (let i = 0; i < 20 && (await chatTabs(h.page).count()) === before; i++) await wait(h.page, 500);

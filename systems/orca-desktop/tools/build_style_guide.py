@@ -85,8 +85,10 @@ for p, t in core.items():
     if t["$type"] == "typography":
         v = t["$value"]
         fam = "var(--fontFamily-mono)" if "mono" in v["fontFamily"] else "var(--fontFamily-sans)"
-        type_css.append(f".t-{p[-1]} {{ font-family: {fam}; font-size: {v['fontSize']}; font-weight: {v['fontWeight']}; "
-                        f"line-height: {v['lineHeight']}; letter-spacing: {v['letterSpacing']}; }}")
+        # A role may alias a scale step ({fontSize.chat-code}); resolve it, since a brace is not CSS.
+        r = {k: resolve(v[k], core) for k in ("fontSize", "fontWeight", "lineHeight", "letterSpacing")}
+        type_css.append(f".t-{p[-1]} {{ font-family: {fam}; font-size: {r['fontSize']}; font-weight: {r['fontWeight']}; "
+                        f"line-height: {r['lineHeight']}; letter-spacing: {r['letterSpacing']}; }}")
 
 
 def ev(t):
@@ -193,10 +195,10 @@ figcaption { font-size:12px; color:var(--base-muted-foreground); margin-bottom:1
 .sp-badge { display:inline-flex; height:18px; align-items:center; padding:0 6px; border-radius:var(--radius-sm); border:1px solid var(--base-border); font-size:var(--fontSize-xs); color:var(--base-foreground); }
 .sp-new { margin-left:auto; padding:1px 7px; border-radius:99px; background:var(--base-primary); color:var(--base-primary-foreground); font-size:11px; }
 .sp-chat { background:var(--chat-canvas); padding:12px; border-radius:var(--radius-lg); color:var(--chat-foreground); }
-.sp-user { margin-left:auto; width:fit-content; max-width:80%; background:var(--chat-user-surface); border:1px solid var(--chat-user-border); border-radius:var(--radius-xl); padding:8px 12px; color:var(--chat-foreground-strong); }
+.sp-user { margin-left:auto; width:fit-content; max-width:80%; background:var(--component-user-message-bg); border:1px solid var(--component-user-message-border); border-radius:var(--component-user-message-radius); padding:8px 12px; color:var(--component-user-message-text); }
 .sp-turn { margin:12px 0 8px; padding-bottom:6px; border-bottom:1px solid var(--base-border); color:var(--chat-foreground-faint); }
-.sp-code { background:var(--chat-code-surface); border:1px solid var(--chat-code-border); color:var(--chat-code-foreground); border-radius:var(--radius-lg); padding:10px 12px; margin:10px 0; overflow:auto; }
-.sp-composer { background:var(--chat-composer-surface); border:1px solid var(--chat-composer-border); border-radius:var(--radius-xl); padding:10px 12px; }
+.sp-code { background:var(--component-code-block-bg); border:1px solid var(--component-code-block-border); color:var(--chat-code-foreground); border-radius:var(--component-code-block-radius); padding:10px 12px; margin:10px 0; overflow:auto; }
+.sp-composer { background:var(--component-composer-bg); border:1px solid var(--component-composer-border); border-radius:var(--component-composer-radius); padding:10px 12px; box-shadow:var(--shadow-composer); }
 .sp-toolbar { display:flex; align-items:center; gap:10px; margin-top:18px; color:var(--chat-foreground); }
 .sp-send { width:28px; height:28px; border-radius:99px; display:inline-grid; place-items:center; background:var(--base-primary); color:var(--base-primary-foreground); opacity:.5; }
 .sp-buttons { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
@@ -208,23 +210,23 @@ figcaption { font-size:12px; color:var(--base-muted-foreground); margin-bottom:1
 .sp-btn.ghost { color:var(--base-foreground); } .sp-btn.ghost:hover { background:var(--base-accent); }
 .sp-btn.destructive { background:var(--component-button-destructive-bg); color:var(--component-button-destructive-text); }
 .sp-btn.focus { border-color:var(--base-ring); box-shadow:0 0 0 var(--focusRing-width) color-mix(in srgb, var(--base-ring) 50%, transparent); }
-.sp-menu { background:var(--base-popover); color:var(--base-popover-foreground); border:1px solid var(--base-border); border-radius:var(--radius-md); padding:4px; max-width:240px; box-shadow:0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1); }
-.sp-menu hr { border:0; border-top:1px solid var(--base-border); margin:4px -4px; }
-.sp-mrow { display:flex; align-items:center; height:30px; padding:0 8px; border-radius:var(--radius-sm); }
-.sp-mrow.hi { background:var(--base-accent); color:var(--base-accent-foreground); } .sp-mrow.danger { color:var(--base-destructive); }
-.sp-scrim { background:var(--role-scrim); padding:24px; border-radius:var(--radius-lg); }
-.sp-dialog { background:var(--base-background); border:1px solid var(--base-border); border-radius:var(--radius-lg); padding:20px; box-shadow:0 10px 15px -3px rgba(0,0,0,.1); }
+.sp-menu { background:var(--component-menu-bg); color:var(--component-menu-text); border:1px solid var(--component-menu-border); border-radius:var(--component-menu-radius); padding:4px; max-width:240px; box-shadow:var(--shadow-menu); backdrop-filter:blur(var(--blur-xl)); }
+.sp-menu hr { border:0; border-top:1px solid var(--component-menu-border); margin:4px -4px; }
+.sp-mrow { display:flex; align-items:center; height:var(--component-menu-item-height); padding:0 var(--component-menu-item-padding); border-radius:var(--component-menu-item-radius); }
+.sp-mrow.hi { background:var(--component-menu-item-bg-hover); } .sp-mrow.danger { color:var(--base-destructive); }
+.sp-scrim { background:var(--component-scrim-bg); padding:24px; border-radius:var(--radius-lg); }
+.sp-dialog { background:var(--component-dialog-bg); border:1px solid var(--component-dialog-border); border-radius:var(--component-dialog-radius); padding:20px; box-shadow:var(--shadow-dialog); }
 .sp-card { background:var(--base-card); color:var(--base-card-foreground); border:1px solid var(--base-border); border-radius:var(--radius-xl); padding:16px; }
 .sp-field { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:8px 0; }
 .sp-label { font-weight:500; } .sp-desc { color:var(--base-muted-foreground); font-size:var(--fontSize-xs); }
-.sp-switch { flex:none; display:inline-block; width:32px; height:18px; border-radius:99px; background:var(--base-input); position:relative; }
-.sp-switch::after { content:""; position:absolute; top:2px; left:2px; width:14px; height:14px; border-radius:99px; background:var(--base-background); }
-.sp-switch.on { background:var(--base-primary); } .sp-switch.on::after { left:16px; }
+.sp-switch { flex:none; display:inline-block; width:var(--size-control-switch-width); height:var(--size-control-switch-height); border-radius:99px; background:var(--component-switch-off-bg); position:relative; }
+.sp-switch::after { content:""; position:absolute; top:2px; left:2px; width:16px; height:16px; border-radius:99px; background:var(--base-background); }
+.sp-switch.on { background:var(--component-switch-on-bg); } .sp-switch.on::after { left:18px; }
 .sp-select { border:1px solid var(--base-input); border-radius:var(--radius-md); padding:6px 10px; }
 .sp-radio { display:inline-flex; border:1px solid var(--base-border); border-radius:var(--radius-md); padding:2px; } .sp-radio span { padding:3px 10px; border-radius:var(--radius-sm); color:var(--base-muted-foreground); } .sp-radio span.on { background:var(--base-accent); color:var(--base-foreground); font-weight:500; }
 .sp-input { margin-top:8px; height:var(--controlHeight-default); display:flex; align-items:center; padding:0 12px; border-radius:var(--radius-md); border:1px solid var(--base-input); }
-.sp-toast { background:var(--base-card); border:1px solid var(--base-border); border-radius:var(--radius-xl); padding:14px; box-shadow:var(--shadow-floating); }
-.sp-tooltip { display:inline-block; margin-top:14px; background:var(--base-primary); color:var(--base-primary-foreground); border-radius:var(--radius-md); padding:5px 10px; font-size:var(--fontSize-xs); }
+.sp-toast { background:var(--component-toast-bg); border:1px solid var(--component-toast-border); border-radius:var(--component-toast-radius); padding:14px; box-shadow:var(--shadow-toast); }
+.sp-tooltip { display:inline-block; margin-top:14px; background:var(--component-tooltip-bg); color:var(--component-tooltip-text); border-radius:var(--component-tooltip-radius); padding:5px 10px; font-size:var(--fontSize-xs); }
 """
 
 PAGE_CSS = """

@@ -26,7 +26,7 @@ Screens: [settings-general](screenshots/light/settings-general.png), [settings-a
 
 ## Menus and selects
 
-Every popup is shadcn's dropdown: `base.popover`, a 1px edge, a medium shadow, 32px rows with a grey highlight, shortcuts right-aligned in muted text, separators, and icons at the start of rows. The new-tab menu lists the agents with their logos; the permission menu is a radio list with descriptions (Ask for approval, Accept edits, Full access); the model picker opens with a search field. Selects open a listbox with a check on the chosen option.
+Every popup is shadcn's dropdown, restyled: a translucent fill with a backdrop blur (`component.menu.bg`), a 14% edge, an 11px radius and `shadow.menu`, 32px rows with a translucent highlight, shortcuts right-aligned in muted text, separators, and icons at the start of rows. The new-tab menu lists the agents with their logos; the permission menu is a radio list with descriptions (Ask for approval, Accept edits, Full access); the model picker opens with a search field. Selects open a listbox with a check on the chosen option.
 
 Screens: [new-tab-menu](screenshots/dark/new-tab-menu.png), [permission-menu](screenshots/dark/permission-menu.png), [model-menu](screenshots/light/model-menu.png), [project-menu](screenshots/dark/project-menu.png), [workspace-context-menu](screenshots/light/workspace-context-menu.png), [help-menu](screenshots/dark/help-menu.png), [settings-select-open](screenshots/dark/settings-select-open.png).
 

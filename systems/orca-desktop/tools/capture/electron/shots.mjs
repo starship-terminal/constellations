@@ -4,16 +4,21 @@
 //
 //   PORT=9401 node tools/capture/electron/shots.mjs <theme> [name ...]     take shots (all, or the named)
 //   PORT=9401 node tools/capture/electron/shots.mjs --set-theme="<label>"  switch the app's theme, print the old one
+//                                                                  (only where product.mjs exports setTheme)
 //
 // Writes $RAW/<theme>/<name>.png (full colour, the window's own pixels) and merges into
 // $RAW/<theme>/captures.json: { <name>: { window, state, file, viewport, parts: { <part>: { box, style } } } }.
 // box is in screenshot pixels; style is the computed style (cdp.mjs PROPS) in the shot's state.
-// RAW defaults to ~/.design-systems/<slug>/raw-shots, outside the repository.
+// RAW defaults to ~/.design-systems/<slug>/raw-shots, outside the repository; <slug> is this package's folder.
 import { existsSync, readFileSync } from 'node:fs';
+import { basename, resolve as pathResolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { connect, disconnect, shoot, viewport, force, box, computed, tag, untagAll, writeJson } from './cdp.mjs';
 import * as P from './product.mjs';
 
-const SLUG = process.env.SLUG || 'cursor-desktop';
+// The package folder this script lives in (systems/<slug>/tools/capture/electron/), so a copy in another
+// package never writes into the package it was copied from.
+const SLUG = process.env.SLUG || basename(pathResolve(fileURLToPath(import.meta.url), '../../../..'));
 const RAW = process.env.RAW || `${process.env.HOME}/.design-systems/${SLUG}/raw-shots`;
 const args = process.argv.slice(2);
 const setTheme = args.find(a => a.startsWith('--set-theme='))?.slice(12);
@@ -27,7 +32,10 @@ const resolve = (page, spec) => typeof spec === 'function' ? spec(page)
   : Array.isArray(spec) ? page.locator(spec[0]).filter({ visible: true }).nth(spec[1]) : page.locator(spec).filter({ visible: true }).first();
 
 if (setTheme) {
-  const s = await session('agents');
+  // Only for a product whose theme is its own setting (product.mjs exports setTheme); a product whose theme
+  // follows prefers-color-scheme is captured with SCHEME=light|dark instead (cdp.mjs).
+  if (!P.setTheme) { console.error(`${P.NAME} has no setTheme in product.mjs; run with SCHEME=light or SCHEME=dark`); process.exit(2); }
+  const s = await session(Object.keys(P.WINDOWS)[0]);
   console.log('theme was', await P.setTheme(s, setTheme));
   await disconnect(s.browser); process.exit(0);
 }
