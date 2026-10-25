@@ -2433,6 +2433,78 @@
       "layoutGaps": {
         "icons/": "Zed's icons are its own artwork and are not kept here (docs/RIGHTS.md)"
       }
+    },
+    {
+      "slug": "notion-desktop",
+      "name": "Notion (desktop)",
+      "url": "https://www.notion.com/desktop",
+      "category": "productivity",
+      "platform": "desktop",
+      "goodFor": "Desktop docs, notes and database workspace (Notion for macOS, Electron): a tab strip above a 270px sidebar on a warm secondary grey, a centred 720px page column of blocks (a 40px bold title, three heading levels, 16px body at a 24px line, callouts and code on soft fills), database tables with thin rules and coloured select pills, raised 10px-radius menus with a 1px ring and a soft shadow, ghost buttons everywhere but one blue accent for New, checked boxes and switches, and a docked AI side panel",
+      "tags": [
+        "desktop",
+        "electron",
+        "macos",
+        "productivity",
+        "docs",
+        "notes",
+        "database",
+        "table",
+        "board",
+        "editor",
+        "blocks",
+        "sidebar",
+        "tabs",
+        "ai",
+        "minimal",
+        "warm-grey",
+        "dark",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-25",
+      "access": "signed in (the owner's account and workspace); read live from the running app over its remote-debugging port, editing only a scratch page the capture created",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1466
+      ],
+      "entry": "systems/notion-desktop/README.md",
+      "tokens": "systems/notion-desktop/tokens.json",
+      "styleGuide": "systems/notion-desktop/style-guide.html",
+      "preview": {
+        "cover": "systems/notion-desktop/screenshots/dark/page-default.png",
+        "swatches": {
+          "light": {
+            "page": "light.role.page",
+            "surface": "light.role.surface",
+            "text": "light.role.text.primary",
+            "muted": "light.role.text.secondary",
+            "accent": "light.role.accent.default",
+            "border": "light.role.border.default"
+          },
+          "dark": {
+            "page": "dark.role.page",
+            "surface": "dark.role.surface",
+            "text": "dark.role.text.primary",
+            "muted": "dark.role.text.secondary",
+            "accent": "dark.role.accent.default",
+            "border": "dark.role.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans",
+          "core.fontFamily.mono"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/notion-desktop/raw-shots (full-colour captures, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Notion's icons are its own artwork and are not kept here (docs/RIGHTS.md)"
+      }
     }
   ]
 }
