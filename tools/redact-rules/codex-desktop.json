@@ -1,0 +1,8 @@
+{
+  "families": [
+    {"name": "Settings > Account: the account's email address (the owner's school address, which the shared pattern file does not allow)",
+     "files": ["screenshots/*/settings-account.png"],
+     "size": [[3024, 1898]],
+     "rects": [[1100, 822, 1400, 872, "rows"]]}
+  ]
+}

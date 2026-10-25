@@ -242,7 +242,6 @@ colors:
   component-alert-bg: "#ffffff"
   component-alert-border: "rgba(0, 0, 0, 0.08)"
   component-table-row-text: "#1e1e1e"
-  component-kbd-bg: "rgba(0, 0, 0, 0.05)"
   component-kbd-text: "#818181"
 typography:
   heading:
@@ -523,9 +522,8 @@ components:
     textColor: "{colors.component-table-row-text}"
     height: "44px"
   kbd:
-    backgroundColor: "{colors.component-kbd-bg}"
     textColor: "{colors.component-kbd-text}"
-    rounded: "3px"
+    rounded: "0px"
     height: "16px"
   code-block:
     rounded: "0px"

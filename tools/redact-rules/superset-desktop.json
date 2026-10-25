@@ -1,0 +1,10 @@
+{
+ "_note": "Pixel rectangles for systems/superset-desktop. Coordinates only; no private text. 3024x1900 is the 1512x950 window at 2x. Settings > Usage lists the agent accounts signed in on this Mac; the two addresses the shared pattern file does not list as the owner's are painted out (the account badges beside them stay).",
+ "families": [
+  {"name": "usage: agent account addresses",
+   "files": ["screenshots/*/settings-usage.png"],
+   "size": [[3024, 1900]],
+   "rects": [[808, 1102, 1050, 1138, "rows"], [1792, 1103, 2100, 1138, "rows"]]}
+ ],
+ "ocr": {"net": true, "emails": true}
+}
