@@ -4068,7 +4068,7 @@
      "_role": null
     }
    },
-   "button-ghost": {
+   "button-ghost-sm": {
     "box": [
      1724,
      1036,
@@ -4854,60 +4854,6 @@
    "htmlClass": "dark"
   },
   "parts": {
-   "sidebar-row-selected": {
-    "box": [
-     16,
-     104,
-     524,
-     56
-    ],
-    "style": {
-     "color": "rgb(168, 165, 163)",
-     "background-color": "oklab(0.931979 0.0013504 0.0032205 / 0.042)",
-     "background-image": "none",
-     "border-top-color": "rgb(42, 40, 39)",
-     "border-top-width": "0px",
-     "border-top-style": "solid",
-     "border-bottom-color": "rgb(42, 40, 39)",
-     "border-bottom-width": "0px",
-     "border-top-left-radius": "8px",
-     "border-bottom-right-radius": "8px",
-     "box-shadow": "none",
-     "outline-color": "rgb(168, 165, 163)",
-     "outline-width": "0px",
-     "outline-style": "none",
-     "outline-offset": "0px",
-     "font-family": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-     "font-size": "13px",
-     "font-weight": "500",
-     "line-height": "19.5px",
-     "letter-spacing": "normal",
-     "text-transform": "none",
-     "text-decoration-line": "none",
-     "padding-top": "0px",
-     "padding-right": "6px",
-     "padding-bottom": "0px",
-     "padding-left": "6px",
-     "gap": "8px",
-     "width": "262px",
-     "height": "28px",
-     "opacity": "1",
-     "backdrop-filter": "none",
-     "transition-duration": "0.15s",
-     "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)",
-     "transition-property": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
-     "cursor": "pointer",
-     "z-index": "auto",
-     "_box": [
-      8,
-      52,
-      262,
-      28
-     ],
-     "_tag": "button",
-     "_role": null
-    }
-   },
    "button-primary-sm": {
     "box": [
      2690,
@@ -5065,60 +5011,6 @@
       109,
       280,
       825
-     ],
-     "_tag": "div",
-     "_role": null
-    }
-   },
-   "workspace-card": {
-    "box": [
-     608,
-     293,
-     560,
-     1575
-    ],
-    "style": {
-     "color": "rgb(234, 232, 230)",
-     "background-color": "rgba(0, 0, 0, 0)",
-     "background-image": "none",
-     "border-top-color": "rgb(42, 40, 39)",
-     "border-top-width": "0px",
-     "border-top-style": "solid",
-     "border-bottom-color": "rgb(42, 40, 39)",
-     "border-bottom-width": "0px",
-     "border-top-left-radius": "0px",
-     "border-bottom-right-radius": "0px",
-     "box-shadow": "none",
-     "outline-color": "rgb(234, 232, 230)",
-     "outline-width": "0px",
-     "outline-style": "none",
-     "outline-offset": "0px",
-     "font-family": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
-     "font-size": "16px",
-     "font-weight": "400",
-     "line-height": "24px",
-     "letter-spacing": "normal",
-     "text-transform": "none",
-     "text-decoration-line": "none",
-     "padding-top": "0px",
-     "padding-right": "8px",
-     "padding-bottom": "8px",
-     "padding-left": "8px",
-     "gap": "8px",
-     "width": "280px",
-     "height": "787.5px",
-     "opacity": "1",
-     "backdrop-filter": "none",
-     "transition-duration": "0s",
-     "transition-timing-function": "ease",
-     "transition-property": "all",
-     "cursor": "auto",
-     "z-index": "auto",
-     "_box": [
-      304,
-      146.5,
-      280,
-      787.5
      ],
      "_tag": "div",
      "_role": null
@@ -5685,7 +5577,7 @@
      "_role": null
     }
    },
-   "button-ghost": {
+   "button-secondary-lg": {
     "box": [
      810,
      1370,
@@ -6018,7 +5910,7 @@
    "htmlClass": "dark"
   },
   "parts": {
-   "button-outline": {
+   "button-primary-sm": {
     "box": [
      2486,
      128,
@@ -7268,7 +7160,7 @@
      "_role": null
     }
    },
-   "button-secondary": {
+   "button-primary-sm": {
     "box": [
      888,
      1401,
@@ -7322,7 +7214,7 @@
      "_role": null
     }
    },
-   "button-ghost-sm": {
+   "button-secondary-lg": {
     "box": [
      2407,
      678,
@@ -7397,7 +7289,7 @@
    "htmlClass": "dark"
   },
   "parts": {
-   "select-trigger": {
+   "select-trigger-sm": {
     "box": [
      2198,
      350,
@@ -8622,7 +8514,7 @@
      "_role": null
     }
    },
-   "button-ghost-sm": {
+   "button-secondary": {
     "box": [
      2420,
      144,
@@ -9009,7 +8901,7 @@
    "htmlClass": "dark"
   },
   "parts": {
-   "button-outline-sm": {
+   "button-primary-sm": {
     "box": [
      2330,
      346,
@@ -9687,7 +9579,7 @@
      "_role": null
     }
    },
-   "button-primary-sm": {
+   "button-primary": {
     "box": [
      2342,
      200,
@@ -9911,7 +9803,7 @@
    "htmlClass": "dark"
   },
   "parts": {
-   "button-ghost-sm": {
+   "button-secondary": {
     "box": [
      2380,
      344,
@@ -10814,7 +10706,7 @@
      "_role": null
     }
    },
-   "terminal": {
+   "terminal-offscreen": {
     "box": [
      -19998,
      -18098,
@@ -16906,10 +16798,10 @@
    }
   }
  },
- "pages-button-outline-sm-hover": {
+ "pages-button-primary-sm-hover": {
   "window": "main",
   "state": "hover",
-  "file": "dark/pages-button-outline-sm-hover.png",
+  "file": "dark/pages-button-primary-sm-hover.png",
   "viewport": {
    "dpr": 2,
    "css": [
@@ -16925,7 +16817,7 @@
    "htmlClass": "dark"
   },
   "parts": {
-   "button-outline-sm": {
+   "button-primary-sm": {
     "box": [
      2486,
      128,
@@ -16981,10 +16873,10 @@
    }
   }
  },
- "pages-button-outline-sm-focus-visible": {
+ "pages-button-primary-sm-focus-visible": {
   "window": "main",
   "state": "focus-visible",
-  "file": "dark/pages-button-outline-sm-focus-visible.png",
+  "file": "dark/pages-button-primary-sm-focus-visible.png",
   "viewport": {
    "dpr": 2,
    "css": [
@@ -17000,7 +16892,7 @@
    "htmlClass": "dark"
   },
   "parts": {
-   "button-outline-sm": {
+   "button-primary-sm": {
     "box": [
      2486,
      128,
@@ -17056,10 +16948,10 @@
    }
   }
  },
- "pages-button-outline-sm-pressed": {
+ "pages-button-primary-sm-pressed": {
   "window": "main",
   "state": "pressed",
-  "file": "dark/pages-button-outline-sm-pressed.png",
+  "file": "dark/pages-button-primary-sm-pressed.png",
   "viewport": {
    "dpr": 2,
    "css": [
@@ -17075,7 +16967,7 @@
    "htmlClass": "dark"
   },
   "parts": {
-   "button-outline-sm": {
+   "button-primary-sm": {
     "box": [
      2486,
      128,

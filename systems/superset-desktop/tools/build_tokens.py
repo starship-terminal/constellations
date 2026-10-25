@@ -236,9 +236,9 @@ for key, v, name in RADIUS:
 for key, n in (("sans", "--font-sans"), ("mono", "--font-mono")):
     stack = [f.strip().strip("'\"") for f in declared(n).split(",")]
     put(CORE, ("fontFamily", key), tok(stack, "fontFamily", "Measured", f"{n} ({src_theme})"))
-shot, s = need("dark", "terminal")
+shot, s = need("dark", "terminal-offscreen")
 put(CORE, ("fontFamily", "terminal"), tok([f.strip().strip("'\"") for f in s["font-family"].split(",")], "fontFamily", "Measured",
-    f"computed font-family of .xterm in {shot}: Settings > Appearance > Terminal typography (the default, not changed by the owner), {DATE}"))
+    f"computed font-family of the .xterm Superset keeps off screen in {shot}; every terminal takes Settings > Appearance > Terminal typography (the default, not changed by the owner), and that pane prints the same stack (settings-appearance-typography.png), {DATE}"))
 for n in sorted(dark_comp):
     m = re.fullmatch(r"--text-(\w+)", n)
     if m:
@@ -257,7 +257,8 @@ for n in sorted(dark_comp):
         put(CORE, ("fontWeight", m.group(1)), tok(int(declared(n)), "fontWeight", "Measured", f"{n} ({src_theme})"))
     m = re.fullmatch(r"--tracking-(\w+)", n)
     if m:
-        put(CORE, ("letterSpacing", m.group(1)), tok(float(declared(n).replace("em", "")), "number", "Measured", f"{n} = {declared(n)} ({src_theme})", unit="em"))
+        v = "%gem" % float(declared(n).replace("em", ""))
+        put(CORE, ("letterSpacing", m.group(1)), tok(v, "dimension", "Measured", f"{n} = {declared(n)} ({src_theme}); em, so it scales with the text"))
     m = re.fullmatch(r"--leading-(\w+)", n)
     if m:
         put(CORE, ("leading", m.group(1)), tok(float(declared(n)), "number", "Measured", f"{n} = {declared(n)} ({src_theme}), a multiple of the font size"))
@@ -406,10 +407,11 @@ COMPONENTS = [
     ("button-primary-sm", "button-primary-sm", {"bg": "background-color", "text": "color", "height": "height", "padding": "padding-left"}),
     ("button-secondary", "button-secondary", {"bg": "background-color", "border": "border-top-color", "text": "color", "radius": "border-top-left-radius", "height": "height"}),
     ("button-ghost", "button-ghost", {"text": "color", "radius": "border-top-left-radius", "height": "height", "padding": "padding-left"}),
+    ("button-outline", "button-outline", {"bg": "background-color", "border": "border-top-color", "text": "color", "height": "height"}),
     ("button-destructive", "button-destructive", {"bg": "background-color", "text": "color", "radius": "border-top-left-radius", "height": "height"}),
     ("icon-button", "icon-button", {"text": "color", "radius": "border-top-left-radius", "size": "height"}),
     ("sidebar-row", "sidebar-row", {"text": "color", "radius": "border-top-left-radius", "height": "height", "padding": "padding-left"}),
-    ("sidebar-row-selected", "sidebar-row-selected", {"bg": "background-color", "text": "color"}),
+    ("nav-row-selected", "settings-nav-selected", {"bg": "background-color", "text": "color"}),
     ("workspace-row-selected", "workspace-row-selected", {"bg": "background-color", "text": "color"}),
     ("composer", "composer", {"bg": "background-color", "radius": "border-top-left-radius", "width": "width"}),
     ("chip", "agent-select", {"bg": "background-color", "border": "border-top-color", "text": "color", "radius": "border-top-left-radius", "height": "height"}),
@@ -569,7 +571,8 @@ def check():
                     raise KeyError(f"{setname}.{n}: alias {{{a}}} points at nothing")
                 if t["$type"] in ("color", "dimension") and names[a]["$type"] != t["$type"]:
                     raise TypeError(f"{setname}.{n}: alias {{{a}}} is a {names[a]['$type']}")
-            if t["$type"] == "dimension" and not aliases(t["$value"]) and not re.fullmatch(r"-?\d*\.?\d+(px|rem)", t["$value"]):
+            unit = r"(px|rem|em)" if n.startswith("letterSpacing.") else r"(px|rem)"
+            if t["$type"] == "dimension" and not aliases(t["$value"]) and not re.fullmatch(r"-?\d*\.?\d+" + unit, t["$value"]):
                 raise ValueError(f"{setname}.{n}: dimension {t['$value']!r}")
             if t["$type"] == "color" and not aliases(t["$value"]) and not re.fullmatch(r"#[0-9a-f]{6}|rgba\(\d+, \d+, \d+, [\d.]+\)", t["$value"]):
                 raise ValueError(f"{setname}.{n}: colour {t['$value']!r}")

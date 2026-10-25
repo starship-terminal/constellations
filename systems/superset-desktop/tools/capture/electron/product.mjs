@@ -130,7 +130,8 @@ const S = {
   newWorkspace: page => nav(page, 'New Workspace'),
   kbd: page => nav(page, 'New Workspace').locator('kbd').first(),
   navRow: page => nav(page, 'Automations'),
-  navRowSelected: page => sidebar(page).locator('button.bg-fill-selected, button[class*="bg-fill-selected"]').first(),
+  // The selected row on the Workspaces page is the Workspaces button itself (a class match also hits New Workspace).
+  navRowSelected: page => nav(page, 'Workspaces'),
   sectionLabel: 'div[aria-label=Projects]',
   iconButton: page => btn(page, 'Add project'),
   projectRow,
@@ -187,7 +188,9 @@ const W = {
   presetButton: page => vis(page, '[data-pane-area=center] button[data-slot=tooltip-trigger]').filter({ hasText: /^Codex$/ }).first(),
   paneHeader: page => vis(page, '[data-pane-area=center] div.cursor-grab').first(),
   sessionsButton: page => btn(page, 'Terminal sessions'),
-  terminal: page => vis(page, '.xterm').last(),
+  // The displayed pane's terminal: Superset also keeps an .xterm off screen (at -9999px), so scope to the
+  // centre pane's terminal application, the structure the visible pane had in the DOM.
+  terminal: page => vis(page, '[data-pane-area=center] [role=application] .xterm').first(),
   activity: page => btn(page, 'Workspace activity'),
   openChanges: page => btn(page, 'Open changes'),
   openIn: page => btn(page, 'Open in Finder'),
@@ -276,10 +279,10 @@ export const SHOTS = [
   { name: 'delete-confirmation', window: M,
     reveal: async ({ page }) => { await workspaceRow(page).click({ button: 'right' }); await wait(page, 800);
       await page.locator('[role=menuitem]').filter({ hasText: /^Delete/ }).first().click(); await wait(page, 1000); },
-    parts: { 'confirm-dialog': S.alert, scrim: '[data-slot=alert-dialog-overlay]', 'button-destructive': page => dialogButton(page, 'Delete'), 'button-ghost': page => dialogButton(page, 'Cancel') },
+    parts: { 'confirm-dialog': S.alert, scrim: '[data-slot=alert-dialog-overlay]', 'button-destructive': page => dialogButton(page, 'Delete'), 'button-ghost-sm': page => dialogButton(page, 'Cancel') },
     after: async ({ page }) => { await dialogButton(page, 'Cancel').click().catch(() => {}); await wait(page, 500); } },
   { name: 'create-project-dialog', window: M, reveal: createProjectItem,
-    parts: { dialog: S.dialog, scrim: '[data-slot=dialog-overlay]', 'text-field': nth('[role=dialog] input', 0), 'text-field-mono': nth('[role=dialog] input', 1), 'button-primary': page => dialogButton(page, 'Create project'),
+    parts: { dialog: S.dialog, scrim: '[data-slot=dialog-overlay]', 'text-field': nth('[role=dialog] input', 0), 'text-field-mono': nth('[role=dialog] input', 1), 'button-primary-disabled': page => dialogButton(page, 'Create project'),
       'button-ghost': page => dialogButton(page, 'Cancel'), 'dialog-close': page => page.locator('[role=dialog] [data-slot=dialog-close], [role=dialog] button').filter({ hasText: /^Close$/ }).first(),
       'field-label': nth('[role=dialog] [data-slot=label], [role=dialog] label', 0) } },
   { name: 'create-project-filled', window: M, state: 'filled', reveal: async h => { await createProjectItem(h); await fillCreateProject(h); },
@@ -292,20 +295,20 @@ export const SHOTS = [
     after: async ({ page }) => { await dialogButton(page, 'Cancel').click().catch(() => {}); await wait(page, 4000); } },
   { name: 'workspaces', window: M, reveal: async h => goto(h, 'Workspaces'),
     parts: { 'sidebar-row-selected': S.navRowSelected, 'button-primary-sm': page => textBtn(page, 'Create workspace'), 'search-field': page => page.getByPlaceholder(/Search workspaces/).first(),
-      'board-column': page => vis(page, 'div').filter({ hasText: /^Idle\s*\d*/ }).last().locator('xpath=..'), 'workspace-card': page => vis(page, 'div').filter({ hasText: WORKSPACE }).last(),
+      'board-column': page => vis(page, 'div').filter({ hasText: /^Idle\s*\d*/ }).last().locator('xpath=..'),
       'segmented': page => textBtn(page, 'List').locator('xpath=..'), 'segment': page => textBtn(page, 'List'), 'segment-selected': page => textBtn(page, 'Board'),
       'toolbar-button': page => textBtn(page, 'Filter'), 'title-select': page => textBtn(page, 'This device') },
-    optionalParts: ['board-column', 'workspace-card', 'segmented'] },
+    optionalParts: ['board-column', 'segmented'] },
   { name: 'automations-pro', window: M, reveal: async h => goto(h, 'Automations'),
     parts: { dialog: S.dialog, 'dialog-nav-row': page => page.locator('[role=dialog] button').filter({ hasText: /^Remote Access$/ }).first(),
       'dialog-nav-row-selected': page => page.locator('[role=dialog] button').filter({ hasText: /^Automations$/ }).first(), 'badge-pro': page => page.locator('[role=dialog] span, [role=dialog] div').filter({ hasText: /^PRO$/ }).last(),
-      'button-primary': page => dialogButton(page, 'Get Superset Pro'), 'button-ghost': page => dialogButton(page, 'Cancel') } },
+      'button-primary': page => dialogButton(page, 'Get Superset Pro'), 'button-secondary-lg': page => dialogButton(page, 'Cancel') } },
   { name: 'tasks-pro', window: M, reveal: async h => goto(h, 'Tasks'), parts: { dialog: S.dialog, scrim: '[data-slot=dialog-overlay]' }, optionalParts: ['scrim'] },
   { name: 'pull-requests', window: M, reveal: async h => goto(h, 'Pull requests'),
     parts: { 'search-field': page => page.getByPlaceholder(/Search pull requests/).first(), segment: page => textBtn(page, 'All'), 'segment-selected': page => textBtn(page, 'Open'),
       'empty-state': page => page.getByText('Add a project to see pull requests.').first() }, optionalParts: ['empty-state'] },
   { name: 'pages', window: M, reveal: async h => goto(h, 'Pages'),
-    parts: { 'button-outline': page => textBtn(page, 'Create with AI'), segment: page => textBtn(page, 'Team'), 'segment-selected': page => textBtn(page, 'All'),
+    parts: { 'button-primary-sm': page => textBtn(page, 'Create with AI'), segment: page => textBtn(page, 'Team'), 'segment-selected': page => textBtn(page, 'All'),
       'empty-state': page => page.getByText('No pages yet').first().locator('xpath=..'), 'search-field': page => page.getByPlaceholder(/Search pages/).first(), 'page-title': S.pageTitle } },
   { name: 'plugins', window: M, reveal: async h => goto(h, 'Plugins'),
     parts: { 'search-field': page => page.getByPlaceholder(/Search plugins/).first(), 'plugin-row': page => vis(page, 'div').filter({ has: page.locator('button').filter({ hasText: /^Install$/ }) }).filter({ hasText: /^Linear/ }).last(),
@@ -315,9 +318,9 @@ export const SHOTS = [
 
   // ---- Settings: every pane
   settingsShot('settings-account', 'Account', { 'settings-search': S.settingsSearch, 'settings-nav': S.settingsNav, 'settings-nav-selected': page => page.locator('button, a').filter({ visible: true }).filter({ hasText: /^Account$/ }).first(),
-    'page-title': S.pageTitle, 'text-field': S.input, textarea: S.textarea, 'switch-on': S.switchOn, 'button-destructive': page => textBtn(page, 'Delete account'), 'button-secondary': page => textBtn(page, 'Save profile'),
-    'button-ghost-sm': page => textBtn(page, 'Sign out') }, { optionalParts: ['switch-on', 'textarea', 'button-secondary', 'button-ghost-sm'] }),
-  settingsShot('settings-appearance', 'Appearance', { 'select-trigger': S.selectTrigger, 'button-outline': page => textBtn(page, 'Download starter'), 'field-group': S.card,
+    'page-title': S.pageTitle, 'text-field': S.input, textarea: S.textarea, 'switch-on': S.switchOn, 'button-destructive': page => textBtn(page, 'Delete account'), 'button-primary-sm': page => textBtn(page, 'Save profile'),
+    'button-secondary-lg': page => textBtn(page, 'Sign out') }, { optionalParts: ['switch-on', 'textarea', 'button-primary-sm', 'button-secondary-lg'] }),
+  settingsShot('settings-appearance', 'Appearance', { 'select-trigger-sm': S.selectTrigger, 'button-outline': page => textBtn(page, 'Download starter'), 'field-group': S.card,
     'text-field': S.input, 'switch-on': S.switchOn, 'link': page => vis(page, 'main a, a').filter({ hasText: /^marketplace/ }).first() }, { optionalParts: ['field-group', 'link'] }),
   { name: 'settings-theme-select', window: M, reveal: async h => { await settings(h, 'Appearance'); await S.selectTrigger(h.page).click(); await wait(h.page); },
     parts: { listbox: S.listbox, option: S.option, 'option-selected': S.optionSelected, 'select-label': '[data-slot=select-label]', 'select-separator': '[data-slot=select-separator]' },
@@ -328,20 +331,20 @@ export const SHOTS = [
     { optionalParts: ['tabs-list', 'progress', 'badge'] }),
   settingsShot('settings-mobile', 'Mobile'),
   settingsShot('settings-general', 'General', { 'switch-on': S.switchOn, 'select-trigger': S.selectTrigger, 'settings-nav-selected': S.settingsNavSelected, 'settings-nav': S.settingsNav }),
-  settingsShot('settings-keyboard', 'Keyboard', { kbd: nth('main kbd, kbd', 0), 'text-field': S.input, 'button-ghost-sm': page => textBtn(page, 'Reset') }, { optionalParts: ['button-ghost-sm'] }),
+  settingsShot('settings-keyboard', 'Keyboard', { kbd: nth('main kbd, kbd', 0), 'text-field': S.input, 'button-secondary': page => textBtn(page, 'Reset') }, { optionalParts: ['button-secondary'] }),
   settingsShot('settings-git-worktrees', 'Git & Worktrees', { 'select-trigger': S.selectTrigger, 'text-field-mono': S.input }, { optionalParts: ['text-field-mono'] }),
   settingsShot('settings-agent-commands', 'Agent commands', { 'text-field': S.input, 'switch-on': S.switchOn, 'list-row': page => vis(page, 'button.h-7').filter({ hasText: /^Codex$/ }).first(),
     'list-row-selected': page => vis(page, 'button.h-7').filter({ hasText: /^Claude$/ }).first() }, { optionalParts: ['list-row', 'list-row-selected'] }),
-  settingsShot('settings-terminal', 'Terminal', { 'button-outline-sm': page => textBtn(page, 'Add script'), 'list-row': page => vis(page, 'div').filter({ hasText: /^Claude/ }).filter({ hasText: /All projects/ }).last() },
-    { optionalParts: ['button-outline-sm', 'list-row'] }),
+  settingsShot('settings-terminal', 'Terminal', { 'button-primary-sm': page => textBtn(page, 'Add script'), 'list-row': page => vis(page, 'div').filter({ hasText: /^Claude/ }).filter({ hasText: /All projects/ }).last() },
+    { optionalParts: ['button-primary-sm', 'list-row'] }),
   settingsShot('settings-files-editor', 'Files & Editor', { 'select-trigger': S.selectTrigger }),
   settingsShot('settings-browser', 'Browser', { 'text-field': S.input }),
   settingsShot('settings-organization', 'Organization', { table: S.table, 'table-row': S.tableRow, 'table-head': S.tableHead, 'button-destructive': page => textBtn(page, 'Delete organization'), avatar: S.avatar, badge: S.badge },
     { optionalParts: ['table', 'table-row', 'table-head', 'avatar', 'badge'] }),
-  settingsShot('settings-teams', 'Teams', { table: S.table, 'button-primary-sm': page => textBtn(page, 'Create team') }, { optionalParts: ['table'] }),
+  settingsShot('settings-teams', 'Teams', { table: S.table, 'button-primary': page => textBtn(page, 'Create team') }, { optionalParts: ['table'] }),
   settingsShot('settings-projects', 'Projects', { 'text-field': S.input, textarea: S.textarea }, { optionalParts: ['textarea'] }),
   settingsShot('settings-hosts', 'Hosts'),
-  settingsShot('settings-integrations', 'Integrations', { 'button-ghost-sm': page => textBtn(page, 'Connect') }, { optionalParts: ['button-ghost-sm'] }),
+  settingsShot('settings-integrations', 'Integrations', { 'button-secondary': page => textBtn(page, 'Connect') }, { optionalParts: ['button-secondary'] }),
   settingsShot('settings-billing', 'Billing', { 'button-primary-sm': page => textBtn(page, 'Upgrade') }, { optionalParts: ['button-primary-sm'] }),
   settingsShot('settings-api-keys', 'API Keys', { 'empty-state': page => page.getByText('No API keys yet').first().locator('xpath=..') }, { optionalParts: ['empty-state'] }),
   settingsShot('settings-remote-access', 'Remote Access', { 'switch-off': S.switchOff }, { optionalParts: ['switch-off'] }),
@@ -402,7 +405,7 @@ export const SHOTS = [
     ['settings', M, async h => settings(h, 'General'), { 'settings-search': S.settingsSearch }, ['hover', 'focus-visible']],
     ['account', M, async h => settings(h, 'Account'), { 'button-destructive': page => textBtn(page, 'Delete account') }, ['hover', 'focus-visible', 'pressed']],
     ['appearance', M, async h => settings(h, 'Appearance'), { 'button-outline': page => textBtn(page, 'Download starter') }, ['hover', 'focus-visible', 'pressed']],
-    ['pages', M, async h => goto(h, 'Pages'), { 'button-outline-sm': page => textBtn(page, 'Create with AI'), segment: page => textBtn(page, 'Team') }, ['hover', 'focus-visible', 'pressed']],
+    ['pages', M, async h => goto(h, 'Pages'), { 'button-primary-sm': page => textBtn(page, 'Create with AI'), segment: page => textBtn(page, 'Team') }, ['hover', 'focus-visible', 'pressed']],
     ['workspaces', M, async h => goto(h, 'Workspaces'), { 'button-primary-sm': page => textBtn(page, 'Create workspace'), 'toolbar-button': page => textBtn(page, 'Filter') }, ['hover', 'focus-visible', 'pressed']],
     ['plugins', M, async h => goto(h, 'Plugins'), { 'button-secondary': page => textBtn(page, 'Install') }, ['hover', 'focus-visible', 'pressed']],
     ['workspace', M, openWorkspace, { tab: W.tab, 'preset-button': W.presetButton, 'panel-tab': W.panelTab, 'run-button': W.runButton }, ['hover', 'focus-visible', 'pressed']],
@@ -416,10 +419,14 @@ export const SHOTS = [
 // folder-trust question, answered for the scratch folder on the first run (see README).
 const THEME = process.argv[2] || 'dark';
 const centre = page => page.locator('[data-pane-area=center]');
-const runningDot = page => centre(page).locator('span.rounded-full.bg-amber-500').filter({ visible: true });
+const tabs = page => vis(page, '[data-pane-area=center] [data-slot=context-menu-trigger].rounded-t-md');
+// The run's own tab: start() records how many tabs there were before the preset opened a new one, so
+// another agent working in the same workspace cannot hold the run open.
+let runTab = null;
+const runningDot = page => (runTab === null ? centre(page) : tabs(page).nth(runTab)).locator('span.rounded-full.bg-amber-500').filter({ visible: true });
 async function sendToTerminal({ page }, text) {
-  await page.locator('.xterm-helper-textarea').filter({ visible: true }).last().focus().catch(async () => {
-    await vis(page, '.xterm').last().click(); });
+  await page.locator('[data-pane-area=center] [role=application] .xterm-helper-textarea').last().focus().catch(async () => {
+    await W.terminal(page).click(); });
   await page.keyboard.type(text, { delay: 12 }); await wait(page, 300);
   await page.keyboard.press('Enter'); await wait(page, 800);
 }
@@ -429,8 +436,10 @@ export const RUN = {
   async start(h) {
     const { page } = h;
     await home(h); await openWorkspace(h);
+    runTab = await tabs(page).count();
     await vis(page, '[data-pane-area=center] button[data-slot=tooltip-trigger]').filter({ hasText: /^Claude$/ }).first().click();
     await wait(page, 7000);
+    if ((await tabs(page).count()) !== runTab + 1) throw new Error('the Claude preset did not open one new tab');
   },
   async finish(h) { await home(h); },
   async state({ page }) { return (await runningDot(page).count()) ? 'running' : 'done'; },
@@ -444,7 +453,7 @@ export const RUN = {
     tab: page => vis(page, '[data-pane-area=center] [data-slot=context-menu-trigger].rounded-t-md'),
     'tab-running-dot': page => runningDot(page),
     'pane-header': page => vis(page, '[data-pane-area=center] div.cursor-grab'),
-    terminal: page => vis(page, '.xterm'),
+    terminal: page => W.terminal(page),
     'workspace-row-selected': page => workspaceRow(page),
     'open-changes': page => btn(page, 'Open changes'),
   },

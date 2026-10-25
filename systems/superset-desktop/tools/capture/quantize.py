@@ -52,6 +52,13 @@ def main():
             f = theme_dir / "run" / f"{frame}.png"
             if f.exists():
                 store(f, out / f"{name}.png"); keep.add(f"{name}.png"); n += 1
+            elif (out / f"{name}.png").exists():
+                # A recapture clears run/ (approval-00 included) and a faster run has fewer frames: never
+                # delete a stored run screenshot because its source is gone. Keep it and say so.
+                keep.add(f"{name}.png")
+                print(f"warning: {theme}/run/{frame}.png missing; kept the stored {name}.png (re-map RUN_FRAMES)")
+            else:
+                print(f"warning: {theme}/run/{frame}.png missing and no stored {name}.png")
         for stale in out.glob("*.png"):
             if stale.name not in keep:
                 stale.unlink()

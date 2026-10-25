@@ -24,8 +24,8 @@ STATE_ORDER = ["default", "hover", "focus-visible", "focus", "pressed", "filled"
 
 # PRODUCT (adapt): checklist component -> (parts that show it, note)
 INVENTORY = [
-    ("Button", ["button-primary", "button-primary-sm", "button-primary-disabled", "button-outline", "button-outline-sm", "button-secondary", "button-ghost", "button-ghost-sm", "button-destructive", "button-new-workspace", "setup-button"],
-     "shadcn's button in five looks. Primary is ink: `ui.primary` (the foreground colour) with `ui.primary-foreground` text, 8px radius, 32 or 36px high; hover and pressed are the same fill at 90%. Outline and secondary sit on the page colour with a 1px `ui.border` edge and shadow-xs; ghost is text only and takes `ui.accent` under the pointer; destructive is the one coloured button (`ui.destructive`, white text). Disabled is the same button at opacity 0.5 (`button-primary-disabled`: Create project before the dialog has a name). Upgrade and Install are the outline and secondary looks."),
+    ("Button", ["button-primary", "button-primary-sm", "button-primary-disabled", "button-outline", "button-secondary", "button-secondary-lg", "button-ghost", "button-ghost-sm", "button-destructive", "button-new-workspace", "setup-button"],
+     "shadcn's button in five looks. Primary is ink: `ui.primary` (the foreground colour) with `ui.primary-foreground` text, 8px radius, 32 or 36px high; hover and pressed are the same fill at 90%. Outline and secondary sit on the page colour with a 1px `ui.border` edge and shadow-xs (32px, or 36px for `button-secondary-lg`: Sign out, the Pro dialog's Cancel); ghost is text only and takes `ui.accent` under the pointer (36px in Create a new project, 28px in the delete confirmation); destructive is the one coloured button (`ui.destructive`, white text). Disabled is the same button at opacity 0.5 (`button-primary-disabled`: Create project before the dialog has a name). Small ink buttons (`button-primary-sm`) are Create workspace, Create with AI, Save profile and Add script."),
     ("Icon button", ["icon-button", "settings-button", "plus-button", "dictate-button", "history-button", "tab-add", "tab-close", "dialog-close", "sessions-button", "send-button", "input-submit"],
      "Ghost squares (24, 26, 28 or 32px, 8px radius) in `ui.muted-foreground` that turn `ui.foreground` on a 7% wash (`ui.fill-hover`). The send button is a 22px circle on `ui.fill-selected` until there is text."),
     ("Link", ["link"], "Inline links in settings descriptions are `ui.foreground`, medium, underlined on hover, with an external-link glyph; `link.default` (blue) is declared for markdown and the terminal."),
@@ -33,8 +33,8 @@ INVENTORY = [
      "shadcn's input: 36px, 8px radius, a 1px `ui.input` edge on a transparent fill with shadow-xs; focus turns the edge `ui.ring` and adds the 3px ring. Search fields are 32px on `ui.muted` at 50% with a leading icon; paths use the monospace field."),
     ("Text area", ["composer", "composer-editor", "textarea", "input-group"],
      "The composer: `ui.card` fill, 16px radius, a 1px ring of `ui.border` drawn as a box-shadow, 14px text, chips and icon buttons in a toolbar row, and a footer row of selects outside it. The settings bio field is shadcn's textarea; the workspace's Rich input (⌘I) is an input group with a 13px radius."),
-    ("Select", ["select-trigger", "agent-select", "model-button", "footer-chip", "title-select", "listbox", "option", "option-selected", "select-label", "select-separator", "popover", "command-item"],
-     "Two triggers: the outlined settings select (32px, 1px `ui.input` edge, shadow-xs) and the composer's chips (22px, `ui.fill-hover`-like 4% wash, a half-pixel edge, 11px text). Lists open on `ui.popover` with a 1px edge, 10px radius and shadow-md; the selected option carries a check and `ui.accent`. Project and branch pickers are command popovers with a search row."),
+    ("Select", ["select-trigger", "select-trigger-sm", "agent-select", "model-button", "footer-chip", "title-select", "listbox", "option", "option-selected", "select-label", "select-separator", "popover", "command-item"],
+     "Two triggers: the outlined settings select (36px, or 32px for the theme select; 1px `ui.input` edge, shadow-xs) and the composer's chips (22px, `ui.fill-hover`-like 4% wash, a half-pixel edge, 11px text). Lists open on `ui.popover` with a 1px edge, 10px radius and shadow-md; the selected option carries a check and `ui.accent`. Project and branch pickers are command popovers with a search row."),
     ("Checkbox", [], "Not present. Settings use switches; multi-choice lists use menus."),
     ("Radio", ["option-selected", "segment-selected", "dialog-nav-row-selected"], "Not present as radio buttons. Single choice is a select, a segmented control (List or Board) or a nav list."),
     ("Switch", ["switch-on", "switch-off"],
@@ -48,10 +48,10 @@ INVENTORY = [
     ("Dialog", ["dialog", "confirm-dialog", "palette", "scrim"],
      "Dialogs sit on the page colour (`ui.background`, not the card colour) with a 1px edge, 10px radius, 24px padding and shadow-lg over a black 50% scrim. The delete confirmation is an alert dialog with the destructive button; the search palette is a 720px command dialog. The Pro upsell is a wide dialog with a nav list and artwork."),
     ("Toast", ["toast"], "Sonner toasts at the bottom right: `ui.card` fill, a 1px edge, 10px radius and Sonner's own shadow, an icon, and the message. Captured as the error toast a failed Create project raises; a success toast (Project created.) was seen once, outside the shot list."),
-    ("Card", ["setup-card", "setup-badge", "plugin-row", "board-column", "workspace-card", "empty-state"],
-     "Cards are `ui.card` with a 1px `ui.border` edge and a 10px radius (the sidebar's Lifecycle scripts card, plugin rows); the Workspaces board's columns are `ui.muted` at 30%. Empty states are an icon, a line of text and one outline button, centred."),
-    ("List row", ["sidebar-row", "sidebar-row-selected", "project-row", "workspace-row", "workspace-row-selected", "settings-nav", "settings-nav-selected", "list-row", "list-row-selected", "palette-row", "palette-row-selected", "file-row", "file-row-selected", "suggestion-row"],
-     "28px rows with an 8px radius in 13px medium text. At rest `ui.muted-foreground`; hover adds `ui.fill-hover` (7%) and selection `ui.fill-selected` (10%) with `ui.foreground` text. Workspace rows carry a diff count (+1 in emerald, -0 in red) and a ⌘1 hint on hover. Palette rows are 44px with `ui.accent` on the highlighted one."),
+    ("Card", ["setup-card", "setup-badge", "plugin-row", "board-column", "empty-state"],
+     "Cards are `ui.card` with a 1px `ui.border` edge and a 10px radius (the sidebar's Lifecycle scripts card, plugin rows); the Workspaces board's columns are `ui.muted` at 30% (a workspace card on the board is in workspaces.png; its reading matched the column's content area and was removed). Empty states are an icon, a line of text and one outline button, centred."),
+    ("List row", ["sidebar-row", "project-row", "workspace-row", "workspace-row-selected", "settings-nav", "settings-nav-selected", "list-row", "list-row-selected", "palette-row", "palette-row-selected", "file-row", "file-row-selected", "suggestion-row"],
+     "28px rows with an 8px radius in 13px medium text. At rest `ui.muted-foreground`; hover adds `ui.fill-hover` (7%) and selection `ui.fill-selected` (10%) with `ui.foreground` text (measured on the selected workspace and settings rows; the selected Workspaces row is in workspaces.png). Workspace rows carry a diff count (+1 in emerald, -0 in red) and a ⌘1 hint on hover. Palette rows are 44px with `ui.accent` on the highlighted one."),
     ("Table", ["table", "table-head", "table-row"], "shadcn's table: a 40px header in `ui.muted-foreground`, 48px rows divided by `ui.border`, no fill (Organization members, Teams)."),
     ("Avatar", ["avatar"], "16px rounded squares in the sidebar footer (the organisation's emoji) and on project rows (a letter on `ui.muted`); the account avatar in Settings is a photo circle."),
     ("Badge", ["badge", "badge-pro", "kbd", "update-pill", "palette-shortcut"],
@@ -59,7 +59,7 @@ INVENTORY = [
     ("Toolbar", ["pane-header", "run-button", "run-menu", "open-in", "activity-button", "open-changes", "preset-button"],
      "The workspace's top strip: tabs on the left, then activity, changes count, Open in (a split button) and the right panel's Set Run split button; under it the agent preset bar (Claude, Codex, OpenCode, ...) and, per pane, a 28px header on `ui.muted` at 30%."),
     ("Inspector", ["panel-tab", "panel-tab-selected", "file-row", "diff-card", "diff-pane-header"], "The workspace's right panel (340px): Files, Changes and Review, with the changed files listed and a diff opening as a second pane."),
-    ("Terminal", ["terminal"], "Not on the checklist; the core of the product. Every agent runs as a CLI in an xterm.js terminal pane painted on a canvas with the theme's `terminal.*` palette and JetBrains Mono (`fontFamily.terminal`); no CSS holds its colours."),
+    ("Terminal", [], "Not on the checklist; the core of the product. Every agent runs as a CLI in an xterm.js terminal pane painted on a canvas with the theme's `terminal.*` palette and JetBrains Mono (`fontFamily.terminal`); no CSS holds its colours. The pane itself was not measured: the reading taken was of an .xterm Superset keeps off screen, so it gives only the font (kept as `terminal-offscreen` in raw/). See workspace-default.png and the run-*.png frames."),
 ]
 GAPS = [
     "Checkbox and radio buttons do not exist in the captured screens (switches, selects, segmented controls and menus take their place).",
@@ -67,7 +67,7 @@ GAPS = [
     "Approval prompt: Superset starts Claude with --dangerously-skip-permissions, so the agent asked for no tool approvals. The only prompt was Claude Code's own folder-trust question on the first trial run, kept as run-approval in dark only.",
     "Onboarding and sign-in: the account was already signed in and set up; no onboarding screen was reachable without signing out.",
     "Automations and Tasks are Pro features; on this plan they open the Pro upsell dialog over sample data, which is what was captured.",
-    "The terminal's colours and glyphs are painted on a canvas: its part values are the pane's, and `terminal.*` holds the palette from the theme engine.",
+    "The terminal's colours and glyphs are painted on a canvas; `terminal.*` holds the palette from the theme engine. The visible terminal pane, the selected Workspaces sidebar row and a Workspaces board card were not measured (their readings hit another element and were removed after review); they show in the screenshots.",
 ]
 
 
@@ -139,10 +139,11 @@ def as_token(t, prop, raw):
         return f"{v}"
     m = re.fullmatch(r"([\d.]+)px", raw)
     if m:
-        v = "%gpx" % round(float(m.group(1)))
+        # Match the measured length exactly; a fractional length no token holds is written as measured.
+        v = "%gpx" % round(float(m.group(1)), 2)
         group = {"border-top-left-radius": "radius", "height": "controlHeight", "padding-right": "spacing", "padding-left": "spacing",
                  "padding-top": "spacing", "font-size": "fontSize", "line-height": "lineHeight", "letter-spacing": "letterSpacing"}.get(prop)
-        if v == "9999px" and prop == "border-top-left-radius":
+        if float(m.group(1)) > 1e6 and prop == "border-top-left-radius":
             stats["token"] += 1
             return "`radius.full`"
         if (group, v) in DIDX:

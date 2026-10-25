@@ -37,7 +37,8 @@ def walk(node, path=()):
 
 
 def var(path):
-    return "--" + "-".join(path)
+    # A dot is not allowed in a custom property name (spacing.0.5 would be --spacing-0.5): write it as a dash.
+    return "--" + "-".join(path).replace(".", "-")
 
 
 def css_value(t):
@@ -291,7 +292,19 @@ sections.append("<h2>Control heights, sizes and layout</h2>" + scale_rows("contr
 shadow_rows = "".join(f"<tr><th><code>{esc('.'.join(p))}</code></th><td><span class=\"shadow-box\" style=\"box-shadow:var({var(p)})\"></span></td><td>{ev(t)}</td></tr>"
                       for p, t in light.items() if p[0] == "shadow" and t["$type"] == "shadow")
 sections.append(f'<h2>Elevation</h2><table class="tok">{shadow_rows}</table>')
+sections.append("<h2>Type scales</h2>" + scale_rows("fontFamily", lambda p, t: f'<span style="font-family:var({var(p)})">Ag 0123</span>')
+                + scale_rows("fontSize", lambda p, t: f'<span style="font-size:{t["$value"]}">Ag</span>') + scale_rows("lineHeight", lambda p, t: "")
+                + scale_rows("fontWeight", lambda p, t: f'<span style="font-weight:{t["$value"]}">Ag</span>')
+                + scale_rows("letterSpacing", lambda p, t: f'<span style="letter-spacing:{t["$value"]}">Tracking</span>') + scale_rows("leading", lambda p, t: "")
+                + scale_rows("blur", lambda p, t: ""))
 sections.append("<h2>Motion</h2>" + scale_rows("duration", lambda p, t: "") + scale_rows("easing", lambda p, t: ""))
+comp_rows = []
+for p, t in light.items():
+    if p[0] == "component" and t["$type"] != "color":
+        d = dark.get(p, {}).get("$value")
+        comp_rows.append(f"<tr><th><code>{esc('.'.join(p))}</code></th><td><code>{esc(t['$value'])}</code> {ev(t)}</td><td><code>{esc(d)}</code></td></tr>")
+sections.append('<h2>Component sizes</h2><p>The measured dimensions in component.* (the colours are in the colour tables above).</p>'
+                f'<table class="tok"><thead><tr><th>Token</th><th>Light</th><th>Dark</th></tr></thead><tbody>{"".join(comp_rows)}</tbody></table>')
 sections.append("<h2>Components</h2><p>Rebuilt from component.* and the semantic tokens. The crops in components/crops/ show the real ones.</p>" + specimens())
 
 page = f"""<!doctype html>
