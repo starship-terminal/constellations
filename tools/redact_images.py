@@ -11,6 +11,10 @@ finds anything the rectangles missed, using the same detection patterns as `tool
     python3 tools/redact_images.py check systems/manus --patterns ~/.design-systems/cleanup-redact.json
     python3 tools/redact_images.py lines systems/manus/screenshots/home-dark.png   # author a rules file
 
+`check` reads the package's own rules file, tools/redact-rules/<slug>.json, when one exists (its ocr
+block: email_allow, wrap_ignore) and prints which file it loaded; `--rules` names another one instead.
+`apply` never guesses: it edits files, so its `--rules` stays required.
+
 `apply` edits files in place (they are Git LFS objects, so git has the originals until you commit).
 Run it on a clean checkout of the package; to redo it after changing a rule, `git checkout` the
 package's images first, because a painted-over image no longer holds the pixels a rule was written
@@ -84,6 +88,18 @@ TILE, OVERLAP = 2400, 160        # tall images are read in strips of this height
 
 
 # ---------------------------------------------------------------- patterns and rules
+
+RULES_DIR = Path(__file__).resolve().parent / "redact-rules"
+
+
+def package_rules(pkg, explicit=None):
+    """The rules file `check` reads: the explicit --rules path, else RULES_DIR/<slug>.json for a
+    package folder systems/<slug> when that file exists, else None."""
+    if explicit:
+        return Path(explicit)
+    own = RULES_DIR / f"{Path(pkg).resolve().name}.json"
+    return own if own.is_file() else None
+
 
 def load_patterns(paths):
     """Compiled regexes from catalog-style redaction files: {"replace": [[pattern, ...], ...]}."""
@@ -444,7 +460,12 @@ def cmd_check(args):
     patterns = load_patterns(args.patterns)
     if not patterns:
         sys.exit("no patterns read; a check against nothing proves nothing")
-    cfg = dict(json.loads(Path(args.rules).read_text()).get("ocr", {})) if args.rules else {}
+    rules_file = package_rules(pkg, args.rules)
+    cfg = {}
+    if rules_file:
+        cfg = dict(json.loads(rules_file.read_text()).get("ocr", {}))
+        print(f"rules: {rules_file if args.rules else 'tools/redact-rules/' + rules_file.name}"
+              + ("" if args.rules else " (loaded for this package)"), flush=True)
     cfg["email_allow"] = cfg.get("email_allow", []) + load_email_allow(args.patterns)
     bad = 0
     targets = [Path(p) for p in args.files] if args.files else package_images(pkg)
@@ -494,7 +515,7 @@ def main(argv=None):
     p = sub.add_parser("check", help="OCR every image; exit 1 if any matches a pattern or shows an email")
     p.add_argument("package")
     p.add_argument("--patterns", action="append", required=True)
-    p.add_argument("--rules", help="reads the ocr block (email allow list)")
+    p.add_argument("--rules", help="reads the ocr block (email allow list); default tools/redact-rules/<slug>.json if it exists")
     p.add_argument("files", nargs="*", help="check only these images")
     p.set_defaults(fn=cmd_check)
     p = sub.add_parser("lines", help="print OCR text lines with [x0, y0, x1, y1] boxes")

@@ -173,6 +173,10 @@ illustrations or brand colours into something that ships
   still banned, so it holds no names or titles, and its `email_allow` list
   names the owner's addresses, which the check's email detector would
   otherwise flag.
+  `check` also loads the package's own `tools/redact-rules/<slug>.json` when
+  one exists (its `email_allow` and `wrap_ignore`) and prints which file it
+  used; `--rules` picks another. `apply` does not guess: it edits images in
+  place, so it still needs `--rules`.
 - **Do not make this repository public**, and do not push it anywhere but
   its private GitHub remote.
 - Run Python as `python3`.
