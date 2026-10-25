@@ -1,0 +1,989 @@
+{
+ "box.row": {
+  "dark": {
+   "args": [
+    [
+     900,
+     165
+    ],
+    [
+     0,
+     110,
+     1500,
+     100
+    ],
+    3
+   ],
+   "box": [
+    16,
+    128,
+    1483,
+    203
+   ],
+   "capture": "screenshots/dark/00-root.png",
+   "colour": "#303030",
+   "evidence": "Sampled",
+   "note": "Selected row: its box (the top is the search header's height, the left the list inset)",
+   "op": "bbox",
+   "value": "734x38pt"
+  },
+  "light": {
+   "args": [
+    [
+     900,
+     165
+    ],
+    [
+     0,
+     110,
+     1500,
+     100
+    ],
+    3
+   ],
+   "box": [
+    16,
+    128,
+    1483,
+    203
+   ],
+   "capture": "screenshots/light/00-root.png",
+   "colour": "#DADADA",
+   "evidence": "Sampled",
+   "note": "Selected row: its box (the top is the search header's height, the left the list inset)",
+   "op": "bbox",
+   "value": "734x38pt"
+  }
+ },
+ "cap.input": {
+  "dark": {
+   "args": [
+    104,
+    40,
+    128,
+    95
+   ],
+   "capture": "screenshots/dark/00-root.png",
+   "evidence": "Derived",
+   "inkPx": 28,
+   "note": "'S' of the search placeholder",
+   "op": "cap",
+   "top": 49,
+   "value": "13.5pt"
+  },
+  "light": {
+   "args": [
+    104,
+    40,
+    128,
+    95
+   ],
+   "capture": "screenshots/light/00-root.png",
+   "evidence": "Derived",
+   "inkPx": 28,
+   "note": "'S' of the search placeholder",
+   "op": "cap",
+   "top": 49,
+   "value": "13.5pt"
+  }
+ },
+ "cap.rowTitle": {
+  "dark": {
+   "args": [
+    100,
+    285,
+    118,
+    330
+   ],
+   "capture": "screenshots/dark/00-root.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'T' of 'Telegram'",
+   "op": "cap",
+   "top": 295,
+   "value": "9.5pt"
+  },
+  "light": {
+   "args": [
+    100,
+    285,
+    118,
+    330
+   ],
+   "capture": "screenshots/light/00-root.png",
+   "evidence": "Derived",
+   "inkPx": 20,
+   "note": "'T' of 'Telegram'",
+   "op": "cap",
+   "top": 295,
+   "value": "9.5pt"
+  }
+ },
+ "cap.sectionHeader": {
+  "dark": {
+   "args": [
+    32,
+    225,
+    47,
+    262
+   ],
+   "capture": "screenshots/dark/00-root.png",
+   "evidence": "Derived",
+   "inkPx": 17,
+   "note": "'S' of 'Suggestions'",
+   "op": "cap",
+   "top": 233,
+   "value": "8pt"
+  },
+  "light": {
+   "args": [
+    32,
+    225,
+    47,
+    262
+   ],
+   "capture": "screenshots/light/00-root.png",
+   "evidence": "Derived",
+   "inkPx": 17,
+   "note": "'S' of 'Suggestions'",
+   "op": "cap",
+   "top": 233,
+   "value": "8pt"
+  }
+ },
+ "px.actionBar.button": {
+  "dark": {
+   "args": [
+    40,
+    870,
+    20,
+    10
+   ],
+   "capture": "screenshots/dark/00-root.png",
+   "evidence": "Sampled",
+   "note": "Round menu button left of the action bar",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#202020"
+  },
+  "light": {
+   "args": [
+    40,
+    870,
+    20,
+    10
+   ],
+   "capture": "screenshots/light/00-root.png",
+   "evidence": "Sampled",
+   "note": "Round menu button left of the action bar",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#E6E6E6"
+  }
+ },
+ "px.actionBar.pill": {
+  "dark": {
+   "args": [
+    1300,
+    880,
+    150,
+    10
+   ],
+   "capture": "screenshots/dark/00-root.png",
+   "evidence": "Derived",
+   "note": "Action bar pill (macOS glass), right of the primary action",
+   "op": "fill",
+   "share": 0.86,
+   "value": "#141414"
+  },
+  "light": {
+   "args": [
+    1300,
+    880,
+    150,
+    10
+   ],
+   "capture": "screenshots/light/00-root.png",
+   "evidence": "Derived",
+   "note": "Action bar pill (macOS glass), right of the primary action",
+   "op": "fill",
+   "share": 0.86,
+   "value": "#F2F2F2"
+  }
+ },
+ "px.list.hover": {
+  "dark": {
+   "args": [
+    900,
+    520,
+    200,
+    30
+   ],
+   "capture": "screenshots/dark/04-root-hover.png",
+   "evidence": "Sampled",
+   "note": "Hovered row (Orca), pointer over it",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#262626"
+  },
+  "light": {
+   "args": [
+    900,
+    520,
+    200,
+    30
+   ],
+   "capture": "screenshots/light/04-root-hover.png",
+   "evidence": "Sampled",
+   "note": "Hovered row (Orca), pointer over it",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#E6E6E6"
+  }
+ },
+ "px.list.selected": {
+  "dark": {
+   "args": [
+    900,
+    140,
+    300,
+    40
+   ],
+   "capture": "screenshots/dark/00-root.png",
+   "evidence": "Sampled",
+   "note": "Selected row (the first result)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#303030"
+  },
+  "light": {
+   "args": [
+    900,
+    140,
+    300,
+    40
+   ],
+   "capture": "screenshots/light/00-root.png",
+   "evidence": "Sampled",
+   "note": "Selected row (the first result)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#DADADA"
+  }
+ },
+ "px.settings.card": {
+  "dark": {
+   "args": [
+    1200,
+    240,
+    200,
+    40
+   ],
+   "capture": "screenshots/dark/20-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Settings card (section content)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#181818"
+  },
+  "light": {
+   "args": [
+    1200,
+    240,
+    200,
+    40
+   ],
+   "capture": "screenshots/light/20-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Settings card (section content)",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F9F9F9"
+  }
+ },
+ "px.settings.separator": {
+  "dark": {
+   "args": [
+    1000,
+    196,
+    300,
+    2
+   ],
+   "capture": "screenshots/dark/20-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Line between two card rows",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#232323"
+  },
+  "light": {
+   "args": [
+    1000,
+    196,
+    300,
+    2
+   ],
+   "capture": "screenshots/light/20-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Line between two card rows",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#EDEDED"
+  }
+ },
+ "px.sidebar": {
+  "dark": {
+   "args": [
+    380,
+    1100,
+    60,
+    30
+   ],
+   "capture": "screenshots/dark/20-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Settings sidebar, right of a row label",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#141414"
+  },
+  "light": {
+   "args": [
+    380,
+    1100,
+    60,
+    30
+   ],
+   "capture": "screenshots/light/20-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Settings sidebar, right of a row label",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F2F2F2"
+  }
+ },
+ "px.sidebar.selected": {
+  "dark": {
+   "args": [
+    360,
+    336,
+    60,
+    30
+   ],
+   "capture": "screenshots/dark/20-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Selected sidebar row ('General')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#2B2B2B"
+  },
+  "light": {
+   "args": [
+    360,
+    336,
+    60,
+    30
+   ],
+   "capture": "screenshots/light/20-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Selected sidebar row ('General')",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#DADADA"
+  }
+ },
+ "px.switch.off": {
+  "dark": {
+   "args": [
+    1528,
+    238,
+    8,
+    12
+   ],
+   "capture": "screenshots/dark/20-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Switch off (Show In Menu Bar), track right of the thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#464646"
+  },
+  "light": {
+   "args": [
+    1528,
+    238,
+    8,
+    12
+   ],
+   "capture": "screenshots/light/20-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Switch off (Show In Menu Bar), track right of the thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#C7C7C7"
+  }
+ },
+ "px.switch.on": {
+  "dark": {
+   "args": [
+    1478,
+    140,
+    18,
+    18
+   ],
+   "capture": "screenshots/dark/20-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Switch on (Open at Login), track left of the thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#4FA3F8"
+  },
+  "light": {
+   "args": [
+    1478,
+    140,
+    18,
+    18
+   ],
+   "capture": "screenshots/light/20-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Switch on (Open at Login), track left of the thumb",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#158AF2"
+  }
+ },
+ "px.text.placeholder": {
+  "dark": {
+   "args": [
+    110,
+    40,
+    500,
+    50
+   ],
+   "capture": "screenshots/dark/00-root.png",
+   "evidence": "Sampled (text)",
+   "note": "Search field placeholder",
+   "op": "text",
+   "value": "#767676"
+  },
+  "light": {
+   "args": [
+    110,
+    40,
+    500,
+    50
+   ],
+   "capture": "screenshots/light/00-root.png",
+   "evidence": "Sampled (text)",
+   "note": "Search field placeholder",
+   "op": "text",
+   "value": "#919191"
+  }
+ },
+ "px.text.primary": {
+  "dark": {
+   "args": [
+    100,
+    290,
+    300,
+    40
+   ],
+   "capture": "screenshots/dark/00-root.png",
+   "evidence": "Sampled (text)",
+   "note": "Row title ('Telegram')",
+   "op": "text",
+   "value": "#FFFFFF"
+  },
+  "light": {
+   "args": [
+    100,
+    290,
+    300,
+    40
+   ],
+   "capture": "screenshots/light/00-root.png",
+   "evidence": "Sampled (text)",
+   "note": "Row title ('Telegram')",
+   "op": "text",
+   "value": "#000000"
+  }
+ },
+ "px.text.secondary": {
+  "dark": {
+   "args": [
+    1320,
+    290,
+    150,
+    40
+   ],
+   "capture": "screenshots/dark/00-root.png",
+   "evidence": "Sampled (text)",
+   "note": "Row accessory ('Application')",
+   "op": "text",
+   "value": "#A3A3A3"
+  },
+  "light": {
+   "args": [
+    1320,
+    290,
+    150,
+    40
+   ],
+   "capture": "screenshots/light/00-root.png",
+   "evidence": "Sampled (text)",
+   "note": "Row accessory ('Application')",
+   "op": "text",
+   "value": "#616161"
+  }
+ },
+ "px.text.sectionHeader": {
+  "dark": {
+   "args": [
+    30,
+    225,
+    150,
+    35
+   ],
+   "capture": "screenshots/dark/00-root.png",
+   "evidence": "Sampled (text)",
+   "note": "Section header ('Suggestions')",
+   "op": "text",
+   "value": "#A3A3A3"
+  },
+  "light": {
+   "args": [
+    30,
+    225,
+    150,
+    35
+   ],
+   "capture": "screenshots/light/00-root.png",
+   "evidence": "Sampled (text)",
+   "note": "Section header ('Suggestions')",
+   "op": "text",
+   "value": "#616161"
+  }
+ },
+ "px.window.main": {
+  "dark": {
+   "args": [
+    700,
+    100,
+    300,
+    20
+   ],
+   "capture": "screenshots/dark/00-root.png",
+   "evidence": "Sampled",
+   "note": "Launcher window behind the search field",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#1A1A1A"
+  },
+  "light": {
+   "args": [
+    700,
+    100,
+    300,
+    20
+   ],
+   "capture": "screenshots/light/00-root.png",
+   "evidence": "Sampled",
+   "note": "Launcher window behind the search field",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#F2F2F2"
+  }
+ },
+ "px.window.settings": {
+  "dark": {
+   "args": [
+    1200,
+    40,
+    200,
+    40
+   ],
+   "capture": "screenshots/dark/20-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Settings window behind the cards",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#121212"
+  },
+  "light": {
+   "args": [
+    1200,
+    40,
+    200,
+    40
+   ],
+   "capture": "screenshots/light/20-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Settings window behind the cards",
+   "op": "fill",
+   "share": 1.0,
+   "value": "#FFFFFF"
+  }
+ },
+ "radius.row": {
+  "dark": {
+   "args": [
+    16,
+    128
+   ],
+   "capture": "screenshots/dark/00-root.png",
+   "evidence": "Derived",
+   "insets": [
+    14,
+    11,
+    9,
+    8,
+    7,
+    5,
+    5,
+    4
+   ],
+   "note": "Selected row corner (top left)",
+   "op": "corner",
+   "value": "9.25pt"
+  },
+  "light": {
+   "args": [
+    16,
+    128
+   ],
+   "capture": "screenshots/light/00-root.png",
+   "evidence": "Derived",
+   "insets": [
+    14,
+    11,
+    9,
+    8,
+    7,
+    5,
+    5,
+    4
+   ],
+   "note": "Selected row corner (top left)",
+   "op": "corner",
+   "value": "9.25pt"
+  }
+ },
+ "radius.settings.card": {
+  "dark": {
+   "args": [
+    504,
+    104
+   ],
+   "capture": "screenshots/dark/20-settings-general.png",
+   "evidence": "Derived",
+   "insets": [
+    17,
+    14,
+    11,
+    10,
+    8,
+    7,
+    6,
+    5
+   ],
+   "note": "Settings card corner (top left; dark only, light's card is 2.5% off white and the fit fails)",
+   "op": "corner",
+   "value": "10.5pt"
+  }
+ },
+ "size.row": {
+  "dark": {
+   "args": [
+    "col",
+    900,
+    165,
+    3
+   ],
+   "capture": "screenshots/dark/00-root.png",
+   "colour": "#303030",
+   "evidence": "Sampled",
+   "from": 128,
+   "note": "Selected row height",
+   "op": "span",
+   "to": 203,
+   "value": "38pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    900,
+    165,
+    3
+   ],
+   "capture": "screenshots/light/00-root.png",
+   "colour": "#DADADA",
+   "evidence": "Sampled",
+   "from": 128,
+   "note": "Selected row height",
+   "op": "span",
+   "to": 203,
+   "value": "38pt"
+  }
+ },
+ "size.settings.row": {
+  "dark": {
+   "args": [
+    "col",
+    1200,
+    150,
+    3
+   ],
+   "capture": "screenshots/dark/20-settings-general.png",
+   "colour": "#181818",
+   "evidence": "Sampled",
+   "from": 104,
+   "note": "Settings card row height",
+   "op": "span",
+   "to": 195,
+   "value": "46pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    1200,
+    150,
+    3
+   ],
+   "capture": "screenshots/light/20-settings-general.png",
+   "colour": "#F9F9F9",
+   "evidence": "Sampled",
+   "from": 104,
+   "note": "Settings card row height",
+   "op": "span",
+   "to": 195,
+   "value": "46pt"
+  }
+ },
+ "size.sidebar": {
+  "dark": {
+   "args": [
+    "row",
+    1100,
+    400,
+    3
+   ],
+   "capture": "screenshots/dark/20-settings-general.png",
+   "colour": "#141414",
+   "evidence": "Sampled",
+   "from": 18,
+   "note": "Settings sidebar width (an inset panel inside the window)",
+   "op": "span",
+   "to": 467,
+   "value": "225pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    1100,
+    400,
+    3
+   ],
+   "capture": "screenshots/light/20-settings-general.png",
+   "colour": "#F2F2F2",
+   "evidence": "Sampled",
+   "from": 18,
+   "note": "Settings sidebar width (an inset panel inside the window)",
+   "op": "span",
+   "to": 467,
+   "value": "225pt"
+  }
+ },
+ "size.sidebar.selected": {
+  "dark": {
+   "args": [
+    "col",
+    400,
+    350,
+    3
+   ],
+   "capture": "screenshots/dark/20-settings-general.png",
+   "colour": "#2B2B2B",
+   "evidence": "Sampled",
+   "from": 320,
+   "note": "Selected sidebar row height",
+   "op": "span",
+   "to": 383,
+   "value": "32pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    400,
+    350,
+    3
+   ],
+   "capture": "screenshots/light/20-settings-general.png",
+   "colour": "#DADADA",
+   "evidence": "Sampled",
+   "from": 320,
+   "note": "Selected sidebar row height",
+   "op": "span",
+   "to": 383,
+   "value": "32pt"
+  }
+ },
+ "size.sidebarSearch.h": {
+  "dark": {
+   "args": [
+    "col",
+    300,
+    120,
+    3
+   ],
+   "capture": "screenshots/dark/20-settings-general.png",
+   "colour": "#4E4E4E",
+   "evidence": "Sampled",
+   "from": 104,
+   "note": "Sidebar search field height",
+   "op": "span",
+   "to": 167,
+   "value": "32pt"
+  },
+  "light": {
+   "args": [
+    "col",
+    300,
+    120,
+    3
+   ],
+   "capture": "screenshots/light/20-settings-general.png",
+   "colour": "#BDBDBD",
+   "evidence": "Sampled",
+   "from": 104,
+   "note": "Sidebar search field height",
+   "op": "span",
+   "to": 167,
+   "value": "32pt"
+  }
+ },
+ "size.sidebarSearch.w": {
+  "dark": {
+   "args": [
+    "row",
+    120,
+    300,
+    3
+   ],
+   "capture": "screenshots/dark/20-settings-general.png",
+   "colour": "#4E4E4E",
+   "evidence": "Sampled",
+   "from": 41,
+   "note": "Sidebar search field width",
+   "op": "span",
+   "to": 444,
+   "value": "202pt"
+  },
+  "light": {
+   "args": [
+    "row",
+    120,
+    300,
+    3
+   ],
+   "capture": "screenshots/light/20-settings-general.png",
+   "colour": "#BDBDBD",
+   "evidence": "Sampled",
+   "from": 41,
+   "note": "Sidebar search field width",
+   "op": "span",
+   "to": 444,
+   "value": "202pt"
+  }
+ },
+ "size.switch": {
+  "dark": {
+   "args": [
+    [
+     1480,
+     150
+    ],
+    [
+     1460,
+     125,
+     100,
+     50
+    ],
+    12
+   ],
+   "box": [
+    1472,
+    134,
+    1543,
+    165
+   ],
+   "capture": "screenshots/dark/20-settings-general.png",
+   "colour": "#4FA3F8",
+   "evidence": "Sampled",
+   "note": "Switch on, accent-coloured box",
+   "op": "bbox",
+   "value": "36x16pt"
+  },
+  "light": {
+   "args": [
+    [
+     1480,
+     150
+    ],
+    [
+     1460,
+     125,
+     100,
+     50
+    ],
+    12
+   ],
+   "box": [
+    1473,
+    134,
+    1542,
+    165
+   ],
+   "capture": "screenshots/light/20-settings-general.png",
+   "colour": "#158AF2",
+   "evidence": "Sampled",
+   "note": "Switch on, accent-coloured box",
+   "op": "bbox",
+   "value": "35x16pt"
+  }
+ },
+ "size.window.main": {
+  "dark": {
+   "args": [],
+   "capture": "screenshots/dark/00-root.png",
+   "evidence": "Sampled",
+   "note": "Launcher window",
+   "op": "dims",
+   "value": "750x475pt"
+  },
+  "light": {
+   "args": [],
+   "capture": "screenshots/light/00-root.png",
+   "evidence": "Sampled",
+   "note": "Launcher window",
+   "op": "dims",
+   "value": "750x475pt"
+  }
+ },
+ "size.window.settings": {
+  "dark": {
+   "args": [],
+   "capture": "screenshots/dark/20-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Settings window",
+   "op": "dims",
+   "value": "800x864pt"
+  },
+  "light": {
+   "args": [],
+   "capture": "screenshots/light/20-settings-general.png",
+   "evidence": "Sampled",
+   "note": "Settings window",
+   "op": "dims",
+   "value": "800x864pt"
+  }
+ }
+}
