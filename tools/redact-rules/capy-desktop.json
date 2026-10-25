@@ -1,0 +1,23 @@
+{
+  "_note": "Capy desktop: the component gallery (capy://app/design) ships fixture data with addresses at the vendor's domain for named people (the Table and Form fields sections), painted out by the email net. Its Connect wait section shows a fixture device-pairing code and its Form fields section a fixture one-time code in the OTP inputs; both are painted out by rectangle, because a one-time code is masked whatever its origin. The owner's Mac's computer name, which Capy shows as the paired device, is the Mac's network name and is painted out by the net with a local pattern file (~/.design-systems/capy-desktop-redact.json), and by rectangle where the palette's scrim hides it from OCR. The address placeholder you@company.com and Capy's support address are allowed. Coordinates are for the 2560 x 1600 window.",
+  "families": [
+    {"name": "paired Mac's name behind the palette's scrim (the OCR net does not read it there)",
+     "files": ["screenshots/light/search-palette-empty.png"],
+     "size": [[2560, 1600]],
+     "rects": [[1090, 612, 1306, 646, "rows"]]},
+    {"name": "gallery pairing code",
+     "files": ["screenshots/*/design-connect-wait.png"],
+     "size": [[2560, 1600]],
+     "rects": [[624, 1244, 860, 1286, "rows"]]},
+    {"name": "gallery one-time code fields",
+     "files": ["screenshots/*/design-form-fields.png"],
+     "size": [[2560, 1600]],
+     "rects": [
+       [1512, 416, 1538, 450, "solid"], [1599, 416, 1625, 450, "solid"], [1686, 416, 1712, 450, "solid"],
+       [1773, 416, 1799, 450, "solid"], [1860, 416, 1886, 450, "solid"], [1948, 416, 1974, 450, "solid"],
+       [1512, 548, 1538, 582, "solid"], [1599, 548, 1625, 582, "solid"], [1686, 548, 1712, 582, "solid"],
+       [1773, 548, 1799, 582, "solid"], [1860, 548, 1886, 582, "solid"], [1948, 548, 1974, 582, "solid"],
+       [1512, 679, 1538, 713, "solid"], [1599, 679, 1625, 713, "solid"]]}
+  ],
+  "ocr": {"net": true, "emails": true, "email_allow": ["^you@company\\.com$", "@capy\\.ai$"]}
+}
