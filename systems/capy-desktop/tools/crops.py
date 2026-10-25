@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cut element crops from screenshots/ into components/crops/, using the boxes shots.mjs recorded.
+"""Cut element crops from screenshots/ into components/crops/, using the boxes shots.mjs and run.mjs recorded.
 
     python3 tools/crops.py
 
@@ -27,6 +27,12 @@ PAD = 12
 
 def crops(theme):
     caps = json.loads((PKG / "raw" / f"components.{theme}.json").read_text())
+    # The agent run's kept frames (raw/run.<theme>.json, keyed by screenshot name) are read like shots, their
+    # state being the run's (working, thinking, tool, streaming, done), so `{part}-{state}` never collides with a
+    # shot's default, hover or focus crop.
+    run = PKG / "raw" / f"run.{theme}.json"
+    if run.exists():
+        caps = {**caps, **json.loads(run.read_text())}
     done = {}
     for shot, d in caps.items():
         src = PKG / "screenshots" / theme / f"{shot}.png"

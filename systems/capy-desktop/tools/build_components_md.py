@@ -20,8 +20,13 @@ from prefer import skip  # noqa: E402
 PKG = pathlib.Path(__file__).resolve().parent.parent
 TOK = json.loads((PKG / "tokens.json").read_text())
 CAP = {t: json.loads((PKG / "raw" / f"components.{t}.json").read_text()) for t in ("dark", "light")}
+# The agent run's kept frames, read like shots under their screenshot names (see crops.py).
+for _t in CAP:
+    _run = PKG / "raw" / f"run.{_t}.json"
+    if _run.exists():
+        CAP[_t] = {**CAP[_t], **json.loads(_run.read_text())}
 CROPS = {p.name for p in (PKG / "components" / "crops").glob("*.png")}
-STATE_ORDER = ["default", "hover", "focus-visible", "focus", "pressed", "filled", "empty"]
+STATE_ORDER = ["default", "hover", "focus-visible", "focus", "pressed", "filled", "empty", "working", "thinking", "tool", "streaming", "done"]
 
 # PRODUCT (adapt): checklist component -> (parts that show it, note)
 INVENTORY = [
@@ -33,9 +38,9 @@ INVENTORY = [
      "heights, xs 24, sm 28 and base 32 (`controlHeight.*`); every button has the 6px radius (`radius.button`). Loading replaces the first icon with a dot grid "
      "and lowers the opacity. Hover deepens the fill (`base.button-hover`, `base.secondary-hover`); focus-visible draws a `base.ring` outline. In the app, "
      "Settings rows use ghost and outline buttons, the setup card an outline one, and the Start button is the accent icon button."),
-    ("Icon button", ["icon-button", "new-tab", "back-button", "add-button", "config-button", "voice-button", "send-button", "toolbar-icon-button", "tab-close"],
+    ("Icon button", ["icon-button", "new-tab", "back-button", "add-button", "config-button", "voice-button", "send-button", "stop-button", "toolbar-icon-button", "tab-close"],
      "Square ghost controls on the same size tiers, the icon `base.icon-muted` until the pointer is over it. The composer's Start button is the accent fill "
-     "(`base.primary`), square with the 6px radius, not round."),
+     "(`base.primary`), square with the 6px radius, not round. While a run is going it becomes Stop run, the same teal square with a white stop glyph (the run's states)."),
     ("Link", ["link", "update-button"], "Links are the primary darkened with black (`base.text-link`); in markdown they are underlined. The title bar's Update is a teal text button."),
     ("Text field", ["input", "input-filled", "input-invalid", "input-disabled", "input-sm", "input-xs", "settings-search", "palette-input", "menu-search"],
      "The gallery's input in every state it ships: placeholder, filled, invalid (`aria-invalid` paints a `base.destructive` border), disabled, with icon, "
@@ -44,9 +49,9 @@ INVENTORY = [
     ("Text area", ["composer", "composer-editor"],
      "The composer: a `base.popover` card with the 8px card radius and its own shadow (`shadow.composer`), a Lexical editor, and a toolbar of icon buttons "
      "(add, thread configuration, model, voice, Start). Above it sit the project, Run on and repository pickers."),
-    ("Select", ["select", "model-button", "project-button", "run-on-button", "repos-button"],
+    ("Select", ["select", "model-button", "project-button", "run-on-button", "repos-button", "machine-button"],
      "Selects are menu triggers: an outline button with a chevron (Settings) or a ghost one (the composer's project, Run on and model pickers). They open menus; "
-     "the selected row carries a check."),
+     "the selected row carries a check. Inside a thread the Machine picker under the composer names where the run is (the paired Mac, Current checkout) beside the branch."),
     ("Checkbox", ["checkbox-on", "checkbox-off", "checkbox-disabled"],
      "A 16px square with the 3px radius (`radius.sm`), `base.primary` with a white check when on, a hairline box when off, at reduced opacity when disabled. Seen only in "
      "the gallery; the app's settings use switches."),
@@ -71,7 +76,7 @@ INVENTORY = [
      "filter tabs, sections and a footer of keyboard hints; Customize sidebar is a plain modal."),
     ("Toast", ["toast", "toast-title", "toast-description", "toast-error"],
      "Sonner toasts restyled: constant width, an icon, a medium title and a muted description always, on `base.popover` with `shadow.overlay`, bottom right. The "
-     "error toast (Failed to start thread, from the run) adds a Connect action."),
+     "error toast adds an action button (the gallery's)."),
     ("Card", ["card", "card-header", "setup-card", "panel", "alert", "alert-title", "alert-description", "file-chip"],
      "Cards are `base.card` with the 8px radius; in light they have no border and are lifted by `shadow.card`, a 0.5px ring, and in dark they take a "
      "`base.border-1` hairline. Settings groups are cards of 67px rows. The content panel is the same shape at 12px (`radius.panel`). Alerts are cards with an icon, title and description."),
@@ -89,20 +94,25 @@ INVENTORY = [
     ("Toolbar", ["tab-strip", "back-button", "new-tab", "update-button"],
      "The window's toolbar is the desktop tab strip, 40px on `base.chrome`: the macOS traffic lights at (16, 12) over its left end (drawn by macOS, see "
      "window-frame), Back and Forward, the tabs, New tab and Update."),
-    ("Inspector", [], "Not captured: the right panel opens inside a thread, and the owner's threads were not opened; the gallery's Right panel section shows its frame."),
-    ("Conversation", ["user-message", "agent-message", "message-text", "chat-stamp", "activity-line", "work-group", "tool-row", "code-block", "inline-code",
-                      "markdown-h1", "markdown-h2", "markdown-p"],
-     "Not on the checklist; from the gallery's fixture transcript (Jam chat) and its tool rows and markdown sections. The user's message is a rounded "
-     "bubble with an avatar, name and time (its fill is on an inner element the capture did not measure); the agent's reply sits on the page as 13px markdown; work folds into Worked for 1m 14s lines that expand to tool rows "
-     "(Thought for 8s, Ran test in @capy/core 0.9s)."),
+    ("Inspector", ["right-panel"],
+     "A thread's right pane (`core.layout.inspector`, 520px), opened with Open pane in the thread's toolbar, here in the test run's own thread on Capy 0.5.0: its own tab strip "
+     "(Overview, add a tab, Full screen, Close pane) over an illustration and three rows, Diffs (files, turns and the dirty count, +1 -0), Files (the root) and Shell. "
+     "It takes the panel's colour behind a vertical rule, and the chat column narrows beside it."),
+    ("Conversation", ["user-message", "agent-message", "message-text", "message-section", "message-footer", "chat-stamp", "activity-line", "work-group", "work-row", "tool-row",
+                      "shimmer-live", "working-indicator", "code-block", "inline-code", "markdown-h1", "markdown-h2", "markdown-p", "thread-tab", "thread-cost", "token-budget"],
+     "Not on the checklist. Two sources, told apart by state: `default` is the gallery's fixture transcript (Jam chat), its tool rows and markdown sections; "
+     "`working`, `thinking`, `tool`, `streaming` and `done` are a real run in the app (Capy 0.5.0, Claude Haiku 5.5 through the account's Claude Code connection, "
+     "on this Mac in the scratch folder). The user's message is a rounded bubble on the right (its fill is on an inner element the capture did not measure); the agent's "
+     "reply sits on the page as markdown with a footer of Reply, Copy and More that shows on hover. Work collects under one activity line, Working for 3s while it runs "
+     "(a shimmer over the word) and Worked for 7s after, which unfolds to rows: Thinking for 2s, then the tool as a sentence (Listing files in the working folder, "
+     "Writing hello.txt +1 -0), each shimmering while live. The thread's tab carries a dot-grid Working glyph while the run lasts; the cost ($0.00) and the token "
+     "budget ring sit in the toolbar and under the composer. While the thread page loads, its tab is a skeleton bar and the model chip reads Loading."),
 ]
 GAPS = [
-    "Agent run: Capy could not start a thread. The organization limits models to connections that are not set up, so the composer's Start opened a thread page "
-    "in its loading state and came back with Failed to start thread (Copilot is not connected). Connecting a model provider or changing the model is an owner "
-    "setting and was not done, so streaming, a tool call in progress, an approval prompt and a finished result are not captured from the app; the gallery's "
-    "fixture transcript, tool rows, Desktop request, Device access and Clarify sections show their components instead.",
-    "A thread from the owner's history: not opened, by the capture's rules. The conversation components come from the gallery's fixtures.",
-    "Inspector and diff review inside a thread: not captured for the same reason; the gallery's Diff and Right panel sections stand in.",
+    "Approval prompt: none appeared in the real run. Capy ran the Claude Code connection's tools (listing the folder, writing hello.txt) without asking, and no "
+    "permission setting was changed to force one; the gallery's Desktop request, Device access and Clarify sections show the request cards.",
+    "A thread from the owner's history: not opened, by the capture's rules. The run's states come from three new threads in a project made for the capture.",
+    "Diff review inside a thread: the inspector was opened at its Overview, not at a file's diff; the gallery's Diff section stands in.",
     "Radio: not present in the product.",
     "Disabled and loading states of app buttons were not reachable; the gallery shows disabled inputs, switches and checkboxes and loading buttons.",
     "A form validation error in the app: none reachable without saving a setting; the gallery's invalid input shows the error border.",
@@ -227,6 +237,7 @@ def crop_links(part, state):
 
 lines = ["# Capy desktop: components", "",
          "Generated by `tools/build_components_md.py` from `raw/components.<theme>.json` (computed styles read live from Capy 0.4.7 on 2026-10-25), "
+         "`raw/run.<theme>.json` (the agent run's kept frames, read from Capy 0.5.0 the same day), "
          "`tokens.json` and `components/crops/`. Each entry lists the parts that show the component, the states captured in each theme with "
          "links to their crops, and the measured values written as the token that holds them, the painted value after it. Values are CSS px. "
          "Parts come from two places: the app on the owner's account, and Capy's own component gallery at /design, which ships in the bundle "

@@ -9,6 +9,7 @@ Sources, read live from Capy 0.4.7 for macOS on 2026-10-25 over the remote-debug
                                  --tw-* utility plumbing left out), by sheet, selector and condition,
                                  and each name as it computes and paints on <body>
   raw/components.<theme>.json    computed styles of the captured parts, per shot and state (shots.mjs)
+  raw/run.dark.json              the agent run's kept frames (run.mjs, on Capy 0.5.0): the inspector's width
 
 How Capy's colours work, and so how this file is laid out. Capy is built with Tailwind CSS 4 on Base UI.
 Its theme is about forty oklch seeds on `:root, [data-theme-preview]` (light) and `.dark` in the app
@@ -331,6 +332,13 @@ for path, part, prop, use in SIZES:
     if v:
         put(CORE, tuple(path.split(".")), tok(px("%gpx" % round(float(v[:-2]))), "dimension", "Measured",
             f"computed {prop} of {part} in {shot}, dark, {DATE} ({use}); {v} before rounding"))
+# The inspector (a thread's right pane: Overview, Diffs, Files, Shell) is only on screen inside a thread, so its
+# width comes from the agent run's kept frame that opened it (raw/run.<theme>.json, run.mjs on Capy 0.5.0).
+RUN = load("run.dark.json") if (RAW / "run.dark.json").exists() else {}
+_pane = RUN.get("run-inspector", {}).get("parts", {}).get("right-panel", {}).get("style", {})
+if _pane.get("width", "").endswith("px"):
+    put(CORE, ("layout", "inspector"), tok(px("%gpx" % round(float(_pane["width"][:-2]))), "dimension", "Measured",
+        f"computed width of right-panel in run-inspector (the thread's right pane, opened in the test run on Capy 0.5.0), dark, {DATE}; {_pane['width']} before rounding"))
 WINDOW = C["dark"]["home"]["viewport"]
 put(CORE, ("layout", "window-width"), tok(f"{WINDOW['css'][0]}px", "dimension", "Measured",
     f"the window's viewport, {WINDOW['css'][0]} x {WINDOW['css'][1]} CSS px at devicePixelRatio {WINDOW['dpr']}, {DATE}"))

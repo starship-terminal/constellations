@@ -6,7 +6,7 @@
 // The owner approved test prompts on 2026-10-25, in a fresh chat on an empty scratch folder only.
 // Each step sends one prompt, then screenshots the window every INTERVAL ms until the product's
 // `done` says the run finished (or TIMEOUT), and records the parts RUN.parts finds on screen at each
-// frame. Frames go to $RAW/<theme>/run/; the step's `approve` decides whether an approval prompt may
+// frame; once done, it waits SETTLE ms and takes one more frame, `<step>-done`. Frames go to $RAW/<theme>/run/; the step's `approve` decides whether an approval prompt may
 // be accepted (only for actions inside the scratch folder).
 import { rmSync } from 'node:fs';
 import { basename, resolve as pathResolve } from 'node:path';
@@ -18,7 +18,7 @@ import * as P from './product.mjs';
 // package never writes into the package it was copied from.
 const SLUG = process.env.SLUG || basename(pathResolve(fileURLToPath(import.meta.url), '../../../..'));
 const RAW = process.env.RAW || `${process.env.HOME}/.design-systems/${SLUG}/raw-shots`;
-const INTERVAL = +(process.env.INTERVAL || 1500), TIMEOUT = +(process.env.TIMEOUT || 120000);
+const INTERVAL = +(process.env.INTERVAL || 1500), TIMEOUT = +(process.env.TIMEOUT || 120000), SETTLE = +(process.env.SETTLE || 1500);
 const theme = process.argv[2];
 if (!theme) { console.error('usage: run.mjs <theme>'); process.exit(2); }
 const out = `${RAW}/${theme}/run/frames.json`;
@@ -68,7 +68,17 @@ try {
         if (!step.approve) { console.log('approval asked, not allowed for this step: rejecting'); await P.RUN.reject(h); }
         else if (!(await step.approve(h))) { console.log('approval asked for something outside the scratch folder: rejecting'); await P.RUN.reject(h); }
       }
-      if (state === 'done' && i >= 2) { done = true; break; }
+      if (state === 'done' && i >= 2) {
+        // One more frame once the window has settled: the frame that first reads done can still be painting
+        // the last streamed words.
+        await page.waitForTimeout(SETTLE);
+        const last = `${step.name}-done`;
+        const f = await shoot(cdp, `${RAW}/${theme}/run/${last}.png`);
+        all[last] = { step: step.name, t: Date.now() - t0, state: await P.RUN.state(h), file: f.split('/').slice(-3).join('/'), viewport: await viewport(page), parts: await measure(), inventory: await inventory() };
+        writeJson(out, all);
+        console.log(last, all[last].state);
+        done = true; break;
+      }
       await page.waitForTimeout(INTERVAL);
     }
     // A step still running at TIMEOUT stops the run: the next prompt would land on a busy agent.
