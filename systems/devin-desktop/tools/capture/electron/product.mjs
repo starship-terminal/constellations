@@ -66,8 +66,14 @@ async function ide({ page }) {
   await setView(page, 'IDE');
   await page.keyboard.press('Escape'); await wait(page, 300);
 }
-// Called before every shot: bring the window back to a known screen.
-export async function reset(h, win) { return win === 'agents' ? home(h) : ide(h); }
+// Called before every shot: close any toast left on screen, then bring the window back to a known screen.
+export async function reset(h, win) { await closeToasts(h.page); return win === 'agents' ? home(h) : ide(h); }
+// Called by shots.mjs right before each screenshot: a toast that appeared during the reveal fails
+// the shot (closing it here would move the pointer off a hover state). Shots that show a toast on
+// purpose set keepToasts.
+export async function beforeShoot({ page }, shot) {
+  if (!shot.keepToasts && await toastsOnScreen(page)) throw new Error('a notification toast is on screen');
+}
 async function settings({ page }, pane) {
   await page.locator('[data-slot=sidebar-footer] [aria-label=Settings]').first().click(); await wait(page, 1200);
   if (pane) { await settingsNav(page, pane).click(); await wait(page, 1200); }
@@ -86,9 +92,20 @@ async function clearPrompt(page) {
   if (await promptText(page)) throw new Error('composer could not be emptied');
   await page.keyboard.press('Escape');
 }
+// The workbench's notification toasts (bottom right, over both views). An error toast stays until
+// it is closed, and its close button only shows while the pointer is over it, so each one is
+// hovered and closed (Escape if the button does not show). Throws if one is still on screen.
+const TOAST = '.notifications-toasts .notification-toast';
+const toastsOnScreen = page => page.locator(TOAST).filter({ visible: true }).count().catch(() => 0);
 async function closeToasts(page) {
-  for (const b of await page.locator('.notifications-toasts .codicon-notifications-clear').all()) await b.click({ force: true }).catch(() => {});
-  await wait(page, 400);
+  for (let i = 0; i < 6 && await toastsOnScreen(page); i++) {
+    const t = page.locator(TOAST).filter({ visible: true }).first();
+    await t.hover().catch(() => {}); await wait(page, 300);
+    const x = t.locator('.codicon-notifications-clear').first();
+    if (await x.isVisible().catch(() => false)) await x.click().catch(() => {}); else await page.keyboard.press('Escape');
+    await wait(page, 600);
+  }
+  if (await toastsOnScreen(page)) throw new Error('a notification toast could not be dismissed');
 }
 async function scrollMain(page, dy) { await page.mouse.move(1000, 500); await page.mouse.wheel(0, dy); await wait(page, 800); }
 
@@ -377,17 +394,20 @@ export const SHOTS = [
   { name: 'toast', window: I, optional: true,
     reveal: async ({ page }) => { await page.keyboard.press('Control+Backquote'); await wait(page, 1500);
       await dialogButton(/^Cancel$/)(page).click(); await wait(page, 1500); },
+    keepToasts: true,
     parts: { toast: '.notifications-toasts .notification-toast', 'toast-button': '.notifications-toasts .monaco-button', 'toast-close': '.notifications-toasts .codicon-notifications-clear' },
     optionalParts: ['toast-close'],
     after: async ({ page }) => closeToasts(page) },
 ];
 
-// ---- after the test run: the finished local session (the first session under the scratch folder)
-// and hello.txt in the editor. A past cloud session from the owner's history (one that was awake,
-// "awaiting instructions", when first opened; opening a sleeping one wakes Devin) shows the reply,
-// PR and diff review.
-const CLOUD_SESSION = '560615c6b6be42beb2e124fe20c984e4';
-const openCloudSession = async ({ page }) => { await page.locator(`${sidebar} [data-slot=sidebar-menu-button] > a[href$="/sessions/${CLOUD_SESSION}"]`).click(); await wait(page, 3500); };
+// ---- after the test run: the finished local session (one of the two test sessions run.mjs created
+// on the scratch folder) and hello.txt in the editor.
+//
+// The first capture (2026-10-25) also took `conversation` and `conversation-code-hover` in a past
+// cloud session from the owner's history, to show a reply, a PR and its diff review. Opening that
+// session woke the agent (it was asleep) and made it post a message, so those two shots are no longer
+// in this list: the capture never opens a session it did not create. Their screenshots and readings
+// are kept from the first capture (the dark pair still shows the stray toast, see the README).
 const CONVERSATION = {
   'agent-name': '[data-find-exclude=true] span.font-medium', 'inline-code': 'p[data-md-source-start] code', link: 'a[data-streamdown=link]',
   'status-line': page => page.getByText(/^Devin (is awaiting instructions|went to sleep)/).filter({ visible: true }).last(),
@@ -396,9 +416,13 @@ const CONVERSATION = {
 };
 // Shots that need the scratch folder trusted and the test run done (run.mjs), taken after it.
 export const AFTER_RUN = ['ide-editor', 'ide-terminal', 'conversation-local', 'conversation-local-top', 'conversation-local-hover', 'home-local-trusted'];
-// The test session: the newest local Devin session (devin-cli) in the sidebar's Recent group, which run.mjs created.
+// The test session: a local Devin session (devin-cli) that run.mjs created, matched by its link and
+// the title Devin gave it, so no other session can be opened. Throws if none is listed.
+export const TEST_SESSION_TITLE = 'List Files in the Current Folder';
+const testSession = page => page.locator(`${sidebar} [data-slot=sidebar-menu-button] > a[href*="acp%2Fdevin-cli%2F"][aria-label="${TEST_SESSION_TITLE}"]`).first();
 const openLocalSession = async ({ page }) => {
-  await page.locator(`${sidebar} [data-slot=sidebar-menu-button] > a[href*="acp%2Fdevin-cli%2F"]`).first().click(); await wait(page, 2500);
+  if (!(await testSession(page).count())) throw new Error(`no test session titled ${TEST_SESSION_TITLE} in the sidebar`);
+  await testSession(page).click(); await wait(page, 2500);
 };
 const LOCAL = {
   'user-message': '[role=group][aria-label="User message"] div.rounded-\\[16px\\]',
@@ -411,14 +435,6 @@ const LOCAL = {
   composer: S.composer,
 };
 SHOTS.push(
-  { name: 'conversation', window: A, reveal: openCloudSession,
-    parts: { ...CONVERSATION, 'session-title': page => page.locator('[data-slot=sidebar] ~ * h1, header h1').first(),
-      'badge-merged': 'span.rounded-full.bg-tint-purple', 'review-tab': '[role=tablist][data-orientation=horizontal] [role=tab][aria-selected=false]',
-      'review-tab-selected': '[role=tablist][data-orientation=horizontal] [role=tab][aria-selected=true]', 'diff-file-header': '[data-file-path] > div.sticky',
-      'diff-line-added': '[data-diff-row] [data-diff-cell][class*="tint-green"]', 'diff-line-removed': '[data-diff-row] [data-diff-cell][class*="tint-red"]',
-      'button-outline': textButton(/^Comment/) },
-    optionalParts: ['session-title', 'work-row', 'status-line', 'review-tab', 'review-tab-selected'] },
-  { name: 'conversation-code-hover', window: A, state: 'hover', reveal: openCloudSession, hover: 'link', parts: { link: 'a[data-streamdown=link]' } },
   { name: 'ide-editor', window: I, reveal: async ({ page }) => { await page.keyboard.press('Meta+P'); await wait(page, 800); await page.keyboard.type('hello.txt'); await wait(page, 800); await page.keyboard.press('Enter'); await wait(page, 1500); },
     parts: { 'editor-tab': '.tabs-container .tab.active', 'explorer-row': '.explorer-folders-view .monaco-list-row', editor: '.monaco-editor .view-lines', 'line-numbers': '.monaco-editor .margin' },
     optional: true, after: async ({ page }) => { await page.keyboard.press('Meta+W'); await wait(page, 600); } },
