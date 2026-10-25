@@ -217,18 +217,21 @@ def run(raw):
     raw = pathlib.Path(raw).expanduser()
     if not (raw / "dark").is_dir():
         raise SystemExit(f"{raw}: no dark/ captures; nothing written")
-    cache, out = {}, {}
+    # One decoded capture at a time: a 3024 x 1898 image is several hundred MB as Python tuples, so
+    # the readings are grouped by capture and each image is released before the next is read.
+    jobs = {}
     for rid, (cap, op, args, note) in R.items():
-        themes = [cap.split("/")[0]] if "/" in cap else ["dark", "light"]
         name = cap.split("/")[-1]
-        for theme in themes:
-            png = raw / theme / f"{name}.png"
-            if not png.exists():
-                continue
-            key = f"{theme}/{name}"
-            if key not in cache:
-                cache[key] = sample.read_png(png)[2]
-            rows = cache[key]
+        for theme in required_themes(cap):
+            jobs.setdefault(f"{theme}/{name}", []).append((rid, op, args, note))
+    out = {}
+    for key in sorted(jobs):
+        theme, name = key.split("/")
+        png = raw / theme / f"{name}.png"
+        if not png.exists():
+            continue
+        rows = sample.read_png(png)[2]
+        for rid, op, args, note in jobs[key]:
             if op == "text":
                 res = op_text(rows, *args, dark=(theme == "dark"))
             else:
@@ -236,7 +239,13 @@ def run(raw):
             res.update({"capture": f"screenshots/{theme}/{name}.png", "op": op,
                         "args": json.loads(json.dumps(args)), "note": note})
             out.setdefault(rid, {})[theme] = res
+        del rows
     return out
+
+
+def required_themes(cap):
+    """A capture named "dark/..." or "light/..." is read in that theme only; any other in both."""
+    return [cap.split("/")[0]] if "/" in cap else ["dark", "light"]
 
 
 def write(readings):
@@ -258,8 +267,9 @@ def write(readings):
 
 if __name__ == "__main__":
     readings = run(sys.argv[1] if len(sys.argv) > 1 else f"~/.design-systems/{SLUG}/raw-shots")
-    missing = sorted(rid for rid in R if rid not in readings)
-    if missing:
+    missing = sorted(f"{rid} ({theme})" for rid, (cap, *_) in R.items() for theme in required_themes(cap)
+                     if theme not in readings.get(rid, {}))
+    if missing:   # every reading in every theme it needs, or nothing is written
         raise SystemExit(f"no capture for {len(missing)} readings ({', '.join(missing[:5])}...); nothing written")
     write(readings)
     print(f"{sum(len(v) for v in readings.values())} readings of {len(readings)} ids")

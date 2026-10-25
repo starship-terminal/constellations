@@ -234,9 +234,9 @@ def core():
     }
     std = FONTS["defaults"]["comments"]["standard"]
     c["lineHeight"] = {
-        "buffer": tok(std["value"], "number", f"`buffer_line_height` is \"{font('owner', 'buffer_line_height')}\" (owner), which default.json (line {std['line']}) defines as {std['value']}. The pixels agree: a buffer line is {rd('size.gutterLine')['value']} at 11 pt (size.gutterLine).",
+        "buffer": tok(float(std["value"]), "number", f"`buffer_line_height` is \"{font('owner', 'buffer_line_height')}\" (owner), which default.json (line {std['line']}) defines as {std['value']}. The pixels agree: a buffer line is {rd('size.gutterLine')['value']} at 11 pt (size.gutterLine).",
                       "Measured", "raw/settings-fonts.json", key="owner settings.json `buffer_line_height`"),
-        "bufferComfortable": tok(FONTS["defaults"]["comments"]["comfortable"]["value"], "number", "Zed's default `buffer_line_height` (\"comfortable\"). Not used in these captures.", "Measured", "raw/settings-fonts.json", key=f"default.json line {FONTS['defaults']['comments']['comfortable']['line']}"),
+        "bufferComfortable": tok(float(FONTS["defaults"]["comments"]["comfortable"]["value"]), "number", "Zed's default `buffer_line_height` (\"comfortable\"). Not used in these captures.", "Measured", "raw/settings-fonts.json", key=f"default.json line {FONTS['defaults']['comments']['comfortable']['line']}"),
     }
 
     def size_of(cap_rid, theme="dark", ratio=CAP_PLEX):
@@ -439,6 +439,8 @@ def check(doc):
                 assert re.fullmatch(r"#[0-9A-F]{6}([0-9A-F]{2})?", v), f"{where}: bad colour {v}"
             elif t["$type"] == "dimension":
                 assert re.fullmatch(r"-?\d+(\.\d+)?px", v), f"{where}: bad dimension {v}"
+            elif t["$type"] in ("number", "fontWeight"):
+                assert isinstance(v, (int, float)) and not isinstance(v, bool), f"{where}: {t['$type']} is not a number: {v!r}"
     keys = lambda s: sorted(".".join(p) for p, _ in walk(doc[s]))
     if "light" in doc and "dark" in doc:
         assert keys("light") == keys("dark"), "light and dark keys differ"

@@ -99,7 +99,7 @@ def build():
             if group == "radius":
                 demo = '<i class="rad" style="border-radius:%s"></i>' % css(v)
             elif group in ("spacing",):
-                demo = '<i class="bar" style="width:%s"></i>' % css(v)
+                demo = '<i class="spc" style="width:%s"></i>' % css(v)
             elif group == "typography":
                 demo = '<span class="t-%s">The quick brown fox, 0123</span>' % p[-1]
             rows.append("<tr><th><code>%s</code></th><td><code>%s</code> %s</td><td>%s</td><td class=d>%s</td></tr>" % (
@@ -152,7 +152,7 @@ table{{border-collapse:collapse;width:100%;font-size:12px}} td,th{{text-align:le
 .wrap{{overflow-x:auto}} .d{{color:var(--role-text-secondary);max-width:520px}}
 .sw{{display:inline-block;width:18px;height:18px;border-radius:3px;vertical-align:middle;margin-right:6px;border:1px solid var(--role-border-subtle)}}
 .ev{{font-size:10px;padding:1px 4px;border-radius:3px;border:1px solid var(--role-border-default)}} .ev-measured{{color:var(--role-status-success)}} .ev-derived{{color:var(--role-status-warning)}} .ev-sampled{{color:var(--role-text-link)}}
-.rad{{display:inline-block;width:40px;height:28px;border:1px solid var(--role-border-default);background:var(--role-surface)}} .bar{{display:inline-block;height:10px;background:var(--role-accent-default)}}
+.rad{{display:inline-block;width:40px;height:28px;border:1px solid var(--role-border-default);background:var(--role-surface)}} .spc{{display:inline-block;height:10px;background:var(--role-accent-default)}}
 .toggle{{position:sticky;top:0;float:right;font:inherit;background:var(--role-control-default);color:inherit;border:1px solid var(--role-border-default);border-radius:var(--radius-sm);padding:4px 10px}}
 .mut{{color:var(--role-text-secondary)}} .kb{{float:right;color:var(--role-text-secondary)}} .hl{{color:var(--role-text-link)}}
 .win{{border:1px solid var(--role-border-default);border-radius:var(--radius-lg);overflow:hidden;max-width:960px}}
@@ -164,19 +164,19 @@ table{{border-collapse:collapse;width:100%;font-size:12px}} td,th{{text-align:le
 .body{{display:flex;min-height:300px}} .tree{{width:var(--size-projectPanel);background:var(--role-surface);border-right:1px solid var(--role-border-default)}}
 .row{{height:var(--size-treeRow);display:flex;align-items:center;justify-content:space-between;padding:0 var(--spacing-3)}} .row.sel{{background:var(--role-accent-selected)}}
 .editor{{flex:1;background:var(--role-page);position:relative;color:var(--role-text-code)}} pre{{margin:0;padding:8px 16px}} .active{{background:var(--theme-editor-active-line-background);display:inline-block;width:100%}}
-.palette{{position:absolute;top:24px;left:15%;width:60%;background:var(--component-palette-bg);border:1px solid var(--role-border-subtle);border-radius:var(--radius-lg);box-shadow:0 8px 24px rgba(0,0,0,.25)}}
+.editor{{overflow:hidden}} .palette{{box-sizing:border-box;position:absolute;top:24px;left:24px;width:var(--component-palette-width);max-width:calc(100% - 48px);background:var(--component-palette-bg);border:1px solid var(--role-border-subtle);border-radius:var(--radius-lg)}}
 .q{{height:var(--size-paletteQuery);display:flex;align-items:center;padding:0 var(--spacing-3);border-bottom:1px solid var(--role-border-subtle)}} .it{{height:var(--size-paletteRow);line-height:var(--size-paletteRow);margin:0 var(--spacing-1);padding:0 8px;border-radius:var(--radius-sm)}} .it.sel{{background:var(--role-accent-selected)}}
 .row2{{display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;align-items:flex-start}}
-.menu{{width:220px;background:var(--component-menu-bg);border:1px solid var(--role-border-subtle);border-radius:var(--radius-md);padding:4px 0}} .menu div{{padding:3px 12px}} .menu hr{{border:0;border-top:1px solid var(--role-border-subtle);margin:4px 0}} .dis{{color:var(--role-text-disabled)}}
+.menu{{box-sizing:border-box;width:var(--size-menuWidth);background:var(--component-menu-bg);border:1px solid var(--role-border-subtle);border-radius:var(--radius-md);padding:4px 0}} .menu div{{padding:3px 12px}} .menu hr{{border:0;border-top:1px solid var(--role-border-subtle);margin:4px 0}} .dis{{color:var(--role-text-disabled)}}
 .tip{{background:var(--component-tooltip-bg);border:1px solid var(--role-border-subtle);border-radius:var(--radius-lg);padding:6px 10px;min-width:160px}}
 .ctl{{display:flex;gap:10px;align-items:center}} .sel2{{background:var(--component-select-bg);border:1px solid var(--role-border-subtle);border-radius:var(--radius-sm);height:var(--size-control);display:inline-flex;align-items:center;padding:0 8px}}
-.sw2{{display:inline-block;width:var(--size-switch-width);height:var(--size-switch-height);border-radius:999px;background:var(--role-control-default);border:1px solid var(--role-border-default);position:relative}} .sw2:after{{content:"";position:absolute;top:2px;left:3px;width:var(--size-switch-thumb);height:var(--size-switch-thumb);border-radius:50%;background:var(--role-text-secondary)}} .sw2.on{{background:var(--role-control-switchOn)}} .sw2.on:after{{left:auto;right:3px;background:var(--role-text-primary)}}
+.sw2,.sel2{{box-sizing:border-box}} .sw2{{display:inline-block;width:var(--size-switch-width);height:var(--size-switch-height);border-radius:999px;background:var(--role-control-default);border:1px solid var(--role-border-default);position:relative}} .sw2:after{{content:"";position:absolute;top:2px;left:3px;width:var(--size-switch-thumb);height:var(--size-switch-thumb);border-radius:50%;background:var(--role-text-secondary)}} .sw2.on{{background:var(--role-control-switchOn)}} .sw2.on:after{{left:auto;right:3px;background:var(--role-text-primary)}}
 .msg{{background:var(--component-userMessage-bg);border:1px solid var(--role-border-default);border-radius:var(--radius-md);padding:var(--spacing-3);min-width:280px}}
 .banner{{background:var(--role-status-warningBg);border:1px solid var(--role-border-subtle);border-radius:var(--radius-sm);padding:8px 12px}}
 </style></head><body>
 <button class="toggle" onclick="var r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'">Light / Dark</button>
 <h1>Zed 1.25.2: One Light and One Dark</h1>
-<p class="d">Every colour is Zed's own declared value from <code>assets/themes/one/one.json</code> at the v1.25.2 commit (Measured), checked against the window's pixels (raw/pixel-check.json). Sizes, radii and type sizes are read from the 2x window captures (Sampled or Derived). Specimens are drawn from the tokens only; none of Zed's icons or artwork is used.</p>
+<p class="d">Every colour is Zed's own declared value from <code>assets/themes/one/one.json</code> at the v1.25.2 commit (Measured), checked against the window's pixels (raw/pixel-check.json). Sizes, radii and type sizes are read from the 2x window captures (Sampled or Derived). Specimens are drawn from the tokens only; none of Zed's icons or artwork is used. Zed's popovers cast a soft shadow that was not measured, so the specimens draw none.</p>
 <h2>Specimens</h2>
 {specimens}
 <h2>Roles (light, dark)</h2><div class="wrap"><table>{swatch_rows("role")}</table></div>

@@ -214,11 +214,10 @@ Checklist item: dialog. Confirmations use the macOS system prompt (the owner's '
 
 | Property | Token |
 |---|---|
-| scrim | `role.chrome` |
 
 Crops: [trash confirmation (dark)](components/crops/dialog-confirm-trash.png), [trash confirmation (light)](components/crops/dialog-confirm-trash-light.png).
 
-Cancel was pressed; the file was kept. The prompt's blue is the system accent, not `text.accent`.
+Cancel was pressed; the file was kept. The prompt's blue is the system accent, not `text.accent`, and the dimming behind it is the system's; no scrim value was read.
 
 ## Banner
 

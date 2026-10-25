@@ -60,14 +60,18 @@ def zed_front():
 ESC, RET, TAB, DEL, LEFT, RIGHT, DOWN, UP = 53, 36, 48, 51, 123, 124, 125, 126
 
 
-def mouse(action, x, y, *extra, wait=0.6):
+def ensure_front():
+    """Bring Zed forward and confirm it is frontmost before any pointer event; give up after 10 tries."""
     for _ in range(10):
         front()
         if zed_front():
-            break
+            return
         time.sleep(1.0)
-    else:
-        raise SystemExit("Zed would not stay frontmost; stopped before pointer input")
+    raise SystemExit("Zed would not stay frontmost; stopped before pointer input")
+
+
+def mouse(action, x, y, *extra, wait=0.6):
+    ensure_front()
     subprocess.run([str(BIN / "mouse"), action, str(x), str(y + Y0), *map(str, extra)], check=True)
     time.sleep(wait)
 
@@ -495,7 +499,7 @@ NAV = {"general": 94, "appearance": 122, "keymap": 150, "editor": 178, "language
 
 def smouse(action, x, y, wait=0.8):
     """A pointer action in Settings-window coordinates. Never aimed at 'Fix in settings.json'."""
-    front()
+    ensure_front()
     subprocess.run([str(BIN / "mouse"), action, str(SETTINGS_AT[0] + x), str(SETTINGS_AT[1] + y)], check=True)
     time.sleep(wait)
 
