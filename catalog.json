@@ -1754,6 +1754,75 @@
       }
     },
     {
+      "slug": "orca-desktop",
+      "name": "Orca (desktop)",
+      "url": "https://www.stably.ai",
+      "category": "ai-agent",
+      "platform": "desktop",
+      "goodFor": "Desktop coding-agent harness in Electron on shadcn/ui: white or near-black panes beside a grey sidebar of projects and worktree cards, a tab strip of terminals and agent chats, an inspector on the right and a usage status bar, ink (not a hue) for the primary button and switches, shadcn's 3px focus ring everywhere, 8px controls and 14px bordered cards in Geist, red only for removal",
+      "tags": [
+        "desktop",
+        "electron",
+        "macos",
+        "coding",
+        "ai",
+        "agent",
+        "terminal",
+        "sidebar",
+        "tabs",
+        "shadcn",
+        "tailwind",
+        "neutral",
+        "dense",
+        "dark",
+        "light"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-25",
+      "access": "not signed in to an Orca account (not needed); read live from the running app over its remote-debugging port, on a scratch project the capture added and removed",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1512
+      ],
+      "entry": "systems/orca-desktop/README.md",
+      "tokens": "systems/orca-desktop/tokens.json",
+      "styleGuide": "systems/orca-desktop/style-guide.html",
+      "preview": {
+        "cover": "systems/orca-desktop/screenshots/dark/conversation.png",
+        "swatches": {
+          "light": {
+            "page": "light.role.page",
+            "surface": "light.role.surface",
+            "text": "light.role.text.primary",
+            "muted": "light.role.text.secondary",
+            "accent": "light.role.accent.default",
+            "border": "light.role.border.default"
+          },
+          "dark": {
+            "page": "dark.role.page",
+            "surface": "dark.role.surface",
+            "text": "dark.role.text.primary",
+            "muted": "dark.role.text.secondary",
+            "accent": "dark.role.accent.default",
+            "border": "dark.role.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans",
+          "core.fontFamily.mono"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/orca-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
+      },
+      "layoutGaps": {
+        "icons/": "Orca's icons and agent logos are its own artwork and third-party icon sets, and are not kept here (docs/RIGHTS.md)"
+      }
+    },
+    {
       "slug": "luma-ios",
       "name": "Luma",
       "url": "https://luma.com",
