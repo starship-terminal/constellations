@@ -991,6 +991,20 @@ class RepositoryTest(unittest.TestCase):
 
 
 
+class AtomicWriteTest(unittest.TestCase):
+    def test_output_is_group_and_world_readable(self):
+        # mkstemp creates the temp file 0600; without the fchmod the renamed
+        # file stays owner-only and a web server running as another uid
+        # answers 403 for every generated page (the live failure this guards).
+        import stat
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d) / "data.json"
+            catalog.atomic_write(path, "{}")
+            mode = stat.S_IMODE(path.stat().st_mode)
+            self.assertEqual(mode & 0o044, 0o044, oct(mode))
+
+
 class RepoFileTest(unittest.TestCase):
     def test_allowed_paths_map_into_the_checkout(self):
         self.assertEqual(catalog.repo_file("/catalog.json"), (catalog.ROOT / "catalog.json").resolve())
