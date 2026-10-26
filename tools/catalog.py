@@ -68,6 +68,10 @@ def atomic_write(path: Path, text: str) -> None:
     uses this."""
     fd, tmp = tempfile.mkstemp(dir=str(path.parent), prefix=path.name + ".", suffix=".tmp")
     try:
+        # mkstemp creates the file 0600; os.replace would keep that mode, and a
+        # web server reading the result as another user (the design-systems
+        # deploy serves `site/` through a containerised nginx) would answer 403.
+        os.fchmod(fd, 0o644)
         with os.fdopen(fd, "w") as f:
             f.write(text)
         os.replace(tmp, path)
