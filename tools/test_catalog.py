@@ -65,6 +65,44 @@ class PaletteCheckTest(unittest.TestCase):
         self.assertIn("not in themes", problems[0])
 
 
+class CaptureCheckTest(unittest.TestCase):
+    GOOD = {"harness": "Claude Code", "model": "Claude Opus 5.5",
+            "route": "iphone-mirroring", "durationMin": None,
+            "version": "1.2.3", "pr": "https://example.invalid/pr/1"}
+
+    def test_complete_block_passes(self):
+        self.assertEqual(catalog.capture_problems("x", self.GOOD), [])
+
+    def test_optional_version_and_pr_may_be_absent(self):
+        capture = {k: v for k, v in self.GOOD.items() if k in
+                   ("harness", "model", "route", "durationMin")}
+        self.assertEqual(catalog.capture_problems("x", capture), [])
+
+    def test_missing_block_is_not_reported_here(self):
+        self.assertEqual(catalog.capture_problems("x", None), [])
+        self.assertIn("capture", catalog.REQUIRED_FIELDS)
+
+    def test_non_object_and_empty_block_fail(self):
+        self.assertTrue(catalog.capture_problems("x", "Claude Code"))
+        self.assertTrue(catalog.capture_problems("x", {}))
+
+    def test_unknown_route_fails(self):
+        capture = dict(self.GOOD, route="screenshot-everything")
+        problems = catalog.capture_problems("x", capture)
+        self.assertIn("route", problems[0])
+
+    def test_every_route_in_use_passes(self):
+        for route in catalog.CAPTURE_ROUTES:
+            self.assertEqual(catalog.capture_problems("x", dict(self.GOOD, route=route)),
+                             [], route)
+
+    def test_text_and_bool_duration_fail_null_and_number_pass(self):
+        self.assertTrue(catalog.capture_problems("x", dict(self.GOOD, durationMin="one hour")))
+        self.assertTrue(catalog.capture_problems("x", dict(self.GOOD, durationMin=True)))
+        self.assertEqual(catalog.capture_problems("x", dict(self.GOOD, durationMin=25)), [])
+        self.assertEqual(catalog.capture_problems("x", dict(self.GOOD, durationMin=None)), [])
+
+
 class ThumbTest(unittest.TestCase):
     def test_shared_path_is_thumbnailed_once(self):
         calls = []

@@ -899,7 +899,7 @@
       "capture": {
         "harness": "Claude Code",
         "model": "Claude Opus 5.5",
-        "route": "public-web",
+        "route": "headless",
         "durationMin": null
       },
       "designMd": {
@@ -2195,7 +2195,7 @@
       "capture": {
         "harness": "Claude Code",
         "model": "Claude Opus 5.5",
-        "version": "0.4.7",
+        "version": "0.4.7; agent run on 0.5.0",
         "route": "electron-cdp",
         "pr": "https://github.com/c-wenlong/designs/pull/116",
         "durationMin": null
