@@ -1098,6 +1098,9 @@ def check() -> list[str]:
                     problems.append(f"{slug}: extras path {path!r} is not a string")
                 elif not (ROOT / path).exists():
                     problems.append(f"{slug}: extras path {path} does not exist")
+        capture = s.get("capture")
+        if capture is not None and not isinstance(capture, dict):
+            problems.append(f"{slug}: capture must be an object")
         problems += layout_problems(s)
         if "preview" not in s or "tokens" not in s:
             continue
@@ -1495,6 +1498,7 @@ def build() -> Path:
             **{k: s[k] for k in ("slug", "name", "url", "category", "goodFor", "shape", "captured",
                                  "themes", "tags", "entry", "tokens", "styleGuide")},
             "access": s.get("access", ""),
+            "capture": s.get("capture"),
             "widths": s.get("widths", []),
             "notes": s.get("notes", ""),
             "dir": f"systems/{s['slug']}",

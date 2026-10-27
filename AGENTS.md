@@ -81,8 +81,10 @@ illustrations or brand colours into something that ships
 - **New packages follow the layout** in
   [docs/PACKAGE.md](docs/PACKAGE.md#layout), with the README in its outline,
   and label every value ([docs/EVIDENCE.md](docs/EVIDENCE.md)). Add each one
-  to [catalog.json](catalog.json), with `platform`, `tags` and a `preview`
-  block, in the same commit ([docs/PACKAGE.md](docs/PACKAGE.md) has the steps).
+  to [catalog.json](catalog.json), with `platform`, `tags`, a `preview`
+  block and a `capture` block (the extraction's provenance:
+  [docs/CAPTURE.md](docs/CAPTURE.md)), in the same commit
+  ([docs/PACKAGE.md](docs/PACKAGE.md) has the steps).
 - **The Brief is generated.** Every package README's `## Brief` section is
   written by `make brief` ([tools/brief.py](tools/brief.py)) from the
   package's catalog entry, tokens file and README. Read it first when you use
