@@ -128,7 +128,8 @@ def catalog_table(audit: dict, systems: list[dict]) -> str:
     rank = {s["slug"]: i for i, s in enumerate(scorecard.ranked(audit["systems"]))}
     rows = sorted(systems, key=lambda s: (rank.get(s["slug"], len(rank)), s["slug"]))
     lines = [f"<!-- catalog:start. {NOTE} -->", "",
-             "| Package | Good for | Captured | Themes | Health | Layout gaps |", "|---|---|---|---|---|---|"]
+             "| Icon | Package | Good for | Captured | Themes | Health | Layout gaps |",
+             "|---|---|---|---|---|---|---|"]
     for s in rows:
         slug = s["slug"]
         g = graded.get(slug)
@@ -137,7 +138,8 @@ def catalog_table(audit: dict, systems: list[dict]) -> str:
             health += ", re-review due"
         missing, _ = catalog.layout_gaps(slug)
         gaps = ", ".join(f"`{m}`" for m in missing) or "none"
-        lines.append(f"| [{slug}](systems/{slug}/README.md) | {cell(s.get('goodFor', ''))} | {s.get('captured', '')} "
+        lines.append(f"| <img src=\"systems/{slug}/icon.png\" width=\"20\" alt=\"{slug}\"> | "
+                     f"[{slug}](systems/{slug}/README.md) | {cell(s.get('goodFor', ''))} | {s.get('captured', '')} "
                      f"| {', '.join(s.get('themes', []))} | {health} | {gaps} |")
     lines += ["", "<!-- catalog:end -->", ""]
     return "\n".join(lines)

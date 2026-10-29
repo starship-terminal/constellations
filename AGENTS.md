@@ -189,7 +189,7 @@ make check
 
 It confirms every folder under `systems/` has a catalog entry, every entry's
 files exist, every package has `README.md`, `style-guide.html` and `tools/`,
-every `preview` token path resolves, every package's `DESIGN.md` matches a
+every `preview` path (cover, `icon.png`) and token path resolves, every package's `DESIGN.md` matches a
 fresh generation, every README's Brief matches a fresh write, the scorecard's scripted grades are current, every
 README's Health section matches the scorecard, and the three refero stores
 (`refero/refero.db`, the `refero/<slug>/` folders, `refero/catalog.json`)

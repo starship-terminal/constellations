@@ -927,7 +927,7 @@ A token set and component reference for Notion Calendar 1.142.0 for macOS (forme
 
 Everything was read live from the running app over Chromium's remote-debugging port with the Electron route that [cursor-desktop](../cursor-desktop/README.md) piloted ([issue 107](https://github.com/c-wenlong/designs/issues/107)): full-window screenshots of every screen and state, the custom properties as they compute and paint on `<html>`, and the computed style of every captured part in every state. Use it to build a calm, dense calendar or planner: a light wash sidebar beside a white (or near-black) grid, hairline edges drawn as 1px inset shadows instead of borders, 13px medium labels on 30px controls with 6px corners, the one blue accent kept for primary actions, switches and focus, red only for today, and menus and tooltips that stay dark in both themes. Notion's iPhone app is [notion-ios](../notion-ios/README.md); the Notion desktop app is being captured separately as `notion-desktop`. No value here was taken from either.
 
-This package contains no Notion code, icons or artwork; the screenshots and the visual system they show are Notion's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
+This package contains no Notion code or artwork beyond the app icon (`icon.png`); the screenshots and the visual system they show are Notion's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
 
 ## Colors
 

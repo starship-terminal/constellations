@@ -547,7 +547,7 @@ The window is the capy.ai web app inside a desktop frame. Capy 0.4.7 does not lo
 
 Everything was read live from the running app over Chromium's remote-debugging port, with Playwright connected over CDP, using the route the [cursor-desktop](../cursor-desktop/README.md) pilot built for the Electron coding harnesses in [issue 107](https://github.com/c-wenlong/designs/issues/107): full-window screenshots of every screen and state, every custom property the stylesheets declare as it computes and paints, and the computed style of every captured part in every state. Use it to build a calm, dense agent app: an off-white or near-black window with a rounded content panel set into it, Inter at 13px, hairline edges at 0.5px, text tiers mixed from one ink, and one teal accent for starting work and for on-states.
 
-This package contains no Capy code, icons or artwork; the screenshots and the visual system they show are Scrapybara's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
+This package contains no Capy code or artwork beyond the app icon (`icon.png`); the screenshots and the visual system they show are Scrapybara's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
 
 ## Colors
 
