@@ -4,7 +4,7 @@ A token set and component reference for Conductor's desktop app for macOS (bundl
 
 Conductor is a Tauri app: its binary links AppKit and WebKit and carries `wry` and `tauri://localhost`, so the interface is HTML and CSS drawn in a WKWebView, with no Chromium debugging port. The web view is inspectable, so everything was read live through Safari's Web Inspector: every custom property the stylesheets declare, as it computes and paints in each theme, and the computed style of every captured part in every state, with full-window screenshots of each screen. It is the first package captured this way, for [issue 107](https://github.com/c-wenlong/designs/issues/107). Use it to build a warm, dense desktop tool for agents: stone-brown neutrals instead of grey, a quiet sidebar, chat tabs over a plain conversation, ink for the primary action, and a tan accent for links and focus.
 
-This package contains no Conductor code, icons or artwork; the screenshots and the visual system they show are Conductor's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
+This package contains no Conductor code or artwork beyond the app icon (`icon.png`); the screenshots and the visual system they show are Conductor's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
 
 | File | What it is |
 |---|---|

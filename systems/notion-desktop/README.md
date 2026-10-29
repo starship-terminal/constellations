@@ -4,7 +4,7 @@ A token set and component reference for Notion's desktop app for macOS, version 
 
 Everything was read live from the running app over Chromium's remote-debugging port with the Electron route that [cursor-desktop](../cursor-desktop/README.md) piloted ([issue 107](https://github.com/c-wenlong/designs/issues/107)): full-window screenshots of every screen and state, Notion's theme custom properties as they compute and paint, and the computed style of every captured part in every state. [Compared with the earlier desktop routes](#compared-with-the-earlier-desktop-routes) says what differed. Use it to build a calm document and database workspace: a warm secondary grey for the sidebar, a white or near-black page with a 720px column of blocks, ghost controls that only fill on hover, one raised menu surface, coloured pills from ten hue families, and a single blue accent. Notion's iPhone app is in [notion-ios](../notion-ios/README.md); [How desktop differs from iOS](#how-desktop-differs-from-ios) compares the two, and no value here was taken from it.
 
-This package contains no Notion code, icons or artwork; the screenshots and the visual system they show are Notion Labs' ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
+This package contains no Notion code or artwork beyond the app icon (`icon.png`); the screenshots and the visual system they show are Notion Labs' ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
 
 | File | What it is |
 |---|---|

@@ -4,7 +4,7 @@ A token set and component reference for OpenAI's Codex desktop app for macOS, ve
 
 Everything was read live from the running app over Chromium's remote-debugging port with the Electron route that [cursor-desktop](../cursor-desktop/README.md) piloted ([issue 107](https://github.com/c-wenlong/designs/issues/107)): full-window screenshots of every screen and state, the theme's custom properties as they compute and paint, and the computed style of every captured part in every state. [Compared with Cursor and Devin](#compared-with-cursor-and-devin) says what differed. Use it to build a dense desktop agent tool whose whole palette comes from four inputs (a window colour, an ink colour, an accent and a contrast number): a rail and a slightly darker sidebar, raised surfaces only for the composer, menus and cards, every neutral the ink at a fixed alpha, an ink pill for the one primary action, and the accent kept for switches, focus and links. ChatGPT's web and iPhone apps are in [chatgpt](../chatgpt/README.md) and [chatgpt-ios](../chatgpt-ios/README.md); they share the kit's names but no value here was taken from them.
 
-This package contains no OpenAI code, icons or artwork; the screenshots and the visual system they show are OpenAI's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
+This package contains no OpenAI code or artwork beyond the app icon (`icon.png`); the screenshots and the visual system they show are OpenAI's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
 
 | File | What it is |
 |---|---|

@@ -1156,7 +1156,7 @@ A token set and component reference for Grok Bot's desktop app for macOS (SpaceX
 
 Everything was read live from the running app over Chromium's remote-debugging port, with the capture scripts [cursor-desktop](../cursor-desktop/README.md) piloted for this route: full-window screenshots of every screen and state, the custom properties of both colour layers as they compute and paint, and the computed style of every captured part in every state. Use it to build a calm desktop chat or agent app: a near-black or white window, a darker sidebar of characters and grouped rows, pill controls, raised bubbles with no borders, an ink primary button, and one colour per Bot that fills the owner's messages and the voice button. For Grok Bot's iOS app see [grokbot](../grokbot/README.md); [How desktop differs from iOS](#how-desktop-differs-from-ios) compares them, and no value here was taken from it.
 
-This package contains no Grok Bot code, icons, Bot characters or artwork; the screenshots and the visual system they show are SpaceXAI's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the characters or the brand.
+This package contains no Grok Bot code, Bot characters or artwork beyond the app icon (`icon.png`); the screenshots and the visual system they show are SpaceXAI's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the characters or the brand.
 
 ## Colors
 

@@ -13,25 +13,29 @@ detail pages and the root README's catalog table show it. It sits at
 `preview.icon` names it.
 
 Sources tried in order: the site's own `apple-touch-icon` link (or
-/apple-touch-icon.png), the largest `<link rel="icon">` PNG the page declares,
-then Google's faviconV2 endpoint (the same route the refero mirror uses). The
-result is normalised to at most 128 px on a side with macOS `sips`, keeping its
-format's transparency; SVG and unreadable responses are skipped, which is how
-the faviconV2 fallback gets reached for sites that ship only vector icons.
+/apple-touch-icon.png), the largest `<link rel="icon">` raster it declares,
+then Google's faviconV2 endpoint (the same route the refero mirror uses). Only
+http(s) URLs are opened — a scraped link can name `file:` or another scheme,
+and those are skipped. The result is normalised to at most 128 px on a side
+with macOS `sips`, or Pillow when sips is absent or fails (the same fallback
+tools/catalog.py uses for gallery thumbnails); SVGs and unreadable responses
+are skipped, which is how faviconV2 gets reached for sites that ship only
+vector icons.
 
-Standard library only plus `sips`. Run from anywhere.
+Standard library only plus `sips` or Pillow. Run from anywhere.
 """
 from __future__ import annotations
 
 import argparse
 import importlib.util
 import json
-import re
+import shutil
 import subprocess
 import sys
 import tempfile
 import urllib.parse
 import urllib.request
+from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -51,49 +55,84 @@ CONTENT_EXT = {"png": ".png", "x-icon": ".ico", "vnd.microsoft.icon": ".ico",
                "jpeg": ".jpg", "gif": ".gif", "webp": ".webp", "svg": ".svg"}
 
 
-def fetch(url: str, timeout: int = 20) -> tuple[bytes, str] | None:
-    """(body, content-type) of a URL, or None. A non-image response is None."""
+def fetch(url: str, timeout: int = 20) -> tuple[bytes, str, str] | None:
+    """(body, content-type, final url) of an http(s) URL, or None. A scraped icon
+    link can carry any scheme — `file:` would read a local file into the package,
+    so only http and https are ever opened."""
+    if urllib.parse.urlparse(url).scheme not in ("http", "https"):
+        return None
     try:
         req = urllib.request.Request(url, headers=UA)
         with urllib.request.urlopen(req, timeout=timeout) as r:
             ctype = (r.headers.get("Content-Type") or "").split(";")[0].strip().lower()
-            return r.read(8 << 20), ctype
+            return r.read(8 << 20), ctype, r.geturl()
     except (OSError, urllib.error.URLError):
         return None
 
 
+class IconLinks(HTMLParser):
+    """The icon a page prefers: its <link> tags' rel, href and declared size."""
+
+    def __init__(self):
+        super().__init__()
+        self.links = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "link":
+            attr = {k.lower(): (v or "") for k, v in attrs}
+            if "rel" in attr and "href" in attr:
+                self.links.append(attr)
+
+
 def candidates(home: str) -> list[str]:
     """Icon URLs for a product page, best first: the apple-touch-icon the page
-    declares (then the stock path), the largest PNG favicon link, then faviconV2."""
-    parsed = urllib.parse.urlparse(home)
-    base = f"{parsed.scheme}://{parsed.netloc}"
+    declares (then the stock path), the largest raster favicon link, then
+    faviconV2. Relative links resolve against the page's final URL, so a
+    redirect still finds them."""
     out, page = [], fetch(home)
     links = []
     if page and "html" in page[1]:
-        for tag in re.findall(r"<link\b[^>]*>", page[0].decode("utf-8", "replace"), re.I):
-            rel = re.search(r'rel=["\']([^"\']+)', tag, re.I)
-            href = re.search(r'href=["\']([^"\']+)', tag, re.I)
-            sizes = re.search(r'sizes=["\'](\d+)', tag, re.I)
-            if rel and href:
-                links.append((rel.group(1).lower(), urllib.parse.urljoin(home, href.group(1)),
-                              int(sizes.group(1)) if sizes else 0))
+        final = page[2]  # after any redirect: the URL the HTML actually came from
+        parser = IconLinks()
+        parser.feed(page[0].decode("utf-8", "replace"))
+        for attr in parser.links:
+            size = next((int(w) for w in attr.get("sizes", "").split() if w.isdigit()), 0)
+            links.append((attr["rel"].lower(), urllib.parse.urljoin(final, attr["href"]), size))
+        base = final
+    else:
+        parsed = urllib.parse.urlparse(home)
+        base = f"{parsed.scheme}://{parsed.netloc}"
     out += [u for rel, u, _ in links if "apple-touch-icon" in rel]
-    out.append(base + "/apple-touch-icon.png")
+    host = urllib.parse.urlparse(base)
+    out.append(f"{host.scheme}://{host.netloc}/apple-touch-icon.png")
     raster = [(size, u) for rel, u, size in links
               if "icon" in rel and "apple" not in rel and not u.lower().endswith(".svg")]
     out += [u for _, u in sorted(raster, reverse=True)]
-    if fav := refero_media.favicon_url(base):
+    if fav := refero_media.favicon_url(f"{host.scheme}://{host.netloc}"):
         out.append(fav)
     return out
 
 
 def convert(src: Path, dst: Path) -> bool:
-    """src -> dst as a PNG of at most SIZE px on a side. sips reads what the file
-    holds, not its extension, but it needs one it knows, so callers name the temp
-    file after the response's Content-Type."""
-    done = subprocess.run(["sips", "-s", "format", "png", "-Z", str(SIZE), str(src),
-                           "--out", str(dst)], capture_output=True)
-    return done.returncode == 0 and dst.exists() and dst.stat().st_size > 0
+    """src -> dst as a PNG of at most SIZE px on a side. sips first (it reads what
+    the file holds, not its extension, but callers name the temp file after the
+    response's Content-Type), then Pillow where it is installed."""
+    if shutil.which("sips"):
+        done = subprocess.run(["sips", "-s", "format", "png", "-Z", str(SIZE), str(src),
+                               "--out", str(dst)], capture_output=True)
+        if done.returncode == 0 and dst.exists() and dst.stat().st_size > 0:
+            return True
+    try:
+        from PIL import Image
+    except ImportError:
+        return False
+    try:
+        with Image.open(src) as im:
+            im.thumbnail((SIZE, SIZE))
+            im.save(dst, "PNG")
+    except OSError:
+        return False
+    return dst.exists() and dst.stat().st_size > 0
 
 
 def fetch_icon(slug: str, home: str | None, icon_url: str | None) -> Path:

@@ -4,7 +4,7 @@ A token set and component reference for Orca's desktop app for macOS (stablyai, 
 
 Everything was read live from the running app over Chromium's remote-debugging port, with Playwright connected over CDP, using the route the [cursor-desktop](../cursor-desktop/README.md) pilot built for the Electron coding harnesses in [issue 107](https://github.com/c-wenlong/designs/issues/107): full-window screenshots of every screen and state, every custom property the stylesheets declare as it computes and paints, and the computed style of every captured part in every state. Use it to build a calm, neutral desktop tool on shadcn/ui: white or near-black panes, a grey sidebar, ink (not a hue) as the primary colour, 8px controls and 14px cards in Geist, red kept for removal only.
 
-This package contains no Orca code, icons or artwork; the screenshots and the visual system they show are stablyai's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
+This package contains no Orca code or artwork beyond the app icon (`icon.png`); the screenshots and the visual system they show are stablyai's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
 
 | File | What it is |
 |---|---|

@@ -368,7 +368,7 @@ A token set and component reference for Zed, the code editor, version 1.25.2 for
 
 Zed is open source, and its built-in themes are published as JSON. Every colour here is the value One Dark or One Light declares in `assets/themes/one/one.json` at the v1.25.2 release commit, and a sample of them was checked against the window's pixels: all 38 comparisons agree to within 1 per channel. Sizes, radii, spacing and type sizes come from the 2x window captures. Use it to build a dense desktop editor or agent tool: three tiers of grey (chrome, panels, editor), one blue accent, ghost controls that change fill on hover, small radii and a monospace buffer.
 
-This package contains no Zed code and none of its icons; the theme file is MIT-licensed (copyright GitHub Inc., from Atom's One theme) and is kept in `raw/` with its licence. The screenshots and the visual system they show are Zed Industries' ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
+This package contains no Zed code and none of its icons beyond the app icon (`icon.png`); the theme file is MIT-licensed (copyright GitHub Inc., from Atom's One theme) and is kept in `raw/` with its licence. The screenshots and the visual system they show are Zed Industries' ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
 
 ## Colors
 

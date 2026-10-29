@@ -4,7 +4,7 @@ A token set and component reference for Superset's desktop app for macOS, versio
 
 Everything was read live from the running app over Chromium's remote-debugging port, with Playwright connected over CDP, using the capture scripts of [cursor-desktop](../cursor-desktop/README.md) (the pilot of [issue 107](https://github.com/c-wenlong/designs/issues/107)) with Superset's own shot list: full-window screenshots of every screen and state, the custom properties as they compute and paint, the colours Superset's theme engine writes, and the computed style of every captured part in every state. Use it to build a dense desktop tool for running agents: a warm near-black or near-white window, a slightly darker sidebar, ink primary buttons instead of a brand hue, shadcn/ui components on Tailwind's scale, and the work itself in terminal panes.
 
-This package contains no Superset code, icons or artwork; the screenshots and the visual system they show are Superset's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
+This package contains no Superset code or artwork beyond the app icon (`icon.png`); the screenshots and the visual system they show are Superset's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
 
 | File | What it is |
 |---|---|

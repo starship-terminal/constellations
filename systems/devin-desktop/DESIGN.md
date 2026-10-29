@@ -515,7 +515,7 @@ A token set and component reference for the Devin desktop app for macOS (Cogniti
 
 Everything was read live from the running app over Chromium's remote-debugging port with the Electron route that [cursor-desktop](../cursor-desktop/README.md) piloted ([issue 107](https://github.com/c-wenlong/designs/issues/107)): full-window screenshots of every screen and state, the theme's custom properties as they compute and paint, the Tailwind utility classes the screens use, and the computed style of every captured part in every state. [Compared with Cursor](#compared-with-cursor) says what differed. Use it to build a dense desktop agent tool: a near-black or near-white page, a quiet sidebar on the same page colour, raised surfaces only for the composer, cards and popups, every neutral one colour at fixed alphas, an ink button for page actions and blue only for focus, links and the selected switch.
 
-This package contains no Devin code, icons or artwork; the screenshots and the visual system they show are Cognition's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
+This package contains no Devin code or artwork beyond the app icon (`icon.png`); the screenshots and the visual system they show are Cognition's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
 
 ## Colors
 

@@ -4,7 +4,7 @@ A token set and component reference for Cursor's desktop app for macOS (Anyspher
 
 Everything was read live from the running app over Chromium's remote-debugging port, with Playwright connected over CDP: full-window screenshots of every screen and state, the custom properties of the theme engine as they compute and paint, and the computed style of every captured part in every state. It is the first package captured this way and the pilot for the other Electron coding harnesses tracked in [issue 107](https://github.com/c-wenlong/designs/issues/107); [Rebuild](#rebuild) says what another app copies. Use it to build a dense desktop agent or developer tool: a near-black or off-white window, a quiet sidebar, raised surfaces only where something floats, text and fills made from one base colour at fixed alphas, and a single blue accent. For Cursor's iOS app see [cursor-ios](../cursor-ios/README.md); no value here was taken from it.
 
-This package contains no Cursor code, icons or artwork; the screenshots and the visual system they show are Anysphere's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
+This package contains no Cursor code or artwork beyond the app icon (`icon.png`); the screenshots and the visual system they show are Anysphere's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the brand.
 
 | File | What it is |
 |---|---|

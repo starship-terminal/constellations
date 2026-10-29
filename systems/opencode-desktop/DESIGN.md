@@ -676,7 +676,7 @@ A token set and component reference for OpenCode's desktop app for macOS (Anomal
 
 Everything was read live from the running app over Chromium's remote-debugging port, with the capture scripts [cursor-desktop](../cursor-desktop/README.md) piloted for this route: full-window screenshots of every screen and state, the custom properties of the theme engine as they compute and paint, and the computed style of every captured part in every state. Use it to build a quiet desktop coding agent: a rounded panel under a strip of tabs, no sidebar, a single centred transcript with the prompt as the only bubble, tool calls folded into one muted line, a raised composer with an ink Send button, Inter at a 440 weight with IBM Plex Mono for code, and every colour role pointing at a step of one grey ramp or eight hue ramps.
 
-This package contains no OpenCode code, icons, wordmark or artwork; the screenshots and the visual system they show are Anomaly's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). OpenCode itself is MIT-licensed open source, but the brand is a registered trademark. Borrow structure and proportions, not the brand.
+This package contains no OpenCode code, wordmark or artwork beyond the app icon (`icon.png`); the screenshots and the visual system they show are Anomaly's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). OpenCode itself is MIT-licensed open source, but the brand is a registered trademark. Borrow structure and proportions, not the brand.
 
 ## Colors
 
