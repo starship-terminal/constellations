@@ -22,6 +22,7 @@ shows the gaps beside every package.
 | Path | Required | What it is |
 |---|---|---|
 | `README.md` | yes | The entry file. Read it in full before using anything else. [The README](#the-readme) lists its sections |
+| `icon.png` | | The product's app or site icon (128 px PNG), fetched from its site by `tools/fetch_icon.py`; the gallery and the root README's catalog table show it so the package is identifiable at a glance |
 | `DESIGN.md` | yes | A generated, read-only copy of the tokens in Google's DESIGN.md format, for tools that read that format. Never edit it by hand; see [DESIGN.md](#designmd) below |
 | `tokens.json` | | W3C DTCG tokens in Tokens Studio's multi-set layout: a `core` set of scales, a `light` and usually a `dark` semantic set, and `$themes`. Every token carries `$extensions.source`. [catalog.json](../catalog.json) names the tokens file for each package, so a package that keeps it elsewhere still works |
 | `style-guide.html` | yes | One page that renders every token and the main components with the real values, with a theme toggle |
@@ -197,7 +198,9 @@ from one of two rules the export cannot satisfy without inventing data:
 4. Add an entry to [catalog.json](../catalog.json). The entry needs a `platform`,
    one of `web`, `mobile` or `desktop` for what the product runs on (the
    scorecard grades it against that platform's wording), `tags`, and a `preview`:
-   a cover screenshot and the token paths for its swatches (`page`,
+   a cover screenshot, the product's `icon` (`python3 tools/fetch_icon.py
+   <slug>` writes `icon.png` from the product's site) and the token paths for
+   its swatches (`page`,
    `surface`, `text`, `muted`, `accent`, `border` per theme) and fonts. Copy
    an existing entry, then run `make design-md` and `make check`, which
    resolves every token path, fails on one that does not exist, and fails if

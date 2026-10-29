@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "about": "One entry per package under systems/. Paths are relative to the repository root. Every package has README.md (the entry) and style-guide.html at its top level; docs/PACKAGE.md describes what sits underneath. tags are for search and filtering. preview names the gallery cover screenshot and the token paths the catalog site resolves into swatches and fonts, so every value shown traces back to tokens. An empty widths list means the package README is the place to look. platform is web, mobile or desktop: the scorecard grades the package against that platform's wording of each criterion (scorecard/criteria.json). Run `make check` after editing. designMd, where present, overrides the token path prefixes `make design-md` reads for a package's DESIGN.md (colors, typography, rounded, spacing); the defaults are the swatches' semantic set and core.typography, core.radius, core.spacing or core.space.",
+  "about": "One entry per package under systems/. Paths are relative to the repository root. Every package has README.md (the entry) and style-guide.html at its top level; docs/PACKAGE.md describes what sits underneath. tags are for search and filtering. preview names the gallery cover screenshot, the product's `icon.png` and the token paths the catalog site resolves into swatches and fonts, so every value shown traces back to tokens. An empty widths list means the package README is the place to look. platform is web, mobile or desktop: the scorecard grades the package against that platform's wording of each criterion (scorecard/criteria.json). Run `make check` after editing. designMd, where present, overrides the token path prefixes `make design-md` reads for a package's DESIGN.md (colors, typography, rounded, spacing); the defaults are the swatches' semantic set and core.typography, core.radius, core.spacing or core.space.",
   "categories": {
     "learning": "Learning",
     "ai-chat": "AI chat",
@@ -49,6 +49,7 @@
       "styleGuide": "systems/duolingo/style-guide.html",
       "preview": {
         "cover": "systems/duolingo/screenshots/learn-light-default.png",
+        "icon": "systems/duolingo/icon.png",
         "swatches": {
           "light": {
             "page": "light.background.page",
@@ -109,6 +110,7 @@
       "styleGuide": "systems/brilliant/style-guide.html",
       "preview": {
         "cover": "systems/brilliant/screenshots/home-light-default.png",
+        "icon": "systems/brilliant/icon.png",
         "swatches": {
           "light": {
             "page": "light.bg.primary",
@@ -169,6 +171,7 @@
       "styleGuide": "systems/notebooklm/style-guide.html",
       "preview": {
         "cover": "systems/notebooklm/screenshots/home-light.png",
+        "icon": "systems/notebooklm/icon.png",
         "swatches": {
           "light": {
             "page": "light.bg.page",
@@ -229,6 +232,7 @@
       "styleGuide": "systems/coursera/style-guide.html",
       "preview": {
         "cover": "systems/coursera/screenshots/course-light-default.png",
+        "icon": "systems/coursera/icon.png",
         "swatches": {
           "light": {
             "page": "light.neutral.background-primary",
@@ -287,6 +291,7 @@
       "styleGuide": "systems/gauth/style-guide.html",
       "preview": {
         "cover": "systems/gauth/screenshots/home-light-default.png",
+        "icon": "systems/gauth/icon.png",
         "swatches": {
           "light": {
             "page": "light.background.page",
@@ -338,6 +343,7 @@
       "styleGuide": "systems/researchrabbit/style-guide.html",
       "preview": {
         "cover": "systems/researchrabbit/screenshots/library-map-light-default.png",
+        "icon": "systems/researchrabbit/icon.png",
         "swatches": {
           "light": {
             "page": "light.background.page",
@@ -394,6 +400,7 @@
       "styleGuide": "systems/manus/style-guide.html",
       "preview": {
         "cover": "systems/manus/screenshots/home-light.png",
+        "icon": "systems/manus/icon.png",
         "swatches": {
           "light": {
             "page": "light.background.gray-main",
@@ -455,6 +462,7 @@
       "styleGuide": "systems/chatgpt/style-guide.html",
       "preview": {
         "cover": "systems/chatgpt/screenshots/home-light.png",
+        "icon": "systems/chatgpt/icon.png",
         "swatches": {
           "light": {
             "page": "light.role.bg.page",
@@ -515,6 +523,7 @@
       "styleGuide": "systems/claude/style-guide.html",
       "preview": {
         "cover": "systems/claude/screenshots/home-light.png",
+        "icon": "systems/claude/icon.png",
         "swatches": {
           "light": {
             "page": "light.surface.page",
@@ -581,6 +590,7 @@
       "styleGuide": "systems/hevy/style-guide.html",
       "preview": {
         "cover": "systems/hevy/screenshots/light/01-home.png",
+        "icon": "systems/hevy/icon.png",
         "swatches": {
           "light": {
             "page": "light.color.bg.page",
@@ -645,6 +655,7 @@
       "styleGuide": "systems/tokentracker/style-guide.html",
       "preview": {
         "cover": "systems/tokentracker/screenshots/dashboard-dark-default.png",
+        "icon": "systems/tokentracker/icon.png",
         "swatches": {
           "light": {
             "page": "light.bg.wash",
@@ -700,6 +711,7 @@
       "styleGuide": "systems/linear/style-guide.html",
       "preview": {
         "cover": "systems/linear/screenshots/01-home.png",
+        "icon": "systems/linear/icon.png",
         "swatches": {
           "dark": {
             "page": "dark.color.bg.page",
@@ -779,6 +791,7 @@
       "styleGuide": "systems/polaris/style-guide.html",
       "preview": {
         "cover": "systems/polaris/screenshots/01-overview.png",
+        "icon": "systems/polaris/icon.png",
         "swatches": {
           "light": {
             "page": "light.color.color-bg",
@@ -848,6 +861,7 @@
       "styleGuide": "systems/grokbot/style-guide.html",
       "preview": {
         "cover": "systems/grokbot/screenshots/dark/01-home.png",
+        "icon": "systems/grokbot/icon.png",
         "swatches": {
           "light": {
             "page": "light.color.bg.page",
@@ -909,6 +923,7 @@
       "styleGuide": "systems/telegram/style-guide.html",
       "preview": {
         "cover": "systems/telegram/screenshots/dark/02-chat-list-folders-tabbar.png",
+        "icon": "systems/telegram/icon.png",
         "swatches": {
           "light": {
             "page": "light.color.bg.chats",
@@ -971,6 +986,7 @@
       "styleGuide": "systems/youtube/style-guide.html",
       "preview": {
         "cover": "systems/youtube/screenshots/dark/14-chip-selected-video-cards-preview.png",
+        "icon": "systems/youtube/icon.png",
         "swatches": {
           "light": {
             "page": "light.color.bg.page",
@@ -1034,6 +1050,7 @@
       "styleGuide": "systems/gemini/style-guide.html",
       "preview": {
         "cover": "systems/gemini/screenshots/dark/04-home-greeting-chat-task-toggle-composer.png",
+        "icon": "systems/gemini/icon.png",
         "swatches": {
           "light": {
             "page": "light.color.bg.page",
@@ -1096,6 +1113,7 @@
       "styleGuide": "systems/spotify/style-guide.html",
       "preview": {
         "cover": "systems/spotify/screenshots/dark/02-home.png",
+        "icon": "systems/spotify/icon.png",
         "swatches": {
           "dark": {
             "page": "dark.color.bg.page",
@@ -1151,6 +1169,7 @@
       "styleGuide": "systems/grab/style-guide.html",
       "preview": {
         "cover": "systems/grab/screenshots/light/01-home-tiles-search.png",
+        "icon": "systems/grab/icon.png",
         "swatches": {
           "light": {
             "page": "light.color.bg.page",
@@ -1205,6 +1224,7 @@
       "styleGuide": "systems/github-ios/style-guide.html",
       "preview": {
         "cover": "systems/github-ios/screenshots/dark/01-home-my-work-favorites-empty-shortcuts.png",
+        "icon": "systems/github-ios/icon.png",
         "swatches": {
           "light": {
             "page": "light.color.bg.page",
@@ -1269,6 +1289,7 @@
       "styleGuide": "systems/claude-ios/style-guide.html",
       "preview": {
         "cover": "systems/claude-ios/screenshots/dark/07-chat-thread-user-bubble-response-actions.png",
+        "icon": "systems/claude-ios/icon.png",
         "swatches": {
           "light": {
             "page": "light.color.bg.page",
@@ -1333,6 +1354,7 @@
       "styleGuide": "systems/substack/style-guide.html",
       "preview": {
         "cover": "systems/substack/screenshots/dark/03-read-tabs-featured-card-inbox-unread.png",
+        "icon": "systems/substack/icon.png",
         "swatches": {
           "light": {
             "page": "light.color.bg.page",
@@ -1399,6 +1421,7 @@
       "styleGuide": "systems/notion-ios/style-guide.html",
       "preview": {
         "cover": "systems/notion-ios/screenshots/dark/01-home-sidebar-tree.png",
+        "icon": "systems/notion-ios/icon.png",
         "swatches": {
           "light": {
             "page": "light.color.bg.page",
@@ -1461,6 +1484,7 @@
       "styleGuide": "systems/chatgpt-ios/style-guide.html",
       "preview": {
         "cover": "systems/chatgpt-ios/screenshots/dark/06-chat-thread-blue-bubble-math.png",
+        "icon": "systems/chatgpt-ios/icon.png",
         "swatches": {
           "light": {
             "page": "light.color.bg.page",
@@ -1525,6 +1549,7 @@
       "styleGuide": "systems/arcsearch/style-guide.html",
       "preview": {
         "cover": "systems/arcsearch/screenshots/dark/12-page-menu-address-actions.png",
+        "icon": "systems/arcsearch/icon.png",
         "swatches": {
           "light": {
             "page": "light.color.bg.sheet",
@@ -1587,6 +1612,7 @@
       "styleGuide": "systems/cursor-ios/style-guide.html",
       "preview": {
         "cover": "systems/cursor-ios/screenshots/dark/02-inbox-tiles-projects-workspaces.png",
+        "icon": "systems/cursor-ios/icon.png",
         "swatches": {
           "light": {
             "page": "light.color.bg.page",
@@ -1654,6 +1680,7 @@
       "styleGuide": "systems/cursor-desktop/style-guide.html",
       "preview": {
         "cover": "systems/cursor-desktop/screenshots/dark/home-default.png",
+        "icon": "systems/cursor-desktop/icon.png",
         "swatches": {
           "light": {
             "page": "light.role.page",
@@ -1721,6 +1748,7 @@
       "styleGuide": "systems/devin-desktop/style-guide.html",
       "preview": {
         "cover": "systems/devin-desktop/screenshots/dark/conversation-local.png",
+        "icon": "systems/devin-desktop/icon.png",
         "swatches": {
           "light": {
             "page": "light.role.page",
@@ -1790,6 +1818,7 @@
       "styleGuide": "systems/superset-desktop/style-guide.html",
       "preview": {
         "cover": "systems/superset-desktop/screenshots/dark/workspace-default.png",
+        "icon": "systems/superset-desktop/icon.png",
         "swatches": {
           "light": {
             "page": "light.role.page",
@@ -1859,6 +1888,7 @@
       "styleGuide": "systems/orca-desktop/style-guide.html",
       "preview": {
         "cover": "systems/orca-desktop/screenshots/dark/conversation.png",
+        "icon": "systems/orca-desktop/icon.png",
         "swatches": {
           "light": {
             "page": "light.role.page",
@@ -1930,6 +1960,7 @@
       "styleGuide": "systems/capy-desktop/style-guide.html",
       "preview": {
         "cover": "systems/capy-desktop/screenshots/dark/home.png",
+        "icon": "systems/capy-desktop/icon.png",
         "swatches": {
           "light": {
             "page": "light.role.page",
@@ -2000,6 +2031,7 @@
       "styleGuide": "systems/conductor-desktop/style-guide.html",
       "preview": {
         "cover": "systems/conductor-desktop/screenshots/dark/conversation.png",
+        "icon": "systems/conductor-desktop/icon.png",
         "swatches": {
           "light": {
             "page": "light.role.page",
@@ -2065,6 +2097,7 @@
       "styleGuide": "systems/luma-ios/style-guide.html",
       "preview": {
         "cover": "systems/luma-ios/screenshots/dark/01-home-your-events-calendars.png",
+        "icon": "systems/luma-ios/icon.png",
         "swatches": {
           "light": {
             "page": "light.color.bg.page",
@@ -2130,6 +2163,7 @@
       "styleGuide": "systems/grokbot-desktop/style-guide.html",
       "preview": {
         "cover": "systems/grokbot-desktop/screenshots/dark/home-default.png",
+        "icon": "systems/grokbot-desktop/icon.png",
         "swatches": {
           "light": {
             "page": "light.role.page",
@@ -2196,6 +2230,7 @@
       "styleGuide": "systems/opencode-desktop/style-guide.html",
       "preview": {
         "cover": "systems/opencode-desktop/screenshots/dark/conversation.png",
+        "icon": "systems/opencode-desktop/icon.png",
         "swatches": {
           "light": {
             "page": "light.role.page",
@@ -2265,6 +2300,7 @@
       "styleGuide": "systems/codex-desktop/style-guide.html",
       "preview": {
         "cover": "systems/codex-desktop/screenshots/dark/conversation.png",
+        "icon": "systems/codex-desktop/icon.png",
         "swatches": {
           "light": {
             "page": "light.role.page",
@@ -2333,6 +2369,7 @@
       "styleGuide": "systems/notion-calendar-desktop/style-guide.html",
       "preview": {
         "cover": "systems/notion-calendar-desktop/screenshots/dark/week-default.png",
+        "icon": "systems/notion-calendar-desktop/icon.png",
         "swatches": {
           "light": {
             "page": "light.role.page",
@@ -2404,6 +2441,7 @@
       "styleGuide": "systems/zed-desktop/style-guide.html",
       "preview": {
         "cover": "systems/zed-desktop/screenshots/dark/52-agent-result.png",
+        "icon": "systems/zed-desktop/icon.png",
         "swatches": {
           "light": {
             "page": "light.role.page",
@@ -2472,6 +2510,7 @@
       "styleGuide": "systems/raycast-desktop/style-guide.html",
       "preview": {
         "cover": "systems/raycast-desktop/screenshots/dark/00-root.png",
+        "icon": "systems/raycast-desktop/icon.png",
         "swatches": {
           "light": {
             "page": "light.page",
@@ -2544,6 +2583,7 @@
       "styleGuide": "systems/notion-desktop/style-guide.html",
       "preview": {
         "cover": "systems/notion-desktop/screenshots/dark/page-default.png",
+        "icon": "systems/notion-desktop/icon.png",
         "swatches": {
           "light": {
             "page": "light.role.page",

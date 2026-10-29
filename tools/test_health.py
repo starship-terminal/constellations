@@ -99,7 +99,7 @@ class SectionTest(unittest.TestCase):
     def test_layout_names_missing_parts_and_unlisted_entries(self):
         with Package(entries=("tokens.json", "extra.md", "raw/")):
             text = health.package_section(CRITERIA, audit(), SYSTEM)
-        self.assertIn("no `DESIGN.md`", text)
+        self.assertIn("no `icon.png`, `DESIGN.md`", text)
         self.assertNotIn("`raw/`,", text.split("not in the file table")[0])
         self.assertIn("not in the file table above: `extra.md`, `raw/`", text)
 
@@ -148,8 +148,8 @@ class WriteTest(unittest.TestCase):
         systems = [{"slug": "a"}, {"slug": "b"}, {"slug": "c"}]
         with Package():
             table = health.catalog_table(snap, systems)
-        rows = [line for line in table.splitlines() if line.startswith("| [")]
-        self.assertEqual([r.split("]")[0][3:] for r in rows], ["b", "a", "c"])
+        rows = [line for line in table.splitlines() if "README.md)" in line]
+        self.assertEqual([r.split("]")[0].split("[")[-1] for r in rows], ["b", "a", "c"])
         self.assertIn("not graded yet", rows[2])
 
 

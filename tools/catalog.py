@@ -51,7 +51,7 @@ REQUIRED_FILES = ("README.md", "style-guide.html", "tools")
 # The standard layout (docs/PACKAGE.md#layout). `make check` fails when a package lacks a part
 # its catalog entry does not declare under `layoutGaps` with the reason, or has a top-level
 # entry its README's file table does not describe. Each Health section repeats the gaps.
-STANDARD_PARTS = ("README.md", "DESIGN.md", "tokens.json", "style-guide.html", "components.md",
+STANDARD_PARTS = ("README.md", "icon.png", "DESIGN.md", "tokens.json", "style-guide.html", "components.md",
                   "patterns.md", "components/", "icons/", "screenshots/", "raw/", "tools/")
 REQUIRED_FIELDS = ("slug", "name", "url", "category", "platform", "goodFor", "shape", "captured",
                    "themes", "entry", "tokens", "styleGuide", "preview", "tags")
@@ -1104,6 +1104,9 @@ def check() -> list[str]:
         cover = s["preview"].get("cover")
         if not cover or not (ROOT / cover).exists():
             problems.append(f"{slug}: preview.cover {cover} does not exist")
+        icon = s["preview"].get("icon")
+        if not icon or not (ROOT / icon).exists():
+            problems.append(f"{slug}: preview.icon {icon} does not exist; run `python3 tools/fetch_icon.py {slug}`")
         problems += palette_problems(slug, s["preview"], s.get("themes", []))
         for theme, roles in swatches(s).items():
             for sw in roles:
@@ -1496,6 +1499,7 @@ def build() -> Path:
             "notes": s.get("notes", ""),
             "dir": f"systems/{s['slug']}",
             "cover": cover,
+            "icon": s["preview"].get("icon"),
             "swatches": swatches(s),
             "tokenGroups": [k for k in json.loads((ROOT / s["tokens"]).read_text())
                             if not k.startswith("$")],

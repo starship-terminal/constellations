@@ -112,10 +112,13 @@ function themeBadges(s) {
 const scoreText = (s) => (s.score ? `${s.score.meets}/${s.score.applicable} met` : '');
 const scoreHref = (s) => `../scorecard/systems/${encodeURIComponent(s.slug)}/`;
 
+// The product's app icon: identifies where a package came from at a glance.
+const iconImg = (s) => (s.icon ? `<img class="app-icon" src="${url(s.icon)}" alt="" loading="lazy">` : '');
+
 function card(s) {
   const strips = Object.values(s.swatches).map(strip).join('');
   return `<a class="card" href="#/${esc(s.slug)}">
-    <div class="cover ${portrait(s) ? 'portrait' : ''}"><img loading="lazy" src="${url(s.cover.thumb)}" alt="${esc(s.name)} screenshot"><div class="badges">${themeBadges(s)}</div></div>
+    <div class="cover ${portrait(s) ? 'portrait' : ''}"><img loading="lazy" src="${url(s.cover.thumb)}" alt="${esc(s.name)} screenshot">${iconImg(s)}<div class="badges">${themeBadges(s)}</div></div>
     <div class="card-body">
       <div class="card-title"><h2>${esc(s.name)}</h2><span class="cat">${s.score ? `<span class="score" title="Scorecard, ${esc(s.score.date)}: ${s.score.partly} partly, ${s.score.missing} missing">${scoreText(s)}</span> · ` : ''}${esc(DATA.categories[s.category] || s.category)}</span></div>
       <p class="good">${esc(s.goodFor)}</p>
@@ -127,7 +130,7 @@ function row(s) {
   const first = Object.values(s.swatches)[0] || [];
   return `<tr data-slug="${esc(s.slug)}" tabindex="0">
     <td><div class="thumb"><img loading="lazy" src="${url(s.cover.thumb)}" alt=""></div></td>
-    <td class="nm">${esc(s.name)}</td>
+    <td class="nm">${iconImg(s)}${esc(s.name)}</td>
     <td>${esc(DATA.categories[s.category] || s.category)}</td>
     <td class="gf">${esc(s.goodFor)}</td>
     <td>${strip(first)}</td>
@@ -240,7 +243,7 @@ function renderShell(s) {
   app.innerHTML = `
     <a class="back" href="#/">← All styles</a>
     <header class="pkg-head">
-      <h1>${esc(s.name)}</h1>
+      <h1>${iconImg(s)}${esc(s.name)}</h1>
       <div class="pkg-sub">
         <a class="site" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.url.replace(/^https?:\/\//, ''))} ↗</a>
         <span>${esc(DATA.categories[s.category] || s.category)}</span>

@@ -34,6 +34,7 @@ production bundle ([raw/app-code-notes.md](raw/app-code-notes.md)).
 
 | File | What it is |
 |---|---|
+| [icon.png](icon.png) | The product's app or site icon (128 px PNG), fetched from its site (`tools/fetch_icon.py`); the gallery cards and the root README's catalog table show it so the package is identifiable at a glance |
 | [graph.md](graph.md) | How the graph is laid out, drawn and driven, what each pointer and key does, the motion table, and what the `/learn` map can take from it |
 | [patterns.md](patterns.md) | The app shell, forms, empty and loading states, the destructive confirmation, feedback, search and filtering, data display and onboarding, as the product does them |
 | [style-guide.html](style-guide.html) | One self-contained page rendering every token and the chrome components, with a live canvas graph that reproduces the engine's grammar on sample learning topics, written to be ported |
