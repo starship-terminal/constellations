@@ -120,7 +120,7 @@ function card(s) {
   return `<a class="card" href="#/${esc(s.slug)}">
     <div class="cover ${portrait(s) ? 'portrait' : ''}"><img loading="lazy" src="${url(s.cover.thumb)}" alt="${esc(s.name)} screenshot"><div class="badges">${themeBadges(s)}</div></div>
     <div class="card-body">
-      <div class="card-title">${iconImg(s)}<h2>${esc(s.name)}</h2><span class="cat">${s.score ? `<span class="score" title="Scorecard, ${esc(s.score.date)}: ${s.score.partly} partly, ${s.score.missing} missing">${scoreText(s)}</span> · ` : ''}${esc(DATA.categories[s.category] || s.category)}</span></div>
+      <div class="card-title"><h2>${iconImg(s)}${esc(s.name)}</h2><span class="cat">${s.score ? `<span class="score" title="Scorecard, ${esc(s.score.date)}: ${s.score.partly} partly, ${s.score.missing} missing">${scoreText(s)}</span> · ` : ''}${esc(DATA.categories[s.category] || s.category)}</span></div>
       <p class="good">${esc(s.goodFor)}</p>
       <div class="card-foot"><span class="fontline">${esc(s.fonts.map((f) => f.family).join(' · ') || '—')}</span><div class="strips">${strips}</div></div>
     </div></a>`;
