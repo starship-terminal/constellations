@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "about": "One entry per package under systems/. Paths are relative to the repository root. Every package has README.md (the entry) and style-guide.html at its top level; docs/PACKAGE.md describes what sits underneath. tags are for search and filtering. preview names the gallery cover screenshot, the product's `icon.png` and the token paths the catalog site resolves into swatches and fonts, so every value shown traces back to tokens. An empty widths list means the package README is the place to look. platform is web, mobile or desktop: the scorecard grades the package against that platform's wording of each criterion (scorecard/criteria.json). Run `make check` after editing. designMd, where present, overrides the token path prefixes `make design-md` reads for a package's DESIGN.md (colors, typography, rounded, spacing); the defaults are the swatches' semantic set and core.typography, core.radius, core.spacing or core.space.",
+  "about": "One entry per package under systems/. Paths are relative to the repository root. Every package has README.md (the entry) and style-guide.html at its top level; docs/PACKAGE.md describes what sits underneath. tags are for search and filtering. preview names the gallery cover screenshot, the product's `icon.png` and the token paths the catalog site resolves into swatches and fonts, so every value shown traces back to tokens. An empty widths list means the package README is the place to look. platform is web, mobile or desktop: the scorecard grades the package against that platform's wording of each criterion (scorecard/criteria.json). Run `make check` after editing. designMd, where present, overrides the token path prefixes `make design-md` reads for a package's DESIGN.md (colors, typography, rounded, spacing); the defaults are the swatches' semantic set and core.typography, core.radius, core.spacing or core.space. capture records how the package's extraction ran: harness and model (from the capture commits' Co-Authored-By trailer), version (the product version captured, when it was recorded), route (dom-snapshot, iphone-mirroring, electron-cdp, web-inspector, native-pixels, stylesheets, headless or public-web), pr (the pull request that added the package; imported packages name their capture PR under source instead), and durationMin (how long the capture took; null where it was never recorded - docs/CAPTURE.md asks new captures to fill it).",
   "categories": {
     "learning": "Learning",
     "ai-chat": "AI chat",
@@ -78,6 +78,12 @@
         "path": "docs/design/reference/duolingo",
         "commit": "84a260ac977974e3407ccf8c0024faa73a1cb621",
         "pr": "https://github.com/c-wenlong/self-learn/pull/75"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "dom-snapshot",
+        "durationMin": null
       }
     },
     {
@@ -138,6 +144,12 @@
         "path": "docs/design/reference/brilliant",
         "commit": "84a260ac977974e3407ccf8c0024faa73a1cb621",
         "pr": "https://github.com/c-wenlong/self-learn/pull/76"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "dom-snapshot",
+        "durationMin": null
       }
     },
     {
@@ -200,6 +212,12 @@
         "path": "docs/design/reference/notebooklm",
         "commit": "84a260ac977974e3407ccf8c0024faa73a1cb621",
         "pr": "https://github.com/c-wenlong/self-learn/pull/74"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "dom-snapshot",
+        "durationMin": null
       }
     },
     {
@@ -260,6 +278,12 @@
         "path": "docs/design/reference/coursera",
         "commit": "84a260ac977974e3407ccf8c0024faa73a1cb621",
         "pr": "https://github.com/c-wenlong/self-learn/pull/191"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "dom-snapshot",
+        "durationMin": null
       }
     },
     {
@@ -312,6 +336,12 @@
         "path": "docs/design/reference/gauth",
         "commit": "84a260ac977974e3407ccf8c0024faa73a1cb621",
         "pr": "https://github.com/c-wenlong/self-learn/pull/295"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "dom-snapshot",
+        "durationMin": null
       }
     },
     {
@@ -367,6 +397,12 @@
         "path": "docs/design/reference/researchrabbit",
         "commit": "84a260ac977974e3407ccf8c0024faa73a1cb621",
         "pr": "https://github.com/c-wenlong/self-learn/pull/347"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "dom-snapshot",
+        "durationMin": null
       }
     },
     {
@@ -429,6 +465,12 @@
         "path": "docs/design/reference/manus",
         "commit": "84a260ac977974e3407ccf8c0024faa73a1cb621",
         "pr": "https://github.com/c-wenlong/self-learn/pull/356"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Fable 5.1",
+        "route": "dom-snapshot",
+        "durationMin": null
       }
     },
     {
@@ -490,6 +532,12 @@
         "path": "docs/design/reference/chatgpt",
         "commit": "84a260ac977974e3407ccf8c0024faa73a1cb621",
         "pr": "https://github.com/c-wenlong/self-learn/pull/375"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "dom-snapshot",
+        "durationMin": null
       }
     },
     {
@@ -552,6 +600,12 @@
         "path": "docs/design/reference/claude",
         "commit": "84a260ac977974e3407ccf8c0024faa73a1cb621",
         "pr": "https://github.com/c-wenlong/self-learn/pull/375"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "dom-snapshot",
+        "durationMin": null
       },
       "designMd": {
         "spacing": [
@@ -616,6 +670,13 @@
       "source": {
         "path": "~/Desktop/Personal/Internal/Indie Hacking/alke-fitness/references"
       },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "version": "3.1.16",
+        "route": "iphone-mirroring",
+        "durationMin": null
+      },
       "layoutGaps": {
         "patterns.md": "no patterns were written from the native capture yet; the next recapture writes them",
         "components/": "the capture through iPhone Mirroring took whole screens only, so there are no element crops",
@@ -677,6 +738,13 @@
         "fonts": [
           "core.font.family.sans"
         ]
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "version": "1.4.3",
+        "route": "headless",
+        "durationMin": null
       }
     },
     {
@@ -746,6 +814,12 @@
           "linear-complete-audit.zip",
           "linear-design-library.zip"
         ]
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "dom-snapshot",
+        "durationMin": null
       },
       "designMd": {
         "colors": [
@@ -822,6 +896,12 @@
           "polaris-design-library.zip"
         ]
       },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "headless",
+        "durationMin": null
+      },
       "designMd": {
         "colors": "light.color.",
         "typography": "light.text.text-",
@@ -887,6 +967,14 @@
       "source": {
         "path": "~/.design-systems/grokbot/raw-shots (full-colour captures, outside the repo)"
       },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "version": "1.16.0",
+        "route": "iphone-mirroring",
+        "pr": "https://github.com/c-wenlong/designs/pull/83",
+        "durationMin": null
+      },
       "layoutGaps": {
         "icons/": "Grok Bot's icons and bot characters are its artwork and are not kept here (docs/RIGHTS.md)"
       }
@@ -948,6 +1036,13 @@
       },
       "source": {
         "path": "~/.design-systems/telegram/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "iphone-mirroring",
+        "pr": "https://github.com/c-wenlong/designs/pull/89",
+        "durationMin": null
       },
       "layoutGaps": {
         "icons/": "Telegram's icons, stickers and illustrations are its artwork and are not kept here (docs/RIGHTS.md)"
@@ -1011,6 +1106,13 @@
       },
       "source": {
         "path": "~/.design-systems/youtube/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "iphone-mirroring",
+        "pr": "https://github.com/c-wenlong/designs/pull/86",
+        "durationMin": null
       },
       "layoutGaps": {
         "icons/": "YouTube's icons and logo are Google's artwork and are not kept here (docs/RIGHTS.md)"
@@ -1076,6 +1178,13 @@
       "source": {
         "path": "~/.design-systems/gemini/raw-shots (full-colour captures, outside the repo)"
       },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "iphone-mirroring",
+        "pr": "https://github.com/c-wenlong/designs/pull/88",
+        "durationMin": null
+      },
       "layoutGaps": {
         "icons/": "Gemini's icons and the Gemini spark are Google's artwork and are not kept here (docs/RIGHTS.md)"
       }
@@ -1130,6 +1239,13 @@
       },
       "source": {
         "path": "~/.design-systems/spotify/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "iphone-mirroring",
+        "pr": "https://github.com/c-wenlong/designs/pull/91",
+        "durationMin": null
       },
       "layoutGaps": {
         "icons/": "Spotify's icons and logo are its artwork and are not kept here (docs/RIGHTS.md)"
@@ -1187,6 +1303,13 @@
       },
       "source": {
         "path": "~/.design-systems/grab/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "iphone-mirroring",
+        "pr": "https://github.com/c-wenlong/designs/pull/90",
+        "durationMin": null
       },
       "layoutGaps": {
         "icons/": "Grab's icons, 3D service icons and illustrations are its artwork and are not kept here (docs/RIGHTS.md)"
@@ -1250,6 +1373,13 @@
       },
       "source": {
         "path": "~/.design-systems/github-ios/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "iphone-mirroring",
+        "pr": "https://github.com/c-wenlong/designs/pull/92",
+        "durationMin": null
       },
       "layoutGaps": {
         "icons/": "GitHub's icons are its artwork and were not extracted from the captures (docs/RIGHTS.md)"
@@ -1316,6 +1446,13 @@
       "source": {
         "path": "~/.design-systems/claude-ios/raw-shots (full-colour captures, outside the repo)"
       },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "iphone-mirroring",
+        "pr": "https://github.com/c-wenlong/designs/pull/93",
+        "durationMin": null
+      },
       "layoutGaps": {
         "icons/": "Claude's icons and the spark are Anthropic's artwork and are not kept here (docs/RIGHTS.md)"
       }
@@ -1380,6 +1517,13 @@
       },
       "source": {
         "path": "~/.design-systems/substack/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "iphone-mirroring",
+        "pr": "https://github.com/c-wenlong/designs/pull/94",
+        "durationMin": null
       },
       "layoutGaps": {
         "icons/": "Substack's icons and the publications' artwork are theirs and are not kept here (docs/RIGHTS.md)"
@@ -1447,6 +1591,13 @@
       "source": {
         "path": "~/.design-systems/notion-ios/raw-shots (full-colour captures, outside the repo)"
       },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "iphone-mirroring",
+        "pr": "https://github.com/c-wenlong/designs/pull/95",
+        "durationMin": null
+      },
       "layoutGaps": {
         "icons/": "Notion's icons and the Notion AI face are its artwork and are not kept here (docs/RIGHTS.md)"
       }
@@ -1509,6 +1660,13 @@
       },
       "source": {
         "path": "~/.design-systems/chatgpt-ios/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "iphone-mirroring",
+        "pr": "https://github.com/c-wenlong/designs/pull/87",
+        "durationMin": null
       },
       "layoutGaps": {
         "icons/": "ChatGPT's icons are OpenAI's artwork and are not kept here (docs/RIGHTS.md)"
@@ -1575,6 +1733,13 @@
       "source": {
         "path": "~/.design-systems/arcsearch/raw-shots (full-colour captures, outside the repo)"
       },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "iphone-mirroring",
+        "pr": "https://github.com/c-wenlong/designs/pull/98",
+        "durationMin": null
+      },
       "layoutGaps": {
         "icons/": "Arc's icons, app icons and icon-tile glyphs are The Browser Company's artwork and are not kept here (docs/RIGHTS.md)"
       }
@@ -1638,6 +1803,14 @@
       },
       "source": {
         "path": "~/.design-systems/cursor-ios/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "version": "1.14.0",
+        "route": "iphone-mirroring",
+        "pr": "https://github.com/c-wenlong/designs/pull/97",
+        "durationMin": null
       },
       "layoutGaps": {
         "icons/": "Cursor's icons are its artwork and are not kept here (docs/RIGHTS.md)"
@@ -1707,6 +1880,14 @@
       "source": {
         "path": "~/.design-systems/cursor-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
       },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "version": "3.27.6",
+        "route": "electron-cdp",
+        "pr": "https://github.com/c-wenlong/designs/pull/108",
+        "durationMin": null
+      },
       "layoutGaps": {
         "icons/": "Cursor's icons are its own icon font (cursor-icons) and artwork, and are not kept here (docs/RIGHTS.md)"
       }
@@ -1774,6 +1955,14 @@
       },
       "source": {
         "path": "~/.design-systems/devin-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "version": "3.11.216",
+        "route": "electron-cdp",
+        "pr": "https://github.com/c-wenlong/designs/pull/112",
+        "durationMin": null
       },
       "layoutGaps": {
         "icons/": "Devin's icons are its own inline SVG artwork and the workbench's codicons, and are not kept here (docs/RIGHTS.md)"
@@ -1845,6 +2034,14 @@
       "source": {
         "path": "~/.design-systems/superset-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
       },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "version": "1.39.0",
+        "route": "electron-cdp",
+        "pr": "https://github.com/c-wenlong/designs/pull/111",
+        "durationMin": null
+      },
       "layoutGaps": {
         "icons/": "Superset's icons are Lucide and the agents' own logos, and are not kept here (docs/RIGHTS.md)"
       }
@@ -1914,6 +2111,14 @@
       },
       "source": {
         "path": "~/.design-systems/orca-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "version": "1.4.237",
+        "route": "electron-cdp",
+        "pr": "https://github.com/c-wenlong/designs/pull/110",
+        "durationMin": null
       },
       "layoutGaps": {
         "icons/": "Orca's icons and agent logos are its own artwork and third-party icon sets, and are not kept here (docs/RIGHTS.md)"
@@ -1987,6 +2192,14 @@
       "source": {
         "path": "~/.design-systems/capy-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
       },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "version": "0.4.7; agent run on 0.5.0",
+        "route": "electron-cdp",
+        "pr": "https://github.com/c-wenlong/designs/pull/116",
+        "durationMin": null
+      },
       "layoutGaps": {
         "icons/": "Capy's icons are its own inline SVG artwork and are not kept here (docs/RIGHTS.md)"
       }
@@ -2058,6 +2271,14 @@
       "source": {
         "path": "~/.design-systems/conductor-desktop/raw-shots (full-colour captures, the P3 originals and run frames, outside the repo)"
       },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "version": "0.91.2",
+        "route": "web-inspector",
+        "pr": "https://github.com/c-wenlong/designs/pull/114",
+        "durationMin": null
+      },
       "layoutGaps": {
         "icons/": "Conductor's icons are lucide plus its own artwork and logos, and are not kept here (docs/RIGHTS.md)"
       }
@@ -2122,6 +2343,13 @@
       },
       "source": {
         "path": "~/.design-systems/luma-ios/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "route": "iphone-mirroring",
+        "pr": "https://github.com/c-wenlong/designs/pull/99",
+        "durationMin": null
       },
       "layoutGaps": {
         "icons/": "Luma's icons, wordmark and app icons are its artwork and were not extracted from the captures (docs/RIGHTS.md)"
@@ -2190,6 +2418,14 @@
       "source": {
         "path": "~/.design-systems/grokbot-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
       },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "version": "0.75.5",
+        "route": "electron-cdp",
+        "pr": "https://github.com/c-wenlong/designs/pull/109",
+        "durationMin": null
+      },
       "layoutGaps": {
         "icons/": "Grok Bot's icons (the cursor-icons font) and Bot characters are its artwork and are not kept here (docs/RIGHTS.md)"
       }
@@ -2256,6 +2492,14 @@
       },
       "source": {
         "path": "~/.design-systems/opencode-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "version": "2.1.4",
+        "route": "electron-cdp",
+        "pr": "https://github.com/c-wenlong/designs/pull/113",
+        "durationMin": null
       },
       "layoutGaps": {
         "icons/": "OpenCode's icons (an inline SVG sprite) and wordmark are its artwork and are not kept here (docs/RIGHTS.md)"
@@ -2327,6 +2571,14 @@
       "source": {
         "path": "~/.design-systems/codex-desktop/raw-shots (full-colour captures and run frames, outside the repo)"
       },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "version": "26.1013.40934",
+        "route": "electron-cdp",
+        "pr": "https://github.com/c-wenlong/designs/pull/115",
+        "durationMin": null
+      },
       "layoutGaps": {
         "icons/": "Codex's icons are OpenAI's own inline SVG artwork and are not kept here (docs/RIGHTS.md)"
       }
@@ -2395,6 +2647,14 @@
       },
       "source": {
         "path": "~/.design-systems/notion-calendar-desktop/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "version": "1.142.0",
+        "route": "electron-cdp",
+        "pr": "https://github.com/c-wenlong/designs/pull/119",
+        "durationMin": null
       },
       "layoutGaps": {
         "icons/": "Notion Calendar's icons are Notion's own inline SVG artwork and are not kept here (docs/RIGHTS.md)"
@@ -2468,6 +2728,14 @@
       "source": {
         "path": "~/.design-systems/zed-desktop/raw-shots (full-colour captures and the Display P3 originals, outside the repo)"
       },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "version": "1.25.2",
+        "route": "native-pixels",
+        "pr": "https://github.com/c-wenlong/designs/pull/118",
+        "durationMin": null
+      },
       "layoutGaps": {
         "icons/": "Zed's icons are its own artwork and are not kept here (docs/RIGHTS.md)"
       }
@@ -2536,6 +2804,14 @@
       },
       "source": {
         "path": "~/.design-systems/raycast-desktop/raw-shots (full-colour captures and the Display P3 originals, outside the repo)"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "version": "2.9.0",
+        "route": "stylesheets",
+        "pr": "https://github.com/c-wenlong/designs/pull/121",
+        "durationMin": null
       },
       "layoutGaps": {
         "icons/": "Raycast's icons are its own artwork and are not kept here (docs/RIGHTS.md)"
@@ -2609,6 +2885,14 @@
       },
       "source": {
         "path": "~/.design-systems/notion-desktop/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "harness": "Claude Code",
+        "model": "Claude Opus 5.5",
+        "version": "7.40.0",
+        "route": "electron-cdp",
+        "pr": "https://github.com/c-wenlong/designs/pull/120",
+        "durationMin": null
       },
       "layoutGaps": {
         "icons/": "Notion's icons are its own artwork and are not kept here (docs/RIGHTS.md)"

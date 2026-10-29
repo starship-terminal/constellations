@@ -31,6 +31,13 @@ how it was captured. The `extract-style` skill in the quiver-hub
    PNGs (61 MB became 15 MB on Duolingo). Flat UI colours survive exactly.
 6. **Build.** `build_tokens.py`, `build_style_guide.py`,
    `build_components_md.py`, then open the style guide in both themes.
+7. **Record the capture.** The catalog entry's `capture` block says how the
+   extraction ran: `harness` and `model` (the agent and model that did the
+   work), `version` (the product version captured), `route` (which path
+   above was taken), `pr` (the pull request that added the package) and
+   `durationMin` (how long the capture took in minutes, summed across
+   sessions). Fill it when the entry is created; a number not recorded is
+   lost for good.
 
 The Playwright scripts take `PLAYWRIGHT` as the path to any Playwright
 install's `index.mjs`. The package READMEs show a path inside self-learn;

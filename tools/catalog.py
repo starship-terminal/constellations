@@ -54,10 +54,13 @@ REQUIRED_FILES = ("README.md", "style-guide.html", "tools")
 STANDARD_PARTS = ("README.md", "icon.png", "DESIGN.md", "tokens.json", "style-guide.html", "components.md",
                   "patterns.md", "components/", "icons/", "screenshots/", "raw/", "tools/")
 REQUIRED_FIELDS = ("slug", "name", "url", "category", "platform", "goodFor", "shape", "captured",
-                   "themes", "entry", "tokens", "styleGuide", "preview", "tags")
+                   "themes", "entry", "tokens", "styleGuide", "preview", "tags", "capture")
 # What the product runs on. The scorecard grades a package against its platform's wording
 # of each criterion (scorecard/criteria.json); web is the base wording, `doneWhen`.
 PLATFORMS = ("web", "mobile", "desktop")
+# The capture routes docs/CAPTURE.md describes: how the package's extraction ran.
+CAPTURE_ROUTES = ("dom-snapshot", "iphone-mirroring", "electron-cdp", "web-inspector",
+                  "native-pixels", "stylesheets", "headless", "public-web")
 
 
 def atomic_write(path: Path, text: str) -> None:
@@ -1061,6 +1064,35 @@ def palette_problems(slug: str, preview: dict, themes: list[str]) -> list[str]:
     return problems
 
 
+def capture_problems(slug: str, capture) -> list[str]:
+    """The capture block's required fields and their types. A missing capture is
+    already reported as a missing REQUIRED_FIELD, so None returns no problems.
+    version and pr stay optional: not every capture recorded a product version,
+    and packages that predate the PR workflow name none. durationMin is required
+    but may be null — a duration never recorded is unknown, not zero."""
+    if capture is None:
+        return []
+    if not isinstance(capture, dict):
+        return [f"{slug}: capture must be an object"]
+    problems = []
+    for field in ("harness", "model", "route", "durationMin"):
+        if field not in capture:
+            problems.append(f"{slug}: capture is missing {field}")
+    for field in ("harness", "model", "version", "pr"):
+        if field in capture and not isinstance(capture[field], str):
+            problems.append(f"{slug}: capture.{field} must be a string")
+    route = capture.get("route")
+    if isinstance(route, str) and route not in CAPTURE_ROUTES:
+        problems.append(f"{slug}: capture.route {route!r} is not one of {CAPTURE_ROUTES}")
+    elif route is not None and not isinstance(route, str):
+        problems.append(f"{slug}: capture.route must be a string")
+    duration = capture.get("durationMin")
+    if duration is not None and (isinstance(duration, bool)
+                                 or not isinstance(duration, (int, float))):
+        problems.append(f"{slug}: capture.durationMin must be a number or null")
+    return problems
+
+
 def check() -> list[str]:
     catalog = load_catalog()
     problems = []
@@ -1098,6 +1130,7 @@ def check() -> list[str]:
                     problems.append(f"{slug}: extras path {path!r} is not a string")
                 elif not (ROOT / path).exists():
                     problems.append(f"{slug}: extras path {path} does not exist")
+        problems += capture_problems(slug, s.get("capture"))
         problems += layout_problems(s)
         if "preview" not in s or "tokens" not in s:
             continue
@@ -1495,6 +1528,7 @@ def build() -> Path:
             **{k: s[k] for k in ("slug", "name", "url", "category", "goodFor", "shape", "captured",
                                  "themes", "tags", "entry", "tokens", "styleGuide")},
             "access": s.get("access", ""),
+            "capture": s.get("capture"),
             "widths": s.get("widths", []),
             "notes": s.get("notes", ""),
             "dir": f"systems/{s['slug']}",
