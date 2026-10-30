@@ -1546,12 +1546,32 @@ def build() -> Path:
             **section_data(s),
         })
     attach_thumbs(all_shots)
+    build_exports(systems)
     out = SITE / "data.json"
     atomic_write(out, json.dumps({"root": str(ROOT), "categories": catalog.get("categories", {}),
                                   "systems": systems},
                                  separators=(",", ":")))
     build_refero()
     return out
+
+
+def build_exports(systems: list[dict]) -> None:
+    """The schema extractor, materialised for the gallery: export/<slug>.css and
+    export/<slug>.json hold the same text `catalog.py export` prints (custom
+    properties, and the flat maps behind them), so the Overview can copy them.
+    Files a deleted package left behind are pruned."""
+    out_dir = SITE / "export"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    written = set()
+    for s in systems:
+        tokens = json.loads((ROOT / s["tokens"]).read_text())
+        exported = export_tokens(tokens, s["themes"])
+        atomic_write(out_dir / f"{s['slug']}.css", export_css(exported) + "\n")
+        atomic_write(out_dir / f"{s['slug']}.json", json.dumps(exported, indent=2) + "\n")
+        written.add(s["slug"])
+    for stale in out_dir.iterdir():
+        if stale.stem not in written:
+            stale.unlink()
 
 
 # Repository paths the local server answers from the checkout instead of the built

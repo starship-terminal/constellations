@@ -192,6 +192,10 @@ function agentPrompt(s) {
 
 // Package files are fetched once per page load: Overview and Health both read the README.
 const texts = new Map();
+// Prefetched export files (slug.ext -> text | 'pending' | 'missing'): the copy
+// buttons read them synchronously, because a clipboard write after a fetch loses
+// the click's user gesture in Safari.
+const exportText = new Map();
 function getText(path) {
   if (!texts.has(path)) {
     texts.set(path, fetch(url(path)).then((r) => { if (!r.ok) throw new Error(r.status); return r.text(); })
@@ -299,6 +303,8 @@ const RENDER = {
             <a class="btn primary" href="${url(s.styleGuide)}" target="_blank" rel="noopener">Open style guide ↗</a>
             <a class="btn" href="${filesHref(s, s.entry)}">Read README</a>
             <a class="btn" href="${url(s.tokens)}" target="_blank" rel="noopener">Tokens JSON</a>
+            <button class="btn" type="button" id="copy-css" title="Resolved CSS custom properties (catalog.py export)">Copy CSS</button>
+            <button class="btn" type="button" id="copy-json" title="Resolved flat token map (catalog.py export --format json)">Copy flat JSON</button>
             <button class="btn" type="button" id="copy-prompt">Copy agent prompt</button>
           </div>
           <dl class="meta">
@@ -318,6 +324,27 @@ const RENDER = {
       <h3 class="sub-title">Brief</h3>
       <article class="md brief"><p class="loading">Loading…</p></article>`;
     main.querySelector('#copy-prompt').onclick = () => copy(agentPrompt(s), 'Agent prompt copied');
+    // The schema extractor (tools/catalog.py export), materialised by the build
+    // into gallery/export/<slug>.{css,json}: resolved values, ready to paste.
+    // The texts are prefetched on render so the clipboard write stays inside the
+    // click — Safari rejects a writeText that first waits on the network.
+    for (const ext of ['css', 'json']) {
+      const key = `${s.slug}.${ext}`;
+      if (exportText.has(key)) continue;
+      exportText.set(key, 'pending');
+      fetch(`export/${encodeURIComponent(s.slug)}.${ext}`, { cache: 'no-cache' })
+        .then((r) => { if (!r.ok) throw new Error(r.status); return r.text(); })
+        .then((text) => exportText.set(key, text))
+        .catch(() => exportText.set(key, 'missing'));
+    }
+    for (const [id, ext, label] of [['#copy-css', 'css', 'CSS'], ['#copy-json', 'json', 'flat JSON']]) {
+      main.querySelector(id).onclick = () => {
+        const text = exportText.get(`${s.slug}.${ext}`);
+        if (text === 'pending' || text === undefined) { notice(`${label} still loading; try again`); return; }
+        if (text === 'missing') { notice(`No ${label} export yet; run \`make build\` first`); return; }
+        copy(text, `${label} copied`);
+      };
+    }
     main.querySelector('[data-lb="cover"]').onclick = () => openLightbox([{ path: s.cover.path, name: 'cover' }], 0);
     const art = main.querySelector('.brief');
     getText(s.entry).then((text) => {
@@ -643,8 +670,13 @@ lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
 
 const toast = document.getElementById('toast');
 let toastTimer;
+function notice(msg) {
+  toast.textContent = msg; toast.hidden = false; clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { toast.hidden = true; }, 1600);
+}
+
 function copy(text, msg) {
-  const done = () => { toast.textContent = msg; toast.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { toast.hidden = true; }, 1600); };
+  const done = () => notice(msg);
   if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback);
   else fallback();
   function fallback() {
