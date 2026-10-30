@@ -5,9 +5,81 @@ another project.
 
 ## What this is
 
-A private library of design styles captured from real products: one package
-per product under `systems/<slug>/`, indexed in [catalog.json](catalog.json).
-[README.md](README.md) is the front door; the docs below hold the detail.
+A private library of design styles captured from real products, rendered as a
+static docs site. Two stores of styles:
+
+- `systems/<slug>/`: the packages, one per product, measured from real
+  captures and indexed in [catalog.json](catalog.json). Values here carry
+  per-value evidence labels and are the only ones to design from.
+- `refero/<slug>/`: a snapshot of styles.refero.design (1,342 styles),
+  third-party interpreted data at lower confidence. Breadth for inspiration,
+  never the source for a value a package holds.
+
+[README.md](README.md) is the human front door; the docs below hold the
+detail. Everything a person browses (gallery, scorecard, library docs) is
+the one site built by [tools/site.py](tools/site.py) from this tree.
+
+## Map
+
+```
+catalog.json            index of every systems/ package: slug, platform, tags,
+                        goodFor, preview paths, capture provenance
+systems/<slug>/         the packages (40). Standard parts:
+  README.md               Brief (generated) + what was captured + Health (generated)
+  tokens.json             every value, evidence-labelled
+  DESIGN.md               generated export, one theme, no provenance
+  style-guide.html        renders every token, light/dark toggle
+  icon.png                the product's app icon, 128 px PNG (LFS)
+  components.md, patterns.md, components/, icons/, screenshots/, boards/, raw/
+  tools/                  the builders that produced the package; fixes go here
+refero/                 third-party style snapshot. refero.db (sqlite, LFS) is
+                        the canonical store; <slug>/ holds DESIGN.md, CSS and
+                        token exports, meta.json; catalog.json is the flat
+                        index. refero/README.md has layout + refresh commands
+docs/                   source of the site
+  index.md, *.md            the library docs (table below) + TODO.md (open items)
+  gallery/                  the gallery app (app.js, index.html, style.css);
+                            data.json, thumbs/, refero/, export/ are generated
+                            (gitignored) by `tools/catalog.py build`
+  scorecard/                generated scorecard pages (gitignored)
+  assets/, stylesheets/, site.webmanifest
+scorecard/              criteria.json (the rubric, per-platform wording) +
+                        audits/<YYYY-MM-DD>.json snapshots
+tools/                  the repo's scripts. Deps: `make setup` installs
+                        requirements.txt + tools/requirements-capture.txt into
+                        .venv; Pillow/sips for images, numpy for
+                        redact_images.py, Node.js for the refero export and
+                        `make lint-design-md`. Refero pipeline lives in
+                        tools/refero/; tools/kit/ is the starter kit for a
+                        new package; tools/redact-rules/<slug>.json are
+                        per-package masks
+scripts/                ops, not library: dev.sh backs `make dev`;
+                        deploy_trigger.py + redeploy.sh run on kai-home-server
+                        for the self-hosted deployment and media mirror
+example/                shallow clones of public design-system repos
+                        (gitignored except README.md). References, never
+                        a source of values
+site/                   generated site output (gitignored)
+Makefile                `make help` lists targets; `make dev` is the way in
+```
+
+## Find it fast
+
+| You want to | Start at |
+|---|---|
+| Apply a captured style to another project | `python3 tools/catalog.py find <words>`, then `systems/<slug>/README.md` and `tokens.json` (steps below) |
+| Let a person pick a style visually | `make dev`, the gallery tab it opens |
+| Add or refresh a product | [docs/CAPTURE.md](docs/CAPTURE.md), copy `tools/kit/` into `systems/<slug>/tools/` |
+| Change a package's values or README | the package, then `make design-md` (Brief + DESIGN.md regenerate), `make check` |
+| Replace a product's app icon | `systems/<slug>/icon.png` (128 px PNG; `python3 tools/fetch_icon.py <slug>` refetches from the product's site) |
+| Work on the gallery or site | `docs/gallery/` + `tools/catalog.py build`, then `make serve` |
+| Grade packages / read the rubric | `scorecard/criteria.json` via `python3 tools/grade.py --criteria <slug>`; audits in `scorecard/audits/` |
+| Find or refresh a refero style | [refero/README.md](refero/README.md); `tools/refero/fetch.py`, `classify.py`, `check.py` |
+| Check a screenshot for banned content | `python3 tools/redact_images.py check systems/<slug> --patterns ~/.design-systems/cleanup-redact.json` |
+| Scan a package for private text or check token contrast | `python3 tools/catalog.py scan systems/<slug> --redact <file>` / `contrast systems/<slug>/tokens.json --theme <t> FG:BG...` |
+| Deploy or redeploy the site | pushes to `main` run `.github/workflows/pages.yml`; the home-server deployment is `scripts/redeploy.sh` / `deploy_trigger.py` |
+
+## The docs
 
 | Document | Read it when |
 |---|---|
@@ -16,6 +88,8 @@ per product under `systems/<slug>/`, indexed in [catalog.json](catalog.json).
 | [docs/EVIDENCE.md](docs/EVIDENCE.md) | You are about to copy a value and need to know how far to trust it |
 | [docs/CAPTURE.md](docs/CAPTURE.md) | You are adding or refreshing a product; start from [tools/kit/](tools/kit) |
 | [docs/RIGHTS.md](docs/RIGHTS.md) | Anything might leave this repo |
+| [docs/TODO.md](docs/TODO.md) | You are picking up open work; the list is newest first |
+| [refero/README.md](refero/README.md) | You are working with the refero snapshot: its layout, provenance, refresh and media mirror |
 | [example/README.md](example/README.md) | You want a public reference: the DESIGN.md spec, unverified DESIGN.md files for brands not captured here, capture ideas, or how a large token set is organised. Never a source of values |
 
 ## Using a style from another project
@@ -85,6 +159,11 @@ illustrations or brand colours into something that ships
   block and a `capture` block (the extraction's provenance:
   [docs/CAPTURE.md](docs/CAPTURE.md)), in the same commit
   ([docs/PACKAGE.md](docs/PACKAGE.md) has the steps).
+- **Each package has an app icon** at `systems/<slug>/icon.png`: a 128 px PNG
+  in Git LFS, named by the catalog entry's `preview.icon`, shown on the
+  gallery cards and the README catalog table. `python3 tools/fetch_icon.py
+  <slug>` fetches or refreshes it from the product's site (`--host`, `--url`,
+  `--all`); a supplied file only needs the resize.
 - **The Brief is generated.** Every package README's `## Brief` section is
   written by `make brief` ([tools/brief.py](tools/brief.py)) from the
   package's catalog entry, tokens file and README. Read it first when you use
@@ -107,8 +186,9 @@ illustrations or brand colours into something that ships
 - **The docs site is generated.** [tools/site.py](tools/site.py) builds
   [docs/](docs) into `site/` (gitignored): every markdown page rendered with the
   gallery's own chrome. [docs/gallery/](docs/gallery) holds the gallery app;
-  [tools/catalog.py](tools/catalog.py) writes its `data.json`
-  and `thumbs/` from [catalog.json](catalog.json). [tools/scorecard.py](tools/scorecard.py)
+  [tools/catalog.py](tools/catalog.py) writes its `data.json`,
+  `thumbs/`, `refero/` and `export/` from [catalog.json](catalog.json) and the
+  refero store. [tools/scorecard.py](tools/scorecard.py)
   writes `docs/scorecard/` from [scorecard/](scorecard). All
   of those are gitignored; never hand-edit them, and never list a package in
   the gallery any other way. A new audit is a new
@@ -125,6 +205,16 @@ illustrations or brand colours into something that ships
   component guidance, say), with that source as evidence; otherwise leave
   them out of a review and they become not applicable, never missing. Never
   infer them from screenshots.
+- **Refero is a separate store, refreshed by its own pipeline.** `refero/`
+  mirrors styles.refero.design: `refero.db` is canonical, the `<slug>/`
+  folders and `catalog.json` are materialised from it, and
+  `tools/refero/check.py` (part of `make check`) fails when the three
+  disagree. Fetch, label and verify with `tools/refero/fetch.py`,
+  `classify.py` and `check.py`; screenshots and videos are mirrored
+  host-side by `tools/refero/mirror_media.py` into
+  `~/services/design-systems/media/refero/` (outside git; the videos are
+  gigabytes). [refero/README.md](refero/README.md) has the detail. Prefer
+  `systems/` values wherever both hold one.
 - **Grade a package against its platform's wording.** Each catalog entry has a
   `platform` (`web`, `mobile` or `desktop`). In `scorecard/criteria.json` a
   criterion's `doneWhen` is the web wording, and `platforms` holds the mobile
