@@ -2962,7 +2962,8 @@
         "model": "GPT-6",
         "version": "Web UI observed 2026-10-30; build version not exposed",
         "route": "web-inspector",
-        "durationMin": null
+        "durationMin": null,
+        "pr": "https://github.com/c-wenlong/designs/pull/133"
       },
       "layoutGaps": {
         "icons/": "Icons remain visible in screenshots; no separately licensed icon assets were extracted."
