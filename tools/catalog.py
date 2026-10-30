@@ -1561,12 +1561,12 @@ def build_exports(systems: list[dict]) -> None:
     properties, and the flat maps behind them), so the Overview can copy them.
     Files a deleted package left behind are pruned."""
     out_dir = SITE / "export"
-    out_dir.mkdir(exist_ok=True)
+    out_dir.mkdir(parents=True, exist_ok=True)
     written = set()
     for s in systems:
         tokens = json.loads((ROOT / s["tokens"]).read_text())
         exported = export_tokens(tokens, s["themes"])
-        atomic_write(out_dir / f"{s['slug']}.css", export_css(exported))
+        atomic_write(out_dir / f"{s['slug']}.css", export_css(exported) + "\n")
         atomic_write(out_dir / f"{s['slug']}.json", json.dumps(exported, indent=2) + "\n")
         written.add(s["slug"])
     for stale in out_dir.iterdir():

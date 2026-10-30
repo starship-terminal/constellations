@@ -349,6 +349,35 @@ class CssValueTest(unittest.TestCase):
             self.assertEqual(lines, [], s["slug"])
 
 
+class BuildExportsTest(unittest.TestCase):
+    def test_writes_what_the_cli_prints_and_prunes_stale(self):
+        import tempfile
+        tokens = {"core": {"grey": {"$value": "#ffffff"}},
+                  "light": {"text": {"primary": {"$value": "{grey}"}}},
+                  "dark": {"text": {"primary": {"$value": "{grey}"}}}}
+        with tempfile.TemporaryDirectory() as d:
+            root, site = Path(d) / "root", Path(d) / "site"
+            (root / "systems/x").mkdir(parents=True)
+            (root / "systems/x/tokens.json").write_text(json.dumps(tokens))
+            (site / "export").mkdir(parents=True)
+            (site / "export/ghost.css").write_text("stale")
+            (site / "export/ghost.json").write_text("stale")
+            original_root, original_site = catalog.ROOT, catalog.SITE
+            catalog.ROOT, catalog.SITE = root, site
+            try:
+                catalog.build_exports([{"slug": "x", "tokens": "systems/x/tokens.json",
+                                        "themes": ["light", "dark"]}])
+            finally:
+                catalog.ROOT, catalog.SITE = original_root, original_site
+            exported = catalog.export_tokens(tokens, ["light", "dark"])
+            self.assertEqual((site / "export/x.css").read_text(),
+                             catalog.export_css(exported) + "\n")
+            self.assertEqual((site / "export/x.json").read_text(),
+                             json.dumps(exported, indent=2) + "\n")
+            self.assertFalse((site / "export/ghost.css").exists())
+            self.assertFalse((site / "export/ghost.json").exists())
+
+
 class ContrastTest(unittest.TestCase):
     TOKENS = {
         "core": {"white": {"$value": "#ffffff"}, "black": {"$value": "#000000"}},
