@@ -2,9 +2,14 @@
 
 Observed on 2026-10-30 with Codex and extract-style v1.2.0. The changes to
 [the capture guide](../../docs/CAPTURE.md) apply the reusable guidance below.
-The installed plugin and shared kit were reviewed, not changed.
+The owner approved applying these improvements. The canonical design-systems
+plugin now uses extract-style v1.3.0 and plugin v0.3.3 (quiver-hub device commit
+`e98d1ad` on `device/kai-macbook-4-pro`). The installed Codex v0.3.3 copy was
+verified against the same source. The shared-kit changes are in
+[PR 134](https://github.com/c-wenlong/designs/pull/134) (commit `01d0360f`),
+separate from this capture. They have not merged.
 
-| Finding | Change for the next capture | Source to update or check |
+| Finding | Applied guidance or remaining kit work | Original evidence or owning source |
 |---|---|---|
 | The skill asks for names, owner email and document titles to be masked, although the current library policy allows them. | Build redaction rules from the current repository policy. Keep credentials, signed URLs and banned personal data out; preserve allowed profile and product content. | [Repository policy](../../AGENTS.md), “Only credentials and personally identifiable data are masked”; extract-style v1.2.0, step 4 (lines 150 to 153), step 9 (205 to 209), Rules (239 to 243); [kit privacy instructions](../../tools/kit/README.md#never-commit). |
 | The skill checks generated files before generating them and asks for a manual root catalog row. | Register in [the catalog](../../catalog.json), run `make design-md`, then `make grade`, then `make check` and `make test`. Let the generators write the root table. | extract-style v1.2.0, step 9 (lines 194 to 202); [Makefile](../../Makefile), targets `design-md`, `grade`, `check`; [health generator](../../tools/health.py), `catalog_table()` and `expected()`. |
@@ -15,6 +20,7 @@ The installed plugin and shared kit were reviewed, not changed.
 | The owner later approved the account appearance change. Five light states were captured at 884 CSS pixels, then the original dark theme was restored and verified. | Record approval, measured width, the exact light states and restoration. A light set does not establish complete parity: light mobile and matching interaction states still need evidence. | [Capture entry](README.md#what-to-distrust); [light email readings](raw/readings/authentication-email-light-desktop.json); extract-style v1.2.0, web reference, “Theme” (lines 54 to 62). |
 
 The session's requested dimensions describe intent, while the saved JSON
-and PNG dimensions describe the retained evidence. A future kit change
-should save all viewport fields beside each screenshot and validate its
-pixel size, while keeping visual review as the check for popup contents.
+and PNG dimensions describe the retained evidence. The separate shared-kit
+change adds viewport fields beside each screenshot
+and validates its pixel size, while keeping visual review as the check for
+popup contents. The kit work remains pending until its PR merges.

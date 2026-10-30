@@ -16,10 +16,12 @@
     "authentication-email-dark-1440.png",
     "authentication-email-dark-desktop.png",
     "authentication-email-dark-mobile.png",
+    "authentication-email-light-desktop.png",
     "authentication-hero.png",
     "authentication-mobile.png",
     "authentication-passkeys-dark-desktop.png",
     "authentication-password-dark-desktop.png",
+    "authentication-password-light-desktop.png",
     "authentication-phone-dark-desktop.png",
     "authentication-preview-menu-dark-desktop.png",
     "authentication-user-model-dark-desktop.png",
@@ -46,6 +48,7 @@
     "overview-dark-desktop.png",
     "password-dialog-focus-dark-desktop.png",
     "password-requirements-dialog-dark-desktop.png",
+    "password-requirements-dialog-light-desktop.png",
     "paths-dark-desktop.png",
     "protections-dark-desktop.png",
     "redirect-url-dialog-dark-desktop.png",
@@ -56,8 +59,10 @@
     "users-columns-menu-dark-desktop.png",
     "users-dark-desktop.png",
     "users-dark-mobile.png",
+    "users-light-desktop.png",
     "web3-dark-desktop.png",
     "workspace-settings-dark-desktop.png",
+    "workspace-settings-light-desktop.png",
     "workspace-team-dark-desktop.png"
   ],
   "readings": [
@@ -132,6 +137,13 @@
       "elements": 51
     },
     {
+      "file": "raw/readings/authentication-email-light-desktop.json",
+      "width": 884,
+      "height": 1104,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip light",
+      "elements": 58
+    },
+    {
       "file": "raw/readings/authentication-passkeys-dark-desktop.json",
       "width": 1600,
       "height": 1111,
@@ -144,6 +156,13 @@
       "height": 1111,
       "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
       "elements": 93
+    },
+    {
+      "file": "raw/readings/authentication-password-light-desktop.json",
+      "width": 884,
+      "height": 1104,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip light",
+      "elements": 47
     },
     {
       "file": "raw/readings/authentication-phone-dark-desktop.json",
@@ -335,6 +354,13 @@
       "elements": 118
     },
     {
+      "file": "raw/readings/password-requirements-dialog-light-desktop.json",
+      "width": 884,
+      "height": 1104,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip light",
+      "elements": 72
+    },
+    {
       "file": "raw/readings/paths-dark-desktop.json",
       "width": 1600,
       "height": 1111,
@@ -405,6 +431,13 @@
       "elements": 155
     },
     {
+      "file": "raw/readings/users-light-desktop.json",
+      "width": 884,
+      "height": 1104,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip light",
+      "elements": 156
+    },
+    {
       "file": "raw/readings/web3-dark-desktop.json",
       "width": 1600,
       "height": 1111,
@@ -419,6 +452,13 @@
       "elements": 42
     },
     {
+      "file": "raw/readings/workspace-settings-light-desktop.json",
+      "width": 884,
+      "height": 1104,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip light",
+      "elements": 36
+    },
+    {
       "file": "raw/readings/workspace-team-dark-desktop.json",
       "width": 1440,
       "height": 1000,
@@ -429,10 +469,22 @@
   "exclusions": [
     "Clipped mobile create-user dialog",
     "API key pages and test credential settings",
-    "Light dashboard: no appearance approval received",
+    "Light mobile and light dashboard states beyond the five retained light readings",
     "Paid activation, financial details, user profile detail pages",
     "Hover/pressed, post-submit validation, successful mutation feedback",
     "Other nested tabs not listed in screenshots"
   ],
-  "publicNote": "Marketing measurements are stored separately and excluded from dashboard semantic tokens."
+  "publicNote": "Marketing measurements are stored separately and excluded from dashboard semantic tokens.",
+  "appearanceApproval": {
+    "approved": true,
+    "scope": "Temporary account appearance change for the five retained light states",
+    "lightReadings": [
+      "raw/readings/authentication-email-light-desktop.json",
+      "raw/readings/authentication-password-light-desktop.json",
+      "raw/readings/password-requirements-dialog-light-desktop.json",
+      "raw/readings/users-light-desktop.json",
+      "raw/readings/workspace-settings-light-desktop.json"
+    ],
+    "restored": "Original dark appearance restored and verified after capture"
+  }
 }

@@ -8,7 +8,7 @@ Dashboard readings record actual CSS viewport widths of 390, 884, 1440 and 1600.
 |---|---|
 | [README.md](README.md) | Entry, limitations, coverage and rebuild instructions |
 | [tokens.json](tokens.json) | Measured CSS variables, observed scales and component-state values, each with evidence |
-| [DESIGN.md](DESIGN.md) | Generated dark-theme export |
+| [DESIGN.md](DESIGN.md) | Generated light-theme export |
 | [style-guide.html](style-guide.html) | Token tables, measured specimens and screenshot gallery |
 | [components.md](components.md) | Checklist components, exact reading references and observed states |
 | [patterns.md](patterns.md) | Page patterns tied to captures |
@@ -192,6 +192,7 @@ From the repository root:
 
 ```bash
 python3 systems/clerk/tools/ingest_evidence.py ~/.design-systems/clerk
+python3 systems/clerk/tools/build_inventory.py
 python3 systems/clerk/tools/build_tokens.py
 python3 systems/clerk/tools/build_crops.py
 python3 systems/clerk/tools/build_components_md.py

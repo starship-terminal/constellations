@@ -109,9 +109,16 @@ def source(path, data, subject):
 def measured(path, data, element, prop):
     value = element["styles"][prop]
     kind = "color" if prop in ("backgroundColor", "color", "borderColor") else "other" if prop in ("outline", "boxShadow") else "dimension"
+    evidence = source(path, data, f"computed {prop} of element {element['index']} ({element['tag']})")
+    if kind == "dimension" and not re.fullmatch(r"-?[\d.]+(?:px|rem|em|vh|vw)", value):
+        # DTCG dimensions hold one length. Keep CSS shorthands and expressions
+        # as evidence rather than advertising an unreadable dimension token.
+        return {"$extensions": {"source": evidence, "notTokenised": {
+            "cssProperty": prop, "value": value,
+            "reason": "Computed CSS shorthand or expression is not a single dimension."}}}
     if kind == "color":
         value = color(value)
-    return token(value, kind, source(path, data, f"computed {prop} of element {element['index']} ({element['tag']})"))
+    return token(value, kind, evidence)
 
 
 def observation(path, element, prop):
