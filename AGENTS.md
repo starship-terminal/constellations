@@ -45,10 +45,14 @@ docs/                   source of the site
   assets/, stylesheets/, site.webmanifest
 scorecard/              criteria.json (the rubric, per-platform wording) +
                         audits/<YYYY-MM-DD>.json snapshots
-tools/                  the repo's scripts (python3, stdlib only; Pillow/sips
-                        for images). Refero pipeline lives in tools/refero/;
-                        tools/kit/ is the starter kit for a new package;
-                        tools/redact-rules/<slug>.json are per-package masks
+tools/                  the repo's scripts. Deps: `make setup` installs
+                        requirements.txt + tools/requirements-capture.txt into
+                        .venv; Pillow/sips for images, numpy for
+                        redact_images.py, Node.js for the refero export and
+                        `make lint-design-md`. Refero pipeline lives in
+                        tools/refero/; tools/kit/ is the starter kit for a
+                        new package; tools/redact-rules/<slug>.json are
+                        per-package masks
 scripts/                ops, not library: dev.sh backs `make dev`;
                         deploy_trigger.py + redeploy.sh run on kai-home-server
                         for the self-hosted deployment and media mirror
