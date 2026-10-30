@@ -18,11 +18,15 @@ how it was captured. The `extract-style` skill in the quiver-hub
 2. **Decide how to get in.** Public pages load in headless Playwright.
    Signed-in pages are captured in a real browser the owner is signed in to;
    never hand an account to a headless browser. The owner signs in
-   themselves.
+   themselves. Before handing off sign-in, confirm the browser host, tab
+   URL and visible window, and take a screenshot. Name that browser and
+   window to the owner; a connected browser may have no visible window.
 3. **Copy each state as a static page.** `tools/capture/signed-in/snapshot.js`
-   copies the DOM with every stylesheet inlined from the CSSOM, redacts names
-   and emails, strips signing parameters from URLs, and marks scrolled
-   elements. One copy per state (a menu open, a dialog, the phone layout).
+   copies the DOM with every stylesheet inlined from the CSSOM, applies the
+   configured redaction literals, strips signing parameters from URLs, and
+   marks scrolled elements. Configure only what [AGENTS.md](../AGENTS.md)
+   bans: credentials and personally identifiable data. One copy per state
+   (a menu open, a dialog, the phone layout).
 4. **Render and measure headless from the copies.** `render.mjs` at 2x in
    both themes, `measure.mjs` for computed styles per state (hover with the
    pointer, focus-visible with real keyboard focus), `layout.mjs` for page
@@ -38,6 +42,11 @@ how it was captured. The `extract-style` skill in the quiver-hub
    `durationMin` (how long the capture took in minutes, summed across
    sessions). Fill it when the entry is created; a number not recorded is
    lost for good.
+8. **Generate before checking.** After writing the package and registering
+   it in [catalog.json](../catalog.json), run `make design-md`, then
+   `make grade`, then `make check` and `make test`. The first two update
+   generated Brief, DESIGN.md and Health content; `make grade` also updates
+   the root README catalog table. Never add that table's row by hand.
 
 The Playwright scripts take `PLAYWRIGHT` as the path to any Playwright
 install's `index.mjs`. The package READMEs show a path inside self-learn;
@@ -94,6 +103,26 @@ The package README ends with a coverage table: one row per checklist item,
 marked captured (with the file that shows it), not present in the product,
 or not captured (with the reason, such as "behind a paid plan"). A blank
 row is never acceptable; "not captured" with a reason is.
+
+### Browser dimensions and screenshot checks
+
+Record the measured `window.innerWidth`, `window.innerHeight`,
+`window.devicePixelRatio` and `window.visualViewport` width, height and
+scale with each capture, plus the PNG's pixel dimensions. A requested
+browser size is not proof of the CSS viewport: browser zoom and screenshot
+scaling can produce different values. If the measured width differs from
+the plan, correct it and recapture or label the evidence with its actual
+width; do not call it a 1440 or 390 capture from the request alone.
+
+Open every final screenshot before ticking its coverage row. For a popup,
+confirm the whole popup is inside the image and its entrance animation has
+finished; recapture blank or clipped images. Keep the screenshot and CSS
+readings tied to the same visible state.
+
+Public marketing pages may contain animated dashboard demonstrations.
+Label those as public demos, with their URL and capture time. Use the real
+signed-in dashboard for dashboard component and state coverage; a demo only
+covers the public page and the demo state actually shown.
 
 ## Native iOS apps (iPhone Mirroring)
 
@@ -247,7 +276,7 @@ folder that holds nothing of the owner's.
 
 | Thing | Why | Where it lives |
 |---|---|---|
-| Raw page copies | They hold the account's own chats, files and names | `~/.design-systems/snaps/<slug>/`. The older packages' copies (from self-learn) were deleted on 2026-10-11, so re-rendering one of those packages starts with a fresh capture |
+| Raw page copies | They may retain credentials, signed URLs or other banned data beyond the visible page | `~/.design-systems/snaps/<slug>/`. The older packages' copies (from self-learn) were deleted on 2026-10-11, so re-rendering one of those packages starts with a fresh capture |
 | Redaction lists | The literals being redacted are the private data | `~/.design-systems/<slug>-redact.json`, shaped like the package's `redact.example.json`. The older packages' rules are merged into `~/.design-systems/cleanup-redact.json`, the list every package is scanned against |
 | CDN caches | Large, and the product's property | Beside the copies, as `<SNAPS>-cdn-cache` |
 | Proprietary fonts | Not ours to commit | `systems/<slug>/fonts/`, gitignored |
@@ -293,10 +322,11 @@ images. Look at a contact sheet of every family after an `apply`: OCR does not
 read text that is dimmed behind a modal unless the rules say to boost it, and a
 pattern file only knows the strings it was given.
 
-Two things the duolingo and coursera runs showed. Names of people other than the
-owner are not in the shared pattern file; put them in a second local file and
-pass `--patterns` twice, and leave out anything that is also a UI word or a number
-(a gem total, the product's own name), or the net paints it everywhere. Text typed
+Follow the current policy in [AGENTS.md](../AGENTS.md): other people's names
+and profile pictures may stay, but their email and other contact details may
+not. Add only banned literals to a local pattern file; leave out anything
+that is also a UI word or a number (a gem total, the product's own name), or
+the net paints it everywhere. Text typed
 into a focused input is not read by OCR, so give it a rectangle. A `rows` rectangle
 whose right edge touches a coloured button smears that colour across the fill; end
 it a few pixels short. A pattern that matches a logo word next to a heading is
@@ -324,7 +354,7 @@ Browser and capture:
   is uncovered, and they are Display P3. Convert to sRGB.
 - Some sites block `eval` on fresh loads (CSP). Paste the kit inline after
   every hard navigation and prefer in-app link clicks.
-- A MutationObserver that redacts names must assign only when the text
+- A MutationObserver that redacts banned text must assign only when the text
   changes, or it re-triggers itself and freezes the tab.
 - Cross-origin stylesheets are invisible to the CSSOM (Manus). Fetch the
   chunks with curl and parse them headless.
@@ -349,8 +379,10 @@ Hygiene:
 - Keep redaction literals out of committed scripts.
 - Real DTCG types: a `dimension` is one px or rem length.
 - Write new captures first and prune old outputs only after a complete run.
-- Redact health, money and other personal titles in chat lists even after
-  the name is gone.
+- Follow [AGENTS.md](../AGENTS.md) when deciding what to mask. The owner's
+  own profile, chat and document titles may stay; mask credentials and the
+  personally identifiable data listed there, including other people's
+  contact details. Keep raw page copies and redaction lists outside git.
 
 ## A quicker, shallower path
 
