@@ -18,6 +18,7 @@ systems/*/tools/capture/out/
 docs/gallery/data.json
 docs/gallery/thumbs/
 docs/gallery/refero/
+docs/gallery/export/
 docs/scorecard/
 /.venv/
 # Local secrets. StatiCrypt reads STATICRYPT_PASSWORD from here.

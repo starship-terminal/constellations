@@ -52,4 +52,4 @@ test: ## Run the tools' tests, then every package's own tests (systems/*/tools/t
 	@$(PYTHON) tools/package_tests.py
 
 clean: ## Remove generated files
-	rm -rf site docs/gallery/data.json docs/gallery/thumbs docs/gallery/refero docs/scorecard refero/.work
+	rm -rf site docs/gallery/data.json docs/gallery/thumbs docs/gallery/refero docs/gallery/export docs/scorecard refero/.work
