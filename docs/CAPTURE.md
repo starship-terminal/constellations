@@ -18,15 +18,23 @@ how it was captured. The `extract-style` skill in the quiver-hub
 2. **Decide how to get in.** Public pages load in headless Playwright.
    Signed-in pages are captured in a real browser the owner is signed in to;
    never hand an account to a headless browser. The owner signs in
-   themselves.
-3. **Copy each state as a static page.** `tools/capture/signed-in/snapshot.js`
-   copies the DOM with every stylesheet inlined from the CSSOM, redacts names
-   and emails, strips signing parameters from URLs, and marks scrolled
-   elements. One copy per state (a menu open, a dialog, the phone layout).
-4. **Render and measure headless from the copies.** `render.mjs` at 2x in
-   both themes, `measure.mjs` for computed styles per state (hover with the
-   pointer, focus-visible with real keyboard focus), `layout.mjs` for page
-   geometry, `icons.mjs` for the icon set.
+   themselves. Before handing off sign-in, confirm the browser host, tab
+   URL and visible window, and take a screenshot. Name that browser and
+   window to the owner; a connected browser may have no visible window.
+3. **Capture each state through supported APIs.** Prefer live read-only DOM
+   measurements and screenshots when the harness provides them. If it supports
+   the static-copy route, `tools/capture/signed-in/snapshot.js` copies the DOM
+   with stylesheets inlined, applies configured redaction literals, strips
+   signing parameters and marks scrolled elements. Keep copies outside git.
+   Configure only what [AGENTS.md](../AGENTS.md) bans. Do not inject the helper
+   where the browser API permits only read-only evaluation.
+4. **Measure the captured state.** For live captures, save custom properties,
+   computed component styles and layout readings with their screenshot. For
+   static copies, use `render.mjs`, `measure.mjs` and `layout.mjs`. Label an
+   alternate theme or interaction rendered from a copy as a reconstruction;
+   its filename does not prove the live app displayed it. Record approval for
+   account appearance changes, reuse approval already given, and restore and
+   verify the original theme after capture.
 5. **Shrink the screenshots.** `quantize.py` converts to sRGB 256-colour
    PNGs (61 MB became 15 MB on Duolingo). Flat UI colours survive exactly.
 6. **Build.** `build_tokens.py`, `build_style_guide.py`,
@@ -38,6 +46,13 @@ how it was captured. The `extract-style` skill in the quiver-hub
    `durationMin` (how long the capture took in minutes, summed across
    sessions). Fill it when the entry is created; a number not recorded is
    lost for good.
+8. **Generate before checking.** After writing the package and registering
+   it in [catalog.json](../catalog.json), run `make design-md`, then
+   `make grade`, then `make check` and `make test`. The first two update
+   generated Brief, DESIGN.md and Health content; `make grade` also updates
+   the root README catalog table. Never add that table's row by hand. Set
+   reviewed grades against the platform rubric as described in [AGENTS.md](../AGENTS.md),
+   then rerun the checks after writing those grades.
 
 The Playwright scripts take `PLAYWRIGHT` as the path to any Playwright
 install's `index.mjs`. The package READMEs show a path inside self-learn;
@@ -94,6 +109,32 @@ The package README ends with a coverage table: one row per checklist item,
 marked captured (with the file that shows it), not present in the product,
 or not captured (with the reason, such as "behind a paid plan"). A blank
 row is never acceptable; "not captured" with a reason is.
+
+### Browser dimensions and screenshot checks
+
+Record the measured `window.innerWidth`, `window.innerHeight`,
+`window.devicePixelRatio` and `window.visualViewport` width, height and
+scale with each capture, plus the PNG's pixel dimensions. A requested
+browser size is not proof of the CSS viewport: browser zoom and screenshot
+scaling can produce different values. If the measured width differs from
+the plan, correct it and recapture or label the evidence with its actual
+width; do not call it a 1440 or 390 capture from the request alone.
+
+The kit's [screenshot wrapper](../tools/kit/capture/screenshot.mjs) writes
+these dimensions to a `.png.capture.json` sidecar and checks the PNG against
+the capture mode and scale. Live-browser captures should record the same
+fields through their supported APIs. A passing dimension check leaves visual
+review pending and does not establish a CSS-to-PNG crop transform.
+
+Open every final screenshot before ticking its coverage row. For a popup,
+confirm the whole popup is inside the image and its entrance animation has
+finished; recapture blank or clipped images. Keep the screenshot and CSS
+readings tied to the same visible state.
+
+Public marketing pages may contain animated dashboard demonstrations.
+Label those as public demos, with their URL and capture time. Use the real
+signed-in dashboard for dashboard component and state coverage; a demo only
+covers the public page and the demo state actually shown.
 
 ## Native iOS apps (iPhone Mirroring)
 
@@ -247,7 +288,7 @@ folder that holds nothing of the owner's.
 
 | Thing | Why | Where it lives |
 |---|---|---|
-| Raw page copies | They hold the account's own chats, files and names | `~/.design-systems/snaps/<slug>/`. The older packages' copies (from self-learn) were deleted on 2026-10-11, so re-rendering one of those packages starts with a fresh capture |
+| Raw page copies | They may retain credentials, signed URLs or other banned data beyond the visible page | `~/.design-systems/snaps/<slug>/`. The older packages' copies (from self-learn) were deleted on 2026-10-11, so re-rendering one of those packages starts with a fresh capture |
 | Redaction lists | The literals being redacted are the private data | `~/.design-systems/<slug>-redact.json`, shaped like the package's `redact.example.json`. The older packages' rules are merged into `~/.design-systems/cleanup-redact.json`, the list every package is scanned against |
 | CDN caches | Large, and the product's property | Beside the copies, as `<SNAPS>-cdn-cache` |
 | Proprietary fonts | Not ours to commit | `systems/<slug>/fonts/`, gitignored |
@@ -293,10 +334,11 @@ images. Look at a contact sheet of every family after an `apply`: OCR does not
 read text that is dimmed behind a modal unless the rules say to boost it, and a
 pattern file only knows the strings it was given.
 
-Two things the duolingo and coursera runs showed. Names of people other than the
-owner are not in the shared pattern file; put them in a second local file and
-pass `--patterns` twice, and leave out anything that is also a UI word or a number
-(a gem total, the product's own name), or the net paints it everywhere. Text typed
+Follow the current policy in [AGENTS.md](../AGENTS.md): other people's names
+and profile pictures may stay, but their email and other contact details may
+not. Add only banned literals to a local pattern file; leave out anything
+that is also a UI word or a number (a gem total, the product's own name), or
+the net paints it everywhere. Text typed
 into a focused input is not read by OCR, so give it a rectangle. A `rows` rectangle
 whose right edge touches a coloured button smears that colour across the fill; end
 it a few pixels short. A pattern that matches a logo word next to a heading is
@@ -307,14 +349,11 @@ reported as spanning lines; if it is a false positive, list the image under
 
 Browser and capture:
 
-- The Claude in Chrome JS tool truncates results at about 1000 characters.
-  A loopback sink (`sink.py` on 127.0.0.1) or a hidden `<article>` read back
-  with `get_page_text` gets data out. Output containing `=` or `;` can be
-  blocked as cookie data; swap those characters first.
-- In the built-in browser pane, a `javascript_tool` result over the size
-  limit spills to a file. That spill is a clean data channel: one
-  `__snap()` call per state. A spill is reported as an error, so never put
-  it in the same `browser_batch` as anything else.
+- Browser APIs and output limits vary by harness. Read the current tool
+  documentation and use its supported screenshot, read-only DOM and file-export
+  APIs. Older `javascript_tool` spill files and `browser_batch` recipes apply
+  only where those APIs exist. Do not encode around a privacy or export block;
+  narrow the reading or use an approved route.
 - When the pane or window is hidden it does not paint, so
   `requestAnimationFrame` stalls: menus still mount, but entrance and exit
   animations freeze, virtualised lists never fill and drawers stay off
@@ -322,9 +361,9 @@ Browser and capture:
   screenshot before snapshotting.
 - `screencapture -l <windowid>` gives crisp 2x shots only while the window
   is uncovered, and they are Display P3. Convert to sRGB.
-- Some sites block `eval` on fresh loads (CSP). Paste the kit inline after
-  every hard navigation and prefer in-app link clicks.
-- A MutationObserver that redacts names must assign only when the text
+- Some sites or browser APIs block script evaluation or injection. Use the
+  supported reader or screenshot route; record an unavailable reading as a gap.
+- A MutationObserver that redacts banned text must assign only when the text
   changes, or it re-triggers itself and freezes the tab.
 - Cross-origin stylesheets are invisible to the CSSOM (Manus). Fetch the
   chunks with curl and parse them headless.
@@ -349,8 +388,10 @@ Hygiene:
 - Keep redaction literals out of committed scripts.
 - Real DTCG types: a `dimension` is one px or rem length.
 - Write new captures first and prune old outputs only after a complete run.
-- Redact health, money and other personal titles in chat lists even after
-  the name is gone.
+- Follow [AGENTS.md](../AGENTS.md) when deciding what to mask. The owner's
+  own profile, chat and document titles may stay; mask credentials and the
+  personally identifiable data listed there, including other people's
+  contact details. Keep raw page copies and redaction lists outside git.
 
 ## A quicker, shallower path
 

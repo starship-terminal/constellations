@@ -22,5 +22,9 @@ grep -v '^#' "$HERE/shots.tsv" | while IFS=$'\t' read -r label flags; do
   [ -z "$light" ] || wait "$light" || { echo "render failed: $label light" >&2; ok=1; }
   [ "$ok" -eq 0 ] || exit 1
 done
-mv "$SNAPS"/*.png "$OUT"/ 2>/dev/null || true
+for image in "$SNAPS"/*.png; do
+  [ -f "$image" ] || continue
+  mv "$image" "$OUT/"
+  [ ! -f "$image.capture.json" ] || mv "$image.capture.json" "$OUT/"
+done
 echo "renders in $OUT"

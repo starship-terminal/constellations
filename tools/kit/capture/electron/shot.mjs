@@ -11,6 +11,7 @@
 // theme class). --hover forces :hover on the first match through CDP, so no pointer moves.
 // Read-only: it never clicks or navigates.
 // Quit the app and open it normally afterwards; an open port lets any local process drive it.
+import { screenshotWithMetadata } from '../screenshot.mjs';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const [out, name, prefix = 'https://'] = process.argv.slice(2).filter(a => !a.startsWith('--'));
 const hover = process.argv.find(a => a.startsWith('--hover='))?.slice(8);
@@ -30,7 +31,7 @@ if (hover) {
   await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: ['hover'] });
   await page.waitForTimeout(300);
 }
-await page.screenshot({ path: `${out}/${name}.png` });
+await screenshotWithMetadata(page, { path: `${out}/${name}.png` });
 const vars = await page.evaluate(() => {
   // Names come from the rules; values from the computed style, so only the rules that apply now
   // (the theme the screenshot shows) decide them.
