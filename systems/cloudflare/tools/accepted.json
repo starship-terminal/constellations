@@ -205,5 +205,11 @@
   "load-balancing-downtime-dark-desktop": "app",
   "load-balancing-visibility-dark-desktop": "app",
   "zaraz-domains-dark-desktop": "app",
-  "zaraz-plans-dark-desktop": "app"
+  "zaraz-plans-dark-desktop": "app",
+  "logs-tour-01-dark-desktop": "app",
+  "logs-tour-02-dark-desktop": "app",
+  "logs-tour-03-dark-desktop": "app",
+  "logs-tour-04-dark-desktop": "app",
+  "logs-tour-05-dark-desktop": "app",
+  "logs-http-dark-desktop": "app"
 }

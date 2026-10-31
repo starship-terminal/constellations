@@ -1735,6 +1735,96 @@
     "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
   },
   {
+    "name": "logs-http-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T05:24:09.954Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "logs-tour-01-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T05:23:40.584Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "logs-tour-02-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T05:23:45.684Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "logs-tour-03-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T05:23:50.414Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "logs-tour-04-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T05:23:55.404Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "logs-tour-05-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T05:24:02.062Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
     "name": "media-plans-dark-desktop",
     "route": "app",
     "viewport": {

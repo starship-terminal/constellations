@@ -9,11 +9,11 @@ Counts are discovered-control occurrences, not unique controls. Shared navigatio
 | Recorded status | Discovered-control occurrences |
 | --- | ---: |
 | blocked | 102 |
-| explored and captured | 177 |
+| explored and captured | 183 |
 | not executed | 14 |
-| pending | 22832 |
+| pending | 24223 |
 
-177 screenshot references resolve to imported package images; 0 refer to raw evidence not yet imported.
+183 screenshot references resolve to imported package images; 0 refer to raw evidence not yet imported.
 
 Pending controls remain unexercised in their recorded parent state. Blocked and not executed rows retain their recorded reasons below. Missing statuses remain unspecified.
 
@@ -23803,3 +23803,1435 @@ Regenerate from the repository root with `python3 systems/cloudflare/tools/build
 | pending-23122 | Report Security Issues |  | pending |  |  |
 | pending-23123 | Privacy Policy |  | pending |  |  |
 | pending-23124 | Cookie Preferences |  | pending |  |  |
+
+## observability
+
+| ID | Control | Action | Status | Result / reason | Evidence |
+| --- | --- | --- | --- | --- | --- |
+| logs-tour-01-dark-desktop | Logs | Open logs onboarding | explored and captured | Dataset tour step 1 of 5 | [screenshots/logs-tour-01-dark-desktop.png](screenshots/logs-tour-01-dark-desktop.png) |
+
+## logs-tour-01-dark-desktop
+
+| ID | Control | Action | Status | Result / reason | Evidence |
+| --- | --- | --- | --- | --- | --- |
+| pending-23126 | Cloudflare home |  | pending |  |  |
+| pending-23127 | Switch Account |  | pending |  |  |
+| pending-23128 | Quick search... |  | pending |  |  |
+| pending-23129 | Account home |  | pending |  |  |
+| pending-23130 | Recents |  | pending |  |  |
+| pending-23131 | LogsObservability |  | pending |  |  |
+| pending-23132 | Pin |  | pending |  |  |
+| pending-23133 | Web tag managementDelivery &amp; perform… |  | pending |  |  |
+| pending-23134 | Load BalancingDelivery &amp; perform… |  | pending |  |  |
+| pending-23135 | Bulk redirectsDelivery &amp; perform… |  | pending |  |  |
+| pending-23136 | InvestigateThreats &amp; defense |  | pending |  |  |
+| pending-23137 | Domains |  | pending |  |  |
+| pending-23138 | Overview |  | pending |  |  |
+| pending-23139 | Registrations |  | pending |  |  |
+| pending-23140 | Transfers |  | pending |  |  |
+| pending-23141 | ObservabilityNew |  | pending |  |  |
+| pending-23142 | Logs |  | pending |  |  |
+| pending-23143 | TracesBeta |  | pending |  |  |
+| pending-23144 | Analytics |  | pending |  |  |
+| pending-23145 | Account analytics |  | pending |  |  |
+| pending-23146 | Web analytics |  | pending |  |  |
+| pending-23147 | Export |  | pending |  |  |
+| pending-23148 | Logpush |  | pending |  |  |
+| pending-23149 | OpenTelemetry |  | pending |  |  |
+| pending-23150 | Alerts |  | pending |  |  |
+| pending-23151 | Monitors |  | pending |  |  |
+| pending-23152 | Platform Notifications |  | pending |  |  |
+| pending-23153 | Destinations |  | pending |  |  |
+| pending-23154 | Silences |  | pending |  |  |
+| pending-23155 | Usage |  | pending |  |  |
+| pending-23156 | Dashboards |  | pending |  |  |
+| pending-23157 | Compute |  | pending |  |  |
+| pending-23158 | Workers &amp; Pages |  | pending |  |  |
+| pending-23159 | Observability |  | pending |  |  |
+| pending-23160 | Workers for Platforms |  | pending |  |  |
+| pending-23161 | Containers |  | pending |  |  |
+| pending-23162 | Durable Objects |  | pending |  |  |
+| pending-23163 | Queues |  | pending |  |  |
+| pending-23164 | Workflows |  | pending |  |  |
+| pending-23165 | Browser Run |  | pending |  |  |
+| pending-23166 | VPCBeta |  | pending |  |  |
+| pending-23167 | Email Service |  | pending |  |  |
+| pending-23168 | Email SendingBeta |  | pending |  |  |
+| pending-23169 | Email Routing |  | pending |  |  |
+| pending-23170 | Workers plans |  | pending |  |  |
+| pending-23171 | FlagshipBeta |  | pending |  |  |
+| pending-23172 | AI |  | pending |  |  |
+| pending-23173 | Models |  | pending |  |  |
+| pending-23174 | Workers AI |  | pending |  |  |
+| pending-23175 | AI Gateway |  | pending |  |  |
+| pending-23176 | MCP Portals |  | pending |  |  |
+| pending-23177 | Vectorize |  | pending |  |  |
+| pending-23178 | AI Search |  | pending |  |  |
+| pending-23179 | Agent tracing |  | pending |  |  |
+| pending-23180 | Storage &amp; databases |  | pending |  |  |
+| pending-23181 | R2 Object Storage |  | pending |  |  |
+| pending-23182 | Postgres &amp; MySQL (Hyperdrive) |  | pending |  |  |
+| pending-23183 | Workers KV |  | pending |  |  |
+| pending-23184 | D1 SQLite Database |  | pending |  |  |
+| pending-23185 | Analytics Engine |  | pending |  |  |
+| pending-23186 | Basin Catalog |  | pending |  |  |
+| pending-23187 | Basin Pipelines |  | pending |  |  |
+| pending-23188 | Pipelines |  | pending |  |  |
+| pending-23189 | K2 StreamsBeta |  | pending |  |  |
+| pending-23190 | Secrets StoreBeta |  | pending |  |  |
+| pending-23191 | Images &amp; Stream |  | pending |  |  |
+| pending-23192 | Transformations |  | pending |  |  |
+| pending-23193 | Hosted images |  | pending |  |  |
+| pending-23194 | Hosted videos |  | pending |  |  |
+| pending-23195 | Live inputs |  | pending |  |  |
+| pending-23196 | Stream analytics |  | pending |  |  |
+| pending-23197 | Plans |  | pending |  |  |
+| pending-23198 | Realtime |  | pending |  |  |
+| pending-23199 | RealtimeKit |  | pending |  |  |
+| pending-23200 | TURN Server |  | pending |  |  |
+| pending-23201 | Serverless SFU |  | pending |  |  |
+| pending-23202 | MoQ RelayBeta |  | pending |  |  |
+| pending-23203 | Application security |  | pending |  |  |
+| pending-23204 | Security insights |  | pending |  |  |
+| pending-23205 | WAF |  | pending |  |  |
+| pending-23206 | BotBase |  | pending |  |  |
+| pending-23207 | Infrastructure |  | pending |  |  |
+| pending-23208 | Turnstile |  | pending |  |  |
+| pending-23209 | Data Localization Suite |  | pending |  |  |
+| pending-23210 | Zero Trust |  | pending |  |  |
+| pending-23211 | Overview |  | pending |  |  |
+| pending-23212 | Insights &amp; Logs |  | pending |  |  |
+| pending-23213 | Overview |  | pending |  |  |
+| pending-23214 | Dashboards |  | pending |  |  |
+| pending-23215 | Logs |  | pending |  |  |
+| pending-23216 | Team &amp; Resources |  | pending |  |  |
+| pending-23217 | Application library |  | pending |  |  |
+| pending-23218 | Devices |  | pending |  |  |
+| pending-23219 | Users |  | pending |  |  |
+| pending-23220 | Access controls |  | pending |  |  |
+| pending-23221 | Overview |  | pending |  |  |
+| pending-23222 | Applications |  | pending |  |  |
+| pending-23223 | Policies |  | pending |  |  |
+| pending-23224 | MCP Portals |  | pending |  |  |
+| pending-23225 | Targets |  | pending |  |  |
+| pending-23226 | Service credentials |  | pending |  |  |
+| pending-23227 | Access settings |  | pending |  |  |
+| pending-23228 | Traffic controls |  | pending |  |  |
+| pending-23229 | Overview |  | pending |  |  |
+| pending-23230 | Resolvers &amp; Proxies |  | pending |  |  |
+| pending-23231 | Firewall policies |  | pending |  |  |
+| pending-23232 | Resolver policiesNew |  | pending |  |  |
+| pending-23233 | Egress policies |  | pending |  |  |
+| pending-23234 | Traffic settings |  | pending |  |  |
+| pending-23235 | Data loss prevention |  | pending |  |  |
+| pending-23236 | Overview |  | pending |  |  |
+| pending-23237 | Profiles |  | pending |  |  |
+| pending-23238 | Data classification |  | pending |  |  |
+| pending-23239 | Validators |  | pending |  |  |
+| pending-23240 | Test scan |  | pending |  |  |
+| pending-23241 | DLP settings |  | pending |  |  |
+| pending-23242 | Cloud Workload SecurityBeta |  | pending |  |  |
+| pending-23243 | Deployments |  | pending |  |  |
+| pending-23244 | Policy sets |  | pending |  |  |
+| pending-23245 | Workloads |  | pending |  |  |
+| pending-23246 | Policies |  | pending |  |  |
+| pending-23247 | Policy reference |  | pending |  |  |
+| pending-23248 | Rego metadata |  | pending |  |  |
+| pending-23249 | Rego modules |  | pending |  |  |
+| pending-23250 | Tenant structures |  | pending |  |  |
+| pending-23251 | Traffic scope |  | pending |  |  |
+| pending-23252 | Credentials |  | pending |  |  |
+| pending-23253 | Domain ACLs |  | pending |  |  |
+| pending-23254 | Cloud &amp; SaaS findings |  | pending |  |  |
+| pending-23255 | Overview |  | pending |  |  |
+| pending-23256 | Posture Findings |  | pending |  |  |
+| pending-23257 | Content Findings |  | pending |  |  |
+| pending-23258 | Finding types libraryNew |  | pending |  |  |
+| pending-23259 | Email security |  | pending |  |  |
+| pending-23260 | Overview |  | pending |  |  |
+| pending-23261 | Monitoring |  | pending |  |  |
+| pending-23262 | Submissions |  | pending |  |  |
+| pending-23263 | Investigation |  | pending |  |  |
+| pending-23264 | Policies &amp; rules |  | pending |  |  |
+| pending-23265 | PhishGuard |  | pending |  |  |
+| pending-23266 | Email security settings |  | pending |  |  |
+| pending-23267 | Browser isolation |  | pending |  |  |
+| pending-23268 | Overview |  | pending |  |  |
+| pending-23269 | Browser isolation settings |  | pending |  |  |
+| pending-23270 | Reusable components |  | pending |  |  |
+| pending-23271 | Lists |  | pending |  |  |
+| pending-23272 | Tags |  | pending |  |  |
+| pending-23273 | Posture checks |  | pending |  |  |
+| pending-23274 | Custom pages |  | pending |  |  |
+| pending-23275 | Integrations |  | pending |  |  |
+| pending-23276 | Cloud &amp; SaaS |  | pending |  |  |
+| pending-23277 | Identity providers |  | pending |  |  |
+| pending-23278 | Service providers |  | pending |  |  |
+| pending-23279 | Webhooks |  | pending |  |  |
+| pending-23280 | Settings |  | pending |  |  |
+| pending-23281 | Networking |  | pending |  |  |
+| pending-23282 | OverviewNew |  | pending |  |  |
+| pending-23283 | Insights |  | pending |  |  |
+| pending-23284 | Network flow |  | pending |  |  |
+| pending-23285 | Tunnels |  | pending |  |  |
+| pending-23286 | MeshBeta |  | pending |  |  |
+| pending-23287 | RoutesNew |  | pending |  |  |
+| pending-23288 | IP addresses |  | pending |  |  |
+| pending-23289 | Address space |  | pending |  |  |
+| pending-23290 | Address maps |  | pending |  |  |
+| pending-23291 | Threats &amp; defense |  | pending |  |  |
+| pending-23292 | Overview |  | pending |  |  |
+| pending-23293 | Threat intelligence |  | pending |  |  |
+| pending-23294 | Investigate |  | pending |  |  |
+| pending-23295 | MonetizeNew |  | pending |  |  |
+| pending-23296 | Monetization GatewayBeta |  | pending |  |  |
+| pending-23297 | Delivery &amp; performance |  | pending |  |  |
+| pending-23298 | Bulk redirects |  | pending |  |  |
+| pending-23299 | Load Balancing |  | pending |  |  |
+| pending-23300 | Web tag management |  | pending |  |  |
+| pending-23301 | Manage account |  | pending |  |  |
+| pending-23302 | Members |  | pending |  |  |
+| pending-23303 | Billing |  | pending |  |  |
+| pending-23304 | Account API tokens |  | pending |  |  |
+| pending-23305 | OAuth clients |  | pending |  |  |
+| pending-23306 | Audit logs |  | pending |  |  |
+| pending-23307 | Blocked content |  | pending |  |  |
+| pending-23308 | Abuse reports |  | pending |  |  |
+| pending-23309 | Carbon Impact Report |  | pending |  |  |
+| pending-23310 | Configurations |  | pending |  |  |
+| pending-23311 | Tagged ResourcesBeta |  | pending |  |  |
+| pending-23312 | Collapse sidebar |  | pending |  |  |
+| pending-23313 | HTTP requests |  | pending |  |  |
+| pending-23314 |  |  | pending |  |  |
+| pending-23315 | All domains |  | pending |  |  |
+| pending-23316 | Ask AI |  | pending |  |  |
+| pending-23317 | Support |  | pending |  |  |
+| pending-23318 | User menu |  | pending |  |  |
+| pending-23319 | Search fields |  | pending |  |  |
+| pending-23320 | Request |  | pending |  |  |
+| pending-23321 | Client |  | pending |  |  |
+| pending-23322 | Response |  | pending |  |  |
+| pending-23323 | Cache and delivery |  | pending |  |  |
+| pending-23324 | Origin |  | pending |  |  |
+| pending-23325 | Edge and routing |  | pending |  |  |
+| pending-23326 | Security decisions and rules |  | pending |  |  |
+| pending-23327 | Bots and client integrity |  | pending |  |  |
+| pending-23328 | AI security |  | pending |  |  |
+| pending-23329 | Fraud detection |  | pending |  |  |
+| pending-23330 | API and web assets |  | pending |  |  |
+| pending-23331 | Other fields |  | pending |  |  |
+| pending-23332 | Fields |  | pending |  |  |
+| pending-23333 | Add filter |  | pending |  |  |
+| pending-23334 | Search with query language... |  | pending |  |  |
+| pending-23335 | Query language help |  | pending |  |  |
+| pending-23336 | Last 1 hour |  | pending |  |  |
+| pending-23337 | Log actions |  | pending |  |  |
+| pending-23338 | Request outcomes over time |  | pending |  |  |
+| pending-23339 | Configure |  | pending |  |  |
+| pending-23340 | Chart options |  | pending |  |  |
+| pending-23341 | Drag column |  | pending |  |  |
+| pending-23342 | Field actions for HTTP method |  | pending |  |  |
+| pending-23343 | Field actions for Host |  | pending |  |  |
+| pending-23344 | Field actions for Path |  | pending |  |  |
+| pending-23345 | Field actions for Edge status code |  | pending |  |  |
+| pending-23346 | Field actions for Cache status |  | pending |  |  |
+| pending-23347 | Field actions for Source IP |  | pending |  |  |
+| pending-23348 | Field actions for Country |  | pending |  |  |
+| pending-23349 | Field actions for Origin status code |  | pending |  |  |
+| pending-23350 | Expand row |  | pending |  |  |
+| pending-23351 | Cell actions |  | pending |  |  |
+| pending-23352 | Show step 1 of 5 |  | pending |  |  |
+| pending-23353 | Show step 2 of 5 |  | pending |  |  |
+| pending-23354 | Show step 3 of 5 |  | pending |  |  |
+| pending-23355 | Show step 4 of 5 |  | pending |  |  |
+| pending-23356 | Show step 5 of 5 |  | pending |  |  |
+| pending-23357 | Skip tour |  | pending |  |  |
+| pending-23358 | Next |  | pending |  |  |
+| logs-tour-02-dark-desktop | Next | Advance tour | explored and captured | Search and filter step 2 of 5 | [screenshots/logs-tour-02-dark-desktop.png](screenshots/logs-tour-02-dark-desktop.png) |
+
+## logs-tour-02-dark-desktop
+
+| ID | Control | Action | Status | Result / reason | Evidence |
+| --- | --- | --- | --- | --- | --- |
+| pending-23360 | Cloudflare home |  | pending |  |  |
+| pending-23361 | Switch Account |  | pending |  |  |
+| pending-23362 | Quick search... |  | pending |  |  |
+| pending-23363 | Account home |  | pending |  |  |
+| pending-23364 | Recents |  | pending |  |  |
+| pending-23365 | LogsObservability |  | pending |  |  |
+| pending-23366 | Pin |  | pending |  |  |
+| pending-23367 | Web tag managementDelivery &amp; perform… |  | pending |  |  |
+| pending-23368 | Load BalancingDelivery &amp; perform… |  | pending |  |  |
+| pending-23369 | Bulk redirectsDelivery &amp; perform… |  | pending |  |  |
+| pending-23370 | InvestigateThreats &amp; defense |  | pending |  |  |
+| pending-23371 | Domains |  | pending |  |  |
+| pending-23372 | Overview |  | pending |  |  |
+| pending-23373 | Registrations |  | pending |  |  |
+| pending-23374 | Transfers |  | pending |  |  |
+| pending-23375 | ObservabilityNew |  | pending |  |  |
+| pending-23376 | Logs |  | pending |  |  |
+| pending-23377 | TracesBeta |  | pending |  |  |
+| pending-23378 | Analytics |  | pending |  |  |
+| pending-23379 | Account analytics |  | pending |  |  |
+| pending-23380 | Web analytics |  | pending |  |  |
+| pending-23381 | Export |  | pending |  |  |
+| pending-23382 | Logpush |  | pending |  |  |
+| pending-23383 | OpenTelemetry |  | pending |  |  |
+| pending-23384 | Alerts |  | pending |  |  |
+| pending-23385 | Monitors |  | pending |  |  |
+| pending-23386 | Platform Notifications |  | pending |  |  |
+| pending-23387 | Destinations |  | pending |  |  |
+| pending-23388 | Silences |  | pending |  |  |
+| pending-23389 | Usage |  | pending |  |  |
+| pending-23390 | Dashboards |  | pending |  |  |
+| pending-23391 | Compute |  | pending |  |  |
+| pending-23392 | Workers &amp; Pages |  | pending |  |  |
+| pending-23393 | Observability |  | pending |  |  |
+| pending-23394 | Workers for Platforms |  | pending |  |  |
+| pending-23395 | Containers |  | pending |  |  |
+| pending-23396 | Durable Objects |  | pending |  |  |
+| pending-23397 | Queues |  | pending |  |  |
+| pending-23398 | Workflows |  | pending |  |  |
+| pending-23399 | Browser Run |  | pending |  |  |
+| pending-23400 | VPCBeta |  | pending |  |  |
+| pending-23401 | Email Service |  | pending |  |  |
+| pending-23402 | Email SendingBeta |  | pending |  |  |
+| pending-23403 | Email Routing |  | pending |  |  |
+| pending-23404 | Workers plans |  | pending |  |  |
+| pending-23405 | FlagshipBeta |  | pending |  |  |
+| pending-23406 | AI |  | pending |  |  |
+| pending-23407 | Models |  | pending |  |  |
+| pending-23408 | Workers AI |  | pending |  |  |
+| pending-23409 | AI Gateway |  | pending |  |  |
+| pending-23410 | MCP Portals |  | pending |  |  |
+| pending-23411 | Vectorize |  | pending |  |  |
+| pending-23412 | AI Search |  | pending |  |  |
+| pending-23413 | Agent tracing |  | pending |  |  |
+| pending-23414 | Storage &amp; databases |  | pending |  |  |
+| pending-23415 | R2 Object Storage |  | pending |  |  |
+| pending-23416 | Postgres &amp; MySQL (Hyperdrive) |  | pending |  |  |
+| pending-23417 | Workers KV |  | pending |  |  |
+| pending-23418 | D1 SQLite Database |  | pending |  |  |
+| pending-23419 | Analytics Engine |  | pending |  |  |
+| pending-23420 | Basin Catalog |  | pending |  |  |
+| pending-23421 | Basin Pipelines |  | pending |  |  |
+| pending-23422 | Pipelines |  | pending |  |  |
+| pending-23423 | K2 StreamsBeta |  | pending |  |  |
+| pending-23424 | Secrets StoreBeta |  | pending |  |  |
+| pending-23425 | Images &amp; Stream |  | pending |  |  |
+| pending-23426 | Transformations |  | pending |  |  |
+| pending-23427 | Hosted images |  | pending |  |  |
+| pending-23428 | Hosted videos |  | pending |  |  |
+| pending-23429 | Live inputs |  | pending |  |  |
+| pending-23430 | Stream analytics |  | pending |  |  |
+| pending-23431 | Plans |  | pending |  |  |
+| pending-23432 | Realtime |  | pending |  |  |
+| pending-23433 | RealtimeKit |  | pending |  |  |
+| pending-23434 | TURN Server |  | pending |  |  |
+| pending-23435 | Serverless SFU |  | pending |  |  |
+| pending-23436 | MoQ RelayBeta |  | pending |  |  |
+| pending-23437 | Application security |  | pending |  |  |
+| pending-23438 | Security insights |  | pending |  |  |
+| pending-23439 | WAF |  | pending |  |  |
+| pending-23440 | BotBase |  | pending |  |  |
+| pending-23441 | Infrastructure |  | pending |  |  |
+| pending-23442 | Turnstile |  | pending |  |  |
+| pending-23443 | Data Localization Suite |  | pending |  |  |
+| pending-23444 | Zero Trust |  | pending |  |  |
+| pending-23445 | Overview |  | pending |  |  |
+| pending-23446 | Insights &amp; Logs |  | pending |  |  |
+| pending-23447 | Overview |  | pending |  |  |
+| pending-23448 | Dashboards |  | pending |  |  |
+| pending-23449 | Logs |  | pending |  |  |
+| pending-23450 | Team &amp; Resources |  | pending |  |  |
+| pending-23451 | Application library |  | pending |  |  |
+| pending-23452 | Devices |  | pending |  |  |
+| pending-23453 | Users |  | pending |  |  |
+| pending-23454 | Access controls |  | pending |  |  |
+| pending-23455 | Overview |  | pending |  |  |
+| pending-23456 | Applications |  | pending |  |  |
+| pending-23457 | Policies |  | pending |  |  |
+| pending-23458 | MCP Portals |  | pending |  |  |
+| pending-23459 | Targets |  | pending |  |  |
+| pending-23460 | Service credentials |  | pending |  |  |
+| pending-23461 | Access settings |  | pending |  |  |
+| pending-23462 | Traffic controls |  | pending |  |  |
+| pending-23463 | Overview |  | pending |  |  |
+| pending-23464 | Resolvers &amp; Proxies |  | pending |  |  |
+| pending-23465 | Firewall policies |  | pending |  |  |
+| pending-23466 | Resolver policiesNew |  | pending |  |  |
+| pending-23467 | Egress policies |  | pending |  |  |
+| pending-23468 | Traffic settings |  | pending |  |  |
+| pending-23469 | Data loss prevention |  | pending |  |  |
+| pending-23470 | Overview |  | pending |  |  |
+| pending-23471 | Profiles |  | pending |  |  |
+| pending-23472 | Data classification |  | pending |  |  |
+| pending-23473 | Validators |  | pending |  |  |
+| pending-23474 | Test scan |  | pending |  |  |
+| pending-23475 | DLP settings |  | pending |  |  |
+| pending-23476 | Cloud Workload SecurityBeta |  | pending |  |  |
+| pending-23477 | Deployments |  | pending |  |  |
+| pending-23478 | Policy sets |  | pending |  |  |
+| pending-23479 | Workloads |  | pending |  |  |
+| pending-23480 | Policies |  | pending |  |  |
+| pending-23481 | Policy reference |  | pending |  |  |
+| pending-23482 | Rego metadata |  | pending |  |  |
+| pending-23483 | Rego modules |  | pending |  |  |
+| pending-23484 | Tenant structures |  | pending |  |  |
+| pending-23485 | Traffic scope |  | pending |  |  |
+| pending-23486 | Credentials |  | pending |  |  |
+| pending-23487 | Domain ACLs |  | pending |  |  |
+| pending-23488 | Cloud &amp; SaaS findings |  | pending |  |  |
+| pending-23489 | Overview |  | pending |  |  |
+| pending-23490 | Posture Findings |  | pending |  |  |
+| pending-23491 | Content Findings |  | pending |  |  |
+| pending-23492 | Finding types libraryNew |  | pending |  |  |
+| pending-23493 | Email security |  | pending |  |  |
+| pending-23494 | Overview |  | pending |  |  |
+| pending-23495 | Monitoring |  | pending |  |  |
+| pending-23496 | Submissions |  | pending |  |  |
+| pending-23497 | Investigation |  | pending |  |  |
+| pending-23498 | Policies &amp; rules |  | pending |  |  |
+| pending-23499 | PhishGuard |  | pending |  |  |
+| pending-23500 | Email security settings |  | pending |  |  |
+| pending-23501 | Browser isolation |  | pending |  |  |
+| pending-23502 | Overview |  | pending |  |  |
+| pending-23503 | Browser isolation settings |  | pending |  |  |
+| pending-23504 | Reusable components |  | pending |  |  |
+| pending-23505 | Lists |  | pending |  |  |
+| pending-23506 | Tags |  | pending |  |  |
+| pending-23507 | Posture checks |  | pending |  |  |
+| pending-23508 | Custom pages |  | pending |  |  |
+| pending-23509 | Integrations |  | pending |  |  |
+| pending-23510 | Cloud &amp; SaaS |  | pending |  |  |
+| pending-23511 | Identity providers |  | pending |  |  |
+| pending-23512 | Service providers |  | pending |  |  |
+| pending-23513 | Webhooks |  | pending |  |  |
+| pending-23514 | Settings |  | pending |  |  |
+| pending-23515 | Networking |  | pending |  |  |
+| pending-23516 | OverviewNew |  | pending |  |  |
+| pending-23517 | Insights |  | pending |  |  |
+| pending-23518 | Network flow |  | pending |  |  |
+| pending-23519 | Tunnels |  | pending |  |  |
+| pending-23520 | MeshBeta |  | pending |  |  |
+| pending-23521 | RoutesNew |  | pending |  |  |
+| pending-23522 | IP addresses |  | pending |  |  |
+| pending-23523 | Address space |  | pending |  |  |
+| pending-23524 | Address maps |  | pending |  |  |
+| pending-23525 | Threats &amp; defense |  | pending |  |  |
+| pending-23526 | Overview |  | pending |  |  |
+| pending-23527 | Threat intelligence |  | pending |  |  |
+| pending-23528 | Investigate |  | pending |  |  |
+| pending-23529 | MonetizeNew |  | pending |  |  |
+| pending-23530 | Monetization GatewayBeta |  | pending |  |  |
+| pending-23531 | Delivery &amp; performance |  | pending |  |  |
+| pending-23532 | Bulk redirects |  | pending |  |  |
+| pending-23533 | Load Balancing |  | pending |  |  |
+| pending-23534 | Web tag management |  | pending |  |  |
+| pending-23535 | Manage account |  | pending |  |  |
+| pending-23536 | Members |  | pending |  |  |
+| pending-23537 | Billing |  | pending |  |  |
+| pending-23538 | Account API tokens |  | pending |  |  |
+| pending-23539 | OAuth clients |  | pending |  |  |
+| pending-23540 | Audit logs |  | pending |  |  |
+| pending-23541 | Blocked content |  | pending |  |  |
+| pending-23542 | Abuse reports |  | pending |  |  |
+| pending-23543 | Carbon Impact Report |  | pending |  |  |
+| pending-23544 | Configurations |  | pending |  |  |
+| pending-23545 | Tagged ResourcesBeta |  | pending |  |  |
+| pending-23546 | Collapse sidebar |  | pending |  |  |
+| pending-23547 | HTTP requests |  | pending |  |  |
+| pending-23548 |  |  | pending |  |  |
+| pending-23549 | All domains |  | pending |  |  |
+| pending-23550 | Ask AI |  | pending |  |  |
+| pending-23551 | Support |  | pending |  |  |
+| pending-23552 | User menu |  | pending |  |  |
+| pending-23553 | Search fields |  | pending |  |  |
+| pending-23554 | Request |  | pending |  |  |
+| pending-23555 | Client |  | pending |  |  |
+| pending-23556 | Response |  | pending |  |  |
+| pending-23557 | Cache and delivery |  | pending |  |  |
+| pending-23558 | Origin |  | pending |  |  |
+| pending-23559 | Edge and routing |  | pending |  |  |
+| pending-23560 | Security decisions and rules |  | pending |  |  |
+| pending-23561 | Bots and client integrity |  | pending |  |  |
+| pending-23562 | AI security |  | pending |  |  |
+| pending-23563 | Fraud detection |  | pending |  |  |
+| pending-23564 | API and web assets |  | pending |  |  |
+| pending-23565 | Other fields |  | pending |  |  |
+| pending-23566 | Fields |  | pending |  |  |
+| pending-23567 | Add filter |  | pending |  |  |
+| pending-23568 | Search with query language... |  | pending |  |  |
+| pending-23569 | Query language help |  | pending |  |  |
+| pending-23570 | Last 1 hour |  | pending |  |  |
+| pending-23571 | Log actions |  | pending |  |  |
+| pending-23572 | Request outcomes over time |  | pending |  |  |
+| pending-23573 | Configure |  | pending |  |  |
+| pending-23574 | Chart options |  | pending |  |  |
+| pending-23575 | Drag column |  | pending |  |  |
+| pending-23576 | Field actions for HTTP method |  | pending |  |  |
+| pending-23577 | Field actions for Host |  | pending |  |  |
+| pending-23578 | Field actions for Path |  | pending |  |  |
+| pending-23579 | Field actions for Edge status code |  | pending |  |  |
+| pending-23580 | Field actions for Cache status |  | pending |  |  |
+| pending-23581 | Field actions for Source IP |  | pending |  |  |
+| pending-23582 | Field actions for Country |  | pending |  |  |
+| pending-23583 | Field actions for Origin status code |  | pending |  |  |
+| pending-23584 | Expand row |  | pending |  |  |
+| pending-23585 | Cell actions |  | pending |  |  |
+| pending-23586 | Show step 1 of 5 |  | pending |  |  |
+| pending-23587 | Show step 2 of 5 |  | pending |  |  |
+| pending-23588 | Show step 3 of 5 |  | pending |  |  |
+| pending-23589 | Show step 4 of 5 |  | pending |  |  |
+| pending-23590 | Show step 5 of 5 |  | pending |  |  |
+| pending-23591 | Skip tour |  | pending |  |  |
+| pending-23592 | Next |  | pending |  |  |
+| logs-tour-03-dark-desktop | Next | Advance tour | explored and captured | Visualization step 3 of 5 | [screenshots/logs-tour-03-dark-desktop.png](screenshots/logs-tour-03-dark-desktop.png) |
+
+## logs-tour-03-dark-desktop
+
+| ID | Control | Action | Status | Result / reason | Evidence |
+| --- | --- | --- | --- | --- | --- |
+| pending-23594 | Cloudflare home |  | pending |  |  |
+| pending-23595 | Switch Account |  | pending |  |  |
+| pending-23596 | Quick search... |  | pending |  |  |
+| pending-23597 | Account home |  | pending |  |  |
+| pending-23598 | Recents |  | pending |  |  |
+| pending-23599 | LogsObservability |  | pending |  |  |
+| pending-23600 | Pin |  | pending |  |  |
+| pending-23601 | Web tag managementDelivery &amp; perform… |  | pending |  |  |
+| pending-23602 | Load BalancingDelivery &amp; perform… |  | pending |  |  |
+| pending-23603 | Bulk redirectsDelivery &amp; perform… |  | pending |  |  |
+| pending-23604 | InvestigateThreats &amp; defense |  | pending |  |  |
+| pending-23605 | Domains |  | pending |  |  |
+| pending-23606 | Overview |  | pending |  |  |
+| pending-23607 | Registrations |  | pending |  |  |
+| pending-23608 | Transfers |  | pending |  |  |
+| pending-23609 | ObservabilityNew |  | pending |  |  |
+| pending-23610 | Logs |  | pending |  |  |
+| pending-23611 | TracesBeta |  | pending |  |  |
+| pending-23612 | Analytics |  | pending |  |  |
+| pending-23613 | Account analytics |  | pending |  |  |
+| pending-23614 | Web analytics |  | pending |  |  |
+| pending-23615 | Export |  | pending |  |  |
+| pending-23616 | Logpush |  | pending |  |  |
+| pending-23617 | OpenTelemetry |  | pending |  |  |
+| pending-23618 | Alerts |  | pending |  |  |
+| pending-23619 | Monitors |  | pending |  |  |
+| pending-23620 | Platform Notifications |  | pending |  |  |
+| pending-23621 | Destinations |  | pending |  |  |
+| pending-23622 | Silences |  | pending |  |  |
+| pending-23623 | Usage |  | pending |  |  |
+| pending-23624 | Dashboards |  | pending |  |  |
+| pending-23625 | Compute |  | pending |  |  |
+| pending-23626 | Workers &amp; Pages |  | pending |  |  |
+| pending-23627 | Observability |  | pending |  |  |
+| pending-23628 | Workers for Platforms |  | pending |  |  |
+| pending-23629 | Containers |  | pending |  |  |
+| pending-23630 | Durable Objects |  | pending |  |  |
+| pending-23631 | Queues |  | pending |  |  |
+| pending-23632 | Workflows |  | pending |  |  |
+| pending-23633 | Browser Run |  | pending |  |  |
+| pending-23634 | VPCBeta |  | pending |  |  |
+| pending-23635 | Email Service |  | pending |  |  |
+| pending-23636 | Email SendingBeta |  | pending |  |  |
+| pending-23637 | Email Routing |  | pending |  |  |
+| pending-23638 | Workers plans |  | pending |  |  |
+| pending-23639 | FlagshipBeta |  | pending |  |  |
+| pending-23640 | AI |  | pending |  |  |
+| pending-23641 | Models |  | pending |  |  |
+| pending-23642 | Workers AI |  | pending |  |  |
+| pending-23643 | AI Gateway |  | pending |  |  |
+| pending-23644 | MCP Portals |  | pending |  |  |
+| pending-23645 | Vectorize |  | pending |  |  |
+| pending-23646 | AI Search |  | pending |  |  |
+| pending-23647 | Agent tracing |  | pending |  |  |
+| pending-23648 | Storage &amp; databases |  | pending |  |  |
+| pending-23649 | R2 Object Storage |  | pending |  |  |
+| pending-23650 | Postgres &amp; MySQL (Hyperdrive) |  | pending |  |  |
+| pending-23651 | Workers KV |  | pending |  |  |
+| pending-23652 | D1 SQLite Database |  | pending |  |  |
+| pending-23653 | Analytics Engine |  | pending |  |  |
+| pending-23654 | Basin Catalog |  | pending |  |  |
+| pending-23655 | Basin Pipelines |  | pending |  |  |
+| pending-23656 | Pipelines |  | pending |  |  |
+| pending-23657 | K2 StreamsBeta |  | pending |  |  |
+| pending-23658 | Secrets StoreBeta |  | pending |  |  |
+| pending-23659 | Images &amp; Stream |  | pending |  |  |
+| pending-23660 | Transformations |  | pending |  |  |
+| pending-23661 | Hosted images |  | pending |  |  |
+| pending-23662 | Hosted videos |  | pending |  |  |
+| pending-23663 | Live inputs |  | pending |  |  |
+| pending-23664 | Stream analytics |  | pending |  |  |
+| pending-23665 | Plans |  | pending |  |  |
+| pending-23666 | Realtime |  | pending |  |  |
+| pending-23667 | RealtimeKit |  | pending |  |  |
+| pending-23668 | TURN Server |  | pending |  |  |
+| pending-23669 | Serverless SFU |  | pending |  |  |
+| pending-23670 | MoQ RelayBeta |  | pending |  |  |
+| pending-23671 | Application security |  | pending |  |  |
+| pending-23672 | Security insights |  | pending |  |  |
+| pending-23673 | WAF |  | pending |  |  |
+| pending-23674 | BotBase |  | pending |  |  |
+| pending-23675 | Infrastructure |  | pending |  |  |
+| pending-23676 | Turnstile |  | pending |  |  |
+| pending-23677 | Data Localization Suite |  | pending |  |  |
+| pending-23678 | Zero Trust |  | pending |  |  |
+| pending-23679 | Overview |  | pending |  |  |
+| pending-23680 | Insights &amp; Logs |  | pending |  |  |
+| pending-23681 | Overview |  | pending |  |  |
+| pending-23682 | Dashboards |  | pending |  |  |
+| pending-23683 | Logs |  | pending |  |  |
+| pending-23684 | Team &amp; Resources |  | pending |  |  |
+| pending-23685 | Application library |  | pending |  |  |
+| pending-23686 | Devices |  | pending |  |  |
+| pending-23687 | Users |  | pending |  |  |
+| pending-23688 | Access controls |  | pending |  |  |
+| pending-23689 | Overview |  | pending |  |  |
+| pending-23690 | Applications |  | pending |  |  |
+| pending-23691 | Policies |  | pending |  |  |
+| pending-23692 | MCP Portals |  | pending |  |  |
+| pending-23693 | Targets |  | pending |  |  |
+| pending-23694 | Service credentials |  | pending |  |  |
+| pending-23695 | Access settings |  | pending |  |  |
+| pending-23696 | Traffic controls |  | pending |  |  |
+| pending-23697 | Overview |  | pending |  |  |
+| pending-23698 | Resolvers &amp; Proxies |  | pending |  |  |
+| pending-23699 | Firewall policies |  | pending |  |  |
+| pending-23700 | Resolver policiesNew |  | pending |  |  |
+| pending-23701 | Egress policies |  | pending |  |  |
+| pending-23702 | Traffic settings |  | pending |  |  |
+| pending-23703 | Data loss prevention |  | pending |  |  |
+| pending-23704 | Overview |  | pending |  |  |
+| pending-23705 | Profiles |  | pending |  |  |
+| pending-23706 | Data classification |  | pending |  |  |
+| pending-23707 | Validators |  | pending |  |  |
+| pending-23708 | Test scan |  | pending |  |  |
+| pending-23709 | DLP settings |  | pending |  |  |
+| pending-23710 | Cloud Workload SecurityBeta |  | pending |  |  |
+| pending-23711 | Deployments |  | pending |  |  |
+| pending-23712 | Policy sets |  | pending |  |  |
+| pending-23713 | Workloads |  | pending |  |  |
+| pending-23714 | Policies |  | pending |  |  |
+| pending-23715 | Policy reference |  | pending |  |  |
+| pending-23716 | Rego metadata |  | pending |  |  |
+| pending-23717 | Rego modules |  | pending |  |  |
+| pending-23718 | Tenant structures |  | pending |  |  |
+| pending-23719 | Traffic scope |  | pending |  |  |
+| pending-23720 | Credentials |  | pending |  |  |
+| pending-23721 | Domain ACLs |  | pending |  |  |
+| pending-23722 | Cloud &amp; SaaS findings |  | pending |  |  |
+| pending-23723 | Overview |  | pending |  |  |
+| pending-23724 | Posture Findings |  | pending |  |  |
+| pending-23725 | Content Findings |  | pending |  |  |
+| pending-23726 | Finding types libraryNew |  | pending |  |  |
+| pending-23727 | Email security |  | pending |  |  |
+| pending-23728 | Overview |  | pending |  |  |
+| pending-23729 | Monitoring |  | pending |  |  |
+| pending-23730 | Submissions |  | pending |  |  |
+| pending-23731 | Investigation |  | pending |  |  |
+| pending-23732 | Policies &amp; rules |  | pending |  |  |
+| pending-23733 | PhishGuard |  | pending |  |  |
+| pending-23734 | Email security settings |  | pending |  |  |
+| pending-23735 | Browser isolation |  | pending |  |  |
+| pending-23736 | Overview |  | pending |  |  |
+| pending-23737 | Browser isolation settings |  | pending |  |  |
+| pending-23738 | Reusable components |  | pending |  |  |
+| pending-23739 | Lists |  | pending |  |  |
+| pending-23740 | Tags |  | pending |  |  |
+| pending-23741 | Posture checks |  | pending |  |  |
+| pending-23742 | Custom pages |  | pending |  |  |
+| pending-23743 | Integrations |  | pending |  |  |
+| pending-23744 | Cloud &amp; SaaS |  | pending |  |  |
+| pending-23745 | Identity providers |  | pending |  |  |
+| pending-23746 | Service providers |  | pending |  |  |
+| pending-23747 | Webhooks |  | pending |  |  |
+| pending-23748 | Settings |  | pending |  |  |
+| pending-23749 | Networking |  | pending |  |  |
+| pending-23750 | OverviewNew |  | pending |  |  |
+| pending-23751 | Insights |  | pending |  |  |
+| pending-23752 | Network flow |  | pending |  |  |
+| pending-23753 | Tunnels |  | pending |  |  |
+| pending-23754 | MeshBeta |  | pending |  |  |
+| pending-23755 | RoutesNew |  | pending |  |  |
+| pending-23756 | IP addresses |  | pending |  |  |
+| pending-23757 | Address space |  | pending |  |  |
+| pending-23758 | Address maps |  | pending |  |  |
+| pending-23759 | Threats &amp; defense |  | pending |  |  |
+| pending-23760 | Overview |  | pending |  |  |
+| pending-23761 | Threat intelligence |  | pending |  |  |
+| pending-23762 | Investigate |  | pending |  |  |
+| pending-23763 | MonetizeNew |  | pending |  |  |
+| pending-23764 | Monetization GatewayBeta |  | pending |  |  |
+| pending-23765 | Delivery &amp; performance |  | pending |  |  |
+| pending-23766 | Bulk redirects |  | pending |  |  |
+| pending-23767 | Load Balancing |  | pending |  |  |
+| pending-23768 | Web tag management |  | pending |  |  |
+| pending-23769 | Manage account |  | pending |  |  |
+| pending-23770 | Members |  | pending |  |  |
+| pending-23771 | Billing |  | pending |  |  |
+| pending-23772 | Account API tokens |  | pending |  |  |
+| pending-23773 | OAuth clients |  | pending |  |  |
+| pending-23774 | Audit logs |  | pending |  |  |
+| pending-23775 | Blocked content |  | pending |  |  |
+| pending-23776 | Abuse reports |  | pending |  |  |
+| pending-23777 | Carbon Impact Report |  | pending |  |  |
+| pending-23778 | Configurations |  | pending |  |  |
+| pending-23779 | Tagged ResourcesBeta |  | pending |  |  |
+| pending-23780 | Collapse sidebar |  | pending |  |  |
+| pending-23781 | HTTP requests |  | pending |  |  |
+| pending-23782 |  |  | pending |  |  |
+| pending-23783 | All domains |  | pending |  |  |
+| pending-23784 | Ask AI |  | pending |  |  |
+| pending-23785 | Support |  | pending |  |  |
+| pending-23786 | User menu |  | pending |  |  |
+| pending-23787 | Search fields |  | pending |  |  |
+| pending-23788 | Request |  | pending |  |  |
+| pending-23789 | Client |  | pending |  |  |
+| pending-23790 | Response |  | pending |  |  |
+| pending-23791 | Cache and delivery |  | pending |  |  |
+| pending-23792 | Origin |  | pending |  |  |
+| pending-23793 | Edge and routing |  | pending |  |  |
+| pending-23794 | Security decisions and rules |  | pending |  |  |
+| pending-23795 | Bots and client integrity |  | pending |  |  |
+| pending-23796 | AI security |  | pending |  |  |
+| pending-23797 | Fraud detection |  | pending |  |  |
+| pending-23798 | API and web assets |  | pending |  |  |
+| pending-23799 | Other fields |  | pending |  |  |
+| pending-23800 | Fields |  | pending |  |  |
+| pending-23801 | Add filter |  | pending |  |  |
+| pending-23802 | Search with query language... |  | pending |  |  |
+| pending-23803 | Query language help |  | pending |  |  |
+| pending-23804 | Last 1 hour |  | pending |  |  |
+| pending-23805 | Log actions |  | pending |  |  |
+| pending-23806 | Request outcomes over time |  | pending |  |  |
+| pending-23807 | Configure |  | pending |  |  |
+| pending-23808 | Chart options |  | pending |  |  |
+| pending-23809 | Drag column |  | pending |  |  |
+| pending-23810 | Field actions for HTTP method |  | pending |  |  |
+| pending-23811 | Field actions for Host |  | pending |  |  |
+| pending-23812 | Field actions for Path |  | pending |  |  |
+| pending-23813 | Field actions for Edge status code |  | pending |  |  |
+| pending-23814 | Field actions for Cache status |  | pending |  |  |
+| pending-23815 | Field actions for Source IP |  | pending |  |  |
+| pending-23816 | Field actions for Country |  | pending |  |  |
+| pending-23817 | Field actions for Origin status code |  | pending |  |  |
+| pending-23818 | Expand row |  | pending |  |  |
+| pending-23819 | Cell actions |  | pending |  |  |
+| pending-23820 | Show step 1 of 5 |  | pending |  |  |
+| pending-23821 | Show step 2 of 5 |  | pending |  |  |
+| pending-23822 | Show step 3 of 5 |  | pending |  |  |
+| pending-23823 | Show step 4 of 5 |  | pending |  |  |
+| pending-23824 | Show step 5 of 5 |  | pending |  |  |
+| pending-23825 | Skip tour |  | pending |  |  |
+| pending-23826 | Next |  | pending |  |  |
+| logs-tour-04-dark-desktop | Next | Advance tour | explored and captured | Anomalies step 4 of 5 | [screenshots/logs-tour-04-dark-desktop.png](screenshots/logs-tour-04-dark-desktop.png) |
+
+## logs-tour-04-dark-desktop
+
+| ID | Control | Action | Status | Result / reason | Evidence |
+| --- | --- | --- | --- | --- | --- |
+| pending-23828 | Cloudflare home |  | pending |  |  |
+| pending-23829 | Switch Account |  | pending |  |  |
+| pending-23830 | Quick search... |  | pending |  |  |
+| pending-23831 | Account home |  | pending |  |  |
+| pending-23832 | Recents |  | pending |  |  |
+| pending-23833 | LogsObservability |  | pending |  |  |
+| pending-23834 | Pin |  | pending |  |  |
+| pending-23835 | Web tag managementDelivery &amp; perform… |  | pending |  |  |
+| pending-23836 | Load BalancingDelivery &amp; perform… |  | pending |  |  |
+| pending-23837 | Bulk redirectsDelivery &amp; perform… |  | pending |  |  |
+| pending-23838 | InvestigateThreats &amp; defense |  | pending |  |  |
+| pending-23839 | Domains |  | pending |  |  |
+| pending-23840 | Overview |  | pending |  |  |
+| pending-23841 | Registrations |  | pending |  |  |
+| pending-23842 | Transfers |  | pending |  |  |
+| pending-23843 | ObservabilityNew |  | pending |  |  |
+| pending-23844 | Logs |  | pending |  |  |
+| pending-23845 | TracesBeta |  | pending |  |  |
+| pending-23846 | Analytics |  | pending |  |  |
+| pending-23847 | Account analytics |  | pending |  |  |
+| pending-23848 | Web analytics |  | pending |  |  |
+| pending-23849 | Export |  | pending |  |  |
+| pending-23850 | Logpush |  | pending |  |  |
+| pending-23851 | OpenTelemetry |  | pending |  |  |
+| pending-23852 | Alerts |  | pending |  |  |
+| pending-23853 | Monitors |  | pending |  |  |
+| pending-23854 | Platform Notifications |  | pending |  |  |
+| pending-23855 | Destinations |  | pending |  |  |
+| pending-23856 | Silences |  | pending |  |  |
+| pending-23857 | Usage |  | pending |  |  |
+| pending-23858 | Dashboards |  | pending |  |  |
+| pending-23859 | Compute |  | pending |  |  |
+| pending-23860 | Workers &amp; Pages |  | pending |  |  |
+| pending-23861 | Observability |  | pending |  |  |
+| pending-23862 | Workers for Platforms |  | pending |  |  |
+| pending-23863 | Containers |  | pending |  |  |
+| pending-23864 | Durable Objects |  | pending |  |  |
+| pending-23865 | Queues |  | pending |  |  |
+| pending-23866 | Workflows |  | pending |  |  |
+| pending-23867 | Browser Run |  | pending |  |  |
+| pending-23868 | VPCBeta |  | pending |  |  |
+| pending-23869 | Email Service |  | pending |  |  |
+| pending-23870 | Email SendingBeta |  | pending |  |  |
+| pending-23871 | Email Routing |  | pending |  |  |
+| pending-23872 | Workers plans |  | pending |  |  |
+| pending-23873 | FlagshipBeta |  | pending |  |  |
+| pending-23874 | AI |  | pending |  |  |
+| pending-23875 | Models |  | pending |  |  |
+| pending-23876 | Workers AI |  | pending |  |  |
+| pending-23877 | AI Gateway |  | pending |  |  |
+| pending-23878 | MCP Portals |  | pending |  |  |
+| pending-23879 | Vectorize |  | pending |  |  |
+| pending-23880 | AI Search |  | pending |  |  |
+| pending-23881 | Agent tracing |  | pending |  |  |
+| pending-23882 | Storage &amp; databases |  | pending |  |  |
+| pending-23883 | R2 Object Storage |  | pending |  |  |
+| pending-23884 | Postgres &amp; MySQL (Hyperdrive) |  | pending |  |  |
+| pending-23885 | Workers KV |  | pending |  |  |
+| pending-23886 | D1 SQLite Database |  | pending |  |  |
+| pending-23887 | Analytics Engine |  | pending |  |  |
+| pending-23888 | Basin Catalog |  | pending |  |  |
+| pending-23889 | Basin Pipelines |  | pending |  |  |
+| pending-23890 | Pipelines |  | pending |  |  |
+| pending-23891 | K2 StreamsBeta |  | pending |  |  |
+| pending-23892 | Secrets StoreBeta |  | pending |  |  |
+| pending-23893 | Images &amp; Stream |  | pending |  |  |
+| pending-23894 | Transformations |  | pending |  |  |
+| pending-23895 | Hosted images |  | pending |  |  |
+| pending-23896 | Hosted videos |  | pending |  |  |
+| pending-23897 | Live inputs |  | pending |  |  |
+| pending-23898 | Stream analytics |  | pending |  |  |
+| pending-23899 | Plans |  | pending |  |  |
+| pending-23900 | Realtime |  | pending |  |  |
+| pending-23901 | RealtimeKit |  | pending |  |  |
+| pending-23902 | TURN Server |  | pending |  |  |
+| pending-23903 | Serverless SFU |  | pending |  |  |
+| pending-23904 | MoQ RelayBeta |  | pending |  |  |
+| pending-23905 | Application security |  | pending |  |  |
+| pending-23906 | Security insights |  | pending |  |  |
+| pending-23907 | WAF |  | pending |  |  |
+| pending-23908 | BotBase |  | pending |  |  |
+| pending-23909 | Infrastructure |  | pending |  |  |
+| pending-23910 | Turnstile |  | pending |  |  |
+| pending-23911 | Data Localization Suite |  | pending |  |  |
+| pending-23912 | Zero Trust |  | pending |  |  |
+| pending-23913 | Overview |  | pending |  |  |
+| pending-23914 | Insights &amp; Logs |  | pending |  |  |
+| pending-23915 | Overview |  | pending |  |  |
+| pending-23916 | Dashboards |  | pending |  |  |
+| pending-23917 | Logs |  | pending |  |  |
+| pending-23918 | Team &amp; Resources |  | pending |  |  |
+| pending-23919 | Application library |  | pending |  |  |
+| pending-23920 | Devices |  | pending |  |  |
+| pending-23921 | Users |  | pending |  |  |
+| pending-23922 | Access controls |  | pending |  |  |
+| pending-23923 | Overview |  | pending |  |  |
+| pending-23924 | Applications |  | pending |  |  |
+| pending-23925 | Policies |  | pending |  |  |
+| pending-23926 | MCP Portals |  | pending |  |  |
+| pending-23927 | Targets |  | pending |  |  |
+| pending-23928 | Service credentials |  | pending |  |  |
+| pending-23929 | Access settings |  | pending |  |  |
+| pending-23930 | Traffic controls |  | pending |  |  |
+| pending-23931 | Overview |  | pending |  |  |
+| pending-23932 | Resolvers &amp; Proxies |  | pending |  |  |
+| pending-23933 | Firewall policies |  | pending |  |  |
+| pending-23934 | Resolver policiesNew |  | pending |  |  |
+| pending-23935 | Egress policies |  | pending |  |  |
+| pending-23936 | Traffic settings |  | pending |  |  |
+| pending-23937 | Data loss prevention |  | pending |  |  |
+| pending-23938 | Overview |  | pending |  |  |
+| pending-23939 | Profiles |  | pending |  |  |
+| pending-23940 | Data classification |  | pending |  |  |
+| pending-23941 | Validators |  | pending |  |  |
+| pending-23942 | Test scan |  | pending |  |  |
+| pending-23943 | DLP settings |  | pending |  |  |
+| pending-23944 | Cloud Workload SecurityBeta |  | pending |  |  |
+| pending-23945 | Deployments |  | pending |  |  |
+| pending-23946 | Policy sets |  | pending |  |  |
+| pending-23947 | Workloads |  | pending |  |  |
+| pending-23948 | Policies |  | pending |  |  |
+| pending-23949 | Policy reference |  | pending |  |  |
+| pending-23950 | Rego metadata |  | pending |  |  |
+| pending-23951 | Rego modules |  | pending |  |  |
+| pending-23952 | Tenant structures |  | pending |  |  |
+| pending-23953 | Traffic scope |  | pending |  |  |
+| pending-23954 | Credentials |  | pending |  |  |
+| pending-23955 | Domain ACLs |  | pending |  |  |
+| pending-23956 | Cloud &amp; SaaS findings |  | pending |  |  |
+| pending-23957 | Overview |  | pending |  |  |
+| pending-23958 | Posture Findings |  | pending |  |  |
+| pending-23959 | Content Findings |  | pending |  |  |
+| pending-23960 | Finding types libraryNew |  | pending |  |  |
+| pending-23961 | Email security |  | pending |  |  |
+| pending-23962 | Overview |  | pending |  |  |
+| pending-23963 | Monitoring |  | pending |  |  |
+| pending-23964 | Submissions |  | pending |  |  |
+| pending-23965 | Investigation |  | pending |  |  |
+| pending-23966 | Policies &amp; rules |  | pending |  |  |
+| pending-23967 | PhishGuard |  | pending |  |  |
+| pending-23968 | Email security settings |  | pending |  |  |
+| pending-23969 | Browser isolation |  | pending |  |  |
+| pending-23970 | Overview |  | pending |  |  |
+| pending-23971 | Browser isolation settings |  | pending |  |  |
+| pending-23972 | Reusable components |  | pending |  |  |
+| pending-23973 | Lists |  | pending |  |  |
+| pending-23974 | Tags |  | pending |  |  |
+| pending-23975 | Posture checks |  | pending |  |  |
+| pending-23976 | Custom pages |  | pending |  |  |
+| pending-23977 | Integrations |  | pending |  |  |
+| pending-23978 | Cloud &amp; SaaS |  | pending |  |  |
+| pending-23979 | Identity providers |  | pending |  |  |
+| pending-23980 | Service providers |  | pending |  |  |
+| pending-23981 | Webhooks |  | pending |  |  |
+| pending-23982 | Settings |  | pending |  |  |
+| pending-23983 | Networking |  | pending |  |  |
+| pending-23984 | OverviewNew |  | pending |  |  |
+| pending-23985 | Insights |  | pending |  |  |
+| pending-23986 | Network flow |  | pending |  |  |
+| pending-23987 | Tunnels |  | pending |  |  |
+| pending-23988 | MeshBeta |  | pending |  |  |
+| pending-23989 | RoutesNew |  | pending |  |  |
+| pending-23990 | IP addresses |  | pending |  |  |
+| pending-23991 | Address space |  | pending |  |  |
+| pending-23992 | Address maps |  | pending |  |  |
+| pending-23993 | Threats &amp; defense |  | pending |  |  |
+| pending-23994 | Overview |  | pending |  |  |
+| pending-23995 | Threat intelligence |  | pending |  |  |
+| pending-23996 | Investigate |  | pending |  |  |
+| pending-23997 | MonetizeNew |  | pending |  |  |
+| pending-23998 | Monetization GatewayBeta |  | pending |  |  |
+| pending-23999 | Delivery &amp; performance |  | pending |  |  |
+| pending-24000 | Bulk redirects |  | pending |  |  |
+| pending-24001 | Load Balancing |  | pending |  |  |
+| pending-24002 | Web tag management |  | pending |  |  |
+| pending-24003 | Manage account |  | pending |  |  |
+| pending-24004 | Members |  | pending |  |  |
+| pending-24005 | Billing |  | pending |  |  |
+| pending-24006 | Account API tokens |  | pending |  |  |
+| pending-24007 | OAuth clients |  | pending |  |  |
+| pending-24008 | Audit logs |  | pending |  |  |
+| pending-24009 | Blocked content |  | pending |  |  |
+| pending-24010 | Abuse reports |  | pending |  |  |
+| pending-24011 | Carbon Impact Report |  | pending |  |  |
+| pending-24012 | Configurations |  | pending |  |  |
+| pending-24013 | Tagged ResourcesBeta |  | pending |  |  |
+| pending-24014 | Collapse sidebar |  | pending |  |  |
+| pending-24015 | HTTP requests |  | pending |  |  |
+| pending-24016 |  |  | pending |  |  |
+| pending-24017 | All domains |  | pending |  |  |
+| pending-24018 | Ask AI |  | pending |  |  |
+| pending-24019 | Support |  | pending |  |  |
+| pending-24020 | User menu |  | pending |  |  |
+| pending-24021 | Search fields |  | pending |  |  |
+| pending-24022 | Request |  | pending |  |  |
+| pending-24023 | Client |  | pending |  |  |
+| pending-24024 | Response |  | pending |  |  |
+| pending-24025 | Cache and delivery |  | pending |  |  |
+| pending-24026 | Origin |  | pending |  |  |
+| pending-24027 | Edge and routing |  | pending |  |  |
+| pending-24028 | Security decisions and rules |  | pending |  |  |
+| pending-24029 | Bots and client integrity |  | pending |  |  |
+| pending-24030 | AI security |  | pending |  |  |
+| pending-24031 | Fraud detection |  | pending |  |  |
+| pending-24032 | API and web assets |  | pending |  |  |
+| pending-24033 | Other fields |  | pending |  |  |
+| pending-24034 | Fields |  | pending |  |  |
+| pending-24035 | Add filter |  | pending |  |  |
+| pending-24036 | Search with query language... |  | pending |  |  |
+| pending-24037 | Query language help |  | pending |  |  |
+| pending-24038 | Last 1 hour |  | pending |  |  |
+| pending-24039 | Log actions |  | pending |  |  |
+| pending-24040 | Request outcomes over time |  | pending |  |  |
+| pending-24041 | Configure |  | pending |  |  |
+| pending-24042 | Chart options |  | pending |  |  |
+| pending-24043 | Drag column |  | pending |  |  |
+| pending-24044 | Field actions for HTTP method |  | pending |  |  |
+| pending-24045 | Field actions for Host |  | pending |  |  |
+| pending-24046 | Field actions for Path |  | pending |  |  |
+| pending-24047 | Field actions for Edge status code |  | pending |  |  |
+| pending-24048 | Field actions for Cache status |  | pending |  |  |
+| pending-24049 | Field actions for Source IP |  | pending |  |  |
+| pending-24050 | Field actions for Country |  | pending |  |  |
+| pending-24051 | Field actions for Origin status code |  | pending |  |  |
+| pending-24052 | Expand row |  | pending |  |  |
+| pending-24053 | Cell actions |  | pending |  |  |
+| pending-24054 | Show step 1 of 5 |  | pending |  |  |
+| pending-24055 | Show step 2 of 5 |  | pending |  |  |
+| pending-24056 | Show step 3 of 5 |  | pending |  |  |
+| pending-24057 | Show step 4 of 5 |  | pending |  |  |
+| pending-24058 | Show step 5 of 5 |  | pending |  |  |
+| pending-24059 | Skip tour |  | pending |  |  |
+| pending-24060 | Next |  | pending |  |  |
+| logs-tour-05-dark-desktop | Next | Advance tour | explored and captured | Fields and values step 5 of 5 | [screenshots/logs-tour-05-dark-desktop.png](screenshots/logs-tour-05-dark-desktop.png) |
+
+## logs-tour-05-dark-desktop
+
+| ID | Control | Action | Status | Result / reason | Evidence |
+| --- | --- | --- | --- | --- | --- |
+| pending-24062 | Cloudflare home |  | pending |  |  |
+| pending-24063 | Switch Account |  | pending |  |  |
+| pending-24064 | Quick search... |  | pending |  |  |
+| pending-24065 | Account home |  | pending |  |  |
+| pending-24066 | Recents |  | pending |  |  |
+| pending-24067 | LogsObservability |  | pending |  |  |
+| pending-24068 | Pin |  | pending |  |  |
+| pending-24069 | Web tag managementDelivery &amp; perform… |  | pending |  |  |
+| pending-24070 | Load BalancingDelivery &amp; perform… |  | pending |  |  |
+| pending-24071 | Bulk redirectsDelivery &amp; perform… |  | pending |  |  |
+| pending-24072 | InvestigateThreats &amp; defense |  | pending |  |  |
+| pending-24073 | Domains |  | pending |  |  |
+| pending-24074 | Overview |  | pending |  |  |
+| pending-24075 | Registrations |  | pending |  |  |
+| pending-24076 | Transfers |  | pending |  |  |
+| pending-24077 | ObservabilityNew |  | pending |  |  |
+| pending-24078 | Logs |  | pending |  |  |
+| pending-24079 | TracesBeta |  | pending |  |  |
+| pending-24080 | Analytics |  | pending |  |  |
+| pending-24081 | Account analytics |  | pending |  |  |
+| pending-24082 | Web analytics |  | pending |  |  |
+| pending-24083 | Export |  | pending |  |  |
+| pending-24084 | Logpush |  | pending |  |  |
+| pending-24085 | OpenTelemetry |  | pending |  |  |
+| pending-24086 | Alerts |  | pending |  |  |
+| pending-24087 | Monitors |  | pending |  |  |
+| pending-24088 | Platform Notifications |  | pending |  |  |
+| pending-24089 | Destinations |  | pending |  |  |
+| pending-24090 | Silences |  | pending |  |  |
+| pending-24091 | Usage |  | pending |  |  |
+| pending-24092 | Dashboards |  | pending |  |  |
+| pending-24093 | Compute |  | pending |  |  |
+| pending-24094 | Workers &amp; Pages |  | pending |  |  |
+| pending-24095 | Observability |  | pending |  |  |
+| pending-24096 | Workers for Platforms |  | pending |  |  |
+| pending-24097 | Containers |  | pending |  |  |
+| pending-24098 | Durable Objects |  | pending |  |  |
+| pending-24099 | Queues |  | pending |  |  |
+| pending-24100 | Workflows |  | pending |  |  |
+| pending-24101 | Browser Run |  | pending |  |  |
+| pending-24102 | VPCBeta |  | pending |  |  |
+| pending-24103 | Email Service |  | pending |  |  |
+| pending-24104 | Email SendingBeta |  | pending |  |  |
+| pending-24105 | Email Routing |  | pending |  |  |
+| pending-24106 | Workers plans |  | pending |  |  |
+| pending-24107 | FlagshipBeta |  | pending |  |  |
+| pending-24108 | AI |  | pending |  |  |
+| pending-24109 | Models |  | pending |  |  |
+| pending-24110 | Workers AI |  | pending |  |  |
+| pending-24111 | AI Gateway |  | pending |  |  |
+| pending-24112 | MCP Portals |  | pending |  |  |
+| pending-24113 | Vectorize |  | pending |  |  |
+| pending-24114 | AI Search |  | pending |  |  |
+| pending-24115 | Agent tracing |  | pending |  |  |
+| pending-24116 | Storage &amp; databases |  | pending |  |  |
+| pending-24117 | R2 Object Storage |  | pending |  |  |
+| pending-24118 | Postgres &amp; MySQL (Hyperdrive) |  | pending |  |  |
+| pending-24119 | Workers KV |  | pending |  |  |
+| pending-24120 | D1 SQLite Database |  | pending |  |  |
+| pending-24121 | Analytics Engine |  | pending |  |  |
+| pending-24122 | Basin Catalog |  | pending |  |  |
+| pending-24123 | Basin Pipelines |  | pending |  |  |
+| pending-24124 | Pipelines |  | pending |  |  |
+| pending-24125 | K2 StreamsBeta |  | pending |  |  |
+| pending-24126 | Secrets StoreBeta |  | pending |  |  |
+| pending-24127 | Images &amp; Stream |  | pending |  |  |
+| pending-24128 | Transformations |  | pending |  |  |
+| pending-24129 | Hosted images |  | pending |  |  |
+| pending-24130 | Hosted videos |  | pending |  |  |
+| pending-24131 | Live inputs |  | pending |  |  |
+| pending-24132 | Stream analytics |  | pending |  |  |
+| pending-24133 | Plans |  | pending |  |  |
+| pending-24134 | Realtime |  | pending |  |  |
+| pending-24135 | RealtimeKit |  | pending |  |  |
+| pending-24136 | TURN Server |  | pending |  |  |
+| pending-24137 | Serverless SFU |  | pending |  |  |
+| pending-24138 | MoQ RelayBeta |  | pending |  |  |
+| pending-24139 | Application security |  | pending |  |  |
+| pending-24140 | Security insights |  | pending |  |  |
+| pending-24141 | WAF |  | pending |  |  |
+| pending-24142 | BotBase |  | pending |  |  |
+| pending-24143 | Infrastructure |  | pending |  |  |
+| pending-24144 | Turnstile |  | pending |  |  |
+| pending-24145 | Data Localization Suite |  | pending |  |  |
+| pending-24146 | Zero Trust |  | pending |  |  |
+| pending-24147 | Overview |  | pending |  |  |
+| pending-24148 | Insights &amp; Logs |  | pending |  |  |
+| pending-24149 | Overview |  | pending |  |  |
+| pending-24150 | Dashboards |  | pending |  |  |
+| pending-24151 | Logs |  | pending |  |  |
+| pending-24152 | Team &amp; Resources |  | pending |  |  |
+| pending-24153 | Application library |  | pending |  |  |
+| pending-24154 | Devices |  | pending |  |  |
+| pending-24155 | Users |  | pending |  |  |
+| pending-24156 | Access controls |  | pending |  |  |
+| pending-24157 | Overview |  | pending |  |  |
+| pending-24158 | Applications |  | pending |  |  |
+| pending-24159 | Policies |  | pending |  |  |
+| pending-24160 | MCP Portals |  | pending |  |  |
+| pending-24161 | Targets |  | pending |  |  |
+| pending-24162 | Service credentials |  | pending |  |  |
+| pending-24163 | Access settings |  | pending |  |  |
+| pending-24164 | Traffic controls |  | pending |  |  |
+| pending-24165 | Overview |  | pending |  |  |
+| pending-24166 | Resolvers &amp; Proxies |  | pending |  |  |
+| pending-24167 | Firewall policies |  | pending |  |  |
+| pending-24168 | Resolver policiesNew |  | pending |  |  |
+| pending-24169 | Egress policies |  | pending |  |  |
+| pending-24170 | Traffic settings |  | pending |  |  |
+| pending-24171 | Data loss prevention |  | pending |  |  |
+| pending-24172 | Overview |  | pending |  |  |
+| pending-24173 | Profiles |  | pending |  |  |
+| pending-24174 | Data classification |  | pending |  |  |
+| pending-24175 | Validators |  | pending |  |  |
+| pending-24176 | Test scan |  | pending |  |  |
+| pending-24177 | DLP settings |  | pending |  |  |
+| pending-24178 | Cloud Workload SecurityBeta |  | pending |  |  |
+| pending-24179 | Deployments |  | pending |  |  |
+| pending-24180 | Policy sets |  | pending |  |  |
+| pending-24181 | Workloads |  | pending |  |  |
+| pending-24182 | Policies |  | pending |  |  |
+| pending-24183 | Policy reference |  | pending |  |  |
+| pending-24184 | Rego metadata |  | pending |  |  |
+| pending-24185 | Rego modules |  | pending |  |  |
+| pending-24186 | Tenant structures |  | pending |  |  |
+| pending-24187 | Traffic scope |  | pending |  |  |
+| pending-24188 | Credentials |  | pending |  |  |
+| pending-24189 | Domain ACLs |  | pending |  |  |
+| pending-24190 | Cloud &amp; SaaS findings |  | pending |  |  |
+| pending-24191 | Overview |  | pending |  |  |
+| pending-24192 | Posture Findings |  | pending |  |  |
+| pending-24193 | Content Findings |  | pending |  |  |
+| pending-24194 | Finding types libraryNew |  | pending |  |  |
+| pending-24195 | Email security |  | pending |  |  |
+| pending-24196 | Overview |  | pending |  |  |
+| pending-24197 | Monitoring |  | pending |  |  |
+| pending-24198 | Submissions |  | pending |  |  |
+| pending-24199 | Investigation |  | pending |  |  |
+| pending-24200 | Policies &amp; rules |  | pending |  |  |
+| pending-24201 | PhishGuard |  | pending |  |  |
+| pending-24202 | Email security settings |  | pending |  |  |
+| pending-24203 | Browser isolation |  | pending |  |  |
+| pending-24204 | Overview |  | pending |  |  |
+| pending-24205 | Browser isolation settings |  | pending |  |  |
+| pending-24206 | Reusable components |  | pending |  |  |
+| pending-24207 | Lists |  | pending |  |  |
+| pending-24208 | Tags |  | pending |  |  |
+| pending-24209 | Posture checks |  | pending |  |  |
+| pending-24210 | Custom pages |  | pending |  |  |
+| pending-24211 | Integrations |  | pending |  |  |
+| pending-24212 | Cloud &amp; SaaS |  | pending |  |  |
+| pending-24213 | Identity providers |  | pending |  |  |
+| pending-24214 | Service providers |  | pending |  |  |
+| pending-24215 | Webhooks |  | pending |  |  |
+| pending-24216 | Settings |  | pending |  |  |
+| pending-24217 | Networking |  | pending |  |  |
+| pending-24218 | OverviewNew |  | pending |  |  |
+| pending-24219 | Insights |  | pending |  |  |
+| pending-24220 | Network flow |  | pending |  |  |
+| pending-24221 | Tunnels |  | pending |  |  |
+| pending-24222 | MeshBeta |  | pending |  |  |
+| pending-24223 | RoutesNew |  | pending |  |  |
+| pending-24224 | IP addresses |  | pending |  |  |
+| pending-24225 | Address space |  | pending |  |  |
+| pending-24226 | Address maps |  | pending |  |  |
+| pending-24227 | Threats &amp; defense |  | pending |  |  |
+| pending-24228 | Overview |  | pending |  |  |
+| pending-24229 | Threat intelligence |  | pending |  |  |
+| pending-24230 | Investigate |  | pending |  |  |
+| pending-24231 | MonetizeNew |  | pending |  |  |
+| pending-24232 | Monetization GatewayBeta |  | pending |  |  |
+| pending-24233 | Delivery &amp; performance |  | pending |  |  |
+| pending-24234 | Bulk redirects |  | pending |  |  |
+| pending-24235 | Load Balancing |  | pending |  |  |
+| pending-24236 | Web tag management |  | pending |  |  |
+| pending-24237 | Manage account |  | pending |  |  |
+| pending-24238 | Members |  | pending |  |  |
+| pending-24239 | Billing |  | pending |  |  |
+| pending-24240 | Account API tokens |  | pending |  |  |
+| pending-24241 | OAuth clients |  | pending |  |  |
+| pending-24242 | Audit logs |  | pending |  |  |
+| pending-24243 | Blocked content |  | pending |  |  |
+| pending-24244 | Abuse reports |  | pending |  |  |
+| pending-24245 | Carbon Impact Report |  | pending |  |  |
+| pending-24246 | Configurations |  | pending |  |  |
+| pending-24247 | Tagged ResourcesBeta |  | pending |  |  |
+| pending-24248 | Collapse sidebar |  | pending |  |  |
+| pending-24249 | HTTP requests |  | pending |  |  |
+| pending-24250 |  |  | pending |  |  |
+| pending-24251 | All domains |  | pending |  |  |
+| pending-24252 | Ask AI |  | pending |  |  |
+| pending-24253 | Support |  | pending |  |  |
+| pending-24254 | User menu |  | pending |  |  |
+| pending-24255 | Search fields |  | pending |  |  |
+| pending-24256 | Request |  | pending |  |  |
+| pending-24257 | Client |  | pending |  |  |
+| pending-24258 | Response |  | pending |  |  |
+| pending-24259 | Cache and delivery |  | pending |  |  |
+| pending-24260 | Origin |  | pending |  |  |
+| pending-24261 | Edge and routing |  | pending |  |  |
+| pending-24262 | Security decisions and rules |  | pending |  |  |
+| pending-24263 | Bots and client integrity |  | pending |  |  |
+| pending-24264 | AI security |  | pending |  |  |
+| pending-24265 | Fraud detection |  | pending |  |  |
+| pending-24266 | API and web assets |  | pending |  |  |
+| pending-24267 | Other fields |  | pending |  |  |
+| pending-24268 | Fields |  | pending |  |  |
+| pending-24269 | Add filter |  | pending |  |  |
+| pending-24270 | Search with query language... |  | pending |  |  |
+| pending-24271 | Query language help |  | pending |  |  |
+| pending-24272 | Last 1 hour |  | pending |  |  |
+| pending-24273 | Log actions |  | pending |  |  |
+| pending-24274 | Request outcomes over time |  | pending |  |  |
+| pending-24275 | Configure |  | pending |  |  |
+| pending-24276 | Chart options |  | pending |  |  |
+| pending-24277 | Drag column |  | pending |  |  |
+| pending-24278 | Field actions for HTTP method |  | pending |  |  |
+| pending-24279 | Field actions for Host |  | pending |  |  |
+| pending-24280 | Field actions for Path |  | pending |  |  |
+| pending-24281 | Field actions for Edge status code |  | pending |  |  |
+| pending-24282 | Field actions for Cache status |  | pending |  |  |
+| pending-24283 | Field actions for Source IP |  | pending |  |  |
+| pending-24284 | Field actions for Country |  | pending |  |  |
+| pending-24285 | Field actions for Origin status code |  | pending |  |  |
+| pending-24286 | Expand row |  | pending |  |  |
+| pending-24287 | Cell actions |  | pending |  |  |
+| pending-24288 | Show step 1 of 5 |  | pending |  |  |
+| pending-24289 | Show step 2 of 5 |  | pending |  |  |
+| pending-24290 | Show step 3 of 5 |  | pending |  |  |
+| pending-24291 | Show step 4 of 5 |  | pending |  |  |
+| pending-24292 | Show step 5 of 5 |  | pending |  |  |
+| pending-24293 | Skip tour |  | pending |  |  |
+| pending-24294 | Start exploring |  | pending |  |  |
+| logs-http-dark-desktop | Start exploring | Close tour | explored and captured | HTTP logs with chart and default fields | [screenshots/logs-http-dark-desktop.png](screenshots/logs-http-dark-desktop.png) |
+
+## logs-http-dark-desktop
+
+| ID | Control | Action | Status | Result / reason | Evidence |
+| --- | --- | --- | --- | --- | --- |
+| pending-24296 | Cloudflare home |  | pending |  |  |
+| pending-24297 | Switch Account |  | pending |  |  |
+| pending-24298 | Quick search... |  | pending |  |  |
+| pending-24299 | Account home |  | pending |  |  |
+| pending-24300 | Recents |  | pending |  |  |
+| pending-24301 | LogsObservability |  | pending |  |  |
+| pending-24302 | Pin |  | pending |  |  |
+| pending-24303 | Web tag managementDelivery &amp; perform… |  | pending |  |  |
+| pending-24304 | Load BalancingDelivery &amp; perform… |  | pending |  |  |
+| pending-24305 | Bulk redirectsDelivery &amp; perform… |  | pending |  |  |
+| pending-24306 | InvestigateThreats &amp; defense |  | pending |  |  |
+| pending-24307 | Domains |  | pending |  |  |
+| pending-24308 | Overview |  | pending |  |  |
+| pending-24309 | Registrations |  | pending |  |  |
+| pending-24310 | Transfers |  | pending |  |  |
+| pending-24311 | ObservabilityNew |  | pending |  |  |
+| pending-24312 | Logs |  | pending |  |  |
+| pending-24313 | TracesBeta |  | pending |  |  |
+| pending-24314 | Analytics |  | pending |  |  |
+| pending-24315 | Account analytics |  | pending |  |  |
+| pending-24316 | Web analytics |  | pending |  |  |
+| pending-24317 | Export |  | pending |  |  |
+| pending-24318 | Logpush |  | pending |  |  |
+| pending-24319 | OpenTelemetry |  | pending |  |  |
+| pending-24320 | Alerts |  | pending |  |  |
+| pending-24321 | Monitors |  | pending |  |  |
+| pending-24322 | Platform Notifications |  | pending |  |  |
+| pending-24323 | Destinations |  | pending |  |  |
+| pending-24324 | Silences |  | pending |  |  |
+| pending-24325 | Usage |  | pending |  |  |
+| pending-24326 | Dashboards |  | pending |  |  |
+| pending-24327 | Compute |  | pending |  |  |
+| pending-24328 | Workers &amp; Pages |  | pending |  |  |
+| pending-24329 | Observability |  | pending |  |  |
+| pending-24330 | Workers for Platforms |  | pending |  |  |
+| pending-24331 | Containers |  | pending |  |  |
+| pending-24332 | Durable Objects |  | pending |  |  |
+| pending-24333 | Queues |  | pending |  |  |
+| pending-24334 | Workflows |  | pending |  |  |
+| pending-24335 | Browser Run |  | pending |  |  |
+| pending-24336 | VPCBeta |  | pending |  |  |
+| pending-24337 | Email Service |  | pending |  |  |
+| pending-24338 | Email SendingBeta |  | pending |  |  |
+| pending-24339 | Email Routing |  | pending |  |  |
+| pending-24340 | Workers plans |  | pending |  |  |
+| pending-24341 | FlagshipBeta |  | pending |  |  |
+| pending-24342 | AI |  | pending |  |  |
+| pending-24343 | Models |  | pending |  |  |
+| pending-24344 | Workers AI |  | pending |  |  |
+| pending-24345 | AI Gateway |  | pending |  |  |
+| pending-24346 | MCP Portals |  | pending |  |  |
+| pending-24347 | Vectorize |  | pending |  |  |
+| pending-24348 | AI Search |  | pending |  |  |
+| pending-24349 | Agent tracing |  | pending |  |  |
+| pending-24350 | Storage &amp; databases |  | pending |  |  |
+| pending-24351 | R2 Object Storage |  | pending |  |  |
+| pending-24352 | Postgres &amp; MySQL (Hyperdrive) |  | pending |  |  |
+| pending-24353 | Workers KV |  | pending |  |  |
+| pending-24354 | D1 SQLite Database |  | pending |  |  |
+| pending-24355 | Analytics Engine |  | pending |  |  |
+| pending-24356 | Basin Catalog |  | pending |  |  |
+| pending-24357 | Basin Pipelines |  | pending |  |  |
+| pending-24358 | Pipelines |  | pending |  |  |
+| pending-24359 | K2 StreamsBeta |  | pending |  |  |
+| pending-24360 | Secrets StoreBeta |  | pending |  |  |
+| pending-24361 | Images &amp; Stream |  | pending |  |  |
+| pending-24362 | Transformations |  | pending |  |  |
+| pending-24363 | Hosted images |  | pending |  |  |
+| pending-24364 | Hosted videos |  | pending |  |  |
+| pending-24365 | Live inputs |  | pending |  |  |
+| pending-24366 | Stream analytics |  | pending |  |  |
+| pending-24367 | Plans |  | pending |  |  |
+| pending-24368 | Realtime |  | pending |  |  |
+| pending-24369 | RealtimeKit |  | pending |  |  |
+| pending-24370 | TURN Server |  | pending |  |  |
+| pending-24371 | Serverless SFU |  | pending |  |  |
+| pending-24372 | MoQ RelayBeta |  | pending |  |  |
+| pending-24373 | Application security |  | pending |  |  |
+| pending-24374 | Security insights |  | pending |  |  |
+| pending-24375 | WAF |  | pending |  |  |
+| pending-24376 | BotBase |  | pending |  |  |
+| pending-24377 | Infrastructure |  | pending |  |  |
+| pending-24378 | Turnstile |  | pending |  |  |
+| pending-24379 | Data Localization Suite |  | pending |  |  |
+| pending-24380 | Zero Trust |  | pending |  |  |
+| pending-24381 | Overview |  | pending |  |  |
+| pending-24382 | Insights &amp; Logs |  | pending |  |  |
+| pending-24383 | Overview |  | pending |  |  |
+| pending-24384 | Dashboards |  | pending |  |  |
+| pending-24385 | Logs |  | pending |  |  |
+| pending-24386 | Team &amp; Resources |  | pending |  |  |
+| pending-24387 | Application library |  | pending |  |  |
+| pending-24388 | Devices |  | pending |  |  |
+| pending-24389 | Users |  | pending |  |  |
+| pending-24390 | Access controls |  | pending |  |  |
+| pending-24391 | Overview |  | pending |  |  |
+| pending-24392 | Applications |  | pending |  |  |
+| pending-24393 | Policies |  | pending |  |  |
+| pending-24394 | MCP Portals |  | pending |  |  |
+| pending-24395 | Targets |  | pending |  |  |
+| pending-24396 | Service credentials |  | pending |  |  |
+| pending-24397 | Access settings |  | pending |  |  |
+| pending-24398 | Traffic controls |  | pending |  |  |
+| pending-24399 | Overview |  | pending |  |  |
+| pending-24400 | Resolvers &amp; Proxies |  | pending |  |  |
+| pending-24401 | Firewall policies |  | pending |  |  |
+| pending-24402 | Resolver policiesNew |  | pending |  |  |
+| pending-24403 | Egress policies |  | pending |  |  |
+| pending-24404 | Traffic settings |  | pending |  |  |
+| pending-24405 | Data loss prevention |  | pending |  |  |
+| pending-24406 | Overview |  | pending |  |  |
+| pending-24407 | Profiles |  | pending |  |  |
+| pending-24408 | Data classification |  | pending |  |  |
+| pending-24409 | Validators |  | pending |  |  |
+| pending-24410 | Test scan |  | pending |  |  |
+| pending-24411 | DLP settings |  | pending |  |  |
+| pending-24412 | Cloud Workload SecurityBeta |  | pending |  |  |
+| pending-24413 | Deployments |  | pending |  |  |
+| pending-24414 | Policy sets |  | pending |  |  |
+| pending-24415 | Workloads |  | pending |  |  |
+| pending-24416 | Policies |  | pending |  |  |
+| pending-24417 | Policy reference |  | pending |  |  |
+| pending-24418 | Rego metadata |  | pending |  |  |
+| pending-24419 | Rego modules |  | pending |  |  |
+| pending-24420 | Tenant structures |  | pending |  |  |
+| pending-24421 | Traffic scope |  | pending |  |  |
+| pending-24422 | Credentials |  | pending |  |  |
+| pending-24423 | Domain ACLs |  | pending |  |  |
+| pending-24424 | Cloud &amp; SaaS findings |  | pending |  |  |
+| pending-24425 | Overview |  | pending |  |  |
+| pending-24426 | Posture Findings |  | pending |  |  |
+| pending-24427 | Content Findings |  | pending |  |  |
+| pending-24428 | Finding types libraryNew |  | pending |  |  |
+| pending-24429 | Email security |  | pending |  |  |
+| pending-24430 | Overview |  | pending |  |  |
+| pending-24431 | Monitoring |  | pending |  |  |
+| pending-24432 | Submissions |  | pending |  |  |
+| pending-24433 | Investigation |  | pending |  |  |
+| pending-24434 | Policies &amp; rules |  | pending |  |  |
+| pending-24435 | PhishGuard |  | pending |  |  |
+| pending-24436 | Email security settings |  | pending |  |  |
+| pending-24437 | Browser isolation |  | pending |  |  |
+| pending-24438 | Overview |  | pending |  |  |
+| pending-24439 | Browser isolation settings |  | pending |  |  |
+| pending-24440 | Reusable components |  | pending |  |  |
+| pending-24441 | Lists |  | pending |  |  |
+| pending-24442 | Tags |  | pending |  |  |
+| pending-24443 | Posture checks |  | pending |  |  |
+| pending-24444 | Custom pages |  | pending |  |  |
+| pending-24445 | Integrations |  | pending |  |  |
+| pending-24446 | Cloud &amp; SaaS |  | pending |  |  |
+| pending-24447 | Identity providers |  | pending |  |  |
+| pending-24448 | Service providers |  | pending |  |  |
+| pending-24449 | Webhooks |  | pending |  |  |
+| pending-24450 | Settings |  | pending |  |  |
+| pending-24451 | Networking |  | pending |  |  |
+| pending-24452 | OverviewNew |  | pending |  |  |
+| pending-24453 | Insights |  | pending |  |  |
+| pending-24454 | Network flow |  | pending |  |  |
+| pending-24455 | Tunnels |  | pending |  |  |
+| pending-24456 | MeshBeta |  | pending |  |  |
+| pending-24457 | RoutesNew |  | pending |  |  |
+| pending-24458 | IP addresses |  | pending |  |  |
+| pending-24459 | Address space |  | pending |  |  |
+| pending-24460 | Address maps |  | pending |  |  |
+| pending-24461 | Threats &amp; defense |  | pending |  |  |
+| pending-24462 | Overview |  | pending |  |  |
+| pending-24463 | Threat intelligence |  | pending |  |  |
+| pending-24464 | Investigate |  | pending |  |  |
+| pending-24465 | MonetizeNew |  | pending |  |  |
+| pending-24466 | Monetization GatewayBeta |  | pending |  |  |
+| pending-24467 | Delivery &amp; performance |  | pending |  |  |
+| pending-24468 | Bulk redirects |  | pending |  |  |
+| pending-24469 | Load Balancing |  | pending |  |  |
+| pending-24470 | Web tag management |  | pending |  |  |
+| pending-24471 | Manage account |  | pending |  |  |
+| pending-24472 | Members |  | pending |  |  |
+| pending-24473 | Billing |  | pending |  |  |
+| pending-24474 | Account API tokens |  | pending |  |  |
+| pending-24475 | OAuth clients |  | pending |  |  |
+| pending-24476 | Audit logs |  | pending |  |  |
+| pending-24477 | Blocked content |  | pending |  |  |
+| pending-24478 | Abuse reports |  | pending |  |  |
+| pending-24479 | Carbon Impact Report |  | pending |  |  |
+| pending-24480 | Configurations |  | pending |  |  |
+| pending-24481 | Tagged ResourcesBeta |  | pending |  |  |
+| pending-24482 | Collapse sidebar |  | pending |  |  |
+| pending-24483 | HTTP requests |  | pending |  |  |
+| pending-24484 |  |  | pending |  |  |
+| pending-24485 | All domains |  | pending |  |  |
+| pending-24486 | Ask AI |  | pending |  |  |
+| pending-24487 | Support |  | pending |  |  |
+| pending-24488 | User menu |  | pending |  |  |
+| pending-24489 | Search fields |  | pending |  |  |
+| pending-24490 | Request |  | pending |  |  |
+| pending-24491 | Client |  | pending |  |  |
+| pending-24492 | Response |  | pending |  |  |
+| pending-24493 | Cache and delivery |  | pending |  |  |
+| pending-24494 | Origin |  | pending |  |  |
+| pending-24495 | Edge and routing |  | pending |  |  |
+| pending-24496 | Security decisions and rules |  | pending |  |  |
+| pending-24497 | Bots and client integrity |  | pending |  |  |
+| pending-24498 | AI security |  | pending |  |  |
+| pending-24499 | Fraud detection |  | pending |  |  |
+| pending-24500 | API and web assets |  | pending |  |  |
+| pending-24501 | Other fields |  | pending |  |  |
+| pending-24502 | Fields |  | pending |  |  |
+| pending-24503 | Add filter |  | pending |  |  |
+| pending-24504 | Search with query language... |  | pending |  |  |
+| pending-24505 | Query language help |  | pending |  |  |
+| pending-24506 | Last 1 hour |  | pending |  |  |
+| pending-24507 | Log actions |  | pending |  |  |
+| pending-24508 | Request outcomes over time |  | pending |  |  |
+| pending-24509 | Configure |  | pending |  |  |
+| pending-24510 | Chart options |  | pending |  |  |
+| pending-24511 | Drag column |  | pending |  |  |
+| pending-24512 | Field actions for HTTP method |  | pending |  |  |
+| pending-24513 | Field actions for Host |  | pending |  |  |
+| pending-24514 | Field actions for Path |  | pending |  |  |
+| pending-24515 | Field actions for Edge status code |  | pending |  |  |
+| pending-24516 | Field actions for Cache status |  | pending |  |  |
+| pending-24517 | Field actions for Source IP |  | pending |  |  |
+| pending-24518 | Field actions for Country |  | pending |  |  |
+| pending-24519 | Field actions for Origin status code |  | pending |  |  |
+| pending-24520 | Expand row |  | pending |  |  |
+| pending-24521 | Cell actions |  | pending |  |  |
