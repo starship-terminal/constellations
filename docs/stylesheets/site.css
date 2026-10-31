@@ -1,7 +1,7 @@
 /* The docs pages' stylesheet, in the gallery's voice: void-dark canvas,
    hairline borders instead of shadows, Inter Variable at weights ≤590, one
    acid-lime accent, and the same 57px full-bleed top bar holding the mark, the
-   site nav, the search field and the theme toggle. The theme is the gallery's
+   site nav, the search field, the Settings link and the theme toggle. The theme is the gallery's
    own ds-theme store on <html data-theme> — dark is the default. */
 
 /* ---------- tokens ---------- */
@@ -89,8 +89,14 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
   border-bottom: 1px solid var(--line);
 }
 .brand { display: flex; align-items: center; gap: 9px; color: var(--text-strong); font-size: 16px; font-weight: 510; text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
-.brand svg { fill: var(--text-strong); }
+/* the mark: the Flat favicon inline, or the Glass one under <html data-icon="glass">
+   (assets/app-icon.js); the PNG is only fetched once Glass is chosen */
+.brand .mark { flex: none; width: 18px; height: 18px; }
+.brand .mark-glass { display: none; }
+:root[data-icon="glass"] .brand svg.mark { display: none; }
+:root[data-icon="glass"] .brand .mark-glass { display: block; background: url(../assets/icons/glass/favicon-48.png) center / 18px 18px no-repeat; }
 .site-nav { display: flex; gap: 8px; }
+.site-nav + .icon-btn { margin-left: auto; } /* no search field (--publish): keep the buttons right */
 .site-nav a { padding: 8px 12px; color: var(--text); text-decoration: none; font-size: 13px; font-weight: 400; }
 .site-nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .site-nav a[aria-current="page"] { color: var(--text-strong); }
@@ -107,6 +113,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
   border: 1px solid var(--line); background: transparent; color: var(--text); cursor: pointer;
 }
 .icon-btn:hover { border-color: var(--line-strong); color: var(--text-strong); }
+.icon-btn[aria-current="page"] { border-color: var(--line-strong); color: var(--text-strong); background: var(--chip-bg); }
 
 /* ---------- layout ---------- */
 .doc, .wrap { max-width: var(--page-w); margin: 0 auto; padding: 40px var(--pad) 96px; }
@@ -168,6 +175,28 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .doc .grid.cards > ul > li > :first-child { margin-top: 0; }
 .doc .grid.cards > ul > li strong { font-weight: 510; font-size: 15px; letter-spacing: -.011em; }
 .doc .grid.cards > ul > li p { color: var(--muted); font-size: 13px; margin: .5em 0 0; }
+
+/* ---------- settings (settings/): one panel per section, a row per preference */
+.doc .lede { color: var(--muted); margin: 0 0 1.4em; }
+.prefs { max-width: 720px; background: var(--panel); border-radius: var(--radius-card); box-shadow: var(--ring); }
+.pref { margin: 0; padding: 20px; border: 0; min-width: 0; }
+.pref + .pref { border-top: 1px solid var(--line); }
+.pref-name { float: left; padding: 0; color: var(--text-strong); font-size: 15px; font-weight: 510; }
+.pref-help { clear: left; margin: 2px 0 14px; color: var(--muted); font-size: 13px; }
+.pref-note { margin: 14px 0 0; color: var(--faint); font-size: 12px; }
+.pref-options { display: flex; flex-wrap: wrap; gap: 12px; }
+.pref-option {
+  position: relative; display: flex; align-items: center; gap: 12px; min-width: 200px; padding: 10px 14px 10px 10px;
+  border: 1px solid var(--line); border-radius: var(--radius-card); background: var(--field-bg); cursor: pointer;
+}
+.pref-option:hover { border-color: var(--line-strong); }
+.pref-option:has(:checked) { border-color: var(--text-strong); background: var(--chip-bg); }
+.pref-option:has(:focus-visible) { outline: 1px solid var(--focus); outline-offset: 2px; }
+.pref-option input { position: absolute; opacity: 0; pointer-events: none; }
+.pref-option img { flex: none; width: 56px; height: 56px; }
+.pref-option span { display: flex; flex-direction: column; line-height: 1.35; }
+.pref-option strong { color: var(--text-strong); font-weight: 510; font-size: 14px; }
+.pref-option small { color: var(--muted); font-size: 12px; }
 
 /* ---------- footer ---------- */
 .foot {
