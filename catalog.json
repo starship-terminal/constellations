@@ -2897,6 +2897,67 @@
       "layoutGaps": {
         "icons/": "Notion's icons are its own artwork and are not kept here (docs/RIGHTS.md)"
       }
+    },
+    {
+      "slug": "metabase",
+      "name": "Metabase (Edumation demo)",
+      "url": "https://www.metabase.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Visual query notebooks, searchable field filters, chart inspectors, analytics dashboards and drill-through tables. Official interactive Edumation demo with custom purple light branding; not the default Metabase theme.",
+      "tags": [
+        "web",
+        "analytics",
+        "dashboard",
+        "query-builder",
+        "filters",
+        "charts",
+        "table",
+        "sidebar",
+        "light",
+        "demo"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-31",
+      "access": "Official public interactive Edumation demo; automatically supplied persona, no owner account; unsaved read-only query exploration",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/metabase/README.md",
+      "tokens": "systems/metabase/tokens.json",
+      "styleGuide": "systems/metabase/style-guide.html",
+      "preview": {
+        "cover": "systems/metabase/screenshots/query-builder-light-desktop.png",
+        "icon": "systems/metabase/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.accent.default",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Codex",
+        "model": "GPT-6",
+        "version": "Not exposed in captured UI",
+        "route": "web-inspector",
+        "pr": "",
+        "durationMin": 14
+      },
+      "layoutGaps": {
+        "icons/": "Only icon geometry was recorded; product artwork is not redistributed for reuse."
+      }
     }
   ]
 }

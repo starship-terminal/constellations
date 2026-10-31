@@ -1,0 +1,194 @@
+[
+  {
+    "name": "primary-default",
+    "source": "query-builder-light-desktop.png",
+    "box": [
+      30,
+      608,
+      224,
+      44
+    ],
+    "label": "Primary button, default",
+    "tokens": "light.component.primary"
+  },
+  {
+    "name": "range-disabled",
+    "source": "numeric-filter-light-desktop.png",
+    "box": [
+      44,
+      400,
+      384,
+      206
+    ],
+    "label": "Range popover, focused input and disabled submit",
+    "tokens": "light.component.input; light.component.disabled; light.component.popover"
+  },
+  {
+    "name": "filter-fields",
+    "source": "query-filter-fields-light-desktop.png",
+    "box": [
+      44,
+      400,
+      387,
+      430
+    ],
+    "label": "Field menu with search focus",
+    "tokens": "light.component.popover"
+  },
+  {
+    "name": "filter-operators",
+    "source": "filter-operators-light-desktop.png",
+    "box": [
+      250,
+      463,
+      209,
+      352
+    ],
+    "label": "Numeric operators menu",
+    "tokens": "light.component.popover"
+  },
+  {
+    "name": "grouping-menu",
+    "source": "grouping-fields-light-desktop.png",
+    "box": [
+      659,
+      526,
+      310,
+      370
+    ],
+    "label": "Grouping field menu",
+    "tokens": "light.component.popover"
+  },
+  {
+    "name": "aggregation-menu",
+    "source": "aggregation-light-desktop.png",
+    "box": [
+      44,
+      1,
+      308,
+      480
+    ],
+    "label": "Aggregation menu",
+    "tokens": "light.component.popover"
+  },
+  {
+    "name": "chart-types",
+    "source": "chart-chooser-light-desktop.png",
+    "box": [
+      22,
+      138,
+      343,
+      314
+    ],
+    "label": "Visualization choices, table selected",
+    "tokens": "light.accent.default"
+  },
+  {
+    "name": "chart-tabs",
+    "source": "chart-display-light-desktop.png",
+    "box": [
+      22,
+      126,
+      355,
+      220
+    ],
+    "label": "Tabs and switches off",
+    "tokens": "light.accent.default"
+  },
+  {
+    "name": "chart-inputs",
+    "source": "chart-axes-light-desktop.png",
+    "box": [
+      20,
+      192,
+      360,
+      338
+    ],
+    "label": "Axis inputs, switch on, disabled scale",
+    "tokens": "light.component.input"
+  },
+  {
+    "name": "drill-menu",
+    "source": "drilldown-menu-light-desktop.png",
+    "box": [
+      396,
+      409,
+      263,
+      240
+    ],
+    "label": "Drill-through action menu",
+    "tokens": "light.component.popover"
+  },
+  {
+    "name": "metric-card",
+    "source": "dashboard-light-desktop.png",
+    "box": [
+      31,
+      193,
+      343,
+      172
+    ],
+    "label": "Metric card",
+    "tokens": "light.component.card; core.typography.metric"
+  },
+  {
+    "name": "empty-card",
+    "source": "dashboard-light-desktop.png",
+    "box": [
+      31,
+      366,
+      688,
+      347
+    ],
+    "label": "No-results card",
+    "tokens": "light.component.card"
+  },
+  {
+    "name": "error-card",
+    "source": "dashboard-light-desktop.png",
+    "box": [
+      720,
+      366,
+      690,
+      347
+    ],
+    "label": "Chart error card",
+    "tokens": "light.component.card"
+  },
+  {
+    "name": "dashboard-multiselect",
+    "source": "dashboard-filter-light-desktop.png",
+    "box": [
+      31,
+      184,
+      321,
+      411
+    ],
+    "label": "Multi-select, checked, unchecked, indeterminate",
+    "tokens": "light.component.popover"
+  },
+  {
+    "name": "collection-filter",
+    "source": "collection-filter-light-desktop.png",
+    "box": [
+      1203,
+      466,
+      185,
+      289
+    ],
+    "label": "Checkbox list with disabled options",
+    "tokens": "light.component.popover"
+  },
+  {
+    "name": "table-results",
+    "source": "drilldown-results-light-desktop.png",
+    "box": [
+      0,
+      120,
+      1020,
+      280
+    ],
+    "label": "Filtered table and filter pill",
+    "tokens": "light.text.primary"
+  }
+]
