@@ -2960,7 +2960,8 @@
         "model": "GPT-6 (exact runtime model identifier unavailable)",
         "version": "Web capture 2026-10-31",
         "route": "web-inspector",
-        "durationMin": null
+        "durationMin": null,
+        "pr": "https://github.com/c-wenlong/designs/pull/139"
       },
       "layoutGaps": {
         "icons/": "Product artwork is retained only inside screenshot references."
