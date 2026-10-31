@@ -1,0 +1,602 @@
+[
+  {
+    "name": "account-home-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T03:56:04.532Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "analytics-date-picker-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T03:58:39.490Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "analytics-filter-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T03:58:31.018Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "appearance-menu-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T03:59:46.022Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "appearance-restored-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T04:01:53.834Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "challenge-dialog-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T03:58:58.752Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "challenge-dialog-dark-mobile",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 844,
+      "visual": {
+        "height": 844,
+        "scale": 1,
+        "width": 390
+      },
+      "width": 390
+    },
+    "png": {
+      "width": 390,
+      "height": 844
+    },
+    "time": "2026-10-31T03:59:10.748Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "challenge-dialog-light-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T04:00:25.546Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "challenge-dialog-light-mobile",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 844,
+      "visual": {
+        "height": 844,
+        "scale": 1,
+        "width": 390
+      },
+      "width": 390
+    },
+    "png": {
+      "width": 390,
+      "height": 844
+    },
+    "time": "2026-10-31T04:00:32.231Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "custom-action-menu-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T03:58:08.607Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "custom-condition-and-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T03:57:53.978Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "custom-expression-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T03:58:04.453Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "custom-field-menu-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T03:57:35.419Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "custom-operator-menu-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T03:57:43.825Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "custom-rule-empty-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T03:57:29.059Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "custom-rule-empty-light-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T04:00:59.454Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "custom-rule-footer-light-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T04:01:07.485Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "public-home-desktop",
+    "route": "landing",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T03:51:49.872Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "public-home-mobile",
+    "route": "landing",
+    "viewport": {
+      "dpr": 1,
+      "height": 844,
+      "visual": {
+        "height": 844,
+        "scale": 1,
+        "width": 390
+      },
+      "width": 390
+    },
+    "png": {
+      "width": 390,
+      "height": 844
+    },
+    "time": "2026-10-31T03:52:49.546Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "public-menu-mobile",
+    "route": "landing",
+    "viewport": {
+      "dpr": 1,
+      "height": 844,
+      "visual": {
+        "height": 844,
+        "scale": 1,
+        "width": 390
+      },
+      "width": 390
+    },
+    "png": {
+      "width": 390,
+      "height": 844
+    },
+    "time": "2026-10-31T03:52:54.530Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "public-search-desktop",
+    "route": "landing",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T03:52:43.435Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "security-analytics-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T03:58:23.755Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "security-analytics-light-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T04:01:23.727Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "security-rules-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T03:57:00.450Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "security-rules-light-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T04:00:49.243Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "security-settings-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T03:58:49.215Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "settings-search-dark-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T03:58:54.178Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "settings-search-dark-mobile",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 844,
+      "visual": {
+        "height": 844,
+        "scale": 1,
+        "width": 390
+      },
+      "width": 390
+    },
+    "png": {
+      "width": 390,
+      "height": 844
+    },
+    "time": "2026-10-31T03:59:07.155Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "settings-search-light-desktop",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 1000,
+      "visual": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "png": {
+      "width": 1440,
+      "height": 1000
+    },
+    "time": "2026-10-31T04:00:12.504Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  },
+  {
+    "name": "settings-search-light-mobile",
+    "route": "app",
+    "viewport": {
+      "dpr": 1,
+      "height": 844,
+      "visual": {
+        "height": 844,
+        "scale": 1,
+        "width": 390
+      },
+      "width": 390
+    },
+    "png": {
+      "width": 390,
+      "height": 844
+    },
+    "time": "2026-10-31T04:00:39.997Z",
+    "review": "Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage."
+  }
+]
