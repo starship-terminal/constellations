@@ -2952,7 +2952,7 @@
         "model": "GPT-6",
         "version": "Not exposed in captured UI",
         "route": "web-inspector",
-        "pr": "",
+        "pr": "https://github.com/c-wenlong/designs/pull/135",
         "durationMin": 14
       },
       "layoutGaps": {
