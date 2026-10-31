@@ -2957,7 +2957,7 @@
         "model": "GPT-6",
         "version": "web app captured 2026-10-31; build version not exposed",
         "route": "web-inspector",
-        "pr": "pending",
+        "pr": "https://github.com/c-wenlong/designs/pull/138",
         "durationMin": null
       },
       "layoutGaps": {
