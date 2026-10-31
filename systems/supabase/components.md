@@ -82,5 +82,25 @@ Source: [full screenshot](screenshots/app-function-editor.png). Observed; see co
 ![feedback-textarea](components/crops/feedback-textarea.png)
 Source: [full screenshot](screenshots/app-feedback-composer.png). Observed; see corresponding raw reading for measured values.
 
+## warning-dark
+![warning-dark](components/crops/warning-dark.png)
+Source: [full screenshot](screenshots/app-spend-cap-plan-restriction.png). Observed; see corresponding raw reading for measured values.
+
+## warning-light
+![warning-light](components/crops/warning-light.png)
+Source: [full screenshot](screenshots/app-light-spend-cap.png). Observed; see corresponding raw reading for measured values.
+
+## timezone-search
+![timezone-search](components/crops/timezone-search.png)
+Source: [full screenshot](screenshots/app-timezone-search.png). Observed; see corresponding raw reading for measured values.
+
+## oauth-scope-menu
+![oauth-scope-menu](components/crops/oauth-scope-menu.png)
+Source: [full screenshot](screenshots/app-oauth-scope-options.png). Observed; see corresponding raw reading for measured values.
+
+## repository-empty
+![repository-empty](components/crops/repository-empty.png)
+Source: [full screenshot](screenshots/app-github-repository-empty.png). Observed; see corresponding raw reading for measured values.
+
 ## Gaps
 Team and audit table cells are captured. Database row detail panels, schema navigation, database table filters and main SQL workspace remain unavailable while both projects are paused. Side-panel SQL was viewed empty; no SQL was executed. Textarea autofocus and keyboard-focused Cancel are visible; no hover/pressed parity or validation errors claimed.

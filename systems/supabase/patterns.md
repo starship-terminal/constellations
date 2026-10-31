@@ -24,6 +24,16 @@
 
 [Account preferences](screenshots/app-account-preferences.png) and [switches](screenshots/app-keyboard-shortcuts.png) expose account configuration. These were inspected without changing settings except the previously approved temporary theme switch. [Feature previews](screenshots/app-feature-previews.png) includes embedded product imagery, not proof of an enabled Explorer.
 
+## Further interaction patterns
+
+[Organization creation](screenshots/app-new-organization-form.png) uses a centered form with type and plan selectors. [OAuth publication](screenshots/app-oauth-publish-form.png) uses a wider side panel, repeatable callback rows and nested [scope menus](screenshots/app-oauth-scope-options.png); its [mobile form](screenshots/app-light-mobile-oauth-form.png) keeps actions at the bottom. Neither form was submitted.
+
+[Search empty state](screenshots/app-team-search-empty.png) quotes the search term, while [MFA-filter empty state](screenshots/app-team-filter-empty.png) explains the active filters. [Audit filter groups](screenshots/app-audit-filter-group.png) use inline parenthesized conditions. [Timezone search](screenshots/app-timezone-search.png) filters a scrollable selection menu without changing the saved preference.
+
+[Repository selection](screenshots/app-github-repository-selector.png) remains reachable through organization integrations despite a disabled project sidebar link. [Log Drains](screenshots/app-project-log-drains-gate.png) presents a paid-plan gate. [Branch management](screenshots/app-branches-paused.png) and [merge requests](screenshots/app-merge-requests-paused.png) show the paused-project explanation.
+
+[Spend-cap warning](screenshots/app-spend-cap-plan-restriction.png) uses an amber bordered callout, also measured in [light](screenshots/app-light-spend-cap.png). Its [mobile panel](screenshots/app-light-mobile-spend-cap.png) stacks the actions. [Expanded charges](screenshots/app-spend-cap-resource-details.png) use a two-column table within the panel. No billing setting changed.
+
 ## Missing
 
 Database table editing, schema exploration, database row details and validation were not captured. Full interaction, theme and width parity remain incomplete; consult the inventory. Neither paused project was resumed.

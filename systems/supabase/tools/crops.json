@@ -178,5 +178,50 @@
       1005,
       193
     ]
+  ],
+  "warning-dark": [
+    "app-spend-cap-plan-restriction",
+    [
+      660,
+      425,
+      1260,
+      527
+    ]
+  ],
+  "warning-light": [
+    "app-light-spend-cap",
+    [
+      660,
+      425,
+      1260,
+      527
+    ]
+  ],
+  "timezone-search": [
+    "app-timezone-search",
+    [
+      810,
+      25,
+      1118,
+      363
+    ]
+  ],
+  "oauth-scope-menu": [
+    "app-oauth-scope-options",
+    [
+      1077,
+      374,
+      1239,
+      475
+    ]
+  ],
+  "repository-empty": [
+    "app-github-repository-empty",
+    [
+      856,
+      337,
+      1120,
+      434
+    ]
   ]
 }

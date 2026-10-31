@@ -66,6 +66,10 @@ def build():
             out[theme]['component'][name]={key:token(element['styles'][prop],typ,f'raw/expanded/{file}.measurements.json components[{index}].styles.{prop}; live {theme}') for key,prop,typ in [('bg','background-color','color'),('text','color','color'),('radius','border-radius','dimension'),('height','height','dimension')]}
     header=read('expanded/dark-table.measurements')['components'][0]['styles']
     out['core']['typography']['tableHeader']=token({'fontFamily':header['font-family'],'fontSize':header['font-size'],'fontWeight':int(header['font-weight']),'lineHeight':header['line-height']},'typography','raw/expanded/dark-table.measurements.json components[0].styles; dark team table header')
+    for theme in ['dark','light']:
+        warning=read('continuation/'+theme+'-warning.measurements')
+        out[theme]['status']={'warning':{key:token(warning['styles'][prop],typ,f'raw/continuation/{theme}-warning.measurements.json styles.{prop}; spend-cap warning') for key,prop,typ in [('bg','background-color','color'),('text','color','color'),('border','border-color','color'),('radius','border-radius','dimension'),('padding','padding','dimension')]}}
+        out[theme]['status']['warning']['bodyText']=token(warning['children'][2]['styles']['color'],'color',f'raw/continuation/{theme}-warning.measurements.json children[2].styles.color; warning body text')
     out['$themes']=[{'id':theme,'name':theme.title(),'selectedTokenSets':{'core':'enabled',theme:'enabled'}} for theme in ['dark','light']]
     out['$extensions']={'notTokenised': ['Full CSS variable inventory was not captured; exported variables are a partial browser reading.', 'Spacing scale, focus ring, hover and pressed colors, status ramps and breakpoint thresholds not measured.', 'Raw shadows and easing values remain in per-state readings; not generalized into semantic scales.']}
     (HERE/'tokens.json').write_text(json.dumps(out,indent=2)+'\n')

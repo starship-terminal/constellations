@@ -20,6 +20,8 @@
     "dark.component.inviteTextareaFocused.text",
     "dark.component.invitePanel.bg",
     "dark.component.invitePanel.text",
+    "dark.status.warning.text",
+    "dark.status.warning.bodyText",
     "light.background.page",
     "light.background.surface",
     "light.text.primary",
@@ -38,6 +40,8 @@
     "light.component.inviteTextareaFocused.bg",
     "light.component.inviteTextareaFocused.text",
     "light.component.invitePanel.bg",
-    "light.component.invitePanel.text"
+    "light.component.invitePanel.text",
+    "light.status.warning.text",
+    "light.status.warning.bodyText"
   ]
 }
