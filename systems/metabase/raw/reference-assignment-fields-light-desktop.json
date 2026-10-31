@@ -1,0 +1,610 @@
+{
+  "name": "reference-assignment-fields-light-desktop",
+  "capturedAt": "2026-10-31T05:10:22.912Z",
+  "source": "https://edumation.metabase.com/reference/databases/2/tables/141/fields",
+  "reading": {
+    "elements": [
+      {
+        "disabled": false,
+        "label": "Toggle sidebar",
+        "rect": {
+          "bottom": 51.50092324614525,
+          "height": 51.993534088134766,
+          "left": 21.197660446166992,
+          "right": 57.19673728942871,
+          "top": -0.4926108419895172,
+          "width": 35.99907684326172,
+          "x": 21.197660446166992,
+          "y": -0.4926108419895172
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(0, 0, 0)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(0, 0, 0)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "padding": "16px 0px"
+        },
+        "tag": "BUTTON",
+        "testid": "sidebar-toggle"
+      },
+      {
+        "disabled": false,
+        "label": "",
+        "rect": {
+          "bottom": 51.504772275686264,
+          "height": 51.99738311767578,
+          "left": 57.19673538208008,
+          "right": 93.1958122253418,
+          "top": -0.4926108419895172,
+          "width": 35.99907684326172,
+          "x": 57.19673538208008,
+          "y": -0.4926108419895172
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "0px",
+          "padding": "0px"
+        },
+        "tag": "A",
+        "testid": "main-logo-link"
+      },
+      {
+        "disabled": false,
+        "label": "Search",
+        "rect": {
+          "bottom": 43.50369501113891,
+          "height": 35.99907684326172,
+          "left": 1003.2366333007812,
+          "right": 1243.2343292236328,
+          "top": 7.504618167877197,
+          "width": 239.99769592285156,
+          "x": 1003.2366333007812,
+          "y": 7.504618167877197
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderColor": "rgb(220, 223, 224)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.44)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "700",
+          "lineHeight": "16.1px",
+          "padding": "11px 15px"
+        },
+        "tag": "BUTTON",
+        "testid": null
+      },
+      {
+        "disabled": false,
+        "label": "New",
+        "rect": {
+          "bottom": 43.50369501113891,
+          "height": 35.99907684326172,
+          "left": 1267.2298583984375,
+          "right": 1339.9130477905271,
+          "top": 7.504618167877197,
+          "width": 72.68318939208984,
+          "x": 1267.2298583984375,
+          "y": 7.504618167877197
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgb(105, 65, 198)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(255, 255, 255, 0.95)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "16.1px",
+          "padding": "8px"
+        },
+        "tag": "BUTTON",
+        "testid": null
+      },
+      {
+        "disabled": false,
+        "label": "Chat with Metabot (\u2318+E)",
+        "rect": {
+          "bottom": 43.50369501113891,
+          "height": 35.99907684326172,
+          "left": 1347.9102783203125,
+          "right": 1383.9093551635742,
+          "top": 7.504618167877197,
+          "width": 35.99907684326172,
+          "x": 1347.9102783203125,
+          "y": 7.504618167877197
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(220, 223, 224)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "14px",
+          "padding": "8px"
+        },
+        "tag": "BUTTON",
+        "testid": null
+      },
+      {
+        "disabled": false,
+        "label": "Databases",
+        "rect": {
+          "bottom": 116.9873752593994,
+          "height": 16.995073318481445,
+          "left": 23.9993839263916,
+          "right": 107.62392616271973,
+          "top": 99.99230194091795,
+          "width": 83.62454223632812,
+          "x": 23.9993839263916,
+          "y": 99.99230194091795
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.62)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.62)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A",
+        "testid": null
+      },
+      {
+        "disabled": false,
+        "label": "Postgres",
+        "rect": {
+          "bottom": 116.9873752593994,
+          "height": 16.995073318481445,
+          "left": 140.62115478515625,
+          "right": 215.8174285888672,
+          "top": 99.99230194091795,
+          "width": 75.19627380371094,
+          "x": 140.62115478515625,
+          "y": 99.99230194091795
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.62)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.62)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A",
+        "testid": null
+      },
+      {
+        "disabled": false,
+        "label": "Details",
+        "rect": {
+          "bottom": 179.97613525390625,
+          "height": 32.989532470703125,
+          "left": 23.9993839263916,
+          "right": 407.9703006744385,
+          "top": 146.98660278320312,
+          "width": 383.9709167480469,
+          "x": 23.9993839263916,
+          "y": 146.98660278320312
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(80, 158, 227, 0.15)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "8px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "padding": "8px 0px 8px 16px"
+        },
+        "tag": "A",
+        "testid": null
+      },
+      {
+        "disabled": false,
+        "label": "Fields in this table",
+        "rect": {
+          "bottom": 220.96290588378903,
+          "height": 32.989532470703125,
+          "left": 23.9993839263916,
+          "right": 407.9703006744385,
+          "top": 187.9733734130859,
+          "width": 383.9709167480469,
+          "x": 23.9993839263916,
+          "y": 187.9733734130859
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(80, 158, 227, 0.15)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "8px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "padding": "8px 0px 8px 16px"
+        },
+        "tag": "A",
+        "testid": null
+      },
+      {
+        "disabled": false,
+        "label": "Questions about this table",
+        "rect": {
+          "bottom": 261.9496612548828,
+          "height": 32.989532470703125,
+          "left": 23.9993839263916,
+          "right": 407.9703006744385,
+          "top": 228.9601287841797,
+          "width": 383.9709167480469,
+          "x": 23.9993839263916,
+          "y": 228.9601287841797
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.44)",
+          "borderRadius": "8px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.44)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "padding": "8px 0px 8px 16px"
+        },
+        "tag": "A",
+        "testid": null
+      },
+      {
+        "disabled": false,
+        "label": "X-ray this table",
+        "rect": {
+          "bottom": 302.9364318847656,
+          "height": 32.989532470703125,
+          "left": 23.9993839263916,
+          "right": 407.9703006744385,
+          "top": 269.9468994140625,
+          "width": 383.9709167480469,
+          "x": 23.9993839263916,
+          "y": 269.9468994140625
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.44)",
+          "borderRadius": "8px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.44)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "padding": "8px 0px 8px 16px"
+        },
+        "tag": "A",
+        "testid": null
+      },
+      {
+        "disabled": false,
+        "label": "Assignment IDassignment_id",
+        "rect": {
+          "bottom": 237.1382427215576,
+          "height": 19.458127975463867,
+          "left": 506.950439453125,
+          "right": 759.4327392578125,
+          "top": 217.68011474609375,
+          "width": 252.4822998046875,
+          "x": 506.950439453125,
+          "y": 217.68011474609375
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A",
+        "testid": null
+      },
+      {
+        "disabled": false,
+        "label": "Assignment Nameassignment_name",
+        "rect": {
+          "bottom": 274.11483573913574,
+          "height": 19.458127975463867,
+          "left": 506.950439453125,
+          "right": 805.4033508300781,
+          "top": 254.65670776367188,
+          "width": 298.4529113769531,
+          "x": 506.950439453125,
+          "y": 254.65670776367188
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A",
+        "testid": null
+      },
+      {
+        "disabled": false,
+        "label": "Course IDcourse_id",
+        "rect": {
+          "bottom": 311.09142875671387,
+          "height": 19.458127975463867,
+          "left": 506.950439453125,
+          "right": 689.2049102783203,
+          "top": 291.63330078125,
+          "width": 182.2544708251953,
+          "x": 506.950439453125,
+          "y": 291.63330078125
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A",
+        "testid": null
+      },
+      {
+        "disabled": false,
+        "label": "Course Namecourse_name",
+        "rect": {
+          "bottom": 348.0680522918701,
+          "height": 19.458127975463867,
+          "left": 506.950439453125,
+          "right": 735.1755065917969,
+          "top": 328.60992431640625,
+          "width": 228.22506713867188,
+          "x": 506.950439453125,
+          "y": 328.60992431640625
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A",
+        "testid": null
+      },
+      {
+        "disabled": false,
+        "label": "Semestersemester",
+        "rect": {
+          "bottom": 385.04464530944824,
+          "height": 19.458127975463867,
+          "left": 506.950439453125,
+          "right": 679.4027252197266,
+          "top": 365.5865173339844,
+          "width": 172.45228576660156,
+          "x": 506.950439453125,
+          "y": 365.5865173339844
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A",
+        "testid": null
+      },
+      {
+        "disabled": false,
+        "label": "Assignment Typeassignment_type",
+        "rect": {
+          "bottom": 422.0212383270264,
+          "height": 19.458127975463867,
+          "left": 506.950439453125,
+          "right": 798.7184448242188,
+          "top": 402.5631103515625,
+          "width": 291.76800537109375,
+          "x": 506.950439453125,
+          "y": 402.5631103515625
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A",
+        "testid": null
+      },
+      {
+        "disabled": false,
+        "label": "Grading Weightgrading_weight",
+        "rect": {
+          "bottom": 458.9978618621826,
+          "height": 19.458127975463867,
+          "left": 506.950439453125,
+          "right": 775.2270812988281,
+          "top": 439.5397338867187,
+          "width": 268.2766418457031,
+          "x": 506.950439453125,
+          "y": 439.5397338867187
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A",
+        "testid": null
+      },
+      {
+        "disabled": false,
+        "label": "Due Datedue_date",
+        "rect": {
+          "bottom": 495.97445487976074,
+          "height": 19.458127975463867,
+          "left": 506.950439453125,
+          "right": 675.4656829833984,
+          "top": 476.5163269042969,
+          "width": 168.51524353027344,
+          "x": 506.950439453125,
+          "y": 476.5163269042969
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A",
+        "testid": null
+      },
+      {
+        "disabled": false,
+        "label": "Statusstatus",
+        "rect": {
+          "bottom": 532.9510478973389,
+          "height": 19.458127975463867,
+          "left": 506.950439453125,
+          "right": 638.6353302001953,
+          "top": 513.492919921875,
+          "width": 131.6848907470703,
+          "x": 506.950439453125,
+          "y": 513.492919921875
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A",
+        "testid": null
+      }
+    ],
+    "theme": "light",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    }
+  },
+  "captureMode": "DPR-adjusted screenshot clip; reviewed individually",
+  "apiClip": {
+    "x": 0,
+    "y": 0,
+    "width": 2923,
+    "height": 2030
+  },
+  "image": {
+    "sourceFormat": "JPEG",
+    "width": 1440,
+    "height": 1000,
+    "retainedFormat": "PNG",
+    "conversion": "256-colour MEDIANCUT, no dither"
+  },
+  "visualReview": "Intended state visually reviewed. Viewport section only; some background content is absent while the intended dialog remains visible."
+}

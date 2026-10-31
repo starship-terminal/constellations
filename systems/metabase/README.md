@@ -2,9 +2,9 @@
 
 Measured from Metabase's official **Edumation interactive demo** on 2026-10-31. This package captures the visual query builder, filters, chart configuration, dashboards and drill-through in a **custom purple light theme**, not Metabase's default branding. The demo supplies a Mary Smith persona automatically; no owner credentials, new account, trial or saved content were used.
 
-87 accepted viewport screenshots and 16 verified native-pixel component crops. The original 21 captures use DPR 1; the continuation records DPR, actual viewport and decoded image dimensions individually in [expansion-captures.json](raw/expansion-captures.json). Desktop viewports are 1440 CSS px and phone viewports 390 CSS px. Some early continuation images are 1600×1111 pixels for a 1440×1000 CSS viewport; later calibrated images are 1440×1000 or 390×843. Browser JPEGs are converted to 256-colour PNG, so CSS is the source for values.
+172 accepted viewport screenshots and 16 verified native-pixel component crops. The original 21 captures use DPR 1; the continuation records DPR, actual viewport and decoded image dimensions individually in [expansion-captures.json](raw/expansion-captures.json) and [resumed-captures.json](raw/resumed-captures.json). Desktop viewports are 1440 CSS px and phone viewports 390 CSS px. Some early continuation images are 1600×1111 pixels for a 1440×1000 CSS viewport; later calibrated images are 1440×1000 or 390×843. Browser JPEGs are converted to 256-colour PNG, so CSS is the source for values.
 
-**Exploration remains partial.** [The interaction inventory](interactions.md) records observed behavior, pending controls and rejected captures. Added evidence covers collection forms, validation, date/time/icon pickers, metrics, browse pages, profile preferences, shortcuts, and selected Dark desktop/phone states. Dark was temporarily authorized and Light was restored. The exported token set remains Light-only; Dark CSS readings are retained but not yet mapped into tokens.
+**Exploration remains partial.** [The interaction inventory](interactions.md) records observed behavior, pending controls and rejected captures. Evidence covers collection forms, validation, date/time/icon pickers, metrics, profile preferences, shortcuts, selected Dark states, all five model overviews and all 29 saved-question overviews in Your Reports. Nested controls and theme/width parity remain partial. The resumed pass adds data-reference pages, field documentation, report menus, donut settings, selected radios and demo permission/query errors. Dark was temporarily authorized and Light was restored. The exported token set remains Light-only; Dark CSS readings are retained but not yet mapped into tokens.
 
 | File | Contents |
 |---|---|
@@ -13,7 +13,7 @@ Measured from Metabase's official **Edumation interactive demo** on 2026-10-31. 
 | [components.md](components.md) | Component states and verified crops |
 | [patterns.md](patterns.md) | Query, filter, chart, dashboard and drill-through patterns |
 | [components/](components/) | 16 native-pixel crops |
-| [screenshots/](screenshots/) | 87 accepted viewport sections |
+| [screenshots/](screenshots/) | 172 accepted viewport sections |
 | [raw/](raw/) | Sanitized computed styles, partial CSS variables, occurrence counts and capture dimensions |
 | [interactions.md](interactions.md) | Partial page/control inventory with remaining work |
 | [tools/](tools/) | Deterministic builders, crop coordinates and live read-only capture reader |
@@ -83,8 +83,8 @@ Scorecard: **7 of 25 met, 14 partly, 4 missing**; C5, V1, V2 are optional for a 
 | F11 Sizing | Partly | 36/40px control heights and raw icon geometry; focus-ring coverage incomplete. |
 | F12 Elevation | Partly | One measured popover shadow, not 3-5 levels. |
 | F14 Layout | Partly | 1440/390 layouts and inspector width; no breakpoint or z-index scale. |
-| C1 Component coverage | Partly | Dialogs and multiline forms added to earlier component evidence; radio and toast remain missing. |
-| C2 States | Partly | Validation, skeleton/loading, selected tabs, checked/mixed/disabled checkboxes and focused inputs observed; complete hover/pressed states pending. |
+| C1 Component coverage | Partly | Dialogs, multiline forms, radio selections, chart color picker and metadata drawers captured; toast remains missing. |
+| C2 States | Partly | Validation, loading, selected tabs/radios, checked/mixed/disabled checkboxes, focused fields and natural query/permission errors observed; complete hover/pressed states pending. |
 | C3 Focus | Partly | Automatic focus visible on numeric and search inputs; keyboard focus-visible parity not captured. |
 | C4 Token-based specs | Partly | Crops link to token groups, but switch tracks and some menu details lack component token mappings. |
 | P1 Patterns | Partly | Added collection/event onboarding, unsaved forms, validation, loading, revision history and local copy feedback; destructive confirmation remains missing. |
@@ -110,6 +110,8 @@ The unsaved question counted Courses by Difficulty Mapped, previewed a bar chart
 - Screenshots are viewport sections. The axes inspector continues below its captured upper section; the long dashboard continues below the first cards. Long shortcut panes and metric overview charts also extend below their captured sections; those continuations remain pending.
 - One New-menu capture at 1600 CSS px was blurred by a viewport/zoom change and rejected. The initial overview screenshot was not retained because it lacked complete measurement metadata. Rejected originals stay outside git.
 - Automatic input focus was observed. Keyboard focus-visible, sustained pressed states, complete hover coverage and reduced motion remain pending. Collection-picker skeleton and profile loading states are now retained.
+- Students and Submissions models and several saved reports fail on demo query metadata. Model/report History exposes schema/decryption errors; question caching settings deny access; Metabot requires an admin-connected model. These are access/result gaps, not absent product features.
+- Dashboard screenshots sometimes lose cards after interaction; missing-content attempts are rejected and remain inventory gaps. Fullscreen and lower-section captures are incomplete.
 - Browser JPEG compression and subsequent PNG quantization affect pixels. Never sample colour values from these images.
 - Fonts are not bundled. Local style-guide typography uses Inter only when installed, otherwise sans-serif.
 
@@ -143,7 +145,7 @@ Captured means observed evidence exists, often partial. It does not imply every 
 | Text area | Captured | Disabled dashboard title textarea CSS, not an editable multiline state |
 | Select | Captured | [Numeric operators](screenshots/filter-operators-light-desktop.png) |
 | Checkbox | Captured | [Checked, unchecked, mixed](screenshots/dashboard-filter-light-desktop.png) and disabled collection types |
-| Radio | Not captured | Disabled data/visualization radio inputs in readings; no independent usable selection capture |
+| Radio | Captured | [Donut percentage placement selected](screenshots/donut-percentages-both-light-desktop.png), [column Link selection](screenshots/model-column-link-radio-light-desktop.png) and export-format choices; changes remained unsaved |
 | Switch | Captured | [Off](screenshots/chart-display-light-desktop.png), [on](screenshots/chart-axes-light-desktop.png); track CSS not tokenised |
 | Tabs | Captured | Data, Display and Axes selected states |
 | Menu | Captured | Field, grouping, aggregation and drill-through menus |

@@ -1,0 +1,150 @@
+[
+  {
+    "href": "/dashboard/3-assignment-dashboard",
+    "label": "Assignment DashboardFiltered to a specific assignment"
+  },
+  {
+    "href": "/dashboard/2-course-dashboard",
+    "label": "Course DashboardFiltered to a specific course"
+  },
+  {
+    "href": "/model/5-students",
+    "label": "Students"
+  },
+  {
+    "href": "/model/6-submissions",
+    "label": "Submissions"
+  },
+  {
+    "href": "/model/4-student-courses",
+    "label": "Student Courses"
+  },
+  {
+    "href": "/model/1-courses",
+    "label": "CoursesCourses assigned to you"
+  },
+  {
+    "href": "/question/34-all-submissions",
+    "label": "All Submissions"
+  },
+  {
+    "href": "/question/25-assignment-name",
+    "label": "Assignment Name"
+  },
+  {
+    "href": "/model/2-assignments",
+    "label": "Assignments"
+  },
+  {
+    "href": "/question/15-assignments",
+    "label": "Assignments"
+  },
+  {
+    "href": "/question/43-assignments-mapped",
+    "label": "Assignments - Mapped"
+  },
+  {
+    "href": "/question/22-assignment-status",
+    "label": "Assignment Status"
+  },
+  {
+    "href": "/question/27-assignment-status",
+    "label": "Assignment Status"
+  },
+  {
+    "href": "/question/12-assignment-type-breakdown",
+    "label": "Assignment Type Breakdown"
+  },
+  {
+    "href": "/question/20-assignment-types",
+    "label": "Assignment Types"
+  },
+  {
+    "href": "/question/30-assignment-weight",
+    "label": "Assignment Weight"
+  },
+  {
+    "href": "/question/39-average-grade",
+    "label": "Average Grade"
+  },
+  {
+    "href": "/question/10-average-scores",
+    "label": "Average Scores"
+  },
+  {
+    "href": "/question/17-average-student-score",
+    "label": "Average Student Score"
+  },
+  {
+    "href": "/question/18-course-assignments",
+    "label": "Course Assignments"
+  },
+  {
+    "href": "/question/21-course-pass-rate",
+    "label": "Course Pass Rate"
+  },
+  {
+    "href": "/question/35-course-rating",
+    "label": "Course Rating"
+  },
+  {
+    "href": "/question/14-courses",
+    "label": "Courses"
+  },
+  {
+    "href": "/question/33-grade-distribution",
+    "label": "Grade Distribution"
+  },
+  {
+    "href": "/question/19-late-submissions",
+    "label": "Late Submissions"
+  },
+  {
+    "href": "/question/7-number-of-students",
+    "label": "Number of Students"
+  },
+  {
+    "href": "/question/16-number-of-students",
+    "label": "Number of Students"
+  },
+  {
+    "href": "/dashboard/1-overview",
+    "label": "Overview"
+  },
+  {
+    "href": "/question/41-student-courses-mapped",
+    "label": "Student Courses - Mapped"
+  },
+  {
+    "href": "/question/36-student-geographical-locations",
+    "label": "Student Geographical Locations"
+  },
+  {
+    "href": "/question/24-students",
+    "label": "Students"
+  },
+  {
+    "href": "/question/37-student-score-distribution",
+    "label": "Student Score Distribution"
+  },
+  {
+    "href": "/question/42-students-mapped",
+    "label": "Students - Mapped"
+  },
+  {
+    "href": "/question/31-submission-breakdown",
+    "label": "Submission Breakdown"
+  },
+  {
+    "href": "/question/44-submissions-mapped",
+    "label": "Submissions - Mapped"
+  },
+  {
+    "href": "/question/13-submitted-assignments",
+    "label": "Submitted Assignments"
+  },
+  {
+    "href": "/question/38-submitted-assignments",
+    "label": "Submitted Assignments"
+  }
+]

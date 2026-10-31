@@ -21,6 +21,11 @@ Observed live in the official Edumation demo, light theme. Crops use native scre
 | Checkbox list with disabled options | [collection-filter-light-desktop.png](screenshots/collection-filter-light-desktop.png) | ![Checkbox list with disabled options](components/crops/collection-filter.png) | light.component.popover |
 | Filtered table and filter pill | [drilldown-results-light-desktop.png](screenshots/drilldown-results-light-desktop.png) | ![Filtered table and filter pill](components/crops/table-results.png) | light.text.primary |
 
+## Additional captured states
+
+- [Selected donut percentage radio](screenshots/donut-percentages-both-light-desktop.png), [column Link radio](screenshots/model-column-link-radio-light-desktop.png), and [chart color picker](screenshots/donut-color-picker-light-desktop.png). These have screenshot/CSS evidence but no new component token mapping.
+- [Metadata drawer](screenshots/model-info-light-desktop.png), [query error](screenshots/model-students-error-light-desktop.png), [permission error](screenshots/report-settings-denied-light-desktop.png), and [dashboard picker empty search](screenshots/report-dashboard-search-empty-light-desktop.png).
+
 ## Gaps
 
-Selected Dark forms and collection states are captured in the interaction inventory; Dark tokens are not yet mapped. No persistent pressed state, toast, radio selection or destructive dialog. Hover is incidental and not independently measured. Numeric fields show automatic focus; this does not establish keyboard focus-visible parity. Switches are observed on/off but their track CSS was not tokenised. Chart axes screenshot shows the upper scroll section only. Source CSS enumeration is partial, so missing variables are not proof of absent product tokens. No brand assets are licensed for reuse.
+Selected Dark forms and collection states are captured in the interaction inventory; Dark tokens are not yet mapped. No persistent pressed state, toast or destructive dialog. Hover is incidental and not independently measured. Numeric fields show automatic focus; this does not establish keyboard focus-visible parity. Switches are observed on/off but their track CSS was not tokenised. Chart axes screenshot shows the upper scroll section only. Source CSS enumeration is partial, so missing variables are not proof of absent product tokens. No brand assets are licensed for reuse.

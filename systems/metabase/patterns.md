@@ -19,3 +19,11 @@ All evidence comes from Metabase's official Edumation embedding demo. The purple
 | Theme and responsive collection | Dark preserves the collection hierarchy; phone width stacks cards and uses an overlay sidebar. Original Light preference was restored. | [Dark desktop](screenshots/reports-dark-desktop.png), [phone](screenshots/reports-dark-mobile.png), [sidebar](screenshots/reports-sidebar-dark-mobile.png) |
 
 Full traversal remains pending; see [interactions](interactions.md).
+
+## Model lineage and report configuration
+
+Model information drawers separate description/source fields from History and Relationships. [Submissions relationships](screenshots/model-submissions-relationships-light-desktop.png) links a saved question and its source table; the [data-reference field catalogue](screenshots/reference-assignment-fields-light-desktop.png) distinguishes semantic and database types.
+
+The [donut inspector](screenshots/donut-data-settings-light-desktop.png) keeps the chart visible while configuring measure, breakout and colors. [Percentage placement](screenshots/donut-percentages-both-light-desktop.png) changes the local draft, with Save remaining explicit and unsubmitted.
+
+[Query failures](screenshots/model-students-error-light-desktop.png), [history failures](screenshots/report-history-error-light-desktop.png) and [permission denial](screenshots/report-settings-denied-light-desktop.png) have distinct messages. The [dashboard picker](screenshots/report-dashboard-search-empty-light-desktop.png) disables Select for an empty search.
