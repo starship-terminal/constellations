@@ -12,3 +12,10 @@ All evidence comes from Metabase's official Edumation embedding demo. The purple
 | Responsive dashboard | Metric cards form a row at 1440px and stack at 390px; navigation condenses to icons. Captures are viewport sections, not the whole long dashboard. | [Desktop](screenshots/dashboard-light-desktop.png), [phone](screenshots/dashboard-light-mobile.png) |
 | Empty and error results | The demo naturally returned No results and chart errors alongside successful metrics. These are observed product states, not fabricated failures. | [Dashboard](screenshots/dashboard-light-desktop.png) |
 | Collection browsing | A sidebar, featured model/dashboard cards and a searchable table combine navigation with filtering. | [Embedded reports](screenshots/reports-light-desktop.png), [type filter](screenshots/collection-filter-light-desktop.png) |
+
+| Collection creation and validation | Unsaved form with location picker, required-name error and disabled submission. | [Form](screenshots/create-collection-light-desktop.png), [validation](screenshots/collection-validation-light-desktop.png) |
+| Event composition | Empty timeline onboarding leads to an unsaved event, calendar, optional time and icon selector. | [Onboarding](screenshots/collection-events-empty-light-desktop.png), [calendar](screenshots/event-date-picker-light-desktop.png), [icons](screenshots/event-icon-picker-light-desktop.png) |
+| Metric detail | About, Overview, Definition, Dimensions and History organize a metric. Menus expose duplicate and caching dialogs. | [Dimensions](screenshots/metric-dimension-settings-light-desktop.png), [history](screenshots/metric-history-light-desktop.png) |
+| Theme and responsive collection | Dark preserves the collection hierarchy; phone width stacks cards and uses an overlay sidebar. Original Light preference was restored. | [Dark desktop](screenshots/reports-dark-desktop.png), [phone](screenshots/reports-dark-mobile.png), [sidebar](screenshots/reports-sidebar-dark-mobile.png) |
+
+Full traversal remains pending; see [interactions](interactions.md).

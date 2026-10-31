@@ -2,7 +2,9 @@
 
 Measured from Metabase's official **Edumation interactive demo** on 2026-10-31. This package captures the visual query builder, filters, chart configuration, dashboards and drill-through in a **custom purple light theme**, not Metabase's default branding. The demo supplies a Mary Smith persona automatically; no owner credentials, new account, trial or saved content were used.
 
-21 accepted viewport screenshots (19 desktop at 1440 CSS px, two phone at 390 CSS px) and 16 verified native-pixel component crops. The embedded reports screenshot has a 1440×936 app iframe inside a 1440×1000 browser viewport. Other desktop captures are 1440×1000; phone captures are 390×844. DPR is 1 for retained captures. Browser screenshots were JPEG; retained images are 256-colour PNG conversions, so CSS is the source for values.
+87 accepted viewport screenshots and 16 verified native-pixel component crops. The original 21 captures use DPR 1; the continuation records DPR, actual viewport and decoded image dimensions individually in [expansion-captures.json](raw/expansion-captures.json). Desktop viewports are 1440 CSS px and phone viewports 390 CSS px. Some early continuation images are 1600×1111 pixels for a 1440×1000 CSS viewport; later calibrated images are 1440×1000 or 390×843. Browser JPEGs are converted to 256-colour PNG, so CSS is the source for values.
+
+**Exploration remains partial.** [The interaction inventory](interactions.md) records observed behavior, pending controls and rejected captures. Added evidence covers collection forms, validation, date/time/icon pickers, metrics, browse pages, profile preferences, shortcuts, and selected Dark desktop/phone states. Dark was temporarily authorized and Light was restored. The exported token set remains Light-only; Dark CSS readings are retained but not yet mapped into tokens.
 
 | File | Contents |
 |---|---|
@@ -11,8 +13,9 @@ Measured from Metabase's official **Edumation interactive demo** on 2026-10-31. 
 | [components.md](components.md) | Component states and verified crops |
 | [patterns.md](patterns.md) | Query, filter, chart, dashboard and drill-through patterns |
 | [components/](components/) | 16 native-pixel crops |
-| [screenshots/](screenshots/) | 21 accepted viewport sections |
+| [screenshots/](screenshots/) | 87 accepted viewport sections |
 | [raw/](raw/) | Sanitized computed styles, partial CSS variables, occurrence counts and capture dimensions |
+| [interactions.md](interactions.md) | Partial page/control inventory with remaining work |
 | [tools/](tools/) | Deterministic builders, crop coordinates and live read-only capture reader |
 | [icon.png](icon.png) | Official Metabase identification icon, private catalogue use only |
 | [DESIGN.md](DESIGN.md) | Generated single-theme export |
@@ -75,16 +78,16 @@ Scorecard: **7 of 25 met, 14 partly, 4 missing**; C5, V1, V2 are optional for a 
 | F2 Background roles | Partly | Page, surface and overlay measured; no scrim or full raised roles. |
 | F4 Border roles | Partly | Default borders measured; strong/focus role coverage incomplete. |
 | F5 Accent states | Partly | Default custom purple accent measured; hover and pressed not independently captured. |
-| F7 Theme parity | Partly | Only official demo light theme captured; no inferred dark set. |
+| F7 Theme parity | Partly | Selected Dark desktop/phone collection and dialog screenshots plus CSS readings; Light-only exported tokens, full parity pending. |
 | F8 Type | Partly | Inter fallback stack and four type roles; no full 6-8 size scale or code role. |
 | F11 Sizing | Partly | 36/40px control heights and raw icon geometry; focus-ring coverage incomplete. |
 | F12 Elevation | Partly | One measured popover shadow, not 3-5 levels. |
 | F14 Layout | Partly | 1440/390 layouts and inspector width; no breakpoint or z-index scale. |
-| C1 Component coverage | Partly | 16 checklist component types observed; radio, dialog and toast missing. |
-| C2 States | Partly | Selected tabs, checked/mixed/disabled checkboxes, disabled submit and focused input; hover, pressed, loading incomplete. |
+| C1 Component coverage | Partly | Dialogs and multiline forms added to earlier component evidence; radio and toast remain missing. |
+| C2 States | Partly | Validation, skeleton/loading, selected tabs, checked/mixed/disabled checkboxes and focused inputs observed; complete hover/pressed states pending. |
 | C3 Focus | Partly | Automatic focus visible on numeric and search inputs; keyboard focus-visible parity not captured. |
 | C4 Token-based specs | Partly | Crops link to token groups, but switch tracks and some menu details lack component token mappings. |
-| P1 Patterns | Partly | Written shell/query/filter/chart/drill/data/empty/error patterns; no onboarding, destructive, loading or action feedback. |
+| P1 Patterns | Partly | Added collection/event onboarding, unsaved forms, validation, loading, revision history and local copy feedback; destructive confirmation remains missing. |
 | A1 Assets | Partly | Official identification icon, raw icon geometry and Inter fallback named; no complete indexed icon set or verified font licence. |
 
 Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (Only icon geometry was recorded; product artwork is not redistributed for reuse).
@@ -97,16 +100,16 @@ Started at [the official embedding demo](https://www.metabase.com/embedding-demo
 
 Each retained screenshot has a same-named JSON reading under raw with timestamp, sanitized source URL, actual viewport, theme attributes, native image dimensions, visible element rectangles and computed styles. The embedded report reading also records the outer viewport. CSS variable enumeration and element enumeration are partial; colour/size occurrence counts describe the reader's accessible DOM sample, not a complete stylesheet audit. Tokens point to exact reading indices and properties. No sampled or derived tokens are included, and missing roles are not inferred. The visible purple button value is rgb(105, 65, 198). Brand metadata reader results are in [assets-evidence.json](raw/assets-evidence.json); absent metadata does not prove absent branding.
 
-The unsaved question counted Courses by Difficulty Mapped, previewed a bar chart, then followed See these Courses. No Save, sharing, export, invitation, account setting or destructive action was submitted. The dashboard filter was opened and closed without changing its existing selection. No persistent app artifacts were created.
+The unsaved question counted Courses by Difficulty Mapped, previewed a bar chart, then followed See these Courses. No Save, export, invitation or destructive action was submitted. Copy link feedback changed only the local clipboard. The authorized appearance selection was restored. The dashboard filter was opened and closed without changing its existing selection. No persistent app artifacts were created.
 
 ## What to distrust
 
 - Purple, font choices, radii and other values may be customized by the Edumation instance. Do not present them as default Metabase tokens.
-- Dark mode was not captured: the available demo settings menu exposed Help and Sign out only. No appearance setting was changed.
-- Only the dashboard and its filter have 390px evidence. Mobile query builder, chart configuration and drill-through are not captured.
-- Screenshots are viewport sections. The axes inspector continues below its captured upper section; the long dashboard continues below the first cards. Open popovers in accepted evidence are complete.
+- Dark mode was found in the profile entry. Selected Dark collection, filter and form states are captured; full theme parity and Dark token mapping remain pending. Light was restored.
+- Phone evidence covers the Light dashboard/filter and Dark report collection/sidebar/filter. Mobile query builder, chart configuration and drill-through remain pending.
+- Screenshots are viewport sections. The axes inspector continues below its captured upper section; the long dashboard continues below the first cards. Long shortcut panes and metric overview charts also extend below their captured sections; those continuations remain pending.
 - One New-menu capture at 1600 CSS px was blurred by a viewport/zoom change and rejected. The initial overview screenshot was not retained because it lacked complete measurement metadata. Rejected originals stay outside git.
-- Automatic input focus was observed. Keyboard focus-visible, sustained pressed states, complete hover coverage, reduced motion and dynamic loading transitions were not captured.
+- Automatic input focus was observed. Keyboard focus-visible, sustained pressed states, complete hover coverage and reduced motion remain pending. Collection-picker skeleton and profile loading states are now retained.
 - Browser JPEG compression and subsequent PNG quantization affect pixels. Never sample colour values from these images.
 - Fonts are not bundled. Local style-guide typography uses Inter only when installed, otherwise sans-serif.
 
@@ -145,7 +148,7 @@ Captured means observed evidence exists, often partial. It does not imply every 
 | Tabs | Captured | Data, Display and Axes selected states |
 | Menu | Captured | Field, grouping, aggregation and drill-through menus |
 | Tooltip | Captured | Chart data tooltip appears with [drill menu](screenshots/drilldown-menu-light-desktop.png); no general tooltip measurement |
-| Dialog | Not captured | No persistent-action dialog opened |
+| Dialog | Captured | [Unsaved creation form](screenshots/new-dashboard-dialog-light-desktop.png); no creation submitted |
 | Toast | Not captured | No write performed to induce feedback |
 | Card | Captured | [Metric, empty, error](screenshots/dashboard-light-desktop.png) |
 | List row | Captured | Field menus and collection list |
@@ -153,18 +156,18 @@ Captured means observed evidence exists, often partial. It does not imply every 
 | Avatar | Captured | Demo persona in [embedded report shell](screenshots/reports-light-desktop.png) |
 | Badge | Captured | [Filter pill](screenshots/drilldown-results-light-desktop.png); no general status badge scale |
 | App shell/navigation | Captured | Collection sidebar, breadcrumbs, responsive header |
-| Form validation | Not captured | Disabled incomplete range submission only; no error message induced |
+| Form validation | Captured | [Required collection name](screenshots/collection-validation-light-desktop.png), induced by blur without submission |
 | Empty state | Captured | No results in dashboard cards |
-| Loading state | Not captured | Transient loads excluded from accepted screenshots |
+| Loading state | Captured | [Collection picker skeleton](screenshots/collection-location-loading-light-desktop.png) |
 | Error state | Captured | Natural chart display errors in demo |
 | Destructive confirmation | Not captured | Avoided destructive actions in shared demo |
-| Action feedback | Not captured | No persistent actions submitted |
+| Action feedback | Captured | [Copied button](screenshots/dashboard-copy-link-feedback-light-desktop.png), local clipboard only |
 | Search/filter | Captured | Collection type filter, field search, dashboard multiselect |
 | Data display | Captured | Metrics, bar chart, donut and detail table |
-| Onboarding | Not captured | Existing demo session only |
-| Light desktop | Captured | 19 accepted 1440px screenshots |
+| Onboarding | Captured | [Empty metrics guidance](screenshots/browse-metrics-light-desktop.png) and event onboarding |
+| Light desktop | Captured | Expanded Light navigation/forms/metrics capture at 1440 CSS px |
 | Light phone | Captured | Dashboard and filter only, two 390px screenshots |
-| Dark desktop/phone | Not captured | No accessible appearance control in this demo |
+| Dark desktop/phone | Captured | Selected Dark desktop/phone evidence exists; full parity and token mapping pending |
 | Principles/voice/behaviour guidance | Not captured | No published guidance inspected; optional criteria left not applicable |
 | Assets | Captured | Official identification icon and observed icon geometry; no reusable artwork/font bundle |
 
@@ -184,6 +187,7 @@ Run from the repository root:
 python3 systems/metabase/tools/build_tokens.py
 python3 systems/metabase/tools/build_style_guide.py
 python3 systems/metabase/tools/build_components_md.py
+python3 systems/metabase/tools/build_inventory.py
 make design-md
 make grade
 make check

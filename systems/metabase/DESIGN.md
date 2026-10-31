@@ -3,7 +3,7 @@
 # Source of truth: tokens.json. DESIGN.md spec version alpha.
 version: "alpha"
 name: "Metabase (Edumation demo)"
-description: "Visual query notebooks, searchable field filters, chart inspectors, analytics dashboards and drill-through tables. Official interactive Edumation demo with custom purple light branding; not the default Metabase theme."
+description: "Visual query notebooks, searchable field filters, chart inspectors, analytics dashboards and drill-through tables. Official interactive Edumation demo with custom purple light branding; not the default Metabase theme. Expanded interaction evidence includes selected Dark screens; exported tokens remain Light-only."
 omitted:
   - section: "spacing"
     reason: "tokens.json has no spacing tokens under `core.spacing`"
@@ -124,13 +124,15 @@ It follows the DESIGN.md spec, version alpha. That format has no themes, no per-
 
 ## Overview
 
-Good for: Visual query notebooks, searchable field filters, chart inspectors, analytics dashboards and drill-through tables. Official interactive Edumation demo with custom purple light branding; not the default Metabase theme..
+Good for: Visual query notebooks, searchable field filters, chart inspectors, analytics dashboards and drill-through tables. Official interactive Edumation demo with custom purple light branding; not the default Metabase theme. Expanded interaction evidence includes selected Dark screens; exported tokens remain Light-only..
 
-Captured 2026-10-31, Official public interactive Edumation demo; automatically supplied persona, no owner account; unsaved read-only query exploration. Themes: light.
+Captured 2026-10-31, Official public interactive Edumation demo; automatically supplied persona; unsaved navigation/form inspection; authorized Dark appearance restored to Light. Themes: light.
 
 Measured from Metabase's official **Edumation interactive demo** on 2026-10-31. This package captures the visual query builder, filters, chart configuration, dashboards and drill-through in a **custom purple light theme**, not Metabase's default branding. The demo supplies a Mary Smith persona automatically; no owner credentials, new account, trial or saved content were used.
 
-21 accepted viewport screenshots (19 desktop at 1440 CSS px, two phone at 390 CSS px) and 16 verified native-pixel component crops. The embedded reports screenshot has a 1440×936 app iframe inside a 1440×1000 browser viewport. Other desktop captures are 1440×1000; phone captures are 390×844. DPR is 1 for retained captures. Browser screenshots were JPEG; retained images are 256-colour PNG conversions, so CSS is the source for values.
+87 accepted viewport screenshots and 16 verified native-pixel component crops. The original 21 captures use DPR 1; the continuation records DPR, actual viewport and decoded image dimensions individually in [expansion-captures.json](raw/expansion-captures.json). Desktop viewports are 1440 CSS px and phone viewports 390 CSS px. Some early continuation images are 1600×1111 pixels for a 1440×1000 CSS viewport; later calibrated images are 1440×1000 or 390×843. Browser JPEGs are converted to 256-colour PNG, so CSS is the source for values.
+
+**Exploration remains partial.** [The interaction inventory](interactions.md) records observed behavior, pending controls and rejected captures. Added evidence covers collection forms, validation, date/time/icon pickers, metrics, browse pages, profile preferences, shortcuts, and selected Dark desktop/phone states. Dark was temporarily authorized and Light was restored. The exported token set remains Light-only; Dark CSS readings are retained but not yet mapped into tokens.
 
 ## Colors
 
@@ -184,11 +186,11 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 ### What to distrust (from README.md)
 
 - Purple, font choices, radii and other values may be customized by the Edumation instance. Do not present them as default Metabase tokens.
-- Dark mode was not captured: the available demo settings menu exposed Help and Sign out only. No appearance setting was changed.
-- Only the dashboard and its filter have 390px evidence. Mobile query builder, chart configuration and drill-through are not captured.
-- Screenshots are viewport sections. The axes inspector continues below its captured upper section; the long dashboard continues below the first cards. Open popovers in accepted evidence are complete.
+- Dark mode was found in the profile entry. Selected Dark collection, filter and form states are captured; full theme parity and Dark token mapping remain pending. Light was restored.
+- Phone evidence covers the Light dashboard/filter and Dark report collection/sidebar/filter. Mobile query builder, chart configuration and drill-through remain pending.
+- Screenshots are viewport sections. The axes inspector continues below its captured upper section; the long dashboard continues below the first cards. Long shortcut panes and metric overview charts also extend below their captured sections; those continuations remain pending.
 - One New-menu capture at 1600 CSS px was blurred by a viewport/zoom change and rejected. The initial overview screenshot was not retained because it lacked complete measurement metadata. Rejected originals stay outside git.
-- Automatic input focus was observed. Keyboard focus-visible, sustained pressed states, complete hover coverage, reduced motion and dynamic loading transitions were not captured.
+- Automatic input focus was observed. Keyboard focus-visible, sustained pressed states, complete hover coverage and reduced motion remain pending. Collection-picker skeleton and profile loading states are now retained.
 - Browser JPEG compression and subsequent PNG quantization affect pixels. Never sample colour values from these images.
 - Fonts are not bundled. Local style-guide typography uses Inter only when installed, otherwise sans-serif.
 
