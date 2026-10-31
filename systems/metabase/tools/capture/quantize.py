@@ -1,13 +1,11 @@
-"""Store Playwright captures as 256-colour PNGs in screenshots/.
+"""Convert accepted browser PNG/JPEG captures to 256-colour PNGs.
 
-usage: python3 tools/capture/quantize.py RAW_DIR
+usage: python3 systems/metabase/tools/capture/quantize.py RAW_DIR
 
-Playwright screenshots are already sRGB, so there is no profile conversion, only quantization. A page
-taller than one GPU texture is captured by public.mjs as name.part0.png, name.part1.png, ...; those are
-stitched top to bottom into name.png first (the stitched full-colour copy stays in RAW_DIR). The
-full-colour originals are kept in RAW_DIR only; screenshots/ gets the 256-colour versions that are
-committed. Flat UI colours are exact, gradients and photographs band a little, so read exact colours
-from raw/css-vars.json and raw/components-computed.json. Adapted from the Coursera kit.
+Keep originals outside git. The in-app browser emits JPEG; conversion cannot
+restore lost detail. Measure values from the committed CSS readings, never
+from quantized images. Inspect each result and record native dimensions.
+PNG part files from the capture kit can also be stitched before conversion.
 """
 from PIL import Image
 import pathlib, re, sys
@@ -31,10 +29,10 @@ for name, ps in parts.items():
     print('stitched', name, sheet.size)
 
 n = 0
-for f in sorted(RAW.glob('*.png')):
+for f in sorted(p for p in RAW.iterdir() if p.suffix.lower() in {'.png', '.jpg', '.jpeg'}):
     if '.part' in f.name:
         continue
     im = Image.open(f).convert('RGB')
-    im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)
+    im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / (f.stem + '.png'), optimize=True)
     n += 1
 print(n, 'screenshots ->', OUT)
