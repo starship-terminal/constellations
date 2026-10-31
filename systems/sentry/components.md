@@ -140,6 +140,10 @@ App screenshots are live signed-in evidence. Public images stay in a separate fo
 
 [Computed readings](raw/app/traces-light-list.json) · [Capture dimensions](screenshots/app/traces-light-list.png.capture.json)
 
+## Further live interaction evidence
+
+The [first breadth pass](raw/breadth/README.md) and [continuation](raw/breadth2/README.md) link reviewed settings, monitor and alert forms, trace and release details, menus, onboarding, and narrow-width states to their screenshots. Their inventories retain measured CSS readings and pending control occurrences. An accepted screenshot does not establish that every control on that page was explored.
+
 ## Gaps
 
-No populated issue list or error stack trace existed in the selected project. No destructive action, feedback submission, trial, upload, invitation or data mutation was performed. Hover and pressed variants, validation errors, action-result toasts, mobile app and full theme parity remain uncaptured. Feedback form shadow DOM has visual evidence only. Trace attributes are a scrollable panel; captures show its top portion.
+No populated issue list or error stack trace existed in the selected project. No destructive action, feedback submission, trial, upload, invitation or data mutation was performed. Hover and pressed variants, validation errors, action-result toasts, complete narrow-width coverage and full theme parity remain uncaptured. Feedback form shadow DOM has visual evidence only. Trace attributes are a scrollable panel; captures show its top portion.

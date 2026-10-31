@@ -1,8 +1,8 @@
 # Sentry design reference
 
-Live Sentry web-app capture from the owner's 10xswe organization on 2026-10-31, plus a separately labelled public landing-page capture. The app supplied a populated trace explorer, span attributes and waterfall, but no issues across all statuses over 30 days. No trial was activated; account billing tier was not verified.
+Live Sentry web-app capture from the owner's 10xswe organization on 2026-10-31, plus a separately labelled public landing-page capture. The app supplied a populated trace explorer, span attributes and waterfall, but no issues across all statuses over 30 days. No trial was activated. The later billing overview showed the Developer plan.
 
-App captures measure 1065 CSS pixels wide and about 959 high. The browser reported two scale groups: DPR 1.8 with a 1065.56-wide visual viewport, and DPR 2 with a 1065-wide visual viewport. Native JPEG screenshots are 1065 or 1066 pixels wide; each dimension sidecar records its own measurements. Requested 1440/390 overrides had no effect during the app capture. Public landing evidence measures 1440 and 390 CSS pixels. Both live app themes were captured. The approved temporary light setting was restored to Default to system.
+The initial app captures measure 1065 CSS pixels wide and about 959 high. The browser reported two scale groups: DPR 1.8 with a 1065.56-wide visual viewport, and DPR 2 with a 1065-wide visual viewport. Native JPEG screenshots are 1065 or 1066 pixels wide; each dimension sidecar records its own measurements. Requested 1440/390 overrides had no effect during that initial app capture. A later breadth pass successfully measured 1440 × 1000 CSS pixels at DPR 1 in dark appearance. Public landing evidence measures 1440 and 390 CSS pixels. The continuation captured real app trace, issue/filter and navigation states at 390 × 844 in light and dark, plus desktop light states at 1440 × 1000. The final restoration image measures the reset browser viewport at 679 × 959, DPR 2. Both live app themes were captured; the approved temporary light setting was restored and verified as Default to system after navigation.
 
 | File | Holds |
 |---|---|
@@ -12,8 +12,8 @@ App captures measure 1065 CSS pixels wide and about 959 high. The browser report
 | [components.md](components.md) | Reviewed screenshots and state readings |
 | [patterns.md](patterns.md) | Shell, search, table and diagnostic patterns |
 | [icon.png](icon.png) | Official identification icon, private library only |
-| [screenshots/](screenshots/) | 23 app and 5 public captures, dimension sidecars |
-| [raw/](raw/) | App/public readings, separate public tokens, coverage |
+| [screenshots/](screenshots/) | 225 captures: 211 real app, 9 app-with-demo, 5 public; [breadth](raw/breadth/README.md) and [continuation](raw/breadth2/README.md) indexes and dimension sidecars |
+| [raw/](raw/) | App/public readings, separate public tokens, coverage and [breadth inventory](raw/breadth/inventory.json) and [continuation inventory](raw/breadth2/inventory.json) |
 | [tools/](tools/) | Adapted builders and PR 134 capture kit |
 
 ## Brief
@@ -94,11 +94,11 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `components/` (Full screen
 
 ## How the values were read
 
-Codex's visible in-app browser supplied read-only computed styles, root CSS variables, occurrence counts and viewport measurements. Each accepted screenshot has its matching reading. App values never come from the landing page's embedded demos. Public values are isolated under raw/public/tokens.json. Every token names its reading and element or custom property. No values were sampled from JPEG or quantized images. Original JPEGs remain outside git under ~/.design-systems/sentry/raw-shots/.
+Codex's visible in-app browser supplied read-only computed styles, root CSS variables, occurrence counts and viewport measurements. Each accepted screenshot has its matching reading. App values never come from the landing page's embedded demos. Public values are isolated under raw/public/tokens.json. Every token names its reading and element or custom property. No values were sampled from JPEG or quantized images. Original JPEGs remain outside git under ~/.design-systems/sentry/raw-shots/ and ~/.design-systems/sentry/breadth/. The breadth readings add 112 accepted observations under raw/breadth/readings/ and 85 under raw/breadth2/readings/; these measurements have not been promoted into new tokens. DSN strings were removed from readings and masked in setup screenshots with versioned coordinate rules.
 
 ## What to distrust
 
-Coverage is partial. No app primitive ramps, complete status palette, spacing scale, breakpoints, reduced-motion rules, hover/pressed variants or mobile app layout were captured. The accent token is selected-tab text, not primary-button fill. Transparent controls use surrounding paint layers; do not interpret a transparent computed background as the rendered face. Control dimensions retain fractional computed values under browser scaling. Feedback's shadow DOM is screenshot-only. The font-loading reader was unavailable; computed font-family is evidence of the declared stack, not proof every fallback was used. One span image intentionally records loading; it is not accepted as loaded diagnostics. Scrollable attribute panels show their visible top portion.
+Coverage is partial. The [breadth inventory](raw/breadth/inventory.json) preserves pending control occurrences, including controls on captured pages. Nine onboarding/upgrade captures are isolated under screenshots/breadth-mixed/ because they contain product demos; those demos are not real account data and their iframe content was not measured. Rejected loading and stale attempts are listed in the import manifest rather than counted as settled screenshots. No app primitive ramps, complete status palette, spacing scale, breakpoints, reduced-motion rules or hover/pressed variants were captured. Phone-width web evidence exists for selected real app states; other navigation/features and full theme parity remain incomplete. The accent token is selected-tab text, not primary-button fill. Transparent controls use surrounding paint layers; do not interpret a transparent computed background as the rendered face. Control dimensions retain fractional computed values under browser scaling. Feedback's shadow DOM is screenshot-only. The font-loading reader was unavailable; computed font-family is evidence of the declared stack, not proof every fallback was used. One span image intentionally records loading; it is not accepted as loaded diagnostics. Scrollable attribute panels show their visible top portion.
 
 ## Fonts
 
@@ -117,7 +117,7 @@ A captured row means the linked observation exists, not that every possible stat
 | Sizing | captured | tokens.json: measured control heights, fractional CSS values retained |
 | Elevation | captured | tokens.json: search focus shadow; complete elevation scale missing |
 | Motion | not captured | Transitions retained in readings; no reduced-motion or full duration scale |
-| Layout | captured | App shell and trace panels at actual 1065 CSS px; breakpoints not captured |
+| Layout | captured | Initial shell/trace panels at 1065 CSS px, breadth pages at 1440 × 1000 and selected app states at 390 × 844; breakpoint thresholds not captured |
 | Button | captured | screenshots/app/issues-dark-empty.png (observed states only) |
 | Icon button | captured | screenshots/app/trace-dark-waterfall.png (observed states only) |
 | Link | captured | screenshots/app/traces-light-list.png (observed states only) |
@@ -129,7 +129,7 @@ A captured row means the linked observation exists, not that every possible stat
 | Switch | captured | screenshots/app/settings-dark-form.png (observed states only) |
 | Tabs | captured | screenshots/app/traces-dark-list.png (observed states only) |
 | Menu | captured | screenshots/app/issues-dark-project-menu.png (observed states only) |
-| Tooltip | not captured | No accepted live screenshot |
+| Tooltip | captured | screenshots/breadth2/seer-panel-light.png: Copy conversation to clipboard tooltip; other tooltip states remain unreviewed |
 | Dialog | captured | screenshots/app/command-light-dialog.png (observed states only) |
 | Toast | not captured | No accepted live screenshot |
 | Card | captured | screenshots/app/settings-dark-form.png (observed states only) |
@@ -148,9 +148,19 @@ A captured row means the linked observation exists, not that every possible stat
 | Data display | captured | screenshots/app/traces-dark-list.png |
 | Onboarding | captured | screenshots/app/traces-dark-tour-dialog.png |
 | Light/dark themes | captured | Issue empty, time menu, command dialog, trace list/waterfall/preferences, settings, feedback; no claim of full parity |
-| Phone-width web | not captured | App viewport override requests had no effect; public hero/menu separately captured at 390px |
+| Phone-width web | captured | Real app trace, issues/date filters, navigation and account at 390 × 844; light/dark examples exist, full parity and feature coverage remain incomplete |
 | Populated issues/error diagnostics | not captured | One project, no issues with all statuses and 30-day range |
 | Published principles/voice/behaviour | not captured | No published design guidance incorporated; no principles inferred from screenshots |
+
+### Breadth exploration
+
+The [sanitized page/action and control inventory](raw/breadth/inventory.json) records the second pass. It includes account and organization settings, notification categories and selectors, integrations, billing, issue views, Explore pages, dashboards, monitors, unsaved forms, menus and dialogs. The [import manifest](raw/breadth/import-manifest.json) records acceptance decisions and rejection reasons.
+
+In that first breadth batch, of 125 capture attempts, 112 screenshots were accepted, 12 stale/loading attempts were rejected, and one verified duplicate links to the reviewed Seer page. Action rows currently comprise 111 explored and captured, one explored and duplicate, and 13 pending (the failed dashboard menu click retains its settled dashboard screenshot). Separately, 7,774 discovered control occurrences comprise 7,569 pending reconciliation, 175 disabled/blocked and 30 not executed at persistent-setting/destructive boundaries; these occurrences overlap action rows and must not be added to them as unique interactions.
+
+That first breadth batch covers dark appearance at 1440 × 1000 only. Safe nested paths, controls below the fold, theme/width passes and reconciliation remain open. It establishes neither complete page coverage nor completion of every control on an accepted page. No form was saved, account setting changed, trial activated or monitor created by that first breadth batch.
+
+The [continuation action table](raw/breadth2/README.md) and [continuation inventory](raw/breadth2/inventory.json) record subsequent exploration separately: unsaved metric-monitor and alert forms, project/team settings, performance-rule accordions, source maps, populated trace details, release details and global help menus. Each row records its actual theme and viewport. Rejected attempts remain pending rather than counting as captured states. These inventories are cumulative evidence, not a claim that discovery is complete. The continuation accepted 85 of 95 attempts and rejected 10 clipped, loading or transitional attempts. Its action rows contain 85 explored and captured and 10 pending; its control occurrences contain 6,195 pending, 148 blocked and 71 not executed. Across both batches, action rows total 196 explored and captured, one explored and duplicate and 23 pending; control occurrences total 13,764 pending, 323 blocked and 101 not executed. These two row types overlap and are not unique-interaction totals. Only the approved appearance setting changed in the continuation, and the final [restoration capture](screenshots/breadth2/account-system-restored-final.png) verifies Default to system. The viewport override was reset.
 
 ## Do and don't
 
@@ -165,6 +175,8 @@ A captured row means the linked observation exists, not that every possible stat
 From the repository root:
 
 ```sh
+python3 systems/sentry/tools/import_breadth.py  # requires reviewed source JPEGs outside git
+python3 systems/sentry/tools/import_breadth.py --batch breadth2
 python3 systems/sentry/tools/build_tokens.py
 python3 systems/sentry/tools/build_public_tokens.py
 python3 systems/sentry/tools/build_style_guide.py
@@ -175,4 +187,4 @@ make check
 make test
 ```
 
-The active live readers are tools/capture/read-app.js and read-public.js, evaluated with the browser's supported read-only API. Other copied kit capture routes are retained as the PR 134 starting kit, not claimed as executed. Re-capture requires the owner to sign in. No events, projects, messages, invitations, uploads or trials were created. The trace tour was dismissed with Maybe later. Appearance was restored to Default to system.
+The active live readers are tools/capture/read-app.js, read-public.js, read-breadth.js and read-breadth2.js, evaluated with the browser's supported read-only API. Other copied kit capture routes are retained as the PR 134 starting kit, not claimed as executed. Re-capture requires the owner to sign in. No events, projects, messages, invitations, uploads or trials were created. The trace tour was dismissed with Maybe later. Appearance was restored to Default to system.

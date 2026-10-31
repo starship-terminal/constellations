@@ -38,7 +38,7 @@
     {
       "item": "Layout",
       "status": "captured",
-      "evidence": "App shell and trace panels at actual 1065 CSS px; breakpoints not captured"
+      "evidence": "Measured app layouts at 390, 679, 1065 and 1440 CSS px; exact breakpoint thresholds not captured"
     },
     {
       "item": "Button",
@@ -97,8 +97,8 @@
     },
     {
       "item": "Tooltip",
-      "status": "not captured",
-      "evidence": "No accepted live screenshot"
+      "status": "captured",
+      "evidence": "screenshots/breadth2/seer-panel-light.png: Copy conversation to clipboard tooltip; other tooltip states remain pending"
     },
     {
       "item": "Dialog",
@@ -192,8 +192,8 @@
     },
     {
       "item": "Phone-width web",
-      "status": "not captured",
-      "evidence": "App viewport override requests had no effect; public hero/menu separately captured at 390px"
+      "status": "captured",
+      "evidence": "raw/breadth2/inventory.json: 390px app trace, navigation, issue filters and settings in light/system-dark; incomplete narrow-width coverage"
     },
     {
       "item": "Populated issues/error diagnostics",
@@ -207,8 +207,8 @@
     }
   ],
   "totals": {
-    "captured": 30,
+    "captured": 32,
     "not present": 0,
-    "not captured": 11
+    "not captured": 9
   }
 }

@@ -2916,13 +2916,16 @@
       ],
       "shape": "reference",
       "captured": "2026-10-31",
-      "access": "signed-in owner account; no trial activated; tier unverified",
+      "access": "signed-in owner account; Developer plan observed; no trial activated",
       "themes": [
         "light",
         "dark"
       ],
       "widths": [
-        1065
+        390,
+        679,
+        1065,
+        1440
       ],
       "entry": "systems/sentry/README.md",
       "tokens": "systems/sentry/tokens.json",

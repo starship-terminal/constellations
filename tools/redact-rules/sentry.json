@@ -1,8 +1,90 @@
 {
-  "reason": "Public Sentry marketing screenshot contains a sample example.com address. Product-published sample content is allowed by repository policy; no real third-party contact is allowlisted.",
+  "reason": "Product-published example.com samples and Sentry learning contact are allowed by repository policy. Rectangles mask DSN credential strings in setup instructions; no literal credentials are stored. The ownership-rule editor uses person@sentry.io as product example text. Boosted OCR reads the published learn address as leam; both spellings are allowlisted only at sentry.io. Account-menu OCR adds a leading c or confuses i/l in the allowed owner email; the exact observed variants are allowed.",
   "ocr": {
     "email_allow": [
-      "@example\\.com$"
+      "@example\\.com$",
+      "^lea(?:rn|m)@sentry\\.io$",
+      "^person@sentry\\.io$",
+      "^c?chenwenlongoffic[il]al@gma[il]l\\.com$"
     ]
-  }
+  },
+  "families": [
+    {
+      "name": "User feedback SDK DSN",
+      "files": [
+        "screenshots/breadth/issues-feedback-setup-dark.png"
+      ],
+      "size": [
+        [
+          1440,
+          1000
+        ]
+      ],
+      "rects": [
+        [
+          818,
+          638,
+          1408,
+          660,
+          "solid"
+        ]
+      ]
+    },
+    {
+      "name": "Metrics SDK DSN",
+      "files": [
+        "screenshots/breadth-mixed/metrics-configure-dark.png"
+      ],
+      "size": [
+        [
+          1440,
+          1000
+        ]
+      ],
+      "rects": [
+        [
+          424,
+          582,
+          820,
+          604,
+          "solid"
+        ]
+      ]
+    },
+    {
+      "name": "Agent SDK DSN, around Show More button",
+      "files": [
+        "screenshots/breadth-mixed/explore-agents-dark.png"
+      ],
+      "size": [
+        [
+          1440,
+          1000
+        ]
+      ],
+      "rects": [
+        [
+          325,
+          687,
+          811,
+          701,
+          "solid"
+        ],
+        [
+          325,
+          701,
+          527,
+          723,
+          "solid"
+        ],
+        [
+          608,
+          701,
+          811,
+          723,
+          "solid"
+        ]
+      ]
+    }
+  ]
 }
