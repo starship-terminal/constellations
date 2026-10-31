@@ -1,0 +1,8 @@
+{
+  "reason": "Public Sentry marketing screenshot contains a sample example.com address. Product-published sample content is allowed by repository policy; no real third-party contact is allowlisted.",
+  "ocr": {
+    "email_allow": [
+      "@example\\.com$"
+    ]
+  }
+}

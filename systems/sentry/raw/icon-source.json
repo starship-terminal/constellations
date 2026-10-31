@@ -1,0 +1,5 @@
+{
+  "source": "https://s1.sentry-cdn.com/_static/cd6f5b0ef6afadca0442cc45ce456619/sentry/images/logos/apple-touch-icon-152x152.png",
+  "observed": "App link rel=apple-touch-icon",
+  "method": "fetch_icon.py failed; curl retrieved official asset and Pillow resized to 128px"
+}
