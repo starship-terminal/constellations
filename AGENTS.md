@@ -73,6 +73,7 @@ Makefile                `make help` lists targets; `make dev` is the way in
 | Change a package's values or README | the package, then `make design-md` (Brief + DESIGN.md regenerate), `make check` |
 | Replace a product's app icon | `systems/<slug>/icon.png` (128 px PNG; `python3 tools/fetch_icon.py <slug>` refetches from the product's site) |
 | Work on the gallery or site | `docs/gallery/` + `tools/catalog.py build`, then `make serve` |
+| Change the site's own app icon (Flat or Glass, picked under Settings > Preferences) | Flat: `docs/assets/favicon.svg` + `docs/assets/icons/`, committed as drawn; Glass: `python3 tools/make_icons.py` from `docs/assets/logo/hero-ai.png`; the swap is `docs/assets/app-icon.js` |
 | Grade packages / read the rubric | `scorecard/criteria.json` via `python3 tools/grade.py --criteria <slug>`; audits in `scorecard/audits/` |
 | Find or refresh a refero style | [refero/README.md](refero/README.md); `tools/refero/fetch.py`, `classify.py`, `check.py` |
 | Check a screenshot for banned content | `python3 tools/redact_images.py check systems/<slug> --patterns ~/.design-systems/cleanup-redact.json` |
@@ -304,5 +305,5 @@ git lfs status
 ```
 
 ```bash
-git ls-files -s | awk '$1=="100644"' | cut -f2 | grep -Ei '\.(png|jpe?g|gif|webp|zip|gz|woff2?|ttf|otf|fig|mp4|mov)$' | xargs -I{} sh -c 'git check-attr filter -- "{}" | grep -q "filter: lfs" || echo "not in LFS: {}"'
+git ls-files -s | awk '$1=="100644"' | cut -f2 | grep -Ei '\.(png|jpe?g|gif|webp|zip|gz|woff2?|ttf|otf|fig|ico|mp4|mov)$' | xargs -I{} sh -c 'git check-attr filter -- "{}" | grep -q "filter: lfs" || echo "not in LFS: {}"'
 ```

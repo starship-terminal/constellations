@@ -98,7 +98,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 1px s
 }
 :root[data-theme="light"] .bar { background: color-mix(in srgb, var(--bg) 85%, transparent); }
 .brand { display: flex; align-items: center; gap: 9px; color: var(--text-strong); font-size: 16px; font-weight: 510; text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
-.brand svg { fill: var(--text-strong); }
+/* the mark: the Flat favicon inline, or the Glass one under <html data-icon="glass">
+   (assets/app-icon.js); the PNG is only fetched once Glass is chosen */
+.brand .mark { flex: none; width: 18px; height: 18px; }
+.brand .mark-glass { display: none; }
+:root[data-icon="glass"] .brand svg.mark { display: none; }
+:root[data-icon="glass"] .brand .mark-glass { display: block; background: url(../assets/icons/glass/favicon-48.png) center / 18px 18px no-repeat; }
 .site-nav { display: flex; gap: 8px; }
 .site-nav a {
   padding: 8px 12px; color: var(--text); text-decoration: none; font-size: 13px; font-weight: 400;

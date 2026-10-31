@@ -25,6 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      # The site's own icons are Git LFS objects; without this they ship as
+      # pointer text. Only docs/assets/: the captures never publish.
+      - name: Fetch the site's icons from Git LFS
+        run: git lfs pull --include="docs/assets/**"
       - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
@@ -47,6 +51,9 @@ jobs:
             python3 -c "import json,sys; items=json.load(open('site/search.json'))['items']; sys.exit(f'search index has {len(items)} entries; every page must be excluded') if items else print('search index empty')"
           fi
           rm -f site/sitemap.xml site/sitemap.xml.gz
+          if grep -rl --include='*.png' --include='*.ico' '^version https://git-lfs' site/assets; then
+            echo "::error::Git LFS pointers in site/assets (listed above)"; exit 1
+          fi
       - name: Encrypt every page
         if: github.event_name != 'pull_request'
         env:

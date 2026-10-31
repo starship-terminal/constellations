@@ -6,9 +6,10 @@
 
 Replaces the Zensical/Material build with a small static renderer: every page is
 one markdown file wrapped in the same bar the gallery uses — full-bleed top bar
-with the mark, the site nav, the search field and the ds-theme toggle — plus a
-left rail for the Scorecard and Docs sections. site/ is gitignored; the Pages
-workflow builds it with --publish and encrypts the rest.
+with the mark, the site nav, the search field, the Settings link and the ds-theme
+toggle — plus a left rail for the Scorecard and Docs sections, and the Settings
+page (settings/, its Preferences hold the app icon). site/ is gitignored; the
+Pages workflow builds it with --publish and encrypts the rest.
 """
 import argparse
 import html
@@ -33,15 +34,75 @@ DESCRIPTION = ("A private library of design styles captured from real products: 
                "components and screenshots, plus the scorecard grading each capture.")
 COPYRIGHT = "Private study notes. Products and trademarks belong to their owners."
 
-MARK_SVG = ('<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">'
-            '<rect x="1" y="1" width="7" height="7" rx="2"/><rect x="10" y="1" width="7" height="7" rx="3.5"/>'
-            '<rect x="1" y="10" width="7" height="7" rx="3.5"/><rect x="10" y="10" width="7" height="7" rx="2"/></svg>')
+
+
+def mark_svg() -> str:
+    """The bar's mark: the Flat favicon (docs/assets/favicon.svg) inline at 18 px,
+    then an empty span the Glass app icon paints from CSS (assets/app-icon.js
+    picks which shows). The clip path's id is namespaced so it cannot collide
+    with an id on the page. docs/gallery/index.html carries the same markup."""
+    svg = (DOCS / "assets" / "favicon.svg").read_text().strip()
+    svg = svg.replace('id="c"', 'id="ds-mark-clip"').replace("url(#c)", "url(#ds-mark-clip)")
+    svg = svg.replace("<svg ", '<svg class="mark" width="18" height="18" aria-hidden="true" ', 1)
+    return svg + '<span class="mark mark-glass" aria-hidden="true"></span>'
+
+
+MARK_SVG = mark_svg()
+# The Flat set, the default. assets/app-icon.js swaps these for the Glass set
+# when that is the stored preference, so it must load right after them.
+ICON_LINKS = ('<link rel="icon" href="{rel}assets/icons/favicon.ico" sizes="32x32">\n'
+              '<link rel="icon" href="{rel}assets/favicon.svg" type="image/svg+xml">\n'
+              '<link rel="apple-touch-icon" href="{rel}assets/icons/apple-touch-icon.png">\n'
+              '<link rel="manifest" href="{rel}site.webmanifest">\n'
+              '<script src="{rel}assets/app-icon.js"></script>')
+SETTINGS_SVG = ('<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" '
+                'stroke="currentColor" stroke-width="1.4" stroke-linecap="round">'
+                '<path d="M2 4.5h7M13 4.5h1M2 11.5h1M7 11.5h7"/>'
+                '<circle cx="11" cy="4.5" r="2"/><circle cx="5" cy="11.5" r="2"/></svg>')
 SEARCH_SVG = ('<svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">'
               '<circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/>'
               '<path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>')
 THEME_SVG = ('<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">'
              '<path d="M8 1.5a6.5 6.5 0 1 0 0 13z" fill="currentColor"/>'
              '<circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>')
+
+# The Settings page (settings/). Preferences are per browser, in localStorage;
+# each control talks to the script that owns its store.
+SETTINGS_BODY = """<h1>Settings</h1>
+<p class="lede">Choices here are saved in this browser and apply to every page of the site.</p>
+<h2 id="preferences">Preferences</h2>
+<div class="prefs">
+  <fieldset class="pref" id="app-icon">
+    <legend class="pref-name">App icon</legend>
+    <p class="pref-help">The icon in the browser tab, on a home screen and in the top bar.</p>
+    <div class="pref-options">
+      <label class="pref-option">
+        <input type="radio" name="app-icon" value="flat">
+        <img src="{rel}assets/icons/icon-192.png" alt="" width="56" height="56">
+        <span><strong>Flat</strong><small>Default</small></span>
+      </label>
+      <label class="pref-option">
+        <input type="radio" name="app-icon" value="glass">
+        <img src="{rel}assets/icons/glass/icon-192.png" alt="" width="56" height="56">
+        <span><strong>Glass</strong><small>Rendered prism</small></span>
+      </label>
+    </div>
+    <p class="pref-note">An app installed from this site keeps the Flat icon: its manifest is fixed when it is installed.</p>
+  </fieldset>
+</div>
+<script>
+  (function () {
+    var radios = document.querySelectorAll('input[name="app-icon"]');
+    function sync() {
+      for (var i = 0; i < radios.length; i++) radios[i].checked = radios[i].value === dsAppIcon.get();
+    }
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].addEventListener('change', function (e) { dsAppIcon.set(e.target.value); });
+    }
+    document.addEventListener('ds-icon-change', sync);
+    sync();
+  })();
+</script>"""
 
 # A grid-cards item that links into the gallery (the home page's Gallery card): the
 # item marker, its `**[title](gallery/…)**` heading and the indented body under it.
@@ -166,9 +227,7 @@ def render(page: Page, rendered: str, hidden: set[str], publish: bool = False) -
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(page.title)} · Design systems</title>
 <meta name="description" content="{html.escape(DESCRIPTION)}">
-<link rel="icon" href="{rel}assets/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="{rel}assets/icons/apple-touch-icon.png">
-<link rel="manifest" href="{rel}site.webmanifest">
+{ICON_LINKS.format(rel=rel)}
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafafa">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#08090a">
 <meta name="apple-mobile-web-app-title" content="Design">
@@ -188,6 +247,9 @@ def render(page: Page, rendered: str, hidden: set[str], publish: bool = False) -
     {nav}
   </nav>
 {search}
+  <a class="icon-btn" href="{rel}settings/" aria-label="Settings" title="Settings"{current("settings")}>
+    {SETTINGS_SVG}
+  </a>
   <button id="theme" class="icon-btn" type="button" aria-label="Toggle colour theme" title="Toggle theme">
     {THEME_SVG}
   </button>
@@ -250,6 +312,13 @@ def build(publish: bool = False) -> None:
         dest.parent.mkdir(parents=True, exist_ok=True)
         atomic_write(dest, render(page, body, hidden, publish))
         count += 1
+
+    settings = Page(DOCS / "index.md", "settings/", "settings")
+    settings.title = "Settings"
+    (OUT / "settings").mkdir(parents=True, exist_ok=True)
+    atomic_write(OUT / "settings" / "index.html",
+                 render(settings, SETTINGS_BODY.replace("{rel}", "../"), {"navigation"}, publish))
+    count += 1
 
     # A 404 is served at the missing URL, whatever its depth, so the page's
     # relative links would resolve inside the missing directory. The script
