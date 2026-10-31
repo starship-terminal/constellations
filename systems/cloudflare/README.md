@@ -11,7 +11,7 @@ Measured Cloudflare dashboard and public marketing reference, captured on 2026-1
 | [interaction-inventory.json](interaction-inventory.json) | Sanitized machine-readable interaction inventory |
 | [patterns.md](patterns.md) | Rule builder, analytics, settings and public navigation patterns |
 | [components/](components/) | Verified crops, kept at native screenshot pixel scale |
-| [screenshots/](screenshots/) | 192 accepted viewport screenshots (initial package plus ongoing dashboard exploration) |
+| [screenshots/](screenshots/) | 207 accepted viewport screenshots (initial package plus ongoing dashboard exploration) |
 | [raw/](raw/) | Sanitized measured styles, capture manifest and per-value element counts |
 | [tools/](tools/) | Import allowlist, crop coordinates and deterministic builders |
 | [icon.png](icon.png) | Official site identification icon; private catalogue use only |

@@ -190,5 +190,20 @@
   "leased-ips-empty-dark-desktop": "app",
   "address-maps-empty-dark-desktop": "app",
   "address-map-create-dark-desktop": "app",
-  "address-map-discard-dark-desktop": "app"
+  "address-map-discard-dark-desktop": "app",
+  "threats-overview-dark-desktop": "app",
+  "threat-signals-empty-dark-desktop": "app",
+  "threat-feed-create-dark-desktop": "app",
+  "threat-ai-skills-dark-desktop": "app",
+  "threat-feed-indicators-dark-desktop": "app",
+  "investigate-empty-dark-desktop": "app",
+  "investigate-scope-menu-dark-desktop": "app",
+  "monetization-access-gate-dark-desktop": "app",
+  "bulk-redirects-empty-dark-desktop": "app",
+  "bulk-redirect-create-dark-desktop": "app",
+  "load-balancing-gate-dark-desktop": "app",
+  "load-balancing-downtime-dark-desktop": "app",
+  "load-balancing-visibility-dark-desktop": "app",
+  "zaraz-domains-dark-desktop": "app",
+  "zaraz-plans-dark-desktop": "app"
 }
