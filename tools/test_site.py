@@ -5,6 +5,8 @@ the interpreter), so it is loaded here by file path.
 """
 import importlib.util
 import re
+import shutil
+import subprocess
 import sys
 import unittest
 from pathlib import Path
@@ -83,6 +85,12 @@ class AppIconTest(unittest.TestCase):
         self.assertTrue(any(h.startswith("icons/glass/") for h in hrefs))
         for href in hrefs:
             self.assertTrue((self.ASSETS / href).exists(), href)
+
+    @unittest.skipUnless(shutil.which("node"), "Node.js is required to run assets/app-icon.js")
+    def test_the_swap_script(self):
+        result = subprocess.run(["node", "--test", str(HERE / "test_app_icon.mjs")],
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
     def test_the_glass_set_mirrors_the_flat_rasters(self):
         flat = {p.name for p in (self.ASSETS / "icons").iterdir() if p.is_file()}
