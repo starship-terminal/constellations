@@ -50,5 +50,37 @@ Source: [full screenshot](screenshots/app-projects-grid.png). Observed; see corr
 ![mobile-menu](components/crops/mobile-menu.png)
 Source: [full screenshot](screenshots/landing-mobile-menu.png). Observed; see corresponding raw reading for measured values.
 
+## team-table
+![team-table](components/crops/team-table.png)
+Source: [full screenshot](screenshots/app-team.png). Observed; see corresponding raw reading for measured values.
+
+## invite-radio-group
+![invite-radio-group](components/crops/invite-radio-group.png)
+Source: [full screenshot](screenshots/app-invite-members.png). Observed; see corresponding raw reading for measured values.
+
+## invite-textarea-focus
+![invite-textarea-focus](components/crops/invite-textarea-focus.png)
+Source: [full screenshot](screenshots/app-invite-members.png). Observed; see corresponding raw reading for measured values.
+
+## switches
+![switches](components/crops/switches.png)
+Source: [full screenshot](screenshots/app-keyboard-shortcuts.png). Observed; see corresponding raw reading for measured values.
+
+## date-picker
+![date-picker](components/crops/date-picker.png)
+Source: [full screenshot](screenshots/app-logs-date-picker.png). Observed; see corresponding raw reading for measured values.
+
+## unsaved-confirmation
+![unsaved-confirmation](components/crops/unsaved-confirmation.png)
+Source: [full screenshot](screenshots/app-unsaved-changes.png). Observed; see corresponding raw reading for measured values.
+
+## function-editor
+![function-editor](components/crops/function-editor.png)
+Source: [full screenshot](screenshots/app-function-editor.png). Observed; see corresponding raw reading for measured values.
+
+## feedback-textarea
+![feedback-textarea](components/crops/feedback-textarea.png)
+Source: [full screenshot](screenshots/app-feedback-composer.png). Observed; see corresponding raw reading for measured values.
+
 ## Gaps
-Table cells, row detail panels, schema navigation, table filters and main SQL workspace unavailable while both projects were paused. Side-panel SQL was viewed empty; no SQL was executed. No hover/pressed parity or validation errors claimed.
+Team and audit table cells are captured. Database row detail panels, schema navigation, database table filters and main SQL workspace remain unavailable while both projects are paused. Side-panel SQL was viewed empty; no SQL was executed. Textarea autofocus and keyboard-focused Cancel are visible; no hover/pressed parity or validation errors claimed.

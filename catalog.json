@@ -2904,7 +2904,7 @@
       "url": "https://supabase.com",
       "category": "productivity",
       "platform": "web",
-      "goodFor": "Developer dashboard shells, compact project controls, command search and responsive navigation; database editing gaps documented",
+      "goodFor": "Developer dashboards, code editors, member tables, settings, log filters, invitations and responsive navigation; database editing gaps documented",
       "tags": [
         "web",
         "developer-tools",

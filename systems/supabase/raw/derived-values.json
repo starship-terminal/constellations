@@ -14,6 +14,12 @@
     "dark.component.searchField.text",
     "dark.component.card.bg",
     "dark.component.card.text",
+    "dark.component.switchChecked.bg",
+    "dark.component.switchChecked.text",
+    "dark.component.inviteTextareaFocused.bg",
+    "dark.component.inviteTextareaFocused.text",
+    "dark.component.invitePanel.bg",
+    "dark.component.invitePanel.text",
     "light.background.page",
     "light.background.surface",
     "light.text.primary",
@@ -26,6 +32,12 @@
     "light.component.secondaryButton.text",
     "light.component.searchField.text",
     "light.component.card.bg",
-    "light.component.card.text"
+    "light.component.card.text",
+    "light.component.switchChecked.bg",
+    "light.component.switchChecked.text",
+    "light.component.inviteTextareaFocused.bg",
+    "light.component.inviteTextareaFocused.text",
+    "light.component.invitePanel.bg",
+    "light.component.invitePanel.text"
   ]
 }

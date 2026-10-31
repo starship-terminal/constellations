@@ -59,6 +59,14 @@ def build():
             core['radius']={'control':t(accent['styles']['border-radius'],'dimension',f'components[{ai}].styles.border-radius')}
             core['size']={'controlHeight':t(accent['styles']['height'],'dimension',f'components[{ai}].styles.height')}
             core['motion']={'controlDuration':t(accent['styles']['transition-duration'],'duration',f'components[{ai}].styles.transition-duration')}
+    for theme in ['dark','light']:
+        for name, file, index in [('switchChecked',f'{theme}-switches',0), ('inviteTextareaFocused',f'{theme}-invite',4), ('invitePanel',f'{theme}-invite',0)]:
+            data=read('expanded/'+file+'.measurements')
+            element=data['components'][index]
+            out[theme]['component'][name]={key:token(element['styles'][prop],typ,f'raw/expanded/{file}.measurements.json components[{index}].styles.{prop}; live {theme}') for key,prop,typ in [('bg','background-color','color'),('text','color','color'),('radius','border-radius','dimension'),('height','height','dimension')]}
+    header=read('expanded/dark-table.measurements')['components'][0]['styles']
+    out['core']['typography']['tableHeader']=token({'fontFamily':header['font-family'],'fontSize':header['font-size'],'fontWeight':int(header['font-weight']),'lineHeight':header['line-height']},'typography','raw/expanded/dark-table.measurements.json components[0].styles; dark team table header')
+    out['$themes']=[{'id':theme,'name':theme.title(),'selectedTokenSets':{'core':'enabled',theme:'enabled'}} for theme in ['dark','light']]
     out['$extensions']={'notTokenised': ['Full CSS variable inventory was not captured; exported variables are a partial browser reading.', 'Spacing scale, focus ring, hover and pressed colors, status ramps and breakpoint thresholds not measured.', 'Raw shadows and easing values remain in per-state readings; not generalized into semantic scales.']}
     (HERE/'tokens.json').write_text(json.dumps(out,indent=2)+'\n')
     derived=[]

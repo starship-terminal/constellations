@@ -106,5 +106,77 @@
       390,
       844
     ]
+  ],
+  "team-table": [
+    "app-team",
+    [
+      100,
+      205,
+      1230,
+      415
+    ]
+  ],
+  "invite-radio-group": [
+    "app-invite-members",
+    [
+      860,
+      220,
+      1265,
+      523
+    ]
+  ],
+  "invite-textarea-focus": [
+    "app-invite-members",
+    [
+      855,
+      550,
+      1270,
+      650
+    ]
+  ],
+  "switches": [
+    "app-keyboard-shortcuts",
+    [
+      1045,
+      448,
+      1107,
+      590
+    ]
+  ],
+  "date-picker": [
+    "app-logs-date-picker",
+    [
+      65,
+      320,
+      532,
+      711
+    ]
+  ],
+  "unsaved-confirmation": [
+    "app-unsaved-changes",
+    [
+      480,
+      277,
+      802,
+      450
+    ]
+  ],
+  "function-editor": [
+    "app-function-editor",
+    [
+      306,
+      104,
+      1270,
+      647
+    ]
+  ],
+  "feedback-textarea": [
+    "app-feedback-composer",
+    [
+      640,
+      60,
+      1005,
+      193
+    ]
   ]
 }
