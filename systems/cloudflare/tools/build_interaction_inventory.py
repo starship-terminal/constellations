@@ -77,7 +77,7 @@ def build(source):
             reason = '; '.join(str(entry[k]) for k in ('result', 'reason') if entry.get(k))
             lines.append('| ' + ' | '.join([cell(entry.get('id')), cell(entry.get('control')), cell(entry.get('action')), cell(entry.get('status', 'unspecified')), cell(reason), evidence]) + ' |')
         lines.append('')
-    (ROOT / 'interaction-inventory.md').write_text('\n'.join(lines) + '\n')
+    (ROOT / 'interaction-inventory.md').write_text('\n'.join(lines).rstrip() + '\n')
     print(json.dumps(data['exportSummary'], indent=2))
 
 
