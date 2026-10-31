@@ -2961,7 +2961,8 @@
         "route": "web-inspector",
         "version": "Live web app, 2026-10-31; release not exposed",
         "durationMin": null,
-        "durationNote": "Total active time across sign-in handoffs was not timed; individual live capture timestamps are retained."
+        "durationNote": "Total active time across sign-in handoffs was not timed; individual live capture timestamps are retained.",
+        "pr": "https://github.com/c-wenlong/designs/pull/136"
       }
     }
   ]
