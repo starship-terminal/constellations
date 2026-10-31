@@ -9,6 +9,11 @@ ROOT=pathlib.Path(__file__).resolve().parents[1]
 source=pathlib.Path(sys.argv[1])
 accepted=json.loads((ROOT/'tools/accepted.json').read_text())
 manifest=[]
+def sanitize(value):
+    if isinstance(value,str): return re.sub(r'(?<![0-9a-fA-F])[0-9a-fA-F]{32}(?![0-9a-fA-F])',':id',value)
+    if isinstance(value,list): return [sanitize(item) for item in value]
+    if isinstance(value,dict): return {sanitize(key):sanitize(item) for key,item in value.items()}
+    return value
 for name,route in sorted(accepted.items()):
     original='account-home-light-desktop' if name=='account-home-dark-desktop' else name
     data=json.loads((source/route/(original+'.json')).read_text())
@@ -19,6 +24,7 @@ for name,route in sorted(accepted.items()):
     data['url']=re.sub(r'/[0-9a-f]{32}(?=/|$)','/:account',data.get('url',''))
     extra=source/route/(original+'.extra.json')
     if extra.exists(): data['extra']=json.loads(extra.read_text())
+    data=sanitize(data)
     data['png']={'width':size[0],'height':size[1]}
     data['originalScreenshotFormat']=fmt
     data['evidence']='Measured: live signed-in dashboard' if route=='app' else 'Measured: public marketing page, not dashboard evidence'

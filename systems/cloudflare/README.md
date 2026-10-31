@@ -7,13 +7,19 @@ Measured Cloudflare dashboard and public marketing reference, captured on 2026-1
 | [tokens.json](tokens.json) | Source-labelled computed CSS and declared custom properties in core, dark, light and marketing sets |
 | [style-guide.html](style-guide.html) | Every measured token and all retained screenshots |
 | [components.md](components.md) | Component inventory and 14 native-pixel crops |
+| [interaction-inventory.md](interaction-inventory.md) | Partial discovered-control occurrence log and unresolved statuses |
+| [interaction-inventory.json](interaction-inventory.json) | Sanitized machine-readable interaction inventory |
 | [patterns.md](patterns.md) | Rule builder, analytics, settings and public navigation patterns |
 | [components/](components/) | Verified crops, kept at native screenshot pixel scale |
-| [screenshots/](screenshots/) | 30 visually reviewed viewport screenshots |
+| [screenshots/](screenshots/) | 192 accepted viewport screenshots (initial package plus ongoing dashboard exploration) |
 | [raw/](raw/) | Sanitized measured styles, capture manifest and per-value element counts |
 | [tools/](tools/) | Import allowlist, crop coordinates and deterministic builders |
 | [icon.png](icon.png) | Official site identification icon; private catalogue use only |
 | [DESIGN.md](DESIGN.md) | Generated one-theme export; tokens remain authoritative |
+
+## Dashboard exploration in progress
+
+The expanded scope covers the entire Cloudflare dashboard. The [interaction inventory](interaction-inventory.md) and [machine-readable inventory](interaction-inventory.json) preserve pending, blocked and not executed controls, including repeated shared navigation rows. Exploration stopped at a checkpoint and remains incomplete (`complete: false`). Inventory rows count discovered-control occurrences, with shared-navigation duplicates and unresolved pending reconciliation. The expanded exploration captures are dark desktop only. Imported captures document only recorded visited states and do not establish complete product, theme, viewport or interaction coverage.
 
 ## Brief
 

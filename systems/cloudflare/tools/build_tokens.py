@@ -7,13 +7,26 @@ def token(v,t,source): return {'$type':t,'$value':v,'$extensions':{'source':'Mea
 def var(data,name,file,t='color'): return token(data['variables'][name],t,f'raw/{file}.json variables.{name}')
 def elem(data,tag=None,label=None):
  return next(c for c in data['components'] if (tag is None or c['tag']==tag) and (label is None or c['label']==label))
-def style(data,c,prop,file,t): return token(c['styles'][prop],t,f'raw/{file}.json {c["tag"]} {c["label"]!r} computed {prop}')
+def reviewed_input(data, name, rect):
+ # This capture did not retain DOM ids or accessible input names. Bind to the
+ # visually reviewed field's exact capture rectangle; fail closed on drift.
+ matches=[c for c in data['components'] if c['tag']=='INPUT' and c.get('role') is None and c['rect']==rect]
+ if len(matches)!=1: raise ValueError(f'Reviewed {name} field: expected exactly one match, got {len(matches)}; review capture before updating selector')
+ return matches[0]
+def style(data,c,prop,file,t):
+ identity=f'{c["tag"]} {c["label"]!r}'
+ if c['tag']=='INPUT': identity+=f' at reviewed rect {c["rect"]}'
+ return token(c['styles'][prop],t,f'raw/{file}.json {identity} computed {prop}')
 appfile='custom-rule-empty-dark-desktop'; app=read(appfile)
-h=elem(app,'H1'); inp=elem(app,'INPUT'); link=elem(app,label='Edit expression')
+h=elem(app,'H1')
+inp=reviewed_input(app,'rule-name',{'height':36,'width':848,'x':426,'y':275})
+condition_value=reviewed_input(app,'condition-value',{'height':34.5,'width':375.546875,'x':792,'y':522.375})
+link=elem(app,label='Edit expression')
 core={'font':{'sans':style(app,h,'font-family',appfile,'fontFamily'),'mono':var(app,'--font-mono',appfile,'fontFamily')},'radius':{},'typography':{},'spacing':{},'sizing':{},'layout':{},'motion':{}}
+core['borderWidth']={'ruleName':style(app,inp,'border-width',appfile,'dimension'),'conditionValue':style(app,condition_value,'border-width',appfile,'dimension')}
 for k in ['sm','md','lg']: core['radius'][k]=var(app,'--radius-'+k,appfile,'dimension')
 for role,c in [('heading',h),('body',inp),('button',link)]:
- s=c['styles'];core['typography'][role]=token({'fontFamily':s['font-family'],'fontSize':s['font-size'],'fontWeight':int(s['font-weight']),'lineHeight':s['line-height'],'letterSpacing':s['letter-spacing']},'typography',f'raw/{appfile}.json {c["tag"]} {c["label"]!r} computed typography')
+ s=c['styles'];core['typography'][role]=token({'fontFamily':s['font-family'],'fontSize':s['font-size'],'fontWeight':int(s['font-weight']),'lineHeight':s['line-height'],'letterSpacing':s['letter-spacing']},'typography',f'raw/{appfile}.json {c["tag"]} {c["label"]!r} at rect {c["rect"]} computed typography')
 core['sizing']['controlHeight']=style(app,inp,'height',appfile,'dimension')
 core['spacing']['controlGap']=style(app,inp,'gap',appfile,'dimension')
 for name,key in [('smallContent','--container-sm'),('largeContent','--container-6xl'),('breakpoint2xl','--breakpoint-2xl')]: core['layout'][name]=var(app,key,appfile,'dimension')
@@ -34,8 +47,8 @@ for theme in ['dark','light']:
  result[theme]['text']['secondary']=style(d,muted,'color',file,'color')
  result[theme]['component']={'heading':{'text':style(d,heading,'color',file,'color')}}
  if theme=='dark':
-  result[theme]['component']['input']={n:style(d,inp,p,file,t) for n,p,t in [('background','background-color','color'),('text','color','color'),('height','height','dimension'),('radius','border-radius','dimension')]}
-  result[theme]['component']['link']={'text':style(d,link,'color',file,'color')}
+  result[theme]['component']['input']={n:style(d,inp,p,file,t) for n,p,t in [('background','background-color','color'),('text','color','color'),('height','height','dimension'),('radius','border-radius','dimension'),('borderWidth','border-width','dimension')]}
+  result[theme]['component']['link']={n:style(d,link,p,file,t) for n,p,t in [('text','color','color'),('background','background-color','color'),('height','height','dimension'),('radius','border-radius','dimension'),('borderWidth','border-width','dimension')]}
  # Preserve directly readable color declarations; do not tokenize unresolved light-dark().
  result[theme]['declared']={k[2:]:var(d,k,file) for k,val in sorted(v.items()) if (k.startswith('--color-') or k.startswith('--cf-') or k.startswith('--text-color-')) and (val.startswith('#') or val.startswith('oklch('))}
 file='public-home-desktop';d=read(file)
