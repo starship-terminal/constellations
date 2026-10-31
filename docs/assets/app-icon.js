@@ -33,7 +33,10 @@
   function apply(name) {
     var head = document.head;
     var old = head.querySelectorAll('link[rel="icon"], link[rel="apple-touch-icon"]');
-    var anchor = old.length ? old[0] : null;
+    var anchor = old.length ? old[old.length - 1].nextSibling : null;
+    // Remove before inserting: Chrome re-picks the tab icon when a link is
+    // added, not when one is removed, so the old set must be gone by then.
+    for (var i = 0; i < old.length; i++) old[i].remove();
     SETS[name].forEach(function (spec) {
       var link = document.createElement('link');
       link.rel = spec.rel;
@@ -42,7 +45,6 @@
       if (spec.sizes) link.setAttribute('sizes', spec.sizes);
       head.insertBefore(link, anchor);
     });
-    for (var i = 0; i < old.length; i++) old[i].remove();
     document.documentElement.dataset.icon = name;
   }
 
