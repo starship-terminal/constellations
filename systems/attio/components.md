@@ -1,6 +1,6 @@
 # Components
 
-Use `light.component.*` or `dark.component.*` in [tokens.json](tokens.json): primaryButton, iconButton, toolbarButton, sidebar and tableLabel have exact measured styles. `core.type.table` holds the table label size, line height and tracking. These are component-specific readings, not a complete shared scale.
+Use `light.component.*` or `dark.component.*` in [tokens.json](tokens.json): primaryButton and toolbarButton separate `.container` geometry/chrome from `.label` visible text. iconButton and sidebar expose containers only; tableLabel exposes the visible Google label. No inherited wrapper typography is presented as visible label typography. `core.type.table` holds the table label size, line height and tracking. These are component-specific readings, not a complete shared scale.
 
 | Component | Evidence | Captured states |
 |---|---|---|

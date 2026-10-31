@@ -148,4 +148,4 @@ These are observations for this reference, not an official Attio design guide.
 
 ## Rebuild
 
-Run `python3 systems/attio/tools/build_tokens.py`, then `python3 systems/attio/tools/build_style_guide.py`. Run `make design-md` and `make grade` from the repository root before `make check` and `make test`. Image preparation reads original captures outside git; see [image builder](tools/build_images.py).
+Run `python3 systems/attio/tools/build_tokens.py`, then `python3 systems/attio/tools/build_style_guide.py`. Run `make design-md` and `make grade` from the repository root before `make check` and `make test`. The supported browser reader is documented in [tools/README.md](tools/README.md). Image preparation verifies every accepted original hash, format and dimensions before writing any outputs; it reads original captures outside git; see [image builder](tools/build_images.py).

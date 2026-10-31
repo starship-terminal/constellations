@@ -34,10 +34,27 @@ for theme in ['light', 'dark']:
     for key, value in sorted(raw['mainVars'].items()):
         if value.startswith('#'):
             put(out[theme], 'cssVariable.'+key.lstrip('-'), value, 'color', f'raw/{name} main computed {key}; role unassigned')
-    for component, index in [('primaryButton',249),('iconButton',302),('toolbarButton',232),('sidebar',10),('tableLabel',433)]:
-        for prop, kind in [('backgroundColor','color'),('color','color'),('borderRadius','dimension'),('height','dimension'),('fontFamily','fontFamily'),('fontSize','dimension'),('fontWeight','fontWeight'),('lineHeight','dimension'),('boxShadow','shadow'),('padding','string'),('gap','string'),('transitionDuration','string'),('transitionTimingFunction','string')]:
-            value=rows[index]['styles'][prop]
-            put(out[theme], f'component.{component}.{prop}',value,kind,f'raw/{name} elements[{index}].styles.{prop}; default state')
+    # Containers define geometry and chrome; child labels define visible text.
+    containers = [('primaryButton', 249), ('iconButton', 302),
+                  ('toolbarButton', 232), ('sidebar', 10)]
+    for component, index in containers:
+        for prop, kind in [('backgroundColor','color'), ('color','color'),
+                           ('borderRadius','dimension'), ('height','dimension'),
+                           ('boxShadow','shadow'), ('padding','string'), ('gap','string'),
+                           ('transitionDuration','string'), ('transitionTimingFunction','string')]:
+            put(out[theme], f'component.{component}.container.{prop}',
+                rows[index]['styles'][prop], kind,
+                f'raw/{name} elements[{index}].styles.{prop}; container, default state')
+    for component, index, label in [('primaryButton',253,'New Company'),
+                                    ('toolbarButton',236,'View settings'),
+                                    ('tableLabel',433,'Google')]:
+        assert rows[index]['label'] == label, f'{name}: unexpected label at {index}'
+        for prop, kind in [('color','color'), ('fontFamily','fontFamily'),
+                           ('fontSize','dimension'), ('fontWeight','fontWeight'),
+                           ('lineHeight','dimension'), ('letterSpacing','dimension')]:
+            put(out[theme], f'component.{component}.label.{prop}',
+                rows[index]['styles'][prop], kind,
+                f'raw/{name} elements[{index}].styles.{prop}; visible {label} label')
     if theme == 'light':
         put(out['core'],'fontFamily.body',rows[433]['styles']['fontFamily'],'fontFamily',f'raw/{name} elements[433].styles.fontFamily')
         for prop in ['fontSize','lineHeight','letterSpacing']:
