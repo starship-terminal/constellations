@@ -33,6 +33,6 @@ for f in sorted(p for p in RAW.iterdir() if p.suffix.lower() in {'.png', '.jpg',
     if '.part' in f.name:
         continue
     im = Image.open(f).convert('RGB')
-    im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / (f.stem + '.png'), optimize=True)
+    im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / (f.stem + '.png'))
     n += 1
 print(n, 'screenshots ->', OUT)
