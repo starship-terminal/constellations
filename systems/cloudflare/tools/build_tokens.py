@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Deterministic DTCG tokens from browser computed CSS, without completing missing scales."""
-import json, pathlib, re, collections
+import json, pathlib, re, collections, math
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 def read(name): return json.loads((ROOT/'raw'/f'{name}.json').read_text())
 def token(v,t,source): return {'$type':t,'$value':v,'$extensions':{'source':'Measured: '+source}}
@@ -40,6 +40,38 @@ for theme in ['dark','light']:
  result[theme]['declared']={k[2:]:var(d,k,file) for k,val in sorted(v.items()) if (k.startswith('--color-') or k.startswith('--cf-') or k.startswith('--text-color-')) and (val.startswith('#') or val.startswith('oklch('))}
 file='public-home-desktop';d=read(file)
 result['marketing']={'background':{'page':var(d,'--color-background-200',file),'surface':var(d,'--color-background-content',file)},'text':{'primary':var(d,'--color-foreground',file),'secondary':var(d,'--color-text-secondary',file)},'accent':{'default':var(d,'--text-color-kumo-brand',file)},'border':{'default':var(d,'--color-border',file)}}
+# Derived 8-bit sRGB previews let legacy hex-only consumers use the measured roles.
+# OKLCH -> OKLab -> linear sRGB matrices, followed by the sRGB transfer curve.
+def srgb_preview(value):
+ if value.startswith('#'):
+  h=value[1:]
+  if len(h)==3: h=''.join(c*2 for c in h)
+  if len(h)!=6: raise ValueError(f'Unsupported preview color: {value}')
+  return '#'+h.lower(), False, 'hex normalization to 8-bit sRGB'
+ m=re.fullmatch(r'oklch\(([^ ]+) +([^ ]+) +([^ )]+)\)',value)
+ if not m: raise ValueError(f'Unsupported preview color: {value}')
+ lightness,chroma,hue=m.groups()
+ L=float(lightness.rstrip('%'))/(100 if lightness.endswith('%') else 1)
+ C=float(chroma); H=0 if hue=='none' else float(hue)
+ a=C*math.cos(math.radians(H)); b=C*math.sin(math.radians(H))
+ l=(L+.3963377774*a+.2158037573*b)**3
+ m=(L-.1055613458*a-.0638541728*b)**3
+ s=(L-.0894841775*a-1.2914855480*b)**3
+ linear=[4.0767416621*l-3.3077115913*m+.2309699292*s,
+         -1.2684380046*l+2.6097574011*m-.3413193965*s,
+         -.0041960863*l-.7034186147*m+1.7076147010*s]
+ clipped=any(c<0 or c>1 for c in linear)
+ channels=[max(0,min(1,c)) for c in linear]
+ encoded=[12.92*c if c<=.0031308 else 1.055*c**(1/2.4)-.055 for c in channels]
+ return '#'+''.join(f'{math.floor(c*255+.5):02x}' for c in encoded),clipped,'OKLCH to OKLab to linear sRGB, sRGB transfer, nearest 8-bit rounding'
+for theme in ['dark','light','marketing']:
+ result[theme]['preview']={}
+ for role,path in {'page':'background.page','surface':'background.surface','text':'text.primary','muted':'text.secondary','accent':'accent.default','border':'border.default'}.items():
+  group,key=path.split('.')
+  original=result[theme][group][key]['$value']
+  value,clipped,method=srgb_preview(original)
+  source=f'Derived: {theme}.{path} ({original}); {method}; '+('out-of-gamut linear channels clipped to [0, 1].' if clipped else 'no gamut clipping.')
+  result[theme]['preview'][role]={'$type':'color','$value':value,'$extensions':{'source':source}}
 # Keep raw measurement use counts as evidence, separate from semantic-role assignment.
 counts={}
 for f in sorted((ROOT/'raw').glob('*.json')):
@@ -50,4 +82,4 @@ for f in sorted((ROOT/'raw').glob('*.json')):
 result['$themes']=[{'id':t,'name':t,'selectedTokenSets':{'core':'enabled',t:'enabled'}} for t in ['dark','light','marketing'] if t in result]
 result['$extensions']={'notTokenised':'Unresolved light-dark() declarations remain in raw readings. No unobserved hover/pressed states, full scales or missing status roles are inferred. Marketing is a separate public surface, not the dashboard light theme.'}
 (ROOT/'tokens.json').write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n')
-print('Built measured tokens')
+print('Built measured tokens and derived sRGB previews')

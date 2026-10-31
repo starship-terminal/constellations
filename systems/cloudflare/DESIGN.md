@@ -5,11 +5,11 @@ version: "alpha"
 name: "Cloudflare"
 description: "Security dashboards, condition builders, configuration tables, analytics filters and dialogs"
 colors:
-  primary: "oklch(57.72% .2324 260)"
-  neutral: "oklch(0.9875 0 0)"
-  surface: "#fff"
-  on-surface: "oklch(20.5% 0 none)"
-  on-surface-variant: "oklch(0.556 0 none)"
+  primary: "#056dff"
+  neutral: "#fbfbfb"
+  surface: "#ffffff"
+  on-surface: "#171717"
+  on-surface-variant: "#737373"
   outline: "#d9d9d9"
   background-page: "oklch(0.9875 0 0)"
   background-surface: "#fff"
@@ -185,6 +185,12 @@ colors:
   declared-text-color-kumo-inactive: "oklch(87% 0 none)"
   declared-text-color-kumo-inverse: "oklch(97% 0 none)"
   declared-text-color-surface: "oklch(20.5% 0 none)"
+  preview-page: "#fbfbfb"
+  preview-surface: "#ffffff"
+  preview-text: "#171717"
+  preview-muted: "#737373"
+  preview-accent: "#056dff"
+  preview-border: "#d9d9d9"
 typography:
   heading:
     fontFamily: "Inter Variable"
@@ -233,12 +239,12 @@ Measured Cloudflare dashboard and public marketing reference, captured on 2026-1
 
 The roles below are the catalog's swatches for the `light` theme. The front matter then lists every colour token under `light`, named by its path with dots turned into hyphens.
 
-- **primary (oklch(57.72% .2324 260)):** `light.accent.default`
-- **neutral (oklch(0.9875 0 0)):** `light.background.page`
-- **surface (#fff):** `light.background.surface`
-- **on-surface (oklch(20.5% 0 none)):** `light.text.primary`
-- **on-surface-variant (oklch(0.556 0 none)):** `light.text.secondary`
-- **outline (#d9d9d9):** `light.border.default`
+- **primary (#056dff):** `light.preview.accent`
+- **neutral (#fbfbfb):** `light.preview.page`
+- **surface (#ffffff):** `light.preview.surface`
+- **on-surface (#171717):** `light.preview.text`
+- **on-surface-variant (#737373):** `light.preview.muted`
+- **outline (#d9d9d9):** `light.preview.border`
 
 ## Typography
 
@@ -280,7 +286,7 @@ This is sampled coverage, not full component or theme parity. Raw declarations i
 
 The public full-page attempt had blank scroll-triggered sections and was rejected outside Git. Viewport screenshots intentionally show portions of longer pages, not an entire document. The field dropdown is an internally scrolling list; the crop shows only its visible options. Appearance-menu imagery proves the visible user menu, not an open appearance submenu. Rejected intermediate mobile animation frames are not retained.
 
-No token is Sampled, Derived or Reconstruction. The style guide's layout is an illustrative presentation, not a reconstruction of an unobserved Cloudflare screen. Not captured values include a complete spacing scale, all elevation levels, reduced-motion behavior, every breakpoint, icon geometry and complete state palettes.
+The 18 `dark.preview.*`, `light.preview.*` and `marketing.preview.*` colors are Derived 8-bit sRGB previews of the original measured semantic roles. Their sources identify the original token, conversion, rounding and any gamut clipping. Original measured values remain unchanged. No token is Sampled or Reconstruction. The style guide's layout is an illustrative presentation, not a reconstruction of an unobserved Cloudflare screen. Not captured values include a complete spacing scale, all elevation levels, reduced-motion behavior, every breakpoint, icon geometry and complete state palettes.
 
 The identification icon came from [Cloudflare dashboard apple-touch icon](https://dash.cloudflare.com/apple-touch-icon-144x144.png), resized from 144 × 144 to 128 × 128. It is private catalogue identification material, not a reusable brand asset.
 

@@ -2935,20 +2935,20 @@
         "icon": "systems/cloudflare/icon.png",
         "swatches": {
           "light": {
-            "page": "light.background.page",
-            "surface": "light.background.surface",
-            "text": "light.text.primary",
-            "muted": "light.text.secondary",
-            "accent": "light.accent.default",
-            "border": "light.border.default"
+            "page": "light.preview.page",
+            "surface": "light.preview.surface",
+            "text": "light.preview.text",
+            "muted": "light.preview.muted",
+            "accent": "light.preview.accent",
+            "border": "light.preview.border"
           },
           "dark": {
-            "page": "dark.background.page",
-            "surface": "dark.background.surface",
-            "text": "dark.text.primary",
-            "muted": "dark.text.secondary",
-            "accent": "dark.accent.default",
-            "border": "dark.border.default"
+            "page": "dark.preview.page",
+            "surface": "dark.preview.surface",
+            "text": "dark.preview.text",
+            "muted": "dark.preview.muted",
+            "accent": "dark.preview.accent",
+            "border": "dark.preview.border"
           }
         },
         "fonts": [
@@ -2960,8 +2960,8 @@
         "model": "GPT-6",
         "version": "Live web app, version not exposed",
         "route": "web-inspector",
-        "pr": "",
-        "durationMin": 40
+        "pr": "https://github.com/c-wenlong/designs/pull/137",
+        "durationMin": null
       },
       "layoutGaps": {
         "icons/": "Proprietary icons retained only in screenshot references"
