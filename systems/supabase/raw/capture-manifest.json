@@ -1,0 +1,410 @@
+[
+  {
+    "name": "app-account-theme-menu",
+    "source": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm",
+    "capturedAt": "2026-10-31T03:58:23.270Z",
+    "viewport": {
+      "devicePixelRatio": 2,
+      "innerHeight": 720,
+      "innerWidth": 1280,
+      "visualViewport": {
+        "height": 720,
+        "scale": 1,
+        "width": 1280
+      }
+    },
+    "png": {
+      "width": 1280,
+      "height": 720
+    },
+    "review": "accepted, inspected native screenshot",
+    "route": "signed-in live app; free plan, paused projects"
+  },
+  {
+    "name": "app-command-menu",
+    "source": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr",
+    "capturedAt": "2026-10-31T03:56:32.060Z",
+    "viewport": {
+      "devicePixelRatio": 2,
+      "innerHeight": 720,
+      "innerWidth": 1280,
+      "visualViewport": {
+        "height": 720,
+        "scale": 1,
+        "width": 1280
+      }
+    },
+    "png": {
+      "width": 1280,
+      "height": 720
+    },
+    "review": "accepted, inspected native screenshot",
+    "route": "signed-in live app; free plan, paused projects"
+  },
+  {
+    "name": "app-mobile-navigation",
+    "source": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm",
+    "capturedAt": "2026-10-31T03:58:31.683Z",
+    "viewport": {
+      "devicePixelRatio": 1,
+      "innerHeight": 844,
+      "innerWidth": 390,
+      "visualViewport": {
+        "height": 844,
+        "scale": 1,
+        "width": 390
+      }
+    },
+    "png": {
+      "width": 390,
+      "height": 844
+    },
+    "review": "accepted, inspected native screenshot",
+    "route": "signed-in live app; free plan, paused projects"
+  },
+  {
+    "name": "app-mobile-projects",
+    "source": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm",
+    "capturedAt": "2026-10-31T03:58:26.986Z",
+    "viewport": {
+      "devicePixelRatio": 1,
+      "innerHeight": 844,
+      "innerWidth": 390,
+      "visualViewport": {
+        "height": 844,
+        "scale": 1,
+        "width": 390
+      }
+    },
+    "png": {
+      "width": 390,
+      "height": 844
+    },
+    "review": "accepted, inspected native screenshot",
+    "route": "signed-in live app; free plan, paused projects"
+  },
+  {
+    "name": "app-paused-project",
+    "source": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr",
+    "capturedAt": "2026-10-31T03:56:22.730Z",
+    "viewport": {
+      "devicePixelRatio": 2,
+      "innerHeight": 720,
+      "innerWidth": 1280,
+      "visualViewport": {
+        "height": 720,
+        "scale": 1,
+        "width": 1280
+      }
+    },
+    "png": {
+      "width": 1280,
+      "height": 720
+    },
+    "review": "accepted, inspected native screenshot",
+    "route": "signed-in live app; free plan, paused projects"
+  },
+  {
+    "name": "app-project-picker",
+    "source": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr",
+    "capturedAt": "2026-10-31T03:56:12.349Z",
+    "viewport": {
+      "devicePixelRatio": 2,
+      "innerHeight": 720,
+      "innerWidth": 1280,
+      "visualViewport": {
+        "height": 720,
+        "scale": 1,
+        "width": 1280
+      }
+    },
+    "png": {
+      "width": 1280,
+      "height": 720
+    },
+    "review": "accepted, inspected native screenshot",
+    "route": "signed-in live app; free plan, paused projects"
+  },
+  {
+    "name": "app-projects-grid",
+    "source": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm",
+    "capturedAt": "2026-10-31T03:57:55.823Z",
+    "viewport": {
+      "devicePixelRatio": 2,
+      "innerHeight": 720,
+      "innerWidth": 1280,
+      "visualViewport": {
+        "height": 720,
+        "scale": 1,
+        "width": 1280
+      }
+    },
+    "png": {
+      "width": 1280,
+      "height": 720
+    },
+    "review": "accepted, inspected native screenshot",
+    "route": "signed-in live app; free plan, paused projects"
+  },
+  {
+    "name": "app-search-empty",
+    "source": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr",
+    "capturedAt": "2026-10-31T03:57:03.107Z",
+    "viewport": {
+      "devicePixelRatio": 2,
+      "innerHeight": 720,
+      "innerWidth": 1280,
+      "visualViewport": {
+        "height": 720,
+        "scale": 1,
+        "width": 1280
+      }
+    },
+    "png": {
+      "width": 1280,
+      "height": 720
+    },
+    "review": "accepted, inspected native screenshot",
+    "route": "signed-in live app; free plan, paused projects"
+  },
+  {
+    "name": "app-sort-menu",
+    "source": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm",
+    "capturedAt": "2026-10-31T03:58:07.370Z",
+    "viewport": {
+      "devicePixelRatio": 2,
+      "innerHeight": 720,
+      "innerWidth": 1280,
+      "visualViewport": {
+        "height": 720,
+        "scale": 1,
+        "width": 1280
+      }
+    },
+    "png": {
+      "width": 1280,
+      "height": 720
+    },
+    "review": "accepted, inspected native screenshot",
+    "route": "signed-in live app; free plan, paused projects"
+  },
+  {
+    "name": "app-sql-side-panel",
+    "source": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr",
+    "capturedAt": "2026-10-31T03:57:29.825Z",
+    "viewport": {
+      "devicePixelRatio": 2,
+      "innerHeight": 720,
+      "innerWidth": 1280,
+      "visualViewport": {
+        "height": 720,
+        "scale": 1,
+        "width": 1280
+      }
+    },
+    "png": {
+      "width": 1280,
+      "height": 720
+    },
+    "review": "accepted, inspected native screenshot",
+    "route": "signed-in live app; free plan, paused projects"
+  },
+  {
+    "name": "app-sql-snippet-menu",
+    "source": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr",
+    "capturedAt": "2026-10-31T03:57:42.735Z",
+    "viewport": {
+      "devicePixelRatio": 2,
+      "innerHeight": 720,
+      "innerWidth": 1280,
+      "visualViewport": {
+        "height": 720,
+        "scale": 1,
+        "width": 1280
+      }
+    },
+    "png": {
+      "width": 1280,
+      "height": 720
+    },
+    "review": "accepted, inspected native screenshot",
+    "route": "signed-in live app; free plan, paused projects"
+  },
+  {
+    "name": "app-status-filter-checked",
+    "source": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm",
+    "capturedAt": "2026-10-31T03:58:00.451Z",
+    "viewport": {
+      "devicePixelRatio": 2,
+      "innerHeight": 720,
+      "innerWidth": 1280,
+      "visualViewport": {
+        "height": 720,
+        "scale": 1,
+        "width": 1280
+      }
+    },
+    "png": {
+      "width": 1280,
+      "height": 720
+    },
+    "review": "accepted, inspected native screenshot",
+    "route": "signed-in live app; free plan, paused projects"
+  },
+  {
+    "name": "app-status-filter",
+    "source": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm",
+    "capturedAt": "2026-10-31T03:57:59.924Z",
+    "viewport": {
+      "devicePixelRatio": 2,
+      "innerHeight": 720,
+      "innerWidth": 1280,
+      "visualViewport": {
+        "height": 720,
+        "scale": 1,
+        "width": 1280
+      }
+    },
+    "png": {
+      "width": 1280,
+      "height": 720
+    },
+    "review": "accepted, inspected native screenshot",
+    "route": "signed-in live app; free plan, paused projects"
+  },
+  {
+    "name": "landing-desktop-hero",
+    "url": "https://supabase.com/",
+    "route": "public landing page with signed-in navigation",
+    "theme": "dark appearance, account settings untouched",
+    "viewport": {
+      "width": 1280,
+      "height": 720,
+      "devicePixelRatio": 2
+    },
+    "png": {
+      "width": 1280,
+      "height": 720
+    },
+    "visualReview": "accepted; viewport image, not full-page coverage",
+    "sourceFormat": "JPEG from browser API, converted to PNG"
+  },
+  {
+    "name": "landing-mobile-hero",
+    "url": "https://supabase.com/",
+    "route": "public landing page with signed-in navigation",
+    "theme": "dark appearance, account settings untouched",
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "devicePixelRatio": 1
+    },
+    "png": {
+      "width": 390,
+      "height": 844
+    },
+    "visualReview": "accepted; viewport image, not full-page coverage",
+    "sourceFormat": "JPEG from browser API, converted to PNG"
+  },
+  {
+    "name": "landing-mobile-menu",
+    "url": "https://supabase.com/",
+    "route": "public landing page with signed-in navigation",
+    "theme": "dark appearance, account settings untouched",
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "devicePixelRatio": 1
+    },
+    "png": {
+      "width": 390,
+      "height": 844
+    },
+    "visualReview": "accepted; viewport image, not full-page coverage",
+    "sourceFormat": "JPEG from browser API, converted to PNG"
+  },
+  {
+    "name": "app-light-mobile-projects",
+    "source": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm",
+    "capturedAt": "2026-10-31T04:00:34.209Z",
+    "viewport": {
+      "devicePixelRatio": 1,
+      "innerHeight": 844,
+      "innerWidth": 390,
+      "visualViewport": {
+        "height": 844,
+        "scale": 1,
+        "width": 390
+      }
+    },
+    "png": {
+      "width": 390,
+      "height": 844
+    },
+    "review": "accepted, visually inspected",
+    "route": "signed-in live app; approved Light then restored System"
+  },
+  {
+    "name": "app-light-projects-grid",
+    "source": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm",
+    "capturedAt": "2026-10-31T04:00:23.142Z",
+    "viewport": {
+      "devicePixelRatio": 2,
+      "innerHeight": 720,
+      "innerWidth": 1280,
+      "visualViewport": {
+        "height": 720,
+        "scale": 1,
+        "width": 1280
+      }
+    },
+    "png": {
+      "width": 1280,
+      "height": 720
+    },
+    "review": "accepted, visually inspected",
+    "route": "signed-in live app; approved Light then restored System"
+  },
+  {
+    "name": "app-light-status-filter",
+    "source": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm",
+    "capturedAt": "2026-10-31T04:00:27.193Z",
+    "viewport": {
+      "devicePixelRatio": 2,
+      "innerHeight": 720,
+      "innerWidth": 1280,
+      "visualViewport": {
+        "height": 720,
+        "scale": 1,
+        "width": 1280
+      }
+    },
+    "png": {
+      "width": 1280,
+      "height": 720
+    },
+    "review": "accepted, visually inspected",
+    "route": "signed-in live app; approved Light then restored System"
+  },
+  {
+    "name": "app-restored-system-theme",
+    "source": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm",
+    "capturedAt": "2026-10-31T04:00:40.103Z",
+    "viewport": {
+      "devicePixelRatio": 2,
+      "innerHeight": 720,
+      "innerWidth": 1280,
+      "visualViewport": {
+        "height": 720,
+        "scale": 1,
+        "width": 1280
+      }
+    },
+    "png": {
+      "width": 1280,
+      "height": 720
+    },
+    "review": "accepted, visually inspected",
+    "route": "signed-in live app; approved Light then restored System"
+  }
+]

@@ -1,0 +1,110 @@
+{
+  "project-picker": [
+    "app-project-picker",
+    [
+      400,
+      42,
+      692,
+      190
+    ]
+  ],
+  "command-menu": [
+    "app-command-menu",
+    [
+      350,
+      108,
+      930,
+      613
+    ]
+  ],
+  "search-empty": [
+    "app-search-empty",
+    [
+      350,
+      108,
+      930,
+      613
+    ]
+  ],
+  "sql-panel": [
+    "app-sql-side-panel",
+    [
+      908,
+      47,
+      1280,
+      720
+    ]
+  ],
+  "snippet-menu": [
+    "app-sql-snippet-menu",
+    [
+      895,
+      88,
+      1198,
+      163
+    ]
+  ],
+  "status-filter": [
+    "app-status-filter",
+    [
+      370,
+      202,
+      551,
+      344
+    ]
+  ],
+  "checkbox-checked": [
+    "app-status-filter-checked",
+    [
+      370,
+      202,
+      551,
+      344
+    ]
+  ],
+  "sort-menu": [
+    "app-sort-menu",
+    [
+      458,
+      201,
+      638,
+      271
+    ]
+  ],
+  "theme-menu": [
+    "app-account-theme-menu",
+    [
+      1010,
+      42,
+      1270,
+      446
+    ]
+  ],
+  "primary-button": [
+    "app-projects-grid",
+    [
+      790,
+      170,
+      908,
+      202
+    ]
+  ],
+  "project-card": [
+    "app-projects-grid",
+    [
+      78,
+      212,
+      347,
+      395
+    ]
+  ],
+  "mobile-menu": [
+    "landing-mobile-menu",
+    [
+      0,
+      0,
+      390,
+      844
+    ]
+  ]
+}

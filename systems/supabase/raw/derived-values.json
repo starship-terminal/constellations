@@ -1,0 +1,31 @@
+{
+  "reason": "OKLCH-to-sRGB serialization for catalogue contrast support; originals remain in token measuredCss",
+  "paths": [
+    "dark.background.page",
+    "dark.background.surface",
+    "dark.text.primary",
+    "dark.text.secondary",
+    "dark.border.default",
+    "dark.accent.default",
+    "dark.component.primaryButton.bg",
+    "dark.component.primaryButton.text",
+    "dark.component.secondaryButton.bg",
+    "dark.component.secondaryButton.text",
+    "dark.component.searchField.text",
+    "dark.component.card.bg",
+    "dark.component.card.text",
+    "light.background.page",
+    "light.background.surface",
+    "light.text.primary",
+    "light.text.secondary",
+    "light.border.default",
+    "light.accent.default",
+    "light.component.primaryButton.bg",
+    "light.component.primaryButton.text",
+    "light.component.secondaryButton.bg",
+    "light.component.secondaryButton.text",
+    "light.component.searchField.text",
+    "light.component.card.bg",
+    "light.component.card.text"
+  ]
+}

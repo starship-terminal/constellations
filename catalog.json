@@ -2897,6 +2897,72 @@
       "layoutGaps": {
         "icons/": "Notion's icons are its own artwork and are not kept here (docs/RIGHTS.md)"
       }
+    },
+    {
+      "slug": "supabase",
+      "name": "Supabase",
+      "url": "https://supabase.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Developer dashboard shells, compact project controls, command search and responsive navigation; database editing gaps documented",
+      "tags": [
+        "web",
+        "developer-tools",
+        "database",
+        "sidebar",
+        "dense",
+        "command-menu"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-31",
+      "access": "signed in, free account; both projects paused; public landing",
+      "themes": [
+        "dark",
+        "light"
+      ],
+      "widths": [
+        1280,
+        390
+      ],
+      "entry": "systems/supabase/README.md",
+      "tokens": "systems/supabase/tokens.json",
+      "styleGuide": "systems/supabase/style-guide.html",
+      "preview": {
+        "cover": "systems/supabase/screenshots/app-projects-grid.png",
+        "icon": "systems/supabase/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.accent.default",
+            "border": "dark.border.default"
+          },
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.accent.default",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.body"
+        ]
+      },
+      "layoutGaps": {
+        "icons/": "No reusable icon extraction; official identification icon and screenshot references only."
+      },
+      "capture": {
+        "harness": "Codex",
+        "model": "GPT-6",
+        "route": "web-inspector",
+        "version": "Live web app, 2026-10-31; release not exposed",
+        "durationMin": null,
+        "durationNote": "Total active time across sign-in handoffs was not timed; individual live capture timestamps are retained."
+      }
     }
   ]
 }
