@@ -14,11 +14,13 @@ const GLASS = [16, 32, 48].map((s) => `icon ${ASSETS}icons/glass/favicon-${s}.pn
   .concat('apple-touch-icon ' + ASSETS + 'icons/glass/apple-touch-icon.png');
 
 // A page whose <head> holds the Flat links and the manifest, as site.py writes it.
+// `stored` is a ds-icon value or a Map standing in for the browser's localStorage,
+// so a second page() on the same Map is a reload.
 function page(stored) {
   const log = [];
   const events = [];
   const listeners = {};
-  const store = new Map(stored ? [['ds-icon', stored]] : []);
+  const store = stored instanceof Map ? stored : new Map(stored ? [['ds-icon', stored]] : []);
   const head = { children: [] };
   const link = (rel, href) => {
     const el = { rel, href, attrs: {}, setAttribute(k, v) { this.attrs[k] = v; },
@@ -88,11 +90,27 @@ test('a live switch removes every old link before adding the new set', () => {
   assert.equal(p.icon(), 'flat');
 });
 
+test('the choice survives a reload, Flat to Glass to Flat', () => {
+  const storage = new Map();
+  page(storage).api.set('glass');
+  const reloaded = page(storage);
+  assert.deepEqual(reloaded.icons(), GLASS);
+  assert.equal(reloaded.api.get(), 'glass');
+  reloaded.api.set('flat');
+  const again = page(storage);
+  assert.deepEqual(again.icons(), FLAT);
+  assert.equal(again.icon(), 'flat');
+});
+
 test('another tab changing the choice is followed', () => {
   const p = page();
   p.store.set('ds-icon', 'glass');
   p.listeners.storage({ key: 'ds-icon' });
   assert.deepEqual(p.icons(), GLASS);
   assert.equal(p.api.get(), 'glass');
-  assert.deepEqual(p.events, ['glass']);
+  p.store.set('ds-icon', 'flat');
+  p.listeners.storage({ key: 'ds-icon' });
+  assert.deepEqual(p.icons(), FLAT);
+  p.listeners.storage({ key: 'ds-theme' });
+  assert.deepEqual(p.events, ['glass', 'flat']);
 });
