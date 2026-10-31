@@ -39,7 +39,7 @@ prop('core.sizing.compactControl','dimension','query-builder','height',tag='BUTT
 prop('core.layout.chartSidebar','dimension','chart-display','width',testid='sidebar-left')
 prop('core.shadow.popover','shadow','numeric-filter','boxShadow',testid='clause-popover')
 # Export individual measured component states, not an invented global scale.
-for role,name,q in [('primary','query-builder',{'tag':'BUTTON','label':'Visualize'}),('quiet','query-builder',{'tag':'BUTTON','label':'Save'}),('disabled','numeric-filter',{'tag':'BUTTON','label':'Add filter'}),('input','numeric-filter',{'tag':'INPUT'}),('popover','numeric-filter',{'testid':'clause-popover'}),('card','dashboard',{'testid':'dashcard'}),('filter','dashboard',{'testid':'parameter-value-widget-target'})]:
+for role,name,q in [('primary','query-builder',{'tag':'BUTTON','label':'Visualize'}),('quiet','query-builder',{'tag':'BUTTON','label':'Save'}),('disabled','numeric-filter',{'tag':'BUTTON','label':'Add filter'}),('inputFocused','numeric-filter',{'tag':'INPUT'}),('input','chart-axes',{'testid':'graph.x_axis.title_text'}),('popover','numeric-filter',{'testid':'clause-popover'}),('card','dashboard',{'testid':'dashcard'}),('filter','dashboard',{'testid':'parameter-value-widget-target'})]:
     for key,ty,css in [('bg','color','backgroundColor'),('text','color','color'),('border','color','borderColor'),('radius','dimension','borderRadius'),('height','dimension','height')]:prop(f'light.component.{role}.{key}',ty,name,css,**q)
 for group in ['core','light']:
     def check(n):

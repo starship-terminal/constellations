@@ -5,7 +5,7 @@ Observed live in the official Edumation demo, light theme. Crops use native scre
 | Component / state | Screenshot | Crop | Token group |
 |---|---|---|---|
 | Primary button, default | [query-builder-light-desktop.png](screenshots/query-builder-light-desktop.png) | ![Primary button, default](components/crops/primary-default.png) | light.component.primary |
-| Range popover, focused input and disabled submit | [numeric-filter-light-desktop.png](screenshots/numeric-filter-light-desktop.png) | ![Range popover, focused input and disabled submit](components/crops/range-disabled.png) | light.component.input; light.component.disabled; light.component.popover |
+| Range popover, focused input and disabled submit | [numeric-filter-light-desktop.png](screenshots/numeric-filter-light-desktop.png) | ![Range popover, focused input and disabled submit](components/crops/range-disabled.png) | light.component.inputFocused; light.component.disabled; light.component.popover |
 | Field menu with search focus | [query-filter-fields-light-desktop.png](screenshots/query-filter-fields-light-desktop.png) | ![Field menu with search focus](components/crops/filter-fields.png) | light.component.popover |
 | Numeric operators menu | [filter-operators-light-desktop.png](screenshots/filter-operators-light-desktop.png) | ![Numeric operators menu](components/crops/filter-operators.png) | light.component.popover |
 | Grouping field menu | [grouping-fields-light-desktop.png](screenshots/grouping-fields-light-desktop.png) | ![Grouping field menu](components/crops/grouping-menu.png) | light.component.popover |

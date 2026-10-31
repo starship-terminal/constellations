@@ -56,7 +56,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | light | 11.32:1 pass | 11.32:1 pass | 11.32:1 pass | 11.32:1 pass |
 
-4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus: no focus tokens (no token path contains "focus").
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.component.inputFocused.bg` rgb(255, 255, 255); `light.component.inputFocused.text` rgba(7, 23, 34, 0.84); `light.component.inputFocused.border` rgb(105, 65, 198); `light.component.inputFocused.height` 40px.
 
 <!-- brief:end -->
 

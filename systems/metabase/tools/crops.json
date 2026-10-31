@@ -21,7 +21,7 @@
       206
     ],
     "label": "Range popover, focused input and disabled submit",
-    "tokens": "light.component.input; light.component.disabled; light.component.popover"
+    "tokens": "light.component.inputFocused; light.component.disabled; light.component.popover"
   },
   {
     "name": "filter-fields",
