@@ -80,7 +80,7 @@ Captured 2026-10-31, signed-in owner account; no trial activated; tier unverifie
 
 Live Sentry web-app capture from the owner's 10xswe organization on 2026-10-31, plus a separately labelled public landing-page capture. The app supplied a populated trace explorer, span attributes and waterfall, but no issues across all statuses over 30 days. No trial was activated; account billing tier was not verified.
 
-App screenshots measure 1065 CSS pixels wide (visual viewport 1065.56), about 959 high, DPR 1.8; native JPEG screenshots are 1065 or 1066 pixels wide. Requested 1440/390 overrides had no effect during the app capture. Public landing evidence measures 1440 and 390 CSS pixels. Both live app themes were captured. The approved temporary light setting was restored to Default to system.
+App captures measure 1065 CSS pixels wide and about 959 high. The browser reported two scale groups: DPR 1.8 with a 1065.56-wide visual viewport, and DPR 2 with a 1065-wide visual viewport. Native JPEG screenshots are 1065 or 1066 pixels wide; each dimension sidecar records its own measurements. Requested 1440/390 overrides had no effect during the app capture. Public landing evidence measures 1440 and 390 CSS pixels. Both live app themes were captured. The approved temporary light setting was restored to Default to system.
 
 ## Colors
 

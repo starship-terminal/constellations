@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def build():
     data = json.loads((ROOT / 'raw/public/landing-desktop.json').read_text())
-    output = {'$description': 'Sentry public landing page only. Signed-in app capture pending.', 'core': {}, 'dark': {}}
+    output = {'$description': 'Sentry public landing page only. Signed-in app tokens are separate at ../../tokens.json.', 'core': {}, 'dark': {}}
     for name, value in data['customProperties'].items():
         # Retain declared values verbatim. Complex CSS remains in the reading.
         if value.startswith('#'):
