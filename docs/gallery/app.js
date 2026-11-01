@@ -660,7 +660,20 @@ app.addEventListener('mousemove', (e) => {
   img.decoding = 'async';
   const stack = vp.firstElementChild;
   stack.append(img);
-  while (stack.children.length > 2) stack.firstElementChild.remove();
+  // Trim on load, not on append: a sweep across two uncached zones must not
+  // drop the last loaded frame, or the shot blanks until the next one lands.
+  // Only frames mounted before this one are trimmed, so a stale load can never
+  // remove a newer request; pending frames are bounded so a sweep cannot pile
+  // them up.
+  img.addEventListener('load', () => {
+    if (img.parentNode !== stack) return;
+    const before = [];
+    for (const el of stack.children) { if (el === img) break; before.push(el); }
+    const keep = before.findLast((el) => el.complete && el.naturalWidth > 0);
+    for (const el of before) if (el !== keep) el.remove();
+  }, { once: true });
+  img.addEventListener('error', () => img.remove(), { once: true });
+  while (stack.children.length > 4) stack.children[1].remove();
 });
 
 app.addEventListener('click', (e) => {
@@ -832,8 +845,7 @@ function rfCard(s, note) {
     remote: rfCdn(s.cardRemote) };
   return `<a class="rf-card" href="#/refero/${esc(s.slug)}" data-slug="${esc(s.slug)}">
     <div class="rf-tile"><div class="rf-shot">${rfImg(card, '', `${s.name} screenshot`)}</div></div>
-    <div class="rf-card-foot">${rfFav(s)}<div class="rf-card-txt"><h3>${esc(s.name)}</h3><p>${esc(note || s.tagline || '')}</p></div>
-      ${s.video ? '<span class="rf-vid" title="Scroll-preview video">▸</span>' : ''}</div></a>`;
+    <div class="rf-card-foot">${rfFav(s)}<div class="rf-card-txt"><h3>${esc(s.name)}</h3><p>${esc(note || s.tagline || '')}</p></div></a>`;
 }
 
 // The card's scroll-preview video sits over the shot and fades in once it is
@@ -841,9 +853,16 @@ function rfCard(s, note) {
 function rfCardVideo(shot, s) {
   if (shot.querySelector('video')) return;
   shot.insertAdjacentHTML('beforeend',
-    `<video ${rfMediaAttrs({ local: rfLocalMedia('videos', s, 'mp4'), remote: rfCdn(s.videoRemote) }, true)} muted loop playsinline preload="none"></video>`);
+    `<video ${rfMediaAttrs({ local: rfLocalMedia('videos', s, 'mp4'), remote: rfCdn(s.videoRemote) }, true)} muted loop playsinline></video>`);
   const v = shot.querySelector('video');
-  if (v) v.addEventListener('playing', () => v.classList.add('on'));
+  if (!v) return;
+  const play = () => v.play().catch(() => {});
+  v.addEventListener('playing', () => v.classList.add('on'));
+  // When the local mirror is missing, onerror swaps to the remote src; that
+  // aborts the pending play(), so retry from canplay — it fires again for the
+  // new source.
+  v.addEventListener('canplay', play);
+  play();
 }
 
 // A hover must hold briefly before its ~1-3 MB preview video starts buffering,
@@ -916,7 +935,6 @@ function rfFillGrid(wrap, list) {
       rfHoverTimers.delete(a);
       if (!shot.isConnected) return; // the grid was replaced while the timer waited
       rfCardVideo(shot, s);
-      shot.querySelector('video')?.play().catch(() => {});
     }, RF_HOVER_MS));
   });
   grid.addEventListener('mouseout', (ev) => {
@@ -1120,47 +1138,98 @@ function rfSimilar(e) {
   </div></section>`;
 }
 
+// A small syntax tint for the doc pane, after the real site's shiki/GitHub
+// highlighting: whole-line roles first (headings, quotes, fences), then
+// inline code and bold inside a line. It is a tint, not a parser.
+function rfCodeHtml(text, tab) {
+  if (tab === 'design_md') {
+    let fence = false;
+    return text.split('\n').map((l) => {
+      if (/^\s*```/.test(l)) { fence = !fence; return `<span class="tk-m">${esc(l)}</span>`; }
+      if (fence) return `<span class="tk-c">${esc(l)}</span>`;
+      if (/^\s*#{1,6}\s/.test(l)) return `<span class="tk-h">${esc(l)}</span>`;
+      if (/^\s*>/.test(l)) return `<span class="tk-q">${esc(l)}</span>`;
+      return esc(l)
+        .replace(/`([^`]+)`/g, '<span class="tk-c">`$1`</span>')
+        .replace(/(&lt;!--[\s\S]*?--&gt;)/g, '<span class="tk-m">$1</span>');
+    }).join('\n');
+  }
+  if (tab === 'tokens_json') {
+    return esc(text).split('\n').map((l) => l
+      .replace(/^(\s*)(&quot;.*?&quot;)(\s*:)/, '$1<span class="tk-h">$2</span>$3')
+      .replace(/(:\s*)(&quot;.*?&quot;)/, '$1<span class="tk-s">$2</span>')
+      .replace(/(:\s*)(-?[\d.]+|true|false|null)/, '$1<span class="tk-n">$2</span>')).join('\n');
+  }
+  return esc(text)
+    .replace(/(--[\w-]+)(\s*:)/g, '<span class="tk-h">$1</span>$2')
+    .replace(/@[\w-]+/g, '<span class="tk-q">$&</span>')
+    .replace(/(&quot;.*?&quot;|&#39;.*?&#39;)/g, '<span class="tk-s">$1</span>')
+    .replace(/(\/\*[\s\S]*?\*\/)/g, '<span class="tk-m">$1</span>');
+}
+
+const RF_DL_EXT = { design_md: 'design.md', theme_css: 'theme.css', variables_css: 'variables.css', tokens_json: 'tokens.json' };
+
 function drawRfEntity(e) {
   document.title = `${e.name} · Refero · Design systems`;
   const ds = e.ds || {};
+  const ico = {
+    copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>',
+    dl: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>',
+    ext: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>',
+  };
+  app.dataset.rf = 'entity';
   app.innerHTML = `
-    <a class="back" href="#/refero">← Refero styles</a>
     <div class="rf-page">
-      <div class="rf-main">
+      <div class="rf-col">
+        <a class="rf-back" href="#/refero">← Refero styles</a>
         <div class="rf-media">${rfMediaTag(e)}</div>
-        <header class="rf-head">${rfFav(e, true)}<div>
-          <h1>${esc(e.name)}</h1>
-          ${e.tagline ? `<p class="rf-tagline">${esc(e.tagline)}</p>` : ''}
-          <p class="rf-meta">${esc(e.theme || '')}${e.type ? ` · ${esc(e.type)}` : ''}${e.style ? ` · ${esc(e.style)}` : ''}${e.industry ? ` · ${esc(e.industry)}` : ''}${e.source_url ? ` · <a href="${esc(e.source_url)}" target="_blank" rel="noopener">${esc(host(e.source_url))} ↗</a>` : ''}${e.page_url ? ` · <a href="${esc(e.page_url)}" target="_blank" rel="noopener">refero ↗</a>` : ''}</p>
-        </div></header>
+        <div class="rf-title"><h1>${esc(e.name)}</h1>${rfFav(e, true)}</div>
+        ${e.tagline ? `<p class="rf-tagline">${esc(e.tagline)}</p>` : ''}
         ${ds.description ? `<p class="rf-desc">${esc(ds.description)}</p>` : ''}
+        ${e.source_url ? `<a class="rf-src" href="${esc(e.source_url)}" target="_blank" rel="noopener">${ico.ext}${esc(e.source_url.replace(/^https?:\/\//, ''))}</a>` : ''}
+        <p class="rf-meta">${esc(e.theme || '')}${e.type ? ` · ${esc(e.type)}` : ''}${e.style ? ` · ${esc(e.style)}` : ''}${e.industry ? ` · ${esc(e.industry)}` : ''}</p>
         ${rfColors(e)}${rfTypography(e)}${rfSpacing(e)}${rfGuidelines(e)}<div id="rf-similar">${rfSimilar(e)}</div>
       </div>
       <aside class="rf-pane">
         <div class="rf-tabs" role="tablist">${RF_TABS.map(([k, l]) => `<button role="tab" type="button" data-tab="${k}" aria-selected="${k === 'design_md'}">${esc(l)}</button>`).join('')}</div>
         <div class="rf-docbar">
           <span class="rf-mode">${[['compact', 'Compact'], ['extended', 'Extended']].map(([k, l]) => `<button type="button" data-mode="${k}" aria-pressed="${k === 'extended'}">${esc(l)}</button>`).join('')}</span>
-          <button class="rf-copy" id="rf-copy" type="button">Copy</button></div>
+          <div class="acts">
+            <button class="rf-mini" id="rf-copy" type="button" title="Copy this document">${ico.copy}Copy</button>
+            <button class="rf-mini" id="rf-dl" type="button" title="Download this document">${ico.dl}<span class="rf-dl-ext">.md</span></button>
+            ${e.page_url ? `<a class="rf-cta" href="${esc(e.page_url)}" target="_blank" rel="noopener"><span class="cta-t">Open on refero</span>${ico.ext}</a>` : ''}
+          </div>
+        </div>
         <div class="rf-pane-body" id="rf-pane-body"></div>
       </aside>
     </div>`;
 
+  const mv = app.querySelector('.rf-media video');
+  if (mv) mv.addEventListener('playing', () => mv.classList.add('on'));
+
   let tab = 'design_md';
   let mode = 'extended';
   const body = app.querySelector('#rf-pane-body');
-  const copyBtn = app.querySelector('#rf-copy');
   const renderTab = () => {
     app.querySelectorAll('.rf-tabs [data-tab]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.tab === tab)));
     app.querySelectorAll('.rf-mode [data-mode]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
+    const ext = (RF_DL_EXT[tab] || 'txt').split('.').pop();
+    app.querySelector('.rf-dl-ext').textContent = `.${ext}`;
     const doc = (e.docs || {})[tab] || '(empty)';
     const lines = doc.split('\n');
     const cut = mode === 'compact' && lines.length > 24;
-    body.innerHTML = `<pre class="rf-code${cut ? ' rf-cut' : ''}"><code>${esc(cut ? lines.slice(0, 24).join('\n') + '\n…' : doc)}</code></pre>`;
+    body.innerHTML = `<pre class="rf-code${cut ? ' rf-cut' : ''}"><code>${rfCodeHtml(cut ? lines.slice(0, 24).join('\n') + '\n…' : doc, tab)}</code></pre>`;
   };
   app.querySelectorAll('.rf-tabs [data-tab]').forEach((b) => b.onclick = () => { tab = b.dataset.tab; renderTab(); });
   app.querySelectorAll('.rf-mode [data-mode]').forEach((b) => b.onclick = () => { mode = b.dataset.mode; renderTab(); });
   renderTab();
-  copyBtn.onclick = () => copy((e.docs || {})[tab] || '', `${RF_TABS.find((t) => t[0] === tab)[1]} copied`);
+  app.querySelector('#rf-copy').onclick = () => copy((e.docs || {})[tab] || '', `${RF_TABS.find((t) => t[0] === tab)[1]} copied`);
+  app.querySelector('#rf-dl').onclick = () => {
+    const blob = new Blob([(e.docs || {})[tab] || ''], { type: 'text/plain' });
+    const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: `${e.slug}-${RF_DL_EXT[tab] || 'doc.txt'}` });
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  };
   app.querySelectorAll('.rf-sw[data-copy]').forEach((b) => b.onclick = () => copy(b.dataset.copy, `Copied ${b.dataset.copy}`));
   const all = app.querySelector('#rf-scale-all');
   if (all) all.onclick = () => {
@@ -1184,7 +1253,8 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') step(1);
     return;
   }
-  if (e.key === '/' && document.activeElement !== qInput) { e.preventDefault(); qInput.focus(); qInput.select(); }
+  const typing = document.activeElement?.matches('input, textarea, select') || document.activeElement?.isContentEditable;
+  if (e.key === '/' && !typing) { e.preventDefault(); qInput.focus(); qInput.select(); }
   if (e.key === 'Escape' && document.activeElement === qInput) {
     qInput.value = ''; state.q = ''; qInput.blur();
     const h = location.hash.replace(/^#\/?/, '');
