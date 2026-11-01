@@ -67,6 +67,7 @@ function route() {
     if (refero === (parts[0] === 'refero')) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
   });
   if (parts[0] === 'refero') { referoRoute(parts.slice(1)); return; }
+  delete app.dataset.rf;
   if (rfIO) { rfIO.disconnect(); rfIO = null; }
   if (!DATA) {
     app.innerHTML = '<p class="loading">Loading catalog…</p>';
@@ -102,11 +103,6 @@ function strip(sw) {
     .map((x) => `<span style="background:${esc(x.value)}"></span>`).join('')}</div>`;
 }
 
-function themeBadges(s) {
-  return s.themes.filter((t) => t === 'light' || isDark(t))
-    .map((t) => `<span class="badge ${isDark(t) ? 'dark' : ''}">${esc(isDark(t) ? 'Dark' : 'Light')}</span>`).join('');
-}
-
 // The newest scorecard audit for a package: "16/25 met", or nothing when it has not
 // been graded yet. Pages live beside the gallery in the docs site.
 const scoreText = (s) => (s.score ? `${s.score.meets}/${s.score.applicable} met` : '');
@@ -115,15 +111,28 @@ const scoreHref = (s) => `../scorecard/systems/${encodeURIComponent(s.slug)}/`;
 // The product's app icon: identifies where a package came from at a glance.
 const iconImg = (s) => (s.icon ? `<img class="app-icon" src="${url(s.icon)}" alt="" loading="lazy">` : '');
 
+// The frames a card scrubs through on hover, refero.design style: the cover
+// first, then an even spread of the package's other screenshots. Capped so a
+// sweep across the shot loads a handful of thumbs at most.
+const SCRUB_MAX = 8;
+let cardFrames = new Map();
+function scrubFrames(s) {
+  const rest = s.screenshots.filter((i) => i.path !== s.cover.path && (portrait(s) || !i.tags.includes('mobile')));
+  const step = Math.max(1, Math.ceil(rest.length / (SCRUB_MAX - 1)));
+  const frames = rest.filter((_, i) => i % step === 0).slice(0, SCRUB_MAX - 1);
+  frames.unshift({ path: s.cover.path, thumb: s.cover.thumb });
+  return frames;
+}
+
+// refero.design's card lockup: a padded matte holds the shot on a blurred
+// colour glow of itself (the aura), then the app icon, name and one-line
+// description. Moving the cursor across the shot scrubs the frames.
 function card(s) {
-  const strips = Object.values(s.swatches).map(strip).join('');
-  return `<a class="card" href="#/${esc(s.slug)}">
-    <div class="cover ${portrait(s) ? 'portrait' : ''}"><img loading="lazy" src="${url(s.cover.thumb)}" alt="${esc(s.name)} screenshot"><div class="badges">${themeBadges(s)}</div></div>
-    <div class="card-body">
-      <div class="card-title"><h2>${iconImg(s)}${esc(s.name)}</h2><span class="cat">${s.score ? `<span class="score" title="Scorecard, ${esc(s.score.date)}: ${s.score.partly} partly, ${s.score.missing} missing">${scoreText(s)}</span> · ` : ''}${esc(DATA.categories[s.category] || s.category)}</span></div>
-      <p class="good">${esc(s.goodFor)}</p>
-      <div class="card-foot"><span class="fontline">${esc(s.fonts.map((f) => f.family).join(' · ') || '—')}</span><div class="strips">${strips}</div></div>
-    </div></a>`;
+  const cover = s.cover.thumb || s.cover.path;
+  const icon = s.icon ? iconImg(s) : `<i>${esc(s.name[0].toUpperCase())}</i>`;
+  return `<a class="card${portrait(s) ? ' portrait' : ''}" href="#/${esc(s.slug)}" data-slug="${esc(s.slug)}">
+    <div class="cover"><img class="aura" src="${url(cover)}" alt="" aria-hidden="true" loading="lazy" onload="this.classList.add('on')"><div class="viewport" data-i="0"><div class="stack"><img src="${url(cover)}" alt="${esc(s.name)} screenshot" loading="lazy" decoding="async"></div></div></div>
+    <div class="card-foot"><span class="foot-icon">${icon}</span><div class="foot-txt"><h2>${esc(s.name)}</h2><p>${esc(s.goodFor)}</p></div></div></a>`;
 }
 
 function row(s) {
@@ -143,6 +152,7 @@ function renderIndex() {
   const all = DATA.systems;
   const list = all.filter(matches);
   const cats = Object.entries(DATA.categories).filter(([k]) => all.some((s) => s.category === k));
+  cardFrames = new Map(list.map((s) => [s.slug, scrubFrames(s)]));
   delete app.dataset.pkg;
   app.innerHTML = `
     <div class="intro"><div><h1>Design systems</h1>
@@ -172,7 +182,7 @@ qInput.addEventListener('input', () => {
   state.q = qInput.value;
   const h = location.hash.replace(/^#\/?/, '');
   // A failed JSON leaves its error page up; typing must not navigate away or throw.
-  if (h === 'refero') { if (RF_INDEX) drawReferoIndex(); }
+  if (h === 'refero') { syncRfSearch(qInput.value); rfRedrawGrid(); }
   else if (h.startsWith('refero/')) location.hash = '#/refero';
   else if (h) location.hash = '#/';
   else if (DATA) renderIndex();
@@ -489,7 +499,7 @@ function renderImages(pane, s, items, withThemeFilter) {
   let at = 0;
   let gen = 0;
   const tile = (i, k) => `<button class="shot ${!portrait(s) && (i.tags.includes('mobile') || !withThemeFilter) ? 'contain' : ''}" data-i="${k}">
-    <div class="frame"><img loading="lazy" decoding="async" src="${url(i.thumb || i.path)}" alt="${esc(i.name)}"></div><span>${esc(i.name)}</span></button>`;
+    <div class="frame"><img loading="lazy" decoding="async" src="${url(i.thumb || i.path)}" alt="${esc(i.name)}"></div><span>${esc(i.name)}</span>${i.tags.length ? `<span class="shot-tags">${i.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join('')}</span>` : ''}</button>`;
   // Tiles append a PAGE at a time: "Show all" drains the rest a chunk per frame
   // instead of building one giant innerHTML.
   const feed = (drain, g) => {
@@ -630,6 +640,29 @@ function markdown(src, base) {
   return out.join('\n');
 }
 
+// refero.design's card scrub: the shot is divided into one zone per frame, the
+// cursor's x picks the frame, and the new thumb fades in over the previous one.
+// The stack keeps only the last two mounted, so the crossfade always has a full
+// frame underneath it. One delegated listener covers every card.
+app.addEventListener('mousemove', (e) => {
+  const vp = e.target instanceof Element && e.target.closest('.viewport[data-i]');
+  if (!vp || !app.contains(vp)) return;
+  const a = vp.closest('a.card');
+  const frames = a && cardFrames.get(a.dataset.slug);
+  if (!frames || frames.length < 2) return;
+  const r = vp.getBoundingClientRect();
+  const i = Math.min(frames.length - 1, Math.floor(Math.max(e.clientX - r.left, 0) / (r.width / frames.length)));
+  if (i === +vp.dataset.i) return;
+  vp.dataset.i = i;
+  const img = document.createElement('img');
+  img.src = url(frames[i].thumb || frames[i].path);
+  img.alt = '';
+  img.decoding = 'async';
+  const stack = vp.firstElementChild;
+  stack.append(img);
+  while (stack.children.length > 2) stack.firstElementChild.remove();
+});
+
 app.addEventListener('click', (e) => {
   const a = e.target.closest('[data-anchor]');
   if (!a) return;
@@ -741,6 +774,7 @@ function referoRoute(parts) {
   if (!parts[0]) {
     document.title = 'Refero styles · Design systems';
     delete app.dataset.pkg;
+    app.dataset.rf = 'index';
     app.innerHTML = '<p class="loading">Loading refero styles…</p>';
     getRefero()
       .then(() => { if (rfSlug()[0] === 'refero' && !rfSlug()[1]) drawReferoIndex(); })
@@ -802,35 +836,53 @@ function rfCard(s, note) {
       ${s.video ? '<span class="rf-vid" title="Scroll-preview video">▸</span>' : ''}</div></a>`;
 }
 
+// The card's scroll-preview video sits over the shot and fades in once it is
+// really playing, the same overlay pattern styles.refero.design uses.
+function rfCardVideo(shot, s) {
+  if (shot.querySelector('video')) return;
+  shot.insertAdjacentHTML('beforeend',
+    `<video ${rfMediaAttrs({ local: rfLocalMedia('videos', s, 'mp4'), remote: rfCdn(s.videoRemote) }, true)} muted loop playsinline preload="none"></video>`);
+  const v = shot.querySelector('video');
+  if (v) v.addEventListener('playing', () => v.classList.add('on'));
+}
+
 // A hover must hold briefly before its ~1-3 MB preview video starts buffering,
 // or sweeping the grid would download several at once.
 const RF_HOVER_MS = 200;
 const rfHoverTimers = new WeakMap();
 
-function drawReferoIndex() {
-  const all = RF_INDEX.styles;
-  const list = all.filter(rfMatches);
-  const values = (key) => [...new Set(all.map((s) => s[key]).filter(Boolean))].sort();
-  const sel = (key, first) => `<select class="rf-sel" data-sel="${key}" aria-label="${first}"><option value="all">${first}</option>${values(key).map((v) => `<option value="${esc(v)}"${v === rfState[key] ? ' selected' : ''}>${esc(v)}</option>`).join('')}</select>`;
-  app.innerHTML = `
-    <div class="intro"><div><h1>Refero styles</h1>
-      <p>${list.length === all.length ? all.length : `${list.length} of ${all.length}`} styles interpreted by
-        <a href="https://styles.refero.design" target="_blank" rel="noopener">styles.refero.design</a> — their words,
-        not measured evidence. Treat values as inspiration.</p></div></div>
-    <div class="toolbar">
-      <div class="chips">${['all', 'light', 'dark'].map((t) => chip('theme', t, t === 'all' ? 'All themes' : t[0].toUpperCase() + t.slice(1), null, rfState.theme === t)).join('')}${chip('video', '1', 'Has video', null, rfState.video)}</div>
-      ${sel('type', 'All types')}${sel('style', 'All styles')}
-      <span class="sep"></span>
-      <span class="faint-note">${list.length} styles</span>
-    </div>
-    ${!list.length ? '<p class="empty">No style matches. Clear the search or filters.</p>'
-      : '<div class="rf-grid"></div><div id="rf-sent" class="more"><button class="btn">Load more</button></div>'}`;
-  app.querySelectorAll('[data-theme]').forEach((b) => b.onclick = () => { rfState.theme = b.dataset.theme; rfSave(); drawReferoIndex(); });
-  app.querySelectorAll('[data-video]').forEach((b) => b.onclick = () => { rfState.video = !rfState.video; rfSave(); drawReferoIndex(); });
-  app.querySelectorAll('select[data-sel]').forEach((s) => s.onchange = () => { rfState[s.dataset.sel] = s.value; rfSave(); drawReferoIndex(); });
-  window.scrollTo(0, 0);
-  const grid = app.querySelector('.rf-grid');
-  const sent = app.querySelector('#rf-sent');
+// The hero prompt chips: each one dials in a filter pair from the label vocab.
+const RF_CHIPS = [
+  ['Dark mode SaaS', { theme: 'dark', type: 'saas' }],
+  ['Warm paper', { style: 'paper' }],
+  ['Brutalist portfolio', { style: 'brutalist', type: 'portfolio' }],
+  ['Editorial agency', { style: 'editorial', type: 'agency' }],
+  ['Neon crypto', { style: 'neon', type: 'crypto' }],
+  ['Minimal devtools', { style: 'minimal', type: 'devtools' }],
+  ['Cinematic media', { style: 'cinematic', type: 'media' }],
+  ['Swiss fintech', { style: 'swiss', type: 'fintech' }],
+];
+
+// Re-render just the grid + count: typing in either search field and flipping
+// filters land here, so the hero input keeps focus while the list updates.
+function rfRedrawGrid() {
+  if (!RF_INDEX) return;
+  const wrap = app.querySelector('.rf-wrap');
+  if (!wrap) return;
+  const list = RF_INDEX.styles.filter(rfMatches);
+  app.querySelectorAll('[data-theme]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.theme === rfState.theme)));
+  app.querySelectorAll('[data-video]').forEach((b) => b.setAttribute('aria-pressed', String(rfState.video)));
+  const count = app.querySelector('.rf-bar-row .count');
+  if (count) count.textContent = `${list.length} style${list.length === 1 ? '' : 's'}`;
+  rfFillGrid(wrap, list);
+}
+
+function rfFillGrid(wrap, list) {
+  wrap.innerHTML = !list.length
+    ? '<p class="empty">No style matches. Clear the search or filters.</p>'
+    : '<div class="rf-grid"></div><div id="rf-sent" class="more"><button class="btn">Load more</button></div>';
+  const grid = wrap.querySelector('.rf-grid');
+  const sent = wrap.querySelector('#rf-sent');
   if (!grid) return;
   if (rfIO) { rfIO.disconnect(); rfIO = null; }
   const bySlug = new Map(list.map((s) => [s.slug, s]));
@@ -863,7 +915,8 @@ function drawReferoIndex() {
     rfHoverTimers.set(a, setTimeout(() => {
       rfHoverTimers.delete(a);
       if (!shot.isConnected) return; // the grid was replaced while the timer waited
-      shot.innerHTML = `<video ${rfMediaAttrs({ local: rfLocalMedia('videos', s, 'mp4'), remote: rfCdn(s.videoRemote) }, false)} muted loop playsinline autoplay></video>`;
+      rfCardVideo(shot, s);
+      shot.querySelector('video')?.play().catch(() => {});
     }, RF_HOVER_MS));
   });
   grid.addEventListener('mouseout', (ev) => {
@@ -872,8 +925,58 @@ function drawReferoIndex() {
     clearTimeout(rfHoverTimers.get(a));
     rfHoverTimers.delete(a);
     const v = a.querySelector('.rf-shot video');
-    if (v) v.pause();
+    if (v) { v.pause(); v.classList.remove('on'); }
   });
+}
+
+// Keep the hero search field and the top bar's shared field in step.
+function syncRfSearch(v) {
+  const hero = app.querySelector('#rf-q');
+  if (hero && hero.value !== v) hero.value = v;
+  if (qInput.value !== v) qInput.value = v;
+}
+
+function drawReferoIndex() {
+  const all = RF_INDEX.styles;
+  const values = (key) => [...new Set(all.map((s) => s[key]).filter(Boolean))].sort();
+  const sel = (key, first) => `<select class="rf-sel" data-sel="${key}" aria-label="${first}"><option value="all">${first}</option>${values(key).map((v) => `<option value="${esc(v)}"${v === rfState[key] ? ' selected' : ''}>${esc(v)}</option>`).join('')}</select>`;
+  const tab = (k, label, on) => `<button type="button" data-theme="${k}" aria-pressed="${on}">${esc(label)}</button>`;
+  app.dataset.rf = 'index';
+  app.innerHTML = `
+    <div class="rf-hero">
+      <div class="rf-beta"><a class="pill" href="https://styles.refero.design" target="_blank" rel="noopener">Refero</a>
+        <p><span class="dot" aria-hidden="true"></span>${all.length.toLocaleString('en')} styles · interpreted, not measured</p></div>
+      <h1><em>Every site,</em> in DESIGN.md</h1>
+      <p class="rf-sub">Browse ${all.length.toLocaleString('en')} AI-readable design systems interpreted by
+        <a href="https://styles.refero.design" target="_blank" rel="noopener">styles.refero.design</a>.
+        Open any style for colors, typography, spacing, and a DESIGN.md your agent can follow.
+        Their words, not measured evidence — treat values as inspiration.</p>
+      <label class="rf-search"><input id="rf-q" type="search" placeholder="Search DESIGN.md examples" autocomplete="off" aria-label="Search refero styles"><button class="go" type="button" aria-label="Search"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5"/></svg></button></label>
+      <div class="rf-chips">${RF_CHIPS.map(([label], i) => `<button type="button" data-chip="${i}"><i>↳</i>${esc(label)}</button>`).join('')}</div>
+    </div>
+    <div class="rf-bar-row">
+      <div class="rf-tabs-list">${tab('all', 'All themes', rfState.theme === 'all')}${tab('light', 'Light', rfState.theme === 'light')}${tab('dark', 'Dark', rfState.theme === 'dark')}${tab('mixed', 'Mixed', rfState.theme === 'mixed')}<button type="button" data-video aria-pressed="${rfState.video}">Has video</button></div>
+      ${sel('type', 'All types')}${sel('style', 'All styles')}
+      <span class="count"></span>
+    </div>
+    <div class="rf-wrap"></div>`;
+  const hero = app.querySelector('#rf-q');
+  hero.value = state.q;
+  hero.addEventListener('input', () => { state.q = hero.value; qInput.value = hero.value; rfRedrawGrid(); });
+  hero.addEventListener('keydown', (ev) => { if (ev.key === 'Enter') app.querySelector('.rf-grid .rf-card')?.focus(); });
+  app.querySelector('.rf-search .go').onclick = () => hero.focus();
+  app.querySelectorAll('[data-chip]').forEach((b) => b.onclick = () => {
+    Object.assign(rfState, { theme: 'all', video: false, type: 'all', style: 'all' }, RF_CHIPS[+b.dataset.chip][1]);
+    rfSave(); syncRfSearch((state.q = ''));
+    app.querySelectorAll('select[data-sel]').forEach((s) => { s.value = rfState[s.dataset.sel]; });
+    rfRedrawGrid();
+    app.querySelector('.rf-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  app.querySelectorAll('[data-theme]').forEach((b) => b.onclick = () => { rfState.theme = b.dataset.theme; rfSave(); rfRedrawGrid(); });
+  app.querySelectorAll('[data-video]').forEach((b) => b.onclick = () => { rfState.video = !rfState.video; rfSave(); rfRedrawGrid(); });
+  app.querySelectorAll('select[data-sel]').forEach((s) => s.onchange = () => { rfState[s.dataset.sel] = s.value; rfSave(); rfRedrawGrid(); });
+  window.scrollTo(0, 0);
+  rfRedrawGrid();
 }
 
 // ---- entity page
@@ -885,6 +988,7 @@ const RF_TABS = [
 
 function renderRfEntity(slug) {
   delete app.dataset.pkg;
+  app.dataset.rf = 'entity';
   if (rfIO) { rfIO.disconnect(); rfIO = null; }
   app.innerHTML = '<p class="loading">Loading…</p>';
   const onPage = () => { const cur = rfSlug(); return cur[0] === 'refero' && cur[1] === slug; };
@@ -914,25 +1018,28 @@ function renderRfEntity(slug) {
 function rfMediaTag(e) {
   const m = e.media || {};
   const v = m.detail || m.video;
+  // The still sits under the video, which fades in over it once it plays —
+  // the same pattern the cards use, at entity size.
+  const still = rfImg(m.shot || m.poster || (v === m.detail ? m.detail_poster : null) || m.detail_poster, '', `${e.name} screenshot`);
   if (v && (v.local || v.remote)) {
     const pair = (v === m.detail && m.detail_poster) || m.poster;
     // poster= is an attribute, not an element: it cannot fall back like
     // rfMediaAttrs' src does, so the remote URL wins over a possibly absent
     // local file (e.g. a mirror that predates a kind).
     const poster = (pair && (pair.remote || pair.local)) || '';
-    return `<video ${rfMediaAttrs(v, false)}
+    return `${still}<video ${rfMediaAttrs(v, true)}
       ${poster ? `poster="${esc(poster)}"` : ''} muted loop playsinline autoplay></video>`;
   }
-  return rfImg(m.shot || m.poster, 'rf-shot-img', `${e.name} screenshot`) || '<p class="empty">No preview captured.</p>';
+  return still || '<p class="empty">No preview captured.</p>';
 }
 
 function rfSwatch(c) {
   const v = c.hex || c.value || '';
   const grad = /gradient/i.test(v);
   return `<button class="rf-sw" type="button" data-copy="${esc(v)}" title="Copy ${esc(grad ? 'gradient' : v)}">
-    <i style="background:${esc(v)}"></i>
-    <span class="rf-sw-top"><b>${esc(c.name || v)}</b><code>${esc(grad ? 'Gradient' : v)}</code></span>
-    ${c.role ? `<span class="rf-sw-role">${esc(c.role)}</span>` : ''}</button>`;
+    <span class="sw-i" style="background:${esc(v)}"><span class="sw-copy"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>Copy</span></span>
+    <span class="rf-sw-txt"><b>${esc(c.name || v)}</b><code>${esc(grad ? 'Gradient' : v)}</code>
+    ${c.role ? `<span class="rf-sw-role">${esc(c.role)}</span>` : ''}</span></button>`;
 }
 
 function rfColors(e) {
