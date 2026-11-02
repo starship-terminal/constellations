@@ -68,6 +68,13 @@ example/                shallow clones of public design-system repos
                         (gitignored except README.md). References, never
                         a source of values
 site/                   generated site output (gitignored)
+web/                    the Next.js frontend (App Router, TypeScript, pnpm):
+                        one server-hosted app for gallery, refero, scorecard
+                        and docs; reads the generated data (data.json, audits,
+                        docs md, refero JSON) at request time; serves media via
+                        /media/ and the chat via /api/chat (ANTHROPIC_API_KEY
+                        stays server-side). `make web` dev-runs it on :8800,
+                        `make web-build` builds for production
 Makefile                `make help` lists targets; `make dev` is the way in
 ```
 

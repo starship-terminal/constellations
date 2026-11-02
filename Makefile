@@ -6,7 +6,7 @@
 PYTHON ?= python3
 PORT ?= 8800
 
-.PHONY: help setup dev serve build docs scorecard grade check test brief design-md lint-design-md clean
+.PHONY: help setup dev serve build docs scorecard grade check test brief design-md lint-design-md clean web web-build
 
 help: ## List the targets
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | awk -F':.*## ' '{printf "  make %-14s %s\n", $$1, $$2}'
@@ -22,6 +22,12 @@ serve: ## Build the gallery, scorecard and docs site and serve it on 127.0.0.1 (
 
 build: ## Write the gallery's data and screenshot thumbnails into docs/gallery/
 	@$(PYTHON) tools/catalog.py build
+
+web: ## Run the Next.js frontend (web/) in dev mode on :8800
+	@pnpm --dir web dev
+
+web-build: ## Build the Next.js frontend for production (web/.next)
+	@pnpm --dir web build
 
 docs: ## Generate the scorecard pages and build the docs site into site/
 	@$(PYTHON) tools/scorecard.py && .venv/bin/python tools/site.py
