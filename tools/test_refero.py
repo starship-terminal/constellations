@@ -434,7 +434,7 @@ EXTRA_READS = {
     "RF_INDEX": set(),
     "d": set(),
     "e": {"key", "preventDefault", "shiftKey"},
-    "s": {"media", "source_url", "onchange", "dataset", "value"},
+    "s": {"media", "source_url", "onchange", "dataset", "value", "v"},
     "x": {"s", "sc", "note", "element", "style"},
     # `m` is also each media pair in getRfEntity's mediaBase rewrite, so its
     # `local` is a MEDIA_PAIR_KEYS read, not a MEDIA_KEYS one.
