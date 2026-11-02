@@ -13,6 +13,7 @@ gitignored; the Pages workflow builds it with --publish and encrypts the rest.
 """
 import argparse
 import html
+import json
 import posixpath
 import re
 import shutil
@@ -263,9 +264,6 @@ SETTINGS_BODY = """<h1>Settings</h1>
   })();
 </script>"""
 
-# A grid-cards item that links into the gallery (the home page's Gallery card): the
-# item marker, its `**[title](gallery/…)**` heading and the indented body under it.
-GALLERY_CARD = re.compile(r"^ *- +\*\*\[[^\]\n]*\]\(gallery/[^\n]*\)\*\*[^\n]*\n(?: +[^\n]*\n|\n)*", re.M)
 FRONT_RE = re.compile(r"\A---\s*\n(.*?)\n---\s*\n", re.S)
 HIDE_RE = re.compile(r"^\s*-\s*(navigation|toc)\s*$", re.M)
 HEADING_RE = re.compile(r"^#\s+(.+)$", re.M)
@@ -462,24 +460,63 @@ def render(page: Page, rendered: str, hidden: set[str], publish: bool = False) -
 """
 
 
-# The gallery — browse, search, chat — is the useful home page wherever it
-# ships, so the root redirects to it and the markdown landing in docs/index.md
-# only renders on --publish, where the gallery is dropped and a real landing
-# page is needed. A plain redirect page: instant, no chrome to repaint.
-REDIRECT_HTML = """<!doctype html>
-<html lang="en" data-theme="dark">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Design systems</title>
-<meta http-equiv="refresh" content="0; url=gallery/">
-<link rel="canonical" href="gallery/">
-<script>location.replace('gallery/');</script>
-<style>html{background:#08090a}body{display:grid;place-items:center;min-height:100vh;margin:0;color:#fafafa;font:15px/1.5 system-ui,sans-serif}a{color:#8ab4f8}</style>
-</head>
-<body><p>Taking you to <a href="gallery/">the gallery</a>&hellip;</p></body>
-</html>
-"""
+def dashboard() -> str:
+    """The home page body: a roll-up of the library instead of links to it —
+    counts, the newest audit's grade distribution, recent captures, what most
+    needs work, and category coverage. Same content either build: it shows
+    only what the published scorecard pages already say."""
+    _, audits = scorecard.load()
+    audit = audits[-1]
+    catalog = json.loads((ROOT / "catalog.json").read_text())
+    systems = catalog["systems"]
+    refero = sum(1 for d in (ROOT / "refero").iterdir()
+                 if d.is_dir() and not d.name.startswith("."))
+    cats = catalog.get("categories", {})
+
+    tally = {"meets": 0, "partly": 0, "missing": 0}
+    worst = []
+    for s in audit["systems"]:
+        grades = s.get("grades", {})
+        counts = {g: sum(1 for v in grades.values() if v["grade"] == g) for g in tally}
+        for g in tally:
+            tally[g] += counts[g]
+        if counts["missing"] or counts["partly"]:
+            worst.append((counts["missing"], counts["partly"], s["name"]))
+    total = sum(tally.values()) or 1
+    bar = "".join(
+        f'<i class="dash-{g}" style="flex:{tally[g]}" title="{tally[g]} {g}"></i>'
+        for g in ("meets", "partly", "missing"))
+    worst.sort(key=lambda x: (-x[0], -x[1], x[2]))
+
+    recent = sorted(systems, key=lambda s: (s.get("captured") or "", s["name"]), reverse=True)[:6]
+    dark = sum(1 for s in systems if any("dark" in t for t in s.get("themes", [])))
+
+    def row(li): return f'<li><span>{html.escape(li[0])}</span><b>{li[1]}</b></li>'
+    return f"""<div class="dash">
+  <div class="dash-stats">
+    <div><b>{len(systems)}</b><span>systems</span></div>
+    <div><b>{refero:,}</b><span>refero styles</span></div>
+    <div><b>{len(cats)}</b><span>categories</span></div>
+    <div><b>{dark}</b><span>with a dark theme</span></div>
+    <div><b>{html.escape(str(audit.get("rubric", "—")))}</b><span>rubric · {html.escape(audit["date"])}</span></div>
+  </div>
+  <h2>Health</h2>
+  <div class="dash-bar">{bar}</div>
+  <p class="dash-note">{100 * tally["meets"] // total}% of graded criteria met —
+     {tally["meets"]} met, {tally["partly"]} partial, {tally["missing"]} missing.</p>
+  <div class="dash-cols">
+    <section><h3>Newest captures</h3><ul>
+      {"".join(row((s["name"], s.get("captured") or "—")) for s in recent)}
+    </ul></section>
+    <section><h3>Needs attention</h3><ul>
+      {"".join(row((n, f"{m} missing" + (f" · {p} partial" if p else ""))) for m, p, n in worst[:8]) or "<li>nothing missing</li>"}
+    </ul></section>
+  </div>
+  <h2>Coverage</h2>
+  <div class="dash-chips">
+    {"".join(f'<span class="dash-chip"><b>{html.escape(v)}</b> {sum(1 for s in systems if s["category"] == k)}</span>' for k, v in cats.items())}
+  </div>
+</div>"""
 
 
 def build(publish: bool = False) -> None:
@@ -505,16 +542,12 @@ def build(publish: bool = False) -> None:
         if not page.src.exists():
             continue
         hidden, md = frontmatter(page.src.read_text())
-        if publish:
-            md = GALLERY_CARD.sub("", md)  # a card linking to the dropped gallery is dead nav
         page.title = page_title(md, page.src.stem)
+        body = rewrite_links(markdown.markdown(md, extensions=MD_EXTENSIONS, extension_configs=MD_CONFIGS), page)
+        if not page.url:
+            body += dashboard()
         dest = OUT / page.url / "index.html" if page.url else OUT / "index.html"
         dest.parent.mkdir(parents=True, exist_ok=True)
-        if not page.url and not publish:
-            atomic_write(dest, REDIRECT_HTML)
-            count += 1
-            continue
-        body = rewrite_links(markdown.markdown(md, extensions=MD_EXTENSIONS, extension_configs=MD_CONFIGS), page)
         atomic_write(dest, render(page, body, hidden, publish))
         count += 1
 

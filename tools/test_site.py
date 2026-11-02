@@ -36,13 +36,14 @@ class PublishTest(unittest.TestCase):
         for keep in ("scorecard/", "DESIGN-SYSTEM/"):
             self.assertIn(keep, published)
 
-    def test_publish_strips_only_the_card_linking_to_the_gallery(self):
-        md = (sitegen.DOCS / "index.md").read_text()
-        stripped = sitegen.GALLERY_CARD.sub("", md)
-        self.assertIn("gallery/index.html", md)
-        self.assertNotIn("gallery/", stripped)
-        for keep in ("[Scorecard]", "[What a design system contains]", "[Capturing a product]"):
-            self.assertIn(keep, stripped)
+    def test_home_renders_the_dashboard(self):
+        body = sitegen.dashboard()
+        self.assertIn('class="dash', body)
+        self.assertIn("refero styles", body)
+        # Every audited package shows up in either the recent or attention list
+        # source data; the roll-up bar tallies three grades.
+        for cls in ("dash-meets", "dash-partly", "dash-missing"):
+            self.assertIn(cls, body)
 
 
 class AppIconTest(unittest.TestCase):

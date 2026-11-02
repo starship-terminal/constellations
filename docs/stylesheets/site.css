@@ -315,6 +315,40 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 #deploy-bar .deploy-bar__button:hover { color: var(--text-strong); border-color: var(--faint); }
 #deploy-bar .deploy-bar__button:disabled { opacity: .55; cursor: default; }
 
+/* ---------- home dashboard ----------
+   The root page's library roll-up: big counts, the audit grade bar, two
+   data lists and category chips. Real numbers instead of a card grid of
+   links the sidebar already gives. */
+.dash { margin-top: 2.2em; }
+.dash-stats { display: flex; flex-wrap: wrap; gap: 10px; }
+.dash-stats > div {
+  flex: 1 1 130px; padding: 14px 16px; border: 1px solid var(--line);
+  border-radius: var(--radius-card); background: var(--field-bg);
+}
+.dash-stats b { display: block; font-size: 26px; font-weight: 590; color: var(--text-strong); letter-spacing: -.02em; }
+.dash-stats span { font-size: 12.5px; color: var(--muted); }
+.dash-bar { display: flex; height: 10px; gap: 2px; border-radius: 6px; overflow: hidden; }
+.dash-bar i { display: block; }
+.dash-meets { background: var(--accent); }
+.dash-partly { background: #e0a32e; }
+.dash-missing { background: #ef4444; }
+.dash-note { color: var(--muted); font-size: 13.5px; margin: .7em 0 0; }
+.dash-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px 28px; }
+.dash-cols h3 { margin-top: 1.2em; }
+.dash-cols ul { margin: 0; padding: 0; list-style: none; border: 1px solid var(--line); border-radius: var(--radius-card); overflow: hidden; }
+.dash-cols li {
+  display: flex; justify-content: space-between; gap: 12px; padding: 8px 14px;
+  font-size: 13.5px; border-top: 1px solid var(--line);
+}
+.dash-cols li:first-child { border-top: 0; }
+.dash-cols li b { font-weight: 510; color: var(--muted); white-space: nowrap; }
+.dash-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.dash-chip {
+  padding: 6px 12px; border: 1px solid var(--line); border-radius: 100px;
+  background: var(--field-bg); color: var(--muted); font-size: 13px;
+}
+.dash-chip b { color: var(--text-strong); font-weight: 510; margin-right: 4px; }
+
 /* ---------- small screens ---------- */
 @media screen and (max-width: 700px) {
   .site-nav { order: 3; width: 100%; }
