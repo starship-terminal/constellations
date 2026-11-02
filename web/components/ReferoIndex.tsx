@@ -194,7 +194,7 @@ function Card({ index, s }: { index: ReferoIndexData; s: ReferoCard }) {
           <h3>{s.name || s.slug}</h3>
           <p>{s.tagline || ""}</p>
           <span className="rf-card-chips">
-            {[s.theme, s.industry, s.type].filter(Boolean).map((c) => (
+            {[...new Set([s.theme, s.industry, s.type].filter(Boolean))].map((c) => (
               <span key={c}>{c}</span>
             ))}
           </span>
