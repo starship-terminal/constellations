@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Loopback-only /api/ server for the deployed docs site.
+"""The /api/ server for the deployed docs site.
 
 `catalog.py serve` already answers /api/ for local browsing, but on the
 deployment host `deploy.sh` owns the site build and nginx serves site/
@@ -72,10 +72,14 @@ class Handler(http.server.BaseHTTPRequestHandler):
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--port", type=int, default=8190)
+    # 127.0.0.1 for local use. nginx in the deployment's container reaches the
+    # host over the docker gateway, which is not loopback — pass --host with
+    # that bridge IP there so nothing else on the network can call the API.
+    parser.add_argument("--host", default="127.0.0.1")
     args = parser.parse_args()
     _dotenv()
-    with http.server.ThreadingHTTPServer(("127.0.0.1", args.port), Handler) as httpd:
-        print(f"design-systems api: http://127.0.0.1:{args.port}/api/", flush=True)
+    with http.server.ThreadingHTTPServer((args.host, args.port), Handler) as httpd:
+        print(f"design-systems api: http://{args.host}:{args.port}/api/", flush=True)
         httpd.serve_forever()
     return 0
 
