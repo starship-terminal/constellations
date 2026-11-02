@@ -890,6 +890,9 @@ navToggle.onclick = () => {
     root.dataset.nav = 'collapsed';
     try { localStorage.setItem('ds-nav', 'collapsed'); } catch (e) {}
   }
+  // Clicking leaves focus inside the rail, whose :focus-within would hold the
+  // collapsed strip open after the cursor leaves — hand the focus back out.
+  navToggle.blur();
   syncNavToggle();
 };
 syncNavToggle();
