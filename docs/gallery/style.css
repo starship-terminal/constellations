@@ -125,6 +125,22 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 1px s
 }
 .icon-btn:hover { border-color: var(--line-strong); color: var(--text-strong); }
 
+/* refero pages take the source site's minimal chrome: a floating wordmark,
+   small muted nav links and the two icon buttons — no bar, no field. */
+body[data-rf] .bar {
+  position: absolute; inset: 0 0 auto; width: auto; height: auto; z-index: 30;
+  padding: 18px clamp(16px, 4vw, 40px); border-bottom: 0;
+  background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none;
+}
+body[data-rf] .brand { padding: 0; }
+body[data-rf] .brand::after { content: "/ Refero"; margin-left: 6px; color: var(--faint); font-size: 14px; font-weight: 400; }
+body[data-rf] .search { display: none; }
+body[data-rf] .site-nav { margin-left: auto; }
+body[data-rf] .site-nav a { padding: 6px 8px; font-weight: 400; color: var(--faint); }
+body[data-rf] .site-nav a:hover { color: var(--text-strong); background: transparent; }
+body[data-rf] .site-nav a[aria-current="page"] { color: var(--text-strong); background: transparent; font-weight: 500; }
+body[data-rf] .bar-foot { margin-left: 0; }
+
 main { padding: 40px clamp(16px, 4vw, 40px) 96px; max-width: 1200px; margin: 0 auto; }
 .loading, .empty { color: var(--muted); padding: 48px 0; text-align: center; }
 
@@ -464,7 +480,7 @@ table.list { width: 100%; border-collapse: collapse; min-width: 820px; }
 main[data-rf] { max-width: none; padding: 0; }
 
 /* ---------- index hero */
-.rf-hero { padding: clamp(56px, 9vh, 110px) clamp(16px, 4vw, 40px) 34px; display: grid; justify-items: center; text-align: center; }
+.rf-hero { padding: calc(var(--bar-h) + clamp(64px, 10vh, 120px)) clamp(16px, 4vw, 40px) 34px; display: grid; justify-items: center; text-align: center; }
 .rf-beta { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 500; letter-spacing: -.005em; margin-bottom: 24px; }
 .rf-beta .pill { display: flex; align-items: center; height: 20px; padding: 0 6px; border: 1px solid currentColor; border-radius: 4px; color: var(--rf-fg); text-decoration: none; }
 .rf-beta p { display: flex; align-items: center; gap: 6px; margin: 0; color: var(--rf-mut); }
@@ -474,12 +490,12 @@ main[data-rf] { max-width: none; padding: 0; }
   font-size: clamp(42px, 5.6vw, 64px); line-height: 1.06; letter-spacing: 0;
   color: var(--rf-fg);
 }
-.rf-hero h1 em { font-style: italic; color: var(--rf-violet); }
+.rf-hero h1 em { font-style: italic; }
 .rf-sub { margin: 18px 0 0; max-width: 68ch; font-size: 15px; line-height: 1.55; color: var(--rf-mut); }
 .rf-sub a { color: var(--rf-mut); text-underline-offset: 3px; }
-.rf-search { margin-top: 34px; width: min(680px, 100%); display: flex; align-items: center; gap: 8px;
+.rf-search { margin-top: 34px; width: min(560px, 100%); display: flex; align-items: center; gap: 8px;
   height: 56px; padding: 0 8px 0 24px; border: 1px solid var(--rf-line); border-radius: 9999px;
-  background: var(--bg); color: var(--rf-mut); transition: border-color .15s; }
+  background: var(--rf-tile); color: var(--rf-mut); transition: border-color .15s; }
 .rf-search:focus-within { border-color: var(--rf-fg); }
 .rf-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--rf-fg); font: 15px var(--sans); letter-spacing: -.01em; }
 .rf-search input::placeholder { color: var(--faint); }
@@ -495,35 +511,39 @@ main[data-rf] { max-width: none; padding: 0; }
 .rf-chips button i { font-style: normal; font-family: var(--mono); font-size: 11px; color: var(--faint); }
 
 /* ---------- index toolbar: refero's pill tabs */
-.rf-bar-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 4px clamp(16px, 4vw, 96px) 26px; max-width: 1720px; margin: 0 auto; width: 100%; }
-.rf-tabs-list { display: inline-flex; align-items: center; gap: 4px; }
+.rf-bar-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; padding: 4px clamp(16px, 4vw, 48px) 28px; max-width: 1440px; margin: 0 auto; width: 100%; }
+.rf-tabs-list { display: inline-flex; align-items: center; gap: 24px; }
 .rf-tabs-list button {
-  height: 36px; padding: 0 14px; border-radius: 9999px; border: 0; background: transparent;
+  height: auto; padding: 0; border: 0; background: transparent;
   color: var(--rf-mut); font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap;
 }
-.rf-tabs-list button:hover { background: var(--chip-bg); color: var(--rf-fg); }
-.rf-tabs-list button[aria-pressed="true"] { background: var(--rf-tile); color: var(--rf-fg); font-weight: 600; box-shadow: inset 0 0 0 1px var(--rf-line); }
-.rf-bar-row .rf-sel { height: 36px; padding: 0 10px; border-radius: 9999px; }
+.rf-tabs-list button:hover { color: var(--rf-fg); }
+.rf-tabs-list button[aria-pressed="true"] { color: var(--rf-fg); font-weight: 600; }
+.rf-bar-row .rf-sel { height: auto; padding: 0 16px 0 0; border: 0; background: transparent; color: var(--rf-mut); font-size: 13px; }
+.rf-bar-row .rf-sel:hover { color: var(--rf-fg); }
 .rf-bar-row .count { margin-left: auto; font-size: 12px; color: var(--faint); font-variant-numeric: tabular-nums; }
 
 /* ---------- grid cards */
-.rf-wrap { padding: 0 clamp(16px, 4vw, 96px) 96px; max-width: 1720px; margin: 0 auto; }
-.rf-grid { display: grid; grid-template-columns: 1fr; column-gap: 24px; row-gap: 40px; }
+.rf-wrap { padding: 0 clamp(16px, 4vw, 48px) 96px; max-width: 1440px; margin: 0 auto; }
+.rf-grid { display: grid; grid-template-columns: 1fr; column-gap: 32px; row-gap: 48px; }
 @media (min-width: 680px) { .rf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 1280px) { .rf-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 32px; } }
-.rf-card { display: block; color: inherit; text-decoration: none; border-radius: 32px; }
+@media (min-width: 960px) { .rf-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.rf-card { display: block; color: inherit; text-decoration: none; border-radius: 28px; }
 .rf-card:focus-visible { outline: 1px solid var(--focus); outline-offset: 3px; }
-.rf-tile { position: relative; overflow: hidden; background: var(--rf-tile); border-radius: 32px; padding: 28px; transition: background .2s; }
-@media (min-width: 680px) { .rf-tile { padding: 36px; } }
-@media (min-width: 1280px) { .rf-tile { padding: 44px; } }
+.rf-tile { position: relative; overflow: hidden; background: var(--rf-tile); border-radius: 28px; padding: clamp(28px, 12%, 64px); transition: background .2s; }
 .rf-card:hover .rf-tile { background: var(--rf-tile-hov); }
-.rf-shot { position: relative; aspect-ratio: 16/10; width: 100%; overflow: hidden; border: 1px solid var(--rf-line); border-radius: 8px; background: var(--bg); transition: transform .3s; }
+/* the shot's own glow, blurred behind it — fades in on load, dims on hover */
+.rf-aura { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  filter: blur(64px) saturate(1.35); transform: scale(1.15); opacity: 0; transition: opacity .5s ease; }
+.rf-aura.on { opacity: .42; }
+.rf-card:hover .rf-aura.on { opacity: .25; }
+.rf-shot { position: relative; z-index: 1; aspect-ratio: 16/10; width: 100%; overflow: hidden; border: 1px solid var(--rf-line); border-radius: 8px; background: var(--bg); transition: transform .3s; }
 .rf-card:hover .rf-shot { transform: scale(1.02); }
 .rf-shot img, .rf-shot video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; display: block; }
 .rf-shot video { opacity: 0; transition: opacity .5s ease-in-out; }
 .rf-shot video.on { opacity: 1; }
-.rf-card-foot { display: flex; align-items: flex-start; gap: 10px; padding-top: 12px; }
-.rf-fav { position: relative; width: 32px; height: 32px; border-radius: 8px; overflow: hidden; flex-shrink: 0; background: var(--rf-tile); display: grid; place-items: center; }
+.rf-card-foot { display: flex; align-items: flex-start; gap: 10px; padding-top: 14px; }
+.rf-fav { position: relative; width: 32px; height: 32px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: var(--rf-tile); display: grid; place-items: center; }
 .rf-fav i { font-style: normal; font-size: 13px; font-weight: 600; color: var(--faint); }
 .rf-fav img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 /* the entity page's mark sits in a bordered circle beside the title */
@@ -536,6 +556,7 @@ main[data-rf] { max-width: none; padding: 0; }
 
 
 /* ---------- entity: fixed two-pane split, each column scrolls alone */
+body[data-rf] .rf-page { margin-top: var(--bar-h); }
 .rf-page { display: flex; flex-direction: column; }
 .rf-col { min-width: 0; padding: 28px clamp(16px, 4vw, 40px) 64px; }
 .rf-pane { min-width: 0; display: flex; flex-direction: column; }

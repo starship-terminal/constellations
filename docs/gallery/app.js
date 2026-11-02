@@ -68,6 +68,7 @@ function route() {
   });
   if (parts[0] === 'refero') { referoRoute(parts.slice(1)); return; }
   delete app.dataset.rf;
+  delete document.body.dataset.rf;
   if (rfIO) { rfIO.disconnect(); rfIO = null; }
   if (!DATA) {
     app.innerHTML = '<p class="loading">Loading catalog…</p>';
@@ -788,6 +789,7 @@ function referoRoute(parts) {
     document.title = 'Refero styles · Design systems';
     delete app.dataset.pkg;
     app.dataset.rf = 'index';
+    document.body.dataset.rf = 'index';
     app.innerHTML = '<p class="loading">Loading refero styles…</p>';
     getRefero()
       .then(() => { if (rfSlug()[0] === 'refero' && !rfSlug()[1]) drawReferoIndex(); })
@@ -844,7 +846,7 @@ function rfCard(s, note) {
   const card = { local: s.card ? rfLocalMedia(s.card === 'p' ? 'posters' : 'shots', s, 'jpg') : null,
     remote: rfCdn(s.cardRemote) };
   return `<a class="rf-card" href="#/refero/${esc(s.slug)}" data-slug="${esc(s.slug)}">
-    <div class="rf-tile"><div class="rf-shot">${rfImg(card, '', `${s.name} screenshot`)}</div></div>
+    <div class="rf-tile">${rfImg(card, 'rf-aura', '', 'aria-hidden="true" onload="this.classList.add(\'on\')"')}<div class="rf-shot">${rfImg(card, '', `${s.name} screenshot`)}</div></div>
     <div class="rf-card-foot">${rfFav(s)}<div class="rf-card-txt"><h3>${esc(s.name)}</h3><p>${esc(note || s.tagline || '')}</p></div></a>`;
 }
 
@@ -1007,6 +1009,7 @@ const RF_TABS = [
 function renderRfEntity(slug) {
   delete app.dataset.pkg;
   app.dataset.rf = 'entity';
+  document.body.dataset.rf = 'entity';
   if (rfIO) { rfIO.disconnect(); rfIO = null; }
   app.innerHTML = '<p class="loading">Loading…</p>';
   const onPage = () => { const cur = rfSlug(); return cur[0] === 'refero' && cur[1] === slug; };
@@ -1254,11 +1257,12 @@ document.addEventListener('keydown', (e) => {
     return;
   }
   const typing = document.activeElement?.matches('input, textarea, select') || document.activeElement?.isContentEditable;
-  if (e.key === '/' && !typing) { e.preventDefault(); qInput.focus(); qInput.select(); }
-  if (e.key === 'Escape' && document.activeElement === qInput) {
-    qInput.value = ''; state.q = ''; qInput.blur();
+  const field = app.querySelector('#rf-q') || (document.body.dataset.rf ? null : qInput);
+  if (e.key === '/' && !typing && field) { e.preventDefault(); field.focus(); field.select(); }
+  if (e.key === 'Escape' && document.activeElement && document.activeElement === field) {
+    field.value = ''; state.q = ''; field.blur(); qInput.value = '';
     const h = location.hash.replace(/^#\/?/, '');
-    if (h === 'refero' && RF_INDEX) drawReferoIndex(); else if (!h && DATA) renderIndex();
+    if (h === 'refero' && RF_INDEX) rfRedrawGrid(); else if (!h && DATA) renderIndex();
   }
 });
 
