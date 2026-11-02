@@ -6,8 +6,8 @@
 
 Replaces the Zensical/Material build with a small static renderer: every page is
 one markdown file wrapped in the same bar the gallery uses — a fixed left rail
-with the mark, the site nav, the search field, the section's own links, and the
-Settings link, ds-theme toggle and collapse toggle at its foot — plus the
+with the mark, the site nav, the section's own links, and the Settings link,
+ds-theme toggle and collapse toggle at its foot — plus the
 Settings page (settings/, its Preferences hold the app icon). site/ is
 gitignored; the Pages workflow builds it with --publish and encrypts the rest.
 """
@@ -59,9 +59,6 @@ SETTINGS_SVG = ('<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="tr
                 'stroke="currentColor" stroke-width="1.4" stroke-linecap="round">'
                 '<path d="M2 4.5h7M13 4.5h1M2 11.5h1M7 11.5h7"/>'
                 '<circle cx="11" cy="4.5" r="2"/><circle cx="5" cy="11.5" r="2"/></svg>')
-SEARCH_SVG = ('<svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">'
-              '<circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/>'
-              '<path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>')
 THEME_SVG = ('<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">'
              '<path d="M8 1.5a6.5 6.5 0 1 0 0 13z" fill="currentColor"/>'
              '<circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>')
@@ -377,10 +374,6 @@ def render(page: Page, rendered: str, hidden: set[str], publish: bool = False) -
             (f"{rel}DESIGN-SYSTEM/", "Docs", "docs", current("docs"))]
     nav = "\n      ".join(f'<a href="{href}"{cur}>{NAV_ICONS[key]}<span>{label}</span></a>'
                           for href, label, key, cur in nav)
-    search = "" if publish else f"""<form class="search" role="search" action="{rel}gallery/index.html" method="get">
-    {SEARCH_SVG}
-    <input name="q" type="search" placeholder="Search name, use, tag…" autocomplete="off" aria-label="Search design systems">
-  </form>"""
     return f"""<!doctype html>
 <html lang="en" data-theme="dark">
 <head>
@@ -413,7 +406,6 @@ def render(page: Page, rendered: str, hidden: set[str], publish: bool = False) -
     </nav>
 {section}
   </div>
-{search}
   <span class="bar-foot">
     <a class="icon-btn" href="{rel}settings/" aria-label="Settings" title="Settings"{current("settings")}>
       {SETTINGS_SVG}<span class="lbl">Settings</span>
@@ -431,9 +423,7 @@ def render(page: Page, rendered: str, hidden: set[str], publish: bool = False) -
 <script src="{rel}assets/redeploy.js" defer></script>
 <script>
   /* The theme toggle shares the gallery's ds-theme store, so a choice made on
-     either side carries over. The search field submits to the gallery's own
-     client-side search; --publish emits no form, and this drops the field when
-     nothing answers there anyway. */
+     either side carries over. */
   document.getElementById('theme').onclick = function () {{
     var root = document.documentElement;
     var current = root.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -466,15 +456,28 @@ def render(page: Page, rendered: str, hidden: set[str], publish: bool = False) -
     syncNavToggle();
   }};
   syncNavToggle();
-  (function () {{
-    var f = document.querySelector('.bar .search');
-    if (!f) return;
-    fetch(f.getAttribute('action'), {{ method: 'HEAD' }})
-      .then(function (r) {{ if (!r.ok) f.remove(); }})
-      .catch(function () {{ f.remove(); }});
-  }})();
 </script>
 </body>
+</html>
+"""
+
+
+# The gallery — browse, search, chat — is the useful home page wherever it
+# ships, so the root redirects to it and the markdown landing in docs/index.md
+# only renders on --publish, where the gallery is dropped and a real landing
+# page is needed. A plain redirect page: instant, no chrome to repaint.
+REDIRECT_HTML = """<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design systems</title>
+<meta http-equiv="refresh" content="0; url=gallery/">
+<link rel="canonical" href="gallery/">
+<script>location.replace('gallery/');</script>
+<style>html{background:#08090a}body{display:grid;place-items:center;min-height:100vh;margin:0;color:#fafafa;font:15px/1.5 system-ui,sans-serif}a{color:#8ab4f8}</style>
+</head>
+<body><p>Taking you to <a href="gallery/">the gallery</a>&hellip;</p></body>
 </html>
 """
 
@@ -505,9 +508,13 @@ def build(publish: bool = False) -> None:
         if publish:
             md = GALLERY_CARD.sub("", md)  # a card linking to the dropped gallery is dead nav
         page.title = page_title(md, page.src.stem)
-        body = rewrite_links(markdown.markdown(md, extensions=MD_EXTENSIONS, extension_configs=MD_CONFIGS), page)
         dest = OUT / page.url / "index.html" if page.url else OUT / "index.html"
         dest.parent.mkdir(parents=True, exist_ok=True)
+        if not page.url and not publish:
+            atomic_write(dest, REDIRECT_HTML)
+            count += 1
+            continue
+        body = rewrite_links(markdown.markdown(md, extensions=MD_EXTENSIONS, extension_configs=MD_CONFIGS), page)
         atomic_write(dest, render(page, body, hidden, publish))
         count += 1
 

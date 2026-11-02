@@ -28,9 +28,11 @@ class PublishTest(unittest.TestCase):
         local = sitegen.render(self.page(), "<p>x</p>", set())
         published = sitegen.render(self.page(), "<p>x</p>", set(), publish=True)
         self.assertIn("gallery/index.html", local)
-        self.assertIn('class="search"', local)
         self.assertNotIn("gallery/", published)
-        self.assertNotIn('class="search"', published)
+        # The rail's search field is gone in both modes; the gallery's own
+        # composer is the only search surface.
+        for rendered in (local, published):
+            self.assertNotIn('class="search"', rendered)
         for keep in ("scorecard/", "DESIGN-SYSTEM/"):
             self.assertIn(keep, published)
 
