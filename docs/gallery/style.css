@@ -526,16 +526,43 @@ table.list { width: 100%; border-collapse: collapse; min-width: 820px; }
 .md [id] { scroll-margin-top: calc(var(--bar-h) + var(--rail-h) + 16px); }
 .md.brief h3:first-child, .md.health > :first-child { margin-top: 0; }
 
-/* ---------- lightbox + toast */
-.lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(8, 9, 10, .9); display: grid; grid-template-columns: 56px minmax(0, 1fr) 56px; grid-template-rows: minmax(0, 1fr); align-items: center; padding: 24px 8px; }
-.lightbox figure { margin: 0; height: 100%; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 10px; min-width: 0; }
+/* ---------- lightbox: refero.design's screen viewer
+   The shot centres on the dim backdrop with the n / total pill bottom-left
+   and prev/next circles bottom-right; the dark rail on the right carries the
+   package card, tag groups, palette and the download / copy / bookmark row. */
+.lightbox { position: fixed; inset: 0; z-index: 50; display: flex; gap: 20px; padding: clamp(12px, 2.5vw, 32px); background: rgba(8, 9, 10, .9); }
+.lb-stage { position: relative; flex: 1; min-width: 0; min-height: 0; display: grid; }
+.lb-stage figure { margin: 0; height: 100%; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 10px; min-width: 0; }
 .lightbox img { max-width: 100%; max-height: 100%; min-height: 0; margin: auto; object-fit: contain; border-radius: var(--radius-ctl); }
 .lightbox img.zoom { width: 256px; max-height: 60vh; }
-.lightbox figcaption { color: var(--text); text-align: center; font-size: 13px; }
-.lightbox figcaption a { color: var(--text-strong); margin-left: 10px; }
-.lightbox .icon-btn { background: var(--chip-bg); border-color: var(--line); color: var(--text); font-size: 20px; }
-.lb-close { position: absolute; top: 16px; right: 16px; }
-.lb-prev, .lb-next { justify-self: center; }
+.lightbox figcaption { color: #d0d6e0; text-align: center; font-size: 13px; }
+.lightbox figcaption a { color: #fff; margin-left: 10px; }
+.lb-pos { position: absolute; left: 0; bottom: 4px; padding: 9px 16px; border-radius: 9999px; background: rgba(255, 255, 255, .08); color: #d0d6e0; font-size: 13px; font-variant-numeric: tabular-nums; }
+.lb-nav { position: absolute; right: 0; bottom: 0; display: flex; gap: 8px; }
+.lb-nav .icon-btn { width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, .08); border: 0; color: #fff; font-size: 20px; }
+.lb-side { flex: none; width: 300px; min-height: 0; display: flex; flex-direction: column; gap: 16px; padding: 14px; overflow: auto; background: #16181c; border: 1px solid rgba(255, 255, 255, .08); border-radius: 16px; color: #d0d6e0; }
+.lb-app { position: relative; }
+.lb-card { display: flex; align-items: center; gap: 10px; padding: 8px; padding-right: 36px; border-radius: 12px; background: rgba(255, 255, 255, .05); color: #fff; text-decoration: none; }
+.lb-card:hover { background: rgba(255, 255, 255, .09); }
+.lb-card-icon { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; overflow: hidden; background: rgba(255, 255, 255, .08); }
+.lb-card-icon .app-icon { width: 100%; height: 100%; }
+.lb-card-icon i { font-style: normal; font-size: 15px; color: #8a8f98; }
+.lb-card-txt { min-width: 0; display: grid; gap: 1px; }
+.lb-card-txt b { font-size: 14px; font-weight: 560; letter-spacing: -.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lb-card-txt small { color: #8a8f98; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lb-close { position: absolute; top: 8px; right: 8px; width: 28px; height: 28px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .08); color: #d0d6e0; font-size: 13px; cursor: pointer; display: grid; place-items: center; }
+.lb-sec h4 { margin: 0 0 8px; font-size: 13px; font-weight: 560; color: #fff; }
+.lb-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.lb-chips .chip { height: 30px; padding: 0 12px; border-radius: 9999px; border: 1px solid rgba(255, 255, 255, .1); background: rgba(255, 255, 255, .05); color: #d0d6e0; font-size: 12px; font-weight: 500; }
+.lb-chips .chip:hover { color: #fff; border-color: rgba(255, 255, 255, .24); }
+.lb-color i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 2px; }
+.lb-actions { margin-top: auto; display: flex; gap: 8px; }
+.lb-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 40px; padding: 0 16px; border-radius: 9999px; border: 0; background: rgba(255, 255, 255, .08); color: #fff; font-size: 13px; font-weight: 560; cursor: pointer; text-decoration: none; white-space: nowrap; }
+.lb-btn:hover { background: rgba(255, 255, 255, .14); }
+.lb-btn:first-child { flex: 1; background: #fff; color: #16181c; }
+.lb-btn:first-child:hover { opacity: .9; background: #fff; }
+.lb-copy { width: 40px; padding: 0; flex: none; }
+.lb-save[aria-pressed="true"] { background: #fff; color: #16181c; }
 .toast { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); z-index: 60; background: var(--panel); color: var(--bg); padding: 9px 14px; border-radius: 9999px; font-size: 13px; box-shadow: var(--shadow); }
 :root[data-theme="light"] .toast { background: var(--text-strong); color: var(--bg); }
 
@@ -546,7 +573,10 @@ table.list { width: 100%; border-collapse: collapse; min-width: 820px; }
   .site-nav a:first-child { display: none; }
   .search kbd { display: none; }
   .toolbar-side { margin-left: 0; }
-  .lightbox { grid-template-columns: 36px 1fr 36px; padding: 16px 2px; }
+  .lightbox { flex-direction: column; gap: 10px; padding: 12px; }
+  .lb-side { order: 2; width: auto; max-height: 44%; flex: none; }
+  .lb-stage { order: 1; }
+  .lb-pos { left: 50%; transform: translateX(-50%); }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } .stack img, .g-hero h1 { animation: none !important; } }
 
