@@ -15,11 +15,13 @@ nginx keeps its longer /api/redeploy location and adds, roughly:
 
     location /api/ {
         proxy_pass http://127.0.0.1:8190;
-        proxy_set_header Host $host;
+        proxy_set_header Host $http_host;
     }
 
-`proxy_set_header Host` is required: the origin check in server.py compares
-the browser's Origin against Host, and without it every call 403s.
+`proxy_set_header Host $http_host` is required: the origin check in server.py
+compares the browser's Origin against Host, and without it every call 403s.
+It must be $http_host, not $host — $host drops the port while Origin keeps
+it, so on https://host:8108 the guard would still reject its own gallery.
 
 The repo clone's root .env is loaded the same way the refero tools load it,
 so ANTHROPIC_API_KEY on the host gives every browser on the tailnet a working
