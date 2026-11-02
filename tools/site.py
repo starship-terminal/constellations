@@ -311,7 +311,7 @@ def render(page: Page, rendered: str, hidden: set[str], publish: bool = False) -
     var lbl = navToggle.querySelector('.lbl');
     if (lbl) lbl.textContent = collapsed ? 'Expand' : 'Collapse';
   }};
-  navToggle.onclick = function () {{
+  navToggle.onclick = function (e) {{
     var root = document.documentElement;
     if (root.dataset.nav === 'collapsed') {{
       delete root.dataset.nav;
@@ -320,9 +320,10 @@ def render(page: Page, rendered: str, hidden: set[str], publish: bool = False) -
       root.dataset.nav = 'collapsed';
       try {{ localStorage.setItem('ds-nav', 'collapsed'); }} catch (e) {{}}
     }}
-    // Clicking leaves focus inside the rail, whose :focus-within would hold
-    // the collapsed strip open after the cursor leaves — hand it back out.
-    navToggle.blur();
+    // A pointer click leaves focus inside the rail, whose :focus-within would
+    // hold the collapsed strip open after the cursor leaves — blur it back
+    // out. Keyboard activation (detail 0) keeps focus so the rail stays usable.
+    if (e.detail) navToggle.blur();
     syncNavToggle();
   }};
   syncNavToggle();
