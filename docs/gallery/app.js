@@ -55,10 +55,31 @@ window.addEventListener('hashchange', route);
 // The first route() runs at the bottom of this file, once every declaration exists.
 
 // The sticky rail sits under the sticky top bar, whose height changes with the layout.
+// On wide screens the bar is a fixed left rail, so there is no top offset at all.
 const bar = document.querySelector('.bar');
-const setBarHeight = () => document.documentElement.style.setProperty('--bar-h', `${bar.offsetHeight}px`);
+const RAIL_MQ = matchMedia('(min-width: 1100px)');
+const setBarHeight = () => document.documentElement.style.setProperty('--bar-h', RAIL_MQ.matches && !document.body.dataset.rf ? '0px' : `${bar.offsetHeight}px`);
 setBarHeight();
 window.addEventListener('resize', setBarHeight);
+
+// The search field lives in the rail, except on the index where it moves into the
+// hero's research box. The node itself moves, so its listeners and state survive.
+const searchEl = document.querySelector('.search');
+const hero = document.getElementById('hero');
+const heroBox = document.getElementById('hero-box');
+const searchAnchor = bar.querySelector('.bar-foot');
+function placeSearch(inHero) {
+  if (!DATA || !inHero) {
+    hero.hidden = true;
+    if (searchEl.parentNode !== bar) bar.insertBefore(searchEl, searchAnchor);
+    searchEl.classList.remove('hero-search');
+    return;
+  }
+  hero.hidden = false;
+  // The field is the research card's top row; the mode chips sit in the bar below it.
+  if (searchEl.parentNode !== heroBox) heroBox.prepend(searchEl);
+  searchEl.classList.add('hero-search');
+}
 
 function route() {
   const parts = location.hash.replace(/^#\/?/, '').split('/').map(decodeURIComponent);
@@ -66,10 +87,13 @@ function route() {
     const refero = a.getAttribute('href') === '#/refero';
     if (refero === (parts[0] === 'refero')) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
   });
-  if (parts[0] === 'refero') { referoRoute(parts.slice(1)); return; }
+  if (parts[0] === 'refero') { placeSearch(false); referoRoute(parts.slice(1)); setBarHeight(); return; }
   delete app.dataset.rf;
+  delete document.body.dataset.rf;
+  setBarHeight();
   if (rfIO) { rfIO.disconnect(); rfIO = null; }
   if (!DATA) {
+    placeSearch(false);
     app.innerHTML = '<p class="loading">Loading catalog…</p>';
     dataPromise.then(route).catch(() => {
       if (location.hash.replace(/^#\/?/, '').split('/')[0] !== 'refero')
@@ -78,7 +102,8 @@ function route() {
     return;
   }
   const sys = DATA.systems.find((s) => s.slug === parts[0]);
-  if (!sys) { renderIndex(); document.title = 'Design systems'; return; }
+  if (!sys) { placeSearch(true); renderIndex(); document.title = 'Design systems'; return; }
+  placeSearch(false);
   let sec = LEGACY[parts[1]] || parts[1] || 'overview';
   let rest = parts.slice(2).join('/');
   if (!SECTION_IDS.includes(sec)) { sec = 'overview'; rest = ''; }
@@ -124,15 +149,23 @@ function scrubFrames(s) {
   return frames;
 }
 
-// refero.design's card lockup: a padded matte holds the shot on a blurred
-// colour glow of itself (the aura), then the app icon, name and one-line
-// description. Moving the cursor across the shot scrubs the frames.
+// The card's brand accent, from the package's swatches: it tints the tile's
+// ring in dark mode, like the brand-coloured card borders on refero.design.
+const tintOf = (s) => {
+  const sw = Object.values(s.swatches).flat().find((x) => /accent|primary|brand|face/i.test(x.role));
+  return sw ? sw.value : '';
+};
+
+// refero.design's card lockup: a quiet matte tile holds the shot, and the
+// footer is just the product favicon and its name. Moving the cursor across
+// the shot scrubs the frames.
 function card(s) {
   const cover = s.cover.thumb || s.cover.path;
   const icon = s.icon ? iconImg(s) : `<i>${esc(s.name[0].toUpperCase())}</i>`;
-  return `<a class="card${portrait(s) ? ' portrait' : ''}" href="#/${esc(s.slug)}" data-slug="${esc(s.slug)}">
-    <div class="cover"><img class="aura" src="${url(cover)}" alt="" aria-hidden="true" loading="lazy" onload="this.classList.add('on')"><div class="viewport" data-i="0"><div class="stack"><img src="${url(cover)}" alt="${esc(s.name)} screenshot" loading="lazy" decoding="async"></div></div></div>
-    <div class="card-foot"><span class="foot-icon">${icon}</span><div class="foot-txt"><h2>${esc(s.name)}</h2><p>${esc(s.goodFor)}</p></div></div></a>`;
+  const tint = tintOf(s);
+  return `<a class="card${portrait(s) ? ' portrait' : ''}" href="#/${esc(s.slug)}" data-slug="${esc(s.slug)}"${tint ? ` style="--tint:${esc(tint)}"` : ''}>
+    <div class="cover"><div class="viewport" data-i="0"><div class="stack"><img src="${url(cover)}" alt="${esc(s.name)} screenshot" loading="lazy" decoding="async"></div></div></div>
+    <div class="card-foot"><span class="foot-icon">${icon}</span><div class="foot-txt"><h2>${esc(s.name)}</h2></div></div></a>`;
 }
 
 function row(s) {
@@ -154,21 +187,21 @@ function renderIndex() {
   const cats = Object.entries(DATA.categories).filter(([k]) => all.some((s) => s.category === k));
   cardFrames = new Map(list.map((s) => [s.slug, scrubFrames(s)]));
   delete app.dataset.pkg;
+  document.getElementById('hero-sub').textContent =
+    `${list.length === all.length ? all.length : `${list.length} of ${all.length}`} styles captured from real products. Measured tokens, a rendered style guide and the original screenshots.`;
+  // The platform chips live inside the hero's research card; keep their state current.
+  hero.querySelectorAll('[data-platform]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.platform === state.platform)));
   app.innerHTML = `
-    <div class="intro"><div><h1>Design systems</h1>
-      <p>${list.length === all.length ? all.length : `${list.length} of ${all.length}`} styles captured from real products. Each one links to measured tokens, a rendered style guide and the original screenshots.</p></div></div>
     <div class="toolbar">
       <div class="chips">${chip('cat', 'all', 'All', all.length, state.cat === 'all')}${cats.map(([k, v]) => chip('cat', k, v, all.filter((s) => s.category === k).length, state.cat === k)).join('')}</div>
-      <span class="sep"></span>
-      <div class="chips">${chip('platform', 'web', 'Web', null, state.platform === 'web')}${chip('platform', 'ios', 'iOS', null, state.platform === 'ios')}${chip('dark', '1', 'Has dark theme', null, state.dark)}</div>
-      <div class="seg" role="group" aria-label="Layout"><button data-view="grid" aria-pressed="${state.view === 'grid'}">Gallery</button><button data-view="list" aria-pressed="${state.view === 'list'}">List</button></div>
+      <div class="toolbar-side">${chip('dark', '1', 'Has dark theme', null, state.dark)}
+      <div class="seg" role="group" aria-label="Layout"><button data-view="grid" aria-pressed="${state.view === 'grid'}">Gallery</button><button data-view="list" aria-pressed="${state.view === 'list'}">List</button></div></div>
     </div>
     ${!list.length ? '<p class="empty">No style matches. Clear the search or filters.</p>'
       : state.view === 'list'
         ? `<div class="table-wrap"><table class="list"><thead><tr><th></th><th>Name</th><th>Category</th><th>Good for</th><th>Palette</th><th>Themes</th><th>Score</th><th>Captured</th></tr></thead><tbody>${list.map(row).join('')}</tbody></table></div>`
         : `<div class="grid">${list.map(card).join('')}</div>`}`;
   app.querySelectorAll('[data-cat]').forEach((b) => b.onclick = () => { state.cat = b.dataset.cat; save(); renderIndex(); });
-  app.querySelectorAll('[data-platform]').forEach((b) => b.onclick = () => { state.platform = state.platform === b.dataset.platform ? 'all' : b.dataset.platform; save(); renderIndex(); });
   app.querySelectorAll('[data-dark]').forEach((b) => b.onclick = () => { state.dark = !state.dark; save(); renderIndex(); });
   app.querySelectorAll('[data-view]').forEach((b) => b.onclick = () => { state.view = b.dataset.view; save(); renderIndex(); });
   app.querySelectorAll('tr[data-slug]').forEach((tr) => {
@@ -177,6 +210,16 @@ function renderIndex() {
   });
   window.scrollTo(0, 0);
 }
+
+// The research card's mode chips are static markup; wire them once. The dark
+// submit circle only focuses the field, the way refero's arrow submits.
+hero.querySelectorAll('[data-platform]').forEach((b) => b.onclick = () => {
+  if (!DATA) return;
+  state.platform = b.dataset.platform;
+  save();
+  renderIndex();
+});
+document.getElementById('r-go').onclick = () => qInput.focus();
 
 qInput.addEventListener('input', () => {
   state.q = qInput.value;
@@ -778,6 +821,16 @@ function getRfEntity(slug) {
     if (rfEntityCache.size >= RF_ENTITY_CAP) rfEntityCache.delete(rfEntityCache.keys().next().value);
     rfEntityCache.set(slug, fetch(`refero/style/${encodeURIComponent(slug)}.json`, { cache: 'no-cache' })
       .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then((e) => {
+        // media.*.local stays a /refero-media path in the file; the JSON's
+        // mediaBase turns it into the public (R2) URL here, once per entity.
+        if (e.mediaBase && e.media) {
+          for (const m of Object.values(e.media)) {
+            if (m && typeof m.local === 'string' && m.local.startsWith('/')) m.local = e.mediaBase + m.local;
+          }
+        }
+        return e;
+      })
       .catch((e) => { rfEntityCache.delete(slug); throw e; }));
   }
   return rfEntityCache.get(slug);
@@ -788,6 +841,7 @@ function referoRoute(parts) {
     document.title = 'Refero styles · Design systems';
     delete app.dataset.pkg;
     app.dataset.rf = 'index';
+    document.body.dataset.rf = 'index';
     app.innerHTML = '<p class="loading">Loading refero styles…</p>';
     getRefero()
       .then(() => { if (rfSlug()[0] === 'refero' && !rfSlug()[1]) drawReferoIndex(); })
@@ -803,7 +857,9 @@ function referoRoute(parts) {
 // Local media mirrors live under /refero-media/<kind>/<slug>.<ext>. index.json
 // keeps the remote CDN prefix once under `cdn`; a remote field is a path suffix
 // under it, or an absolute URL as-is.
-const rfLocalMedia = (kind, s, ext) => `/refero-media/${kind}/${encodeURIComponent(s.slug)}.${ext}`;
+// index.json's mediaBase points /refero-media at the public host (R2); empty
+// keeps the paths site-relative so a local mirror or nginx alias serves them.
+const rfLocalMedia = (kind, s, ext) => `${(RF_INDEX && RF_INDEX.mediaBase) || ''}/refero-media/${kind}/${encodeURIComponent(s.slug)}.${ext}`;
 const rfCdn = (u) => (u ? (u.includes('://') ? u : `${RF_INDEX.cdn || ''}${u}`) : null);
 
 // Local mirror first, remote CDN on error. With `drop` a broken element removes
@@ -844,8 +900,8 @@ function rfCard(s, note) {
   const card = { local: s.card ? rfLocalMedia(s.card === 'p' ? 'posters' : 'shots', s, 'jpg') : null,
     remote: rfCdn(s.cardRemote) };
   return `<a class="rf-card" href="#/refero/${esc(s.slug)}" data-slug="${esc(s.slug)}">
-    <div class="rf-tile"><div class="rf-shot">${rfImg(card, '', `${s.name} screenshot`)}</div></div>
-    <div class="rf-card-foot">${rfFav(s)}<div class="rf-card-txt"><h3>${esc(s.name)}</h3><p>${esc(note || s.tagline || '')}</p></div></a>`;
+    <div class="rf-tile">${rfImg(card, 'rf-aura', '', 'aria-hidden="true" onload="this.classList.add(\'on\')"')}<div class="rf-shot">${rfImg(card, '', `${s.name} screenshot`)}</div></div>
+    <div class="rf-card-foot">${rfFav(s)}<div class="rf-card-txt"><h3>${esc(s.name)}</h3><p>${esc(note || s.tagline || '')}</p></div></div></a>`;
 }
 
 // The card's scroll-preview video sits over the shot and fades in once it is
@@ -1007,6 +1063,7 @@ const RF_TABS = [
 function renderRfEntity(slug) {
   delete app.dataset.pkg;
   app.dataset.rf = 'entity';
+  document.body.dataset.rf = 'entity';
   if (rfIO) { rfIO.disconnect(); rfIO = null; }
   app.innerHTML = '<p class="loading">Loading…</p>';
   const onPage = () => { const cur = rfSlug(); return cur[0] === 'refero' && cur[1] === slug; };
@@ -1254,11 +1311,12 @@ document.addEventListener('keydown', (e) => {
     return;
   }
   const typing = document.activeElement?.matches('input, textarea, select') || document.activeElement?.isContentEditable;
-  if (e.key === '/' && !typing) { e.preventDefault(); qInput.focus(); qInput.select(); }
-  if (e.key === 'Escape' && document.activeElement === qInput) {
-    qInput.value = ''; state.q = ''; qInput.blur();
+  const field = app.querySelector('#rf-q') || (document.body.dataset.rf ? null : qInput);
+  if (e.key === '/' && !typing && field) { e.preventDefault(); field.focus(); field.select(); }
+  if (e.key === 'Escape' && document.activeElement && document.activeElement === field) {
+    field.value = ''; state.q = ''; field.blur(); qInput.value = '';
     const h = location.hash.replace(/^#\/?/, '');
-    if (h === 'refero' && RF_INDEX) drawReferoIndex(); else if (!h && DATA) renderIndex();
+    if (h === 'refero' && RF_INDEX) rfRedrawGrid(); else if (!h && DATA) renderIndex();
   }
 });
 
