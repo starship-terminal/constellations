@@ -75,7 +75,7 @@ window.addEventListener('hashchange', route);
 // On wide screens the bar is a fixed left rail, so there is no top offset at all.
 const bar = document.querySelector('.bar');
 const RAIL_MQ = matchMedia('(min-width: 1100px)');
-const setBarHeight = () => document.documentElement.style.setProperty('--bar-h', RAIL_MQ.matches && !document.body.dataset.rf ? '0px' : `${bar.offsetHeight}px`);
+const setBarHeight = () => document.documentElement.style.setProperty('--bar-h', RAIL_MQ.matches ? '0px' : `${bar.offsetHeight}px`);
 setBarHeight();
 window.addEventListener('resize', setBarHeight);
 

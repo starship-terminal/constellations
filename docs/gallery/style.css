@@ -169,7 +169,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 1px s
     overflow: hidden; white-space: nowrap;
     transition: width .18s ease;
   }
-  body:not([data-rf]) .bar-body { order: 3; flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; }
+  .bar-body { order: 3; flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; }
   .brand { order: 1; padding: 0 10px 18px; font-size: 16px; font-weight: 600; }
   .search { order: 2; flex: none; max-width: none; margin: 0 0 14px; height: 40px; border-radius: 12px; }
   .site-nav { order: 3; flex-direction: column; gap: 2px; }
@@ -184,22 +184,21 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 1px s
 }
 
 /* collapsed (ds-nav): an icon strip; hovering or focusing it floats the full
-   rail back over the content, which keeps the collapsed margin either way.
-   body[data-rf] skips it all — the refero pages keep their own chrome. */
+   rail back over the content, which keeps the collapsed margin either way. */
 @media (min-width: 1100px) {
-  :root[data-nav="collapsed"] body:not([data-rf]) { --rail-w: var(--rail-cw); }
-  :root[data-nav="collapsed"] body:not([data-rf]) .bar { border-right: 1px solid var(--line); }
-  :root[data-nav="collapsed"] body:not([data-rf]) .bar:hover,
-  :root[data-nav="collapsed"] body:not([data-rf]) .bar:focus-within { width: var(--rail-open); }
-  :root[data-nav="collapsed"] body:not([data-rf]) .bar:not(:hover):not(:focus-within) .brand > span:last-child,
-  :root[data-nav="collapsed"] body:not([data-rf]) .bar:not(:hover):not(:focus-within) .site-nav a span,
-  :root[data-nav="collapsed"] body:not([data-rf]) .bar:not(:hover):not(:focus-within) .icon-btn .lbl,
-  :root[data-nav="collapsed"] body:not([data-rf]) .bar:not(:hover):not(:focus-within) .search input,
-  :root[data-nav="collapsed"] body:not([data-rf]) .bar:not(:hover):not(:focus-within) .search kbd { display: none; }
-  :root[data-nav="collapsed"] body:not([data-rf]) .bar:not(:hover):not(:focus-within) .brand,
-  :root[data-nav="collapsed"] body:not([data-rf]) .bar:not(:hover):not(:focus-within) .site-nav a,
-  :root[data-nav="collapsed"] body:not([data-rf]) .bar:not(:hover):not(:focus-within) .icon-btn,
-  :root[data-nav="collapsed"] body:not([data-rf]) .bar:not(:hover):not(:focus-within) .search { justify-content: center; padding-left: 0; padding-right: 0; }
+  :root[data-nav="collapsed"] { --rail-w: var(--rail-cw); }
+  :root[data-nav="collapsed"] .bar { border-right: 1px solid var(--line); }
+  :root[data-nav="collapsed"] .bar:hover,
+  :root[data-nav="collapsed"] .bar:focus-within { width: var(--rail-open); }
+  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .brand > span:last-child,
+  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .site-nav a span,
+  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .icon-btn .lbl,
+  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .search input,
+  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .search kbd { display: none; }
+  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .brand,
+  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .site-nav a,
+  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .icon-btn,
+  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .search { justify-content: center; padding-left: 0; padding-right: 0; }
 }
 @media (max-width: 760px) {
   .bar { flex-wrap: wrap; height: auto; padding: 8px 12px; row-gap: 8px; }
@@ -209,24 +208,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 1px s
   .search { margin-left: auto; }
 }
 
-/* refero pages take the source site's minimal chrome: a floating wordmark,
-   small muted nav links and the two icon buttons — no rail, no field. */
-body[data-rf] .bar {
-  position: absolute; inset: 0 0 auto; width: auto; height: auto;
-  flex-direction: row; align-items: center; gap: 10px; z-index: 30;
-  padding: 18px clamp(16px, 4vw, 40px); border: 0;
-  background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none;
-}
-body[data-rf] .brand { order: 0; padding: 0; font-family: var(--sans); font-size: 16px; font-weight: 510; }
-body[data-rf] .brand::after { content: "/ Refero"; margin-left: 6px; color: var(--faint); font-size: 14px; font-weight: 400; }
+/* the refero pages keep the source site's look inside main, but the chrome is
+   the shared rail; the rail's catalog field hides on this tab — the page has
+   its own search. */
 body[data-rf] .search { display: none; }
-body[data-rf] .site-nav { order: 0; flex-direction: row; margin-left: auto; }
-body[data-rf] .site-nav a { height: auto; padding: 6px 8px; font-weight: 400; color: var(--faint); }
-body[data-rf] .site-nav a:hover { color: var(--rf-fg); background: transparent; }
-body[data-rf] .site-nav a[aria-current="page"] { color: var(--rf-fg); background: transparent; font-weight: 500; }
-body[data-rf] .bar-foot { order: 0; margin: 0; padding: 0; }
-body[data-rf] #nav-toggle { display: none; }
-body[data-rf] main { margin-left: 0; }
 
 main { padding: 40px clamp(16px, 4vw, 48px) 96px; max-width: 1200px; margin: 0 auto; }
 @media (min-width: 1100px) { main { margin-left: var(--rail-w); transition: margin-left .18s ease; } }
@@ -601,7 +586,7 @@ table.list { width: 100%; border-collapse: collapse; min-width: 820px; }
 main[data-rf] { max-width: none; padding: 0; }
 
 /* ---------- index hero */
-.rf-hero { padding: calc(var(--bar-h) + clamp(64px, 10vh, 120px)) clamp(16px, 4vw, 40px) 34px; display: grid; justify-items: center; text-align: center; }
+.rf-hero { padding: clamp(64px, 10vh, 120px) clamp(16px, 4vw, 40px) 34px; display: grid; justify-items: center; text-align: center; }
 .rf-beta { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 500; letter-spacing: -.005em; margin-bottom: 24px; }
 .rf-beta .pill { display: flex; align-items: center; height: 20px; padding: 0 6px; border: 1px solid currentColor; border-radius: 4px; color: var(--rf-fg); text-decoration: none; }
 .rf-beta p { display: flex; align-items: center; gap: 6px; margin: 0; color: var(--rf-mut); }
@@ -677,7 +662,6 @@ main[data-rf] { max-width: none; padding: 0; }
 
 
 /* ---------- entity: fixed two-pane split, each column scrolls alone */
-body[data-rf] .rf-page { margin-top: var(--bar-h); }
 .rf-page { display: flex; flex-direction: column; }
 .rf-col { min-width: 0; padding: 28px clamp(16px, 4vw, 40px) 64px; }
 .rf-pane { min-width: 0; display: flex; flex-direction: column; }
