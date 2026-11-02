@@ -204,7 +204,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 1px s
   .site-nav a { white-space: nowrap; }
 }
 
-main { padding: 40px clamp(16px, 4vw, 48px) 96px; max-width: 1200px; margin: 0 auto; }
+main { padding: 40px clamp(16px, 4vw, 48px) 96px; margin: 0 auto; }
 @media (min-width: 1100px) { main { margin-left: var(--rail-w); transition: margin-left .3s ease; } }
 .loading, .empty { color: var(--muted); padding: 48px 0; text-align: center; }
 
@@ -221,7 +221,7 @@ main { padding: 40px clamp(16px, 4vw, 48px) 96px; max-width: 1200px; margin: 0 a
 }
 @keyframes hero-hue { to { background-position: 100% 50%; } }
 .g-hero p { margin: 14px auto 0; max-width: 620px; color: var(--muted); font-size: 15px; line-height: 1.5; }
-@media (min-width: 1100px) { .g-hero { margin: 0 auto 0 var(--rail-w); max-width: 1200px; transition: margin-left .3s ease; } } /* same column as main, so it centres with the grid */
+@media (min-width: 1100px) { .g-hero { margin: 0 auto 0 var(--rail-w); transition: margin-left .3s ease; } } /* same column as main, so it centres with the grid */
 
 /* the research card: one sunken rounded-24 box holding the field on top and a
    row of mode chips below, ending in the dark submit circle (752px on the

@@ -1,0 +1,291 @@
+"use client";
+
+// The librarian chat, as a right-side drawer available on every page.
+// Sends the wire-shaped turn list to /api/chat; renders result cards,
+// media strips and copyable agent prompts from the reply's artifacts.
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { useLightbox } from "@/components/Lightbox";
+import { useToast } from "@/components/Toast";
+import { copyText } from "@/components/CopyButton";
+
+interface ChatResultCard {
+  cover?: string;
+  icon?: string;
+  tint?: string;
+  tagline?: string;
+}
+interface ChatResult {
+  store: "systems" | "refero" | "prompt";
+  slug: string;
+  name: string;
+  prompt?: string;
+  card?: ChatResultCard;
+}
+interface ChatMedia {
+  url: string;
+  name: string;
+}
+interface Turn {
+  role: "user" | "assistant";
+  text?: string;
+  pending?: boolean;
+  error?: string;
+  results?: ChatResult[];
+  media?: ChatMedia[];
+  calls?: string[];
+}
+interface Cfg {
+  api?: string;
+  base_url?: string;
+  api_key?: string;
+  key_header?: string;
+  models_url?: string;
+  model?: string;
+  name?: string;
+}
+interface ChatCtx {
+  open: (draft?: string) => void;
+  close: () => void;
+  isOpen: boolean;
+  draft: string;
+  setDraft: (v: string) => void;
+  enabled: boolean;
+}
+const Ctx = createContext<ChatCtx>({
+  open: () => {},
+  close: () => {},
+  isOpen: false,
+  draft: "",
+  setDraft: () => {},
+  enabled: false,
+});
+
+export const useChat = () => useContext(Ctx);
+
+const dsProvider = (): Cfg | null => {
+  try {
+    const p = JSON.parse(localStorage.getItem("ds-provider") || "null");
+    return p && p.api_key && p.model ? p : null;
+  } catch {
+    return null;
+  }
+};
+
+const UP_ICON = (
+  <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" /></svg>
+);
+
+export function ChatProvider({ children }: { children: React.ReactNode }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [draft, setDraft] = useState("");
+  const [envProvider, setEnvProvider] = useState(false);
+  const [hasLocal, setHasLocal] = useState(false);
+  useEffect(() => {
+    setHasLocal(!!dsProvider());
+    fetch("/api/status")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => setEnvProvider(!!(d && d.envProvider)))
+      .catch(() => {});
+  }, []);
+  const open = useCallback((d?: string) => {
+    setIsOpen(true);
+    if (d) setDraft(d);
+  }, []);
+  const close = useCallback(() => setIsOpen(false), []);
+  return (
+    <Ctx.Provider value={{ open, close, isOpen, draft, setDraft, enabled: envProvider || hasLocal }}>
+      {children}
+    </Ctx.Provider>
+  );
+}
+
+export function ChatDrawer() {
+  const { isOpen, open, close, draft, setDraft, enabled } = useChat();
+  const [turns, setTurns] = useState<Turn[]>([]);
+  const [busy, setBusy] = useState(false);
+  const epoch = useRef(0);
+  const body = useRef<HTMLDivElement>(null);
+  const lb = useLightbox();
+  const { toast } = useToast();
+
+  useEffect(() => {
+    body.current?.scrollTo({ top: body.current.scrollHeight });
+  }, [turns]);
+
+  const reset = () => {
+    epoch.current++;
+    setTurns([]);
+    setBusy(false);
+    setDraft("");
+  };
+
+  const send = async () => {
+    const text = draft.trim();
+    if (!text || busy) return;
+    const wire = turns.filter((t) => !t.pending).map((t) => ({ role: t.role, content: t.text || "" }));
+    wire.push({ role: "user", content: text });
+    const myEpoch = epoch.current;
+    setDraft("");
+    setBusy(true);
+    setTurns((t) => [...t, { role: "user", text }, { role: "assistant", pending: true }]);
+    try {
+      const r = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ messages: wire, provider: dsProvider() || undefined }),
+      });
+      const d = await r.json();
+      if (myEpoch !== epoch.current) return;
+      setTurns((t) => {
+        const next = [...t];
+        const pending = next[next.length - 1];
+        if (!pending?.pending) return t;
+        next[next.length - 1] = {
+          role: "assistant",
+          text: d.reply || d.message || (d.error === "no_provider" ? "No model is configured yet." : ""),
+          error: d.error,
+          results: d.results || [],
+          media: d.media || [],
+          calls: d.calls || [],
+        };
+        return next;
+      });
+    } catch {
+      if (myEpoch !== epoch.current) return;
+      setTurns((t) => {
+        const next = [...t];
+        if (next[next.length - 1]?.pending)
+          next[next.length - 1] = { role: "assistant", error: "No answer from the server.", results: [], media: [] };
+        return next;
+      });
+    } finally {
+      if (myEpoch === epoch.current) setBusy(false);
+    }
+  };
+
+  return (
+    <>
+      <button className="chat-fab btn primary" type="button" onClick={() => (isOpen ? close() : open())}>
+        Ask the librarian
+      </button>
+      <div className={`chat-drawer${isOpen ? " open" : ""}`} role="dialog" aria-label="Librarian chat" aria-hidden={!isOpen}>
+        <div className="chat-head">
+          <b>Librarian</b>
+          <div className="side">
+            <button className="rf-mini" type="button" onClick={reset}>
+              New
+            </button>
+            <button className="rf-mini" type="button" onClick={close} aria-label="Close chat">
+              ✕
+            </button>
+          </div>
+        </div>
+        <p className="chat-note">Answers cite the library's own data; cards open the style.</p>
+        <div className="chat-body" ref={body}>
+          {!turns.length && (
+            <p className="chat-note">Ask for a style, mood or use — “a dark fintech dashboard”, “playful onboarding like Duolingo”.</p>
+          )}
+          {turns.map((t, i) => (
+            <ChatTurn key={i} t={t} lb={lb} toast={toast} />
+          ))}
+        </div>
+        <div className="chat-composer">
+          <label className="field">
+            <input
+              type="text"
+              placeholder={enabled ? "Ask for a style, mood or use…" : "Set up a model in Settings to chat"}
+              value={draft}
+              onChange={(e) => setDraft(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") send();
+              }}
+              disabled={!enabled}
+            />
+          </label>
+          <button className="chat-send" type="button" onClick={send} disabled={busy || !enabled} aria-label="Send">
+            {UP_ICON}
+          </button>
+        </div>
+      </div>
+    </>
+  );
+}
+
+function ChatTurn({ t, lb, toast }: { t: Turn; lb: ReturnType<typeof useLightbox>; toast: (m: string) => void }) {
+  if (t.role === "user")
+    return (
+      <div className="chat-turn user">
+        <p style={{ margin: 0 }}>{t.text}</p>
+      </div>
+    );
+  if (t.pending)
+    return (
+      <div className="chat-turn assistant">
+        <div className="chat-dots">
+          <i />
+          <i />
+          <i />
+        </div>
+      </div>
+    );
+  return (
+    <div className="chat-turn assistant">
+      {t.error === "no_provider" ? (
+        <p className="chat-error">
+          <Link href="/settings">Set up a model in Settings</Link> to chat.
+        </p>
+      ) : t.error ? (
+        <p className="chat-error">{t.error}</p>
+      ) : null}
+      {t.text ? <div className="md chat-md" dangerouslySetInnerHTML={{ __html: t.text }} /> : null}
+      {!!t.results?.length && (
+        <div className="chat-results">
+          {t.results.map((r, i) =>
+            r.store === "prompt" ? (
+              <button
+                key={i}
+                className="btn"
+                type="button"
+                onClick={async () => {
+                  await copyText(r.prompt || "");
+                  toast("Agent prompt copied");
+                }}
+              >
+                Copy agent prompt · {r.slug}
+              </button>
+            ) : (
+              <Link key={i} className="card" href={r.store === "systems" ? `/gallery/${r.slug}` : `/refero/${r.slug}`}>
+                <div className="cover" style={r.card?.tint ? ({ "--tint": r.card.tint } as React.CSSProperties) : undefined}>
+                  {r.card?.cover ? <img src={r.card.cover} alt="" loading="lazy" /> : null}
+                </div>
+                <div className="card-foot">
+                  <span className="foot-icon">{r.card?.icon ? <img src={r.card.icon} alt="" /> : <i>{(r.name || "?")[0].toUpperCase()}</i>}</span>
+                  <div className="foot-txt">
+                    <h2>{r.name}</h2>
+                  </div>
+                </div>
+              </Link>
+            ),
+          )}
+        </div>
+      )}
+      {!!t.media?.length && (
+        <div className="chat-media">
+          {t.media.map((m, i) => (
+            <button
+              key={i}
+              className="chat-shot"
+              type="button"
+              onClick={() => lb.open({ items: t.media!.map((x) => ({ path: x.url, name: x.name })), index: i })}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={m.url} alt={m.name} loading="lazy" />
+            </button>
+          ))}
+        </div>
+      )}
+      {!!t.calls?.length && <p className="chat-calls">tools: {t.calls.join(", ")}</p>}
+    </div>
+  );
+}
