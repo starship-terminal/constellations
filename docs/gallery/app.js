@@ -105,7 +105,12 @@ function route() {
     return;
   }
   const sys = DATA.systems.find((s) => s.slug === parts[0]);
-  if (!sys) { showHero(true); renderIndex(); document.title = 'Design systems'; return; }
+  if (!sys) {
+    showHero(true);
+    if (chat.active) renderChat(); else renderIndex();
+    document.title = 'Design systems';
+    return;
+  }
   showHero(false);
   let sec = LEGACY[parts[1]] || parts[1] || 'overview';
   let rest = parts.slice(2).join('/');
@@ -198,9 +203,10 @@ function renderIndex() {
   cardFrames = new Map(list.map((s) => [s.slug, scrubFrames(s)]));
   delete app.dataset.pkg;
   document.getElementById('hero-sub').textContent =
-    `${list.length === all.length ? all.length : `${list.length} of ${all.length}`} styles captured from real products. Measured tokens, a rendered style guide and the original screenshots.`;
+    `${list.length === all.length ? all.length : `${list.length} of ${all.length}`} styles captured from real products. Measured tokens, a rendered style guide and the original screenshots.${chatProvider() ? ' Ask in plain words.' : ''}`;
   // The platform chips live inside the hero's research card; keep their state current.
   hero.querySelectorAll('[data-platform]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.platform === state.platform)));
+  if (chat.active) { renderChat(); return; }
   app.innerHTML = `
     <div class="toolbar">
       <div class="chips">${chip('cat', 'all', 'All', all.length, state.cat === 'all')}${cats.map(([k, v]) => chip('cat', k, v, all.filter((s) => s.category === k).length, state.cat === k)).join('')}</div>
@@ -229,10 +235,11 @@ hero.querySelectorAll('[data-platform]').forEach((b) => b.onclick = () => {
   save();
   renderIndex();
 });
-document.getElementById('r-go').onclick = () => qInput.focus();
+document.getElementById('r-go').onclick = () => { if (chatProvider()) chatSend(); else qInput.focus(); };
 
 qInput.addEventListener('input', () => {
   state.q = qInput.value;
+  if (chat.active) return; // a live conversation owns the index view
   const h = location.hash.replace(/^#\/?/, '');
   // A failed JSON leaves its error page up; typing must not navigate away or throw.
   if (h === 'refero') { syncRfSearch(qInput.value); rfRedrawGrid(); }
@@ -240,6 +247,163 @@ qInput.addEventListener('input', () => {
   else if (h) location.hash = '#/';
   else if (DATA) renderIndex();
 });
+
+qInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && chatProvider()) { e.preventDefault(); chatSend(); }
+});
+
+// ---------------------------------------------------------------- chat
+
+// The index doubles as a chat page when a model provider is saved in Settings:
+// the hero's search field composes messages, POST ../api/chat runs the tool
+// loop server-side, and the answer renders here with the same cards the grid
+// uses. Without a provider the field stays the plain catalog search.
+const dsProvider = () => {
+  try {
+    const p = JSON.parse(localStorage.getItem('ds-provider') || 'null');
+    return p && p.api_key && p.model ? p : null;
+  } catch (e) { return null; }
+};
+
+// The server's own fallback: /api/status reports envProvider when .env (or the
+// shell) carries ANTHROPIC_API_KEY, so chat works with nothing saved at all.
+let envProvider = false;
+const chatProvider = () => dsProvider() || (envProvider ? { env: true } : null);
+fetch('../api/status').then((r) => r.ok ? r.json() : null)
+  .then((d) => { envProvider = !!(d && d.envProvider); syncChatMode(); })
+  .catch(() => {});
+
+const chat = { active: false, busy: false, turns: [] };
+
+// Media paths arrive server-absolute ("/systems/…"); url() wants them relative.
+const chatUrl = (u) => url(String(u).replace(/^\//, ''));
+
+function chatReset() {
+  chat.active = false; chat.busy = false; chat.turns = [];
+  state.q = ''; qInput.value = '';
+  renderIndex();
+}
+
+function chatTurnHtml(t) {
+  if (t.role === 'user') return `<div class="chat-turn user"><p>${esc(t.text)}</p></div>`;
+  if (t.pending) return '<div class="chat-turn assistant"><p class="chat-dots"><i>.</i><i>.</i><i>.</i></p></div>';
+  const parts = [`<div class="chat-turn assistant">`];
+  if (t.error === 'no_provider') parts.push('<p class="chat-error"><a href="../settings/#provider">Set up a model in Settings</a> to chat.</p>');
+  else if (t.error) parts.push(`<p class="chat-error">${esc(t.error)}</p>`);
+  if (t.text) parts.push(`<div class="md chat-md">${markdown(t.text, 'x')}</div>`);
+  if (t.results && t.results.length) {
+    parts.push(`<div class="chat-results">${t.results.map((r) => {
+      if (r.store === 'prompt')
+        return `<button class="btn chat-prompt" type="button" data-prompt="${esc(r.slug)}">Copy agent prompt · ${esc(r.slug)}</button>`;
+      const s = DATA.systems.find((x) => x.slug === r.slug);
+      if (r.store === 'systems' && s) return card(s);
+      if (r.store === 'refero') return `<span class="chat-rf" data-rf="${esc(r.slug)}"></span>`;
+      return '';
+    }).join('')}</div>`);
+  }
+  if (t.media && t.media.length) {
+    const items = t.media.map((m) => ({ path: String(m.url).replace(/^\//, ''), name: m.name }));
+    parts.push(`<div class="chat-media">${items.map((m, i) => `<button class="chat-shot" type="button" data-shot="${i}"><img loading="lazy" src="${chatUrl(m.path)}" alt="${esc(m.name)}"></button>`).join('')}</div>`);
+  }
+  parts.push('</div>');
+  return parts.join('');
+}
+
+function renderChat() {
+  app.innerHTML = `<div class="chat-head">
+      <button class="chat-reset" type="button">← New conversation</button>
+      <span class="chat-note">Answers cite the library's own data; cards open the style.</span>
+    </div>
+    <div class="chat">${chat.turns.map(chatTurnHtml).join('')}</div>`;
+  app.querySelector('.chat-reset').onclick = chatReset;
+  // Result cards get the hover-scrub frames the index builds for its grid.
+  const slugs = new Set();
+  chat.turns.forEach((t) => (t.results || []).forEach((r) => { if (r.store === 'systems') slugs.add(r.slug); }));
+  [...slugs].forEach((slug) => {
+    const s = DATA.systems.find((x) => x.slug === slug);
+    if (s && !cardFrames.has(slug)) cardFrames.set(slug, scrubFrames(s));
+  });
+  // Refero cards draw once the refero index is in, without holding the turn.
+  const needRf = app.querySelectorAll('[data-rf]');
+  if (needRf.length) {
+    getRefero().then(() => {
+      needRf.forEach((el) => {
+        const s = RF_INDEX.styles.find((x) => x.slug === el.dataset.rf);
+        if (s) el.outerHTML = rfCard(s);
+      });
+    }).catch(() => needRf.forEach((el) => { el.outerHTML = ''; }));
+  }
+  app.querySelectorAll('.chat-prompt').forEach((b) => {
+    b.onclick = () => {
+      const t = chat.turns.find((x) => (x.prompts || {})[b.dataset.prompt]);
+      if (t) copy(t.prompts[b.dataset.prompt], 'Agent prompt copied');
+    };
+  });
+  app.querySelectorAll('.chat-turn').forEach((el, ti) => {
+    const t = chat.turns[ti];
+    if (!t || !t.media) return;
+    const items = t.media.map((m) => ({ path: String(m.url).replace(/^\//, ''), name: m.name }));
+    el.querySelectorAll('[data-shot]').forEach((b) => {
+      b.onclick = () => {
+        const sys = DATA.systems.find((s) => s.slug === items[+b.dataset.shot].name.split('/')[0]);
+        openLightbox(items, +b.dataset.shot, sys ? { sys } : {});
+      };
+    });
+  });
+  const last = app.querySelector('.chat-turn:last-child');
+  if (last) last.scrollIntoView({ block: 'end' });
+}
+
+function chatSend() {
+  const text = qInput.value.trim();
+  if (!text || chat.busy) return;
+  if (!chatProvider()) return;
+  chat.active = true; chat.busy = true;
+  chat.turns.push({ role: 'user', text });
+  chat.turns.push({ role: 'assistant', pending: true });
+  qInput.value = ''; state.q = '';
+  renderChat();
+  const wire = chat.turns.filter((t) => !t.pending).map((t) => ({ role: t.role, content: t.text }));
+  // The hero's platform chip reaches the model as a hint on the newest message.
+  if (state.platform !== 'all' && wire.length)
+    wire[wire.length - 1] = { role: 'user', content: `[platform: ${state.platform}] ${wire[wire.length - 1].content}` };
+  fetch('../api/chat', { method: 'POST', headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ messages: wire, provider: dsProvider() || undefined }) })
+    .then((r) => r.json())
+    .then((d) => {
+      const t = chat.turns[chat.turns.length - 1];
+      t.pending = false;
+      t.text = d.reply || d.message || '';
+      t.error = d.error;
+      t.results = d.results || [];
+      t.media = d.media || [];
+      t.prompts = {};
+      (t.results || []).forEach((r) => { if (r.store === 'prompt' && r.prompt) t.prompts[r.slug] = r.prompt; });
+      if (d.error === 'no_provider') t.text = t.text || 'No model is configured yet.';
+    })
+    .catch(() => {
+      const t = chat.turns[chat.turns.length - 1];
+      t.pending = false; t.error = 'No answer from the local server.'; t.text = '';
+      t.results = []; t.media = [];
+    })
+    .finally(() => { chat.busy = false; renderChat(); qInput.focus(); });
+}
+
+// Chat mode is on when Settings holds a provider; the field's placeholder and
+// the setup hint track it.
+function syncChatMode() {
+  const on = !!chatProvider();
+  qInput.placeholder = on ? 'Ask for a style, mood or use…' : 'Search name, use, tag…';
+  document.getElementById('r-go').setAttribute('aria-label', on ? 'Send message' : 'Focus the search field');
+  let hint = document.getElementById('chat-setup');
+  if (on) { if (hint) hint.remove(); return; }
+  if (!hint) {
+    hint = document.createElement('a');
+    hint.id = 'chat-setup'; hint.href = '../settings/#provider';
+    hint.textContent = 'Set up a model to chat';
+    hero.querySelector('.research-bar').insertBefore(hint, document.getElementById('r-go'));
+  }
+}
 
 // ---------------------------------------------------------------- detail
 
@@ -1452,4 +1616,5 @@ document.addEventListener('keydown', (e) => {
 
 // First paint: everything above is declared, and data.json has been downloading
 // since the top of the file. Refero routes never wait on it.
+syncChatMode();
 route();

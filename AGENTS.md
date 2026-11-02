@@ -52,7 +52,13 @@ tools/                  the repo's scripts. Deps: `make setup` installs
                         `make lint-design-md`. Refero pipeline lives in
                         tools/refero/; tools/kit/ is the starter kit for a
                         new package; tools/redact-rules/<slug>.json are
-                        per-package masks
+                        per-package masks; tools/agent/ is the gallery
+                        chat: a read-only tool layer over the two stores
+                        (library.py), the Anthropic/OpenAI-compatible
+                        provider adapters and tool loop (chat.py), the
+                        /api/ routes the local server answers (server.py),
+                        and the same tools over stdio MCP for coding agents
+                        (mcp.py: `python3 tools/agent/mcp.py`)
 scripts/                ops, not library: dev.sh backs `make dev`;
                         deploy_trigger.py + redeploy.sh run on kai-home-server
                         for the self-hosted deployment and media mirror
@@ -69,6 +75,7 @@ Makefile                `make help` lists targets; `make dev` is the way in
 |---|---|
 | Apply a captured style to another project | `python3 tools/catalog.py find <words>`, then `systems/<slug>/README.md` and `tokens.json` (steps below) |
 | Let a person pick a style visually | `make dev`, the gallery tab it opens |
+| Chat with the library to pick a style | `make serve`, then set a model under Settings > Model provider (or ANTHROPIC_API_KEY in .env); the gallery home becomes the chat |
 | Add or refresh a product | [docs/CAPTURE.md](docs/CAPTURE.md), copy `tools/kit/` into `systems/<slug>/tools/` |
 | Change a package's values or README | the package, then `make design-md` (Brief + DESIGN.md regenerate), `make check` |
 | Replace a product's app icon | `systems/<slug>/icon.png` (128 px PNG; `python3 tools/fetch_icon.py <slug>` refetches from the product's site) |

@@ -835,3 +835,27 @@ main[data-rf] { max-width: none; padding: 0; }
 }
 #deploy-bar .deploy-bar__button:hover { color: var(--text); border-color: var(--line-strong); }
 #deploy-bar .deploy-bar__button:disabled { opacity: .55; cursor: default; }
+
+/* ---------- chat: the index as a conversation (tools/agent behind ../api/) */
+.chat-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 18px; }
+.chat-reset { border: 0; background: none; padding: 0; font: inherit; font-size: 13px; color: var(--muted); cursor: pointer; }
+.chat-reset:hover { color: var(--text-strong); }
+.chat-note { font-size: 12px; color: var(--faint); }
+.chat { display: grid; gap: 22px; max-width: 920px; padding-bottom: 24px; }
+.chat-turn.user { justify-self: end; max-width: 70%; background: var(--sunken); border-radius: 16px; padding: 10px 16px; box-shadow: var(--ring); }
+.chat-turn.user p { margin: 0; font-size: 15px; }
+.chat-turn.assistant { min-width: 0; }
+.chat-md.md { background: none; box-shadow: none; padding: 0; max-width: none; font-size: 14.5px; }
+.chat-results { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); margin-top: 14px; align-items: start; }
+.chat-rf { display: contents; }
+.chat-media { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.chat-shot { border: 0; padding: 0; background: none; cursor: pointer; }
+.chat-shot img { height: 120px; width: auto; border-radius: var(--radius-ctl); box-shadow: var(--ring); display: block; }
+.chat-error { color: var(--faint); font-size: 13px; }
+.chat-dots { display: inline-flex; gap: 3px; margin: 0; color: var(--faint); font-size: 20px; line-height: 1; }
+.chat-dots i { animation: chat-dot 1.2s infinite; font-style: normal; }
+.chat-dots i:nth-child(2) { animation-delay: .15s; }
+.chat-dots i:nth-child(3) { animation-delay: .3s; }
+@keyframes chat-dot { 0%, 60%, 100% { opacity: .25; } 30% { opacity: 1; } }
+#chat-setup { margin-left: auto; font-size: 12.5px; color: var(--faint); text-decoration: none; padding: 6px 8px; }
+#chat-setup:hover { color: var(--text); }
