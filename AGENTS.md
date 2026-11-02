@@ -57,8 +57,10 @@ tools/                  the repo's scripts. Deps: `make setup` installs
                         (library.py), the Anthropic/OpenAI-compatible
                         provider adapters and tool loop (chat.py), the
                         /api/ routes the local server answers (server.py),
-                        and the same tools over stdio MCP for coding agents
-                        (mcp.py: `python3 tools/agent/mcp.py`)
+                        the same tools over stdio MCP for coding agents
+                        (mcp.py: `python3 tools/agent/mcp.py`), and a
+                        loopback-only /api/ server for the home-server
+                        deployment to proxy behind nginx (api_server.py)
 scripts/                ops, not library: dev.sh backs `make dev`;
                         deploy_trigger.py + redeploy.sh run on kai-home-server
                         for the self-hosted deployment and media mirror
