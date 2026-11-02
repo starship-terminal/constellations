@@ -150,6 +150,10 @@ SETTINGS_BODY = """<h1>Settings</h1>
     var base = el('pf-base'), key = el('pf-key'), model = el('pf-model'),
         models = el('pf-models'), status = el('pf-status'), form = el('pf'), off = el('pf-off');
     var current = 'anthropic', verified = '';
+    // `active` is the api/auth the test and save actually use. Picking a
+    // template sets it; a saved config restores its own, so a custom base URL
+    // can't silently change the wire format on the next save.
+    var active = { api: 'anthropic', key_header: 'x-api-key' };
     var sig = function () { return JSON.stringify([base.value.trim(), key.value]); };
     var setStatus = function (t, warn) { status.textContent = t || ''; status.dataset.warn = warn ? '1' : ''; };
     // The model field stays locked until the exact base+key pair passes a test.
@@ -162,6 +166,8 @@ SETTINGS_BODY = """<h1>Settings</h1>
     function template(key_) {
       current = key_;
       var t = TEMPLATES[key_];
+      active = { api: t.api, key_header: t.key_header };
+      if (t.models_url) active.models_url = t.models_url;
       base.value = t.base_url;
       form.querySelectorAll('#pf-templates button').forEach(function (b) {
         b.setAttribute('aria-pressed', String(b.dataset.t === key_));
@@ -173,24 +179,33 @@ SETTINGS_BODY = """<h1>Settings</h1>
       b.onclick = function () { template(k); relock(); };
       el('pf-templates').appendChild(b);
     });
+    var fillModels = function (list) {
+      models.innerHTML = '';
+      (list || []).forEach(function (m) {
+        var o = document.createElement('option');
+        o.value = m.id; o.textContent = m.label || m.id;
+        models.appendChild(o);
+      });
+    };
     [base, key].forEach(function (i) {
-      i.addEventListener('input', function () { setStatus(''); models.innerHTML = ''; relock(); });
+      i.addEventListener('input', function () { setStatus(''); fillModels([]); relock(); });
     });
     el('pf-test').onclick = function () {
       if (!base.value.trim() || !key.value) { setStatus('Base URL and API key first.', true); return; }
-      var t = TEMPLATES[current];
-      var body = { api: t.api, base_url: base.value.trim(), api_key: key.value, key_header: t.key_header };
-      if (t.models_url) body.models_url = t.models_url;
+      var body = { api: active.api, base_url: base.value.trim(), api_key: key.value, key_header: active.key_header };
+      if (active.models_url) body.models_url = active.models_url;
+      var submitted = sig();
       setStatus('Testing…');
       el('pf-test').disabled = true;
       fetch(API + 'provider/test', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })
         .then(function (r) { return r.json(); })
         .then(function (d) {
+          // Only the pair actually tested may unlock the model field; a field
+          // edited mid-flight invalidates this reply.
+          if (sig() !== submitted) { setStatus('Fields changed during the test — test again.', true); return; }
           if (d.ok) {
-            verified = sig();
-            models.innerHTML = (d.models || []).map(function (m) {
-              return '<option value="' + m.id.replace(/"/g, '&quot;') + '">' + (m.label || m.id) + '</option>';
-            }).join('');
+            verified = submitted;
+            fillModels(d.models);
             setStatus(d.models && d.models.length ? 'Connected: ' + d.models.length + ' models found.' : 'Connected. ' + (d.note || 'Type the model name.'));
             relock();
             if (d.models && d.models.length && !model.value) model.value = d.models[0].id;
@@ -202,25 +217,27 @@ SETTINGS_BODY = """<h1>Settings</h1>
     el('pf-save').onclick = function () {
       if (!verified || verified !== sig()) { setStatus('Test the connection before saving.', true); return; }
       if (!model.value.trim()) { setStatus('Pick a model first.', true); return; }
-      var t = TEMPLATES[current];
-      var cfg = { name: current, api: t.api, base_url: base.value.trim(), api_key: key.value,
-                  key_header: t.key_header, model: model.value.trim() };
-      if (t.models_url) cfg.models_url = t.models_url;
+      var cfg = { name: current, api: active.api, base_url: base.value.trim(), api_key: key.value,
+                  key_header: active.key_header, model: model.value.trim() };
+      if (active.models_url) cfg.models_url = active.models_url;
       try { localStorage.setItem('ds-provider', JSON.stringify(cfg)); } catch (e) {}
-      setStatus('Saved: ' + t.label + ' · ' + cfg.model);
+      setStatus('Saved: ' + TEMPLATES[current].label + ' · ' + cfg.model);
     };
     el('pf-clear').onclick = function () {
       try { localStorage.removeItem('ds-provider'); } catch (e) {}
       setStatus('Forgot the saved provider.');
     };
-    // Prefill the saved provider and match its template by api + base URL.
+    // Prefill the saved provider; the chip is cosmetic — its saved api/auth
+    // values are what survive, not whichever template its URL happens to match.
     try {
       var saved = JSON.parse(localStorage.getItem('ds-provider') || 'null');
       if (saved) {
         var match = Object.keys(TEMPLATES).find(function (k) {
           return TEMPLATES[k].api === saved.api && TEMPLATES[k].base_url === saved.base_url;
         });
-        template(match || 'custom');
+        template(match || (TEMPLATES[saved.name] ? saved.name : 'custom'));
+        active = { api: saved.api || 'openai', key_header: saved.key_header || 'authorization' };
+        if (saved.models_url) active.models_url = saved.models_url;
         base.value = saved.base_url || base.value; key.value = saved.api_key || '';
         model.value = saved.model || ''; verified = sig(); relock();
         setStatus('Saved: ' + ((TEMPLATES[saved.name] || {}).label || saved.name || 'provider') + ' · ' + saved.model);

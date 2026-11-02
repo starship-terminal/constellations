@@ -153,21 +153,27 @@ def search_styles(query: str, store: str = "all", platform: str | None = None,
             "note": "systems/ values carry evidence labels; prefer them over refero when both fit"}
 
 
-def get_style(slug: str) -> dict:
+def get_style(slug: str, store: str | None = None) -> dict:
     """The catalog entry distilled: what the style is for, what was captured,
-    and which files hold the detail."""
-    try:
-        e = _entry(slug)
-    except ToolError:
+    and which files hold the detail. `store` disambiguates a slug the two
+    stores share; without it systems wins, then refero."""
+    e = None
+    if store in (None, "systems"):
+        try:
+            e = _entry(slug)
+        except ToolError:
+            if store == "systems":
+                raise
+    if e is None:
         db = _refero_db()
         if db is None:
-            raise
+            raise ToolError(f"no systems package '{slug}'")
         row = db.execute(
             "SELECT slug, name, tagline, theme, source_url, page_url, product_type, "
             "design_style, tags FROM styles WHERE slug=?", (slug,)).fetchone()
         db.close()
         if not row:
-            raise
+            raise ToolError(f"no {'refero ' if store == 'refero' else ''}style '{slug}'")
         return {"store": "refero", **dict(row),
                 "note": "interpreted third-party data; browse screenshots and tokens, "
                         "never treat a value as measured"}
@@ -309,9 +315,12 @@ SPECS = [
          "required": ["query"]}},
     {"name": "get_style", "fn": get_style,
      "description": "A style's distilled catalog entry: what it is for, its themes, "
-                    "palette preview and which files hold the detail.",
+                    "palette preview and which files hold the detail. Pass the store "
+                    "a search_styles hit came from so a shared slug keeps its identity.",
      "parameters": {"type": "object", "additionalProperties": False, "properties": {
-         "slug": {"type": "string"}}, "required": ["slug"]}},
+         "slug": {"type": "string"},
+         "store": {"type": "string", "enum": ["systems", "refero"]}},
+         "required": ["slug"]}},
     {"name": "get_tokens", "fn": get_tokens,
      "description": "Resolved token values for a systems package. Call without a "
                     "group to list groups, then with one for its flat map.",
@@ -354,12 +363,23 @@ _BY_NAME = {s["name"]: s for s in SPECS}
 
 
 def call(name: str, args: dict) -> dict:
-    """Run one tool by name, capping the JSON the caller sends on."""
+    """Run one tool by name, capping the JSON the caller sends on. Every failure
+    (missing arguments, bad types, tool errors) surfaces as a ToolError so one
+    bad call can never take down a caller's loop."""
     spec = _BY_NAME.get(name)
     if not spec:
         raise ToolError(f"unknown tool '{name}'")
-    args = {k: v for k, v in (args or {}).items() if k in spec["parameters"]["properties"]}
-    result = spec["fn"](**args)
+    props = spec["parameters"]["properties"]
+    args = {k: v for k, v in (args or {}).items() if k in props}
+    missing = [k for k in spec["parameters"].get("required", []) if k not in args]
+    if missing:
+        raise ToolError(f"{name} needs {', '.join(missing)}")
+    try:
+        result = spec["fn"](**args)
+    except ToolError:
+        raise
+    except Exception as e:
+        raise ToolError(f"{name} failed: {e}")
     if "_image" in result:
         return result
     text = json.dumps(result, ensure_ascii=False)

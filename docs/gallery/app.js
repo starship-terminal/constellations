@@ -273,13 +273,16 @@ fetch('../api/status').then((r) => r.ok ? r.json() : null)
   .then((d) => { envProvider = !!(d && d.envProvider); syncChatMode(); })
   .catch(() => {});
 
-const chat = { active: false, busy: false, turns: [] };
+// `epoch` tags the conversation a send belongs to: bumping it (a reset) makes
+// any reply still in flight a no-op, so an old answer can never land in a new
+// conversation or clear a newer send's busy flag.
+const chat = { active: false, busy: false, turns: [], epoch: 0 };
 
 // Media paths arrive server-absolute ("/systems/…"); url() wants them relative.
 const chatUrl = (u) => url(String(u).replace(/^\//, ''));
 
 function chatReset() {
-  chat.active = false; chat.busy = false; chat.turns = [];
+  chat.active = false; chat.busy = false; chat.turns = []; chat.epoch++;
   state.q = ''; qInput.value = '';
   renderIndex();
 }
@@ -333,15 +336,17 @@ function renderChat() {
       });
     }).catch(() => needRf.forEach((el) => { el.outerHTML = ''; }));
   }
-  app.querySelectorAll('.chat-prompt').forEach((b) => {
-    b.onclick = () => {
-      const t = chat.turns.find((x) => (x.prompts || {})[b.dataset.prompt]);
-      if (t) copy(t.prompts[b.dataset.prompt], 'Agent prompt copied');
-    };
-  });
   app.querySelectorAll('.chat-turn').forEach((el, ti) => {
     const t = chat.turns[ti];
-    if (!t || !t.media) return;
+    if (!t) return;
+    // Each copy button binds its own turn's prompts, so a later handoff for the
+    // same slug never reaches back to an earlier one.
+    el.querySelectorAll('.chat-prompt').forEach((b) => {
+      b.onclick = () => {
+        if ((t.prompts || {})[b.dataset.prompt]) copy(t.prompts[b.dataset.prompt], 'Agent prompt copied');
+      };
+    });
+    if (!t.media) return;
     const items = t.media.map((m) => ({ path: String(m.url).replace(/^\//, ''), name: m.name }));
     el.querySelectorAll('[data-shot]').forEach((b) => {
       b.onclick = () => {
@@ -354,13 +359,22 @@ function renderChat() {
   if (last) last.scrollIntoView({ block: 'end' });
 }
 
+// True while the current hash still points at the index/chat, matching
+// route()'s fall-through; a late reply stores but never repaints another page.
+const onChatRoute = () => {
+  const p = location.hash.replace(/^#\/?/, '').split('/').map(decodeURIComponent);
+  return p[0] !== 'refero' && !DATA.systems.some((s) => s.slug === p[0]);
+};
+
 function chatSend() {
   const text = qInput.value.trim();
   if (!text || chat.busy) return;
   if (!chatProvider()) return;
   chat.active = true; chat.busy = true;
   chat.turns.push({ role: 'user', text });
-  chat.turns.push({ role: 'assistant', pending: true });
+  const pending = { role: 'assistant', pending: true };
+  chat.turns.push(pending);
+  const epoch = chat.epoch;
   qInput.value = ''; state.q = '';
   renderChat();
   const wire = chat.turns.filter((t) => !t.pending).map((t) => ({ role: t.role, content: t.text }));
@@ -371,22 +385,26 @@ function chatSend() {
     body: JSON.stringify({ messages: wire, provider: dsProvider() || undefined }) })
     .then((r) => r.json())
     .then((d) => {
-      const t = chat.turns[chat.turns.length - 1];
-      t.pending = false;
-      t.text = d.reply || d.message || '';
-      t.error = d.error;
-      t.results = d.results || [];
-      t.media = d.media || [];
-      t.prompts = {};
-      (t.results || []).forEach((r) => { if (r.store === 'prompt' && r.prompt) t.prompts[r.slug] = r.prompt; });
-      if (d.error === 'no_provider') t.text = t.text || 'No model is configured yet.';
+      if (epoch !== chat.epoch || !chat.turns.includes(pending)) return;
+      pending.pending = false;
+      pending.text = d.reply || d.message || '';
+      pending.error = d.error;
+      pending.results = d.results || [];
+      pending.media = d.media || [];
+      pending.prompts = {};
+      pending.results.forEach((r) => { if (r.store === 'prompt' && r.prompt) pending.prompts[r.slug] = r.prompt; });
+      if (d.error === 'no_provider') pending.text = pending.text || 'No model is configured yet.';
     })
     .catch(() => {
-      const t = chat.turns[chat.turns.length - 1];
-      t.pending = false; t.error = 'No answer from the local server.'; t.text = '';
-      t.results = []; t.media = [];
+      if (epoch !== chat.epoch || !chat.turns.includes(pending)) return;
+      pending.pending = false; pending.error = 'No answer from the local server.'; pending.text = '';
+      pending.results = []; pending.media = [];
     })
-    .finally(() => { chat.busy = false; renderChat(); qInput.focus(); });
+    .finally(() => {
+      if (epoch !== chat.epoch) return;
+      chat.busy = false;
+      if (onChatRoute()) { renderChat(); qInput.focus(); }
+    });
 }
 
 // Chat mode is on when Settings holds a provider; the field's placeholder and

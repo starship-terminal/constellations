@@ -34,6 +34,31 @@ class SearchTest(unittest.TestCase):
         with self.assertRaises(library.ToolError):
             library.call("drop_tables", {})
 
+    def test_missing_required_args_raise(self):
+        # A bare call must fail as a ToolError, never as an uncaught TypeError
+        # that could end an MCP session.
+        with self.assertRaises(library.ToolError):
+            library.call("get_style", {})
+        with self.assertRaises(library.ToolError):
+            library.call("read_doc", {})
+
+    def test_get_style_store_disambiguates(self):
+        sys_row = library.get_style("linear", "systems")
+        self.assertEqual(sys_row.get("slug"), "linear")
+        ref = library.get_style("linear", "refero")
+        self.assertEqual(ref.get("slug"), "linear")
+        self.assertNotEqual(ref, sys_row)
+
+    def test_collect_ignores_error_results(self):
+        # A failed tool call must not abort the turn: nothing is collected from
+        # an error payload, while a good one still lands.
+        results, media = {}, {}
+        chat._collect("get_style", {"slug": "nope"}, {"error": "no such style"}, results, media)
+        self.assertFalse(results)
+        self.assertFalse(media)
+        chat._collect("get_style", {"slug": "x"}, {"slug": "x", "name": "X"}, results, media)
+        self.assertEqual(results["systems:x"]["slug"], "x")
+
 
 class PackageFileTest(unittest.TestCase):
     SLUG = "linear" if (Path(__file__).resolve().parents[1] / "systems" / "linear").is_dir() else None
@@ -94,6 +119,19 @@ class ProviderTest(unittest.TestCase):
         env = chat.provider_config(None)
         self.assertEqual(env is not None, bool(os.environ.get("ANTHROPIC_API_KEY")))
 
+    def test_list_models_only_passes_missing_route(self):
+        cfg = {"api": "openai", "api_key": "k", "base_url": "https://x.test/v1"}
+        orig = chat._request
+        try:
+            for err, ok in (("HTTP 404", True), ("HTTP 405", True),
+                            ("HTTP 401", False), ("HTTP 500", False), ("unreachable", False)):
+                chat._request = lambda *a, _e=err, **k: (_ for _ in ()).throw(chat.ProviderError(_e))
+                self.assertEqual(chat.list_models(cfg)["ok"], ok, err)
+            chat._request = lambda *a, **k: {"data": [{"id": "m1"}]}
+            self.assertEqual(chat.list_models(cfg)["models"][0]["id"], "m1")
+        finally:
+            chat._request = orig
+
     def test_headers(self):
         cfg = {"api": "anthropic", "api_key": "k"}
         self.assertEqual(chat._headers(cfg)["x-api-key"], "k")
@@ -124,10 +162,14 @@ class WireShapeTest(unittest.TestCase):
     def test_openai_roles(self):
         msgs = chat._openai_messages(self.TURNS)
         roles = [m["role"] for m in msgs]
-        self.assertEqual(roles, ["system", "user", "assistant", "tool", "tool"])
+        # OpenAI tool messages take text only; an image result closes the tool
+        # run and follows as its own user message.
+        self.assertEqual(roles, ["system", "user", "assistant", "tool", "tool", "user"])
         tool = msgs[4]
         self.assertEqual(tool["tool_call_id"], "c2")
-        self.assertEqual(tool["content"][1]["type"], "image_url")
+        self.assertIn("x/y", tool["content"])
+        image = [p for p in msgs[5]["content"] if p["type"] == "image_url"]
+        self.assertTrue(image)
 
 
 class McpTest(unittest.TestCase):

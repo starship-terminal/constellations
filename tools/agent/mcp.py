@@ -46,8 +46,10 @@ def _tool_specs() -> list[dict]:
 def _call(name: str, args: dict) -> dict:
     try:
         result = library.call(name, args or {})
-    except library.ToolError as e:
-        return {"content": [{"type": "text", "text": str(e)}], "isError": True}
+    except Exception as e:
+        # One malformed call must never end the session: report it as a tool
+        # error and keep the input loop alive.
+        return {"content": [{"type": "text", "text": str(e)[:400]}], "isError": True}
     if "_image" in result:
         img = result["_image"]
         return {"content": [{"type": "text", "text": json.dumps({"url": img["url"], "name": img["name"]})},

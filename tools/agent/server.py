@@ -18,6 +18,7 @@ from __future__ import annotations
 import importlib.util
 import json
 from pathlib import Path
+from urllib.parse import urlparse
 
 
 def _load(name: str):
@@ -52,11 +53,29 @@ def _body(handler, cap: int = 128_000) -> dict | None:
         return None
 
 
+def _origin_ok(handler) -> bool:
+    """Only this server's own pages may call the API. A browser POST to a
+    loopback host is a 'simple' request — CORS never blocks it — so any site
+    could otherwise spend the fallback key or use this server to reach
+    internal URLs through the provider endpoints. An Origin or Referer that
+    does not match our Host header means the request came from another page.
+    Headerless clients (curl, MCP hosts) are not browsers and pass."""
+    host = (handler.headers.get("host") or "").lower()
+    for name in ("origin", "referer"):
+        value = handler.headers.get(name)
+        if value and urlparse(value).netloc.lower() != host:
+            return False
+    return True
+
+
 def handle_get(handler) -> bool:
     """True when the path was an /api/ route this answered."""
     path = handler.path.split("?", 1)[0]
     if not path.startswith("/api/"):
         return False
+    if not _origin_ok(handler):
+        _reply(handler, 403, {"error": "cross-origin request"})
+        return True
     if path == "/api/status":
         chat = _load("chat")
         cfg = chat.provider_config(None)
@@ -70,6 +89,9 @@ def handle_post(handler) -> bool:
     path = handler.path.split("?", 1)[0]
     if not path.startswith("/api/"):
         return False
+    if not _origin_ok(handler):
+        _reply(handler, 403, {"error": "cross-origin request"})
+        return True
     chat = _load("chat")
     if path == "/api/provider/test":
         body = _body(handler)

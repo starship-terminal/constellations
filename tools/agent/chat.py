@@ -131,12 +131,12 @@ def list_models(cfg: dict) -> dict:
     try:
         resp = _request("GET", url, cfg, None, MODELS_TIMEOUT, cfg.get("key_header"))
     except ProviderError as e:
-        # 401/403 means the key failed; anything else (404, 405) is a provider
-        # without a list route, which must not block an otherwise valid setup.
-        if "HTTP 401" in str(e) or "HTTP 403" in str(e):
-            return {"ok": False, "error": str(e)}
-        return {"ok": True, "models": [],
-                "note": "no model list at this endpoint; type the model name"}
+        # Only a 404 or 405 means "the provider is real but lists no models";
+        # auth failures, unreachable hosts and server errors all fail the test.
+        if "HTTP 404" in str(e) or "HTTP 405" in str(e):
+            return {"ok": True, "models": [],
+                    "note": "no model list at this endpoint; type the model name"}
+        return {"ok": False, "error": str(e)}
     return {"ok": True, "models": _parse_models(resp)}
 
 
@@ -192,7 +192,8 @@ def _anthropic_messages(turns: list[dict]) -> list[dict]:
 
 def _openai_messages(turns: list[dict]) -> list[dict]:
     out = [{"role": "system", "content": SYSTEM}]
-    for t in turns:
+    pending_images = []
+    for i, t in enumerate(turns):
         if t["role"] == "user":
             out.append({"role": "user", "content": t["text"]})
         elif t["role"] == "assistant":
@@ -204,10 +205,19 @@ def _openai_messages(turns: list[dict]) -> list[dict]:
             out.append(msg)
         else:
             if "_image" in t["result"]:
-                content = _image_openai(t["result"]["_image"])
+                img = t["result"]["_image"]
+                # OpenAI tool messages take text parts only; the image rides in a
+                # user message right after the run of tool replies it belongs to.
+                content = json.dumps({"url": img["url"], "name": img["name"],
+                                      "note": "image follows as a user message"})
+                pending_images.append(img)
             else:
                 content = json.dumps(t["result"], ensure_ascii=False)
             out.append({"role": "tool", "tool_call_id": t["id"], "content": content})
+            if pending_images and (i + 1 >= len(turns) or turns[i + 1]["role"] != "tool"):
+                out.append({"role": "user",
+                            "content": sum((_image_openai(x) for x in pending_images), [])})
+                pending_images = []
     return out
 
 
@@ -277,8 +287,9 @@ def run(messages: list[dict], provider: dict) -> dict:
 
 
 def _collect(name: str, args: dict, result: dict, results: dict, media: dict) -> None:
-    """Pull page-renderable artifacts out of a tool result."""
-    if not isinstance(result, dict):
+    """Pull page-renderable artifacts out of a tool result. Error payloads are
+    skipped so a failed call never turns the whole turn into a 500."""
+    if not isinstance(result, dict) or "error" in result:
         return
     if name == "search_styles":
         for h in result.get("hits", []):
