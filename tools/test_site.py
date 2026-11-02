@@ -36,13 +36,39 @@ class PublishTest(unittest.TestCase):
         for keep in ("scorecard/", "DESIGN-SYSTEM/"):
             self.assertIn(keep, published)
 
-    def test_publish_strips_only_the_card_linking_to_the_gallery(self):
-        md = (sitegen.DOCS / "index.md").read_text()
-        stripped = sitegen.GALLERY_CARD.sub("", md)
-        self.assertIn("gallery/index.html", md)
-        self.assertNotIn("gallery/", stripped)
-        for keep in ("[Scorecard]", "[What a design system contains]", "[Capturing a product]"):
-            self.assertIn(keep, stripped)
+    def test_home_renders_the_dashboard(self):
+        body = sitegen.dashboard()
+        self.assertIn('class="dash', body)
+        self.assertIn("refero styles", body)
+        # Every audited package shows up in either the recent or attention list
+        # source data; the roll-up bar tallies three grades.
+        for cls in ("dash-meets", "dash-partly", "dash-missing"):
+            self.assertIn(cls, body)
+
+    def test_dashboard_math_with_fixed_data(self):
+        catalog = {"systems": [
+            {"name": "New", "slug": "new", "category": "a", "captured": "2026-02-01", "themes": ["dark"]},
+            {"name": "Old", "slug": "old", "category": "b", "captured": "2025-01-01", "themes": ["light"]},
+            {"name": "Mid", "slug": "mid", "category": "a", "captured": "2025-06-01", "themes": ["light", "dark"]}],
+            "categories": {"a": "Alpha", "b": "Beta"}}
+        audit = {"date": "2026-03-01", "rubric": 4, "systems": [
+            {"slug": "new", "name": "New", "grades": {
+                "F1": {"grade": "missing"}, "F2": {"grade": "meets"}, "F3": {"grade": "meets"}}},
+            {"slug": "mid", "name": "Mid", "grades": {
+                "F1": {"grade": "partly"}, "F2": {"grade": "meets"}}}]}
+        body = sitegen.dashboard(catalog, audit, 7)
+        self.assertIn("<b>3</b><span>systems", body)
+        self.assertIn("<b>7</b><span>refero styles", body)
+        self.assertIn("<b>2</b><span>categories", body)
+        self.assertIn("<b>2</b><span>with a dark theme", body)
+        # 3 met + 1 partial + 1 missing over five grades is 60%.
+        self.assertIn("60% of graded criteria met", body)
+        self.assertIn("3 met, 1 partial, 1 missing", body)
+        # Newest captures run newest first; attention runs most-missing first.
+        recent = body.split("Newest captures")[1]
+        self.assertTrue(recent.index("New") < recent.index("Mid") < recent.index("Old"))
+        attention = body.split("Needs attention")[1]
+        self.assertTrue(attention.index("New") < attention.index("Mid"))
 
 
 class AppIconTest(unittest.TestCase):
