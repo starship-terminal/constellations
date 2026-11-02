@@ -1,0 +1,311 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. A leaf with \"var\" takes its value from that variable in css-vars.json, resolved on the host in \"owner\" (refero = refero.design, styles = styles.refero.design); a leaf with \"value\" carries a measured value and names the measurement in \"source\" (an entry of raw/measurements.md, components-computed.json or layout.json). Both hosts share one palette: the --gray-solid/-alpha/-glass scales, --fill-*, --stroke-*, --text-* and --status-* names mean the same thing on refero.design's `body` and styles.refero.design's `:root`, and the dark blocks (refero's body#dark-theme + body:not(#light-theme), styles' :root under prefers-color-scheme: dark) hold the same scale inverted. Where a name is declared twice the leaf notes which host supplied the value.",
+
+ "core": {
+  "palette": {
+   "gray": {
+    "solid": {
+     "0":   {"var": "--gray-solid-0", "owner": "refero", "type": "color", "description": "Page ground (#fff)"},
+     "100": {"var": "--gray-solid-100", "owner": "refero", "type": "color", "description": "Quiet fill: the research box, hover rows (#f7f8fb)"},
+     "200": {"var": "--gray-solid-200", "owner": "refero", "type": "color"},
+     "300": {"var": "--gray-solid-300", "owner": "refero", "type": "color"},
+     "400": {"var": "--gray-solid-400", "owner": "refero", "type": "color"},
+     "500": {"var": "--gray-solid-500", "owner": "refero", "type": "color"},
+     "600": {"var": "--gray-solid-600", "owner": "refero", "type": "color"},
+     "700": {"var": "--gray-solid-700", "owner": "refero", "type": "color"},
+     "800": {"var": "--gray-solid-800", "owner": "refero", "type": "color"},
+     "900": {"var": "--gray-solid-900", "owner": "refero", "type": "color", "description": "Ink: every heading and body line, the dark button fill (#13151b)"},
+     "$description": "Refero's neutral ramp, white to near-black. The same scale exists on styles.refero.design's :root (its dark theme inverts it: 0=#101216, 900=#fff)."
+    },
+    "alpha": {
+     "0":   {"var": "--gray-alpha-0", "owner": "refero", "type": "color"},
+     "100": {"var": "--gray-alpha-100", "owner": "refero", "type": "color", "description": "Faintest wash over white"},
+     "200": {"var": "--gray-alpha-200", "owner": "refero", "type": "color", "description": "Hairline borders (#0c297e @ .071)"},
+     "300": {"var": "--gray-alpha-300", "owner": "refero", "type": "color"},
+     "400": {"var": "--gray-alpha-400", "owner": "refero", "type": "color", "description": "Chip/input borders (#011158 @ .24)"},
+     "500": {"var": "--gray-alpha-500", "owner": "refero", "type": "color"},
+     "600": {"var": "--gray-alpha-600", "owner": "refero", "type": "color", "description": "Secondary text (#030e31 @ .54)"},
+     "700": {"var": "--gray-alpha-700", "owner": "refero", "type": "color"},
+     "800": {"var": "--gray-alpha-800", "owner": "refero", "type": "color"},
+     "900": {"var": "--gray-alpha-900", "owner": "refero", "type": "color"},
+     "$description": "Translucent navy-blacks for text, borders and glass over the solid ground. styles.refero.design's dark :root declares the same names with light-tinted values."
+    },
+    "glass": {
+     "0":   {"var": "--gray-glass-0", "owner": "refero", "type": "color"},
+     "100": {"var": "--gray-glass-100", "owner": "refero", "type": "color"},
+     "200": {"var": "--gray-glass-200", "owner": "refero", "type": "color"},
+     "300": {"var": "--gray-glass-300", "owner": "refero", "type": "color"},
+     "800": {"var": "--gray-glass-800", "owner": "refero", "type": "color"},
+     "$description": "75%-opaque greys for blurred overlays and sticky bars."
+    }
+   },
+   "accent": {
+    "green":  {"var": "--accent-solid-green", "owner": "refero", "type": "color", "description": "Success / confirm (#10b981)"},
+    "red":    {"var": "--accent-solid-red", "owner": "refero", "type": "color", "description": "Error / destructive (#f43f5e)"},
+    "yellow": {"var": "--accent-solid-yellow", "owner": "refero", "type": "color", "description": "Warning (#f59e0b)"},
+    "green-alpha":  {"var": "--accent-alpha-green", "owner": "refero", "type": "color"},
+    "red-alpha":    {"var": "--accent-alpha-red", "owner": "refero", "type": "color"},
+    "yellow-alpha": {"var": "--accent-alpha-yellow", "owner": "refero", "type": "color"},
+    "$description": "The three status accents Refero ships; the styles host binds the same names to --status-*."
+   },
+   "status": {
+    "success": {"var": "--status-success", "owner": "styles", "type": "color"},
+    "error":   {"var": "--status-error", "owner": "styles", "type": "color", "description": "styles host declares --status-error light = #e40014 as --destructive"},
+    "warning": {"var": "--status-warning", "owner": "styles", "type": "color"}
+   },
+   "code": {
+    "muted-1": {"var": "--color-code-muted-1", "owner": "refero", "type": "color"},
+    "muted-2": {"var": "--color-code-muted-2", "owner": "refero", "type": "color"},
+    "muted-3": {"var": "--color-code-muted-3", "owner": "refero", "type": "color"},
+    "muted-4": {"var": "--color-code-muted-4", "owner": "refero", "type": "color"},
+    "muted-5": {"var": "--color-code-muted-5", "owner": "refero", "type": "color"},
+    "muted-10": {"var": "--color-code-muted-10", "owner": "refero", "type": "color"},
+    "muted-15": {"var": "--color-code-muted-15", "owner": "refero", "type": "color"},
+    "muted-17": {"var": "--color-code-muted-17", "owner": "refero", "type": "color", "description": "The blue keywords read as"},
+    "muted-20": {"var": "--color-code-muted-20", "owner": "refero", "type": "color"},
+    "vivid-1": {"var": "--color-code-vivid-1", "owner": "refero", "type": "color"},
+    "vivid-3": {"var": "--color-code-vivid-3", "owner": "refero", "type": "color"},
+    "vivid-5": {"var": "--color-code-vivid-5", "owner": "refero", "type": "color"},
+    "vivid-12": {"var": "--color-code-vivid-12", "owner": "refero", "type": "color"},
+    "vivid-17": {"var": "--color-code-vivid-17", "owner": "refero", "type": "color"},
+    "vivid-18": {"var": "--color-code-vivid-18", "owner": "refero", "type": "color", "description": "Vivid blue, the clearest token colour"},
+    "vivid-21": {"var": "--color-code-vivid-21", "owner": "refero", "type": "color"},
+    "$description": "A 24-hue syntax ramp in two saturations. --color-code-muted-* are pastel on light / dark-mixed on dark, --color-code-vivid-* the saturated alternates; only the steps seen painted are listed (raw/css-vars.json holds all 48 per theme)."
+   },
+   "brand": {
+    "paywall-dark": {"var": "--color-paywall-dark", "owner": "refero", "type": "color", "description": "The paywall/upsell panels' dark ground (#1d1f27)"},
+    "dark-shade-1": {"var": "--color-dark-shades-1", "owner": "refero", "type": "color"},
+    "dark-shade-2": {"var": "--color-dark-shades-2", "owner": "refero", "type": "color"},
+    "dark-shade-4": {"var": "--color-dark-shades-4", "owner": "refero", "type": "color"},
+    "$description": "Constant dark shades used inside paywall and contrast blocks on the light page."
+   }
+  },
+
+  "fontFamily": {
+   "sans": {"value": "Base-Variable, -apple-system, \"system-ui\", Helvetica, Arial, sans-serif", "type": "fontFamily",
+            "source": "measured raw/measurements.md#research-box and every refero.design component",
+            "description": "refero.design's UI face: the Base variable font, 200-800 weight axis"},
+   "display": {"value": "Title, -apple-system, \"system-ui\", Helvetica, Arial, sans-serif", "type": "fontFamily",
+               "source": "measured raw/measurements.md#hero-title, #pricing-title, #mcp-title",
+               "description": "refero.design's serif display face for page titles and the home headline"},
+   "sans-styles": {"var": "--font-neue-montreal", "owner": "styles", "type": "fontFamily",
+                   "description": "styles.refero.design's UI face (PP Neue Montreal), bound to --default-font-family"},
+   "display-styles": {"var": "--font-kalice", "owner": "styles", "type": "fontFamily",
+                      "description": "styles.refero.design's serif display face for the hero and entity titles"},
+   "mono": {"var": "--font-jetbrains-mono", "owner": "styles", "type": "fontFamily",
+            "description": "Code/documentation face on styles.refero.design (--default-mono-font-family)"}
+  },
+  "fontWeight": {
+   "normal":   {"var": "--font-weight-normal", "owner": "styles", "type": "fontWeight"},
+   "medium":   {"var": "--font-weight-medium", "owner": "styles", "type": "fontWeight"},
+   "semibold": {"var": "--font-weight-semibold", "owner": "styles", "type": "fontWeight"},
+   "ui": {"value": 530, "type": "fontWeight", "source": "measured raw/measurements.md#styles-header, #styles-card",
+          "description": "The UI weight styles.refero.design draws everywhere: 530 on the neueMontreal variable axis"}
+  },
+  "fontSize": {
+   "xs":      {"value": "12.8px", "type": "dimension", "source": "measured raw/measurements.md#entity-copy"},
+   "chip":    {"value": "13px", "type": "dimension", "source": "measured raw/measurements.md#styles-chip, #entity-tab"},
+   "sm":      {"value": "14px", "type": "dimension", "source": "measured raw/measurements.md#research-chip"},
+   "body":    {"value": "16px", "type": "dimension", "source": "measured raw/measurements.md#research-box and most components"},
+   "h2":      {"value": "32px", "type": "dimension", "source": "measured raw/measurements.md#section-title"},
+   "display": {"value": "50px", "type": "dimension", "source": "measured raw/measurements.md#hero-title, #pricing-title, #mcp-title"},
+   "entity-title": {"value": "48px", "type": "dimension", "source": "measured raw/measurements.md#entity-title"},
+   "hero-styles":  {"value": "64px", "type": "dimension", "source": "measured raw/measurements.md#styles-hero-title"},
+   "$description": "Every size is measured on a rendered element; neither host exposes a declared size scale."
+  },
+  "lineHeight": {
+   "chip":    {"value": "24px", "type": "dimension", "source": "measured raw/measurements.md#styles-chip, #entity-tab"},
+   "sm":      {"value": "20px", "type": "dimension", "source": "measured raw/measurements.md#research-chip"},
+   "body":    {"value": "24px", "type": "dimension", "source": "measured raw/measurements.md#research-box"},
+   "h2":      {"value": "40px", "type": "dimension", "source": "measured raw/measurements.md#section-title"},
+   "display": {"value": "60px", "type": "dimension", "source": "measured raw/measurements.md#hero-title"},
+   "entity-title": {"value": "48px", "type": "dimension", "source": "measured raw/measurements.md#entity-title"},
+   "hero-styles":  {"value": "69.12px", "type": "dimension", "source": "measured raw/measurements.md#styles-hero-title"}
+  },
+  "letterSpacing": {
+   "body":   {"value": "-0.32px", "type": "dimension", "source": "measured raw/measurements.md#research-box", "description": "Refero's default -0.02em tracking"},
+   "chip":   {"value": "-0.28px", "type": "dimension", "source": "measured raw/measurements.md#research-chip"},
+   "chip-styles": {"value": "0.26px", "type": "dimension", "source": "measured raw/measurements.md#entity-tab", "description": "The styles host tracks its 13px labels out"},
+   "h2":     {"value": "-0.88px", "type": "dimension", "source": "measured raw/measurements.md#section-title"},
+   "display": {"value": "-1px", "type": "dimension", "source": "measured raw/measurements.md#hero-title"},
+   "entity-title": {"value": "-1.68px", "type": "dimension", "source": "measured raw/measurements.md#entity-title"}
+  },
+  "typography": {
+   "body":        {"$value": {"fontFamily": "{fontFamily.sans}", "fontSize": "{fontSize.body}", "lineHeight": "{lineHeight.body}", "fontWeight": "{fontWeight.medium}", "letterSpacing": "{letterSpacing.body}"}, "$type": "typography", "$extensions": {"source": "measured raw/measurements.md#research-box"}},
+   "chip":        {"$value": {"fontFamily": "{fontFamily.sans}", "fontSize": "{fontSize.sm}", "lineHeight": "{lineHeight.sm}", "fontWeight": "{fontWeight.medium}", "letterSpacing": "{letterSpacing.chip}"}, "$type": "typography", "$extensions": {"source": "measured raw/measurements.md#research-chip"}},
+   "chip-styles": {"$value": {"fontFamily": "{fontFamily.sans-styles}", "fontSize": "{fontSize.chip}", "lineHeight": "{lineHeight.chip}", "fontWeight": "{fontWeight.medium}", "letterSpacing": "{letterSpacing.chip-styles}"}, "$type": "typography", "$extensions": {"source": "measured raw/measurements.md#styles-chip"}},
+   "display":     {"$value": {"fontFamily": "{fontFamily.display}", "fontSize": "{fontSize.display}", "lineHeight": "{lineHeight.display}", "fontWeight": "{fontWeight.normal}", "letterSpacing": "{letterSpacing.display}"}, "$type": "typography", "$extensions": {"source": "measured raw/measurements.md#hero-title"}},
+   "h2":          {"$value": {"fontFamily": "{fontFamily.sans}", "fontSize": "{fontSize.h2}", "lineHeight": "{lineHeight.h2}", "fontWeight": "{fontWeight.medium}", "letterSpacing": "{letterSpacing.h2}"}, "$type": "typography", "$extensions": {"source": "measured raw/measurements.md#section-title"}},
+   "entity-title": {"$value": {"fontFamily": "{fontFamily.display-styles}", "fontSize": "{fontSize.entity-title}", "lineHeight": "{lineHeight.entity-title}", "fontWeight": "{fontWeight.ui}", "letterSpacing": "{letterSpacing.entity-title}"}, "$type": "typography", "$extensions": {"source": "measured raw/measurements.md#entity-title"}},
+   "hero-styles": {"$value": {"fontFamily": "{fontFamily.display-styles}", "fontSize": "{fontSize.hero-styles}", "lineHeight": "{lineHeight.hero-styles}", "fontWeight": "{fontWeight.normal}", "letterSpacing": "{letterSpacing.body}"}, "$type": "typography", "$extensions": {"source": "measured raw/measurements.md#styles-hero-title"}}
+  },
+  "spacing": {
+   "base": {"var": "--spacing", "owner": "styles", "type": "dimension", "description": "styles host's 4px grid unit; refero.design's paddings land on the same 4px steps (measured: 8, 12, 14, 16, 18, 30)"}
+  },
+  "radius": {
+   "base":  {"var": "--radius", "owner": "styles", "type": "dimension", "description": "8px, the styles host's unit; --radius-md=6px, --radius-xl=12px, --radius-xs=2px derive"},
+   "md":    {"var": "--radius-md", "owner": "styles", "type": "dimension"},
+   "xl-var": {"var": "--radius-xl", "owner": "styles", "type": "dimension"},
+   "xs":    {"value": "6px", "type": "dimension", "source": "measured raw/measurements.md#entity-copy"},
+   "sm":    {"value": "8px", "type": "dimension", "source": "measured raw/measurements.md#styles-card-favicon, #mcp-card-close"},
+   "md-m":  {"value": "12px", "type": "dimension", "source": "measured raw/measurements.md#styles-chip, #entity-favicon"},
+   "lg":    {"value": "16px", "type": "dimension", "source": "measured raw/measurements.md#plan-card, #mcp-card, #entity-similar"},
+   "xl":    {"value": "18px", "type": "dimension", "source": "measured raw/measurements.md#research-chip"},
+   "2xl":   {"value": "24px", "type": "dimension", "source": "measured raw/measurements.md#research-box, #coach-box, #m-research-box"},
+   "3xl":   {"value": "28px", "type": "dimension", "source": "measured raw/measurements.md#plan-cta"},
+   "4xl":   {"value": "32px", "type": "dimension", "source": "measured raw/measurements.md#styles-card, #m-styles-card", "description": "The signature styles-gallery tile radius"}
+  },
+  "shadow": {
+   "inset-ring": {"$value": [{"color": "#0c297e", "offsetX": "0px", "offsetY": "0px", "blur": "0px", "spread": "1px", "inset": true, "alpha": 0.07}], "$type": "shadow",
+                  "$extensions": {"source": "measured raw/measurements.md#research-box: rgba(12,41,126,.07) 0 0 0 1px inset"},
+                  "$description": "The soft 1px inset hairline that draws the research box (and the mobile one)"},
+   "card-pop": {"$value": [{"color": "#07191f", "offsetX": "0px", "offsetY": "20px", "blur": "40px", "spread": "0px", "inset": false, "alpha": 0.1},
+                           {"color": "#07191f", "offsetX": "0px", "offsetY": "10px", "blur": "30px", "spread": "0px", "inset": false, "alpha": 0.1}], "$type": "shadow",
+                "$extensions": {"source": "measured raw/measurements.md#mcp-card"},
+                "$description": "The floating MCP promo card's two-layer drop shadow"},
+   "chip": {"$value": [{"color": "#0c297e", "offsetX": "0px", "offsetY": "1px", "blur": "3px", "spread": "0px", "inset": false, "alpha": 0.09},
+                       {"color": "#0c297e", "offsetX": "0px", "offsetY": "0px", "blur": "1px", "spread": "0.4px", "inset": false, "alpha": 0.03}], "$type": "shadow",
+            "$extensions": {"source": "measured raw/measurements.md#research-box painted layers (the white chip pills)"}}
+  },
+  "duration": {
+   "instant": {"var": "--duration-instant", "owner": "styles", "type": "duration"},
+   "fast":    {"var": "--duration-fast", "owner": "styles", "type": "duration", "description": "styles host micro-interactions (chips, tabs, copy)"},
+   "normal":  {"var": "--duration-normal", "owner": "styles", "type": "duration", "description": "The shared UI transition length; refero.design paints the same 0.2s everywhere (measured research-chip, plan-cta)"},
+   "fade":    {"value": "500ms", "type": "duration", "source": "measured raw/measurements.md#entity-frame", "description": "The entity page's video-over-poster opacity fade"},
+   "coach":   {"value": "400ms", "type": "duration", "source": "measured raw/measurements.md#coach-box"}
+  },
+  "easing": {
+   "out":     {"var": "--ease-out", "owner": "styles", "type": "cubicBezier"},
+   "in-out":  {"var": "--ease-in-out", "owner": "styles", "type": "cubicBezier"}
+  },
+  "layout": {
+   "sidebar-width": {"var": "--sidebar-width", "owner": "refero", "type": "dimension", "description": "refero.design's fixed left rail (270px at 1440; collapses under ~1024px)"},
+   "min-col-width": {"var": "--min-col-width", "owner": "refero", "type": "dimension", "description": "The card grids' minimum column (auto-fill, min 420px)"},
+   "content-width": {"value": "1170px", "type": "dimension", "source": "measured raw/measurements.md#search-box, #discount-card", "description": "The main column inside the 1440 shell"},
+   "page-width":    {"value": "1440px", "type": "dimension", "source": "measured raw/measurements.md#styles-header"},
+   "entity-media":  {"value": "630px", "type": "dimension", "source": "measured raw/measurements.md#entity-frame", "description": "The styles entity page's media column"},
+   "focus-ring":    {"value": "3px", "type": "dimension", "source": "measured raw/measurements.md: outlineWidth on every measured control", "description": "The focus outline width reserved on all controls"}
+  }
+ },
+
+ "light": {
+  "background": {
+   "page":     {"var": "--color-background", "owner": "refero", "type": "color", "description": "Page ground (#fff); styles host: --background, same"},
+   "elevated": {"var": "--surface-elevated", "owner": "refero", "type": "color", "description": "Cards and popovers over the ground (#fff)"},
+   "subtle":   {"var": "--fill-subtle", "owner": "refero", "type": "color", "description": "Quiet fills: the research box ground (#f7f8fb)"},
+   "muted":    {"var": "--fill-muted", "owner": "refero", "type": "color"},
+   "moderate": {"var": "--fill-moderate", "owner": "refero", "type": "color"},
+   "strong":   {"var": "--fill-strong", "owner": "refero", "type": "color"},
+   "card":     {"var": "--card", "owner": "styles", "type": "color", "source": "styles host semantic (--card = --gray-solid-100 dark / #fff light)"},
+   "dialog":   {"var": "--color-dialog", "owner": "refero", "type": "color"},
+   "scrim":    {"var": "--color-dialog-bg", "owner": "refero", "type": "color", "description": "Modal scrim rgba(3,14,49,.54)"},
+   "scrim-light": {"var": "--color-dialog-bg-light", "owner": "refero", "type": "color"},
+   "header-glass": {"value": "lab(100 0 0 / 0.9)", "type": "color", "source": "measured raw/measurements.md#styles-header: oklab(1,0,0)/.9 over blur", "description": "styles.refero.design's translucent sticky header"}
+  },
+  "text": {
+   "primary":    {"var": "--text-primary", "owner": "refero", "type": "color", "description": "Ink (#13151b); styles host: --foreground #0d0f15"},
+   "secondary":  {"var": "--text-secondary", "owner": "refero", "type": "color", "description": "Muted navy rgba(3,14,49,.54); styles host: --muted-foreground #6f7179"},
+   "tertiary":   {"var": "--text-tertiary", "owner": "refero", "type": "color"},
+   "quaternary": {"var": "--text-quaternary", "owner": "refero", "type": "color"},
+   "on-button":  {"var": "--text-on-button", "owner": "refero", "type": "color", "description": "Text on the dark CTA fill"},
+   "foreground": {"var": "--foreground", "owner": "styles", "type": "color"},
+   "muted-foreground": {"var": "--muted-foreground", "owner": "styles", "type": "color"}
+  },
+  "border": {
+   "primary":    {"var": "--stroke-primary", "owner": "refero", "type": "color", "description": "The strong near-black rule"},
+   "secondary":  {"var": "--stroke-secondary", "owner": "refero", "type": "color"},
+   "tertiary":   {"var": "--stroke-tertiary", "owner": "refero", "type": "color", "description": "Chip and input hairlines (rgba(1,17,88,.24))"},
+   "quaternary": {"var": "--stroke-quaternary", "owner": "refero", "type": "color", "description": "The faintest hairline (rgba(12,41,126,.07))"},
+   "on-button":  {"var": "--stroke-on-button", "owner": "refero", "type": "color"},
+   "default":    {"var": "--border", "owner": "styles", "type": "color", "description": "styles host hairline #dfe1e7"},
+   "input":      {"var": "--input", "owner": "styles", "type": "color"},
+   "ring":       {"var": "--ring", "owner": "styles", "type": "color", "description": "Focus ring #6f7179"}
+  },
+  "action": {
+   "primary":    {"var": "--color-accent", "owner": "refero", "type": "color", "description": "The dark CTA fill (#000 light); styles host: --primary #0d0f15"},
+   "primary-foreground": {"var": "--primary-foreground", "owner": "styles", "type": "color"},
+   "secondary":  {"var": "--secondary", "owner": "styles", "type": "color"},
+   "accent":     {"var": "--accent", "owner": "styles", "type": "color"},
+   "link":       {"value": "#0000ee", "type": "color", "source": "measured raw/measurements.md#mcp-card-cta", "description": "Unstyled link blue inside the MCP promo"}
+  },
+  "status": {
+   "success":        {"var": "--status-success", "owner": "refero", "type": "color"},
+   "success-subtle": {"var": "--status-success-subtle", "owner": "refero", "type": "color"},
+   "error":          {"var": "--status-error", "owner": "refero", "type": "color"},
+   "error-subtle":   {"var": "--status-error-subtle", "owner": "refero", "type": "color"},
+   "error-text":     {"var": "--status-error-text", "owner": "refero", "type": "color"},
+   "warning":        {"var": "--status-warning", "owner": "refero", "type": "color"},
+   "warning-subtle": {"var": "--status-warning-subtle", "owner": "refero", "type": "color"},
+   "warning-text":   {"var": "--status-warning-text", "owner": "refero", "type": "color"},
+   "confirm":        {"var": "--color-confirm-2", "owner": "refero", "type": "color"},
+   "destructive":    {"var": "--destructive", "owner": "styles", "type": "color", "description": "styles host's literal #e40014"}
+  },
+  "component": {
+   "research-box-bg":     {"value": "#f7f8fb", "type": "color", "source": "measured raw/measurements.md#research-box", "description": "The centred prompt card's ground = palette.gray.solid.100"},
+   "research-chip-bg":    {"value": "#ffffff", "type": "color", "source": "measured raw/measurements.md#research-box painted layers", "description": "The white chip pills inside the box"},
+   "research-chip-border":{"value": "rgba(1, 17, 88, 0.24)", "type": "color", "source": "measured raw/measurements.md#research-box painted layers"},
+   "research-chip-label": {"value": "rgba(3, 14, 49, 0.54)", "type": "color", "source": "measured raw/measurements.md#research-chip"},
+   "mcp-card-bg":         {"value": "#ffffff", "type": "color", "source": "measured raw/measurements.md#mcp-card"},
+   "mcp-close-border":    {"value": "rgba(12, 26, 105, 0.14)", "type": "color", "source": "measured raw/measurements.md#mcp-card-close"},
+   "coach-box-bg":        {"value": "#ffffff", "type": "color", "source": "measured raw/measurements.md#coach-box"},
+   "coach-box-border":    {"value": "rgba(12, 41, 126, 0.07)", "type": "color", "source": "measured raw/measurements.md#coach-box"},
+   "plan-cta-text":       {"value": "#f7f8fb", "type": "color", "source": "measured raw/measurements.md#plan-cta"},
+   "styles-header-border":{"value": "lab(89.5164 0.0511706 -3.03215 / 0.5)", "type": "color", "source": "measured raw/measurements.md#styles-header", "description": "The styles host's translucent header hairline"},
+   "styles-text":         {"value": "lab(4.38504 0.200026 -3.38308)", "type": "color", "source": "measured raw/measurements.md#styles-card and all styles components", "description": "The styles host's ink, near-black with a blue tint = --foreground"},
+   "styles-muted":        {"value": "lab(47.7319 0.122339 -4.52256)", "type": "color", "source": "measured raw/measurements.md#styles-chip, #entity-tab", "description": "The styles host's secondary text = --muted-foreground"},
+   "styles-border":       {"value": "lab(89.5164 0.0511706 -3.03215)", "type": "color", "source": "measured raw/measurements.md#styles-card border colour", "description": "The styles host's hairline ≈ --border #dfe1e7"}
+  }
+ },
+
+ "dark": {
+  "background": {
+   "page":     {"var": "--color-background", "owner": "refero", "theme": "dark", "type": "color", "description": "Dark page ground #13151a"},
+   "elevated": {"var": "--surface-elevated", "owner": "refero", "theme": "dark", "type": "color", "description": "#2a2d37"},
+   "subtle":   {"var": "--fill-subtle", "owner": "refero", "theme": "dark", "type": "color"},
+   "muted":    {"var": "--fill-muted", "owner": "refero", "theme": "dark", "type": "color"},
+   "card":     {"var": "--card", "owner": "styles", "theme": "dark", "type": "color"},
+   "popover":  {"var": "--popover", "owner": "styles", "theme": "dark", "type": "color"},
+   "dialog":   {"var": "--color-dialog", "owner": "refero", "theme": "dark", "type": "color"},
+   "scrim":    {"var": "--color-dialog-bg", "owner": "refero", "theme": "dark", "type": "color"}
+  },
+  "text": {
+   "primary":    {"var": "--text-primary", "owner": "refero", "theme": "dark", "type": "color"},
+   "secondary":  {"var": "--text-secondary", "owner": "refero", "theme": "dark", "type": "color"},
+   "tertiary":   {"var": "--text-tertiary", "owner": "refero", "theme": "dark", "type": "color"},
+   "on-button":  {"var": "--text-on-button", "owner": "refero", "theme": "dark", "type": "color"},
+   "foreground": {"var": "--foreground", "owner": "styles", "theme": "dark", "type": "color"},
+   "muted-foreground": {"var": "--muted-foreground", "owner": "styles", "theme": "dark", "type": "color"}
+  },
+  "border": {
+   "primary":    {"var": "--stroke-primary", "owner": "refero", "theme": "dark", "type": "color"},
+   "secondary":  {"var": "--stroke-secondary", "owner": "refero", "theme": "dark", "type": "color"},
+   "tertiary":   {"var": "--stroke-tertiary", "owner": "refero", "theme": "dark", "type": "color"},
+   "quaternary": {"var": "--stroke-quaternary", "owner": "refero", "theme": "dark", "type": "color"},
+   "default":    {"var": "--border", "owner": "styles", "theme": "dark", "type": "color"},
+   "input":      {"var": "--input", "owner": "styles", "theme": "dark", "type": "color"},
+   "ring":       {"var": "--ring", "owner": "styles", "theme": "dark", "type": "color"}
+  },
+  "action": {
+   "primary":    {"var": "--color-accent", "owner": "refero", "theme": "dark", "type": "color", "description": "Inverts to #fff in the dark theme"},
+   "primary-foreground": {"var": "--primary-foreground", "owner": "styles", "theme": "dark", "type": "color"},
+   "secondary":  {"var": "--secondary", "owner": "styles", "theme": "dark", "type": "color"},
+   "accent":     {"var": "--accent", "owner": "styles", "theme": "dark", "type": "color"}
+  },
+  "status": {
+   "success":        {"var": "--status-success", "owner": "refero", "theme": "dark", "type": "color"},
+   "success-subtle": {"var": "--status-success-subtle", "owner": "refero", "theme": "dark", "type": "color"},
+   "error":          {"var": "--status-error", "owner": "refero", "theme": "dark", "type": "color"},
+   "error-subtle":   {"var": "--status-error-subtle", "owner": "refero", "theme": "dark", "type": "color"},
+   "error-text":     {"var": "--status-error-text", "owner": "refero", "theme": "dark", "type": "color"},
+   "warning":        {"var": "--status-warning", "owner": "refero", "theme": "dark", "type": "color"},
+   "warning-subtle": {"var": "--status-warning-subtle", "owner": "refero", "theme": "dark", "type": "color"},
+   "warning-text":   {"var": "--status-warning-text", "owner": "refero", "theme": "dark", "type": "color"},
+   "destructive":    {"var": "--destructive", "owner": "styles", "theme": "dark", "type": "color"}
+  },
+  "component": {
+   "styles-card-bg":   {"var": "--card", "owner": "styles", "theme": "dark", "type": "color"},
+   "styles-ink":       {"var": "--gray-solid-900", "owner": "styles", "theme": "dark", "type": "color", "description": "Inverts to #fff"},
+   "research-box-bg":  {"var": "--gray-solid-100", "owner": "refero", "theme": "dark", "type": "color", "description": "The research box fill inverts to #1a1c23"}
+  }
+ }
+}

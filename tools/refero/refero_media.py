@@ -12,8 +12,31 @@ the styles rows and verifies each expected file exists.
 Slugs are already URL-safe (fetch.slugify), so neither side URL-encodes them.
 """
 
+import os
+import posixpath
 import urllib.parse
 from pathlib import Path
+
+
+def _load_dotenv():
+    """Populate os.environ from the repo's .env; variables already set win.
+
+    Shared secrets live in the gitignored root .env (see .env.example), so
+    every refero tool gets them just by importing this module."""
+    env = Path(__file__).resolve().parents[2] / ".env"
+    if not env.is_file():
+        return
+    for line in env.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, _, val = line.partition("=")
+        key, val = key.strip(), val.strip().strip('"').strip("'")
+        if key and key not in os.environ:
+            os.environ[key] = val
+
+
+_load_dotenv()
 
 # media dir -> (file extension, required Content-Type prefix).
 # catalog.py maps its payload keys (shot, poster, video, detail,
@@ -55,3 +78,42 @@ def local_path(kind, slug):
 def media_dest(media_root, kind, slug):
     """The file local_path() resolves to under a media root."""
     return Path(media_root) / kind / (slug + KINDS[kind][0])
+
+
+# Where the mirrored tree lives: $DESIGN_SYSTEMS_MEDIA, else a sibling of the
+# checkout under ~/services. Shared by mirror_media.py's downloads and
+# catalog.py's /refero-media/ serving, so both agree on one root.
+def media_base():
+    """Public base URL for mirrored media (the R2 bucket), prepended to
+    /refero-media paths by the emitted JSON's `mediaBase` and the app.
+
+    DESIGN_SYSTEMS_MEDIA_BASE overrides it; set it empty to serve the paths
+    from the site itself (a local mirror, or the deployed nginx alias)."""
+    return os.environ.get("DESIGN_SYSTEMS_MEDIA_BASE",
+                          "https://pub-b22e019453104cc8b3c214b1009a6c42.r2.dev")
+
+
+def default_media_root():
+    return Path(
+        os.environ.get("DESIGN_SYSTEMS_MEDIA")
+        or "~/services/design-systems/media/refero").expanduser()
+
+
+def media_file(url_path, media_root=None):
+    """The file a /refero-media/<kind>/<name> URL maps to, or None.
+
+    Mirrors repo_file's guards: the path is unquoted and normalised, `..` can
+    never climb out, and the resolved file must sit under the media root."""
+    root = Path(media_root) if media_root else default_media_root()
+    clean = urllib.parse.unquote(url_path.split("?", 1)[0].split("#", 1)[0])
+    norm = posixpath.normpath(clean)
+    prefix = "/refero-media/"
+    if not norm.startswith(prefix):
+        return None
+    rel = norm[len(prefix):]
+    if not rel or rel.startswith("/"):
+        return None
+    target = (root / rel).resolve()
+    if target != root.resolve() and root.resolve() not in target.parents:
+        return None
+    return target

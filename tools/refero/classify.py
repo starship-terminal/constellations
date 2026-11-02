@@ -23,6 +23,8 @@ import time
 import urllib.request
 from pathlib import Path
 
+import refero_media  # noqa: F401 — importing it loads the repo .env (ANTHROPIC_API_KEY)
+
 ROOT = Path(__file__).resolve().parents[2]
 REFERO = ROOT / "refero"
 DB = REFERO / "refero.db"
