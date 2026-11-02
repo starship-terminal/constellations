@@ -784,10 +784,12 @@ function openLightbox(items, index, opts) {
   lbOnTag = (opts && opts.onTag) || null;
   lbOnSave = (opts && opts.onSave) || null;
   showLightbox(); lb.hidden = false;
+  document.body.style.overflow = 'hidden';
   lb.querySelector('.lb-close').focus();
 }
 function closeLightbox() {
   lb.hidden = true;
+  document.body.style.overflow = '';
   if (lbOpener && document.contains(lbOpener)) lbOpener.focus();
   lbOpener = null;
 }

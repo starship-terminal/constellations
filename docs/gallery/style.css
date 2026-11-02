@@ -540,7 +540,7 @@ table.list { width: 100%; border-collapse: collapse; min-width: 820px; }
 .lb-pos { position: absolute; left: 0; bottom: 4px; padding: 9px 16px; border-radius: 9999px; background: rgba(255, 255, 255, .08); color: #d0d6e0; font-size: 13px; font-variant-numeric: tabular-nums; }
 .lb-nav { position: absolute; right: 0; bottom: 0; display: flex; gap: 8px; }
 .lb-nav .icon-btn { width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, .08); border: 0; color: #fff; font-size: 20px; }
-.lb-side { flex: none; width: 300px; min-height: 0; display: flex; flex-direction: column; gap: 16px; padding: 14px; overflow: auto; background: #16181c; border: 1px solid rgba(255, 255, 255, .08); border-radius: 16px; color: #d0d6e0; }
+.lb-side { flex: none; width: 300px; min-height: 0; display: flex; flex-direction: column; gap: 16px; padding: 14px; overflow: auto; overscroll-behavior: contain; background: #16181c; border: 1px solid rgba(255, 255, 255, .08); border-radius: 16px; color: #d0d6e0; }
 .lb-app { position: relative; }
 .lb-card { display: flex; align-items: center; gap: 10px; padding: 8px; padding-right: 36px; border-radius: 12px; background: rgba(255, 255, 255, .05); color: #fff; text-decoration: none; }
 .lb-card:hover { background: rgba(255, 255, 255, .09); }
