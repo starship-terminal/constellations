@@ -28,11 +28,28 @@ const portrait = (s) => s.tags.includes('ios');
 
 // A toolbar filter button; `n` is the count badge only the package index shows.
 const chip = (attr, val, label, n, on) => `<button class="chip" data-${attr}="${esc(val)}" aria-pressed="${on}">${esc(label)}${n != null ? `<span class="n">${n}</span>` : ''}</button>`;
-// Both indexes end their filters the same way: every search word must appear in the haystack.
-const textMatch = (fields) => {
-  const q = state.q.trim().toLowerCase();
-  return !q || q.split(/\s+/).every((w) => fields.join(' ').toLowerCase().includes(w));
-};
+// Search words score a row instead of filtering it black-or-white. A word
+// equal to a facet value (a style, type, category, platform or theme name)
+// hits for 2 points only when that field matches; any other word needs a
+// substring somewhere in the haystack for 1. Filler words are ignored, and
+// with three or more words one term may miss, so a natural query like
+// "brutalist portfolio with oversized type" still surfaces the styles that
+// fit best instead of none. Adjacent terms found as a phrase score a bonus.
+const SEARCH_STOP = new Set('a an the and or of for in on to with by at is it this that site sites website websites page pages design designed style styles app apps web landing product products'.split(' '));
+const searchTerms = () => state.q.trim().toLowerCase().split(/\s+/).filter((w) => w && !SEARCH_STOP.has(w));
+function searchScore(row, fields, facets, toks) {
+  if (!toks.length) return 1;
+  const hay = fields.join(' ').toLowerCase();
+  let sat = 0, score = 0;
+  for (const t of toks) {
+    let hit = hay.includes(t) ? 1 : 0;
+    for (const [values, test] of facets) if (values.has(t) && test(row, t)) { hit = 2; break; }
+    if (hit) { sat++; score += hit; }
+  }
+  if (sat < (toks.length <= 2 ? toks.length : toks.length - 1)) return 0;
+  for (let i = 0; i < toks.length - 1; i++) if (hay.includes(`${toks[i]} ${toks[i + 1]}`)) score += 1.5;
+  return score;
+}
 
 // The detail page's sections, in rail order. null draws the divider.
 const SECTIONS = [
@@ -116,11 +133,18 @@ function route() {
 
 // ---------------------------------------------------------------- index
 
+let PKG_FACETS = null;
+const pkgFacets = () => PKG_FACETS || (PKG_FACETS = (() => [
+  [new Set(Object.keys(DATA.categories)), (s, t) => s.category === t],
+  [new Set(DATA.systems.flatMap((s) => s.tags)), (s, t) => s.tags.includes(t)],
+  [new Set(['dark', 'light', 'mixed']), (s, t) => s.themes.some((x) => x.includes(t))],
+])());
+
 function matches(s) {
   if (state.cat !== 'all' && s.category !== state.cat) return false;
   if (state.dark && !s.themes.some(isDark)) return false;
   if (state.platform !== 'all' && !s.tags.includes(state.platform)) return false;
-  return textMatch([s.name, s.slug, s.goodFor, s.category, DATA.categories[s.category], ...s.tags, ...s.themes, ...s.fonts.map((f) => f.family)]);
+  return searchScore(s, [s.name, s.slug, s.goodFor, s.category, DATA.categories[s.category], ...s.tags, ...s.themes, ...s.fonts.map((f) => f.family)], pkgFacets(), searchTerms()) > 0;
 }
 
 function strip(sw) {
@@ -891,9 +915,22 @@ function rfMatches(s) {
   if (rfState.theme !== 'all' && s.theme !== rfState.theme) return false;
   if (rfState.video && !s.video) return false;
   if (rfState.type !== 'all' && s.type !== rfState.type) return false;
-  if (rfState.style !== 'all' && s.style !== rfState.style) return false;
-  return textMatch([s.name, s.slug, s.tagline, s.industry, s.src, s.type, s.style, ...(s.tags || [])]);
+  return !(rfState.style !== 'all' && s.style !== rfState.style);
 }
+
+// The facet vocab the scorer maps query words onto: a word naming a style,
+// type, industry or theme only counts strongly when the row carries it there.
+let RF_FACETS = null;
+const rfFacets = () => RF_FACETS || (RF_FACETS = (() => {
+  const vals = (k) => new Set(RF_INDEX.styles.map((s) => s[k]).filter(Boolean));
+  return [
+    [vals('style'), (s, t) => s.style === t],
+    [vals('type'), (s, t) => s.type === t],
+    [vals('industry'), (s, t) => s.industry === t],
+    [new Set(['dark', 'light', 'mixed']), (s, t) => s.theme === t],
+  ];
+})());
+const rfHay = (s) => [s.name, s.slug, s.tagline, s.industry, s.src, s.type, s.style, ...(s.tags || [])];
 
 function rfCard(s, note) {
   // index.json's `card` is one bit: "p" poster, "s" shot; the path derives from the slug.
@@ -944,7 +981,11 @@ function rfRedrawGrid() {
   if (!RF_INDEX) return;
   const wrap = app.querySelector('.rf-wrap');
   if (!wrap) return;
-  const list = RF_INDEX.styles.filter(rfMatches);
+  const toks = searchTerms();
+  const facets = rfFacets();
+  const scored = RF_INDEX.styles.filter(rfMatches).map((s) => [searchScore(s, rfHay(s), facets, toks), s]).filter(([sc]) => sc > 0);
+  if (toks.length) scored.sort((a, b) => b[0] - a[0]);
+  const list = scored.map(([, s]) => s);
   app.querySelectorAll('[data-theme]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.theme === rfState.theme)));
   app.querySelectorAll('[data-video]').forEach((b) => b.setAttribute('aria-pressed', String(rfState.video)));
   const count = app.querySelector('.rf-bar-row .count');
