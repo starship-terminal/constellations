@@ -881,7 +881,7 @@ const syncNavToggle = () => {
   const lbl = navToggle.querySelector('.lbl');
   if (lbl) lbl.textContent = collapsed ? 'Expand' : 'Collapse';
 };
-navToggle.onclick = () => {
+navToggle.onclick = (e) => {
   const root = document.documentElement;
   if (root.dataset.nav === 'collapsed') {
     delete root.dataset.nav;
@@ -890,9 +890,10 @@ navToggle.onclick = () => {
     root.dataset.nav = 'collapsed';
     try { localStorage.setItem('ds-nav', 'collapsed'); } catch (e) {}
   }
-  // Clicking leaves focus inside the rail, whose :focus-within would hold the
-  // collapsed strip open after the cursor leaves — hand the focus back out.
-  navToggle.blur();
+  // A pointer click leaves focus inside the rail, whose :focus-within would
+  // hold the collapsed strip open after the cursor leaves — blur it back out.
+  // Keyboard activation (detail 0) keeps focus so the rail stays usable.
+  if (e.detail) navToggle.blur();
   syncNavToggle();
 };
 syncNavToggle();
