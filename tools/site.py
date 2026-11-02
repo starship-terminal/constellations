@@ -5,11 +5,11 @@
                                        copy, its nav links and its card are left out
 
 Replaces the Zensical/Material build with a small static renderer: every page is
-one markdown file wrapped in the same bar the gallery uses — full-bleed top bar
-with the mark, the site nav, the search field, the Settings link and the ds-theme
-toggle — plus a left rail for the Scorecard and Docs sections, and the Settings
-page (settings/, its Preferences hold the app icon). site/ is gitignored; the
-Pages workflow builds it with --publish and encrypts the rest.
+one markdown file wrapped in the same bar the gallery uses — a fixed left rail
+with the mark, the site nav, the search field, the section's own links, and the
+Settings link, ds-theme toggle and collapse toggle at its foot — plus the
+Settings page (settings/, its Preferences hold the app icon). site/ is
+gitignored; the Pages workflow builds it with --publish and encrypts the rest.
 """
 import argparse
 import html
@@ -65,6 +65,29 @@ SEARCH_SVG = ('<svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true
 THEME_SVG = ('<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">'
              '<path d="M8 1.5a6.5 6.5 0 1 0 0 13z" fill="currentColor"/>'
              '<circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>')
+COLLAPSE_SVG = ('<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" '
+                'stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">'
+                '<path d="M9.5 3.5 5 8l4.5 4.5M13.5 3.5 9 8l4.5 4.5"/></svg>')
+
+
+def nav_ic(inner: str) -> str:
+    """A site-nav glyph, the same set docs/gallery/index.html draws."""
+    return ('<svg class="nav-ic" width="17" height="17" viewBox="0 0 16 16" aria-hidden="true" fill="none" '
+            'stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">'
+            f'{inner}</svg>')
+
+
+NAV_ICONS = {
+    "home": nav_ic('<path d="M2 6.5 8 1.5l6 5V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>'),
+    "gallery": nav_ic('<rect x="1.5" y="1.5" width="5.6" height="5.6" rx="1.4"/>'
+                      '<rect x="8.9" y="1.5" width="5.6" height="5.6" rx="1.4"/>'
+                      '<rect x="1.5" y="8.9" width="5.6" height="5.6" rx="1.4"/>'
+                      '<rect x="8.9" y="8.9" width="5.6" height="5.6" rx="1.4"/>'),
+    "refero": nav_ic('<path d="M8 1.8l1.5 3.9 4.2.3-3.2 2.7 1 4.1L8 10.4l-3.5 2.4 1-4.1-3.2-2.7 4.2-.3z"/>'),
+    "scorecard": nav_ic('<path d="M2 14V8.5M6 14V4.5M10 14v-6M14 14V2.5"/>'),
+    "docs": nav_ic('<path d="M3 2.5h8a2 2 0 0 1 2 2V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/>'
+                   '<path d="M5.5 5.5h5M5.5 8h5M5.5 10.5h3"/>'),
+}
 
 # The Settings page (settings/). Preferences are per browser, in localStorage;
 # each control talks to the script that owns its store.
@@ -74,7 +97,7 @@ SETTINGS_BODY = """<h1>Settings</h1>
 <div class="prefs">
   <fieldset class="pref" id="app-icon">
     <legend class="pref-name">App icon</legend>
-    <p class="pref-help">The icon in the browser tab, on a home screen and in the top bar.</p>
+    <p class="pref-help">The icon in the browser tab, on a home screen and in the sidebar.</p>
     <div class="pref-options">
       <label class="pref-option">
         <input type="radio" name="app-icon" value="flat">
@@ -183,7 +206,7 @@ def pages() -> list[Page]:
 
 
 def rail(page: Page, rel: str) -> str:
-    """The section's left rail."""
+    """The section's own links, rendered inside the side rail below the site nav."""
     if page.section == "scorecard":
         _, audits = scorecard.load()
         items = [("Overview", "scorecard/")]
@@ -203,19 +226,18 @@ def render(page: Page, rendered: str, hidden: set[str], publish: bool = False) -
     rel = "../" * page.url.count("/")
     home = rel if rel else "./"
     current = lambda sec: ' aria-current="page"' if page.section == sec or (sec == "home" and not page.url) else ""
-    has_rail = page.section and "navigation" not in hidden
     body = f'<main class="doc">{rendered}</main>'
-    if has_rail:
-        body = f'<div class="wrap has-rail">{rail(page, rel)}{body}</div>'
+    section = rail(page, rel) if page.section and "navigation" not in hidden else ""
     # The published site drops site/gallery/ (it shows the captures), so the nav
     # links and the search form that submits into it are left out too.
-    nav = [f'<a href="{home}"{current("home")}>Home</a>']
+    nav = [(home, "Home", "home", current("home"))]
     if not publish:
-        nav += [f'<a href="{rel}gallery/index.html">Gallery</a>',
-                f'<a href="{rel}gallery/index.html#/refero">Refero</a>']
-    nav += [f'<a href="{rel}scorecard/"{current("scorecard")}>Scorecard</a>',
-            f'<a href="{rel}DESIGN-SYSTEM/"{current("docs")}>Docs</a>']
-    nav = "\n    ".join(nav)
+        nav += [(f"{rel}gallery/index.html", "Gallery", "gallery", ""),
+                (f"{rel}gallery/index.html#/refero", "Refero", "refero", "")]
+    nav += [(f"{rel}scorecard/", "Scorecard", "scorecard", current("scorecard")),
+            (f"{rel}DESIGN-SYSTEM/", "Docs", "docs", current("docs"))]
+    nav = "\n      ".join(f'<a href="{href}"{cur}>{NAV_ICONS[key]}<span>{label}</span></a>'
+                          for href, label, key, cur in nav)
     search = "" if publish else f"""<form class="search" role="search" action="{rel}gallery/index.html" method="get">
     {SEARCH_SVG}
     <input name="q" type="search" placeholder="Search name, use, tag…" autocomplete="off" aria-label="Search design systems">
@@ -234,7 +256,10 @@ def render(page: Page, rendered: str, hidden: set[str], publish: bool = False) -
 <link rel="stylesheet" href="{rel}stylesheets/site.css">
 <link rel="stylesheet" href="{rel}stylesheets/scorecard.css">
 <script>
-  try {{ document.documentElement.dataset.theme = localStorage.getItem('ds-theme') || 'dark'; }} catch (e) {{ document.documentElement.dataset.theme = 'dark'; }}
+  try {{
+    document.documentElement.dataset.theme = localStorage.getItem('ds-theme') || 'dark';
+    if (localStorage.getItem('ds-nav') === 'collapsed') document.documentElement.dataset.nav = 'collapsed';
+  }} catch (e) {{ document.documentElement.dataset.theme = 'dark'; }}
 </script>
 </head>
 <body>
@@ -243,16 +268,24 @@ def render(page: Page, rendered: str, hidden: set[str], publish: bool = False) -
     {MARK_SVG}
     <span>Design systems</span>
   </a>
-  <nav class="site-nav" aria-label="Site">
-    {nav}
-  </nav>
+  <div class="bar-body">
+    <nav class="site-nav" aria-label="Site">
+      {nav}
+    </nav>
+{section}
+  </div>
 {search}
-  <a class="icon-btn" href="{rel}settings/" aria-label="Settings" title="Settings"{current("settings")}>
-    {SETTINGS_SVG}
-  </a>
-  <button id="theme" class="icon-btn" type="button" aria-label="Toggle colour theme" title="Toggle theme">
-    {THEME_SVG}
-  </button>
+  <span class="bar-foot">
+    <a class="icon-btn" href="{rel}settings/" aria-label="Settings" title="Settings"{current("settings")}>
+      {SETTINGS_SVG}<span class="lbl">Settings</span>
+    </a>
+    <button id="theme" class="icon-btn" type="button" aria-label="Toggle colour theme" title="Toggle theme">
+      {THEME_SVG}<span class="lbl">Theme</span>
+    </button>
+    <button id="nav-toggle" class="icon-btn" type="button" aria-pressed="false" title="Collapse sidebar">
+      {COLLAPSE_SVG}<span class="lbl">Collapse</span>
+    </button>
+  </span>
 </header>
 {body}
 <footer class="foot"><p>{html.escape(COPYRIGHT)}</p></footer>
@@ -268,6 +301,28 @@ def render(page: Page, rendered: str, hidden: set[str], publish: bool = False) -
     root.dataset.theme = current === 'dark' ? 'light' : 'dark';
     try {{ localStorage.setItem('ds-theme', root.dataset.theme); }} catch (e) {{}}
   }};
+  /* The collapse toggle pins the rail to an icon column (ds-nav, shared with
+     the gallery); collapsed it still opens on hover or focus, per the CSS. */
+  var navToggle = document.getElementById('nav-toggle');
+  var syncNavToggle = function () {{
+    var collapsed = document.documentElement.dataset.nav === 'collapsed';
+    navToggle.setAttribute('aria-pressed', String(collapsed));
+    navToggle.title = collapsed ? 'Expand sidebar' : 'Collapse sidebar';
+    var lbl = navToggle.querySelector('.lbl');
+    if (lbl) lbl.textContent = collapsed ? 'Expand' : 'Collapse';
+  }};
+  navToggle.onclick = function () {{
+    var root = document.documentElement;
+    if (root.dataset.nav === 'collapsed') {{
+      delete root.dataset.nav;
+      try {{ localStorage.removeItem('ds-nav'); }} catch (e) {{}}
+    }} else {{
+      root.dataset.nav = 'collapsed';
+      try {{ localStorage.setItem('ds-nav', 'collapsed'); }} catch (e) {{}}
+    }}
+    syncNavToggle();
+  }};
+  syncNavToggle();
   (function () {{
     var f = document.querySelector('.bar .search');
     if (!f) return;

@@ -807,6 +807,29 @@ document.getElementById('theme').onclick = () => {
   try { localStorage.setItem('ds-theme', root.dataset.theme); } catch (e) {}
 };
 
+// The collapse toggle pins the rail to an icon column (ds-nav, shared with the
+// docs pages); collapsed it still opens on hover or focus, per the CSS.
+const navToggle = document.getElementById('nav-toggle');
+const syncNavToggle = () => {
+  const collapsed = document.documentElement.dataset.nav === 'collapsed';
+  navToggle.setAttribute('aria-pressed', String(collapsed));
+  navToggle.title = collapsed ? 'Expand sidebar' : 'Collapse sidebar';
+  const lbl = navToggle.querySelector('.lbl');
+  if (lbl) lbl.textContent = collapsed ? 'Expand' : 'Collapse';
+};
+navToggle.onclick = () => {
+  const root = document.documentElement;
+  if (root.dataset.nav === 'collapsed') {
+    delete root.dataset.nav;
+    try { localStorage.removeItem('ds-nav'); } catch (e) {}
+  } else {
+    root.dataset.nav = 'collapsed';
+    try { localStorage.setItem('ds-nav', 'collapsed'); } catch (e) {}
+  }
+  syncNavToggle();
+};
+syncNavToggle();
+
 // ---------------------------------------------------------------- refero
 // The refero/ library: interpreted styles scraped from styles.refero.design.
 // catalog.py emits refero/index.json + refero/<slug>.json; media lives outside

@@ -1,5 +1,5 @@
 /* The app icon preference (Settings > Preferences): Flat, the default, or
-   Glass. It swaps the tab favicon, the touch icon and the top bar's mark, and
+   Glass. It swaps the tab favicon, the touch icon and the sidebar's mark, and
    is stored in localStorage under ds-icon next to ds-theme.
 
    Every page's <head> links the Flat set, then loads this file synchronously,
