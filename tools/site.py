@@ -320,6 +320,9 @@ def render(page: Page, rendered: str, hidden: set[str], publish: bool = False) -
       root.dataset.nav = 'collapsed';
       try {{ localStorage.setItem('ds-nav', 'collapsed'); }} catch (e) {{}}
     }}
+    // Clicking leaves focus inside the rail, whose :focus-within would hold
+    // the collapsed strip open after the cursor leaves — hand it back out.
+    navToggle.blur();
     syncNavToggle();
   }};
   syncNavToggle();
