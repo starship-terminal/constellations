@@ -172,7 +172,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 1px s
   }
   .bar-body { order: 3; flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; }
   .brand { order: 1; height: var(--rail-item-h); padding: 0 10px; margin: 0 0 6px; font-size: 16px; font-weight: 600; }
-  .search { order: 2; flex: none; max-width: none; margin: 0 0 18px; height: var(--rail-item-h); border-radius: 12px; }
   .site-nav { order: 3; flex-direction: column; gap: 2px; }
   .site-nav a { height: var(--rail-item-h); padding: 0 10px; }
   .site-nav a[aria-current="page"] { background: var(--sunken); font-weight: 600; }
@@ -193,26 +192,17 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 1px s
   :root[data-nav="collapsed"] .bar:focus-within { width: var(--rail-open); }
   :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .brand > span:last-child,
   :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .site-nav a span,
-  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .icon-btn .lbl,
-  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .search input,
-  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .search kbd { display: none; }
+  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .icon-btn .lbl { display: none; }
   :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .brand,
   :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .site-nav a,
-  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .icon-btn,
-  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .search { justify-content: center; padding-left: 0; padding-right: 0; }
+  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .icon-btn { justify-content: center; padding-left: 0; padding-right: 0; }
 }
 @media (max-width: 760px) {
   .bar { flex-wrap: wrap; height: auto; padding: 8px 12px; row-gap: 8px; }
   .site-nav { order: 3; width: 100%; overflow-x: auto; scrollbar-width: none; }
   .site-nav::-webkit-scrollbar { display: none; }
   .site-nav a { white-space: nowrap; }
-  .search { margin-left: auto; }
 }
-
-/* the refero pages keep the source site's look inside main, but the chrome is
-   the shared rail; the rail's catalog field hides on this tab — the page has
-   its own search. */
-body[data-rf] .search { display: none; }
 
 main { padding: 40px clamp(16px, 4vw, 48px) 96px; max-width: 1200px; margin: 0 auto; }
 @media (min-width: 1100px) { main { margin-left: var(--rail-w); transition: margin-left .3s ease; } }

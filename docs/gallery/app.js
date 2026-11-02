@@ -79,24 +79,10 @@ const setBarHeight = () => document.documentElement.style.setProperty('--bar-h',
 setBarHeight();
 window.addEventListener('resize', setBarHeight);
 
-// The search field lives in the rail, except on the index where it moves into the
-// hero's research box. The node itself moves, so its listeners and state survive.
-const searchEl = document.querySelector('.search');
+// The catalog search field lives in the hero's research box, so the hero only
+// shows on the index. Refero has its own field; the rail holds none.
 const hero = document.getElementById('hero');
-const heroBox = document.getElementById('hero-box');
-const searchAnchor = bar.querySelector('.bar-foot');
-function placeSearch(inHero) {
-  if (!DATA || !inHero) {
-    hero.hidden = true;
-    if (searchEl.parentNode !== bar) bar.insertBefore(searchEl, searchAnchor);
-    searchEl.classList.remove('hero-search');
-    return;
-  }
-  hero.hidden = false;
-  // The field is the research card's top row; the mode chips sit in the bar below it.
-  if (searchEl.parentNode !== heroBox) heroBox.prepend(searchEl);
-  searchEl.classList.add('hero-search');
-}
+const showHero = (show) => { hero.hidden = !DATA || !show; };
 
 function route() {
   const parts = location.hash.replace(/^#\/?/, '').split('/').map(decodeURIComponent);
@@ -104,13 +90,13 @@ function route() {
     const refero = a.getAttribute('href') === '#/refero';
     if (refero === (parts[0] === 'refero')) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
   });
-  if (parts[0] === 'refero') { placeSearch(false); referoRoute(parts.slice(1)); setBarHeight(); return; }
+  if (parts[0] === 'refero') { showHero(false); referoRoute(parts.slice(1)); setBarHeight(); return; }
   delete app.dataset.rf;
   delete document.body.dataset.rf;
   setBarHeight();
   if (rfIO) { rfIO.disconnect(); rfIO = null; }
   if (!DATA) {
-    placeSearch(false);
+    showHero(false);
     app.innerHTML = '<p class="loading">Loading catalog…</p>';
     dataPromise.then(route).catch(() => {
       if (location.hash.replace(/^#\/?/, '').split('/')[0] !== 'refero')
@@ -119,8 +105,8 @@ function route() {
     return;
   }
   const sys = DATA.systems.find((s) => s.slug === parts[0]);
-  if (!sys) { placeSearch(true); renderIndex(); document.title = 'Design systems'; return; }
-  placeSearch(false);
+  if (!sys) { showHero(true); renderIndex(); document.title = 'Design systems'; return; }
+  showHero(false);
   let sec = LEGACY[parts[1]] || parts[1] || 'overview';
   let rest = parts.slice(2).join('/');
   if (!SECTION_IDS.includes(sec)) { sec = 'overview'; rest = ''; }
@@ -1143,7 +1129,7 @@ function rfFillGrid(wrap, list) {
   });
 }
 
-// Keep the hero search field and the top bar's shared field in step.
+// Keep the refero field and the catalog field in step.
 function syncRfSearch(v) {
   const hero = app.querySelector('#rf-q');
   if (hero && hero.value !== v) hero.value = v;
@@ -1451,7 +1437,7 @@ document.addEventListener('keydown', (e) => {
     return;
   }
   const typing = document.activeElement?.matches('input, textarea, select') || document.activeElement?.isContentEditable;
-  const field = app.querySelector('#rf-q') || (document.body.dataset.rf ? null : qInput);
+  const field = app.querySelector('#rf-q') || (hero.hidden ? null : qInput);
   if (e.key === '/' && !typing && field) { e.preventDefault(); field.focus(); field.select(); }
   if (e.key === 'Escape' && document.activeElement && document.activeElement === field) {
     field.value = ''; state.q = ''; field.blur(); qInput.value = '';
