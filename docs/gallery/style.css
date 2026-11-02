@@ -303,24 +303,19 @@ main { padding: 40px clamp(16px, 4vw, 48px) 96px; max-width: 1200px; margin: 0 a
    refero's app tints each card's border. Sweeping the cursor scrubs frames. */
 .grid { display: grid; gap: 30px 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); align-items: start; }
 .card { display: block; text-decoration: none; }
-.cover {
-  position: relative; display: block; overflow: hidden;
-  background: var(--sunken); border-radius: 10px;
-  padding: clamp(10px, 6%, 20px);
-  transition: background .15s ease, box-shadow .15s ease;
-}
-.card:hover .cover { background: var(--solid-300); }
-:root[data-theme="dark"] .cover {
+.cover { position: relative; display: block; }
+:root[data-theme="dark"] .viewport {
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--tint, var(--alpha-line-strong)) 55%, transparent),
     0 0 28px color-mix(in srgb, var(--tint, transparent) 13%, transparent);
 }
-:root[data-theme="dark"] .card:hover .cover {
+:root[data-theme="dark"] .card:hover .viewport {
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--tint, var(--alpha-line-strong)) 78%, transparent),
     0 0 34px color-mix(in srgb, var(--tint, transparent) 18%, transparent);
 }
 .card:focus-visible { outline: none; }
-.card:focus-visible .cover { outline: 1px solid var(--focus); outline-offset: 2px; }
-.viewport { position: relative; aspect-ratio: 16 / 9; border-radius: 6px; overflow: hidden; background: var(--bg); box-shadow: var(--ring); }
+.card:focus-visible .viewport { outline: 1px solid var(--focus); outline-offset: 2px; }
+.viewport { position: relative; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; background: var(--sunken); box-shadow: var(--ring); transition: box-shadow .15s ease; }
+.card:hover .viewport { box-shadow: 0 0 0 1px var(--line-strong); }
 .card.portrait .viewport { aspect-ratio: 488 / 1056; }
 .stack { position: absolute; inset: 0; }
 .stack img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
