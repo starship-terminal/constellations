@@ -411,11 +411,12 @@ RF_JS = re.sub(r"(?m)(?<![:\\])//[^\n]*$", "",
                APP_JS[re.search(r"^// -+ refero$", APP_JS, re.M).start():])
 
 # The emitted object shapes (catalog.py) and what of them the page reads.
-INDEX_KEYS = {"version", "cdn", "styles"}
+INDEX_KEYS = {"version", "cdn", "mediaBase", "styles"}
 CARD_KEYS = {"slug", "name", "tagline", "theme", "industry", "type", "style",
              "tags", "src", "card", "cardRemote", "video", "videoRemote"}
 ENTITY_KEYS = {"slug", "name", "tagline", "theme", "industry", "type", "style",
-               "source_url", "page_url", "media", "docs", "ds", "similar"}
+               "source_url", "page_url", "media", "docs", "ds", "similar",
+               "mediaBase"}
 MEDIA_KEYS = set(catalog.REFERO_MEDIA)
 MEDIA_PAIR_KEYS = {"local", "remote"}
 DOCS_KEYS = {"design_md", "variables_css", "theme_css", "tokens_json"}
@@ -435,7 +436,9 @@ EXTRA_READS = {
     "e": {"key", "preventDefault", "shiftKey"},
     "s": {"media", "source_url", "onchange", "dataset", "value"},
     "x": {"s", "sc", "note", "element", "style"},
-    "m": set(),
+    # `m` is also each media pair in getRfEntity's mediaBase rewrite, so its
+    # `local` is a MEDIA_PAIR_KEYS read, not a MEDIA_KEYS one.
+    "m": {"local"},
     "media": set(),
     "ds": set(),
 }

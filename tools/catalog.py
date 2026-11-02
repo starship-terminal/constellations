@@ -1459,7 +1459,8 @@ def refero_entry(folder: Path, meta: dict, ds: dict, slug_of: dict) -> dict:
             "docs": {"design_md": text("DESIGN.md"), "variables_css": text("variables.css"),
                      "theme_css": text("theme.css"), "tokens_json": text("tokens.json")},
             "ds": {k: ds[k] for k in REFERO_DS_KEYS if k in ds},
-            "similar": similar}
+            "similar": similar,
+            "mediaBase": refero_media.media_base()}
 
 
 def build_refero() -> Path | None:
@@ -1507,7 +1508,9 @@ def build_refero() -> Path | None:
             stale.unlink()
     index.sort(key=lambda s: str(s["name"] or "").lower())
     out = out_dir / "index.json"
-    atomic_write(out, json.dumps({"version": 2, "cdn": REFERO_CDN, "styles": index},
+    atomic_write(out, json.dumps({"version": 2, "cdn": REFERO_CDN,
+                                  "mediaBase": refero_media.media_base(),
+                                  "styles": index},
                                  separators=(",", ":")))
     return out
 
@@ -1613,7 +1616,7 @@ def serve(port: int) -> None:
 
     class Handler(http.server.SimpleHTTPRequestHandler):
         def translate_path(self, path):
-            target = repo_file(path)
+            target = refero_media.media_file(path) or repo_file(path)
             return str(target) if target else super().translate_path(path)
 
         def log_message(self, *args):

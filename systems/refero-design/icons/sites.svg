@@ -1,0 +1,28 @@
+<svg width="40" height="40" fill="none" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<circle cx="16" cy="16" r="10.667" fill="#54B6FF">
+</circle>
+<circle cx="16" cy="16" r="10.667" fill="url(#planetGradient1)" fill-opacity="0.6">
+</circle>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M23.91 8.856c1.925-.385 3.29-.248 3.726.508 1.011 1.752-3.352 6.164-9.745 9.855-6.394 3.692-12.397 5.264-13.408 3.512-.426-.737.1-1.945 1.33-3.373a10.675 10.675 0 0 1-.26-.877c-3.353 3.014-5.079 5.77-4.218 7.26 1.42 2.46 9.347.543 17.705-4.282 8.358-4.826 13.982-10.732 12.562-13.192-.852-1.476-4.046-1.376-8.27-.018.2.194.393.397.578.607Z" fill="url(#planetGradient2)">
+</path>
+<defs>
+<radialGradient id="planetGradient1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(41.987 -9.969 20.767) scale(17.9382)">
+<stop stop-color="#FCF3CE">
+</stop>
+<stop offset="0.5" stop-color="#FCF3CD" stop-opacity="0">
+</stop>
+<stop offset="0.723" stop-color="#FCF3CD" stop-opacity="0.095">
+</stop>
+<stop offset="1" stop-color="#FCF3CD">
+</stop>
+</radialGradient>
+<radialGradient id="planetGradient2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-14.6667 8.6666 -13.08825 -22.14954 16 16.667)">
+<stop stop-color="#FFBA78">
+</stop>
+<stop offset="0.578" stop-color="#FD589B">
+</stop>
+<stop offset="1" stop-color="#FFDE8C">
+</stop>
+</radialGradient>
+</defs>
+</svg>
