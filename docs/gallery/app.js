@@ -818,8 +818,10 @@ document.getElementById('theme').onclick = () => {
 let RF_INDEX = null;
 let rfPromise = null;
 const rfState = { theme: 'all', video: false, type: 'all', style: 'all' };
-try { Object.assign(rfState, JSON.parse(localStorage.getItem('ds-refero') || '{}')); } catch (e) {}
-const rfSave = () => { try { localStorage.setItem('ds-refero', JSON.stringify(rfState)); } catch (e) {} };
+// Saved state is only honoured at v2: older saves hold facet pairs the chips
+// wrote before they became search suggestions, which now filter to nothing.
+try { const s = JSON.parse(localStorage.getItem('ds-refero') || '{}'); if (s.v === 2) Object.assign(rfState, s); } catch (e) {}
+const rfSave = () => { try { localStorage.setItem('ds-refero', JSON.stringify({ ...rfState, v: 2 })); } catch (e) {} };
 const RF_PAGE = 48;
 // The emitted refero/index.json shape; getRefero refuses a stale format.
 const RF_VERSION = 2;
@@ -963,16 +965,12 @@ function rfCardVideo(shot, s) {
 const RF_HOVER_MS = 200;
 const rfHoverTimers = new WeakMap();
 
-// The hero prompt chips: each one dials in a filter pair from the label vocab.
+// The hero prompt chips are search suggestions, like refero's: clicking one
+// runs the label as the query and the scorer ranks it. Facet pairs would be
+// empty intersections more often than not (brutalist ∩ portfolio is zero).
 const RF_CHIPS = [
-  ['Dark mode SaaS', { theme: 'dark', type: 'saas' }],
-  ['Warm paper', { style: 'paper' }],
-  ['Brutalist portfolio', { style: 'brutalist', type: 'portfolio' }],
-  ['Editorial agency', { style: 'editorial', type: 'agency' }],
-  ['Neon crypto', { style: 'neon', type: 'crypto' }],
-  ['Minimal devtools', { style: 'minimal', type: 'devtools' }],
-  ['Cinematic media', { style: 'cinematic', type: 'media' }],
-  ['Swiss fintech', { style: 'swiss', type: 'fintech' }],
+  'Dark mode SaaS', 'Warm paper', 'Brutalist portfolio', 'Editorial agency',
+  'Neon crypto', 'Minimal devtools', 'Cinematic media', 'Swiss fintech',
 ];
 
 // Re-render just the grid + count: typing in either search field and flipping
@@ -1067,7 +1065,7 @@ function drawReferoIndex() {
         Open any style for colors, typography, spacing, and a DESIGN.md your agent can follow.
         Their words, not measured evidence — treat values as inspiration.</p>
       <label class="rf-search"><input id="rf-q" type="search" placeholder="Search DESIGN.md examples" autocomplete="off" aria-label="Search refero styles"><button class="go" type="button" aria-label="Search"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5"/></svg></button></label>
-      <div class="rf-chips">${RF_CHIPS.map(([label], i) => `<button type="button" data-chip="${i}"><i>↳</i>${esc(label)}</button>`).join('')}</div>
+      <div class="rf-chips">${RF_CHIPS.map((label, i) => `<button type="button" data-chip="${i}"><i>↳</i>${esc(label)}</button>`).join('')}</div>
     </div>
     <div class="rf-bar-row">
       <div class="rf-tabs-list">${tab('all', 'All themes', rfState.theme === 'all')}${tab('light', 'Light', rfState.theme === 'light')}${tab('dark', 'Dark', rfState.theme === 'dark')}${tab('mixed', 'Mixed', rfState.theme === 'mixed')}<button type="button" data-video aria-pressed="${rfState.video}">Has video</button></div>
@@ -1081,8 +1079,8 @@ function drawReferoIndex() {
   hero.addEventListener('keydown', (ev) => { if (ev.key === 'Enter') app.querySelector('.rf-grid .rf-card')?.focus(); });
   app.querySelector('.rf-search .go').onclick = () => hero.focus();
   app.querySelectorAll('[data-chip]').forEach((b) => b.onclick = () => {
-    Object.assign(rfState, { theme: 'all', video: false, type: 'all', style: 'all' }, RF_CHIPS[+b.dataset.chip][1]);
-    rfSave(); syncRfSearch((state.q = ''));
+    Object.assign(rfState, { theme: 'all', video: false, type: 'all', style: 'all' });
+    rfSave(); syncRfSearch((state.q = RF_CHIPS[+b.dataset.chip]));
     app.querySelectorAll('select[data-sel]').forEach((s) => { s.value = rfState[s.dataset.sel]; });
     rfRedrawGrid();
     app.querySelector('.rf-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
