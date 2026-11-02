@@ -512,12 +512,21 @@ const RENDER = {
     const page = (sw.find((x) => x.role === 'page') || {}).value || '#fff';
     main.innerHTML = `${head('Assets', 'Icons kept in the package, then every screenshot. Screenshots are for layout and proportion, never for colour values.')}
       <h3 class="sub-title">Icons <span class="n">${total}</span></h3>
-      ${total ? `<div class="icon-grid" style="--icon-bg:${esc(page)}">${items.map((p) => `<figure class="icon-tile" title="${esc(p.replace(`${s.dir}/`, ''))}">
+      ${total ? `<div class="icon-grid" style="--icon-bg:${esc(page)}">${items.map((p) => `<figure class="icon-tile" tabindex="0" role="button" title="${esc(p.replace(`${s.dir}/`, ''))}">
         <div class="icon-face"><img loading="lazy" src="${url(p)}" alt=""></div><figcaption>${esc(fileName(p).replace(/\.[^.]+$/, ''))}</figcaption></figure>`).join('')}</div>
         ${total > items.length ? `<p class="faint-note">Showing the first ${items.length} of ${total}. The rest are in <code>${esc(s.dir)}/icons/</code>.</p>` : ''}`
         : notCaptured(s, gapText(s, 'icons/', 'No icon images under `icons/`.'))}
       <h3 class="sub-title">Screenshots <span class="n">${s.screenshots.length}</span></h3>
       <div id="shots"></div>`;
+    const iconGrid = main.querySelector('.icon-grid');
+    if (iconGrid) {
+      const openIcon = (e) => {
+        const t = e.target.closest('.icon-tile');
+        if (t) openLightbox(items.map((p) => ({ path: p, name: fileName(p).replace(/\.[^.]+$/, '') })), [...iconGrid.children].indexOf(t));
+      };
+      iconGrid.onclick = openIcon;
+      iconGrid.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openIcon(e); } };
+    }
     const pane = main.querySelector('#shots');
     if (s.screenshots.length) renderImages(pane, s, s.screenshots, true);
     else pane.innerHTML = notCaptured(s, gapText(s, 'screenshots/', 'No screenshots under `screenshots/`.'));
@@ -771,7 +780,10 @@ function closeLightbox() {
 }
 function showLightbox() {
   const it = lbItems[lbIndex];
-  lb.querySelector('img').src = url(it.path);
+  const img = lb.querySelector('img');
+  img.classList.remove('zoom');
+  img.onload = () => img.classList.toggle('zoom', img.naturalWidth < 240 && img.naturalHeight < 240);
+  img.src = url(it.path);
   lb.querySelector('figcaption').innerHTML = `${esc(it.name)} <span style="opacity:.6">${lbIndex + 1} / ${lbItems.length}</span><a href="${url(it.path)}" target="_blank" rel="noopener">Open original ↗</a>`;
   lb.querySelector('.lb-prev').hidden = lb.querySelector('.lb-next').hidden = lbItems.length < 2;
 }
