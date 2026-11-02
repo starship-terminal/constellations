@@ -50,6 +50,7 @@
   --rail-open: 270px;
   --rail-w: 270px; /* the rail's pinned width; ds-nav swaps it for the icon column */
   --rail-cw: 68px;
+  --rail-item-h: 36px; /* every rail row shares it, so nothing shifts when the width animates */
   --nc-bg: rgba(217, 54, 85, .12); --nc-line: rgba(217, 54, 85, .4); --nc-tag: #f16e8a;
   color-scheme: dark;
 }
@@ -123,7 +124,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 1px s
 .bar-body { display: contents; }
 .bar-foot { display: flex; gap: 8px; margin-left: auto; }
 #nav-toggle { display: none; } /* nothing to collapse while the bar is on top */
-#nav-toggle svg { transition: transform .18s ease; }
+#nav-toggle svg { transition: transform .3s ease; }
 :root[data-nav="collapsed"] #nav-toggle svg { transform: rotate(180deg); }
 .brand { display: flex; align-items: center; gap: 9px; color: var(--text-strong); font-size: 16px; font-weight: 510; text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
 /* the mark: the Flat favicon inline, or the Glass one under <html data-icon="glass">
@@ -167,16 +168,16 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 1px s
     padding: 20px 16px 16px; border-bottom: 0; border-right: 0;
     background: var(--bg); backdrop-filter: none; -webkit-backdrop-filter: none;
     overflow: hidden; white-space: nowrap;
-    transition: width .18s ease;
+    transition: width .3s ease;
   }
   .bar-body { order: 3; flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; }
-  .brand { order: 1; padding: 0 10px 18px; font-size: 16px; font-weight: 600; }
-  .search { order: 2; flex: none; max-width: none; margin: 0 0 14px; height: 40px; border-radius: 12px; }
+  .brand { order: 1; height: var(--rail-item-h); padding: 0 10px; margin: 0 0 6px; font-size: 16px; font-weight: 600; }
+  .search { order: 2; flex: none; max-width: none; margin: 0 0 18px; height: var(--rail-item-h); border-radius: 12px; }
   .site-nav { order: 3; flex-direction: column; gap: 2px; }
-  .site-nav a { height: 36px; padding: 0 10px; }
+  .site-nav a { height: var(--rail-item-h); padding: 0 10px; }
   .site-nav a[aria-current="page"] { background: var(--sunken); font-weight: 600; }
   .bar-foot { order: 4; margin: auto 0 0; padding-top: 20px; display: grid; gap: 2px; }
-  .icon-btn { justify-content: flex-start; width: auto; padding: 0 10px; border: 0; color: var(--text); }
+  .icon-btn { justify-content: flex-start; width: auto; height: var(--rail-item-h); padding: 0 10px; border: 0; color: var(--text); }
   .icon-btn svg { color: var(--faint); }
   .icon-btn:hover svg { color: inherit; }
   .icon-btn .lbl { display: inline; }
@@ -214,7 +215,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 1px s
 body[data-rf] .search { display: none; }
 
 main { padding: 40px clamp(16px, 4vw, 48px) 96px; max-width: 1200px; margin: 0 auto; }
-@media (min-width: 1100px) { main { margin-left: var(--rail-w); transition: margin-left .18s ease; } }
+@media (min-width: 1100px) { main { margin-left: var(--rail-w); transition: margin-left .3s ease; } }
 .loading, .empty { color: var(--muted); padding: 48px 0; text-align: center; }
 
 /* ---------- hero: the index's research card, after refero.design's home */
@@ -230,7 +231,7 @@ main { padding: 40px clamp(16px, 4vw, 48px) 96px; max-width: 1200px; margin: 0 a
 }
 @keyframes hero-hue { to { background-position: 100% 50%; } }
 .g-hero p { margin: 14px auto 0; max-width: 620px; color: var(--muted); font-size: 15px; line-height: 1.5; }
-@media (min-width: 1100px) { .g-hero { margin: 0 auto 0 var(--rail-w); max-width: 1200px; transition: margin-left .18s ease; } } /* same column as main, so it centres with the grid */
+@media (min-width: 1100px) { .g-hero { margin: 0 auto 0 var(--rail-w); max-width: 1200px; transition: margin-left .3s ease; } } /* same column as main, so it centres with the grid */
 
 /* the research card: one sunken rounded-24 box holding the field on top and a
    row of mode chips below, ending in the dark submit circle (752px on the
