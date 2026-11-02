@@ -46,6 +46,7 @@
   --rail-open: 270px;
   --rail-w: 270px;   /* the rail's pinned width; ds-nav swaps it for the icon column */
   --rail-cw: 68px;
+  --rail-item-h: 36px; /* every rail row shares it, so nothing shifts when the width animates */
   --page-w: 1200px;
   --pad: clamp(16px, 4vw, 40px);
   color-scheme: dark;
@@ -137,7 +138,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .icon-btn:hover { border-color: var(--line-strong); color: var(--text-strong); }
 .icon-btn[aria-current="page"] { border-color: var(--line-strong); color: var(--text-strong); background: var(--chip-bg); }
 #nav-toggle { display: none; } /* nothing to collapse while the bar is on top */
-#nav-toggle svg { transition: transform .18s ease; }
+#nav-toggle svg { transition: transform .3s ease; }
 :root[data-nav="collapsed"] #nav-toggle svg { transform: rotate(180deg); }
 
 /* the section's own links: a scroll row under the top bar, a list inside the rail */
@@ -159,18 +160,18 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
     padding: 20px 16px 16px; border-bottom: 0;
     background: var(--bg); backdrop-filter: none; -webkit-backdrop-filter: none;
     overflow: hidden; white-space: nowrap;
-    transition: width .18s ease;
+    transition: width .3s ease;
   }
-  .brand { order: 1; padding: 0 10px 18px; font-size: 16px; font-weight: 600; }
-  .search { order: 2; flex: none; max-width: none; margin: 0 0 14px; height: 40px; border-radius: 12px; }
-  .bar-body { order: 3; flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; }
+  .brand { order: 1; height: var(--rail-item-h); padding: 0 10px; margin: 0 0 6px; font-size: 16px; font-weight: 600; }
+  .search { order: 2; flex: none; max-width: none; margin: 0 0 18px; height: var(--rail-item-h); border-radius: 12px; }
+  .bar-body { order: 3; flex: 1; min-height: 0; overflow-y: auto; scrollbar-gutter: stable; display: flex; flex-direction: column; }
   .site-nav { order: 0; width: auto; flex: none; flex-direction: column; gap: 2px; overflow: visible; }
-  .site-nav a { height: 36px; padding: 0 10px; font-size: 14px; font-weight: 500; gap: 10px; }
+  .site-nav a { height: var(--rail-item-h); padding: 0 10px; font-size: 14px; font-weight: 500; gap: 10px; }
   .site-nav a[aria-current="page"] { background: var(--sunken); font-weight: 600; }
-  .rail { order: 0; width: auto; flex: 1; min-height: 0; overflow-y: auto; border-top: 1px solid var(--line); margin-top: 10px; padding-top: 10px; }
+  .rail { order: 0; width: auto; flex: 1; min-height: 0; overflow-y: auto; scrollbar-gutter: stable; border-top: 1px solid var(--line); margin-top: 10px; padding-top: 10px; }
   .rail nav { flex-direction: column; overflow: visible; }
   .bar-foot { order: 4; margin: auto 0 0; padding-top: 20px; display: grid; gap: 2px; }
-  .icon-btn { justify-content: flex-start; width: auto; height: 36px; padding: 0 10px; border: 0; color: var(--text); }
+  .icon-btn { justify-content: flex-start; width: auto; height: var(--rail-item-h); padding: 0 10px; border: 0; color: var(--text); }
   .icon-btn svg { color: var(--faint); }
   .icon-btn:hover svg { color: inherit; }
   .icon-btn .lbl { display: inline; }
@@ -198,7 +199,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 /* ---------- layout ---------- */
 .doc { max-width: var(--page-w); margin: 0 auto; padding: 40px var(--pad) 96px; }
 @media (min-width: 1100px) {
-  .doc, .foot, #deploy-bar { margin-left: var(--rail-w); transition: margin-left .18s ease; }
+  .doc, .foot, #deploy-bar { margin-left: var(--rail-w); transition: margin-left .3s ease; }
 }
 
 /* ---------- content type ---------- */
