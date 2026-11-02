@@ -460,17 +460,21 @@ def render(page: Page, rendered: str, hidden: set[str], publish: bool = False) -
 """
 
 
-def dashboard() -> str:
+def dashboard(catalog: dict | None = None, audit: dict | None = None,
+              refero: int | None = None) -> str:
     """The home page body: a roll-up of the library instead of links to it —
     counts, the newest audit's grade distribution, recent captures, what most
     needs work, and category coverage. Same content either build: it shows
-    only what the published scorecard pages already say."""
-    _, audits = scorecard.load()
-    audit = audits[-1]
-    catalog = json.loads((ROOT / "catalog.json").read_text())
+    only what the published scorecard pages already say. Arguments default to
+    the repository's data so tests can drive it with fixed input."""
+    if audit is None:
+        _, audits = scorecard.load()
+        audit = audits[-1]
+    catalog = catalog or json.loads((ROOT / "catalog.json").read_text())
     systems = catalog["systems"]
-    refero = sum(1 for d in (ROOT / "refero").iterdir()
-                 if d.is_dir() and not d.name.startswith("."))
+    if refero is None:
+        refero = sum(1 for d in (ROOT / "refero").iterdir()
+                     if d.is_dir() and not d.name.startswith("."))
     cats = catalog.get("categories", {})
 
     tally = {"meets": 0, "partly": 0, "missing": 0}
