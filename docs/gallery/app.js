@@ -422,7 +422,7 @@ const RENDER = {
         copy(text, `${label} copied`);
       };
     }
-    main.querySelector('[data-lb="cover"]').onclick = () => openLightbox([{ path: s.cover.path, name: 'cover' }], 0);
+    main.querySelector('[data-lb="cover"]').onclick = () => openLightbox([{ path: s.cover.path, name: 'cover' }], 0, { sys: s });
     const art = main.querySelector('.brief');
     getText(s.entry).then((text) => {
       const brief = between(text, 'brief');
@@ -522,7 +522,7 @@ const RENDER = {
     if (iconGrid) {
       const openIcon = (e) => {
         const t = e.target.closest('.icon-tile');
-        if (t) openLightbox(items.map((p) => ({ path: p, name: fileName(p).replace(/\.[^.]+$/, '') })), [...iconGrid.children].indexOf(t));
+        if (t) openLightbox(items.map((p) => ({ path: p, name: fileName(p).replace(/\.[^.]+$/, '') })), [...iconGrid.children].indexOf(t), { sys: s });
       };
       iconGrid.onclick = openIcon;
       iconGrid.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openIcon(e); } };
@@ -587,11 +587,13 @@ function renderImages(pane, s, items, withThemeFilter) {
   };
   const draw = () => {
     const g = ++gen;
-    shown = items.filter((i) => filter === 'all' || i.tags.includes(filter));
+    const savedN = items.filter((i) => savedSet().has(i.path)).length;
+    shown = filter === 'saved' ? items.filter((i) => savedSet().has(i.path))
+      : items.filter((i) => filter === 'all' || i.tags.includes(filter));
     const names = [...new Set(shown.map((i) => i.group))];
     pane.innerHTML = `
-      ${withThemeFilter ? `<div class="subfilters">${['all', 'light', 'dark', 'mobile'].filter((k) => k === 'all' || counts[k])
-        .map((k) => `<button class="chip" data-f="${k}" aria-pressed="${filter === k}">${k === 'all' ? 'All' : k[0].toUpperCase() + k.slice(1)}<span class="n">${k === 'all' ? items.length : counts[k]}</span></button>`).join('')}</div>` : ''}
+      ${withThemeFilter ? `<div class="subfilters">${['all', 'light', 'dark', 'mobile', 'saved'].filter((k) => k === 'all' || (k === 'saved' ? savedN : counts[k]))
+        .map((k) => `<button class="chip" data-f="${k}" aria-pressed="${filter === k}">${k === 'all' ? 'All' : k[0].toUpperCase() + k.slice(1)}<span class="n">${k === 'all' ? items.length : (k === 'saved' ? savedN : counts[k])}</span></button>`).join('')}</div>` : ''}
       ${names.map((gr) => `${names.length > 1 ? `<div class="group-title">${esc(gr)}/</div>` : ''}<div class="shots ${portrait(s) && withThemeFilter ? 'phone' : ''}" data-g="${esc(gr)}"></div>`).join('')}
       ${shown.length > PAGE ? `<div class="more"><button class="btn" data-more>Show all ${shown.length}</button></div>` : ''}`;
     groups = new Map([...pane.querySelectorAll('.shots')].map((el) => [el.dataset.g, el]));
@@ -603,7 +605,7 @@ function renderImages(pane, s, items, withThemeFilter) {
   };
   pane.onclick = (e) => {
     const b = e.target.closest('.shot[data-i]');
-    if (b && shown[+b.dataset.i]) openLightbox(shown, +b.dataset.i);
+    if (b && shown[+b.dataset.i]) openLightbox(shown, +b.dataset.i, { sys: s, onTag: (k) => { filter = k; draw(); }, onSave: () => draw() });
   };
   draw();
 }
@@ -768,8 +770,19 @@ const lb = document.getElementById('lightbox');
 let lbItems = [];
 let lbIndex = 0;
 let lbOpener = null;
-function openLightbox(items, index) {
+let lbSys = null;
+let lbOnTag = null;
+let lbOnSave = null;
+
+// Bookmarked assets persist across sessions: a set of media paths.
+const savedSet = () => new Set(JSON.parse(localStorage.getItem('ds-saved') || '[]'));
+const writeSaved = (set) => { try { localStorage.setItem('ds-saved', JSON.stringify([...set])); } catch (e) {} };
+
+function openLightbox(items, index, opts) {
   lbItems = items; lbIndex = index; lbOpener = document.activeElement;
+  lbSys = (opts && opts.sys) || null;
+  lbOnTag = (opts && opts.onTag) || null;
+  lbOnSave = (opts && opts.onSave) || null;
   showLightbox(); lb.hidden = false;
   lb.querySelector('.lb-close').focus();
 }
@@ -780,18 +793,69 @@ function closeLightbox() {
 }
 function showLightbox() {
   const it = lbItems[lbIndex];
-  const img = lb.querySelector('img');
+  const img = lb.querySelector('.lb-stage img');
   img.classList.remove('zoom');
   img.onload = () => img.classList.toggle('zoom', img.naturalWidth < 240 && img.naturalHeight < 240);
   img.src = url(it.path);
-  lb.querySelector('figcaption').innerHTML = `${esc(it.name)} <span style="opacity:.6">${lbIndex + 1} / ${lbItems.length}</span><a href="${url(it.path)}" target="_blank" rel="noopener">Open original ↗</a>`;
-  lb.querySelector('.lb-prev').hidden = lb.querySelector('.lb-next').hidden = lbItems.length < 2;
+  lb.querySelector('figcaption').innerHTML = `${esc(it.name)} <a href="${url(it.path)}" target="_blank" rel="noopener">Open original ↗</a>`;
+  lb.querySelector('.lb-pos').textContent = `${lbIndex + 1} / ${lbItems.length.toLocaleString()}`;
+  lb.querySelector('.lb-nav').hidden = lbItems.length < 2;
+  renderLbSide(it);
 }
+
+// The right rail, after refero.design's screen viewer: the package card, tag
+// groups that navigate back to a filtered listing, the palette, and the
+// download / copy / bookmark actions.
+function renderLbSide(it) {
+  const s = lbSys;
+  lb.querySelector('.lb-app').innerHTML = `${s ? `<a class="lb-card" href="#/${esc(s.slug)}">
+      <span class="lb-card-icon">${s.icon ? iconImg(s) : `<i>${esc(s.name[0].toUpperCase())}</i>`}</span>
+      <span class="lb-card-txt"><b>${esc(s.name)}</b><small>${esc(it.name)}</small></span></a>` : ''}
+    <button class="lb-close icon-btn" type="button" aria-label="Close">✕</button>`;
+  lb.querySelector('.lb-close').onclick = closeLightbox;
+
+  const secs = [];
+  if (it.tags && it.tags.length) {
+    secs.push(`<div class="lb-sec"><h4>Tags</h4><div class="lb-chips">${it.tags.map((t) => `<button class="chip" data-tag="${esc(t)}">${esc(t)}</button>`).join('')}</div></div>`);
+  }
+  if (s) {
+    secs.push(`<div class="lb-sec"><h4>Style</h4><div class="lb-chips">
+      <button class="chip" data-cat="${esc(s.category)}">${esc(DATA.categories[s.category] || s.category)}</button>
+      ${s.tags.map((t) => `<button class="chip" data-ptag="${esc(t)}">${esc(t)}</button>`).join('')}</div></div>`);
+    const sw = s.swatches[s.tokenTheme] || Object.values(s.swatches)[0] || [];
+    if (sw.length) secs.push(`<div class="lb-sec"><h4>Colors</h4><div class="lb-chips">${sw.slice(0, 10).map((x) => `<button class="chip lb-color" data-hex="${esc(x.value)}" title="${esc(x.token || x.value)}"><i style="background:${esc(x.value)}"></i>${esc(x.role)}</button>`).join('')}</div></div>`);
+  }
+  lb.querySelector('.lb-secs').innerHTML = secs.join('');
+  // A tag chip jumps back to the listing it names, the way refero's chips
+  // return to a filtered search.
+  lb.querySelectorAll('[data-tag]').forEach((b) => b.onclick = () => { closeLightbox(); if (lbOnTag) lbOnTag(b.dataset.tag); });
+  lb.querySelectorAll('[data-cat]').forEach((b) => b.onclick = () => { state.cat = b.dataset.cat; state.q = ''; qInput.value = ''; save(); closeLightbox(); location.hash = '#/'; });
+  lb.querySelectorAll('[data-ptag]').forEach((b) => b.onclick = () => {
+    const t = b.dataset.ptag;
+    if (t === 'web' || t === 'ios' || t === 'desktop') { state.platform = t === 'desktop' ? 'all' : t; state.q = ''; } else { state.q = t; state.platform = 'all'; }
+    qInput.value = state.q; save(); closeLightbox(); location.hash = '#/';
+  });
+  lb.querySelectorAll('[data-hex]').forEach((b) => b.onclick = () => copy(b.dataset.hex, `${b.dataset.hex} copied`));
+
+  const saved = savedSet().has(it.path);
+  lb.querySelector('.lb-actions').innerHTML = `
+    <a class="lb-btn" href="${url(it.path)}" download><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v9m0 0 3.5-3.5M8 11 4.5 7.5M2 14h12"/></svg>Download</a>
+    <button class="lb-btn lb-copy" type="button" title="Copy link" aria-label="Copy link"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="5.5" width="8" height="8" rx="1.6"/><path d="M10.5 5.5v-2A1.5 1.5 0 0 0 9 2H3.5A1.5 1.5 0 0 0 2 3.5V9a1.5 1.5 0 0 0 1.5 1.5h2"/></svg></button>
+    <button class="lb-btn lb-save" type="button" aria-pressed="${saved}"><svg width="14" height="14" viewBox="0 0 16 16" fill="${saved ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M3.5 2.5h9a1 1 0 0 1 1 1v10l-5.5-3.4L2.5 13.5v-10a1 1 0 0 1 1-1z"/></svg>${saved ? 'Saved' : 'Save'}</button>`;
+  lb.querySelector('.lb-copy').onclick = () => copy(new URL(url(it.path), location.href).href, 'Link copied');
+  lb.querySelector('.lb-save').onclick = () => {
+    const set = savedSet();
+    if (set.has(it.path)) set.delete(it.path); else set.add(it.path);
+    writeSaved(set);
+    renderLbSide(it);
+    if (lbOnSave) lbOnSave();
+  };
+}
+
 const step = (d) => { lbIndex = (lbIndex + d + lbItems.length) % lbItems.length; showLightbox(); };
-lb.querySelector('.lb-close').onclick = closeLightbox;
 lb.querySelector('.lb-prev').onclick = () => step(-1);
 lb.querySelector('.lb-next').onclick = () => step(1);
-lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+lb.addEventListener('click', (e) => { if (e.target === lb || e.target.classList.contains('lb-stage')) closeLightbox(); });
 
 const toast = document.getElementById('toast');
 let toastTimer;
