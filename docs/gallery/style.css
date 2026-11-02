@@ -170,7 +170,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 1px s
     overflow: hidden; white-space: nowrap;
     transition: width .3s ease;
   }
-  .bar-body { order: 3; flex: 1; min-height: 0; overflow-y: auto; scrollbar-gutter: stable; display: flex; flex-direction: column; }
+  .bar-body { order: 3; flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; }
   .brand { order: 1; height: var(--rail-item-h); padding: 0 10px; margin: 0 0 6px; font-size: 16px; font-weight: 600; }
   .search { order: 2; flex: none; max-width: none; margin: 0 0 18px; height: var(--rail-item-h); border-radius: 12px; }
   .site-nav { order: 3; flex-direction: column; gap: 2px; }

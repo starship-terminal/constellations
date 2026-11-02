@@ -164,7 +164,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
   }
   .brand { order: 1; height: var(--rail-item-h); padding: 0 10px; margin: 0 0 6px; font-size: 16px; font-weight: 600; }
   .search { order: 2; flex: none; max-width: none; margin: 0 0 18px; height: var(--rail-item-h); border-radius: 12px; }
-  .bar-body { order: 3; flex: 1; min-height: 0; overflow-y: auto; scrollbar-gutter: stable; display: flex; flex-direction: column; }
+  .bar-body { order: 3; flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; }
   .site-nav { order: 0; width: auto; flex: none; flex-direction: column; gap: 2px; overflow: visible; }
   .site-nav a { height: var(--rail-item-h); padding: 0 10px; font-size: 14px; font-weight: 500; gap: 10px; }
   .site-nav a[aria-current="page"] { background: var(--sunken); font-weight: 600; }
