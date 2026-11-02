@@ -1,8 +1,8 @@
 /* The docs pages' stylesheet, in the gallery's voice: void-dark canvas,
    hairline borders instead of shadows, Inter Variable at weights ≤590, one
    acid-lime accent, and the same fixed left rail the gallery runs — the mark,
-   a search field, the site nav, the section's own links, and the Settings,
-   theme and collapse buttons at its foot. The theme is the gallery's own
+   the site nav, the section's own links, and the Settings, theme and
+   collapse buttons at its foot. The theme is the gallery's own
    ds-theme store on <html data-theme> — dark is the default. */
 
 /* ---------- tokens ---------- */
@@ -119,15 +119,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .site-nav a:hover .nav-ic, .site-nav a[aria-current="page"] .nav-ic { color: inherit; }
 .site-nav a[aria-current="page"] { color: var(--text-strong); }
 .bar-foot { display: flex; gap: 8px; margin-left: auto; }
-.search {
-  flex: 1; min-width: 0; max-width: 460px; display: flex; align-items: center; gap: 8px;
-  padding: 0 12px; height: 36px; background: var(--field-bg); border: 1px solid var(--field-line);
-  border-radius: var(--radius-ctl); color: var(--faint);
-}
-.search svg { flex: none; }
-.search:focus-within { border-color: var(--focus); }
-.search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--text); font: inherit; font-size: 14px; }
-.search input::placeholder { color: var(--faint); }
 .icon-btn {
   flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   width: 34px; height: 34px; border-radius: var(--radius-ctl);
@@ -163,7 +154,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
     transition: width .3s ease;
   }
   .brand { order: 1; height: var(--rail-item-h); padding: 0 10px; margin: 0 0 6px; font-size: 16px; font-weight: 600; }
-  .search { order: 2; flex: none; max-width: none; margin: 0 0 18px; height: var(--rail-item-h); border-radius: 12px; }
   .bar-body { order: 3; flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; }
   .site-nav { order: 0; width: auto; flex: none; flex-direction: column; gap: 2px; overflow: visible; }
   .site-nav a { height: var(--rail-item-h); padding: 0 10px; font-size: 14px; font-weight: 500; gap: 10px; }
@@ -185,12 +175,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
   :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .brand > span:last-child,
   :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .site-nav a span,
   :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .icon-btn .lbl,
-  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .search input,
   :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .rail { display: none; }
   :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .brand,
   :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .site-nav a,
-  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .icon-btn,
-  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .search { justify-content: center; padding-left: 0; padding-right: 0; }
+  :root[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .icon-btn { justify-content: center; padding-left: 0; padding-right: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .bar, .doc, .foot, #deploy-bar, #nav-toggle svg { transition: none; }
@@ -331,5 +319,4 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 @media screen and (max-width: 700px) {
   .site-nav { order: 3; width: 100%; }
   .site-nav a { padding: 8px 8px; }
-  .search { display: none; }
 }
