@@ -28,3 +28,6 @@ systems/*/raw/*.partial.json
 
 # Refero fetch working files (result JSONs are also stored in refero.db).
 /refero/.work/
+
+# wrangler CLI local state (account cache)
+.wrangler/
