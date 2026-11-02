@@ -1614,10 +1614,27 @@ def serve(port: int) -> None:
     print(f"built {out.relative_to(ROOT)}")
     build_docs()
 
+    # The gallery chat's API lives on this server only; tools/agent/server.py
+    # answers every /api/ route. It is imported lazily so no other command pays
+    # for it, and it is never part of the published site.
+    import importlib.util
+    _api_spec = importlib.util.spec_from_file_location(
+        "agent_server", Path(__file__).resolve().parent / "agent" / "server.py")
+    agent_server = importlib.util.module_from_spec(_api_spec)
+    _api_spec.loader.exec_module(agent_server)
+
     class Handler(http.server.SimpleHTTPRequestHandler):
         def translate_path(self, path):
             target = refero_media.media_file(path) or repo_file(path)
             return str(target) if target else super().translate_path(path)
+
+        def do_GET(self):
+            if not agent_server.handle_get(self):
+                super().do_GET()
+
+        def do_POST(self):
+            if not agent_server.handle_post(self):
+                self.send_error(404)
 
         def log_message(self, *args):
             pass

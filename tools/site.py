@@ -112,7 +112,146 @@ SETTINGS_BODY = """<h1>Settings</h1>
     </div>
     <p class="pref-note">An app installed from this site keeps the Flat icon: its manifest is fixed when it is installed.</p>
   </fieldset>
+  <fieldset class="pref" id="provider">
+    <legend class="pref-name">Model provider</legend>
+    <p class="pref-help">Powers the gallery's chat search. Saved in this browser; the key only travels to this local server.</p>
+    <div id="pf">
+      <div class="pf-chips" role="group" aria-label="Provider template" id="pf-templates"></div>
+      <div class="pf-grid">
+        <label class="pf-field"><span>Base URL</span>
+          <input id="pf-base" type="url" autocomplete="off" spellcheck="false" placeholder="https://api.example.com/v1"></label>
+        <label class="pf-field"><span>API key</span>
+          <input id="pf-key" type="password" autocomplete="off" spellcheck="false" placeholder="sk-…"></label>
+        <label class="pf-field"><span>Model</span>
+          <input id="pf-model" list="pf-models" autocomplete="off" spellcheck="false" disabled placeholder="test the connection first"><datalist id="pf-models"></datalist></label>
+      </div>
+      <p class="pf-status" id="pf-status" role="status"></p>
+      <div class="pf-actions">
+        <button id="pf-test" class="pf-btn" type="button">Test connection</button>
+        <button id="pf-save" class="pf-btn primary" type="button">Save</button>
+        <button id="pf-clear" class="pf-btn" type="button">Forget</button>
+      </div>
+      <p class="pref-note">The template fills Base URL and the auth style; every field stays editable. Model unlocks once a test against the endpoint succeeds, and the fetched list fills the dropdown. Anthropic keys also work from .env as ANTHROPIC_API_KEY with no setup here.</p>
+    </div>
+    <p id="pf-off" hidden>Agent chat runs on the local server (<code>make serve</code>); this section is inactive on the published site.</p>
+  </fieldset>
 </div>
+<script>
+  (function () {
+    var TEMPLATES = {
+      anthropic: { label: 'Anthropic', api: 'anthropic', base_url: 'https://api.anthropic.com', key_header: 'x-api-key' },
+      openai: { label: 'OpenAI', api: 'openai', base_url: 'https://api.openai.com/v1', key_header: 'authorization' },
+      gemini: { label: 'Gemini', api: 'openai', base_url: 'https://generativelanguage.googleapis.com/v1beta/openai', key_header: 'x-goog-api-key', models_url: 'https://generativelanguage.googleapis.com/v1beta/models' },
+      grok: { label: 'Grok (xAI)', api: 'openai', base_url: 'https://api.x.ai/v1', key_header: 'authorization' },
+      custom: { label: 'Custom', api: 'openai', base_url: '', key_header: 'authorization' }
+    };
+    var API = '../api/';
+    var el = function (id) { return document.getElementById(id); };
+    var base = el('pf-base'), key = el('pf-key'), model = el('pf-model'),
+        models = el('pf-models'), status = el('pf-status'), form = el('pf'), off = el('pf-off');
+    var current = 'anthropic', verified = '';
+    // `active` is the api/auth the test and save actually use. Picking a
+    // template sets it; a saved config restores its own, so a custom base URL
+    // can't silently change the wire format on the next save.
+    var active = { api: 'anthropic', key_header: 'x-api-key' };
+    var sig = function () { return JSON.stringify([base.value.trim(), key.value]); };
+    var setStatus = function (t, warn) { status.textContent = t || ''; status.dataset.warn = warn ? '1' : ''; };
+    // The model field stays locked until the exact base+key pair passes a test.
+    var relock = function () {
+      var ok = verified && verified === sig();
+      model.disabled = !ok;
+      if (!ok) { model.placeholder = 'test the connection first'; }
+      else { model.placeholder = 'pick or type a model'; }
+    };
+    function template(key_) {
+      current = key_;
+      var t = TEMPLATES[key_];
+      active = { api: t.api, key_header: t.key_header };
+      if (t.models_url) active.models_url = t.models_url;
+      base.value = t.base_url;
+      form.querySelectorAll('#pf-templates button').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.t === key_));
+      });
+    }
+    Object.keys(TEMPLATES).forEach(function (k) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'pf-chip'; b.dataset.t = k; b.textContent = TEMPLATES[k].label;
+      b.onclick = function () { template(k); relock(); };
+      el('pf-templates').appendChild(b);
+    });
+    var fillModels = function (list) {
+      models.innerHTML = '';
+      (list || []).forEach(function (m) {
+        var o = document.createElement('option');
+        o.value = m.id; o.textContent = m.label || m.id;
+        models.appendChild(o);
+      });
+    };
+    [base, key].forEach(function (i) {
+      i.addEventListener('input', function () { setStatus(''); fillModels([]); relock(); });
+    });
+    el('pf-test').onclick = function () {
+      if (!base.value.trim() || !key.value) { setStatus('Base URL and API key first.', true); return; }
+      var body = { api: active.api, base_url: base.value.trim(), api_key: key.value, key_header: active.key_header };
+      if (active.models_url) body.models_url = active.models_url;
+      var submitted = sig();
+      setStatus('Testing…');
+      el('pf-test').disabled = true;
+      fetch(API + 'provider/test', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          // Only the pair actually tested may unlock the model field; a field
+          // edited mid-flight invalidates this reply.
+          if (sig() !== submitted) { setStatus('Fields changed during the test — test again.', true); return; }
+          if (d.ok) {
+            verified = submitted;
+            fillModels(d.models);
+            setStatus(d.models && d.models.length ? 'Connected: ' + d.models.length + ' models found.' : 'Connected. ' + (d.note || 'Type the model name.'));
+            relock();
+            if (d.models && d.models.length && !model.value) model.value = d.models[0].id;
+          } else { setStatus(d.error || 'Test failed.', true); }
+        })
+        .catch(function () { setStatus('No answer from the local server.', true); })
+        .finally(function () { el('pf-test').disabled = false; });
+    };
+    el('pf-save').onclick = function () {
+      if (!verified || verified !== sig()) { setStatus('Test the connection before saving.', true); return; }
+      if (!model.value.trim()) { setStatus('Pick a model first.', true); return; }
+      var cfg = { name: current, api: active.api, base_url: base.value.trim(), api_key: key.value,
+                  key_header: active.key_header, model: model.value.trim() };
+      if (active.models_url) cfg.models_url = active.models_url;
+      try { localStorage.setItem('ds-provider', JSON.stringify(cfg)); } catch (e) {}
+      setStatus('Saved: ' + TEMPLATES[current].label + ' · ' + cfg.model);
+    };
+    el('pf-clear').onclick = function () {
+      try { localStorage.removeItem('ds-provider'); } catch (e) {}
+      setStatus('Forgot the saved provider.');
+    };
+    // Prefill the saved provider; the chip is cosmetic — its saved api/auth
+    // values are what survive, not whichever template its URL happens to match.
+    try {
+      var saved = JSON.parse(localStorage.getItem('ds-provider') || 'null');
+      if (saved) {
+        var match = Object.keys(TEMPLATES).find(function (k) {
+          return TEMPLATES[k].api === saved.api && TEMPLATES[k].base_url === saved.base_url;
+        });
+        template(match || (TEMPLATES[saved.name] ? saved.name : 'custom'));
+        active = { api: saved.api || 'openai', key_header: saved.key_header || 'authorization' };
+        if (saved.models_url) active.models_url = saved.models_url;
+        base.value = saved.base_url || base.value; key.value = saved.api_key || '';
+        model.value = saved.model || ''; verified = sig(); relock();
+        setStatus('Saved: ' + ((TEMPLATES[saved.name] || {}).label || saved.name || 'provider') + ' · ' + saved.model);
+      } else { template('anthropic'); }
+    } catch (e) { template('anthropic'); }
+    // The API only exists on the local server; elsewhere the section goes quiet.
+    fetch(API + 'status').then(function (r) {
+      if (!r.ok) throw new Error();
+      return r.json();
+    }).then(function (d) {
+      if (d && d.envProvider) setStatus((status.textContent ? status.textContent + ' ' : '') + '(server has an .env fallback key too)');
+    }).catch(function () { form.hidden = true; off.hidden = false; });
+  })();
+</script>
 <script>
   (function () {
     var radios = document.querySelectorAll('input[name="app-icon"]');

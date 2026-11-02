@@ -272,6 +272,38 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .pref-option strong { color: var(--text-strong); font-weight: 510; font-size: 14px; }
 .pref-option small { color: var(--muted); font-size: 12px; }
 
+/* The provider form (settings/): template chips, labelled fields, a status
+   line and the action row. The model field stays disabled until a test on
+   the current base URL and key succeeds. */
+.pf-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.pf-chip {
+  font: inherit; font-size: 13px; padding: 5px 12px; border-radius: 99px; cursor: pointer;
+  border: 1px solid var(--line); background: transparent; color: var(--muted);
+}
+.pf-chip:hover { border-color: var(--line-strong); color: var(--text-strong); }
+.pf-chip[aria-pressed="true"] { border-color: var(--text-strong); background: var(--chip-bg); color: var(--text-strong); }
+.pf-grid { display: grid; gap: 12px; }
+@media (min-width: 560px) { .pf-grid { grid-template-columns: 1fr 1fr; } .pf-field:last-child { grid-column: 1 / -1; } }
+.pf-field { display: grid; gap: 6px; font-size: 12.5px; color: var(--muted); }
+.pf-field input {
+  font: inherit; font-size: 14px; color: var(--text); width: 100%; box-sizing: border-box;
+  height: 36px; padding: 0 10px; border-radius: var(--radius-ctl);
+  border: 1px solid var(--line); background: var(--field-bg); outline: 0;
+}
+.pf-field input:focus { border-color: var(--focus); }
+.pf-field input:disabled { opacity: .55; }
+.pf-status { min-height: 18px; margin: 10px 0 0; font-size: 12.5px; color: var(--muted); }
+.pf-status[data-warn="1"] { color: var(--warn, #e04f3e); }
+.pf-actions { display: flex; gap: 8px; margin-top: 12px; }
+.pf-btn {
+  font: inherit; font-size: 13px; padding: 7px 14px; border-radius: var(--radius-ctl); cursor: pointer;
+  border: 1px solid var(--line); background: transparent; color: var(--text-strong);
+}
+.pf-btn:hover { border-color: var(--line-strong); }
+.pf-btn.primary { border-color: var(--text-strong); background: var(--chip-bg); }
+.pf-btn:disabled { opacity: .55; cursor: default; }
+#pf-off { clear: left; margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+
 /* ---------- footer ---------- */
 .foot {
   border-top: 1px solid var(--line); color: var(--muted); font-size: 12px;
