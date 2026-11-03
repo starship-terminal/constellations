@@ -24,17 +24,13 @@ class PublishTest(unittest.TestCase):
         p.title = "Home"
         return p
 
-    def test_publish_drops_the_gallery_nav_links_and_search_form(self):
-        local = sitegen.render(self.page(), "<p>x</p>", set())
-        published = sitegen.render(self.page(), "<p>x</p>", set(), publish=True)
-        self.assertIn("gallery/index.html", local)
-        self.assertNotIn("gallery/", published)
-        # The rail's search field is gone in both modes; the gallery's own
-        # composer is the only search surface.
-        for rendered in (local, published):
-            self.assertNotIn('class="search"', rendered)
+    def test_no_page_links_the_gallery(self):
+        # The gallery lives in the Next.js app now; the static site never ships
+        # it (it shows the captures), so no page may link into it.
+        rendered = sitegen.render(self.page(), "<p>x</p>", set())
+        self.assertNotIn("gallery/", rendered)
         for keep in ("scorecard/", "DESIGN-SYSTEM/"):
-            self.assertIn(keep, published)
+            self.assertIn(keep, rendered)
 
     def test_home_renders_the_dashboard(self):
         body = sitegen.dashboard()
@@ -93,15 +89,15 @@ class AppIconTest(unittest.TestCase):
             self.assertIn(polygon, sitegen.MARK_SVG)
         self.assertNotIn('id="c"', sitegen.MARK_SVG)
 
-    def test_the_gallery_carries_the_same_head_and_mark(self):
-        gallery = (sitegen.DOCS / "gallery" / "index.html").read_text()
-        self.assertIn(sitegen.ICON_LINKS.format(rel="../"), gallery)
-        self.assertIn(sitegen.MARK_SVG, gallery)
-        self.assertIn('href="../settings/"', gallery)
+    def test_the_app_rail_carries_the_same_mark(self):
+        rail = (sitegen.ROOT / "web" / "components" / "Rail.tsx").read_text()
+        self.assertIn('id="ds-mark-clip"', rail)
+        svg = (self.ASSETS / "favicon.svg").read_text()
+        for polygon in re.findall(r'<polygon points="([^"]+)"', svg):
+            self.assertIn(f'points="{polygon}"', rail)
 
     def test_every_page_links_settings_and_it_offers_both_icons(self):
-        for publish in (False, True):
-            self.assertIn('href="settings/"', sitegen.render(self.page(), "<p>x</p>", set(), publish))
+        self.assertIn('href="settings/"', sitegen.render(self.page(), "<p>x</p>", set()))
         body = sitegen.SETTINGS_BODY.replace("{rel}", "../")
         self.assertEqual(re.findall(r'name="app-icon" value="(\w+)"', body), ["flat", "glass"])
         for src in re.findall(r'src="\.\./(assets/[^"]+)"', body):

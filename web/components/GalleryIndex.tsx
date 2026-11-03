@@ -140,6 +140,8 @@ export function GalleryIndex({ data }: { data: GalleryData }) {
       if (e.key !== "/" || e.metaKey || e.ctrlKey) return;
       const t = e.target as HTMLElement;
       if (/^(input|textarea|select)$/i.test(t.tagName) || t.isContentEditable) return;
+      // An open lightbox or the chat drawer traps the page: keep focus in it.
+      if (document.querySelector('[aria-modal="true"], [role="dialog"]:not([aria-hidden="true"])')) return;
       e.preventDefault();
       qRef.current?.focus();
     };

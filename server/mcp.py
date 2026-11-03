@@ -2,7 +2,7 @@
 JSON-RPC, so a coding agent (Devin, Claude, Cursor) becomes another chat UI for
 the library. Point a client at it with, for example:
 
-    python3 tools/agent/mcp.py
+    python3 server/mcp.py
 
 Hand-rolled against the 2025-03-26 MCP shape: initialize, tools/list,
 tools/call and ping. Notifications get no reply. Every call is read-only;

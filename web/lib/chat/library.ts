@@ -1,11 +1,11 @@
-// The tool layer behind the gallery chat, ported from tools/agent/library.py
+// The tool layer behind the gallery chat, ported from server/library.py
 // plus the tools/catalog.py helpers it calls (load_catalog, find, swatches,
 // export_tokens, repo_file, Resolver). Every tool returns a JSON-able object.
 //
 // Two differences from the Python, both data-source swaps the caller asked for:
-// the refero store reads the prebuilt JSON index under docs/gallery/refero/
+// the refero store reads the prebuilt JSON index under web/data/refero/
 // instead of refero.db's sqlite, and view_media falls back to a prebuilt
-// docs/gallery/thumbs/ thumbnail instead of a Pillow downscale. Site-relative
+// web/data/thumbs/ thumbnail instead of a Pillow downscale. Site-relative
 // media URLs are "/media/<repo-relative>" for the app's media route.
 import { existsSync, promises as fs } from "node:fs";
 import path from "node:path";
@@ -29,9 +29,9 @@ export const ROOT = (() => {
   return primary;
 })();
 
-const REFERO_DIR = path.join(ROOT, "docs", "gallery", "refero");
+const REFERO_DIR = path.join(ROOT, "web", "data", "refero");
 const REFERO_INDEX = path.join(REFERO_DIR, "index.json");
-const THUMBS_DIR = path.join(ROOT, "docs", "gallery", "thumbs");
+const THUMBS_DIR = path.join(ROOT, "web", "data", "thumbs");
 
 const IMAGE_TYPES: Record<string, string> = {
   ".png": "image/png",

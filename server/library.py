@@ -1,6 +1,6 @@
 """The tool layer behind the gallery chat and the MCP server: read-only functions
 over the two stores (systems/ packages and the refero snapshot). chat.py wraps
-them for a model's tool calls; server.py surfaces their results to the page.
+them for a model's tool calls; routes.py surfaces their results to the page.
 
 Every tool returns a JSON-able dict. Slugs resolve against catalog.json first,
 then refero.db. File access is bounded the way catalog.repo_file is: a resolved
@@ -19,10 +19,10 @@ import sqlite3
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
 import catalog  # noqa: E402
 
-ROOT = Path(__file__).resolve().parent.parent.parent
+ROOT = Path(__file__).resolve().parent.parent
 REFERO_DB = ROOT / "refero" / "refero.db"
 
 IMAGE_TYPES = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
@@ -261,7 +261,7 @@ def view_media(slug: str, path: str) -> dict:
 
 def _shrink(path: Path, media_type: str):
     """Downscale an oversized PNG/JPEG to the size a vision call wants, or None
-    when Pillow is not installed (make serve can run a bare python3)."""
+    when Pillow is not installed (server/mcp.py can run a bare python3)."""
     try:
         import io
         from PIL import Image

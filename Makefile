@@ -1,7 +1,8 @@
-# Browse the library's docs site (gallery, scorecard, docs), and check the catalog before a commit.
+# Browse the library through the Next.js app (make dev), and check the catalog before a commit.
 # `make setup` once installs the site builder's and the capture tools' python dependencies
 # (requirements.txt + tools/requirements-capture.txt) into .venv; everything else needs only
-# python3 (lint-design-md also needs Node.js). `make serve PORT=9000` picks another port.
+# python3 (lint-design-md also needs Node.js, and the app needs pnpm). `make dev PORT=9000`
+# picks another port.
 
 PYTHON ?= python3
 PORT ?= 8800
@@ -14,19 +15,18 @@ help: ## List the targets
 setup: ## Create .venv with the site builder's and capture tools' dependencies (once per machine)
 	uv venv -q --python 3.13 .venv && uv pip install -q --python .venv/bin/python -r requirements.txt -r tools/requirements-capture.txt
 
-dev: ## Serve the site and open the gallery and the scorecard in the browser (PORT, default 8800)
+dev: ## Run the Next.js app (web/) on 127.0.0.1 and open the gallery and the scorecard (PORT, default 8800)
 	@./scripts/dev.sh --port $(PORT)
 
-serve: ## Build the gallery, scorecard and docs site and serve it on 127.0.0.1 (PORT, default 8800)
-	@$(PYTHON) tools/catalog.py serve --port $(PORT)
+serve: web ## Alias for `make web`
 
-build: ## Write the gallery's data and screenshot thumbnails into docs/gallery/
+build: ## Write the app's data and screenshot thumbnails into web/data/
 	@$(PYTHON) tools/catalog.py build
 
-web: ## Run the Next.js frontend (web/) in dev mode on :8800
-	@pnpm --dir web dev
+web: build ## Run the Next.js app (web/) in dev mode on 127.0.0.1 (PORT, default 8800)
+	@pnpm --dir web exec next dev -H 127.0.0.1 -p $(PORT)
 
-web-build: ## Build the Next.js frontend for production (web/.next)
+web-build: ## Build the Next.js app for production (web/.next)
 	@pnpm --dir web build
 
 docs: ## Generate the scorecard pages and build the docs site into site/
@@ -58,4 +58,4 @@ test: ## Run the tools' tests, then every package's own tests (systems/*/tools/t
 	@$(PYTHON) tools/package_tests.py
 
 clean: ## Remove generated files
-	rm -rf site docs/gallery/data.json docs/gallery/thumbs docs/gallery/refero docs/gallery/export docs/scorecard refero/.work
+	rm -rf site web/data docs/scorecard refero/.work

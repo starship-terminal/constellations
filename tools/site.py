@@ -1,15 +1,15 @@
-"""Build the docs site: render docs/**/*.md into site/ with the gallery's chrome.
+"""Build the docs site: render docs/**/*.md into site/ with the site's chrome.
 
     python3 tools/site.py              write site/ (run tools/scorecard.py first)
-    python3 tools/site.py --publish    the same, for the published site: the gallery
-                                       copy, its nav links and its card are left out
 
 Replaces the Zensical/Material build with a small static renderer: every page is
-one markdown file wrapped in the same bar the gallery uses — a fixed left rail
+one markdown file wrapped in the same bar the web app uses — a fixed left rail
 with the mark, the site nav, the section's own links, and the Settings link,
 ds-theme toggle and collapse toggle at its foot — plus the
 Settings page (settings/, its Preferences hold the app icon). site/ is
-gitignored; the Pages workflow builds it with --publish and encrypts the rest.
+gitignored; the Pages workflow builds it and encrypts the rest. The gallery and
+its chat live only in the Next.js app (web/), which the published site never
+ships — it shows the captures.
 """
 import argparse
 import html
@@ -41,7 +41,7 @@ def mark_svg() -> str:
     """The bar's mark: the Flat favicon (docs/assets/favicon.svg) inline at 18 px,
     then an empty span the Glass app icon paints from CSS (assets/app-icon.js
     picks which shows). The clip path's id is namespaced so it cannot collide
-    with an id on the page. docs/gallery/index.html carries the same markup."""
+    with an id on the page. web/components/Rail.tsx draws the same mark."""
     svg = (DOCS / "assets" / "favicon.svg").read_text().strip()
     svg = svg.replace('id="c"', 'id="ds-mark-clip"').replace("url(#c)", "url(#ds-mark-clip)")
     svg = svg.replace("<svg ", '<svg class="mark" width="18" height="18" aria-hidden="true" ', 1)
@@ -69,7 +69,7 @@ COLLAPSE_SVG = ('<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="tr
 
 
 def nav_ic(inner: str) -> str:
-    """A site-nav glyph, the same set docs/gallery/index.html draws."""
+    """A site-nav glyph, the same set web/components/Rail.tsx draws."""
     return ('<svg class="nav-ic" width="17" height="17" viewBox="0 0 16 16" aria-hidden="true" fill="none" '
             'stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">'
             f'{inner}</svg>')
@@ -77,11 +77,6 @@ def nav_ic(inner: str) -> str:
 
 NAV_ICONS = {
     "home": nav_ic('<path d="M2 6.5 8 1.5l6 5V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>'),
-    "gallery": nav_ic('<rect x="1.5" y="1.5" width="5.6" height="5.6" rx="1.4"/>'
-                      '<rect x="8.9" y="1.5" width="5.6" height="5.6" rx="1.4"/>'
-                      '<rect x="1.5" y="8.9" width="5.6" height="5.6" rx="1.4"/>'
-                      '<rect x="8.9" y="8.9" width="5.6" height="5.6" rx="1.4"/>'),
-    "refero": nav_ic('<path d="M8 1.8l1.5 3.9 4.2.3-3.2 2.7 1 4.1L8 10.4l-3.5 2.4 1-4.1-3.2-2.7 4.2-.3z"/>'),
     "scorecard": nav_ic('<path d="M2 14V8.5M6 14V4.5M10 14v-6M14 14V2.5"/>'),
     "docs": nav_ic('<path d="M3 2.5h8a2 2 0 0 1 2 2V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/>'
                    '<path d="M5.5 5.5h5M5.5 8h5M5.5 10.5h3"/>'),
@@ -112,7 +107,7 @@ SETTINGS_BODY = """<h1>Settings</h1>
   </fieldset>
   <fieldset class="pref" id="provider">
     <legend class="pref-name">Model provider</legend>
-    <p class="pref-help">Powers the gallery's chat search. Saved in this browser; the key only travels to this local server.</p>
+    <p class="pref-help">Powers the app's chat search. Saved in this browser; the key only travels to this local server.</p>
     <div id="pf">
       <div class="pf-chips" role="group" aria-label="Provider template" id="pf-templates"></div>
       <div class="pf-grid">
@@ -131,7 +126,7 @@ SETTINGS_BODY = """<h1>Settings</h1>
       </div>
       <p class="pref-note">The template fills Base URL and the auth style; every field stays editable. Model unlocks once a test against the endpoint succeeds, and the fetched list fills the dropdown. Anthropic keys also work from .env as ANTHROPIC_API_KEY with no setup here.</p>
     </div>
-    <p id="pf-off" hidden>Agent chat runs on the local server (<code>make serve</code>); this section is inactive on the published site.</p>
+    <p id="pf-off" hidden>Agent chat runs in the Next.js app (<code>make dev</code>); this section is inactive on the published site.</p>
   </fieldset>
 </div>
 <script>
@@ -356,19 +351,14 @@ def rail(page: Page, rel: str) -> str:
     return f'<aside class="rail"><nav aria-label="Section">{links}</nav></aside>'
 
 
-def render(page: Page, rendered: str, hidden: set[str], publish: bool = False) -> str:
+def render(page: Page, rendered: str, hidden: set[str]) -> str:
     rel = "../" * page.url.count("/")
     home = rel if rel else "./"
     current = lambda sec: ' aria-current="page"' if page.section == sec or (sec == "home" and not page.url) else ""
     body = f'<main class="doc">{rendered}</main>'
     section = rail(page, rel) if page.section and "navigation" not in hidden else ""
-    # The published site drops site/gallery/ (it shows the captures), so the nav
-    # links and the search form that submits into it are left out too.
-    nav = [(home, "Home", "home", current("home"))]
-    if not publish:
-        nav += [(f"{rel}gallery/index.html", "Gallery", "gallery", ""),
-                (f"{rel}gallery/index.html#/refero", "Refero", "refero", "")]
-    nav += [(f"{rel}scorecard/", "Scorecard", "scorecard", current("scorecard")),
+    nav = [(home, "Home", "home", current("home")),
+           (f"{rel}scorecard/", "Scorecard", "scorecard", current("scorecard")),
             (f"{rel}DESIGN-SYSTEM/", "Docs", "docs", current("docs"))]
     nav = "\n      ".join(f'<a href="{href}"{cur}>{NAV_ICONS[key]}<span>{label}</span></a>'
                           for href, label, key, cur in nav)
@@ -523,14 +513,12 @@ def dashboard(catalog: dict | None = None, audit: dict | None = None,
 </div>"""
 
 
-def build(publish: bool = False) -> None:
+def build() -> None:
     import markdown
 
     # site/ is fully generated; start clean so removed pages and assets leave.
     shutil.rmtree(OUT, ignore_errors=True)
-    # --publish leaves the gallery out entirely: it shows the captures, so the Pages
-    # workflow never ships it.
-    statics = ["assets", "stylesheets", "site.webmanifest"] + ([] if publish else ["gallery"])
+    statics = ["assets", "stylesheets", "site.webmanifest"]
     for name in statics:
         src, dst = DOCS / name, OUT / name
         if not src.exists():
@@ -552,14 +540,14 @@ def build(publish: bool = False) -> None:
             body += dashboard()
         dest = OUT / page.url / "index.html" if page.url else OUT / "index.html"
         dest.parent.mkdir(parents=True, exist_ok=True)
-        atomic_write(dest, render(page, body, hidden, publish))
+        atomic_write(dest, render(page, body, hidden))
         count += 1
 
     settings = Page(DOCS / "index.md", "settings/", "settings")
     settings.title = "Settings"
     (OUT / "settings").mkdir(parents=True, exist_ok=True)
     atomic_write(OUT / "settings" / "index.html",
-                 render(settings, SETTINGS_BODY.replace("{rel}", "../"), {"navigation"}, publish))
+                 render(settings, SETTINGS_BODY.replace("{rel}", "../"), {"navigation"}))
     count += 1
 
     # A 404 is served at the missing URL, whatever its depth, so the page's
@@ -572,17 +560,15 @@ def build(publish: bool = False) -> None:
                 "  document.write('<base href=\"/' + (__seg[0] === 'design-systems' ? 'design-systems/' : '') + '\">');\n"
                 "</script>")
     html_404 = render(not_found, "<h1>Page not found</h1><p><a href='./'>Back to the library home</a>.</p>",
-                      {"navigation"}, publish).replace("<head>", "<head>\n" + base_fix, 1)
+                      {"navigation"}).replace("<head>", "<head>\n" + base_fix, 1)
     atomic_write(OUT / "404.html", html_404)
     print(f"site: wrote {count} pages to {OUT.relative_to(ROOT)}/")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--publish", action="store_true",
-                        help="build for publishing: leave out the gallery, its nav links and its card")
-    args = parser.parse_args()
-    build(publish=args.publish)
+    parser.parse_args()
+    build()
 
 
 if __name__ == "__main__":

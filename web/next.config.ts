@@ -13,8 +13,7 @@ const config: NextConfig = {
   outputFileTracingExcludes: {
     "*": [
       "systems/**",
-      "docs/gallery/thumbs/**",
-      "docs/gallery/refero/**",
+      "web/data/**",
       "refero/**",
       "site/**",
       "example/**",

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """The /api/ server for the deployed docs site.
 
-`catalog.py serve` already answers /api/ for local browsing, but on the
+Local browsing gets /api/ from the Next.js app (`make dev`), but on the
 deployment host `deploy.sh` owns the site build and nginx serves site/
 statically — this process exists only to answer the /api/ routes nginx
 proxies to it:
@@ -18,7 +18,7 @@ nginx keeps its longer /api/redeploy location and adds, roughly:
         proxy_set_header Host $http_host;
     }
 
-`proxy_set_header Host $http_host` is required: the origin check in server.py
+`proxy_set_header Host $http_host` is required: the origin check in routes.py
 compares the browser's Origin against Host, and without it every call 403s.
 It must be $http_host, not $host — $host drops the port while Origin keeps
 it, so on https://host:8108 the guard would still reject its own gallery.
@@ -37,7 +37,7 @@ import sys
 from pathlib import Path
 
 _HERE = Path(__file__).resolve()
-ROOT = _HERE.parents[2]
+ROOT = _HERE.parents[1]
 
 
 def _dotenv() -> None:
@@ -48,7 +48,7 @@ def _dotenv() -> None:
 
 def _server():
     spec = importlib.util.spec_from_file_location(
-        "agent_server", _HERE.parent / "server.py")
+        "agent_server", _HERE.parent / "routes.py")
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod
