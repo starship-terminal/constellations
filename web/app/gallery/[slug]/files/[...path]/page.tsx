@@ -52,7 +52,7 @@ export default async function PackageFilePage({ params }: { params: Promise<Para
     body = (
       <article
         className="md doc pd-doc"
-        dangerouslySetInnerHTML={{ __html: markdown(file.text, { base: file.rel }, knownSlugs) }}
+        dangerouslySetInnerHTML={{ __html: markdown(file.text, { base: file.rel, allowRawHtml: true }, knownSlugs) }}
       />
     );
   } else if (ext === ".json" && isText) {
