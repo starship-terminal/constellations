@@ -225,12 +225,19 @@ class WriteMetaTest(unittest.TestCase):
     def meta(self, slug="acme"):
         return json.loads((self.refero / slug / "meta.json").read_text())
 
+    def write_meta(self, slug, media):
+        db = styles_db()
+        try:
+            fetch.write_meta(db, slug, media)
+        finally:
+            db.close()
+
     def test_media_keys_merge_into_an_existing_meta(self):
         folder = self.refero / "acme"
         folder.mkdir()
         (folder / "meta.json").write_text(json.dumps(
             {"uuid": "u1", "slug": "acme", "name": "Acme", "custom": 1}))
-        fetch.write_meta(styles_db(), "acme", MEDIA)
+        self.write_meta("acme", MEDIA)
         meta = self.meta()
         self.assertEqual(list(meta)[:3], ["uuid", "slug", "name"])
         self.assertEqual(meta["custom"], 1)
@@ -239,7 +246,7 @@ class WriteMetaTest(unittest.TestCase):
                          {"uuid", "slug", "name", "custom"} | set(MEDIA))
 
     def test_a_missing_meta_is_rebuilt_from_the_styles_row(self):
-        fetch.write_meta(styles_db(), "acme", MEDIA)
+        self.write_meta("acme", MEDIA)
         meta = self.meta()
         self.assertEqual(set(meta), META_KEYS)
         self.assertEqual(meta["uuid"], "u1")
@@ -249,7 +256,7 @@ class WriteMetaTest(unittest.TestCase):
         folder = self.refero / "acme"
         folder.mkdir()
         (folder / "meta.json").write_text('{"uuid": "u1", "trun')
-        fetch.write_meta(styles_db(), "acme", MEDIA)
+        self.write_meta("acme", MEDIA)
         self.assertEqual(self.meta()["uuid"], "u1")
         self.assertEqual(set(self.meta()), META_KEYS)
         self.assertEqual((folder / "meta.json.bad").read_text(),
@@ -259,12 +266,12 @@ class WriteMetaTest(unittest.TestCase):
         folder = self.refero / "acme"
         folder.mkdir()
         (folder / "meta.json").write_text("[]")
-        fetch.write_meta(styles_db(), "acme", MEDIA)
+        self.write_meta("acme", MEDIA)
         self.assertTrue((folder / "meta.json.bad").is_file())
         self.assertEqual(set(self.meta()), META_KEYS)
 
     def test_atomic_write_leaves_no_tmp(self):
-        fetch.write_meta(styles_db(), "acme", MEDIA)
+        self.write_meta("acme", MEDIA)
         self.assertEqual(list((self.refero / "acme").glob("*.tmp")), [])
 
 
