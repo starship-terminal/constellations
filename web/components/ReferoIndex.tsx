@@ -233,6 +233,18 @@ export function ReferoIndex({ index }: { index: ReferoIndexData }) {
     } catch {}
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "/" || e.metaKey || e.ctrlKey) return;
+      const t = e.target as HTMLElement;
+      if (/^(input|textarea|select)$/i.test(t.tagName) || t.isContentEditable) return;
+      e.preventDefault();
+      qRef.current?.focus();
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, []);
+
   const save = (patch: object) => {
     try {
       const s = JSON.parse(localStorage.getItem("ds-refero") || "{}");

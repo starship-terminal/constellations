@@ -119,6 +119,7 @@ export function GalleryIndex({ data }: { data: GalleryData }) {
   const params = useSearchParams();
   const router = useRouter();
   const chat = useChat();
+  const qRef = useRef<HTMLInputElement>(null);
   const [q, setQ] = useState(params.get("q") || "");
   const [cat, setCat] = useState(params.get("cat") || "all");
   const [dark, setDark] = useState(false);
@@ -134,6 +135,18 @@ export function GalleryIndex({ data }: { data: GalleryData }) {
     } catch {}
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "/" || e.metaKey || e.ctrlKey) return;
+      const t = e.target as HTMLElement;
+      if (/^(input|textarea|select)$/i.test(t.tagName) || t.isContentEditable) return;
+      e.preventDefault();
+      qRef.current?.focus();
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, []);
+
   const save = (patch: object) => {
     try {
       const s = JSON.parse(localStorage.getItem("ds-index") || "{}");
@@ -182,6 +195,7 @@ export function GalleryIndex({ data }: { data: GalleryData }) {
               <path d="M11 11l3.5 3.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
             </svg>
             <input
+              ref={qRef}
               type="search"
               placeholder={chat.enabled ? "Ask for a style, mood or use…" : "Search name, use, tag…"}
               autoComplete="off"

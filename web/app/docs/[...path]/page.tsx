@@ -44,7 +44,7 @@ export default async function DocPage({ params }: Props) {
   if (!src) notFound();
 
   const [docs, known] = await Promise.all([listDocs(), knownSlugs()]);
-  const html = markdown(stripFront(src), { base: fileOf(segs) }, known);
+  const html = markdown(stripFront(src), { base: fileOf(segs), allowRawHtml: true }, known);
 
   return (
     <div className="page">

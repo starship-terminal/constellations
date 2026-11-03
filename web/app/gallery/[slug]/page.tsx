@@ -31,8 +31,16 @@ export default async function PackagePage({ params }: { params: Promise<Params> 
   const readme = await readRepoText(sys.entry);
   const brief = readme ? between(readme, "brief") : null;
   const health = readme ? between(readme, "health") : null;
-  const briefHtml = brief ? markdown(brief, { base: sys.entry }, knownSlugs) : null;
-  const healthHtml = health ? markdown(health, { base: sys.entry }, knownSlugs) : null;
+  // Brief/Health render as fragments of the README: #heading links they carry
+  // point at the full file viewer so they land on headings these blocks don't
+  // emit. Raw HTML is allowed — package files are first-party content.
+  const hooks = {
+    base: sys.entry,
+    allowRawHtml: true,
+    fragHref: (hash: string) => `/gallery/${sys.slug}/files/${sys.entry.split("/").map(encodeURIComponent).join("/")}#${hash}`,
+  };
+  const briefHtml = brief ? markdown(brief, hooks, knownSlugs) : null;
+  const healthHtml = health ? markdown(health, hooks, knownSlugs) : null;
 
   // The newest audit may predate this package: report stays null then and the
   // Health section falls back to the catalog score.
