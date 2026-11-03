@@ -92,11 +92,15 @@ def _refero_db() -> sqlite3.Connection | None:
         return None
     try:
         db = sqlite3.connect(f"file:{REFERO_DB}?mode=ro", uri=True)
-        db.row_factory = sqlite3.Row
-        db.execute("SELECT 1 FROM styles LIMIT 1").fetchone()
-        return db
     except sqlite3.Error:
         return None
+    try:
+        db.row_factory = sqlite3.Row
+        db.execute("SELECT 1 FROM styles LIMIT 1").fetchone()
+    except sqlite3.Error:
+        db.close()
+        return None
+    return db
 
 
 def _refero_search(words: list[str], style: str | None, limit: int) -> list[dict]:
