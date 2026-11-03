@@ -1,4 +1,4 @@
-// The refero snapshot built by `make build` into docs/gallery/refero/:
+// The refero snapshot built by `make build` into web/data/refero/:
 // index.json (~1300 cards) plus one style/<slug>.json entity per style.
 import { promises as fs } from "node:fs";
 import path from "node:path";
@@ -46,7 +46,7 @@ export interface ReferoEntity {
   mediaBase: string;
 }
 
-const DIR = () => path.join(ROOT, "docs", "gallery", "refero");
+const DIR = () => path.join(ROOT, "web", "data", "refero");
 
 let indexCache: { mtime: number; data: ReferoIndex } | null = null;
 

@@ -19,9 +19,10 @@ export const ROOT = (() => {
 
 // Mirrors REPO_PATHS in catalog.py: request prefixes answered from the checkout.
 const REPO_PATHS = ["/systems/", "/tools/", "/example/", "/catalog.json", "/README.md"];
-// Built gallery artifacts and docs assets live under docs/; data paths the
-// gallery uses are site-relative ("gallery/thumbs/x.jpg", "docs/assets/y.svg").
-const EXTRA_PATHS = ["/gallery/", "/docs/"];
+// Extra roots that do not resolve 1:1 from the repo root: generated app data
+// lives under web/data/ ("data/thumbs/x.jpg"), docs assets under docs/
+// ("docs/assets/y.svg").
+const EXTRA_PATHS: Record<string, string> = { "/data/": "web/data", "/docs/": "docs" };
 
 const norm = (p: string) => path.posix.normalize(p);
 
@@ -33,12 +34,16 @@ function inside(target: string, dir: string): boolean {
 export function repoFile(urlPath: string): string | null {
   const clean = decodeURIComponent(urlPath.split("?")[0].split("#")[0]);
   const p = norm(clean);
-  if (![...REPO_PATHS, ...EXTRA_PATHS].some((pre) => p === pre.replace(/\/$/, "") || p.startsWith(pre)))
-    return null;
-  const target = path.resolve(ROOT, p.replace(/^\/+/, ""));
+  const extra = Object.keys(EXTRA_PATHS).find((pre) => p.startsWith(pre));
+  const repo =
+    !extra && REPO_PATHS.some((pre) => p === pre.replace(/\/$/, "") || p.startsWith(pre));
+  if (!extra && !repo) return null;
+  const target = extra
+    ? path.resolve(ROOT, EXTRA_PATHS[extra], p.slice(extra.length))
+    : path.resolve(ROOT, p.replace(/^\/+/, ""));
   const allowed = [
     ...REPO_PATHS.map((x) => path.resolve(ROOT, x.replace(/^\/+|\/+$/g, ""))),
-    path.resolve(ROOT, "docs"),
+    ...Object.values(EXTRA_PATHS).map((d) => path.resolve(ROOT, d)),
   ];
   if (!allowed.some((a) => target === a || inside(target, a))) return null;
   return target;

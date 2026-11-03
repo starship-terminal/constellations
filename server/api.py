@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """The /api/ server for the deployed docs site.
 
-`catalog.py serve` already answers /api/ for local browsing, but on the
+Local browsing gets /api/ from the Next.js app (`make dev`), but on the
 deployment host `deploy.sh` owns the site build and nginx serves site/
 statically — this process exists only to answer the /api/ routes nginx
 proxies to it:
@@ -37,7 +37,7 @@ import sys
 from pathlib import Path
 
 _HERE = Path(__file__).resolve()
-ROOT = _HERE.parents[2]
+ROOT = _HERE.parents[1]
 
 
 def _dotenv() -> None:
@@ -48,7 +48,7 @@ def _dotenv() -> None:
 
 def _server():
     spec = importlib.util.spec_from_file_location(
-        "agent_server", _HERE.parent / "server.py")
+        "agent_server", _HERE.parent / "http.py")
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod

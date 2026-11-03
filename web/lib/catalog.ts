@@ -103,7 +103,7 @@ interface Cache {
 }
 let cache: Cache | null = null;
 
-const DATA_PATH = () => path.join(ROOT, "docs", "gallery", "data.json");
+const DATA_PATH = () => path.join(ROOT, "web", "data", "data.json");
 
 export async function loadData(): Promise<GalleryData> {
   const st = await fs.stat(DATA_PATH());

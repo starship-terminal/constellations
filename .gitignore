@@ -12,13 +12,10 @@ systems/*/tools/capture/out/
 # Clones of public reference repos; only example/README.md is committed.
 /example/*/
 
-# The docs site. `make serve` writes the gallery data and the scorecard pages,
-# then builds everything into site/.
+# The docs site. `make build` writes the app's data under web/data/ and the
+# scorecard pages under docs/scorecard/; `make docs` builds docs/ into site/.
 /site/
-docs/gallery/data.json
-docs/gallery/thumbs/
-docs/gallery/refero/
-docs/gallery/export/
+/web/data/
 docs/scorecard/
 /.venv/
 # Local secrets. StatiCrypt reads STATICRYPT_PASSWORD from here.

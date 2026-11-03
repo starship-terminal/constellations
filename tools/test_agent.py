@@ -1,20 +1,22 @@
-"""Tests for tools/agent (library tools and the chat adapters). Run with `make test`."""
+"""Tests for server/ (library tools and the chat adapters). Run with `make test`."""
 import importlib.util
 import json
 import os
 import unittest
 from pathlib import Path
 
+SERVER = Path(__file__).resolve().parent.parent / "server"
+
 
 def _load(name, path):
-    spec = importlib.util.spec_from_file_location(name, Path(__file__).resolve().parent / path)
+    spec = importlib.util.spec_from_file_location(name, SERVER / path)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod
 
 
-library = _load("agent_library", "agent/library.py")
-chat = _load("agent_chat", "agent/chat.py")
+library = _load("agent_library", "library.py")
+chat = _load("agent_chat", "chat.py")
 
 
 class SearchTest(unittest.TestCase):
@@ -173,7 +175,7 @@ class WireShapeTest(unittest.TestCase):
 
 
 class McpTest(unittest.TestCase):
-    mcp = _load("agent_mcp", "agent/mcp.py")
+    mcp = _load("agent_mcp", "mcp.py")
 
     def _roundtrip(self, *reqs):
         import io

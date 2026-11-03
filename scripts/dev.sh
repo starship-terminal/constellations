@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build and serve the library's docs site, then open the gallery and the
+# Run the library's Next.js app in dev mode, then open the gallery and the
 # scorecard in the browser. `make dev` and the `design` shell alias call this.
 set -euo pipefail
 
@@ -7,11 +7,11 @@ usage() {
   cat <<'EOF'
 Usage: scripts/dev.sh [--port N] [--no-open]
 
-Builds the gallery, the scorecard and the docs site, serves them on
-127.0.0.1, and opens two tabs: the gallery (every package, section by
-section) and the scorecard (how far each package has got). Ctrl-C stops it.
+Runs the Next.js app (web/) in dev mode on 127.0.0.1, and opens two tabs:
+the gallery (every package, section by section) and the scorecard (how far
+each package has got). Ctrl-C stops it.
 
-If the site is already being served on that port, it only opens the tabs.
+If the app is already being served on that port, it only opens the tabs.
 
 Options:
   --port N    port to serve on (default: $PORT, else 8800)
@@ -56,16 +56,17 @@ if lsof -nP -iTCP:"$PORT" -sTCP:LISTEN >/dev/null 2>&1; then
   die "port $PORT is taken by something else; pass --port N"
 fi
 
-# What the build needs.
-command -v python3 >/dev/null 2>&1 || die "python3 is not on PATH"
-if [ ! -x .venv/bin/python ]; then
-  command -v uv >/dev/null 2>&1 || die "no .venv and no uv to make one; install uv, then run make setup"
-  printf 'first run: installing the site builder into .venv\n'
-  make setup
+# What the app needs.
+command -v pnpm >/dev/null 2>&1 || die "pnpm is not on PATH"
+if [ ! -d web/node_modules ]; then
+  printf 'first run: installing the app dependencies\n'
+  pnpm --dir web install
 fi
-cover="$(python3 -c 'import json; print(json.load(open("catalog.json"))["systems"][0]["preview"]["cover"])')"
-if head -c 64 "$cover" 2>/dev/null | grep -q '^version https://git-lfs'; then
-  warn "screenshots are Git LFS pointers, so the gallery will show no images; run: git lfs install && git lfs pull"
+if command -v python3 >/dev/null 2>&1; then
+  cover="$(python3 -c 'import json; print(json.load(open("catalog.json"))["systems"][0]["preview"]["cover"])' 2>/dev/null || true)"
+  if head -c 64 "$cover" 2>/dev/null | grep -q '^version https://git-lfs'; then
+    warn "screenshots are Git LFS pointers, so the gallery will show no images; run: git lfs install && git lfs pull"
+  fi
 fi
 
 # Open the tabs once the server answers, while it runs in the foreground.
@@ -75,8 +76,9 @@ if [ "$OPEN" = 1 ]; then
       if answers; then open_tabs; exit 0; fi
       sleep 1
     done
-    warn "the site did not answer within 2 minutes; open $BASE/gallery/ yourself"
+    warn "the app did not answer within 2 minutes; open $BASE/gallery/ yourself"
   ) &
 fi
 
-exec python3 tools/catalog.py serve --port "$PORT"
+cd "$ROOT/web"
+exec pnpm exec next dev -p "$PORT"

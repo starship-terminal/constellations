@@ -1,6 +1,7 @@
-"""The /api/ routes the local docs server answers. catalog.py's serve Handler
-delegates here for every request under /api/; the published static site never
-sees any of it (it drops the gallery and runs no Python).
+"""The /api/ route handlers behind the gallery chat. api.py delegates here for
+every request under /api/; the published static site never sees any of it (it
+drops the gallery and runs no Python), and local browsing gets the same routes
+from the Next.js app.
 
   GET  /api/status           {"ok": true, "envProvider": bool}
   POST /api/provider/test    {api, base_url, api_key, key_header?, models_url?}

@@ -1,11 +1,11 @@
-// Streams repo files the pages reference: /media/systems/..., /media/gallery/...,
-// /media/docs/..., /media/refero-media/<kind>/<file> (local mirror), and the
-// other REPO_PATHS roots. Bounded by the same rules as catalog.py's repo_file
-// and refero_media.media_file. Videos get single-range 206 support.
+// Streams repo files the pages reference: /media/systems/..., /media/data/...
+// (generated under web/data/), /media/docs/..., /media/refero-media/<kind>/<file>
+// (local mirror), and the other REPO_PATHS roots. Bounded by the same rules as
+// catalog.py's repo_file and refero_media.media_file. Videos get single-range
+// 206 support.
 import { createReadStream } from "node:fs";
 import { promises as fs } from "node:fs";
-import { fileExists, mimeOf, referoMediaFile, repoFile, ROOT } from "@/lib/repo";
-import path from "node:path";
+import { fileExists, mimeOf, referoMediaFile, repoFile } from "@/lib/repo";
 import { Readable } from "node:stream";
 
 type Params = { params: Promise<{ path: string[] }> };
@@ -17,20 +17,9 @@ function resolve(parts: string[]): string | null {
     if (t) return t;
     return null;
   }
-  // gallery/... and docs/... map under docs/; the rest go through repo_file's
-  // allow-list (systems/, tools/, example/, catalog.json, README.md).
-  if (urlPath.startsWith("/gallery/"))
-    return insideDocs(urlPath) ;
+  // data/..., docs/... and the REPO_PATHS roots all go through repoFile's
+  // allow-list and EXTRA_PATHS map.
   return repoFile(urlPath);
-}
-
-function insideDocs(urlPath: string): string | null {
-  const rel = urlPath.replace(/^\/+/, "");
-  const target = path.resolve(ROOT, "docs", rel);
-  const docsRoot = path.resolve(ROOT, "docs");
-  const relToDocs = path.relative(docsRoot, target);
-  if (relToDocs.startsWith("..") || path.isAbsolute(relToDocs)) return null;
-  return target;
 }
 
 export async function GET(req: Request, { params }: Params) {
