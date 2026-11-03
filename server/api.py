@@ -18,7 +18,7 @@ nginx keeps its longer /api/redeploy location and adds, roughly:
         proxy_set_header Host $http_host;
     }
 
-`proxy_set_header Host $http_host` is required: the origin check in server.py
+`proxy_set_header Host $http_host` is required: the origin check in routes.py
 compares the browser's Origin against Host, and without it every call 403s.
 It must be $http_host, not $host — $host drops the port while Origin keeps
 it, so on https://host:8108 the guard would still reject its own gallery.
@@ -48,7 +48,7 @@ def _dotenv() -> None:
 
 def _server():
     spec = importlib.util.spec_from_file_location(
-        "agent_server", _HERE.parent / "http.py")
+        "agent_server", _HERE.parent / "routes.py")
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod

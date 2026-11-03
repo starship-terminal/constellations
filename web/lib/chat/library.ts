@@ -1,4 +1,4 @@
-// The tool layer behind the gallery chat, ported from tools/agent/library.py
+// The tool layer behind the gallery chat, ported from server/library.py
 // plus the tools/catalog.py helpers it calls (load_catalog, find, swatches,
 // export_tokens, repo_file, Resolver). Every tool returns a JSON-able object.
 //

@@ -1,5 +1,5 @@
 // The model side of the gallery chat: provider adapters and the tool-use
-// loop, ported from tools/agent/chat.py.
+// loop, ported from server/chat.py.
 //
 // Two wire shapes are supported, picked by the provider config's `api` field:
 //

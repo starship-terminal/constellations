@@ -23,8 +23,8 @@ serve: web ## Alias for `make web`
 build: ## Write the app's data and screenshot thumbnails into web/data/
 	@$(PYTHON) tools/catalog.py build
 
-web: ## Run the Next.js app (web/) in dev mode on :8800
-	@pnpm --dir web dev
+web: build ## Run the Next.js app (web/) in dev mode on 127.0.0.1 (PORT, default 8800)
+	@pnpm --dir web exec next dev -H 127.0.0.1 -p $(PORT)
 
 web-build: ## Build the Next.js app for production (web/.next)
 	@pnpm --dir web build

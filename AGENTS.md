@@ -48,7 +48,9 @@ scorecard/              criteria.json (the rubric, per-platform wording) +
 server/                 the agent layer: a read-only tool layer over the two
                         stores (library.py), the Anthropic/OpenAI-compatible
                         provider adapters and tool loop (chat.py), the /api/
-                        route handlers (http.py), the same tools over stdio
+                        route handlers (routes.py; not http.py, which would
+                        shadow the stdlib package on sys.path), the same tools
+                        over stdio
                         MCP for coding agents (mcp.py:
                         `python3 server/mcp.py`), and the /api/ server the
                         home-server deployment proxies behind nginx (api.py)
@@ -245,8 +247,8 @@ illustrations or brand colours into something that ships
   package whose platform it touches: a wording edit on its own does not raise
   that warning.
 - **The published site never includes the gallery.** The Pages workflow builds
-  with `tools/site.py --publish`, which leaves the gallery, its nav links and
-  its home-page card out (a guard step still removes `site/gallery/`), and
+  with `tools/site.py`, which never emits the gallery (it lives only in the
+  Next app; a guard step still removes `site/gallery/` defensively), and
   encrypts every page with StatiCrypt before it deploys, and fails if readable
   text or a search index entry remains. `make check` runs first in the same
   job, so a commit that skipped `make brief`/`make grade` fails the deploy.

@@ -423,6 +423,7 @@ REFERO_TS = (WEB / "lib" / "refero.ts").read_text()
 WEB_SRC = "\n".join(p.read_text() for p in
                     sorted((WEB / "components").rglob("*.tsx"))
                     + sorted((WEB / "lib").rglob("*.ts")))
+APP_SRC = "\n".join(p.read_text() for p in sorted((WEB / "app").rglob("*.tsx")))
 
 
 def ts_fields(name: str) -> set:
@@ -507,6 +508,18 @@ class ReferoEmitContractTest(unittest.TestCase):
         self.assertEqual(ts_fields("ReferoMedia"), MEDIA_PAIR_KEYS)
         similar = re.search(r"similar: \{(.*?)\}", REFERO_TS, re.S).group(1)
         self.assertEqual(set(re.findall(r"(\w+)\s*:", similar)), SIMILAR_KEYS)
+
+    def test_the_page_reads_the_emitted_doc_and_ds_keys(self):
+        # DOC_TABS (web/app/refero/[slug]/page.tsx) looks each entry's key up in
+        # e.docs: a key the page asks for but the builder never emits hides the
+        # document, and one emitted but never read is dead payload.
+        tabs = re.search(r"const DOC_TABS[^=]*= \[(.*?)\];", APP_SRC, re.S).group(1)
+        self.assertEqual(set(re.findall(r'\["(\w+)"', tabs)), DOCS_KEYS)
+        # interface Ds (components/ReferoDetail.tsx) names every ds field the
+        # page renders; the builder ships exactly REFERO_DS_KEYS.
+        m = re.search(r"interface Ds \{(.*?)^\}", WEB_SRC, re.S | re.M)
+        ds_fields = set(re.findall(r"(?m)^\s*(\w+)\??:", m.group(1)))
+        self.assertEqual(ds_fields, DS_KEYS)
 
     def test_every_media_key_the_page_reads_is_emitted(self):
         # ReferoDetail indexes e.media by its MEDIA_TABS kind and reads

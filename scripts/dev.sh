@@ -58,15 +58,16 @@ fi
 
 # What the app needs.
 command -v pnpm >/dev/null 2>&1 || die "pnpm is not on PATH"
+command -v python3 >/dev/null 2>&1 || die "python3 is not on PATH"
 if [ ! -d web/node_modules ]; then
   printf 'first run: installing the app dependencies\n'
   pnpm --dir web install
 fi
-if command -v python3 >/dev/null 2>&1; then
-  cover="$(python3 -c 'import json; print(json.load(open("catalog.json"))["systems"][0]["preview"]["cover"])' 2>/dev/null || true)"
-  if head -c 64 "$cover" 2>/dev/null | grep -q '^version https://git-lfs'; then
-    warn "screenshots are Git LFS pointers, so the gallery will show no images; run: git lfs install && git lfs pull"
-  fi
+# web/data/ is generated, not committed; rebuild it so a fresh clone browses.
+python3 tools/catalog.py build
+cover="$(python3 -c 'import json; print(json.load(open("catalog.json"))["systems"][0]["preview"]["cover"])' 2>/dev/null || true)"
+if head -c 64 "$cover" 2>/dev/null | grep -q '^version https://git-lfs'; then
+  warn "screenshots are Git LFS pointers, so the gallery will show no images; run: git lfs install && git lfs pull"
 fi
 
 # Open the tabs once the server answers, while it runs in the foreground.
@@ -81,4 +82,6 @@ if [ "$OPEN" = 1 ]; then
 fi
 
 cd "$ROOT/web"
-exec pnpm exec next dev -p "$PORT"
+# The app reads private captures and answers the chat with the repo's key:
+# keep it on loopback, the way the old Python server bound 127.0.0.1.
+exec pnpm exec next dev -H 127.0.0.1 -p "$PORT"
