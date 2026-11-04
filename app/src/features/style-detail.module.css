@@ -1,0 +1,33 @@
+/* Approved style detail layout; 80px header is owned by StandaloneHeader. */
+.page {
+  height: 100dvh;
+  overflow: hidden;
+}
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  height: calc(100dvh - 80px);
+  min-height: 0;
+}
+.overview {
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--strong-line) transparent;
+}
+@media (max-width: 760px) {
+  .page {
+    height: auto;
+    overflow: visible;
+  }
+  .split {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .overview {
+    overflow: visible;
+  }
+}

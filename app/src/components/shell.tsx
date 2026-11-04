@@ -1,17 +1,18 @@
 "use client";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState, type ReactNode } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useState, type ReactNode } from "react";
 import {
   ArrowUpRight,
-  BookOpen,
-  Folder,
+  Monitor,
+  Smartphone,
+  Bookmark,
+  Palette,
   Plus,
   Settings,
   PanelLeftClose,
   PanelLeftOpen,
   MoreHorizontal,
-  Search,
   Archive,
   Pencil,
 } from "lucide-react";
@@ -28,9 +29,8 @@ export function Mark() {
 export function StandaloneHeader({ crumb }: { crumb?: string }) {
   return (
     <header className="standalone-header">
-      <Link href="/" className="brand">
+      <Link href="/" className="brand" aria-label="Studio home">
         <Mark />
-        <span>Studio</span>
       </Link>
       <span className="header-slash">/</span>
       <Link href="/styles">Styles</Link>
@@ -44,6 +44,46 @@ export function StandaloneHeader({ crumb }: { crumb?: string }) {
         Back to research <ArrowUpRight size={14} />
       </Link>
     </header>
+  );
+}
+function CatalogNavigation({ onNavigate }: { onNavigate: () => void }) {
+  const path = usePathname();
+  const params = useSearchParams();
+  const platform = params.get("platform");
+  return (
+    <nav
+      aria-label="Main navigation"
+      onClick={(event) => {
+        if ((event.target as Element).closest("a")) onNavigate();
+      }}
+    >
+      <Link
+        className={`nav-link ${path === "/library" && platform !== "mobile" ? "active" : ""}`}
+        href="/library?platform=web"
+      >
+        <Monitor size={20} />
+        Web apps
+      </Link>
+      <Link
+        className={`nav-link ${path === "/library" && platform === "mobile" ? "active" : ""}`}
+        href="/library?platform=mobile"
+      >
+        <Smartphone size={20} />
+        iOS apps
+      </Link>
+      <a className="nav-link" href="/styles" target="_blank" rel="noreferrer">
+        <Palette size={20} />
+        Styles
+        <ArrowUpRight className="nav-trailing" size={15} />
+      </a>
+      <Link
+        className={`nav-link ${path.startsWith("/collections") ? "active" : ""}`}
+        href="/collections"
+      >
+        <Bookmark size={20} />
+        Bookmarks
+      </Link>
+    </nav>
   );
 }
 interface Conversation {
@@ -112,39 +152,15 @@ export function AppShell({ children }: { children: ReactNode }) {
         <Link href="/" className="brand">
           <Mark />
           <span>Studio</span>
-          <span className="brand-sub">Research library</span>
         </Link>
         <Link href="/" className="new-research">
-          <Plus size={17} />
+          <Plus size={22} />
           New research
         </Link>
-        <nav aria-label="Main navigation">
-          <Link
-            className={`nav-link ${path === "/library" ? "active" : ""}`}
-            href="/library"
-          >
-            <BookOpen size={18} />
-            Library
-          </Link>
-          <a
-            className="nav-link"
-            href="/styles"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Search size={18} />
-            Styles
-            <ArrowUpRight className="nav-trailing" size={15} />
-          </a>
-          <Link
-            className={`nav-link ${path.startsWith("/collections") ? "active" : ""}`}
-            href="/collections"
-          >
-            <Folder size={18} />
-            Collections
-          </Link>
-        </nav>
-        <div className="history-heading">Recent research</div>
+        <Suspense fallback={null}>
+          <CatalogNavigation onNavigate={() => setMobile(false)} />
+        </Suspense>
+        <div className="history-heading">History</div>
         <div className="history-list">
           {history
             .filter((x) => !x.archived)
@@ -206,9 +222,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           </Link>
           <div className="workspace-label">
             <span className="workspace-avatar">K</span>
-            <div>
-              Personal workspace<small>Built for a curious eye</small>
-            </div>
+            <div>Personal workspace</div>
           </div>
         </div>
       </aside>

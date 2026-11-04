@@ -1,0 +1,537 @@
+/* Refero design: semantic theme roles, core.radius.2xl/4xl (24/32px),
+   core.spacing.base (4px). Catalog geometry follows the approved mockup.
+   Proprietary Base/neueMontreal fonts use the project's system sans fallback. */
+.library {
+  min-width: 0;
+  font-family: var(--sans);
+}
+.catalog {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 8px 40px 80px;
+}
+.searchTop {
+  position: sticky;
+  top: 0;
+  z-index: 8;
+  padding: 0 0 8px;
+  background: var(--page);
+}
+.search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 72px;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+.search input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--ink);
+  font: 18px/24px var(--sans);
+  letter-spacing: -0.32px;
+}
+.search input::placeholder {
+  color: var(--subtle);
+}
+.search:focus-within {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.searchIcon,
+.clearSearch {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--subtle);
+}
+.modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+.modes a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  color: var(--subtle);
+  font-size: 13px;
+  line-height: 20px;
+  text-decoration: none;
+}
+.modes a:hover,
+.modes .modeActive {
+  color: var(--ink);
+  background: var(--surface);
+}
+.catalogTitle {
+  margin: 48px 0 40px;
+  font: 400 40px/48px var(--sans);
+  letter-spacing: -1.6px;
+}
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px 20px;
+  margin-bottom: 48px;
+}
+.categories button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  min-height: 40px;
+  padding: 8px 12px;
+  text-align: left;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font: 13px/20px var(--sans);
+}
+.categories svg {
+  flex-shrink: 0;
+  stroke-width: 1.6;
+}
+.categories button:hover,
+.categories .categoryActive {
+  background: var(--surface);
+  border-color: var(--line);
+}
+.filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-right: auto;
+}
+.sources button {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  font: 13px/20px var(--sans);
+}
+.sources button:hover,
+.sources .sourceActive {
+  background: var(--surface);
+  color: var(--ink);
+}
+.filters select {
+  max-width: 150px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--page);
+  color: var(--muted);
+  padding: 8px;
+  font: 12px/20px var(--sans);
+}
+.results {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--subtle);
+  font: 12px/20px var(--sans);
+  margin: 0 0 20px;
+}
+.appGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+.appCard {
+  min-width: 0;
+  position: relative;
+}
+.openCard {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  text-align: left;
+  background: transparent;
+  color: inherit;
+}
+.appShot {
+  height: 320px;
+  overflow: hidden;
+  padding: 32px 30px 0;
+  border-radius: 28px;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+}
+.appShot :global(.media-preview) {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  aspect-ratio: auto;
+}
+.appShot :global(.media-preview img),
+.appShot :global(.media-preview video) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.appMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+.appMeta > img,
+.appLetter {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  object-fit: contain;
+}
+.appLetter {
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  font-size: 20px;
+}
+.appMeta > div {
+  min-width: 0;
+}
+.appMeta h2 {
+  margin: 0 0 4px;
+  font: 500 20px/24px var(--sans);
+  letter-spacing: -0.6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.appMeta p {
+  margin: 0;
+  font: 13px/20px var(--sans);
+  color: var(--subtle);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.compareSelect {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--page);
+  color: var(--ink);
+  opacity: 0;
+  transition: opacity var(--duration-fast);
+}
+.appCard:hover .compareSelect,
+.appCard:focus-within .compareSelect,
+.appSelected .compareSelect {
+  opacity: 1;
+}
+.appSelected .appShot {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.mobileCard .appShot {
+  height: 440px;
+  padding: 28px 32px 0;
+}
+.mobileCard .appShot :global(.media-preview img),
+.mobileCard .appShot :global(.media-preview video) {
+  object-fit: contain;
+}
+.loadMore {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+.standalone {
+  max-width: 1170px;
+  padding: 0 40px 80px;
+  margin: 0 auto;
+}
+.styleHero {
+  text-align: center;
+  margin: 72px auto 52px;
+}
+.styleKicker {
+  color: var(--subtle);
+  font: 12px/20px var(--sans);
+  margin-bottom: 20px;
+}
+.styleHero h1 {
+  font: 400 64px/1.08 var(--serif);
+  letter-spacing: -2px;
+  margin: 0 -32px 24px;
+}
+.styleHero > p {
+  max-width: 620px;
+  margin: 0 auto;
+  font: 16px/24px var(--sans);
+  color: var(--muted);
+}
+.styleSearch {
+  max-width: 750px;
+  margin: 36px auto 0;
+}
+.styleSearch .search {
+  min-height: 64px;
+  border-radius: 32px;
+  padding: 10px 12px 10px 20px;
+  background: var(--page);
+}
+.styleSearch .search input {
+  font-size: 16px;
+}
+.searchSubmit {
+  display: grid;
+  place-items: center;
+  height: 40px;
+  width: 40px;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 50%;
+  color: var(--page);
+  background: var(--ink);
+}
+.suggestions {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px 12px;
+  margin: 24px 0;
+}
+.suggestions button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  padding: 0;
+  color: var(--muted);
+  font: 13px/20px var(--sans);
+  border: 0;
+  text-align: left;
+}
+.suggestions svg {
+  color: var(--subtle);
+}
+.styleGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 44px 32px;
+}
+.styleGrid :global(.card-picture) {
+  padding: 32px;
+  aspect-ratio: 1.37;
+  border-radius: var(--radius-card);
+  background: var(--surface);
+}
+.styleGrid :global(.card-picture .media-preview) {
+  aspect-ratio: 1.6;
+  border-radius: var(--radius-sm);
+}
+.styleGrid :global(.card-meta) {
+  padding: 12px 0 0;
+}
+.styleGrid :global(.card-meta h3) {
+  font: 500 20px/24px var(--sans);
+  letter-spacing: -0.6px;
+}
+.styleGrid :global(.card-meta p) {
+  font-size: 12px;
+}
+.styleGrid :global(.card-arrow) {
+  display: none;
+}
+.styleGrid :global(.reference-icon),
+.styleGrid :global(.reference-letter) {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+}
+@media (max-width: 1100px) {
+  .catalog {
+    padding-inline: 32px;
+  }
+  .categories {
+    gap: 8px 12px;
+  }
+  .categories button {
+    padding: 8px;
+  }
+  .appShot {
+    height: 280px;
+    padding: 24px 24px 0;
+  }
+  .styleHero h1 {
+    font-size: 56px;
+  }
+  .styleGrid {
+    gap: 32px 24px;
+  }
+  .styleGrid :global(.card-picture) {
+    padding: 24px;
+  }
+}
+@media (max-width: 800px) {
+  .catalog,
+  .standalone {
+    padding-inline: 24px;
+  }
+  .categories {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .appGrid {
+    gap: 28px 24px;
+  }
+  .appShot {
+    height: 240px;
+    padding: 20px 20px 0;
+  }
+  .appMeta h2 {
+    font-size: 18px;
+  }
+  .styleGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .styleHero h1 {
+    margin-inline: 0;
+    font-size: 48px;
+  }
+}
+@media (max-width: 600px) {
+  .catalog,
+  .standalone {
+    padding: 16px 20px 56px;
+  }
+  .search {
+    min-height: 60px;
+    padding: 12px;
+    border-radius: 20px;
+  }
+  .search input {
+    font-size: 16px;
+  }
+  .modes a {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+  .catalogTitle {
+    font-size: 34px;
+    line-height: 40px;
+    margin: 32px 0;
+  }
+  .categories {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    margin-bottom: 32px;
+  }
+  .categories button {
+    font-size: 12px;
+    min-height: 40px;
+  }
+  .appGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .appShot {
+    height: 280px;
+  }
+  .mobileCard .appShot {
+    height: 400px;
+  }
+  .compareSelect {
+    opacity: 1;
+  }
+  .filters {
+    gap: 8px;
+  }
+  .sources {
+    width: 100%;
+  }
+  .sources button {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+  .results {
+    font-size: 11px;
+  }
+  .styleHero {
+    margin: 32px auto 36px;
+  }
+  .styleHero h1 {
+    font-size: 40px;
+    letter-spacing: -1.4px;
+  }
+  .styleHero > p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .styleKicker {
+    margin-bottom: 16px;
+  }
+  .styleSearch {
+    margin-top: 28px;
+  }
+  .suggestions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .styleGrid {
+    gap: 26px 16px;
+  }
+  .styleGrid :global(.card-picture) {
+    padding: 16px;
+    border-radius: 20px;
+  }
+  .styleGrid :global(.card-meta h3) {
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .styleGrid :global(.reference-icon),
+  .styleGrid :global(.reference-letter) {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+  }
+}
+@media (max-width: 760px) {
+  .searchTop .search {
+    margin-left: 48px;
+    width: calc(100% - 48px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .compareSelect {
+    transition: none;
+  }
+}

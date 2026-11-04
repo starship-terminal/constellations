@@ -27,7 +27,8 @@
   --duration-fade: 500ms;
   --duration-dialog: 250ms;
   --duration-result: 300ms;
-  --sans: Arial, Helvetica, sans-serif;
+  --sans:
+    -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   --serif: Georgia, "Times New Roman", serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
