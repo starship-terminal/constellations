@@ -53,6 +53,11 @@ import {
 } from "@/components/reference";
 import { StandaloneHeader } from "@/components/shell";
 import styles from "./library.module.css";
+import {
+  loadLibraryPages,
+  mergeLibraryItems,
+  type LibraryResponse,
+} from "./library-data";
 
 const categoryInfo: Record<string, { label: string; icon: LucideIcon }> = {
   ai: { label: "AI tools", icon: BrainCircuit },
@@ -92,11 +97,6 @@ const categoryAliases: Record<string, string> = {
 const categoryGroup = (value: string) => categoryAliases[value] || value;
 const titleCase = (value: string) =>
   value.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-interface LibraryResponse {
-  items: LibraryItem[];
-  total: number;
-  stats: { systems: number; refero: number };
-}
 
 export function LibraryPage({ standalone = false }: { standalone?: boolean }) {
   return (
@@ -117,6 +117,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
   const [q, setQ] = useState(query),
     [allItems, setAllItems] = useState<LibraryItem[]>([]),
     [loading, setLoading] = useState(true),
+    [catalogTotal, setCatalogTotal] = useState<number | null>(null),
     [error, setError] = useState(""),
     [reload, setReload] = useState(0),
     [selected, setSelected] = useState<LibraryItem[]>([]),
@@ -149,24 +150,24 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
     let alive = true;
     setLoading(true);
     setError("");
-    // Complete metadata supplies truthful category choices and exact local filters.
-    // Media stays lazy; only the current page's cards create image/video elements.
-    (async () => {
-      const first = await api<LibraryResponse>("/api/library?limit=200");
-      const offsets = Array.from(
-        { length: Math.max(0, Math.ceil(first.total / 200) - 1) },
-        (_, i) => (i + 1) * 200,
-      );
-      const rest = await Promise.all(
-        offsets.map((offset) =>
-          api<LibraryResponse>(`/api/library?limit=200&offset=${offset}`),
-        ),
-      );
-      if (alive) {
-        setAllItems([...first.items, ...rest.flatMap((page) => page.items)]);
-        setStats(first.stats);
-      }
-    })()
+    // Publish available cards immediately; later pages enrich exact filters/categories.
+    // Retain already loaded items on retry, including when a later page failed.
+    loadLibraryPages(
+      (offset) =>
+        api<LibraryResponse>(`/api/library?limit=200&offset=${offset}`),
+      (page) => {
+        if (!alive) return;
+        setAllItems((previous) => mergeLibraryItems(previous, page.items));
+        setStats(page.stats);
+        setCatalogTotal(page.total);
+      },
+      () => {
+        if (alive)
+          setError(
+            "Some references could not be loaded. Available references are still shown. Retry to load the remaining pages.",
+          );
+      },
+    )
       .catch((e) => {
         if (alive) setError(e.message);
       })
@@ -219,6 +220,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
       );
   }, [scoped, category, query]);
   const items = filtered.slice(0, visibleCount);
+  const complete = catalogTotal !== null && allItems.length >= catalogTotal;
   const suggestions = useMemo(() => {
     const tags = new Set(allItems.flatMap((item) => item.tags));
     return [
@@ -361,7 +363,14 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
                     ? "Desktop apps"
                     : "All references"}
             </h1>
-            <nav className={styles.categories} aria-label="Reference category">
+            <nav
+              className={styles.categories}
+              aria-label={
+                complete
+                  ? "Reference category"
+                  : "Reference category (loaded references)"
+              }
+            >
               <button
                 className={!category ? styles.categoryActive : ""}
                 aria-pressed={!category}
@@ -436,18 +445,25 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
         </div>
         <div className={styles.results}>
           <span>
-            {loading
+            {!allItems.length && loading
               ? "Finding references…"
-              : `${filtered.length.toLocaleString()} references`}
+              : complete
+                ? `${filtered.length.toLocaleString()} references`
+                : `${filtered.length.toLocaleString()} matches · ${allItems.length.toLocaleString()}${catalogTotal === null ? "" : ` of ${catalogTotal.toLocaleString()}`} references loaded. Categories reflect loaded references.`}
           </span>
-          <span>Select up to 3 to compare</span>
+          <span>
+            {loading && allItems.length > 0
+              ? "Loading more references…"
+              : "Select up to 3 to compare"}
+          </span>
         </div>
-        {error ? (
+        {error && (
           <ErrorState
             message={error}
             retry={() => setReload((value) => value + 1)}
           />
-        ) : loading ? (
+        )}
+        {!allItems.length && loading ? (
           <Spinner label="Opening the library…" />
         ) : items.length ? (
           <div className={standalone ? styles.styleGrid : styles.appGrid}>
@@ -471,6 +487,12 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
               ),
             )}
           </div>
+        ) : loading ? (
+          <Spinner label="Checking the remaining references…" />
+        ) : !complete ? (
+          <Empty title="No matches in the loaded references.">
+            <p>Load the remaining references to complete this search.</p>
+          </Empty>
         ) : (
           <Empty title="No references match this search.">
             <p>Try another description or clear a filter.</p>
@@ -491,7 +513,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
             </button>
           </Empty>
         )}
-        {visibleCount < filtered.length && !error && !loading && (
+        {visibleCount < filtered.length && (
           <div className={styles.loadMore}>
             <button
               className="pill"

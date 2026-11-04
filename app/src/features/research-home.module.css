@@ -453,7 +453,15 @@
 .session :global(.user-message .prose) {
   font-size: 14px;
   color: #13151a;
+  --surface: #eef0f6;
+  --muted: #525769;
+  --line: #dddfea;
+  --strong-line: #9fa5ba;
 }
+.session :global(.user-message .prose .inline-citation) {
+  border-color: var(--strong-line);
+}
+.session :global(.user-message .prose h1),
 .session :global(.user-message .prose strong),
 .session :global(.user-message .prose h2),
 .session :global(.user-message .prose h3) {

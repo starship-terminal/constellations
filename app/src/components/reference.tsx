@@ -600,6 +600,20 @@ export function ExportPanel({ detail }: { detail: LibraryDetail }) {
     </section>
   );
 }
+// Download through a Blob so a remote CDN's ignored download attribute can
+// never navigate the research app away. CORS failures remain visible in the UI.
+export async function fetchReferenceImage(
+  url: string,
+  fetchImage: typeof fetch = fetch,
+): Promise<Blob> {
+  const response = await fetchImage(url, { mode: "cors", credentials: "omit" });
+  if (!response.ok) throw new Error("The image could not be downloaded.");
+  const image = await response.blob();
+  if (!image.size || !image.type.startsWith("image/"))
+    throw new Error("The source did not return an image.");
+  return image;
+}
+
 // A generated card thumbnail encodes its original path with double underscores.
 // Upgrade only an exact path match, so opening a card never changes screens.
 export function inspectorPreview(
@@ -726,18 +740,45 @@ export function ReferenceInspector({
   const [origin, setOrigin] = useState("");
   const [copied, setCopied] = useState("");
   const [showVideo, setShowVideo] = useState(false);
+  const [downloading, setDownloading] = useState(false);
+  const [downloadError, setDownloadError] = useState("");
   useEffect(() => {
     setOrigin(window.location.origin);
   }, []);
   useEffect(() => {
     setShowVideo(false);
     setCopied("");
+    setDownloadError("");
   }, [current?.id]);
   const reference = detail || current;
   const preview = inspectorPreview(current, detail);
   const href = reference
     ? `${origin}/styles/${reference.source}/${reference.slug}`
     : "";
+  async function downloadPreview() {
+    if (!preview || downloading) return;
+    setDownloading(true);
+    setDownloadError("");
+    try {
+      const image = await fetchReferenceImage(preview);
+      const objectUrl = URL.createObjectURL(image);
+      const anchor = document.createElement("a");
+      anchor.href = objectUrl;
+      anchor.download =
+        new URL(preview, window.location.origin).pathname.split("/").at(-1) ||
+        `${reference?.slug || "reference"}.png`;
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+      setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
+    } catch {
+      setDownloadError(
+        "This image could not be downloaded. The source may not allow downloads from this app. Your reference is still open.",
+      );
+    } finally {
+      setDownloading(false);
+    }
+  }
   async function copyColor(value: string) {
     try {
       await navigator.clipboard.writeText(value);
@@ -988,13 +1029,18 @@ export function ReferenceInspector({
               </div>
               <div className={referenceStyles.actionPair}>
                 {preview && (
-                  <a href={preview} download>
+                  <button onClick={downloadPreview} disabled={downloading}>
                     <Download size={14} />
-                    Download
-                  </a>
+                    {downloading ? "Downloading…" : "Download"}
+                  </button>
                 )}
                 <CopyButton value={href} label="Copy link" />
               </div>
+              {downloadError && (
+                <p className={referenceStyles.downloadError} role="alert">
+                  {downloadError}
+                </p>
+              )}
               {reference && (
                 <SaveReference
                   item={reference}

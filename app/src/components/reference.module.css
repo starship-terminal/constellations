@@ -394,6 +394,47 @@
     padding: 0 8px;
   }
 }
+/* Short landscape windows use one scroll region, so media and every action
+   remain reachable instead of forcing a zero-height details panel. */
+@media (max-height: 600px) {
+  .inspector {
+    display: block;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-bottom: 16px;
+  }
+  .inspectorMedia {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    padding-top: 0;
+  }
+  .inspectorImage {
+    max-height: 60dvh;
+    object-fit: contain;
+  }
+  .inspectorPanel {
+    min-height: auto;
+    margin-top: 24px;
+  }
+  .inspectorContent {
+    overflow: visible;
+    flex: none;
+  }
+  .inspectorClose {
+    position: fixed;
+    top: 8px;
+    right: 8px;
+  }
+  .inspectorActions {
+    padding-top: 24px;
+  }
+}
+.downloadError {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
 @media (prefers-reduced-motion: reduce) {
   .inspector,
   .inspectorOverlay {
