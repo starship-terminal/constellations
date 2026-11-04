@@ -176,15 +176,14 @@ function Composer({
             </button>
             <div
               className={homeStyles.modes}
-              role="radiogroup"
+              role="group"
               aria-label="Search mode"
             >
               {modeChoices.map((choice) => (
                 <button
                   key={choice.id}
                   type="button"
-                  role="radio"
-                  aria-checked={mode === choice.id}
+                  aria-pressed={mode === choice.id}
                   className={
                     mode === choice.id ? homeStyles.activeMode : undefined
                   }

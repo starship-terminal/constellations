@@ -600,6 +600,48 @@ export function ExportPanel({ detail }: { detail: LibraryDetail }) {
     </section>
   );
 }
+// A generated card thumbnail encodes its original path with double underscores.
+// Upgrade only an exact path match, so opening a card never changes screens.
+export function inspectorPreview(
+  current: LibraryItem | null,
+  detail: LibraryDetail | null,
+): string | undefined {
+  const image = current?.image || detail?.image;
+  const media =
+    detail?.id === current?.id
+      ? detail?.media.filter((item) => item.type === "image") || []
+      : [];
+  if (!image) return media[0]?.url;
+  try {
+    const path = decodeURIComponent(
+      new URL(image, "http://studio.invalid").pathname,
+    );
+    const name = path
+      .split("/")
+      .at(-1)
+      ?.replace(/\.[^/.]+$/, "");
+    if (
+      !current ||
+      !path.includes("/thumbs/") ||
+      !name?.startsWith(`${current.source}__${current.slug}__`)
+    )
+      return image;
+    const originalPath = name.replaceAll("__", "/");
+    return (
+      media.find(
+        (item) =>
+          decodeURIComponent(
+            new URL(item.url, "http://studio.invalid").pathname,
+          )
+            .replace(/^\/media\//, "")
+            .replace(/\.[^/.]+$/, "") === originalPath,
+      )?.url || image
+    );
+  } catch {
+    return image;
+  }
+}
+
 export function ReferenceInspector({
   items,
   current,
@@ -621,6 +663,7 @@ export function ReferenceInspector({
 }) {
   const [detail, setDetail] = useState<LibraryDetail | null>(null),
     [error, setError] = useState("");
+  const inspectorElement = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     if (!current) return;
     let live = true;
@@ -645,11 +688,15 @@ export function ReferenceInspector({
   useEffect(() => {
     if (!current) return;
     function key(e: KeyboardEvent) {
+      const target = e.target;
+      if (e.defaultPrevented || !(target instanceof Element)) return;
       if (
-        ["INPUT", "TEXTAREA", "SELECT"].includes(
-          (e.target as HTMLElement).tagName,
+        target.closest(
+          'input, textarea, select, video, audio, button, a, [contenteditable="true"], [role="slider"], [role="combobox"], [role="listbox"], [role="tab"]',
         )
       )
+        return;
+      if (target.closest('[role="dialog"]') !== inspectorElement.current)
         return;
       if (e.key === "ArrowRight") {
         e.preventDefault();
@@ -687,10 +734,7 @@ export function ReferenceInspector({
     setCopied("");
   }, [current?.id]);
   const reference = detail || current;
-  const preview =
-    current?.image ||
-    detail?.image ||
-    detail?.media.find((media) => media.type === "image")?.url;
+  const preview = inspectorPreview(current, detail);
   const href = reference
     ? `${origin}/styles/${reference.source}/${reference.slug}`
     : "";
@@ -715,6 +759,7 @@ export function ReferenceInspector({
         <Dialog.Overlay className={referenceStyles.inspectorOverlay} />
         <Dialog.Content
           className={referenceStyles.inspector}
+          ref={inspectorElement}
           aria-describedby={undefined}
           onOpenAutoFocus={() => {
             const active = document.activeElement;
@@ -733,7 +778,11 @@ export function ReferenceInspector({
             });
           }}
         >
-          <div className={referenceStyles.inspectorMedia}>
+          <div
+            className={referenceStyles.inspectorMedia}
+            tabIndex={0}
+            aria-label="Captured reference preview"
+          >
             {preview ? (
               showVideo && reference?.video ? (
                 <video
@@ -951,6 +1000,16 @@ export function ReferenceInspector({
                   item={reference}
                   className={referenceStyles.saveAction}
                 />
+              )}
+              {detail?.sourceUrl && (
+                <a
+                  className={referenceStyles.documentationLink}
+                  href={detail.sourceUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit website <ExternalLink size={13} />
+                </a>
               )}
               {reference && (
                 <Link
