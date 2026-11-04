@@ -1,7 +1,9 @@
 "use client";
 import Link from "next/link";
+import * as Dialog from "@radix-ui/react-dialog";
+import referenceStyles from "./reference.module.css";
 import styles from "@/design/reference-values.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -10,6 +12,11 @@ import {
   ChevronLeft,
   ChevronRight,
   ExternalLink,
+  Download,
+  Palette,
+  Layers,
+  Tag,
+  BookOpen,
   Pin,
   Plus,
   Minus,
@@ -108,9 +115,11 @@ interface Collection {
 export function SaveReference({
   item,
   compact = false,
+  className,
 }: {
   item: LibraryItem;
   compact?: boolean;
+  className?: string;
 }) {
   const [open, setOpen] = useState(false),
     [collections, setCollections] = useState<Collection[]>([]),
@@ -171,7 +180,7 @@ export function SaveReference({
   return (
     <>
       <button
-        className={compact ? "icon-button" : "pill"}
+        className={`${compact ? "icon-button" : "pill"} ${className || ""}`}
         onClick={() => setOpen(true)}
         aria-label={`Save ${item.name} to a collection`}
       >
@@ -354,7 +363,7 @@ export function DetailOverview({
   onOpen?: (item: LibraryItem) => void;
 }) {
   return (
-    <div className="detail-overview">
+    <div className={`detail-overview ${referenceStyles.overview}`}>
       <div className="detail-main-preview">
         <MediaPreview
           image={detail.image}
@@ -364,19 +373,12 @@ export function DetailOverview({
         />
       </div>
       <div className="detail-title">
+        <h1>{detail.name}</h1>
         {detail.icon ? (
           <img src={detail.icon} alt="" />
         ) : (
           <span className="reference-letter large">{detail.name[0]}</span>
         )}
-        <div>
-          <div className="eyebrow">
-            {detail.source === "systems"
-              ? "Measured package"
-              : "Refero reference"}
-          </div>
-          <h1>{detail.name}</h1>
-        </div>
       </div>
       <p className="detail-description">
         {detail.descriptionLong || detail.description}
@@ -524,7 +526,10 @@ export function ExportPanel({ detail }: { detail: LibraryDetail }) {
     };
   }, [tab, detail.id]);
   return (
-    <section className="export-panel" aria-label="Reference exports">
+    <section
+      className={`export-panel ${referenceStyles.exportPanel}`}
+      aria-label="Reference exports"
+    >
       <div className="export-tabs" role="tablist" aria-label="Export format">
         {keys.map((key) => (
           <button
@@ -534,7 +539,13 @@ export function ExportPanel({ detail }: { detail: LibraryDetail }) {
             key={key}
             onClick={() => setTab(key)}
           >
-            {key}
+            {key === "variables.css"
+              ? "CSS Variables"
+              : key === "tokens.json"
+                ? "Design Tokens"
+                : key === "theme.css"
+                  ? "Theme CSS"
+                  : key}
           </button>
         ))}
       </div>
@@ -562,7 +573,23 @@ export function ExportPanel({ detail }: { detail: LibraryDetail }) {
         </div>
       ) : (
         <pre className={wrap ? "wrap" : ""} role="tabpanel" tabIndex={0}>
-          <code>{value}</code>
+          <code>
+            {value.split("\n").map((line, index) => (
+              <span
+                key={index}
+                className={
+                  line.startsWith("#")
+                    ? referenceStyles.codeHeading
+                    : line.startsWith(">")
+                      ? referenceStyles.codeQuote
+                      : undefined
+                }
+              >
+                {line}
+                {"\n"}
+              </span>
+            ))}
+          </code>
         </pre>
       )}
       <div className="export-footnote">
@@ -573,6 +600,67 @@ export function ExportPanel({ detail }: { detail: LibraryDetail }) {
     </section>
   );
 }
+// Download through a Blob so a remote CDN's ignored download attribute can
+// never navigate the research app away. CORS failures remain visible in the UI.
+export async function fetchReferenceImage(
+  url: string,
+  fetchImage: typeof fetch = fetch,
+  signal?: AbortSignal,
+): Promise<Blob> {
+  const response = await fetchImage(url, {
+    mode: "cors",
+    credentials: "omit",
+    ...(signal ? { signal } : {}),
+  });
+  if (!response.ok) throw new Error("The image could not be downloaded.");
+  const image = await response.blob();
+  if (!image.size || !image.type.startsWith("image/"))
+    throw new Error("The source did not return an image.");
+  return image;
+}
+
+// A generated card thumbnail encodes its original path with double underscores.
+// Upgrade only an exact path match, so opening a card never changes screens.
+export function inspectorPreview(
+  current: LibraryItem | null,
+  detail: LibraryDetail | null,
+): string | undefined {
+  const image = current?.image || detail?.image;
+  const media =
+    detail?.id === current?.id
+      ? detail?.media.filter((item) => item.type === "image") || []
+      : [];
+  if (!image) return media[0]?.url;
+  try {
+    const path = decodeURIComponent(
+      new URL(image, "http://studio.invalid").pathname,
+    );
+    const name = path
+      .split("/")
+      .at(-1)
+      ?.replace(/\.[^/.]+$/, "");
+    if (
+      !current ||
+      !path.includes("/thumbs/") ||
+      !name?.startsWith(`${current.source}__${current.slug}__`)
+    )
+      return image;
+    const originalPath = name.replaceAll("__", "/");
+    return (
+      media.find(
+        (item) =>
+          decodeURIComponent(
+            new URL(item.url, "http://studio.invalid").pathname,
+          )
+            .replace(/^\/media\//, "")
+            .replace(/\.[^/.]+$/, "") === originalPath,
+      )?.url || image
+    );
+  } catch {
+    return image;
+  }
+}
+
 export function ReferenceInspector({
   items,
   current,
@@ -594,6 +682,7 @@ export function ReferenceInspector({
 }) {
   const [detail, setDetail] = useState<LibraryDetail | null>(null),
     [error, setError] = useState("");
+  const inspectorElement = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     if (!current) return;
     let live = true;
@@ -618,11 +707,15 @@ export function ReferenceInspector({
   useEffect(() => {
     if (!current) return;
     function key(e: KeyboardEvent) {
+      const target = e.target;
+      if (e.defaultPrevented || !(target instanceof Element)) return;
       if (
-        ["INPUT", "TEXTAREA", "SELECT"].includes(
-          (e.target as HTMLElement).tagName,
+        target.closest(
+          'input, textarea, select, video, audio, button, a, [contenteditable="true"], [role="slider"], [role="combobox"], [role="listbox"], [role="tab"]',
         )
       )
+        return;
+      if (target.closest('[role="dialog"]') !== inspectorElement.current)
         return;
       if (e.key === "ArrowRight") {
         e.preventDefault();
@@ -636,64 +729,370 @@ export function ReferenceInspector({
     window.addEventListener("keydown", key);
     return () => window.removeEventListener("keydown", key);
   }, [current?.id, items]);
+  const openingFocus = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    function rememberOpener(event: PointerEvent) {
+      const target = event.target;
+      if (!(target instanceof HTMLElement) || target.closest('[role="dialog"]'))
+        return;
+      const control = target.closest<HTMLElement>("button, a, [tabindex]");
+      if (control) openingFocus.current = control;
+    }
+    document.addEventListener("pointerdown", rememberOpener, true);
+    return () =>
+      document.removeEventListener("pointerdown", rememberOpener, true);
+  }, []);
+  const [origin, setOrigin] = useState("");
+  const [copied, setCopied] = useState("");
+  const [showVideo, setShowVideo] = useState(false);
+  const downloadRequest = useRef<AbortController | null>(null);
+  const [downloading, setDownloading] = useState(false);
+  const [downloadError, setDownloadError] = useState("");
+  useEffect(() => {
+    setOrigin(window.location.origin);
+  }, []);
+  useEffect(() => {
+    setShowVideo(false);
+    setCopied("");
+    downloadRequest.current?.abort();
+    downloadRequest.current = null;
+    setDownloading(false);
+    setDownloadError("");
+    return () => {
+      downloadRequest.current?.abort();
+      downloadRequest.current = null;
+    };
+  }, [current?.id]);
+  const reference = detail || current;
+  const preview = inspectorPreview(current, detail);
+  const href = reference
+    ? `${origin}/styles/${reference.source}/${reference.slug}`
+    : "";
+  async function downloadPreview() {
+    if (!preview || downloading) return;
+    const request = new AbortController();
+    downloadRequest.current = request;
+    setDownloading(true);
+    setDownloadError("");
+    try {
+      const image = await fetchReferenceImage(preview, fetch, request.signal);
+      if (request.signal.aborted || downloadRequest.current !== request) return;
+      const objectUrl = URL.createObjectURL(image);
+      const anchor = document.createElement("a");
+      anchor.href = objectUrl;
+      anchor.download =
+        new URL(preview, window.location.origin).pathname.split("/").at(-1) ||
+        `${reference?.slug || "reference"}.png`;
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+      setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
+    } catch {
+      if (!request.signal.aborted && downloadRequest.current === request)
+        setDownloadError(
+          "This image could not be downloaded. The source may not allow downloads from this app. Your reference is still open.",
+        );
+    } finally {
+      if (downloadRequest.current === request) {
+        downloadRequest.current = null;
+        setDownloading(false);
+      }
+    }
+  }
+  async function copyColor(value: string) {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopied(`Copied ${value}`);
+    } catch {
+      setCopied(
+        "Clipboard unavailable. The color value is available in Recorded values.",
+      );
+    }
+  }
   return (
-    <Modal
+    <Dialog.Root
       open={!!current}
-      onOpenChange={(v) => {
-        if (!v) onClose();
+      onOpenChange={(open) => {
+        if (!open) onClose();
       }}
-      title={current?.name || "Reference"}
-      className="inspector-modal"
     >
-      <div className="inspector-toolbar">
-        <span className="muted small-text">
-          {index + 1} of {items.length} references
-        </span>
-        <div className="spacer" />
-        {onPin && current && (
-          <button
-            className={`pill small ${pinnedIds.includes(current.id) ? "active" : ""}`}
-            onClick={() => onPin(current.id)}
+      <Dialog.Portal>
+        <Dialog.Overlay className={referenceStyles.inspectorOverlay} />
+        <Dialog.Content
+          className={referenceStyles.inspector}
+          ref={inspectorElement}
+          aria-describedby={undefined}
+          onOpenAutoFocus={() => {
+            const active = document.activeElement;
+            if (
+              active instanceof HTMLElement &&
+              active !== document.body &&
+              !active.closest('[role="dialog"]')
+            )
+              openingFocus.current = active;
+          }}
+          onCloseAutoFocus={(event) => {
+            event.preventDefault();
+            const opener = openingFocus.current;
+            requestAnimationFrame(() => {
+              if (opener?.isConnected) opener.focus();
+            });
+          }}
+        >
+          <div
+            className={referenceStyles.inspectorMedia}
+            tabIndex={0}
+            aria-label="Captured reference preview"
           >
-            <Pin size={14} />
-            {pinnedIds.includes(current.id) ? "Pinned" : "Pin direction"}
-          </button>
-        )}
-        {onExclude && current && (
-          <button className="pill small" onClick={() => onExclude(current.id)}>
-            <Minus size={14} />
-            {excludedIds.includes(current.id) ? "Restore" : "Exclude"}
-          </button>
-        )}
-        <button
-          className="icon-button"
-          onClick={() => move(-1)}
-          disabled={items.length < 2}
-          aria-label="Previous reference"
-        >
-          <ChevronLeft size={18} />
-        </button>
-        <button
-          className="icon-button"
-          onClick={() => move(1)}
-          disabled={items.length < 2}
-          aria-label="Next reference"
-        >
-          <ChevronRight size={18} />
-        </button>
-      </div>
-      <div className="inspector-body">
-        {error ? (
-          <ErrorState message={error} />
-        ) : detail ? (
-          <DetailOverview detail={detail} inspector onOpen={onChange} />
-        ) : (
-          <Spinner label="Inspecting reference…" />
-        )}
-      </div>
-    </Modal>
+            {preview ? (
+              showVideo && reference?.video ? (
+                <video
+                  src={reference.video}
+                  poster={preview}
+                  controls
+                  autoPlay
+                  muted
+                  playsInline
+                  className={referenceStyles.inspectorImage}
+                />
+              ) : (
+                <img
+                  src={preview}
+                  alt={`${reference?.name} captured interface`}
+                  className={referenceStyles.inspectorImage}
+                />
+              )
+            ) : (
+              <div className={referenceStyles.missingPreview}>
+                <BookOpen size={32} />
+                <span>Preview unavailable</span>
+              </div>
+            )}
+            {reference?.video && (
+              <button
+                className={`pill ${referenceStyles.videoToggle}`}
+                onClick={() => setShowVideo((value) => !value)}
+              >
+                {showVideo ? "Show screenshot" : "Play scrolling preview"}
+              </button>
+            )}
+          </div>
+          <div className={referenceStyles.inspectorPanel}>
+            <header className={referenceStyles.inspectorBrand}>
+              {reference?.icon ? (
+                <img src={reference.icon} alt="" />
+              ) : (
+                <span className="reference-letter">{reference?.name[0]}</span>
+              )}
+              <div>
+                <Dialog.Title>{reference?.name || "Reference"}</Dialog.Title>
+                <p>
+                  {reference?.evidence === "measured"
+                    ? "Measured package"
+                    : "Interpreted reference"}
+                </p>
+              </div>
+              <Dialog.Close
+                className={referenceStyles.inspectorClose}
+                aria-label="Close reference"
+              >
+                <X size={20} />
+              </Dialog.Close>
+            </header>
+            <div className={referenceStyles.inspectorContent}>
+              {error ? (
+                <ErrorState message={error} />
+              ) : !detail ? (
+                <Spinner label="Loading reference details…" />
+              ) : (
+                <>
+                  <section className={referenceStyles.inspectorSection}>
+                    <h3>
+                      <Layers size={14} />
+                      Reference
+                    </h3>
+                    <div className={referenceStyles.chips}>
+                      {[detail.platform, detail.category, ...detail.themes]
+                        .filter(Boolean)
+                        .filter(
+                          (value, index, values) =>
+                            values.indexOf(value) === index,
+                        )
+                        .map((value) => (
+                          <span key={value}>{value}</span>
+                        ))}
+                    </div>
+                  </section>
+                  {detail.tags.length > 0 && (
+                    <section className={referenceStyles.inspectorSection}>
+                      <h3>
+                        <Tag size={14} />
+                        Tags
+                      </h3>
+                      <div className={referenceStyles.chips}>
+                        {detail.tags.map((tag) => (
+                          <span key={tag}>{tag}</span>
+                        ))}
+                      </div>
+                    </section>
+                  )}
+                  {detail.colors.length > 0 && (
+                    <section className={referenceStyles.inspectorSection}>
+                      <h3>
+                        <Palette size={14} />
+                        Colors
+                      </h3>
+                      <div className={referenceStyles.chips}>
+                        {detail.colors.slice(0, 12).map((color, index) => (
+                          <button
+                            key={`${color.name}-${index}`}
+                            title={`${color.value}${color.evidence ? ` · ${color.evidence}` : ""}`}
+                            onClick={() => copyColor(color.value)}
+                          >
+                            <i
+                              style={{
+                                background:
+                                  /^(#|rgb|hsl|oklch|color|transparent|white|black)/i.test(
+                                    color.value,
+                                  )
+                                    ? color.value
+                                    : undefined,
+                              }}
+                            />
+                            {color.name}
+                          </button>
+                        ))}
+                      </div>
+                      <p className={referenceStyles.copyFeedback} role="status">
+                        {copied}
+                      </p>
+                    </section>
+                  )}
+                  <details className={referenceStyles.recordedValues}>
+                    <summary>Recorded values &amp; evidence</summary>
+                    <p>
+                      {detail.evidence === "measured"
+                        ? "Consult each value’s evidence label. Images show layout and proportion."
+                        : "Third-party interpretation. Use for inspiration; these values are not measured product evidence."}
+                      {detail.captured ? ` Captured ${detail.captured}.` : ""}
+                    </p>
+                    <ReferenceValues
+                      title="Colors"
+                      values={detail.colors}
+                      kind="color"
+                      previewLimit={8}
+                    />
+                    <ReferenceValues
+                      title="Typography"
+                      values={detail.typography}
+                      kind="type"
+                      previewLimit={5}
+                    />
+                    <ReferenceValues
+                      title="Spacing"
+                      values={detail.spacing}
+                      previewLimit={5}
+                    />
+                    <ReferenceValues
+                      title="Shape & radius"
+                      values={detail.radii}
+                      previewLimit={5}
+                    />
+                    {detail.guidelines.length > 0 && (
+                      <section>
+                        <h3>Design notes</h3>
+                        <ul>
+                          {detail.guidelines.map((note, index) => (
+                            <li key={index}>{note}</li>
+                          ))}
+                        </ul>
+                      </section>
+                    )}
+                  </details>
+                </>
+              )}
+            </div>
+            <footer className={referenceStyles.inspectorActions}>
+              <div className={referenceStyles.navigation}>
+                <span>
+                  {index >= 0 ? index + 1 : 1} of {Math.max(1, items.length)}
+                </span>
+                <button
+                  onClick={() => move(-1)}
+                  disabled={items.length < 2}
+                  aria-label="Previous reference"
+                >
+                  <ChevronLeft size={18} />
+                </button>
+                <button
+                  onClick={() => move(1)}
+                  disabled={items.length < 2}
+                  aria-label="Next reference"
+                >
+                  <ChevronRight size={18} />
+                </button>
+                {onPin && current && (
+                  <button
+                    onClick={() => onPin(current.id)}
+                    aria-pressed={pinnedIds.includes(current.id)}
+                    title="Pin direction"
+                  >
+                    <Pin size={15} />
+                    {pinnedIds.includes(current.id) ? "Pinned" : "Pin"}
+                  </button>
+                )}
+                {onExclude && current && (
+                  <button onClick={() => onExclude(current.id)}>
+                    {excludedIds.includes(current.id) ? "Restore" : "Exclude"}
+                  </button>
+                )}
+              </div>
+              <div className={referenceStyles.actionPair}>
+                {preview && (
+                  <button onClick={downloadPreview} disabled={downloading}>
+                    <Download size={14} />
+                    {downloading ? "Downloading…" : "Download"}
+                  </button>
+                )}
+                <CopyButton value={href} label="Copy link" />
+              </div>
+              {downloadError && (
+                <p className={referenceStyles.downloadError} role="alert">
+                  {downloadError}
+                </p>
+              )}
+              {reference && (
+                <SaveReference
+                  item={reference}
+                  className={referenceStyles.saveAction}
+                />
+              )}
+              {detail?.sourceUrl && (
+                <a
+                  className={referenceStyles.documentationLink}
+                  href={detail.sourceUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit website <ExternalLink size={13} />
+                </a>
+              )}
+              {reference && (
+                <Link
+                  className={referenceStyles.documentationLink}
+                  href={`/styles/${reference.source}/${reference.slug}`}
+                >
+                  Style documentation <ArrowRight size={13} />
+                </Link>
+              )}
+            </footer>
+          </div>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }
+
 export function Comparison({
   items,
   onClose,

@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import homeStyles from "./research-home.module.css";
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { useChat } from "@ai-sdk/react";
@@ -13,10 +14,15 @@ import {
   ArrowRight,
   ArrowUp,
   BookOpen,
+  Binoculars,
   Check,
   ChevronDown,
   Download,
   LoaderCircle,
+  Monitor,
+  Smartphone,
+  Sun,
+  CornerDownRight,
   Pin,
   Plus,
   Search,
@@ -41,11 +47,46 @@ import {
   ReferenceInspector,
   SaveReference,
 } from "@/components/reference";
-const suggestions = [
-  "A calm, focused workspace",
-  "Onboarding that feels effortless",
-  "Editorial typography with personality",
-  "Thoughtful dark interfaces",
+type ResearchMode = "research" | "web" | "ios";
+const suggestionGroups = {
+  Popular: [
+    "Signup with email verification",
+    "Product detail pages with ratings and reviews",
+    "Command palette examples",
+    "Data tables with filters",
+    "SaaS landing pages with product screenshots",
+    "AI SaaS product landing pages",
+  ],
+  Inspiration: [
+    "Beautiful dashboard designs",
+    "Creative portfolio websites",
+    "Minimal landing pages",
+    "Pricing page inspiration",
+    "Finance app interfaces",
+    "Editorial layouts",
+  ],
+  Onboarding: [
+    "Welcome screens",
+    "Create an account",
+    "Set up your workspace",
+    "Invite your teammates",
+    "Choose a plan",
+    "Personalize your profile",
+  ],
+  Workflows: [
+    "Create a new project",
+    "Upload and manage files",
+    "Filter a data table",
+    "Schedule a meeting",
+    "Manage your subscription",
+    "Share a document",
+  ],
+};
+type SuggestionGroup = keyof typeof suggestionGroups;
+const modeChoices = [
+  { id: "research" as const, label: "Research mode", icon: Binoculars },
+  { id: "web" as const, label: "Web apps", icon: Monitor },
+  { id: "ios" as const, label: "iOS apps", icon: Smartphone },
 ];
 function Composer({
   value,
@@ -54,6 +95,9 @@ function Composer({
   busy = false,
   onStop,
   hero = false,
+  mode = "research",
+  onModeChange,
+  onShowTips,
 }: {
   value: string;
   onChange: (value: string) => void;
@@ -61,6 +105,9 @@ function Composer({
   busy?: boolean;
   onStop?: () => void;
   hero?: boolean;
+  mode?: ResearchMode;
+  onModeChange?: (mode: ResearchMode) => void;
+  onShowTips?: () => void;
 }) {
   const ref = useRef<HTMLTextAreaElement>(null);
   useEffect(() => {
@@ -81,12 +128,21 @@ function Composer({
   }, []);
   return (
     <form
-      className={`research-composer ${hero ? "hero-composer" : ""} ${busy ? "working" : ""}`}
+      className={
+        hero
+          ? `${homeStyles.composer} ${busy ? homeStyles.working : ""}`
+          : `research-composer ${busy ? "working" : ""}`
+      }
       onSubmit={(e) => {
         e.preventDefault();
         if (!busy && value.trim()) onSubmit();
       }}
     >
+      {!hero && (
+        <span className={homeStyles.followupIcon}>
+          <Search size={16} />
+        </span>
+      )}
       <textarea
         ref={ref}
         aria-label="Research prompt"
@@ -94,10 +150,12 @@ function Composer({
         onChange={(e) => onChange(e.target.value)}
         placeholder={
           hero
-            ? "Describe what you’re designing…"
-            : "Keep exploring, or refine your direction…"
+            ? mode === "research"
+              ? "Describe a task or ask a question"
+              : `Search ${mode === "web" ? "Web" : "iOS"} app references`
+            : "Ask followup…"
         }
-        rows={hero ? 3 : 1}
+        rows={1}
         onKeyDown={(e) => {
           if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
             e.preventDefault();
@@ -105,16 +163,54 @@ function Composer({
           }
         }}
       />
-      <div className="composer-bottom">
-        <span>
-          <Search size={14} />
-          {hero ? "Research your design library" : "Grounded in your library"}
-        </span>
+      <div className={hero ? homeStyles.controls : "composer-bottom"}>
+        {hero ? (
+          <>
+            <button
+              type="button"
+              className={homeStyles.tipsButton}
+              onClick={onShowTips}
+              aria-label="Show research tips"
+            >
+              <Sun size={20} />
+            </button>
+            <div
+              className={homeStyles.modes}
+              role="group"
+              aria-label="Search mode"
+            >
+              {modeChoices.map((choice) => (
+                <button
+                  key={choice.id}
+                  type="button"
+                  aria-pressed={mode === choice.id}
+                  className={
+                    mode === choice.id ? homeStyles.activeMode : undefined
+                  }
+                  onClick={() => onModeChange?.(choice.id)}
+                  title={
+                    choice.id === "research"
+                      ? "Research with your connected model"
+                      : `Browse saved ${choice.label} in the library`
+                  }
+                >
+                  <choice.icon size={15} />
+                  <span>{choice.label}</span>
+                </button>
+              ))}
+            </div>
+          </>
+        ) : (
+          <span>
+            <Search size={14} />
+            Grounded in your library
+          </span>
+        )}
         <div className="spacer" />
         {busy && onStop ? (
           <button
             type="button"
-            className="composer-submit"
+            className={hero ? homeStyles.submit : "composer-submit"}
             onClick={onStop}
             aria-label="Stop research"
           >
@@ -122,10 +218,14 @@ function Composer({
           </button>
         ) : (
           <button
-            className="composer-submit"
+            className={hero ? homeStyles.submit : "composer-submit"}
             type="submit"
             disabled={busy || !value.trim()}
-            aria-label="Send research prompt"
+            aria-label={
+              hero && mode !== "research"
+                ? "Search app references"
+                : "Send research prompt"
+            }
           >
             {busy ? (
               <LoaderCircle size={18} className="spin" />
@@ -143,13 +243,29 @@ export function ResearchHome() {
     [prompt, setPrompt] = useState(""),
     [busy, setBusy] = useState(false),
     [error, setError] = useState(""),
-    [inspecting, setInspecting] = useState<LibraryItem | null>(null);
+    [inspecting, setInspecting] = useState<LibraryItem | null>(null),
+    [mode, setMode] = useState<ResearchMode>("research"),
+    [coachVisible, setCoachVisible] = useState(true),
+    [suggestionGroup, setSuggestionGroup] =
+      useState<SuggestionGroup>("Popular");
   const { data } = useResource<{ items: LibraryItem[]; total: number }>(
-    "/api/library?limit=8&source=systems",
+    mode === "research"
+      ? "/api/library?limit=8&source=systems"
+      : mode === "web"
+        ? "/api/library?limit=8&platform=web"
+        : "/api/library?limit=8&platform=mobile",
   );
   const items = data?.items || [];
   async function begin() {
     if (!prompt.trim() || busy) return;
+    if (mode !== "research") {
+      const params = new URLSearchParams({
+        platform: mode === "web" ? "web" : "mobile",
+        q: prompt.trim(),
+      });
+      router.push(`/library?${params}`);
+      return;
+    }
     setBusy(true);
     setError("");
     try {
@@ -169,57 +285,139 @@ export function ResearchHome() {
       setBusy(false);
     }
   }
+  function chooseSuggestion(suggestion: string) {
+    setPrompt(suggestion);
+    document
+      .querySelector<HTMLTextAreaElement>(
+        'textarea[aria-label="Research prompt"]',
+      )
+      ?.focus();
+  }
   return (
-    <div className="research-home">
-      <div className="home-topline">
-        <span>Your personal design practice</span>
-        <Link href="/library">
-          Browse the library
-          <ArrowUpRightIcon />
-        </Link>
-      </div>
-      <section className="research-hero">
-        <div className="eyebrow">A space to look closer</div>
-        <h1>
-          Where will your
-          <br />
-          next idea take you?
-        </h1>
-        <p>Find references. Notice the details. Make something your own.</p>
-        <div className="hero-composer-wrap">
+    <div className={homeStyles.home}>
+      <section className={homeStyles.hero}>
+        <h1>What are you designing next?</h1>
+        <p className={homeStyles.description}>
+          Real product screens, styles, and patterns to help you
+          <br className={homeStyles.desktopBreak} /> make better design
+          decisions.
+        </p>
+        <div className={homeStyles.research}>
+          {coachVisible && (
+            <aside className={homeStyles.coach} aria-label="Research tips">
+              <strong>
+                {mode === "research"
+                  ? "Meet research mode"
+                  : `Browse ${mode === "web" ? "Web" : "iOS"} app references`}
+              </strong>
+              <p>
+                {mode === "research"
+                  ? "Describe your task, get analysis, references, and reasoning back."
+                  : "Search your saved library by product, screen, or design detail."}
+              </p>
+              <button
+                className={homeStyles.dismissCoach}
+                onClick={() => setCoachVisible(false)}
+                aria-label="Dismiss research tips"
+              >
+                <X size={17} />
+              </button>
+            </aside>
+          )}
           <Composer
             value={prompt}
             onChange={setPrompt}
             onSubmit={begin}
             busy={busy}
             hero
+            mode={mode}
+            onModeChange={setMode}
+            onShowTips={() => setCoachVisible((v) => !v)}
           />
           {error && (
-            <p className="error-text" role="alert">
+            <p className={`error-text ${homeStyles.error}`} role="alert">
               {error}
             </p>
           )}
-        </div>
-        <div className="suggestion-row">
-          {suggestions.map((s) => (
-            <button
-              className="suggestion-pill"
-              key={s}
-              onClick={() => setPrompt(s)}
-            >
-              {s}
-              <ArrowUpRightIcon />
-            </button>
-          ))}
+          <div
+            className={homeStyles.suggestionTabs}
+            role="tablist"
+            aria-label="Suggested prompts"
+          >
+            {(Object.keys(suggestionGroups) as SuggestionGroup[]).map(
+              (group, index, groups) => (
+                <button
+                  key={group}
+                  id={`suggestion-tab-${group}`}
+                  role="tab"
+                  type="button"
+                  aria-selected={suggestionGroup === group}
+                  aria-controls="research-suggestions"
+                  tabIndex={suggestionGroup === group ? 0 : -1}
+                  className={
+                    suggestionGroup === group ? homeStyles.activeTab : undefined
+                  }
+                  onClick={() => setSuggestionGroup(group)}
+                  onKeyDown={(event) => {
+                    const nextIndex =
+                      event.key === "ArrowRight"
+                        ? (index + 1) % groups.length
+                        : event.key === "ArrowLeft"
+                          ? (index - 1 + groups.length) % groups.length
+                          : event.key === "Home"
+                            ? 0
+                            : event.key === "End"
+                              ? groups.length - 1
+                              : -1;
+                    if (nextIndex >= 0) {
+                      event.preventDefault();
+                      setSuggestionGroup(groups[nextIndex]);
+                      document
+                        .getElementById(`suggestion-tab-${groups[nextIndex]}`)
+                        ?.focus();
+                    }
+                  }}
+                >
+                  {group}
+                </button>
+              ),
+            )}
+          </div>
+          <div
+            className={homeStyles.suggestions}
+            id="research-suggestions"
+            role="tabpanel"
+            aria-labelledby={`suggestion-tab-${suggestionGroup}`}
+          >
+            {suggestionGroups[suggestionGroup].map((suggestion) => (
+              <button
+                type="button"
+                key={suggestion}
+                onClick={() => chooseSuggestion(suggestion)}
+              >
+                <CornerDownRight size={20} />
+                <span>{suggestion}</span>
+              </button>
+            ))}
+          </div>
         </div>
       </section>
-      <section className="home-gallery">
-        <div className="section-heading">
-          <div>
-            <div className="eyebrow">A few places to begin</div>
-            <h2>Made to be looked at.</h2>
-          </div>
-          <Link className="text-link" href="/library">
+      <section className={homeStyles.gallery}>
+        <div className={homeStyles.galleryHeading}>
+          <h2>
+            {mode === "research"
+              ? "From your library"
+              : `${mode === "web" ? "Web" : "iOS"} app references`}
+          </h2>
+          <Link
+            href={
+              mode === "research"
+                ? "/library"
+                : mode === "web"
+                  ? "/library?platform=web"
+                  : "/library?platform=mobile"
+            }
+          >
             Explore all references
             <ArrowRight size={15} />
           </Link>
@@ -239,6 +437,7 @@ export function ResearchHome() {
     </div>
   );
 }
+
 function ArrowUpRightIcon() {
   return (
     <svg
@@ -471,22 +670,40 @@ function ResearchConversation({ initial }: { initial: Conversation }) {
     download(text, `research-${initial.id}.md`);
   }
   return (
-    <div className="research-session">
-      <header className="research-session-header">
-        <div className="research-title">
-          <span className="research-status-dot" />
-          <span>{initial.title || "Untitled research"}</span>
+    <div className={`research-session ${homeStyles.session}`}>
+      <header className={`research-session-header ${homeStyles.sessionHeader}`}>
+        <div className={homeStyles.sessionTopBar}>
+          <div className={`research-title ${homeStyles.sessionTitle}`}>
+            <span>{initial.title || "Untitled research"}</span>
+          </div>
+          <button
+            className="icon-button"
+            onClick={exportResearch}
+            aria-label="Export research"
+            title="Export research"
+          >
+            <Download size={17} />
+          </button>
         </div>
-        <button className="pill small" onClick={exportResearch}>
-          <Download size={14} />
-          Export research
-        </button>
+        <nav
+          className={homeStyles.sessionModes}
+          aria-label="Research and reference views"
+        >
+          <span aria-current="page">
+            <Binoculars size={16} />
+            Research mode
+          </span>
+          <Link href="/library?platform=web">
+            <Monitor size={16} />
+            Web apps
+          </Link>
+          <Link href="/library?platform=mobile">
+            <Smartphone size={16} />
+            iOS apps
+          </Link>
+        </nav>
       </header>
       <div className="conversation">
-        <div className="conversation-intro">
-          <span className="eyebrow">Your research</span>
-          <p>Follow a direction. Keep what resonates.</p>
-        </div>
         {messages.length === 0 && !busy && (
           <Empty title="What are you working on?">
             <p>Describe the experience, mood, or detail you want to explore.</p>
@@ -656,7 +873,7 @@ function Message({
       className={`message ${user ? "user-message" : "assistant-message"}`}
     >
       <div className="message-label">
-        {user ? "You" : "Studio"}
+        {user ? "You" : "Research insights"}
         {!user && <Sparkles size={12} />}
       </div>
       <div className="message-body">

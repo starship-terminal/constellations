@@ -92,7 +92,7 @@ h3 {
   font-weight: 400;
 }
 h1 {
-  font: 48px/1.12 var(--serif);
+  font: 40px/1.12 var(--sans);
   letter-spacing: -1.7px;
 }
 h2 {
@@ -362,17 +362,17 @@ select {
 }
 /* Workspace */
 .app-shell {
+  --sidebar-width: 270px;
   min-height: 100dvh;
 }
 .sidebar {
-  width: 246px;
+  width: var(--sidebar-width);
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
-  padding: 31px 16px 18px;
-  background: #111318;
-  border-right: 1px solid #ffffff06;
+  padding: 16px 16px 8px 8px;
+  background: var(--page);
   display: flex;
   flex-direction: column;
   z-index: 40;
@@ -386,8 +386,9 @@ select {
   flex-wrap: wrap;
 }
 .sidebar > .brand {
-  padding: 0 11px;
-  margin-bottom: 34px;
+  padding: 0 8px;
+  height: 44px;
+  margin-bottom: 52px;
 }
 .brand-sub {
   width: 100%;
@@ -400,8 +401,9 @@ select {
 .brand-mark {
   display: inline-flex;
   gap: 3px;
-  width: 26px;
-  height: 26px;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
   align-items: center;
   transform: rotate(-16deg);
 }
@@ -424,10 +426,11 @@ select {
   gap: 10px;
   background: #f7f8fb;
   color: #13151a;
-  padding: 13px 16px;
-  border-radius: 30px;
-  font-size: 13px;
-  margin-bottom: 19px;
+  padding: 8px 12px;
+  min-height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 4px;
   transition: background 0.15s;
 }
 .new-research:hover {
@@ -442,11 +445,12 @@ select {
   display: flex;
   align-items: center;
   gap: 12px;
-  min-height: 43px;
-  padding: 11px 13px;
-  border-radius: 11px;
-  color: #b5bac7;
-  font-size: 13px;
+  min-height: 40px;
+  margin-bottom: 4px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--ink);
+  font-size: 14px;
   border: 1px solid transparent;
   transition:
     background 0.15s,
@@ -469,9 +473,8 @@ select {
 }
 .history-heading {
   color: var(--subtle);
-  font-size: 10px;
-  margin: 38px 13px 12px;
-  letter-spacing: 0.3px;
+  font-size: 12px;
+  margin: 38px 16px 8px;
 }
 .history-list {
   overflow-y: auto;
@@ -485,12 +488,12 @@ select {
   border-radius: 9px;
   position: relative;
   margin-bottom: 2px;
-  color: var(--muted);
-  min-height: 36px;
+  color: var(--ink);
+  min-height: 44px;
 }
 .history-row > a {
-  padding: 9px 12px;
-  font-size: 11px;
+  padding: 10px 16px;
+  font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -557,24 +560,26 @@ select {
 .sidebar-bottom {
   margin-top: 20px;
   padding-top: 10px;
-  border-top: 1px solid #ffffff09;
 }
 .workspace-label {
-  padding: 18px 10px 0;
+  padding: 8px 12px;
+  min-height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
   display: flex;
   gap: 10px;
   align-items: center;
-  font-size: 11px;
-  color: #d4d7df;
+  font-size: 14px;
+  color: var(--ink);
 }
 .workspace-avatar {
   display: grid;
   place-items: center;
   background: #292d37;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  font: 13px var(--serif);
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  font: 12px var(--sans);
 }
 .workspace-label small {
   display: block;
@@ -583,7 +588,7 @@ select {
   margin-top: 2px;
 }
 .main-content {
-  margin-left: 246px;
+  margin-left: var(--sidebar-width);
   min-height: 100dvh;
 }
 .page {
@@ -1067,7 +1072,7 @@ select {
 .compare-bar {
   position: fixed;
   bottom: 24px;
-  left: calc(50% + 123px);
+  left: calc(50% + var(--sidebar-width, 0px) / 2);
   transform: translateX(-50%);
   display: flex;
   align-items: center;
@@ -1127,10 +1132,10 @@ select {
 }
 /* Standalone styles */
 .standalone-header {
-  height: 76px;
+  height: 80px;
   position: sticky;
   top: 0;
-  padding: 0 28px;
+  padding: 0 16px;
   display: flex;
   gap: 16px;
   align-items: center;
@@ -1138,7 +1143,7 @@ select {
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--line);
   z-index: 30;
-  font-size: 17px;
+  font-size: 24px;
 }
 .standalone-header .brand {
   font-size: 24px;
@@ -1987,7 +1992,7 @@ select {
 .session-composer {
   position: fixed;
   bottom: 0;
-  left: 246px;
+  left: var(--sidebar-width);
   right: 0;
   z-index: 18;
   max-width: 900px;
@@ -2393,11 +2398,8 @@ select {
   }
 }
 @media (max-width: 1250px) {
-  .sidebar {
-    width: 220px;
-  }
-  .main-content {
-    margin-left: 220px;
+  .app-shell {
+    --sidebar-width: 240px;
   }
   .research-home {
     padding: 29px 34px 70px;
@@ -2442,12 +2444,7 @@ select {
   .styles-page .card-picture {
     padding: 30px;
   }
-  .session-composer {
-    left: 220px;
-  }
-  .compare-bar {
-    left: calc(50% + 110px);
-  }
+
   .detail-overview {
     padding: 32px 28px 50px;
   }
@@ -2567,6 +2564,9 @@ select {
   }
 }
 @media (max-width: 760px) {
+  .app-shell {
+    --sidebar-width: 0px;
+  }
   .sidebar {
     width: 250px;
     visibility: hidden;

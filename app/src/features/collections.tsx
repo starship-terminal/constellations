@@ -70,8 +70,7 @@ export function CollectionsPage() {
     <div className="page collections-page">
       <header className="page-heading row-heading">
         <div>
-          <div className="eyebrow">Keep your thinking together</div>
-          <h1>Collected with intention.</h1>
+          <h1>Bookmarks</h1>
           <p className="muted">
             A home for the references you want to return to.
           </p>
