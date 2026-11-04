@@ -3,7 +3,9 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
   Suspense,
+  useCallback,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -50,6 +52,13 @@ import {
   packageFileHref,
 } from "./package-detail-data";
 import styles from "./package-detail.module.css";
+import {
+  animateCaptureViewer,
+  animateViewerDeparture,
+  captureViewerOrigin,
+  reducedViewerMotion,
+  type CaptureViewerOrigin,
+} from "./capture-viewer-motion";
 
 type Tab =
   | "screenshots"
@@ -96,6 +105,7 @@ function PackageDetail({ slug }: { slug: string }) {
     [tag, setTag] = useState(""),
     [page, setPage] = useState(1);
   const [fileSearch, setFileSearch] = useState("");
+  const viewerOrigin = useRef<CaptureViewerOrigin | undefined>(undefined);
   const detail = data,
     pkg = detail?.measured;
   const media = useMemo(
@@ -283,10 +293,17 @@ function PackageDetail({ slug }: { slug: string }) {
                       <article key={m.id} className={styles.tile}>
                         <button
                           className={styles.tileOpen}
-                          onClick={() => update({ media: m.id })}
+                          onClick={(event) => {
+                            viewerOrigin.current = captureViewerOrigin(
+                              event.currentTarget,
+                              `${detail.id}:${m.id}`,
+                            );
+                            update({ media: m.id });
+                          }}
                         >
                           <div
                             className={`${styles.frame} ${tab !== "screenshots" ? styles.contain : ""}`}
+                            data-viewer-source={`${detail.id}:${m.id}`}
                           >
                             <img
                               loading="lazy"
@@ -400,6 +417,7 @@ function PackageDetail({ slug }: { slug: string }) {
         detail={detail}
         current={opened}
         items={lightboxItems}
+        origin={viewerOrigin.current}
         onClose={() => update({ media: "" })}
         onChange={(item) => update({ media: item.id })}
       />
@@ -436,18 +454,92 @@ export function PackageLightbox({
   items,
   onClose,
   onChange,
+  origin,
 }: {
   detail: LibraryItem;
   current?: ReferenceMedia;
   items: ReferenceMedia[];
   onClose: () => void;
   onChange: (item: ReferenceMedia) => void;
+  origin?: CaptureViewerOrigin;
 }) {
   const links = current ? captureViewerLinks(detail, current) : null;
   const opener = useRef<HTMLElement | null>(null);
   const lightboxRef = useRef<HTMLDivElement | null>(null);
+  const overlayRef = useRef<HTMLDivElement | null>(null);
+  const stageRef = useRef<HTMLDivElement | null>(null);
+  const transition = useRef<ReturnType<typeof animateCaptureViewer> | null>(
+    null,
+  );
+  const previous = useRef<string | null>(null);
+  const direction = useRef(1);
+  const closing = useRef(false);
+  const mounted = useRef(true);
+  const departure = useRef<(() => void) | null>(null);
+  const [content, setContent] = useState<HTMLDivElement | null>(null);
+  const setLightbox = useCallback((node: HTMLDivElement | null) => {
+    lightboxRef.current = node;
+    setContent(node);
+  }, []);
+  useLayoutEffect(() => {
+    if (!content || !current || !stageRef.current) {
+      transition.current?.cancel();
+      closing.current = false;
+      previous.current = null;
+      return;
+    }
+    const identity = `${detail.id}:${current.id}`;
+    const animation = animateCaptureViewer({
+      content,
+      overlay: overlayRef.current,
+      stage: stageRef.current,
+      id: identity,
+      phase: previous.current ? "change" : "open",
+      origin,
+      direction: direction.current,
+    });
+    previous.current = identity;
+    transition.current = animation;
+    return animation.cancel;
+  }, [content, current?.id, detail.id]);
+  useEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+      transition.current?.cancel();
+      departure.current?.();
+    };
+  }, []);
+  const close = async () => {
+    if (closing.current) return;
+    if (!current || !content || !stageRef.current || reducedViewerMotion()) {
+      onClose();
+      return;
+    }
+    closing.current = true;
+    departure.current?.();
+    transition.current?.cancel();
+    const animation = animateCaptureViewer({
+      content,
+      overlay: overlayRef.current,
+      stage: stageRef.current,
+      id: `${detail.id}:${current.id}`,
+      phase: "close",
+      origin,
+    });
+    transition.current = animation;
+    await animation.finished;
+    if (mounted.current && transition.current === animation) onClose();
+  };
   const index = items.findIndex((m) => m === current);
   const move = (delta: number) => {
+    if (closing.current) return;
+    if (items.length < 2) return;
+    direction.current = delta;
+    departure.current?.();
+    transition.current?.cancel();
+    if (stageRef.current)
+      departure.current = animateViewerDeparture(stageRef.current, delta);
     if (items.length)
       onChange(items[(index + delta + items.length) % items.length]);
   };
@@ -478,13 +570,13 @@ export function PackageLightbox({
     <Dialog.Root
       open={!!current}
       onOpenChange={(open) => {
-        if (!open) onClose();
+        if (!open) void close();
       }}
     >
       <Dialog.Portal>
-        <Dialog.Overlay className={styles.overlay} />
+        <Dialog.Overlay ref={overlayRef} className={styles.overlay} />
         <Dialog.Content
-          ref={lightboxRef}
+          ref={setLightbox}
           className={styles.lightbox}
           aria-describedby={undefined}
           onOpenAutoFocus={() => {
@@ -508,7 +600,7 @@ export function PackageLightbox({
         >
           {current && (
             <>
-              <header>
+              <header data-viewer-chrome>
                 <div>
                   <Link href={links!.browse} className={styles.viewerProduct}>
                     {detail.icon && <img src={detail.icon} alt="" />}
@@ -525,15 +617,29 @@ export function PackageLightbox({
               </header>
               <div
                 key={`${detail.id}:${current.id}`}
+                ref={stageRef}
                 className={styles.lightboxStage}
               >
                 {current.type === "video" ? (
                   <video src={current.url} controls />
                 ) : (
-                  <img src={current.url} alt={current.name} />
+                  <img
+                    src={current.url}
+                    alt={current.name}
+                    width={
+                      origin?.id === `${detail.id}:${current.id}`
+                        ? origin.width || undefined
+                        : undefined
+                    }
+                    height={
+                      origin?.id === `${detail.id}:${current.id}`
+                        ? origin.height || undefined
+                        : undefined
+                    }
+                  />
                 )}
               </div>
-              <aside className={styles.viewerMetadata}>
+              <aside className={styles.viewerMetadata} data-viewer-chrome>
                 <h3>Capture</h3>
                 <p>{current.group || "Captured screen"}</p>
                 <h3>Tags</h3>
@@ -560,7 +666,7 @@ export function PackageLightbox({
                   {detail.captured ? `Captured ${detail.captured}` : ""}
                 </p>
               </aside>
-              <div className={styles.viewerNavigation}>
+              <div className={styles.viewerNavigation} data-viewer-chrome>
                 <span>
                   {index + 1} / {items.length}
                 </span>
@@ -583,7 +689,7 @@ export function PackageLightbox({
                   </button>
                 </div>
               </div>
-              <footer>
+              <footer data-viewer-chrome>
                 <div className={styles.actions}>
                   <a
                     className="pill"

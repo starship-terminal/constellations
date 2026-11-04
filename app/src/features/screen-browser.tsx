@@ -1,15 +1,21 @@
 "use client";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import type { ScreenItem, ScreenResponse } from "@/contracts/screens";
 import { api, Empty, ErrorState, Spinner } from "@/components/shared";
 import { MediaBookmarkButton } from "@/components/media-bookmark";
 import { PackageLightbox } from "./package-detail";
 import styles from "./screen-browser.module.css";
+import {
+  captureViewerOrigin,
+  type CaptureViewerOrigin,
+} from "./capture-viewer-motion";
 
 export function ScreenBrowser() {
+  const viewerOrigin = useRef<CaptureViewerOrigin | undefined>(undefined);
+  const grid = useRef<HTMLDivElement | null>(null);
   const params = useSearchParams();
   const query = params.get("q") || "",
     platform =
@@ -130,6 +136,22 @@ export function ScreenBrowser() {
   }
   const visibleData = dataKey === filterKey ? data : null;
   const items = visibleData?.items || [];
+  useEffect(() => {
+    if (
+      !visibleData ||
+      !grid.current ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    )
+      return;
+    const animation = grid.current.animate(
+      [
+        { opacity: 0, transform: "translateY(6px)" },
+        { opacity: 1, transform: "translateY(0)" },
+      ],
+      { duration: 150, easing: "ease-out" },
+    );
+    return () => animation.cancel();
+  }, [dataKey]);
   const selectedScreen = params.get("screen");
   const loadedCurrent = items.find((item) => item.id === selectedScreen);
   const current =
@@ -218,6 +240,7 @@ export function ScreenBrowser() {
         </Empty>
       ) : (
         <div
+          ref={grid}
           className={`${styles.grid} ${platform === "mobile" ? styles.phoneGrid : ""}`}
           aria-busy={loading}
         >
@@ -225,10 +248,16 @@ export function ScreenBrowser() {
             <article className={styles.card} key={item.id}>
               <button
                 className={styles.open}
-                onClick={() => open(item)}
+                onClick={(event) => {
+                  viewerOrigin.current = captureViewerOrigin(
+                    event.currentTarget,
+                    item.id,
+                  );
+                  open(item);
+                }}
                 aria-label={`Open ${item.reference.name}: ${item.media.name}`}
               >
-                <div className={styles.picture}>
+                <div className={styles.picture} data-viewer-source={item.id}>
                   <img
                     src={item.media.thumbnail || item.media.url}
                     alt={`${item.reference.name}: ${item.media.name}`}
@@ -272,6 +301,7 @@ export function ScreenBrowser() {
           detail={current.reference}
           current={current.media}
           items={viewerItems.map((item) => item.media)}
+          origin={viewerOrigin.current}
           onClose={() => update({ screen: "" })}
           onChange={(media) => {
             const next = viewerItems.find((item) => item.media === media);

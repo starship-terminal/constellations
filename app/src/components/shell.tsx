@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useState, type ReactNode } from "react";
+import { Suspense, useEffect, useRef, useState, type ReactNode } from "react";
 import {
   ArrowUpRight,
   Grid2X2,
@@ -120,6 +120,20 @@ interface Conversation {
 export function AppShell({ children }: { children: ReactNode }) {
   const path = usePathname(),
     router = useRouter();
+  const scene = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    const element = scene.current;
+    if (!element || matchMedia("(prefers-reduced-motion: reduce)").matches)
+      return;
+    const animation = element.animate(
+      [
+        { opacity: 0, translate: "0 8px" },
+        { opacity: 1, translate: "0 0" },
+      ],
+      { duration: 180, easing: "cubic-bezier(0.22, 1, 0.36, 1)" },
+    );
+    return () => animation.cancel();
+  }, [path]);
   const [collapsed, setCollapsed] = useState(false);
   useEffect(() => {
     setCollapsed(localStorage.getItem("studio-sidebar-collapsed") === "true");
@@ -144,7 +158,16 @@ export function AppShell({ children }: { children: ReactNode }) {
   useEffect(() => {
     setMobile(false);
   }, [path]);
-  if (path.startsWith("/styles")) return <>{children}</>;
+  if (path.startsWith("/styles"))
+    return (
+      <div
+        ref={(element) => {
+          scene.current = element;
+        }}
+      >
+        {children}
+      </div>
+    );
   async function rename() {
     if (!editing || !title.trim()) return;
     try {
@@ -291,7 +314,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           </div>
         </div>
       </aside>
-      <main className="main-content" id="main-content">
+      <main ref={scene} className="main-content" id="main-content">
         {children}
       </main>
       <Modal
