@@ -37,7 +37,7 @@ import {
   X,
   type LucideIcon,
 } from "lucide-react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import type { LibraryItem } from "@/contracts/library";
 import {
   api,
@@ -106,12 +106,19 @@ export function LibraryPage({ standalone = false }: { standalone?: boolean }) {
   );
 }
 function LibraryContent({ standalone }: { standalone: boolean }) {
+  const router = useRouter();
   const params = useSearchParams();
   const query = params.get("q") || "",
     platform = params.get("platform") || "",
-    source = params.get("source") || "",
+    source = "systems",
     theme = params.get("theme") || "",
     category = categoryGroup(params.get("category") || "");
+  const [layout, setLayout] = useState("grid");
+  const [scrub, setScrub] = useState(true);
+  useEffect(() => {
+    setLayout(localStorage.getItem("studio-gallery-layout") || "grid");
+    setScrub(localStorage.getItem("studio-gallery-scrub") !== "false");
+  }, []);
   const [allItems, setAllItems] = useState<LibraryItem[]>([]),
     [loading, setLoading] = useState(true),
     [catalogTotal, setCatalogTotal] = useState<number | null>(null),
@@ -146,7 +153,9 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
     // Retain already loaded items on retry, including when a later page failed.
     loadLibraryPages(
       (offset) =>
-        api<LibraryResponse>(`/api/library?limit=200&offset=${offset}`),
+        api<LibraryResponse>(
+          `/api/library?source=systems&limit=200&offset=${offset}`,
+        ),
       (page) => {
         if (!alive) return;
         setAllItems((previous) => mergeLibraryItems(previous, page.items));
@@ -176,7 +185,10 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
         (item) =>
           (!source || item.source === source) &&
           (!platform || item.platform === platform) &&
-          (!theme || item.themes.includes(theme)),
+          (!theme ||
+            item.themes.some(
+              (value) => value === theme || value.startsWith(`${theme}-`),
+            )),
       ),
     [allItems, source, platform, theme],
   );
@@ -200,7 +212,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
         (item) =>
           (!category || categoryGroup(item.category) === category) &&
           words.every((word) =>
-            `${item.name} ${item.slug} ${item.description} ${item.tags.join(" ")} ${item.category}`
+            `${item.name} ${item.slug} ${item.description} ${item.tags.join(" ")} ${item.themes.join(" ")} ${(item.fonts || []).join(" ")} ${item.category}`
               .toLowerCase()
               .includes(word),
           ),
@@ -351,7 +363,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
                   ? "iOS apps"
                   : platform === "desktop"
                     ? "Desktop apps"
-                    : "All references"}
+                    : "Gallery"}
             </h1>
             <nav
               className={styles.categories}
@@ -391,22 +403,33 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
           </>
         )}
         <div className={styles.filters}>
-          <div className={styles.sources} aria-label="Reference source">
-            {[
-              ["", "All references"],
-              ["systems", "Captured packages"],
-              ["refero", "Interpreted styles"],
-            ].map(([value, label]) => (
-              <button
-                key={value}
-                aria-pressed={source === value}
-                className={source === value ? styles.sourceActive : ""}
-                onClick={() => updateFilters({ source: value, category: "" })}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
+          <label>
+            <span className="sr-only">Gallery layout</span>
+            <select
+              value={layout}
+              onChange={(e) => {
+                setLayout(e.target.value);
+                localStorage.setItem("studio-gallery-layout", e.target.value);
+              }}
+            >
+              <option value="grid">Grid view</option>
+              <option value="list">List view</option>
+            </select>
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              checked={scrub}
+              onChange={(e) => {
+                setScrub(e.target.checked);
+                localStorage.setItem(
+                  "studio-gallery-scrub",
+                  String(e.target.checked),
+                );
+              }}
+            />{" "}
+            Preview on hover
+          </label>
           <label>
             <span className="sr-only">Platform</span>
             <select
@@ -456,7 +479,9 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
         {!allItems.length && loading ? (
           <Spinner label="Opening the library…" />
         ) : items.length ? (
-          <div className={standalone ? styles.styleGrid : styles.appGrid}>
+          <div
+            className={`${standalone ? styles.styleGrid : styles.appGrid} ${layout === "list" ? styles.listView : ""}`}
+          >
             {items.map((item) =>
               standalone ? (
                 <ReferenceCard
@@ -470,7 +495,8 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
                 <CatalogCard
                   key={item.id}
                   item={item}
-                  onOpen={setInspecting}
+                  scrub={scrub}
+                  onOpen={(item) => router.push(`/library/${item.slug}`)}
                   onSelect={toggle}
                   selected={selected.some((x) => x.id === item.id)}
                 />
@@ -564,15 +590,19 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
 }
 function CatalogCard({
   item,
+  scrub,
   onOpen,
   onSelect,
   selected,
 }: {
   item: LibraryItem;
+  scrub: boolean;
   onOpen: (item: LibraryItem) => void;
   onSelect: (item: LibraryItem) => void;
   selected: boolean;
 }) {
+  const [frame, setFrame] = useState(0);
+  const frames = scrub ? item.previewFrames || [] : [];
   return (
     <article
       className={`${styles.appCard} ${item.platform === "mobile" ? styles.mobileCard : ""} ${selected ? styles.appSelected : ""}`}
@@ -582,9 +612,29 @@ function CatalogCard({
         onClick={() => onOpen(item)}
         aria-label={`Inspect ${item.name}`}
       >
-        <div className={styles.appShot}>
+        <div
+          className={styles.appShot}
+          onPointerMove={(e) => {
+            if (frames.length) {
+              const bounds = e.currentTarget.getBoundingClientRect();
+              setFrame(
+                Math.min(
+                  frames.length - 1,
+                  Math.max(
+                    0,
+                    Math.floor(
+                      ((e.clientX - bounds.left) / bounds.width) *
+                        frames.length,
+                    ),
+                  ),
+                ),
+              );
+            }
+          }}
+          onPointerLeave={() => setFrame(0)}
+        >
           <MediaPreview
-            image={item.image}
+            image={frames[frame] || item.image}
             video={item.video}
             name={item.name}
           />

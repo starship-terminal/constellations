@@ -4,6 +4,9 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState, type ReactNode } from "react";
 import {
   ArrowUpRight,
+  Grid2X2,
+  BookOpen,
+  BarChart3,
   Monitor,
   Smartphone,
   Bookmark,
@@ -58,7 +61,14 @@ function CatalogNavigation({ onNavigate }: { onNavigate: () => void }) {
       }}
     >
       <Link
-        className={`nav-link ${path === "/library" && platform !== "mobile" ? "active" : ""}`}
+        className={`nav-link ${path.startsWith("/library") && !platform ? "active" : ""}`}
+        href="/library"
+      >
+        <Grid2X2 size={20} />
+        Gallery
+      </Link>
+      <Link
+        className={`nav-link ${path === "/library" && platform === "web" ? "active" : ""}`}
         href="/library?platform=web"
       >
         <Monitor size={20} />
@@ -83,6 +93,20 @@ function CatalogNavigation({ onNavigate }: { onNavigate: () => void }) {
         <Bookmark size={20} />
         Bookmarks
       </Link>
+      <Link
+        className={`nav-link ${path.startsWith("/docs") ? "active" : ""}`}
+        href="/docs"
+      >
+        <BookOpen size={20} />
+        Documents
+      </Link>
+      <Link
+        className={`nav-link ${path.startsWith("/scorecard") ? "active" : ""}`}
+        href="/scorecard"
+      >
+        <BarChart3 size={20} />
+        Scorecard
+      </Link>
     </nav>
   );
 }
@@ -95,6 +119,10 @@ interface Conversation {
 export function AppShell({ children }: { children: ReactNode }) {
   const path = usePathname(),
     router = useRouter();
+  const [collapsed, setCollapsed] = useState(false);
+  useEffect(() => {
+    setCollapsed(localStorage.getItem("studio-sidebar-collapsed") === "true");
+  }, []);
   const [history, setHistory] = useState<Conversation[]>([]),
     [mobile, setMobile] = useState(false),
     [editing, setEditing] = useState<Conversation | null>(null),
@@ -128,7 +156,17 @@ export function AppShell({ children }: { children: ReactNode }) {
     }
   }
   return (
-    <div className="app-shell">
+    <div className={`app-shell ${collapsed ? "sidebar-collapsed" : ""}`}>
+      <button
+        className="desktop-sidebar-toggle icon-button"
+        aria-label={collapsed ? "Expand navigation" : "Collapse navigation"}
+        onClick={() => {
+          setCollapsed(!collapsed);
+          localStorage.setItem("studio-sidebar-collapsed", String(!collapsed));
+        }}
+      >
+        {collapsed ? <PanelLeftOpen size={18} /> : <PanelLeftClose size={18} />}
+      </button>
       <button
         className="mobile-menu icon-button"
         onClick={() => setMobile((v) => !v)}

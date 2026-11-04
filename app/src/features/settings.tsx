@@ -1,4 +1,6 @@
 "use client";
+import { BookmarkImport } from "@/components/bookmark-import";
+import { AppearanceSettings } from "@/components/appearance";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import {
@@ -26,12 +28,19 @@ interface Settings {
 export function SettingsPage() {
   const { data, setData, error, loading } =
     useResource<Settings>("/api/settings");
+  const [models, setModels] = useState<string[]>([]);
+  const [connection, setConnection] = useState("");
+  const [testing, setTesting] = useState(false);
   const [provider, setProvider] = useState<"openai" | "anthropic">("openai"),
     [model, setModel] = useState(""),
     [baseURL, setBaseURL] = useState(""),
     [busy, setBusy] = useState(false),
     [saved, setSaved] = useState(false),
     [localError, setError] = useState("");
+  useEffect(() => {
+    setModels([]);
+    setConnection("");
+  }, [provider, baseURL]);
   useEffect(() => {
     if (data) {
       setProvider(data.provider);
@@ -63,8 +72,7 @@ export function SettingsPage() {
   return (
     <div className="page settings-page">
       <header className="page-heading">
-        <div className="eyebrow">Make yourself at home</div>
-        <h1>A few considered settings.</h1>
+        <h1>Settings</h1>
         <p className="muted">
           Your research, connected to the model you choose.
         </p>
@@ -76,6 +84,8 @@ export function SettingsPage() {
       ) : (
         data && (
           <>
+            <AppearanceSettings />
+            <BookmarkImport />
             <section className="settings-section">
               <div className="settings-section-label">
                 <Settings2 size={19} />
@@ -96,6 +106,7 @@ export function SettingsPage() {
                 <label>
                   Provider
                   <select
+                    disabled={testing}
                     value={provider}
                     onChange={(e) => {
                       const v = e.target.value as "openai" | "anthropic";
@@ -113,6 +124,8 @@ export function SettingsPage() {
                 <label>
                   Model
                   <input
+                    disabled={testing}
+                    list="provider-models"
                     value={model}
                     onChange={(e) => setModel(e.target.value)}
                     placeholder={
@@ -122,11 +135,17 @@ export function SettingsPage() {
                     }
                     required
                   />
+                  <datalist id="provider-models">
+                    {models.map((id) => (
+                      <option key={id} value={id} />
+                    ))}
+                  </datalist>
                   <small>Use a model available to your provider account.</small>
                 </label>
                 <label>
                   Custom base URL <span className="muted">(optional)</span>
                   <input
+                    disabled={testing}
                     type="url"
                     value={baseURL}
                     onChange={(e) => setBaseURL(e.target.value)}
@@ -159,7 +178,7 @@ export function SettingsPage() {
                 <button
                   type="submit"
                   className="primary"
-                  disabled={busy || !model.trim()}
+                  disabled={busy || testing || !model.trim()}
                 >
                   {saved ? <Check size={15} /> : null}
                   {saved
@@ -168,6 +187,42 @@ export function SettingsPage() {
                       ? "Saving…"
                       : "Save model settings"}
                 </button>
+                <button
+                  type="button"
+                  className="pill"
+                  disabled={
+                    busy ||
+                    testing ||
+                    provider !== data.provider ||
+                    model !== data.model ||
+                    (baseURL.trim() || null) !== data.baseURL
+                  }
+                  onClick={async () => {
+                    setTesting(true);
+                    setConnection("");
+                    setError("");
+                    try {
+                      const result = await api<{ models: string[] }>(
+                        "/api/models",
+                        { method: "POST", body: "{}" },
+                      );
+                      setModels(result.models);
+                      setConnection(
+                        `Connected. ${result.models.length} models available.`,
+                      );
+                    } catch (e) {
+                      setError((e as Error).message);
+                    } finally {
+                      setTesting(false);
+                    }
+                  }}
+                >
+                  {testing
+                    ? "Testing connection…"
+                    : "Test connection & load models"}
+                </button>
+                <small>Save changes before testing the connection.</small>
+                {connection && <p role="status">{connection}</p>}
               </form>
             </section>
             <section className="settings-section">

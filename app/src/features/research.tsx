@@ -930,6 +930,155 @@ function Message({
                     : "Searching the library…"}
                 </div>
               );
+            if (output.referenceId && excluded.includes(output.referenceId))
+              return null;
+            if (output.kind === "handoff-prompt")
+              return (
+                <details className="tool-activity" key={index} open>
+                  <summary>
+                    <BookOpen size={13} />
+                    {output.title || "Coding-agent handoff"}
+                  </summary>
+                  <pre
+                    style={{
+                      whiteSpace: "pre-wrap",
+                      fontSize: 12,
+                      padding: 16,
+                    }}
+                  >
+                    {output.prompt}
+                  </pre>
+                  <CopyButton value={output.prompt} label="Copy agent prompt" />
+                </details>
+              );
+            if (output.kind === "package-documents")
+              return (
+                <details className="tool-activity" key={index}>
+                  <summary>
+                    <BookOpen size={13} />
+                    {output.documents?.length || 0} package documents
+                  </summary>
+                  <div className="inline-actions">
+                    {output.documents?.map(
+                      (document: { path: string; url: string }) => (
+                        <Link
+                          key={document.path}
+                          className="pill small"
+                          href={document.url}
+                        >
+                          {document.path}
+                        </Link>
+                      ),
+                    )}
+                  </div>
+                </details>
+              );
+            if (output.kind === "package-document")
+              return (
+                <details className="tool-activity" key={index}>
+                  <summary>
+                    <BookOpen size={13} />
+                    Read {output.path}
+                    {output.truncated ? " (excerpt)" : ""}
+                  </summary>
+                  <p>
+                    <Link href={output.url}>Open full document</Link>
+                  </p>
+                  <pre
+                    style={{
+                      whiteSpace: "pre-wrap",
+                      fontSize: 12,
+                      padding: 16,
+                      maxHeight: 360,
+                      overflow: "auto",
+                    }}
+                  >
+                    {output.text}
+                  </pre>
+                </details>
+              );
+            if (output.kind === "package-tokens")
+              return (
+                <details className="tool-activity" key={index}>
+                  <summary>
+                    <BookOpen size={13} />
+                    {output.group
+                      ? `Read token group: ${output.group}`
+                      : "Available token groups"}
+                  </summary>
+                  <pre
+                    style={{
+                      whiteSpace: "pre-wrap",
+                      fontSize: 12,
+                      padding: 16,
+                      maxHeight: 360,
+                      overflow: "auto",
+                    }}
+                  >
+                    {JSON.stringify(output.tokens || output.groups, null, 2)}
+                  </pre>
+                  {output.truncated && (
+                    <p className="muted">
+                      More values are available in this group.
+                    </p>
+                  )}
+                </details>
+              );
+            if (
+              output.kind === "reference-media" ||
+              output.kind === "viewed-media"
+            ) {
+              const media =
+                output.kind === "viewed-media"
+                  ? [output.media]
+                  : output.media || [];
+              return (
+                <details className="tool-activity" key={index}>
+                  <summary>
+                    <BookOpen size={13} />
+                    {output.kind === "viewed-media"
+                      ? output.visualEvidence === "image-supplied"
+                        ? "Captured image inspected"
+                        : "Media available, text evidence only"
+                      : `${media.length} captured media files`}
+                  </summary>
+                  <div className="research-result-grid">
+                    {media.map(
+                      (item: {
+                        id: string;
+                        url: string;
+                        name: string;
+                        type: string;
+                      }) => (
+                        <a
+                          key={item.id}
+                          href={item.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="research-result"
+                        >
+                          {item.type === "image" ? (
+                            <img
+                              src={item.url}
+                              alt={item.name}
+                              loading="lazy"
+                              style={{
+                                width: "100%",
+                                maxHeight: 220,
+                                objectFit: "contain",
+                              }}
+                            />
+                          ) : (
+                            <span>{item.name} · video</span>
+                          )}
+                          <small>{item.name}</small>
+                        </a>
+                      ),
+                    )}
+                  </div>
+                </details>
+              );
+            }
             if (output.kind === "candidates" || output.items)
               return (
                 <details className="tool-activity" key={index}>

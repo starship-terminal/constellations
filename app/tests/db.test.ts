@@ -120,3 +120,35 @@ test("a conversation and its initial prompt survive reopening as one durable cre
   });
   expect(saved?.messages[0].id).toMatch(/^[0-9a-f-]{36}$/);
 });
+
+test("version-one stores migrate without losing conversations and persist distinct screenshot bookmarks", async () => {
+  const { dir, store } = await open();
+  const conversation = await store.createConversation("Preserve me");
+  await store.client.execute("DROP TABLE saved_media");
+  await store.client.execute("PRAGMA user_version=1");
+  store.close();
+  stores.splice(stores.indexOf(store), 1);
+  const migrated = await createResearchStore(dir);
+  stores.push(migrated);
+  expect((await migrated.getConversation(conversation.id))?.title).toBe(
+    "Preserve me",
+  );
+  await migrated.saveMedia(
+    "systems:linear",
+    "systems/linear/screenshots/one.png",
+  );
+  await migrated.saveMedia(
+    "systems:linear",
+    "systems/linear/screenshots/two.png",
+  );
+  await migrated.saveMedia(
+    "systems:linear",
+    "systems/linear/screenshots/one.png",
+  );
+  expect(await migrated.listSavedMedia()).toHaveLength(2);
+  await migrated.removeSavedMedia(
+    "systems:linear",
+    "systems/linear/screenshots/one.png",
+  );
+  expect((await migrated.listSavedMedia())[0].mediaId).toContain("two.png");
+});

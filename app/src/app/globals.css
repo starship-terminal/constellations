@@ -3213,3 +3213,104 @@ select {
     box-shadow: none;
   }
 }
+
+/* Desktop navigation preference leaves the mobile drawer unchanged. */
+.desktop-sidebar-toggle {
+  position: fixed;
+  left: 230px;
+  top: 26px;
+  z-index: 45;
+}
+@media (min-width: 761px) {
+  .sidebar-collapsed {
+    --sidebar-width: 0px;
+  }
+  .sidebar-collapsed .sidebar {
+    transform: translateX(-100%);
+    width: 270px;
+    visibility: hidden;
+  }
+  .sidebar-collapsed .desktop-sidebar-toggle {
+    left: 12px;
+  }
+  .sidebar-collapsed .main-content {
+    padding-top: 32px;
+  }
+}
+@media (max-width: 760px) {
+  .desktop-sidebar-toggle {
+    display: none;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .desktop-sidebar-toggle {
+    left: 202px;
+  }
+}
+
+[data-theme="light"] .nav-link,
+[data-theme="light"] .history-row a,
+[data-theme="light"] .new-research,
+[data-theme="light"] .pill,
+[data-theme="light"] .icon-button,
+[data-theme="light"] .history-menu button,
+[data-theme="light"] .workspace-label {
+  color: var(--ink);
+}
+[data-theme="light"] .nav-link.active,
+[data-theme="light"] .nav-link:hover,
+[data-theme="light"] .pill:hover,
+[data-theme="light"] .icon-button:hover {
+  background: var(--surface-raised);
+  color: var(--ink);
+}
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  color: var(--ink);
+  background: var(--surface);
+  border-color: var(--strong-line);
+}
+[data-theme="light"] .primary {
+  color: white;
+  background: #24262e;
+}
+[data-theme="light"] .brand-mark {
+  filter: invert(1);
+}
+
+[data-theme="light"] .prose,
+[data-theme="light"] .prose h1,
+[data-theme="light"] .prose h2,
+[data-theme="light"] .prose h3,
+[data-theme="light"] .prose strong,
+[data-theme="light"] .inline-citation {
+  color: var(--ink);
+}
+[data-theme="light"] .prose pre,
+[data-theme="light"] .prose code {
+  background: var(--surface-raised);
+  color: var(--ink);
+}
+[data-theme="light"] .inline-citation {
+  border-color: var(--strong-line);
+}
+[data-theme="light"] label,
+[data-theme="light"] .server-instructions p code,
+[data-theme="light"] .env-example pre,
+[data-theme="light"] .collection-notes > label,
+[data-theme="light"] .user-message .prose {
+  color: var(--ink);
+}
+[data-theme="light"] .configuration-status.ready {
+  color: #285c35;
+}
+
+[data-theme="light"] .text-button:hover,
+[data-theme="light"] .text-link:hover {
+  color: var(--ink);
+}
+[data-theme="light"] .error-text {
+  color: #a5203b;
+}
