@@ -107,6 +107,7 @@ export function StyleImage({
       alt={alt}
       className={className}
       loading="lazy"
+      decoding="async"
       onError={() => {
         if (media.fallback && url !== media.fallback) setUrl(media.fallback);
         else setFailed(true);

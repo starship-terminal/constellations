@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { ErrorState, Spinner, useResource } from "@/components/shared";
+import { ErrorState, SkeletonGrid, useResource } from "@/components/shared";
 import { MediaBookmarkButton } from "@/components/media-bookmark";
 import { mediaDetailHref } from "./package-detail-data";
 import styles from "./research-home.module.css";
@@ -78,7 +78,12 @@ function BrowseSection({
         ))}
       </div>
       {loading ? (
-        <Spinner label={`Finding ${selected.toLowerCase()} captures…`} />
+        <SkeletonGrid
+          shape="browse"
+          count={8}
+          className={styles.browseGrid}
+          label={`Finding ${selected.toLowerCase()} captures…`}
+        />
       ) : error ? (
         <ErrorState message={error} />
       ) : data?.items.length ? (
@@ -94,6 +99,7 @@ function BrowseSection({
                   src={media.thumbnail || media.url}
                   alt={`${reference.name}: ${media.name}`}
                   loading="lazy"
+                  decoding="async"
                 />
               </Link>
               <div className={styles.browseCardMeta}>

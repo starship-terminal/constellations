@@ -62,6 +62,7 @@ export function ReferenceCard({
             src={item.icon}
             alt=""
             loading="lazy"
+            decoding="async"
           />
         ) : (
           <span className="reference-letter">{item.name.charAt(0)}</span>
@@ -476,6 +477,7 @@ export function DetailOverview({
                 src={m.url}
                 alt={m.name}
                 loading="lazy"
+                decoding="async"
               />
             </a>
           </section>

@@ -17,7 +17,10 @@ import {
   repoRoot,
   resolveMedia,
 } from "../src/server/sources/files";
-import { parseByteRange } from "../src/app/media/[...path]/route";
+import {
+  parseByteRange,
+  notModifiedSince,
+} from "../src/app/media/[...path]/route";
 const originalRepo = process.env.DESIGN_SYSTEMS_REPO;
 const originalMedia = process.env.DESIGN_SYSTEMS_MEDIA;
 const temp: string[] = [];
@@ -114,6 +117,16 @@ describe("HTTP range parsing", () => {
       "garbage",
     ])
       expect(parseByteRange(input, 100)).toBeNull();
+  });
+  it("treats If-Modified-Since and If-Range at second precision", () => {
+    const mtime = Date.parse("Tue, 04 Nov 2026 12:00:00.900 GMT");
+    expect(notModifiedSince("Tue, 04 Nov 2026 12:00:00 GMT", mtime)).toBe(true);
+    expect(notModifiedSince("Tue, 04 Nov 2026 11:59:59 GMT", mtime)).toBe(
+      false,
+    );
+    expect(notModifiedSince("Tue, 04 Nov 2026 12:00:01 GMT", mtime)).toBe(true);
+    expect(notModifiedSince("not-a-date", mtime)).toBe(false);
+    expect(notModifiedSince("", mtime)).toBe(false);
   });
 });
 

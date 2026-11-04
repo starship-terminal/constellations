@@ -129,6 +129,7 @@ export function MobileCatalogPreview({
         src={source}
         alt={`${name} design preview`}
         loading="lazy"
+        decoding="async"
         style={style}
         onError={() => setFailed(image)}
         onLoad={(event) => {

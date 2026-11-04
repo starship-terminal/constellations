@@ -27,6 +27,7 @@ import {
   ErrorState,
   MediaPreview,
   Modal,
+  SkeletonGrid,
   Spinner,
   useResource,
 } from "@/components/shared";
@@ -88,7 +89,12 @@ export function CollectionsPage() {
         </button>
       </header>
       {loading ? (
-        <Spinner label="Opening collections…" />
+        <SkeletonGrid
+          shape="collection"
+          count={3}
+          className="collections-grid"
+          label="Opening collections…"
+        />
       ) : error ? (
         <ErrorState message={error} />
       ) : data?.collections.length ? (

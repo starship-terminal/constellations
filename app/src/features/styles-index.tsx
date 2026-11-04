@@ -4,7 +4,13 @@ import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { ArrowRight, ArrowUp, Search, X } from "lucide-react";
 import type { LibraryItem } from "@/contracts/library";
-import { api, Empty, ErrorState, Spinner } from "@/components/shared";
+import {
+  api,
+  Empty,
+  ErrorState,
+  SkeletonGrid,
+  Spinner,
+} from "@/components/shared";
 import {
   loadLibraryPages,
   mergeLibraryItems,
@@ -145,6 +151,7 @@ export function StyleCard({ item }: { item: LibraryItem }) {
               src={imageSource}
               alt={`${item.name} style preview`}
               loading="lazy"
+              decoding="async"
               onError={() =>
                 setImageSource(
                   item.imageFallback && imageSource !== item.imageFallback
@@ -191,6 +198,7 @@ export function StyleCard({ item }: { item: LibraryItem }) {
             src={iconSource}
             alt=""
             loading="lazy"
+            decoding="async"
             onError={() =>
               setIconSource(
                 item.iconFallback && iconSource !== item.iconFallback
@@ -221,7 +229,16 @@ export function StyleCard({ item }: { item: LibraryItem }) {
 
 export function StylesIndex() {
   return (
-    <Suspense fallback={<Spinner label="Opening styles…" />}>
+    <Suspense
+      fallback={
+        <SkeletonGrid
+          shape="style"
+          count={6}
+          className={styles.grid}
+          label="Opening styles…"
+        />
+      }
+    >
       <StylesContent />
     </Suspense>
   );
@@ -566,7 +583,12 @@ function StylesContent() {
           <ErrorState message={error} retry={() => setRetry((n) => n + 1)} />
         )}
         {!items.length && loading ? (
-          <Spinner label="Opening the style collection…" />
+          <SkeletonGrid
+            shape="style"
+            count={6}
+            className={styles.grid}
+            label="Opening the style collection…"
+          />
         ) : filtered.length ? (
           <div className={styles.grid}>
             {filtered.slice(0, shown).map((item) => (
