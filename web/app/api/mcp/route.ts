@@ -1,0 +1,92 @@
+// POST /api/mcp — the MCP server over streamable HTTP, for coding agents that
+// reach a hosted deployment instead of spawning server/mcp.py locally. One
+// JSON-RPC message (or a batch) in, the replies as application/json out;
+// notification-only bodies get 202. Stateless: no session header, GET gets a
+// 405 because there is no SSE stream to open. Mirrors server/mcp.py exactly.
+import { call, SPECS } from "@/lib/chat/library";
+
+export const dynamic = "force-dynamic";
+
+const SERVER_INFO = { name: "design-systems", version: "1.0.0" };
+const INSTRUCTIONS =
+  "Read-only search over the design-systems library: measured systems/ " +
+  "packages first, refero for breadth. Media url fields are site-relative; " +
+  "prefix them with the server origin.";
+
+type Rpc = { jsonrpc?: string; id?: unknown; method?: string; params?: Record<string, unknown> };
+
+const result = (req: Rpc, result: unknown) =>
+  req.id === undefined ? null : { jsonrpc: "2.0", id: req.id, result };
+
+const error = (req: Rpc, code: number, message: string) =>
+  req.id === undefined ? null : { jsonrpc: "2.0", id: req.id ?? null, error: { code, message } };
+
+async function callTool(name: string, args: unknown) {
+  try {
+    const out = await call(name, (args as Record<string, unknown>) ?? {});
+    const img = (out as { _image?: { url: string; name: string; data: string; media_type: string } })._image;
+    if (img)
+      return {
+        content: [
+          { type: "text", text: JSON.stringify({ url: img.url, name: img.name }) },
+          { type: "image", data: img.data, mimeType: img.media_type },
+        ],
+      };
+    return { content: [{ type: "text", text: JSON.stringify(out) }] };
+  } catch (e) {
+    // One malformed call must never end the session: report it as a tool
+    // error and keep the caller's loop alive.
+    return { content: [{ type: "text", text: String(e instanceof Error ? e.message : e).slice(0, 400) }], isError: true };
+  }
+}
+
+async function handle(req: Rpc) {
+  const method = req.method ?? "";
+  if (method === "initialize")
+    return result(req, {
+      protocolVersion: (req.params?.protocolVersion as string) ?? "2025-03-26",
+      capabilities: { tools: { listChanged: false } },
+      serverInfo: SERVER_INFO,
+      instructions: INSTRUCTIONS,
+    });
+  if (method === "ping") return result(req, {});
+  if (method === "tools/list")
+    return result(req, {
+      tools: SPECS.map((s) => ({ name: s.name, description: s.description, inputSchema: s.parameters })),
+    });
+  if (method === "tools/call") {
+    const name = String(req.params?.name ?? "");
+    if (!SPECS.some((s) => s.name === name)) return error(req, -32602, `unknown tool '${name}'`);
+    return result(req, await callTool(name, req.params?.arguments));
+  }
+  if (method.startsWith("notifications/")) return null;
+  return error(req, -32601, `no method '${method}'`);
+}
+
+export async function POST(req: Request) {
+  let raw: unknown;
+  try {
+    raw = await req.json();
+  } catch {
+    return Response.json({ jsonrpc: "2.0", id: null, error: { code: -32700, message: "unparseable JSON" } }, { status: 400 });
+  }
+  const msgs = Array.isArray(raw) ? raw : [raw];
+  const replies = [];
+  for (const m of msgs) {
+    if (m && typeof m === "object" && !Array.isArray(m)) {
+      const r = await handle(m as Rpc);
+      if (r) replies.push(r);
+    }
+  }
+  if (!replies.length) return new Response(null, { status: 202 });
+  return Response.json(Array.isArray(raw) ? replies : replies[0]);
+}
+
+export function GET() {
+  return Response.json({ error: "streamable HTTP is POST-only on this server" }, { status: 405 });
+}
+
+export function DELETE() {
+  // Stateless server: session teardown is a no-op acknowledgement.
+  return new Response(null, { status: 200 });
+}

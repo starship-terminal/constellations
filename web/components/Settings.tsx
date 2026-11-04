@@ -66,8 +66,10 @@ export function Settings({ stats }: { stats: SettingsStats }) {
   const [warn, setWarn] = useState(false);
   const [testing, setTesting] = useState(false);
   const [envNote, setEnvNote] = useState("");
+  const [origin, setOrigin] = useState("");
 
   useEffect(() => {
+    setOrigin(window.location.origin);
     setCfg(readProvider());
     setTheme(document.documentElement.dataset.theme === "light" ? "light" : "dark");
     setCollapsed(document.documentElement.dataset.nav === "collapsed");
@@ -291,6 +293,44 @@ export function Settings({ stats }: { stats: SettingsStats }) {
               </div>
             </div>
           </div>
+        </fieldset>
+
+        <fieldset className="pref">
+          <legend className="pref-name">For agents</legend>
+          <p className="pref-help">
+            Install the ds CLI or point a coding agent at the remote MCP endpoint — both read this
+            library over the same /api/mcp transport, read-only.
+          </p>
+          <dl className="meta">
+            <dt>CLI</dt>
+            <dd>
+              <code>curl -fsSL {origin || "https://<this-site>"}/api/install.sh | sh</code>
+            </dd>
+            <dt>MCP URL</dt>
+            <dd>
+              <code>{origin || "https://<this-site>"}/api/mcp</code>
+            </dd>
+            <dt>Claude</dt>
+            <dd>
+              <code>claude mcp add --transport http design-systems {origin}/api/mcp</code>
+            </dd>
+            <dt>swe</dt>
+            <dd>
+              <code>swe mcp add design-systems --url={origin}/api/mcp</code>
+            </dd>
+            <dt>Codex</dt>
+            <dd>
+              <code>[mcp_servers.design-systems] url = &quot;{origin}/api/mcp&quot;</code>
+            </dd>
+            <dt>OpenCode</dt>
+            <dd>
+              <code>{`"design-systems": { "type": "remote", "url": "${origin}/api/mcp" }`}</code>
+            </dd>
+          </dl>
+          <p className="pref-note">
+            Any harness that takes a remote (streamable-HTTP) MCP URL works. On a machine with the
+            repo checkout, <code>python3 server/mcp.py</code> is the stdio variant.
+          </p>
         </fieldset>
 
         <fieldset className="pref">

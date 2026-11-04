@@ -4,6 +4,14 @@ drops the gallery and runs no Python), and local browsing gets the same routes
 from the Next.js app.
 
   GET  /api/status           {"ok": true, "envProvider": bool}
+  GET  /api/mcp              405 — streamable HTTP is POST-only here
+  POST /api/mcp              MCP over streamable HTTP: one JSON-RPC message (or
+                             a batch) in, the replies as application/json out;
+                             notification-only bodies get 202. Stateless —
+                             no session header.
+  GET  /api/ds               the ds CLI client (cli/ds), verbatim
+  GET  /api/install.sh       cli/install.sh with @DS_BASE@ filled from the
+                             request's forwarded Host/proto
   POST /api/provider/test    {api, base_url, api_key, key_header?, models_url?}
                              -> {ok, models:[{id,label}], error?} for the
                              settings page's test-gated model field
@@ -22,6 +30,9 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 
+_ROOT = Path(__file__).resolve().parent.parent
+
+
 def _load(name: str):
     spec = importlib.util.spec_from_file_location(
         f"agent_{name}", Path(__file__).resolve().parent / f"{name}.py")
@@ -30,14 +41,37 @@ def _load(name: str):
     return mod
 
 
-def _reply(handler, status: int, obj: dict) -> None:
+def _reply(handler, status: int, obj) -> None:
     body = json.dumps(obj, ensure_ascii=False).encode()
+    _send(handler, status, body, "application/json; charset=utf-8")
+
+
+def _send(handler, status: int, body: bytes, ctype: str) -> None:
     handler.send_response(status)
-    handler.send_header("content-type", "application/json; charset=utf-8")
+    handler.send_header("content-type", ctype)
     handler.send_header("content-length", str(len(body)))
     handler.send_header("cache-control", "no-store")
     handler.end_headers()
     handler.wfile.write(body)
+
+
+def _empty(handler, status: int) -> None:
+    handler.send_response(status)
+    handler.send_header("content-length", "0")
+    handler.end_headers()
+
+
+def _base_url(handler) -> str:
+    """The origin a remote client should call: the Host the proxy forwarded,
+    or our own bind address as a fallback for a headerless request."""
+    def fwd(name: str) -> str:
+        return (handler.headers.get(name) or "").split(",")[0].strip()
+    host = fwd("x-forwarded-host") or fwd("host")
+    proto = fwd("x-forwarded-proto") or "http"
+    if host:
+        return f"{proto}://{host}"
+    addr = getattr(handler.server, "server_address", ("127.0.0.1", 80))
+    return f"http://{addr[0]}:{addr[1]}"
 
 
 def _body(handler, cap: int = 128_000) -> dict | None:
@@ -82,6 +116,24 @@ def handle_get(handler) -> bool:
         cfg = chat.provider_config(None)
         _reply(handler, 200, {"ok": True, "envProvider": bool(cfg)})
         return True
+    if path == "/api/mcp":
+        _reply(handler, 405, {"error": "streamable HTTP is POST-only on this server"})
+        return True
+    if path == "/api/ds":
+        target = _ROOT / "cli" / "ds"
+        if not target.is_file():
+            _reply(handler, 404, {"error": "cli/ds not in this checkout"})
+            return True
+        _send(handler, 200, target.read_bytes(), "text/plain; charset=utf-8")
+        return True
+    if path == "/api/install.sh":
+        target = _ROOT / "cli" / "install.sh"
+        if not target.is_file():
+            _reply(handler, 404, {"error": "cli/install.sh not in this checkout"})
+            return True
+        body = target.read_text().replace("@DS_BASE@", _base_url(handler)).encode()
+        _send(handler, 200, body, "text/x-shellscript; charset=utf-8")
+        return True
     _reply(handler, 404, {"error": "no such api route"})
     return True
 
@@ -92,6 +144,29 @@ def handle_post(handler) -> bool:
         return False
     if not _origin_ok(handler):
         _reply(handler, 403, {"error": "cross-origin request"})
+        return True
+    if path == "/api/mcp":
+        try:
+            n = int(handler.headers.get("content-length") or 0)
+        except ValueError:
+            n = 0
+        if n <= 0 or n > 256_000:
+            _reply(handler, 400, {"jsonrpc": "2.0", "id": None,
+                                  "error": {"code": -32600, "message": "a JSON-RPC body is required"}})
+            return True
+        try:
+            raw = json.loads(handler.rfile.read(n))
+        except (ValueError, UnicodeDecodeError):
+            _reply(handler, 400, {"jsonrpc": "2.0", "id": None,
+                                  "error": {"code": -32700, "message": "unparseable JSON"}})
+            return True
+        mcp = _load("mcp")
+        msgs = raw if isinstance(raw, list) else [raw]
+        replies = [r for r in (mcp.handle(m) for m in msgs if isinstance(m, dict)) if r]
+        if not replies:
+            _empty(handler, 202)
+            return True
+        _reply(handler, 200, replies[0] if isinstance(raw, dict) else replies)
         return True
     chat = _load("chat")
     if path == "/api/provider/test":

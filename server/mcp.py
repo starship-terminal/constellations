@@ -1,8 +1,9 @@
-"""The design-systems MCP server: the gallery chat's tool layer over stdio
-JSON-RPC, so a coding agent (Devin, Claude, Cursor) becomes another chat UI for
-the library. Point a client at it with, for example:
+"""The design-systems MCP server: the gallery chat's tool layer over JSON-RPC,
+so a coding agent (Devin, Claude, Cursor) becomes another chat UI for the
+library. Two transports, one handler:
 
-    python3 server/mcp.py
+    python3 server/mcp.py           # stdio, for a client that spawns a process
+    POST /api/mcp                   # streamable HTTP, served by routes.py
 
 Hand-rolled against the 2025-03-26 MCP shape: initialize, tools/list,
 tools/call and ping. Notifications get no reply. Every call is read-only;
@@ -21,6 +22,9 @@ library = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(library)
 
 SERVER_INFO = {"name": "design-systems", "version": "1.0.0"}
+INSTRUCTIONS = ("Read-only search over the design-systems library: "
+                "measured systems/ packages first, refero for breadth. Media url "
+                "fields are site-relative; prefix them with the server origin.")
 
 
 def _send(obj: dict) -> None:
@@ -28,14 +32,17 @@ def _send(obj: dict) -> None:
     sys.stdout.flush()
 
 
-def _result(req: dict, result) -> None:
-    if "id" in req:
-        _send({"jsonrpc": "2.0", "id": req["id"], "result": result})
+def _result(req: dict, result) -> dict | None:
+    if "id" not in req:
+        return None
+    return {"jsonrpc": "2.0", "id": req["id"], "result": result}
 
 
-def _error(req: dict, code: int, message: str) -> None:
-    if "id" in req:
-        _send({"jsonrpc": "2.0", "id": req["id"], "error": {"code": code, "message": message}})
+def _error(req: dict, code: int, message: str) -> dict | None:
+    if "id" not in req:
+        return None
+    return {"jsonrpc": "2.0", "id": req["id"],
+            "error": {"code": code, "message": message}}
 
 
 def _tool_specs() -> list[dict]:
@@ -48,7 +55,7 @@ def _call(name: str, args: dict) -> dict:
         result = library.call(name, args or {})
     except Exception as e:
         # One malformed call must never end the session: report it as a tool
-        # error and keep the input loop alive.
+        # error and keep the caller's loop alive.
         return {"content": [{"type": "text", "text": str(e)[:400]}], "isError": True}
     if "_image" in result:
         img = result["_image"]
@@ -57,27 +64,29 @@ def _call(name: str, args: dict) -> dict:
     return {"content": [{"type": "text", "text": json.dumps(result, ensure_ascii=False)}]}
 
 
-def handle(req: dict) -> None:
+def handle(req: dict) -> dict | None:
+    """The JSON-RPC reply for one request, or None when it is a notification
+    (or a reply with no id to answer). The stdio main() prints the return;
+    routes.py's /api/mcp serialises it as the HTTP body."""
     method = req.get("method", "")
     if method == "initialize":
-        _result(req, {"protocolVersion": req.get("params", {}).get("protocolVersion", "2025-03-26"),
-                      "capabilities": {"tools": {"listChanged": False}},
-                      "serverInfo": SERVER_INFO,
-                      "instructions": "Read-only search over the design-systems library: "
-                                      "measured systems/ packages first, refero for breadth."})
-    elif method == "ping":
-        _result(req, {})
-    elif method == "tools/list":
-        _result(req, {"tools": _tool_specs()})
-    elif method == "tools/call":
+        return _result(req, {"protocolVersion": req.get("params", {}).get("protocolVersion", "2025-03-26"),
+                             "capabilities": {"tools": {"listChanged": False}},
+                             "serverInfo": SERVER_INFO,
+                             "instructions": INSTRUCTIONS})
+    if method == "ping":
+        return _result(req, {})
+    if method == "tools/list":
+        return _result(req, {"tools": _tool_specs()})
+    if method == "tools/call":
         params = req.get("params") or {}
         name = params.get("name", "")
         if name not in {s["name"] for s in library.SPECS}:
-            _error(req, -32602, f"unknown tool '{name}'")
-        else:
-            _result(req, _call(name, params.get("arguments")))
-    elif not method.startswith("notifications/"):
-        _error(req, -32601, f"no method '{method}'")
+            return _error(req, -32602, f"unknown tool '{name}'")
+        return _result(req, _call(name, params.get("arguments")))
+    if method.startswith("notifications/"):
+        return None
+    return _error(req, -32601, f"no method '{method}'")
 
 
 def main() -> None:
@@ -92,7 +101,9 @@ def main() -> None:
                    "error": {"code": -32700, "message": "unparseable JSON"}})
             continue
         if isinstance(req, dict):
-            handle(req)
+            out = handle(req)
+            if out is not None:
+                _send(out)
 
 
 if __name__ == "__main__":
