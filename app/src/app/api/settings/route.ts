@@ -15,7 +15,17 @@ export function PATCH(request: Request) {
       if (!patch.model) delete saved.model;
       if (patch.baseURL === undefined) delete saved.baseURL;
     }
-    await store.saveSettings({ ...saved, ...patch });
+    const next = { ...saved, ...patch };
+    if (patch.apiKeys) {
+      const merged = { ...saved.apiKeys };
+      for (const name of ["openai", "anthropic"] as const) {
+        const key = patch.apiKeys[name];
+        if (key === null) delete merged[name];
+        else if (key !== undefined) merged[name] = key;
+      }
+      next.apiKeys = merged;
+    }
+    await store.saveSettings(next);
     return Response.json(await readSettings());
   });
 }

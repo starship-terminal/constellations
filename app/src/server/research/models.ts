@@ -7,7 +7,7 @@ export async function discoverModels(
   if (!key)
     throw new HttpError(
       400,
-      "Configure the provider credential on the server first.",
+      "Enter the provider API key in Settings, or configure the credential on the server first.",
     );
   const base =
     settings.baseURL ||

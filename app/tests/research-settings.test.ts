@@ -1,8 +1,14 @@
 import { afterEach, expect, test, vi } from "vitest";
-import { readSettings, modelFor } from "@/server/research/settings";
+import { readApiKey, readSettings, modelFor } from "@/server/research/settings";
+import { PATCH } from "@/app/api/settings/route";
 const state = vi.hoisted(() => ({ saved: {} as Record<string, unknown> }));
 vi.mock("@/server/db", () => ({
-  getStore: async () => ({ getSettings: async () => state.saved }),
+  getStore: async () => ({
+    getSettings: async () => state.saved,
+    saveSettings: async (value: Record<string, unknown>) => {
+      state.saved = value;
+    },
+  }),
 }));
 afterEach(() => {
   state.saved = {};
@@ -50,4 +56,51 @@ test("cleared endpoint reaches official SDK endpoints even when SDK environment 
     "https://api.openai.com/v1/responses",
     "https://api.anthropic.com/v1/messages",
   ]);
+});
+
+test("a stored key overrides the environment and only reports its source", async () => {
+  vi.stubEnv("OPENAI_API_KEY", "env-openai");
+  vi.stubEnv("ANTHROPIC_API_KEY", "env-anthropic");
+  state.saved = { apiKeys: { openai: "stored-openai" } };
+  const settings = await readSettings();
+  expect(settings.keySources).toEqual({
+    openai: "stored",
+    anthropic: "environment",
+  });
+  expect(settings.providers).toEqual({ openai: true, anthropic: true });
+  expect(JSON.stringify(settings)).not.toContain("stored-openai");
+  expect(await readApiKey("openai")).toBe("stored-openai");
+  expect(await readApiKey("anthropic")).toBe("env-anthropic");
+  state.saved = {};
+  expect((await readSettings()).keySources).toEqual({
+    openai: "environment",
+    anthropic: "environment",
+  });
+  vi.stubEnv("OPENAI_API_KEY", "");
+  expect(await readApiKey("openai")).toBeUndefined();
+});
+
+test("settings PATCH sets, keeps and clears provider keys without returning them", async () => {
+  vi.stubEnv("OPENAI_API_KEY", "");
+  vi.stubEnv("ANTHROPIC_API_KEY", "");
+  const patch = (body: Record<string, unknown>) =>
+    PATCH(
+      new Request("http://localhost:8845/api/settings", {
+        method: "PATCH",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(body),
+      }),
+    );
+  expect((await patch({ apiKeys: { openai: "sk-live" } })).status).toBe(200);
+  expect(state.saved.apiKeys).toEqual({ openai: "sk-live" });
+  await patch({ apiKeys: { anthropic: "sk-ant" } });
+  expect(state.saved.apiKeys).toEqual({
+    openai: "sk-live",
+    anthropic: "sk-ant",
+  });
+  const response = await patch({ apiKeys: { openai: null } });
+  expect(state.saved.apiKeys).toEqual({ anthropic: "sk-ant" });
+  const body = await response.json();
+  expect(body.keySources).toEqual({ openai: null, anthropic: "stored" });
+  expect(JSON.stringify(body)).not.toContain("sk-ant");
 });

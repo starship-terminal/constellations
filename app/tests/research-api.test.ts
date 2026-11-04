@@ -25,6 +25,7 @@ vi.mock("@/server/research/settings", () => ({
     model: "test",
     configured: state.configured,
   }),
+  readApiKey: async () => "test-key",
   modelFor: () => ({}),
   supportsToolImages: () => true,
 }));

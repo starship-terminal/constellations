@@ -22,11 +22,64 @@ import {
 import { api, Modal } from "./shared";
 export function Mark() {
   return (
-    <span className="brand-mark" aria-hidden="true">
-      <span />
-      <span />
-      <span />
-    </span>
+    <>
+      <svg
+        className="brand-mark"
+        width="26"
+        height="26"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 64 64"
+      >
+        <defs>
+          <clipPath id="ds-mark-clip">
+            <rect width="64" height="64" rx="14" />
+          </clipPath>
+        </defs>
+        <rect width="64" height="64" rx="14" fill="#08090a" />
+        <g clipPath="url(#ds-mark-clip)">
+          <polygon
+            points="-6.00,28.00 21.31,28.00 16.69,36.00 -6.00,36.00"
+            fill="#FFFFFF"
+          />
+          <polygon
+            points="33.80,22.99 70.00,8.00 70.00,17.60 35.88,26.60"
+            fill="#FF3B30"
+          />
+          <polygon
+            points="35.88,26.60 70.00,17.60 70.00,27.20 37.96,30.20"
+            fill="#FF9500"
+          />
+          <polygon
+            points="37.96,30.20 70.00,27.20 70.00,36.80 40.04,33.80"
+            fill="#FFD60A"
+          />
+          <polygon
+            points="40.04,33.80 70.00,36.80 70.00,46.40 42.12,37.40"
+            fill="#34C759"
+          />
+          <polygon
+            points="42.12,37.40 70.00,46.40 70.00,56.00 44.20,41.01"
+            fill="#0A84FF"
+          />
+          <polygon
+            points="29.00,14.68 49.00,49.32 9.00,49.32"
+            fill="#FFFFFF"
+            stroke="#08090a"
+            strokeWidth="3"
+            strokeLinejoin="round"
+          />
+        </g>
+      </svg>
+      <img
+        className="brand-mark-glass"
+        src="/brand/glass/favicon-48.png"
+        width="26"
+        height="26"
+        alt=""
+        aria-hidden="true"
+      />
+    </>
   );
 }
 function CatalogNavigation({ onNavigate }: { onNavigate: () => void }) {
@@ -186,7 +239,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       >
         <Link href="/" className="brand">
           <Mark />
-          <span>Studio</span>
+          <span>Design Studio</span>
         </Link>
         <Link href="/" className="new-research">
           <Plus size={22} />
@@ -279,10 +332,6 @@ export function AppShell({ children }: { children: ReactNode }) {
             <Settings size={18} />
             Settings
           </Link>
-          <div className="workspace-label">
-            <span className="workspace-avatar">K</span>
-            <div>Personal workspace</div>
-          </div>
         </div>
       </aside>
       <main ref={scene} className="main-content" id="main-content">
