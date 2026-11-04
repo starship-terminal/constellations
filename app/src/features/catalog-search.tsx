@@ -31,6 +31,11 @@ import {
   selectProductSearch,
 } from "./catalog-search-state";
 import styles from "./catalog-search.module.css";
+import {
+  enterSearchAction,
+  screenCountScope,
+  verticalChoiceIndex,
+} from "./catalog-search-behavior";
 
 type Choice = {
   id: string;
@@ -76,6 +81,8 @@ export function CatalogSearch({
 }) {
   const params = useSearchParams();
   const platform = params.get("platform") || "web";
+  const kind = params.get("kind") === "crop" ? "crop" : "screenshot";
+  const countScope = screenCountScope(platform, kind);
   const productPlatform = productSearchPlatform(params);
   const [open, setOpen] = useState(false),
     [draft, setDraft] = useState(""),
@@ -100,17 +107,13 @@ export function CatalogSearch({
   useEffect(() => {
     let alive = true;
     setCountsError(false);
-    const cached = countCache.current.get(platform);
+    const cached = countCache.current.get(countScope.key);
     setCounts(cached || null);
     if (cached) return;
-    const query = new URLSearchParams({
-      limit: "0",
-      ...(platform ? { platform } : {}),
-    });
-    api<ScreenResponse>(`/api/library/screens?${query}`)
+    api<ScreenResponse>(`/api/library/screens?${countScope.query}`)
       .then((result) => {
         const values = result.termCounts || {};
-        countCache.current.set(platform, values);
+        countCache.current.set(countScope.key, values);
         if (alive) setCounts(values);
       })
       .catch(() => {
@@ -119,15 +122,19 @@ export function CatalogSearch({
     return () => {
       alive = false;
     };
-  }, [platform, countRetry]);
+  }, [platform, kind, countScope.key, countRetry]);
   useEffect(() => {
     if (!open) return;
     function dismiss(event: PointerEvent) {
-      if (!root.current?.contains(event.target as Node)) setOpen(false);
+      if (!root.current?.contains(event.target as Node)) dismissPicker();
     }
     document.addEventListener("pointerdown", dismiss);
     return () => document.removeEventListener("pointerdown", dismiss);
   }, [open]);
+  function dismissPicker() {
+    setOpen(false);
+    setHighlight(-1);
+  }
   const selectedIds = params.getAll("term");
   const chips: (Choice & { key: string; value: string })[] = [];
   for (const [key, value] of params.entries()) {
@@ -212,7 +219,7 @@ export function CatalogSearch({
     ])
       next.delete(key);
     setDraft("");
-    setOpen(false);
+    dismissPicker();
     navigate(next);
   }
   const typed = draft.trim();
@@ -266,6 +273,7 @@ export function CatalogSearch({
         ?.scrollIntoView({ block: "nearest" });
   }, [highlighted, open]);
   function choose(choice: Choice) {
+    if (!open) return;
     const params = new URLSearchParams(window.location.search);
     const next = choice.item
       ? selectProductSearch(params, choice.item)
@@ -283,7 +291,7 @@ export function CatalogSearch({
   function onKeyDown(event: KeyboardEvent<HTMLInputElement>) {
     if (event.key === "Escape") {
       event.preventDefault();
-      setOpen(false);
+      dismissPicker();
       return;
     }
     if (event.key === "Backspace" && !draft && chips.length) {
@@ -302,25 +310,47 @@ export function CatalogSearch({
       return;
     }
     const movement: Record<string, number> = {
-      ArrowDown: typed ? 1 : 3,
-      ArrowUp: typed ? -1 : -3,
+      ArrowDown: 1,
+      ArrowUp: -1,
       ...(!typed ? { ArrowRight: 1, ArrowLeft: -1 } : {}),
     };
     if (event.key in movement && open && choices.length) {
       event.preventDefault();
       setHighlight((current) => {
         const previous = typed ? Math.max(0, current) : current;
-        return previous < 0
-          ? 0
-          : (previous + movement[event.key] + choices.length) % choices.length;
+        if (previous < 0) return 0;
+        if (!typed && ["ArrowUp", "ArrowDown"].includes(event.key)) {
+          const positions = Array.from(
+            list.current?.querySelectorAll<HTMLElement>("[role=option]") || [],
+          ).map((element) => {
+            const rectangle = element.getBoundingClientRect();
+            return {
+              index: Number(element.id.split("-").at(-1)),
+              x: rectangle.left + rectangle.width / 2,
+              y: rectangle.top,
+            };
+          });
+          return verticalChoiceIndex(
+            positions,
+            previous,
+            event.key === "ArrowDown" ? 1 : -1,
+          );
+        }
+        return (
+          (previous + movement[event.key] + choices.length) % choices.length
+        );
       });
       return;
     }
     if (event.key === "Enter") {
       event.preventDefault();
       const choice = choices[highlighted < 0 ? 0 : highlighted];
-      if (choice && (typed || highlight >= 0)) choose(choice);
-      else setOpen(true);
+      if (choice && enterSearchAction(open, typed, highlight) === "choose")
+        choose(choice);
+      else {
+        setOpen(true);
+        setHighlight(-1);
+      }
     }
   }
   function choiceButton(choice: Choice, index: number) {
@@ -369,7 +399,7 @@ export function CatalogSearch({
           <div
             className={styles.backdrop}
             aria-hidden="true"
-            onClick={() => setOpen(false)}
+            onClick={dismissPicker}
           />,
           document.body,
         )}
@@ -431,6 +461,7 @@ export function CatalogSearch({
               if (!open) {
                 setOpen(true);
                 setGroupIndex(0);
+                setHighlight(-1);
               }
             }}
             onChange={(event) => {
@@ -509,7 +540,7 @@ export function CatalogSearch({
                       <button
                         type="button"
                         onClick={() => {
-                          countCache.current.delete(platform);
+                          countCache.current.delete(countScope.key);
                           setCountRetry((value) => value + 1);
                         }}
                       >

@@ -419,3 +419,80 @@ test("media term assignments enforce taxonomy membership and cascade removed ter
     [],
   );
 });
+
+test("v4 upgrade skips deleted vocabulary terms without blocking research or restoring user edits", async () => {
+  const { dir, store } = await open();
+  const conversation = await store.createConversation(
+    "Research remains accessible",
+    "Keep this prompt",
+  );
+  const category = taxonomyGroups.find(
+    (group) => group.id === "web-categories",
+  )!.terms[0];
+  await store.assignReferenceCategories(
+    "systems:linear",
+    "web-categories",
+    [category.label],
+    "My category edit",
+  );
+  const removedTermId = mediaSeed.assignments[0].terms[0].termId;
+  const renamedTermId = mediaSeed.assignments
+    .flatMap((media) => media.terms)
+    .find((term) => term.termId !== removedTermId)!.termId;
+  await store.client.execute("DROP TABLE media_term_assignments");
+  await store.client.execute({
+    sql: "DELETE FROM taxonomy_terms WHERE id=?",
+    args: [removedTermId],
+  });
+  await store.client.execute({
+    sql: "UPDATE taxonomy_terms SET label=? WHERE id=?",
+    args: ["My vocabulary label", renamedTermId],
+  });
+  await store.client.execute("PRAGMA user_version=4");
+  close(store);
+  const { store: migrated } = await open(dir);
+  expect(
+    Number(
+      (await migrated.client.execute("PRAGMA user_version")).rows[0]
+        .user_version,
+    ),
+  ).toBe(5);
+  expect(
+    (await migrated.getConversation(conversation.id))?.messages[0].parts[0],
+  ).toEqual({ type: "text", text: "Keep this prompt" });
+  expect(
+    (await migrated.listReferenceCategories()).filter(
+      (row) => row.referenceId === "systems:linear",
+    ),
+  ).toEqual([{ referenceId: "systems:linear", termId: category.id }]);
+  const vocabulary = (await migrated.listTaxonomyGroups()).flatMap(
+    (group) => group.terms,
+  );
+  expect(vocabulary.some((term) => term.id === removedTermId)).toBe(false);
+  expect(vocabulary.find((term) => term.id === renamedTermId)?.label).toBe(
+    "My vocabulary label",
+  );
+  const rows = await migrated.listMediaTermAssignments();
+  const expectedSeedCount = mediaSeed.assignments.reduce(
+    (count, media) =>
+      count +
+      media.terms.filter((term) => term.termId !== removedTermId).length,
+    0,
+  );
+  expect(rows).toHaveLength(expectedSeedCount);
+  expect(rows.some((row) => row.termId === removedTermId)).toBe(false);
+  expect(rows.some((row) => row.termId === renamedTermId)).toBe(true);
+  expect(
+    (await migrated.client.execute("PRAGMA foreign_key_check")).rows,
+  ).toEqual([]);
+  close(migrated);
+  const { store: reopened } = await open(dir);
+  expect(
+    (await reopened.listMediaTermAssignments()).some(
+      (row) => row.termId === removedTermId,
+    ),
+  ).toBe(false);
+  expect((await reopened.getConversation(conversation.id))?.title).toBe(
+    "Research remains accessible",
+  );
+});

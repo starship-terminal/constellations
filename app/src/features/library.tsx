@@ -38,7 +38,10 @@ import { StandaloneHeader } from "@/components/shell";
 import styles from "./library.module.css";
 import { ScreenBrowser } from "./screen-browser";
 import { CatalogSearch } from "./catalog-search";
-import { platformSearch } from "./catalog-search-state";
+import {
+  platformSearch,
+  inferredProductPlatform,
+} from "./catalog-search-state";
 import {
   loadLibraryPages,
   mergeLibraryItems,
@@ -160,6 +163,20 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
       alive = false;
     };
   }, [reload]);
+  useEffect(() => {
+    if (standalone) return;
+    const current = new URLSearchParams(window.location.search);
+    if (current.has("platform") || current.get("view") !== "screens") return;
+    const inferred = inferredProductPlatform(current, allItems);
+    if (inferred) {
+      current.set("platform", inferred);
+      window.history.replaceState(
+        null,
+        "",
+        `${window.location.pathname}?${current}${window.location.hash}`,
+      );
+    }
+  }, [params, allItems, standalone]);
   const scoped = useMemo(
     () =>
       allItems.filter(

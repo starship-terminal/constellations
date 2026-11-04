@@ -38,26 +38,28 @@ export async function seedMediaTaxonomy(tx: Transaction) {
     ),
   );
   const entries = seed.assignments.flatMap((assignment) =>
-    assignment.terms.map((term) => {
-      if (!known.has(term.termId))
-        throw new Error(`Unknown media taxonomy seed term: ${term.termId}`);
-      if (!Object.hasOwn(seed.rules, term.rule))
-        throw new Error(`Unknown media taxonomy seed rule: ${term.rule}`);
-      if (
-        !assignment.referenceId.startsWith("systems:") ||
-        !assignment.mediaId.startsWith(
-          `systems/${assignment.referenceId.slice("systems:".length)}/`,
+    // A v4 user may have removed vocabulary terms. Respect those deletions:
+    // seed only still-existing terms instead of restoring them or blocking open.
+    assignment.terms
+      .filter((term) => known.has(term.termId))
+      .map((term) => {
+        if (!Object.hasOwn(seed.rules, term.rule))
+          throw new Error(`Unknown media taxonomy seed rule: ${term.rule}`);
+        if (
+          !assignment.referenceId.startsWith("systems:") ||
+          !assignment.mediaId.startsWith(
+            `systems/${assignment.referenceId.slice("systems:".length)}/`,
+          )
         )
-      )
-        throw new Error("Invalid media taxonomy seed identity");
-      return [
-        assignment.referenceId,
-        assignment.mediaId,
-        term.termId,
-        `${term.reason} Rule: ${term.rule}. Source: ${assignment.mediaId}`,
-        "curated",
-      ];
-    }),
+          throw new Error("Invalid media taxonomy seed identity");
+        return [
+          assignment.referenceId,
+          assignment.mediaId,
+          term.termId,
+          `${term.reason} Rule: ${term.rule}. Source: ${assignment.mediaId}`,
+          "curated",
+        ];
+      }),
   );
   // Multi-row statements keep migration work bounded and avoid one round trip
   // per label, while staying below SQLite's conservative 999 parameter limit.

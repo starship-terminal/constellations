@@ -12,7 +12,8 @@ import styles from "./screen-browser.module.css";
 export function ScreenBrowser() {
   const params = useSearchParams();
   const query = params.get("q") || "",
-    platform = params.get("platform") || "web",
+    platform =
+      params.get("platform") || (params.has("referenceId") ? "" : "web"),
     theme = params.get("theme") || "",
     category = params.get("category") || "",
     tag = params.get("tag") || "",
