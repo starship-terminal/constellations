@@ -65,7 +65,8 @@ export type SkeletonShape =
   | "screen-ios"
   | "style"
   | "tile"
-  | "collection";
+  | "collection"
+  | "list";
 export function SkeletonCard({ shape = "card" }: { shape?: SkeletonShape }) {
   return (
     <div className={`card-skeleton card-skeleton-${shape}`} aria-hidden="true">

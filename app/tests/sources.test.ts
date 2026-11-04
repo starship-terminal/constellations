@@ -20,6 +20,7 @@ import {
 import {
   parseByteRange,
   notModifiedSince,
+  rangeValidatorMatches,
 } from "../src/app/media/[...path]/route";
 const originalRepo = process.env.DESIGN_SYSTEMS_REPO;
 const originalMedia = process.env.DESIGN_SYSTEMS_MEDIA;
@@ -127,6 +128,19 @@ describe("HTTP range parsing", () => {
     expect(notModifiedSince("Tue, 04 Nov 2026 12:00:01 GMT", mtime)).toBe(true);
     expect(notModifiedSince("not-a-date", mtime)).toBe(false);
     expect(notModifiedSince("", mtime)).toBe(false);
+  });
+  it("requires an exact date match for If-Range", () => {
+    const mtime = Date.parse("Tue, 04 Nov 2026 12:00:00.900 GMT");
+    expect(rangeValidatorMatches("Tue, 04 Nov 2026 12:00:00 GMT", mtime)).toBe(
+      true,
+    );
+    expect(rangeValidatorMatches("Tue, 04 Nov 2026 12:00:01 GMT", mtime)).toBe(
+      false,
+    );
+    expect(rangeValidatorMatches("Tue, 04 Nov 2026 11:59:59 GMT", mtime)).toBe(
+      false,
+    );
+    expect(rangeValidatorMatches("not-a-date", mtime)).toBe(false);
   });
 });
 

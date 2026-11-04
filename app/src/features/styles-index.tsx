@@ -231,12 +231,14 @@ export function StylesIndex() {
   return (
     <Suspense
       fallback={
-        <SkeletonGrid
-          shape="style"
-          count={6}
-          className={styles.grid}
-          label="Opening styles…"
-        />
+        <div className={styles.index}>
+          <SkeletonGrid
+            shape="style"
+            count={6}
+            className={styles.grid}
+            label="Opening styles…"
+          />
+        </div>
       }
     >
       <StylesContent />

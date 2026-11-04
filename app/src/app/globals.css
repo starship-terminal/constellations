@@ -1107,6 +1107,42 @@ select {
   aspect-ratio: auto;
   border-radius: 24px;
 }
+.card-skeleton-list {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.card-skeleton-list .card-skeleton-media {
+  width: 220px;
+  height: 150px;
+  flex: none;
+  aspect-ratio: auto;
+  border-radius: var(--radius-sm);
+}
+.card-skeleton-list .card-skeleton-line {
+  margin-top: 0;
+}
+@media (max-width: 1100px) {
+  .card-skeleton-web .card-skeleton-media {
+    height: 280px;
+  }
+}
+@media (max-width: 800px) {
+  .card-skeleton-web .card-skeleton-media {
+    height: 240px;
+  }
+}
+@media (max-width: 760px) {
+  .card-skeleton-browse .card-skeleton-media {
+    height: 150px;
+  }
+}
+@media (max-width: 1000px) {
+  .card-skeleton-collection .card-skeleton-media {
+    height: 160px;
+    border-radius: 19px;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   .card-skeleton-media,
   .card-skeleton-line {

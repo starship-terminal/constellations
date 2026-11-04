@@ -51,12 +51,14 @@ export function LibraryPage() {
   return (
     <Suspense
       fallback={
-        <SkeletonGrid
-          shape="web"
-          count={6}
-          className={styles.appGrid}
-          label="Opening references…"
-        />
+        <div className={`${styles.library} ${styles.catalog}`}>
+          <SkeletonGrid
+            shape="web"
+            count={6}
+            className={styles.appGrid}
+            label="Opening references…"
+          />
+        </div>
       }
     >
       <LibraryContent />
@@ -507,9 +509,15 @@ function LibraryContent() {
             )}
             {!allItems.length && loading ? (
               <SkeletonGrid
-                shape={platform === "mobile" ? "ios" : "web"}
+                shape={
+                  layout === "list"
+                    ? "list"
+                    : platform === "mobile"
+                      ? "ios"
+                      : "web"
+                }
                 count={6}
-                className={`${styles.appGrid} ${platform === "mobile" ? styles.mobileGrid : ""}`}
+                className={`${styles.appGrid} ${platform === "mobile" ? styles.mobileGrid : ""} ${layout === "list" ? styles.listView : ""}`}
                 label="Opening the library…"
               />
             ) : items.length ? (

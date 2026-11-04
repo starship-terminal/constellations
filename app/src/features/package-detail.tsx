@@ -90,12 +90,14 @@ export function PackageDetailPage({ slug }: { slug: string }) {
   return (
     <Suspense
       fallback={
-        <SkeletonGrid
-          shape="tile"
-          count={6}
-          className={styles.grid}
-          label="Opening captured package…"
-        />
+        <div className={styles.page}>
+          <SkeletonGrid
+            shape="tile"
+            count={6}
+            className={styles.grid}
+            label="Opening captured package…"
+          />
+        </div>
       }
     >
       <PackageDetail slug={slug} />

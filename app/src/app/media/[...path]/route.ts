@@ -35,6 +35,16 @@ export function notModifiedSince(header: string, mtimeMs: number): boolean {
     Math.floor(mtimeMs / 1000) <= Math.floor(since / 1000)
   );
 }
+export function rangeValidatorMatches(
+  header: string,
+  mtimeMs: number,
+): boolean {
+  const since = Date.parse(header);
+  return (
+    Number.isFinite(since) &&
+    Math.floor(since / 1000) === Math.floor(mtimeMs / 1000)
+  );
+}
 async function serve(
   request: Request,
   parts: string[],
@@ -58,11 +68,10 @@ async function serve(
     return new Response(null, { status: 304, headers });
   const rangeHeader = request.headers.get("range"),
     ifRange = request.headers.get("if-range"),
+    rangeAllowed = !ifRange || rangeValidatorMatches(ifRange, stat.mtimeMs),
     range =
-      rangeHeader && !(ifRange && !notModifiedSince(ifRange, stat.mtimeMs))
-        ? parseByteRange(rangeHeader, size)
-        : null;
-  if (rangeHeader && !range) {
+      rangeHeader && rangeAllowed ? parseByteRange(rangeHeader, size) : null;
+  if (rangeHeader && rangeAllowed && !range) {
     headers.set("Content-Range", `bytes */${size}`);
     return new Response(null, { status: 416, headers });
   }
