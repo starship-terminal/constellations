@@ -37,7 +37,7 @@ import {
   X,
   type LucideIcon,
 } from "lucide-react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import type { LibraryItem } from "@/contracts/library";
 import {
   api,
@@ -106,16 +106,13 @@ export function LibraryPage({ standalone = false }: { standalone?: boolean }) {
   );
 }
 function LibraryContent({ standalone }: { standalone: boolean }) {
-  const router = useRouter(),
-    pathname = usePathname(),
-    params = useSearchParams();
+  const params = useSearchParams();
   const query = params.get("q") || "",
     platform = params.get("platform") || "",
     source = params.get("source") || "",
     theme = params.get("theme") || "",
     category = categoryGroup(params.get("category") || "");
-  const [q, setQ] = useState(query),
-    [allItems, setAllItems] = useState<LibraryItem[]>([]),
+  const [allItems, setAllItems] = useState<LibraryItem[]>([]),
     [loading, setLoading] = useState(true),
     [catalogTotal, setCatalogTotal] = useState<number | null>(null),
     [error, setError] = useState(""),
@@ -130,19 +127,14 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
     for (const [key, value] of Object.entries(patch))
       value ? next.set(key, value) : next.delete(key);
     const search = next.toString();
-    router.replace(`${pathname}${search ? `?${search}` : ""}`, {
-      scroll: false,
-    });
-    setVisibleCount(24);
+    // Native history integrates with useSearchParams without an asynchronous
+    // server navigation that could restore an older search over newer typing.
+    window.history.replaceState(
+      null,
+      "",
+      `${window.location.pathname}${search ? `?${search}` : ""}${window.location.hash}`,
+    );
   }
-  useEffect(() => {
-    setQ(query);
-  }, [query]);
-  useEffect(() => {
-    if (q === query) return;
-    const timer = setTimeout(() => updateFilters({ q }), 250);
-    return () => clearTimeout(timer);
-  }, [q, query]);
   useEffect(() => {
     setVisibleCount(24);
   }, [query, source, platform, theme, category]);
@@ -245,7 +237,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
   }
   const modeUrl = (mode: string) => {
     const next = new URLSearchParams();
-    if (q) next.set("q", q);
+    if (query) next.set("q", query);
     if (mode) next.set("platform", mode);
     return `/library${next.size ? `?${next}` : ""}`;
   };
@@ -255,7 +247,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
       role="search"
       onSubmit={(e) => {
         e.preventDefault();
-        updateFilters({ q });
+        updateFilters({ q: query });
       }}
     >
       <input
@@ -265,16 +257,15 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
             ? "Search DESIGN.md examples"
             : "Search products, screens, or design details"
         }
-        value={q}
-        onChange={(e) => setQ(e.target.value)}
+        value={query}
+        onChange={(e) => updateFilters({ q: e.target.value })}
       />
-      {q && (
+      {query && (
         <button
           type="button"
           className={styles.clearSearch}
           aria-label="Clear search"
           onClick={() => {
-            setQ("");
             updateFilters({ q: "" });
           }}
         >
@@ -318,7 +309,6 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
                   <button
                     key={tag}
                     onClick={() => {
-                      setQ(tag);
                       updateFilters({ q: tag });
                     }}
                   >
@@ -499,7 +489,6 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
             <button
               className="pill"
               onClick={() => {
-                setQ("");
                 updateFilters({
                   q: "",
                   source: "",
