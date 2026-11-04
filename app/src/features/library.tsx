@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Suspense, useEffect, useMemo, useState } from "react";
 import {
   ArrowRight,
-  ArrowUp,
   Binoculars,
   Check,
   Grid2X2,
@@ -13,7 +12,6 @@ import {
   PanelTop,
   Plus,
   RefreshCw,
-  Search,
   Smartphone,
   X,
 } from "lucide-react";
@@ -29,12 +27,7 @@ import {
   MediaPreview,
   Spinner,
 } from "@/components/shared";
-import {
-  Comparison,
-  ReferenceCard,
-  ReferenceInspector,
-} from "@/components/reference";
-import { StandaloneHeader } from "@/components/shell";
+import { Comparison } from "@/components/reference";
 import styles from "./library.module.css";
 import { ScreenBrowser } from "./screen-browser";
 import {
@@ -53,17 +46,14 @@ import {
   type LibraryResponse,
 } from "./library-data";
 
-const titleCase = (value: string) =>
-  value.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-
-export function LibraryPage({ standalone = false }: { standalone?: boolean }) {
+export function LibraryPage() {
   return (
     <Suspense fallback={<Spinner label="Opening references…" />}>
-      <LibraryContent standalone={standalone} />
+      <LibraryContent />
     </Suspense>
   );
 }
-function LibraryContent({ standalone }: { standalone: boolean }) {
+function LibraryContent() {
   const router = useRouter();
   const params = useSearchParams();
   const query = params.get("q") || "",
@@ -71,7 +61,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
     source = "systems",
     theme = params.get("theme") || "",
     category = params.get("category") || "";
-  const screenView = !standalone && params.get("view") === "screens";
+  const screenView = params.get("view") === "screens";
   const [layout, setLayout] = useState("grid");
   const [scrub, setScrub] = useState(true);
   useEffect(() => {
@@ -85,15 +75,12 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
     [reload, setReload] = useState(0),
     [selected, setSelected] = useState<LibraryItem[]>([]),
     [compare, setCompare] = useState(false),
-    [inspecting, setInspecting] = useState<LibraryItem | null>(null),
-    [visibleCount, setVisibleCount] = useState(24),
-    [stats, setStats] = useState<LibraryResponse["stats"] | null>(null);
+    [visibleCount, setVisibleCount] = useState(24);
   const [taxonomy, setTaxonomy] = useState<TaxonomyGroup[]>([]),
     [taxonomyLoading, setTaxonomyLoading] = useState(true),
     [taxonomyError, setTaxonomyError] = useState(""),
     [taxonomyReload, setTaxonomyReload] = useState(0);
   useEffect(() => {
-    if (standalone) return;
     let alive = true;
     setTaxonomyLoading(true);
     setTaxonomyError("");
@@ -117,7 +104,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
     return () => {
       alive = false;
     };
-  }, [standalone, taxonomyReload]);
+  }, [taxonomyReload]);
   function updateFilters(patch: Record<string, string>) {
     const next = new URLSearchParams(window.location.search);
     for (const [key, value] of Object.entries(patch))
@@ -148,7 +135,6 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
       (page) => {
         if (!alive) return;
         setAllItems((previous) => mergeLibraryItems(previous, page.items));
-        setStats(page.stats);
         setCatalogTotal(page.total);
       },
       () => {
@@ -169,7 +155,6 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
     };
   }, [reload]);
   useEffect(() => {
-    if (standalone) return;
     const current = new URLSearchParams(window.location.search);
     if (current.has("platform") || current.get("view") !== "screens") return;
     const inferred = inferredProductPlatform(current, allItems);
@@ -181,7 +166,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
         `${window.location.pathname}?${current}${window.location.hash}`,
       );
     }
-  }, [params, allItems, standalone]);
+  }, [params, allItems]);
   const scoped = useMemo(
     () =>
       allItems.filter(
@@ -243,19 +228,6 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
   }, [scoped, category, query]);
   const items = filtered.slice(0, visibleCount);
   const complete = catalogTotal !== null && allItems.length >= catalogTotal;
-  const suggestions = useMemo(() => {
-    const tags = new Set(allItems.flatMap((item) => item.tags));
-    return [
-      "editorial",
-      "minimal",
-      "monochrome",
-      "playful",
-      "cinematic",
-      "luxury",
-      "chat",
-      "glass",
-    ].filter((tag) => tags.has(tag));
-  }, [allItems]);
   function toggle(item: LibraryItem) {
     setSelected((prev) =>
       prev.some((x) => x.id === item.id)
@@ -281,227 +253,142 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
     );
     return `/library${next.size ? `?${next}` : ""}`;
   };
-  const searchField = (
-    <form
-      className={styles.search}
-      role="search"
-      onSubmit={(e) => {
-        e.preventDefault();
-        updateFilters({ q: query, view: standalone ? "" : "screens" });
-      }}
-    >
-      <input
-        aria-label={standalone ? "Search styles" : "Search references"}
-        placeholder={
-          standalone
-            ? "Search DESIGN.md examples"
-            : "Search products, screens, or design details"
-        }
-        value={query}
-        onChange={(e) => updateFilters({ q: e.target.value })}
-      />
-      {query && (
-        <button
-          type="button"
-          className={styles.clearSearch}
-          aria-label="Clear search"
-          onClick={() => {
-            updateFilters({ q: "" });
-          }}
-        >
-          <X size={17} />
-        </button>
-      )}
-      <button
-        type="submit"
-        className={standalone ? styles.searchSubmit : styles.searchIcon}
-        aria-label="Search"
-      >
-        {standalone ? <ArrowUp size={21} /> : <Search size={19} />}
-      </button>
-    </form>
-  );
   return (
     <>
-      {standalone && <StandaloneHeader />}
-      <div
-        id={standalone ? "main-content" : undefined}
-        className={`${styles.library} ${standalone ? styles.standalone : styles.catalog}`}
-      >
-        {standalone ? (
-          <header className={styles.styleHero}>
-            <div className={styles.styleKicker}>
-              Your design reference library
-            </div>
-            <h1>Your favorite sites, in DESIGN.md</h1>
-            <p>
-              {stats
-                ? `Browse ${stats.systems} captured packages and ${stats.refero.toLocaleString()} interpreted styles.`
-                : "Browse recorded design references from real products."}
-              <br />
-              Open a style for its colors, typography, spacing, and available
-              exports.
-            </p>
-            <div className={styles.styleSearch}>
-              {searchField}
-              <div className={styles.suggestions}>
-                {suggestions.map((tag) => (
-                  <button
-                    key={tag}
-                    onClick={() => {
-                      updateFilters({ q: tag });
-                    }}
-                  >
-                    <ArrowRight size={13} />
-                    {titleCase(tag)}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </header>
-        ) : (
-          <>
-            <div className={styles.searchTop}>
-              <CatalogSearch
-                taxonomy={taxonomy}
-                items={allItems}
-                taxonomyLoading={taxonomyLoading}
-                taxonomyError={taxonomyError}
-                retryTaxonomy={() => setTaxonomyReload((value) => value + 1)}
-              />
-              <div className={styles.modeBar}>
-                <nav className={styles.modes} aria-label="Search mode">
-                  <Link href="/">
-                    <Binoculars size={16} />
-                    Research mode
-                  </Link>
-                  <Link
-                    className={
-                      platform === "web" || (screenView && !platform)
-                        ? styles.modeActive
-                        : ""
-                    }
-                    href={
-                      platformLinksReady ? modeUrl("web") : `/library?${params}`
-                    }
-                    aria-disabled={!platformLinksReady}
-                    title={
-                      platformLinksReady
-                        ? undefined
-                        : "Loading selected filters…"
-                    }
-                    onClick={(event) => {
-                      if (!platformLinksReady) event.preventDefault();
-                    }}
-                  >
-                    <Monitor className={styles.webModeIcon} size={18} />
-                    Web apps
-                  </Link>
-                  <Link
-                    className={platform === "mobile" ? styles.modeActive : ""}
-                    href={
-                      platformLinksReady
-                        ? modeUrl("mobile")
-                        : `/library?${params}`
-                    }
-                    aria-disabled={!platformLinksReady}
-                    title={
-                      platformLinksReady
-                        ? undefined
-                        : "Loading selected filters…"
-                    }
-                    onClick={(event) => {
-                      if (!platformLinksReady) event.preventDefault();
-                    }}
-                  >
-                    <Smartphone className={styles.iosModeIcon} size={18} />
-                    iOS apps
-                  </Link>
-                </nav>
-                {screenView && (
-                  <nav className={styles.resultModes} aria-label="Result type">
-                    <button
-                      aria-pressed={params.get("mode") !== "flows"}
-                      onClick={() => updateFilters({ mode: "" })}
-                    >
-                      <Files className={styles.screensModeIcon} size={18} />
-                      Screens
-                    </button>
-                    <button
-                      aria-pressed={params.get("mode") === "flows"}
-                      onClick={() => updateFilters({ mode: "flows" })}
-                    >
-                      <Scissors size={18} />
-                      Flows
-                    </button>
-                  </nav>
-                )}
-              </div>
-            </div>
-            {!screenView && (
-              <h1 className={styles.catalogTitle}>
-                {platform === "web"
-                  ? "Web apps"
-                  : platform === "mobile"
-                    ? "iOS apps"
-                    : platform === "desktop"
-                      ? "Desktop apps"
-                      : "Gallery"}
-              </h1>
-            )}
-            {!screenView && (
-              <>
-                {taxonomyLoading && (
-                  <Spinner label="Loading reference categories…" />
-                )}
-                {taxonomyError && (
-                  <ErrorState
-                    message={taxonomyError}
-                    retry={() => setTaxonomyReload((value) => value + 1)}
-                  />
-                )}
-                <nav
-                  className={styles.categories}
-                  aria-label="Reference category"
-                  aria-busy={taxonomyLoading}
+      <div className={`${styles.library} ${styles.catalog}`}>
+        <div className={styles.searchTop}>
+          <CatalogSearch
+            taxonomy={taxonomy}
+            items={allItems}
+            taxonomyLoading={taxonomyLoading}
+            taxonomyError={taxonomyError}
+            retryTaxonomy={() => setTaxonomyReload((value) => value + 1)}
+          />
+          <div className={styles.modeBar}>
+            <nav className={styles.modes} aria-label="Search mode">
+              <Link href="/">
+                <Binoculars size={16} />
+                Research mode
+              </Link>
+              <Link
+                className={
+                  platform === "web" || (screenView && !platform)
+                    ? styles.modeActive
+                    : ""
+                }
+                href={
+                  platformLinksReady ? modeUrl("web") : `/library?${params}`
+                }
+                aria-disabled={!platformLinksReady}
+                title={
+                  platformLinksReady ? undefined : "Loading selected filters…"
+                }
+                onClick={(event) => {
+                  if (!platformLinksReady) event.preventDefault();
+                }}
+              >
+                <Monitor className={styles.webModeIcon} size={18} />
+                Web apps
+              </Link>
+              <Link
+                className={platform === "mobile" ? styles.modeActive : ""}
+                href={
+                  platformLinksReady ? modeUrl("mobile") : `/library?${params}`
+                }
+                aria-disabled={!platformLinksReady}
+                title={
+                  platformLinksReady ? undefined : "Loading selected filters…"
+                }
+                onClick={(event) => {
+                  if (!platformLinksReady) event.preventDefault();
+                }}
+              >
+                <Smartphone className={styles.iosModeIcon} size={18} />
+                iOS apps
+              </Link>
+            </nav>
+            {screenView && (
+              <nav className={styles.resultModes} aria-label="Result type">
+                <button
+                  aria-pressed={params.get("mode") !== "flows"}
+                  onClick={() => updateFilters({ mode: "" })}
                 >
-                  <button
-                    className={!category ? styles.categoryActive : ""}
-                    aria-pressed={!category}
-                    onClick={() => updateFilters({ category: "" })}
-                  >
-                    <RefreshCw size={18} aria-hidden="true" />
-                    Latest
-                  </button>
-                  {categories.map((option) => {
-                    const active =
-                      !!category &&
-                      matchesCategory(
-                        { category: "", categoryIds: option.ids },
-                        category,
-                      );
-                    return (
-                      <button
-                        key={option.id}
-                        className={active ? styles.categoryActive : ""}
-                        aria-pressed={active}
-                        onClick={() =>
-                          updateFilters({
-                            category: active ? "" : option.id,
-                          })
-                        }
-                      >
-                        <CategoryIcon label={option.label} />
-                        {option.label}
-                      </button>
-                    );
-                  })}
-                </nav>
-              </>
+                  <Files className={styles.screensModeIcon} size={18} />
+                  Screens
+                </button>
+                <button
+                  aria-pressed={params.get("mode") === "flows"}
+                  onClick={() => updateFilters({ mode: "flows" })}
+                >
+                  <Scissors size={18} />
+                  Flows
+                </button>
+              </nav>
             )}
+          </div>
+        </div>
+        {!screenView && (
+          <h1 className={styles.catalogTitle}>
+            {platform === "web"
+              ? "Web apps"
+              : platform === "mobile"
+                ? "iOS apps"
+                : platform === "desktop"
+                  ? "Desktop apps"
+                  : "Gallery"}
+          </h1>
+        )}
+        {!screenView && (
+          <>
+            {taxonomyLoading && (
+              <Spinner label="Loading reference categories…" />
+            )}
+            {taxonomyError && (
+              <ErrorState
+                message={taxonomyError}
+                retry={() => setTaxonomyReload((value) => value + 1)}
+              />
+            )}
+            <nav
+              className={styles.categories}
+              aria-label="Reference category"
+              aria-busy={taxonomyLoading}
+            >
+              <button
+                className={!category ? styles.categoryActive : ""}
+                aria-pressed={!category}
+                onClick={() => updateFilters({ category: "" })}
+              >
+                <RefreshCw size={18} aria-hidden="true" />
+                Latest
+              </button>
+              {categories.map((option) => {
+                const active =
+                  !!category &&
+                  matchesCategory(
+                    { category: "", categoryIds: option.ids },
+                    category,
+                  );
+                return (
+                  <button
+                    key={option.id}
+                    className={active ? styles.categoryActive : ""}
+                    aria-pressed={active}
+                    onClick={() =>
+                      updateFilters({
+                        category: active ? "" : option.id,
+                      })
+                    }
+                  >
+                    <CategoryIcon label={option.label} />
+                    {option.label}
+                  </button>
+                );
+              })}
+            </nav>
           </>
         )}
-        {!standalone && !screenView && (
+        {!screenView && (
           <nav className={styles.browseModes} aria-label="Browse references">
             <button
               aria-pressed={!screenView}
@@ -612,32 +499,22 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
               <Spinner label="Opening the library…" />
             ) : items.length ? (
               <div
-                className={`${standalone ? styles.styleGrid : styles.appGrid} ${!standalone && platform === "mobile" ? styles.mobileGrid : ""} ${layout === "list" ? styles.listView : ""}`}
+                className={`${styles.appGrid} ${platform === "mobile" ? styles.mobileGrid : ""} ${layout === "list" ? styles.listView : ""}`}
               >
-                {items.map((item) =>
-                  standalone ? (
-                    <ReferenceCard
-                      key={item.id}
-                      item={item}
-                      style
-                      onSelect={toggle}
-                      selected={selected.some((x) => x.id === item.id)}
-                    />
-                  ) : (
-                    <CatalogCard
-                      key={item.id}
-                      item={item}
-                      scrub={scrub}
-                      onOpen={(item) =>
-                        router.push(
-                          `/library?view=screens&referenceId=${encodeURIComponent(item.id)}&platform=${encodeURIComponent(item.platform)}`,
-                        )
-                      }
-                      onSelect={toggle}
-                      selected={selected.some((x) => x.id === item.id)}
-                    />
-                  ),
-                )}
+                {items.map((item) => (
+                  <CatalogCard
+                    key={item.id}
+                    item={item}
+                    scrub={scrub}
+                    onOpen={(item) =>
+                      router.push(
+                        `/library?view=screens&referenceId=${encodeURIComponent(item.id)}&platform=${encodeURIComponent(item.platform)}`,
+                      )
+                    }
+                    onSelect={toggle}
+                    selected={selected.some((x) => x.id === item.id)}
+                  />
+                ))}
               </div>
             ) : loading ? (
               <Spinner label="Checking the remaining references…" />
@@ -714,12 +591,6 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
           </div>
         )}
       </div>
-      <ReferenceInspector
-        items={items}
-        current={inspecting}
-        onClose={() => setInspecting(null)}
-        onChange={setInspecting}
-      />
       {compare && (
         <Comparison items={selected} onClose={() => setCompare(false)} />
       )}

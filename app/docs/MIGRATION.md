@@ -9,7 +9,7 @@ The migration audits `web/` as the feature inventory and uses Studio's approved 
 | Gallery | 41 measured packages; platform/category/theme/font search; grid/list view and preview scrubbing |
 | Captured package | 4,425 screenshots, 10,456 component crops, 1,474 icons across the corpus; grouped, searchable, filtered and paginated; original-image viewer navigates within the selected group |
 | Package documentation | Full README, readable files, rendered/source Markdown, structured token previews, HTML style guides in an isolated frame, package health links |
-| Styles | Separate catalog of 1,342 interpreted Refero styles, opening in a new tab from the sidebar; theme/type/design-style/industry/tag/video filters and ranked search |
+| Styles | Separate catalog of 1,342 interpreted Refero styles, opening in the same tab with the shared sidebar; theme/type/design-style/industry/tag/video filters and ranked search |
 | Style detail | Screenshot, scrolling video, detail clip, posters, full design guidance, rendered/source Markdown, CSS/Tailwind/JSON exports and related styles |
 | HTML components | Three usable reconstructed HTML examples; unresolved upstream references display an unavailable state. These examples are interpreted, not measured product code |
 | Bookmarks | Individual media bookmarks in SQLite, alongside reference collections and notes; saved images link back to the selected capture |

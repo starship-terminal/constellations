@@ -3,7 +3,6 @@ import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useRef, useState, type ReactNode } from "react";
 import {
-  ArrowUpRight,
   Grid2X2,
   BookOpen,
   BarChart3,
@@ -28,26 +27,6 @@ export function Mark() {
       <span />
       <span />
     </span>
-  );
-}
-export function StandaloneHeader({ crumb }: { crumb?: string }) {
-  return (
-    <header className="standalone-header">
-      <Link href="/" className="brand" aria-label="Studio home">
-        <Mark />
-      </Link>
-      <span className="header-slash">/</span>
-      <Link href="/styles">Styles</Link>
-      {crumb && (
-        <>
-          <span className="header-slash">/</span>
-          <span className="muted truncate">{crumb}</span>
-        </>
-      )}
-      <Link className="pill small header-home" href="/">
-        Back to research <ArrowUpRight size={14} />
-      </Link>
-    </header>
   );
 }
 function CatalogNavigation({ onNavigate }: { onNavigate: () => void }) {
