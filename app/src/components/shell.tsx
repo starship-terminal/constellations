@@ -82,11 +82,13 @@ function CatalogNavigation({ onNavigate }: { onNavigate: () => void }) {
         <Smartphone size={20} />
         iOS apps
       </Link>
-      <a className="nav-link" href="/styles" target="_blank" rel="noreferrer">
+      <Link
+        className={`nav-link ${path.startsWith("/styles") ? "active" : ""}`}
+        href="/styles"
+      >
         <Palette size={20} />
         Styles
-        <ArrowUpRight className="nav-trailing" size={15} />
-      </a>
+      </Link>
       <Link
         className={`nav-link ${path.startsWith("/collections") ? "active" : ""}`}
         href="/collections"
@@ -158,16 +160,6 @@ export function AppShell({ children }: { children: ReactNode }) {
   useEffect(() => {
     setMobile(false);
   }, [path]);
-  if (path.startsWith("/styles"))
-    return (
-      <div
-        ref={(element) => {
-          scene.current = element;
-        }}
-      >
-        {children}
-      </div>
-    );
   async function rename() {
     if (!editing || !title.trim()) return;
     try {
