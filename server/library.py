@@ -80,7 +80,10 @@ def _bounded(entry: dict, rel: str) -> Path:
 
 
 def _site_url(path: Path) -> str:
-    return "/" + path.resolve().relative_to(ROOT.resolve()).as_posix()
+    # The app's /media/ route answers repo files on every frontend that serves
+    # them (Next dev, standalone, the deployment); a bare /<repo path> only the
+    # retired python server ever answered.
+    return "/media/" + path.resolve().relative_to(ROOT.resolve()).as_posix()
 
 
 # ---------------------------------------------------------------- refero store

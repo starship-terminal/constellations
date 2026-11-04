@@ -93,7 +93,7 @@ class PackageFileTest(unittest.TestCase):
         if not listing["items"]:
             self.skipTest("no screenshots in this package")
         item = listing["items"][0]
-        self.assertTrue(item["url"].startswith("/systems/"))
+        self.assertTrue(item["url"].startswith("/media/systems/"))
         shot = library.view_media(self.SLUG, f"screenshots/{item['name']}.png")
         self.assertIn("_image", shot)
         self.assertEqual(shot["_image"]["media_type"], "image/png")
@@ -178,13 +178,7 @@ class McpTest(unittest.TestCase):
     mcp = _load("agent_mcp", "mcp.py")
 
     def _roundtrip(self, *reqs):
-        import io
-        import contextlib
-        buf = io.StringIO()
-        with contextlib.redirect_stdout(buf):
-            for r in reqs:
-                self.mcp.handle(r)
-        return [json.loads(l) for l in buf.getvalue().splitlines() if l.strip()]
+        return [r for r in (self.mcp.handle(req) for req in reqs) if r is not None]
 
     def test_initialize_and_list(self):
         init, listing = self._roundtrip(
@@ -205,6 +199,88 @@ class McpTest(unittest.TestCase):
 
     def test_notification_gets_no_reply(self):
         self.assertEqual(self._roundtrip({"jsonrpc": "2.0", "method": "notifications/initialized"}), [])
+
+
+class HttpApiTest(unittest.TestCase):
+    """The /api/ HTTP surface api.py runs: /api/mcp over streamable HTTP plus
+    the /api/ds and /api/install.sh serves that bootstrap the CLI."""
+    api = _load("agent_api", "api.py")
+
+    @classmethod
+    def setUpClass(cls):
+        import http.server
+        import threading
+        cls.httpd = http.server.ThreadingHTTPServer(("127.0.0.1", 0), cls.api.Handler)
+        cls.base = f"http://127.0.0.1:{cls.httpd.server_address[1]}"
+        cls.thread = threading.Thread(target=cls.httpd.serve_forever, daemon=True)
+        cls.thread.start()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.httpd.shutdown()
+        cls.httpd.server_close()
+
+    def _req(self, path, method="GET", obj=None):
+        import urllib.request
+        import urllib.error
+        data = json.dumps(obj).encode() if obj is not None else None
+        req = urllib.request.Request(self.base + path, data=data, method=method,
+                                     headers={"content-type": "application/json"})
+        try:
+            with urllib.request.urlopen(req) as r:
+                return r.status, r.read()
+        except urllib.error.HTTPError as e:
+            body = e.read()
+            e.close()
+            return e.code, body
+
+    def _mcp(self, obj):
+        return self._req("/api/mcp", "POST", obj)
+
+    def test_initialize_and_call_over_http(self):
+        status, body = self._mcp({"jsonrpc": "2.0", "id": 1, "method": "initialize",
+                                  "params": {"protocolVersion": "2025-03-26"}})
+        self.assertEqual(status, 200)
+        self.assertEqual(json.loads(body)["result"]["serverInfo"]["name"], "design-systems")
+        status, body = self._mcp({"jsonrpc": "2.0", "id": 2, "method": "tools/call",
+                                  "params": {"name": "search_styles",
+                                             "arguments": {"query": "dark", "limit": 1}}})
+        self.assertEqual(status, 200)
+        hits = json.loads(json.loads(body)["result"]["content"][0]["text"])["hits"]
+        self.assertEqual(len(hits), 1)
+
+    def test_notification_batch_and_get(self):
+        status, body = self._mcp({"jsonrpc": "2.0", "method": "notifications/initialized"})
+        self.assertEqual((status, body), (202, b""))
+        status, body = self._mcp([{"jsonrpc": "2.0", "id": 1, "method": "ping"},
+                                  {"jsonrpc": "2.0", "id": 2, "method": "ping"}])
+        self.assertEqual(status, 200)
+        self.assertEqual(len(json.loads(body)), 2)
+        self.assertEqual(self._req("/api/mcp")[0], 405)
+        self.assertEqual(self._req("/api/mcp", "DELETE")[0], 200)
+
+    def test_ds_and_install_script(self):
+        status, body = self._req("/api/ds")
+        self.assertEqual(status, 200)
+        self.assertTrue(body.startswith(b"#!/usr/bin/env python3"))
+        status, body = self._req("/api/install.sh")
+        self.assertEqual(status, 200)
+        text = body.decode()
+        self.assertIn(f'BASE="{self.base}"', text)
+        self.assertNotIn("@DS_BASE@", text)
+
+    def test_mcp_rejects_bad_bodies(self):
+        import urllib.request
+        import urllib.error
+        req = urllib.request.Request(self.base + "/api/mcp", data=b"not json",
+                                     headers={"content-type": "application/json"})
+        try:
+            with urllib.request.urlopen(req) as r:
+                status = r.status
+        except urllib.error.HTTPError as e:
+            status = e.code
+            e.close()
+        self.assertEqual(status, 400)
 
 
 if __name__ == "__main__":

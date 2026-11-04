@@ -50,10 +50,16 @@ server/                 the agent layer: a read-only tool layer over the two
                         provider adapters and tool loop (chat.py), the /api/
                         route handlers (routes.py; not http.py, which would
                         shadow the stdlib package on sys.path), the same tools
-                        over stdio
-                        MCP for coding agents (mcp.py:
-                        `python3 server/mcp.py`), and the /api/ server the
-                        home-server deployment proxies behind nginx (api.py)
+                        over MCP for coding agents (mcp.py — stdio via
+                        `python3 server/mcp.py`, remote streamable HTTP via
+                        POST /api/mcp in routes.py and web/app/api/mcp/), and
+                        the /api/ server the home-server deployment proxies
+                        behind nginx (api.py)
+cli/                    ds: the terminal client for the remote MCP endpoint
+                        (stdlib-only python3; `ds find`, `ds export`,
+                        `ds doc`, `ds handoff`, …), and install.sh, which
+                        /api/install.sh serves with the request's host
+                        substituted in
 tools/                  the repo's scripts. Deps: `make setup` installs
                         requirements.txt + tools/requirements-capture.txt into
                         .venv; Pillow/sips for images, numpy for

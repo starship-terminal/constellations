@@ -7,9 +7,14 @@ statically — this process exists only to answer the /api/ routes nginx
 proxies to it:
 
     GET  /api/status          GET  /api/redeploy*   POST /api/provider/test
-    POST /api/chat
+    POST /api/chat            POST /api/mcp         GET /api/ds
+    GET  /api/install.sh
 
 (*redeploy is answered by the separate trigger service, not here.)
+
+/api/mcp is the remote MCP transport: coding agents anywhere on the tailnet
+connect with the URL instead of spawning server/mcp.py locally. /api/ds and
+/api/install.sh bootstrap the ds CLI client for it.
 
 nginx keeps its longer /api/redeploy location and adds, roughly:
 
@@ -64,6 +69,13 @@ class Handler(http.server.BaseHTTPRequestHandler):
     def do_POST(self) -> None:
         if not _server().handle_post(self):
             self.send_error(404)
+
+    def do_DELETE(self) -> None:
+        # Streamable-HTTP session teardown; the server is stateless, so there
+        # is nothing to clean up — acknowledge and move on.
+        self.send_response(200)
+        self.send_header("content-length", "0")
+        self.end_headers()
 
     def log_message(self, fmt: str, *args) -> None:
         print(f"[api] {self.address_string()} {fmt % args}", file=sys.stderr, flush=True)
