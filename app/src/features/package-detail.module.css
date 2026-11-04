@@ -775,8 +775,14 @@
   grid-column: 1;
   grid-row: 1 / 3;
   padding: 32px 0;
-  display: block;
+  display: flex;
+  flex-direction: column;
   background: var(--surface);
+}
+.lightboxStage > img,
+.lightboxStage > video {
+  flex-shrink: 0;
+  margin: auto;
 }
 .lightboxStage img {
   width: 100%;
