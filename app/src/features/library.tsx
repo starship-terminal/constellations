@@ -265,6 +265,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
     params,
     !taxonomyLoading && !taxonomyError,
     allItems,
+    loading,
   );
   const modeUrl = (mode: string) => {
     const next = platformSearch(
@@ -272,6 +273,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
       mode,
       taxonomy,
       allItems,
+      !loading && !error,
     );
     return `/library${next.size ? `?${next}` : ""}`;
   };

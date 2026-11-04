@@ -245,3 +245,19 @@ it("waits for selected filter lookups before enabling platform navigation", () =
   expect(canSwitchPlatform(selected, true, products)).toBe(true);
   expect(canSwitchPlatform(new URLSearchParams(), false, [])).toBe(true);
 });
+
+it("recovers platform navigation when a selected product was removed", () => {
+  const stale = new URLSearchParams("platform=web&referenceId=systems:removed");
+  expect(canSwitchPlatform(stale, true, products, true)).toBe(false);
+  expect(canSwitchPlatform(stale, true, products, false)).toBe(true);
+  expect(
+    platformSearch(stale, "mobile", taxonomyGroups, products, true).getAll(
+      "referenceId",
+    ),
+  ).toEqual([]);
+  expect(
+    platformSearch(stale, "mobile", taxonomyGroups, products, false).getAll(
+      "referenceId",
+    ),
+  ).toEqual(["systems:removed"]);
+});

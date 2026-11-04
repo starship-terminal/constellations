@@ -78,6 +78,7 @@ export function platformSearch(
   platform: string,
   groups: readonly TaxonomyGroup[],
   items: readonly LibraryItem[],
+  productsComplete = false,
 ) {
   const next = new URLSearchParams(params);
   platform ? next.set("platform", platform) : next.delete("platform");
@@ -152,7 +153,11 @@ export function platformSearch(
   next.delete("referenceId");
   for (const id of params.getAll("referenceId")) {
     const item = items.find((candidate) => candidate.id === id);
-    if (!platform || !item?.platform || item.platform === platform)
+    if (
+      !platform ||
+      (!item && !productsComplete) ||
+      item?.platform === platform
+    )
       next.append("referenceId", id);
   }
   next.delete("screen");
@@ -165,11 +170,13 @@ export function canSwitchPlatform(
   params: Pick<URLSearchParams, "has" | "getAll">,
   taxonomyReady: boolean,
   items: readonly Pick<LibraryItem, "id">[],
+  productsLoading = true,
 ) {
   return (
     ((!params.has("term") && !params.has("category")) || taxonomyReady) &&
-    params
-      .getAll("referenceId")
-      .every((id) => items.some((item) => item.id === id))
+    (!productsLoading ||
+      params
+        .getAll("referenceId")
+        .every((id) => items.some((item) => item.id === id)))
   );
 }
