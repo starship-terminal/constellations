@@ -74,13 +74,16 @@ function MediaCollectionPicker({
   }, [open, referenceId, mediaId]);
   async function save(board: Board) {
     if (memberships.includes(board.id)) return;
-    setBusy(board.id);
-    setError("");
+    if (live.current) {
+      setBusy(board.id);
+      setError("");
+    }
     try {
       await api(`/api/collections/${board.id}/media`, {
         method: "POST",
         body: JSON.stringify({ referenceId, mediaId }),
       });
+      window.dispatchEvent(new Event("collection-media-changed"));
       if (!live.current) return;
       setMemberships((previous) => [...previous, board.id]);
       setBoards((previous) =>
@@ -90,7 +93,6 @@ function MediaCollectionPicker({
             : row,
         ),
       );
-      window.dispatchEvent(new Event("collection-media-changed"));
     } catch (e) {
       if (live.current) setError((e as Error).message);
     } finally {
@@ -109,11 +111,14 @@ function MediaCollectionPicker({
           body: JSON.stringify({ name: name.trim() }),
         },
       );
-      if (!live.current) return;
       const board = value.collection || value;
-      setBoards((previous) => [board, ...previous]);
-      setName("");
-      setCreating(false);
+      if (live.current) {
+        setBoards((previous) => [board, ...previous]);
+        setName("");
+        setCreating(false);
+      }
+      // Finish the requested Create & save even if the user navigates away.
+      // Only UI feedback belongs to this mounted capture picker.
       await save(board);
     } catch (e) {
       if (live.current) setError((e as Error).message);
