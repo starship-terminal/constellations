@@ -273,6 +273,7 @@ function useMenuDismiss(
   root: RefObject<HTMLDivElement | null>,
   open: boolean,
   setOpen: (open: boolean) => void,
+  refocus?: () => void,
 ) {
   useEffect(() => {
     if (!open) return;
@@ -280,7 +281,10 @@ function useMenuDismiss(
       if (!root.current?.contains(event.target as Node)) setOpen(false);
     };
     const escape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") {
+        setOpen(false);
+        refocus?.();
+      }
     };
     document.addEventListener("mousedown", close);
     document.addEventListener("keydown", escape);
@@ -288,7 +292,7 @@ function useMenuDismiss(
       document.removeEventListener("mousedown", close);
       document.removeEventListener("keydown", escape);
     };
-  }, [open, root, setOpen]);
+  }, [open, root, setOpen, refocus]);
 }
 export function Select({
   value,
@@ -307,7 +311,8 @@ export function Select({
 }) {
   const [open, setOpen] = useState(false);
   const root = useRef<HTMLDivElement>(null);
-  useMenuDismiss(root, open, setOpen);
+  const trigger = useRef<HTMLButtonElement>(null);
+  useMenuDismiss(root, open, setOpen, () => trigger.current?.focus());
   useEffect(() => {
     if (open)
       root.current
@@ -324,10 +329,11 @@ export function Select({
       <button
         type="button"
         className="select-trigger"
+        ref={trigger}
         disabled={disabled}
         aria-haspopup="listbox"
         aria-expanded={open}
-        aria-label={label}
+        aria-label={`${label}: ${current?.label ?? value}`}
         onClick={() => setOpen((v) => !v)}
       >
         <span>{current?.label ?? value}</span>
@@ -343,8 +349,9 @@ export function Select({
               aria-selected={option.value === value}
               className="select-option"
               onClick={() => {
-                onChange(option.value);
+                if (option.value !== value) onChange(option.value);
                 setOpen(false);
+                trigger.current?.focus();
               }}
             >
               <span>{option.label}</span>
@@ -376,7 +383,15 @@ export function Combobox({
   const [open, setOpen] = useState(false);
   const [matches, setMatches] = useState<string[]>(options);
   const root = useRef<HTMLDivElement>(null);
-  useMenuDismiss(root, open, setOpen);
+  const input = useRef<HTMLInputElement>(null);
+  const suppressOpen = useRef(false);
+  // Refocusing after a dismiss fires onFocus; the flag keeps the menu closed.
+  const refocusInput = () => {
+    if (document.activeElement === input.current) return;
+    suppressOpen.current = true;
+    input.current?.focus();
+  };
+  useMenuDismiss(root, open, setOpen, refocusInput);
   useEffect(() => {
     // The option list arrives once per test; typing only re-filters it here.
     const timer = setTimeout(() => {
@@ -405,13 +420,20 @@ export function Combobox({
         disabled={disabled}
         required={required}
         placeholder={placeholder}
+        ref={input}
         value={value}
         onChange={(event) => {
           onChange(event.target.value);
           setOpen(true);
         }}
-        onFocus={() => setOpen(true)}
-        onBlur={() => setOpen(false)}
+        onFocus={() => {
+          if (suppressOpen.current) suppressOpen.current = false;
+          else setOpen(true);
+        }}
+        onBlur={(event) => {
+          if (!root.current?.contains(event.relatedTarget as Node))
+            setOpen(false);
+        }}
       />
       {open && options.length > 0 && (
         <div className="select-menu" role="listbox" aria-label={label}>
@@ -427,6 +449,7 @@ export function Combobox({
                 onClick={() => {
                   onChange(option);
                   setOpen(false);
+                  refocusInput();
                 }}
               >
                 <span>{option}</span>

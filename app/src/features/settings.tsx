@@ -101,13 +101,20 @@ function SettingsContent() {
   async function save() {
     setBusy(true);
     setError("");
+    // A nonempty baseURL means a custom endpoint to the server: it switches
+    // OpenAI to Chat Completions and drops screenshot evidence. The provider's
+    // own URL is the default, so it saves as null.
+    const trimmedURL = baseURL.trim();
     try {
       const d = await api("/api/settings", {
         method: "PATCH",
         body: JSON.stringify({
           provider,
           model: model.trim(),
-          baseURL: baseURL.trim() || null,
+          baseURL:
+            !trimmedURL || trimmedURL === DEFAULT_BASE_URL[provider]
+              ? null
+              : trimmedURL,
         }),
       });
       setData(d);
