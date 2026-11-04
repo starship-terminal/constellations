@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
 import ReactMarkdown from "react-markdown";
+import { prepareResearchRequest } from "./research-transport";
+import { MarkdownImageAsText } from "./research-markdown";
 import remarkGfm from "remark-gfm";
 import {
   ArrowDown,
@@ -304,7 +306,10 @@ function ResearchConversation({ initial }: { initial: Conversation }) {
     useChat({
       id: initial.id,
       messages: initial.messages || [],
-      transport: new DefaultChatTransport({ api: "/api/research" }),
+      transport: new DefaultChatTransport({
+        api: "/api/research",
+        prepareSendMessagesRequest: prepareResearchRequest,
+      }),
       onFinish() {
         window.dispatchEvent(new Event("research-history"));
       },
@@ -662,6 +667,7 @@ function Message({
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   components={{
+                    img: MarkdownImageAsText,
                     a: ({ href, children }) => {
                       const found = Array.from(inspected.values()).find(
                         (d) =>

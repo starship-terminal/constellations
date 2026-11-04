@@ -9,7 +9,9 @@ import type {
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import {
+  contained,
   imageUrl,
+  mediaMime,
   readJson,
   readText,
   referoMedia,
@@ -124,6 +126,7 @@ async function normalize(
 }
 // A short cache avoids thousands of filesystem lookups on each filter keystroke, while allowing captures to refresh.
 let cache: { key: string; until: number; rows: LibraryItem[] } | null = null;
+const pendingLoads = new Map<string, Promise<LibraryItem[]>>();
 async function allItems(): Promise<LibraryItem[]> {
   const key = [
     repoRoot(),
@@ -131,13 +134,24 @@ async function allItems(): Promise<LibraryItem[]> {
     process.env.DESIGN_SYSTEMS_MEDIA_BASE,
   ].join("|");
   if (cache?.key === key && cache.until > Date.now()) return cache.rows;
-  const { systems, refero, cdn } = await sourceRows();
-  const rows = await Promise.all([
-    ...systems.map((row) => normalize("systems", row, cdn)),
-    ...refero.map((row) => normalize("refero", row, cdn)),
-  ]);
-  cache = { key, until: Date.now() + 10_000, rows };
-  return rows;
+  const pending = pendingLoads.get(key);
+  if (pending) return pending;
+  const load = (async () => {
+    const { systems, refero, cdn } = await sourceRows();
+    const rows = await Promise.all([
+      ...systems.map((row) => normalize("systems", row, cdn)),
+      ...refero.map((row) => normalize("refero", row, cdn)),
+    ]);
+    cache = { key, until: Date.now() + 10_000, rows };
+    return rows;
+  })();
+  pendingLoads.set(key, load);
+  try {
+    return await load;
+  } finally {
+    // Rejected loads must release the slot so the next request can retry.
+    if (pendingLoads.get(key) === load) pendingLoads.delete(key);
+  }
 }
 export async function listLibrary(
   query: LibraryQuery = {},
@@ -242,16 +256,65 @@ async function packageMedia(slug: string, row: Raw): Promise<ReferenceMedia[]> {
   const rich = generated?.systems?.find((s: Raw) => s.slug === slug) || row;
   let shots: Raw[] = [...(rich.screenshots || []), ...(rich.components || [])];
   if (!shots.length) {
+    const packageDir = path.join(
+      /* turbopackIgnore: true */ repoRoot(),
+      "systems",
+      slug,
+    );
     try {
-      shots = (
-        await fs.readdir(path.join(repoRoot(), "systems", slug, "screenshots"))
-      ).map((name) => ({
-        path: `systems/${slug}/screenshots/${name}`,
-        name: path.parse(name).name,
-        tags: [],
-      }));
+      const [realRepo, realPackage, screenshots] = await Promise.all([
+        fs.realpath(/* turbopackIgnore: true */ repoRoot()),
+        fs.realpath(/* turbopackIgnore: true */ packageDir),
+        fs.realpath(
+          /* turbopackIgnore: true */ path.join(
+            /* turbopackIgnore: true */ packageDir,
+            "screenshots",
+          ),
+        ),
+      ]);
+      if (
+        contained(realRepo, realPackage) &&
+        contained(realPackage, screenshots)
+      ) {
+        let directories = 0;
+        // Captures may group screenshots under light/dark or screen-specific folders.
+        // Ignore symlink entries and cap traversal even in unusually large packages.
+        async function walk(
+          dir: string,
+          relative: string,
+          depth: number,
+        ): Promise<void> {
+          if (depth > 8 || directories >= 100 || shots.length >= 500) return;
+          directories++;
+          const entries = (
+            await fs.readdir(/* turbopackIgnore: true */ dir, {
+              withFileTypes: true,
+            })
+          ).sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
+          for (const entry of entries) {
+            if (shots.length >= 500) break;
+            const nested = relative ? `${relative}/${entry.name}` : entry.name;
+            if (entry.isDirectory()) {
+              await walk(
+                path.join(/* turbopackIgnore: true */ dir, entry.name),
+                nested,
+                depth + 1,
+              );
+            } else if (entry.isFile() && mediaMime(entry.name)) {
+              shots.push({
+                path: `systems/${slug}/screenshots/${nested}`,
+                name: nested.replace(/\.[^.]+$/, ""),
+                tags: nested
+                  .split("/")
+                  .filter((part) => part === "light" || part === "dark"),
+              });
+            }
+          }
+        }
+        await walk(screenshots, "", 0);
+      }
     } catch {
-      /* No captured screenshots. */
+      /* No captured screenshots available in this checkout. */
     }
   }
   const media = await Promise.all(

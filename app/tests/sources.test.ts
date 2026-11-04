@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import os from "node:os";
@@ -22,6 +22,7 @@ const originalRepo = process.env.DESIGN_SYSTEMS_REPO;
 const originalMedia = process.env.DESIGN_SYSTEMS_MEDIA;
 const temp: string[] = [];
 afterEach(async () => {
+  vi.restoreAllMocks();
   if (originalRepo === undefined) delete process.env.DESIGN_SYSTEMS_REPO;
   else process.env.DESIGN_SYSTEMS_REPO = originalRepo;
   if (originalMedia === undefined) delete process.env.DESIGN_SYSTEMS_MEDIA;
@@ -117,6 +118,85 @@ describe("HTTP range parsing", () => {
 });
 
 describe("real library normalization", () => {
+  it("shares cold catalog reads between concurrent list and stats requests", async () => {
+    const dir = await fixture();
+    process.env.DESIGN_SYSTEMS_REPO = dir;
+    await fs.writeFile(
+      path.join(dir, "catalog.json"),
+      JSON.stringify({ systems: [] }),
+    );
+    const catalogPath = await fs.realpath(path.join(dir, "catalog.json"));
+    const reads = vi.spyOn(fs, "readFile");
+    const [items, stats, again] = await Promise.all([
+      listLibrary(),
+      getSourceStats(),
+      listLibrary(),
+    ]);
+    expect(items).toEqual([]);
+    expect(again).toEqual(items);
+    expect(stats).toEqual({ systems: 0, refero: 0 });
+    expect(
+      reads.mock.calls.filter(([file]) => String(file) === catalogPath),
+    ).toHaveLength(1);
+  });
+  it("clears a rejected shared load so later requests can retry", async () => {
+    const dir = await fixture();
+    process.env.DESIGN_SYSTEMS_REPO = dir;
+    await fs.writeFile(
+      path.join(dir, "catalog.json"),
+      JSON.stringify({ systems: {} }),
+    );
+    const failed = await Promise.allSettled([listLibrary(), getSourceStats()]);
+    expect(failed.every((result) => result.status === "rejected")).toBe(true);
+    await fs.writeFile(
+      path.join(dir, "catalog.json"),
+      JSON.stringify({ systems: [] }),
+    );
+    expect(await listLibrary()).toEqual([]);
+    expect(await getSourceStats()).toEqual({ systems: 0, refero: 0 });
+  });
+  it("discovers nested canonical screenshots in stable order without escaping the package", async () => {
+    const dir = await fixture(),
+      outside = await fixture();
+    process.env.DESIGN_SYSTEMS_REPO = dir;
+    const screenshots = path.join(dir, "systems/nested/screenshots");
+    await fs.mkdir(path.join(screenshots, "light/deeper"), { recursive: true });
+    await fs.mkdir(path.join(screenshots, "dark"), { recursive: true });
+    await fs.writeFile(
+      path.join(dir, "catalog.json"),
+      JSON.stringify({
+        systems: [{ slug: "nested", name: "Nested", platform: "mobile" }],
+      }),
+    );
+    const png = Buffer.from(
+      "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAusB9Wl6Xh8AAAAASUVORK5CYII=",
+      "base64",
+    );
+    for (const name of ["light/z-last.png", "light/deeper/a.png", "dark/b.png"])
+      await fs.writeFile(path.join(screenshots, name), png);
+    await fs.writeFile(path.join(screenshots, "README.md"), "Not an image");
+    await fs.writeFile(path.join(outside, "outside.png"), png);
+    await fs.symlink(outside, path.join(screenshots, "escape"));
+    await fs.symlink(
+      path.join(outside, "outside.png"),
+      path.join(screenshots, "linked.png"),
+    );
+    const detail = await getReference("systems:nested");
+    expect(detail?.media.map((m) => m.url)).toEqual([
+      "/media/systems/nested/screenshots/dark/b.png",
+      "/media/systems/nested/screenshots/light/deeper/a.png",
+      "/media/systems/nested/screenshots/light/z-last.png",
+    ]);
+    expect(detail?.media.map((m) => m.tags)).toEqual([
+      ["dark"],
+      ["light"],
+      ["light"],
+    ]);
+    // The screenshots root itself must not be a symlink outside this package either.
+    await fs.rm(screenshots, { recursive: true });
+    await fs.symlink(outside, screenshots);
+    expect((await getReference("systems:nested"))?.media).toEqual([]);
+  });
   it("retains sampled and derived evidence across source formats", async () => {
     const [hevy, telegram, manus, duolingo, linear] = await Promise.all([
       getReference("systems:hevy"),

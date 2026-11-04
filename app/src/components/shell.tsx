@@ -93,6 +93,8 @@ export function AppShell({ children }: { children: ReactNode }) {
         className="mobile-menu icon-button"
         onClick={() => setMobile((v) => !v)}
         aria-label={mobile ? "Close navigation" : "Open navigation"}
+        aria-expanded={mobile}
+        aria-controls="workspace-sidebar"
       >
         {mobile ? <PanelLeftClose size={21} /> : <PanelLeftOpen size={21} />}
       </button>
@@ -103,7 +105,10 @@ export function AppShell({ children }: { children: ReactNode }) {
           onClick={() => setMobile(false)}
         />
       )}
-      <aside className={`sidebar ${mobile ? "mobile-open" : ""}`}>
+      <aside
+        id="workspace-sidebar"
+        className={`sidebar ${mobile ? "mobile-open" : ""}`}
+      >
         <Link href="/" className="brand">
           <Mark />
           <span>Studio</span>

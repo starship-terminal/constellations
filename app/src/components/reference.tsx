@@ -246,10 +246,12 @@ export function ReferenceValues({
   title,
   values,
   kind,
+  previewLimit,
 }: {
   title: string;
   values: ReferenceValue[];
   kind?: "color" | "type";
+  previewLimit?: number;
 }) {
   const [expanded, setExpanded] = useState(false);
   const [copyStatus, setCopyStatus] = useState("");
@@ -258,7 +260,7 @@ export function ReferenceValues({
     setCopyStatus("");
   }, [title, values]);
   if (!values?.length) return null;
-  const initialCount = kind === "color" ? 36 : 30;
+  const initialCount = previewLimit ?? (kind === "color" ? 36 : 30);
   const visibleValues = expanded ? values : values.slice(0, initialCount);
   async function copy(value: string) {
     try {
@@ -744,30 +746,7 @@ export function Comparison({
                 {d.platform}
               </p>
               <p>{d.description}</p>
-              <h3>Colors</h3>
-              <div className="compare-swatches">
-                {d.colors.slice(0, 8).map((c, i) => (
-                  <span
-                    key={i}
-                    style={{ background: c.value }}
-                    title={`${c.name}: ${c.value}`}
-                  />
-                ))}
-              </div>
-              <h3>Typography</h3>
-              {d.typography.slice(0, 5).map((v, i) => (
-                <p className="compare-value" key={i}>
-                  <small>{v.name}</small>
-                  <code>{v.value}</code>
-                </p>
-              ))}
-              <h3>Spacing</h3>
-              <p className="muted">
-                {d.spacing
-                  .slice(0, 5)
-                  .map((v) => v.value)
-                  .join(" · ") || "No spacing values recorded"}
-              </p>
+              <ComparisonValues detail={d} />
               <SaveReference item={d} />
             </article>
           ))}
@@ -776,5 +755,29 @@ export function Comparison({
         <Spinner label="Loading comparison…" />
       )}
     </Modal>
+  );
+}
+
+export function ComparisonValues({ detail }: { detail: LibraryDetail }) {
+  return (
+    <>
+      <ReferenceValues
+        title="Colors"
+        values={detail.colors}
+        kind="color"
+        previewLimit={8}
+      />
+      <ReferenceValues
+        title="Typography"
+        values={detail.typography}
+        kind="type"
+        previewLimit={5}
+      />
+      <ReferenceValues
+        title="Spacing"
+        values={detail.spacing}
+        previewLimit={5}
+      />
+    </>
   );
 }

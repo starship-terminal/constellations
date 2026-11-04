@@ -64,7 +64,7 @@ test("foreign origins, scheme or port mismatches, and spoofed forwarded headers 
     mutationGuard(
       request({ origin: "http://127.0.0.1:8845", host: "evil@127.0.0.1:8845" }),
     ),
-  ).toThrow("same application origin");
+  ).toThrow("loopback hosts");
 });
 
 test("direct callers without Host retain URL-origin validation and JSON requirements", () => {

@@ -39,12 +39,13 @@ export async function readSettings(): Promise<ProviderSettings> {
       ? process.env.OPENAI_MODEL || "gpt-4.1-mini"
       : process.env.ANTHROPIC_MODEL || "claude-sonnet-4-5");
   const baseURL =
-    saved.baseURL ??
-    process.env.DESIGN_RESEARCH_BASE_URL ??
-    (provider === "openai"
-      ? process.env.OPENAI_BASE_URL
-      : process.env.ANTHROPIC_BASE_URL) ??
-    null;
+    saved.baseURL !== undefined
+      ? saved.baseURL
+      : (process.env.DESIGN_RESEARCH_BASE_URL ??
+        (provider === "openai"
+          ? process.env.OPENAI_BASE_URL
+          : process.env.ANTHROPIC_BASE_URL) ??
+        null);
   if (baseURL !== null && !settingsPatch.safeParse({ baseURL }).success)
     throw new HttpError(500, "The server provider base URL is invalid.");
   const providers = {
@@ -66,12 +67,13 @@ export function modelFor(settings: ProviderSettings) {
           apiKey: process.env.OPENAI_API_KEY,
           baseURL: settings.baseURL,
         }).chat(settings.model)
-      : createOpenAI({ apiKey: process.env.OPENAI_API_KEY }).responses(
-          settings.model,
-        )
+      : createOpenAI({
+          apiKey: process.env.OPENAI_API_KEY,
+          baseURL: "https://api.openai.com/v1",
+        }).responses(settings.model)
     : createAnthropic({
         apiKey: process.env.ANTHROPIC_API_KEY,
-        baseURL: settings.baseURL ?? undefined,
+        baseURL: settings.baseURL ?? "https://api.anthropic.com/v1",
       })(settings.model);
 }
 

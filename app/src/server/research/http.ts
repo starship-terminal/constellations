@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { isLoopbackHost } from "@/server/request-host";
 export class HttpError extends Error {
   constructor(
     public status: number,
@@ -9,6 +10,13 @@ export class HttpError extends Error {
   }
 }
 export function mutationGuard(request: Request) {
+  const actualHost = request.headers.get("host");
+  if (actualHost && !isLoopbackHost(actualHost)) {
+    throw new HttpError(
+      403,
+      "This personal research app only accepts loopback hosts.",
+    );
+  }
   const origin = request.headers.get("origin");
   if (origin) {
     let expectedOrigin: string;
