@@ -1,0 +1,33 @@
+/* Studio's semantic theme. Source measurements: systems/refero-design/tokens.json.
+   The source's dark.text.secondary fails AA for body text, so Studio uses a
+   brighter neutral secondary role. System fonts replace proprietary families. */
+:root {
+  color-scheme: dark;
+  /* Measured dark background roles. */
+  --page: #13151a;
+  --surface: #1a1c23;
+  --surface-raised: #23242a;
+  --elevated: #2a2d37;
+  --ink: #fff;
+  /* Studio accessibility adjustments, not captured product measurements. */
+  --muted: #b3b8c8;
+  --subtle: #9097a8;
+  --line: rgba(222, 210, 241, 0.105);
+  --strong-line: rgba(185, 201, 247, 0.2);
+  --focus: #b3b8c8;
+  /* Measured core.radius values. */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --radius-card: 32px;
+  /* Measured core.duration values. Dialog/result timing is a Studio choice. */
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-fade: 500ms;
+  --duration-dialog: 250ms;
+  --duration-result: 300ms;
+  --sans: Arial, Helvetica, sans-serif;
+  --serif: Georgia, "Times New Roman", serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
