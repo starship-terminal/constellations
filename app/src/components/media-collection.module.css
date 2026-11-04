@@ -66,3 +66,15 @@
   color: var(--muted);
   font-size: 12px;
 }
+
+/* The board picker is nested above the screenshot viewer (150/151). */
+.overlay {
+  z-index: 170;
+}
+.dialog {
+  z-index: 171;
+  padding: 0 24px 24px;
+}
+.dialog :global(.modal-header) {
+  padding-inline: 0;
+}

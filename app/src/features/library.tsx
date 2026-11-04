@@ -39,6 +39,7 @@ import {
 } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import type { LibraryItem } from "@/contracts/library";
+import { categoryGroup } from "@/contracts/categories";
 import {
   api,
   Empty,
@@ -89,13 +90,6 @@ const categoryInfo: Record<string, { label: string; icon: LucideIcon }> = {
   events: { label: "Events", icon: CalendarDays },
   other: { label: "Other references", icon: Grid2X2 },
 };
-const categoryAliases: Record<string, string> = {
-  learning: "education",
-  fintech: "finance",
-  ecommerce: "commerce",
-  entertainment: "media",
-};
-const categoryGroup = (value: string) => categoryAliases[value] || value;
 const titleCase = (value: string) =>
   value.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 

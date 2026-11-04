@@ -149,6 +149,7 @@ export function ScreenBrowser() {
     : undefined;
   const activeFilters = [
     ["q", query],
+    ["scope", scope === "media" ? "Capture text only" : ""],
     ["platform", platform],
     ["theme", theme],
     ["category", category],
@@ -169,7 +170,13 @@ export function ScreenBrowser() {
               onClick={() => update({ [key]: "", screen: "" })}
               aria-label={`Remove ${value} filter`}
             >
-              {key === "referenceId" ? "App" : key === "q" ? "Search" : key}{" "}
+              {key === "referenceId"
+                ? "App"
+                : key === "q"
+                  ? "Search"
+                  : key === "scope"
+                    ? "Search in"
+                    : key}{" "}
               <strong>{value}</strong>
               <X size={14} />
             </button>
@@ -178,6 +185,7 @@ export function ScreenBrowser() {
             onClick={() =>
               update({
                 q: "",
+                scope: "",
                 platform: "",
                 theme: "",
                 category: "",

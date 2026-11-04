@@ -32,8 +32,13 @@ export function POST(request: Request, context: Context) {
     if (!(await store.getCollection(id)))
       throw new HttpError(404, "Collection not found.");
     const reference = await getReference(value.referenceId);
-    if (!reference?.media.some((item) => item.id === value.mediaId))
-      throw new HttpError(404, "Capture not found.");
+    const capture = reference?.media.find((item) => item.id === value.mediaId);
+    if (!capture) throw new HttpError(404, "Capture not found.");
+    if (capture.type !== "image")
+      throw new HttpError(
+        400,
+        "Screenshot boards accept captured images only.",
+      );
     await store.putCollectionMedia(id, value.referenceId, value.mediaId);
     return Response.json({ ok: true });
   });

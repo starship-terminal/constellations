@@ -41,3 +41,9 @@ Browser screenshots and transition frames are stored outside the repository unde
 The production build passed. All 108 application tests, TypeScript, formatting, `make check`, and `make test` passed. A separate temporary database and production server rendered an explicitly labelled research fixture with real library records; Show more/less (six/eight cards), follow-up selection, pinning, inspection, and archive/restore passed without modifying personal research history. At 1280px the original research grid measured two 399px columns with a 36px gap; the final clone measured two 398px columns with the same gap.
 
 Screenshots-to-boards now have a versioned personal-database migration, independent of package associations and flat bookmarks. API tests cover identity validation, collection isolation, persistence, and export links. Existing user board contents and test bookmarks were restored after live checks.
+
+## Review corrections
+
+The first automated review identified eight edge cases. The fixes raise the nested board picker above the viewer, isolate pending saves by capture identity, preserve canonical category aliases across Apps/Screens, allow removal of unavailable board captures, resolve board viewer selection from refreshed rows, expose/reset media-only search scope, route Style captures correctly, and provide visible clipboard-failure/manual-copy feedback. Screenshot boards reject video assets that the image viewer cannot display.
+
+After these corrections, all 117 application tests and the production build pass. Browser checks confirmed the picker is visibly above the viewer and receives pointer hits, Escape returns focus, Education shows 444 captures after switching views, and Clear all removes the hidden scope. The library checks pass again.

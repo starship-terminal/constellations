@@ -343,54 +343,89 @@ function CopyValue({
   className?: string;
   style?: CSSProperties;
 }) {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(false),
+    [error, setError] = useState("");
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  useEffect(
-    () => () => {
+  const request = useRef(0);
+  useEffect(() => {
+    setCopied(false);
+    setError("");
+    request.current += 1;
+    if (timer.current) clearTimeout(timer.current);
+    return () => {
+      request.current += 1;
       if (timer.current) clearTimeout(timer.current);
-    },
-    [],
-  );
+    };
+  }, [value]);
   return (
-    <button
-      type="button"
-      className={`${styles.copyValue} ${className || ""}`}
-      style={style}
-      title={`Click to copy "${value}"`}
-      aria-label={`Copy ${value}`}
-      onClick={async () => {
-        try {
-          await navigator.clipboard.writeText(value);
-          setCopied(true);
+    <>
+      <button
+        type="button"
+        className={`${styles.copyValue} ${className || ""}`}
+        style={style}
+        title={`Click to copy "${value}"`}
+        aria-label={`Copy ${value}`}
+        onClick={async () => {
+          const attempt = ++request.current;
           if (timer.current) clearTimeout(timer.current);
-          timer.current = setTimeout(() => setCopied(false), 1800);
-        } catch {
           setCopied(false);
-        }
-      }}
-    >
-      {children || value}
-      <span className="sr-only" role="status">
-        {copied ? `Copied ${value}` : ""}
-      </span>
-    </button>
+          setError("");
+          try {
+            await navigator.clipboard.writeText(value);
+            if (attempt !== request.current) return;
+            setCopied(true);
+            timer.current = setTimeout(() => setCopied(false), 1800);
+          } catch {
+            if (attempt !== request.current) return;
+            setError("Clipboard unavailable. Select and copy this value:");
+          }
+        }}
+      >
+        {children || value}
+        <span className="sr-only" role="status">
+          {copied ? `Copied ${value}` : ""}
+        </span>
+      </button>
+      {error && (
+        <span className={styles.copyFallback} role="status">
+          {error} <code tabIndex={0}>{value}</code>
+        </span>
+      )}
+    </>
   );
 }
+
 function CopyColor({ color }: { color: Data }) {
   const value = color.gradient || color.hex || color.value || "";
   const [copied, setCopied] = useState("");
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const request = useRef(0);
+  useEffect(() => {
+    setCopied("");
+    request.current += 1;
+    if (timer.current) clearTimeout(timer.current);
+    return () => {
+      request.current += 1;
+      if (timer.current) clearTimeout(timer.current);
+    };
+  }, [value]);
   return (
     <button
       className={styles.swatch}
       title={`Copy ${value}`}
       onClick={async () => {
+        const attempt = ++request.current;
+        if (timer.current) clearTimeout(timer.current);
+        setCopied("");
         try {
           await navigator.clipboard.writeText(value);
+          if (attempt !== request.current) return;
           setCopied("Copied");
+          timer.current = setTimeout(() => setCopied(""), 1800);
         } catch {
-          setCopied("Select the value to copy");
+          if (attempt !== request.current) return;
+          setCopied("Clipboard unavailable. Select the value to copy.");
         }
-        setTimeout(() => setCopied(""), 1800);
       }}
     >
       <span className={styles.swatchPaint} style={{ background: value }} />

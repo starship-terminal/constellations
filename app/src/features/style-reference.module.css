@@ -788,3 +788,17 @@
   left: 0;
   top: 0;
 }
+
+.copyFallback {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font: 12px/1.5 var(--sans);
+  overflow-wrap: anywhere;
+}
+.copyFallback code {
+  display: inline-block;
+  user-select: all;
+  color: var(--ink);
+  font-family: var(--mono);
+}

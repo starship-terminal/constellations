@@ -406,6 +406,30 @@ function PackageDetail({ slug }: { slug: string }) {
     </div>
   );
 }
+export function captureViewerLinks(
+  detail: LibraryItem,
+  current: ReferenceMedia,
+) {
+  const measured = detail.source === "systems";
+  const documentation = measured
+    ? `/library/${encodeURIComponent(detail.slug)}`
+    : `/styles/refero/${encodeURIComponent(detail.slug)}`;
+  return {
+    documentation,
+    browse: measured
+      ? `/library?view=screens&referenceId=${encodeURIComponent(detail.id)}`
+      : documentation,
+    copy: measured ? mediaDetailHref(detail.slug, current) : current.url,
+    tag: (tag: string) =>
+      measured
+        ? `/library?view=screens&tag=${encodeURIComponent(tag)}`
+        : `/styles?tag=${encodeURIComponent(tag)}`,
+    platform: measured
+      ? `/library?view=screens&platform=${encodeURIComponent(detail.platform)}`
+      : `/styles?q=${encodeURIComponent(detail.platform)}`,
+    label: measured ? "Package details" : "Style documentation",
+  };
+}
 export function PackageLightbox({
   detail,
   current,
@@ -419,6 +443,7 @@ export function PackageLightbox({
   onClose: () => void;
   onChange: (item: ReferenceMedia) => void;
 }) {
+  const links = current ? captureViewerLinks(detail, current) : null;
   const opener = useRef<HTMLElement | null>(null);
   const lightboxRef = useRef<HTMLDivElement | null>(null);
   const index = items.findIndex((m) => m === current);
@@ -485,10 +510,7 @@ export function PackageLightbox({
             <>
               <header>
                 <div>
-                  <Link
-                    href={`/library?view=screens&referenceId=${encodeURIComponent(detail.id)}`}
-                    className={styles.viewerProduct}
-                  >
+                  <Link href={links!.browse} className={styles.viewerProduct}>
                     {detail.icon && <img src={detail.icon} alt="" />}
                     <span>{detail.name}</span>
                   </Link>
@@ -518,10 +540,7 @@ export function PackageLightbox({
                 <div className={styles.viewerTags}>
                   {current.tags.length ? (
                     current.tags.map((tag) => (
-                      <Link
-                        key={tag}
-                        href={`/library?view=screens&tag=${encodeURIComponent(tag)}`}
-                      >
+                      <Link key={tag} href={links!.tag(tag)}>
                         {tag}
                       </Link>
                     ))
@@ -531,15 +550,11 @@ export function PackageLightbox({
                 </div>
                 <h3>Product</h3>
                 <div className={styles.viewerTags}>
-                  <Link
-                    href={`/library?view=screens&platform=${encodeURIComponent(detail.platform)}`}
-                  >
-                    {detail.platform}
-                  </Link>
+                  <Link href={links!.platform}>{detail.platform}</Link>
                 </div>
                 <p className={styles.meta}>{detail.description}</p>
-                <Link className="pill small" href={`/library/${detail.slug}`}>
-                  Package details <ExternalLink size={14} />
+                <Link className="pill small" href={links!.documentation}>
+                  {links!.label} <ExternalLink size={14} />
                 </Link>
                 <p className={styles.meta}>
                   {detail.captured ? `Captured ${detail.captured}` : ""}
@@ -585,10 +600,7 @@ export function PackageLightbox({
                     value={
                       typeof window === "undefined"
                         ? ""
-                        : new URL(
-                            mediaDetailHref(detail.slug, current),
-                            window.location.origin,
-                          ).href
+                        : new URL(links!.copy, window.location.origin).href
                     }
                     label="Copy image link"
                   />
@@ -598,6 +610,7 @@ export function PackageLightbox({
                     compact
                   />
                   <MediaCollectionButton
+                    key={JSON.stringify([detail.id, current.id])}
                     referenceId={detail.id}
                     mediaId={current.id}
                   />

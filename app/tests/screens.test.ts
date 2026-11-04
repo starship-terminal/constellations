@@ -6,6 +6,7 @@ import type { LibraryItem } from "../src/contracts/library";
 import type { ScreenItem } from "../src/contracts/screens";
 import { listScreens, queryScreens } from "../src/server/sources/screens";
 import { GET } from "../src/app/api/library/screens/route";
+import { categoryGroup } from "../src/contracts/categories";
 
 const originalRepo = process.env.DESIGN_SYSTEMS_REPO;
 const temp: string[] = [];
@@ -56,6 +57,40 @@ function screen(
 }
 
 describe("capture search", () => {
+  it.each([
+    ["learning", "education"],
+    ["fintech", "finance"],
+    ["ecommerce", "commerce"],
+    ["entertainment", "media"],
+  ])(
+    "preserves the Apps category group %s when browsing Screens as %s",
+    (raw, group) => {
+      const capture = {
+        ...screen("capture"),
+        reference: { ...reference, category: raw },
+      };
+      const appsCategory = categoryGroup(raw);
+      expect(appsCategory).toBe(group);
+      expect(queryScreens([capture], { category: appsCategory }).items).toEqual(
+        [capture],
+      );
+      expect(queryScreens([capture], { category: raw }).items).toEqual([
+        capture,
+      ]);
+      const facet = queryScreens([capture]).facets.categories[0];
+      expect(facet).toEqual({ value: group, count: 1 });
+      expect(queryScreens([capture], { category: facet.value }).items).toEqual([
+        capture,
+      ]);
+      const canonicalCapture = {
+        ...capture,
+        reference: { ...capture.reference, category: group },
+      };
+      expect(
+        queryScreens([capture, canonicalCapture]).facets.categories,
+      ).toEqual([{ value: group, count: 2 }]);
+    },
+  );
   it("recovers an exact screenshot or crop beyond the first page while preserving explicit filters", () => {
     const items = Array.from({ length: 130 }, (_, index) =>
       screen(`capture-${String(index).padStart(3, "0")}`),

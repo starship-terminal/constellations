@@ -6,6 +6,7 @@ import type {
 } from "@/contracts/screens";
 import { listCapturedMedia } from "./index";
 import { repoRoot } from "./files";
+import { categoryGroup } from "@/contracts/categories";
 
 const pending = new Map<string, Promise<ScreenItem[]>>();
 let cache: { key: string; until: number; items: ScreenItem[] } | undefined;
@@ -100,7 +101,9 @@ export function queryScreens(
     .filter(
       ({ reference, media }) =>
         (!query.screenId || `${reference.id}:${media.id}` === query.screenId) &&
-        (!query.category || reference.category === query.category) &&
+        (!query.category ||
+          categoryGroup(reference.category) ===
+            categoryGroup(query.category)) &&
         (!query.group || media.group === query.group) &&
         (!query.tag ||
           media.tags.includes(query.tag) ||
@@ -138,7 +141,9 @@ export function queryScreens(
     total: filtered.length,
     facets: {
       platforms: counts(items, ({ reference }) => [reference.platform]),
-      categories: counts(scoped, ({ reference }) => [reference.category]),
+      categories: counts(scoped, ({ reference }) => [
+        categoryGroup(reference.category),
+      ]),
       tags: counts(scoped, ({ reference, media }) => [
         ...reference.tags,
         ...media.tags,

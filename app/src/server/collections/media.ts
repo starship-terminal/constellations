@@ -45,7 +45,10 @@ export async function hydrateCollectionMedia(
         id: `${row.collectionId}:${row.referenceId}:${row.mediaId}`,
         reference: reference ? summary(reference) : null,
         name: reference?.name || row.referenceId,
-        media: reference?.media.find((item) => item.id === row.mediaId) || null,
+        media:
+          reference?.media.find(
+            (item) => item.id === row.mediaId && item.type === "image",
+          ) || null,
       };
     }),
   );

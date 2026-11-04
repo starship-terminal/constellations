@@ -17,7 +17,29 @@ export function MediaCollectionButton({
   referenceId: string;
   mediaId: string;
 }) {
+  return (
+    <MediaCollectionPicker
+      key={JSON.stringify([referenceId, mediaId])}
+      referenceId={referenceId}
+      mediaId={mediaId}
+    />
+  );
+}
+function MediaCollectionPicker({
+  referenceId,
+  mediaId,
+}: {
+  referenceId: string;
+  mediaId: string;
+}) {
   const trigger = useRef<HTMLButtonElement | null>(null);
+  const live = useRef(true);
+  useEffect(() => {
+    live.current = true;
+    return () => {
+      live.current = false;
+    };
+  }, []);
   const [open, setOpen] = useState(false),
     [boards, setBoards] = useState<Board[]>([]),
     [memberships, setMemberships] = useState<string[]>([]),
@@ -59,6 +81,7 @@ export function MediaCollectionButton({
         method: "POST",
         body: JSON.stringify({ referenceId, mediaId }),
       });
+      if (!live.current) return;
       setMemberships((previous) => [...previous, board.id]);
       setBoards((previous) =>
         previous.map((row) =>
@@ -69,9 +92,9 @@ export function MediaCollectionButton({
       );
       window.dispatchEvent(new Event("collection-media-changed"));
     } catch (e) {
-      setError((e as Error).message);
+      if (live.current) setError((e as Error).message);
     } finally {
-      setBusy("");
+      if (live.current) setBusy("");
     }
   }
   async function create() {
@@ -86,15 +109,16 @@ export function MediaCollectionButton({
           body: JSON.stringify({ name: name.trim() }),
         },
       );
+      if (!live.current) return;
       const board = value.collection || value;
       setBoards((previous) => [board, ...previous]);
       setName("");
       setCreating(false);
       await save(board);
     } catch (e) {
-      setError((e as Error).message);
+      if (live.current) setError((e as Error).message);
     } finally {
-      setBusy("");
+      if (live.current) setBusy("");
     }
   }
   return (
@@ -120,9 +144,9 @@ export function MediaCollectionButton({
         }}
       >
         <Dialog.Portal>
-          <Dialog.Overlay className="modal-overlay" />
+          <Dialog.Overlay className={`modal-overlay ${styles.overlay}`} />
           <Dialog.Content
-            className="modal"
+            className={`modal ${styles.dialog}`}
             onCloseAutoFocus={(event) => {
               event.preventDefault();
               trigger.current?.focus();

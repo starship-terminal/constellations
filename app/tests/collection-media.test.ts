@@ -196,3 +196,25 @@ test("board export sends measured packages to the package route", async () => {
   expect(text).toContain("Local reference: /library/example");
   expect(text).not.toContain("/styles/systems/");
 });
+test("screenshot boards reject videos the image viewer cannot display", async () => {
+  mocks.reference.mockResolvedValue({
+    id: "refero:example",
+    source: "refero",
+    slug: "example",
+    name: "Example",
+    media: [
+      {
+        id: "video",
+        name: "Preview",
+        type: "video",
+        url: "https://example.com/preview.mp4",
+      },
+    ],
+  });
+  const response = await POST(
+    request("POST", { referenceId: "refero:example", mediaId: "video" }),
+    context,
+  );
+  expect(response.status).toBe(400);
+  expect(mocks.put).not.toHaveBeenCalled();
+});

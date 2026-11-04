@@ -16,6 +16,14 @@ export interface CollectionMediaEntry {
   name: string;
   media: ReferenceMedia | null;
 }
+export function resolveCollectionSelection(
+  items: CollectionMediaEntry[],
+  selectedId: string | null,
+) {
+  return items.find(
+    (item) => item.id === selectedId && item.reference && item.media,
+  );
+}
 export function CollectionScreens({
   id,
   items,
@@ -25,7 +33,7 @@ export function CollectionScreens({
   items: CollectionMediaEntry[];
   onChanged: () => void;
 }) {
-  const [current, setCurrent] = useState<CollectionMediaEntry | null>(null),
+  const [currentId, setCurrentId] = useState<string | null>(null),
     [busy, setBusy] = useState(""),
     [error, setError] = useState("");
   const available = items.filter(
@@ -36,6 +44,7 @@ export function CollectionScreens({
       media: ReferenceMedia;
     } => !!item.reference && !!item.media,
   );
+  const current = resolveCollectionSelection(items, currentId);
   async function remove(item: CollectionMediaEntry) {
     setBusy(item.id);
     setError("");
@@ -78,7 +87,7 @@ export function CollectionScreens({
                 <>
                   <button
                     className={styles.open}
-                    onClick={() => setCurrent(item)}
+                    onClick={() => setCurrentId(item.id)}
                     aria-label={`Open ${item.name}: ${item.media.name}`}
                   >
                     <div className={styles.picture}>
@@ -91,21 +100,21 @@ export function CollectionScreens({
                   </button>
                   <div className={styles.caption}>
                     <strong>{item.name}</strong>
-                    <button
-                      className="text-button"
-                      disabled={busy === item.id}
-                      onClick={() => remove(item)}
-                      aria-label={`Remove ${item.media.name} from board`}
-                    >
-                      <X size={14} />
-                      Remove
-                    </button>
                   </div>
                   <p>{item.media.name}</p>
                 </>
               ) : (
                 <p className="notice">Capture unavailable: {item.mediaId}</p>
               )}
+              <button
+                className="text-button"
+                disabled={busy === item.id}
+                onClick={() => remove(item)}
+                aria-label={`Remove ${item.media?.name || item.mediaId} from board`}
+              >
+                <X size={14} />
+                Remove
+              </button>
             </article>
           ))}
         </div>
@@ -115,9 +124,11 @@ export function CollectionScreens({
           detail={current.reference}
           current={current.media}
           items={available.map((item) => item.media)}
-          onClose={() => setCurrent(null)}
+          onClose={() => setCurrentId(null)}
           onChange={(media) =>
-            setCurrent(available.find((item) => item.media === media) || null)
+            setCurrentId(
+              available.find((item) => item.media === media)?.id || null,
+            )
           }
         />
       )}
