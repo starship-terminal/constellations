@@ -81,7 +81,7 @@ function SettingsContent() {
   useEffect(() => {
     setModels([]);
     setConnection("");
-  }, [provider, baseURL]);
+  }, [provider, baseURL, apiKey]);
   useEffect(() => {
     if (data) {
       setProvider(data.provider);
@@ -255,6 +255,7 @@ function SettingsContent() {
                       <input
                         disabled={testing}
                         type="url"
+                        aria-label="Base URL"
                         value={baseURL}
                         onChange={(e) => setBaseURL(e.target.value)}
                         placeholder={DEFAULT_BASE_URL[provider]}
@@ -271,6 +272,7 @@ function SettingsContent() {
                         type="password"
                         autoComplete="off"
                         spellCheck={false}
+                        aria-label="API key"
                         value={apiKey}
                         onChange={(e) => setApiKey(e.target.value)}
                         placeholder={

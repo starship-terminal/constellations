@@ -324,6 +324,29 @@ export async function createResearchStore(directory: string) {
           set: { value: JSON.stringify(value) },
         });
     },
+    // Read-modify-write inside one write transaction so concurrent updates
+    // cannot merge a stale row back over another request's change.
+    async updateSettings(
+      mutate: (saved: Record<string, unknown>) => Record<string, unknown>,
+    ) {
+      const tx = await client.transaction("write");
+      try {
+        const result = await tx.execute(
+          "SELECT value FROM settings WHERE id='provider'",
+        );
+        const saved = result.rows.length
+          ? JSON.parse(String(result.rows[0].value))
+          : {};
+        await tx.execute({
+          sql: "INSERT INTO settings(id,value) VALUES('provider',?) ON CONFLICT(id) DO UPDATE SET value=?",
+          args: ["provider", JSON.stringify(mutate(saved))],
+        });
+        await tx.commit();
+      } catch (error) {
+        await tx.rollback();
+        throw error;
+      }
+    },
   };
 }
 export type ResearchStore = Awaited<ReturnType<typeof createResearchStore>>;

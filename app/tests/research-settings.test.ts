@@ -8,6 +8,11 @@ vi.mock("@/server/db", () => ({
     saveSettings: async (value: Record<string, unknown>) => {
       state.saved = value;
     },
+    updateSettings: async (
+      mutate: (saved: Record<string, unknown>) => Record<string, unknown>,
+    ) => {
+      state.saved = mutate(state.saved);
+    },
   }),
 }));
 afterEach(() => {
