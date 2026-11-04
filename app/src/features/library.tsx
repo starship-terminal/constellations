@@ -37,6 +37,10 @@ import {
 import { StandaloneHeader } from "@/components/shell";
 import styles from "./library.module.css";
 import { ScreenBrowser } from "./screen-browser";
+import {
+  MobileCatalogPreview,
+  originalMobilePreview,
+} from "./mobile-catalog-preview";
 import { CatalogSearch } from "./catalog-search";
 import {
   platformSearch,
@@ -767,11 +771,24 @@ function CatalogCard({
           }}
           onPointerLeave={() => setFrame(0)}
         >
-          <MediaPreview
-            image={frames[frame] || item.image}
-            video={item.video}
-            name={item.name}
-          />
+          {item.platform === "mobile" &&
+          (frames[frame] || item.imageFallback || item.image) ? (
+            <MobileCatalogPreview
+              image={
+                frames[frame]
+                  ? originalMobilePreview(frames[frame])
+                  : item.imageFallback || item.image!
+              }
+              fallback={frames[frame] || item.image || ""}
+              name={item.name}
+            />
+          ) : (
+            <MediaPreview
+              image={frames[frame] || item.image}
+              video={item.video}
+              name={item.name}
+            />
+          )}
         </div>
         <div className={styles.appMeta}>
           {item.icon ? (

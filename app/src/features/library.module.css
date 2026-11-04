@@ -308,11 +308,11 @@
 }
 .mobileCard .appShot :global(.media-preview) {
   border-radius: 14% / 6.5%;
-  background: var(--surface-raised);
+  background: transparent;
 }
 .mobileCard .appShot :global(.media-preview img),
 .mobileCard .appShot :global(.media-preview video) {
-  object-fit: contain;
+  object-fit: cover;
 }
 .mobileCard .appMeta {
   margin-top: 20px;
