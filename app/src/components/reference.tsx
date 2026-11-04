@@ -605,8 +605,13 @@ export function ExportPanel({ detail }: { detail: LibraryDetail }) {
 export async function fetchReferenceImage(
   url: string,
   fetchImage: typeof fetch = fetch,
+  signal?: AbortSignal,
 ): Promise<Blob> {
-  const response = await fetchImage(url, { mode: "cors", credentials: "omit" });
+  const response = await fetchImage(url, {
+    mode: "cors",
+    credentials: "omit",
+    ...(signal ? { signal } : {}),
+  });
   if (!response.ok) throw new Error("The image could not be downloaded.");
   const image = await response.blob();
   if (!image.size || !image.type.startsWith("image/"))
@@ -740,6 +745,7 @@ export function ReferenceInspector({
   const [origin, setOrigin] = useState("");
   const [copied, setCopied] = useState("");
   const [showVideo, setShowVideo] = useState(false);
+  const downloadRequest = useRef<AbortController | null>(null);
   const [downloading, setDownloading] = useState(false);
   const [downloadError, setDownloadError] = useState("");
   useEffect(() => {
@@ -748,7 +754,14 @@ export function ReferenceInspector({
   useEffect(() => {
     setShowVideo(false);
     setCopied("");
+    downloadRequest.current?.abort();
+    downloadRequest.current = null;
+    setDownloading(false);
     setDownloadError("");
+    return () => {
+      downloadRequest.current?.abort();
+      downloadRequest.current = null;
+    };
   }, [current?.id]);
   const reference = detail || current;
   const preview = inspectorPreview(current, detail);
@@ -757,10 +770,13 @@ export function ReferenceInspector({
     : "";
   async function downloadPreview() {
     if (!preview || downloading) return;
+    const request = new AbortController();
+    downloadRequest.current = request;
     setDownloading(true);
     setDownloadError("");
     try {
-      const image = await fetchReferenceImage(preview);
+      const image = await fetchReferenceImage(preview, fetch, request.signal);
+      if (request.signal.aborted || downloadRequest.current !== request) return;
       const objectUrl = URL.createObjectURL(image);
       const anchor = document.createElement("a");
       anchor.href = objectUrl;
@@ -772,11 +788,15 @@ export function ReferenceInspector({
       anchor.remove();
       setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
     } catch {
-      setDownloadError(
-        "This image could not be downloaded. The source may not allow downloads from this app. Your reference is still open.",
-      );
+      if (!request.signal.aborted && downloadRequest.current === request)
+        setDownloadError(
+          "This image could not be downloaded. The source may not allow downloads from this app. Your reference is still open.",
+        );
     } finally {
-      setDownloading(false);
+      if (downloadRequest.current === request) {
+        downloadRequest.current = null;
+        setDownloading(false);
+      }
     }
   }
   async function copyColor(value: string) {
