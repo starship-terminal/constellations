@@ -577,7 +577,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
                       scrub={scrub}
                       onOpen={(item) =>
                         router.push(
-                          `/library?view=screens&referenceId=${encodeURIComponent(item.id)}${platform ? `&platform=${platform}` : ""}`,
+                          `/library?view=screens&referenceId=${encodeURIComponent(item.id)}&platform=${encodeURIComponent(item.platform)}`,
                         )
                       }
                       onSelect={toggle}
