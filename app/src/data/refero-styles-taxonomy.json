@@ -1,0 +1,89 @@
+{
+  "source": "https://styles.refero.design/",
+  "capturedAt": "2026-11-04",
+  "coverage": "18 exact search-suggestion labels observed through the public Styles homepage in a background browser. The page displays eight rotating suggestions at a time. These are natural-language search presets, not a published exhaustive style-tag taxonomy. Ten suggestion query URLs were verified by clicking the corresponding visible suggestion; other terms link to the homepage where they were observed. No category tags appeared on the inspected Intercom detail page (https://styles.refero.design/style/12255b63-e506-4bc1-a4cd-d05487de32f3). Trending, Popular and Newest are sorting controls and are excluded. This capture does not claim every rotating suggestion or hidden/internal tag.",
+  "groups": [
+    {
+      "id": "styles-search-presets",
+      "label": "Search suggestions",
+      "kind": "search-preset",
+      "appliesTo": ["style"],
+      "sourceUrl": "https://styles.refero.design/",
+      "coverage": "The original page groups these unlabeled checkbox-like chips below its search field. The group label here describes that placement. Labels preserve the source text; no locally generated Refero snapshot classifications are included.",
+      "terms": [
+        {
+          "label": "Playful consumer app",
+          "sourceUrl": "https://styles.refero.design/?q=playful+consumer+app+with+bold+color"
+        },
+        {
+          "label": "Terminal & monospace",
+          "sourceUrl": "https://styles.refero.design/"
+        },
+        {
+          "label": "Linear-style SaaS",
+          "sourceUrl": "https://styles.refero.design/"
+        },
+        {
+          "label": "Like Airbnb",
+          "sourceUrl": "https://styles.refero.design/"
+        },
+        {
+          "label": "Zero border radius",
+          "sourceUrl": "https://styles.refero.design/?q=sharp+corners%2C+zero+border+radius%2C+geometric"
+        },
+        {
+          "label": "Hand-drawn & doodles",
+          "sourceUrl": "https://styles.refero.design/"
+        },
+        {
+          "label": "Non-boring enterprise",
+          "sourceUrl": "https://styles.refero.design/?q=enterprise+software+that+feels+modern+and+confident"
+        },
+        {
+          "label": "Confetti on white",
+          "sourceUrl": "https://styles.refero.design/"
+        },
+        {
+          "label": "Like Mercury",
+          "sourceUrl": "https://styles.refero.design/"
+        },
+        {
+          "label": "Podcast site",
+          "sourceUrl": "https://styles.refero.design/"
+        },
+        {
+          "label": "Newsletter landing",
+          "sourceUrl": "https://styles.refero.design/?q=newsletter+landing+page+with+editorial+serif"
+        },
+        {
+          "label": "Brutalist portfolio",
+          "sourceUrl": "https://styles.refero.design/"
+        },
+        {
+          "label": "Uppercase signage",
+          "sourceUrl": "https://styles.refero.design/?q=uppercase+stencil+signage+typography"
+        },
+        {
+          "label": "Dense marketplace",
+          "sourceUrl": "https://styles.refero.design/?q=dense+marketplace+grid+with+one+vivid+accent"
+        },
+        {
+          "label": "Bold agency site",
+          "sourceUrl": "https://styles.refero.design/?q=bold+creative+agency+with+massive+display+type"
+        },
+        {
+          "label": "Like Notion",
+          "sourceUrl": "https://styles.refero.design/?q=like+Notion%3A+white+canvas+and+friendly+illustration"
+        },
+        {
+          "label": "Like Stripe",
+          "sourceUrl": "https://styles.refero.design/?q=like+Stripe%3A+gradient+hero+and+precise+type"
+        },
+        {
+          "label": "Chrome & 3D objects",
+          "sourceUrl": "https://styles.refero.design/?q=chrome+3D+objects+and+Y2K+futurism"
+        }
+      ]
+    }
+  ]
+}

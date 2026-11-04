@@ -19,6 +19,7 @@ import {
   Archive,
   Pencil,
   ArchiveRestore,
+  Tags,
 } from "lucide-react";
 import { api, Modal } from "./shared";
 export function Mark() {
@@ -100,6 +101,13 @@ function CatalogNavigation({ onNavigate }: { onNavigate: () => void }) {
       >
         <BookOpen size={20} />
         Documents
+      </Link>
+      <Link
+        className={`nav-link ${path === "/taxonomy" ? "active" : ""}`}
+        href="/taxonomy"
+      >
+        <Tags size={20} />
+        Categorisation guide
       </Link>
       <Link
         className={`nav-link ${path.startsWith("/scorecard") ? "active" : ""}`}

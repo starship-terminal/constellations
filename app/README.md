@@ -43,6 +43,10 @@ The UI follows the approved local Refero mockup and the measured [Refero package
 
 Measured package records and interpreted Refero styles retain separate source identities. The library does not represent the complete live Refero screenshot catalog. A screenshot folder is not presented as an ordered interaction flow without supporting metadata. Research must link recommendations to actual inspected references and acknowledge gaps in its evidence.
 
+## Categorisation
+
+Use the [categorisation guide](docs/taxonomy.md) and the app’s `/taxonomy` page for Refero’s captured product, screen, flow, UX-pattern and UI-element vocabularies. `/api/taxonomy` exports the same data. Future importers should validate labels against this contract and retain assignment evidence; existing assets are not automatically relabelled. Styles search suggestions remain separate from classification tags.
+
 ## Checks
 
 ```sh
