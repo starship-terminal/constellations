@@ -289,6 +289,9 @@ export function CatalogSearch({
     input.current?.blur();
   }
   function onKeyDown(event: KeyboardEvent<HTMLInputElement>) {
+    // IME confirmation keys finish the composed word, not a search selection.
+    if (event.nativeEvent.isComposing || event.nativeEvent.keyCode === 229)
+      return;
     if (event.key === "Escape") {
       event.preventDefault();
       dismissPicker();
