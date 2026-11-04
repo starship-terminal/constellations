@@ -37,6 +37,8 @@ const legacyCategoryLabels: Record<string, string> = {
   hardware: "Electronic & Devices",
   "food-drink": "Food & Drink",
   browser: "Utility",
+  events: "Scheduling Tools",
+  "super-app": "Travel & Booking",
 };
 const categorySlug = (value: string) =>
   value

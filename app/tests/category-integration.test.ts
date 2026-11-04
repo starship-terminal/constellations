@@ -94,6 +94,19 @@ describe("database categories across apps and screens", () => {
     expect(matchesCategory(reference, "learning")).toBe(true);
     expect(matchesCategory(reference, "education")).toBe(true);
     expect(
+      matchesCategory(
+        { category: "", categoryIds: ["ios-categories:scheduling-tools"] },
+        "events",
+      ),
+    ).toBe(true);
+    expect(
+      matchesCategory(
+        { category: "", categoryIds: ["ios-categories:travel-booking"] },
+        "super-app",
+      ),
+    ).toBe(true);
+
+    expect(
       matchesCategory({ ...reference, categoryIds: [] }, "education"),
     ).toBe(false);
     expect(
