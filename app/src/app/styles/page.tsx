@@ -1,4 +1,4 @@
-import { LibraryPage } from "@/features/library";
+import { StylesIndex } from "@/features/styles-index";
 export default function Page() {
-  return <LibraryPage standalone />;
+  return <StylesIndex />;
 }

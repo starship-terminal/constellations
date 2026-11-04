@@ -535,3 +535,29 @@
     transition: none;
   }
 }
+
+.listView {
+  grid-template-columns: 1fr !important;
+}
+.listView .openCard {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.listView .appShot {
+  width: 220px;
+  height: 150px;
+  flex-shrink: 0;
+}
+.listView .appMeta {
+  flex: 1;
+}
+@media (max-width: 760px) {
+  .listView .appShot {
+    width: 130px;
+    height: 110px;
+  }
+  .listView .openCard {
+    gap: 12px;
+  }
+}

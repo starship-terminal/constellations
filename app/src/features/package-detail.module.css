@@ -1,0 +1,688 @@
+.page {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 32px 40px 80px;
+  min-width: 0;
+}
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+.header h1 {
+  font-size: 34px;
+  letter-spacing: -1.2px;
+  margin: 4px 0 10px;
+}
+.header p {
+  max-width: 780px;
+  line-height: 1.6;
+  margin: 4px 0;
+}
+.icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+}
+.kicker {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.meta {
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.header > .actions {
+  margin-left: auto;
+  justify-content: flex-end;
+  max-width: 380px;
+}
+.tabs {
+  display: flex;
+  gap: 5px;
+  border-bottom: 1px solid var(--line);
+  overflow-x: auto;
+  margin-bottom: 28px;
+  padding-bottom: 10px;
+}
+.tabs button {
+  white-space: nowrap;
+  background: none;
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 13px;
+  color: var(--muted);
+  font-size: 13px;
+  cursor: pointer;
+}
+.tabs button[aria-current] {
+  background: var(--surface-raised);
+  color: var(--ink);
+}
+.tabs span {
+  font-size: 10px;
+  margin-left: 8px;
+  opacity: 0.7;
+}
+.toolbar {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.search {
+  min-width: 280px;
+  flex: 1;
+  max-width: 500px;
+}
+.search input,
+.fileList input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+}
+.chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.chips span {
+  font-size: 10px;
+  opacity: 0.6;
+  margin-left: 4px;
+}
+.chips button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--surface);
+}
+.mediaGroup {
+  margin-top: 30px;
+}
+.mediaGroup h2 {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.tile {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface);
+}
+.tile > .tileOpen {
+  background: none;
+  border: 0;
+  padding: 0;
+  display: block;
+  text-align: left;
+  width: 100%;
+  color: inherit;
+  cursor: pointer;
+}
+.frame {
+  height: 240px;
+  overflow: hidden;
+  background: var(--surface-raised);
+  border-bottom: 1px solid var(--line);
+}
+.frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: top;
+}
+.contain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.contain img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
+.tile strong,
+.tileOpen > span {
+  display: block;
+  padding: 0 14px;
+  overflow-wrap: anywhere;
+}
+.tile strong {
+  font-size: 12px;
+  margin: 13px 30px 7px 0;
+  font-weight: 500;
+}
+.tileOpen > span {
+  font-size: 10px;
+  color: var(--muted);
+  margin-bottom: 13px;
+}
+.tile > button:not(.tileOpen) {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+}
+.iconGrid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+.iconGrid .frame {
+  height: 130px;
+}
+.iconGrid .frame img {
+  max-width: 72px;
+  max-height: 72px;
+}
+.phoneGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.phoneGrid .frame {
+  height: 380px;
+}
+.phoneGrid .frame img {
+  object-fit: contain;
+}
+.more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin: 32px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: #101114cc;
+  backdrop-filter: blur(5px);
+}
+.lightbox {
+  position: fixed;
+  inset: 3vh 3vw;
+  z-index: 151;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  outline: none;
+}
+.lightbox header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--line);
+}
+.lightbox h2 {
+  margin: 0;
+  font-size: 15px;
+}
+.lightbox header p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 6px 0 0;
+}
+.lightboxStage {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  text-align: center;
+  background: var(--surface-raised);
+  padding: 20px;
+}
+.lightboxStage img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+.lightboxStage video {
+  max-width: 100%;
+  max-height: 100%;
+}
+.lightbox footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 24px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+.filesLayout {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 30px;
+}
+.fileList {
+  max-height: calc(100vh - 100px);
+  overflow: auto;
+  position: sticky;
+  top: 20px;
+  align-self: start;
+  border: 1px solid var(--line);
+  padding: 15px;
+  border-radius: 12px;
+}
+.fileList details {
+  margin: 12px 0;
+  font-size: 12px;
+}
+.fileList summary {
+  cursor: pointer;
+  color: var(--muted);
+  padding: 9px 0;
+}
+.fileList a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 9px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+}
+.fileList a span {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.fileList small {
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: 9px;
+}
+.fileList a[aria-current] {
+  background: var(--surface-raised);
+}
+.document {
+  min-width: 0;
+}
+.sectionHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.sectionHeading h2 {
+  font-size: 18px;
+  margin: 0 0 6px;
+}
+.source {
+  font:
+    12px/1.8 ui-monospace,
+    monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px;
+  max-height: 80vh;
+  overflow: auto;
+}
+.markdown {
+  max-width: 1000px;
+  font-size: 14px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.markdown h1 {
+  font-size: 28px;
+  line-height: 1.25;
+  margin: 20px 0;
+}
+.markdown h2 {
+  font-size: 21px;
+  margin: 36px 0 14px;
+  scroll-margin-top: 20px;
+}
+.markdown h3 {
+  font-size: 16px;
+  margin: 25px 0 10px;
+  scroll-margin-top: 20px;
+}
+.markdown a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.markdown img {
+  max-width: 100%;
+  max-height: 700px;
+  object-fit: contain;
+}
+.markdown table {
+  display: block;
+  overflow: auto;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 12px;
+}
+.markdown th,
+.markdown td {
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+  min-width: 100px;
+}
+.markdown pre {
+  overflow: auto;
+  background: var(--surface-raised);
+  padding: 18px;
+  border-radius: 8px;
+  font:
+    12px/1.8 ui-monospace,
+    monospace;
+}
+.markdown code {
+  font-size: 0.85em;
+}
+.markdown blockquote {
+  border-left: 3px solid var(--line);
+  margin-left: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+.guide {
+  display: block;
+  width: 100%;
+  height: 78vh;
+  min-height: 500px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+.valuesLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 400px;
+  gap: 32px;
+  align-items: start;
+}
+.valuesLayout > section:last-child {
+  position: sticky;
+  top: 15px;
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+}
+.tokenContent {
+  min-width: 0;
+}
+.tokenContent > section {
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 30px;
+}
+.tokenContent h2 {
+  font-size: 20px;
+  margin: 0 0 20px;
+}
+.fonts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.fonts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid var(--line);
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.fonts strong {
+  font-size: 24px;
+}
+.fonts code,
+.fonts small {
+  font-size: 10px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.typeRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.typeRow > div {
+  min-width: 140px;
+}
+.typeRow strong {
+  font-size: 12px;
+}
+.typeRow code {
+  display: block;
+  font-size: 10px;
+  margin-top: 7px;
+  color: var(--muted);
+}
+.typeRow p {
+  max-width: 60%;
+  margin: 0;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.spaceRow {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr) 60px;
+  gap: 15px;
+  margin: 16px 0;
+  font-size: 11px;
+}
+.spaceRow > span {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.spaceRow i {
+  display: block;
+  max-width: 100%;
+  height: 8px;
+  background: var(--ink);
+  border-radius: 2px;
+}
+.radiusGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.radiusGrid > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--line);
+  padding: 18px 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.radiusGrid i {
+  display: block;
+  width: 55px;
+  height: 55px;
+  border: 1px solid var(--ink);
+  background: var(--surface-raised);
+}
+.radiusGrid strong,
+.radiusGrid code {
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+.shadowGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  padding: 25px;
+  border-radius: 10px;
+}
+.shadowGrid figure {
+  margin: 0;
+  padding: 12px;
+}
+.shadowGrid figure > div {
+  height: 90px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.shadowGrid strong,
+.shadowGrid code {
+  display: block;
+  font-size: 10px;
+  overflow-wrap: anywhere;
+  margin-bottom: 8px;
+}
+.allTokens {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.allTokens summary {
+  cursor: pointer;
+  font-size: 13px;
+}
+@media (min-width: 1600px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .iconGrid {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+}
+@media (max-width: 1100px) {
+  .valuesLayout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .valuesLayout > section:last-child {
+    position: static;
+    max-height: none;
+  }
+  .header {
+    flex-wrap: wrap;
+  }
+  .header > .actions {
+    margin-left: 0;
+    max-width: none;
+  }
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .iconGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .phoneGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .filesLayout {
+    grid-template-columns: 230px minmax(0, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .page {
+    padding: 22px 18px 60px;
+  }
+  .header h1 {
+    font-size: 28px;
+  }
+  .header > .actions {
+    width: 100%;
+  }
+  .icon {
+    width: 44px;
+    height: 44px;
+  }
+  .grid,
+  .phoneGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .frame {
+    height: 180px;
+  }
+  .phoneGrid .frame {
+    height: 280px;
+  }
+  .iconGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .filesLayout {
+    display: block;
+  }
+  .fileList {
+    position: static;
+    max-height: 280px;
+    margin-bottom: 24px;
+  }
+  .lightbox {
+    inset: 8px;
+  }
+  .lightbox header,
+  .lightbox footer {
+    padding: 12px;
+  }
+  .fonts {
+    grid-template-columns: 1fr;
+  }
+  .typeRow {
+    display: block;
+  }
+  .typeRow p {
+    max-width: 100%;
+    margin-top: 14px;
+  }
+  .radiusGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .spaceRow {
+    grid-template-columns: 110px minmax(0, 1fr) 50px;
+  }
+  .shadowGrid {
+    grid-template-columns: 1fr;
+  }
+}

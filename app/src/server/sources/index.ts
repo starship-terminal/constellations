@@ -3,6 +3,8 @@ import type {
   LibraryItem,
   LibraryQuery,
   ReferenceMedia,
+  MeasuredPackageDetail,
+  InterpretedStyleDetail,
   ReferenceValue,
   Source,
 } from "@/contracts/library";
@@ -17,6 +19,8 @@ import {
   referoMedia,
   remoteUrl,
   repoRoot,
+  listPackageDocuments,
+  readPackageDocument,
 } from "./files";
 
 // Source JSON is deliberately accepted at the boundary; only normalized contracts leave this module.
@@ -110,6 +114,17 @@ async function normalize(
     category:
       row.category || row.industry || row.product_type || row.type || "",
     image,
+    imageFallback: measured
+      ? await imageUrl(row.cover?.path || row.preview?.cover)
+      : remoteUrl(remoteCard),
+    videoFallback: measured
+      ? null
+      : cdnUrl(row.videoRemote) || remoteUrl(meta?.video_url),
+    iconFallback: measured
+      ? null
+      : remoteUrl(row.source_url || meta?.source_url)
+        ? `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&size=128&url=${encodeURIComponent(row.source_url || meta?.source_url)}`
+        : null,
     icon: measured
       ? await imageUrl(row.preview?.icon || row.icon)
       : await referoMedia(`/refero-media/favicons/${row.slug}.png`, null),
@@ -122,6 +137,22 @@ async function normalize(
         : null,
     evidence: measured ? "measured" : "interpreted",
     captured: row.captured || row.extracted_at || null,
+    productType: row.product_type || row.type || null,
+    designStyle: row.design_style || row.style || null,
+    industry: row.industry || null,
+    sourceUrl: remoteUrl(row.url || row.source_url || meta?.source_url),
+    fonts: measured
+      ? (row.fonts || []).map((f: Raw) => f.family).filter(Boolean)
+      : [],
+    previewFrames: measured
+      ? (
+          await Promise.all(
+            (row.screenshots || [])
+              .slice(0, 8)
+              .map((shot: Raw) => imageUrl(shot.thumb || shot.path)),
+          )
+        ).filter((url): url is string => !!url)
+      : [],
   };
 }
 // A short cache avoids thousands of filesystem lookups on each filter keystroke, while allowing captures to refresh.
@@ -165,9 +196,18 @@ export async function listLibrary(
     (item) =>
       (!query.source || item.source === query.source) &&
       (!query.platform || item.platform === query.platform) &&
-      (!query.theme || item.themes.includes(query.theme)) &&
+      (!query.theme ||
+        item.themes.some(
+          (theme) =>
+            theme === query.theme || theme.startsWith(`${query.theme}-`),
+        )) &&
+      (!query.category || item.category === query.category) &&
+      (!query.productType || item.productType === query.productType) &&
+      (!query.designStyle || item.designStyle === query.designStyle) &&
+      (!query.industry || item.industry === query.industry) &&
+      (!query.tag || item.tags.includes(query.tag)) &&
       words.every((w) =>
-        `${item.name} ${item.slug} ${item.description} ${item.tags.join(" ")} ${item.category}`
+        `${item.name} ${item.slug} ${item.description} ${item.tags.join(" ")} ${item.category} ${item.themes.join(" ")} ${(item.fonts || []).join(" ")} ${item.productType || ""} ${item.designStyle || ""} ${item.industry || ""}`
           .toLowerCase()
           .includes(w),
       ),
@@ -251,87 +291,163 @@ function resolvedTokens(tokens: Raw): (ReferenceValue & { type?: string })[] {
     value: resolve(v.value, new Set([v.name])),
   }));
 }
-async function packageMedia(slug: string, row: Raw): Promise<ReferenceMedia[]> {
-  const generated = await readJson<Raw>("web/data/data.json");
-  const rich = generated?.systems?.find((s: Raw) => s.slug === slug) || row;
-  let shots: Raw[] = [...(rich.screenshots || []), ...(rich.components || [])];
-  if (!shots.length) {
-    const packageDir = path.join(
-      /* turbopackIgnore: true */ repoRoot(),
-      "systems",
-      slug,
-    );
-    try {
-      const [realRepo, realPackage, screenshots] = await Promise.all([
-        fs.realpath(/* turbopackIgnore: true */ repoRoot()),
-        fs.realpath(/* turbopackIgnore: true */ packageDir),
-        fs.realpath(
-          /* turbopackIgnore: true */ path.join(
-            /* turbopackIgnore: true */ packageDir,
-            "screenshots",
-          ),
-        ),
-      ]);
-      if (
-        contained(realRepo, realPackage) &&
-        contained(realPackage, screenshots)
-      ) {
-        let directories = 0;
-        // Captures may group screenshots under light/dark or screen-specific folders.
-        // Ignore symlink entries and cap traversal even in unusually large packages.
-        async function walk(
-          dir: string,
-          relative: string,
-          depth: number,
-        ): Promise<void> {
-          if (depth > 8 || directories >= 100 || shots.length >= 500) return;
-          directories++;
-          const entries = (
-            await fs.readdir(/* turbopackIgnore: true */ dir, {
-              withFileTypes: true,
-            })
-          ).sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
-          for (const entry of entries) {
-            if (shots.length >= 500) break;
-            const nested = relative ? `${relative}/${entry.name}` : entry.name;
-            if (entry.isDirectory()) {
-              await walk(
-                path.join(/* turbopackIgnore: true */ dir, entry.name),
-                nested,
-                depth + 1,
-              );
-            } else if (entry.isFile() && mediaMime(entry.name)) {
-              shots.push({
-                path: `systems/${slug}/screenshots/${nested}`,
-                name: nested.replace(/\.[^.]+$/, ""),
-                tags: nested
-                  .split("/")
-                  .filter((part) => part === "light" || part === "dark"),
-              });
-            }
-          }
-        }
-        await walk(screenshots, "", 0);
+async function scanPackageMedia(
+  slug: string,
+  folder: string,
+  kind: "screenshot" | "crop" | "icon" | "board",
+): Promise<Raw[]> {
+  const dir = path.join(
+    /* turbopackIgnore: true */ repoRoot(),
+    "systems",
+    slug,
+  );
+  const out: Raw[] = [];
+  try {
+    const [realRepo, realPackage, realFolder] = await Promise.all([
+      fs.realpath(/* turbopackIgnore: true */ repoRoot()),
+      fs.realpath(/* turbopackIgnore: true */ dir),
+      fs.realpath(/* turbopackIgnore: true */ path.join(dir, folder)),
+    ]);
+    if (
+      !contained(realRepo, realPackage) ||
+      !contained(realPackage, realFolder)
+    )
+      return [];
+    async function walk(relative: string, depth: number): Promise<void> {
+      if (depth > 12 || out.length > 20_000) return;
+      const entries = (
+        await fs.readdir(
+          path.join(/* turbopackIgnore: true */ realFolder, relative),
+          { withFileTypes: true },
+        )
+      ).sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
+      for (const entry of entries) {
+        const nested = relative ? `${relative}/${entry.name}` : entry.name;
+        if (entry.isDirectory() && !entry.name.startsWith("."))
+          await walk(nested, depth + 1);
+        else if (entry.isFile() && mediaMime(entry.name))
+          out.push({
+            path: `systems/${slug}/${folder}/${nested}`,
+            name: nested.replace(/\.[^.]+$/, ""),
+            kind,
+            group: relative ? `${folder}/${relative}` : folder,
+            tags: [
+              ...new Set(
+                nested
+                  .split(/[\/_.-]/)
+                  .filter((part) => ["light", "dark", "mobile"].includes(part)),
+              ),
+            ],
+          });
       }
-    } catch {
-      /* No captured screenshots available in this checkout. */
     }
+    await walk("", 0);
+  } catch {
+    /* This package has no directory for this media kind. */
   }
+  return out;
+}
+async function packageMedia(slug: string, row: Raw): Promise<ReferenceMedia[]> {
+  const screenshots: Raw[] = row.screenshots?.length
+    ? row.screenshots
+    : await scanPackageMedia(slug, "screenshots", "screenshot");
+  const crops: Raw[] = row.components?.length
+    ? row.components
+    : await scanPackageMedia(slug, "components", "crop");
+  // The generated icon preview is capped. Enumerate the canonical icon directory.
+  const [icons, boards] = await Promise.all([
+    scanPackageMedia(slug, "icons", "icon"),
+    scanPackageMedia(slug, "boards", "board"),
+  ]);
+  const shots: Raw[] = [
+    ...screenshots.map((s) => ({ ...s, kind: "screenshot" as const })),
+    ...crops.map((s) => ({ ...s, kind: "crop" as const })),
+    ...icons,
+    ...boards,
+  ];
   const media = await Promise.all(
-    shots.map(async (shot, i): Promise<ReferenceMedia | null> => {
-      const url = (await imageUrl(shot.path)) || (await imageUrl(shot.thumb));
-      return url
-        ? {
-            id: `${slug}-${i}`,
-            name: shot.name || path.basename(shot.path),
-            url,
-            type: /\.(mp4|webm|mov)$/i.test(shot.path) ? "video" : "image",
-            tags: strings(shot.tags),
-          }
-        : null;
+    shots.map(async (shot): Promise<ReferenceMedia | null> => {
+      // Require the original to be a valid hydrated package asset. Thumbnails never
+      // substitute for the original identity or allow reads outside this package.
+      if (
+        typeof shot.path !== "string" ||
+        !shot.path.startsWith(`systems/${slug}/`)
+      )
+        return null;
+      const url = await imageUrl(shot.path);
+      if (!url) return null;
+      return {
+        id: shot.path,
+        path: shot.path,
+        kind: shot.kind,
+        name: shot.name || path.basename(shot.path),
+        url,
+        thumbnail: await imageUrl(shot.thumb),
+        group: shot.group || "",
+        type: /\.(mp4|webm|mov)$/i.test(shot.path) ? "video" : "image",
+        tags: strings(shot.tags),
+      };
     }),
   );
   return media.filter((m): m is ReferenceMedia => !!m);
+}
+function packageRelative(
+  slug: string,
+  value: unknown,
+  fallback: string,
+): string {
+  if (typeof value !== "string") return fallback;
+  return value.replace(new RegExp(`^systems/${slug}/`), "");
+}
+async function measuredDetail(
+  slug: string,
+  row: Raw,
+  media: ReferenceMedia[],
+): Promise<MeasuredPackageDetail> {
+  const id = `systems:${slug}`;
+  const readmePath = packageRelative(slug, row.entry, "README.md");
+  const [documents, readme, guide] = await Promise.all([
+    listPackageDocuments(id),
+    readPackageDocument(id, readmePath),
+    readPackageDocument(
+      id,
+      packageRelative(slug, row.styleGuide, "style-guide.html"),
+    ),
+  ]);
+  const icons = media.filter((m) => m.kind === "icon");
+  return {
+    screenshots: media.filter((m) => m.kind === "screenshot"),
+    crops: media.filter((m) => m.kind === "crop"),
+    icons,
+    boards: media.filter((m) => m.kind === "board"),
+    iconTotal: icons.length,
+    documents,
+    readme: readme?.text || "",
+    readmePath,
+    styleGuide: guide
+      ? `/api/packages/${slug}/guide/${guide.path.split("/").map(encodeURIComponent).join("/")}`
+      : null,
+    capture: row.capture || null,
+    widths: Array.isArray(row.widths)
+      ? row.widths
+          .filter(
+            (value: unknown) =>
+              typeof value === "string" || typeof value === "number",
+          )
+          .map(String)
+      : [],
+    access: row.access || "",
+    notes: row.notes || "",
+    tokenTheme: row.tokenTheme || row.themes?.[0] || "light",
+    swatches: row.swatches || {},
+    fonts: row.fonts || [],
+    typeStyles: row.typeStyles || [],
+    spacing: row.spacing || [],
+    radii: row.radii || [],
+    shadows: row.shadows || [],
+    omitted: row.omitted || {},
+    layoutGaps: row.layoutGaps || {},
+  };
 }
 export type ExportFormat =
   "DESIGN.md" | "variables.css" | "theme.css" | "tokens.json";
@@ -380,6 +496,8 @@ export async function getReference(id: string): Promise<LibraryDetail | null> {
     descriptionLong = item.description,
     guidelines: string[] = [],
     sourceUrl: string | null = null;
+  let measured: MeasuredPackageDetail | undefined;
+  let interpreted: InterpretedStyleDetail | undefined;
   let colors = values.filter((v) => v.type === "color"),
     typography = values.filter(
       (v) =>
@@ -390,11 +508,12 @@ export async function getReference(id: string): Promise<LibraryDetail | null> {
       /(^|\.)(spacing|space)(\.|$)/i.test(v.name),
     ),
     radii = values.filter((v) => /radius|radii/.test(v.name));
-  const { systems } = await sourceRows();
+  const { systems, refero } = await sourceRows();
   if (source === "systems") {
     const row = systems.find((r) => r.slug === slug) || {};
     sourceUrl = remoteUrl(row.url);
     media = await packageMedia(slug, row);
+    measured = await measuredDetail(slug, row, media);
     // Preserve individual evidence labels. Package-level "measured" describes the capture source, not every value.
     const readme = await readText(`systems/${slug}/README.md`);
     if (readme)
@@ -412,10 +531,14 @@ export async function getReference(id: string): Promise<LibraryDetail | null> {
     const design = ds || entity?.ds || {};
     sourceUrl = remoteUrl(meta?.source_url || entity?.source_url);
     descriptionLong = design.description || item.description;
-    const candidates = entity?.media || {
+    const candidates: Record<string, Raw> = entity?.media || {
       shot: {
         local: `/refero-media/shots/${slug}.jpg`,
         remote: meta?.screenshot_url,
+      },
+      poster: {
+        local: `/refero-media/posters/${slug}.jpg`,
+        remote: meta?.video_poster_url,
       },
       video: {
         local: `/refero-media/videos/${slug}.mp4`,
@@ -425,25 +548,90 @@ export async function getReference(id: string): Promise<LibraryDetail | null> {
         local: `/refero-media/detail/${slug}.mp4`,
         remote: meta?.video_detail_url,
       },
+      detail_poster: {
+        local: `/refero-media/detail-posters/${slug}.jpg`,
+        remote: meta?.video_detail_poster_url,
+      },
+      favicon: {
+        local: `/refero-media/favicons/${slug}.png`,
+        remote:
+          meta?.favicon_url ||
+          (sourceUrl
+            ? `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&size=128&url=${encodeURIComponent(sourceUrl)}`
+            : null),
+      },
     };
-    for (const [key, value] of Object.entries(candidates) as [string, Raw][]) {
-      if (!value || ["favicon", "poster", "detail_poster"].includes(key))
-        continue;
+    const labels: Record<string, string> = {
+      shot: "Full page",
+      poster: "Page recording poster",
+      video: "Page recording",
+      detail: "Detail recording",
+      detail_poster: "Detail recording poster",
+      favicon: "Favicon",
+    };
+    for (const key of [
+      "shot",
+      "poster",
+      "video",
+      "detail",
+      "detail_poster",
+      "favicon",
+    ] as const) {
+      const value = candidates[key];
+      if (!value) continue;
       const url = await referoMedia(value.local, value.remote);
-      if (url)
-        media.push({
-          id: key,
-          name:
-            key === "shot"
-              ? "Full page"
-              : key === "detail"
-                ? "Detail recording"
-                : "Page recording",
-          url,
-          type: ["video", "detail"].includes(key) ? "video" : "image",
-          tags: [],
-        });
+      if (!url) continue;
+      const poster = candidates[key === "detail" ? "detail_poster" : "poster"];
+      media.push({
+        id: key,
+        kind: key,
+        name: labels[key],
+        url,
+        path: value.local,
+        group: "refero",
+        type: ["video", "detail"].includes(key) ? "video" : "image",
+        tags: [],
+        fallback: remoteUrl(value.remote),
+        poster:
+          ["video", "detail"].includes(key) && poster
+            ? await referoMedia(poster.local, poster.remote)
+            : null,
+      });
     }
+    const row = refero.find((r) => r.slug === slug) || {};
+    const similar = entity?.similar || design.similar || [];
+    interpreted = {
+      designSystem: design,
+      pageUrl: remoteUrl(meta?.page_url || entity?.page_url || row.page_url),
+      sourceUrl,
+      productType: item.productType || entity?.type || null,
+      designStyle: item.designStyle || entity?.style || null,
+      industry: item.industry || entity?.industry || null,
+      tags: item.tags,
+      theme: item.themes[0] || null,
+      similar: Array.isArray(similar)
+        ? similar.map((r: Raw) => {
+            const name =
+              typeof r.name === "string"
+                ? r.name
+                : typeof r.business === "string"
+                  ? r.business
+                  : null;
+            const match = items.find(
+              (candidate) =>
+                candidate.source === "refero" &&
+                (candidate.slug === r.slug ||
+                  (name &&
+                    candidate.name.toLowerCase() === name.toLowerCase())),
+            );
+            return {
+              slug: match?.slug || null,
+              name,
+              why: typeof r.why === "string" ? r.why : null,
+            };
+          })
+        : [],
+    };
     if (Array.isArray(design.colors))
       colors = design.colors
         .filter((c: Raw) => c.hex)
@@ -486,6 +674,8 @@ export async function getReference(id: string): Promise<LibraryDetail | null> {
   return {
     ...item,
     sourceUrl,
+    measured,
+    interpreted,
     media,
     colors,
     typography,
@@ -495,14 +685,29 @@ export async function getReference(id: string): Promise<LibraryDetail | null> {
     guidelines,
     exports: await exportLinks(item),
     related: items
-      .filter(
-        (i) =>
-          i.id !== id &&
-          i.source === source &&
-          (i.category === item.category ||
-            i.tags.some((t) => item.tags.includes(t))),
+      .filter((i) => i.id !== id && i.source === source)
+      .map((candidate) => ({
+        candidate,
+        score:
+          (candidate.category === item.category ? 2 : 0) +
+          (candidate.productType && candidate.productType === item.productType
+            ? 3
+            : 0) +
+          (candidate.designStyle && candidate.designStyle === item.designStyle
+            ? 3
+            : 0) +
+          candidate.tags.filter((tag) => item.tags.includes(tag)).length +
+          (candidate.themes.some((theme) => item.themes.includes(theme))
+            ? 1
+            : 0),
+      }))
+      .filter(({ score }) => score > 0)
+      .sort(
+        (a, b) =>
+          b.score - a.score || a.candidate.name.localeCompare(b.candidate.name),
       )
-      .slice(0, 6),
+      .slice(0, 6)
+      .map(({ candidate }) => candidate),
   };
 }
 

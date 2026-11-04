@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./style-detail.module.css";
 import { useResource, ErrorState, Spinner } from "@/components/shared";
 import { StandaloneHeader } from "@/components/shell";
-import { DetailOverview, ExportPanel } from "@/components/reference";
+import { StyleOverview, StyleDocuments } from "./style-reference";
 import type { LibraryDetail } from "@/contracts/library";
 export function StyleDetailPage({
   source,
@@ -32,9 +32,9 @@ export function StyleDetailPage({
         detail && (
           <div className={styles.split} id="main-content">
             <div className={styles.overview}>
-              <DetailOverview detail={detail} />
+              <StyleOverview detail={detail} />
             </div>
-            <ExportPanel detail={detail} />
+            <StyleDocuments detail={detail} />
           </div>
         )
       )}

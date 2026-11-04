@@ -39,11 +39,17 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 1)
+    if (version > 2)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
       await tx.execute("PRAGMA user_version = 1");
+    }
+    if (version < 2) {
+      await tx.execute(
+        "CREATE TABLE saved_media (reference_id TEXT NOT NULL, media_id TEXT NOT NULL, saved_at INTEGER NOT NULL, PRIMARY KEY(reference_id, media_id))",
+      );
+      await tx.execute("PRAGMA user_version = 2");
     }
     await tx.commit();
   } catch (error) {
@@ -197,6 +203,28 @@ export async function createResearchStore(directory: string) {
         ],
         "write",
       );
+    },
+    async listSavedMedia() {
+      const result = await client.execute(
+        "SELECT reference_id AS referenceId, media_id AS mediaId, saved_at AS savedAt FROM saved_media ORDER BY saved_at DESC",
+      );
+      return result.rows.map((row) => ({
+        referenceId: String(row.referenceId),
+        mediaId: String(row.mediaId),
+        savedAt: Number(row.savedAt),
+      }));
+    },
+    async saveMedia(referenceId: string, mediaId: string) {
+      await client.execute({
+        sql: "INSERT INTO saved_media(reference_id,media_id,saved_at) VALUES(?,?,?) ON CONFLICT(reference_id,media_id) DO NOTHING",
+        args: [referenceId, mediaId, Date.now()],
+      });
+    },
+    async removeSavedMedia(referenceId: string, mediaId: string) {
+      await client.execute({
+        sql: "DELETE FROM saved_media WHERE reference_id=? AND media_id=?",
+        args: [referenceId, mediaId],
+      });
     },
     async getSettings(): Promise<Record<string, unknown>> {
       const [row] = await db

@@ -89,7 +89,11 @@ export function ReferenceCard({
       ) : (
         <Link
           className="card-open"
-          href={`/styles/${item.source}/${item.slug}`}
+          href={
+            item.source === "systems"
+              ? `/library/${item.slug}`
+              : `/styles/refero/${item.slug}`
+          }
         >
           {content}
         </Link>
@@ -408,7 +412,11 @@ export function DetailOverview({
         )}
         {inspector && (
           <Link
-            href={`/styles/${detail.source}/${detail.slug}`}
+            href={
+              detail.source === "systems"
+                ? `/library/${detail.slug}`
+                : `/styles/refero/${detail.slug}`
+            }
             className="pill"
           >
             Style documentation
@@ -1080,7 +1088,11 @@ export function ReferenceInspector({
               {reference && (
                 <Link
                   className={referenceStyles.documentationLink}
-                  href={`/styles/${reference.source}/${reference.slug}`}
+                  href={
+                    reference.source === "systems"
+                      ? `/library/${reference.slug}`
+                      : `/styles/refero/${reference.slug}`
+                  }
                 >
                   Style documentation <ArrowRight size={13} />
                 </Link>

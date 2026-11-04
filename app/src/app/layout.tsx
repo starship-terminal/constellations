@@ -1,3 +1,4 @@
+import { AppearanceBootstrap } from "@/components/appearance";
 import type { Metadata } from "next";
 import { AppShell } from "@/components/shell";
 import "./globals.css";
@@ -17,6 +18,7 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>
+        <AppearanceBootstrap />
         <AppShell>{children}</AppShell>
       </body>
     </html>

@@ -1,4 +1,5 @@
 "use client";
+import { SavedMedia } from "@/components/media-bookmark";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import {
@@ -129,6 +130,7 @@ export function CollectionsPage() {
           </button>
         </Empty>
       )}
+      <SavedMedia />
       <Modal
         open={create}
         onOpenChange={setCreate}

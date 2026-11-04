@@ -1,0 +1,708 @@
+.overview {
+  padding: 30px 40px 64px;
+  min-width: 0;
+}
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--subtle);
+  font-size: 12px;
+  margin-bottom: 28px;
+}
+.title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+}
+.title h1 {
+  font: 400 44px/1.1 var(--sans);
+  letter-spacing: -1.5px;
+  overflow-wrap: anywhere;
+}
+.title > img {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  object-fit: contain;
+}
+.tagline {
+  margin-top: 16px;
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.5;
+}
+.description {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+  margin-top: 12px;
+}
+.facets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 20px;
+}
+.facets a {
+  padding: 5px 9px;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  font-size: 11px;
+}
+.facets a:hover {
+  color: var(--ink);
+  border-color: var(--strong-line);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.actions > button {
+  font-size: 12px;
+}
+.evidence {
+  border-left: 2px solid var(--muted);
+  margin: 24px 0;
+  padding: 0 0 0 12px;
+  font-size: 11px;
+}
+.evidence strong {
+  font-weight: 500;
+}
+.evidence p {
+  color: var(--subtle);
+  margin-top: 4px;
+}
+.mediaSection {
+  margin: 30px 0;
+}
+.mediaTabs,
+.documentTabs {
+  display: flex;
+  overflow-x: auto;
+  gap: 4px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+}
+.mediaTabs button,
+.documentTabs button {
+  white-space: nowrap;
+  font-size: 11px;
+  color: var(--subtle);
+  padding: 8px 10px;
+  border-radius: 7px;
+}
+.mediaTabs button[aria-selected="true"],
+.documentTabs button[aria-selected="true"] {
+  background: var(--surface-raised);
+  color: var(--ink);
+}
+.mediaViewer {
+  margin-top: 12px;
+  background: var(--surface);
+  border-radius: 14px;
+  overflow: hidden;
+  min-height: 180px;
+}
+.mediaViewer video {
+  width: 100%;
+  max-height: 540px;
+  background: #000;
+}
+.openImage {
+  display: block;
+  padding: 0;
+  width: 100%;
+  position: relative;
+}
+.openImage img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  object-position: top;
+}
+.openImage > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: #13151ae8;
+  padding: 6px 10px;
+  border: 1px solid var(--strong-line);
+  border-radius: 8px;
+  font-size: 11px;
+}
+.unavailable {
+  padding: 32px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.section {
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+  margin-top: 30px;
+  min-width: 0;
+}
+.section > h2 {
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+.subheading {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  margin: 20px 0 12px;
+}
+.note {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px 12px;
+}
+.swatch {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0;
+}
+.swatchPaint {
+  width: 100%;
+  height: 66px;
+  border: 1px solid var(--strong-line);
+  border-radius: 9px;
+  margin-bottom: 8px;
+}
+.swatch strong {
+  font-weight: 500;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.swatch code {
+  font-size: 10px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+  margin-top: 3px;
+  user-select: text;
+}
+.swatch p {
+  color: var(--subtle);
+  font-size: 10px;
+  margin-top: 5px;
+}
+.copyFeedback {
+  font-size: 10px;
+  color: var(--ink);
+  min-height: 16px;
+}
+.scale {
+  margin: 16px 0;
+  border-top: 1px solid var(--line);
+}
+.scaleRow {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  min-width: 0;
+}
+.scaleRow strong {
+  font-size: 11px;
+  font-weight: 500;
+}
+.scaleRow code {
+  display: block;
+  color: var(--subtle);
+  font-size: 10px;
+  overflow-wrap: anywhere;
+  margin-top: 4px;
+}
+.scaleRow > p {
+  margin-top: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-bottom: 6px;
+}
+.fonts {
+  display: grid;
+  gap: 24px;
+  margin-top: 22px;
+}
+.font {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.font h3 {
+  font-size: 25px;
+  margin-bottom: 16px;
+  overflow-wrap: anywhere;
+}
+.font dl,
+.definition {
+  margin: 0 0 16px;
+  font-size: 12px;
+}
+.font dl > div,
+.definition > div {
+  display: grid;
+  grid-template-columns: minmax(90px, 0.7fr) minmax(0, 1.5fr);
+  gap: 12px;
+  border-bottom: 1px solid var(--line);
+  padding: 9px 0;
+}
+.font dt,
+.definition dt {
+  color: var(--subtle);
+}
+.font dd,
+.definition dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.definition dd code {
+  font-size: 12px;
+}
+.radii {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.radii > div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 12px;
+}
+.radii i {
+  display: block;
+  width: 42px;
+  height: 42px;
+  background: var(--surface-raised);
+  border: 1px solid var(--muted);
+  flex-shrink: 0;
+}
+.radii code {
+  display: block;
+  font-size: 11px;
+  color: var(--subtle);
+  margin-top: 4px;
+}
+.elevation {
+  display: grid;
+  gap: 24px;
+  margin: 24px 0;
+}
+.elevation > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.elevation i {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: var(--surface-raised);
+  flex-shrink: 0;
+}
+.elevation strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+.elevation code {
+  display: block;
+  font-size: 10px;
+  overflow-wrap: anywhere;
+  color: var(--subtle);
+  margin-top: 5px;
+}
+.guidelines {
+  display: grid;
+  gap: 20px;
+}
+.guidelines h3 {
+  font-size: 13px;
+}
+.guidelines ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.guidelines li + li {
+  margin-top: 10px;
+}
+.component {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 22px;
+  margin-bottom: 22px;
+}
+.component h3 {
+  font-size: 15px;
+}
+.componentRole {
+  font-size: 12px;
+  margin: 5px 0 8px;
+  color: var(--subtle);
+}
+.componentTools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 14px 0;
+}
+.componentFrame {
+  border: 1px solid var(--strong-line);
+  border-radius: 10px;
+  height: 300px;
+  width: 100%;
+  margin-top: 14px;
+  background: #fff;
+}
+.componentSource {
+  max-height: 360px;
+  overflow: auto;
+  padding: 16px;
+  background: var(--surface);
+  border-radius: 10px;
+  font-size: 11px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.similar {
+  display: grid;
+  gap: 16px;
+}
+.similar > div > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.similar strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+.similar small {
+  color: var(--subtle);
+  font-size: 10px;
+  display: block;
+  margin-top: 4px;
+}
+.similar p {
+  margin-top: 6px;
+}
+.related {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 16px;
+}
+.related :global(h2) {
+  font-size: 14px;
+}
+.related :global(img) {
+  max-width: 100%;
+}
+.documents {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--line);
+  background: var(--page);
+}
+.documentTabs {
+  flex-shrink: 0;
+  padding: 20px 20px 12px;
+  gap: 4px;
+}
+.documentTabs button {
+  font-size: 12px;
+}
+.documentToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--line);
+}
+.filename {
+  font-size: 10px;
+  color: var(--subtle);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.documentActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-left: auto;
+}
+.documentActions :global(.pill.small) {
+  font-size: 10px;
+  padding: 6px 8px;
+}
+.documentBody {
+  min-height: 0;
+  flex: 1;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--strong-line) transparent;
+  overscroll-behavior: contain;
+}
+.documentBody > pre {
+  margin: 0;
+  padding: 28px 30px 64px;
+  font-size: 11px;
+  line-height: 1.9;
+  min-height: 100%;
+  tab-size: 2;
+}
+.documentBody > pre.wrap {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.documentBody > .markdown {
+  padding: 30px 36px 64px;
+}
+.documentFoot {
+  border-top: 1px solid var(--line);
+  padding: 10px 20px;
+  color: var(--subtle);
+  font-size: 10px;
+}
+.markdown {
+  font-size: 13px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  min-width: 0;
+  color: var(--muted);
+}
+.markdown h1 {
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.7px;
+  margin: 0 0 24px;
+  color: var(--ink);
+}
+.markdown h2 {
+  font-size: 21px;
+  margin: 32px 0 16px;
+  color: var(--ink);
+}
+.markdown h3 {
+  font-size: 16px;
+  margin: 24px 0 12px;
+  color: var(--ink);
+}
+.markdown h4 {
+  font-size: 14px;
+  margin: 20px 0 10px;
+  color: var(--ink);
+}
+.markdown p {
+  margin: 12px 0;
+}
+.markdown ul,
+.markdown ol {
+  padding-left: 22px;
+}
+.markdown li + li {
+  margin-top: 5px;
+}
+.markdown a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.markdown strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+.markdown pre {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  overflow-x: auto;
+  font-size: 11px;
+  line-height: 1.8;
+}
+.markdown :not(pre) > code {
+  padding: 2px 4px;
+  background: var(--surface-raised);
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+.markdown table {
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+.markdown th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--ink);
+}
+.markdown th,
+.markdown td {
+  border-bottom: 1px solid var(--strong-line);
+  padding: 9px 10px;
+  min-width: 80px;
+}
+.markdown blockquote {
+  margin: 16px 0;
+  border-left: 2px solid var(--strong-line);
+  padding-left: 14px;
+}
+.markdown hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 26px 0;
+}
+.codeComment {
+  color: var(--subtle);
+}
+.codeProperty {
+  color: #d2bbfc;
+}
+.codeString {
+  color: #b4d8c5;
+}
+.codeNumber {
+  color: #e8bf95;
+}
+.lightbox:global(.modal) {
+  width: min(1100px, 95vw);
+  max-height: 95dvh;
+  overflow: auto;
+}
+.lightbox > img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.lightboxControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 18px;
+  font-size: 12px;
+  color: var(--subtle);
+}
+@media (max-width: 1000px) {
+  .overview {
+    padding: 26px 24px 48px;
+  }
+  .title h1 {
+    font-size: 36px;
+  }
+  .documentTabs {
+    padding-inline: 12px;
+  }
+  .documentTabs button {
+    font-size: 10px;
+    padding-inline: 7px;
+  }
+  .documentToolbar {
+    padding-inline: 14px;
+  }
+  .documentActions {
+    margin-left: 0;
+  }
+  .documentBody > .markdown {
+    padding: 24px 24px 48px;
+  }
+  .documentBody > pre {
+    padding-inline: 20px;
+  }
+  .swatches {
+    gap: 12px 8px;
+  }
+}
+@media (max-width: 760px) {
+  .documents {
+    border-left: 0;
+    border-top: 1px solid var(--strong-line);
+    min-height: 640px;
+  }
+  .documentTabs {
+    position: sticky;
+    top: 80px;
+    z-index: 10;
+    background: var(--page);
+    padding: 14px 20px 10px;
+  }
+  .documentTabs button {
+    font-size: 12px;
+  }
+  .documentBody {
+    overflow: visible;
+  }
+  .documentBody > pre {
+    max-width: 100vw;
+    overflow-x: auto;
+    min-height: 480px;
+  }
+  .documentToolbar {
+    padding-inline: 20px;
+  }
+  .documentActions {
+    margin-left: auto;
+  }
+  .documentBody > .markdown {
+    padding: 26px 24px 48px;
+  }
+  .overview {
+    padding: 26px 24px 48px;
+  }
+  .title h1 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 420px) {
+  .overview {
+    padding-inline: 20px;
+  }
+  .title h1 {
+    font-size: 34px;
+  }
+  .title > img {
+    width: 42px;
+    height: 42px;
+  }
+  .mediaTabs {
+    gap: 0;
+  }
+  .mediaTabs button {
+    padding-inline: 7px;
+    font-size: 10px;
+  }
+  .swatches {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .documentActions {
+    width: 100%;
+    margin-left: 0;
+  }
+  .related {
+    grid-template-columns: 1fr;
+  }
+}

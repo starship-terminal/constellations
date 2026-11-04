@@ -32,3 +32,18 @@
   --serif: Georgia, "Times New Roman", serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
+
+/* Studio light adaptation; captured media retain their original theme. */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --page: #f7f7f8;
+  --surface: #ffffff;
+  --surface-raised: #eeeef1;
+  --elevated: #e5e6eb;
+  --ink: #202128;
+  --muted: #555b69;
+  --subtle: #686f7e;
+  --line: #2021281a;
+  --strong-line: #20212833;
+  --focus: #50586c;
+}
