@@ -10,6 +10,7 @@ import type {
 } from "@/contracts/library";
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import { readStyleExport, type ExportVariant } from "./style-exports";
 import {
   contained,
   imageUrl,
@@ -460,11 +461,16 @@ const formats: ExportFormat[] = [
 export async function readExport(
   id: string,
   format: string,
+  variant?: ExportVariant,
 ): Promise<string | null> {
   const parsed = parseReferenceId(id);
   if (!parsed || !formats.includes(format as ExportFormat)) return null;
   if (!(await allItems()).some((x) => x.id === id)) return null;
   const { source, slug } = parsed;
+  if (variant) {
+    if (source !== "refero") return null;
+    return readStyleExport(slug, format as ExportFormat, variant);
+  }
   if (source === "refero" || format === "DESIGN.md" || format === "tokens.json")
     return readText(`${source}/${slug}/${format}`);
   // Existing catalog exports resolve aliases with the library's own builder.
