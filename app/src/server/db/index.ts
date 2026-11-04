@@ -9,6 +9,7 @@ import { randomUUID } from "node:crypto";
 import type { UIMessage } from "ai";
 import type { Conversation, Collection } from "@/contracts/research";
 import * as schema from "./schema";
+import { taxonomyMigration, seedTaxonomy, taxonomyStore } from "./taxonomy";
 
 // Versioned migrations apply atomically, and never touch the canonical library.
 const migrations = [
@@ -39,7 +40,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 3)
+    if (version > 4)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -57,6 +58,11 @@ export async function createResearchStore(directory: string) {
       );
       await tx.execute("PRAGMA user_version = 3");
     }
+    if (version < 4) {
+      for (const statement of taxonomyMigration) await tx.execute(statement);
+      await seedTaxonomy(tx);
+      await tx.execute("PRAGMA user_version = 4");
+    }
     await tx.commit();
   } catch (error) {
     await tx.rollback();
@@ -68,6 +74,7 @@ export async function createResearchStore(directory: string) {
     client,
     db,
     close: () => client.close(),
+    ...taxonomyStore(client),
     async listConversations() {
       return db
         .select({

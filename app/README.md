@@ -45,7 +45,7 @@ Measured package records and interpreted Refero styles retain separate source id
 
 ## Categorisation
 
-Use the [categorisation guide](docs/taxonomy.md) and the app’s `/taxonomy` page for Refero’s captured product, screen, flow, UX-pattern and UI-element vocabularies. `/api/taxonomy` exports the same data. Future importers should validate labels against this contract and retain assignment evidence; existing assets are not automatically relabelled. Styles search suggestions remain separate from classification tags.
+Refero's recorded vocabulary is seeded into the app's SQLite database by migration v4. Web and iOS category headers read `/api/taxonomy` and preserve the original platform-specific labels and order, including categories with no local captures. App-owned assignments retag measured systems without rewriting captured token evidence. See [category migration](docs/category-migration.md) for mapping rationale. JSON files are versioned seed inputs; SQLite owns runtime vocabulary and assignments. Reopening the app preserves manual assignment changes.
 
 ## Checks
 

@@ -9,6 +9,8 @@ export interface LibraryItem {
   themes: string[];
   tags: string[];
   category: string;
+  categoryIds?: string[];
+  categories?: { id: string; label: string }[];
   image: string | null;
   imageFallback?: string | null;
   videoFallback?: string | null;

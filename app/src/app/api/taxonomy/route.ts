@@ -1,8 +1,10 @@
-import { taxonomyGroups, taxonomySnapshots } from "@/contracts/taxonomy";
-export function GET() {
+import { getStore } from "@/server/db";
+
+export async function GET() {
+  const snapshots = await (await getStore()).listTaxonomySnapshots();
   return Response.json({
     version: 1,
-    snapshots: taxonomySnapshots,
-    groups: taxonomyGroups,
+    snapshots,
+    groups: snapshots.flatMap((snapshot) => snapshot.groups),
   });
 }
