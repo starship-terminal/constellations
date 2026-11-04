@@ -152,7 +152,14 @@ export function ScreenBrowser() {
     ["scope", scope === "media" ? "Capture text only" : ""],
     ["platform", platform],
     ["theme", theme],
-    ["category", category],
+    [
+      "category",
+      data?.items
+        .flatMap((item) => item.reference.categories || [])
+        .find((term) => term.id === category)?.label ||
+        category.split(":").at(-1)?.replace(/-/g, " ") ||
+        category,
+    ],
     ["tag", tag],
     ["group", group],
     ["referenceId", reference?.name || referenceId],

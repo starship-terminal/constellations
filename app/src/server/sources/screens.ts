@@ -6,7 +6,8 @@ import type {
 } from "@/contracts/screens";
 import { listCapturedMedia } from "./index";
 import { repoRoot } from "./files";
-import { categoryGroup } from "@/contracts/categories";
+import { categoryGroup, matchesCategory } from "@/contracts/categories";
+import { withReferenceCategories } from "@/server/taxonomy/library";
 
 const pending = new Map<string, Promise<ScreenItem[]>>();
 let cache: { key: string; until: number; items: ScreenItem[] } | undefined;
@@ -101,9 +102,7 @@ export function queryScreens(
     .filter(
       ({ reference, media }) =>
         (!query.screenId || `${reference.id}:${media.id}` === query.screenId) &&
-        (!query.category ||
-          categoryGroup(reference.category) ===
-            categoryGroup(query.category)) &&
+        (!query.category || matchesCategory(reference, query.category)) &&
         (!query.group || media.group === query.group) &&
         (!query.tag ||
           media.tags.includes(query.tag) ||
@@ -113,7 +112,7 @@ export function queryScreens(
           const packageText =
             query.scope === "media"
               ? ""
-              : ` ${reference.name} ${reference.slug} ${reference.description} ${reference.category} ${reference.tags.join(" ")}`;
+              : ` ${reference.name} ${reference.slug} ${reference.description} ${reference.category} ${(reference.categories || []).map((term) => term.label).join(" ")} ${reference.tags.join(" ")}`;
           return `${mediaText}${packageText}`.toLowerCase().includes(word);
         }),
     )
@@ -141,9 +140,11 @@ export function queryScreens(
     total: filtered.length,
     facets: {
       platforms: counts(items, ({ reference }) => [reference.platform]),
-      categories: counts(scoped, ({ reference }) => [
-        categoryGroup(reference.category),
-      ]),
+      categories: counts(
+        scoped,
+        ({ reference }) =>
+          reference.categoryIds || [categoryGroup(reference.category)],
+      ),
       tags: counts(scoped, ({ reference, media }) => [
         ...reference.tags,
         ...media.tags,
@@ -158,5 +159,20 @@ export function queryScreens(
 export async function listScreens(
   query: ScreenQuery = {},
 ): Promise<ScreenResponse> {
-  return queryScreens(await capturedScreens(), query);
+  const captures = await capturedScreens();
+  const references = await withReferenceCategories([
+    ...new Map(
+      captures.map((item) => [item.reference.id, item.reference]),
+    ).values(),
+  ]);
+  const byId = new Map(
+    references.map((reference) => [reference.id, reference]),
+  );
+  return queryScreens(
+    captures.map((item) => ({
+      ...item,
+      reference: byId.get(item.reference.id)!,
+    })),
+    query,
+  );
 }

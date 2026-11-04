@@ -1,3 +1,5 @@
+import { withReferenceCategories } from "@/server/taxonomy/library";
+import { matchesCategory } from "@/contracts/categories";
 import type {
   LibraryDetail,
   LibraryItem,
@@ -193,7 +195,7 @@ export async function listLibrary(
     .toLowerCase()
     .split(/\s+/)
     .filter(Boolean);
-  const rows = (await allItems()).filter(
+  const rows = (await withReferenceCategories(await allItems())).filter(
     (item) =>
       (!query.source || item.source === query.source) &&
       (!query.platform || item.platform === query.platform) &&
@@ -202,13 +204,13 @@ export async function listLibrary(
           (theme) =>
             theme === query.theme || theme.startsWith(`${query.theme}-`),
         )) &&
-      (!query.category || item.category === query.category) &&
+      (!query.category || matchesCategory(item, query.category)) &&
       (!query.productType || item.productType === query.productType) &&
       (!query.designStyle || item.designStyle === query.designStyle) &&
       (!query.industry || item.industry === query.industry) &&
       (!query.tag || item.tags.includes(query.tag)) &&
       words.every((w) =>
-        `${item.name} ${item.slug} ${item.description} ${item.tags.join(" ")} ${item.category} ${item.themes.join(" ")} ${(item.fonts || []).join(" ")} ${item.productType || ""} ${item.designStyle || ""} ${item.industry || ""}`
+        `${item.name} ${item.slug} ${item.description} ${item.tags.join(" ")} ${item.category} ${(item.categories || []).map((term) => term.label).join(" ")} ${item.themes.join(" ")} ${(item.fonts || []).join(" ")} ${item.productType || ""} ${item.designStyle || ""} ${item.industry || ""}`
           .toLowerCase()
           .includes(w),
       ),
@@ -514,7 +516,7 @@ async function exportLinks(item: LibraryItem): Promise<Record<string, string>> {
 export async function getReference(id: string): Promise<LibraryDetail | null> {
   const parsed = parseReferenceId(id);
   if (!parsed) return null;
-  const items = await allItems(),
+  const items = await withReferenceCategories(await allItems()),
     item = items.find((i) => i.id === id);
   if (!item) return null;
   const { source, slug } = parsed;

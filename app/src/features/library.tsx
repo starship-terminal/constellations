@@ -5,41 +5,21 @@ import {
   ArrowRight,
   ArrowUp,
   Binoculars,
-  Bitcoin,
-  Blocks,
-  Bot,
-  BrainCircuit,
-  CalendarDays,
   Check,
-  Clapperboard,
-  CodeXml,
-  Cpu,
-  GraduationCap,
   Grid2X2,
-  Handshake,
-  HeartPulse,
   Laptop,
-  Layers,
-  LayoutGrid,
-  ListTodo,
-  MessagesSquare,
-  Palette,
   PanelTop,
   Plus,
   RefreshCw,
   Search,
-  ShoppingBag,
   Smartphone,
-  Telescope,
-  UsersRound,
-  UtensilsCrossed,
-  Wallet,
   X,
-  type LucideIcon,
 } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import type { LibraryItem } from "@/contracts/library";
-import { categoryGroup } from "@/contracts/categories";
+import { matchesCategory } from "@/contracts/categories";
+import type { TaxonomyGroup } from "@/contracts/taxonomy";
+import { CategoryIcon } from "./category-icon";
 import {
   api,
   Empty,
@@ -61,35 +41,6 @@ import {
   type LibraryResponse,
 } from "./library-data";
 
-const categoryInfo: Record<string, { label: string; icon: LucideIcon }> = {
-  ai: { label: "AI tools", icon: BrainCircuit },
-  "ai-media": { label: "AI media", icon: Clapperboard },
-  "ai-chat": { label: "AI chat", icon: MessagesSquare },
-  "ai-agent": { label: "AI agents", icon: Bot },
-  "ai-research": { label: "AI research", icon: Telescope },
-  agency: { label: "Agencies", icon: Handshake },
-  saas: { label: "Software", icon: Layers },
-  commerce: { label: "Commerce", icon: ShoppingBag },
-  design: { label: "Design & media editing", icon: Palette },
-  "design-resource": { label: "Design resources", icon: Blocks },
-  "design-tool": { label: "Design tools", icon: Palette },
-  "food-drink": { label: "Food & drink", icon: UtensilsCrossed },
-  hardware: { label: "Hardware", icon: Cpu },
-  social: { label: "Social networking", icon: UsersRound },
-  devtools: { label: "Development tools", icon: CodeXml },
-  finance: { label: "Finance", icon: Wallet },
-  crypto: { label: "Web3 & crypto", icon: Bitcoin },
-  education: { label: "Education", icon: GraduationCap },
-  productivity: { label: "Productivity", icon: ListTodo },
-  fitness: { label: "Fitness", icon: HeartPulse },
-  "component-library": { label: "Component libraries", icon: Blocks },
-  messaging: { label: "Communication tools", icon: MessagesSquare },
-  media: { label: "Entertainment & media", icon: Clapperboard },
-  "super-app": { label: "Super apps", icon: LayoutGrid },
-  browser: { label: "Browsers", icon: PanelTop },
-  events: { label: "Events", icon: CalendarDays },
-  other: { label: "Other references", icon: Grid2X2 },
-};
 const titleCase = (value: string) =>
   value.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 
@@ -107,7 +58,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
     platform = params.get("platform") || "",
     source = "systems",
     theme = params.get("theme") || "",
-    category = categoryGroup(params.get("category") || "");
+    category = params.get("category") || "";
   const screenView = !standalone && params.get("view") === "screens";
   const [layout, setLayout] = useState("grid");
   const [scrub, setScrub] = useState(true);
@@ -125,6 +76,36 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
     [inspecting, setInspecting] = useState<LibraryItem | null>(null),
     [visibleCount, setVisibleCount] = useState(24),
     [stats, setStats] = useState<LibraryResponse["stats"] | null>(null);
+  const [taxonomy, setTaxonomy] = useState<TaxonomyGroup[]>([]),
+    [taxonomyLoading, setTaxonomyLoading] = useState(true),
+    [taxonomyError, setTaxonomyError] = useState(""),
+    [taxonomyReload, setTaxonomyReload] = useState(0);
+  useEffect(() => {
+    if (standalone) return;
+    let alive = true;
+    setTaxonomyLoading(true);
+    setTaxonomyError("");
+    api<{ groups: TaxonomyGroup[] }>("/api/taxonomy")
+      .then(({ groups }) => {
+        if (
+          !Array.isArray(groups) ||
+          !["web-categories", "ios-categories"].every((id) =>
+            groups.some((group) => group.id === id && group.terms.length),
+          )
+        )
+          throw new Error("The reference categories are unavailable.");
+        if (alive) setTaxonomy(groups);
+      })
+      .catch((error) => {
+        if (alive) setTaxonomyError(error.message);
+      })
+      .finally(() => {
+        if (alive) setTaxonomyLoading(false);
+      });
+    return () => {
+      alive = false;
+    };
+  }, [standalone, taxonomyReload]);
   function updateFilters(patch: Record<string, string>) {
     const next = new URLSearchParams(window.location.search);
     for (const [key, value] of Object.entries(patch))
@@ -188,27 +169,42 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
       ),
     [allItems, source, platform, theme],
   );
-  const categories = useMemo(
-    () =>
-      [
-        ...new Set(
-          scoped.map((item) => categoryGroup(item.category)).filter(Boolean),
-        ),
-      ].sort((a, b) =>
-        (categoryInfo[a]?.label || a).localeCompare(
-          categoryInfo[b]?.label || b,
-        ),
-      ),
-    [scoped],
-  );
+  const categories = useMemo(() => {
+    const groupIds =
+      platform === "mobile"
+        ? ["ios-categories"]
+        : platform
+          ? ["web-categories"]
+          : ["web-categories", "ios-categories"];
+    const options = new Map<
+      string,
+      { id: string; label: string; ids: string[] }
+    >();
+    // Preserve Refero's term order. In Gallery, shared labels represent both
+    // platform groups while the URL keeps the first recorded canonical ID.
+    for (const groupId of groupIds) {
+      for (const term of taxonomy.find((group) => group.id === groupId)
+        ?.terms || []) {
+        const existing = options.get(term.label);
+        if (existing) existing.ids.push(term.id);
+        else
+          options.set(term.label, {
+            id: term.id,
+            label: term.label,
+            ids: [term.id],
+          });
+      }
+    }
+    return [...options.values()];
+  }, [taxonomy, platform]);
   const filtered = useMemo(() => {
     const words = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
     return scoped
       .filter(
         (item) =>
-          (!category || categoryGroup(item.category) === category) &&
+          matchesCategory(item, category) &&
           words.every((word) =>
-            `${item.name} ${item.slug} ${item.description} ${item.tags.join(" ")} ${item.themes.join(" ")} ${(item.fonts || []).join(" ")} ${item.category}`
+            `${item.name} ${item.slug} ${item.description} ${item.tags.join(" ")} ${item.themes.join(" ")} ${(item.fonts || []).join(" ")} ${item.category} ${(item.categories || []).map((value) => value.label).join(" ")}`
               .toLowerCase()
               .includes(word),
           ),
@@ -365,43 +361,54 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
               </h1>
             )}
             {!screenView && (
-              <nav
-                className={styles.categories}
-                aria-label={
-                  complete
-                    ? "Reference category"
-                    : "Reference category (loaded references)"
-                }
-              >
-                <button
-                  className={!category ? styles.categoryActive : ""}
-                  aria-pressed={!category}
-                  onClick={() => updateFilters({ category: "" })}
+              <>
+                {taxonomyLoading && (
+                  <Spinner label="Loading reference categories…" />
+                )}
+                {taxonomyError && (
+                  <ErrorState
+                    message={taxonomyError}
+                    retry={() => setTaxonomyReload((value) => value + 1)}
+                  />
+                )}
+                <nav
+                  className={styles.categories}
+                  aria-label="Reference category"
+                  aria-busy={taxonomyLoading}
                 >
-                  <RefreshCw size={21} />
-                  Latest
-                </button>
-                {categories.map((value) => {
-                  const Icon = categoryInfo[value]?.icon || Grid2X2;
-                  return (
-                    <button
-                      key={value}
-                      className={
-                        category === value ? styles.categoryActive : ""
-                      }
-                      aria-pressed={category === value}
-                      onClick={() =>
-                        updateFilters({
-                          category: category === value ? "" : value,
-                        })
-                      }
-                    >
-                      <Icon size={21} />
-                      {categoryInfo[value]?.label || titleCase(value)}
-                    </button>
-                  );
-                })}
-              </nav>
+                  <button
+                    className={!category ? styles.categoryActive : ""}
+                    aria-pressed={!category}
+                    onClick={() => updateFilters({ category: "" })}
+                  >
+                    <RefreshCw size={18} aria-hidden="true" />
+                    Latest
+                  </button>
+                  {categories.map((option) => {
+                    const active =
+                      !!category &&
+                      matchesCategory(
+                        { category: "", categoryIds: option.ids },
+                        category,
+                      );
+                    return (
+                      <button
+                        key={option.id}
+                        className={active ? styles.categoryActive : ""}
+                        aria-pressed={active}
+                        onClick={() =>
+                          updateFilters({
+                            category: active ? "" : option.id,
+                          })
+                        }
+                      >
+                        <CategoryIcon label={option.label} />
+                        {option.label}
+                      </button>
+                    );
+                  })}
+                </nav>
+              </>
             )}
           </>
         )}
@@ -498,7 +505,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
                   ? "Finding references…"
                   : complete
                     ? `${filtered.length.toLocaleString()} references`
-                    : `${filtered.length.toLocaleString()} matches · ${allItems.length.toLocaleString()}${catalogTotal === null ? "" : ` of ${catalogTotal.toLocaleString()}`} references loaded. Categories reflect loaded references.`}
+                    : `${filtered.length.toLocaleString()} matches · ${allItems.length.toLocaleString()}${catalogTotal === null ? "" : ` of ${catalogTotal.toLocaleString()}`} references loaded.`}
               </span>
               <span>
                 {loading && allItems.length > 0

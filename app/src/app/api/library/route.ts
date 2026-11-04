@@ -18,6 +18,7 @@ export async function GET(request: Request) {
     return Response.json({ error: "Invalid pagination" }, { status: 400 });
   const query: LibraryQuery = {
     query: params.get("q") || undefined,
+    category: params.get("category") || undefined,
     source: source === "systems" || source === "refero" ? source : undefined,
     platform: params.get("platform") || undefined,
     theme: params.get("theme") || undefined,
