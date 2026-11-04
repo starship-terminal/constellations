@@ -91,7 +91,11 @@
   border-radius: 8px;
   object-fit: contain;
 }
+.chipIcon > :first-child {
+  transition: opacity 130ms ease;
+}
 .chipRemove {
+  transition: opacity 130ms ease;
   position: absolute;
   inset: 0;
   margin: auto;
@@ -121,6 +125,7 @@
   color: var(--subtle);
 }
 .picker {
+  transform-origin: top center;
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
@@ -325,6 +330,10 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .chipIcon > :first-child,
+  .chipRemove {
+    transition: none;
+  }
   .options {
     scroll-behavior: auto;
   }

@@ -5,9 +5,18 @@ import {
   useRef,
   useState,
   type KeyboardEvent,
+  type ReactNode,
 } from "react";
 import { useSearchParams } from "next/navigation";
 import { createPortal } from "react-dom";
+import {
+  AnimatePresence,
+  LayoutGroup,
+  motion,
+  useReducedMotion,
+  useIsPresent,
+} from "motion/react";
+import { cancelChipDissolutions, dissolveChip } from "./chip-dissolution";
 import {
   BookOpen,
   ChevronRight,
@@ -66,6 +75,34 @@ function GroupIcon({
             : BookOpen;
   return <Icon size={size} aria-hidden="true" />;
 }
+function PickerFrame({
+  children,
+  className,
+  reducedMotion,
+}: {
+  children: ReactNode;
+  className: string;
+  reducedMotion: boolean;
+}) {
+  const present = useIsPresent();
+  return (
+    <motion.div
+      className={className}
+      data-search-picker-present="true"
+      inert={!present}
+      aria-hidden={!present}
+      initial={{ opacity: 0, y: -6, scale: 0.985 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: -4, scale: 0.99 }}
+      transition={{
+        duration: reducedMotion ? 0 : 0.18,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 export function CatalogSearch({
   taxonomy,
   items,
@@ -80,6 +117,17 @@ export function CatalogSearch({
   retryTaxonomy: () => void;
 }) {
   const params = useSearchParams();
+  const reducedMotion = useReducedMotion();
+  const chipElements = useRef(new Map<string, HTMLButtonElement>());
+  const suppressPickerFocus = useRef(false);
+  const layoutTransition = {
+    duration: reducedMotion ? 0 : 0.3,
+    ease: [0.22, 1, 0.36, 1] as const,
+  };
+  useEffect(() => () => cancelChipDissolutions(), []);
+  useEffect(() => {
+    if (reducedMotion) cancelChipDissolutions();
+  }, [reducedMotion]);
   const platform = params.get("platform") || "web";
   const kind = params.get("kind") === "crop" ? "crop" : "screenshot";
   const countScope = screenCountScope(platform, kind);
@@ -197,7 +245,15 @@ export function CatalogSearch({
       `${window.location.pathname}?${next}${window.location.hash}`,
     );
   }
+  function focusSearch() {
+    if (document.activeElement === input.current) return;
+    suppressPickerFocus.current = true;
+    input.current?.focus({ preventScroll: true });
+  }
   function remove(key: string, value: string) {
+    const chip = chipElements.current.get(`${key}:${value}`);
+    if (chip && !reducedMotion) dissolveChip(chip);
+    if (document.activeElement === chip) focusSearch();
     const next = new URLSearchParams(window.location.search);
     const retained = next.getAll(key).filter((entry) => entry !== value);
     next.delete(key);
@@ -205,6 +261,9 @@ export function CatalogSearch({
     navigate(next);
   }
   function clear() {
+    if (!reducedMotion)
+      for (const chip of chipElements.current.values()) dissolveChip(chip);
+    focusSearch();
     const next = new URLSearchParams(window.location.search);
     for (const key of [
       "term",
@@ -286,7 +345,7 @@ export function CatalogSearch({
     setDraft("");
     setOpen(false);
     setHighlight(-1);
-    input.current?.blur();
+    focusSearch();
   }
   function onKeyDown(event: KeyboardEvent<HTMLInputElement>) {
     // IME confirmation keys finish the composed word, not a search selection.
@@ -397,13 +456,22 @@ export function CatalogSearch({
   }
   return (
     <div ref={root} className={`${styles.root} ${open ? styles.open : ""}`}>
-      {open &&
+      {typeof document !== "undefined" &&
         createPortal(
-          <div
-            className={styles.backdrop}
-            aria-hidden="true"
-            onClick={dismissPicker}
-          />,
+          <AnimatePresence initial={false}>
+            {open && (
+              <motion.div
+                key="search-backdrop"
+                className={styles.backdrop}
+                aria-hidden="true"
+                onClick={dismissPicker}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: reducedMotion ? 0 : 0.16 }}
+              />
+            )}
+          </AnimatePresence>,
           document.body,
         )}
       <div className={styles.panel}>
@@ -413,192 +481,218 @@ export function CatalogSearch({
             if (event.target === event.currentTarget) input.current?.focus();
           }}
         >
-          {chips.map((chip) => (
-            <button
-              type="button"
-              key={chip.id}
-              className={styles.chip}
-              onClick={() => remove(chip.key, chip.value)}
-              aria-label={`Remove ${chip.label} filter`}
-            >
-              <span className={styles.chipIcon}>
-                {chip.item?.icon ? (
-                  <img src={chip.item.icon} alt="" />
-                ) : chip.group ? (
-                  <GroupIcon group={chip.group} />
-                ) : chip.key === "q" ? (
-                  <Search size={22} />
-                ) : (
-                  <Tags size={22} />
-                )}
-                <X size={19} className={styles.chipRemove} />
-              </span>
-              <span>
-                <small>{chip.caption}</small>
-                <strong>{chip.label}</strong>
-              </span>
-            </button>
-          ))}
-          <input
-            ref={input}
-            aria-label="Search references"
-            role="combobox"
-            aria-expanded={open}
-            aria-controls="catalog-search-options"
-            aria-autocomplete="list"
-            aria-activedescendant={
-              open && highlighted >= 0
-                ? `catalog-choice-${highlighted}`
-                : undefined
-            }
-            placeholder="Search"
-            value={draft}
-            onFocus={() => {
-              if (!open) {
-                setOpen(true);
-                setGroupIndex(0);
-                setHighlight(-1);
-              }
-            }}
-            onClick={() => {
-              if (!open) {
-                setOpen(true);
-                setGroupIndex(0);
-                setHighlight(-1);
-              }
-            }}
-            onChange={(event) => {
-              setDraft(event.target.value);
-              setOpen(true);
-              setHighlight(-1);
-            }}
-            onKeyDown={onKeyDown}
-          />
-          {(chips.length > 0 || draft) && (
-            <button
-              type="button"
-              className={styles.clear}
-              aria-label="Clear all search filters"
-              onClick={clear}
-            >
-              <X size={17} />
-            </button>
-          )}
-          {!chips.length && !draft && (
-            <Search
-              className={styles.searchGlyph}
-              size={20}
-              aria-hidden="true"
-            />
-          )}
-        </div>
-        {open && (
-          <div
-            className={`${styles.picker} ${typed ? styles.typedPicker : ""}`}
-          >
-            {taxonomyLoading ? (
-              <p role="status" className={styles.notice}>
-                Loading search filters…
-              </p>
-            ) : taxonomyError ? (
-              <div role="alert" className={styles.notice}>
-                {taxonomyError}{" "}
-                <button type="button" onClick={retryTaxonomy}>
-                  Try again
-                </button>
-              </div>
-            ) : (
-              <>
-                {!typed && (
-                  <nav className={styles.groups} aria-label="Filter groups">
-                    {groups.map((group, index) => (
-                      <button
-                        type="button"
-                        key={group.id}
-                        aria-pressed={activeGroup?.id === group.id}
-                        onClick={() => {
-                          setGroupIndex(index);
-                          setHighlight(-1);
-                          list.current?.scrollTo({ top: 0 });
-                          input.current?.focus();
-                        }}
-                      >
-                        <GroupIcon group={group} />
-                        <span>{group.label}</span>
-                        <ChevronRight size={16} />
-                      </button>
-                    ))}
-                  </nav>
-                )}
-                <div
-                  ref={list}
-                  id="catalog-search-options"
-                  className={`${styles.options} ${typed ? styles.typed : ""}`}
-                  role="listbox"
-                  aria-label={typed ? "Search suggestions" : activeGroup?.label}
-                >
-                  {countsError && !typed && (
-                    <p className={styles.notice}>
-                      Counts unavailable.{" "}
-                      <button
-                        type="button"
-                        onClick={() => {
-                          countCache.current.delete(countScope.key);
-                          setCountRetry((value) => value + 1);
-                        }}
-                      >
-                        Retry counts
-                      </button>
-                    </p>
+          <LayoutGroup>
+            {chips.map((chip) => (
+              <motion.button
+                layout={reducedMotion ? false : "position"}
+                initial={reducedMotion ? false : { opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  layout: layoutTransition,
+                  opacity: { duration: reducedMotion ? 0 : 0.14 },
+                  scale: layoutTransition,
+                }}
+                ref={(element) => {
+                  if (element) chipElements.current.set(chip.id, element);
+                  else chipElements.current.delete(chip.id);
+                }}
+                type="button"
+                key={chip.id}
+                className={styles.chip}
+                onClick={() => remove(chip.key, chip.value)}
+                aria-label={`Remove ${chip.label} filter`}
+              >
+                <span className={styles.chipIcon}>
+                  {chip.item?.icon ? (
+                    <img src={chip.item.icon} alt="" />
+                  ) : chip.group ? (
+                    <GroupIcon group={chip.group} />
+                  ) : chip.key === "q" ? (
+                    <Search size={22} />
+                  ) : (
+                    <Tags size={22} />
                   )}
-                  {typed
-                    ? choices.map(choiceButton)
-                    : [
-                        ...new Set(
-                          activeGroup?.terms.map(
-                            (term) => term.subgroup || "",
-                          ) || [],
-                        ),
-                      ].map((subgroup) => (
-                        <section key={subgroup} className={styles.section}>
-                          {subgroup && <h2>{subgroup}</h2>}
-                          <div className={styles.termGrid}>
-                            {choices.map((choice, index) =>
-                              choice.term?.subgroup === subgroup ||
-                              (!choice.term?.subgroup && !subgroup)
-                                ? choiceButton(choice, index)
-                                : null,
-                            )}
-                          </div>
-                        </section>
-                      ))}
-                </div>
-              </>
-            )}
-            <div className={styles.keyboardHints}>
-              {!typed && (
-                <span>
-                  <kbd>Tab</kbd> <kbd>Shift + Tab</kbd> Switch tabs
+                  <X size={19} className={styles.chipRemove} />
                 </span>
+                <span>
+                  <small>{chip.caption}</small>
+                  <strong>{chip.label}</strong>
+                </span>
+              </motion.button>
+            ))}
+            <motion.input
+              layout={reducedMotion ? false : "position"}
+              transition={{ layout: layoutTransition }}
+              ref={input}
+              aria-label="Search references"
+              role="combobox"
+              aria-expanded={open}
+              aria-controls="catalog-search-options"
+              aria-autocomplete="list"
+              aria-activedescendant={
+                open && highlighted >= 0
+                  ? `catalog-choice-${highlighted}`
+                  : undefined
+              }
+              placeholder="Search"
+              value={draft}
+              onFocus={() => {
+                if (suppressPickerFocus.current) {
+                  suppressPickerFocus.current = false;
+                  return;
+                }
+                if (!open) {
+                  setOpen(true);
+                  setGroupIndex(0);
+                  setHighlight(-1);
+                }
+              }}
+              onClick={() => {
+                if (!open) {
+                  setOpen(true);
+                  setGroupIndex(0);
+                  setHighlight(-1);
+                }
+              }}
+              onChange={(event) => {
+                setDraft(event.target.value);
+                setOpen(true);
+                setHighlight(-1);
+              }}
+              onKeyDown={onKeyDown}
+            />
+            {(chips.length > 0 || draft) && (
+              <button
+                type="button"
+                className={styles.clear}
+                aria-label="Clear all search filters"
+                onClick={clear}
+              >
+                <X size={17} />
+              </button>
+            )}
+            {!chips.length && !draft && (
+              <Search
+                className={styles.searchGlyph}
+                size={20}
+                aria-hidden="true"
+              />
+            )}
+          </LayoutGroup>
+        </div>
+        <AnimatePresence initial={false}>
+          {open && (
+            <PickerFrame
+              key="search-picker"
+              reducedMotion={!!reducedMotion}
+              className={`${styles.picker} ${typed ? styles.typedPicker : ""}`}
+            >
+              {taxonomyLoading ? (
+                <p role="status" className={styles.notice}>
+                  Loading search filters…
+                </p>
+              ) : taxonomyError ? (
+                <div role="alert" className={styles.notice}>
+                  {taxonomyError}{" "}
+                  <button type="button" onClick={retryTaxonomy}>
+                    Try again
+                  </button>
+                </div>
+              ) : (
+                <>
+                  {!typed && (
+                    <nav className={styles.groups} aria-label="Filter groups">
+                      {groups.map((group, index) => (
+                        <button
+                          type="button"
+                          key={group.id}
+                          aria-pressed={activeGroup?.id === group.id}
+                          onClick={() => {
+                            setGroupIndex(index);
+                            setHighlight(-1);
+                            list.current?.scrollTo({ top: 0 });
+                            input.current?.focus();
+                          }}
+                        >
+                          <GroupIcon group={group} />
+                          <span>{group.label}</span>
+                          <ChevronRight size={16} />
+                        </button>
+                      ))}
+                    </nav>
+                  )}
+                  <div
+                    ref={list}
+                    id="catalog-search-options"
+                    className={`${styles.options} ${typed ? styles.typed : ""}`}
+                    role="listbox"
+                    aria-label={
+                      typed ? "Search suggestions" : activeGroup?.label
+                    }
+                  >
+                    {countsError && !typed && (
+                      <p className={styles.notice}>
+                        Counts unavailable.{" "}
+                        <button
+                          type="button"
+                          onClick={() => {
+                            countCache.current.delete(countScope.key);
+                            setCountRetry((value) => value + 1);
+                          }}
+                        >
+                          Retry counts
+                        </button>
+                      </p>
+                    )}
+                    {typed
+                      ? choices.map(choiceButton)
+                      : [
+                          ...new Set(
+                            activeGroup?.terms.map(
+                              (term) => term.subgroup || "",
+                            ) || [],
+                          ),
+                        ].map((subgroup) => (
+                          <section key={subgroup} className={styles.section}>
+                            {subgroup && <h2>{subgroup}</h2>}
+                            <div className={styles.termGrid}>
+                              {choices.map((choice, index) =>
+                                choice.term?.subgroup === subgroup ||
+                                (!choice.term?.subgroup && !subgroup)
+                                  ? choiceButton(choice, index)
+                                  : null,
+                              )}
+                            </div>
+                          </section>
+                        ))}
+                  </div>
+                </>
               )}
-              <span>
-                <kbd>↑</kbd> <kbd>↓</kbd>{" "}
+              <div className={styles.keyboardHints}>
                 {!typed && (
-                  <>
-                    <kbd>←</kbd> <kbd>→</kbd>{" "}
-                  </>
+                  <span>
+                    <kbd>Tab</kbd> <kbd>Shift + Tab</kbd> Switch tabs
+                  </span>
                 )}
-                Navigate
-              </span>
-              <span>
-                <kbd>Enter</kbd> Select
-              </span>
-              <span>
-                <kbd>Esc</kbd> Close
-              </span>
-            </div>
-          </div>
-        )}
+                <span>
+                  <kbd>↑</kbd> <kbd>↓</kbd>{" "}
+                  {!typed && (
+                    <>
+                      <kbd>←</kbd> <kbd>→</kbd>{" "}
+                    </>
+                  )}
+                  Navigate
+                </span>
+                <span>
+                  <kbd>Enter</kbd> Select
+                </span>
+                <span>
+                  <kbd>Esc</kbd> Close
+                </span>
+              </div>
+            </PickerFrame>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

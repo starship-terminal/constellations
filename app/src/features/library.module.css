@@ -630,7 +630,7 @@
   }
 }
 
-.searchTop:has([aria-expanded="true"]) {
+.searchTop:has([data-search-picker-present="true"]) {
   z-index: 100;
 }
 
