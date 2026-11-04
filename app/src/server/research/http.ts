@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { isLoopbackHost } from "@/server/request-host";
+import { isAllowedHost, privateOrigin } from "@/server/request-host";
 export class HttpError extends Error {
   constructor(
     public status: number,
@@ -11,10 +11,10 @@ export class HttpError extends Error {
 }
 export function mutationGuard(request: Request) {
   const actualHost = request.headers.get("host");
-  if (actualHost && !isLoopbackHost(actualHost)) {
+  if (actualHost && !isAllowedHost(actualHost)) {
     throw new HttpError(
       403,
-      "This personal research app only accepts loopback hosts.",
+      "This personal research app only accepts loopback hosts or its configured private origin.",
     );
   }
   const origin = request.headers.get("origin");
@@ -30,7 +30,11 @@ export function mutationGuard(request: Request) {
       const publicUrl = host
         ? new URL(`${requestUrl.protocol}//${host}`)
         : requestUrl;
-      expectedOrigin = publicUrl.origin;
+      const configured = privateOrigin();
+      expectedOrigin =
+        configured && host === configured.host
+          ? configured.origin
+          : publicUrl.origin;
       const parsedOrigin = new URL(origin);
       if (
         !["http:", "https:"].includes(parsedOrigin.protocol) ||

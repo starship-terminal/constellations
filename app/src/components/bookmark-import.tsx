@@ -1,10 +1,26 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { api } from "./shared";
 export function BookmarkImport() {
   const [value, setValue] = useState(""),
     [busy, setBusy] = useState(false),
-    [status, setStatus] = useState("");
+    [status, setStatus] = useState(""),
+    [detected, setDetected] = useState(0);
+  // The old app shares this origin, so its browser bookmarks are readable here.
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem("ds-saved");
+      const paths: unknown = raw && JSON.parse(raw);
+      if (
+        Array.isArray(paths) &&
+        paths.length &&
+        paths.every((p) => typeof p === "string")
+      ) {
+        setValue(raw || "");
+        setDetected(paths.length);
+      }
+    } catch {}
+  }, []);
   return (
     <section className="settings-section">
       <div className="settings-section-label">
@@ -22,6 +38,12 @@ export function BookmarkImport() {
           <code>ds-saved</code>. Only images that match this library are
           imported. Existing bookmarks stay saved.
         </p>
+        {detected > 0 && (
+          <p className="muted">
+            Found {detected} saved image paths from the old app in this browser,
+            prefilled below.
+          </p>
+        )}
         <label>
           Saved image paths
           <textarea
