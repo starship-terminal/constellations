@@ -11,7 +11,7 @@ pnpm --dir app install --frozen-lockfile
 pnpm --dir app dev
 ```
 
-Open http://127.0.0.1:8845. The original app still uses port 8800. The new app accepts loopback hostnames only (`localhost`, `127.0.0.1`, and `[::1]`); every route rejects other HTTP hosts.
+Open http://127.0.0.1:8845. The original app still uses port 8800. The new app accepts loopback hostnames (`localhost`, `127.0.0.1`, and `[::1]`). An optional exact Tailscale origin supports a private server deployment while the listener stays on loopback. See [private deployment](docs/DEPLOYMENT.md) for staging, backups, cutover and rollback.
 
 For AI responses, copy [`.env.example`](.env.example) to `.env.local` and set an OpenAI or Anthropic API key. Restart the server after changing environment variables. Select the provider and model in Settings. Credentials stay on the server; the settings endpoint only returns whether credentials are configured. Without a key, the real library, style details, collections and exports remain usable; the app reports that AI research needs configuration.
 
