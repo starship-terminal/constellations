@@ -37,3 +37,15 @@ export const settings = sqliteTable("settings", {
   id: text("id").primaryKey(),
   value: text("value").notNull(),
 });
+export const collectionMedia = sqliteTable(
+  "collection_media",
+  {
+    collectionId: text("collection_id")
+      .notNull()
+      .references(() => collections.id, { onDelete: "cascade" }),
+    referenceId: text("reference_id").notNull(),
+    mediaId: text("media_id").notNull(),
+    addedAt: integer("added_at").notNull(),
+  },
+  (t) => [primaryKey({ columns: [t.collectionId, t.referenceId, t.mediaId] })],
+);

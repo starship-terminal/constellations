@@ -53,6 +53,7 @@ import {
 } from "@/components/reference";
 import { StandaloneHeader } from "@/components/shell";
 import styles from "./library.module.css";
+import { ScreenBrowser } from "./screen-browser";
 import {
   loadLibraryPages,
   mergeLibraryItems,
@@ -113,6 +114,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
     source = "systems",
     theme = params.get("theme") || "",
     category = categoryGroup(params.get("category") || "");
+  const screenView = !standalone && params.get("view") === "screens";
   const [layout, setLayout] = useState("grid");
   const [scrub, setScrub] = useState(true);
   useEffect(() => {
@@ -251,6 +253,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
     const next = new URLSearchParams();
     if (query) next.set("q", query);
     if (mode) next.set("platform", mode);
+    if (screenView) next.set("view", "screens");
     return `/library${next.size ? `?${next}` : ""}`;
   };
   const searchField = (
@@ -259,7 +262,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
       role="search"
       onSubmit={(e) => {
         e.preventDefault();
-        updateFilters({ q: query });
+        updateFilters({ q: query, view: standalone ? "" : "screens" });
       }}
     >
       <input
@@ -356,188 +359,233 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
                 </Link>
               </nav>
             </div>
-            <h1 className={styles.catalogTitle}>
-              {platform === "web"
-                ? "Web apps"
-                : platform === "mobile"
-                  ? "iOS apps"
-                  : platform === "desktop"
-                    ? "Desktop apps"
-                    : "Gallery"}
-            </h1>
-            <nav
-              className={styles.categories}
-              aria-label={
-                complete
-                  ? "Reference category"
-                  : "Reference category (loaded references)"
-              }
-            >
-              <button
-                className={!category ? styles.categoryActive : ""}
-                aria-pressed={!category}
-                onClick={() => updateFilters({ category: "" })}
+            {!screenView && (
+              <h1 className={styles.catalogTitle}>
+                {platform === "web"
+                  ? "Web apps"
+                  : platform === "mobile"
+                    ? "iOS apps"
+                    : platform === "desktop"
+                      ? "Desktop apps"
+                      : "Gallery"}
+              </h1>
+            )}
+            {!screenView && (
+              <nav
+                className={styles.categories}
+                aria-label={
+                  complete
+                    ? "Reference category"
+                    : "Reference category (loaded references)"
+                }
               >
-                <RefreshCw size={21} />
-                Latest
-              </button>
-              {categories.map((value) => {
-                const Icon = categoryInfo[value]?.icon || Grid2X2;
-                return (
-                  <button
-                    key={value}
-                    className={category === value ? styles.categoryActive : ""}
-                    aria-pressed={category === value}
-                    onClick={() =>
-                      updateFilters({
-                        category: category === value ? "" : value,
-                      })
-                    }
-                  >
-                    <Icon size={21} />
-                    {categoryInfo[value]?.label || titleCase(value)}
-                  </button>
-                );
-              })}
-            </nav>
+                <button
+                  className={!category ? styles.categoryActive : ""}
+                  aria-pressed={!category}
+                  onClick={() => updateFilters({ category: "" })}
+                >
+                  <RefreshCw size={21} />
+                  Latest
+                </button>
+                {categories.map((value) => {
+                  const Icon = categoryInfo[value]?.icon || Grid2X2;
+                  return (
+                    <button
+                      key={value}
+                      className={
+                        category === value ? styles.categoryActive : ""
+                      }
+                      aria-pressed={category === value}
+                      onClick={() =>
+                        updateFilters({
+                          category: category === value ? "" : value,
+                        })
+                      }
+                    >
+                      <Icon size={21} />
+                      {categoryInfo[value]?.label || titleCase(value)}
+                    </button>
+                  );
+                })}
+              </nav>
+            )}
           </>
         )}
-        <div className={styles.filters}>
-          <label>
-            <span className="sr-only">Gallery layout</span>
-            <select
-              value={layout}
-              onChange={(e) => {
-                setLayout(e.target.value);
-                localStorage.setItem("studio-gallery-layout", e.target.value);
-              }}
-            >
-              <option value="grid">Grid view</option>
-              <option value="list">List view</option>
-            </select>
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              checked={scrub}
-              onChange={(e) => {
-                setScrub(e.target.checked);
-                localStorage.setItem(
-                  "studio-gallery-scrub",
-                  String(e.target.checked),
-                );
-              }}
-            />{" "}
-            Preview on hover
-          </label>
-          <label>
-            <span className="sr-only">Platform</span>
-            <select
-              value={platform}
-              onChange={(e) =>
-                updateFilters({ platform: e.target.value, category: "" })
+        {!standalone && (
+          <nav className={styles.browseModes} aria-label="Browse references">
+            <button
+              aria-pressed={!screenView}
+              onClick={() =>
+                updateFilters({
+                  view: "",
+                  referenceId: "",
+                  tag: "",
+                  group: "",
+                  kind: "",
+                })
               }
             >
-              <option value="">All platforms</option>
-              <option value="web">Web</option>
-              <option value="mobile">Mobile</option>
-              <option value="desktop">Desktop</option>
-            </select>
-          </label>
-          <label>
-            <span className="sr-only">Theme</span>
-            <select
-              value={theme}
-              onChange={(e) => updateFilters({ theme: e.target.value })}
+              <Grid2X2 size={16} />
+              Apps
+            </button>
+            <button
+              aria-pressed={screenView}
+              onClick={() => updateFilters({ view: "screens" })}
             >
-              <option value="">All themes</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
-          </label>
-        </div>
-        <div className={styles.results}>
-          <span>
-            {!allItems.length && loading
-              ? "Finding references…"
-              : complete
-                ? `${filtered.length.toLocaleString()} references`
-                : `${filtered.length.toLocaleString()} matches · ${allItems.length.toLocaleString()}${catalogTotal === null ? "" : ` of ${catalogTotal.toLocaleString()}`} references loaded. Categories reflect loaded references.`}
-          </span>
-          <span>
-            {loading && allItems.length > 0
-              ? "Loading more references…"
-              : "Select up to 3 to compare"}
-          </span>
-        </div>
-        {error && (
-          <ErrorState
-            message={error}
-            retry={() => setReload((value) => value + 1)}
-          />
+              <PanelTop size={16} />
+              Screens
+            </button>
+          </nav>
         )}
-        {!allItems.length && loading ? (
-          <Spinner label="Opening the library…" />
-        ) : items.length ? (
-          <div
-            className={`${standalone ? styles.styleGrid : styles.appGrid} ${layout === "list" ? styles.listView : ""}`}
-          >
-            {items.map((item) =>
-              standalone ? (
-                <ReferenceCard
-                  key={item.id}
-                  item={item}
-                  style
-                  onSelect={toggle}
-                  selected={selected.some((x) => x.id === item.id)}
-                />
-              ) : (
-                <CatalogCard
-                  key={item.id}
-                  item={item}
-                  scrub={scrub}
-                  onOpen={(item) => router.push(`/library/${item.slug}`)}
-                  onSelect={toggle}
-                  selected={selected.some((x) => x.id === item.id)}
-                />
-              ),
-            )}
-          </div>
-        ) : loading ? (
-          <Spinner label="Checking the remaining references…" />
-        ) : !complete ? (
-          <Empty title="No matches in the loaded references.">
-            <p>Load the remaining references to complete this search.</p>
-          </Empty>
+        {screenView ? (
+          <ScreenBrowser />
         ) : (
-          <Empty title="No references match this search.">
-            <p>Try another description or clear a filter.</p>
-            <button
-              className="pill"
-              onClick={() => {
-                updateFilters({
-                  q: "",
-                  source: "",
-                  platform: "",
-                  theme: "",
-                  category: "",
-                });
-              }}
-            >
-              Clear filters
-            </button>
-          </Empty>
-        )}
-        {visibleCount < filtered.length && (
-          <div className={styles.loadMore}>
-            <button
-              className="pill"
-              onClick={() => setVisibleCount((value) => value + 24)}
-            >
-              Show more references
-              <ArrowRight size={16} />
-            </button>
-          </div>
+          <>
+            <div className={styles.filters}>
+              <label>
+                <span className="sr-only">Gallery layout</span>
+                <select
+                  value={layout}
+                  onChange={(e) => {
+                    setLayout(e.target.value);
+                    localStorage.setItem(
+                      "studio-gallery-layout",
+                      e.target.value,
+                    );
+                  }}
+                >
+                  <option value="grid">Grid view</option>
+                  <option value="list">List view</option>
+                </select>
+              </label>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={scrub}
+                  onChange={(e) => {
+                    setScrub(e.target.checked);
+                    localStorage.setItem(
+                      "studio-gallery-scrub",
+                      String(e.target.checked),
+                    );
+                  }}
+                />{" "}
+                Preview on hover
+              </label>
+              <label>
+                <span className="sr-only">Platform</span>
+                <select
+                  value={platform}
+                  onChange={(e) =>
+                    updateFilters({ platform: e.target.value, category: "" })
+                  }
+                >
+                  <option value="">All platforms</option>
+                  <option value="web">Web</option>
+                  <option value="mobile">Mobile</option>
+                  <option value="desktop">Desktop</option>
+                </select>
+              </label>
+              <label>
+                <span className="sr-only">Theme</span>
+                <select
+                  value={theme}
+                  onChange={(e) => updateFilters({ theme: e.target.value })}
+                >
+                  <option value="">All themes</option>
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                </select>
+              </label>
+            </div>
+            <div className={styles.results}>
+              <span>
+                {!allItems.length && loading
+                  ? "Finding references…"
+                  : complete
+                    ? `${filtered.length.toLocaleString()} references`
+                    : `${filtered.length.toLocaleString()} matches · ${allItems.length.toLocaleString()}${catalogTotal === null ? "" : ` of ${catalogTotal.toLocaleString()}`} references loaded. Categories reflect loaded references.`}
+              </span>
+              <span>
+                {loading && allItems.length > 0
+                  ? "Loading more references…"
+                  : "Select up to 3 to compare"}
+              </span>
+            </div>
+            {error && (
+              <ErrorState
+                message={error}
+                retry={() => setReload((value) => value + 1)}
+              />
+            )}
+            {!allItems.length && loading ? (
+              <Spinner label="Opening the library…" />
+            ) : items.length ? (
+              <div
+                className={`${standalone ? styles.styleGrid : styles.appGrid} ${layout === "list" ? styles.listView : ""}`}
+              >
+                {items.map((item) =>
+                  standalone ? (
+                    <ReferenceCard
+                      key={item.id}
+                      item={item}
+                      style
+                      onSelect={toggle}
+                      selected={selected.some((x) => x.id === item.id)}
+                    />
+                  ) : (
+                    <CatalogCard
+                      key={item.id}
+                      item={item}
+                      scrub={scrub}
+                      onOpen={(item) =>
+                        router.push(
+                          `/library?view=screens&referenceId=${encodeURIComponent(item.id)}${platform ? `&platform=${platform}` : ""}`,
+                        )
+                      }
+                      onSelect={toggle}
+                      selected={selected.some((x) => x.id === item.id)}
+                    />
+                  ),
+                )}
+              </div>
+            ) : loading ? (
+              <Spinner label="Checking the remaining references…" />
+            ) : !complete ? (
+              <Empty title="No matches in the loaded references.">
+                <p>Load the remaining references to complete this search.</p>
+              </Empty>
+            ) : (
+              <Empty title="No references match this search.">
+                <p>Try another description or clear a filter.</p>
+                <button
+                  className="pill"
+                  onClick={() => {
+                    updateFilters({
+                      q: "",
+                      source: "",
+                      platform: "",
+                      theme: "",
+                      category: "",
+                    });
+                  }}
+                >
+                  Clear filters
+                </button>
+              </Empty>
+            )}
+            {visibleCount < filtered.length && (
+              <div className={styles.loadMore}>
+                <button
+                  className="pill"
+                  onClick={() => setVisibleCount((value) => value + 24)}
+                >
+                  Show more references
+                  <ArrowRight size={16} />
+                </button>
+              </div>
+            )}
+          </>
         )}
         {!!selected.length && (
           <div className="compare-bar">
@@ -610,7 +658,7 @@ function CatalogCard({
       <button
         className={styles.openCard}
         onClick={() => onOpen(item)}
-        aria-label={`Inspect ${item.name}`}
+        aria-label={`Browse ${item.name} screens`}
       >
         <div
           className={styles.appShot}
@@ -651,6 +699,9 @@ function CatalogCard({
           </div>
         </div>
       </button>
+      <Link className={styles.packageLink} href={`/library/${item.slug}`}>
+        Package details <ArrowRight size={13} />
+      </Link>
       <button
         className={styles.compareSelect}
         onClick={() => onSelect(item)}

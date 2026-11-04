@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { getStore } from "@/server/db";
 import { getReference } from "@/server/sources";
+import { hydrateCollectionMedia } from "@/server/collections/media";
 import {
   endpoint,
   mutationGuard,
@@ -18,6 +19,7 @@ export function GET(_: Request, context: Context) {
     if (!row) throw new HttpError(404, "Collection not found.");
     return Response.json({
       ...row,
+      mediaItems: await hydrateCollectionMedia(row.mediaItems),
       items: await Promise.all(
         row.items.map(async (item) => ({
           ...item,

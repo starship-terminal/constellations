@@ -3314,3 +3314,16 @@ select {
 [data-theme="light"] .error-text {
   color: #a5203b;
 }
+.history-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.history-heading .text-button {
+  font-size: 11px;
+}
+.history-more {
+  margin: 8px 14px;
+  font-size: 12px;
+}

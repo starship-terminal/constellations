@@ -1,6 +1,8 @@
 import { getStore } from "@/server/db";
 import { getReference } from "@/server/sources";
 import { endpoint, HttpError, identifier } from "@/server/research/http";
+import { hydrateCollectionMedia } from "@/server/collections/media";
+import { mediaDetailHref } from "@/features/package-detail-data";
 type Context = { params: Promise<{ id: string }> };
 export const runtime = "nodejs";
 export function GET(_: Request, context: Context) {
@@ -20,9 +22,28 @@ export function GET(_: Request, context: Context) {
         `Reference ID: ${item.referenceId}`,
         `Evidence: ${ref?.evidence ?? "Source unavailable"}`,
         ref?.sourceUrl ? `Original source: ${ref.sourceUrl}` : "",
-        `Local reference: /styles/${item.referenceId.split(":").map(encodeURIComponent).join("/")}`,
+        ref
+          ? `Local reference: ${ref.source === "systems" ? `/library/${encodeURIComponent(ref.slug)}` : `/styles/refero/${encodeURIComponent(ref.slug)}`}`
+          : "Local reference unavailable",
         item.note,
       );
+    }
+    if (row.mediaItems.length) {
+      chunks.push("## Captured screens");
+      for (const item of await hydrateCollectionMedia(row.mediaItems)) {
+        const href =
+          item.reference?.source === "systems" && item.media
+            ? mediaDetailHref(item.reference.slug, item.media)
+            : item.reference
+              ? `/styles/${item.reference.source}/${item.reference.slug}`
+              : "";
+        chunks.push(
+          `### ${item.name}: ${item.media?.name || item.mediaId}`,
+          `Reference ID: ${item.referenceId}`,
+          `Media ID: ${item.mediaId}`,
+          href ? `Local capture: ${href}` : "Source unavailable",
+        );
+      }
     }
     return new Response(chunks.filter(Boolean).join("\n\n") + "\n", {
       headers: {

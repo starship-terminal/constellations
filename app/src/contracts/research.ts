@@ -1,5 +1,5 @@
 import type { UIMessage } from "ai";
-import type { LibraryDetail, LibraryItem } from "./library";
+import type { LibraryDetail, LibraryItem, ReferenceMedia } from "./library";
 export interface ConversationSummary {
   id: string;
   title: string;
@@ -18,6 +18,18 @@ export interface Collection {
   notes: string;
   createdAt: number;
   updatedAt: number;
+  mediaCount?: number;
+  referenceCount?: number;
+}
+export interface CollectionMediaItem {
+  id: string;
+  collectionId: string;
+  referenceId: string;
+  mediaId: string;
+  addedAt: number;
+  reference: LibraryItem | null;
+  name: string;
+  media: ReferenceMedia | null;
 }
 export interface CollectionItem {
   referenceId: string;

@@ -634,3 +634,298 @@
     margin-top: 32px;
   }
 }
+
+/* Captured Refero gallery proportions and shared core.radius/core.duration roles.
+   Taxonomy chips search actual local filenames/tags; no ordered flows are inferred. */
+.browseChips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+.browseChips button {
+  white-space: nowrap;
+  padding: 9px 15px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  color: var(--muted);
+  transition:
+    background var(--duration-fast),
+    color var(--duration-fast);
+}
+.browseChips button[aria-pressed="true"],
+.browseChips button:hover {
+  background: var(--elevated);
+  color: var(--ink);
+}
+.browseGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px 24px;
+}
+.browseCard {
+  min-width: 0;
+  animation: browseEnter var(--duration-result) ease-out both;
+}
+.browseImage {
+  display: block;
+  height: 210px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  overflow: hidden;
+}
+.browseImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform var(--duration-normal);
+}
+.browseImage:hover img {
+  transform: scale(1.02);
+}
+.browseCardMeta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  margin-top: 10px;
+}
+.browseCardMeta > a {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-width: 0;
+  font-size: 14px;
+}
+.browseCardMeta span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.browseCardMeta img {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+}
+.browseMore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: fit-content;
+  margin: 28px auto 0;
+  padding: 12px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  font-size: 13px;
+}
+.browseMore:hover {
+  background: var(--surface);
+}
+.browseEmpty {
+  padding: 32px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.session :global(.conversation) {
+  max-width: none;
+}
+.searchResults {
+  position: relative;
+  padding: 40px;
+  margin: 0 0 48px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  animation: browseEnter var(--duration-result) ease-out both;
+}
+.searchResultHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.searchResultKind {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.searchResultHeading h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 8px;
+}
+.searchResultHeading > a {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  gap: 6px;
+  flex-shrink: 0;
+  font-size: 14px;
+}
+.searchResultHeading small {
+  color: var(--subtle);
+  font-size: 12px;
+}
+.searchResultHeading a span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.searchResults :global(.research-result-grid) {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px 24px;
+}
+.searchResults :global(.research-result .card-picture) {
+  padding: 0;
+  aspect-ratio: 1.8;
+  border-radius: var(--radius-sm);
+}
+.searchResults :global(.research-result .card-meta p) {
+  display: none;
+}
+.searchResults :global(.research-result .card-meta h3) {
+  font-size: 14px;
+}
+.showMoreResults {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 16px;
+  background: var(--elevated);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  font-size: 12px;
+}
+.showMoreResults[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+@keyframes browseEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 1250px) {
+  .browseGrid,
+  .searchResults :global(.research-result-grid) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 1000px) {
+  .browseGrid,
+  .searchResults :global(.research-result-grid) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .searchResults {
+    padding: 24px;
+  }
+}
+@media (max-width: 760px) {
+  .browseGrid {
+    gap: 24px 12px;
+  }
+  .browseImage {
+    height: 150px;
+  }
+  .searchResults {
+    padding: 20px 14px;
+    border-radius: var(--radius-lg);
+  }
+  .searchResultHeading h3 {
+    font-size: 15px;
+  }
+  .searchResultHeading {
+    align-items: flex-start;
+  }
+  .searchResultHeading > a {
+    font-size: 12px;
+  }
+  .searchResults :global(.research-result-grid) {
+    gap: 24px 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .browseCard,
+  .searchResults {
+    animation: none;
+  }
+  .browseImage img,
+  .browseChips button {
+    transition: none;
+  }
+}
+.followupSuggestions {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  justify-content: center;
+  padding-bottom: 12px;
+}
+.followupSuggestions button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  border: 1px solid var(--strong-line);
+  background: var(--surface);
+  color: var(--muted);
+  border-radius: var(--radius-lg);
+  font-size: 12px;
+  padding: 10px 14px;
+}
+.followupSuggestions button:hover {
+  background: var(--elevated);
+  color: var(--ink);
+}
+@media (max-width: 760px) {
+  .followupSuggestions {
+    justify-content: flex-start;
+  }
+}
+.searchDestinations {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+  font-size: 14px;
+}
+.searchDestinations a {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.searchResults :global(.research-result) {
+  animation: browseEnter var(--duration-result) ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .searchResults :global(.research-result) {
+    animation: none;
+  }
+}
+/* Signed-in research grid measured at 1280px: two 399px cards with 36px gap;
+   at 1838px: four approximately 321px cards. The minimum adapts those captures. */
+.searchResults :global(.research-result-grid) {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 36px;
+}
+@media (max-width: 760px) {
+  .searchResults :global(.research-result-grid) {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

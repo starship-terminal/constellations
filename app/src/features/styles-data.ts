@@ -108,3 +108,20 @@ export function styleCounts(
       if (value) counts.set(value, (counts.get(value) || 0) + 1);
   return [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 }
+
+/** Captured dates are extraction times, not live Refero publication dates. */
+export function orderStyles(
+  items: LibraryItem[],
+  order: string,
+): LibraryItem[] {
+  const timestamp = (item: LibraryItem) => {
+    const parsed = item.captured ? Date.parse(item.captured) : NaN;
+    return Number.isFinite(parsed) ? parsed : -Infinity;
+  };
+  return [...items].sort(
+    (a, b) =>
+      (order === "newest" ? timestamp(b) - timestamp(a) : 0) ||
+      a.name.localeCompare(b.name) ||
+      a.slug.localeCompare(b.slug),
+  );
+}

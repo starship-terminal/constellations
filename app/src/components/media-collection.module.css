@@ -1,0 +1,68 @@
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0 16px;
+  gap: 16px;
+  font-size: 13px;
+}
+.heading button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+.boards {
+  display: grid;
+  gap: 6px;
+  max-height: 320px;
+  overflow: auto;
+}
+.board {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 14px;
+  gap: 12px;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  text-align: left;
+}
+.board > span {
+  flex: 1;
+  font-size: 14px;
+}
+.board small {
+  display: block;
+  color: var(--muted);
+  margin-top: 5px;
+  font-size: 11px;
+}
+.board:hover {
+  background: var(--surface-raised);
+}
+.board:disabled {
+  opacity: 1;
+}
+.create {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.create input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  background: var(--page);
+}
+.manage {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
