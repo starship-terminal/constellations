@@ -2,22 +2,24 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ArrowRight, SlidersHorizontal, X } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { ScreenItem, ScreenResponse } from "@/contracts/screens";
 import { api, Empty, ErrorState, Spinner } from "@/components/shared";
 import { MediaBookmarkButton } from "@/components/media-bookmark";
 import { PackageLightbox } from "./package-detail";
 import styles from "./screen-browser.module.css";
 
-export function ScreenBrowser({ categoryLabel }: { categoryLabel?: string }) {
+export function ScreenBrowser() {
   const params = useSearchParams();
   const query = params.get("q") || "",
-    platform = params.get("platform") || "",
+    platform = params.get("platform") || "web",
     theme = params.get("theme") || "",
     category = params.get("category") || "",
     tag = params.get("tag") || "",
     group = params.get("group") || "",
-    referenceId = params.get("referenceId") || "",
+    referenceIdsKey = JSON.stringify(params.getAll("referenceId")),
+    termIdsKey = JSON.stringify(params.getAll("term")),
+    mode = params.get("mode") === "flows" ? "flows" : "screens",
     kind = params.get("kind") === "crop" ? "crop" : "screenshot",
     order = params.get("order") || "recent",
     scope = params.get("scope") || "all";
@@ -29,9 +31,8 @@ export function ScreenBrowser({ categoryLabel }: { categoryLabel?: string }) {
     [loading, setLoading] = useState(true),
     [error, setError] = useState(""),
     [limit, setLimit] = useState(60),
-    [retry, setRetry] = useState(0),
-    [filtersOpen, setFiltersOpen] = useState(false);
-  const search = new URLSearchParams({
+    [retry, setRetry] = useState(0);
+  const searchParams = new URLSearchParams({
     q: query,
     scope,
     platform,
@@ -39,12 +40,17 @@ export function ScreenBrowser({ categoryLabel }: { categoryLabel?: string }) {
     category,
     tag,
     group,
-    referenceId,
+    mode,
     kind,
     order,
     limit: "60",
     offset: String(limit - 60),
-  }).toString();
+  });
+  for (const id of JSON.parse(referenceIdsKey) as string[])
+    searchParams.append("referenceId", id);
+  for (const id of JSON.parse(termIdsKey) as string[])
+    searchParams.append("term", id);
+  const search = searchParams.toString();
   const filterKey = JSON.stringify([
     query,
     platform,
@@ -52,7 +58,9 @@ export function ScreenBrowser({ categoryLabel }: { categoryLabel?: string }) {
     category,
     tag,
     group,
-    referenceId,
+    referenceIdsKey,
+    termIdsKey,
+    mode,
     kind,
     order,
     scope,
@@ -67,7 +75,9 @@ export function ScreenBrowser({ categoryLabel }: { categoryLabel?: string }) {
     category,
     tag,
     group,
-    referenceId,
+    referenceIdsKey,
+    termIdsKey,
+    mode,
     kind,
     order,
     scope,
@@ -144,166 +154,16 @@ export function ScreenBrowser({ categoryLabel }: { categoryLabel?: string }) {
     };
   }, [selectedScreen, loadedCurrent, loading, selectionRetry]);
   const viewerItems = loadedCurrent ? items : current ? [current] : [];
-  const reference = referenceId
-    ? items.find((item) => item.reference.id === referenceId)?.reference
-    : undefined;
-  const activeFilters = [
-    ["q", query],
-    ["scope", scope === "media" ? "Capture text only" : ""],
-    ["platform", platform],
-    ["theme", theme],
-    ["category", category ? categoryLabel || category : ""],
-    ["tag", tag],
-    ["group", group],
-    ["referenceId", reference?.name || referenceId],
-  ].filter(([, value]) => value);
   function open(item: ScreenItem) {
     update({ screen: item.id });
   }
   return (
     <section className={styles.browser} aria-label="Captured screens">
-      {!!activeFilters.length && (
-        <div className={styles.chips} aria-label="Active screen filters">
-          {activeFilters.map(([key, value]) => (
-            <button
-              key={key}
-              onClick={() => update({ [key]: "", screen: "" })}
-              aria-label={`Remove ${value} filter`}
-            >
-              {key === "referenceId"
-                ? "App"
-                : key === "q"
-                  ? "Search"
-                  : key === "scope"
-                    ? "Search in"
-                    : key}{" "}
-              <strong>{value}</strong>
-              <X size={14} />
-            </button>
-          ))}
-          <button
-            onClick={() =>
-              update({
-                q: "",
-                scope: "",
-                platform: "",
-                theme: "",
-                category: "",
-                tag: "",
-                group: "",
-                referenceId: "",
-                screen: "",
-              })
-            }
-          >
-            Clear all
-          </button>
-        </div>
-      )}
-      <div className={styles.toolbar}>
-        <div className={styles.kinds} aria-label="Capture type">
-          <button
-            aria-pressed={kind === "screenshot"}
-            onClick={() => update({ kind: "screenshot", screen: "" })}
-          >
-            Screens
-          </button>
-          <button
-            aria-pressed={kind === "crop"}
-            onClick={() => update({ kind: "crop", screen: "" })}
-          >
-            UI elements
-          </button>
-        </div>
-        <span className={styles.count} role="status">
-          {loading
-            ? "Finding screens…"
-            : `${(visibleData?.total || 0).toLocaleString()} ${kind === "crop" ? "UI elements" : "screens"}`}
-        </span>
-        <button
-          className={styles.filterToggle}
-          aria-expanded={filtersOpen}
-          onClick={() => setFiltersOpen((value) => !value)}
-        >
-          <SlidersHorizontal size={16} />
-          Filters
-        </button>
-        <label>
-          <span className="sr-only">Screen order</span>
-          <select
-            value={order}
-            onChange={(e) => update({ order: e.target.value, screen: "" })}
-          >
-            <option value="recent">Latest captures</option>
-            <option value="name">Name A–Z</option>
-          </select>
-        </label>
-      </div>
-      {filtersOpen && (
-        <div className={styles.filterPanel}>
-          <label>
-            Platform
-            <select
-              value={platform}
-              onChange={(e) => update({ platform: e.target.value, screen: "" })}
-            >
-              <option value="">All platforms</option>
-              {visibleData?.facets.platforms.map((f) => (
-                <option key={f.value} value={f.value}>
-                  {f.value} ({f.count})
-                </option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Theme
-            <select
-              value={theme}
-              onChange={(e) => update({ theme: e.target.value, screen: "" })}
-            >
-              <option value="">All themes</option>
-              <option>light</option>
-              <option>dark</option>
-            </select>
-          </label>
-          <label>
-            Capture tag
-            <select
-              value={tag}
-              onChange={(e) => update({ tag: e.target.value, screen: "" })}
-            >
-              <option value="">All tags</option>
-              {visibleData?.facets.tags.map((f) => (
-                <option key={f.value} value={f.value}>
-                  {f.value} ({f.count})
-                </option>
-              ))}
-            </select>
-          </label>
-          <label>
-            Capture group
-            <select
-              value={group}
-              onChange={(e) => update({ group: e.target.value, screen: "" })}
-            >
-              <option value="">All groups</option>
-              {visibleData?.facets.groups.map((f) => (
-                <option key={f.value} value={f.value}>
-                  {f.value} ({f.count})
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
-      )}
-      {reference && (
-        <div className={styles.product}>
-          <h1>{reference.name}</h1>
-          <Link href={`/library/${reference.slug}`}>
-            Package details <ArrowRight size={14} />
-          </Link>
-        </div>
-      )}
+      <span className="sr-only" role="status">
+        {loading
+          ? "Finding screens…"
+          : `${visibleData?.total || 0} ${mode === "flows" ? "flows" : "screens"}`}
+      </span>
       {selectedScreen && !current && selectionError && (
         <div role="alert">
           <ErrorState
@@ -324,8 +184,18 @@ export function ScreenBrowser({ categoryLabel }: { categoryLabel?: string }) {
       {loading && !visibleData ? (
         <Spinner label="Opening captured screens…" />
       ) : !items.length && !loading ? (
-        <Empty title="No captures match these filters">
-          <p>Try another screen description or clear a filter.</p>
+        <Empty
+          title={
+            mode === "flows"
+              ? "No recorded flows yet"
+              : "No screens match these filters"
+          }
+        >
+          <p>
+            {mode === "flows"
+              ? "This library has individual captures, but no verified step-by-step flows yet."
+              : "Try another filter or remove a search chip."}
+          </p>
           <button
             className="pill"
             onClick={() =>
@@ -337,6 +207,8 @@ export function ScreenBrowser({ categoryLabel }: { categoryLabel?: string }) {
                 theme: "",
                 platform: "",
                 referenceId: "",
+                term: "",
+                screen: "",
               })
             }
           >
@@ -366,7 +238,7 @@ export function ScreenBrowser({ categoryLabel }: { categoryLabel?: string }) {
               </button>
               <div className={styles.caption}>
                 <Link
-                  href={`/library?view=screens&referenceId=${encodeURIComponent(item.reference.id)}`}
+                  href={`/library?view=screens&platform=${item.reference.platform}&referenceId=${encodeURIComponent(item.reference.id)}`}
                 >
                   {item.reference.icon && (
                     <img src={item.reference.icon} alt="" loading="lazy" />
@@ -379,7 +251,6 @@ export function ScreenBrowser({ categoryLabel }: { categoryLabel?: string }) {
                   compact
                 />
               </div>
-              <p title={item.media.name}>{item.media.name}</p>
             </article>
           ))}
         </div>

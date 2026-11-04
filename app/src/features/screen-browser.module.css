@@ -1,89 +1,11 @@
 .browser {
   min-width: 0;
-}
-.toolbar {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  margin: 16px 0 24px;
-  flex-wrap: wrap;
-}
-.kinds {
-  display: flex;
-  gap: 4px;
-}
-.kinds button,
-.filterToggle,
-.toolbar select {
-  background: transparent;
-  color: var(--muted);
-  border: 1px solid var(--line);
-  padding: 9px 14px;
-  border-radius: 24px;
-  font-size: 13px;
-}
-.kinds button[aria-pressed="true"] {
-  color: var(--ink);
-  background: var(--surface-raised);
-}
-.count {
-  margin-left: auto;
-  font-size: 12px;
-  color: var(--muted);
-}
-.filterToggle {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-.filterPanel {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding: 20px;
-  background: var(--surface);
-  border-radius: 16px;
-  margin-bottom: 24px;
-}
-.filterPanel label {
-  display: grid;
-  gap: 8px;
-  color: var(--muted);
-  font-size: 12px;
-}
-.filterPanel select {
-  max-width: 250px;
-  background: var(--page);
-  color: var(--ink);
-  padding: 10px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 12px 0 20px;
-}
-.chips button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--surface);
-  color: var(--muted);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 10px 12px;
-  font-size: 12px;
-}
-.chips strong {
-  font-weight: 500;
-  color: var(--ink);
+  margin-top: 24px;
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 16px;
 }
 .phoneGrid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -101,11 +23,10 @@
 }
 .picture {
   width: 100%;
-  height: 310px;
+  aspect-ratio: 1.81;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 6px;
   background: var(--surface-raised);
-  border: 1px solid var(--line);
 }
 .picture img {
   display: block;
@@ -116,10 +37,10 @@
   transition: transform var(--duration-fast);
 }
 .open:hover .picture img {
-  transform: scale(1.015);
+  transform: scale(1.01);
 }
 .phoneGrid .picture {
-  height: 430px;
+  aspect-ratio: 0.48;
 }
 .phoneGrid .picture img {
   object-fit: contain;
@@ -129,7 +50,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding-top: 12px;
+  padding-top: 10px;
 }
 .caption a {
   display: flex;
@@ -141,36 +62,18 @@
   text-decoration: none;
 }
 .caption img {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   object-fit: contain;
-  border-radius: 6px;
+  border-radius: 4px;
 }
-.card p {
-  font-size: 11px;
-  color: var(--subtle);
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  margin: 6px 0;
+.caption button {
+  opacity: 0;
+  transition: opacity var(--duration-fast);
 }
-.product {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  margin: 24px 0;
-}
-.product h1 {
-  font-size: 28px;
-  font-weight: 400;
-  margin: 0;
-}
-.product a {
-  display: flex;
-  gap: 6px;
-  color: var(--muted);
-  font-size: 12px;
+.card:hover .caption button,
+.card:focus-within .caption button {
+  opacity: 1;
 }
 .more {
   display: flex;
@@ -179,50 +82,32 @@
 }
 @media (min-width: 1600px) {
   .grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .phoneGrid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 @media (max-width: 1100px) {
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
   .phoneGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 @media (max-width: 650px) {
-  .grid,
+  .grid {
+    grid-template-columns: 1fr;
+  }
   .phoneGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px 12px;
   }
-  .picture {
-    height: 200px;
-  }
-  .phoneGrid .picture {
-    height: 280px;
-  }
-  .count {
-    margin-left: 0;
-  }
-  .toolbar {
-    gap: 8px;
-  }
-  .caption a {
-    font-size: 12px;
-  }
-  .filterPanel {
-    padding: 12px;
-  }
-  .product {
-    align-items: flex-start;
+  .caption button {
+    opacity: 1;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .picture img {
+  .picture img,
+  .caption button {
     transition: none;
   }
 }

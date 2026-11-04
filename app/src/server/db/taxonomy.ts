@@ -16,6 +16,60 @@ export const taxonomyMigration = [
   `CREATE TRIGGER IF NOT EXISTS reference_categories_category_update BEFORE UPDATE OF term_id ON reference_categories WHEN NOT EXISTS (SELECT 1 FROM taxonomy_terms t JOIN taxonomy_groups g ON g.id=t.group_id WHERE t.id=NEW.term_id AND g.kind='taxonomy' AND g.id IN ('web-categories','ios-categories')) BEGIN SELECT RAISE(ABORT,'Reference classifications must use category terms'); END`,
 ];
 
+/** Per-capture classifications live in app state, alongside the v4 vocabulary. */
+export const mediaTaxonomyMigration = [
+  `CREATE TABLE IF NOT EXISTS media_term_assignments (reference_id TEXT NOT NULL, media_id TEXT NOT NULL, term_id TEXT NOT NULL REFERENCES taxonomy_terms(id) ON DELETE CASCADE, reason TEXT NOT NULL DEFAULT '', origin TEXT NOT NULL CHECK(origin IN ('curated','manual')), PRIMARY KEY(reference_id,media_id,term_id))`,
+  `CREATE INDEX IF NOT EXISTS media_term_assignments_term ON media_term_assignments(term_id)`,
+  `CREATE TRIGGER IF NOT EXISTS media_terms_taxonomy_insert BEFORE INSERT ON media_term_assignments WHEN NOT EXISTS (SELECT 1 FROM taxonomy_terms t JOIN taxonomy_groups g ON g.id=t.group_id WHERE t.id=NEW.term_id AND g.kind='taxonomy' AND g.id NOT IN ('web-categories','ios-categories')) BEGIN SELECT RAISE(ABORT,'Media classifications must use screen taxonomy terms'); END`,
+  `CREATE TRIGGER IF NOT EXISTS media_terms_taxonomy_update BEFORE UPDATE OF term_id ON media_term_assignments WHEN NOT EXISTS (SELECT 1 FROM taxonomy_terms t JOIN taxonomy_groups g ON g.id=t.group_id WHERE t.id=NEW.term_id AND g.kind='taxonomy' AND g.id NOT IN ('web-categories','ios-categories')) BEGIN SELECT RAISE(ABORT,'Media classifications must use screen taxonomy terms'); END`,
+];
+
+/** Seed exactly once in v5; subsequent opens always read current SQLite state. */
+export async function seedMediaTaxonomy(tx: Transaction) {
+  if (
+    (await tx.execute("SELECT 1 FROM media_term_assignments LIMIT 1")).rows
+      .length
+  )
+    return;
+  const { default: seed } = await import("@/data/media-taxonomy.json");
+  const known = new Set(
+    (await tx.execute("SELECT id FROM taxonomy_terms")).rows.map((row) =>
+      String(row.id),
+    ),
+  );
+  const entries = seed.assignments.flatMap((assignment) =>
+    assignment.terms.map((term) => {
+      if (!known.has(term.termId))
+        throw new Error(`Unknown media taxonomy seed term: ${term.termId}`);
+      if (!Object.hasOwn(seed.rules, term.rule))
+        throw new Error(`Unknown media taxonomy seed rule: ${term.rule}`);
+      if (
+        !assignment.referenceId.startsWith("systems:") ||
+        !assignment.mediaId.startsWith(
+          `systems/${assignment.referenceId.slice("systems:".length)}/`,
+        )
+      )
+        throw new Error("Invalid media taxonomy seed identity");
+      return [
+        assignment.referenceId,
+        assignment.mediaId,
+        term.termId,
+        `${term.reason} Rule: ${term.rule}. Source: ${assignment.mediaId}`,
+        "curated",
+      ];
+    }),
+  );
+  // Multi-row statements keep migration work bounded and avoid one round trip
+  // per label, while staying below SQLite's conservative 999 parameter limit.
+  for (let offset = 0; offset < entries.length; offset += 150) {
+    const batch = entries.slice(offset, offset + 150);
+    await tx.execute({
+      sql: `INSERT INTO media_term_assignments(reference_id,media_id,term_id,reason,origin) VALUES ${batch.map(() => "(?,?,?,?,?)").join(",")}`,
+      args: batch.flat(),
+    });
+  }
+}
+
 /** Called only inside migration v4's transaction. JSON is seed evidence. */
 export async function seedTaxonomy(tx: Transaction) {
   const { taxonomySnapshots } = await import("@/contracts/taxonomy");
@@ -140,6 +194,18 @@ export function taxonomyStore(client: Client) {
         groups: groups.filter(
           (group) => sourceByGroup.get(group.id) === row.source,
         ),
+      }));
+    },
+    async listMediaTermAssignments(): Promise<
+      { referenceId: string; mediaId: string; termId: string }[]
+    > {
+      const result = await client.execute(
+        "SELECT reference_id,media_id,term_id FROM media_term_assignments ORDER BY reference_id,media_id,term_id",
+      );
+      return result.rows.map((row) => ({
+        referenceId: String(row.reference_id),
+        mediaId: String(row.media_id),
+        termId: String(row.term_id),
       }));
     },
     async listReferenceCategories(): Promise<

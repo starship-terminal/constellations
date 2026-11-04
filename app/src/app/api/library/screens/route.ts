@@ -1,4 +1,9 @@
-import { listScreens, validScreenId } from "@/server/sources/screens";
+import {
+  listScreens,
+  validScreenId,
+  validScreenTermId,
+  UnknownScreenTermError,
+} from "@/server/sources/screens";
 import { parseReferenceId } from "@/server/sources";
 import type { ScreenQuery } from "@/contracts/screens";
 export const runtime = "nodejs";
@@ -19,8 +24,10 @@ export async function GET(request: Request) {
   const kind = params.get("kind"),
     sort = params.get("sort") || params.get("order"),
     scope = params.get("scope"),
+    mode = params.get("mode"),
     screenId = params.get("screenId"),
-    referenceId = params.get("referenceId");
+    referenceIds = [...new Set(params.getAll("referenceId").filter(Boolean))],
+    termIds = [...new Set(params.getAll("term"))];
   if (screenId && !validScreenId(screenId))
     return Response.json(
       { error: "Invalid capture identity" },
@@ -35,9 +42,16 @@ export async function GET(request: Request) {
     return Response.json({ error: "Unknown capture kind" }, { status: 400 });
   if (sort && sort !== "recent" && sort !== "name")
     return Response.json({ error: "Unknown capture order" }, { status: 400 });
-  if (referenceId && parseReferenceId(referenceId)?.source !== "systems")
+  if (mode && mode !== "screens" && mode !== "flows")
+    return Response.json({ error: "Unknown capture mode" }, { status: 400 });
+  if (referenceIds.some((id) => parseReferenceId(id)?.source !== "systems"))
     return Response.json(
       { error: "Unknown captured package" },
+      { status: 400 },
+    );
+  if (termIds.some((id) => !validScreenTermId(id)))
+    return Response.json(
+      { error: "Invalid capture filter term" },
       { status: 400 },
     );
   const query: ScreenQuery = {
@@ -48,7 +62,9 @@ export async function GET(request: Request) {
     tag: params.get("tag") || undefined,
     theme: params.get("theme") || undefined,
     group: params.get("group") || undefined,
-    referenceId: referenceId || undefined,
+    referenceIds,
+    termIds,
+    mode: mode === "flows" ? "flows" : "screens",
     screenId: screenId || undefined,
     kind:
       kind === "crop"
@@ -60,5 +76,11 @@ export async function GET(request: Request) {
     offset,
     limit,
   };
-  return Response.json(await listScreens(query));
+  try {
+    return Response.json(await listScreens(query));
+  } catch (error) {
+    if (error instanceof UnknownScreenTermError)
+      return Response.json({ error: error.message }, { status: 400 });
+    throw error;
+  }
 }

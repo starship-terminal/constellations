@@ -5,6 +5,7 @@ import { join } from "node:path";
 import { createResearchStore, type ResearchStore } from "@/server/db";
 import { taxonomyGroups, taxonomySnapshots } from "@/contracts/taxonomy";
 import assignments from "@/data/system-categories.json";
+import mediaSeed from "@/data/media-taxonomy.json";
 
 const stores: ResearchStore[] = [];
 const directories: string[] = [];
@@ -69,7 +70,7 @@ test("v3 migration preserves research state and seeds vocabulary atomically", as
       (await migrated.client.execute("PRAGMA user_version")).rows[0]
         .user_version,
     ),
-  ).toBe(4);
+  ).toBe(5);
   expect(await migrated.listTaxonomyGroups()).toEqual(taxonomyGroups);
   expect(
     (await migrated.getConversation(conversation.id))?.messages[0].parts[0],
@@ -251,4 +252,170 @@ test("category detail reads bound large ID filters without dropping matching ref
     { referenceId: ids[0], termId: term.id, label: term.label },
     { referenceId: ids[1000], termId: term.id, label: term.label },
   ]);
+});
+
+test("v5 seeds only existing media identities with recorded rules and leaves unverified flows empty", async () => {
+  const { store } = await open();
+  const terms = new Map(
+    taxonomyGroups.flatMap((group) =>
+      group.terms.map((term) => [term.id, group.id] as const),
+    ),
+  );
+  const rows = await store.listMediaTermAssignments();
+  expect(mediaSeed.packages).toHaveLength(assignments.length);
+  expect(rows).toHaveLength(
+    mediaSeed.assignments.reduce(
+      (total, media) => total + media.terms.length,
+      0,
+    ),
+  );
+  for (const row of rows) {
+    expect(terms.has(row.termId)).toBe(true);
+    expect(terms.get(row.termId)).not.toMatch(
+      /flows|categories|search-presets/,
+    );
+    expect(
+      row.mediaId.startsWith(
+        `systems/${row.referenceId.slice("systems:".length)}/`,
+      ),
+    ).toBe(true);
+  }
+  const sample = mediaSeed.assignments.find((media) =>
+    media.terms.some((term) => term.rule === "ui-button"),
+  )!;
+  expect(rows).toContainEqual({
+    referenceId: sample.referenceId,
+    mediaId: sample.mediaId,
+    termId: sample.terms.find((term) => term.rule === "ui-button")!.termId,
+  });
+  const courseraFonts = rows.filter(
+    (row) =>
+      row.referenceId === "systems:coursera" &&
+      row.termId.startsWith("web-fonts:"),
+  );
+  expect(courseraFonts.length).toBeGreaterThan(0);
+  expect(new Set(courseraFonts.map((row) => row.termId))).toEqual(
+    new Set(["web-fonts:source-sans-pro"]),
+  );
+  // Arial is in Coursera's fallback stack, which is not rendered-font evidence.
+  expect(courseraFonts.some((row) => row.termId === "web-fonts:arial")).toBe(
+    false,
+  );
+  const recorded = await store.client.execute(
+    "SELECT reason,origin FROM media_term_assignments LIMIT 1",
+  );
+  expect(recorded.rows[0].reason).toMatch(/Rule: .+\. Source: systems\//);
+  expect(recorded.rows[0].origin).toBe("curated");
+  // A context/menu state alone must never classify the whole page as a profile.
+  expect(
+    mediaSeed.assignments
+      .filter((media) => /\/(?:[a-z]?\d+-)?account-menu\./.test(media.mediaId))
+      .flatMap((media) => media.terms)
+      .some((term) => term.termId.endsWith(":profile-account")),
+  ).toBe(false);
+});
+
+test("v4 upgrade preserves manual categories and v5 reopening preserves manual media edits", async () => {
+  const { dir, store } = await open();
+  const category = taxonomyGroups.find(
+    (group) => group.id === "web-categories",
+  )!.terms[0];
+  await store.assignReferenceCategories(
+    "systems:linear",
+    "web-categories",
+    [category.label],
+    "My v4 classification",
+  );
+  await store.client.execute("DROP TABLE media_term_assignments");
+  await store.client.execute("PRAGMA user_version=4");
+  close(store);
+  const { store: migrated } = await open(dir);
+  expect(
+    Number(
+      (await migrated.client.execute("PRAGMA user_version")).rows[0]
+        .user_version,
+    ),
+  ).toBe(5);
+  expect(
+    (await migrated.listReferenceCategories()).filter(
+      (row) => row.referenceId === "systems:linear",
+    ),
+  ).toEqual([{ referenceId: "systems:linear", termId: category.id }]);
+  const sample = mediaSeed.assignments[0];
+  const manualTerm = taxonomyGroups
+    .find((group) => group.id === "web-ui-elements")!
+    .terms.find(
+      (term) => !sample.terms.some((known) => known.termId === term.id),
+    )!;
+  await migrated.client.execute({
+    sql: "DELETE FROM media_term_assignments WHERE reference_id=? AND media_id=?",
+    args: [sample.referenceId, sample.mediaId],
+  });
+  await migrated.client.execute({
+    sql: "INSERT INTO media_term_assignments(reference_id,media_id,term_id,reason,origin) VALUES(?,?,?,?,'manual')",
+    args: [
+      sample.referenceId,
+      sample.mediaId,
+      manualTerm.id,
+      "My media classification",
+    ],
+  });
+  close(migrated);
+  const { store: reopened } = await open(dir);
+  expect(
+    (await reopened.listMediaTermAssignments()).filter(
+      (row) =>
+        row.referenceId === sample.referenceId &&
+        row.mediaId === sample.mediaId,
+    ),
+  ).toEqual([
+    {
+      referenceId: sample.referenceId,
+      mediaId: sample.mediaId,
+      termId: manualTerm.id,
+    },
+  ]);
+  await reopened.client.execute({
+    sql: "DELETE FROM media_term_assignments WHERE reference_id=? AND media_id=?",
+    args: [sample.referenceId, sample.mediaId],
+  });
+  close(reopened);
+  const { store: cleared } = await open(dir);
+  expect(
+    (await cleared.listMediaTermAssignments()).some(
+      (row) =>
+        row.referenceId === sample.referenceId &&
+        row.mediaId === sample.mediaId,
+    ),
+  ).toBe(false);
+});
+
+test("media term assignments enforce taxonomy membership and cascade removed terms", async () => {
+  const { store } = await open();
+  const row = mediaSeed.assignments[0];
+  for (const termId of [
+    "missing-term",
+    taxonomyGroups.find((group) => group.id === "web-categories")!.terms[0].id,
+    taxonomyGroups.find((group) => group.kind === "search-preset")!.terms[0].id,
+  ]) {
+    await expect(
+      store.client.execute({
+        sql: "INSERT INTO media_term_assignments(reference_id,media_id,term_id,origin) VALUES(?,?,?,'manual')",
+        args: [row.referenceId, row.mediaId, termId],
+      }),
+    ).rejects.toThrow();
+  }
+  const termId = row.terms[0].termId;
+  await store.client.execute({
+    sql: "DELETE FROM taxonomy_terms WHERE id=?",
+    args: [termId],
+  });
+  expect(
+    (await store.listMediaTermAssignments()).some(
+      (assignment) => assignment.termId === termId,
+    ),
+  ).toBe(false);
+  expect((await store.client.execute("PRAGMA foreign_key_check")).rows).toEqual(
+    [],
+  );
 });
