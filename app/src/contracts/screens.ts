@@ -6,6 +6,8 @@ export interface ScreenItem {
   id: string;
   reference: LibraryItem;
   media: ReferenceMedia;
+  /** Verified app-owned classifications for this original capture. */
+  termIds?: string[];
 }
 export interface ScreenQuery {
   query?: string;
@@ -17,6 +19,12 @@ export interface ScreenQuery {
   group?: string;
   kind?: ScreenKind;
   referenceId?: string;
+  /** Selected packages are combined with OR, alongside the legacy single ID. */
+  referenceIds?: string[];
+  /** All selected taxonomy terms must be present on the same capture. */
+  termIds?: string[];
+  /** Flows require verified ordered sequences, which this corpus lacks. */
+  mode?: "screens" | "flows";
   /** Exact original capture identity; ignores pagination when supplied. */
   screenId?: string;
   sort?: "recent" | "name";
@@ -30,6 +38,8 @@ export interface ScreenFacet {
 export interface ScreenResponse {
   items: ScreenItem[];
   total: number;
+  /** Actual platform/kind corpus counts, before reference, text or term filters. */
+  termCounts: Record<string, number>;
   facets: {
     platforms: ScreenFacet[];
     categories: ScreenFacet[];
@@ -37,6 +47,6 @@ export interface ScreenResponse {
     groups: ScreenFacet[];
     kinds: ScreenFacet[];
   };
-  /** This corpus does not record Refero's screen classifications or ordered flows. */
+  /** Legacy summary; ordered flows remain unavailable without sequence evidence. */
   taxonomy: { pageTypes: string[]; uiElements: string[]; uxPatterns: string[] };
 }

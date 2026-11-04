@@ -417,12 +417,12 @@ export function captureViewerLinks(
   return {
     documentation,
     browse: measured
-      ? `/library?view=screens&referenceId=${encodeURIComponent(detail.id)}`
+      ? `/library?view=screens&referenceId=${encodeURIComponent(detail.id)}&platform=${encodeURIComponent(detail.platform)}`
       : documentation,
     copy: measured ? mediaDetailHref(detail.slug, current) : current.url,
     tag: (tag: string) =>
       measured
-        ? `/library?view=screens&tag=${encodeURIComponent(tag)}`
+        ? `/library?view=screens&tag=${encodeURIComponent(tag)}&platform=${encodeURIComponent(detail.platform)}`
         : `/styles?tag=${encodeURIComponent(tag)}`,
     platform: measured
       ? `/library?view=screens&platform=${encodeURIComponent(detail.platform)}`

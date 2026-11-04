@@ -8,6 +8,16 @@ import { listCapturedMedia } from "./index";
 import { repoRoot } from "./files";
 import { categoryGroup, matchesCategory } from "@/contracts/categories";
 import { withReferenceCategories } from "@/server/taxonomy/library";
+import { getStore } from "@/server/db";
+
+export class UnknownScreenTermError extends Error {}
+
+export function validScreenTermId(value: string): boolean {
+  return (
+    value.length <= 400 &&
+    /^[a-z][a-z0-9-]*:[\p{L}\p{N}][\p{L}\p{N}-]*$/u.test(value)
+  );
+}
 
 const pending = new Map<string, Promise<ScreenItem[]>>();
 let cache: { key: string; until: number; items: ScreenItem[] } | undefined;
@@ -71,6 +81,15 @@ function counts(
     .sort((a, b) => b.count - a.count || a.value.localeCompare(b.value));
 }
 
+function captureTermIds(item: ScreenItem): string[] {
+  return [
+    ...new Set([
+      ...(item.reference.categoryIds || []),
+      ...(item.termIds || []),
+    ]),
+  ];
+}
+
 /** Search genuine capture names/groups and recorded package metadata. No inferred taxonomy. */
 export function queryScreens(
   items: ScreenItem[],
@@ -81,11 +100,26 @@ export function queryScreens(
     .toLowerCase()
     .split(/[\s_-]+/)
     .filter(Boolean);
-  const scoped = items.filter(
+  const referenceIds = new Set([
+    ...(query.referenceIds || []),
+    ...(query.referenceId ? [query.referenceId] : []),
+  ]);
+  const selectedTerms = [...new Set(query.termIds || [])];
+  const available = query.mode === "flows" ? [] : items;
+  const corpus = available.filter(
     ({ reference, media }) =>
       reference.source === "systems" &&
       (!query.platform || reference.platform === query.platform) &&
-      (!query.referenceId || reference.id === query.referenceId) &&
+      (query.screenId && !query.kind
+        ? true
+        : media.kind === (query.kind || "screenshot")),
+  );
+  const termCounts = Object.fromEntries(
+    counts(corpus, captureTermIds).map(({ value, count }) => [value, count]),
+  );
+  const scoped = corpus.filter(
+    ({ reference, media }) =>
+      (!referenceIds.size || referenceIds.has(reference.id)) &&
       (!query.theme ||
         (media.tags.some((tag) => tag === "light" || tag === "dark")
           ? media.tags
@@ -93,14 +127,14 @@ export function queryScreens(
         ).some(
           (theme) =>
             theme === query.theme || theme.startsWith(`${query.theme}-`),
-        )) &&
-      (query.screenId && !query.kind
-        ? true
-        : media.kind === (query.kind || "screenshot")),
+        )),
   );
   const filtered = scoped
-    .filter(
-      ({ reference, media }) =>
+    .filter((item) => {
+      const { reference, media } = item;
+      const terms = new Set(captureTermIds(item));
+      return (
+        selectedTerms.every((term) => terms.has(term)) &&
         (!query.screenId || `${reference.id}:${media.id}` === query.screenId) &&
         (!query.category || matchesCategory(reference, query.category)) &&
         (!query.group || media.group === query.group) &&
@@ -114,8 +148,9 @@ export function queryScreens(
               ? ""
               : ` ${reference.name} ${reference.slug} ${reference.description} ${reference.category} ${(reference.categories || []).map((term) => term.label).join(" ")} ${reference.tags.join(" ")}`;
           return `${mediaText}${packageText}`.toLowerCase().includes(word);
-        }),
-    )
+        })
+      );
+    })
     .sort(
       (a, b) =>
         (query.sort === "name"
@@ -138,8 +173,9 @@ export function queryScreens(
       ? filtered.slice(0, 1)
       : filtered.slice(offset, offset + limit),
     total: filtered.length,
+    termCounts,
     facets: {
-      platforms: counts(items, ({ reference }) => [reference.platform]),
+      platforms: counts(available, ({ reference }) => [reference.platform]),
       categories: counts(
         scoped,
         ({ reference }) =>
@@ -150,7 +186,7 @@ export function queryScreens(
         ...media.tags,
       ]),
       groups: counts(scoped, ({ media }) => [media.group || ""]),
-      kinds: counts(items, ({ media }) => [media.kind || ""]),
+      kinds: counts(available, ({ media }) => [media.kind || ""]),
     },
     taxonomy: { pageTypes: [], uiElements: [], uxPatterns: [] },
   };
@@ -159,12 +195,39 @@ export function queryScreens(
 export async function listScreens(
   query: ScreenQuery = {},
 ): Promise<ScreenResponse> {
+  const store = await getStore();
+  if (query.termIds?.length) {
+    const knownTerms = new Set(
+      (await store.listTaxonomyGroups())
+        .filter((group) => group.kind === "taxonomy")
+        .flatMap((group) => group.terms.map((term) => term.id)),
+    );
+    for (const termId of query.termIds)
+      if (!validScreenTermId(termId) || !knownTerms.has(termId))
+        throw new UnknownScreenTermError(
+          `Unknown capture filter term: ${termId}`,
+        );
+  }
+  if (query.mode === "flows") return queryScreens([], query);
   const captures = await capturedScreens();
-  const references = await withReferenceCategories([
-    ...new Map(
-      captures.map((item) => [item.reference.id, item.reference]),
-    ).values(),
+  const [references, assignments] = await Promise.all([
+    withReferenceCategories(
+      [
+        ...new Map(
+          captures.map((item) => [item.reference.id, item.reference]),
+        ).values(),
+      ],
+      store,
+    ),
+    store.listMediaTermAssignments(),
   ]);
+  const byMedia = new Map<string, string[]>();
+  for (const assignment of assignments) {
+    const id = `${assignment.referenceId}:${assignment.mediaId}`;
+    const terms = byMedia.get(id) || [];
+    terms.push(assignment.termId);
+    byMedia.set(id, terms);
+  }
   const byId = new Map(
     references.map((reference) => [reference.id, reference]),
   );
@@ -172,6 +235,7 @@ export async function listScreens(
     captures.map((item) => ({
       ...item,
       reference: byId.get(item.reference.id)!,
+      termIds: byMedia.get(item.id) || [],
     })),
     query,
   );

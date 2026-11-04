@@ -7,7 +7,9 @@ import {
   Binoculars,
   Check,
   Grid2X2,
-  Laptop,
+  Monitor,
+  Files,
+  Scissors,
   PanelTop,
   Plus,
   RefreshCw,
@@ -35,6 +37,12 @@ import {
 import { StandaloneHeader } from "@/components/shell";
 import styles from "./library.module.css";
 import { ScreenBrowser } from "./screen-browser";
+import { CatalogSearch } from "./catalog-search";
+import {
+  platformSearch,
+  inferredProductPlatform,
+  canSwitchPlatform,
+} from "./catalog-search-state";
 import {
   loadLibraryPages,
   mergeLibraryItems,
@@ -156,6 +164,20 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
       alive = false;
     };
   }, [reload]);
+  useEffect(() => {
+    if (standalone) return;
+    const current = new URLSearchParams(window.location.search);
+    if (current.has("platform") || current.get("view") !== "screens") return;
+    const inferred = inferredProductPlatform(current, allItems);
+    if (inferred) {
+      current.set("platform", inferred);
+      window.history.replaceState(
+        null,
+        "",
+        `${window.location.pathname}?${current}${window.location.hash}`,
+      );
+    }
+  }, [params, allItems, standalone]);
   const scoped = useMemo(
     () =>
       allItems.filter(
@@ -197,23 +219,6 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
     }
     return [...options.values()];
   }, [taxonomy, platform]);
-  const matchingCategoryLabels = [
-    ...new Set(
-      taxonomy
-        .filter((group) =>
-          ["web-categories", "ios-categories"].includes(group.id),
-        )
-        .flatMap((group) => group.terms)
-        .filter((term) =>
-          matchesCategory({ category: "", categoryIds: [term.id] }, category),
-        )
-        .map((term) => term.label),
-    ),
-  ];
-  const categoryLabel = category
-    ? matchingCategoryLabels.join(", ") ||
-      (taxonomyLoading ? "Loading category…" : category)
-    : "";
   const filtered = useMemo(() => {
     const words = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
     return scoped
@@ -256,11 +261,20 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
           : prev,
     );
   }
+  const platformLinksReady = canSwitchPlatform(
+    params,
+    !taxonomyLoading && !taxonomyError,
+    allItems,
+    loading,
+  );
   const modeUrl = (mode: string) => {
-    const next = new URLSearchParams();
-    if (query) next.set("q", query);
-    if (mode) next.set("platform", mode);
-    if (screenView) next.set("view", "screens");
+    const next = platformSearch(
+      new URLSearchParams(params.toString()),
+      mode,
+      taxonomy,
+      allItems,
+      !loading && !error,
+    );
     return `/library${next.size ? `?${next}` : ""}`;
   };
   const searchField = (
@@ -344,27 +358,81 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
         ) : (
           <>
             <div className={styles.searchTop}>
-              {searchField}
-              <nav className={styles.modes} aria-label="Search mode">
-                <Link href="/">
-                  <Binoculars size={16} />
-                  Research mode
-                </Link>
-                <Link
-                  className={platform === "web" ? styles.modeActive : ""}
-                  href={modeUrl("web")}
-                >
-                  <Laptop size={16} />
-                  Web apps
-                </Link>
-                <Link
-                  className={platform === "mobile" ? styles.modeActive : ""}
-                  href={modeUrl("mobile")}
-                >
-                  <Smartphone size={15} />
-                  iOS apps
-                </Link>
-              </nav>
+              <CatalogSearch
+                taxonomy={taxonomy}
+                items={allItems}
+                taxonomyLoading={taxonomyLoading}
+                taxonomyError={taxonomyError}
+                retryTaxonomy={() => setTaxonomyReload((value) => value + 1)}
+              />
+              <div className={styles.modeBar}>
+                <nav className={styles.modes} aria-label="Search mode">
+                  <Link href="/">
+                    <Binoculars size={16} />
+                    Research mode
+                  </Link>
+                  <Link
+                    className={
+                      platform === "web" || (screenView && !platform)
+                        ? styles.modeActive
+                        : ""
+                    }
+                    href={
+                      platformLinksReady ? modeUrl("web") : `/library?${params}`
+                    }
+                    aria-disabled={!platformLinksReady}
+                    title={
+                      platformLinksReady
+                        ? undefined
+                        : "Loading selected filters…"
+                    }
+                    onClick={(event) => {
+                      if (!platformLinksReady) event.preventDefault();
+                    }}
+                  >
+                    <Monitor className={styles.webModeIcon} size={18} />
+                    Web apps
+                  </Link>
+                  <Link
+                    className={platform === "mobile" ? styles.modeActive : ""}
+                    href={
+                      platformLinksReady
+                        ? modeUrl("mobile")
+                        : `/library?${params}`
+                    }
+                    aria-disabled={!platformLinksReady}
+                    title={
+                      platformLinksReady
+                        ? undefined
+                        : "Loading selected filters…"
+                    }
+                    onClick={(event) => {
+                      if (!platformLinksReady) event.preventDefault();
+                    }}
+                  >
+                    <Smartphone className={styles.iosModeIcon} size={18} />
+                    iOS apps
+                  </Link>
+                </nav>
+                {screenView && (
+                  <nav className={styles.resultModes} aria-label="Result type">
+                    <button
+                      aria-pressed={params.get("mode") !== "flows"}
+                      onClick={() => updateFilters({ mode: "" })}
+                    >
+                      <Files className={styles.screensModeIcon} size={18} />
+                      Screens
+                    </button>
+                    <button
+                      aria-pressed={params.get("mode") === "flows"}
+                      onClick={() => updateFilters({ mode: "flows" })}
+                    >
+                      <Scissors size={18} />
+                      Flows
+                    </button>
+                  </nav>
+                )}
+              </div>
             </div>
             {!screenView && (
               <h1 className={styles.catalogTitle}>
@@ -429,7 +497,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
             )}
           </>
         )}
-        {!standalone && (
+        {!standalone && !screenView && (
           <nav className={styles.browseModes} aria-label="Browse references">
             <button
               aria-pressed={!screenView}
@@ -456,7 +524,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
           </nav>
         )}
         {screenView ? (
-          <ScreenBrowser categoryLabel={categoryLabel} />
+          <ScreenBrowser />
         ) : (
           <>
             <div className={styles.filters}>
@@ -558,7 +626,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
                       scrub={scrub}
                       onOpen={(item) =>
                         router.push(
-                          `/library?view=screens&referenceId=${encodeURIComponent(item.id)}${platform ? `&platform=${platform}` : ""}`,
+                          `/library?view=screens&referenceId=${encodeURIComponent(item.id)}&platform=${encodeURIComponent(item.platform)}`,
                         )
                       }
                       onSelect={toggle}

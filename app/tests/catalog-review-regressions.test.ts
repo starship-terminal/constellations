@@ -72,6 +72,17 @@ test("picker state remounts for both package and media identities", () => {
 test("viewer links preserve source and exact media without routing styles into measured packages", () => {
   const measured = captureViewerLinks(reference, media);
   expect(measured.documentation).toBe("/library/demo");
+  for (const platform of ["mobile", "desktop"] as const) {
+    const links = captureViewerLinks({ ...reference, platform }, media);
+    expect(
+      new URL(links.browse, "http://localhost").searchParams.get("platform"),
+    ).toBe(platform);
+    expect(
+      new URL(links.tag("dense"), "http://localhost").searchParams.get(
+        "platform",
+      ),
+    ).toBe(platform);
+  }
   expect(measured.copy).toBe("/library/demo?tab=screenshots&media=same-name");
   const interpreted = captureViewerLinks(
     { ...reference, id: "refero:demo", source: "refero" },

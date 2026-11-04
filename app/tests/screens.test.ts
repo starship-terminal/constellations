@@ -7,6 +7,7 @@ import type { ScreenItem } from "../src/contracts/screens";
 import { listScreens, queryScreens } from "../src/server/sources/screens";
 import { GET } from "../src/app/api/library/screens/route";
 import { categoryGroup } from "../src/contracts/categories";
+import { getStore } from "../src/server/db";
 
 const originalRepo = process.env.DESIGN_SYSTEMS_REPO;
 const temp: string[] = [];
@@ -57,6 +58,103 @@ function screen(
 }
 
 describe("capture search", () => {
+  it("requires every selected term on the same capture, including terms in one group", () => {
+    const signup = "web-page-types:sign-up";
+    const login = "web-page-types:log-in";
+    const button = "web-ui-elements:button";
+    const first = { ...screen("signup"), termIds: [signup, button] };
+    const second = { ...screen("login"), termIds: [login] };
+    const both = {
+      ...screen("combined-auth"),
+      termIds: [signup, login, button],
+    };
+    expect(
+      queryScreens([first, second, both], { termIds: [signup, login] }).items,
+    ).toEqual([both]);
+    expect(
+      queryScreens([first, second, both], { termIds: [signup, button] }).items,
+    ).toEqual([both, first]);
+    expect(
+      queryScreens([first, second], { termIds: [signup, login] }).total,
+    ).toBe(0);
+    expect(queryScreens([both], { termIds: [signup, signup] }).total).toBe(1);
+  });
+  it("combines reference categories with exact capture fonts and media classifications", () => {
+    const category = "web-categories:productivity";
+    const font = "web-fonts:inter";
+    const button = "web-ui-elements:button";
+    const capture = {
+      ...screen("settings"),
+      reference: { ...reference, categoryIds: [category] },
+      termIds: [font, button],
+    };
+    const unrelated = { ...screen("different-settings"), termIds: [button] };
+    expect(
+      queryScreens([capture, unrelated], { termIds: [category, font, button] })
+        .items,
+    ).toEqual([capture]);
+    expect(
+      queryScreens([capture], { termIds: ["ios-categories:productivity"] })
+        .total,
+    ).toBe(0);
+  });
+  it("combines selected packages with OR and keeps picker counts global within platform and kind", () => {
+    const term = "web-ui-elements:button";
+    const first = { ...screen("one"), termIds: [term, term] };
+    const second = {
+      ...screen("two"),
+      reference: { ...reference, id: "systems:second" },
+      termIds: [term],
+    };
+    const mobile = {
+      ...screen("phone"),
+      reference: { ...reference, platform: "mobile", id: "systems:phone" },
+      termIds: [term],
+    };
+    const crop = { ...screen("button", "crop"), termIds: [term] };
+    const items = [first, second, mobile, crop];
+    const result = queryScreens(items, {
+      platform: "web",
+      referenceIds: [reference.id, "systems:second"],
+      termIds: [term],
+      limit: 1,
+    });
+    expect(result.total).toBe(2);
+    expect(result.items).toHaveLength(1);
+    expect(result.termCounts).toEqual({ [term]: 2 });
+    expect(
+      queryScreens(items, {
+        platform: "web",
+        referenceId: reference.id,
+        query: "missing",
+        termIds: ["web-page-types:dashboard"],
+      }).termCounts,
+    ).toEqual({ [term]: 2 });
+    expect(queryScreens(items, { platform: "mobile" }).termCounts).toEqual({
+      [term]: 1,
+    });
+    expect(queryScreens(items, { kind: "crop" }).termCounts).toEqual({
+      [term]: 1,
+    });
+    expect(
+      queryScreens(items, {
+        referenceId: reference.id,
+        referenceIds: ["systems:second"],
+      }).total,
+    ).toBe(2);
+  });
+  it("returns no flows or flow counts without verified ordered sequences", () => {
+    const screenshot = {
+      ...screen("onboarding-step"),
+      termIds: ["web-flows:onboarding"],
+    };
+    const crop = screen("form", "crop");
+    const result = queryScreens([screenshot, crop], { mode: "flows" });
+    expect(result.items).toEqual([]);
+    expect(result.total).toBe(0);
+    expect(result.termCounts).toEqual({});
+    expect(result.facets.kinds).toEqual([]);
+  });
   it.each([
     ["learning", "education"],
     ["fintech", "finance"],
@@ -264,6 +362,56 @@ describe("capture source and API", () => {
     );
     expect(recovered.status).toBe(200);
     expect((await recovered.json()).items[0].id).toBe(first.items[0].id);
+    const store = await getStore();
+    const mediaId = first.items[0].media.id;
+    const dashboardTerm = "web-page-types:dashboard";
+    const buttonTerm = "web-ui-elements:button";
+    try {
+      for (const termId of [dashboardTerm, buttonTerm])
+        await store.client.execute({
+          sql: "INSERT INTO media_term_assignments(reference_id,media_id,term_id,reason,origin) VALUES(?,?,?,'Verified test fixture','manual')",
+          args: [reference.id, mediaId, termId],
+        });
+      const filtered = await GET(
+        new Request(
+          `http://studio.test/api/library/screens?term=${dashboardTerm}&term=${buttonTerm}&referenceId=systems:missing&referenceId=${reference.id}`,
+        ),
+      );
+      expect(filtered.status).toBe(200);
+      const filteredBody = await filtered.json();
+      expect(filteredBody.total).toBe(1);
+      expect(filteredBody.termCounts).toEqual({
+        [dashboardTerm]: 1,
+        [buttonTerm]: 1,
+      });
+      await store.client.execute({
+        sql: "DELETE FROM media_term_assignments WHERE reference_id=? AND media_id=? AND term_id=?",
+        args: [reference.id, mediaId, buttonTerm],
+      });
+      // Classification changes must bypass the longer-lived capture metadata cache.
+      const changed = await GET(
+        new Request(
+          `http://studio.test/api/library/screens?term=${dashboardTerm}&term=${buttonTerm}`,
+        ),
+      );
+      const changedBody = await changed.json();
+      expect(changedBody.total).toBe(0);
+      expect(changedBody.termCounts).toEqual({ [dashboardTerm]: 1 });
+      const flows = await GET(
+        new Request("http://studio.test/api/library/screens?mode=flows"),
+      );
+      expect(flows.status).toBe(200);
+      expect(await flows.json()).toMatchObject({
+        items: [],
+        total: 0,
+        termCounts: {},
+      });
+    } finally {
+      await store.client.execute({
+        sql: "DELETE FROM media_term_assignments WHERE reference_id=? AND media_id=?",
+        args: [reference.id, mediaId],
+      });
+    }
   });
   it("rejects invalid pagination, kind, order and non-capture source IDs before loading", async () => {
     for (const query of [
@@ -273,7 +421,12 @@ describe("capture source and API", () => {
       "kind=flow",
       "sort=popular",
       "scope=visual",
+      "mode=components",
+      "term=not-namespaced",
+      "term=web-page-types:../private",
+      "term=web-page-types:missing-capture-filter",
       "referenceId=refero:apple",
+      "referenceId=systems:workspace&referenceId=refero:apple",
       "referenceId=systems:../secret",
       "screenId=refero:apple:shot",
       "screenId=systems:one:systems/two/screenshots/image.png",

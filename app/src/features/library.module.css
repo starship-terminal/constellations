@@ -590,3 +590,62 @@
 .packageLink:hover {
   color: var(--ink);
 }
+
+.modeBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.resultModes {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+.resultModes button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  background: transparent;
+  color: var(--subtle);
+  font: 13px/20px var(--sans);
+}
+.resultModes button:hover,
+.resultModes button[aria-pressed="true"] {
+  color: var(--ink);
+  background: var(--surface);
+}
+@media (max-width: 760px) {
+  .searchTop > :first-child {
+    margin-left: 48px;
+    width: calc(100% - 48px);
+  }
+  .modeBar {
+    gap: 0;
+  }
+}
+
+.searchTop:has([aria-expanded="true"]) {
+  z-index: 100;
+}
+
+/* Refero core.palette.code.vivid-5/17/12 from the captured tokens. */
+.modeActive .webModeIcon {
+  color: #fc9e48;
+}
+.modeActive .iosModeIcon {
+  color: #1facf8;
+}
+.resultModes button[aria-pressed="true"] .screensModeIcon {
+  color: #25cf99;
+}
+
+.modes a[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: wait;
+}

@@ -91,3 +91,19 @@ export const referenceCategories = sqliteTable(
   },
   (table) => [primaryKey({ columns: [table.referenceId, table.termId] })],
 );
+
+export const mediaTermAssignments = sqliteTable(
+  "media_term_assignments",
+  {
+    referenceId: text("reference_id").notNull(),
+    mediaId: text("media_id").notNull(),
+    termId: text("term_id")
+      .notNull()
+      .references(() => taxonomyTerms.id, { onDelete: "cascade" }),
+    reason: text("reason").notNull().default(""),
+    origin: text("origin", { enum: ["curated", "manual"] }).notNull(),
+  },
+  (table) => [
+    primaryKey({ columns: [table.referenceId, table.mediaId, table.termId] }),
+  ],
+);
