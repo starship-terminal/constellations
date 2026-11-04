@@ -4,7 +4,6 @@ import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { ArrowRight, ArrowUp, Search, X } from "lucide-react";
 import type { LibraryItem } from "@/contracts/library";
-import { StandaloneHeader } from "@/components/shell";
 import { api, Empty, ErrorState, Spinner } from "@/components/shared";
 import {
   loadLibraryPages,
@@ -375,8 +374,7 @@ function StylesContent() {
   };
   return (
     <>
-      <StandaloneHeader />
-      <main id="main-content" className={styles.index}>
+      <div className={styles.index}>
         <header className={styles.hero}>
           <div className={styles.kicker}>
             <a
@@ -600,7 +598,7 @@ function StylesContent() {
             </button>
           </div>
         )}
-      </main>
+      </div>
     </>
   );
 }

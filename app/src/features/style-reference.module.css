@@ -651,7 +651,7 @@
   }
   .documentTabs {
     position: sticky;
-    top: 80px;
+    top: var(--style-header-height, 80px);
     z-index: 10;
     background: var(--page);
     padding: 14px 20px 10px;
