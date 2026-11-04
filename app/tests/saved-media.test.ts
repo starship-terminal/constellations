@@ -62,3 +62,27 @@ test("legacy import deduplicates and matches only recorded media", async () => {
     "systems/example/screenshots/a.png",
   );
 });
+
+test("legacy Refero image bookmarks match canonical media across local and mirror URLs", async () => {
+  mocks.get.mockResolvedValue({
+    media: [
+      { id: "shot", path: "/refero-media/shots/linear.jpg" },
+      { id: "detail_poster", path: "/refero-media/detail-posters/linear.jpg" },
+    ],
+  });
+  const response = await importMedia(
+    request("/api/saved-media/import", {
+      paths: [
+        "/media/refero-media/shots/linear.jpg",
+        "https://media.example.com/refero-media/detail-posters/linear.jpg",
+        "/media/refero-media/posters/linear.jpg",
+      ],
+    }),
+  );
+  expect(await response.json()).toEqual({
+    imported: 2,
+    skipped: ["/media/refero-media/posters/linear.jpg"],
+  });
+  expect(mocks.save).toHaveBeenCalledWith("refero:linear", "shot");
+  expect(mocks.save).toHaveBeenCalledWith("refero:linear", "detail_poster");
+});

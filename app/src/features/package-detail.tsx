@@ -604,6 +604,9 @@ export function PackageMarkdown({
           h1: ({ children }) => <h1 id={headingId(children)}>{children}</h1>,
           h2: ({ children }) => <h2 id={headingId(children)}>{children}</h2>,
           h3: ({ children }) => <h3 id={headingId(children)}>{children}</h3>,
+          h4: ({ children }) => <h4 id={headingId(children)}>{children}</h4>,
+          h5: ({ children }) => <h5 id={headingId(children)}>{children}</h5>,
+          h6: ({ children }) => <h6 id={headingId(children)}>{children}</h6>,
         }}
       >
         {text}

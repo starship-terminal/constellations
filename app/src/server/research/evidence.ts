@@ -63,13 +63,34 @@ export async function packageDocument(
   };
 }
 type Raw = Record<string, any>;
+// A group may legitimately contain a token named "value". Legacy Tokens
+// Studio tokens use an unprefixed value field, so distinguish their payload
+// from a nested token tree before treating the enclosing object as a leaf.
+function containsToken(node: unknown): boolean {
+  if (!node || typeof node !== "object" || Array.isArray(node)) return false;
+  const obj = node as Raw;
+  if (Object.hasOwn(obj, "$value")) return true;
+  if (
+    Object.hasOwn(obj, "value") &&
+    (typeof obj.type === "string" ||
+      !obj.value ||
+      typeof obj.value !== "object" ||
+      Array.isArray(obj.value))
+  )
+    return true;
+  return Object.values(obj).some(containsToken);
+}
 function tokenLeaves(node: unknown, prefix = "", out: Raw[] = []) {
   if (!node || typeof node !== "object" || Array.isArray(node)) return out;
   const obj = node as Raw;
-  if ("$value" in obj || "value" in obj)
+  const dtcg = Object.hasOwn(obj, "$value");
+  const legacy =
+    Object.hasOwn(obj, "value") &&
+    (typeof obj.type === "string" || !containsToken(obj.value));
+  if (dtcg || legacy)
     out.push({
       name: prefix,
-      value: obj.$value ?? obj.value,
+      value: dtcg ? obj.$value : obj.value,
       type: obj.$type ?? obj.type,
       description: obj.$description ?? obj.description,
       evidence: obj.$extensions ?? null,

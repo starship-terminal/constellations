@@ -18,19 +18,29 @@ export function POST(request: Request) {
       try {
         canonical = decodeURIComponent(
           new URL(path, "http://local.invalid").pathname,
-        ).replace(/^\/media\//, "");
+        ).replace(/^\/(?:media\/)?/, "");
       } catch {
         skipped.push(path);
         continue;
       }
       const match = /^systems\/([a-z0-9-]+)\//.exec(canonical);
-      if (!match) {
+      const referoMatch =
+        /^refero-media\/(shots|posters|detail-posters|favicons)\/([a-z0-9-]+)\.(?:jpg|jpeg|png|webp)$/.exec(
+          canonical,
+        );
+      if (!match && !referoMatch) {
         skipped.push(path);
         continue;
       }
-      const id = `systems:${match[1]}`;
+      const id = match ? `systems:${match[1]}` : `refero:${referoMatch![2]}`;
       if (!cache.has(id)) cache.set(id, await getReference(id));
-      const media = cache.get(id)?.media.find((item) => item.id === canonical);
+      const media = cache
+        .get(id)
+        ?.media.find((item) =>
+          match
+            ? item.id === canonical
+            : item.path?.replace(/^\/(?:media\/)?/, "") === canonical,
+        );
       if (!media) {
         skipped.push(path);
         continue;

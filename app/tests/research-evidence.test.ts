@@ -1,4 +1,5 @@
 import { afterEach, expect, test } from "vitest";
+import { z } from "zod";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import os from "node:os";
@@ -242,4 +243,109 @@ test("exclusions apply to every new evidence tool and remove prior evidence from
     ["systems:test"],
   );
   expect(JSON.stringify(history)).not.toContain("Private evidence");
+});
+
+test("Telegram text tokens named value retain every sibling and their recorded values", async () => {
+  const root = await fixture();
+  // Exercise the real package shape that triggered the review, not a synthetic
+  // value field that cannot show the lost sibling evidence.
+  const source = await fs.readFile(
+    new URL("../../systems/telegram/tokens.json", import.meta.url),
+    "utf8",
+  );
+  const captured = JSON.parse(source);
+  await fs.writeFile(path.join(root, "systems/test/tokens.json"), source);
+  const text = await packageTokens(
+    "systems:test",
+    "light.color.text",
+    0,
+    new Set(),
+  );
+  const expected = Object.entries(captured.light.color.text).map(
+    ([name, token]) => ({
+      name: `light.color.text.${name}`,
+      value: (token as { $value: unknown }).$value,
+    }),
+  );
+  expect(
+    text.tokens?.map((token) => ({ name: token.name, value: token.value })),
+  ).toEqual(expected);
+  expect(text.tokens).toEqual(
+    expect.arrayContaining([
+      expect.objectContaining({
+        name: "light.color.text.value",
+        value: "#8E8D91",
+      }),
+      expect.objectContaining({
+        name: "light.color.text.primary",
+        value: "#000000",
+      }),
+      expect.objectContaining({
+        name: "light.color.text.secondary",
+        value: "#8D8D90",
+      }),
+    ]),
+  );
+  expect(text.tokens?.some((token) => token.name === "light.color.text")).toBe(
+    false,
+  );
+});
+
+test("legacy primitive and composite value fields still read as token leaves", async () => {
+  const root = await fixture();
+  await fs.writeFile(
+    path.join(root, "systems/test/tokens.json"),
+    JSON.stringify({
+      core: {
+        legacy: { value: "150ms", type: "duration" },
+        composite: {
+          value: { duration: "150ms", easing: [0, 0, 1, 1] },
+          type: "transition",
+        },
+        untyped: { value: { fontFamily: "Inter", fontSize: 14 } },
+      },
+    }),
+  );
+  const result = await packageTokens("systems:test", "core", 0, new Set());
+  expect(result.tokens).toEqual(
+    expect.arrayContaining([
+      expect.objectContaining({ name: "core.legacy", value: "150ms" }),
+      expect.objectContaining({
+        name: "core.composite",
+        value: { duration: "150ms", easing: [0, 0, 1, 1] },
+      }),
+      expect.objectContaining({
+        name: "core.untyped",
+        value: { fontFamily: "Inter", fontSize: 14 },
+      }),
+    ]),
+  );
+});
+
+test("document tool schema accepts the last page of a supported four-MiB file", async () => {
+  const root = await fixture();
+  const end = "complete final evidence";
+  const size = 4 * 1024 * 1024;
+  await fs.writeFile(
+    path.join(root, "systems/test/large.md"),
+    "x".repeat(size - end.length) + end,
+  );
+  const tools = researchTools({ excludedIds: [] });
+  const schema = tools.readPackageDocument.inputSchema as z.ZodType<{
+    referenceId: string;
+    path: string;
+    offset: number;
+  }>;
+  const input = schema.parse({
+    referenceId: "systems:test",
+    path: "large.md",
+    offset: size - 24000,
+  });
+  const page = await tools.readPackageDocument.execute!(input, execution);
+  if (!("text" in page)) throw new Error("Expected completed document read");
+  expect(page.text).toHaveLength(24000);
+  expect(page.text.endsWith(end)).toBe(true);
+  expect(page.totalCharacters).toBe(size);
+  expect(page.truncated).toBe(false);
+  expect(schema.safeParse({ ...input, offset: size + 1 }).success).toBe(false);
 });

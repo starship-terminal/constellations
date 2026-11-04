@@ -13,7 +13,6 @@ interface Saved {
 }
 let items: Saved[] = [];
 let pending: Promise<void> | undefined;
-let loaded = false;
 const empty: Saved[] = [];
 const listeners = new Set<() => void>();
 const subscribe = (fn: () => void) => {
@@ -27,7 +26,6 @@ function refresh() {
     pending = api<{ items: Saved[] }>("/api/saved-media")
       .then((data) => {
         items = data.items;
-        loaded = true;
         listeners.forEach((fn) => fn());
       })
       .finally(() => {
@@ -46,7 +44,7 @@ function useSaved() {
     const reload = () => {
       refresh().catch((e) => setError(e.message));
     };
-    if (!loaded) reload();
+    reload();
     window.addEventListener("saved-media-changed", reload);
     return () => window.removeEventListener("saved-media-changed", reload);
   }, []);

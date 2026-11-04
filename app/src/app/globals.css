@@ -3306,3 +3306,11 @@ select {
 [data-theme="light"] .configuration-status.ready {
   color: #285c35;
 }
+
+[data-theme="light"] .text-button:hover,
+[data-theme="light"] .text-link:hover {
+  color: var(--ink);
+}
+[data-theme="light"] .error-text {
+  color: #a5203b;
+}

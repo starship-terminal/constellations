@@ -19,6 +19,7 @@ import {
   Spinner,
 } from "@/components/shared";
 import { SaveReference } from "@/components/reference";
+import { MediaBookmarkButton } from "@/components/media-bookmark";
 import {
   hasComponentMarkup,
   isUnresolvedCapture,
@@ -274,6 +275,11 @@ export function StyleMedia({ detail }: { detail: LibraryDetail }) {
             <span>
               {lightboxIndex + 1} of {images.length}
             </span>
+            <MediaBookmarkButton
+              referenceId={detail.id}
+              mediaId={lightboxMedia.id}
+              compact
+            />
             <button
               className="pill small"
               disabled={images.length < 2}

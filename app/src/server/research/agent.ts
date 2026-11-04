@@ -91,7 +91,12 @@ export function researchTools(
       inputSchema: z.object({
         referenceId: z.string().max(160),
         path: z.string().min(1).max(400).default("README.md"),
-        offset: z.number().int().min(0).max(2000000).default(0),
+        offset: z
+          .number()
+          .int()
+          .min(0)
+          .max(4 * 1024 * 1024)
+          .default(0),
       }),
       execute: async ({ referenceId, path, offset }) =>
         packageDocument(referenceId, path, offset, excluded),
