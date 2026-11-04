@@ -10,19 +10,29 @@ export function categoryGroup(value: string): string {
   return aliases.get(value) || value;
 }
 
-const legacyCategoryLabels: Record<string, string> = {
+const legacyCategoryLabels: Record<string, string | string[]> = {
   learning: "Education",
   education: "Education",
   fintech: "Finance",
   finance: "Finance",
   ecommerce: "Marketplace",
   commerce: "Marketplace",
-  entertainment: "Entertainment",
-  media: "Entertainment",
+  entertainment: [
+    "Entertainment",
+    "Video Streaming",
+    "Music Streaming",
+    "Magazines & Newspapers",
+  ],
+  media: [
+    "Entertainment",
+    "Video Streaming",
+    "Music Streaming",
+    "Magazines & Newspapers",
+  ],
   ai: "AI Tool",
   "ai-chat": "AI Tool",
   "ai-agent": "AI Tool",
-  "ai-research": "AI Tool",
+  "ai-research": ["AI Tool", "Reference", "Inspiration Board"],
   "ai-media": "AI Tool",
   messaging: "Communication Tools",
   devtools: "Development Tools",
@@ -32,13 +42,18 @@ const legacyCategoryLabels: Record<string, string> = {
   "design-resource": "Reference",
   "component-library": "Development Tools",
   crypto: "Web3 & Crypto",
-  productivity: "Productivity",
+  productivity: [
+    "Productivity",
+    "Development Tools",
+    "Project Management",
+    "Scheduling Tools",
+  ],
   fitness: "Fitness",
   hardware: "Electronic & Devices",
   "food-drink": "Food & Drink",
   browser: "Utility",
   events: "Scheduling Tools",
-  "super-app": "Travel & Booking",
+  "super-app": ["Travel & Booking", "Food Delivery"],
 };
 const categorySlug = (value: string) =>
   value
@@ -56,12 +71,12 @@ export function matchesCategory(
   query: string,
 ): boolean {
   if (!query) return true;
-  const target = categorySlug(
-    legacyCategoryLabels[query] || query.split(":").at(-1) || query,
-  );
+  const labels =
+    legacyCategoryLabels[query] || query.split(":").at(-1) || query;
+  const targets = (Array.isArray(labels) ? labels : [labels]).map(categorySlug);
   if (item.categoryIds !== undefined)
-    return item.categoryIds.some(
-      (id) => categorySlug(id.split(":").at(-1) || id) === target,
+    return item.categoryIds.some((id) =>
+      targets.includes(categorySlug(id.split(":").at(-1) || id)),
     );
   return categoryGroup(item.category) === categoryGroup(query);
 }

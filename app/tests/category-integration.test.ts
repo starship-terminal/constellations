@@ -40,6 +40,20 @@ describe("database categories across apps and screens", () => {
       );
     }
   });
+  it("keeps each existing package reachable through its former category link", async () => {
+    const references = await withReferenceCategories(
+      catalog.systems.map((row) => item(row.slug, row.platform)),
+    );
+    for (const row of catalog.systems) {
+      const reference = references.find(
+        (candidate) => candidate.slug === row.slug,
+      )!;
+      expect(
+        matchesCategory(reference, row.category),
+        `${row.slug}: ${row.category}`,
+      ).toBe(true);
+    }
+  });
   it("hydrates from SQLite and shares the same assignments with screen filters", async () => {
     const store = await getStore();
     const [reference] = await withReferenceCategories([item("linear")], store);

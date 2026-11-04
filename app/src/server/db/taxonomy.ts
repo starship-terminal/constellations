@@ -153,6 +153,46 @@ export function taxonomyStore(client: Client) {
         termId: String(row.term_id),
       }));
     },
+    async listReferenceCategoryDetails(
+      referenceIds?: readonly string[],
+    ): Promise<{ referenceId: string; termId: string; label: string }[]> {
+      const ids =
+        referenceIds === undefined ? undefined : [...new Set(referenceIds)];
+      if (ids?.length === 0) return [];
+      // Stay below SQLite's conservative 999-bound-parameter limit.
+      const batches: (string[] | undefined)[] = ids ? [] : [undefined];
+      if (ids) {
+        for (let offset = 0; offset < ids.length; offset += 900) {
+          batches.push(ids.slice(offset, offset + 900));
+        }
+      }
+      const details: { referenceId: string; termId: string; label: string }[] =
+        [];
+      for (const batch of batches) {
+        const result = await client.execute({
+          sql: `SELECT c.reference_id,c.term_id,t.label FROM reference_categories c JOIN taxonomy_terms t ON t.id=c.term_id WHERE t.group_id IN ('web-categories','ios-categories')${batch ? ` AND c.reference_id IN (${batch.map(() => "?").join(",")})` : ""} ORDER BY c.reference_id,c.term_id`,
+          args: batch ?? [],
+        });
+        details.push(
+          ...result.rows.map((row) => ({
+            referenceId: String(row.reference_id),
+            termId: String(row.term_id),
+            label: String(row.label),
+          })),
+        );
+      }
+      return details.sort((a, b) =>
+        a.referenceId < b.referenceId
+          ? -1
+          : a.referenceId > b.referenceId
+            ? 1
+            : a.termId < b.termId
+              ? -1
+              : a.termId > b.termId
+                ? 1
+                : 0,
+      );
+    },
     async assignReferenceCategories(
       referenceId: string,
       groupId: string,

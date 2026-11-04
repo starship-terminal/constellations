@@ -197,6 +197,23 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
     }
     return [...options.values()];
   }, [taxonomy, platform]);
+  const matchingCategoryLabels = [
+    ...new Set(
+      taxonomy
+        .filter((group) =>
+          ["web-categories", "ios-categories"].includes(group.id),
+        )
+        .flatMap((group) => group.terms)
+        .filter((term) =>
+          matchesCategory({ category: "", categoryIds: [term.id] }, category),
+        )
+        .map((term) => term.label),
+    ),
+  ];
+  const categoryLabel = category
+    ? matchingCategoryLabels.join(", ") ||
+      (taxonomyLoading ? "Loading category…" : category)
+    : "";
   const filtered = useMemo(() => {
     const words = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
     return scoped
@@ -439,7 +456,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
           </nav>
         )}
         {screenView ? (
-          <ScreenBrowser />
+          <ScreenBrowser categoryLabel={categoryLabel} />
         ) : (
           <>
             <div className={styles.filters}>

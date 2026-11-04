@@ -194,3 +194,61 @@ test("category assignments reject unknown and non-category terms without losing 
     [],
   );
 });
+
+test("category detail reads stay narrow, deduplicate IDs, and include current SQLite labels", async () => {
+  const { store } = await open();
+  const group = taxonomyGroups.find(
+    (candidate) => candidate.id === "web-categories",
+  )!;
+  const term = group.terms[0];
+  await store.assignReferenceCategories("systems:narrow", group.id, [
+    term.label,
+  ]);
+  await store.assignReferenceCategories("systems:other", group.id, [
+    term.label,
+  ]);
+  await store.client.execute({
+    sql: "UPDATE taxonomy_terms SET label=? WHERE id=?",
+    args: ["Current database label", term.id],
+  });
+  const expected = [
+    {
+      referenceId: "systems:narrow",
+      termId: term.id,
+      label: "Current database label",
+    },
+  ];
+  expect(
+    await store.listReferenceCategoryDetails([
+      "systems:narrow",
+      "systems:narrow",
+    ]),
+  ).toEqual(expected);
+  expect(await store.listReferenceCategoryDetails([])).toEqual([]);
+  expect(await store.listReferenceCategoryDetails(["missing"])).toEqual([]);
+  expect(await store.listReferenceCategoryDetails()).toEqual(
+    expect.arrayContaining(expected),
+  );
+  await store.assignReferenceCategories("systems:narrow", group.id, []);
+  expect(await store.listReferenceCategoryDetails(["systems:narrow"])).toEqual(
+    [],
+  );
+});
+
+test("category detail reads bound large ID filters without dropping matching references", async () => {
+  const { store } = await open();
+  const group = taxonomyGroups.find(
+    (candidate) => candidate.id === "web-categories",
+  )!;
+  const term = group.terms[0];
+  const ids = Array.from(
+    { length: 1001 },
+    (_, index) => `systems:batch-${index}`,
+  );
+  await store.assignReferenceCategories(ids[0], group.id, [term.label]);
+  await store.assignReferenceCategories(ids[1000], group.id, [term.label]);
+  expect(await store.listReferenceCategoryDetails(ids)).toEqual([
+    { referenceId: ids[0], termId: term.id, label: term.label },
+    { referenceId: ids[1000], termId: term.id, label: term.label },
+  ]);
+});

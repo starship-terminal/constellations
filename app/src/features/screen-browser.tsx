@@ -9,7 +9,7 @@ import { MediaBookmarkButton } from "@/components/media-bookmark";
 import { PackageLightbox } from "./package-detail";
 import styles from "./screen-browser.module.css";
 
-export function ScreenBrowser() {
+export function ScreenBrowser({ categoryLabel }: { categoryLabel?: string }) {
   const params = useSearchParams();
   const query = params.get("q") || "",
     platform = params.get("platform") || "",
@@ -152,14 +152,7 @@ export function ScreenBrowser() {
     ["scope", scope === "media" ? "Capture text only" : ""],
     ["platform", platform],
     ["theme", theme],
-    [
-      "category",
-      data?.items
-        .flatMap((item) => item.reference.categories || [])
-        .find((term) => term.id === category)?.label ||
-        category.split(":").at(-1)?.replace(/-/g, " ") ||
-        category,
-    ],
+    ["category", category ? categoryLabel || category : ""],
     ["tag", tag],
     ["group", group],
     ["referenceId", reference?.name || referenceId],

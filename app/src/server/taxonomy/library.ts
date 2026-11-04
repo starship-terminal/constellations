@@ -6,25 +6,16 @@ export async function withReferenceCategories<T extends LibraryItem>(
   items: T[],
   store?: ResearchStore,
 ): Promise<T[]> {
+  const referenceIds = items
+    .filter((item) => item.source === "systems")
+    .map((item) => item.id);
+  if (referenceIds.length === 0) return items;
   const database = store || (await getStore());
-  const [groups, assignments] = await Promise.all([
-    database.listTaxonomyGroups(),
-    database.listReferenceCategories(),
-  ]);
-  const terms = new Map(
-    groups
-      .filter(
-        (group) =>
-          group.id === "web-categories" || group.id === "ios-categories",
-      )
-      .flatMap((group) => group.terms.map((term) => [term.id, term] as const)),
-  );
+  const assignments = await database.listReferenceCategoryDetails(referenceIds);
   const byReference = new Map<string, { id: string; label: string }[]>();
   for (const assignment of assignments) {
-    const term = terms.get(assignment.termId);
-    if (!term) continue;
     const values = byReference.get(assignment.referenceId) || [];
-    values.push({ id: term.id, label: term.label });
+    values.push({ id: assignment.termId, label: assignment.label });
     byReference.set(assignment.referenceId, values);
   }
   return items.map((item) => {
