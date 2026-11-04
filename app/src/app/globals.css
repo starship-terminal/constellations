@@ -1524,8 +1524,7 @@ select {
   display: inline;
 }
 .dialog-form input,
-.dialog-form textarea,
-.dialog-form select {
+.dialog-form textarea {
   width: 100%;
   font-size: 13px;
 }
@@ -2422,6 +2421,135 @@ select {
 }
 .settings-section > .inline-actions .pill {
   font-size: 11px;
+}
+.settings-tabs {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.settings-tabs button {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 9px 14px;
+  color: var(--subtle);
+  font-size: 13px;
+}
+.settings-tabs button:hover {
+  color: var(--ink);
+  background: var(--surface);
+}
+.settings-tabs button[aria-selected="true"] {
+  color: var(--ink);
+  background: var(--surface);
+}
+.settings-field {
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.select {
+  position: relative;
+  font-size: 13px;
+}
+.select-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--strong-line);
+  border-radius: 10px;
+  padding: 12px 14px;
+  text-align: left;
+}
+.select-trigger > svg {
+  color: var(--subtle);
+  flex-shrink: 0;
+}
+.select-trigger[aria-expanded="true"] {
+  border-color: var(--focus);
+}
+.select.compact {
+  display: inline-block;
+}
+.select.compact .select-trigger {
+  width: auto;
+  gap: 6px;
+  padding: 8px 10px;
+  border-color: var(--line);
+  border-radius: var(--radius-md);
+  background: var(--page);
+  color: var(--muted);
+  font-size: 12px;
+}
+.select.compact .select-trigger:hover {
+  color: var(--ink);
+}
+.select-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 100%;
+  width: max-content;
+  max-width: 340px;
+  max-height: 280px;
+  overflow-y: auto;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px;
+  background: var(--elevated);
+  border: 1px solid var(--strong-line);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+.select-option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 11px;
+  border-radius: 8px;
+  color: var(--muted);
+  text-align: left;
+}
+.select-option > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.select-option:hover,
+.select-option:focus-visible {
+  background: var(--surface-raised);
+  color: var(--ink);
+}
+.select-option[aria-selected="true"] {
+  color: var(--ink);
+}
+.select-option svg {
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.select-hint {
+  padding: 9px 11px;
+  color: var(--subtle);
+  font-size: 12px;
+}
+.combobox {
+  width: 100%;
+}
+.combobox .select-menu {
+  right: 0;
+  width: auto;
 }
 @media (min-width: 1600px) {
   .research-hero {
@@ -3340,6 +3468,13 @@ select {
 }
 [data-theme="light"] .configuration-status.ready {
   color: #285c35;
+}
+[data-theme="light"] .select-menu {
+  box-shadow: 0 16px 40px rgba(32, 33, 40, 0.14);
+}
+[data-theme="light"] .select-option:hover,
+[data-theme="light"] .select-option:focus-visible {
+  color: var(--ink);
 }
 
 [data-theme="light"] .text-button:hover,

@@ -8,6 +8,7 @@ import {
   api,
   Empty,
   ErrorState,
+  Select,
   SkeletonGrid,
   Spinner,
 } from "@/components/shared";
@@ -524,20 +525,20 @@ function StylesContent() {
                 ["industry", "All industries"],
               ] as [StyleFacet, string][]
             ).map(([key, label]) => (
-              <label key={key}>
-                <span className="sr-only">{label}</span>
-                <select
-                  value={filters[key]}
-                  onChange={(event) => update({ [key]: event.target.value })}
-                >
-                  <option value="">{label}</option>
-                  {styleCounts(items, key).map(([value, count]) => (
-                    <option key={value} value={value}>
-                      {value} ({count})
-                    </option>
-                  ))}
-                </select>
-              </label>
+              <Select
+                key={key}
+                compact
+                label={label}
+                value={filters[key]}
+                onChange={(value) => update({ [key]: value })}
+                options={[
+                  { value: "", label },
+                  ...styleCounts(items, key).map(([value, count]) => ({
+                    value,
+                    label: `${value} (${count})`,
+                  })),
+                ]}
+              />
             ))}
             <button
               className={filters.video ? styles.activeChip : styles.chip}

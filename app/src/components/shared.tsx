@@ -1,9 +1,17 @@
 "use client";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type KeyboardEventHandler,
+  type ReactNode,
+  type RefObject,
+} from "react";
 import {
   LoaderCircle,
   X,
   Check,
+  ChevronDown,
   Copy,
   Download,
   ArrowUpRight,
@@ -240,6 +248,222 @@ export function External({
       {children}
       <ArrowUpRight size={14} />
     </a>
+  );
+}
+function menuKeys(
+  root: RefObject<HTMLDivElement | null>,
+  open: boolean,
+): KeyboardEventHandler<HTMLDivElement> {
+  return (event) => {
+    if (!open || (event.key !== "ArrowDown" && event.key !== "ArrowUp")) return;
+    event.preventDefault();
+    const items = Array.from(
+      root.current?.querySelectorAll<HTMLElement>(".select-option") || [],
+    );
+    if (!items.length) return;
+    const index = items.indexOf(document.activeElement as HTMLElement);
+    const next =
+      event.key === "ArrowDown"
+        ? (index + 1) % items.length
+        : (index - 1 + items.length) % items.length;
+    items[next]?.focus();
+  };
+}
+function useMenuDismiss(
+  root: RefObject<HTMLDivElement | null>,
+  open: boolean,
+  setOpen: (open: boolean) => void,
+  refocus?: () => void,
+) {
+  useEffect(() => {
+    if (!open) return;
+    const close = (event: MouseEvent) => {
+      if (!root.current?.contains(event.target as Node)) setOpen(false);
+    };
+    const escape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        refocus?.();
+      }
+    };
+    document.addEventListener("mousedown", close);
+    document.addEventListener("keydown", escape);
+    return () => {
+      document.removeEventListener("mousedown", close);
+      document.removeEventListener("keydown", escape);
+    };
+  }, [open, root, setOpen, refocus]);
+}
+export function Select({
+  value,
+  onChange,
+  options,
+  label,
+  disabled = false,
+  compact = false,
+}: {
+  value: string;
+  onChange: (value: string) => void;
+  options: { value: string; label: string }[];
+  label: string;
+  disabled?: boolean;
+  compact?: boolean;
+}) {
+  const [open, setOpen] = useState(false);
+  const root = useRef<HTMLDivElement>(null);
+  const trigger = useRef<HTMLButtonElement>(null);
+  useMenuDismiss(root, open, setOpen, () => trigger.current?.focus());
+  useEffect(() => {
+    if (open)
+      root.current
+        ?.querySelector<HTMLElement>('.select-option[aria-selected="true"]')
+        ?.focus();
+  }, [open]);
+  const current = options.find((option) => option.value === value);
+  return (
+    <div
+      className={`select${compact ? " compact" : ""}`}
+      ref={root}
+      onKeyDown={menuKeys(root, open)}
+    >
+      <button
+        type="button"
+        className="select-trigger"
+        ref={trigger}
+        disabled={disabled}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-label={`${label}: ${current?.label ?? value}`}
+        onClick={() => setOpen((v) => !v)}
+      >
+        <span>{current?.label ?? value}</span>
+        <ChevronDown size={14} />
+      </button>
+      {open && (
+        <div className="select-menu" role="listbox" aria-label={label}>
+          {options.map((option) => (
+            <button
+              key={option.value}
+              type="button"
+              role="option"
+              aria-selected={option.value === value}
+              className="select-option"
+              onClick={() => {
+                if (option.value !== value) onChange(option.value);
+                setOpen(false);
+                trigger.current?.focus();
+              }}
+            >
+              <span>{option.label}</span>
+              {option.value === value && <Check size={14} />}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+export function Combobox({
+  value,
+  onChange,
+  options,
+  label,
+  placeholder,
+  disabled = false,
+  required = false,
+}: {
+  value: string;
+  onChange: (value: string) => void;
+  options: string[];
+  label: string;
+  placeholder?: string;
+  disabled?: boolean;
+  required?: boolean;
+}) {
+  const [open, setOpen] = useState(false);
+  const [matches, setMatches] = useState<string[]>(options);
+  const root = useRef<HTMLDivElement>(null);
+  const input = useRef<HTMLInputElement>(null);
+  const suppressOpen = useRef(false);
+  // Refocusing after a dismiss fires onFocus; the flag keeps the menu closed.
+  const refocusInput = () => {
+    if (document.activeElement === input.current) return;
+    suppressOpen.current = true;
+    input.current?.focus();
+  };
+  useMenuDismiss(root, open, setOpen, refocusInput);
+  useEffect(() => {
+    // The option list arrives once per test; typing only re-filters it here.
+    const timer = setTimeout(() => {
+      const query = value.trim().toLowerCase();
+      setMatches(
+        query
+          ? options.filter((option) => option.toLowerCase().includes(query))
+          : options,
+      );
+    }, 150);
+    return () => clearTimeout(timer);
+  }, [value, options]);
+  return (
+    <div
+      className="select combobox"
+      ref={root}
+      onKeyDown={menuKeys(root, open)}
+    >
+      <input
+        role="combobox"
+        aria-expanded={open && options.length > 0}
+        aria-label={label}
+        aria-autocomplete="list"
+        autoComplete="off"
+        spellCheck={false}
+        disabled={disabled}
+        required={required}
+        placeholder={placeholder}
+        ref={input}
+        value={value}
+        onChange={(event) => {
+          onChange(event.target.value);
+          setOpen(true);
+        }}
+        onFocus={() => {
+          if (suppressOpen.current) suppressOpen.current = false;
+          else setOpen(true);
+        }}
+        onBlur={(event) => {
+          if (!root.current?.contains(event.relatedTarget as Node))
+            setOpen(false);
+        }}
+      />
+      {open && options.length > 0 && (
+        <div className="select-menu" role="listbox" aria-label={label}>
+          {matches.length ? (
+            matches.slice(0, 50).map((option) => (
+              <button
+                key={option}
+                type="button"
+                role="option"
+                aria-selected={option === value}
+                className="select-option"
+                onMouseDown={(event) => event.preventDefault()}
+                onClick={() => {
+                  onChange(option);
+                  setOpen(false);
+                  refocusInput();
+                }}
+              >
+                <span>{option}</span>
+                {option === value && <Check size={14} />}
+              </button>
+            ))
+          ) : (
+            <p className="select-hint">
+              No matching models. The typed ID is used as-is.
+            </p>
+          )}
+        </div>
+      )}
+    </div>
   );
 }
 export function MediaPreview({

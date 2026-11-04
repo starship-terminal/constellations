@@ -25,6 +25,7 @@ import {
   Empty,
   ErrorState,
   MediaPreview,
+  Select,
   SkeletonGrid,
   Spinner,
 } from "@/components/shared";
@@ -431,22 +432,19 @@ function LibraryContent() {
         ) : (
           <>
             <div className={styles.filters}>
-              <label>
-                <span className="sr-only">Gallery layout</span>
-                <select
-                  value={layout}
-                  onChange={(e) => {
-                    setLayout(e.target.value);
-                    localStorage.setItem(
-                      "studio-gallery-layout",
-                      e.target.value,
-                    );
-                  }}
-                >
-                  <option value="grid">Grid view</option>
-                  <option value="list">List view</option>
-                </select>
-              </label>
+              <Select
+                compact
+                label="Gallery layout"
+                value={layout}
+                onChange={(value) => {
+                  setLayout(value);
+                  localStorage.setItem("studio-gallery-layout", value);
+                }}
+                options={[
+                  { value: "grid", label: "Grid view" },
+                  { value: "list", label: "List view" },
+                ]}
+              />
               <label>
                 <input
                   type="checkbox"
@@ -461,31 +459,31 @@ function LibraryContent() {
                 />{" "}
                 Preview on hover
               </label>
-              <label>
-                <span className="sr-only">Platform</span>
-                <select
-                  value={platform}
-                  onChange={(e) =>
-                    updateFilters({ platform: e.target.value, category: "" })
-                  }
-                >
-                  <option value="">All platforms</option>
-                  <option value="web">Web</option>
-                  <option value="mobile">Mobile</option>
-                  <option value="desktop">Desktop</option>
-                </select>
-              </label>
-              <label>
-                <span className="sr-only">Theme</span>
-                <select
-                  value={theme}
-                  onChange={(e) => updateFilters({ theme: e.target.value })}
-                >
-                  <option value="">All themes</option>
-                  <option value="light">Light</option>
-                  <option value="dark">Dark</option>
-                </select>
-              </label>
+              <Select
+                compact
+                label="Platform"
+                value={platform}
+                onChange={(value) =>
+                  updateFilters({ platform: value, category: "" })
+                }
+                options={[
+                  { value: "", label: "All platforms" },
+                  { value: "web", label: "Web" },
+                  { value: "mobile", label: "Mobile" },
+                  { value: "desktop", label: "Desktop" },
+                ]}
+              />
+              <Select
+                compact
+                label="Theme"
+                value={theme}
+                onChange={(value) => updateFilters({ theme: value })}
+                options={[
+                  { value: "", label: "All themes" },
+                  { value: "light", label: "Light" },
+                  { value: "dark", label: "Dark" },
+                ]}
+              />
             </div>
             <div className={styles.results}>
               <span>
