@@ -23,6 +23,16 @@ export const settingsPatch = z
       }, "Use an HTTP(S) URL without credentials, query or fragment.")
       .nullable()
       .optional(),
+    // Per-provider keys saved through Settings. A string sets the key, null
+    // clears it, an absent entry keeps it. Keys stay server-side: readSettings
+    // only reports where each credential comes from.
+    apiKeys: z
+      .object({
+        openai: z.string().trim().min(1).max(320).nullable().optional(),
+        anthropic: z.string().trim().min(1).max(320).nullable().optional(),
+      })
+      .strict()
+      .optional(),
   })
   .strict();
 export async function readSettings(): Promise<ProviderSettings> {
@@ -48,9 +58,16 @@ export async function readSettings(): Promise<ProviderSettings> {
         null);
   if (baseURL !== null && !settingsPatch.safeParse({ baseURL }).success)
     throw new HttpError(500, "The server provider base URL is invalid.");
+  const keySources = {
+    openai: credentialSource(saved.apiKeys?.openai, process.env.OPENAI_API_KEY),
+    anthropic: credentialSource(
+      saved.apiKeys?.anthropic,
+      process.env.ANTHROPIC_API_KEY,
+    ),
+  };
   const providers = {
-    openai: Boolean(process.env.OPENAI_API_KEY),
-    anthropic: Boolean(process.env.ANTHROPIC_API_KEY),
+    openai: keySources.openai !== null,
+    anthropic: keySources.anthropic !== null,
   };
   return {
     provider,
@@ -58,21 +75,43 @@ export async function readSettings(): Promise<ProviderSettings> {
     baseURL,
     configured: providers[provider],
     providers,
+    keySources,
   };
 }
-export function modelFor(settings: ProviderSettings) {
+function credentialSource(
+  stored: string | null | undefined,
+  env: string | undefined,
+): "stored" | "environment" | null {
+  return stored ? "stored" : env ? "environment" : null;
+}
+export async function readApiKey(provider: "openai" | "anthropic") {
+  const saved = settingsPatch.parse(await (await getStore()).getSettings());
+  return (
+    saved.apiKeys?.[provider] ||
+    (provider === "openai"
+      ? process.env.OPENAI_API_KEY
+      : process.env.ANTHROPIC_API_KEY) ||
+    undefined
+  );
+}
+export function modelFor(settings: ProviderSettings, apiKey?: string) {
+  const key =
+    apiKey ||
+    (settings.provider === "openai"
+      ? process.env.OPENAI_API_KEY
+      : process.env.ANTHROPIC_API_KEY);
   return settings.provider === "openai"
     ? settings.baseURL
       ? createOpenAI({
-          apiKey: process.env.OPENAI_API_KEY,
+          apiKey: key,
           baseURL: settings.baseURL,
         }).chat(settings.model)
       : createOpenAI({
-          apiKey: process.env.OPENAI_API_KEY,
+          apiKey: key,
           baseURL: "https://api.openai.com/v1",
         }).responses(settings.model)
     : createAnthropic({
-        apiKey: process.env.ANTHROPIC_API_KEY,
+        apiKey: key,
         baseURL: settings.baseURL ?? "https://api.anthropic.com/v1",
       })(settings.model);
 }

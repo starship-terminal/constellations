@@ -9,14 +9,12 @@ import {
   CheckCircle2,
   KeyRound,
   Palette,
-  Server,
   Settings2,
   Sparkles,
 } from "lucide-react";
 import {
   api,
   Combobox,
-  CopyButton,
   ErrorState,
   Select,
   Spinner,
@@ -28,6 +26,10 @@ interface Settings {
   baseURL: string | null;
   configured: boolean;
   providers: { openai: boolean; anthropic: boolean };
+  keySources: {
+    openai: "stored" | "environment" | null;
+    anthropic: "stored" | "environment" | null;
+  };
 }
 const DEFAULT_BASE_URL = {
   openai: "https://api.openai.com/v1",
@@ -72,13 +74,14 @@ function SettingsContent() {
   const [provider, setProvider] = useState<"openai" | "anthropic">("openai"),
     [model, setModel] = useState(""),
     [baseURL, setBaseURL] = useState(""),
+    [apiKey, setApiKey] = useState(""),
     [busy, setBusy] = useState(false),
     [saved, setSaved] = useState(false),
     [localError, setError] = useState("");
   useEffect(() => {
     setModels([]);
     setConnection("");
-  }, [provider, baseURL]);
+  }, [provider, baseURL, apiKey]);
   useEffect(() => {
     if (data) {
       setProvider(data.provider);
@@ -105,6 +108,7 @@ function SettingsContent() {
     // OpenAI to Chat Completions and drops screenshot evidence. The provider's
     // own URL is the default, so it saves as null.
     const trimmedURL = baseURL.trim();
+    const key = apiKey.trim();
     try {
       const d = await api("/api/settings", {
         method: "PATCH",
@@ -115,11 +119,31 @@ function SettingsContent() {
             !trimmedURL || trimmedURL === DEFAULT_BASE_URL[provider]
               ? null
               : trimmedURL,
+          ...(key ? { apiKeys: { [provider]: key } } : {}),
         }),
       });
       setData(d);
+      setApiKey("");
       setSaved(true);
       setTimeout(() => setSaved(false), 2000);
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  }
+  async function removeKey() {
+    setBusy(true);
+    setError("");
+    try {
+      const d = await api("/api/settings", {
+        method: "PATCH",
+        body: JSON.stringify({ apiKeys: { [provider]: null } }),
+      });
+      setData(d);
+      setApiKey("");
+      setModels([]);
+      setConnection("");
     } catch (e) {
       setError((e as Error).message);
     } finally {
@@ -218,6 +242,7 @@ function SettingsContent() {
                           setProvider(next);
                           setBaseURL(DEFAULT_BASE_URL[next]);
                           setModel(DEFAULT_MODEL[next]);
+                          setApiKey("");
                         }}
                         options={[
                           { value: "openai", label: "OpenAI" },
@@ -230,6 +255,7 @@ function SettingsContent() {
                       <input
                         disabled={testing}
                         type="url"
+                        aria-label="Base URL"
                         value={baseURL}
                         onChange={(e) => setBaseURL(e.target.value)}
                         placeholder={DEFAULT_BASE_URL[provider]}
@@ -239,19 +265,46 @@ function SettingsContent() {
                         server or proxy to change it.
                       </small>
                     </div>
-                    <div
-                      className={`configuration-status ${data.providers?.[provider] ? "ready" : ""}`}
-                    >
-                      {data.providers?.[provider] ? (
-                        <CheckCircle2 size={16} />
-                      ) : (
-                        <KeyRound size={16} />
+                    <div className="settings-field">
+                      <span>API key</span>
+                      <input
+                        disabled={testing}
+                        type="password"
+                        autoComplete="off"
+                        spellCheck={false}
+                        aria-label="API key"
+                        value={apiKey}
+                        onChange={(e) => setApiKey(e.target.value)}
+                        placeholder={
+                          provider === "openai" ? "sk-…" : "sk-ant-…"
+                        }
+                      />
+                      <small
+                        className={`credential-note ${data.keySources?.[provider] ? "ready" : ""}`}
+                      >
+                        {data.keySources?.[provider] ? (
+                          <CheckCircle2 size={13} />
+                        ) : (
+                          <KeyRound size={13} />
+                        )}
+                        <span>
+                          {data.keySources?.[provider] === "stored"
+                            ? "Key saved on this server. Paste a new one to replace it."
+                            : data.keySources?.[provider] === "environment"
+                              ? "Using the key from the server environment. Paste one here to override it."
+                              : "Required for research. Saved on this server and never sent back to the browser."}
+                        </span>
+                      </small>
+                      {data.keySources?.[provider] === "stored" && (
+                        <button
+                          type="button"
+                          className="text-button"
+                          disabled={busy || testing}
+                          onClick={removeKey}
+                        >
+                          Remove saved key
+                        </button>
                       )}
-                      <span>
-                        {data.providers?.[provider]
-                          ? "Server credential configured"
-                          : "Server credential needed"}
-                      </span>
                     </div>
                     <button
                       type="button"
@@ -262,6 +315,7 @@ function SettingsContent() {
                         setConnection("");
                         setError("");
                         try {
+                          const key = apiKey.trim();
                           const result = await api<{ models: string[] }>(
                             "/api/models",
                             {
@@ -269,6 +323,7 @@ function SettingsContent() {
                               body: JSON.stringify({
                                 provider,
                                 baseURL: baseURL.trim() || null,
+                                ...(key ? { apiKey: key } : {}),
                               }),
                             },
                           );
@@ -322,45 +377,6 @@ function SettingsContent() {
                           : "Save model settings"}
                     </button>
                   </form>
-                </section>
-                <section className="settings-section">
-                  <div className="settings-section-label">
-                    <Server size={19} />
-                    <div>
-                      <h2>Connect your provider</h2>
-                      <p>
-                        Keys stay on the server. The browser never reads or
-                        stores them.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="server-instructions">
-                    <p>
-                      Add your provider’s key to <code>app/.env.local</code>,
-                      then restart the app server.
-                    </p>
-                    <div className="env-example">
-                      <pre>
-                        <code>
-                          {provider === "openai"
-                            ? "OPENAI_API_KEY=your-provider-key"
-                            : "ANTHROPIC_API_KEY=your-provider-key"}
-                        </code>
-                      </pre>
-                      <CopyButton
-                        value={
-                          provider === "openai"
-                            ? "OPENAI_API_KEY="
-                            : "ANTHROPIC_API_KEY="
-                        }
-                        label="Copy variable"
-                      />
-                    </div>
-                    <p className="muted">
-                      Return to your saved research and choose “Retry research”
-                      after the server restarts.
-                    </p>
-                  </div>
                 </section>
               </>
             )

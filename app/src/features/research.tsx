@@ -801,7 +801,7 @@ function ResearchConversation({ initial }: { initial: Conversation }) {
             </strong>
             <p>
               {missingKey
-                ? "Your prompt is saved. Add a provider key on the server, then return here and retry. Your library and collections are ready to explore."
+                ? "Your prompt is saved. Add a provider key in model settings, then return here and retry. Your library and collections are ready to explore."
                 : knownError}
             </p>
             <div className="inline-actions">

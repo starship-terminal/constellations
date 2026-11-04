@@ -11,6 +11,7 @@ import {
 } from "@/server/research/http";
 import { validateReferences } from "@/server/research/references";
 import {
+  readApiKey,
   readSettings,
   modelFor,
   supportsToolImages,
@@ -104,11 +105,11 @@ export function POST(request: Request) {
       if (!settings.configured)
         throw new HttpError(
           503,
-          `Set ${settings.provider === "openai" ? "OPENAI_API_KEY" : "ANTHROPIC_API_KEY"} in the server environment, then retry. Your question is saved.`,
+          `Add a provider API key in Settings, or set ${settings.provider === "openai" ? "OPENAI_API_KEY" : "ANTHROPIC_API_KEY"} in the server environment, then retry. Your question is saved.`,
           "PROVIDER_NOT_CONFIGURED",
         );
       return await streamResearch({
-        model: modelFor(settings),
+        model: modelFor(settings, await readApiKey(settings.provider)),
         supportsImages: supportsToolImages(settings),
         conversation,
         store,

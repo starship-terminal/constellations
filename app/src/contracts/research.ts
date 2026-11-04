@@ -37,12 +37,14 @@ export interface CollectionItem {
   addedAt: number;
   reference: LibraryDetail | null;
 }
+export type CredentialSource = "stored" | "environment" | null;
 export interface ProviderSettings {
   provider: "openai" | "anthropic";
   model: string;
   baseURL: string | null;
   configured: boolean;
   providers: { openai: boolean; anthropic: boolean };
+  keySources: { openai: CredentialSource; anthropic: CredentialSource };
 }
 export interface ResearchCitation {
   id: string;

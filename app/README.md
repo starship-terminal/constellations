@@ -13,11 +13,11 @@ pnpm --dir app dev
 
 Open http://127.0.0.1:8845. The original app still uses port 8800. The new app accepts loopback hostnames (`localhost`, `127.0.0.1`, and `[::1]`). An optional exact Tailscale origin supports a private server deployment while the listener stays on loopback. See [private deployment](docs/DEPLOYMENT.md) for staging, backups, cutover and rollback.
 
-For AI responses, copy [`.env.example`](.env.example) to `.env.local` and set an OpenAI or Anthropic API key. Restart the server after changing environment variables. Select the provider and model in Settings. Credentials stay on the server; the settings endpoint only returns whether credentials are configured. Without a key, the real library, style details, collections and exports remain usable; the app reports that AI research needs configuration.
+For AI responses, paste an OpenAI or Anthropic API key in Settings > AI; it saves on the server and is never returned to the UI. Environment variables still work as a fallback: copy [`.env.example`](.env.example) to `.env.local`, set a key there and restart the server. Select the provider and model in Settings. Without a key, the real library, style details, collections and exports remain usable; the app reports that AI research needs configuration.
 
 Official OpenAI connections use the Responses API; Anthropic uses its native API. A custom OpenAI base URL uses Chat Completions for compatibility. That mode reports text-only evidence because tool-output images are not supported by that protocol. Official OpenAI and Anthropic can receive bounded, hydrated local reference images; remote media remains text-only unless mirrored locally. No arbitrary remote image fetching happens on the server.
 
-`DESIGN_RESEARCH_PROVIDER`, `DESIGN_RESEARCH_MODEL` and `DESIGN_RESEARCH_BASE_URL` provide initial settings. Provider-specific `OPENAI_MODEL`, `OPENAI_BASE_URL`, `ANTHROPIC_MODEL` and `ANTHROPIC_BASE_URL` are also supported. Stored settings override these defaults; provider keys always come from the environment.
+`DESIGN_RESEARCH_PROVIDER`, `DESIGN_RESEARCH_MODEL` and `DESIGN_RESEARCH_BASE_URL` provide initial settings. Provider-specific `OPENAI_MODEL`, `OPENAI_BASE_URL`, `ANTHROPIC_MODEL` and `ANTHROPIC_BASE_URL` are also supported. Stored settings override these defaults. A key saved in Settings wins over the environment key for that provider.
 
 ## Boundaries
 
