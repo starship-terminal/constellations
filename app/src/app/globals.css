@@ -1130,32 +1130,7 @@ select {
     opacity: 0.45;
   }
 }
-/* Standalone styles */
-.standalone-header {
-  height: 80px;
-  position: sticky;
-  top: 0;
-  padding: 0 16px;
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  background: #13151af5;
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--line);
-  z-index: 30;
-  font-size: 24px;
-}
-.standalone-header .brand {
-  font-size: 24px;
-}
-.header-slash {
-  color: #5e6474;
-  font-size: 21px;
-  font-weight: 300;
-}
-.header-home {
-  margin-left: auto;
-}
+/* Styles catalog */
 .styles-page {
   max-width: 1370px;
   margin: 0 auto;
@@ -2810,27 +2785,6 @@ select {
   .compare-thumbs > button {
     width: 22px;
     height: 22px;
-  }
-  .standalone-header {
-    height: 66px;
-    padding: 0 18px;
-    gap: 10px;
-    font-size: 14px;
-  }
-  .standalone-header .brand {
-    font-size: 21px;
-  }
-  .standalone-header .brand-mark {
-    width: 23px;
-  }
-  .standalone-header .header-home {
-    font-size: 0;
-    padding: 7px;
-    min-height: 29px;
-  }
-  .standalone-header .header-home svg {
-    width: 15px;
-    height: 15px;
   }
   .styles-hero {
     margin: 52px auto 35px;
