@@ -1,7 +1,7 @@
 /* Style details remain in the app shell with independent document panes. */
 .page {
   --style-header-height: 64px;
-  height: 100dvh;
+  height: calc(100dvh - var(--app-content-top-inset, 0px));
   overflow: hidden;
 }
 .breadcrumb {
@@ -25,7 +25,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   grid-template-rows: minmax(0, 1fr);
-  height: calc(100dvh - var(--style-header-height));
+  height: calc(100% - var(--style-header-height));
   min-height: 0;
 }
 .overview {

@@ -3234,7 +3234,8 @@ select {
     left: 12px;
   }
   .sidebar-collapsed .main-content {
-    padding-top: 32px;
+    --app-content-top-inset: 32px;
+    padding-top: var(--app-content-top-inset);
   }
 }
 @media (max-width: 760px) {
