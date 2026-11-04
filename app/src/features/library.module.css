@@ -644,3 +644,8 @@
 .resultModes button[aria-pressed="true"] .screensModeIcon {
   color: #25cf99;
 }
+
+.modes a[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: wait;
+}

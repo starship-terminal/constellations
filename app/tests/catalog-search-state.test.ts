@@ -3,6 +3,7 @@ import { taxonomyGroups } from "@/contracts/taxonomy";
 import type { LibraryItem } from "@/contracts/library";
 import {
   legacyCategoryLabels,
+  canSwitchPlatform,
   pickerGroups,
   productSearchPlatform,
   selectProductSearch,
@@ -233,4 +234,14 @@ describe("catalog search platform state", () => {
       "unknown-category",
     );
   });
+});
+
+it("waits for selected filter lookups before enabling platform navigation", () => {
+  const selected = new URLSearchParams(
+    "term=web-page-types:log-in&referenceId=systems:web",
+  );
+  expect(canSwitchPlatform(selected, false, products)).toBe(false);
+  expect(canSwitchPlatform(selected, true, [])).toBe(false);
+  expect(canSwitchPlatform(selected, true, products)).toBe(true);
+  expect(canSwitchPlatform(new URLSearchParams(), false, [])).toBe(true);
 });

@@ -159,3 +159,17 @@ export function platformSearch(
   next.delete("offset");
   return next;
 }
+
+/** Switching must wait until selected filters can actually be mapped. */
+export function canSwitchPlatform(
+  params: Pick<URLSearchParams, "has" | "getAll">,
+  taxonomyReady: boolean,
+  items: readonly Pick<LibraryItem, "id">[],
+) {
+  return (
+    ((!params.has("term") && !params.has("category")) || taxonomyReady) &&
+    params
+      .getAll("referenceId")
+      .every((id) => items.some((item) => item.id === id))
+  );
+}

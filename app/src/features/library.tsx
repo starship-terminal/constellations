@@ -41,6 +41,7 @@ import { CatalogSearch } from "./catalog-search";
 import {
   platformSearch,
   inferredProductPlatform,
+  canSwitchPlatform,
 } from "./catalog-search-state";
 import {
   loadLibraryPages,
@@ -260,6 +261,11 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
           : prev,
     );
   }
+  const platformLinksReady = canSwitchPlatform(
+    params,
+    !taxonomyLoading && !taxonomyError,
+    allItems,
+  );
   const modeUrl = (mode: string) => {
     const next = platformSearch(
       new URLSearchParams(params.toString()),
@@ -369,14 +375,38 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
                         ? styles.modeActive
                         : ""
                     }
-                    href={modeUrl("web")}
+                    href={
+                      platformLinksReady ? modeUrl("web") : `/library?${params}`
+                    }
+                    aria-disabled={!platformLinksReady}
+                    title={
+                      platformLinksReady
+                        ? undefined
+                        : "Loading selected filters…"
+                    }
+                    onClick={(event) => {
+                      if (!platformLinksReady) event.preventDefault();
+                    }}
                   >
                     <Monitor className={styles.webModeIcon} size={18} />
                     Web apps
                   </Link>
                   <Link
                     className={platform === "mobile" ? styles.modeActive : ""}
-                    href={modeUrl("mobile")}
+                    href={
+                      platformLinksReady
+                        ? modeUrl("mobile")
+                        : `/library?${params}`
+                    }
+                    aria-disabled={!platformLinksReady}
+                    title={
+                      platformLinksReady
+                        ? undefined
+                        : "Loading selected filters…"
+                    }
+                    onClick={(event) => {
+                      if (!platformLinksReady) event.preventDefault();
+                    }}
                   >
                     <Smartphone className={styles.iosModeIcon} size={18} />
                     iOS apps
