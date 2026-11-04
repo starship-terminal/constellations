@@ -1,10 +1,110 @@
+export interface ViewerRect {
+  left: number;
+  top: number;
+  width: number;
+  height: number;
+}
+
 export interface CaptureViewerOrigin {
   id: string;
   element: HTMLElement;
-  rect: { left: number; top: number; width: number; height: number };
+  rect: ViewerRect;
+  imageRect: ViewerRect;
   url: string;
   width: number;
   height: number;
+}
+
+function positionOffset(value: string, available: number, axis: "x" | "y") {
+  if (value === "center") return available / 2;
+  if (value === (axis === "x" ? "left" : "top")) return 0;
+  if (value === (axis === "x" ? "right" : "bottom")) return available;
+  const number = Number.parseFloat(value);
+  if (!Number.isFinite(number)) return available / 2;
+  return value.endsWith("%") ? (available * number) / 100 : number;
+}
+
+/** Resolve the pixels painted inside an img element, including letterboxing. */
+export function renderedImageRect(
+  box: ViewerRect,
+  natural: { width: number; height: number },
+  fit: string,
+  position: string,
+): ViewerRect {
+  if (!natural.width || !natural.height || fit === "fill") return { ...box };
+  const contain = Math.min(
+    box.width / natural.width,
+    box.height / natural.height,
+  );
+  const scale =
+    fit === "cover"
+      ? Math.max(box.width / natural.width, box.height / natural.height)
+      : fit === "contain"
+        ? contain
+        : fit === "scale-down"
+          ? Math.min(1, contain)
+          : 1;
+  const width = natural.width * scale,
+    height = natural.height * scale;
+  const words = position.trim().split(/\s+/);
+  // Computed styles normally expose two percentage/length values. Retain
+  // keyword support for callers and single-keyword styles as well.
+  const [horizontal, vertical] =
+    words.length === 1
+      ? [
+          words[0] === "top" || words[0] === "bottom" ? "50%" : words[0],
+          words[0] === "top" || words[0] === "bottom" ? words[0] : "50%",
+        ]
+      : words;
+  return {
+    left: box.left + positionOffset(horizontal, box.width - width, "x"),
+    top: box.top + positionOffset(vertical, box.height - height, "y"),
+    width,
+    height,
+  };
+}
+
+/** Keep the full image's negative scroll offset inside its visible frame. */
+export function viewerImageInFrame(image: ViewerRect, frame: ViewerRect) {
+  return {
+    frame,
+    image: {
+      ...image,
+      left: image.left - frame.left,
+      top: image.top - frame.top,
+    },
+  };
+}
+
+export function clippedViewerImage(image: ViewerRect, clip: ViewerRect) {
+  const frame = {
+    left: Math.max(image.left, clip.left),
+    top: Math.max(image.top, clip.top),
+    width: Math.max(
+      0,
+      Math.min(image.left + image.width, clip.left + clip.width) -
+        Math.max(image.left, clip.left),
+    ),
+    height: Math.max(
+      0,
+      Math.min(image.top + image.height, clip.top + clip.height) -
+        Math.max(image.top, clip.top),
+    ),
+  };
+  return viewerImageInFrame(image, frame);
+}
+
+function readImageRect(image: HTMLImageElement) {
+  const style = getComputedStyle(image);
+  return renderedImageRect(
+    image.getBoundingClientRect(),
+    {
+      width: image.naturalWidth || Number(image.getAttribute("width")),
+      height: image.naturalHeight || Number(image.getAttribute("height")),
+    },
+    style.objectFit,
+    style.objectPosition,
+  );
 }
 
 /** Read the clipped thumbnail frame before the dialog locks page scrolling. */
@@ -26,6 +126,7 @@ export function captureViewerOrigin(
       width: rect.width,
       height: rect.height,
     },
+    imageRect: readImageRect(image),
     url: image.currentSrc || image.src,
     width: image.naturalWidth,
     height: image.naturalHeight,
@@ -56,8 +157,10 @@ export function reducedViewerMotion() {
 export function animateViewerDeparture(stage: HTMLElement, direction: number) {
   const image = stage.querySelector<HTMLImageElement>("img");
   if (!image || reducedViewerMotion()) return () => {};
-  const bounds = image.getBoundingClientRect();
-  const clip = stage.getBoundingClientRect();
+  const { frame: bounds, image: inner } = clippedViewerImage(
+    readImageRect(image),
+    stage.getBoundingClientRect(),
+  );
   const frame = document.createElement("div");
   Object.assign(frame.style, {
     position: "fixed",
@@ -65,9 +168,9 @@ export function animateViewerDeparture(stage: HTMLElement, direction: number) {
     zIndex: "152",
     overflow: "hidden",
     left: `${bounds.left}px`,
-    top: `${Math.max(bounds.top, clip.top)}px`,
+    top: `${bounds.top}px`,
     width: `${bounds.width}px`,
-    height: `${Math.max(0, Math.min(bounds.bottom, clip.bottom) - Math.max(bounds.top, clip.top))}px`,
+    height: `${bounds.height}px`,
   });
   frame.setAttribute("aria-hidden", "true");
   const copy = image.cloneNode() as HTMLImageElement;
@@ -75,11 +178,12 @@ export function animateViewerDeparture(stage: HTMLElement, direction: number) {
     display: "block",
     maxWidth: "none",
     maxHeight: "none",
-    width: `${bounds.width}px`,
-    height: `${bounds.height}px`,
+    width: `${inner.width}px`,
+    height: `${inner.height}px`,
     margin: "0",
     visibility: "visible",
-    transform: `translateY(${Math.min(0, bounds.top - clip.top)}px)`,
+    objectFit: "fill",
+    transform: `translate(${inner.left}px, ${inner.top}px)`,
   });
   frame.append(copy);
   document.body.append(frame);
@@ -194,25 +298,14 @@ export function animateCaptureViewer({
         ? origin
         : undefined;
   if (image && source && phase !== "change") {
-    const imageRect = image.getBoundingClientRect();
-    const stageRect = stage.getBoundingClientRect();
-    const destination = {
-      left: Math.max(imageRect.left, stageRect.left),
-      top: Math.max(imageRect.top, stageRect.top),
-      width: Math.max(
-        0,
-        Math.min(imageRect.right, stageRect.right) -
-          Math.max(imageRect.left, stageRect.left),
-      ),
-      height: Math.max(
-        0,
-        Math.min(imageRect.bottom, stageRect.bottom) -
-          Math.max(imageRect.top, stageRect.top),
-      ),
-    };
-    if (destination.width && destination.height) {
-      const start = phase === "open" ? source.rect : destination;
-      const end = phase === "open" ? destination : source.rect;
+    const destination = clippedViewerImage(
+      readImageRect(image),
+      stage.getBoundingClientRect(),
+    );
+    const thumbnail = viewerImageInFrame(source.imageRect, source.rect);
+    if (destination.frame.width && destination.frame.height) {
+      const start = phase === "open" ? thumbnail : destination;
+      const end = phase === "open" ? destination : thumbnail;
       clone = document.createElement("div");
       clone.setAttribute("aria-hidden", "true");
       clone.dataset.viewerProjection = phase;
@@ -231,10 +324,11 @@ export function animateCaptureViewer({
       copy.alt = "";
       Object.assign(copy.style, {
         display: "block",
-        width: "100%",
-        height: "100%",
-        objectFit: "cover",
-        objectPosition: "top",
+        maxWidth: "none",
+        maxHeight: "none",
+        margin: "0",
+        transformOrigin: "top left",
+        objectFit: "fill",
       });
       clone.append(copy);
       document.body.append(clone);
@@ -244,18 +338,29 @@ export function animateCaptureViewer({
         clone,
         [
           {
-            transform: `translate(${start.left}px, ${start.top}px)`,
-            width: `${start.width}px`,
-            height: `${start.height}px`,
+            transform: `translate(${start.frame.left}px, ${start.frame.top}px)`,
+            width: `${start.frame.width}px`,
+            height: `${start.frame.height}px`,
             borderRadius: phase === "open" ? "6px" : "0px",
           },
           {
-            transform: `translate(${end.left}px, ${end.top}px)`,
-            width: `${end.width}px`,
-            height: `${end.height}px`,
+            transform: `translate(${end.frame.left}px, ${end.frame.top}px)`,
+            width: `${end.frame.width}px`,
+            height: `${end.frame.height}px`,
             borderRadius: phase === "open" ? "0px" : "6px",
           },
         ],
+        duration,
+      );
+      // Letterboxing and scroll clipping belong to the inner image. Moving
+      // only the frame would reset a scrolled screenshot or crop a small icon.
+      run(
+        copy,
+        [start.image, end.image].map((bounds) => ({
+          transform: `translate(${bounds.left}px, ${bounds.top}px)`,
+          width: `${bounds.width}px`,
+          height: `${bounds.height}px`,
+        })),
         duration,
       );
     }

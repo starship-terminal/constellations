@@ -88,6 +88,7 @@ function PickerFrame({
   return (
     <motion.div
       className={className}
+      data-search-picker-present="true"
       inert={!present}
       aria-hidden={!present}
       initial={{ opacity: 0, y: -6, scale: 0.985 }}

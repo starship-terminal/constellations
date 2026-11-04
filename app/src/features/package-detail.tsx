@@ -483,7 +483,9 @@ export function PackageLightbox({
   }, []);
   useLayoutEffect(() => {
     if (!content || !current || !stageRef.current) {
-      transition.current?.cancel();
+      const canceled = transition.current;
+      transition.current = null;
+      canceled?.cancel();
       closing.current = false;
       previous.current = null;
       return;
@@ -500,13 +502,18 @@ export function PackageLightbox({
     });
     previous.current = identity;
     transition.current = animation;
-    return animation.cancel;
+    return () => {
+      if (transition.current === animation) transition.current = null;
+      animation.cancel();
+    };
   }, [content, current?.id, detail.id]);
   useEffect(() => {
     mounted.current = true;
     return () => {
       mounted.current = false;
-      transition.current?.cancel();
+      const canceled = transition.current;
+      transition.current = null;
+      canceled?.cancel();
       departure.current?.();
     };
   }, []);
@@ -518,7 +525,9 @@ export function PackageLightbox({
     }
     closing.current = true;
     departure.current?.();
-    transition.current?.cancel();
+    const canceled = transition.current;
+    transition.current = null;
+    canceled?.cancel();
     const animation = animateCaptureViewer({
       content,
       overlay: overlayRef.current,
@@ -537,7 +546,9 @@ export function PackageLightbox({
     if (items.length < 2) return;
     direction.current = delta;
     departure.current?.();
-    transition.current?.cancel();
+    const canceled = transition.current;
+    transition.current = null;
+    canceled?.cancel();
     if (stageRef.current)
       departure.current = animateViewerDeparture(stageRef.current, delta);
     if (items.length)
