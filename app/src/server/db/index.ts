@@ -1,6 +1,6 @@
 import { createClient, type Client } from "@libsql/client";
 import { drizzle } from "drizzle-orm/libsql";
-import { eq, desc } from "drizzle-orm";
+import { eq, desc, sql, getTableColumns } from "drizzle-orm";
 import { mkdir } from "node:fs/promises";
 import { homedir } from "node:os";
 import { resolve } from "node:path";
@@ -39,7 +39,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 2)
+    if (version > 3)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -50,6 +50,12 @@ export async function createResearchStore(directory: string) {
         "CREATE TABLE saved_media (reference_id TEXT NOT NULL, media_id TEXT NOT NULL, saved_at INTEGER NOT NULL, PRIMARY KEY(reference_id, media_id))",
       );
       await tx.execute("PRAGMA user_version = 2");
+    }
+    if (version < 3) {
+      await tx.execute(
+        "CREATE TABLE IF NOT EXISTS collection_media (collection_id TEXT NOT NULL REFERENCES collections(id) ON DELETE CASCADE, reference_id TEXT NOT NULL, media_id TEXT NOT NULL, added_at INTEGER NOT NULL, PRIMARY KEY(collection_id, reference_id, media_id))",
+      );
+      await tx.execute("PRAGMA user_version = 3");
     }
     await tx.commit();
   } catch (error) {
@@ -130,7 +136,11 @@ export async function createResearchStore(directory: string) {
     },
     async listCollections() {
       return db
-        .select()
+        .select({
+          ...getTableColumns(schema.collections),
+          mediaCount: sql<number>`(SELECT COUNT(*) FROM collection_media WHERE collection_id = ${schema.collections.id})`,
+          referenceCount: sql<number>`(SELECT COUNT(*) FROM collection_items WHERE collection_id = ${schema.collections.id})`,
+        })
         .from(schema.collections)
         .orderBy(desc(schema.collections.updatedAt));
     },
@@ -157,7 +167,12 @@ export async function createResearchStore(directory: string) {
         .from(schema.collectionItems)
         .where(eq(schema.collectionItems.collectionId, id))
         .orderBy(desc(schema.collectionItems.addedAt));
-      return { collection, items };
+      const mediaItems = await db
+        .select()
+        .from(schema.collectionMedia)
+        .where(eq(schema.collectionMedia.collectionId, id))
+        .orderBy(desc(schema.collectionMedia.addedAt));
+      return { collection, items, mediaItems };
     },
     async updateCollection(
       id: string,
@@ -203,6 +218,54 @@ export async function createResearchStore(directory: string) {
         ],
         "write",
       );
+    },
+    async putCollectionMedia(
+      collectionId: string,
+      referenceId: string,
+      mediaId: string,
+    ) {
+      await client.batch(
+        [
+          {
+            sql: "INSERT INTO collection_media (collection_id,reference_id,media_id,added_at) VALUES (?,?,?,?) ON CONFLICT(collection_id,reference_id,media_id) DO NOTHING",
+            args: [collectionId, referenceId, mediaId, Date.now()],
+          },
+          {
+            sql: "UPDATE collections SET updated_at=? WHERE id=?",
+            args: [Date.now(), collectionId],
+          },
+        ],
+        "write",
+      );
+    },
+    async removeCollectionMedia(
+      collectionId: string,
+      referenceId: string,
+      mediaId: string,
+    ) {
+      await client.batch(
+        [
+          {
+            sql: "DELETE FROM collection_media WHERE collection_id=? AND reference_id=? AND media_id=?",
+            args: [collectionId, referenceId, mediaId],
+          },
+          {
+            sql: "UPDATE collections SET updated_at=? WHERE id=?",
+            args: [Date.now(), collectionId],
+          },
+        ],
+        "write",
+      );
+    },
+    async mediaCollectionIds(
+      referenceId: string,
+      mediaId: string,
+    ): Promise<string[]> {
+      const rows = await client.execute({
+        sql: "SELECT collection_id FROM collection_media WHERE reference_id=? AND media_id=? ORDER BY collection_id",
+        args: [referenceId, mediaId],
+      });
+      return rows.rows.map((row) => String(row.collection_id));
     },
     async listSavedMedia() {
       const result = await client.execute(

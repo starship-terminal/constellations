@@ -6,6 +6,7 @@ import {
   useState,
   type KeyboardEvent as ReactKeyboardEvent,
   type ReactNode,
+  type CSSProperties,
 } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -178,6 +179,26 @@ export function StyleMedia({ detail }: { detail: LibraryDetail }) {
   const images = ordered.filter((item) => item.type === "image");
   const lightboxIndex = images.findIndex((item) => item.id === lightbox);
   const lightboxMedia = images[lightboxIndex];
+  useEffect(() => {
+    if (!lightbox || images.length < 2) return;
+    const keydown = (event: KeyboardEvent) => {
+      if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key))
+        return;
+      event.preventDefault();
+      const next =
+        event.key === "Home"
+          ? 0
+          : event.key === "End"
+            ? images.length - 1
+            : (lightboxIndex +
+                (event.key === "ArrowLeft" ? -1 : 1) +
+                images.length) %
+              images.length;
+      setLightbox(images[next].id);
+    };
+    document.addEventListener("keydown", keydown);
+    return () => document.removeEventListener("keydown", keydown);
+  }, [lightbox, detail.media]);
   if (!current)
     return (
       <p className={styles.unavailable}>
@@ -258,43 +279,45 @@ export function StyleMedia({ detail }: { detail: LibraryDetail }) {
           title={`${detail.name}: ${MEDIA_LABELS[lightboxMedia.kind || lightboxMedia.id] || lightboxMedia.name}`}
           className={styles.lightbox}
         >
-          <div className={styles.lightboxControls}>
-            <button
-              className="pill small"
-              disabled={images.length < 2}
-              onClick={() =>
-                setLightbox(
-                  images[(lightboxIndex - 1 + images.length) % images.length]
-                    .id,
-                )
-              }
-            >
-              <ArrowLeft size={14} />
-              Previous
-            </button>
-            <span>
-              {lightboxIndex + 1} of {images.length}
-            </span>
-            <MediaBookmarkButton
-              referenceId={detail.id}
-              mediaId={lightboxMedia.id}
-              compact
+          <div className={styles.lightboxContent}>
+            <div className={styles.lightboxControls}>
+              <button
+                className="pill small"
+                disabled={images.length < 2}
+                onClick={() =>
+                  setLightbox(
+                    images[(lightboxIndex - 1 + images.length) % images.length]
+                      .id,
+                  )
+                }
+              >
+                <ArrowLeft size={14} />
+                Previous
+              </button>
+              <span>
+                {lightboxIndex + 1} of {images.length}
+              </span>
+              <MediaBookmarkButton
+                referenceId={detail.id}
+                mediaId={lightboxMedia.id}
+                compact
+              />
+              <button
+                className="pill small"
+                disabled={images.length < 2}
+                onClick={() =>
+                  setLightbox(images[(lightboxIndex + 1) % images.length].id)
+                }
+              >
+                Next
+                <ArrowRight size={14} />
+              </button>
+            </div>
+            <StyleImage
+              media={lightboxMedia}
+              alt={`${detail.name}: ${lightboxMedia.name}`}
             />
-            <button
-              className="pill small"
-              disabled={images.length < 2}
-              onClick={() =>
-                setLightbox(images[(lightboxIndex + 1) % images.length].id)
-              }
-            >
-              Next
-              <ArrowRight size={14} />
-            </button>
           </div>
-          <StyleImage
-            media={lightboxMedia}
-            alt={`${detail.name}: ${lightboxMedia.name}`}
-          />
         </Modal>
       )}
     </section>
@@ -309,21 +332,100 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
     </section>
   );
 }
+function CopyValue({
+  value,
+  children,
+  className,
+  style,
+}: {
+  value: string;
+  children?: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+}) {
+  const [copied, setCopied] = useState(false),
+    [error, setError] = useState("");
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const request = useRef(0);
+  useEffect(() => {
+    setCopied(false);
+    setError("");
+    request.current += 1;
+    if (timer.current) clearTimeout(timer.current);
+    return () => {
+      request.current += 1;
+      if (timer.current) clearTimeout(timer.current);
+    };
+  }, [value]);
+  return (
+    <>
+      <button
+        type="button"
+        className={`${styles.copyValue} ${className || ""}`}
+        style={style}
+        title={`Click to copy "${value}"`}
+        aria-label={`Copy ${value}`}
+        onClick={async () => {
+          const attempt = ++request.current;
+          if (timer.current) clearTimeout(timer.current);
+          setCopied(false);
+          setError("");
+          try {
+            await navigator.clipboard.writeText(value);
+            if (attempt !== request.current) return;
+            setCopied(true);
+            timer.current = setTimeout(() => setCopied(false), 1800);
+          } catch {
+            if (attempt !== request.current) return;
+            setError("Clipboard unavailable. Select and copy this value:");
+          }
+        }}
+      >
+        {children || value}
+        <span className="sr-only" role="status">
+          {copied ? `Copied ${value}` : ""}
+        </span>
+      </button>
+      {error && (
+        <span className={styles.copyFallback} role="status">
+          {error} <code tabIndex={0}>{value}</code>
+        </span>
+      )}
+    </>
+  );
+}
+
 function CopyColor({ color }: { color: Data }) {
   const value = color.gradient || color.hex || color.value || "";
   const [copied, setCopied] = useState("");
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const request = useRef(0);
+  useEffect(() => {
+    setCopied("");
+    request.current += 1;
+    if (timer.current) clearTimeout(timer.current);
+    return () => {
+      request.current += 1;
+      if (timer.current) clearTimeout(timer.current);
+    };
+  }, [value]);
   return (
     <button
       className={styles.swatch}
       title={`Copy ${value}`}
       onClick={async () => {
+        const attempt = ++request.current;
+        if (timer.current) clearTimeout(timer.current);
+        setCopied("");
         try {
           await navigator.clipboard.writeText(value);
+          if (attempt !== request.current) return;
           setCopied("Copied");
+          timer.current = setTimeout(() => setCopied(""), 1800);
         } catch {
-          setCopied("Select the value to copy");
+          if (attempt !== request.current) return;
+          setCopied("Clipboard unavailable. Select the value to copy.");
         }
-        setTimeout(() => setCopied(""), 1800);
       }}
     >
       <span className={styles.swatchPaint} style={{ background: value }} />
@@ -338,7 +440,16 @@ function CopyColor({ color }: { color: Data }) {
 }
 function StyleColors({ design }: { design: Data }) {
   const colors = list(design.colors);
-  const groups = [...new Set(colors.map((color) => color.group || "Palette"))];
+  const priority = ["brand", "accent", "neutral", "neutrals"];
+  const groups = [
+    ...new Set(colors.map((color) => color.group || "Palette")),
+  ].sort((a, b) => {
+    const rank = (value: string) => {
+      const i = priority.indexOf(value.toLowerCase());
+      return i < 0 ? priority.length : i;
+    };
+    return rank(a) - rank(b);
+  });
   return colors.length ? (
     <Section title="Color palette">
       {groups.map((group) => (
@@ -358,8 +469,12 @@ function StyleColors({ design }: { design: Data }) {
 }
 function StyleTypography({ design }: { design: Data }) {
   const fonts = list(design.typography),
-    scale = list(design.typeScale);
-  const [all, setAll] = useState(false);
+    scale = list(design.typeScale).sort(
+      (a, b) =>
+        parseFloat(String(b.size || 0)) - parseFloat(String(a.size || 0)),
+    );
+  const [all, setAll] = useState(false),
+    [allFonts, setAllFonts] = useState(false);
   return fonts.length || scale.length ? (
     <Section title="Typography">
       <p className={styles.note}>
@@ -388,9 +503,11 @@ function StyleTypography({ design }: { design: Data }) {
                     .join(" · ")}
                 </code>
               </div>
-              <p
+              <CopyValue
+                value={String(step.family || fonts[0]?.family || "sans-serif")}
+                className={styles.scaleSample}
                 style={{
-                  fontFamily: `"${String(step.family || "").replace(/"/g, "")}", var(--sans)`,
+                  fontFamily: `"${String(step.family || fonts[0]?.family || "").replace(/"/g, "")}", var(--sans)`,
                   fontSize: length(step.size),
                   fontWeight: step.weight || 400,
                   lineHeight: step.lineHeight || 1.4,
@@ -400,8 +517,8 @@ function StyleTypography({ design }: { design: Data }) {
                       : undefined,
                 }}
               >
-                The quick brown fox
-              </p>
+                The quick brown fox jumps
+              </CopyValue>
             </div>
           ))}
         </div>
@@ -416,14 +533,14 @@ function StyleTypography({ design }: { design: Data }) {
         </button>
       )}
       <div className={styles.fonts}>
-        {fonts.map((font, i) => (
+        {(allFonts ? fonts : fonts.slice(0, 3)).map((font, i) => (
           <div className={styles.font} key={i}>
             <h3
               style={{
                 fontFamily: `"${String(font.family || "").replace(/"/g, "")}", var(--sans)`,
               }}
             >
-              {font.family || "Typeface"} Aa 123
+              <CopyValue value={String(font.family || "Typeface")} />
             </h3>
             <dl>
               {[
@@ -447,6 +564,15 @@ function StyleTypography({ design }: { design: Data }) {
           </div>
         ))}
       </div>
+      {fonts.length > 3 && (
+        <button
+          className="pill small"
+          aria-expanded={allFonts}
+          onClick={() => setAllFonts(!allFonts)}
+        >
+          {allFonts ? "Show fewer fonts" : `Show all ${fonts.length} fonts`}
+        </button>
+      )}
     </Section>
   ) : null;
 }
@@ -469,9 +595,13 @@ function StyleSpacing({ design }: { design: Data }) {
             <div key={key}>
               <dt>{label(key)}</dt>
               <dd>
-                <code>
-                  {key === "baseUnit" ? length(value) : String(value)}
-                </code>
+                <CopyValue
+                  value={key === "baseUnit" ? length(value) : String(value)}
+                >
+                  <code>
+                    {key === "baseUnit" ? length(value) : String(value)}
+                  </code>
+                </CopyValue>
               </dd>
             </div>
           ))}
@@ -486,7 +616,9 @@ function StyleSpacing({ design }: { design: Data }) {
                 <i style={{ borderRadius: length(value, "0px") }} />
                 <span>
                   {label(key)}
-                  <code>{String(value)}</code>
+                  <CopyValue value={String(value)}>
+                    <code>{String(value)}</code>
+                  </CopyValue>
                 </span>
               </div>
             ))}
@@ -622,10 +754,7 @@ export function StyleOverview({ detail }: { detail: LibraryDetail }) {
   const favicon = detail.media.find((item) => item.kind === "favicon");
   return (
     <article className={styles.overview}>
-      <Link className={styles.back} href="/styles">
-        <ArrowLeft size={14} />
-        Refero styles
-      </Link>
+      <StyleMedia detail={detail} />
       <div className={styles.title}>
         <h1>{detail.name}</h1>
         {favicon ? (
@@ -686,7 +815,6 @@ export function StyleOverview({ detail }: { detail: LibraryDetail }) {
           {detail.captured ? ` Extracted ${detail.captured.slice(0, 10)}.` : ""}
         </p>
       </div>
-      <StyleMedia detail={detail} />
       {design.northStar && (
         <Section title="Design direction">
           <p className={styles.note}>{description(design.northStar)}</p>
@@ -801,7 +929,22 @@ function Code({ value, format }: { value: string; format: string }) {
   return (
     <code>
       {format.endsWith(".md")
-        ? value
+        ? value.split(/(^#{1,6} .+$|^> .+$|`[^`\n]+`)/gm).map((part, i) => (
+            <span
+              key={i}
+              className={
+                part.startsWith("#")
+                  ? styles.codeProperty
+                  : part.startsWith(">")
+                    ? styles.codeString
+                    : part.startsWith("`")
+                      ? styles.codeNumber
+                      : undefined
+              }
+            >
+              {part}
+            </span>
+          ))
         : value.split(pattern).map((part, i) => (
             <span
               key={i}
@@ -824,13 +967,25 @@ function Code({ value, format }: { value: string; format: string }) {
   );
 }
 export function StyleDocuments({ detail }: { detail: LibraryDetail }) {
-  const keys = Object.keys(detail.exports),
+  const formatOrder = [
+    "DESIGN.md",
+    "theme.css",
+    "variables.css",
+    "tokens.json",
+  ];
+  const keys = Object.keys(detail.exports).sort((a, b) => {
+      const rank = (key: string) => {
+        const i = formatOrder.indexOf(key);
+        return i < 0 ? formatOrder.length : i;
+      };
+      return rank(a) - rank(b);
+    }),
     [tab, setTab] = useState(
       keys.includes("DESIGN.md") ? "DESIGN.md" : keys[0] || "DESIGN.md",
     ),
     [variant, setVariant] = useState<"compact" | "extended">("extended"),
     [loadedUrl, setLoadedUrl] = useState<string | null>(null),
-    [rendered, setRendered] = useState(true),
+    [rendered, setRendered] = useState(false),
     [wrap, setWrap] = useState(true),
     [value, setValue] = useState(""),
     [loading, setLoading] = useState(true),

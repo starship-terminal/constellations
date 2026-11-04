@@ -419,7 +419,9 @@ export function DetailOverview({
             }
             className="pill"
           >
-            Style documentation
+            {detail.source === "systems"
+              ? "Package details"
+              : "Style documentation"}
             <ArrowRight size={14} />
           </Link>
         )}
@@ -774,7 +776,7 @@ export function ReferenceInspector({
   const reference = detail || current;
   const preview = inspectorPreview(current, detail);
   const href = reference
-    ? `${origin}/styles/${reference.source}/${reference.slug}`
+    ? `${origin}${reference.source === "systems" ? `/library/${reference.slug}` : `/styles/refero/${reference.slug}`}`
     : "";
   async function downloadPreview() {
     if (!preview || downloading) return;
@@ -927,7 +929,16 @@ export function ReferenceInspector({
                             values.indexOf(value) === index,
                         )
                         .map((value) => (
-                          <span key={value}>{value}</span>
+                          <Link
+                            key={value}
+                            href={
+                              detail.source === "systems"
+                                ? `/library?view=screens&${value === detail.platform ? "platform" : value === detail.category ? "category" : "theme"}=${encodeURIComponent(value)}`
+                                : `/styles?q=${encodeURIComponent(value)}`
+                            }
+                          >
+                            {value}
+                          </Link>
                         ))}
                     </div>
                   </section>
@@ -939,7 +950,16 @@ export function ReferenceInspector({
                       </h3>
                       <div className={referenceStyles.chips}>
                         {detail.tags.map((tag) => (
-                          <span key={tag}>{tag}</span>
+                          <Link
+                            key={tag}
+                            href={
+                              detail.source === "systems"
+                                ? `/library?view=screens&tag=${encodeURIComponent(tag)}`
+                                : `/styles?q=${encodeURIComponent(tag)}`
+                            }
+                          >
+                            {tag}
+                          </Link>
                         ))}
                       </div>
                     </section>
@@ -1094,7 +1114,10 @@ export function ReferenceInspector({
                       : `/styles/refero/${reference.slug}`
                   }
                 >
-                  Style documentation <ArrowRight size={13} />
+                  {reference.source === "systems"
+                    ? "Package details"
+                    : "Style documentation"}{" "}
+                  <ArrowRight size={13} />
                 </Link>
               )}
             </footer>

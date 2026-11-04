@@ -348,7 +348,11 @@ async function scanPackageMedia(
   }
   return out;
 }
-async function packageMedia(slug: string, row: Raw): Promise<ReferenceMedia[]> {
+async function packageMedia(
+  slug: string,
+  row: Raw,
+  capturesOnly = false,
+): Promise<ReferenceMedia[]> {
   const screenshots: Raw[] = row.screenshots?.length
     ? row.screenshots
     : await scanPackageMedia(slug, "screenshots", "screenshot");
@@ -356,10 +360,12 @@ async function packageMedia(slug: string, row: Raw): Promise<ReferenceMedia[]> {
     ? row.components
     : await scanPackageMedia(slug, "components", "crop");
   // The generated icon preview is capped. Enumerate the canonical icon directory.
-  const [icons, boards] = await Promise.all([
-    scanPackageMedia(slug, "icons", "icon"),
-    scanPackageMedia(slug, "boards", "board"),
-  ]);
+  const [icons, boards] = capturesOnly
+    ? [[], []]
+    : await Promise.all([
+        scanPackageMedia(slug, "icons", "icon"),
+        scanPackageMedia(slug, "boards", "board"),
+      ]);
   const shots: Raw[] = [
     ...screenshots.map((s) => ({ ...s, kind: "screenshot" as const })),
     ...crops.map((s) => ({ ...s, kind: "crop" as const })),
@@ -391,6 +397,22 @@ async function packageMedia(slug: string, row: Raw): Promise<ReferenceMedia[]> {
     }),
   );
   return media.filter((m): m is ReferenceMedia => !!m);
+}
+/** Captured media metadata without reading tokens, documents or related styles. */
+export async function listCapturedMedia(): Promise<
+  { reference: LibraryItem; media: ReferenceMedia[] }[]
+> {
+  const [items, rows] = await Promise.all([allItems(), sourceRows()]);
+  const result: { reference: LibraryItem; media: ReferenceMedia[] }[] = [];
+  // Keep original-file verification bounded to one package at a time.
+  for (const reference of items.filter((item) => item.source === "systems")) {
+    const row = rows.systems.find((item) => item.slug === reference.slug) || {};
+    result.push({
+      reference,
+      media: await packageMedia(reference.slug, row, true),
+    });
+  }
+  return result;
 }
 function packageRelative(
   slug: string,

@@ -7,9 +7,8 @@
 }
 .catalog {
   width: 100%;
-  max-width: 1170px;
   margin: 0 auto;
-  padding: 8px 40px 80px;
+  padding: 8px 48px 80px;
 }
 .searchTop {
   position: sticky;
@@ -560,4 +559,38 @@
   .listView .openCard {
     gap: 12px;
   }
+}
+
+.browseModes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 24px 0;
+}
+.browseModes button {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 9px 16px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+}
+.browseModes button[aria-pressed="true"] {
+  background: var(--surface-raised);
+  color: var(--ink);
+}
+.packageLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 12px 0 0 56px;
+  color: var(--muted);
+  font-size: 12px;
+  text-decoration: none;
+}
+.packageLink:hover {
+  color: var(--ink);
 }

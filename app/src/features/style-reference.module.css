@@ -1,5 +1,5 @@
 .overview {
-  padding: 30px 40px 64px;
+  padding: 48px 40px 64px;
   min-width: 0;
 }
 .back {
@@ -17,7 +17,7 @@
   justify-content: space-between;
 }
 .title h1 {
-  font: 400 44px/1.1 var(--sans);
+  font: 400 48px/1 var(--serif);
   letter-spacing: -1.5px;
   overflow-wrap: anywhere;
 }
@@ -80,7 +80,7 @@
   margin-top: 4px;
 }
 .mediaSection {
-  margin: 30px 0;
+  margin: 0 0 32px;
 }
 .mediaTabs,
 .documentTabs {
@@ -229,7 +229,7 @@
   overflow-wrap: anywhere;
   margin-top: 4px;
 }
-.scaleRow > p {
+.scaleSample {
   margin-top: 12px;
   white-space: nowrap;
   overflow: hidden;
@@ -421,15 +421,22 @@
   display: flex;
   flex-direction: column;
   border-left: 1px solid var(--line);
-  background: var(--page);
+  background: var(--surface);
 }
 .documentTabs {
   flex-shrink: 0;
-  padding: 20px 20px 12px;
+  padding: 0 16px;
+  min-height: 44px;
   gap: 4px;
 }
 .documentTabs button {
   font-size: 12px;
+  border-radius: 0;
+  padding: 12px 10px;
+}
+.documentTabs button[aria-selected="true"] {
+  background: transparent;
+  box-shadow: inset 0 -1px var(--ink);
 }
 .documentToolbar {
   display: flex;
@@ -466,9 +473,8 @@
 }
 .documentBody > pre {
   margin: 0;
-  padding: 28px 30px 64px;
-  font-size: 11px;
-  line-height: 1.9;
+  padding: 16px 16px 64px;
+  font: 13px/1.625 var(--mono);
   min-height: 100%;
   tab-size: 2;
 }
@@ -743,4 +749,56 @@
   .documentVariants button {
     transition: none;
   }
+}
+
+.copyValue {
+  position: relative;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  padding: 0;
+  border-radius: 3px;
+}
+.copyValue:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.copyValue:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+}
+.scaleSample {
+  display: block;
+  max-width: 100%;
+}
+.fonts + button {
+  margin-top: 16px;
+}
+.lightboxContent {
+  min-width: 0;
+}
+.lightboxContent > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.copyValue :global(.sr-only) {
+  left: 0;
+  top: 0;
+}
+
+.copyFallback {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font: 12px/1.5 var(--sans);
+  overflow-wrap: anywhere;
+}
+.copyFallback code {
+  display: inline-block;
+  user-select: all;
+  color: var(--ink);
+  font-family: var(--mono);
 }

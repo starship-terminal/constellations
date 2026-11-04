@@ -18,6 +18,7 @@ import {
   MoreHorizontal,
   Archive,
   Pencil,
+  ArchiveRestore,
 } from "lucide-react";
 import { api, Modal } from "./shared";
 export function Mark() {
@@ -123,6 +124,8 @@ export function AppShell({ children }: { children: ReactNode }) {
   useEffect(() => {
     setCollapsed(localStorage.getItem("studio-sidebar-collapsed") === "true");
   }, []);
+  const [showAllHistory, setShowAllHistory] = useState(false),
+    [showArchived, setShowArchived] = useState(false);
   const [history, setHistory] = useState<Conversation[]>([]),
     [mobile, setMobile] = useState(false),
     [editing, setEditing] = useState<Conversation | null>(null),
@@ -198,11 +201,21 @@ export function AppShell({ children }: { children: ReactNode }) {
         <Suspense fallback={null}>
           <CatalogNavigation onNavigate={() => setMobile(false)} />
         </Suspense>
-        <div className="history-heading">History</div>
+        <div className="history-heading">
+          <span>{showArchived ? "Archived research" : "History"}</span>
+          {(showArchived || history.some((c) => c.archived)) && (
+            <button
+              className="text-button"
+              onClick={() => setShowArchived(!showArchived)}
+            >
+              {showArchived ? "Back" : "Archived"}
+            </button>
+          )}
+        </div>
         <div className="history-list">
           {history
-            .filter((x) => !x.archived)
-            .slice(0, 18)
+            .filter((x) => !!x.archived === showArchived)
+            .slice(0, showAllHistory ? undefined : 18)
             .map((c) => (
               <div
                 key={c.id}
@@ -230,23 +243,37 @@ export function AppShell({ children }: { children: ReactNode }) {
                         try {
                           await api(`/api/conversations/${c.id}`, {
                             method: "PATCH",
-                            body: JSON.stringify({ archived: true }),
+                            body: JSON.stringify({ archived: !c.archived }),
                           });
                           reload();
-                          if (path === `/research/${c.id}`) router.push("/");
+                          if (!c.archived && path === `/research/${c.id}`)
+                            router.push("/");
                         } catch (e) {
                           setError((e as Error).message);
                         }
                       }}
                     >
-                      <Archive size={14} />
-                      Archive
+                      {c.archived ? (
+                        <ArchiveRestore size={14} />
+                      ) : (
+                        <Archive size={14} />
+                      )}
+                      {c.archived ? "Restore" : "Archive"}
                     </button>
                   </div>
                 </details>
               </div>
             ))}
-          {history.length === 0 && (
+          {history.filter((c) => !!c.archived === showArchived).length > 18 && (
+            <button
+              className="text-button history-more"
+              onClick={() => setShowAllHistory(!showAllHistory)}
+            >
+              {showAllHistory ? "Show fewer" : "Show all research"}
+            </button>
+          )}
+          {history.filter((c) => !!c.archived === showArchived).length ===
+            0 && (
             <p className="history-empty">Your research will appear here.</p>
           )}
         </div>

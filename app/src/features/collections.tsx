@@ -1,5 +1,9 @@
 "use client";
 import { SavedMedia } from "@/components/media-bookmark";
+import {
+  CollectionScreens,
+  type CollectionMediaEntry,
+} from "./collection-media";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import {
@@ -33,6 +37,8 @@ interface Collection {
   notes: string;
   createdAt: number;
   updatedAt: number;
+  mediaCount?: number;
+  referenceCount?: number;
 }
 interface CollectionEntry {
   referenceId: string;
@@ -110,6 +116,11 @@ export function CollectionsPage() {
                   : "A considered collection of design references."}
               </p>
               <small>
+                {c.mediaCount || 0} {c.mediaCount === 1 ? "screen" : "screens"}{" "}
+                · {c.referenceCount || 0}{" "}
+                {c.referenceCount === 1 ? "package" : "packages"}
+              </small>
+              <small>
                 Updated{" "}
                 {new Date(c.updatedAt).toLocaleDateString(undefined, {
                   month: "short",
@@ -172,6 +183,7 @@ export function CollectionDetailPage({ id }: { id: string }) {
   const { data, setData, loading, error } = useResource<{
     collection: Collection;
     items: CollectionEntry[];
+    mediaItems?: CollectionMediaEntry[];
   }>(`/api/collections/${id}`);
   const [notes, setNotes] = useState(""),
     [name, setName] = useState(""),
@@ -250,8 +262,11 @@ export function CollectionDetailPage({ id }: { id: string }) {
           <div className="eyebrow">A collected direction</div>
           <h1>{data.collection.name}</h1>
           <p className="muted">
-            {data.items.length} reference{data.items.length === 1 ? "" : "s"} ·
-            Updated {new Date(data.collection.updatedAt).toLocaleDateString()}
+            {data.mediaItems?.length || 0}{" "}
+            {data.mediaItems?.length === 1 ? "screen" : "screens"} ·{" "}
+            {data.items.length}{" "}
+            {data.items.length === 1 ? "package" : "packages"} · Updated{" "}
+            {new Date(data.collection.updatedAt).toLocaleDateString()}
           </p>
         </div>
         <div className="inline-actions">
@@ -299,8 +314,19 @@ export function CollectionDetailPage({ id }: { id: string }) {
         </div>
       </section>
       {localError && <ErrorState message={localError} />}
+      <CollectionScreens
+        id={id}
+        items={data.mediaItems || []}
+        onChanged={async () => {
+          try {
+            setData(await api(`/api/collections/${id}`));
+          } catch (e) {
+            setError((e as Error).message);
+          }
+        }}
+      />
       <div className="section-heading collection-section-heading">
-        <h2>Your references</h2>
+        <h2>Packages</h2>
         <span className="muted small-text">{data.items.length} saved</span>
       </div>
       {data.items.length ? (

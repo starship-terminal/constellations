@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import homeStyles from "./research-home.module.css";
+import { ResearchResults } from "./research-results";
+import { HomeBrowse } from "./home-browse";
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { useChat } from "@ai-sdk/react";
@@ -153,7 +155,7 @@ function Composer({
             ? mode === "research"
               ? "Describe a task or ask a question"
               : `Search ${mode === "web" ? "Web" : "iOS"} app references`
-            : "Ask followup…"
+            : "Ask follow up…"
         }
         rows={1}
         onKeyDown={(e) => {
@@ -402,11 +404,16 @@ export function ResearchHome() {
           </div>
         </div>
       </section>
+      <HomeBrowse
+        platform={
+          mode === "ios" ? "mobile" : mode === "web" ? "web" : undefined
+        }
+      />
       <section className={homeStyles.gallery}>
         <div className={homeStyles.galleryHeading}>
           <h2>
             {mode === "research"
-              ? "From your library"
+              ? "Sites"
               : `${mode === "web" ? "Web" : "iOS"} app references`}
           </h2>
           <Link
@@ -684,6 +691,14 @@ function ResearchConversation({ initial }: { initial: Conversation }) {
           >
             <Download size={17} />
           </button>
+          <Link
+            href="/"
+            className="icon-button"
+            aria-label="Close research"
+            title="New research"
+          >
+            <X size={17} />
+          </Link>
         </div>
         <nav
           className={homeStyles.sessionModes}
@@ -825,6 +840,33 @@ function ResearchConversation({ initial }: { initial: Conversation }) {
             </button>
           ))}
         </div>
+        {!busy && !knownError && lastMessage?.role === "assistant" && (
+          <div
+            className={homeStyles.followupSuggestions}
+            aria-label="Suggested follow-up prompts"
+          >
+            {[
+              "Compare the strongest references",
+              "Find similar screens",
+              "Explain which details I should borrow",
+            ].map((prompt) => (
+              <button
+                key={prompt}
+                onClick={() => {
+                  setValue(prompt);
+                  document
+                    .querySelector<HTMLTextAreaElement>(
+                      'textarea[aria-label="Research prompt"]',
+                    )
+                    ?.focus();
+                }}
+              >
+                <CornerDownRight size={14} />
+                {prompt}
+              </button>
+            ))}
+          </div>
+        )}
         <Composer
           value={value}
           onChange={setValue}
@@ -1081,56 +1123,20 @@ function Message({
             }
             if (output.kind === "candidates" || output.items)
               return (
-                <details className="tool-activity" key={index}>
-                  <summary>
-                    <Search size={13} />
-                    {output.items?.length || 0} search matches
-                    <span className="muted"> · candidates to explore</span>
-                  </summary>
-                  <section className="research-results">
-                    <div className="section-heading">
-                      <h3>References to explore</h3>
-                      <span className="muted small-text">
-                        {output.total ?? output.items.length} found
-                      </span>
-                    </div>
-                    {output.items?.length ? (
-                      <div className="research-result-grid">
-                        {output.items
-                          .filter(
-                            (item: LibraryItem) => !excluded.includes(item.id),
-                          )
-                          .slice(0, 9)
-                          .map((item: LibraryItem) => (
-                            <div className="research-result" key={item.id}>
-                              <ReferenceCard item={item} onOpen={onInspect} />
-                              <div className="research-result-actions">
-                                <button
-                                  className={`pill small ${pinned.includes(item.id) ? "active" : ""}`}
-                                  onClick={() => onPin(item.id)}
-                                >
-                                  <Pin size={12} />
-                                  {pinned.includes(item.id) ? "Pinned" : "Pin"}
-                                </button>
-                                <SaveReference item={item} compact />
-                                <button
-                                  className="text-button"
-                                  onClick={() => onExclude(item.id)}
-                                >
-                                  Exclude
-                                </button>
-                              </div>
-                            </div>
-                          ))}
-                      </div>
-                    ) : (
-                      <p className="muted">
-                        No references matched this search. Try another
-                        description.
-                      </p>
-                    )}
-                  </section>
-                </details>
+                <ResearchResults
+                  key={index}
+                  items={output.items || []}
+                  total={output.total ?? output.items?.length ?? 0}
+                  query={part.input?.query}
+                  source={part.input?.source}
+                  platform={part.input?.platform}
+                  theme={part.input?.theme}
+                  excluded={excluded}
+                  pinned={pinned}
+                  onInspect={onInspect}
+                  onPin={onPin}
+                  onExclude={onExclude}
+                />
               );
             if (output.kind === "inspected" && output.reference) {
               const item = output.reference as LibraryDetail;

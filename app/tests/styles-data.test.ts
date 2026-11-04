@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { LibraryItem } from "../src/contracts/library";
 import {
   filterStyles,
+  orderStyles,
   hasComponentMarkup,
   isUnresolvedCapture,
   styleCounts,
@@ -39,6 +40,27 @@ const style = (
 });
 
 describe("dedicated style discovery", () => {
+  it("orders captures by date while keeping unknown dates last and ties stable", () => {
+    const rows = [
+      style("unknown"),
+      style("older", { captured: "2026-01-01" }),
+      style("broken", { captured: "invalid" }),
+      style("new", { captured: "2026-10-01" }),
+    ];
+    expect(orderStyles(rows, "newest").map((row) => row.slug)).toEqual([
+      "new",
+      "older",
+      "broken",
+      "unknown",
+    ]);
+    expect(rows[0].slug).toBe("unknown");
+    expect(orderStyles(rows, "name").map((row) => row.slug)).toEqual([
+      "broken",
+      "new",
+      "older",
+      "unknown",
+    ]);
+  });
   it("keeps measured packages out even when callers supply both stores", () => {
     const rows = [
       style("one"),

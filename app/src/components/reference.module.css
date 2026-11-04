@@ -210,6 +210,7 @@
   flex-wrap: wrap;
 }
 .chips > span,
+.chips > a,
 .chips > button {
   display: inline-flex;
   align-items: center;
@@ -440,4 +441,11 @@
   .inspectorOverlay {
     animation: none;
   }
+}
+
+.chips > a {
+  text-decoration: none;
+}
+.chips > a:hover {
+  background: var(--surface-raised);
 }

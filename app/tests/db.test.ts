@@ -152,3 +152,110 @@ test("version-one stores migrate without losing conversations and persist distin
   );
   expect((await migrated.listSavedMedia())[0].mediaId).toContain("two.png");
 });
+
+test("version-two stores preserve existing state while adding independent screenshot boards", async () => {
+  const { dir, store } = await open();
+  const conversation = await store.createConversation("Keep research");
+  const first = await store.createCollection("First board");
+  const second = await store.createCollection("Second board");
+  await store.putItem(first.id, "systems:linear", "Existing package note");
+  await store.saveMedia("systems:linear", "screenshots/one.png");
+  await store.saveSettings({ provider: "openai", model: "kept-model" });
+  await store.client.execute("DROP TABLE collection_media");
+  await store.client.execute("PRAGMA user_version=2");
+  store.close();
+  stores.splice(stores.indexOf(store), 1);
+  const migrated = await createResearchStore(dir);
+  stores.push(migrated);
+  expect(
+    Number(
+      (await migrated.client.execute("PRAGMA user_version")).rows[0]
+        .user_version,
+    ),
+  ).toBe(3);
+  expect((await migrated.getConversation(conversation.id))?.title).toBe(
+    "Keep research",
+  );
+  expect((await migrated.getCollection(first.id))?.items[0].note).toBe(
+    "Existing package note",
+  );
+  expect(await migrated.listSavedMedia()).toHaveLength(1);
+  expect(await migrated.getSettings()).toEqual({
+    provider: "openai",
+    model: "kept-model",
+  });
+  await migrated.putCollectionMedia(
+    first.id,
+    "systems:linear",
+    "screenshots/one.png",
+  );
+  await migrated.putCollectionMedia(
+    first.id,
+    "systems:linear",
+    "screenshots/one.png",
+  );
+  await migrated.putCollectionMedia(
+    first.id,
+    "systems:linear",
+    "screenshots/two.png",
+  );
+  await migrated.putCollectionMedia(
+    second.id,
+    "systems:linear",
+    "screenshots/one.png",
+  );
+  await migrated.putCollectionMedia(first.id, "refero:linear", "shot");
+  expect((await migrated.getCollection(first.id))?.mediaItems).toHaveLength(3);
+  expect((await migrated.getCollection(second.id))?.mediaItems).toHaveLength(1);
+  expect(
+    new Set(
+      await migrated.mediaCollectionIds(
+        "systems:linear",
+        "screenshots/one.png",
+      ),
+    ),
+  ).toEqual(new Set([first.id, second.id]));
+  expect(
+    (await migrated.listCollections()).find((row) => row.id === first.id),
+  ).toMatchObject({ mediaCount: 3, referenceCount: 1 });
+  await migrated.removeCollectionMedia(
+    first.id,
+    "systems:linear",
+    "screenshots/one.png",
+  );
+  expect(
+    await migrated.mediaCollectionIds("systems:linear", "screenshots/one.png"),
+  ).toEqual([second.id]);
+  expect(await migrated.listSavedMedia()).toHaveLength(1);
+  expect((await migrated.getCollection(first.id))?.items).toHaveLength(1);
+  await expect(
+    migrated.putCollectionMedia("missing", "systems:linear", "shot"),
+  ).rejects.toThrow();
+  await migrated.client.execute({
+    sql: "DELETE FROM collections WHERE id=?",
+    args: [second.id],
+  });
+  expect(
+    await migrated.mediaCollectionIds("systems:linear", "screenshots/one.png"),
+  ).toEqual([]);
+  migrated.close();
+  stores.splice(stores.indexOf(migrated), 1);
+  const reopened = await createResearchStore(dir);
+  stores.push(reopened);
+  expect((await reopened.getCollection(first.id))?.mediaItems).toHaveLength(2);
+  expect((await reopened.getCollection(first.id))?.items[0].note).toBe(
+    "Existing package note",
+  );
+  expect(await reopened.listSavedMedia()).toHaveLength(1);
+});
+
+test("future database versions are rejected without downgrading their schema", async () => {
+  const { dir, store } = await open();
+  await store.client.execute("PRAGMA user_version=4");
+  await expect(createResearchStore(dir)).rejects.toThrow("newer application");
+  expect(
+    Number(
+      (await store.client.execute("PRAGMA user_version")).rows[0].user_version,
+    ),
+  ).toBe(4);
+});

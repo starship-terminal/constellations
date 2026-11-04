@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import type {
   LibraryDetail,
+  LibraryItem,
   MeasuredPackageDetail,
   PackageDocumentContent,
   ReferenceMedia,
@@ -36,6 +37,7 @@ import {
   useResource,
 } from "@/components/shared";
 import { MediaBookmarkButton } from "@/components/media-bookmark";
+import { MediaCollectionButton } from "@/components/media-collection";
 import {
   ExportPanel,
   ReferenceValues,
@@ -142,9 +144,7 @@ function PackageDetail({ slug }: { slug: string }) {
     const hash = window.location.hash;
     if (hash)
       requestAnimationFrame(() =>
-        document
-          .getElementById(decodeURIComponent(hash.slice(1)))
-          ?.scrollIntoView(),
+        document.getElementById(decodeHash(hash.slice(1)))?.scrollIntoView(),
       );
   }, [params.get("file"), tab]);
   if (loading) return <Spinner label="Opening captured package…" />;
@@ -406,21 +406,47 @@ function PackageDetail({ slug }: { slug: string }) {
     </div>
   );
 }
-function PackageLightbox({
+export function captureViewerLinks(
+  detail: LibraryItem,
+  current: ReferenceMedia,
+) {
+  const measured = detail.source === "systems";
+  const documentation = measured
+    ? `/library/${encodeURIComponent(detail.slug)}`
+    : `/styles/refero/${encodeURIComponent(detail.slug)}`;
+  return {
+    documentation,
+    browse: measured
+      ? `/library?view=screens&referenceId=${encodeURIComponent(detail.id)}`
+      : documentation,
+    copy: measured ? mediaDetailHref(detail.slug, current) : current.url,
+    tag: (tag: string) =>
+      measured
+        ? `/library?view=screens&tag=${encodeURIComponent(tag)}`
+        : `/styles?tag=${encodeURIComponent(tag)}`,
+    platform: measured
+      ? `/library?view=screens&platform=${encodeURIComponent(detail.platform)}`
+      : `/styles?q=${encodeURIComponent(detail.platform)}`,
+    label: measured ? "Package details" : "Style documentation",
+  };
+}
+export function PackageLightbox({
   detail,
   current,
   items,
   onClose,
   onChange,
 }: {
-  detail: LibraryDetail;
+  detail: LibraryItem;
   current?: ReferenceMedia;
   items: ReferenceMedia[];
   onClose: () => void;
   onChange: (item: ReferenceMedia) => void;
 }) {
+  const links = current ? captureViewerLinks(detail, current) : null;
   const opener = useRef<HTMLElement | null>(null);
-  const index = items.findIndex((m) => m.id === current?.id);
+  const lightboxRef = useRef<HTMLDivElement | null>(null);
+  const index = items.findIndex((m) => m === current);
   const move = (delta: number) => {
     if (items.length)
       onChange(items[(index + delta + items.length) % items.length]);
@@ -430,6 +456,8 @@ function PackageLightbox({
     const handler = (event: KeyboardEvent) => {
       if (
         event.defaultPrevented ||
+        (event.target instanceof Element &&
+          event.target.closest('[role="dialog"]') !== lightboxRef.current) ||
         (event.target instanceof Element &&
           event.target.closest("input,textarea,select,video"))
       )
@@ -456,6 +484,7 @@ function PackageLightbox({
       <Dialog.Portal>
         <Dialog.Overlay className={styles.overlay} />
         <Dialog.Content
+          ref={lightboxRef}
           className={styles.lightbox}
           aria-describedby={undefined}
           onOpenAutoFocus={() => {
@@ -481,11 +510,11 @@ function PackageLightbox({
             <>
               <header>
                 <div>
+                  <Link href={links!.browse} className={styles.viewerProduct}>
+                    {detail.icon && <img src={detail.icon} alt="" />}
+                    <span>{detail.name}</span>
+                  </Link>
                   <Dialog.Title>{current.name}</Dialog.Title>
-                  <p>
-                    {detail.name} · {current.group} · {index + 1} of{" "}
-                    {items.length}
-                  </p>
                 </div>
                 <Dialog.Close
                   className="icon-button"
@@ -494,14 +523,47 @@ function PackageLightbox({
                   <X size={22} />
                 </Dialog.Close>
               </header>
-              <div className={styles.lightboxStage}>
+              <div
+                key={`${detail.id}:${current.id}`}
+                className={styles.lightboxStage}
+              >
                 {current.type === "video" ? (
                   <video src={current.url} controls />
                 ) : (
                   <img src={current.url} alt={current.name} />
                 )}
               </div>
-              <footer>
+              <aside className={styles.viewerMetadata}>
+                <h3>Capture</h3>
+                <p>{current.group || "Captured screen"}</p>
+                <h3>Tags</h3>
+                <div className={styles.viewerTags}>
+                  {current.tags.length ? (
+                    current.tags.map((tag) => (
+                      <Link key={tag} href={links!.tag(tag)}>
+                        {tag}
+                      </Link>
+                    ))
+                  ) : (
+                    <span className="muted">No capture tags</span>
+                  )}
+                </div>
+                <h3>Product</h3>
+                <div className={styles.viewerTags}>
+                  <Link href={links!.platform}>{detail.platform}</Link>
+                </div>
+                <p className={styles.meta}>{detail.description}</p>
+                <Link className="pill small" href={links!.documentation}>
+                  {links!.label} <ExternalLink size={14} />
+                </Link>
+                <p className={styles.meta}>
+                  {detail.captured ? `Captured ${detail.captured}` : ""}
+                </p>
+              </aside>
+              <div className={styles.viewerNavigation}>
+                <span>
+                  {index + 1} / {items.length}
+                </span>
                 <div className={styles.actions}>
                   <button
                     className="pill"
@@ -519,8 +581,9 @@ function PackageLightbox({
                   >
                     <ChevronRight size={18} />
                   </button>
-                  <span>{current.tags.join(" · ")}</span>
                 </div>
+              </div>
+              <footer>
                 <div className={styles.actions}>
                   <a
                     className="pill"
@@ -537,14 +600,17 @@ function PackageLightbox({
                     value={
                       typeof window === "undefined"
                         ? ""
-                        : new URL(
-                            mediaDetailHref(detail.slug, current),
-                            window.location.origin,
-                          ).href
+                        : new URL(links!.copy, window.location.origin).href
                     }
                     label="Copy image link"
                   />
                   <MediaBookmarkButton
+                    referenceId={detail.id}
+                    mediaId={current.id}
+                    compact
+                  />
+                  <MediaCollectionButton
+                    key={JSON.stringify([detail.id, current.id])}
                     referenceId={detail.id}
                     mediaId={current.id}
                   />
@@ -614,6 +680,13 @@ export function PackageMarkdown({
     </article>
   );
 }
+function decodeHash(value: string): string {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
 function headingId(children: unknown): string {
   return String(children)
     .toLowerCase()
@@ -633,9 +706,7 @@ function PackageDocumentView({ slug, path }: { slug: string; path: string }) {
     const hash = window.location.hash;
     if (data && hash)
       requestAnimationFrame(() =>
-        document
-          .getElementById(decodeURIComponent(hash.slice(1)))
-          ?.scrollIntoView(),
+        document.getElementById(decodeHash(hash.slice(1)))?.scrollIntoView(),
       );
   }, [data, path]);
   if (loading) return <Spinner label="Opening package file…" />;

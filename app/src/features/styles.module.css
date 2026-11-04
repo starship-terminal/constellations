@@ -1,5 +1,5 @@
 .index {
-  max-width: 1170px;
+  max-width: 1594px;
   padding: 0 40px 80px;
   margin: 0 auto;
 }
@@ -28,8 +28,9 @@
 }
 .hero h1 {
   font: 400 64px/1.08 var(--serif);
-  letter-spacing: -2px;
-  margin: 0 -32px 24px;
+  letter-spacing: 0;
+  margin: 0 auto 24px;
+  max-width: 1100px;
 }
 .hero > p {
   max-width: 660px;
@@ -381,5 +382,97 @@
 @media (prefers-reduced-motion: reduce) {
   .cardScreen video {
     transition: none;
+  }
+}
+
+.orderTabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.orderTabs button {
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-size: 13px;
+}
+.orderTabs button[aria-selected="true"] {
+  background: var(--surface);
+}
+.search .submit:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* Measured from the rendered Refero headline on 2026-11-04. */
+.headline {
+  display: grid;
+  align-items: center;
+}
+.headlinePhrase {
+  grid-area: 1 / 1;
+  padding-bottom: 0.08em;
+  text-wrap: balance;
+}
+.headlineMeasure {
+  visibility: hidden;
+}
+.headlineText {
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  background-image: linear-gradient(var(--ink), var(--ink));
+  color: transparent;
+  background-clip: text;
+}
+.headlineOutgoing,
+.headlineIncoming {
+  background-image: linear-gradient(
+    var(--sweep-angle),
+    transparent 5.33%,
+    transparent 32.81%,
+    #0af 41.22%,
+    #e1e1fe 45.71%,
+    #ffcb5c 50.2%,
+    #f40 54.68%,
+    #f384ff 59.17%,
+    var(--ink) 65.16%,
+    var(--ink) 95.07%
+  );
+  background-position: 0% center;
+  background-size: 400% 100%;
+}
+.headlineOutgoing {
+  --sweep-angle: 110deg;
+  animation: headlineHide 3s linear;
+}
+.headlineIncoming {
+  --sweep-angle: -70deg;
+  animation: headlineShow 3s linear;
+}
+@keyframes headlineHide {
+  0% {
+    background-position: 100% center;
+  }
+  70%,
+  100% {
+    background-position: 0% center;
+  }
+}
+@keyframes headlineShow {
+  0%,
+  40% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .headlineOutgoing,
+  .headlineIncoming {
+    animation: none;
+    background-image: linear-gradient(var(--ink), var(--ink));
+  }
+  .headlineIncoming {
+    display: none;
   }
 }

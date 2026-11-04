@@ -13,22 +13,94 @@ import {
 } from "./library-data";
 import {
   filterStyles,
+  orderStyles,
   styleCounts,
   type StyleFacet,
   type StyleFilters,
 } from "./styles-data";
 import styles from "./styles.module.css";
 
+// Representative prompts observed on the live source. Queries use captured facets
+// where the source's semantic search uses words absent from this local snapshot.
 const PROMPTS = [
-  "Dark mode SaaS",
-  "Warm paper",
-  "Brutalist portfolio",
-  "Editorial agency",
-  "Neon crypto",
-  "Minimal devtools",
-  "Cinematic media",
-  "Swiss fintech",
+  ["Cinematic dark", "dark cinematic"],
+  ["Non-boring enterprise", "corporate"],
+  ["Cobalt blue billboard", "blue"],
+  ["Chalk & charcoal", "monochrome"],
+  ["Terminal & monospace", "technical devtools"],
+  ["Huge serif headlines", "editorial"],
+  ["Retro web nostalgia", "retro"],
+  ["White with one accent", "light minimal"],
 ];
+const HEADLINES = [
+  "Your favorite sites, in DESIGN.md",
+  "Start with a design you love",
+  "A DESIGN.md your AI can follow",
+  "Bring that style into your project",
+];
+function RotatingHeadline() {
+  const [current, setCurrent] = useState(0),
+    [transitioning, setTransitioning] = useState(false);
+  useEffect(() => {
+    const preference = matchMedia("(prefers-reduced-motion: reduce)");
+    let cycle: ReturnType<typeof setInterval> | undefined;
+    let settle: ReturnType<typeof setTimeout> | undefined;
+    function configure() {
+      clearInterval(cycle);
+      clearTimeout(settle);
+      setTransitioning(false);
+      if (preference.matches) {
+        setCurrent(0);
+        return;
+      }
+      cycle = setInterval(() => {
+        setTransitioning(true);
+        settle = setTimeout(() => {
+          setCurrent((index) => (index + 1) % HEADLINES.length);
+          setTransitioning(false);
+        }, 3000);
+      }, 6000);
+    }
+    configure();
+    preference.addEventListener("change", configure);
+    return () => {
+      clearInterval(cycle);
+      clearTimeout(settle);
+      preference.removeEventListener("change", configure);
+    };
+  }, []);
+  return (
+    <h1>
+      <span className="sr-only">{HEADLINES[0]}</span>
+      <span className={styles.headline} aria-hidden="true">
+        {HEADLINES.map((phrase) => (
+          <span
+            key={phrase}
+            className={`${styles.headlinePhrase} ${styles.headlineMeasure}`}
+          >
+            {phrase}
+          </span>
+        ))}
+        <span className={styles.headlinePhrase}>
+          <span
+            className={`${styles.headlineText} ${transitioning ? styles.headlineOutgoing : ""}`}
+          >
+            {HEADLINES[current]}
+          </span>
+        </span>
+        {transitioning && (
+          <span className={styles.headlinePhrase}>
+            <span
+              className={`${styles.headlineText} ${styles.headlineIncoming}`}
+            >
+              {HEADLINES[(current + 1) % HEADLINES.length]}
+            </span>
+          </span>
+        )}
+      </span>
+    </h1>
+  );
+}
 
 export function StyleCard({ item }: { item: LibraryItem }) {
   const [playing, setPlaying] = useState(false);
@@ -175,7 +247,8 @@ function StylesContent() {
   const search = useRef<HTMLInputElement | null>(null),
     results = useRef<HTMLDivElement | null>(null),
     sentinel = useRef<HTMLDivElement | null>(null);
-  const filterKey = JSON.stringify(filters);
+  const order = params.get("order") === "newest" ? "newest" : "name";
+  const filterKey = JSON.stringify([filters, order]);
   function update(patch: Record<string, string>) {
     const next = new URLSearchParams(window.location.search);
     for (const [key, value] of Object.entries(patch))
@@ -264,7 +337,10 @@ function StylesContent() {
   }, []);
   useEffect(() => setShown(48), [filterKey]);
   const filtered = useMemo(
-    () => filterStyles(items, filters),
+    () =>
+      filters.q
+        ? filterStyles(items, filters)
+        : orderStyles(filterStyles(items, filters), order),
     [items, filterKey],
   );
   const hasMore = shown < filtered.length;
@@ -312,7 +388,7 @@ function StylesContent() {
             </a>
             <span>Third-party interpretation</span>
           </div>
-          <h1>Your favorite sites, in DESIGN.md</h1>
+          <RotatingHeadline />
           <p>
             A collection of {total?.toLocaleString() || "1,342"} interpreted
             website styles, with videos, documents, and design details.{" "}
@@ -354,15 +430,19 @@ function StylesContent() {
                 </button>
               )}
               <kbd>/</kbd>
-              <button className={styles.submit} aria-label="Search">
+              <button
+                className={styles.submit}
+                aria-label="Search"
+                disabled={!filters.q.trim()}
+              >
                 <ArrowUp size={20} />
               </button>
             </form>
             <div className={styles.prompts}>
-              {PROMPTS.map((prompt) => (
+              {PROMPTS.map(([prompt, query]) => (
                 <button
                   key={prompt}
-                  onClick={() => update({ ...clear, q: prompt })}
+                  onClick={() => update({ ...clear, q: query })}
                 >
                   <ArrowRight size={12} />
                   {prompt}
@@ -372,6 +452,52 @@ function StylesContent() {
           </div>
         </header>
         <div className={styles.filterArea} ref={results}>
+          {!filters.q && (
+            <div
+              className={styles.orderTabs}
+              role="tablist"
+              aria-label="Style order"
+              onKeyDown={(event) => {
+                if (
+                  !["ArrowLeft", "ArrowRight", "Home", "End"].includes(
+                    event.key,
+                  )
+                )
+                  return;
+                event.preventDefault();
+                const next =
+                  event.key === "Home"
+                    ? "name"
+                    : event.key === "End"
+                      ? "newest"
+                      : order === "name"
+                        ? "newest"
+                        : "name";
+                update({ order: next === "name" ? "" : next });
+                event.currentTarget
+                  .querySelectorAll<HTMLButtonElement>("button")
+                  [next === "name" ? 0 : 1]?.focus();
+              }}
+            >
+              <button
+                role="tab"
+                aria-selected={order === "name"}
+                tabIndex={order === "name" ? 0 : -1}
+                onClick={() => update({ order: "" })}
+              >
+                Name A–Z
+              </button>
+              <button
+                role="tab"
+                aria-selected={order === "newest"}
+                tabIndex={order === "newest" ? 0 : -1}
+                title="Newest source extraction in this snapshot"
+                onClick={() => update({ order: "newest" })}
+              >
+                Newest capture
+              </button>
+            </div>
+          )}
           <div className={styles.filters}>
             {(
               [

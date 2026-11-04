@@ -32,3 +32,10 @@ The library supplies its own categories, counts and references. Reference-site
 marketing claims and unavailable features do not become mock controls in Studio.
 Check home, catalog, inspector and Styles in the browser after visual changes,
 including scrolling, keyboard dismissal, separate-tab navigation and mobile layout.
+
+The 2026-11-04 interaction audit additionally measured the signed-in research
+result grid (1280px viewport: two 399px columns, 36px gap). The app uses an adaptive
+minimum 320px column to reproduce laptop and wider desktop layouts. Styles' cycling
+headline uses the live measured text sweep colors, documented beside its CSS;
+reduced motion freezes both its phrase timer and sweep. These additions are app
+adaptations, not edits to the canonical captured package.
