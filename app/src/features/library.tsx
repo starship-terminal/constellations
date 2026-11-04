@@ -608,7 +608,7 @@ function LibraryContent({ standalone }: { standalone: boolean }) {
               <Spinner label="Opening the library…" />
             ) : items.length ? (
               <div
-                className={`${standalone ? styles.styleGrid : styles.appGrid} ${layout === "list" ? styles.listView : ""}`}
+                className={`${standalone ? styles.styleGrid : styles.appGrid} ${!standalone && platform === "mobile" ? styles.mobileGrid : ""} ${layout === "list" ? styles.listView : ""}`}
               >
                 {items.map((item) =>
                   standalone ? (

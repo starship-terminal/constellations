@@ -261,13 +261,70 @@
   outline: 2px solid var(--focus);
   outline-offset: 2px;
 }
+/* The iOS directory uses the supplied portrait-card proportions. Frame hues
+   reuse captured Refero palette values; they decorate the library, not apps. */
+.mobileGrid {
+  max-width: 820px;
+  margin-inline: auto;
+  gap: 36px 16px;
+}
+.mobileCard {
+  --frame-start: #1facf8;
+  --frame-end: color-mix(in srgb, #1facf8 35%, #ffffff);
+}
+.mobileCard:nth-child(4n + 2) {
+  --frame-start: #f59e0b;
+  --frame-end: #1facf8;
+}
+.mobileCard:nth-child(4n + 3) {
+  --frame-start: #e5759b;
+  --frame-end: #25cf99;
+}
+.mobileCard:nth-child(4n + 4) {
+  --frame-start: #9690f4;
+  --frame-end: #fc9e48;
+}
 .mobileCard .appShot {
-  height: 440px;
-  padding: 28px 32px 0;
+  position: relative;
+  isolation: isolate;
+  height: auto;
+  aspect-ratio: 1 / 2;
+  padding: 7.5%;
+  border: 0;
+  border-radius: 18% / 9%;
+  background:
+    radial-gradient(ellipse at 0 10%, #ffffffc4, transparent 48%),
+    linear-gradient(110deg, var(--frame-start), var(--frame-end));
+}
+.mobileCard .appShot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' d='M0 0h140v140H0z'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+.mobileCard .appShot :global(.media-preview) {
+  border-radius: 14% / 6.5%;
+  background: var(--surface-raised);
 }
 .mobileCard .appShot :global(.media-preview img),
 .mobileCard .appShot :global(.media-preview video) {
   object-fit: contain;
+}
+.mobileCard .appMeta {
+  margin-top: 20px;
+}
+.mobileCard .appMeta h2 {
+  margin-bottom: 0;
+  font-size: 18px;
+  line-height: 24px;
+}
+.mobileCard .appMeta p {
+  font-size: 12px;
+  line-height: 18px;
 }
 .loadMore {
   display: flex;
@@ -461,8 +518,8 @@
   .appShot {
     height: 280px;
   }
-  .mobileCard .appShot {
-    height: 400px;
+  .mobileGrid {
+    max-width: 400px;
   }
   .compareSelect {
     opacity: 1;
@@ -546,6 +603,7 @@
 }
 .listView .appMeta {
   flex: 1;
+  min-width: 0;
 }
 @media (max-width: 760px) {
   .listView .appShot {
@@ -648,4 +706,13 @@
 .modes a[aria-disabled="true"] {
   opacity: 0.55;
   cursor: wait;
+}
+
+.listView .mobileCard .appShot {
+  aspect-ratio: auto;
+  padding: 12px 20px;
+  border-radius: 20px;
+}
+.listView .mobileCard .appShot :global(.media-preview) {
+  border-radius: 12px;
 }
