@@ -828,12 +828,18 @@ export function StyleDocuments({ detail }: { detail: LibraryDetail }) {
     [tab, setTab] = useState(
       keys.includes("DESIGN.md") ? "DESIGN.md" : keys[0] || "DESIGN.md",
     ),
+    [variant, setVariant] = useState<"compact" | "extended">("extended"),
+    [loadedUrl, setLoadedUrl] = useState<string | null>(null),
     [rendered, setRendered] = useState(true),
     [wrap, setWrap] = useState(true),
     [value, setValue] = useState(""),
     [loading, setLoading] = useState(true),
     [error, setError] = useState("");
-  const url = detail.exports[tab];
+  const exportUrl = detail.exports[tab];
+  const url = exportUrl
+    ? `${exportUrl}${exportUrl.includes("?") ? "&" : "?"}variant=${variant}`
+    : undefined;
+  const ready = !!url && loadedUrl === url && !loading && !error;
   useEffect(() => {
     setTab(
       Object.keys(detail.exports).includes("DESIGN.md")
@@ -846,6 +852,7 @@ export function StyleDocuments({ detail }: { detail: LibraryDetail }) {
     setLoading(true);
     setError("");
     setValue("");
+    setLoadedUrl(null);
     if (!url) {
       setLoading(false);
       setError("No document is available in this format.");
@@ -853,11 +860,17 @@ export function StyleDocuments({ detail }: { detail: LibraryDetail }) {
     }
     fetch(url, { signal: request.signal })
       .then(async (response) => {
-        if (!response.ok) throw new Error("This document could not be loaded.");
+        if (!response.ok) {
+          const body = await response.json().catch(() => null);
+          throw new Error(body?.error || "This document could not be loaded.");
+        }
         return response.text();
       })
       .then((text) => {
-        if (!request.signal.aborted) setValue(text);
+        if (!request.signal.aborted) {
+          setValue(text);
+          setLoadedUrl(url);
+        }
       })
       .catch((error) => {
         if (!request.signal.aborted) setError(error.message);
@@ -897,8 +910,24 @@ export function StyleDocuments({ detail }: { detail: LibraryDetail }) {
         ))}
       </div>
       <div className={styles.documentToolbar}>
-        <span className={styles.filename}>
-          {detail.slug}-{tab}
+        <div
+          className={styles.documentVariants}
+          role="group"
+          aria-label="Document detail"
+        >
+          {(["compact", "extended"] as const).map((mode) => (
+            <button
+              key={mode}
+              type="button"
+              aria-pressed={variant === mode}
+              onClick={() => setVariant(mode)}
+            >
+              {mode === "compact" ? "Compact" : "Extended"}
+            </button>
+          ))}
+        </div>
+        <span className="sr-only">
+          {detail.slug}-{variant}-{tab}
         </span>
         <div className={styles.documentActions}>
           {markdown && (
@@ -919,10 +948,13 @@ export function StyleDocuments({ detail }: { detail: LibraryDetail }) {
               {wrap ? "Wrap on" : "Wrap off"}
             </button>
           )}
-          {!loading && !error && (
+          {ready && (
             <>
               <CopyButton value={value} />
-              <DownloadButton value={value} name={`${detail.slug}-${tab}`} />
+              <DownloadButton
+                value={value}
+                name={`${detail.slug}-${variant}-${tab}`}
+              />
             </>
           )}
         </div>
@@ -934,8 +966,8 @@ export function StyleDocuments({ detail }: { detail: LibraryDetail }) {
         aria-labelledby={`document-tab-${tab.replace(/\W/g, "-")}`}
         tabIndex={0}
       >
-        {loading ? (
-          <Spinner label="Opening document…" />
+        {loading || (!error && !ready) ? (
+          <Spinner label={`Opening ${variant} document…`} />
         ) : error ? (
           <ErrorState message={error} />
         ) : markdown && rendered ? (
@@ -965,7 +997,8 @@ export function StyleDocuments({ detail }: { detail: LibraryDetail }) {
         )}
       </div>
       <div className={styles.documentFoot}>
-        Interpreted by Refero · original exports preserved
+        Interpreted by Refero · {variant === "compact" ? "Compact" : "Extended"}{" "}
+        export from the captured source
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ A new personal application built beside the existing `web/` app. The original da
 
 ## Run locally
 
-Requires Node 22 and pnpm 10. From the repository root:
+Requires Node 22.13+ and pnpm 10. Export variants use Node's built-in SQLite reader. From the repository root:
 
 ```sh
 pnpm --dir app install --frozen-lockfile
@@ -32,6 +32,8 @@ Official OpenAI connections use the Responses API; Anthropic uses its native API
 - `tests/`: source, persistence and research contract tests.
 
 The app does not import legacy UI components. The source catalog and Refero snapshot remain canonical; generated data can be rebuilt with `make build`. Source adapters support `DESIGN_SYSTEMS_REPO` for an explicit checkout. Media may come from the existing mirror or source URLs recorded in the catalog. LFS pointer files are not treated as real images.
+
+Refero document exports accept `variant=compact` or `variant=extended`. Selectable variants require a hydrated `refero/refero.db` (Git LFS) and the existing `tools/refero/generators.js` in that checkout. The app opens the source database read-only and reuses the captured serializers in-process. Extended Markdown preserves the captured `DESIGN.md` verbatim because it resolves text references missing from the raw extraction. Other variants return unavailable when their captured source is missing. Requests without a variant keep returning the existing materialized files unchanged.
 
 Personal state is separate from captured evidence. `DESIGN_RESEARCH_DATA_DIR` selects its directory, otherwise it uses `~/.local/share/design-research/app.db`. Do not commit the personal SQLite database or model credentials. Stop the app before copying the database directory for a backup.
 
