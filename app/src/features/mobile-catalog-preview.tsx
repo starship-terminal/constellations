@@ -14,6 +14,20 @@ interface CaptureCrop {
   source: string;
 }
 
+/** Keep back-and-forth scrubbing off the pixel-scan path with a bounded cache. */
+export function readCachedCrop(
+  cache: Map<string, CaptureCrop>,
+  source: string,
+  read: () => CaptureCrop,
+): CaptureCrop {
+  const cached = cache.get(source);
+  if (cached) return cached;
+  const measured = read();
+  if (cache.size >= 16) cache.delete(cache.keys().next().value!);
+  cache.set(source, measured);
+  return measured;
+}
+
 /** JPEG catalog thumbnails flatten transparent capture margins onto white. */
 export function originalMobilePreview(thumbnail: string): string {
   return thumbnail.startsWith("/media/data/thumbs/systems__") &&
@@ -74,6 +88,7 @@ export function MobileCatalogPreview({
   name: string;
 }) {
   const container = useRef<HTMLDivElement>(null);
+  const cropCache = useRef(new Map<string, CaptureCrop>());
   const [failed, setFailed] = useState("");
   const source = failed === image ? fallback : image;
   const [crop, setCrop] = useState<CaptureCrop | null>(null);
@@ -91,11 +106,12 @@ export function MobileCatalogPreview({
     return () => observer.disconnect();
   }, []);
   const ready = crop?.source === source;
-  const style: CSSProperties =
-    ready && size.width && size.height
+  const style: CSSProperties = {
+    position: "absolute",
+    maxWidth: "none",
+    objectFit: "cover",
+    ...(ready && size.width && size.height
       ? {
-          position: "absolute",
-          objectFit: "cover",
           ...coverCrop(
             crop.bounds,
             crop.width,
@@ -105,7 +121,8 @@ export function MobileCatalogPreview({
           ),
           opacity: 1,
         }
-      : { opacity: 0 };
+      : { opacity: 0 }),
+  };
   return (
     <div ref={container} className="media-preview">
       <img
@@ -116,37 +133,49 @@ export function MobileCatalogPreview({
         onError={() => setFailed(image)}
         onLoad={(event) => {
           const image = event.currentTarget;
-          const ratio = Math.min(
-            1,
-            2048 / Math.max(image.naturalWidth, image.naturalHeight),
-          );
-          const canvas = document.createElement("canvas");
-          canvas.width = Math.max(1, Math.round(image.naturalWidth * ratio));
-          canvas.height = Math.max(1, Math.round(image.naturalHeight * ratio));
-          const context = canvas.getContext("2d");
-          let bounds: Crop = {
-            x: 0,
-            y: 0,
-            width: canvas.width,
-            height: canvas.height,
-          };
-          if (context)
-            try {
-              context.drawImage(image, 0, 0, canvas.width, canvas.height);
-              bounds = alphaCropBounds(
-                context.getImageData(0, 0, canvas.width, canvas.height).data,
-                canvas.width,
-                canvas.height,
+          const key = `${source}:${image.naturalWidth}x${image.naturalHeight}`;
+          setCrop(
+            readCachedCrop(cropCache.current, key, () => {
+              const ratio = Math.min(
+                1,
+                2048 / Math.max(image.naturalWidth, image.naturalHeight),
               );
-            } catch {
-              /* An opaque or unavailable canvas still uses edge-to-edge cover. */
-            }
-          setCrop({
-            bounds,
-            width: canvas.width,
-            height: canvas.height,
-            source,
-          });
+              const canvas = document.createElement("canvas");
+              canvas.width = Math.max(
+                1,
+                Math.round(image.naturalWidth * ratio),
+              );
+              canvas.height = Math.max(
+                1,
+                Math.round(image.naturalHeight * ratio),
+              );
+              const context = canvas.getContext("2d");
+              let bounds: Crop = {
+                x: 0,
+                y: 0,
+                width: canvas.width,
+                height: canvas.height,
+              };
+              if (context)
+                try {
+                  context.drawImage(image, 0, 0, canvas.width, canvas.height);
+                  bounds = alphaCropBounds(
+                    context.getImageData(0, 0, canvas.width, canvas.height)
+                      .data,
+                    canvas.width,
+                    canvas.height,
+                  );
+                } catch {
+                  /* An opaque or unavailable canvas still uses edge-to-edge cover. */
+                }
+              return {
+                bounds,
+                width: canvas.width,
+                height: canvas.height,
+                source,
+              };
+            }),
+          );
         }}
       />
     </div>

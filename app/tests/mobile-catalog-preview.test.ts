@@ -1,11 +1,41 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+import { createElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
 import {
   alphaCropBounds,
   coverCrop,
   originalMobilePreview,
+  MobileCatalogPreview,
+  readCachedCrop,
 } from "@/features/mobile-catalog-preview";
 
 describe("mobile catalog capture rendering", () => {
+  it("allows crop dimensions to exceed the global responsive image width cap", () => {
+    const html = renderToStaticMarkup(
+      createElement(MobileCatalogPreview, {
+        image: "/original.png",
+        fallback: "/thumbnail.jpg",
+        name: "Example",
+      }),
+    );
+    expect(html).toContain("max-width:none");
+  });
+  it("reuses measured hover frames and bounds cache memory", () => {
+    const cache = new Map();
+    const measure = vi.fn(() => ({
+      bounds: { x: 15, y: 76, width: 782, height: 1688 },
+      width: 812,
+      height: 1780,
+      source: "frame",
+    }));
+    const first = readCachedCrop(cache, "frame", measure);
+    readCachedCrop(cache, "other-frame", measure);
+    expect(readCachedCrop(cache, "frame", measure)).toBe(first);
+    expect(measure).toHaveBeenCalledTimes(2);
+    for (let i = 0; i < 30; i++) readCachedCrop(cache, `frame-${i}`, measure);
+    expect(cache.size).toBeLessThanOrEqual(16);
+    expect(cache.has("frame")).toBe(false);
+  });
   it("removes differing transparent capture margins while retaining white app pixels", () => {
     const pixels = new Uint8ClampedArray(8 * 10 * 4);
     // Real white app content must survive. Only alpha, never RGB, defines trim.
