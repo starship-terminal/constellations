@@ -95,6 +95,7 @@ export function CollectionScreens({
                         src={item.media.thumbnail || item.media.url}
                         alt={item.media.name}
                         loading="lazy"
+                        decoding="async"
                       />
                     </div>
                   </button>

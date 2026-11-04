@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import type { ScreenItem, ScreenResponse } from "@/contracts/screens";
-import { api, Empty, ErrorState, Spinner } from "@/components/shared";
+import { api, Empty, ErrorState, SkeletonGrid } from "@/components/shared";
 import { MediaBookmarkButton } from "@/components/media-bookmark";
 import { PackageLightbox } from "./package-detail";
 import styles from "./screen-browser.module.css";
@@ -205,7 +205,12 @@ export function ScreenBrowser() {
         />
       )}
       {loading && !visibleData ? (
-        <Spinner label="Opening captured screens…" />
+        <SkeletonGrid
+          shape={platform === "mobile" ? "screen-ios" : "screen"}
+          count={platform === "mobile" ? 8 : 4}
+          className={`${styles.grid} ${platform === "mobile" ? styles.phoneGrid : ""}`}
+          label="Opening captured screens…"
+        />
       ) : !items.length && !loading ? (
         <Empty
           title={
@@ -271,7 +276,12 @@ export function ScreenBrowser() {
                   href={`/library?view=screens&platform=${item.reference.platform}&referenceId=${encodeURIComponent(item.reference.id)}`}
                 >
                   {item.reference.icon && (
-                    <img src={item.reference.icon} alt="" loading="lazy" />
+                    <img
+                      src={item.reference.icon}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
                   )}
                   {item.reference.name}
                 </Link>

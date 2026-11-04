@@ -28,6 +28,23 @@ export function parseByteRange(
     return null;
   return { start, end: Math.min(end, size - 1) };
 }
+export function notModifiedSince(header: string, mtimeMs: number): boolean {
+  const since = Date.parse(header);
+  return (
+    Number.isFinite(since) &&
+    Math.floor(mtimeMs / 1000) <= Math.floor(since / 1000)
+  );
+}
+export function rangeValidatorMatches(
+  header: string,
+  mtimeMs: number,
+): boolean {
+  const since = Date.parse(header);
+  return (
+    Number.isFinite(since) &&
+    Math.floor(since / 1000) === Math.floor(mtimeMs / 1000)
+  );
+}
 async function serve(
   request: Request,
   parts: string[],
@@ -40,14 +57,21 @@ async function serve(
   const headers = new Headers({
     "Content-Type": mediaMime(file)!,
     "Accept-Ranges": "bytes",
-    "Cache-Control": "private, max-age=3600",
+    "Cache-Control": "private, max-age=86400",
+    "Last-Modified": stat.mtime.toUTCString(),
     "X-Content-Type-Options": "nosniff",
     "Content-Security-Policy":
       "default-src 'none'; style-src 'unsafe-inline'; sandbox",
   });
+  const since = request.headers.get("if-modified-since");
+  if (since && notModifiedSince(since, stat.mtimeMs))
+    return new Response(null, { status: 304, headers });
   const rangeHeader = request.headers.get("range"),
-    range = rangeHeader ? parseByteRange(rangeHeader, size) : null;
-  if (rangeHeader && !range) {
+    ifRange = request.headers.get("if-range"),
+    rangeAllowed = !ifRange || rangeValidatorMatches(ifRange, stat.mtimeMs),
+    range =
+      rangeHeader && rangeAllowed ? parseByteRange(rangeHeader, size) : null;
+  if (rangeHeader && rangeAllowed && !range) {
     headers.set("Content-Range", `bytes */${size}`);
     return new Response(null, { status: 416, headers });
   }

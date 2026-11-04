@@ -1055,19 +1055,99 @@ select {
   justify-content: center;
   margin-top: 45px;
 }
-.card-skeleton > div {
+.card-skeleton-media {
   aspect-ratio: 1.36;
   border-radius: 25px;
   background: var(--surface);
   animation: skeleton 1.7s ease-in-out infinite;
 }
-.card-skeleton > span {
+.card-skeleton-line {
   display: block;
   height: 20px;
   width: 60%;
   background: var(--surface);
   margin-top: 15px;
   border-radius: 5px;
+  animation: skeleton 1.7s ease-in-out infinite;
+}
+/* Per-surface shapes mirror each grid's real card geometry. */
+.card-skeleton-browse .card-skeleton-media {
+  height: 210px;
+  aspect-ratio: auto;
+  border-radius: var(--radius-sm);
+}
+.card-skeleton-web .card-skeleton-media {
+  height: 320px;
+  aspect-ratio: auto;
+  border-radius: 28px;
+}
+.card-skeleton-ios .card-skeleton-media {
+  aspect-ratio: 1 / 2;
+  border-radius: 18% / 9%;
+}
+.card-skeleton-screen .card-skeleton-media {
+  aspect-ratio: 1.81;
+  border-radius: 6px;
+}
+.card-skeleton-screen-ios .card-skeleton-media {
+  aspect-ratio: 0.48;
+  border-radius: 6px;
+}
+.card-skeleton-style .card-skeleton-media {
+  aspect-ratio: 1.37;
+  border-radius: var(--radius-card);
+}
+.card-skeleton-tile .card-skeleton-media {
+  height: 240px;
+  aspect-ratio: auto;
+  border-radius: 12px;
+}
+.card-skeleton-collection .card-skeleton-media {
+  height: 200px;
+  aspect-ratio: auto;
+  border-radius: 24px;
+}
+.card-skeleton-list {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.card-skeleton-list .card-skeleton-media {
+  width: 220px;
+  height: 150px;
+  flex: none;
+  aspect-ratio: auto;
+  border-radius: var(--radius-sm);
+}
+.card-skeleton-list .card-skeleton-line {
+  margin-top: 0;
+}
+@media (max-width: 1100px) {
+  .card-skeleton-web .card-skeleton-media {
+    height: 280px;
+  }
+}
+@media (max-width: 800px) {
+  .card-skeleton-web .card-skeleton-media {
+    height: 240px;
+  }
+}
+@media (max-width: 760px) {
+  .card-skeleton-browse .card-skeleton-media {
+    height: 150px;
+  }
+}
+@media (max-width: 1000px) {
+  .card-skeleton-collection .card-skeleton-media {
+    height: 160px;
+    border-radius: 19px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card-skeleton-media,
+  .card-skeleton-line {
+    animation: none;
+  }
 }
 .compare-bar {
   position: fixed;

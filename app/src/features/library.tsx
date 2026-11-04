@@ -25,6 +25,7 @@ import {
   Empty,
   ErrorState,
   MediaPreview,
+  SkeletonGrid,
   Spinner,
 } from "@/components/shared";
 import { Comparison } from "@/components/reference";
@@ -48,7 +49,18 @@ import {
 
 export function LibraryPage() {
   return (
-    <Suspense fallback={<Spinner label="Opening references…" />}>
+    <Suspense
+      fallback={
+        <div className={`${styles.library} ${styles.catalog}`}>
+          <SkeletonGrid
+            shape="web"
+            count={6}
+            className={styles.appGrid}
+            label="Opening references…"
+          />
+        </div>
+      }
+    >
       <LibraryContent />
     </Suspense>
   );
@@ -496,7 +508,18 @@ function LibraryContent() {
               />
             )}
             {!allItems.length && loading ? (
-              <Spinner label="Opening the library…" />
+              <SkeletonGrid
+                shape={
+                  layout === "list"
+                    ? "list"
+                    : platform === "mobile"
+                      ? "ios"
+                      : "web"
+                }
+                count={6}
+                className={`${styles.appGrid} ${platform === "mobile" ? styles.mobileGrid : ""} ${layout === "list" ? styles.listView : ""}`}
+                label="Opening the library…"
+              />
             ) : items.length ? (
               <div
                 className={`${styles.appGrid} ${platform === "mobile" ? styles.mobileGrid : ""} ${layout === "list" ? styles.listView : ""}`}
@@ -663,7 +686,7 @@ function CatalogCard({
         </div>
         <div className={styles.appMeta}>
           {item.icon ? (
-            <img src={item.icon} alt="" loading="lazy" />
+            <img src={item.icon} alt="" loading="lazy" decoding="async" />
           ) : (
             <span className={styles.appLetter}>{item.name[0]}</span>
           )}

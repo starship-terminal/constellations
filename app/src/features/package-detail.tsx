@@ -34,6 +34,7 @@ import {
   DownloadButton,
   Empty,
   ErrorState,
+  SkeletonGrid,
   Spinner,
   api,
   useResource,
@@ -87,7 +88,18 @@ const size = (n: number) =>
       : `${(n / 1024 / 1024).toFixed(1)} MB`;
 export function PackageDetailPage({ slug }: { slug: string }) {
   return (
-    <Suspense fallback={<Spinner label="Opening captured package…" />}>
+    <Suspense
+      fallback={
+        <div className={styles.page}>
+          <SkeletonGrid
+            shape="tile"
+            count={6}
+            className={styles.grid}
+            label="Opening captured package…"
+          />
+        </div>
+      }
+    >
       <PackageDetail slug={slug} />
     </Suspense>
   );
@@ -157,7 +169,17 @@ function PackageDetail({ slug }: { slug: string }) {
         document.getElementById(decodeHash(hash.slice(1)))?.scrollIntoView(),
       );
   }, [params.get("file"), tab]);
-  if (loading) return <Spinner label="Opening captured package…" />;
+  if (loading)
+    return (
+      <div className={styles.page}>
+        <SkeletonGrid
+          shape="tile"
+          count={6}
+          className={styles.grid}
+          label="Opening captured package…"
+        />
+      </div>
+    );
   if (error)
     return (
       <div className={styles.page}>
@@ -778,7 +800,12 @@ export function PackageMarkdown({
                 : undefined;
             return url ? (
               <a href={url} target="_blank" rel="noreferrer">
-                <img src={url} alt={alt || "Package image"} loading="lazy" />
+                <img
+                  src={url}
+                  alt={alt || "Package image"}
+                  loading="lazy"
+                  decoding="async"
+                />
               </a>
             ) : (
               <span>{alt}</span>

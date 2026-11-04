@@ -56,6 +56,44 @@ export function Spinner({ label = "Loading…" }: { label?: string }) {
     </div>
   );
 }
+export type SkeletonShape =
+  | "card"
+  | "web"
+  | "ios"
+  | "browse"
+  | "screen"
+  | "screen-ios"
+  | "style"
+  | "tile"
+  | "collection"
+  | "list";
+export function SkeletonCard({ shape = "card" }: { shape?: SkeletonShape }) {
+  return (
+    <div className={`card-skeleton card-skeleton-${shape}`} aria-hidden="true">
+      <div className="card-skeleton-media" />
+      <span className="card-skeleton-line" />
+    </div>
+  );
+}
+export function SkeletonGrid({
+  shape = "card",
+  count = 6,
+  className = "",
+  label = "Loading…",
+}: {
+  shape?: SkeletonShape;
+  count?: number;
+  className?: string;
+  label?: string;
+}) {
+  return (
+    <div className={className} role="status" aria-label={label}>
+      {Array.from({ length: count }, (_, i) => (
+        <SkeletonCard key={i} shape={shape} />
+      ))}
+    </div>
+  );
+}
 export function Empty({
   title,
   children,
@@ -277,7 +315,12 @@ export function MediaPreview({
       onBlur={stop}
     >
       {image ? (
-        <img src={image} alt={`${name} design preview`} loading="lazy" />
+        <img
+          src={image}
+          alt={`${name} design preview`}
+          loading="lazy"
+          decoding="async"
+        />
       ) : (
         <div className="media-missing">
           <span>{name.slice(0, 1)}</span>

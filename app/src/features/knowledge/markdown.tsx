@@ -52,7 +52,7 @@ export function DocumentMarkdown({
           ),
         img: ({ src, alt }) =>
           typeof src === "string" && src.startsWith("/media/") ? (
-            <img src={src} alt={alt || ""} loading="lazy" />
+            <img src={src} alt={alt || ""} loading="lazy" decoding="async" />
           ) : (
             <span>{alt || "Recorded image"}</span>
           ),

@@ -1104,6 +1104,7 @@ function Message({
                               src={item.url}
                               alt={item.name}
                               loading="lazy"
+                              decoding="async"
                               style={{
                                 width: "100%",
                                 maxHeight: 220,
