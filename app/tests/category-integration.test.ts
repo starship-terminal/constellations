@@ -106,6 +106,15 @@ describe("database categories across apps and screens", () => {
   it("keeps empty assignments empty and supports old deep links", async () => {
     const [reference] = await withReferenceCategories([item("brilliant")]);
     expect(matchesCategory(reference, "learning")).toBe(true);
+    for (const unknown of [
+      "constructor",
+      "toString",
+      "__proto__",
+      "unknown-category",
+    ]) {
+      expect(matchesCategory(reference, unknown)).toBe(false);
+    }
+
     expect(matchesCategory(reference, "education")).toBe(true);
     expect(
       matchesCategory(

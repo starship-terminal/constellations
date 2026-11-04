@@ -72,7 +72,11 @@ export function matchesCategory(
 ): boolean {
   if (!query) return true;
   const labels =
-    legacyCategoryLabels[query] || query.split(":").at(-1) || query;
+    (Object.hasOwn(legacyCategoryLabels, query)
+      ? legacyCategoryLabels[query]
+      : undefined) ||
+    query.split(":").at(-1) ||
+    query;
   const targets = (Array.isArray(labels) ? labels : [labels]).map(categorySlug);
   if (item.categoryIds !== undefined)
     return item.categoryIds.some((id) =>
