@@ -73,6 +73,7 @@ if [ "$MODE" = update ]; then
   # Refuse divergence or tracked edits. Leave unrelated untracked evidence alone.
   [ -z "$(git -C "$REPO" status --porcelain --untracked-files=no)" ] || { echo 'Tracked checkout edits block automatic deployment.' >&2; exit 1; }
   [ "$(git -C "$REPO" branch --show-current)" = main ] || { echo 'Automatic deployment requires main.' >&2; exit 1; }
+  git -C "$REPO" merge-base --is-ancestor HEAD "$SHA" || { echo 'Local commits block automatic deployment.' >&2; exit 1; }
   git -C "$REPO" merge --ff-only "$SHA"
   REV="$SHA"
 fi
@@ -89,13 +90,26 @@ if [ "$MODE" != activate ]; then
   [ "$MODE" = update ] || exit 0
 fi
 [ -f "$RELEASE/.ready" ] || { echo 'Stage this release before activation.' >&2; exit 1; }
-PREVIOUS="$(readlink "$SERVICE/current" 2>/dev/null || true)"
-ln -s "$RELEASE" "$SERVICE/current.next"
-mv -Tf "$SERVICE/current.next" "$SERVICE/current"
+# current may name an unverified release after an interrupted activation.
+# Only the atomically recorded successful SHA can become a rollback target.
+PREVIOUS=""
+VERIFIED_SHA="$(cat "$SERVICE/deployed-sha" 2>/dev/null || true)"
+if [ -n "$VERIFIED_SHA" ]; then
+  [[ "$VERIFIED_SHA" =~ ^[0-9a-f]{40}$ ]] && [ -f "$SERVICE/releases/$VERIFIED_SHA/.ready" ] || { echo 'Invalid verified-release record; refusing activation.' >&2; exit 1; }
+  PREVIOUS="$SERVICE/releases/$VERIFIED_SHA"
+fi
+switch_release() {
+  # A killed deployment may leave this disposable link. Preserve any real file.
+  if [ -L "$SERVICE/current.next" ]; then rm -- "$SERVICE/current.next"; fi
+  ln -s "$1" "$SERVICE/current.next"
+  mv -Tf "$SERVICE/current.next" "$SERVICE/current"
+}
+switch_release "$RELEASE"
 if systemctl --user restart design-research.service; then
 for attempt in $(seq 1 30); do
   if curl --fail --silent --max-time 3 http://127.0.0.1:8845/api/settings >/dev/null; then
-    printf '%s\n' "$SHA" > "$SERVICE/deployed-sha"
+    printf '%s\n' "$SHA" > "$SERVICE/deployed-sha.next"
+    mv -f "$SERVICE/deployed-sha.next" "$SERVICE/deployed-sha"
     printf '%s\n' "$PREVIOUS" > "$SERVICE/previous-release"
     echo "Activated $SHA"
     exit 0
@@ -104,8 +118,7 @@ for attempt in $(seq 1 30); do
 done
 fi
 if [ -n "$PREVIOUS" ]; then
-  ln -s "$PREVIOUS" "$SERVICE/current.next"
-  mv -Tf "$SERVICE/current.next" "$SERVICE/current"
+  switch_release "$PREVIOUS"
   systemctl --user restart design-research.service
 else
   systemctl --user stop design-research.service
