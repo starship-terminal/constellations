@@ -81,7 +81,7 @@ RELEASE="$SERVICE/releases/$SHA"
 if [ "$MODE" != activate ]; then
   if [ ! -f "$RELEASE/.ready" ]; then
     mkdir -p "$RELEASE"
-    git -C "$REPO" archive "$SHA" app | tar -x -C "$RELEASE"
+    git -C "$REPO" archive "$SHA" app catalog.json | tar -x -C "$RELEASE"
     (cd "$RELEASE/app" && corepack pnpm install --frozen-lockfile && corepack pnpm build)
     printf '%s\n' "$SHA" > "$RELEASE/.ready"
   fi
