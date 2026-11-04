@@ -35,6 +35,7 @@ import {
   ErrorState,
   MediaPreview,
   Modal,
+  Select,
   Spinner,
 } from "./shared";
 export function ReferenceCard({
@@ -208,19 +209,18 @@ export function SaveReference({
           {collections.length > 0 && (
             <label>
               Collection
-              <select
+              <Select
+                label="Collection"
                 value={selected}
-                onChange={(e) => {
-                  setSelected(e.target.value);
+                onChange={(value) => {
+                  setSelected(value);
                   setName("");
                 }}
-              >
-                {collections.map((c) => (
-                  <option key={c.id} value={c.id}>
-                    {c.name}
-                  </option>
-                ))}
-              </select>
+                options={collections.map((c) => ({
+                  value: c.id,
+                  label: c.name,
+                }))}
+              />
             </label>
           )}
           <label>

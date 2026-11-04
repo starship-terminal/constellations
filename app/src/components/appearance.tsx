@@ -1,5 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
+import { Palette } from "lucide-react";
+import { Select } from "./shared";
 type Theme = "dark" | "light" | "system";
 function apply(theme: Theme) {
   document.documentElement.dataset.theme =
@@ -32,27 +34,32 @@ export function AppearanceSettings() {
   return (
     <section className="settings-section">
       <div className="settings-section-label">
+        <Palette size={19} />
         <div>
           <h2>Appearance</h2>
           <p>Choose the workspace theme.</p>
         </div>
       </div>
-      <label>
-        Theme
-        <select
-          value={theme}
-          onChange={(e) => {
-            const value = e.target.value as Theme;
-            setTheme(value);
-            localStorage.setItem("studio-theme", value);
-            window.dispatchEvent(new Event("studio-appearance"));
-          }}
-        >
-          <option value="dark">Dark</option>
-          <option value="light">Light</option>
-          <option value="system">System</option>
-        </select>
-      </label>
+      <div className="settings-form">
+        <div className="settings-field">
+          <span>Theme</span>
+          <Select
+            label="Theme"
+            value={theme}
+            onChange={(value) => {
+              const next = value as Theme;
+              setTheme(next);
+              localStorage.setItem("studio-theme", next);
+              window.dispatchEvent(new Event("studio-appearance"));
+            }}
+            options={[
+              { value: "dark", label: "Dark" },
+              { value: "light", label: "Light" },
+              { value: "system", label: "System" },
+            ]}
+          />
+        </div>
+      </div>
     </section>
   );
 }

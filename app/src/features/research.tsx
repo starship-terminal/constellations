@@ -497,11 +497,13 @@ function ResearchConversation({ initial }: { initial: Conversation }) {
     [excluded, setExcluded] = useState(initial.excludedIds || []),
     [inspecting, setInspecting] = useState<LibraryItem | null>(null),
     [localError, setLocalError] = useState(""),
+    [modelConfigured, setModelConfigured] = useState<boolean | null>(null),
     [allReferences, setAllReferences] = useState<Record<string, LibraryItem>>(
       {},
     );
   const end = useRef<HTMLDivElement>(null),
     started = useRef(false),
+    continued = useRef(false),
     nearBottom = useRef(true),
     steeringQueue = useRef<Promise<void>>(Promise.resolve()),
     steeringState = useRef({
@@ -567,6 +569,30 @@ function ResearchConversation({ initial }: { initial: Conversation }) {
     };
     window.addEventListener("scroll", track, { passive: true });
     return () => window.removeEventListener("scroll", track);
+  }, []);
+  useEffect(() => {
+    // Re-check on return visits: a key added since the last check lets the
+    // saved direction continue without a manual retry.
+    let alive = true;
+    const check = () =>
+      api<{ configured?: boolean }>("/api/settings")
+        .then((d) => {
+          if (alive) setModelConfigured(d?.configured === true);
+        })
+        .catch(() => {
+          if (alive) setModelConfigured(false);
+        });
+    check();
+    const wake = () => {
+      if (!document.hidden) check();
+    };
+    document.addEventListener("visibilitychange", wake);
+    window.addEventListener("focus", wake);
+    return () => {
+      alive = false;
+      document.removeEventListener("visibilitychange", wake);
+      window.removeEventListener("focus", wake);
+    };
   }, []);
   useEffect(() => {
     if (busy && nearBottom.current)
@@ -655,6 +681,19 @@ function ResearchConversation({ initial }: { initial: Conversation }) {
   const missingKey = /key|configured|provider|credential/i.test(knownError);
   const lastMessage = messages[messages.length - 1];
   const pendingUser = lastMessage?.role === "user";
+  useEffect(() => {
+    if (
+      continued.current ||
+      started.current ||
+      modelConfigured !== true ||
+      busy ||
+      knownError ||
+      !pendingUser
+    )
+      return;
+    continued.current = true;
+    retryResearch();
+  }, [modelConfigured, busy, knownError, pendingUser]);
   function exportResearch() {
     const text =
       `# ${initial.title}\n\n` +
@@ -767,7 +806,7 @@ function ResearchConversation({ initial }: { initial: Conversation }) {
             </p>
             <div className="inline-actions">
               {missingKey && (
-                <Link className="pill" href="/settings">
+                <Link className="pill" href="/settings?tab=ai">
                   Open model settings
                   <ArrowRight size={14} />
                 </Link>
@@ -792,17 +831,25 @@ function ResearchConversation({ initial }: { initial: Conversation }) {
             )}
           </div>
         )}
-        {!busy && !knownError && pendingUser && (
+        {!busy && !knownError && pendingUser && modelConfigured !== null && (
           <div className="notice pending-research">
             <strong>Your direction is saved.</strong>
-            <p>Continue this research with your connected model.</p>
-            <button className="pill" onClick={() => retryResearch()}>
-              Continue research
-              <ArrowRight size={14} />
-            </button>
-            <Link className="text-link" href="/settings">
-              Model settings
-            </Link>
+            <p>
+              {modelConfigured
+                ? "Continue this research with your connected model."
+                : "Connect a model in settings to continue this research."}
+            </p>
+            {modelConfigured ? (
+              <button className="pill" onClick={() => retryResearch()}>
+                Continue research
+                <ArrowRight size={14} />
+              </button>
+            ) : (
+              <Link className="pill" href="/settings?tab=ai">
+                Model settings
+                <ArrowRight size={14} />
+              </Link>
+            )}
           </div>
         )}
         {!busy && !knownError && lastMessage?.role === "assistant" && (

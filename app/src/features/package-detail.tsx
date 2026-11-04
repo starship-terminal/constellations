@@ -34,6 +34,7 @@ import {
   DownloadButton,
   Empty,
   ErrorState,
+  Select,
   SkeletonGrid,
   Spinner,
   api,
@@ -922,15 +923,16 @@ function MeasuredValues({
       <section>
         <div className={styles.sectionHeading}>
           <h2>Theme colors</h2>
-          <select
-            aria-label="Recorded color theme"
+          <Select
+            compact
+            label="Recorded color theme"
             value={theme}
-            onChange={(e) => setTheme(e.target.value)}
-          >
-            {Object.keys(pkg.swatches).map((name) => (
-              <option key={name}>{name}</option>
-            ))}
-          </select>
+            onChange={setTheme}
+            options={Object.keys(pkg.swatches).map((name) => ({
+              value: name,
+              label: name,
+            }))}
+          />
         </div>
         <p className={styles.meta}>
           Recorded roles from the package. Check each token’s evidence before

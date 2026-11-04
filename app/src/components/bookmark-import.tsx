@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { BookmarkPlus } from "lucide-react";
 import { api } from "./shared";
 export function BookmarkImport() {
   const [value, setValue] = useState(""),
@@ -24,6 +25,7 @@ export function BookmarkImport() {
   return (
     <section className="settings-section">
       <div className="settings-section-label">
+        <BookmarkPlus size={19} />
         <div>
           <h2>Import old screenshot bookmarks</h2>
           <p>
