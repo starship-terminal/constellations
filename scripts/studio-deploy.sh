@@ -74,6 +74,9 @@ if [ "$MODE" = update ]; then
   [ -z "$(git -C "$REPO" status --porcelain --untracked-files=no)" ] || { echo 'Tracked checkout edits block automatic deployment.' >&2; exit 1; }
   [ "$(git -C "$REPO" branch --show-current)" = main ] || { echo 'Automatic deployment requires main.' >&2; exit 1; }
   git -C "$REPO" merge --ff-only "$SHA"
+  # A checkout ahead of origin/main merges as a no-op but would deploy
+  # unpushed local commits: code and evidence revisions would differ.
+  [ "$(git -C "$REPO" rev-parse HEAD)" = "$SHA" ] || { echo 'Checkout has commits beyond origin/main; refusing automatic deployment.' >&2; exit 1; }
   REV="$SHA"
 fi
 SHA="$(git -C "$REPO" rev-parse --verify "$REV^{commit}")"
@@ -89,8 +92,13 @@ if [ "$MODE" != activate ]; then
   [ "$MODE" = update ] || exit 0
 fi
 [ -f "$RELEASE/.ready" ] || { echo 'Stage this release before activation.' >&2; exit 1; }
+# Restore the last health-verified release, not whatever current points at:
+# an interrupted activation leaves current on an unverified release.
 PREVIOUS="$(readlink "$SERVICE/current" 2>/dev/null || true)"
-ln -s "$RELEASE" "$SERVICE/current.next"
+LAST_GOOD="$(cat "$SERVICE/deployed-sha" 2>/dev/null || true)"
+[ -n "$LAST_GOOD" ] && [ -d "$SERVICE/releases/$LAST_GOOD" ] && PREVIOUS="$SERVICE/releases/$LAST_GOOD"
+# A leftover link from an interrupted run must not block the rename.
+ln -sfn "$RELEASE" "$SERVICE/current.next"
 mv -Tf "$SERVICE/current.next" "$SERVICE/current"
 if systemctl --user restart design-research.service; then
 for attempt in $(seq 1 30); do
@@ -104,7 +112,7 @@ for attempt in $(seq 1 30); do
 done
 fi
 if [ -n "$PREVIOUS" ]; then
-  ln -s "$PREVIOUS" "$SERVICE/current.next"
+  ln -sfn "$PREVIOUS" "$SERVICE/current.next"
   mv -Tf "$SERVICE/current.next" "$SERVICE/current"
   systemctl --user restart design-research.service
 else
