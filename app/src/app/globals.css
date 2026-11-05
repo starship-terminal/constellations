@@ -320,6 +320,115 @@ select {
     transform: rotate(360deg);
   }
 }
+/* Workspace boot screen */
+.boot {
+  min-height: calc(100dvh - var(--app-content-top-inset, 0px));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  animation: boot-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.12s backwards;
+}
+.boot-mark {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  filter: drop-shadow(0 12px 30px #00000059);
+}
+.boot-mark::before {
+  content: "";
+  position: absolute;
+  inset: -38px;
+  background: radial-gradient(closest-side, #b9c9f714, transparent 72%);
+}
+.boot .brand-mark,
+.boot .brand-mark-glass {
+  width: 76px;
+  height: 76px;
+}
+.boot .brand-mark-glass {
+  border-radius: 17px;
+  animation: boot-breathe 2.6s ease-in-out infinite;
+}
+.boot .mark-stripe {
+  opacity: 0.22;
+  animation: boot-stripe 1.9s ease-in-out infinite;
+}
+.boot .mark-stripe:nth-of-type(3) {
+  animation-delay: 110ms;
+}
+.boot .mark-stripe:nth-of-type(4) {
+  animation-delay: 220ms;
+}
+.boot .mark-stripe:nth-of-type(5) {
+  animation-delay: 330ms;
+}
+.boot .mark-stripe:nth-of-type(6) {
+  animation-delay: 440ms;
+}
+.boot-track {
+  margin-top: 44px;
+  width: 148px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--line);
+  overflow: hidden;
+}
+.boot-track > span {
+  display: block;
+  height: 100%;
+  width: 40%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    #ff3b30,
+    #ff9500,
+    #ffd60a,
+    #34c759,
+    #0a84ff
+  );
+  animation: boot-scan 1.45s cubic-bezier(0.5, 0.02, 0.4, 0.98) infinite;
+}
+.boot-label {
+  margin-top: 19px;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  color: var(--subtle);
+}
+@keyframes boot-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes boot-stripe {
+  0%,
+  100% {
+    opacity: 0.22;
+  }
+  22%,
+  46% {
+    opacity: 1;
+  }
+}
+@keyframes boot-scan {
+  from {
+    transform: translateX(-110%);
+  }
+  to {
+    transform: translateX(260%);
+  }
+}
+@keyframes boot-breathe {
+  50% {
+    transform: scale(1.04);
+  }
+}
 .empty-state {
   padding: 80px 20px;
   text-align: center;
@@ -3331,6 +3440,12 @@ select {
   .spin {
     animation: none;
   }
+  .boot .mark-stripe {
+    opacity: 1;
+  }
+  .boot-track > span {
+    width: 100%;
+  }
   .media-preview > video {
     display: none;
   }
@@ -3439,6 +3554,12 @@ select {
 }
 [data-theme="light"] .error-text {
   color: #a5203b;
+}
+[data-theme="light"] .boot-mark {
+  filter: drop-shadow(0 12px 26px #14161e29);
+}
+[data-theme="light"] .boot-mark::before {
+  background: radial-gradient(closest-side, #14161e12, transparent 72%);
 }
 .history-heading {
   display: flex;

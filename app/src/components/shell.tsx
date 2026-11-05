@@ -43,22 +43,27 @@ export function Mark() {
             fill="#FFFFFF"
           />
           <polygon
+            className="mark-stripe"
             points="33.80,22.99 70.00,8.00 70.00,17.60 35.88,26.60"
             fill="#FF3B30"
           />
           <polygon
+            className="mark-stripe"
             points="35.88,26.60 70.00,17.60 70.00,27.20 37.96,30.20"
             fill="#FF9500"
           />
           <polygon
+            className="mark-stripe"
             points="37.96,30.20 70.00,27.20 70.00,36.80 40.04,33.80"
             fill="#FFD60A"
           />
           <polygon
+            className="mark-stripe"
             points="40.04,33.80 70.00,36.80 70.00,46.40 42.12,37.40"
             fill="#34C759"
           />
           <polygon
+            className="mark-stripe"
             points="42.12,37.40 70.00,46.40 70.00,56.00 44.20,41.01"
             fill="#0A84FF"
           />
