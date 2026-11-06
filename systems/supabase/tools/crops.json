@@ -1,0 +1,227 @@
+{
+  "project-picker": [
+    "app-project-picker",
+    [
+      400,
+      42,
+      692,
+      190
+    ]
+  ],
+  "command-menu": [
+    "app-command-menu",
+    [
+      350,
+      108,
+      930,
+      613
+    ]
+  ],
+  "search-empty": [
+    "app-search-empty",
+    [
+      350,
+      108,
+      930,
+      613
+    ]
+  ],
+  "sql-panel": [
+    "app-sql-side-panel",
+    [
+      908,
+      47,
+      1280,
+      720
+    ]
+  ],
+  "snippet-menu": [
+    "app-sql-snippet-menu",
+    [
+      895,
+      88,
+      1198,
+      163
+    ]
+  ],
+  "status-filter": [
+    "app-status-filter",
+    [
+      370,
+      202,
+      551,
+      344
+    ]
+  ],
+  "checkbox-checked": [
+    "app-status-filter-checked",
+    [
+      370,
+      202,
+      551,
+      344
+    ]
+  ],
+  "sort-menu": [
+    "app-sort-menu",
+    [
+      458,
+      201,
+      638,
+      271
+    ]
+  ],
+  "theme-menu": [
+    "app-account-theme-menu",
+    [
+      1010,
+      42,
+      1270,
+      446
+    ]
+  ],
+  "primary-button": [
+    "app-projects-grid",
+    [
+      790,
+      170,
+      908,
+      202
+    ]
+  ],
+  "project-card": [
+    "app-projects-grid",
+    [
+      78,
+      212,
+      347,
+      395
+    ]
+  ],
+  "mobile-menu": [
+    "landing-mobile-menu",
+    [
+      0,
+      0,
+      390,
+      844
+    ]
+  ],
+  "team-table": [
+    "app-team",
+    [
+      100,
+      205,
+      1230,
+      415
+    ]
+  ],
+  "invite-radio-group": [
+    "app-invite-members",
+    [
+      860,
+      220,
+      1265,
+      523
+    ]
+  ],
+  "invite-textarea-focus": [
+    "app-invite-members",
+    [
+      855,
+      550,
+      1270,
+      650
+    ]
+  ],
+  "switches": [
+    "app-keyboard-shortcuts",
+    [
+      1045,
+      448,
+      1107,
+      590
+    ]
+  ],
+  "date-picker": [
+    "app-logs-date-picker",
+    [
+      65,
+      320,
+      532,
+      711
+    ]
+  ],
+  "unsaved-confirmation": [
+    "app-unsaved-changes",
+    [
+      480,
+      277,
+      802,
+      450
+    ]
+  ],
+  "function-editor": [
+    "app-function-editor",
+    [
+      306,
+      104,
+      1270,
+      647
+    ]
+  ],
+  "feedback-textarea": [
+    "app-feedback-composer",
+    [
+      640,
+      60,
+      1005,
+      193
+    ]
+  ],
+  "warning-dark": [
+    "app-spend-cap-plan-restriction",
+    [
+      660,
+      425,
+      1260,
+      527
+    ]
+  ],
+  "warning-light": [
+    "app-light-spend-cap",
+    [
+      660,
+      425,
+      1260,
+      527
+    ]
+  ],
+  "timezone-search": [
+    "app-timezone-search",
+    [
+      810,
+      25,
+      1118,
+      363
+    ]
+  ],
+  "oauth-scope-menu": [
+    "app-oauth-scope-options",
+    [
+      1077,
+      374,
+      1239,
+      475
+    ]
+  ],
+  "repository-empty": [
+    "app-github-repository-empty",
+    [
+      856,
+      337,
+      1120,
+      434
+    ]
+  ]
+}

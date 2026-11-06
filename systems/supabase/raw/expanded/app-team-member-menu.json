@@ -1,0 +1,192 @@
+{
+  "controls": [
+    {
+      "disabled": false,
+      "href": "#main",
+      "label": "Skip to content",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm",
+      "label": "Back to organization home",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm",
+      "label": "kai chenFree",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Show organizations",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Feedback",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Search...⌘K",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Help",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Advisor Center",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm",
+      "label": "Projects",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/team",
+      "label": "Team",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/integrations",
+      "label": "Integrations",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/usage",
+      "label": "Usage",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/billing",
+      "label": "Billing",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/general",
+      "label": "Organization Settings",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Sidebar control",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Filter members",
+      "role": null,
+      "tag": "INPUT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Filter by MFA status",
+      "role": "combobox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Roles",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/platform/access-control",
+      "label": "Docs",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Invite members",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Leave team",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Manage access",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "More options",
+      "role": null,
+      "tag": "BUTTON"
+    }
+  ],
+  "dpr": 1,
+  "height": 720,
+  "theme": "",
+  "time": "2026-10-31T04:35:19.731Z",
+  "url": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/team",
+  "width": 1280
+}
