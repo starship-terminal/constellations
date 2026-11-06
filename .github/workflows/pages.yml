@@ -1,7 +1,7 @@
 # Build the docs site (home, scorecard, library docs), encrypt every page with
-# StatiCrypt, and publish to GitHub Pages. The gallery shows the captures, so the
-# site is built with `tools/site.py --publish`, which leaves it and its links out;
-# it runs locally only. `make check` runs first so a commit missing `make brief`
+# StatiCrypt, and publish to GitHub Pages. The gallery shows the captures, so it
+# only ever runs in the local Next.js app (web/); tools/site.py never emits it.
+# `make check` runs first so a commit missing `make brief`
 # or `make grade` fails the deploy visibly instead of shipping stale content.
 name: Pages
 on:
@@ -25,6 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      # The site's own icons are Git LFS objects; without this they ship as
+      # pointer text. Only docs/assets/: the captures never publish.
+      - name: Fetch the site's icons from Git LFS
+        run: git lfs pull --include="docs/assets/**"
       - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
@@ -39,7 +43,7 @@ jobs:
       - name: Generate the scorecard pages
         run: python3 tools/scorecard.py
       - name: Build
-        run: python3 tools/site.py --publish
+        run: python3 tools/site.py
       - name: Drop the gallery and check nothing readable leaks outside the HTML
         run: |
           rm -rf site/gallery
@@ -47,6 +51,9 @@ jobs:
             python3 -c "import json,sys; items=json.load(open('site/search.json'))['items']; sys.exit(f'search index has {len(items)} entries; every page must be excluded') if items else print('search index empty')"
           fi
           rm -f site/sitemap.xml site/sitemap.xml.gz
+          if grep -rl --include='*.png' --include='*.ico' '^version https://git-lfs' site/assets; then
+            echo "::error::Git LFS pointers in site/assets (listed above)"; exit 1
+          fi
       - name: Encrypt every page
         if: github.event_name != 'pull_request'
         env:

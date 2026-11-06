@@ -1,0 +1,13 @@
+/* docs-surface pieces globals.css does not carry (the .docpage rail, .md
+   typography and .doc-pick container all live there). */
+
+.dc-picks { gap: 12px; margin-top: 22px; }
+.dc-card {
+  flex: 1 1 280px; border: 1px solid var(--line); border-radius: var(--radius-card);
+  padding: 16px 17px; text-decoration: none; color: inherit;
+  display: flex; flex-direction: column; gap: 7px;
+}
+.dc-card:hover { border-color: var(--line-strong); background: var(--panel); }
+.dc-card h2 { margin: 0; font-size: 15.5px; font-weight: 600; }
+.dc-card p { margin: 0; color: var(--muted); font-size: 12.5px; flex: 1; }
+.dc-card code { font-family: var(--mono); font-size: 10.5px; color: var(--faint); }

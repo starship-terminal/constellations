@@ -2899,6 +2899,71 @@
       }
     },
     {
+      "slug": "refero-design",
+      "name": "Refero",
+      "url": "https://refero.design",
+      "category": "ai-research",
+      "platform": "web",
+      "goodFor": "Design research app plus a public design-system gallery: research box, rotating screenshot galleries, video-preview style cards, per-style DESIGN.md documentation pages",
+      "tags": [
+        "web",
+        "gallery",
+        "serif-display",
+        "video-preview",
+        "monochrome",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-02",
+      "access": "signed out (every surface is public)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/refero-design/README.md",
+      "tokens": "systems/refero-design/tokens.json",
+      "styleGuide": "systems/refero-design/style-guide.html",
+      "preview": {
+        "cover": "systems/refero-design/screenshots/home-light-default.png",
+        "icon": "systems/refero-design/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.subtle",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.action.primary",
+            "border": "light.border.default"
+          },
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.subtle",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.action.primary",
+            "border": "dark.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.display",
+          "core.fontFamily.sans",
+          "core.fontFamily.display-styles",
+          "core.fontFamily.sans-styles",
+          "core.fontFamily.mono"
+        ]
+      },
+      "capture": {
+        "harness": "Devin",
+        "model": "SWE-2 Max",
+        "route": "public-web",
+        "durationMin": null
+      }
+    },
+    {
       "slug": "sentry",
       "name": "Sentry",
       "url": "https://sentry.io",

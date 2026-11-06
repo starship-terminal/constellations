@@ -11,19 +11,18 @@ and screenshots of the real product, and says where each value came from.
 
 ## Browse it
 
-Everything is one static site built by [tools/site.py](tools/site.py): the
-gallery, the scorecard and the library docs under `docs/`.
+Everything is browsed through the Next.js app under [web/](web): the gallery,
+the scorecard and the library docs under `docs/`.
 
 ```bash
 make dev
 ```
 
-`make dev` (or [scripts/dev.sh](scripts/dev.sh)) installs the site builder
-into `.venv` on the first run, builds the site, serves it at
+`make dev` (or [scripts/dev.sh](scripts/dev.sh)) builds the app's data,
+installs its `pnpm` dependencies on the first run, serves it at
 http://127.0.0.1:8800/ and opens the gallery and the scorecard in the browser.
-If the site is already running it only opens the tabs; `--port N` picks
-another port and `--no-open` skips the browser. `make serve` does the same
-without the checks or the browser. The site has three parts:
+If the app is already running it only opens the tabs; `--port N` picks
+another port and `--no-open` skips the browser. The app has three parts:
 
 - **Gallery**: one card per package with a cover screenshot, its product icon,
   its colour roles and fonts. Each package's page reads in the same order, from a rail on the left:
@@ -41,8 +40,9 @@ without the checks or the browser. The site has three parts:
   [tools/scorecard.py](tools/scorecard.py).
 - **Docs**: the files under [docs/](docs), rendered.
 
-The same site, minus the gallery, is published to GitHub Pages at
-https://c-wenlong.github.io/design-systems/ with every page encrypted by
+The library docs, without the gallery, are also published to GitHub Pages at
+https://c-wenlong.github.io/design-systems/ by [tools/site.py](tools/site.py),
+with every page encrypted by
 StatiCrypt, so it needs the password in the `STATICRYPT_PASSWORD` repository
 secret. `make help` lists the other targets (`make check` validates
 [catalog.json](catalog.json) against the packages).
@@ -74,6 +74,7 @@ what is open, with the evidence.
 | <img src="systems/notion-calendar-desktop/icon.png" width="20" alt="notion-calendar-desktop"> | [notion-calendar-desktop](systems/notion-calendar-desktop/README.md) | Desktop calendar app (Notion Calendar for macOS, Electron around the calendar.notion.so web app): a 240px wash sidebar with a mini month, scheduling and per-account calendar lists beside a week grid of 48px hours with two time-zone columns, event chips in each calendar's colour with a left ribbon, a translucent 284px event popover and a centred command menu, hairline edges drawn as 1px inset shadows, 13px medium labels on 30px controls with 6px corners, one blue for primary actions, switches and focus, red only for today, and menus and tooltips that stay dark in both themes | 2026-10-25 | light, dark | 17 of 25 met, 8 partly, 0 missing | `icons/` |
 | <img src="systems/researchrabbit/icon.png" width="20" alt="researchrabbit"> | [researchrabbit](systems/researchrabbit/README.md) | Interactive citation graph beside a list: node and edge styling, canvas interaction (see graph.md) | 2026-10-17 | light | 17 of 24 met, 7 partly, 0 missing | none |
 | <img src="systems/devin-desktop/icon.png" width="20" alt="devin-desktop"> | [devin-desktop](systems/devin-desktop/README.md) | Desktop coding-agent app in Electron on a VS Code workbench: a near-black or near-white page shared by the sidebar and the content, two-line session rows, one 20px-radius raised composer with a Cloud / Local segmented control, a right-aligned tinted prompt bubble over plain replies and muted work rows, every neutral one colour at fixed alphas, ink-filled page buttons with blue kept for focus and links, 6px controls and 10px popups and cards | 2026-10-25 | light, dark | 16 of 25 met, 9 partly, 0 missing | `icons/` |
+| <img src="systems/refero-design/icon.png" width="20" alt="refero-design"> | [refero-design](systems/refero-design/README.md) | Design research app plus a public design-system gallery: research box, rotating screenshot galleries, video-preview style cards, per-style DESIGN.md documentation pages | 2026-11-02 | light, dark | 16 of 25 met, 9 partly, 0 missing | none |
 | <img src="systems/codex-desktop/icon.png" width="20" alt="codex-desktop"> | [codex-desktop](systems/codex-desktop/README.md) | Desktop coding-agent app (OpenAI's Codex for macOS, Electron): a 52px navigation rail beside a sidebar of projects and chats on a slightly darker surface, a centred new-chat heading over one raised 22px-radius composer with pill chips, a right-aligned soft prompt bubble over plain replies and folded Worked for rows, menus and cards at 15 to 25px squircle radii, every neutral built from one ink colour at fixed alphas over four theme seeds (surface, ink, accent, contrast), an ink pill for the primary action and the accent kept for switches, focus and links | 2026-10-25 | light, dark | 15 of 25 met, 10 partly, 0 missing | `icons/` |
 | <img src="systems/cursor-desktop/icon.png" width="20" alt="cursor-desktop"> | [cursor-desktop](systems/cursor-desktop/README.md) | Desktop coding-agent app in Electron: a near-black or off-white window with a quiet sidebar of agents and projects, one raised composer, plain-text agent replies under a raised prompt bubble, translucent alpha tiers of one base colour for every text, fill and edge, an accent-blue primary button with ink-filled pill buttons beside it, 8px-radius rows and 12px raised menus and dialogs | 2026-10-25 | light, dark | 15 of 25 met, 10 partly, 0 missing | `icons/` |
 | <img src="systems/grokbot-desktop/icon.png" width="20" alt="grokbot-desktop"> | [grokbot-desktop](systems/grokbot-desktop/README.md) | Desktop chat app for AI agents in Electron: a near-black or white window with a darker sidebar of coloured agent characters (a pinned grid over groups), one conversation per agent with the owner's bubbles in that agent's colour and neutral raised reply bubbles, a shimmering activity line while it works, pill and circle controls, an ink primary button, surfaces separated by fill rather than borders | 2026-10-25 | light, dark | 15 of 25 met, 10 partly, 0 missing | `icons/` |
@@ -123,13 +124,17 @@ search tags, how it was captured, and where it was copied from.
    them is a measurement.
 3. Open the package's `style-guide.html` to see every token and component
    rendered with the real values. Most open straight from disk; Polaris's
-   fetches data, so open it through `make serve`.
+   fetches data, so open it through `make dev`.
 4. Check the evidence label before copying a value: a measured CSS value and
    a reconstruction are not the same thing ([docs/EVIDENCE.md](docs/EVIDENCE.md)).
 
 To point a coding agent in another project at a style, give it the package
-path and tell it to read the entry file and `tokens.json` first, or install
-the `design-systems` plugin from quiver-hub and ask for the style by name.
+path and tell it to read the entry file and `tokens.json` first — or connect
+it to the library directly: `python3 server/mcp.py` is a stdio MCP server,
+and on a hosted deployment `<site>/api/mcp` is the same read-only tools over
+remote (streamable-HTTP) MCP, with `curl -fsSL <site>/api/install.sh | sh`
+installing the `ds` CLI (`ds find`, `ds export`, `ds doc`, `ds handoff`).
+The app's Settings > For agents section prints both.
 To build a design system for an app of your own, start from
 [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md): it lists the five layers a
 complete system needs and how the captures here compare. The tokens
@@ -142,15 +147,18 @@ Studio) and Style Dictionary both read.
 |---|---|
 | [systems/](systems) | One folder per product, all in the same layout ([docs/PACKAGE.md](docs/PACKAGE.md)). Each README opens with a file table, a generated Brief and a generated Health section |
 | [catalog.json](catalog.json) | The machine-readable index, and the source the gallery is built from |
-| [Makefile](Makefile) | `make setup`, `make serve`, `make docs`, `make check`, `make test`, `make clean` and more (`make help`) |
-| [tools/catalog.py](tools/catalog.py) | Checks the catalog, builds the gallery, ranks packages for a query (`find`), exports any token file as CSS variables (`export`), checks WCAG contrast between token pairs (`contrast`), finds private text left in a package (`scan`), and writes each package's generated `DESIGN.md` (`design-md`) |
+| [Makefile](Makefile) | `make setup`, `make dev`, `make docs`, `make check`, `make test`, `make clean` and more (`make help`) |
+| [tools/catalog.py](tools/catalog.py) | Checks the catalog, builds the app's `web/data/`, ranks packages for a query (`find`), exports any token file as CSS variables (`export`), checks WCAG contrast between token pairs (`contrast`), finds private text left in a package (`scan`), and writes each package's generated `DESIGN.md` (`design-md`) |
 | [tools/redact_images.py](tools/redact_images.py) | Paints private regions out of finished screenshots and crops from a rectangle table per screenshot family, then OCR-checks every image against the redaction patterns. Rules live in [tools/redact-rules/](tools/redact-rules) |
 | [tools/kit/](tools/kit) | The capture kit a new package starts from: web (public and signed-in), native iOS through iPhone Mirroring, and the token and style-guide builders |
-| [docs/](docs) | The docs site's source: the library docs below, the home page, [docs/gallery/](docs/gallery) (the gallery app; its `data.json` and `thumbs/` are generated and gitignored) and the scorecard pages (generated into `docs/scorecard/`, gitignored) |
+| [web/](web) | The Next.js app the library is browsed through: gallery, refero, scorecard and docs. Its `web/data/` (`data.json`, `thumbs/`, `refero/`, `export/`) is generated by `tools/catalog.py build` and gitignored |
+| [server/](server) | The agent layer: a read-only tool layer over the two stores, the chat adapters, and the same tools over MCP for coding agents — stdio (`python3 server/mcp.py`) or remote (`POST /api/mcp`) |
+| [cli/](cli) | `ds`, the stdlib-only terminal client for the remote MCP endpoint, and the `install.sh` that `/api/install.sh` serves |
+| [docs/](docs) | The published docs site's source: the library docs below, the home page, and the scorecard pages (generated into `docs/scorecard/`, gitignored) |
 | [scorecard/](scorecard) | The scorecard's rubric (`criteria.json`) and one dated file per audit (`audits/<date>.json`, `<date>-2.json` for a second run that day). `make grade` writes a new one with the scripted criteria re-checked ([tools/grade.py](tools/grade.py)) |
-| [tools/make_icons.py](tools/make_icons.py) | Draws the site's PNG icons (touch icon, web app icons) from the brand mark in [docs/assets/favicon.svg](docs/assets/favicon.svg). Every docs page's template head links the web app manifest ([docs/site.webmanifest](docs/site.webmanifest)), the touch icon and theme colours |
+| [tools/make_icons.py](tools/make_icons.py) | The site has two app icons, picked under Settings > Preferences. Flat, the default, is the prism mark in [docs/assets/favicon.svg](docs/assets/favicon.svg) with its renders in [docs/assets/icons/](docs/assets/icons), committed as drawn. This script derives the Glass set ([docs/assets/icons/glass/](docs/assets/icons/glass)) from its master render, [docs/assets/logo/hero-ai.png](docs/assets/logo/hero-ai.png). Every docs page's template head links the Flat favicon, the touch icon, the web app manifest ([docs/site.webmanifest](docs/site.webmanifest)) and [docs/assets/app-icon.js](docs/assets/app-icon.js), which swaps in the chosen set before first paint |
 | [tools/scorecard.py](tools/scorecard.py) | Writes the scorecard pages from [scorecard/](scorecard) |
-| [tools/site.py](tools/site.py) | Builds the docs site into `site/`: every `docs/**.md` page rendered with the gallery's own chrome |
+| [tools/site.py](tools/site.py) | Builds the docs site into `site/`: every `docs/**.md` page rendered with the site's own chrome |
 | [tools/brief.py](tools/brief.py) | Writes the Brief section near the top of every package README: the page to read before designing in that style, generated from the package's catalog entry, tokens and README. `make brief` and `make design-md` run it; `make check` fails when one is stale |
 | [tools/health.py](tools/health.py) | Writes the Health section at the top of every package README and the catalog table above, from the newest scorecard snapshot and each package's folder. `make grade` runs it; `make check` fails when one is stale |
 | [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md) | What a complete design system for your own app contains, layer by layer |

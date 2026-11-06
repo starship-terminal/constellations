@@ -1,0 +1,55 @@
+/* Style details remain in the app shell with independent document panes. */
+.page {
+  --style-header-height: 64px;
+  height: calc(100dvh - var(--app-content-top-inset, 0px));
+  overflow: hidden;
+}
+.breadcrumb {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: var(--style-header-height);
+  padding: 0 32px;
+  border-bottom: 1px solid var(--line);
+  background: var(--page);
+  color: var(--subtle);
+  font-size: 13px;
+}
+.breadcrumb a {
+  color: var(--ink);
+}
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  height: calc(100% - var(--style-header-height));
+  min-height: 0;
+}
+.overview {
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--strong-line) transparent;
+}
+@media (max-width: 760px) {
+  .breadcrumb {
+    padding-left: 72px;
+    padding-right: 20px;
+  }
+  .page {
+    height: auto;
+    overflow: visible;
+  }
+  .split {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .overview {
+    overflow: visible;
+  }
+}
