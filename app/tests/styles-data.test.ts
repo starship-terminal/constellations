@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { LibraryItem } from "../src/contracts/library";
+import { libraryItem } from "./helpers";
 import {
   filterStyles,
   orderStyles,
@@ -18,26 +19,8 @@ const empty: StyleFilters = {
   tags: [],
   video: false,
 };
-const style = (
-  slug: string,
-  extra: Partial<LibraryItem> = {},
-): LibraryItem => ({
-  id: `refero:${slug}`,
-  source: "refero",
-  slug,
-  name: slug,
-  description: "",
-  platform: "web",
-  themes: ["light"],
-  tags: [],
-  category: "",
-  image: null,
-  icon: null,
-  video: null,
-  evidence: "interpreted",
-  captured: null,
-  ...extra,
-});
+const style = (slug: string, extra: Partial<LibraryItem> = {}) =>
+  libraryItem(slug, { source: "refero", themes: ["light"], ...extra });
 
 describe("dedicated style discovery", () => {
   it("orders captures by date while keeping unknown dates last and ties stable", () => {
