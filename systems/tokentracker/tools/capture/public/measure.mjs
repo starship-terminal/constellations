@@ -21,6 +21,7 @@ import path from 'node:path';
 import { BASE, launch, open, mask, styleOf, crop, centre, RAW } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
+const PARTIAL = OUT.replace(/(\.json)?$/, '.partial.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
 out._meta ??= {};
 out.components ??= {};
@@ -30,7 +31,7 @@ const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const failures = [];
 const save = () => {
   if (failures.length) {
-    fs.writeFileSync(OUT.replace(/(\.json)?$/, '.partial.json'), JSON.stringify(out, null, 1) + '\n');
+    fs.writeFileSync(PARTIAL, JSON.stringify(out, null, 1) + '\n');
     return;
   }
   fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
@@ -689,7 +690,7 @@ if (!failures.length) {
 }
 save();
 if (failures.length) {
-  log('FAILED pages:', failures.join(', '), '-> partial readings only, in', OUT.replace(/\.json$/, '.partial.json'));
+  log('FAILED pages:', failures.join(', '), '-> partial readings only, in', PARTIAL);
   process.exit(1);
 }
 log('done ->', OUT);
