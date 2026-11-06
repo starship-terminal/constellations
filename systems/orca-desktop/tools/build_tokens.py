@@ -570,21 +570,57 @@ def check():
 
 
 def reconcile():
-    """A name measured in only one theme (a part that rendered in one pass only) is not a theme token: move it out."""
-    names = {t: {n for n, _ in tokens_of(SETS[t])} for t in THEMES}
-    for t in THEMES:
-        other = names["dark" if t == "light" else "light"]
-        for n in sorted(names[t] - other):
-            path = n.split(".")
-            node = SETS[t]
-            for k in path[:-1]:
-                node = node[k]
-            v = node.pop(path[-1])
-            SETS[t].setdefault("$extensions", {}).setdefault("notTokenised", []).append(
-                {"name": n, "value": v["$value"], "why": f"measured only while capturing {t}; not in the other theme"})
+    """A name measured in only one theme (a part that rendered in one pass only) is not a theme token: move it out. An alias to a name moved out becomes its value (as notion-desktop's does), repeated
+    until nothing moves."""
+    for _ in range(5):
+        names = {t: {n for n, _ in tokens_of(SETS[t])} for t in THEMES}
+        moved = False
+        for t in THEMES:
+            other = names["dark" if t == "light" else "light"]
+            for n in sorted(names[t] - other):
+                path = n.split(".")
+                node = SETS[t]
+                for k in path[:-1]:
+                    node = node[k]
+                v = node.pop(path[-1])
+                SETS[t].setdefault("$extensions", {}).setdefault("notTokenised", []).append(
+                    {"name": n, "value": v["$value"], "why": f"measured only while capturing {t}; not in the other theme"})
+                moved = True
+            for n, v in list(tokens_of(SETS[t])):
+                for a in aliases(v["$value"]):
+                    if get(SETS[t], a) is None and get(CORE, a) is None:
+                        v["$extensions"]["aliasOf"] = a
+                        v["$value"] = v["$extensions"].get("painted") or resolve_removed(t, a)
+        if not moved:
+            break
 
+
+def resolve_removed(t, a, depth=0):
+    for item in SETS[t].get("$extensions", {}).get("notTokenised", []):
+        if item["name"] == a:
+            v = item["value"]
+            if not isinstance(v, str):
+                return v
+            # A removed token that is itself an alias of another removed one: follow the chain.
+            m = re.fullmatch(r"\{([^{}]+)\}", v)
+            if m and get(SETS[t], m[1]) is None and get(CORE, m[1]) is None:
+                if depth > 10:
+                    raise KeyError(f"alias chain from {a} too deep")
+                return resolve_removed(t, m[1], depth + 1)
+            return resolve(t, v)
+    raise KeyError(a)
+
+
+def prune(node):
+    """Drop the groups reconcile() left empty."""
+    for k in [k for k, v in node.items() if isinstance(v, dict) and "$value" not in v and not k.startswith("$")]:
+        prune(node[k])
+        if not [x for x in node[k] if not x.startswith("$")]:
+            del node[k]
 
 reconcile()
+for t in THEMES:
+    prune(SETS[t])
 check()
 tokens = {
     "core": CORE, "light": SETS["light"], "dark": SETS["dark"],

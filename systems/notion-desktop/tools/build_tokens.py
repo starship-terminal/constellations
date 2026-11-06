@@ -637,10 +637,19 @@ def reconcile():
             break
 
 
-def resolve_removed(t, a):
+def resolve_removed(t, a, depth=0):
     for item in SETS[t].get("$extensions", {}).get("notTokenised", []):
         if item["name"] == a:
-            return resolve(t, item["value"]) if isinstance(item["value"], str) else item["value"]
+            v = item["value"]
+            if not isinstance(v, str):
+                return v
+            # A removed token that is itself an alias of another removed one: follow the chain.
+            m = re.fullmatch(r"\{([^{}]+)\}", v)
+            if m and get(SETS[t], m[1]) is None and get(CORE, m[1]) is None:
+                if depth > 10:
+                    raise KeyError(f"alias chain from {a} too deep")
+                return resolve_removed(t, m[1], depth + 1)
+            return resolve(t, v)
     raise KeyError(a)
 
 
