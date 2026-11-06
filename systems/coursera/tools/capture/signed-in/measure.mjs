@@ -493,6 +493,9 @@ const HELPERS = () => {
     return { count: document.querySelectorAll(sel).length, sizes: r.slice(0, 4).map((x) => `${x.width.toFixed(1)}x${x.height.toFixed(1)}`), gaps: out };
   };
   const paint = (el) => {
+    // A url() in a computed value can be a signed URL: recorded as url(…), only data: and #fragment
+    // references kept (the kit's noUrl).
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
     const outp = [];
     for (const n of [el, ...el.querySelectorAll('*')].slice(0, 40)) {
       for (const pe of [null, '::before', '::after']) {
@@ -500,7 +503,7 @@ const HELPERS = () => {
         if (pe && (c.content === 'none' || c.content === 'normal')) continue;
         if (c.backgroundColor === 'rgba(0, 0, 0, 0)' && c.backgroundImage === 'none' && !(parseFloat(c.borderTopWidth) > 0)) continue;
         const r = n.getBoundingClientRect();
-        outp.push({ node: n.tagName.toLowerCase() + (pe || ''), size: pe ? `${c.width}x${c.height}` : `${r.width.toFixed(1)}x${r.height.toFixed(1)}`, bg: c.backgroundColor, bgImage: c.backgroundImage === 'none' ? undefined : c.backgroundImage.slice(0, 160), radius: c.borderRadius, border: parseFloat(c.borderTopWidth) > 0 ? `${c.borderTopWidth} ${c.borderTopStyle} ${c.borderTopColor}` : undefined });
+        outp.push({ node: n.tagName.toLowerCase() + (pe || ''), size: pe ? `${c.width}x${c.height}` : `${r.width.toFixed(1)}x${r.height.toFixed(1)}`, bg: c.backgroundColor, bgImage: c.backgroundImage === 'none' ? undefined : noUrl(c.backgroundImage).slice(0, 160), radius: c.borderRadius, border: parseFloat(c.borderTopWidth) > 0 ? `${c.borderTopWidth} ${c.borderTopStyle} ${c.borderTopColor}` : undefined });
       }
     }
     return outp.slice(0, 8);

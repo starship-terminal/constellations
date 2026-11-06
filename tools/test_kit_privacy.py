@@ -154,6 +154,28 @@ class JavaScriptHalves(unittest.TestCase):
             self.assertEqual(got, ['url(…), linear-gradient(red, blue)', 'url("data:image/svg+xml,abc")', 'url(#clip)', 'auto', 3,
                                    'url(…) no-repeat', 'url(…)', 'url(…), none'], path)
 
+    def test_painted_layer_background_images_record_no_url(self):
+        # The paint loop keeps a background image that does not start with url(https:, so a gradient
+        # followed by a signed url() reached the readings unless it went through noUrl too.
+        root = HERE.parent
+        copies = [SIGNED_IN / "measure.mjs", HERE / "kit/capture/public/lib.mjs",
+                  *(root / f"systems/{p}/tools/capture/signed-in/measure.mjs"
+                    for p in ("chatgpt", "claude", "coursera", "linear", "manus", "sentry")),
+                  *(root / f"systems/{p}/tools/capture/{rel}" for p, rel in (
+                      ("coursera", "lib.mjs"), ("gauth", "lib.mjs"), ("refero-design", "public/lib.mjs"),
+                      ("tokentracker", "public/lib.mjs"), ("sentry", "public/lib.mjs"),
+                      ("researchrabbit", "measure.mjs")))]
+        for path in copies:
+            src = path.read_text()
+            painted = [ln for ln in src.splitlines()
+                       if re.search(r"const bgi = c\.backgroundImage|bgImage: c\.backgroundImage === 'none'", ln)]
+            self.assertTrue(painted, path)
+            for ln in painted:
+                self.assertIn("noUrl(c.backgroundImage)", ln, path)
+            got = self.node(js_block(path, "const noUrl", "const noUrl")
+                            + "\nconsole.log(JSON.stringify(noUrl('linear-gradient(red, blue), url(\"https://x/p.png?sig=1\")')))")
+            self.assertEqual(got, "linear-gradient(red, blue), url(…)", path)
+
     def test_recorded_page_urls_keep_only_origin_and_route_words(self):
         cases = {
             "https://claude.ai/chat/1f2e3d4c-aaaa-bbbb?q=secret#m": "https://claude.ai/chat/<id>",
