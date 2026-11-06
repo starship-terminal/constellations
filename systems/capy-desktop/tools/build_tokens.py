@@ -293,10 +293,14 @@ for role, part, use in ROLES:
     val = {"fontFamily": fam, "fontSize": px(s["font-size"]), "fontWeight": int(s["font-weight"]),
            "lineHeight": px(lh) if lh.endswith("px") else "normal",
            "letterSpacing": px(s["letter-spacing"]) if s["letter-spacing"].endswith("px") else "0px"}
-    note = None
+    notes = []
     if val["lineHeight"] == "normal":
         val["lineHeight"] = px("%gpx" % round(float(s["font-size"][:-2]) * 1.2, 1))
-        note = "computed line-height is normal; 1.2 x the size is used here"
+        notes.append("computed line-height is normal; 1.2 x the size is used here")
+    if not s["letter-spacing"].endswith("px"):
+        # `normal` adds no tracking, so 0px stands for it; it is not a computed length, and the token says so.
+        notes.append(f"computed letter-spacing is {s['letter-spacing']}; 0px is used here")
+    note = "; ".join(notes) or None
     put(CORE, ("typography", role), tok(val, "typography", "Measured", f"computed style of {part} in {shot}, dark, {DATE}; {use}", note=note))
 
 
