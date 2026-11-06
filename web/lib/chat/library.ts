@@ -241,13 +241,17 @@ class Resolver {
   }
 }
 
-const resolvers = new Map<string, Resolver>();
+// Parsed token files, reused until the file changes on disk (a pull or a
+// rebuild), so a long-running server never serves stale swatches.
+const resolvers = new Map<string, { mtime: number; size: number; res: Resolver }>();
 async function resolverFor(tokensPath: string): Promise<Resolver> {
-  const hit = resolvers.get(tokensPath);
-  if (hit) return hit;
-  const r = new Resolver(JSON.parse(await fs.readFile(path.resolve(ROOT, tokensPath), "utf8")));
-  resolvers.set(tokensPath, r);
-  return r;
+  const file = path.resolve(ROOT, tokensPath);
+  const st = await fs.stat(file);
+  const hit = resolvers.get(file);
+  if (hit && hit.mtime === st.mtimeMs && hit.size === st.size) return hit.res;
+  const res = new Resolver(JSON.parse(await fs.readFile(file, "utf8")));
+  resolvers.set(file, { mtime: st.mtimeMs, size: st.size, res });
+  return res;
 }
 
 async function swatches(system: Obj): Promise<Obj> {
@@ -498,8 +502,12 @@ async function searchStyles(args: Obj): Promise<Obj> {
   const limit = Math.max(1, Math.min(asInt((args.limit ?? 8) || 8), 20));
   const out: Obj[] = [];
   if (store === "all" || store === "systems") {
+    // One catalog read per call, not one per hit.
+    const cat = await loadCatalog();
+    const bySlug = new Map(asArr(cat.systems).filter(isObj).map((s) => [s.slug, s]));
     for (const hit of await findSystems(words)) {
-      const e = await entry(asStr(hit.slug));
+      const e = bySlug.get(hit.slug);
+      if (!e) continue;
       if (platform && !asArr(e.tags).includes(platform) && e.platform !== platform) continue;
       out.push({
         store: "systems",
