@@ -612,7 +612,7 @@ W("|---|---|---|")
 for name, keys in CHECKLIST:
     ks = [k for k in keys if k in C and not C[k].get("missing")]
     if not ks:
-        W(f"| {name} | not captured: {WHY_NOT[name]} | - |")
+        W(f"| {name} | not captured: {WHY_NOT.get(name, 'not found on the page at capture time')} | - |")
         continue
     sts = []
     for k in ks:
@@ -646,7 +646,11 @@ def focus_change(c):
 
 _cur[0] = None
 foc = []
+# A component marked missing keeps the states of an earlier run in the readings; those describe
+# nothing on the page now, so none of the shared tables below cite them.
 for k, c in C.items():
+    if c.get("missing"):
+        continue
     st = c["states"].get("focus-visible")
     if not st or "style" not in st:
         continue
@@ -663,6 +667,8 @@ W("| Duration | Easing | Property | Where |")
 W("|---|---|---|---|")
 mot = {}
 for k, c in C.items():
+    if c.get("missing"):
+        continue
     for st in c["states"].values():
         if "style" not in st:
             continue
@@ -711,7 +717,7 @@ W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
 W("|---|---|---|---|---|---|---|")
 for k in ["lesson-card", "unit-card", "story-card", "feature-card", "solution-option", "create-suggestion", "quiz-card", "quiz-option", "learning-panel", "settings-popover", "chapters-panel", "video-settings", "view-rail", "m-unit-card"]:
     c = C.get(k)
-    if not c:
+    if not c or c.get("missing"):
         continue
     st = next(iter(c["states"].values()))
     if "style" not in st:

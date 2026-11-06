@@ -107,7 +107,7 @@ Values that apply across entries, from the measurement files.
 | 0.12s | `ease` | background-color, color, transform | chapter-pill, chapter-pill-active, continue-button, header-round-button, page-nav, play-button, search-toggle, speed-button |
 | 0.125s | `cubic-bezier(0.24, 1, 0.4, 1)` | background-color, background-image, border-color, box-shadow, color, opacity, transform | audio-enable, audio-not-now, canvas-control, canvas-exit, outline-item, outline-item-active, quiz-option |
 | 0.15s | `ease` | background, border-color, box-shadow, color | search-toggle |
-| 0.16s | `ease` | background, background-color, box-shadow, opacity, transform | continue-button, explore-button, header-round-button, history-card, lesson-card, m-unit-card, page-nav, play-icon and more |
+| 0.16s | `ease` | background, background-color, box-shadow, opacity, transform | continue-button, explore-button, header-round-button, history-card, lesson-card, m-unit-card, page-nav, promo-close and more |
 | 0.18s | `ease` | background, background-color, border-color, box-shadow, color, opacity, transform | chapter-panel, generate-video-button, player-frame, rail-item, recommendation-chip, send-button |
 | 0.2s | `ease` | all, background, border-color, box-shadow | atlas-composer, pagination-item, pagination-prev |
 | 0.25s | `ease` | border-color, box-shadow, opacity, transform | story-card, video-settings |
