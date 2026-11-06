@@ -61,6 +61,15 @@ class QuantizeTest(unittest.TestCase):
         self.assertTrue(committed.exists())
         self.assertFalse((self.pkg / "screenshots" / "dark" / "home.png").exists())
 
+    def test_missing_captures_json_writes_nothing(self):
+        self.q.RUN_FRAMES = {}
+        png(self.raw / "dark" / "home.png")
+        committed = self.pkg / "screenshots" / "dark" / "home.png"
+        png(committed)
+        with self.assertRaises(SystemExit):
+            self.q.main()
+        self.assertTrue(committed.exists())
+
 
 if __name__ == "__main__":
     unittest.main()

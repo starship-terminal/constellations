@@ -39,6 +39,11 @@ def store(src, dst):
 
 
 def main():
+    # Every theme needs its readings before anything is written: without captures.json every shot would be
+    # skipped and the stale sweep below would delete the stored screenshots.
+    nocaps = sorted(p.name for p in RAW.iterdir() if p.is_dir() and not (p / "captures.json").exists())
+    if nocaps:
+        sys.exit("captures.json missing, nothing written (run shots.mjs first): " + ", ".join(nocaps))
     # Every run frame the package links must be there before anything is replaced or deleted: a
     # shorter recapture would otherwise drop run-*.png screenshots the README and patterns.md link.
     themes = sorted(p for p in RAW.iterdir() if p.is_dir())
@@ -53,7 +58,7 @@ def main():
         keep = set()
         # Only shots captures.json records: a shot that failed on a later run is dropped from it, and its
         # older PNG must not be published again without a current reading.
-        shots = json.loads((theme_dir / "captures.json").read_text()) if (theme_dir / "captures.json").exists() else {}
+        shots = json.loads((theme_dir / "captures.json").read_text())
         for f in sorted(theme_dir.glob("*.png")):
             if f.stem not in shots:
                 print("skipped (no reading in captures.json):", f.name)
