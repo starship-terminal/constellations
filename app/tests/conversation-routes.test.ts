@@ -14,6 +14,8 @@ vi.mock("@/server/db", async (original) => ({
 vi.mock("@/server/sources", () => ({
   getReference: async (id: string) =>
     ["systems:one", "systems:two"].includes(id) ? { id } : null,
+  getReferenceSummary: async (id: string) =>
+    ["systems:one", "systems:two"].includes(id) ? { id } : null,
 }));
 let directory = "";
 beforeEach(async () => {

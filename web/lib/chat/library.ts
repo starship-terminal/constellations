@@ -45,13 +45,18 @@ const MEDIA_DIRS = ["screenshots", "components", "icons", "boards"] as const;
 
 // A tool result's JSON text is capped before it goes back to the model: a whole
 // token group or a README can run past what a turn should carry.
+// Sizes are UTF-8 bytes of compact JSON, measured the same way in the Python.
 export const RESULT_CAP = 32_000;
 export const DOC_CAP = 24_000;
+export const TOKEN_PAGE = RESULT_CAP - 1_000; // bytes of name/value pairs one get_tokens page carries
 export const IMAGE_CAP = 3_500_000; // bytes on disk
 
 export class ToolError extends Error {
   // A tool's readable failure, returned to the model as its result text.
 }
+
+// UTF-8 bytes of obj as compact JSON: _json_size() in server/library.py.
+const jsonSize = (obj: unknown): number => Buffer.byteLength(JSON.stringify(obj) ?? "", "utf8");
 
 const isObj = (v: unknown): v is Obj => typeof v === "object" && v !== null && !Array.isArray(v);
 const asStr = (v: unknown): string => (v == null ? "" : String(v));
@@ -577,7 +582,9 @@ async function getStyle(args: Obj): Promise<Obj> {
 
 async function getTokens(args: Obj): Promise<Obj> {
   // Resolved token values. Without a group it lists the groups and their
-  // sizes; with one it returns that group's flat name -> CSS value map.
+  // sizes; with one it returns that group's flat name -> CSS value map. A group
+  // too big for one result comes back a page at a time: `offset` and `limit`
+  // count tokens, and a truncated page names the `nextOffset` to ask for.
   const slug = asStr(args.slug);
   const group = optStr(args.group);
   const e = await entry(slug);
@@ -593,25 +600,61 @@ async function getTokens(args: Obj): Promise<Obj> {
       note: "call again with group=<name> for its values",
     };
   if (!Object.hasOwn(groups, group)) throw new ToolError(`no token group '${group}'; groups: ${Object.keys(groups).join(", ")}`);
-  return { slug, group, tokens: groups[group] };
+  const offset = asInt(args.offset || 0);
+  const limit = args.limit == null ? null : asInt(args.limit);
+  if (offset < 0) throw new ToolError("offset must be 0 or more");
+  if (limit !== null && limit < 1) throw new ToolError("limit must be 1 or more");
+  // Sorted by name so a page holds the same tokens in both twins (JSON.parse
+  // reorders integer-like keys, so the file's order cannot be shared).
+  const items = Object.entries(groups[group]).sort((a, b) => cmpStr(a[0], b[0]));
+  const page: Record<string, string> = {};
+  let used = 2;
+  let n = 0;
+  for (const [name, value] of items.slice(offset)) {
+    if (limit !== null && n >= limit) break;
+    const size = jsonSize(name) + jsonSize(value) + 2; // the colon and comma
+    if (n && used + size > TOKEN_PAGE) break;
+    page[name] = value;
+    used += size;
+    n++;
+  }
+  const end = offset + n;
+  const out: Obj = { slug, group, tokens: page, count: items.length, offset, truncated: end < items.length };
+  if (out.truncated) out.nextOffset = end;
+  return out;
 }
 
 async function readDoc(args: Obj): Promise<Obj> {
   // A text file from the package: its README (the default), components.md,
-  // patterns.md, tokens.json. Path is relative to systems/<slug>/.
+  // patterns.md, tokens.json. Path is relative to systems/<slug>/. A file over
+  // DOC_CAP characters comes back a page at a time: `offset` is where the page
+  // starts, and a truncated page names the `nextOffset` to ask for.
   const slug = asStr(args.slug);
   const e = await entry(slug);
-  const rel = optStr(args.path) ?? path.basename(asStr(e.entry));
+  const rel = optStr(args.path) || path.basename(asStr(e.entry));
+  const offset = asInt(args.offset || 0);
+  if (offset < 0) throw new ToolError("offset must be 0 or more");
   const target = bounded(e, rel);
   const st = await fs.stat(target).catch(() => null);
   if (st?.isDirectory()) throw new ToolError(`${rel} is a directory`);
   if (!st?.isFile()) throw new ToolError(`no file ${rel} in systems/${slug}/`);
   if (!TEXT_TYPES.has(path.extname(target).toLowerCase())) throw new ToolError(`not a text file: ${rel}`);
   // utf8 decoding replaces bad sequences, matching read_text(errors="replace").
+  // Offsets count code points, as Python's str indexes do.
   const chars = Array.from(await fs.readFile(target, "utf8"));
-  const truncated = chars.length > DOC_CAP;
+  const end = offset + DOC_CAP;
+  const truncated = chars.length > end;
   const relInPkg = path.relative(pkgDir(e), target).split(path.sep).join("/");
-  return { slug, path: `systems/${slug}/${relInPkg}`, text: chars.slice(0, DOC_CAP).join(""), truncated };
+  const out: Obj = {
+    slug,
+    path: `systems/${slug}/${relInPkg}`,
+    text: chars.slice(offset, end).join(""),
+    truncated,
+    offset,
+    length: chars.length,
+  };
+  if (truncated) out.nextOffset = end;
+  return out;
 }
 
 async function walkFiles(dir: string): Promise<string[]> {
@@ -776,13 +819,22 @@ export const SPECS: Spec[] = [
     fn: getTokens,
     description:
       "Resolved token values for a systems package. Call without a " +
-      "group to list groups, then with one for its flat map.",
+      "group to list groups, then with one for its flat map. A large " +
+      "group comes back in pages: when truncated is true, call again " +
+      "with offset=nextOffset.",
     parameters: {
       type: "object",
       additionalProperties: false,
       properties: {
         slug: { type: "string" },
         group: { type: "string", description: "e.g. light, dark, base" },
+        offset: {
+          type: "integer",
+          minimum: 0,
+          default: 0,
+          description: "Token index to start from (a previous page's nextOffset)",
+        },
+        limit: { type: "integer", minimum: 1, description: "Most tokens to return; a page also stops before the result cap" },
       },
       required: ["slug"],
     },
@@ -792,7 +844,8 @@ export const SPECS: Spec[] = [
     fn: readDoc,
     description:
       "Read a text file inside a package: its README (default), " +
-      "components.md, patterns.md, tokens.json.",
+      "components.md, patterns.md, tokens.json. Long files come back " +
+      "in pages: when truncated is true, call again with offset=nextOffset.",
     parameters: {
       type: "object",
       additionalProperties: false,
@@ -801,6 +854,12 @@ export const SPECS: Spec[] = [
         path: {
           type: "string",
           description: "Package-relative path (a systems/<slug>/ or /systems/<slug>/ path also works); default README.md",
+        },
+        offset: {
+          type: "integer",
+          minimum: 0,
+          default: 0,
+          description: "Character offset to start from (a previous page's nextOffset)",
         },
       },
       required: ["slug"],
@@ -873,7 +932,12 @@ export async function call(name: string, args: Obj | null): Promise<Obj> {
     throw new ToolError(`${name} failed: ${e instanceof Error ? e.message : String(e)}`);
   }
   if ("_image" in result) return result;
-  const text = JSON.stringify(result);
-  if (text.length > RESULT_CAP) return { truncated: true, bytes: text.length, partial: text.slice(0, RESULT_CAP) };
+  const size = jsonSize(result);
+  if (size > RESULT_CAP) {
+    const bytes = Buffer.from(JSON.stringify(result), "utf8").subarray(0, RESULT_CAP);
+    // Drop a multi-byte character cut in half, as Python's decode("ignore").
+    const partial = new TextDecoder("utf-8", { fatal: false }).decode(bytes).replace(/\uFFFD$/, "");
+    return { truncated: true, bytes: size, partial };
+  }
   return result;
 }

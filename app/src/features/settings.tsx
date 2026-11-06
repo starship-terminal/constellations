@@ -20,6 +20,7 @@ import {
   Spinner,
   useResource,
 } from "@/components/shared";
+import { replaceSearch } from "./url-state";
 interface Settings {
   provider: "openai" | "anthropic";
   model: string;
@@ -93,13 +94,7 @@ function SettingsContent() {
     const next = new URLSearchParams(window.location.search);
     if (id === "appearance") next.delete("tab");
     else next.set("tab", id);
-    const search = next.toString();
-    // Native history keeps useSearchParams in sync without a server navigation.
-    window.history.replaceState(
-      null,
-      "",
-      `${window.location.pathname}${search ? `?${search}` : ""}`,
-    );
+    replaceSearch(next);
   }
   async function save() {
     setBusy(true);
