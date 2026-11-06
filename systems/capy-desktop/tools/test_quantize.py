@@ -70,6 +70,25 @@ class QuantizeTest(unittest.TestCase):
         self.assertTrue(committed.exists())
         self.assertFalse((self.pkg / "screenshots" / "dark" / "home.png").exists())
 
+    def test_a_later_incomplete_theme_leaves_an_earlier_one_alone(self):
+        # dark sorts before light: a check made inside the theme loop would rewrite dark before it saw light.
+        for missing in ("captures", "frames"):
+            with self.subTest(missing=missing):
+                png(self.dark / "home.png")
+                (self.dark / "captures.json").write_text(json.dumps({"home": {"state": "default", "parts": {}}}))
+                light = self.raw / "light"
+                png(light / "home.png")
+                if missing == "frames":
+                    (light / "captures.json").write_text(json.dumps({"home": {"state": "default", "parts": {}}}))
+                    (self.pkg / "raw" / "run.light.json").write_text("{}")
+                committed = self.pkg / "screenshots" / "dark" / "old.png"
+                png(committed)
+                with self.assertRaises(SystemExit):
+                    self.q.main()
+                self.assertTrue(committed.exists())
+                self.assertFalse((self.pkg / "screenshots" / "dark" / "home.png").exists())
+                self.assertFalse((self.pkg / "raw" / "components.dark.json").exists())
+
     def test_theme_without_run_readings_needs_no_frames(self):
         png(self.dark / "home.png")
         (self.dark / "captures.json").write_text(json.dumps({"home": {"state": "default", "parts": {}}}))
