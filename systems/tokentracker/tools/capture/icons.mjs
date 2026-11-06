@@ -11,7 +11,7 @@
 // Adapted from the Coursera kit's icons.mjs.
 import crypto from 'crypto';
 import fs from 'fs';
-import { BASE, chromium, UA, mask } from './public/lib.mjs';
+import { BASE, chromium, UA, guard, mask } from './public/lib.mjs';
 
 const OUT = new URL('../../icons/', import.meta.url).pathname;
 fs.mkdirSync(OUT, { recursive: true });
@@ -88,6 +88,9 @@ async function tryDo(label, fn) { try { await fn(); } catch (e) { failed.push(la
 
 const b = await chromium.launch();
 const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA, colorScheme: 'dark' });
+// lib.mjs's guard aborts every non-GET request, as launch() does for the other captures, so the
+// dashboard's own POSTs on load never reach the local server.
+await guard(ctx);
 const p = await ctx.newPage();
 for (const [path, tag] of [['/dashboard', 'tokens'], ['/sessions', 'sessions'], ['/limits', 'limits'], ['/skills', 'skills'], ['/settings', 'settings'], ['/widgets', 'widgets'], ['/service-status', 'service-status'], ['/achievements', 'achievements']]) {
   await tryDo(tag, async () => { await open(p, path); await grab(p, tag); });
