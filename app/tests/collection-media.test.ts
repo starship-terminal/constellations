@@ -25,9 +25,12 @@ vi.mock("@/server/sources", () => ({
     const { media, measured, ...summary } = detail;
     return summary;
   },
+  // Like the real one: the card summary plus the media list.
   getReferenceMedia: async (id: string) => {
     const detail = await mocks.reference(id);
-    return detail ? { reference: detail, media: detail.media } : null;
+    if (!detail) return null;
+    const { media, measured, ...reference } = detail;
+    return { reference, media };
   },
 }));
 import { GET, POST, DELETE } from "@/app/api/collections/[id]/media/route";
