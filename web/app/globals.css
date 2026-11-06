@@ -235,10 +235,12 @@ html[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .icon-btn .lbl { 
    squeezing the field to nothing. */
 .research .field { max-width: 460px; height: 40px; flex: 1 1 280px; }
 .r-chips { display: flex; gap: 6px; }
+/* Phones: search and the go button share the first row, the chips the second. */
+@media (max-width: 639px) { .r-chips { order: 1; } }
 .r-chip {
   display: inline-flex; align-items: center; gap: 7px; height: 40px; padding: 0 14px;
   border-radius: 10px; border: 1px solid var(--line); background: var(--panel);
-  color: var(--muted); font-size: 13px;
+  color: var(--muted); font-size: 13px; white-space: nowrap;
 }
 .r-chip[aria-pressed="true"] { color: var(--text); border-color: var(--line-strong); background: var(--sunken); font-weight: 550; }
 .r-go {
@@ -475,7 +477,9 @@ dl.meta .tags { display: flex; gap: 5px; flex-wrap: wrap; }
 .sc-card { border: 1px solid var(--line); border-radius: var(--radius-card); padding: 14px 16px; }
 .sc-card b { display: block; font-size: 15px; margin-bottom: 3px; }
 .sc-card p { margin: 0; color: var(--muted); font-size: 12.5px; }
-.sc-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-card); }
+/* position: relative makes the scroller the containing block of the cells' absolute
+   screen-reader text, which otherwise escaped it and widened the page to the table. */
+.sc-scroll { position: relative; overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-card); }
 table.sc-heat { border-collapse: separate; border-spacing: 0; font-size: 12px; }
 .sc-heat th, .sc-heat td { padding: 5px 7px; border-bottom: 1px solid var(--line); text-align: center; white-space: nowrap; }
 .sc-heat thead th { font-size: 10.5px; color: var(--faint); font-weight: 600; }
@@ -573,10 +577,10 @@ table.sc-heat { border-collapse: separate; border-spacing: 0; font-size: 12px; }
 .rf-scale-sample { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .rf-fonts { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin-top: 16px; }
 .rf-font { border: 1px solid var(--line); border-radius: var(--radius-ctl); padding: 14px; }
-.rf-font-sample { font-size: 21px; margin-bottom: 8px; }
+.rf-font-sample { font-size: 21px; margin-bottom: 8px; overflow-wrap: anywhere; }
 .rf-font-spec { margin: 0; font-size: 11px; display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; }
 .rf-font-spec dt { color: var(--faint); }
-.rf-font-spec dd { margin: 0; color: var(--muted); }
+.rf-font-spec dd { margin: 0; color: var(--muted); overflow-wrap: anywhere; }
 .rf-note { color: var(--faint); font-size: 12px; margin: 8px 0 0; }
 .rf-tables { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 @media (max-width: 799px) { .rf-tables { grid-template-columns: minmax(0, 1fr); } }
