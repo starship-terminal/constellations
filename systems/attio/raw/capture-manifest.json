@@ -1,0 +1,1017 @@
+{
+  "formatWarning": "Original API files have .png names but contain JPEG bytes. Decode and save as real PNG during packaging.",
+  "appearanceRestoration": "System restored and checked; renders dark.",
+  "captures": [
+    {
+      "file": "appearance-light.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "643defd8828002dc74110715f468ba28a2c81cd14986cf1a3598576fab812c6b",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:28:04.150Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "light",
+      "packagedFile": "screenshots/appearance-light.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "appearance-original-system.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "36f3d4b82a7dc32d710e649e052a26f5d287d41e62a1b2263e4e6f42be73f626",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:27:58.152Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/appearance-original-system.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "appearance-restored-system.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "d625e73d46780a16303c8207e5d837afaf7e829b5356d58a5994ac988e99c09f",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:32:11.366Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/appearance-restored-system.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "companies-dark-scoped.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "5e08dad4f1442f908b3a906667c3840f5ffea7f6347b5e59918da80363896fda",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:31:45.925Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/companies-dark-scoped.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "companies-filter-light.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "a3f5d03be83a54dd7d63b2547e8babf8cc5b5f035daeca16cbe2051a7390668a",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:28:19.960Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "light",
+      "packagedFile": "screenshots/companies-filter-light.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "companies-filter-menu.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "4fbf374c26b0b8d29e155b542ff71e16abba16a71a9db4cecc96f958d032c008",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:03:27.683Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/companies-filter-menu.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "companies-initial.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "6dacf64c32667740e15053f25bae464e449a7a73289acbd7ccdc541753cfae3c",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:03:14.991Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/companies-initial.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "companies-light-scoped.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "4d31379111544255289fbc38a00e9369237eddb89fd2b189dd1501c0bcec4296",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:32:05.677Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "light",
+      "packagedFile": "screenshots/companies-light-scoped.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "companies-light.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "a52c3ac001e3266c71d9acd0c9f7932bf72cbdef3cbab7845b76f8f162970ec3",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:28:12.314Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "light",
+      "packagedFile": "screenshots/companies-light.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "companies-mobile-dark-collapsed.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        390,
+        844
+      ],
+      "sha256": "041c241054664b06b83a069dfa8cfab6b7d9c0fe2e2a4e983fac4e76da746e65",
+      "viewport": {
+        "dpr": 1,
+        "height": 844,
+        "visual": {
+          "height": 844,
+          "scale": 1,
+          "width": 390
+        },
+        "width": 390
+      },
+      "capturedAt": "2026-10-31T04:33:09.664Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "limitation": "Narrow viewport shows desktop table overflow; do not claim mobile-optimized layout.",
+      "packagedFile": "screenshots/companies-mobile-dark-collapsed.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "companies-mobile-dark.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        390,
+        844
+      ],
+      "sha256": "3b3cfc7f112cb6ab096a0e4b64cbc72bc0b9c0c3873cf4f74a695e8724a75cb0",
+      "viewport": {
+        "dpr": 1,
+        "height": 844,
+        "visual": {
+          "height": 844,
+          "scale": 1,
+          "width": 390
+        },
+        "width": 390
+      },
+      "capturedAt": "2026-10-31T04:33:04.872Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "limitation": "Narrow viewport shows desktop table overflow; do not claim mobile-optimized layout.",
+      "packagedFile": "screenshots/companies-mobile-dark.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "companies-sort-dialog.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "64ce2e40b23af21287ad6a876cf7bfe0fc8c29d8a94b6f544a9a8f12b117a4b1",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:03:37.067Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/companies-sort-dialog.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "companies-sort-light.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "0eef75cf98eb080c8ccc27d8d62afc9110cddaa121c7f600f85f6b82c4cc7334",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:28:27.379Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "light",
+      "packagedFile": "screenshots/companies-sort-light.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "companies-view-picker.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "4499f9ecf8e7564e4e7017900af059f9063469c62131cff66b21f3f60eebe152",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:04:10.062Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/companies-view-picker.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "companies-view-settings-light.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "0370b3c307e6878e51ab3ecd457fa675a89cb0a29881725495d660ab34c4d412",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:28:34.922Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "light",
+      "packagedFile": "screenshots/companies-view-settings-light.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "companies-view-settings.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "130cd91f0400bcd66293b135c10352ae3e199611271fccc1a906fdb3be8e1949",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:03:46.326Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/companies-view-settings.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "company-create-dialog.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "6b26fc32a2352b3324460d9567b8bde2249ccf8fc138d5ece5b8706ceafd1dff",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:04:49.742Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/company-create-dialog.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "company-create-light.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "bb0643c2c2698a2eadc95997ac8f57e15d56dfbb1c6457bd8cc66b776b45dbc8",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:28:54.344Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "light",
+      "packagedFile": "screenshots/company-create-light.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "company-notes-empty.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "165710fda5a4f6ab83577d44347fe967c6da553905e052dc4391f60ac1231e13",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:04:37.753Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/company-notes-empty.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "company-record-actions.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "6708749291c09a73340e64de146fd62b3cb592573190a5f155391381938f929f",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:04:26.768Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/company-record-actions.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "company-record-overview-light.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "6b292f1874c0321a05a6bdab1a43f58a99e480e2c3501a76946effcdf8a04839",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:28:43.666Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "light",
+      "packagedFile": "screenshots/company-record-overview-light.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "company-record-overview.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "8845cffca80a7b7974526e9c21eba65d15d2da8e241243c17b90352bac013616",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:04:22.942Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/company-record-overview.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "landing-desktop-full.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1440,
+        17838
+      ],
+      "sha256": "5c772ab57d2c4efd3b619b0fb39911f71c2e91eb8340bf2723e9be2b92bfd2c2",
+      "viewport": null,
+      "capturedAt": null,
+      "status": "rejected",
+      "reason": "Unloaded lazy/animated sections",
+      "surface": "public-marketing",
+      "theme": "light"
+    },
+    {
+      "file": "landing-first.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1440,
+        1000
+      ],
+      "sha256": "fe1409ebed5b799836f3f865d3e589cfda7eaa260ba352b09a39bdb7f8a8ee9c",
+      "viewport": null,
+      "capturedAt": null,
+      "status": "accepted",
+      "reason": null,
+      "surface": "public-marketing",
+      "theme": "light",
+      "packagedFile": "screenshots/landing-first.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "landing-mobile-menu.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        390,
+        844
+      ],
+      "sha256": "0f6eb5a410636fd6ea496305353624591adf4aeed0d22a358dcc35448059079f",
+      "viewport": null,
+      "capturedAt": null,
+      "status": "accepted",
+      "reason": null,
+      "surface": "public-marketing",
+      "theme": "light",
+      "packagedFile": "screenshots/landing-mobile-menu.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "landing-mobile.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        390,
+        844
+      ],
+      "sha256": "44a93d275721abefad8688f6d6d110af5091ad49ef518b52e7ecf222bd8b1142",
+      "viewport": null,
+      "capturedAt": null,
+      "status": "accepted",
+      "reason": null,
+      "surface": "public-marketing",
+      "theme": "light",
+      "packagedFile": "screenshots/landing-mobile.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "landing-platform-menu.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1440,
+        1000
+      ],
+      "sha256": "af1a2563a8ed0b9f6f456efb2490b47b085820121dc03da5b4bec74bb806ffda",
+      "viewport": null,
+      "capturedAt": null,
+      "status": "accepted",
+      "reason": null,
+      "surface": "public-marketing",
+      "theme": "light",
+      "packagedFile": "screenshots/landing-platform-menu.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "onboarding-about-you-measured.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "3210d21c525ffeeaa8486807dbda6b8015c92444ba6669ac096f1fd501000761",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:00:40.804Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/onboarding-about-you-measured.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "onboarding-about-you.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "208f9750f92d08fbd982665db35fd8b1802f65d22aed0881a2aa2de7695855e4",
+      "viewport": null,
+      "capturedAt": null,
+      "status": "rejected",
+      "reason": "Unmeasured duplicate",
+      "surface": "signed-in-app",
+      "theme": "dark"
+    },
+    {
+      "file": "onboarding-call-intelligence-default.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "996424ec222e998c054a1bbe03063d2802e5e4571699402d26b3e39f474b048f",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:02:35.042Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/onboarding-call-intelligence-default.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "onboarding-call-intelligence-disabled.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "6f1061a10727f42befbef1694347e5de3a73caa64a58344dde0377a9dea21468",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:02:47.823Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/onboarding-call-intelligence-disabled.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "onboarding-company-description.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "a0f054215dbd872a4c9660d204c8e126b92cde264fb6c4a2f615ecb886789c6f",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:01:43.562Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/onboarding-company-description.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "onboarding-company-research.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "78426ae1f4054c38edd2beb92455dbfd77c6f15f72cc77eef55efa46dd941e0b",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:01:33.059Z",
+      "status": "rejected",
+      "reason": "Timing mismatch, duplicate description",
+      "surface": "signed-in-app",
+      "theme": "dark"
+    },
+    {
+      "file": "onboarding-complete.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "2b62223f6f460e961e31ab569f5dff799b96c1107eeddd1b3d0f89c328ee2757",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:03:03.950Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/onboarding-complete.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "onboarding-connect-inbox.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "20b157aaea12645f2dee882db0ea98d0fb3d14ecb34925ade53c54125ab3772e",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:02:09.958Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/onboarding-connect-inbox.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "onboarding-country-menu.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "15e3a28f69bd3fc674b6775c0b3c58369d3c2efd2846355ca2200ca4e56cd17a",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:01:25.326Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/onboarding-country-menu.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "onboarding-proposed-structure.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "30e57568427ecbe57fd106e37d6895ab8e250d9619b961cef7637ba3d738034d",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:01:55.339Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/onboarding-proposed-structure.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "onboarding-referral.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "598cbab4dfd9ab348f3ecb1509b1b95a1a76cf6cf574e4a542475e394ceb7903",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:02:55.335Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/onboarding-referral.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "onboarding-skip-email-dialog.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "141d5aeaa7793fc9f8dc730f8c8bb3e1ce6bc68cd2554cba6c8c651c4605940b",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:02:24.257Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/onboarding-skip-email-dialog.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "onboarding-workspace-details.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "247916d272cd5860c7d8945d4e0716f1520c13b8b9a15913a1db4504972461da",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:01:18.077Z",
+      "status": "accepted",
+      "reason": null,
+      "surface": "signed-in-app",
+      "theme": "dark",
+      "packagedFile": "screenshots/onboarding-workspace-details.png",
+      "packagedFormat": "PNG (256 colours)"
+    },
+    {
+      "file": "onboarding-workspace-loading.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        1386,
+        959
+      ],
+      "sha256": "247916d272cd5860c7d8945d4e0716f1520c13b8b9a15913a1db4504972461da",
+      "viewport": {
+        "dpr": 2,
+        "height": 959,
+        "visual": {
+          "height": 959,
+          "scale": 1,
+          "width": 1386
+        },
+        "width": 1386
+      },
+      "capturedAt": "2026-10-31T04:01:06.940Z",
+      "status": "rejected",
+      "reason": "Timing mismatch, duplicate workspace details",
+      "surface": "signed-in-app",
+      "theme": "dark"
+    },
+    {
+      "file": "sign-in-handoff.png",
+      "decodedFormat": "JPEG",
+      "imageSize": [
+        679,
+        959
+      ],
+      "sha256": "99896abd2ec5845559eb32c8b4b580779a4fd390b1be4d5435fbdad14b275079",
+      "viewport": null,
+      "capturedAt": null,
+      "status": "rejected",
+      "reason": "Sign-in handoff, not design coverage",
+      "surface": "signed-in-app",
+      "theme": "dark"
+    }
+  ]
+}

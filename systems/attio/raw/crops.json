@@ -1,0 +1,50 @@
+[
+  {
+    "file": "components/crops/light-toolbar.png",
+    "source": "screenshots/companies-light-scoped.png",
+    "box": [
+      280,
+      48,
+      1386,
+      146
+    ],
+    "units": "decoded image pixels",
+    "review": "Visually reviewed: intended toolbar/table visible; dark table includes sidebar tooltip; horizontal table overflow retained."
+  },
+  {
+    "file": "components/crops/light-table.png",
+    "source": "screenshots/companies-light-scoped.png",
+    "box": [
+      275,
+      146,
+      1386,
+      582
+    ],
+    "units": "decoded image pixels",
+    "review": "Visually reviewed: intended toolbar/table visible; dark table includes sidebar tooltip; horizontal table overflow retained."
+  },
+  {
+    "file": "components/crops/dark-toolbar.png",
+    "source": "screenshots/companies-dark-scoped.png",
+    "box": [
+      280,
+      48,
+      1386,
+      146
+    ],
+    "units": "decoded image pixels",
+    "review": "Visually reviewed: intended toolbar/table visible; dark table includes sidebar tooltip; horizontal table overflow retained."
+  },
+  {
+    "file": "components/crops/dark-table.png",
+    "source": "screenshots/companies-dark-scoped.png",
+    "box": [
+      275,
+      146,
+      1386,
+      582
+    ],
+    "units": "decoded image pixels",
+    "review": "Visually reviewed: intended toolbar/table visible; dark table includes sidebar tooltip; horizontal table overflow retained."
+  }
+]

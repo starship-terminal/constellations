@@ -3236,6 +3236,75 @@
       "source": {
         "path": "~/.design-systems/cloudflare (raw captures outside git)"
       }
+    },
+    {
+      "slug": "attio",
+      "name": "Attio",
+      "url": "https://attio.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Dense CRM tables, configurable views, record panels and progressive onboarding with quiet neutral chrome and blue primary actions.",
+      "tags": [
+        "web",
+        "crm",
+        "table",
+        "sidebar",
+        "records",
+        "light",
+        "dark",
+        "onboarding"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-31",
+      "access": "Signed-in basic setup; Attio automatically provisioned a 14-day Pro trial. Public marketing captured separately.",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1386,
+        1440,
+        390
+      ],
+      "entry": "systems/attio/README.md",
+      "tokens": "systems/attio/tokens.json",
+      "styleGuide": "systems/attio/style-guide.html",
+      "preview": {
+        "cover": "systems/attio/screenshots/companies-light-scoped.png",
+        "icon": "systems/attio/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.role.page",
+            "surface": "light.role.surface",
+            "text": "light.role.text.primary",
+            "muted": "light.role.text.secondary",
+            "accent": "light.role.accent.default",
+            "border": "light.role.border.default"
+          },
+          "dark": {
+            "page": "dark.role.page",
+            "surface": "dark.role.surface",
+            "text": "dark.role.text.primary",
+            "muted": "dark.role.text.secondary",
+            "accent": "dark.role.accent.default",
+            "border": "dark.role.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.body"
+        ]
+      },
+      "capture": {
+        "harness": "Codex",
+        "model": "GPT-6 (exact runtime model identifier unavailable)",
+        "version": "Web capture 2026-10-31",
+        "route": "web-inspector",
+        "durationMin": null,
+        "pr": "https://github.com/c-wenlong/designs/pull/139"
+      },
+      "layoutGaps": {
+        "icons/": "Product artwork is retained only inside screenshot references."
+      }
     }
   ]
 }
