@@ -17,6 +17,8 @@ if (!out || !title) { console.error('usage: vars.mjs <out.json> "<window title>"
 const { browser, page } = await connect(title.startsWith("url:") ? { url: new RegExp(title.slice(4)) } : title);
 const meta = await viewport(page);
 const data = await page.evaluate(({ scopes, keep }) => {
+  // A custom property can hold a url() with a signed or per-account query: record it as url(…).
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
   const KEEP = new RegExp(keep || '^--');
   const sheets = [], decls = [], names = new Set(), conditions = {};
   [...document.styleSheets].forEach((s, i) => {
@@ -40,7 +42,7 @@ const data = await page.evaluate(({ scopes, keep }) => {
         }
         for (const p of r.style) if (p && p.startsWith('--') && KEEP.test(p)) {
           names.add(p);
-          decls.push({ name: p, value: r.style.getPropertyValue(p).trim(), selector: (r.selectorText || r.constructor.name).slice(0, 200), condition: cond || '', sheet: id });
+          decls.push({ name: p, value: noUrl(r.style.getPropertyValue(p).trim()), selector: (r.selectorText || r.constructor.name).slice(0, 200), condition: cond || '', sheet: id });
         }
         if (r.cssRules && r.cssRules.length) walk(r.cssRules, cond);
       }
@@ -53,7 +55,7 @@ const data = await page.evaluate(({ scopes, keep }) => {
   for (const [k, e] of Object.entries(els)) {
     const cs = getComputedStyle(e), v = {};
     for (const p of e.style) if (p && p.startsWith('--') && KEEP.test(p)) names.add(p);   // set by script, inline
-    for (const n of [...names].sort()) { const x = cs.getPropertyValue(n).trim(); if (x) v[n] = x; }
+    for (const n of [...names].sort()) { const x = noUrl(cs.getPropertyValue(n).trim()); if (x) v[n] = x; }
     computed[k] = v;
   }
   // Resolve each property the way the browser paints it: as a colour (color-mix and oklch come

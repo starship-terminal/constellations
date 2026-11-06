@@ -51,6 +51,8 @@ const browser = await chromium.launch();
 const page = await browser.newPage();
 await page.setContent('<!doctype html><html><head></head><body></body></html>');
 const result = await page.evaluate((sheets) => {
+  // A custom property can hold a url() with a signed or per-account query: record it as url(…).
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
   const rules = [];
   const fonts = [];
   const walk = (list, ctx, file) => {
@@ -75,7 +77,7 @@ const result = await page.evaluate((sheets) => {
       let n = 0;
       for (let i = 0; i < r.style.length; i++) {
         const k = r.style[i];
-        if (k && k.startsWith("--")) { props[k] = r.style.getPropertyValue(k).trim(); n++; }
+        if (k && k.startsWith("--")) { props[k] = noUrl(r.style.getPropertyValue(k).trim()); n++; }
       }
       // A nested style rule (CSS nesting) keeps its own children.
       if (n) rules.push({ file, selector: r.selectorText, context: ctx, properties: props });
@@ -118,6 +120,8 @@ const resolved = {};
 for (const [pass, mode, density] of [['light', 'light', 'comfortable'], ['dark', 'dark', 'comfortable'], ['compact', 'light', 'compact']]) {
   await page2.setContent(shell(mode, density), { waitUntil: 'load' });
   resolved[pass] = await page2.evaluate((names) => {
+    // A custom property can hold a url() with a signed or per-account query: record it as url(…).
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
     const rootProbe = document.getElementById('probe-root');
     const sideProbe = document.getElementById('probe-sidebar');
     const box = document.createElement('div');
@@ -146,7 +150,7 @@ for (const [pass, mode, density] of [['light', 'light', 'comfortable'], ['dark',
     const out = {};
     for (const name of names) {
       const el = name.startsWith('--df-') ? sideProbe : rootProbe;
-      const raw = getComputedStyle(el).getPropertyValue(name).trim();
+      const raw = noUrl(getComputedStyle(el).getPropertyValue(name).trim());
       if (!raw) continue;
       const r = { raw: raw.length > 300 ? raw.slice(0, 300) + '…' : raw };
       const hsl = /^-?[\d.]+(deg)? [\d.]+% [\d.]+%$/.test(raw);

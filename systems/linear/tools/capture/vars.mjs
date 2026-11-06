@@ -92,6 +92,8 @@ for (const [theme, label] of Object.entries(COPIES)) {
   await page.route('**/*', (r) => (/^(file|data):/.test(r.request().url()) ? r.continue() : r.abort()));
   await page.goto(`file://${path.join(SNAPS, label)}.html`, { waitUntil: 'load' });
   const res = await page.evaluate(() => {
+    // A custom property can hold a url() with a signed or per-account query: record it as url(…).
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
     const names = new Set();
     const aliases = {};
     const media = {}, zIndex = {}, transitions = {}, durations = {}, easings = {}, shadows = {};
@@ -108,7 +110,7 @@ for (const [theme, label] of Object.entries(COPIES)) {
         if (!r.style) continue;
         for (let i = 0; i < r.style.length; i++) {
           const k = r.style[i];
-          const v = r.style.getPropertyValue(k).trim();
+          const v = noUrl(r.style.getPropertyValue(k).trim());
           if (k.startsWith('--')) {
             names.add(k);
             const m = v.match(/^var\((--sx-[\w-]+)\)$/);
@@ -131,9 +133,9 @@ for (const [theme, label] of Object.entries(COPIES)) {
     const app = getComputedStyle(document.querySelector('main') || document.body);
     const theme = {}, rootDefaults = {};
     for (const n of [...names].sort()) {
-      const v = app.getPropertyValue(n).trim();
+      const v = noUrl(app.getPropertyValue(n).trim());
       if (v) theme[n] = v;
-      const d = root.getPropertyValue(n).trim();
+      const d = noUrl(root.getPropertyValue(n).trim());
       if (d && d !== v) rootDefaults[n] = d;
     }
     const provider = (document.querySelector('main') || document.body).closest('[class*=theme-provider]');

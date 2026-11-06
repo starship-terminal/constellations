@@ -42,6 +42,8 @@ const b = await chromium.launch();
 const p = await b.newPage();
 await p.setContent('<!doctype html><html><head></head><body></body></html>');
 const result = await p.evaluate((sheets) => {
+  // A custom property can hold a url() with a signed or per-account query: record it as url(…).
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
   const rules = [];
   const fonts = [];
   const walk = (list, ctx, file) => {
@@ -66,7 +68,7 @@ const result = await p.evaluate((sheets) => {
       let n = 0;
       for (let i = 0; i < r.style.length; i++) {
         const k = r.style[i];
-        if (k.startsWith('--')) { props[k] = r.style.getPropertyValue(k).trim(); n++; }
+        if (k.startsWith('--')) { props[k] = noUrl(r.style.getPropertyValue(k).trim()); n++; }
       }
       if (n) rules.push({ file, selector: r.selectorText, context: ctx, properties: props });
     }

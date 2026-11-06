@@ -65,6 +65,8 @@ const b = await chromium.launch();
 const p = await b.newPage();
 await p.setContent('<!doctype html><html><head></head><body></body></html>');
 const result = await p.evaluate((list) => {
+  // A custom property can hold a url() with a signed or per-account query: record it as url(…).
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
   const rules = [];
   const fonts = [];
   const motion = [];
@@ -99,11 +101,11 @@ const result = await p.evaluate((list) => {
       let n = 0;
       for (let i = 0; i < r.style.length; i++) {
         const k = r.style[i];
-        if (k.startsWith('--')) { props[k] = r.style.getPropertyValue(k).trim(); n++; }
+        if (k.startsWith('--')) { props[k] = noUrl(r.style.getPropertyValue(k).trim()); n++; }
       }
       if (n) rules.push({ file, selector, context: ctx, properties: props });
       const all = {};
-      for (let i = 0; i < r.style.length; i++) all[r.style[i]] = r.style.getPropertyValue(r.style[i]).trim();
+      for (let i = 0; i < r.style.length; i++) all[r.style[i]] = noUrl(r.style.getPropertyValue(r.style[i]).trim());
       if (ctx.some((c) => /prefers-reduced-motion/.test(c)) || /data-reduced-motion/.test(selector)) motion.push({ file, selector: selector.slice(0, 240), context: ctx, properties: all });
       if (all['z-index'] !== undefined) zIndex.push({ selector: selector.slice(0, 160), value: all['z-index'] });
       if (all['grid-template-columns'] !== undefined) grid.push({ selector: selector.slice(0, 160), value: all['grid-template-columns'] });
@@ -131,6 +133,8 @@ const page = await ctx.newPage();
 const probe = fs.existsSync(path.join(SNAPS, 'home-dark.html')) ? 'home-dark' : files[0].replace(/\.html$/, '');
 await page.goto(`file://${SNAPS}/${probe}.html`, { waitUntil: 'domcontentloaded', timeout: 60000 });
 const computed = await page.evaluate((names) => {
+  // A custom property can hold a url() with a signed or per-account query: record it as url(…).
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
   const h = document.documentElement;
   const host = document.createElement('div');
   host.style.cssText = 'position:absolute;left:-9999px;top:0;color:rgb(1, 2, 3);';
@@ -145,7 +149,7 @@ const computed = await page.evaluate((names) => {
     const cs = getComputedStyle(h);
     const raw = {}, resolved = {};
     for (const n of names) {
-      const v = cs.getPropertyValue(n).trim();
+      const v = noUrl(cs.getPropertyValue(n).trim());
       if (!v) continue;
       raw[n] = v;
       if (COLORISH.test(v)) {

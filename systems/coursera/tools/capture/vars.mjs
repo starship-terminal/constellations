@@ -13,6 +13,8 @@ p.on('response', (r) => { if (/\.(woff2?|ttf|otf)(\?|$)/.test(r.url())) fonts.ad
 await p.goto('https://www.coursera.org/learn/machine-learning', { waitUntil: 'domcontentloaded', timeout: 60000 });
 await p.waitForTimeout(7000);
 const out = await p.evaluate(() => {
+  // A custom property can hold a url() with a signed or per-account query: record it as url(…).
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
   const decls = [], fontfaces = [], keyframes = new Set();
   const walk = (rules, media) => {
     for (const r of rules) {
@@ -23,7 +25,7 @@ const out = await p.evaluate(() => {
       if (!r.style) continue;
       const sel = r.selectorText || '';
       if (!sel.startsWith(':root')) continue;
-      for (const n of r.style) if (n.startsWith('--')) decls.push({ selector: sel, media: media.join(' and ') || null, name: n, value: r.style.getPropertyValue(n).trim() });
+      for (const n of r.style) if (n.startsWith('--')) decls.push({ selector: sel, media: media.join(' and ') || null, name: n, value: noUrl(r.style.getPropertyValue(n).trim()) });
     }
   };
   for (const ss of document.styleSheets) { try { walk(ss.cssRules, []); } catch { /* cross-origin sheet */ } }
@@ -34,7 +36,7 @@ const resolved = {};
 for (const w of [390, 768, 1024, 1440]) {
   await p.setViewportSize({ width: w, height: 900 });
   await p.waitForTimeout(300);
-  resolved[w] = await p.evaluate((ns) => { const cs = getComputedStyle(document.documentElement); return Object.fromEntries(ns.map((n) => [n, cs.getPropertyValue(n).trim()])); }, names);
+  resolved[w] = await p.evaluate((ns) => { const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v); const cs = getComputedStyle(document.documentElement); return Object.fromEntries(ns.map((n) => [n, noUrl(cs.getPropertyValue(n).trim())])); }, names);
 }
 // the same names with the page forced dark, to read the dark side of every light-dark() pair
 await p.evaluate(() => { document.documentElement.dataset.colorTheme = 'dark'; document.documentElement.style.colorScheme = 'dark'; });

@@ -156,6 +156,39 @@ def capture_scripts_recording_raw_urls(root):
     return bad
 
 
+# vars.mjs reads every custom property a stylesheet declares and the value each resolves to. A custom
+# property can hold a url() with a signed or per-account query, so each read of one (any
+# getPropertyValue(name) with a computed name) goes through noUrl. A @font-face descriptor is the one
+# read left alone: its src names the font files.
+PROP_READ = re.compile(r"getPropertyValue\((?!['\"])")
+PROP_READ_SAFE = re.compile(r"noUrl\((?:[\w.]+(?:\([\w.]*\))?\.)*getPropertyValue\((?!['\"])")
+
+
+def vars_reads_without_no_url(src):
+    """Line numbers in a vars.mjs source where a custom property's value is read without noUrl."""
+    lines = src.splitlines()
+    bad = []
+    for n, line in enumerate(lines, 1):
+        if len(PROP_READ.findall(line)) == len(PROP_READ_SAFE.findall(line)):
+            continue
+        if any("FONT_FACE_RULE" in l for l in lines[max(0, n - 5):n - 1]):
+            continue
+        bad.append(n)
+    return bad
+
+
+def vars_scripts_recording_raw_values(root):
+    """(path, reason) for each vars.mjs under root (every package's and the kit's) that records a value raw."""
+    root = Path(root)
+    bad = []
+    for path in sorted([*root.glob("systems/*/tools/capture/**/vars.mjs"), *root.glob("tools/kit/capture/**/vars.mjs")]):
+        src = path.read_text()
+        rel = str(path.relative_to(root))
+        bad += [(rel, f"custom property read without noUrl at line {n}") for n in vars_reads_without_no_url(src)]
+        bad += [(rel, f"noUrl used with no definition in scope at line {n}") for n in no_url_scope_errors(src)]
+    return bad
+
+
 def js_block(path, start, end):
     """The source lines from the first one starting with `start` through the first after it starting with `end`."""
     lines = Path(path).read_text().splitlines()
@@ -184,6 +217,27 @@ class PackageCaptureScripts(unittest.TestCase):
         for raw in ("content: p.content, width", "p.backgroundImage.slice(0, 200)", "out.vars[n] = root.getPropertyValue(n).trim();"):
             self.assertTrue(RAW_READ.search(raw), raw)
         self.assertFalse(RAW_READ.search("out.vars[n] = noUrl(v);"))
+
+    def test_every_vars_script_records_custom_properties_through_no_url(self):
+        # Declared values (props[k], decls, root/dark) and resolved ones (raw, resolved[w], theme) alike.
+        self.assertEqual(vars_scripts_recording_raw_values(HERE.parent), [])
+        # Each copy of noUrl is the one test_measured_styles_record_no_url runs under node.
+        tested = re.search(r"const noUrl = .*?: v\);", (SIGNED_IN / "measure.mjs").read_text()).group(0)
+        for path in [*HERE.parent.glob("systems/*/tools/capture/**/vars.mjs"), HERE / "kit/capture/vars.mjs"]:
+            for d in re.findall(r"const noUrl = .*?: v\);", path.read_text()):
+                self.assertEqual(d, tested, path)
+
+    def test_the_vars_patterns_catch_each_shape(self):
+        for raw in ("props[k] = r.style.getPropertyValue(k).trim();", "const raw = getComputedStyle(el).getPropertyValue(name).trim();",
+                    "return Object.fromEntries(ns.map((n) => [n, cs.getPropertyValue(n).trim()]));",
+                    "all[r.style[i]] = r.style.getPropertyValue(r.style[i]).trim();"):
+            self.assertEqual(vars_reads_without_no_url(raw), [1], raw)
+        for ok in ("props[k] = noUrl(r.style.getPropertyValue(k).trim());", "const raw = noUrl(getComputedStyle(el).getPropertyValue(name).trim());",
+                   "return Object.fromEntries(ns.map((n) => [n, noUrl(cs.getPropertyValue(n).trim())]));",
+                   "ff.push({ family: r.style.getPropertyValue('font-family'), src: r.style.getPropertyValue('src') });"):
+            self.assertEqual(vars_reads_without_no_url(ok), [], ok)
+        font = "if (r.type === CSSRule.FONT_FACE_RULE) {\n  const o = { file };\n  for (const k of r.style) o[k] = r.style.getPropertyValue(k).trim();\n}"
+        self.assertEqual(vars_reads_without_no_url(font), [])
 
     def test_each_callback_needs_its_own_no_url(self):
         two = ("const HELPERS = () => {\n  const noUrl = (v) => v;\n  const box = (el) => noUrl(el);\n};\n"
