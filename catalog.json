@@ -3164,6 +3164,78 @@
       "layoutGaps": {
         "icons/": "Only icon geometry was recorded; product artwork is not redistributed for reuse."
       }
+    },
+    {
+      "slug": "cloudflare",
+      "name": "Cloudflare",
+      "url": "https://www.cloudflare.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Security dashboards, condition builders, configuration tables, analytics filters and dialogs",
+      "tags": [
+        "web",
+        "security",
+        "analytics",
+        "forms",
+        "condition-builder",
+        "sidebar",
+        "dense",
+        "light",
+        "dark"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-31",
+      "access": "Signed-in owner free-plan dashboard; public landing page separately labelled",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/cloudflare/README.md",
+      "tokens": "systems/cloudflare/tokens.json",
+      "styleGuide": "systems/cloudflare/style-guide.html",
+      "preview": {
+        "cover": "systems/cloudflare/screenshots/security-analytics-dark-desktop.png",
+        "icon": "systems/cloudflare/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.preview.page",
+            "surface": "light.preview.surface",
+            "text": "light.preview.text",
+            "muted": "light.preview.muted",
+            "accent": "light.preview.accent",
+            "border": "light.preview.border"
+          },
+          "dark": {
+            "page": "dark.preview.page",
+            "surface": "dark.preview.surface",
+            "text": "dark.preview.text",
+            "muted": "dark.preview.muted",
+            "accent": "dark.preview.accent",
+            "border": "dark.preview.border"
+          }
+        },
+        "fonts": [
+          "core.font.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Codex",
+        "model": "GPT-6",
+        "version": "Live web app, version not exposed",
+        "route": "web-inspector",
+        "pr": "https://github.com/c-wenlong/designs/pull/137",
+        "durationMin": null
+      },
+      "layoutGaps": {
+        "icons/": "Proprietary icons retained only in screenshot references"
+      },
+      "source": {
+        "path": "~/.design-systems/cloudflare (raw captures outside git)"
+      }
     }
   ]
 }
