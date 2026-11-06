@@ -1,0 +1,283 @@
+{
+  "controls": [
+    {
+      "disabled": false,
+      "href": "#main",
+      "label": "Skip to content",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Kkai chen2 projects",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Open menu",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Help",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Advisor Center",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm",
+      "label": "Back to organization home",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm",
+      "label": "kai chenFree",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Show organizations",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Feedback",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Search...⌘K",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Help",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Advisor Center",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Filter members",
+      "role": null,
+      "tag": "INPUT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Filter by MFA status",
+      "role": "combobox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Roles",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/platform/access-control",
+      "label": "Docs",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Invite members",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Leave team",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Manage access",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "More options",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/platform/sso",
+      "label": "Docs",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/billing?panel=subscriptionPlan&source=inviteMemberSSO",
+      "label": "Upgrade to Team",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "OwnerFull access, including removing you or any other owner, deleting the organization, and transferring or deleting pro",
+      "role": "radio",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "INPUT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "AdministratorManage members, billing, and project settings, including removing members and deleting projects. Cannot man",
+      "role": "radio",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "INPUT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "DeveloperManage project content, including deleting data, users, files, and Edge Functions. Cannot change settings or de",
+      "role": "radio",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "INPUT"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/platform/access-control",
+      "label": "roles and permissions",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "name@example.com, name2@example.com, ...",
+      "role": null,
+      "tag": "TEXTAREA"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Cancel",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Send invitation",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Close",
+      "role": null,
+      "tag": "BUTTON"
+    }
+  ],
+  "dpr": 1,
+  "height": 844,
+  "theme": "",
+  "time": "2026-10-31T04:40:19.564Z",
+  "url": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/team",
+  "width": 390
+}

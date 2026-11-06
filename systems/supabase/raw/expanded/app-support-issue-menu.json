@@ -1,0 +1,619 @@
+{
+  "controls": [
+    {
+      "disabled": false,
+      "href": "#main",
+      "label": "Skip to content",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/documents",
+      "label": "",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm",
+      "label": "Back to organization home",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Feedback",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Search...⌘K",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Help",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Advisor Center",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/documents",
+      "label": "Back to dashboard",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/account/me",
+      "label": "Preferences",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/account/tokens",
+      "label": "Access Tokens",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/account/security",
+      "label": "Security",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/account/audit",
+      "label": "Audit Logs",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Change property from Date range",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Operator for Date range",
+      "role": null,
+      "tag": "INPUT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Value for Date range",
+      "role": null,
+      "tag": "INPUT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Remove Date range filter",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Add more filters...",
+      "role": null,
+      "tag": "INPUT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Date",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "https://status.supabase.com/",
+      "label": "All systems operational",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Select an organization",
+      "role": "combobox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "kai chen",
+      "role": null,
+      "tag": "SELECT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Select a project",
+      "role": "combobox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Select an issue",
+      "role": "combobox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "APIs and client librariesIssues with your project's API and client librariesDashboard bugIssues with the Supabase dashbo",
+      "role": null,
+      "tag": "SELECT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Select a severity",
+      "role": "combobox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "LowGeneral guidanceNormalSystem impairedHighProduction system impairedUrgentProduction system down",
+      "role": null,
+      "tag": "SELECT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Summary of the problem you have",
+      "role": null,
+      "tag": "INPUT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "No particular service",
+      "role": "combobox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "No particular service",
+      "role": "combobox",
+      "tag": "INPUT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Describe the issue you’re facing, along with any relevant information. Please be as detailed and specific as possible.",
+      "role": null,
+      "tag": "TEXTAREA"
+    },
+    {
+      "disabled": false,
+      "href": "https://github.com/orgs/supabase/discussions/36540",
+      "label": "HAR files",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "INPUT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Add attachment",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/billing?panel=subscriptionPlan&source=planSupportExpectationInfoBox",
+      "label": "Upgrade plan",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/contact/enterprise",
+      "label": "Enquire about Enterprise",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "mailto:support@supabase.com?subject=Support%20Request%20for%20Project%20ID%3A%20adopjmlsmqghuwxfkdpr&body=Here%20is%20a%20detailed%20description%20of%20the%20problem%20I%20am%20experiencing%20and%20any%20other%20information%20that%20might%20be%20helpful...",
+      "label": "support@supabase.com",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Send support request",
+      "role": null,
+      "tag": "BUTTON"
+    }
+  ],
+  "dpr": 1,
+  "height": 720,
+  "theme": "",
+  "time": "2026-10-31T04:37:50.793Z",
+  "url": "https://supabase.com/dashboard/account/audit",
+  "width": 1280
+}

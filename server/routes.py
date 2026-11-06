@@ -25,7 +25,11 @@ browser session, so nothing secret touches the checkout.
 from __future__ import annotations
 
 import importlib.util
+import ipaddress
 import json
+import os
+import sys
+import traceback
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -88,6 +92,60 @@ def _body(handler, cap: int = 128_000) -> dict | None:
         return None
 
 
+def _host_name(value: str) -> str | None:
+    """The bare host of a Host header value (no port, no IPv6 brackets), or
+    None when it is malformed."""
+    try:
+        u = urlparse(f"//{value}")
+        u.port  # raises on a non-numeric or out-of-range port
+    except ValueError:
+        return None
+    if u.username is not None or u.path or u.query or u.fragment:
+        return None
+    return u.hostname
+
+
+def _host_ok(handler) -> bool:
+    """Answer only for a Host this server is meant to be reached by. The
+    Origin check below cannot see DNS rebinding: a page on evil.test whose name
+    is re-pointed at this machine sends Origin and Host both as evil.test, so
+    they match. A rebinding attacker can only put a name whose DNS they control
+    in Host, so the allowlist accepts names they cannot: loopback, IP literals,
+    Tailscale's *.ts.net (MagicDNS), and the hosts listed in
+    DESIGN_SYSTEMS_ALLOWED_HOSTS (comma-separated `name` or `name:port`; a
+    bare name matches any port). A request with no Host header is not from a
+    browser and passes."""
+    raw = (handler.headers.get("host") or "").strip().lower()
+    if not raw:
+        return True
+    name = _host_name(raw)
+    if not name:
+        return False
+    if name == "localhost" or name.endswith(".localhost") or name.endswith(".ts.net"):
+        return True
+    try:
+        ipaddress.ip_address(name)
+        return True
+    except ValueError:
+        pass
+    for entry in (os.environ.get("DESIGN_SYSTEMS_ALLOWED_HOSTS") or "").split(","):
+        entry = entry.strip().lower()
+        if entry and entry in (raw, name):
+            return True
+    return False
+
+
+def _guard(handler) -> bool:
+    """True when the request was refused (and answered)."""
+    if not _host_ok(handler):
+        _reply(handler, 403, {"error": "unknown host: add it to DESIGN_SYSTEMS_ALLOWED_HOSTS"})
+        return True
+    if not _origin_ok(handler):
+        _reply(handler, 403, {"error": "cross-origin request"})
+        return True
+    return False
+
+
 def _origin_ok(handler) -> bool:
     """Only this server's own pages may call the API. A browser POST to a
     loopback host is a 'simple' request — CORS never blocks it — so any site
@@ -108,8 +166,7 @@ def handle_get(handler) -> bool:
     path = handler.path.split("?", 1)[0]
     if not path.startswith("/api/"):
         return False
-    if not _origin_ok(handler):
-        _reply(handler, 403, {"error": "cross-origin request"})
+    if _guard(handler):
         return True
     if path == "/api/status":
         chat = _load("chat")
@@ -142,8 +199,7 @@ def handle_post(handler) -> bool:
     path = handler.path.split("?", 1)[0]
     if not path.startswith("/api/"):
         return False
-    if not _origin_ok(handler):
-        _reply(handler, 403, {"error": "cross-origin request"})
+    if _guard(handler):
         return True
     if path == "/api/mcp":
         try:
@@ -197,8 +253,10 @@ def handle_post(handler) -> bool:
             _reply(handler, 200, chat.run(messages, cfg))
         except chat.ProviderError as e:
             _reply(handler, 200, {"reply": "", "error": str(e), "results": [], "media": []})
-        except Exception as e:
-            _reply(handler, 500, {"error": f"{type(e).__name__}: {e}"})
+        except Exception:
+            # The detail (paths, upstream text) goes to the server log only.
+            traceback.print_exc(file=sys.stderr)
+            _reply(handler, 500, {"error": "internal error"})
         return True
     _reply(handler, 404, {"error": "no such api route"})
     return True
