@@ -35,6 +35,25 @@ export async function launch({ width = 1440, height = 900, mobile = false } = {}
 // Every page opens with a promo dialog ("Introducing Gauth Academy"); its own
 // close button dismisses it. `waitUntil: 'networkidle'` never settles on
 // gauth.com, so a page is `load` plus a fixed wait.
+// Waits for every pending stylesheet-body read, including reads a late response added while earlier ones
+// were awaited, but never longer than `ms` in all: a body that stalls is left out (the callers report
+// what was not read) instead of blocking the capture.
+export async function drain(pending, ms = 15000) {
+  const end = Date.now() + ms;
+  let timer;
+  for (let seen = 0; seen < pending.length;) {
+    const batch = pending.slice(seen);
+    seen = pending.length;
+    const left = end - Date.now();
+    if (left <= 0) return false;
+    const late = new Promise((r) => { timer = setTimeout(r, left, 'late'); });
+    const res = await Promise.race([Promise.allSettled(batch), late]);
+    clearTimeout(timer);
+    if (res === 'late') return false;
+  }
+  return true;
+}
+
 export async function closePromo(page) {
   const x = page.locator(M('atlas-intro-modal_aw-atlas-intro-modal-close'));
   for (let i = 0; i < 3; i++) {
