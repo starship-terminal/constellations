@@ -7,27 +7,15 @@
 // instead of refero.db's sqlite, and view_media falls back to a prebuilt
 // web/data/thumbs/ thumbnail instead of a Pillow downscale. Site-relative
 // media URLs are "/media/<repo-relative>" for the app's media route.
-import { existsSync, promises as fs, realpathSync } from "node:fs";
+import { promises as fs, realpathSync } from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+// The checkout comes from the one resolver every server route uses, so
+// DESIGN_SYSTEMS_REPO points the tools at the same tree as /media/ and docs.
+import { ROOT } from "@/lib/repo";
+
+export { ROOT };
 
 type Obj = Record<string, unknown>;
-
-export const ROOT = (() => {
-  const cwd = path.resolve(process.cwd());
-  // `next dev`/`next start` run from web/, so the checkout is its parent; a
-  // plain node run from the repo root also lands on the checkout.
-  const primary = path.basename(cwd) === "web" ? path.dirname(cwd) : cwd;
-  if (existsSync(path.join(primary, "catalog.json"))) return primary;
-  try {
-    const here = path.dirname(fileURLToPath(import.meta.url));
-    const fromModule = path.resolve(here, "..", "..", ".."); // web/lib/chat -> root
-    if (existsSync(path.join(fromModule, "catalog.json"))) return fromModule;
-  } catch {
-    // import.meta.url unavailable in a CJS bundle; keep the cwd guess.
-  }
-  return primary;
-})();
 
 // The checkout with symlinks resolved, as Python's ROOT.resolve(): every
 // containment check and every repo-relative URL is computed from real paths.
@@ -535,10 +523,13 @@ async function searchStyles(args: Obj): Promise<Obj> {
     .map((w) => w.toLowerCase());
   const limit = Math.max(1, Math.min(asInt((args.limit ?? 8) || 8), 20));
   const out: Obj[] = [];
+  // The catalog's platforms are web, mobile and desktop; "ios" stays an alias
+  // for mobile, the value the schema offered first.
+  const wanted = platform === "ios" ? "mobile" : platform;
   if (store === "all" || store === "systems") {
     for (const hit of await findSystems(words)) {
       const e = await entry(asStr(hit.slug));
-      if (platform && !asArr(e.tags).includes(platform) && e.platform !== platform) continue;
+      if (platform && !asArr(e.tags).includes(platform) && e.platform !== wanted) continue;
       out.push({
         store: "systems",
         slug: hit.slug,
@@ -835,7 +826,11 @@ export const SPECS: Spec[] = [
       properties: {
         query: { type: "string", description: "Free text: mood, layout, use, product words" },
         store: { type: "string", enum: ["all", "systems", "refero"], default: "all" },
-        platform: { type: "string", enum: ["web", "ios", "desktop"] },
+        platform: {
+          type: "string",
+          enum: ["web", "mobile", "desktop", "ios"],
+          description: "The catalog's platform; ios is an alias for mobile",
+        },
         style: { type: "string", description: "Refero design_style label filter" },
         limit: { type: "integer", minimum: 1, maximum: 20, default: 8 },
       },

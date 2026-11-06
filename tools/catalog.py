@@ -925,6 +925,20 @@ def design_md_path(system: dict) -> Path:
     return ROOT / "systems" / system["slug"] / "DESIGN.md"
 
 
+# What a child process (npx, sips, tesseract, node) may see of this one's environment: enough to
+# find programs, a home and a temp folder, locale and proxies. Never the provider keys or R2
+# credentials refero_media loads from .env.
+TOOL_ENV_KEYS = ("PATH", "HOME", "USER", "LOGNAME", "SHELL", "TMPDIR", "TEMP", "TMP", "LANG", "LC_ALL",
+                 "LC_CTYPE", "TERM", "SYSTEMROOT", "COMSPEC", "PATHEXT", "APPDATA", "LOCALAPPDATA",
+                 "npm_config_cache", "NODE_EXTRA_CA_CERTS", "SSL_CERT_FILE", "TESSDATA_PREFIX",
+                 "HTTP_PROXY", "HTTPS_PROXY", "NO_PROXY", "http_proxy", "https_proxy", "no_proxy")
+
+
+def tool_env(**extra: str) -> dict:
+    """A minimal environment for a subprocess: TOOL_ENV_KEYS from this one, plus `extra`."""
+    return {**{k: os.environ[k] for k in TOOL_ENV_KEYS if k in os.environ}, **extra}
+
+
 def lint_design_md(paths: list[Path]) -> tuple[list[str], dict]:
     """Run the pinned DESIGN.md linter on each file from a throwaway directory, so nothing
     npm writes lands in the repository. Returns (problems, {file: {rule: count}}): errors,
@@ -936,7 +950,7 @@ def lint_design_md(paths: list[Path]) -> tuple[list[str], dict]:
     with tempfile.TemporaryDirectory() as tmp:
         for path in paths:
             done = subprocess.run(["npx", "--yes", DESIGN_MD_LINTER, "lint", "--format", "json",
-                                   str(path.resolve())], cwd=tmp, capture_output=True, text=True)
+                                   str(path.resolve())], cwd=tmp, capture_output=True, text=True, env=tool_env())
             rel = path.resolve().relative_to(ROOT).as_posix()
             try:
                 report = json.loads(done.stdout)
@@ -1017,7 +1031,7 @@ def _make_thumb(src: Path, dst: Path) -> bool:
     if backend == "sips":
         done = subprocess.run(["sips", "-s", "format", "jpeg", "-s", "formatOptions", "78",
                                "--resampleWidth", str(THUMB_WIDTH), str(src), "--out", str(dst)],
-                              capture_output=True)
+                              capture_output=True, env=tool_env())
         return done.returncode == 0 and dst.exists()
     if backend != "pillow":
         return False
