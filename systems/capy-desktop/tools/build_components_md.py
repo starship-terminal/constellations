@@ -190,12 +190,13 @@ def as_token(t, prop, raw):
             stats["token"] += 1
             return f"`{pick(CIDX[t][v], prop)}` {v}"
         return f"{v}"
-    m = re.fullmatch(r"([\d.]+)px", raw)
+    # Chromium computes rounded-full (9999px or calc(infinity)) as 1.67772e+07px, so the number may carry an exponent.
+    m = re.fullmatch(r"([\d.]+(?:e[+-]?\d+)?)px", raw)
     if m:
         exact, v = "%gpx" % float(m.group(1)), "%gpx" % round(float(m.group(1)))
         group = {"border-top-left-radius": "radius", "height": "controlHeight", "padding-right": "spacing", "padding-left": "spacing",
                  "padding-top": "spacing", "font-size": "fontSize", "line-height": "lineHeight", "letter-spacing": "letterSpacing"}.get(prop)
-        if v == "9999px" and prop == "border-top-left-radius":
+        if float(m.group(1)) >= 9999 and prop == "border-top-left-radius":
             stats["token"] += 1
             return "`radius.full`"
         # Look the measured length up as measured (16.25px is lineHeight.sm), then rounded.

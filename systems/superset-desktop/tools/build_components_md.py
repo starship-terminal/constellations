@@ -141,7 +141,8 @@ def as_token(t, prop, raw):
             stats["token"] += 1
             return f"`{pick(CIDX[t][v], prop)}` {v}"
         return f"{v}"
-    m = re.fullmatch(r"([\d.]+)px", raw)
+    # Chromium computes rounded-full (9999px or calc(infinity)) as 1.67772e+07px, so the number may carry an exponent.
+    m = re.fullmatch(r"([\d.]+(?:e[+-]?\d+)?)px", raw)
     if m:
         # Match the measured length exactly; a fractional length no token holds is written as measured.
         v = "%gpx" % round(float(m.group(1)), 2)

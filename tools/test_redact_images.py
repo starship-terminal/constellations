@@ -100,6 +100,21 @@ class Commands(unittest.TestCase):
             with self.assertRaises(SystemExit):
                 R.ocr_words(Image.new("RGB", (50, 50)))
 
+    def test_binary_tesseract_stderr_still_stops_the_run_cleanly(self):
+        # Seen when tesseract cannot open its input: it echoes the PNG's own bytes.
+        import os
+        import stat
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            fake = Path(d) / "tesseract"
+            fake.write_text("#!/bin/sh\nprintf 'Image file \\211PNG cannot be read!\\n' >&2\nexit 1\n")
+            fake.chmod(fake.stat().st_mode | stat.S_IXUSR)
+            with mock.patch.dict(os.environ, {"PATH": f"{d}{os.pathsep}{os.environ.get('PATH', '')}"}):
+                with self.assertRaises(SystemExit) as caught:
+                    R.ocr_words(Image.new("RGB", (50, 50)))
+        self.assertIn("tesseract failed (exit 1)", str(caught.exception))
+        self.assertIn("cannot be read", str(caught.exception))
+
     def test_tall_narrow_captures_are_enlarged_like_short_ones(self):
         from unittest import mock
         sizes = []
