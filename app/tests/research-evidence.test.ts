@@ -137,8 +137,14 @@ test("all token groups retain raw values and evidence while aliases and composit
       }),
     ]),
   );
+  // A cyclic alias terminates and stays an unresolved reference, never a value.
   const cycle = await packageTokens("systems:test", "core.loopA", 0, new Set());
-  expect(JSON.stringify(cycle)).toContain("{core.loop");
+  expect(cycle.tokens).toHaveLength(1);
+  expect(cycle.tokens![0]).toMatchObject({
+    name: "core.loopA",
+    rawValue: "{core.loopB}",
+  });
+  expect(cycle.tokens![0].value).toMatch(/^\{core\.loop[AB]\}$/);
   const prompt = await handoffPrompt("systems:test", "a dashboard", new Set());
   expect(prompt.prompt).toContain("systems/test/README.md");
   expect(prompt.prompt).toContain("a dashboard");
@@ -245,47 +251,42 @@ test("exclusions apply to every new evidence tool and remove prior evidence from
   expect(JSON.stringify(history)).not.toContain("Private evidence");
 });
 
-test("Telegram text tokens named value retain every sibling and their recorded values", async () => {
+test("a token named value keeps every sibling and its recorded value", async () => {
   const root = await fixture();
-  // Exercise the real package shape that triggered the review, not a synthetic
-  // value field that cannot show the lost sibling evidence.
-  const source = await fs.readFile(
-    new URL("../../systems/telegram/tokens.json", import.meta.url),
-    "utf8",
+  // The shape that triggered the review (Telegram's light.color.text has a
+  // token literally named "value"), copied with invented values so a
+  // recapture of that package cannot change this test.
+  await fs.writeFile(
+    path.join(root, "systems/test/tokens.json"),
+    JSON.stringify({
+      light: {
+        color: {
+          text: {
+            value: { $value: "#111111", $type: "color" },
+            primary: { $value: "#222222", $type: "color" },
+            secondary: {
+              $value: "#333333",
+              $type: "color",
+              $extensions: { evidence: "Sampled" },
+            },
+          },
+        },
+      },
+    }),
   );
-  const captured = JSON.parse(source);
-  await fs.writeFile(path.join(root, "systems/test/tokens.json"), source);
   const text = await packageTokens(
     "systems:test",
     "light.color.text",
     0,
     new Set(),
   );
-  const expected = Object.entries(captured.light.color.text).map(
-    ([name, token]) => ({
-      name: `light.color.text.${name}`,
-      value: (token as { $value: unknown }).$value,
-    }),
-  );
   expect(
     text.tokens?.map((token) => ({ name: token.name, value: token.value })),
-  ).toEqual(expected);
-  expect(text.tokens).toEqual(
-    expect.arrayContaining([
-      expect.objectContaining({
-        name: "light.color.text.value",
-        value: "#8E8D91",
-      }),
-      expect.objectContaining({
-        name: "light.color.text.primary",
-        value: "#000000",
-      }),
-      expect.objectContaining({
-        name: "light.color.text.secondary",
-        value: "#8D8D90",
-      }),
-    ]),
-  );
+  ).toEqual([
+    { name: "light.color.text.value", value: "#111111" },
+    { name: "light.color.text.primary", value: "#222222" },
+    { name: "light.color.text.secondary", value: "#333333" },
+  ]);
   expect(text.tokens?.some((token) => token.name === "light.color.text")).toBe(
     false,
   );

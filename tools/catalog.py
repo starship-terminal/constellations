@@ -421,12 +421,32 @@ def contrast(tokens: dict, theme: str, pairs: list[str], over: str | None = None
     return results
 
 
-TEXT_EXT = {".md", ".json", ".html", ".txt", ".tsv", ".csv", ".css", ".svg", ".mjs", ".js", ".py", ".yml", ".yaml"}
-SIGNED_URL = re.compile(r"[?&](?:amp;)?(X-Amz-Signature|X-Amz-Security-Token|Key-Pair-Id|Signature)=")
+SCAN_SKIP_DIRS = {".git", "node_modules", "__pycache__"}
+
+
+def is_text_file(f: Path) -> bool:
+    """Whether `scan` reads a file: anything with no NUL byte in its first 8 KiB. An extension
+    allowlist missed .tsx, .sh, .swift, .plist, extensionless files; images, fonts and archives
+    all carry NUL bytes near the start."""
+    with open(f, "rb") as fh:
+        return b"\0" not in fh.read(8192)
+
+
+# The credential-carrying URL parameters, one list for scan, the kit's unsnap.py and (a checked
+# copy in) its snapshot.js. Built the way unsnap.py builds it.
+SIGNED_PARAMS = ROOT / "tools" / "kit" / "capture" / "signed-in" / "signed-params.json"
+
+
+def signed_url_pattern(spec: dict) -> re.Pattern:
+    names = [re.escape(p) + r"[A-Za-z0-9-]*" for p in spec["prefixes"]] + [re.escape(p) for p in spec["params"]]
+    return re.compile(r"(?:[?&#]|%3F|%26|%23)(?:amp;)?(" + "|".join(names) + r")(?:=|%3D)", re.I)
+
+
+SIGNED_URL = signed_url_pattern(json.loads(SIGNED_PARAMS.read_text()))
 
 
 def scan(folder: Path, redact: dict) -> list[str]:
-    """Every text file under `folder` checked against the redaction file's patterns (the
+    """Every text file under `folder` (any extension or none; see is_text_file) checked against the redaction file's patterns (the
     [pattern, flags, replacement] triples unsnap.py uses) and for URL signing parameters.
     Returns "path:line: what" for each hit; the matched text itself is never printed. A
     missing folder, a folder with no text files, or a file that cannot be read is an error,
@@ -437,9 +457,11 @@ def scan(folder: Path, redact: dict) -> list[str]:
              enumerate(redact.get("replace", []), 1)]
     hits, checked = [], 0
     for f in sorted(folder.rglob("*")):
-        if not f.is_file() or f.suffix.lower() not in TEXT_EXT:
+        if not f.is_file() or SCAN_SKIP_DIRS & set(f.relative_to(folder).parts):
             continue
         try:
+            if not is_text_file(f):
+                continue
             lines = f.read_text(errors="replace").splitlines()
         except OSError as e:
             hits.append(f"{f}: could not be read ({e.strerror})")

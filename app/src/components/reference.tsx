@@ -5,7 +5,6 @@ import referenceStyles from "./reference.module.css";
 import styles from "@/design/reference-values.module.css";
 import { useEffect, useRef, useState } from "react";
 import {
-  ArrowLeft,
   ArrowRight,
   Bookmark,
   Check,
@@ -19,7 +18,6 @@ import {
   BookOpen,
   Pin,
   Plus,
-  Minus,
   X,
 } from "lucide-react";
 import type {
@@ -31,7 +29,6 @@ import {
   api,
   CopyButton,
   DownloadButton,
-  Empty,
   ErrorState,
   MediaPreview,
   Modal,
@@ -158,10 +155,10 @@ export function SaveReference({
           method: "POST",
           body: JSON.stringify({ name: name.trim() }),
         });
-        id = d.collection?.id || d.id;
+        id = d.id;
         setSelected(id);
         setName("");
-        setCollections((previous) => [d.collection || d, ...previous]);
+        setCollections((previous) => [d, ...previous]);
       }
       if (!id) throw new Error("Choose a collection or create one.");
       await api(`/api/collections/${id}/items`, {
@@ -702,7 +699,7 @@ export function ReferenceInspector({
     setError("");
     api<LibraryDetail>(`/api/library/${current.source}/${current.slug}`)
       .then((d) => {
-        if (live) setDetail((d as any).reference || d);
+        if (live) setDetail(d);
       })
       .catch((e) => {
         if (live) setError(e.message);
@@ -1147,7 +1144,7 @@ export function Comparison({
       ),
     )
       .then((d) => {
-        if (live) setDetails(d.map((x) => (x as any).reference || x));
+        if (live) setDetails(d);
       })
       .catch((e) => setError(e.message));
     return () => {

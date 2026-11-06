@@ -139,13 +139,26 @@ export async function usableMedia(file: string | null): Promise<boolean> {
     return false;
   }
 }
+// Raw readings, local fonts and tooling output stay private on every surface.
+const PRIVATE_PACKAGE_DIRS = new Set([
+  "raw",
+  "fonts",
+  "node_modules",
+  "__pycache__",
+]);
 export async function resolveMedia(parts: string[]): Promise<string | null> {
   if (
     !parts.length ||
     parts.some(
       (p) =>
-        !p || p === ".." || p === "." || p.includes("/") || p.includes("\\"),
-    )
+        !p ||
+        p.startsWith(".") ||
+        p.includes("/") ||
+        p.includes("\\") ||
+        p.includes("\0"),
+    ) ||
+    (parts[0] === "systems" &&
+      parts.slice(2).some((p) => PRIVATE_PACKAGE_DIRS.has(p)))
   )
     return null;
   let root = repoRoot(),
@@ -238,12 +251,6 @@ const DOCUMENT_EXT = new Set([
   ".toml",
   ".sh",
   ".map",
-]);
-const PRIVATE_PACKAGE_DIRS = new Set([
-  "raw",
-  "fonts",
-  "node_modules",
-  "__pycache__",
 ]);
 const MAX_DOCUMENT_BYTES = 4 * 1024 * 1024;
 export function packageDocumentUrl(slug: string, relative: string): string {

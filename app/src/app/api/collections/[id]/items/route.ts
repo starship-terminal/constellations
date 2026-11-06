@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { getStore } from "@/server/db";
-import { getReference } from "@/server/sources";
+import { getReferenceSummary } from "@/server/sources";
 import {
   endpoint,
   mutationGuard,
@@ -26,7 +26,7 @@ export function POST(request: Request, context: Context) {
     const store = await getStore();
     if (!(await store.getCollection(id)))
       throw new HttpError(404, "Collection not found.");
-    if (!(await getReference(body.referenceId)))
+    if (!(await getReferenceSummary(body.referenceId)))
       throw new HttpError(400, "Unknown reference.");
     await store.putItem(id, body.referenceId, body.note);
     return Response.json({ ok: true });

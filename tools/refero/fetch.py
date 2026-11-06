@@ -271,6 +271,18 @@ def write_atomic(path, text):
     os.replace(tmp, path)
 
 
+def style_dir(slug, old_slug=None):
+    """refero/<slug>/, created if needed. A refetch whose name now slugs
+    differently moves the style's old folder (and its exported files) to the
+    new slug, so the old one is not left behind as an orphan check.py fails on."""
+    outdir = REFERO / slug
+    old_dir = REFERO / old_slug if old_slug and old_slug != slug else None
+    if old_dir and old_dir.is_dir() and not outdir.exists():
+        os.replace(old_dir, outdir)
+    outdir.mkdir(exist_ok=True)
+    return outdir
+
+
 def style_meta(uuid, slug, name, result, media, labels, fetched_at):
     """The meta.json object a fetched style gets: uuid/slug/name, tagline and
     theme from designSystem, the classify.py label keys, the URLs, then the
@@ -378,20 +390,19 @@ def cmd_fetch(args):
             slug = unique_slug(db, name, uuid)
             # A refetch must not erase labels classify.py or a human already set.
             old = db.execute(
-                "SELECT product_type, design_style, tags FROM styles WHERE uuid=?",
+                "SELECT product_type, design_style, tags, slug FROM styles WHERE uuid=?",
                 (uuid,)).fetchone()
             labels = {"product_type": old[0], "design_style": old[1],
                       "tags": json.loads(old[2] or "[]")} if old and old[0] \
                      else {"product_type": None, "design_style": None, "tags": []}
             write_atomic(WORK / f"{uuid}.json", json.dumps(result))
-            outdir = REFERO / slug
-            outdir.mkdir(exist_ok=True)
+            outdir = style_dir(slug, old[3] if old else None)
             if design_md:
-                (outdir / "DESIGN.md").write_text(design_md)
+                write_atomic(outdir / "DESIGN.md", design_md)
             meta_obj = style_meta(
                 uuid, slug, name, result, media, labels,
                 time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))
-            (outdir / "meta.json").write_text(json.dumps(meta_obj, indent=2) + "\n")
+            write_atomic(outdir / "meta.json", json.dumps(meta_obj, indent=2) + "\n")
             db.execute(
                 """INSERT OR REPLACE INTO styles
                    (uuid, slug, name, tagline, page_url, source_url, theme,
@@ -544,7 +555,7 @@ def cmd_catalog():
             for s, n, t, u, p, su, th, ea, fa, pt, st, tg in rows
         ],
     }
-    (REFERO / "catalog.json").write_text(json.dumps(catalog, indent=2) + "\n")
+    write_atomic(REFERO / "catalog.json", json.dumps(catalog, indent=2) + "\n")
     print(f"catalog.json: {len(rows)} styles")
     db.close()
 
