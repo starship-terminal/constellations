@@ -6,6 +6,7 @@
 // image tries the local mirror first and falls back to the remote CDN.
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { useUrlMirror } from "@/components/url-state";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ReferoCard, ReferoIndex as ReferoIndexData } from "@/lib/refero";
 
@@ -216,6 +217,7 @@ export function ReferoIndex({ index }: { index: ReferoIndexData }) {
     () => new Set((params.get("tag") || "").split(",").filter(Boolean)),
   );
   const [shown, setShown] = useState(PAGE);
+  const [filtersReady, setFiltersReady] = useState(false);
   const qRef = useRef<HTMLInputElement>(null);
   const sentRef = useRef<HTMLDivElement>(null);
   const gridTop = useRef<HTMLDivElement>(null);
@@ -231,6 +233,9 @@ export function ReferoIndex({ index }: { index: ReferoIndexData }) {
       if (!params.get("video") && s.video) setVideoOnly(true);
       if (!params.get("tag") && Array.isArray(s.tags)) setTagSet(new Set(s.tags));
     } catch {}
+    // Rendered together with the restored filters, so the saved-view check
+    // below compares against them and not the URL-only first render.
+    setFiltersReady(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
@@ -246,6 +251,16 @@ export function ReferoIndex({ index }: { index: ReferoIndexData }) {
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, []);
+
+  useUrlMirror({
+    q: q.trim() || null,
+    theme: theme === "all" ? null : theme,
+    type: type === "all" ? null : type,
+    style: style === "all" ? null : style,
+    industry: industry === "all" ? null : industry,
+    video: videoOnly ? "1" : null,
+    tag: [...tagSet].join(",") || null,
+  });
 
   const save = (patch: object) => {
     try {
@@ -304,7 +319,54 @@ export function ReferoIndex({ index }: { index: ReferoIndexData }) {
     return scored.map(([, s]) => s);
   }, [index, theme, type, style, industry, videoOnly, tagSet, toks, facets, hay]);
 
-  useEffect(() => setShown(PAGE), [q, theme, type, style, industry, videoOnly, tagSet]);
+  // How far the grid was scrolled in, kept for this tab so Back from a style
+  // returns to the same cards rather than the first page at the top.
+  const viewKey = JSON.stringify([q.trim(), theme, type, style, industry, videoOnly, [...tagSet].sort()]);
+  const restore = useRef<{ shown: number; y: number } | null>(null);
+  const firstView = useRef(true);
+  useEffect(() => {
+    if (!filtersReady) return;
+    if (firstView.current) {
+      firstView.current = false;
+      try {
+        const v = JSON.parse(sessionStorage.getItem("ds-refero-view") || "null");
+        if (v && v.key === viewKey && v.shown > PAGE) {
+          setShown(v.shown);
+          if (typeof v.y === "number") restore.current = { shown: v.shown, y: v.y };
+          return;
+        }
+      } catch {}
+    }
+    setShown(PAGE);
+  }, [viewKey, filtersReady]);
+  useEffect(() => {
+    // Scroll once the saved number of cards has rendered; earlier, the page
+    // is too short and the browser would clamp the position.
+    const r = restore.current;
+    if (!r || shown < r.shown) return;
+    restore.current = null;
+    window.scrollTo(0, r.y);
+  }, [shown]);
+  useEffect(() => {
+    // Nothing is saved until the saved view has been read and restored.
+    if (!filtersReady || restore.current) return;
+    const keep = () => {
+      try {
+        sessionStorage.setItem("ds-refero-view", JSON.stringify({ key: viewKey, shown, y: window.scrollY }));
+      } catch {}
+    };
+    let timer = 0;
+    const onScroll = () => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(keep, 120);
+    };
+    keep();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [viewKey, shown, filtersReady]);
 
   const hasMore = shown < list.length;
   useEffect(() => {
@@ -328,6 +390,7 @@ export function ReferoIndex({ index }: { index: ReferoIndexData }) {
     setVideoOnly(false);
     setTagSet(new Set());
     setQ(label);
+    save({ theme: "", type: "", style: "", industry: "", video: false, tags: [] });
     gridTop.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
