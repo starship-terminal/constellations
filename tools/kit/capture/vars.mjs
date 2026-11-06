@@ -1,4 +1,5 @@
-// Read every custom property Claude's stylesheets declare and write raw/css-vars.json.
+// Read every custom property the product's stylesheets declare and write raw/css-vars.json. The kit's
+// copy is Claude's: search for PRODUCT (adapt) for the parts to change.
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs SNAPS=<dir of page copies> node tools/capture/vars.mjs
 //
@@ -30,6 +31,7 @@ const SNAPS = process.env.SNAPS;
 if (!SNAPS) { console.error('SNAPS=<dir of page copies> is required'); process.exit(2); }
 
 const blocks = new Map();
+const COPIES = fs.readdirSync(SNAPS).filter((n) => n.endsWith('.html')).length;
 for (const f of fs.readdirSync(SNAPS).filter((n) => n.endsWith('.html')).sort()) {
   const html = fs.readFileSync(path.join(SNAPS, f), 'utf8');
   for (const m of html.matchAll(/<style([^>]*)>([\s\S]*?)<\/style>/g)) {
@@ -103,6 +105,8 @@ const result = await page.evaluate((sheets) => {
 // Claude still forces on some components). The viewport is 1440 x 900, so a clamp() with vw resolves
 // to its 1440-wide value.
 const page2 = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+// PRODUCT (adapt): the root attributes and frame the product's own pages carry (Claude's below), so
+// every theme- and density-scoped declaration applies to the probes.
 const shell = (mode, density) => '<!doctype html><html class="cds-root" lang="en-US" data-theme="claude" data-color-version="v2" data-mode="' + mode + '" data-density="' + density + '" data-font="anthropic"><head>'
   + sheets.map((s) => '<style' + (s.media ? ' media="' + s.media + '"' : '') + '>' + s.css.replace(/<\/style/gi, '<\\/style') + '</style>').join('')
   + '</head><body class="bg-surface-1 text-primary font-sans"><div id="probe-root"></div>'
@@ -187,9 +191,10 @@ for (const r of ok) {
 }
 const names = (bin) => [...new Set(ok.filter((r) => r.bin === bin).flatMap((r) => Object.keys(r.properties)))].sort();
 const out = {
-  readAt: '2026-10-04',
+  readAt: new Date().toLocaleDateString('en-CA'), // the local date of the run
+  // PRODUCT (adapt): where this product's CSS came from.
   source: 'the <style> blocks snapshot.js inlined into each signed-in page copy (claude.ai\'s CSS from assets-proxy.anthropic.com), deduplicated by content',
-  sheets: sheets.map(({ name, media, bytes, copies }) => ({ name, media, bytes, copies: copies.length === 20 ? 'all 20 copies' : copies })),
+  sheets: sheets.map(({ name, media, bytes, copies }) => ({ name, media, bytes, copies: copies.length === COPIES ? `all ${COPIES} copies` : copies })),
   counts: {
     rules: ok.length,
     fonts: result.fonts.length,

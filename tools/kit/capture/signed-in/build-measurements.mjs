@@ -104,7 +104,9 @@ function hoverChanges(theme) {
 
 const L = [];
 const W = (s = '') => L.push(s);
-W('# ChatGPT component measurements');
+// PRODUCT (adapt): the product's name, and the States paragraph below, which describes ChatGPT's capture.
+const PRODUCT = process.env.PRODUCT || 'ChatGPT';
+W(`# ${PRODUCT} component measurements`);
 W('');
 W(`Computed styles read on ${J._meta.read} by \`tools/capture/signed-in/measure.mjs\` from static page copies of the signed-in app (${J._meta.viewport}), and written here by \`tools/capture/signed-in/build-measurements.mjs\` from [components-computed.json](components-computed.json). ${J._meta.themes}`);
 W('');
