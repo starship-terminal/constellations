@@ -15,8 +15,9 @@ const GLASS = [16, 32, 48].map((s) => `icon ${ASSETS}icons/glass/favicon-${s}.pn
 
 // A page whose <head> holds the Flat links and the manifest, as site.py writes it.
 // `stored` is a ds-icon value or a Map standing in for the browser's localStorage,
-// so a second page() on the same Map is a reload.
-function page(stored) {
+// so a second page() on the same Map is a reload. `storage` replaces the
+// localStorage stub, for a browser that refuses access to it.
+function page(stored, storage) {
   const log = [];
   const events = [];
   const listeners = {};
@@ -46,7 +47,7 @@ function page(stored) {
     dispatchEvent: (e) => events.push(e.detail),
   };
   const window = { addEventListener: (type, fn) => { listeners[type] = fn; } };
-  const localStorage = { getItem: (k) => store.get(k) ?? null, setItem: (k, v) => store.set(k, v) };
+  const localStorage = storage ?? { getItem: (k) => store.get(k) ?? null, setItem: (k, v) => store.set(k, v) };
   class CustomEvent { constructor(type, init) { this.type = type; this.detail = init.detail; } }
   vm.runInNewContext(SRC, { document, window, localStorage, CustomEvent, URL });
   return {
@@ -113,4 +114,16 @@ test('another tab changing the choice is followed', () => {
   assert.deepEqual(p.icons(), FLAT);
   p.listeners.storage({ key: 'ds-theme' });
   assert.deepEqual(p.events, ['glass', 'flat']);
+});
+
+test('blocked storage keeps Flat and still switches for the session', () => {
+  // Safari private mode and cookie blocking make localStorage throw.
+  const blocked = { getItem() { throw new Error('SecurityError'); }, setItem() { throw new Error('QuotaExceededError'); } };
+  const p = page(undefined, blocked);
+  assert.deepEqual(p.icons(), FLAT);
+  assert.equal(p.icon(), 'flat');
+  p.api.set('glass');
+  assert.deepEqual(p.icons(), GLASS);
+  assert.equal(p.api.get(), 'glass');
+  assert.deepEqual(p.events, ['glass']);
 });
