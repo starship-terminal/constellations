@@ -1,0 +1,360 @@
+{
+  "controls": [
+    {
+      "disabled": false,
+      "href": "#main",
+      "label": "Skip to content",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm",
+      "label": "Back to organization home",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm",
+      "label": "kai chenFree",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Show organizations",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Feedback",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Search...⌘K",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Help",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Advisor Center",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm",
+      "label": "Projects",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/team",
+      "label": "Team",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/integrations",
+      "label": "Integrations",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/usage",
+      "label": "Usage",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/billing",
+      "label": "Billing",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/general",
+      "label": "Organization Settings",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Sidebar control",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Current billing cycle",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "All projects",
+      "role": "combobox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/platform/billing-on-supabase",
+      "label": "How billing works",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/pricing",
+      "label": "Supabase Plans",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/usage#logIngestion",
+      "label": "Log IngestionUpcoming0 / 1 GB",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/usage#logQuery",
+      "label": "Log QueryUpcoming0 / 100 GB",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/usage#dbSize",
+      "label": "Database Size0 / 0.5 GB",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/usage#egress",
+      "label": "Egress0 / 5 GB",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/usage#cachedEgress",
+      "label": "Cached Egress0 / 5 GB",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/usage#mau",
+      "label": "Monthly Active Users0 / 50,000 MAU",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/usage#storageSize",
+      "label": "Storage Size0 / 1 GB",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/usage#realtimePeakConnections",
+      "label": "Realtime Concurrent Peak Connections0 / 200",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/usage#realtimeMessageCount",
+      "label": "Realtime Messages0 / 2,000,000",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/usage#funcInvocations",
+      "label": "Edge Function Invocations0 / 500,000",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/usage#mauSso",
+      "label": "Monthly Active SSO UsersUnavailable in plan",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/billing?panel=subscriptionPlan&source=billingBreakdownUsagemauSso",
+      "label": "Upgrade",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/usage#storageImageTransformations",
+      "label": "Storage Image TransformationsUnavailable in plan",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/billing?panel=subscriptionPlan&source=billingBreakdownUsagestorageImageTransformations",
+      "label": "Upgrade",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/platform/manage-your-usage/egress",
+      "label": "Documentation",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/platform/manage-your-usage/egress",
+      "label": "Documentation",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/platform/database-size",
+      "label": "Documentation",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/storage",
+      "label": "Storage",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/auth",
+      "label": "Auth",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/auth/sso/auth-sso-saml",
+      "label": "SSO with SAML 2.0",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/billing?panel=subscriptionPlan&source=usageMONTHLY_ACTIVE_SSO_USERS",
+      "label": "Upgrade plan",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/storage/image-transformations",
+      "label": "Documentation",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/billing?panel=subscriptionPlan&source=usageSTORAGE_IMAGES_TRANSFORMED",
+      "label": "Upgrade plan",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/functions",
+      "label": "Edge Functions",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/realtime/limits",
+      "label": "Realtime Limits",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/realtime/limits",
+      "label": "Realtime Limits",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/platform/manage-your-usage/logs-ingest",
+      "label": "Log Ingestion",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/platform/manage-your-usage/logs-query",
+      "label": "Log Query",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/platform/manage-your-usage/pipelines",
+      "label": "Pipelines",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/platform/manage-your-usage/pipelines",
+      "label": "Pipelines",
+      "role": null,
+      "tag": "A"
+    }
+  ],
+  "dpr": 1,
+  "height": 720,
+  "theme": "",
+  "time": "2026-10-31T04:35:48.362Z",
+  "url": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/usage",
+  "width": 1280
+}

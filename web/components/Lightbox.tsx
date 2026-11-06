@@ -47,6 +47,13 @@ const writeSaved = (s: Set<string>) => {
   } catch {}
 };
 
+// Focusable controls that are actually rendered: a control inside a
+// display:none rail has no layout boxes and must not take focus.
+const visibleStops = () =>
+  Array.from(document.querySelectorAll<HTMLElement>(".lightbox button:not([hidden]), .lightbox a[href]")).filter(
+    (el) => el.getClientRects().length > 0,
+  );
+
 export function LightboxProvider({ children }: { children: React.ReactNode }) {
   const [state, setState] = useState<({ items: LbItem[]; index: number } & LbOpts) | null>(null);
   const opener = useRef<Element | null>(null);
@@ -74,9 +81,7 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
       if (e.key === "ArrowLeft") step(-1);
       if (e.key === "ArrowRight") step(1);
       if (e.key === "Tab") {
-        const stops = Array.from(
-          document.querySelectorAll<HTMLElement>(".lightbox button:not([hidden]), .lightbox a[href]"),
-        );
+        const stops = visibleStops();
         if (!stops.length) return;
         const at = stops.indexOf(document.activeElement as HTMLElement);
         e.preventDefault();
@@ -84,6 +89,10 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
       }
     };
     document.addEventListener("keydown", onKey);
+    // Start on a Close that is on screen: the side rail (and its Close) is
+    // hidden on narrow screens, where the stage carries its own.
+    const stops = visibleStops();
+    (stops.find((el) => el.matches(".lb-close")) ?? stops[0])?.focus();
     return () => {
       document.body.style.overflow = "";
       document.removeEventListener("keydown", onKey);
@@ -102,6 +111,9 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
       {children}
       <div className="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" onClick={(e) => { if (e.target === e.currentTarget) close(); }}>
         <div className="lb-stage" onClick={(e) => { if (e.target === e.currentTarget) close(); }}>
+          <button className="lb-close lb-stage-close icon-btn" type="button" aria-label="Close" onClick={close}>
+            ✕
+          </button>
           <span className="lb-pos">
             {state.index + 1} / {state.items.length.toLocaleString()}
           </span>
@@ -144,7 +156,7 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
                 </span>
               </Link>
             )}
-            <button className="lb-close icon-btn" type="button" aria-label="Close" onClick={close} autoFocus>
+            <button className="lb-close icon-btn" type="button" aria-label="Close" onClick={close}>
               ✕
             </button>
           </div>

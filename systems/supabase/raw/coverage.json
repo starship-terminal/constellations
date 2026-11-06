@@ -1,0 +1,166 @@
+{
+  "Colour roles": {
+    "status": "captured",
+    "evidence": "App page, card, text, border and accent in both themes; incomplete semantic roles."
+  },
+  "Typography": {
+    "status": "captured",
+    "evidence": "Body, heading and control label computed styles; landing readings separately retained."
+  },
+  "Spacing": {
+    "status": "not captured",
+    "evidence": "Per-element padding remains in raw; no general spacing scale established."
+  },
+  "Radii": {
+    "status": "captured",
+    "evidence": "Control radius from New project; card radius in component tokens."
+  },
+  "Borders": {
+    "status": "captured",
+    "evidence": "Default border colour; widths in raw; focus role not established."
+  },
+  "Elevation": {
+    "status": "captured",
+    "evidence": "Raw box-shadow readings on controls; no generalized elevation scale."
+  },
+  "Motion": {
+    "status": "captured",
+    "evidence": "Control transition duration; easing in raw; animation behaviour not timed."
+  },
+  "Sizing": {
+    "status": "captured",
+    "evidence": "Control heights and native screenshot dimensions."
+  },
+  "Layout": {
+    "status": "captured",
+    "evidence": "App and landing desktop 1280 CSS px, mobile 390 CSS px; exact breakpoint not measured."
+  },
+  "Button": {
+    "status": "captured",
+    "evidence": "Default, disabled Save as snippet and disabled project controls; no full hover/pressed coverage."
+  },
+  "Icon button": {
+    "status": "captured",
+    "evidence": "Shell and mobile toolbar."
+  },
+  "Link": {
+    "status": "captured",
+    "evidence": "App navigation and landing calls to action."
+  },
+  "Text field": {
+    "status": "captured",
+    "evidence": "Project search and command search, empty result."
+  },
+  "Text area": {
+    "status": "not captured",
+    "evidence": "No ordinary textarea sampled; SQL editor is separately recorded."
+  },
+  "Select": {
+    "status": "captured",
+    "evidence": "Project and SQL snippet combobox popups."
+  },
+  "Checkbox": {
+    "status": "captured",
+    "evidence": "Status filter unchecked and checked, without saving."
+  },
+  "Radio": {
+    "status": "captured",
+    "evidence": "Theme menu System selected and grid/list view selection observed; not a generic form radio."
+  },
+  "Switch": {
+    "status": "not captured",
+    "evidence": "No switch sampled."
+  },
+  "Tabs": {
+    "status": "not captured",
+    "evidence": "Landing demo tabs interacted with, but retained demo screenshots rejected."
+  },
+  "Menu": {
+    "status": "captured",
+    "evidence": "Project, sort, account, snippet and mobile navigation menus."
+  },
+  "Tooltip": {
+    "status": "captured",
+    "evidence": "Account settings tooltip in light projects screenshot; no dedicated token mapping."
+  },
+  "Dialog": {
+    "status": "captured",
+    "evidence": "Command menu and no-results state."
+  },
+  "Toast": {
+    "status": "not captured",
+    "evidence": "No mutation submitted to produce a toast."
+  },
+  "Card": {
+    "status": "captured",
+    "evidence": "Project cards in both themes and widths."
+  },
+  "List row": {
+    "status": "captured",
+    "evidence": "Menu and usage rows; database rows unavailable."
+  },
+  "Table": {
+    "status": "not captured",
+    "evidence": "Both projects paused; table editor disabled."
+  },
+  "Avatar": {
+    "status": "captured",
+    "evidence": "Owner avatar retained under current privacy policy."
+  },
+  "Badge": {
+    "status": "captured",
+    "evidence": "Free, Production and Paused badges in shell and project picker."
+  },
+  "App shell and navigation": {
+    "status": "captured",
+    "evidence": "Desktop shell, mobile organization navigation and breadcrumb project picker."
+  },
+  "Form validation error": {
+    "status": "not captured",
+    "evidence": "No form submitted."
+  },
+  "Empty state": {
+    "status": "captured",
+    "evidence": "Command search with no matches."
+  },
+  "Loading state": {
+    "status": "not captured",
+    "evidence": "Transient snippet loading observed but no accepted screenshot."
+  },
+  "Error state": {
+    "status": "not captured",
+    "evidence": "No error induced; paused state is a separate access limitation."
+  },
+  "Destructive confirmation": {
+    "status": "not captured",
+    "evidence": "No destructive flow opened."
+  },
+  "Action feedback": {
+    "status": "not captured",
+    "evidence": "No data-changing actions submitted."
+  },
+  "Search and filtering": {
+    "status": "captured",
+    "evidence": "Project status filter and command search; table filters unavailable."
+  },
+  "List or table": {
+    "status": "captured",
+    "evidence": "Projects grid and menu lists; no database table."
+  },
+  "Onboarding": {
+    "status": "not captured",
+    "evidence": "Existing account; no project or account created."
+  },
+  "Database schema navigation": {
+    "status": "not captured",
+    "evidence": "Paused project disables Database."
+  },
+  "Row detail panel": {
+    "status": "not captured",
+    "evidence": "Paused project disables Table Editor."
+  },
+  "SQL editor": {
+    "status": "captured",
+    "evidence": "Empty side panel and existing snippet names; main workspace and query results unavailable, no SQL executed."
+  }
+}

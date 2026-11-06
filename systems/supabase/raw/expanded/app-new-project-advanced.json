@@ -1,0 +1,241 @@
+{
+  "controls": [
+    {
+      "disabled": false,
+      "href": "#main",
+      "label": "Skip to content",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm",
+      "label": "Back to organization home",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm",
+      "label": "kai chenFree",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Show organizations",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Feedback",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Search...⌘K",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Help",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Advisor Center",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "kai chenFree",
+      "role": "combobox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "kai chenFree",
+      "role": null,
+      "tag": "SELECT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Choose GitHub repository",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/deployment/branching/github-integration",
+      "label": "Learn more",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Project name",
+      "role": null,
+      "tag": "INPUT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Type in a strong password",
+      "role": null,
+      "tag": "INPUT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Generate a password",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Auto",
+      "role": "combobox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "AutoRecommendedAmericasEuropeAsia-Pacific",
+      "role": null,
+      "tag": "SELECT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Need a specific region?",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "INPUT"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/reference/javascript/introduction",
+      "label": "supabase-js",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "INPUT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": "checkbox",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "INPUT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Advanced Configuration",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "PostgresDefaultRecommended for production workloads",
+      "role": "radio",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "INPUT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Postgres with OrioleDBBetaNot recommended for production workloads",
+      "role": "radio",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "INPUT"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Cancel",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Create new project",
+      "role": null,
+      "tag": "BUTTON"
+    }
+  ],
+  "dpr": 1,
+  "height": 720,
+  "theme": "",
+  "time": "2026-10-31T04:38:52.318Z",
+  "url": "https://supabase.com/dashboard/new/mdrcsktscdjvwtdslhwm",
+  "width": 1280
+}
