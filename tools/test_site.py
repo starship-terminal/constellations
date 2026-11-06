@@ -8,7 +8,9 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -120,6 +122,100 @@ class AppIconTest(unittest.TestCase):
         flat = {p.name for p in (self.ASSETS / "icons").iterdir() if p.is_file()}
         glass = {p.name for p in (self.ASSETS / "icons" / "glass").iterdir()}
         self.assertEqual(flat, glass)
+
+
+class FrontmatterTest(unittest.TestCase):
+    def test_hide_block_is_split_off(self):
+        hidden, body = sitegen.frontmatter("---\nhide:\n  - navigation\n  - toc\n---\n# Title\n")
+        self.assertEqual((hidden, body), ({"navigation", "toc"}, "# Title\n"))
+
+    def test_no_block_or_a_later_rule_is_left_alone(self):
+        self.assertEqual(sitegen.frontmatter("# Title\n"), (set(), "# Title\n"))
+        md = "# Title\n\n---\nhide:\n  - toc\n---\n"
+        self.assertEqual(sitegen.frontmatter(md), (set(), md))
+
+    def test_page_title_strips_markup_and_falls_back_to_the_stem(self):
+        self.assertEqual(sitegen.page_title("intro\n# The **`tokens`** file\n", "x"), "The tokens file")
+        self.assertEqual(sitegen.page_title("<div>raw</div>\n", "PACKAGE"), "PACKAGE")
+
+
+class RewriteLinksTest(unittest.TestCase):
+    def rewrite(self, href, src="index.md", url=""):
+        page = sitegen.Page(sitegen.DOCS / src, url, None)
+        return sitegen.rewrite_links(f'<a href="{href}">x</a>', page)
+
+    def test_md_links_become_dir_urls_relative_to_the_page(self):
+        self.assertEqual(self.rewrite("PACKAGE.md"), '<a href="PACKAGE/">x</a>')
+        self.assertEqual(self.rewrite("PACKAGE.md#layout", "EVIDENCE.md", "EVIDENCE/"),
+                         '<a href="../PACKAGE/#layout">x</a>')
+        self.assertEqual(self.rewrite("index.md", "EVIDENCE.md", "EVIDENCE/"), '<a href="../">x</a>')
+
+    def test_links_resolve_from_the_source_folder(self):
+        self.assertEqual(self.rewrite("../PACKAGE.md", "scorecard/linear.md", "scorecard/linear/"),
+                         '<a href="../../PACKAGE/">x</a>')
+        self.assertEqual(self.rewrite("index.md", "scorecard/linear.md", "scorecard/linear/"),
+                         '<a href="../">x</a>')
+
+    def test_external_and_non_md_links_are_untouched(self):
+        for href in ("https://example.test/a.md", "//host/a.md", "mailto:a@example.test", "assets/x.png"):
+            self.assertEqual(self.rewrite(href), f'<a href="{href}">x</a>')
+
+
+@unittest.skipUnless(importlib.util.find_spec("markdown"), "needs markdown (requirements.txt)")
+class BuildTest(unittest.TestCase):
+    """build() into a temporary folder: pages, the statics and nothing else."""
+
+    @classmethod
+    def setUpClass(cls):
+        # A copy of docs/ with two scorecard pages, since docs/scorecard/ is generated
+        # (gitignored) and absent on a fresh checkout.
+        cls.tmp = tempfile.TemporaryDirectory()
+        cls.docs = Path(cls.tmp.name) / "docs"
+        shutil.copytree(sitegen.DOCS, cls.docs, ignore=shutil.ignore_patterns("scorecard"))
+        (cls.docs / "scorecard").mkdir()
+        (cls.docs / "scorecard" / "index.md").write_text("# Scorecard\n\nSee [linear](linear.md).\n")
+        (cls.docs / "scorecard" / "linear.md").write_text("# Linear\n\nBack to [the docs](../PACKAGE.md).\n")
+        cls.out = Path(cls.tmp.name) / "site"
+        with mock.patch.object(sitegen, "DOCS", cls.docs), mock.patch.object(sitegen, "OUT", cls.out), \
+             mock.patch("sys.stdout"):
+            cls.pages = sitegen.pages()
+            sitegen.build()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.tmp.cleanup()
+
+    def files(self):
+        return sorted(p.relative_to(self.out).as_posix() for p in self.out.rglob("*") if p.is_file())
+
+    def test_no_gallery_and_no_package_media(self):
+        files = self.files()
+        self.assertFalse((self.out / "gallery").exists())
+        self.assertFalse([f for f in files if "gallery" in f or f.startswith("systems/")])
+        self.assertFalse([f for f in files if f in ("search.json", "sitemap.xml")])
+
+    def test_only_pages_and_exact_copies_of_the_docs_statics_are_written(self):
+        statics = ["site.webmanifest"] + sorted(
+            p.relative_to(self.docs).as_posix() for d in ("assets", "stylesheets")
+            for p in (self.docs / d).rglob("*") if p.is_file())
+        files = self.files()
+        self.assertEqual([f for f in files if not f.endswith(".html")],
+                         sorted(f for f in statics if not f.endswith(".html")))
+        for f in statics:
+            self.assertEqual((self.out / f).read_bytes(), (self.docs / f).read_bytes(), f)
+
+    def test_every_page_is_written(self):
+        files = set(self.files())
+        self.assertTrue({"scorecard/index.html", "scorecard/linear/index.html"} <= files)
+        for page in self.pages:
+            if page.src.exists():
+                self.assertIn(f"{page.url}index.html", files)
+        self.assertTrue({"settings/index.html", "404.html"} <= files)
+
+    def test_nested_scorecard_links_are_rewritten(self):
+        html = (self.out / "scorecard" / "linear" / "index.html").read_text()
+        self.assertIn('href="../../PACKAGE/"', html)
+        self.assertIn('href="linear/"', (self.out / "scorecard" / "index.html").read_text())
 
 
 if __name__ == "__main__":
