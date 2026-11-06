@@ -6,6 +6,7 @@ import {
   Binoculars,
   Check,
   Grid2X2,
+  Laptop,
   Monitor,
   Files,
   Scissors,
@@ -305,6 +306,22 @@ function LibraryContent() {
               >
                 <Smartphone className={styles.iosModeIcon} size={18} />
                 iOS apps
+              </Link>
+              <Link
+                className={platform === "desktop" ? styles.modeActive : ""}
+                href={
+                  platformLinksReady ? modeUrl("desktop") : `/library?${params}`
+                }
+                aria-disabled={!platformLinksReady}
+                title={
+                  platformLinksReady ? undefined : "Loading selected filters…"
+                }
+                onClick={(event) => {
+                  if (!platformLinksReady) event.preventDefault();
+                }}
+              >
+                <Laptop size={18} />
+                Desktop apps
               </Link>
             </nav>
             {screenView && (
