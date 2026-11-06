@@ -44,9 +44,15 @@ export interface CatalogSnapshot {
   items: LibraryItem[];
   total: number;
 }
+interface CatalogListener {
+  onUpdate: (snapshot: CatalogSnapshot) => void;
+  onPageError: (error: unknown) => void;
+}
 interface CatalogEntry extends CatalogSnapshot {
   complete: boolean;
   at: number;
+  pending?: Promise<void>;
+  listeners: Set<CatalogListener>;
 }
 /** How long a fully loaded catalog is reused across page visits. */
 export const CATALOG_TTL_MS = 5 * 60_000;
@@ -54,10 +60,17 @@ const catalogs = new Map<string, CatalogEntry>();
 export function clearCatalogCache(): void {
   catalogs.clear();
 }
+const snapshot = (entry: CatalogEntry): CatalogSnapshot => ({
+  items: entry.items,
+  total: entry.total,
+});
 /**
  * Load every page of one store's catalog once per CATALOG_TTL_MS and share it
- * between page visits. An incomplete load (a page failed) is fetched again
- * next time, keeping the items it already has.
+ * between page visits. A caller that arrives while a load is running joins
+ * it instead of starting another. Items already held are shown at once; a
+ * load that completes replaces them with exactly what it fetched, so removed
+ * captures disappear, while a load with a failed page keeps them and is
+ * fetched again next time.
  */
 export async function loadCatalog(
   key: string,
@@ -66,30 +79,66 @@ export async function loadCatalog(
   onPageError: (error: unknown) => void,
   now = Date.now(),
 ): Promise<void> {
-  const cached = catalogs.get(key);
-  if (cached?.complete && now - cached.at < CATALOG_TTL_MS) {
-    onUpdate({ items: cached.items, total: cached.total });
+  let entry = catalogs.get(key);
+  if (entry?.complete && now - entry.at < CATALOG_TTL_MS) {
+    onUpdate(snapshot(entry));
     return;
   }
-  const entry: CatalogEntry = {
-    items: cached?.items || [],
-    total: cached?.total ?? 0,
-    complete: false,
-    at: now,
-  };
-  catalogs.set(key, entry);
+  if (!entry) {
+    entry = {
+      items: [],
+      total: 0,
+      complete: false,
+      at: now,
+      listeners: new Set(),
+    };
+    catalogs.set(key, entry);
+  }
+  if (entry.items.length) onUpdate(snapshot(entry));
+  const listener = { onUpdate, onPageError };
+  entry.listeners.add(listener);
+  try {
+    if (!entry.pending) {
+      const loading = entry;
+      loading.pending = refreshCatalog(loading, fetchPage, now).finally(() => {
+        loading.pending = undefined;
+      });
+    }
+    await entry.pending;
+  } finally {
+    entry.listeners.delete(listener);
+  }
+}
+async function refreshCatalog(
+  entry: CatalogEntry,
+  fetchPage: (offset: number) => Promise<LibraryResponse>,
+  now: number,
+): Promise<void> {
+  const previous = entry.items;
+  let fetched: LibraryItem[] = [];
   let failed = false;
+  entry.complete = false;
+  const publish = () => {
+    for (const listener of entry.listeners) listener.onUpdate(snapshot(entry));
+  };
   await loadLibraryPages(
     fetchPage,
     (page) => {
-      entry.items = mergeLibraryItems(entry.items, page.items);
+      fetched = mergeLibraryItems(fetched, page.items);
+      entry.items = mergeLibraryItems(previous, fetched);
       entry.total = page.total;
-      onUpdate({ items: entry.items, total: entry.total });
+      publish();
     },
     (error) => {
       failed = true;
-      onPageError(error);
+      for (const listener of entry.listeners) listener.onPageError(error);
     },
   );
-  entry.complete = !failed;
+  if (failed) return;
+  // fetched is a subset of the merged list, so equal length means equal sets.
+  const removed = fetched.length !== entry.items.length;
+  entry.items = fetched;
+  entry.complete = true;
+  entry.at = now;
+  if (removed) publish();
 }

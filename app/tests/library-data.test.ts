@@ -163,4 +163,73 @@ describe("shared catalog cache", () => {
     expect(retry).toHaveBeenCalledTimes(2);
     expect(last).toEqual(["a", "z"]);
   });
+  it("drops removed items once a refresh completes", async () => {
+    clearCatalogCache();
+    await loadCatalog(
+      "systems",
+      async () => page(["a", "gone"], 2),
+      () => {},
+      () => {},
+      0,
+    );
+    let last: string[] = [];
+    await loadCatalog(
+      "systems",
+      async () => page(["a"], 1),
+      (snapshot) => (last = snapshot.items.map((value) => value.slug)),
+      () => {},
+      CATALOG_TTL_MS,
+    );
+    expect(last).toEqual(["a"]);
+  });
+  it("lets a returning visit join the load already running", async () => {
+    clearCatalogCache();
+    const first = deferred<LibraryResponse>();
+    const fetchPage = vi.fn(() => first.promise);
+    const seen: number[] = [];
+    const one = loadCatalog(
+      "refero",
+      fetchPage,
+      () => {},
+      () => {},
+      0,
+    );
+    const two = loadCatalog(
+      "refero",
+      fetchPage,
+      (snapshot) => seen.push(snapshot.items.length),
+      () => {},
+      0,
+    );
+    first.resolve(page(["a"], 1));
+    await Promise.all([one, two]);
+    expect(fetchPage).toHaveBeenCalledTimes(1);
+    expect(seen.at(-1)).toBe(1);
+  });
+  it("shows retained items before retrying, even if the retry fails", async () => {
+    clearCatalogCache();
+    await loadCatalog(
+      "systems",
+      async (offset) => {
+        if (offset) throw new Error("page failed");
+        return page(["a"], 201);
+      },
+      () => {},
+      () => {},
+      0,
+    );
+    let shown: string[] = [];
+    await expect(
+      loadCatalog(
+        "systems",
+        async () => {
+          throw new Error("offline");
+        },
+        (snapshot) => (shown = snapshot.items.map((value) => value.slug)),
+        () => {},
+        1,
+      ),
+    ).rejects.toThrow("offline");
+    expect(shown).toEqual(["a"]);
+  });
 });
