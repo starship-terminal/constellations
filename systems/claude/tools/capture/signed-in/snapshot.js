@@ -118,12 +118,17 @@ window.__snap = function (label, REDACT) {
     cV[i].removeAttribute('src');
     cV[i].querySelectorAll('source,track').forEach((n) => n.remove());
   });
+  // A field that holds a credential never reaches the copy: a hidden input (CSRF and session
+  // tokens), a one-time code or card field loses its value; a password keeps only a fixed
+  // eight-dot stand-in, so the field still renders filled.
+  const SECRET_FIELD = (el) => el.type === 'hidden' || /one-time-code|cc-|current-password|new-password/.test(el.autocomplete || '')
+    || /token|csrf|secret|otp|passcode|api[-_]?key/i.test((el.name || '') + ' ' + (el.id || ''));
   const srcIn = document.querySelectorAll('input,textarea,select'), cIn = clone.querySelectorAll('input,textarea,select');
   srcIn.forEach((el, i) => {
     const c = cIn[i];
     if (!c) return;
-    // A password or hidden field (a CSRF or session token) keeps no value in the copy.
-    if (el.type === 'password' || el.type === 'hidden') { c.removeAttribute('value'); return; }
+    if (el.type === 'password') { if (el.value) c.setAttribute('value', 'xxxxxxxx'); else c.removeAttribute('value'); return; }
+    if (el.tagName === 'INPUT' && SECRET_FIELD(el)) { c.removeAttribute('value'); return; }
     if (el.type === 'checkbox' || el.type === 'radio') { if (el.checked) c.setAttribute('checked', ''); else c.removeAttribute('checked'); }
     else if (el.tagName === 'TEXTAREA') c.textContent = el.value;
     else if (el.tagName === 'SELECT') [...c.options].forEach((o, j) => { o.selected = el.options[j] && el.options[j].selected; });

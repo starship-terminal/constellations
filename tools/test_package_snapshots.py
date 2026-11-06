@@ -1,6 +1,6 @@
 """The signed-in snapshot copies inside packages (systems/<slug>/tools/capture/) keep the kit's
 private-data guards: one signed-URL parameter list, an unsnap.py that checks the copy and its
-metadata and needs $SNAP_REDACT, and a snapshot.js that copies no password or hidden value.
+metadata and needs $SNAP_REDACT, and a snapshot.js that carries the kit's credential-field rule.
 Each package is self-contained, so each carries its own copy; this keeps them in step."""
 import importlib.util
 import json
@@ -56,10 +56,54 @@ class PackageSnapshots(unittest.TestCase):
             self.assertIsNotNone(m, f"{slug} snapshot.js has no SIGNED_PARAMS line")
             self.assertEqual(json.loads(m.group(1)), want, slug)
 
-    def test_snapshot_js_blanks_password_and_hidden_values(self):
+    def input_rule(self, src, label):
+        """The credential-field rule of a snapshot.js: SECRET_FIELD and the two input lines."""
+        m = re.search(r"^  const SECRET_FIELD = .*?\n.*?\n(?=  const srcIn)", src, re.M | re.S)
+        self.assertIsNotNone(m, f"{label} has no SECRET_FIELD")
+        lines = [l for l in src.splitlines() if "el.type === 'password'" in l or "SECRET_FIELD(el)" in l]
+        self.assertEqual(len(lines), 2, label)
+        return m.group(0), lines
+
+    def test_snapshot_js_input_rule_matches_the_kit(self):
+        # The kit blanks password (fixed stand-in), hidden, one-time-code, card-number and
+        # token-named inputs. A package copy that only blanked password and hidden let a
+        # named token or card field through, so each copy must carry the kit's rule verbatim.
+        want = self.input_rule((KIT / "signed-in" / "snapshot.js").read_text(), "kit")
         for slug in PACKAGES:
             src = (folder(slug) / "snapshot.js").read_text()
-            self.assertIn("if (el.type === 'password' || el.type === 'hidden') { c.removeAttribute('value'); return; }", src, slug)
+            self.assertEqual(self.input_rule(src, slug), want, slug)
+            self.assertNotIn("el.type === 'password' || el.type === 'hidden'", src, slug)
+
+    @unittest.skipUnless(shutil.which("node"), "needs node")
+    def test_snapshot_js_input_rule_blanks_credentials_when_run(self):
+        cases = [  # (source field, expected value attribute on the copy; None = removed, unset = left to the later lines)
+            ({"tagName": "INPUT", "type": "password", "value": "hunter2"}, "xxxxxxxx"),
+            ({"tagName": "INPUT", "type": "password", "value": ""}, None),
+            ({"tagName": "INPUT", "type": "hidden", "value": "csrf-abc"}, None),
+            ({"tagName": "INPUT", "type": "text", "autocomplete": "one-time-code", "value": "123456"}, None),
+            ({"tagName": "INPUT", "type": "text", "autocomplete": "cc-number", "value": "4242"}, None),
+            ({"tagName": "INPUT", "type": "text", "name": "auth_token", "value": "tok-abc"}, None),
+            ({"tagName": "INPUT", "type": "text", "id": "apiKey", "value": "key-abc"}, None),
+            ({"tagName": "INPUT", "type": "text", "name": "q", "value": "plain"}, "unset"),   # falls through to the ordinary copy
+        ]
+        harness = """
+const cases = %s;
+const rule = %s;
+const out = cases.map(([el]) => {
+  const st = { attr: 'unset' };
+  const c = { setAttribute: (k, v) => { st.attr = v; }, removeAttribute: () => { st.attr = null; } };
+  new Function('el', 'c', rule)(el, c);
+  return st.attr;
+});
+console.log(JSON.stringify(out));
+"""
+        for slug in PACKAGES:
+            defs, lines = self.input_rule((folder(slug) / "snapshot.js").read_text(), slug)
+            rule = defs + "".join(l.strip() + "\n" for l in lines)
+            res = subprocess.run(["node", "-e", harness % (json.dumps(cases), json.dumps(rule))],
+                                 capture_output=True, text=True)
+            self.assertEqual(res.returncode, 0, (slug, res.stderr))
+            self.assertEqual(json.loads(res.stdout), [w for _, w in cases], slug)
 
     def test_unsnap_flags_every_signed_url(self):
         for slug in PACKAGES:
