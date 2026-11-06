@@ -50,3 +50,14 @@ export function PATCH(request: Request, context: Context) {
     return Response.json((await store.getCollection(id))!.collection);
   });
 }
+export function DELETE(request: Request, context: Context) {
+  return endpoint(async () => {
+    mutationGuard(request);
+    const id = identifier.parse((await context.params).id);
+    const store = await getStore();
+    if (!(await store.getCollection(id)))
+      throw new HttpError(404, "Collection not found.");
+    await store.deleteCollection(id);
+    return Response.json({ deleted: id });
+  });
+}

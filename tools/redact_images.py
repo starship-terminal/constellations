@@ -80,7 +80,7 @@ import numpy as np
 from PIL import Image, ImageFilter, ImageSequence
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from catalog import IMAGE_EXT  # noqa: E402  (the image types a package holds)
+from catalog import IMAGE_EXT, tool_env  # noqa: E402  (the image types a package holds; a child's env)
 
 Image.MAX_IMAGE_PIXELS = None
 warnings.simplefilter("ignore", Image.DecompressionBombWarning)
@@ -340,7 +340,7 @@ def _tesseract_words(im, psm=11, min_conf=0):
     with tempfile.TemporaryDirectory() as d:
         src = Path(d) / "in.png"
         im.save(src)
-        env = dict(os.environ, OMP_THREAD_LIMIT="1")
+        env = tool_env(OMP_THREAD_LIMIT="1")
         try:
             res = subprocess.run(["tesseract", str(src), "stdout", "--psm", str(psm), "tsv"],
                                  capture_output=True, text=True, env=env)

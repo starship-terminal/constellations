@@ -322,11 +322,19 @@ function useMenuDismiss(
         refocus?.();
       }
     };
+    // Tabbing out of the menu closes it, like a click outside.
+    const leave = (event: FocusEvent) => {
+      const next = event.relatedTarget as Node | null;
+      if (next && !root.current?.contains(next)) setOpen(false);
+    };
+    const node = root.current;
     document.addEventListener("mousedown", close);
     document.addEventListener("keydown", escape);
+    node?.addEventListener("focusout", leave);
     return () => {
       document.removeEventListener("mousedown", close);
       document.removeEventListener("keydown", escape);
+      node?.removeEventListener("focusout", leave);
     };
   }, [open, root, setOpen, refocus]);
 }

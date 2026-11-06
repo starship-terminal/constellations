@@ -9,10 +9,14 @@
 // frame. Frames go to $RAW/<theme>/run/; the step's `approve` decides whether an approval prompt may
 // be accepted (only for actions inside the scratch folder).
 import { rmSync } from 'node:fs';
+import { basename, resolve as pathResolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { connect, disconnect, shoot, viewport, box, computed, writeJson } from './cdp.mjs';
 import * as P from './product.mjs';
 
-const SLUG = process.env.SLUG || 'cursor-desktop';
+// The package folder this script lives in (systems/<slug>/tools/capture/electron/), so a copy in another
+// package never writes into the package it was copied from.
+const SLUG = process.env.SLUG || basename(pathResolve(fileURLToPath(import.meta.url), '../../../..'));
 const RAW = process.env.RAW || `${process.env.HOME}/.design-systems/${SLUG}/raw-shots`;
 const INTERVAL = +(process.env.INTERVAL || 1500), TIMEOUT = +(process.env.TIMEOUT || 120000);
 const theme = process.argv[2];

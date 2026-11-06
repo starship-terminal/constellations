@@ -569,13 +569,10 @@ function LibraryContent() {
                 <button
                   onClick={() => toggle(item)}
                   title={`Remove ${item.name}`}
+                  aria-label={`Remove ${item.name} from comparison`}
                   key={item.id}
                 >
-                  {item.icon ? (
-                    <img src={item.icon} alt={item.name} />
-                  ) : (
-                    item.name[0]
-                  )}
+                  {item.icon ? <img src={item.icon} alt="" /> : item.name[0]}
                   <X size={10} />
                 </button>
               ))}

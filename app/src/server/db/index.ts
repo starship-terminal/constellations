@@ -233,6 +233,10 @@ export async function createResearchStore(directory: string) {
         .set({ ...patch, updatedAt: Date.now() })
         .where(eq(schema.collections.id, id));
     },
+    /** Delete a collection; its items and saved media cascade with it. */
+    async deleteCollection(id: string) {
+      await db.delete(schema.collections).where(eq(schema.collections.id, id));
+    },
     async putItem(collectionId: string, referenceId: string, note?: string) {
       await client.batch(
         [

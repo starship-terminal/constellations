@@ -22,6 +22,7 @@ import {
 } from "./styles-data";
 import styles from "./styles.module.css";
 import { replaceSearch } from "./url-state";
+import { scrollMotion } from "./capture-viewer-motion";
 
 // Representative prompts observed on the live source. Queries use captured facets
 // where the source's semantic search uses words absent from this local snapshot.
@@ -411,7 +412,7 @@ function StylesContent() {
               onSubmit={(event) => {
                 event.preventDefault();
                 results.current?.scrollIntoView({
-                  behavior: "smooth",
+                  behavior: scrollMotion(),
                   block: "start",
                 });
               }}
@@ -567,7 +568,7 @@ function StylesContent() {
               </button>
             ))}
           </div>
-          <p className={styles.count} role="status">
+          <p className={styles.count} role="status" aria-busy={loading}>
             {complete
               ? `${filtered.length.toLocaleString()} styles`
               : `${filtered.length.toLocaleString()} matches · ${items.length.toLocaleString()} of ${total?.toLocaleString() || "…"} styles loaded`}

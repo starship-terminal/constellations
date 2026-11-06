@@ -152,6 +152,10 @@ function visibleOrigin(id: string) {
 export function reducedViewerMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
+/** Smooth scrolling unless the reader asked for reduced motion. */
+export function scrollMotion(): ScrollBehavior {
+  return reducedViewerMotion() ? "instant" : "smooth";
+}
 
 /** Retain the previous image independently while React changes capture URLs. */
 export function animateViewerDeparture(stage: HTMLElement, direction: number) {
