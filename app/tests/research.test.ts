@@ -1,11 +1,8 @@
-import { afterEach, expect, test, vi } from "vitest";
+import { expect, test, vi } from "vitest";
 import type { InspectOutput } from "@/contracts/research";
 import { createOpenAI } from "@ai-sdk/openai";
 import { MockLanguageModelV4, simulateReadableStream } from "ai/test";
-import { mkdtemp, rm } from "node:fs/promises";
-import { tmpdir } from "node:os";
-import { join } from "node:path";
-import { createResearchStore, type ResearchStore } from "@/server/db";
+import { tempStore } from "./helpers";
 import {
   modelHistory,
   researchPrompt,
@@ -56,13 +53,8 @@ vi.mock("@/server/sources", () => ({
     mediaType: "image/png",
   })),
 }));
-const stores: ResearchStore[] = [],
-  dirs: string[] = [];
 async function setup() {
-  const dir = await mkdtemp(join(tmpdir(), "research-stream-"));
-  dirs.push(dir);
-  const store = await createResearchStore(dir);
-  stores.push(store);
+  const { store } = await tempStore("research-stream-");
   const row = await store.createConversation("Test stream");
   await store.saveMessages(row.id, [
     {
@@ -73,11 +65,6 @@ async function setup() {
   ]);
   return { store, conversation: (await store.getConversation(row.id))! };
 }
-afterEach(async () => {
-  for (const store of stores.splice(0)) store.close();
-  for (const dir of dirs.splice(0))
-    await rm(dir, { recursive: true, force: true });
-});
 const usage = {
   inputTokens: { total: 1, noCache: 1, cacheRead: 0, cacheWrite: 0 },
   outputTokens: { total: 1, text: 1, reasoning: 0 },

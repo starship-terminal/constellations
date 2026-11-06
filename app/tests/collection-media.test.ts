@@ -21,20 +21,11 @@ import { GET, POST, DELETE } from "@/app/api/collections/[id]/media/route";
 import { GET as detail } from "@/app/api/collections/[id]/route";
 import { GET as list } from "@/app/api/collections/route";
 import { GET as exportBoard } from "@/app/api/collections/[id]/export/route";
+import { jsonRequest } from "./helpers";
 const mediaId = "systems/example/screenshots/details.png";
 const context = { params: Promise.resolve({ id: "board-a" }) };
 function request(method: string, body?: unknown, query = "") {
-  return new Request(
-    `http://localhost:8845/api/collections/board-a/media${query}`,
-    {
-      method,
-      headers: {
-        origin: "http://localhost:8845",
-        "content-type": "application/json",
-      },
-      ...(body === undefined ? {} : { body: JSON.stringify(body) }),
-    },
-  );
+  return jsonRequest(`/api/collections/board-a/media${query}`, method, body);
 }
 beforeEach(() => {
   vi.clearAllMocks();
