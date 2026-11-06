@@ -166,7 +166,7 @@ class JavaScriptHalves(unittest.TestCase):
         root = HERE.parent
         copies = [SIGNED_IN / "measure.mjs", HERE / "kit/capture/public/lib.mjs",
                   *(root / f"systems/{p}/tools/capture/signed-in/measure.mjs"
-                    for p in ("chatgpt", "claude", "coursera", "linear", "manus", "sentry")),
+                    for p in ("chatgpt", "claude", "coursera", "linear", "manus", "notebooklm", "sentry")),
                   *(root / f"systems/{p}/tools/capture/{rel}" for p, rel in (
                       ("coursera", "lib.mjs"), ("gauth", "lib.mjs"), ("refero-design", "public/lib.mjs"),
                       ("tokentracker", "public/lib.mjs"), ("sentry", "public/lib.mjs"),
@@ -181,6 +181,19 @@ class JavaScriptHalves(unittest.TestCase):
             got = self.node(js_block(path, "const noUrl", "const noUrl")
                             + "\nconsole.log(JSON.stringify(noUrl('linear-gradient(red, blue), url(\"https://x/p.png?sig=1\")')))")
             self.assertEqual(got, "linear-gradient(red, blue), url(…)", path)
+
+    def test_every_recorded_background_image_goes_through_no_url(self):
+        # Beyond the paint loop, a measure script records a background image in the computed-style
+        # pick, a ::before/::after and (Coursera's in-page box()) a box. NotebookLM had no noUrl at
+        # all and Coursera's box() and pseudo() read it raw, so each read of one goes through noUrl.
+        root = HERE.parent
+        for path in (SIGNED_IN / "measure.mjs", root / "systems/notebooklm/tools/capture/signed-in/measure.mjs",
+                     root / "systems/coursera/tools/capture/signed-in/measure.mjs"):
+            src = path.read_text()
+            reads = re.findall(r"[\w(]*\b(?:c|cs|p)\.backgroundImage\.(?:slice|replace)\(", src)
+            self.assertFalse(reads, (path, reads))   # a recorded value is noUrl(x.backgroundImage)...
+            self.assertNotRegex(src, r"o\[p\] = cs\[p\]", path)   # ...and so is every picked property
+            self.assertEqual(len(re.findall(r"const noUrl = ", src)), 1, path)
 
     def test_recorded_page_urls_keep_only_origin_and_route_words(self):
         cases = {
