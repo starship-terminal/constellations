@@ -19,7 +19,7 @@ set's theme, following var() chains and turning a chain that ends on a core toke
 
 Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
 """
-import json, pathlib, re
+import json, pathlib, re, sys
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
@@ -309,32 +309,18 @@ light = build(SPEC["light"], "light")
 dark = build(SPEC["dark"], "dark")
 
 
-# every alias must point at a token that exists
-def tokens_of(tree, prefix=""):
-    for k, v in tree.items():
-        if isinstance(v, dict) and "$value" in v:
-            yield prefix + k, v
-        elif isinstance(v, dict):
-            yield from tokens_of(v, prefix + k + ".")
+# every alias must point at a token in its own set or core; light and dark should name the same roles
+from token_checks import alias_errors, parity_gap  # noqa: E402
 
-
-NAMES = {n for n, _ in tokens_of(core)} | {n for n, _ in tokens_of(light)} | {n for n, _ in tokens_of(dark)}
-
-
-def aliases(v):
-    if isinstance(v, str):
-        return re.findall(r"\{([^{}]+)\}", v)
-    if isinstance(v, dict):
-        return [a for x in v.values() for a in aliases(x)]
-    if isinstance(v, list):
-        return [a for x in v for a in aliases(x)]
-    return []
-
-
-for n, t in list(tokens_of(core)) + list(tokens_of(light)) + list(tokens_of(dark)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES:
-            raise KeyError(f"{n}: alias {{{a}}} points at nothing")
+_errors = alias_errors(core, light, dark)
+if _errors:
+    raise KeyError("; ".join(_errors))
+# A role only one theme has leaves the other unstyled. The 2026-10 capture has 20 roles read only in
+# light and 3 only in dark, so a gap is reported rather than fatal until the capture is redone.
+_only_light, _only_dark = parity_gap(light, dark)
+if _only_light or _only_dark:
+    print(f"warning: light and dark differ: {len(_only_light)} only in light ({', '.join(_only_light)}); "
+          f"{len(_only_dark)} only in dark ({', '.join(_only_dark)})", file=sys.stderr)
 
 tokens = {
     "core": core,
