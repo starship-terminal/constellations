@@ -1,5 +1,5 @@
 // Repository paths and bounded file resolution, ported from tools/catalog.py's
-// repo_file() and tools/refero/refero_media.py's media_file(). Every path the
+// repo_file() and the Refero media path rules. Every path the
 // app serves from the checkout goes through resolveMedia so `..` segments and
 // symlinks can never climb out of the allowed roots.
 import { execFile } from "node:child_process";
