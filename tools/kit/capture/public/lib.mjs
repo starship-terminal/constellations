@@ -99,9 +99,12 @@ export async function styleOf(locator) {
   return locator.evaluate((el, props) => {
     const strip = (c) => String(c).replace(/__[A-Za-z0-9_-]{5,6}$/, '');
     const cls = (n) => [...n.classList].map(strip).filter((c) => !/^x[0-9a-z]{5,8}$/.test(c));
+    // A url() in a computed value (a background photo, a cursor) can be a signed URL: recorded as
+    // url(…), only data: and #fragment references kept.
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))[^)]*\)/g, 'url(…)') : v);
     const pick = (cs) => {
       const o = {};
-      for (const p of props) o[p] = cs[p];
+      for (const p of props) o[p] = noUrl(cs[p]);
       return o;
     };
     const cs = getComputedStyle(el);
@@ -118,7 +121,7 @@ export async function styleOf(locator) {
       if (p.content && p.content !== 'none' && p.content !== 'normal') {
         out[pe] = {
           content: p.content.slice(0, 40), width: p.width, height: p.height, position: p.position,
-          backgroundColor: p.backgroundColor, backgroundImage: p.backgroundImage.slice(0, 200), boxShadow: p.boxShadow,
+          backgroundColor: p.backgroundColor, backgroundImage: noUrl(p.backgroundImage).slice(0, 200), boxShadow: p.boxShadow,
           borderTopWidth: p.borderTopWidth, borderTopStyle: p.borderTopStyle, borderTopColor: p.borderTopColor,
           borderRadius: p.borderRadius, inset: `${p.top} ${p.right} ${p.bottom} ${p.left}`, opacity: p.opacity, transition: p.transition,
         };

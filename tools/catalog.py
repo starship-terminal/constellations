@@ -422,7 +422,17 @@ def contrast(tokens: dict, theme: str, pairs: list[str], over: str | None = None
 
 
 TEXT_EXT = {".md", ".json", ".html", ".txt", ".tsv", ".csv", ".css", ".svg", ".mjs", ".js", ".py", ".yml", ".yaml"}
-SIGNED_URL = re.compile(r"[?&](?:amp;)?(X-Amz-Signature|X-Amz-Security-Token|Key-Pair-Id|Signature)=")
+# The credential-carrying URL parameters, one list for scan, the kit's unsnap.py and (a checked
+# copy in) its snapshot.js. Built the way unsnap.py builds it.
+SIGNED_PARAMS = ROOT / "tools" / "kit" / "capture" / "signed-in" / "signed-params.json"
+
+
+def signed_url_pattern(spec: dict) -> re.Pattern:
+    names = [re.escape(p) + r"[A-Za-z0-9-]*" for p in spec["prefixes"]] + [re.escape(p) for p in spec["params"]]
+    return re.compile(r"(?:[?&#]|%3F|%26|%23)(?:amp;)?(" + "|".join(names) + r")(?:=|%3D)", re.I)
+
+
+SIGNED_URL = signed_url_pattern(json.loads(SIGNED_PARAMS.read_text()))
 
 
 def scan(folder: Path, redact: dict) -> list[str]:

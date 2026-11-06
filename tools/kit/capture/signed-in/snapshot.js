@@ -5,7 +5,7 @@
 // every same-origin stylesheet inlined from the CSSOM (with each url() made absolute against the
 // sheet it came from, so fonts and masks still load from file://), cross-origin sheets kept as
 // <link> tags, scripts removed, iframes replaced by same-size boxes, canvases kept as images,
-// signed URLs cut back to their path, the account's photo replaced by a disc, and every REDACT
+// every query or fragment with a signing parameter cut out (signed-params.json), the account's photo replaced by a disc, and every REDACT
 // pattern replaced. unsnap.py writes it to disk and refuses it if a redacted string or a
 // signing parameter survived; render.mjs screenshots it headless at 2x. The redaction file
 // names the account, so it lives outside the repository. Adapted from the Manus kit.
@@ -63,12 +63,21 @@ function spriteFix(clone) {
   });
   if (keep.size) clone.querySelector('body').insertAdjacentHTML('beforeend', '<svg xmlns="http://www.w3.org/2000/svg" style="display:none" data-sprites="">' + [...keep.values()].join('') + '</svg>');
 }
+// The credential-carrying URL parameters: a copy of signed-params.json beside this file (a console
+// paste cannot read files), which tools/test_kit_privacy.py keeps identical. Same regex as unsnap.py.
+const SIGNED_PARAMS = {"prefixes": ["X-Amz-", "X-Goog-"], "params": ["Signature", "Key-Pair-Id", "Policy", "Expires", "sig", "token", "access_token", "id_token", "refresh_token", "code", "auth"]};
+const SIGNED = new RegExp('(?:[?&#]|%3F|%26|%23)(?:amp;)?(' + [
+  ...SIGNED_PARAMS.prefixes.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '[A-Za-z0-9-]*'),
+  ...SIGNED_PARAMS.params.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+].join('|') + ')(?:=|%3D)', 'i');
+// Every query or fragment in a string that carries a signing parameter is cut out, wherever the URL
+// sits: an attribute of any name, an inline style's url(), a stylesheet, text.
+const cutSigned = (s) => s.replace(/[?#][^\s"'()<>,]*/g, (q) => (SIGNED.test(q) ? '' : q));
 window.__snap = function (label, REDACT) {
   if (!REDACT || !Array.isArray(REDACT.replace)) throw new Error('pass the redaction file as the second argument');
   // A presigned URL (S3, CloudFront) carries a credential that works until it expires, so
   // any URL with a signing parameter loses its whole query string.
-  const SIGNED = /[?&](X-Amz-[A-Za-z-]+|Signature|Key-Pair-Id|Policy|Expires|token|access_token|auth)=/i;
-  const abs = (u) => { let h; try { h = new URL(u, location.href).href; } catch { return u; } return SIGNED.test(h) ? h.split('?')[0] : h; };
+  const abs = (u) => { let h; try { h = new URL(u, location.href).href; } catch { return cutSigned(u); } return SIGNED.test(h) ? cutSigned(h.split('?')[0]) : h; };
   const parts = [];
   for (const ss of document.styleSheets) {
     try {
@@ -160,12 +169,14 @@ window.__snap = function (label, REDACT) {
   clone.querySelector('head').insertAdjacentHTML('beforeend', parts.map((p) => (p.href
     ? '<link rel="stylesheet" href="' + p.href + '">'
     : '<style' + (p.media ? ' media="' + p.media + '"' : '') + '>' + p.css.replace(/<\/style/gi, '<\\/style') + '</style>')).join('\n'));
-  let html = '<!doctype html>\n' + clone.outerHTML;
+  // Last, every attribute of every element: data-src, style="background:url(...)", anything.
+  clone.querySelectorAll('*').forEach((n) => { for (const a of [...n.attributes]) { const v = cutSigned(a.value); if (v !== a.value) n.setAttribute(a.name, v); } });
+  let html = cutSigned('<!doctype html>\n' + clone.outerHTML);
   for (const [pattern, flags, rep] of REDACT.replace) html = html.replace(new RegExp(pattern, flags), rep);
   // Inner scrollers (the task thread is a virtualised list inside one) keep their position only
   // as a property, so each scrolled element is recorded by its child-index path for render.mjs.
   const pathOf = (el) => { const out = []; for (let n = el; n && n !== document.documentElement; n = n.parentElement) out.unshift([...n.parentElement.children].indexOf(n)); return out; };
   const scrolls = [...document.querySelectorAll('*')].filter((e) => e.scrollTop > 0).map((e) => ({ path: pathOf(e), top: e.scrollTop, left: e.scrollLeft, max: e.scrollHeight - e.clientHeight }));
-  const meta = { label, url: location.href, title: document.title, scrollY, w: innerWidth, h: innerHeight, docH: document.documentElement.scrollHeight, scrolls };
+  const meta = { label, url: cutSigned(location.href), title: document.title, scrollY, w: innerWidth, h: innerHeight, docH: document.documentElement.scrollHeight, scrolls };
   return 'SNAPSTART' + JSON.stringify(meta) + 'SNAPMETA' + html + 'SNAPEND';
 };
