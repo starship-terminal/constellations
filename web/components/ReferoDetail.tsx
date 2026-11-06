@@ -290,7 +290,7 @@ function DocsPane({ e, docs }: { e: ReferoEntity; docs: ReferoDoc[] }) {
             )}
           </div>
         </div>
-        <div className="rf-pane-body" id={`${ids}-panel`} role="tabpanel" aria-labelledby={`${ids}-tab-${docs.indexOf(d)}`}>
+        <div className="rf-pane-body" id={`${ids}-panel`} role="tabpanel" tabIndex={0} aria-labelledby={`${ids}-tab-${docs.indexOf(d)}`}>
           {d.code ? (
             <pre className="rf-code">
               <code dangerouslySetInnerHTML={{ __html: d.html }} />
