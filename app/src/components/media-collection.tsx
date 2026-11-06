@@ -109,14 +109,10 @@ function MediaCollectionPicker({
     setBusy("new");
     setError("");
     try {
-      const value = await api<Board & { collection?: Board }>(
-        "/api/collections",
-        {
-          method: "POST",
-          body: JSON.stringify({ name: name.trim() }),
-        },
-      );
-      const board = value.collection || value;
+      const board = await api<Board>("/api/collections", {
+        method: "POST",
+        body: JSON.stringify({ name: name.trim() }),
+      });
       if (live.current) {
         setBoards((previous) => [board, ...previous]);
         setName("");

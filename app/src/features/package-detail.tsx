@@ -37,7 +37,6 @@ import {
   Select,
   SkeletonGrid,
   Spinner,
-  api,
   useResource,
 } from "@/components/shared";
 import { MediaBookmarkButton } from "@/components/media-bookmark";
