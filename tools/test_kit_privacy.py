@@ -84,6 +84,15 @@ class SharedList(unittest.TestCase):
                     self.assertIn("LEAK", res.stderr)
                     self.assertNotIn("Jane", res.stderr)
 
+    def test_unsnap_reads_entities_nbsp_and_split_elements(self):
+        redact = {"replace": [["unrelated", "gi", "x"], ["jane\\s+doe", "gi", "A User"], ["Jane Doe", "g", "A User"]]}
+        for page in ["<p>Jane&nbsp;Doe</p>", "<p>J&#97;ne Doe</p>", "<p>Ja<b>ne</b> Doe</p>",
+                     "<p>Jane</p><p>Doe</p>", '<img alt="Jane&#x20;Doe">', "<p>JANE\u00a0DOE</p>"]:
+            self.assertIn("redaction pattern 2", unsnap.leaks_in(page, redact), page)
+        self.assertEqual(unsnap.leaks_in("<p>Jane&nbsp;Doe</p>", redact), ["redaction pattern 2", "redaction pattern 3"])
+        self.assertEqual(unsnap.leaks_in("<p>A User</p>", redact), [])
+        self.assertEqual(unsnap.leaks_in('<a href="https://x/a?a=1&amp;sig=2">', redact), ["sig"])
+
 
 def js_block(path, start, end):
     """The source lines from the first one starting with `start` through the first after it starting with `end`."""
