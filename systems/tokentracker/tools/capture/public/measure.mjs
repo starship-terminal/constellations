@@ -297,7 +297,15 @@ async function tag(name, { text, role, up = 0, sel, nth = 0, within } = {}) {
 }
 const m = (name) => q(`[data-m="${name}"]`);
 async function T(key, find, list, meta, opts) {
-  if (!(await tag(key, find))) { log('  ! not found', key); comp(THEME === 'dark' ? key : `${key}.light`, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel }).missing = true; return; }
+  if (!(await tag(key, find))) {
+    log('  ! not found', key);
+    const k = THEME === 'dark' ? key : `${key}.light`;
+    // listed as S() would, so a state the spec dropped still goes when the page finishes
+    if (!listed.has(k)) listed.set(k, new Set());
+    for (const st of list) listed.get(k).add(st);
+    comp(k, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel }).missing = true;
+    return;
+  }
   await S(key, m(key), list, meta, opts);
 }
 
