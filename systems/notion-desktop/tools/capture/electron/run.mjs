@@ -17,7 +17,9 @@ const SLUG = process.env.SLUG || new URL('../../..', import.meta.url).pathname.r
 const RAW = process.env.RAW || `${process.env.HOME}/.design-systems/${SLUG}/raw-shots`;
 const INTERVAL = +(process.env.INTERVAL || 1500), TIMEOUT = +(process.env.TIMEOUT || 120000);
 const theme = process.argv[2];
-if (!theme) { console.error('usage: run.mjs <theme>'); process.exit(2); }
+// The theme names a folder that is emptied below, so it must be a plain theme name (`dark`, `light-more`),
+// never a path such as `../..`.
+if (!/^(dark|light)(-[a-z0-9]+)*$/.test(theme || '')) { console.error('usage: run.mjs <dark|light>[-<suffix>]'); process.exit(2); }
 const out = `${RAW}/${theme}/run/frames.json`;
 // A run starts from an empty folder, so no frame of an earlier, longer run survives into this one.
 rmSync(`${RAW}/${theme}/run`, { recursive: true, force: true });

@@ -6,7 +6,9 @@
 import fs from 'fs';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
-const OUT = process.env.OUT; fs.mkdirSync(OUT, { recursive: true });
+const OUT = process.env.OUT;
+if (!OUT) { console.error('set OUT to a scratch directory outside the repository'); process.exit(2); }
+fs.mkdirSync(OUT, { recursive: true });
 const b = await chromium.launch();
 const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2 });
 const p = await ctx.newPage();

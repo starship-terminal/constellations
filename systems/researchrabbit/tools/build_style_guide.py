@@ -81,6 +81,8 @@ def slim(node):
 
 
 data = json.dumps({k: slim(T[k]) for k in ("core", "light")}, ensure_ascii=False, separators=(",", ":"))
+# Inside a <script>, so a "</" in any value (a source quoting </style>, say) must not end it.
+data = data.replace("</", "<\\/")
 tpl = (HERE / "tools" / "style-guide.template.html").read_text()
 for ph in ("/*CORE*/", "/*LIGHT*/", "/*TOKENS*/null"):
     if tpl.count(ph) != 1:

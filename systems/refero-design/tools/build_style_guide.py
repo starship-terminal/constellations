@@ -65,7 +65,9 @@ THEMES = [s for s in SETS if s != "core"]
 def block(setname):  # noqa: F811 (redefined so a missing set renders as nothing)
     if setname not in T:
         return ""
-    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]))
+    # The values go inside a <style>, so a "</" in one (a quoted selector, say) must not end it;
+    # "\\/" is the same slash to CSS.
+    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};".replace("</", "<\\/") for n, t in flat(T[setname]))
 
 
 # a core name and a themed name must not land on the same custom property
@@ -89,6 +91,8 @@ def slim(node):
 
 
 data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "dark")}, ensure_ascii=False, separators=(",", ":"))
+# Inside a <script>, so a "</" in any value (a source quoting </style>, say) must not end it.
+data = data.replace("</", "<\\/")
 
 _uid = [0]
 ICON_SRC = {}
