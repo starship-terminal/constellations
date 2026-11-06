@@ -1,3 +1,6 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Brilliant style guide</title>
 <meta name="description" content="Brilliant (brilliant.org) design tokens and components, rendered from tokens.json with the real values, in light and dark.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -579,6 +582,8 @@ kbd.kc { display: inline-flex; align-items: center; height: 21px; padding: 0 6px
 </main>
 
 <script>
+// Token sources and notes quote selectors and markup ([data-x="y"], <name>), so they are escaped wherever they go into HTML.
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 const TOKENS = /*TOKENS*/null;
 const $ = (s) => document.querySelector(s);
 const getTheme = () => document.documentElement.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -594,7 +599,7 @@ function drawRamps() {
     if (steps.t) continue;
     const row = document.createElement('div'); row.className = 'ramp';
     row.innerHTML = `<span class="lbl">${fam}</span>`;
-    for (const [s, tk] of Object.entries(steps)) { const c = document.createElement('div'); c.className = 'chip'; c.style.background = tk.v; c.style.color = ink(tk.v); c.title = `palette.${fam}.${s} ${tk.v}\n${tk.s}`; c.textContent = s; row.appendChild(c); }
+    for (const [s, tk] of Object.entries(steps)) { const c = document.createElement('div'); c.className = 'chip'; c.style.background = tk.v; c.style.color = ink(tk.v); c.title = `palette.${fam}.${s} ${tk.v}\n${esc(tk.s)}`; c.textContent = s; row.appendChild(c); }
     host.appendChild(row);
   }
 }
@@ -606,7 +611,7 @@ function drawSemantic() {
     const h = document.createElement('h3'); h.className = 'sub'; h.textContent = `${title} (${items.length})`; host.appendChild(h);
     const wrap = document.createElement('div'); wrap.className = 'sem';
     for (const [name, tk] of items) { const val = cssVar(name); const el = document.createElement('div'); el.className = 'it'; el.title = tk.s + (tk.d ? '\n' + tk.d : '');
-      el.innerHTML = `<div class="dot" style="background:var(--${name.replace(/\./g, '-')})"></div><div><div class="nm">${name}</div><div class="vl">${tk.v.startsWith('{') ? tk.v + ' → ' : ''}${val}${tk.d ? ' · ' + tk.d : ''}</div></div>`; wrap.appendChild(el); }
+      el.innerHTML = `<div class="dot" style="background:var(--${name.replace(/\./g, '-')})"></div><div><div class="nm">${name}</div><div class="vl">${tk.v.startsWith('{') ? tk.v + ' → ' : ''}${val}${tk.d ? ' · ' + esc(tk.d) : ''}</div></div>`; wrap.appendChild(el); }
     host.appendChild(wrap);
   }
   const gh = $('#gradients'); gh.innerHTML = '';
@@ -624,26 +629,26 @@ function drawType() {
   ty.sort((a, b) => order.indexOf(a[0].split('.')[0]) - order.indexOf(b[0].split('.')[0]) || parseFloat(b[1].v.fontSize) - parseFloat(a[1].v.fontSize));
   for (const [name, tk] of ty) { const v = tk.v, fam = v.fontFamily.replace(/[{}]/g, '').split('.')[1]; const cls = name.replace(/\./g, '-');
     const sample = name.startsWith('ui.actions.sm') || v.textCase ? 'Level 1 · Start here' : name.startsWith('ui.interactives.math') ? 'x² + 4x + 4 = 0' : name.startsWith('ui.interactives.code') ? 'for i in range(10):' : name.includes('semiMono') ? '2x + 5 = 11' : name.startsWith('display') ? 'Your personal tutor' : name.startsWith('heading') || name.startsWith('headline') ? 'Linear Equations' : 'Build a solid foundation in algebra through hands-on exploration.';
-    host.insertAdjacentHTML('beforeend', `<div class="typerow" title="${tk.s}"><div class="k">${name}<small>${fam} · ${v.fontSize}/${v.lineHeight} · ${v.fontWeight}${v.letterSpacing !== '0px' ? ' · ' + v.letterSpacing : ''}${v.textCase ? ' · ' + v.textCase : ''}</small><small>${tk.d || ''}</small></div>
+    host.insertAdjacentHTML('beforeend', `<div class="typerow" title="${esc(tk.s)}"><div class="k">${name}<small>${fam} · ${v.fontSize}/${v.lineHeight} · ${v.fontWeight}${v.letterSpacing !== '0px' ? ' · ' + v.letterSpacing : ''}${v.textCase ? ' · ' + v.textCase : ''}</small><small>${esc(tk.d || '')}</small></div>
       <div style="font:var(--typography-${cls});letter-spacing:var(--typography-${cls}-ls);text-transform:${v.textCase || 'none'}">${sample}</div></div>`); }
 }
 function table(sel, head, rows) { $(sel).innerHTML = `<tr>${head.map(h => `<th>${h}</th>`).join('')}</tr>` + rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join(''); }
 function drawSpace() {
-  const sp = $('#spacing'); for (const [k, tk] of Object.entries(TOKENS.core.spacing)) { if (parseFloat(tk.v) > 4) continue; sp.insertAdjacentHTML('beforeend', `<div class="cell" title="${tk.s}"><div class="b" style="width:${tk.v};height:${tk.v};min-width:1px;min-height:1px"></div><div class="cap">${k}<br>${parseFloat(tk.v) * 16}px</div></div>`); }
-  table('#sizes', ['Token', 'Value', 'Source'], walk(TOKENS.core.size, 'size.', []).concat(walk(TOKENS.core.focusRing, 'focusRing.', []), walk(TOKENS.core.layout, 'layout.', [])).map(([n, tk]) => [`<code>${n}</code>`, tk.v, `<span class="src">${tk.s}${tk.d ? ' · ' + tk.d : ''}</span>`]));
-  table('#bps', ['Breakpoint', 'Min width', 'Note'], walk(TOKENS.core.breakpoint, '', []).map(([n, tk]) => [n, tk.v, `<span class="src">${tk.d || ''}</span>`]));
+  const sp = $('#spacing'); for (const [k, tk] of Object.entries(TOKENS.core.spacing)) { if (parseFloat(tk.v) > 4) continue; sp.insertAdjacentHTML('beforeend', `<div class="cell" title="${esc(tk.s)}"><div class="b" style="width:${tk.v};height:${tk.v};min-width:1px;min-height:1px"></div><div class="cap">${k}<br>${parseFloat(tk.v) * 16}px</div></div>`); }
+  table('#sizes', ['Token', 'Value', 'Source'], walk(TOKENS.core.size, 'size.', []).concat(walk(TOKENS.core.focusRing, 'focusRing.', []), walk(TOKENS.core.layout, 'layout.', [])).map(([n, tk]) => [`<code>${n}</code>`, tk.v, `<span class="src">${esc(tk.s)}${tk.d ? ' · ' + esc(tk.d) : ''}</span>`]));
+  table('#bps', ['Breakpoint', 'Min width', 'Note'], walk(TOKENS.core.breakpoint, '', []).map(([n, tk]) => [n, tk.v, `<span class="src">${esc(tk.d || '')}</span>`]));
   table('#zidx', ['Layer', 'z-index'], walk(TOKENS.core.zIndex, '', []).filter(([n]) => !n.startsWith('in-content') && !n.startsWith('lesson') && !n.includes('debug')).map(([n, tk]) => [n, tk.v]));
-  const r = $('#radii'); for (const [n, tk] of walk(TOKENS.core.radius, '', [])) r.insertAdjacentHTML('beforeend', `<div class="cell" title="${tk.s}${tk.d ? '\n' + tk.d : ''}"><div style="width:72px;height:72px;border:2px solid var(--border-active);border-radius:${tk.v};background:var(--bg-secondary)"></div><div class="cap">${n}<br>${tk.v}</div></div>`);
-  table('#borders', ['Border width', 'Value', 'Used on'], walk(TOKENS.core.borderWidth, '', []).map(([n, tk]) => [n, tk.v, `<span class="src">${tk.s}</span>`]));
-  const sh = $('#shadows'); for (const [n, tk] of walk(TOKENS[getTheme()].shadow, 'shadow.', [])) sh.insertAdjacentHTML('beforeend', `<div title="${tk.s}"><div style="height:96px;border-radius:var(--radius-xl);background:var(--bg-elevated);border:1px solid var(--border-secondary);box-shadow:var(--${n.replace(/\./g, '-')})"></div><div class="cap" style="text-align:left">${n}<br>${cssVar(n)}</div></div>`);
+  const r = $('#radii'); for (const [n, tk] of walk(TOKENS.core.radius, '', [])) r.insertAdjacentHTML('beforeend', `<div class="cell" title="${esc(tk.s)}${tk.d ? '\n' + esc(tk.d) : ''}"><div style="width:72px;height:72px;border:2px solid var(--border-active);border-radius:${tk.v};background:var(--bg-secondary)"></div><div class="cap">${n}<br>${tk.v}</div></div>`);
+  table('#borders', ['Border width', 'Value', 'Used on'], walk(TOKENS.core.borderWidth, '', []).map(([n, tk]) => [n, tk.v, `<span class="src">${esc(tk.s)}</span>`]));
+  const sh = $('#shadows'); for (const [n, tk] of walk(TOKENS[getTheme()].shadow, 'shadow.', [])) sh.insertAdjacentHTML('beforeend', `<div title="${esc(tk.s)}"><div style="height:96px;border-radius:var(--radius-xl);background:var(--bg-elevated);border:1px solid var(--border-secondary);box-shadow:var(--${n.replace(/\./g, '-')})"></div><div class="cap" style="text-align:left">${n}<br>${cssVar(n)}</div></div>`);
 }
 function drawMotion() {
   const host = $('#motionrows');
   for (const [n, tk] of walk(TOKENS.core.easing, 'easing.', []).concat(walk(TOKENS.core['easing-linear'], 'easing-linear.', []))) {
-    const el = document.createElement('div'); el.innerHTML = `<div class="track" style="cursor:pointer"><div class="motion-dot" style="transition:left var(--duration-spring) var(--${n.replace(/\./g, '-')})"></div></div><div class="src">${n} · ${tk.t === 'cubicBezier' ? 'cubic-bezier(' + tk.v.join(', ') + ')' : 'linear(…)'} · ${tk.s}</div>`;
+    const el = document.createElement('div'); el.innerHTML = `<div class="track" style="cursor:pointer"><div class="motion-dot" style="transition:left var(--duration-spring) var(--${n.replace(/\./g, '-')})"></div></div><div class="src">${n} · ${tk.t === 'cubicBezier' ? 'cubic-bezier(' + tk.v.join(', ') + ')' : 'linear(…)'} · ${esc(tk.s)}</div>`;
     el.querySelector('.track').addEventListener('click', e => e.currentTarget.classList.toggle('go')); host.appendChild(el);
   }
-  table('#durations', ['Duration', 'Value', 'Used for'], walk(TOKENS.core.duration, 'duration.', []).concat(walk(TOKENS.core.motion, 'motion.', [])).map(([n, tk]) => [n, tk.v, `<span class="src">${tk.s}${tk.d ? ' · ' + tk.d : ''}</span>`]));
+  table('#durations', ['Duration', 'Value', 'Used for'], walk(TOKENS.core.duration, 'duration.', []).concat(walk(TOKENS.core.motion, 'motion.', [])).map(([n, tk]) => [n, tk.v, `<span class="src">${esc(tk.s)}${tk.d ? ' · ' + esc(tk.d) : ''}</span>`]));
 }
 function drawB3d() {
   const host = $('#b3d-variants');
@@ -651,7 +656,7 @@ function drawB3d() {
     host.insertAdjacentHTML('beforeend', `<div class="cell"><button class="b3d ${cls}"><span class="face">${label}</span></button><div class="cap">${cls || 'primary'}</div></div>`);
 }
 function redrawThemed() { drawSemantic(); $('#shadows').innerHTML = ''; walk(TOKENS[getTheme()].shadow, 'shadow.', []); drawSpaceShadowsOnly(); $('#ramps') && drawRamps(); }
-function drawSpaceShadowsOnly() { const sh = $('#shadows'); for (const [n, tk] of walk(TOKENS[getTheme()].shadow, 'shadow.', [])) sh.insertAdjacentHTML('beforeend', `<div title="${tk.s}"><div style="height:96px;border-radius:var(--radius-xl);background:var(--bg-elevated);border:1px solid var(--border-secondary);box-shadow:var(--${n.replace(/\./g, '-')})"></div><div class="cap" style="text-align:left">${n}<br>${cssVar(n)}</div></div>`); }
+function drawSpaceShadowsOnly() { const sh = $('#shadows'); for (const [n, tk] of walk(TOKENS[getTheme()].shadow, 'shadow.', [])) sh.insertAdjacentHTML('beforeend', `<div title="${esc(tk.s)}"><div style="height:96px;border-radius:var(--radius-xl);background:var(--bg-elevated);border:1px solid var(--border-secondary);box-shadow:var(--${n.replace(/\./g, '-')})"></div><div class="cap" style="text-align:left">${n}<br>${cssVar(n)}</div></div>`); }
 
 const modes = ['auto', 'light', 'dark'];
 let mode = (() => { try { return localStorage.getItem('brilliant-guide-theme') || 'auto'; } catch (e) { return 'auto'; } })();
