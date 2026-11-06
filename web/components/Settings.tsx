@@ -7,6 +7,7 @@
 import { useEffect, useState } from "react";
 import { useLightbox } from "@/components/Lightbox";
 import { setCollapsed, setTheme, usePrefs, type Theme } from "@/components/prefs";
+import { baseUrlOf } from "@/lib/provider-defaults";
 
 export interface SettingsStats {
   repo: string;
@@ -83,6 +84,11 @@ export function Settings({ stats }: { stats: SettingsStats }) {
       setCfg((c) => ({ ...c, [k]: e.target.value }));
 
   const test = async () => {
+    if (!cfg.api_key) {
+      setWarn(true);
+      setStatus("Fill the API key first; the test uses this form's key, not the server's.");
+      return;
+    }
     setTesting(true);
     setWarn(false);
     setStatus("Testing…");
@@ -90,7 +96,7 @@ export function Settings({ stats }: { stats: SettingsStats }) {
       const r = await fetch("/api/models", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ provider: { ...cfg, base_url: cfg.base_url.trim() } }),
+        body: JSON.stringify({ provider: { ...cfg, base_url: baseUrlOf(cfg) } }),
       });
       const d = await r.json();
       if (d?.ok) {
@@ -99,7 +105,7 @@ export function Settings({ stats }: { stats: SettingsStats }) {
         setStatus(list.length ? `Connected: ${list.length} models found.` : `Connected. ${d.note || "Type the model name."}`);
       } else {
         setWarn(true);
-        setStatus(d?.error === "no_provider" ? "Fill base URL, API key and model first." : d?.error || "Test failed.");
+        setStatus(d?.error === "no_provider" ? "Fill the base URL and API key first." : d?.error || "Test failed.");
       }
     } catch {
       setWarn(true);
@@ -116,7 +122,7 @@ export function Settings({ stats }: { stats: SettingsStats }) {
     }
     const out: Record<string, string> = {
       api: cfg.api,
-      base_url: cfg.base_url.trim(),
+      base_url: baseUrlOf(cfg),
       api_key: cfg.api_key,
       model: cfg.model.trim(),
     };

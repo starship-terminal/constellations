@@ -23,6 +23,7 @@ import time
 import urllib.request
 from pathlib import Path
 
+import fetch  # write_atomic, and cmd_catalog to refresh refero/catalog.json
 import refero_media  # noqa: F401 — importing it loads the repo .env (ANTHROPIC_API_KEY)
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -126,6 +127,13 @@ def host_of(url):
 
 
 def init_db():
+    # sqlite3 would open a pointer file and fail later with "file is not a
+    # database"; say what to do instead.
+    if DB.exists():
+        with open(DB, "rb") as f:
+            if f.read(64).startswith(b"version https://git-lfs"):
+                sys.exit(f"error: {DB} is a Git LFS pointer; "
+                         "run: git lfs install && git lfs pull")
     db = sqlite3.connect(DB)
     have = {r[1] for r in db.execute("PRAGMA table_info(styles)")}
     for col in ("product_type", "design_style", "tags"):
@@ -220,7 +228,7 @@ def write_meta(slug, labels):
         out.update({"product_type": labels["product_type"],
                     "design_style": labels["design_style"],
                     "tags": labels["tags"]})
-    path.write_text(json.dumps(out, indent=2) + "\n")
+    fetch.write_atomic(path, json.dumps(out, indent=2) + "\n")
 
 
 def stats(db):
@@ -252,7 +260,17 @@ def main():
         return
     if not os.environ.get("ANTHROPIC_API_KEY"):
         sys.exit("ANTHROPIC_API_KEY is not set")
+    try:
+        label(db, args)
+    finally:
+        db.close()
+        # catalog.json carries the labels too; refresh it however the run ends
+        # (done, nothing to do, interrupted after some batches committed), or
+        # check.py fails on every relabelled style until fetch.py --catalog-only.
+        fetch.cmd_catalog()
 
+
+def label(db, args):
     where = "" if args.force else "WHERE product_type IS NULL OR design_style IS NULL"
     rows = db.execute(
         f"""SELECT slug, name, tagline, source_url, design_system_json
@@ -309,7 +327,6 @@ def main():
     print(f"labeled {len(results)}/{len(styles)}; "
           f"{len(still)} left unlabeled")
     stats(db)
-    db.close()
 
 
 if __name__ == "__main__":
