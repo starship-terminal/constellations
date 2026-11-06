@@ -112,7 +112,7 @@ def is_ui(t):
 
 def filler(n, seed):
     out, size, i = [], 0, seed * 7
-    while size < n:
+    while size < max(n, 4):   # a text node that is only "You said:" leaves n <= 0
         w = FILL[i % len(FILL)]
         i += 3
         out.append(w)
