@@ -15,35 +15,42 @@ import pathlib, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 ICONS = HERE.parents[1] / "icons"
-names = {}
-for line in (HERE / "icon-names.tsv").read_text().splitlines()[1:]:
-    if "\t" in line:
-        h, n = line.split("\t")[:2]
-        names[h] = n
-rows = (ICONS / "INDEX.tsv").read_text().rstrip("\n").split("\n")
-# The ninth column holds the words either side of the glyph on the page, not a role; it was headed
-# `role` until 2026-10-17.
-out, moves = [rows[0].replace("\tcount\trole\tnote", "\tcount\tcontext\tnote")], []
-for r in rows[1:]:
-    c = r.split("\t")
-    stem = c[0][:-4]
-    if stem.startswith("icon-") and c[2] in names:
-        new = names[c[2]]
-        moves.append((ICONS / c[0], ICONS / f"{new}.svg", c[2]))
-        c[0], c[1] = f"{new}.svg", new
-    if len(c) > 9 and c[9] == "unnamed fallback" and c[2] in names:
-        c[9] = "named by role on 2026-10-17 (icon-names.tsv)"
-    out.append("\t".join(c))
-# Every rename is checked before any is made, so a clash leaves icons/ and INDEX.tsv as they were.
-targets = [dst for _, dst, _ in moves]
-for src, dst, h in moves:
-    if dst.exists() or targets.count(dst) > 1:
-        sys.exit(f"{dst.name} exists or is named twice; pick another name for {h}")
-    if not src.exists():
-        sys.exit(f"{src.name} is in INDEX.tsv but not in icons/")
-for src, dst, _ in moves:
-    src.rename(dst)
-renamed = len(moves)
-(ICONS / "INDEX.tsv").write_text("\n".join(out) + "\n")
-left = sum(1 for r in out[1:] if r.startswith("icon-"))
-print(f"renamed {renamed}; {left} still named by hash")
+
+
+def main(icons=ICONS, names_file=HERE / "icon-names.tsv"):
+    names = {}
+    for line in names_file.read_text().splitlines()[1:]:
+        if "\t" in line:
+            h, n = line.split("\t")[:2]
+            names[h] = n
+    rows = (icons / "INDEX.tsv").read_text().rstrip("\n").split("\n")
+    # The ninth column holds the words either side of the glyph on the page, not a role; it was headed
+    # `role` until 2026-10-17.
+    out, moves = [rows[0].replace("\tcount\trole\tnote", "\tcount\tcontext\tnote")], []
+    for r in rows[1:]:
+        c = r.split("\t")
+        stem = c[0][:-4]
+        if stem.startswith("icon-") and c[2] in names:
+            new = names[c[2]]
+            moves.append((icons / c[0], icons / f"{new}.svg", c[2]))
+            c[0], c[1] = f"{new}.svg", new
+        if len(c) > 9 and c[9] == "unnamed fallback" and c[2] in names:
+            c[9] = "named by role on 2026-10-17 (icon-names.tsv)"
+        out.append("\t".join(c))
+    # Every rename is checked before any is made, so a clash leaves icons/ and INDEX.tsv as they were.
+    targets = [dst for _, dst, _ in moves]
+    for src, dst, h in moves:
+        if dst.exists() or targets.count(dst) > 1:
+            sys.exit(f"{dst.name} exists or is named twice; pick another name for {h}")
+        if not src.exists():
+            sys.exit(f"{src.name} is in INDEX.tsv but not in icons/")
+    for src, dst, _ in moves:
+        src.rename(dst)
+    renamed = len(moves)
+    (icons / "INDEX.tsv").write_text("\n".join(out) + "\n")
+    left = sum(1 for r in out[1:] if r.startswith("icon-"))
+    print(f"renamed {renamed}; {left} still named by hash")
+
+
+if __name__ == "__main__":
+    main()
