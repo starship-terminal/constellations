@@ -47,6 +47,10 @@ class SearchTest(unittest.TestCase):
     def test_get_style_store_disambiguates(self):
         sys_row = library.get_style("linear", "systems")
         self.assertEqual(sys_row.get("slug"), "linear")
+        db = library._refero_db()
+        if db is None:
+            self.skipTest("refero/refero.db is absent or a Git LFS pointer")
+        db.close()
         ref = library.get_style("linear", "refero")
         self.assertEqual(ref.get("slug"), "linear")
         self.assertNotEqual(ref, sys_row)
