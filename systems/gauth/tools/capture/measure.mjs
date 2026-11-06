@@ -54,6 +54,7 @@ let sheetText = []; // the stylesheet bodies of the current page, to find a CSS-
 // page's own stylesheets so a rebuild that changes the hash does not break the kit.
 const moduleClass = (name) => { for (const t of sheetText) { const m = t.match(new RegExp('\\.(' + name + '__[A-Za-z0-9_-]{5,6})\\b')); if (m) return m[1]; } return null; };
 const touched = new Set();
+const listed = new Map(); // component -> the states this run's specs list for it
 
 // ---------- helpers ----------
 
@@ -150,6 +151,8 @@ const FILL = 'What is the derivative of x squared?';
 // Records the listed states of one component. meta: title, group, desc, sel.
 async function S(key, target, list, meta = {}, opts = {}) {
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
+  if (!listed.has(key)) listed.set(key, new Set());
+  for (const st of list) listed.get(key).add(st);
   delete out.components[key].missing;
   if (opts.open) { await reset(); await opts.open(); }
   const loc = target.filter({ visible: true }).first();
@@ -853,5 +856,10 @@ for (const k of want) {
 // a component a page no longer produces is dropped, so a re-run cannot leave stale entries; a page that
 // failed partway keeps its earlier entries, since what it did not reach is not known to be gone
 for (const [key, c] of Object.entries(out.components)) if (done.has(c.run) && !touched.has(key)) { delete out.components[key]; log('dropped stale', key); }
+// the same for states: a state an earlier run recorded that this finished run's spec no longer lists goes
+for (const [key, c] of Object.entries(out.components)) {
+  if (!done.has(c.run) || !listed.has(key)) continue;
+  for (const st of Object.keys(c.states || {})) if (!listed.get(key).has(st)) { delete c.states[st]; log('dropped stale state', key, st); }
+}
 save();
 log('done ->', OUT);
