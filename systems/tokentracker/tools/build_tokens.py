@@ -62,6 +62,15 @@ def meas(key, prop, theme="dark", state="default"):
     return v, f"Measured: computed {prop} of {k} {state} ({C[k]['selector']}), raw/components-computed.json, {READ}"
 
 
+def expect(v, *wanted, key="", whole=False):
+    """The literal a token writes must still be what was measured: each wanted value is one entry of the
+    computed list (or, with whole, a substring of it), else the build stops."""
+    have = v if whole else [x.strip() for x in re.split(r",\s*(?![^()]*\))", v)]
+    for w in wanted:
+        if w not in have:
+            raise ValueError(f"{key}: measured {v!r} no longer holds {w!r}; update the token")
+
+
 def var(name, theme="light"):
     r = RES[theme][name]
     return r["value"], f"Measured: {name} resolved on :root{'.dark' if theme == 'dark' else ''}, raw/css-vars.json"
@@ -186,7 +195,8 @@ sizes = Counter()
 for v, x in K["totals"]["dark"]["type"].items():
     sizes[v.split("/")[0]] += x["n"]
 for i, (size, n) in enumerate(sorted(((sz, n) for sz, n in sizes.items() if n >= 10), key=lambda kv: float(kv[0][:-2]))):
-    put(core, f"font.scale.{size[:-2]}", tok(size, "dimension",
+    # A path splits on dots, so a fractional size (13.5px) is keyed font.scale.13_5.
+    put(core, f"font.scale.{size[:-2].replace('.', '_')}", tok(size, "dimension",
         f"Measured: font size of {n} rendered text elements across the ten pages (dark), raw/census.json totals.dark.type"))
 
 TYPE = [
@@ -212,7 +222,7 @@ for role, key, desc in TYPE:
     r = reading(key, "dark")
     st = r.get("textStyle") or r["style"]
     src = f"Measured: computed font of {key} default (dark){' (its label ' + st['node'] + ')' if r.get('textStyle') else ''}, raw/components-computed.json, {READ}"
-    scale_ref = st["fontSize"][:-2] if sizes.get(st["fontSize"], 0) >= 10 else None
+    scale_ref = st["fontSize"][:-2].replace(".", "_") if sizes.get(st["fontSize"], 0) >= 10 else None
     put(core, f"font.size.{role}", tok(f"{{font.scale.{scale_ref}}}" if scale_ref else st["fontSize"], "dimension",
         src if not scale_ref else f"Derived: alias of font.scale.{scale_ref}, the size {src[len('Measured: '):]}"))
     put(core, f"font.weight.{role}", tok(int(st["fontWeight"]), "fontWeight", src))
@@ -305,6 +315,7 @@ put(core, "space.panelInset", tok(f"{pr['y']:g}px", "dimension",
 
 # Elevation and motion
 v, s = meas("content-panel", "boxShadow")
+expect(v, "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px", key="shadow.sm", whole=True)
 put(core, "shadow.sm", tok([{"offsetX": "0px", "offsetY": "1px", "blur": "2px", "spread": "0px", "color": "#0000000d"}], "shadow", s,
     "The only resting shadow: the content panel and the selected segment."))
 for theme in ["dark", "light"]:
@@ -373,15 +384,20 @@ put(core, "layout.columns", tok(12, "number",
     "Tokens page: a 4-column card stack beside an 8-column overview."))
 
 v, s = meas("nav-item", "transitionDuration")
+expect(v, "0.15s", key="motion.duration.fast")
 put(core, "motion.duration.fast", tok("150ms", "duration", s, "Colour and background changes on hover."))
 v, s = meas("share-button", "transitionDuration")
+expect(v, "0.2s", key="motion.duration.base")
 put(core, "motion.duration.base", tok("200ms", "duration", s, "Buttons, tiles, the sidebar width."))
 v, s = meas("dialog", "transitionDuration", "dark", "open")
+expect(v, "0.26s", "0.22s", key="motion.duration.dialog")
 put(core, "motion.duration.dialog", tok("260ms", "duration", s, "Dialog transform; opacity takes 220ms."))
 put(core, "motion.duration.fade", tok("220ms", "duration", s, "Dialog and toast opacity."))
 v, s = meas("nav-item", "transitionTimingFunction")
+expect(v, "cubic-bezier(0.4, 0, 0.2, 1)", key="motion.easing.standard")
 put(core, "motion.easing.standard", tok([0.4, 0, 0.2, 1], "cubicBezier", s))
 v, s = meas("dialog", "transitionTimingFunction", "dark", "open")
+expect(v, "cubic-bezier(0.16, 1, 0.3, 1)", key="motion.easing.emphasized")
 put(core, "motion.easing.emphasized", tok([0.16, 1, 0.3, 1], "cubicBezier", s, "Dialogs ease out hard."))
 
 core["$extensions"] = {"notTokenised": {

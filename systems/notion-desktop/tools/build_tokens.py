@@ -383,7 +383,8 @@ if get(CORE, "focusRing.width"):
 # Motion: the transitions the captured parts declare.
 seen = {}
 for (part, state), (shot, s) in sorted(P["dark"].items()):
-    for d_, e_ in zip(s["transition-duration"].split(","), s["transition-timing-function"].split(",") if "cubic" not in s["transition-timing-function"] else [s["transition-timing-function"]]):
+    # split_top keeps a cubic-bezier's own commas inside it, so every duration meets its own easing.
+    for d_, e_ in zip(split_top(s["transition-duration"]), split_top(s["transition-timing-function"])):
         d_, e_ = d_.strip(), e_.strip()
         if d_ in ("0s", ""):
             continue
