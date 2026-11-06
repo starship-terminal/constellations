@@ -1762,6 +1762,8 @@ table.t th { color: var(--text-muted); font-weight: 500; }
 .phone .greet { font-size: 30px; line-height: 37.5px; margin: 150px 0 0; }
 .phone .composer { position: absolute; left: 16px; right: 16px; bottom: 40px; width: auto; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after, html .sg-press:active span { transition-duration: 0ms !important; animation-duration: 0ms !important; } }
+/* phones: the app frame drops its fixed-width sidebar so the main column keeps the width */
+@media (max-width: 599px) { .appframe .side { display: none; } .composer .row { flex-wrap: wrap; row-gap: 8px; } }
 </style>
 </head>
 <body>
