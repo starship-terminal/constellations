@@ -455,6 +455,27 @@ class ScanTest(unittest.TestCase):
         self.assertTrue(all(h.endswith(":2: redaction pattern 1") for h in hits))
 
 
+class RedactionLoaderTest(unittest.TestCase):
+    def test_one_loader_for_scan_and_redact_images(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            a, b = Path(d) / "a.json", Path(d) / "b.json"
+            a.write_text(json.dumps({"replace": [["Jane\\s+Doe", "g", "x"], ["a(b", "i", "x"]], "email_allow": ["^me@x\\.test$"]}))
+            b.write_text(json.dumps({"replace": [["secret", "gi"]]}))           # a two-item row
+            red = catalog.read_redaction([a, b])
+            self.assertEqual(len(red["replace"]), 3)
+            self.assertEqual(red["email_allow"], ["^me@x\\.test$"])
+            pats = catalog.redaction_patterns(red)
+            self.assertTrue(pats[0].search("Jane Doe") and not pats[0].search("JANE DOE"))   # flags honoured
+            self.assertTrue(pats[1].search("xA(Bx"))                                           # invalid: literal
+            self.assertTrue(pats[2].search("SECRET"))
+            self.assertTrue(catalog.redaction_patterns(red, ignorecase=True)[0].search("JANE DOE"))
+            (Path(d) / "pkg").mkdir()
+            (Path(d) / "pkg" / "n.md").write_text("a(b and Secret\n")
+            hits = catalog.scan(Path(d) / "pkg", red)                # a bad regex no longer crashes scan
+            self.assertEqual(sorted(h.rsplit(" ", 1)[1] for h in hits), ["2", "3"])
+
+
 class ScanFailsLoudlyTest(unittest.TestCase):
     def test_missing_or_empty_folder_is_an_error_not_clean(self):
         import tempfile
@@ -1135,6 +1156,69 @@ class InnerShadowTest(unittest.TestCase):
         self.assertEqual(catalog.css_value(dict(layer, type="dropShadow")), "0px -6px 0px 0px #00000026")
         self.assertEqual(catalog.css_value([dict(layer, type="innerShadow"), layer]),
                          "inset 0px -6px 0px 0px #00000026, 0px -6px 0px 0px #00000026")
+
+
+class SmallBugsTest(unittest.TestCase):
+    def test_resolver_sees_an_edited_tokens_file(self):
+        import os
+        import tempfile
+        with tempfile.NamedTemporaryFile("w", suffix=".json", dir=catalog.ROOT, delete=False) as f:
+            f.write('{"core": {"c": {"$value": "#000000"}}}')
+        rel = Path(f.name).relative_to(catalog.ROOT).as_posix()
+        try:
+            self.assertEqual(catalog.resolver_for(rel).lookup("core.c"), "#000000")
+            Path(f.name).write_text('{"core": {"c": {"$value": "#ffffff"}}}')
+            os.utime(f.name, ns=(1, 10**18))                    # a different mtime, whatever the clock says
+            self.assertEqual(catalog.resolver_for(rel).lookup("core.c"), "#ffffff")
+        finally:
+            os.unlink(f.name)
+
+    def test_check_reports_a_missing_or_broken_tokens_file_instead_of_crashing(self):
+        import copy
+        from unittest import mock
+        cat = copy.deepcopy(catalog.load_catalog())
+        cat["systems"][0]["tokens"] = "systems/no-such/tokens.json"
+        with mock.patch.object(catalog, "load_catalog", return_value=cat):
+            problems = catalog.check()
+        slug = cat["systems"][0]["slug"]
+        self.assertIn(f"{slug}: tokens systems/no-such/tokens.json does not exist", problems)
+        cat["systems"][0]["tokens"] = "README.md"                   # not JSON
+        with mock.patch.object(catalog, "load_catalog", return_value=cat):
+            problems = catalog.check()
+        self.assertTrue(any(p.startswith(f"{slug}: tokens README.md cannot be read") for p in problems), problems)
+
+    def test_build_refero_refuses_a_path_like_slug_before_writing(self):
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            data = Path(d) / "web" / "data"
+            styles = [(Path(d) / "ok", {"slug": "fine", "name": "Fine"}, {}),
+                      (Path(d) / "bad", {"slug": "../../escaped", "name": "Bad"}, {})]
+            with mock.patch.object(catalog, "DATA", data), \
+                 mock.patch.object(catalog, "load_refero", return_value=styles), \
+                 mock.patch.object(catalog, "refero_entry", return_value={}), \
+                 mock.patch.object(catalog, "refero_card", return_value={"name": "x"}), \
+                 self.assertRaises(SystemExit) as cm:
+                catalog.build_refero()
+            self.assertIn("../../escaped", str(cm.exception.code))
+            self.assertFalse((data / "refero" / "style" / "fine.json").exists())
+            self.assertEqual([p for p in Path(d).rglob("*.json")], [])
+
+    def test_check_still_reports_preview_problems_with_a_broken_tokens_file(self):
+        import copy
+        from unittest import mock
+        cat = copy.deepcopy(catalog.load_catalog())
+        s = cat["systems"][0]
+        s["tokens"], s["preview"]["cover"] = "README.md", "systems/no-such/cover.png"
+        with mock.patch.object(catalog, "load_catalog", return_value=cat):
+            problems = catalog.check()
+        self.assertIn(f"{s['slug']}: preview.cover systems/no-such/cover.png does not exist", problems)
+
+    def test_refero_slug_pattern_refuses_paths(self):
+        for ok in ("linear", "a-b-2"):
+            self.assertTrue(catalog.REFERO_SLUG.fullmatch(ok))
+        for bad in ("../x", "a/b", "A", "a_b", "", "-a", "a.json"):
+            self.assertIsNone(catalog.REFERO_SLUG.fullmatch(bad), bad)
 
 
 class EnvTest(unittest.TestCase):

@@ -131,6 +131,9 @@ async function measure(key, state, target, opts = {}) {
     let file;
     if (opts.crop !== false) {
       try {
+        // Again here, after the hover, focus or open that set up this state: a tooltip, menu or
+        // dialog it revealed was not in the page when S() masked it.
+        await mask(page);
         file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
@@ -543,7 +546,7 @@ async function settings() {
 
 // Sessions while its data is on the way: the sessions request is held for 20s.
 async function sessionsLoading() {
-  await newPage('sessionsLoading', { wait: 1800, routes: (p) => p.route('**/functions/tokentracker-sessions**', (r) => setTimeout(() => r.continue().catch(() => {}), 20000)) });
+  await newPage('sessionsLoading', { wait: 1800, routes: (p) => p.route('**/functions/tokentracker-sessions**', (r) => setTimeout(() => r.fallback().catch(() => {}), 20000)) });
   await page.evaluate(() => { const t = [...document.querySelectorAll('main *')].find((e) => e.childElementCount <= 2 && /^Loading sessions/.test(e.textContent.trim())); if (!t) return; let n = t.parentElement; while (n && n.getBoundingClientRect().height < 40) n = n.parentElement; (n || t).setAttribute('data-m', 'loading-state'); });
   await S('loading-state', m('loading-state'), ['loading'], { group: G.table, title: 'Loading state', desc: 'Sessions with its request held back: one quiet line where the list goes.', sel: 'block around "Loading sessions…"' }, { noScroll: true, noReset: true });
   await page.close();

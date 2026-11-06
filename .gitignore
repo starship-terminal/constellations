@@ -8,6 +8,15 @@ systems/*/fonts/
 systems/*/tools/capture/winid
 systems/*/tools/capture/dumps/
 systems/*/tools/capture/out/
+# shot.py's full-window grab, preview and window id; parse_css.py's downloaded
+# stylesheets and scripts (the product's property) and the stats it writes from them.
+systems/*/tools/capture/_raw.png
+systems/*/tools/capture/_preview.png
+systems/*/tools/capture/.wid
+systems/duolingo/tools/capture/css/
+systems/duolingo/tools/capture/js/
+systems/duolingo/tools/capture/css-stats.json
+systems/duolingo/tools/capture/css-stats.md
 
 # Clones of public reference repos; only example/README.md is committed.
 /example/*/

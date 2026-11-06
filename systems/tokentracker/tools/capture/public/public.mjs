@@ -62,7 +62,7 @@ const desktop = {
   } },
   // First run: a second TokenTracker started with an empty HOME (no usage yet), on its own port.
   onboarding: { base: process.env.TT_EMPTY_BASE || 'http://127.0.0.1:7681', path: '/dashboard', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  'sessions-loading': { path: '/sessions', wait: 1800, routes: (p) => p.route('**/functions/tokentracker-sessions**', (r) => setTimeout(() => r.continue().catch(() => {}), 20000)), run: async (p, S) => { await S.view('default'); } },
+  'sessions-loading': { path: '/sessions', wait: 1800, routes: (p) => p.route('**/functions/tokentracker-sessions**', (r) => setTimeout(() => r.fallback().catch(() => {}), 20000)), run: async (p, S) => { await S.view('default'); } },
   'sessions-error': { path: '/sessions', routes: (p) => p.route('**/functions/tokentracker-sessions**', (r) => r.abort()), run: async (p, S) => { await S.view('default'); } },
   sessions: { path: '/sessions', run: async (p, S) => {
     await S.view('default');
