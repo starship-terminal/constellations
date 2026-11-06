@@ -21,7 +21,7 @@
 //                  sends a question, creates a course, signs in or uploads is ever pressed
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, M, launch, open, closePromo, openStory, styleOf, crop, centre, RAW } from './lib.mjs';
+import { BASE, M, launch, open, closePromo, openStory, styleOf, crop, centre, RAW, drain } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -69,7 +69,8 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {
   await cdp.send('CSS.enable');
   log('open', key, mobile ? '(mobile)' : '');
   await open(page, BASE + URLS[key], { wait, promo });
-  await Promise.allSettled(pending);   // moduleClass() reads these bodies; a sheet still in flight would be missed
+  // moduleClass() reads these bodies; a sheet still in flight would be missed (bounded: a stalled one is left out)
+  if (!(await drain(pending))) log('  ! some stylesheet bodies did not finish within 15s');
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
 }
 
