@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { getStore } from "@/server/db";
-import { getReference } from "@/server/sources";
+import { getReferenceSummary } from "@/server/sources";
 import { hydrateCollectionMedia } from "@/server/collections/media";
 import {
   endpoint,
@@ -23,7 +23,8 @@ export function GET(_: Request, context: Context) {
       items: await Promise.all(
         row.items.map(async (item) => ({
           ...item,
-          reference: await getReference(item.referenceId),
+          // The board shows cards; the inspector loads full detail itself.
+          reference: await getReferenceSummary(item.referenceId),
         })),
       ),
     });

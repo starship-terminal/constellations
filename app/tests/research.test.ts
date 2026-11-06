@@ -51,6 +51,9 @@ vi.mock("@/server/sources", () => ({
   getReference: vi.fn(async (id: string) =>
     id === "systems:test" ? fixtures.reference : null,
   ),
+  getReferenceSummary: vi.fn(async (id: string) =>
+    id === "systems:test" ? fixtures.reference : null,
+  ),
   readReferenceImage: vi.fn(async () => ({
     data: new Uint8Array([1, 2, 3]),
     mediaType: "image/png",
@@ -149,7 +152,26 @@ test("real SDK tool loop streams UI parts, sends captured image, and persists ra
       }),
     }),
   );
-  expect(JSON.stringify(model.doStreamCalls[1].prompt)).toContain("image");
+  // The tool result handed back to the model carries the captured image as a
+  // file part, not just a mention of an image in the JSON text.
+  const toolMessage = model.doStreamCalls[1].prompt.at(-1);
+  expect(toolMessage?.role).toBe("tool");
+  expect(toolMessage?.content).toContainEqual(
+    expect.objectContaining({
+      type: "tool-result",
+      output: expect.objectContaining({
+        type: "content",
+        value: expect.arrayContaining([
+          // AQID is the base64 of the mocked capture's bytes [1, 2, 3].
+          expect.objectContaining({
+            type: "file",
+            mediaType: "image/png",
+            data: { type: "data", data: "AQID" },
+          }),
+        ]),
+      }),
+    }),
+  );
   expect(model.doStreamCalls).toHaveLength(2);
 });
 test("source exclusion applies to discovery, inspection and previous tool results", async () => {

@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { getStore } from "@/server/db";
-import { getReference } from "@/server/sources";
+import { getReferenceMedia } from "@/server/sources";
 import {
   endpoint,
   mutationGuard,
@@ -15,19 +15,18 @@ export const runtime = "nodejs";
 export function GET() {
   return endpoint(async () => {
     const rows = await (await getStore()).listSavedMedia();
-    const cache = new Map<string, Awaited<ReturnType<typeof getReference>>>();
-    const items = [];
-    for (const row of rows) {
-      if (!cache.has(row.referenceId))
-        cache.set(row.referenceId, await getReference(row.referenceId));
-      const reference = cache.get(row.referenceId);
+    const ids = [...new Set(rows.map((row) => row.referenceId))];
+    const found = await Promise.all(ids.map((id) => getReferenceMedia(id)));
+    const references = new Map(ids.map((id, index) => [id, found[index]]));
+    const items = rows.map((row) => {
+      const reference = references.get(row.referenceId);
       const media = reference?.media.find((m) => m.id === row.mediaId);
-      items.push({
+      return {
         ...row,
-        name: reference?.name ?? row.referenceId,
+        name: reference?.reference.name ?? row.referenceId,
         media: media ?? null,
-      });
-    }
+      };
+    });
     return Response.json({ items });
   });
 }
@@ -35,7 +34,7 @@ export function POST(request: Request) {
   return endpoint(async () => {
     mutationGuard(request);
     const value = await readBody(request, selection);
-    const reference = await getReference(value.referenceId);
+    const reference = await getReferenceMedia(value.referenceId);
     if (!reference?.media.some((m) => m.id === value.mediaId))
       throw new HttpError(404, "Screenshot not found.");
     await (await getStore()).saveMedia(value.referenceId, value.mediaId);

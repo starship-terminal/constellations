@@ -2,6 +2,7 @@
 // server-side (DESIGN.md through the markdown subset, CSS/JSON through a
 // small syntax tint), resolves similar styles against the index, and hands
 // plain serializable props to the client surface.
+import path from "node:path";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { loadReferoEntity, loadReferoIndex } from "@/lib/refero";
@@ -46,6 +47,13 @@ const faviconFor = (src: string | null) =>
 const looksPath = (v: string) =>
   !v.includes("\n") && /^[\w./-]+\.(md|markdown|css|json|txt)$/i.test(v.trim());
 
+// A path value is read only from the style's own refero/<slug>/ folder; the
+// snapshot is third-party data, so it must not name any other repo file.
+const ownDocPath = (slug: string, v: string): string | null => {
+  const p = path.posix.normalize(v.trim().replace(/^\/+/, ""));
+  return /^[a-z0-9][a-z0-9-]*$/i.test(slug) && p.startsWith(`refero/${slug}/`) ? p : null;
+};
+
 // The code-pane tint from app.js: whole-token matches, not a parser. CSS gets
 // custom-property/at-rule/string/comment colours, JSON gets key/string/atom.
 function codeHtml(text: string, key: string): string {
@@ -72,7 +80,8 @@ async function renderDocs(e: ReferoEntity): Promise<ReferoDoc[]> {
   for (const [key, label, file] of DOC_TABS) {
     const v = e.docs?.[key];
     if (!v) continue;
-    const raw = looksPath(v) ? ((await readRepoText(v.trim())) ?? v) : v;
+    const own = looksPath(v) ? ownDocPath(e.slug, v) : null;
+    const raw = own ? ((await readRepoText(own)) ?? v) : v;
     out.push({
       key,
       label,

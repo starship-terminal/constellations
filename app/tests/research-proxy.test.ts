@@ -1,7 +1,14 @@
 import { expect, test } from "vitest";
 import { NextRequest } from "next/server";
+import * as proxyModule from "@/proxy";
 import { proxy } from "@/proxy";
 import { mutationGuard } from "@/server/research/http";
+
+// The host check covers every route only because proxy.ts exports no
+// `config.matcher`. A matcher would silently exempt the paths below.
+test("the proxy declares no matcher, so Next runs it before every route", () => {
+  expect(proxyModule).not.toHaveProperty("config");
+});
 
 for (const path of [
   "/",

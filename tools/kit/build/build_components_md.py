@@ -351,10 +351,6 @@ def links(prefix):
 
 n_crops = len(list(Path("components/crops").glob("*.png")))
 n_states = sum(len(c["states"]) for c in C.values())
-icons = [r.split("\t") for r in open("icons/INDEX.tsv").read().strip().split("\n")[1:]]
-
-n_crops = len(list(Path("components/crops").glob("*.png")))
-n_states = sum(len(c["states"]) for c in C.values())
 icons = [r.split("\t") for r in open("icons/INDEX.tsv").read().strip().split("\n") if not r.startswith("#")][1:]
 
 W("# ChatGPT components")

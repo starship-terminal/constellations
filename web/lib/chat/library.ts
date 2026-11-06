@@ -598,20 +598,35 @@ async function getTokens(args: Obj): Promise<Obj> {
 
 async function readDoc(args: Obj): Promise<Obj> {
   // A text file from the package: its README (the default), components.md,
-  // patterns.md, tokens.json. Path is relative to systems/<slug>/.
+  // patterns.md, tokens.json. Path is relative to systems/<slug>/. A file over
+  // DOC_CAP characters comes back a page at a time: `offset` is where the page
+  // starts, and a truncated page names the `nextOffset` to ask for.
   const slug = asStr(args.slug);
   const e = await entry(slug);
-  const rel = optStr(args.path) ?? path.basename(asStr(e.entry));
+  const rel = optStr(args.path) || path.basename(asStr(e.entry));
+  const offset = asInt(args.offset || 0);
+  if (offset < 0) throw new ToolError("offset must be 0 or more");
   const target = bounded(e, rel);
   const st = await fs.stat(target).catch(() => null);
   if (st?.isDirectory()) throw new ToolError(`${rel} is a directory`);
   if (!st?.isFile()) throw new ToolError(`no file ${rel} in systems/${slug}/`);
   if (!TEXT_TYPES.has(path.extname(target).toLowerCase())) throw new ToolError(`not a text file: ${rel}`);
   // utf8 decoding replaces bad sequences, matching read_text(errors="replace").
+  // Offsets count code points, as Python's str indexes do.
   const chars = Array.from(await fs.readFile(target, "utf8"));
-  const truncated = chars.length > DOC_CAP;
+  const end = offset + DOC_CAP;
+  const truncated = chars.length > end;
   const relInPkg = path.relative(pkgDir(e), target).split(path.sep).join("/");
-  return { slug, path: `systems/${slug}/${relInPkg}`, text: chars.slice(0, DOC_CAP).join(""), truncated };
+  const out: Obj = {
+    slug,
+    path: `systems/${slug}/${relInPkg}`,
+    text: chars.slice(offset, end).join(""),
+    truncated,
+    offset,
+    length: chars.length,
+  };
+  if (truncated) out.nextOffset = end;
+  return out;
 }
 
 async function walkFiles(dir: string): Promise<string[]> {
@@ -792,7 +807,8 @@ export const SPECS: Spec[] = [
     fn: readDoc,
     description:
       "Read a text file inside a package: its README (default), " +
-      "components.md, patterns.md, tokens.json.",
+      "components.md, patterns.md, tokens.json. Long files come back " +
+      "in pages: when truncated is true, call again with offset=nextOffset.",
     parameters: {
       type: "object",
       additionalProperties: false,
@@ -801,6 +817,12 @@ export const SPECS: Spec[] = [
         path: {
           type: "string",
           description: "Package-relative path (a systems/<slug>/ or /systems/<slug>/ path also works); default README.md",
+        },
+        offset: {
+          type: "integer",
+          minimum: 0,
+          default: 0,
+          description: "Character offset to start from (a previous page's nextOffset)",
         },
       },
       required: ["slug"],

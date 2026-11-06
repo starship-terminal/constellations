@@ -6,6 +6,7 @@ import { providerConfig, runChat, ProviderError } from "@/lib/chat/chat";
 import { loadData, mediaUrl } from "@/lib/catalog";
 import { loadReferoIndex } from "@/lib/refero";
 import { markdown } from "@/lib/markdown";
+import { baseUrlOf } from "@/lib/provider-defaults";
 
 export const dynamic = "force-dynamic";
 
@@ -53,14 +54,17 @@ export async function POST(req: Request) {
   } catch {
     return NextResponse.json({ error: "bad JSON" }, { status: 400 });
   }
-  const cfg = providerConfig(body.provider);
+  // A saved config with a blank base URL means its provider's default
+  // endpoint (older Settings saved ""); fill it before normalising.
+  const posted = body.provider && typeof body.provider === "object" ? body.provider : undefined;
+  const cfg = providerConfig(posted && { ...posted, base_url: baseUrlOf(posted) });
   if (!cfg) return NextResponse.json({ error: "no_provider" });
   const messages = Array.isArray(body.messages) ? body.messages : [];
   try {
     const result = await runChat(messages, cfg);
     return NextResponse.json({
       ...result,
-      reply: result.reply ? markdown(result.reply, { base: "chat" }) : "",
+      reply: result.reply ? markdown(result.reply, { base: "chat", remoteImages: false }) : "",
       results: await enrich(result.results),
     });
   } catch (e) {
