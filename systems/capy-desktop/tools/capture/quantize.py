@@ -125,8 +125,19 @@ def store(src, dst):
 
 
 def main():
+    themes = sorted(p for p in RAW.iterdir() if p.is_dir())
+    # Every theme needs its readings before anything is written: without captures.json every shot would be
+    # skipped and the stale sweep below would delete the stored screenshots.
+    nocaps = [t.name for t in themes if not (t / "captures.json").exists()]
+    if nocaps:
+        sys.exit("captures.json missing, nothing written (run shots.mjs first): " + ", ".join(nocaps))
+    # A theme the package holds run readings for needs its run: without frames.json the sweep would delete its
+    # run-*.png while raw/run.<theme>.json still lists them, and crops.py would stop on the missing screenshots.
+    noframes = [t.name for t in themes if (PKG / "raw" / f"run.{t.name}.json").exists() and not (t / "run" / "frames.json").exists()]
+    if noframes:
+        sys.exit("run/frames.json missing, nothing written (run run.mjs first): " + ", ".join(noframes))
     n = 0
-    for theme_dir in sorted(p for p in RAW.iterdir() if p.is_dir()):
+    for theme_dir in themes:
         theme = theme_dir.name
         out = PKG / "screenshots" / theme
         keep = set()
@@ -136,7 +147,7 @@ def main():
         picks = run_frames(frames)
         # Only shots captures.json records: a shot that failed on a later run is dropped from it, and its
         # older PNG must not be published again without a current reading.
-        shots = json.loads((theme_dir / "captures.json").read_text()) if (theme_dir / "captures.json").exists() else {}
+        shots = json.loads((theme_dir / "captures.json").read_text())
         for f in sorted(theme_dir.glob("*.png")):
             if f.stem not in shots:
                 print("skipped (no reading in captures.json):", f.name)
