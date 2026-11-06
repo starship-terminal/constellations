@@ -653,8 +653,10 @@ async function run() {
   const out = fs.existsSync(OUT_JSON) ? JSON.parse(fs.readFileSync(OUT_JSON, 'utf8')) : {};
   // refresh.mjs keeps its own provenance block in _meta.refresh; a rerun here keeps it.
   const refresh = out._meta && out._meta.refresh;
+  // A subset run (`node measure.mjs video`) keeps the stamp of the full run, as the public measure.mjs does.
+  const capturedAt = ONLY.length && out._meta && out._meta.capturedAt ? out._meta.capturedAt : new Date().toISOString();
   out._meta = {
-    capturedAt: new Date().toISOString(),
+    capturedAt,
     source: 'raw/snapshots/*.html.gz: static, redacted DOM snapshots of signed-in pages, stylesheets inlined from the CSSOM, scripts stripped',
     viewport: '1440x900 @2x, headless Chromium (Playwright), file:// URLs; images load from Coursera\'s CDN',
     states: {
@@ -885,7 +887,7 @@ The values that decide whether a rebuilt course list and course page read as Cou
 
 ## What could not be reached
 
-The snapshots have no scripts, so anything that needs JavaScript is missing: every menu (app switcher, help, language, notifications, avatar, Explore mega menu, the course overflow "…" menu), the Coursera AI chat panel, opening or closing any accordion or disclosure (only the states captured are measured: Course Material open and closed, objectives shown and hidden, outline modules open and closed), "Show more" expansions, the language select list, calendar month paging, tooltips, the Save note dialog, video playback (the player is a poster frame; the control bar's show/hide is scripted) and the transcript highlight moving. CDS's keyboard focus ring is emulated as described above. The reading in the snapshot has no subheadings, lists, code or tables; their styles come from a probe block the script inserts into the CML viewer (marked as such under "Reading: body paragraph"), plus the authored CML rules listed there. Dark theme was not measured.
+The snapshots have no scripts, so anything that needs JavaScript is missing: every menu (app switcher, help, language, notifications, avatar, Explore mega menu, the course overflow "…" menu), the Coursera AI chat panel, opening or closing any accordion or disclosure (only the states captured are measured: Course Material open and closed, objectives shown and hidden, outline modules open and closed), "Show more" expansions, the language select list, calendar month paging, tooltips, the Save note dialog, video playback (the player is a poster frame; the control bar's show/hide is scripted) and the transcript highlight moving. CDS's keyboard focus ring is emulated as described above. The reading in the snapshot has no subheadings, lists, code or tables; their styles come from a probe block the script inserts into the CML viewer (marked as such under "Reading: body paragraph"), plus the authored CML rules listed there. Dark theme was not measured in this first pass; the 2026-10-17 refresh below adds the course overflow menu, a tooltip and dark states.
 `;
 
 const STATE_ORDER = ['default', 'hover', 'focus-visible', 'focus-visible-cds', 'pressed'];
