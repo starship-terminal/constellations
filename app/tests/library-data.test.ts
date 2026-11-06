@@ -8,6 +8,7 @@ import {
   type LibraryResponse,
 } from "../src/features/library-data";
 import { libraryItem } from "./helpers";
+import type { LibraryItem } from "../src/contracts/library";
 function deferred<T>() {
   let resolve!: (value: T) => void;
   const promise = new Promise<T>((done) => {
