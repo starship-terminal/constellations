@@ -234,22 +234,13 @@
 }
 .lightbox {
   position: fixed;
-  inset: 3vh 3vw;
   z-index: 151;
-  display: flex;
-  flex-direction: column;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 16px;
   overflow: hidden;
   outline: none;
 }
 .lightbox header {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
-  padding: 18px 24px;
-  border-bottom: 1px solid var(--line);
 }
 .lightbox h2 {
   margin: 0;
@@ -261,16 +252,11 @@
   margin: 6px 0 0;
 }
 .lightboxStage {
-  flex: 1;
   min-height: 0;
   overflow: auto;
   text-align: center;
-  background: var(--surface-raised);
-  padding: 20px;
 }
 .lightboxStage img {
-  max-width: 100%;
-  height: auto;
   display: block;
   margin: auto;
 }
@@ -282,8 +268,6 @@
   display: flex;
   justify-content: space-between;
   gap: 14px;
-  padding: 14px 24px;
-  border-top: 1px solid var(--line);
   font-size: 12px;
   flex-wrap: wrap;
 }
@@ -658,13 +642,6 @@
     position: static;
     max-height: 280px;
     margin-bottom: 24px;
-  }
-  .lightbox {
-    inset: 8px;
-  }
-  .lightbox header,
-  .lightbox footer {
-    padding: 12px;
   }
   .fonts {
     grid-template-columns: 1fr;
