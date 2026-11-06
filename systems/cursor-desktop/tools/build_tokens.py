@@ -465,10 +465,16 @@ def build_roles_and_components(t):
             raw = s[prop]
             if prop in ("background-color", "border-top-color") and color(raw) == "rgba(0, 0, 0, 0)":
                 continue
+            # A border colour with no border width, or an outline colour with no outline, paints nothing.
+            if prop == "border-top-color" and s.get("border-top-width") in ("0px", ""):
+                continue
+            if prop == "outline-color" and s.get("outline-style") in ("none", ""):
+                continue
             put(tree, ("component", name, key), value_for(part, shot, prop, raw))
         for state, key, prop in STATES:
             sh, ss = style(t, part, state)
-            if ss and ss[prop] != s[prop] and color(ss[prop]) != "rgba(0, 0, 0, 0)":
+            if ss and ss[prop] != s[prop] and color(ss[prop]) != "rgba(0, 0, 0, 0)" and not (prop == "outline-color" and ss.get("outline-style") in ("none", "")) \
+                    and not (prop == "border-top-color" and ss.get("border-top-width") in ("0px", "")):
                 put(tree, ("component", name, key), value_for(part, sh, prop, ss[prop]))
     tree["$extensions"] = {"componentValues": {"measured": measured_n, "aliased": aliased_n}}
 

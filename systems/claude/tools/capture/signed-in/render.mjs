@@ -5,14 +5,21 @@
 // one from `.dark`, with every component colour a var() of those, so the same static copy
 // renders both themes and no account setting is touched.
 import fs from 'fs';
+import path from 'path';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
-const [,, dir, label, ...flags] = process.argv;
+const [,, dirArg, label, ...flags] = process.argv;
+const dir = path.resolve(dirArg);   // a relative <dir> would make a broken file:// URL
 const meta = JSON.parse(fs.readFileSync(`${dir}/${label}.json`));
 const light = flags.includes('light');
 const out = light ? label.replace(/-dark(?=-|$)/, '-light') : label;
 const b = await chromium.launch();
 const ctx = await b.newContext({ viewport: { width: meta.w, height: meta.h }, deviceScaleFactor: 2, colorScheme: light ? 'light' : 'dark' });
+// Offline like measure.mjs: assets-proxy.anthropic.com comes from the local cache (lib.mjs),
+// and every other request, claude.ai's own included, is aborted.
+process.env.SNAPS ??= dir;
+const { routeCdn } = await import('./lib.mjs');
+await routeCdn(ctx);
 const p = await ctx.newPage();
 await p.goto('file://' + dir + '/' + label + '.html', { waitUntil: 'load', timeout: 60000 });
 // ChatGPT paints dark from a `dark` class on <html> (and on each message's markdown body), Claude from data-mode="dark" on <html> and on

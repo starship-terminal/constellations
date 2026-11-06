@@ -766,7 +766,6 @@ colors:
   component-text-field-bg: "rgba(20, 20, 20, 0.03)"
   component-text-field-border: "rgba(20, 20, 20, 0.12)"
   component-text-field-text: "#141414"
-  component-text-field-outline-focus: "#141414"
   component-badge-bg: "rgba(20, 20, 20, 0.08)"
   component-badge-text: "rgba(20, 20, 20, 0.74)"
   component-status-badge-bg: "rgba(20, 20, 20, 0.08)"

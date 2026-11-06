@@ -55,7 +55,8 @@ def resolved(theme, v, depth=0):
 
 for theme in ("dark", "light"):
     for n, t in flat(T[theme]):
-        if t["$type"] == "color" and not n.startswith("chatTheme.") or n.startswith("chatTheme.blue."):
+        # Colours only; of the accent themes, only the captured blue one.
+        if t["$type"] == "color" and (not n.startswith("chatTheme.") or n.startswith("chatTheme.blue.")):
             v = resolved(theme, t["$value"])
             if not isinstance(v, str) or v.startswith("{"):
                 continue
@@ -501,7 +502,9 @@ W("|---|---|---|")
 for name, keys in CHECKLIST:
     have = [k for k in keys if k in C]
     if not have:
-        W(f"| {name} | not captured: ChatGPT shows a toast only after an action (copying, archiving, sharing), and the capture took no action | - |")
+        why = ("ChatGPT shows a toast only after an action (copying, archiving, sharing), and the capture took no action"
+               if "toast" in name.lower() else "no entry below shows it")
+        W(f"| {name} | not captured: {why} | - |")
         continue
     states = sorted({re.sub(r"^light-?", "", s) or "default" for k in have for s, v in C[k]["states"].items() if "style" in v}, key=lambda x: ["default", "hover", "focus-visible", "pressed", "selected", "active", "checked", "open", "typed", "highlighted", "error"].index(x) if x in ["default", "hover", "focus-visible", "pressed", "selected", "active", "checked", "open", "typed", "highlighted", "error"] else 99)
     if any("disabled" in C[k]["title"].lower() for k in have):

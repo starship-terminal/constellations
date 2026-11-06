@@ -24,7 +24,7 @@ import urllib.request
 from pathlib import Path
 
 import fetch  # write_atomic, and cmd_catalog to refresh refero/catalog.json
-import refero_media  # noqa: F401 — importing it loads the repo .env (ANTHROPIC_API_KEY)
+import refero_media
 
 ROOT = Path(__file__).resolve().parents[2]
 REFERO = ROOT / "refero"
@@ -258,6 +258,7 @@ def main():
     if args.stats:
         stats(db)
         return
+    refero_media.load_env(("ANTHROPIC_API_KEY",))
     if not os.environ.get("ANTHROPIC_API_KEY"):
         sys.exit("ANTHROPIC_API_KEY is not set")
     try:

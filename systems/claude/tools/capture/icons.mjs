@@ -13,7 +13,9 @@
 // was most often shown at, then written as an SVG named by the font's own glyph name (else by the
 // label, else by the code point; tools/capture/icon-names.tsv, written by hand from the labels, wins over both). The few inline <svg>s (the Claude wordmark, the greeting's
 // asterisk, the incognito ghost, the voice bars) are normalised and written by label or geometry
-// hash. HB and WAWOFF2 default to the copies under tools/tldrawkc/node_modules in this repository.
+// hash. HB and WAWOFF2 are required: point them at a harfbuzzjs and a wawoff2 install outside the
+// repository (the old default, tools/tldrawkc/node_modules four folders above the package, resolved
+// outside this repository).
 // The glyphs and marks are Anthropic's property, kept for reference only.
 import crypto from 'node:crypto';
 import fs from 'node:fs';
@@ -23,9 +25,9 @@ import { chromium, REF, SNAPS, CACHE, metaOf, newContext, openSnap } from './sig
 
 if (!SNAPS) { console.error('SNAPS=<dir of page copies> is required'); process.exit(2); }
 const require = createRequire(import.meta.url);
-const NM = path.resolve(REF, '..', '..', '..', '..', 'tools', 'tldrawkc', 'node_modules');
-const hbjs = await require(process.env.HB || path.join(NM, 'harfbuzzjs'));
-const decompress = require(path.join(process.env.WAWOFF2 || path.join(NM, 'wawoff2'), 'decompress.js'));
+if (!process.env.HB || !process.env.WAWOFF2) { console.error('HB=<harfbuzzjs dir> and WAWOFF2=<wawoff2 dir> are required'); process.exit(2); }
+const hbjs = await require(path.resolve(process.env.HB));
+const decompress = require(path.join(path.resolve(process.env.WAWOFF2), 'decompress.js'));
 const OUT = path.join(REF, 'icons');
 const NAMES = new Map();
 try { for (const l of fs.readFileSync(path.join(path.dirname(new URL(import.meta.url).pathname), 'icon-names.tsv'), 'utf8').split('\n')) { const [k, n] = l.split('\t'); if (k && n && !k.startsWith('#')) NAMES.set(k, n.trim()); } } catch { /* optional */ }

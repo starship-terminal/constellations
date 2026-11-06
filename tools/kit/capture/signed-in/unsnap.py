@@ -74,7 +74,7 @@ def main(src, outdir):
     meta, page = json.loads(m.group(1)), m.group(2)
     # The page title is usually the conversation or document name, so it is not kept.
     meta.pop("title", None)
-    leaks = leaks_in(page + json.dumps(meta), redact)
+    leaks = leaks_in(page + json.dumps(meta, ensure_ascii=False), redact)   # an accented name stays as written
     if leaks:
         sys.exit(f"LEAK {leaks}")
 

@@ -4,6 +4,10 @@
    state/built-sha's mtime, so timer deploys count too — right is the
    Redeploy button POSTing the same endpoint.
 
+   The POST carries X-Designs-Redeploy: a custom header, so a cross-site
+   page cannot send it without a CORS preflight the trigger never grants.
+   The deploy token itself is added by nginx, never by this script.
+
    Off kai-home-server there is no endpoint: the label falls back to this
    page's own Last-Modified (the build minute) and a click reports the
    miss. The fetch path is absolute because pages live at different depths. */
@@ -44,12 +48,13 @@
   btn.addEventListener('click', function () {
     btn.disabled = true;
     status.textContent = 'queuing…';
-    fetch('/api/redeploy', { method: 'POST' })
+    fetch('/api/redeploy', { method: 'POST', headers: { 'X-Designs-Redeploy': '1' } })
       .then(function (r) {
         return r.json().catch(function () { return {}; }).then(function (body) {
           status.textContent = r.status === 202
             ? 'queued: pull + deploy on the host; reload in a minute'
             : r.status === 409 ? 'already running'
+            : r.status === 429 ? 'just queued; reload in a minute'
             : r.status === 404 || r.status === 501 ? (body.error || 'no endpoint on this host')
             : (body.error || 'HTTP ' + r.status);
         });

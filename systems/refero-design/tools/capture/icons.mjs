@@ -11,8 +11,9 @@
 import crypto from 'crypto';
 import fs from 'fs';
 import { M, BASE, STYLES, chromium, UA, closePromo } from './public/lib.mjs'; // the signed-in route: swap in its own page opener
+import { fileURLToPath } from 'node:url';
 
-const OUT = new URL('../../icons/', import.meta.url).pathname;
+const OUT = fileURLToPath(new URL('../../icons/', import.meta.url));
 fs.mkdirSync(OUT, { recursive: true });
 const wait = (p, ms) => p.waitForTimeout(ms);
 

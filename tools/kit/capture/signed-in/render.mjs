@@ -4,12 +4,18 @@
 // <label-with-dark-swapped-for-light>.png: Manus paints its light palette from :root and its dark
 // one from `.dark`, with every component colour a var() of those, so the same static copy
 // renders both themes and no account setting is touched.
+// Every request goes through lib.mjs's routeCdn: the product's asset host is served from the local
+// cache beside the copies, and anything else (the product itself, trackers) is aborted, as in measure.mjs.
 import fs from 'fs';
+import path from 'path';
+import { pathToFileURL } from 'url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-const pw = await import(process.env.PLAYWRIGHT || 'playwright');
-const { chromium } = pw.default ?? pw;
-const [,, dir, label, ...flags] = process.argv;
-const meta = JSON.parse(fs.readFileSync(`${dir}/${label}.json`));
+const [,, dirArg, label, ...flags] = process.argv;
+if (!dirArg || !label) { console.error('usage: render.mjs <dir> <label> [full] [light] [scroll=<top>]'); process.exit(2); }
+const dir = path.resolve(dirArg);               // a relative <dir> made a broken file:// URL
+process.env.SNAPS ??= dir;                       // lib.mjs keys its CDN cache off SNAPS
+const { chromium, routeCdn } = await import('./lib.mjs');
+const meta = JSON.parse(fs.readFileSync(path.join(dir, `${label}.json`)));
 // PRODUCT (adapt): the light switch below follows the product's theme mechanism.
 const light = flags.includes('light');
 if (light && !/-dark(?=-|$)/.test(label)) {
@@ -19,8 +25,9 @@ if (light && !/-dark(?=-|$)/.test(label)) {
 const out = light ? label.replace(/-dark(?=-|$)/, '-light') : label;
 const b = await chromium.launch();
 const ctx = await b.newContext({ viewport: { width: meta.w, height: meta.h }, deviceScaleFactor: 2, colorScheme: light || !/-dark(?=-|$)/.test(label) ? 'light' : 'dark' });
+await routeCdn(ctx);
 const p = await ctx.newPage();
-await p.goto('file://' + dir + '/' + label + '.html', { waitUntil: 'load', timeout: 60000 });
+await p.goto(pathToFileURL(path.join(dir, label + '.html')).href, { waitUntil: 'load', timeout: 60000 });
 // ChatGPT paints dark from a `dark` class on <html> (and on each message's markdown body), Claude from data-mode="dark" on <html> and on
 // every design-system root (`.cds-root`, portals included); both paint light
 // when that is taken away, so one copy renders both themes and no account setting changes.

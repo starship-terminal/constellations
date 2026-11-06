@@ -1,14 +1,17 @@
 // Captures Coursera's public pages into RAW (full-colour PNGs); quantize.py turns them into screenshots/.
 //
-//   RAW=/some/scratch/dir PLAYWRIGHT=/path/to/node_modules/playwright node public.mjs [theme|all] [page,page,...]
+//   [RAW=<dir, default ~/.design-systems/coursera/raw-shots>] PLAYWRIGHT=/path/to/node_modules/playwright node public.mjs [theme|all] [page,page,...]
 //
 // Names are {page}-{theme}-{state}.png, mobile ones get a `mobile-` prefix. Dark is a forced token flip
 // (see forceTheme), not a Coursera theme. A page taller than one GPU texture is saved as name.partN.png
 // tiles, which quantize.py stitches back together.
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
-const RAW = process.env.RAW || new URL('../../raw/full/', import.meta.url).pathname;
+// Full-colour shots of the pages stay outside the repository until quantize.py has made screenshots/.
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'coursera', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const BASE = 'https://www.coursera.org';
 const UA_DESKTOP = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';

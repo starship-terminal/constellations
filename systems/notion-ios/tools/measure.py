@@ -139,7 +139,7 @@ R = {
     "size.barPill.w":     (H, "extent", ("row", 1660, 180, 630, (182, 1660), 10), "'Ask AI' glass pill, width"),
     "size.navButton.w":   (AI, "extent", ("row", 245, 30, 160, (35, 245), 10), "Round glass button on the AI chat (history), width"),
     "size.composer.h":    (AI, "extent", ("col", 400, 1470, 1720, (400, 1480), 10), "Expanded composer, height"),
-    "size.composerCompact.h": ("14-ai-composer-unfocused", "extent", ("col", 400, 1590, 1735, (400, 1595), 10), "Unfocused composer, height"),
+    "size.composerCompact.h": ("dark/14-ai-composer-unfocused", "extent", ("col", 400, 1590, 1735, (400, 1595), 10), "Unfocused composer, height"),
     "size.send":          ("dark/12-ai-composer-typed-send-enabled", "bbox", ((728, 1600), (680, 1575, 100, 105), 24), "Blue send button"),
     "size.chatButton":    (CS, "bbox", ((250, 1650), (50, 1590, 250, 130), 14), "'+ Chat' button"),
     "size.switch.w":      (SH, "extent", ("row", 1148, 600, 775, (610, 1148), 10), "Switch, width"),
@@ -240,6 +240,8 @@ def op_extent(rows, axis, line, a, b, bgpt, thr):
     bg = rows[bgpt[1]][bgpt[0]]
     pix = (lambda i: rows[line][i]) if axis == "row" else (lambda i: rows[i][line])
     hits = [i for i in range(a, b) if d(pix(i), bg) > thr]
+    if not hits:
+        raise ValueError(f"extent: nothing on {axis} {line} from {a} to {b - 1} differs from the background by more than {thr}")
     start, end = hits[0], hits[-1]
     return {"value": f"{(end - start + 1) / SCALE:g}pt", "from": start, "to": end, "evidence": "Sampled"}
 
@@ -253,6 +255,8 @@ def op_bbox(rows, point, window, tol):
             if d(rows[y][x], ref) <= tol:
                 xs.append(x)
                 ys.append(y)
+    if not xs:
+        raise ValueError(f"bbox: no pixel within {tol} of {hexof(ref)} in window {window}")
     bw, bh = (max(xs) - min(xs) + 1) / SCALE, (max(ys) - min(ys) + 1) / SCALE
     return {"value": f"{bw:g}x{bh:g}pt", "box": [min(xs), min(ys), max(xs), max(ys)],
             "colour": hexof(ref), "evidence": "Sampled"}
@@ -273,18 +277,24 @@ def op_find(rows, axis, line, a, b, ref, tol):
 def op_diag(rows, cx, cyc, cxr, cy):
     f = rows[cy][cxr]
     x = cxr
-    while d(rows[cy][x - 1], f) <= 3:
+    while x > 0 and d(rows[cy][x - 1], f) <= 3:
         x -= 1
+    if x < 5:
+        raise ValueError(f"diag: no edge with background beyond it left of ({cxr}, {cy})")
     bg = rows[cy][x - 5]
     tol = max(2, d(bg, f) // 2)
-    while d(rows[cy][x - 1], f) <= tol:
+    while x > 0 and d(rows[cy][x - 1], f) <= tol:
         x -= 1
     x0, y = x, cyc
-    while d(rows[y - 1][cx], f) <= tol:
+    while y > 0 and d(rows[y - 1][cx], f) <= tol:
         y -= 1
+    if x0 == 0 or y == 0:
+        raise ValueError(f"diag: the fill at ({cxr}, {cy}) runs to the image edge")
     t = 0
     while d(rows[y + t][x0 + t], f) > tol:
         t += 1
+        if y + t >= len(rows) or x0 + t >= len(rows[0]):
+            raise ValueError(f"diag: no fill on the diagonal from corner ({x0}, {y})")
     r = t / (1 - 2 ** -0.5) / SCALE
     return {"value": f"{r:.1f}pt", "inset": t, "corner": [x0, y], "evidence": "Derived"}
 
@@ -316,6 +326,8 @@ def op_rimdiag(rows, xin, ymid, xcol, yin, thr):
 def op_cap(rows, x0, y0, x1, y1):
     bg = rows[y0][x0]
     ys = [y for y in range(y0, y1) if any(d(rows[y][x], bg) > 30 for x in range(x0, x1))]
+    if not ys:
+        raise ValueError(f"cap: no ink in ({x0}, {y0}, {x1}, {y1})")
     ink = ys[-1] - ys[0] + 1
     cap = (ink - 1) / SCALE          # one pixel of the ink height is anti-aliasing
     return {"value": f"{round(cap / CAP_EM)}pt", "capHeight": f"{cap:g}pt", "inkPx": ink, "top": ys[0],
@@ -325,6 +337,8 @@ def op_cap(rows, x0, y0, x1, y1):
 def op_lines(rows, x0, y0, x1, y1):
     bg = rows[y0][x0]
     ink = [y for y in range(y0, y1) if any(d(rows[y][x], bg) > 30 for x in range(x0, x1))]
+    if not ink:
+        raise ValueError(f"lines: no ink in ({x0}, {y0}, {x1}, {y1})")
     bands, start = [], ink[0]
     for a, b in zip(ink, ink[1:] + [None]):
         if b is None or b != a + 1:
@@ -340,7 +354,7 @@ def run(raw):
     raw = pathlib.Path(raw).expanduser()
     if not (raw / "dark").is_dir():
         raise SystemExit(f"{raw}: no dark/ captures; nothing written")
-    cache, out = {}, {}
+    pending, out = {}, {}
     for rid, (cap, op, args, note) in R.items():
         themes = [cap.split("/")[0]] if "/" in cap else ["dark", "light"]
         name = cap.split("/")[-1]
@@ -348,10 +362,13 @@ def run(raw):
             png = raw / theme / f"{name}.png"
             if not png.exists():
                 continue
-            key = f"{theme}/{name}"
-            if key not in cache:
-                cache[key] = sample.read_png(png)[2]
-            rows = cache[key]
+            pending.setdefault(f"{theme}/{name}", []).append((rid, op, args, note))
+    # One decoded capture at a time: a decoded capture is several hundred MB as Python tuples, so
+    # the readings are grouped by capture and each image is released before the next is read.
+    for key in sorted(pending):
+        theme, name = key.split("/")
+        rows = sample.read_png(raw / theme / f"{name}.png")[2]
+        for rid, op, args, note in pending[key]:
             if op == "fill":
                 res = op_fill(rows, *args)
             elif op == "text":
@@ -361,6 +378,7 @@ def run(raw):
             res.update({"capture": f"screenshots/{theme}/{name}.png", "op": op,
                         "args": json.loads(json.dumps(args)), "note": note})
             out.setdefault(rid, {})[theme] = res
+        del rows   # released before the next capture is decoded
     return out
 
 
@@ -384,10 +402,17 @@ def write(readings):
     (PKG / "raw" / f"{SLUG}-measured.md").write_text("\n".join(lines) + "\n")
 
 
+def lacking(readings):
+    """The reading ids missing a theme they need, sorted."""
+    # A reading without a theme prefix is read in both themes; a theme missing for one means a capture is absent.
+    return sorted(rid for rid, (cap, *_) in R.items()
+                  if set(readings.get(rid, {})) != ({cap.split("/")[0]} if "/" in cap else {"dark", "light"}))
+
+
 if __name__ == "__main__":
     readings = run(sys.argv[1] if len(sys.argv) > 1 else f"~/.design-systems/{SLUG}/raw-shots")
-    missing = sorted(rid for rid in R if rid not in readings)
-    if missing:   # a light-only gap is fine; a reading with no theme at all means a capture is absent
-        raise SystemExit(f"no capture for {len(missing)} readings ({', '.join(missing[:5])}...); nothing written")
+    short = lacking(readings)
+    if short:
+        raise SystemExit(f"{len(short)} readings lack a theme they need ({', '.join(short[:5])}...); nothing written")
     write(readings)
     print(f"{sum(len(v) for v in readings.values())} readings of {len(readings)} ids")

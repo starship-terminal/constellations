@@ -114,6 +114,15 @@ test('dimension mismatch rejects the capture and retains its failing evidence', 
   assert.equal(report.visualReview.status, 'pending');
 });
 
+test('a shot that fails the check is never left at the output path, nor is an older one', async t => {
+  const output = temporary(t);
+  fs.writeFileSync(output, png(1768, 2208));
+  await assert.rejects(screenshotWithMetadata(fakePage(1778, 1234), { path: output }), /dimension mismatch/);
+  assert.equal(fs.existsSync(output), false);
+  await screenshotWithMetadata(fakePage(1768, 2208), { path: output });
+  assert.deepEqual(pngDimensions(fs.readFileSync(output)), { width: 1768, height: 2208 });
+});
+
 test('a failed viewport probe invalidates an old same-path pass before the browser read', async t => {
   const output = temporary(t);
   fs.writeFileSync(output, png(1768, 2208));

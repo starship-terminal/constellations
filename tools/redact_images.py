@@ -80,7 +80,7 @@ import numpy as np
 from PIL import Image, ImageFilter, ImageSequence
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from catalog import IMAGE_EXT  # noqa: E402  (the image types a package holds)
+from catalog import IMAGE_EXT, read_redaction, redaction_patterns, tool_env  # noqa: E402
 
 Image.MAX_IMAGE_PIXELS = None
 warnings.simplefilter("ignore", Image.DecompressionBombWarning)
@@ -107,24 +107,16 @@ def package_rules(pkg, explicit=None):
 
 
 def load_patterns(paths):
-    """Compiled regexes from catalog-style redaction files: {"replace": [[pattern, ...], ...]}."""
-    pats = []
-    for path in ([paths] if isinstance(paths, str) else paths or []):
-        for row in json.loads(Path(path).expanduser().read_text())["replace"]:
-            try:
-                pats.append(re.compile(row[0], re.I))
-            except re.error:
-                pats.append(re.compile(re.escape(row[0]), re.I))
-    return pats
+    """Compiled regexes from catalog-style redaction files: {"replace": [[pattern, ...], ...]}, read by
+    catalog.py's shared loader; always case-insensitive here, and a row that is not a valid regex
+    matches literally."""
+    return redaction_patterns(read_redaction(paths), ignorecase=True)
 
 
 def load_email_allow(paths):
     """The `email_allow` regexes of the same files: addresses an image may show (the owner's own,
     which AGENTS.md allows). Merged with a rules file's ocr.email_allow."""
-    allow = []
-    for path in ([paths] if isinstance(paths, str) else paths or []):
-        allow += json.loads(Path(path).expanduser().read_text()).get("email_allow", [])
-    return allow
+    return read_redaction(paths)["email_allow"]
 
 
 # Crop files are named {component}-{state}.png, with "light" added for the light theme.
@@ -340,7 +332,7 @@ def _tesseract_words(im, psm=11, min_conf=0):
     with tempfile.TemporaryDirectory() as d:
         src = Path(d) / "in.png"
         im.save(src)
-        env = dict(os.environ, OMP_THREAD_LIMIT="1")
+        env = tool_env(OMP_THREAD_LIMIT="1")
         try:
             res = subprocess.run(["tesseract", str(src), "stdout", "--psm", str(psm), "tsv"],
                                  capture_output=True, text=True, env=env)
@@ -367,13 +359,20 @@ def flatten(im):
     return Image.fromarray(np.clip(128 + (g - bg) * 4, 0, 255).astype(np.uint8)).convert("RGB")
 
 
+def ocr_scale(width):
+    """How much a strip is enlarged before OCR, from the image's width alone: text size follows the
+    width, and tall images are read in TILE-high strips anyway, so a 390-wide mobile capture
+    thousands of pixels tall still gets the enlargement its small text needs."""
+    return 3 if width < 500 else 2 if width < 1000 else 1
+
+
 def ocr_words(im, boost=False):
     """Word boxes for a whole image: small ones enlarged, tall ones read in strips. `boost` reads a
     contrast-flattened copy, which finds dimmed text that plain OCR skips."""
     if boost:
         im = flatten(im)
     w, h = im.size
-    scale = 3 if max(w, h) < 500 else 2 if max(w, h) < 1000 else 1
+    scale = ocr_scale(w)
     words = []
     y = 0
     while True:
@@ -534,6 +533,14 @@ def cmd_apply(args):
             if not args.dry_run:
                 save_256(Image.fromarray(a), f)
 
+    # A delete glob ("../x", a symlinked folder) must never reach a file outside the package.
+    # unlink removes the directory entry, so the folder holding it is what must sit in the package
+    # (a symlink beside the package pointing in still counts as outside), and so must its target.
+    root = pkg.resolve()
+    outside = sorted(f for f in deleted if root not in f.resolve().parents
+                     or not (f.parent.resolve() == root or root in f.parent.resolve().parents))
+    if outside:
+        sys.exit("refusing to delete outside the package: " + ", ".join(str(f) for f in outside))
     for f in sorted(deleted):
         print(("would delete " if args.dry_run else "deleted ") + f.relative_to(pkg).as_posix())
         if not args.dry_run:

@@ -1,6 +1,9 @@
 import fs from 'fs';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
+// SP is the capture's scratch directory; the readings go to $SP/cap/, outside the repository.
+const SP = process.env.SP;
+if (!SP) { console.error('set SP to a scratch directory outside the repository'); process.exit(2); }
 (async () => {
   const b = await chromium.launch();
   const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } });
@@ -28,7 +31,7 @@ const { chromium } = pw.default ?? pw;
     for (const ss of document.styleSheets) { try { walk(ss.cssRules) } catch {} }
     return { root, dark, other, fontfaces, keyframes: [...new Set(keyframes)], media: [...media] };
   });
-  fs.writeFileSync(process.env.SP + '/cap/vars-home.json', JSON.stringify({ ...out, fonts: [...new Set(fonts)] }, null, 1));
+  fs.writeFileSync(SP + '/cap/vars-home.json', JSON.stringify({ ...out, fonts: [...new Set(fonts)] }, null, 1));
   console.log(Object.keys(out.root).length, Object.keys(out.dark).length, out.fontfaces.length, fonts.length, out.media.length);
   await b.close();
 })();

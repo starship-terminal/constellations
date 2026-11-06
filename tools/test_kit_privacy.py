@@ -84,6 +84,18 @@ class SharedList(unittest.TestCase):
                     self.assertIn("LEAK", res.stderr)
                     self.assertNotIn("Jane", res.stderr)
 
+    def test_unsnap_finds_an_accented_name_in_the_metadata(self):
+        with tempfile.TemporaryDirectory() as d:
+            redact = Path(d) / "r.json"
+            redact.write_text(json.dumps({"replace": [["José Núñez", "gi", "A User"]]}))
+            snap = Path(d) / "snap.txt"
+            snap.write_text("SNAPSTART" + json.dumps({"label": "home", "url": "https://x/", "who": "José Núñez"})
+                            + "SNAPMETA<p>ok</p>SNAPEND")
+            res = subprocess.run([sys.executable, str(SIGNED_IN / "unsnap.py"), str(snap), str(Path(d) / "out")],
+                                 capture_output=True, text=True, env={**os.environ, "SNAP_REDACT": str(redact)})
+            self.assertNotEqual(res.returncode, 0)
+            self.assertIn("LEAK", res.stderr)
+
     def test_unsnap_reads_entities_nbsp_and_split_elements(self):
         redact = {"replace": [["unrelated", "gi", "x"], ["jane\\s+doe", "gi", "A User"], ["Jane Doe", "g", "A User"]]}
         for page in ["<p>Jane&nbsp;Doe</p>", "<p>J&#97;ne Doe</p>", "<p>Ja<b>ne</b> Doe</p>",
@@ -177,6 +189,41 @@ class SnapshotInABrowser(unittest.TestCase):
     """Runs snapshot.js's __snap on a small page in headless Chromium (the capture's own Playwright,
     $PLAYWRIGHT or ~/.design-systems/pw), and checks the copy it returns."""
 
+    def snap(self, page, setup="", redact=None):
+        redact = redact or {"replace": [["nothing-matches-this", "g", "x"]]}
+        script = f"""
+const pw = await import({json.dumps(Path(PLAYWRIGHT).as_uri())});
+const b = await pw.chromium.launch();
+const p = await b.newPage();
+await p.setContent({json.dumps(page)});
+await p.evaluate(() => {{ {setup} }});
+await p.addScriptTag({{ content: {json.dumps((SIGNED_IN / "snapshot.js").read_text())} }});
+const out = await p.evaluate((r) => window.__snap('t', r), {json.dumps(redact)});
+await b.close();
+console.log(JSON.stringify(out));
+"""
+        res = subprocess.run([NODE, "--input-type=module", "-e", script], capture_output=True, text=True, timeout=120)
+        self.assertEqual(res.returncode, 0, res.stderr[-2000:])
+        return json.loads(res.stdout).split("SNAPMETA", 1)[1]
+
+    def test_credential_fields_never_reach_the_copy(self):
+        # Each field trips exactly one rule: neutral ids, so the autocomplete rule is tested on its own.
+        page = ('<input type="password" id="f1"><input type="hidden" name="f2" value="HIDDENTOKEN1">'
+                '<input id="f3" autocomplete="one-time-code"><input id="f4" autocomplete="cc-number">'
+                '<input type="text" id="f5" autocomplete="current-password"><input name="api_key" id="f6">'
+                '<input id="q" value="">')
+        setup = ("document.getElementById('f1').value = 'PASSWORDVALUE1';"
+                 "document.getElementById('f3').value = '123987';"
+                 "document.getElementById('f4').value = '4111222233334444';"
+                 "document.getElementById('f5').value = 'SHOWNPASSWORD1';"
+                 "document.getElementById('f6').value = 'APIKEYVALUE1';"
+                 "document.getElementById('q').value = 'plain search';")
+        body = self.snap(page, setup)
+        for secret in ("PASSWORDVALUE1", "HIDDENTOKEN1", "123987", "4111222233334444", "SHOWNPASSWORD1", "APIKEYVALUE1"):
+            self.assertNotIn(secret, body)
+        self.assertIn('value="xxxxxxxx"', body)          # the password field still renders filled
+        self.assertIn('value="plain search"', body)       # ordinary fields keep what was typed
+
     def test_redaction_reaches_text_nodes_comments_and_attributes(self):
         page = ('<p>J&#97;ne&nbsp;Doe and Jane Doe</p><!-- Jane Doe --><img alt="Jane Doe" src="data:,">'
                 '<a title="by Jane  Doe" href="#x">x</a><p>JANE\u00a0DOE</p>')
@@ -197,6 +244,20 @@ console.log(JSON.stringify(out));
         body = out.split("SNAPMETA", 1)[1]
         self.assertEqual(unsnap.leaks_in(body, redact), [], body)
         self.assertGreaterEqual(body.count("A User"), 6, body)
+
+
+
+@unittest.skipIf(NODE is None or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
+class RawShotsStayOutOfTheRepo(unittest.TestCase):
+    def test_public_capture_needs_a_scratch_dir_outside_a_package(self):
+        env = {k: v for k, v in os.environ.items() if k != "RAW"}
+        res = subprocess.run([NODE, str(HERE / "kit/capture/public/public.mjs")], capture_output=True, text=True,
+                             timeout=60, env={**env, "PLAYWRIGHT": PLAYWRIGHT})
+        self.assertEqual(res.returncode, 2, res.stderr)
+        self.assertIn("set RAW=", res.stderr)
+        src = (HERE / "kit/capture/public/public.mjs").read_text()
+        self.assertIn("'.design-systems', path.basename(PKG), 'raw-shots'", src)
+        self.assertNotIn("raw/full/", src)
 
 
 if __name__ == "__main__":

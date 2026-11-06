@@ -57,7 +57,16 @@ for (const label of LABELS) {
       const id = s.id;
       const u = uses.filter((x) => x.getAttribute('href') === '#' + id);
       const seen = u.find((x) => { const r = x.closest('svg').getBoundingClientRect(); return r.width > 0 && r.height > 0; });
-      return { id, viewBox: s.getAttribute('viewBox'), inner: s.innerHTML, uses: u.length, label: labelOf(seen || u[0] || s), kinds: u.map(kindOf), size: seen ? Math.round(seen.closest('svg').getBoundingClientRect().width) : null };
+      // The symbol goes into a standalone .svg the gallery and style guide display, so anything that
+      // can run or load is dropped first: scripts, foreignObject, event handlers, javascript: and
+      // off-document links. ChatGPT's icons hold none of these; a tampered sprite could.
+      const c = s.cloneNode(true);
+      c.querySelectorAll('script, foreignObject, iframe, object, embed').forEach((n) => n.remove());
+      for (const n of [c, ...c.querySelectorAll('*')]) for (const a of [...n.attributes]) {
+        if (/^on/i.test(a.name) || (/(^|:)href$/i.test(a.name) && !a.value.startsWith('#'))) n.removeAttribute(a.name);
+      }
+      const viewBox = /^[-\d.\s,]+$/.test(s.getAttribute('viewBox') || '') ? s.getAttribute('viewBox') : null;
+      return { id, viewBox, inner: c.innerHTML, uses: u.length, label: labelOf(seen || u[0] || s), kinds: u.map(kindOf), size: seen ? Math.round(seen.closest('svg').getBoundingClientRect().width) : null };
     });
   });
   for (const f of found) {
@@ -88,7 +97,7 @@ for (const [key, e] of [...icons.entries()].sort((a, b) => [...a[1].ids].sort()[
   let name = isHash(id) ? (topLabel ? slug(topLabel[0]) : 'icon') + '-' + id : id;
   while (used.has(name)) name += '-' + key.slice(0, 4);
   used.add(name);
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${e.viewBox}" fill="currentColor">${e.inner.replace(/\s+xmlns="http:\/\/www\.w3\.org\/2000\/svg"/g, '')}</svg>\n`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg"${e.viewBox ? ` viewBox="${e.viewBox}"` : ''} fill="currentColor">${e.inner.replace(/\s+xmlns="http:\/\/www\.w3\.org\/2000\/svg"/g, '')}</svg>\n`;
   fs.writeFileSync(path.join(OUT, `${name}.svg`), svg);
   const roles = [...e.kinds.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map((x) => x[0]);
   rows.push([name + '.svg', roles[0] || 'decoration', roles.join(', '), [...e.ids].sort().join(' '), e.viewBox, [...e.sizes].sort((a, b) => a - b).join(' '), e.uses, [...e.pages].sort().join(' '), topLabel ? topLabel[0].replace(/\t/g, ' ') : '']);

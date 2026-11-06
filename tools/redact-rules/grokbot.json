@@ -1,0 +1,11 @@
+{
+  "_note": "No rectangles: nothing in grokbot is masked.",
+  "families": [],
+  "ocr": {
+    "email_allow": [
+      "^kai@cortexrobot\\.ai$",
+      "^kai@cortexrobot\\.a$"
+    ]
+  },
+  "_email_allow_why": "Owner approved on 2026-11-06 (email is public): these exact addresses, as OCR reads them in the listed images, may show. screenshots/dark/19-account-menu.png (OCR cuts the last letter)."
+}

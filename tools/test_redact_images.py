@@ -3,6 +3,7 @@ import contextlib
 import io
 import json
 import re
+import shutil
 import sys
 import tempfile
 import unittest
@@ -98,6 +99,32 @@ class Commands(unittest.TestCase):
         with mock.patch.object(R.subprocess, "run", return_value=failed):
             with self.assertRaises(SystemExit):
                 R.ocr_words(Image.new("RGB", (50, 50)))
+
+    def test_tall_narrow_captures_are_enlarged_like_short_ones(self):
+        from unittest import mock
+        sizes = []
+
+        def fake(im, psm=11, min_conf=0):
+            sizes.append(im.size)
+            return []
+
+        with mock.patch.object(R, "_tesseract_words", side_effect=fake):
+            R.ocr_words(Image.new("RGB", (390, 3000)))         # a full-page mobile capture
+            R.ocr_words(Image.new("RGB", (390, 300)))
+            R.ocr_words(Image.new("RGB", (1440, 400)))
+        self.assertEqual(sizes[0], (390 * 3, R.TILE * 3))          # first strip, enlarged 3x
+        self.assertEqual(sizes[-2], (390 * 3, 300 * 3))
+        self.assertEqual(sizes[-1], (1440, 400))
+        self.assertEqual([R.ocr_scale(w) for w in (390, 499, 500, 999, 1000)], [3, 3, 2, 2, 1])
+
+    @unittest.skipIf(shutil.which("tesseract") is None, "tesseract is not on PATH")
+    def test_small_text_in_a_tall_capture_is_read(self):
+        from PIL import ImageDraw, ImageFont
+        im = Image.new("RGB", (390, 2000), "white")                # 9px text: read only when enlarged
+        ImageDraw.Draw(im).text((10, 1500), "someone@private.test", fill="black", font=ImageFont.load_default(size=9))
+        words = R.ocr_words(im)
+        self.assertTrue(any("@" in w[0] for w in words), words)
+        self.assertEqual(len(R.find_private(words, [], True, [])), 1)
 
     def test_check_refuses_an_empty_or_missing_package(self):
         with tempfile.TemporaryDirectory() as d:
@@ -265,6 +292,27 @@ class Commands(unittest.TestCase):
                 R.main(["check", d, "--patterns", str(pats), "--rules", str(rules)])
             self.assertEqual(cm.exception.code, 1)                 # a pattern match, no email: still caught
             self.assertIn("HIT a.png", out.getvalue())
+
+    def test_apply_never_deletes_outside_the_package(self):
+        with tempfile.TemporaryDirectory() as d:
+            pkg = Path(d) / "pkg"
+            (pkg / "screenshots").mkdir(parents=True)
+            Image.new("RGB", (4, 4)).save(pkg / "screenshots/a.png")
+            keep = Path(d) / "outside.png"
+            Image.new("RGB", (4, 4)).save(keep)
+            rules = Path(d) / "r.json"
+            rules.write_text(json.dumps({"delete": ["screenshots/a.png", "../outside.png"], "ocr": {"net": False}}))
+            with contextlib.redirect_stdout(io.StringIO()), self.assertRaises(SystemExit) as cm:
+                R.main(["apply", str(pkg), "--rules", str(rules)])
+            self.assertIn("outside the package", str(cm.exception.code))
+            self.assertTrue(keep.exists())
+            self.assertTrue((pkg / "screenshots/a.png").exists())     # nothing deleted at all
+            rules.write_text(json.dumps({"delete": ["../outside-link.png"], "ocr": {"net": False}}))
+            (Path(d) / "outside-link.png").symlink_to(pkg / "screenshots/a.png")   # outside, pointing in
+            with contextlib.redirect_stdout(io.StringIO()), self.assertRaises(SystemExit) as cm:
+                R.main(["apply", str(pkg), "--rules", str(rules)])
+            self.assertIn("outside the package", str(cm.exception.code))
+            self.assertTrue((Path(d) / "outside-link.png").is_symlink())
 
     def test_apply_still_requires_rules(self):
         with tempfile.TemporaryDirectory() as d, contextlib.redirect_stderr(io.StringIO()):

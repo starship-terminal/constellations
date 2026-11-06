@@ -126,6 +126,8 @@ def core():
         "capsule": derived("999px", "dimension", "Fully round ends: the composer, search fields, filter chips, segments, the Continue and '7 PRs' capsules, and the round nav, icon and send buttons."),
     }
     tx, ty_ = edges("size.tile.x"), edges("size.tile.y")
+    if len(tx) < 3 or len(ty_) < 3:   # two tiles and the start of a third, across and down
+        raise ValueError(f"size.tile.x/y: {len(tx)} and {len(ty_)} edge runs, need 3 each")
     tile_w = (tx[1][1] - tx[0][0] + 1) / 2
     tile_h = (ty_[1][1] - ty_[0][0] + 1) / 2
     gap_x, gap_y = (tx[2][0] - tx[1][1] - 1) / 2, (ty_[2][0] - ty_[1][1] - 1) / 2
@@ -142,6 +144,8 @@ def core():
     rows1 = edges("rows.single")
     dots = edges("rows.double")
     centres = [(a + b) / 2 for a, b in dots]
+    if len(rows1) < 2 or len(centres) < 2:
+        raise ValueError(f"rows.single/rows.double: {len(rows1)} dividers and {len(centres)} dots, need 2 each")
     c["size"] = {
         "row": tok(px((rows1[-1][0] - rows1[0][0]) / 2 / (len(rows1) - 1)), "dimension", "Single-line row (Projects, Workspaces, Customize, Add Workspace), divider to divider.", "Sampled", rd("rows.single")["capture"]),
         "rowTwoLine": tok(px((centres[-1] - centres[0]) / 2 / (len(centres) - 1)), "dimension", "Agent row with a status line (title, then branch state, diffstat and repo), dot to dot.", "Sampled", rd("rows.double", "dark")["capture"]),
@@ -348,6 +352,10 @@ def aliases(v):
     return []
 
 
+class CheckError(ValueError):
+    """A token file check() rejects. Raised explicitly so the check still runs under python3 -O."""
+
+
 def check(doc):
     sets = [s for s in ("core", "light", "dark") if s in doc]  # a one-theme app has no light or no dark
     paths = {".".join(p) for name in sets for p, _ in walk(doc[name])}
@@ -355,19 +363,24 @@ def check(doc):
         for p, t in walk(doc[name]):
             where = name + "." + ".".join(p)
             src = t.get("$extensions", {}).get("source", {})
-            assert src.get("evidence") and src.get("capture"), f"{where}: no source"
+            if not (src.get("evidence") and src.get("capture")):
+                raise CheckError(f"{where}: no source")
             v = t["$value"]
             for a in aliases(v):
-                assert a in paths, f"{where}: alias {{{a}}} points at nothing"
+                if a not in paths:
+                    raise CheckError(f"{where}: alias {{{a}}} points at nothing")
             if isinstance(v, str) and v.startswith("{"):
                 continue
             elif t["$type"] == "color":
-                assert re.fullmatch(r"#[0-9A-F]{6}([0-9A-F]{2})?", v), f"{where}: bad colour {v}"
+                if not re.fullmatch(r"#[0-9A-F]{6}([0-9A-F]{2})?", v):
+                    raise CheckError(f"{where}: bad colour {v}")
             elif t["$type"] == "dimension":
-                assert re.fullmatch(r"-?\d+(\.\d+)?px", v), f"{where}: bad dimension {v}"
+                if not re.fullmatch(r"-?\d+(\.\d+)?px", v):
+                    raise CheckError(f"{where}: bad dimension {v}")
     keys = lambda s: sorted(".".join(p) for p, _ in walk(doc[s]))
     if "light" in doc and "dark" in doc:
-        assert keys("light") == keys("dark"), "light and dark keys differ"
+        if keys("light") != keys("dark"):
+            raise CheckError("light and dark keys differ")
 
 
 def build():

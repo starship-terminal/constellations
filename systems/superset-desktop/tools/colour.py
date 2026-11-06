@@ -55,7 +55,8 @@ def color(c):
     c = c.strip()
     if c in ("transparent", "none"):
         return "rgba(0, 0, 0, 0)"
-    m = re.fullmatch(r"#([0-9a-fA-F]{3,8})", c)
+    # 3, 4, 6 or 8 digits only: a 5- or 7-digit hex is not a colour, and must not be read as one.
+    m = re.fullmatch(r"#([0-9a-fA-F]{8}|[0-9a-fA-F]{6}|[0-9a-fA-F]{3,4})", c)
     if m:
         h = m.group(1)
         if len(h) in (3, 4):
@@ -104,7 +105,7 @@ def split_top(s):
     return [x.strip() for x in out if x.strip()]
 
 
-COLOR_RE = r"(#[0-9a-fA-F]{3,8}|(?:rgba?|color|oklab|oklch|lab|lch)\((?:[^()]|\([^()]*\))*\))"
+COLOR_RE = r"(#(?:[0-9a-fA-F]{8}|[0-9a-fA-F]{6}|[0-9a-fA-F]{3,4})(?![0-9a-fA-F])|(?:rgba?|color|oklab|oklch|lab|lch)\((?:[^()]|\([^()]*\))*\))"
 
 
 def px(v):
@@ -113,7 +114,7 @@ def px(v):
         raise ValueError("not a px length: %r" % v)
     f = float(m.group(1))
     if abs(f) > 1e6:
-        f = 9999
+        f = math.copysign(9999, f)   # an off-screen sentinel keeps its side
     return ("%g" % round(f, 2)) + "px"
 
 

@@ -686,6 +686,13 @@
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 760px) {
+  /* Below 760px the shell's fixed "Open navigation" button sits at the top
+     left; start the page under it so it does not cover the back link. */
+  .page {
+    padding-top: 72px;
+  }
+}
 .tile {
   transition:
     background var(--duration-fast),

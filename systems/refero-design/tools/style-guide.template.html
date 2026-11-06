@@ -332,7 +332,7 @@ table.t td.src { color: var(--text-tertiary); font-size: 12px; }
 </main>
 <script>
 const T = /*TOKENS*/null;
-const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 const css = (path) => '--' + path.replace(/[^a-zA-Z0-9-]/g, '-');
 const flat = (node, prefix = '') => Object.entries(node).flatMap(([k, v]) => (v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : [])));
 const show = (v) => (typeof v === 'object' ? JSON.stringify(v) : String(v));
@@ -355,7 +355,7 @@ function fillRoles() {
     const v = css(n.replace(/\./g, '-'));
     const sw = t.t === 'color' ? `<span class="dot" style="display:inline-block;width:28px;height:28px;border-radius:8px;border:1px solid var(--border-quaternary, #eee);background:var(${v})"></span>`
       : t.t === 'shadow' ? `<span style="display:inline-block;width:28px;height:28px;border-radius:8px;background:#fff;box-shadow:var(${v})"></span>` : '';
-    roles.insertAdjacentHTML('beforeend', `<tr><td>${sw}</td><td><code>${esc(n)}</code></td><td><code>${esc(show(t.v)).slice(0, 160)}</code></td><td class="src">${esc(t.s)}</td></tr>`);
+    roles.insertAdjacentHTML('beforeend', `<tr><td>${sw}</td><td><code>${esc(n)}</code></td><td><code>${esc(show(t.v).slice(0, 160))}</code></td><td class="src">${esc(t.s)}</td></tr>`);
   }
 }
 fillRoles();

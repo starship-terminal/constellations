@@ -356,7 +356,7 @@ The capture kit needs a signed-in browser. Paste
 `__snap('<label>', REDACT)` for each state, save each result to a file, then:
 
 ```bash
-python3 tools/capture/unsnap.py <result file> <scratch dir>
+SNAP_REDACT=~/.design-systems/researchrabbit-redact.json python3 tools/capture/unsnap.py <result file> <scratch dir>
 ```
 
 ```bash

@@ -6,17 +6,23 @@
 // scopes); before it, from a `dark` class on <html> and on each markdown body. Either way the same
 // static copy renders both themes and no account setting is touched.
 import fs from 'fs';
+import path from 'path';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
-const [,, dir, label, ...flags] = process.argv;
+const [,, dirArg, label, ...flags] = process.argv;
+const dir = path.resolve(dirArg);   // a relative <dir> would make a broken file:// URL
 const meta = JSON.parse(fs.readFileSync(`${dir}/${label}.json`));
 const light = flags.includes('light');
 const out = light ? label.replace(/-dark(?=-|$)/, '-light') : label;
 const b = await chromium.launch();
 const ctx = await b.newContext({ viewport: { width: meta.w, height: meta.h }, deviceScaleFactor: 2, colorScheme: light ? 'light' : 'dark' });
-// Nothing signed in is ever fetched: a backend-api URL (the account photo, file thumbnails) is
-// refused, so a copy that slipped past snapshot.js still renders without the account's content.
-await ctx.route(/\/backend-api\//, (route) => route.abort());
+// Nothing signed in is ever fetched: only OpenAI's asset hosts are served, from the local cache
+// (lib.mjs routeCdn), and everything else is aborted, every backend-api URL (the account photo,
+// file thumbnails) included, so a copy that slipped past snapshot.js still renders without the
+// account's content.
+process.env.SNAPS ??= dir;
+const { routeCdn } = await import('./lib.mjs');
+await routeCdn(ctx);
 const p = await ctx.newPage();
 await p.goto('file://' + dir + '/' + label + '.html', { waitUntil: 'load', timeout: 60000 });
 // Light: every `dark` class goes (and, for a copy from a kit that marks themes with data-mode, that

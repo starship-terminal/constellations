@@ -54,22 +54,35 @@ for (const [k, st] of Object.entries(forced)) {{ const s = parts[k]; const e = t
 await C.sleep(Object.keys(forced).length ? 350 : 0);
 return {{ state: {json.dumps(shot.get('state', 'default'))}, viewport: C.viewport(), parts: C.measure(parts) }};
 """
-    res = run_js(body)
-    data = json.loads(res)
-    path = shoot(theme, shot["name"])
-    data["file"] = f"{theme}/{shot['name']}.png"
-    # A shot that forces different states on different parts (hover on most, focus-visible on one) records each
-    # part under the state it was in: `partState` names them, and they go to `<shot>~<state>` (same screenshot).
-    entries = {shot["name"]: data}
-    for part, st in shot.get("partState", {}).items():
-        if part in data["parts"]:
-            key = f"{shot['name']}~{'focus' if st == 'focus-visible' else st}"
-            entries.setdefault(key, {"state": st, "viewport": data["viewport"], "parts": {}, "file": data["file"],
-                                     "note": f"split from {shot['name']}: this part was forced to {st}"})
-            entries[key]["parts"][part] = data["parts"].pop(part)
-    write(theme, shot["name"], entries)
-    if shot.get("after") or shot.get("force"):
-        run_js("C.unforce();\n" + shot.get("after", "") + "\nreturn 'after ok';")
+    # `after` (close the menu, clear the typed text) runs once the reveal has run, even when the capture or the
+    # write then fails, so such a shot never leaves text in a field or a menu open. A reveal that failed (a guard
+    # such as P.onlyScratch() refusing, say) gets no `after`: it may not have changed anything, and clearing the
+    # composer then would erase whatever the owner had typed there. main() still closes menus for it.
+    failed, revealed = True, False
+    try:
+        res = run_js(body)
+        revealed = True
+        data = json.loads(res)
+        path = shoot(theme, shot["name"])
+        data["file"] = f"{theme}/{shot['name']}.png"
+        # A shot that forces different states on different parts (hover on most, focus-visible on one) records each
+        # part under the state it was in: `partState` names them, and they go to `<shot>~<state>` (same screenshot).
+        entries = {shot["name"]: data}
+        for part, st in shot.get("partState", {}).items():
+            if part in data["parts"]:
+                key = f"{shot['name']}~{'focus' if st == 'focus-visible' else st}"
+                entries.setdefault(key, {"state": st, "viewport": data["viewport"], "parts": {}, "file": data["file"],
+                                         "note": f"split from {shot['name']}: this part was forced to {st}"})
+                entries[key]["parts"][part] = data["parts"].pop(part)
+        write(theme, shot["name"], entries)
+        failed = False
+    finally:
+        if revealed and (shot.get("after") or shot.get("force")):
+            try:
+                run_js("C.unforce();\n" + shot.get("after", "") + "\nreturn 'after ok';")
+            except Exception:
+                if not failed:
+                    raise
     return path, sorted(data["parts"])
 
 

@@ -184,9 +184,19 @@ class Resolver:
         return value
 
 
-@functools.lru_cache(maxsize=None)
 def resolver_for(tokens_path: str) -> Resolver:
+    """The Resolver of a tokens file, cached by the file's modification time and size, so a
+    long-running server sees an edited file instead of the copy it read first."""
+    st = (ROOT / tokens_path).stat()
+    return _resolver(tokens_path, st.st_mtime_ns, st.st_size)
+
+
+@functools.lru_cache(maxsize=256)
+def _resolver(tokens_path: str, mtime_ns: int, size: int) -> Resolver:
     return Resolver(json.loads((ROOT / tokens_path).read_text()))
+
+
+resolver_for.cache_clear = _resolver.cache_clear
 
 
 def swatches(system: dict) -> dict[str, list[dict]]:
@@ -223,7 +233,8 @@ def _shadow(layer) -> str | None:
     if not isinstance(layer, dict) or "offsetX" not in layer or "offsetY" not in layer:
         return None
     colour = _hex(layer.get("color")) or layer.get("color")
-    parts = ["inset"] if layer.get("inset") else []
+    # DTCG writes an inner shadow as inset: true; Tokens Studio as type: "innerShadow".
+    parts = ["inset"] if layer.get("inset") or layer.get("type") == "innerShadow" else []
     parts += [str(_dimension(layer[k]) or layer[k]) for k in ("offsetX", "offsetY", "blur", "spread") if k in layer]
     if not isinstance(colour, str):
         return None
@@ -445,6 +456,32 @@ def signed_url_pattern(spec: dict) -> re.Pattern:
 SIGNED_URL = signed_url_pattern(json.loads(SIGNED_PARAMS.read_text()))
 
 
+def read_redaction(paths) -> dict:
+    """One or more redaction files ({"replace": [[pattern, flags, replacement], ...],
+    "email_allow": [...]}) merged, in order. The one reader for scan and redact_images.py."""
+    merged = {"replace": [], "email_allow": []}
+    for path in ([paths] if isinstance(paths, (str, Path)) else paths or []):
+        data = json.loads(Path(path).expanduser().read_text())
+        merged["replace"] += data.get("replace", [])
+        merged["email_allow"] += data.get("email_allow", [])
+    return merged
+
+
+def redaction_patterns(redact: dict, ignorecase: bool = False) -> list[re.Pattern]:
+    """The compiled `replace` patterns, one per row and in order: case-insensitive when the
+    row's flags hold "i" or `ignorecase` (OCR reads case unreliably), and matched literally
+    when a row is not a valid regex, so a bad row still guards instead of crashing."""
+    out = []
+    for row in redact.get("replace", []):
+        pat = row[0]
+        flags = re.I if ignorecase or (len(row) > 1 and "i" in str(row[1])) else 0
+        try:
+            out.append(re.compile(pat, flags))
+        except re.error:
+            out.append(re.compile(re.escape(pat), flags))
+    return out
+
+
 def scan(folder: Path, redact: dict) -> list[str]:
     """Every text file under `folder` (any extension or none; see is_text_file) checked against the redaction file's patterns (the
     [pattern, flags, replacement] triples unsnap.py uses) and for URL signing parameters.
@@ -453,8 +490,7 @@ def scan(folder: Path, redact: dict) -> list[str]:
     so a check that looked at nothing never reads as clean."""
     if not folder.is_dir():
         raise SystemExit(f"scan: {folder} is not a folder")
-    rules = [(re.compile(pat, re.I if "i" in flags else 0), n) for n, (pat, flags, _) in
-             enumerate(redact.get("replace", []), 1)]
+    rules = [(rx, n) for n, rx in enumerate(redaction_patterns(redact), 1)]
     hits, checked = [], 0
     for f in sorted(folder.rglob("*")):
         if not f.is_file() or SCAN_SKIP_DIRS & set(f.relative_to(folder).parts):
@@ -925,6 +961,20 @@ def design_md_path(system: dict) -> Path:
     return ROOT / "systems" / system["slug"] / "DESIGN.md"
 
 
+# What a child process (npx, sips, tesseract, node) may see of this one's environment: enough to
+# find programs, a home and a temp folder, locale and proxies. Never the provider keys or R2
+# credentials refero_media loads from .env.
+TOOL_ENV_KEYS = ("PATH", "HOME", "USER", "LOGNAME", "SHELL", "TMPDIR", "TEMP", "TMP", "LANG", "LC_ALL",
+                 "LC_CTYPE", "TERM", "SYSTEMROOT", "COMSPEC", "PATHEXT", "APPDATA", "LOCALAPPDATA",
+                 "npm_config_cache", "NODE_EXTRA_CA_CERTS", "SSL_CERT_FILE", "TESSDATA_PREFIX",
+                 "HTTP_PROXY", "HTTPS_PROXY", "NO_PROXY", "http_proxy", "https_proxy", "no_proxy")
+
+
+def tool_env(**extra: str) -> dict:
+    """A minimal environment for a subprocess: TOOL_ENV_KEYS from this one, plus `extra`."""
+    return {**{k: os.environ[k] for k in TOOL_ENV_KEYS if k in os.environ}, **extra}
+
+
 def lint_design_md(paths: list[Path]) -> tuple[list[str], dict]:
     """Run the pinned DESIGN.md linter on each file from a throwaway directory, so nothing
     npm writes lands in the repository. Returns (problems, {file: {rule: count}}): errors,
@@ -936,7 +986,7 @@ def lint_design_md(paths: list[Path]) -> tuple[list[str], dict]:
     with tempfile.TemporaryDirectory() as tmp:
         for path in paths:
             done = subprocess.run(["npx", "--yes", DESIGN_MD_LINTER, "lint", "--format", "json",
-                                   str(path.resolve())], cwd=tmp, capture_output=True, text=True)
+                                   str(path.resolve())], cwd=tmp, capture_output=True, text=True, env=tool_env())
             rel = path.resolve().relative_to(ROOT).as_posix()
             try:
                 report = json.loads(done.stdout)
@@ -1017,7 +1067,7 @@ def _make_thumb(src: Path, dst: Path) -> bool:
     if backend == "sips":
         done = subprocess.run(["sips", "-s", "format", "jpeg", "-s", "formatOptions", "78",
                                "--resampleWidth", str(THUMB_WIDTH), str(src), "--out", str(dst)],
-                              capture_output=True)
+                              capture_output=True, env=tool_env())
         return done.returncode == 0 and dst.exists()
     if backend != "pillow":
         return False
@@ -1165,6 +1215,12 @@ def check() -> list[str]:
         if not icon or not (ROOT / icon).exists():
             problems.append(f"{slug}: preview.icon {icon} does not exist; run `python3 tools/fetch_icon.py {slug}`")
         problems += palette_problems(slug, s["preview"], s.get("themes", []))
+        try:
+            resolver_for(s["tokens"])
+        except (OSError, ValueError) as e:     # missing (reported above) or not JSON: the token checks cannot run
+            if (ROOT / s["tokens"]).exists():
+                problems.append(f"{slug}: tokens {s['tokens']} cannot be read ({e.__class__.__name__}: {e})")
+            continue
         for theme, roles in swatches(s).items():
             for sw in roles:
                 if not isinstance(sw["value"], str):
@@ -1519,6 +1575,11 @@ def build_refero() -> Path | None:
               f"{len(ambiguous)} business names are not unique", file=sys.stderr)
     index = []
     written = set()
+    # Each slug becomes a file name: refuse a path-like one before writing anything.
+    for folder, meta, _ in styles:
+        slug = meta.get("slug") or folder.name
+        if not REFERO_SLUG.fullmatch(str(slug)):
+            raise SystemExit(f"refero: {folder.name}: slug {slug!r} is not lowercase letters, digits and hyphens")
     for folder, meta, ds in styles:
         slug = meta.get("slug") or folder.name
         atomic_write(ent_dir / f"{slug}.json",
@@ -1537,6 +1598,9 @@ def build_refero() -> Path | None:
                                   "styles": index},
                                  separators=(",", ":")))
     return out
+
+
+REFERO_SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 
 
 def build() -> Path:
@@ -1575,7 +1639,8 @@ def build() -> Path:
     attach_thumbs(all_shots)
     build_exports(systems)
     out = DATA / "data.json"
-    atomic_write(out, json.dumps({"root": str(ROOT), "categories": catalog.get("categories", {}),
+    # No absolute checkout path: nothing reads one, and web/data is served under /media/data/.
+    atomic_write(out, json.dumps({"categories": catalog.get("categories", {}),
                                   "systems": systems},
                                  separators=(",", ":")))
     build_refero()
@@ -1692,7 +1757,7 @@ def main() -> None:
         if not hits:
             sys.exit("no package matches")
     if args.cmd == "scan":
-        hits = scan(args.folder, json.loads(args.redact.expanduser().read_text()))
+        hits = scan(args.folder, read_redaction(args.redact))
         print("\n".join(hits) if hits else f"no private text found in {args.folder}")
         sys.exit(1 if hits else 0)
     if args.cmd == "contrast":

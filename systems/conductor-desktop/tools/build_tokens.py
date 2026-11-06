@@ -253,6 +253,9 @@ def parts(t):
 P = {t: parts(t) for t in THEMES}
 
 
+INTERACTION = ("hover", "focus-visible", "focus", "pressed", "active")
+
+
 def style(t, part, state="default"):
     if ":" in part:                    # "<shot>:<part>": that shot's reading, for a part name two components share
         shot, part = part.split(":")
@@ -263,7 +266,9 @@ def style(t, part, state="default"):
             return None, None
     hit = P[t].get((part, state))
     if not hit and state == "default":
-        hit = next((v for (p, s), v in sorted(P[t].items()) if p == part), None)
+        # A part read only in a content state (composer-text exists once text is typed) takes that reading;
+        # never a hover, focus or pressed one, whose values are the state's, not the part's.
+        hit = next((v for (p, s), v in sorted(P[t].items()) if p == part and s not in INTERACTION), None)
     return hit if hit else (None, None)
 
 
@@ -542,7 +547,9 @@ def build_roles_and_components(t):
     put(tree, ("role", "accent", "pressed"), tok("{role.accent.default}", "color", "Derived",
         "pressed keeps the fill and darkens it with an inset shadow (active:inset-shadow-[0_0_0_999px_rgb(0_0_0/0.1)]) and a 1px drop (active:translate-y-px)",
         overlay="inset 0 0 0 999px rgba(0, 0, 0, 0.1)"))
-    fg = resolve(t, "{base.foreground}")
+    fg = color(resolve(t, "{base.foreground}"))
+    if not re.fullmatch(r"#[0-9a-f]{6}", fg):
+        raise SystemExit(f"base.foreground is {fg} in {t}, not an opaque colour: role.text.disabled cannot be derived from it")
     r, g, b = (int(fg[i:i + 2], 16) for i in (1, 3, 5))
     put(tree, ("role", "text", "disabled"), tok(f"rgba({r}, {g}, {b}, 0.5)", "color", "Derived",
         "base.foreground at the 50% opacity disabled controls take (disabled:opacity-50)", formula="disabled:opacity-50"))

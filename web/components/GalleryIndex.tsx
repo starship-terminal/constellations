@@ -178,6 +178,7 @@ export function GalleryIndex({ data }: { data: GalleryData }) {
                 ["all", "All"],
                 ["web", "Web apps"],
                 ["ios", "iOS apps"],
+                ["desktop", "Desktop apps"],
               ] as const
             ).map(([k, label]) => (
               <button
