@@ -10,11 +10,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { fileURLToPath } from 'node:url';
 
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 export const { chromium } = pw.default ?? pw;
 
-export const HERE = path.dirname(new URL(import.meta.url).pathname);
+export const HERE = path.dirname(fileURLToPath(import.meta.url));
 export const REF = path.resolve(HERE, '..', '..', '..');
 export const RAW = path.join(REF, 'raw');
 export const CROPS = path.join(REF, 'components', 'crops');

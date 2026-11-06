@@ -1,6 +1,6 @@
 // Captures Refero's public pages into RAW (full-colour PNGs); quantize.py turns them into screenshots/.
 //
-//   RAW=/some/scratch/dir PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [page,page,...]
+//   [RAW=<dir, default ~/.design-systems/refero-design/raw-shots>] PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [page,page,...]
 //
 // Two surfaces, both public:
 //   refero.design          home, /search, /apps/search (iOS), /pricing, /mcp
@@ -12,10 +12,13 @@
 // the promo dismissals (the MCP card's Close, the research coach's X) and hovering a styles card so
 // its scroll-preview video loads.
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, chromium, UA, UA_MOBILE, BASE, STYLES } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour shots of the pages stay outside the repository until quantize.py has made screenshots/.
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', 'refero-design', 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
