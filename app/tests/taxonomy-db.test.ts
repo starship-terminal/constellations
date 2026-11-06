@@ -288,9 +288,10 @@ test("v5 seeds only existing media identities with recorded rules and leaves unv
     mediaId: sample.mediaId,
     termId: sample.terms.find((term) => term.rule === "ui-button")!.termId,
   });
-  // Font terms come only from a package's recorded primary family, never a
-  // fallback stack entry. Checked across the seed rather than one package's
-  // current fonts, which a recapture may change.
+  // Font terms come only from a package's recorded primary family. Checked
+  // across the seed rather than one package's current fonts, which a
+  // recapture may change; tools/test_media_taxonomy.py checks that a fallback
+  // family in an invented stack never becomes a term.
   const labels = new Map(
     taxonomyGroups.flatMap((group) =>
       group.terms.map((term) => [term.id, term.label] as const),

@@ -48,6 +48,9 @@ vi.mock("@/server/sources", () => ({
   getReference: vi.fn(async (id: string) =>
     id === "systems:test" ? fixtures.reference : null,
   ),
+  getReferenceSummary: vi.fn(async (id: string) =>
+    id === "systems:test" ? fixtures.reference : null,
+  ),
   readReferenceImage: vi.fn(async () => ({
     data: new Uint8Array([1, 2, 3]),
     mediaType: "image/png",
