@@ -199,8 +199,10 @@ describe("real library normalization", () => {
       "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAusB9Wl6Xh8AAAAASUVORK5CYII=",
       "base64",
     );
+    // Distinct trailing bytes tell the captures apart.
+    const capture = (name: string) => Buffer.concat([png, Buffer.from(name)]);
     for (const name of ["light/z-last.png", "light/deeper/a.png", "dark/b.png"])
-      await fs.writeFile(path.join(screenshots, name), png);
+      await fs.writeFile(path.join(screenshots, name), capture(name));
     await fs.writeFile(path.join(screenshots, "README.md"), "Not an image");
     await fs.writeFile(path.join(outside, "outside.png"), png);
     await fs.symlink(outside, path.join(screenshots, "escape"));
@@ -219,6 +221,10 @@ describe("real library normalization", () => {
       ["light"],
       ["light"],
     ]);
+    // The model receives the first readable capture's bytes as a PNG.
+    const vision = await readReferenceImage(detail!);
+    expect(vision?.mediaType).toBe("image/png");
+    expect(Buffer.from(vision!.data)).toEqual(capture("dark/b.png"));
     // The screenshots root itself must not be a symlink outside this package either.
     await fs.rm(screenshots, { recursive: true });
     await fs.symlink(outside, screenshots);
@@ -298,11 +304,6 @@ describe("real library normalization", () => {
       ),
     );
     expect(await readExport("systems:linear", "../../.env")).toBeNull();
-    if (detail?.image) {
-      const vision = await readReferenceImage(detail);
-      if (vision)
-        expect(vision.data.byteLength).toBeLessThanOrEqual(5 * 1024 * 1024);
-    }
   });
   it("uses canonical Refero artifacts when generated files are absent", async () => {
     const dir = await fixture();

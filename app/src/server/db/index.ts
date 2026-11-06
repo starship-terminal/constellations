@@ -47,6 +47,19 @@ async function restrictPermissions(directory: string) {
     }
   }
 }
+// A row that is not a JSON object reads as no settings. Older builds wrote the
+// literal string "provider" into a fresh row, and every read then threw; the
+// next save replaces it with valid JSON.
+function parseSettings(value: string): Record<string, unknown> {
+  try {
+    const parsed: unknown = JSON.parse(value);
+    return parsed && typeof parsed === "object" && !Array.isArray(parsed)
+      ? (parsed as Record<string, unknown>)
+      : {};
+  } catch {
+    return {};
+  }
+}
 export async function createResearchStore(directory: string) {
   await mkdir(directory, { recursive: true, mode: 0o700 });
   // Before anything can fail, so a store that will not open is still locked
@@ -331,7 +344,7 @@ export async function createResearchStore(directory: string) {
         .select()
         .from(schema.settings)
         .where(eq(schema.settings.id, "provider"));
-      return row ? JSON.parse(row.value) : {};
+      return row ? parseSettings(row.value) : {};
     },
     async saveSettings(value: Record<string, unknown>) {
       await db
@@ -353,11 +366,11 @@ export async function createResearchStore(directory: string) {
           "SELECT value FROM settings WHERE id='provider'",
         );
         const saved = result.rows.length
-          ? JSON.parse(String(result.rows[0].value))
+          ? parseSettings(String(result.rows[0].value))
           : {};
         await tx.execute({
-          sql: "INSERT INTO settings(id,value) VALUES('provider',?) ON CONFLICT(id) DO UPDATE SET value=?",
-          args: ["provider", JSON.stringify(mutate(saved))],
+          sql: "INSERT INTO settings(id,value) VALUES('provider',?) ON CONFLICT(id) DO UPDATE SET value=excluded.value",
+          args: [JSON.stringify(mutate(saved))],
         });
         await tx.commit();
       } catch (error) {
