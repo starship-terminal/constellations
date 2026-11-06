@@ -177,6 +177,41 @@ class SnapshotInABrowser(unittest.TestCase):
     """Runs snapshot.js's __snap on a small page in headless Chromium (the capture's own Playwright,
     $PLAYWRIGHT or ~/.design-systems/pw), and checks the copy it returns."""
 
+    def snap(self, page, setup="", redact=None):
+        redact = redact or {"replace": [["nothing-matches-this", "g", "x"]]}
+        script = f"""
+const pw = await import({json.dumps(Path(PLAYWRIGHT).as_uri())});
+const b = await pw.chromium.launch();
+const p = await b.newPage();
+await p.setContent({json.dumps(page)});
+await p.evaluate(() => {{ {setup} }});
+await p.addScriptTag({{ content: {json.dumps((SIGNED_IN / "snapshot.js").read_text())} }});
+const out = await p.evaluate((r) => window.__snap('t', r), {json.dumps(redact)});
+await b.close();
+console.log(JSON.stringify(out));
+"""
+        res = subprocess.run([NODE, "--input-type=module", "-e", script], capture_output=True, text=True, timeout=120)
+        self.assertEqual(res.returncode, 0, res.stderr[-2000:])
+        return json.loads(res.stdout).split("SNAPMETA", 1)[1]
+
+    def test_credential_fields_never_reach_the_copy(self):
+        # Each field trips exactly one rule: neutral ids, so the autocomplete rule is tested on its own.
+        page = ('<input type="password" id="f1"><input type="hidden" name="f2" value="HIDDENTOKEN1">'
+                '<input id="f3" autocomplete="one-time-code"><input id="f4" autocomplete="cc-number">'
+                '<input type="text" id="f5" autocomplete="current-password"><input name="api_key" id="f6">'
+                '<input id="q" value="">')
+        setup = ("document.getElementById('f1').value = 'PASSWORDVALUE1';"
+                 "document.getElementById('f3').value = '123987';"
+                 "document.getElementById('f4').value = '4111222233334444';"
+                 "document.getElementById('f5').value = 'SHOWNPASSWORD1';"
+                 "document.getElementById('f6').value = 'APIKEYVALUE1';"
+                 "document.getElementById('q').value = 'plain search';")
+        body = self.snap(page, setup)
+        for secret in ("PASSWORDVALUE1", "HIDDENTOKEN1", "123987", "4111222233334444", "SHOWNPASSWORD1", "APIKEYVALUE1"):
+            self.assertNotIn(secret, body)
+        self.assertIn('value="xxxxxxxx"', body)          # the password field still renders filled
+        self.assertIn('value="plain search"', body)       # ordinary fields keep what was typed
+
     def test_redaction_reaches_text_nodes_comments_and_attributes(self):
         page = ('<p>J&#97;ne&nbsp;Doe and Jane Doe</p><!-- Jane Doe --><img alt="Jane Doe" src="data:,">'
                 '<a title="by Jane  Doe" href="#x">x</a><p>JANE\u00a0DOE</p>')

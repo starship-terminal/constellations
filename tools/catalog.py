@@ -233,7 +233,8 @@ def _shadow(layer) -> str | None:
     if not isinstance(layer, dict) or "offsetX" not in layer or "offsetY" not in layer:
         return None
     colour = _hex(layer.get("color")) or layer.get("color")
-    parts = ["inset"] if layer.get("inset") else []
+    # DTCG writes an inner shadow as inset: true; Tokens Studio as type: "innerShadow".
+    parts = ["inset"] if layer.get("inset") or layer.get("type") == "innerShadow" else []
     parts += [str(_dimension(layer[k]) or layer[k]) for k in ("offsetX", "offsetY", "blur", "spread") if k in layer]
     if not isinstance(colour, str):
         return None

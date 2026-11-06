@@ -1148,6 +1148,16 @@ class RepoFileTest(unittest.TestCase):
             self.assertIsNone(catalog.repo_file("/systems/claude/tokens.json"))
 
 
+class InnerShadowTest(unittest.TestCase):
+    def test_tokens_studio_inner_shadow_exports_as_inset(self):
+        layer = {"offsetX": "0px", "offsetY": "-6px", "blur": "0px", "spread": "0px", "color": "#00000026"}
+        self.assertEqual(catalog.css_value(dict(layer, type="innerShadow")), "inset 0px -6px 0px 0px #00000026")
+        self.assertEqual(catalog.css_value(dict(layer, inset=True)), "inset 0px -6px 0px 0px #00000026")
+        self.assertEqual(catalog.css_value(dict(layer, type="dropShadow")), "0px -6px 0px 0px #00000026")
+        self.assertEqual(catalog.css_value([dict(layer, type="innerShadow"), layer]),
+                         "inset 0px -6px 0px 0px #00000026, 0px -6px 0px 0px #00000026")
+
+
 class SmallBugsTest(unittest.TestCase):
     def test_resolver_sees_an_edited_tokens_file(self):
         import os
