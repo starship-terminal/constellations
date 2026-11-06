@@ -359,13 +359,20 @@ def flatten(im):
     return Image.fromarray(np.clip(128 + (g - bg) * 4, 0, 255).astype(np.uint8)).convert("RGB")
 
 
+def ocr_scale(width):
+    """How much a strip is enlarged before OCR, from the image's width alone: text size follows the
+    width, and tall images are read in TILE-high strips anyway, so a 390-wide mobile capture
+    thousands of pixels tall still gets the enlargement its small text needs."""
+    return 3 if width < 500 else 2 if width < 1000 else 1
+
+
 def ocr_words(im, boost=False):
     """Word boxes for a whole image: small ones enlarged, tall ones read in strips. `boost` reads a
     contrast-flattened copy, which finds dimmed text that plain OCR skips."""
     if boost:
         im = flatten(im)
     w, h = im.size
-    scale = 3 if max(w, h) < 500 else 2 if max(w, h) < 1000 else 1
+    scale = ocr_scale(w)
     words = []
     y = 0
     while True:
