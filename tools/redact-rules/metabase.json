@@ -1,0 +1,9 @@
+{
+  "families": [
+    {"name":"Profile contact line","files":["screenshots/profile-*-light-desktop.png","screenshots/shortcuts-*-light-desktop.png"],"rects":[[786,251,980,274]]},
+    {"name":"Dark profile contact line","files":["screenshots/profile-settings-dark-desktop.png"],"rects":[[622,251,818,274]]},
+    {"name":"Recent-item collection contact labels","files":["screenshots/global-search-recents-light-desktop.png"],"rects":[[798,226,1009,247],[798,561,1009,584]]},
+    {"name":"Search-result collection contact labels","files":["screenshots/global-search-results-light-desktop.png"],"rects":[[783,400,1009,422],[783,504,1009,526]]}
+  ],
+  "ocr":{"emails":true,"boost":["screenshots/*.png"]}
+}

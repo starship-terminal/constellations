@@ -1,0 +1,65 @@
+{
+  "elements": [
+    {
+      "label": null,
+      "selector": "html",
+      "styles": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "borderColor": "rgb(255, 255, 255)",
+        "borderRadius": "0px",
+        "boxShadow": "none",
+        "color": "rgb(255, 255, 255)",
+        "fontFamily": "sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "normal"
+      }
+    },
+    {
+      "label": null,
+      "selector": "body",
+      "styles": {
+        "backgroundColor": "rgb(46, 41, 54)",
+        "borderColor": "rgb(231, 229, 234)",
+        "borderRadius": "0px",
+        "boxShadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "fontFamily": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.6px"
+      }
+    },
+    {
+      "label": null,
+      "selector": "main",
+      "styles": {
+        "backgroundColor": "rgb(46, 41, 54)",
+        "borderColor": "rgb(231, 229, 234)",
+        "borderRadius": "0px",
+        "boxShadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "fontFamily": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.6px"
+      }
+    },
+    {
+      "label": "Primary Navigation",
+      "selector": "nav",
+      "styles": {
+        "backgroundColor": "rgb(46, 41, 54)",
+        "borderColor": "rgb(231, 229, 234) rgb(20, 17, 25) rgb(231, 229, 234) rgb(231, 229, 234)",
+        "borderRadius": "0px",
+        "boxShadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "fontFamily": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "19.6px"
+      }
+    }
+  ],
+  "fontReaderGap": "document.fonts is not iterable in browser read-only API; font families are measured computed styles instead"
+}

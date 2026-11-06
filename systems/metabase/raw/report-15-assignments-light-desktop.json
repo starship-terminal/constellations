@@ -1,0 +1,2073 @@
+{
+  "name": "report-15-assignments-light-desktop",
+  "capturedAt": "2026-10-31T05:15:37.152Z",
+  "source": "https://edumation.metabase.com/question/15-assignments",
+  "reading": {
+    "elements": [
+      {
+        "disabled": false,
+        "label": "Toggle sidebar",
+        "rect": {
+          "bottom": 51.50092324614525,
+          "height": 51.993534088134766,
+          "left": 21.197660446166992,
+          "right": 57.19673728942871,
+          "top": -0.4926108419895172,
+          "width": 35.99907684326172,
+          "x": 21.197660446166992,
+          "y": -0.4926108419895172
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(0, 0, 0)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(0, 0, 0)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "padding": "16px 0px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "",
+        "rect": {
+          "bottom": 51.504772275686264,
+          "height": 51.99738311767578,
+          "left": 57.19673538208008,
+          "right": 93.1958122253418,
+          "top": -0.4926108419895172,
+          "width": 35.99907684326172,
+          "x": 57.19673538208008,
+          "y": -0.4926108419895172
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "0px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Your Reports",
+        "rect": {
+          "bottom": 33.505234718322754,
+          "height": 15.99830722808838,
+          "left": 125.1924285888672,
+          "right": 222.7370758056641,
+          "top": 17.506927490234375,
+          "width": 97.54464721679688,
+          "x": 125.1924285888672,
+          "y": 17.506927490234375
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.25px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Search",
+        "rect": {
+          "bottom": 43.50369501113891,
+          "height": 35.99907684326172,
+          "left": 1003.2366333007812,
+          "right": 1243.2343292236328,
+          "top": 7.504618167877197,
+          "width": 239.99769592285156,
+          "x": 1003.2366333007812,
+          "y": 7.504618167877197
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderColor": "rgb(220, 223, 224)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.44)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "700",
+          "lineHeight": "16.1px",
+          "padding": "11px 15px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "New",
+        "rect": {
+          "bottom": 43.50369501113891,
+          "height": 35.99907684326172,
+          "left": 1267.2298583984375,
+          "right": 1339.9130477905271,
+          "top": 7.504618167877197,
+          "width": 72.68318939208984,
+          "x": 1267.2298583984375,
+          "y": 7.504618167877197
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgb(105, 65, 198)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(255, 255, 255, 0.95)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "16.1px",
+          "padding": "8px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Chat with Metabot (\u2318+E)",
+        "rect": {
+          "bottom": 43.50369501113891,
+          "height": 35.99907684326172,
+          "left": 1347.9102783203125,
+          "right": 1383.9093551635742,
+          "top": 7.504618167877197,
+          "width": 35.99907684326172,
+          "x": 1347.9102783203125,
+          "y": 7.504618167877197
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(220, 223, 224)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "14px",
+          "padding": "8px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Postgres",
+        "rect": {
+          "bottom": 109.87530994415285,
+          "height": 14.778325080871582,
+          "left": 31.99661445617676,
+          "right": 85.15625190734863,
+          "top": 95.09698486328124,
+          "width": 53.159637451171875,
+          "x": 31.99661445617676,
+          "y": 95.09698486328124
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.25px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Assignments",
+        "rect": {
+          "bottom": 109.87530994415285,
+          "height": 14.778325080871582,
+          "left": 100.70427703857422,
+          "right": 179.47197723388672,
+          "top": 95.09698486328124,
+          "width": 78.7677001953125,
+          "x": 100.70427703857422,
+          "y": 95.09698486328124
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.25px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Edited a year ago by Metabase Internal",
+        "rect": {
+          "bottom": 109.75215816497804,
+          "height": 14.53201961517334,
+          "left": 195.4702911376953,
+          "right": 422.3868560791016,
+          "top": 95.22013854980467,
+          "width": 226.91656494140625,
+          "x": 195.4702911376953,
+          "y": 95.22013854980467
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.44)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.44)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Filter",
+        "rect": {
+          "bottom": 105.50339126586914,
+          "height": 39.9976921081543,
+          "left": 831.0152587890625,
+          "right": 921.5286560058594,
+          "top": 65.50569915771484,
+          "width": 90.51339721679688,
+          "x": 831.0152587890625,
+          "y": 65.50569915771484
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderColor": "rgb(220, 223, 224)",
+          "borderRadius": "6px 0px 0px 6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "16.1px",
+          "padding": "11px 15px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Show filters",
+        "rect": {
+          "bottom": 105.50339126586914,
+          "height": 39.9976921081543,
+          "left": 921.5286254882812,
+          "right": 961.433952331543,
+          "top": 65.50569915771484,
+          "width": 39.90532684326172,
+          "x": 921.5286254882812,
+          "y": 65.50569915771484
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderColor": "rgb(220, 223, 224) rgb(220, 223, 224) rgb(220, 223, 224) rgba(7, 23, 34, 0.84)",
+          "borderRadius": "0px 6px 6px 0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "16.1px",
+          "padding": "8px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Summarize",
+        "rect": {
+          "bottom": 105.50339126586914,
+          "height": 39.9976921081543,
+          "left": 969.4312133789062,
+          "right": 1102.5939331054688,
+          "top": 65.50569915771484,
+          "width": 133.1627197265625,
+          "x": 969.4312133789062,
+          "y": 65.50569915771484
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderColor": "rgb(220, 223, 224)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "16.1px",
+          "padding": "11px 15px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Editor",
+        "rect": {
+          "bottom": 105.50339126586914,
+          "height": 39.9976921081543,
+          "left": 1110.5911865234375,
+          "right": 1206.954330444336,
+          "top": 65.50569915771484,
+          "width": 96.36314392089844,
+          "x": 1110.5911865234375,
+          "y": 65.50569915771484
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderColor": "rgb(220, 223, 224)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "16.1px",
+          "padding": "11px 15px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Refresh",
+        "rect": {
+          "bottom": 101.50092506408691,
+          "height": 31.99661445617676,
+          "left": 1222.94873046875,
+          "right": 1254.9453449249268,
+          "top": 69.50431060791016,
+          "width": 31.99661445617676,
+          "x": 1222.94873046875,
+          "y": 69.50431060791016
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "4px 8px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Copy link",
+        "rect": {
+          "bottom": 101.50092506408691,
+          "height": 31.99661445617676,
+          "left": 1262.942626953125,
+          "right": 1294.9392414093018,
+          "top": 69.50431060791016,
+          "width": 31.99661445617676,
+          "x": 1262.942626953125,
+          "y": 69.50431060791016
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "14px",
+          "padding": "0px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Bookmark",
+        "rect": {
+          "bottom": 101.50092506408691,
+          "height": 31.99661445617676,
+          "left": 1311.9189453125,
+          "right": 1343.9155597686768,
+          "top": 69.50431060791016,
+          "width": 31.99661445617676,
+          "x": 1311.9189453125,
+          "y": 69.50431060791016
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "14px",
+          "padding": "0px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "More info",
+        "rect": {
+          "bottom": 101.50092506408691,
+          "height": 31.99661445617676,
+          "left": 1351.9127197265625,
+          "right": 1383.9093341827393,
+          "top": 69.50431060791016,
+          "width": 31.99661445617676,
+          "x": 1351.9127197265625,
+          "y": 69.50431060791016
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "14px",
+          "padding": "4px 8px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Move, trash, and more\u2026",
+        "rect": {
+          "bottom": 101.50092506408691,
+          "height": 31.99661445617676,
+          "left": 1391.9066162109375,
+          "right": 1423.9032306671145,
+          "top": 69.50431060791016,
+          "width": 31.99661445617676,
+          "x": 1391.9066162109375,
+          "y": 69.50431060791016
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "14px",
+          "padding": "0px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Refresh",
+        "rect": {
+          "bottom": 534.4142837524414,
+          "height": 39.99384307861328,
+          "left": 679.9453735351562,
+          "right": 759.9407577514648,
+          "top": 494.4204406738281,
+          "width": 79.9953842163086,
+          "x": 679.9453735351562,
+          "y": 494.4204406738281
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "99px",
+          "boxShadow": "rgba(7, 23, 34, 0.17) 0px 2px 2px 0px",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "4px 24px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Add column",
+        "rect": {
+          "bottom": 149.4958457946777,
+          "height": 22.998767852783203,
+          "left": 1261.49560546875,
+          "right": 1284.4943733215332,
+          "top": 126.49707794189452,
+          "width": 22.998767852783203,
+          "x": 1261.49560546875,
+          "y": 126.49707794189452
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "color(srgb 0.411765 0.254902 0.776471 / 0.1)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "16.1px",
+          "padding": "3px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "4289",
+        "rect": {
+          "bottom": 181.4886045455933,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 95.56265640258788,
+          "top": 166.46397399902344,
+          "width": 32.58158874511719,
+          "x": 62.9810676574707,
+          "y": 166.46397399902344
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Homework #689",
+        "rect": {
+          "bottom": 182.00430583953855,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 286.78802490234375,
+          "top": 166.97967529296875,
+          "width": 101.78956604003906,
+          "x": 184.9984588623047,
+          "y": 166.97967529296875
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "4297",
+        "rect": {
+          "bottom": 217.48861980438232,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 94.45428276062012,
+          "top": 202.4639892578125,
+          "width": 31.473215103149418,
+          "x": 62.9810676574707,
+          "y": 202.4639892578125
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Participation #392",
+        "rect": {
+          "bottom": 218.00432109832764,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 298.0449523925781,
+          "top": 202.9796905517578,
+          "width": 113.04649353027344,
+          "x": 184.9984588623047,
+          "y": 202.9796905517578
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "7348",
+        "rect": {
+          "bottom": 253.4886350631714,
+          "height": 15.024645805358888,
+          "left": 62.9810676574707,
+          "right": 94.70443534851074,
+          "top": 238.4639892578125,
+          "width": 31.72336769104004,
+          "x": 62.9810676574707,
+          "y": 238.4639892578125
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Project #517",
+        "rect": {
+          "bottom": 254.0043363571167,
+          "height": 15.024645805358888,
+          "left": 184.9984588623047,
+          "right": 259.82527923583984,
+          "top": 238.9796905517578,
+          "width": 74.82682037353516,
+          "x": 184.9984588623047,
+          "y": 238.9796905517578
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "4357",
+        "rect": {
+          "bottom": 289.4886198043823,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 94.55049514770508,
+          "top": 274.4639892578125,
+          "width": 31.569427490234375,
+          "x": 62.9810676574707,
+          "y": 274.4639892578125
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Participation #937",
+        "rect": {
+          "bottom": 290.0043058395386,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 297.44073486328125,
+          "top": 274.97967529296875,
+          "width": 112.44227600097656,
+          "x": 184.9984588623047,
+          "y": 274.97967529296875
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "7404",
+        "rect": {
+          "bottom": 325.4886198043823,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 94.86222648620604,
+          "top": 310.4639892578125,
+          "width": 31.88115882873535,
+          "x": 62.9810676574707,
+          "y": 310.4639892578125
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Homework #72",
+        "rect": {
+          "bottom": 326.0043058395386,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 277.55926513671875,
+          "top": 310.97967529296875,
+          "width": 92.56080627441406,
+          "x": 184.9984588623047,
+          "y": 310.97967529296875
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "7352",
+        "rect": {
+          "bottom": 361.4886198043823,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 93.76154899597168,
+          "top": 346.4639892578125,
+          "width": 30.780481338500977,
+          "x": 62.9810676574707,
+          "y": 346.4639892578125
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Homework #300",
+        "rect": {
+          "bottom": 362.0043363571167,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 287.3422088623047,
+          "top": 346.9797058105469,
+          "width": 102.34375,
+          "x": 184.9984588623047,
+          "y": 346.9797058105469
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "4362",
+        "rect": {
+          "bottom": 397.4885892868042,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 95.49723052978516,
+          "top": 382.4639587402344,
+          "width": 32.51616287231445,
+          "x": 62.9810676574707,
+          "y": 382.4639587402344
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Project #981",
+        "rect": {
+          "bottom": 398.0043058395386,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 261.0337142944336,
+          "top": 382.9796752929687,
+          "width": 76.0352554321289,
+          "x": 184.9984588623047,
+          "y": 382.9796752929687
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "7409",
+        "rect": {
+          "bottom": 433.4886198043823,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 94.52740478515624,
+          "top": 418.4639892578125,
+          "width": 31.546337127685547,
+          "x": 62.9810676574707,
+          "y": 418.4639892578125
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Quiz #292",
+        "rect": {
+          "bottom": 434.0043058395386,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 247.9756774902344,
+          "top": 418.9796752929687,
+          "width": 62.97721862792969,
+          "x": 184.9984588623047,
+          "y": 418.9796752929687
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "7331",
+        "rect": {
+          "bottom": 469.4886198043823,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 91.57173919677734,
+          "top": 454.4639892578125,
+          "width": 28.59067153930664,
+          "x": 62.9810676574707,
+          "y": 454.4639892578125
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Final Exam",
+        "rect": {
+          "bottom": 470.0043363571167,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 250.59651947021484,
+          "top": 454.9797058105469,
+          "width": 65.59806060791016,
+          "x": 184.9984588623047,
+          "y": 454.9797058105469
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "7406",
+        "rect": {
+          "bottom": 505.4885892868042,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 94.52740478515624,
+          "top": 490.4639587402344,
+          "width": 31.546337127685547,
+          "x": 62.9810676574707,
+          "y": 490.4639587402344
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Participation #999",
+        "rect": {
+          "bottom": 506.0043058395386,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 298.33744049072266,
+          "top": 490.9796752929687,
+          "width": 113.33898162841795,
+          "x": 184.9984588623047,
+          "y": 490.9796752929687
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "7343",
+        "rect": {
+          "bottom": 541.4886198043823,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 94.63516235351562,
+          "top": 526.4639892578125,
+          "width": 31.65409469604492,
+          "x": 62.9810676574707,
+          "y": 526.4639892578125
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Homework #622",
+        "rect": {
+          "bottom": 542.0043668746948,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 286.2838668823242,
+          "top": 526.979736328125,
+          "width": 101.28540802001952,
+          "x": 184.9984588623047,
+          "y": 526.979736328125
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "7390",
+        "rect": {
+          "bottom": 577.4886198043823,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 94.66210174560548,
+          "top": 562.4639892578125,
+          "width": 31.68103408813477,
+          "x": 62.9810676574707,
+          "y": 562.4639892578125
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Homework #437",
+        "rect": {
+          "bottom": 578.0043058395386,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 286.2107467651367,
+          "top": 562.9796752929688,
+          "width": 101.21228790283205,
+          "x": 184.9984588623047,
+          "y": 562.9796752929688
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "4366",
+        "rect": {
+          "bottom": 613.4886198043823,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 95.73968887329102,
+          "top": 598.4639892578125,
+          "width": 32.75862121582031,
+          "x": 62.9810676574707,
+          "y": 598.4639892578125
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Homework #664",
+        "rect": {
+          "bottom": 614.0043058395386,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 287.1074523925781,
+          "top": 598.9796752929688,
+          "width": 102.10899353027344,
+          "x": 184.9984588623047,
+          "y": 598.9796752929688
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "7377",
+        "rect": {
+          "bottom": 649.4886198043823,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 92.8956298828125,
+          "top": 634.4639892578125,
+          "width": 29.914562225341797,
+          "x": 62.9810676574707,
+          "y": 634.4639892578125
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Participation #821",
+        "rect": {
+          "bottom": 650.0043058395386,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 295.38177490234375,
+          "top": 634.9796752929688,
+          "width": 110.38331604003906,
+          "x": 184.9984588623047,
+          "y": 634.9796752929688
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "4282",
+        "rect": {
+          "bottom": 685.4886198043823,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 95.32019805908205,
+          "top": 670.4639892578125,
+          "width": 32.33913040161133,
+          "x": 62.9810676574707,
+          "y": 670.4639892578125
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Participation #214",
+        "rect": {
+          "bottom": 686.0043058395386,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 295.7012023925781,
+          "top": 670.9796752929688,
+          "width": 110.70274353027344,
+          "x": 184.9984588623047,
+          "y": 670.9796752929688
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "4351",
+        "rect": {
+          "bottom": 721.4886198043823,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 92.6685676574707,
+          "top": 706.4639892578125,
+          "width": 29.6875,
+          "x": 62.9810676574707,
+          "y": 706.4639892578125
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Midterm Exam",
+        "rect": {
+          "bottom": 722.0043058395386,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 273.02955627441406,
+          "top": 706.9796752929688,
+          "width": 88.03109741210938,
+          "x": 184.9984588623047,
+          "y": 706.9796752929688
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "4372",
+        "rect": {
+          "bottom": 757.4886198043823,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 94.64670753479004,
+          "top": 742.4639892578125,
+          "width": 31.665639877319336,
+          "x": 62.9810676574707,
+          "y": 742.4639892578125
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Quiz #267",
+        "rect": {
+          "bottom": 758.0043058395386,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 247.3714599609375,
+          "top": 742.9796752929688,
+          "width": 62.37300109863281,
+          "x": 184.9984588623047,
+          "y": 742.9796752929688
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "7393",
+        "rect": {
+          "bottom": 793.4886198043823,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 94.30034065246582,
+          "top": 778.4639892578125,
+          "width": 31.319272994995117,
+          "x": 62.9810676574707,
+          "y": 778.4639892578125
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Homework #851",
+        "rect": {
+          "bottom": 794.0043058395386,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 283.71690368652344,
+          "top": 778.9796752929688,
+          "width": 98.71844482421876,
+          "x": 184.9984588623047,
+          "y": 778.9796752929688
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "4284",
+        "rect": {
+          "bottom": 829.4885587692261,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 95.89747619628906,
+          "top": 814.4639282226562,
+          "width": 32.91640853881836,
+          "x": 62.9810676574707,
+          "y": 814.4639282226562
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Quiz #989",
+        "rect": {
+          "bottom": 830.0043058395386,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 248.48368072509768,
+          "top": 814.9796752929688,
+          "width": 63.48522186279297,
+          "x": 184.9984588623047,
+          "y": 814.9796752929688
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "7405",
+        "rect": {
+          "bottom": 865.4886198043823,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 94.1848850250244,
+          "top": 850.4639892578125,
+          "width": 31.20381736755371,
+          "x": 62.9810676574707,
+          "y": 850.4639892578125
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Participation #73",
+        "rect": {
+          "bottom": 866.0043058395386,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 289.11253356933594,
+          "top": 850.9796752929688,
+          "width": 104.11407470703124,
+          "x": 184.9984588623047,
+          "y": 850.9796752929688
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "4302",
+        "rect": {
+          "bottom": 901.4886198043824,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 95.80896377563477,
+          "top": 886.4639892578125,
+          "width": 32.82789611816406,
+          "x": 62.9810676574707,
+          "y": 886.4639892578125
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Project #319",
+        "rect": {
+          "bottom": 902.0043058395386,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 260.96443939208984,
+          "top": 886.9796752929688,
+          "width": 75.96598052978516,
+          "x": 184.9984588623047,
+          "y": 886.9796752929688
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "7324",
+        "rect": {
+          "bottom": 937.488558769226,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 94.24646186828612,
+          "top": 922.4639282226562,
+          "width": 31.26539421081543,
+          "x": 62.9810676574707,
+          "y": 922.4639282226562
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Quiz #879",
+        "rect": {
+          "bottom": 938.0043058395386,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 247.51385498046875,
+          "top": 922.9796752929688,
+          "width": 62.51539611816406,
+          "x": 184.9984588623047,
+          "y": 922.9796752929688
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "7363",
+        "rect": {
+          "bottom": 973.4886198043824,
+          "height": 15.024630546569824,
+          "left": 62.9810676574707,
+          "right": 94.30034065246582,
+          "top": 958.4639892578124,
+          "width": 31.319272994995117,
+          "x": 62.9810676574707,
+          "y": 958.4639892578124
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Homework #218",
+        "rect": {
+          "bottom": 974.0043058395386,
+          "height": 15.024630546569824,
+          "left": 184.9984588623047,
+          "right": 283.8169631958008,
+          "top": 958.9796752929688,
+          "width": 98.8185043334961,
+          "x": 184.9984588623047,
+          "y": 958.9796752929688
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "7325",
+        "rect": {
+          "bottom": 1009.4885597229004,
+          "height": 15.02457046508789,
+          "left": 62.9810676574707,
+          "right": 93.76154899597168,
+          "top": 994.4639892578124,
+          "width": 30.780481338500977,
+          "x": 62.9810676574707,
+          "y": 994.4639892578124
+        },
+        "role": "link",
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Quiz #798",
+        "rect": {
+          "bottom": 1010.0042457580566,
+          "height": 15.02457046508789,
+          "left": 184.9984588623047,
+          "right": 247.51385498046875,
+          "top": 994.9796752929688,
+          "width": 62.51539611816406,
+          "x": 184.9984588623047,
+          "y": 994.9796752929688
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.5px",
+          "fontWeight": "700",
+          "lineHeight": "17px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Visualization",
+        "rect": {
+          "bottom": 991.8988761901855,
+          "height": 33.96320724487305,
+          "left": 31.99661445617676,
+          "right": 138.73153114318848,
+          "top": 957.9356689453124,
+          "width": 106.73491668701172,
+          "x": 31.99661445617676,
+          "y": 957.9356689453124
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "color(srgb 0.411765 0.254902 0.776471 / 0.2)",
+          "borderColor": "rgb(255, 255, 255)",
+          "borderRadius": "6px 0px 0px 6px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.8px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "8px 12px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "",
+        "rect": {
+          "bottom": 991.8988761901855,
+          "height": 33.96320724487305,
+          "left": 138.7315216064453,
+          "right": 172.20211791992188,
+          "top": 957.9356689453124,
+          "width": 33.47059631347656,
+          "x": 138.7315216064453,
+          "y": 957.9356689453124
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "color(srgb 0.411765 0.254902 0.776471 / 0.2)",
+          "borderColor": "rgb(255, 255, 255)",
+          "borderRadius": "0px 6px 6px 0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.8px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "8px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Showing first 2,000 rows",
+        "rect": {
+          "bottom": 983.4128589630128,
+          "height": 16.995073318481445,
+          "left": 1089.8052978515625,
+          "right": 1262.338394165039,
+          "top": 966.4177856445312,
+          "width": 172.53309631347656,
+          "x": 1089.8052978515625,
+          "y": 966.4177856445312
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.62)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.62)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Copy these results to clipboard",
+        "rect": {
+          "bottom": 988.9162731170654,
+          "height": 27.99799919128418,
+          "left": 1359.909912109375,
+          "right": 1387.9079113006592,
+          "top": 960.9182739257812,
+          "width": 27.99799919128418,
+          "x": 1359.909912109375,
+          "y": 960.9182739257812
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.62)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "14px",
+          "padding": "0px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Download results",
+        "rect": {
+          "bottom": 988.9162731170654,
+          "height": 27.99799919128418,
+          "left": 1395.9051513671875,
+          "right": 1423.9031505584717,
+          "top": 960.9182739257812,
+          "width": 27.99799919128418,
+          "x": 1395.9051513671875,
+          "y": 960.9182739257812
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.62)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "14px",
+          "padding": "0px"
+        },
+        "tag": "BUTTON"
+      }
+    ],
+    "theme": "light",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    }
+  },
+  "apiClip": {
+    "x": 0,
+    "y": 0,
+    "width": 2923,
+    "height": 2030
+  },
+  "image": {
+    "sourceFormat": "JPEG",
+    "width": 1440,
+    "height": 1000,
+    "retainedFormat": "PNG",
+    "conversion": "256-colour MEDIANCUT, no dither"
+  },
+  "visualReview": "Intended state visually reviewed. Viewport section only; some background content is absent while the intended dialog remains visible."
+}

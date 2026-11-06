@@ -1,0 +1,673 @@
+{
+  "name": "report-39-average-grade-light-desktop",
+  "capturedAt": "2026-10-31T05:16:34.969Z",
+  "source": "https://edumation.metabase.com/question/39-average-grade",
+  "reading": {
+    "elements": [
+      {
+        "disabled": false,
+        "label": "Toggle sidebar",
+        "rect": {
+          "bottom": 51.50092324614525,
+          "height": 51.993534088134766,
+          "left": 21.197660446166992,
+          "right": 57.19673728942871,
+          "top": -0.4926108419895172,
+          "width": 35.99907684326172,
+          "x": 21.197660446166992,
+          "y": -0.4926108419895172
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(0, 0, 0)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(0, 0, 0)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "padding": "16px 0px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "",
+        "rect": {
+          "bottom": 51.504772275686264,
+          "height": 51.99738311767578,
+          "left": 57.19673538208008,
+          "right": 93.1958122253418,
+          "top": -0.4926108419895172,
+          "width": 35.99907684326172,
+          "x": 57.19673538208008,
+          "y": -0.4926108419895172
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "0px",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Your Reports",
+        "rect": {
+          "bottom": 33.505234718322754,
+          "height": 15.99830722808838,
+          "left": 125.1924285888672,
+          "right": 222.7370758056641,
+          "top": 17.506927490234375,
+          "width": 97.54464721679688,
+          "x": 125.1924285888672,
+          "y": 17.506927490234375
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.25px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Search",
+        "rect": {
+          "bottom": 43.50369501113891,
+          "height": 35.99907684326172,
+          "left": 1003.2366333007812,
+          "right": 1243.2343292236328,
+          "top": 7.504618167877197,
+          "width": 239.99769592285156,
+          "x": 1003.2366333007812,
+          "y": 7.504618167877197
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderColor": "rgb(220, 223, 224)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.44)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "700",
+          "lineHeight": "16.1px",
+          "padding": "11px 15px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "New",
+        "rect": {
+          "bottom": 43.50369501113891,
+          "height": 35.99907684326172,
+          "left": 1267.2298583984375,
+          "right": 1339.9130477905271,
+          "top": 7.504618167877197,
+          "width": 72.68318939208984,
+          "x": 1267.2298583984375,
+          "y": 7.504618167877197
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgb(105, 65, 198)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(255, 255, 255, 0.95)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "16.1px",
+          "padding": "8px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Chat with Metabot (\u2318+E)",
+        "rect": {
+          "bottom": 43.50369501113891,
+          "height": 35.99907684326172,
+          "left": 1347.9102783203125,
+          "right": 1383.9093551635742,
+          "top": 7.504618167877197,
+          "width": 35.99907684326172,
+          "x": 1347.9102783203125,
+          "y": 7.504618167877197
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(220, 223, 224)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "14px",
+          "padding": "8px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Postgres",
+        "rect": {
+          "bottom": 109.87530994415285,
+          "height": 14.778325080871582,
+          "left": 31.99661445617676,
+          "right": 85.15625190734863,
+          "top": 95.09698486328124,
+          "width": 53.159637451171875,
+          "x": 31.99661445617676,
+          "y": 95.09698486328124
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.25px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Assignments",
+        "rect": {
+          "bottom": 109.87530994415285,
+          "height": 14.778325080871582,
+          "left": 100.70427703857422,
+          "right": 179.47197723388672,
+          "top": 95.09698486328124,
+          "width": 78.7677001953125,
+          "x": 100.70427703857422,
+          "y": 95.09698486328124
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.25px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Submissions",
+        "rect": {
+          "bottom": 109.87530994415285,
+          "height": 14.778325080871582,
+          "left": 194.5697326660156,
+          "right": 271.4747543334961,
+          "top": 95.09698486328124,
+          "width": 76.90502166748047,
+          "x": 194.5697326660156,
+          "y": 95.09698486328124
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.25px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Edited a year ago by Metabase Internal",
+        "rect": {
+          "bottom": 109.75215816497804,
+          "height": 14.53201961517334,
+          "left": 287.4730529785156,
+          "right": 514.3896179199219,
+          "top": 95.22013854980467,
+          "width": 226.91656494140625,
+          "x": 287.4730529785156,
+          "y": 95.22013854980467
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.44)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.44)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Filter",
+        "rect": {
+          "bottom": 105.50339126586914,
+          "height": 39.9976921081543,
+          "left": 870.427978515625,
+          "right": 961.4339828491212,
+          "top": 65.50569915771484,
+          "width": 91.0060043334961,
+          "x": 870.427978515625,
+          "y": 65.50569915771484
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderColor": "rgb(220, 223, 224)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "16.1px",
+          "padding": "11px 15px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Summarize",
+        "rect": {
+          "bottom": 105.50339126586914,
+          "height": 39.9976921081543,
+          "left": 969.4312133789062,
+          "right": 1102.5939331054688,
+          "top": 65.50569915771484,
+          "width": 133.1627197265625,
+          "x": 969.4312133789062,
+          "y": 65.50569915771484
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderColor": "rgb(220, 223, 224)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "16.1px",
+          "padding": "11px 15px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Editor",
+        "rect": {
+          "bottom": 105.50339126586914,
+          "height": 39.9976921081543,
+          "left": 1110.5911865234375,
+          "right": 1206.954330444336,
+          "top": 65.50569915771484,
+          "width": 96.36314392089844,
+          "x": 1110.5911865234375,
+          "y": 65.50569915771484
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderColor": "rgb(220, 223, 224)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "600",
+          "lineHeight": "16.1px",
+          "padding": "11px 15px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Refresh",
+        "rect": {
+          "bottom": 101.50092506408691,
+          "height": 31.99661445617676,
+          "left": 1222.94873046875,
+          "right": 1254.9453449249268,
+          "top": 69.50431060791016,
+          "width": 31.99661445617676,
+          "x": 1222.94873046875,
+          "y": 69.50431060791016
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "4px 8px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Copy link",
+        "rect": {
+          "bottom": 101.50092506408691,
+          "height": 31.99661445617676,
+          "left": 1262.942626953125,
+          "right": 1294.9392414093018,
+          "top": 69.50431060791016,
+          "width": 31.99661445617676,
+          "x": 1262.942626953125,
+          "y": 69.50431060791016
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "14px",
+          "padding": "0px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Bookmark",
+        "rect": {
+          "bottom": 101.50092506408691,
+          "height": 31.99661445617676,
+          "left": 1311.9189453125,
+          "right": 1343.9155597686768,
+          "top": 69.50431060791016,
+          "width": 31.99661445617676,
+          "x": 1311.9189453125,
+          "y": 69.50431060791016
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "14px",
+          "padding": "0px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "More info",
+        "rect": {
+          "bottom": 101.50092506408691,
+          "height": 31.99661445617676,
+          "left": 1351.9127197265625,
+          "right": 1383.9093341827393,
+          "top": 69.50431060791016,
+          "width": 31.99661445617676,
+          "x": 1351.9127197265625,
+          "y": 69.50431060791016
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "14px",
+          "padding": "4px 8px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Move, trash, and more\u2026",
+        "rect": {
+          "bottom": 101.50092506408691,
+          "height": 31.99661445617676,
+          "left": 1391.9066162109375,
+          "right": 1423.9032306671145,
+          "top": 69.50431060791016,
+          "width": 31.99661445617676,
+          "x": 1391.9066162109375,
+          "y": 69.50431060791016
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "borderRadius": "6px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "14px",
+          "padding": "0px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Refresh",
+        "rect": {
+          "bottom": 534.4142837524414,
+          "height": 39.99384307861328,
+          "left": 679.9453735351562,
+          "right": 759.9407577514648,
+          "top": 494.4204406738281,
+          "width": 79.9953842163086,
+          "x": 679.9453735351562,
+          "y": 494.4204406738281
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderColor": "rgba(7, 23, 34, 0.84)",
+          "borderRadius": "99px",
+          "boxShadow": "rgba(7, 23, 34, 0.17) 0px 2px 2px 0px",
+          "color": "rgba(7, 23, 34, 0.84)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "4px 24px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Show error details",
+        "rect": {
+          "bottom": 351.67027473449707,
+          "height": 16.995073318481445,
+          "left": 545.9398193359375,
+          "right": 666.4447479248047,
+          "top": 334.6752014160156,
+          "width": 120.5049285888672,
+          "x": 545.9398193359375,
+          "y": 334.6752014160156
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgb(105, 65, 198)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "A"
+      },
+      {
+        "disabled": false,
+        "label": "Visualization",
+        "rect": {
+          "bottom": 991.8988761901855,
+          "height": 33.96320724487305,
+          "left": 31.99661445617676,
+          "right": 138.73153114318848,
+          "top": 957.9356689453124,
+          "width": 106.73491668701172,
+          "x": 31.99661445617676,
+          "y": 957.9356689453124
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "color(srgb 0.411765 0.254902 0.776471 / 0.2)",
+          "borderColor": "rgb(255, 255, 255)",
+          "borderRadius": "6px 0px 0px 6px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.8px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "8px 12px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "",
+        "rect": {
+          "bottom": 991.8988761901855,
+          "height": 33.96320724487305,
+          "left": 138.7315216064453,
+          "right": 172.20211791992188,
+          "top": 957.9356689453124,
+          "width": 33.47059631347656,
+          "x": 138.7315216064453,
+          "y": 957.9356689453124
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "color(srgb 0.411765 0.254902 0.776471 / 0.2)",
+          "borderColor": "rgb(255, 255, 255)",
+          "borderRadius": "0px 6px 6px 0px",
+          "boxShadow": "none",
+          "color": "rgb(105, 65, 198)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.8px",
+          "fontWeight": "700",
+          "lineHeight": "normal",
+          "padding": "8px"
+        },
+        "tag": "BUTTON"
+      },
+      {
+        "disabled": false,
+        "label": "Showing 0 rows",
+        "rect": {
+          "bottom": 983.4128589630128,
+          "height": 16.995073318481445,
+          "left": 1232.7470703125,
+          "right": 1341.8488235473633,
+          "top": 966.4177856445312,
+          "width": 109.10175323486328,
+          "x": 1232.7470703125,
+          "y": 966.4177856445312
+        },
+        "role": null,
+        "styles": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderColor": "rgba(7, 23, 34, 0.62)",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "color": "rgba(7, 23, 34, 0.62)",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "lineHeight": "normal",
+          "padding": "0px"
+        },
+        "tag": "BUTTON"
+      }
+    ],
+    "theme": "light",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    }
+  },
+  "apiClip": {
+    "x": 0,
+    "y": 0,
+    "width": 2923,
+    "height": 2030
+  },
+  "image": {
+    "sourceFormat": "JPEG",
+    "width": 1440,
+    "height": 1000,
+    "retainedFormat": "PNG",
+    "conversion": "256-colour MEDIANCUT, no dither"
+  },
+  "visualReview": "Intended state visually reviewed. Viewport section only; some background content is absent while the intended dialog remains visible."
+}
