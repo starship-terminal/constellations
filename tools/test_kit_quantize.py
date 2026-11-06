@@ -37,7 +37,7 @@ class KitQuantizeTest(unittest.TestCase):
             self.assertEqual(done.returncode, 0, done.stderr[-500:])
             with Image.open(raw / "page.png") as im:
                 self.assertEqual(im.size, (4, 8))
-            self.assertIn("page.png", [p.name for p in (tmp / "pkg" / "screenshots").iterdir()])
+            self.assertEqual(sorted(p.name for p in (tmp / "pkg" / "screenshots").iterdir()), ["page.png"])
 
     def test_a_partial_name_is_not_a_tile(self):
         self.run_copy(KIT)
