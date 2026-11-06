@@ -2,7 +2,7 @@
 // from disk and cached by mtime so a rebuild shows up without a restart.
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import { ROOT } from "./repo";
+import { isGitIgnored, realInside, ROOT } from "./repo";
 import { mediaUrl } from "./url";
 
 export { mediaUrl };
@@ -141,10 +141,16 @@ export async function listPackageFiles(slug: string): Promise<Record<string, Pkg
     }
     for (const e of entries.sort((a, b) => a.name.localeCompare(b.name))) {
       const r = rel ? `${rel}/${e.name}` : e.name;
-      if (e.isDirectory()) {
-        if (!SKIP_DIRS.has(e.name)) await walk(r);
-      } else if (e.isFile() && !SKIP_EXT.has(path.extname(e.name).toLowerCase())) {
-        const st = await fs.stat(path.join(dir, r));
+      const wanted = e.isDirectory()
+        ? !SKIP_DIRS.has(e.name)
+        : e.isFile() && !SKIP_EXT.has(path.extname(e.name).toLowerCase());
+      if (!wanted) continue;
+      // Gitignored material (capture dumps and out/, fonts/) is private.
+      const real = await realInside(path.join(dir, r), dir);
+      if (!real || (await isGitIgnored(real))) continue;
+      if (e.isDirectory()) await walk(r);
+      else {
+        const st = await fs.stat(real);
         const group = rel ? rel.split("/")[0] : "";
         (out[group] ||= []).push({ rel: `systems/${slug}/${r}`, name: r, size: st.size });
       }
@@ -161,8 +167,11 @@ export async function readPackageFile(slug: string, rel: string): Promise<{ text
   const target = path.resolve(dir, rel);
   const within = path.relative(dir, target);
   if (within.startsWith("..") || path.isAbsolute(within)) return null;
+  // Follow symlinks before trusting the path, and never read ignored files.
+  const real = await realInside(target, dir);
+  if (!real || (await isGitIgnored(real))) return null;
   try {
-    return { text: await fs.readFile(target, "utf8"), rel: `systems/${slug}/${within}` };
+    return { text: await fs.readFile(real, "utf8"), rel: `systems/${slug}/${within}` };
   } catch {
     return null;
   }
