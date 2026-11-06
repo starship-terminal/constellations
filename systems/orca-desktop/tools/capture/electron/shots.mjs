@@ -41,7 +41,9 @@ if (setTheme) {
 }
 
 const [theme, ...only] = args;
-if (!theme) { console.error('usage: shots.mjs <theme> [name ...] | --set-theme=<label>'); process.exit(2); }
+// The theme names the folder a shot's PNG is deleted from and written to, so it must be a plain theme
+// name (`dark`, `light-more`), never a path; run.mjs checks the same.
+if (!/^(dark|light)(-[a-z0-9]+)*$/.test(theme || '')) { console.error('usage: shots.mjs <dark|light>[-<suffix>] [name ...] | --set-theme=<label>'); process.exit(2); }
 const out = `${RAW}/${theme}/captures.json`;
 const all = existsSync(out) ? JSON.parse(readFileSync(out, 'utf8')) : {};
 // failures: what a shot could not capture. A part the shot lists as optional (shot.optionalParts) or
