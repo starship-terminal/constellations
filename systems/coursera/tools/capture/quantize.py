@@ -19,6 +19,8 @@ OUT.mkdir(exist_ok=True)
 parts = {}
 for f in RAW.glob('*.part*.png'):
     m = re.match(r'(.+)\.part(\d+)\.png$', f.name)
+    if not m:   # a name such as x.partial.png is not a tile
+        continue
     parts.setdefault(m.group(1), []).append((int(m.group(2)), f))
 for name, ps in parts.items():
     ims = [Image.open(f).convert('RGB') for _, f in sorted(ps)]
