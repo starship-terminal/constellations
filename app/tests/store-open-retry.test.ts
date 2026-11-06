@@ -23,6 +23,9 @@ test("getStore retries after a failed open instead of caching the rejection", as
   await expect(getStore()).rejects.toThrow();
   await rm(dataDir);
   const store = await getStore();
-  expect(await store.getSettings()).toEqual({});
-  store.close();
+  try {
+    expect(await store.getSettings()).toEqual({});
+  } finally {
+    store.close();
+  }
 });
