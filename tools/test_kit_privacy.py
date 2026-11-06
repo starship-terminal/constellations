@@ -84,6 +84,18 @@ class SharedList(unittest.TestCase):
                     self.assertIn("LEAK", res.stderr)
                     self.assertNotIn("Jane", res.stderr)
 
+    def test_unsnap_finds_an_accented_name_in_the_metadata(self):
+        with tempfile.TemporaryDirectory() as d:
+            redact = Path(d) / "r.json"
+            redact.write_text(json.dumps({"replace": [["José Núñez", "gi", "A User"]]}))
+            snap = Path(d) / "snap.txt"
+            snap.write_text("SNAPSTART" + json.dumps({"label": "home", "url": "https://x/", "who": "José Núñez"})
+                            + "SNAPMETA<p>ok</p>SNAPEND")
+            res = subprocess.run([sys.executable, str(SIGNED_IN / "unsnap.py"), str(snap), str(Path(d) / "out")],
+                                 capture_output=True, text=True, env={**os.environ, "SNAP_REDACT": str(redact)})
+            self.assertNotEqual(res.returncode, 0)
+            self.assertIn("LEAK", res.stderr)
+
     def test_unsnap_reads_entities_nbsp_and_split_elements(self):
         redact = {"replace": [["unrelated", "gi", "x"], ["jane\\s+doe", "gi", "A User"], ["Jane Doe", "g", "A User"]]}
         for page in ["<p>Jane&nbsp;Doe</p>", "<p>J&#97;ne Doe</p>", "<p>Ja<b>ne</b> Doe</p>",

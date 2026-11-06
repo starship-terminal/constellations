@@ -13,11 +13,10 @@
  * node:fs and node:path only, no dependencies.
  */
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
-import { basename, dirname, join } from 'node:path';
+import { basename, join } from 'node:path';
+import { ROOT } from './repo';
 
-/** The repo root: process.cwd(), or its parent when the cwd is `web/` itself. */
-export const ROOT =
-  basename(process.cwd()) === 'web' ? dirname(process.cwd()) : process.cwd();
+export { ROOT };
 
 const DATA = join(ROOT, 'scorecard');
 
@@ -372,10 +371,12 @@ export interface IndexStats {
   pct: number;
   /** The top-ranked system; `name` is its short name. */
   leader: { name: string; slug: string; meets: number };
-  /** The criteria met by the fewest systems, in rubric order. */
-  weakest: { id: string; title: string }[];
-  /** How many systems meet each weakest criterion. */
-  floor: number;
+  /**
+   * The criteria met by the smallest share of the systems they apply to, in
+   * rubric order. A not-applicable grade is not a miss, so a criterion graded
+   * not applicable everywhere is never listed. Mirrors tools/scorecard.py.
+   */
+  weakest: { id: string; title: string; meets: number; applicable: number }[];
 }
 
 /** The numbers behind the index page's stat cards. */
@@ -384,16 +385,16 @@ export function indexStats(criteria: Criteria, audit: Audit): IndexStats {
   const totalCells = systems.length * criteria.criteria.length;
   const meets = systems.reduce((sum, s) => sum + counts(s).meets, 0);
   const best = systems[0];
-  const byCriterion = new Map(
-    criteria.criteria.map((c) => [
-      c.id,
-      systems.filter((s) => s.grades[c.id].grade === 'meets').length,
-    ]),
-  );
-  const floor = Math.min(...byCriterion.values());
-  const weakest = criteria.criteria
-    .filter((c) => byCriterion.get(c.id) === floor)
-    .map((c) => ({ id: c.id, title: c.title }));
+  const byCriterion = criteria.criteria.flatMap((c) => {
+    const applicable = systems
+      .map((s) => s.grades[c.id]?.grade)
+      .filter((g) => g && g !== 'na');
+    if (!applicable.length) return [];
+    const meets = applicable.filter((g) => g === 'meets').length;
+    return [{ id: c.id, title: c.title, meets, applicable: applicable.length }];
+  });
+  const floor = Math.min(...byCriterion.map((c) => c.meets / c.applicable));
+  const weakest = byCriterion.filter((c) => c.meets / c.applicable === floor);
   return {
     systemCount: systems.length,
     totalCells,
@@ -401,7 +402,6 @@ export function indexStats(criteria: Criteria, audit: Audit): IndexStats {
     pct: roundHalfEven((100 * meets) / totalCells),
     leader: { name: short(best), slug: best.slug, meets: counts(best).meets },
     weakest,
-    floor,
   };
 }
 

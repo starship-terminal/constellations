@@ -582,6 +582,7 @@ def leaf(path, spec):
     elif "sample" in spec:
         shot, (x, y) = spec["sample"]
         val, src = spec["value"], f"sampled {shot} at ({x}, {y})"
+        SAMPLES.append((path, val, shot, (x, y)))
     elif "graph" in spec:
         ident, sec = spec["graph"]
         if ident not in NOTES:
@@ -602,6 +603,10 @@ def leaf(path, spec):
     if spec.get("description"):
         t["$description"] = spec["description"]
     return t
+
+
+# Every sampled colour, checked against its screenshot once the primitives resolve (check_samples).
+SAMPLES = []
 
 
 def build(node, path=""):
@@ -669,6 +674,8 @@ for _ in range(3):  # resolve aliases among primitives
         if is_alias(v) and v[1:-1] in ALL_PRE:
             ALL_PRE[k] = ALL_PRE[v[1:-1]]
 light = build(SPEC_LIGHT)
+from sample_check import check_samples  # noqa: E402
+check_samples(SAMPLES, HERE, lambda v: ALL_PRE.get(v[1:-1], v) if is_alias(v) else v, norm_color)
 
 # ---------------------------------------------------------------------------------------------------
 # Aliases: every one must point at a token, and a whole-value alias at a token of the same type

@@ -28,7 +28,8 @@ ENV_KEYS = ("DESIGN_SYSTEMS_MEDIA", "DESIGN_SYSTEMS_MEDIA_BASE", "DESIGN_SYSTEMS
 def load_env(keys=ENV_KEYS, env_file=None):
     """Copy the named keys from the repo's gitignored .env into os.environ; variables already set
     win. Returns the keys it set. An entry point that needs a secret calls this with just the keys
-    it reads (server/chat.py: load_env(("ANTHROPIC_API_KEY", "DS_CHAT_MODEL")))."""
+    it reads (server/chat.py: load_env(("ANTHROPIC_API_KEY", "DS_CHAT_MODEL"))). Nothing loads
+    .env on import."""
     env = Path(env_file) if env_file else Path(__file__).resolve().parents[2] / ".env"
     wanted, done = set(keys), []
     if not env.is_file():
@@ -46,10 +47,6 @@ def load_env(keys=ENV_KEYS, env_file=None):
             done.append(key)
     return done
 
-
-# Importers (catalog.py and through it server/chat.py, classify.py, upload_r2.py, server/api.py)
-# still get their keys on import; only the ENV_KEYS allowlist, never the whole file.
-load_env()
 
 # media dir -> (file extension, required Content-Type prefix).
 # catalog.py maps its payload keys (shot, poster, video, detail,
@@ -102,11 +99,13 @@ def media_base():
 
     DESIGN_SYSTEMS_MEDIA_BASE overrides it; set it empty to serve the paths
     from the site itself (a local mirror, or the deployed nginx alias)."""
+    load_env(("DESIGN_SYSTEMS_MEDIA_BASE",))
     return os.environ.get("DESIGN_SYSTEMS_MEDIA_BASE",
                           "https://pub-b22e019453104cc8b3c214b1009a6c42.r2.dev")
 
 
 def default_media_root():
+    load_env(("DESIGN_SYSTEMS_MEDIA",))
     return Path(
         os.environ.get("DESIGN_SYSTEMS_MEDIA")
         or "~/services/design-systems/media/refero").expanduser()

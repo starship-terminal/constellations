@@ -116,13 +116,16 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .icon-btn .lbl { overflow: hidden; text-overflow: ellipsis; }
 .icon-btn[aria-current="page"] { color: var(--text); background: var(--sunken); }
 
-/* collapsed: icon strip that still opens on hover/focus */
-html[data-nav="collapsed"] .bar { width: var(--rail-cw); }
-html[data-nav="collapsed"] .bar:hover,
-html[data-nav="collapsed"] .bar:focus-within { width: var(--rail-w); }
-html[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .site-nav a span,
-html[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .brand span,
-html[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .icon-btn .lbl { opacity: 0; pointer-events: none; }
+/* collapsed: icon strip that still opens on hover/focus. Sidebar widths only:
+   below 900px the bar is a top bar, which a stored "collapsed" must not shrink. */
+@media (min-width: 900px) {
+  html[data-nav="collapsed"] .bar { width: var(--rail-cw); }
+  html[data-nav="collapsed"] .bar:hover,
+  html[data-nav="collapsed"] .bar:focus-within { width: var(--rail-w); }
+  html[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .site-nav a span,
+  html[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .brand span,
+  html[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .icon-btn .lbl { opacity: 0; pointer-events: none; }
+}
 .site-nav a span, .brand span, .icon-btn .lbl { transition: opacity 0.12s ease; }
 
 @media (min-width: 900px) {
@@ -142,8 +145,12 @@ html[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .icon-btn .lbl { 
   .bar-foot { flex-direction: row; border: 0; padding: 0; }
   .icon-btn .lbl { display: none; }
   .icon-btn { width: auto; }
+  /* A top bar has no sidebar to collapse; the room goes to the page links. */
+  #nav-toggle { display: none; }
   .shell { padding-top: 52px; }
 }
+/* Phone widths: the mark alone, so all five page links fit beside the icons. */
+@media (max-width: 519px) { .brand span { display: none; } }
 
 .page { max-width: 1180px; margin: 0 auto; padding: 28px clamp(16px, 4vw, 44px) 96px; }
 .page.wide { max-width: 1480px; }
@@ -231,12 +238,16 @@ html[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .icon-btn .lbl { 
 .g-hero h1 { font: italic 400 44px/1.1 var(--display); letter-spacing: -0.01em; margin: 0; }
 .g-hero .sub { color: var(--muted); margin: 10px 0 18px; max-width: 640px; }
 .research { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; max-width: 760px; }
-.research .field { max-width: 460px; height: 40px; }
+/* A 280px basis wraps the platform chips below the search on a phone instead of
+   squeezing the field to nothing. */
+.research .field { max-width: 460px; height: 40px; flex: 1 1 280px; }
 .r-chips { display: flex; gap: 6px; }
+/* Phones: search and the go button share the first row, the chips the second. */
+@media (max-width: 639px) { .r-chips { order: 1; flex-wrap: wrap; } .r-chip { padding: 0 10px; } }
 .r-chip {
   display: inline-flex; align-items: center; gap: 7px; height: 40px; padding: 0 14px;
   border-radius: 10px; border: 1px solid var(--line); background: var(--panel);
-  color: var(--muted); font-size: 13px;
+  color: var(--muted); font-size: 13px; white-space: nowrap;
 }
 .r-chip[aria-pressed="true"] { color: var(--text); border-color: var(--line-strong); background: var(--sunken); font-weight: 550; }
 .r-go {
@@ -311,7 +322,7 @@ table.list .dt { color: var(--muted); font-size: 12px; white-space: nowrap; }
 .pkg .rail a[aria-current="page"] { color: var(--text); background: var(--sunken); font-weight: 550; }
 .pkg .rail .n { font-family: var(--mono); font-size: 10.5px; color: var(--faint); }
 @media (max-width: 899px) {
-  .pkg { grid-template-columns: 1fr; }
+  .pkg { grid-template-columns: minmax(0, 1fr); }
   .pkg .rail { position: static; }
   .pkg .rail ul { flex-direction: row; overflow-x: auto; }
 }
@@ -321,9 +332,9 @@ table.list .dt { color: var(--muted); font-size: 12px; white-space: nowrap; }
 .sub-title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--faint); margin: 30px 0 12px; }
 .sub-title .n { font-family: var(--mono); font-weight: 400; color: var(--faint); }
 .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
-dl.meta { display: grid; grid-template-columns: 96px 1fr; row-gap: 7px; column-gap: 14px; margin: 0; font-size: 13px; }
+dl.meta { display: grid; grid-template-columns: 96px minmax(0, 1fr); row-gap: 7px; column-gap: 14px; margin: 0; font-size: 13px; }
 dl.meta dt { color: var(--faint); }
-dl.meta dd { margin: 0; }
+dl.meta dd { margin: 0; overflow-wrap: anywhere; }
 dl.meta code { font-size: 12px; background: var(--sunken); padding: 1px 5px; border-radius: 4px; }
 dl.meta .tags { display: flex; gap: 5px; flex-wrap: wrap; }
 
@@ -332,11 +343,12 @@ dl.meta .tags { display: flex; gap: 5px; flex-wrap: wrap; }
 .palette-head { display: flex; justify-content: space-between; padding: 10px 14px; font-size: 12.5px; color: var(--muted); border-bottom: 1px solid var(--line); }
 .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
 .swatch {
-  display: grid; grid-template-columns: 30px 1fr; grid-template-rows: auto auto auto; column-gap: 10px;
+  display: grid; grid-template-columns: 30px minmax(0, 1fr); grid-template-rows: auto auto auto; column-gap: 10px;
   align-items: center; text-align: left; padding: 10px 12px; border-top: 1px solid var(--line);
 }
 .swatch i { grid-row: 1/4; width: 30px; height: 30px; border-radius: 7px; box-shadow: var(--ring); }
 .swatch b { font-size: 12.5px; font-weight: 550; }
+.swatch > :not(i) { overflow-wrap: anywhere; }
 .swatch code { font-size: 11px; color: var(--muted); }
 .swatch:hover { background: var(--chip-bg); }
 
@@ -464,7 +476,7 @@ dl.meta .tags { display: flex; gap: 5px; flex-wrap: wrap; }
 .docpage .rail a:hover { color: var(--text); background: var(--chip-bg); }
 .docpage .rail a[aria-current="page"] { color: var(--text); background: var(--sunken); font-weight: 550; }
 .docpage .doc { max-width: 760px; }
-@media (max-width: 899px) { .docpage { grid-template-columns: 1fr; } .docpage .rail { position: static; } .docpage .rail nav { flex-direction: row; flex-wrap: wrap; } }
+@media (max-width: 899px) { .docpage { grid-template-columns: minmax(0, 1fr); } .docpage .rail { position: static; } .docpage .rail nav { flex-direction: row; flex-wrap: wrap; } }
 .foot { color: var(--faint); font-size: 12px; margin-top: 60px; }
 
 /* ---------- scorecard ---------- */
@@ -473,7 +485,9 @@ dl.meta .tags { display: flex; gap: 5px; flex-wrap: wrap; }
 .sc-card { border: 1px solid var(--line); border-radius: var(--radius-card); padding: 14px 16px; }
 .sc-card b { display: block; font-size: 15px; margin-bottom: 3px; }
 .sc-card p { margin: 0; color: var(--muted); font-size: 12.5px; }
-.sc-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-card); }
+/* position: relative makes the scroller the containing block of the cells' absolute
+   screen-reader text, which otherwise escaped it and widened the page to the table. */
+.sc-scroll { position: relative; overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-card); }
 table.sc-heat { border-collapse: separate; border-spacing: 0; font-size: 12px; }
 .sc-heat th, .sc-heat td { padding: 5px 7px; border-bottom: 1px solid var(--line); text-align: center; white-space: nowrap; }
 .sc-heat thead th { font-size: 10.5px; color: var(--faint); font-weight: 600; }
@@ -519,8 +533,9 @@ table.sc-heat { border-collapse: separate; border-spacing: 0; font-size: 12px; }
 .rf-chips button:hover { color: var(--text); border-color: var(--line-strong); }
 .rf-chips i { font-style: normal; margin-right: 5px; color: var(--faint); }
 .rf-bar-row { display: flex; gap: 10px; align-items: center; margin: 22px 0 16px; flex-wrap: wrap; }
-.rf-tabs-list { display: flex; gap: 4px; background: var(--sunken); border-radius: 10px; padding: 3px; }
-.rf-tabs-list button { padding: 5px 12px; border-radius: 8px; color: var(--muted); font-size: 12.5px; }
+/* Scrolls sideways on a phone rather than widening the page by its last tab. */
+.rf-tabs-list { display: flex; gap: 4px; background: var(--sunken); border-radius: 10px; padding: 3px; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.rf-tabs-list button { flex: none; white-space: nowrap; padding: 5px 12px; border-radius: 8px; color: var(--muted); font-size: 12.5px; }
 .rf-tabs-list button[aria-pressed="true"] { background: var(--panel); color: var(--text); font-weight: 550; box-shadow: var(--ring); }
 .rf-sel { height: 30px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font-size: 12.5px; padding: 0 8px; }
 .rf-bar-row .count { margin-left: auto; color: var(--faint); font-size: 12px; }
@@ -570,17 +585,22 @@ table.sc-heat { border-collapse: separate; border-spacing: 0; font-size: 12px; }
 .rf-scale-label code { display: block; color: var(--faint); font-size: 10.5px; }
 .rf-scale-sample { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .rf-fonts { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin-top: 16px; }
-.rf-font { border: 1px solid var(--line); border-radius: var(--radius-ctl); padding: 14px; }
+/* Generated family names (wfont_9aea05_…) have no break points; let the sample,
+   spec and note wrap anywhere instead of widening the page. */
+.rf-font { min-width: 0; overflow-wrap: anywhere; border: 1px solid var(--line); border-radius: var(--radius-ctl); padding: 14px; }
 .rf-font-sample { font-size: 21px; margin-bottom: 8px; }
 .rf-font-spec { margin: 0; font-size: 11px; display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; }
 .rf-font-spec dt { color: var(--faint); }
 .rf-font-spec dd { margin: 0; color: var(--muted); }
 .rf-note { color: var(--faint); font-size: 12px; margin: 8px 0 0; }
-.rf-tables { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-@media (max-width: 799px) { .rf-tables { grid-template-columns: 1fr; } }
+.rf-tables { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 799px) { .rf-tables { grid-template-columns: minmax(0, 1fr); } }
 .rf-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
 .rf-table th { text-align: left; color: var(--faint); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; padding: 6px 8px; border-bottom: 1px solid var(--line); }
 .rf-table td { padding: 7px 8px; border-bottom: 1px solid var(--line); }
+/* The bar cell takes a fixed share and a bar never outgrows it, so a 1440px page width
+   draws a full cell instead of a 1440px-wide table. */
+.rf-bar-cell { width: 45%; }
 .rf-bar { display: block; height: 12px; background: var(--muted); border-radius: 3px; }
 .rf-rbox { display: inline-block; width: 34px; height: 22px; background: var(--sunken); border: 1px solid var(--line-strong); }
 .rf-elev { display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
@@ -650,10 +670,12 @@ table.sc-heat { border-collapse: separate; border-spacing: 0; font-size: 12px; }
 /* ---------- settings ---------- */
 
 .prefs { max-width: 720px; }
-.pref { border: 1px solid var(--line); border-radius: var(--radius-card); padding: 18px; margin-bottom: 18px; }
+/* min-width: 0 undoes a fieldset's min-content width, which long commands would set. */
+.pref { min-width: 0; border: 1px solid var(--line); border-radius: var(--radius-card); padding: 18px; margin-bottom: 18px; }
 .pref-name { font-weight: 650; font-size: 13px; padding: 0 6px; }
 .pref-help { color: var(--muted); font-size: 12.5px; margin: 2px 0 14px; }
 .pref-note { color: var(--faint); font-size: 11.5px; margin: 12px 0 0; }
+.pref code { overflow-wrap: anywhere; }
 .pf-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
 .pf-chip { border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 12px; color: var(--muted); }
 .pf-chip[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }

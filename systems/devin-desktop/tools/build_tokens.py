@@ -234,11 +234,17 @@ for cls in sorted((c for c in UT if re.fullmatch(r"text-\d+", c)), key=lambda c:
     put(CORE, ("fontSize", key), tok(size, "dimension", "Measured", usrc(cls)))
     if lh:
         put(CORE, ("lineHeight", key), tok(lh, "dimension", "Measured", usrc(cls)))
-    ls = pr.get("letter-spacing")
-    if ls:
-        em = float(ls[:-2])
-        put(CORE, ("letterSpacing", key), tok("%gpx" % round(em * float(size[:-2]), 3), "dimension", "Derived",
-            usrc(cls, f"; {ls} x {size}"), em=ls))
+    ls = (pr.get("letter-spacing") or "").strip()
+    if ls and ls != "normal":
+        # em scales with the class's own size; a px, rem or calc length is already absolute.
+        m = re.fullmatch(r"(-?[\d.]+)em", ls)
+        if m:
+            put(CORE, ("letterSpacing", key), tok("%gpx" % round(float(m.group(1)) * float(size[:-2]), 3), "dimension", "Derived",
+                usrc(cls, f"; {ls} x {size}"), em=ls))
+        elif rem_px(ls, scale):
+            put(CORE, ("letterSpacing", key), tok(rem_px(ls, scale), "dimension", "Measured", usrc(cls)))
+        else:
+            raise SystemExit(f"{cls}: letter-spacing {ls!r} is not an em or px/rem length")
 for cls, key in (("font-normal", "normal"), ("font-medium", "medium"), ("font-semibold", "semibold"), ("font-bold", "bold")):
     if cls in UT:
         put(CORE, ("fontWeight", key), tok(int(UT[cls]["props"]["font-weight"]), "fontWeight", "Measured", usrc(cls)))

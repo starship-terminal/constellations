@@ -392,7 +392,7 @@ for (part, state), (shot, s) in sorted(P["dark"].items()):
     if s["transition-duration"] != "0s":
         for e in {x.strip() for x in s["transition-timing-function"].split(",")}:
             eases.setdefault(e, set()).add(part)
-for d, users in sorted(durs.items(), key=lambda x: ms(x[0])):
+for d, users in sorted(durs.items(), key=lambda x: float(ms(x[0])[:-2])):   # by length, not as text ("1000ms" < "150ms")
     put(CORE, ("duration", ms(d).replace("ms", "")), tok(ms(d), "duration", "Measured",
         f"computed transition-duration of {', '.join(sorted(users))}, dark, {DATE}"))
 EASE = {"ease": [0.25, 0.1, 0.25, 1], "ease-in-out": [0.42, 0, 0.58, 1], "ease-out": [0, 0, 0.58, 1], "ease-in": [0.42, 0, 1, 1], "linear": [0, 0, 1, 1]}

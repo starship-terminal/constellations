@@ -91,10 +91,14 @@ export default function ScorecardPage() {
           </b>
           <span>leader: {stats.leader.meets} criteria met</span>
         </div>
-        <div>
-          <b>{stats.floor}</b>
-          <span>systems meet the weakest criterion</span>
-        </div>
+        {stats.weakest[0] && (
+          <div>
+            <b>
+              {stats.weakest[0].meets} of {stats.weakest[0].applicable}
+            </b>
+            <span>systems it applies to meet the weakest criterion</span>
+          </div>
+        )}
       </div>
 
       <div className="dash-cols">
@@ -106,7 +110,9 @@ export default function ScorecardPage() {
                 <Link href={`/scorecard/criteria#${w.id.toLowerCase()}`}>
                   {w.id} {w.title}
                 </Link>
-                <b>met by {stats.floor}</b>
+                <b>
+                  met by {w.meets} of {w.applicable}
+                </b>
               </li>
             ))}
           </ul>

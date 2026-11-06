@@ -8,7 +8,7 @@ import sys
 import unittest
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from colour import color, shadow  # noqa: E402
+from colour import COLOR_RE, color, px, shadow  # noqa: E402
 
 TOKENS = json.loads((pathlib.Path(__file__).resolve().parent.parent / "tokens.json").read_text())
 
@@ -54,6 +54,18 @@ class Colour(unittest.TestCase):
         self.assertTrue(layers[0]["inset"])
         self.assertEqual(layers[1]["color"], "rgba(0, 0, 0, 0.12)")
         self.assertEqual(shadow("none"), [])
+
+
+class HexAndPx(unittest.TestCase):
+    def test_only_3_4_6_8_digit_hex(self):
+        for c in ("#12345", "#1234567"):
+            with self.assertRaises(ValueError):
+                color(c)
+        self.assertEqual(re.findall(COLOR_RE, "#1234567 #abc #aabbcc"), ["#abc", "#aabbcc"])
+
+    def test_px_sentinel_keeps_its_sign(self):
+        self.assertEqual(px("-9999999px"), "-9999px")
+        self.assertEqual(px("9999999px"), "9999px")
 
 
 class CommittedTokens(unittest.TestCase):

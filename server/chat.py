@@ -31,6 +31,11 @@ _lib_spec = importlib.util.spec_from_file_location(
 library = importlib.util.module_from_spec(_lib_spec)
 _lib_spec.loader.exec_module(library)
 
+_env_spec = importlib.util.spec_from_file_location(
+    "refero_media", Path(__file__).resolve().parents[1] / "tools" / "refero" / "refero_media.py")
+_env = importlib.util.module_from_spec(_env_spec)
+_env_spec.loader.exec_module(_env)
+
 ANTHROPIC_VERSION = "2023-06-01"
 DEFAULT_MODEL = "claude-sonnet-4-5"
 MAX_ROUNDS = 8
@@ -64,12 +69,14 @@ class ProviderError(Exception):
 
 def provider_config(body: dict | None) -> dict | None:
     """Normalise the page's provider object, or fall back to .env's
-    ANTHROPIC_API_KEY (loaded by catalog's refero_media import)."""
+    ANTHROPIC_API_KEY, which it loads from the repo .env when the
+    environment lacks it."""
     if body and body.get("api_key") and body.get("model"):
         cfg = dict(body)
         cfg["api"] = cfg.get("api") or "openai"
         cfg["base_url"] = (cfg.get("base_url") or "").rstrip("/")
         return cfg
+    _env.load_env(("ANTHROPIC_API_KEY", "DS_CHAT_MODEL"))
     key = os.environ.get("ANTHROPIC_API_KEY")
     if key:
         return {"api": "anthropic", "base_url": "https://api.anthropic.com",
