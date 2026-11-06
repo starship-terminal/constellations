@@ -1,5 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
+// The anchor rule lives in one place; markdown-heading.ts has no client-only code.
+import { headingId } from "@/features/markdown-heading";
 import { boundedFile, contained, repoRoot } from "@/server/sources/files";
 
 export interface LibraryDocument {
@@ -112,10 +114,4 @@ export function documentHref(base: string, href: string): string | null {
   // The private repo has scripts and source links that have no browser reader.
   return null;
 }
-export function headingId(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/[^\p{L}\p{N}\s_-]/gu, "")
-    .trim()
-    .replace(/\s+/g, "-");
-}
+export { headingId };
