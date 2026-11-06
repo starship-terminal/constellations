@@ -232,8 +232,12 @@ def weakest_criteria(criteria: dict, systems: list[dict]) -> list[tuple[dict, in
 
 def index_page(criteria: dict, audit: dict) -> str:
     systems = ranked(audit["systems"])
-    total = len(systems) * len(criteria["criteria"])
-    meets = sum(counts(s)["meets"] for s in systems)
+    # Not-applicable cells are never missing, so the share counts only the
+    # applicable ones (the research app's rule too).
+    grades = [s["grades"].get(c["id"], {}).get("grade") for s in systems for c in criteria["criteria"]]
+    applicable = [g for g in grades if g and g != "na"]
+    total = len(applicable)
+    meets = sum(g == "meets" for g in applicable)
     best = systems[0]
     weakest = weakest_criteria(criteria, systems)
     # The heatmap needs the full content column, so the page hides the rail.
@@ -243,8 +247,9 @@ def index_page(criteria: dict, audit: dict) -> str:
            f"Last audit: **{audit['date']}**.\n\n")
     md += '<div class="grid cards" markdown>\n\n'
     md += f"-   **{len(systems)} systems**\n\n    ---\n\n    Captured from real products, from Linear to Duolingo.\n\n"
-    md += (f"-   **{meets} of {total} cells meet**\n\n    ---\n\n    {round(100 * meets / total)}% of grades fully "
-           f"meet their criterion.\n\n")
+    share = f"{round(100 * meets / total)}%" if total else "N/A"
+    md += (f"-   **{meets} of {total} applicable cells meet**\n\n    ---\n\n    {share} of applicable grades "
+           f"fully meet their criterion.\n\n")
     md += (f"-   **Leader: {short(best)}**\n\n    ---\n\n    {counts(best)['meets']} of {len(criteria['criteria'])} "
            f"criteria met. [See its page](systems/{best['slug']}.md).\n\n")
     if weakest:
