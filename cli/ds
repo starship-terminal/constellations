@@ -54,15 +54,21 @@ def _rpc(base: str, method: str, params: dict | None = None):
         sys.exit(f"ds: {base}/api/mcp: {e}")
     if not body:
         return {}
-    out = json.loads(body)
+    try:
+        out = json.loads(body)
+    except ValueError:
+        out = None
+    if not isinstance(out, dict):
+        # A login page, a static site or a proxy error, not the MCP endpoint.
+        sys.exit(f"ds: {base}/api/mcp did not answer with JSON-RPC; check the server URL")
     if "error" in out:
-        err = out["error"]
+        err = out["error"] if isinstance(out["error"], dict) else {"message": out["error"]}
         sys.exit(f"ds: mcp error {err.get('code')}: {err.get('message')}")
     return out.get("result")
 
 
 def call(base: str, name: str, args: dict):
-    res = _rpc(base, "tools/call", {"name": name, "arguments": args})
+    res = _rpc(base, "tools/call", {"name": name, "arguments": args}) or {}
     if res.get("isError"):
         text = " ".join(i.get("text", "") for i in res.get("content", []))
         sys.exit(f"ds: {text.strip() or 'tool error'}")
