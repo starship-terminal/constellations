@@ -46,7 +46,11 @@ const sheets = [...blocks.values()].sort((a, b) => b.bytes - a.bytes || a.name.l
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
 const browser = await chromium.launch();
+// The inlined sheets name fonts and images on assets-proxy.anthropic.com: every request is aborted,
+// so nothing is fetched (custom properties resolve without them).
+const offline = (pg) => pg.route('**/*', (route) => route.abort());
 const page = await browser.newPage();
+await offline(page);
 await page.setContent('<!doctype html><html><head></head><body></body></html>');
 const result = await page.evaluate((sheets) => {
   const rules = [];
@@ -103,6 +107,7 @@ const result = await page.evaluate((sheets) => {
 // Claude still forces on some components). The viewport is 1440 x 900, so a clamp() with vw resolves
 // to its 1440-wide value.
 const page2 = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+await offline(page2);
 const shell = (mode, density) => '<!doctype html><html class="cds-root" lang="en-US" data-theme="claude" data-color-version="v2" data-mode="' + mode + '" data-density="' + density + '" data-font="anthropic"><head>'
   + sheets.map((s) => '<style' + (s.media ? ' media="' + s.media + '"' : '') + '>' + s.css.replace(/<\/style/gi, '<\\/style') + '</style>').join('')
   + '</head><body class="bg-surface-1 text-primary font-sans"><div id="probe-root"></div>'
