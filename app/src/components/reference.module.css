@@ -90,6 +90,13 @@
 .codeQuote {
   color: #76b251;
 } /* refero core.palette.code.muted-10 */
+/* Light adaptation: the captured dark-theme values are 2.6:1 on white. */
+:global([data-theme="light"]) .codeHeading {
+  color: #1a6fb0;
+}
+:global([data-theme="light"]) .codeQuote {
+  color: #3f7a1c;
+}
 .inspectorOverlay {
   position: fixed;
   inset: 0;

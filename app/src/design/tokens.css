@@ -30,6 +30,10 @@
   --code-property: #d2bbfc;
   --code-string: #b4d8c5;
   --code-number: #e8bf95;
+  --danger: #fba5b3;
+  --primary-surface: #f7f8fb;
+  --primary-ink: #13151a;
+  --primary-hover: #fff;
   /* Measured core.radius values. */
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -75,4 +79,8 @@
   --code-property: #6a3bbf;
   --code-string: #1f6b45;
   --code-number: #8f520c;
+  --danger: #a5203b;
+  --primary-surface: #24262e;
+  --primary-ink: #fff;
+  --primary-hover: #34363f;
 }
