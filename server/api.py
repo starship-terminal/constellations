@@ -28,6 +28,11 @@ compares the browser's Origin against Host, and without it every call 403s.
 It must be $http_host, not $host — $host drops the port while Origin keeps
 it, so on https://host:8108 the guard would still reject its own gallery.
 
+routes.py also refuses a Host it does not know (DNS rebinding). Loopback, IP
+literals and *.ts.net names pass; any other name the site is served under
+must be listed in DESIGN_SYSTEMS_ALLOWED_HOSTS (comma-separated, `name` or
+`name:port`), in the unit's environment or the clone's .env.
+
 The repo clone's root .env is loaded the same way the refero tools load it,
 so ANTHROPIC_API_KEY on the host gives every browser on the tailnet a working
 chat with no per-browser setup. Every request re-loads the agent modules, so

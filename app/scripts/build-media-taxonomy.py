@@ -87,7 +87,8 @@ UI_RULES = [
     ("ui-code", r"(?:code-snippet|code-block)", "Code Snippet"),
     ("ui-color-picker", r"colou?r-picker", "Color Picker"),
     ("ui-date-picker", r"(?:date-picker|time-picker|datetime-picker)", "Date & Time Picker"),
-    ("ui-map", r"map", "Map"),
+    # "source-map" (a build artefact) and "address-map" (an IP list) show no map.
+    ("ui-map", r"(?<!source-)(?<!address-)map", "Map"),
     ("ui-photo", r"photo", "Photo"),
     ("ui-image", r"product-image", "Product Image"),
     ("ui-thumbnail", r"thumbnail", "Thumbnail"),
