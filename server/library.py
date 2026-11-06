@@ -202,8 +202,12 @@ def search_styles(query: str, store: str = "all", platform: str | None = None,
     # for mobile, the value the schema offered first.
     wanted = "mobile" if platform == "ios" else platform
     if store in ("all", "systems"):
+        # One catalog read per call, not one per hit.
+        by_slug = {s["slug"]: s for s in _catalog()["systems"]}
         for hit in catalog.find(words):
-            e = _entry(hit["slug"])
+            e = by_slug.get(hit["slug"])
+            if e is None:
+                continue
             if platform and platform not in e.get("tags", []) and e.get("platform") != wanted:
                 continue
             out.append({"store": "systems", "slug": hit["slug"], "name": hit["name"],
