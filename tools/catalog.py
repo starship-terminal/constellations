@@ -1168,12 +1168,6 @@ def check() -> list[str]:
         problems += layout_problems(s)
         if "preview" not in s or "tokens" not in s:
             continue
-        try:
-            resolver_for(s["tokens"])
-        except (OSError, ValueError) as e:     # missing (reported above) or not JSON: nothing below can run
-            if (ROOT / s["tokens"]).exists():
-                problems.append(f"{slug}: tokens {s['tokens']} cannot be read ({e.__class__.__name__}: {e})")
-            continue
         cover = s["preview"].get("cover")
         if not cover or not (ROOT / cover).exists():
             problems.append(f"{slug}: preview.cover {cover} does not exist")
@@ -1181,6 +1175,12 @@ def check() -> list[str]:
         if not icon or not (ROOT / icon).exists():
             problems.append(f"{slug}: preview.icon {icon} does not exist; run `python3 tools/fetch_icon.py {slug}`")
         problems += palette_problems(slug, s["preview"], s.get("themes", []))
+        try:
+            resolver_for(s["tokens"])
+        except (OSError, ValueError) as e:     # missing (reported above) or not JSON: the token checks cannot run
+            if (ROOT / s["tokens"]).exists():
+                problems.append(f"{slug}: tokens {s['tokens']} cannot be read ({e.__class__.__name__}: {e})")
+            continue
         for theme, roles in swatches(s).items():
             for sw in roles:
                 if not isinstance(sw["value"], str):
@@ -1535,10 +1535,13 @@ def build_refero() -> Path | None:
               f"{len(ambiguous)} business names are not unique", file=sys.stderr)
     index = []
     written = set()
+    # Each slug becomes a file name: refuse a path-like one before writing anything.
+    for folder, meta, _ in styles:
+        slug = meta.get("slug") or folder.name
+        if not REFERO_SLUG.fullmatch(str(slug)):
+            raise SystemExit(f"refero: {folder.name}: slug {slug!r} is not lowercase letters, digits and hyphens")
     for folder, meta, ds in styles:
         slug = meta.get("slug") or folder.name
-        if not REFERO_SLUG.fullmatch(str(slug)):    # it becomes a file name: never a path
-            raise SystemExit(f"refero: {folder.name}: slug {slug!r} is not lowercase letters, digits and hyphens")
         atomic_write(ent_dir / f"{slug}.json",
                      json.dumps(refero_entry(folder, meta, ds, slug_of), separators=(",", ":")))
         written.add(slug)

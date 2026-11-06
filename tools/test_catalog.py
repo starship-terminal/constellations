@@ -1156,6 +1156,33 @@ class SmallBugsTest(unittest.TestCase):
             problems = catalog.check()
         self.assertTrue(any(p.startswith(f"{slug}: tokens README.md cannot be read") for p in problems), problems)
 
+    def test_build_refero_refuses_a_path_like_slug_before_writing(self):
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            data = Path(d) / "web" / "data"
+            styles = [(Path(d) / "ok", {"slug": "fine", "name": "Fine"}, {}),
+                      (Path(d) / "bad", {"slug": "../../escaped", "name": "Bad"}, {})]
+            with mock.patch.object(catalog, "DATA", data), \
+                 mock.patch.object(catalog, "load_refero", return_value=styles), \
+                 mock.patch.object(catalog, "refero_entry", return_value={}), \
+                 mock.patch.object(catalog, "refero_card", return_value={"name": "x"}), \
+                 self.assertRaises(SystemExit) as cm:
+                catalog.build_refero()
+            self.assertIn("../../escaped", str(cm.exception.code))
+            self.assertFalse((data / "refero" / "style" / "fine.json").exists())
+            self.assertEqual([p for p in Path(d).rglob("*.json")], [])
+
+    def test_check_still_reports_preview_problems_with_a_broken_tokens_file(self):
+        import copy
+        from unittest import mock
+        cat = copy.deepcopy(catalog.load_catalog())
+        s = cat["systems"][0]
+        s["tokens"], s["preview"]["cover"] = "README.md", "systems/no-such/cover.png"
+        with mock.patch.object(catalog, "load_catalog", return_value=cat):
+            problems = catalog.check()
+        self.assertIn(f"{s['slug']}: preview.cover systems/no-such/cover.png does not exist", problems)
+
     def test_refero_slug_pattern_refuses_paths(self):
         for ok in ("linear", "a-b-2"):
             self.assertTrue(catalog.REFERO_SLUG.fullmatch(ok))
