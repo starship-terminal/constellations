@@ -174,7 +174,7 @@ test("scorecard reads canonical platform wording, audit history and evidence fro
   const report = renderToStaticMarkup(PackageScorecard({ slug: "test" }));
   expect(report).toContain("All states recorded");
   expect(report).toContain("needs another review");
-  expect(report).toContain('href="/styles/systems/test"');
+  expect(report).toContain('href="/library/test"');
   expect(renderToStaticMarkup(ScorecardCriteria())).toContain("Mobile roles");
   expect(renderToStaticMarkup(ScorecardHistory())).toContain("2026-10-01");
 });

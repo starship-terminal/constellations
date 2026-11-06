@@ -42,11 +42,8 @@ import {
   inferredProductPlatform,
   canSwitchPlatform,
 } from "./catalog-search-state";
-import {
-  loadLibraryPages,
-  mergeLibraryItems,
-  type LibraryResponse,
-} from "./library-data";
+import { loadCatalog, type LibraryResponse } from "./library-data";
+import { replaceSearch } from "./url-state";
 
 export function LibraryPage() {
   return (
@@ -122,14 +119,7 @@ function LibraryContent() {
     const next = new URLSearchParams(window.location.search);
     for (const [key, value] of Object.entries(patch))
       value ? next.set(key, value) : next.delete(key);
-    const search = next.toString();
-    // Native history integrates with useSearchParams without an asynchronous
-    // server navigation that could restore an older search over newer typing.
-    window.history.replaceState(
-      null,
-      "",
-      `${window.location.pathname}${search ? `?${search}` : ""}${window.location.hash}`,
-    );
+    replaceSearch(next);
   }
   useEffect(() => {
     setVisibleCount(24);
@@ -140,15 +130,16 @@ function LibraryContent() {
     setError("");
     // Publish available cards immediately; later pages enrich exact filters/categories.
     // Retain already loaded items on retry, including when a later page failed.
-    loadLibraryPages(
+    loadCatalog(
+      "systems",
       (offset) =>
         api<LibraryResponse>(
           `/api/library?source=systems&limit=200&offset=${offset}`,
         ),
-      (page) => {
+      (catalog) => {
         if (!alive) return;
-        setAllItems((previous) => mergeLibraryItems(previous, page.items));
-        setCatalogTotal(page.total);
+        setAllItems(catalog.items);
+        setCatalogTotal(catalog.total);
       },
       () => {
         if (alive)
@@ -173,11 +164,7 @@ function LibraryContent() {
     const inferred = inferredProductPlatform(current, allItems);
     if (inferred) {
       current.set("platform", inferred);
-      window.history.replaceState(
-        null,
-        "",
-        `${window.location.pathname}?${current}${window.location.hash}`,
-      );
+      replaceSearch(current);
     }
   }, [params, allItems]);
   const scoped = useMemo(

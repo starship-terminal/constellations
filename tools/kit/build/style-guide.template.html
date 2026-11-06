@@ -407,7 +407,8 @@ Produce a design token set and component reference.</pre></div>
 <script>
 const TOK = /*TOKENS*/null;
 const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+// Escapes text and attribute values alike, so a token value cannot close a tag or a quoted attribute.
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
 const flat = (node, prefix = '') => Object.entries(node).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
 const theme = () => document.documentElement.getAttribute('data-mode') === 'dark' ? 'dark' : 'light';
@@ -433,10 +434,10 @@ function roles() {
   let h = '';
   for (const [hue, steps] of Object.entries(TOK.core.color)) {
     if (hue === 'brand' || hue === 'role') continue;
-    h += `<div class="h">${hue}</div>` + Object.entries(steps).map(([s, t]) => `<i title="${hue}.${s} ${t.v}" style="background:${t.v}"></i>`).join('');
+    h += `<div class="h">${esc(hue)}</div>` + Object.entries(steps).map(([s, t]) => `<i title="${esc(`${hue}.${s} ${t.v}`)}" style="background:${esc(t.v)}"></i>`).join('');
   }
   $('#ramps-out').innerHTML = h;
-  $('#brand-out').innerHTML = Object.entries(TOK.core.color.brand).map(([n, t]) => `<div class="sw"><span class="dot"><i style="background:${t.v}"></i></span><div><div class="nm">color.brand.${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`).join('');
+  $('#brand-out').innerHTML = Object.entries(TOK.core.color.brand).map(([n, t]) => `<div class="sw"><span class="dot"><i style="background:${esc(t.v)}"></i></span><div><div class="nm">color.brand.${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`).join('');
 })();
 
 (function type() {
@@ -450,7 +451,7 @@ function roles() {
     const fam = /mono/.test(v.fontFamily) ? 'var(--sg-mono)' : /serif|chat-response/.test(v.fontFamily) ? 'var(--sg-serif)' : 'var(--sg-sans)';
     const w = typeof v.fontWeight === 'number' ? v.fontWeight : `var(${cssname(ref(v.fontWeight))})`;
     const cmp = (get(size) || {}).compact;
-    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(String(fs))} / ${esc(String(lh))}${cmp ? ' · compact ' + cmp : ''} · ${esc(ref(v.fontWeight))}</small></div><div class="sample" style="font-family:${fam};font-size:var(${cssname(size)});line-height:var(${cssname(lead)});font-weight:${w}">The quick brown fox jumps over the lazy dog</div></div>`;
+    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(String(fs))} / ${esc(String(lh))}${cmp ? ' · compact ' + esc(cmp) : ''} · ${esc(ref(v.fontWeight))}</small></div><div class="sample" style="font-family:${fam};font-size:var(${cssname(size)});line-height:var(${cssname(lead)});font-weight:${w}">The quick brown fox jumps over the lazy dog</div></div>`;
   }
   $('#type-out').innerHTML = h;
 })();
@@ -460,7 +461,7 @@ function roles() {
   for (const [n, t] of flat(TOK.core.density, 'density.')) {
     if (t.t !== 'dimension') continue;
     const px = parseFloat(t.v);
-    h += `<div class="b"><span>${esc(n.replace('density.', ''))} <b>${t.v}</b>${t.compact ? ' <span style="opacity:.6">/ ' + t.compact + '</span>' : ''}</span><i style="width:${Math.min(100, px / 0.6)}%"></i></div>`;
+    h += `<div class="b"><span>${esc(n.replace('density.', ''))} <b>${esc(t.v)}</b>${t.compact ? ' <span style="opacity:.6">/ ' + esc(t.compact) + '</span>' : ''}</span><i style="width:${Math.min(100, px / 0.6)}%"></i></div>`;
   }
   h += '</div>';
   $('#density-out').innerHTML = h;
@@ -481,9 +482,9 @@ function roles() {
   for (const [n, t] of flat(TOK.core.duration, 'duration.')) {
     const key = n.replace('duration.', '');
     const ease = TOK.core.easing[key] ? `var(--easing-${key})` : key.startsWith('frame') ? 'var(--easing-frame-out)' : 'var(--easing-out)';
-    h += `<div><div class="track" style="--d:${t.v};--e:${ease}"><div class="dot" style="transition:left var(--d) var(--e)"></div></div><div class="cap" style="margin-top:6px">${esc(n)} · ${t.v}</div></div>`;
+    h += `<div><div class="track" style="--d:${esc(t.v)};--e:${ease}"><div class="dot" style="transition:left var(--d) var(--e)"></div></div><div class="cap" style="margin-top:6px">${esc(n)} · ${esc(t.v)}</div></div>`;
   }
-  for (const [n, t] of flat(TOK.core.easing, 'easing.')) h += `<div><div class="track" style="--e:var(${cssname(n)})"><div class="dot" style="transition:left 600ms var(--e)"></div></div><div class="cap" style="margin-top:6px">${esc(n)} · cubic-bezier(${t.v.join(', ')}) over 600 ms</div></div>`;
+  for (const [n, t] of flat(TOK.core.easing, 'easing.')) h += `<div><div class="track" style="--e:var(${cssname(n)})"><div class="dot" style="transition:left 600ms var(--e)"></div></div><div class="cap" style="margin-top:6px">${esc(n)} · cubic-bezier(${esc(t.v.join(', '))}) over 600 ms</div></div>`;
   $('#motion-out').innerHTML = h;
   document.querySelectorAll('.track').forEach((tr) => tr.addEventListener('click', () => tr.classList.toggle('go')));
 })();

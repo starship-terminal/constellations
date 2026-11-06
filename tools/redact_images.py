@@ -11,7 +11,8 @@ finds anything the rectangles missed, using the same detection patterns as `tool
     python3 tools/redact_images.py check systems/manus --patterns ~/.design-systems/cleanup-redact.json
     python3 tools/redact_images.py lines systems/manus/screenshots/home-dark.png   # author a rules file
 
-`check` reads every image file under the package that git does not ignore (any folder, every frame;
+`check` never lets a rules file switch a detector off (its ocr.emails or ocr.net), and an email_allow
+entry must match a whole part of an address (see email_allowed). `check` reads every image file under the package that git does not ignore (any folder, every frame;
 a file of an image type it cannot read fails the check), and the package's own rules file, tools/redact-rules/<slug>.json, when one exists (its ocr
 block: email_allow, wrap_ignore) and prints which file it loaded; `--rules` names another one instead.
 `apply` never guesses: it edits files, so its `--rules` stays required.
@@ -415,6 +416,24 @@ def region_boxes(words, regions, global_keep):
     return boxes
 
 
+def email_allowed(addr, allow):
+    """Whether an allow regex passes an address. An entry has to match a whole part of it, never a
+    piece: the address, its local part (with or without the @), its @domain, or a whole-label
+    suffix of the domain (`\\.example$`). So `@example\\.com?\\b` passes x@example.co and
+    x@example.com but not x@example.co.evil.test. An entry that starts with ^ may also match the
+    start of the local part (an OCR read that cut the owner's own address short). A trailing full
+    stop, the end of a sentence, is not part of the address."""
+    addr = addr.rstrip(".")
+    local, _, domain = addr.partition("@")
+    labels = domain.split(".")
+    parts = [addr, local, local + "@", "@" + domain] + ["." + ".".join(labels[i:]) for i in range(1, len(labels))]
+    for a in allow:
+        rx = re.compile(a, re.I)
+        if any(rx.fullmatch(p) for p in parts) or (a.startswith("^") and rx.match(local)):
+            return True
+    return False
+
+
 def find_private(words, patterns, emails, email_allow):
     """Boxes (x0, y0, x1, y1) of OCR words that fall inside a pattern or email match, per line."""
     lines = {}
@@ -433,7 +452,7 @@ def find_private(words, patterns, emails, email_allow):
         hits = [m.span() for p in rx for m in p.finditer(text)]
         if emails:
             hits += [m.span() for m in EMAIL.finditer(text)
-                     if not any(re.search(a, m.group(), re.I) for a in email_allow)]
+                     if not email_allowed(m.group(), email_allow)]
         for s, e in hits:
             for a, b, box in spans:
                 if a < e and b > s:
@@ -538,6 +557,12 @@ def cmd_check(args):
         cfg = dict(json.loads(rules_file.read_text()).get("ocr", {}))
         print(f"rules: {rules_file if args.rules else 'tools/redact-rules/' + rules_file.name}"
               + ("" if args.rules else " (loaded for this package)"), flush=True)
+        # A rules file steers `apply`; it never switches a detector off in the check that guards a commit.
+        for key in ("emails", "net"):
+            if cfg.get(key, True) is not True:
+                print(f"warning: {rules_file.name} sets ocr.{key} to {json.dumps(cfg[key])}; check ignores that "
+                      f"and reads {'every email' if key == 'emails' else 'every pattern'}", flush=True)
+        cfg["emails"] = cfg["net"] = True
     cfg["email_allow"] = cfg.get("email_allow", []) + load_email_allow(args.patterns)
     bad = 0
     if args.files:

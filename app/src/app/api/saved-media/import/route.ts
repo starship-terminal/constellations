@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { getStore } from "@/server/db";
-import { getReference } from "@/server/sources";
+import { getReferenceMedia } from "@/server/sources";
 import { endpoint, mutationGuard, readBody } from "@/server/research/http";
 export function POST(request: Request) {
   return endpoint(async () => {
@@ -10,7 +10,10 @@ export function POST(request: Request) {
       z.object({ paths: z.array(z.string().max(2000)).max(5000) }).strict(),
     );
     const store = await getStore();
-    const cache = new Map<string, Awaited<ReturnType<typeof getReference>>>();
+    const cache = new Map<
+      string,
+      Awaited<ReturnType<typeof getReferenceMedia>>
+    >();
     let imported = 0;
     const skipped: string[] = [];
     for (const path of new Set(paths)) {
@@ -33,7 +36,7 @@ export function POST(request: Request) {
         continue;
       }
       const id = match ? `systems:${match[1]}` : `refero:${referoMatch![2]}`;
-      if (!cache.has(id)) cache.set(id, await getReference(id));
+      if (!cache.has(id)) cache.set(id, await getReferenceMedia(id));
       const media = cache
         .get(id)
         ?.media.find((item) =>

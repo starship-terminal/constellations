@@ -1,4 +1,8 @@
-import { AppearanceBootstrap, iconInitScript } from "@/components/appearance";
+import {
+  AppearanceBootstrap,
+  iconInitScript,
+  themeInitScript,
+} from "@/components/appearance";
 import type { Metadata } from "next";
 import { AppShell } from "@/components/shell";
 import "./globals.css";
@@ -25,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script dangerouslySetInnerHTML={{ __html: iconInitScript }} />
         <a href="#main-content" className="skip-link">
           Skip to content

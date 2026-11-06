@@ -1,18 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { Children, isValidElement, type ReactNode } from "react";
-import { documentHref, headingId } from "@/server/knowledge/docs";
-function nodeText(node: ReactNode): string {
-  return Children.toArray(node)
-    .map((child) =>
-      typeof child === "string" || typeof child === "number"
-        ? String(child)
-        : isValidElement<{ children?: ReactNode }>(child)
-          ? nodeText(child.props.children)
-          : "",
-    )
-    .join("");
-}
+import { documentHref } from "@/server/knowledge/docs";
+import { headingId, nodeText } from "../markdown-heading";
 export function DocumentMarkdown({
   text,
   base,
