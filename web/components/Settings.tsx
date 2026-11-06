@@ -6,6 +6,7 @@
 
 import { useEffect, useState } from "react";
 import { useLightbox } from "@/components/Lightbox";
+import { readSavedPaths, readStoredProvider } from "@/components/storage";
 import { PROVIDER_EVENT } from "@/components/Chat";
 import { setCollapsed, setTheme, usePrefs, type Theme } from "@/components/prefs";
 import { baseUrlOf } from "@/lib/provider-defaults";
@@ -28,22 +29,7 @@ interface Cfg {
 
 const EMPTY: Cfg = { api: "anthropic", base_url: "", api_key: "", key_header: "", model: "", name: "" };
 
-const readProvider = (): Cfg => {
-  try {
-    const p = JSON.parse(localStorage.getItem("ds-provider") || "null");
-    if (p && typeof p === "object") return { ...EMPTY, ...p };
-  } catch {}
-  return { ...EMPTY };
-};
-
-const readSaved = (): string[] => {
-  try {
-    const v = JSON.parse(localStorage.getItem("ds-saved") || "[]");
-    return Array.isArray(v) ? v.filter((x) => typeof x === "string") : [];
-  } catch {
-    return [];
-  }
-};
+const readProvider = (): Cfg => ({ ...EMPTY, ...readStoredProvider() });
 
 const baseName = (p: string) => {
   try {
@@ -73,7 +59,7 @@ export function Settings({ stats }: { stats: SettingsStats }) {
   useEffect(() => {
     setOrigin(window.location.origin);
     setCfg(readProvider());
-    setSaved(readSaved());
+    setSaved(readSavedPaths());
     fetch("/api/status")
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => setEnvNote(d?.envProvider ? " The server also has its own key configured." : ""))
@@ -334,7 +320,7 @@ export function Settings({ stats }: { stats: SettingsStats }) {
                       lb.open({
                         items: saved.map((x) => ({ path: x, name: baseName(x) })),
                         index: i,
-                        opts: { onSave: () => setSaved(readSaved()) },
+                        opts: { onSave: () => setSaved(readSavedPaths()) },
                       })
                     }
                   >

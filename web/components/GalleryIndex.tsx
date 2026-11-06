@@ -9,46 +9,17 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { DesignSystem, GalleryData } from "@/lib/catalog";
 import { mediaUrl } from "@/lib/url";
 import { useChat } from "@/components/Chat";
+import { useSlashFocus } from "@/components/keys";
+import { scoreRow, terms, type Facet } from "@/lib/search";
+import { themeLabel, tintOf } from "@/lib/style-labels";
+import { useUrlMirror } from "@/components/url-state";
 
-const SEARCH_STOP = new Set(
-  "a an the and or of for in on to with by at is it this that site sites website websites page pages design designed style styles app apps web landing product products".split(" "),
-);
 const isDark = (t: string) => /dark/.test(t);
 const portrait = (s: DesignSystem) => s.tags.includes("ios");
-const themeLabel = (t: string) =>
-  t.replace("-experimental", " (exp.)").replace("light-mobile", "mobile").replace("light-high-contrast", "high contrast");
-
-function terms(q: string) {
-  return q
-    .trim()
-    .toLowerCase()
-    .split(/\s+/)
-    .filter((w) => w && !SEARCH_STOP.has(w));
-}
-type Facet = [Set<string>, (s: DesignSystem, t: string) => boolean];
-function score(s: DesignSystem, toks: string[], facets: Facet[], categories: Record<string, string>) {
-  if (!toks.length) return 1;
-  const hay = [s.name, s.slug, s.goodFor, s.category, categories[s.category], ...s.tags, ...s.themes, ...s.fonts.map((f) => f.family)]
+const hayOf = (s: DesignSystem, categories: Record<string, string>) =>
+  [s.name, s.slug, s.goodFor, s.category, categories[s.category], ...s.tags, ...s.themes, ...s.fonts.map((f) => f.family)]
     .join(" ")
     .toLowerCase();
-  let sat = 0,
-    sc = 0;
-  for (const t of toks) {
-    let hit = hay.includes(t) ? 1 : 0;
-    for (const [values, test] of facets)
-      if (values.has(t) && test(s, t)) {
-        hit = 2;
-        break;
-      }
-    if (hit) {
-      sat++;
-      sc += hit;
-    }
-  }
-  if (sat < (toks.length <= 2 ? toks.length : toks.length - 1)) return 0;
-  for (let i = 0; i < toks.length - 1; i++) if (hay.includes(`${toks[i]} ${toks[i + 1]}`)) sc += 1.5;
-  return sc;
-}
 
 const SCRUB_MAX = 8;
 function scrubFrames(s: DesignSystem) {
@@ -58,8 +29,6 @@ function scrubFrames(s: DesignSystem) {
   frames.unshift({ path: s.cover.path, name: "cover", group: "", tags: [], thumb: s.cover.thumb });
   return frames;
 }
-const tintOf = (s: DesignSystem) =>
-  Object.values(s.swatches).flat().find((x) => /accent|primary|brand|face/i.test(x.role))?.value || "";
 
 const icon = (s: DesignSystem, cls = "app-icon") =>
   s.icon ? <img className={cls} src={mediaUrl(s.icon)} alt="" loading="lazy" /> : <i>{s.name[0].toUpperCase()}</i>;
@@ -95,7 +64,7 @@ function Card({ s, frames }: { s: DesignSystem; frames: { path: string; thumb?: 
     img.addEventListener("error", () => img.remove(), { once: true });
     while (st.children.length > 4) st.children[1].remove();
   };
-  const tint = tintOf(s);
+  const tint = tintOf(s.swatches);
   return (
     <Link className={`card${portrait(s) ? " portrait" : ""}`} href={`/gallery/${s.slug}`} style={tint ? ({ "--tint": tint } as React.CSSProperties) : undefined}>
       <div className="cover">
@@ -135,19 +104,9 @@ export function GalleryIndex({ data }: { data: GalleryData }) {
     } catch {}
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key !== "/" || e.metaKey || e.ctrlKey) return;
-      const t = e.target as HTMLElement;
-      if (/^(input|textarea|select)$/i.test(t.tagName) || t.isContentEditable) return;
-      // An open lightbox or the chat drawer traps the page: keep focus in it.
-      if (document.querySelector('[aria-modal="true"], [role="dialog"]:not([aria-hidden="true"])')) return;
-      e.preventDefault();
-      qRef.current?.focus();
-    };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, []);
+
+  useSlashFocus(qRef);
+  useUrlMirror({ q: q.trim() || null, cat: cat === "all" ? null : cat });
 
   const save = (patch: object) => {
     try {
@@ -157,7 +116,7 @@ export function GalleryIndex({ data }: { data: GalleryData }) {
   };
 
   const toks = useMemo(() => terms(q), [q]);
-  const facets = useMemo<Facet[]>(
+  const facets = useMemo<Facet<DesignSystem>[]>(
     () => [
       [new Set(Object.keys(data.categories)), (s, t) => s.category === t],
       [new Set(data.systems.flatMap((s) => s.tags)), (s, t) => s.tags.includes(t)],
@@ -172,7 +131,7 @@ export function GalleryIndex({ data }: { data: GalleryData }) {
           (cat === "all" || s.category === cat) &&
           (!dark || s.themes.some(isDark)) &&
           (platform === "all" || s.tags.includes(platform)) &&
-          score(s, toks, facets, data.categories) > 0,
+          scoreRow(s, hayOf(s, data.categories), toks, facets) > 0,
       ),
     [data, cat, dark, platform, toks, facets],
   );
@@ -239,7 +198,7 @@ export function GalleryIndex({ data }: { data: GalleryData }) {
             className="r-go"
             type="button"
             aria-label={chat.enabled ? "Ask the librarian" : "Search"}
-            onClick={() => (chat.enabled ? ask() : undefined)}
+            onClick={() => (chat.enabled ? ask() : qRef.current?.focus())}
           >
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" />
@@ -287,11 +246,21 @@ export function GalleryIndex({ data }: { data: GalleryData }) {
             </thead>
             <tbody>
               {list.map((s) => (
-                <tr key={s.slug} onClick={() => router.push(`/gallery/${s.slug}`)} tabIndex={0} onKeyDown={(e) => e.key === "Enter" && router.push(`/gallery/${s.slug}`)}>
+                <tr
+                  key={s.slug}
+                  onClick={(e) => {
+                    // The name cell holds the real link (keyboard, middle-click,
+                    // open in new tab); a click elsewhere on the row follows it.
+                    if (!(e.target as HTMLElement).closest("a")) router.push(`/gallery/${s.slug}`);
+                  }}
+                >
                   <td>
                     <div className="thumb"><img loading="lazy" src={mediaUrl(s.cover.thumb || s.cover.path)} alt="" /></div>
                   </td>
-                  <td className="nm">{icon(s)}{s.name}</td>
+                  <td className="nm">
+                    {icon(s)}
+                    <Link href={`/gallery/${s.slug}`}>{s.name}</Link>
+                  </td>
                   <td>{data.categories[s.category] || s.category}</td>
                   <td className="gf">{s.goodFor}</td>
                   <td><Strip sw={Object.values(s.swatches)[0] || []} /></td>

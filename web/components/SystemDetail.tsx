@@ -12,7 +12,8 @@ import type { GradeValue, SystemReport } from "@/lib/scorecard";
 import { useLightbox } from "@/components/Lightbox";
 import type { LbSys } from "@/components/Lightbox";
 import { useToast } from "@/components/Toast";
-import { copyText } from "@/components/CopyButton";
+import { copyWithToast } from "@/components/CopyButton";
+import { themeLabel } from "@/lib/style-labels";
 
 // Mirror of scorecard.ts's GRADES, inlined so this client bundle never pulls
 // the fs-reading module in for a constant.
@@ -26,8 +27,6 @@ const GRADE_ORDER: GradeValue[] = ["meets", "partly", "missing", "na"];
 
 const ICONS_SHOWN = 48;
 
-const themeLabel = (t: string) =>
-  t.replace("-experimental", " (exp.)").replace("light-mobile", "mobile").replace("light-high-contrast", "high contrast");
 const fileName = (p: string) => p.split("/").pop() || p;
 const cssLen = (v: string | number) => (typeof v === "number" ? `${v}px` : v);
 const sentence = (t: string) => t.trim().replace(/\.$/, "");
@@ -147,8 +146,7 @@ export function SystemDetail({
     });
   const copy = async (value: string | null) => {
     if (!value) return;
-    await copyText(value);
-    toast(`${value} copied`);
+    await copyWithToast(value, toast, `${value} copied`);
   };
 
   // Type-style helpers (ported from the old gallery): a catalog font supplies

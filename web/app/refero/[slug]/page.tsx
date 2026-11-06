@@ -11,6 +11,7 @@ import { readRepoText } from "@/lib/catalog";
 import { esc, markdown } from "@/lib/markdown";
 import { ReferoDetail } from "@/components/ReferoDetail";
 import type { ReferoDoc, ReferoMediaPair, ReferoSimilar } from "@/components/ReferoDetail";
+import { cardFav, cardImg } from "@/lib/refero-media";
 import "../refero.css";
 
 export const dynamic = "force-dynamic";
@@ -30,18 +31,6 @@ const DOC_TABS: [string, string, string][] = [
   ["tokens_json", "Design Tokens", "tokens.json"],
 ];
 
-const host = (u: string | null) =>
-  String(u || "")
-    .replace(/^https?:\/\//, "")
-    .replace(/^www\./, "")
-    .replace(/\/.*$/, "");
-const localMedia = (base: string, kind: string, slug: string, ext: string) =>
-  `${base || "/media"}/refero-media/${kind}/${encodeURIComponent(slug)}.${ext}`;
-const cdnUrl = (cdn: string, u: string | null) => (u ? (u.includes("://") ? u : `${cdn}${u}`) : null);
-const faviconFor = (src: string | null) =>
-  src
-    ? `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(`https://${host(src)}`)}&size=128`
-    : null;
 
 // Doc values are usually inline content; a repo-relative path also works.
 const looksPath = (v: string) =>
@@ -97,18 +86,14 @@ async function renderDocs(e: ReferoEntity): Promise<ReferoDoc[]> {
   return out;
 }
 
-function cardMedia(index: ReferoIndex, s: ReferoCard): { img: ReferoMediaPair; fav: ReferoMediaPair } {
-  return {
-    img: {
-      local: s.card ? localMedia(index.mediaBase, s.card === "p" ? "posters" : "shots", s.slug, "jpg") : null,
-      remote: cdnUrl(index.cdn, s.cardRemote),
-    },
-    fav: { local: localMedia(index.mediaBase, "favicons", s.slug, "png"), remote: faviconFor(s.src) },
-  };
-}
 
 // The similar list the entity carries, filled out to six with same-facet
 // styles the way app.js's rfSimilar did (type + style + theme matches win).
+const cardMedia = (index: ReferoIndex, s: ReferoCard): { img: ReferoMediaPair; fav: ReferoMediaPair } => ({
+  img: cardImg(index, s),
+  fav: cardFav(index, s),
+});
+
 function similarItems(e: ReferoEntity, index: ReferoIndex): ReferoSimilar[] {
   const bySlug = new Map(index.styles.map((s) => [s.slug, s]));
   const items: ReferoSimilar[] = (e.similar || []).map((x) => {
