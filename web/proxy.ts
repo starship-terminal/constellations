@@ -68,6 +68,18 @@ function sameOrigin(origin: string, host: string | null): boolean {
   }
 }
 
+// Request body caps, the same as server/routes.py: 256 KB for /api/mcp, 128 KB
+// for every other API route (chat and models take a JSON body of messages and
+// provider settings). Checked against Content-Length before any route reads
+// the body. A request with no Content-Length (chunked) is not trusted to be
+// small: it is refused with 411 so a client cannot stream past the cap.
+const MCP_BODY_LIMIT = 256_000;
+const API_BODY_LIMIT = 128_000;
+
+function bodyLimit(pathname: string): number {
+  return pathname === "/api/mcp" ? MCP_BODY_LIMIT : API_BODY_LIMIT;
+}
+
 function refuse(status: number, error: string) {
   return NextResponse.json({ error }, { status });
 }
@@ -92,6 +104,14 @@ export function proxy(request: NextRequest) {
   // request, so a browser cannot send it cross-site without a preflight.
   if (request.method !== "DELETE" && mediaType(request.headers.get("content-type")) !== "application/json")
     return refuse(415, "Send application/json.");
+
+  if (request.method !== "DELETE" && request.nextUrl.pathname.startsWith("/api/")) {
+    const length = request.headers.get("content-length");
+    if (length === null || !/^\d+$/.test(length.trim()))
+      return refuse(411, "Send a Content-Length.");
+    if (Number(length) > bodyLimit(request.nextUrl.pathname))
+      return refuse(413, "The request body is too large.");
+  }
 
   return NextResponse.next();
 }
