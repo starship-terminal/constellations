@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-31T03:58:12.171Z",
+  "screenshot": "trace-dark-preferences.png",
+  "source": "signed-in Sentry app",
+  "actual": {
+    "devicePixelRatio": 1.7999999523162842,
+    "innerHeight": 959,
+    "innerWidth": 1065,
+    "visualViewport": {
+      "height": 958.888916015625,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "scale": 1,
+      "width": 1065.5555419921875
+    }
+  },
+  "theme": {
+    "bodyClass": "theme-system",
+    "colorScheme": "normal",
+    "rootClass": ""
+  },
+  "capture": {
+    "mode": "viewport",
+    "originalFormat": "JPEG",
+    "note": "Browser screenshot API emits CSS-scale JPEG; converted to 256-color PNG. Do not multiply by DPR for crop coordinates."
+  },
+  "png": {
+    "width": 1066,
+    "height": 959
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "basis": "Image width and height within one pixel of measured inner viewport; requested overrides had no effect"
+  },
+  "visualReview": {
+    "status": "accepted",
+    "note": "Reviewed image; loading image deliberately retained as loading evidence. Attribute panels are scrollable; this captures their visible top portion, not complete attributes."
+  },
+  "cropCoordinates": {
+    "status": "unverified"
+  }
+}

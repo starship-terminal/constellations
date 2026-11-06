@@ -1,0 +1,2650 @@
+{
+  "capturedAt": "2026-10-31T04:46:04.185Z",
+  "components": [
+    {
+      "label": "Skip to main content",
+      "rect": {
+        "height": 30,
+        "width": 152.796875,
+        "x": 6,
+        "y": -1000
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgb(46, 41, 54)",
+        "border-color": "rgb(20, 17, 25)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(171, 168, 248)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "normal",
+        "height": "30px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(171, 168, 248) none 3px",
+        "padding": "6px 8px",
+        "transition-duration": "0.2s",
+        "width": "152.797px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "1\nIssues\nExplore\nDashboards\nMonitors\nSettings\n6\n🦄C",
+      "rect": {
+        "height": 1000,
+        "width": 74,
+        "x": 0,
+        "y": 0
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgb(46, 41, 54)",
+        "border-color": "rgb(231, 229, 234) rgb(20, 17, 25) rgb(231, 229, 234) rgb(231, 229, 234)",
+        "border-radius": "0px",
+        "border-width": "0px 1px 0px 0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "normal",
+        "height": "1000px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "74px"
+      },
+      "tag": "NAV"
+    },
+    {
+      "label": "1",
+      "rect": {
+        "height": 32,
+        "width": 32,
+        "x": 20.5,
+        "y": 8
+      },
+      "role": "button",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(255, 255, 255)",
+        "border-radius": "6px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 255, 255)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "32px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "Issues",
+      "rect": {
+        "height": 61,
+        "width": 65,
+        "x": 4,
+        "y": 53
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(181, 176, 189)",
+        "border-radius": "2px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "4px",
+        "height": "61px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "4px 4px 8px",
+        "transition-duration": "0s",
+        "width": "65px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 24,
+        "width": 22,
+        "x": 25.5,
+        "y": 61
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(181, 176, 189)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "normal",
+        "height": "24px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "22px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "Explore",
+      "rect": {
+        "height": 61,
+        "width": 65,
+        "x": 4,
+        "y": 114
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(181, 176, 189)",
+        "border-radius": "2px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "4px",
+        "height": "61px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "4px 4px 8px",
+        "transition-duration": "0s",
+        "width": "65px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 24,
+        "width": 22,
+        "x": 25.5,
+        "y": 122
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(181, 176, 189)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "normal",
+        "height": "24px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "22px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "Dashboards",
+      "rect": {
+        "height": 61,
+        "width": 65,
+        "x": 4,
+        "y": 175
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(181, 176, 189)",
+        "border-radius": "2px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "4px",
+        "height": "61px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "4px 4px 8px",
+        "transition-duration": "0s",
+        "width": "65px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 24,
+        "width": 22,
+        "x": 25.5,
+        "y": 183
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(181, 176, 189)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "normal",
+        "height": "24px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "22px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "Monitors",
+      "rect": {
+        "height": 61,
+        "width": 65,
+        "x": 4,
+        "y": 236
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(181, 176, 189)",
+        "border-radius": "2px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "4px",
+        "height": "61px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "4px 4px 8px",
+        "transition-duration": "0s",
+        "width": "65px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 24,
+        "width": 22,
+        "x": 25.5,
+        "y": 244
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(181, 176, 189)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "normal",
+        "height": "24px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "22px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "Settings",
+      "rect": {
+        "height": 61,
+        "width": 65,
+        "x": 4,
+        "y": 297
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "2px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "4px",
+        "height": "61px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "4px 4px 8px",
+        "transition-duration": "0s",
+        "width": "65px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 24,
+        "width": 22,
+        "x": 25.5,
+        "y": 305
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "normal",
+        "height": "24px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "22px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "6",
+      "rect": {
+        "height": 32,
+        "width": 32,
+        "x": 20.5,
+        "y": 827
+      },
+      "role": "button",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(255, 255, 255)",
+        "border-radius": "6px 6px 0px 0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 255, 255)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "padding": "4px",
+        "transition-duration": "0s",
+        "width": "32px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 18,
+        "width": 18,
+        "x": 27.5,
+        "y": 832
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(255, 255, 255)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 255, 255)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "18px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "18px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "Try Business",
+      "rect": {
+        "height": 32,
+        "width": 32,
+        "x": 20.5,
+        "y": 858
+      },
+      "role": "button",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(255, 255, 255)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 255, 255)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "padding": "4px",
+        "transition-duration": "0s",
+        "width": "32px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 16,
+        "width": 16,
+        "x": 28.5,
+        "y": 864
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(255, 255, 255)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 255, 255)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "16px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "16px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "What's New",
+      "rect": {
+        "height": 32,
+        "width": 32,
+        "x": 20.5,
+        "y": 889
+      },
+      "role": "button",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(255, 255, 255)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 255, 255)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "padding": "4px",
+        "transition-duration": "0s",
+        "width": "32px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 14,
+        "width": 14,
+        "x": 29.5,
+        "y": 896
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(255, 255, 255)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 255, 255)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "14px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "14px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "Help",
+      "rect": {
+        "height": 32,
+        "width": 32,
+        "x": 20.5,
+        "y": 920
+      },
+      "role": "button",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(255, 255, 255)",
+        "border-radius": "0px 0px 6px 6px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 255, 255)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "padding": "4px",
+        "transition-duration": "0s",
+        "width": "32px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 14,
+        "width": 14,
+        "x": 29.5,
+        "y": 927
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(255, 255, 255)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 255, 255)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "14px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "14px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "🦄C",
+      "rect": {
+        "height": 32,
+        "width": 32,
+        "x": 20.5,
+        "y": 960
+      },
+      "role": "button",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(255, 255, 255)",
+        "border-radius": "6px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 255, 255)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "32px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "Settings\nAccount\nAccount Details\nSecurity\nNotifications\nEmail Addresses\nSubscriptions\nAuthorized App",
+      "rect": {
+        "height": 1000,
+        "width": 189,
+        "x": 74,
+        "y": 0
+      },
+      "role": "navigation",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "normal",
+        "height": "1000px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "189px"
+      },
+      "tag": "DIV"
+    },
+    {
+      "label": "Collapse",
+      "rect": {
+        "height": 32,
+        "width": 32,
+        "x": 225,
+        "y": 8
+      },
+      "role": "button",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "6px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "32px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 14,
+        "width": 14,
+        "x": 234,
+        "y": 17
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "14px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "14px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "Account",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": -183.5
+      },
+      "role": "button",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "6px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "6px 12px",
+        "transition-duration": "0s",
+        "width": "177px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 12,
+        "width": 12,
+        "x": 233,
+        "y": -173.5
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "12px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "12px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "Account Details",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": -151.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Security",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": -117.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Notifications",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": -83.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Email Addresses",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": -49.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Subscriptions",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": -15.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Authorized Apps",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 18.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Identities",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 52.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Close Account",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 86.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Organization",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 136.5
+      },
+      "role": "button",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "6px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "6px 12px",
+        "transition-duration": "0s",
+        "width": "177px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 12,
+        "width": 12,
+        "x": 233,
+        "y": 146.5
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "12px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "12px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "General Settings",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 168.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Stats & Usage",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 202.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Projects",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 236.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Teams",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 270.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Members",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 304.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Security & Privacy",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 338.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Auth",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 372.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 16,
+        "width": 16,
+        "x": 228,
+        "y": 380.5
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(181, 176, 189)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "normal",
+        "height": "16px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "16px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "Audit Log",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 406.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Data Forwarding",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 440.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Relay",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 474.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Feature Flags",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 508.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(72, 40, 184, 0.58)",
+        "border-color": "rgba(96, 72, 208, 0.79)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(231, 229, 234) none 0px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Seer",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 558.5
+      },
+      "role": "button",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "6px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "6px 12px",
+        "transition-duration": "0s",
+        "width": "177px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 12,
+        "width": 12,
+        "x": 233,
+        "y": 568.5
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "12px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "12px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "Autofix",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 590.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Connectors",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 624.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 12,
+        "width": 12,
+        "x": 228,
+        "y": 634.5
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(255, 206, 0)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 206, 0)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "12px",
+        "font-weight": "400",
+        "gap": "normal",
+        "height": "12px",
+        "letter-spacing": "normal",
+        "line-height": "16.8px",
+        "outline": "rgb(255, 206, 0) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "12px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "Advanced Settings",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 658.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Integrations",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 708.5
+      },
+      "role": "button",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "6px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "6px 12px",
+        "transition-duration": "0s",
+        "width": "177px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 12,
+        "width": 12,
+        "x": 233,
+        "y": 718.5
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "12px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "12px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "MCP & CLI",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 740.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Integrations",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 774.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Repositories",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 808.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Custom Integrations",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 842.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Developer Settings",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 892.5
+      },
+      "role": "button",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "6px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "6px 12px",
+        "transition-duration": "0s",
+        "width": "177px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 12,
+        "width": 12,
+        "x": 233,
+        "y": 902.5
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "12px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "12px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "Organization Tokens",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 924.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Personal Tokens",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 958.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "OAuth Applications",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 992.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Usage & Billing",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 1042.5
+      },
+      "role": "button",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "6px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "6px 12px",
+        "transition-duration": "0s",
+        "width": "177px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 12,
+        "width": 12,
+        "x": 233,
+        "y": 1052.5
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "12px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "12px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "Subscription",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 1074.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Spike Protection",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 1108.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Redeem Promo Code",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 1142.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Legal & Compliance",
+      "rect": {
+        "height": 32,
+        "width": 177,
+        "x": 80,
+        "y": 1176.5
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "6px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(181, 176, 189)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "6px",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(181, 176, 189) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0.2s",
+        "width": "177px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Settings",
+      "rect": {
+        "height": 16,
+        "width": 54.953125,
+        "x": 280,
+        "y": 16
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(171, 168, 248)",
+        "border-radius": "2px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(171, 168, 248)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "normal",
+        "height": "16px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(171, 168, 248) none 3px",
+        "padding": "0px",
+        "transition-duration": "0.2s",
+        "width": "54.9531px"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 16,
+        "width": 16,
+        "x": 338.953125,
+        "y": 16
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "normal",
+        "height": "16px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "16px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "Feature Flags",
+      "rect": {
+        "height": 16,
+        "width": 92.1953125,
+        "x": 360.953125,
+        "y": 16
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "normal",
+        "height": "16px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "92.1953px"
+      },
+      "tag": "H1"
+    },
+    {
+      "label": "Ask Seer",
+      "rect": {
+        "height": 32,
+        "width": 104.9453125,
+        "x": 1243.0546875,
+        "y": 8
+      },
+      "role": "button",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(255, 255, 255)",
+        "border-radius": "6px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 255, 255)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "padding": "8px 12px",
+        "transition-duration": "0s",
+        "width": "104.945px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 14,
+        "width": 14,
+        "x": 1255.0546875,
+        "y": 15
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(255, 255, 255)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 255, 255)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "14px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "14px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "Command Palette",
+      "rect": {
+        "height": 32,
+        "width": 32,
+        "x": 1354,
+        "y": 8
+      },
+      "role": "button",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(255, 255, 255)",
+        "border-radius": "6px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 255, 255)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "32px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 14,
+        "width": 14,
+        "x": 1363,
+        "y": 15
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(255, 255, 255)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 255, 255)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "14px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "14px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "Give Feedback",
+      "rect": {
+        "height": 32,
+        "width": 32,
+        "x": 1392,
+        "y": 8
+      },
+      "role": "button",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "6px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "32px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "32px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "",
+      "rect": {
+        "height": 14,
+        "width": 14,
+        "x": 1401,
+        "y": 17
+      },
+      "role": "img",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "14px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "14px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "Integrating Sentry with your feature flag provider enables Sentry to correlate feature flag changes ",
+      "rect": {
+        "height": 951,
+        "width": 1176,
+        "x": 264,
+        "y": 49
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgb(46, 41, 54)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "normal",
+        "height": "951px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "0px",
+        "transition-duration": "0s",
+        "width": "1176px"
+      },
+      "tag": "MAIN"
+    },
+    {
+      "label": "read our docs",
+      "rect": {
+        "height": 16,
+        "width": 88.640625,
+        "x": 369.3828125,
+        "y": 105.6875
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(171, 168, 248)",
+        "border-radius": "2px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(171, 168, 248)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "normal",
+        "height": "auto",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(171, 168, 248) none 3px",
+        "padding": "0px",
+        "transition-duration": "0.2s",
+        "width": "auto"
+      },
+      "tag": "A"
+    },
+    {
+      "label": "Evaluation Tracking\nEvaluation tracking enables Sentry to capture flag values on your error events. ",
+      "rect": {
+        "height": 54.09375,
+        "width": 555,
+        "x": 297,
+        "y": 201.78125
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "normal",
+        "height": "54.0938px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "0px 10px 0px 0px",
+        "transition-duration": "0s",
+        "width": "555px"
+      },
+      "tag": "LABEL"
+    },
+    {
+      "label": "Set Up Project",
+      "rect": {
+        "height": 36,
+        "width": 129.3203125,
+        "x": 1277.6796875,
+        "y": 210.828125
+      },
+      "role": "button",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(255, 255, 255)",
+        "border-radius": "8px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 255, 255)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "36px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "padding": "8px 16px",
+        "transition-duration": "0s",
+        "width": "129.32px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "Change Tracking\nChange tracking enables Sentry to listen for additions, removals, and modifications ",
+      "rect": {
+        "height": 54.09375,
+        "width": 555,
+        "x": 297,
+        "y": 288.875
+      },
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(231, 229, 234)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(231, 229, 234)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "400",
+        "gap": "normal",
+        "height": "54.0938px",
+        "letter-spacing": "normal",
+        "line-height": "19.6px",
+        "outline": "rgb(231, 229, 234) none 3px",
+        "padding": "0px 10px 0px 0px",
+        "transition-duration": "0s",
+        "width": "555px"
+      },
+      "tag": "LABEL"
+    },
+    {
+      "label": "Manage Providers",
+      "rect": {
+        "height": 36,
+        "width": 152.65625,
+        "x": 1254.34375,
+        "y": 297.921875
+      },
+      "role": "button",
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(255, 255, 255)",
+        "border-radius": "8px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 255, 255)",
+        "font-family": "Rubik, \"Avenir Next\", \"Helvetica Neue\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "height": "36px",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 255, 255) none 3px",
+        "padding": "8px 16px",
+        "transition-duration": "0.2s",
+        "width": "152.656px"
+      },
+      "tag": "A"
+    }
+  ],
+  "customProperties": {
+    "--prism-base": "#E7E5EA",
+    "--prism-block-background": "#24202B",
+    "--prism-comment": "#B5B0BD",
+    "--prism-function": "#ABA8F8",
+    "--prism-highlight-accent": "#C0B0F02E",
+    "--prism-highlight-background": "#C0A8F81A",
+    "--prism-inline-code": "#E7E5EA",
+    "--prism-inline-code-background": "#24202B",
+    "--prism-keyword": "#F6938C",
+    "--prism-operator": "#ABA8F8",
+    "--prism-property": "#ABA8F8",
+    "--prism-punctuation": "#E7E5EA",
+    "--prism-selector": "#5ECE73",
+    "--prism-variable": "#E7E5EA",
+    "--top-bar-height": "49px"
+  },
+  "theme": {
+    "bodyClass": "",
+    "colorScheme": "normal",
+    "rootClass": ""
+  },
+  "url": "https://sentry.io/settings/10xswe/feature-flags/",
+  "viewport": {
+    "devicePixelRatio": 1,
+    "innerHeight": 1000,
+    "innerWidth": 1440,
+    "visualViewport": {
+      "height": 1000,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "scale": 1,
+      "width": 1440
+    }
+  }
+}

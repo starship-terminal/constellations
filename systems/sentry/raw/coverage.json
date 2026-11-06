@@ -1,0 +1,214 @@
+{
+  "rows": [
+    {
+      "item": "Colour foundations",
+      "status": "captured",
+      "evidence": "tokens.json: observed page/text/border/selected-tab and syntax values in both themes; full status palette and ramps missing"
+    },
+    {
+      "item": "Typography",
+      "status": "captured",
+      "evidence": "tokens.json: body/button/caption; display and complete scale missing"
+    },
+    {
+      "item": "Spacing",
+      "status": "not captured",
+      "evidence": "No authoritative app spacing scale read"
+    },
+    {
+      "item": "Shape",
+      "status": "captured",
+      "evidence": "tokens.json: observed control radii"
+    },
+    {
+      "item": "Sizing",
+      "status": "captured",
+      "evidence": "tokens.json: measured control heights, fractional CSS values retained"
+    },
+    {
+      "item": "Elevation",
+      "status": "captured",
+      "evidence": "tokens.json: search focus shadow; complete elevation scale missing"
+    },
+    {
+      "item": "Motion",
+      "status": "not captured",
+      "evidence": "Transitions retained in readings; no reduced-motion or full duration scale"
+    },
+    {
+      "item": "Layout",
+      "status": "captured",
+      "evidence": "Measured app layouts at 390, 679, 1065 and 1440 CSS px; exact breakpoint thresholds not captured"
+    },
+    {
+      "item": "Button",
+      "status": "captured",
+      "evidence": "screenshots/app/issues-dark-empty.png (observed states only)"
+    },
+    {
+      "item": "Icon button",
+      "status": "captured",
+      "evidence": "screenshots/app/trace-dark-waterfall.png (observed states only)"
+    },
+    {
+      "item": "Link",
+      "status": "captured",
+      "evidence": "screenshots/app/traces-light-list.png (observed states only)"
+    },
+    {
+      "item": "Text field",
+      "status": "captured",
+      "evidence": "screenshots/app/command-dark-dialog.png (observed states only)"
+    },
+    {
+      "item": "Text area",
+      "status": "captured",
+      "evidence": "screenshots/app/feedback-dark-dialog.png (observed states only)"
+    },
+    {
+      "item": "Select",
+      "status": "captured",
+      "evidence": "screenshots/app/issues-dark-date-menu.png (observed states only)"
+    },
+    {
+      "item": "Checkbox",
+      "status": "captured",
+      "evidence": "screenshots/app/trace-dark-preferences.png (observed states only)"
+    },
+    {
+      "item": "Radio",
+      "status": "captured",
+      "evidence": "screenshots/app/settings-restored-system.png (observed states only)"
+    },
+    {
+      "item": "Switch",
+      "status": "captured",
+      "evidence": "screenshots/app/settings-dark-form.png (observed states only)"
+    },
+    {
+      "item": "Tabs",
+      "status": "captured",
+      "evidence": "screenshots/app/traces-dark-list.png (observed states only)"
+    },
+    {
+      "item": "Menu",
+      "status": "captured",
+      "evidence": "screenshots/app/issues-dark-project-menu.png (observed states only)"
+    },
+    {
+      "item": "Tooltip",
+      "status": "captured",
+      "evidence": "screenshots/breadth2/seer-panel-light.png: Copy conversation to clipboard tooltip; other tooltip states remain pending"
+    },
+    {
+      "item": "Dialog",
+      "status": "captured",
+      "evidence": "screenshots/app/command-light-dialog.png (observed states only)"
+    },
+    {
+      "item": "Toast",
+      "status": "not captured",
+      "evidence": "No accepted live screenshot"
+    },
+    {
+      "item": "Card",
+      "status": "captured",
+      "evidence": "screenshots/app/settings-dark-form.png (observed states only)"
+    },
+    {
+      "item": "List row",
+      "status": "captured",
+      "evidence": "screenshots/app/traces-light-list.png (observed states only)"
+    },
+    {
+      "item": "Table",
+      "status": "captured",
+      "evidence": "screenshots/app/traces-dark-list.png (observed states only)"
+    },
+    {
+      "item": "Avatar",
+      "status": "captured",
+      "evidence": "screenshots/app/account-dark-menu.png (observed states only)"
+    },
+    {
+      "item": "Badge",
+      "status": "captured",
+      "evidence": "screenshots/app/traces-dark-tour-dialog.png (observed states only)"
+    },
+    {
+      "item": "App shell/navigation",
+      "status": "captured",
+      "evidence": "screenshots/app/issues-dark-empty.png"
+    },
+    {
+      "item": "Form validation",
+      "status": "not captured",
+      "evidence": "No form submitted or invalid field saved"
+    },
+    {
+      "item": "Empty state",
+      "status": "captured",
+      "evidence": "screenshots/app/issues-light-empty.png"
+    },
+    {
+      "item": "Loading state",
+      "status": "captured",
+      "evidence": "screenshots/app/traces-dark-span-loading.png"
+    },
+    {
+      "item": "Error state",
+      "status": "not captured",
+      "evidence": "No safe naturally occurring error reached"
+    },
+    {
+      "item": "Destructive confirmation",
+      "status": "not captured",
+      "evidence": "No issue available; no destructive action attempted"
+    },
+    {
+      "item": "Action feedback",
+      "status": "not captured",
+      "evidence": "No data-changing action submitted"
+    },
+    {
+      "item": "Search/filtering",
+      "status": "captured",
+      "evidence": "screenshots/app/issues-dark-search.png"
+    },
+    {
+      "item": "Data display",
+      "status": "captured",
+      "evidence": "screenshots/app/traces-dark-list.png"
+    },
+    {
+      "item": "Onboarding",
+      "status": "captured",
+      "evidence": "screenshots/app/traces-dark-tour-dialog.png"
+    },
+    {
+      "item": "Light/dark themes",
+      "status": "captured",
+      "evidence": "Issue empty, time menu, command dialog, trace list/waterfall/preferences, settings, feedback; no claim of full parity"
+    },
+    {
+      "item": "Phone-width web",
+      "status": "captured",
+      "evidence": "raw/breadth2/inventory.json: 390px app trace, navigation, issue filters and settings in light/system-dark; incomplete narrow-width coverage"
+    },
+    {
+      "item": "Populated issues/error diagnostics",
+      "status": "not captured",
+      "evidence": "One project, no issues with all statuses and 30-day range"
+    },
+    {
+      "item": "Published principles/voice/behaviour",
+      "status": "not captured",
+      "evidence": "No published design guidance incorporated; no principles inferred from screenshots"
+    }
+  ],
+  "totals": {
+    "captured": 32,
+    "not present": 0,
+    "not captured": 9
+  }
+}
