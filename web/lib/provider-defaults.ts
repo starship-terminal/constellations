@@ -6,6 +6,12 @@ export const DEFAULT_BASE_URL: Record<string, string> = {
 };
 
 /** The config's base URL, or its wire format's default when blank. The wire
-    format defaults to openai, as providerConfig does. */
-export const baseUrlOf = (p: { api?: string; base_url?: string }): string =>
-  (p.base_url || "").trim() || DEFAULT_BASE_URL[p.api || "openai"] || "";
+    format defaults to openai, as providerConfig does. Posted JSON is
+    untrusted: a non-string base URL counts as blank, and only the listed
+    formats (own keys, never Object.prototype's) have a default. */
+export const baseUrlOf = (p: { api?: unknown; base_url?: unknown }): string => {
+  const typed = typeof p.base_url === "string" ? p.base_url.trim() : "";
+  if (typed) return typed;
+  const api = typeof p.api === "string" && p.api ? p.api : "openai";
+  return Object.prototype.hasOwnProperty.call(DEFAULT_BASE_URL, api) ? DEFAULT_BASE_URL[api] : "";
+};
