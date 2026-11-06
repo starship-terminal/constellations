@@ -99,8 +99,8 @@ def main() -> int:
     e = sub.add_parser("export", help="token values; -g picks one group")
     e.add_argument("slug")
     e.add_argument("-g", "--group")
-    e.add_argument("--offset", type=int, default=0, help="with -g: start at this token (a page's nextOffset)")
-    e.add_argument("--limit", type=int, help="with -g: at most this many tokens per request")
+    e.add_argument("--offset", type=int, help="with -g: one page from this token (a page's nextOffset)")
+    e.add_argument("--limit", type=int, help="with -g: one page of at most this many tokens")
 
     d = sub.add_parser("doc", aliases=["readme"], help="a text file from a package")
     d.add_argument("slug")
@@ -168,18 +168,19 @@ def main() -> int:
         return 0
     if args.cmd == "export":
         req = {"slug": args.slug, "group": args.group}
-        if args.offset:
+        if args.offset is not None:
             req["offset"] = args.offset
-        if args.limit:
+        if args.limit is not None:
             req["limit"] = args.limit
+        one_page = args.offset is not None or args.limit is not None
         out = call(base, "get_tokens", req)
-        if "partial" in out and "tokens" not in out and "groups" not in out:
+        if not args.json and "partial" in out and "tokens" not in out and "groups" not in out:
             # The server cut the whole result at its size cap (a server from
             # before get_tokens paged): there is no map to print.
             sys.exit(f"ds: the server truncated {args.slug}'s {args.group or 'token'} result "
                      f"({out.get('bytes')} bytes) and does not page get_tokens; "
                      "use --json for the partial text")
-        if args.group and "tokens" in out and not args.limit:
+        if args.group and "tokens" in out and not one_page:
             # Follow nextOffset so an export prints the whole group.
             merged = dict(out["tokens"])
             while out.get("truncated") and out.get("nextOffset"):
@@ -187,7 +188,7 @@ def main() -> int:
                 merged.update(out.get("tokens") or {})
             out = {k: v for k, v in out.items() if k != "nextOffset"}
             out["tokens"] = merged
-            out["offset"] = args.offset
+            out["offset"] = 0
         if args.json:
             _emit(out, True)
         elif "tokens" in out:
