@@ -26,6 +26,8 @@ export async function connect(title) {
   // SCHEME=light|dark emulates prefers-color-scheme for as long as this session is attached, for an
   // app whose theme follows it (Orca's System theme does; Cursor's does not). Nothing is saved in the app.
   if (process.env.SCHEME) {
+    // A mistyped value would be accepted silently and the whole theme captured in the wrong scheme.
+    if (!['dark', 'light'].includes(process.env.SCHEME)) throw new Error(`SCHEME must be dark or light, not ${process.env.SCHEME}`);
     await cdp.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-color-scheme', value: process.env.SCHEME }] });
     await page.waitForTimeout(800);
   }
