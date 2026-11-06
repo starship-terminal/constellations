@@ -3,6 +3,7 @@ import importlib.util
 import json
 import os
 import unittest
+from unittest import mock
 from pathlib import Path
 
 SERVER = Path(__file__).resolve().parent.parent / "server"
@@ -120,8 +121,12 @@ class ProviderTest(unittest.TestCase):
         cfg = chat.provider_config({"api": "openai", "base_url": "https://x.test/v1/",
                                     "api_key": "k", "model": "m"})
         self.assertEqual(cfg["base_url"], "https://x.test/v1")
-        env = chat.provider_config(None)
-        self.assertEqual(env is not None, bool(os.environ.get("ANTHROPIC_API_KEY")))
+        # A body without a key or model falls back to the environment, both ways.
+        with mock.patch.dict(os.environ, {"ANTHROPIC_API_KEY": "test-key", "DS_CHAT_MODEL": "m-env"}):
+            env = chat.provider_config({"api": "openai"})
+            self.assertEqual((env["api"], env["api_key"], env["model"]), ("anthropic", "test-key", "m-env"))
+        with mock.patch.dict(os.environ, {"ANTHROPIC_API_KEY": ""}):
+            self.assertIsNone(chat.provider_config(None))
 
     def test_list_models_only_passes_missing_route(self):
         cfg = {"api": "openai", "api_key": "k", "base_url": "https://x.test/v1"}
@@ -482,6 +487,42 @@ class ProviderUrlTest(unittest.TestCase):
         self.assertFalse(out["ok"])
         self.assertIn("origin", out["error"])
         self.assertEqual(self.hits.count("/models"), 0)
+
+
+class InstallScriptHostTest(unittest.TestCase):
+    """/api/install.sh splices the forwarded host into BASE="..." of a script
+    piped to sh, so only host characters may get in."""
+    api = _load("agent_api_install", "api.py")
+
+    @classmethod
+    def setUpClass(cls):
+        import http.server
+        import threading
+        cls.httpd = http.server.ThreadingHTTPServer(("127.0.0.1", 0), cls.api.Handler)
+        cls.base = f"http://127.0.0.1:{cls.httpd.server_address[1]}"
+        threading.Thread(target=cls.httpd.serve_forever, daemon=True).start()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.httpd.shutdown()
+        cls.httpd.server_close()
+
+    def _script(self, **headers):
+        import urllib.request
+        req = urllib.request.Request(self.base + "/api/install.sh", headers=headers)
+        with urllib.request.urlopen(req) as r:
+            return r.read().decode()
+
+    def test_hostile_forwarded_values_fall_back(self):
+        for headers in ({"X-Forwarded-Host": 'x.test";touch /tmp/pwn;"'},
+                        {"X-Forwarded-Host": "x.test$(id)"},
+                        {"X-Forwarded-Host": "x.test", "X-Forwarded-Proto": 'https";id;"'}):
+            text = self._script(**headers)
+            self.assertIn(f'BASE="{self.base}"', text, headers)
+
+    def test_plain_forwarded_host_is_used(self):
+        text = self._script(**{"X-Forwarded-Host": "box.tail1.ts.net:8108", "X-Forwarded-Proto": "https"})
+        self.assertIn('BASE="https://box.tail1.ts.net:8108"', text)
 
 
 if __name__ == "__main__":

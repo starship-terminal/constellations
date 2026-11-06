@@ -27,6 +27,7 @@ Standard library only plus `sips` or Pillow. Run from anywhere.
 from __future__ import annotations
 
 import argparse
+import http.client
 import importlib.util
 import json
 import shutil
@@ -59,15 +60,26 @@ def fetch(url: str, timeout: int = 20) -> tuple[bytes, str, str] | None:
     """(body, content-type, final url) of an http(s) URL, or None. A scraped icon
     link can carry any scheme — `file:` would read a local file into the package,
     so only http and https are ever opened."""
-    if urllib.parse.urlparse(url).scheme not in ("http", "https"):
-        return None
     try:
+        if urllib.parse.urlparse(url).scheme not in ("http", "https"):
+            return None
         req = urllib.request.Request(url, headers=UA)
         with urllib.request.urlopen(req, timeout=timeout) as r:
             ctype = (r.headers.get("Content-Type") or "").split(";")[0].strip().lower()
             return r.read(8 << 20), ctype, r.geturl()
-    except (OSError, urllib.error.URLError):
+    except (OSError, ValueError, http.client.HTTPException):
+        # URLError is an OSError. A malformed scraped href raises ValueError
+        # ("http://[x") or http.client.InvalidURL (a control character), and a
+        # broken response IncompleteRead; any of them would end an --all run.
         return None
+
+
+def declared_size(sizes: str) -> int:
+    """The largest width a <link sizes> attribute declares: "192x192" -> 192,
+    "16x16 32x32" -> 32, "any" or junk -> 0."""
+    widths = [int(w) for w, _, h in (t.lower().partition("x") for t in sizes.split())
+              if w.isascii() and w.isdigit() and h.isascii() and h.isdigit()]
+    return max(widths, default=0)
 
 
 class IconLinks(HTMLParser):
@@ -96,8 +108,11 @@ def candidates(home: str) -> list[str]:
         parser = IconLinks()
         parser.feed(page[0].decode("utf-8", "replace"))
         for attr in parser.links:
-            size = next((int(w) for w in attr.get("sizes", "").split() if w.isdigit()), 0)
-            links.append((attr["rel"].lower(), urllib.parse.urljoin(final, attr["href"]), size))
+            try:
+                href = urllib.parse.urljoin(final, attr["href"])
+            except ValueError:  # "http://[bad": skip the link, keep the rest
+                continue
+            links.append((attr["rel"].lower(), href, declared_size(attr.get("sizes", ""))))
         base = final
     else:
         parsed = urllib.parse.urlparse(home)

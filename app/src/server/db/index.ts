@@ -382,9 +382,18 @@ export async function createResearchStore(directory: string) {
 }
 export type ResearchStore = Awaited<ReturnType<typeof createResearchStore>>;
 let cached: Promise<ResearchStore> | undefined;
+// A failed open (locked file, unwritable directory) must not stick: forget the
+// rejected promise so the next request tries again.
 export function getStore() {
-  return (cached ??= createResearchStore(
-    process.env.DESIGN_RESEARCH_DATA_DIR ||
-      resolve(homedir(), ".local/share/design-research"),
-  ));
+  if (!cached) {
+    const opening = createResearchStore(
+      process.env.DESIGN_RESEARCH_DATA_DIR ||
+        resolve(homedir(), ".local/share/design-research"),
+    );
+    cached = opening;
+    opening.catch(() => {
+      if (cached === opening) cached = undefined;
+    });
+  }
+  return cached;
 }
