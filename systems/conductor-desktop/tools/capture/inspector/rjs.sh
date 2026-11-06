@@ -5,7 +5,16 @@
 # written to [out]. Needs a Web Inspector window open on Conductor's page (Develop > this Mac >
 # Conductor > localhost) and System Events access for the terminal: console.applescript raises that
 # window, pastes the code into the console prompt and presses Return. Conductor is raised again after.
+#
+# The clipboard is the only way back, so it carries the page's result (which can hold account text). The
+# owner's clipboard text is saved first and put back on every exit, and the temporary files are removed,
+# so neither the result nor the code stays behind. (Only text is put back: an image on the clipboard is lost.)
 HERE=$(cd "$(dirname "$0")" && pwd)
+tmp=; saved=$(mktemp "${TMPDIR:-/tmp}/rjs-clip.XXXXXX"); result=$(mktemp "${TMPDIR:-/tmp}/rjs-out.XXXXXX")
+pbpaste > "$saved" 2>/dev/null
+cleanup() { pbcopy < "$saved"; rm -f "$saved" "$result" ${tmp:+"$tmp"}; }
+trap cleanup EXIT
+trap 'exit 130' INT TERM
 if [ "$1" = "-e" ]; then tmp=$(mktemp "${TMPDIR:-/tmp}/rjs.XXXXXX"); printf '%s\n' "$2" > "$tmp"; set -- "$tmp" "$3"; fi
 marker="__rjs_pending_$$_$(date +%s)"
 {
@@ -26,5 +35,6 @@ done
 osascript -e 'tell application "Conductor" to activate' >/dev/null 2>&1
 sleep 0.4
 if pbpaste | grep -q "$marker"; then echo "rjs: no result after 40 s" >&2; exit 1; fi
-if [ -n "$2" ]; then pbpaste > "$2"; else pbpaste; echo; fi
-if pbpaste | head -c 4 | grep -q '^ERR '; then exit 1; fi
+pbpaste > "$result"
+if [ -n "$2" ]; then cp "$result" "$2"; else cat "$result"; echo; fi
+if head -c 4 "$result" | grep -q '^ERR '; then exit 1; fi
