@@ -36,7 +36,9 @@ class StyleGuideTests(unittest.TestCase):
             clean = (PACKAGE / 'style-guide.html').read_text()
             for tag in ('</script>', '</style>'):
                 self.assertEqual(page.count(tag), clean.count(tag), tag)
-            # A value spelling a marker is shown as written, never replaced by another section.
+            # A value spelling a marker is shown as written, never replaced by another section:
+            # a second copy of the token table would add rows.
+            self.assertEqual(page.count('<tr'), clean.count('<tr'))
             self.assertIn('ROWS@@ROWS@@', page)
 
 
