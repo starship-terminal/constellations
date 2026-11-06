@@ -1,0 +1,5 @@
+{
+  "_note": "No rectangles: nothing in refero-design is masked. The full-page captures under raw/full/ show the product's own published support address in the site footer, which repository policy allows (anything the product itself publishes); it is allowed at refero.design only.",
+  "families": [],
+  "ocr": {"email_allow": ["@refero\\.design$"]}
+}

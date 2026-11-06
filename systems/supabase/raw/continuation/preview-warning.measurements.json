@@ -1,0 +1,261 @@
+{
+  "elements": [
+    {
+      "label": "Dashboard feature previews",
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-size": "15px",
+        "font-weight": "600",
+        "line-height": "15px"
+      },
+      "tag": "H2"
+    },
+    {
+      "label": "editors",
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-size": "12px",
+        "font-weight": "500",
+        "line-height": "16px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "Explorer & NotebooksNew",
+      "role": null,
+      "styles": {
+        "background-color": "oklch(0.215 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.798 0.00275 157.5)",
+        "font-size": "13px",
+        "font-weight": "450",
+        "line-height": "18.5714px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "Disable snippet auto-saving",
+      "role": null,
+      "styles": {
+        "background-color": "oklch(0.215 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.798 0.00275 157.5)",
+        "font-size": "13px",
+        "font-weight": "450",
+        "line-height": "18.5714px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "observability",
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-size": "12px",
+        "font-weight": "500",
+        "line-height": "16px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "Updated Logs interface",
+      "role": null,
+      "styles": {
+        "background-color": "oklch(0.215 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.798 0.00275 157.5)",
+        "font-size": "13px",
+        "font-weight": "450",
+        "line-height": "18.5714px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "database",
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-size": "12px",
+        "font-weight": "500",
+        "line-height": "16px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "Temporary database access",
+      "role": null,
+      "styles": {
+        "background-color": "oklch(0.215 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.798 0.00275 157.5)",
+        "font-size": "13px",
+        "font-weight": "450",
+        "line-height": "18.5714px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "Column-level privileges",
+      "role": null,
+      "styles": {
+        "background-color": "oklch(0.95 0.00275 157.5 / 0.0493421)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-size": "13px",
+        "font-weight": "450",
+        "line-height": "18.5714px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "others",
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-size": "12px",
+        "font-weight": "500",
+        "line-height": "16px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "Disable Advisor rules",
+      "role": null,
+      "styles": {
+        "background-color": "oklch(0.215 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.798 0.00275 157.5)",
+        "font-size": "13px",
+        "font-weight": "450",
+        "line-height": "18.5714px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "PG Delta diff",
+      "role": null,
+      "styles": {
+        "background-color": "oklch(0.215 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.798 0.00275 157.5)",
+        "font-size": "13px",
+        "font-weight": "450",
+        "line-height": "18.5714px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "One-click Integrations",
+      "role": null,
+      "styles": {
+        "background-color": "oklch(0.215 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.798 0.00275 157.5)",
+        "font-size": "13px",
+        "font-weight": "450",
+        "line-height": "18.5714px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "Column-level privileges",
+      "role": "combobox",
+      "styles": {
+        "background-color": "oklch(0.95 0.00275 157.5 / 0.0328947)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "8.86154px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(255, 255, 255, 0.04) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-size": "13px",
+        "font-weight": "450",
+        "line-height": "16px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "Enable feature",
+      "role": null,
+      "styles": {
+        "background-color": "oklch(0.95 0.00275 157.5 / 0.0328947)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "8px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(255, 255, 255, 0.04) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-size": "12px",
+        "font-weight": "500",
+        "line-height": "16px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "Changes to column privileges will not be reflected in migrations when running supabase db diff.Column privileges are not supported in the current version of the Supabase CLI.You will need to manually apply these changes to your database.",
+      "role": "alert",
+      "styles": {
+        "background-color": "rgb(41, 25, 0)",
+        "border-color": "rgb(74, 41, 0)",
+        "border-radius": "10.6667px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-size": "13px",
+        "font-weight": "450",
+        "line-height": "18.5714px"
+      },
+      "tag": "DIV"
+    },
+    {
+      "label": "Close",
+      "role": null,
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "2.66667px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-size": "15px",
+        "font-weight": "450",
+        "line-height": "22.5px"
+      },
+      "tag": "BUTTON"
+    }
+  ],
+  "time": "2026-10-31T05:03:55.351Z",
+  "url": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs?featurePreviewModal=supabase-ui-cls"
+}
