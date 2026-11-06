@@ -390,12 +390,15 @@ def stale(criteria: dict, audit: dict, catalog_systems: list[dict], categories: 
 
 
 def next_path(date: str) -> Path:
+    """The snapshot after every existing one for the date: one past the highest -N, never a gap,
+    so a renamed or deleted snapshot cannot make the new one sort before the newest."""
     folder = scorecard.DATA / "audits"
-    path, n = folder / f"{date}.json", 1
-    while path.exists():
-        n += 1
-        path = folder / f"{date}-{n}.json"
-    return path
+    taken = [1 if p.stem == date else int(p.stem[len(date) + 1:])
+             for p in folder.glob(f"{date}*.json")
+             if p.stem == date or (p.stem[len(date):len(date) + 1] == "-" and p.stem[len(date) + 1:].isdigit())]
+    if not taken:
+        return folder / f"{date}.json"
+    return folder / f"{date}-{max(taken) + 1}.json"
 
 
 def main() -> None:
