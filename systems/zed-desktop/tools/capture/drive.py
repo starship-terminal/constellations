@@ -497,9 +497,26 @@ NAV = {"general": 94, "appearance": 122, "keymap": 150, "editor": 178, "language
        "ai": 430, "network": 458, "developer": 486}
 
 
+def settings_origin(listing):
+    """The top-left of the Settings window when it is Zed's frontmost layer-0 window in a `wins Zed` listing
+    (CGWindowList lists windows front to back), or None: present but covered by the editor is not enough."""
+    for line in listing.splitlines():
+        head, sep, name = line.partition(" | ")
+        parts = head.split()
+        if not sep or len(parts) < 6 or parts[1:3] != ["layer", "0"]:
+            continue
+        return (round(float(parts[3])), round(float(parts[4]))) if "Settings" in name else None
+    return None
+
+
 def smouse(action, x, y, wait=0.8):
-    """A pointer action in Settings-window coordinates. Never aimed at 'Fix in settings.json'."""
+    """A pointer action in Settings-window coordinates. Never aimed at 'Fix in settings.json'. The Settings
+    window must be Zed's frontmost window and sit where SETTINGS_AT says, or the click would land on whatever
+    is there instead."""
     ensure_front()
+    at = settings_origin(subprocess.run([str(BIN / "wins"), "Zed"], capture_output=True, text=True).stdout)
+    if at != SETTINGS_AT:
+        raise SystemExit(f"the Settings window is {'not frontmost' if at is None else f'at {at}'}, not frontmost at {SETTINGS_AT}; stopped before pointer input")
     subprocess.run([str(BIN / "mouse"), action, str(SETTINGS_AT[0] + x), str(SETTINGS_AT[1] + y)], check=True)
     time.sleep(wait)
 

@@ -191,7 +191,7 @@ python3 -m unittest discover -s tools
 git status --short .
 ```
 
-To capture again: `python3 tools/capture/fetch_upstream.py`, then `python3 tools/capture/read_settings.py`; compile the helpers (`swiftc -O -o tools/capture/zwin tools/capture/zwin.swift`, the same for `mouse.swift`; the binaries are not committed), open Zed on a scratch folder with `open -a Zed --args <folder>`, set the theme with `python3 tools/capture/set_mode.py dark` (back up the settings file first and restore it after), and run `python3 tools/capture/drive.py dark <step> ...` (its steps are the shot list); `tools/capture/quantize.py <raw-shots>` writes `screenshots/`. From the repository root, `make design-md` regenerates DESIGN.md and the Brief.
+To capture again: `python3 tools/capture/fetch_upstream.py`, then `python3 tools/capture/read_settings.py`; compile the helpers (`swiftc -O -o tools/capture/zwin tools/capture/zwin.swift`, the same for `mouse.swift` and `wins.swift`; the binaries are not committed), open Zed on a scratch folder with `open -a Zed --args <folder>`, set the theme with `python3 tools/capture/set_mode.py dark` (back up the settings file first and restore it after), and run `python3 tools/capture/drive.py dark <step> ...` (its steps are the shot list); `tools/capture/quantize.py <raw-shots>` writes `screenshots/`. From the repository root, `make design-md` regenerates DESIGN.md and the Brief.
 
 ## Zed beside the other coding harnesses
 
