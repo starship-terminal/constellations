@@ -9,6 +9,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { chromium, RAW, SNAPS, metaOf, newContext, openSnap } from './signed-in/lib.mjs';
+import { safeUrl } from './safe-url.mjs';
 
 if (!SNAPS) { console.error('SNAPS=<snapshot dir> is required'); process.exit(2); }
 const LABELS = fs.readdirSync(SNAPS).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5)).filter((l) => fs.existsSync(path.join(SNAPS, `${l}.html`))).sort();
@@ -79,7 +80,7 @@ for (const label of LABELS) {
   const ctx = await newContext(browser, meta);
   try {
     const page = await openSnap(ctx, label);
-    res[`${label}@${meta.w}`] = { label, url: meta.url.replace(/\/(chat|project)\/[0-9a-f-]+/, '/$1/<id>'), ...(await page.evaluate(measure)) };
+    res[`${label}@${meta.w}`] = { label, url: safeUrl(meta.url), ...(await page.evaluate(measure)) };
     console.log(label, meta.w);
   } catch (e) {
     console.log('failed', label, e.message.split('\n')[0]);

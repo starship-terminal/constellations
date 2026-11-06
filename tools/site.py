@@ -14,6 +14,7 @@ ships — it shows the captures.
 import argparse
 import html
 import json
+import os
 import posixpath
 import re
 import shutil
@@ -562,7 +563,7 @@ def build() -> None:
     html_404 = render(not_found, "<h1>Page not found</h1><p><a href='./'>Back to the library home</a>.</p>",
                       {"navigation"}).replace("<head>", "<head>\n" + base_fix, 1)
     atomic_write(OUT / "404.html", html_404)
-    print(f"site: wrote {count} pages to {OUT.relative_to(ROOT)}/")
+    print(f"site: wrote {count} pages to {os.path.relpath(OUT, ROOT)}/")
 
 
 def main() -> None:

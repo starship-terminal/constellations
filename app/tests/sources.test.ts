@@ -1,7 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import os from "node:os";
 import {
   getReference,
   getSourceStats,
@@ -22,24 +21,9 @@ import {
   notModifiedSince,
   rangeValidatorMatches,
 } from "../src/app/media/[...path]/route";
-const originalRepo = process.env.DESIGN_SYSTEMS_REPO;
-const originalMedia = process.env.DESIGN_SYSTEMS_MEDIA;
-const temp: string[] = [];
-afterEach(async () => {
-  vi.restoreAllMocks();
-  if (originalRepo === undefined) delete process.env.DESIGN_SYSTEMS_REPO;
-  else process.env.DESIGN_SYSTEMS_REPO = originalRepo;
-  if (originalMedia === undefined) delete process.env.DESIGN_SYSTEMS_MEDIA;
-  else process.env.DESIGN_SYSTEMS_MEDIA = originalMedia;
-  await Promise.all(
-    temp.splice(0).map((dir) => fs.rm(dir, { recursive: true, force: true })),
-  );
-});
-async function fixture() {
-  const dir = await fs.mkdtemp(path.join(os.tmpdir(), "design-sources-"));
-  temp.push(dir);
-  return dir;
-}
+import { tempDir } from "./helpers";
+afterEach(() => vi.restoreAllMocks());
+const fixture = () => tempDir("design-sources-");
 
 describe("source identifiers and file boundaries", () => {
   it("accepts known source IDs and rejects traversal or extra separators", () => {
@@ -74,7 +58,7 @@ describe("source identifiers and file boundaries", () => {
   });
   it("serves hydrated media only and never exposes text or LFS pointers", async () => {
     const dir = await fixture();
-    process.env.DESIGN_SYSTEMS_REPO = dir;
+    vi.stubEnv("DESIGN_SYSTEMS_REPO", dir);
     await fs.mkdir(path.join(dir, "systems/test"), { recursive: true });
     await fs.writeFile(path.join(dir, "systems/test/README.md"), "secret");
     await fs.writeFile(
@@ -147,7 +131,7 @@ describe("HTTP range parsing", () => {
 describe("real library normalization", () => {
   it("shares cold catalog reads between concurrent list and stats requests", async () => {
     const dir = await fixture();
-    process.env.DESIGN_SYSTEMS_REPO = dir;
+    vi.stubEnv("DESIGN_SYSTEMS_REPO", dir);
     await fs.writeFile(
       path.join(dir, "catalog.json"),
       JSON.stringify({ systems: [] }),
@@ -168,7 +152,7 @@ describe("real library normalization", () => {
   });
   it("clears a rejected shared load so later requests can retry", async () => {
     const dir = await fixture();
-    process.env.DESIGN_SYSTEMS_REPO = dir;
+    vi.stubEnv("DESIGN_SYSTEMS_REPO", dir);
     await fs.writeFile(
       path.join(dir, "catalog.json"),
       JSON.stringify({ systems: {} }),
@@ -185,7 +169,7 @@ describe("real library normalization", () => {
   it("discovers nested canonical screenshots in stable order without escaping the package", async () => {
     const dir = await fixture(),
       outside = await fixture();
-    process.env.DESIGN_SYSTEMS_REPO = dir;
+    vi.stubEnv("DESIGN_SYSTEMS_REPO", dir);
     const screenshots = path.join(dir, "systems/nested/screenshots");
     await fs.mkdir(path.join(screenshots, "light/deeper"), { recursive: true });
     await fs.mkdir(path.join(screenshots, "dark"), { recursive: true });
@@ -234,7 +218,7 @@ describe("real library normalization", () => {
     // One invented package holding each provenance shape the captured
     // packages use, so a recapture cannot change what this test reads.
     const dir = await fixture();
-    process.env.DESIGN_SYSTEMS_REPO = dir;
+    vi.stubEnv("DESIGN_SYSTEMS_REPO", dir);
     await fs.mkdir(path.join(dir, "systems/formats"), { recursive: true });
     await fs.writeFile(
       path.join(dir, "catalog.json"),
@@ -336,7 +320,7 @@ describe("real library normalization", () => {
   });
   it("uses canonical Refero artifacts when generated files are absent", async () => {
     const dir = await fixture();
-    process.env.DESIGN_SYSTEMS_REPO = dir;
+    vi.stubEnv("DESIGN_SYSTEMS_REPO", dir);
     await fs.mkdir(path.join(dir, "refero/real-style"), { recursive: true });
     await fs.writeFile(
       path.join(dir, "catalog.json"),
