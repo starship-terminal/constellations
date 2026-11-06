@@ -17,10 +17,28 @@ def put(tree, path, value, kind, source):
     tree[parts[-1]] = {'$value': value, '$type': kind,
                          '$extensions': {'source': 'Measured: ' + source}}
 
+# The element each frozen index must still address (tag, visible label), in both themes:
+# a re-captured reading that shifts the indices fails here instead of building wrong roles.
+EXPECTED = {0: ('BODY', ''), 10: ('NAV', ''), 116: ('DIV', 'Companies'), 282: ('DIV', 'Filter'),
+            253: ('DIV', 'New Company'), 390: ('A', 'Google'), 249: ('BUTTON', ''),
+            302: ('BUTTON', 'New Company'), 232: ('BUTTON', ''), 236: ('DIV', 'View settings'),
+            433: ('DIV', 'Google')}
+
+
+def check_rows(rows, name):
+    for index, (tag, label) in EXPECTED.items():
+        if index >= len(rows):
+            raise ValueError(f'{name}: no element at index {index}')
+        got = (rows[index].get('tag'), rows[index].get('label'))
+        if got != (tag, label):
+            raise ValueError(f'{name}: elements[{index}] is {got}, expected {(tag, label)}')
+
+
 for theme in ['light', 'dark']:
     name = f'companies-{theme}-scoped.json'
     raw = json.loads((HERE / 'raw' / name).read_text())
     rows = raw['elements']
+    check_rows(rows, name)
     for role, index, prop in [
         ('page', 0, 'backgroundColor'), ('surface', 10, 'backgroundColor'),
         ('text.primary', 116, 'color'), ('text.secondary', 282, 'color'),
@@ -48,7 +66,8 @@ for theme in ['light', 'dark']:
     for component, index, label in [('primaryButton',253,'New Company'),
                                     ('toolbarButton',236,'View settings'),
                                     ('tableLabel',433,'Google')]:
-        assert rows[index]['label'] == label, f'{name}: unexpected label at {index}'
+        if rows[index]['label'] != label:
+            raise ValueError(f'{name}: unexpected label at {index}')
         for prop, kind in [('color','color'), ('fontFamily','fontFamily'),
                            ('fontSize','dimension'), ('fontWeight','fontWeight'),
                            ('lineHeight','dimension'), ('letterSpacing','dimension')]:

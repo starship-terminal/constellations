@@ -42,11 +42,12 @@ prop('core.shadow.popover','shadow','numeric-filter','boxShadow',testid='clause-
 for role,name,q in [('primary','query-builder',{'tag':'BUTTON','label':'Visualize'}),('quiet','query-builder',{'tag':'BUTTON','label':'Save'}),('disabled','numeric-filter',{'tag':'BUTTON','label':'Add filter'}),('inputFocused','numeric-filter',{'tag':'INPUT'}),('input','chart-axes',{'testid':'graph.x_axis.title_text'}),('popover','numeric-filter',{'testid':'clause-popover'}),('card','dashboard',{'testid':'dashcard'}),('filter','dashboard',{'testid':'parameter-value-widget-target'})]:
     for key,ty,css in [('bg','color','backgroundColor'),('text','color','color'),('border','color','borderColor'),('radius','dimension','borderRadius'),('height','dimension','height')]:prop(f'light.component.{role}.{key}',ty,name,css,**q)
 for group in ['core','light']:
-    def check(n):
-        for v in n.values():
+    def check(n,path):
+        for k,v in n.items():
             if '$value' in v:
-                assert v['$value'] and v['$extensions']['source'].startswith('Measured:')
-            else: check(v)
-    check(T[group])
+                if not (v['$value'] and v['$extensions']['source'].startswith('Measured:')):
+                    raise ValueError(f'{path}.{k}: empty value or a source that is not Measured:')
+            else: check(v,f'{path}.{k}')
+    check(T[group],group)
 (HERE/'tokens.json').write_text(json.dumps(T,indent=2)+'\n')
 print('tokens built from explicit observed elements')

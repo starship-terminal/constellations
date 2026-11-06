@@ -52,9 +52,8 @@ def build():
             core['fontFamily']={'body':t(body['font-family'],'fontFamily','body.font-family')}
             core['typography']={}
             for role,index,element in [('label',ai,accent),('heading',*find('Projects','H1'))]:
-                st=element['styles'];core['typography'][role]=t({'fontFamily':st['font-family'],'fontSize':st['font-size'],'fontWeight':int(st['font-weight']),'lineHeight':st['line-height'],'letterSpacing':'0px'},'typography',f'components[{index}].styles')
-                # Do not invent an unmeasured letter-spacing value.
-                del core['typography'][role]['$value']['letterSpacing']
+                # No letter-spacing: it was not measured, so none is invented.
+                st=element['styles'];core['typography'][role]=t({'fontFamily':st['font-family'],'fontSize':st['font-size'],'fontWeight':int(st['font-weight']),'lineHeight':st['line-height']},'typography',f'components[{index}].styles')
             core['typography']['body']=t({'fontFamily':body['font-family'],'fontSize':body['font-size'],'fontWeight':int(body['font-weight']),'lineHeight':body['line-height']},'typography','body')
             core['radius']={'control':t(accent['styles']['border-radius'],'dimension',f'components[{ai}].styles.border-radius')}
             core['size']={'controlHeight':t(accent['styles']['height'],'dimension',f'components[{ai}].styles.height')}
