@@ -33,13 +33,21 @@ MEDIA_DIRS = ("screenshots", "components", "icons", "boards")
 
 # A tool result's JSON text is capped before it goes back to the model: a whole
 # token group or a README can run past what a turn should carry.
+# Sizes are UTF-8 bytes of compact JSON, measured the same way in the web twin.
 RESULT_CAP = 32_000
 DOC_CAP = 24_000
+TOKEN_PAGE = RESULT_CAP - 1_000  # bytes of name/value pairs one get_tokens page carries
 IMAGE_CAP = 3_500_000  # bytes on disk; bigger shots are refused unless Pillow shrinks them
 
 
 class ToolError(Exception):
     """A tool's readable failure, returned to the model as its result text."""
+
+
+def _json_size(obj) -> int:
+    """UTF-8 bytes of obj as compact JSON: Buffer.byteLength(JSON.stringify(obj))
+    in the web twin."""
+    return len(json.dumps(obj, ensure_ascii=False, separators=(",", ":")).encode("utf-8", "replace"))
 
 
 def _catalog() -> dict:
@@ -202,9 +210,11 @@ def get_style(slug: str, store: str | None = None) -> dict:
                       "styleGuide": e.get("styleGuide"), "dir": f"systems/{e['slug']}"}}
 
 
-def get_tokens(slug: str, group: str | None = None) -> dict:
+def get_tokens(slug: str, group: str | None = None, offset: int = 0, limit: int | None = None) -> dict:
     """Resolved token values. Without a group it lists the groups and their sizes;
-    with one it returns that group's flat name -> CSS value map."""
+    with one it returns that group's flat name -> CSS value map. A group too big
+    for one result comes back a page at a time: `offset` and `limit` count
+    tokens, and a truncated page names the `nextOffset` to ask for."""
     e = _entry(slug)
     tokens = json.loads(_repo_file(e["tokens"]).read_text())
     exported = catalog.export_tokens(tokens, e.get("themes", []))
@@ -215,14 +225,42 @@ def get_tokens(slug: str, group: str | None = None) -> dict:
                 "note": "call again with group=<name> for its values"}
     if group not in groups:
         raise ToolError(f"no token group '{group}'; groups: {', '.join(groups)}")
-    return {"slug": slug, "group": group, "tokens": groups[group]}
+    offset = int(offset or 0)
+    limit = None if limit is None else int(limit)
+    if offset < 0:
+        raise ToolError("offset must be 0 or more")
+    if limit is not None and limit < 1:
+        raise ToolError("limit must be 1 or more")
+    # Sorted by name so a page holds the same tokens in both twins (JSON.parse
+    # reorders integer-like keys, so the file's order cannot be shared).
+    items = sorted(groups[group].items())
+    page, used = {}, 2
+    for name, value in items[offset:]:
+        if limit is not None and len(page) >= limit:
+            break
+        size = _json_size(name) + _json_size(value) + 2  # the colon and comma
+        if page and used + size > TOKEN_PAGE:
+            break
+        page[name] = value
+        used += size
+    end = offset + len(page)
+    out = {"slug": slug, "group": group, "tokens": page, "count": len(items), "offset": offset,
+           "truncated": end < len(items)}
+    if out["truncated"]:
+        out["nextOffset"] = end
+    return out
 
 
-def read_doc(slug: str, path: str | None = None) -> dict:
+def read_doc(slug: str, path: str | None = None, offset: int = 0) -> dict:
     """A text file from the package: its README (the default), components.md,
-    patterns.md, tokens.json. Path is relative to systems/<slug>/."""
+    patterns.md, tokens.json. Path is relative to systems/<slug>/. A file over
+    DOC_CAP characters comes back a page at a time: `offset` is where the page
+    starts, and a truncated page names the `nextOffset` to ask for."""
     e = _entry(slug)
     rel = path or Path(e["entry"]).name
+    offset = int(offset or 0)
+    if offset < 0:
+        raise ToolError("offset must be 0 or more")
     target = _bounded(e, rel)
     if target.is_dir():
         raise ToolError(f"{rel} is a directory")
@@ -231,9 +269,13 @@ def read_doc(slug: str, path: str | None = None) -> dict:
     if target.suffix.lower() not in TEXT_TYPES:
         raise ToolError(f"not a text file: {rel}")
     text = target.read_text(errors="replace")
-    truncated = len(text) > DOC_CAP
-    return {"slug": slug, "path": f"systems/{slug}/{target.relative_to(_pkg_dir(e)).as_posix()}",
-            "text": text[:DOC_CAP], "truncated": truncated}
+    end = offset + DOC_CAP
+    truncated = len(text) > end
+    out = {"slug": slug, "path": f"systems/{slug}/{target.relative_to(_pkg_dir(e)).as_posix()}",
+           "text": text[offset:end], "truncated": truncated, "offset": offset, "length": len(text)}
+    if truncated:
+        out["nextOffset"] = end
+    return out
 
 
 def list_media(slug: str, kind: str | None = None) -> dict:
@@ -339,18 +381,27 @@ SPECS = [
          "required": ["slug"]}},
     {"name": "get_tokens", "fn": get_tokens,
      "description": "Resolved token values for a systems package. Call without a "
-                    "group to list groups, then with one for its flat map.",
+                    "group to list groups, then with one for its flat map. A large "
+                    "group comes back in pages: when truncated is true, call again "
+                    "with offset=nextOffset.",
      "parameters": {"type": "object", "additionalProperties": False, "properties": {
          "slug": {"type": "string"},
-         "group": {"type": "string", "description": "e.g. light, dark, base"}},
+         "group": {"type": "string", "description": "e.g. light, dark, base"},
+         "offset": {"type": "integer", "minimum": 0, "default": 0,
+                    "description": "Token index to start from (a previous page's nextOffset)"},
+         "limit": {"type": "integer", "minimum": 1,
+                   "description": "Most tokens to return; a page also stops before the result cap"}},
          "required": ["slug"]}},
     {"name": "read_doc", "fn": read_doc,
      "description": "Read a text file inside a package: its README (default), "
-                    "components.md, patterns.md, tokens.json.",
+                    "components.md, patterns.md, tokens.json. Long files come back "
+                    "in pages: when truncated is true, call again with offset=nextOffset.",
      "parameters": {"type": "object", "additionalProperties": False, "properties": {
          "slug": {"type": "string"},
          "path": {"type": "string", "description": "Package-relative path (a systems/<slug>/ or "
-                                                   "/systems/<slug>/ path also works); default README.md"}},
+                                                   "/systems/<slug>/ path also works); default README.md"},
+         "offset": {"type": "integer", "minimum": 0, "default": 0,
+                    "description": "Character offset to start from (a previous page's nextOffset)"}},
          "required": ["slug"]}},
     {"name": "list_media", "fn": list_media,
      "description": "List a package's screenshots, component crops, icons and boards "
@@ -398,7 +449,9 @@ def call(name: str, args: dict) -> dict:
         raise ToolError(f"{name} failed: {e}")
     if "_image" in result:
         return result
-    text = json.dumps(result, ensure_ascii=False)
-    if len(text) > RESULT_CAP:
-        result = {"truncated": True, "bytes": len(text), "partial": text[:RESULT_CAP]}
+    size = _json_size(result)
+    if size > RESULT_CAP:
+        text = json.dumps(result, ensure_ascii=False, separators=(",", ":"))
+        partial = text.encode("utf-8", "replace")[:RESULT_CAP].decode("utf-8", "ignore")
+        result = {"truncated": True, "bytes": size, "partial": partial}
     return result

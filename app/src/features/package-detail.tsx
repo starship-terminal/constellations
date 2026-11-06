@@ -37,7 +37,6 @@ import {
   Select,
   SkeletonGrid,
   Spinner,
-  api,
   useResource,
 } from "@/components/shared";
 import { MediaBookmarkButton } from "@/components/media-bookmark";
@@ -52,6 +51,7 @@ import {
   mediaDetailHref,
   packageDocumentLink,
   packageFileHref,
+  safeDecode,
 } from "./package-detail-data";
 import { headingId, nodeText } from "./markdown-heading";
 import styles from "./package-detail.module.css";
@@ -62,6 +62,7 @@ import {
   reducedViewerMotion,
   type CaptureViewerOrigin,
 } from "./capture-viewer-motion";
+import { replaceSearch } from "./url-state";
 
 type Tab =
   | "screenshots"
@@ -150,11 +151,7 @@ function PackageDetail({ slug }: { slug: string }) {
     const next = new URLSearchParams(window.location.search);
     for (const [key, value] of Object.entries(patch))
       value ? next.set(key, value) : next.delete(key);
-    window.history.replaceState(
-      null,
-      "",
-      `${window.location.pathname}${next.size ? `?${next}` : ""}`,
-    );
+    replaceSearch(next);
   }
   useEffect(() => {
     setQuery("");
@@ -168,7 +165,7 @@ function PackageDetail({ slug }: { slug: string }) {
     const hash = window.location.hash;
     if (hash)
       requestAnimationFrame(() =>
-        document.getElementById(decodeHash(hash.slice(1)))?.scrollIntoView(),
+        document.getElementById(safeDecode(hash.slice(1)))?.scrollIntoView(),
       );
   }, [params.get("file"), tab]);
   if (loading)
@@ -838,13 +835,6 @@ export function PackageMarkdown({
     </article>
   );
 }
-function decodeHash(value: string): string {
-  try {
-    return decodeURIComponent(value);
-  } catch {
-    return value;
-  }
-}
 function PackageDocumentView({ slug, path }: { slug: string; path: string }) {
   const { data, error, loading } = useResource<PackageDocumentContent>(
     `/api/packages/${encodeURIComponent(slug)}/files?path=${encodeURIComponent(path)}`,
@@ -857,7 +847,7 @@ function PackageDocumentView({ slug, path }: { slug: string; path: string }) {
     const hash = window.location.hash;
     if (data && hash)
       requestAnimationFrame(() =>
-        document.getElementById(decodeHash(hash.slice(1)))?.scrollIntoView(),
+        document.getElementById(safeDecode(hash.slice(1)))?.scrollIntoView(),
       );
   }, [data, path]);
   if (loading) return <Spinner label="Opening package file…" />;

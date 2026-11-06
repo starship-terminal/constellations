@@ -14,7 +14,7 @@ export function StyleDetailPage({
   const { data, loading, error } = useResource<LibraryDetail>(
     `/api/library/${source}/${slug}`,
   );
-  const detail = (data as any)?.reference || data;
+  const detail = data;
   return (
     <div className={styles.page}>
       <nav className={styles.breadcrumb} aria-label="Style breadcrumb">

@@ -16,7 +16,20 @@ vi.mock("@/server/db", () => ({
     mediaCollectionIds: mocks.memberships,
   }),
 }));
-vi.mock("@/server/sources", () => ({ getReference: mocks.reference }));
+vi.mock("@/server/sources", () => ({
+  getReference: mocks.reference,
+  // Routes read a card or a media list instead of the full detail.
+  getReferenceSummary: async (id: string) => {
+    const detail = await mocks.reference(id);
+    if (!detail) return null;
+    const { media, measured, ...summary } = detail;
+    return summary;
+  },
+  getReferenceMedia: async (id: string) => {
+    const detail = await mocks.reference(id);
+    return detail ? { reference: detail, media: detail.media } : null;
+  },
+}));
 import { GET, POST, DELETE } from "@/app/api/collections/[id]/media/route";
 import { GET as detail } from "@/app/api/collections/[id]/route";
 import { GET as list } from "@/app/api/collections/route";
