@@ -50,6 +50,21 @@ export function mutationGuard(request: Request) {
       );
     }
   }
+  // Through the private origin every mutation must prove it came from that
+  // origin. A browser always sends Origin on these requests, so a missing one
+  // is refused there. Loopback requests without Origin (same-machine curl,
+  // scripts) stay allowed, because only this machine can reach that Host.
+  const configured = privateOrigin();
+  if (
+    !origin &&
+    configured &&
+    actualHost === configured.host &&
+    request.headers.get("sec-fetch-site") !== "same-origin"
+  )
+    throw new HttpError(
+      403,
+      "This action requires the same application origin.",
+    );
   if (request.headers.get("sec-fetch-site") === "cross-site")
     throw new HttpError(403, "Cross-site actions are not allowed.");
   if (

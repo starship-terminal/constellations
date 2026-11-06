@@ -101,6 +101,34 @@ function headers(cfg: ProviderCfg, keyHeader?: string): Record<string, string> {
   return out;
 }
 
+function isLoopback(host: string): boolean {
+  const h = host.toLowerCase().replace(/^\[|\]$/g, "");
+  return h === "localhost" || h.endsWith(".localhost") || h === "::1" || /^127\.\d+\.\d+\.\d+$/.test(h);
+}
+
+export function checkUrl(url: string): void {
+  // Only https anywhere, or plain http to this machine (a self-hosted model).
+  // Anything else (file:, data:, http to another host) is refused before a
+  // socket opens, so the endpoint cannot reach internal plain-http services.
+  let u: URL;
+  try {
+    u = new URL(url);
+  } catch {
+    throw new ProviderError("invalid provider URL");
+  }
+  if (!u.hostname) throw new ProviderError("invalid provider URL");
+  if (u.protocol === "https:" || (u.protocol === "http:" && isLoopback(u.hostname))) return;
+  throw new ProviderError("provider URL must be https (http only for localhost)");
+}
+
+function sameOrigin(a: string, b: string): boolean {
+  try {
+    return new URL(a).origin === new URL(b).origin;
+  } catch {
+    return false;
+  }
+}
+
 async function request(
   method: string,
   url: string,
@@ -109,19 +137,26 @@ async function request(
   timeout: number,
   keyHeader?: string,
 ): Promise<Obj> {
+  // Errors name the URL and status only: the upstream body is never echoed
+  // back, and redirects are refused so a 3xx cannot walk the request (with its
+  // key) to a host nobody checked.
+  checkUrl(url);
   let resp: Response;
   try {
     resp = await fetch(url, {
       method,
       headers: { "content-type": "application/json", ...headers(cfg, keyHeader) },
       body: body === null ? undefined : JSON.stringify(body),
+      redirect: "manual",
       signal: AbortSignal.timeout(timeout * 1000),
     });
-  } catch (e) {
-    throw new ProviderError(`${url} unreachable: ${e instanceof Error ? e.message : String(e)}`);
+  } catch {
+    throw new ProviderError(`${url} unreachable`);
   }
   const text = await resp.text();
-  if (!resp.ok) throw new ProviderError(`${url} answered HTTP ${resp.status}: ${text.slice(0, 400)}`);
+  if (resp.type === "opaqueredirect" || (resp.status >= 300 && resp.status < 400))
+    throw new ProviderError(`${url} answered HTTP ${resp.status || 302} (redirects are not followed)`);
+  if (!resp.ok) throw new ProviderError(`${url} answered HTTP ${resp.status}`);
   try {
     return JSON.parse(text) as Obj;
   } catch {
@@ -156,6 +191,9 @@ export async function listModels(cfg: ProviderCfg): Promise<{
   // host with no models endpoint still passes so the field unlocks for typing.
   const base = (cfg.base_url || "").replace(/\/+$/, "");
   const url = cfg.api === "anthropic" ? `${base}/v1/models` : cfg.models_url || `${base}/models`;
+  // models_url exists for Gemini, whose list lives beside its OpenAI-compatible
+  // base; it may not point anywhere base_url does not.
+  if (!sameOrigin(url, base)) return { ok: false, error: "models_url must share base_url's origin" };
   let resp: Obj;
   try {
     resp = await request("GET", url, cfg, null, MODELS_TIMEOUT, cfg.key_header);

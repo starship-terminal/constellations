@@ -13,6 +13,7 @@ import type {
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { readStyleExport, type ExportVariant } from "./style-exports";
+import { hasUnresolved, tokenHex, tokenLeaves, tokenResolver } from "./tokens";
 import {
   contained,
   imageUrl,
@@ -311,42 +312,29 @@ function tokenEvidence(extensions: Raw): string | undefined {
     ? "Sampled"
     : undefined;
 }
-function flattenTokens(
-  node: Raw,
-  prefix = "",
-  result: (ReferenceValue & { type?: string })[] = [],
-): (ReferenceValue & { type?: string })[] {
-  if (!node || typeof node !== "object") return result;
-  if ("$value" in node) {
-    const ext = node.$extensions || {};
-    result.push({
-      name: prefix,
-      value:
-        typeof node.$value === "string"
-          ? node.$value
-          : JSON.stringify(node.$value),
-      role: node.$description,
-      type: node.$type,
-      evidence: tokenEvidence(ext),
-    });
-  } else
-    for (const [key, value] of Object.entries(node))
-      if (!key.startsWith("$"))
-        flattenTokens(value, prefix ? `${prefix}.${key}` : key, result);
-  return result;
+function displayValue(value: unknown): string {
+  if (typeof value === "string") return value;
+  const hex = tokenHex(value);
+  if (hex) return hex;
+  // A list is a font stack or an easing, shown the way catalog.py looks it up.
+  if (Array.isArray(value)) return value.map(String).join(", ");
+  return JSON.stringify(value);
 }
+// Aliases resolve inside the token's own set, then `core`, then the root, and
+// legacy `value` leaves read like `$value` ones, matching tools/catalog.py.
 function resolvedTokens(tokens: Raw): (ReferenceValue & { type?: string })[] {
-  const values = flattenTokens(tokens);
-  const byName = new Map(values.map((v) => [v.name, v.value]));
-  const resolve = (value: string, seen: Set<string>): string =>
-    value.replace(/\{([^{}]+)\}/g, (match, alias: string) => {
-      if (seen.has(alias) || !byName.has(alias)) return match;
-      return resolve(byName.get(alias)!, new Set([...seen, alias]));
-    });
-  return values.map((v) => ({
-    ...v,
-    value: resolve(v.value, new Set([v.name])),
-  }));
+  const leaves = tokenLeaves(tokens),
+    resolver = tokenResolver(leaves);
+  return leaves.map((leaf) => {
+    const resolved = resolver.final(leaf.name);
+    return {
+      name: leaf.name,
+      value: displayValue(hasUnresolved(resolved) ? leaf.value : resolved),
+      role: leaf.description,
+      type: leaf.type,
+      evidence: tokenEvidence(leaf.extensions || {}),
+    };
+  });
 }
 async function scanPackageMedia(
   slug: string,
