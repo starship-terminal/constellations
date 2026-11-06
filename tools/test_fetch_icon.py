@@ -105,7 +105,8 @@ class ConvertTest(unittest.TestCase):
     def test_sips_path(self):
         src, dst = self.tmp / "icon.png", self.tmp / "out.png"
         src.write_bytes(self.png)
-        self.assertTrue(fetch_icon.convert(src, dst))
+        with mock.patch.dict(sys.modules, {"PIL": None}):    # no Pillow fallback: sips alone must work
+            self.assertTrue(fetch_icon.convert(src, dst))
         self.assertGreater(dst.stat().st_size, 0)
 
 
