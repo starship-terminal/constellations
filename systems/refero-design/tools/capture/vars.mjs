@@ -61,6 +61,9 @@ for (const [key, url] of Object.entries(PAGES)) {
   const sheets = [...bodies.entries()].map(([u, t]) => [u, t]).concat(inline);
   sheetsSeen[key] = sheets.map(([n, t]) => `${n} (${t.length} bytes)`);
   const found = await page.evaluate((sheets) => {
+    // A custom property can hold a url() with a signed or per-account query: record it as url(…).
+    // Its value keeps the authored tokens, so this matches URL( too, escapes and space inside the parens.
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const res = [], ff = [];
     for (const [name, text] of sheets) {
       const s = new CSSStyleSheet();
@@ -73,7 +76,7 @@ for (const [key, url] of Object.entries(PAGES)) {
           if (r instanceof CSSFontFaceRule) { ff.push({ family: r.style.getPropertyValue('font-family').replace(/["']/g, ''), weight: r.style.getPropertyValue('font-weight'), style: r.style.getPropertyValue('font-style'), src: r.style.getPropertyValue('src'), sheet: name }); continue; }
           if (r.cssRules && !r.style) { walk(r.cssRules, media); continue; }
           if (!r.style) continue;
-          for (const n of r.style) if (n.startsWith('--')) res.push({ sheet: name, selector: (r.selectorText || '').replace(/__[A-Za-z0-9_-]{5,6}\b/g, '').slice(0, 200), media: media.join(' and ') || null, name: n, value: r.style.getPropertyValue(n).trim() });
+          for (const n of r.style) if (n.startsWith('--')) res.push({ sheet: name, selector: (r.selectorText || '').replace(/__[A-Za-z0-9_-]{5,6}\b/g, '').slice(0, 200), media: media.join(' and ') || null, name: n, value: noUrl(r.style.getPropertyValue(n).trim()) });
         }
       };
       walk(s.cssRules, []);
@@ -117,7 +120,7 @@ for (const [key, url] of Object.entries(PAGES)) {
     for (const w of [390, 768, 1024, 1440]) {
       await page.setViewportSize({ width: w, height: 900 });
       await page.waitForTimeout(400);
-      resolved[key][w] = await page.evaluate((ns) => { const cs = getComputedStyle(document.documentElement); return Object.fromEntries([...new Set(ns)].sort().map((n) => [n, cs.getPropertyValue(n).trim()])); }, names);
+      resolved[key][w] = await page.evaluate((ns) => { const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v); const cs = getComputedStyle(document.documentElement); return Object.fromEntries([...new Set(ns)].sort().map((n) => [n, noUrl(cs.getPropertyValue(n).trim())])); }, names);
     }
     await page.setViewportSize({ width: 1440, height: 900 });
   }

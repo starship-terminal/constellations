@@ -158,6 +158,41 @@ def capture_scripts_recording_raw_urls(root):
     return bad
 
 
+# vars.mjs reads every custom property a stylesheet declares and the value each resolves to. A custom
+# property can hold a url() with a signed or per-account query, so each read of one (any
+# getPropertyValue(name) with a computed name) goes through noUrl. A @font-face descriptor is the one
+# read left alone: its src names the font files.
+PROP_READ = re.compile(r"getPropertyValue\((?!['\"])")
+PROP_READ_SAFE = re.compile(r"noUrl\((?:[\w.]+(?:\([\w.]*\))?\.)*getPropertyValue\((?!['\"])")
+
+
+def vars_reads_without_no_url(src):
+    """Line numbers in a vars.mjs source where a custom property's value is read without noUrl."""
+    bad, font = [], None   # font: the indent of the @font-face branch the line is inside, if any
+    for n, line in enumerate(src.splitlines(), 1):
+        ind = len(line) - len(line.lstrip())
+        if font is not None and line.strip() and (ind <= font or line.strip().startswith("continue")):
+            font = None
+        if "FONT_FACE_RULE" in line and line.rstrip().endswith("{"):
+            font = ind
+            continue
+        if font is None and len(PROP_READ.findall(line)) != len(PROP_READ_SAFE.findall(line)):
+            bad.append(n)
+    return bad
+
+
+def vars_scripts_recording_raw_values(root):
+    """(path, reason) for each vars.mjs under root (every package's and the kit's) that records a value raw."""
+    root = Path(root)
+    bad = []
+    for path in sorted([*root.glob("systems/*/tools/capture/**/vars.mjs"), *root.glob("tools/kit/capture/**/vars.mjs")]):
+        src = path.read_text()
+        rel = str(path.relative_to(root))
+        bad += [(rel, f"custom property read without noUrl at line {n}") for n in vars_reads_without_no_url(src)]
+        bad += [(rel, f"noUrl used with no definition in scope at line {n}") for n in no_url_scope_errors(src)]
+    return bad
+
+
 def js_block(path, start, end):
     """The source lines from the first one starting with `start` through the first after it starting with `end`."""
     lines = Path(path).read_text().splitlines()
@@ -186,6 +221,32 @@ class PackageCaptureScripts(unittest.TestCase):
         for raw in ("content: p.content, width", "p.backgroundImage.slice(0, 200)", "out.vars[n] = root.getPropertyValue(n).trim();"):
             self.assertTrue(RAW_READ.search(raw), raw)
         self.assertFalse(RAW_READ.search("out.vars[n] = noUrl(v);"))
+
+    def test_every_vars_script_records_custom_properties_through_no_url(self):
+        # Declared values (props[k], decls, root/dark) and resolved ones (raw, resolved[w], theme) alike.
+        self.assertEqual(vars_scripts_recording_raw_values(HERE.parent), [])
+        # Each copy of noUrl is the kit's, which test_vars_no_url_reads_authored_tokens runs under node.
+        tested = re.search(r"const noUrl = .*?: v\);", (HERE / "kit/capture/vars.mjs").read_text()).group(0)
+        for path in [*HERE.parent.glob("systems/*/tools/capture/**/vars.mjs"), HERE / "kit/capture/vars.mjs"]:
+            for d in re.findall(r"const noUrl = .*?: v\);", path.read_text()):
+                self.assertEqual(d, tested, path)
+
+    def test_the_vars_patterns_catch_each_shape(self):
+        for raw in ("props[k] = r.style.getPropertyValue(k).trim();", "const raw = getComputedStyle(el).getPropertyValue(name).trim();",
+                    "return Object.fromEntries(ns.map((n) => [n, cs.getPropertyValue(n).trim()]));",
+                    "all[r.style[i]] = r.style.getPropertyValue(r.style[i]).trim();"):
+            self.assertEqual(vars_reads_without_no_url(raw), [1], raw)
+        for ok in ("props[k] = noUrl(r.style.getPropertyValue(k).trim());", "const raw = noUrl(getComputedStyle(el).getPropertyValue(name).trim());",
+                   "return Object.fromEntries(ns.map((n) => [n, noUrl(cs.getPropertyValue(n).trim())]));",
+                   "ff.push({ family: r.style.getPropertyValue('font-family'), src: r.style.getPropertyValue('src') });"):
+            self.assertEqual(vars_reads_without_no_url(ok), [], ok)
+        font = "if (r.type === CSSRule.FONT_FACE_RULE) {\n  const o = { file };\n  for (const k of r.style) o[k] = r.style.getPropertyValue(k).trim();\n}"
+        self.assertEqual(vars_reads_without_no_url(font), [])
+        # a read just after the font branch runs on every other rule, so it is not exempt
+        after = "if (r.type === CSSRule.FONT_FACE_RULE) {\n  fonts.push(1);\n  continue;\n}\nprops[k] = r.style.getPropertyValue(k);"
+        self.assertEqual(vars_reads_without_no_url(after), [5])
+        after = "if (r.type === CSSRule.FONT_FACE_RULE) {\n  fonts.push(1);\n  continue;\n  props[k] = r.style.getPropertyValue(k);\n}"
+        self.assertEqual(vars_reads_without_no_url(after), [4])
 
     def test_each_callback_needs_its_own_no_url(self):
         two = ("const HELPERS = () => {\n  const noUrl = (v) => v;\n  const box = (el) => noUrl(el);\n};\n"
@@ -240,6 +301,25 @@ class JavaScriptHalves(unittest.TestCase):
                             "noUrl(\"url('https://x/a\\\\'b(2).png?sig=1')\"), noUrl('url(https://x/p.png?sig=1), none')]))")
             self.assertEqual(got, ['url(…), linear-gradient(red, blue)', 'url("data:image/svg+xml,abc")', 'url(#clip)', 'auto', 3,
                                    'url(…) no-repeat', 'url(…)', 'url(…), none'], path)
+
+    def test_vars_no_url_reads_authored_tokens(self):
+        # A declared custom property keeps its authored tokens (unlike a computed value, which the
+        # browser serialises as lowercase url("...")), so case, escapes and inner space all occur.
+        src = js_block(HERE / "kit/capture/vars.mjs", "const noUrl", "const noUrl")
+        cases = {
+            'url("https://x/p.png?X-Amz-Signature=1"), linear-gradient(red, blue)': 'url(…), linear-gradient(red, blue)',
+            'URL("https://x.test/a?sig=secret")': 'url(…)',
+            'Url(https://x.test/a?sig=secret) no-repeat': 'url(…) no-repeat',
+            'url(https://x.test/a\\)b?sig=secret)': 'url(…)',
+            'url( https://x.test/a?sig=secret )': 'url(…)',
+            'url( #clip)': 'url( #clip)',
+            'url( "data:image/svg+xml,abc")': 'url( "data:image/svg+xml,abc")',
+            'URL(#clip)': 'URL(#clip)',
+            'url("data:image/svg+xml,abc")': 'url("data:image/svg+xml,abc")',
+            '4px': '4px',
+        }
+        got = self.node(src + f"\nconsole.log(JSON.stringify({json.dumps(list(cases))}.map(noUrl)))")
+        self.assertEqual(got, list(cases.values()))
 
     def test_painted_layer_background_images_record_no_url(self):
         # The paint loop keeps a background image that does not start with url(https:, so a gradient
