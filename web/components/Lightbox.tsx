@@ -7,6 +7,7 @@ import Link from "next/link";
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { useToast } from "@/components/Toast";
 import { copyWithToast } from "@/components/CopyButton";
+import { readSavedPaths, writeSavedPaths } from "@/components/storage";
 
 export interface LbItem {
   path: string; // resolved URL (/media/... or absolute)
@@ -34,18 +35,7 @@ interface OpenArgs {
 }
 const Ctx = createContext<{ open: (a: OpenArgs) => void }>({ open: () => {} });
 
-export const savedSet = (): Set<string> => {
-  try {
-    return new Set(JSON.parse(localStorage.getItem("ds-saved") || "[]"));
-  } catch {
-    return new Set();
-  }
-};
-const writeSaved = (s: Set<string>) => {
-  try {
-    localStorage.setItem("ds-saved", JSON.stringify([...s]));
-  } catch {}
-};
+export const savedSet = (): Set<string> => new Set(readSavedPaths());
 
 // Focusable controls that are actually rendered: a control inside a
 // display:none rail has no layout boxes and must not take focus.
@@ -224,7 +214,7 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
                 const s = savedSet();
                 if (s.has(it.path)) s.delete(it.path);
                 else s.add(it.path);
-                writeSaved(s);
+                writeSavedPaths(s);
                 state.onSave?.();
                 setState((cur) => (cur ? { ...cur } : cur));
               }}

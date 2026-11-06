@@ -7,13 +7,10 @@ import { loadData, mediaUrl } from "@/lib/catalog";
 import { loadReferoIndex } from "@/lib/refero";
 import { markdown } from "@/lib/markdown";
 import { baseUrlOf } from "@/lib/provider-defaults";
+import { tintOf } from "@/lib/style-labels";
 
 export const dynamic = "force-dynamic";
 
-const tintOf = (swatches: Record<string, { role: string; value: string | null }[]>) =>
-  Object.values(swatches)
-    .flat()
-    .find((x) => /accent|primary|brand|face/i.test(x.role))?.value || undefined;
 
 async function enrich(results: Record<string, unknown>[]) {
   const out = [];
@@ -26,7 +23,7 @@ async function enrich(results: Record<string, unknown>[]) {
         if (s) {
           card.cover = mediaUrl(s.cover.thumb || s.cover.path);
           if (s.icon) card.icon = mediaUrl(s.icon);
-          card.tint = tintOf(s.swatches);
+          card.tint = tintOf(s.swatches) || undefined;
           card.tagline = s.goodFor;
         }
       } else if (r.store === "refero") {
