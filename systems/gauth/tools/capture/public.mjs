@@ -40,6 +40,8 @@ class Shooter {
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
+    // Tiles from an earlier, taller shot of this page would otherwise be stitched over the new one.
+    for (const old of fs.readdirSync(RAW)) if (old === path.basename(f) + '.png' || (old.startsWith(path.basename(f) + '.part') && /\.part\d+\.png$/.test(old))) fs.rmSync(path.join(RAW, old));
     if (H <= chunk) await p.screenshot({ path: f + '.png', fullPage: true });
     else for (let i = 0, y = 0; y < H; i++, y += chunk) await p.screenshot({ path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, H - y) } });
     this.count++; log('  shot', name, 'H=' + H);
