@@ -7,27 +7,15 @@
 // instead of refero.db's sqlite, and view_media falls back to a prebuilt
 // web/data/thumbs/ thumbnail instead of a Pillow downscale. Site-relative
 // media URLs are "/media/<repo-relative>" for the app's media route.
-import { existsSync, promises as fs } from "node:fs";
+import { promises as fs } from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+// The checkout comes from the one resolver every server route uses, so
+// DESIGN_SYSTEMS_REPO points the tools at the same tree as /media/ and docs.
+import { ROOT } from "@/lib/repo";
+
+export { ROOT };
 
 type Obj = Record<string, unknown>;
-
-export const ROOT = (() => {
-  const cwd = path.resolve(process.cwd());
-  // `next dev`/`next start` run from web/, so the checkout is its parent; a
-  // plain node run from the repo root also lands on the checkout.
-  const primary = path.basename(cwd) === "web" ? path.dirname(cwd) : cwd;
-  if (existsSync(path.join(primary, "catalog.json"))) return primary;
-  try {
-    const here = path.dirname(fileURLToPath(import.meta.url));
-    const fromModule = path.resolve(here, "..", "..", ".."); // web/lib/chat -> root
-    if (existsSync(path.join(fromModule, "catalog.json"))) return fromModule;
-  } catch {
-    // import.meta.url unavailable in a CJS bundle; keep the cwd guess.
-  }
-  return primary;
-})();
 
 const REFERO_DIR = path.join(ROOT, "web", "data", "refero");
 const REFERO_INDEX = path.join(REFERO_DIR, "index.json");
