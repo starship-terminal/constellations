@@ -87,7 +87,8 @@ class SharedList(unittest.TestCase):
     def test_unsnap_reads_entities_nbsp_and_split_elements(self):
         redact = {"replace": [["unrelated", "gi", "x"], ["jane\\s+doe", "gi", "A User"], ["Jane Doe", "g", "A User"]]}
         for page in ["<p>Jane&nbsp;Doe</p>", "<p>J&#97;ne Doe</p>", "<p>Ja<b>ne</b> Doe</p>",
-                     "<p>Jane</p><p>Doe</p>", '<img alt="Jane&#x20;Doe">', "<p>JANE\u00a0DOE</p>"]:
+                     "<p>Jane</p><p>Doe</p>", '<img alt="Jane&#x20;Doe">', "<p>JANE\u00a0DOE</p>",
+                     '<p>Jane <span title="x>y">Doe</span></p>', "<p>Ja<!-- c -->ne Doe</p>"]:
             self.assertIn("redaction pattern 2", unsnap.leaks_in(page, redact), page)
         self.assertEqual(unsnap.leaks_in("<p>Jane&nbsp;Doe</p>", redact), ["redaction pattern 2", "redaction pattern 3"])
         self.assertEqual(unsnap.leaks_in("<p>A User</p>", redact), [])
@@ -140,6 +141,36 @@ class JavaScriptHalves(unittest.TestCase):
                             "noUrl(\"url('https://x/a\\\\'b(2).png?sig=1')\"), noUrl('url(https://x/p.png?sig=1), none')]))")
             self.assertEqual(got, ['url(…), linear-gradient(red, blue)', 'url("data:image/svg+xml,abc")', 'url(#clip)', 'auto', 3,
                                    'url(…) no-repeat', 'url(…)', 'url(…), none'], path)
+
+
+PLAYWRIGHT = os.environ.get("PLAYWRIGHT") or str(Path.home() / ".design-systems/pw/node_modules/playwright/index.mjs")
+
+
+@unittest.skipIf(NODE is None or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
+class SnapshotInABrowser(unittest.TestCase):
+    """Runs snapshot.js's __snap on a small page in headless Chromium (the capture's own Playwright,
+    $PLAYWRIGHT or ~/.design-systems/pw), and checks the copy it returns."""
+
+    def test_redaction_reaches_text_nodes_comments_and_attributes(self):
+        page = ('<p>J&#97;ne&nbsp;Doe and Jane Doe</p><!-- Jane Doe --><img alt="Jane Doe" src="data:,">'
+                '<a title="by Jane  Doe" href="#x">x</a><p>JANE\u00a0DOE</p>')
+        redact = {"replace": [["jane\\s+doe", "i", "A User"]]}   # no g: every match must still go
+        script = f"""
+const pw = await import({json.dumps(Path(PLAYWRIGHT).as_uri())});
+const b = await pw.chromium.launch();
+const p = await b.newPage();
+await p.setContent({json.dumps(page)});
+await p.addScriptTag({{ content: {json.dumps((SIGNED_IN / "snapshot.js").read_text())} }});
+const out = await p.evaluate((r) => window.__snap('t', r), {json.dumps(redact)});
+await b.close();
+console.log(JSON.stringify(out));
+"""
+        res = subprocess.run([NODE, "--input-type=module", "-e", script], capture_output=True, text=True, timeout=120)
+        self.assertEqual(res.returncode, 0, res.stderr[-2000:])
+        out = json.loads(res.stdout)
+        body = out.split("SNAPMETA", 1)[1]
+        self.assertEqual(unsnap.leaks_in(body, redact), [], body)
+        self.assertGreaterEqual(body.count("A User"), 6, body)
 
 
 if __name__ == "__main__":

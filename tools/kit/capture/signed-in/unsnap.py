@@ -9,7 +9,7 @@ any URL still carries a signing parameter (the list in signed-params.json beside
 The redaction file names the learner, so it lives outside the repository: $SNAP_REDACT,
 normally ~/.design-systems/<slug>-redact.json, shaped like redact.example.json beside this script.
 """
-import html, json, os, pathlib, re, sys
+import html, html.parser, json, os, pathlib, re, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 
@@ -24,12 +24,25 @@ def signed_url_pattern(spec):
 SIGNED = signed_url_pattern(json.loads((HERE / "signed-params.json").read_text()))
 
 
+class _Text(html.parser.HTMLParser):
+    """The text an HTML parser reads out of a page, entities decoded, so a tag whose quoted
+    attribute holds a > cannot leave markup between the halves of a name."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.parts = []
+
+    def handle_data(self, data):
+        self.parts.append(data)
+
+
 def readings(checked):
     """The forms a redaction pattern is tried on: the serialised copy as written, with its entities
     decoded (&nbsp;, &#74;), and as page text with the tags taken out, both joined (a name split
     across <span>s) and spaced; each with non-breaking spaces read as plain spaces too."""
-    text = html.unescape(checked)
-    forms = [checked, text, html.unescape(re.sub(r"<[^>]*>", "", checked)), html.unescape(re.sub(r"<[^>]*>", " ", checked))]
+    parser = _Text()
+    parser.feed(checked)
+    parser.close()
+    forms = [checked, html.unescape(checked), "".join(parser.parts), " ".join(parser.parts)]
     return forms + [f.replace("\xa0", " ") for f in forms[1:]]
 
 
