@@ -433,7 +433,6 @@
   background: var(--surface);
 }
 .session :global(.conversation) {
-  max-width: 1120px;
   padding: 36px 48px 175px;
 }
 .session :global(.user-message) {
@@ -777,10 +776,6 @@
   align-items: center;
   gap: 6px;
 }
-.searchResults :global(.research-result-grid) {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 32px 24px;
-}
 .searchResults :global(.research-result .card-picture) {
   padding: 0;
   aspect-ratio: 1.8;
@@ -820,14 +815,12 @@
   }
 }
 @media (max-width: 1250px) {
-  .browseGrid,
-  .searchResults :global(.research-result-grid) {
+  .browseGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 @media (max-width: 1000px) {
-  .browseGrid,
-  .searchResults :global(.research-result-grid) {
+  .browseGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .searchResults {
@@ -853,9 +846,6 @@
   }
   .searchResultHeading > a {
     font-size: 12px;
-  }
-  .searchResults :global(.research-result-grid) {
-    gap: 24px 12px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
