@@ -41,12 +41,23 @@ def store(src, dst):
 
 
 def main():
+    # Every theme needs its readings before anything is written: without captures.json every shot would be
+    # skipped and the stale sweep below would delete the stored screenshots.
+    nocaps = sorted(p.name for p in RAW.iterdir() if p.is_dir() and not (p / "captures.json").exists())
+    if nocaps:
+        sys.exit("captures.json missing, nothing written (run shots.mjs first): " + ", ".join(nocaps))
     n = 0
     for theme_dir in sorted(p for p in RAW.iterdir() if p.is_dir()):
         theme = theme_dir.name
         out = PKG / "screenshots" / theme
         keep = set()
+        # Only shots captures.json records: a shot that failed on a later run is dropped from it, and its
+        # older PNG must not be published again without a current reading.
+        shots = json.loads((theme_dir / "captures.json").read_text())
         for f in sorted(theme_dir.glob("*.png")):
+            if f.stem not in shots:
+                print("skipped (no reading in captures.json):", f.name)
+                continue
             store(f, out / f.name); keep.add(f.name); n += 1
         for frame, name in RUN_FRAMES.get(theme, {}).items():
             f = theme_dir / "run" / f"{frame}.png"

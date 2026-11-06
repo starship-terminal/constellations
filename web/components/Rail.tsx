@@ -64,7 +64,7 @@ export function Rail() {
 
   return (
     <header className="bar">
-      <Link className="brand" href="/">
+      <Link className="brand" href="/" aria-label="Design systems">
         <Mark />
         <span>Design systems</span>
       </Link>

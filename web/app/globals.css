@@ -116,13 +116,16 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-vis
 .icon-btn .lbl { overflow: hidden; text-overflow: ellipsis; }
 .icon-btn[aria-current="page"] { color: var(--text); background: var(--sunken); }
 
-/* collapsed: icon strip that still opens on hover/focus */
-html[data-nav="collapsed"] .bar { width: var(--rail-cw); }
-html[data-nav="collapsed"] .bar:hover,
-html[data-nav="collapsed"] .bar:focus-within { width: var(--rail-w); }
-html[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .site-nav a span,
-html[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .brand span,
-html[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .icon-btn .lbl { opacity: 0; pointer-events: none; }
+/* collapsed: icon strip that still opens on hover/focus. Sidebar widths only:
+   below 900px the bar is a top bar, which a stored "collapsed" must not shrink. */
+@media (min-width: 900px) {
+  html[data-nav="collapsed"] .bar { width: var(--rail-cw); }
+  html[data-nav="collapsed"] .bar:hover,
+  html[data-nav="collapsed"] .bar:focus-within { width: var(--rail-w); }
+  html[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .site-nav a span,
+  html[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .brand span,
+  html[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .icon-btn .lbl { opacity: 0; pointer-events: none; }
+}
 .site-nav a span, .brand span, .icon-btn .lbl { transition: opacity 0.12s ease; }
 
 @media (min-width: 900px) {
@@ -142,8 +145,12 @@ html[data-nav="collapsed"] .bar:not(:hover):not(:focus-within) .icon-btn .lbl { 
   .bar-foot { flex-direction: row; border: 0; padding: 0; }
   .icon-btn .lbl { display: none; }
   .icon-btn { width: auto; }
+  /* A top bar has no sidebar to collapse; the room goes to the page links. */
+  #nav-toggle { display: none; }
   .shell { padding-top: 52px; }
 }
+/* Phone widths: the mark alone, so all five page links fit beside the icons. */
+@media (max-width: 519px) { .brand span { display: none; } }
 
 .page { max-width: 1180px; margin: 0 auto; padding: 28px clamp(16px, 4vw, 44px) 96px; }
 .page.wide { max-width: 1480px; }

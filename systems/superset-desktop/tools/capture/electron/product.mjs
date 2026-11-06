@@ -27,6 +27,13 @@ export const WORKSPACE = 'List files in this folder';
 export const SCRATCH_DIR = `${process.env.HOME}/.design-systems/harness-scratch`;
 
 const wait = (page, ms = 600) => page.waitForTimeout(ms);
+// A shot that clicks a Delete control only to show its confirmation must see that confirmation before it goes
+// on. If none opens, the click may have deleted something: the whole capture stops (shots.mjs reads `abort`).
+async function confirmOpened(page, what) {
+  const dialog = page.locator('[role=alertdialog], [role=dialog]').filter({ visible: true }).filter({ has: page.locator('button', { hasText: /^Cancel$/ }) });
+  if (await dialog.last().waitFor({ state: 'visible', timeout: 3000 }).then(() => true, () => false)) return;
+  throw Object.assign(new Error(`no confirmation dialog after ${what}: check that nothing was deleted`), { abort: true });
+}
 const re = s => new RegExp(`^${s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`);
 const btn = (page, label) => page.locator(`button[aria-label="${label}"]`).filter({ visible: true }).first();
 const textBtn = (page, label) => page.locator('button').filter({ visible: true }).filter({ hasText: re(label) }).first();
@@ -278,7 +285,7 @@ export const SHOTS = [
     optionalParts: ['menu-row-destructive', 'menu-shortcut', 'menu-sub-trigger'] },
   { name: 'delete-confirmation', window: M,
     reveal: async ({ page }) => { await workspaceRow(page).click({ button: 'right' }); await wait(page, 800);
-      await page.locator('[role=menuitem]').filter({ hasText: /^Delete/ }).first().click(); await wait(page, 1000); },
+      await page.locator('[role=menuitem]').filter({ hasText: /^Delete/ }).first().click(); await confirmOpened(page, `Delete on the ${WORKSPACE} workspace`); await wait(page, 1000); },
     parts: { 'confirm-dialog': S.alert, scrim: '[data-slot=alert-dialog-overlay]', 'button-destructive': page => dialogButton(page, 'Delete'), 'button-ghost-sm': page => dialogButton(page, 'Cancel') },
     after: async ({ page }) => { await dialogButton(page, 'Cancel').click().catch(() => {}); await wait(page, 500); } },
   { name: 'create-project-dialog', window: M, reveal: createProjectItem,

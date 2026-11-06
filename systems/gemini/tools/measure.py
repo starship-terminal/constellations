@@ -331,7 +331,7 @@ def run(raw):
     raw = pathlib.Path(raw).expanduser()
     if not (raw / "dark").is_dir():
         raise SystemExit(f"{raw}: no dark/ captures; nothing written")
-    cache, out = {}, {}
+    pending, out = {}, {}
     for rid, (cap, op, args, note) in R.items():
         themes = [cap.split("/")[0]] if "/" in cap else ["dark", "light"]
         name = cap.split("/")[-1]
@@ -339,10 +339,13 @@ def run(raw):
             png = raw / theme / f"{name}.png"
             if not png.exists():
                 continue
-            key = f"{theme}/{name}"
-            if key not in cache:
-                cache[key] = sample.read_png(png)[2]
-            rows = cache[key]
+            pending.setdefault(f"{theme}/{name}", []).append((rid, op, args, note))
+    # One decoded capture at a time: a decoded capture is several hundred MB as Python tuples, so
+    # the readings are grouped by capture and each image is released before the next is read.
+    for key in sorted(pending):
+        theme, name = key.split("/")
+        rows = sample.read_png(raw / theme / f"{name}.png")[2]
+        for rid, op, args, note in pending[key]:
             if op == "fill":
                 res = op_fill(rows, *args)
             elif op == "text":
@@ -352,6 +355,7 @@ def run(raw):
             res.update({"capture": f"screenshots/{theme}/{name}.png", "op": op,
                         "args": json.loads(json.dumps(args)), "note": note})
             out.setdefault(rid, {})[theme] = res
+        del rows   # released before the next capture is decoded
     return out
 
 
