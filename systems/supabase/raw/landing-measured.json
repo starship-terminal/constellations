@@ -1,0 +1,2769 @@
+{
+  "body": {
+    "background-color": "oklch(0.19 0.0025 157.5)",
+    "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+    "border-radius": "0px",
+    "box-shadow": "none",
+    "color": "oklch(0.95 0.00275 157.5)",
+    "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+    "font-size": "16px",
+    "font-weight": "450",
+    "gap": "normal",
+    "line-height": "24px",
+    "padding": "0px"
+  },
+  "components": [
+    {
+      "styles": {
+        "background-color": "oklch(0.95 0.00275 157.5 / 0.0328947)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "8px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(255, 255, 255, 0.04) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "12px",
+        "font-weight": "500",
+        "gap": "normal",
+        "line-height": "16px",
+        "padding": "4px 10px"
+      },
+      "tag": "A",
+      "text": "Skip to content"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "8px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "12px 8px"
+      },
+      "tag": "A",
+      "text": ""
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "8.86154px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "line-height": "16px",
+        "padding": "8px 10px"
+      },
+      "tag": "BUTTON",
+      "text": "Product"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "8.86154px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "line-height": "16px",
+        "padding": "8px 10px"
+      },
+      "tag": "BUTTON",
+      "text": "Developers"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "8.86154px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "line-height": "16px",
+        "padding": "8px 10px"
+      },
+      "tag": "BUTTON",
+      "text": "Solutions"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "8px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "12px",
+        "line-height": "14px",
+        "padding": "8px 10px"
+      },
+      "tag": "A",
+      "text": "Pricing"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "8px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "12px",
+        "line-height": "14px",
+        "padding": "8px 10px"
+      },
+      "tag": "A",
+      "text": "Docs"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "8px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "12px",
+        "line-height": "14px",
+        "padding": "8px 10px"
+      },
+      "tag": "A",
+      "text": "Blog"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "8px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "color": "oklch(0.798 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "12px",
+        "font-weight": "500",
+        "gap": "normal",
+        "line-height": "16px",
+        "padding": "4px 10px"
+      },
+      "tag": "A",
+      "text": "114.3K"
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.95 0.00275 157.5 / 0.0328947)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "8px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(255, 255, 255, 0.04) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "12px",
+        "font-weight": "500",
+        "gap": "normal",
+        "line-height": "16px",
+        "padding": "4px 10px"
+      },
+      "tag": "A",
+      "text": "Dashboard"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "1.67772e+07px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(255, 255, 255, 0.04) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+        "color": "oklch(0.798 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "12px",
+        "font-weight": "500",
+        "gap": "normal",
+        "line-height": "16px",
+        "padding": "4px 0px"
+      },
+      "tag": "BUTTON",
+      "text": ""
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Manrope, \"Manrope Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "46px",
+        "font-weight": "500",
+        "gap": "normal",
+        "line-height": "46px",
+        "padding": "0px"
+      },
+      "tag": "H1",
+      "text": "Build in a weekendScale to millions"
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.43627 0.11 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "9.29231px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(255, 255, 255, 0.04) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.06) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "line-height": "20px",
+        "padding": "8px 16px"
+      },
+      "tag": "A",
+      "text": "Start your project"
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.95 0.00275 157.5 / 0.0328947)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "9.29231px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(255, 255, 255, 0.04) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "line-height": "20px",
+        "padding": "8px 16px"
+      },
+      "tag": "A",
+      "text": "Request a demo"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "16px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "20px",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Postgres DatabaseEvery project is a full Postgres database, the world's most trusted relational data"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Manrope, \"Manrope Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "16px",
+        "font-weight": "600",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "H2",
+      "text": "Postgres Database"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "16px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "20px",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "AuthenticationAdd user sign ups and logins, securing your data with Row Level Security."
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Manrope, \"Manrope Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "16px",
+        "font-weight": "600",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "H2",
+      "text": "Authentication"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "16px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "20px",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Edge FunctionsEasily write custom code without deploying or scaling servers.$supabasefunctions deplo"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Manrope, \"Manrope Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "16px",
+        "font-weight": "600",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "H2",
+      "text": "Edge Functions"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "16px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "20px",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "StorageStore, organize, and serve large files, from videos to images."
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Manrope, \"Manrope Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "16px",
+        "font-weight": "600",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "H2",
+      "text": "Storage"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "16px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "20px",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "RealtimeBuild multiplayer experiences with real-time data synchronization."
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Manrope, \"Manrope Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "16px",
+        "font-weight": "600",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "H2",
+      "text": "Realtime"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "16px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "20px",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "VectorIntegrate your favorite ML-models to store, index and search vector embeddings.OpenAI logoOpen"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Manrope, \"Manrope Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "16px",
+        "font-weight": "600",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "H2",
+      "text": "Vector"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "16px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "20px",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Data APIsInstant ready-to-use REST APIs."
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Manrope, \"Manrope Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "16px",
+        "font-weight": "600",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "H2",
+      "text": "Data APIs"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-family": "Manrope, \"Manrope Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "34px",
+        "font-weight": "600",
+        "gap": "normal",
+        "line-height": "37.7778px",
+        "padding": "0px"
+      },
+      "tag": "H3",
+      "text": "Stay productive and manage your app without leaving the dashboard"
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.19 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.00275 157.5)",
+        "border-radius": "1.67772e+07px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "20px",
+        "padding": "8px 32px"
+      },
+      "tag": "BUTTON",
+      "text": "Table Editor"
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.19 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "1.67772e+07px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "20px",
+        "padding": "8px 32px"
+      },
+      "tag": "BUTTON",
+      "text": "SQL Editor"
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.19 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "1.67772e+07px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "20px",
+        "padding": "8px 32px"
+      },
+      "tag": "BUTTON",
+      "text": "RLS Policies"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-family": "Manrope, \"Manrope Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "34px",
+        "font-weight": "600",
+        "gap": "normal",
+        "line-height": "37.7778px",
+        "padding": "0px"
+      },
+      "tag": "H3",
+      "text": "Use Supabase with React"
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.215 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "16px 0px"
+      },
+      "tag": "BUTTON",
+      "text": ""
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "16px 0px"
+      },
+      "tag": "BUTTON",
+      "text": ""
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "16px 0px"
+      },
+      "tag": "BUTTON",
+      "text": ""
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "16px 0px"
+      },
+      "tag": "BUTTON",
+      "text": ""
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "16px 0px"
+      },
+      "tag": "BUTTON",
+      "text": ""
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "16px 0px"
+      },
+      "tag": "BUTTON",
+      "text": ""
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.215 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "1.67772e+07px",
+        "box-shadow": "none",
+        "color": "oklch(0.798 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "12px",
+        "font-weight": "450",
+        "gap": "6px",
+        "line-height": "16px",
+        "padding": "6px 12px"
+      },
+      "tag": "A",
+      "text": "Read docs for React"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-family": "Manrope, \"Manrope Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "34px",
+        "font-weight": "600",
+        "gap": "normal",
+        "line-height": "37.7778px",
+        "padding": "0px"
+      },
+      "tag": "H3",
+      "text": "Kickstart your next project with production ready templates"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.798 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "20px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "View all examples"
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.215 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "10.6667px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Stripe Subscriptions StarterThe all-in-one subscription starter kit for high-performance SaaS applic"
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.215 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "10.6667px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Next.js StarterA Next.js App Router template configured with cookie-based auth using Supabase, TypeS"
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.215 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "10.6667px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "40px 24px"
+      },
+      "tag": "A",
+      "text": "AI ChatbotAn open-source AI chatbot app template built with Next.js, the Vercel AI SDK, OpenAI, and "
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.215 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "10.6667px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "40px 24px"
+      },
+      "tag": "A",
+      "text": "LangChain + Next.js StarterStarter template and example use-cases for LangChain projects in Next.js,"
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.215 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "10.6667px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "40px 24px"
+      },
+      "tag": "A",
+      "text": "Flutter User ManagementGet started with Supabase and Flutter by building a user management app with "
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.215 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "10.6667px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "40px 24px"
+      },
+      "tag": "A",
+      "text": "Expo React Native StarterAn extended version of create-t3-turbo implementing authentication on both "
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-family": "Manrope, \"Manrope Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "34px",
+        "font-weight": "600",
+        "gap": "normal",
+        "line-height": "37.7778px",
+        "padding": "0px"
+      },
+      "tag": "H3",
+      "text": "How industry leaders  are building with Supabase"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.798 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "20px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "More customer stories"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "rgba(255, 255, 255, 0.7)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "12px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "16px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Read the story →"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "rgba(255, 255, 255, 0.7)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "12px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "16px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Read the story →"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "rgba(255, 255, 255, 0.7)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "12px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "16px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Read the story →"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "rgba(255, 255, 255, 0.7)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "12px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "16px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Read the story →"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "rgba(255, 255, 255, 0.7)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "12px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "16px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Read the story →"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Manrope, \"Manrope Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "34px",
+        "font-weight": "600",
+        "gap": "normal",
+        "line-height": "37.7778px",
+        "padding": "0px"
+      },
+      "tag": "H3",
+      "text": "Join the community"
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.95 0.00275 157.5 / 0.0328947)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "8.86154px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(255, 255, 255, 0.04) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "line-height": "16px",
+        "padding": "8px 12px"
+      },
+      "tag": "A",
+      "text": "Join us on Discord"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "@adm_lawsonLove supabse edge functions. Cursor+Supabase+MCP+Docker desktop is all I need"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "@pontusabI love everything about Supabase."
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "@yatsiv_yuriySupabase is the best product experience I've had in years.\nNot just tech - taste.\nFrom "
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "@gokul_iFirst time running @supabase in local. It just works. Very good DX imo."
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "@nerdburnIt’s fun, feels lightweight, and really quick to spin up user auth and a few tables. Almost"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "@adeelibr@supabase shout out, their MCP is awesome. It's helping me create better row securities and"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "@dadooos_Run supabase locally and just wow in silence! I am impressed! This is the kind of tooling I"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "@patrickcVery impressed by @supabase's growth. For new startups, they seem to have gone from \"promis"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "@TyronBacheReally impressed with @supabase's Assistant.\n\nIt has helped me troubleshoot and solve com"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "@Rodrigo66799141After a week of diving deep into Supabase for my new SaaS project, I'm really impres"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "@shadcnSupabase is really good. ⚡"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "@MinimEditorI’ve always used Supabase just as a database.\n\nYesterday, I helped debug a founder’s vib"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "@xthemadgeniusxLately been using Supabase over AWS/ GCP for products to save on costs and rapid buil"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "@Aliahsan_sfvOkay, I finally tried Supabase today and wow... why did I wait so long? 😅 Went from 'h"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "@orlandopedro_Love @supabase custom domains\n\nmakes the auth so much better"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Manrope, \"Manrope Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "34px",
+        "font-weight": "600",
+        "gap": "normal",
+        "line-height": "37.7778px",
+        "padding": "0px"
+      },
+      "tag": "H2",
+      "text": "Open source from day one"
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.95 0.00275 157.5 / 0.0328947)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "8.86154px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(255, 255, 255, 0.04) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "line-height": "16px",
+        "padding": "8px 12px"
+      },
+      "tag": "A",
+      "text": "View on GitHub"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Manrope, \"Manrope Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "34px",
+        "font-weight": "600",
+        "gap": "normal",
+        "line-height": "40.8px",
+        "padding": "0px"
+      },
+      "tag": "H2",
+      "text": "Build in a weekend, scale to millions"
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.43627 0.11 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "9.29231px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(255, 255, 255, 0.04) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.06) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "line-height": "20px",
+        "padding": "8px 16px"
+      },
+      "tag": "A",
+      "text": "Start your project"
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.95 0.00275 157.5 / 0.0328947)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "9.29231px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(255, 255, 255, 0.04) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.06) 0px -1px 0px 0px inset, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "normal",
+        "line-height": "20px",
+        "padding": "8px 16px"
+      },
+      "tag": "A",
+      "text": "Request a demo"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Manrope, \"Manrope Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "16px",
+        "font-weight": "600",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "H2",
+      "text": "Footer"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.76 0.15 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "20px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "More on Security"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": ""
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Twitter"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "GitHub"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Discord"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Youtube"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "TikTok"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.684 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Instagram"
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0 0 0 / 0.12)",
+        "border-color": "oklch(0.95 0.001375 157.5 / 0.134738)",
+        "border-radius": "8px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "14px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "20px",
+        "padding": "8px"
+      },
+      "tag": "INPUT",
+      "text": ""
+    },
+    {
+      "styles": {
+        "background-color": "oklch(0.43627 0.11 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "8px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.2) 0px 1px 3px 0px, rgba(255, 255, 255, 0.04) 0px 1px 0px 0px inset, rgba(255, 255, 255, 0.06) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "12px",
+        "font-weight": "500",
+        "gap": "normal",
+        "line-height": "16px",
+        "padding": "4px 10px"
+      },
+      "tag": "BUTTON",
+      "text": "Subscribe"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Pricing"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Database"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Auth"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Functions"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Compute"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Realtime"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Storage"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Vector"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Cron"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Feature Catalog"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Launch Week"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "AI Builders"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "No Code"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Beginners"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Developers"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Postgres Devs"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Vibe Coders"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Hackathon Contestants"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Startups"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Agencies"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Enterprise"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Innovation Teams"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Hosted Postgres"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "B2B SaaS"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "FinServ"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Healthcare"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Agents"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Switch from Firebase"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Switch from Neon"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Blog"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Support"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "System Status"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Become a Partner"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Partner Catalog"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Knowledge Base"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "FAQs"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Brand Guidelines"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Security & Compliance"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Regions"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "SOC2"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "HIPAA"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Documentation"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Supabase Library"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Changelog"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "RSS"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Events & Webinars"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "SupaSquad"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Contributing"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Open Source"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "DevTo"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Company"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Careers"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "General Availability"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Legal Hub"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Privacy Policy"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "BUTTON",
+      "text": "Privacy Settings"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Acceptable Use Policy"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Humans.txt"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Lawyers.txt"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Security.txt"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "A",
+      "text": "Contact Us"
+    },
+    {
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "box-shadow": "none",
+        "color": "oklch(0.798 0.00275 157.5)",
+        "font-family": "Inter, \"Inter Fallback\", system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif, Inter, \"Helvetica Neue\", Helvetica, ui-sans-serif, system-ui, sans-serif",
+        "font-size": "16px",
+        "font-weight": "450",
+        "gap": "normal",
+        "line-height": "24px",
+        "padding": "0px"
+      },
+      "tag": "BUTTON",
+      "text": "Toggle theme"
+    }
+  ],
+  "variables": {
+    "--accent": "oklch(from oklch(calc(.19 + calc(.95 - .19) * calc(1 - (1 - .9) * max(0,calc(calc((.5 - .5) / .5) * -1)))) calc(.005 * .55) calc(157.5 + 0)) l c h/calc(calc(.025 / max(calc(.95 - .19), calc(calc(.95 - .19) * -1))) * 1.5))",
+    "--animate-collapsible-down": "collapsible-down .1s ease-out",
+    "--animate-line-loading-slower": "lineLoading 2.3s infinite",
+    "--animate-marquee-vertical": "marquee-vertical 180s linear infinite both",
+    "--animate-panel-slide-right-out": "panelSlideRightOut .2s cubic-bezier(.87,0,.13,1)",
+    "--animate-spinner": "spinner 1s both infinite",
+    "--background-alternative-default": "oklch(.19 calc(.005 * .5) calc(157.5 + 0))",
+    "--background-dialog-default": "oklch(from oklch(.19 calc(.005 * .5) calc(157.5 + 0)) calc(l + .025 * 1.5) c h)",
+    "--background-overlay-hover": "oklch(from oklch(calc(.19 + calc(.95 - .19) * calc(1 - (1 - .9) * max(0,calc(calc((.5 - .5) / .5) * -1)))) calc(.005 * .55) calc(157.5 + 0)) l c h/calc(calc(.025 / max(calc(.95 - .19), calc(calc(.95 - .19) * -1))) * 1.5))",
+    "--background-surface-200": "oklch(from oklch(calc(.19 + calc(.95 - .19) * calc(1 - (1 - .9) * max(0,calc(calc((.5 - .5) / .5) * -1)))) calc(.005 * .55) calc(157.5 + 0)) l c h/calc(calc(.025 / max(calc(.95 - .19), calc(calc(.95 - .19) * -1))) * 1))",
+    "--background-surface-75": "oklch(from oklch(.19 calc(.005 * .5) calc(157.5 + 0)) calc(l + .025 * 1) c h)",
+    "--blur-lg": "16px",
+    "--border": "oklch(from oklch(calc(.19 + calc(.95 - .19) * calc(1 - (1 - .9) * max(0,calc(calc((.5 - .5) / .5) * -1)))) calc(.005 * .55) calc(157.5 + 0)) l calc(c * .54) h/calc(2% + 20% * calc(calc(.05 + (1 - .05) * .5) * calc(.05 + (1 - .05) * .5))))",
+    "--border-destructive": "oklch(from oklch(.55 .14 clamp(12,calc(25 + (157.5 - 157.5) * .15),42)) l c h/30%)",
+    "--border-muted": "oklch(from oklch(calc(.19 + calc(.95 - .19) * calc(1 - (1 - .9) * max(0,calc(calc((.5 - .5) / .5) * -1)))) calc(.005 * .55) calc(157.5 + 0)) l calc(c * .54) h/calc(2% + 20% * calc(calc(.05 + (1 - .05) * .5) * calc(.05 + (1 - .05) * .5))))",
+    "--borderradius-lg": "8px",
+    "--borderradius-sm": "4px",
+    "--borderwidth-md": "4px",
+    "--brand-300": "155.1deg 100% 8%",
+    "--brand-400": "155.5deg 100% 9.6%",
+    "--brand-600": "154.9deg 59.5% 70%",
+    "--brand-hue-reference": "157.5",
+    "--button-fill-hover-delta": ".04",
+    "--card-padding-x-md": "1.5rem",
+    "--ch-0": "dark",
+    "--ch-13": "#5a1e02",
+    "--ch-14": "#161b22",
+    "--ch-16": "#2a2929",
+    "--ch-17": "#264f78",
+    "--ch-23": "#f78166",
+    "--ch-25": "#6e76811a",
+    "--ch-7": "#569cd6",
+    "--chart-2-fill": "#0f3058",
+    "--chart-3": "#f65cb6",
+    "--chart-4-fill": "#32275f",
+    "--chart-5-fill": "#541c15",
+    "--chart-6-fill": "#1f2c5c",
+    "--chart-7-fill": "#133929",
+    "--chart-out": "#f16a50",
+    "--chart-status-success-muted": "hsl(154.9deg 100% 19.2%)",
+    "--code-token-constant": "#3ecf8e",
+    "--code-token-string-expression": "#ffcda1",
+    "--code-token-variable": "#fff",
+    "--color-amber-100": "#1f1300",
+    "--color-amber-1000": "#ffcb47",
+    "--color-amber-300": "#341c00",
+    "--color-amber-600": "#573300",
+    "--color-blue-1000": "#369eff",
+    "--color-blue-400": "#102a4c",
+    "--color-blue-700": "#0a4481",
+    "--color-border": "oklch(from oklch(calc(.19 + calc(.95 - .19) * calc(1 - (1 - .9) * max(0,calc(calc((.5 - .5) / .5) * -1)))) calc(.005 * .55) calc(157.5 + 0)) l calc(c * .54) h/calc(2% + 20% * calc(calc(.05 + (1 - .05) * .5) * calc(.05 + (1 - .05) * .5))))",
+    "--color-brand-1100": "#33cc87",
+    "--color-brand-200": "hsl(162deg 100% 2%)",
+    "--color-brand-300": "hsl(155.1deg 100% 8%)",
+    "--color-brand-600": "hsl(154.9deg 59.5% 70%)",
+    "--color-crimson-100": "#1d1418",
+    "--color-crimson-1100": "#f76190",
+    "--color-crimson-1200": "#feecf4",
+    "--color-crimson-900": "#e93d82",
+    "--color-emerald-50": "oklch(97.9% .021 166.113)",
+    "--color-emerald-900": "oklch(37.8% .077 168.94)",
+    "--color-gold-100": "#171613",
+    "--color-gold-1000": "#a59071",
+    "--color-gold-1100": "#bfa888",
+    "--color-gold-200": "#1c1a15",
+    "--color-gold-400": "#2e2a21",
+    "--color-gold-500": "#353026",
+    "--color-gray-100": "#161616",
+    "--color-gray-1200": "#ededed",
+    "--color-gray-300": "#232323",
+    "--color-gray-400": "#282828",
+    "--color-gray-500": "#2e2e2e",
+    "--color-green-100": "#0d1912",
+    "--color-green-400": "#113123",
+    "--color-green-500": "#133929",
+    "--color-green-900": "#30a46c",
+    "--color-indigo-100": "#131620",
+    "--color-indigo-500": "#1f2c5c",
+    "--color-indigo-700": "#273e89",
+    "--color-neutral-100": "oklch(97% 0 0)",
+    "--color-neutral-300": "oklch(87% 0 0)",
+    "--color-neutral-500": "oklch(55.6% 0 0)",
+    "--color-neutral-600": "oklch(43.9% 0 0)",
+    "--color-neutral-900": "oklch(20.5% 0 0)",
+    "--color-orange-200": "#2b1400",
+    "--color-orange-600": "#5f2a06",
+    "--color-orange-800": "#943e00",
+    "--color-pink-100": "#1f121b",
+    "--color-pink-1100": "#f65cb6",
+    "--color-pink-500": "#501b3f",
+    "--color-pink-600": "#601d48",
+    "--color-purple-1000": "#9d5bd2",
+    "--color-purple-400": "#3a1e48",
+    "--color-purple-600": "#4e2667",
+    "--color-purple-800": "#7938b2",
+    "--color-red-1100": "#ff6369",
+    "--color-red-1200": "#feecee",
+    "--color-scale-1000": "#7e7e7e",
+    "--color-scale-200": "#1c1c1c",
+    "--color-slate-1100": "#9ba1a6",
+    "--color-slate-400": "#26292b",
+    "--color-slate-600": "#313538",
+    "--color-slate-900": "#697177",
+    "--color-violet-1100": "#9e8cfc",
+    "--color-violet-300": "#251e40",
+    "--color-violet-500": "#32275f",
+    "--color-white": "#fff",
+    "--color-yellow-1100": "#f0c000",
+    "--color-yellow-600": "#493c00",
+    "--color-yellow-800": "#705e00",
+    "--colors-black": "0deg 0% 0%",
+    "--colors-gray-dark-200": "0deg 0% 11%",
+    "--colors-gray-dark-400": "0deg 0% 15.7%",
+    "--colors-gray-dark-600": "0deg 0% 20.4%",
+    "--colors-gray-dark-800": "0deg 0% 31.4%",
+    "--colors-gray-dark-alpha-1000": "#ffffff73",
+    "--colors-gray-dark-alpha-1100": "#ffffff96",
+    "--colors-gray-dark-alpha-200": "#ffffff08",
+    "--colors-gray-light-1000": "0deg 0% 52.2%",
+    "--colors-gray-light-1100": "0deg 0% 43.5%",
+    "--colors-gray-light-400": "0deg 0% 92.9%",
+    "--colors-gray-light-700": "0deg 0% 85.9%",
+    "--colors-gray-light-900": "0deg 0% 56.1%",
+    "--colors-gray-light-alpha-1100": "#0000008f",
+    "--colors-gray-light-alpha-1200": "#000000e8",
+    "--colors-gray-light-alpha-200": "#00000008",
+    "--colors-gray-light-alpha-700": "#00000024",
+    "--colors-gray-light-alpha-800": "#00000038",
+    "--colors-slate-dark-300": "192deg 7.2% 13.5%",
+    "--colors-slate-dark-800": "206.7deg 5.6% 31.6%",
+    "--colors-slate-dark-alpha-1000": "#e7f3ff78",
+    "--colors-slate-light-1200": "201.8deg 24.4% 8.8%",
+    "--colors-slate-light-300": "210deg 16.7% 95.3%",
+    "--colors-slate-light-400": "210deg 11.8% 93.3%",
+    "--colors-slate-light-700": "210deg 11.1% 85.9%",
+    "--colors-slate-light-900": "205.7deg 6.3% 56.1%",
+    "--colors-slate-light-alpha-1000": "#00101b82",
+    "--colors-slate-light-alpha-1200": "#00080ced",
+    "--colors-slate-light-alpha-200": "#05294d08",
+    "--container-6xl": "72rem",
+    "--container-xl": "36rem",
+    "--control": "oklch(1 0 0/calc(calc(calc(.025 / max(calc(.95 - .19), calc(calc(.95 - .19) * -1))) * 1) * .65))",
+    "--datatable-headericon": "16px",
+    "--destructive": "oklch(.55 .14 clamp(12,calc(25 + (157.5 - 157.5) * .15),42))",
+    "--destructive-300": "7.5deg 51.3% 15.3%",
+    "--destructive-500": "7.9deg 71.6% 29%",
+    "--destructive-hue": "clamp(12,calc(25 + (157.5 - 157.5) * .15),42)",
+    "--ease-enter": "cubic-bezier(.16,1,.3,1)",
+    "--ease-in": "cubic-bezier(.4,0,1,1)",
+    "--elevation-3": "2",
+    "--font-family-body": "Inter",
+    "--font-mono": "\"Source Code Pro\",\"Source Code Pro Fallback\",Source Code Pro,Office Code Pro,Menlo,monospace,\"Source Code Pro\",ui-monospace,Menlo,monospace",
+    "--font-source-code-pro": "\"Source Code Pro\",\"Source Code Pro Fallback\",Source Code Pro,Office Code Pro,Menlo,monospace",
+    "--foreground-contrast": "oklch(.19 calc(.005 * .55) calc(157.5 + 0))",
+    "--foreground-light": "oklch(calc(.19 + calc(.95 - .19) * calc(.8 + (1 - .8) * max(0,calc((.5 - .5) / .5)) - .8 * .5 * max(0,calc(calc((.5 - .5) / .5) * -1)))) calc(.005 * .55) calc(157.5 + 0))",
+    "--foreground-lightness": ".95",
+    "--hue": "157.5",
+    "--icon-xs": "12px",
+    "--info-foreground": "oklch(from oklch(.7 .14 clamp(272,calc(288 + (157.5 - 157.5) * .15),302)) clamp(.12,calc((.62 - l) * 100),.99) calc(c * .08) h)",
+    "--info-hue": "clamp(272,calc(288 + (157.5 - 157.5) * .15),302)",
+    "--info-lightness": ".7",
+    "--muted": "oklch(from oklch(calc(.19 + calc(.95 - .19) * calc(1 - (1 - .9) * max(0,calc(calc((.5 - .5) / .5) * -1)))) calc(.005 * .55) calc(157.5 + 0)) l c h/calc(calc(.025 / max(calc(.95 - .19), calc(calc(.95 - .19) * -1))) * 1))",
+    "--muted-foreground-level": ".8",
+    "--popover": "oklch(from oklch(.19 calc(.005 * .5) calc(157.5 + 0)) calc(l + .025 * 1.5) c h)",
+    "--popover-foreground": "oklch(calc(.19 + calc(.95 - .19) * calc(1 - (1 - .9) * max(0,calc(calc((.5 - .5) / .5) * -1)))) calc(.005 * .55) calc(157.5 + 0))",
+    "--primary-solid-hover": "oklch(from oklch(.43627 .11 157.5) calc(l + .04 * calc(.95 - .19) / max(calc(.95 - .19), calc(calc(.95 - .19) * -1))) c h)",
+    "--radius-lg": ".666667rem",
+    "--radius-md": ".5rem",
+    "--radius-sm": ".333333rem",
+    "--secondary-400": "248.3deg 54.5% 25.9%",
+    "--sidebar-border": "oklch(from oklch(calc(.19 + calc(.95 - .19) * calc(1 - (1 - .9) * max(0,calc(calc((.5 - .5) / .5) * -1)))) calc(.005 * .55) calc(157.5 + 0)) l calc(c * .54) h/calc(2% + 20% * calc(calc(.05 + (1 - .05) * .5) * calc(.05 + (1 - .05) * .5))))",
+    "--sidebar-primary": "oklch(calc(.19 + calc(.95 - .19) * calc(1 - (1 - .9) * max(0,calc(calc((.5 - .5) / .5) * -1)))) calc(.005 * .55) calc(157.5 + 0))",
+    "--sizing-sm": "6px",
+    "--spacing-lg": "32px",
+    "--spacing-scale": "2px",
+    "--surface-hue": "calc(157.5 + 0)",
+    "--tertiary": "oklch(from oklch(calc(.19 + calc(.95 - .19) * calc(1 - (1 - .9) * max(0,calc(calc((.5 - .5) / .5) * -1)))) calc(.005 * .55) calc(157.5 + 0)) l c h/calc(calc(.025 / max(calc(.95 - .19), calc(calc(.95 - .19) * -1))) * 2))",
+    "--text-8xl": "5.875rem",
+    "--text-8xl--line-height": "1",
+    "--text-base--line-height": "calc(1.5 / 1)",
+    "--text-lg": "1rem",
+    "--text-sm": ".875rem",
+    "--tracking-wider": ".05em",
+    "--tw-drop-shadow-alpha": "100%",
+    "--tw-enter-blur": "0",
+    "--tw-enter-scale": "1",
+    "--tw-exit-translate-x": "0",
+    "--tw-exit-translate-y": "0",
+    "--tw-gradient-to-position": "100%",
+    "--tw-inset-ring-shadow": "0 0 #0000",
+    "--tw-inset-shadow": "0 0 #0000",
+    "--tw-ring-shadow": "0 0 #0000",
+    "--tw-scale-y": "1",
+    "--tw-shadow-alpha": "100%",
+    "--tw-space-x-reverse": "0",
+    "--tw-space-y-reverse": "0",
+    "--warning-200": "36.6deg 100% 8%",
+    "--warning-300": "32.3deg 100% 10.2%",
+    "--warning-foreground": "oklch(from oklch(.8 .14 clamp(65,calc(75 + (157.5 - 157.5) * .15),95)) clamp(.12,calc((.62 - l) * 100),.99) calc(c * .08) h)",
+    "--warning-hover": "oklch(from oklch(.8 .14 clamp(65,calc(75 + (157.5 - 157.5) * .15),95)) calc(l + .04 * calc(.95 - .19) / max(calc(.95 - .19), calc(calc(.95 - .19) * -1))) c h)"
+  }
+}
