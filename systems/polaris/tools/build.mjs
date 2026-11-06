@@ -24,7 +24,9 @@ const aliases=(()=>{
  }}
  return out;
 })();
-const source='/tmp/polaris-reference-source-20260925';
+// A checkout of the Polaris reference source (icons and licences), given as the first argument or
+// POLARIS_SOURCE. It was read from a fixed /tmp path, which any local user can create and fill.
+const source=process.argv[2]||process.env.POLARIS_SOURCE||null;
 const write=(p,v)=>fs.writeFileSync(p,typeof v==='string'?v:JSON.stringify(v,null,2));
 for(const dir of ['assets','tokens','raw','icons','licenses'])fs.mkdirSync(dir,{recursive:true});
 write('raw/polaris-themes.raw.json',t.themes);
@@ -109,7 +111,7 @@ write('tokens.json',studio);
 const flat=Object.assign({},...Object.values(t.themes.light));
 write('assets/tokens.json',flat);
 write('tokens/light.css',`:root{\n${Object.entries(flat).map(([k,v])=>`  --p-${k}: ${v};`).join('\n')}\n}`);
-if(fs.existsSync(source)){
+if(source&&fs.existsSync(source)){
  for(const f of fs.readdirSync(source+'/polaris-icons/icons'))if(f.endsWith('.svg')||f.endsWith('.yml'))fs.copyFileSync(source+'/polaris-icons/icons/'+f,'icons/'+f);
  fs.copyFileSync(source+'/LICENSE.md','licenses/SHOPIFY-LICENSE.md');
  const iconLicense=source+'/polaris-icons/LICENSE.md';if(fs.existsSync(iconLicense))fs.copyFileSync(iconLicense,'licenses/ICONS-LICENSE.md');
