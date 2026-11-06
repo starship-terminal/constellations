@@ -1,4 +1,4 @@
-"""Store Playwright captures as 256-colour PNGs in screenshots/.
+"""Store Playwright or in-app browser captures (PNG or JPEG) as 256-colour PNGs in screenshots/.
 
 usage: python3 tools/capture/quantize.py RAW_DIR
 
@@ -31,10 +31,12 @@ for name, ps in parts.items():
     print('stitched', name, sheet.size)
 
 n = 0
-for f in sorted(RAW.glob('*.png')):
+# The in-app browser hands back JPEG bytes, so JPEG originals are converted the same way; the
+# committed copy is always name.png. (Ported from metabase's quantize.py.)
+for f in sorted(p for p in RAW.iterdir() if p.suffix.lower() in {'.png', '.jpg', '.jpeg'}):
     if '.part' in f.name:
         continue
     im = Image.open(f).convert('RGB')
-    im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)
+    im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / (f.stem + '.png'), optimize=True)
     n += 1
 print(n, 'screenshots ->', OUT)
