@@ -65,6 +65,9 @@ export async function POST(req: Request) {
     return NextResponse.json({
       ...result,
       reply: result.reply ? markdown(result.reply, { base: "chat", remoteImages: false }) : "",
+      // The model's own markdown, which the page sends back as history;
+      // `reply` is rendered HTML for display only.
+      raw: result.reply || "",
       results: await enrich(result.results),
     });
   } catch (e) {
