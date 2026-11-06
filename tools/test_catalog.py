@@ -1241,6 +1241,16 @@ class EnvTest(unittest.TestCase):
             self.assertEqual(catalog.refero_media.load_env(("DS_CHAT_MODEL",), env_file=env), ["DS_CHAT_MODEL"])
             self.assertEqual(catalog.refero_media.load_env(("DS_CHAT_MODEL",), env_file=env), [])   # set wins
 
+    def test_importing_refero_media_does_not_read_dotenv(self):
+        import importlib.util
+        from unittest import mock
+        spec = importlib.util.spec_from_file_location(
+            "refero_media_fresh", Path(catalog.__file__).resolve().parent / "refero" / "refero_media.py")
+        mod = importlib.util.module_from_spec(spec)
+        with mock.patch("pathlib.Path.is_file", return_value=True), \
+                mock.patch("pathlib.Path.read_text", side_effect=AssertionError("read .env on import")):
+            spec.loader.exec_module(mod)
+
     def test_subprocesses_get_a_minimal_env(self):
         import os
         import subprocess

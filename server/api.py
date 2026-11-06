@@ -56,7 +56,10 @@ ROOT = _HERE.parents[1]
 def _dotenv() -> None:
     spec = importlib.util.spec_from_file_location(
         "refero_media", ROOT / "tools" / "refero" / "refero_media.py")
-    spec.loader.exec_module(importlib.util.module_from_spec(spec))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    # Only what the API server reads: the allowed hosts and the chat key and model.
+    mod.load_env(("DESIGN_SYSTEMS_ALLOWED_HOSTS", "ANTHROPIC_API_KEY", "DS_CHAT_MODEL"))
 
 
 def _server():
