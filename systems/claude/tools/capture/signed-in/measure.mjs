@@ -475,11 +475,8 @@ async function measureSnap(browser, label, specs, out) {
   } catch (e) {
     log('  ! open failed', label, e.message.split('\n')[0]);
     await ctx.close();
-    return;
+    return false;
   }
-  // Only now that the copy is open are its earlier readings dropped, so a copy that fails to open
-  // keeps the states it had.
-  for (const [c, name] of RESET.get(label) || []) delete c.states[name];
   const rest = { x: meta.w - 2, y: Math.round(meta.h / 2) };
   await page.evaluate(() => window.__saveScroll());
   const resetPage = async () => {
@@ -617,6 +614,7 @@ async function measureSnap(browser, label, specs, out) {
     }
   }
   await ctx.close();
+  return true;
 }
 
 // ---------------------------------------------------------------- main
@@ -644,7 +642,7 @@ out._meta = {
 out.components ??= {};
 fs.mkdirSync(CROPS, { recursive: true });
 
-// Build the per-snapshot job lists, and the states each copy resets once it has opened.
+// Build the per-snapshot job lists, and the states each copy re-measures (moved aside while it runs).
 const bySnap = new Map();
 const RESET = new Map();
 for (const spec of SPECS) {
@@ -663,6 +661,9 @@ for (const spec of SPECS) {
 
 const browser = await chromium.launch();
 const queue = [...bySnap.keys()].sort();
+// Earlier readings of the states a copy in flight is re-measuring, by component. save() writes them
+// wherever no new reading exists yet, so while workers run, the file on disk never loses one.
+const earlier = new Map();
 const save = () => {
   // Stable order: components in SPECS order, states in the order the spec lists them, dark then light.
   const comps = {};
@@ -670,8 +671,10 @@ const save = () => {
     const c = out.components[spec.key];
     const names = jobsFor(spec).map((j) => j.state);
     const ordered = {};
-    for (const n of names) if (c.states[n]) ordered[n] = c.states[n];
-    for (const n of names) { const l = n === 'default' ? 'light' : `light-${n}`; if (c.states[l]) ordered[l] = c.states[l]; }
+    const prev = earlier.get(c) || {};
+    const pick = (n) => c.states[n] || prev[n];
+    for (const n of names) if (pick(n)) ordered[n] = pick(n);
+    for (const n of names) { const l = n === 'default' ? 'light' : `light-${n}`; if (pick(l)) ordered[l] = pick(l); }
     comps[spec.key] = { ...c, states: ordered };
   }
   fs.writeFileSync(OUT, JSON.stringify({ _meta: out._meta, components: comps }, null, 1) + '\n');
@@ -680,7 +683,27 @@ await Promise.all(Array.from({ length: Math.min(CONC, queue.length) }, async () 
   while (queue.length) {
     const label = queue.shift();
     log('open', label, `(${bySnap.get(label).length} jobs x 2 themes)`);
-    await measureSnap(browser, label, bySnap.get(label), out);
+    // This copy's earlier readings move to `earlier` for the run: replaced once the copy opened and
+    // was measured, put back if it never opened or the run threw, so neither a failed open nor
+    // another worker's save can erase what an earlier run measured.
+    const kept = [];
+    for (const [c, n] of RESET.get(label) || []) {
+      if (!(n in c.states)) continue;
+      if (!earlier.has(c)) earlier.set(c, {});
+      earlier.get(c)[n] = c.states[n];
+      kept.push([c, n]);
+      delete c.states[n];
+    }
+    let opened = false;
+    try {
+      opened = await measureSnap(browser, label, bySnap.get(label), out);
+    } catch (e) {
+      log('  ! measuring failed', label, String(e.message || e).split('\n')[0]);
+    }
+    for (const [c, n] of kept) {
+      if (!opened) c.states[n] ??= earlier.get(c)[n];
+      delete earlier.get(c)[n];
+    }
     save();
   }
 }));
