@@ -4,7 +4,7 @@ Studio has no login. Keep the listener on loopback and publish it only through t
 
 ## Exact private origin
 
-Local development accepts only `localhost`, `127.0.0.1` and `[::1]`. A server operator can set `DESIGN_RESEARCH_PRIVATE_ORIGIN` to one exact HTTPS Tailscale hostname and port, without a trailing slash, such as `https://research.tail123.ts.net:8108`. This permits that HTTP Host in addition to loopback. Other hosts, ports and lookalikes remain blocked; forwarded headers never grant access. Mutation requests must match the configured HTTPS origin. An invalid setting leaves the app loopback-only.
+Local development accepts only `localhost`, `127.0.0.1` and `[::1]`. A server operator can set `DESIGN_RESEARCH_PRIVATE_ORIGIN` to one exact HTTPS Tailscale hostname and port, without a trailing slash, such as `https://research.tail123.ts.net:8108`. This permits that HTTP Host in addition to loopback. Other hosts, ports and lookalikes remain blocked; forwarded headers never grant access. Mutation requests through that hostname must carry an `Origin` header matching the configured HTTPS origin; one without `Origin` is refused. Loopback requests without `Origin`, such as `curl` on the server itself, are still accepted. An invalid setting leaves the app loopback-only.
 
 The hostname check provides DNS rebinding protection. Tailscale provides network access control. A permitted hostname alone does not authenticate clients, so the listener must remain `127.0.0.1` and the Serve configuration must remain tailnet-only.
 
