@@ -90,6 +90,10 @@ if(t!=='dark'&&t!=='light'&&t!=='system')t='dark';
 if(t==='system')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
 document.documentElement.dataset.theme=t;
 }catch(e){document.documentElement.dataset.theme='dark'}})();`;
+/** A storage event that may have changed the theme: its key, or a cleared store. */
+export function themeStorageChanged(key: string | null): boolean {
+  return key === THEME_KEY || key === null;
+}
 function storedTheme(): Theme {
   const value = localStorage.getItem(THEME_KEY);
   return value === "light" || value === "system" ? value : "dark";
@@ -107,7 +111,7 @@ export function AppearanceBootstrap() {
     const update = () => apply(storedTheme());
     // Another tab changed the theme in Settings.
     const onStorage = (event: StorageEvent) => {
-      if (event.key === THEME_KEY || event.key === null) update();
+      if (themeStorageChanged(event.key)) update();
     };
     const media = matchMedia("(prefers-color-scheme: dark)");
     update();
@@ -129,8 +133,7 @@ export function AppearanceSettings() {
     setTheme(storedTheme());
     const sync = () => setIcon(appIcon()?.get() || "flat");
     const onStorage = (event: StorageEvent) => {
-      if (event.key === THEME_KEY || event.key === null)
-        setTheme(storedTheme());
+      if (themeStorageChanged(event.key)) setTheme(storedTheme());
     };
     sync();
     document.addEventListener("ds-icon-change", sync);
