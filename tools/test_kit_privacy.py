@@ -132,6 +132,32 @@ class JavaScriptHalves(unittest.TestCase):
             self.assertEqual(got, ['url(…), linear-gradient(red, blue)', 'url("data:image/svg+xml,abc")', 'url(#clip)', 'auto', 3,
                                    'url(…) no-repeat', 'url(…)', 'url(…), none'], path)
 
+    def test_recorded_page_urls_keep_only_origin_and_route_words(self):
+        cases = {
+            "https://claude.ai/chat/1f2e3d4c-aaaa-bbbb?q=secret#m": "https://claude.ai/chat/<id>",
+            "https://app.example.test/project/My-Secret-Plan": "https://app.example.test/project/<id>",
+            "https://app.example.test/team/eng/issue/ENG-123/fix-the-login-for-acme": "https://app.example.test/team/<id>/issue/<id>/<id>",
+            "https://app.example.test/new-chat": "https://app.example.test/new-chat",
+            "https://app.example.test/": "https://app.example.test/",
+            "https://x.test/cb?code=abc#access_token=def": "https://x.test/cb",
+            "file:///Users/someone/raw/home.html": "file:///<local file>",
+            "not a url": "<url>",
+            "https://app.example.test/project/my-plan": "https://app.example.test/project/<id>",
+            "https://app.example.test/u/someone/settings": "https://app.example.test/u/<id>/settings",
+            "https://claude.ai/chat/<id>": "https://claude.ai/chat/<id>",            # a second pass changes nothing
+        }
+        mod = (HERE / "kit/capture/safe-url.mjs").as_uri()
+        got = self.node(f"import({json.dumps(mod)}).then(({{ safeUrl }}) => "
+                        f"console.log(JSON.stringify({json.dumps(list(cases))}.map(safeUrl))))")
+        self.assertEqual(got, list(cases.values()))
+        for rel in ("signed-in/measure.mjs", "layout.mjs", "electron/shot.mjs", "public/measure.mjs"):
+            src = (HERE / "kit/capture" / rel).read_text()
+            self.assertIn("safe-url.mjs", src, rel)                  # each writer of a raw/ URL uses it
+            self.assertIn("safeUrl(", src, rel)
+        # a partial rerun cleans what it keeps from the last run too
+        self.assertIn("url: v.url && safeUrl(v.url)", (HERE / "kit/capture/signed-in/measure.mjs").read_text())
+        self.assertIn("out._meta.storyUrl = safeUrl(out._meta.storyUrl)", (HERE / "kit/capture/public/measure.mjs").read_text())
+
 
 if __name__ == "__main__":
     unittest.main()
