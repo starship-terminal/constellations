@@ -42,10 +42,18 @@ const { browser, context } = await launch();
 for (const [key, p] of Object.entries(PAGES)) {
   const page = await context.newPage();
   const bodies = new Map();
-  page.on('response', async (r) => {
+  // Each body is read asynchronously; the reads are awaited after the page opens (settled() below), so a
+  // sheet still in flight when the fixed wait ends is not silently left out.
+  const pending = [];
+  page.on('response', (r) => {
     if (r.request().resourceType() !== 'stylesheet') return;
-    try { bodies.set(r.url().split('?')[0], await r.text()); } catch { /* body gone */ }
+    pending.push(r.text().then((t) => { bodies.set(r.url().split('?')[0], t); }, () => { /* body gone */ }));
   });
+  const settled = async () => {
+    await Promise.allSettled(pending);
+    const hrefs = await page.evaluate(() => [...document.styleSheets].map((s) => s.href).filter(Boolean));
+    return [...new Set(hrefs.map((h) => h.split('?')[0]).filter((h) => !bodies.has(h)))];
+  };
   console.log('open', key);
   try {
     await open(page, BASE + p, { wait: 7000 });
@@ -60,6 +68,8 @@ for (const [key, p] of Object.entries(PAGES)) {
   if (key === 'lesson-math' && await gate.count()) { await gate.click().catch(() => {}); await page.waitForTimeout(4000); }
 
   // every rule inside a prefers-reduced-motion condition, in Gauth's sheets and the inline ones
+  const unread = await settled();
+  if (unread.length) console.log('  ! stylesheets the page loaded but whose body was not read:', unread.join(', '));
   const inline = await page.evaluate(() => [...document.styleSheets].filter((s) => !s.href).map((s, i) => { try { return ['inline-' + i, [...s.cssRules].map((r) => r.cssText).join('\n')]; } catch { return null; } }).filter(Boolean));
   const sheets = [...bodies.entries()].map(([u, t]) => [u.replace(/^https?:\/\/[^/]+/, '').replace(/^.*\/static\/css\//, 'css/'), t]).concat(inline);
   const rules = await page.evaluate((sheets) => {

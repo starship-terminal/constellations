@@ -62,12 +62,14 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {
   page = await context.newPage();
   page.setDefaultTimeout(8000);
   sheetText = [];
-  page.on('response', async (r) => { if (r.request().resourceType() === 'stylesheet') { try { sheetText.push(await r.text()); } catch { /* body gone */ } } });
+  const pending = [];
+  page.on('response', (r) => { if (r.request().resourceType() === 'stylesheet') pending.push(r.text().then((t) => { sheetText.push(t); }, () => { /* body gone */ })); });
   cdp = await context.newCDPSession(page);
   await cdp.send('DOM.enable');
   await cdp.send('CSS.enable');
   log('open', key, mobile ? '(mobile)' : '');
   await open(page, BASE + URLS[key], { wait, promo });
+  await Promise.allSettled(pending);   // moduleClass() reads these bodies; a sheet still in flight would be missed
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
 }
 
