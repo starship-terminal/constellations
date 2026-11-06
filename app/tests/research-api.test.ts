@@ -18,6 +18,8 @@ vi.mock("@/server/db", async (original) => ({
 }));
 vi.mock("@/server/sources", () => ({
   getReference: async (id: string) => (id === "systems:test" ? { id } : null),
+  getReferenceSummary: async (id: string) =>
+    id === "systems:test" ? { id } : null,
 }));
 vi.mock("@/server/research/settings", () => ({
   readSettings: async () => ({
