@@ -27,8 +27,8 @@ def sanitize(value):
     if isinstance(value,list): return [sanitize(item) for item in value]
     if isinstance(value,dict): return {sanitize(key):sanitize(item) for key,item in value.items()}
     return value
-def main(source):
-    accepted=json.loads((ROOT/'tools/accepted.json').read_text())
+def main(source,root=ROOT):
+    accepted=json.loads((root/'tools/accepted.json').read_text())
     manifest=[]
     for name,route in sorted(accepted.items()):
         # The source export for the dark account home was saved under a light name; its reading
@@ -39,7 +39,7 @@ def main(source):
         im=Image.open(image); size=im.size; fmt=im.format
         # Native pixels, no resizing. Palette copies are layout evidence only.
         rgb,_=masked(im,f'screenshots/{name}.png')
-        rgb.quantize(colors=256).save(ROOT/'screenshots'/(name+'.png'))
+        rgb.quantize(colors=256).save(root/'screenshots'/(name+'.png'))
         data['url']=re.sub(r'/[0-9a-f]{32}(?=/|$)','/:account',data.get('url',''))
         extra=source/route/(original+'.extra.json')
         if extra.exists(): data['extra']=json.loads(extra.read_text())
@@ -50,9 +50,9 @@ def main(source):
         data['components']=[c for c in data['components'] if c['rect']['width']>2 and c['rect']['height']>2]
         for c in data['components']:
             c['label']=c.pop('text',c.get('label',''))
-        (ROOT/'raw'/(name+'.json')).write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n')
+        (root/'raw'/(name+'.json')).write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n')
         manifest.append({'name':name,'route':route,'viewport':data['viewport'],'png':data['png'],'time':data['time'],'review':'Accepted after visual inspection of intended visible state; ordinary viewport boundaries do not assert whole-page coverage.'})
-    (ROOT/'raw/capture-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+    (root/'raw/capture-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     print(f'Imported {len(manifest)} reviewed captures')
 
 if __name__=='__main__':
