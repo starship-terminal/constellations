@@ -17,11 +17,13 @@ whichever shape the provider takes.
 from __future__ import annotations
 
 import importlib.util
+import ipaddress
 import json
 import os
 import urllib.error
 import urllib.request
 from pathlib import Path
+from urllib.parse import urlparse
 
 _lib_spec = importlib.util.spec_from_file_location(
     "agent_library", Path(__file__).resolve().parent / "library.py")
@@ -88,19 +90,70 @@ def _headers(cfg: dict, key_header: str | None = None) -> dict:
     return out
 
 
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    """Refuse every redirect: a provider URL comes from the caller, and a 3xx
+    must not walk the request (with its key) to a host nobody checked."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+
+_opener = urllib.request.build_opener(_NoRedirect)
+
+
+def _is_loopback(host: str) -> bool:
+    host = host.lower()
+    if host == "localhost" or host.endswith(".localhost"):
+        return True
+    try:
+        return ipaddress.ip_address(host).is_loopback
+    except ValueError:
+        return False
+
+
+def check_url(url: str) -> None:
+    """Only https anywhere, or plain http to this machine (a self-hosted model).
+    Anything else (file:, ftp:, http to another host) is refused before a
+    socket opens, so the endpoint cannot be used to read local files or reach
+    internal plain-http services."""
+    try:
+        u = urlparse(url)
+        host = u.hostname or ""
+    except ValueError:
+        raise ProviderError("invalid provider URL")
+    if not host:
+        raise ProviderError("invalid provider URL")
+    if u.scheme == "https" or (u.scheme == "http" and _is_loopback(host)):
+        return
+    raise ProviderError("provider URL must be https (http only for localhost)")
+
+
+def _same_origin(a: str, b: str) -> bool:
+    try:
+        ua, ub = urlparse(a), urlparse(b)
+        return (ua.scheme, ua.hostname, ua.port) == (ub.scheme, ub.hostname, ub.port)
+    except ValueError:
+        return False
+
+
 def _request(method: str, url: str, cfg: dict, body: dict | None, timeout: int,
              key_header: str | None = None) -> dict:
+    """Errors name the URL and status only: the upstream body is never echoed
+    back, so the endpoint cannot be used to read another server's responses."""
+    check_url(url)
     data = json.dumps(body).encode() if body is not None else None
     req = urllib.request.Request(url, data=data, method=method, headers={
         "content-type": "application/json", **_headers(cfg, key_header)})
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as r:
+        with _opener.open(req, timeout=timeout) as r:
             return json.loads(r.read())
     except urllib.error.HTTPError as e:
-        detail = e.read()[:400].decode(errors="replace")
-        raise ProviderError(f"{url} answered HTTP {e.code}: {detail}")
-    except (urllib.error.URLError, TimeoutError, OSError) as e:
-        raise ProviderError(f"{url} unreachable: {e}")
+        e.close()
+        if 300 <= e.code < 400:
+            raise ProviderError(f"{url} answered HTTP {e.code} (redirects are not followed)")
+        raise ProviderError(f"{url} answered HTTP {e.code}")
+    except (urllib.error.URLError, TimeoutError, OSError):
+        raise ProviderError(f"{url} unreachable")
 
 
 # ---------------------------------------------------------------- models list
@@ -128,6 +181,10 @@ def list_models(cfg: dict) -> dict:
         url = f"{base}/v1/models"
     else:
         url = cfg.get("models_url") or f"{base}/models"
+        # models_url exists for Gemini, whose list lives beside its
+        # OpenAI-compatible base; it may not point anywhere base_url does not.
+        if not _same_origin(url, base):
+            return {"ok": False, "error": "models_url must share base_url's origin"}
     try:
         resp = _request("GET", url, cfg, None, MODELS_TIMEOUT, cfg.get("key_header"))
     except ProviderError as e:
