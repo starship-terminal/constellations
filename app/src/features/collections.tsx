@@ -6,6 +6,7 @@ import {
 } from "./collection-media";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   ArrowLeft,
   ArrowRight,
@@ -16,6 +17,7 @@ import {
   Pencil,
   Plus,
   Search,
+  Trash2,
   X,
 } from "lucide-react";
 import type { LibraryItem } from "@/contracts/library";
@@ -194,7 +196,21 @@ export function CollectionDetailPage({ id }: { id: string }) {
     [inspecting, setInspecting] = useState<LibraryItem | null>(null),
     [busy, setBusy] = useState(false),
     [saved, setSaved] = useState(false),
+    [confirmDelete, setConfirmDelete] = useState(false),
+    [deleteError, setDeleteError] = useState(""),
     [localError, setError] = useState("");
+  const router = useRouter();
+  async function deleteCollection() {
+    setBusy(true);
+    setDeleteError("");
+    try {
+      await api(`/api/collections/${id}`, { method: "DELETE" });
+      router.push("/collections");
+    } catch (e) {
+      setDeleteError((e as Error).message);
+      setBusy(false);
+    }
+  }
   useEffect(() => {
     if (data) {
       setNotes(data.collection.notes);
@@ -284,6 +300,17 @@ export function CollectionDetailPage({ id }: { id: string }) {
             <Download size={14} />
             Export
           </a>
+          <button
+            className="pill"
+            onClick={() => {
+              setDeleteError("");
+              setConfirmDelete(true);
+            }}
+            aria-label="Delete collection"
+          >
+            <Trash2 size={14} />
+            Delete
+          </button>
           <button className="primary" onClick={() => setAdding(true)}>
             <Plus size={16} />
             Add reference
@@ -389,6 +416,40 @@ export function CollectionDetailPage({ id }: { id: string }) {
             Save name
           </button>
         </form>
+      </Modal>
+      <Modal
+        open={confirmDelete}
+        onOpenChange={(open) => {
+          if (!busy) setConfirmDelete(open);
+        }}
+        title="Delete collection?"
+        description={`“${data.collection.name}” and its saved screens, packages and notes will be removed. The references stay in the library.`}
+      >
+        <div className="dialog-form">
+          {deleteError && (
+            <p role="alert" className="error-text">
+              {deleteError}
+            </p>
+          )}
+          <div className="inline-actions">
+            <button
+              className="pill"
+              onClick={() => setConfirmDelete(false)}
+              disabled={busy}
+              autoFocus
+            >
+              Keep collection
+            </button>
+            <button
+              className="primary"
+              onClick={deleteCollection}
+              disabled={busy}
+            >
+              <Trash2 size={14} />
+              {busy ? "Deleting…" : "Delete collection"}
+            </button>
+          </div>
+        </div>
       </Modal>
       {adding && (
         <AddReferences

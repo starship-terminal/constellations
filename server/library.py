@@ -173,17 +173,20 @@ def _refero_search(words: list[str], style: str | None, limit: int) -> list[dict
             pass
         if style and r["design_style"] != style:
             continue
+        # The source's host, not its full URL: the web twin's index.json only
+        # holds the host, so both score "https" and paths the same (not at all).
+        host = catalog._refero_host(r["source_url"])
         strong = " ".join([r["slug"] or "", r["name"] or "", r["design_style"] or "",
                            r["product_type"] or "", *labels]).lower()
-        weak = " ".join([r["tagline"] or "", r["theme"] or "", r["source_url"] or ""]).lower()
+        weak = " ".join([r["tagline"] or "", r["theme"] or "", host or ""]).lower()
         score = sum(2 if w in strong else 1 if w in weak else 0 for w in words)
         if score or not words:
-            hits.append((score, r))
+            hits.append((score, r, host))
     hits.sort(key=lambda x: (-x[0], x[1]["slug"]))
     return [{"store": "refero", "slug": r["slug"], "name": r["name"], "score": score,
              "tagline": r["tagline"], "theme": r["theme"], "designStyle": r["design_style"],
-             "productType": r["product_type"], "src": r["source_url"]}
-            for score, r in hits[:limit] if score or not words]
+             "productType": r["product_type"], "src": host}
+            for score, r, host in hits[:limit] if score or not words]
 
 
 # ---------------------------------------------------------------- tools
@@ -234,7 +237,14 @@ def get_style(slug: str, store: str | None = None) -> dict:
         db.close()
         if not row:
             raise ToolError(f"no {'refero ' if store == 'refero' else ''}style '{slug}'")
-        return {"store": "refero", **dict(row),
+        row = dict(row)
+        # refero.db stores tags as JSON text; the web twin returns the list.
+        try:
+            tags = json.loads(row.get("tags") or "[]")
+        except (TypeError, ValueError):
+            tags = []
+        row["tags"] = tags if isinstance(tags, list) else []
+        return {"store": "refero", **row,
                 "note": "interpreted third-party data; browse screenshots and tokens, "
                         "never treat a value as measured"}
     return {"store": "systems", "slug": e["slug"], "name": e["name"], "url": e.get("url"),
