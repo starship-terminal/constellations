@@ -2,6 +2,8 @@
 web/lib/chat/library.ts is its twin; a fix here lands there too. Run with
 `make test`."""
 import importlib.util
+import os
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -70,6 +72,48 @@ class ReadDocPagingTest(unittest.TestCase):
     def test_empty_path_means_the_readme(self):
         self.assertEqual(library.call("read_doc", {"slug": "linear", "path": ""})["path"],
                          "systems/linear/README.md")
+
+
+class FileBoundsTest(unittest.TestCase):
+    """A fake checkout in a temp dir: one package with a symlink out, a symlink
+    into raw/, private folders and a symlinked screenshot."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        root = Path(self.tmp.name).resolve()
+        pkg = root / "systems" / "fake"
+        for rel in ("README.md", "raw/reading.json", "fonts/f.css", ".hidden/a.md",
+                    "tools/capture/out/x.md", "screenshots/a.png", "screenshots/sub/b.png"):
+            (pkg / rel).parent.mkdir(parents=True, exist_ok=True)
+            (pkg / rel).write_text("x")
+        (root / "secret.md").write_text("outside")
+        os.symlink("../../secret.md", pkg / "out.md")
+        os.symlink("raw/reading.json", pkg / "alias.json")
+        os.symlink("../../../secret.md", pkg / "screenshots" / "c.png")
+        self.saved = library.ROOT
+        library.ROOT = root
+        self.entry = {"slug": "fake"}
+
+    def tearDown(self):
+        library.ROOT = self.saved
+        self.tmp.cleanup()
+
+    def test_symlink_out_of_the_package_is_refused(self):
+        with self.assertRaisesRegex(library.ToolError, "leaves the package"):
+            library._bounded(self.entry, "out.md")
+        with self.assertRaisesRegex(library.ToolError, "leaves the package"):
+            library._bounded(self.entry, "screenshots/c.png")
+
+    def test_private_folders_are_refused_under_any_name(self):
+        for rel in ("raw/reading.json", "alias.json", "fonts/f.css", ".hidden/a.md",
+                    "tools/capture/out/x.md", "./raw/../raw/reading.json"):
+            with self.assertRaisesRegex(library.ToolError, "not readable", msg=rel):
+                library._bounded(self.entry, rel)
+        self.assertEqual(library._bounded(self.entry, "README.md").name, "README.md")
+
+    def test_walk_skips_symlinks_and_sorts_by_path(self):
+        files = library._walk_files(library._pkg_dir(self.entry) / "screenshots")
+        self.assertEqual([p.name for p in files], ["a.png", "b.png"])
 
 
 if __name__ == "__main__":
