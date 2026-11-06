@@ -184,9 +184,19 @@ class Resolver:
         return value
 
 
-@functools.lru_cache(maxsize=None)
 def resolver_for(tokens_path: str) -> Resolver:
+    """The Resolver of a tokens file, cached by the file's modification time and size, so a
+    long-running server sees an edited file instead of the copy it read first."""
+    st = (ROOT / tokens_path).stat()
+    return _resolver(tokens_path, st.st_mtime_ns, st.st_size)
+
+
+@functools.lru_cache(maxsize=256)
+def _resolver(tokens_path: str, mtime_ns: int, size: int) -> Resolver:
     return Resolver(json.loads((ROOT / tokens_path).read_text()))
+
+
+resolver_for.cache_clear = _resolver.cache_clear
 
 
 def swatches(system: dict) -> dict[str, list[dict]]:
@@ -1179,6 +1189,12 @@ def check() -> list[str]:
         if not icon or not (ROOT / icon).exists():
             problems.append(f"{slug}: preview.icon {icon} does not exist; run `python3 tools/fetch_icon.py {slug}`")
         problems += palette_problems(slug, s["preview"], s.get("themes", []))
+        try:
+            resolver_for(s["tokens"])
+        except (OSError, ValueError) as e:     # missing (reported above) or not JSON: the token checks cannot run
+            if (ROOT / s["tokens"]).exists():
+                problems.append(f"{slug}: tokens {s['tokens']} cannot be read ({e.__class__.__name__}: {e})")
+            continue
         for theme, roles in swatches(s).items():
             for sw in roles:
                 if not isinstance(sw["value"], str):
@@ -1533,6 +1549,11 @@ def build_refero() -> Path | None:
               f"{len(ambiguous)} business names are not unique", file=sys.stderr)
     index = []
     written = set()
+    # Each slug becomes a file name: refuse a path-like one before writing anything.
+    for folder, meta, _ in styles:
+        slug = meta.get("slug") or folder.name
+        if not REFERO_SLUG.fullmatch(str(slug)):
+            raise SystemExit(f"refero: {folder.name}: slug {slug!r} is not lowercase letters, digits and hyphens")
     for folder, meta, ds in styles:
         slug = meta.get("slug") or folder.name
         atomic_write(ent_dir / f"{slug}.json",
@@ -1551,6 +1572,9 @@ def build_refero() -> Path | None:
                                   "styles": index},
                                  separators=(",", ":")))
     return out
+
+
+REFERO_SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 
 
 def build() -> Path:
@@ -1589,7 +1613,8 @@ def build() -> Path:
     attach_thumbs(all_shots)
     build_exports(systems)
     out = DATA / "data.json"
-    atomic_write(out, json.dumps({"root": str(ROOT), "categories": catalog.get("categories", {}),
+    # No absolute checkout path: nothing reads one, and web/data is served under /media/data/.
+    atomic_write(out, json.dumps({"categories": catalog.get("categories", {}),
                                   "systems": systems},
                                  separators=(",", ":")))
     build_refero()

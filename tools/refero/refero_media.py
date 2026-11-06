@@ -13,7 +13,6 @@ Slugs are already URL-safe (fetch.slugify), so neither side URL-encodes them.
 """
 
 import os
-import posixpath
 import urllib.parse
 from pathlib import Path
 
@@ -111,23 +110,3 @@ def default_media_root():
     return Path(
         os.environ.get("DESIGN_SYSTEMS_MEDIA")
         or "~/services/design-systems/media/refero").expanduser()
-
-
-def media_file(url_path, media_root=None):
-    """The file a /refero-media/<kind>/<name> URL maps to, or None.
-
-    Mirrors repo_file's guards: the path is unquoted and normalised, `..` can
-    never climb out, and the resolved file must sit under the media root."""
-    root = Path(media_root) if media_root else default_media_root()
-    clean = urllib.parse.unquote(url_path.split("?", 1)[0].split("#", 1)[0])
-    norm = posixpath.normpath(clean)
-    prefix = "/refero-media/"
-    if not norm.startswith(prefix):
-        return None
-    rel = norm[len(prefix):]
-    if not rel or rel.startswith("/"):
-        return None
-    target = (root / rel).resolve()
-    if target != root.resolve() and root.resolve() not in target.parents:
-        return None
-    return target
