@@ -21,6 +21,24 @@ export const SCOPES = { agents: ['[data-component="root"]'], ide: ['.monaco-work
 const btn = (page, label) => page.locator(`button[aria-label="${label}"]:visible`).first();
 const navRow = (page, label) => page.locator('.ui-sidebar-menu-button-trigger').filter({ hasText: new RegExp(`^${label.replace(/[&]/g, '\\$&')}$`) }).first();
 const wait = (page, ms = 600) => page.waitForTimeout(ms);
+// A shot that clicks a Delete control only to show its confirmation must see that confirmation before it goes
+// on. If none opens, the click may have deleted something: the whole capture stops (shots.mjs reads `abort`).
+async function confirmOpened(page, what) {
+  const dialog = page.locator('[role=alertdialog], [role=dialog]').filter({ visible: true }).filter({ has: page.locator('button', { hasText: /^Cancel$/ }) });
+  if (await dialog.last().waitFor({ state: 'visible', timeout: 3000 }).then(() => true, () => false)) return;
+  throw Object.assign(new Error(`no confirmation dialog after ${what}: check that nothing was deleted`), { abort: true });
+}
+// The delete-confirmation shot opens Delete on one automation only: the capture's own, made by hand in
+// Automations and named exactly SCRATCH_AUTOMATION, never one of the owner's (an `Untitled` row can be theirs).
+// It must be the only row whose name is that text, or the shot stops before anything is clicked.
+export const SCRATCH_AUTOMATION = process.env.SCRATCH_AUTOMATION || 'Design capture scratch';
+async function scratchAutomation(page) {
+  const rows = page.locator('.ui-automations-list-table__row');
+  const names = await rows.evaluateAll(rs => rs.map(r => (r.innerText || '').split('\n')[0].trim()));
+  const hits = names.flatMap((n, i) => (n === SCRATCH_AUTOMATION ? [i] : []));
+  if (hits.length !== 1) throw new Error(`${hits.length} automations named ${SCRATCH_AUTOMATION}; need exactly one, made for the capture`);
+  return rows.nth(hits[0]);
+}
 async function esc(page, n = 2) { for (let i = 0; i < n; i++) { await page.keyboard.press('Escape'); await wait(page, 200); } }
 
 const OPEN = '[data-component$="-backdrop"], [role=menu], [role=dialog], [role=listbox], [role=tooltip], [role=alertdialog]';
@@ -220,9 +238,9 @@ export const SHOTS = [
     parts: { 'template-card': nth('.ui-automations-template-card', 0) } },
   { name: 'delete-confirmation', window: A, optional: true,
     reveal: async ({ page }) => { await navRow(page, 'Automations').click(); await wait(page, 1600);
-      const row = page.locator('.ui-automations-list-table__row').filter({ hasText: /^Untitled/ }).first(); await row.hover();
+      const row = await scratchAutomation(page); await row.hover();
       const bs = row.locator('button'); await bs.nth((await bs.count()) - 1).click(); await wait(page, 600);
-      await page.locator('[role=menuitem]').filter({ hasText: /^Delete/ }).first().click(); await wait(page, 1000); },
+      await page.locator('[role=menuitem]').filter({ hasText: /^Delete/ }).first().click(); await confirmOpened(page, `Delete on the ${SCRATCH_AUTOMATION} automation`); await wait(page, 1000); },
     parts: { 'confirm-dialog': page => page.locator('[role=dialog], [role=alertdialog]').last(), 'button-danger': page => page.locator('[role=dialog] button, [role=alertdialog] button').filter({ hasText: /^Delete/ }).first(),
       'button-quiet': page => page.locator('[role=dialog] button, [role=alertdialog] button').filter({ hasText: /^Cancel$/ }).first() },
     after: async ({ page }) => { await page.locator('[role=dialog] button').filter({ hasText: /^Cancel$/ }).first().click().catch(() => {}); } },

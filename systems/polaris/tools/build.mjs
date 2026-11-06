@@ -4,6 +4,13 @@ import crypto from 'node:crypto';
 import {createRequire} from 'node:module';
 import {build} from 'esbuild';
 import {fileURLToPath} from 'node:url';
+// A checkout of the Polaris reference source (icons and licences), given as the first argument or
+// POLARIS_SOURCE, resolved against the folder the build was started from. It was read from a fixed
+// /tmp path, which any local user can create and fill.
+const sourceArg=process.argv[2]||process.env.POLARIS_SOURCE;
+const source=sourceArg?path.resolve(sourceArg):null;
+if(source&&!fs.existsSync(path.join(source,'polaris-icons/icons'))){console.error(`no polaris-icons/icons under ${source}`);process.exit(2)}
+if(!source)console.log('no reference source given (argument or POLARIS_SOURCE): icons/ and licences/ stay as committed');
 // Paths below are relative to the package folder; dependencies live in tools/node_modules.
 process.chdir(path.join(path.dirname(fileURLToPath(import.meta.url)),'..'));
 const require=createRequire(import.meta.url), t=require('@shopify/polaris-tokens');
@@ -24,7 +31,6 @@ const aliases=(()=>{
  }}
  return out;
 })();
-const source='/tmp/polaris-reference-source-20260925';
 const write=(p,v)=>fs.writeFileSync(p,typeof v==='string'?v:JSON.stringify(v,null,2));
 for(const dir of ['assets','tokens','raw','icons','licenses'])fs.mkdirSync(dir,{recursive:true});
 write('raw/polaris-themes.raw.json',t.themes);
@@ -109,7 +115,7 @@ write('tokens.json',studio);
 const flat=Object.assign({},...Object.values(t.themes.light));
 write('assets/tokens.json',flat);
 write('tokens/light.css',`:root{\n${Object.entries(flat).map(([k,v])=>`  --p-${k}: ${v};`).join('\n')}\n}`);
-if(fs.existsSync(source)){
+if(source){
  for(const f of fs.readdirSync(source+'/polaris-icons/icons'))if(f.endsWith('.svg')||f.endsWith('.yml'))fs.copyFileSync(source+'/polaris-icons/icons/'+f,'icons/'+f);
  fs.copyFileSync(source+'/LICENSE.md','licenses/SHOPIFY-LICENSE.md');
  const iconLicense=source+'/polaris-icons/LICENSE.md';if(fs.existsSync(iconLicense))fs.copyFileSync(iconLicense,'licenses/ICONS-LICENSE.md');

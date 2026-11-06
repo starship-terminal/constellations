@@ -286,7 +286,9 @@ a.card {
     padding: 80px 20px 60px;
   }
   .reader {
-    grid-template-columns: 1fr;
+    /* minmax(0, …): a plain 1fr keeps the prose's min-content width, so a long
+       line of code widened the column past a phone screen and clipped it. */
+    grid-template-columns: minmax(0, 1fr);
     gap: 28px;
   }
   .sidebar {

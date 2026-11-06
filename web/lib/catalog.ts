@@ -92,7 +92,6 @@ export interface DesignSystem {
   layoutGaps: Record<string, string>;
 }
 export interface GalleryData {
-  root: string;
   categories: Record<string, string>;
   systems: DesignSystem[];
 }

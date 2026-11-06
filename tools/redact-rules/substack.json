@@ -1,0 +1,10 @@
+{
+  "_note": "No rectangles: nothing in substack is masked.",
+  "families": [],
+  "ocr": {
+    "email_allow": [
+      "^etuned@gmail\\.com$"
+    ]
+  },
+  "_email_allow_why": "Owner approved on 2026-11-06 (email is public): these exact addresses, as OCR reads them in the listed images, may show. screenshots/dark/14-settings-sheet-grouped-icons.png (an OCR read cut at the left)."
+}

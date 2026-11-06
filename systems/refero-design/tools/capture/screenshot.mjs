@@ -73,13 +73,20 @@ export async function screenshotWithMetadata(page, options, requested = {}) {
     metadata.actual = actual;
     metadata.dimensionCheck.expected = expected;
     metadata.dimensionCheck.basis = mode === 'viewport' ? configuredViewport ? 'configuredViewport' : 'actualInnerViewport' : mode;
-    metadata.png = pngDimensions(await page.screenshot({ ...options, type: 'png' }));
+    // The PNG is taken into memory and written only once it passes, so a shot of the wrong size never
+    // sits at options.path where quantize.py would publish it.
+    const { path: _path, ...shotOptions } = options;
+    const bytes = await page.screenshot({ ...shotOptions, type: 'png' });
+    metadata.png = pngDimensions(bytes);
     // A fractional CSS edge can round in either direction in the browser.
     const matches = Math.abs(metadata.png.width - expected.width) <= 1 && Math.abs(metadata.png.height - expected.height) <= 1;
     metadata.dimensionCheck.status = matches ? 'pass' : 'fail';
     if (!matches) throw new Error(`Screenshot dimension mismatch: PNG ${metadata.png.width}x${metadata.png.height}, expected ${expected.width}x${expected.height}`);
+    fs.writeFileSync(options.path, bytes);
     return metadata;
   } catch (error) {
+    // An older PNG at this path no longer matches its record, which now says fail.
+    fs.rmSync(options.path, { force: true });
     metadata.dimensionCheck.status = 'fail';
     metadata.dimensionCheck.error = error.message;
     throw error;

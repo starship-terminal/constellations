@@ -6,7 +6,7 @@ Objects keep the /refero-media/<kind>/<slug><ext> contract as their keys, so
 same address catalog.py emits as `mediaBase` + `local` paths.
 
 Credentials come from the environment or the repo's gitignored .env
-(refero_media loads it on import):
+(read through refero_media.load_env):
 
     R2_ACCOUNT_ID      account id (endpoint is https://<id>.r2.cloudflarestorage.com)
     R2_ACCESS_KEY_ID   R2 API token's access key id
@@ -100,6 +100,8 @@ def upload(endpoint, bucket, key, path, creds):
 
 
 def main():
+    refero_media.load_env(("R2_ACCOUNT_ID", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_BUCKET",
+                           "DESIGN_SYSTEMS_MEDIA"))
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--bucket", default=os.environ.get("R2_BUCKET"),

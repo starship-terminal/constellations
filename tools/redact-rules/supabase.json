@@ -10,7 +10,10 @@
       "@example\\.com$",
       "^chenwentongotficial@gmall\\.com$",
       "^name2@exampie\\.com$",
-      "^ial@gmail\\.com$"
+      "^ial@gmail\\.com$",
+      "^chenweniongofficial@gmail\\.com$",
+      "^chenwentongfinetuned@gmail\\.com$"
     ]
-  }
+  },
+  "_email_allow_why": "Owner approved on 2026-11-06 (email is public): these exact addresses, as OCR reads them in the listed images, may show. screenshots/app-dark-mobile-team.png (OCR reads of the team list)."
 }

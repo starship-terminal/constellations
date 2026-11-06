@@ -224,5 +224,23 @@ class HandoffPromptTest(unittest.TestCase):
         self.assertIn("$DESIGN_SYSTEMS_HOME/systems/linear/screenshots/", prompt)
 
 
+class CatalogReadsTest(unittest.TestCase):
+    def test_search_reads_the_catalog_a_fixed_number_of_times(self):
+        real, calls = library.catalog.load_catalog, []
+
+        def counting():
+            calls.append(1)
+            return real()
+
+        library.catalog.load_catalog = counting
+        try:
+            hits = library.search_styles("", store="systems", limit=20)["hits"]
+        finally:
+            library.catalog.load_catalog = real
+        self.assertEqual(len(hits), 20)
+        # catalog.find reads it once and search_styles once, whatever the hit count.
+        self.assertLessEqual(len(calls), 2)
+
+
 if __name__ == "__main__":
     unittest.main()

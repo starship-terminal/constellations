@@ -617,11 +617,16 @@ async function measureSnap(browser, label, specs, out) {
 // ---------------------------------------------------------------- main
 
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
-const labels = [...new Set(SPECS.flatMap((s) => jobsFor(s).map((j) => j.snap)))].filter((l) => !ONLY.length || ONLY.includes(l));
+const ALL_LABELS = [...new Set(SPECS.flatMap((s) => jobsFor(s).map((j) => j.snap)))];
+// A mistyped label used to measure nothing and stamp the run's date as NaN-NaN-NaN.
+const unknown = ONLY.filter((l) => !ALL_LABELS.includes(l));
+if (unknown.length) { console.error(`no spec reads ${unknown.join(', ')}; labels are listed in shots.tsv`); process.exit(2); }
+const labels = ALL_LABELS.filter((l) => !ONLY.length || ONLY.includes(l));
 out._meta = {
   // The day the copies were taken (the oldest copy's local date), not the day this script ran. A
   // re-render from re-redacted copies is not a new reading: READ_DATE=YYYY-MM-DD keeps the original day.
-  read: process.env.READ_DATE || (() => { const t = new Date(Math.min(...labels.map((l) => fs.statSync(path.join(SNAPS, `${l}.html`)).mtimeMs))); return `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(t.getDate()).padStart(2, '0')}`; })(),
+  // A run over some of the copies keeps the date of the last full reading.
+  read: process.env.READ_DATE || (labels.length < ALL_LABELS.length && out._meta && out._meta.read) || (() => { const t = new Date(Math.min(...labels.map((l) => fs.statSync(path.join(SNAPS, `${l}.html`)).mtimeMs))); return `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, '0')}-${String(t.getDate()).padStart(2, '0')}`; })(),
   source: 'Static, redacted page copies of the signed-in chatgpt.com app (tools/capture/signed-in/snapshot.js), loaded from file:// in headless Chromium; the stylesheets and icon sprites are inlined in each copy, fonts and a few images come from OpenAI\'s asset hosts through a local cache. Nothing was requested from chatgpt.com itself.',
   viewport: '1440x900 (the mobile-* snapshots 390x844), deviceScaleFactor 2',
   themes: 'Each copy was captured in the dark theme with the blue accent. Dark states have plain names; light states (`light`, `light-<state>`) were read from the same DOM with every data-theme="dark" set to light. Every state records `theme` and `snapshot`.',
