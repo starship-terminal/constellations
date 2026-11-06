@@ -87,22 +87,28 @@ test("regeneration keeps the latest user ID and text while omitting following as
   });
 });
 
-test.each(["user", "assistant"])(
-  "%s Markdown images render only alt text, never remote image requests",
-  () => {
+// User and assistant messages share one ReactMarkdown renderer with this img
+// override (features/research.tsx Message), so one case covers both roles.
+test("Markdown images render only alt text, never remote image requests", () => {
+  for (const [source, text] of [
+    [
+      "A reference: ![A calm layout](https://external.example/track?secret=prompt)",
+      "[Image: A calm layout]",
+    ],
+    ["![](https://external.example/track?secret=prompt)", "[Image omitted]"],
+  ]) {
     const markup = renderToStaticMarkup(
       createElement(ReactMarkdown, {
         components: { img: MarkdownImageAsText },
-        children:
-          "A reference: ![A calm layout](https://external.example/track?secret=prompt)",
+        children: source,
       }),
     );
-    expect(markup).toContain("[Image: A calm layout]");
+    expect(markup).toContain(text);
     expect(markup).not.toContain("<img");
     expect(markup).not.toContain("external.example");
     expect(markup).not.toContain("secret=prompt");
-  },
-);
+  }
+});
 
 test("comparison preserves each color, type and spacing value's evidence", () => {
   const detail = {

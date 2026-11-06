@@ -433,12 +433,26 @@ class ScanTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             (Path(d) / "README.md").write_text("fine\nSigned in as Jane Doe\n")
             (Path(d) / "raw.json").write_text('{"u": "https://cdn/x.png?X-Amz-Signature=abc"}')
-            (Path(d) / "shot.png").write_bytes(b"Jane Doe")
+            (Path(d) / "shot.png").write_bytes(b"\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR Jane Doe")
             hits = catalog.scan(Path(d), {"replace": [["jane\\s+doe", "i", "A User"]]})
         self.assertEqual(len(hits), 2)
         self.assertTrue(hits[0].endswith("README.md:2: redaction pattern 1"))
         self.assertTrue(hits[1].endswith("raw.json:1: signed URL"))
         self.assertFalse(any("Jane" in h for h in hits))
+
+    def test_reads_every_text_file_whatever_its_extension(self):
+        import tempfile
+        names = ["view.tsx", "app.ts", "row.jsx", "run.sh", "Main.swift", "layout.xml", "Info.plist",
+                 "pyproject.toml", "Makefile", "notes", "dump.har", "page.HTM"]
+        with tempfile.TemporaryDirectory() as d:
+            for n in names:
+                (Path(d) / n).write_text("x\nJane Doe\n")
+            (Path(d) / "font.woff2").write_bytes(b"wOF2\x00\x01Jane Doe")     # binary: skipped
+            (Path(d) / ".git").mkdir()
+            (Path(d) / ".git" / "COMMIT_EDITMSG").write_text("Jane Doe")      # git's own files: skipped
+            hits = catalog.scan(Path(d), {"replace": [["jane\\s+doe", "i", "A User"]]})
+        self.assertEqual(sorted(Path(h.split(":")[0]).name for h in hits), sorted(names))
+        self.assertTrue(all(h.endswith(":2: redaction pattern 1") for h in hits))
 
 
 class ScanFailsLoudlyTest(unittest.TestCase):
