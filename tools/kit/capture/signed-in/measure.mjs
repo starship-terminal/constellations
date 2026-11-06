@@ -29,6 +29,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { chromium, REF, RAW, CROPS, SNAPS, SCROLL, PYTHON, metaOf, newContext, openSnap, setLight } from './lib.mjs';
+import { safeUrl } from '../safe-url.mjs';
 
 if (!SNAPS) { console.error('SNAPS=<snapshot dir> is required'); process.exit(2); }
 const OUT = path.join(RAW, 'components-computed.json');
@@ -424,7 +425,7 @@ out._meta = {
     other: 'active / selected / checked / open / typed / enabled / ... are other elements or snapshots captured in that state',
   },
   tokens: '`vars` lists every var(--x) named in the classes of the element and its first descendants, resolved in that state\'s theme.',
-  snapshots: { ...(out._meta && out._meta.snapshots), ...Object.fromEntries(labels.map((l) => { const m = metaOf(l); return [l, { url: m.url.replace(/\/(chat|project|artifact|cowork)\/[\w-]+/, '/$1/<id>'), title: m.title, w: m.w, h: m.h, ...(SCROLL[l] ? { scroll: SCROLL[l] } : {}) }]; })) },
+  snapshots: { ...(out._meta && out._meta.snapshots), ...Object.fromEntries(labels.map((l) => { const m = metaOf(l); return [l, { url: safeUrl(m.url), w: m.w, h: m.h, ...(SCROLL[l] ? { scroll: SCROLL[l] } : {}) }]; })) },
 };
 out.components ??= {};
 fs.mkdirSync(CROPS, { recursive: true });
