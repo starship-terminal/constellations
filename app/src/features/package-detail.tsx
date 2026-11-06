@@ -52,6 +52,7 @@ import {
   mediaDetailHref,
   packageDocumentLink,
   packageFileHref,
+  safeDecode,
 } from "./package-detail-data";
 import styles from "./package-detail.module.css";
 import {
@@ -167,7 +168,7 @@ function PackageDetail({ slug }: { slug: string }) {
     const hash = window.location.hash;
     if (hash)
       requestAnimationFrame(() =>
-        document.getElementById(decodeHash(hash.slice(1)))?.scrollIntoView(),
+        document.getElementById(safeDecode(hash.slice(1)))?.scrollIntoView(),
       );
   }, [params.get("file"), tab]);
   if (loading)
@@ -825,13 +826,6 @@ export function PackageMarkdown({
     </article>
   );
 }
-function decodeHash(value: string): string {
-  try {
-    return decodeURIComponent(value);
-  } catch {
-    return value;
-  }
-}
 function headingId(children: unknown): string {
   return String(children)
     .toLowerCase()
@@ -851,7 +845,7 @@ function PackageDocumentView({ slug, path }: { slug: string; path: string }) {
     const hash = window.location.hash;
     if (data && hash)
       requestAnimationFrame(() =>
-        document.getElementById(decodeHash(hash.slice(1)))?.scrollIntoView(),
+        document.getElementById(safeDecode(hash.slice(1)))?.scrollIntoView(),
       );
   }, [data, path]);
   if (loading) return <Spinner label="Opening package file…" />;
