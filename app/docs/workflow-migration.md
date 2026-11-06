@@ -11,8 +11,8 @@ The new app keeps the durable Studio research and collection model while restori
 | Scorecard overview and criterion heatmap                | `src/app/scorecard/page.tsx`, `src/features/knowledge/scorecard.tsx`            | `scorecard/criteria.json`, dated audit snapshots                                   |
 | Individual package audit and evidence                   | `src/app/scorecard/[slug]/page.tsx`                                             | Latest audit, platform wording, capture/review dates and criterion evidence        |
 | Rubric and audit history                                | `src/app/scorecard/criteria/`, `src/app/scorecard/changelog/`                   | Every platform's wording and every audit snapshot                                  |
-| Complete package guidance in research                   | `readPackageDocument`, `listPackageDocuments` in `src/server/research/agent.ts` | Bounded package document readers shared with the Files UI                          |
-| Any token group in research                             | `getPackageTokens`, `src/server/research/evidence.ts`                           | Original `tokens.json`, raw values/evidence plus resolved aliases                  |
+| Complete package guidance in research                   | `readPackageDocument`, `listPackageDocuments` in `src/server/sources/files.ts` (registered in `agent.ts`) | Bounded package document readers shared with the Files UI                          |
+| Any token group in research                             | `getPackageTokens` calling `packageTokens` in `src/server/research/evidence.ts` | Original `tokens.json`, raw values/evidence plus resolved aliases                  |
 | Selected visual evidence                                | `listReferenceMedia`, `viewReferenceMedia`                                      | Normalized reference media; only hydrated local raster images enter model requests |
 | Coding-agent handoff                                    | `handoffPrompt` plus research result copy action                                | Chosen reference's canonical paths and evidence/rights guidance                    |
 

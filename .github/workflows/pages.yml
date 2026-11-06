@@ -64,7 +64,7 @@ jobs:
           STATICRYPT_PASSWORD: ${{ secrets.STATICRYPT_PASSWORD }}
         run: |
           if [ -z "$STATICRYPT_PASSWORD" ]; then
-            echo "::error::Add the STATICRYPT_PASSWORD repository secret (gh secret set STATICRYPT_PASSWORD -R c-wenlong/design-systems)"; exit 1
+            echo "::error::Add the STATICRYPT_PASSWORD repository secret (gh secret set STATICRYPT_PASSWORD -R c-wenlong/designs)"; exit 1
           fi
           npx -y staticrypt@3.5.4 site -r -d encrypted --remember 30 \
             --template-title "Design systems" \

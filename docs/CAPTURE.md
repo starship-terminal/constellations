@@ -55,8 +55,8 @@ how it was captured. The `extract-style` skill in the quiver-hub
    then rerun the checks after writing those grades.
 
 The Playwright scripts take `PLAYWRIGHT` as the path to any Playwright
-install's `index.mjs`. The package READMEs show a path inside self-learn;
-any install works. The signed-in scripts take `SNAPS` as the folder of page
+install's `index.mjs`. The package READMEs show the `~/.design-systems/pw`
+install; any install works. The signed-in scripts take `SNAPS` as the folder of page
 copies. The `.mjs` scripts run their inline Pillow calls through `python3`;
 set `PYTHON` when the interpreter with the dependencies below lives
 elsewhere (an activated `.venv` resolves bare `python3` to itself).
@@ -274,8 +274,8 @@ folder that holds nothing of the owner's.
   setting.
 - **Keep the folder and what the agents wrote.** It is small, and the
   package READMEs of `cursor-desktop`, `devin-desktop`, `grokbot-desktop`,
-  `codex-desktop`, `superset-desktop`, `orca-desktop`, `opencode-desktop`
-  and `conductor-desktop` name it in their re-capture steps: some scripts
+  `codex-desktop`, `superset-desktop`, `orca-desktop`, `opencode-desktop`,
+  `conductor-desktop` and `capy-desktop` name it in their re-capture steps: some scripts
   reopen the test chat or the `hello.txt` an earlier run wrote. Delete an
   app's subfolder only when its package no longer needs it (Zed's was
   removed on 2026-10-25), and say so in that package's README.

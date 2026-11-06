@@ -385,7 +385,7 @@ python3 tools/catalog.py scan systems/linear --redact ~/.design-systems/linear-r
 python3 tools/redact_images.py check systems/linear --patterns ~/.design-systems/linear-redact.json --rules tools/redact-rules/linear.json
 ```
 
-`build_library.py` and `build_guide.py` need Pillow and Markdown (`pip install pillow markdown`). `build_tokens.py` needs only the standard library. A new capture starts with `tools/capture/signed-in/snapshot.js` pasted into the signed-in page and `unsnap.py` on each result; `shots.tsv` lists the copies.
+`build_guide.py` needs Pillow and Markdown (`pip install pillow markdown`); `build_library.py` needs Pillow. `build_tokens.py` needs only the standard library. A new capture starts with `tools/capture/signed-in/snapshot.js` pasted into the signed-in page and `unsnap.py` on each result; `shots.tsv` lists the copies.
 
 ## Import into Figma, Paper or another vector editor
 

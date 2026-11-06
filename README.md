@@ -1,13 +1,156 @@
-# design-systems
+<p align="center">
+  <img src="docs/assets/logo/logo-rounded.png" alt="design-systems logo" width="160">
+</p>
 
-One library of design styles captured from real products, so any project
-(and any coding agent working in it) can say "make it look like Linear" and
-find measured tokens, components and screenshots in one place instead of in
-whichever project first needed them.
+<h1 align="center">
+design-systems
+</h1>
 
-Each product is a self-contained package under [systems/](systems). Every
-package has design tokens, a page that renders them, a component inventory
-and screenshots of the real product, and says where each value came from.
+<p align="center">
+  <strong>Measured tokens, components and screenshots from real products, so any project can say "make it look like Linear".</strong>
+</p>
+
+<p align="center">
+  <a href="https://github.com/c-wenlong/designs/actions/workflows/check.yml"><img src="https://github.com/c-wenlong/designs/actions/workflows/check.yml/badge.svg" alt="Check"></a>
+  <a href="https://github.com/c-wenlong/designs/actions/workflows/pages.yml"><img src="https://github.com/c-wenlong/designs/actions/workflows/pages.yml/badge.svg" alt="Pages"></a>
+  <img src="https://img.shields.io/badge/tools-stdlib--only-brightgreen.svg" alt="stdlib only">
+  <img src="https://img.shields.io/badge/repo-private-red.svg" alt="Private repo">
+</p>
+
+<p align="center">
+  <a href="#setup">Setup</a> ·
+  <a href="#quick-start">Quick start</a> ·
+  <a href="#catalog">Catalog</a> ·
+  <a href="#using-a-style">Using a style</a> ·
+  <a href="#for-agents">For agents</a> ·
+  <a href="#how-it-works">How it works</a> ·
+  <a href="#development">Development</a>
+</p>
+
+---
+
+**design-systems** is one library of design styles captured from real
+products, so any project (and any coding agent working in it) can say "make
+it look like Linear" and find measured tokens, components and screenshots in
+one place instead of in whichever project first needed them.
+
+It holds two stores of styles at two confidence levels:
+
+- [systems/](systems): the packages, one per product (47 today), measured
+  from real captures. Every value carries an evidence label saying where it
+  came from. These are the only values to design from.
+- [refero/](refero): a snapshot of [styles.refero.design](https://styles.refero.design)
+  (1,342 styles): third-party interpreted data at lower confidence. Breadth
+  for inspiration, never the source for a value a package holds.
+
+Each package is self-contained: design tokens, a page that renders them, a
+component inventory, screenshots of the real product, and the builders that
+produced all of it, so a fix goes through the builders rather than a hand
+edit. The library is read three ways: by a person through the gallery app
+(`make dev`), by a script or agent through [catalog.json](catalog.json) and
+the read-only MCP server, and by a terminal through the `ds` CLI. The repo
+(`c-wenlong/designs`) stays private; [docs/RIGHTS.md](docs/RIGHTS.md) says
+why.
+
+```
+$ python3 tools/catalog.py find dark chat
+
+codex-desktop   4  Desktop coding-agent app (OpenAI's Codex for macOS, Electron): a 52px navigation rail beside a …
+                  tags: desktop, electron, macos, coding, ai, agent, chat, sidebar, rail, dense, … | themes: light, dark | systems/codex-desktop/README.md
+grokbot-desktop 4  Desktop chat app for AI agents in Electron: a near-black or white window with a darker sidebar of …
+                  tags: desktop, electron, macos, coding, ai, agent, chat, sidebar, per-item-colour, … | themes: light, dark | systems/grokbot-desktop/README.md
+opencode-desktop 4  Desktop coding agent in Electron: a near-black or white rounded panel under a title bar of session tabs, …
+                  tags: desktop, electron, macos, coding, ai, agent, chat, tabs, dense, ramps, … | themes: light, dark | systems/opencode-desktop/README.md
+```
+
+## Why a library?
+
+Without one, the same style gets re-measured in every project that wants it:
+
+- Tokens get copied out of whichever repo needed the style first, drift
+  included, and the copies never reconcile.
+- Screenshots get read as measurements. Most shots here are 256-colour PNGs
+  to keep the repo small; none of them is a measurement.
+- A value with no provenance cannot be checked later, so nothing can be
+  trusted twice.
+- An agent asked to "make it look like Linear" guesses from memory instead
+  of reading the product's own values.
+
+This repo keeps every captured style in one standard package, keeps the
+evidence next to the values, and puts the same front door on it for a
+person (the gallery), a script ([catalog.json](catalog.json)) and a coding
+agent (the MCP server and `ds`).
+
+## Features
+
+| Area | What you get |
+| --- | --- |
+| **Packages** | 47 products under [systems/](systems), all in one layout: `tokens.json` (W3C DTCG, Tokens Studio multi-set), a generated `DESIGN.md`, a `style-guide.html` rendering every token, `components.md`, `patterns.md`, screenshots, and the tools that rebuild it |
+| **Evidence** | Every token says where it came from: a measured CSS read, a reconstruction, or a reviewer's call ([docs/EVIDENCE.md](docs/EVIDENCE.md)) |
+| **Gallery** | One card per package with cover, icon, colour roles and fonts; per-package pages running Screenshots, Brief, Colors, Type, Spacing, Shape, Components, Icons, Health and Files (sections a package has nothing for are hidden); search over names, uses, tags and themes |
+| **Refero** | 1,342 styles labelled by product type and design style, browsed beside the packages but never trusted over them |
+| **Scorecard** | Every package graded against the rubric in [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md), in the wording for its platform (web, mobile or desktop), shown as a heatmap with the evidence behind each grade |
+| **Agent layer** | Read-only MCP tools over stdio or hosted HTTP, a `ds` terminal client, a chat UI inside the app, and `handoff_prompt` for passing a chosen style to a coding agent |
+| **Capture kit** | [tools/kit/](tools/kit): public-web, signed-in-web and native-iOS (iPhone Mirroring) capture pipelines plus the token and style-guide builders a new package starts from |
+| **Freshness** | Brief, Health, `DESIGN.md` and the catalog table below are generated; `make check` fails on a stale one, so the docs cannot drift from the data |
+
+## Setup
+
+**Requirements:** Git LFS installed *before* cloning (every image, archive
+and font is an LFS object), `python3`, and `uv` for `make setup`. The apps
+need Node 22.13+ and pnpm 10. Capturing additionally needs Playwright, a
+Chromium browser for the signed-in kit, and an iPhone on the same iCloud
+account for the native kit; [docs/CAPTURE.md](docs/CAPTURE.md) has the
+detail. Pillow, Markdown, numpy and Node-based linting are only needed by
+the builders that ask for them (see `make setup`).
+
+```bash
+brew install git-lfs && git lfs install   # once per machine, before the clone
+git clone git@github.com:c-wenlong/designs.git design-systems
+cd design-systems
+make setup                                # .venv with the site builder's and capture tools' deps
+cp .env.example .env                      # fill in what you use; .env is gitignored
+```
+
+`.env` values and what uses them:
+
+| Variable | Used by |
+| --- | --- |
+| `STATICRYPT_PASSWORD` | The Pages workflow, encrypting every page of the built docs site |
+| `ANTHROPIC_API_KEY` | `tools/refero/classify.py`; the gallery chat's fallback provider (stays server-side) |
+| `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_BUCKET` | `tools/refero/upload_r2.py`, the media mirror upload |
+| `DS_CHAT_MODEL` | Optional: the model the gallery chat calls when the browser has none saved |
+| `DESIGN_SYSTEMS_REPO` | Optional: this checkout's path, when the app cannot find it by itself |
+| `DESIGN_SYSTEMS_MEDIA`, `DESIGN_SYSTEMS_MEDIA_BASE` | Optional: where mirrored refero media lives, and the base URL for catalog media absent from the local mirror |
+
+## Quick start
+
+```bash
+make dev                     # build web/data/, serve the app on 127.0.0.1:8800, open the gallery and scorecard
+make dev PORT=9000           # another port; scripts/dev.sh --no-open skips the browser
+make help                    # every target
+
+pnpm --dir app install --frozen-lockfile && pnpm --dir app dev   # the newer research app on :8845
+
+python3 tools/catalog.py find dark dense                 # rank packages by free text
+python3 tools/catalog.py export linear                   # every token as CSS custom properties
+python3 tools/catalog.py export linear --format json     # or JSON, aliases resolved
+python3 tools/catalog.py contrast systems/linear/tokens.json --theme light FG:BG...
+python3 tools/catalog.py scan systems/linear --redact ~/.design-systems/cleanup-redact.json
+python3 tools/fetch_icon.py linear                       # refresh a package's app icon from its site
+
+make check                   # the freshness gate: catalog, refero stores, Brief, DESIGN.md, scorecard, Health
+make grade                   # re-grade scripted criteria, rewrite every Health + the catalog table below
+make brief                   # regenerate every package README's Brief
+make design-md               # regenerate every package's DESIGN.md (runs make brief first)
+make docs                    # build docs/ into the static site/
+make test                    # tools' unit tests + every package's own tools/test_*.py
+make clean                   # remove generated output
+
+python3 server/mcp.py        # stdio MCP server: the library as tools for a coding agent
+ds find "dense sidebar"      # the ds CLI against a hosted /api/mcp (see For agents)
+ds export linear -g light    # one token group; also ds doc, ds media, ds handoff, ds status
+```
 
 ## Browse it
 
@@ -25,23 +168,23 @@ If the app is already running it only opens the tabs; `--port N` picks
 another port and `--no-open` skips the browser. The app has three parts:
 
 - **Gallery**: one card per package with a cover screenshot, its product icon,
-  its colour roles and fonts. Each package's page reads in the same order, from a rail on the left:
-  Overview (its Brief), Colors, Typography, Spacing, Corner radius, Shadows,
-  Components, Assets (icons and screenshots), then Health and Files (every
-  Markdown file, rendered). The scales are the ones its DESIGN.md holds, and a
-  section the package has nothing for says "Not captured" with the reason.
-  Links take the form `#/<slug>/<section>`. Search matches names, uses, tags
-  and themes; press `/` to focus it. "Copy agent prompt" copies instructions
-  that point an agent at that package.
+  its colour roles and fonts. Each package's page at `/gallery/<slug>` reads
+  in the same order, from a rail on the left: Screenshots, Brief, Colors,
+  Type, Spacing, Shape (radii and shadows), Components, Icons, Health and
+  Files (every Markdown file, rendered). A section the package has nothing
+  for is left out of the page and the rail. Each section is an anchor, so
+  `/gallery/<slug>#colors` links straight to it. Search on the gallery
+  index matches names, uses, tags and themes; press `/` to focus it.
 - **Scorecard**: every package graded against the checklist in
   [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md), in the wording for its
   platform (web, mobile or desktop), as a heatmap with the evidence
-  behind each grade. It is generated from [scorecard/](scorecard) by
-  [tools/scorecard.py](tools/scorecard.py).
+  behind each grade. The app reads [scorecard/](scorecard) live on each
+  request; [tools/scorecard.py](tools/scorecard.py) only writes the
+  published site's copy under `docs/scorecard/`.
 - **Docs**: the files under [docs/](docs), rendered.
 
 The library docs, without the gallery, are also published to GitHub Pages at
-https://c-wenlong.github.io/design-systems/ by [tools/site.py](tools/site.py),
+https://c-wenlong.github.io/designs/ by [tools/site.py](tools/site.py),
 with every page encrypted by
 StatiCrypt, so it needs the password in the `STATICRYPT_PASSWORD` repository
 secret. `make help` lists the other targets (`make check` validates
@@ -134,32 +277,148 @@ search tags, how it was captured, and where it was copied from.
    a reconstruction are not the same thing ([docs/EVIDENCE.md](docs/EVIDENCE.md)).
 
 To point a coding agent in another project at a style, give it the package
-path and tell it to read the entry file and `tokens.json` first — or connect
-it to the library directly: `python3 server/mcp.py` is a stdio MCP server,
-and on a hosted deployment `<site>/api/mcp` is the same read-only tools over
-remote (streamable-HTTP) MCP, with `curl -fsSL <site>/api/install.sh | sh`
-installing the `ds` CLI (`ds find`, `ds export`, `ds doc`, `ds handoff`).
-The app's Settings > For agents section prints both.
-To build a design system for an app of your own, start from
+path and tell it to read the entry file and `tokens.json` first, or connect
+it to the library directly (see [For agents](#for-agents)). To build a
+design system for an app of your own, start from
 [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md): it lists the five layers a
 complete system needs and how the captures here compare. The tokens
 are W3C DTCG in Tokens Studio's multi-set layout, which Figma (through Tokens
 Studio) and Style Dictionary both read.
+
+## For agents
+
+One read-only tool layer, [server/library.py](server/library.py), backs
+every agent surface, so an agent sees the library exactly as the gallery
+does:
+
+| Tool | What it returns |
+| --- | --- |
+| `search_styles` | Styles ranked by free-text words across both stores (measured `systems/` preferred, `refero/` for breadth), with platform and design-style filters |
+| `get_style` | One style's distilled catalog entry: what it is for, its themes, palette preview, which files hold the detail |
+| `get_tokens` | A `systems/` package's resolved token values, one group at a time |
+| `read_doc` | A text file inside a package: its README, `components.md`, `tokens.json` |
+| `list_media` | A package's screenshots, component crops, icons and boards with renderable URLs |
+| `view_media` | One image as an MCP image block, for the questions tags cannot answer: density, layout, mood |
+| `handoff_prompt` | The apply-style prompt that hands a chosen style to a coding agent |
+
+Three ways in:
+
+- **MCP, stdio:** `python3 server/mcp.py` from this checkout, for a client
+  that spawns a process.
+- **MCP, remote:** `POST <site>/api/mcp` on a hosted deployment; the same
+  tools over streamable HTTP.
+- **`ds` CLI:** `curl -fsSL <site>/api/install.sh | sh` installs the
+  stdlib-only terminal client. `ds find`, `ds style`, `ds export`,
+  `ds doc`, `ds media`, `ds handoff`, `ds tools`, `ds status`; it takes the
+  server from `--url`, `DESIGNS_URL`, or its saved config.
+
+Inside the app, Settings > Model provider turns the gallery home into a chat
+over the same tools (`ANTHROPIC_API_KEY` in `.env` is the fallback; the key
+stays server-side behind `/api/chat`). The app's Settings > For agents
+section prints the MCP and `ds` instructions. The `design-systems` plugin in
+quiver-hub wraps all of this: its `apply-style` skill follows the steps
+above, `extract-style` drives the capture pipeline in
+[docs/CAPTURE.md](docs/CAPTURE.md), and `author-system` builds an app's own
+system against [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md); all find this
+repository through `DESIGN_SYSTEMS_HOME`.
+
+## How it works
+
+```mermaid
+flowchart LR
+  SYS["systems/&lt;slug&gt;/<br/>measured, evidence-labelled"]
+  REF["refero/<br/>interpreted, lower confidence"]
+  CAT["catalog.json<br/>the index"]
+  AUD["scorecard/<br/>rubric + dated audits"]
+  GEN["Generated README sections<br/>brief.py, health.py, design-md"]
+  DATA["web/data/<br/>catalog.py build"]
+  SCP["docs/scorecard/<br/>scorecard.py"]
+  SITE["site/<br/>site.py + StatiCrypt"]
+  DOCS["docs/*.md"]
+  API["server/<br/>/api routes + MCP, read-only"]
+  APP["web/ app<br/>gallery, refero, scorecard, docs, chat"]
+  DS["cli/ ds"]
+  PAGES["GitHub Pages<br/>encrypted"]
+
+  SYS --> CAT --> DATA --> APP
+  REF --> DATA
+  CAT --> GEN
+  AUD --> GEN
+  AUD --> APP
+  AUD --> SCP --> SITE --> PAGES
+  DOCS --> SITE
+  SYS --> API
+  REF --> API
+  API --> APP
+  API --> DS
+```
+
+- **A package stands alone.** Everything under `systems/<slug>/` is evidence
+  plus the tools that rebuild it. A fix goes through the package's builders
+  (its `tools/`), and the builders' output is committed with the input that
+  changed it; a rebuild that changes nothing is the check.
+- **Tokens carry provenance.** `tokens.json` is W3C DTCG in Tokens Studio's
+  multi-set layout (`core` scales, `light`/`dark` semantic sets, `$themes`),
+  and every token's `$extensions.source` says where it was read. Polaris is
+  the exception: its Tokens Studio file uses `value`, `type` and
+  `description`, and the description names the source. `DESIGN.md`
+  is the generated one-theme export for tools that read Google's spec.
+- **Generated, not edited.** Every package README's Brief
+  ([tools/brief.py](tools/brief.py)) and Health
+  ([tools/health.py](tools/health.py)), each `DESIGN.md`
+  (`tools/catalog.py design-md`), this file's catalog table, `web/data/`,
+  `docs/scorecard/` and `site/` are all regenerated from their sources.
+  `make check` is the freshness gate: catalog shape, the three refero stores
+  agreeing, and every generated section matching a fresh write.
+- **The scorecard grades against the platform's wording.**
+  [scorecard/criteria.json](scorecard/criteria.json) words each criterion
+  per platform (web, mobile, desktop); each audit is a dated snapshot under
+  `scorecard/audits/`. `make grade` re-checks the scripted criteria (F15
+  contrast, F16 provenance, K2 Do-and-don't, K3 DESIGN.md), refreshes
+  package details and carries the reviewed grades forward; a human
+  `tools/grade.py --review` merges the rest.
+- **Refero is a separate store.** `refero/refero.db` (sqlite, LFS) is
+  canonical; the `refero/<slug>/` folders and `refero/catalog.json` are
+  materialised from it, and `tools/refero/check.py` (inside `make check`)
+  fails when the three disagree. Screenshots and videos live outside git in
+  a host-side media mirror.
+- **Two deployments.** Pushes to `main` run
+  [pages.yml](.github/workflows/pages.yml): `make check`, then
+  `tools/site.py` builds `docs/` into `site/` (it never emits the gallery),
+  StatiCrypt encrypts every HTML page (the build fails if a page lacks
+  StatiCrypt's marker or a search index or sitemap appears; assets are
+  copied unencrypted)
+  and Pages deploys it. The home-server deployment
+  ([scripts/redeploy.sh](scripts/redeploy.sh),
+  [scripts/deploy_trigger.py](scripts/deploy_trigger.py)) serves the app and
+  the `/api/` routes behind nginx, with the refero media mirror at
+  `~/services/design-systems/media/`.
+- **The agent layer is read-only.** [server/library.py](server/library.py)
+  holds the tool specs once; `chat.py` maps them onto the Anthropic and
+  OpenAI wire shapes, `routes.py` serves `/api/*`, `mcp.py` speaks JSON-RPC
+  over stdio, and `api.py` is the home-server entry point. Nothing in the
+  layer writes to a package.
 
 ## Layout
 
 | Path | What it is |
 |---|---|
 | [systems/](systems) | One folder per product, all in the same layout ([docs/PACKAGE.md](docs/PACKAGE.md)). Each README opens with a file table, a generated Brief and a generated Health section |
+| [refero/](refero) | The second store: a snapshot of styles.refero.design (1,342 styles), interpreted data at lower confidence. `refero.db` (sqlite, LFS) is canonical; the `<slug>/` folders and `catalog.json` are materialised from it. [refero/README.md](refero/README.md) has the layout and refresh commands |
 | [catalog.json](catalog.json) | The machine-readable index, and the source the gallery is built from |
 | [Makefile](Makefile) | `make setup`, `make dev`, `make docs`, `make check`, `make test`, `make clean` and more (`make help`) |
 | [tools/catalog.py](tools/catalog.py) | Checks the catalog, builds the app's `web/data/`, ranks packages for a query (`find`), exports any token file as CSS variables (`export`), checks WCAG contrast between token pairs (`contrast`), finds private text left in a package (`scan`), and writes each package's generated `DESIGN.md` (`design-md`) |
 | [tools/redact_images.py](tools/redact_images.py) | Paints private regions out of finished screenshots and crops from a rectangle table per screenshot family, then OCR-checks every image against the redaction patterns. Rules live in [tools/redact-rules/](tools/redact-rules) |
 | [tools/kit/](tools/kit) | The capture kit a new package starts from: web (public and signed-in), native iOS through iPhone Mirroring, and the token and style-guide builders |
+| [tools/refero/](tools/refero) | The refero pipeline: `fetch.py` (fetch and re-export), `classify.py` (product_type / design_style / tags labels), `check.py` (the three stores agree; part of `make check`), `mirror_media.py` (host-side media mirror), `upload_r2.py`, and `generators.js`, Refero's own export code |
 | [web/](web) | The Next.js app the library is browsed through: gallery, refero, scorecard and docs. Its `web/data/` (`data.json`, `thumbs/`, `refero/`, `export/`) is generated by `tools/catalog.py build` and gitignored |
+| [app/](app) | The newer design research app beside `web/` (Next.js, port 8845): research, browsing, styles, collections and AI answers over the same two stores. [app/README.md](app/README.md) has its own setup |
 | [server/](server) | The agent layer: a read-only tool layer over the two stores, the chat adapters, and the same tools over MCP for coding agents — stdio (`python3 server/mcp.py`) or remote (`POST /api/mcp`) |
 | [cli/](cli) | `ds`, the stdlib-only terminal client for the remote MCP endpoint, and the `install.sh` that `/api/install.sh` serves |
+| [scripts/](scripts) | Ops, not library: `dev.sh` behind `make dev`, and the home-server deployment and media mirror scripts (`deploy_trigger.py`, `redeploy.sh`, `studio-deploy.sh`) |
+| [example/](example) | Shallow clones of public design-system repos, gitignored except [example/README.md](example/README.md). References, never a source of values |
 | [docs/](docs) | The published docs site's source: the library docs below, the home page, and the scorecard pages (generated into `docs/scorecard/`, gitignored) |
+| [site/](site) | The built docs site (`make docs` writes it), gitignored; the Pages workflow encrypts and deploys it |
 | [scorecard/](scorecard) | The scorecard's rubric (`criteria.json`) and one dated file per audit (`audits/<date>.json`, `<date>-2.json` for a second run that day). `make grade` writes a new one with the scripted criteria re-checked ([tools/grade.py](tools/grade.py)) |
 | [tools/make_icons.py](tools/make_icons.py) | The site has two app icons, picked under Settings > Preferences. Flat, the default, is the prism mark in [docs/assets/favicon.svg](docs/assets/favicon.svg) with its renders in [docs/assets/icons/](docs/assets/icons), committed as drawn. This script derives the Glass set ([docs/assets/icons/glass/](docs/assets/icons/glass)) from its master render, [docs/assets/logo/hero-ai.png](docs/assets/logo/hero-ai.png). Every docs page's template head links the Flat favicon, the touch icon, the web app manifest ([docs/site.webmanifest](docs/site.webmanifest)) and [docs/assets/app-icon.js](docs/assets/app-icon.js), which swaps in the chosen set before first paint |
 | [tools/scorecard.py](tools/scorecard.py) | Writes the scorecard pages from [scorecard/](scorecard) |
@@ -184,9 +443,54 @@ their zip bundles and `node_modules`. [catalog.json](catalog.json) records each
 source path. The packages' own prose still mentions the project they were
 made for; that is history, and it is left as written.
 
-## Requirements
+## Development
 
-Git LFS (`brew install git-lfs`, then `git lfs install`) before cloning, since
-every image, archive and font is an LFS object. Python 3 to browse the
-gallery and rebuild the reference packages; Pillow and Markdown for Linear's
-builders; Node for Polaris's; a Playwright install only to capture.
+```bash
+make check   # the freshness gate; run before every commit
+make test    # tools' unit tests, then every systems/*/tools/test_*.py in its own interpreter
+make grade   # after changing a package: re-grade scripted criteria, refresh every Health section
+```
+
+`make test` reports a package test that needs Pillow as skipped when the
+interpreter lacks it; `make test PYTHON=<a python3 with Pillow>` covers
+those too. `make lint-design-md` runs Google's pinned DESIGN.md linter
+through `npx` in a temp dir.
+
+CI runs four workflows:
+
+| Workflow | What it gates |
+| --- | --- |
+| [check.yml](.github/workflows/check.yml) | `make check` on every push to `main` and every pull request |
+| [app.yml](.github/workflows/app.yml) | Format check, media taxonomy check, typecheck, tests and a production build for `app/` when `app/**`, `systems/**`, `catalog.json`, `refero/catalog.json` or `tools/catalog.py` changes |
+| [web.yml](.github/workflows/web.yml) | Typecheck and a production build for `web/` when `web/**`, `tools/catalog.py` or `catalog.json` changes |
+| [pages.yml](.github/workflows/pages.yml) | `make check`, then the docs site build, StatiCrypt encryption and the Pages deploy; a stale generated section fails the deploy |
+
+Rules that bite: Brief, Health, `DESIGN.md`, `web/data/`,
+`docs/scorecard/` and `site/` are regenerated, never hand-edited; every
+binary type goes through Git LFS ([.gitattributes](.gitattributes));
+`systems/`, screenshots and the gallery are never published; `.env` is never
+committed. [AGENTS.md](AGENTS.md) is the full brief for agents working here,
+including the pre-commit checks.
+
+## The docs
+
+| Document | What it covers |
+| --- | --- |
+| [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md) | The five layers a complete design system needs; the rubric the scorecard grades against |
+| [docs/PACKAGE.md](docs/PACKAGE.md) | What a package contains, file by file |
+| [docs/EVIDENCE.md](docs/EVIDENCE.md) | How every value says where it came from |
+| [docs/CAPTURE.md](docs/CAPTURE.md) | How to capture a new product, and the traps that cost time before |
+| [docs/RIGHTS.md](docs/RIGHTS.md) | Why this repo stays private, and what is not ours |
+| [docs/TODO.md](docs/TODO.md) | Open work, newest first |
+| [refero/README.md](refero/README.md) | The refero snapshot: layout, provenance, refresh and the media mirror |
+| [example/README.md](example/README.md) | The public reference clones and the rules for using them |
+| [app/README.md](app/README.md) | The research app: running it, provider keys, its boundaries |
+| [AGENTS.md](AGENTS.md) | The brief for coding agents working here, or reading the library from another project |
+
+## Private
+
+This repository stays private and is not pushed anywhere but
+`c-wenlong/designs`. The captures include signed-in pages and products' own
+artwork; [docs/RIGHTS.md](docs/RIGHTS.md) says what may leave the repo and
+what may not. Borrow structure and proportions from a package; never ship a
+product's logo, icons, illustrations or brand colours.

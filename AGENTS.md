@@ -6,8 +6,8 @@ another project.
 ## What this is
 
 A private library of design styles captured from real products. Browsed through
-the Next.js app in web/ locally, and published as a static docs site. Two
-stores of styles:
+the Next.js apps in web/ (the gallery) and app/ (the newer research app)
+locally, and published as a static docs site. Two stores of styles:
 
 - `systems/<slug>/`: the packages, one per product, measured from real
   captures and indexed in [catalog.json](catalog.json). Values here carry
@@ -18,15 +18,16 @@ stores of styles:
 
 [README.md](README.md) is the human front door; the docs below hold the
 detail. Browsing (gallery, refero, scorecard, library docs, the chat) happens
-in the web/ app; [tools/site.py](tools/site.py) builds only the published
-docs site into `site/`.
+in the web/ app, and app/ covers the same stores plus research;
+[tools/site.py](tools/site.py) builds only the published docs site into
+`site/`.
 
 ## Map
 
 ```
 catalog.json            index of every systems/ package: slug, platform, tags,
                         goodFor, preview paths, capture provenance
-systems/<slug>/         the packages (40). Standard parts:
+systems/<slug>/         the packages (47). Standard parts:
   README.md               Brief (generated) + what was captured + Health (generated)
   tokens.json             every value, evidence-labelled
   DESIGN.md               generated export, one theme, no provenance
@@ -70,7 +71,9 @@ tools/                  the repo's scripts. Deps: `make setup` installs
                         per-package masks
 scripts/                ops, not library: dev.sh backs `make dev`;
                         deploy_trigger.py + redeploy.sh run on kai-home-server
-                        for the self-hosted deployment and media mirror
+                        for the self-hosted deployment and media mirror;
+                        studio-deploy.sh stages and activates the app/ service
+                        on a Linux box (app/docs/DEPLOYMENT.md)
 example/                shallow clones of public design-system repos
                         (gitignored except README.md). References, never
                         a source of values
@@ -84,6 +87,11 @@ web/                    the Next.js app (App Router, TypeScript, pnpm): one
                         production
   data/                   generated (gitignored) by `tools/catalog.py build`:
                         data.json, thumbs/, refero/, export/
+app/                    the newer design research app (Next.js, TypeScript,
+                        pnpm): research, browsing, styles and collections over
+                        the same two stores, with AI answers when a provider
+                        key is set. `pnpm --dir app dev` runs it on :8845;
+                        app/README.md and app/docs/ hold its detail
 Makefile                `make help` lists targets; `make dev` is the way in
 ```
 
@@ -98,6 +106,7 @@ Makefile                `make help` lists targets; `make dev` is the way in
 | Change a package's values or README | the package, then `make design-md` (Brief + DESIGN.md regenerate), `make check` |
 | Replace a product's app icon | `systems/<slug>/icon.png` (128 px PNG; `python3 tools/fetch_icon.py <slug>` refetches from the product's site) |
 | Work on the app | `web/` + `tools/catalog.py build`, then `make dev` |
+| Work on the research app | `app/` + [app/README.md](app/README.md), then `pnpm --dir app dev` |
 | Work on the published docs site | `docs/` + `tools/site.py`, then open `site/index.html` |
 | Change the site's own app icon (Flat or Glass, picked under Settings > Preferences) | Flat: `docs/assets/favicon.svg` + `docs/assets/icons/`, committed as drawn; Glass: `python3 tools/make_icons.py` from `docs/assets/logo/hero-ai.png`; the swap is `docs/assets/app-icon.js` |
 | Grade packages / read the rubric | `scorecard/criteria.json` via `python3 tools/grade.py --criteria <slug>`; audits in `scorecard/audits/` |
@@ -118,6 +127,7 @@ Makefile                `make help` lists targets; `make dev` is the way in
 | [docs/TODO.md](docs/TODO.md) | You are picking up open work; the list is newest first |
 | [refero/README.md](refero/README.md) | You are working with the refero snapshot: its layout, provenance, refresh and media mirror |
 | [example/README.md](example/README.md) | You want a public reference: the DESIGN.md spec, unverified DESIGN.md files for brands not captured here, capture ideas, or how a large token set is organised. Never a source of values |
+| [app/README.md](app/README.md) | You are working on the research app: running it, provider keys, private deployment |
 
 ## Using a style from another project
 
@@ -145,9 +155,10 @@ Makefile                `make help` lists targets; `make dev` is the way in
    choice can be checked.
 
 The `design-systems` plugin in quiver-hub wraps this: its `apply-style`
-skill follows the steps above, and `author-system` builds an app's own
-system against [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md). Both find this
-repository through `DESIGN_SYSTEMS_HOME`.
+skill follows the steps above, `extract-style` drives the capture pipeline
+in [docs/CAPTURE.md](docs/CAPTURE.md), and `author-system` builds an app's
+own system against [docs/DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md). All find
+this repository through `DESIGN_SYSTEMS_HOME`.
 
 Borrow structure and proportions. Do not copy a product's logo, icons,
 illustrations or brand colours into something that ships
@@ -255,8 +266,10 @@ illustrations or brand colours into something that ships
 - **The published site never includes the gallery.** The Pages workflow builds
   with `tools/site.py`, which never emits the gallery (it lives only in the
   Next app; a guard step still removes `site/gallery/` defensively), and
-  encrypts every page with StatiCrypt before it deploys, and fails if readable
-  text or a search index entry remains. `make check` runs first in the same
+  encrypts every HTML page with StatiCrypt before it deploys. It fails if a
+  page comes out without StatiCrypt's marker, if a search index or sitemap
+  appears, or if an LFS pointer sits in `site/assets/`; the assets themselves
+  (images, JS, CSS) are copied unencrypted. `make check` runs first in the same
   job, so a commit that skipped `make brief`/`make grade` fails the deploy.
   Search and instant navigation stay off for that reason. Never publish
   `systems/`, screenshots or the gallery, and never commit `.env` (it holds
