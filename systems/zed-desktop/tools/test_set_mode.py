@@ -35,6 +35,46 @@ class SetModeTest(unittest.TestCase):
             self.assertEqual((pathlib.Path(d) / "settings.json.bak").read_text(), SETTINGS)
             self.assertEqual(sorted(x.name for x in pathlib.Path(d).iterdir()), ["settings.json", "settings.json.bak"])
 
+    def test_write_keeps_the_file_mode(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = pathlib.Path(d) / "settings.json"
+            p.write_text(SETTINGS)
+            p.chmod(0o640)
+            set_mode.write(p, set_mode.edit(SETTINGS, "light"))
+            self.assertEqual(p.stat().st_mode & 0o777, 0o640)
+
+    def test_a_symlinked_settings_file_stays_a_link(self):
+        with tempfile.TemporaryDirectory() as d:
+            d = pathlib.Path(d)
+            (d / "dotfiles").mkdir(); (d / "zed").mkdir()
+            real = d / "dotfiles" / "settings.json"
+            real.write_text(SETTINGS)
+            link = d / "zed" / "settings.json"
+            link.symlink_to(real)
+            set_mode.write(link, set_mode.edit(SETTINGS, "light"))
+            self.assertTrue(link.is_symlink())
+            self.assertIn('"mode": "light"', real.read_text())
+            self.assertEqual((d / "zed" / "settings.json.bak").read_text(), SETTINGS)
+            self.assertEqual(sorted(x.name for x in (d / "dotfiles").iterdir()), ["settings.json"])
+
+    def test_a_failed_replace_leaves_the_file_and_no_temp(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = pathlib.Path(d) / "settings.json"
+            p.write_text(SETTINGS)
+            saved = set_mode.os.replace
+
+            def boom(src, dst):
+                raise OSError("disk full")
+            set_mode.os.replace = boom
+            try:
+                with self.assertRaises(OSError):
+                    set_mode.write(p, set_mode.edit(SETTINGS, "light"))
+            finally:
+                set_mode.os.replace = saved
+            self.assertEqual(p.read_text(), SETTINGS)
+            self.assertEqual((pathlib.Path(d) / "settings.json.bak").read_text(), SETTINGS)
+            self.assertEqual(sorted(x.name for x in pathlib.Path(d).iterdir()), ["settings.json", "settings.json.bak"])
+
 
 if __name__ == "__main__":
     unittest.main()

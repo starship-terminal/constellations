@@ -48,14 +48,16 @@ def edit(text, mode):
 
 
 def write(path, text):
-    """Keep the old file as <name>.bak, then replace the file in one move."""
-    shutil.copy2(path, path.with_name(path.name + ".bak"))
-    fd, tmp = tempfile.mkstemp(dir=path.parent, prefix=path.name + ".")
+    """Keep the old file as <name>.bak beside `path`, then replace the file in one move. A symlinked settings
+    file (a managed dotfile) stays a link: the file it points at is the one replaced."""
+    target = path.resolve()
+    shutil.copy2(target, path.with_name(path.name + ".bak"))
+    fd, tmp = tempfile.mkstemp(dir=target.parent, prefix=target.name + ".")
     try:
         with os.fdopen(fd, "w") as f:
             f.write(text)
-        shutil.copymode(path, tmp)
-        os.replace(tmp, path)
+        shutil.copymode(target, tmp)
+        os.replace(tmp, target)
     except BaseException:
         pathlib.Path(tmp).unlink(missing_ok=True)
         raise
