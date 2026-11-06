@@ -13,6 +13,10 @@ import pathlib
 PKG = pathlib.Path(__file__).resolve().parent.parent
 TOK = json.loads((PKG / "tokens.json").read_text())
 CROPS = PKG / "components" / "crops"
+# The themes tools/crops.py cuts each crop in: every one listed must be on disk.
+THEMES_OF = {}
+for _c in json.loads((PKG / "tools" / "crops.json").read_text())["crops"]:
+    THEMES_OF.setdefault(_c["name"], set()).update(_c["themes"])
 
 
 def paths(node, pre=()):
@@ -140,12 +144,16 @@ def main():
         out.append("")
         cells = []
         for state, stem in states:
+            listed = THEMES_OF.get(stem)
+            if not listed:
+                raise SystemExit(f"{name}: crop {stem} is not in tools/crops.json")
             for suffix, theme in (("", "dark"), ("-light", "light")):
                 f = CROPS / f"{stem}{suffix}.png"
-                if f.exists():
-                    cells.append(f"[{state} ({theme})](components/crops/{f.name})")
-                elif not suffix:
-                    raise SystemExit(f"{name}: no crop {f.name}")
+                if theme not in listed:
+                    continue
+                if not f.exists():   # every theme crops.json lists must be on disk, so a lost crop cannot drop a link silently
+                    raise SystemExit(f"{name}: no crop {f.name}; run tools/crops.py")
+                cells.append(f"[{state} ({theme})](components/crops/{f.name})")
         out += ["Crops: " + ", ".join(cells) + ".", ""]
         if notes:
             out += [notes, ""]
