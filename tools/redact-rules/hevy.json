@@ -1,0 +1,10 @@
+{
+  "_note": "No rectangles: nothing in hevy is masked.",
+  "families": [],
+  "ocr": {
+    "email_allow": [
+      "^hello@hevyapp\\.com$"
+    ]
+  },
+  "_email_allow_why": "Owner approved on 2026-11-06 (email is public): these exact addresses, as OCR reads them in the listed images, may show. screenshots/pages/t119-manage-subscription-bottom.png."
+}
