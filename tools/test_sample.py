@@ -78,7 +78,8 @@ class SampleTest(unittest.TestCase):
         self.assertTrue(all(px == W for row in rows for px in row))
         whole = [[K, K], [K, W]]
         self.assertEqual(sample.mask(whole, [(0, 0, 2, 2)]), [K])          # no outside: the box's own commonest
-        self.assertEqual(sample.mask(whole, [(5, 5, 2, 2)]), [])            # off the image: nothing painted
+        with self.assertRaises(ValueError):                                 # off the image: refuse, do not skip
+            sample.mask(whole, [(5, 5, 2, 2)])
 
     def test_reads_a_quantised_package_screenshot(self):
         shot = HERE.parent / "systems/claude/screenshots/home-light.png"
