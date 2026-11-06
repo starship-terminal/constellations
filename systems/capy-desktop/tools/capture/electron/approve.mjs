@@ -6,21 +6,26 @@
 // Every line of the card's text must be one of:
 //   - an allowed command (`ls -la`, `cat hello.txt`, ...), alone or after an allowed tool label (`Bash ls`);
 //   - an allowed path: the scratch folder, or one of the run's files in it, absolute, `~/`-relative or bare;
-//   - a label: plain words, every one of them from WORDS (button and heading words such as `Allow once`,
-//     `Run command`, `Permission required`). Any other word, and any punctuation but an apostrophe or a
-//     hyphen, rules the line out, so `Run rm build`, `Command: printenv` or `Execute whoami` deny.
+//   - a label: one capitalised word from SINGLE or one fixed phrase from PHRASES (`Allow once`, `Run command`,
+//     `Permission required`). Anything else rules the line out, so `Run rm build`, `Command: printenv`,
+//     `Execute whoami`, `Bash yes` or `Run bash` deny.
 // and at least one line must be an allowed command or path. So `rm -rf ..`, `cd ~`, `ls $HOME`, `ls *`,
 // `ls | sh`, a path outside the folder, or a card whose text also holds the transcript (whose prompt names
 // the folder) are all denied.
 
 const LS = ['ls', 'ls -l', 'ls -a', 'ls -A', 'ls -1', 'ls -la', 'ls -al', 'ls -lA', 'ls -Al', 'ls -lah', 'ls -alh', 'ls -F'];
 const TOOLS = ['Bash', 'Shell', 'Terminal', 'Run', 'Command', 'Read', 'Write', 'Create', 'Edit', 'List', 'View'];
-const WORDS = new Set(`allow allowed once always approve accept deny reject skip cancel yes no run running bash shell terminal
-  command commands tool tools file files read write create edit list view permission permissions required request requested
-  wants want to the a an this that in on of for folder directory session agent ask again don't do not and or proceed
-  continue action needed approval`.split(/\s+/).filter(Boolean));
-const LABEL = /^[A-Za-z'’-]+( [A-Za-z'’-]+)*$/;
-const label = line => LABEL.test(line) && line.split(' ').every(w => WORDS.has(w.toLowerCase().replace(/’/g, "'")));
+// A label is either one capitalised word from SINGLE (a button or a tool's name: `Allow`, `Bash`) or one of the
+// fixed PHRASES, compared without case. Nothing else: `Bash yes` or `Run bash` is a tool followed by a command,
+// and a lowercase `yes` is a command, so both deny.
+const SINGLE = new Set(['Allow', 'Approve', 'Accept', 'Deny', 'Reject', 'Skip', 'Cancel', 'Yes', 'No', 'Continue', 'Proceed',
+  'Permission', 'Approval', 'Tool', 'File', 'Files', 'Folder', ...TOOLS]);
+const PHRASES = new Set(['allow once', 'allow always', 'always allow', 'allow for this session', 'allow in this session',
+  "don't ask again", 'do not ask again', 'run command', 'run this command', 'run a command', 'permission required',
+  'permission needed', 'approval required', 'approval needed', 'action required', 'requires approval', 'needs approval',
+  'wants to run a command', 'the agent wants to run a command', 'read file', 'write file', 'create file', 'edit file',
+  'list files', 'view file', 'tool call', 'run tool']);
+const label = line => SINGLE.has(line) || PHRASES.has(line.toLowerCase().replace(/’/g, "'"));
 
 // The exact lines a run may approve. `root` is the scratch folder's absolute path, `rel` the same folder
 // relative to the home folder (for the `~/` form), `files` the bare file names the prompts create or read,

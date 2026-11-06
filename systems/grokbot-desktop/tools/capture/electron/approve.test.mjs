@@ -40,6 +40,9 @@ test('denies commands dressed as labels and cards with no target', () => {
   no(`Run: rm build\n${root}\nAllow`);
   no(`Execute whoami\n${root}\nAllow`);
   no(`Bash, printenv\n${root}\nAllow`);
+  no(`Bash yes\n${root}\nAllow`);
+  no(`Run bash\n${root}\nAllow`);
+  no(`yes\n${root}\nAllow`);
   no('Bash\nrm hello\nls\nAllow');
   no('Allow\nDeny');
   no('');
