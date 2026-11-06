@@ -13,7 +13,8 @@ NODE = shutil.which("node")
 PLAYWRIGHT = os.environ.get("PLAYWRIGHT") or str(pathlib.Path.home() / ".design-systems/pw/node_modules/playwright/index.mjs")
 PAGE = ('<p>J&#97;ne&nbsp;Doe and Jane Doe</p><!-- Jane Doe --><img alt="Jane Doe" src="data:,">'
         '<a title="by Jane  Doe" href="#x">x</a><p>JANE DOE</p>'
-        '<div data-src="https://cdn.example/a.png?X-Amz-Signature=abc123" style="background:url(https://cdn.example/b.png?sig=zzz9)"></div>')
+        '<div data-src="https://cdn.example/a.png?X-Amz-Signature=abc123" style="background:url(https://cdn.example/b.png?sig=zzz9)"></div>'
+        '<i id="c" style="color:#fff;background:url(https://cdn.example/c.png?sig=yyy8)"></i>')
 REDACT = {"replace": [["jane\\s+doe", "i", "A User"]]}   # no g flag: every match must still go
 
 
@@ -38,6 +39,8 @@ console.log(JSON.stringify(out));
         self.assertGreaterEqual(body.count("A User"), 6, body)
         self.assertNotIn("X-Amz-Signature", body)
         self.assertNotIn("sig=zzz9", body)
+        self.assertNotIn("sig=yyy8", body)
+        self.assertIn("color:#fff;background:url(https://cdn.example/c.png)", body)   # CSS before a signed URL stays
 
 
 if __name__ == "__main__":
