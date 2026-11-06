@@ -334,8 +334,10 @@ def _tesseract_words(im, psm=11, min_conf=0):
         im.save(src)
         env = tool_env(OMP_THREAD_LIMIT="1")
         try:
+            # errors="replace": a failed read can echo the image's own bytes on
+            # stderr, which must reach the message below, not a UnicodeDecodeError.
             res = subprocess.run(["tesseract", str(src), "stdout", "--psm", str(psm), "tsv"],
-                                 capture_output=True, text=True, env=env)
+                                 capture_output=True, text=True, errors="replace", env=env)
         except FileNotFoundError:
             sys.exit("tesseract is not on PATH; install it (brew install tesseract)")
     if res.returncode != 0:
