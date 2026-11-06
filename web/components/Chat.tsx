@@ -195,9 +195,11 @@ export function ChatDrawer() {
         className={`chat-drawer${isOpen ? " open" : ""}`}
         role="dialog"
         aria-label="Librarian chat"
+        aria-hidden={!isOpen}
         inert={!isOpen}
         onKeyDown={(e) => {
-          if (e.key === "Escape") {
+          // Escape that cancels an IME candidate belongs to the composition.
+          if (e.key === "Escape" && !e.nativeEvent.isComposing) {
             e.stopPropagation();
             close();
           }
