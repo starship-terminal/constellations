@@ -13,6 +13,8 @@ from the Next.js app.
   GET  /api/install.sh       cli/install.sh with @DS_BASE@ filled from the
                              request's forwarded Host/proto
   POST /api/provider/test    {api, base_url, api_key, key_header?, models_url?}
+                             (https only, http for loopback; models_url must
+                             share base_url's origin; redirects refused)
                              -> {ok, models:[{id,label}], error?} for the
                              settings page's test-gated model field
   POST /api/chat             {messages, provider?} -> {reply, results, media}

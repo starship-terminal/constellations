@@ -401,6 +401,30 @@ def next_path(date: str) -> Path:
     return folder / f"{date}-{max(taken) + 1}.json"
 
 
+def load_reviews(specs: list[str], slugs: set[str]) -> dict[str, dict]:
+    """--review SLUG=FILE specs -> {slug: grades}. Exits with a message naming the
+    spec when one has no FILE, names a package not in catalog.json, or the file is
+    missing or not a JSON object; a bare SLUG used to read the cwd and crash with
+    IsADirectoryError."""
+    reviews = {}
+    for spec in specs:
+        slug, eq, path = spec.partition("=")
+        if not eq or not slug or not path:
+            sys.exit(f"--review {spec}: expected SLUG=FILE, e.g. --review linear=review.json")
+        if slug not in slugs:
+            sys.exit(f"--review {spec}: {slug} is not in catalog.json")
+        try:
+            grades = json.loads(Path(path).read_text())
+        except OSError as e:
+            sys.exit(f"--review {spec}: cannot read {path}: {e.strerror or e}")
+        except ValueError as e:
+            sys.exit(f"--review {spec}: {path} is not valid JSON: {e}")
+        if not isinstance(grades, dict):
+            sys.exit(f"--review {spec}: {path} must hold a JSON object {{criterion: {{grade, evidence}}}}")
+        reviews[slug] = grades
+    return reviews
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--write", action="store_true", help="write a new audit snapshot")
@@ -442,10 +466,7 @@ def main() -> None:
                 print(f"{s['slug']:<16} {cid:<4} {g['grade']:<8} {g['evidence']}")
         return
     criteria, audits = scorecard.load()
-    reviews = {}
-    for spec in args.review:
-        slug, _, path = spec.partition("=")
-        reviews[slug] = json.loads(Path(path).read_text())
+    reviews = load_reviews(args.review, {s["slug"] for s in systems})
     out = snapshot(criteria, audits[-1], systems, args.date, categories, reviews, args.method)
     problems = scorecard.check(criteria, audits + [out])
     if problems:

@@ -137,8 +137,14 @@ test("all token groups retain raw values and evidence while aliases and composit
       }),
     ]),
   );
+  // A cyclic alias terminates and stays an unresolved reference, never a value.
   const cycle = await packageTokens("systems:test", "core.loopA", 0, new Set());
-  expect(JSON.stringify(cycle)).toContain("{core.loop");
+  expect(cycle.tokens).toHaveLength(1);
+  expect(cycle.tokens![0]).toMatchObject({
+    name: "core.loopA",
+    rawValue: "{core.loopB}",
+  });
+  expect(cycle.tokens![0].value).toMatch(/^\{core\.loop[AB]\}$/);
   const prompt = await handoffPrompt("systems:test", "a dashboard", new Set());
   expect(prompt.prompt).toContain("systems/test/README.md");
   expect(prompt.prompt).toContain("a dashboard");
