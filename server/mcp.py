@@ -27,7 +27,7 @@ INSTRUCTIONS = ("Read-only search over the design-systems library: "
                 "fields are site-relative; prefix them with the server origin.")
 
 
-def _send(obj: dict) -> None:
+def _send(obj) -> None:
     sys.stdout.write(json.dumps(obj, ensure_ascii=False) + "\n")
     sys.stdout.flush()
 
@@ -64,13 +64,37 @@ def _call(name: str, args: dict) -> dict:
     return {"content": [{"type": "text", "text": json.dumps(result, ensure_ascii=False)}]}
 
 
-def handle(req: dict) -> dict | None:
+def handle(req) -> dict | None:
     """The JSON-RPC reply for one request, or None when it is a notification
     (or a reply with no id to answer). The stdio main() prints the return;
-    routes.py's /api/mcp serialises it as the HTTP body."""
-    method = req.get("method", "")
+    routes.py's /api/mcp serialises it as the HTTP body. A malformed message
+    (not an object, a non-string method, params that are not an object) gets
+    a JSON-RPC error instead of an exception, and anything unexpected inside
+    a handler is -32603, so one bad line can never end a stdio session."""
+    if not isinstance(req, dict):
+        return {"jsonrpc": "2.0", "id": None,
+                "error": {"code": -32600, "message": "a JSON-RPC request must be an object"}}
+    try:
+        return _dispatch(req)
+    except Exception as e:  # noqa: BLE001 - the session must outlive any bug
+        # The detail goes to stderr (stdout is the protocol stream), never to
+        # the client.
+        print(f"mcp: {type(e).__name__}: {e}", file=sys.stderr)
+        return _error(req, -32603, "internal error")
+
+
+def _dispatch(req: dict) -> dict | None:
+    method = req.get("method")
+    if not isinstance(method, str):
+        return _error(req, -32600, "method must be a string")
+    params = req.get("params")
+    if params is None:
+        params = {}
+    if not isinstance(params, dict):
+        return _error(req, -32602, "params must be an object")
     if method == "initialize":
-        return _result(req, {"protocolVersion": req.get("params", {}).get("protocolVersion", "2025-03-26"),
+        version = params.get("protocolVersion")
+        return _result(req, {"protocolVersion": version if isinstance(version, str) else "2025-03-26",
                              "capabilities": {"tools": {"listChanged": False}},
                              "serverInfo": SERVER_INFO,
                              "instructions": INSTRUCTIONS})
@@ -79,11 +103,13 @@ def handle(req: dict) -> dict | None:
     if method == "tools/list":
         return _result(req, {"tools": _tool_specs()})
     if method == "tools/call":
-        params = req.get("params") or {}
-        name = params.get("name", "")
-        if name not in {s["name"] for s in library.SPECS}:
-            return _error(req, -32602, f"unknown tool '{name}'")
-        return _result(req, _call(name, params.get("arguments")))
+        name = params.get("name")
+        if not isinstance(name, str) or name not in {s["name"] for s in library.SPECS}:
+            return _error(req, -32602, f"unknown tool '{name if isinstance(name, str) else ''}'")
+        args = params.get("arguments")
+        if args is not None and not isinstance(args, dict):
+            return _error(req, -32602, "arguments must be an object")
+        return _result(req, _call(name, args))
     if method.startswith("notifications/"):
         return None
     return _error(req, -32601, f"no method '{method}'")
@@ -100,10 +126,20 @@ def main() -> None:
             _send({"jsonrpc": "2.0", "id": None,
                    "error": {"code": -32700, "message": "unparseable JSON"}})
             continue
-        if isinstance(req, dict):
-            out = handle(req)
-            if out is not None:
-                _send(out)
+        if isinstance(req, list):
+            # A batch: one array of replies, none when every member is a
+            # notification; an empty batch is itself an invalid request.
+            if not req:
+                _send({"jsonrpc": "2.0", "id": None,
+                       "error": {"code": -32600, "message": "empty batch"}})
+                continue
+            replies = [r for r in (handle(m) for m in req) if r is not None]
+            if replies:
+                _send(replies)
+            continue
+        out = handle(req)
+        if out is not None:
+            _send(out)
 
 
 if __name__ == "__main__":
