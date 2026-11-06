@@ -210,9 +210,11 @@ window.__snap = function (label, REDACT) {
   // wherever the URL sits (any attribute, an inline style's url(), text), then each REDACT pattern
   // (always global) runs over every text node and attribute value, where entities are decoded (a
   // &nbsp; is a character \s matches), and again over the serialised copy.
-  // A query or fragment also stops at ( and ; so one that starts at a colour (#fff;) never runs on
-  // into a later url(...?sig=) and takes the CSS between them with it.
-  const cutSigned = (s) => s.replace(/[?#](?:[^\s"'<>();]|\)(?![\s;,"'}]|$))*/g, (q) => (SIGNED.test(q) ? '' : q));
+  // A query runs to whitespace, a quote, an angle bracket, a CSS { or }, or a ; that starts a CSS
+  // declaration (`;name:`), so a match that starts at a colour's # stops before a later declaration's
+  // url(); any other ; (an &amp; entity, a ;-separated query) stays inside, as do commas and
+  // parentheses, except a ")" that closes an unquoted url( ... ) before ; , } or the end.
+  const cutSigned = (s) => s.replace(/[?#](?:[^\s"'<>);{}]|;(?![\w-]+\s*:)|\)(?![\s;,"'}]|$))*/g, (q) => (SIGNED.test(q) ? '' : q));
   clone.querySelectorAll('*').forEach((n) => { for (const a of [...n.attributes]) { const v = cutSigned(a.value); if (v !== a.value) n.setAttribute(a.name, v); } });
   const rx = REDACT.replace.map(([pattern, flags, rep]) => [new RegExp(pattern, flags.includes('g') ? flags : flags + 'g'), rep]);
   const scrub = (v) => rx.reduce((t, [r, rep]) => t.replace(r, rep), v);
