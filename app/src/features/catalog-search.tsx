@@ -370,6 +370,9 @@ export function CatalogSearch({
       list.current?.scrollTo({ top: 0 });
       return;
     }
+    // Tab past the last group leaves the field: close the picker with it so
+    // its backdrop does not stay over the controls focus moves on to.
+    if (event.key === "Tab" && open) dismissPicker();
     const movement: Record<string, number> = {
       ArrowDown: 1,
       ArrowUp: -1,
