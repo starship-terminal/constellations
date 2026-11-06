@@ -23,6 +23,8 @@
 // The theme follows prefers-color-scheme (Settings > Appearance > Color scheme is System), so each
 // pass runs with COLOR_SCHEME=dark or light (cdp.mjs) and no setting is touched.
 
+import { allowance, approvable } from './approve.mjs';
+
 export const NAME = 'OpenCode';
 // shots.mjs --set-theme connects to the window keyed 'agents' (Cursor's name for its main window),
 // so the one window is listed under that key too.
@@ -406,17 +408,12 @@ export const RUN = {
     'bash-output': dc('bash-output'), 'write-tool': dc('write-tool'), 'progress-indicator': dc('session-progress-indicator-v2'),
   },
 };
-// Approve once, and only an action whose visible text names at least one path and every path it
-// names is the scratch folder itself or inside it (a sibling such as .../opencode-backup is outside).
-// A request whose target cannot be read from its text is rejected, never approved.
-const insideScratch = p => {
-  const abs = p.startsWith('~/') ? `${process.env.HOME}${p.slice(1)}` : p;
-  return abs === SCRATCH || abs.startsWith(`${SCRATCH}/`);
-};
+// Approve once, and only a request whose dock shows one of the exact commands or files these prompts ask for,
+// in the scratch folder, and nothing else that could be a command (approve.mjs). Anything else is denied.
+const ALLOW = allowance({ root: SCRATCH, rel: '.design-systems/harness-scratch/opencode', files: ['hello.txt', 'notes.txt'], commands: ['sleep 5; ls'] });
 const approveInScratch = async ({ page }) => {
   const text = await permission(page).innerText().catch(() => '');
-  const paths = (text.match(/(~\/|\/)[\w.\/-]+/g) || []).map(p => p.replace(/[.,:;]+$/, ''));
-  if (!paths.length || !paths.every(insideScratch) || /\brm\b|sudo|\.\.\//.test(text)) return false;
+  if (!approvable(text, ALLOW)) return false;
   await approveButton(page).click(); await wait(page, 800); return true;
 };
 export const RUN_STEPS = {

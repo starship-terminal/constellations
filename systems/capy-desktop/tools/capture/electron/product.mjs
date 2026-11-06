@@ -20,7 +20,8 @@
 // dialogs) on the owner's account, where nothing is sent, created or changed; and /design, the gallery of
 // Capy's own components that ships in the bundle ("Every component in the system, on the surface it ships
 // on"), whose sample data is the product's fixtures. The owner's own threads are never opened.
-import { resolve as resolvePath, sep } from 'node:path';
+import { resolve as resolvePath } from 'node:path';
+import { allowance, approvable } from './approve.mjs';
 
 export const NAME = 'Capy';
 export const WINDOWS = { app: /\bCapy$/ };
@@ -402,19 +403,10 @@ async function type(page, text, label) {
   await composer.locator(S.editor).click(); await page.keyboard.type(text, { delay: 10 }); await wait(page, 300);
   await composer.locator(`button[aria-label=${label}]`).click(); await wait(page, 300);
 }
-// An approval is allowed only when every path its card names resolves inside the scratch folder (a directory
-// boundary, not a string prefix: `capy-other/` and `../` are outside), and the card names at least one path.
-// A card whose target cannot be checked is denied.
+// An approval is allowed only when its card shows one of the exact commands or files this run's prompts ask
+// for, in the scratch folder, and nothing else that could be a command (approve.mjs). Anything else is denied.
 const RUN_ROOT = resolvePath(process.env.HOME || '', RUN_DIR.slice(1));
-export function insideRun(text) {
-  // A bare `/` or `~` counts too: a command on the root or the home folder is outside.
-  const paths = text.match(/(?:~|\/)[^\s'"`,;)]*/g) || [];
-  if (!paths.length) return false;
-  return paths.every(p => {
-    const abs = resolvePath(p.startsWith('~') ? (process.env.HOME || '') + p.slice(1) : p);
-    return abs === RUN_ROOT || abs.startsWith(RUN_ROOT + sep);
-  });
-}
+const ALLOW = allowance({ root: RUN_ROOT, rel: RUN_DIR.slice(1), files: ['hello.txt'] });
 async function approveInside({ page }) {
   const allow = page.locator('button').filter({ visible: true }).filter({ hasText: /^(Allow|Approve|Accept)\b/ }).last();
   // The request card: the nearest ancestor that holds more than the button's own label.
@@ -423,7 +415,7 @@ async function approveInside({ page }) {
     for (let i = 0; i < 8 && e.parentElement; i++) { e = e.parentElement; if (e.innerText.trim().length > b.innerText.trim().length + 20) break; }
     return e.innerText;
   }).catch(() => '');
-  if (!insideRun(text)) return false;
+  if (!approvable(text, ALLOW)) return false;
   await allow.click(); await wait(page, 800);
   return true;
 }
