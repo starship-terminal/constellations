@@ -99,6 +99,17 @@ def _body(handler, cap: int = 128_000) -> dict | None:
         return None
 
 
+# The provider object's fields chat.py builds URLs and headers from. A number or
+# list in one of them would raise outside the handlers' error replies and drop
+# the connection with no answer, so a request carrying one is refused instead.
+_PROVIDER_FIELDS = ("api", "base_url", "api_key", "key_header", "models_url", "model")
+
+
+def _strings(obj: dict, keys) -> bool:
+    """Whether every key of `keys` present in `obj` holds a string (or null)."""
+    return all(obj.get(k) is None or isinstance(obj[k], str) for k in keys)
+
+
 def _host_name(value: str) -> str | None:
     """The bare host of a Host header value (no port, no IPv6 brackets), or
     None when it is malformed."""
@@ -237,19 +248,30 @@ def handle_post(handler) -> bool:
         if not body or not body.get("api_key") or not body.get("base_url"):
             _reply(handler, 400, {"ok": False, "error": "base_url and api_key are required"})
             return True
+        if not _strings(body, _PROVIDER_FIELDS):
+            _reply(handler, 400, {"ok": False, "error": "provider fields must be strings"})
+            return True
         body["api"] = body.get("api") or "openai"
         body["base_url"] = body["base_url"].rstrip("/")
         try:
             _reply(handler, 200, chat.list_models(body))
         except chat.ProviderError as e:
             _reply(handler, 200, {"ok": False, "error": str(e)})
+        except Exception:
+            traceback.print_exc(file=sys.stderr)
+            _reply(handler, 500, {"ok": False, "error": "internal error"})
         return True
     if path == "/api/chat":
         body = _body(handler)
         if not body:
             _reply(handler, 400, {"error": "JSON body required"})
             return True
-        cfg = chat.provider_config(body.get("provider"))
+        provider = body.get("provider")
+        if (provider is not None and not (isinstance(provider, dict) and _strings(provider, _PROVIDER_FIELDS))) \
+                or not isinstance(body.get("messages") or [], list):
+            _reply(handler, 400, {"error": "provider must be an object of strings and messages a list"})
+            return True
+        cfg = chat.provider_config(provider)
         if not cfg:
             _reply(handler, 503, {"error": "no_provider",
                                   "message": "no model configured: set one under Settings, "
