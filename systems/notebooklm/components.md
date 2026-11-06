@@ -960,4 +960,4 @@ The photo was replaced by a grey disc with an L in the copy; size and shape are 
 - **Avatar**: the photo was replaced by a grey disc in the copy, so only its size and shape are the product's.
 - **Studio outputs** (Audio and Video Overviews, mind map, flashcards, quiz) open player or iframe views that were not recaptured on 2026-10-17; the 2026-09-25 package measured some from screenshots and those readings are not carried over.
 
-Token coverage: 1684 cells name a token, 220 are raw values.
+Token coverage: 887 written values name a token, 116 are raw values.
