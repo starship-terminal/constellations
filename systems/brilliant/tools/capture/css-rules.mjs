@@ -6,9 +6,10 @@
 // it. Every value is copied from a rule; nothing is inferred. Public pages only, headless, no account.
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'node:url';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
-const HERE = path.dirname(new URL(import.meta.url).pathname);
+const HERE = path.dirname(fileURLToPath(import.meta.url));
 const RAW = path.resolve(HERE, '..', '..', 'raw');
 const PAGES = ['https://brilliant.org/', 'https://brilliant.org/courses/', 'https://brilliant.org/login/', 'https://brilliant.org/subscribe/'];
 

@@ -10,9 +10,10 @@
 // from CSS `color` the way it does on the site.
 import crypto from 'crypto';
 import fs from 'fs';
+import { fileURLToPath } from 'node:url';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
-const OUT = new URL('../../icons/', import.meta.url).pathname;
+const OUT = fileURLToPath(new URL('../../icons/', import.meta.url));
 fs.mkdirSync(OUT, { recursive: true });
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
 const BASE = 'https://www.coursera.org';

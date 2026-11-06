@@ -4,8 +4,9 @@
 //   node build-measurements.mjs
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const REF = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..', '..');
+const REF = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 const J = JSON.parse(fs.readFileSync(path.join(REF, 'raw', 'components-computed.json'), 'utf8'));
 
 const hex = (c) => {

@@ -1,7 +1,11 @@
 import fs from 'fs';
+import { fileURLToPath } from 'node:url';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
-const OUT = new URL('../../screenshots/', import.meta.url).pathname;
+// SP is the capture's scratch directory; the readings go to $SP/cap/, outside the repository.
+const SP = process.env.SP;
+if (!SP) { console.error('set SP to a scratch directory outside the repository'); process.exit(2); }
+const OUT = fileURLToPath(new URL('../../screenshots/', import.meta.url));
 (async () => {
   const b = await chromium.launch(); const out = {};
   for (const scheme of ['light','dark']) {
@@ -24,7 +28,7 @@ const OUT = new URL('../../screenshots/', import.meta.url).pathname;
     });
     await ctx.close();
   }
-  fs.writeFileSync(process.env.SP + '/cap/pricing-measure.json', JSON.stringify(out, null, 1));
+  fs.writeFileSync(SP + '/cap/pricing-measure.json', JSON.stringify(out, null, 1));
   console.log('ok');
   await b.close();
 })();

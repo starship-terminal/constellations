@@ -11,6 +11,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 export const { chromium } = pw.default ?? pw;
@@ -26,7 +27,7 @@ export const UA_MOBILE =
 export const BASE = 'https://refero.design';
 export const STYLES = 'https://styles.refero.design';
 
-export const HERE = path.dirname(new URL(import.meta.url).pathname);
+export const HERE = path.dirname(fileURLToPath(import.meta.url));
 export const REF = path.resolve(HERE, '..', '..', '..'); // systems/<slug>, from tools/capture/public
 export const CROPS = path.join(REF, 'components', 'crops');
 export const RAW = path.join(REF, 'raw');

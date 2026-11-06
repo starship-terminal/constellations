@@ -1,8 +1,12 @@
 import crypto from 'crypto';
 import fs from 'fs';
+import { fileURLToPath } from 'node:url';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
-const OUT = new URL('../../icons/', import.meta.url).pathname;
+// SP is the capture's scratch directory; the readings go to $SP/cap/, outside the repository.
+const SP = process.env.SP;
+if (!SP) { console.error('set SP to a scratch directory outside the repository'); process.exit(2); }
+const OUT = fileURLToPath(new URL('../../icons/', import.meta.url));
 (async () => {
   const b = await chromium.launch(); const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } }); const p = await ctx.newPage();
   const seen = {};
@@ -19,5 +23,5 @@ const OUT = new URL('../../icons/', import.meta.url).pathname;
       seen[h] = { ...ic, pages: new Set([path]), file: h + '.svg' }; fs.writeFileSync(OUT + h + '.svg', ic.html.replace(/currentColor/g, 'currentColor')); }
   }
   const list = Object.values(seen).map(x => ({ file: x.file, size: `${x.w}x${x.h}`, viewBox: x.vb, style: x.strokes.some(s => s !== 'none') && x.sw.some(w => parseFloat(w) > 0 && w !== '1px') ? 'stroke ' + x.sw.join('/') : 'fill', fills: x.fills.join(' '), strokes: x.strokes.join(' '), ctx: x.ctx.replace(/\n/g, ' '), pages: [...x.pages].join(' ') }));
-  fs.writeFileSync(process.env.SP + '/cap/icons.json', JSON.stringify(list, null, 1)); console.log(list.length); await b.close();
+  fs.writeFileSync(SP + '/cap/icons.json', JSON.stringify(list, null, 1)); console.log(list.length); await b.close();
 })();

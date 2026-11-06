@@ -8,9 +8,10 @@
 // Manus's own marks (logo, wordmark, Cue badge glyph) are Manus's property, kept for reference only.
 import crypto from 'crypto';
 import fs from 'fs';
+import { fileURLToPath } from 'node:url';
 
-const HERE = new URL('.', import.meta.url).pathname;
-const OUT = new URL('../../icons/', import.meta.url).pathname;
+const HERE = fileURLToPath(new URL('.', import.meta.url));
+const OUT = fileURLToPath(new URL('../../icons/', import.meta.url));
 const SNAPS = process.env.SNAPS;
 if (!SNAPS) { console.error('set SNAPS=<dir with the *.html snapshots>'); process.exit(1); }
 fs.mkdirSync(OUT + 'session', { recursive: true });

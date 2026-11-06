@@ -1,6 +1,7 @@
+import { fileURLToPath } from 'node:url';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
-const OUT = new URL('../../screenshots/', import.meta.url).pathname;
+const OUT = fileURLToPath(new URL('../../screenshots/', import.meta.url));
 const pages = [['landing','/'],['login','/login/'],['signup','/signup/'],['courses-public','/courses/'],['course-public','/courses/linear-expressions-and-equations/'],['pricing','/subscribe/'],['notfound','/this-page-does-not-exist-xyz/']];
 (async () => {
   const b = await chromium.launch();

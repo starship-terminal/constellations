@@ -69,6 +69,7 @@ const SPECS = [
 const PROPS = ['width', 'height', 'background-color', 'background-image', 'color', 'border-top-width', 'border-top-style', 'border-top-color', 'border-radius', 'box-shadow', 'outline-color', 'outline-style', 'outline-width', 'outline-offset', 'opacity', 'transform', 'padding', 'gap', 'font-family', 'font-size', 'font-weight', 'line-height', 'letter-spacing', 'text-transform', 'text-decoration-line', 'backdrop-filter', 'transition', 'cursor'];
 const FORCE = { hover: ['hover'], 'focus-visible': ['focus', 'focus-visible'], active: ['active', 'hover'] };
 
+if (!process.env.SNAPS) { console.error('set SNAPS to the directory of page copies'); process.exit(2); }
 const CROPS_RAW = path.join(process.env.SNAPS, 'crops');
 fs.mkdirSync(CROPS_RAW, { recursive: true });
 const b = await chromium.launch();
