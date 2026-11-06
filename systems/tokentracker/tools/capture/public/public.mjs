@@ -11,9 +11,15 @@
 // non-GET request, so none of these can save, sync or remove anything.
 // mask() runs before every shot, so paths, session titles and skill names never reach a PNG.
 import fs from 'fs';
+import os from 'os';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { launch, mask, BASE } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour shots are working files, never committed: by default they go outside the repository,
+// to ~/.design-systems/<slug>/raw-shots, where quantize.py reads them.
+const PKG = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', path.basename(PKG), 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
