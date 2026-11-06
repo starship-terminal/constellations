@@ -80,7 +80,7 @@ import numpy as np
 from PIL import Image, ImageFilter, ImageSequence
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from catalog import IMAGE_EXT, read_redaction, redaction_patterns  # noqa: E402
+from catalog import IMAGE_EXT, read_redaction, redaction_patterns, tool_env  # noqa: E402
 
 Image.MAX_IMAGE_PIXELS = None
 warnings.simplefilter("ignore", Image.DecompressionBombWarning)
@@ -332,7 +332,7 @@ def _tesseract_words(im, psm=11, min_conf=0):
     with tempfile.TemporaryDirectory() as d:
         src = Path(d) / "in.png"
         im.save(src)
-        env = dict(os.environ, OMP_THREAD_LIMIT="1")
+        env = tool_env(OMP_THREAD_LIMIT="1")
         try:
             res = subprocess.run(["tesseract", str(src), "stdout", "--psm", str(psm), "tsv"],
                                  capture_output=True, text=True, env=env)
@@ -527,8 +527,11 @@ def cmd_apply(args):
                 save_256(Image.fromarray(a), f)
 
     # A delete glob ("../x", a symlinked folder) must never reach a file outside the package.
+    # unlink removes the directory entry, so the folder holding it is what must sit in the package
+    # (a symlink beside the package pointing in still counts as outside), and so must its target.
     root = pkg.resolve()
-    outside = sorted(f for f in deleted if root not in f.resolve().parents)
+    outside = sorted(f for f in deleted if root not in f.resolve().parents
+                     or not (f.parent.resolve() == root or root in f.parent.resolve().parents))
     if outside:
         sys.exit("refusing to delete outside the package: " + ", ".join(str(f) for f in outside))
     for f in sorted(deleted):

@@ -18,25 +18,39 @@ import urllib.parse
 from pathlib import Path
 
 
-def _load_dotenv():
-    """Populate os.environ from the repo's .env; variables already set win.
+# The .env keys the repo's Python reads: media locations, the API server's allowed hosts, the chat
+# and classify key and model, the R2 upload credentials. Nothing else in .env (the site password,
+# anything added later) is ever copied into os.environ by this module.
+ENV_KEYS = ("DESIGN_SYSTEMS_MEDIA", "DESIGN_SYSTEMS_MEDIA_BASE", "DESIGN_SYSTEMS_ALLOWED_HOSTS",
+            "ANTHROPIC_API_KEY", "DS_CHAT_MODEL",
+            "R2_ACCOUNT_ID", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_BUCKET")
 
-    Shared secrets live in the gitignored root .env (see .env.example), so
-    every refero tool gets them just by importing this module."""
-    env = Path(__file__).resolve().parents[2] / ".env"
+
+def load_env(keys=ENV_KEYS, env_file=None):
+    """Copy the named keys from the repo's gitignored .env into os.environ; variables already set
+    win. Returns the keys it set. An entry point that needs a secret calls this with just the keys
+    it reads (server/chat.py: load_env(("ANTHROPIC_API_KEY", "DS_CHAT_MODEL")))."""
+    env = Path(env_file) if env_file else Path(__file__).resolve().parents[2] / ".env"
+    wanted, done = set(keys), []
     if not env.is_file():
-        return
+        return done
     for line in env.read_text().splitlines():
         line = line.strip()
         if not line or line.startswith("#") or "=" not in line:
             continue
         key, _, val = line.partition("=")
         key, val = key.strip(), val.strip().strip('"').strip("'")
-        if key and key not in os.environ:
+        if key.startswith("export "):
+            key = key[len("export "):].strip()
+        if key in wanted and key not in os.environ:
             os.environ[key] = val
+            done.append(key)
+    return done
 
 
-_load_dotenv()
+# Importers (catalog.py and through it server/chat.py, classify.py, upload_r2.py, server/api.py)
+# still get their keys on import; only the ENV_KEYS allowlist, never the whole file.
+load_env()
 
 # media dir -> (file extension, required Content-Type prefix).
 # catalog.py maps its payload keys (shot, poster, video, detail,

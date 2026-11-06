@@ -280,6 +280,12 @@ class Commands(unittest.TestCase):
             self.assertIn("outside the package", str(cm.exception.code))
             self.assertTrue(keep.exists())
             self.assertTrue((pkg / "screenshots/a.png").exists())     # nothing deleted at all
+            rules.write_text(json.dumps({"delete": ["../outside-link.png"], "ocr": {"net": False}}))
+            (Path(d) / "outside-link.png").symlink_to(pkg / "screenshots/a.png")   # outside, pointing in
+            with contextlib.redirect_stdout(io.StringIO()), self.assertRaises(SystemExit) as cm:
+                R.main(["apply", str(pkg), "--rules", str(rules)])
+            self.assertIn("outside the package", str(cm.exception.code))
+            self.assertTrue((Path(d) / "outside-link.png").is_symlink())
 
     def test_apply_still_requires_rules(self):
         with tempfile.TemporaryDirectory() as d, contextlib.redirect_stderr(io.StringIO()):
