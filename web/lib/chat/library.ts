@@ -111,7 +111,7 @@ function privatePath(rel: string): boolean {
 }
 
 // Mirrors catalog.py's REPO_PATHS: request prefixes answered from the checkout.
-const REPO_PATHS = ["/systems/", "/tools/", "/example/", "/catalog.json", "/README.md"];
+const REPO_PATHS = ["/systems/", "/tools/", "/catalog.json", "/README.md"];
 
 async function repoFile(urlPath: string): Promise<string | null> {
   // The path is unquoted and normalised before the prefix check, so `..`
