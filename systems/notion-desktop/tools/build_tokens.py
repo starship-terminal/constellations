@@ -174,16 +174,19 @@ for t in THEMES:
             group, key = path_of(n)
         except KeyError:
             continue
-        # Two properties that shorten to the same path (--c-x and --ca-x, say) would silently overwrite each other.
-        if owner.setdefault((group, key), n) != n:
-            raise SystemExit(f"{t}: {n} and {owner[(group, key)]} both map to {group}.{key}; extend path_of or ABBR")
         if n in painted and is_color(painted[n]) and is_color(v):
-            put(SETS[t], (group, key), tok(color(painted[n]), "color", "Measured", where(t, n), css=n))
+            path, value = (group, key), tok(color(painted[n]), "color", "Measured", where(t, n), css=n)
         elif is_shadow(v):
-            put(SETS[t], ("shadow" if group == "shadow" else "shadow", key if group == "shadow" else "-".join(words(n[n.index("-", 2) + 1:]))),
-                tok(shadow(v), "shadow", "Measured", where(t, n), css=n, declared=v))
+            path = ("shadow", key if group == "shadow" else "-".join(words(n[n.index("-", 2) + 1:])))
+            value = tok(shadow(v), "shadow", "Measured", where(t, n), css=n, declared=v)
         else:
             SKIPPED[t].append({"name": n, "value": v[:120], "why": "not a colour or a box-shadow (a gradient or a keyword)"})
+            continue
+        # Two properties that land on the same token path (--c-x and --ca-x, or a shadow named both ways) would
+        # silently overwrite each other: stop, naming both. Checked on the path actually written.
+        if owner.setdefault(path, n) != n:
+            raise SystemExit(f"{t}: {n} and {owner[path]} both map to {'.'.join(path)}; extend path_of or ABBR")
+        put(SETS[t], path, value)
 
 
 def resolve(t, value, depth=0):
