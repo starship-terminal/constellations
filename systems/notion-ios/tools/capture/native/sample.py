@@ -54,6 +54,8 @@ def read_png(path):
     stride = (width * depth + 7) // 8 if packed else width * channels
     if packed:
         channels = 1
+    scale = 255 // ((1 << depth) - 1)   # grey samples to 0-255: 1-bit x255, 2-bit x85, 4-bit x17, 8-bit x1
+    grey_key = struct.unpack(">H", trns[:2])[0] if colour == 0 and trns else None   # the one transparent grey
     raw = zlib.decompress(idat)
     rows, prev = [], bytearray(stride)
     for y in range(height):
@@ -77,8 +79,6 @@ def read_png(path):
         if packed:
             per, top = 8 // depth, (1 << depth) - 1
             line = bytearray((line[x // per] >> (8 - depth * (x % per + 1))) & top for x in range(width))
-            if colour == 0:
-                line = bytearray(v * 255 // top for v in line)
         px = []
         for x in range(width):
             v = line[x:x + 1] if packed else line[x * channels:(x + 1) * channels]
@@ -87,7 +87,8 @@ def read_png(path):
             elif colour == 6:
                 px.append(tuple(v))
             elif colour == 0:
-                px.append((v[0], v[0], v[0], 255))
+                g = v[0] * scale
+                px.append((g, g, g, 0 if v[0] == grey_key else 255))
             elif colour == 4:
                 px.append((v[0], v[0], v[0], v[1]))
             else:
