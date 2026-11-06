@@ -1,9 +1,9 @@
 // Pasted into the page (DevTools console or a CDP Runtime.evaluate) after
-// defining NAME, e.g. `const NAME = 'learn-dark-default';`. It records the
-// computed styles of every visible element and POSTs them to sink.py on
-// 127.0.0.1:8765, which writes dumps/<NAME>.json. The last expression is the
-// value the console prints.
-/* global NAME */
+// defining NAME, e.g. `const NAME = 'learn-dark-default';`, and SINK_TOKEN, the
+// line sink.py prints when it starts. It records the computed styles of every
+// visible element and POSTs them to sink.py on 127.0.0.1:8765, which writes
+// dumps/<NAME>.json. The last expression is the value the console prints.
+/* global NAME, SINK_TOKEN */
 const P='display position top left right bottom padding-top padding-right padding-bottom padding-left margin-top margin-right margin-bottom margin-left gap row-gap column-gap background-color background-image color border-top-width border-right-width border-bottom-width border-left-width border-top-color border-right-color border-bottom-color border-left-color border-top-style border-bottom-style border-top-left-radius border-top-right-radius border-bottom-right-radius border-bottom-left-radius box-shadow opacity filter backdrop-filter font-family font-size font-weight line-height letter-spacing text-transform font-feature-settings text-align transition animation-name animation-duration transform z-index cursor max-width min-width min-height overflow outline-width outline-color outline-offset fill stroke stroke-width'.split(' ');
 const D={};{const x=document.createElement('div');document.body.appendChild(x);const c=getComputedStyle(x);for(const p of P)D[p]=c.getPropertyValue(p);x.remove()}
 const keep=(c,base)=>{const o={};for(const p of P){const v=c.getPropertyValue(p);if(v!==base[p]&&v!=='')o[p]=v.length>300?v.slice(0,300):v}return o};
@@ -20,6 +20,6 @@ for(const el of document.querySelectorAll('body *')){
  if(el.parentElement)n.p=el.parentElement.__i;el.__i=n.i;
  out.push(n)}
 const meta={url:location.pathname,theme:document.documentElement.dataset.duoTheme,w:innerWidth,h:innerHeight,sy:scrollY,docH:document.documentElement.scrollHeight,ts:Date.now()};
-const res=await fetch('http://127.0.0.1:8765/'+NAME,{method:'POST',body:JSON.stringify({meta,nodes:out})});
+const res=await fetch('http://127.0.0.1:8765/'+NAME,{method:'POST',headers:{'X-Sink-Token':SINK_TOKEN},body:JSON.stringify({meta,nodes:out})});
 // eslint-disable-next-line @typescript-eslint/no-unused-expressions
 (await res.text())+' nodes='+out.length
