@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Check the catalog, build the browsable gallery, and serve it.
+"""Check the catalog, and build the data the web app reads.
 
     python3 tools/catalog.py check            validate catalog.json against the packages
-    python3 tools/catalog.py build            write docs/gallery/data.json, thumbs/ and refero/
-    python3 tools/catalog.py serve [--port N] build the gallery, scorecard and docs site, then serve it
+    python3 tools/catalog.py build            write web/data/data.json, thumbs/, refero/ and export/
     python3 tools/catalog.py find WORDS...    rank packages by name, use, tags and themes
     python3 tools/catalog.py export SLUG      print a package's tokens as CSS variables (or --format json)
     python3 tools/catalog.py export --file tokens.json --themes light,dark   the same for any token file
@@ -20,7 +19,6 @@ from __future__ import annotations
 
 import argparse
 import functools
-import http.server
 import importlib.util
 import json
 import math
@@ -36,11 +34,14 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-# The docs site is built from docs/ by tools/site.py into site/; the gallery is one page of it.
-DOCS = ROOT / "docs"
-SITE = DOCS / "gallery"
-SITE_OUT = ROOT / "site"
-THUMBS = SITE / "thumbs"
+# The generated data the Next.js app (web/) reads at request time: the catalog
+# table, screenshot thumbnails, the refero JSON index and the token exports.
+DATA = ROOT / "web" / "data"
+
+
+def _thumbs() -> Path:
+    # Derived at call time so a patched DATA (tests) moves the thumbnails too.
+    return DATA / "thumbs"
 IMAGE_EXT = {".png", ".jpg", ".jpeg", ".webp", ".gif"}
 COMPONENT_EXT = IMAGE_EXT | {".svg"}
 SWATCH_ROLES = ("page", "surface", "text", "muted", "accent", "border")
@@ -958,7 +959,7 @@ def list_images(system: dict, folder: str, exts: set[str]) -> list[dict]:
 
 
 def _thumb_name(path: str) -> Path:
-    return THUMBS / (path.replace("/", "__").rsplit(".", 1)[0] + ".jpg")
+    return _thumbs() / (path.replace("/", "__").rsplit(".", 1)[0] + ".jpg")
 
 
 def _thumb_ok(dst: Path) -> bool:
@@ -1008,7 +1009,8 @@ def _make_thumb(src: Path, dst: Path) -> bool:
 
 
 def attach_thumbs(images: list[dict]) -> None:
-    THUMBS.mkdir(parents=True, exist_ok=True)
+    thumbs_dir = _thumbs()
+    thumbs_dir.mkdir(parents=True, exist_ok=True)
 
     # A cover is usually also in the screenshot list. Make each thumbnail once so
     # two workers never write the same file.
@@ -1017,14 +1019,14 @@ def attach_thumbs(images: list[dict]) -> None:
     # Drop thumbnails whose source image is gone, so a removed screenshot does not
     # leave its thumb behind.
     keep = {_thumb_name(p).name for p in paths}
-    for stale in THUMBS.glob("*.jpg"):
+    for stale in thumbs_dir.glob("*.jpg"):
         if stale.name not in keep:
             stale.unlink()
 
     def one(path):
         dst = _thumb_name(path)
-        # Paths are relative to the built site's root, which mirrors docs/.
-        return path, dst.relative_to(DOCS).as_posix() if _make_thumb(ROOT / path, dst) else path
+        # Paths are relative to web/, so the app turns them into /media/data/… URLs.
+        return path, dst.relative_to(DATA.parent).as_posix() if _make_thumb(ROOT / path, dst) else path
 
     with ThreadPoolExecutor(max_workers=8) as pool:
         thumbs = dict(pool.map(one, paths))
@@ -1330,8 +1332,8 @@ def section_data(system: dict) -> dict:
 # ---------------------------------------------------------------- refero
 
 # Extracted third-party styles under refero/<slug>/ (meta.json + design-system.json
-# plus DESIGN.md, variables.css, theme.css, tokens.json). The gallery's Refero section
-# reads what build_refero writes under docs/gallery/refero/. The `local` media paths
+# plus DESIGN.md, variables.css, theme.css, tokens.json). The app's Refero section
+# reads what build_refero writes under web/data/refero/. The `local` media paths
 # are where a separate fetch job puts each remote file; both sides are emitted so a
 # card can fall back to the remote while its file is missing.
 
@@ -1383,10 +1385,10 @@ REFERO_MEDIA = {
     "favicon": ("favicons", None),
 }
 
-# The entity doc's `ds` keeps only what the gallery reads (see the rf* helpers
-# in docs/gallery/app.js); meta, theme, industry, northStar and similar are
-# lifted out or duplicated elsewhere, and components/imagery/layout/
-# customSections/surfaces are shipped nowhere.
+# The entity doc's `ds` keeps only what the app's ReferoDetail renders; meta,
+# theme, industry, northStar and similar are lifted out or duplicated
+# elsewhere, and components/imagery/layout/customSections/surfaces are shipped
+# nowhere.
 REFERO_DS_KEYS = ("description", "colors", "typography", "typeScale", "spacing",
                   "elevation", "elevationPhilosophy", "dos", "donts")
 
@@ -1459,18 +1461,19 @@ def refero_entry(folder: Path, meta: dict, ds: dict, slug_of: dict) -> dict:
             "docs": {"design_md": text("DESIGN.md"), "variables_css": text("variables.css"),
                      "theme_css": text("theme.css"), "tokens_json": text("tokens.json")},
             "ds": {k: ds[k] for k in REFERO_DS_KEYS if k in ds},
-            "similar": similar}
+            "similar": similar,
+            "mediaBase": refero_media.media_base()}
 
 
 def build_refero() -> Path | None:
-    """Write docs/gallery/refero/index.json and one style/<slug>.json per style.
+    """Write web/data/refero/index.json and one style/<slug>.json per style.
     Entities sit under style/ so no slug can collide with the index (a real
     style is slugged `index`). Returns the index path, or None when there is no
     refero/ folder; an empty or unparseable one clears the generated output."""
     styles = load_refero()
     if not (ROOT / "refero").is_dir():
         return None
-    out_dir = SITE / "refero"
+    out_dir = DATA / "refero"
     ent_dir = out_dir / "style"
     ent_dir.mkdir(parents=True, exist_ok=True)
     name_count: dict[str, int] = {}
@@ -1507,7 +1510,9 @@ def build_refero() -> Path | None:
             stale.unlink()
     index.sort(key=lambda s: str(s["name"] or "").lower())
     out = out_dir / "index.json"
-    atomic_write(out, json.dumps({"version": 2, "cdn": REFERO_CDN, "styles": index},
+    atomic_write(out, json.dumps({"version": 2, "cdn": REFERO_CDN,
+                                  "mediaBase": refero_media.media_base(),
+                                  "styles": index},
                                  separators=(",", ":")))
     return out
 
@@ -1547,7 +1552,7 @@ def build() -> Path:
         })
     attach_thumbs(all_shots)
     build_exports(systems)
-    out = SITE / "data.json"
+    out = DATA / "data.json"
     atomic_write(out, json.dumps({"root": str(ROOT), "categories": catalog.get("categories", {}),
                                   "systems": systems},
                                  separators=(",", ":")))
@@ -1556,11 +1561,11 @@ def build() -> Path:
 
 
 def build_exports(systems: list[dict]) -> None:
-    """The schema extractor, materialised for the gallery: export/<slug>.css and
+    """The schema extractor, materialised for the app: export/<slug>.css and
     export/<slug>.json hold the same text `catalog.py export` prints (custom
     properties, and the flat maps behind them), so the Overview can copy them.
     Files a deleted package left behind are pruned."""
-    out_dir = SITE / "export"
+    out_dir = DATA / "export"
     out_dir.mkdir(parents=True, exist_ok=True)
     written = set()
     for s in systems:
@@ -1574,9 +1579,10 @@ def build_exports(systems: list[dict]) -> None:
             stale.unlink()
 
 
-# Repository paths the local server answers from the checkout instead of the built
-# site: the gallery's screenshots and package files, and the files docs link to.
-# They are never part of the published site.
+# Repository paths the media route answers from the checkout: the gallery's
+# screenshots and package files, and the files docs link to. They are never
+# part of the published site. server/library.py bounds package file reads
+# through repo_file the same way web/lib/repo.ts does.
 REPO_PATHS = ("/systems/", "/tools/", "/example/", "/catalog.json", "/README.md")
 
 
@@ -1598,43 +1604,11 @@ def repo_file(url_path: str) -> Path | None:
     return target
 
 
-def build_docs() -> None:
-    """Generate the scorecard pages, then build the whole docs site into site/."""
-    subprocess.run([sys.executable, str(ROOT / "tools" / "scorecard.py")], check=True)
-    venv_python = ROOT / ".venv" / "bin" / "python"
-    python = str(venv_python) if venv_python.exists() else sys.executable
-    subprocess.run([python, str(ROOT / "tools" / "site.py")], cwd=ROOT, check=True)
-
-
-def serve(port: int) -> None:
-    out = build()
-    print(f"built {out.relative_to(ROOT)}")
-    build_docs()
-
-    class Handler(http.server.SimpleHTTPRequestHandler):
-        def translate_path(self, path):
-            target = repo_file(path)
-            return str(target) if target else super().translate_path(path)
-
-        def log_message(self, *args):
-            pass
-
-    handler = functools.partial(Handler, directory=str(SITE_OUT))
-    with http.server.ThreadingHTTPServer(("127.0.0.1", port), handler) as httpd:
-        print(f"design-systems docs: http://127.0.0.1:{port}/  (gallery at /gallery/, Ctrl-C to stop)")
-        try:
-            httpd.serve_forever()
-        except KeyboardInterrupt:
-            pass
-
-
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="cmd", required=True)
     sub.add_parser("check")
     sub.add_parser("build")
-    p_serve = sub.add_parser("serve")
-    p_serve.add_argument("--port", type=int, default=8800)
     p_find = sub.add_parser("find")
     p_find.add_argument("words", nargs="*")
     p_find.add_argument("--json", action="store_true")
@@ -1665,8 +1639,6 @@ def main() -> None:
         sys.exit(1 if problems else 0)
     if args.cmd == "build":
         print(f"built {build().relative_to(ROOT)}")
-    if args.cmd == "serve":
-        serve(args.port)
     if args.cmd == "find":
         hits = find(args.words)
         if args.json:
