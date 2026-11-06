@@ -525,6 +525,38 @@ class InstallScriptHostTest(unittest.TestCase):
         self.assertIn('BASE="https://box.tail1.ts.net:8108"', text)
 
 
+class ProviderJsonTest(unittest.TestCase):
+    """A provider that answers 200 with something other than a JSON object
+    fails as a ProviderError, never an uncaught decode error."""
+
+    def test_non_json_200_is_provider_error(self):
+        import http.server
+        import threading
+
+        class Upstream(http.server.BaseHTTPRequestHandler):
+            def log_message(self, *a):
+                pass
+
+            def do_GET(self):
+                body = b"<html>login</html>" if self.path.startswith("/html") else b"[1, 2]"
+                self.send_response(200)
+                self.send_header("content-length", str(len(body)))
+                self.end_headers()
+                self.wfile.write(body)
+
+        httpd = http.server.ThreadingHTTPServer(("127.0.0.1", 0), Upstream)
+        threading.Thread(target=httpd.serve_forever, daemon=True).start()
+        base = f"http://127.0.0.1:{httpd.server_address[1]}"
+        try:
+            for prefix in ("/html", "/list"):
+                out = chat.list_models({"api": "openai", "api_key": "k", "base_url": base + prefix})
+                self.assertFalse(out["ok"], prefix)
+                self.assertIn("invalid JSON", out["error"])
+        finally:
+            httpd.shutdown()
+            httpd.server_close()
+
+
 class ApiReloadTest(unittest.TestCase):
     """api.py re-runs the agent modules per request: sys.path must not grow,
     and catalog is reloaded in place once catalog.py changes."""

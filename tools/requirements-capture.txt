@@ -7,12 +7,18 @@
 #
 # Binaries are not listed: ffmpeg (mirror_media.py --compress-videos),
 # tesseract (redact_images.py OCR) and sips (macOS thumbnails) live on PATH.
+#
+# Pinned: a reference package's rebuild must change nothing (AGENTS.md), and
+# quantised PNGs and measured text widths depend on the Pillow, numpy and
+# fonttools versions. Pillow, numpy and markdown match the owner's .venv;
+# fonttools is the release current when pinned. Bump them deliberately and
+# rebuild the reference packages in the same change.
 
-pillow      # quantize.py, crops.py, srgb.py, shot.py, store.py,
+pillow==13.0.0       # quantize.py, crops.py, srgb.py, shot.py, store.py,
             # kit/*.mjs inline `python3 -c "from PIL import ..."` quantize calls,
             # make_icons.py, redact_images.py, catalog.py gallery thumbnails,
             # linear build_guide.py/build_library.py, polaris build_vectors.py
-numpy       # redact_images.py
-markdown    # site.py, linear build_guide.py
-fonttools[woff]  # polaris build_vectors.py (measures text widths; the woff
+numpy==2.5.4         # redact_images.py
+markdown==3.11.1     # site.py, linear build_guide.py
+fonttools[woff]==4.68.0  # polaris build_vectors.py (measures text widths; the woff
                  # extra pulls brotli, needed to decode inter.woff2 to TTF)

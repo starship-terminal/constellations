@@ -25,6 +25,7 @@ import {
   repoRoot,
   listPackageDocuments,
   readPackageDocument,
+  mediaRoot,
 } from "./files";
 
 // Source JSON is deliberately accepted at the boundary; only normalized contracts leave this module.
@@ -39,30 +40,36 @@ export function parseReferenceId(
     ? { source: match[1].toLowerCase() as Source, slug: match[2] }
     : null;
 }
-async function sourceRows(): Promise<{
-  systems: Raw[];
-  refero: Raw[];
+type SourceRows = {
+  systems: Map<string, Raw>;
+  refero: Map<string, Raw>;
   cdn: string;
-}> {
+};
+const bySlug = (rows: unknown): Map<string, Raw> =>
+  new Map(
+    (Array.isArray(rows) ? rows : [])
+      .filter((row: Raw) => typeof row?.slug === "string")
+      .map((row: Raw) => [row.slug, row]),
+  );
+async function readSourceRows(): Promise<SourceRows> {
   const [catalog, generated, referoCatalog, referoIndex] = await Promise.all([
     readJson<Raw>("catalog.json"),
     readJson<Raw>("web/data/data.json"),
     readJson<Raw>("refero/catalog.json"),
     readJson<Raw>("web/data/refero/index.json"),
   ]);
+  const generatedSystems = bySlug(generated?.systems),
+    referoGenerated = bySlug(referoIndex?.styles);
   const systems = (catalog?.systems || []).map((s: Raw) => ({
-    ...generated?.systems?.find((g: Raw) => g.slug === s.slug),
+    ...generatedSystems.get(s.slug),
     ...s,
   }));
   const refero = (referoCatalog?.styles || referoIndex?.styles || []).map(
-    (s: Raw) => ({
-      ...s,
-      ...referoIndex?.styles?.find((g: Raw) => g.slug === s.slug),
-    }),
+    (s: Raw) => ({ ...s, ...referoGenerated.get(s.slug) }),
   );
   return {
-    systems,
-    refero,
+    systems: bySlug(systems),
+    refero: bySlug(refero),
     cdn:
       remoteUrl(referoIndex?.cdn) ||
       "https://images.refero.design/styles/refero.design/",
@@ -159,26 +166,70 @@ async function normalize(
       : [],
   };
 }
-// A short cache avoids thousands of filesystem lookups on each filter keystroke, while allowing captures to refresh.
-let cache: { key: string; until: number; rows: LibraryItem[] } | null = null;
-const pendingLoads = new Map<string, Promise<LibraryItem[]>>();
-async function allItems(): Promise<LibraryItem[]> {
-  const key = [
-    repoRoot(),
-    process.env.DESIGN_SYSTEMS_MEDIA,
-    process.env.DESIGN_SYSTEMS_MEDIA_BASE,
-  ].join("|");
-  if (cache?.key === key && cache.until > Date.now()) return cache.rows;
+// Normalizing every row costs thousands of filesystem lookups, so the rows stay
+// cached until a catalog, generated index or media folder changes. A few stats
+// per call notice a capture, a `catalog.py build` or a media mirror run; the
+// age limit catches a file hydrated in place (an LFS pull) that changes none.
+const STAMP_FILES = [
+  "catalog.json",
+  "web/data/data.json",
+  "refero/catalog.json",
+  "web/data/refero/index.json",
+  "web/data/thumbs",
+];
+const MEDIA_FOLDERS = ["shots", "posters", "favicons", "videos"];
+const MAX_CACHE_AGE = 5 * 60_000;
+async function sourceStamp(): Promise<string> {
+  const root = repoRoot(),
+    media = mediaRoot();
+  const stats = await Promise.all(
+    [
+      ...STAMP_FILES.map((file) =>
+        path.join(/* turbopackIgnore: true */ root, file),
+      ),
+      ...MEDIA_FOLDERS.map((dir) =>
+        path.join(/* turbopackIgnore: true */ media, dir),
+      ),
+    ].map((file) =>
+      fs.stat(/* turbopackIgnore: true */ file).then(
+        (stat) => `${stat.mtimeMs}:${stat.size}`,
+        () => "-",
+      ),
+    ),
+  );
+  return [root, media, process.env.DESIGN_SYSTEMS_MEDIA_BASE, ...stats].join(
+    "|",
+  );
+}
+type Loaded = SourceRows & {
+  items: LibraryItem[];
+  byId: Map<string, LibraryItem>;
+};
+let cache: { key: string; loadedAt: number; value: Loaded } | null = null;
+const pendingLoads = new Map<string, Promise<Loaded>>();
+async function loadSources(): Promise<Loaded> {
+  const key = await sourceStamp();
+  if (cache?.key === key && Date.now() - cache.loadedAt < MAX_CACHE_AGE)
+    return cache.value;
   const pending = pendingLoads.get(key);
   if (pending) return pending;
   const load = (async () => {
-    const { systems, refero, cdn } = await sourceRows();
-    const rows = await Promise.all([
-      ...systems.map((row) => normalize("systems", row, cdn)),
-      ...refero.map((row) => normalize("refero", row, cdn)),
+    const rows = await readSourceRows();
+    const items = await Promise.all([
+      ...[...rows.systems.values()].map((row) =>
+        normalize("systems", row, rows.cdn),
+      ),
+      ...[...rows.refero.values()].map((row) =>
+        normalize("refero", row, rows.cdn),
+      ),
     ]);
-    cache = { key, until: Date.now() + 10_000, rows };
-    return rows;
+    const value = {
+      ...rows,
+      items,
+      byId: new Map(items.map((item) => [item.id, item])),
+    };
+    cache = { key, loadedAt: Date.now(), value };
+    return value;
   })();
   pendingLoads.set(key, load);
   try {
@@ -187,6 +238,9 @@ async function allItems(): Promise<LibraryItem[]> {
     // Rejected loads must release the slot so the next request can retry.
     if (pendingLoads.get(key) === load) pendingLoads.delete(key);
   }
+}
+async function allItems(): Promise<LibraryItem[]> {
+  return (await loadSources()).items;
 }
 export async function listLibrary(
   query: LibraryQuery = {},
@@ -392,11 +446,11 @@ async function packageMedia(
 export async function listCapturedMedia(): Promise<
   { reference: LibraryItem; media: ReferenceMedia[] }[]
 > {
-  const [items, rows] = await Promise.all([allItems(), sourceRows()]);
+  const { items, systems } = await loadSources();
   const result: { reference: LibraryItem; media: ReferenceMedia[] }[] = [];
   // Keep original-file verification bounded to one package at a time.
   for (const reference of items.filter((item) => item.source === "systems")) {
-    const row = rows.systems.find((item) => item.slug === reference.slug) || {};
+    const row = systems.get(reference.slug) || {};
     result.push({
       reference,
       media: await packageMedia(reference.slug, row, true),
@@ -477,7 +531,7 @@ export async function readExport(
 ): Promise<string | null> {
   const parsed = parseReferenceId(id);
   if (!parsed || !formats.includes(format as ExportFormat)) return null;
-  if (!(await allItems()).some((x) => x.id === id)) return null;
+  if (!(await loadSources()).byId.has(id)) return null;
   const { source, slug } = parsed;
   if (variant) {
     if (source !== "refero") return null;
@@ -500,6 +554,121 @@ async function exportLinks(item: LibraryItem): Promise<Record<string, string>> {
     }),
   );
   return links;
+}
+/** A Refero style's recordings and stills, local mirror first. */
+async function referoStyleMedia(
+  slug: string,
+  meta: Raw | null,
+  entity: Raw | null,
+  sourceUrl: string | null,
+): Promise<ReferenceMedia[]> {
+  const media: ReferenceMedia[] = [];
+  const candidates: Record<string, Raw> = entity?.media || {
+    shot: {
+      local: `/refero-media/shots/${slug}.jpg`,
+      remote: meta?.screenshot_url,
+    },
+    poster: {
+      local: `/refero-media/posters/${slug}.jpg`,
+      remote: meta?.video_poster_url,
+    },
+    video: {
+      local: `/refero-media/videos/${slug}.mp4`,
+      remote: meta?.video_url,
+    },
+    detail: {
+      local: `/refero-media/detail/${slug}.mp4`,
+      remote: meta?.video_detail_url,
+    },
+    detail_poster: {
+      local: `/refero-media/detail-posters/${slug}.jpg`,
+      remote: meta?.video_detail_poster_url,
+    },
+    favicon: {
+      local: `/refero-media/favicons/${slug}.png`,
+      remote:
+        meta?.favicon_url ||
+        (sourceUrl
+          ? `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&size=128&url=${encodeURIComponent(sourceUrl)}`
+          : null),
+    },
+  };
+  const labels: Record<string, string> = {
+    shot: "Full page",
+    poster: "Page recording poster",
+    video: "Page recording",
+    detail: "Detail recording",
+    detail_poster: "Detail recording poster",
+    favicon: "Favicon",
+  };
+  for (const key of [
+    "shot",
+    "poster",
+    "video",
+    "detail",
+    "detail_poster",
+    "favicon",
+  ] as const) {
+    const value = candidates[key];
+    if (!value) continue;
+    const url = await referoMedia(value.local, value.remote);
+    if (!url) continue;
+    const poster = candidates[key === "detail" ? "detail_poster" : "poster"];
+    media.push({
+      id: key,
+      kind: key,
+      name: labels[key],
+      url,
+      path: value.local,
+      group: "refero",
+      type: ["video", "detail"].includes(key) ? "video" : "image",
+      tags: [],
+      fallback: remoteUrl(value.remote),
+      poster:
+        ["video", "detail"].includes(key) && poster
+          ? await referoMedia(poster.local, poster.remote)
+          : null,
+    });
+  }
+  return media;
+}
+/** The library card for one reference, without reading its package. */
+export async function getReferenceSummary(
+  id: string,
+): Promise<LibraryItem | null> {
+  if (!parseReferenceId(id)) return null;
+  const item = (await loadSources()).byId.get(id);
+  return item ? (await withReferenceCategories([item]))[0] : null;
+}
+/** One reference's media without tokens, documents or related styles. */
+export async function getReferenceMedia(
+  id: string,
+): Promise<{ reference: LibraryItem; media: ReferenceMedia[] } | null> {
+  const parsed = parseReferenceId(id);
+  const reference = await getReferenceSummary(id);
+  if (!parsed || !reference) return null;
+  const { slug } = parsed;
+  if (parsed.source === "systems")
+    return {
+      reference,
+      media: await packageMedia(
+        slug,
+        (await loadSources()).systems.get(slug) || {},
+      ),
+    };
+  const [meta, entity] = await Promise.all([
+    readJson<Raw>(`refero/${slug}/meta.json`),
+    readJson<Raw>(`web/data/refero/style/${slug}.json`),
+  ]);
+  return {
+    reference,
+    media: await referoStyleMedia(
+      slug,
+      meta,
+      entity,
+      remoteUrl(meta?.source_url || entity?.source_url),
+    ),
+  };
 }
 export async function getReference(id: string): Promise<LibraryDetail | null> {
   const parsed = parseReferenceId(id);
@@ -526,9 +695,9 @@ export async function getReference(id: string): Promise<LibraryDetail | null> {
       /(^|\.)(spacing|space)(\.|$)/i.test(v.name),
     ),
     radii = values.filter((v) => /radius|radii/.test(v.name));
-  const { systems, refero } = await sourceRows();
+  const { systems, refero } = await loadSources();
   if (source === "systems") {
-    const row = systems.find((r) => r.slug === slug) || {};
+    const row = systems.get(slug) || {};
     sourceUrl = remoteUrl(row.url);
     media = await packageMedia(slug, row);
     measured = await measuredDetail(slug, row, media);
@@ -549,74 +718,8 @@ export async function getReference(id: string): Promise<LibraryDetail | null> {
     const design = ds || entity?.ds || {};
     sourceUrl = remoteUrl(meta?.source_url || entity?.source_url);
     descriptionLong = design.description || item.description;
-    const candidates: Record<string, Raw> = entity?.media || {
-      shot: {
-        local: `/refero-media/shots/${slug}.jpg`,
-        remote: meta?.screenshot_url,
-      },
-      poster: {
-        local: `/refero-media/posters/${slug}.jpg`,
-        remote: meta?.video_poster_url,
-      },
-      video: {
-        local: `/refero-media/videos/${slug}.mp4`,
-        remote: meta?.video_url,
-      },
-      detail: {
-        local: `/refero-media/detail/${slug}.mp4`,
-        remote: meta?.video_detail_url,
-      },
-      detail_poster: {
-        local: `/refero-media/detail-posters/${slug}.jpg`,
-        remote: meta?.video_detail_poster_url,
-      },
-      favicon: {
-        local: `/refero-media/favicons/${slug}.png`,
-        remote:
-          meta?.favicon_url ||
-          (sourceUrl
-            ? `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&size=128&url=${encodeURIComponent(sourceUrl)}`
-            : null),
-      },
-    };
-    const labels: Record<string, string> = {
-      shot: "Full page",
-      poster: "Page recording poster",
-      video: "Page recording",
-      detail: "Detail recording",
-      detail_poster: "Detail recording poster",
-      favicon: "Favicon",
-    };
-    for (const key of [
-      "shot",
-      "poster",
-      "video",
-      "detail",
-      "detail_poster",
-      "favicon",
-    ] as const) {
-      const value = candidates[key];
-      if (!value) continue;
-      const url = await referoMedia(value.local, value.remote);
-      if (!url) continue;
-      const poster = candidates[key === "detail" ? "detail_poster" : "poster"];
-      media.push({
-        id: key,
-        kind: key,
-        name: labels[key],
-        url,
-        path: value.local,
-        group: "refero",
-        type: ["video", "detail"].includes(key) ? "video" : "image",
-        tags: [],
-        fallback: remoteUrl(value.remote),
-        poster:
-          ["video", "detail"].includes(key) && poster
-            ? await referoMedia(poster.local, poster.remote)
-            : null,
-      });
-    }
-    const row = refero.find((r) => r.slug === slug) || {};
+    media = await referoStyleMedia(slug, meta, entity, sourceUrl);
+    const row = refero.get(slug) || {};
     const similar = entity?.similar || design.similar || [];
     interpreted = {
       designSystem: design,
