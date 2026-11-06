@@ -92,18 +92,58 @@ class ClassifyWritesTest(ReferoTmp):
         self.assertEqual(meta["tags"], ["saas"])
         self.assertEqual(self.tmp_files(), [])
 
-    def test_a_labelling_run_refreshes_catalog_json(self):
-        self.run_fetch("Acme")
-        with mock.patch("sys.stdout"):
-            fetch.cmd_catalog()
-        with mock.patch.object(classify, "call_api", return_value=({"acme": self.LABELS}, [], None)), \
+    def test_every_refero_file_goes_through_write_atomic(self):
+        # Contents alone cannot tell write_text from write_atomic after a clean
+        # run, so record what the atomic writer was handed.
+        with mock.patch.object(fetch, "write_atomic", wraps=fetch.write_atomic) as atomic:
+            self.run_fetch("Acme")
+            with mock.patch("sys.stdout"):
+                fetch.cmd_catalog()
+            classify.write_meta("acme", self.LABELS)
+        written = [str(c.args[0].relative_to(self.refero)) for c in atomic.call_args_list]
+        for path in ("acme/DESIGN.md", "acme/meta.json", "catalog.json"):
+            self.assertIn(path, written)
+        self.assertEqual(written.count("acme/meta.json"), 2)  # fetch, then classify
+
+    def classify_main(self, api_result):
+        with mock.patch.object(classify, "call_api", return_value=api_result), \
              mock.patch.dict(classify.os.environ, {"ANTHROPIC_API_KEY": "test-key"}), \
              mock.patch.object(sys, "argv", ["classify.py"]), \
              mock.patch("sys.stdout"), mock.patch("sys.stderr"):
             classify.main()
+
+    def catalog_row(self):
         row = json.loads((self.refero / "catalog.json").read_text())["styles"][0]
-        self.assertEqual((row["product_type"], row["design_style"], row["tags"]),
-                         ("devtools", "minimal", ["saas"]))
+        return row["product_type"], row["design_style"], row["tags"]
+
+    def test_a_resume_with_no_work_still_repairs_a_stale_catalog(self):
+        # Labels committed to the db by an interrupted run, catalog not refreshed.
+        self.run_fetch("Acme")
+        with mock.patch("sys.stdout"):
+            fetch.cmd_catalog()
+        db = classify.init_db()
+        classify.apply(db, {"acme": self.LABELS})
+        db.close()
+        self.assertEqual(self.catalog_row()[0], None)
+        self.classify_main(({}, [], None))  # nothing left to label
+        self.assertEqual(self.catalog_row(), ("devtools", "minimal", ["saas"]))
+
+    def test_an_interrupted_run_still_refreshes_the_catalog(self):
+        self.run_fetch("Acme")
+        with mock.patch.object(classify, "label", side_effect=KeyboardInterrupt), \
+             mock.patch.object(fetch, "cmd_catalog") as refresh, \
+             mock.patch.dict(classify.os.environ, {"ANTHROPIC_API_KEY": "test-key"}), \
+             mock.patch.object(sys, "argv", ["classify.py"]):
+            with self.assertRaises(KeyboardInterrupt):
+                classify.main()
+        refresh.assert_called_once()
+
+    def test_a_labelling_run_refreshes_catalog_json(self):
+        self.run_fetch("Acme")
+        with mock.patch("sys.stdout"):
+            fetch.cmd_catalog()
+        self.classify_main(({"acme": self.LABELS}, [], None))
+        self.assertEqual(self.catalog_row(), ("devtools", "minimal", ["saas"]))
 
 
 if __name__ == "__main__":

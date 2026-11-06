@@ -260,7 +260,17 @@ def main():
         return
     if not os.environ.get("ANTHROPIC_API_KEY"):
         sys.exit("ANTHROPIC_API_KEY is not set")
+    try:
+        label(db, args)
+    finally:
+        db.close()
+        # catalog.json carries the labels too; refresh it however the run ends
+        # (done, nothing to do, interrupted after some batches committed), or
+        # check.py fails on every relabelled style until fetch.py --catalog-only.
+        fetch.cmd_catalog()
 
+
+def label(db, args):
     where = "" if args.force else "WHERE product_type IS NULL OR design_style IS NULL"
     rows = db.execute(
         f"""SELECT slug, name, tagline, source_url, design_system_json
@@ -317,11 +327,6 @@ def main():
     print(f"labeled {len(results)}/{len(styles)}; "
           f"{len(still)} left unlabeled")
     stats(db)
-    db.close()
-    if results:
-        # catalog.json carries the labels too; without this check.py fails on
-        # every relabelled style until fetch.py --catalog-only runs.
-        fetch.cmd_catalog()
 
 
 if __name__ == "__main__":
