@@ -1,0 +1,26 @@
+# Capture improvements from Clerk
+
+Observed on 2026-10-30 with Codex and extract-style v1.2.0. The changes to
+[the capture guide](../../docs/CAPTURE.md) apply the reusable guidance below.
+The owner approved applying these improvements. The canonical design-systems
+plugin now uses extract-style v1.3.0 and plugin v0.3.3 (quiver-hub device commit
+`e98d1ad` on `device/kai-macbook-4-pro`). The installed Codex v0.3.3 copy was
+verified against the same source. The shared-kit changes are in
+[PR 134](https://github.com/c-wenlong/designs/pull/134) (commit `01d0360f`),
+separate from this capture. They have not merged.
+
+| Finding | Applied guidance or remaining kit work | Original evidence or owning source |
+|---|---|---|
+| The skill asks for names, owner email and document titles to be masked, although the current library policy allows them. | Build redaction rules from the current repository policy. Keep credentials, signed URLs and banned personal data out; preserve allowed profile and product content. | [Repository policy](../../AGENTS.md), “Only credentials and personally identifiable data are masked”; extract-style v1.2.0, step 4 (lines 150 to 153), step 9 (205 to 209), Rules (239 to 243); [kit privacy instructions](../../tools/kit/README.md#never-commit). |
+| The skill checks generated files before generating them and asks for a manual root catalog row. | Register in [the catalog](../../catalog.json), run `make design-md`, then `make grade`, then `make check` and `make test`. Let the generators write the root table. | extract-style v1.2.0, step 9 (lines 194 to 202); [Makefile](../../Makefile), targets `design-md`, `grade`, `check`; [health generator](../../tools/health.py), `catalog_table()` and `expected()`. |
+| Connected Chrome had no window visible to the owner; the owner selected Codex's in-app browser. | Confirm browser host, tab URL and visibility with a screenshot before asking the owner to sign in. Use the selected browser throughout the handoff. Replace harness-specific `javascript_tool` spill instructions with the current harness's supported read-only DOM and screenshot tools. | extract-style v1.2.0, web reference, “Browser” and “Sign-in” (lines 42 to 52), “Each state” (75 to 90); [capture order](../../docs/CAPTURE.md#the-order), step 2. |
+| Clerk's public authentication page rotates animated product demonstrations; the mobile demonstration is an image. | Label public demos separately from signed-in dashboard evidence. Record the actual demo state and time; do not count simulated dashboard controls as interactive dashboard coverage. | Public source: [Clerk authentication page](https://clerk.com/user-authentication); [coverage guidance](../../docs/CAPTURE.md#browser-dimensions-and-screenshot-checks). |
+| Requested desktop width was 1440, but dashboard readings measured 1600 × 1111 CSS pixels. Retained dashboard PNGs are 1778 pixels wide, with heights varying by capture. Browser zoom/scaling affected the relationship. | Record requested size, measured CSS viewport, device pixel ratio, visual viewport and PNG dimensions. Label these existing readings as 1600 CSS pixels; never derive crop or masking coordinates from the requested size. | [Overview readings](raw/readings/overview-dark-desktop.json), top-level `width` and `height`; [account-menu readings](raw/readings/account-menu-dark-desktop.json); [account-menu screenshot](screenshots/account-menu-dark-desktop.png), 1778 × 1234 pixels; [dimension guidance](../../docs/CAPTURE.md#browser-dimensions-and-screenshot-checks). |
+| Earlier popup attempts showed a closed Products menu, a clipped privacy dialog, a blank mobile menu and a menu cut off at the top. An in-viewport DOM rectangle did not prove the image was correct. | Visually inspect each final screenshot before marking coverage. Wait for the visible popup to settle and recapture blank or clipped output. Keep rejected attempts out of the package. | [Screenshot checks](../../docs/CAPTURE.md#browser-dimensions-and-screenshot-checks); extract-style v1.2.0, web reference, “Each state”, screenshot step (lines 77 to 78). |
+| The owner later approved the account appearance change. Five light states were captured at 884 CSS pixels, then the original dark theme was restored and verified. | Record approval, measured width, the exact light states and restoration. A light set does not establish complete parity: light mobile and matching interaction states still need evidence. | [Capture entry](README.md#what-to-distrust); [light email readings](raw/readings/authentication-email-light-desktop.json); extract-style v1.2.0, web reference, “Theme” (lines 54 to 62). |
+
+The session's requested dimensions describe intent, while the saved JSON
+and PNG dimensions describe the retained evidence. The separate shared-kit
+change adds viewport fields beside each screenshot
+and validates its pixel size, while keeping visual review as the check for
+popup contents. The kit work remains pending until its PR merges.

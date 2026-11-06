@@ -2964,6 +2964,77 @@
       }
     },
     {
+      "slug": "clerk",
+      "name": "Clerk",
+      "url": "https://clerk.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Developer administration: settings screens, authentication forms, searchable tables, compact menus and confirmation dialogs",
+      "tags": [
+        "web",
+        "developer-tools",
+        "authentication",
+        "admin",
+        "dark",
+        "light",
+        "tables",
+        "forms"
+      ],
+      "shape": "reference",
+      "captured": "2026-10-30",
+      "access": "signed-in Hobby workspace, development instance; public marketing landing page",
+      "themes": [
+        "dark",
+        "light"
+      ],
+      "widths": [
+        390,
+        884,
+        1440,
+        1600
+      ],
+      "entry": "systems/clerk/README.md",
+      "tokens": "systems/clerk/tokens.json",
+      "styleGuide": "systems/clerk/style-guide.html",
+      "preview": {
+        "cover": "systems/clerk/screenshots/authentication-email-dark-1440.png",
+        "icon": "systems/clerk/icon.png",
+        "swatches": {
+          "dark": {
+            "page": "dark.bg.page",
+            "surface": "dark.bg.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.muted",
+            "accent": "dark.accent.default",
+            "border": "dark.border.default"
+          },
+          "light": {
+            "page": "light.bg.page",
+            "surface": "light.bg.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.accent.default",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.sans",
+          "core.fontFamily.mono"
+        ]
+      },
+      "capture": {
+        "harness": "Codex",
+        "model": "GPT-6",
+        "version": "Web UI observed 2026-10-30; build version not exposed",
+        "route": "web-inspector",
+        "durationMin": null,
+        "pr": "https://github.com/c-wenlong/designs/pull/133"
+      },
+      "layoutGaps": {
+        "icons/": "Icons remain visible in screenshots; no separately licensed icon assets were extracted."
+      }
+    },
+    {
       "slug": "sentry",
       "name": "Sentry",
       "url": "https://sentry.io",
