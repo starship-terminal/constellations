@@ -1,5 +1,6 @@
 """check() under python3 -O: each of its five rules must still reject a bad tokens.json, since -O
 strips assert statements. Run: python3 -m unittest discover -s tools."""
+import ast
 import copy
 import json
 import pathlib
@@ -47,6 +48,24 @@ class OptimisedCheckTest(unittest.TestCase):
                                   capture_output=True, text=True)
             self.assertEqual(done.returncode, 3, f"{message}: {done.stderr[-300:]}")
             self.assertIn(message, done.stdout)
+
+    def test_no_assert_statement_guards_the_build(self):
+        # python3 -O strips assert, so every check in build_tokens.py (check(), pixel_check() and the
+        # rest) must raise CheckError instead.
+        tree = ast.parse((HERE / "build_tokens.py").read_text())
+        lines = [n.lineno for n in ast.walk(tree) if isinstance(n, ast.Assert)]
+        self.assertEqual(lines, [], "assert statements in build_tokens.py")
+
+    def test_verify_rules_rejects_under_python_O(self):
+        run = ("import json, sys, build_tokens\n"
+               "saved = build_tokens.RULES['component.switch.width']\n"
+               "build_tokens.RULES['component.switch.width'] = saved[:3] + ('round(calc(37 * var(--spx)), 1px)',)\n"
+               "try:\n build_tokens.verify_rules(json.load(sys.stdin))\n"
+               "except build_tokens.CheckError as e:\n print(e); sys.exit(3)")
+        done = subprocess.run([sys.executable, "-O", "-c", run], cwd=HERE, input=TOKENS.read_text(),
+                              capture_output=True, text=True)
+        self.assertEqual(done.returncode, 3, done.stderr[-300:])
+        self.assertIn("switch.width", done.stdout)
 
 
 if __name__ == "__main__":
