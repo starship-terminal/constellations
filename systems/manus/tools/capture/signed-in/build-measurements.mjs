@@ -17,8 +17,8 @@ const hex = (c) => {
     return a === undefined || +a === 1 ? h : `${h} @ ${+a}`;
   }).replace(/color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: \/ ([\d.]+))?\)/g, (m, r, g, b, a) => {
     const h = '#' + [r, g, b].map((v) => Math.round(+v * 255).toString(16).padStart(2, '0')).join('');
-    return a === undefined ? h : `${h} @ ${+a}`;
-  }).replace(/oklch\([^)]*\)/g, (m) => m);
+    return a === undefined || +a === 1 ? h : `${h} @ ${+a}`;
+  });
 };
 const sides = (t, r, b, l) => (t === r && r === b && b === l ? t : t === b && r === l ? `${t} ${r}` : `${t} ${r} ${b} ${l}`);
 const fam = (f) => (f || '').split(',')[0].replace(/"/g, '');

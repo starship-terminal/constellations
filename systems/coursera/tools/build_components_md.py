@@ -392,8 +392,6 @@ def render_state_rows(e):
     if not res:
         return [], False
     order = [b] + [i for i in range(len(states)) if i != b]
-    if states[0] != states[b] and False:
-        pass
     base_vals = '; '.join('%s %s' % (LABEL[p], res[p][b]) for p in PROP_ORDER if p in res and res[p][b])
     out = []  # (labels list, text)
     for i in order[1:]:
@@ -1000,7 +998,6 @@ pubpages = [
     ('404 page (2026-10-17)', 'notfound', '/learn/no-such-course-refresh-404', 'Logo bar, illustration and links on a grey ground; no CDS.'),
 ]
 for name, page, url, note in pubpages:
-    nfull = 'desktop'
     W('| %s. %s | `%s` | desktop | %s | %s |' % (name, note, url, shot_links(page, 'light'), shot_links(page, 'dark')))
 W('')
 W('Mobile pages (390x844): header 65px with hamburger, wordmark and search icon; a 92px bar fixed to the bottom holds Enroll for free on course-like pages; the stat card becomes a stacked list; weeks and courses open a full-height sheet instead of expanding in place.')
@@ -1120,12 +1117,10 @@ W('')
 W('## Components')
 W('')
 n_entries = 0
-n_crops = 0
-crop_links = []
 
 
 def render_entry(en):
-    global n_entries, n_crops
+    global n_entries
     e = LOOK[en['key']]
     n_entries += 1
     W('#### %s' % en['title'])
@@ -1169,14 +1164,12 @@ def render_entry(en):
     imgs = []
     for st, path in crops_for(e):
         imgs.append(img('%s %s' % (en['title'], st), path))
-        crop_links.append(path)
     for pk in en['parts']:
         pe = LOOK[pk]
         cs = crops_for(pe, limit=1)
         if cs:
             st, path = cs[0]
             imgs.append(img('%s (%s) %s' % (en['title'], pe['id'], st), path))
-            crop_links.append(path)
     if imgs:
         W(' '.join(imgs))
     else:

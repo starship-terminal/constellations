@@ -1,8 +1,8 @@
-"""Store the iPhone Mirroring captures as 256-colour PNGs in screenshots/<theme>/.
+"""Store the Zed window captures as 256-colour PNGs in screenshots/<theme>/.
 
 usage: python3 tools/capture/quantize.py RAW_DIR
 
-RAW_DIR holds dark/ and light/, each with <name>.png (sRGB, written by capture/native/shot.sh) and
+RAW_DIR holds dark/ and light/, each with <name>.png (sRGB, written by capture/shot.sh) and
 <name>.raw.png (the Display P3 original, skipped here). The window's rounded corners are transparent,
 so the copies keep their alpha (fast octree quantisation, no dither). Flat UI colours survive
 exactly; glass and gradients band a little, so read values from raw/readings.json, never from these.

@@ -130,15 +130,6 @@ def op_bbox(rows, point, window, tol):
     return {"value": f"{bw:g}x{bh:g}pt", "box": [min(xs), min(ys), max(xs), max(ys)], "colour": hexof(ref), "evidence": "Sampled"}
 
 
-def op_outer(rows, axis, line, a, b, refpt, tol):
-    """First and last pixel along a line, between a and b, within tol of a border colour: the
-    outer size of a control drawn as a 1 pt border on a fill like its surroundings."""
-    ref = rows[refpt[1]][refpt[0]]
-    pix = (lambda i: rows[line][i]) if axis == "row" else (lambda i: rows[i][line])
-    hits = [i for i in range(a, b) if d(pix(i), ref) <= tol]
-    return {"value": f"{(hits[-1] - hits[0] + 1) / SCALE:g}pt", "from": hits[0], "to": hits[-1], "colour": hexof(ref), "evidence": "Sampled"}
-
-
 def op_corner(rows, x, y, tol=3):
     """Corner radius fitted to the corner's outline. (x, y) is the top-left pixel of the box's outer
     edge. For each of the first 20 rows, find how far in from x the shape starts (the first pixel that
@@ -157,16 +148,6 @@ def op_corner(rows, x, y, tol=3):
 
     best = min((sum((model(q / 4, i) - o) ** 2 for i, o in enumerate(ins)), q / 4) for q in range(0, 121))
     return {"value": f"{best[1] / SCALE:g}pt", "insets": ins[:8], "evidence": "Derived"}
-
-
-def op_inset(rows, axis, line, start, thr=40):
-    """Distance from a start pixel to the first pixel that differs from it by more than thr (ink)."""
-    pix = (lambda i: rows[line][i]) if axis == "row" else (lambda i: rows[i][line])
-    ref = pix(start)
-    i = start
-    while d(pix(i), ref) <= thr:
-        i += 1
-    return {"value": f"{(i - start) / SCALE:g}pt", "from": start, "to": i, "evidence": "Sampled"}
 
 
 def op_cap(rows, x0, y0, x1, y1):

@@ -288,9 +288,7 @@ for colour, pair in sorted(ACCENTS.items()):
             tree.setdefault("accent", {}).setdefault(colour, {})[name[len("--accent-"):]] = {
                 "$value": norm_color(raw), "$type": "color", "$extensions": {"source": f"css-var {name} ({sel}, {THEME_SHEET})"}}
 # which roles an accent takes over
-light.setdefault("accent", {})["_roles"] = None
 for tree in (light, dark):
-    tree["accent"].pop("_roles", None)
     tree["accent"]["$description"] = ("With `.accent-custom` on <html>, " + ", ".join(f"{k} becomes {v}" for k, v in ACCENT_ROLES.items()) +
                                       "; the default (no class) is the blue the text.blue, icon.blue, border.blue and fill.blue tokens hold.")
 
