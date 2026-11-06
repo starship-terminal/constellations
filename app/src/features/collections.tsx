@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
-  BookOpen,
   Check,
   Download,
   Folder,
@@ -17,7 +16,6 @@ import {
   Pencil,
   Plus,
   Search,
-  Trash2,
   X,
 } from "lucide-react";
 import type { LibraryItem } from "@/contracts/library";
@@ -25,7 +23,6 @@ import {
   api,
   Empty,
   ErrorState,
-  MediaPreview,
   Modal,
   SkeletonGrid,
   Spinner,
@@ -64,8 +61,7 @@ export function CollectionsPage() {
         method: "POST",
         body: JSON.stringify({ name: name.trim() }),
       });
-      const c = d.collection || d;
-      setData((prev) => ({ collections: [c, ...(prev?.collections || [])] }));
+      setData((prev) => ({ collections: [d, ...(prev?.collections || [])] }));
       setName("");
       setCreate(false);
     } catch (e) {
@@ -209,7 +205,7 @@ export function CollectionDetailPage({ id }: { id: string }) {
     setBusy(true);
     setError("");
     try {
-      const d = await api(`/api/collections/${id}`, {
+      await api(`/api/collections/${id}`, {
         method: "PATCH",
         body: JSON.stringify(patch),
       });
