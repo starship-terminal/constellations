@@ -187,3 +187,5 @@ python3 tools/build_style_guide.py
 ```
 
 From repository root, regenerate Brief, DESIGN.md and Health with `make design-md` and `make grade`, then run `make check` and `make test`. Screenshot sources remain outside Git; rebuilding crops and tokens uses committed inputs only.
+
+Screenshots came from the in-app browser as JPEG originals, kept outside Git under ~/.design-systems/supabase/ (with expanded/ and continuation/ subfolders). `python3 tools/capture/quantize.py <folder of originals>` decodes each one (PNG or JPEG), quantizes it to 256 colours with median cut and no dither, and writes screenshots/<name>.png. Checked on 2026-11-06 against the originals: 109 of the 133 committed screenshots come out byte-identical, 19 have identical pixels but were saved without PNG optimisation, 4 differ (app-light-keyboard-shortcuts, app-light-project-settings, app-light-spend-cap, app-light-theme-colors), and landing-desktop-hero has no original on disk. Treat the screenshots as layout evidence only; JPEG compression and quantization both alter colours.

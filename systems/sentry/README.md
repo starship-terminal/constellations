@@ -187,4 +187,6 @@ make check
 make test
 ```
 
+Screenshots came from the in-app browser as JPEG originals, kept outside Git under ~/.design-systems/sentry/ (raw-shots/app/, raw-shots/public/, breadth/, breadth2/). The breadth screenshots are converted by import_breadth.py, which masks them with tools/redact-rules/sentry.json and saves a 256-colour PNG; each sidecar records the JPEG origin. The app/ and public/ screenshots reproduce with `python3 systems/sentry/tools/capture/quantize.py <folder of originals>` (median cut, no dither, optimised PNG), moved into screenshots/app/ or screenshots/public/: on 2026-11-06 all 28 came out byte-identical to the committed files. Treat the screenshots as layout evidence only; JPEG compression and quantization both alter colours.
+
 The active live readers are tools/capture/read-app.js, read-public.js, read-breadth.js and read-breadth2.js, evaluated with the browser's supported read-only API. The other capture routes are copies of the current tools/kit/capture, refreshed on 2026-11-06 so their private-data guards match the kit; they are not claimed as executed. Re-capture requires the owner to sign in. No events, projects, messages, invitations, uploads or trials were created. The trace tour was dismissed with Maybe later. Appearance was restored to Default to system.
