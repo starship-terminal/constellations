@@ -1,0 +1,360 @@
+{
+  "controls": [
+    {
+      "disabled": false,
+      "href": "#main",
+      "label": "Skip to content",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm",
+      "label": "Back to organization home",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm",
+      "label": "kai chenFree",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Show organizations",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr",
+      "label": "kindlejoy-reading-app",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Show organization projects",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr",
+      "label": "mainProduction",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Show project branches",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Connect",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Feedback",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Search...⌘K",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Help",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Advisor Center",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "SQL Editor",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "AI Assistant",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr",
+      "label": "Project Overview",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": true,
+      "href": null,
+      "label": "Table Editor",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": true,
+      "href": null,
+      "label": "SQL Editor",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": true,
+      "href": null,
+      "label": "Database",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": true,
+      "href": null,
+      "label": "Authentication",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": true,
+      "href": null,
+      "label": "Storage",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr/functions",
+      "label": "Edge Functions",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": true,
+      "href": null,
+      "label": "ComputeNew",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": true,
+      "href": null,
+      "label": "Realtime",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": true,
+      "href": null,
+      "label": "Advisors",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": true,
+      "href": null,
+      "label": "Observability",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "label": "Logs",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": true,
+      "href": null,
+      "label": "Integrations",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr/settings/general",
+      "label": "Project Settings",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Sidebar control",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr/functions",
+      "label": "Functions",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr/functions/secrets",
+      "label": "Secrets",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/functions",
+      "label": "Docs",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://github.com/supabase/supabase/tree/master/examples/edge-functions/supabase/functions",
+      "label": "Examples",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Deploy a new function",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Open Editor",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Open Assistant",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "View CLI Instructions",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr/functions/new?template=hello-world",
+      "label": "Simple Hello WorldBasic function that returns a JSON response",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr/functions/new?template=database-access",
+      "label": "Supabase Database AccessExample using Supabase client to query your database",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr/functions/new?template=storage-upload",
+      "label": "Supabase Storage UploadUpload files to Supabase Storage",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr/functions/new?template=node-api",
+      "label": "Node Built-in API ExampleExample using Node.js built-in crypto and http modules",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr/functions/new?template=express",
+      "label": "Express ServerExample using Express.js for routing",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr/functions/new?template=stream-text-with-ai-sdk",
+      "label": "Stream text with AI SDKGenerate and stream text with Vercel AI SDK",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr/functions/new?template=generate-recipes-with-ai-sdk",
+      "label": "Generate recipes with AI SDKGenerate structured cooking recipes with Vercel AI SDK",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr/functions/new?template=stripe-webhook",
+      "label": "Stripe Webhook ExampleHandle Stripe webhook events securely",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr/functions/new?template=resend-email",
+      "label": "Send EmailsSend emails using the Resend API",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr/functions/new?template=image-transform",
+      "label": "Image TransformationTransform images using ImageMagick WASM",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/project/adopjmlsmqghuwxfkdpr/functions/new?template=websocket-server",
+      "label": "WebSocket Server ExampleCreate a real-time WebSocket server",
+      "role": null,
+      "tag": "A"
+    }
+  ],
+  "dpr": 1,
+  "height": 720,
+  "theme": "",
+  "time": "2026-10-31T04:33:19.498Z",
+  "url": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/functions",
+  "width": 1280
+}

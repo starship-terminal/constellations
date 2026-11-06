@@ -47,6 +47,8 @@ class SearchTest(unittest.TestCase):
     def test_get_style_store_disambiguates(self):
         sys_row = library.get_style("linear", "systems")
         self.assertEqual(sys_row.get("slug"), "linear")
+        if library.REFERO_DB.read_bytes()[:40].startswith(b"version https://git-lfs"):
+            self.skipTest("refero/refero.db is a Git LFS pointer; run git lfs pull for it")
         ref = library.get_style("linear", "refero")
         self.assertEqual(ref.get("slug"), "linear")
         self.assertNotEqual(ref, sys_row)
@@ -281,6 +283,108 @@ class HttpApiTest(unittest.TestCase):
             status = e.code
             e.close()
         self.assertEqual(status, 400)
+
+
+class HostAllowlistTest(unittest.TestCase):
+    """routes.py refuses a Host it does not know, so a DNS-rebound name cannot
+    pass the Origin==Host check."""
+    api = _load("agent_api_hosts", "api.py")
+
+    @classmethod
+    def setUpClass(cls):
+        import http.server
+        import threading
+        cls.httpd = http.server.ThreadingHTTPServer(("127.0.0.1", 0), cls.api.Handler)
+        cls.base = f"http://127.0.0.1:{cls.httpd.server_address[1]}"
+        threading.Thread(target=cls.httpd.serve_forever, daemon=True).start()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.httpd.shutdown()
+        cls.httpd.server_close()
+
+    def _status(self, host, origin=None):
+        import urllib.error
+        import urllib.request
+        headers = {"Host": host}
+        if origin:
+            headers["Origin"] = origin
+        req = urllib.request.Request(self.base + "/api/mcp", data=b'{"jsonrpc":"2.0","id":1,"method":"ping"}',
+                                     headers={"content-type": "application/json", **headers})
+        try:
+            with urllib.request.urlopen(req) as r:
+                return r.status
+        except urllib.error.HTTPError as e:
+            e.close()
+            return e.code
+
+    def test_rebound_name_is_refused(self):
+        # Origin matches Host, as it does under DNS rebinding.
+        self.assertEqual(self._status("evil.test:8190", "http://evil.test:8190"), 403)
+        for host in ("evil.test", "evil.ts.net.evil.test", "127.0.0.1:1,evil.test", "a@localhost", "x:port"):
+            self.assertEqual(self._status(host), 403, host)
+
+    def test_known_hosts_pass(self):
+        for host in ("127.0.0.1:8190", "localhost:8800", "[::1]:8190", "100.64.0.7:8108",
+                     "box.tail123.ts.net:8108", "app.localhost"):
+            self.assertEqual(self._status(host), 200, host)
+
+    def test_env_allowlist(self):
+        old = os.environ.get("DESIGN_SYSTEMS_ALLOWED_HOSTS")
+        os.environ["DESIGN_SYSTEMS_ALLOWED_HOSTS"] = "designs.example.test, other.test:8108"
+        try:
+            self.assertEqual(self._status("designs.example.test:443"), 200)
+            self.assertEqual(self._status("other.test:8108"), 200)
+            self.assertEqual(self._status("other.test:9999"), 403)
+        finally:
+            if old is None:
+                os.environ.pop("DESIGN_SYSTEMS_ALLOWED_HOSTS", None)
+            else:
+                os.environ["DESIGN_SYSTEMS_ALLOWED_HOSTS"] = old
+
+
+class ChatErrorTest(unittest.TestCase):
+    """An unexpected failure in /api/chat answers a generic 500; the exception
+    text (paths, upstream content) stays in the server log."""
+
+    def test_500_hides_exception_text(self):
+        import contextlib
+        import io
+        import types
+        routes = _load("agent_routes_500", "routes.py")
+
+        class ProviderError(Exception):
+            pass
+
+        def boom(messages, cfg):
+            raise RuntimeError("/srv/secret/path leaked")
+        fake = types.SimpleNamespace(ProviderError=ProviderError, run=boom,
+                                     provider_config=lambda p: {"api": "openai"})
+        routes._load = lambda name: fake
+        body = json.dumps({"messages": []}).encode()
+
+        class H:
+            path = "/api/chat"
+            headers = {"content-length": str(len(body)), "host": "127.0.0.1:1"}
+            rfile = io.BytesIO(body)
+            wfile = io.BytesIO()
+            status = None
+
+            def send_response(self, code):
+                self.status = code
+
+            def send_header(self, *a):
+                pass
+
+            def end_headers(self):
+                pass
+        h = H()
+        log = io.StringIO()
+        with contextlib.redirect_stderr(log):
+            self.assertTrue(routes.handle_post(h))
+        self.assertEqual(h.status, 500)
+        self.assertNotIn(b"secret", h.wfile.getvalue())
+        self.assertIn("/srv/secret/path leaked", log.getvalue())
 
 
 if __name__ == "__main__":

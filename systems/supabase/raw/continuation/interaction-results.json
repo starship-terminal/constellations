@@ -1,0 +1,677 @@
+{
+  "results": [
+    {
+      "page": "https://supabase.com/dashboard/account/audit",
+      "control": "Value for Date range",
+      "result": "screenshots/app-audit-date-range.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/account/audit",
+      "control": "New filter group",
+      "result": "screenshots/app-audit-filter-group.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/account/audit",
+      "control": "Remove Project filter",
+      "result": "screenshots/app-audit-filter-group.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/account/audit",
+      "control": "Operator for Project",
+      "result": "screenshots/app-audit-filter-operators.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/account/audit",
+      "control": "Add more filters...",
+      "result": "screenshots/app-audit-project-filter.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/account/audit",
+      "control": "Project",
+      "result": "screenshots/app-audit-project-filter.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/account/audit",
+      "control": "Date",
+      "result": "screenshots/app-audit-sort-menu.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/settings/integrations",
+      "control": "Show project branches",
+      "result": "screenshots/app-branch-picker.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/settings/integrations",
+      "control": "Manage branches",
+      "result": "screenshots/app-branches-paused.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/account/me",
+      "control": "Manage",
+      "result": "screenshots/app-connection-management-menu.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/_/settings/integrations",
+      "control": "Toggle list view",
+      "result": "screenshots/app-connection-project-list.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/integrations",
+      "control": "Add connection",
+      "result": "screenshots/app-connection-project-picker.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/settings/integrations",
+      "control": "Search repositories...",
+      "result": "screenshots/app-github-repository-empty.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/settings/integrations",
+      "control": "GitHub repository",
+      "result": "screenshots/app-github-repository-selector.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/billing",
+      "control": "Previous page",
+      "result": "screenshots/app-invoice-paid-badge.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/billing",
+      "control": "Paid",
+      "result": "screenshots/app-invoice-paid-badge.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/apps",
+      "control": "Publish OAuth app",
+      "result": "screenshots/app-light-oauth-publish-form.png",
+      "appearance": "light",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/billing",
+      "control": "Change spend cap",
+      "result": "screenshots/app-light-spend-cap.png",
+      "appearance": "light",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "Log display options",
+      "result": "screenshots/app-log-display-options.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "Expand API Gateway",
+      "result": "screenshots/app-logs-api-subtypes.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "User",
+      "result": "screenshots/app-logs-expanded-filters.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "Status",
+      "result": "screenshots/app-logs-expanded-filters.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "Method",
+      "result": "screenshots/app-logs-expanded-filters.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "Pathname",
+      "result": "screenshots/app-logs-expanded-filters.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "Show filters",
+      "result": "screenshots/app-logs-expanded-filters.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "pathname column toggle restored",
+      "result": "screenshots/app-logs-expanded-filters.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "Hide filters",
+      "result": "screenshots/app-logs-hidden-filters.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "Expand Postgres",
+      "result": "screenshots/app-logs-postgres-subtypes.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/branches",
+      "control": "Merge requests",
+      "result": "screenshots/app-merge-requests-paused.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/organizations",
+      "control": "New organization",
+      "result": "screenshots/app-new-organization-form.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/apps",
+      "control": "Publish OAuth app",
+      "result": "screenshots/app-oauth-publish-form.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/apps",
+      "control": "Add URL",
+      "result": "screenshots/app-oauth-scope-options.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/apps",
+      "control": "Analytics Access: No access",
+      "result": "screenshots/app-oauth-scope-options.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "Show organizations",
+      "result": "screenshots/app-organization-picker.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/new",
+      "control": "Free - $0/month",
+      "result": "screenshots/app-organization-plan-menu.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/new",
+      "control": "Personal",
+      "result": "screenshots/app-organization-type-menu.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/organizations",
+      "control": "Search for an organization",
+      "result": "screenshots/app-organizations-empty-search.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "All Organizations",
+      "result": "screenshots/app-organizations-overview.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "Disable Advisor rules",
+      "result": "screenshots/app-preview-advisor-rules.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "Column-level privileges",
+      "result": "screenshots/app-preview-column-privileges.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "One-click Integrations",
+      "result": "screenshots/app-preview-one-click-integrations.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "PG Delta diff",
+      "result": "screenshots/app-preview-pg-delta.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "Disable snippet auto-saving",
+      "result": "screenshots/app-preview-snippet-autosaving.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "Temporary database access",
+      "result": "screenshots/app-preview-temporary-access.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/account/me",
+      "control": "chenwenlongofficial@gmail.com",
+      "result": "screenshots/app-primary-email-options.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/settings/integrations",
+      "control": "Add connection",
+      "result": "screenshots/app-privatelink-plan-gate.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/account/me",
+      "control": "First name",
+      "result": "screenshots/app-profile-input-focus.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/account/me",
+      "control": "Last name",
+      "result": "screenshots/app-profile-input-focus.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/account/me",
+      "control": "Username",
+      "result": "screenshots/app-profile-input-focus.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/_/settings/integrations",
+      "control": "Project kindlejoy-reading-app actions",
+      "result": "screenshots/app-project-actions-menu.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/_/settings/integrations",
+      "control": "kindlejoy-reading-app",
+      "result": "screenshots/app-project-integrations-accessible.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "Go to Log Drains",
+      "result": "screenshots/app-project-log-drains-gate.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/account/me",
+      "control": "Expand on hover",
+      "result": "screenshots/app-sidebar-behavior-options.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/billing",
+      "control": "Change spend cap",
+      "result": "screenshots/app-spend-cap-plan-restriction.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/billing",
+      "control": "How is each resource charged after exceeding the included quota?",
+      "result": "screenshots/app-spend-cap-resource-details.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/team",
+      "control": "MFA enabled",
+      "result": "screenshots/app-team-filter-empty.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/team",
+      "control": "Filter by MFA status",
+      "result": "screenshots/app-team-mfa-menu.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/team",
+      "control": "Roles",
+      "result": "screenshots/app-team-role-filtered.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/team",
+      "control": "Administrator",
+      "result": "screenshots/app-team-role-filtered.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/team",
+      "control": "Save role filter",
+      "result": "screenshots/app-team-role-filtered.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/team",
+      "control": "Filter members",
+      "result": "screenshots/app-team-search-empty.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/team",
+      "control": "MFA disabled",
+      "result": "screenshots/app-team-search-empty.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/team",
+      "control": "Everyone",
+      "result": "screenshots/app-team-search-empty.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/account/me",
+      "control": "Auto detect (Asia/Singapore)",
+      "result": "screenshots/app-timezone-options.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/account/me",
+      "control": "Timezone search",
+      "result": "screenshots/app-timezone-search.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "More information",
+      "result": "screenshots/app-unified-logs-information.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/usage",
+      "control": "Database Size",
+      "result": "screenshots/app-usage-database-storage.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/usage",
+      "control": "All projects",
+      "result": "screenshots/app-usage-project-options.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/usage",
+      "control": "Realtime Messages",
+      "result": "screenshots/app-usage-realtime.png",
+      "appearance": "System (dark)",
+      "width": 1280,
+      "status": "explored and captured"
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/team",
+      "control": "Clear",
+      "result": "screenshots/app-team.png",
+      "status": "explored and duplicate",
+      "reason": "Activated and inspected; existing page pattern retained."
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/billing",
+      "control": "Previous page",
+      "result": "screenshots/app-invoice-paid-badge.png",
+      "status": "explored and duplicate",
+      "reason": "Activated and inspected; existing page pattern retained."
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/apps",
+      "control": "AUTHORIZED",
+      "result": "screenshots/app-oauth-apps.png",
+      "status": "explored and duplicate",
+      "reason": "Activated and inspected; existing page pattern retained."
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "editors",
+      "result": "screenshots/app-unified-logs-information.png",
+      "status": "explored and duplicate",
+      "reason": "Collapsed and reopened preview category; checked aria-expanded."
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "observability",
+      "result": "screenshots/app-unified-logs-information.png",
+      "status": "explored and duplicate",
+      "reason": "Collapsed and reopened preview category; checked aria-expanded."
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "database",
+      "result": "screenshots/app-unified-logs-information.png",
+      "status": "explored and duplicate",
+      "reason": "Collapsed and reopened preview category; checked aria-expanded."
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/logs",
+      "control": "others",
+      "result": "screenshots/app-unified-logs-information.png",
+      "status": "explored and duplicate",
+      "reason": "Collapsed and reopened preview category; checked aria-expanded."
+    }
+  ],
+  "notExecuted": [
+    {
+      "page": "https://supabase.com/dashboard/account/me",
+      "control": "Expanded",
+      "status": "not executed",
+      "reason": "Would persist account preferences or change a connection; capture authority does not include this change."
+    },
+    {
+      "page": "https://supabase.com/dashboard/account/me",
+      "control": "Collapsed",
+      "status": "not executed",
+      "reason": "Would persist account preferences or change a connection; capture authority does not include this change."
+    },
+    {
+      "page": "https://supabase.com/dashboard/account/me",
+      "control": "Timezone option selection",
+      "status": "not executed",
+      "reason": "Would persist account preferences or change a connection; capture authority does not include this change."
+    },
+    {
+      "page": "https://supabase.com/dashboard/account/me",
+      "control": "Re-authenticate",
+      "status": "not executed",
+      "reason": "Would persist account preferences or change a connection; capture authority does not include this change."
+    },
+    {
+      "page": "https://supabase.com/dashboard/account/me",
+      "control": "Remove connection",
+      "status": "not executed",
+      "reason": "Would persist account preferences or change a connection; capture authority does not include this change."
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/apps",
+      "control": "Upload logo",
+      "status": "not executed",
+      "reason": "Would upload or publish OAuth configuration or grant app access."
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/apps",
+      "control": "Confirm publication",
+      "status": "not executed",
+      "reason": "Would upload or publish OAuth configuration or grant app access."
+    },
+    {
+      "page": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/apps",
+      "control": "OAuth permission selection",
+      "status": "not executed",
+      "reason": "Would upload or publish OAuth configuration or grant app access."
+    },
+    {
+      "page": "https://supabase.com/dashboard/project/adopjmlsmqghuwxfkdpr/settings/integrations",
+      "control": "Choose a repository",
+      "status": "not executed",
+      "reason": "May connect a repository and create deployment/branch access."
+    },
+    {
+      "page": "https://supabase.com/dashboard/new",
+      "control": "Create organization",
+      "status": "not executed",
+      "reason": "Would create an organization; form and menus only."
+    }
+  ],
+  "rejectedScreenshots": {
+    "app-invoices-pagination": "Payment-method and credit sections were still loading. Retain interaction result, reject screenshot."
+  },
+  "notes": [
+    "Preview panels contain product demonstration images, not enabled live feature evidence.",
+    "Timezone and sidebar selectors were opened without changing their settings.",
+    "Local filtering, column visibility and draft callback rows were restored or discarded.",
+    "System appearance restored and verified; viewport override reset.",
+    "Inventory is partial, including older result/destination-captured statuses that do not prove a specific click."
+  ]
+}
