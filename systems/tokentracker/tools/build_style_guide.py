@@ -53,16 +53,12 @@ def css_val(name, t):
     return alias(v)
 
 
-def block(setname):
-    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]))
-
-
 # A light-only product has no dark set; every set that is missing renders as empty.
 SETS = [s for s in ("core", "light", "dark") if s in T]
 THEMES = [s for s in SETS if s != "core"]
 
 
-def block(setname):  # noqa: F811 (redefined so a missing set renders as nothing)
+def block(setname):  # a missing set renders as nothing
     if setname not in T:
         return ""
     return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]))
@@ -89,6 +85,8 @@ def slim(node):
 
 
 data = json.dumps({k: slim(T[k]) if k in T else {} for k in ("core", "light", "dark")}, ensure_ascii=False, separators=(",", ":"))
+# Inside a <script>, so a "</" in any value (a source quoting </style>, say) must not end it.
+data = data.replace("</", "<\\/")
 
 _uid = [0]
 ICON_SRC = {}
