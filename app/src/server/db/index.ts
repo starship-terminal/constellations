@@ -49,6 +49,9 @@ async function restrictPermissions(directory: string) {
 }
 export async function createResearchStore(directory: string) {
   await mkdir(directory, { recursive: true, mode: 0o700 });
+  // Before anything can fail, so a store that will not open is still locked
+  // down; again after opening, for files SQLite has just created.
+  await restrictPermissions(directory);
   const client = createClient({
     url: pathToFileURL(resolve(directory, "app.db")).href,
   });

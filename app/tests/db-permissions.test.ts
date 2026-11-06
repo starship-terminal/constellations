@@ -2,6 +2,8 @@ import { afterEach, expect, test } from "vitest";
 import { chmod, mkdtemp, readdir, rm, stat } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { createClient } from "@libsql/client";
+import { pathToFileURL } from "node:url";
 import { createResearchStore } from "@/server/db";
 
 const directories: string[] = [];
@@ -23,6 +25,7 @@ test.skipIf(process.platform === "win32")(
     await first.saveSettings({ provider: "openai" });
     first.close();
     for (const name of await readdir(dir)) await chmod(join(dir, name), 0o644);
+    await chmod(dir, 0o755);
     const store = await createResearchStore(dir);
     try {
       await store.saveSettings({ provider: "anthropic" });
@@ -35,5 +38,22 @@ test.skipIf(process.platform === "win32")(
     } finally {
       store.close();
     }
+  },
+);
+
+test.skipIf(process.platform === "win32")(
+  "a store that fails to open is still made owner-only",
+  async () => {
+    const dir = await mkdtemp(join(tmpdir(), "research-perm-"));
+    directories.push(dir);
+    (await createResearchStore(dir)).close();
+    const raw = createClient({ url: pathToFileURL(join(dir, "app.db")).href });
+    await raw.execute("PRAGMA user_version = 99");
+    raw.close();
+    await chmod(join(dir, "app.db"), 0o644);
+    await chmod(dir, 0o755);
+    await expect(createResearchStore(dir)).rejects.toThrow("newer");
+    expect(await mode(dir)).toBe(0o700);
+    expect(await mode(join(dir, "app.db"))).toBe(0o600);
   },
 );
