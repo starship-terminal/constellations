@@ -268,7 +268,7 @@
       "reason": "Capture filename explicitly names date & time picker; local classification from recorded capture metadata."
     },
     "ui-map": {
-      "pattern": "map",
+      "pattern": "(?<!source-)(?<!address-)map",
       "label": "Map",
       "reason": "Capture filename explicitly names map; local classification from recorded capture metadata."
     },
@@ -695,7 +695,17 @@
     {
       "referenceId": "systems:cloudflare",
       "media": 227,
-      "assignedMedia": 44
+      "assignedMedia": 42
+    },
+    {
+      "referenceId": "systems:attio",
+      "media": 41,
+      "assignedMedia": 41
+    },
+    {
+      "referenceId": "systems:supabase",
+      "media": 158,
+      "assignedMedia": 158
     }
   ],
   "assignments": [
@@ -158142,11 +158152,6 @@
       "mediaId": "systems/sentry/screenshots/breadth2/source-map-upload-detail-dark.png",
       "terms": [
         {
-          "termId": "web-ui-elements:map",
-          "rule": "ui-map",
-          "reason": "Capture filename explicitly names map; local classification from recorded capture metadata."
-        },
-        {
           "termId": "web-ux-patterns:upload-download",
           "rule": "ux-upload-download",
           "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
@@ -160675,28 +160680,6 @@
     },
     {
       "referenceId": "systems:cloudflare",
-      "mediaId": "systems/cloudflare/screenshots/address-map-create-dark-desktop.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:map",
-          "rule": "ui-map",
-          "reason": "Capture filename explicitly names map; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:cloudflare",
-      "mediaId": "systems/cloudflare/screenshots/address-map-discard-dark-desktop.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:map",
-          "rule": "ui-map",
-          "reason": "Capture filename explicitly names map; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:cloudflare",
       "mediaId": "systems/cloudflare/screenshots/agent-tracing-date-picker-dark-desktop.png",
       "terms": [
         {
@@ -161129,6 +161112,2455 @@
           "termId": "web-ux-patterns:searching",
           "rule": "ux-search",
           "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/appearance-light.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/appearance-original-system.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/appearance-restored-system.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/companies-dark-scoped.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/companies-filter-light.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/companies-filter-menu.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/companies-initial.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/companies-light-scoped.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/companies-light.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/companies-mobile-dark-collapsed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/companies-mobile-dark.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/companies-sort-dialog.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/companies-sort-light.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/companies-view-picker.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/companies-view-settings-light.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/companies-view-settings.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/company-create-dialog.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/company-create-light.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/company-notes-empty.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/company-record-actions.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/company-record-overview-light.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/company-record-overview.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/landing-first.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/landing-mobile-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/landing-mobile.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/landing-platform-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/onboarding-about-you-measured.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/onboarding-call-intelligence-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/onboarding-call-intelligence-disabled.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/onboarding-company-description.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/onboarding-complete.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/onboarding-connect-inbox.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/onboarding-country-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/onboarding-proposed-structure.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/onboarding-referral.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/onboarding-skip-email-dialog.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/screenshots/onboarding-workspace-details.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/components/crops/dark-table.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:table",
+          "rule": "ui-table",
+          "reason": "Capture filename explicitly names table; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/components/crops/dark-toolbar.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:toolbar",
+          "rule": "ui-toolbar",
+          "reason": "Capture filename explicitly names toolbar; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/components/crops/light-table.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:table",
+          "rule": "ui-table",
+          "reason": "Capture filename explicitly names table; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:attio",
+      "mediaId": "systems/attio/components/crops/light-toolbar.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:toolbar",
+          "rule": "ui-toolbar",
+          "reason": "Capture filename explicitly names toolbar; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/attio/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-account-appearance.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-account-audit-table.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:table",
+          "rule": "ui-table",
+          "reason": "Capture filename explicitly names table; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-account-preferences.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-account-security.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-account-theme-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-advisor-category-filter.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-advisor-center.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-audit-date-range.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-audit-filter-builder.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-audit-filter-group.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-audit-filter-operators.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-audit-log-drains.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-audit-logs.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-audit-project-filter.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-audit-sort-menu.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-billing.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-branch-picker.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-branches-paused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-command-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-connection-management-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-connection-project-list.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:list",
+          "rule": "ui-list",
+          "reason": "Capture filename explicitly names list; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-connection-project-picker.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-dark-mobile-invite.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-dark-mobile-team.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-edge-functions.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-feature-previews.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-feedback-composer.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:feedback-survey",
+          "rule": "ux-feedback",
+          "reason": "Capture filename explicitly names feedback & survey; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-feedback-menu.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:feedback-survey",
+          "rule": "ux-feedback",
+          "reason": "Capture filename explicitly names feedback & survey; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-function-assistant.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-function-cli-dialog.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-function-editor.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-function-new-file.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-function-templates.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-github-repository-empty.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-github-repository-selector.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-help-panel.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-integrations.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-invite-members.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-invoice-paid-badge.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-keyboard-shortcuts.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-legal-documents.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-light-invite-members.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-light-keyboard-shortcuts.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-light-mobile-invite.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-light-mobile-oauth-form.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-light-mobile-projects.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-light-mobile-spend-cap.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-light-mobile-team.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-light-oauth-publish-form.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-light-project-settings.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-light-projects-grid.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-light-spend-cap.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-light-status-filter.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-light-team.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-light-theme-colors.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-log-display-options.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-logs-api-subtypes.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-logs-date-picker.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:date-time-picker",
+          "rule": "ui-date-picker",
+          "reason": "Capture filename explicitly names date & time picker; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-logs-empty.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-logs-expanded-filters.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-logs-hidden-filters.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-logs-postgres-subtypes.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-merge-requests-paused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-mobile-navigation.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-mobile-projects.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-new-organization-form.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-new-project-advanced.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-new-project-regions.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-new-project.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-oauth-apps.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-oauth-publish-form.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-oauth-scope-options.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-organization-picker.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-organization-plan-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-organization-security.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-organization-settings.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-organization-sso.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-organization-type-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-organizations-empty-search.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-organizations-overview.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-paused-project.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-preview-advisor-rules.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-preview-column-privileges.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-preview-one-click-integrations.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-preview-pg-delta.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-preview-snippet-autosaving.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-preview-temporary-access.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-primary-email-options.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-privatelink-plan-gate.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-profile-input-focus.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-project-access.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-project-actions-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-project-addons.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-project-integrations-accessible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-project-lifecycle.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-project-log-drains-gate.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-project-picker.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-project-settings.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-projects-grid.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-restored-system-theme.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-search-empty.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-sidebar-behavior-options.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-sort-menu.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-spend-cap-plan-restriction.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-spend-cap-resource-details.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-sql-side-panel.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-sql-snippet-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-status-filter-checked.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-status-filter.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-subscription-options.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-support-form.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-support-issue-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-team-filter-empty.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-team-manage-access.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-team-member-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-team-mfa-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-team-role-filter.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-team-role-filtered.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-team-search-empty.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-team.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-theme-colors.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-timezone-options.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-timezone-search.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-unified-logs-information.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-unsaved-changes.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-usage-cycle-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-usage-database-storage.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-usage-project-options.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-usage-realtime.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/app-usage.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/landing-desktop-hero.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/landing-mobile-hero.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/screenshots/landing-mobile-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/checkbox-checked.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/command-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/date-picker.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:date-time-picker",
+          "rule": "ui-date-picker",
+          "reason": "Capture filename explicitly names date & time picker; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/feedback-textarea.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:feedback-survey",
+          "rule": "ux-feedback",
+          "reason": "Capture filename explicitly names feedback & survey; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/function-editor.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/invite-radio-group.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/invite-textarea-focus.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/mobile-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/oauth-scope-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/primary-button.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/project-card.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/project-picker.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/repository-empty.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/search-empty.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/snippet-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/sort-menu.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/sql-panel.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/status-filter.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/switches.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/team-table.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:table",
+          "rule": "ui-table",
+          "reason": "Capture filename explicitly names table; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/theme-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/timezone-search.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/unsaved-confirmation.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:confirmation",
+          "rule": "ux-confirmation",
+          "reason": "Capture filename explicitly names confirmation; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/warning-dark.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:supabase",
+      "mediaId": "systems/supabase/components/crops/warning-light.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
         }
       ]
     }

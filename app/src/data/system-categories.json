@@ -268,5 +268,17 @@
     "groupId": "web-categories",
     "labels": ["Development Tools"],
     "reason": "catalog.json describes security dashboards, condition builders and configuration tables."
+  },
+  {
+    "referenceId": "systems:attio",
+    "groupId": "web-categories",
+    "labels": ["Business", "Productivity"],
+    "reason": "catalog.json describes CRM tables, configurable views and record panels."
+  },
+  {
+    "referenceId": "systems:supabase",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "catalog.json describes developer dashboards, code editors, log filters and database settings."
   }
 ]
