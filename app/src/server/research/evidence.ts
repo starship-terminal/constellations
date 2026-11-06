@@ -4,6 +4,7 @@ import {
   readPackageDocument,
 } from "@/server/sources/files";
 import {
+  colorsAsHex,
   hasUnresolved,
   tokenLeaves,
   tokenResolver,
@@ -94,10 +95,13 @@ export async function packageTokens(
   );
   const resolveToken = (token: TokenLeaf): Raw => {
     const base = resolver.final(token.name);
-    if (!hasUnresolved(base)) return { value: base };
+    if (!hasUnresolved(base)) return { value: colorsAsHex(base) };
     if (token.name.split(".")[0] === "core" && themeSets.length) {
       const themes = Object.fromEntries(
-        themeSets.map((theme) => [theme, resolver.final(token.name, theme)]),
+        themeSets.map((theme) => [
+          theme,
+          colorsAsHex(resolver.final(token.name, theme)),
+        ]),
       );
       if (!Object.values(themes).some(hasUnresolved))
         return { value: token.value, themes };

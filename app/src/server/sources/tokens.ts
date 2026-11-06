@@ -121,3 +121,14 @@ export function tokenHex(value: unknown): string | null {
     (alpha === 1 ? "" : hex(alpha))
   );
 }
+/** Replace every DTCG colour object inside a resolved value with its hex. */
+export function colorsAsHex(value: unknown): unknown {
+  const hex = tokenHex(value);
+  if (hex) return hex;
+  if (Array.isArray(value)) return value.map(colorsAsHex);
+  if (value && typeof value === "object")
+    return Object.fromEntries(
+      Object.entries(value).map(([key, v]) => [key, colorsAsHex(v)]),
+    );
+  return value;
+}

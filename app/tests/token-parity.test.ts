@@ -18,6 +18,16 @@ const TOKENS = {
         accent: { "100": { $value: "{color.blue.100}", $type: "color" } },
       },
       gray: { "1": { value: "rgba(255, 255, 255, 1)", type: "color" } },
+      // DTCG 2025 colour objects: computed from components, or their own hex.
+      wash: {
+        $value: { colorSpace: "srgb", components: [1, 0.5, 0], alpha: 0.5 },
+        $type: "color",
+      },
+      ink: {
+        $value: { colorSpace: "srgb", components: [0, 0, 0], hex: "#123456" },
+        $type: "color",
+      },
+      tint: { $value: "{color.wash}", $type: "color" },
       surface: { value: "{color.gray.1}", type: "color" },
     },
     shadow: {
@@ -47,6 +57,9 @@ const PYTHON_EXPORT = {
   base: {
     "core.color.role.accent.100": "#cde2fb",
     "core.color.surface": "rgba(255, 255, 255, 1)",
+    "core.color.wash": "#ff800080",
+    "core.color.ink": "#123456",
+    "core.color.tint": "#ff800080",
     "core.keyframes.fade": "{ to { opacity: 1 } }",
   },
   light: { "light.text": "#cde2fb", "core.shadow.lip": "#58a700" },
@@ -103,6 +116,10 @@ test("reference detail resolves set-scoped aliases and legacy value leaves like 
     PYTHON_EXPORT.base["core.color.surface"],
   );
   expect(values.get("light.text")).toBe(PYTHON_EXPORT.light["light.text"]);
+  for (const name of ["core.color.wash", "core.color.ink", "core.color.tint"])
+    expect(values.get(name), name).toBe(
+      PYTHON_EXPORT.base[name as keyof typeof PYTHON_EXPORT.base],
+    );
 });
 
 test("package tokens give catalog.py's values, per theme for core aliases into a theme", async () => {
