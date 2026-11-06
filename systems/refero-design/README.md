@@ -109,12 +109,12 @@ The kit under [tools/capture/](tools/capture) re-reads the live sites; the build
 ```sh
 cd systems/refero-design
 PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs \
-  node tools/capture/public/public.mjs        # page screenshots into raw/screens/
+  node tools/capture/public/public.mjs        # page screenshots into ~/.design-systems/refero-design/raw-shots (RAW)
 PLAYWRIGHT=... node tools/capture/vars.mjs    # raw/css-vars.json
 PLAYWRIGHT=... node tools/capture/public/measure.mjs   # raw/components-computed.json + crops
 PLAYWRIGHT=... node tools/capture/icons.mjs   # icons/ + INDEX.tsv
 PLAYWRIGHT=... node tools/capture/layout.mjs  # raw/layout.json
-python3 tools/capture/quantize.py             # screenshots/ from raw/screens/
+python3 tools/capture/quantize.py ~/.design-systems/refero-design/raw-shots   # screenshots/; originals stay out of the repo
 node tools/capture/public/build-measurements.mjs       # raw/measurements.md
 python3 tools/build_tokens.py                 # tokens.json from component-tokens.json + css-vars.json
 python3 tools/build_components_md.public.py   # components.md
