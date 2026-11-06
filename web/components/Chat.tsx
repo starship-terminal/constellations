@@ -28,7 +28,10 @@ interface ChatMedia {
 }
 interface Turn {
   role: "user" | "assistant";
+  /** User: the typed message. Assistant: rendered HTML, for display only. */
   text?: string;
+  /** Assistant: the model's markdown, the form history is sent back in. */
+  raw?: string;
   pending?: boolean;
   error?: string;
   results?: ChatResult[];
@@ -74,6 +77,21 @@ const dsProvider = (): Cfg | null => {
     return null;
   }
 };
+
+// The history the model sees: each question with the markdown answer it got.
+// An exchange whose answer failed, is still pending, or is a page placeholder
+// is left out whole, so the wire never carries an empty or HTML assistant
+// turn and roles keep alternating.
+function wireHistory(turns: Turn[]): { role: "user" | "assistant"; content: string }[] {
+  const out: { role: "user" | "assistant"; content: string }[] = [];
+  turns.forEach((t, i) => {
+    const answer = turns[i + 1];
+    if (t.role !== "user" || !t.text || answer?.role !== "assistant") return;
+    if (answer.pending || answer.error || !answer.raw) return;
+    out.push({ role: "user", content: t.text }, { role: "assistant", content: answer.raw });
+  });
+  return out;
+}
 
 const UP_ICON = (
   <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" /></svg>
@@ -159,7 +177,7 @@ export function ChatDrawer() {
   const send = async () => {
     const text = draft.trim();
     if (!text || busy) return;
-    const wire = turns.filter((t) => !t.pending).map((t) => ({ role: t.role, content: t.text || "" }));
+    const wire = wireHistory(turns);
     wire.push({ role: "user", content: text });
     const myEpoch = epoch.current;
     setDraft("");
@@ -180,6 +198,7 @@ export function ChatDrawer() {
         next[next.length - 1] = {
           role: "assistant",
           text: d.reply || d.message || (d.error === "no_provider" ? "No model is configured yet." : ""),
+          raw: typeof d.raw === "string" ? d.raw : undefined,
           error: d.error,
           results: d.results || [],
           media: d.media || [],
