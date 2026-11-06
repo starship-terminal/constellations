@@ -287,10 +287,11 @@ def list_media(slug: str, kind: str | None = None) -> dict:
     base = _pkg_dir(e)
     for k in kinds:
         d = base / k
-        if not d.is_dir():
+        # A symlinked media folder is skipped like any other symlink.
+        if d.is_symlink() or not d.is_dir():
             continue
         for p in _walk_files(d):
-            if p.suffix.lower() in IMAGE_TYPES:
+            if p.suffix.lower() in IMAGE_TYPES and not _private(p.relative_to(base).as_posix()):
                 items.append({"kind": k, "name": p.stem, "url": _site_url(p)})
     return {"slug": slug, "count": len(items), "items": items[:60],
             "capped": len(items) > 60}

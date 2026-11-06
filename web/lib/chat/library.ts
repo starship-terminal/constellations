@@ -694,10 +694,12 @@ async function listMedia(args: Obj): Promise<Obj> {
   const base = await pkgDir(e);
   for (const k of kinds) {
     const d = path.join(base, k);
-    if (!(await fs.stat(d).catch(() => null))?.isDirectory()) continue;
+    // A symlinked media folder is skipped like any other symlink.
+    if (!(await fs.lstat(d).catch(() => null))?.isDirectory()) continue;
     for (const p of await walkFiles(d)) {
       const ext = path.extname(p).toLowerCase();
-      if (IMAGE_TYPES[ext]) items.push({ kind: k, name: path.basename(p, ext), url: mediaUrl(p) });
+      const rel = path.relative(base, p).split(path.sep).join("/");
+      if (IMAGE_TYPES[ext] && !privatePath(rel)) items.push({ kind: k, name: path.basename(p, ext), url: mediaUrl(p) });
     }
   }
   return { slug, count: items.length, items: items.slice(0, 60), capped: items.length > 60 };
