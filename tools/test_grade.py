@@ -386,5 +386,35 @@ class NextPathTest(unittest.TestCase):
         self.touch("2026-11-05-9.json", "2026-11-060.json")
         self.assertEqual(grade.next_path("2026-11-06").name, "2026-11-06.json")
 
+class LoadReviewsTest(unittest.TestCase):
+    def setUp(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        self.dir = Path(tmp.name)
+
+    def exits(self, spec):
+        with self.assertRaises(SystemExit) as raised:
+            grade.load_reviews([spec], {"x"})
+        return str(raised.exception)
+
+    def test_a_good_spec_loads(self):
+        (self.dir / "r.json").write_text('{"F1": {"grade": "done", "evidence": "e"}}')
+        self.assertEqual(grade.load_reviews([f"x={self.dir / 'r.json'}"], {"x"}),
+                         {"x": {"F1": {"grade": "done", "evidence": "e"}}})
+
+    def test_a_bare_slug_says_what_is_expected(self):
+        self.assertIn("expected SLUG=FILE", self.exits("x"))
+        self.assertIn("expected SLUG=FILE", self.exits("x="))
+
+    def test_unknown_slug_missing_file_bad_json_and_non_object(self):
+        self.assertIn("not in catalog.json", self.exits(f"nope={self.dir}"))
+        self.assertIn("cannot read", self.exits(f"x={self.dir / 'absent.json'}"))
+        self.assertIn("cannot read", self.exits(f"x={self.dir}"))
+        (self.dir / "bad.json").write_text("{")
+        self.assertIn("not valid JSON", self.exits(f"x={self.dir / 'bad.json'}"))
+        (self.dir / "list.json").write_text("[]")
+        self.assertIn("JSON object", self.exits(f"x={self.dir / 'list.json'}"))
+
+
 if __name__ == "__main__":
     unittest.main()
