@@ -110,6 +110,10 @@ BY_PROP = {"background-color": ["ui.", "role.", "palette."], "color": ["ui.", "r
 
 
 def pick(paths, prop):
+    # A text colour is written as a text name (fg, *-text, *-foreground), a fill or edge as one that is not,
+    # as capy-desktop's copy does: white text is `ui.foreground`, not the `ui.primary` fill that shares its value.
+    textish = lambda x: any(w in x.split(".")[-1] for w in ("fg", "text", "foreground"))
+    paths = [x for x in paths if textish(x) == (prop == "color")] or paths
     for pre in BY_PROP.get(prop, []):
         for x in paths:
             if x.startswith(pre):
