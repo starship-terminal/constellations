@@ -37,6 +37,8 @@ MEDIA_DIRS = ("screenshots", "components", "icons", "boards")
 RESULT_CAP = 32_000
 DOC_CAP = 24_000
 TOKEN_PAGE = RESULT_CAP - 1_000  # bytes of name/value pairs one get_tokens page carries
+# How a handoff prompt names the library's checkout.
+HOME_VAR = "$DESIGN_SYSTEMS_HOME"
 IMAGE_CAP = 3_500_000  # bytes on disk; bigger shots are refused unless Pillow shrinks them
 
 
@@ -341,9 +343,13 @@ def handoff_prompt(slug: str, app_description: str | None = None) -> dict:
     e = _entry(slug)
     tokens = json.loads(_repo_file(e["tokens"]).read_text())
     groups = ", ".join(k for k in tokens if not k.startswith("$"))
-    root = ROOT.resolve()
+    # Paths are repo-relative under $DESIGN_SYSTEMS_HOME, the variable the
+    # design-systems plugin and AGENTS.md use to find a checkout, so the
+    # prompt works on the agent's machine instead of naming the server's.
+    root = HOME_VAR
     target = f" for {app_description}" if app_description else ""
     text = (f"Match the {e['name']} design style from my design-systems library{target}.\n"
+            f"{root} is that library's checkout on this machine (set it, or replace it with the path).\n"
             f"1. Read {root}/{e['entry']} in full first. It says what was captured and what to distrust.\n"
             f"2. Take colour, type, spacing and radius values from {root}/{e['tokens']}. Its top-level "
             f"token groups are {groups}; the README says which group holds colour roles and which holds "
