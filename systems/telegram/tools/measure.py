@@ -336,7 +336,7 @@ def run(raw):
     raw = pathlib.Path(raw).expanduser()
     if not (raw / "dark").is_dir():
         raise SystemExit(f"{raw}: no dark/ captures; nothing written")
-    cache, out = {}, {}
+    pending, out = {}, {}
     for rid, entries in R.items():
         for cap, op, args, note in entries if isinstance(entries, list) else [entries]:
             themes = [cap.split("/")[0]] if "/" in cap else ["dark", "light"]
@@ -344,21 +344,25 @@ def run(raw):
             for theme in themes:
                 if not (raw / theme / f"{name}.png").exists():
                     continue
-                key = f"{theme}/{name}"
-                if key not in cache:
-                    cache[key] = load(raw, theme, name)
-                rows = cache[key]
-                if op == "fill":
-                    res = op_fill(rows, *args)
-                elif op == "text":
-                    res = op_text(rows, *args, dark=(theme == "dark"))
-                else:
-                    res = globals()["op_" + op](rows, *args)
-                res.update({"capture": f"screenshots/{theme}/{name}.png", "op": op,
-                            "args": json.loads(json.dumps(args)), "note": note})
-                if name in FROM_RAW:
-                    res["readFrom"] = f"{name}.raw.png, converted to sRGB (the .png is masked)"
-                out.setdefault(rid, {})[theme] = res
+                pending.setdefault(f"{theme}/{name}", []).append((rid, op, args, note))
+    # One decoded capture at a time: a decoded capture is several hundred MB as Python tuples, so
+    # the readings are grouped by capture and each image is released before the next is read.
+    for key in sorted(pending):
+        theme, name = key.split("/")
+        rows = load(raw, theme, name)
+        for rid, op, args, note in pending[key]:
+            if op == "fill":
+                res = op_fill(rows, *args)
+            elif op == "text":
+                res = op_text(rows, *args, dark=(theme == "dark"))
+            else:
+                res = globals()["op_" + op](rows, *args)
+            res.update({"capture": f"screenshots/{theme}/{name}.png", "op": op,
+                        "args": json.loads(json.dumps(args)), "note": note})
+            if name in FROM_RAW:
+                res["readFrom"] = f"{name}.raw.png, converted to sRGB (the .png is masked)"
+            out.setdefault(rid, {})[theme] = res
+        del rows   # released before the next capture is decoded
     return out
 
 
