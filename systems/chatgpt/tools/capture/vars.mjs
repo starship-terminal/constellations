@@ -66,7 +66,8 @@ const p = await b.newPage();
 await p.setContent('<!doctype html><html><head></head><body></body></html>');
 const result = await p.evaluate((list) => {
   // A custom property can hold a url() with a signed or per-account query: record it as url(…).
-  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+  // Its value keeps the authored tokens, so this matches URL( too, escapes and space inside the parens.
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];
   const fonts = [];
   const motion = [];
@@ -134,7 +135,8 @@ const probe = fs.existsSync(path.join(SNAPS, 'home-dark.html')) ? 'home-dark' : 
 await page.goto(`file://${SNAPS}/${probe}.html`, { waitUntil: 'domcontentloaded', timeout: 60000 });
 const computed = await page.evaluate((names) => {
   // A custom property can hold a url() with a signed or per-account query: record it as url(…).
-  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+  // Its value keeps the authored tokens, so this matches URL( too, escapes and space inside the parens.
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const h = document.documentElement;
   const host = document.createElement('div');
   host.style.cssText = 'position:absolute;left:-9999px;top:0;color:rgb(1, 2, 3);';

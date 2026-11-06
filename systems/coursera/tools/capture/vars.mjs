@@ -14,7 +14,8 @@ await p.goto('https://www.coursera.org/learn/machine-learning', { waitUntil: 'do
 await p.waitForTimeout(7000);
 const out = await p.evaluate(() => {
   // A custom property can hold a url() with a signed or per-account query: record it as url(…).
-  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+  // Its value keeps the authored tokens, so this matches URL( too, escapes and space inside the parens.
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const decls = [], fontfaces = [], keyframes = new Set();
   const walk = (rules, media) => {
     for (const r of rules) {
@@ -36,7 +37,7 @@ const resolved = {};
 for (const w of [390, 768, 1024, 1440]) {
   await p.setViewportSize({ width: w, height: 900 });
   await p.waitForTimeout(300);
-  resolved[w] = await p.evaluate((ns) => { const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v); const cs = getComputedStyle(document.documentElement); return Object.fromEntries(ns.map((n) => [n, noUrl(cs.getPropertyValue(n).trim())])); }, names);
+  resolved[w] = await p.evaluate((ns) => { const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v); const cs = getComputedStyle(document.documentElement); return Object.fromEntries(ns.map((n) => [n, noUrl(cs.getPropertyValue(n).trim())])); }, names);
 }
 // the same names with the page forced dark, to read the dark side of every light-dark() pair
 await p.evaluate(() => { document.documentElement.dataset.colorTheme = 'dark'; document.documentElement.style.colorScheme = 'dark'; });

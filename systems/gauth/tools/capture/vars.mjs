@@ -71,7 +71,8 @@ for (const [key, p] of Object.entries(PAGES)) {
   sheetsSeen[key] = sheets.map(([n, t]) => `${n} (${t.length} bytes)`).concat(unread.map((u) => `${u} (body not read)`));
   const found = await page.evaluate((sheets) => {
     // A custom property can hold a url() with a signed or per-account query: record it as url(…).
-    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+    // Its value keeps the authored tokens, so this matches URL( too, escapes and space inside the parens.
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const res = [], ff = [];
     for (const [name, text] of sheets) {
       const s = new CSSStyleSheet();
@@ -127,7 +128,7 @@ for (const [key, p] of Object.entries(PAGES)) {
     for (const w of [390, 768, 1024, 1440]) {
       await page.setViewportSize({ width: w, height: 900 });
       await page.waitForTimeout(400);
-      resolved[key][w] = await page.evaluate((ns) => { const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v); const cs = getComputedStyle(document.documentElement); return Object.fromEntries([...new Set(ns)].sort().map((n) => [n, noUrl(cs.getPropertyValue(n).trim())])); }, names);
+      resolved[key][w] = await page.evaluate((ns) => { const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v); const cs = getComputedStyle(document.documentElement); return Object.fromEntries([...new Set(ns)].sort().map((n) => [n, noUrl(cs.getPropertyValue(n).trim())])); }, names);
     }
     await page.setViewportSize({ width: 1440, height: 900 });
   }

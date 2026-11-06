@@ -93,7 +93,8 @@ for (const [theme, label] of Object.entries(COPIES)) {
   await page.goto(`file://${path.join(SNAPS, label)}.html`, { waitUntil: 'load' });
   const res = await page.evaluate(() => {
     // A custom property can hold a url() with a signed or per-account query: record it as url(…).
-    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+    // Its value keeps the authored tokens, so this matches URL( too, escapes and space inside the parens.
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const names = new Set();
     const aliases = {};
     const media = {}, zIndex = {}, transitions = {}, durations = {}, easings = {}, shadows = {};

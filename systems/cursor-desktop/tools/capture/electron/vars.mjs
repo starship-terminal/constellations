@@ -16,7 +16,8 @@ const { browser, page } = await connect(title);
 const meta = await viewport(page);
 const data = await page.evaluate(({ scopes, keep }) => {
   // A custom property can hold a url() with a signed or per-account query: record it as url(…).
-  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+  // Its value keeps the authored tokens, so this matches URL( too, escapes and space inside the parens.
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const KEEP = new RegExp(keep || '^--');
   const sheets = [], decls = [], names = new Set(), conditions = {};
   [...document.styleSheets].forEach((s, i) => {

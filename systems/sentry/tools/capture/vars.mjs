@@ -52,7 +52,8 @@ const page = await browser.newPage();
 await page.setContent('<!doctype html><html><head></head><body></body></html>');
 const result = await page.evaluate((sheets) => {
   // A custom property can hold a url() with a signed or per-account query: record it as url(…).
-  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+  // Its value keeps the authored tokens, so this matches URL( too, escapes and space inside the parens.
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];
   const fonts = [];
   const walk = (list, ctx, file) => {
@@ -121,7 +122,8 @@ for (const [pass, mode, density] of [['light', 'light', 'comfortable'], ['dark',
   await page2.setContent(shell(mode, density), { waitUntil: 'load' });
   resolved[pass] = await page2.evaluate((names) => {
     // A custom property can hold a url() with a signed or per-account query: record it as url(…).
-    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+    // Its value keeps the authored tokens, so this matches URL( too, escapes and space inside the parens.
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const rootProbe = document.getElementById('probe-root');
     const sideProbe = document.getElementById('probe-sidebar');
     const box = document.createElement('div');

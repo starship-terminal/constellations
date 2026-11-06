@@ -14,7 +14,8 @@ if (!SP) { console.error('set SP to a scratch directory outside the repository')
   await p.waitForTimeout(1500);
   const out = await p.evaluate(() => {
     // A custom property can hold a url() with a signed or per-account query: record it as url(…).
-    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+    // Its value keeps the authored tokens, so this matches URL( too, escapes and space inside the parens.
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const root = {}, dark = {}, other = {}, fontfaces = [], keyframes = [], media = new Set();
     const walk = (rules) => { for (const r of rules) {
       if (r.cssRules && !r.style) { if (r.conditionText) media.add(r.conditionText); walk(r.cssRules); }

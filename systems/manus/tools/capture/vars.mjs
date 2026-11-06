@@ -43,7 +43,8 @@ const p = await b.newPage();
 await p.setContent('<!doctype html><html><head></head><body></body></html>');
 const result = await p.evaluate((sheets) => {
   // A custom property can hold a url() with a signed or per-account query: record it as url(…).
-  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+  // Its value keeps the authored tokens, so this matches URL( too, escapes and space inside the parens.
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];
   const fonts = [];
   const walk = (list, ctx, file) => {
