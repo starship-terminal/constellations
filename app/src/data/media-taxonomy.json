@@ -676,6 +676,26 @@
       "referenceId": "systems:refero-design",
       "media": 95,
       "assignedMedia": 52
+    },
+    {
+      "referenceId": "systems:clerk",
+      "media": 77,
+      "assignedMedia": 25
+    },
+    {
+      "referenceId": "systems:sentry",
+      "media": 225,
+      "assignedMedia": 63
+    },
+    {
+      "referenceId": "systems:metabase",
+      "media": 188,
+      "assignedMedia": 188
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "media": 227,
+      "assignedMedia": 44
     }
   ],
   "assignments": [
@@ -157159,6 +157179,3951 @@
           "termId": "web-ui-elements:search-field",
           "rule": "ui-search-field",
           "reason": "Capture filename explicitly names search field; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/screenshots/account-menu-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown-menu",
+          "rule": "ui-menu",
+          "reason": "Capture filename explicitly names dropdown menu; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:user-menu",
+          "rule": "ux-user-menu",
+          "reason": "Capture filename explicitly names user menu; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/screenshots/account-portal-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/screenshots/avatars-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:avatar",
+          "rule": "ui-avatar",
+          "reason": "Capture filename explicitly names avatar; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/screenshots/billing-onboarding-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/screenshots/create-user-dialog-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/screenshots/disable-native-confirmation-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:confirmation",
+          "rule": "ux-confirmation",
+          "reason": "Capture filename explicitly names confirmation; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/screenshots/email-templates-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/screenshots/logs-event-filter-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/screenshots/password-dialog-focus-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/screenshots/password-requirements-dialog-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/screenshots/password-requirements-dialog-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/screenshots/redirect-url-dialog-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/screenshots/sms-templates-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/components/crops/dialog-create-user.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/components/crops/dialog-password-light.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/components/crops/dialog-password.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/components/crops/primary-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/components/crops/primary-button-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/components/crops/secondary-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/components/crops/secondary-button-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/components/crops/tabs-email.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/components/crops/toggle-off-light.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/components/crops/toggle-off.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/components/crops/toggle-on-light.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:clerk",
+      "mediaId": "systems/clerk/components/crops/toggle-on.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/app/account-dark-menu.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/app/command-dark-dialog.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/app/command-light-dialog.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/app/feedback-dark-dialog.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:feedback-survey",
+          "rule": "ux-feedback",
+          "reason": "Capture filename explicitly names feedback & survey; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/app/feedback-light-dialog.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:feedback-survey",
+          "rule": "ux-feedback",
+          "reason": "Capture filename explicitly names feedback & survey; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/app/issues-dark-project-menu.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown-menu",
+          "rule": "ui-menu",
+          "reason": "Capture filename explicitly names dropdown menu; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/app/issues-dark-search.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/app/settings-dark-form.png",
+      "terms": [
+        {
+          "termId": "web-page-types:settings",
+          "rule": "page-settings",
+          "reason": "Capture filename explicitly names settings; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/app/settings-light-form.png",
+      "terms": [
+        {
+          "termId": "web-page-types:settings",
+          "rule": "page-settings",
+          "reason": "Capture filename explicitly names settings; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/app/settings-restored-system.png",
+      "terms": [
+        {
+          "termId": "web-page-types:settings",
+          "rule": "page-settings",
+          "reason": "Capture filename explicitly names settings; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/app/traces-dark-list.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:list",
+          "rule": "ui-list",
+          "reason": "Capture filename explicitly names list; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/app/traces-dark-span-loading.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:loading-connecting",
+          "rule": "ux-loading",
+          "reason": "Capture filename explicitly names loading & connecting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/app/traces-dark-tour-dialog.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/app/traces-light-list.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:list",
+          "rule": "ui-list",
+          "reason": "Capture filename explicitly names list; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/account-authorized-dark.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/account-close-dark.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/account-desktop-dark.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/account-emails-dark.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/account-event-menu-dark.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/account-identities-dark.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/account-language-dark.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/account-oauth-applications-dark.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/account-personal-token-index-dark.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/account-stack-order-dark.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/account-subscriptions-dark.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/account-timezone-dark.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/billing-legal-bottom-dark.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/billing-legal-dark.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/billing-overview-dark.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/billing-promo-dark.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/billing-receipts-dark.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/billing-spike-protection-dark.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/dashboard-widget-actions-dark.png",
+      "terms": [
+        {
+          "termId": "web-page-types:dashboard",
+          "rule": "page-dashboard",
+          "reason": "Capture filename explicitly names dashboard; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/dashboard-widget-fullscreen-dark.png",
+      "terms": [
+        {
+          "termId": "web-page-types:dashboard",
+          "rule": "page-dashboard",
+          "reason": "Capture filename explicitly names dashboard; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/issues-feedback-setup-dark.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:feedback-survey",
+          "rule": "ux-feedback",
+          "reason": "Capture filename explicitly names feedback & survey; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/issues-user-feedback-dark.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:feedback-survey",
+          "rule": "ux-feedback",
+          "reason": "Capture filename explicitly names feedback & survey; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/issues-views-sort-dark.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/monitor-error-accordions-dark.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:error",
+          "rule": "ux-error",
+          "reason": "Capture filename explicitly names error; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/monitor-error-detail-dark.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:error",
+          "rule": "ux-error",
+          "reason": "Capture filename explicitly names error; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/monitor-error-edit-dark.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:error",
+          "rule": "ux-error",
+          "reason": "Capture filename explicitly names error; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/notification-project-menu-dark.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown-menu",
+          "rule": "ui-menu",
+          "reason": "Capture filename explicitly names dropdown menu; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/organization-audit-calendar-dark.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:calendar",
+          "rule": "ux-calendar",
+          "reason": "Capture filename explicitly names calendar; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth/organization-scrubbing-dialog-dark.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth-mixed/organization-auth-plan-dialog-loaded-dark.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/account-desktop-light.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/account-global-menu-dark.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/account-narrow-light.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/account-system-restored-final.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/alert-filter-menu-dark.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/alerts-list-dark.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:list",
+          "rule": "ui-list",
+          "reason": "Capture filename explicitly names list; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/help-community-submenu-light.png",
+      "terms": [
+        {
+          "termId": "web-page-types:support-help",
+          "rule": "page-support",
+          "reason": "Capture filename explicitly names support & help; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/help-legal-submenu-light.png",
+      "terms": [
+        {
+          "termId": "web-page-types:support-help",
+          "rule": "page-support",
+          "reason": "Capture filename explicitly names support & help; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/help-menu-light.png",
+      "terms": [
+        {
+          "termId": "web-page-types:support-help",
+          "rule": "page-support",
+          "reason": "Capture filename explicitly names support & help; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/help-resources-expanded-light.png",
+      "terms": [
+        {
+          "termId": "web-page-types:support-help",
+          "rule": "page-support",
+          "reason": "Capture filename explicitly names support & help; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/issues-date-filter-narrow-light.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/issues-sort-narrow-dark.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/organization-switch-submenu-light.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/project-inbound-filters-dark.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/project-inbound-filters-lower-dark.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/seer-history-light.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:timeline-history",
+          "rule": "ux-history",
+          "reason": "Capture filename explicitly names timeline & history; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/source-map-upload-detail-dark.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:map",
+          "rule": "ui-map",
+          "reason": "Capture filename explicitly names map; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/trace-attribute-search-light.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:sentry",
+      "mediaId": "systems/sentry/screenshots/breadth2/trace-shortcuts-dialog-dark.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/aggregation-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/archived-timelines-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/assignment-auto-refresh-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/assignment-dashboard-menu-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/assignment-dashboard-recapture-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/assignment-id-filter-filled-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/assignment-id-filter-recapture-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/bar-chart-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/browse-databases-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/browse-metrics-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/browse-models-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/browse-postgres-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/chart-axes-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/chart-chooser-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/chart-data-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/chart-display-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/collection-bulk-actions-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/collection-bulk-selection-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/collection-events-empty-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/collection-filter-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/collection-filter-dark-mobile.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/collection-filter-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/collection-info-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/collection-location-loading-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:loading-connecting",
+          "rule": "ux-loading",
+          "reason": "Capture filename explicitly names loading & connecting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/collection-location-picker-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/collection-menu-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/collection-row-actions-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/collection-search-pending-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/collection-validation-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/create-collection-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/create-event-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/dashboard-copy-link-feedback-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:dashboard",
+          "rule": "page-dashboard",
+          "reason": "Capture filename explicitly names dashboard; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:feedback-survey",
+          "rule": "ux-feedback",
+          "reason": "Capture filename explicitly names feedback & survey; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/dashboard-filter-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:dashboard",
+          "rule": "page-dashboard",
+          "reason": "Capture filename explicitly names dashboard; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/dashboard-filter-light-mobile.png",
+      "terms": [
+        {
+          "termId": "web-page-types:dashboard",
+          "rule": "page-dashboard",
+          "reason": "Capture filename explicitly names dashboard; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/dashboard-history-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:dashboard",
+          "rule": "page-dashboard",
+          "reason": "Capture filename explicitly names dashboard; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:timeline-history",
+          "rule": "ux-history",
+          "reason": "Capture filename explicitly names timeline & history; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/dashboard-info-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:dashboard",
+          "rule": "page-dashboard",
+          "reason": "Capture filename explicitly names dashboard; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/dashboard-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:dashboard",
+          "rule": "page-dashboard",
+          "reason": "Capture filename explicitly names dashboard; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/dashboard-light-mobile.png",
+      "terms": [
+        {
+          "termId": "web-page-types:dashboard",
+          "rule": "page-dashboard",
+          "reason": "Capture filename explicitly names dashboard; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/document-actions-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/donut-color-picker-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:color-picker",
+          "rule": "ui-color-picker",
+          "reason": "Capture filename explicitly names color picker; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/donut-data-settings-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/donut-display-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/donut-percentages-both-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/drilldown-menu-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/drilldown-results-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/event-date-picker-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:date-time-picker",
+          "rule": "ui-date-picker",
+          "reason": "Capture filename explicitly names date & time picker; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/event-icon-picker-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/event-time-fields-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/filter-operators-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/global-search-recents-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/global-search-results-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/grouping-fields-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/home-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/metabot-unavailable-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/metric-about-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/metric-actions-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/metric-available-dimensions-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/metric-caching-dialog-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/metric-definition-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/metric-dimension-settings-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/metric-dimensions-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/metric-duplicate-dialog-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/metric-history-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:timeline-history",
+          "rule": "ux-history",
+          "reason": "Capture filename explicitly names timeline & history; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/metric-overview-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-actions-disabled-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-assignments-info-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-assignments-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-assignments-relationships-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-column-alignment-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-column-format-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-column-link-radio-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-column-menu-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-courses-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-duplicate-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-export-options-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-export-xlsx-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-history-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:timeline-history",
+          "rule": "ux-history",
+          "reason": "Capture filename explicitly names timeline & history; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-info-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-menu-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown-menu",
+          "rule": "ui-menu",
+          "reason": "Capture filename explicitly names dropdown menu; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-relationships-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-student-courses-info-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-student-courses-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-student-courses-relationships-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-students-error-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:error",
+          "rule": "ux-error",
+          "reason": "Capture filename explicitly names error; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-students-info-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-students-relationships-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-submissions-error-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:error",
+          "rule": "ux-error",
+          "reason": "Capture filename explicitly names error; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-submissions-info-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/model-submissions-relationships-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/move-item-dialog-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/new-dashboard-dialog-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/new-dashboard-dialog-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/new-document-editor-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/new-question-data-picker-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/new-timeline-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:timeline-history",
+          "rule": "ux-history",
+          "reason": "Capture filename explicitly names timeline & history; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/numeric-filter-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/overview-dashboard-recapture-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/personal-collection-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/personal-collection-type-filter-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/profile-language-options-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/profile-login-history-loading-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:loading-connecting",
+          "rule": "ux-loading",
+          "reason": "Capture filename explicitly names loading & connecting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:timeline-history",
+          "rule": "ux-history",
+          "reason": "Capture filename explicitly names timeline & history; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/profile-notifications-empty-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/profile-settings-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/profile-settings-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/profile-theme-options-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/query-builder-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/query-filter-fields-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/query-results-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/query-source-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/question-table-picker-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:table",
+          "rule": "ui-table",
+          "reason": "Capture filename explicitly names table; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/reference-assignment-fields-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/reference-assignment-questions-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/reference-assignments-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/reference-course-id-field-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/reference-databases-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/reference-glossary-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/reference-postgres-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/reference-segments-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/reference-tables-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:table",
+          "rule": "ui-table",
+          "reason": "Capture filename explicitly names table; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-10-average-scores-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-12-assignment-breakdown-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-13-submitted-assignments-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-14-courses-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-15-assignments-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-16-number-of-students-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-17-average-student-score-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-18-course-assignments-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-19-late-submissions-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-20-assignment-types-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-21-course-pass-rate-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-22-assignment-status-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-24-students-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-25-assignment-name-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-27-assignment-status-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-30-assignment-weight-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-31-submission-breakdown-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-33-grade-distribution-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-34-all-submissions-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-35-course-rating-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-36-student-geographical-locations-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-37-score-distribution-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-39-average-grade-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-41-student-courses-mapped-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-42-students-mapped-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-43-assignments-mapped-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-44-submissions-mapped-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-7-number-of-students-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-dashboard-picker-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-dashboard-search-empty-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-filters-expanded-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-history-error-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:error",
+          "rule": "ux-error",
+          "reason": "Capture filename explicitly names error; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:timeline-history",
+          "rule": "ux-history",
+          "reason": "Capture filename explicitly names timeline & history; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-info-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-menu-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-relationships-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-series-toggle-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-settings-denied-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/report-share-menu-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:share",
+          "rule": "ux-share",
+          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/reports-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/reports-dark-mobile.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/reports-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/reports-page-two-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/reports-sidebar-dark-mobile.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/reports-sidebar-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/shortcuts-admin-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/shortcuts-collections-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/shortcuts-dashboards-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/shortcuts-general-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/shortcuts-questions-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/table-assignments-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:table",
+          "rule": "ui-table",
+          "reason": "Capture filename explicitly names table; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/timeline-menu-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:timeline-history",
+          "rule": "ux-history",
+          "reason": "Capture filename explicitly names timeline & history; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/trash-list-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:list",
+          "rule": "ui-list",
+          "reason": "Capture filename explicitly names list; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:trash-archive",
+          "rule": "ux-archive",
+          "reason": "Capture filename explicitly names trash & archive; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/screenshots/upload-dialog-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/components/crops/aggregation-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/components/crops/chart-inputs.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/components/crops/chart-tabs.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/components/crops/chart-types.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/components/crops/collection-filter.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/components/crops/dashboard-multiselect.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/components/crops/drill-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/components/crops/empty-card.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/components/crops/error-card.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:error",
+          "rule": "ux-error",
+          "reason": "Capture filename explicitly names error; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/components/crops/filter-fields.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/components/crops/filter-operators.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/components/crops/grouping-menu.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/components/crops/metric-card.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/components/crops/primary-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/components/crops/range-disabled.png",
+      "terms": [
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:metabase",
+      "mediaId": "systems/metabase/components/crops/table-results.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:table",
+          "rule": "ui-table",
+          "reason": "Capture filename explicitly names table; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:inter",
+          "rule": "font-primary",
+          "reason": "Exact primary family Inter from systems/metabase/tokens.json#core.fontFamily.sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/abuse-contact-dialog-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/account-home-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/account-token-create-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/account-token-templates-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/account-tokens-list-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:profile-account",
+          "rule": "page-profile",
+          "reason": "Capture filename explicitly names profile & account; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:list",
+          "rule": "ui-list",
+          "reason": "Capture filename explicitly names list; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/address-map-create-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:map",
+          "rule": "ui-map",
+          "reason": "Capture filename explicitly names map; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/address-map-discard-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:map",
+          "rule": "ui-map",
+          "reason": "Capture filename explicitly names map; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/agent-tracing-date-picker-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:date-time-picker",
+          "rule": "ui-date-picker",
+          "reason": "Capture filename explicitly names date & time picker; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/ai-model-task-filter-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/ai-search-create-menu-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/ai-search-empty-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/ai-search-limits-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/analytics-date-picker-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:date-time-picker",
+          "rule": "ui-date-picker",
+          "reason": "Capture filename explicitly names date & time picker; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/analytics-filter-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/billing-budget-form-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/billing-period-menu-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/billing-usage-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/blocked-filter-empty-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/blocked-type-filter-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/browser-run-filters-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/challenge-dialog-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/challenge-dialog-dark-mobile.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/challenge-dialog-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/challenge-dialog-light-mobile.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/config-create-list-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:list",
+          "rule": "ui-list",
+          "reason": "Capture filename explicitly names list; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/create-app-templates-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:templates",
+          "rule": "ux-templates",
+          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/custom-rule-footer-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/k2-paywall-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:paywall-subscription",
+          "rule": "page-paywall",
+          "reason": "Capture filename explicitly names paywall & subscription; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/oauth-upload-tab-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tabs",
+          "rule": "ui-tabs",
+          "reason": "Capture filename explicitly names tabs; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/public-search-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/r2-bucket-filter-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/r2-download-metrics-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/r2-upload-empty-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/settings-search-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:settings",
+          "rule": "page-settings",
+          "reason": "Capture filename explicitly names settings; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/settings-search-dark-mobile.png",
+      "terms": [
+        {
+          "termId": "web-page-types:settings",
+          "rule": "page-settings",
+          "reason": "Capture filename explicitly names settings; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/settings-search-light-desktop.png",
+      "terms": [
+        {
+          "termId": "web-page-types:settings",
+          "rule": "page-settings",
+          "reason": "Capture filename explicitly names settings; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/settings-search-light-mobile.png",
+      "terms": [
+        {
+          "termId": "web-page-types:settings",
+          "rule": "page-settings",
+          "reason": "Capture filename explicitly names settings; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/vectorize-budget-dialog-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/screenshots/workers-filter-menu-dark-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/components/crops/analytics-filter-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/components/crops/configuration-dialog-desktop.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/components/crops/configuration-dialog-mobile.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/components/crops/date-picker-open.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:date-time-picker",
+          "rule": "ui-date-picker",
+          "reason": "Capture filename explicitly names date & time picker; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:cloudflare",
+      "mediaId": "systems/cloudflare/components/crops/public-search-dialog.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dialog-modal-window",
+          "rule": "ui-dialog",
+          "reason": "Capture filename explicitly names dialog & modal window; local classification from recorded capture metadata."
         },
         {
           "termId": "web-ux-patterns:searching",

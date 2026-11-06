@@ -244,5 +244,29 @@
     "groupId": "web-categories",
     "labels": ["Inspiration Board", "Reference"],
     "reason": "systems/refero-design/README.md records screenshot research galleries, a styles gallery and style-documentation pages. Inspiration Board covers visual discovery and Reference covers documentation; the legacy ai-research label alone does not prove a captured AI workflow."
+  },
+  {
+    "referenceId": "systems:clerk",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "catalog.json describes developer administration: authentication forms, settings screens and searchable tables."
+  },
+  {
+    "referenceId": "systems:sentry",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "catalog.json describes monitoring dashboards, trace waterfalls and diagnostic tables."
+  },
+  {
+    "referenceId": "systems:metabase",
+    "groupId": "web-categories",
+    "labels": ["Business", "Productivity"],
+    "reason": "catalog.json describes visual query notebooks, analytics dashboards and drill-through tables."
+  },
+  {
+    "referenceId": "systems:cloudflare",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "catalog.json describes security dashboards, condition builders and configuration tables."
   }
 ]
