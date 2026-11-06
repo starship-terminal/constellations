@@ -533,10 +533,13 @@ async function searchStyles(args: Obj): Promise<Obj> {
     .map((w) => w.toLowerCase());
   const limit = Math.max(1, Math.min(asInt((args.limit ?? 8) || 8), 20));
   const out: Obj[] = [];
+  // The catalog's platforms are web, mobile and desktop; "ios" stays an alias
+  // for mobile, the value the schema offered first.
+  const wanted = platform === "ios" ? "mobile" : platform;
   if (store === "all" || store === "systems") {
     for (const hit of await findSystems(words)) {
       const e = await entry(asStr(hit.slug));
-      if (platform && !asArr(e.tags).includes(platform) && e.platform !== platform) continue;
+      if (platform && !asArr(e.tags).includes(platform) && e.platform !== wanted) continue;
       out.push({
         store: "systems",
         slug: hit.slug,
@@ -829,7 +832,11 @@ export const SPECS: Spec[] = [
       properties: {
         query: { type: "string", description: "Free text: mood, layout, use, product words" },
         store: { type: "string", enum: ["all", "systems", "refero"], default: "all" },
-        platform: { type: "string", enum: ["web", "ios", "desktop"] },
+        platform: {
+          type: "string",
+          enum: ["web", "mobile", "desktop", "ios"],
+          description: "The catalog's platform; ios is an alias for mobile",
+        },
         style: { type: "string", description: "Refero design_style label filter" },
         limit: { type: "integer", minimum: 1, maximum: 20, default: 8 },
       },
