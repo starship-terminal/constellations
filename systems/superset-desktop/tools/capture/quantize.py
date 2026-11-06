@@ -46,7 +46,13 @@ def main():
         theme = theme_dir.name
         out = PKG / "screenshots" / theme
         keep = set()
+        # Only shots captures.json records: a shot that failed on a later run is dropped from it, and its
+        # older PNG must not be published again without a current reading.
+        shots = json.loads((theme_dir / "captures.json").read_text()) if (theme_dir / "captures.json").exists() else {}
         for f in sorted(theme_dir.glob("*.png")):
+            if f.stem not in shots:
+                print("skipped (no reading in captures.json):", f.name)
+                continue
             store(f, out / f.name); keep.add(f.name); n += 1
         for frame, name in RUN_FRAMES.get(theme, {}).items():
             f = theme_dir / "run" / f"{frame}.png"
