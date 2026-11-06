@@ -228,6 +228,14 @@ code { font-family: var(--fontFamily-mono); font-size: 12px; }
 .frame { border: 1px solid var(--border-main); border-radius: var(--radius-card); overflow: hidden; background: var(--background-gray-main); }
 .appframe { display: flex; height: 520px; }
 .appframe .main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+/* On a phone the 300px sidebar would leave the shell's main pane a sliver: frames scroll sideways instead of clipping. */
+@media (max-width: 767px) {
+  .frame { overflow-x: auto; }
+  .appframe .main { min-width: 360px; }
+  .lib-head, .lib-head > span { flex-wrap: wrap; }
+  .lib-head { height: auto; min-height: var(--layout-header-height); padding-block: 8px; }
+  .lib-head .search { width: auto; flex: 1 1 160px; }
+}
 .phone { width: 390px; max-width: 100%; height: 560px; border: 1px solid var(--border-main); border-radius: 24px; overflow: hidden; background: var(--background-gray-main); display: flex; flex-direction: column; }
 .phone .ph-h { display: flex; align-items: center; gap: 8px; height: 48px; padding: 0 12px; }
 .phone .hero { font-size: 28px; line-height: 36px; text-align: center; margin: 70px 16px 24px; }
