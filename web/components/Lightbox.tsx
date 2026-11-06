@@ -6,7 +6,8 @@
 import Link from "next/link";
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { useToast } from "@/components/Toast";
-import { copyText } from "@/components/CopyButton";
+import { copyWithToast } from "@/components/CopyButton";
+import { readSavedPaths, writeSavedPaths } from "@/components/storage";
 
 export interface LbItem {
   path: string; // resolved URL (/media/... or absolute)
@@ -34,18 +35,7 @@ interface OpenArgs {
 }
 const Ctx = createContext<{ open: (a: OpenArgs) => void }>({ open: () => {} });
 
-export const savedSet = (): Set<string> => {
-  try {
-    return new Set(JSON.parse(localStorage.getItem("ds-saved") || "[]"));
-  } catch {
-    return new Set();
-  }
-};
-const writeSaved = (s: Set<string>) => {
-  try {
-    localStorage.setItem("ds-saved", JSON.stringify([...s]));
-  } catch {}
-};
+export const savedSet = (): Set<string> => new Set(readSavedPaths());
 
 // Focusable controls that are actually rendered: a control inside a
 // display:none rail has no layout boxes and must not take focus.
@@ -176,7 +166,7 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
             <div className="lb-sec">
               <h4>Style</h4>
               <div className="lb-chips">
-                <Link className="chip" href={`/gallery?cat=${sys.category}`} onClick={close}>
+                <Link className="chip" href={`/gallery?cat=${encodeURIComponent(sys.category)}`} onClick={close}>
                   {sys.categoryLabel}
                 </Link>
                 {sys.tags.map((t) => (
@@ -193,7 +183,7 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
               <div className="lb-chips">
                 {sys.swatches.slice(0, 10).map((x, i) =>
                   x.value ? (
-                    <button key={i} className="chip lb-color" title={x.role} onClick={async () => { await copyText(x.value!); toast(`${x.value} copied`); }}>
+                    <button key={i} className="chip lb-color" title={x.role} onClick={() => copyWithToast(x.value!, toast, `${x.value} copied`)}>
                       <i style={{ background: x.value }} />
                       {x.role}
                     </button>
@@ -212,10 +202,7 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
               type="button"
               title="Copy link"
               aria-label="Copy link"
-              onClick={async () => {
-                await copyText(new URL(it.path, location.href).href);
-                toast("Link copied");
-              }}
+              onClick={() => copyWithToast(new URL(it.path, location.href).href, toast, "Link copied")}
             >
               <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="5.5" y="5.5" width="8" height="8" rx="1.6"/><path d="M10.5 5.5v-2A1.5 1.5 0 0 0 9 2H3.5A1.5 1.5 0 0 0 2 3.5V9a1.5 1.5 0 0 0 1.5 1.5h2"/></svg>
             </button>
@@ -227,7 +214,7 @@ export function LightboxProvider({ children }: { children: React.ReactNode }) {
                 const s = savedSet();
                 if (s.has(it.path)) s.delete(it.path);
                 else s.add(it.path);
-                writeSaved(s);
+                writeSavedPaths(s);
                 state.onSave?.();
                 setState((cur) => (cur ? { ...cur } : cur));
               }}

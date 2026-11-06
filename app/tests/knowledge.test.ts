@@ -1,7 +1,6 @@
-import { afterEach, expect, test } from "vitest";
+import { expect, test } from "vitest";
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import os from "node:os";
 import { renderToStaticMarkup } from "react-dom/server";
 import {
   documentHref,
@@ -23,22 +22,12 @@ import {
   ScorecardHistory,
 } from "@/features/knowledge/scorecard";
 import { DocumentMarkdown } from "@/features/knowledge/markdown";
-const originalRepo = process.env.DESIGN_SYSTEMS_REPO;
-const dirs: string[] = [];
+import { repoFixture, tempDir } from "./helpers";
 async function fixture() {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "knowledge-"));
-  dirs.push(root);
-  process.env.DESIGN_SYSTEMS_REPO = root;
+  const root = await repoFixture("knowledge-");
   await fs.mkdir(path.join(root, "docs"));
   return root;
 }
-afterEach(async () => {
-  if (originalRepo === undefined) delete process.env.DESIGN_SYSTEMS_REPO;
-  else process.env.DESIGN_SYSTEMS_REPO = originalRepo;
-  await Promise.all(
-    dirs.splice(0).map((dir) => fs.rm(dir, { recursive: true, force: true })),
-  );
-});
 test("docs reader follows the mounted repository and rejects traversal and symlink escapes", async () => {
   const root = await fixture();
   await fs.writeFile(
@@ -61,10 +50,7 @@ test("docs reader follows the mounted repository and rejects traversal and symli
     excerpt: "This paragraph describes the package.",
   });
   expect(docs[0].text).not.toContain("metadata");
-  const outside = await fs.mkdtemp(
-    path.join(os.tmpdir(), "knowledge-outside-"),
-  );
-  dirs.push(outside);
+  const outside = await tempDir("knowledge-outside-");
   await fs.writeFile(path.join(outside, "external.md"), "outside");
   await fs.rm(path.join(root, "docs"), { recursive: true });
   await fs.symlink(outside, path.join(root, "docs"));
@@ -174,7 +160,7 @@ test("scorecard reads canonical platform wording, audit history and evidence fro
   const report = renderToStaticMarkup(PackageScorecard({ slug: "test" }));
   expect(report).toContain("All states recorded");
   expect(report).toContain("needs another review");
-  expect(report).toContain('href="/styles/systems/test"');
+  expect(report).toContain('href="/library/test"');
   expect(renderToStaticMarkup(ScorecardCriteria())).toContain("Mobile roles");
   expect(renderToStaticMarkup(ScorecardHistory())).toContain("2026-10-01");
 });

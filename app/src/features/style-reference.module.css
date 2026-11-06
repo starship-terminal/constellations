@@ -586,13 +586,13 @@
   color: var(--subtle);
 }
 .codeProperty {
-  color: #d2bbfc;
+  color: var(--code-property);
 }
 .codeString {
-  color: #b4d8c5;
+  color: var(--code-string);
 }
 .codeNumber {
-  color: #e8bf95;
+  color: var(--code-number);
 }
 .lightbox:global(.modal) {
   width: min(1100px, 95vw);

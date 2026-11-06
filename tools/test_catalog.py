@@ -1111,6 +1111,21 @@ class RepoFileTest(unittest.TestCase):
         self.assertIsNone(catalog.repo_file("/gallery/index.html"))
         self.assertIsNone(catalog.repo_file("/"))
 
+    def test_ignored_files_fonts_and_example_clones_are_refused(self):
+        for path in ("/systems/claude/tools/capture/dumps/home.html", "/systems/claude/tools/capture/out/x.json",
+                     "/systems/claude/fonts/Product.woff2", "/systems/claude/raw/x.partial.json",
+                     "/example/README.md", "/tools/kit/../../systems/claude/fonts/a.ttf"):
+            self.assertIsNone(catalog.repo_file(path), path)
+        self.assertIsNotNone(catalog.repo_file("/systems/claude/tokens.json"))
+        self.assertIsNotNone(catalog.repo_file("/tools/kit/README.md"))
+
+    def test_a_git_failure_refuses_rather_than_serves(self):
+        import subprocess
+        from unittest import mock
+        failed = subprocess.CompletedProcess([], 128, b"", b"fatal")
+        with mock.patch.object(catalog.subprocess, "run", return_value=failed):
+            self.assertIsNone(catalog.repo_file("/systems/claude/tokens.json"))
+
 
 if __name__ == "__main__":
     unittest.main()
