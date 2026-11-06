@@ -206,16 +206,29 @@ window.__snap = function (label, REDACT) {
       }
     });
   }
-  let html = '<!doctype html>\n' + clone.outerHTML;
-  for (const [pattern, flags, rep] of REDACT.replace) html = html.replace(new RegExp(pattern, flags), rep);
+  // As the kit's snapshot.js does: every query or fragment carrying a signing parameter is cut out
+  // wherever the URL sits (any attribute, an inline style's url(), text), then each REDACT pattern
+  // (always global) runs over every text node and attribute value, where entities are decoded (a
+  // &nbsp; is a character \s matches), and again over the serialised copy.
+  // A query or fragment also stops at ( and ; so one that starts at a colour (#fff;) never runs on
+  // into a later url(...?sig=) and takes the CSS between them with it.
+  const cutSigned = (s) => s.replace(/[?#](?:[^\s"'<>();]|\)(?![\s;,"'}]|$))*/g, (q) => (SIGNED.test(q) ? '' : q));
+  clone.querySelectorAll('*').forEach((n) => { for (const a of [...n.attributes]) { const v = cutSigned(a.value); if (v !== a.value) n.setAttribute(a.name, v); } });
+  const rx = REDACT.replace.map(([pattern, flags, rep]) => [new RegExp(pattern, flags.includes('g') ? flags : flags + 'g'), rep]);
+  const scrub = (v) => rx.reduce((t, [r, rep]) => t.replace(r, rep), v);
+  const tw = document.createTreeWalker(clone, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_COMMENT);
+  while (tw.nextNode()) { const v = scrub(tw.currentNode.nodeValue); if (v !== tw.currentNode.nodeValue) tw.currentNode.nodeValue = v; }
+  clone.querySelectorAll('*').forEach((n) => { for (const a of [...n.attributes]) { const v = scrub(a.value); if (v !== a.value) n.setAttribute(a.name, v); } });
+  let html = cutSigned('<!doctype html>\n' + clone.outerHTML);
+  for (const [r, rep] of rx) html = html.replace(r, rep);
   // Inner scrollers (the task thread is a virtualised list inside one) keep their position only
   // as a property, so each scrolled element is recorded by its child-index path for render.mjs.
   const pathOf = (el) => { const out = []; for (let n = el; n && n !== document.documentElement; n = n.parentElement) out.unshift([...n.parentElement.children].indexOf(n)); return out; };
   const scrolls = [...document.querySelectorAll('*')].filter((e) => e.scrollTop > 0).map((e) => ({ path: pathOf(e), top: e.scrollTop, left: e.scrollLeft, max: e.scrollHeight - e.clientHeight }));
   // Linear (adapt): the URL names the workspace and team, and the title the issue or team, so the
   // URL goes through the same redaction as the page and the title is left out.
-  let url = location.href;
-  for (const [pattern, flags, rep] of REDACT.replace) url = url.replace(new RegExp(pattern, flags), rep);
+  let url = cutSigned(location.href);
+  for (const [r, rep] of rx) url = url.replace(r, rep);
   const meta = { label, url, title: '', scrollY, w: innerWidth, h: innerHeight, docH: document.documentElement.scrollHeight, scrolls };
   return 'SNAPSTART' + JSON.stringify(meta) + 'SNAPMETA' + html + 'SNAPEND';
 };
