@@ -6,6 +6,7 @@
 // image tries the local mirror first and falls back to the remote CDN.
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { useUrlMirror } from "@/components/url-state";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ReferoCard, ReferoIndex as ReferoIndexData } from "@/lib/refero";
 
@@ -247,6 +248,16 @@ export function ReferoIndex({ index }: { index: ReferoIndexData }) {
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
+  useUrlMirror({
+    q: q.trim() || null,
+    theme,
+    type,
+    style,
+    industry,
+    video: videoOnly ? "1" : null,
+    tag: [...tagSet].join(",") || null,
+  });
+
   const save = (patch: object) => {
     try {
       const s = JSON.parse(localStorage.getItem("ds-refero") || "{}");
@@ -304,7 +315,49 @@ export function ReferoIndex({ index }: { index: ReferoIndexData }) {
     return scored.map(([, s]) => s);
   }, [index, theme, type, style, industry, videoOnly, tagSet, toks, facets, hay]);
 
-  useEffect(() => setShown(PAGE), [q, theme, type, style, industry, videoOnly, tagSet]);
+  // How far the grid was scrolled in, kept for this tab so Back from a style
+  // returns to the same cards rather than the first page at the top.
+  const viewKey = JSON.stringify([q.trim(), theme, type, style, industry, videoOnly, [...tagSet].sort()]);
+  const restoreY = useRef<number | null>(null);
+  const firstView = useRef(true);
+  useEffect(() => {
+    if (firstView.current) {
+      firstView.current = false;
+      try {
+        const v = JSON.parse(sessionStorage.getItem("ds-refero-view") || "null");
+        if (v && v.key === viewKey && v.shown > PAGE) {
+          setShown(v.shown);
+          restoreY.current = typeof v.y === "number" ? v.y : null;
+          return;
+        }
+      } catch {}
+    }
+    setShown(PAGE);
+  }, [viewKey]);
+  useEffect(() => {
+    if (restoreY.current === null) return;
+    const y = restoreY.current;
+    restoreY.current = null;
+    window.scrollTo(0, y);
+  }, [shown]);
+  useEffect(() => {
+    const keep = () => {
+      try {
+        sessionStorage.setItem("ds-refero-view", JSON.stringify({ key: viewKey, shown, y: window.scrollY }));
+      } catch {}
+    };
+    let timer = 0;
+    const onScroll = () => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(keep, 120);
+    };
+    keep();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [viewKey, shown]);
 
   const hasMore = shown < list.length;
   useEffect(() => {
@@ -328,6 +381,7 @@ export function ReferoIndex({ index }: { index: ReferoIndexData }) {
     setVideoOnly(false);
     setTagSet(new Set());
     setQ(label);
+    save({ theme: "", type: "", style: "", industry: "", video: false, tags: [] });
     gridTop.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
