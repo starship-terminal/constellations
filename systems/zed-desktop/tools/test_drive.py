@@ -11,16 +11,23 @@ try:
 finally:
     sys.argv = argv
 
-LISTING = """812 layer 0 0.0 33.0 1728.0 1084.0 | scratch — main.py
+LISTING = """906 layer 3 0.0 0.0 10.0 10.0 | Settings
 905 layer 0 306.0 132.0 1100.0 800.0 | Settings
-906 layer 3 0.0 0.0 10.0 10.0 | Settings
+812 layer 0 0.0 33.0 1728.0 1084.0 | scratch — main.py
 frontmost: Zed
 """
 
 
 class SettingsOriginTest(unittest.TestCase):
-    def test_reads_the_settings_window(self):
+    def test_reads_the_frontmost_settings_window_past_other_layers(self):
         self.assertEqual(drive.settings_origin(LISTING), (306, 132))
+
+    def test_a_layer_3_window_alone_is_not_settings(self):
+        self.assertIsNone(drive.settings_origin("906 layer 3 306.0 132.0 10.0 10.0 | Settings\n"))
+
+    def test_settings_behind_the_editor_is_refused(self):
+        covered = "812 layer 0 0.0 33.0 1728.0 1084.0 | scratch — main.py\n905 layer 0 306.0 132.0 1100.0 800.0 | Settings\n"
+        self.assertIsNone(drive.settings_origin(covered))
 
     def test_no_settings_window(self):
         self.assertIsNone(drive.settings_origin("812 layer 0 0.0 33.0 1728.0 1084.0 | settings.json\nfrontmost: Zed\n"))
