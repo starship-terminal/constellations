@@ -239,11 +239,19 @@ class ChatRouteTest(unittest.TestCase):
                      {"messages": [], "provider": ["k"]},
                      {"messages": [], "provider": {**self.provider, "base_url": 1}},
                      {"messages": 5},
-                     {"messages": {"role": "user"}}):
+                     {"messages": {"role": "user"}},
+                     {"messages": 0}, {"messages": False}, {"messages": ""}, {"messages": {}}):
             handled, h = _post(self.routes, "/api/chat", body)
             self.assertTrue(handled)
             self.assertEqual(h.status, 400, body)
         self.assertNotIn("run", [c[0] for c in self.chat.calls])
+
+    def test_missing_or_null_messages_mean_none(self):
+        self.chat.env_cfg = {"api": "anthropic"}
+        for body in ({}, {"messages": None}, {"provider": None}):
+            handled, h = _post(self.routes, "/api/chat", body or {"x": 1})
+            self.assertEqual(h.status, 200, body)
+            self.assertEqual(self.chat.calls[-1][1], [])
 
     def test_provider_error_is_a_200_with_empty_results(self):
         self.chat.env_cfg = {"api": "anthropic"}

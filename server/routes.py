@@ -267,8 +267,11 @@ def handle_post(handler) -> bool:
             _reply(handler, 400, {"error": "JSON body required"})
             return True
         provider = body.get("provider")
+        # Absent or null means none; any other non-list (0, "", {}) is refused, not defaulted.
+        messages = body.get("messages")
+        messages = [] if messages is None else messages
         if (provider is not None and not (isinstance(provider, dict) and _strings(provider, _PROVIDER_FIELDS))) \
-                or not isinstance(body.get("messages") or [], list):
+                or not isinstance(messages, list):
             _reply(handler, 400, {"error": "provider must be an object of strings and messages a list"})
             return True
         cfg = chat.provider_config(provider)
@@ -277,7 +280,7 @@ def handle_post(handler) -> bool:
                                   "message": "no model configured: set one under Settings, "
                                              "or ANTHROPIC_API_KEY in .env"})
             return True
-        messages = [m for m in body.get("messages") or [] if isinstance(m, dict)]
+        messages = [m for m in messages if isinstance(m, dict)]
         try:
             _reply(handler, 200, chat.run(messages, cfg))
         except chat.ProviderError as e:
