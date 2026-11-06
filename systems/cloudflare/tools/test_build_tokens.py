@@ -73,6 +73,15 @@ class BuilderTests(unittest.TestCase):
         self.assertIn('light.border.default', stderr)
         self.assertNotIn('KeyError', stderr)
 
+    def test_missing_marketing_role_names_the_role(self):
+        path = self.root / 'raw' / 'public-home-desktop.json'
+        data = json.loads(path.read_text())
+        del data['variables']['--color-border']
+        path.write_text(json.dumps(data))
+        stderr = self.build(success=False).stderr
+        self.assertIn('marketing.border.default', stderr)
+        self.assertNotIn('KeyError', stderr)
+
 
 if __name__ == '__main__':
     unittest.main()
