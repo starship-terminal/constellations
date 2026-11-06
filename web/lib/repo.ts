@@ -2,6 +2,7 @@
 // repo_file() and tools/refero/refero_media.py's media_file(). Every path the
 // app serves from the checkout goes through resolveMedia so `..` segments and
 // symlinks can never climb out of the allowed roots.
+import { execFile } from "node:child_process";
 import { promises as fs } from "node:fs";
 import { existsSync } from "node:fs";
 import path from "node:path";
@@ -17,8 +18,9 @@ export const ROOT = (() => {
   return cwd;
 })();
 
-// Mirrors REPO_PATHS in catalog.py: request prefixes answered from the checkout.
-const REPO_PATHS = ["/systems/", "/tools/", "/example/", "/catalog.json", "/README.md"];
+// Request prefixes answered from the checkout: catalog.py's REPO_PATHS minus
+// /example/, which holds only gitignored clones and a README nothing links to.
+const REPO_PATHS = ["/systems/", "/tools/", "/catalog.json", "/README.md"];
 // Extra roots that do not resolve 1:1 from the repo root: generated app data
 // lives under web/data/ ("data/thumbs/x.jpg"), docs assets under docs/
 // ("docs/assets/y.svg").
@@ -41,12 +43,70 @@ export function repoFile(urlPath: string): string | null {
   const target = extra
     ? path.resolve(ROOT, EXTRA_PATHS[extra], p.slice(extra.length))
     : path.resolve(ROOT, p.replace(/^\/+/, ""));
-  const allowed = [
+  const allowed = repoRoots();
+  if (!allowed.some((a) => target === a || inside(target, a))) return null;
+  return target;
+}
+
+// Gitignored material on disk (capture dumps, proprietary fonts, scratch
+// output) is private even though it sits under a served root. One `git
+// ls-files` call lists every ignored path, with wholly ignored folders
+// collapsed to "dir/"; the answer is cached briefly so a gallery page's
+// hundreds of image requests share one listing. Tracked files are never in
+// it, so anything committed stays servable.
+const IGNORED_TTL_MS = 10_000;
+let ignoredCache: { at: number; list: Promise<Set<string> | null> } | null = null;
+
+function listIgnored(): Promise<Set<string> | null> {
+  return new Promise((resolve) => {
+    execFile(
+      "git",
+      ["-C", ROOT, "ls-files", "--others", "--ignored", "--exclude-standard", "--directory", "-z"],
+      { maxBuffer: 64 * 1024 * 1024 },
+      (err, stdout) => resolve(err ? null : new Set(stdout.split("\0").filter(Boolean))),
+    );
+  });
+}
+
+/** True when a file (a real path) is gitignored, so it must not be served or
+    listed. Outside a git checkout nothing is ignored; inside one, a git
+    failure or a path outside the checkout counts as ignored (fail closed). */
+export async function isGitIgnored(abs: string): Promise<boolean> {
+  if (!existsSync(path.join(ROOT, ".git"))) return false;
+  // Compare real paths: callers pass a realpath'd file, and git reports
+  // paths relative to the checkout's real location.
+  const rel = path.relative(await fs.realpath(ROOT), abs).split(path.sep).join("/");
+  if (!rel || rel.startsWith("..") || path.isAbsolute(rel)) return true;
+  // The listing names paths, not rules, so a file created after it was taken
+  // (a new capture dump) is missing from it: refresh before judging one.
+  const changed = await fs.stat(abs).then((st) => st.ctimeMs, () => Infinity);
+  if (!ignoredCache || Date.now() - ignoredCache.at > IGNORED_TTL_MS || changed >= ignoredCache.at)
+    ignoredCache = { at: Date.now(), list: listIgnored() };
+  const ignored = await ignoredCache.list;
+  if (!ignored) return true;
+  if (ignored.has(rel)) return true;
+  const parts = rel.split("/");
+  for (let i = 1; i < parts.length; i++) if (ignored.has(parts.slice(0, i).join("/") + "/")) return true;
+  return false;
+}
+
+/** The real path of `target` when it, after following symlinks, still sits
+    inside the real path of `root`; null otherwise or when it is missing. */
+export async function realInside(target: string, root: string): Promise<string | null> {
+  try {
+    const [real, realRoot] = await Promise.all([fs.realpath(target), fs.realpath(root)]);
+    return real === realRoot || inside(real, realRoot) ? real : null;
+  } catch {
+    return null;
+  }
+}
+
+// The served roots on disk, for realInside's containment check.
+export function repoRoots(): string[] {
+  return [
     ...REPO_PATHS.map((x) => path.resolve(ROOT, x.replace(/^\/+|\/+$/g, ""))),
     ...Object.values(EXTRA_PATHS).map((d) => path.resolve(ROOT, d)),
   ];
-  if (!allowed.some((a) => target === a || inside(target, a))) return null;
-  return target;
 }
 
 const MEDIA_KINDS: Record<string, [string, string]> = {
@@ -110,6 +170,8 @@ const MIME: Record<string, string> = {
   ".py": "text/plain; charset=utf-8",
   ".woff": "font/woff",
   ".woff2": "font/woff2",
+  ".ttf": "font/ttf",
+  ".otf": "font/otf",
 };
 
 export const mimeOf = (file: string) => MIME[path.extname(file).toLowerCase()] || "application/octet-stream";

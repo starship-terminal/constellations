@@ -12,7 +12,7 @@ import type { GradeValue, SystemReport } from "@/lib/scorecard";
 import { useLightbox } from "@/components/Lightbox";
 import type { LbSys } from "@/components/Lightbox";
 import { useToast } from "@/components/Toast";
-import { copyText } from "@/components/CopyButton";
+import { copyWithToast } from "@/components/CopyButton";
 
 // Mirror of scorecard.ts's GRADES, inlined so this client bundle never pulls
 // the fs-reading module in for a constant.
@@ -147,8 +147,7 @@ export function SystemDetail({
     });
   const copy = async (value: string | null) => {
     if (!value) return;
-    await copyText(value);
-    toast(`${value} copied`);
+    await copyWithToast(value, toast, `${value} copied`);
   };
 
   // Type-style helpers (ported from the old gallery): a catalog font supplies

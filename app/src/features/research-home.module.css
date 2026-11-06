@@ -69,7 +69,7 @@
     box-shadow var(--duration-normal);
 }
 .composer:focus-within {
-  border-color: #ffffff45;
+  border-color: var(--focus-line);
   box-shadow: 0 0 0 3px #ffffff03;
 }
 .composer textarea {
@@ -129,7 +129,7 @@
 }
 .modes button:hover {
   color: var(--ink);
-  background: #ffffff05;
+  background: var(--wash);
 }
 .modes .activeMode {
   color: var(--ink);
@@ -152,7 +152,7 @@
   opacity: 0.5;
 }
 .submit:not(:disabled):hover {
-  background: #343846;
+  background: var(--elevated-hover);
 }
 .suggestionTabs {
   display: flex;
@@ -166,7 +166,7 @@
   color: var(--ink);
 }
 .suggestionTabs button:hover {
-  background: #ffffff04;
+  background: var(--wash);
 }
 .suggestionTabs .activeTab {
   background: var(--surface);
@@ -222,7 +222,7 @@
   color: var(--ink);
 }
 .working {
-  border-color: #ffffff40;
+  border-color: var(--focus-line);
 }
 @media (max-width: 1250px) {
   .home {

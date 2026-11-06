@@ -7,7 +7,7 @@ import {
   mergeLibraryItems,
   type LibraryResponse,
 } from "../src/features/library-data";
-import type { LibraryItem } from "../src/contracts/library";
+import { libraryItem } from "./helpers";
 function deferred<T>() {
   let resolve!: (value: T) => void;
   const promise = new Promise<T>((done) => {
@@ -15,22 +15,7 @@ function deferred<T>() {
   });
   return { promise, resolve };
 }
-const item = (slug: string): LibraryItem => ({
-  id: `systems:${slug}`,
-  slug,
-  source: "systems",
-  name: slug,
-  description: "",
-  platform: "web",
-  themes: [],
-  tags: [],
-  category: "design",
-  image: null,
-  icon: null,
-  video: null,
-  evidence: "measured",
-  captured: null,
-});
+const item = (slug: string) => libraryItem(slug, { category: "design" });
 const page = (slug: string, total = 600): LibraryResponse => ({
   items: [item(slug)],
   total,

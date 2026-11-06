@@ -1,21 +1,17 @@
-import { afterEach, expect, test } from "vitest";
+import { expect, test } from "vitest";
 import { z } from "zod";
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import os from "node:os";
 import { researchTools, modelHistory } from "@/server/research/agent";
 import {
   packageDocument,
   packageTokens,
   handoffPrompt,
 } from "@/server/research/evidence";
-const originalRepo = process.env.DESIGN_SYSTEMS_REPO;
-const dirs: string[] = [];
+import { repoFixture } from "./helpers";
 const execution = { toolCallId: "test", messages: [], context: {} };
 async function fixture() {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "research-evidence-"));
-  dirs.push(root);
-  process.env.DESIGN_SYSTEMS_REPO = root;
+  const root = await repoFixture("research-evidence-");
   await fs.mkdir(path.join(root, "systems/test/screenshots"), {
     recursive: true,
   });
@@ -75,13 +71,6 @@ async function fixture() {
   );
   return root;
 }
-afterEach(async () => {
-  if (originalRepo === undefined) delete process.env.DESIGN_SYSTEMS_REPO;
-  else process.env.DESIGN_SYSTEMS_REPO = originalRepo;
-  await Promise.all(
-    dirs.splice(0).map((dir) => fs.rm(dir, { recursive: true, force: true })),
-  );
-});
 test("research reads complete package documents in bounded pages and rejects hidden/raw/traversal files", async () => {
   const root = await fixture();
   const first = await packageDocument(
