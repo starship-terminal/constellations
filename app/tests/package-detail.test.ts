@@ -12,6 +12,7 @@ import {
   filterPackageMedia,
   mediaDetailHref,
   packageDocumentLink,
+  researchDocumentHref,
   safeDecode,
 } from "../src/features/package-detail-data";
 import { GET as guideGet } from "../src/app/api/packages/[slug]/guide/[...path]/route";
@@ -219,6 +220,21 @@ describe("package navigation", () => {
     );
     expect(mediaDetailHref("demo", items[79])).toBe(
       "/library/demo?tab=screenshots&media=shot-79",
+    );
+  });
+  it("links research document tools to the package file reader, not the JSON API", () => {
+    expect(
+      researchDocumentHref(
+        "systems:linear",
+        "components.md",
+        "/api/packages/linear/files?path=components.md",
+      ),
+    ).toBe("/library/linear?tab=files&file=components.md");
+    expect(researchDocumentHref("refero:x", "a.md", "/fallback")).toBe(
+      "/fallback",
+    );
+    expect(researchDocumentHref(undefined, "a.md", "/fallback")).toBe(
+      "/fallback",
     );
   });
   it("resolves package markdown files and images, keeping unsafe URLs and traversal out", () => {
