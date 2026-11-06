@@ -585,11 +585,9 @@ async function course() {
   const instr = await mark('hero-instr', () => [...document.querySelectorAll('[data-e2e=hero-module] p')].find((p) => /Instructors?:/.test(p.textContent)).closest('div').parentElement.parentElement);
   comp('hero-instructors', { description: 'Instructor row: overlapping 30px avatars in 36px rings, "Instructors:" label, name link, +3 more, Top Instructor badge.', selector: 'hero row containing "Instructors:"' });
   await measure('hero-instructors', 'default', instr);
-  const av = await mark('hero-avatar', () => document.querySelector('[data-e2e=hero-module] img[src*="avatar"], [data-e2e=hero-module] div > div > div > img:not([alt*="logo" i])')).catch(() => null);
   const avs = await mark('hero-avatar-first', () => { const p = [...document.querySelectorAll('[data-e2e=hero-module] p')].find((p) => /Instructors?:/.test(p.textContent)); const row = p.closest('div').parentElement.parentElement; return row.querySelector('img'); });
   comp('hero-avatar', { description: 'Instructor avatar in the hero stack.', selector: 'hero instructor row img' });
   await measure('hero-avatar', 'default', avs, { extra: (l) => l.evaluate((el) => { const w = el.parentElement; const cs = getComputedStyle(w); return { wrapper: { w: w.getBoundingClientRect().width, bg: cs.backgroundColor, border: cs.border, radius: cs.borderRadius, marginLeft: cs.marginLeft, boxShadow: cs.boxShadow }, next: w.nextElementSibling && getComputedStyle(w.nextElementSibling).marginLeft }; }) });
-  void av;
   const more3 = page.locator('[data-e2e=hero-module] button.cds-button-ghost:has-text("more")');
   comp('button-ghost-inline', { description: '"+3 more" inline ghost button in the instructor row.', selector: 'hero button.cds-button-ghost' });
   await states('button-ghost-inline', more3, B4);
@@ -1289,17 +1287,21 @@ async function motion() {
     await page.close();
   }
   // The product card under reduced motion: hover keeps the shadow, drops the lift.
+  // A second browser, closed even when a step throws: a leaked one keeps node alive after "done".
   const { browser: b2, context: c2 } = await launch();
-  await c2.close();
-  const c3 = await b2.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion: 'reduce' });
-  const p = await c3.newPage();
-  await open(p, URLS.search, 6500);
-  const card = p.locator('.cds-ProductCard-base').filter({ visible: true }).first();
-  await card.scrollIntoViewIfNeeded();
-  await card.hover();
-  await p.waitForTimeout(500);
-  out._meta.reducedMotion.productCardHoverReduce = await card.evaluate((el) => { const c = getComputedStyle(el); return { transition: c.transition, transform: c.transform, boxShadow: c.boxShadow }; });
-  await b2.close();
+  try {
+    await c2.close();
+    const c3 = await b2.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion: 'reduce' });
+    const p = await c3.newPage();
+    await open(p, URLS.search, 6500);
+    const card = p.locator('.cds-ProductCard-base').filter({ visible: true }).first();
+    await card.scrollIntoViewIfNeeded();
+    await card.hover();
+    await p.waitForTimeout(500);
+    out._meta.reducedMotion.productCardHoverReduce = await card.evaluate((el) => { const c = getComputedStyle(el); return { transition: c.transition, transform: c.transform, boxShadow: c.boxShadow }; });
+  } finally {
+    await b2.close();
+  }
 }
 
 async function layers() {
@@ -1382,23 +1384,27 @@ async function layout() {
   out._meta.layout = {};
   for (const w of [390, 768, 1024, 1440, 1920]) {
     const { browser: b2, context: c2 } = await launch({ width: w, height: 900 });
-    const p = await c2.newPage();
-    await open(p, URLS.course, 6500);
-    const r = await p.evaluate(() => {
-      const pick = (el) => { if (!el) return null; const cs = getComputedStyle(el); const r = el.getBoundingClientRect(); return { cls: [...el.classList].join(' ').slice(0, 80), x: +r.x.toFixed(1), w: +r.width.toFixed(1), maxWidth: cs.maxWidth, paddingLeft: cs.paddingLeft, paddingRight: cs.paddingRight, marginLeft: cs.marginLeft, marginRight: cs.marginRight, gap: cs.gap, flexWrap: cs.flexWrap, display: cs.display }; };
-      const outer = document.querySelector('.xdp-page-grid-container') || document.querySelector('main .cds-1');
-      const row = outer.querySelector(':scope > .cds-9');
-      const items = [...row.children].filter((e) => e.classList.contains('cds-grid-item')).slice(0, 3);
-      const aboutCol = document.querySelector('#about')?.closest('.cds-grid-item');
-      const hdr = document.querySelector('[data-testid=page-header-wrapper] .main-nav-container');
-      return { viewport: innerWidth, container: pick(outer), row: pick(row), items: items.map(pick), aboutColumn: pick(aboutCol), header: pick(hdr), headerRow: pick(hdr && hdr.querySelector(':scope > .cds-9')), aboutText: pick(document.querySelector('#about h2')), footer: pick(document.querySelector('footer .cds-1')), footerRow: pick(document.querySelector('footer .cds-1 > .cds-9')) };
-    });
-    // Search grid at this width
-    await open(p, URLS.search, 6500);
-    r.searchGrid = await p.evaluate(() => { const ul = document.querySelector('#searchResults ul'); if (!ul) return null; const lis = [...ul.children].slice(0, 5).map((li) => { const r = li.getBoundingClientRect(); return { x: +r.x.toFixed(1), y: +r.y.toFixed(1), w: +r.width.toFixed(1), padding: getComputedStyle(li).padding }; }); const cr = document.querySelector('#searchResults').getBoundingClientRect(); return { region: { x: cr.x, w: cr.width }, ulMargin: getComputedStyle(ul).margin, items: lis }; });
-    out._meta.layout[w] = r;
-    log('layout', w, r.container?.w, r.row?.x);
-    await b2.close();
+    // Closed even when a step throws (no grid container at this width): a leaked browser keeps node alive.
+    try {
+      const p = await c2.newPage();
+      await open(p, URLS.course, 6500);
+      const r = await p.evaluate(() => {
+        const pick = (el) => { if (!el) return null; const cs = getComputedStyle(el); const r = el.getBoundingClientRect(); return { cls: [...el.classList].join(' ').slice(0, 80), x: +r.x.toFixed(1), w: +r.width.toFixed(1), maxWidth: cs.maxWidth, paddingLeft: cs.paddingLeft, paddingRight: cs.paddingRight, marginLeft: cs.marginLeft, marginRight: cs.marginRight, gap: cs.gap, flexWrap: cs.flexWrap, display: cs.display }; };
+        const outer = document.querySelector('.xdp-page-grid-container') || document.querySelector('main .cds-1');
+        const row = outer.querySelector(':scope > .cds-9');
+        const items = [...row.children].filter((e) => e.classList.contains('cds-grid-item')).slice(0, 3);
+        const aboutCol = document.querySelector('#about')?.closest('.cds-grid-item');
+        const hdr = document.querySelector('[data-testid=page-header-wrapper] .main-nav-container');
+        return { viewport: innerWidth, container: pick(outer), row: pick(row), items: items.map(pick), aboutColumn: pick(aboutCol), header: pick(hdr), headerRow: pick(hdr && hdr.querySelector(':scope > .cds-9')), aboutText: pick(document.querySelector('#about h2')), footer: pick(document.querySelector('footer .cds-1')), footerRow: pick(document.querySelector('footer .cds-1 > .cds-9')) };
+      });
+      // Search grid at this width
+      await open(p, URLS.search, 6500);
+      r.searchGrid = await p.evaluate(() => { const ul = document.querySelector('#searchResults ul'); if (!ul) return null; const lis = [...ul.children].slice(0, 5).map((li) => { const r = li.getBoundingClientRect(); return { x: +r.x.toFixed(1), y: +r.y.toFixed(1), w: +r.width.toFixed(1), padding: getComputedStyle(li).padding }; }); const cr = document.querySelector('#searchResults').getBoundingClientRect(); return { region: { x: cr.x, w: cr.width }, ulMargin: getComputedStyle(ul).margin, items: lis }; });
+      out._meta.layout[w] = r;
+      log('layout', w, r.container?.w, r.row?.x);
+    } finally {
+      await b2.close();
+    }
   }
 }
 
