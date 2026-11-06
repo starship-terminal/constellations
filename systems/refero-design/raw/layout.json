@@ -1,0 +1,1645 @@
+{
+ "home@1440": {
+  "label": "home",
+  "url": "https://refero.design/",
+  "vw": 1440,
+  "vh": 900,
+  "sidebar": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 270,
+   "h": 900,
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "sidebarFoot": {
+   "el": "div",
+   "x": 8,
+   "y": 718,
+   "w": 246,
+   "h": 182
+  },
+  "header": null,
+  "ground": "rgb(255, 255, 255)",
+  "h1": {
+   "text": "Design Research for the AI Era\nWhat are you designing next?",
+   "font": "400 50px/60px Title, -apple-system",
+   "x": 318,
+   "y": 177.7,
+   "w": 1074,
+   "h": 60
+  },
+  "h2": [
+   {
+    "text": "Page Types",
+    "font": "500 32px/40px Base-Variable, -apple-system",
+    "x": 359,
+    "y": 1015,
+    "w": 151.8,
+    "h": 40
+   },
+   {
+    "text": "Flows",
+    "font": "500 32px/40px Base-Variable, -apple-system",
+    "x": 359,
+    "y": 2203.5,
+    "w": 77.5,
+    "h": 40
+   },
+   {
+    "text": "UX Patterns",
+    "font": "500 32px/40px Base-Variable, -apple-system",
+    "x": 359,
+    "y": 3669.5,
+    "w": 153.6,
+    "h": 40
+   }
+  ],
+  "research": {
+   "field": {
+    "x": 499,
+    "y": 405.3,
+    "w": 720,
+    "h": 24
+   },
+   "box": {
+    "x": 479,
+    "y": 390.3,
+    "w": 752,
+    "h": 102
+   },
+   "radius": "24px",
+   "shadow": "rgba(12, 41, 126, 0.07) 0px 0px 0px 1px inset",
+   "chips": [
+    ""
+   ]
+  },
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1600px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 731.9,
+    "y": 20.5,
+    "w": 246.2,
+    "h": 40
+   },
+   {
+    "el": "div",
+    "max": "1600px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 779.9,
+    "y": 20.5,
+    "w": 150.2,
+    "h": 40
+   },
+   {
+    "el": "div",
+    "max": "1600px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 270,
+    "y": 177.7,
+    "w": 1170,
+    "h": 116
+   },
+   {
+    "el": "div",
+    "max": "1600px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 318,
+    "y": 177.7,
+    "w": 1074,
+    "h": 116
+   },
+   {
+    "el": "div",
+    "max": "424px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 643,
+    "y": 245.7,
+    "w": 424,
+    "h": 48
+   },
+   {
+    "el": "div",
+    "max": "752px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 479,
+    "y": 390.3,
+    "w": 752,
+    "h": 102
+   }
+  ],
+  "grids": [],
+  "fixed": [
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "auto",
+    "x": 0,
+    "y": 0,
+    "w": 270,
+    "h": 900,
+    "text": "New research\nWeb apps\niOS apps\nStyles\nBeta\nPricing\nConnect M"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "20",
+    "x": 8,
+    "y": 0,
+    "w": 246,
+    "h": 80,
+    "text": ""
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "20",
+    "x": 8,
+    "y": 112,
+    "w": 246,
+    "h": 40,
+    "text": "New research"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "auto",
+    "bottom": "0px",
+    "z": "30",
+    "x": 8,
+    "y": 718,
+    "w": 246,
+    "h": 182,
+    "text": "Pricing\nConnect MCP\nFigma Plugin\nLog In/Sign Up"
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "scrollers": [],
+  "body": {
+   "font": "Base-Variable, -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+   "size": "16px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(0, 0, 0)"
+  },
+  "promoCard": {
+   "el": "div",
+   "x": 8,
+   "y": 718,
+   "w": 246,
+   "h": 182,
+   "radius": "0px",
+   "shadow": "none"
+  }
+ },
+ "search@1440": {
+  "label": "search",
+  "url": "https://refero.design/search",
+  "vw": 1440,
+  "vh": 900,
+  "sidebar": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 270,
+   "h": 900,
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "sidebarFoot": {
+   "el": "div",
+   "x": 8,
+   "y": 718,
+   "w": 246,
+   "h": 182
+  },
+  "header": null,
+  "ground": "rgb(255, 255, 255)",
+  "h2": [],
+  "research": {
+   "field": {
+    "x": 322,
+    "y": 9,
+    "w": 1069,
+    "h": 62
+   },
+   "box": {
+    "x": 318,
+    "y": 8,
+    "w": 1074,
+    "h": 64
+   },
+   "radius": "24px",
+   "shadow": "none",
+   "chips": []
+  },
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1600px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 270,
+    "y": 8,
+    "w": 1170,
+    "h": 64
+   },
+   {
+    "el": "div",
+    "max": "645px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 573.6,
+    "y": 785.8,
+    "w": 562.8,
+    "h": 416
+   }
+  ],
+  "grids": [
+   {
+    "el": "div",
+    "cols": "347.328px 347.328px 347.344px",
+    "colGap": "16px",
+    "rowGap": "24px",
+    "x": 318,
+    "y": 144,
+    "w": 1074,
+    "h": 495.8,
+    "firstChild": {
+     "x": 318,
+     "y": 144,
+     "w": 347.3,
+     "h": 235.9
+    }
+   }
+  ],
+  "fixed": [
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "auto",
+    "x": 0,
+    "y": 0,
+    "w": 270,
+    "h": 900,
+    "text": "New research\nWeb apps\niOS apps\nStyles\nBeta\nPricing\nConnect M"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "20",
+    "x": 8,
+    "y": 0,
+    "w": 246,
+    "h": 80,
+    "text": ""
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "20",
+    "x": 8,
+    "y": 112,
+    "w": 246,
+    "h": 40,
+    "text": "New research"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "auto",
+    "bottom": "0px",
+    "z": "30",
+    "x": 8,
+    "y": 718,
+    "w": 246,
+    "h": 182,
+    "text": "Pricing\nConnect MCP\nFigma Plugin\nLog In/Sign Up"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "905",
+    "x": 270,
+    "y": 0,
+    "w": 1170,
+    "h": 128,
+    "text": "Product detail page\nResearch mode\nWeb apps\niOS apps\nScreens\n"
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "scrollers": [],
+  "body": {
+   "font": "Base-Variable, -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+   "size": "16px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(0, 0, 0)"
+  },
+  "promoCard": {
+   "el": "div",
+   "x": 8,
+   "y": 718,
+   "w": 246,
+   "h": 182,
+   "radius": "0px",
+   "shadow": "none"
+  }
+ },
+ "apps@1440": {
+  "label": "apps",
+  "url": "https://refero.design/apps/search",
+  "vw": 1440,
+  "vh": 900,
+  "sidebar": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 270,
+   "h": 900,
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "sidebarFoot": {
+   "el": "div",
+   "x": 8,
+   "y": 718,
+   "w": 246,
+   "h": 182
+  },
+  "header": null,
+  "ground": "rgb(255, 255, 255)",
+  "h2": [],
+  "research": {
+   "field": {
+    "x": 322,
+    "y": 9,
+    "w": 1069,
+    "h": 62
+   },
+   "box": {
+    "x": 318,
+    "y": 8,
+    "w": 1074,
+    "h": 64
+   },
+   "radius": "24px",
+   "shadow": "none",
+   "chips": []
+  },
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1600px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 270,
+    "y": 8,
+    "w": 1170,
+    "h": 64
+   }
+  ],
+  "grids": [
+   {
+    "el": "div",
+    "cols": "256.5px 256.5px 256.5px 256.5px",
+    "colGap": "16px",
+    "rowGap": "24px",
+    "x": 318,
+    "y": 144,
+    "w": 1074,
+    "h": 1222.1,
+    "firstChild": {
+     "x": 318,
+     "y": 144,
+     "w": 256.5,
+     "h": 599
+    }
+   }
+  ],
+  "fixed": [
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "auto",
+    "x": 0,
+    "y": 0,
+    "w": 270,
+    "h": 900,
+    "text": "New research\nWeb apps\niOS apps\nStyles\nBeta\nPricing\nConnect M"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "20",
+    "x": 8,
+    "y": 0,
+    "w": 246,
+    "h": 80,
+    "text": ""
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "20",
+    "x": 8,
+    "y": 112,
+    "w": 246,
+    "h": 40,
+    "text": "New research"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "auto",
+    "bottom": "0px",
+    "z": "30",
+    "x": 8,
+    "y": 718,
+    "w": 246,
+    "h": 182,
+    "text": "Pricing\nConnect MCP\nFigma Plugin\nLog In/Sign Up"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "905",
+    "x": 270,
+    "y": 0,
+    "w": 1170,
+    "h": 128,
+    "text": "Forgot password\nResearch mode\nWeb apps\niOS apps\nScreens\nFlow"
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "scrollers": [],
+  "body": {
+   "font": "Base-Variable, -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+   "size": "16px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(0, 0, 0)"
+  },
+  "promoCard": {
+   "el": "div",
+   "x": 8,
+   "y": 718,
+   "w": 246,
+   "h": 182,
+   "radius": "0px",
+   "shadow": "none"
+  }
+ },
+ "pricing@1440": {
+  "label": "pricing",
+  "url": "https://refero.design/pricing",
+  "vw": 1440,
+  "vh": 900,
+  "sidebar": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 270,
+   "h": 900,
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "sidebarFoot": {
+   "el": "div",
+   "x": 8,
+   "y": 718,
+   "w": 246,
+   "h": 182
+  },
+  "header": null,
+  "ground": "rgb(255, 255, 255)",
+  "h1": {
+   "text": "Pricing",
+   "font": "400 50px/60px Title, -apple-system",
+   "x": 490,
+   "y": 202,
+   "w": 730,
+   "h": 60
+  },
+  "h2": [
+   {
+    "text": "Student discount",
+    "font": "600 16px/24px Base-Variable, -apple-system",
+    "x": 408.1,
+    "y": 1338,
+    "w": 115.7,
+    "h": 24
+   },
+   {
+    "text": "Enterprise",
+    "font": "600 16px/24px Base-Variable, -apple-system",
+    "x": 819.8,
+    "y": 1338,
+    "w": 70.4,
+    "h": 24
+   },
+   {
+    "text": "Integrate Refero",
+    "font": "600 16px/24px Base-Variable, -apple-system",
+    "x": 1189.4,
+    "y": 1338,
+    "w": 109.3,
+    "h": 24
+   }
+  ],
+  "research": {
+   "field": {
+    "x": 322,
+    "y": 9,
+    "w": 1069,
+    "h": 62
+   },
+   "box": {
+    "x": 318,
+    "y": 8,
+    "w": 1074,
+    "h": 64
+   },
+   "radius": "24px",
+   "shadow": "none",
+   "chips": []
+  },
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1600px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 270,
+    "y": 8,
+    "w": 1170,
+    "h": 64
+   },
+   {
+    "el": "div",
+    "max": "1600px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 318,
+    "y": 202,
+    "w": 1074,
+    "h": 60
+   },
+   {
+    "el": "h1",
+    "max": "730px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 490,
+    "y": 202,
+    "w": 730,
+    "h": 60
+   },
+   {
+    "el": "div",
+    "max": "366px",
+    "padL": "4px",
+    "padR": "4px",
+    "x": 672,
+    "y": 302,
+    "w": 366,
+    "h": 64
+   },
+   {
+    "el": "div",
+    "max": "1167px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 271.5,
+    "y": 408,
+    "w": 1167,
+    "h": 850
+   }
+  ],
+  "grids": [],
+  "fixed": [
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "auto",
+    "x": 0,
+    "y": 0,
+    "w": 270,
+    "h": 900,
+    "text": "New research\nWeb apps\niOS apps\nStyles\nBeta\nPricing\nConnect M"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "20",
+    "x": 8,
+    "y": 0,
+    "w": 246,
+    "h": 80,
+    "text": ""
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "20",
+    "x": 8,
+    "y": 112,
+    "w": 246,
+    "h": 40,
+    "text": "New research"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "auto",
+    "bottom": "0px",
+    "z": "30",
+    "x": 8,
+    "y": 718,
+    "w": 246,
+    "h": 182,
+    "text": "Pricing\nConnect MCP\nFigma Plugin\nLog In/Sign Up"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "905",
+    "x": 270,
+    "y": 0,
+    "w": 1170,
+    "h": 128,
+    "text": "Payment failed notification\nResearch mode\nWeb apps\niOS apps"
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "scrollers": [],
+  "body": {
+   "font": "Base-Variable, -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+   "size": "16px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(0, 0, 0)"
+  },
+  "promoCard": {
+   "el": "div",
+   "x": 8,
+   "y": 718,
+   "w": 246,
+   "h": 182,
+   "radius": "0px",
+   "shadow": "none"
+  }
+ },
+ "mcp@1440": {
+  "label": "mcp",
+  "url": "https://refero.design/mcp",
+  "vw": 1440,
+  "vh": 900,
+  "sidebar": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 270,
+   "h": 900,
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "sidebarFoot": {
+   "el": "div",
+   "x": 8,
+   "y": 718,
+   "w": 246,
+   "h": 182
+  },
+  "header": null,
+  "ground": "rgb(255, 255, 255)",
+  "h1": {
+   "text": "Give your AI agent design taste",
+   "font": "400 50px/60px Title, -apple-system",
+   "x": 425,
+   "y": 280,
+   "w": 860,
+   "h": 60
+  },
+  "h2": [
+   {
+    "text": "You can spot an AI-generated page instan",
+    "font": "500 40px/48px Base-Variable, -apple-system",
+    "x": 477.5,
+    "y": 1450.3,
+    "w": 755,
+    "h": 144
+   },
+   {
+    "text": "Why it matters",
+    "font": "500 40px/48px Base-Variable, -apple-system",
+    "x": 477.5,
+    "y": 3384.3,
+    "w": 755,
+    "h": 48
+   },
+   {
+    "text": "How to install MCP",
+    "font": "500 40px/48px Base-Variable, -apple-system",
+    "x": 477.5,
+    "y": 3710.3,
+    "w": 755,
+    "h": 48
+   }
+  ],
+  "research": {
+   "field": {
+    "x": 322,
+    "y": 9,
+    "w": 1069,
+    "h": 62
+   },
+   "box": {
+    "x": 318,
+    "y": 8,
+    "w": 1074,
+    "h": 64
+   },
+   "radius": "24px",
+   "shadow": "none",
+   "chips": []
+  },
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1600px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 270,
+    "y": 8,
+    "w": 1170,
+    "h": 64
+   },
+   {
+    "el": "div",
+    "max": "1600px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 318,
+    "y": 128,
+    "w": 1074,
+    "h": 5720.3
+   },
+   {
+    "el": "div.WTk__",
+    "max": "1136px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 318,
+    "y": 128,
+    "w": 1074,
+    "h": 364
+   },
+   {
+    "el": "div",
+    "max": "860px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 425,
+    "y": 224,
+    "w": 860,
+    "h": 268
+   },
+   {
+    "el": "div",
+    "max": "660px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 525,
+    "y": 356,
+    "w": 660,
+    "h": 48
+   },
+   {
+    "el": "video",
+    "max": "675px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 517.5,
+    "y": 618,
+    "w": 675,
+    "h": 506.3
+   }
+  ],
+  "grids": [],
+  "fixed": [
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "auto",
+    "x": 0,
+    "y": 0,
+    "w": 270,
+    "h": 900,
+    "text": "New research\nWeb apps\niOS apps\nStyles\nBeta\nPricing\nConnect M"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "20",
+    "x": 8,
+    "y": 0,
+    "w": 246,
+    "h": 80,
+    "text": ""
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "20",
+    "x": 8,
+    "y": 112,
+    "w": 246,
+    "h": 40,
+    "text": "New research"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "auto",
+    "bottom": "0px",
+    "z": "30",
+    "x": 8,
+    "y": 718,
+    "w": 246,
+    "h": 182,
+    "text": "Pricing\nConnect MCP\nFigma Plugin\nLog In/Sign Up"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "905",
+    "x": 270,
+    "y": 0,
+    "w": 1170,
+    "h": 128,
+    "text": "Product analytics dashboard\nResearch mode\nWeb apps\niOS apps"
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "scrollers": [],
+  "body": {
+   "font": "Base-Variable, -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+   "size": "16px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(0, 0, 0)"
+  },
+  "video": {
+   "x": 517.5,
+   "y": 618,
+   "w": 675,
+   "h": 506.3,
+   "frame": {
+    "x": 517.5,
+    "y": 618,
+    "w": 675,
+    "h": 506.3
+   },
+   "radius": "32px"
+  },
+  "promoCard": {
+   "el": "div",
+   "x": 8,
+   "y": 718,
+   "w": 246,
+   "h": 182,
+   "radius": "0px",
+   "shadow": "none"
+  }
+ },
+ "styles@1440": {
+  "label": "styles",
+  "url": "https://styles.refero.design/",
+  "vw": 1440,
+  "vh": 900,
+  "header": {
+   "el": "header.sticky.top-0.z-50",
+   "pos": "sticky",
+   "bg": "oklab(0.999998 -0.00000980496 0.0000234246 / 0.9)",
+   "backdrop": "blur(24px)",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 81
+  },
+  "ground": "lab(100 0 0)",
+  "h1": {
+   "text": "Your favorite sites, in DESIGN.md\nYour favorite sites, in DE",
+   "font": "400 64px/69.12px kalice, \"kalice Fallback\"",
+   "x": 194,
+   "y": 194,
+   "w": 1052,
+   "h": 74.2
+  },
+  "h2": [
+   {
+    "text": "Give your AI\ndesign taste",
+    "font": "400 52px/55.12px kalice, \"kalice Fallback\"",
+    "x": 145,
+    "y": 1841.1,
+    "w": 464.7,
+    "h": 110.2
+   }
+  ],
+  "research": {
+   "field": {
+    "x": 365,
+    "y": 397.2,
+    "w": 671,
+    "h": 46
+   },
+   "box": {
+    "x": 344,
+    "y": 388.2,
+    "w": 752,
+    "h": 64
+   },
+   "radius": "3.35544e+07px",
+   "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(89.5164 0.0511706 -3.03215) 0px 0px 0px 0.5px inset",
+   "chips": [
+    ""
+   ]
+  },
+  "maxWidths": [
+   {
+    "el": "div.mx-auto.flex.w-full",
+    "max": "1100px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 170,
+    "y": 81,
+    "w": 1100,
+    "h": 495.2
+   },
+   {
+    "el": "h1.w-full.font-display.font-normal",
+    "max": "1100px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 194,
+    "y": 194,
+    "w": 1052,
+    "h": 74.2
+   },
+   {
+    "el": "p.mt-4.font-sans.text-center",
+    "max": "560px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 440,
+    "y": 284.2,
+    "w": 560,
+    "h": 72
+   },
+   {
+    "el": "div.mt-10.w-full",
+    "max": "752px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 344,
+    "y": 388.2,
+    "w": 752,
+    "h": 156
+   },
+   {
+    "el": "div.mx-auto.px-6.pt-5",
+    "max": "1800px",
+    "padL": "96px",
+    "padR": "96px",
+    "x": 0,
+    "y": 576.2,
+    "w": 1440,
+    "h": 3203.6
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.mt-2.grid.grid-cols-2",
+    "cols": "182px 182px 182px 182px",
+    "colGap": "8px",
+    "rowGap": "4px",
+    "x": 344,
+    "y": 468.2,
+    "w": 752,
+    "h": 76,
+    "firstChild": {
+     "x": 344,
+     "y": 468.2,
+     "w": 182,
+     "h": 36
+    }
+   },
+   {
+    "el": "div.grid.grid-cols-1.gap-x-4",
+    "cols": "394.656px 394.672px 394.656px",
+    "colGap": "32px",
+    "rowGap": "40px",
+    "x": 96,
+    "y": 644.2,
+    "w": 1248,
+    "h": 3050.6,
+    "firstChild": {
+     "x": 96,
+     "y": 644.2,
+     "w": 394.7,
+     "h": 338.7
+    }
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header.sticky.top-0.z-50",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "50",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 81,
+    "text": "/\nStyles"
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "scrollers": [],
+  "body": {
+   "font": "neueMontreal, \"neueMontreal Fallback\"",
+   "size": "16px",
+   "bg": "lab(100 0 0)",
+   "color": "lab(4.38504 0.200026 -3.38308)"
+  },
+  "styleCards": {
+   "count": 20,
+   "first": {
+    "x": 96,
+    "y": 644.2,
+    "w": 394.7,
+    "h": 338.7
+   },
+   "second": {
+    "x": 522.7,
+    "y": 644.2,
+    "w": 394.7,
+    "h": 338.7
+   },
+   "pitchY": null,
+   "pitchX": 426.7,
+   "favicon": {
+    "x": 145,
+    "y": 693.2,
+    "w": 296.7,
+    "h": 184.7
+   }
+  },
+  "video": {
+   "x": 145,
+   "y": 693.2,
+   "w": 296.7,
+   "h": 184.7,
+   "frame": {
+    "x": 145,
+    "y": 693.2,
+    "w": 296.7,
+    "h": 184.7
+   },
+   "radius": "0px"
+  }
+ },
+ "entity@1440": {
+  "label": "entity",
+  "url": "https://styles.refero.design/style/<id>",
+  "vw": 1440,
+  "vh": 900,
+  "sidebarFoot": {
+   "el": "main",
+   "x": 0,
+   "y": 80,
+   "w": 1440,
+   "h": 820
+  },
+  "header": {
+   "el": "header.sticky.top-0.z-50",
+   "pos": "sticky",
+   "bg": "oklab(0.999998 -0.00000980496 0.0000234246 / 0.9)",
+   "backdrop": "blur(24px)",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 81
+  },
+  "ground": "lab(100 0 0)",
+  "h1": {
+   "text": "Apple iPhone Duo",
+   "font": "530 48px/48px kalice, \"kalice Fallback\"",
+   "x": 40,
+   "y": 555.8,
+   "w": 361.5,
+   "h": 48
+  },
+  "h2": [
+   {
+    "text": "Color Palette",
+    "font": "600 20px/28px neueMontreal, \"neueMontreal Fallback\"",
+    "x": 40,
+    "y": 939.8,
+    "w": 632,
+    "h": 28
+   },
+   {
+    "text": "Typography",
+    "font": "600 20px/28px neueMontreal, \"neueMontreal Fallback\"",
+    "x": 40,
+    "y": 2067.8,
+    "w": 632,
+    "h": 28
+   },
+   {
+    "text": "Spacing & Shape",
+    "font": "600 20px/28px neueMontreal, \"neueMontreal Fallback\"",
+    "x": 40,
+    "y": 3789.4,
+    "w": 632,
+    "h": 28
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.flex.flex-col.gap-16",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 40,
+    "y": 128,
+    "w": 632,
+    "h": 8605.2
+   },
+   {
+    "el": "p.text-base.font-body.leading-6",
+    "max": "660.394px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 40,
+    "y": 627.8,
+    "w": 632,
+    "h": 48
+   }
+  ],
+  "grids": [],
+  "fixed": [
+   {
+    "el": "header.sticky.top-0.z-50",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "50",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 81,
+    "text": "/\nStyles\n/\nApple iPhone Duo"
+   },
+   {
+    "el": "main",
+    "pos": "fixed",
+    "top": "80px",
+    "bottom": "0px",
+    "z": "auto",
+    "x": 0,
+    "y": 80,
+    "w": 1440,
+    "h": 820,
+    "text": "Apple iPhone Duo\n\nfoldable device in a white gallery. Center"
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "scrollers": [
+   {
+    "el": "div.style-detail-scrollbar.w-full.px-6",
+    "x": 0,
+    "y": 80,
+    "w": 720,
+    "h": 820,
+    "scrollHeight": 8701,
+    "scrollTop": 0
+   },
+   {
+    "el": "div.h-full.overflow-auto.bg-muted/30",
+    "x": 721,
+    "y": 170,
+    "w": 719,
+    "h": 730,
+    "scrollHeight": 11989,
+    "scrollTop": 0
+   }
+  ],
+  "body": {
+   "font": "neueMontreal, \"neueMontreal Fallback\"",
+   "size": "16px",
+   "bg": "lab(100 0 0)",
+   "color": "lab(4.38504 0.200026 -3.38308)"
+  },
+  "styleCards": {
+   "count": 20,
+   "first": {
+    "x": 40,
+    "y": 5912.2,
+    "w": 308,
+    "h": 260.5
+   },
+   "second": {
+    "x": 364,
+    "y": 5912.2,
+    "w": 308,
+    "h": 260.5
+   },
+   "pitchY": null,
+   "pitchX": 324,
+   "favicon": {
+    "x": 57,
+    "y": 5929.2,
+    "w": 274,
+    "h": 170.5
+   }
+  },
+  "video": {
+   "x": 41,
+   "y": 129,
+   "w": 630,
+   "h": 393.8,
+   "frame": {
+    "x": 41,
+    "y": 129,
+    "w": 630,
+    "h": 393.8
+   },
+   "radius": "0px"
+  }
+ },
+ "mobile-home@390": {
+  "label": "mobile-home",
+  "url": "https://refero.design/",
+  "vw": 390,
+  "vh": 844,
+  "header": null,
+  "ground": "rgb(255, 255, 255)",
+  "h1": {
+   "text": "Design Research for the AI Era\nWhat are you designing next?",
+   "font": "400 34px/40px Title, -apple-system",
+   "x": 16,
+   "y": 185.6,
+   "w": 358,
+   "h": 80
+  },
+  "h2": [
+   {
+    "text": "Page Types",
+    "font": "500 32px/40px Base-Variable, -apple-system",
+    "x": 57,
+    "y": 1015,
+    "w": 151.8,
+    "h": 40
+   },
+   {
+    "text": "Flows",
+    "font": "500 32px/40px Base-Variable, -apple-system",
+    "x": 57,
+    "y": 1491.8,
+    "w": 77.5,
+    "h": 40
+   },
+   {
+    "text": "UX Patterns",
+    "font": "500 32px/40px Base-Variable, -apple-system",
+    "x": 57,
+    "y": 4840.1,
+    "w": 153.6,
+    "h": 40
+   }
+  ],
+  "research": {
+   "field": {
+    "x": 36,
+    "y": 506.2,
+    "w": 326,
+    "h": 24
+   },
+   "box": {
+    "x": 16,
+    "y": 491.2,
+    "w": 358,
+    "h": 102
+   },
+   "radius": "24px",
+   "shadow": "rgba(12, 41, 126, 0.07) 0px 0px 0px 1px inset",
+   "chips": [
+    ""
+   ]
+  },
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1600px",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 103.9,
+    "y": 15,
+    "w": 182.2,
+    "h": 40
+   },
+   {
+    "el": "div",
+    "max": "1600px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 119.9,
+    "y": 15,
+    "w": 150.2,
+    "h": 40
+   },
+   {
+    "el": "div",
+    "max": "1600px",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 185.6,
+    "w": 390,
+    "h": 160
+   },
+   {
+    "el": "div",
+    "max": "1600px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 185.6,
+    "w": 358,
+    "h": 160
+   },
+   {
+    "el": "div",
+    "max": "424px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 273.6,
+    "w": 358,
+    "h": 72
+   },
+   {
+    "el": "div",
+    "max": "752px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 491.2,
+    "w": 358,
+    "h": 102
+   }
+  ],
+  "grids": [],
+  "fixed": [],
+  "dialogs": [],
+  "menus": [],
+  "scrollers": [],
+  "body": {
+   "font": "Base-Variable, -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+   "size": "16px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(0, 0, 0)"
+  }
+ },
+ "mobile-styles@390": {
+  "label": "mobile-styles",
+  "url": "https://styles.refero.design/",
+  "vw": 390,
+  "vh": 844,
+  "header": {
+   "el": "header.sticky.top-0.z-50",
+   "pos": "sticky",
+   "bg": "oklab(0.999998 -0.00000980496 0.0000234246 / 0.9)",
+   "backdrop": "blur(24px)",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 81
+  },
+  "ground": "lab(100 0 0)",
+  "h1": {
+   "text": "Your favorite sites, in DESIGN.md\nYour favorite sites, in DE",
+   "font": "400 43.875px/43.4362px kalice, \"kalice Fallback\"",
+   "x": 16,
+   "y": 169,
+   "w": 358,
+   "h": 90.3
+  },
+  "h2": [
+   {
+    "text": "Give your AI\ndesign taste",
+    "font": "400 36px/38.16px kalice, \"kalice Fallback\"",
+    "x": 57,
+    "y": 3703.1,
+    "w": 276,
+    "h": 76.3
+   }
+  ],
+  "research": {
+   "field": {
+    "x": 33,
+    "y": 412.3,
+    "w": 284,
+    "h": 38
+   },
+   "box": {
+    "x": 16,
+    "y": 403.3,
+    "w": 358,
+    "h": 56
+   },
+   "radius": "3.35544e+07px",
+   "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, lab(89.5164 0.0511706 -3.03215) 0px 0px 0px 0.5px inset",
+   "chips": [
+    ""
+   ]
+  },
+  "maxWidths": [
+   {
+    "el": "div.mx-auto.flex.w-full",
+    "max": "1100px",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 81,
+    "w": 390,
+    "h": 576.3
+   },
+   {
+    "el": "h1.w-full.font-display.font-normal",
+    "max": "390px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 169,
+    "w": 358,
+    "h": 90.3
+   },
+   {
+    "el": "p.mt-4.font-sans.text-center",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 275.3,
+    "w": 358,
+    "h": 88
+   },
+   {
+    "el": "div.mt-10.w-full",
+    "max": "752px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 403.3,
+    "w": 358,
+    "h": 222
+   },
+   {
+    "el": "div.mx-auto.px-6.pt-5",
+    "max": "1800px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 658.3,
+    "w": 390,
+    "h": 7208.1
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.mt-2.grid.grid-cols-2",
+    "cols": "173px 173px",
+    "colGap": "4px",
+    "rowGap": "2px",
+    "x": 16,
+    "y": 467.3,
+    "w": 358,
+    "h": 158,
+    "firstChild": {
+     "x": 20,
+     "y": 471.3,
+     "w": 173,
+     "h": 36
+    }
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header.sticky.top-0.z-50",
+    "pos": "sticky",
+    "top": "0px",
+    "bottom": "auto",
+    "z": "50",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 81,
+    "text": "/\nStyles"
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "scrollers": [],
+  "body": {
+   "font": "neueMontreal, \"neueMontreal Fallback\"",
+   "size": "16px",
+   "bg": "lab(100 0 0)",
+   "color": "lab(4.38504 0.200026 -3.38308)"
+  },
+  "styleCards": {
+   "count": 20,
+   "first": {
+    "x": 24,
+    "y": 734.3,
+    "w": 342,
+    "h": 293.8
+   },
+   "second": {
+    "x": 24,
+    "y": 1060.1,
+    "w": 342,
+    "h": 293.8
+   },
+   "pitchY": 325.8,
+   "pitchX": null,
+   "favicon": {
+    "x": 57,
+    "y": 767.3,
+    "w": 276,
+    "h": 171.8
+   }
+  },
+  "video": {
+   "x": 57,
+   "y": 767.3,
+   "w": 276,
+   "h": 171.8,
+   "frame": {
+    "x": 57,
+    "y": 767.3,
+    "w": 276,
+    "h": 171.8
+   },
+   "radius": "0px"
+  }
+ }
+}
