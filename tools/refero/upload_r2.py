@@ -166,6 +166,8 @@ def main():
             if (done + failed) % 100 == 0:
                 print(f"{done + failed}/{len(jobs)}")
     print(f"uploaded {done}; {failed} failed")
+    if failed:
+        sys.exit(1)
 
 
 if __name__ == "__main__":
