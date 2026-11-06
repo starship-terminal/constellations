@@ -595,23 +595,28 @@ class ApiReloadTest(unittest.TestCase):
         self.assertLessEqual(sys.path.count(tools), max(before, 1))
 
     def test_catalog_reloads_in_place_after_change(self):
+        # The mtime api.py watches is a temp file's, never tools/catalog.py's: bumping the
+        # real file's mtime made a second `make test` in the same checkout reload mid-test.
         import importlib
         import sys
+        import tempfile
         from unittest import mock
         self._get("/api/status")
         mod = sys.modules["catalog"]
-        path = SERVER.parent / "tools" / "catalog.py"
-        st = path.stat()
-        try:
-            with mock.patch.object(importlib, "reload", wraps=importlib.reload) as reload:
+        with tempfile.TemporaryDirectory() as d:
+            watched = Path(d) / "catalog.py"
+            watched.write_text("")
+            st = watched.stat()
+            with mock.patch.object(self.api, "_CATALOG", watched), \
+                    mock.patch.object(self.api, "_catalog_mtime", None), \
+                    mock.patch.object(importlib, "reload", wraps=importlib.reload) as reload:
+                self._get("/api/status")                    # records the mtime
                 self._get("/api/status")
                 self.assertEqual(reload.call_count, 0)  # unchanged file: no reload
-                os.utime(path, (st.st_atime, st.st_mtime + 5))
+                os.utime(watched, (st.st_atime, st.st_mtime + 5))
                 self._get("/api/status")
                 self.assertEqual(reload.call_count, 1)
-            self.assertIs(sys.modules["catalog"], mod)
-        finally:
-            os.utime(path, (st.st_atime, st.st_mtime))
+        self.assertIs(sys.modules["catalog"], mod)
 
 
 if __name__ == "__main__":
