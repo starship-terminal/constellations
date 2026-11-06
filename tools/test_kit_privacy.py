@@ -140,9 +140,11 @@ def no_url_scope_errors(src):
 
 
 def capture_scripts_recording_raw_urls(root):
-    """(path, reason) for each systems/*/tools/capture script under root that records a computed value raw."""
+    """(path, reason) for each capture script under root (every systems/*/tools/capture and the kit's own
+    tools/kit/capture, which new packages copy from) that records a computed value raw."""
     bad = []
-    for path in sorted(Path(root).glob("systems/*/tools/capture/**/*")):
+    root = Path(root)
+    for path in sorted([*root.glob("systems/*/tools/capture/**/*"), *root.glob("tools/kit/capture/**/*")]):
         if path.suffix not in (".mjs", ".js") or path.name.startswith("test_"):
             continue
         src = path.read_text()
@@ -201,7 +203,7 @@ class PackageCaptureScripts(unittest.TestCase):
     """Python only, so it runs without node."""
 
     def test_every_package_capture_script_records_computed_values_through_no_url(self):
-        # Every package's capture scripts, found by glob so a new copy is covered too: no computed
+        # Every package's capture scripts and the kit's, found by glob so a new copy is covered too: no computed
         # value that can hold a url() (a picked property, a pseudo-element's content or background
         # image, a resolved custom property, a one-off box reading) is recorded raw, and each scope
         # that calls noUrl defines it first (a const read before its line throws, and the paint-loop

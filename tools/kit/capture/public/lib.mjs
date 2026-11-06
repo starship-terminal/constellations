@@ -120,7 +120,7 @@ export async function styleOf(locator) {
       const p = getComputedStyle(el, pe);
       if (p.content && p.content !== 'none' && p.content !== 'normal') {
         out[pe] = {
-          content: p.content.slice(0, 40), width: p.width, height: p.height, position: p.position,
+          content: noUrl(p.content).slice(0, 40), width: p.width, height: p.height, position: p.position,
           backgroundColor: p.backgroundColor, backgroundImage: noUrl(p.backgroundImage).slice(0, 200), boxShadow: p.boxShadow,
           borderTopWidth: p.borderTopWidth, borderTopStyle: p.borderTopStyle, borderTopColor: p.borderTopColor,
           borderRadius: p.borderRadius, inset: `${p.top} ${p.right} ${p.bottom} ${p.left}`, opacity: p.opacity, transition: p.transition,
