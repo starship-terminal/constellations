@@ -5,11 +5,11 @@
 // export as swatches and tables, and the similar-styles strip. All props are
 // plain serializable data prepared by the RSC page.
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useId, useMemo, useState } from "react";
 import type { ReferoEntity } from "@/lib/refero";
 import { RfFav, RfImg } from "@/components/ReferoIndex";
 import { useLightbox } from "@/components/Lightbox";
-import { copyText } from "@/components/CopyButton";
+import { copyWithToast } from "@/components/CopyButton";
 import { useToast } from "@/components/Toast";
 
 export interface ReferoMediaPair {
@@ -117,8 +117,28 @@ const host = (u: string | null) =>
     .replace(/^www\./, "")
     .replace(/\/.*$/, "");
 
+// Arrow keys, Home and End move between tabs and select the one reached
+// (WAI-ARIA tabs with automatic activation); only the selected tab is in
+// the Tab order, so Tab moves on to the panel.
+function onTabKeys(ev: React.KeyboardEvent<HTMLElement>) {
+  const tabs = Array.from(ev.currentTarget.querySelectorAll<HTMLButtonElement>('[role="tab"]'));
+  const at = tabs.indexOf(document.activeElement as HTMLButtonElement);
+  if (at < 0) return;
+  const to =
+    ev.key === "ArrowRight" ? (at + 1) % tabs.length
+    : ev.key === "ArrowLeft" ? (at - 1 + tabs.length) % tabs.length
+    : ev.key === "Home" ? 0
+    : ev.key === "End" ? tabs.length - 1
+    : -1;
+  if (to < 0) return;
+  ev.preventDefault();
+  tabs[to].focus();
+  tabs[to].click();
+}
+
 function MediaTabs({ e }: { e: ReferoEntity }) {
   const lb = useLightbox();
+  const ids = useId();
   const tabs = useMemo(
     () =>
       MEDIA_TABS.filter(([k]) => {
@@ -160,15 +180,27 @@ function MediaTabs({ e }: { e: ReferoEntity }) {
   return (
     <section className="rf-sec">
       {tabs.length > 1 && (
-        <div className="rf-tabs" role="tablist">
+        <div className="rf-tabs" role="tablist" aria-label="Media" onKeyDown={onTabKeys}>
           {tabs.map(([k, label]) => (
-            <button key={k} role="tab" type="button" aria-selected={k === cur} onClick={() => setTab(k)}>
+            <button
+              key={k}
+              id={`${ids}-tab-${k}`}
+              role="tab"
+              type="button"
+              aria-selected={k === cur}
+              aria-controls={`${ids}-panel`}
+              tabIndex={k === cur ? 0 : -1}
+              onClick={() => setTab(k)}
+            >
               {label}
             </button>
           ))}
         </div>
       )}
-      <div className="rf-media">
+      <div
+        className="rf-media"
+        {...(tabs.length > 1 ? { id: `${ids}-panel`, role: "tabpanel", "aria-labelledby": `${ids}-tab-${cur}` } : {})}
+      >
         {isVideo ? (
           <video
             className="rf-vid"
@@ -200,6 +232,7 @@ function MediaTabs({ e }: { e: ReferoEntity }) {
 function DocsPane({ e, docs }: { e: ReferoEntity; docs: ReferoDoc[] }) {
   const { toast } = useToast();
   const [tab, setTab] = useState(0);
+  const ids = useId();
   if (!docs.length) return null;
   const d = docs[Math.min(tab, docs.length - 1)];
   const download = () => {
@@ -215,9 +248,18 @@ function DocsPane({ e, docs }: { e: ReferoEntity; docs: ReferoDoc[] }) {
     <section className="rf-sec">
       <h2 className="rf-h2">Documents</h2>
       <div className="rf-pane">
-        <div className="rf-tabs" role="tablist">
+        <div className="rf-tabs" role="tablist" aria-label="Documents" onKeyDown={onTabKeys}>
           {docs.map((x, i) => (
-            <button key={x.key} role="tab" type="button" aria-selected={i === tab} onClick={() => setTab(i)}>
+            <button
+              key={x.key}
+              id={`${ids}-tab-${i}`}
+              role="tab"
+              type="button"
+              aria-selected={d === x}
+              aria-controls={`${ids}-panel`}
+              tabIndex={d === x ? 0 : -1}
+              onClick={() => setTab(i)}
+            >
               {x.label}
             </button>
           ))}
@@ -231,10 +273,7 @@ function DocsPane({ e, docs }: { e: ReferoEntity; docs: ReferoDoc[] }) {
               className="rf-mini"
               type="button"
               title="Copy this document"
-              onClick={async () => {
-                await copyText(d.raw);
-                toast(`${d.label} copied`);
-              }}
+              onClick={() => copyWithToast(d.raw, toast, `${d.label} copied`)}
             >
               {copySvg}
               Copy
@@ -251,7 +290,7 @@ function DocsPane({ e, docs }: { e: ReferoEntity; docs: ReferoDoc[] }) {
             )}
           </div>
         </div>
-        <div className="rf-pane-body">
+        <div className="rf-pane-body" id={`${ids}-panel`} role="tabpanel" tabIndex={0} aria-labelledby={`${ids}-tab-${docs.indexOf(d)}`}>
           {d.code ? (
             <pre className="rf-code">
               <code dangerouslySetInnerHTML={{ __html: d.html }} />
@@ -274,10 +313,7 @@ function Swatch({ c }: { c: DsColor }) {
       className="rf-sw"
       type="button"
       title={`Copy ${grad ? "gradient" : v}`}
-      onClick={async () => {
-        await copyText(v);
-        toast(`Copied ${v}`);
-      }}
+      onClick={() => copyWithToast(v, toast, `Copied ${v}`)}
     >
       <span className="sw-i" style={{ background: v }}>
         <span className="sw-copy">

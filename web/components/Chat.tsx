@@ -7,7 +7,7 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState } f
 import Link from "next/link";
 import { useLightbox } from "@/components/Lightbox";
 import { useToast } from "@/components/Toast";
-import { copyText } from "@/components/CopyButton";
+import { copyWithToast } from "@/components/CopyButton";
 
 interface ChatResultCard {
   cover?: string;
@@ -319,10 +319,7 @@ function ChatTurn({ t, lb, toast }: { t: Turn; lb: ReturnType<typeof useLightbox
                 key={i}
                 className="btn"
                 type="button"
-                onClick={async () => {
-                  await copyText(r.prompt || "");
-                  toast("Agent prompt copied");
-                }}
+                onClick={() => copyWithToast(r.prompt || "", toast, "Agent prompt copied")}
               >
                 Copy agent prompt · {r.slug}
               </button>
