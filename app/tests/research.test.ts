@@ -159,7 +159,12 @@ test("real SDK tool loop streams UI parts, sends captured image, and persists ra
       output: expect.objectContaining({
         type: "content",
         value: expect.arrayContaining([
-          expect.objectContaining({ type: "file", mediaType: "image/png" }),
+          // AQID is the base64 of the mocked capture's bytes [1, 2, 3].
+          expect.objectContaining({
+            type: "file",
+            mediaType: "image/png",
+            data: { type: "data", data: "AQID" },
+          }),
         ]),
       }),
     }),
