@@ -53,10 +53,14 @@ test("PATCH renames and sets notes, and rejects bad input", async () => {
   const board = await (await getStore()).createCollection("Before");
   const ok = await patch(board.id, { name: " After ", notes: "memo" });
   expect(ok.status).toBe(200);
-  expect(await ok.json()).toMatchObject({ id: board.id, name: "After" });
+  expect(await ok.json()).toMatchObject({
+    id: board.id,
+    name: "After",
+    notes: "memo",
+  });
   expect(
-    (await (await getStore()).getCollection(board.id))!.collection.name,
-  ).toBe("After");
+    (await (await getStore()).getCollection(board.id))!.collection,
+  ).toMatchObject({ name: "After", notes: "memo" });
   for (const payload of [
     { name: "" },
     { name: "x".repeat(161) },

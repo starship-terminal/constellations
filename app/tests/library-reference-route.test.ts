@@ -11,7 +11,10 @@ const call = (source: string, slug: string) =>
 
 test("an unknown source, bad slug or missing reference is a 404", async () => {
   const repo = await repoFixture();
-  await writeFile(join(repo, "catalog.json"), JSON.stringify({ systems: [] }));
+  await writeFile(
+    join(repo, "catalog.json"),
+    JSON.stringify({ systems: [{ slug: "demo", name: "Demo" }] }),
+  );
   const cases: [string, string][] = [
     ["unknown", "demo"],
     ["systems", "missing"],
@@ -27,4 +30,18 @@ test("an unknown source, bad slug or missing reference is a 404", async () => {
     expect(response.status, `${source}/${slug}`).toBe(404);
     expect(await response.json()).toEqual({ error: "Reference not found" });
   }
+});
+
+test("a known reference is served with its details", async () => {
+  const repo = await repoFixture();
+  await writeFile(
+    join(repo, "catalog.json"),
+    JSON.stringify({ systems: [{ slug: "demo", name: "Demo" }] }),
+  );
+  const response = await call("systems", "demo");
+  expect(response.status).toBe(200);
+  expect(await response.json()).toMatchObject({
+    id: "systems:demo",
+    slug: "demo",
+  });
 });
