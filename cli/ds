@@ -10,7 +10,7 @@ file install.sh writes:
     ds find dark dense          # ranked styles, systems/ first
     ds style capy-desktop       # one style's distilled entry
     ds export capy-desktop -g dark   # its token values
-    ds doc capy-desktop         # its README (or: ds doc slug tokens.json)
+    ds doc capy-desktop         # its README (or: ds doc slug tokens.json; --all for every page)
     ds media capy-desktop       # screenshot/crop URLs
     ds handoff capy-desktop     # the apply-style prompt for an agent
     ds tools                    # the raw MCP tool list
@@ -24,6 +24,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import shlex
 import sys
 import urllib.request
 from pathlib import Path
@@ -103,6 +104,8 @@ def main() -> int:
     d = sub.add_parser("doc", aliases=["readme"], help="a text file from a package")
     d.add_argument("slug")
     d.add_argument("path", nargs="?")
+    d.add_argument("--offset", type=int, default=0, help="start at this character (a page's nextOffset)")
+    d.add_argument("--all", action="store_true", help="fetch every page of a long file")
 
     m = sub.add_parser("media", help="screenshot/crop/icon/board URLs")
     m.add_argument("slug")
@@ -178,12 +181,35 @@ def main() -> int:
                 print(out["note"])
         return 0
     if args.cmd in ("doc", "readme"):
-        out = call(base, "read_doc", {"slug": args.slug, "path": args.path})
-        if args.json:
+        req = {"slug": args.slug, "path": args.path}
+        if args.offset:
+            req["offset"] = args.offset
+        out = call(base, "read_doc", req)
+        if args.json and not args.all:
             _emit(out, True)
-        else:
-            print(out.get("text", ""))
-            if out.get("truncated"):
+            return 0
+        pages = [out]
+        # A server from before read_doc paged sends no nextOffset; stop there.
+        while args.all and out.get("truncated") and out.get("nextOffset"):
+            out = call(base, "read_doc", {**req, "offset": out["nextOffset"]})
+            pages.append(out)
+        if args.json:
+            joined = {k: v for k, v in pages[0].items() if k != "nextOffset"}
+            joined.update(text="".join(p.get("text", "") for p in pages),
+                          truncated=bool(out.get("truncated")), pages=len(pages))
+            if out.get("truncated") and out.get("nextOffset"):
+                joined["nextOffset"] = out["nextOffset"]
+            _emit(joined, True)
+            return 0
+        print("".join(p.get("text", "") for p in pages))
+        if out.get("truncated"):
+            nxt = out.get("nextOffset")
+            if nxt:
+                again = shlex.join(["ds", *(["--url", args.url] if args.url else []), "doc", args.slug,
+                                    *([args.path] if args.path else []), "--offset", str(nxt)])
+                print(f"… [truncated at {nxt} of {out.get('length')} characters; more with: {again} (or --all)]",
+                      file=sys.stderr)
+            else:
                 print("… [truncated]", file=sys.stderr)
         return 0
     if args.cmd == "media":

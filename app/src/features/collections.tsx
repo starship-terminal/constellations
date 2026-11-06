@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
-  BookOpen,
   Check,
   Download,
   Folder,
@@ -17,7 +16,6 @@ import {
   Pencil,
   Plus,
   Search,
-  Trash2,
   X,
 } from "lucide-react";
 import type { LibraryItem } from "@/contracts/library";
@@ -25,7 +23,6 @@ import {
   api,
   Empty,
   ErrorState,
-  MediaPreview,
   Modal,
   SkeletonGrid,
   Spinner,
@@ -64,8 +61,7 @@ export function CollectionsPage() {
         method: "POST",
         body: JSON.stringify({ name: name.trim() }),
       });
-      const c = d.collection || d;
-      setData((prev) => ({ collections: [c, ...(prev?.collections || [])] }));
+      setData((prev) => ({ collections: [d, ...(prev?.collections || [])] }));
       setName("");
       setCreate(false);
     } catch (e) {
@@ -209,7 +205,7 @@ export function CollectionDetailPage({ id }: { id: string }) {
     setBusy(true);
     setError("");
     try {
-      const d = await api(`/api/collections/${id}`, {
+      await api(`/api/collections/${id}`, {
         method: "PATCH",
         body: JSON.stringify(patch),
       });
@@ -475,9 +471,19 @@ function AddReferences({
     const t = setTimeout(() => setQuery(q), 250);
     return () => clearTimeout(t);
   }, [q]);
-  const { data, loading } = useResource<{ items: LibraryItem[] }>(
+  const {
+    data,
+    loading,
+    error: searchError,
+  } = useResource<{ items: LibraryItem[] }>(
     `/api/library?q=${encodeURIComponent(query)}&limit=16`,
   );
+  // Keep the last results on screen while the next query loads, so typing
+  // does not swap the list for a spinner on every keystroke.
+  const [items, setItems] = useState<LibraryItem[] | null>(null);
+  useEffect(() => {
+    if (data) setItems(data.items);
+  }, [data]);
   async function add(item: LibraryItem) {
     setBusy(item.id);
     try {
@@ -518,11 +524,16 @@ function AddReferences({
           {error}
         </p>
       )}
-      <div className="add-reference-list">
-        {loading ? (
+      {searchError && !loading && (
+        <p className="error-text" role="alert">
+          Could not search the library: {searchError}
+        </p>
+      )}
+      <div className="add-reference-list" aria-busy={loading}>
+        {loading && !items?.length ? (
           <Spinner />
         ) : (
-          data?.items.map((item) => (
+          items?.map((item) => (
             <div className="add-reference-row" key={item.id}>
               {item.icon ? (
                 <img src={item.icon} alt="" />
@@ -554,7 +565,7 @@ function AddReferences({
             </div>
           ))
         )}
-        {!loading && data?.items.length === 0 && (
+        {!loading && !searchError && items?.length === 0 && (
           <Empty title="No references found." />
         )}
       </div>
