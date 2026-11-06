@@ -455,6 +455,27 @@ class ScanTest(unittest.TestCase):
         self.assertTrue(all(h.endswith(":2: redaction pattern 1") for h in hits))
 
 
+class RedactionLoaderTest(unittest.TestCase):
+    def test_one_loader_for_scan_and_redact_images(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            a, b = Path(d) / "a.json", Path(d) / "b.json"
+            a.write_text(json.dumps({"replace": [["Jane\\s+Doe", "g", "x"], ["a(b", "i", "x"]], "email_allow": ["^me@x\\.test$"]}))
+            b.write_text(json.dumps({"replace": [["secret", "gi"]]}))           # a two-item row
+            red = catalog.read_redaction([a, b])
+            self.assertEqual(len(red["replace"]), 3)
+            self.assertEqual(red["email_allow"], ["^me@x\\.test$"])
+            pats = catalog.redaction_patterns(red)
+            self.assertTrue(pats[0].search("Jane Doe") and not pats[0].search("JANE DOE"))   # flags honoured
+            self.assertTrue(pats[1].search("xA(Bx"))                                           # invalid: literal
+            self.assertTrue(pats[2].search("SECRET"))
+            self.assertTrue(catalog.redaction_patterns(red, ignorecase=True)[0].search("JANE DOE"))
+            (Path(d) / "pkg").mkdir()
+            (Path(d) / "pkg" / "n.md").write_text("a(b and Secret\n")
+            hits = catalog.scan(Path(d) / "pkg", red)                # a bad regex no longer crashes scan
+            self.assertEqual(sorted(h.rsplit(" ", 1)[1] for h in hits), ["2", "3"])
+
+
 class ScanFailsLoudlyTest(unittest.TestCase):
     def test_missing_or_empty_folder_is_an_error_not_clean(self):
         import tempfile
