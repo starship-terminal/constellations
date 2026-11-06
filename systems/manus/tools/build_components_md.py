@@ -12,7 +12,7 @@ Adapted from the Gauth kit's builder.
 Deterministic: re-running it on the same inputs reproduces components.md byte for byte.
 Run from anywhere: python3 tools/build_components_md.py
 """
-import collections, json, os, re
+import collections, html, json, os, re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -616,7 +616,7 @@ for g, ids in groups.items():
         for sname in ("default", "hover", "light", "light-hover", "active", "selected", "checked", "open", "typed", "focus-visible"):
             s = c["states"].get(sname)
             if s and s.get("crop") and Path(s["crop"]).exists():
-                crops.append(f'<img src="{s["crop"]}" alt="{c["title"]}, {sname}" height="{min(120, max(24, round(s["rect"]["h"])))}"> ')
+                crops.append(f'<img src="{html.escape(s["crop"])}" alt="{html.escape(c["title"] + ", " + sname)}" height="{min(120, max(24, round(s["rect"]["h"])))}"> ')
         if crops:
             W("".join(crops))
             W()
