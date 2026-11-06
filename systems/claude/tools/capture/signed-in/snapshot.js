@@ -173,12 +173,23 @@ window.__snap = function (label, REDACT) {
   clone.querySelector('head').insertAdjacentHTML('beforeend', parts.map((p) => (p.href
     ? '<link rel="stylesheet" href="' + p.href + '">'
     : '<style' + (p.media ? ' media="' + p.media + '"' : '') + '>' + p.css.replace(/<\/style/gi, '<\\/style') + '</style>')).join('\n'));
-  let html = '<!doctype html>\n' + clone.outerHTML;
-  for (const [pattern, flags, rep] of REDACT.replace) html = html.replace(new RegExp(pattern, flags), rep);
+  // As the kit's snapshot.js does: every query or fragment carrying a signing parameter is cut out
+  // wherever the URL sits (any attribute, an inline style's url(), text), then each REDACT pattern
+  // (always global) runs over every text node and attribute value, where entities are decoded (a
+  // &nbsp; is a character \s matches), and again over the serialised copy.
+  const cutSigned = (s) => s.replace(/[?#](?:[^\s"'<>)]|\)(?![\s;,"'}]|$))*/g, (q) => (SIGNED.test(q) ? '' : q));
+  clone.querySelectorAll('*').forEach((n) => { for (const a of [...n.attributes]) { const v = cutSigned(a.value); if (v !== a.value) n.setAttribute(a.name, v); } });
+  const rx = REDACT.replace.map(([pattern, flags, rep]) => [new RegExp(pattern, flags.includes('g') ? flags : flags + 'g'), rep]);
+  const scrub = (v) => rx.reduce((t, [r, rep]) => t.replace(r, rep), v);
+  const tw = document.createTreeWalker(clone, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_COMMENT);
+  while (tw.nextNode()) { const v = scrub(tw.currentNode.nodeValue); if (v !== tw.currentNode.nodeValue) tw.currentNode.nodeValue = v; }
+  clone.querySelectorAll('*').forEach((n) => { for (const a of [...n.attributes]) { const v = scrub(a.value); if (v !== a.value) n.setAttribute(a.name, v); } });
+  let html = cutSigned('<!doctype html>\n' + clone.outerHTML);
+  for (const [r, rep] of rx) html = html.replace(r, rep);
   // Inner scrollers (the task thread is a virtualised list inside one) keep their position only
   // as a property, so each scrolled element is recorded by its child-index path for render.mjs.
   const pathOf = (el) => { const out = []; for (let n = el; n && n !== document.documentElement; n = n.parentElement) out.unshift([...n.parentElement.children].indexOf(n)); return out; };
   const scrolls = [...document.querySelectorAll('*')].filter((e) => e.scrollTop > 0).map((e) => ({ path: pathOf(e), top: e.scrollTop, left: e.scrollLeft, max: e.scrollHeight - e.clientHeight }));
-  const meta = { label, url: location.href.replace(/\/(chat|project|artifact)\/[^/?#]+/, '/$1/<id>'), title: document.title, scrollY, w: innerWidth, h: innerHeight, docH: document.documentElement.scrollHeight, scrolls };
+  const meta = { label, url: cutSigned(location.href).replace(/\/(chat|project|artifact)\/[^/?#]+/, '/$1/<id>'), title: document.title, scrollY, w: innerWidth, h: innerHeight, docH: document.documentElement.scrollHeight, scrolls };
   return 'SNAPSTART' + JSON.stringify(meta) + 'SNAPMETA' + html + 'SNAPEND';
 };
