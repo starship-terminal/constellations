@@ -185,13 +185,19 @@ export function AppShell({ children }: { children: ReactNode }) {
     [title, setTitle] = useState(""),
     [error, setError] = useState(""),
     [historyFailed, setHistoryFailed] = useState(false);
+  // Only the newest history request may update the list or its failure state.
+  const historyRequest = useRef(0);
   function reload() {
+    const request = ++historyRequest.current;
     api("/api/conversations")
       .then((d) => {
+        if (request !== historyRequest.current) return;
         setHistory(d.conversations || []);
         setHistoryFailed(false);
       })
-      .catch(() => setHistoryFailed(true));
+      .catch(() => {
+        if (request === historyRequest.current) setHistoryFailed(true);
+      });
   }
   useEffect(() => {
     reload();

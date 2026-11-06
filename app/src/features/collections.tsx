@@ -534,7 +534,7 @@ function AddReferences({
         </p>
       )}
       <div className="add-reference-list" aria-busy={loading}>
-        {!items && loading ? (
+        {loading && !items?.length ? (
           <Spinner />
         ) : (
           items?.map((item) => (
