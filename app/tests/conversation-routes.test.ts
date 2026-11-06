@@ -1,10 +1,8 @@
-import { afterEach, beforeEach, expect, test, vi } from "vitest";
-import { mkdtemp, rm } from "node:fs/promises";
-import { tmpdir } from "node:os";
-import { join } from "node:path";
-import { createResearchStore, type ResearchStore } from "@/server/db";
+import { beforeEach, expect, test, vi } from "vitest";
+import type { ResearchStore } from "@/server/db";
 import { GET, PATCH } from "@/app/api/conversations/[id]/route";
 import { GET as taxonomy } from "@/app/api/taxonomy/route";
+import { appOrigin, jsonRequest, tempStore } from "./helpers";
 
 const state = vi.hoisted(() => ({ store: null as ResearchStore | null }));
 vi.mock("@/server/db", async (original) => ({
@@ -17,33 +15,20 @@ vi.mock("@/server/sources", () => ({
   getReferenceSummary: async (id: string) =>
     ["systems:one", "systems:two"].includes(id) ? { id } : null,
 }));
-let directory = "";
 beforeEach(async () => {
-  directory = await mkdtemp(join(tmpdir(), "conversation-routes-"));
-  state.store = await createResearchStore(directory);
-});
-afterEach(async () => {
-  state.store?.close();
-  await rm(directory, { recursive: true, force: true });
+  state.store = (await tempStore("conversation-routes-")).store;
 });
 
 const context = (id: string) => ({ params: Promise.resolve({ id }) });
 const read = (id: string) =>
-  GET(
-    new Request(`http://localhost:8845/api/conversations/${id}`),
-    context(id),
-  );
+  GET(new Request(`${appOrigin}/api/conversations/${id}`), context(id));
 function patch(
   id: string,
   body: unknown,
-  origin = "http://localhost:8845",
+  origin = appOrigin,
 ): Promise<Response> {
   return PATCH(
-    new Request(`http://localhost:8845/api/conversations/${id}`, {
-      method: "PATCH",
-      headers: { "content-type": "application/json", origin },
-      body: JSON.stringify(body),
-    }),
+    jsonRequest(`/api/conversations/${id}`, "PATCH", body, { origin }),
     context(id),
   );
 }

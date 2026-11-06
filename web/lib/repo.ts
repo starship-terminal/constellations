@@ -68,7 +68,7 @@ function listIgnored(): Promise<Set<string> | null> {
   });
 }
 
-/** True when a file (a real path) is gitignored, so it must not be served or
+/** True when a file or folder (a real path) is gitignored, so it must not be served or
     listed. Outside a git checkout nothing is ignored; inside one, a git
     failure or a path outside the checkout counts as ignored (fail closed). */
 export async function isGitIgnored(abs: string): Promise<boolean> {
@@ -84,7 +84,8 @@ export async function isGitIgnored(abs: string): Promise<boolean> {
     ignoredCache = { at: Date.now(), list: listIgnored() };
   const ignored = await ignoredCache.list;
   if (!ignored) return true;
-  if (ignored.has(rel)) return true;
+  // A folder can be passed too: wholly ignored ones are listed as "dir/".
+  if (ignored.has(rel) || ignored.has(rel + "/")) return true;
   const parts = rel.split("/");
   for (let i = 1; i < parts.length; i++) if (ignored.has(parts.slice(0, i).join("/") + "/")) return true;
   return false;
