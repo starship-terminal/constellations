@@ -251,11 +251,16 @@ def get_tokens(slug: str, group: str | None = None, offset: int = 0, limit: int 
     return out
 
 
-def read_doc(slug: str, path: str | None = None) -> dict:
+def read_doc(slug: str, path: str | None = None, offset: int = 0) -> dict:
     """A text file from the package: its README (the default), components.md,
-    patterns.md, tokens.json. Path is relative to systems/<slug>/."""
+    patterns.md, tokens.json. Path is relative to systems/<slug>/. A file over
+    DOC_CAP characters comes back a page at a time: `offset` is where the page
+    starts, and a truncated page names the `nextOffset` to ask for."""
     e = _entry(slug)
     rel = path or Path(e["entry"]).name
+    offset = int(offset or 0)
+    if offset < 0:
+        raise ToolError("offset must be 0 or more")
     target = _bounded(e, rel)
     if target.is_dir():
         raise ToolError(f"{rel} is a directory")
@@ -264,9 +269,13 @@ def read_doc(slug: str, path: str | None = None) -> dict:
     if target.suffix.lower() not in TEXT_TYPES:
         raise ToolError(f"not a text file: {rel}")
     text = target.read_text(errors="replace")
-    truncated = len(text) > DOC_CAP
-    return {"slug": slug, "path": f"systems/{slug}/{target.relative_to(_pkg_dir(e)).as_posix()}",
-            "text": text[:DOC_CAP], "truncated": truncated}
+    end = offset + DOC_CAP
+    truncated = len(text) > end
+    out = {"slug": slug, "path": f"systems/{slug}/{target.relative_to(_pkg_dir(e)).as_posix()}",
+           "text": text[offset:end], "truncated": truncated, "offset": offset, "length": len(text)}
+    if truncated:
+        out["nextOffset"] = end
+    return out
 
 
 def list_media(slug: str, kind: str | None = None) -> dict:
@@ -385,11 +394,14 @@ SPECS = [
          "required": ["slug"]}},
     {"name": "read_doc", "fn": read_doc,
      "description": "Read a text file inside a package: its README (default), "
-                    "components.md, patterns.md, tokens.json.",
+                    "components.md, patterns.md, tokens.json. Long files come back "
+                    "in pages: when truncated is true, call again with offset=nextOffset.",
      "parameters": {"type": "object", "additionalProperties": False, "properties": {
          "slug": {"type": "string"},
          "path": {"type": "string", "description": "Package-relative path (a systems/<slug>/ or "
-                                                   "/systems/<slug>/ path also works); default README.md"}},
+                                                   "/systems/<slug>/ path also works); default README.md"},
+         "offset": {"type": "integer", "minimum": 0, "default": 0,
+                    "description": "Character offset to start from (a previous page's nextOffset)"}},
          "required": ["slug"]}},
     {"name": "list_media", "fn": list_media,
      "description": "List a package's screenshots, component crops, icons and boards "

@@ -5,6 +5,7 @@ import type { CSSProperties } from "react";
 import { loadData, mediaUrl } from "@/lib/catalog";
 import type { DesignSystem, GalleryData } from "@/lib/catalog";
 import { loadReferoIndex } from "@/lib/refero";
+import { NotBuilt } from "@/components/NotBuilt";
 import { counts, indexStats, load as loadScorecard } from "@/lib/scorecard";
 
 export const dynamic = "force-dynamic";
@@ -46,13 +47,7 @@ export default async function HomePage() {
   try {
     data = await loadData();
   } catch {}
-  if (!data) {
-    return (
-      <div className="page">
-        <p className="empty">The catalog is not built yet: run make build in the repo.</p>
-      </div>
-    );
-  }
+  if (!data) return <NotBuilt />;
 
   let refero: number | null = null;
   try {

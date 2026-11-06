@@ -13,6 +13,8 @@ from the Next.js app.
   GET  /api/install.sh       cli/install.sh with @DS_BASE@ filled from the
                              request's forwarded Host/proto
   POST /api/provider/test    {api, base_url, api_key, key_header?, models_url?}
+                             (https only, http for loopback; models_url must
+                             share base_url's origin; redirects refused)
                              -> {ok, models:[{id,label}], error?} for the
                              settings page's test-gated model field
   POST /api/chat             {messages, provider?} -> {reply, results, media}
@@ -28,6 +30,8 @@ import importlib.util
 import ipaddress
 import json
 import os
+import sys
+import traceback
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -251,8 +255,10 @@ def handle_post(handler) -> bool:
             _reply(handler, 200, chat.run(messages, cfg))
         except chat.ProviderError as e:
             _reply(handler, 200, {"reply": "", "error": str(e), "results": [], "media": []})
-        except Exception as e:
-            _reply(handler, 500, {"error": f"{type(e).__name__}: {e}"})
+        except Exception:
+            # The detail (paths, upstream text) goes to the server log only.
+            traceback.print_exc(file=sys.stderr)
+            _reply(handler, 500, {"error": "internal error"})
         return True
     _reply(handler, 404, {"error": "no such api route"})
     return True

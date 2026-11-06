@@ -26,6 +26,6 @@ The captured corpus does not record Refero’s original screen classifications, 
 
 Screen identities retain both package and asset identity. Pagination preserves earlier pages, retries the failed page, and cannot skip a failed page through Show more. Filter changes clear old results, including media-only scope changes. A selected screen outside the first loaded page recovers through the exact-screen API; missing selections expose retry and dismiss controls. Package document hashes tolerate malformed encoding.
 
-Final targeted verification passed: TypeScript and 23 tests across package details, library loading, screen queries, saved media, and inspector previews. The parent change runs the complete app tests and production build.
+Final targeted verification passed: TypeScript and the focused tests for package details, library loading, screen queries, saved media, and inspector previews. The parent change runs the complete app tests and production build.
 
 Screenshots and the detailed audit are stored outside the repository in the task’s `full-audit/catalog` evidence folder. The evidence includes original catalog/taxonomy/viewer/save picker captures and app screen-grid/filter/viewer/board-save/board-detail captures.
