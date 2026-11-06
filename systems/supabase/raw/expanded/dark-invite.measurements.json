@@ -1,0 +1,122 @@
+{
+  "components": [
+    {
+      "label": "Invite team membersSend invitations and choose the access each new team member r",
+      "role": "dialog",
+      "state": "open",
+      "styles": {
+        "background-color": "oklch(0.2275 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "border-width": "0px 0px 0px 1px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "15px",
+        "font-weight": "450",
+        "height": "720px",
+        "line-height": "22.5px",
+        "outline": "oklch(0.95 0.00275 157.5) none 3px",
+        "outline-offset": "0px",
+        "padding": "0px",
+        "width": "640px"
+      },
+      "tag": "DIV"
+    },
+    {
+      "label": "OwnerFull access, including removing you or any other owner, deleting the organi",
+      "role": "radio",
+      "state": "unchecked",
+      "styles": {
+        "background-color": "oklab(0.24 -0.0023097 0.000956709 / 0.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "10.6667px 10.6667px 0px 0px",
+        "border-width": "1px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "13px",
+        "font-weight": "450",
+        "height": "98.8828px",
+        "line-height": "18.5714px",
+        "outline": "oklch(0.95 0.00275 157.5) none 3px",
+        "outline-offset": "0px",
+        "padding": "0px",
+        "width": "396.672px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "AdministratorManage members, billing, and project settings, including removing m",
+      "role": "radio",
+      "state": "unchecked",
+      "styles": {
+        "background-color": "oklab(0.24 -0.0023097 0.000956709 / 0.5)",
+        "border-color": "oklch(0.95 0.001485 157.5 / 0.075125)",
+        "border-radius": "0px",
+        "border-width": "1px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "13px",
+        "font-weight": "450",
+        "height": "98.8828px",
+        "line-height": "18.5714px",
+        "outline": "oklch(0.95 0.00275 157.5) none 3px",
+        "outline-offset": "0px",
+        "padding": "0px",
+        "width": "396.672px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "DeveloperManage project content, including deleting data, users, files, and Edge",
+      "role": "radio",
+      "state": "checked",
+      "styles": {
+        "background-color": "oklch(0.24 0.0025 157.5)",
+        "border-color": "oklch(0.95 0.001375 157.5 / 0.279862)",
+        "border-radius": "0px 0px 10.6667px 10.6667px",
+        "border-width": "1px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "13px",
+        "font-weight": "450",
+        "height": "98.8828px",
+        "line-height": "18.5714px",
+        "outline": "oklch(0.95 0.00275 157.5) none 3px",
+        "outline-offset": "0px",
+        "padding": "0px",
+        "width": "396.672px"
+      },
+      "tag": "BUTTON"
+    },
+    {
+      "label": "",
+      "role": null,
+      "state": null,
+      "styles": {
+        "background-color": "oklch(0 0 0 / 0.12)",
+        "border-color": "oklch(0.95 0.001375 157.5 / 0.279862)",
+        "border-radius": "8px",
+        "border-width": "1px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklch(0.19 0.0025 157.5) 0px 0px 0px 2px, oklch(0.76 0.15 157.5 / 0.55) 0px 0px 0px 4px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "color": "oklch(0.95 0.00275 157.5)",
+        "font-family": "Inter, system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "font-size": "13px",
+        "font-weight": "450",
+        "height": "80px",
+        "line-height": "18.5714px",
+        "outline": "rgba(0, 0, 0, 0) none 2px",
+        "outline-offset": "2px",
+        "padding": "8px 12px",
+        "width": "396.672px"
+      },
+      "tag": "TEXTAREA"
+    }
+  ],
+  "theme": "",
+  "time": "2026-10-31T04:40:19.183Z",
+  "url": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/team"
+}
