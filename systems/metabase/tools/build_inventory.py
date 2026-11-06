@@ -9,11 +9,13 @@ rows = source['entries']
 allowed = {'pending', 'explored and captured', 'explored and duplicate', 'blocked', 'not executed'}
 ids = set()
 for row in rows:
-    assert row['id'] not in ids, row['id']
+    if row['id'] in ids:
+        raise ValueError(f"duplicate inventory id {row['id']!r}")
     ids.add(row['id'])
-    assert row['status'] in allowed, row
-    if row.get('screenshot'):
-        assert (P / row['screenshot']).is_file(), row
+    if row['status'] not in allowed:
+        raise ValueError(f"{row['id']}: status {row['status']!r} is not one of {sorted(allowed)}")
+    if row.get('screenshot') and not (P / row['screenshot']).is_file():
+        raise ValueError(f"{row['id']}: screenshot {row['screenshot']} does not exist")
 counts = Counter(r['status'] for r in rows)
 def cell(value):
     return str(value or '').replace('|', '\\|').replace('\n', ' ')

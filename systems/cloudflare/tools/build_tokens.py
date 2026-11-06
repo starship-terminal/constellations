@@ -81,6 +81,7 @@ for theme in ['dark','light','marketing']:
  result[theme]['preview']={}
  for role,path in {'page':'background.page','surface':'background.surface','text':'text.primary','muted':'text.secondary','accent':'accent.default','border':'border.default'}.items():
   group,key=path.split('.')
+  if key not in result[theme].get(group,{}):raise ValueError(f'{theme}.{path}: the reading has no value for this role, so no preview can be derived')
   original=result[theme][group][key]['$value']
   value,clipped,method=srgb_preview(original)
   source=f'Derived: {theme}.{path} ({original}); {method}; '+('out-of-gamut linear channels clipped to [0, 1].' if clipped else 'no gamut clipping.')

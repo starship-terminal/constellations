@@ -64,6 +64,15 @@ class BuilderTests(unittest.TestCase):
         self.build('build_style_guide.py')
         self.assertEqual(guide, (self.root / 'style-guide.html').read_text())
 
+    def test_missing_preview_role_names_the_role(self):
+        path = self.root / 'raw' / 'security-rules-light-desktop.json'
+        data = json.loads(path.read_text())
+        del data['variables']['--color-border']
+        path.write_text(json.dumps(data))
+        stderr = self.build(success=False).stderr
+        self.assertIn('light.border.default', stderr)
+        self.assertNotIn('KeyError', stderr)
+
 
 if __name__ == '__main__':
     unittest.main()

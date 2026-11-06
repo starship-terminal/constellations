@@ -40,6 +40,25 @@ class TokenTests(unittest.TestCase):
                 self.assertNotIn('label', components['iconButton'])
 
 
+    def test_shifted_reading_fails_instead_of_building_wrong_roles(self):
+        with tempfile.TemporaryDirectory() as directory:
+            package = Path(directory)
+            (package / 'raw').mkdir()
+            (package / 'tools').mkdir()
+            shutil.copy(PACKAGE / 'tools/build_tokens.py', package / 'tools')
+            for theme in ['light', 'dark']:
+                shutil.copy(PACKAGE / f'raw/companies-{theme}-scoped.json', package / 'raw')
+            path = package / 'raw/companies-dark-scoped.json'
+            raw = json.loads(path.read_text())
+            raw['elements'].insert(0, {'tag': 'DIV', 'label': 'Inserted', 'styles': {}})
+            path.write_text(json.dumps(raw))
+            run = subprocess.run([sys.executable, str(package / 'tools/build_tokens.py')],
+                                 capture_output=True, text=True)
+            self.assertNotEqual(run.returncode, 0)
+            self.assertIn('companies-dark-scoped.json: elements[0]', run.stderr)
+            self.assertFalse((package / 'tokens.json').exists())
+
+
 class ImageTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
