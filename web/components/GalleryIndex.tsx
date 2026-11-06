@@ -239,7 +239,7 @@ export function GalleryIndex({ data }: { data: GalleryData }) {
             className="r-go"
             type="button"
             aria-label={chat.enabled ? "Ask the librarian" : "Search"}
-            onClick={() => (chat.enabled ? ask() : undefined)}
+            onClick={() => (chat.enabled ? ask() : qRef.current?.focus())}
           >
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" />
@@ -287,11 +287,21 @@ export function GalleryIndex({ data }: { data: GalleryData }) {
             </thead>
             <tbody>
               {list.map((s) => (
-                <tr key={s.slug} onClick={() => router.push(`/gallery/${s.slug}`)} tabIndex={0} onKeyDown={(e) => e.key === "Enter" && router.push(`/gallery/${s.slug}`)}>
+                <tr
+                  key={s.slug}
+                  onClick={(e) => {
+                    // The name cell holds the real link (keyboard, middle-click,
+                    // open in new tab); a click elsewhere on the row follows it.
+                    if (!(e.target as HTMLElement).closest("a")) router.push(`/gallery/${s.slug}`);
+                  }}
+                >
                   <td>
                     <div className="thumb"><img loading="lazy" src={mediaUrl(s.cover.thumb || s.cover.path)} alt="" /></div>
                   </td>
-                  <td className="nm">{icon(s)}{s.name}</td>
+                  <td className="nm">
+                    {icon(s)}
+                    <Link href={`/gallery/${s.slug}`}>{s.name}</Link>
+                  </td>
                   <td>{data.categories[s.category] || s.category}</td>
                   <td className="gf">{s.goodFor}</td>
                   <td><Strip sw={Object.values(s.swatches)[0] || []} /></td>

@@ -6,6 +6,7 @@
 // image tries the local mirror first and falls back to the remote CDN.
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { reducedMotion, scrollBehavior } from "@/components/motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ReferoCard, ReferoIndex as ReferoIndexData } from "@/lib/refero";
 
@@ -142,7 +143,7 @@ function Card({ index, s }: { index: ReferoIndexData; s: ReferoCard }) {
   const video = useMemo(() => cardVideo(index, s), [index, s]);
 
   const enter = () => {
-    if (!s.video) return;
+    if (!s.video || reducedMotion()) return;
     if (wantVideo) {
       vid.current?.play().catch(() => {});
       return;
@@ -328,7 +329,7 @@ export function ReferoIndex({ index }: { index: ReferoIndexData }) {
     setVideoOnly(false);
     setTagSet(new Set());
     setQ(label);
-    gridTop.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    gridTop.current?.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
   };
 
   const sel = (key: FacetKey, first: string, value: string, set: (v: string) => void) => (
@@ -388,7 +389,7 @@ export function ReferoIndex({ index }: { index: ReferoIndexData }) {
               value={q}
               onChange={(e) => setQ(e.target.value)}
               onKeyDown={(e) => {
-                if (e.key === "Enter") gridTop.current?.scrollIntoView({ behavior: "smooth" });
+                if (e.key === "Enter") gridTop.current?.scrollIntoView({ behavior: scrollBehavior() });
                 if (e.key === "Escape") {
                   setQ("");
                   e.currentTarget.blur();
