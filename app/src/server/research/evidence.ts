@@ -3,6 +3,13 @@ import {
   listPackageDocuments,
   readPackageDocument,
 } from "@/server/sources/files";
+import {
+  colorsAsHex,
+  hasUnresolved,
+  tokenLeaves,
+  tokenResolver,
+  type TokenLeaf,
+} from "@/server/sources/tokens";
 import type { LibraryDetail } from "@/contracts/library";
 
 export async function allowedReference(
@@ -63,44 +70,6 @@ export async function packageDocument(
   };
 }
 type Raw = Record<string, any>;
-// A group may legitimately contain a token named "value". Legacy Tokens
-// Studio tokens use an unprefixed value field, so distinguish their payload
-// from a nested token tree before treating the enclosing object as a leaf.
-function containsToken(node: unknown): boolean {
-  if (!node || typeof node !== "object" || Array.isArray(node)) return false;
-  const obj = node as Raw;
-  if (Object.hasOwn(obj, "$value")) return true;
-  if (
-    Object.hasOwn(obj, "value") &&
-    (typeof obj.type === "string" ||
-      !obj.value ||
-      typeof obj.value !== "object" ||
-      Array.isArray(obj.value))
-  )
-    return true;
-  return Object.values(obj).some(containsToken);
-}
-function tokenLeaves(node: unknown, prefix = "", out: Raw[] = []) {
-  if (!node || typeof node !== "object" || Array.isArray(node)) return out;
-  const obj = node as Raw;
-  const dtcg = Object.hasOwn(obj, "$value");
-  const legacy =
-    Object.hasOwn(obj, "value") &&
-    (typeof obj.type === "string" || !containsToken(obj.value));
-  if (dtcg || legacy)
-    out.push({
-      name: prefix,
-      value: dtcg ? obj.$value : obj.value,
-      type: obj.$type ?? obj.type,
-      description: obj.$description ?? obj.description,
-      evidence: obj.$extensions ?? null,
-    });
-  else
-    for (const [key, value] of Object.entries(obj))
-      if (!key.startsWith("$"))
-        tokenLeaves(value, prefix ? `${prefix}.${key}` : key, out);
-  return out;
-}
 export async function packageTokens(
   referenceId: string,
   group: string | undefined,
@@ -117,48 +86,27 @@ export async function packageTokens(
     throw new Error("No readable tokens.json exists for this package.");
   const tokens = JSON.parse(document.text) as Raw;
   const all = tokenLeaves(tokens),
-    byName = new Map(all.map((token) => [token.name, token.value]));
-  const aliasPath = (alias: string, context: string): string | null => {
-    const group = context.split(".")[0];
-    return (
-      [alias, `${group}.${alias}`, `core.${alias}`].find((candidate) =>
-        byName.has(candidate),
-      ) || null
-    );
-  };
-  const resolve = (
-    value: unknown,
-    seen: Set<string>,
-    context: string,
-  ): unknown => {
-    if (typeof value === "string") {
-      const exact = /^\{([^{}]+)\}$/.exec(value);
-      const target = exact ? aliasPath(exact[1], context) : null;
-      if (target && !seen.has(target))
-        return resolve(byName.get(target), new Set([...seen, target]), target);
-      return value.replace(/\{([^{}]+)\}/g, (match, alias: string) => {
-        const name = aliasPath(alias, context);
-        if (!name || seen.has(name)) return match;
-        const resolved = resolve(
-          byName.get(name),
-          new Set([...seen, name]),
-          name,
-        );
-        return typeof resolved === "object"
-          ? JSON.stringify(resolved)
-          : String(resolved);
-      });
-    }
-    if (Array.isArray(value))
-      return value.map((v) => resolve(v, seen, context));
-    if (value && typeof value === "object")
-      return Object.fromEntries(
-        Object.entries(value).map(([key, v]) => [
-          key,
-          resolve(v, seen, context),
+    resolver = tokenResolver(all);
+  // Theme sets the catalog names. A `core` token whose alias only resolves
+  // inside a theme (Duolingo's lip shadows) gets a value per theme, as
+  // `catalog.py export` gives it.
+  const themeSets = reference.themes.filter(
+    (theme) => theme !== "core" && Object.hasOwn(tokens, theme),
+  );
+  const resolveToken = (token: TokenLeaf): Raw => {
+    const base = resolver.final(token.name);
+    if (!hasUnresolved(base)) return { value: colorsAsHex(base) };
+    if (token.name.split(".")[0] === "core" && themeSets.length) {
+      const themes = Object.fromEntries(
+        themeSets.map((theme) => [
+          theme,
+          colorsAsHex(resolver.final(token.name, theme)),
         ]),
       );
-    return value;
+      if (!Object.values(themes).some(hasUnresolved))
+        return { value: token.value, themes };
+    }
+    return { value: token.value, unresolved: true };
   };
   const groups = Object.keys(tokens).filter((key) => !key.startsWith("$"));
   if (!group)
@@ -185,10 +133,12 @@ export async function packageTokens(
   const page: Raw[] = [];
   let characters = 0;
   for (const token of selected.slice(offset, offset + 100)) {
+    const { extensions, ...leaf } = token;
     const resolved = {
-      ...token,
+      ...leaf,
+      evidence: extensions,
       rawValue: token.value,
-      value: resolve(token.value, new Set([token.name]), token.name),
+      ...resolveToken(token),
     };
     const size = JSON.stringify(resolved).length;
     if (characters + size > 24000) {

@@ -65,6 +65,16 @@ class CheckTest(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError, "keys differ"):
             build_tokens.check(doc)
 
+    def test_the_check_still_runs_under_python_O(self):
+        # `assert` is stripped by -O; check() must reject a bad file either way.
+        import subprocess
+        code = ("import sys, build_tokens; doc = {'core': {'c': {'$type': 'color', '$value': '#fff'}}}\n"
+                "try:\n build_tokens.check(doc)\nexcept build_tokens.CheckError as e:\n print(e); sys.exit(3)")
+        done = subprocess.run([sys.executable, "-O", "-c", code], cwd=pathlib.Path(__file__).resolve().parent,
+                              capture_output=True, text=True)
+        self.assertEqual(done.returncode, 3, done.stderr)
+        self.assertIn("no source", done.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()
