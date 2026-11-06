@@ -47,12 +47,14 @@ function MediaCollectionPicker({
     [busy, setBusy] = useState(""),
     [name, setName] = useState(""),
     [creating, setCreating] = useState(false),
-    [error, setError] = useState("");
+    [error, setError] = useState(""),
+    [loadFailed, setLoadFailed] = useState(false);
   useEffect(() => {
     if (!open) return;
     let alive = true;
     setLoading(true);
     setError("");
+    setLoadFailed(false);
     api<{ collections: Board[]; mediaCollectionIds?: string[] }>(
       `/api/collections?referenceId=${encodeURIComponent(referenceId)}&mediaId=${encodeURIComponent(mediaId)}`,
     )
@@ -63,7 +65,10 @@ function MediaCollectionPicker({
         }
       })
       .catch((e) => {
-        if (alive) setError(e.message);
+        if (alive) {
+          setError(e.message);
+          setLoadFailed(true);
+        }
       })
       .finally(() => {
         if (alive) setLoading(false);
@@ -243,7 +248,7 @@ function MediaCollectionPicker({
                     )}
                   </button>
                 ))}
-                {!boards.length && (
+                {!boards.length && !loadFailed && (
                   <p className="muted">
                     Create a board to keep this screenshot.
                   </p>

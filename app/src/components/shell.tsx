@@ -183,11 +183,15 @@ export function AppShell({ children }: { children: ReactNode }) {
     [mobile, setMobile] = useState(false),
     [editing, setEditing] = useState<Conversation | null>(null),
     [title, setTitle] = useState(""),
-    [error, setError] = useState("");
+    [error, setError] = useState(""),
+    [historyFailed, setHistoryFailed] = useState(false);
   function reload() {
     api("/api/conversations")
-      .then((d) => setHistory(d.conversations || []))
-      .catch(() => {});
+      .then((d) => {
+        setHistory(d.conversations || []);
+        setHistoryFailed(false);
+      })
+      .catch(() => setHistoryFailed(true));
   }
   useEffect(() => {
     reload();
@@ -324,9 +328,18 @@ export function AppShell({ children }: { children: ReactNode }) {
               {showAllHistory ? "Show fewer" : "Show all research"}
             </button>
           )}
-          {history.filter((c) => !!c.archived === showArchived).length ===
-            0 && (
-            <p className="history-empty">Your research will appear here.</p>
+          {historyFailed ? (
+            <p className="history-empty" role="alert">
+              Could not load your research.{" "}
+              <button className="text-button" onClick={reload}>
+                Try again
+              </button>
+            </p>
+          ) : (
+            history.filter((c) => !!c.archived === showArchived).length ===
+              0 && (
+              <p className="history-empty">Your research will appear here.</p>
+            )
           )}
         </div>
         <div className="sidebar-bottom">
