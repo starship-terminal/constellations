@@ -35,7 +35,8 @@ if (!SNAPS) { console.error('SNAPS=<snapshot dir> is required'); process.exit(2)
 const OUT = path.join(RAW, 'components-computed.json');
 const args = process.argv.slice(2);
 const jobsArg = args.indexOf('--jobs');
-const CONC = jobsArg >= 0 ? +args[jobsArg + 1] : 4;
+const CONC = jobsArg >= 0 ? Number(args[jobsArg + 1]) : 4;
+if (!Number.isInteger(CONC) || CONC < 1) { console.error(`--jobs needs a whole number of 1 or more, got ${args[jobsArg + 1]}`); process.exit(2); }
 const ONLY = args.filter((a, i) => !a.startsWith('--') && (jobsArg < 0 || i !== jobsArg + 1));
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
@@ -283,7 +284,7 @@ async function measureSnap(browser, label, specs, out) {
   } catch (e) {
     log('  ! open failed', label, e.message.split('\n')[0]);
     await ctx.close();
-    return;
+    return false;
   }
   const rest = { x: meta.w - 2, y: Math.round(meta.h / 2) };
   await page.evaluate(() => window.__saveScroll());
@@ -407,6 +408,7 @@ async function measureSnap(browser, label, specs, out) {
     }
   }
   await ctx.close();
+  return true;
 }
 
 // ---------------------------------------------------------------- main
@@ -432,7 +434,8 @@ out._meta = {
 out.components ??= {};
 fs.mkdirSync(CROPS, { recursive: true });
 
-// Build the per-snapshot job lists, resetting the states that will be re-measured.
+// Build the per-snapshot job lists. The states a snapshot re-measures are cleared only once that
+// snapshot has opened (see reset below), so a copy that fails to open keeps its earlier readings.
 const bySnap = new Map();
 for (const spec of SPECS) {
   const c = (out.components[spec.key] ??= { states: {} });
@@ -441,8 +444,6 @@ for (const spec of SPECS) {
   c.pages = [...new Set(jobs.map((j) => j.snap))];
   for (const job of jobs) {
     if (!labels.includes(job.snap)) continue;
-    delete c.states[job.state];
-    delete c.states[job.state === 'default' ? 'light' : `light-${job.state}`];
     if (!bySnap.has(job.snap)) bySnap.set(job.snap, []);
     bySnap.get(job.snap).push({ spec, job });
   }
@@ -467,8 +468,23 @@ await Promise.all(Array.from({ length: Math.min(CONC, queue.length) }, async () 
   while (queue.length) {
     const label = queue.shift();
     log('open', label, `(${bySnap.get(label).length} jobs x 2 themes)`);
-    await measureSnap(browser, label, bySnap.get(label), out);
-    save();
+    // Earlier readings of this snapshot's states: cleared for the run, put back if the copy never
+    // opened or the run threw, so a failed open cannot erase what an earlier run measured.
+    const jobs = bySnap.get(label), kept = {};
+    for (const { spec, job } of jobs) {
+      const st = out.components[spec.key].states;
+      for (const n of [job.state, job.state === 'default' ? 'light' : `light-${job.state}`]) {
+        if (n in st) (kept[spec.key] ??= {})[n] = st[n];
+        delete st[n];
+      }
+    }
+    let opened = false;
+    try {
+      opened = await measureSnap(browser, label, jobs, out);
+    } finally {
+      if (!opened) for (const [key, states] of Object.entries(kept)) for (const [n, v] of Object.entries(states)) out.components[key].states[n] ??= v;
+      save();
+    }
   }
 }));
 await browser.close();

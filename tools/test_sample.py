@@ -71,6 +71,15 @@ class SampleTest(unittest.TestCase):
         _, _, back = sample.read_png(out)
         self.assertTrue(all(px == self.WHITE for row in back for px in row))
 
+    def test_mask_at_an_image_edge_samples_only_outside_the_box(self):
+        W, K = (255, 255, 255, 255), (0, 0, 0, 255)
+        rows = [[K] * 6 for _ in range(2)] + [[W] * 6 for _ in range(4)]     # a black title on the top rows
+        self.assertEqual(sample.mask(rows, [(0, 0, 6, 2)]), [W])            # was black: the box's own row
+        self.assertTrue(all(px == W for row in rows for px in row))
+        whole = [[K, K], [K, W]]
+        self.assertEqual(sample.mask(whole, [(0, 0, 2, 2)]), [K])          # no outside: the box's own commonest
+        self.assertEqual(sample.mask(whole, [(5, 5, 2, 2)]), [])            # off the image: nothing painted
+
     def test_reads_a_quantised_package_screenshot(self):
         shot = HERE.parent / "systems/claude/screenshots/home-light.png"
         if shot.read_bytes().startswith(b"version https://git-lfs"):
