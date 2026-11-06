@@ -578,11 +578,13 @@ table.sc-heat { border-collapse: separate; border-spacing: 0; font-size: 12px; }
 .rf-scale-label code { display: block; color: var(--faint); font-size: 10.5px; }
 .rf-scale-sample { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .rf-fonts { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin-top: 16px; }
-.rf-font { border: 1px solid var(--line); border-radius: var(--radius-ctl); padding: 14px; }
-.rf-font-sample { font-size: 21px; margin-bottom: 8px; overflow-wrap: anywhere; }
+/* Generated family names (wfont_9aea05_…) have no break points; let the sample,
+   spec and note wrap anywhere instead of widening the page. */
+.rf-font { min-width: 0; overflow-wrap: anywhere; border: 1px solid var(--line); border-radius: var(--radius-ctl); padding: 14px; }
+.rf-font-sample { font-size: 21px; margin-bottom: 8px; }
 .rf-font-spec { margin: 0; font-size: 11px; display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; }
 .rf-font-spec dt { color: var(--faint); }
-.rf-font-spec dd { margin: 0; color: var(--muted); overflow-wrap: anywhere; }
+.rf-font-spec dd { margin: 0; color: var(--muted); }
 .rf-note { color: var(--faint); font-size: 12px; margin: 8px 0 0; }
 .rf-tables { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 @media (max-width: 799px) { .rf-tables { grid-template-columns: minmax(0, 1fr); } }
