@@ -223,5 +223,48 @@ console.log(JSON.stringify(out));
         self.assertEqual((ROOT / "systems/notebooklm/tools/capture/safe-url.mjs").read_text(), kit)
 
 
+PLAYWRIGHT = os.environ.get("PLAYWRIGHT") or str(Path.home() / ".design-systems/pw/node_modules/playwright/index.mjs")
+
+
+@unittest.skipIf(not shutil.which("node") or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
+class PackageSnapshotsInABrowser(unittest.TestCase):
+    """Runs each package copy's __snap on a small local page in headless Chromium (network
+    aborted) and checks the finished copy, so a cleanup pass that moved before the stylesheets were
+    inserted, or one a copy dropped, fails here and not only on a capture."""
+
+    PAGE = ('<style>.x{background:url("https://cdn.example.test/bg.png?X-Amz-Signature=abc")}</style>'
+            '<div class="x" style="background-image:url(https://cdn.example.test/i.png?sig=1);color:#fff">hi</div>'
+            '<img data-src="https://cdn.example.test/a.png?crop=(0,0)&token=abc" src="https://cdn.example.test/plain.png?w=2">'
+            '<a href="https://example.test/p?unit=7">x</a>')
+
+    def test_every_copy_cuts_signed_urls_from_the_finished_copy(self):
+        script = """
+import fs from 'node:fs';
+const pw = await import(%s);
+const b = await pw.chromium.launch();
+const res = {};
+for (const [slug, file] of %s) {
+  const p = await b.newPage();
+  await p.route('**/*', (r) => (r.request().url().startsWith('https://app.example.test/') ? r.fulfill({ contentType: 'text/html', body: %s }) : r.abort()));
+  await p.goto('https://app.example.test/home?unit=7&token=abc');
+  await p.addScriptTag({ content: fs.readFileSync(file, 'utf8') });
+  res[slug] = await p.evaluate(() => window.__snap('t', { replace: [['nothing-matches-this', 'g', 'x']], scrub: [], keep: [], badges: [] }));
+  await p.close();
+}
+await b.close();
+console.log(JSON.stringify(res));
+""" % (json.dumps(Path(PLAYWRIGHT).as_uri()),
+       json.dumps([[s, str(folder(s) / "snapshot.js")] for s in PACKAGES]), json.dumps(self.PAGE))
+        res = subprocess.run(["node", "--input-type=module", "-e", script], capture_output=True, text=True, timeout=300)
+        self.assertEqual(res.returncode, 0, res.stderr[-2000:])
+        for slug, out in json.loads(res.stdout).items():
+            meta, body = out.removeprefix("SNAPSTART").split("SNAPMETA", 1)
+            for leak in ("X-Amz-Signature", "sig=1", "token=abc"):
+                self.assertNotIn(leak, body, (slug, leak))       # stylesheet, inline style, data-src
+                self.assertNotIn(leak, meta, (slug, leak))       # the page URL in the metadata
+            self.assertIn("unit=7", body, slug)                  # a plain query stays
+            self.assertIn("plain.png", body, slug)
+
+
 if __name__ == "__main__":
     unittest.main()
