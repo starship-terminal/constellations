@@ -1314,6 +1314,11 @@ a.btn.primary:hover, a.btn.primary.is-hover, a.btn.primary.is-focus, a.btn.prima
 .gt .r { text-align: right; align-items: flex-end; }
 .gt .hd .r { justify-content: flex-end; }
 .gt .g { font: var(--typography-body2); color: var(--neutral-primary-weak); }
+/* Reduced motion: the card lifts, chevrons, rail cards and curve demos change at once, and scrolling jumps. */
+@media (prefers-reduced-motion: reduce) {
+  .pcard, .xcard, .mod-h .chev, .rail .ch-card, .pgcard, .track .dot { transition: none !important; }
+  .xscroll { scroll-behavior: auto; }
+}
 </style>
 
 <header class="top"><div class="in">
