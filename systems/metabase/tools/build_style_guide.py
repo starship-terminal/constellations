@@ -12,7 +12,8 @@ def flat(n,p=''):
 def val(p):
  n=T
  for k in p.split('.'):n=n[k]
- return n['$value']
+ # Written raw into the <style> element: </ is escaped so a value cannot close it.
+ return str(n['$value']).replace('</','<\\/')
 def css(props):
  return html.escape(';'.join(f"{k}:{v}" for k,v in props.items()),quote=True)
 def sample(k,t):
