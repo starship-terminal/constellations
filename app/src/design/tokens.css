@@ -15,6 +15,21 @@
   --line: rgba(222, 210, 241, 0.105);
   --strong-line: rgba(185, 201, 247, 0.2);
   --focus: #b3b8c8;
+  /* Studio roles for states and chrome, so no rule hard-codes a dark value. */
+  --ink-soft: #d5d9e3;
+  --wash: #ffffff08;
+  --focus-line: #ffffff55;
+  --selected-line: #ffffff80;
+  --overlay-surface: #262932f5;
+  --header-surface: #13151af2;
+  --chip: #3b3f4a;
+  --elevated-hover: #343846;
+  --paper-1: #252832;
+  --paper-2: #2b2e37;
+  --paper-3: #1c1f27;
+  --code-property: #d2bbfc;
+  --code-string: #b4d8c5;
+  --code-number: #e8bf95;
   /* Measured core.radius values. */
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -46,4 +61,18 @@
   --line: #2021281a;
   --strong-line: #20212833;
   --focus: #50586c;
+  --ink-soft: #2c2e36;
+  --wash: #2021280a;
+  --focus-line: #50586c;
+  --selected-line: #202128b3;
+  --overlay-surface: #fffffff2;
+  --header-surface: #f7f7f8f2;
+  --chip: #dcdde3;
+  --elevated-hover: #d9dae0;
+  --paper-1: #ffffff;
+  --paper-2: #f0f0f3;
+  --paper-3: #e7e8ec;
+  --code-property: #6a3bbf;
+  --code-string: #1f6b45;
+  --code-number: #8f520c;
 }
