@@ -21,6 +21,7 @@
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { chromium, styleOf, crop, REF, RAW, quantize } from '../lib.mjs';
 
 const SNAPS = (process.env.SNAPS || path.join(os.homedir(), '.design-systems', 'snaps', 'coursera')).replace(/^~/, os.homedir());
@@ -76,7 +77,7 @@ async function pageFor(label) {
   const page = await ctx.newPage();
   // Nothing may leave the file: only GETs for images, fonts and styles load.
   await page.route('**/*', (r) => (r.request().url().startsWith('file:') || (r.request().method() === 'GET' && ['image', 'font', 'stylesheet'].includes(r.request().resourceType())) ? r.continue() : r.abort()));
-  await page.goto('file://' + path.join(SNAPS, `${label}.html`), { waitUntil: 'load', timeout: 60000 });
+  await page.goto(pathToFileURL(path.resolve(SNAPS, `${label}.html`)).href, { waitUntil: 'load', timeout: 60000 });
   await page.waitForTimeout(2000);
   if (meta.scrollY) await page.evaluate((y) => scrollTo(0, y), meta.scrollY);
   await page.evaluate(() => { const s = document.createElement('style'); s.textContent = '*{caret-color:transparent!important}'; document.head.appendChild(s); });

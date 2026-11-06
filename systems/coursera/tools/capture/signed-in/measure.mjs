@@ -40,7 +40,7 @@ import os from 'node:os';
 import path from 'node:path';
 import zlib from 'node:zlib';
 import { execFileSync } from 'node:child_process';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const REF = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 const RAW = path.join(REF, 'raw');
@@ -686,7 +686,7 @@ async function run() {
     const page = await ctx.newPage();
     page.setDefaultTimeout(8000);
     log('open', pkey, label);
-    await page.goto(`file://${snapDir}/${label}.html`, { waitUntil: 'load', timeout: 60000 });
+    await page.goto(pathToFileURL(path.resolve(snapDir, `${label}.html`)).href, { waitUntil: 'load', timeout: 60000 });
     await page.waitForTimeout(2500);
     await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
 
