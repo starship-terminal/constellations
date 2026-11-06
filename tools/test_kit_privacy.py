@@ -139,6 +139,10 @@ class JavaScriptHalves(unittest.TestCase):
             '<img data-src="https://x/p?size=1,2&Signature=abc">': '<img data-src="https://x/p">',
             '<img data-src="https://x/p?crop=(0,0)&token=abc" alt="">': '<img data-src="https://x/p" alt="">',
             '<img srcset="https://x/a.png?sig=1 1x, https://x/b.png 2x">': '<img srcset="https://x/a.png 1x, https://x/b.png 2x">',
+            # A match that starts at a colour's # must not run on to a later signed url() and take the CSS.
+            'color:#fff;background:url(https://x/p.png?sig=1)': 'color:#fff;background:url(https://x/p.png)',
+            'a{color:#fff}b{background:url(https://x/p.png?sig=1)}': 'a{color:#fff}b{background:url(https://x/p.png)}',
+            '<a href="https://x/p?a=1&amp;token=abc">': '<a href="https://x/p">',
         }
         got = self.node(src + f"\nconsole.log(JSON.stringify({json.dumps(list(cases))}.map(cutSigned)))")
         self.assertEqual(got, list(cases.values()))

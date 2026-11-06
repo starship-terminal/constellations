@@ -72,9 +72,10 @@ const SIGNED = new RegExp('(?:[?&#]|%3F|%26|%23)(?:amp;)?(' + [
 ].join('|') + ')(?:=|%3D)', 'i');
 // Every query or fragment in a string that carries a signing parameter is cut out, wherever the URL
 // sits: an attribute of any name, an inline style's url(), a stylesheet, text. A query runs to
-// whitespace, a quote or an angle bracket; commas and parentheses stay inside it, except a ")" that
-// closes an unquoted url( ... ) before ; , } or the end.
-const cutSigned = (s) => s.replace(/[?#](?:[^\s"'<>)]|\)(?![\s;,"'}]|$))*/g, (q) => (SIGNED.test(q) ? '' : q));
+// whitespace, a quote, an angle bracket or a CSS ; { } (so a match that starts at a colour's # stops
+// before a later declaration's url(); an &amp; entity stays inside); commas and parentheses stay
+// inside it, except a ")" that closes an unquoted url( ... ) before ; , } or the end.
+const cutSigned = (s) => s.replace(/[?#](?:&amp;|[^\s"'<>);{}]|\)(?![\s;,"'}]|$))*/g, (q) => (SIGNED.test(q) ? '' : q));
 window.__snap = function (label, REDACT) {
   if (!REDACT || !Array.isArray(REDACT.replace)) throw new Error('pass the redaction file as the second argument');
   // A presigned URL (S3, CloudFront) carries a credential that works until it expires, so
