@@ -440,7 +440,8 @@ dl.meta .tags { display: flex; gap: 5px; flex-wrap: wrap; }
 }
 .lb-btn:hover { border-color: var(--muted); }
 .lb-btn[aria-pressed="true"] { background: var(--sunken); }
-@media (max-width: 899px) { .lb-side { display: none; } }
+.lb-stage-close { display: none; position: absolute; top: 8px; right: 10px; z-index: 1; width: auto; height: 36px; background: var(--panel); border: 1px solid var(--line-strong); color: var(--text); }
+@media (max-width: 899px) { .lb-side { display: none; } .lb-stage-close { display: inline-flex; } }
 
 /* ---------- toast ---------- */
 
