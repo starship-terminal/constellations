@@ -18,7 +18,7 @@
 // folder ~/.design-systems/harness-scratch/devin (`devin-desktop --new-window <folder>`), never in the
 // owner's own windows; its title ends in the folder name, `devin`.
 
-import { allowance, approvable } from './approve.mjs';
+import { allowance, ancestors, approvableCard } from './approve.mjs';
 
 export const NAME = 'Devin';
 // Its title is `<page> devin` in the Agents view, `devin` or `devin — <file>` in the IDE view.
@@ -467,16 +467,12 @@ const PANE_BUTTONS = 'main button:visible, [data-slot=chat] button:visible';
 const approveButton = page => page.locator(PANE_BUTTONS).filter({ hasText: /^(Allow|Approve|Accept|Run|Yes)\b/ }).last();
 const rejectButton = page => page.locator(PANE_BUTTONS).filter({ hasText: /^(Deny|Reject|Skip|No|Cancel)\b/ }).last();
 // Approve only a request whose card shows one of the exact commands or files these prompts ask for, in the
-// scratch folder, and nothing else that could be a command (approve.mjs). The card is the nearest ancestor of
-// the button holding more than the button's own label. Anything else is rejected.
+// scratch folder, and nothing else that could be a command (approve.mjs). The card is read outwards from the
+// button (approvableCard): the first container naming a target and the next wider one must both pass.
 const ALLOW = allowance({ root: `${process.env.HOME}/.design-systems/${SCRATCH}`, rel: `.design-systems/${SCRATCH}`, files: ['hello.txt'] });
 const approveInScratch = async ({ page }) => {
-  const text = await approveButton(page).evaluate(b => {
-    let e = b;
-    for (let i = 0; i < 8 && e.parentElement; i++) { e = e.parentElement; if (e.innerText.trim().length > b.innerText.trim().length + 20) break; }
-    return e.innerText;
-  }).catch(() => '');
-  if (!approvable(text, ALLOW)) return false;
+  const texts = await approveButton(page).evaluate(ancestors).catch(() => []);
+  if (!approvableCard(texts, ALLOW)) return false;
   await approveButton(page).click(); await wait(page, 800); return true;
 };
 export const RUN = {

@@ -19,7 +19,7 @@
 // semantic class names (sand-agent-item, sand-settings-row, ui-menu__row), roles and aria-labels,
 // never account text.
 
-import { allowance, approvable } from './approve.mjs';
+import { allowance, ancestors, approvableCard } from './approve.mjs';
 
 export const NAME = 'Grok Bot';
 // shots.mjs --set-theme connects to the window keyed 'agents' (Cursor's name for its main window), so the
@@ -394,18 +394,14 @@ export const RUN = {
   },
 };
 // Approve only a request whose card shows one of the exact commands or files these prompts ask for, in the
-// scratch folder, and nothing else that could be a command (approve.mjs). The card is the nearest ancestor
-// of the button holding more than the button's own label, never a wider block: the transcript holds the
-// prompt, which names the folder itself. The Bot's working folder is not known, so only absolute and `~/`
+// scratch folder, and nothing else that could be a command (approve.mjs). The card is read outwards from the button
+// (approvableCard): the first container naming a target and the next wider one must both pass, and one that
+// reaches the transcript (whose prompt names the folder) denies. The Bot's working folder is not known, so only absolute and `~/`
 // forms are approved.
 const ALLOW = allowance({ root: `${process.env.HOME}/${SCRATCH.slice(2)}`, rel: SCRATCH.slice(2), files: ['hello.txt', 'notes.txt'], relative: false });
 const approveInScratch = async ({ page }) => {
-  const text = await approveButton(page).evaluate(b => {
-    let e = b;
-    for (let i = 0; i < 8 && e.parentElement; i++) { e = e.parentElement; if (e.innerText.trim().length > b.innerText.trim().length + 20) break; }
-    return e.innerText;
-  }).catch(() => '');
-  if (!approvable(text, ALLOW)) return false;
+  const texts = await approveButton(page).evaluate(ancestors).catch(() => []);
+  if (!approvableCard(texts, ALLOW)) return false;
   await approveButton(page).click(); await wait(page, 800); return true;
 };
 export const RUN_STEPS = {

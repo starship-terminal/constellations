@@ -6,20 +6,21 @@
 // Every line of the card's text must be one of:
 //   - an allowed command (`ls -la`, `cat hello.txt`, ...), alone or after an allowed tool label (`Bash ls`);
 //   - an allowed path: the scratch folder, or one of the run's files in it, absolute, `~/`-relative or bare;
-//   - a label: a capitalised word or phrase with no path, flag, quote or shell character in it, and not a
-//     tool name followed by what could be a command (`Run rm build`).
+//   - a label: plain words, every one of them from WORDS (button and heading words such as `Allow once`,
+//     `Run command`, `Permission required`). Any other word, and any punctuation but an apostrophe or a
+//     hyphen, rules the line out, so `Run rm build`, `Command: printenv` or `Execute whoami` deny.
 // and at least one line must be an allowed command or path. So `rm -rf ..`, `cd ~`, `ls $HOME`, `ls *`,
 // `ls | sh`, a path outside the folder, or a card whose text also holds the transcript (whose prompt names
 // the folder) are all denied.
 
 const LS = ['ls', 'ls -l', 'ls -a', 'ls -A', 'ls -1', 'ls -la', 'ls -al', 'ls -lA', 'ls -Al', 'ls -lah', 'ls -alh', 'ls -F'];
-const TOOLS = ['Bash', 'Shell', 'Terminal', 'Run', 'Command', 'Read', 'Write', 'Create', 'Edit', 'List', 'View', 'Open'];
-// A label: starts with a capital, holds words and plain punctuation only. Flags (` -x`) and anything a shell
-// or a path could use (`/ . ~ $ * ? [ ] ` | ; & < > \ = " '`) rule a line out.
-const LABEL = /^[A-Z][A-Za-z0-9 ,:()!’-]{0,79}$/;
-const FLAG = /(^|\s)-/;
-// A tool name followed by anything but a generic noun is a command line, never a label (`Run rm build`).
-const TOOLED = new RegExp(`^(${TOOLS.join('|')}) (?!(this |a )?(command|commands|tool|file|files)$)`, 'i');
+const TOOLS = ['Bash', 'Shell', 'Terminal', 'Run', 'Command', 'Read', 'Write', 'Create', 'Edit', 'List', 'View'];
+const WORDS = new Set(`allow allowed once always approve accept deny reject skip cancel yes no run running bash shell terminal
+  command commands tool tools file files read write create edit list view permission permissions required request requested
+  wants want to the a an this that in on of for folder directory session agent ask again don't do not and or proceed
+  continue action needed approval`.split(/\s+/).filter(Boolean));
+const LABEL = /^[A-Za-z'’-]+( [A-Za-z'’-]+)*$/;
+const label = line => LABEL.test(line) && line.split(' ').every(w => WORDS.has(w.toLowerCase().replace(/’/g, "'")));
 
 // The exact lines a run may approve. `root` is the scratch folder's absolute path, `rel` the same folder
 // relative to the home folder (for the `~/` form), `files` the bare file names the prompts create or read,
@@ -39,8 +40,26 @@ export function approvable(text, allow) {
   for (const line of lines) {
     const bare = TOOLS.reduce((l, t) => (l.startsWith(`${t} `) ? l.slice(t.length + 1) : l), line);
     if (allow.commands.has(bare) || allow.paths.has(bare)) { named = true; continue; }
-    if (LABEL.test(line) && !FLAG.test(line) && !TOOLED.test(line)) continue;
+    if (label(line)) continue;
     return false;
   }
   return named;
 }
+
+// The card is read from the approval button outwards (`ancestors(button)`: each wider container's text, nearest
+// first). The first container that names an allowed command or path must pass, and so must the next wider one
+// that holds more text, so a narrow section showing only the path cannot hide the command beside it. A wider
+// container that reaches the transcript fails, which denies: a refusal only costs the approval.
+export function approvableCard(texts, allow) {
+  const seen = (texts || []).map(t => String(t || '').trim()).filter((t, i, a) => t && t !== a[i - 1]);
+  const first = seen.findIndex(t => approvable(t, allow));
+  if (first < 0) return false;
+  return first + 1 >= seen.length || approvable(seen[first + 1], allow);
+}
+
+// Runs in the page: the innerText of the button's ancestors, nearest first, up to `depth` levels.
+export const ancestors = (button, depth = 8) => {
+  const out = [];
+  for (let e = button.parentElement; e && out.length < depth; e = e.parentElement) out.push(e.innerText);
+  return out;
+};

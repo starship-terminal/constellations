@@ -21,7 +21,7 @@
 // Capy's own components that ships in the bundle ("Every component in the system, on the surface it ships
 // on"), whose sample data is the product's fixtures. The owner's own threads are never opened.
 import { resolve as resolvePath } from 'node:path';
-import { allowance, approvable } from './approve.mjs';
+import { allowance, ancestors, approvableCard } from './approve.mjs';
 
 export const NAME = 'Capy';
 export const WINDOWS = { app: /\bCapy$/ };
@@ -409,13 +409,9 @@ const RUN_ROOT = resolvePath(process.env.HOME || '', RUN_DIR.slice(1));
 const ALLOW = allowance({ root: RUN_ROOT, rel: RUN_DIR.slice(1), files: ['hello.txt'] });
 async function approveInside({ page }) {
   const allow = page.locator('button').filter({ visible: true }).filter({ hasText: /^(Allow|Approve|Accept)\b/ }).last();
-  // The request card: the nearest ancestor that holds more than the button's own label.
-  const text = await allow.evaluate(b => {
-    let e = b;
-    for (let i = 0; i < 8 && e.parentElement; i++) { e = e.parentElement; if (e.innerText.trim().length > b.innerText.trim().length + 20) break; }
-    return e.innerText;
-  }).catch(() => '');
-  if (!approvable(text, ALLOW)) return false;
+  // The request card, read outwards from the button: the first container naming a target and the next wider one.
+  const texts = await allow.evaluate(ancestors).catch(() => []);
+  if (!approvableCard(texts, ALLOW)) return false;
   await allow.click(); await wait(page, 800);
   return true;
 }
