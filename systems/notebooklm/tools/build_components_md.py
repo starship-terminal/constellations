@@ -107,8 +107,12 @@ def color_cell(c, theme, role="text"):
     return tok(p) if p else raw(n)
 
 def both(fn, d, l):
-    a, b = fn(d, "dark"), (fn(l, "light") if l is not None else None)
+    a = fn(d, "dark")
+    after_a = dict(RAW_COUNT)
+    b = fn(l, "light") if l is not None else None
     if b is None or a == b:
+        # One value is written, so only its tokens count.
+        RAW_COUNT.update(after_a)
         return a
     return f"{a} / {b}"
 
@@ -306,6 +310,7 @@ for group in GROUPS:
         W("| Property | " + " | ".join(names) + " |")
         W("|---|" + "---|" * len(names))
         for label, fn in ROWS:
+            before = dict(RAW_COUNT)
             cells = []
             for s in names:
                 d = c["states"].get(s)
@@ -316,6 +321,7 @@ for group in GROUPS:
                 f = (lambda x, th, st=s: focus_cell(x, th, "focus" in st)) if label == "Focus ring" else fn
                 cells.append(both(f, d, l if l and "style" in l else None))
             if all(x in ("none", "0", "none painted", "") for x in cells) and label not in ("Fill", "Text", "Type"):
+                RAW_COUNT.update(before)  # the row is not written, so it counts nothing
                 continue
             W(f"| {label} | " + " | ".join(cells) + " |")
         W("")
@@ -330,6 +336,6 @@ W("- **Hover on 390 copies** is not measured (no pointer on a phone).")
 W("- **Avatar**: the photo was replaced by a grey disc in the copy, so only its size and shape are the product's.")
 W("- **Studio outputs** (Audio and Video Overviews, mind map, flashcards, quiz) open player or iframe views that were not recaptured on 2026-10-17; the 2026-09-25 package measured some from screenshots and those readings are not carried over.")
 W("")
-W(f"Token coverage: {RAW_COUNT['tok']} cells name a token, {RAW_COUNT['n']} are raw values.")
+W(f"Token coverage: {RAW_COUNT['tok']} written values name a token, {RAW_COUNT['n']} are raw values.")
 (HERE / "components.md").write_text("\n".join(out) + "\n")
-print(f"wrote components.md: {RAW_COUNT['tok']} token cells, {RAW_COUNT['n']} raw")
+print(f"wrote components.md: {RAW_COUNT['tok']} token values, {RAW_COUNT['n']} raw")
