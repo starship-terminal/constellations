@@ -30,7 +30,7 @@ web-build: ## Build the Next.js app for production (web/.next)
 	@pnpm --dir web build
 
 docs: ## Generate the scorecard pages and build the docs site into site/
-	@$(PYTHON) tools/scorecard.py && .venv/bin/python tools/site.py
+	@$(PYTHON) tools/scorecard.py && $(if $(filter file,$(origin PYTHON)),$(if $(wildcard .venv/bin/python),.venv/bin/python,$(PYTHON)),$(PYTHON)) tools/site.py
 
 scorecard: ## Validate the scorecard's audit data
 	@$(PYTHON) tools/scorecard.py --check

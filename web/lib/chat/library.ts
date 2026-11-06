@@ -115,12 +115,26 @@ function repoFileRequired(rel: string): string {
 
 function bounded(e: Obj, rel: string): string {
   // Resolve a package-relative path, refusing anything that climbs out.
-  // Accepts the repo-relative and site-absolute forms other tools emit, so the
-  // model can pass a path it saw verbatim.
+  // Accepts the repo-relative and site-absolute forms other tools emit, and
+  // the /media/ URL list_media returns (percent-decoded), so the model can pass
+  // a path it saw verbatim.
   const base = pkgDir(e);
-  let clean = path.posix.normalize("/" + rel.replace(/^\/+/, "")).replace(/^\/+/, "");
-  const prefix = `systems/${asStr(e.slug)}/`;
-  if (clean.startsWith(prefix)) clean = clean.slice(prefix.length);
+  const slug = asStr(e.slug);
+  let raw = rel;
+  if (raw.replace(/^\/+/, "").startsWith("media/")) {
+    raw = raw.split("?")[0].split("#")[0];
+    try {
+      raw = decodeURIComponent(raw);
+    } catch {
+      // unquote() never fails; a bad % sequence stays literal.
+    }
+  }
+  let clean = path.posix.normalize("/" + raw.replace(/^\/+/, "")).replace(/^\/+/, "");
+  for (const prefix of [`media/systems/${slug}/`, `systems/${slug}/`])
+    if (clean.startsWith(prefix)) {
+      clean = clean.slice(prefix.length);
+      break;
+    }
   const target = path.resolve(base, clean);
   if (target !== base && !inside(target, base)) throw new ToolError(`path leaves the package: ${rel}`);
   return target;

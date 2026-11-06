@@ -1,0 +1,4847 @@
+{
+  "components": [
+    {
+      "rect": {
+        "height": 54,
+        "width": 390,
+        "x": 0,
+        "y": 0
+      },
+      "styles": {
+        "background-color": "rgb(21, 20, 20)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "background-color 0.18s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.18s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "HEADER",
+      "label": "globalThis.process??={};globalThis.process.env??={};(function(){if(typeof window>\"u\"||window.__navLo"
+    },
+    {
+      "rect": {
+        "height": 58,
+        "width": 89,
+        "x": -4,
+        "y": -2
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "6px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "16px",
+        "transition": "0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": ""
+    },
+    {
+      "rect": {
+        "height": 39,
+        "width": 61.0703125,
+        "x": 228.9296875,
+        "y": 7.5
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "1.67772e+07px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "600",
+        "gap": "2px",
+        "letter-spacing": "normal",
+        "line-height": "21px",
+        "outline": "rgba(0, 0, 0, 0) solid 0.5px",
+        "padding": "8px 12px",
+        "transition": "color 0.2s cubic-bezier(0, 0, 0.2, 1), background-color 0.2s cubic-bezier(0, 0, 0.2, 1), border-color 0.2s cubic-bezier(0, 0, 0.2, 1), transform 0.2s cubic-bezier(0, 0, 0.2, 1), translate 0.2s cubic-bezier(0, 0, 0.2, 1)"
+      },
+      "tag": "A",
+      "label": "Login"
+    },
+    {
+      "rect": {
+        "height": 40,
+        "width": 42,
+        "x": 294,
+        "y": 7
+      },
+      "styles": {
+        "background-color": "rgb(21, 20, 20)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "12px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "500",
+        "gap": "8px",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgba(0, 0, 0, 0) solid 0.5px",
+        "padding": "8px 16px",
+        "transition": "color 0.2s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out"
+      },
+      "tag": "BUTTON",
+      "label": ""
+    },
+    {
+      "rect": {
+        "height": 40,
+        "width": 42,
+        "x": 340,
+        "y": 7
+      },
+      "styles": {
+        "background-color": "rgb(21, 20, 20)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "12px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "500",
+        "gap": "8px",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgba(0, 0, 0, 0) solid 0.5px",
+        "padding": "8px 16px",
+        "transition": "scale 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), translate 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+      },
+      "tag": "BUTTON",
+      "label": ""
+    },
+    {
+      "rect": {
+        "height": 656,
+        "width": 390,
+        "x": 0,
+        "y": 0
+      },
+      "styles": {
+        "background-color": "rgb(21, 20, 20)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "SECTION",
+      "label": "(function () {\n    if (typeof window === 'undefined') return;\n\n    var shouldSkipVideo = false;\n    "
+    },
+    {
+      "rect": {
+        "height": 197.96875,
+        "width": 334,
+        "x": 28,
+        "y": 149.609375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 251, 245)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "40px",
+        "font-weight": "600",
+        "gap": "normal",
+        "letter-spacing": "-1px",
+        "line-height": "39.6px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "H1",
+      "label": "Everything we learned from powering 20% of the Internet—yours by default"
+    },
+    {
+      "rect": {
+        "height": 99.8125,
+        "width": 334,
+        "x": 28,
+        "y": 387.578125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 251, 245)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "20.8px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.52px",
+        "line-height": "24.96px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "One platform for your apps, agents, and workforce.\nBuild, secure, and scale without managing infrast"
+    },
+    {
+      "rect": {
+        "height": 66,
+        "width": 334,
+        "x": 28,
+        "y": 543.390625
+      },
+      "styles": {
+        "background-color": "rgb(255, 251, 245)",
+        "border-color": "rgb(255, 251, 245)",
+        "border-radius": "12px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(31, 31, 31)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "500",
+        "gap": "8px",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgba(0, 0, 0, 0) solid 0.5px",
+        "padding": "20px 24px",
+        "transition": "scale 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), translate 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+      },
+      "tag": "A",
+      "label": "Start building for free"
+    },
+    {
+      "rect": {
+        "height": 88,
+        "width": 390,
+        "x": 0,
+        "y": 656
+      },
+      "styles": {
+        "background-color": "rgb(21, 20, 20)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "opacity 2s cubic-bezier(0.19, 1, 0.22, 1) 0.1s"
+      },
+      "tag": "SECTION",
+      "label": ""
+    },
+    {
+      "rect": {
+        "height": 1028.25,
+        "width": 390,
+        "x": 0,
+        "y": 792
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "SECTION",
+      "label": "Region: Earth    One smart network for workloads + security — close to users, close to data.    (()="
+    },
+    {
+      "rect": {
+        "height": 32,
+        "width": 184.3828125,
+        "x": 102.8046875,
+        "y": 792
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "32px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "-0.8px",
+        "line-height": "32px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "H2",
+      "label": "Region: Earth"
+    },
+    {
+      "rect": {
+        "height": 49.90625,
+        "width": 358,
+        "x": 16,
+        "y": 840
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.924768 0.0117092 0.0106639 / 0.7)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "20.8px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.52px",
+        "line-height": "24.96px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "One smart network for workloads + security — close to users, close to data."
+    },
+    {
+      "rect": {
+        "height": 33.59375,
+        "width": 125.484375,
+        "x": 41,
+        "y": 1370.90625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "18px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "-0.45px",
+        "line-height": "21.6px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 0px 4px",
+        "transition": "all"
+      },
+      "tag": "H3",
+      "label": "Run everywhere"
+    },
+    {
+      "rect": {
+        "height": 57.5859375,
+        "width": 308,
+        "x": 41,
+        "y": 1404.5
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.924768 0.0117092 0.0106639 / 0.7)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Security, connectivity, and code run in 335+ cities around the world, within 50ms of 95% of the worl"
+    },
+    {
+      "rect": {
+        "height": 33.59375,
+        "width": 110.9375,
+        "x": 41,
+        "y": 1547.0859375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "18px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "-0.45px",
+        "line-height": "21.6px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 0px 4px",
+        "transition": "all"
+      },
+      "tag": "H3",
+      "label": "Run anywhere"
+    },
+    {
+      "rect": {
+        "height": 76.78125,
+        "width": 308,
+        "x": 41,
+        "y": 1580.6796875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.924768 0.0117092 0.0106639 / 0.7)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Our network is close to your users, applications, and sites. It optimizes all your traffic from sour"
+    },
+    {
+      "rect": {
+        "height": 33.59375,
+        "width": 160.296875,
+        "x": 41,
+        "y": 1742.4609375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "18px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "-0.45px",
+        "line-height": "21.6px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 0px 4px",
+        "transition": "all"
+      },
+      "tag": "H3",
+      "label": "Run at massive scale"
+    },
+    {
+      "rect": {
+        "height": 19.1953125,
+        "width": 230.9609375,
+        "x": 41,
+        "y": 1776.0546875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.924768 0.0117092 0.0106639 / 0.7)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "No more capacity planning. Ever."
+    },
+    {
+      "rect": {
+        "height": 88,
+        "width": 390,
+        "x": 0,
+        "y": 1866.25
+      },
+      "styles": {
+        "background-color": "rgb(21, 20, 20)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "opacity 2s cubic-bezier(0.19, 1, 0.22, 1) 0.1s"
+      },
+      "tag": "SECTION",
+      "label": ""
+    },
+    {
+      "rect": {
+        "height": 876.90625,
+        "width": 390,
+        "x": 0,
+        "y": 2002.25
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "SECTION",
+      "label": "Cloudflare powers 45% of the Fortune 500    Trusted by the teams you trust.       ShopifyIntercomDoo"
+    },
+    {
+      "rect": {
+        "height": 64,
+        "width": 390,
+        "x": 0,
+        "y": 2050.25
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "32px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "-0.8px",
+        "line-height": "32px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "H2",
+      "label": "Cloudflare powers 45% of the Fortune 500"
+    },
+    {
+      "rect": {
+        "height": 24.953125,
+        "width": 390,
+        "x": 0,
+        "y": 2146.25
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.924768 0.0117092 0.0106639 / 0.7)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "20.8px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.52px",
+        "line-height": "24.96px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Trusted by the teams you trust."
+    },
+    {
+      "rect": {
+        "height": 60,
+        "width": 111.171875,
+        "x": 101,
+        "y": 2212.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgb(255, 94, 31)",
+        "border-radius": "0px",
+        "border-width": "0px 0px 2px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 6px",
+        "transition": "border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), color 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Shopify"
+    },
+    {
+      "rect": {
+        "height": 60,
+        "width": 119.6640625,
+        "x": 212.171875,
+        "y": 2212.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "0px",
+        "border-width": "0px 0px 2px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 6px",
+        "transition": "border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), color 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Intercom"
+    },
+    {
+      "rect": {
+        "height": 60,
+        "width": 126.6015625,
+        "x": 331.8359375,
+        "y": 2212.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "0px",
+        "border-width": "0px 0px 2px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 6px",
+        "transition": "border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), color 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "DoorDash"
+    },
+    {
+      "rect": {
+        "height": 60,
+        "width": 112.1484375,
+        "x": 458.4375,
+        "y": 2212.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "0px",
+        "border-width": "0px 0px 2px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 6px",
+        "transition": "border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), color 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Discord"
+    },
+    {
+      "rect": {
+        "height": 60,
+        "width": 117.1640625,
+        "x": 570.5859375,
+        "y": 2212.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "0px",
+        "border-width": "0px 0px 2px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 6px",
+        "transition": "border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), color 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Zendesk"
+    },
+    {
+      "rect": {
+        "height": 60,
+        "width": 112.265625,
+        "x": 687.75,
+        "y": 2212.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "0px",
+        "border-width": "0px 0px 2px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 6px",
+        "transition": "border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), color 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Lovable"
+    },
+    {
+      "rect": {
+        "height": 60,
+        "width": 92,
+        "x": 800.015625,
+        "y": 2212.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "0px",
+        "border-width": "0px 0px 2px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 6px",
+        "transition": "border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), color 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "npm"
+    },
+    {
+      "rect": {
+        "height": 60,
+        "width": 114.765625,
+        "x": 892.015625,
+        "y": 2212.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "0px",
+        "border-width": "0px 0px 2px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 6px",
+        "transition": "border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), color 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "SiteGPT"
+    },
+    {
+      "rect": {
+        "height": 60,
+        "width": 129.8203125,
+        "x": 1006.78125,
+        "y": 2212.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "0px",
+        "border-width": "0px 0px 2px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 6px",
+        "transition": "border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), color 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Liveblocks"
+    },
+    {
+      "rect": {
+        "height": 60,
+        "width": 118.0859375,
+        "x": 1136.6015625,
+        "y": 2212.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "0px",
+        "border-width": "0px 0px 2px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 6px",
+        "transition": "border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), color 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Leagued"
+    },
+    {
+      "rect": {
+        "height": 60,
+        "width": 107.796875,
+        "x": 1254.6875,
+        "y": 2212.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "0px",
+        "border-width": "0px 0px 2px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 6px",
+        "transition": "border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), color 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Seated"
+    },
+    {
+      "rect": {
+        "height": 60,
+        "width": 106.71875,
+        "x": 1362.484375,
+        "y": 2212.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "0px",
+        "border-width": "0px 0px 2px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 6px",
+        "transition": "border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), color 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "People"
+    },
+    {
+      "rect": {
+        "height": 60,
+        "width": 111.171875,
+        "x": 1469.203125,
+        "y": 2212.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "0px",
+        "border-width": "0px 0px 2px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 6px",
+        "transition": "border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), color 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Shopify"
+    },
+    {
+      "rect": {
+        "height": 60,
+        "width": 119.6640625,
+        "x": 1580.375,
+        "y": 2212.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "0px",
+        "border-width": "0px 0px 2px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 6px",
+        "transition": "border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), color 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Intercom"
+    },
+    {
+      "rect": {
+        "height": 60,
+        "width": 126.6015625,
+        "x": 1700.0390625,
+        "y": 2212.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "0px",
+        "border-width": "0px 0px 2px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 6px",
+        "transition": "border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), color 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "DoorDash"
+    },
+    {
+      "rect": {
+        "height": 60,
+        "width": 112.1484375,
+        "x": 1826.640625,
+        "y": 2212.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(0, 0, 0, 0)",
+        "border-radius": "0px",
+        "border-width": "0px 0px 2px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "8px 6px",
+        "transition": "border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), color 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Discord"
+    },
+    {
+      "rect": {
+        "height": 478,
+        "width": 412,
+        "x": 9,
+        "y": 2272.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "SECTION",
+      "label": "Pause\n@property --beam-angle-_r130R_2l_ {\n  syntax: \"<angle>\";\n  initial-value: 0deg;\n  inherits: tr"
+    },
+    {
+      "rect": {
+        "height": 30.09375,
+        "width": 36,
+        "x": 21,
+        "y": 2284.203125
+      },
+      "styles": {
+        "background-color": "oklab(0.192411 0.00154676 0.000482813 / 0.9)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "1.67772e+07px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "500",
+        "gap": "6px",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgba(0, 0, 0, 0) solid 0.5px",
+        "padding": "6px 10px",
+        "transition": "width 0.3s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), translate 0.3s cubic-bezier(0.22, 1, 0.36, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Pause"
+    },
+    {
+      "rect": {
+        "height": 199.625,
+        "width": 312,
+        "x": 65,
+        "y": 2308.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "20.8px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "-0.52px",
+        "line-height": "24.96px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "H3",
+      "label": "“For Shopify, the real challenge is not about how many different pieces of complex technology we can"
+    },
+    {
+      "rect": {
+        "height": 38.390625,
+        "width": 312,
+        "x": 65,
+        "y": 2523.828125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Duncan Davidson, VP of Developer Productivity, Shopify"
+    },
+    {
+      "rect": {
+        "height": 24.953125,
+        "width": 196.2109375,
+        "x": 96.890625,
+        "y": 2743.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.924768 0.0117092 0.0106639 / 0.7)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "20.8px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.52px",
+        "line-height": "24.96px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "And thousands more..."
+    },
+    {
+      "rect": {
+        "height": 88,
+        "width": 390,
+        "x": 0,
+        "y": 2925.15625
+      },
+      "styles": {
+        "background-color": "rgb(21, 20, 20)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "opacity 2s cubic-bezier(0.19, 1, 0.22, 1) 0.1s"
+      },
+      "tag": "SECTION",
+      "label": ""
+    },
+    {
+      "rect": {
+        "height": 97.90625,
+        "width": 390,
+        "x": 0,
+        "y": 3109.15625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px 16px",
+        "transition": "all"
+      },
+      "tag": "SECTION",
+      "label": "Why choose Cloudflare Everything needed tobuild secure, performant applications"
+    },
+    {
+      "rect": {
+        "height": 32,
+        "width": 358,
+        "x": 16,
+        "y": 3109.15625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "32px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "-0.8px",
+        "line-height": "32px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "H2",
+      "label": "Why choose Cloudflare"
+    },
+    {
+      "rect": {
+        "height": 49.90625,
+        "width": 358,
+        "x": 18.2890625,
+        "y": 3157.15625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.924768 0.0117092 0.0106639 / 0.7)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "20.8px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.52px",
+        "line-height": "24.96px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Everything needed tobuild secure, performant applications"
+    },
+    {
+      "rect": {
+        "height": 800,
+        "width": 390,
+        "x": 0,
+        "y": 3255.0625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px 16px",
+        "transition": "all"
+      },
+      "tag": "SECTION",
+      "label": "Fighting infra with “cloud” (()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={}))."
+    },
+    {
+      "rect": {
+        "height": 64,
+        "width": 259,
+        "x": 65,
+        "y": 3304.0625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "32px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "-0.8px",
+        "line-height": "32px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "H3",
+      "label": "Fighting infra with “cloud”"
+    },
+    {
+      "rect": {
+        "height": 64,
+        "width": 187.109375,
+        "x": 101.4453125,
+        "y": 3703.0625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 251, 245)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "32px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "-0.8px",
+        "line-height": "32px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "H3",
+      "label": "Shipping withCloudflare"
+    },
+    {
+      "rect": {
+        "height": 88,
+        "width": 390,
+        "x": 0,
+        "y": 4101.0625
+      },
+      "styles": {
+        "background-color": "rgb(21, 20, 20)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "opacity 2s cubic-bezier(0.19, 1, 0.22, 1) 0.1s"
+      },
+      "tag": "SECTION",
+      "label": ""
+    },
+    {
+      "rect": {
+        "height": 104.953125,
+        "width": 390,
+        "x": 0,
+        "y": 4285.0625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px 16px",
+        "transition": "all"
+      },
+      "tag": "SECTION",
+      "label": "Pay onlywhen your code runs(Not to keep servers warm.)"
+    },
+    {
+      "rect": {
+        "height": 64,
+        "width": 358,
+        "x": 19.5234375,
+        "y": 4285.0625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "32px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "-0.8px",
+        "line-height": "32px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "H2",
+      "label": "Pay onlywhen your code runs"
+    },
+    {
+      "rect": {
+        "height": 24.953125,
+        "width": 358,
+        "x": 16,
+        "y": 4365.0625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.924768 0.0117092 0.0106639 / 0.7)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "20.8px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.52px",
+        "line-height": "24.96px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "(Not to keep servers warm.)"
+    },
+    {
+      "rect": {
+        "height": 1620.25,
+        "width": 390,
+        "x": 0,
+        "y": 4438.015625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "SECTION",
+      "label": "Network & CDNNetwork & CDNSASE / Zero TrustCompute & StorageNetwork & CDNSASE / Zero TrustCompute & "
+    },
+    {
+      "rect": {
+        "height": 44,
+        "width": 197.65625,
+        "x": 96.171875,
+        "y": 4438.015625
+      },
+      "styles": {
+        "background-color": "rgb(21, 20, 20)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "1.67772e+07px",
+        "border-width": "1px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "12px",
+        "letter-spacing": "normal",
+        "line-height": "21px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "6px 20px",
+        "transition": "0.3s cubic-bezier(0.32, 0.72, 0, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Network & CDN"
+    },
+    {
+      "rect": {
+        "height": 21.59375,
+        "width": 145.875,
+        "x": 25,
+        "y": 4547.015625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "18px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "-0.45px",
+        "line-height": "21.6px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "H3",
+      "label": "Pay for clean traffic"
+    },
+    {
+      "rect": {
+        "height": 76.78125,
+        "width": 316,
+        "x": 25,
+        "y": 4576.609375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.924768 0.0117092 0.0106639 / 0.7)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "One stack of security and performance for every site — same DDoS mitigation, same global CDN, same n"
+    },
+    {
+      "rect": {
+        "height": 38.390625,
+        "width": 128.8671875,
+        "x": 25,
+        "y": 4902.765625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Freefor hobby projects"
+    },
+    {
+      "rect": {
+        "height": 38,
+        "width": 123.890625,
+        "x": 25,
+        "y": 5103.34375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "1.67772e+07px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "500",
+        "gap": "0px",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgba(0, 0, 0, 0) solid 0.5px",
+        "padding": "6px 12px",
+        "transition": "color 0.2s cubic-bezier(0, 0, 0.2, 1), background-color 0.2s cubic-bezier(0, 0, 0.2, 1), border-color 0.2s cubic-bezier(0, 0, 0.2, 1), transform 0.2s cubic-bezier(0, 0, 0.2, 1), translate 0.2s cubic-bezier(0, 0, 0.2, 1)"
+      },
+      "tag": "A",
+      "label": "See Free plan"
+    },
+    {
+      "rect": {
+        "height": 38.390625,
+        "width": 113.6640625,
+        "x": 25,
+        "y": 5190.34375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Profor pro websites"
+    },
+    {
+      "rect": {
+        "height": 38,
+        "width": 116.2421875,
+        "x": 25,
+        "y": 5411.015625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "1.67772e+07px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "500",
+        "gap": "0px",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgba(0, 0, 0, 0) solid 0.5px",
+        "padding": "6px 12px",
+        "transition": "color 0.2s cubic-bezier(0, 0, 0.2, 1), background-color 0.2s cubic-bezier(0, 0, 0.2, 1), border-color 0.2s cubic-bezier(0, 0, 0.2, 1), transform 0.2s cubic-bezier(0, 0, 0.2, 1), translate 0.2s cubic-bezier(0, 0, 0.2, 1)"
+      },
+      "tag": "A",
+      "label": "See Pro plan"
+    },
+    {
+      "rect": {
+        "height": 38.390625,
+        "width": 127.28125,
+        "x": 25,
+        "y": 5498.015625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Businessfor small business"
+    },
+    {
+      "rect": {
+        "height": 38,
+        "width": 157.125,
+        "x": 25,
+        "y": 5686.59375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "1.67772e+07px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "500",
+        "gap": "0px",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgba(0, 0, 0, 0) solid 0.5px",
+        "padding": "6px 12px",
+        "transition": "color 0.2s cubic-bezier(0, 0, 0.2, 1), background-color 0.2s cubic-bezier(0, 0, 0.2, 1), border-color 0.2s cubic-bezier(0, 0, 0.2, 1), transform 0.2s cubic-bezier(0, 0, 0.2, 1), translate 0.2s cubic-bezier(0, 0, 0.2, 1)"
+      },
+      "tag": "A",
+      "label": "See Business plan"
+    },
+    {
+      "rect": {
+        "height": 38.390625,
+        "width": 131.03125,
+        "x": 25,
+        "y": 5773.59375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Contractfor mission-critical"
+    },
+    {
+      "rect": {
+        "height": 38,
+        "width": 155.4765625,
+        "x": 25,
+        "y": 5994.265625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "1.67772e+07px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "500",
+        "gap": "0px",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgba(0, 0, 0, 0) solid 0.5px",
+        "padding": "6px 12px",
+        "transition": "color 0.2s cubic-bezier(0, 0, 0.2, 1), background-color 0.2s cubic-bezier(0, 0, 0.2, 1), border-color 0.2s cubic-bezier(0, 0, 0.2, 1), transform 0.2s cubic-bezier(0, 0, 0.2, 1), translate 0.2s cubic-bezier(0, 0, 0.2, 1)"
+      },
+      "tag": "A",
+      "label": "See Contract plan"
+    },
+    {
+      "rect": {
+        "height": 76.78125,
+        "width": 316,
+        "x": 41,
+        "y": 4576.609375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.924768 0.0117092 0.0106639 / 0.7)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Connect and secure users, devices, and data on one Zero Trust platform. The first 50 employees are o"
+    },
+    {
+      "rect": {
+        "height": 38.390625,
+        "width": 134.0546875,
+        "x": 41,
+        "y": 4919.046875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Freefor teams under 50"
+    },
+    {
+      "rect": {
+        "height": 38,
+        "width": 123.890625,
+        "x": 41,
+        "y": 5119.625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "1.67772e+07px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "500",
+        "gap": "0px",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgba(0, 0, 0, 0) solid 0.5px",
+        "padding": "6px 12px",
+        "transition": "color 0.2s cubic-bezier(0, 0, 0.2, 1), background-color 0.2s cubic-bezier(0, 0, 0.2, 1), border-color 0.2s cubic-bezier(0, 0, 0.2, 1), transform 0.2s cubic-bezier(0, 0, 0.2, 1), translate 0.2s cubic-bezier(0, 0, 0.2, 1)"
+      },
+      "tag": "A",
+      "label": "See Free plan"
+    },
+    {
+      "rect": {
+        "height": 38.390625,
+        "width": 159.8671875,
+        "x": 41,
+        "y": 5206.625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Pay-as-you-goscales with headcount"
+    },
+    {
+      "rect": {
+        "height": 38,
+        "width": 195.40625,
+        "x": 41,
+        "y": 5407.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "1.67772e+07px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "500",
+        "gap": "0px",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgba(0, 0, 0, 0) solid 0.5px",
+        "padding": "6px 12px",
+        "transition": "color 0.2s cubic-bezier(0, 0, 0.2, 1), background-color 0.2s cubic-bezier(0, 0, 0.2, 1), border-color 0.2s cubic-bezier(0, 0, 0.2, 1), transform 0.2s cubic-bezier(0, 0, 0.2, 1), translate 0.2s cubic-bezier(0, 0, 0.2, 1)"
+      },
+      "tag": "A",
+      "label": "See Pay-as-you-go plan"
+    },
+    {
+      "rect": {
+        "height": 38.390625,
+        "width": 151.84375,
+        "x": 41,
+        "y": 5494.203125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Contractfor full-featured SASE"
+    },
+    {
+      "rect": {
+        "height": 38,
+        "width": 155.4765625,
+        "x": 41,
+        "y": 5694.78125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "1.67772e+07px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "500",
+        "gap": "0px",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgba(0, 0, 0, 0) solid 0.5px",
+        "padding": "6px 12px",
+        "transition": "color 0.2s cubic-bezier(0, 0, 0.2, 1), background-color 0.2s cubic-bezier(0, 0, 0.2, 1), border-color 0.2s cubic-bezier(0, 0, 0.2, 1), transform 0.2s cubic-bezier(0, 0, 0.2, 1), translate 0.2s cubic-bezier(0, 0, 0.2, 1)"
+      },
+      "tag": "A",
+      "label": "See Contract plan"
+    },
+    {
+      "rect": {
+        "height": 95.9765625,
+        "width": 316,
+        "x": 41,
+        "y": 4576.609375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.924768 0.0117092 0.0106639 / 0.7)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Never pay for idle time waiting for slow APIs, LLMs, or humans. Cloudflare charges only for compute,"
+    },
+    {
+      "rect": {
+        "height": 19.1953125,
+        "width": 158.6015625,
+        "x": 41,
+        "y": 4949.5859375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.924768 0.0117092 0.0106639 / 0.7)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "No credit card needed"
+    },
+    {
+      "rect": {
+        "height": 38,
+        "width": 94.484375,
+        "x": 286.515625,
+        "y": 4922.1796875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "1.67772e+07px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "500",
+        "gap": "0px",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgba(0, 0, 0, 0) solid 0.5px",
+        "padding": "6px 12px",
+        "transition": "color 0.2s cubic-bezier(0, 0, 0.2, 1), background-color 0.2s cubic-bezier(0, 0, 0.2, 1), border-color 0.2s cubic-bezier(0, 0, 0.2, 1), transform 0.2s cubic-bezier(0, 0, 0.2, 1), translate 0.2s cubic-bezier(0, 0, 0.2, 1)"
+      },
+      "tag": "A",
+      "label": "See more"
+    },
+    {
+      "rect": {
+        "height": 15.2890625,
+        "width": 48.828125,
+        "x": 58,
+        "y": 5013.78125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "4px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "13px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "15.2941px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Workers"
+    },
+    {
+      "rect": {
+        "height": 15.2890625,
+        "width": 95.03125,
+        "x": 122.828125,
+        "y": 5013.78125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "4px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.924768 0.0117092 0.0106639 / 0.2)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "13px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "15.2941px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Durable Objects"
+    },
+    {
+      "rect": {
+        "height": 15.2890625,
+        "width": 68.515625,
+        "x": 233.859375,
+        "y": 5013.78125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "4px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.924768 0.0117092 0.0106639 / 0.2)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "13px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "15.2941px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Workers KV"
+    },
+    {
+      "rect": {
+        "height": 19.1953125,
+        "width": 106.8671875,
+        "x": 75,
+        "y": 5079.6640625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "/  daily requests"
+    },
+    {
+      "rect": {
+        "height": 19.1953125,
+        "width": 107.921875,
+        "x": 232,
+        "y": 5079.6640625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "/  KV daily reads"
+    },
+    {
+      "rect": {
+        "height": 38.390625,
+        "width": 115,
+        "x": 75,
+        "y": 5166.453125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "/  AI daily requests"
+    },
+    {
+      "rect": {
+        "height": 19.1953125,
+        "width": 86.46875,
+        "x": 232,
+        "y": 5166.453125
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "/  R2 Storage"
+    },
+    {
+      "rect": {
+        "height": 19.1953125,
+        "width": 126.171875,
+        "x": 99,
+        "y": 5079.6640625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "/  SQL Stored Data"
+    },
+    {
+      "rect": {
+        "height": 19.1953125,
+        "width": 125.5546875,
+        "x": 99,
+        "y": 5176.046875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "/  Stored Data (KV)"
+    },
+    {
+      "rect": {
+        "height": 19.1953125,
+        "width": 92.5859375,
+        "x": 99,
+        "y": 5079.6640625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "/  Stored Data"
+    },
+    {
+      "rect": {
+        "height": 19.1953125,
+        "width": 110.671875,
+        "x": 256,
+        "y": 5079.6640625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "/  Read requests"
+    },
+    {
+      "rect": {
+        "height": 19.1953125,
+        "width": 192.09375,
+        "x": 99,
+        "y": 5176.046875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "/  Write/Delete/List requests"
+    },
+    {
+      "rect": {
+        "height": 19.1953125,
+        "width": 131.890625,
+        "x": 41,
+        "y": 5323.84375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.686966 0.161786 0.130019 / 0.7)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Starts at $5/month"
+    },
+    {
+      "rect": {
+        "height": 38,
+        "width": 94.484375,
+        "x": 286.515625,
+        "y": 5296.4375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "1.67772e+07px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "500",
+        "gap": "2px",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgba(0, 0, 0, 0) solid 0.5px",
+        "padding": "6px 12px",
+        "transition": "color 0.2s cubic-bezier(0, 0, 0.2, 1), background-color 0.2s cubic-bezier(0, 0, 0.2, 1), border-color 0.2s cubic-bezier(0, 0, 0.2, 1), transform 0.2s cubic-bezier(0, 0, 0.2, 1), translate 0.2s cubic-bezier(0, 0, 0.2, 1)"
+      },
+      "tag": "A",
+      "label": "See more"
+    },
+    {
+      "rect": {
+        "height": 15.2890625,
+        "width": 48.828125,
+        "x": 58,
+        "y": 5388.0390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "4px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 94, 31)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "13px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "15.2941px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Workers"
+    },
+    {
+      "rect": {
+        "height": 15.2890625,
+        "width": 95.03125,
+        "x": 122.828125,
+        "y": 5388.0390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "4px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.686966 0.161786 0.130019 / 0.5)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "13px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "15.2941px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Durable Objects"
+    },
+    {
+      "rect": {
+        "height": 15.2890625,
+        "width": 68.515625,
+        "x": 233.859375,
+        "y": 5388.0390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "4px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.686966 0.161786 0.130019 / 0.5)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "13px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "15.2941px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Workers KV"
+    },
+    {
+      "rect": {
+        "height": 19.1953125,
+        "width": 120.453125,
+        "x": 75,
+        "y": 5453.921875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 94, 31)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "/  million requests"
+    },
+    {
+      "rect": {
+        "height": 19.1953125,
+        "width": 115.4453125,
+        "x": 75,
+        "y": 5550.3046875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 94, 31)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "/  million CPU ms"
+    },
+    {
+      "rect": {
+        "height": 19.1953125,
+        "width": 54.640625,
+        "x": 99,
+        "y": 5453.921875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 94, 31)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "/  million"
+    },
+    {
+      "rect": {
+        "height": 19.1953125,
+        "width": 93.625,
+        "x": 256,
+        "y": 5453.921875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 94, 31)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "/  million GB-s"
+    },
+    {
+      "rect": {
+        "height": 38.390625,
+        "width": 115,
+        "x": 99,
+        "y": 5540.7109375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 94, 31)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "/  million Read rows"
+    },
+    {
+      "rect": {
+        "height": 38.390625,
+        "width": 115,
+        "x": 256,
+        "y": 5540.7109375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 94, 31)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "/  million Written rows"
+    },
+    {
+      "rect": {
+        "height": 19.1953125,
+        "width": 81.828125,
+        "x": 99,
+        "y": 5453.921875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 94, 31)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "/  GB-month"
+    },
+    {
+      "rect": {
+        "height": 38.390625,
+        "width": 115,
+        "x": 256,
+        "y": 5453.921875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 94, 31)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "/  million Read requests"
+    },
+    {
+      "rect": {
+        "height": 19.1953125,
+        "width": 242.3203125,
+        "x": 99,
+        "y": 5559.90625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 94, 31)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "/  million Write/Delete/List requests"
+    },
+    {
+      "rect": {
+        "height": 88,
+        "width": 390,
+        "x": 0,
+        "y": 6104.265625
+      },
+      "styles": {
+        "background-color": "rgb(21, 20, 20)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "opacity 2s cubic-bezier(0.19, 1, 0.22, 1) 0.1s"
+      },
+      "tag": "SECTION",
+      "label": ""
+    },
+    {
+      "rect": {
+        "height": 97.90625,
+        "width": 390,
+        "x": 0,
+        "y": 6288.265625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px 16px",
+        "transition": "all"
+      },
+      "tag": "SECTION",
+      "label": "Tailored to your teamEasy to use for both startups and the world’s largest enterprises."
+    },
+    {
+      "rect": {
+        "height": 32,
+        "width": 358,
+        "x": 16,
+        "y": 6288.265625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "32px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "-0.8px",
+        "line-height": "32px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "H3",
+      "label": "Tailored to your team"
+    },
+    {
+      "rect": {
+        "height": 49.90625,
+        "width": 358,
+        "x": 16,
+        "y": 6336.265625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.924768 0.0117092 0.0106639 / 0.7)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "20.8px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.52px",
+        "line-height": "24.96px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Easy to use for both startups and the world’s largest enterprises."
+    },
+    {
+      "rect": {
+        "height": 1068.4140625,
+        "width": 390,
+        "x": 0,
+        "y": 6434.171875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px 16px",
+        "transition": "all"
+      },
+      "tag": "SECTION",
+      "label": "Fits into your existing workflows   Git, GitHub Actions, VS Code, and any framework. No proprietary "
+    },
+    {
+      "rect": {
+        "height": 21.59375,
+        "width": 292,
+        "x": 49,
+        "y": 6533.40625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "18px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "-0.45px",
+        "line-height": "21.6px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "H3",
+      "label": "Fits into your existing workflows"
+    },
+    {
+      "rect": {
+        "height": 57.5859375,
+        "width": 292,
+        "x": 49,
+        "y": 6563
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.924768 0.0117092 0.0106639 / 0.7)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Git, GitHub Actions, VS Code, and any framework. No proprietary tools or vendor lock-in."
+    },
+    {
+      "rect": {
+        "height": 21.59375,
+        "width": 294,
+        "x": 48,
+        "y": 6725.5859375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 251, 245)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "18px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "-0.45px",
+        "line-height": "21.6px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "H3",
+      "label": "One network for users, apps, and data"
+    },
+    {
+      "rect": {
+        "height": 95.9765625,
+        "width": 294,
+        "x": 48,
+        "y": 6755.1796875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 251, 245)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Whether you're shipping code, securing employees, or connecting branches, it all runs on the same gl"
+    },
+    {
+      "rect": {
+        "height": 21.59375,
+        "width": 292,
+        "x": 49,
+        "y": 6982.2109375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "18px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "-0.45px",
+        "line-height": "21.6px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "H3",
+      "label": "Secure by default"
+    },
+    {
+      "rect": {
+        "height": 76.78125,
+        "width": 292,
+        "x": 49,
+        "y": 7011.8046875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.924768 0.0117092 0.0106639 / 0.7)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "DDoS protection, WAF, bot management, and Zero Trust controls are built into the network and run on "
+    },
+    {
+      "rect": {
+        "height": 21.59375,
+        "width": 324,
+        "x": 49,
+        "y": 7162.5859375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "18px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "-0.45px",
+        "line-height": "21.6px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "H3",
+      "label": "Fast path to AI adoption"
+    },
+    {
+      "rect": {
+        "height": 76.78125,
+        "width": 324,
+        "x": 49,
+        "y": 7192.1796875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "oklab(0.924768 0.0117092 0.0106639 / 0.7)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.04px",
+        "line-height": "19.2px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Build, deploy, and govern AI agents on the same network. Secure MCP portals, identity-aware access, "
+    },
+    {
+      "rect": {
+        "height": 719.953125,
+        "width": 390,
+        "x": 0,
+        "y": 7550.5859375
+      },
+      "styles": {
+        "background-color": "rgb(21, 20, 20)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "SECTION",
+      "label": "Build without boundaries  Join thousands of developers who've eliminated infrastructure complexity a"
+    },
+    {
+      "rect": {
+        "height": 79.1875,
+        "width": 358,
+        "x": 16,
+        "y": 7678.5859375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 251, 245)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "40px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "-1px",
+        "line-height": "39.6px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "H1",
+      "label": "Build without boundaries"
+    },
+    {
+      "rect": {
+        "height": 124.765625,
+        "width": 358,
+        "x": 16,
+        "y": 7797.7734375
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(255, 251, 245)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "20.8px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "-0.52px",
+        "line-height": "24.96px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "all"
+      },
+      "tag": "P",
+      "label": "Join thousands of developers who've eliminated infrastructure complexity and deployed globally with "
+    },
+    {
+      "rect": {
+        "height": 66,
+        "width": 358,
+        "x": 16,
+        "y": 7962.5390625
+      },
+      "styles": {
+        "background-color": "rgb(255, 251, 245)",
+        "border-color": "rgb(255, 251, 245)",
+        "border-radius": "12px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(31, 31, 31)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "500",
+        "gap": "8px",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgba(0, 0, 0, 0) solid 0.5px",
+        "padding": "20px 24px",
+        "transition": "scale 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), translate 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+      },
+      "tag": "A",
+      "label": "Start building for free"
+    },
+    {
+      "rect": {
+        "height": 66,
+        "width": 358,
+        "x": 16,
+        "y": 8036.5390625
+      },
+      "styles": {
+        "background-color": "rgb(255, 112, 56)",
+        "border-color": "oklab(0.989501 0.00187433 0.00883901 / 0.1)",
+        "border-radius": "12px",
+        "border-width": "1px",
+        "box-shadow": "none",
+        "color": "rgb(255, 251, 245)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "500",
+        "gap": "8px",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgba(0, 0, 0, 0) solid 0.5px",
+        "padding": "20px 24px",
+        "transition": "scale 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94), translate 0.16s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+      },
+      "tag": "A",
+      "label": "View docs"
+    },
+    {
+      "rect": {
+        "height": 88,
+        "width": 390,
+        "x": 0,
+        "y": 8316.5390625
+      },
+      "styles": {
+        "background-color": "rgb(21, 20, 20)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "opacity 2s cubic-bezier(0.19, 1, 0.22, 1) 0.1s"
+      },
+      "tag": "SECTION",
+      "label": ""
+    },
+    {
+      "rect": {
+        "height": 1432.640625,
+        "width": 390,
+        "x": 0,
+        "y": 8404.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px 1px",
+        "transition": "all"
+      },
+      "tag": "FOOTER",
+      "label": "Getting started    Plans  Contact sales  Partners  Find a partner  Startups  Under attack?  Domain n"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 8500.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Plans"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 8524.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Contact sales"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 8548.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Partners"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 8572.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Find a partner"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 8596.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Startups"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 8620.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Under attack?"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 8644.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Domain name search"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 211,
+        "y": 8500.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "About"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 211,
+        "y": 8524.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Careers"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 211,
+        "y": 8548.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Investors"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 211,
+        "y": 8572.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Press"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 211,
+        "y": 8596.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Press kit"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 211,
+        "y": 8620.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Global network"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 8720.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Project Galileo"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 8744.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Athenian Project"
+    },
+    {
+      "rect": {
+        "height": 40,
+        "width": 162,
+        "x": 17,
+        "y": 8768.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Cloudflare for Campaigns"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 8808.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Project Fairshot"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 8832.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Impact"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 211,
+        "y": 8720.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Compliance resources"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 211,
+        "y": 8744.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Trust Hub"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 211,
+        "y": 8768.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Data Protection"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 211,
+        "y": 8792.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Responsible AI"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 211,
+        "y": 8816.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Transparency report"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 211,
+        "y": 8840.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Report abuse"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 8916.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "App innovation report"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 8940.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Cloudflare Radar"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 8964.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Case studies"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 8988.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Status"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 9012.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Support"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 9036.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Events"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 9060.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Blog"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 211,
+        "y": 8916.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Documentation"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 211,
+        "y": 8940.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Learning center"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 211,
+        "y": 8964.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Community"
+    },
+    {
+      "rect": {
+        "height": 40,
+        "width": 162,
+        "x": 17,
+        "y": 9136.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "SSE and SASE platform"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 9176.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Cloudflare AI Cloud"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 9200.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "AI Security"
+    },
+    {
+      "rect": {
+        "height": 40,
+        "width": 162,
+        "x": 17,
+        "y": 9224.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Frontend Development Platform"
+    },
+    {
+      "rect": {
+        "height": 40,
+        "width": 162,
+        "x": 17,
+        "y": 9264.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Multi-Tenant Platform Development"
+    },
+    {
+      "rect": {
+        "height": 24,
+        "width": 162,
+        "x": 17,
+        "y": 9304.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "4px 0px",
+        "transition": "color 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.2s cubic-bezier(0.19, 1, 0.22, 1), fill 0.2s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.2s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.2s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Web Security Platform"
+    },
+    {
+      "rect": {
+        "height": 21,
+        "width": 101.9375,
+        "x": 17,
+        "y": 9360.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "0px",
+        "letter-spacing": "normal",
+        "line-height": "21px",
+        "outline": "rgba(0, 0, 0, 0) solid 0.5px",
+        "padding": "0px",
+        "transition": "color 0.2s cubic-bezier(0, 0, 0.2, 1), background-color 0.2s cubic-bezier(0, 0, 0.2, 1), border-color 0.2s cubic-bezier(0, 0, 0.2, 1), outline-color 0.2s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.2s cubic-bezier(0, 0, 0.2, 1), fill 0.2s cubic-bezier(0, 0, 0.2, 1), stroke 0.2s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.2s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.2s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.2s cubic-bezier(0, 0, 0.2, 1)"
+      },
+      "tag": "A",
+      "label": "Start Building"
+    },
+    {
+      "rect": {
+        "height": 21,
+        "width": 54.4921875,
+        "x": 17,
+        "y": 9389.5390625
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "14px",
+        "font-weight": "500",
+        "gap": "0px",
+        "letter-spacing": "normal",
+        "line-height": "21px",
+        "outline": "rgba(0, 0, 0, 0) solid 0.5px",
+        "padding": "0px",
+        "transition": "color 0.2s cubic-bezier(0, 0, 0.2, 1), background-color 0.2s cubic-bezier(0, 0, 0.2, 1), border-color 0.2s cubic-bezier(0, 0, 0.2, 1), outline-color 0.2s cubic-bezier(0, 0, 0.2, 1), text-decoration-color 0.2s cubic-bezier(0, 0, 0.2, 1), fill 0.2s cubic-bezier(0, 0, 0.2, 1), stroke 0.2s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-from 0.2s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-via 0.2s cubic-bezier(0, 0, 0.2, 1), --tw-gradient-to 0.2s cubic-bezier(0, 0, 0.2, 1)"
+      },
+      "tag": "A",
+      "label": "Log In"
+    },
+    {
+      "rect": {
+        "height": 88,
+        "width": 356,
+        "x": 17,
+        "y": 9632.1796875
+      },
+      "styles": {
+        "background-color": "rgb(21, 20, 20)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "16px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "24px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "opacity 2s cubic-bezier(0.19, 1, 0.22, 1) 0.1s"
+      },
+      "tag": "SECTION",
+      "label": ""
+    },
+    {
+      "rect": {
+        "height": 16,
+        "width": 80.59375,
+        "x": 73.5625,
+        "y": 9764.4296875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(240, 227, 222)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "13px",
+        "font-weight": "500",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16.25px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "color 0.4s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.4s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.4s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.4s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.4s cubic-bezier(0.19, 1, 0.22, 1), fill 0.4s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.4s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.4s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.4s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.4s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Privacy policy"
+    },
+    {
+      "rect": {
+        "height": 16,
+        "width": 128.609375,
+        "x": 172.4453125,
+        "y": 9764.4296875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "13px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16.25px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "color 0.4s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.4s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.4s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.4s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.4s cubic-bezier(0.19, 1, 0.22, 1), fill 0.4s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.4s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.4s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.4s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.4s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Report security issues"
+    },
+    {
+      "rect": {
+        "height": 16,
+        "width": 73.3984375,
+        "x": 118.4140625,
+        "y": 9780.6796875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "13px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16.25px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "color 0.4s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.4s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.4s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.4s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.4s cubic-bezier(0.19, 1, 0.22, 1), fill 0.4s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.4s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.4s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.4s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.4s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Terms of use"
+    },
+    {
+      "rect": {
+        "height": 16,
+        "width": 61.8984375,
+        "x": 209.6796875,
+        "y": 9780.6796875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "13px",
+        "font-weight": "400",
+        "gap": "normal",
+        "letter-spacing": "normal",
+        "line-height": "16.25px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "color 0.4s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.4s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.4s cubic-bezier(0.19, 1, 0.22, 1), outline-color 0.4s cubic-bezier(0.19, 1, 0.22, 1), text-decoration-color 0.4s cubic-bezier(0.19, 1, 0.22, 1), fill 0.4s cubic-bezier(0.19, 1, 0.22, 1), stroke 0.4s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-from 0.4s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-via 0.4s cubic-bezier(0.19, 1, 0.22, 1), --tw-gradient-to 0.4s cubic-bezier(0.19, 1, 0.22, 1)"
+      },
+      "tag": "A",
+      "label": "Trademark"
+    },
+    {
+      "rect": {
+        "height": 16.25,
+        "width": 155.125,
+        "x": 117.4375,
+        "y": 9804.9296875
+      },
+      "styles": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "border-color": "rgba(240, 227, 222, 0.125)",
+        "border-radius": "0px",
+        "border-width": "0px",
+        "box-shadow": "none",
+        "color": "rgb(154, 147, 144)",
+        "font-family": "\"STK Bureau Sans\", sans-serif",
+        "font-size": "13px",
+        "font-weight": "400",
+        "gap": "6px",
+        "letter-spacing": "normal",
+        "line-height": "16.25px",
+        "outline": "rgb(255, 94, 31) none 3px",
+        "padding": "0px",
+        "transition": "color 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), fill 0.2s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.2s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      "tag": "BUTTON",
+      "label": "Your privacy choices"
+    }
+  ],
+  "root": {
+    "class": "font-stk-bureau-sans js dark logged-in",
+    "theme": null
+  },
+  "time": "2026-10-31T03:52:49.546Z",
+  "url": "https://www.cloudflare.com/",
+  "variables": {
+    "--_number-flow-d": "0",
+    "--_number-flow-d-opacity": "0",
+    "--animate-pulse": "pulse 2s cubic-bezier(.4, 0, .6, 1) infinite",
+    "--animate-refresh": "refresh .5s ease-in-out infinite",
+    "--aspect-video": "16 / 9",
+    "--beam-opacity-_r130R_2l_": "0",
+    "--blur-2xl": "40px",
+    "--blur-lg": "16px",
+    "--color-accent": "#262626",
+    "--color-accent-200": "#ff7038",
+    "--color-accent-foreground": "#fafafa",
+    "--color-accent-muted": "#ff5e1f",
+    "--color-amber-300": "oklch(87.9% .169 91.605)",
+    "--color-amber-700": "oklch(55.5% .163 48.998)",
+    "--color-background-200": "#191817",
+    "--color-background-content": "#1a1a1a",
+    "--color-black": "#000",
+    "--color-blue-300": "oklch(80.9% .105 251.813)",
+    "--color-blue-400": "oklch(70.7% .165 254.624)",
+    "--color-blue-600": "oklch(54.6% .245 262.881)",
+    "--color-blue-700": "oklch(48.8% .243 264.376)",
+    "--color-blue-800": "oklch(42.4% .199 265.638)",
+    "--color-border": "#262626",
+    "--color-border-100": "#f0e3de20",
+    "--color-border-100-50": "#f0e3de20",
+    "--color-border-200": "#f0e3de",
+    "--color-compute-200": "#0a95ff33",
+    "--color-cyan-500": "oklch(71.5% .143 215.221)",
+    "--color-dark-accent": "#d63c01",
+    "--color-decor-dots-100": "#f0e3de20",
+    "--color-emerald-200": "oklch(90.5% .093 164.15)",
+    "--color-emerald-500": "oklch(69.6% .17 162.48)",
+    "--color-foreground": "#fafafa",
+    "--color-foreground-100": "#f0e3de",
+    "--color-gray-100": "oklch(96.7% .003 264.542)",
+    "--color-gray-300": "oklch(87.2% .01 258.338)",
+    "--color-gray-500": "oklch(55.1% .027 264.364)",
+    "--color-gray-600": "oklch(44.6% .03 256.802)",
+    "--color-green-400": "oklch(79.2% .209 151.711)",
+    "--color-green-500": "oklch(72.3% .219 149.579)",
+    "--color-green-600": "oklch(62.7% .194 149.214)",
+    "--color-input": "#262626",
+    "--color-kumo-arrow-stroke": "light-dark(transparent,oklch(32% 0 0))",
+    "--color-kumo-badge-green": "light-dark(oklch(59.6% .145 163.225),oklch(50.8% .118 165.612))",
+    "--color-kumo-badge-inverted": "light-dark(oklch(14.5% 0 0),#fff)",
+    "--color-kumo-badge-purple": "light-dark(oklch(55.8% .288 302.321),oklch(49.6% .265 301.924))",
+    "--color-kumo-badge-teal": "light-dark(oklch(54.9% .096 184.565),oklch(51.1% .096 186.391))",
+    "--color-kumo-banner-info": "oklch(93.2% .032 255.585/.7)",
+    "--color-kumo-brand-hover": "#ff7038",
+    "--color-kumo-canvas": "light-dark(oklch(98.75% 0 0),oklch(10% 0 0))",
+    "--color-kumo-contrast": "light-dark(oklch(12% 0 0),oklch(98.5% 0 0))",
+    "--color-kumo-control": "light-dark(#fff,oklch(20.5% 0 0))",
+    "--color-kumo-danger": "light-dark(oklch(63.7% .237 25.331),oklch(57.7% .245 27.325))",
+    "--color-kumo-fill": "light-dark(oklch(92.2% 0 0),oklch(26.9% 0 0))",
+    "--color-kumo-fill-hover": "light-dark(oklch(96.5% 0 0),oklch(26.9% 0 0))",
+    "--color-kumo-hairline": "light-dark(oklch(93.5% 0 0),oklch(26.9% 0 0))",
+    "--color-kumo-neutral-1000": "oklch(10% 0 0)",
+    "--color-kumo-neutral-125": "oklch(96.5% 0 0)",
+    "--color-kumo-neutral-975": "oklch(12% 0 0)",
+    "--color-kumo-shadow-edge": "light-dark(oklch(0% 0 0/.12),oklch(100% 0 0/.1))",
+    "--color-kumo-success": "light-dark(oklch(59.6% .145 163.225),oklch(76.5% .177 163.223))",
+    "--color-kumo-warning-tint": "light-dark(oklch(93.1% .107 94.6/.2),oklch(35.3% .079 65/.37))",
+    "--color-light-foreground": "#fffbf5",
+    "--color-media-100": "#b866ff",
+    "--color-media-200": "#2d1f3d",
+    "--color-multiplayer-orange": "#ff7038",
+    "--color-multiplayer-orange-bg": "#3d1f0f",
+    "--color-multiplayer-yellow-bg": "#3d2f0f",
+    "--color-neutral-100": "oklch(97% 0 0)",
+    "--color-neutral-200": "oklch(92.2% 0 0)",
+    "--color-neutral-300": "oklch(87% 0 0)",
+    "--color-neutral-400": "oklch(70.8% 0 0)",
+    "--color-neutral-600": "oklch(43.9% 0 0)",
+    "--color-neutral-700": "oklch(37.1% 0 0)",
+    "--color-neutral-900": "oklch(20.5% 0 0)",
+    "--color-neutral-950": "oklch(14.5% 0 0)",
+    "--color-orange-500": "oklch(70.5% .213 47.604)",
+    "--color-orange-600": "oklch(64.6% .222 41.116)",
+    "--color-orange-650": "oklch(81.5% .197 76)",
+    "--color-orange-800": "oklch(47% .157 37.304)",
+    "--color-pink-100": "oklch(94.8% .028 342.258)",
+    "--color-pink-500": "oklch(65.6% .241 354.308)",
+    "--color-pink-600": "oklch(59.2% .249 .584)",
+    "--color-purple-400": "oklch(71.4% .203 305.504)",
+    "--color-purple-600": "oklch(55.8% .288 302.321)",
+    "--color-red-300": "oklch(80.8% .114 19.571)",
+    "--color-red-600": "oklch(57.7% .245 27.325)",
+    "--color-red-900": "oklch(39.6% .141 25.723)",
+    "--color-ring": "#d4d4d4",
+    "--color-sase-100": "#2dd4bf",
+    "--color-sase-200": "#0d948833",
+    "--color-security-100": "#ff5b66",
+    "--color-security-200": "#b5283133",
+    "--color-selection-bg": "#3d1f0f",
+    "--color-shadow-accent-light": "#ffa68333",
+    "--color-sidebar": "#171717",
+    "--color-sidebar-border": "#262626",
+    "--color-sidebar-primary-foreground": "#171717",
+    "--color-sky-400": "oklch(74.6% .16 232.661)",
+    "--color-sky-500": "oklch(68.5% .169 237.323)",
+    "--color-sky-600": "oklch(58.8% .158 241.966)",
+    "--color-storage-200": "#ee0ddb33",
+    "--color-teal-650": "oklch(54.9% .096 184.565)",
+    "--color-text-secondary": "#9a9390",
+    "--color-text-tertiary": "#9a9390",
+    "--color-violet-300": "oklch(81.1% .111 293.571)",
+    "--color-violet-500": "oklch(60.6% .25 292.717)",
+    "--color-violet-600": "oklch(54.1% .281 293.009)",
+    "--color-white": "#fff",
+    "--color-yellow-400": "oklch(85.2% .199 91.936)",
+    "--color-yellow-50": "oklch(98.7% .026 102.212)",
+    "--container-3xl": "48rem",
+    "--container-md": "28rem",
+    "--container-xs": "20rem",
+    "--default-transition-duration": ".1s",
+    "--default-transition-timing-function": "cubic-bezier(.4, 0, .2, 1)",
+    "--ease-in": "cubic-bezier(.4, 0, 1, 1)",
+    "--ease-out": "cubic-bezier(0, 0, .2, 1)",
+    "--fade-right-n": "0",
+    "--font-mono": "\"Apercu Mono Pro\", monospace",
+    "--font-weight-bold": "700",
+    "--icon-swap-blur": "2px",
+    "--icon-swap-dur": ".2s",
+    "--leading-relaxed": "1.625",
+    "--leading-snug": "1.375",
+    "--leading-tight": "1.25",
+    "--radius-2xl": "1rem",
+    "--radius-lg": ".5rem",
+    "--radius-md": ".375rem",
+    "--radius-sm": ".25rem",
+    "--spacing": ".25rem",
+    "--text-2xl--line-height": "calc(2 / 1.5)",
+    "--text-base--line-height": "1.5",
+    "--text-color-kumo-badge-neutral-subtle": "light-dark(oklch(26.9% 0 0),oklch(92.2% 0 0))",
+    "--text-color-kumo-badge-orange-subtle": "oklch(47% .157 37.304)",
+    "--text-color-kumo-brand": "#ff5e1f",
+    "--text-color-kumo-danger": "light-dark(oklch(50.5% .213 27.518),oklch(70.4% .191 22.216))",
+    "--text-color-kumo-inverse": "light-dark(oklch(97% 0 0),oklch(20.5% 0 0))",
+    "--text-color-kumo-success": "light-dark(oklch(43.2% .095 166.913),oklch(90.5% .093 164.15))",
+    "--text-color-kumo-warning": "light-dark(oklch(59.7% .144 57.5),oklch(75% .183 55.934))",
+    "--text-sm": "13px",
+    "--text-xl": "1.25rem",
+    "--text-xl--line-height": "calc(1.75 / 1.25)",
+    "--text-xs--line-height": "calc(1 / .75)",
+    "--tracking-wider": ".05em",
+    "--tw-animation-delay": "0s",
+    "--tw-animation-iteration-count": "1",
+    "--tw-border-spacing-y": "0px",
+    "--tw-border-style": "solid",
+    "--tw-content": "\"\"",
+    "--tw-enter-rotate": "0",
+    "--tw-enter-scale": "1",
+    "--tw-exit-opacity": "1",
+    "--tw-exit-translate-x": "0",
+    "--tw-exit-translate-y": "0",
+    "--tw-gradient-from": "rgba(0, 0, 0, 0)",
+    "--tw-gradient-to": "rgba(0, 0, 0, 0)",
+    "--tw-gradient-to-position": "100%",
+    "--tw-gradient-via": "rgba(0, 0, 0, 0)",
+    "--tw-gradient-via-position": "50%",
+    "--tw-inset-ring-shadow": "0 0 #0000",
+    "--tw-inset-shadow": "0 0 #0000",
+    "--tw-inset-shadow-alpha": "100%",
+    "--tw-mask-bottom-from-color": "black",
+    "--tw-mask-bottom-to-color": "transparent",
+    "--tw-mask-conic": "linear-gradient(#fff,#fff)",
+    "--tw-mask-left-from-color": "black",
+    "--tw-mask-left-to-position": "100%",
+    "--tw-mask-radial": "linear-gradient(#fff,#fff)",
+    "--tw-mask-right": "linear-gradient(#fff,#fff)",
+    "--tw-mask-right-from-color": "black",
+    "--tw-mask-right-to-color": "transparent",
+    "--tw-mask-top": "linear-gradient(#fff,#fff)",
+    "--tw-mask-top-to-color": "transparent",
+    "--tw-mask-top-to-position": "100%",
+    "--tw-outline-style": "solid",
+    "--tw-scale-y": "1",
+    "--tw-shadow-alpha": "100%",
+    "--tw-space-x-reverse": "0",
+    "--tw-translate-x": "0",
+    "--tw-translate-y": "0",
+    "--tw-translate-z": "0",
+    "--type-code-leading": "1.3",
+    "--type-code-tracking": "0",
+    "--type-h1-leading": ".99",
+    "--type-h1-size": "2.5rem",
+    "--type-h1-weight": "500",
+    "--type-h2-tracking": "-.025em",
+    "--type-h3-size-md": "3rem",
+    "--type-h4-tracking": "-.025em",
+    "--type-h4-weight": "500",
+    "--type-h5-leading": "1.2",
+    "--type-h5-size-md": "1.2rem",
+    "--type-h5-tracking": "-.025em",
+    "--type-h6-size": "1.125rem",
+    "--type-h6-weight": "500",
+    "--type-p-leading": "1.2",
+    "--type-p-size-md": "1rem",
+    "--type-small-size": ".875rem",
+    "--type-small-tracking": "-.01em"
+  },
+  "viewport": {
+    "dpr": 1,
+    "height": 844,
+    "visual": {
+      "height": 844,
+      "scale": 1,
+      "width": 390
+    },
+    "width": 390
+  },
+  "png": {
+    "width": 390,
+    "height": 844
+  },
+  "mode": "viewport",
+  "originalScreenshotFormat": "PNG",
+  "evidence": "Measured: public marketing page, not dashboard evidence",
+  "review": "Accepted: visible intended state, no prohibited data observed"
+}

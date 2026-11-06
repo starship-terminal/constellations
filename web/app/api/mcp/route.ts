@@ -13,7 +13,7 @@ const INSTRUCTIONS =
   "packages first, refero for breadth. Media url fields are site-relative; " +
   "prefix them with the server origin.";
 
-type Rpc = { jsonrpc?: string; id?: unknown; method?: string; params?: Record<string, unknown> };
+type Rpc = { jsonrpc?: string; id?: unknown; method?: unknown; params?: unknown };
 
 const result = (req: Rpc, result: unknown) =>
   req.id === undefined ? null : { jsonrpc: "2.0", id: req.id, result };
@@ -40,11 +40,31 @@ async function callTool(name: string, args: unknown) {
   }
 }
 
+const isObj = (v: unknown): v is Record<string, unknown> => typeof v === "object" && v !== null && !Array.isArray(v);
+
 async function handle(req: Rpc) {
-  const method = req.method ?? "";
+  // A malformed message (a non-string method, params that are not an object)
+  // gets a JSON-RPC error, and anything unexpected inside a handler is -32603,
+  // the same contract as server/mcp.py's handle().
+  try {
+    return await dispatch(req);
+  } catch (e) {
+    console.error("mcp:", e);
+    return error(req, -32603, "internal error");
+  }
+}
+
+async function dispatch(req: Rpc) {
+  const method = req.method;
+  // Without a method it is not a notification either, so it is answered even
+  // when it carries no id.
+  if (typeof method !== "string")
+    return { jsonrpc: "2.0", id: req.id ?? null, error: { code: -32600, message: "method must be a string" } };
+  const params = req.params ?? {};
+  if (!isObj(params)) return error(req, -32602, "params must be an object");
   if (method === "initialize")
     return result(req, {
-      protocolVersion: (req.params?.protocolVersion as string) ?? "2025-03-26",
+      protocolVersion: typeof params.protocolVersion === "string" ? params.protocolVersion : "2025-03-26",
       capabilities: { tools: { listChanged: false } },
       serverInfo: SERVER_INFO,
       instructions: INSTRUCTIONS,
@@ -55,9 +75,11 @@ async function handle(req: Rpc) {
       tools: SPECS.map((s) => ({ name: s.name, description: s.description, inputSchema: s.parameters })),
     });
   if (method === "tools/call") {
-    const name = String(req.params?.name ?? "");
+    const name = typeof params.name === "string" ? params.name : "";
     if (!SPECS.some((s) => s.name === name)) return error(req, -32602, `unknown tool '${name}'`);
-    return result(req, await callTool(name, req.params?.arguments));
+    const args = params.arguments;
+    if (args != null && !isObj(args)) return error(req, -32602, "arguments must be an object");
+    return result(req, await callTool(name, args));
   }
   if (method.startsWith("notifications/")) return null;
   return error(req, -32601, `no method '${method}'`);
