@@ -187,4 +187,4 @@ make check
 make test
 ```
 
-The active live readers are tools/capture/read-app.js, read-public.js, read-breadth.js and read-breadth2.js, evaluated with the browser's supported read-only API. Other copied kit capture routes are retained as the PR 134 starting kit, not claimed as executed. Re-capture requires the owner to sign in. No events, projects, messages, invitations, uploads or trials were created. The trace tour was dismissed with Maybe later. Appearance was restored to Default to system.
+The active live readers are tools/capture/read-app.js, read-public.js, read-breadth.js and read-breadth2.js, evaluated with the browser's supported read-only API. The other capture routes are copies of the current tools/kit/capture, refreshed on 2026-11-06 so their private-data guards match the kit; they are not claimed as executed. Re-capture requires the owner to sign in. No events, projects, messages, invitations, uploads or trials were created. The trace tour was dismissed with Maybe later. Appearance was restored to Default to system.
