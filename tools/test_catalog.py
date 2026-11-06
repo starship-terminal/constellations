@@ -1163,6 +1163,36 @@ class EnvTest(unittest.TestCase):
                  mock.patch.object(catalog.subprocess, "run", side_effect=lambda *a, **k: seen.append(k.get("env")) or done):
                 catalog.lint_design_md([catalog.ROOT / "systems" / "claude" / "DESIGN.md"])
             self.assertTrue(seen and all(e is not None and "ANTHROPIC_API_KEY" not in e for e in seen))
+            seen.clear()
+            with mock.patch.object(catalog, "_thumb_backend", return_value="sips"), \
+                 mock.patch.object(catalog.subprocess, "run", side_effect=lambda *a, **k: seen.append(k.get("env")) or done):
+                import tempfile
+                with tempfile.TemporaryDirectory() as d:
+                    src = Path(d) / "a.png"
+                    src.write_bytes(b"x")
+                    catalog._make_thumb(src, Path(d) / "a.jpg")
+            self.assertEqual(len(seen), 1)
+            self.assertIsNotNone(seen[0])
+            self.assertNotIn("R2_SECRET_ACCESS_KEY", seen[0])
+            self.assertNotIn("ANTHROPIC_API_KEY", seen[0])
+
+    def test_tesseract_gets_a_minimal_env_with_one_thread(self):
+        import os
+        import subprocess
+        from unittest import mock
+        try:
+            from PIL import Image
+            import redact_images
+        except ImportError:
+            self.skipTest("Pillow and numpy are not installed")
+        seen = []
+        done = subprocess.CompletedProcess([], 0, "level\tpage_num\n", "")
+        with mock.patch.dict(os.environ, {"ANTHROPIC_API_KEY": "sk-test", "R2_SECRET_ACCESS_KEY": "s"}), \
+             mock.patch.object(redact_images.subprocess, "run", side_effect=lambda *a, **k: seen.append(k.get("env")) or done):
+            redact_images._tesseract_words(Image.new("RGB", (4, 4)))
+        self.assertEqual(seen[0]["OMP_THREAD_LIMIT"], "1")
+        self.assertNotIn("ANTHROPIC_API_KEY", seen[0])
+        self.assertNotIn("R2_SECRET_ACCESS_KEY", seen[0])
 
 
 if __name__ == "__main__":
