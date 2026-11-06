@@ -1,21 +1,17 @@
-import { afterEach, expect, test } from "vitest";
+import { expect, test } from "vitest";
 import { z } from "zod";
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import os from "node:os";
 import { researchTools, modelHistory } from "@/server/research/agent";
 import {
   packageDocument,
   packageTokens,
   handoffPrompt,
 } from "@/server/research/evidence";
-const originalRepo = process.env.DESIGN_SYSTEMS_REPO;
-const dirs: string[] = [];
+import { repoFixture } from "./helpers";
 const execution = { toolCallId: "test", messages: [], context: {} };
 async function fixture() {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "research-evidence-"));
-  dirs.push(root);
-  process.env.DESIGN_SYSTEMS_REPO = root;
+  const root = await repoFixture("research-evidence-");
   await fs.mkdir(path.join(root, "systems/test/screenshots"), {
     recursive: true,
   });
@@ -75,13 +71,6 @@ async function fixture() {
   );
   return root;
 }
-afterEach(async () => {
-  if (originalRepo === undefined) delete process.env.DESIGN_SYSTEMS_REPO;
-  else process.env.DESIGN_SYSTEMS_REPO = originalRepo;
-  await Promise.all(
-    dirs.splice(0).map((dir) => fs.rm(dir, { recursive: true, force: true })),
-  );
-});
 test("research reads complete package documents in bounded pages and rejects hidden/raw/traversal files", async () => {
   const root = await fixture();
   const first = await packageDocument(
@@ -251,47 +240,42 @@ test("exclusions apply to every new evidence tool and remove prior evidence from
   expect(JSON.stringify(history)).not.toContain("Private evidence");
 });
 
-test("Telegram text tokens named value retain every sibling and their recorded values", async () => {
+test("a token named value keeps every sibling and its recorded value", async () => {
   const root = await fixture();
-  // Exercise the real package shape that triggered the review, not a synthetic
-  // value field that cannot show the lost sibling evidence.
-  const source = await fs.readFile(
-    new URL("../../systems/telegram/tokens.json", import.meta.url),
-    "utf8",
+  // The shape that triggered the review (Telegram's light.color.text has a
+  // token literally named "value"), copied with invented values so a
+  // recapture of that package cannot change this test.
+  await fs.writeFile(
+    path.join(root, "systems/test/tokens.json"),
+    JSON.stringify({
+      light: {
+        color: {
+          text: {
+            value: { $value: "#111111", $type: "color" },
+            primary: { $value: "#222222", $type: "color" },
+            secondary: {
+              $value: "#333333",
+              $type: "color",
+              $extensions: { evidence: "Sampled" },
+            },
+          },
+        },
+      },
+    }),
   );
-  const captured = JSON.parse(source);
-  await fs.writeFile(path.join(root, "systems/test/tokens.json"), source);
   const text = await packageTokens(
     "systems:test",
     "light.color.text",
     0,
     new Set(),
   );
-  const expected = Object.entries(captured.light.color.text).map(
-    ([name, token]) => ({
-      name: `light.color.text.${name}`,
-      value: (token as { $value: unknown }).$value,
-    }),
-  );
   expect(
     text.tokens?.map((token) => ({ name: token.name, value: token.value })),
-  ).toEqual(expected);
-  expect(text.tokens).toEqual(
-    expect.arrayContaining([
-      expect.objectContaining({
-        name: "light.color.text.value",
-        value: "#8E8D91",
-      }),
-      expect.objectContaining({
-        name: "light.color.text.primary",
-        value: "#000000",
-      }),
-      expect.objectContaining({
-        name: "light.color.text.secondary",
-        value: "#8D8D90",
-      }),
-    ]),
-  );
+  ).toEqual([
+    { name: "light.color.text.value", value: "#111111" },
+    { name: "light.color.text.primary", value: "#222222" },
+    { name: "light.color.text.secondary", value: "#333333" },
+  ]);
   expect(text.tokens?.some((token) => token.name === "light.color.text")).toBe(
     false,
   );

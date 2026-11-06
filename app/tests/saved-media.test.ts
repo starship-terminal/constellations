@@ -10,19 +10,25 @@ vi.mock("@/server/db", () => ({
     removeSavedMedia: mocks.remove,
   }),
 }));
-vi.mock("@/server/sources", () => ({ getReference: mocks.get }));
+vi.mock("@/server/sources", () => ({
+  getReference: mocks.get,
+  // Routes read a card or a media list instead of the full detail.
+  getReferenceSummary: async (id: string) => {
+    const detail = await mocks.get(id);
+    if (!detail) return null;
+    const { media, measured, ...summary } = detail;
+    return summary;
+  },
+  getReferenceMedia: async (id: string) => {
+    const detail = await mocks.get(id);
+    return detail ? { reference: detail, media: detail.media } : null;
+  },
+}));
 import { POST as importMedia } from "@/app/api/saved-media/import/route";
 import { POST as saveMedia } from "@/app/api/saved-media/route";
-function request(path: string, body: unknown) {
-  return new Request(`http://localhost:8845${path}`, {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      origin: "http://localhost:8845",
-    },
-    body: JSON.stringify(body),
-  });
-}
+import { jsonRequest } from "./helpers";
+const request = (path: string, body: unknown) =>
+  jsonRequest(path, "POST", body);
 beforeEach(() => {
   vi.clearAllMocks();
   mocks.get.mockResolvedValue({

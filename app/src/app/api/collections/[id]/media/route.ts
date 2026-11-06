@@ -1,5 +1,5 @@
 import { getStore } from "@/server/db";
-import { getReference } from "@/server/sources";
+import { getReferenceMedia } from "@/server/sources";
 import {
   hydrateCollectionMedia,
   mediaSelection,
@@ -31,7 +31,7 @@ export function POST(request: Request, context: Context) {
     const store = await getStore();
     if (!(await store.getCollection(id)))
       throw new HttpError(404, "Collection not found.");
-    const reference = await getReference(value.referenceId);
+    const reference = await getReferenceMedia(value.referenceId);
     const capture = reference?.media.find((item) => item.id === value.mediaId);
     if (!capture) throw new HttpError(404, "Capture not found.");
     if (capture.type !== "image")

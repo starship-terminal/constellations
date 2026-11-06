@@ -525,5 +525,92 @@ class InstallScriptHostTest(unittest.TestCase):
         self.assertIn('BASE="https://box.tail1.ts.net:8108"', text)
 
 
+class ProviderJsonTest(unittest.TestCase):
+    """A provider that answers 200 with something other than a JSON object
+    fails as a ProviderError, never an uncaught decode error."""
+
+    def test_non_json_200_is_provider_error(self):
+        import http.server
+        import threading
+
+        class Upstream(http.server.BaseHTTPRequestHandler):
+            def log_message(self, *a):
+                pass
+
+            def do_GET(self):
+                body = b"<html>login</html>" if self.path.startswith("/html") else b"[1, 2]"
+                self.send_response(200)
+                self.send_header("content-length", str(len(body)))
+                self.end_headers()
+                self.wfile.write(body)
+
+        httpd = http.server.ThreadingHTTPServer(("127.0.0.1", 0), Upstream)
+        threading.Thread(target=httpd.serve_forever, daemon=True).start()
+        base = f"http://127.0.0.1:{httpd.server_address[1]}"
+        try:
+            for prefix in ("/html", "/list"):
+                out = chat.list_models({"api": "openai", "api_key": "k", "base_url": base + prefix})
+                self.assertFalse(out["ok"], prefix)
+                self.assertIn("invalid JSON", out["error"])
+        finally:
+            httpd.shutdown()
+            httpd.server_close()
+
+
+class ApiReloadTest(unittest.TestCase):
+    """api.py re-runs the agent modules per request: sys.path must not grow,
+    and catalog is reloaded in place once catalog.py changes."""
+    api = _load("agent_api_reload", "api.py")
+
+    def _get(self, path):
+        import io
+
+        class H:
+            headers = {"host": "127.0.0.1:1"}
+            wfile = io.BytesIO()
+            status = None
+
+            def send_response(self, code):
+                self.status = code
+
+            def send_header(self, *a):
+                pass
+
+            def end_headers(self):
+                pass
+        h = H()
+        h.path = path
+        self.assertTrue(self.api._dispatch("handle_get", h))
+        return h.status
+
+    def test_requests_do_not_grow_sys_path(self):
+        import sys
+        tools = str(SERVER.parent / "tools")
+        self.assertEqual(self._get("/api/status"), 200)
+        before = sys.path.count(tools)
+        for _ in range(3):
+            self._get("/api/status")
+        self.assertLessEqual(sys.path.count(tools), max(before, 1))
+
+    def test_catalog_reloads_in_place_after_change(self):
+        import importlib
+        import sys
+        from unittest import mock
+        self._get("/api/status")
+        mod = sys.modules["catalog"]
+        path = SERVER.parent / "tools" / "catalog.py"
+        st = path.stat()
+        try:
+            with mock.patch.object(importlib, "reload", wraps=importlib.reload) as reload:
+                self._get("/api/status")
+                self.assertEqual(reload.call_count, 0)  # unchanged file: no reload
+                os.utime(path, (st.st_atime, st.st_mtime + 5))
+                self._get("/api/status")
+                self.assertEqual(reload.call_count, 1)
+            self.assertIs(sys.modules["catalog"], mod)
+        finally:
+            os.utime(path, (st.st_atime, st.st_mtime))
+
+
 if __name__ == "__main__":
     unittest.main()

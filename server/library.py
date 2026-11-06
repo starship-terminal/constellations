@@ -14,6 +14,7 @@ from __future__ import annotations
 import base64
 import importlib.util
 import json
+import os
 import posixpath
 import sqlite3
 import sys
@@ -30,16 +31,30 @@ IMAGE_TYPES = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
                ".webp": "image/webp", ".gif": "image/gif"}
 TEXT_TYPES = {".md", ".txt", ".json", ".css", ".html", ".svg", ".csv"}
 MEDIA_DIRS = ("screenshots", "components", "icons", "boards")
+# Package paths the tools never read, matching the research app's package
+# document rules (app/src/server/sources/files.ts) and the package entries in
+# .gitignore: raw captures, fonts, dependency and capture-scratch folders, and
+# any dot segment.
+PRIVATE_DIRS = {"raw", "fonts", "node_modules", "__pycache__"}
+PRIVATE_PREFIXES = ("tools/capture/dumps/", "tools/capture/out/", "tools/capture/winid")
 
 # A tool result's JSON text is capped before it goes back to the model: a whole
 # token group or a README can run past what a turn should carry.
+# Sizes are UTF-8 bytes of compact JSON, measured the same way in the web twin.
 RESULT_CAP = 32_000
 DOC_CAP = 24_000
+TOKEN_PAGE = RESULT_CAP - 1_000  # bytes of name/value pairs one get_tokens page carries
 IMAGE_CAP = 3_500_000  # bytes on disk; bigger shots are refused unless Pillow shrinks them
 
 
 class ToolError(Exception):
     """A tool's readable failure, returned to the model as its result text."""
+
+
+def _json_size(obj) -> int:
+    """UTF-8 bytes of obj as compact JSON: Buffer.byteLength(JSON.stringify(obj))
+    in the web twin."""
+    return len(json.dumps(obj, ensure_ascii=False, separators=(",", ":")).encode("utf-8", "replace"))
 
 
 def _catalog() -> dict:
@@ -65,11 +80,33 @@ def _repo_file(rel: str) -> Path:
     return target
 
 
+def _private(rel: str) -> bool:
+    """True for a package-relative path the tools must not read."""
+    if rel in ("", "."):
+        return False
+    return (any(p.startswith(".") or p in PRIVATE_DIRS for p in rel.split("/"))
+            or any(rel == pre.rstrip("/") or rel.startswith(pre) for pre in PRIVATE_PREFIXES))
+
+
+def _walk_files(d: Path) -> list[Path]:
+    """Every regular file under d, symlinks skipped (neither followed into a
+    directory nor listed as a file), sorted by path like the web twin."""
+    out = []
+    for cur, dirs, files in os.walk(d, followlinks=False):
+        for name in files:
+            p = Path(cur) / name
+            if not p.is_symlink() and p.is_file():
+                out.append(p)
+    return sorted(out, key=lambda p: p.as_posix())
+
+
 def _bounded(entry: dict, rel: str) -> Path:
     """Resolve a package-relative path, refusing anything that climbs out.
     Accepts the repo-relative and site-absolute forms other tools emit, and
     the /media/ URL list_media returns (percent-decoded), so the model can pass
-    a path it saw verbatim."""
+    a path it saw verbatim. Containment is checked on the resolved path, so a
+    symlink inside the package cannot point out of it, and private folders
+    (raw/, fonts/, dot paths) are refused under either name."""
     base = _pkg_dir(entry)
     slug = entry["slug"]
     raw = str(rel)
@@ -83,6 +120,8 @@ def _bounded(entry: dict, rel: str) -> Path:
     target = (base / clean).resolve()
     if target != base and base not in target.parents:
         raise ToolError(f"path leaves the package: {rel}")
+    if _private(posixpath.normpath(clean)) or _private(target.relative_to(base).as_posix()):
+        raise ToolError(f"not readable through the tools: {rel}")
     return target
 
 
@@ -212,9 +251,11 @@ def get_style(slug: str, store: str | None = None) -> dict:
                       "styleGuide": e.get("styleGuide"), "dir": f"systems/{e['slug']}"}}
 
 
-def get_tokens(slug: str, group: str | None = None) -> dict:
+def get_tokens(slug: str, group: str | None = None, offset: int = 0, limit: int | None = None) -> dict:
     """Resolved token values. Without a group it lists the groups and their sizes;
-    with one it returns that group's flat name -> CSS value map."""
+    with one it returns that group's flat name -> CSS value map. A group too big
+    for one result comes back a page at a time: `offset` and `limit` count
+    tokens, and a truncated page names the `nextOffset` to ask for."""
     e = _entry(slug)
     tokens = json.loads(_repo_file(e["tokens"]).read_text())
     exported = catalog.export_tokens(tokens, e.get("themes", []))
@@ -225,7 +266,30 @@ def get_tokens(slug: str, group: str | None = None) -> dict:
                 "note": "call again with group=<name> for its values"}
     if group not in groups:
         raise ToolError(f"no token group '{group}'; groups: {', '.join(groups)}")
-    return {"slug": slug, "group": group, "tokens": groups[group]}
+    offset = int(offset or 0)
+    limit = None if limit is None else int(limit)
+    if offset < 0:
+        raise ToolError("offset must be 0 or more")
+    if limit is not None and limit < 1:
+        raise ToolError("limit must be 1 or more")
+    # Sorted by name so a page holds the same tokens in both twins (JSON.parse
+    # reorders integer-like keys, so the file's order cannot be shared).
+    items = sorted(groups[group].items())
+    page, used = {}, 2
+    for name, value in items[offset:]:
+        if limit is not None and len(page) >= limit:
+            break
+        size = _json_size(name) + _json_size(value) + 2  # the colon and comma
+        if page and used + size > TOKEN_PAGE:
+            break
+        page[name] = value
+        used += size
+    end = offset + len(page)
+    out = {"slug": slug, "group": group, "tokens": page, "count": len(items), "offset": offset,
+           "truncated": end < len(items)}
+    if out["truncated"]:
+        out["nextOffset"] = end
+    return out
 
 
 def read_doc(slug: str, path: str | None = None, offset: int = 0) -> dict:
@@ -266,10 +330,11 @@ def list_media(slug: str, kind: str | None = None) -> dict:
     base = _pkg_dir(e)
     for k in kinds:
         d = base / k
-        if not d.is_dir():
+        # A symlinked media folder is skipped like any other symlink.
+        if d.is_symlink() or not d.is_dir():
             continue
-        for p in sorted(d.rglob("*")):
-            if p.is_file() and p.suffix.lower() in IMAGE_TYPES:
+        for p in _walk_files(d):
+            if p.suffix.lower() in IMAGE_TYPES and not _private(p.relative_to(base).as_posix()):
                 items.append({"kind": k, "name": p.stem, "url": _site_url(p)})
     return {"slug": slug, "count": len(items), "items": items[:60],
             "capped": len(items) > 60}
@@ -358,10 +423,16 @@ SPECS = [
          "required": ["slug"]}},
     {"name": "get_tokens", "fn": get_tokens,
      "description": "Resolved token values for a systems package. Call without a "
-                    "group to list groups, then with one for its flat map.",
+                    "group to list groups, then with one for its flat map. A large "
+                    "group comes back in pages: when truncated is true, call again "
+                    "with offset=nextOffset.",
      "parameters": {"type": "object", "additionalProperties": False, "properties": {
          "slug": {"type": "string"},
-         "group": {"type": "string", "description": "e.g. light, dark, base"}},
+         "group": {"type": "string", "description": "e.g. light, dark, base"},
+         "offset": {"type": "integer", "minimum": 0, "default": 0,
+                    "description": "Token index to start from (a previous page's nextOffset)"},
+         "limit": {"type": "integer", "minimum": 1,
+                   "description": "Most tokens to return; a page also stops before the result cap"}},
          "required": ["slug"]}},
     {"name": "read_doc", "fn": read_doc,
      "description": "Read a text file inside a package: its README (default), "
@@ -420,7 +491,9 @@ def call(name: str, args: dict) -> dict:
         raise ToolError(f"{name} failed: {e}")
     if "_image" in result:
         return result
-    text = json.dumps(result, ensure_ascii=False)
-    if len(text) > RESULT_CAP:
-        result = {"truncated": True, "bytes": len(text), "partial": text[:RESULT_CAP]}
+    size = _json_size(result)
+    if size > RESULT_CAP:
+        text = json.dumps(result, ensure_ascii=False, separators=(",", ":"))
+        partial = text.encode("utf-8", "replace")[:RESULT_CAP].decode("utf-8", "ignore")
+        result = {"truncated": True, "bytes": size, "partial": partial}
     return result

@@ -1,14 +1,13 @@
-import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it } from "vitest";
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import os from "node:os";
 import { DatabaseSync } from "node:sqlite";
 import { createRequire } from "node:module";
 import { readExport } from "../src/server/sources";
 import { repoRoot } from "../src/server/sources/files";
 import { GET } from "../src/app/api/library/[source]/[slug]/export/route";
+import { repoFixture } from "./helpers";
 
-const originalRepo = process.env.DESIGN_SYSTEMS_REPO;
 const generatorPath = path.join(repoRoot(), "tools/refero/generators.js");
 let fixture: string;
 const extraction = {
@@ -77,7 +76,7 @@ const storedMarkdown = createRequire(import.meta.url)(
 ).generateDesignMd(extraction, "extended") as string;
 
 beforeEach(async () => {
-  fixture = await fs.mkdtemp(path.join(os.tmpdir(), "style-export-"));
+  fixture = await repoFixture("style-export-");
   await fs.mkdir(path.join(fixture, "refero/sample"), { recursive: true });
   await fs.mkdir(path.join(fixture, "tools/refero"), { recursive: true });
   await fs.copyFile(
@@ -108,12 +107,6 @@ beforeEach(async () => {
     JSON.stringify(rawExtraction),
   );
   db.close();
-  process.env.DESIGN_SYSTEMS_REPO = fixture;
-});
-afterEach(async () => {
-  if (originalRepo === undefined) delete process.env.DESIGN_SYSTEMS_REPO;
-  else process.env.DESIGN_SYSTEMS_REPO = originalRepo;
-  await fs.rm(fixture, { recursive: true, force: true });
 });
 const request = (query: string) =>
   GET(

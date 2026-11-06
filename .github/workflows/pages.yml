@@ -17,9 +17,12 @@ permissions:
   contents: read
   pages: write
   id-token: write
+# Deploys from main queue one at a time and are never cancelled. A pull request's
+# build gets its own group, so PR builds no longer cancel each other's queued
+# runs (only one pending run per group survives) and a newer push supersedes it.
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: ${{ github.event_name == 'pull_request' && format('pages-pr-{0}', github.event.pull_request.number) || 'pages' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -47,10 +50,11 @@ jobs:
       - name: Drop the gallery and check nothing readable leaks outside the HTML
         run: |
           rm -rf site/gallery
-          if [ -f site/search.json ]; then
-            python3 -c "import json,sys; items=json.load(open('site/search.json'))['items']; sys.exit(f'search index has {len(items)} entries; every page must be excluded') if items else print('search index empty')"
+          # site.py writes no search index or sitemap (both would list page text
+          # or URLs outside the encryption); fail if one ever appears.
+          if [ -e site/search.json ] || [ -e site/sitemap.xml ] || [ -e site/sitemap.xml.gz ]; then
+            echo "::error::site/ has a search index or sitemap; tools/site.py must not emit one"; exit 1
           fi
-          rm -f site/sitemap.xml site/sitemap.xml.gz
           if grep -rl --include='*.png' --include='*.ico' '^version https://git-lfs' site/assets; then
             echo "::error::Git LFS pointers in site/assets (listed above)"; exit 1
           fi

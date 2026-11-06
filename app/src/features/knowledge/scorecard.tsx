@@ -231,7 +231,9 @@ export function PackageScorecard({ slug }: { slug: string }) {
           {audit.date}.
         </p>
         <div className={styles.links}>
-          <Link href={`/styles/systems/${slug}`}>Open reference</Link>
+          <Link href={`/library/${encodeURIComponent(slug)}`}>
+            Open reference
+          </Link>
           <a href={system.url} target="_blank" rel="noreferrer">
             Product website
           </a>

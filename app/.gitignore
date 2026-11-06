@@ -3,3 +3,5 @@
 .env*
 !.env.example
 coverage/
+# Next writes this on every dev/build/typegen run, with a dev or build path.
+next-env.d.ts

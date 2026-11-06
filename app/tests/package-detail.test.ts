@@ -1,6 +1,5 @@
-import { afterEach, describe, expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
 import { promises as fs } from "node:fs";
-import os from "node:os";
 import path from "node:path";
 import { getReference } from "../src/server/sources";
 import {
@@ -12,23 +11,13 @@ import {
   filterPackageMedia,
   mediaDetailHref,
   packageDocumentLink,
+  researchDocumentHref,
+  safeDecode,
 } from "../src/features/package-detail-data";
 import { GET as guideGet } from "../src/app/api/packages/[slug]/guide/[...path]/route";
-const original = process.env.DESIGN_SYSTEMS_REPO;
-const temporary: string[] = [];
-afterEach(async () => {
-  if (original === undefined) delete process.env.DESIGN_SYSTEMS_REPO;
-  else process.env.DESIGN_SYSTEMS_REPO = original;
-  await Promise.all(
-    temporary
-      .splice(0)
-      .map((dir) => fs.rm(dir, { recursive: true, force: true })),
-  );
-});
+import { repoFixture } from "./helpers";
 async function fixture() {
-  const dir = await fs.mkdtemp(path.join(os.tmpdir(), "package-parity-"));
-  temporary.push(dir);
-  process.env.DESIGN_SYSTEMS_REPO = dir;
+  const dir = await repoFixture("package-parity-");
   await fs.mkdir(path.join(dir, "systems/demo/components/crops"), {
     recursive: true,
   });
@@ -220,6 +209,21 @@ describe("package navigation", () => {
       "/library/demo?tab=screenshots&media=shot-79",
     );
   });
+  it("links research document tools to the package file reader, not the JSON API", () => {
+    expect(
+      researchDocumentHref(
+        "systems:linear",
+        "components.md",
+        "/api/packages/linear/files?path=components.md",
+      ),
+    ).toBe("/library/linear?tab=files&file=components.md");
+    expect(researchDocumentHref("refero:x", "a.md", "/fallback")).toBe(
+      "/fallback",
+    );
+    expect(researchDocumentHref(undefined, "a.md", "/fallback")).toBe(
+      "/fallback",
+    );
+  });
   it("resolves package markdown files and images, keeping unsafe URLs and traversal out", () => {
     expect(packageDocumentLink("demo", "README.md", "patterns.md#menus")).toBe(
       "/library/demo?tab=files&file=patterns.md#menus",
@@ -246,6 +250,16 @@ describe("package navigation", () => {
         true,
       ),
     ).toBeUndefined();
+  });
+  it("keeps a malformed percent escape in a package link instead of throwing", () => {
+    expect(packageDocumentLink("demo", "README.md", "50%off.md")).toBe(
+      "/library/demo?tab=files&file=50%25off.md",
+    );
+    expect(packageDocumentLink("demo", "README.md", "50%off.png", true)).toBe(
+      "/media/systems/demo/50%25off.png",
+    );
+    expect(safeDecode("a%20b")).toBe("a b");
+    expect(safeDecode("50%off")).toBe("50%off");
   });
 });
 

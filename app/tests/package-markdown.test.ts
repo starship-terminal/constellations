@@ -31,4 +31,19 @@ describe("package Markdown heading anchors", () => {
     ])
       expect(html).toContain(`<h${level} id="${id}">`);
   });
+  it("builds anchors from the heading text when a heading holds inline markup", () => {
+    const html = renderToStaticMarkup(
+      createElement(PackageMarkdown, {
+        slug: "demo",
+        path: "components.md",
+        text: [
+          "## Using `Button` states",
+          "### The **primary_action** row",
+        ].join("\n\n"),
+      }),
+    );
+    expect(html).toContain('<h2 id="using-button-states">');
+    expect(html).toContain('<h3 id="the-primary_action-row">');
+    expect(html).not.toContain("object");
+  });
 });

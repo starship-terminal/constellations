@@ -18,6 +18,25 @@ export function filterPackageMedia(
 export function packageFileHref(slug: string, relative: string): string {
   return `/library/${encodeURIComponent(slug)}?tab=files&file=${encodeURIComponent(relative)}`;
 }
+/** The package file reader for a research tool's document, falling back to the URL the tool gave. */
+export function researchDocumentHref(
+  referenceId: string | undefined,
+  path: string,
+  fallback: string,
+): string {
+  const slug = referenceId?.startsWith("systems:")
+    ? referenceId.slice("systems:".length)
+    : "";
+  return slug && path ? packageFileHref(slug, path) : fallback;
+}
+/** decodeURIComponent that keeps a malformed escape ("50%off.md") as written instead of throwing. */
+export function safeDecode(value: string): string {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
 /** Resolve captured document links without letting package-relative traversal become an arbitrary read. */
 export function packageDocumentLink(
   slug: string,
@@ -33,7 +52,7 @@ export function packageDocumentLink(
     href,
     `https://package.invalid/systems/${slug}/${current}`,
   );
-  const parts = url.pathname.split("/").filter(Boolean).map(decodeURIComponent);
+  const parts = url.pathname.split("/").filter(Boolean).map(safeDecode);
   if (parts[0] === "systems" && parts[1] && parts.length > 2) {
     if (image) return `/media/${parts.map(encodeURIComponent).join("/")}`;
     return `${packageFileHref(parts[1], parts.slice(2).join("/"))}${url.hash}`;

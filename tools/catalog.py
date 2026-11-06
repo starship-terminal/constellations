@@ -432,7 +432,17 @@ def is_text_file(f: Path) -> bool:
         return b"\0" not in fh.read(8192)
 
 
-SIGNED_URL = re.compile(r"[?&](?:amp;)?(X-Amz-Signature|X-Amz-Security-Token|Key-Pair-Id|Signature)=")
+# The credential-carrying URL parameters, one list for scan, the kit's unsnap.py and (a checked
+# copy in) its snapshot.js. Built the way unsnap.py builds it.
+SIGNED_PARAMS = ROOT / "tools" / "kit" / "capture" / "signed-in" / "signed-params.json"
+
+
+def signed_url_pattern(spec: dict) -> re.Pattern:
+    names = [re.escape(p) + r"[A-Za-z0-9-]*" for p in spec["prefixes"]] + [re.escape(p) for p in spec["params"]]
+    return re.compile(r"(?:[?&#]|%3F|%26|%23)(?:amp;)?(" + "|".join(names) + r")(?:=|%3D)", re.I)
+
+
+SIGNED_URL = signed_url_pattern(json.loads(SIGNED_PARAMS.read_text()))
 
 
 def scan(folder: Path, redact: dict) -> list[str]:
@@ -1594,8 +1604,26 @@ def build_exports(systems: list[dict]) -> None:
 # Repository paths the media route answers from the checkout: the gallery's
 # screenshots and package files, and the files docs link to. They are never
 # part of the published site. server/library.py bounds package file reads
-# through repo_file the same way web/lib/repo.ts does.
-REPO_PATHS = ("/systems/", "/tools/", "/example/", "/catalog.json", "/README.md")
+# through repo_file the same way web/lib/repo.ts does. /example/ holds only
+# gitignored clones, so it is not served.
+REPO_PATHS = ("/systems/", "/tools/", "/catalog.json", "/README.md")
+
+
+def _ignored_or_private(target: Path) -> bool:
+    """Whether repo_file must refuse a resolved file: anything in a fonts/ folder (proprietary
+    fonts a style guide may use locally) or anything git ignores (capture dumps/, out/, local
+    fonts). Inside a git checkout a git failure counts as ignored, so the guard fails closed."""
+    root = ROOT.resolve()
+    if "fonts" in target.relative_to(root).parts:
+        return True
+    if not (ROOT / ".git").exists():
+        return False
+    try:
+        out = subprocess.run(["git", "-C", str(root), "check-ignore", "-q", "--", str(target)],
+                             capture_output=True, timeout=30)
+    except (OSError, subprocess.SubprocessError):
+        return True
+    return out.returncode != 1          # 0: ignored; 1: not ignored; anything else: git failed
 
 
 def repo_file(url_path: str) -> Path | None:
@@ -1603,7 +1631,8 @@ def repo_file(url_path: str) -> Path | None:
 
     The path is unquoted and normalised before the prefix check, so `..` segments
     (plain or percent-encoded) can never climb out of the allowed folders, and the
-    resolved file must still sit inside the checkout, so a symlink cannot either."""
+    resolved file must still sit inside the checkout, so a symlink cannot either. A
+    git-ignored file or anything in a fonts/ folder is refused (_ignored_or_private)."""
     clean = urllib.parse.unquote(url_path.split("?", 1)[0].split("#", 1)[0])
     norm = posixpath.normpath(clean)
     if not any(norm == p.rstrip("/") or norm.startswith(p) for p in REPO_PATHS):
@@ -1612,6 +1641,8 @@ def repo_file(url_path: str) -> Path | None:
     target = (root / norm.lstrip("/")).resolve()
     allowed = [(root / p.strip("/")).resolve() for p in REPO_PATHS]
     if not any(target == a or a in target.parents for a in allowed):
+        return None
+    if _ignored_or_private(target):
         return None
     return target
 

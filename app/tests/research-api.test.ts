@@ -1,12 +1,10 @@
-import { afterEach, beforeEach, expect, test, vi } from "vitest";
-import { mkdtemp, rm } from "node:fs/promises";
-import { tmpdir } from "node:os";
-import { join } from "node:path";
-import { createResearchStore, type ResearchStore } from "@/server/db";
+import { beforeEach, expect, test, vi } from "vitest";
+import type { ResearchStore } from "@/server/db";
 import type { Conversation } from "@/contracts/research";
 import { POST } from "@/app/api/research/route";
 import { POST as createConversationRequest } from "@/app/api/conversations/route";
 import { POST as saveCollectionItem } from "@/app/api/collections/[id]/items/route";
+import { jsonRequest, tempStore } from "./helpers";
 const state = vi.hoisted(() => ({
   store: null as ResearchStore | null,
   configured: false,
@@ -18,6 +16,8 @@ vi.mock("@/server/db", async (original) => ({
 }));
 vi.mock("@/server/sources", () => ({
   getReference: async (id: string) => (id === "systems:test" ? { id } : null),
+  getReferenceSummary: async (id: string) =>
+    id === "systems:test" ? { id } : null,
 }));
 vi.mock("@/server/research/settings", () => ({
   readSettings: async () => ({
@@ -32,10 +32,8 @@ vi.mock("@/server/research/settings", () => ({
 vi.mock("@/server/research/agent", () => ({
   streamResearch: (options: unknown) => state.stream(options),
 }));
-let directory = "";
 beforeEach(async () => {
-  directory = await mkdtemp(join(tmpdir(), "research-api-"));
-  state.store = await createResearchStore(directory);
+  state.store = (await tempStore("research-api-")).store;
   state.configured = false;
   state.stream.mockReset();
   state.stream.mockImplementation(
@@ -45,23 +43,12 @@ beforeEach(async () => {
     },
   );
 });
-afterEach(async () => {
-  state.store?.close();
-  await rm(directory, { recursive: true, force: true });
-});
 function request(
   id: string,
   messages: unknown[],
   extra: Record<string, unknown> = {},
 ) {
-  return new Request("http://localhost:8845/api/research", {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      origin: "http://localhost:8845",
-    },
-    body: JSON.stringify({ id, messages, ...extra }),
-  });
+  return jsonRequest("/api/research", "POST", { id, messages, ...extra });
 }
 const user = (id: string, text: string) => ({
   id,
@@ -195,17 +182,7 @@ test("collection bookmark API distinguishes an omitted note from an explicit emp
   );
   const send = (body: Record<string, unknown>) =>
     saveCollectionItem(
-      new Request(
-        `http://localhost:8845/api/collections/${collection.id}/items`,
-        {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-            origin: "http://localhost:8845",
-          },
-          body: JSON.stringify(body),
-        },
-      ),
+      jsonRequest(`/api/collections/${collection.id}/items`, "POST", body),
       { params: Promise.resolve({ id: collection.id }) },
     );
   expect((await send({ referenceId: "systems:test" })).status).toBe(200);
@@ -222,16 +199,9 @@ test("collection bookmark API distinguishes an omitted note from an explicit emp
 
 test("creating with an initial prompt persists it before navigation and accepts idempotent auto regeneration", async () => {
   const create = await createConversationRequest(
-    new Request("http://localhost:8845/api/conversations", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        origin: "http://localhost:8845",
-      },
-      body: JSON.stringify({
-        title: "Onboarding research",
-        initialText: "  Find thoughtful onboarding references  ",
-      }),
+    jsonRequest("/api/conversations", "POST", {
+      title: "Onboarding research",
+      initialText: "  Find thoughtful onboarding references  ",
     }),
   );
   expect(create.status).toBe(201);

@@ -16,25 +16,29 @@ vi.mock("@/server/db", () => ({
     mediaCollectionIds: mocks.memberships,
   }),
 }));
-vi.mock("@/server/sources", () => ({ getReference: mocks.reference }));
+vi.mock("@/server/sources", () => ({
+  getReference: mocks.reference,
+  // Routes read a card or a media list instead of the full detail.
+  getReferenceSummary: async (id: string) => {
+    const detail = await mocks.reference(id);
+    if (!detail) return null;
+    const { media, measured, ...summary } = detail;
+    return summary;
+  },
+  getReferenceMedia: async (id: string) => {
+    const detail = await mocks.reference(id);
+    return detail ? { reference: detail, media: detail.media } : null;
+  },
+}));
 import { GET, POST, DELETE } from "@/app/api/collections/[id]/media/route";
 import { GET as detail } from "@/app/api/collections/[id]/route";
 import { GET as list } from "@/app/api/collections/route";
 import { GET as exportBoard } from "@/app/api/collections/[id]/export/route";
+import { jsonRequest } from "./helpers";
 const mediaId = "systems/example/screenshots/details.png";
 const context = { params: Promise.resolve({ id: "board-a" }) };
 function request(method: string, body?: unknown, query = "") {
-  return new Request(
-    `http://localhost:8845/api/collections/board-a/media${query}`,
-    {
-      method,
-      headers: {
-        origin: "http://localhost:8845",
-        "content-type": "application/json",
-      },
-      ...(body === undefined ? {} : { body: JSON.stringify(body) }),
-    },
-  );
+  return jsonRequest(`/api/collections/board-a/media${query}`, method, body);
 }
 beforeEach(() => {
   vi.clearAllMocks();

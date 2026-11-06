@@ -18,7 +18,7 @@
   height: 65px;
   border-radius: var(--radius-sm);
   margin-bottom: 10px;
-  border: 1px solid #ffffff24;
+  border: 1px solid var(--strong-line);
   transition: transform var(--duration-fast);
 }
 .colorValue:hover .colorSwatch {

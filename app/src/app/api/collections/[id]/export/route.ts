@@ -1,5 +1,5 @@
 import { getStore } from "@/server/db";
-import { getReference } from "@/server/sources";
+import { getReferenceSummary } from "@/server/sources";
 import { endpoint, HttpError, identifier } from "@/server/research/http";
 import { hydrateCollectionMedia } from "@/server/collections/media";
 import { mediaDetailHref } from "@/features/package-detail-data";
@@ -15,8 +15,11 @@ export function GET(_: Request, context: Context) {
       row.collection.notes,
       "## References",
     ];
-    for (const item of row.items) {
-      const ref = await getReference(item.referenceId);
+    const refs = await Promise.all(
+      row.items.map((item) => getReferenceSummary(item.referenceId)),
+    );
+    for (const [index, item] of row.items.entries()) {
+      const ref = refs[index];
       chunks.push(
         `### ${ref?.name ?? item.referenceId}`,
         `Reference ID: ${item.referenceId}`,

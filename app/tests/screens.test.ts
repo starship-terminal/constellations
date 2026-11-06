@@ -1,40 +1,22 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { promises as fs } from "node:fs";
-import os from "node:os";
 import path from "node:path";
-import type { LibraryItem } from "../src/contracts/library";
 import type { ScreenItem } from "../src/contracts/screens";
 import { listScreens, queryScreens } from "../src/server/sources/screens";
 import { GET } from "../src/app/api/library/screens/route";
 import { categoryGroup } from "../src/contracts/categories";
 import { getStore } from "../src/server/db";
+import { libraryItem, repoFixture } from "./helpers";
 
-const originalRepo = process.env.DESIGN_SYSTEMS_REPO;
-const temp: string[] = [];
-afterEach(async () => {
-  vi.restoreAllMocks();
-  if (originalRepo === undefined) delete process.env.DESIGN_SYSTEMS_REPO;
-  else process.env.DESIGN_SYSTEMS_REPO = originalRepo;
-  await Promise.all(
-    temp.splice(0).map((dir) => fs.rm(dir, { recursive: true, force: true })),
-  );
-});
-const reference: LibraryItem = {
-  id: "systems:workspace",
-  source: "systems",
-  slug: "workspace",
+afterEach(() => vi.restoreAllMocks());
+const reference = libraryItem("workspace", {
   name: "Workspace",
   description: "Project management",
-  platform: "web",
   category: "productivity",
   tags: ["dense"],
   themes: ["light", "dark"],
-  image: null,
-  icon: null,
-  video: null,
-  evidence: "measured",
   captured: "2026-11-01",
-};
+});
 function screen(
   name: string,
   kind: "screenshot" | "crop" = "screenshot",
@@ -295,9 +277,7 @@ describe("capture search", () => {
 
 describe("capture source and API", () => {
   it("shares cached metadata reads, scans missing manifests, rejects escaping assets, and never reads package docs/tokens", async () => {
-    const dir = await fs.mkdtemp(path.join(os.tmpdir(), "screen-index-"));
-    temp.push(dir);
-    process.env.DESIGN_SYSTEMS_REPO = dir;
+    const dir = await repoFixture("screen-index-");
     const screenshots = path.join(dir, "systems/workspace/screenshots");
     await fs.mkdir(screenshots, { recursive: true });
     await fs.writeFile(

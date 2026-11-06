@@ -1,7 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import os from "node:os";
 import {
   getReference,
   getSourceStats,
@@ -22,24 +21,9 @@ import {
   notModifiedSince,
   rangeValidatorMatches,
 } from "../src/app/media/[...path]/route";
-const originalRepo = process.env.DESIGN_SYSTEMS_REPO;
-const originalMedia = process.env.DESIGN_SYSTEMS_MEDIA;
-const temp: string[] = [];
-afterEach(async () => {
-  vi.restoreAllMocks();
-  if (originalRepo === undefined) delete process.env.DESIGN_SYSTEMS_REPO;
-  else process.env.DESIGN_SYSTEMS_REPO = originalRepo;
-  if (originalMedia === undefined) delete process.env.DESIGN_SYSTEMS_MEDIA;
-  else process.env.DESIGN_SYSTEMS_MEDIA = originalMedia;
-  await Promise.all(
-    temp.splice(0).map((dir) => fs.rm(dir, { recursive: true, force: true })),
-  );
-});
-async function fixture() {
-  const dir = await fs.mkdtemp(path.join(os.tmpdir(), "design-sources-"));
-  temp.push(dir);
-  return dir;
-}
+import { tempDir } from "./helpers";
+afterEach(() => vi.restoreAllMocks());
+const fixture = () => tempDir("design-sources-");
 
 describe("source identifiers and file boundaries", () => {
   it("accepts known source IDs and rejects traversal or extra separators", () => {
@@ -74,7 +58,7 @@ describe("source identifiers and file boundaries", () => {
   });
   it("serves hydrated media only and never exposes text or LFS pointers", async () => {
     const dir = await fixture();
-    process.env.DESIGN_SYSTEMS_REPO = dir;
+    vi.stubEnv("DESIGN_SYSTEMS_REPO", dir);
     await fs.mkdir(path.join(dir, "systems/test"), { recursive: true });
     await fs.writeFile(path.join(dir, "systems/test/README.md"), "secret");
     await fs.writeFile(
@@ -147,7 +131,7 @@ describe("HTTP range parsing", () => {
 describe("real library normalization", () => {
   it("shares cold catalog reads between concurrent list and stats requests", async () => {
     const dir = await fixture();
-    process.env.DESIGN_SYSTEMS_REPO = dir;
+    vi.stubEnv("DESIGN_SYSTEMS_REPO", dir);
     await fs.writeFile(
       path.join(dir, "catalog.json"),
       JSON.stringify({ systems: [] }),
@@ -168,7 +152,7 @@ describe("real library normalization", () => {
   });
   it("clears a rejected shared load so later requests can retry", async () => {
     const dir = await fixture();
-    process.env.DESIGN_SYSTEMS_REPO = dir;
+    vi.stubEnv("DESIGN_SYSTEMS_REPO", dir);
     await fs.writeFile(
       path.join(dir, "catalog.json"),
       JSON.stringify({ systems: {} }),
@@ -185,7 +169,7 @@ describe("real library normalization", () => {
   it("discovers nested canonical screenshots in stable order without escaping the package", async () => {
     const dir = await fixture(),
       outside = await fixture();
-    process.env.DESIGN_SYSTEMS_REPO = dir;
+    vi.stubEnv("DESIGN_SYSTEMS_REPO", dir);
     const screenshots = path.join(dir, "systems/nested/screenshots");
     await fs.mkdir(path.join(screenshots, "light/deeper"), { recursive: true });
     await fs.mkdir(path.join(screenshots, "dark"), { recursive: true });
@@ -231,30 +215,62 @@ describe("real library normalization", () => {
     expect((await getReference("systems:nested"))?.media).toEqual([]);
   });
   it("retains sampled and derived evidence across source formats", async () => {
-    const [hevy, telegram, manus, duolingo, linear] = await Promise.all([
-      getReference("systems:hevy"),
-      getReference("systems:telegram"),
-      getReference("systems:manus"),
-      getReference("systems:duolingo"),
-      getReference("systems:linear"),
-    ]);
-    expect(
-      hevy?.colors.find((v) => v.name === "light.color.bg.page")?.evidence,
-    ).toBe("Sampled");
-    expect(
-      telegram?.colors.find((v) => v.name === "core.color.iconTile.blue")
-        ?.evidence,
-    ).toBe("Derived");
-    expect(
-      manus?.colors.find((v) => v.name === "core.palette.neutral.50")?.evidence,
-    ).toBe("Derived");
-    expect(
-      duolingo?.colors.find((v) => v.name === "light.ramp.neutral.100")
-        ?.evidence,
-    ).toBe("Derived");
-    expect(linear?.typography.some((v) => v.evidence === "Measured")).toBe(
-      true,
+    // One invented package holding each provenance shape the captured
+    // packages use, so a recapture cannot change what this test reads.
+    const dir = await fixture();
+    vi.stubEnv("DESIGN_SYSTEMS_REPO", dir);
+    await fs.mkdir(path.join(dir, "systems/formats"), { recursive: true });
+    await fs.writeFile(
+      path.join(dir, "catalog.json"),
+      JSON.stringify({
+        systems: [{ slug: "formats", name: "Formats", platform: "web" }],
+      }),
     );
+    const color = (extensions: object) => ({
+      $value: "#123456",
+      $type: "color",
+      $extensions: extensions,
+    });
+    await fs.writeFile(
+      path.join(dir, "systems/formats/tokens.json"),
+      JSON.stringify({
+        color: {
+          sourceObject: color({ source: { evidence: "Sampled" } }),
+          sourceString: color({ source: "Derived: nearest declared neutral" }),
+          screenshot: color({ source: "Estimated from screenshot pixels" }),
+          namespaced: color({
+            "com.design-systems.evidence": { status: "Observed" },
+          }),
+          unstated: color({ source: "Picked by hand" }),
+          alias: { $value: "{color.sourceObject}", $type: "color" },
+        },
+        typography: {
+          body: {
+            $value: "Inter",
+            $type: "fontFamily",
+            $extensions: { evidence: "Measured" },
+          },
+        },
+      }),
+    );
+    const detail = await getReference("systems:formats");
+    const evidence = (name: string) =>
+      detail?.colors.find((v) => v.name === name)?.evidence;
+    expect(evidence("color.sourceObject")).toBe("Sampled");
+    expect(evidence("color.sourceString")).toBe("Derived");
+    expect(evidence("color.screenshot")).toBe("Sampled");
+    expect(evidence("color.namespaced")).toBe("Observed");
+    expect(evidence("color.unstated")).toBeUndefined();
+    expect(detail?.colors.find((v) => v.name === "color.alias")).toMatchObject({
+      value: "#123456",
+      evidence: undefined,
+    });
+    expect(detail?.typography).toEqual([
+      expect.objectContaining({
+        name: "typography.body",
+        evidence: "Measured",
+      }),
+    ]);
   });
   it("counts the actual measured packages and Refero styles", async () => {
     const catalog = JSON.parse(
@@ -291,9 +307,6 @@ describe("real library normalization", () => {
     ).toEqual(items.slice(1, 2));
     const detail = await getReference("systems:linear");
     expect(detail?.colors.length).toBeGreaterThan(0);
-    expect(
-      detail?.typography.some((value) => value.evidence === "Measured"),
-    ).toBe(true);
     expect(await getReference("systems:not-a-real-package")).toBeNull();
     expect(await getReference("systems:../catalog")).toBeNull();
     const exported = await readExport("systems:linear", "tokens.json");
@@ -307,7 +320,7 @@ describe("real library normalization", () => {
   });
   it("uses canonical Refero artifacts when generated files are absent", async () => {
     const dir = await fixture();
-    process.env.DESIGN_SYSTEMS_REPO = dir;
+    vi.stubEnv("DESIGN_SYSTEMS_REPO", dir);
     await fs.mkdir(path.join(dir, "refero/real-style"), { recursive: true });
     await fs.writeFile(
       path.join(dir, "catalog.json"),
