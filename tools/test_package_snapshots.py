@@ -18,7 +18,7 @@ KIT = ROOT / "tools" / "kit" / "capture"
 PACKAGES = {
     "claude": "signed-in", "coursera": "signed-in", "manus": "signed-in", "chatgpt": "signed-in",
     "notebooklm": "signed-in", "duolingo": "signed-in", "linear": "signed-in", "brilliant": "signed-in",
-    "researchrabbit": "",
+    "researchrabbit": "", "sentry": "signed-in",
 }
 SIGNED = [
     "https://bucket.s3.amazonaws.com/a.png?X-Amz-Algorithm=AWS4&X-Amz-Signature=abc",

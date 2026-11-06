@@ -50,6 +50,10 @@
   --accent-soft: rgba(15, 35, 90, 0.07);
   --chip-bg: #ffffff;
   --field-bg: #f1f3f7;
+  /* Grade glyphs and badges are text: the dark values are 2.1-2.4:1 on white. */
+  --meets: #1f7a3d;
+  --partly: #8a5a00;
+  --missing: #b42342;
   --na: rgba(20, 28, 48, 0.4);
   --nc-bg: rgba(217, 54, 85, 0.07);
   --nc-line: rgba(217, 54, 85, 0.3);

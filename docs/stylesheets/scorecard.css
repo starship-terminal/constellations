@@ -14,13 +14,13 @@
   --sc-meets-ink: #4fd1a5;
   --sc-partly-ink: #f5bd60;
   --sc-missing-ink: #f0807e;
+  --sc-na: transparent;
+  --sc-cell: 1.2rem;
 }
 :root[data-theme="light"] {
   --sc-meets: #1d9e75;
   --sc-partly: #ef9f27;
   --sc-missing: #e24b4a;
-  --sc-na: transparent;
-  --sc-cell: 1.2rem;
   --sc-meets-bg: rgba(29, 158, 117, .1);
   --sc-partly-bg: rgba(239, 159, 39, .12);
   --sc-missing-bg: rgba(226, 75, 74, .1);
@@ -38,7 +38,7 @@
   padding-bottom: 0.25rem;
 }
 .sc-scroll:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--focus);
   outline-offset: 2px;
 }
 
