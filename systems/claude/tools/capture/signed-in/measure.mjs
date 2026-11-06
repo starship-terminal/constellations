@@ -37,7 +37,10 @@ if (!SNAPS) { console.error('SNAPS=<snapshot dir> is required'); process.exit(2)
 const OUT = path.join(RAW, 'components-computed.json');
 const args = process.argv.slice(2);
 const jobsArg = args.indexOf('--jobs');
-const CONC = jobsArg >= 0 ? +args[jobsArg + 1] : 4;
+const CONC = jobsArg >= 0 ? Number(args[jobsArg + 1]) : 4;
+// A missing or bad --jobs used to start no workers at all, and the run then saved every state it
+// had reset as gone.
+if (!Number.isInteger(CONC) || CONC < 1) { console.error('--jobs takes a whole number of 1 or more'); process.exit(2); }
 const ONLY = args.filter((a, i) => !a.startsWith('--') && (jobsArg < 0 || i !== jobsArg + 1));
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
@@ -474,6 +477,9 @@ async function measureSnap(browser, label, specs, out) {
     await ctx.close();
     return;
   }
+  // Only now that the copy is open are its earlier readings dropped, so a copy that fails to open
+  // keeps the states it had.
+  for (const [c, name] of RESET.get(label) || []) delete c.states[name];
   const rest = { x: meta.w - 2, y: Math.round(meta.h / 2) };
   await page.evaluate(() => window.__saveScroll());
   const resetPage = async () => {
@@ -638,8 +644,9 @@ out._meta = {
 out.components ??= {};
 fs.mkdirSync(CROPS, { recursive: true });
 
-// Build the per-snapshot job lists, resetting the states that will be re-measured.
+// Build the per-snapshot job lists, and the states each copy resets once it has opened.
 const bySnap = new Map();
+const RESET = new Map();
 for (const spec of SPECS) {
   const c = (out.components[spec.key] ??= { states: {} });
   Object.assign(c, { group: spec.group, title: spec.title, desc: spec.desc, page: spec.snap, selector: spec.find.toString() });
@@ -647,8 +654,8 @@ for (const spec of SPECS) {
   c.pages = [...new Set(jobs.map((j) => j.snap))];
   for (const job of jobs) {
     if (!labels.includes(job.snap)) continue;
-    delete c.states[job.state];
-    delete c.states[job.state === 'default' ? 'light' : `light-${job.state}`];
+    if (!RESET.has(job.snap)) RESET.set(job.snap, []);
+    RESET.get(job.snap).push([c, job.state], [c, job.state === 'default' ? 'light' : `light-${job.state}`]);
     if (!bySnap.has(job.snap)) bySnap.set(job.snap, []);
     bySnap.get(job.snap).push({ spec, job });
   }

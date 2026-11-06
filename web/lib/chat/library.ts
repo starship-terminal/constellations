@@ -53,6 +53,8 @@ const PRIVATE_PREFIXES = ["tools/capture/dumps/", "tools/capture/out/", "tools/c
 export const RESULT_CAP = 32_000;
 export const DOC_CAP = 24_000;
 export const TOKEN_PAGE = RESULT_CAP - 1_000; // bytes of name/value pairs one get_tokens page carries
+// How a handoff prompt names the library's checkout.
+const HOME_VAR = "$DESIGN_SYSTEMS_HOME";
 export const IMAGE_CAP = 3_500_000; // bytes on disk
 
 export class ToolError extends Error {
@@ -783,10 +785,14 @@ async function handoffPrompt(args: Obj): Promise<Obj> {
   const e = await entry(slug);
   const tokens = JSON.parse(await fs.readFile(await repoFileRequired(asStr(e.tokens)), "utf8"));
   const groups = isObj(tokens) ? Object.keys(tokens).filter((k) => !k.startsWith("$")).join(", ") : "";
-  const root = path.resolve(ROOT);
+  // Paths are repo-relative under $DESIGN_SYSTEMS_HOME, the variable the
+  // design-systems plugin and AGENTS.md use to find a checkout, so the
+  // prompt works on the agent's machine instead of naming the server's.
+  const root = HOME_VAR;
   const target = appDescription ? ` for ${appDescription}` : "";
   const text =
     `Match the ${asStr(e.name)} design style from my design-systems library${target}.\n` +
+    `${root} is that library's checkout on this machine (set it, or replace it with the path).\n` +
     `1. Read ${root}/${asStr(e.entry)} in full first. It says what was captured and what to distrust.\n` +
     `2. Take colour, type, spacing and radius values from ${root}/${asStr(e.tokens)}. Its top-level ` +
     `token groups are ${groups}; the README says which group holds colour roles and which holds ` +
