@@ -112,6 +112,8 @@ def core():
         else:
             runs.append([y])
     centres = [sum(r) / len(r) for r in runs if len(r) >= 2 and 700 < r[0] < 860]
+    if len(centres) < 2:
+        raise ValueError(f"rows.settings: {len(centres)} dividers between y 700 and 860, need 2 for the row pitch")
     pitch = (centres[1] - centres[0]) / 2
     c["radius"] = {
         "card": derived("12px", "dimension", f"Grouped cards in Settings, the banner and the 'Find people' card. Diagonal-inset readings: Settings card {rd('radius.card')['value']}, empty-state card {rd('radius.cardEmpty')['value']}, 'Find people' card {rd('radius.raisedCard')['value']}. Plus or minus 2 pt."),

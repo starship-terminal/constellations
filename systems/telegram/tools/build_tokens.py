@@ -102,6 +102,8 @@ def pitch(rid, theme="dark"):
     down a list. Dividers repeat at the row pitch; a text pixel of the same grey does not."""
     found = rd(rid, theme)["value"]
     gaps = [b - a for i, a in enumerate(found) for b in found[i + 1:] if 60 <= b - a <= 200]
+    if not gaps:
+        raise ValueError(f"{rid} ({theme}): no two positions 30 to 100 pt apart, so no row pitch")
     return max(sorted(set(gaps)), key=gaps.count) / 2
 
 
