@@ -39,12 +39,13 @@ class SettingsOriginTest(unittest.TestCase):
 
 
 class MouseTest(unittest.TestCase):
-    def run_with(self, listing):
+    def run_with(self, listing, code=0):
         calls = []
 
         def run(cmd, **kw):
             calls.append(cmd)
-            return subprocess.CompletedProcess(cmd, 0, stdout=listing if cmd[0].endswith("wins") else "", stderr="")
+            wins = cmd[0].endswith("wins")
+            return subprocess.CompletedProcess(cmd, code if wins else 0, stdout=listing if wins else "", stderr="")
         with mock.patch.object(drive, "ensure_front"), mock.patch.object(drive.subprocess, "run", run), \
                 mock.patch.object(drive.time, "sleep"):
             drive.mouse("click", 100, 100)
@@ -53,6 +54,11 @@ class MouseTest(unittest.TestCase):
     def test_refuses_while_settings_is_in_front(self):
         with self.assertRaises(SystemExit):
             self.run_with(LISTING)
+
+    def test_refuses_without_a_readable_listing(self):
+        for listing, code in (("", 0), ("812 layer 0 0.0 33.0 1728.0 1084.0 | \n", 0), ("812 layer 0 0.0 33.0 1728.0 1084.0 | main.py\n", 1)):
+            with self.subTest(listing=listing, code=code), self.assertRaises(SystemExit):
+                self.run_with(listing, code)
 
     def test_clicks_when_the_main_window_is_in_front(self):
         main_front = "812 layer 0 0.0 33.0 1728.0 1084.0 | scratch — main.py\n905 layer 0 306.0 132.0 1100.0 800.0 | Settings\n"

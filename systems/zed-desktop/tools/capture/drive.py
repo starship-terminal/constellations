@@ -75,7 +75,11 @@ def mouse(action, x, y, *extra, wait=0.6):
     its front window: Settings covers most of the main window, so a click aimed at the editor would land on a
     real setting."""
     ensure_front()
-    if settings_origin(subprocess.run([str(BIN / "wins"), "Zed"], capture_output=True, text=True).stdout) is not None:
+    listing = subprocess.run([str(BIN / "wins"), "Zed"], capture_output=True, text=True)
+    name = front_window(listing.stdout) if listing.returncode == 0 else None
+    if not name:
+        raise SystemExit("could not read Zed's front window (wins failed or listed no titled window); stopped before pointer input")
+    if "Settings" in name:
         raise SystemExit("the Settings window is Zed's front window; close it before main-window pointer input")
     subprocess.run([str(BIN / "mouse"), action, str(x), str(y + Y0), *map(str, extra)], check=True)
     time.sleep(wait)
@@ -509,6 +513,16 @@ SETTINGS_AT = (306, 132)   # the Settings window's top-left, global points
 NAV = {"general": 94, "appearance": 122, "keymap": 150, "editor": 178, "languages": 206, "search": 234,
        "window": 262, "panels": 290, "debugger": 318, "terminal": 346, "vcs": 374, "collab": 402,
        "ai": 430, "network": 458, "developer": 486}
+
+
+def front_window(listing):
+    """The title of Zed's frontmost layer-0 window in a `wins Zed` listing (front to back), or None."""
+    for line in listing.splitlines():
+        head, sep, name = line.partition(" | ")
+        parts = head.split()
+        if sep and len(parts) >= 6 and parts[1:3] == ["layer", "0"]:
+            return name.strip() or None
+    return None
 
 
 def settings_origin(listing):
