@@ -94,3 +94,39 @@ test("summary and media lookups answer without building the full detail", async 
     validateReferences(["systems:alpha"], ["systems:missing"]),
   ).rejects.toThrow("Unknown reference: systems:missing");
 });
+
+test("a file hydrated in place shows once the cache ages out, with no stamp change", async () => {
+  const root = await fixture([]);
+  await fs.mkdir(path.join(root, "systems/alpha/screenshots"), {
+    recursive: true,
+  });
+  const cover = path.join(root, "systems/alpha/screenshots/cover.png");
+  // An LFS pointer is not usable media, so the card has no image yet.
+  await fs.writeFile(
+    cover,
+    "version https://git-lfs.github.com/spec/v1\noid sha256:00\nsize 9\n",
+  );
+  await fs.writeFile(
+    path.join(root, "catalog.json"),
+    JSON.stringify({
+      systems: [
+        {
+          slug: "alpha",
+          name: "Alpha",
+          platform: "web",
+          preview: { cover: "systems/alpha/screenshots/cover.png" },
+        },
+      ],
+    }),
+  );
+  const start = Date.now();
+  const clock = vi.spyOn(Date, "now").mockReturnValue(start);
+  expect((await getReferenceSummary("systems:alpha"))?.image).toBeNull();
+  await fs.writeFile(cover, PNG);
+  clock.mockReturnValue(start + 4 * 60_000);
+  expect((await getReferenceSummary("systems:alpha"))?.image).toBeNull();
+  clock.mockReturnValue(start + 5 * 60_000 + 1);
+  expect((await getReferenceSummary("systems:alpha"))?.image).toBe(
+    "/media/systems/alpha/screenshots/cover.png",
+  );
+});
