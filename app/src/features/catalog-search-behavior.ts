@@ -50,3 +50,16 @@ export function screenCountScope(
     query: new URLSearchParams({ limit: "0", platform, kind }),
   };
 }
+
+/**
+ * Tab steps through the picker's groups, then lets focus leave the field:
+ * past the last group (or before the first with Shift) there is no next group.
+ */
+export function nextPickerGroup(
+  current: number,
+  count: number,
+  backwards: boolean,
+): number | null {
+  const next = current + (backwards ? -1 : 1);
+  return next >= 0 && next < count ? next : null;
+}
