@@ -17,7 +17,7 @@ This package contains no Grok Bot code, and none of its artwork has been redrawn
 | [components/crops/](components/crops) | 82 element crops, `{component}-{state}.png` and `-light.png`, cut from the screenshots by `tools/crops.py` |
 | [screenshots/](screenshots) | `dark/` (37) and `light/` (21) captures, `01-home.png` to `37-own-bubble.png`, quantised to 256 colours with alpha |
 | [raw/](raw) | `readings.json`: every value read from the full-colour captures, with its file, box, method and evidence label. `grokbot-measured.md`: the same as tables |
-| [tools/](tools) | `measure.py` (readings), `build_tokens.py`, `build_style_guide.py`, `build_components_md.py`, `crops.py` with `crops.json`, and `capture/` (`native/shot.sh`, `native/sample.py`, `native/winid.swift`, `quantize.py`) |
+| [tools/](tools) | `measure.py` (readings), `build_tokens.py`, `build_style_guide.py`, `build_components_md.py`, `crops.py` with `crops.json`, the tests (`test_*.py`), and `capture/` (`native/shot.sh`, `native/sample.py`, `native/winid.swift`, `quantize.py`) |
 
 ## Brief
 

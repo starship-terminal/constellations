@@ -168,7 +168,7 @@ The sidebar group labels and card titles should be sentence case (Do and don't, 
 
 ## Criteria a capture cannot close
 
-Five scorecard criteria stay at partly after two capture rounds (2026-10-17, [PR 11](https://github.com/c-wenlong/design-systems/pull/11) and [PR 20](https://github.com/c-wenlong/design-systems/pull/20)). Each gap comes from the product, so another capture would not change it; only a change to TokenTracker would.
+Five scorecard criteria stay at partly after two capture rounds (2026-10-17, [PR 11](https://github.com/c-wenlong/designs/pull/11) and [PR 20](https://github.com/c-wenlong/designs/pull/20)). Each gap comes from the product, so another capture would not change it; only a change to TokenTracker would.
 
 | Criterion | Why it stays partly | What would close it |
 |---|---|---|

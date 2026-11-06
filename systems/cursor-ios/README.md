@@ -17,7 +17,7 @@ This package contains no Cursor code, and none of its artwork has been redrawn. 
 | [components/crops/](components/crops) | 84 element crops, `{component}-{state}.png` and `-light.png`, cut from the screenshots by `tools/crops.py`; six are light only |
 | [screenshots/](screenshots) | `dark/` (18) and `light/` (20) captures, `01-repo-agents-list-composer.png` to `20-profile-bottom-streak-heatmap-support.png`, quantised to 256 colours with alpha |
 | [raw/](raw) | `readings.json`: every value read from the full-colour captures, with its file, box, method and evidence label. `cursor-ios-measured.md`: the same as tables |
-| [tools/](tools) | `measure.py` (readings), `build_tokens.py`, `build_style_guide.py`, `build_components_md.py`, `crops.py` with `crops.json`, `test_build_tokens.py`, and `capture/` (`native/shot.sh`, `native/sample.py`, `native/winid.swift`, `quantize.py`) |
+| [tools/](tools) | `measure.py` (readings), `build_tokens.py`, `build_style_guide.py`, `build_components_md.py`, `crops.py` with `crops.json`, the tests (`test_*.py`), and `capture/` (`native/shot.sh`, `native/sample.py`, `native/winid.swift`, `quantize.py`) |
 
 ## Brief
 

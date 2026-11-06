@@ -19,11 +19,11 @@ New packages use the left column.
 | Label | Meaning | How the reference packages say it | How the audits say it |
 |---|---|---|---|
 | Measured | Read from a declared custom property or a computed style on a real element, in a stated state, theme and width | `$extensions.source` naming the file, selector, dump or element | Measured CSS |
-| Derived | Worked out from measured values (a rem converted to px, an alias resolved, a scale completed) rather than read directly | "derived, not captured" | (inside Reconstruction) |
+| Derived | Worked out from measured values (a rem converted to px, an alias resolved, a scale completed) rather than read directly | "derived, not captured" | Derived |
 | Sampled | A flat colour read off a screenshot pixel. A displayed sRGB value, not proof of the token behind it | "estimated from screenshot" | Sampled pixels |
 | Observed | A component or state is visible in a capture, with no values read from it | listed in `components.md` with a crop | Observed |
 | Reconstruction | A redraw or a suggested value, made to be usable. Dimensions and behaviour may differ from the product | (not used; the reference packages do not redraw) | Reconstruction |
-| Not captured | Out of reach, not enabled, or left out on purpose | the Gaps section of `components.md` | Not inspected |
+| Not captured | Out of reach, not enabled, or left out on purpose | the Gaps section of `components.md` | Not captured |
 
 ## Where to find it
 

@@ -21,8 +21,9 @@ colours, logo, icons or illustrations into something that ships.
 
 - Linear's signed-in screenshots showed a real workspace's content. They were
   removed from the tree on 2026-10-11; only anonymised accessibility
-  snapshots of the app remain. IMPORT.md says the original complete audit
-  "should remain private".
+  snapshots of the app remain. The original complete audit stays outside
+  the repo (the catalog's `source.excluded` lists `linear-complete-audit.zip`)
+  and should remain private.
 - The signed-in captures (manus, chatgpt, claude, coursera, notebooklm,
   researchrabbit, duolingo, brilliant) come from the owner's own accounts.
   Names and emails were redacted where each README says so, but chat

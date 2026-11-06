@@ -23,12 +23,18 @@ Official OpenAI connections use the Responses API; Anthropic uses its native API
 
 - `src/app/`: routes and thin API handlers.
 - `src/features/`: research, browsing, styles, collections and settings.
+- `src/features/knowledge/`: the docs and scorecard reading UI.
 - `src/components/`: shared accessible interface and media components.
 - `src/design/`: application tokens and motion styles.
 - `src/contracts/`: shared data shapes and validated research input.
+- `src/data/`: seed JSON the server loads (media and style taxonomies, system categories).
 - `src/server/sources/`: read-only adapters over the existing source stores.
-- `src/server/db/`: personal-state database and schema.
+- `src/server/knowledge/`: the library docs and scorecard readers.
+- `src/server/collections/`: saved media collections.
+- `src/server/taxonomy/`: the library taxonomy.
 - `src/server/research/`: model providers, retrieval and research orchestration.
+- `src/server/db/`: personal-state database and schema.
+- `src/proxy.ts` + `src/server/request-host.ts`: the loopback/Tailscale host allowlist.
 - `tests/`: source, persistence and research contract tests.
 
 The app does not import legacy UI components. The source catalog and Refero snapshot remain canonical; generated data can be rebuilt with `make build`. Source adapters support `DESIGN_SYSTEMS_REPO` for an explicit checkout. Media may come from the existing mirror or source URLs recorded in the catalog. LFS pointer files are not treated as real images.
@@ -46,6 +52,14 @@ Measured package records and interpreted Refero styles retain separate source id
 ## Categorisation
 
 Refero's recorded vocabulary is seeded into the app's SQLite database by migration v4. Web and iOS category headers read `/api/taxonomy` and preserve the original platform-specific labels and order, including categories with no local captures. App-owned assignments retag measured systems without rewriting captured token evidence. See [category migration](docs/category-migration.md) for mapping rationale. JSON files are versioned seed inputs; SQLite owns runtime vocabulary and assignments. Reopening the app preserves manual assignment changes.
+
+## Docs
+
+- [Private deployment](docs/DEPLOYMENT.md): staging, backups, cutover and rollback.
+- [Legacy feature migration](docs/MIGRATION.md): how the `web/` features map into this app, with the [gallery](docs/gallery-migration.md), [styles](docs/styles-migration.md) and [workflow](docs/workflow-migration.md) detail.
+- [Category migration](docs/category-migration.md): the taxonomy mapping.
+- [Catalog filter interactions](docs/filter-interactions.md): how Refero's search picker and result modes behave.
+- Audit logs, 2026-11-04: [catalog and screenshots](docs/catalog-live-audit.md), [Refero interactions](docs/refero-interaction-audit.md) and [styles](docs/styles-live-audit.md).
 
 ## Checks
 

@@ -12,7 +12,7 @@ cp tools/kit/build/* systems/<slug>/tools/
 ```
 
 A native iOS app uses `native/` in place of `build/`, from Grok Bot, the first
-package captured that way:
+package built with this native pipeline:
 
 ```bash
 mkdir -p systems/<slug>/tools/capture

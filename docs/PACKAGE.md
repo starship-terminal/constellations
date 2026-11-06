@@ -24,7 +24,7 @@ shows the gaps beside every package.
 | `README.md` | yes | The entry file. Read it in full before using anything else. [The README](#the-readme) lists its sections |
 | `icon.png` | | The product's app or site icon (128 px PNG), fetched from its site by `tools/fetch_icon.py`; the gallery and the root README's catalog table show it so the package is identifiable at a glance |
 | `DESIGN.md` | yes | A generated, read-only copy of the tokens in Google's DESIGN.md format, for tools that read that format. Never edit it by hand; see [DESIGN.md](#designmd) below |
-| `tokens.json` | | W3C DTCG tokens in Tokens Studio's multi-set layout: a `core` set of scales, a `light` and usually a `dark` semantic set, and `$themes`. Every token carries `$extensions.source`. [catalog.json](../catalog.json) names the tokens file for each package, so a package that keeps it elsewhere still works |
+| `tokens.json` | | W3C DTCG tokens in Tokens Studio's multi-set layout: a `core` set of scales, a `light` and usually a `dark` semantic set, and `$themes`. Every token in a DTCG package carries `$extensions.source` (Polaris's `tokens.json` is itself a Tokens Studio file, the exception noted below). [catalog.json](../catalog.json) names the tokens file for each package, so a package that keeps it elsewhere still works |
 | `style-guide.html` | yes | One page that renders every token and the main components with the real values, with a theme toggle |
 | `components.md` | | The component inventory: one entry per component with crops of the real product and its values as token names, the shared values, and a Gaps section |
 | `patterns.md` | | Page-level patterns: how components combine into the product's main screens, with the screenshots that show them |
@@ -166,7 +166,8 @@ themes, no per-value provenance, and only px, em and rem units.
 
 A package whose tokens do not sit where the defaults look names its own token
 path prefixes in its catalog entry under `designMd`, for `colors`,
-`typography`, `rounded` or `spacing`. Linear reads `app.` and `semantic.`,
+`typography`, `rounded` or `spacing`. Linear reads its `light.color.`
+colours and its `core.radius.`/`core.space.` scales,
 Polaris reads its flat `light.text.text-*-font-size` tokens as type styles,
 and Claude reads its density scale's `pad-` and `gap-` steps as spacing.
 `make check` fails when a prefix matches nothing.

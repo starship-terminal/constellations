@@ -9,7 +9,7 @@ every value here as lower-confidence than the packages under `systems/`.
 ## Layout
 
 - `refero.db` — canonical store. `styles` table holds one row per style:
-  slug, name, tagline, `page_url` (the refero.design page), `source_url`
+  `uuid` (the primary key), slug, name, tagline, `page_url` (the refero.design page), `source_url`
   (the product site), theme, `extracted_at`, `fetched_at`, every artifact
   (`design_md`, `variables_css`, `theme_css`, `tokens_json`,
   `design_system_json`, `prompt_txt`), the full `result_json` the artifacts
@@ -22,7 +22,9 @@ every value here as lower-confidence than the packages under `systems/`.
   `result_json` with `generateRawResultJson` in
   [../tools/refero/generators.js](../tools/refero/generators.js).)
   `meta.json` repeats the media fields, and the three label keys sit
-  after `theme`.
+  after `theme`. Older files may still carry `video_w`, `video_h` and
+  `video_ms`: keys the db dropped, kept on disk because `write_meta`
+  preserves existing keys.
 - `<slug>/` — per-style files: `DESIGN.md`, `variables.css`, `theme.css`
   (Tailwind v4 `@theme`), `tokens.json` (DTCG-style), `design-system.json`,
   `meta.json`. `prompt.txt` lives only in the db.
@@ -48,26 +50,27 @@ python3 tools/refero/check.py            # assert refero.db, the style folders a
 
 Labels come from [../tools/refero/classify.py](../tools/refero/classify.py):
 an Anthropic API pass over each style's name, domain, upstream `industry` and
-tagline, validated against the two vocabularies defined there (23 product
+tagline, validated against the two vocabularies defined there (24 product
 types, 16 design styles). `product_type` is what the organisation is;
 `design_style` is the page's dominant aesthetic; `tags` holds up to four
 secondary labels from either vocabulary and feeds gallery search, not the
 filter dropdowns. Run `classify.py` after a fetch so new styles get labeled
-(it only touches rows where `product_type` is NULL unless `--force`).
+(it only touches rows missing a label unless `--force`).
 
 Requires node. Fetched result objects are cached in `.work/` (gitignored) and
 persisted in `refero.db`, so `--export-only` can re-materialize files offline.
 
 ## Media mirror
 
-The gallery's `#/refero` pages serve media from a host-side mirror, not the
+The app's `/refero` pages serve media from a host-side mirror, not the
 repo: `tools/refero/mirror_media.py` downloads screenshots, video posters,
 scroll-preview and detail videos with their posters, and favicons into
-`~/services/design-systems/media/
-refero/` (nginx aliases `/refero-media/` onto it; the box's nginx.conf needs
-the location block setup.sh prints when missing). Media is deliberately
-outside git — the videos are ~1–2 GB. Anything not mirrored falls back to
-the images.refero.design URL in the browser.
+`~/services/design-systems/media/refero/` (`DESIGN_SYSTEMS_MEDIA` moves it).
+The web app serves that folder at `/media/refero-media/` when the media base
+is empty; by default `DESIGN_SYSTEMS_MEDIA_BASE` points those paths at the
+public R2 bucket instead (`tools/refero/upload_r2.py` fills it). Media is
+deliberately outside git — the videos are ~1–2 GB. Anything in neither place
+falls back to the images.refero.design URL in the browser.
 
 ```bash
 python3 tools/refero/mirror_media.py                    # everything missing
