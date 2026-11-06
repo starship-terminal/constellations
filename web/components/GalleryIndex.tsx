@@ -150,7 +150,7 @@ export function GalleryIndex({ data }: { data: GalleryData }) {
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
-  useUrlMirror({ q: q.trim() || null, cat });
+  useUrlMirror({ q: q.trim() || null, cat: cat === "all" ? null : cat });
 
   const save = (patch: object) => {
     try {
