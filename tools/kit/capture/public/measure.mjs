@@ -26,6 +26,7 @@ import { safeUrl } from '../safe-url.mjs';
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
 out._meta ??= {};
+if (out._meta.storyUrl) out._meta.storyUrl = safeUrl(out._meta.storyUrl);   // an earlier run's, if story is not rerun
 out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
