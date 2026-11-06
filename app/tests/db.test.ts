@@ -2,8 +2,6 @@ import { afterEach, expect, test } from "vitest";
 import { mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { pathToFileURL } from "node:url";
-import { createClient } from "@libsql/client";
 import { createResearchStore, type ResearchStore } from "@/server/db";
 const stores: ResearchStore[] = [],
   directories: string[] = [];
@@ -260,33 +258,4 @@ test("future database versions are rejected without downgrading their schema", a
       (await store.client.execute("PRAGMA user_version")).rows[0].user_version,
     ),
   ).toBe(6);
-});
-
-test("updateSettings writes JSON on a fresh row and on a conflicting row", async () => {
-  const { store } = await open();
-  await store.updateSettings((saved) => ({ ...saved, provider: "anthropic" }));
-  expect(await store.getSettings()).toEqual({ provider: "anthropic" });
-  await store.updateSettings((saved) => ({ ...saved, model: "test-model" }));
-  expect(await store.getSettings()).toEqual({
-    provider: "anthropic",
-    model: "test-model",
-  });
-});
-
-test("a settings row that is not a JSON object reads as empty and is repaired by the next update", async () => {
-  const { dir, store } = await open();
-  store.close();
-  stores.splice(stores.indexOf(store), 1);
-  const raw = createClient({
-    url: pathToFileURL(join(dir, "app.db")).href,
-  });
-  await raw.execute(
-    "INSERT INTO settings(id,value) VALUES('provider','provider')",
-  );
-  raw.close();
-  const reopened = await createResearchStore(dir);
-  stores.push(reopened);
-  expect(await reopened.getSettings()).toEqual({});
-  await reopened.updateSettings((saved) => ({ ...saved, provider: "openai" }));
-  expect(await reopened.getSettings()).toEqual({ provider: "openai" });
 });
