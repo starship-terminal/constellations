@@ -494,8 +494,8 @@
     },
     {
       "referenceId": "systems:gauth",
-      "media": 425,
-      "assignedMedia": 425
+      "media": 423,
+      "assignedMedia": 423
     },
     {
       "referenceId": "systems:researchrabbit",
@@ -26515,22 +26515,6 @@
     },
     {
       "referenceId": "systems:gauth",
-      "mediaId": "systems/gauth/components/crops/play-icon-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:icon",
-          "rule": "ui-icon",
-          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/gauth/tokens.json#core.fontFamily.inter. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:gauth",
       "mediaId": "systems/gauth/components/crops/player-frame-default.png",
       "terms": [
         {
@@ -28646,22 +28630,6 @@
           "termId": "web-ux-patterns:upload-download",
           "rule": "ux-upload-download",
           "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-fonts:inter",
-          "rule": "font-primary",
-          "reason": "Exact primary family Inter from systems/gauth/tokens.json#core.fontFamily.inter. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:gauth",
-      "mediaId": "systems/gauth/components/crops/video-badge-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:badge",
-          "rule": "ui-badge",
-          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
         },
         {
           "termId": "web-fonts:inter",

@@ -37,3 +37,8 @@ systems/*/raw/*.partial.json
 
 # wrangler CLI local state (account cache)
 .wrangler/
+
+# Compiled capture helpers (swiftc output of the .swift sources beside them).
+/systems/zed-desktop/tools/capture/zwin
+/systems/zed-desktop/tools/capture/mouse
+/systems/zed-desktop/tools/capture/wins

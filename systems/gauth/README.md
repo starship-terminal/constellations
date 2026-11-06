@@ -12,7 +12,7 @@ The earlier references (Duolingo, Brilliant, NotebookLM, Coursera) each cover pa
 | [style-guide.html](style-guide.html) | One self-contained page that renders every token and the main components (sidebar, top bar buttons, Academy catalogue, unit page, the three lesson players, dialogs, Homework home, Atlas, Insights tabs) with the real values, states side by side. |
 | [components.md](components.md) | The discovery list of every page and view, the 19 checklist components mapped to entries (17 captured), one entry per component (199) written in tokens with crops of the real product, the shared values (focus, pressed, motion, layout grid, card shapes), the icon index, and the Gaps. |
 | [patterns.md](patterns.md) | How the components combine: app shell, forms and validation, empty, loading and error states, feedback, search and filtering, data display, onboarding and the upsell, each with its components, layout and screens; destructive confirmation sits behind sign-in, so it is written from Gauth's CSS and marked declared, not seen. |
-| [components/crops/](components/crops) | 369 element screenshots, `{component}-{state}.png`, at 2x (large ones halved). |
+| [components/crops/](components/crops) | 367 element screenshots, `{component}-{state}.png`, at 2x (large ones halved). |
 | [icons/](icons) | 99 SVGs lifted from the pages, named by role in [icons/INDEX.tsv](icons/INDEX.tsv). Gauth's property, kept for reference only. |
 | [screenshots/](screenshots) | 56 `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 1x and `mobile-*` shots 390 x 844 at 2x; `-full` shots are whole pages at the same width and scale (1440 at 1x, or 390 at 2x for the two mobile ones). |
 | [raw/](raw) | The unprocessed readings: every custom property the pages declare, sorted by owner, with font faces, loaded fonts and the dark-theme checks (`css-vars.json`); per-component computed styles (`components-computed.json`, and `measurements.md` built from it); the token tree the builder reads (`component-tokens.json`); page geometry at four widths (`layout.json`) and the layout notes written from it (`pages.md`); the reduced-motion rules and what they change, the z-index layers and the brand colour evidence (`foundations.json`). |
@@ -50,7 +50,7 @@ Fonts: `core.fontFamily.libre-baskerville` is Gauth Home Libre Baskerville, then
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 369 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 367 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
