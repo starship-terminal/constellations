@@ -103,6 +103,7 @@ what is open, with the evidence.
 | <img src="systems/hevy/icon.png" width="20" alt="hevy"> | [hevy](systems/hevy/README.md) | Native iOS workout logging: dense set table, one blue accent, pale grey fills, small corners, iOS 26 glass chrome, rest timer | 2026-10-10 | light, dark | 7 of 25 met, 16 partly, 2 missing | `patterns.md`, `components/`, `icons/` |
 | <img src="systems/metabase/icon.png" width="20" alt="metabase"> | [metabase](systems/metabase/README.md) | Visual query notebooks, searchable field filters, chart inspectors, analytics dashboards and drill-through tables. Official interactive Edumation demo with custom purple light branding; not the default Metabase theme. Expanded interaction evidence includes selected Dark screens; exported tokens remain Light-only. | 2026-10-31 | light | 7 of 25 met, 14 partly, 4 missing | `icons/` |
 | <img src="systems/clerk/icon.png" width="20" alt="clerk"> | [clerk](systems/clerk/README.md) | Developer administration: settings screens, authentication forms, searchable tables, compact menus and confirmation dialogs | 2026-10-30 | dark, light | 6 of 25 met, 19 partly, 0 missing | `icons/` |
+| <img src="systems/sentry/icon.png" width="20" alt="sentry"> | [sentry](systems/sentry/README.md) | Dense monitoring dashboards, trace waterfalls, diagnostic tables, query builders and filters | 2026-10-31 | light, dark | 6 of 25 met, 15 partly, 4 missing | `components/`, `icons/` |
 
 <!-- catalog:end -->
 

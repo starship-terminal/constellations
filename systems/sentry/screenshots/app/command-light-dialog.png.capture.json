@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-31T04:00:05.270Z",
+  "screenshot": "command-light-dialog.png",
+  "source": "signed-in Sentry app",
+  "actual": {
+    "devicePixelRatio": 2,
+    "innerHeight": 959,
+    "innerWidth": 1065,
+    "visualViewport": {
+      "height": 959,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "scale": 1,
+      "width": 1065
+    }
+  },
+  "theme": {
+    "bodyClass": "",
+    "colorScheme": "normal",
+    "rootClass": ""
+  },
+  "capture": {
+    "mode": "viewport",
+    "originalFormat": "JPEG",
+    "note": "Browser screenshot API emits CSS-scale JPEG; converted to 256-color PNG. Do not multiply by DPR for crop coordinates."
+  },
+  "png": {
+    "width": 1065,
+    "height": 959
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "basis": "Image width and height within one pixel of measured inner viewport; requested overrides had no effect"
+  },
+  "visualReview": {
+    "status": "accepted",
+    "note": "Reviewed image; loading image deliberately retained as loading evidence. Attribute panels are scrollable; this captures their visible top portion, not complete attributes."
+  },
+  "cropCoordinates": {
+    "status": "unverified"
+  }
+}

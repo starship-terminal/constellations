@@ -1,0 +1,587 @@
+{
+  "schemaVersion": 1,
+  "sourceDirectory": "~/.design-systems/sentry/breadth2",
+  "reviewedAt": "2026-10-31",
+  "captures": [
+    {
+      "id": "metric-monitor-form-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "monitor-metric-choices-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app",
+      "reason": "Metric menu extends below viewport; recapture full visible menu after repositioning."
+    },
+    {
+      "id": "monitor-detection-threshold-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "monitor-detection-change-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "monitor-detection-dynamic-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "monitor-sensitivity-menu-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "monitor-anomaly-direction-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "monitor-owner-menu-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "monitor-connect-alert-picker-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "alerts-list-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "alert-detail-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "alert-edit-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "alert-trigger-menu-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "alert-filter-menu-dark",
+      "decision": "accept",
+      "review": "Reviewed visible segment of scrollable menu; remaining menu options are not claimed captured.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "alert-action-menu-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "alert-throttle-menu-dark",
+      "decision": "accept",
+      "review": "Reviewed visible segment of scrollable menu; remaining menu options are not claimed captured.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "project-general-top-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "project-teams-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "team-members-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "team-projects-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app",
+      "reason": "Project list still loading; later settled capture available."
+    },
+    {
+      "id": "team-notifications-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "team-settings-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "team-projects-settled-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "project-alert-settings-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "project-tags-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "project-environments-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "project-environments-hidden-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app",
+      "reason": "Hidden environments list still loading."
+    },
+    {
+      "id": "project-ownership-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "ownership-rule-editor-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "project-inbound-filters-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "project-inbound-filters-lower-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "project-issue-grouping-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "project-source-maps-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "project-debug-files-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "project-performance-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "project-replay-settings-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "project-replay-delete-form-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app",
+      "reason": "Replay bulk-delete list still loading; no action submitted."
+    },
+    {
+      "id": "performance-nplus1-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "performance-slow-db-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport segment only. Safe local inspection, no save or submit.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "performance-nplus1-api-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only, lower content may remain outside frame.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "performance-render-blocking-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only, lower content may remain outside frame.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "performance-http-payload-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only, lower content may remain outside frame.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "performance-db-main-thread-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only, lower content may remain outside frame.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "performance-file-main-thread-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only, lower content may remain outside frame.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "performance-consecutive-db-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only, lower content may remain outside frame.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "performance-uncompressed-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only, lower content may remain outside frame.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "performance-consecutive-http-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only, lower content may remain outside frame.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "performance-http-overhead-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only, lower content may remain outside frame.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "performance-query-injection-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; visible viewport segment only, lower content may remain outside frame.",
+      "provenance": "signed-in app",
+      "reason": "Expanded query-injection section clipped; settled replacement reviewed."
+    },
+    {
+      "id": "performance-query-injection-settled-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only, lower content may remain outside frame.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "source-map-upload-detail-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only, lower content may remain outside frame.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "traces-30d-desktop-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only, lower content may remain outside frame.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "trace-waterfall-desktop-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "trace-actions-desktop-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "trace-panel-position-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "trace-attribute-actions-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "trace-preferences-desktop-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "trace-shortcuts-dialog-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "release-overview-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app",
+      "reason": "Release overview still loading; later action-menu/expanded-chart captures show settled content."
+    },
+    {
+      "id": "release-actions-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "release-expanded-charts-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "release-commits-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "release-files-changed-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "account-global-menu-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "account-desktop-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "help-menu-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "help-resources-submenu-light",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app",
+      "reason": "Resources submenu not visible yet; superseded by help-resources-expanded-light."
+    },
+    {
+      "id": "help-resources-expanded-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "help-community-submenu-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "help-legal-submenu-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-menu-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-switch-submenu-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "onboarding-getting-started-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "onboarding-beyond-basics-light",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app",
+      "reason": "Beyond the Basics items are not visible; screenshot shows preceding checklist and section heading only."
+    },
+    {
+      "id": "whats-new-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "onboarding-beyond-basics-visible-light",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app",
+      "reason": "Beyond the Basics items are not visible; screenshot shows preceding checklist and section heading only."
+    },
+    {
+      "id": "seer-panel-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "seer-dock-menu-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "seer-history-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "onboarding-basics-expanded-scrolled-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "trace-waterfall-desktop-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "trace-attribute-search-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "trace-attributes-collapsed-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "trace-waterfall-narrow-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "trace-waterfall-narrow-light-closed",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "main-navigation-narrow-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "issues-narrow-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "issues-date-filter-narrow-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "issues-absolute-date-narrow-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "account-narrow-light",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "account-system-restored-narrow-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app",
+      "reason": "Appearance autosave transition still rendered light; final restoration capture verifies persisted System/dark."
+    },
+    {
+      "id": "issues-narrow-system-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "issues-sort-narrow-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "issues-environment-narrow-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "account-system-restored-final",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; visible viewport segment only.",
+      "provenance": "signed-in app"
+    }
+  ]
+}

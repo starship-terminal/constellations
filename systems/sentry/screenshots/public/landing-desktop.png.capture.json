@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-31T03:51:18.286Z",
+  "screenshot": "landing-desktop.png",
+  "sanitizedSourceUrl": "https://sentry.io/welcome/",
+  "evidence": "Public marketing page; embedded product imagery is not live app evidence",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    }
+  },
+  "actual": {
+    "devicePixelRatio": 1,
+    "height": 1000,
+    "visualViewport": {
+      "height": 1000,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "scale": 1,
+      "width": 1440
+    },
+    "width": 1440
+  },
+  "capture": {
+    "mode": "viewport",
+    "originalFormat": "JPEG",
+    "conversion": "sRGB RGB to 256-colour PNG; original JPEG retained outside git"
+  },
+  "png": {
+    "width": 1440,
+    "height": 1000
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "basis": "actual viewport and native image dimensions"
+  },
+  "visualReview": {
+    "status": "accepted",
+    "note": "Inspected screenshot. Desktop full-page recaptured after loading embedded demos; previous blank attempt replaced. Mobile hero artwork intentionally extends beyond viewport in source page."
+  },
+  "cropCoordinates": {
+    "status": "unverified"
+  }
+}
