@@ -62,5 +62,20 @@ class GuardTest(unittest.TestCase):
             measure.op_bbox(rows, (30, 30), (0, 0, 5, 5), 3)
 
 
+class ThemeTest(unittest.TestCase):
+    """lacking() is what stops measure.py writing when a reading misses a theme it needs."""
+
+    @unittest.skipUnless((pathlib.Path(__file__).resolve().parent.parent / "raw" / "readings.json").exists(), "no readings")
+    def test_committed_readings_lack_nothing_and_a_dropped_theme_is_caught(self):
+        import copy
+        import json
+        readings = json.loads((pathlib.Path(__file__).resolve().parent.parent / "raw" / "readings.json").read_text())
+        self.assertEqual(measure.lacking(readings), [])   # covers the single-theme entries as committed
+        rid = sorted(readings)[0]
+        cut = copy.deepcopy(readings)
+        cut[rid].pop(sorted(cut[rid])[0])
+        self.assertEqual(measure.lacking(cut), [rid])
+
+
 if __name__ == "__main__":
     unittest.main()

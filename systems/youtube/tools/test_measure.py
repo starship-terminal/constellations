@@ -42,6 +42,12 @@ class CornerTest(unittest.TestCase):
         res = measure.op_corner(rounded(40, 40, 10, 10, 20, 0), 10, 10, (2, 2), 12)
         self.assertEqual(res["value"], "0.0pt")
 
+    def test_a_diagonal_with_no_edge_is_a_named_error(self):
+        page = rounded(40, 40, 10, 10, 20, 0)
+        flat = [[page[2][2]] * 40 for _ in range(40)]   # the picture moved: only background on the diagonal
+        with self.assertRaisesRegex(ValueError, "corner: no edge"):
+            measure.op_corner(flat, 10, 10, (2, 2), 12)
+
 
 class PerThemeBoxTest(unittest.TestCase):
     def run_with(self, table, images):
