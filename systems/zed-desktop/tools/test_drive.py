@@ -1,8 +1,12 @@
-"""capture/drive.py finds the Settings window in a `wins Zed` listing before any Settings click. Reads a
-sample listing only; nothing is driven."""
+"""capture/drive.py finds the Settings window in a `wins Zed` listing before any Settings click, refuses a
+main-window click while Settings is in front, and refuses a file-tree click when an extra scratch file moves
+todo.txt's row. Reads sample listings and a temporary folder only; nothing is driven."""
 import pathlib
+import subprocess
 import sys
+import tempfile
 import unittest
+from unittest import mock
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "capture"))
 argv, sys.argv = sys.argv, ["drive.py", "dark"]
@@ -32,6 +36,58 @@ class SettingsOriginTest(unittest.TestCase):
     def test_no_settings_window(self):
         self.assertIsNone(drive.settings_origin("812 layer 0 0.0 33.0 1728.0 1084.0 | settings.json\nfrontmost: Zed\n"))
         self.assertIsNone(drive.settings_origin(""))
+
+
+class MouseTest(unittest.TestCase):
+    def run_with(self, listing, code=0):
+        calls = []
+
+        def run(cmd, **kw):
+            calls.append(cmd)
+            wins = cmd[0].endswith("wins")
+            return subprocess.CompletedProcess(cmd, code if wins else 0, stdout=listing if wins else "", stderr="")
+        with mock.patch.object(drive, "ensure_front"), mock.patch.object(drive.subprocess, "run", run), \
+                mock.patch.object(drive.time, "sleep"):
+            drive.mouse("click", 100, 100)
+        return calls
+
+    def test_refuses_while_settings_is_in_front(self):
+        with self.assertRaises(SystemExit):
+            self.run_with(LISTING)
+
+    def test_refuses_without_a_readable_listing(self):
+        for listing, code in (("", 0), ("812 layer 0 0.0 33.0 1728.0 1084.0 | \n", 0), ("812 layer 0 0.0 33.0 1728.0 1084.0 | main.py\n", 1)):
+            with self.subTest(listing=listing, code=code), self.assertRaises(SystemExit):
+                self.run_with(listing, code)
+
+    def test_clicks_when_the_main_window_is_in_front(self):
+        main_front = "812 layer 0 0.0 33.0 1728.0 1084.0 | scratch — main.py\n905 layer 0 306.0 132.0 1100.0 800.0 | Settings\n"
+        calls = self.run_with(main_front)
+        self.assertTrue(calls[-1][0].endswith("mouse"))
+
+
+class TodoRowTest(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.scr = pathlib.Path(self.tmp.name)
+        (self.scr / "todo.txt").write_text("")
+        patch = mock.patch.object(drive, "SCR", self.scr)
+        patch.start()
+        self.addCleanup(patch.stop)
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_rows(self):
+        self.assertEqual(drive.TODO_Y(), 100)
+        (self.scr / "hello.txt").write_text("")
+        self.assertEqual(drive.TODO_Y(), 126)
+
+    def test_another_hello_file_stops(self):
+        (self.scr / "hello.txt").write_text("")
+        (self.scr / "hello-light.txt").write_text("")
+        with self.assertRaises(SystemExit):
+            drive.TODO_Y()
 
 
 if __name__ == "__main__":
