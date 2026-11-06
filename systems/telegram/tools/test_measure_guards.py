@@ -37,6 +37,21 @@ class GuardTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "diag:"):
             measure.op_diag(card(box=(10, 0, 50, 50)), 30, 30, 30, 30)
 
+    def test_diag_with_its_background_sample_off_the_image_is_named(self):
+        with self.assertRaisesRegex(ValueError, "diag: no edge with background"):
+            measure.op_diag(card(box=(3, 10, 50, 50)), 30, 30, 30, 30)
+
+    def test_diag_whose_diagonal_never_meets_the_fill_is_named(self):
+        rows = [[PAGE] * 60 for _ in range(60)]
+        for y in range(40, 46):              # a bar the row walk finds ...
+            for x in range(10, 31):
+                rows[y][x] = CARD
+        for y in range(5, 21):               # ... and a separate one the column walk finds
+            for x in range(50, 56):
+                rows[y][x] = CARD
+        with self.assertRaisesRegex(ValueError, "diag: no fill on the diagonal"):
+            measure.op_diag(rows, 52, 15, 20, 42)
+
     def test_empty_boxes_are_named(self):
         rows = card()
         with self.assertRaisesRegex(ValueError, "cap: no ink"):
@@ -45,6 +60,21 @@ class GuardTest(unittest.TestCase):
             measure.op_lines(rows, 0, 0, 5, 5)
         with self.assertRaisesRegex(ValueError, "bbox: no pixel"):
             measure.op_bbox(rows, (30, 30), (0, 0, 5, 5), 3)
+
+
+class LoadTest(unittest.TestCase):
+    def test_masked_capture_without_its_original_names_the_file(self):
+        import tempfile
+        from unittest import mock
+        name = sorted(measure.FROM_RAW)[0]
+        with tempfile.TemporaryDirectory() as d:
+            raw = pathlib.Path(d)
+            (raw / "dark").mkdir()
+            (raw / "dark" / f"{name}.png").write_bytes(b"")
+            with mock.patch.object(measure.subprocess, "run") as run:
+                with self.assertRaisesRegex(SystemExit, f"{name}.raw.png"):
+                    measure.load(raw, "dark", name)
+            run.assert_not_called()
 
 
 if __name__ == "__main__":

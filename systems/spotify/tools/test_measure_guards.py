@@ -33,6 +33,30 @@ class GuardTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "diag:"):
             measure.op_diag(card(box=(10, 0, 50, 50)), 30, 30, 30, 30)
 
+    def test_diag_with_its_background_sample_off_the_image_is_named(self):
+        with self.assertRaisesRegex(ValueError, "diag: no edge with background"):
+            measure.op_diag(card(box=(3, 10, 50, 50)), 30, 30, 30, 30)
+
+    def test_diag_whose_diagonal_never_meets_the_fill_is_named(self):
+        rows = [[PAGE] * 60 for _ in range(60)]
+        for y in range(40, 46):              # a bar the row walk finds ...
+            for x in range(10, 31):
+                rows[y][x] = CARD
+        for y in range(5, 21):               # ... and a separate one the column walk finds
+            for x in range(50, 56):
+                rows[y][x] = CARD
+        with self.assertRaisesRegex(ValueError, "diag: no fill on the diagonal"):
+            measure.op_diag(rows, 52, 15, 20, 42)
+
+    def test_diagr_reads_a_square_top_right_corner(self):
+        self.assertEqual(measure.op_diagr(card(), 30, 30, 30, 30)["corner"], [49, 10])
+
+    def test_diagr_on_a_fill_that_reaches_the_image_edge_is_named(self):
+        with self.assertRaisesRegex(ValueError, "diagr:"):
+            measure.op_diagr(card(box=(10, 10, 60, 50)), 30, 30, 30, 30)
+        with self.assertRaisesRegex(ValueError, "diagr:"):
+            measure.op_diagr(card(box=(10, 0, 50, 50)), 30, 30, 30, 30)
+
     def test_empty_boxes_are_named(self):
         rows = card()
         with self.assertRaisesRegex(ValueError, "cap: no ink"):

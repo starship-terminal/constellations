@@ -373,13 +373,18 @@ def write(readings):
     (PKG / "raw" / f"{SLUG}-measured.md").write_text("\n".join(lines) + "\n")
 
 
-if __name__ == "__main__":
-    readings = run(sys.argv[1] if len(sys.argv) > 1 else f"~/.design-systems/{SLUG}/raw-shots")
+def lacking(readings):
+    """The reading ids missing a theme they need, sorted."""
     # A reading without a theme prefix (or a box per theme) is read in each theme it names; a theme
     # missing for one means a capture is absent.
     need = lambda e: ({t for t in ("dark", "light") if t in e} if isinstance(e, dict)
                       else {e[0].split("/")[0]} if "/" in e[0] else {"dark", "light"})
-    short = sorted(rid for rid, e in R.items() if set(readings.get(rid, {})) != need(e))
+    return sorted(rid for rid, e in R.items() if set(readings.get(rid, {})) != need(e))
+
+
+if __name__ == "__main__":
+    readings = run(sys.argv[1] if len(sys.argv) > 1 else f"~/.design-systems/{SLUG}/raw-shots")
+    short = lacking(readings)
     if short:
         raise SystemExit(f"{len(short)} readings lack a theme they need ({', '.join(short[:5])}...); nothing written")
     write(readings)

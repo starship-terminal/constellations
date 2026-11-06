@@ -37,6 +37,21 @@ class GuardTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "diag:"):
             measure.op_diag(card(box=(10, 0, 50, 50)), 30, 30, 30, 30)
 
+    def test_diag_with_its_background_sample_off_the_image_is_named(self):
+        with self.assertRaisesRegex(ValueError, "diag: no edge with background"):
+            measure.op_diag(card(box=(3, 10, 50, 50)), 30, 30, 30, 30)
+
+    def test_diag_whose_diagonal_never_meets_the_fill_is_named(self):
+        rows = [[PAGE] * 60 for _ in range(60)]
+        for y in range(40, 46):              # a bar the row walk finds ...
+            for x in range(10, 31):
+                rows[y][x] = CARD
+        for y in range(5, 21):               # ... and a separate one the column walk finds
+            for x in range(50, 56):
+                rows[y][x] = CARD
+        with self.assertRaisesRegex(ValueError, "diag: no fill on the diagonal"):
+            measure.op_diag(rows, 52, 15, 20, 42)
+
     def test_empty_boxes_are_named(self):
         rows = card()
         with self.assertRaisesRegex(ValueError, "cap: no ink"):
@@ -45,6 +60,21 @@ class GuardTest(unittest.TestCase):
             measure.op_lines(rows, 0, 0, 5, 5)
         with self.assertRaisesRegex(ValueError, "bbox: no pixel"):
             measure.op_bbox(rows, (30, 30), (0, 0, 5, 5), 3)
+
+
+class ThemeTest(unittest.TestCase):
+    """lacking() is what stops measure.py writing when a reading misses a theme it needs."""
+
+    @unittest.skipUnless((pathlib.Path(__file__).resolve().parent.parent / "raw" / "readings.json").exists(), "no readings")
+    def test_committed_readings_lack_nothing_and_a_dropped_theme_is_caught(self):
+        import copy
+        import json
+        readings = json.loads((pathlib.Path(__file__).resolve().parent.parent / "raw" / "readings.json").read_text())
+        self.assertEqual(measure.lacking(readings), [])   # covers the single-theme entries as committed
+        rid = sorted(readings)[0]
+        cut = copy.deepcopy(readings)
+        cut[rid].pop(sorted(cut[rid])[0])
+        self.assertEqual(measure.lacking(cut), [rid])
 
 
 if __name__ == "__main__":
