@@ -3,6 +3,7 @@ import contextlib
 import io
 import json
 import re
+import shutil
 import sys
 import tempfile
 import unittest
@@ -98,6 +99,32 @@ class Commands(unittest.TestCase):
         with mock.patch.object(R.subprocess, "run", return_value=failed):
             with self.assertRaises(SystemExit):
                 R.ocr_words(Image.new("RGB", (50, 50)))
+
+    def test_tall_narrow_captures_are_enlarged_like_short_ones(self):
+        from unittest import mock
+        sizes = []
+
+        def fake(im, psm=11, min_conf=0):
+            sizes.append(im.size)
+            return []
+
+        with mock.patch.object(R, "_tesseract_words", side_effect=fake):
+            R.ocr_words(Image.new("RGB", (390, 3000)))         # a full-page mobile capture
+            R.ocr_words(Image.new("RGB", (390, 300)))
+            R.ocr_words(Image.new("RGB", (1440, 400)))
+        self.assertEqual(sizes[0], (390 * 3, R.TILE * 3))          # first strip, enlarged 3x
+        self.assertEqual(sizes[-2], (390 * 3, 300 * 3))
+        self.assertEqual(sizes[-1], (1440, 400))
+        self.assertEqual([R.ocr_scale(w) for w in (390, 499, 500, 999, 1000)], [3, 3, 2, 2, 1])
+
+    @unittest.skipIf(shutil.which("tesseract") is None, "tesseract is not on PATH")
+    def test_small_text_in_a_tall_capture_is_read(self):
+        from PIL import ImageDraw, ImageFont
+        im = Image.new("RGB", (390, 2000), "white")                # 9px text: read only when enlarged
+        ImageDraw.Draw(im).text((10, 1500), "someone@private.test", fill="black", font=ImageFont.load_default(size=9))
+        words = R.ocr_words(im)
+        self.assertTrue(any("@" in w[0] for w in words), words)
+        self.assertEqual(len(R.find_private(words, [], True, [])), 1)
 
     def test_check_refuses_an_empty_or_missing_package(self):
         with tempfile.TemporaryDirectory() as d:
