@@ -341,5 +341,32 @@ class HostAllowlistTest(unittest.TestCase):
                 os.environ["DESIGN_SYSTEMS_ALLOWED_HOSTS"] = old
 
 
+class ApiReloadTest(unittest.TestCase):
+    """api.py re-runs the agent modules per request: sys.path must not grow
+    and catalog must be re-imported so a pull reaches it."""
+    api = _load("agent_api_reload", "api.py")
+
+    def test_requests_do_not_grow_sys_path_and_reload_catalog(self):
+        import http.server
+        import sys
+        import threading
+        import urllib.request
+        httpd = http.server.ThreadingHTTPServer(("127.0.0.1", 0), self.api.Handler)
+        threading.Thread(target=httpd.serve_forever, daemon=True).start()
+        base = f"http://127.0.0.1:{httpd.server_address[1]}"
+        tools = str(SERVER.parent / "tools")
+        try:
+            urllib.request.urlopen(base + "/api/status").close()
+            first = sys.modules.get("catalog")
+            before = sys.path.count(tools)
+            for _ in range(3):
+                urllib.request.urlopen(base + "/api/status").close()
+            self.assertLessEqual(sys.path.count(tools), max(before, 1))
+            self.assertIsNot(sys.modules.get("catalog"), first)
+        finally:
+            httpd.shutdown()
+            httpd.server_close()
+
+
 if __name__ == "__main__":
     unittest.main()

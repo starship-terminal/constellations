@@ -36,7 +36,9 @@ must be listed in DESIGN_SYSTEMS_ALLOWED_HOSTS (comma-separated, `name` or
 The repo clone's root .env is loaded the same way the refero tools load it,
 so ANTHROPIC_API_KEY on the host gives every browser on the tailnet a working
 chat with no per-browser setup. Every request re-loads the agent modules, so
-a `git pull` by deploy.sh updates the API with no restart of this unit.
+a `git pull` by deploy.sh updates the API with no restart of this unit
+(catalog, which library.py imports by name, is dropped from the module cache
+per request for the same reason).
 """
 from __future__ import annotations
 
@@ -64,15 +66,31 @@ def _server():
     return mod
 
 
+_TOOLS = str(ROOT / "tools")
+
+
+def _dispatch(method: str, handler) -> bool:
+    """Run one request against freshly loaded modules. library.py imports
+    catalog by name, so drop the cached module first or a `git pull` would
+    never reach it; and library.py puts tools/ on sys.path each time it runs,
+    so trim the extra copies afterwards or sys.path grows per request."""
+    sys.modules.pop("catalog", None)
+    try:
+        return getattr(_server(), method)(handler)
+    finally:
+        while sys.path.count(_TOOLS) > 1:
+            sys.path.remove(_TOOLS)
+
+
 class Handler(http.server.BaseHTTPRequestHandler):
     server_version = "designs-api/1"
 
     def do_GET(self) -> None:
-        if not _server().handle_get(self):
+        if not _dispatch("handle_get", self):
             self.send_error(404)
 
     def do_POST(self) -> None:
-        if not _server().handle_post(self):
+        if not _dispatch("handle_post", self):
             self.send_error(404)
 
     def do_DELETE(self) -> None:
