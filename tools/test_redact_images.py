@@ -241,6 +241,23 @@ class Commands(unittest.TestCase):
                 R.main(["check", d, "--patterns", str(pats)])
             self.assertEqual(len(calls), 3)
 
+    def test_check_ignores_a_rules_file_that_switches_detectors_off(self):
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            pkg = Path(d)
+            Image.new("RGB", (4, 4)).save(pkg / "a.png")
+            pats = pkg / "p.json"
+            pats.write_text(json.dumps({"replace": [["x", "y"]]}))
+            rules = pkg / "r.json"
+            rules.write_text(json.dumps({"ocr": {"emails": False, "net": False}}))
+            words = [("someone@private.test", 0, 0, 100, 12, ("1", "1", "1"))]
+            with mock.patch.object(R, "ocr_words", return_value=words), \
+                 contextlib.redirect_stdout(io.StringIO()) as out, self.assertRaises(SystemExit) as cm:
+                R.main(["check", d, "--patterns", str(pats), "--rules", str(rules)])
+            self.assertEqual(cm.exception.code, 1)
+            self.assertIn("sets ocr.emails to false; check ignores that", out.getvalue())
+            self.assertIn("sets ocr.net to false", out.getvalue())
+
     def test_apply_still_requires_rules(self):
         with tempfile.TemporaryDirectory() as d, contextlib.redirect_stderr(io.StringIO()):
             with self.assertRaises(SystemExit) as cm:
@@ -282,6 +299,31 @@ class Matching(unittest.TestCase):
         w = self.words("me@private.test")
         self.assertEqual(len(R.find_private(w, [], True, [])), 1)
         self.assertEqual(R.find_private(w, [], True, [r"@private\.test$"]), [])
+
+    def test_allow_entries_match_whole_parts_of_an_address(self):
+        cases = [
+            (r"@example\.com?\b", "x@example.com", True),
+            (r"@example\.com?\b", "x@example.co", True),
+            (r"@example\.com?\b", "x@example.co.evil.test", False),
+            (r"@example\.com?\b", "x@example.com.evil.test", False),
+            (r"@example\.com$", "x@example.com.", True),          # a sentence's full stop
+            (r"@example\.com$", "x@sub.example.com", False),
+            (r"\.example$", "x@acme.example", True),
+            (r"\.example$", "x@acme.example.evil", False),
+            (r"^owner@mine\.test$", "owner@mine.test", True),
+            (r"^owner@mine\.test$", "other@mine.test", False),
+            (r"^owner@", "owner@anywhere.test", True),
+            (r"^owner@", "owner2@anywhere.test", False),
+            (r"^ownerlong", "ownerlong@x.test", True),
+            (r"^ownerlo", "ownerlong@x.test", True),              # ^: the start of the local part
+            (r"^ownerlo", "x@ownerlong.test", False),
+            (r"owner", "owner@x.test", True),                     # the whole local part
+            (r"owner", "a.owner@x.test", False),
+            (r"example", "x@example.com", False),                 # a piece of the domain
+        ]
+        for allow, addr, ok in cases:
+            self.assertEqual(R.email_allowed(addr, [allow]), ok, (allow, addr))
+        self.assertEqual(len(R.find_private(self.words("x@example.co.evil.test"), [], True, [r"@example\.com?\b"])), 1)
 
     def test_region_boxes_skip_keep_words_and_glyphs(self):
         w = self.words("ok") + self.words("Private title", y=30) + self.words("..", y=60)
