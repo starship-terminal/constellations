@@ -1,7 +1,7 @@
 import { createClient, type Client } from "@libsql/client";
 import { drizzle } from "drizzle-orm/libsql";
 import { eq, desc, sql, getTableColumns } from "drizzle-orm";
-import { mkdir } from "node:fs/promises";
+import { chmod, mkdir } from "node:fs/promises";
 import { homedir } from "node:os";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
@@ -32,6 +32,20 @@ function decode(row: typeof schema.conversations.$inferSelect): Conversation {
     pinnedIds: JSON.parse(row.pinnedIds),
     excludedIds: JSON.parse(row.excludedIds),
   };
+}
+// The store holds saved provider keys and personal research. mkdir's mode only
+// applies when it creates the directory and SQLite follows the umask, so set
+// owner-only access on every open. SQLite gives later -wal/-shm files the
+// database file's mode.
+async function restrictPermissions(directory: string) {
+  await chmod(directory, 0o700);
+  for (const name of ["app.db", "app.db-wal", "app.db-shm"]) {
+    try {
+      await chmod(resolve(directory, name), 0o600);
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+    }
+  }
 }
 export async function createResearchStore(directory: string) {
   await mkdir(directory, { recursive: true, mode: 0o700 });
@@ -81,6 +95,7 @@ export async function createResearchStore(directory: string) {
     client.close();
     throw error;
   }
+  await restrictPermissions(directory);
   const db = drizzle(client, { schema });
   return {
     client,
