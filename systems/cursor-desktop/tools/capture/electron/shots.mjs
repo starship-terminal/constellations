@@ -52,6 +52,7 @@ for (const shot of P.SHOTS.filter(s => !only.length || only.includes(s.name))) {
   const h = await session(shot.window);
   const { page, cdp } = h;
   const undo = [];
+  let abort = '';
   const before = P.guard ? await P.guard(h, shot.window) : '';
   try {
     await P.reset(h, shot.window);
@@ -91,10 +92,17 @@ for (const shot of P.SHOTS.filter(s => !only.length || only.includes(s.name))) {
     delete all[shot.name];
     fail(shot, e.message.split('\n')[0]);
     console.error('FAILED', shot.name, e.message.split('\n')[0]);
+    // A shot that may have changed the account (product.mjs marks the error `abort`) ends the capture.
+    if (e.abort) abort = e.message.split('\n')[0];
   } finally {
     for (const u of undo) await u();
     await untagAll(page).catch(() => {});
     if (shot.after) await shot.after(h).catch(() => {});
+  }
+  if (abort) {
+    writeJson(out, all);
+    console.error(`STOPPED after ${shot.name}: ${abort}`);
+    process.exit(1);
   }
   // Look, don't act: stop at once if the shot changed what the product's guard watches.
   const now = P.guard ? await P.guard(h, shot.window) : '';

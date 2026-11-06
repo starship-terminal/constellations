@@ -28,6 +28,13 @@ export const PROJECT = 'design-capture';
 
 // ---- navigation helpers (selectors are Codex's own data attributes, roles and aria-labels, never account text)
 const wait = (page, ms = 600) => page.waitForTimeout(ms);
+// A shot that clicks a Delete control only to show its confirmation must see that confirmation before it goes
+// on. If none opens, the click may have deleted something: the whole capture stops (shots.mjs reads `abort`).
+async function confirmOpened(page, what) {
+  const dialog = page.locator('[role=alertdialog], [role=dialog]').filter({ visible: true }).filter({ has: page.locator('button', { hasText: /^Cancel$/ }) });
+  if (await dialog.last().waitFor({ state: 'visible', timeout: 3000 }).then(() => true, () => false)) return;
+  throw Object.assign(new Error(`no confirmation dialog after ${what}: check that nothing was deleted`), { abort: true });
+}
 const vis = (page, sel) => page.locator(sel).filter({ visible: true }).first();
 const OPEN = '[role=menu]:visible, [role=dialog]:visible, [role=listbox]:visible, [data-composer-overlay-floating-ui]:visible';
 export async function closeAll(page) {
@@ -313,7 +320,7 @@ export const SHOTS = [
     optionalParts: ['list-row', 'button-danger-text'] },
   // Delete all archived chats: the confirmation is opened and cancelled.
   { name: 'delete-archived-dialog', window: M, optional: true,
-    reveal: async h => { await settings(h, 'archived-chats'); await h.page.locator('main').getByRole('button', { name: 'Delete all' }).first().click(); await wait(h.page, 1000); },
+    reveal: async h => { await settings(h, 'archived-chats'); await h.page.locator('main').getByRole('button', { name: 'Delete all' }).first().click(); await confirmOpened(h.page, 'Delete all archived chats'); await wait(h.page, 1000); },
     parts: { dialog: page => page.locator('[role=dialog], [role=alertdialog]').filter({ visible: true }).last(),
       'button-danger': page => page.locator('[role=dialog] button, [role=alertdialog] button').filter({ hasText: /^Delete/ }).filter({ visible: true }).last(),
       'button-ghost': page => page.locator('[role=dialog] button, [role=alertdialog] button').filter({ hasText: /^Cancel$/ }).filter({ visible: true }).last() },

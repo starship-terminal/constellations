@@ -488,7 +488,9 @@ export const RUN = {
     const stop = page.locator('[role=button][aria-label*="Stop" i]:visible');
     return (await stop.count()) ? 'running' : 'done';
   },
-  async reject() {},
+  // state() never reads an approval today, so this is not reached; if one ever appears it is refused, inside the
+  // AI panel only.
+  async reject({ page }) { await page.locator(`${AI} button, ${AI} [role=button]`).filter({ visible: true }).filter({ hasText: /^(Deny|Reject|Skip)\b/ }).last().click().catch(() => {}); await wait(page, 800); },
   // On 2026-10-25 the account had run out of free AI responses: the panel says so and Submit stays disabled,
   // so the prompt below was typed but not sent (finish() empties the input), and no response was captured.
   steps: [
