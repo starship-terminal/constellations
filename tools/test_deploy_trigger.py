@@ -90,6 +90,41 @@ class Queue(unittest.TestCase):
             self.assertEqual(self.trigger.queue()[0], 429)
         self.assertEqual(run.call_count, 1)
 
+    def test_overlapping_posts_run_once(self):
+        started = threading.Event()
+        release = threading.Event()
+
+        def slow_run():
+            started.set()
+            release.wait(5)
+            return 202, {}
+
+        codes = []
+        with mock.patch.object(self.trigger, "_run", side_effect=slow_run) as run:
+            first = threading.Thread(target=lambda: codes.append(self.trigger.queue()[0]))
+            first.start()
+            started.wait(5)
+            second = threading.Thread(target=lambda: codes.append(self.trigger.queue()[0]))
+            second.start()
+            second.join(0.2)
+            self.assertTrue(second.is_alive())  # held on the lock while the first runs
+            release.set()
+            first.join(5)
+            second.join(5)
+        self.assertEqual(run.call_count, 1)
+        self.assertEqual(sorted(codes), [202, 429])
+
+    def test_another_deploy_is_allowed_after_the_cooldown(self):
+        clock = [1000.0]
+        with mock.patch.object(self.trigger.time, "monotonic", side_effect=lambda: clock[0]), \
+                mock.patch.object(self.trigger, "_run", return_value=(202, {})) as run:
+            self.assertEqual(self.trigger.queue()[0], 202)
+            clock[0] += 59
+            self.assertEqual(self.trigger.queue()[0], 429)
+            clock[0] += 2
+            self.assertEqual(self.trigger.queue()[0], 202)
+        self.assertEqual(run.call_count, 2)
+
     def test_a_failed_queue_does_not_start_the_cooldown(self):
         with mock.patch.object(self.trigger, "_run", return_value=(409, {})) as run:
             self.trigger.queue()
