@@ -122,7 +122,11 @@ def core():
     }
     card = rd("size.card")["box"]
     rows = rd("rows.settings")["value"]
-    pitch = (rows[rows.index(463)] - 359) / 2 if 359 in rows and 463 in rows else None
+    # The first card's dividers sit at 359 and 463 px; a recapture that moves either must re-derive the
+    # pitch rather than fall back to a number labelled Sampled.
+    if 359 not in rows or 463 not in rows:
+        raise Missing("rows.settings: no dividers at 359 and 463 px, so the row pitch cannot be read")
+    pitch = (463 - 359) / 2
     c["space"] = {
         "base": derived("4px", "dimension", "Measured gaps land on multiples of 4 pt within a pixel or two."),
         "xs": derived("4px", "dimension", "Gap between a section header and its card's top rim region, and inside pills."),
@@ -134,7 +138,7 @@ def core():
         "screenMargin": alias("space.lg", "dimension", "Left and right margin of cards, reply text and the owner's bubble."),
     }
     c["size"] = {
-        "row": tok(px(pitch or 52), "dimension", "Single-line grouped row in Settings, divider to divider.", "Sampled", rd("rows.settings")["capture"]),
+        "row": tok(px(pitch), "dimension", "Single-line grouped row in Settings, divider to divider.", "Sampled", rd("rows.settings")["capture"]),
         "navButton": tok(px(pt_of("size.navButton.w")), "dimension", "Round glass buttons: sidebar, close, back, new chat (a circle). The reading includes the glass rim's soft edge.", "Sampled", rd("size.navButton.w")["capture"]),
         "segmented": {
             "width": tok(px(pt_of("size.segmented.w")), "dimension", "The Chat / Work control at the top of a new chat.", "Sampled", rd("size.segmented.w")["capture"]),

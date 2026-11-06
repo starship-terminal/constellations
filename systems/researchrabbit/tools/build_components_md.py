@@ -628,8 +628,10 @@ for r, ks in sorted(rad.items(), key=lambda kv: (rkey(kv[0]), kv[0])):
     W(f"| {r} | {len(ks)} | {', '.join('`' + x[0] + '`' for x in sorted(ks)[:7])}{' and more' if len(ks) > 7 else ''} |")
 W()
 pills = sorted(k for k, v in first_state.items() if v["style"]["borderTopLeftRadius"].endswith("px") and float(v["style"]["borderTopLeftRadius"].replace("px", "") or 0) >= v["rect"]["h"] / 2 and v["rect"]["h"] >= 20 and v["style"]["borderTopLeftRadius"] == v["style"]["borderBottomRightRadius"])
-r48 = sum(1 for k in pills if first_state[k]["style"]["borderTopLeftRadius"] == "48px")
-W(f"**Pill shape.** A component is a pill when its radius is at least half its height. {len(pills)} are: {', '.join('`' + k + '`' for k in pills)}. {r48} of them use `48px` whatever their height ({min(first_state[k]['rect']['h'] for k in pills if first_state[k]['style']['borderTopLeftRadius'] == '48px')} to {max(first_state[k]['rect']['h'] for k in pills if first_state[k]['style']['borderTopLeftRadius'] == '48px')}px), so `48px` reads as fully round. Cards, panels and menus use `6px` to `16px`; the drawer's top corners are `32px`.")
+h48 = [first_state[k]["rect"]["h"] for k in pills if first_state[k]["style"]["borderTopLeftRadius"] == "48px"]
+# A recapture with no 48px pill drops that clause instead of failing on min() of nothing.
+r48 = f" {len(h48)} of them use `48px` whatever their height ({min(h48)} to {max(h48)}px), so `48px` reads as fully round." if h48 else ""
+W(f"**Pill shape.** A component is a pill when its radius is at least half its height. {len(pills)} are: {', '.join('`' + k + '`' for k in pills)}.{r48} Cards, panels and menus use `6px` to `16px`; the drawer's top corners are `32px`.")
 W()
 
 # shadows
