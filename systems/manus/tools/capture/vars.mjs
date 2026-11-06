@@ -26,7 +26,13 @@ for (const c of CHUNKS) {
   const name = c + '.css';
   let css;
   if (dir) css = fs.readFileSync(path.join(dir, name), 'utf8');
-  else css = await (await fetch(BASE + name)).text();
+  else {
+    // The chunk names are pinned to one deploy and rotate; a 404 body parsed as CSS would overwrite
+    // raw/css-vars.json with sheets that hold no rules.
+    const res = await fetch(BASE + name);
+    if (!res.ok) { console.error(`${name}: HTTP ${res.status}; the chunk list is stale, update CHUNKS or pass a dir of saved sheets`); process.exit(1); }
+    css = await res.text();
+  }
   sheets.push({ name, bytes: css.length, css });
 }
 
