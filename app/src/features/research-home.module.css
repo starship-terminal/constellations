@@ -131,6 +131,9 @@
   color: var(--ink);
   background: var(--wash);
 }
+.shortLabel {
+  display: none;
+}
 .modes .activeMode {
   color: var(--ink);
   background: var(--elevated);
@@ -335,6 +338,12 @@
   .modes button svg {
     width: 13px;
     height: 13px;
+  }
+  .modes .fullLabel {
+    display: none;
+  }
+  .modes .shortLabel {
+    display: inline;
   }
   .submit {
     width: 31px;
