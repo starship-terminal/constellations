@@ -266,6 +266,27 @@ class Commands(unittest.TestCase):
             self.assertEqual(cm.exception.code, 1)                 # a pattern match, no email: still caught
             self.assertIn("HIT a.png", out.getvalue())
 
+    def test_apply_never_deletes_outside_the_package(self):
+        with tempfile.TemporaryDirectory() as d:
+            pkg = Path(d) / "pkg"
+            (pkg / "screenshots").mkdir(parents=True)
+            Image.new("RGB", (4, 4)).save(pkg / "screenshots/a.png")
+            keep = Path(d) / "outside.png"
+            Image.new("RGB", (4, 4)).save(keep)
+            rules = Path(d) / "r.json"
+            rules.write_text(json.dumps({"delete": ["screenshots/a.png", "../outside.png"], "ocr": {"net": False}}))
+            with contextlib.redirect_stdout(io.StringIO()), self.assertRaises(SystemExit) as cm:
+                R.main(["apply", str(pkg), "--rules", str(rules)])
+            self.assertIn("outside the package", str(cm.exception.code))
+            self.assertTrue(keep.exists())
+            self.assertTrue((pkg / "screenshots/a.png").exists())     # nothing deleted at all
+            rules.write_text(json.dumps({"delete": ["../outside-link.png"], "ocr": {"net": False}}))
+            (Path(d) / "outside-link.png").symlink_to(pkg / "screenshots/a.png")   # outside, pointing in
+            with contextlib.redirect_stdout(io.StringIO()), self.assertRaises(SystemExit) as cm:
+                R.main(["apply", str(pkg), "--rules", str(rules)])
+            self.assertIn("outside the package", str(cm.exception.code))
+            self.assertTrue((Path(d) / "outside-link.png").is_symlink())
+
     def test_apply_still_requires_rules(self):
         with tempfile.TemporaryDirectory() as d, contextlib.redirect_stderr(io.StringIO()):
             with self.assertRaises(SystemExit) as cm:

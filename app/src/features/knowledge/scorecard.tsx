@@ -17,6 +17,12 @@ import {
 } from "@/server/knowledge/scorecard";
 import styles from "./knowledge.module.css";
 const gradeKeys = Object.keys(GRADES) as GradeValue[];
+/** A grade's glyph and word; an unknown value from a snapshot shows as itself. */
+function gradeLabel(grade: unknown): { glyph: string; word: string } {
+  return typeof grade === "string" && Object.hasOwn(GRADES, grade)
+    ? GRADES[grade as GradeValue]
+    : { glyph: "?", word: String(grade) };
+}
 function data() {
   try {
     return load();
@@ -188,9 +194,9 @@ export function ScorecardOverview() {
                         <Link
                           href={`/scorecard/${s.slug}#${c.id.toLowerCase()}`}
                           title={g.evidence}
-                          aria-label={`${short(s)}, ${c.id} ${c.title}: ${GRADES[g.grade].word}`}
+                          aria-label={`${short(s)}, ${c.id} ${c.title}: ${gradeLabel(g.grade).word}`}
                         >
-                          {GRADES[g.grade].glyph}
+                          {gradeLabel(g.grade).glyph}
                         </Link>
                       ) : (
                         ""
@@ -275,7 +281,8 @@ export function PackageScorecard({ slug }: { slug: string }) {
                   <tr key={row.id} id={row.id.toLowerCase()}>
                     <td>
                       <span className={styles[row.grade]}>
-                        {GRADES[row.grade].glyph} {GRADES[row.grade].word}
+                        {gradeLabel(row.grade).glyph}{" "}
+                        {gradeLabel(row.grade).word}
                       </span>
                     </td>
                     <td>
