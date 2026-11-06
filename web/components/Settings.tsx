@@ -6,6 +6,7 @@
 
 import { useEffect, useState } from "react";
 import { useLightbox } from "@/components/Lightbox";
+import { PROVIDER_EVENT } from "@/components/Chat";
 import { setCollapsed, setTheme, usePrefs, type Theme } from "@/components/prefs";
 import { baseUrlOf } from "@/lib/provider-defaults";
 
@@ -131,6 +132,7 @@ export function Settings({ stats }: { stats: SettingsStats }) {
     try {
       localStorage.setItem("ds-provider", JSON.stringify(out));
     } catch {}
+    window.dispatchEvent(new Event(PROVIDER_EVENT));
     setWarn(false);
     setStatus(`Saved: ${cfg.name.trim() || cfg.api} · ${cfg.model.trim()}`);
   };
@@ -139,6 +141,7 @@ export function Settings({ stats }: { stats: SettingsStats }) {
     try {
       localStorage.removeItem("ds-provider");
     } catch {}
+    window.dispatchEvent(new Event(PROVIDER_EVENT));
     setCfg((c) => ({ ...c, api_key: "" }));
     setWarn(false);
     setStatus("Removed the saved provider.");

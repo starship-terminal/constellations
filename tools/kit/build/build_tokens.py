@@ -114,7 +114,6 @@ def color(c):
     m = re.fullmatch(r"oklab\(([-\d.e]+) ([-\d.e]+) ([-\d.e]+)(?: / ([\d.]+))?\)", c)
     if m:
         return fmt_color(oklab_rgb(float(m.group(1)), float(m.group(2)), float(m.group(3))), m.group(4) or 1)
-    m = re.fullmatch(r"rgba\((\d+), (\d+), (\d+), (0)\)", c)
     raise ValueError("colour not understood: " + c)
 
 
@@ -309,7 +308,7 @@ core["typography"]["user-message"] = tok({"fontFamily": "{fontFamily.chat-user}"
                                          "measured: a user message paragraph (text-heading font-normal)")
 
 # density: every --cds-* dimension on the root that is not a type size
-dens, not_core = {}, []
+dens = {}
 for name in sorted(RES["light"]):
     r = RES["light"][name]
     if not name.startswith("--cds-") or r["kind"] != "dimension" or name.startswith(("--cds-font-size-", "--cds-leading-")):

@@ -66,6 +66,9 @@ const Ctx = createContext<ChatCtx>({
 
 export const useChat = () => useContext(Ctx);
 
+/** Dispatched on window after Settings saves or removes "ds-provider". */
+export const PROVIDER_EVENT = "ds-provider-change";
+
 const dsProvider = (): Cfg | null => {
   try {
     const p = JSON.parse(localStorage.getItem("ds-provider") || "null");
@@ -100,11 +103,23 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
   const [envProvider, setEnvProvider] = useState(false);
   const [hasLocal, setHasLocal] = useState(false);
   useEffect(() => {
-    setHasLocal(!!dsProvider());
+    // Settings saves or clears the provider in this tab (PROVIDER_EVENT) or
+    // in another one (storage); either way the chat's availability follows.
+    const sync = () => setHasLocal(!!dsProvider());
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === "ds-provider" || e.key === null) sync();
+    };
+    sync();
+    window.addEventListener(PROVIDER_EVENT, sync);
+    window.addEventListener("storage", onStorage);
     fetch("/api/status")
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => setEnvProvider(!!(d && d.envProvider)))
       .catch(() => {});
+    return () => {
+      window.removeEventListener(PROVIDER_EVENT, sync);
+      window.removeEventListener("storage", onStorage);
+    };
   }, []);
   const open = useCallback((d?: string) => {
     setIsOpen(true);
@@ -124,8 +139,29 @@ export function ChatDrawer() {
   const [busy, setBusy] = useState(false);
   const epoch = useRef(0);
   const body = useRef<HTMLDivElement>(null);
+  const drawer = useRef<HTMLDivElement>(null);
+  const input = useRef<HTMLInputElement>(null);
+  const fab = useRef<HTMLButtonElement>(null);
+  const opener = useRef<HTMLElement | null>(null);
   const lb = useLightbox();
   const { toast } = useToast();
+
+  // Opening moves focus into the drawer (the composer, or Close when the
+  // composer is disabled); closing hands it back to whatever opened it.
+  useEffect(() => {
+    if (isOpen) {
+      const from = document.activeElement;
+      if (from instanceof HTMLElement && !drawer.current?.contains(from)) opener.current = from;
+      const target = input.current && !input.current.disabled ? input.current : drawer.current?.querySelector<HTMLElement>("[data-chat-close]");
+      target?.focus({ preventScroll: true });
+      return;
+    }
+    if (drawer.current?.contains(document.activeElement)) {
+      const back = opener.current && document.contains(opener.current) ? opener.current : fab.current;
+      back?.focus();
+    }
+    opener.current = null;
+  }, [isOpen]);
 
   useEffect(() => {
     body.current?.scrollTo({ top: body.current.scrollHeight });
@@ -185,17 +221,31 @@ export function ChatDrawer() {
 
   return (
     <>
-      <button className="chat-fab btn primary" type="button" onClick={() => (isOpen ? close() : open())}>
+      <button ref={fab} className="chat-fab btn primary" type="button" aria-expanded={isOpen} onClick={() => (isOpen ? close() : open())}>
         Ask the librarian
       </button>
-      <div className={`chat-drawer${isOpen ? " open" : ""}`} role="dialog" aria-label="Librarian chat" aria-hidden={!isOpen}>
+      <div
+        ref={drawer}
+        className={`chat-drawer${isOpen ? " open" : ""}`}
+        role="dialog"
+        aria-label="Librarian chat"
+        aria-hidden={!isOpen}
+        inert={!isOpen}
+        onKeyDown={(e) => {
+          // Escape that cancels an IME candidate belongs to the composition.
+          if (e.key === "Escape" && !e.nativeEvent.isComposing) {
+            e.stopPropagation();
+            close();
+          }
+        }}
+      >
         <div className="chat-head">
           <b>Librarian</b>
           <div className="side">
             <button className="rf-mini" type="button" onClick={reset}>
               New
             </button>
-            <button className="rf-mini" type="button" onClick={close} aria-label="Close chat">
+            <button className="rf-mini" type="button" onClick={close} aria-label="Close chat" data-chat-close>
               ✕
             </button>
           </div>
@@ -212,12 +262,15 @@ export function ChatDrawer() {
         <div className="chat-composer">
           <label className="field">
             <input
+              ref={input}
               type="text"
+              aria-label="Message the librarian"
               placeholder={enabled ? "Ask for a style, mood or use…" : "Set up a model in Settings to chat"}
               value={draft}
               onChange={(e) => setDraft(e.target.value)}
               onKeyDown={(e) => {
-                if (e.key === "Enter") send();
+                // Enter that commits an IME composition is not a send.
+                if (e.key === "Enter" && !e.nativeEvent.isComposing) send();
               }}
               disabled={!enabled}
             />
