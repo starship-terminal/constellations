@@ -3,6 +3,7 @@ import http.client
 import http.server
 import importlib.util
 import os
+import socket
 import tempfile
 import threading
 import unittest
@@ -63,6 +64,17 @@ class SinkTest(unittest.TestCase):
     def test_refuses_oversize_and_bad_names(self):
         self.assertEqual(self.post('/big', body=b'x' * 101).status, 413)
         self.assertEqual(self.post('/..').status, 400)
+        self.assertEqual(self.files(), [])
+
+    def raw(self, length_line):
+        with socket.create_connection(('127.0.0.1', self.server.server_address[1])) as s:
+            s.sendall(('POST /x HTTP/1.1\r\nHost: 127.0.0.1\r\nOrigin: https://www.duolingo.com\r\n'
+                       'X-Sink-Token: t0k\r\n' + length_line + '\r\n{}').encode())
+            return s.recv(1024).split(b' ')[1]
+
+    def test_refuses_missing_and_malformed_length(self):
+        self.assertEqual(self.raw(''), b'411')
+        self.assertEqual(self.raw('Content-Length: abc\r\n'), b'411')
         self.assertEqual(self.files(), [])
 
     def test_preflight_allows_token_header(self):
