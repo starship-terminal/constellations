@@ -167,9 +167,18 @@ class BuildTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        # A copy of docs/ with two scorecard pages, since docs/scorecard/ is generated
+        # (gitignored) and absent on a fresh checkout.
         cls.tmp = tempfile.TemporaryDirectory()
+        cls.docs = Path(cls.tmp.name) / "docs"
+        shutil.copytree(sitegen.DOCS, cls.docs, ignore=shutil.ignore_patterns("scorecard"))
+        (cls.docs / "scorecard").mkdir()
+        (cls.docs / "scorecard" / "index.md").write_text("# Scorecard\n\nSee [linear](linear.md).\n")
+        (cls.docs / "scorecard" / "linear.md").write_text("# Linear\n\nBack to [the docs](../PACKAGE.md).\n")
         cls.out = Path(cls.tmp.name) / "site"
-        with mock.patch.object(sitegen, "OUT", cls.out), mock.patch("sys.stdout"):
+        with mock.patch.object(sitegen, "DOCS", cls.docs), mock.patch.object(sitegen, "OUT", cls.out), \
+             mock.patch("sys.stdout"):
+            cls.pages = sitegen.pages()
             sitegen.build()
 
     @classmethod
@@ -185,20 +194,28 @@ class BuildTest(unittest.TestCase):
         self.assertFalse([f for f in files if "gallery" in f or f.startswith("systems/")])
         self.assertFalse([f for f in files if f in ("search.json", "sitemap.xml")])
 
-    def test_only_pages_and_the_docs_statics_are_written(self):
-        statics = ("assets/", "stylesheets/")
-        for f in self.files():
-            if f.startswith(statics) or f == "site.webmanifest":
-                self.assertTrue((sitegen.DOCS / f).is_file(), f"{f} is not a copy of docs/{f}")
-            else:
-                self.assertTrue(f.endswith(".html"), f"unexpected output {f}")
+    def test_only_pages_and_exact_copies_of_the_docs_statics_are_written(self):
+        statics = ["site.webmanifest"] + sorted(
+            p.relative_to(self.docs).as_posix() for d in ("assets", "stylesheets")
+            for p in (self.docs / d).rglob("*") if p.is_file())
+        files = self.files()
+        self.assertEqual([f for f in files if not f.endswith(".html")],
+                         sorted(f for f in statics if not f.endswith(".html")))
+        for f in statics:
+            self.assertEqual((self.out / f).read_bytes(), (self.docs / f).read_bytes(), f)
 
     def test_every_page_is_written(self):
         files = set(self.files())
-        for page in sitegen.pages():
+        self.assertTrue({"scorecard/index.html", "scorecard/linear/index.html"} <= files)
+        for page in self.pages:
             if page.src.exists():
                 self.assertIn(f"{page.url}index.html", files)
         self.assertTrue({"settings/index.html", "404.html"} <= files)
+
+    def test_nested_scorecard_links_are_rewritten(self):
+        html = (self.out / "scorecard" / "linear" / "index.html").read_text()
+        self.assertIn('href="../../PACKAGE/"', html)
+        self.assertIn('href="linear/"', (self.out / "scorecard" / "index.html").read_text())
 
 
 if __name__ == "__main__":
