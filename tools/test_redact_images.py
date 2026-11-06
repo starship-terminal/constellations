@@ -204,10 +204,28 @@ class Commands(unittest.TestCase):
                              ["icon.png", "icons/b.webp", "raw/c.gif", "raw/deep/d.jpg", "screenshots/a.png"])
             Image.new("RGB", (4, 4)).save(pkg / "icons/e.bmp")    # a type check cannot read
             (pkg / "raw/dump").write_bytes((pkg / "icon.png").read_bytes())   # an image with no extension
+            (pkg / "raw/layers").write_bytes(b"8BPS\x00\x01" + bytes(20))     # a renamed Photoshop file
             code, out = run()
             self.assertEqual(code, 1)
             self.assertIn("UNREADABLE icons/e.bmp", out)
             self.assertIn("UNREADABLE raw/dump", out)
+            self.assertIn("UNREADABLE raw/layers", out)
+            self.assertNotIn("notes.json", out)
+
+    def test_check_skips_git_ignored_images_with_non_ascii_names(self):
+        import subprocess
+        with tempfile.TemporaryDirectory() as d:
+            pkg = Path(d)
+            if subprocess.run(["git", "init", "-q", d], capture_output=True).returncode:
+                self.skipTest("git is not available")
+            (pkg / ".gitignore").write_text("fonts/\n")
+            (pkg / "fonts").mkdir()
+            Image.new("RGB", (4, 4)).save(pkg / "fonts/é.png")
+            Image.new("RGB", (4, 4)).save(pkg / "fonts/é.bmp")
+            Image.new("RGB", (4, 4)).save(pkg / "kept é.png")
+            readable, unreadable = R.check_images(pkg)
+            self.assertEqual([f.name for f in readable], ["kept é.png"])
+            self.assertEqual(unreadable, [])
 
     def test_check_reads_every_frame_of_an_animation(self):
         from unittest import mock

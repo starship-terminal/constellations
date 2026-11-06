@@ -155,37 +155,47 @@ def package_images(pkg, subdirs=("screenshots", "components/crops", "components"
 # in each format catalog.py lists a package image under. A file of any other image type cannot be
 # read for text here, so `check` fails on it rather than pass it unread.
 OTHER_IMAGE_EXT = {".ico", ".bmp", ".tif", ".tiff", ".avif", ".heic", ".heif", ".jxl", ".apng", ".jp2", ".psd"}
-IMAGE_MAGIC = (b"\x89PNG", b"\xff\xd8\xff", b"GIF8", b"BM", b"II*\x00", b"MM\x00*", b"\x00\x00\x01\x00")
 SKIP_DIRS = {".git", "node_modules", "__pycache__"}
 
 
 def _is_image(f):
-    """By extension, or by content for a file whose name does not say (an extensionless dump)."""
+    """By extension, or by content for a file whose name does not say (an extensionless dump, a
+    renamed .psd): Pillow recognises the format from the header."""
     ext = f.suffix.lower()
     if ext in IMAGE_EXT or ext in OTHER_IMAGE_EXT:
         return True
     try:
         with open(f, "rb") as fh:
-            head = fh.read(12)
+            head = fh.read(16)
     except OSError:
         return False
-    return (head.startswith(IMAGE_MAGIC) or (head[:4] == b"RIFF" and head[8:12] == b"WEBP")
-            or (head[4:8] == b"ftyp" and head[8:12] in (b"avif", b"heic", b"heix", b"mif1")))
+    if head.startswith((b"8BPS", b"\xff\x0a", b"\x00\x00\x00\x0cJXL ", b"\x00\x00\x00\x0cjP  ")) or (
+            head[4:8] == b"ftyp" and head[8:12] in (b"avif", b"avis", b"heic", b"heix", b"mif1", b"msf1")):
+        return True
+    try:
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            with Image.open(f):
+                return True
+    except Exception:
+        return False
 
 
 def _git_ignored(paths):
     """The paths git ignores (a package's local fonts/, capture dumps/): never committed, so not checked.
-    Outside a git checkout, or without git, nothing counts as ignored."""
+    Outside a git checkout, or without git, nothing counts as ignored. NUL-separated both ways, so a
+    non-ASCII name comes back as itself rather than quoted."""
     if not paths:
         return set()
     try:
-        out = subprocess.run(["git", "-C", str(paths[0].parent), "check-ignore", "--stdin"], capture_output=True,
-                             text=True, input="\n".join(str(p.resolve()) for p in paths), timeout=60)
+        out = subprocess.run(["git", "-C", str(paths[0].parent), "check-ignore", "-z", "--stdin"],
+                             capture_output=True, input=b"\0".join(os.fsencode(p.resolve()) for p in paths),
+                             timeout=60)
     except (OSError, subprocess.SubprocessError):
         return set()
     if out.returncode not in (0, 1):
         return set()
-    return {Path(line) for line in out.stdout.splitlines() if line}
+    return {Path(os.fsdecode(p)) for p in out.stdout.split(b"\0") if p}
 
 
 def check_images(pkg):
@@ -202,9 +212,11 @@ def check_images(pkg):
 
 
 def frames(f):
-    """Every frame of an image as RGB: an animated GIF or WebP can hide text in a later frame."""
+    """Every frame of an image as RGB, one at a time: an animated GIF or WebP can hide text in a later
+    frame, and holding every decoded frame of a long one would exhaust memory."""
     with Image.open(f) as im:
-        return [fr.convert("RGB") for fr in ImageSequence.Iterator(im)]
+        for fr in ImageSequence.Iterator(im):
+            yield fr.convert("RGB")
 
 
 def size_matches(sizes, wh):
