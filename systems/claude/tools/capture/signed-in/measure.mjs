@@ -645,7 +645,7 @@ out._meta = {
   },
   tokens: '`vars` lists every var(--x) named in the classes of the element and its first descendants, resolved in that state\'s theme.',
   refreshed: '2026-10-17: new copies for forms, feedback and states (see READ); the 2026-10-04 readings are kept as they were',
-  snapshots: { ...(out._meta && out._meta.snapshots), ...Object.fromEntries(labels.map((l) => { const m = metaOf(l); return [l, { url: m.url.replace(/\/(chat|project|artifact|cowork)\/[\w-]+/, '/$1/<id>'), title: m.title, w: m.w, h: m.h, read: READ[l] || '2026-10-04', ...(SCROLL[l] ? { scroll: SCROLL[l] } : {}) }]; })) },
+  snapshots: { ...(out._meta && out._meta.snapshots), ...Object.fromEntries(labels.map((l) => { const m = metaOf(l); return [l, { url: m.url.replace(/\/(chat|project|artifact|cowork)\/[0-9a-fA-F-]{8,}/, '/$1/<id>'), title: m.title, w: m.w, h: m.h, read: READ[l] || '2026-10-04', ...(SCROLL[l] ? { scroll: SCROLL[l] } : {}) }]; })) },
 };
 out.components ??= {};
 fs.mkdirSync(CROPS, { recursive: true });
