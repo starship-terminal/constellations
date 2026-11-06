@@ -6,6 +6,7 @@
 
 import { useEffect, useState } from "react";
 import { useLightbox } from "@/components/Lightbox";
+import { setCollapsed, setTheme, usePrefs, type Theme } from "@/components/prefs";
 
 export interface SettingsStats {
   repo: string;
@@ -58,8 +59,7 @@ interface ModelHit {
 export function Settings({ stats }: { stats: SettingsStats }) {
   const lb = useLightbox();
   const [cfg, setCfg] = useState<Cfg>(EMPTY);
-  const [theme, setTheme] = useState("dark");
-  const [collapsed, setCollapsed] = useState(false);
+  const { theme, collapsed } = usePrefs();
   const [saved, setSaved] = useState<string[]>([]);
   const [models, setModels] = useState<ModelHit[]>([]);
   const [status, setStatus] = useState("");
@@ -71,8 +71,6 @@ export function Settings({ stats }: { stats: SettingsStats }) {
   useEffect(() => {
     setOrigin(window.location.origin);
     setCfg(readProvider());
-    setTheme(document.documentElement.dataset.theme === "light" ? "light" : "dark");
-    setCollapsed(document.documentElement.dataset.nav === "collapsed");
     setSaved(readSaved());
     fetch("/api/status")
       .then((r) => (r.ok ? r.json() : null))
@@ -140,29 +138,8 @@ export function Settings({ stats }: { stats: SettingsStats }) {
     setStatus("Removed the saved provider.");
   };
 
-  const applyTheme = (t: string) => {
-    document.documentElement.dataset.theme = t;
-    try {
-      localStorage.setItem("ds-theme", t);
-    } catch {}
-    setTheme(t);
-  };
-
-  const applyNav = (c: boolean) => {
-    const root = document.documentElement;
-    if (c) {
-      root.dataset.nav = "collapsed";
-      try {
-        localStorage.setItem("ds-nav", "collapsed");
-      } catch {}
-    } else {
-      delete root.dataset.nav;
-      try {
-        localStorage.removeItem("ds-nav");
-      } catch {}
-    }
-    setCollapsed(c);
-  };
+  const applyTheme = (t: Theme) => setTheme(t);
+  const applyNav = (c: boolean) => setCollapsed(c);
 
   const clearSaved = () => {
     try {
