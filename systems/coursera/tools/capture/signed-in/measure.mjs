@@ -475,7 +475,7 @@ const HELPERS = () => {
     if (!el) return null;
     const p = getComputedStyle(el, pe);
     if (!p.content || p.content === 'none' || p.content === 'normal') return null;
-    return { content: p.content, width: p.width, height: p.height, position: p.position, inset: `${p.top} ${p.right} ${p.bottom} ${p.left}`, bg: p.backgroundColor, border: `${p.borderTopWidth} ${p.borderTopStyle} ${p.borderTopColor}`, borderLeft: `${p.borderLeftWidth} ${p.borderLeftStyle} ${p.borderLeftColor}`, radius: p.borderRadius, margin: p.margin, color: p.color, font: `${p.fontWeight} ${p.fontSize}/${p.lineHeight}`, boxShadow: p.boxShadow, bgImage: noUrl(p.backgroundImage).slice(0, 200) };
+    return { content: noUrl(p.content), width: p.width, height: p.height, position: p.position, inset: `${p.top} ${p.right} ${p.bottom} ${p.left}`, bg: p.backgroundColor, border: `${p.borderTopWidth} ${p.borderTopStyle} ${p.borderTopColor}`, borderLeft: `${p.borderLeftWidth} ${p.borderLeftStyle} ${p.borderLeftColor}`, radius: p.borderRadius, margin: p.margin, color: p.color, font: `${p.fontWeight} ${p.fontSize}/${p.lineHeight}`, boxShadow: p.boxShadow, bgImage: noUrl(p.backgroundImage).slice(0, 200) };
   };
   const paintUp = (el) => {
     while (el && el !== document.documentElement) {

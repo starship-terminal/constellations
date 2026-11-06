@@ -91,9 +91,12 @@ export const PROPS = [
 // anything, the rect, and the size of the first svg icon inside it.
 export async function styleOf(locator) {
   return locator.evaluate((el, props) => {
+    // A url() in a computed value can be a signed URL: recorded as url(…), only data: and #fragment
+    // references kept (the kit's noUrl).
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
     const pick = (cs) => {
       const o = {};
-      for (const p of props) o[p] = cs[p];
+      for (const p of props) o[p] = noUrl(cs[p]);
       return o;
     };
     const cs = getComputedStyle(el);
@@ -110,7 +113,7 @@ export async function styleOf(locator) {
       const p = getComputedStyle(el, pe);
       if (p.content && p.content !== 'none' && p.content !== 'normal') {
         out[pe] = {
-          content: p.content, width: p.width, height: p.height, position: p.position,
+          content: noUrl(p.content), width: p.width, height: p.height, position: p.position,
           backgroundColor: p.backgroundColor, boxShadow: p.boxShadow, borderTopWidth: p.borderTopWidth,
           borderTopStyle: p.borderTopStyle, borderTopColor: p.borderTopColor, borderRadius: p.borderRadius,
           outline: p.outline, inset: `${p.top} ${p.right} ${p.bottom} ${p.left}`, opacity: p.opacity,
@@ -121,9 +124,6 @@ export async function styleOf(locator) {
     // Every node in the subtree (and its pseudo-elements) that paints a
     // background, border, shadow or outline, so a border drawn by a child or a
     // ::before is not missed.
-    // A url() in a computed value can be a signed URL: recorded as url(…), only data: and #fragment
-    // references kept (the kit's noUrl).
-    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
     const paint = [];
     const nodes = [el, ...el.querySelectorAll('*')].slice(0, 400);
     for (const n of nodes) {

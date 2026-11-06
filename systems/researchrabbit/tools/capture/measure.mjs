@@ -490,6 +490,9 @@ for (const s of SPECS) if (EXTRA[s.key]) s.targets.push(...EXTRA[s.key]);
 // ---------------------------------------------------------------- page helpers (run in the page)
 
 const HELPERS = () => {
+  // A url() in a computed value can be a signed URL: recorded as url(…), only data: and #fragment
+  // references kept (the kit's noUrl).
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
   const norm = (s) => (s || '').replace(/\s+/g, ' ').trim();
   const box = (el) => {
     if (!el) return null;
@@ -506,7 +509,7 @@ const HELPERS = () => {
     add('letterSpacing', cs.letterSpacing, 'normal');
     add('fontStyle', cs.fontStyle, 'normal');
     add('bg', cs.backgroundColor, 'rgba(0, 0, 0, 0)');
-    add('bgImage', cs.backgroundImage === 'none' ? undefined : cs.backgroundImage.replace(/url\("data:[^)]{40,}\)/g, 'url(data:...)').slice(0, 160));
+    add('bgImage', cs.backgroundImage === 'none' ? undefined : noUrl(cs.backgroundImage).replace(/url\("data:[^)]{40,}\)/g, 'url(data:...)').slice(0, 160));
     add('padding', cs.padding, '0px');
     add('margin', cs.margin, '0px');
     add('gap', cs.gap, 'normal');
@@ -592,7 +595,10 @@ async function styleOf(locator) {
   return locator.evaluate((el, props) => {
     const dn = (n) => { const c = typeof n.className === 'string' ? n.className : (n.className && n.className.baseVal) || ''; const m = c.split(/\s+/).find((x) => /-sc-/.test(x)); return m ? m.replace(/-sc-.*$/, '') : ''; };
     const nm = (n) => n.tagName.toLowerCase() + (dn(n) ? '.' + dn(n) : '');
-    const pick = (cs) => { const o = {}; for (const p of props) o[p] = cs[p]; return o; };
+    // A url() in a computed value can be a signed URL: recorded as url(…), only data: and #fragment
+    // references kept (the kit's noUrl).
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+    const pick = (cs) => { const o = {}; for (const p of props) o[p] = noUrl(cs[p]); return o; };
     const cs = getComputedStyle(el);
     const r = el.getBoundingClientRect();
     const out = {
@@ -607,12 +613,9 @@ async function styleOf(locator) {
     for (const pe of ['::before', '::after']) {
       const p = getComputedStyle(el, pe);
       if (p.content && p.content !== 'none' && p.content !== 'normal') {
-        out[pe] = { content: p.content.slice(0, 40), width: p.width, height: p.height, position: p.position, backgroundColor: p.backgroundColor, backgroundImage: p.backgroundImage.slice(0, 200), boxShadow: p.boxShadow, borderTopWidth: p.borderTopWidth, borderTopStyle: p.borderTopStyle, borderTopColor: p.borderTopColor, borderRadius: p.borderRadius, inset: `${p.top} ${p.right} ${p.bottom} ${p.left}`, opacity: p.opacity, transition: p.transition };
+        out[pe] = { content: noUrl(p.content).slice(0, 40), width: p.width, height: p.height, position: p.position, backgroundColor: p.backgroundColor, backgroundImage: noUrl(p.backgroundImage).slice(0, 200), boxShadow: p.boxShadow, borderTopWidth: p.borderTopWidth, borderTopStyle: p.borderTopStyle, borderTopColor: p.borderTopColor, borderRadius: p.borderRadius, inset: `${p.top} ${p.right} ${p.bottom} ${p.left}`, opacity: p.opacity, transition: p.transition };
       }
     }
-    // A url() in a computed value can be a signed URL: recorded as url(…), only data: and #fragment
-    // references kept (the kit's noUrl).
-    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
     const paint = [];
     for (const n of [el, ...el.querySelectorAll('*')].slice(0, 300)) {
       if (paint.length >= 10) break;

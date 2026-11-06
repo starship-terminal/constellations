@@ -14,7 +14,10 @@
   const P = 'display position top left right bottom width height padding-top padding-right padding-bottom padding-left margin-top margin-bottom gap row-gap column-gap grid-template-columns grid-template-rows background-color background-image color border-top-width border-right-width border-bottom-width border-left-width border-top-color border-right-color border-bottom-color border-left-color border-top-style border-bottom-style border-top-left-radius border-top-right-radius border-bottom-right-radius border-bottom-left-radius box-shadow opacity filter backdrop-filter font-family font-size font-weight line-height letter-spacing text-transform text-decoration-line transition-property transition-duration transition-timing-function animation-name animation-duration transform z-index cursor max-width min-width min-height outline-style outline-width outline-color outline-offset fill stroke'.split(' ');
   const base = {};
   { const x = document.createElement('div'); document.body.appendChild(x); const c = getComputedStyle(x); for (const p of P) base[p] = c.getPropertyValue(p); x.remove(); }
-  const keep = (c) => { const o = {}; for (const p of P) { const v = c.getPropertyValue(p); if (v !== base[p] && v !== '') o[p] = v.length > 300 ? v.slice(0, 300) : v; } return o; };
+  // A url() in a computed value (a background photo, a cursor) can be a signed or per-account URL:
+  // recorded as url(…), only data: and #fragment references kept (the kit's noUrl).
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+  const keep = (c) => { const o = {}; for (const p of P) { const v = c.getPropertyValue(p); if (v !== base[p] && v !== '') o[p] = noUrl(v).slice(0, 300); } return o; };
   const one = (el) => {
     if (!el) return null;
     const r = el.getBoundingClientRect();

@@ -107,12 +107,91 @@ class SharedList(unittest.TestCase):
         self.assertEqual(unsnap.leaks_in('<a href="https://x/a?a=1&amp;sig=2">', redact), ["sig"])
 
 
+# A computed-style property whose value can be a url(). A script that copies property values in a
+# loop (o[p] = cs[p], o[p] = v) must not read any of them raw.
+URL_PROPS = re.compile(r"background-?image|(?<![.\w-])cursor(?![-\w])|mask-?image|list-?style-?image|border-?image", re.I)
+RAW_PICK = re.compile(r"\b(?:o|out)\[(\w+)\] ?= ?(?:\w+(?:\[\1\]|\.getPropertyValue\(\1\))|v(?:\.length|\.slice))"
+                      r"|\b(?:o|out)\[p\] ?= ?v\b(?![.(\w])")
+# A single value read raw: p.backgroundImage.slice(…), content: p.content, a resolved custom property.
+RAW_READ = re.compile(r"\b(?:p|q|pc|c|cs|a|b)\.(?:backgroundImage|content)\.(?:slice|replace)\(|\bcontent: (?:p|q|pc|a|b)\.content\b"
+                      r"|\bout\.vars\[\w+\] = (?!noUrl\()")
+NO_URL_DEF = re.compile(r"\bnoUrl = \(v\)")
+NO_URL_USE = re.compile(r"\bnoUrl\(")
+
+
+def no_url_scope_errors(src):
+    """Line numbers where noUrl( is used with no definition in scope. A definition holds from its line
+    until a later line indented less than it (the end of the block it sits in), so each browser
+    callback needs its own: they run in the page, apart from the module and from each other."""
+    bad, live = [], []
+    for n, line in enumerate(src.splitlines(), 1):
+        if not line.strip():
+            continue
+        ind = len(line) - len(line.lstrip())
+        live = [d for d in live if d <= ind]
+        d = NO_URL_DEF.search(line)
+        for u in NO_URL_USE.finditer(line):
+            if not live and not (d and d.start() < u.start()):
+                bad.append(n)
+                break
+        if d:
+            live.append(ind)
+    return bad
+
+
+def capture_scripts_recording_raw_urls(root):
+    """(path, reason) for each systems/*/tools/capture script under root that records a computed value raw."""
+    bad = []
+    for path in sorted(Path(root).glob("systems/*/tools/capture/**/*")):
+        if path.suffix not in (".mjs", ".js") or path.name.startswith("test_"):
+            continue
+        src = path.read_text()
+        if "getComputedStyle" not in src:
+            continue
+        rel = str(path.relative_to(root))
+        if URL_PROPS.search(src):
+            bad += [(rel, "raw pick " + m.group(0)) for m in RAW_PICK.finditer(src)]
+        bad += [(rel, "raw read " + m.group(0)) for m in RAW_READ.finditer(src)]
+        bad += [(rel, f"noUrl used with no definition in scope at line {n}") for n in no_url_scope_errors(src)]
+    return bad
+
+
 def js_block(path, start, end):
     """The source lines from the first one starting with `start` through the first after it starting with `end`."""
     lines = Path(path).read_text().splitlines()
     i = next(n for n, l in enumerate(lines) if l.lstrip().startswith(start))
     j = next(n for n in range(i, len(lines)) if lines[n].lstrip().startswith(end))
     return "\n".join(lines[i:j + 1])
+
+
+class PackageCaptureScripts(unittest.TestCase):
+    """Python only, so it runs without node."""
+
+    def test_every_package_capture_script_records_computed_values_through_no_url(self):
+        # Every package's capture scripts, found by glob so a new copy is covered too: no computed
+        # value that can hold a url() (a picked property, a pseudo-element's content or background
+        # image, a resolved custom property, a one-off box reading) is recorded raw, and each scope
+        # that calls noUrl defines it first (a const read before its line throws, and the paint-loop
+        # fix had put it after pick).
+        self.assertEqual(capture_scripts_recording_raw_urls(HERE.parent), [])
+
+    def test_the_raw_patterns_catch_each_shape(self):
+        for raw in ("for (const p of props) o[p] = cs[p];", "out[p] = cs.getPropertyValue(p);",
+                    "const v = cs.getPropertyValue(p); o[p] = v;", "o[p]=v.slice(0,300)"):
+            self.assertTrue(RAW_PICK.search(raw), raw)
+        for ok in ("o[p] = noUrl(cs[p]);", "o[p] = noUrl(v).slice(0, 300);", "if (v !== skip) o[k] = v;"):
+            self.assertFalse(RAW_PICK.search(ok), ok)
+        for raw in ("content: p.content, width", "p.backgroundImage.slice(0, 200)", "out.vars[n] = root.getPropertyValue(n).trim();"):
+            self.assertTrue(RAW_READ.search(raw), raw)
+        self.assertFalse(RAW_READ.search("out.vars[n] = noUrl(v);"))
+
+    def test_each_callback_needs_its_own_no_url(self):
+        two = ("const HELPERS = () => {\n  const noUrl = (v) => v;\n  const box = (el) => noUrl(el);\n};\n"
+               "async function styleOf(locator) {\n  return locator.evaluate((el) => {\n{inner}  });\n}\n")
+        self.assertEqual(no_url_scope_errors(two.replace("{inner}", "    const noUrl = (v) => v;\n    const pick = (cs) => noUrl(cs);\n")), [])
+        self.assertEqual(no_url_scope_errors(two.replace("{inner}", "    const pick = (cs) => noUrl(cs);\n")), [7])
+        self.assertEqual(no_url_scope_errors(two.replace("{inner}", "    const pick = (cs) => noUrl(cs);\n    const noUrl = (v) => v;\n")), [7])
+        self.assertEqual(no_url_scope_errors("l.evaluate((el) => { const noUrl = (v) => v; return noUrl(el); });"), [])
 
 
 @unittest.skipIf(NODE is None, "node is not on PATH")

@@ -162,7 +162,10 @@ const PROPS = [
 function styleOf(el, props) {
   const cls = (n) => (typeof n.className === 'string' ? n.className : n.getAttribute('class') || '');
   const short = (n) => n.tagName.toLowerCase() + cls(n).split(/\s+/).filter((c) => c && !c.includes('[') && !c.includes(':')).slice(0, 3).map((c) => '.' + c).join('');
-  const pick = (cs) => { const o = {}; for (const p of props) o[p] = cs[p]; return o; };
+  // A url() in a computed value can be a signed URL: recorded as url(…), only data: and #fragment
+  // references kept (the kit's noUrl).
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+  const pick = (cs) => { const o = {}; for (const p of props) o[p] = noUrl(cs[p]); return o; };
   const cs = getComputedStyle(el);
   const r = el.getBoundingClientRect();
   const out = {
@@ -176,12 +179,9 @@ function styleOf(el, props) {
   for (const pe of ['::before', '::after']) {
     const p = getComputedStyle(el, pe);
     if (p.content && p.content !== 'none' && p.content !== 'normal') {
-      out[pe] = { content: p.content.slice(0, 40), width: p.width, height: p.height, position: p.position, backgroundColor: p.backgroundColor, backgroundImage: p.backgroundImage.slice(0, 200), boxShadow: p.boxShadow, borderTopWidth: p.borderTopWidth, borderTopStyle: p.borderTopStyle, borderTopColor: p.borderTopColor, borderRadius: p.borderRadius, inset: `${p.top} ${p.right} ${p.bottom} ${p.left}`, opacity: p.opacity, transition: p.transition };
+      out[pe] = { content: noUrl(p.content).slice(0, 40), width: p.width, height: p.height, position: p.position, backgroundColor: p.backgroundColor, backgroundImage: noUrl(p.backgroundImage).slice(0, 200), boxShadow: p.boxShadow, borderTopWidth: p.borderTopWidth, borderTopStyle: p.borderTopStyle, borderTopColor: p.borderTopColor, borderRadius: p.borderRadius, inset: `${p.top} ${p.right} ${p.bottom} ${p.left}`, opacity: p.opacity, transition: p.transition };
     }
   }
-  // A url() in a computed value can be a signed URL: recorded as url(…), only data: and #fragment
-  // references kept (the kit's noUrl).
-  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
   const paint = [];
   const nodes = [el, ...el.querySelectorAll('*')].slice(0, 400);
   for (const n of nodes) {
@@ -241,7 +241,7 @@ function styleOf(el, props) {
   if (names.size) {
     out.vars = {};
     const root = getComputedStyle(el);
-    for (const n of [...names].sort()) out.vars[n] = root.getPropertyValue(n).trim();
+    for (const n of [...names].sort()) out.vars[n] = noUrl(root.getPropertyValue(n).trim());
   }
   return out;
 }
