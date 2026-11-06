@@ -62,10 +62,21 @@ def meas(key, prop, theme="dark", state="default"):
     return v, f"Measured: computed {prop} of {k} {state} ({C[k]['selector']}), raw/components-computed.json, {READ}"
 
 
-def expect(v, *wanted, key="", whole=False):
-    """The literal a token writes must still be what was measured: each wanted value is one entry of the
-    computed list (or, with whole, a substring of it), else the build stops."""
-    have = v if whole else [x.strip() for x in re.split(r",\s*(?![^()]*\))", v)]
+def entries(v):
+    """A computed comma list, split outside parentheses."""
+    return [x.strip() for x in re.split(r",\s*(?![^()]*\))", v)]
+
+
+def expect(v, *wanted, key="", layers=False):
+    """The literal a token writes must still be what was measured, else the build stops: each wanted
+    value is one entry of the computed list, or with layers the shadow's visible layers are exactly
+    the wanted ones (Tailwind's fully transparent placeholder layers are ignored)."""
+    have = entries(v)
+    if layers:
+        have = [x for x in have if not x.startswith("rgba(0, 0, 0, 0) ")]
+        if have != list(wanted):
+            raise ValueError(f"{key}: measured {v!r} has the visible layers {have}, not {list(wanted)}; update the token")
+        return
     for w in wanted:
         if w not in have:
             raise ValueError(f"{key}: measured {v!r} no longer holds {w!r}; update the token")
@@ -315,7 +326,7 @@ put(core, "space.panelInset", tok(f"{pr['y']:g}px", "dimension",
 
 # Elevation and motion
 v, s = meas("content-panel", "boxShadow")
-expect(v, "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px", key="shadow.sm", whole=True)
+expect(v, "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px", key="shadow.sm", layers=True)
 put(core, "shadow.sm", tok([{"offsetX": "0px", "offsetY": "1px", "blur": "2px", "spread": "0px", "color": "#0000000d"}], "shadow", s,
     "The only resting shadow: the content panel and the selected segment."))
 for theme in ["dark", "light"]:
