@@ -15,6 +15,8 @@
 // account text. The one exception is the scratch project and workspace the capture created
 // itself (SCRATCH, WORKSPACE).
 
+import { existsSync } from 'node:fs';
+
 export const NAME = 'Superset';
 // One window; its document title is the organisation's name, so match any title. shots.mjs's
 // --set-theme opens the window keyed `agents` (Cursor's name for its main window): same window here.
@@ -297,7 +299,10 @@ export const SHOTS = [
   // Submitting the scratch folder's name again fails: the folder exists. That gives the error toast,
   // and nothing is created.
   { name: 'create-project-error', window: M, state: 'error',
-    reveal: async h => { await createProjectItem(h); await fillCreateProject(h); await dialogButton(h.page, 'Create project').click(); await wait(h.page, 1500); },
+    reveal: async h => {
+      // Without the folder the submit would create a project instead of failing: stop before clicking.
+      if (!existsSync(`${SCRATCH_DIR}/${SCRATCH}`)) throw Object.assign(new Error(`${SCRATCH_DIR}/${SCRATCH} is missing, so Create project would succeed`), { abort: true });
+      await createProjectItem(h); await fillCreateProject(h); await dialogButton(h.page, 'Create project').click(); await wait(h.page, 1500); },
     parts: { toast: S.toast, dialog: S.dialog },
     after: async ({ page }) => { await dialogButton(page, 'Cancel').click().catch(() => {}); await wait(page, 4000); } },
   { name: 'workspaces', window: M, reveal: async h => goto(h, 'Workspaces'),

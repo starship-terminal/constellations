@@ -98,6 +98,21 @@ class ImageTests(unittest.TestCase):
         build_images(self.package)
         self.assertEqual(before, (self.package / 'components/crop.png').read_bytes())
 
+    def test_rule_rectangles_are_painted_before_the_png_and_its_crops(self):
+        # A white "private" stripe on a red original; the rule paints over it.
+        im = Image.new('RGB', (12, 10), 'red')
+        im.paste((255, 255, 255), (2, 3, 10, 6))
+        im.save(self.source / 'first.png', format='PNG')
+        self.captures[0].update(sha256=hashlib.sha256((self.source / 'first.png').read_bytes()).hexdigest(),
+                                decodedFormat='PNG')
+        self.write_manifest()
+        white = lambda path: sum(1 for px in Image.open(path).convert('RGB').getdata() if px[1] > 200)
+        build_images(self.package, self.source, rules={})
+        self.assertGreater(white(self.package / 'screenshots/first.png'), 0)
+        rules = {'families': [{'files': ['screenshots/first.png'], 'rects': [[1, 2, 11, 7, 'solid']]}]}
+        build_images(self.package, self.source, rules=rules)
+        self.assertEqual(white(self.package / 'screenshots/first.png'), 0)
+        self.assertEqual(white(self.package / 'components/crop.png'), 0)
 
 if __name__ == '__main__':
     unittest.main()

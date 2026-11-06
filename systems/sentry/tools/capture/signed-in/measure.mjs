@@ -29,12 +29,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { chromium, REF, RAW, CROPS, SNAPS, SCROLL, PYTHON, metaOf, newContext, openSnap, setLight } from './lib.mjs';
+import { safeUrl } from '../safe-url.mjs';
 
 if (!SNAPS) { console.error('SNAPS=<snapshot dir> is required'); process.exit(2); }
 const OUT = path.join(RAW, 'components-computed.json');
 const args = process.argv.slice(2);
 const jobsArg = args.indexOf('--jobs');
-const CONC = jobsArg >= 0 ? +args[jobsArg + 1] : 4;
+const CONC = jobsArg >= 0 ? Number(args[jobsArg + 1]) : 4;
+if (!Number.isInteger(CONC) || CONC < 1) { console.error(`--jobs needs a whole number of 1 or more, got ${args[jobsArg + 1]}`); process.exit(2); }
 const ONLY = args.filter((a, i) => !a.startsWith('--') && (jobsArg < 0 || i !== jobsArg + 1));
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
@@ -148,7 +150,10 @@ const PROPS = [
 function styleOf(el, props) {
   const cls = (n) => (typeof n.className === 'string' ? n.className : n.getAttribute('class') || '');
   const short = (n) => n.tagName.toLowerCase() + cls(n).split(/\s+/).filter((c) => c && !c.includes('[') && !c.includes(':')).slice(0, 3).map((c) => '.' + c).join('');
-  const pick = (cs) => { const o = {}; for (const p of props) o[p] = cs[p]; return o; };
+  // A url() in a computed value (a background photo, a cursor) can be a signed or per-account URL:
+  // recorded as url(…), only data: and #fragment references kept.
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+  const pick = (cs) => { const o = {}; for (const p of props) o[p] = noUrl(cs[p]); return o; };
   const cs = getComputedStyle(el);
   const r = el.getBoundingClientRect();
   const out = {
@@ -162,7 +167,7 @@ function styleOf(el, props) {
   for (const pe of ['::before', '::after']) {
     const p = getComputedStyle(el, pe);
     if (p.content && p.content !== 'none' && p.content !== 'normal') {
-      out[pe] = { content: p.content.slice(0, 40), width: p.width, height: p.height, position: p.position, backgroundColor: p.backgroundColor, backgroundImage: p.backgroundImage.slice(0, 200), boxShadow: p.boxShadow, borderTopWidth: p.borderTopWidth, borderTopStyle: p.borderTopStyle, borderTopColor: p.borderTopColor, borderRadius: p.borderRadius, inset: `${p.top} ${p.right} ${p.bottom} ${p.left}`, opacity: p.opacity, transition: p.transition };
+      out[pe] = { content: p.content.slice(0, 40), width: p.width, height: p.height, position: p.position, backgroundColor: p.backgroundColor, backgroundImage: noUrl(p.backgroundImage).slice(0, 200), boxShadow: p.boxShadow, borderTopWidth: p.borderTopWidth, borderTopStyle: p.borderTopStyle, borderTopColor: p.borderTopColor, borderRadius: p.borderRadius, inset: `${p.top} ${p.right} ${p.bottom} ${p.left}`, opacity: p.opacity, transition: p.transition };
     }
   }
   const paint = [];
@@ -178,7 +183,7 @@ function styleOf(el, props) {
       if (c.visibility !== 'visible') continue;
       const bw = ['Top', 'Right', 'Bottom', 'Left'].map((sd) => (parseFloat(c[`border${sd}Width`]) > 0 && c[`border${sd}Style`] !== 'none' ? `${sd[0]}:${c[`border${sd}Width`]} ${c[`border${sd}Style`]} ${c[`border${sd}Color`]}` : '')).filter(Boolean);
       const bg = c.backgroundColor !== 'rgba(0, 0, 0, 0)' ? c.backgroundColor : '';
-      const bgi = c.backgroundImage !== 'none' && !/^url\("?https?:/.test(c.backgroundImage) ? c.backgroundImage.replace(/url\("data:[^)]{60,}\)/g, 'url(data:…)').slice(0, 200) : '';
+      const bgi = c.backgroundImage !== 'none' && !/^url\("?https?:/.test(c.backgroundImage) ? noUrl(c.backgroundImage).replace(/url\("data:[^)]{60,}\)/g, 'url(data:…)').slice(0, 200) : '';
       const sh = c.boxShadow !== 'none' ? c.boxShadow : '';
       const ol = c.outlineStyle !== 'none' && parseFloat(c.outlineWidth) > 0 ? `${c.outlineWidth} ${c.outlineStyle} ${c.outlineColor} offset ${c.outlineOffset}` : '';
       if (!(bw.length || bg || bgi || sh || ol)) continue;
@@ -279,7 +284,7 @@ async function measureSnap(browser, label, specs, out) {
   } catch (e) {
     log('  ! open failed', label, e.message.split('\n')[0]);
     await ctx.close();
-    return;
+    return false;
   }
   const rest = { x: meta.w - 2, y: Math.round(meta.h / 2) };
   await page.evaluate(() => window.__saveScroll());
@@ -403,6 +408,7 @@ async function measureSnap(browser, label, specs, out) {
     }
   }
   await ctx.close();
+  return true;
 }
 
 // ---------------------------------------------------------------- main
@@ -421,12 +427,15 @@ out._meta = {
     other: 'active / selected / checked / open / typed / enabled / ... are other elements or snapshots captured in that state',
   },
   tokens: '`vars` lists every var(--x) named in the classes of the element and its first descendants, resolved in that state\'s theme.',
-  snapshots: { ...(out._meta && out._meta.snapshots), ...Object.fromEntries(labels.map((l) => { const m = metaOf(l); return [l, { url: m.url.replace(/\/(chat|project|artifact|cowork)\/[\w-]+/, '/$1/<id>'), title: m.title, w: m.w, h: m.h, ...(SCROLL[l] ? { scroll: SCROLL[l] } : {}) }]; })) },
+  // Entries kept from an earlier run go through safeUrl again, so a partial rerun never writes an
+  // older, unmasked URL back.
+  snapshots: { ...Object.fromEntries(Object.entries((out._meta && out._meta.snapshots) || {}).map(([l, v]) => [l, { ...v, url: v.url && safeUrl(v.url), title: undefined }])), ...Object.fromEntries(labels.map((l) => { const m = metaOf(l); return [l, { url: safeUrl(m.url), w: m.w, h: m.h, ...(SCROLL[l] ? { scroll: SCROLL[l] } : {}) }]; })) },
 };
 out.components ??= {};
 fs.mkdirSync(CROPS, { recursive: true });
 
-// Build the per-snapshot job lists, resetting the states that will be re-measured.
+// Build the per-snapshot job lists. The states a snapshot re-measures are cleared only once that
+// snapshot has opened (see reset below), so a copy that fails to open keeps its earlier readings.
 const bySnap = new Map();
 for (const spec of SPECS) {
   const c = (out.components[spec.key] ??= { states: {} });
@@ -435,8 +444,6 @@ for (const spec of SPECS) {
   c.pages = [...new Set(jobs.map((j) => j.snap))];
   for (const job of jobs) {
     if (!labels.includes(job.snap)) continue;
-    delete c.states[job.state];
-    delete c.states[job.state === 'default' ? 'light' : `light-${job.state}`];
     if (!bySnap.has(job.snap)) bySnap.set(job.snap, []);
     bySnap.get(job.snap).push({ spec, job });
   }
@@ -444,6 +451,9 @@ for (const spec of SPECS) {
 
 const browser = await chromium.launch();
 const queue = [...bySnap.keys()].sort();
+// Earlier readings of the states a snapshot in flight is re-measuring, by component. save() writes
+// them wherever no new reading exists yet, so while workers run, the file on disk never loses one.
+const earlier = new Map();
 const save = () => {
   // Stable order: components in SPECS order, states in the order the spec lists them, dark then light.
   const comps = {};
@@ -451,8 +461,10 @@ const save = () => {
     const c = out.components[spec.key];
     const names = jobsFor(spec).map((j) => j.state);
     const ordered = {};
-    for (const n of names) if (c.states[n]) ordered[n] = c.states[n];
-    for (const n of names) { const l = n === 'default' ? 'light' : `light-${n}`; if (c.states[l]) ordered[l] = c.states[l]; }
+    const prev = earlier.get(spec.key) || {};
+    const pick = (n) => c.states[n] || prev[n];
+    for (const n of names) if (pick(n)) ordered[n] = pick(n);
+    for (const n of names) { const l = n === 'default' ? 'light' : `light-${n}`; if (pick(l)) ordered[l] = pick(l); }
     comps[spec.key] = { ...c, states: ordered };
   }
   fs.writeFileSync(OUT, JSON.stringify({ _meta: out._meta, components: comps }, null, 1) + '\n');
@@ -461,7 +473,30 @@ await Promise.all(Array.from({ length: Math.min(CONC, queue.length) }, async () 
   while (queue.length) {
     const label = queue.shift();
     log('open', label, `(${bySnap.get(label).length} jobs x 2 themes)`);
-    await measureSnap(browser, label, bySnap.get(label), out);
+    // This snapshot's earlier readings move to `earlier` for the run: replaced once the copy opened
+    // and was measured, put back if it never opened or the run threw, so neither a failed open nor
+    // another worker's save can erase what an earlier run measured.
+    const jobs = bySnap.get(label), kept = [];
+    for (const { spec, job } of jobs) {
+      const st = out.components[spec.key].states;
+      for (const n of [job.state, job.state === 'default' ? 'light' : `light-${job.state}`]) {
+        if (!(n in st)) continue;
+        if (!earlier.has(spec.key)) earlier.set(spec.key, {});
+        earlier.get(spec.key)[n] = st[n];
+        kept.push([spec.key, n]);
+        delete st[n];
+      }
+    }
+    let opened = false;
+    try {
+      opened = await measureSnap(browser, label, jobs, out);
+    } catch (e) {
+      log('  ! measuring failed', label, String(e.message || e).split('\n')[0]);
+    }
+    for (const [key, n] of kept) {
+      if (!opened) out.components[key].states[n] ??= earlier.get(key)[n];
+      delete earlier.get(key)[n];
+    }
     save();
   }
 }));
