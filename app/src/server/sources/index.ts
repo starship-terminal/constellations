@@ -832,15 +832,19 @@ export async function getReference(id: string): Promise<LibraryDetail | null> {
   };
 }
 
+/** The first readable captured image; `read` lets a caller reuse its own reads. */
 export async function readReferenceImage(
   reference: LibraryDetail,
+  read?: (
+    url: string,
+  ) => Promise<{ data: Uint8Array; mediaType: string } | null>,
 ): Promise<{ data: Uint8Array; mediaType: string } | null> {
-  const { readLocalImage } = await import("./files");
+  const readImage = read || (await import("./files")).readLocalImage;
   for (const media of reference.media
     .filter((m) => m.type === "image")
     .slice(0, 8)) {
-    const result = await readLocalImage(media.url);
+    const result = await readImage(media.url);
     if (result) return result;
   }
-  return reference.image ? readLocalImage(reference.image) : null;
+  return reference.image ? readImage(reference.image) : null;
 }

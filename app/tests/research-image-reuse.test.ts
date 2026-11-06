@@ -120,3 +120,35 @@ test("a text-only model never reads image files", async () => {
   expect(output.visualEvidence).toBe("text-only");
   expect(mocks.readReferenceImage).not.toHaveBeenCalled();
 });
+
+test("inspecting a reference and then viewing its screenshot reads the file once", async () => {
+  // Behave like the real reader: pick the first image through the caller's read.
+  mocks.readReferenceImage.mockImplementation(
+    (reference: typeof mocks.reference, read: (url: string) => unknown) =>
+      read(reference.media[0].url),
+  );
+  const tools = researchTools({ excludedIds: [] });
+  const inspected = (await tools.inspectReference.execute!(
+    { referenceId: "systems:test" },
+    execution,
+  )) as InspectOutput;
+  const first = await tools.inspectReference.toModelOutput!({
+    toolCallId: "call",
+    input: { referenceId: "systems:test" },
+    output: inspected,
+  });
+  const input = {
+    referenceId: "systems:test",
+    mediaId: "systems/test/screenshots/home.png",
+  };
+  const viewed = await tools.viewReferenceMedia.execute!(input, execution);
+  if (!("media" in viewed)) throw new Error("Expected viewed media");
+  const second = await tools.viewReferenceMedia.toModelOutput!({
+    toolCallId: "call",
+    input,
+    output: viewed,
+  });
+  expect(mocks.readLocalImage).toHaveBeenCalledTimes(1);
+  expect(JSON.stringify(first)).toContain('"data":"AQID"');
+  expect(JSON.stringify(second)).toContain('"data":"AQID"');
+});
