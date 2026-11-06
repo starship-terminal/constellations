@@ -3,6 +3,7 @@ import importlib.util
 import json
 import os
 import unittest
+from unittest import mock
 from pathlib import Path
 
 SERVER = Path(__file__).resolve().parent.parent / "server"
@@ -120,8 +121,12 @@ class ProviderTest(unittest.TestCase):
         cfg = chat.provider_config({"api": "openai", "base_url": "https://x.test/v1/",
                                     "api_key": "k", "model": "m"})
         self.assertEqual(cfg["base_url"], "https://x.test/v1")
-        env = chat.provider_config(None)
-        self.assertEqual(env is not None, bool(os.environ.get("ANTHROPIC_API_KEY")))
+        # A body without a key or model falls back to the environment, both ways.
+        with mock.patch.dict(os.environ, {"ANTHROPIC_API_KEY": "test-key", "DS_CHAT_MODEL": "m-env"}):
+            env = chat.provider_config({"api": "openai"})
+            self.assertEqual((env["api"], env["api_key"], env["model"]), ("anthropic", "test-key", "m-env"))
+        with mock.patch.dict(os.environ, {"ANTHROPIC_API_KEY": ""}):
+            self.assertIsNone(chat.provider_config(None))
 
     def test_list_models_only_passes_missing_route(self):
         cfg = {"api": "openai", "api_key": "k", "base_url": "https://x.test/v1"}
@@ -385,6 +390,103 @@ class ChatErrorTest(unittest.TestCase):
         self.assertEqual(h.status, 500)
         self.assertNotIn(b"secret", h.wfile.getvalue())
         self.assertIn("/srv/secret/path leaked", log.getvalue())
+
+
+class ProviderUrlTest(unittest.TestCase):
+    """The provider endpoints fetch a caller-chosen URL, so they must not read
+    local files, follow redirects, or echo another server's response body."""
+
+    @classmethod
+    def setUpClass(cls):
+        import http.server
+        import threading
+        hits = cls.hits = []
+
+        class Upstream(http.server.BaseHTTPRequestHandler):
+            def log_message(self, *a):
+                pass
+
+            def do_GET(self):
+                hits.append(self.path)
+                if self.path.startswith("/redirect"):
+                    self.send_response(302)
+                    self.send_header("location", "/target/models")
+                    self.send_header("content-length", "0")
+                    self.end_headers()
+                    return
+                body = b"internal-secret-body"
+                self.send_response(401 if self.path.startswith("/denied") else 200)
+                self.send_header("content-length", str(len(body)))
+                self.end_headers()
+                self.wfile.write(body)
+
+        cls.httpd = http.server.ThreadingHTTPServer(("127.0.0.1", 0), Upstream)
+        cls.base = f"http://127.0.0.1:{cls.httpd.server_address[1]}"
+        threading.Thread(target=cls.httpd.serve_forever, daemon=True).start()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.httpd.shutdown()
+        cls.httpd.server_close()
+
+    def _models(self, base_url, **extra):
+        return chat.list_models({"api": "openai", "api_key": "k", "base_url": base_url, **extra})
+
+    def test_scheme_and_host_rules(self):
+        for url in ("file:///etc/passwd", "ftp://x.test/models", "http://x.test/models",
+                    "http://10.0.0.5/models", "gopher://127.0.0.1/", "https:///models"):
+            with self.assertRaises(chat.ProviderError, msg=url):
+                chat.check_url(url)
+        for url in ("https://api.x.test/v1/models", "http://127.0.0.1:11434/v1/models",
+                    "http://localhost/models", "http://[::1]:8000/models"):
+            chat.check_url(url)
+
+    def test_file_url_is_never_read(self):
+        out = self._models("file:///etc")
+        self.assertFalse(out["ok"])
+        self.assertNotIn("root", out["error"])
+
+    def test_redirect_not_followed(self):
+        before = len(self.hits)
+        out = self._models(self.base + "/redirect")
+        self.assertFalse(out["ok"])
+        self.assertIn("redirect", out["error"])
+        self.assertEqual(self.hits[before:], ["/redirect/models"])
+
+    def test_upstream_body_not_echoed(self):
+        out = self._models(self.base + "/denied")
+        self.assertFalse(out["ok"])
+        self.assertIn("HTTP 401", out["error"])
+        self.assertNotIn("internal-secret-body", out["error"])
+
+    def test_default_port_is_same_origin(self):
+        self.assertTrue(chat._same_origin("https://p.test:443/v1", "https://p.test/models"))
+        self.assertFalse(chat._same_origin("https://p.test:8443/v1", "https://p.test/models"))
+
+    def test_non_http_greeting_not_echoed(self):
+        import socket
+        import threading
+        srv = socket.socket()
+        srv.bind(("127.0.0.1", 0))
+        srv.listen(1)
+
+        def greet():
+            conn, _ = srv.accept()
+            conn.sendall(b"220 internal-smtp-banner ESMTP\r\n")
+            conn.close()
+        threading.Thread(target=greet, daemon=True).start()
+        try:
+            out = self._models(f"http://127.0.0.1:{srv.getsockname()[1]}")
+        finally:
+            srv.close()
+        self.assertFalse(out["ok"])
+        self.assertNotIn("internal-smtp-banner", out["error"])
+
+    def test_models_url_must_share_origin(self):
+        out = self._models("https://api.x.test/v1", models_url=self.base + "/models")
+        self.assertFalse(out["ok"])
+        self.assertIn("origin", out["error"])
+        self.assertEqual(self.hits.count("/models"), 0)
 
 
 if __name__ == "__main__":
