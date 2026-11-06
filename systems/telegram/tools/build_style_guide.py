@@ -112,7 +112,7 @@ def build():
     sizes = "".join('<div class="space-row"><code>%s</code><span class="bar thin" style="width:%s"></span><span>%s</span></div>'
                     % (esc(".".join(p)), esc(css(t["$value"])), esc(t["$value"])) for p, t in under(("size",)))
     sample = {"profileName": "kai chen", "navTitle": "Notifications", "body": "Privacy and Security", "bubble": "Do you know what time it is?",
-              "chatTitle": "nights & weekends", "subheadline": "my morning fix, today is chocolate pudding latte",
+              "chatTitle": "books & brunches", "subheadline": "next meetup moved to saturday, bring the maps!!",
               "quote": "Build documentation websites, blogs, marketing pages, and more.", "footnote": "Tap 'Edit' to change the order or delete folders.",
               "caption": "Chats 23:08"}
     type_rows = "".join('<tr><th scope="row"><code>%s</code><span class="desc">%s</span></th><td class="meta">%s, %s%s</td>'
@@ -128,9 +128,9 @@ def build():
   <div class="screen">
    <div class="nav"><span class="glass cap type-body">Edit</span><span class="type-navTitle">Chats</span><span class="round accent">&#9998;</span></div>
    <div class="chips"><span class="chip on type-subheadline">All</span><span class="chip type-subheadline">os</span><span class="chip type-subheadline">hobby</span><span class="chip type-subheadline">groups <b class="count">19</b></span></div>
-   <div class="crow pinned"><span class="av" style="background:var(--color-avatar-purple)"></span><div><div class="type-chatTitle">nights &amp; weekends</div><div class="type-subheadline prev">my morning fix, today is chocolate pudding latte</div></div><span class="type-footnote time">11:27</span></div>
+   <div class="crow pinned"><span class="av" style="background:var(--color-avatar-purple)"></span><div><div class="type-chatTitle">books &amp; brunches</div><div class="type-subheadline prev">next meetup moved to saturday, bring the maps!!</div></div><span class="type-footnote time">11:27</span></div>
    <div class="crow pinned"><span class="av" style="background:var(--color-avatar-blue)"></span><div><div class="type-chatTitle">kai's stash</div><div class="type-subheadline prev">You: insanely funny PR</div></div><span class="type-footnote time"><i class="tick">&#10003;</i> 08/10</span></div>
-   <div class="crow"><span class="av" style="background:var(--color-avatar-green)"></span><div><div class="type-chatTitle">Hannah</div><div class="type-subheadline prev">tenk bebe</div></div><span class="type-footnote time">14:53</span></div>
+   <div class="crow"><span class="av" style="background:var(--color-avatar-green)"></span><div><div class="type-chatTitle">Mira</div><div class="type-subheadline prev">see you!!</div></div><span class="type-footnote time">14:53</span></div>
    <div class="tabbar"><span class="type-caption">Contacts</span><span class="type-caption">Calls</span><span class="type-caption sel">Chats</span><span class="type-caption">Settings</span></div>
   </div>
   <p class="note">bg.chats, bg.pinned, surface.chipBar / chipSelected, badge.muted, size.rowChat, size.avatarChat, text.preview, text.readMark, surface.tabBar / tabSelected</p>
