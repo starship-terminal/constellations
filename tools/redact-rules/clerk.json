@@ -1,0 +1,35 @@
+{
+  "families": [
+    {
+      "name": "Native-pixel mobile user contact lines, including faded truncated addresses",
+      "files": ["screenshots/users-dark-mobile.png"],
+      "size": [[433, 1568]],
+      "rects": [
+        [99, 587, 367, 610, "solid"],
+        [99, 645, 367, 697, "solid"],
+        [99, 759, 367, 783, "solid"],
+        [99, 844, 367, 868, "solid"],
+        [99, 902, 367, 955, "solid"],
+        [99, 988, 367, 1038, "solid"],
+        [99, 1101, 367, 1125, "solid"],
+        [99, 1186, 367, 1210, "solid"],
+        [99, 1272, 367, 1296, "solid"],
+        [99, 1357, 367, 1381, "solid"]
+      ]
+    }
+  ],
+  "ocr": {
+    "emails": true,
+    "email_allow": []
+  },
+  "excludeSources": [
+    {
+      "file": "create-user-dialog-dark-mobile.png",
+      "sha256": "1b3d8d0494dfc004fa6a098112daa0ad1e0a216396d002b2f2829a25e0bced70",
+      "reason": "Fullpage screenshot clips the modal footer at the viewport boundary, then continues into unblurred background rows. Excluded from accepted visual evidence."
+    }
+  ],
+  "captureLimitations": {
+    "create-user-dialog-dark-desktop.png": "The fullpage screenshot shows the complete desktop dialog, but the blurred backdrop ends at the viewport boundary and the background continues below it. Use the verified dialog crop for component layout, not the fullpage backdrop."
+  }
+}

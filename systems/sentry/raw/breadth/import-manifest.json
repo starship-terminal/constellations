@@ -1,0 +1,771 @@
+{
+  "schemaVersion": 1,
+  "sourceDirectory": "~/.design-systems/sentry/breadth",
+  "reviewedAt": "2026-10-31",
+  "captures": [
+    {
+      "id": "account-desktop-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "account-language-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "account-timezone-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "account-stack-order-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "account-event-menu-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "security-settings-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "security-sessions-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notifications-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notification-alerts-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notification-alerts-menu-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notification-delivery-menu-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notification-project-menu-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notification-override-values-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notification-workflow-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notification-workflow-menu-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notification-deploy-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notification-deploy-menu-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notification-nudges-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notification-quota-top-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notification-quota-bottom-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notification-weekly-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notification-weekly-menu-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notification-routing-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notification-routing-menu-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notification-spikes-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "notification-crons-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "account-emails-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "account-subscriptions-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "account-authorized-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "account-identities-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "account-close-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-general-top-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-general-bottom-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-stats-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-stats-category-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-stats-spans-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-stats-type-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-stats-cumulative-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-projects-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-teams-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-members-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app",
+      "reason": "Member table remained loading."
+    },
+    {
+      "id": "organization-members-loaded-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app",
+      "reason": "Member table still loading despite filename."
+    },
+    {
+      "id": "organization-members-filter-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app",
+      "reason": "Filter menu visible but member table still loading; recapture settled context."
+    },
+    {
+      "id": "organization-security-top-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-minidump-menu-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-security-bottom-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-scrubbing-dialog-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-scrubbing-method-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-scrubbing-type-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-scrubbing-event-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-scrubbing-logs-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app",
+      "reason": "Attribute selector still loading."
+    },
+    {
+      "id": "organization-scrubbing-metrics-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app",
+      "reason": "Attribute selector still loading."
+    },
+    {
+      "id": "organization-auth-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-auth-plan-dialog-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app",
+      "reason": "Dialog not yet visible; superseded by organization-auth-plan-dialog-loaded-dark."
+    },
+    {
+      "id": "organization-auth-plan-dialog-loaded-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app with embedded product demo"
+    },
+    {
+      "id": "organization-audit-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-audit-date-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-audit-calendar-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-audit-actions-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-forwarding-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-relay-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-feature-flags-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "seer-autofix-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "seer-connectors-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "seer-advanced-dark",
+      "decision": "duplicate",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app",
+      "duplicateOf": "seer-autofix-dark",
+      "reason": "Advanced Settings navigation redirected to the same reviewed Seer trial page."
+    },
+    {
+      "id": "integrations-mcp-cli-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "integrations-directory-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "integration-github-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "integration-github-configurations-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "integrations-repositories-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "integrations-custom-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "integrations-custom-public-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "organization-token-index-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "account-personal-token-index-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "account-oauth-applications-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "billing-overview-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "billing-receipts-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "billing-spike-protection-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "billing-promo-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "billing-legal-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "billing-legal-bottom-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "issues-desktop-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "issues-errors-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "issues-breached-metrics-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "issues-warnings-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "issues-category-menu-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "issues-user-feedback-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "issues-feedback-setup-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "issues-autofix-recent-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app",
+      "reason": "Stale User Feedback page; superseded by issues-autofix-recent-loaded-dark."
+    },
+    {
+      "id": "issues-all-views-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "issues-views-sort-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "issues-autofix-recent-loaded-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "issues-autofix-overview-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "explore-traces-desktop-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "explore-logs-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "explore-metrics-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app with embedded product demo"
+    },
+    {
+      "id": "metrics-install-yarn-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app with embedded product demo"
+    },
+    {
+      "id": "metrics-install-pnpm-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app with embedded product demo"
+    },
+    {
+      "id": "metrics-configure-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app with embedded product demo"
+    },
+    {
+      "id": "metrics-verify-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app with embedded product demo"
+    },
+    {
+      "id": "explore-errors-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "explore-errors-columns-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "explore-errors-equation-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "explore-errors-tags-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app",
+      "reason": "Tag summary still loading."
+    },
+    {
+      "id": "explore-profiles-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app with embedded product demo"
+    },
+    {
+      "id": "explore-replays-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "explore-releases-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "explore-agents-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app with embedded product demo"
+    },
+    {
+      "id": "explore-agents-human-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app with embedded product demo"
+    },
+    {
+      "id": "explore-all-queries-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app",
+      "reason": "Saved-query list still loading."
+    },
+    {
+      "id": "dashboards-index-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "dashboards-actions-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "dashboard-nextjs-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app",
+      "reason": "Performance gauge still loading; settled image is dashboard-widget-actions-dark."
+    },
+    {
+      "id": "dashboard-widget-actions-dark",
+      "decision": "accept",
+      "review": "Reviewed settled Next.js dashboard. The attempted widget-menu click did not open a menu; that interaction remains pending.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "dashboard-widget-fullscreen-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "monitors-index-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "monitor-error-detail-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "monitor-error-edit-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "monitor-error-accordions-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "monitors-cron-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "monitors-uptime-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app",
+      "reason": "Loading; superseded by monitors-uptime-settled-dark."
+    },
+    {
+      "id": "monitors-uptime-settled-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "monitors-mobile-dark",
+      "decision": "reject",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app",
+      "reason": "Mobile-build monitor list still loading."
+    },
+    {
+      "id": "monitors-metric-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    },
+    {
+      "id": "monitor-create-types-dark",
+      "decision": "accept",
+      "review": "Reviewed source screenshot; viewport crop only, no claim that lower-page content or all controls were explored.",
+      "provenance": "signed-in app"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "rule-name-input-default": {
+    "shot": "custom-rule-empty-dark-desktop.png",
+    "box": [
+      420,
+      244,
+      1280,
+      342
+    ]
+  },
+  "condition-builder-default": {
+    "shot": "custom-rule-empty-dark-desktop.png",
+    "box": [
+      402,
+      438,
+      1298,
+      737
+    ]
+  },
+  "field-menu-open": {
+    "shot": "custom-field-menu-dark-desktop.png",
+    "box": [
+      423,
+      522,
+      794,
+      816
+    ]
+  },
+  "operator-menu-open": {
+    "shot": "custom-operator-menu-dark-desktop.png",
+    "box": [
+      582,
+      43,
+      786,
+      521
+    ]
+  },
+  "compound-condition-and": {
+    "shot": "custom-condition-and-dark-desktop.png",
+    "box": [
+      420,
+      451,
+      1275,
+      613
+    ]
+  },
+  "expression-textarea-filled": {
+    "shot": "custom-expression-dark-desktop.png",
+    "box": [
+      423,
+      498,
+      1278,
+      630
+    ]
+  },
+  "action-menu-open": {
+    "shot": "custom-action-menu-dark-desktop.png",
+    "box": [
+      423,
+      730,
+      745,
+      953
+    ]
+  },
+  "analytics-filter-open": {
+    "shot": "analytics-filter-dark-desktop.png",
+    "box": [
+      368,
+      369,
+      1054,
+      508
+    ]
+  },
+  "date-picker-open": {
+    "shot": "analytics-date-picker-dark-desktop.png",
+    "box": [
+      865,
+      369,
+      1368,
+      842
+    ]
+  },
+  "configuration-dialog-desktop": {
+    "shot": "challenge-dialog-dark-desktop.png",
+    "box": [
+      267,
+      61,
+      1174,
+      730
+    ]
+  },
+  "configuration-dialog-mobile": {
+    "shot": "challenge-dialog-dark-mobile.png",
+    "box": [
+      14,
+      30,
+      376,
+      776
+    ]
+  },
+  "public-primary-action": {
+    "shot": "public-home-desktop.png",
+    "box": [
+      616,
+      539,
+      825,
+      597
+    ]
+  },
+  "public-search-dialog": {
+    "shot": "public-search-desktop.png",
+    "box": [
+      417,
+      148,
+      1022,
+      410
+    ]
+  },
+  "public-mobile-menu": {
+    "shot": "public-menu-mobile.png",
+    "box": [
+      12,
+      62,
+      380,
+      824
+    ]
+  }
+}

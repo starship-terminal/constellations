@@ -1,0 +1,182 @@
+{
+  "primary-button-default.png": {
+    "screenshot": "screenshots/password-requirements-dialog-dark-desktop.png",
+    "box": [
+      1018,
+      807,
+      1107,
+      851
+    ],
+    "coordinateSpace": "native-screenshot-pixels"
+  },
+  "secondary-button-default.png": {
+    "screenshot": "screenshots/password-requirements-dialog-dark-desktop.png",
+    "box": [
+      928,
+      807,
+      1011,
+      851
+    ],
+    "coordinateSpace": "native-screenshot-pixels"
+  },
+  "header-dark.png": {
+    "screenshot": "screenshots/authentication-email-dark-desktop.png",
+    "box": [
+      0,
+      0,
+      1600,
+      116
+    ],
+    "coordinateSpace": "native-screenshot-pixels"
+  },
+  "tabs-email.png": {
+    "screenshot": "screenshots/authentication-email-dark-desktop.png",
+    "box": [
+      458,
+      216,
+      1161,
+      269
+    ],
+    "coordinateSpace": "native-screenshot-pixels"
+  },
+  "dialog-password.png": {
+    "screenshot": "screenshots/password-requirements-dialog-dark-desktop.png",
+    "box": [
+      475,
+      106,
+      1125,
+      869
+    ],
+    "coordinateSpace": "native-screenshot-pixels"
+  },
+  "dialog-create-user.png": {
+    "screenshot": "screenshots/create-user-dialog-dark-desktop.png",
+    "box": [
+      475,
+      106,
+      1125,
+      836
+    ],
+    "coordinateSpace": "native-screenshot-pixels"
+  },
+  "input-password-default.png": {
+    "screenshot": "screenshots/password-requirements-dialog-dark-desktop.png",
+    "box": [
+      497,
+      262,
+      1101,
+      305
+    ],
+    "coordinateSpace": "native-screenshot-pixels"
+  },
+  "input-password-focus.png": {
+    "screenshot": "screenshots/password-dialog-focus-dark-desktop.png",
+    "box": [
+      497,
+      262,
+      1101,
+      305
+    ],
+    "coordinateSpace": "native-screenshot-pixels"
+  },
+  "toggle-on.png": {
+    "screenshot": "screenshots/password-requirements-dialog-dark-desktop.png",
+    "box": [
+      497,
+      396,
+      534,
+      426
+    ],
+    "coordinateSpace": "native-screenshot-pixels"
+  },
+  "toggle-off.png": {
+    "screenshot": "screenshots/password-requirements-dialog-dark-desktop.png",
+    "box": [
+      497,
+      504,
+      534,
+      535
+    ],
+    "coordinateSpace": "native-screenshot-pixels"
+  },
+  "alert-warning.png": {
+    "screenshot": "screenshots/password-requirements-dialog-dark-desktop.png",
+    "box": [
+      498,
+      314,
+      1103,
+      359
+    ],
+    "coordinateSpace": "native-screenshot-pixels"
+  },
+  "dialog-password-light.png": {
+    "screenshot": "screenshots/password-requirements-dialog-light-desktop.png",
+    "box": [
+      117,
+      109,
+      764,
+      892
+    ],
+    "coordinateSpace": "native-screenshot-pixels"
+  },
+  "input-password-light-default.png": {
+    "screenshot": "screenshots/password-requirements-dialog-light-desktop.png",
+    "box": [
+      139,
+      263,
+      743,
+      309
+    ],
+    "coordinateSpace": "native-screenshot-pixels"
+  },
+  "primary-button-light-default.png": {
+    "screenshot": "screenshots/password-requirements-dialog-light-desktop.png",
+    "box": [
+      656,
+      828,
+      748,
+      875
+    ],
+    "coordinateSpace": "native-screenshot-pixels"
+  },
+  "secondary-button-light-default.png": {
+    "screenshot": "screenshots/password-requirements-dialog-light-desktop.png",
+    "box": [
+      566,
+      828,
+      654,
+      875
+    ],
+    "coordinateSpace": "native-screenshot-pixels"
+  },
+  "toggle-on-light.png": {
+    "screenshot": "screenshots/password-requirements-dialog-light-desktop.png",
+    "box": [
+      139,
+      398,
+      176,
+      429
+    ],
+    "coordinateSpace": "native-screenshot-pixels"
+  },
+  "toggle-off-light.png": {
+    "screenshot": "screenshots/password-requirements-dialog-light-desktop.png",
+    "box": [
+      139,
+      505,
+      176,
+      537
+    ],
+    "coordinateSpace": "native-screenshot-pixels"
+  },
+  "alert-warning-light.png": {
+    "screenshot": "screenshots/password-requirements-dialog-light-desktop.png",
+    "box": [
+      139,
+      316,
+      743,
+      362
+    ],
+    "coordinateSpace": "native-screenshot-pixels"
+  }
+}
