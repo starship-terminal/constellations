@@ -599,7 +599,7 @@ function drawRamps() {
     if (steps.t) continue;
     const row = document.createElement('div'); row.className = 'ramp';
     row.innerHTML = `<span class="lbl">${fam}</span>`;
-    for (const [s, tk] of Object.entries(steps)) { const c = document.createElement('div'); c.className = 'chip'; c.style.background = tk.v; c.style.color = ink(tk.v); c.title = `palette.${fam}.${s} ${tk.v}\n${esc(tk.s)}`; c.textContent = s; row.appendChild(c); }
+    for (const [s, tk] of Object.entries(steps)) { const c = document.createElement('div'); c.className = 'chip'; c.style.background = tk.v; c.style.color = ink(tk.v); c.title = `palette.${fam}.${s} ${tk.v}\n${tk.s}`; c.textContent = s; row.appendChild(c); }
     host.appendChild(row);
   }
 }
