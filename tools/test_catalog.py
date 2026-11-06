@@ -1160,18 +1160,19 @@ class InnerShadowTest(unittest.TestCase):
 
 class SmallBugsTest(unittest.TestCase):
     def test_resolver_sees_an_edited_tokens_file(self):
+        # A scratch ROOT, so the test never writes a file into the checkout.
         import os
         import tempfile
-        with tempfile.NamedTemporaryFile("w", suffix=".json", dir=catalog.ROOT, delete=False) as f:
-            f.write('{"core": {"c": {"$value": "#000000"}}}')
-        rel = Path(f.name).relative_to(catalog.ROOT).as_posix()
-        try:
-            self.assertEqual(catalog.resolver_for(rel).lookup("core.c"), "#000000")
-            Path(f.name).write_text('{"core": {"c": {"$value": "#ffffff"}}}')
-            os.utime(f.name, ns=(1, 10**18))                    # a different mtime, whatever the clock says
-            self.assertEqual(catalog.resolver_for(rel).lookup("core.c"), "#ffffff")
-        finally:
-            os.unlink(f.name)
+        with tempfile.TemporaryDirectory() as d, mock.patch.object(catalog, "ROOT", Path(d)):
+            path = Path(d) / "edited-tokens.json"
+            path.write_text('{"core": {"c": {"$value": "#000000"}}}')
+            try:
+                self.assertEqual(catalog.resolver_for(path.name).lookup("core.c"), "#000000")
+                path.write_text('{"core": {"c": {"$value": "#ffffff"}}}')
+                os.utime(path, ns=(1, 10**18))                  # a different mtime, whatever the clock says
+                self.assertEqual(catalog.resolver_for(path.name).lookup("core.c"), "#ffffff")
+            finally:
+                catalog.resolver_for.cache_clear()
 
     def test_check_reports_a_missing_or_broken_tokens_file_instead_of_crashing(self):
         import copy
