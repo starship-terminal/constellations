@@ -100,6 +100,8 @@ def main() -> int:
     e = sub.add_parser("export", help="token values; -g picks one group")
     e.add_argument("slug")
     e.add_argument("-g", "--group")
+    e.add_argument("--offset", type=int, help="with -g: one page from this token (a page's nextOffset)")
+    e.add_argument("--limit", type=int, help="with -g: one page of at most this many tokens")
 
     d = sub.add_parser("doc", aliases=["readme"], help="a text file from a package")
     d.add_argument("slug")
@@ -168,12 +170,35 @@ def main() -> int:
                 print(f"{k:<12} {v}")
         return 0
     if args.cmd == "export":
-        out = call(base, "get_tokens", {"slug": args.slug, "group": args.group})
+        req = {"slug": args.slug, "group": args.group}
+        if args.offset is not None:
+            req["offset"] = args.offset
+        if args.limit is not None:
+            req["limit"] = args.limit
+        one_page = args.offset is not None or args.limit is not None
+        out = call(base, "get_tokens", req)
+        if not args.json and "partial" in out and "tokens" not in out and "groups" not in out:
+            # The server cut the whole result at its size cap (a server from
+            # before get_tokens paged): there is no map to print.
+            sys.exit(f"ds: the server truncated {args.slug}'s {args.group or 'token'} result "
+                     f"({out.get('bytes')} bytes) and does not page get_tokens; "
+                     "use --json for the partial text")
+        if args.group and "tokens" in out and not one_page:
+            # Follow nextOffset so an export prints the whole group.
+            merged = dict(out["tokens"])
+            while out.get("truncated") and out.get("nextOffset"):
+                out = call(base, "get_tokens", {**req, "offset": out["nextOffset"]})
+                merged.update(out.get("tokens") or {})
+            out = {k: v for k, v in out.items() if k != "nextOffset"}
+            out["tokens"] = merged
+            out["offset"] = 0
         if args.json:
             _emit(out, True)
         elif "tokens" in out:
             for k, v in out["tokens"].items():
                 print(f"{k}: {v}")
+            if out.get("truncated") and out.get("nextOffset"):
+                print(f"… [more from --offset {out['nextOffset']}]", file=sys.stderr)
         else:
             print(f"{out.get('slug')}: token groups — " +
                   ", ".join(f"{k} ({n})" for k, n in (out.get("groups") or {}).items()))

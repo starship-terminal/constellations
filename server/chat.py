@@ -149,7 +149,7 @@ def _request(method: str, url: str, cfg: dict, body: dict | None, timeout: int,
         "content-type": "application/json", **_headers(cfg, key_header)})
     try:
         with _opener.open(req, timeout=timeout) as r:
-            return json.loads(r.read())
+            raw = r.read()
     except urllib.error.HTTPError as e:
         e.close()
         if 300 <= e.code < 400:
@@ -159,6 +159,15 @@ def _request(method: str, url: str, cfg: dict, body: dict | None, timeout: int,
         # HTTPException covers a non-HTTP reply (BadStatusLine carries the
         # other side's first line); none of these messages are passed on.
         raise ProviderError(f"{url} unreachable")
+    # A 200 that is not a JSON object (an HTML page, a list) is a provider
+    # failure too; letting the decode error escape dropped the connection.
+    try:
+        out = json.loads(raw)
+    except ValueError:
+        raise ProviderError(f"{url} returned invalid JSON")
+    if not isinstance(out, dict):
+        raise ProviderError(f"{url} returned invalid JSON")
+    return out
 
 
 # ---------------------------------------------------------------- models list

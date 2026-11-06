@@ -27,6 +27,7 @@ import type {
   InspectOutput,
   SearchOutput,
 } from "@/contracts/research";
+import type { LibraryDetail } from "@/contracts/library";
 import type { ResearchStore } from "@/server/db";
 
 export function researchPrompt(
@@ -43,11 +44,68 @@ Excluded references MUST NOT be searched, inspected, cited or recommended, even 
 Finish with a concrete useful answer. The tool budget is at most six steps; use it deliberately.`;
 }
 
+type SuppliedImage = { mediaType: string; base64: string };
+/** The evidence a model needs again on later turns, without package documents. */
+function boundedReference(reference: LibraryDetail): LibraryDetail {
+  const { measured: _measured, interpreted: _interpreted, ...rest } = reference;
+  return {
+    ...rest,
+    descriptionLong: reference.descriptionLong.slice(0, 10000),
+    guidelines: reference.guidelines.slice(0, 16).map((s) => s.slice(0, 1000)),
+    colors: reference.colors.slice(0, 100),
+    typography: reference.typography.slice(0, 60),
+    spacing: reference.spacing.slice(0, 60),
+    radii: reference.radii.slice(0, 40),
+    media: reference.media.slice(0, 12),
+    exports: {},
+    related: [],
+  };
+}
 export function researchTools(
   conversation: Pick<Conversation, "excludedIds">,
   supportsImages = true,
 ) {
   const excluded = new Set(conversation.excludedIds);
+  // execute() decides whether an image can be supplied and toModelOutput()
+  // sends it. Every file read goes through one URL-keyed map, so inspecting a
+  // reference and then viewing the same screenshot reads and encodes it once.
+  type LocalImage = { data: Uint8Array; mediaType: string };
+  const files = new Map<string, Promise<LocalImage | null>>();
+  const encoded = new WeakMap<LocalImage, SuppliedImage>();
+  const localImage = (url: string): Promise<LocalImage | null> => {
+    let file = files.get(url);
+    if (!file) {
+      file = readLocalImage(url);
+      files.set(url, file);
+    }
+    return file;
+  };
+  const supplied = (found: LocalImage | null): SuppliedImage | null => {
+    if (!found) return null;
+    let image = encoded.get(found);
+    if (!image) {
+      image = {
+        mediaType: found.mediaType,
+        base64: Buffer.from(found.data).toString("base64"),
+      };
+      encoded.set(found, image);
+    }
+    return image;
+  };
+  const references = new Map<string, Promise<LocalImage | null>>();
+  const referenceImage = async (
+    reference: LibraryDetail,
+  ): Promise<SuppliedImage | null> => {
+    if (!supportsImages) return null;
+    let found = references.get(reference.id);
+    if (!found) {
+      found = readReferenceImage(reference, localImage);
+      references.set(reference.id, found);
+    }
+    return supplied(await found);
+  };
+  const mediaImage = async (url: string): Promise<SuppliedImage | null> =>
+    supportsImages ? supplied(await localImage(url)) : null;
   return {
     searchLibrary: tool({
       description:
@@ -143,9 +201,7 @@ export function researchTools(
         const media = reference.media.find((item) => item.id === mediaId);
         if (!media) throw new Error("Media not found in this reference.");
         const image =
-          supportsImages && media.type === "image"
-            ? await readLocalImage(media.url)
-            : null;
+          media.type === "image" ? await mediaImage(media.url) : null;
         return {
           kind: "viewed-media",
           referenceId,
@@ -155,8 +211,8 @@ export function researchTools(
       },
       toModelOutput: async ({ output }) => {
         const image =
-          supportsImages && output.visualEvidence === "image-supplied"
-            ? await readLocalImage(output.media.url)
+          output.visualEvidence === "image-supplied"
+            ? await mediaImage(output.media.url)
             : null;
         return {
           type: "content" as const,
@@ -172,10 +228,7 @@ export function researchTools(
               ? [
                   {
                     type: "file" as const,
-                    data: {
-                      type: "data" as const,
-                      data: Buffer.from(image.data).toString("base64"),
-                    },
+                    data: { type: "data" as const, data: image.base64 },
                     mediaType: image.mediaType,
                   },
                 ]
@@ -199,9 +252,7 @@ export function researchTools(
         "Read one reference and its recorded evidence. Inspect before citing. Screenshot access is reported explicitly.",
       inputSchema: z.object({ referenceId: z.string().max(160) }),
       toModelOutput: async ({ output }) => {
-        const image = supportsImages
-          ? await readReferenceImage(output.reference)
-          : null;
+        const image = await referenceImage(output.reference);
         const bounded = {
           kind: output.kind,
           citation: output.citation,
@@ -234,10 +285,7 @@ export function researchTools(
               ? [
                   {
                     type: "file" as const,
-                    data: {
-                      type: "data" as const,
-                      data: Buffer.from(image.data).toString("base64"),
-                    },
+                    data: { type: "data" as const, data: image.base64 },
                     mediaType: image.mediaType,
                   },
                 ]
@@ -248,15 +296,17 @@ export function researchTools(
       execute: async ({ referenceId }): Promise<InspectOutput> => {
         if (excluded.has(referenceId))
           throw new Error("This reference was excluded by the user.");
-        const reference = await getReference(referenceId);
-        if (!reference) throw new Error("Reference not found.");
+        const detail = await getReference(referenceId);
+        if (!detail) throw new Error("Reference not found.");
+        // The output is stored in the conversation and replayed every step;
+        // keep the evidence the model reads, not the package's documents.
+        const reference = boundedReference(detail);
         return {
           kind: "inspected",
           reference,
-          visualEvidence:
-            supportsImages && (await readReferenceImage(reference))
-              ? "image-supplied"
-              : "text-only",
+          visualEvidence: (await referenceImage(detail))
+            ? "image-supplied"
+            : "text-only",
           citation: {
             id: reference.id,
             title: reference.name,

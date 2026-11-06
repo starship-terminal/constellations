@@ -3,22 +3,20 @@ import Link from "next/link";
 import homeStyles from "./research-home.module.css";
 import { ResearchResults } from "./research-results";
 import { HomeBrowse } from "./home-browse";
-import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
 import ReactMarkdown from "react-markdown";
 import { prepareResearchRequest } from "./research-transport";
 import { MarkdownImageAsText } from "./research-markdown";
+import { researchDocumentHref } from "./package-detail-data";
 import remarkGfm from "remark-gfm";
 import {
-  ArrowDown,
   ArrowRight,
   ArrowUp,
   BookOpen,
   Binoculars,
-  Check,
-  ChevronDown,
   Download,
   LoaderCircle,
   Monitor,
@@ -26,9 +24,7 @@ import {
   Sun,
   CornerDownRight,
   Pin,
-  Plus,
   Search,
-  SlidersHorizontal,
   Square,
   Sparkles,
   X,
@@ -40,7 +36,6 @@ import {
   download,
   Empty,
   ErrorState,
-  MediaPreview,
   Spinner,
   useResource,
 } from "@/components/shared";
@@ -445,34 +440,12 @@ export function ResearchHome() {
   );
 }
 
-function ArrowUpRightIcon() {
-  return (
-    <svg
-      width="14"
-      height="14"
-      viewBox="0 0 16 16"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M4 12 12 4M4 4h8v8"
-        stroke="currentColor"
-        strokeWidth="1.3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 interface Conversation {
   id: string;
   title: string;
   messages: UIMessage[];
   pinnedIds: string[];
   excludedIds: string[];
-}
-function normalizeConversation(data: any): Conversation {
-  return data.conversation || data;
 }
 export function ResearchPage({ id }: { id: string }) {
   const { data, error, loading } = useResource<Conversation>(
@@ -488,7 +461,7 @@ export function ResearchPage({ id }: { id: string }) {
       </Link>
     </div>
   ) : data ? (
-    <ResearchConversation key={id} initial={normalizeConversation(data)} />
+    <ResearchConversation key={id} initial={data} />
   ) : null;
 }
 function ResearchConversation({ initial }: { initial: Conversation }) {
@@ -1053,7 +1026,11 @@ function Message({
                         <Link
                           key={document.path}
                           className="pill small"
-                          href={document.url}
+                          href={researchDocumentHref(
+                            output.referenceId,
+                            document.path,
+                            document.url,
+                          )}
                         >
                           {document.path}
                         </Link>
@@ -1071,7 +1048,15 @@ function Message({
                     {output.truncated ? " (excerpt)" : ""}
                   </summary>
                   <p>
-                    <Link href={output.url}>Open full document</Link>
+                    <Link
+                      href={researchDocumentHref(
+                        output.referenceId,
+                        output.path,
+                        output.url,
+                      )}
+                    >
+                      Open full document
+                    </Link>
                   </p>
                   <pre
                     style={{

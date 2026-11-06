@@ -12,11 +12,7 @@ import {
   SkeletonGrid,
   Spinner,
 } from "@/components/shared";
-import {
-  loadLibraryPages,
-  mergeLibraryItems,
-  type LibraryResponse,
-} from "./library-data";
+import { loadCatalog, type LibraryResponse } from "./library-data";
 import {
   filterStyles,
   orderStyles,
@@ -25,6 +21,7 @@ import {
   type StyleFilters,
 } from "./styles-data";
 import styles from "./styles.module.css";
+import { replaceSearch } from "./url-state";
 
 // Representative prompts observed on the live source. Queries use captured facets
 // where the source's semantic search uses words absent from this local snapshot.
@@ -275,11 +272,7 @@ function StylesContent() {
     // Styles owns its source. A legacy ?source=systems cannot mix the stores.
     next.delete("source");
     next.delete("platform");
-    window.history.replaceState(
-      null,
-      "",
-      `/styles${next.size ? `?${next}` : ""}`,
-    );
+    replaceSearch(next, "/styles");
     try {
       localStorage.setItem(
         "ds-style-filters",
@@ -296,27 +289,26 @@ function StylesContent() {
       const next = new URLSearchParams();
       for (const key of ["theme", "type", "style", "industry", "tag", "video"])
         if (typeof saved[key] === "string") next.set(key, saved[key]);
-      if (next.size) window.history.replaceState(null, "", `/styles?${next}`);
+      if (next.size) replaceSearch(next, "/styles");
     } catch {}
   }, []);
   useEffect(() => {
     let live = true;
     setLoading(true);
     setError("");
-    loadLibraryPages(
+    loadCatalog(
+      "refero",
       (offset) =>
         api<LibraryResponse>(
           `/api/library?source=refero&limit=200&offset=${offset}`,
-        ),
-      (page) => {
+        ).then((page) => ({
+          ...page,
+          items: page.items.filter((item) => item.source === "refero"),
+        })),
+      (catalog) => {
         if (live) {
-          setItems((previous) =>
-            mergeLibraryItems(
-              previous,
-              page.items.filter((item) => item.source === "refero"),
-            ),
-          );
-          setTotal(page.total);
+          setItems(catalog.items);
+          setTotal(catalog.total);
         }
       },
       () => {

@@ -9,6 +9,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { DesignSystem, GalleryData } from "@/lib/catalog";
 import { mediaUrl } from "@/lib/url";
 import { useChat } from "@/components/Chat";
+import { useUrlMirror } from "@/components/url-state";
 
 const SEARCH_STOP = new Set(
   "a an the and or of for in on to with by at is it this that site sites website websites page pages design designed style styles app apps web landing product products".split(" "),
@@ -148,6 +149,8 @@ export function GalleryIndex({ data }: { data: GalleryData }) {
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, []);
+
+  useUrlMirror({ q: q.trim() || null, cat: cat === "all" ? null : cat });
 
   const save = (patch: object) => {
     try {
