@@ -332,16 +332,25 @@ function jobsFor(spec) {
 
 const MOBILE = (label) => label.startsWith('mobile-');
 
+// The context is closed however measuring ends, so a copy that throws does not keep its pages open
+// while the other workers go on.
 async function measureSnap(browser, label, specs, out) {
   const meta = metaOf(label);
   const ctx = await newContext(browser, meta);
+  try {
+    return await measureIn(ctx, meta, label, specs, out);
+  } finally {
+    await ctx.close().catch(() => {});
+  }
+}
+
+async function measureIn(ctx, meta, label, specs, out) {
   await ctx.addInitScript(HELPERS);
   let page;
   try {
     page = await openSnap(ctx, label);
   } catch (e) {
     log('  ! open failed', label, e.message.split('\n')[0]);
-    await ctx.close();
     return false;
   }
   const rest = { x: meta.w - 2, y: Math.round(meta.h / 2) };
@@ -471,7 +480,6 @@ async function measureSnap(browser, label, specs, out) {
       }
     }
   }
-  await ctx.close();
   return true;
 }
 
