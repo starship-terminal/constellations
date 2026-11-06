@@ -194,6 +194,19 @@ class PageTest(unittest.TestCase):
         self.assertIn("F2 Roles](criteria.md#f2) (1 of 2 it applies to)", md)
         self.assertNotIn("V1 Voice](criteria.md#v1) (", md)
 
+    def test_weakest_is_ranked_by_share_of_applicable_systems_not_raw_count(self):
+        # F1 is met by 1 of 1 applicable systems, F2 by 2 of 4: F2 is weaker
+        # though more systems meet it.
+        systems = []
+        for i in range(4):
+            s = copy.deepcopy(SYSTEM)
+            s["slug"], s["name"] = f"s{i}", f"S{i}"
+            s["grades"]["F1"]["grade"] = "meets" if i == 0 else "na"
+            s["grades"]["F2"]["grade"] = "meets" if i < 2 else "partly"
+            systems.append(s)
+        weakest = bp.weakest_criteria(CRITERIA, systems)
+        self.assertEqual([(c["id"], m, n) for c, m, n in weakest], [("F2", 2, 4)])
+
     def test_only_the_index_page_hides_the_rail(self):
         self.assertTrue(bp.index_page(CRITERIA, audit(SYSTEM)).startswith("---\nhide:\n  - navigation\n---\n"))
         for md in (bp.system_page(CRITERIA, audit(SYSTEM), SYSTEM, 1),
