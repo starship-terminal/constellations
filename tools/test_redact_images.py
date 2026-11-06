@@ -257,6 +257,14 @@ class Commands(unittest.TestCase):
             self.assertEqual(cm.exception.code, 1)
             self.assertIn("sets ocr.emails to false; check ignores that", out.getvalue())
             self.assertIn("sets ocr.net to false", out.getvalue())
+            words = [("Secret", 0, 0, 60, 12, ("1", "1", "1")), ("Plan", 70, 0, 40, 12, ("1", "1", "1"))]
+            pats.write_text(json.dumps({"replace": [["secret plan", "i", "x"]]}))
+            rules.write_text(json.dumps({"ocr": {"net": False}}))
+            with mock.patch.object(R, "ocr_words", return_value=words), \
+                 contextlib.redirect_stdout(io.StringIO()) as out, self.assertRaises(SystemExit) as cm:
+                R.main(["check", d, "--patterns", str(pats), "--rules", str(rules)])
+            self.assertEqual(cm.exception.code, 1)                 # a pattern match, no email: still caught
+            self.assertIn("HIT a.png", out.getvalue())
 
     def test_apply_still_requires_rules(self):
         with tempfile.TemporaryDirectory() as d, contextlib.redirect_stderr(io.StringIO()):
