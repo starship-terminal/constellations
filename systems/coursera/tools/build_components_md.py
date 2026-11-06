@@ -1295,3 +1295,5 @@ print('lines', len(txt.splitlines()), 'entries', n_entries, 'crop images', crop_
 heads = set(slug(h) for h in re.findall(r'^#{2,4} (.+)$', txt, re.M))
 badanch = [a for a in re.findall(r'\]\(#([^)]+)\)', txt) if a not in heads]
 print('bad anchors', badanch)
+if bad or badanch:
+    sys.exit(f'components.md has {len(bad)} bad links and {len(badanch)} bad anchors')

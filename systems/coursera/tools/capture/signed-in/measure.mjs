@@ -650,6 +650,8 @@ async function run() {
   }
 
   const out = fs.existsSync(OUT_JSON) ? JSON.parse(fs.readFileSync(OUT_JSON, 'utf8')) : {};
+  // refresh.mjs keeps its own provenance block in _meta.refresh; a rerun here keeps it.
+  const refresh = out._meta && out._meta.refresh;
   out._meta = {
     capturedAt: new Date().toISOString(),
     source: 'raw/snapshots/*.html.gz: static, redacted DOM snapshots of signed-in pages, stylesheets inlined from the CSSOM, scripts stripped',
@@ -663,6 +665,7 @@ async function run() {
       'other': 'selected / current / expanded / collapsed / ... are other elements captured in that state',
     },
     pages: Object.fromEntries(Object.entries(PAGES).map(([k, v]) => [k, { label: v, ...JSON.parse(fs.readFileSync(path.join(snapDir, `${v}.json`), 'utf8')) }])),
+    ...(refresh ? { refresh } : {}),
   };
   out.components ??= {};
   fs.mkdirSync(CROPS, { recursive: true });
