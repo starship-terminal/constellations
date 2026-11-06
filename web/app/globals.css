@@ -526,8 +526,9 @@ table.sc-heat { border-collapse: separate; border-spacing: 0; font-size: 12px; }
 .rf-chips button:hover { color: var(--text); border-color: var(--line-strong); }
 .rf-chips i { font-style: normal; margin-right: 5px; color: var(--faint); }
 .rf-bar-row { display: flex; gap: 10px; align-items: center; margin: 22px 0 16px; flex-wrap: wrap; }
-.rf-tabs-list { display: flex; gap: 4px; background: var(--sunken); border-radius: 10px; padding: 3px; }
-.rf-tabs-list button { padding: 5px 12px; border-radius: 8px; color: var(--muted); font-size: 12.5px; }
+/* Scrolls sideways on a phone rather than widening the page by its last tab. */
+.rf-tabs-list { display: flex; gap: 4px; background: var(--sunken); border-radius: 10px; padding: 3px; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.rf-tabs-list button { flex: none; white-space: nowrap; padding: 5px 12px; border-radius: 8px; color: var(--muted); font-size: 12.5px; }
 .rf-tabs-list button[aria-pressed="true"] { background: var(--panel); color: var(--text); font-weight: 550; box-shadow: var(--ring); }
 .rf-sel { height: 30px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font-size: 12.5px; padding: 0 8px; }
 .rf-bar-row .count { margin-left: auto; color: var(--faint); font-size: 12px; }
