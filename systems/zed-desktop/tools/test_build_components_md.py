@@ -1,6 +1,7 @@
 """build_components_md.py links every crop tools/crops.json lists and stops when one of them is missing,
 in either theme. The builder runs on a temporary package folder, so components.md is not rewritten."""
 import importlib.util
+import json
 import pathlib
 import tempfile
 import unittest
@@ -57,6 +58,22 @@ class CropLinks(unittest.TestCase):
         self.crop("button-default.png")
         self.m.main()
         self.assertNotIn("light", (self.pkg / "components.md").read_text().split("Crops:")[1].split("\n")[0])
+
+
+class Manifest(unittest.TestCase):
+    def test_themes_come_from_crops_json(self):
+        m = load()
+        crops = json.loads((HERE / "crops.json").read_text())["crops"]
+        self.assertTrue(crops)
+        for c in crops:
+            self.assertTrue(set(c["themes"]) <= m.THEMES_OF[c["name"]], c["name"])
+        self.assertEqual(set(m.THEMES_OF), {c["name"] for c in crops})
+
+    def test_every_inventory_crop_is_in_crops_json(self):
+        m = load()
+        for name, _, _, _, states, _ in m.INVENTORY:
+            for _, stem in states:
+                self.assertIn(stem, m.THEMES_OF, f"{name}: {stem}")
 
 
 if __name__ == "__main__":
