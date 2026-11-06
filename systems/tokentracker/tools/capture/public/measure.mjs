@@ -21,6 +21,7 @@ import path from 'node:path';
 import { BASE, launch, open, mask, styleOf, crop, centre, RAW } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
+const PARTIAL = OUT.replace(/(\.json)?$/, '.partial.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
 out._meta ??= {};
 out.components ??= {};
@@ -30,7 +31,7 @@ const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const failures = [];
 const save = () => {
   if (failures.length) {
-    fs.writeFileSync(OUT.replace(/\.json$/, '.partial.json'), JSON.stringify(out, null, 1) + '\n');
+    fs.writeFileSync(PARTIAL, JSON.stringify(out, null, 1) + '\n');
     return;
   }
   fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
@@ -127,13 +128,14 @@ async function measure(key, state, target, opts = {}) {
   const loc = target.filter({ visible: true }).first();
   const c = out.components[key];
   try {
+    // Again here, after the hover, focus or open that set up this state: a tooltip, menu or dialog
+    // it revealed was not in the page when S() masked it. Before styleOf, so the text it records in
+    // the readings is masked as well as the crop.
+    await mask(page);
     const s = await styleOf(loc);
     let file;
     if (opts.crop !== false) {
       try {
-        // Again here, after the hover, focus or open that set up this state: a tooltip, menu or
-        // dialog it revealed was not in the page when S() masked it.
-        await mask(page);
         file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
@@ -688,7 +690,7 @@ if (!failures.length) {
 }
 save();
 if (failures.length) {
-  log('FAILED pages:', failures.join(', '), '-> partial readings only, in', OUT.replace(/\.json$/, '.partial.json'));
+  log('FAILED pages:', failures.join(', '), '-> partial readings only, in', PARTIAL);
   process.exit(1);
 }
 log('done ->', OUT);
