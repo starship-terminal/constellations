@@ -105,6 +105,42 @@ console.log(JSON.stringify(out));
             self.assertEqual(res.returncode, 0, (slug, res.stderr))
             self.assertEqual(json.loads(res.stdout), [w for _, w in cases], slug)
 
+    @staticmethod
+    def cut_signed_js(src, label):
+        """The SIGNED regex and the cutSigned line of a snapshot.js, runnable on their own."""
+        sig = re.search(r"^\s*const SIGNED_PARAMS = .*?\n\s*const SIGNED = new RegExp\(.*?'i'\);$", src, re.M | re.S)
+        cut = re.findall(r"^\s*const cutSigned = .*$", src, re.M)
+        assert sig and len(cut) == 1, f"{label} has no SIGNED regex or no single cutSigned line"
+        return sig.group(0), cut[0].strip()
+
+    def test_snapshot_js_cut_signed_matches_the_kit(self):
+        # #401 stopped a package copy's query at ( and ;, which kept &token= after ?crop=(0,0), an
+        # &amp; or a ;-separated query; Sentry's older copy ran from a colour's # into a later
+        # url(...?sig=) and cut the CSS between. Every copy that cuts signed queries carries the kit's line.
+        kit_sig, kit_cut = self.cut_signed_js((KIT / "signed-in" / "snapshot.js").read_text(), "kit")
+        copies = sorted(p for p in (ROOT / "systems").glob("*/tools/capture/**/snapshot.js") if "cutSigned" in p.read_text())
+        self.assertGreaterEqual(len(copies), 4)
+        cases = {
+            'color:#fff;background:url(https://x/p.png?sig=1)': 'color:#fff;background:url(https://x/p.png)',
+            'a{color:#fff}b{background:url(https://x/p.png?sig=1)}': 'a{color:#fff}b{background:url(https://x/p.png)}',
+            '<img data-src="https://x/p?crop=(0,0)&token=abc" alt="">': '<img data-src="https://x/p" alt="">',
+            '<a href="https://x/p?a=1&amp;token=abc">': '<a href="https://x/p">',
+            '<img data-src="https://x/p?options=a;b&token=abc">': '<img data-src="https://x/p">',
+            'background:url(https://x/p.png?sig=1);color:red': 'background:url(https://x/p.png);color:red',
+            'https://example.test/page?unit=7': 'https://example.test/page?unit=7',
+        }
+        for path in copies:
+            label = str(path.relative_to(ROOT))
+            sig, cut = self.cut_signed_js(path.read_text(), label)
+            self.assertEqual(cut, kit_cut, label)
+            flat = lambda s: [l.strip() for l in s.splitlines()]
+            self.assertEqual(flat(sig), flat(kit_sig), label)   # the regex cutSigned tests each match with
+            if shutil.which("node"):
+                js = sig + "\n" + cut + f"\nconsole.log(JSON.stringify({json.dumps(list(cases))}.map(cutSigned)))"
+                res = subprocess.run(["node", "-e", js], capture_output=True, text=True)
+                self.assertEqual(res.returncode, 0, (label, res.stderr))
+                self.assertEqual(json.loads(res.stdout), list(cases.values()), label)
+
     def test_unsnap_flags_every_signed_url(self):
         for slug in PACKAGES:
             mod = load(folder(slug) / "unsnap.py", f"unsnap_{slug}")
