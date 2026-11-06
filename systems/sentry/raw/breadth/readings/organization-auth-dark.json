@@ -3354,7 +3354,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://sentry.io/settings/10xswe/auth/",
+  "url": "https://sentry.io/settings/<id>/auth/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

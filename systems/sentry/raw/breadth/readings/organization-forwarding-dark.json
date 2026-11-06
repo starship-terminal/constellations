@@ -2634,7 +2634,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://sentry.io/settings/10xswe/data-forwarding/",
+  "url": "https://sentry.io/settings/<id>/data-forwarding/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

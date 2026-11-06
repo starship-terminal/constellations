@@ -3804,7 +3804,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://sentry.io/organizations/10xswe/explore/logs/",
+  "url": "https://sentry.io/organizations/<id>/explore/logs/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

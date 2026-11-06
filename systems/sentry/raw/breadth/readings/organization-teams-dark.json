@@ -3534,7 +3534,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://sentry.io/settings/10xswe/teams/",
+  "url": "https://sentry.io/settings/<id>/teams/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

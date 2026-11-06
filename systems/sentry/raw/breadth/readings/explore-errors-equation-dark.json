@@ -4975,7 +4975,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://sentry.io/organizations/10xswe/explore/errors/",
+  "url": "https://sentry.io/organizations/<id>/explore/errors/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

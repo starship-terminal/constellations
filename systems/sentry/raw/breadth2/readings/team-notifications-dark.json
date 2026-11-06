@@ -2904,7 +2904,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://10xswe.sentry.io/settings/teams/10xswe/notifications/",
+  "url": "https://10xswe.sentry.io/settings/teams/<id>/notifications/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

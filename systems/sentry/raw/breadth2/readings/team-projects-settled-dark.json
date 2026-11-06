@@ -3234,7 +3234,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://10xswe.sentry.io/settings/teams/10xswe/projects/",
+  "url": "https://10xswe.sentry.io/settings/teams/<id>/projects/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

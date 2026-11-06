@@ -7254,7 +7254,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://sentry.io/settings/10xswe/integrations/",
+  "url": "https://sentry.io/settings/<id>/integrations/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

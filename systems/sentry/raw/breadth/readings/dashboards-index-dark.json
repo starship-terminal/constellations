@@ -10884,7 +10884,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://sentry.io/organizations/10xswe/dashboards/",
+  "url": "https://sentry.io/organizations/<id>/dashboards/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

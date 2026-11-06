@@ -3474,7 +3474,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://sentry.io/settings/10xswe/repos/",
+  "url": "https://sentry.io/settings/<id>/repos/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

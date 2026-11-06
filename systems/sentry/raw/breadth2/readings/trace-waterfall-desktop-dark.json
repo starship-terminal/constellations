@@ -7134,7 +7134,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://10xswe.sentry.io/explore/traces/trace/f0e83586fdd18d22ecab2fc313d84e05/",
+  "url": "https://10xswe.sentry.io/explore/traces/trace/<id>/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,
