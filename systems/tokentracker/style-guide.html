@@ -544,6 +544,21 @@ table.t td.src { color: var(--text-secondary); font-size: 12px; max-width: 420px
 .dodont { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .dodont .card h3 { font: var(--typography-rowTitle); margin: 0 0 6px; color: var(--text-strong); }
 .dodont .card p { font: var(--typography-caption); color: var(--text-secondary); margin: 0; }
+/* phones: the rebuilt app drops its sidebar, the grids stack, and the 12-step ramps wrap to 4 */
+@media (max-width: 767px) {
+  .top { padding: 12px 16px; flex-wrap: wrap; }
+  main.guide { padding: 24px 16px 64px; }
+  .app { height: auto; min-height: 560px; }
+  .app .side { display: none; }
+  .panel { margin: 12px; padding: 20px 16px; }
+  .tiles { grid-template-columns: repeat(2, 1fr); }
+  .cols, .dodont { grid-template-columns: 1fr; }
+  .cols > * { min-width: 0; overflow-x: auto; }   /* the heatmap keeps its cell size and scrolls */
+  .ramp:not(#heatramp) { grid-template-columns: repeat(4, 1fr); }
+  .spec { flex-wrap: wrap; }
+  .spec .lab { width: 100%; }
+  table.t { display: block; overflow-x: auto; }
+}
 </style>
 </head>
 <body>
