@@ -165,6 +165,7 @@ SETS = {t: {} for t in THEMES}
 SKIPPED = {t: [] for t in THEMES}
 for t in THEMES:
     comp, painted = computed(t), V[t]["colors"]
+    owner = {}   # token path -> the custom property that took it
     for n in sorted(comp):
         if not re.match(r"--c[adl]?-", n):
             continue
@@ -173,6 +174,9 @@ for t in THEMES:
             group, key = path_of(n)
         except KeyError:
             continue
+        # Two properties that shorten to the same path (--c-x and --ca-x, say) would silently overwrite each other.
+        if owner.setdefault((group, key), n) != n:
+            raise SystemExit(f"{t}: {n} and {owner[(group, key)]} both map to {group}.{key}; extend path_of or ABBR")
         if n in painted and is_color(painted[n]) and is_color(v):
             put(SETS[t], (group, key), tok(color(painted[n]), "color", "Measured", where(t, n), css=n))
         elif is_shadow(v):
