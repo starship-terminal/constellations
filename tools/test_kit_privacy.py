@@ -195,15 +195,19 @@ console.log(JSON.stringify(out));
         return json.loads(res.stdout).split("SNAPMETA", 1)[1]
 
     def test_credential_fields_never_reach_the_copy(self):
-        page = ('<input type="password" id="pw"><input type="hidden" name="csrf" value="HIDDENTOKEN1">'
-                '<input id="otp" autocomplete="one-time-code"><input name="api_key" id="k">'
+        # Each field trips exactly one rule: neutral ids, so the autocomplete rule is tested on its own.
+        page = ('<input type="password" id="f1"><input type="hidden" name="f2" value="HIDDENTOKEN1">'
+                '<input id="f3" autocomplete="one-time-code"><input id="f4" autocomplete="cc-number">'
+                '<input type="text" id="f5" autocomplete="current-password"><input name="api_key" id="f6">'
                 '<input id="q" value="">')
-        setup = ("document.getElementById('pw').value = 'PASSWORDVALUE1';"
-                 "document.getElementById('otp').value = '123987';"
-                 "document.getElementById('k').value = 'APIKEYVALUE1';"
+        setup = ("document.getElementById('f1').value = 'PASSWORDVALUE1';"
+                 "document.getElementById('f3').value = '123987';"
+                 "document.getElementById('f4').value = '4111222233334444';"
+                 "document.getElementById('f5').value = 'SHOWNPASSWORD1';"
+                 "document.getElementById('f6').value = 'APIKEYVALUE1';"
                  "document.getElementById('q').value = 'plain search';")
         body = self.snap(page, setup)
-        for secret in ("PASSWORDVALUE1", "HIDDENTOKEN1", "123987", "APIKEYVALUE1"):
+        for secret in ("PASSWORDVALUE1", "HIDDENTOKEN1", "123987", "4111222233334444", "SHOWNPASSWORD1", "APIKEYVALUE1"):
             self.assertNotIn(secret, body)
         self.assertIn('value="xxxxxxxx"', body)          # the password field still renders filled
         self.assertIn('value="plain search"', body)       # ordinary fields keep what was typed
