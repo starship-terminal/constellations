@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   enterSearchAction,
+  nextPickerGroup,
   screenCountScope,
   verticalChoiceIndex,
 } from "@/features/catalog-search-behavior";
@@ -50,5 +51,11 @@ describe("catalog picker keyboard and count behavior", () => {
     expect(screenshots.query.get("kind")).toBe("screenshot");
     expect(crop.query.get("platform")).toBe("web");
     expect(crop.query.get("limit")).toBe("0");
+  });
+  it("lets Tab leave the picker after the last group instead of wrapping", () => {
+    expect(nextPickerGroup(0, 3, false)).toBe(1);
+    expect(nextPickerGroup(2, 3, false)).toBeNull();
+    expect(nextPickerGroup(1, 3, true)).toBe(0);
+    expect(nextPickerGroup(0, 3, true)).toBeNull();
   });
 });
