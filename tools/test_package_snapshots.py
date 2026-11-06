@@ -119,7 +119,15 @@ console.log(JSON.stringify(out));
         # url(...?sig=) and cut the CSS between. Every copy that cuts signed queries carries the kit's line.
         kit_sig, kit_cut = self.cut_signed_js((KIT / "signed-in" / "snapshot.js").read_text(), "kit")
         copies = sorted(p for p in (ROOT / "systems").glob("*/tools/capture/**/snapshot.js") if "cutSigned" in p.read_text())
-        self.assertGreaterEqual(len(copies), 4)
+        self.assertGreaterEqual(len(copies), len(PACKAGES))
+        # abs() only cleans src/href/srcset/poster, so a signed URL in data-src, an inline style or an
+        # inlined stylesheet reached the copy and unsnap.py refused it (coursera, manus, chatgpt,
+        # notebooklm, duolingo and brilliant had no other pass). Every copy runs the kit's whole-copy
+        # pass: every attribute, then the serialised page.
+        for slug in PACKAGES:
+            src = (folder(slug) / "snapshot.js").read_text()
+            self.assertIn("for (const a of [...n.attributes]) { const v = cutSigned(a.value); if (v !== a.value) n.setAttribute(a.name, v); }", src, slug)
+            self.assertRegex(src, r"\bhtml = cutSigned\('<!doctype html>\\n' \+ clone\.outerHTML\);", slug)
         cases = {
             'color:#fff;background:url(https://x/p.png?sig=1)': 'color:#fff;background:url(https://x/p.png)',
             'a{color:#fff}b{background:url(https://x/p.png?sig=1)}': 'a{color:#fff}b{background:url(https://x/p.png)}',
