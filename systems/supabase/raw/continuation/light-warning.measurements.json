@@ -1,0 +1,46 @@
+{
+  "children": [
+    {
+      "label": "",
+      "styles": {
+        "color": "rgb(254, 251, 245)",
+        "font-size": "13px",
+        "font-weight": "450",
+        "line-height": "19.5px"
+      },
+      "tag": "svg"
+    },
+    {
+      "label": "Your projects could become unresponsive or enter read only mode",
+      "styles": {
+        "color": "oklch(0.1 0 337.5)",
+        "font-size": "13px",
+        "font-weight": "500",
+        "line-height": "19.5px"
+      },
+      "tag": "P"
+    },
+    {
+      "label": "Exceeding the included quota allowance with spend cap enabled can cause your projects to become unresponsive or enter read only mode.",
+      "styles": {
+        "color": "oklch(0.394455 0 337.5)",
+        "font-size": "13px",
+        "font-weight": "450",
+        "line-height": "21.125px"
+      },
+      "tag": "P"
+    }
+  ],
+  "styles": {
+    "background-color": "rgb(254, 251, 245)",
+    "border-color": "rgb(255, 227, 162)",
+    "border-radius": "10.6667px",
+    "color": "oklch(0.1 0 337.5)",
+    "font-size": "13px",
+    "line-height": "19.5px",
+    "padding": "16px"
+  },
+  "theme": "",
+  "time": "2026-10-31T05:05:24.036Z",
+  "url": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/billing"
+}

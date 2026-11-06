@@ -1,0 +1,264 @@
+{
+  "controls": [
+    {
+      "disabled": false,
+      "href": "#main",
+      "label": "Skip to content",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Kkai chen2 projects",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Open menu",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Help",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Advisor Center",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/pricing#compare-plans",
+      "label": "Compare plans",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/aws-marketplace",
+      "label": "AWS Marketplace",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Change subscription plan",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/usage",
+      "label": "included usage quota",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "/dashboard/org/mdrcsktscdjvwtdslhwm/usage",
+      "label": "included quota",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/platform/cost-control#spend-cap",
+      "label": "Spend cap",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Change spend cap",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Paid",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Download invoice",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Paid",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Download invoice",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Paid",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Download invoice",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Paid",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Download invoice",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Paid",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Download invoice",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": true,
+      "href": null,
+      "label": "Previous page",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Next page",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Redeem Code",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Top Up",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": true,
+      "href": null,
+      "label": "Cancel",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": true,
+      "href": null,
+      "label": "Save",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": "https://supabase.com/docs/guides/platform/cost-control#spend-cap",
+      "label": "About spend cap",
+      "role": null,
+      "tag": "A"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "View available plans",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": true,
+      "href": null,
+      "label": "Spend cap enabled",
+      "role": "radio",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": true,
+      "href": null,
+      "label": "Spend cap disabled",
+      "role": "radio",
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": false,
+      "href": null,
+      "label": "Cancel",
+      "role": null,
+      "tag": "BUTTON"
+    },
+    {
+      "disabled": true,
+      "href": null,
+      "label": "Confirm",
+      "role": null,
+      "tag": "BUTTON"
+    }
+  ],
+  "dpr": 1,
+  "height": 844,
+  "theme": "",
+  "time": "2026-10-31T05:05:28.980Z",
+  "url": "https://supabase.com/dashboard/org/mdrcsktscdjvwtdslhwm/billing",
+  "width": 390,
+  "actions": [],
+  "appearance": "light"
+}
