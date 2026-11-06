@@ -1,0 +1,340 @@
+.root {
+  position: relative;
+  min-width: 0;
+}
+.open {
+  z-index: 30;
+}
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: #0008;
+  z-index: 90;
+}
+.panel {
+  position: relative;
+  z-index: 1;
+}
+.search {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  min-height: 64px;
+  padding: 4px 12px 4px 4px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+}
+.search:focus-within {
+  border-color: var(--focus);
+}
+.search input {
+  flex: 1;
+  width: 160px;
+  min-width: 100px;
+  height: 48px;
+  border: 0;
+  padding: 0 12px;
+  outline: none;
+  color: var(--ink);
+  background: transparent;
+  font: 18px/24px var(--sans);
+  letter-spacing: -0.4px;
+}
+.search input::placeholder {
+  color: var(--subtle);
+}
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  height: 48px;
+  padding: 4px 12px 4px 6px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface-raised);
+  color: var(--ink);
+  text-align: left;
+}
+.chip > span:last-child {
+  min-width: 0;
+}
+.chip small,
+.suggestion small {
+  display: block;
+  color: var(--subtle);
+  font: 10px/14px var(--sans);
+}
+.chip strong {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font: 500 13px/18px var(--sans);
+}
+.chipIcon,
+.choiceIcon {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  color: var(--muted);
+}
+.chipIcon img,
+.choiceIcon img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+.chipIcon > :first-child {
+  transition: opacity 130ms ease;
+}
+.chipRemove {
+  transition: opacity 130ms ease;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  opacity: 0;
+}
+.chip:hover .chipIcon > :first-child,
+.chip:focus-visible .chipIcon > :first-child {
+  opacity: 0;
+}
+.chip:hover .chipRemove,
+.chip:focus-visible .chipRemove {
+  opacity: 1;
+}
+.clear {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface-raised);
+  color: var(--muted);
+}
+.searchGlyph {
+  margin-inline: 8px;
+  flex-shrink: 0;
+  color: var(--subtle);
+}
+.picker {
+  transform-origin: top center;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: 204px minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  height: min(760px, calc(100dvh - 110px));
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: 0 24px 70px #0004;
+}
+.groups {
+  padding: 8px;
+  overflow-y: auto;
+}
+.groups button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 12px;
+  text-align: left;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  background: transparent;
+  color: var(--ink);
+  font: 15px/20px var(--sans);
+}
+.groups button > svg:last-child {
+  margin-left: auto;
+  color: var(--subtle);
+}
+.groups button[aria-pressed="true"],
+.groups button:hover {
+  background: var(--surface-raised);
+  border-color: var(--line);
+}
+.options {
+  min-width: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 16px 24px;
+}
+.section {
+  margin-bottom: 34px;
+}
+.section h2 {
+  margin: 0 0 14px;
+  font: 500 15px/22px var(--sans);
+  letter-spacing: -0.3px;
+}
+.termGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px 14px;
+}
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 38px;
+  padding: 7px 8px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  font: 14px/20px var(--sans);
+  letter-spacing: -0.3px;
+}
+.choice:hover,
+.highlighted {
+  background: var(--surface-raised);
+  border-color: var(--line);
+}
+.count {
+  flex-shrink: 0;
+  color: var(--subtle);
+  font-variant-numeric: tabular-nums;
+}
+.typedPicker {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  max-height: min(720px, calc(100dvh - 110px));
+}
+.typed {
+  padding: 8px;
+  flex: 1;
+}
+.suggestion {
+  width: 100%;
+  min-height: 58px;
+  padding: 8px 12px;
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+.suggestion small {
+  font-size: 11px;
+  line-height: 16px;
+}
+.keyboardHints {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  padding: 8px;
+  color: var(--subtle);
+  font: 11px/16px var(--sans);
+}
+.keyboardHints kbd {
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: var(--surface-raised);
+  font: 10px var(--sans);
+}
+.notice {
+  grid-column: 1 / -1;
+  padding: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.notice button {
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  text-decoration: underline;
+}
+@media (max-width: 1100px) {
+  .picker {
+    grid-template-columns: 170px minmax(0, 1fr);
+  }
+  .groups button {
+    font-size: 13px;
+    gap: 6px;
+    padding-inline: 8px;
+  }
+  .options {
+    padding: 16px 12px;
+  }
+  .choice {
+    font-size: 12px;
+    gap: 5px;
+  }
+  .termGrid {
+    gap: 4px;
+  }
+}
+@media (max-width: 760px) {
+  .search input {
+    font-size: 16px;
+  }
+  .picker {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100dvh - 160px);
+    height: auto;
+  }
+  .groups {
+    display: flex;
+    flex-shrink: 0;
+    overflow-x: auto;
+    padding: 4px;
+    border-bottom: 1px solid var(--line);
+  }
+  .groups button {
+    width: auto;
+    flex-shrink: 0;
+    padding: 10px;
+    font-size: 12px;
+  }
+  .groups button > svg:last-child {
+    display: none;
+  }
+  .groups button > svg:first-child {
+    width: 16px;
+  }
+  .options {
+    min-height: 0;
+    max-height: 55dvh;
+    padding: 12px 8px;
+  }
+  .termGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .keyboardHints {
+    display: none;
+  }
+  .section {
+    margin-bottom: 22px;
+  }
+  .section h2 {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chipIcon > :first-child,
+  .chipRemove {
+    transition: none;
+  }
+  .options {
+    scroll-behavior: auto;
+  }
+}

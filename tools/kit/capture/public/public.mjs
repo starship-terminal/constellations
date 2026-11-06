@@ -9,6 +9,7 @@
 // lesson's own Not now, Continue (the audio gate), Pause, Settings and chapters, and a story card's
 // Explore, which opens a published story.
 import fs from 'fs';
+import { screenshotWithMetadata } from '../screenshot.mjs';
 import { M, closePromo, openStory, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
 const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
@@ -24,16 +25,16 @@ async function lazyScroll(p) {
 }
 
 class Shooter {
-  constructor(p, prefix, vw, dpr) { this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr; this.count = 0; }
-  async view(name) { await this.p.screenshot({ path: `${RAW}/${this.prefix}-${name}.png` }); this.count++; log('  shot', name); }
+  constructor(p, prefix, vw, vh, dpr) { this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr; this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr }; this.count = 0; }
+  async view(name) { await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested); this.count++; log('  shot', name); }
   async full(name = 'full') {
     const p = this.p;
     await lazyScroll(p);
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
-    if (H <= chunk) await p.screenshot({ path: f + '.png', fullPage: true });
-    else for (let i = 0, y = 0; y < H; i++, y += chunk) await p.screenshot({ path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, H - y) } });
+    if (H <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
+    else for (let i = 0, y = 0; y < H; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, H - y) } }, this.requested);
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
   }
@@ -136,7 +137,7 @@ for (const { k, mob } of runs) {
   const ctx = await b.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US' });
   const p = await ctx.newPage();
   log(name);
-  const S = new Shooter(p, `${name}-light`, vw, dpr);
+  const S = new Shooter(p, `${name}-light`, vw, vh, dpr);
   try {
     await p.goto(BASE + spec.path, { waitUntil: 'load', timeout: 90000 });
     await wait(p, spec.wait || 6000);

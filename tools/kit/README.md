@@ -38,6 +38,7 @@ See [docs/CAPTURE.md](../../docs/CAPTURE.md#dependencies) for the full table.
 |---|---|---|
 | Public web pages | Headless Playwright straight from the URL | `capture/public/` (from gauth), with its own `build-measurements.mjs`; use `build/build_components_md.public.py` as the package's `build_components_md.py` |
 | Signed-in web app | The owner signs in to a real browser; `snapshot.js` copies each state to disk, then everything is rendered and measured headless from the copies | `capture/signed-in/` (from claude, with chatgpt's measurement builder) |
+| Signed-in web app, live evidence | Use the owner's selected visible browser and the current harness's supported screenshot and read-only DOM tools when copies lose behaviour or layout | Record the same viewport fields below; these Playwright scripts still render copies and do not attach to that browser |
 | Native iOS app | iPhone Mirroring on the Mac; values are sampled from window screenshots | `capture/native/` to capture, `native/` to measure and build (from grokbot) |
 | Electron desktop app | The owner opens the app with `--remote-debugging-port`; screenshots and CSS variables are read live from the running app | `capture/electron/shot.mjs` ([docs/CAPTURE.md](../../docs/CAPTURE.md#desktop-apps)) |
 | Native desktop app | As the iOS route, with the app's own window | `capture/native/winid.swift`, `sample.py`, `native/` |
@@ -45,12 +46,56 @@ See [docs/CAPTURE.md](../../docs/CAPTURE.md#dependencies) for the full table.
 `vars.mjs`, `layout.mjs`, `icons.mjs` and `quantize.py` serve both web routes.
 The `build/` scripts serve every route.
 
+## Screenshot dimensions and acceptance
+
+The public, signed-in render and Electron routes use
+[`capture/screenshot.mjs`](capture/screenshot.mjs). Each PNG gets a neighbouring
+`<name>.png.capture.json` with its capture time, requested size and pixel ratio,
+configured viewport, actual `innerWidth` / `innerHeight`, visual viewport
+(including scale and offsets), actual device pixel ratio, safe root theme
+classes/attributes, document size and PNG dimensions. The helper does not read
+the page URL; a caller may explicitly supply `sanitizedSourceUrl` after removing
+credentials, signed query parameters and banned personal data.
+
+The existing commands and arguments stay the same. Copy the whole capture tree
+as shown above: [`render.mjs`](capture/signed-in/render.mjs),
+[`public.mjs`](capture/public/public.mjs) and
+[`shot.mjs`](capture/electron/shot.mjs) now import the shared helper one directory
+above their own folder. When updating an older package's individual script,
+copy that helper into its corresponding capture folder too.
+
+The helper checks the PNG header dimensions against the capture region and
+scale, allowing one physical pixel for rounding. Viewport, full-page and clipped
+tile captures record their different size bases. A mismatch throws and leaves a
+failed sidecar in scratch so the operator can diagnose it. A passed dimension
+check still leaves visual review pending and crop-coordinate alignment
+unverified. Keep sanitized metadata with the retained evidence; preserve each
+tile's sidecar when stitching and record the stitched image's final dimensions.
+
+Inspect each final screenshot before accepting coverage. Reject blank, clipped,
+unsettled or unintended states, recapture them, and keep rejected attempts outside
+the package. Requested dimensions describe intent. Label evidence with the
+measured CSS viewport, and choose crop/masking boxes against the saved PNG;
+neither a DOM rectangle nor a viewport-to-PNG ratio proves that the layouts align.
+Use the same checks for screenshots from a live browser, recording unsupported
+metadata as unavailable rather than guessing it.
+
+Record themes and states actually observed in the live product. Rendering a
+static copy with alternate theme classes is a reconstruction; label it separately
+and do not count it as live theme evidence or infer matching state coverage.
+Theme changes in the owner's account need approval, followed by restoration and
+verification. Keep public marketing demos separate from signed-in app coverage.
+
+Run the browser-free contract tests with
+`node --test tools/kit/capture/test_screenshot.mjs` (also included in `make test`).
+
 ## Generic: use as they are
 
 | File | Does |
 |---|---|
 | `capture/quantize.py` | Converts screenshots to sRGB 256-colour PNGs |
-| `capture/signed-in/snapshot.js` | Pasted into the signed-in page; copies one state with stylesheets inlined, scripts removed, names redacted, signed URLs cut |
+| `capture/screenshot.mjs` | Saves a Playwright PNG plus viewport/theme metadata and validates PNG dimensions; visual acceptance and crop alignment still need review |
+| `capture/signed-in/snapshot.js` | Pasted into the signed-in page; copies one state with stylesheets inlined, scripts removed, configured banned text redacted and signed URLs cut |
 | `capture/signed-in/unsnap.py` | Writes a snapshot to disk; refuses it if a redacted string or a signing parameter survived. Needs `SNAP_REDACT` |
 | `capture/signed-in/redact.example.json` | The shape of the redaction file, which lives in `~/.design-systems/<slug>-redact.json` |
 | `capture/signed-in/render-all.sh` | Renders every row of `shots.tsv`: a copy taken in dark (`-dark` in its label) in both themes, any other once |
@@ -88,9 +133,23 @@ Search each file for `PRODUCT (adapt)` first, then work down this list.
 
 ## Never commit
 
-Account names, conversation or file titles, task and project ids, raw page
-copies, redaction files and proprietary fonts. Specs find elements by role,
-label or position, so a kit copy holds no account text at all.
+Follow the current repository privacy policy in [AGENTS.md](../../AGENTS.md).
+Mask credentials (passwords, one-time/recovery codes, API keys, tokens, session
+cookies and signed URLs) and banned personal data (phone numbers, street
+addresses, precise locations, dates of birth, government/payment/bank numbers,
+and other people's email or contact details).
+
+The private library permits the owner's profile, including their email, their
+chat/document/project text and time zone; other people's names, handles and
+profile pictures as the app displays them; and published product content.
+Do not build broader redaction lists for permitted names or titles. Derive
+redaction rules from the current policy, and run the repository image checker
+on signed-in screenshots and crops before committing them.
+
+Keep raw page copies, redaction files and proprietary fonts outside the repo.
+Specs should identify elements by role, stable structure or position so capture
+scripts do not depend on account text. Sanitize retained readings and screenshot
+metadata too; they are evidence, not an exemption from the privacy rules.
 
 ## Known gaps in the kit
 

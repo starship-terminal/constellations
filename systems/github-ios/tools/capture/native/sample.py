@@ -24,7 +24,8 @@ from collections import Counter
 
 def read_png(path):
     """Return (width, height, rows) where rows[y][x] is an (r, g, b, a) tuple."""
-    data = open(path, "rb").read()
+    with open(path, "rb") as f:
+        data = f.read()
     if data[:8] != b"\x89PNG\r\n\x1a\n":
         raise ValueError(f"{path} is not a PNG")
     pos, idat, palette, trns = 8, b"", None, None

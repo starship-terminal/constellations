@@ -5,6 +5,7 @@
 // one from `.dark`, with every component colour a var() of those, so the same static copy
 // renders both themes and no account setting is touched.
 import fs from 'fs';
+import { screenshotWithMetadata } from '../screenshot.mjs';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
 const [,, dir, label, ...flags] = process.argv;
@@ -46,6 +47,7 @@ await p.evaluate(({ scrolls, flag }) => {
   }
 }, { scrolls: meta.scrolls, flag: scrollFlag && scrollFlag.slice(7) });
 await p.waitForTimeout(500);
-await p.screenshot({ path: `${dir}/${out}.png` });
-if (flags.includes('full')) { await p.evaluate(() => { scrollTo(0, 0); const sc = [...document.querySelectorAll('*')].filter(e => /(auto|scroll)/.test(getComputedStyle(e).overflowY) && e.scrollHeight > e.clientHeight + 20); for (const e of sc) { let n = e; while (n && n !== document.documentElement) { n.style.setProperty('height', 'auto', 'important'); n.style.setProperty('max-height', 'none', 'important'); n.style.setProperty('overflow', 'visible', 'important'); if (getComputedStyle(n).position === 'fixed') n.style.setProperty('position', 'relative', 'important'); n = n.parentElement; } } }); await p.waitForTimeout(500); await p.screenshot({ path: `${dir}/${out}-full.png`, fullPage: true }); }
+const requested = { viewport: { width: meta.w, height: meta.h }, deviceScaleFactor: 2 };
+await screenshotWithMetadata(p, { path: `${dir}/${out}.png` }, requested);
+if (flags.includes('full')) { await p.evaluate(() => { scrollTo(0, 0); const sc = [...document.querySelectorAll('*')].filter(e => /(auto|scroll)/.test(getComputedStyle(e).overflowY) && e.scrollHeight > e.clientHeight + 20); for (const e of sc) { let n = e; while (n && n !== document.documentElement) { n.style.setProperty('height', 'auto', 'important'); n.style.setProperty('max-height', 'none', 'important'); n.style.setProperty('overflow', 'visible', 'important'); if (getComputedStyle(n).position === 'fixed') n.style.setProperty('position', 'relative', 'important'); n = n.parentElement; } } }); await p.waitForTimeout(500); await screenshotWithMetadata(p, { path: `${dir}/${out}-full.png`, fullPage: true }, requested); }
 await b.close(); console.log('rendered', out);
