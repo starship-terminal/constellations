@@ -91,7 +91,8 @@ def main(src, outdir):
         py_rep = re.sub(r"\$(\d)", r"\\\1", rep)
         page = rx.sub(py_rep, page)
         meta["url"] = rx.sub(py_rep, meta.get("url", ""))
-    leaks = leaks_in(page + json.dumps(meta), redact)
+    # ensure_ascii=False: a pattern with an accented name must meet the name, not \u00e9.
+    leaks = leaks_in(page + json.dumps(meta, ensure_ascii=False), redact)
     if leaks:
         sys.exit(f"LEAK {leaks}")
     # NotebookLM (adapt): the copy has no charset of its own once scripts and metas are cut, and a

@@ -111,6 +111,23 @@ class PackageSnapshots(unittest.TestCase):
                 self.assertIn("LEAK", res.stderr, slug)
                 self.assertFalse((out / "home.html").exists(), slug)
 
+    def test_unsnap_meets_accented_names_in_the_metadata(self):
+        redact = {"replace": [["Jos\u00e9 Doe", "g", "A User"]]}
+        for slug in PACKAGES:
+            if slug in ("duolingo", "notebooklm"):
+                continue   # they rewrite the URL themselves; covered above
+            res, out = self.run_unsnap(slug, "<p>hi</p>", {"label": "home", "url": "https://x.example/Jos\u00e9 Doe"}, redact)
+            self.assertIn("LEAK", res.stderr, slug)
+            self.assertFalse((out / "home.html").exists(), slug)
+
+    def test_measure_scripts_read_a_copy_without_a_title(self):
+        # unsnap.py drops the title, so a reader that dereferences it would throw on every new copy.
+        for slug in PACKAGES:
+            for f in (ROOT / "systems" / slug / "tools" / "capture").rglob("*.mjs"):
+                for m in re.finditer(r"\bm\.title\.", f.read_text()):
+                    line = f.read_text()[:m.start()].rsplit("\n", 1)[-1]
+                    self.assertTrue(line.endswith("m.title ? { title: "), f"{f.relative_to(ROOT)} reads m.title without a guard")
+
     def test_notebooklm_snapshot_carries_the_safe_url_copy(self):
         kit = (KIT / "safe-url.mjs").read_text()
         body = kit[kit.index("const RESOURCE"):].replace("export function safeUrl", "function safeUrl").rstrip()

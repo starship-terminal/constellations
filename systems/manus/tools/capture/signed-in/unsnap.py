@@ -81,7 +81,8 @@ def main(src, outdir):
     meta, page = json.loads(m.group(1)), m.group(2)
     # The page title is usually the conversation or document name, so it is not kept.
     meta.pop("title", None)
-    leaks = leaks_in(page + json.dumps(meta), redact)
+    # ensure_ascii=False: a pattern with an accented name must meet the name, not \u00e9.
+    leaks = leaks_in(page + json.dumps(meta, ensure_ascii=False), redact)
     # A task or project id in a path (manus.im/app/<id>) names the account's own work.
     leaks += ["task id"] * bool(re.search(r"/app/[A-Za-z0-9_-]{16,}", page))
     for a in redact.get("stripAttrs", []):

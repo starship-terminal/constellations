@@ -81,7 +81,8 @@ def main(src, outdir):
     meta, page = json.loads(m.group(1)), m.group(2)
     # The page title is usually the conversation or document name, so it is not kept.
     meta.pop("title", None)
-    leaks = leaks_in(page + json.dumps(meta), redact)
+    # ensure_ascii=False: a pattern with an accented name must meet the name, not \u00e9.
+    leaks = leaks_in(page + json.dumps(meta, ensure_ascii=False), redact)
     # The account photo is served from estuary/public_content; a copy that still points at it would
     # load the photo again whenever it is rendered.
     if re.search(r"<img[^>]*backend-api/estuary/public_content/", page):
