@@ -95,6 +95,8 @@ async function main() {
   let tmp = null;
   if (!snapDir) {
     tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rr-icons-'));
+    // The gunzipped copies are the signed-in pages: removed however the run ends (a throw included).
+    process.on('exit', () => fs.rmSync(tmp, { recursive: true, force: true }));
     for (const name of PAGES) fs.writeFileSync(path.join(tmp, `${name}.html`), zlib.gunzipSync(fs.readFileSync(path.join(ARCHIVE, `${name}.html.gz`))));
     snapDir = tmp;
   }
@@ -117,7 +119,6 @@ async function main() {
     console.log(' ', name, seen.size, 'distinct so far');
   }
   await browser.close();
-  if (tmp) fs.rmSync(tmp, { recursive: true, force: true });
   if (!seen.size) throw new Error('no icons collected');
 
   fs.mkdirSync(OUT, { recursive: true });

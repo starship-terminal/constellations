@@ -680,6 +680,8 @@ async function run() {
   let tmp = null;
   if (!snapDir) {
     tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rr-snap-'));
+    // The gunzipped copies are the signed-in pages: removed however the run ends (a throw included).
+    process.on('exit', () => fs.rmSync(tmp, { recursive: true, force: true }));
     // Only the pages asked for; the 2026-10-04 snapshots no longer exist, so a full run needs them back.
     for (const [pkey, name] of Object.entries(PAGES)) {
       if (ONLY_PAGES.length && !ONLY_PAGES.includes(pkey)) continue;
@@ -857,7 +859,6 @@ async function run() {
     save(out);
   }
   await browser.close();
-  if (tmp) fs.rmSync(tmp, { recursive: true, force: true });
   return out;
 }
 
