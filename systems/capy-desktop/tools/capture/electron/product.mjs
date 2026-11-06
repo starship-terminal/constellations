@@ -212,8 +212,9 @@ export const SHOTS = [
       composer: S.composer, 'composer-editor': S.editor, 'send-button': S.send, 'voice-button': S.voice, 'add-button': S.add, 'config-button': S.config,
       'model-button': S.model, 'project-button': S.project, 'run-on-button': S.runOn, 'repos-button': S.repos },
     optionalParts: ['update-button', 'setup-card', 'setup-step', 'setup-button', 'project-group', 'repos-button', 'avatar'] },
-  { name: 'sidebar-hidden', window: A, reveal: async h => { await btn(h.page, 'Close sidebar').click(); await wait(h.page, 900); },
-    after: async ({ page }) => { await page.keyboard.press('Meta+B'); await wait(page, 800); }, parts: { panel: S.panel } },
+  // `after` undoes only what reveal did: Meta+B toggles, so pressing it when Close sidebar was never clicked would close the sidebar.
+  { name: 'sidebar-hidden', window: A, reveal: async h => { h.sidebarClosed = false; await btn(h.page, 'Close sidebar').click(); h.sidebarClosed = true; await wait(h.page, 900); },
+    after: async h => { if (!h.sidebarClosed) return; h.sidebarClosed = false; await h.page.keyboard.press('Meta+B'); await wait(h.page, 800); }, parts: { panel: S.panel } },
   { name: 'threads', window: A, reveal: h => go(h, '/threads'),
     parts: { 'segmented-item': page => vis(page, 'button:has-text("All threads")'), 'segmented-active': page => vis(page, 'button:has-text("My threads")'),
       'filter-chip': page => btn(page, 'Remove Participants filter').locator('xpath=..'), 'list-section': slot('collapsible-trigger'),
@@ -260,9 +261,12 @@ export const SHOTS = [
     await h.page.locator('[role=menuitem]').filter({ hasText: /^Customize sidebar/ }).first().click(); await wait(h.page, 1100); },
     parts: { dialog: '[role=dialog]', scrim: '[data-slot=dialog-backdrop], [data-slot=dialog-overlay]', 'dialog-title': '[role=dialog] h2', 'button-accent': '[role=dialog] button[data-slot=button]:last-of-type' },
     optionalParts: ['scrim', 'dialog-title', 'button-accent'] },
-  { name: 'tabs-two', window: A, reveal: async h => { await home(h); await btn(h.page, 'New tab').click(); await wait(h.page, 1200); await h.page.mouse.move(700, 790); },
+  { name: 'tabs-two', window: A, reveal: async h => { await home(h); h.tabsBefore = await h.page.locator('[role=tab]').count(); await btn(h.page, 'New tab').click(); await wait(h.page, 1200); await h.page.mouse.move(700, 790); },
     // The new tab is the active one (raised on the popover fill with a hairline); its close button shows on hover.
-    after: async ({ page }) => { const t = page.locator('[role=tab]').last(); await t.hover(); await wait(page, 400); await t.locator('button[aria-label="Close tab"]').click({ force: true }); await wait(page, 900); },
+    // Close it only if reveal really added a tab, so a failed reveal never closes one of the owner's tabs.
+    after: async h => { const { page } = h; const before = h.tabsBefore; h.tabsBefore = undefined;
+      if (before === undefined || await page.locator('[role=tab]').count() <= before) return;
+      const t = page.locator('[role=tab]').last(); await t.hover(); await wait(page, 400); await t.locator('button[aria-label="Close tab"]').click({ force: true }); await wait(page, 900); },
     parts: { 'tab-active': '[role=tab].shadow-card', tab: '[role=tab].border-transparent', 'tab-close': page => page.locator('[role=tab]').last().locator('button[aria-label="Close tab"]') },
     optionalParts: ['tab-close'] },
 

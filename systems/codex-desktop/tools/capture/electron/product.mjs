@@ -251,7 +251,7 @@ export const SHOTS = [
     parts: { submenu: lastMenu, 'menu-radio-row': page => lastMenu(page).locator('[role=menuitemradio], [role=menuitemcheckbox]').first() }, optionalParts: ['menu-radio-row'] },
   // Remove project on the capture's own project: the confirmation is opened and cancelled.
   { name: 'remove-project-dialog', window: M,
-    reveal: async h => { await projectActions(h); await h.page.getByRole('menuitem', { name: 'Remove project' }).click(); await wait(h.page, 1000); },
+    reveal: async h => { await projectActions(h); await h.page.getByRole('menuitem', { name: 'Remove project' }).click(); await confirmOpened(h.page, 'Remove project'); await wait(h.page, 1000); },
     parts: { dialog: page => page.locator('[role=dialog], [role=alertdialog]').filter({ visible: true }).last(),
       'button-danger': page => page.locator('[role=dialog] button, [role=alertdialog] button').filter({ hasText: /^Remove/ }).filter({ visible: true }).last(),
       'button-ghost': page => page.locator('[role=dialog] button, [role=alertdialog] button').filter({ hasText: /^Cancel$/ }).filter({ visible: true }).last() },

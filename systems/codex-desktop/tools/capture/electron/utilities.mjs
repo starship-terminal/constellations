@@ -84,9 +84,21 @@ if (shotNames.length) {
   for (const name of shotNames) {
     const shot = P.SHOTS.find(s => s.name === name);
     if (!shot) { console.error('no shot', name); failed.push(name); continue; }
+    let abort = '';
+    const before = P.guard ? await P.guard(h, shot.window) : '';
     try { await P.reset(h, shot.window); await shot.reveal(h); merge(await read(), name); }
-    catch (e) { console.error('FAILED', name, e.message.split('\n')[0]); failed.push(name); }
+    catch (e) {
+      console.error('FAILED', name, e.message.split('\n')[0]); failed.push(name);
+      // A shot that may have changed the account (product.mjs marks the error `abort`) ends the read, as in shots.mjs.
+      if (e.abort) abort = e.message.split('\n')[0];
+    }
     finally { if (shot.after) await shot.after(h).catch(() => {}); }
+    // Look, don't act: stop at once if the shot changed what the product's guard watches.
+    const now = P.guard && !abort ? await P.guard(h, shot.window) : before;
+    if (abort || now !== before) {
+      console.error(`STOPPED after ${name}: ${abort || `state changed\n  before: ${before}\n  after:  ${now}`}; ${out} not written`);
+      await disconnect(browser); process.exit(1);
+    }
   }
   await P.reset(h, Object.keys(P.WINDOWS)[0]);   // the product's first window
 } else merge(await read(), (await viewport(page)).title);
