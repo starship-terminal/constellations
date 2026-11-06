@@ -78,7 +78,7 @@ def declared_size(sizes: str) -> int:
     """The largest width a <link sizes> attribute declares: "192x192" -> 192,
     "16x16 32x32" -> 32, "any" or junk -> 0."""
     widths = [int(w) for w, _, h in (t.lower().partition("x") for t in sizes.split())
-              if w.isdigit() and h.isdigit()]
+              if w.isascii() and w.isdigit() and h.isascii() and h.isdigit()]
     return max(widths, default=0)
 
 
@@ -108,8 +108,11 @@ def candidates(home: str) -> list[str]:
         parser = IconLinks()
         parser.feed(page[0].decode("utf-8", "replace"))
         for attr in parser.links:
-            size = declared_size(attr.get("sizes", ""))
-            links.append((attr["rel"].lower(), urllib.parse.urljoin(final, attr["href"]), size))
+            try:
+                href = urllib.parse.urljoin(final, attr["href"])
+            except ValueError:  # "http://[bad": skip the link, keep the rest
+                continue
+            links.append((attr["rel"].lower(), href, declared_size(attr.get("sizes", ""))))
         base = final
     else:
         parsed = urllib.parse.urlparse(home)

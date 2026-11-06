@@ -17,7 +17,7 @@ class DeclaredSizeTest(unittest.TestCase):
         self.assertEqual(fetch_icon.declared_size("16x16 32X32"), 32)
 
     def test_any_or_junk_is_zero(self):
-        for sizes in ("", "any", "192", "x192", "bigxbig"):
+        for sizes in ("", "any", "192", "x192", "bigxbig", "\u00b2x\u00b2"):
             self.assertEqual(fetch_icon.declared_size(sizes), 0, sizes)
 
 
@@ -35,6 +35,15 @@ class CandidatesTest(unittest.TestCase):
                                 "https://example.test/big.png",
                                 "https://example.test/mid.png",
                                 "https://example.test/small.png"])
+
+
+    def test_a_malformed_href_is_skipped(self):
+        page = (b'<link rel="icon" href="http://[bad/icon.png" sizes="512x512">' + self.PAGE,
+                "text/html", "https://example.test/")
+        with mock.patch.object(fetch_icon, "fetch", return_value=page), \
+             mock.patch.object(fetch_icon.refero_media, "favicon_url", return_value=None):
+            urls = fetch_icon.candidates("https://example.test/")
+        self.assertEqual(urls[1], "https://example.test/big.png")
 
 
 class FetchTest(unittest.TestCase):
