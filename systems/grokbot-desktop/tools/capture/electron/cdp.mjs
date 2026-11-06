@@ -23,6 +23,13 @@ export async function connect(title) {
   if (!page) throw new Error(`no window titled ${title}; open: ${(await Promise.all(pages.map(p => p.title()))).join(', ')}`);
   const cdp = await page.context().newCDPSession(page);
   await cdp.send('DOM.enable'); await cdp.send('CSS.enable');
+  // Playwright's connectOverCDP emulates prefers-color-scheme: light on the page for as long as it
+  // stays attached (found on OpenCode, whose theme follows the media query). COLOR_SCHEME=dark|light
+  // sets the scheme this connection emulates instead; unset leaves Playwright's default.
+  if (process.env.COLOR_SCHEME) {
+    if (!['dark', 'light'].includes(process.env.COLOR_SCHEME)) throw new Error(`COLOR_SCHEME must be dark or light, not ${process.env.COLOR_SCHEME}`);
+    await page.emulateMedia({ colorScheme: process.env.COLOR_SCHEME }); await page.waitForTimeout(600);
+  }
   return { browser, page, cdp, pages };
 }
 
