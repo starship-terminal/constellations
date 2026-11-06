@@ -455,6 +455,32 @@ def signed_url_pattern(spec: dict) -> re.Pattern:
 SIGNED_URL = signed_url_pattern(json.loads(SIGNED_PARAMS.read_text()))
 
 
+def read_redaction(paths) -> dict:
+    """One or more redaction files ({"replace": [[pattern, flags, replacement], ...],
+    "email_allow": [...]}) merged, in order. The one reader for scan and redact_images.py."""
+    merged = {"replace": [], "email_allow": []}
+    for path in ([paths] if isinstance(paths, (str, Path)) else paths or []):
+        data = json.loads(Path(path).expanduser().read_text())
+        merged["replace"] += data.get("replace", [])
+        merged["email_allow"] += data.get("email_allow", [])
+    return merged
+
+
+def redaction_patterns(redact: dict, ignorecase: bool = False) -> list[re.Pattern]:
+    """The compiled `replace` patterns, one per row and in order: case-insensitive when the
+    row's flags hold "i" or `ignorecase` (OCR reads case unreliably), and matched literally
+    when a row is not a valid regex, so a bad row still guards instead of crashing."""
+    out = []
+    for row in redact.get("replace", []):
+        pat = row[0]
+        flags = re.I if ignorecase or (len(row) > 1 and "i" in str(row[1])) else 0
+        try:
+            out.append(re.compile(pat, flags))
+        except re.error:
+            out.append(re.compile(re.escape(pat), flags))
+    return out
+
+
 def scan(folder: Path, redact: dict) -> list[str]:
     """Every text file under `folder` (any extension or none; see is_text_file) checked against the redaction file's patterns (the
     [pattern, flags, replacement] triples unsnap.py uses) and for URL signing parameters.
@@ -463,8 +489,7 @@ def scan(folder: Path, redact: dict) -> list[str]:
     so a check that looked at nothing never reads as clean."""
     if not folder.is_dir():
         raise SystemExit(f"scan: {folder} is not a folder")
-    rules = [(re.compile(pat, re.I if "i" in flags else 0), n) for n, (pat, flags, _) in
-             enumerate(redact.get("replace", []), 1)]
+    rules = [(rx, n) for n, rx in enumerate(redaction_patterns(redact), 1)]
     hits, checked = [], 0
     for f in sorted(folder.rglob("*")):
         if not f.is_file() or SCAN_SKIP_DIRS & set(f.relative_to(folder).parts):
@@ -1731,7 +1756,7 @@ def main() -> None:
         if not hits:
             sys.exit("no package matches")
     if args.cmd == "scan":
-        hits = scan(args.folder, json.loads(args.redact.expanduser().read_text()))
+        hits = scan(args.folder, read_redaction(args.redact))
         print("\n".join(hits) if hits else f"no private text found in {args.folder}")
         sys.exit(1 if hits else 0)
     if args.cmd == "contrast":
