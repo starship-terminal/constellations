@@ -1057,7 +1057,7 @@ select {
 }
 .reference-letter {
   background: var(--elevated);
-  color: #e1e3ec;
+  color: var(--ink-soft);
   display: grid;
   place-items: center;
   font: 20px var(--serif);
@@ -3504,6 +3504,13 @@ select {
 [data-theme="light"] .icon-button:hover {
   background: var(--surface-raised);
   color: var(--ink);
+}
+/* The light icon-button rules above would give the selected compare check
+   the same colour as its background. */
+[data-theme="light"] .card-select.selected,
+[data-theme="light"] .card-select.selected:hover {
+  background: var(--ink);
+  color: var(--page);
 }
 [data-theme="light"] input,
 [data-theme="light"] textarea,
