@@ -20,7 +20,14 @@ window.__snap = function (label, REDACT) {
     ...SIGNED_PARAMS.prefixes.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '[A-Za-z0-9-]*'),
     ...SIGNED_PARAMS.params.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
   ].join('|') + ')(?:=|%3D)', 'i');
-  const abs = (u) => { let h; try { h = new URL(u, location.href).href; } catch { return u; } return SIGNED.test(h) ? h.split(/[?#]/)[0] : h; };
+  // Every query or fragment in a string that carries a signing parameter is cut out, wherever the URL
+  // sits: an attribute of any name, an inline style's url(), a stylesheet, text (the kit's cutSigned).
+  // A query runs to whitespace, a quote, an angle bracket, a CSS { or }, or a ; that starts a CSS
+  // declaration (`;name:`), so a match that starts at a colour's # stops before a later declaration's
+  // url(); any other ; (an &amp; entity, a ;-separated query) stays inside, as do commas and
+  // parentheses, except a ")" that closes an unquoted url( ... ) before ; , } or the end.
+  const cutSigned = (s) => s.replace(/[?#](?:[^\s"'<>);{}]|;(?![\w-]+\s*:)|\)(?![\s;,"'}]|$))*/g, (q) => (SIGNED.test(q) ? '' : q));
+  const abs = (u) => { let h; try { h = new URL(u, location.href).href; } catch { return cutSigned(u); } return SIGNED.test(h) ? h.split(/[?#]/)[0] : h; };
   const parts = [];
   for (const ss of document.styleSheets) {
     try {
@@ -94,8 +101,11 @@ window.__snap = function (label, REDACT) {
   clone.querySelector('head').insertAdjacentHTML('beforeend', parts.map((p) => (p.href
     ? '<link rel="stylesheet" href="' + p.href + '">'
     : '<style' + (p.media ? ' media="' + p.media + '"' : '') + '>' + p.css.replace(/<\/style/gi, '<\\/style') + '</style>')).join('\n'));
-  let html = '<!doctype html>\n' + clone.outerHTML;
+  // Last, every attribute of every element (data-src, style="background:url(...)", anything) and then
+  // the serialised copy, inlined stylesheets and text included, lose any signed query abs() missed.
+  clone.querySelectorAll('*').forEach((n) => { for (const a of [...n.attributes]) { const v = cutSigned(a.value); if (v !== a.value) n.setAttribute(a.name, v); } });
+  let html = cutSigned('<!doctype html>\n' + clone.outerHTML);
   for (const [pattern, flags, rep] of REDACT.replace) html = html.replace(new RegExp(pattern, flags), rep);
-  const meta = { label, url: location.href, title: document.title, scrollY, w: innerWidth, h: innerHeight, docH: document.documentElement.scrollHeight };
+  const meta = { label, url: cutSigned(location.href), title: document.title, scrollY, w: innerWidth, h: innerHeight, docH: document.documentElement.scrollHeight };
   return 'SNAPSTART' + JSON.stringify(meta) + 'SNAPMETA' + html + 'SNAPEND';
 };
