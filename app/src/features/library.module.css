@@ -1,0 +1,495 @@
+/* Refero design: semantic theme roles, core.radius.2xl/4xl (24/32px),
+   core.spacing.base (4px). Catalog geometry follows the approved mockup.
+   Proprietary Base/neueMontreal fonts use the project's system sans fallback. */
+.library {
+  min-width: 0;
+  font-family: var(--sans);
+}
+.catalog {
+  width: 100%;
+  margin: 0 auto;
+  padding: 8px 48px 80px;
+}
+.searchTop {
+  position: sticky;
+  top: 0;
+  z-index: 8;
+  padding: 0 0 8px;
+  background: var(--page);
+}
+.modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+.modes a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  color: var(--subtle);
+  font-size: 13px;
+  line-height: 20px;
+  text-decoration: none;
+}
+.modes a:hover,
+.modes .modeActive {
+  color: var(--ink);
+  background: var(--surface);
+}
+.catalogTitle {
+  margin: 48px 0 40px;
+  font: 400 40px/48px var(--sans);
+  letter-spacing: -1.6px;
+}
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px 20px;
+  margin-bottom: 48px;
+}
+.categories button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 32px;
+  padding: 4px 12px;
+  text-align: left;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font: 12px/20px var(--sans);
+}
+.categories svg {
+  flex-shrink: 0;
+  stroke-width: 1.6;
+}
+.categories button:hover,
+.categories .categoryActive {
+  background: var(--surface);
+  border-color: var(--line);
+}
+.filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-right: auto;
+}
+.sources button {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  font: 13px/20px var(--sans);
+}
+.sources button:hover,
+.sources .sourceActive {
+  background: var(--surface);
+  color: var(--ink);
+}
+.results {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--subtle);
+  font: 12px/20px var(--sans);
+  margin: 0 0 20px;
+}
+.appGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+.appCard {
+  min-width: 0;
+  position: relative;
+}
+.openCard {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  text-align: left;
+  background: transparent;
+  color: inherit;
+}
+.appShot {
+  height: 320px;
+  overflow: hidden;
+  padding: 32px 30px 0;
+  border-radius: 28px;
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
+}
+.appShot :global(.media-preview) {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  aspect-ratio: auto;
+}
+.appShot :global(.media-preview img),
+.appShot :global(.media-preview video) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.appMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+.appMeta > img,
+.appLetter {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  object-fit: contain;
+}
+.appLetter {
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  font-size: 20px;
+}
+.appMeta > div {
+  min-width: 0;
+}
+.appMeta h2 {
+  margin: 0 0 4px;
+  font: 500 20px/24px var(--sans);
+  letter-spacing: -0.6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.appMeta p {
+  margin: 0;
+  font: 13px/20px var(--sans);
+  color: var(--subtle);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.compareSelect {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--page);
+  color: var(--ink);
+  opacity: 0;
+  transition: opacity var(--duration-fast);
+}
+.appCard:hover .compareSelect,
+.appCard:focus-within .compareSelect,
+.appSelected .compareSelect {
+  opacity: 1;
+}
+.appSelected .appShot {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+/* The iOS directory uses the supplied portrait-card proportions. Frame hues
+   reuse captured Refero palette values; they decorate the library, not apps. */
+.mobileGrid {
+  max-width: 820px;
+  margin-inline: auto;
+  gap: 36px 16px;
+}
+.mobileCard {
+  --frame-start: #1facf8;
+  --frame-end: color-mix(in srgb, #1facf8 35%, #ffffff);
+}
+.mobileCard:nth-child(4n + 2) {
+  --frame-start: #f59e0b;
+  --frame-end: #1facf8;
+}
+.mobileCard:nth-child(4n + 3) {
+  --frame-start: #e5759b;
+  --frame-end: #25cf99;
+}
+.mobileCard:nth-child(4n + 4) {
+  --frame-start: #9690f4;
+  --frame-end: #fc9e48;
+}
+.mobileCard .appShot {
+  position: relative;
+  isolation: isolate;
+  height: auto;
+  aspect-ratio: 1 / 2;
+  padding: 7.5%;
+  border: 0;
+  border-radius: 18% / 9%;
+  background:
+    radial-gradient(ellipse at 0 10%, #ffffffc4, transparent 48%),
+    linear-gradient(110deg, var(--frame-start), var(--frame-end));
+}
+.mobileCard .appShot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' d='M0 0h140v140H0z'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+.mobileCard .appShot :global(.media-preview) {
+  border-radius: 14% / 6.5%;
+  background: transparent;
+}
+.mobileCard .appShot :global(.media-preview img),
+.mobileCard .appShot :global(.media-preview video) {
+  object-fit: cover;
+}
+.mobileCard .appMeta {
+  margin-top: 20px;
+}
+.mobileCard .appMeta h2 {
+  margin-bottom: 0;
+  font-size: 18px;
+  line-height: 24px;
+}
+.mobileCard .appMeta p {
+  font-size: 12px;
+  line-height: 18px;
+}
+.loadMore {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+@media (max-width: 1100px) {
+  .catalog {
+    padding-inline: 32px;
+  }
+  .categories {
+    gap: 8px 12px;
+  }
+  .categories button {
+    padding: 8px;
+  }
+  .appShot {
+    height: 280px;
+    padding: 24px 24px 0;
+  }
+}
+@media (max-width: 800px) {
+  .catalog {
+    padding-inline: 24px;
+  }
+  .appGrid {
+    gap: 28px 24px;
+  }
+  .appShot {
+    height: 240px;
+    padding: 20px 20px 0;
+  }
+  .appMeta h2 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 600px) {
+  .catalog {
+    padding: 16px 20px 56px;
+  }
+  .modes a {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+  .catalogTitle {
+    font-size: 34px;
+    line-height: 40px;
+    margin: 32px 0;
+  }
+  .categories {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    margin-bottom: 32px;
+  }
+  .categories button {
+    font-size: 12px;
+  }
+  .appGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .appShot {
+    height: 280px;
+  }
+  .mobileGrid {
+    max-width: 400px;
+  }
+  .compareSelect {
+    opacity: 1;
+  }
+  .filters {
+    gap: 8px;
+  }
+  .sources {
+    width: 100%;
+  }
+  .sources button {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+  .results {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .compareSelect {
+    transition: none;
+  }
+}
+
+.listView {
+  grid-template-columns: 1fr !important;
+}
+.listView .openCard {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.listView .appShot {
+  width: 220px;
+  height: 150px;
+  flex-shrink: 0;
+}
+.listView .appMeta {
+  flex: 1;
+  min-width: 0;
+}
+@media (max-width: 760px) {
+  .listView .appShot {
+    width: 130px;
+    height: 110px;
+  }
+  .listView .openCard {
+    gap: 12px;
+  }
+}
+
+.browseModes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 24px 0;
+}
+.browseModes button {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 9px 16px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+}
+.browseModes button[aria-pressed="true"] {
+  background: var(--surface-raised);
+  color: var(--ink);
+}
+.packageLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 12px 0 0 56px;
+  color: var(--muted);
+  font-size: 12px;
+  text-decoration: none;
+}
+.packageLink:hover {
+  color: var(--ink);
+}
+
+.modeBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.resultModes {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+.resultModes button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  background: transparent;
+  color: var(--subtle);
+  font: 13px/20px var(--sans);
+}
+.resultModes button:hover,
+.resultModes button[aria-pressed="true"] {
+  color: var(--ink);
+  background: var(--surface);
+}
+@media (max-width: 760px) {
+  .searchTop > :first-child {
+    margin-left: 48px;
+    width: calc(100% - 48px);
+  }
+  .modeBar {
+    gap: 0;
+  }
+}
+
+.searchTop:has([data-search-picker-present="true"]) {
+  z-index: 100;
+}
+
+/* Refero core.palette.code.vivid-5/17/12 from the captured tokens. */
+.modeActive .webModeIcon {
+  color: #fc9e48;
+}
+.modeActive .iosModeIcon {
+  color: #1facf8;
+}
+.resultModes button[aria-pressed="true"] .screensModeIcon {
+  color: #25cf99;
+}
+
+.modes a[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.listView .mobileCard .appShot {
+  aspect-ratio: auto;
+  padding: 12px 20px;
+  border-radius: 20px;
+}
+.listView .mobileCard .appShot :global(.media-preview) {
+  border-radius: 12px;
+}

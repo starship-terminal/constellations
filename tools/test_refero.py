@@ -1,6 +1,6 @@
 """Tests for tools/refero/fetch.py and mirror_media.py, plus the
-emitted-vs-consumed contract between the refero JSON the tools write and the
-fields docs/gallery/app.js reads. Run with `make test`."""
+emitted-vs-consumed contract between the refero JSON the tools write and what
+the app (web/) reads. Run with `make test`."""
 import json
 import re
 import sqlite3
@@ -225,12 +225,19 @@ class WriteMetaTest(unittest.TestCase):
     def meta(self, slug="acme"):
         return json.loads((self.refero / slug / "meta.json").read_text())
 
+    def write_meta(self, slug, media):
+        db = styles_db()
+        try:
+            fetch.write_meta(db, slug, media)
+        finally:
+            db.close()
+
     def test_media_keys_merge_into_an_existing_meta(self):
         folder = self.refero / "acme"
         folder.mkdir()
         (folder / "meta.json").write_text(json.dumps(
             {"uuid": "u1", "slug": "acme", "name": "Acme", "custom": 1}))
-        fetch.write_meta(styles_db(), "acme", MEDIA)
+        self.write_meta("acme", MEDIA)
         meta = self.meta()
         self.assertEqual(list(meta)[:3], ["uuid", "slug", "name"])
         self.assertEqual(meta["custom"], 1)
@@ -239,7 +246,7 @@ class WriteMetaTest(unittest.TestCase):
                          {"uuid", "slug", "name", "custom"} | set(MEDIA))
 
     def test_a_missing_meta_is_rebuilt_from_the_styles_row(self):
-        fetch.write_meta(styles_db(), "acme", MEDIA)
+        self.write_meta("acme", MEDIA)
         meta = self.meta()
         self.assertEqual(set(meta), META_KEYS)
         self.assertEqual(meta["uuid"], "u1")
@@ -249,7 +256,7 @@ class WriteMetaTest(unittest.TestCase):
         folder = self.refero / "acme"
         folder.mkdir()
         (folder / "meta.json").write_text('{"uuid": "u1", "trun')
-        fetch.write_meta(styles_db(), "acme", MEDIA)
+        self.write_meta("acme", MEDIA)
         self.assertEqual(self.meta()["uuid"], "u1")
         self.assertEqual(set(self.meta()), META_KEYS)
         self.assertEqual((folder / "meta.json.bad").read_text(),
@@ -259,12 +266,12 @@ class WriteMetaTest(unittest.TestCase):
         folder = self.refero / "acme"
         folder.mkdir()
         (folder / "meta.json").write_text("[]")
-        fetch.write_meta(styles_db(), "acme", MEDIA)
+        self.write_meta("acme", MEDIA)
         self.assertTrue((folder / "meta.json.bad").is_file())
         self.assertEqual(set(self.meta()), META_KEYS)
 
     def test_atomic_write_leaves_no_tmp(self):
-        fetch.write_meta(styles_db(), "acme", MEDIA)
+        self.write_meta("acme", MEDIA)
         self.assertEqual(list((self.refero / "acme").glob("*.tmp")), [])
 
 
@@ -403,59 +410,35 @@ class MissingFilesTest(unittest.TestCase):
 
 # ------------------------------------------- emitted <-> consumed contract
 
-APP_JS = (TOOLS.parent / "docs" / "gallery" / "app.js").read_text()
-# The refero section runs from its banner to the end of the file. // comments
-# are stripped so a field mentioned in prose is not mistaken for a read; the
-# (?<![:\\]) lookbehind keeps https:// URLs and the \/ regex escapes intact.
-RF_JS = re.sub(r"(?m)(?<![:\\])//[^\n]*$", "",
-               APP_JS[re.search(r"^// -+ refero$", APP_JS, re.M).start():])
-
-# The emitted object shapes (catalog.py) and what of them the page reads.
-INDEX_KEYS = {"version", "cdn", "styles"}
+# The emitted object shapes (catalog.py) and what of them the app reads. The
+# consumed side is the TypeScript interfaces in web/lib/refero.ts plus the
+# literal field accesses in the components and lib sources under web/.
+INDEX_KEYS = {"version", "cdn", "mediaBase", "styles"}
 CARD_KEYS = {"slug", "name", "tagline", "theme", "industry", "type", "style",
              "tags", "src", "card", "cardRemote", "video", "videoRemote"}
 ENTITY_KEYS = {"slug", "name", "tagline", "theme", "industry", "type", "style",
-               "source_url", "page_url", "media", "docs", "ds", "similar"}
+               "source_url", "page_url", "media", "docs", "ds", "similar",
+               "mediaBase"}
 MEDIA_KEYS = set(catalog.REFERO_MEDIA)
 MEDIA_PAIR_KEYS = {"local", "remote"}
 DOCS_KEYS = {"design_md", "variables_css", "theme_css", "tokens_json"}
 DS_KEYS = set(catalog.REFERO_DS_KEYS)
 SIMILAR_KEYS = {"slug", "name", "why"}
-EMITTED_KEYS = (INDEX_KEYS | CARD_KEYS | ENTITY_KEYS | MEDIA_KEYS
-                | MEDIA_PAIR_KEYS | DOCS_KEYS | DS_KEYS | SIMILAR_KEYS)
 
-# Keys a hop-1 variable may read that are not emitted payload fields: `e` is
-# also the keydown event, `s` also the toolbar selects, `x` carries the derived
-# rfSimilar item shape plus fields inside emitted ds arrays (elevation rows
-# are {element, style}), and rfFav takes either a card or the entity, so its
-# `s` may touch entity-only media/source_url.
-EXTRA_READS = {
-    "RF_INDEX": set(),
-    "d": set(),
-    "e": {"key", "preventDefault", "shiftKey"},
-    "s": {"media", "source_url", "onchange", "dataset", "value"},
-    "x": {"s", "sc", "note", "element", "style"},
-    "m": set(),
-    "media": set(),
-    "ds": set(),
-}
-# var -> the key set its first hop resolves to
-SCOPES = {
-    "RF_INDEX": INDEX_KEYS,
-    "d": INDEX_KEYS,
-    "e": ENTITY_KEYS,
-    "s": CARD_KEYS,
-    "x": SIMILAR_KEYS,
-    "m": MEDIA_KEYS,
-    "media": MEDIA_PAIR_KEYS,
-    "ds": DS_KEYS,
-}
-# hop-1 key -> key set the resolved object carries
-SECOND_HOP = {"ds": DS_KEYS, "media": MEDIA_KEYS, "docs": DOCS_KEYS,
-              "similar": SIMILAR_KEYS, "styles": CARD_KEYS}
-JS_METHODS = {"filter", "find", "map", "forEach", "slice", "join", "includes",
-              "indexOf", "keys", "values", "entries", "push", "get", "set",
-              "has", "delete", "then", "catch", "play", "pause", "length"}
+WEB = TOOLS.parent / "web"
+REFERO_TS = (WEB / "lib" / "refero.ts").read_text()
+WEB_SRC = "\n".join(p.read_text() for p in
+                    sorted((WEB / "components").rglob("*.tsx"))
+                    + sorted((WEB / "lib").rglob("*.ts")))
+APP_SRC = "\n".join(p.read_text() for p in sorted((WEB / "app").rglob("*.tsx")))
+
+
+def ts_fields(name: str) -> set:
+    """The field names one `export interface` declares: interfaces are written
+    line-per-field, so a line-start identifier is a field and a nested inline
+    type's keys are not."""
+    m = re.search(rf"export interface {name} \{{(.*?)^\}}", REFERO_TS, re.S | re.M)
+    return set(re.findall(r"(?m)^\s*(\w+)\s*:", m.group(1)))
 
 CONTRACT_META = {"slug": "alpha", "name": "Alpha", "tagline": "tag",
                  "theme": "light", "product_type": "devtools",
@@ -479,14 +462,14 @@ CONTRACT_BETA_DS = {"description": "d2"}
 
 
 class ReferoEmitContractTest(unittest.TestCase):
-    """build_refero's output pinned against fixed key sets and the keys
-    docs/gallery/app.js's refero section actually reads."""
+    """build_refero's output pinned against fixed key sets and what the app
+    actually reads (the web/ TypeScript interfaces and field accesses)."""
 
     @classmethod
     def setUpClass(cls):
         cls.tmp = tempfile.TemporaryDirectory()
         root = Path(cls.tmp.name)
-        cls.site = root / "docs" / "gallery"
+        cls.site = root / "web" / "data"
         for slug, meta, ds in (("alpha", CONTRACT_META, CONTRACT_DS),
                                ("beta", CONTRACT_BETA, CONTRACT_BETA_DS)):
             folder = root / "refero" / slug
@@ -495,7 +478,7 @@ class ReferoEmitContractTest(unittest.TestCase):
             (folder / "design-system.json").write_text(json.dumps(ds))
             (folder / "DESIGN.md").write_text("# D\n")
         with mock.patch.object(catalog, "ROOT", root), \
-                mock.patch.object(catalog, "SITE", cls.site):
+                mock.patch.object(catalog, "DATA", cls.site):
             out = catalog.build_refero()
         cls.index = json.loads(out.read_text())
         cls.entity = json.loads(
@@ -522,43 +505,37 @@ class ReferoEmitContractTest(unittest.TestCase):
         self.assertEqual(set(self.entity["ds"]), DS_KEYS)
         self.assertEqual(set(self.beta["ds"]), {"description"})
 
-    def test_every_emitted_key_is_read_by_the_page(self):
-        # A key the page never reads is dead payload (issue #61). Each emitted
-        # key must show up on its own object: index keys on RF_INDEX/d, card
-        # keys on `s`, entity keys on `e`, media keys on `m`/media pairs,
-        # docs keys as the RF_TABS literals, ds keys under ds, similar keys
-        # on `x`.
-        scopes = [
-            ("index", INDEX_KEYS, rf"(?:RF_INDEX|d)\.{{}}\b"),
-            ("card", CARD_KEYS, rf"s\.{{}}\b"),
-            ("entity", ENTITY_KEYS, rf"e\.{{}}\b"),
-            ("media", MEDIA_KEYS, rf"\.{{}}\b"),
-            ("media pair", MEDIA_PAIR_KEYS, rf"media\.{{}}\b"),
-            ("docs", DOCS_KEYS, rf"'{{}}'"),
-            ("ds", DS_KEYS, rf"ds\.{{}}\b"),
-            ("similar", SIMILAR_KEYS - {"slug", "name"}, rf"x\.{{}}\b"),
-        ]
-        for label, keys, pattern in scopes:
-            for key in sorted(keys):
-                with self.subTest(scope=label, key=key):
-                    self.assertRegex(RF_JS, pattern.format(re.escape(key)))
+    def test_the_page_reads_exactly_the_emitted_keys(self):
+        # The app's TypeScript interfaces (web/lib/refero.ts) declare the
+        # consumed side: a key emitted but not declared is dead payload
+        # (issue #61), and a key declared but not emitted renders undefined.
+        self.assertEqual(ts_fields("ReferoIndex"), INDEX_KEYS)
+        self.assertEqual(ts_fields("ReferoCard"), CARD_KEYS)
+        self.assertEqual(ts_fields("ReferoEntity"), ENTITY_KEYS)
+        self.assertEqual(ts_fields("ReferoMedia"), MEDIA_PAIR_KEYS)
+        similar = re.search(r"similar: \{(.*?)\}", REFERO_TS, re.S).group(1)
+        self.assertEqual(set(re.findall(r"(\w+)\s*:", similar)), SIMILAR_KEYS)
 
-    def test_every_key_the_page_reads_is_emitted(self):
-        # The reverse direction, checked per object shape: renaming or
-        # dropping an emitted key would leave app.js reading a field that
-        # object never sends. A card-level read must be a CARD key, an
-        # entity-level read an ENTITY key, and so on.
-        chains = re.findall(r"\b(RF_INDEX|e|s|x|m|ds|media|d)((?:\.\w+)+)", RF_JS)
-        bad = []
-        for var, chain in chains:
-            hops = chain.split(".")[1:]
-            keys, extra = SCOPES[var], EXTRA_READS[var]
-            if hops[0] not in keys | extra:
-                bad.append(f"{var}{chain}")
-            elif (len(hops) > 1 and hops[0] in SECOND_HOP
-                  and hops[1] not in SECOND_HOP[hops[0]] | JS_METHODS):
-                bad.append(f"{var}{chain}")
-        self.assertEqual(bad, [])
+    def test_the_page_reads_the_emitted_doc_and_ds_keys(self):
+        # DOC_TABS (web/app/refero/[slug]/page.tsx) looks each entry's key up in
+        # e.docs: a key the page asks for but the builder never emits hides the
+        # document, and one emitted but never read is dead payload.
+        tabs = re.search(r"const DOC_TABS[^=]*= \[(.*?)\];", APP_SRC, re.S).group(1)
+        self.assertEqual(set(re.findall(r'\["(\w+)"', tabs)), DOCS_KEYS)
+        # interface Ds (components/ReferoDetail.tsx) names every ds field the
+        # page renders; the builder ships exactly REFERO_DS_KEYS.
+        m = re.search(r"interface Ds \{(.*?)^\}", WEB_SRC, re.S | re.M)
+        ds_fields = set(re.findall(r"(?m)^\s*(\w+)\??:", m.group(1)))
+        self.assertEqual(ds_fields, DS_KEYS)
+
+    def test_every_media_key_the_page_reads_is_emitted(self):
+        # ReferoDetail indexes e.media by its MEDIA_TABS kind and reads
+        # e.media.<key> literals for the poster fallbacks; every one must be
+        # an emitted media key.
+        tabs = re.search(r"const MEDIA_TABS = \[(.*?)\] as const", WEB_SRC, re.S).group(1)
+        tab_keys = set(re.findall(r'\["(\w+)"', tabs))
+        reads = set(re.findall(r"e\.media\.(\w+)", WEB_SRC))
+        self.assertEqual((tab_keys | reads) - MEDIA_KEYS, set())
 
     def test_media_locals_are_the_shared_path_contract(self):
         for key, (kind, _field) in catalog.REFERO_MEDIA.items():
@@ -575,10 +552,17 @@ class ReferoEmitContractTest(unittest.TestCase):
                          set(refero_media.KINDS))
 
     def test_the_page_derives_card_media_under_the_same_kinds(self):
-        # Index cards carry no media block; rfLocalMedia builds the same paths
-        # from the slug, so its kind literals must stay inside KINDS.
-        kinds = set(re.findall(r"rfLocalMedia\('(\w+)'", RF_JS))
-        self.assertEqual(kinds - set(refero_media.KINDS), set())
+        # Index cards carry no media block; localMedia() builds the same
+        # /refero-media/<kind>/ paths from literals, and the media route's own
+        # MEDIA_KINDS is the other registry — both stay inside the mirror's.
+        calls = re.findall(r"localMedia\([^)]*\)", WEB_SRC)
+        literals = {w for call in calls for w in re.findall(r'"(\w+)"', call)}
+        # "p"/"s" are the card-flag values inside the calls; the rest are
+        # file extensions.
+        literals -= {"p", "s", "jpg", "jpeg", "png", "webp", "mp4"}
+        route_kinds = set(re.findall(
+            r"(\w+):", re.search(r"const MEDIA_KINDS[^=]*= \{(.*?)\}", WEB_SRC, re.S).group(1)))
+        self.assertEqual((literals | route_kinds) - set(refero_media.KINDS), set())
 
     def test_the_emitted_favicon_remote_is_the_mirrored_url(self):
         self.assertEqual(

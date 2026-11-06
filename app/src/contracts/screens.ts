@@ -1,0 +1,52 @@
+import type { LibraryItem, ReferenceMedia } from "./library";
+
+export type ScreenKind = "screenshot" | "crop";
+/** A captured asset, retaining both its package and original media identity. */
+export interface ScreenItem {
+  id: string;
+  reference: LibraryItem;
+  media: ReferenceMedia;
+  /** Verified app-owned classifications for this original capture. */
+  termIds?: string[];
+}
+export interface ScreenQuery {
+  query?: string;
+  scope?: "all" | "media";
+  platform?: string;
+  category?: string;
+  tag?: string;
+  theme?: string;
+  group?: string;
+  kind?: ScreenKind;
+  referenceId?: string;
+  /** Selected packages are combined with OR, alongside the legacy single ID. */
+  referenceIds?: string[];
+  /** All selected taxonomy terms must be present on the same capture. */
+  termIds?: string[];
+  /** Flows require verified ordered sequences, which this corpus lacks. */
+  mode?: "screens" | "flows";
+  /** Exact original capture identity; ignores pagination when supplied. */
+  screenId?: string;
+  sort?: "recent" | "name";
+  offset?: number;
+  limit?: number;
+}
+export interface ScreenFacet {
+  value: string;
+  count: number;
+}
+export interface ScreenResponse {
+  items: ScreenItem[];
+  total: number;
+  /** Actual platform/kind corpus counts, before reference, text or term filters. */
+  termCounts: Record<string, number>;
+  facets: {
+    platforms: ScreenFacet[];
+    categories: ScreenFacet[];
+    tags: ScreenFacet[];
+    groups: ScreenFacet[];
+    kinds: ScreenFacet[];
+  };
+  /** Legacy summary; ordered flows remain unavailable without sequence evidence. */
+  taxonomy: { pageTypes: string[]; uiElements: string[]; uxPatterns: string[] };
+}

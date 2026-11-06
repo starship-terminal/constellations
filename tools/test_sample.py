@@ -42,9 +42,10 @@ class SampleTest(unittest.TestCase):
     def png(self, filt=0):
         rows = [[self.WHITE] * 6 for _ in range(4)]
         rows[1][2], rows[1][3], rows[2][2] = self.INK, self.GREY, self.GREY
-        f = tempfile.NamedTemporaryFile(suffix=".png", delete=False)
-        write_png(f.name, rows, filt)
-        return sample.read_png(f.name)
+        with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as f:
+            path = f.name
+        write_png(path, rows, filt)
+        return sample.read_png(path)
 
     def test_every_filter_type_decodes_to_the_same_pixels(self):
         expected = self.png(0)[2]
@@ -61,7 +62,8 @@ class SampleTest(unittest.TestCase):
     def test_mask_paints_text_with_the_surrounding_fill_and_round_trips(self):
         _, _, rows = self.png(1)
         self.assertEqual(sample.mask(rows, [(2, 1, 2, 2)]), [self.WHITE])
-        out = tempfile.NamedTemporaryFile(suffix=".png", delete=False).name
+        with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as f:
+            out = f.name
         sample.write_png(out, rows)
         _, _, back = sample.read_png(out)
         self.assertTrue(all(px == self.WHITE for row in back for px in row))

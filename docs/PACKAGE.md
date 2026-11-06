@@ -133,7 +133,7 @@ is what they hold:
 | Path | What it is |
 |---|---|
 | `README.md` | The entry file: scope, evidence labels, colours, type, geometry, components, and the limits of the capture |
-| `style-guide.html` | A browsable guide over everything in the package. Polaris's fetches its data, so open it through `make serve` |
+| `style-guide.html` | A browsable guide over everything in the package. Polaris's fetches its data, so open it through `make dev` |
 | `tokens/` | The tokens of `tokens.json` again in other formats. Linear: Tokens Studio (`tokens-studio.json`) and CSS custom properties (`linear.css`). Polaris: CSS custom properties (`light.css`); its `tokens.json` is itself a Tokens Studio file |
 | `components/` | One SVG redraw per component and state, with `manifest.json` (linear). These are reconstructions, labelled as such |
 | `boards/` | SVG sheets of colours, type, geometry, controls, components and icons, for dragging into Figma |

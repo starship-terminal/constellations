@@ -1,0 +1,89 @@
+/* Scorecard-only styles. The shared pieces (.sc-heat, .sc-badge, .sc-bar,
+   .sc-cards, .sc-legend, .dash-*) live in globals.css. */
+
+/* Layer / section heading on the criteria, changelog and report pages. */
+.sc-layer {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--faint);
+  font-weight: 600;
+  margin: 30px 0 10px;
+}
+
+/* Muted prose blocks (index blurb, report notes). */
+.sc-blurb { color: var(--muted); font-size: 13px; margin: 0 0 10px; max-width: 560px; }
+.sc-blurb a {
+  color: var(--text); text-decoration: underline;
+  text-decoration-color: var(--line-strong); text-underline-offset: 2px;
+}
+.sc-blurb a:hover { text-decoration-color: var(--text); }
+.sc-method { color: var(--faint); font-size: 12.5px; }
+
+/* Index: data-integrity problems reported by check(). */
+.sc-warns {
+  border: 1px solid var(--nc-line); background: var(--nc-bg);
+  border-radius: var(--radius-card); padding: 12px 16px; margin: 18px 0;
+  font-size: 12.5px;
+}
+.sc-warns b { display: block; margin-bottom: 6px; font-weight: 600; }
+.sc-warns ul { margin: 0; padding-left: 1.3em; color: var(--muted); }
+.sc-warns li { margin: 2px 0; }
+
+/* Heatmap first column: mini grade bar above the system name, rank after it. */
+.sc-heat tbody th .sc-bar {
+  width: 64px; height: 5px; margin: 0 0 4px; border-radius: 3px;
+}
+.sc-rank { color: var(--faint); font-family: var(--mono); font-size: 10px; margin-left: 7px; }
+.sc-heat .sc-corner { text-align: left; }
+.sc-key { color: var(--faint); }
+
+/* Criteria page: one block per criterion inside a layer section. */
+.sc-crit { padding: 13px 0; border-bottom: 1px solid var(--line); }
+.sc-crit:last-child { border-bottom: 0; }
+.sc-crit h4 { margin: 0 0 4px; font-size: 14px; font-weight: 600; }
+.sc-crit h4 code {
+  font-family: var(--mono); font-weight: 400; font-size: 12px;
+  color: var(--faint); margin-right: 9px;
+}
+.sc-opt {
+  display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--partly);
+  border: 1px solid color-mix(in srgb, var(--partly) 40%, transparent);
+  border-radius: 999px; padding: 1px 8px; margin-left: 9px; vertical-align: 2px;
+}
+.sc-rule { margin: 2px 0 0; color: var(--muted); font-size: 13px; max-width: 640px; }
+.sc-note { margin: 6px 0 0; color: var(--faint); font-size: 12px; max-width: 640px; }
+.sc-plat {
+  list-style: none; margin: 5px 0 0; padding: 0; font-size: 13px;
+  color: var(--muted); max-width: 640px;
+}
+.sc-plat li { padding: 2.5px 0; }
+.sc-plat b { color: var(--faint); font-weight: 550; margin-right: 4px; }
+
+/* Report table (system page): shares .table-wrap's border and scroll. */
+.sc-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.sc-table th, .sc-table td {
+  padding: 9px 12px; text-align: left; vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+.sc-table thead th {
+  font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--faint); font-weight: 600;
+}
+.sc-table tbody tr:last-child td { border-bottom: 0; }
+.sc-table tbody tr:target td { background: var(--chip-bg); }
+.sc-table .sc-grade { white-space: nowrap; width: 1%; }
+.sc-table .sc-name { white-space: nowrap; }
+.sc-table .sc-evc { color: var(--muted); font-size: 12.5px; min-width: 220px; }
+.sc-ev summary { cursor: pointer; }
+.sc-ev summary:hover { color: var(--text); }
+.sc-ev p { margin: 5px 0 0; }
+
+/* Changelog: the diff lines read like log output, so mono fits. */
+.sc-log {
+  font-family: var(--mono); font-size: 12px; color: var(--muted);
+  margin: 4px 0 8px; padding-left: 1.3em;
+}
+.sc-log li { margin: 3px 0; }
+.sc-none { color: var(--faint); font-size: 13px; margin: 4px 0 8px; }

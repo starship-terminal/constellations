@@ -1,0 +1,27 @@
+name: Research app
+on:
+  pull_request:
+    paths: ['app/**', '.github/workflows/app.yml']
+  push:
+    branches: [main]
+    paths: ['app/**', '.github/workflows/app.yml']
+permissions:
+  contents: read
+jobs:
+  app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Install pnpm
+        run: npm install -g pnpm@10.10.0
+      - name: Install locked dependencies
+        run: pnpm --dir app install --frozen-lockfile
+      - name: Typecheck
+        run: pnpm --dir app typecheck
+      - name: Test data, persistence and research contracts
+        run: pnpm --dir app test
+      - name: Production build
+        run: pnpm --dir app build
