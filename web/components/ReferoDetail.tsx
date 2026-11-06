@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useId, useMemo, useState } from "react";
 import type { ReferoEntity } from "@/lib/refero";
 import { RfFav, RfImg } from "@/components/ReferoIndex";
+import { host } from "@/lib/refero-media";
 import { useLightbox } from "@/components/Lightbox";
 import { copyWithToast } from "@/components/CopyButton";
 import { useToast } from "@/components/Toast";
@@ -111,11 +112,6 @@ const extSvg = (
   </svg>
 );
 
-const host = (u: string | null) =>
-  String(u || "")
-    .replace(/^https?:\/\//, "")
-    .replace(/^www\./, "")
-    .replace(/\/.*$/, "");
 
 // Arrow keys, Home and End move between tabs and select the one reached
 // (WAI-ARIA tabs with automatic activation); only the selected tab is in
