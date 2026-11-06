@@ -79,7 +79,10 @@ function measure() {
   return out;
 }
 
-const res = {};
+// Merged into the existing file: a run limited to some pages, or one where a page fails, keeps the
+// other pages' readings instead of writing a file with only what this run measured.
+const OUT = path.join(RAW, 'layout.json');
+const res = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
 const mob0 = want.length ? want : PAGES.map(([k]) => k);
 // resolve the entity page once
 let entity = null;
@@ -105,5 +108,5 @@ for (const [label, url0, opts] of PAGES) {
   await l.browser.close();
 }
 fs.mkdirSync(RAW, { recursive: true });
-fs.writeFileSync(path.join(RAW, 'layout.json'), JSON.stringify(res, null, 1) + '\n');
+fs.writeFileSync(OUT, JSON.stringify(res, null, 1) + '\n');
 console.log('raw/layout.json', Object.keys(res).length, 'pages');

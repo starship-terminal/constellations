@@ -19,7 +19,7 @@ set's theme, following var() chains and turning a chain that ends on a core toke
 
 Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
 """
-import json, pathlib, re
+import json, pathlib, re, sys
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
@@ -318,7 +318,11 @@ def tokens_of(tree, prefix=""):
             yield from tokens_of(v, prefix + k + ".")
 
 
-NAMES = {n for n, _ in tokens_of(core)} | {n for n, _ in tokens_of(light)} | {n for n, _ in tokens_of(dark)}
+# Each set resolves against core and itself only (the $themes pair core with one of light or dark),
+# so a light alias that only dark holds would point at nothing in the light theme.
+CORE_NAMES = {n for n, _ in tokens_of(core)}
+SET_NAMES = {"core": CORE_NAMES, "light": CORE_NAMES | {n for n, _ in tokens_of(light)},
+             "dark": CORE_NAMES | {n for n, _ in tokens_of(dark)}}
 
 
 def aliases(v):
@@ -331,10 +335,19 @@ def aliases(v):
     return []
 
 
-for n, t in list(tokens_of(core)) + list(tokens_of(light)) + list(tokens_of(dark)):
-    for a in aliases(t["$value"]):
-        if a not in NAMES:
-            raise KeyError(f"{n}: alias {{{a}}} points at nothing")
+for set_name, tree in (("core", core), ("light", light), ("dark", dark)):
+    for n, tok in tokens_of(tree):
+        for a in aliases(tok["$value"]):
+            if a not in SET_NAMES[set_name]:
+                raise KeyError(f"{set_name}.{n}: alias {{{a}}} points at nothing in core or {set_name}")
+
+# Light and dark should name the same roles: a role only one theme has leaves the other unstyled.
+# The 2026-10 capture does not (20 roles were read only in light, 3 only in dark), so a gap is
+# reported rather than fatal until the capture is redone.
+_light, _dark = {n for n, _ in tokens_of(light)}, {n for n, _ in tokens_of(dark)}
+if _light != _dark:
+    print(f"warning: light and dark differ: {len(_light - _dark)} only in light ({', '.join(sorted(_light - _dark))}); "
+          f"{len(_dark - _light)} only in dark ({', '.join(sorted(_dark - _light))})", file=sys.stderr)
 
 tokens = {
     "core": core,
