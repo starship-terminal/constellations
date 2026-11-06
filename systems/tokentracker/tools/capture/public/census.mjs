@@ -6,7 +6,7 @@
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node census.mjs
 //
-// Writes raw/census.json. Read-only: pages are loaded and nothing is clicked. mask() runs first,
+// Writes raw/census.json (raw/census.partial.json, gitignored, when a page failed). Read-only: pages are loaded and nothing is clicked. mask() runs first,
 // so the element samples never hold a path, session title or skill name.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -147,6 +147,8 @@ out._meta = {
   source: 'TokenTracker v1.4.3 dashboard served by the local CLI at 127.0.0.1:7680, every visible element on each page at 1440x900, headless Chromium',
   pages: Object.keys(PAGES), failures, blockedRequests: [...new Set(blocked)].sort(),
 };
-fs.writeFileSync(path.join(RAW, 'census.json'), JSON.stringify(out, null, 1) + '\n');
-log('census ->', path.join(RAW, 'census.json'), failures.length ? `(${failures.length} failed: ${failures.join('; ')})` : '');
+// A run with a failed page writes census.partial.json (gitignored) and leaves the last full census as it was.
+const file = path.join(RAW, failures.length ? 'census.partial.json' : 'census.json');
+fs.writeFileSync(file, JSON.stringify(out, null, 1) + '\n');
+log('census ->', file, failures.length ? `(${failures.length} failed: ${failures.join('; ')})` : '');
 if (failures.length) process.exit(1);
