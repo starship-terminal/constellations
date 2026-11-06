@@ -56,7 +56,10 @@ async function handle(req: Rpc) {
 
 async function dispatch(req: Rpc) {
   const method = req.method;
-  if (typeof method !== "string") return error(req, -32600, "method must be a string");
+  // Without a method it is not a notification either, so it is answered even
+  // when it carries no id.
+  if (typeof method !== "string")
+    return { jsonrpc: "2.0", id: req.id ?? null, error: { code: -32600, message: "method must be a string" } };
   const params = req.params ?? {};
   if (!isObj(params)) return error(req, -32602, "params must be an object");
   if (method === "initialize")

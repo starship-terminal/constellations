@@ -86,7 +86,10 @@ def handle(req) -> dict | None:
 def _dispatch(req: dict) -> dict | None:
     method = req.get("method")
     if not isinstance(method, str):
-        return _error(req, -32600, "method must be a string")
+        # Without a method it is not a notification either, so it is answered
+        # even when it carries no id.
+        return {"jsonrpc": "2.0", "id": req.get("id"),
+                "error": {"code": -32600, "message": "method must be a string"}}
     params = req.get("params")
     if params is None:
         params = {}

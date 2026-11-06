@@ -44,6 +44,10 @@ class MalformedRequestTest(unittest.TestCase):
     def test_non_string_method_and_non_object_request(self):
         self.assertEqual(self._code({"jsonrpc": "2.0", "id": 1, "method": 5}), -32600)
         self.assertEqual(self._code({"jsonrpc": "2.0", "id": 1}), -32600)
+        # No id and no valid method: an invalid request, not a notification.
+        self.assertEqual(mcp.handle({"jsonrpc": "2.0", "method": 5}),
+                         {"jsonrpc": "2.0", "id": None,
+                          "error": {"code": -32600, "message": "method must be a string"}})
         self.assertEqual(self._code(5), -32600)
         self.assertEqual(self._code(None), -32600)
 
