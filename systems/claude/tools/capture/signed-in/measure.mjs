@@ -240,7 +240,7 @@ function styleOf(el, props) {
   if (names.size) {
     out.vars = {};
     const root = getComputedStyle(el);
-    for (const n of [...names].sort()) out.vars[n] = root.getPropertyValue(n).trim();
+    for (const n of [...names].sort()) out.vars[n] = noUrl(root.getPropertyValue(n).trim());
   }
   return out;
 }

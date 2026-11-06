@@ -256,7 +256,7 @@ function styleOf(el, props) {
   if (names.size) {
     out.vars = {};
     const root = getComputedStyle(el);
-    for (const n of [...names].sort()) { const v = root.getPropertyValue(n).trim(); if (v) out.vars[n] = v; }
+    for (const n of [...names].sort()) { const v = root.getPropertyValue(n).trim(); if (v) out.vars[n] = noUrl(v); }
     if (!Object.keys(out.vars).length) delete out.vars;
   }
   return out;
