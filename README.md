@@ -98,7 +98,7 @@ agent (the MCP server and `ds`).
 
 **Requirements:** Git LFS installed *before* cloning (every image, archive
 and font is an LFS object), `python3`, and `uv` for `make setup`. The apps
-need Node 22+ and pnpm 10. Capturing additionally needs Playwright, a
+need Node 22.13+ and pnpm 10. Capturing additionally needs Playwright, a
 Chromium browser for the signed-in kit, and an iPhone on the same iCloud
 account for the native kit; [docs/CAPTURE.md](docs/CAPTURE.md) has the
 detail. Pillow, Markdown, numpy and Node-based linting are only needed by
@@ -359,7 +359,9 @@ flowchart LR
   changed it; a rebuild that changes nothing is the check.
 - **Tokens carry provenance.** `tokens.json` is W3C DTCG in Tokens Studio's
   multi-set layout (`core` scales, `light`/`dark` semantic sets, `$themes`),
-  and every token's `$extensions.source` says where it was read. `DESIGN.md`
+  and every token's `$extensions.source` says where it was read. Polaris is
+  the exception: its Tokens Studio file uses `value`, `type` and
+  `description`, and the description names the source. `DESIGN.md`
   is the generated one-theme export for tools that read Google's spec.
 - **Generated, not edited.** Every package README's Brief
   ([tools/brief.py](tools/brief.py)) and Health

@@ -27,7 +27,7 @@ DESIGN_RESEARCH_DATA_DIR=/home/USER/services/design-research/data
 DESIGN_RESEARCH_PRIVATE_ORIGIN=https://HOST.TAILNET.ts.net:8108
 ```
 
-`DESIGN_SYSTEMS_MEDIA_BASE` is optional: when the catalog names a media file that is absent from the local mirror, the app prepends this base URL to the path instead of falling back to the upstream host. Point it at the R2 bucket or the deployed `/refero-media/` alias on a server without a full mirror.
+`DESIGN_SYSTEMS_MEDIA_BASE` is optional: when the catalog names a media file that is absent from the local mirror, the app prepends this base URL to the path instead of falling back to the upstream host. Point it at the host root of the R2 bucket or of a server whose `/refero-media/` alias holds the mirror, without a trailing `/refero-media`: the catalog paths already start with it.
 
 Add provider keys here only if available from an authorized server-side source. Never log the file or commit it. Stored settings override initial provider/model defaults.
 
