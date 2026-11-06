@@ -77,7 +77,10 @@ export async function isGitIgnored(abs: string): Promise<boolean> {
   // paths relative to the checkout's real location.
   const rel = path.relative(await fs.realpath(ROOT), abs).split(path.sep).join("/");
   if (!rel || rel.startsWith("..") || path.isAbsolute(rel)) return true;
-  if (!ignoredCache || Date.now() - ignoredCache.at > IGNORED_TTL_MS)
+  // The listing names paths, not rules, so a file created after it was taken
+  // (a new capture dump) is missing from it: refresh before judging one.
+  const changed = await fs.stat(abs).then((st) => st.ctimeMs, () => Infinity);
+  if (!ignoredCache || Date.now() - ignoredCache.at > IGNORED_TTL_MS || changed >= ignoredCache.at)
     ignoredCache = { at: Date.now(), list: listIgnored() };
   const ignored = await ignoredCache.list;
   if (!ignored) return true;

@@ -17,9 +17,15 @@ type Params = { params: Promise<{ path: string[] }> };
 
 // A package's style guide loads its proprietary fonts from systems/<slug>/fonts/,
 // which is gitignored so they are never committed; serve only the font files.
-// Font loads are CORS requests, and the sandboxed guide's origin is opaque
-// ("null"), so these responses (and only these) allow that origin.
 const FONT_FILE = /^systems\/[a-z0-9][a-z0-9-]*\/fonts\/[^/]+\.(woff2?|ttf|otf)$/i;
+
+// A sandboxed style guide has an opaque origin, so its font loads and fetch()
+// calls (Polaris reads assets/*.json) are CORS requests with "Origin: null"
+// and no Referer. Chrome gives no header that tells the app's own guide apart
+// from a sandboxed frame on another site, so "null" is allowed only for the
+// folders a guide loads from: a package's assets/ and fonts/. Tokens, READMEs,
+// raw/ and tools/ stay unreadable cross-origin.
+const GUIDE_ASSET = /^systems\/[a-z0-9][a-z0-9-]*\/(assets|fonts)\//i;
 
 async function resolve(parts: string[]): Promise<string | null> {
   const urlPath = "/" + parts.join("/");
@@ -64,7 +70,7 @@ export async function GET(req: Request, { params }: Params) {
     "content-security-policy": "sandbox allow-scripts",
   };
 
-  if (FONT_FILE.test(path.relative(await fs.realpath(ROOT), target).split(path.sep).join("/")))
+  if (GUIDE_ASSET.test(path.relative(await fs.realpath(ROOT), target).split(path.sep).join("/")))
     headers["access-control-allow-origin"] = "null";
 
   if (range) {
