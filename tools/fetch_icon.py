@@ -191,8 +191,19 @@ def main() -> None:
     if (args.host or args.url) and len(slugs) != 1:
         parser.error("--host and --url apply to a single slug")
     home = f"https://{args.host}" if args.host else None
+    if len(slugs) == 1:
+        fetch_icon(slugs[0], home, args.url)
+        return
+    # One product with no reachable icon must not stop the rest of an --all run.
+    failed = []
     for slug in slugs:
-        fetch_icon(slug, home, args.url)
+        try:
+            fetch_icon(slug, home, args.url)
+        except SystemExit as e:
+            print(e, file=sys.stderr)
+            failed.append(slug)
+    if failed:
+        sys.exit(f"no icon for {len(failed)} of {len(slugs)}: {', '.join(failed)}")
 
 
 if __name__ == "__main__":
