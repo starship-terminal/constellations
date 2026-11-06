@@ -45,6 +45,7 @@ import {
   screenCountScope,
   verticalChoiceIndex,
 } from "./catalog-search-behavior";
+import { replaceSearch } from "./url-state";
 
 type Choice = {
   id: string;
@@ -239,11 +240,7 @@ export function CatalogSearch({
     next.set("view", "screens");
     next.delete("screen");
     next.delete("offset");
-    window.history.replaceState(
-      null,
-      "",
-      `${window.location.pathname}?${next}${window.location.hash}`,
-    );
+    replaceSearch(next);
   }
   function focusSearch() {
     if (document.activeElement === input.current) return;

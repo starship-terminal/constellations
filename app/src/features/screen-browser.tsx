@@ -12,6 +12,7 @@ import {
   captureViewerOrigin,
   type CaptureViewerOrigin,
 } from "./capture-viewer-motion";
+import { replaceSearch } from "./url-state";
 
 export function ScreenBrowser() {
   const viewerOrigin = useRef<CaptureViewerOrigin | undefined>(undefined);
@@ -128,11 +129,7 @@ export function ScreenBrowser() {
     const next = new URLSearchParams(window.location.search);
     for (const [key, value] of Object.entries(patch))
       value ? next.set(key, value) : next.delete(key);
-    window.history.replaceState(
-      null,
-      "",
-      `${window.location.pathname}?${next}`,
-    );
+    replaceSearch(next);
   }
   const visibleData = dataKey === filterKey ? data : null;
   const items = visibleData?.items || [];

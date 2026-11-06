@@ -61,6 +61,7 @@ import {
   reducedViewerMotion,
   type CaptureViewerOrigin,
 } from "./capture-viewer-motion";
+import { replaceSearch } from "./url-state";
 
 type Tab =
   | "screenshots"
@@ -149,11 +150,7 @@ function PackageDetail({ slug }: { slug: string }) {
     const next = new URLSearchParams(window.location.search);
     for (const [key, value] of Object.entries(patch))
       value ? next.set(key, value) : next.delete(key);
-    window.history.replaceState(
-      null,
-      "",
-      `${window.location.pathname}${next.size ? `?${next}` : ""}`,
-    );
+    replaceSearch(next);
   }
   useEffect(() => {
     setQuery("");
