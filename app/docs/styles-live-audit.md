@@ -73,13 +73,13 @@ Clipboard character lengths on Raycast, after loading each selected variant:
 Both scrolling and detail videos reached readyState 4 without media errors. Pressing
 Space on the scrolling video started playback (36.1 second duration).
 
-Evidence directory outside the repository:
-`/Users/kaichen/.codex/visualizations/2026/11/04/01a1a46a-864d-7642-b38b-a9be7ab0f58f/full-audit/styles/`.
+The screenshots and recordings are kept outside the repository, in the task's
+`full-audit/styles` evidence folder.
 
-Validation: focused style-data and export tests passed (11 tests), app typecheck
+Validation: the focused style-data and export tests passed, the app typecheck
 passed after concurrent feature files landed, and changed source files passed
-Prettier. An earlier full test run passed all 95 tests before the added capture
-ordering test.
+Prettier. An earlier full test run passed before the capture ordering test was
+added.
 
 ## Headline follow-up
 
