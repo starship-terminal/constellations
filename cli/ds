@@ -24,6 +24,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import shlex
 import sys
 import urllib.request
 from pathlib import Path
@@ -193,14 +194,19 @@ def main() -> int:
             out = call(base, "read_doc", {**req, "offset": out["nextOffset"]})
             pages.append(out)
         if args.json:
-            _emit({**pages[0], "text": "".join(p.get("text", "") for p in pages),
-                   "truncated": bool(out.get("truncated")), "pages": len(pages)}, True)
+            joined = {k: v for k, v in pages[0].items() if k != "nextOffset"}
+            joined.update(text="".join(p.get("text", "") for p in pages),
+                          truncated=bool(out.get("truncated")), pages=len(pages))
+            if out.get("truncated") and out.get("nextOffset"):
+                joined["nextOffset"] = out["nextOffset"]
+            _emit(joined, True)
             return 0
         print("".join(p.get("text", "") for p in pages))
         if out.get("truncated"):
             nxt = out.get("nextOffset")
             if nxt:
-                again = " ".join(["ds doc", args.slug, *([args.path] if args.path else []), f"--offset {nxt}"])
+                again = shlex.join(["ds", *(["--url", args.url] if args.url else []), "doc", args.slug,
+                                    *([args.path] if args.path else []), "--offset", str(nxt)])
                 print(f"… [truncated at {nxt} of {out.get('length')} characters; more with: {again} (or --all)]",
                       file=sys.stderr)
             else:
