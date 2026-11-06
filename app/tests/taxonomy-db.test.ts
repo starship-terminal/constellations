@@ -288,19 +288,27 @@ test("v5 seeds only existing media identities with recorded rules and leaves unv
     mediaId: sample.mediaId,
     termId: sample.terms.find((term) => term.rule === "ui-button")!.termId,
   });
-  const courseraFonts = rows.filter(
-    (row) =>
-      row.referenceId === "systems:coursera" &&
-      row.termId.startsWith("web-fonts:"),
+  // Font terms come only from a package's recorded primary family, never a
+  // fallback stack entry. Checked across the seed rather than one package's
+  // current fonts, which a recapture may change.
+  const labels = new Map(
+    taxonomyGroups.flatMap((group) =>
+      group.terms.map((term) => [term.id, term.label] as const),
+    ),
   );
-  expect(courseraFonts.length).toBeGreaterThan(0);
-  expect(new Set(courseraFonts.map((row) => row.termId))).toEqual(
-    new Set(["web-fonts:source-sans-pro"]),
+  const fontTerms = mediaSeed.assignments.flatMap((media) =>
+    media.terms.filter((term) => term.termId.startsWith("web-fonts:")),
   );
-  // Arial is in Coursera's fallback stack, which is not rendered-font evidence.
-  expect(courseraFonts.some((row) => row.termId === "web-fonts:arial")).toBe(
-    false,
-  );
+  expect(fontTerms.length).toBeGreaterThan(0);
+  for (const term of fontTerms) {
+    expect(term.rule).toBe("font-primary");
+    expect(term.reason).toContain(
+      `Exact primary family ${labels.get(term.termId)} from `,
+    );
+  }
+  expect(
+    rows.filter((row) => row.termId.startsWith("web-fonts:")),
+  ).toHaveLength(fontTerms.length);
   const recorded = await store.client.execute(
     "SELECT reason,origin FROM media_term_assignments LIMIT 1",
   );
