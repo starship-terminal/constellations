@@ -9,12 +9,17 @@ OUT="$SNAPS/renders"; mkdir -p "$OUT"
 grep -v '^#' "$HERE/shots.tsv" | while IFS=$'\t' read -r label flags; do
   [ -z "$label" ] && continue
   if [ $# -gt 0 ] && ! printf '%s\n' "$@" | grep -qx "$label"; then continue; fi
+  # A copy taken in dark (label contains -dark) renders both themes, the light one under the
+  # -light name; any other copy renders once, as captured, so two renders never share a file.
   # Full-page shots are taken of the dark copy only, as in the Manus reference.
   node "$HERE/render.mjs" "$SNAPS" "$label" $flags & dark=$!
-  node "$HERE/render.mjs" "$SNAPS" "$label" $(echo $flags | sed 's/full//') light & light=$!
+  light=""
+  if printf '%s' "$label" | grep -Eq -- '-dark(-|$)'; then
+    node "$HERE/render.mjs" "$SNAPS" "$label" $(echo $flags | sed 's/full//') light & light=$!
+  fi
   ok=0
-  wait "$dark" || { echo "render failed: $label dark" >&2; ok=1; }
-  wait "$light" || { echo "render failed: $label light" >&2; ok=1; }
+  wait "$dark" || { echo "render failed: $label" >&2; ok=1; }
+  [ -z "$light" ] || wait "$light" || { echo "render failed: $label light" >&2; ok=1; }
   [ "$ok" -eq 0 ] || exit 1
 done
 mv "$SNAPS"/*.png "$OUT"/ 2>/dev/null || true
