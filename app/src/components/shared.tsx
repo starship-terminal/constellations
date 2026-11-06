@@ -1,11 +1,13 @@
 "use client";
 import {
+  useCallback,
   useEffect,
   useRef,
   useState,
   type KeyboardEventHandler,
   type ReactNode,
   type RefObject,
+  type SetStateAction,
 } from "react";
 import {
   LoaderCircle,
@@ -32,29 +34,63 @@ export async function api<T = any>(
     );
   return data;
 }
+interface ResourceState<T> {
+  url: string;
+  data: T | null;
+  error: string;
+  loading: boolean;
+}
+/**
+ * What a useResource caller sees for `url`. State fetched for another URL is
+ * never shown: until the new request settles the caller gets loading and no
+ * data, so a page keyed on the new URL cannot mount with the old response.
+ */
+export function resourceView<T>(
+  state: ResourceState<T>,
+  url: string,
+): Omit<ResourceState<T>, "url"> {
+  return state.url === url
+    ? { data: state.data, error: state.error, loading: state.loading }
+    : { data: null, error: "", loading: true };
+}
 export function useResource<T>(url: string) {
-  const [data, setData] = useState<T | null>(null),
-    [error, setError] = useState(""),
-    [loading, setLoading] = useState(true);
+  const [state, setState] = useState<ResourceState<T>>({
+    url,
+    data: null,
+    error: "",
+    loading: true,
+  });
   useEffect(() => {
     let alive = true;
-    setLoading(true);
-    setError("");
+    setState({ url, data: null, error: "", loading: true });
     api<T>(url)
-      .then((v) => {
-        if (alive) setData(v);
+      .then((data) => {
+        if (alive) setState({ url, data, error: "", loading: false });
       })
       .catch((e) => {
-        if (alive) setError(e.message);
-      })
-      .finally(() => {
-        if (alive) setLoading(false);
+        if (alive)
+          setState({ url, data: null, error: e.message, loading: false });
       });
     return () => {
       alive = false;
     };
   }, [url]);
-  return { data, setData, error, loading };
+  const setData = useCallback(
+    (action: SetStateAction<T | null>) =>
+      setState((previous) =>
+        previous.url === url
+          ? {
+              ...previous,
+              data:
+                typeof action === "function"
+                  ? (action as (value: T | null) => T | null)(previous.data)
+                  : action,
+            }
+          : previous,
+      ),
+    [url],
+  );
+  return { ...resourceView(state, url), setData };
 }
 export function Spinner({ label = "Loading…" }: { label?: string }) {
   return (
