@@ -219,6 +219,10 @@ describe("real library normalization", () => {
       ["light"],
       ["light"],
     ]);
+    // The model receives the first readable capture's bytes as a PNG.
+    const vision = await readReferenceImage(detail!);
+    expect(vision?.mediaType).toBe("image/png");
+    expect(Buffer.from(vision!.data)).toEqual(png);
     // The screenshots root itself must not be a symlink outside this package either.
     await fs.rm(screenshots, { recursive: true });
     await fs.symlink(outside, screenshots);
@@ -298,11 +302,6 @@ describe("real library normalization", () => {
       ),
     );
     expect(await readExport("systems:linear", "../../.env")).toBeNull();
-    if (detail?.image) {
-      const vision = await readReferenceImage(detail);
-      if (vision)
-        expect(vision.data.byteLength).toBeLessThanOrEqual(5 * 1024 * 1024);
-    }
   });
   it("uses canonical Refero artifacts when generated files are absent", async () => {
     const dir = await fixture();
