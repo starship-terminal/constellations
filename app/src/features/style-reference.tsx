@@ -9,6 +9,7 @@ import {
   type CSSProperties,
 } from "react";
 import ReactMarkdown from "react-markdown";
+import { MarkdownImageAsText } from "./research-markdown";
 import remarkGfm from "remark-gfm";
 import { ArrowLeft, ArrowRight, ExternalLink, Maximize2 } from "lucide-react";
 import type { LibraryDetail, ReferenceMedia } from "@/contracts/library";
@@ -882,7 +883,11 @@ export function StyleOverview({ detail }: { detail: LibraryDetail }) {
             </p>
           ) : (
             <div className={styles.markdown}>
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {/* Refero notes are third-party text: never fetch their images. */}
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{ img: MarkdownImageAsText }}
+              >
                 {description(section.content)}
               </ReactMarkdown>
             </div>
