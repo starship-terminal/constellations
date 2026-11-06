@@ -288,7 +288,11 @@ def op_corner(rows, x0, y0, bgpt, thr):
     half a pixel so it measures to the edge rather than to that pixel's far side."""
     bg = rows[bgpt[1]][bgpt[0]]
     t = 0
-    while d(rows[y0 + t][x0 + t], bg) <= thr:
+    while True:
+        if y0 + t >= len(rows) or x0 + t >= len(rows[0]):
+            raise ValueError(f"corner: no edge on the diagonal from ({x0}, {y0})")
+        if d(rows[y0 + t][x0 + t], bg) > thr:
+            break
         t += 1
     r = max(t - 0.5, 0) / (1 - 2 ** -0.5) / SCALE
     return {"value": f"{r:.1f}pt", "inset": t, "corner": [x0, y0], "evidence": "Derived"}
