@@ -124,12 +124,14 @@ for attempt in $(seq 1 30); do
   sleep 1
 done
 fi
+# Record the failure before the rollback, so a rollback that itself fails
+# (set -e exits) still keeps the timer off this commit.
+printf '%s\n' "$SHA" > "$SERVICE/failed-sha"
 if [ -n "$PREVIOUS" ]; then
   switch_release "$PREVIOUS"
   systemctl --user restart design-research.service
 else
   systemctl --user stop design-research.service
 fi
-printf '%s\n' "$SHA" > "$SERVICE/failed-sha"
 echo 'Studio health check failed; restored the previous service release when available.' >&2
 exit 1
