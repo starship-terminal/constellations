@@ -609,30 +609,6 @@ def leaf(path, spec):
 SAMPLES = []
 
 
-def check_samples(resolve, tolerance=3):
-    """Each sampled colour must be the pixel it names, within `tolerance` per channel (the
-    screenshots are 256-colour PNGs, so a flat fill can come back a step or two off). Needs Pillow
-    and the screenshots from Git LFS; without either the check is skipped and says so."""
-    try:
-        from PIL import Image
-    except ImportError:
-        print("note: sampled colours not checked (needs Pillow)")
-        return
-    shots = {}
-    for path, val, shot, (x, y) in SAMPLES:
-        f = HERE / shot
-        if shot not in shots:
-            head = f.read_bytes()[:8] if f.exists() else b""
-            shots[shot] = Image.open(f).convert("RGB") if head.startswith(b"\x89PNG") else None
-        if shots[shot] is None:
-            print(f"note: {shot} is not a PNG here (git lfs pull it); its samples were not checked")
-            continue
-        want = norm_color(resolve(val))
-        got = "#%02x%02x%02x" % shots[shot].getpixel((x, y))
-        if max(abs(int(want[i:i + 2], 16) - int(got[i:i + 2], 16)) for i in (1, 3, 5)) > tolerance:
-            raise ValueError(f"{path}: sampled {shot} at ({x}, {y}) is {got}, not {want}")
-
-
 def build(node, path=""):
     out = {}
     for k, v in node.items():
@@ -698,7 +674,8 @@ for _ in range(3):  # resolve aliases among primitives
         if is_alias(v) and v[1:-1] in ALL_PRE:
             ALL_PRE[k] = ALL_PRE[v[1:-1]]
 light = build(SPEC_LIGHT)
-check_samples(lambda v: ALL_PRE.get(v[1:-1], v) if is_alias(v) else v)
+from sample_check import check_samples  # noqa: E402
+check_samples(SAMPLES, HERE, lambda v: ALL_PRE.get(v[1:-1], v) if is_alias(v) else v, norm_color)
 
 # ---------------------------------------------------------------------------------------------------
 # Aliases: every one must point at a token, and a whole-value alias at a token of the same type
