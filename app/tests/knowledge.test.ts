@@ -286,3 +286,50 @@ test("scorecard ranks applicable gaps by ratio and excludes N/A cells from compl
   expect(allNa.pct).toBeNull();
   expect(allNa.weakest).toEqual([]);
 });
+
+test("scorecard pages render a grade value they do not know instead of crashing", async () => {
+  const root = await fixture();
+  await fs.mkdir(path.join(root, "scorecard/audits"), { recursive: true });
+  await fs.writeFile(
+    path.join(root, "scorecard/criteria.json"),
+    JSON.stringify({
+      version: "3",
+      layers: { F: "Foundations" },
+      criteria: [
+        {
+          id: "F1",
+          layer: "Foundations",
+          title: "Color roles",
+          doneWhen: "Roles",
+        },
+      ],
+    }),
+  );
+  await fs.writeFile(
+    path.join(root, "scorecard/audits/2026-10-01.json"),
+    JSON.stringify({
+      date: "2026-10-01",
+      method: "Review",
+      systems: [
+        {
+          slug: "test",
+          name: "Test",
+          category: "App",
+          goodFor: "Testing",
+          url: "https://example.test",
+          captured: "2026-10-01",
+          themes: ["dark"],
+          platform: "web",
+          grades: { F1: { grade: "excellent", evidence: "Future scale" } },
+        },
+      ],
+    }),
+  );
+  expect(renderToStaticMarkup(ScorecardOverview())).toContain(
+    "Color roles: excellent",
+  );
+  // The package page maps unknown grades to Not applicable already.
+  expect(renderToStaticMarkup(PackageScorecard({ slug: "test" }))).toContain(
+    "Not graded in this audit.",
+  );
+});
