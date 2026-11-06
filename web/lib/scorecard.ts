@@ -13,11 +13,10 @@
  * node:fs and node:path only, no dependencies.
  */
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
-import { basename, dirname, join } from 'node:path';
+import { basename, join } from 'node:path';
+import { ROOT } from './repo';
 
-/** The repo root: process.cwd(), or its parent when the cwd is `web/` itself. */
-export const ROOT =
-  basename(process.cwd()) === 'web' ? dirname(process.cwd()) : process.cwd();
+export { ROOT };
 
 const DATA = join(ROOT, 'scorecard');
 
