@@ -101,7 +101,7 @@ export async function styleOf(locator) {
     const cls = (n) => [...n.classList].map(strip).filter((c) => !/^x[0-9a-z]{5,8}$/.test(c));
     // A url() in a computed value (a background photo, a cursor) can be a signed URL: recorded as
     // url(…), only data: and #fragment references kept.
-    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))[^)]*\)/g, 'url(…)') : v);
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
     const pick = (cs) => {
       const o = {};
       for (const p of props) o[p] = noUrl(cs[p]);

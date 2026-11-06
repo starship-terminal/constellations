@@ -110,17 +110,27 @@ class JavaScriptHalves(unittest.TestCase):
             self.assertTrue(cut.startswith(u.split("?")[0].split("#")[0]), cut)
         for u, (_, cut) in zip(PLAIN, got[len(SIGNED):]):
             self.assertEqual(cut, u)
-        style = 'background:url("https://x/p.png?X-Amz-Signature=1") center; color:#fff'
-        self.assertEqual(self.node(src + f"\nconsole.log(JSON.stringify(cutSigned({json.dumps(style)})))"),
-                         'background:url("https://x/p.png") center; color:#fff')
+        cases = {
+            'background:url("https://x/p.png?X-Amz-Signature=1") center; color:#fff':
+                'background:url("https://x/p.png") center; color:#fff',
+            'background:url(https://x/p.png?sig=1);color:red': 'background:url(https://x/p.png);color:red',
+            '<img data-src="https://x/p?size=1,2&Signature=abc">': '<img data-src="https://x/p">',
+            '<img data-src="https://x/p?crop=(0,0)&token=abc" alt="">': '<img data-src="https://x/p" alt="">',
+            '<img srcset="https://x/a.png?sig=1 1x, https://x/b.png 2x">': '<img srcset="https://x/a.png 1x, https://x/b.png 2x">',
+        }
+        got = self.node(src + f"\nconsole.log(JSON.stringify({json.dumps(list(cases))}.map(cutSigned)))")
+        self.assertEqual(got, list(cases.values()))
 
     def test_measured_styles_record_no_url(self):
         for path in (SIGNED_IN / "measure.mjs", HERE / "kit/capture/public/lib.mjs"):
             src = js_block(path, "const noUrl", "const noUrl")
             got = self.node(src + "\nconsole.log(JSON.stringify(["
                             "noUrl('url(\"https://x/p.png?X-Amz-Signature=1\"), linear-gradient(red, blue)'),"
-                            "noUrl('url(\"data:image/svg+xml,abc\")'), noUrl('url(#clip)'), noUrl('auto'), noUrl(3)]))")
-            self.assertEqual(got, ['url(…), linear-gradient(red, blue)', 'url("data:image/svg+xml,abc")', 'url(#clip)', 'auto', 3], path)
+                            "noUrl('url(\"data:image/svg+xml,abc\")'), noUrl('url(#clip)'), noUrl('auto'), noUrl(3),"
+                            "noUrl('url(\"https://x/photo(1).png?token=abc\") no-repeat'),"
+                            "noUrl(\"url('https://x/a\\\\'b(2).png?sig=1')\"), noUrl('url(https://x/p.png?sig=1), none')]))")
+            self.assertEqual(got, ['url(…), linear-gradient(red, blue)', 'url("data:image/svg+xml,abc")', 'url(#clip)', 'auto', 3,
+                                   'url(…) no-repeat', 'url(…)', 'url(…), none'], path)
 
 
 if __name__ == "__main__":
