@@ -325,8 +325,9 @@ test("scorecard pages render a grade value they do not know instead of crashing"
       ],
     }),
   );
-  expect(renderToStaticMarkup(ScorecardOverview())).toContain(
-    "Color roles: excellent",
+  const overview = renderToStaticMarkup(ScorecardOverview());
+  expect(overview).toMatch(
+    /aria-label="[^"]*Color roles: excellent"[^>]*>\?<\/a>/,
   );
   // The package page maps unknown grades to Not applicable already.
   expect(renderToStaticMarkup(PackageScorecard({ slug: "test" }))).toContain(
