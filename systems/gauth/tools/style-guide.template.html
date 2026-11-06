@@ -293,6 +293,7 @@ table.t td.src { color: var(--text-meta); font-size: 12px; }
 .ptab.ring { outline: 2px solid #f0023a; outline-offset: 2px; }
 .ptab.is-pressed { background: var(--palette-paper-cool); }
 .mapnote { font: var(--typography-caption); color: var(--text-meta); margin-top: var(--spacing-8); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0ms !important; animation-duration: 0ms !important; } }
 </style>
 <header class="top"><div class="in">
   <h1><!--icon:gauth-mark:22--> Gauth style guide</h1>
