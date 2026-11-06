@@ -39,6 +39,8 @@ const OUT = path.join(RAW, 'components-computed.json');
 const args = process.argv.slice(2);
 const jobsArg = args.indexOf('--jobs');
 const CONC = jobsArg >= 0 ? +args[jobsArg + 1] : 4;
+// `--jobs` with no number would be NaN: no worker would run and the final save would drop every selected state.
+if (!(Number.isInteger(CONC) && CONC >= 1)) { console.error('--jobs needs a whole number of 1 or more'); process.exit(2); }
 // --states pressed,error: measure only those states (by kind, so pressed includes an extra's
 // enabled-pressed; or by name, for a captured state such as error), keeping every other reading.
 const statesArg = args.indexOf('--states');
@@ -594,7 +596,7 @@ async function measureSnap(browser, label, specs, out) {
   } catch (e) {
     log('  ! open failed', label, e.message.split('\n')[0]);
     await ctx.close();
-    return;
+    return false;
   }
   const rest = { x: meta.w - 2, y: Math.round(meta.h / 2) };
   await page.evaluate(() => window.__saveScroll());
@@ -771,10 +773,8 @@ for (const spec of SPECS) {
     // A captured state (error, typed, enabled) is matched by its name; a measured one (hover,
     // pressed) by its kind, so `pressed` also selects enabled-pressed.
     if (STATES && !STATES.includes(job.state) && (!STATES.includes(job.base) || (job.variant && job.base === 'default'))) continue;
-    delete c.states[job.state];
-    delete c.states[job.state === 'default' ? 'light' : `light-${job.state}`];
     if (!bySnap.has(job.snap)) bySnap.set(job.snap, []);
-    bySnap.get(job.snap).push({ spec, job });
+    bySnap.get(job.snap).push({ spec, job, c });
   }
 }
 
@@ -797,7 +797,16 @@ await Promise.all(Array.from({ length: Math.min(CONC, queue.length) }, async () 
   while (queue.length) {
     const label = queue.shift();
     log('open', label, `(${bySnap.get(label).length} jobs x 2 themes)`);
-    await measureSnap(browser, label, bySnap.get(label), out);
+    // Reset the states this snapshot re-measures, but put the earlier readings back if the copy does
+    // not open, so a failed snapshot keeps what it had instead of saving with its states gone.
+    const kept = [];
+    for (const { job, c } of bySnap.get(label)) {
+      for (const k of [job.state, job.state === 'default' ? 'light' : `light-${job.state}`]) {
+        if (k in c.states) kept.push([c, k, c.states[k]]);
+        delete c.states[k];
+      }
+    }
+    if (await measureSnap(browser, label, bySnap.get(label), out) === false) for (const [c, k, v] of kept) c.states[k] = v;
     save();
   }
 }));
