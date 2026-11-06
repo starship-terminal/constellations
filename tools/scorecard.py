@@ -213,14 +213,29 @@ def legend() -> str:
             'V principles and voice · A assets · K package</span></p>')
 
 
+def weakest_criteria(criteria: dict, systems: list[dict]) -> list[tuple[dict, int, int]]:
+    """The criteria met by the smallest share of the systems they apply to, as
+    (criterion, meets, applicable). A not-applicable grade is not a miss, so a
+    criterion graded not applicable everywhere (an optional one no product
+    publishes) is never the weakest."""
+    rows = []
+    for c in criteria["criteria"]:
+        grades = [s["grades"].get(c["id"], {}).get("grade") for s in systems]
+        applicable = [g for g in grades if g and g != "na"]
+        if applicable:
+            rows.append((c, sum(g == "meets" for g in applicable), len(applicable)))
+    if not rows:
+        return []
+    floor = min(m / n for _, m, n in rows)
+    return [r for r in rows if r[1] / r[2] == floor]
+
+
 def index_page(criteria: dict, audit: dict) -> str:
     systems = ranked(audit["systems"])
     total = len(systems) * len(criteria["criteria"])
     meets = sum(counts(s)["meets"] for s in systems)
     best = systems[0]
-    by_crit = {c["id"]: sum(s["grades"][c["id"]]["grade"] == "meets" for s in systems) for c in criteria["criteria"]}
-    floor = min(by_crit.values())
-    weakest = [c for c in criteria["criteria"] if by_crit[c["id"]] == floor]
+    weakest = weakest_criteria(criteria, systems)
     # The heatmap needs the full content column, so the page hides the rail.
     md = "---\nhide:\n  - navigation\n---\n\n# Scorecard\n\n"
     md += (f"Every captured design system in the library, graded against the checklist a complete "
@@ -232,9 +247,11 @@ def index_page(criteria: dict, audit: dict) -> str:
            f"meet their criterion.\n\n")
     md += (f"-   **Leader: {short(best)}**\n\n    ---\n\n    {counts(best)['meets']} of {len(criteria['criteria'])} "
            f"criteria met. [See its page](systems/{best['slug']}.md).\n\n")
-    label = "Met by no system" if floor == 0 else f"Met by only {floor}"
-    md += (f"-   **{label}**\n\n    ---\n\n    " +
-           ", ".join(f"[{c['id']} {c['title']}](criteria.md#{c['id'].lower()})" for c in weakest) + ".\n\n")
+    if weakest:
+        label = "Met by no system" if weakest[0][1] == 0 else "Weakest criteria"
+        md += (f"-   **{label}**\n\n    ---\n\n    " +
+               ", ".join(f"[{c['id']} {c['title']}](criteria.md#{c['id'].lower()}) ({m} of {n} it applies to)"
+                         for c, m, n in weakest) + ".\n\n")
     md += "</div>\n\n## Grades\n\n"
     md += heatmap(criteria, systems, audit) + "\n\n" + legend() + "\n\n"
     md += ('!!! info "Reading the grades"\n\n'
