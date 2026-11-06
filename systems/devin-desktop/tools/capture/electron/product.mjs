@@ -18,6 +18,8 @@
 // folder ~/.design-systems/harness-scratch/devin (`devin-desktop --new-window <folder>`), never in the
 // owner's own windows; its title ends in the folder name, `devin`.
 
+import { allowance, ancestors, approvableCard } from './approve.mjs';
+
 export const NAME = 'Devin';
 // Its title is `<page> devin` in the Agents view, `devin` or `devin — <file>` in the IDE view.
 const SCRATCH_WINDOW = /(^|\s)devin($| —)/;
@@ -460,9 +462,19 @@ async function sendPrompt({ page }, text) {
   await page.keyboard.type(text, { delay: 10 }); await wait(page, 300);
   await page.keyboard.press('Enter'); await wait(page, 1200);
 }
-// Approval buttons inside the session pane only (never the sidebar's or a menu's).
-const approveButton = page => page.locator('main button:visible, [data-slot=chat] button:visible').filter({ hasText: /^(Allow|Approve|Accept|Run|Yes)\b/ }).last();
-const rejectButton = page => page.locator('button:visible').filter({ hasText: /^(Deny|Reject|Skip|No|Cancel)\b/ }).last();
+// Approval and rejection buttons inside the session pane only (never the sidebar's, a menu's or a dialog's).
+const PANE_BUTTONS = 'main button:visible, [data-slot=chat] button:visible';
+const approveButton = page => page.locator(PANE_BUTTONS).filter({ hasText: /^(Allow|Approve|Accept|Run|Yes)\b/ }).last();
+const rejectButton = page => page.locator(PANE_BUTTONS).filter({ hasText: /^(Deny|Reject|Skip|No|Cancel)\b/ }).last();
+// Approve only a request whose card shows one of the exact commands or files these prompts ask for, in the
+// scratch folder, and nothing else that could be a command (approve.mjs). The card is read outwards from the
+// button (approvableCard): the first container naming a target and the next wider one must both pass.
+const ALLOW = allowance({ root: `${process.env.HOME}/.design-systems/${SCRATCH}`, rel: `.design-systems/${SCRATCH}`, files: ['hello.txt'] });
+const approveInScratch = async ({ page }) => {
+  const texts = await approveButton(page).evaluate(ancestors).catch(() => []);
+  if (!approvableCard(texts, ALLOW)) return false;
+  await approveButton(page).click(); await wait(page, 800); return true;
+};
 export const RUN = {
   window: 'agents',
   async start(h) {
@@ -479,8 +491,8 @@ export const RUN = {
   },
   async reject({ page }) { await rejectButton(page).click().catch(() => {}); await wait(page, 800); },
   steps: [
-    { name: 'list-files', send: h => sendPrompt(h, 'List the files in this folder.') },
-    { name: 'create-file', send: h => sendPrompt(h, 'Create hello.txt here with one line: hello from the design capture') },
+    { name: 'list-files', send: h => sendPrompt(h, 'List the files in this folder.'), approve: approveInScratch },
+    { name: 'create-file', send: h => sendPrompt(h, 'Create hello.txt here with one line: hello from the design capture'), approve: approveInScratch },
   ],
   // Parts measured on every frame; the last visible match is measured.
   parts: { composer: S.composer, ...CONVERSATION },
