@@ -104,7 +104,10 @@ for (const [copy, specs] of Object.entries(byCopy)) {
         await page.waitForTimeout(st === 'default' ? 50 : 450); // let transitions settle
         rec[st] = await page.evaluate(({ name, part, props }) => {
           const el = document.querySelector(`[data-m="${name}"]`);
-          const read = (n) => { const cs = getComputedStyle(n); const o = {}; for (const p of props) o[p] = cs.getPropertyValue(p); return o; };
+          // A url() in a computed value (a background photo, a cursor) can be a signed or per-account URL:
+          // recorded as url(…), only data: and #fragment references kept (the kit's noUrl).
+          const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+          const read = (n) => { const cs = getComputedStyle(n); const o = {}; for (const p of props) o[p] = noUrl(cs.getPropertyValue(p)); return o; };
           const r = { self: read(el) };
           const p = part && el.querySelector(part);
           if (p) r.part = read(p);

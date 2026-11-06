@@ -107,6 +107,34 @@ class SharedList(unittest.TestCase):
         self.assertEqual(unsnap.leaks_in('<a href="https://x/a?a=1&amp;sig=2">', redact), ["sig"])
 
 
+# A computed-style property whose value can be a url(). A script that copies property values in a
+# loop (o[p] = cs[p], o[p] = v) must not read any of them raw.
+URL_PROPS = re.compile(r"background-?image|(?<![.\w-])cursor(?![-\w])|mask-?image|list-?style-?image|border-?image", re.I)
+RAW_PICK = re.compile(r"\b(?:o|out)\[(\w+)\] ?= ?(?:\w+(?:\[\1\]|\.getPropertyValue\(\1\))|v(?:\.length|\.slice))")
+# A single value read raw: p.backgroundImage.slice(…), content: p.content.
+RAW_READ = re.compile(r"\b(?:p|q|pc|c|cs|a|b)\.(?:backgroundImage|content)\.(?:slice|replace)\(|\bcontent: (?:p|q|pc|a|b)\.content\b")
+
+
+def capture_scripts_recording_raw_urls(root):
+    """(path, reason) for each systems/*/tools/capture script under root that records a computed value raw."""
+    bad = []
+    for path in sorted(Path(root).glob("systems/*/tools/capture/**/*")):
+        if path.suffix not in (".mjs", ".js") or path.name.startswith("test_"):
+            continue
+        src = path.read_text()
+        if "getComputedStyle" not in src:
+            continue
+        rel = str(path.relative_to(root))
+        if URL_PROPS.search(src):
+            bad += [(rel, "raw pick " + m.group(0)) for m in RAW_PICK.finditer(src)]
+        bad += [(rel, "raw read " + m.group(0)) for m in RAW_READ.finditer(src)]
+        uses = [m.start() for m in re.finditer(r"\bnoUrl\(", src)]
+        defs = [m.start() for m in re.finditer(r"\bnoUrl = \(v\)", src)]
+        if uses and (not defs or defs[0] > uses[0]):
+            bad.append((rel, "noUrl used before it is defined"))
+    return bad
+
+
 def js_block(path, start, end):
     """The source lines from the first one starting with `start` through the first after it starting with `end`."""
     lines = Path(path).read_text().splitlines()
@@ -194,6 +222,14 @@ class JavaScriptHalves(unittest.TestCase):
             self.assertFalse(reads, (path, reads))   # a recorded value is noUrl(x.backgroundImage)...
             self.assertNotRegex(src, r"o\[p\] = cs\[p\]", path)   # ...and so is every picked property
             self.assertEqual(len(re.findall(r"const noUrl = ", src)), 1, path)
+
+    def test_every_package_capture_script_records_computed_values_through_no_url(self):
+        # Every package's capture scripts, found by glob so a new copy is covered too: no computed
+        # value that can hold a url() (a picked property, a pseudo-element's content or background
+        # image, a one-off box reading) is recorded raw, and noUrl is defined before its first use
+        # (a const read before its line throws, and the paint-loop fix had put it after pick).
+        bad = capture_scripts_recording_raw_urls(HERE.parent)
+        self.assertEqual(bad, [])
 
     def test_recorded_page_urls_keep_only_origin_and_route_words(self):
         cases = {

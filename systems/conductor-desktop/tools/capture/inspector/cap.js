@@ -37,8 +37,11 @@ C.type = (e, text) => {
 };
 C.box = e => { const r = e.getBoundingClientRect(), d = devicePixelRatio; return [r.x, r.y, r.width, r.height].map(v => Math.round(v * d)); };
 C.style = (e, props = C.PROPS) => {
+  // A url() in a computed value (a background photo, a cursor) can be a signed or per-account URL:
+  // recorded as url(…), only data: and #fragment references kept (the kit's noUrl).
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
   const cs = getComputedStyle(e), r = e.getBoundingClientRect(), out = {};
-  for (const p of props) out[p] = cs.getPropertyValue(p);
+  for (const p of props) out[p] = noUrl(cs.getPropertyValue(p));
   out._box = [r.x, r.y, r.width, r.height].map(v => Math.round(v * 10) / 10);
   out._tag = e.tagName.toLowerCase(); out._role = e.getAttribute('role');
   out._slot = e.getAttribute('data-slot'); out._cls = (e.getAttribute('class') || '').slice(0, 400);

@@ -189,10 +189,12 @@ async function siblingGap(sel) {
 // Background actually painted at a point (walks the stack under it).
 async function bgAt(x, y) {
   return page.evaluate(([x, y]) => {
+    // A url() in a computed value can be a signed URL: recorded as url(…) (the kit's noUrl).
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
     for (const el of document.elementsFromPoint(x, y)) {
       const cs = getComputedStyle(el);
       if (cs.backgroundImage !== 'none' || (cs.backgroundColor !== 'rgba(0, 0, 0, 0)' && cs.backgroundColor !== 'transparent')) {
-        return { tag: el.tagName.toLowerCase(), cls: [...el.classList].join(' ').slice(0, 80), backgroundColor: cs.backgroundColor, backgroundImage: cs.backgroundImage.slice(0, 300) };
+        return { tag: el.tagName.toLowerCase(), cls: [...el.classList].join(' ').slice(0, 80), backgroundColor: cs.backgroundColor, backgroundImage: noUrl(cs.backgroundImage).slice(0, 300) };
       }
     }
     return null;
@@ -271,7 +273,7 @@ async function home() {
 
   comp('header-audience-link', { description: 'Audience tab in the top bar. The current audience is bold with a white underline bar.', selector: `${hdr} > div:nth-child(1) a` });
   const aud = page.locator(`${hdr} > div:nth-child(1) a`);
-  await measure('header-audience-link', 'selected', aud.nth(0), { extra: (l) => l.evaluate((el) => { const a = getComputedStyle(el, '::after'); const b = getComputedStyle(el, '::before'); const s = el.querySelector('span'); return { after: { content: a.content, height: a.height, bottom: a.bottom, bg: a.backgroundColor, width: a.width }, before: { content: b.content, height: b.height, bg: b.backgroundColor }, spanWeight: s && getComputedStyle(s).fontWeight }; }) });
+  await measure('header-audience-link', 'selected', aud.nth(0), { extra: (l) => l.evaluate((el) => { const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v); const a = getComputedStyle(el, '::after'); const b = getComputedStyle(el, '::before'); const s = el.querySelector('span'); return { after: { content: noUrl(a.content), height: a.height, bottom: a.bottom, bg: a.backgroundColor, width: a.width }, before: { content: noUrl(b.content), height: b.height, bg: b.backgroundColor }, spanWeight: s && getComputedStyle(s).fontWeight }; }) });
   await states('header-audience-link', aud.nth(1), B4);
 
   comp('header-main-bar', { description: 'Main white bar: logo, Explore, Degrees, search, AI button, Log In, Join for Free.', selector: `${hdr} > div:nth-child(2) .main-nav-container` });
