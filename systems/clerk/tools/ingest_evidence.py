@@ -77,9 +77,11 @@ def ingest(source, package):
             raise SystemExit(f"Not a computed-style reading: {path.name}")
         clean = sanitize(raw)
         # Guard the fields builders consume: sanitizing text must never edit a value.
-        assert raw.get("variables") == clean.get("variables")
+        if raw.get("variables") != clean.get("variables"):
+            raise SystemExit(f"Sanitizing changed CSS variables in {path.name}; refusing to write it")
         for before, after in zip(raw["elements"], clean["elements"]):
-            assert all(before.get(key) == after.get(key) for key in PRESERVE)
+            if any(before.get(key) != after.get(key) for key in PRESERVE):
+                raise SystemExit(f"Sanitizing changed a measured field in {path.name}; refusing to write it")
         write_json(package / "raw/readings" / path.name, clean)
         measurements.append({"file": path.name, "sourceSha256": sha256(path),
                              "elements": len(clean["elements"])})

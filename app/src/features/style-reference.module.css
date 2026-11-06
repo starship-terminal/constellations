@@ -127,7 +127,7 @@
   position: absolute;
   bottom: 12px;
   right: 12px;
-  background: #13151ae8;
+  background: color-mix(in srgb, var(--page) 91%, transparent);
   padding: 6px 10px;
   border: 1px solid var(--strong-line);
   border-radius: 8px;

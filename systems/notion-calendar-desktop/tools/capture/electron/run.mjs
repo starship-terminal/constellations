@@ -20,6 +20,8 @@ const theme = process.argv[2];
 // The theme names a folder that is emptied below, so it must be a plain theme name (`dark`, `light-more`),
 // never a path such as `../..`.
 if (!/^(dark|light)(-[a-z0-9]+)*$/.test(theme || '')) { console.error('usage: run.mjs <dark|light>[-<suffix>]'); process.exit(2); }
+// Notion Calendar has no agent run (product.mjs exports RUN = null): stop before the folder is emptied.
+if (!P.RUN) { console.error(`${P.NAME || SLUG} has no agent run to record (product.mjs RUN is null)`); process.exit(2); }
 const out = `${RAW}/${theme}/run/frames.json`;
 // A run starts from an empty folder, so no frame of an earlier, longer run survives into this one.
 rmSync(`${RAW}/${theme}/run`, { recursive: true, force: true });

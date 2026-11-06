@@ -22,7 +22,8 @@ try { for (const l of fs.readFileSync(HERE + 'icon-names.tsv', 'utf8').split('\n
 // One pass per file: svgs become a marker, aria-label/title become text, tags drop out, so the words
 // either side of the k-th marker are what sat next to the k-th svg.
 const MARK = '\u0001';
-const flatten = (h) => h.replace(/<(script|style)[\s\S]*?<\/\1>/g, '').replace(/<svg\b[\s\S]*?<\/svg>/g, MARK)
+const dropCode = (h) => h.replace(/<(script|style)[\s\S]*?<\/\1>/g, '');
+const flatten = (h) => dropCode(h).replace(/<svg\b[\s\S]*?<\/svg>/g, MARK)
   .replace(/<[^>]*?\s(?:aria-label|title)="([^"]*)"[^>]*>/g, ' $1 ').replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ');
 const attr = (tag, a) => (tag.match(new RegExp('\\s' + a + '="([^"]*)"')) || [])[1];
 
@@ -43,9 +44,12 @@ const files = fs.readdirSync(SNAPS).filter((f) => f.endsWith('.html')).sort();
 for (const f of files) {
   const label = f.replace(/\.html$/, '');
   const html = fs.readFileSync(SNAPS + '/' + f, 'utf8');
-  const flat = flatten(html); const marks = []; for (let i = flat.indexOf(MARK); i >= 0; i = flat.indexOf(MARK, i + 1)) marks.push(i);
+  // Svgs are counted in the same text the markers come from (no <script> or <style>), so a raw <svg in an
+  // inlined sheet cannot shift every later icon's context or be lifted as an icon itself.
+  const body = dropCode(html);
+  const flat = flatten(body); const marks = []; for (let i = flat.indexOf(MARK); i >= 0; i = flat.indexOf(MARK, i + 1)) marks.push(i);
   let k = -1;
-  for (const m of html.matchAll(/<svg\b[\s\S]*?<\/svg>/g)) {
+  for (const m of body.matchAll(/<svg\b[\s\S]*?<\/svg>/g)) {
     k++;
     const { svg, open, lucide } = normalise(m[0]);
     if (svg.length > 20000) continue; // illustrations, not icons

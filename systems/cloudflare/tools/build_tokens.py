@@ -52,7 +52,10 @@ for theme in ['dark','light']:
  # Preserve directly readable color declarations; do not tokenize unresolved light-dark().
  result[theme]['declared']={k[2:]:var(d,k,file) for k,val in sorted(v.items()) if (k.startswith('--color-') or k.startswith('--cf-') or k.startswith('--text-color-')) and (val.startswith('#') or val.startswith('oklch('))}
 file='public-home-desktop';d=read(file)
-result['marketing']={'background':{'page':var(d,'--color-background-200',file),'surface':var(d,'--color-background-content',file)},'text':{'primary':var(d,'--color-foreground',file),'secondary':var(d,'--color-text-secondary',file)},'accent':{'default':var(d,'--text-color-kumo-brand',file)},'border':{'default':var(d,'--color-border',file)}}
+marketing={'background':{'page':'--color-background-200','surface':'--color-background-content'},'text':{'primary':'--color-foreground','secondary':'--color-text-secondary'},'accent':{'default':'--text-color-kumo-brand'},'border':{'default':'--color-border'}}
+missing=[f'marketing.{g}.{n} ({k})' for g,group in marketing.items() for n,k in group.items() if k not in d['variables']]
+if missing:raise ValueError(f'raw/{file}.json has no value for '+', '.join(missing))
+result['marketing']={g:{n:var(d,k,file) for n,k in group.items()} for g,group in marketing.items()}
 # Derived 8-bit sRGB previews let legacy hex-only consumers use the measured roles.
 # OKLCH -> OKLab -> linear sRGB matrices, followed by the sRGB transfer curve.
 def srgb_preview(value):
@@ -81,6 +84,7 @@ for theme in ['dark','light','marketing']:
  result[theme]['preview']={}
  for role,path in {'page':'background.page','surface':'background.surface','text':'text.primary','muted':'text.secondary','accent':'accent.default','border':'border.default'}.items():
   group,key=path.split('.')
+  if key not in result[theme].get(group,{}):raise ValueError(f'{theme}.{path}: the reading has no value for this role, so no preview can be derived')
   original=result[theme][group][key]['$value']
   value,clipped,method=srgb_preview(original)
   source=f'Derived: {theme}.{path} ({original}); {method}; '+('out-of-gamut linear channels clipped to [0, 1].' if clipped else 'no gamut clipping.')

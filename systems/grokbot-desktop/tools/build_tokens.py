@@ -249,6 +249,9 @@ def core_scales():
             elif re.fullmatch(r"-?[\d.]+px", v):
                 put(CORE, path, tok(px(v), "dimension", "Measured", src))
             elif re.fullmatch(r"-?[\d.]*em", v) and group == "tooltip":
+                # Only a zero em length is 0px whatever the font size; any other needs the tooltip's size.
+                if float(v[:-2] or 0) != 0:
+                    raise ValueError(f"{n} = {v}: a non-zero em length needs the tooltip font size to convert")
                 put(CORE, path, tok("0px", "dimension", "Measured", src + f" ({v})"))
             elif re.fullmatch(r"\d+", v):
                 put(CORE, path, tok(int(v), "number", "Measured", src))

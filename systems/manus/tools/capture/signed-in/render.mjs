@@ -6,19 +6,28 @@
 // renders both themes and no account setting is touched.
 import fs from 'fs';
 import path from 'path';
-const pw = await import(process.env.PLAYWRIGHT || 'playwright');
-const { chromium } = pw.default ?? pw;
 const [,, dirArg, label, ...flags] = process.argv;
 const dir = path.resolve(dirArg); // file:// needs an absolute path, so a relative <dir> is resolved first
+// lib.mjs keys its CDN cache off SNAPS (default <SNAPS>/../cdn-cache), so point it at this snapshot dir.
+process.env.SNAPS ??= dir;
+const { chromium, newContext } = await import('./lib.mjs');
 const meta = JSON.parse(fs.readFileSync(`${dir}/${label}.json`));
 const light = flags.includes('light');
 const out = light ? label.replace(/-dark(?=-|$)/, '-light') : label;
 const b = await chromium.launch();
-const ctx = await b.newContext({ viewport: { width: meta.w, height: meta.h }, deviceScaleFactor: 2, colorScheme: light ? 'light' : 'dark' });
+// The same context measure.mjs uses: CDN responses served from the local cache, anything else (manus.im
+// favicons, canonical links) aborted, so a flaky stylesheet fetch cannot leave the screenshot unstyled.
+const ctx = await newContext(b, meta, light);
 const p = await ctx.newPage();
-await p.goto('file://' + dir + '/' + label + '.html', { waitUntil: 'load', timeout: 60000 });
-if (light) await p.evaluate(() => document.documentElement.classList.remove('dark'));
-await p.waitForTimeout(2500);
+for (let attempt = 0; ; attempt++) {
+  await p.goto('file://' + dir + '/' + label + '.html', { waitUntil: 'load', timeout: 60000 });
+  await p.waitForTimeout(2500);
+  // Manus's shell is a 100vh flex box: a document taller than twice the viewport usually means a sheet did
+  // not apply, so reload (as lib.mjs's openSnap does). A page that is long by design is still rendered.
+  if (await p.evaluate(() => document.documentElement.scrollHeight <= innerHeight * 2 && document.styleSheets.length >= 10)) break;
+  if (attempt === 2) { console.error(`warning: ${label} may not have come up styled; check the PNG`); break; }
+}
+if (light) { await p.evaluate(() => document.documentElement.classList.remove('dark')); await p.waitForTimeout(600); }
 if (meta.scrollY) await p.evaluate(y => scrollTo(0, y), meta.scrollY);
 // Restore inner scrollers: from meta.scrolls when the snapshot recorded them, else from a
 // `scroll=<top>` flag (`scroll=max` for the bottom) applied to the tallest scroller outside <nav>.

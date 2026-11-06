@@ -71,7 +71,16 @@ def ensure_front():
 
 
 def mouse(action, x, y, *extra, wait=0.6):
+    """A pointer action in main-window coordinates. Zed must be frontmost and its Settings window must not be
+    its front window: Settings covers most of the main window, so a click aimed at the editor would land on a
+    real setting."""
     ensure_front()
+    listing = subprocess.run([str(BIN / "wins"), "Zed"], capture_output=True, text=True)
+    name = front_window(listing.stdout) if listing.returncode == 0 else None
+    if not name:
+        raise SystemExit("could not read Zed's front window (wins failed or listed no titled window); stopped before pointer input")
+    if "Settings" in name:
+        raise SystemExit("the Settings window is Zed's front window; close it before main-window pointer input")
     subprocess.run([str(BIN / "mouse"), action, str(x), str(y + Y0), *map(str, extra)], check=True)
     time.sleep(wait)
 
@@ -102,7 +111,12 @@ def park():
 
 
 def TODO_Y():
-    """todo.txt's row in the file tree: the third row, or the fourth once the agent wrote hello.txt."""
+    """todo.txt's row in the file tree: the third row, or the fourth once the agent wrote hello.txt. Any other
+    hello*.txt (the light pass writes hello-light.txt) also sorts above todo.txt and would move the row, so the
+    click would land on another file: stop instead."""
+    extra = sorted(p.name for p in SCR.glob("hello*.txt") if p.name != "hello.txt")
+    if extra:
+        raise SystemExit(f"{', '.join(extra)} in {SCR} moves todo.txt's row in the file tree; move it out before this step")
     return 126 if (SCR / "hello.txt").exists() else 100
 
 
@@ -273,12 +287,16 @@ def reset():
 
 @step
 def delete_confirm():
+    before = sorted(p.name for p in SCR.iterdir())
     open_file("inventory.py")
     mouse("rclick", 60, TODO_Y(), wait=1.0)   # todo.txt
     mouse("click", 100, 586 + TODO_Y() - 100, wait=1.5)  # Trash (recoverable); the confirmation is captured, then cancelled
     shot("19-delete-confirm")
     key(ESC, wait=1.0)   # Cancel
-    assert (SCR / "todo.txt").exists(), "todo.txt went missing"
+    # Every scratch file must still be there: Esc cancels, and a click a row off would have trashed another.
+    gone = sorted(set(before) - {p.name for p in SCR.iterdir()})
+    if gone:
+        raise SystemExit(f"{', '.join(gone)} went missing from {SCR}; restore from the Trash")
 
 
 @step
@@ -495,6 +513,16 @@ SETTINGS_AT = (306, 132)   # the Settings window's top-left, global points
 NAV = {"general": 94, "appearance": 122, "keymap": 150, "editor": 178, "languages": 206, "search": 234,
        "window": 262, "panels": 290, "debugger": 318, "terminal": 346, "vcs": 374, "collab": 402,
        "ai": 430, "network": 458, "developer": 486}
+
+
+def front_window(listing):
+    """The title of Zed's frontmost layer-0 window in a `wins Zed` listing (front to back), or None."""
+    for line in listing.splitlines():
+        head, sep, name = line.partition(" | ")
+        parts = head.split()
+        if sep and len(parts) >= 6 and parts[1:3] == ["layer", "0"]:
+            return name.strip() or None
+    return None
 
 
 def settings_origin(listing):

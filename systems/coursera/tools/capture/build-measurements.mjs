@@ -49,7 +49,7 @@ const INTRO = `# Raw measurements (computed styles, CSS px), coursera.org, captu
 - The overflow chevron at the end of the in-page tab bar is not reported visible to Playwright at 1440, so it has no entry; its two gradient fades are in the \`tab-bar\` paint list.
 - The contextual (i) next to "Recommended experience" opens a modal dialog, not a hover tooltip; both are measured (\`help-dialog\`, \`tooltip\`, \`tooltip-icon\`).
 - No disabled primary button appeared on these pages; disabled ghost and disabled secondary were measured in the filter popover and sheet, and the chat send icon button while its field is empty (\`icon-button-send\`).
-- The AI coach panel, cookie banner, sign-in and enrollment flows were deliberately not measured.
+- The cookie banner and the sign-in and enrolment flows past the log-in dialog were deliberately not measured. The log-in dialog and the AI coach panel were added by the 2026-10-17 pass (under "Log-in dialog, AI chat panel and error page" below).
 `;
 
 // ---------- token matching ----------

@@ -932,7 +932,6 @@ table.t th, table.t td { text-align: left; padding: var(--spacing-100) var(--spa
 table.t th { color: var(--neutral-primary-weak); font-weight: 600; }
 .panel { border: 1px solid var(--neutral-stroke-primary-weak); border-radius: var(--radius-200); padding: var(--spacing-300); background: var(--neutral-background-primary); }
 .panel + .panel { margin-top: var(--spacing-200); }
-.panel.ground { background: var(--neutral-background-primary-weak); border-color: transparent; }
 .panel > h4.lbl:first-child { margin-top: 0; }
 .demo { display: flex; gap: var(--spacing-300); flex-wrap: wrap; align-items: flex-start; }
 .states { display: flex; gap: var(--spacing-300) var(--spacing-400); flex-wrap: wrap; align-items: flex-start; }
@@ -950,7 +949,8 @@ table.t th { color: var(--neutral-primary-weak); font-weight: 600; }
 .ramp.a14 { grid-template-columns: 76px repeat(14, minmax(0, 1fr)); }
 .ramp .lbl { font: var(--typography-body2); font-weight: 600; align-self: center; }
 .ramp .chip { height: 52px; border-radius: var(--radius-50); display: flex; align-items: flex-end; padding: 4px; font: 600 10px/1.1 ui-monospace, Menlo, monospace; }
-.checker { background-color: var(--neutral-background-primary); background-image: linear-gradient(45deg, var(--neutral-disabled) 25%, transparent 25%, transparent 75%, var(--neutral-disabled) 75%), linear-gradient(45deg, var(--neutral-disabled) 25%, transparent 25%, transparent 75%, var(--neutral-disabled) 75%); background-size: 12px 12px; background-position: 0 0, 6px 6px; }
+/* A light checkerboard in both themes: the darken ramp over it is labelled in near-black ink, and the ramps do not follow the theme. */
+.checker { background-color: var(--palette-white); background-image: linear-gradient(45deg, var(--palette-grey-100) 25%, transparent 25%, transparent 75%, var(--palette-grey-100) 75%), linear-gradient(45deg, var(--palette-grey-100) 25%, transparent 25%, transparent 75%, var(--palette-grey-100) 75%); background-size: 12px 12px; background-position: 0 0, 6px 6px; }
 .sem { display: grid; gap: var(--spacing-150) var(--spacing-300); grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); }
 .sem .it { display: grid; grid-template-columns: 40px 40px 1fr; gap: var(--spacing-100); align-items: center; }
 .sem .dot { width: 40px; height: 40px; border-radius: var(--radius-100); border: 1px solid var(--neutral-stroke-primary-weak); }

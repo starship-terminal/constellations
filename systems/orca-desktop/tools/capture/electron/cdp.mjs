@@ -7,6 +7,10 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 
+// SCHEME is checked when this module loads, before a caller such as run.mjs empties its output folder:
+// a mistyped value would otherwise be accepted silently and a whole theme captured in the wrong scheme.
+if (process.env.SCHEME && !['dark', 'light'].includes(process.env.SCHEME)) throw new Error(`SCHEME must be dark or light, not ${process.env.SCHEME}`);
+
 const pw = await import(process.env.PLAYWRIGHT || `${process.env.HOME}/.design-systems/pw/node_modules/playwright/index.mjs`);
 export const PORT = process.env.PORT || '9401';
 

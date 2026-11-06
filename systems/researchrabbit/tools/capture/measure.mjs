@@ -52,6 +52,7 @@ const ARCHIVE = (process.env.RR_SNAPSHOTS || '~/.design-systems/snaps/researchra
 
 const args = process.argv.slice(2);
 const onlyArg = args.indexOf('--only');
+if (onlyArg >= 0 && !(args[onlyArg + 1] || '').replace(/^--.*/, '')) { console.error('--only needs a comma-separated list of component keys'); process.exit(2); }
 const ONLY_KEYS = onlyArg >= 0 ? args[onlyArg + 1].split(',') : null;
 const ONLY_PAGES = args.filter((a, i) => !a.startsWith('--') && (onlyArg < 0 || i !== onlyArg + 1));
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
