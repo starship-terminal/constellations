@@ -13,6 +13,7 @@ import {
   Grid2X2,
   BookOpen,
   BarChart3,
+  Laptop,
   Monitor,
   Smartphone,
   Bookmark,
@@ -96,7 +97,7 @@ export function Mark() {
     </>
   );
 }
-function CatalogNavigation({ onNavigate }: { onNavigate: () => void }) {
+export function CatalogNavigation({ onNavigate }: { onNavigate: () => void }) {
   const path = usePathname();
   const params = useSearchParams();
   const platform = params.get("platform");
@@ -127,6 +128,13 @@ function CatalogNavigation({ onNavigate }: { onNavigate: () => void }) {
       >
         <Smartphone size={20} />
         iOS apps
+      </Link>
+      <Link
+        className={`nav-link ${path === "/library" && platform === "desktop" ? "active" : ""}`}
+        href="/library?platform=desktop"
+      >
+        <Laptop size={20} />
+        Desktop apps
       </Link>
       <Link
         className={`nav-link ${path.startsWith("/styles") ? "active" : ""}`}

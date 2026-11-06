@@ -50,19 +50,19 @@ class CheckTest(unittest.TestCase):
     def test_missing_alias_inside_a_typography_style_fails(self):
         doc = copy.deepcopy(FIXTURE)
         doc["core"]["typography"]["body"]["$value"]["fontWeight"] = "{fontWeight.doesNotExist}"
-        with self.assertRaisesRegex(AssertionError, "doesNotExist"):
+        with self.assertRaisesRegex(build_tokens.CheckError, "doesNotExist"):
             build_tokens.check(doc)
 
     def test_missing_top_level_alias_fails(self):
         doc = copy.deepcopy(FIXTURE)
         doc["light"]["color"]["text"]["primary"]["$value"] = "{color.accent.nothing}"
-        with self.assertRaisesRegex(AssertionError, "nothing"):
+        with self.assertRaisesRegex(build_tokens.CheckError, "nothing"):
             build_tokens.check(doc)
 
     def test_theme_keys_must_match(self):
         doc = copy.deepcopy(FIXTURE)
         doc["dark"]["color"]["bg"]["sheet"] = tok("color", "#1E1E1E")
-        with self.assertRaisesRegex(AssertionError, "keys differ"):
+        with self.assertRaisesRegex(build_tokens.CheckError, "keys differ"):
             build_tokens.check(doc)
 
 
@@ -86,7 +86,7 @@ class RaycastReadersTest(unittest.TestCase):
         saved = build_tokens.RULES["component.switch.width"]
         try:
             build_tokens.RULES["component.switch.width"] = saved[:3] + ("round(calc(37 * var(--spx)), 1px)",)
-            with self.assertRaisesRegex(AssertionError, "switch.width"):
+            with self.assertRaisesRegex(build_tokens.CheckError, "switch.width"):
                 build_tokens.verify_rules(json.loads(TOKENS.read_text()))
         finally:
             build_tokens.RULES["component.switch.width"] = saved

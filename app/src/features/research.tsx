@@ -19,6 +19,7 @@ import {
   BookOpen,
   Binoculars,
   Download,
+  Laptop,
   LoaderCircle,
   Monitor,
   Smartphone,
@@ -45,7 +46,7 @@ import {
   ReferenceInspector,
   SaveReference,
 } from "@/components/reference";
-type ResearchMode = "research" | "web" | "ios";
+type ResearchMode = "research" | "web" | "ios" | "desktop";
 const suggestionGroups = {
   Popular: [
     "Signup with email verification",
@@ -82,10 +83,28 @@ const suggestionGroups = {
 };
 type SuggestionGroup = keyof typeof suggestionGroups;
 const modeChoices = [
-  { id: "research" as const, label: "Research mode", icon: Binoculars },
-  { id: "web" as const, label: "Web apps", icon: Monitor },
-  { id: "ios" as const, label: "iOS apps", icon: Smartphone },
+  // `short` is the label a phone-width composer has room for.
+  {
+    id: "research" as const,
+    label: "Research mode",
+    short: "Research",
+    icon: Binoculars,
+  },
+  { id: "web" as const, label: "Web apps", short: "Web", icon: Monitor },
+  { id: "ios" as const, label: "iOS apps", short: "iOS", icon: Smartphone },
+  {
+    id: "desktop" as const,
+    label: "Desktop apps",
+    short: "Desktop",
+    icon: Laptop,
+  },
 ];
+/** The library platform and label each reference mode browses. */
+const referenceModes = {
+  web: { platform: "web", label: "Web" },
+  ios: { platform: "mobile", label: "iOS" },
+  desktop: { platform: "desktop", label: "Desktop" },
+} as const;
 function Composer({
   value,
   onChange,
@@ -150,7 +169,7 @@ function Composer({
           hero
             ? mode === "research"
               ? "Describe a task or ask a question"
-              : `Search ${mode === "web" ? "Web" : "iOS"} app references`
+              : `Search ${referenceModes[mode].label} app references`
             : "Ask follow up…"
         }
         rows={1}
@@ -193,7 +212,8 @@ function Composer({
                   }
                 >
                   <choice.icon size={15} />
-                  <span>{choice.label}</span>
+                  <span className={homeStyles.fullLabel}>{choice.label}</span>
+                  <span className={homeStyles.shortLabel}>{choice.short}</span>
                 </button>
               ))}
             </div>
@@ -249,16 +269,14 @@ export function ResearchHome() {
   const { data } = useResource<{ items: LibraryItem[]; total: number }>(
     mode === "research"
       ? "/api/library?limit=8&source=systems"
-      : mode === "web"
-        ? "/api/library?limit=8&platform=web"
-        : "/api/library?limit=8&platform=mobile",
+      : `/api/library?limit=8&platform=${referenceModes[mode].platform}`,
   );
   const items = data?.items || [];
   async function begin() {
     if (!prompt.trim() || busy) return;
     if (mode !== "research") {
       const params = new URLSearchParams({
-        platform: mode === "web" ? "web" : "mobile",
+        platform: referenceModes[mode].platform,
         q: prompt.trim(),
       });
       router.push(`/library?${params}`);
@@ -306,7 +324,7 @@ export function ResearchHome() {
               <strong>
                 {mode === "research"
                   ? "Meet research mode"
-                  : `Browse ${mode === "web" ? "Web" : "iOS"} app references`}
+                  : `Browse ${referenceModes[mode].label} app references`}
               </strong>
               <p>
                 {mode === "research"
@@ -402,7 +420,7 @@ export function ResearchHome() {
       </section>
       <HomeBrowse
         platform={
-          mode === "ios" ? "mobile" : mode === "web" ? "web" : undefined
+          mode === "research" ? undefined : referenceModes[mode].platform
         }
       />
       <section className={homeStyles.gallery}>
@@ -410,15 +428,13 @@ export function ResearchHome() {
           <h2>
             {mode === "research"
               ? "Sites"
-              : `${mode === "web" ? "Web" : "iOS"} app references`}
+              : `${referenceModes[mode].label} app references`}
           </h2>
           <Link
             href={
               mode === "research"
                 ? "/library"
-                : mode === "web"
-                  ? "/library?platform=web"
-                  : "/library?platform=mobile"
+                : `/library?platform=${referenceModes[mode].platform}`
             }
           >
             Explore all references
@@ -723,6 +739,10 @@ function ResearchConversation({ initial }: { initial: Conversation }) {
           <Link href="/library?platform=mobile">
             <Smartphone size={16} />
             iOS apps
+          </Link>
+          <Link href="/library?platform=desktop">
+            <Laptop size={16} />
+            Desktop apps
           </Link>
         </nav>
       </header>

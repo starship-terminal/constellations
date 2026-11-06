@@ -56,6 +56,10 @@ class Missing(Exception):
     pass
 
 
+class CheckError(ValueError):
+    """A token file or reading a build check rejects. Raised explicitly so the check still runs under python3 -O."""
+
+
 def rd(rid, theme="dark"):
     try:
         return READ[rid][theme]
@@ -283,7 +287,8 @@ def alpha_tokens(theme):
         for s in STEPS:
             name = f"--{b}-{s}"
             raw = decl(name, ".theme-root")
-            assert raw == f"rgb(from var(--{b}) r g b / {s}%)", (name, raw)
+            if not (raw == f"rgb(from var(--{b}) r g b / {s}%)"):
+                raise CheckError(f"{name}: unexpected value {raw}")
             steps[str(s)] = tok(hexa(rgb_of(t[k])[0], s / 100), "color", f"`{name}: {raw}`, worked out for {NAMES[theme]}.", "Derived",
                                 "raw/css-tokens.json", file=CSS["file"], declaration=name)
         out[k] = steps
@@ -310,7 +315,8 @@ def literal(theme, name, selector=".theme-root", desc=""):
     h = {"white": "ffffff", "black": "000000"}.get(raw, raw.lstrip("#"))
     if len(h) in (3, 4):
         h = "".join(c * 2 for c in h)
-    assert re.fullmatch(r"[0-9a-fA-F]{6}([0-9a-fA-F]{2})?", h), (name, raw)
+    if not (re.fullmatch(r"[0-9a-fA-F]{6}([0-9a-fA-F]{2})?", h)):
+        raise CheckError(f"{name}: unexpected value {raw}")
     h = h.upper()
     if len(h) == 8 and h.endswith("FF"):
         h = h[:6]
@@ -523,7 +529,8 @@ def pixel_check(doc):
             rows.append({"theme": theme, "reading": rid, "token": f"{theme}.{path}", "declared": declared,
                          "over": None if under is None else f"{under.lstrip('@')} {rd(under.lstrip('@'), theme)['value']}",
                          "expected": expect, "pixel": got, "maxChannelDiff": diff, "capture": rd(rid, theme)["capture"]})
-    assert worst <= 2, f"pixel check: a declared colour differs from its pixel by {worst} per channel"
+    if not (worst <= 2):
+        raise CheckError(f"pixel check: a declared colour differs from its pixel by {worst} per channel")
     return {"note": "Each translucent token composited over the painted fill under it, against the pixel. A text reading is the glyph pixel "
                     "furthest from the fill, so it matches only where a glyph has a fully covered pixel.", "worst": worst, "rows": rows}
 
@@ -617,8 +624,10 @@ def verify_rules(doc):
                 continue
             if isinstance(t["$value"], str) and t["$value"].startswith("{") and src["evidence"] == "Derived":
                 continue          # a reference to another token, not a transcribed value
-            assert path in RULES, f"{name}.{path}: transcribed from a component rule but names none in RULES"
-            assert find_rule(*RULES[path]), f"{name}.{path}: no rule {RULES[path]} in raw/components-css.json"
+            if not (path in RULES):
+                raise CheckError(f"{name}.{path}: transcribed from a component rule but names none in RULES")
+            if not find_rule(*RULES[path]):
+                raise CheckError(f"{name}.{path}: no rule {RULES[path]} in raw/components-css.json")
     return len(RULES)
 
 
@@ -650,19 +659,24 @@ def check(doc):
         for p, t in walk(doc[name]):
             where = name + "." + ".".join(p)
             src = t.get("$extensions", {}).get("source", {})
-            assert src.get("evidence") and src.get("capture"), f"{where}: no source"
+            if not (src.get("evidence") and src.get("capture")):
+                raise CheckError(f"{where}: no source")
             v = t["$value"]
             for a in aliases(v):
-                assert a in paths, f"{where}: alias {{{a}}} points at nothing"
+                if not (a in paths):
+                    raise CheckError(f"{where}: alias {{{a}}} points at nothing")
             if isinstance(v, str) and v.startswith("{"):
                 continue
             elif t["$type"] == "color":
-                assert re.fullmatch(r"#[0-9A-F]{6}([0-9A-F]{2})?", v), f"{where}: bad colour {v}"
+                if not (re.fullmatch(r"#[0-9A-F]{6}([0-9A-F]{2})?", v)):
+                    raise CheckError(f"{where}: bad colour {v}")
             elif t["$type"] == "dimension":
-                assert re.fullmatch(r"-?\d+(\.\d+)?px", v), f"{where}: bad dimension {v}"
+                if not (re.fullmatch(r"-?\d+(\.\d+)?px", v)):
+                    raise CheckError(f"{where}: bad dimension {v}")
     keys = lambda s: sorted(".".join(p) for p, _ in walk(doc[s]))
     if "light" in doc and "dark" in doc:
-        assert keys("light") == keys("dark"), "light and dark keys differ"
+        if not (keys("light") == keys("dark")):
+            raise CheckError("light and dark keys differ")
 
 
 def build():

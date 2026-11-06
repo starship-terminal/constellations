@@ -44,6 +44,10 @@ class Missing(Exception):
     pass
 
 
+class CheckError(ValueError):
+    """A token file or reading a build check rejects. Raised explicitly so the check still runs under python3 -O."""
+
+
 def rd(rid, theme="dark"):
     try:
         return READ[rid][theme]
@@ -181,7 +185,8 @@ def pixel_check():
                          "composited": f"over {base} {colour(s[base])}" if want[3] < 255 else None,
                          "method": r["op"], "capture": r["capture"]})
     bad = [r for r in rows if r["maxChannelDiff"] > 2]
-    assert not bad, f"pixel and theme file disagree: {bad}"
+    if bad:
+        raise CheckError(f"pixel and theme file disagree: {bad}")
     (RAW / "pixel-check.json").write_text(json.dumps(rows, indent=1) + "\n")
     return rows
 
@@ -429,21 +434,27 @@ def check(doc):
         for p, t in walk(doc[name]):
             where = name + "." + ".".join(p)
             src = t.get("$extensions", {}).get("source", {})
-            assert src.get("evidence") and src.get("capture"), f"{where}: no source"
+            if not (src.get("evidence") and src.get("capture")):
+                raise CheckError(f"{where}: no source")
             v = t["$value"]
             for a in aliases(v):
-                assert a in paths, f"{where}: alias {{{a}}} points at nothing"
+                if not (a in paths):
+                    raise CheckError(f"{where}: alias {{{a}}} points at nothing")
             if isinstance(v, str) and v.startswith("{"):
                 continue
             elif t["$type"] == "color":
-                assert re.fullmatch(r"#[0-9A-F]{6}([0-9A-F]{2})?", v), f"{where}: bad colour {v}"
+                if not (re.fullmatch(r"#[0-9A-F]{6}([0-9A-F]{2})?", v)):
+                    raise CheckError(f"{where}: bad colour {v}")
             elif t["$type"] == "dimension":
-                assert re.fullmatch(r"-?\d+(\.\d+)?px", v), f"{where}: bad dimension {v}"
+                if not (re.fullmatch(r"-?\d+(\.\d+)?px", v)):
+                    raise CheckError(f"{where}: bad dimension {v}")
             elif t["$type"] in ("number", "fontWeight"):
-                assert isinstance(v, (int, float)) and not isinstance(v, bool), f"{where}: {t['$type']} is not a number: {v!r}"
+                if not (isinstance(v, (int, float)) and not isinstance(v, bool)):
+                    raise CheckError(f"{where}: {t['$type']} is not a number: {v!r}")
     keys = lambda s: sorted(".".join(p) for p, _ in walk(doc[s]))
     if "light" in doc and "dark" in doc:
-        assert keys("light") == keys("dark"), "light and dark keys differ"
+        if not (keys("light") == keys("dark")):
+            raise CheckError("light and dark keys differ")
 
 
 def build():
