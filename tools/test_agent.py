@@ -48,7 +48,9 @@ class SearchTest(unittest.TestCase):
     def test_get_style_store_disambiguates(self):
         sys_row = library.get_style("linear", "systems")
         self.assertEqual(sys_row.get("slug"), "linear")
-        if library.REFERO_DB.read_bytes()[:40].startswith(b"version https://git-lfs"):
+        with open(library.REFERO_DB, "rb") as db:   # the real db is ~100 MB: read the head only
+            head = db.read(40)
+        if head.startswith(b"version https://git-lfs"):
             self.skipTest("refero/refero.db is a Git LFS pointer; run git lfs pull for it")
         ref = library.get_style("linear", "refero")
         self.assertEqual(ref.get("slug"), "linear")
