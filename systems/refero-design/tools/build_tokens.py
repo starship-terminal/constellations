@@ -309,45 +309,18 @@ light = build(SPEC["light"], "light")
 dark = build(SPEC["dark"], "dark")
 
 
-# every alias must point at a token that exists
-def tokens_of(tree, prefix=""):
-    for k, v in tree.items():
-        if isinstance(v, dict) and "$value" in v:
-            yield prefix + k, v
-        elif isinstance(v, dict):
-            yield from tokens_of(v, prefix + k + ".")
+# every alias must point at a token in its own set or core; light and dark should name the same roles
+from token_checks import alias_errors, parity_gap  # noqa: E402
 
-
-# Each set resolves against core and itself only (the $themes pair core with one of light or dark),
-# so a light alias that only dark holds would point at nothing in the light theme.
-CORE_NAMES = {n for n, _ in tokens_of(core)}
-SET_NAMES = {"core": CORE_NAMES, "light": CORE_NAMES | {n for n, _ in tokens_of(light)},
-             "dark": CORE_NAMES | {n for n, _ in tokens_of(dark)}}
-
-
-def aliases(v):
-    if isinstance(v, str):
-        return re.findall(r"\{([^{}]+)\}", v)
-    if isinstance(v, dict):
-        return [a for x in v.values() for a in aliases(x)]
-    if isinstance(v, list):
-        return [a for x in v for a in aliases(x)]
-    return []
-
-
-for set_name, tree in (("core", core), ("light", light), ("dark", dark)):
-    for n, tok in tokens_of(tree):
-        for a in aliases(tok["$value"]):
-            if a not in SET_NAMES[set_name]:
-                raise KeyError(f"{set_name}.{n}: alias {{{a}}} points at nothing in core or {set_name}")
-
-# Light and dark should name the same roles: a role only one theme has leaves the other unstyled.
-# The 2026-10 capture does not (20 roles were read only in light, 3 only in dark), so a gap is
-# reported rather than fatal until the capture is redone.
-_light, _dark = {n for n, _ in tokens_of(light)}, {n for n, _ in tokens_of(dark)}
-if _light != _dark:
-    print(f"warning: light and dark differ: {len(_light - _dark)} only in light ({', '.join(sorted(_light - _dark))}); "
-          f"{len(_dark - _light)} only in dark ({', '.join(sorted(_dark - _light))})", file=sys.stderr)
+_errors = alias_errors(core, light, dark)
+if _errors:
+    raise KeyError("; ".join(_errors))
+# A role only one theme has leaves the other unstyled. The 2026-10 capture has 20 roles read only in
+# light and 3 only in dark, so a gap is reported rather than fatal until the capture is redone.
+_only_light, _only_dark = parity_gap(light, dark)
+if _only_light or _only_dark:
+    print(f"warning: light and dark differ: {len(_only_light)} only in light ({', '.join(_only_light)}); "
+          f"{len(_only_dark)} only in dark ({', '.join(_only_dark)})", file=sys.stderr)
 
 tokens = {
     "core": core,

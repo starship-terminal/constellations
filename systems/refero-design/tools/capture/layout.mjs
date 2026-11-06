@@ -6,9 +6,9 @@
 // promo card). raw/pages.md is written by hand from it. Adapted from the Manus kit.
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node layout.mjs [page,page,...]
-import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, STYLES, launch, open, closePromo, firstStyleHref, RAW } from './public/lib.mjs';
+import { updateReadings } from './readings.mjs';
 
 const PAGES = [
   ['home', BASE + '/'],
@@ -79,11 +79,9 @@ function measure() {
   return out;
 }
 
-// Merged into the existing file: a run limited to some pages, or one where a page fails, keeps the
-// other pages' readings instead of writing a file with only what this run measured.
+// Merged into the existing file (readings.mjs): a run limited to some pages, or one where a page
+// fails, keeps the other pages' readings instead of writing a file with only what this run measured.
 const OUT = path.join(RAW, 'layout.json');
-const res = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
-const mob0 = want.length ? want : PAGES.map(([k]) => k);
 // resolve the entity page once
 let entity = null;
 {
@@ -92,21 +90,21 @@ let entity = null;
   entity = await firstStyleHref(p);
   await l.browser.close();
 }
+const jobs = [];
 for (const [label, url0, opts] of PAGES) {
   if (want.length && !want.includes(label)) continue;
   const url = url0 === 'ENTITY' ? (entity ? STYLES + entity : null) : url0;
   if (!url) { console.log('skip', label, '(no /style/ link)'); continue; }
-  const l = await launch({ mobile: !!opts?.mobile });
-  const p = await l.context.newPage();
-  try {
-    await open(p, url, { wait: url.includes('/style/') ? 8000 : 6000 });
-    res[`${label}@${opts?.mobile ? 390 : 1440}`] = { label, url: url.replace(/\/style\/[0-9a-z-]+/, '/style/<id>'), ...(await p.evaluate(measure)) };
-    console.log(label, opts?.mobile ? 390 : 1440);
-  } catch (e) {
-    console.log('failed', label, e.message.split('\n')[0]);
-  }
-  await l.browser.close();
+  jobs.push([`${label}@${opts?.mobile ? 390 : 1440}`, async () => {
+    const l = await launch({ mobile: !!opts?.mobile });
+    try {
+      const p = await l.context.newPage();
+      await open(p, url, { wait: url.includes('/style/') ? 8000 : 6000 });
+      return { label, url: url.replace(/\/style\/[0-9a-z-]+/, '/style/<id>'), ...(await p.evaluate(measure)) };
+    } finally {
+      await l.browser.close();
+    }
+  }]);
 }
-fs.mkdirSync(RAW, { recursive: true });
-fs.writeFileSync(OUT, JSON.stringify(res, null, 1) + '\n');
+const res = await updateReadings(OUT, jobs);
 console.log('raw/layout.json', Object.keys(res).length, 'pages');
