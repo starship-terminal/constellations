@@ -1,0 +1,551 @@
+{
+  "components": [
+    {
+      "id": "button",
+      "title": "Button",
+      "description": "The header primary action, secondary install-command control and disabled Invite control were captured at rest. No primary hover or pressed reading was taken.",
+      "states": [
+        {
+          "name": "primary-default",
+          "screenshot": "screenshots/overview-dark-desktop.png",
+          "reading": "overview-dark-desktop.json",
+          "elementIndex": 8
+        },
+        {
+          "name": "secondary-default",
+          "screenshot": "screenshots/overview-dark-desktop.png",
+          "reading": "overview-dark-desktop.json",
+          "elementIndex": 28
+        },
+        {
+          "name": "disabled",
+          "screenshot": "screenshots/overview-dark-desktop.png",
+          "note": "The disabled attribute was recorded. Opacity and ancestor compositing were not included in the style reading; these colors describe the element before that compositing.",
+          "reading": "overview-dark-desktop.json",
+          "elementIndex": 7
+        },
+        {
+          "name": "dialog-primary",
+          "reading": "password-requirements-dialog-dark-desktop.json",
+          "elementIndex": 117,
+          "screenshot": "screenshots/password-requirements-dialog-dark-desktop.png",
+          "crop": "components/crops/primary-button-default.png"
+        },
+        {
+          "name": "dialog-secondary",
+          "reading": "password-requirements-dialog-dark-desktop.json",
+          "elementIndex": 116,
+          "screenshot": "screenshots/password-requirements-dialog-dark-desktop.png",
+          "crop": "components/crops/secondary-button-default.png"
+        },
+        {
+          "name": "danger-default",
+          "reading": "disable-native-confirmation-dark-desktop.json",
+          "elementIndex": 136,
+          "screenshot": "screenshots/disable-native-confirmation-dark-desktop.png",
+          "note": "Measured destructive confirmation action at rest. The action was not activated."
+        },
+        {
+          "name": "primary-default",
+          "reading": "authentication-email-light-desktop.json",
+          "screenshot": "screenshots/authentication-email-light-desktop.png",
+          "elementIndex": 8
+        },
+        {
+          "name": "disabled",
+          "reading": "authentication-email-light-desktop.json",
+          "screenshot": "screenshots/authentication-email-light-desktop.png",
+          "elementIndex": 7
+        },
+        {
+          "name": "dialog-primary",
+          "reading": "password-requirements-dialog-light-desktop.json",
+          "screenshot": "screenshots/password-requirements-dialog-light-desktop.png",
+          "elementIndex": 71,
+          "crop": "components/crops/primary-button-light-default.png"
+        },
+        {
+          "name": "dialog-secondary",
+          "reading": "password-requirements-dialog-light-desktop.json",
+          "screenshot": "screenshots/password-requirements-dialog-light-desktop.png",
+          "elementIndex": 70,
+          "crop": "components/crops/secondary-button-light-default.png"
+        }
+      ]
+    },
+    {
+      "id": "icon-button",
+      "title": "Icon button",
+      "description": "The notification control in the header was measured at rest. The unread-count marker is visible in the screenshot; its own element was not measured.",
+      "states": [
+        {
+          "name": "default",
+          "screenshot": "screenshots/overview-dark-desktop.png",
+          "reading": "overview-dark-desktop.json",
+          "elementIndex": 6
+        },
+        {
+          "name": "default",
+          "reading": "authentication-email-light-desktop.json",
+          "screenshot": "screenshots/authentication-email-light-desktop.png",
+          "elementIndex": 6
+        }
+      ]
+    },
+    {
+      "id": "link",
+      "title": "Link",
+      "description": "The Learn more action in the announcement was measured at rest.",
+      "states": [
+        {
+          "name": "default",
+          "screenshot": "screenshots/apps-dark-desktop.png",
+          "reading": "apps-dark-desktop.json",
+          "elementIndex": 7
+        },
+        {
+          "name": "default",
+          "reading": "authentication-email-light-desktop.json",
+          "screenshot": "screenshots/authentication-email-light-desktop.png",
+          "elementIndex": 13
+        }
+      ]
+    },
+    {
+      "id": "input",
+      "title": "Input",
+      "description": "The password-length field was measured in the open requirements dialog, then after the capture operator focused it. The Legal page supplies a disabled field. The input is transparent; its visible shell belongs to another element.",
+      "states": [
+        {
+          "name": "default",
+          "screenshot": "screenshots/password-requirements-dialog-dark-desktop.png",
+          "reading": "password-requirements-dialog-dark-desktop.json",
+          "elementIndex": 99,
+          "crop": "components/crops/input-password-default.png"
+        },
+        {
+          "name": "focused",
+          "screenshot": "screenshots/password-dialog-focus-dark-desktop.png",
+          "note": "The input reports outline-style none and box-shadow none. This reading does not establish a painted focus ring on its wrapper.",
+          "reading": "password-dialog-focus-dark-desktop.json",
+          "elementIndex": 99,
+          "crop": "components/crops/input-password-focus.png"
+        },
+        {
+          "name": "disabled",
+          "screenshot": "screenshots/legal-dark-desktop.png",
+          "reading": "legal-dark-desktop.json",
+          "elementIndex": 69
+        },
+        {
+          "name": "default",
+          "reading": "password-requirements-dialog-light-desktop.json",
+          "screenshot": "screenshots/password-requirements-dialog-light-desktop.png",
+          "note": "The light numeric length field was measured after switching the app to Light. Its transparent input does not establish the wrapper paint.",
+          "elementIndex": 53,
+          "crop": "components/crops/input-password-light-default.png"
+        }
+      ]
+    },
+    {
+      "id": "textarea",
+      "title": "Textarea and code editor",
+      "description": "Sessions contains a Monaco code editor and a real textarea helper. The helper has transparent text and is not a conventional multiline form field. The full visible editor was measured separately.",
+      "states": [
+        {
+          "name": "editor-surface",
+          "screenshot": "screenshots/sessions-dark-desktop.png",
+          "reading": "sessions-dark-desktop.json",
+          "elementIndex": 105
+        },
+        {
+          "name": "textarea-helper",
+          "screenshot": "screenshots/sessions-dark-desktop.png",
+          "note": "Measured native textarea helper only. A conventional visible multiline textarea and its states were not captured.",
+          "reading": "sessions-dark-desktop.json",
+          "elementIndex": 106
+        }
+      ]
+    },
+    {
+      "id": "select",
+      "title": "Select and application switcher",
+      "description": "The application switcher was captured closed and open. Sessions also contains a native select helper for the duration unit; it does not establish the button shell appearance.",
+      "states": [
+        {
+          "name": "trigger",
+          "screenshot": "screenshots/overview-dark-desktop.png",
+          "reading": "overview-dark-desktop.json",
+          "elementIndex": 3
+        },
+        {
+          "name": "open",
+          "screenshot": "screenshots/application-switcher-dark-desktop.png",
+          "reading": "application-switcher-dark-desktop.json",
+          "elementIndex": 156
+        },
+        {
+          "name": "native-helper",
+          "screenshot": "screenshots/sessions-dark-desktop.png",
+          "reading": "sessions-dark-desktop.json",
+          "elementIndex": 83
+        },
+        {
+          "name": "trigger",
+          "reading": "authentication-email-light-desktop.json",
+          "screenshot": "screenshots/authentication-email-light-desktop.png",
+          "elementIndex": 3
+        }
+      ]
+    },
+    {
+      "id": "checkbox",
+      "title": "Checkbox",
+      "description": "Email verification has a checked code option and an unchecked link option in the screenshot. Native inputs were measured, but the visible square wrappers were not.",
+      "states": [
+        {
+          "name": "checked-native-input",
+          "screenshot": "screenshots/authentication-email-dark-desktop.png",
+          "reading": "authentication-email-dark-desktop.json",
+          "elementIndex": 91
+        },
+        {
+          "name": "unchecked-native-input",
+          "screenshot": "screenshots/authentication-email-dark-desktop.png",
+          "reading": "authentication-email-dark-desktop.json",
+          "elementIndex": 93
+        },
+        {
+          "name": "checked-native-input",
+          "reading": "authentication-email-light-desktop.json",
+          "screenshot": "screenshots/authentication-email-light-desktop.png",
+          "elementIndex": 46
+        },
+        {
+          "name": "unchecked-native-input",
+          "reading": "authentication-email-light-desktop.json",
+          "screenshot": "screenshots/authentication-email-light-desktop.png",
+          "elementIndex": 48
+        }
+      ]
+    },
+    {
+      "id": "radio",
+      "title": "Radio choice",
+      "description": "Access mode shows selected Open and unselected Waitlist choices. These measurements belong to the painted choice-label containers, not the native radio circle.",
+      "states": [
+        {
+          "name": "unselected-choice",
+          "screenshot": "screenshots/access-mode-dark-desktop.png",
+          "reading": "access-mode-dark-desktop.json",
+          "elementIndex": 66
+        },
+        {
+          "name": "selected-choice",
+          "screenshot": "screenshots/access-mode-dark-desktop.png",
+          "reading": "access-mode-dark-desktop.json",
+          "elementIndex": 70
+        }
+      ]
+    },
+    {
+      "id": "switch",
+      "title": "Switch",
+      "description": "The email configuration shows on and off switches. The role=switch inputs were measured; their painted tracks and thumbs were not separate measured elements.",
+      "states": [
+        {
+          "name": "on-native-input",
+          "screenshot": "screenshots/authentication-email-dark-desktop.png",
+          "reading": "authentication-email-dark-desktop.json",
+          "elementIndex": 83
+        },
+        {
+          "name": "off-native-input",
+          "screenshot": "screenshots/authentication-email-dark-desktop.png",
+          "reading": "authentication-email-dark-desktop.json",
+          "elementIndex": 101
+        },
+        {
+          "name": "dialog-on-native-input",
+          "reading": "password-requirements-dialog-dark-desktop.json",
+          "elementIndex": 103,
+          "screenshot": "screenshots/password-requirements-dialog-dark-desktop.png",
+          "crop": "components/crops/toggle-on.png",
+          "note": "Reject compromised passwords switch. Its native input was measured; the crop supplies the painted track and thumb evidence."
+        },
+        {
+          "name": "dialog-off-native-input",
+          "reading": "password-requirements-dialog-dark-desktop.json",
+          "elementIndex": 106,
+          "screenshot": "screenshots/password-requirements-dialog-dark-desktop.png",
+          "crop": "components/crops/toggle-off.png",
+          "note": "Enforce minimum password strength switch. Its native input was measured; the crop supplies the painted track and thumb evidence."
+        },
+        {
+          "name": "on-native-input",
+          "reading": "authentication-email-light-desktop.json",
+          "screenshot": "screenshots/authentication-email-light-desktop.png",
+          "elementIndex": 38
+        },
+        {
+          "name": "off-native-input",
+          "reading": "authentication-email-light-desktop.json",
+          "screenshot": "screenshots/authentication-email-light-desktop.png",
+          "elementIndex": 56
+        },
+        {
+          "name": "dialog-on-native-input",
+          "reading": "password-requirements-dialog-light-desktop.json",
+          "elementIndex": 57,
+          "screenshot": "screenshots/password-requirements-dialog-light-desktop.png",
+          "crop": "components/crops/toggle-on-light.png",
+          "note": "Reject compromised passwords switch. Native input measured; crop supplies the painted track and thumb evidence."
+        },
+        {
+          "name": "dialog-off-native-input",
+          "reading": "password-requirements-dialog-light-desktop.json",
+          "elementIndex": 60,
+          "screenshot": "screenshots/password-requirements-dialog-light-desktop.png",
+          "crop": "components/crops/toggle-off-light.png",
+          "note": "Enforce minimum password strength switch. Native input measured; crop supplies the painted track and thumb evidence."
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "title": "Tabs",
+      "description": "The email configuration shows selected Email and unselected Phone tabs. The state names refer to the captured page, not a forced or reconstructed state.",
+      "states": [
+        {
+          "name": "selected",
+          "screenshot": "screenshots/authentication-email-dark-desktop.png",
+          "reading": "authentication-email-dark-desktop.json",
+          "elementIndex": 73,
+          "crop": "components/crops/tabs-email.png"
+        },
+        {
+          "name": "unselected",
+          "screenshot": "screenshots/authentication-email-dark-desktop.png",
+          "reading": "authentication-email-dark-desktop.json",
+          "elementIndex": 74
+        },
+        {
+          "name": "selected",
+          "reading": "authentication-email-light-desktop.json",
+          "screenshot": "screenshots/authentication-email-light-desktop.png",
+          "elementIndex": 28
+        },
+        {
+          "name": "unselected",
+          "reading": "authentication-email-light-desktop.json",
+          "screenshot": "screenshots/authentication-email-light-desktop.png",
+          "elementIndex": 29
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "title": "Menu",
+      "description": "The Preview menu and account menu were opened without choosing an action. The preview has a real menu role; the account popup is exposed as a dialog.",
+      "states": [
+        {
+          "name": "preview-open",
+          "screenshot": "screenshots/authentication-preview-menu-dark-desktop.png",
+          "reading": "authentication-preview-menu-dark-desktop.json",
+          "elementIndex": 95
+        },
+        {
+          "name": "account-open",
+          "screenshot": "screenshots/account-menu-dark-desktop.png",
+          "reading": "account-menu-dark-desktop.json",
+          "elementIndex": 23
+        }
+      ]
+    },
+    {
+      "id": "dialog",
+      "title": "Dialog",
+      "description": "The password-requirements dialog was captured open, then with its length input focused. The dialog section is transparent; a surrounding surface supplies the visible panel. The create-user dialog was opened without submission. The Disable native applications alert dialog was opened and cancelled.",
+      "states": [
+        {
+          "name": "open",
+          "screenshot": "screenshots/password-requirements-dialog-dark-desktop.png",
+          "reading": "password-requirements-dialog-dark-desktop.json",
+          "elementIndex": 94,
+          "crop": "components/crops/dialog-password.png"
+        },
+        {
+          "name": "input-focused",
+          "screenshot": "screenshots/password-dialog-focus-dark-desktop.png",
+          "reading": "password-dialog-focus-dark-desktop.json",
+          "elementIndex": 94
+        },
+        {
+          "name": "create-user-open",
+          "reading": "create-user-dialog-dark-desktop.json",
+          "elementIndex": 157,
+          "screenshot": "screenshots/create-user-dialog-dark-desktop.png",
+          "crop": "components/crops/dialog-create-user.png",
+          "note": "The dialog was opened without submitting the form. The native crop shows the complete modal; the underlying desktop full-page screenshot contains a dark strip below the viewport."
+        },
+        {
+          "name": "destructive-confirmation-open",
+          "reading": "disable-native-confirmation-dark-desktop.json",
+          "elementIndex": 132,
+          "screenshot": "screenshots/disable-native-confirmation-dark-desktop.png",
+          "note": "The alert dialog was opened and cancelled. The destructive action was not confirmed."
+        },
+        {
+          "name": "open",
+          "reading": "password-requirements-dialog-light-desktop.json",
+          "screenshot": "screenshots/password-requirements-dialog-light-desktop.png",
+          "elementIndex": 48,
+          "crop": "components/crops/dialog-password-light.png"
+        }
+      ]
+    },
+    {
+      "id": "card",
+      "title": "Card",
+      "description": "The overview setup cards and authentication settings cards are visible. Their outer card containers were not part of the measured selector list, so no card geometry or shadow token is inferred.",
+      "states": [
+        {
+          "name": "overview-cards",
+          "screenshot": "screenshots/overview-dark-desktop.png",
+          "observedOnly": true
+        },
+        {
+          "name": "settings-cards",
+          "screenshot": "screenshots/authentication-email-dark-desktop.png",
+          "observedOnly": true
+        },
+        {
+          "name": "light-settings-cards",
+          "reading": "authentication-email-light-desktop.json",
+          "screenshot": "screenshots/authentication-email-light-desktop.png",
+          "observedOnly": true
+        }
+      ],
+      "observedOnly": true
+    },
+    {
+      "id": "table",
+      "title": "Table",
+      "description": "The Overview user table was measured as a grid. Its rows extend below the initial viewport. The table itself is transparent; separate cells and surrounding layers supply the visible surfaces.",
+      "states": [
+        {
+          "name": "default",
+          "screenshot": "screenshots/overview-dark-desktop.png",
+          "reading": "overview-dark-desktop.json",
+          "elementIndex": 46
+        },
+        {
+          "name": "mobile",
+          "reading": "users-dark-mobile.json",
+          "elementIndex": 40,
+          "screenshot": "screenshots/users-dark-mobile.png"
+        },
+        {
+          "name": "default",
+          "reading": "users-light-desktop.json",
+          "screenshot": "screenshots/users-light-desktop.png",
+          "elementIndex": 40
+        }
+      ]
+    },
+    {
+      "id": "row",
+      "title": "Table row",
+      "description": "A populated table row and its first cell were measured. The documentation does not repeat the account data shown in those elements.",
+      "states": [
+        {
+          "name": "default-row",
+          "screenshot": "screenshots/overview-dark-desktop.png",
+          "reading": "overview-dark-desktop.json",
+          "elementIndex": 54
+        },
+        {
+          "name": "first-cell",
+          "screenshot": "screenshots/overview-dark-desktop.png",
+          "reading": "overview-dark-desktop.json",
+          "elementIndex": 55
+        },
+        {
+          "name": "default-row",
+          "reading": "users-light-desktop.json",
+          "screenshot": "screenshots/users-light-desktop.png",
+          "elementIndex": 48
+        },
+        {
+          "name": "first-cell",
+          "reading": "users-light-desktop.json",
+          "screenshot": "screenshots/users-light-desktop.png",
+          "elementIndex": 49
+        }
+      ]
+    },
+    {
+      "id": "avatar",
+      "title": "Avatar",
+      "description": "Circular user avatars are visible in the user table. The avatars were not isolated by the computed-style selector list, so their size and colors remain observed only.",
+      "states": [
+        {
+          "name": "table-avatars",
+          "screenshot": "screenshots/overview-dark-desktop.png",
+          "observedOnly": true
+        },
+        {
+          "name": "light-table-avatars",
+          "reading": "users-light-desktop.json",
+          "screenshot": "screenshots/users-light-desktop.png",
+          "observedOnly": true
+        }
+      ],
+      "observedOnly": true
+    },
+    {
+      "id": "badge",
+      "title": "Badge",
+      "description": "The header plan badge, notification count and Recommended label on authentication settings are visible. Their own elements were not measured.",
+      "states": [
+        {
+          "name": "header-badges",
+          "screenshot": "screenshots/overview-dark-desktop.png",
+          "observedOnly": true
+        },
+        {
+          "name": "recommendation-badge",
+          "screenshot": "screenshots/authentication-email-dark-desktop.png",
+          "observedOnly": true
+        },
+        {
+          "name": "light-recommendation-badge",
+          "reading": "authentication-email-light-desktop.json",
+          "screenshot": "screenshots/authentication-email-light-desktop.png",
+          "observedOnly": true
+        }
+      ],
+      "observedOnly": true
+    },
+    {
+      "id": "tooltip",
+      "title": "Tooltip",
+      "description": "No isolated tooltip was captured.",
+      "status": "not-captured",
+      "gap": "The persistent announcement popover is recorded as an announcement, not evidence of a tooltip state."
+    },
+    {
+      "id": "toast",
+      "title": "Toast",
+      "description": "No toast was captured.",
+      "status": "not-captured",
+      "gap": "No success or failure notification was triggered merely to manufacture a toast example."
+    }
+  ],
+  "gaps": [
+    "Light dashboard evidence covers workspace settings, email and password authentication settings, password requirements, and Users at 884 x 1104 CSS px. Other light pages and primary hover/pressed states were not captured. Only the listed phone dashboard pages were captured; public marketing light captures remain separate evidence.",
+    "Painted checkbox, radio and switch subparts were not measured separately from the native helper or label containers.",
+    "Tooltip and toast remain not captured. Loading, validation-error and pending-save states were not captured. The destructive confirmation dialog was captured without submitting its action.",
+    "Visible card containers, avatars and badges have screenshot evidence only. Native screenshot coordinates differ from live DOM coordinates, so only manually verified native-pixel boxes may produce crops."
+  ]
+}

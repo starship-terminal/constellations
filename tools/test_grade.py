@@ -361,5 +361,30 @@ class RealLibraryTest(unittest.TestCase):
                 self.assertIn(g["grade"], scorecard.GRADES)
 
 
+class NextPathTest(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.folder = Path(self.tmp.name) / "audits"
+        self.folder.mkdir()
+        patcher = mock.patch.object(scorecard, "DATA", Path(self.tmp.name))
+        patcher.start()
+        self.addCleanup(patcher.stop)
+        self.addCleanup(self.tmp.cleanup)
+
+    def touch(self, *names):
+        for n in names:
+            (self.folder / n).write_text("{}")
+
+    def test_first_of_the_day_has_no_number(self):
+        self.assertEqual(grade.next_path("2026-11-06").name, "2026-11-06.json")
+
+    def test_follows_the_highest_number_even_across_a_gap(self):
+        self.touch("2026-11-06.json", "2026-11-06-2.json", "2026-11-06-18.json")
+        self.assertEqual(grade.next_path("2026-11-06").name, "2026-11-06-19.json")
+
+    def test_other_dates_do_not_count(self):
+        self.touch("2026-11-05-9.json", "2026-11-060.json")
+        self.assertEqual(grade.next_path("2026-11-06").name, "2026-11-06.json")
+
 if __name__ == "__main__":
     unittest.main()

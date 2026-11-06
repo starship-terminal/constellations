@@ -1,0 +1,961 @@
+{
+  "method": "Sanitize display text; preserve all computed measurements. Native-pixel OCR in normal and local-contrast passes; exact image rules where present; solid surrounding-colour fill; median-cut 256 colours without dithering; post-write OCR.",
+  "coordinateNote": "DOM email masks are excluded because their coordinate space differs from these screenshots. OCR operates directly on native PNG pixels.",
+  "measurements": [
+    {
+      "file": "access-mode-dark-desktop.json",
+      "sourceSha256": "696994f4d8c4ecff7705790c3656404ba80436954968b4ee6aa0bc285abfb13e",
+      "elements": 76
+    },
+    {
+      "file": "account-menu-dark-desktop.json",
+      "sourceSha256": "8b18969aaec19fed5990fb4157973f6eb1c1946bb857aa72e65239800dc5849e",
+      "elements": 32
+    },
+    {
+      "file": "account-portal-dark-desktop.json",
+      "sourceSha256": "9a27ae7f87a53eb9d56317c09d95638e1514636fb89a91e3e56711808ede1362",
+      "elements": 101
+    },
+    {
+      "file": "application-settings-dark-desktop.json",
+      "sourceSha256": "69a12658f4dd280c381ae1944212dfbdd177e387af701609620f6f2d083f291c",
+      "elements": 93
+    },
+    {
+      "file": "application-switcher-dark-desktop.json",
+      "sourceSha256": "fcab6723a9992e70850ea108d403376335136e603e35e76ee4081c95e0ba767c",
+      "elements": 165
+    },
+    {
+      "file": "apps-dark-desktop.json",
+      "sourceSha256": "af812e16d1894541399d3e8e1ac4f067ce2bbe3b4da63a3eb74f2b63a6e50842",
+      "elements": 23
+    },
+    {
+      "file": "authentication-biometric-dark-desktop.json",
+      "sourceSha256": "fbae65e6de8f0c530823d7f5c3407b4b435f9f94025d9ff05fee9721d38e4b73",
+      "elements": 86
+    },
+    {
+      "file": "authentication-email-dark-1440.json",
+      "sourceSha256": "b8b6b753e6410a768681aae805813d2da0577b4dad516e01b297a0758ce23a3f",
+      "elements": 104
+    },
+    {
+      "file": "authentication-email-dark-desktop.json",
+      "sourceSha256": "fdd96da1f20f2218c1f0d6bfe237f2afb727e67da74d816ae11fea76190eb1ef",
+      "elements": 103
+    },
+    {
+      "file": "authentication-email-dark-mobile.json",
+      "sourceSha256": "a2a2737a78d3769d3ada498ff86c3dad3eb39b3263d645f47666d819e5362626",
+      "elements": 51
+    },
+    {
+      "file": "authentication-email-light-desktop.json",
+      "sourceSha256": "db526651277900e021b37acbaa0e5863ed355fbfad3be44d0ddeea50f757618e",
+      "elements": 58
+    },
+    {
+      "file": "authentication-passkeys-dark-desktop.json",
+      "sourceSha256": "03988a1db0453140b9acd16f783209e1f3b6de25fe89083a2a96b4e605a12f20",
+      "elements": 90
+    },
+    {
+      "file": "authentication-password-dark-desktop.json",
+      "sourceSha256": "2e344d3d13a98aab05b5545acbe0faefc3785c2391649c26b46ff3265ca84ce7",
+      "elements": 93
+    },
+    {
+      "file": "authentication-password-light-desktop.json",
+      "sourceSha256": "0ff945c61e818b2c90d515604e17f6915e19d3c16c1de162feb129302fdbcf29",
+      "elements": 47
+    },
+    {
+      "file": "authentication-phone-dark-desktop.json",
+      "sourceSha256": "4c2fd2aef1007b7101840d6ab29c5bc068d317d17e6236006541f36b5456088c",
+      "elements": 92
+    },
+    {
+      "file": "authentication-preview-menu-dark-desktop.json",
+      "sourceSha256": "b7215d6e3ca47a7bc66a0c73e96fd3d0150895f6709935e41c15f8a6402ec759",
+      "elements": 101
+    },
+    {
+      "file": "authentication-user-model-dark-desktop.json",
+      "sourceSha256": "1cb231ceba484b88fb415c1a9ce1d0fd88e2453dbc265c3436f934026d0a2f10",
+      "elements": 95
+    },
+    {
+      "file": "authentication-username-dark-desktop.json",
+      "sourceSha256": "ef727313c79b8be1747baac7c944347b19cb79c579d57547d6c817403880fb45",
+      "elements": 91
+    },
+    {
+      "file": "avatars-dark-desktop.json",
+      "sourceSha256": "51b5eada08a691fa5d86269f16ebccc0d7f8d1e3252af7f291104bf4e01a6745",
+      "elements": 99
+    },
+    {
+      "file": "billing-onboarding-dark-desktop.json",
+      "sourceSha256": "4afd2f3b2542a885a42ccbcdaaebd1ad8d086dbb8f4be33d0f7f7d0118cdb3ec",
+      "elements": 28
+    },
+    {
+      "file": "blocklist-dark-desktop.json",
+      "sourceSha256": "b4ae506527122a4ff2aae798da34378ba0798b741051e01f48b138a59b14bc09",
+      "elements": 74
+    },
+    {
+      "file": "command-menu-dark-desktop.json",
+      "sourceSha256": "779285ceece2447fb67d60a3eb740f6542ffa13a55ff524e7aaab07218c5b76e",
+      "elements": 121
+    },
+    {
+      "file": "country-select-menu-dark-desktop.json",
+      "sourceSha256": "42b475346dee15d05d4e54aca2413b8613093ed78cef046d3d0ec24230bfbc65",
+      "elements": 430
+    },
+    {
+      "file": "create-user-dialog-dark-desktop.json",
+      "sourceSha256": "feb73c10c5acc6d7b8d8fefb216d24172ca31520789411d9fc1bae060d45d9e8",
+      "elements": 190
+    },
+    {
+      "file": "create-user-dialog-dark-mobile.json",
+      "sourceSha256": "3b72d19804cab3dd04ceef6fb1bf15c8ac0dcb167c9f19e7e9b75083e27008d0",
+      "elements": 185
+    },
+    {
+      "file": "disable-native-confirmation-dark-desktop.json",
+      "sourceSha256": "7cbacad41a6270479ee78e7d63ea2622965e063ea1f80e460ad68cb4b242e027",
+      "elements": 137
+    },
+    {
+      "file": "domains-dark-desktop.json",
+      "sourceSha256": "c42f8d7645d1cde531d783f39a0c7e7e69b3b6012862ffbf6a42766df31dc700",
+      "elements": 82
+    },
+    {
+      "file": "email-templates-dark-desktop.json",
+      "sourceSha256": "fa70a9957c0a18f3c54e886fd9e1202f5b98f47df8e1649b6ad607d33ac44128",
+      "elements": 123
+    },
+    {
+      "file": "features-dark-desktop.json",
+      "sourceSha256": "99d2a53b7d4d9c9cba8f8eae8815208c2df4af6452984db17dea9c48bedef7b9",
+      "elements": 82
+    },
+    {
+      "file": "integrations-dark-desktop.json",
+      "sourceSha256": "5aea94bca72cb986f723cd7a6d7d710911ce2749a42caeeb2d4923613430edc6",
+      "elements": 85
+    },
+    {
+      "file": "legal-dark-desktop.json",
+      "sourceSha256": "780fca96ef00df9889c2c15179f69ac6480b65b76306322e35a3dc2145679044",
+      "elements": 73
+    },
+    {
+      "file": "logs-empty-dark-desktop.json",
+      "sourceSha256": "748ff8eab4597329a6f333242508448da0a29d577cc396209869d4e4bacd6701",
+      "elements": 60
+    },
+    {
+      "file": "logs-event-filter-dark-desktop.json",
+      "sourceSha256": "348a367b5a712e9ba2ec422b595a92e9ba8af3209c39acecee1f16b1dd6e3c89",
+      "elements": 295
+    },
+    {
+      "file": "mcp-servers-dark-desktop.json",
+      "sourceSha256": "ebd4167d7fde33ebc6ba8b3b78b0807a6a07e656305e3b715e56d6939f120360",
+      "elements": 69
+    },
+    {
+      "file": "multi-factor-dark-desktop.json",
+      "sourceSha256": "e0dc7e173d4600f60caf9a17d3391b3f8e2be59734e53183fc32b8f0a12a2813",
+      "elements": 89
+    },
+    {
+      "file": "native-applications-dark-desktop.json",
+      "sourceSha256": "f0b40aa9d6a3468645d0ca3e57c077c6143106bfcedbd931d34eb6222ff0f3f0",
+      "elements": 132
+    },
+    {
+      "file": "oauth-applications-dark-desktop.json",
+      "sourceSha256": "e68c2051437a6c58fc1f74537ea17767d0859a2a3a3524bdd9379518218114ef",
+      "elements": 105
+    },
+    {
+      "file": "organizations-onboarding-dark-desktop.json",
+      "sourceSha256": "b0b35a7ab8566309fdb829f5a4035065cb33516a7b913f049cb7d4fae1704da1",
+      "elements": 60
+    },
+    {
+      "file": "overview-dark-desktop.json",
+      "sourceSha256": "044f04e437d7cdaf7721e7e4b9dd233f021b259c9ba15182c33bcab5b1938f43",
+      "elements": 156
+    },
+    {
+      "file": "password-dialog-focus-dark-desktop.json",
+      "sourceSha256": "94c10bb9b607e7388d27e29e7631a71719597b5dc328f3008e9ec2635736af5d",
+      "elements": 118
+    },
+    {
+      "file": "password-requirements-dialog-dark-desktop.json",
+      "sourceSha256": "37f292c2b07956d3440b49358b1e4919a345ae616cf5980495b02c48c87a8b23",
+      "elements": 118
+    },
+    {
+      "file": "password-requirements-dialog-light-desktop.json",
+      "sourceSha256": "7044255620f5b28d8a09a4f5345309658eb7f2cee98b45dc69ab1802946b538f",
+      "elements": 72
+    },
+    {
+      "file": "paths-dark-desktop.json",
+      "sourceSha256": "2ae34d1bf32973e08ab1e398db5cf395fd081e897a25fa97215bea7b936b17f7",
+      "elements": 119
+    },
+    {
+      "file": "protections-dark-desktop.json",
+      "sourceSha256": "a9ef562f9e465196c014d7400c3e7d9b65ddc2cbe482b0d98ca3850d106a353b",
+      "elements": 155
+    },
+    {
+      "file": "redirect-url-dialog-dark-desktop.json",
+      "sourceSha256": "a50627bd8287761e9c97ea62febf6780144a23faf8d27a658370149655de60e3",
+      "elements": 142
+    },
+    {
+      "file": "sessions-dark-desktop.json",
+      "sourceSha256": "934aed9e22f3d09eb179cd6a0006926a3cfbda2beba5659f351c5c145e11395d",
+      "elements": 164
+    },
+    {
+      "file": "sms-templates-dark-desktop.json",
+      "sourceSha256": "caf51c7b1db9e7788c48bb360aa064bd97de2fe8ddf4746851ded932a5187760",
+      "elements": 157
+    },
+    {
+      "file": "sso-add-menu-dark-desktop.json",
+      "sourceSha256": "65f3fb6688b02aa49c0f1137e6c4cff01885d253b8ffd8c9ff61a394a3976f88",
+      "elements": 104
+    },
+    {
+      "file": "sso-connections-dark-desktop.json",
+      "sourceSha256": "ea092efa381ef093e8cadf5f7c7f77e161dd36d581da917931a611a810082ece",
+      "elements": 88
+    },
+    {
+      "file": "users-columns-menu-dark-desktop.json",
+      "sourceSha256": "aa91d8dc89a5ec1498cbb3d6d981b43927f00885c9c7e4e63dc777755aee1589",
+      "elements": 173
+    },
+    {
+      "file": "users-dark-desktop.json",
+      "sourceSha256": "e616f3473bfe76a5583f7b8987e205ceb85943194c7db424f70eabcb9e34da55",
+      "elements": 156
+    },
+    {
+      "file": "users-dark-mobile.json",
+      "sourceSha256": "f805746138425ea16d4361d57469baa3fcdd9cf1c3f4f58c822f5b10cef01f81",
+      "elements": 155
+    },
+    {
+      "file": "users-light-desktop.json",
+      "sourceSha256": "a7e386a03435fe5e6dc131787a9f8bf600ea0969760611264a12c2cc92e25056",
+      "elements": 156
+    },
+    {
+      "file": "web3-dark-desktop.json",
+      "sourceSha256": "8f2d10bc64ce4d8b9a7ba8b6f6606e122b366911075cb42dabe605ef275d7880",
+      "elements": 83
+    },
+    {
+      "file": "workspace-settings-dark-desktop.json",
+      "sourceSha256": "d9979418480a60775ceb30622629b99b66bd8a670490b41ced626f4523ad91eb",
+      "elements": 42
+    },
+    {
+      "file": "workspace-settings-light-desktop.json",
+      "sourceSha256": "189510f3fe889871194b7c218af0121217e0fe2b5af29ea2566d67133fedf65a",
+      "elements": 36
+    },
+    {
+      "file": "workspace-team-dark-desktop.json",
+      "sourceSha256": "9dac6341f36da463b3b2acfebae49d4c029b8080fe88b7cf88d3b26b579cb9ce",
+      "elements": 68
+    }
+  ],
+  "images": [
+    {
+      "file": "access-mode-dark-desktop.png",
+      "sourceSha256": "e402eff316a248ac5ec9be08ee9a7d29d64dd28e5bffc74272f03cb4ec1191a2",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "19da2dd51fe17cbc8bc687e0851f72f64b0b4cdbcd394f57dd98bdf1a5d4c9f8"
+    },
+    {
+      "file": "account-menu-dark-desktop.png",
+      "sourceSha256": "c218267f5697f270df31bd8dd4f0f45c76b278484a44122749c22a886a0efe03",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 2,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "3ecc3a17c420c24c5bb85f93aa03d51202add34747739f74cc6c95ebadb65d5b"
+    },
+    {
+      "file": "account-portal-dark-desktop.png",
+      "sourceSha256": "385c7a3dba6d6e0b29a7b64af57c1de7f1e7b4f898ce88b7a0d959fcd16f3eb9",
+      "size": [
+        1778,
+        1331
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "7c632c7957ab07a220c8380e9e4bbbbaff37e477e03a8c1b5b785a9d4aee135b"
+    },
+    {
+      "file": "application-settings-dark-desktop.png",
+      "sourceSha256": "909a235ddbdc8f6812fc31106a3d1c36275db33cb8632d4ea53b8e3cacf5ca1b",
+      "size": [
+        1600,
+        1544
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "de99dd55331274864abe27b46823185b9288bfd80b4be2e956f74e3bf410ad04"
+    },
+    {
+      "file": "application-switcher-dark-desktop.png",
+      "sourceSha256": "697775a40f02bddf1e18eebf3f80bfcb6082a43b47299879264c6725f788e114",
+      "size": [
+        1778,
+        1536
+      ],
+      "ocrMaskBoxes": 18,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "94dc9ba1c912cef3432d1af582c35724f3d485a899d62afa48139107f5b789c6"
+    },
+    {
+      "file": "apps-dark-desktop.png",
+      "sourceSha256": "ef1b1eb4dd49250c3e97758b3f620949f59baf63226c5d2ee99e0c91907f3c61",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "cb2c7c6fdac2ad391cb94d40c443abbb900544dc50a2c2e632873fca935c1d75"
+    },
+    {
+      "file": "authentication-biometric-dark-desktop.png",
+      "sourceSha256": "e0ddc91ba65828c615e99150505b94f567612e3c61e24ad1e5a8778a1efee257",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "91f57b69a0aa982064f41573f0d3453c8555fec044f6f7096e8407e3c82c3c4a"
+    },
+    {
+      "file": "authentication-desktop.png",
+      "sourceSha256": "62df5864a3e3f66e490d2bb7c4853df64717aa0f60ea3935ee971180d6549c12",
+      "size": [
+        1778,
+        5972
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "ab1ea844acc2abf7c5cebd8a24f2d8ce99080fae1be38c8fec8ef22065569ce0"
+    },
+    {
+      "file": "authentication-email-dark-1440.png",
+      "sourceSha256": "43e12484ffcc89096d6d36853d69f10dfd3199b626e4c81a3755fcb6f35f3117",
+      "size": [
+        1600,
+        1133
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "b925f845255c8ea2134726297b40a663c9216787f01e058b602af14b6ad51168"
+    },
+    {
+      "file": "authentication-email-dark-desktop.png",
+      "sourceSha256": "6c96a1d3901960217228378a0eea74d45215c0b0e3e90f67cdffa05637562d64",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "6020713af38d8ffd1cbc91db27da4a05175b5218499836aa378898c96ed4bc9b"
+    },
+    {
+      "file": "authentication-email-dark-mobile.png",
+      "sourceSha256": "d1fbbb6b0c067f68bc703e06b716d8038e62ccb132d3757d214904c709b18ded",
+      "size": [
+        433,
+        1312
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "e1a041a8f396061f3f4fdeb898b078b933681ce705553fdeeda605ee7b2d9f65"
+    },
+    {
+      "file": "authentication-email-light-desktop.png",
+      "sourceSha256": "12df1b726a738a462f061856fc5caba9ccd5dceb2b34f65d3ec7fe4ed84f248d",
+      "size": [
+        982,
+        1227
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "469e8d7af1c8612509df87465f7a5d53a61d01ffba823f2f989ba4b3487e2725"
+    },
+    {
+      "file": "authentication-hero.png",
+      "sourceSha256": "8cac194c57b5d4ceca05939ecc188a9e829bcc3db02e863ffda21e5149721597",
+      "size": [
+        1778,
+        1235
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "456f2f2f795f50c82b7a8e9eaf2ae70bbc7445d52ccf2ee64fa394e6e16b9e35"
+    },
+    {
+      "file": "authentication-mobile.png",
+      "sourceSha256": "89b6a677af1698f5f6a4d5d19437ce3254e20e8a562f1f3876cdb49c0028188d",
+      "size": [
+        481,
+        9786
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "d87243023bcabf3821e0349a6f8ba2b75b8c796a94a68f8d045ee9d7031170ed"
+    },
+    {
+      "file": "authentication-passkeys-dark-desktop.png",
+      "sourceSha256": "658ea40b9ea780f85b20da34a76bc0f46710409c26ff4a237cb3aa0f7909cc7c",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "5688ac2cc45f9cc091d498c94ecc01a34e91dc4b0a5012d0115faf4dba6a3017"
+    },
+    {
+      "file": "authentication-password-dark-desktop.png",
+      "sourceSha256": "aaade31b920d2d2ed684007ca20019d4bb4e10d5bd8f7eb474c7a69d394989be",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "786a24707b75786b9dd77bf2eb2edfd0598717fe708c6fad339815a338751aa4"
+    },
+    {
+      "file": "authentication-password-light-desktop.png",
+      "sourceSha256": "74cd7167e088e7b52589ce56b3b69259a711bc1cb84391fc432796b77e3a6168",
+      "size": [
+        982,
+        1227
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "d3892b75fdf807bb0fc04fb9259acdaec353f906cf4f3fd6430631356abefef5"
+    },
+    {
+      "file": "authentication-phone-dark-desktop.png",
+      "sourceSha256": "be2896ec3d050706040abb91fb62ab7ce431e696317473c0032cb2fbd0a488b9",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "1d382719d35c482b96700b573cab8446adf72f5dea3d018e3965790820b59b16"
+    },
+    {
+      "file": "authentication-preview-menu-dark-desktop.png",
+      "sourceSha256": "6d7864e2b17c7ad64b4873d81ab03387a6356a1580bbb82256b88112dec83a5b",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "e2a026298ada8358c6616ad0625d32fab8d3812a94b2bfb5118ee392d2fa6307"
+    },
+    {
+      "file": "authentication-user-model-dark-desktop.png",
+      "sourceSha256": "e97de785a7a5b350f26bdcfad58fdacb9d0ec814dcd5a5061049478d91fefdcc",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "0f217f307d1e0bcc616984714725ba61dd95a4ab93d2ed903ce7e24f57527395"
+    },
+    {
+      "file": "authentication-username-dark-desktop.png",
+      "sourceSha256": "bd6eea35c7ec7fa0fd0679acb2a9310c033be876ce8593f0b89e188b2bece241",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "72be5a8e23752fc7d62ef1a4ce26fdd3f672728d60190beb3bc060fbb0927139"
+    },
+    {
+      "file": "avatars-dark-desktop.png",
+      "sourceSha256": "417424f10b51f4aa87e1a6b4980f830d06898bd44ca09b3c373df70f19ffd253",
+      "size": [
+        1778,
+        1428
+      ],
+      "ocrMaskBoxes": 2,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "0201e4debdbdcefa068ff60e5a17e2bbb37938212222fa384caf4687757e39fe"
+    },
+    {
+      "file": "billing-onboarding-dark-desktop.png",
+      "sourceSha256": "38538442622fa059ff14ecbb062daa8586f910e522a648fb3b895189f14abbf0",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "eb14ec9505158b6c6a3ea1c3e4b427537273cf2944b7fd579c82398b72f434f9"
+    },
+    {
+      "file": "blocklist-dark-desktop.png",
+      "sourceSha256": "ccd55b9b4bde5a8428b12db0d3a57bc8bada651be93fc2ea00061d9aae09227c",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "7b1bb7453d6a3baa0420524b2817b55e898faca808197e3fbebb69dd11c33655"
+    },
+    {
+      "file": "command-menu-dark-desktop.png",
+      "sourceSha256": "e87aee93e29ded51b352685838d71479e8f46c1b44d69844e8a00406220d0292",
+      "size": [
+        1600,
+        1133
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "23073088c02c7af75e2f674d5a5d9beaae5a20ff96a23c52848e2e69a24fb897"
+    },
+    {
+      "file": "country-select-menu-dark-desktop.png",
+      "sourceSha256": "5917f7ca706d3d168ebb9cbcf9acc84729b4268c35f9b48fa5852412823435b8",
+      "size": [
+        1778,
+        1419
+      ],
+      "ocrMaskBoxes": 4,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "37685e16e4e7e19626d95af5932ee53b283c736b50866f4d3c41b929f67469bf"
+    },
+    {
+      "file": "create-user-dialog-dark-desktop.png",
+      "sourceSha256": "39ac4e370317840f1dbc2ab054904f95386bff7b282bba4ab2707c50dba70cd5",
+      "size": [
+        1778,
+        1419
+      ],
+      "ocrMaskBoxes": 5,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "505917956109c0c74efc4bef09b619a8430a4b95cfb8f0bb544b848154d86499"
+    },
+    {
+      "file": "disable-native-confirmation-dark-desktop.png",
+      "sourceSha256": "a0c3e2dd17e614d0dbe6df338127b4ce6aefc5a6385197c441a308538862d047",
+      "size": [
+        1600,
+        1851
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "a9c477ce6978a1cc840429e75963c05405cf32b135814304662d643366b98a52"
+    },
+    {
+      "file": "domains-dark-desktop.png",
+      "sourceSha256": "bb04ed9fbcb968def99d6aa032cbff5e6edc01011e30d96b47811a904bfa2099",
+      "size": [
+        1600,
+        1203
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "e7b7c0f62571b67799aa095f0ea39731b351de9fbe0f5d062cf7d8689d3191c1"
+    },
+    {
+      "file": "email-templates-dark-desktop.png",
+      "sourceSha256": "e15fec56d6474393fcc82fa758e55364849f70ba3657e85603ac2a5ec511cd23",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "837bc2812d26e76f299e401bc24f27273ba7097d7d463353dac329b65317785e"
+    },
+    {
+      "file": "features-dark-desktop.png",
+      "sourceSha256": "d571ea62f5b1114c76c9f2710bd947ba5281147e677d32f27b717224d54a98a0",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "d66ece93f1494da59773b33f45274096b0b3f4b123370d7e96fd4ca7e94a89ad"
+    },
+    {
+      "file": "integrations-dark-desktop.png",
+      "sourceSha256": "da7c66ed3c3a87153fe2f085b8e8c9f1d562346b9425376f41a90849d0311f29",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "c58edb126bc07f1de88b90b9bf7b75a011a08ec85a501e4caf4386e30aac73ff"
+    },
+    {
+      "file": "legal-dark-desktop.png",
+      "sourceSha256": "9aafedaf1d8c2bc2fb687c153007ebccbf7d934549a3b7d16b7e02ae54a1cb21",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "b3d2b9c6b970aaa2cb4dc7f36c4ff22519987175e451c6754c5e93d6b027ceac"
+    },
+    {
+      "file": "logs-empty-dark-desktop.png",
+      "sourceSha256": "6644121d45713c937623ddf89be9793edd555e91a4386292e5824b3c012f06a8",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "31eae254ba3b24dfaa3a2171ebc62fd5488ff5afb169dca73d6562493f5994e6"
+    },
+    {
+      "file": "logs-event-filter-dark-desktop.png",
+      "sourceSha256": "bf2cc96e62cca705c322ce81381cd2ae33573af5ec12a73ddace5c98710aa0f4",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "42ce7d7d92cff165568b1957911eea641359efd923a7a80dbfad36e3de3a3a78"
+    },
+    {
+      "file": "mcp-servers-dark-desktop.png",
+      "sourceSha256": "1ea2d4d7c0697a988db6951e1110368d9574af441e0d9badc8871ff1aeddd638",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "a2c0a09d43ca47736c188fd4eaa8edf187aa59d6754973484cc2bed655a5c8f9"
+    },
+    {
+      "file": "multi-factor-dark-desktop.png",
+      "sourceSha256": "5731b26cc2b8ae6f7794cdfa68d314e6c748db55c0184164d76572c1ca19cfe0",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "52c40d8ca1e4696413e41c5e34b723f19b60a385c51e46c24ea24602d178a752"
+    },
+    {
+      "file": "native-applications-dark-desktop.png",
+      "sourceSha256": "5efe166e491e624efa6e949a40cfb9b77d9213e35f8cd575a8b4be7b0182b4e4",
+      "size": [
+        1600,
+        1851
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "739961cba6f1873193953ebe9b32007717a6baa2433e409f919054336359a203"
+    },
+    {
+      "file": "oauth-applications-dark-desktop.png",
+      "sourceSha256": "0f1019b160f0862818fbb9988dc00363695aed8b0c4fc259bb65d433d70dd8b1",
+      "size": [
+        1600,
+        1203
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "25af1fb2b3520e86443110d22326db33dee4225a324bbe817806c52687a2e6c5"
+    },
+    {
+      "file": "organizations-onboarding-dark-desktop.png",
+      "sourceSha256": "3fde466f0d8c809c93289c278606dc22878f9f82dc215ca1d9f44bbf1cc7fc9f",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "471febf9e4b1c3cfc98b500b694d64bbe769340db81353849d7774300832d246"
+    },
+    {
+      "file": "overview-dark-desktop.png",
+      "sourceSha256": "66c4d32ce8f182d63929883b511e1b56178a6b677fd37db4963ee236a864090b",
+      "size": [
+        1778,
+        1536
+      ],
+      "ocrMaskBoxes": 18,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "d6f520d3e6cad8233f471d4dcd22704b7700d6495ecd11d0c22af9034b967d81"
+    },
+    {
+      "file": "password-dialog-focus-dark-desktop.png",
+      "sourceSha256": "8cca86577b6ddbbcd88af376f6d4407e308306380ce5b5327044f5bd08c7fc05",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "86a16676c1ead55f819726f5880555c17369fe9c516424bb81013f3dd9d2476d"
+    },
+    {
+      "file": "password-requirements-dialog-dark-desktop.png",
+      "sourceSha256": "c65648a496d524c45131dd532ec68ee26c459fc40da9b5c6d7a6173788757004",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "93ab72c95d4092050e41f0261322fa9067ba7d33035b6859c2986a5e8c5b3e7b"
+    },
+    {
+      "file": "password-requirements-dialog-light-desktop.png",
+      "sourceSha256": "a41b124147bbd6eab7416bcc08c127ad951b55c223e7d2ba5a0d28b8b992efa9",
+      "size": [
+        982,
+        1227
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "e453972ec603a753942cc6e93408374b6bae4adff3d739062b4acedf0ece1af9"
+    },
+    {
+      "file": "paths-dark-desktop.png",
+      "sourceSha256": "79fd6c970bb98e09b00bdd7dce09882ede0a6b1bc9ac22fa21e33a28ed335b6d",
+      "size": [
+        1778,
+        2159
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "819cf663669ab3506c549c80c78209ce2fcbb16027414f8350284b623177a486"
+    },
+    {
+      "file": "protections-dark-desktop.png",
+      "sourceSha256": "60e24bc498f88c6c3be39186e1cb148251a2b323ba6af3ce604ced27ca16aff9",
+      "size": [
+        1778,
+        1576
+      ],
+      "ocrMaskBoxes": 2,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "e2b02eb689bedadb277aea34df6dd43f35f181ba098e6e71566a2d31a9838a68"
+    },
+    {
+      "file": "redirect-url-dialog-dark-desktop.png",
+      "sourceSha256": "86bf6fdf6b78baf2713cdeca3a3b7b1ec91bb30965efbe49f9e2080faff7bff1",
+      "size": [
+        1600,
+        1851
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "4d87bf0d12016f20cca25a83c77dfa60f7e8ccbfdb096c7c26f2a106987c5c60"
+    },
+    {
+      "file": "sessions-dark-desktop.png",
+      "sourceSha256": "a0da97b3186daee6339557651b7771059bfd32ce9ba430a17dfcc440ea97437a",
+      "size": [
+        1778,
+        1768
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "a7188a6b088a662efefeabd9d7fca9d961112e4c623413c78260edfdbb8b6df8"
+    },
+    {
+      "file": "sms-templates-dark-desktop.png",
+      "sourceSha256": "2f99f55dd4b5a8723ae95b0d1d5ff91e8d7b7b5252925acbb560ed583ebd52ee",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "e0e6451b7a95323aeb3400bc70b8c12549a03a88f76f4c0525b19ffc6d51ec94"
+    },
+    {
+      "file": "sso-add-menu-dark-desktop.png",
+      "sourceSha256": "11230481d414bcf2e1e9798bea1053b69f489e3f67079eed3f95de38e8f68b8f",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "9f3e0f5092f7d8ed65ac9bbccc606c9b5b632f92a53e3c064a26e790378b91c4"
+    },
+    {
+      "file": "sso-connections-dark-desktop.png",
+      "sourceSha256": "929c095f29c02231933107274d763b9acead23c9c3fbbb445943f388a3f0bbca",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "3b769cbe46a91bb0a79b863cf40505aecd811f9560c7870ce7f10a3cbfb8ec43"
+    },
+    {
+      "file": "users-columns-menu-dark-desktop.png",
+      "sourceSha256": "302e13e0432e15644b3c6c945f420bf68c9385d5969312bf7db69a83e9ec301c",
+      "size": [
+        1778,
+        1419
+      ],
+      "ocrMaskBoxes": 20,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "abd178324217da284a0038b6a4c5fbf3da2930d86c9e30ebee3072d0b3e1e632"
+    },
+    {
+      "file": "users-dark-desktop.png",
+      "sourceSha256": "0519b8ea97faea365fb5cacaf5949ddf54ba96247645595950706cdad8985b0d",
+      "size": [
+        1778,
+        1419
+      ],
+      "ocrMaskBoxes": 20,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "cd4ebf98c8e7024bde5c84440252d0de1bf6a94dee6682772e5c9e25129c2768"
+    },
+    {
+      "file": "users-dark-mobile.png",
+      "sourceSha256": "eb04119f0498cf125472b6472dfe8de9fe57a12a2ebaf6f2a48a8557dd6de8ab",
+      "size": [
+        433,
+        1568
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 10,
+      "outputSha256": "abd33d3ce31a8919583d41a730000d7af6905a390ae591d34b7972237817399b"
+    },
+    {
+      "file": "users-light-desktop.png",
+      "sourceSha256": "ad08f74a2380c63494f02864e65b3583a99c201ebf7f6d11d4f5a7c63e241af0",
+      "size": [
+        982,
+        1419
+      ],
+      "ocrMaskBoxes": 22,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "7aba7e792b3656b1bd24559283eba2e45c9695ec685d82d8b0c7ceb0a3506851"
+    },
+    {
+      "file": "web3-dark-desktop.png",
+      "sourceSha256": "ad7dcf949d442b71656640255786f8817116f88eb161297ca2bdd1a365bd945b",
+      "size": [
+        1778,
+        1234
+      ],
+      "ocrMaskBoxes": 0,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "b2d4f1b15b34212d9141f23d21b03a5e964b7f1ad0bfd8800c9ba0d0b42a01c2"
+    },
+    {
+      "file": "workspace-settings-dark-desktop.png",
+      "sourceSha256": "f3b99cdc7f50389160970698d3e0126e4b6c7bc894ccda5990a6f0ebca5415c9",
+      "size": [
+        1600,
+        1206
+      ],
+      "ocrMaskBoxes": 1,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "4de787cab5788c75527b5fba85a7165c950a6eca012d9dc94d9e0bd1830c34ff"
+    },
+    {
+      "file": "workspace-settings-light-desktop.png",
+      "sourceSha256": "379ca81521b8343961808c9bdee37faaae74d3aa8375e5901a7cea6b801d9a1e",
+      "size": [
+        982,
+        1249
+      ],
+      "ocrMaskBoxes": 1,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "ce6a76d16b02e504f2dc96d8761a5a4c6d96a2a7ddb130f7961f44cfa4461d08"
+    },
+    {
+      "file": "workspace-team-dark-desktop.png",
+      "sourceSha256": "0d2e2ff24637ef7676ce489d89f53c221f7c121109b138c4e6008e7cd79c778c",
+      "size": [
+        1600,
+        1111
+      ],
+      "ocrMaskBoxes": 5,
+      "ruleMaskBoxes": 0,
+      "outputSha256": "c2c00204d09d3bb856fa9422d52c45588442418368aafd544dc0c6e5be6d5e4a"
+    }
+  ],
+  "rejectedImages": [
+    {
+      "file": "create-user-dialog-dark-mobile.png",
+      "sha256": "1b3d8d0494dfc004fa6a098112daa0ad1e0a216396d002b2f2829a25e0bced70",
+      "reason": "Fullpage screenshot clips the modal footer at the viewport boundary, then continues into unblurred background rows. Excluded from accepted visual evidence."
+    }
+  ],
+  "captureLimitations": {
+    "create-user-dialog-dark-desktop.png": "The fullpage screenshot shows the complete desktop dialog, but the blurred backdrop ends at the viewport boundary and the background continues below it. Use the verified dialog crop for component layout, not the fullpage backdrop."
+  },
+  "excludedSourceDirectories": [
+    "rejected-shots"
+  ],
+  "previouslyRejectedImages": [
+    "navigation-mobile.png",
+    "privacy-dialog-desktop.png",
+    "products-menu-desktop.png",
+    "products-menu-mobile.png"
+  ]
+}
