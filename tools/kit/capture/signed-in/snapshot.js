@@ -123,10 +123,17 @@ window.__snap = function (label, REDACT) {
     cV[i].removeAttribute('src');
     cV[i].querySelectorAll('source,track').forEach((n) => n.remove());
   });
+  // A field that holds a credential never reaches the copy: a hidden input (CSRF and session
+  // tokens), a one-time code or card field loses its value; a password keeps only a fixed
+  // eight-dot stand-in, so the field still renders filled.
+  const SECRET_FIELD = (el) => el.type === 'hidden' || /one-time-code|cc-|current-password|new-password/.test(el.autocomplete || '')
+    || /token|csrf|secret|otp|passcode|api[-_]?key/i.test((el.name || '') + ' ' + (el.id || ''));
   const srcIn = document.querySelectorAll('input,textarea,select'), cIn = clone.querySelectorAll('input,textarea,select');
   srcIn.forEach((el, i) => {
     const c = cIn[i];
     if (!c) return;
+    if (el.type === 'password') { if (el.value) c.setAttribute('value', 'xxxxxxxx'); else c.removeAttribute('value'); return; }
+    if (el.tagName === 'INPUT' && SECRET_FIELD(el)) { c.removeAttribute('value'); return; }
     if (el.type === 'checkbox' || el.type === 'radio') { if (el.checked) c.setAttribute('checked', ''); else c.removeAttribute('checked'); }
     else if (el.tagName === 'TEXTAREA') c.textContent = el.value;
     else if (el.tagName === 'SELECT') [...c.options].forEach((o, j) => { o.selected = el.options[j] && el.options[j].selected; });
@@ -173,8 +180,16 @@ window.__snap = function (label, REDACT) {
     : '<style' + (p.media ? ' media="' + p.media + '"' : '') + '>' + p.css.replace(/<\/style/gi, '<\\/style') + '</style>')).join('\n'));
   // Last, every attribute of every element: data-src, style="background:url(...)", anything.
   clone.querySelectorAll('*').forEach((n) => { for (const a of [...n.attributes]) { const v = cutSigned(a.value); if (v !== a.value) n.setAttribute(a.name, v); } });
+  // Each pattern runs over every text node and attribute value first, where entities are already
+  // decoded (a &nbsp; is a character \s matches), then over the serialised copy. A name split across
+  // elements survives both; unsnap.py reads the copy as text with the tags out and refuses it.
+  const rx = REDACT.replace.map(([pattern, flags, rep]) => [new RegExp(pattern, flags.includes('g') ? flags : flags + 'g'), rep]);
+  const scrub = (v) => rx.reduce((t, [r, rep]) => t.replace(r, rep), v);
+  const tw = document.createTreeWalker(clone, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_COMMENT);
+  while (tw.nextNode()) { const v = scrub(tw.currentNode.nodeValue); if (v !== tw.currentNode.nodeValue) tw.currentNode.nodeValue = v; }
+  clone.querySelectorAll('*').forEach((n) => { for (const a of [...n.attributes]) { const v = scrub(a.value); if (v !== a.value) n.setAttribute(a.name, v); } });
   let html = cutSigned('<!doctype html>\n' + clone.outerHTML);
-  for (const [pattern, flags, rep] of REDACT.replace) html = html.replace(new RegExp(pattern, flags), rep);
+  for (const [r, rep] of rx) html = html.replace(r, rep);
   // Inner scrollers (the task thread is a virtualised list inside one) keep their position only
   // as a property, so each scrolled element is recorded by its child-index path for render.mjs.
   const pathOf = (el) => { const out = []; for (let n = el; n && n !== document.documentElement; n = n.parentElement) out.unshift([...n.parentElement.children].indexOf(n)); return out; };

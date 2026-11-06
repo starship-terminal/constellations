@@ -2,18 +2,31 @@
 
 import { useToast } from "@/components/Toast";
 
+/** Copy text to the clipboard; rejects when the browser refused. */
 export function copyText(text: string): Promise<void> {
   if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     const ta = Object.assign(document.createElement("textarea"), { value: text });
     document.body.append(ta);
     ta.select();
+    let ok = false;
     try {
-      document.execCommand("copy");
+      ok = document.execCommand("copy");
     } catch {}
     ta.remove();
-    resolve();
+    if (ok) resolve();
+    else reject(new Error("copy refused"));
   });
+}
+
+/** Copy, then toast `done`, or say the copy failed so nobody pastes stale text. */
+export async function copyWithToast(text: string, toast: (m: string) => void, done: string): Promise<void> {
+  try {
+    await copyText(text);
+    toast(done);
+  } catch {
+    toast("Could not copy: the browser blocked clipboard access");
+  }
 }
 
 export function CopyButton({
@@ -50,8 +63,7 @@ export function CopyButton({
             return;
           }
         }
-        await copyText(t || "");
-        toast(done || `${label} copied`);
+        await copyWithToast(t || "", toast, done || `${label} copied`);
       }}
     >
       {label}

@@ -102,8 +102,16 @@ def mask(rows, boxes):
     used = []
     for x, y, w, h in boxes:
         x0, y0, x1, y1 = max(x, 0), max(y, 0), min(x + w, width), min(y + h, height)
-        ring = [rows[j][i] for j in (max(y0 - 1, 0), min(y1, height - 1)) for i in range(x0, x1)]
-        ring += [rows[j][i] for i in (max(x0 - 1, 0), min(x1, width - 1)) for j in range(y0, y1)]
+        if x1 <= x0 or y1 <= y0:
+            continue
+        # Only the border pixels that lie outside the box: at an image edge the clamped row or
+        # column would be the box's own first line, so the text would pick its own colour.
+        rows_out = [j for j in (y0 - 1, y1) if 0 <= j < height]
+        cols_out = [i for i in (x0 - 1, x1) if 0 <= i < width]
+        ring = [rows[j][i] for j in rows_out for i in range(max(x0 - 1, 0), min(x1 + 1, width))]
+        ring += [rows[j][i] for i in cols_out for j in range(y0, y1)]
+        if not ring:                      # the box is the whole image: nothing around it to match
+            ring = [rows[j][i] for j in range(y0, y1) for i in range(x0, x1)]
         colour = Counter(ring).most_common(1)[0][0]
         for j in range(y0, y1):
             for i in range(x0, x1):

@@ -7,26 +7,24 @@
 // instead of refero.db's sqlite, and view_media falls back to a prebuilt
 // web/data/thumbs/ thumbnail instead of a Pillow downscale. Site-relative
 // media URLs are "/media/<repo-relative>" for the app's media route.
-import { existsSync, promises as fs } from "node:fs";
+import { promises as fs, realpathSync } from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+// The checkout comes from the one resolver every server route uses, so
+// DESIGN_SYSTEMS_REPO points the tools at the same tree as /media/ and docs.
+import { ROOT } from "@/lib/repo";
+
+export { ROOT };
 
 type Obj = Record<string, unknown>;
 
-export const ROOT = (() => {
-  const cwd = path.resolve(process.cwd());
-  // `next dev`/`next start` run from web/, so the checkout is its parent; a
-  // plain node run from the repo root also lands on the checkout.
-  const primary = path.basename(cwd) === "web" ? path.dirname(cwd) : cwd;
-  if (existsSync(path.join(primary, "catalog.json"))) return primary;
+// The checkout with symlinks resolved, as Python's ROOT.resolve(): every
+// containment check and every repo-relative URL is computed from real paths.
+const REAL_ROOT = (() => {
   try {
-    const here = path.dirname(fileURLToPath(import.meta.url));
-    const fromModule = path.resolve(here, "..", "..", ".."); // web/lib/chat -> root
-    if (existsSync(path.join(fromModule, "catalog.json"))) return fromModule;
+    return realpathSync(ROOT);
   } catch {
-    // import.meta.url unavailable in a CJS bundle; keep the cwd guess.
+    return path.resolve(ROOT);
   }
-  return primary;
 })();
 
 const REFERO_DIR = path.join(ROOT, "web", "data", "refero");
@@ -42,6 +40,12 @@ const IMAGE_TYPES: Record<string, string> = {
 };
 const TEXT_TYPES = new Set([".md", ".txt", ".json", ".css", ".html", ".svg", ".csv"]);
 const MEDIA_DIRS = ["screenshots", "components", "icons", "boards"] as const;
+// Package paths the tools never read, matching the research app's package
+// document rules (app/src/server/sources/files.ts) and the package entries in
+// .gitignore: raw captures, fonts, dependency and capture-scratch folders, and
+// any dot segment.
+const PRIVATE_DIRS = new Set(["raw", "fonts", "node_modules", "__pycache__"]);
+const PRIVATE_PREFIXES = ["tools/capture/dumps/", "tools/capture/out/", "tools/capture/winid"];
 
 // A tool result's JSON text is capped before it goes back to the model: a whole
 // token group or a README can run past what a turn should carry.
@@ -49,6 +53,8 @@ const MEDIA_DIRS = ["screenshots", "components", "icons", "boards"] as const;
 export const RESULT_CAP = 32_000;
 export const DOC_CAP = 24_000;
 export const TOKEN_PAGE = RESULT_CAP - 1_000; // bytes of name/value pairs one get_tokens page carries
+// How a handoff prompt names the library's checkout.
+const HOME_VAR = "$DESIGN_SYSTEMS_HOME";
 export const IMAGE_CAP = 3_500_000; // bytes on disk
 
 export class ToolError extends Error {
@@ -87,15 +93,31 @@ async function entry(slug: string): Promise<Obj> {
   throw new ToolError(`no systems package '${slug}'`);
 }
 
-const pkgDir = (e: Obj) => path.resolve(ROOT, "systems", asStr(e.slug));
+async function realOr(p: string): Promise<string> {
+  // The real path, or the lexical one when it does not exist (resolve(strict=False)).
+  return fs.realpath(p).catch(() => path.resolve(p));
+}
+
+const pkgDir = (e: Obj): Promise<string> => realOr(path.resolve(REAL_ROOT, "systems", asStr(e.slug)));
+
+function privatePath(rel: string): boolean {
+  // True for a package-relative path the tools must not read.
+  if (rel === "" || rel === ".") return false;
+  const parts = rel.split("/");
+  return (
+    parts.some((p) => p.startsWith(".") || PRIVATE_DIRS.has(p)) ||
+    PRIVATE_PREFIXES.some((pre) => rel === pre.replace(/\/$/, "") || rel.startsWith(pre))
+  );
+}
 
 // Mirrors catalog.py's REPO_PATHS: request prefixes answered from the checkout.
 const REPO_PATHS = ["/systems/", "/tools/", "/example/", "/catalog.json", "/README.md"];
 
-function repoFile(urlPath: string): string | null {
+async function repoFile(urlPath: string): Promise<string | null> {
   // The path is unquoted and normalised before the prefix check, so `..`
   // segments (plain or percent-encoded) can never climb out of the allowed
-  // folders, and the resolved file must still sit inside the checkout.
+  // folders, and the real file must still sit inside the checkout, so a
+  // symlink cannot either.
   const raw = urlPath.split("?")[0].split("#")[0];
   let clean = raw;
   try {
@@ -105,25 +127,26 @@ function repoFile(urlPath: string): string | null {
   }
   const norm = path.posix.normalize(clean);
   if (!REPO_PATHS.some((p) => norm === p.replace(/\/+$/, "") || norm.startsWith(p))) return null;
-  const root = path.resolve(ROOT);
-  const target = path.resolve(root, norm.replace(/^\/+/, ""));
-  const allowed = REPO_PATHS.map((p) => path.resolve(root, p.replace(/^\/+|\/+$/g, "")));
+  const target = await realOr(path.resolve(REAL_ROOT, norm.replace(/^\/+/, "")));
+  const allowed = await Promise.all(REPO_PATHS.map((p) => realOr(path.resolve(REAL_ROOT, p.replace(/^\/+|\/+$/g, "")))));
   if (!allowed.some((a) => target === a || inside(target, a))) return null;
   return target;
 }
 
-function repoFileRequired(rel: string): string {
-  const target = repoFile("/" + rel.replace(/^\/+/, ""));
+async function repoFileRequired(rel: string): Promise<string> {
+  const target = await repoFile("/" + rel.replace(/^\/+/, ""));
   if (target === null) throw new ToolError(`path outside the served set: ${rel}`);
   return target;
 }
 
-function bounded(e: Obj, rel: string): string {
+async function bounded(e: Obj, rel: string): Promise<string> {
   // Resolve a package-relative path, refusing anything that climbs out.
   // Accepts the repo-relative and site-absolute forms other tools emit, and
   // the /media/ URL list_media returns (percent-decoded), so the model can pass
-  // a path it saw verbatim.
-  const base = pkgDir(e);
+  // a path it saw verbatim. Containment is checked on the real path, so a
+  // symlink inside the package cannot point out of it, and private folders
+  // (raw/, fonts/, dot paths) are refused under either name.
+  const base = await pkgDir(e);
   const slug = asStr(e.slug);
   let raw = rel;
   if (raw.replace(/^\/+/, "").startsWith("media/")) {
@@ -140,13 +163,16 @@ function bounded(e: Obj, rel: string): string {
       clean = clean.slice(prefix.length);
       break;
     }
-  const target = path.resolve(base, clean);
+  const target = await realOr(path.resolve(base, clean));
   if (target !== base && !inside(target, base)) throw new ToolError(`path leaves the package: ${rel}`);
+  const real = path.relative(base, target).split(path.sep).join("/");
+  if (privatePath(path.posix.normalize(clean)) || privatePath(real))
+    throw new ToolError(`not readable through the tools: ${rel}`);
   return target;
 }
 
 const mediaUrl = (p: string): string => {
-  const rel = path.relative(path.resolve(ROOT), path.resolve(p));
+  const rel = path.relative(REAL_ROOT, path.resolve(p));
   return "/media/" + rel.split(path.sep).map(encodeURIComponent).join("/");
 };
 
@@ -497,10 +523,13 @@ async function searchStyles(args: Obj): Promise<Obj> {
     .map((w) => w.toLowerCase());
   const limit = Math.max(1, Math.min(asInt((args.limit ?? 8) || 8), 20));
   const out: Obj[] = [];
+  // The catalog's platforms are web, mobile and desktop; "ios" stays an alias
+  // for mobile, the value the schema offered first.
+  const wanted = platform === "ios" ? "mobile" : platform;
   if (store === "all" || store === "systems") {
     for (const hit of await findSystems(words)) {
       const e = await entry(asStr(hit.slug));
-      if (platform && !asArr(e.tags).includes(platform) && e.platform !== platform) continue;
+      if (platform && !asArr(e.tags).includes(platform) && e.platform !== wanted) continue;
       out.push({
         store: "systems",
         slug: hit.slug,
@@ -588,7 +617,7 @@ async function getTokens(args: Obj): Promise<Obj> {
   const slug = asStr(args.slug);
   const group = optStr(args.group);
   const e = await entry(slug);
-  const tokens = JSON.parse(await fs.readFile(repoFileRequired(asStr(e.tokens)), "utf8"));
+  const tokens = JSON.parse(await fs.readFile(await repoFileRequired(asStr(e.tokens)), "utf8"));
   const exported = exportTokens(tokens, asArr(e.themes).map(asStr));
   const groups: Record<string, Record<string, string>> = { base: exported.base, ...exported.themes };
   if (!group)
@@ -634,7 +663,7 @@ async function readDoc(args: Obj): Promise<Obj> {
   const rel = optStr(args.path) || path.basename(asStr(e.entry));
   const offset = asInt(args.offset || 0);
   if (offset < 0) throw new ToolError("offset must be 0 or more");
-  const target = bounded(e, rel);
+  const target = await bounded(e, rel);
   const st = await fs.stat(target).catch(() => null);
   if (st?.isDirectory()) throw new ToolError(`${rel} is a directory`);
   if (!st?.isFile()) throw new ToolError(`no file ${rel} in systems/${slug}/`);
@@ -644,7 +673,7 @@ async function readDoc(args: Obj): Promise<Obj> {
   const chars = Array.from(await fs.readFile(target, "utf8"));
   const end = offset + DOC_CAP;
   const truncated = chars.length > end;
-  const relInPkg = path.relative(pkgDir(e), target).split(path.sep).join("/");
+  const relInPkg = path.relative(await pkgDir(e), target).split(path.sep).join("/");
   const out: Obj = {
     slug,
     path: `systems/${slug}/${relInPkg}`,
@@ -658,6 +687,8 @@ async function readDoc(args: Obj): Promise<Obj> {
 }
 
 async function walkFiles(dir: string): Promise<string[]> {
+  // Every regular file under dir, symlinks skipped (neither followed into a
+  // directory nor listed as a file), sorted by path like the Python.
   const out: string[] = [];
   const stack = [dir];
   while (stack.length) {
@@ -666,7 +697,6 @@ async function walkFiles(dir: string): Promise<string[]> {
       const p = path.join(cur, de.name);
       if (de.isDirectory()) stack.push(p);
       else if (de.isFile()) out.push(p);
-      else if (de.isSymbolicLink() && (await fs.stat(p).catch(() => null))?.isFile()) out.push(p);
     }
   }
   return out.sort(cmpStr);
@@ -682,13 +712,15 @@ async function listMedia(args: Obj): Promise<Obj> {
   if (kinds.some((k) => !(MEDIA_DIRS as readonly string[]).includes(k)))
     throw new ToolError(`kind must be one of ${MEDIA_DIRS.join(", ")}`);
   const items: Obj[] = [];
-  const base = pkgDir(e);
+  const base = await pkgDir(e);
   for (const k of kinds) {
     const d = path.join(base, k);
-    if (!(await fs.stat(d).catch(() => null))?.isDirectory()) continue;
+    // A symlinked media folder is skipped like any other symlink.
+    if (!(await fs.lstat(d).catch(() => null))?.isDirectory()) continue;
     for (const p of await walkFiles(d)) {
       const ext = path.extname(p).toLowerCase();
-      if (IMAGE_TYPES[ext]) items.push({ kind: k, name: path.basename(p, ext), url: mediaUrl(p) });
+      const rel = path.relative(base, p).split(path.sep).join("/");
+      if (IMAGE_TYPES[ext] && !privatePath(rel)) items.push({ kind: k, name: path.basename(p, ext), url: mediaUrl(p) });
     }
   }
   return { slug, count: items.length, items: items.slice(0, 60), capped: items.length > 60 };
@@ -700,7 +732,7 @@ async function viewMedia(args: Obj): Promise<Obj> {
   const slug = asStr(args.slug);
   const rel = asStr(args.path);
   const e = await entry(slug);
-  const target = bounded(e, rel);
+  const target = await bounded(e, rel);
   let mediaType = IMAGE_TYPES[path.extname(target).toLowerCase()];
   const st = await fs.stat(target).catch(() => null);
   if (!st?.isFile() || !mediaType) throw new ToolError(`no image at ${rel}`);
@@ -727,7 +759,7 @@ async function thumbnail(target: string): Promise<[Buffer, string] | null> {
   // The Python downscales with Pillow; the port reuses the prebuilt gallery
   // thumbnail for the same file (catalog.py's _thumb_name pattern) when one
   // was generated.
-  const rel = path.relative(path.resolve(ROOT), target).split(path.sep).join("/");
+  const rel = path.relative(REAL_ROOT, target).split(path.sep).join("/");
   const name = rel.replaceAll("/", "__").replace(/\.[^.]*$/, "") + ".jpg";
   try {
     const buf = await fs.readFile(path.join(THUMBS_DIR, name));
@@ -743,12 +775,16 @@ async function handoffPrompt(args: Obj): Promise<Obj> {
   const slug = asStr(args.slug);
   const appDescription = optStr(args.app_description);
   const e = await entry(slug);
-  const tokens = JSON.parse(await fs.readFile(repoFileRequired(asStr(e.tokens)), "utf8"));
+  const tokens = JSON.parse(await fs.readFile(await repoFileRequired(asStr(e.tokens)), "utf8"));
   const groups = isObj(tokens) ? Object.keys(tokens).filter((k) => !k.startsWith("$")).join(", ") : "";
-  const root = path.resolve(ROOT);
+  // Paths are repo-relative under $DESIGN_SYSTEMS_HOME, the variable the
+  // design-systems plugin and AGENTS.md use to find a checkout, so the
+  // prompt works on the agent's machine instead of naming the server's.
+  const root = HOME_VAR;
   const target = appDescription ? ` for ${appDescription}` : "";
   const text =
     `Match the ${asStr(e.name)} design style from my design-systems library${target}.\n` +
+    `${root} is that library's checkout on this machine (set it, or replace it with the path).\n` +
     `1. Read ${root}/${asStr(e.entry)} in full first. It says what was captured and what to distrust.\n` +
     `2. Take colour, type, spacing and radius values from ${root}/${asStr(e.tokens)}. Its top-level ` +
     `token groups are ${groups}; the README says which group holds colour roles and which holds ` +
@@ -790,7 +826,11 @@ export const SPECS: Spec[] = [
       properties: {
         query: { type: "string", description: "Free text: mood, layout, use, product words" },
         store: { type: "string", enum: ["all", "systems", "refero"], default: "all" },
-        platform: { type: "string", enum: ["web", "ios", "desktop"] },
+        platform: {
+          type: "string",
+          enum: ["web", "mobile", "desktop", "ios"],
+          description: "The catalog's platform; ios is an alias for mobile",
+        },
         style: { type: "string", description: "Refero design_style label filter" },
         limit: { type: "integer", minimum: 1, maximum: 20, default: 8 },
       },

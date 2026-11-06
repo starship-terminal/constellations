@@ -14,6 +14,7 @@ from __future__ import annotations
 import base64
 import importlib.util
 import json
+import os
 import posixpath
 import sqlite3
 import sys
@@ -30,6 +31,12 @@ IMAGE_TYPES = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
                ".webp": "image/webp", ".gif": "image/gif"}
 TEXT_TYPES = {".md", ".txt", ".json", ".css", ".html", ".svg", ".csv"}
 MEDIA_DIRS = ("screenshots", "components", "icons", "boards")
+# Package paths the tools never read, matching the research app's package
+# document rules (app/src/server/sources/files.ts) and the package entries in
+# .gitignore: raw captures, fonts, dependency and capture-scratch folders, and
+# any dot segment.
+PRIVATE_DIRS = {"raw", "fonts", "node_modules", "__pycache__"}
+PRIVATE_PREFIXES = ("tools/capture/dumps/", "tools/capture/out/", "tools/capture/winid")
 
 # A tool result's JSON text is capped before it goes back to the model: a whole
 # token group or a README can run past what a turn should carry.
@@ -37,6 +44,8 @@ MEDIA_DIRS = ("screenshots", "components", "icons", "boards")
 RESULT_CAP = 32_000
 DOC_CAP = 24_000
 TOKEN_PAGE = RESULT_CAP - 1_000  # bytes of name/value pairs one get_tokens page carries
+# How a handoff prompt names the library's checkout.
+HOME_VAR = "$DESIGN_SYSTEMS_HOME"
 IMAGE_CAP = 3_500_000  # bytes on disk; bigger shots are refused unless Pillow shrinks them
 
 
@@ -73,11 +82,33 @@ def _repo_file(rel: str) -> Path:
     return target
 
 
+def _private(rel: str) -> bool:
+    """True for a package-relative path the tools must not read."""
+    if rel in ("", "."):
+        return False
+    return (any(p.startswith(".") or p in PRIVATE_DIRS for p in rel.split("/"))
+            or any(rel == pre.rstrip("/") or rel.startswith(pre) for pre in PRIVATE_PREFIXES))
+
+
+def _walk_files(d: Path) -> list[Path]:
+    """Every regular file under d, symlinks skipped (neither followed into a
+    directory nor listed as a file), sorted by path like the web twin."""
+    out = []
+    for cur, dirs, files in os.walk(d, followlinks=False):
+        for name in files:
+            p = Path(cur) / name
+            if not p.is_symlink() and p.is_file():
+                out.append(p)
+    return sorted(out, key=lambda p: p.as_posix())
+
+
 def _bounded(entry: dict, rel: str) -> Path:
     """Resolve a package-relative path, refusing anything that climbs out.
     Accepts the repo-relative and site-absolute forms other tools emit, and
     the /media/ URL list_media returns (percent-decoded), so the model can pass
-    a path it saw verbatim."""
+    a path it saw verbatim. Containment is checked on the resolved path, so a
+    symlink inside the package cannot point out of it, and private folders
+    (raw/, fonts/, dot paths) are refused under either name."""
     base = _pkg_dir(entry)
     slug = entry["slug"]
     raw = str(rel)
@@ -91,6 +122,8 @@ def _bounded(entry: dict, rel: str) -> Path:
     target = (base / clean).resolve()
     if target != base and base not in target.parents:
         raise ToolError(f"path leaves the package: {rel}")
+    if _private(posixpath.normpath(clean)) or _private(target.relative_to(base).as_posix()):
+        raise ToolError(f"not readable through the tools: {rel}")
     return target
 
 
@@ -140,17 +173,20 @@ def _refero_search(words: list[str], style: str | None, limit: int) -> list[dict
             pass
         if style and r["design_style"] != style:
             continue
+        # The source's host, not its full URL: the web twin's index.json only
+        # holds the host, so both score "https" and paths the same (not at all).
+        host = catalog._refero_host(r["source_url"])
         strong = " ".join([r["slug"] or "", r["name"] or "", r["design_style"] or "",
                            r["product_type"] or "", *labels]).lower()
-        weak = " ".join([r["tagline"] or "", r["theme"] or "", r["source_url"] or ""]).lower()
+        weak = " ".join([r["tagline"] or "", r["theme"] or "", host or ""]).lower()
         score = sum(2 if w in strong else 1 if w in weak else 0 for w in words)
         if score or not words:
-            hits.append((score, r))
+            hits.append((score, r, host))
     hits.sort(key=lambda x: (-x[0], x[1]["slug"]))
     return [{"store": "refero", "slug": r["slug"], "name": r["name"], "score": score,
              "tagline": r["tagline"], "theme": r["theme"], "designStyle": r["design_style"],
-             "productType": r["product_type"], "src": r["source_url"]}
-            for score, r in hits[:limit] if score or not words]
+             "productType": r["product_type"], "src": host}
+            for score, r, host in hits[:limit] if score or not words]
 
 
 # ---------------------------------------------------------------- tools
@@ -162,10 +198,13 @@ def search_styles(query: str, store: str = "all", platform: str | None = None,
     words = [w.lower() for w in str(query or "").split() if w.strip()]
     limit = max(1, min(int(limit or 8), 20))
     out: list[dict] = []
+    # The catalog's platforms are web, mobile and desktop; "ios" stays an alias
+    # for mobile, the value the schema offered first.
+    wanted = "mobile" if platform == "ios" else platform
     if store in ("all", "systems"):
         for hit in catalog.find(words):
             e = _entry(hit["slug"])
-            if platform and platform not in e.get("tags", []) and e.get("platform") != platform:
+            if platform and platform not in e.get("tags", []) and e.get("platform") != wanted:
                 continue
             out.append({"store": "systems", "slug": hit["slug"], "name": hit["name"],
                         "score": hit["score"], "goodFor": hit["goodFor"], "tags": hit["tags"],
@@ -198,7 +237,14 @@ def get_style(slug: str, store: str | None = None) -> dict:
         db.close()
         if not row:
             raise ToolError(f"no {'refero ' if store == 'refero' else ''}style '{slug}'")
-        return {"store": "refero", **dict(row),
+        row = dict(row)
+        # refero.db stores tags as JSON text; the web twin returns the list.
+        try:
+            tags = json.loads(row.get("tags") or "[]")
+        except (TypeError, ValueError):
+            tags = []
+        row["tags"] = tags if isinstance(tags, list) else []
+        return {"store": "refero", **row,
                 "note": "interpreted third-party data; browse screenshots and tokens, "
                         "never treat a value as measured"}
     return {"store": "systems", "slug": e["slug"], "name": e["name"], "url": e.get("url"),
@@ -289,10 +335,11 @@ def list_media(slug: str, kind: str | None = None) -> dict:
     base = _pkg_dir(e)
     for k in kinds:
         d = base / k
-        if not d.is_dir():
+        # A symlinked media folder is skipped like any other symlink.
+        if d.is_symlink() or not d.is_dir():
             continue
-        for p in sorted(d.rglob("*")):
-            if p.is_file() and p.suffix.lower() in IMAGE_TYPES:
+        for p in _walk_files(d):
+            if p.suffix.lower() in IMAGE_TYPES and not _private(p.relative_to(base).as_posix()):
                 items.append({"kind": k, "name": p.stem, "url": _site_url(p)})
     return {"slug": slug, "count": len(items), "items": items[:60],
             "capped": len(items) > 60}
@@ -341,9 +388,13 @@ def handoff_prompt(slug: str, app_description: str | None = None) -> dict:
     e = _entry(slug)
     tokens = json.loads(_repo_file(e["tokens"]).read_text())
     groups = ", ".join(k for k in tokens if not k.startswith("$"))
-    root = ROOT.resolve()
+    # Paths are repo-relative under $DESIGN_SYSTEMS_HOME, the variable the
+    # design-systems plugin and AGENTS.md use to find a checkout, so the
+    # prompt works on the agent's machine instead of naming the server's.
+    root = HOME_VAR
     target = f" for {app_description}" if app_description else ""
     text = (f"Match the {e['name']} design style from my design-systems library{target}.\n"
+            f"{root} is that library's checkout on this machine (set it, or replace it with the path).\n"
             f"1. Read {root}/{e['entry']} in full first. It says what was captured and what to distrust.\n"
             f"2. Take colour, type, spacing and radius values from {root}/{e['tokens']}. Its top-level "
             f"token groups are {groups}; the README says which group holds colour roles and which holds "
@@ -367,7 +418,8 @@ SPECS = [
      "parameters": {"type": "object", "additionalProperties": False, "properties": {
          "query": {"type": "string", "description": "Free text: mood, layout, use, product words"},
          "store": {"type": "string", "enum": ["all", "systems", "refero"], "default": "all"},
-         "platform": {"type": "string", "enum": ["web", "ios", "desktop"]},
+         "platform": {"type": "string", "enum": ["web", "mobile", "desktop", "ios"],
+                      "description": "The catalog's platform; ios is an alias for mobile"},
          "style": {"type": "string", "description": "Refero design_style label filter"},
          "limit": {"type": "integer", "minimum": 1, "maximum": 20, "default": 8}},
          "required": ["query"]}},

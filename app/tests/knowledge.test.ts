@@ -1,7 +1,6 @@
-import { afterEach, expect, test } from "vitest";
+import { expect, test } from "vitest";
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import os from "node:os";
 import { renderToStaticMarkup } from "react-dom/server";
 import {
   documentHref,
@@ -23,22 +22,12 @@ import {
   ScorecardHistory,
 } from "@/features/knowledge/scorecard";
 import { DocumentMarkdown } from "@/features/knowledge/markdown";
-const originalRepo = process.env.DESIGN_SYSTEMS_REPO;
-const dirs: string[] = [];
+import { repoFixture, tempDir } from "./helpers";
 async function fixture() {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), "knowledge-"));
-  dirs.push(root);
-  process.env.DESIGN_SYSTEMS_REPO = root;
+  const root = await repoFixture("knowledge-");
   await fs.mkdir(path.join(root, "docs"));
   return root;
 }
-afterEach(async () => {
-  if (originalRepo === undefined) delete process.env.DESIGN_SYSTEMS_REPO;
-  else process.env.DESIGN_SYSTEMS_REPO = originalRepo;
-  await Promise.all(
-    dirs.splice(0).map((dir) => fs.rm(dir, { recursive: true, force: true })),
-  );
-});
 test("docs reader follows the mounted repository and rejects traversal and symlink escapes", async () => {
   const root = await fixture();
   await fs.writeFile(
@@ -61,10 +50,7 @@ test("docs reader follows the mounted repository and rejects traversal and symli
     excerpt: "This paragraph describes the package.",
   });
   expect(docs[0].text).not.toContain("metadata");
-  const outside = await fs.mkdtemp(
-    path.join(os.tmpdir(), "knowledge-outside-"),
-  );
-  dirs.push(outside);
+  const outside = await tempDir("knowledge-outside-");
   await fs.writeFile(path.join(outside, "external.md"), "outside");
   await fs.rm(path.join(root, "docs"), { recursive: true });
   await fs.symlink(outside, path.join(root, "docs"));
@@ -299,4 +285,52 @@ test("scorecard ranks applicable gaps by ratio and excludes N/A cells from compl
   expect(allNa.applicableCells).toBe(0);
   expect(allNa.pct).toBeNull();
   expect(allNa.weakest).toEqual([]);
+});
+
+test("scorecard pages render a grade value they do not know instead of crashing", async () => {
+  const root = await fixture();
+  await fs.mkdir(path.join(root, "scorecard/audits"), { recursive: true });
+  await fs.writeFile(
+    path.join(root, "scorecard/criteria.json"),
+    JSON.stringify({
+      version: "3",
+      layers: { F: "Foundations" },
+      criteria: [
+        {
+          id: "F1",
+          layer: "Foundations",
+          title: "Color roles",
+          doneWhen: "Roles",
+        },
+      ],
+    }),
+  );
+  await fs.writeFile(
+    path.join(root, "scorecard/audits/2026-10-01.json"),
+    JSON.stringify({
+      date: "2026-10-01",
+      method: "Review",
+      systems: [
+        {
+          slug: "test",
+          name: "Test",
+          category: "App",
+          goodFor: "Testing",
+          url: "https://example.test",
+          captured: "2026-10-01",
+          themes: ["dark"],
+          platform: "web",
+          grades: { F1: { grade: "excellent", evidence: "Future scale" } },
+        },
+      ],
+    }),
+  );
+  const overview = renderToStaticMarkup(ScorecardOverview());
+  expect(overview).toMatch(
+    /aria-label="[^"]*Color roles: excellent"[^>]*>\?<\/a>/,
+  );
+  // The package page maps unknown grades to Not applicable already.
+  expect(renderToStaticMarkup(PackageScorecard({ slug: "test" }))).toContain(
+    "Not graded in this audit.",
+  );
 });

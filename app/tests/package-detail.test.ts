@@ -1,6 +1,5 @@
-import { afterEach, describe, expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
 import { promises as fs } from "node:fs";
-import os from "node:os";
 import path from "node:path";
 import { getReference } from "../src/server/sources";
 import {
@@ -16,21 +15,9 @@ import {
   safeDecode,
 } from "../src/features/package-detail-data";
 import { GET as guideGet } from "../src/app/api/packages/[slug]/guide/[...path]/route";
-const original = process.env.DESIGN_SYSTEMS_REPO;
-const temporary: string[] = [];
-afterEach(async () => {
-  if (original === undefined) delete process.env.DESIGN_SYSTEMS_REPO;
-  else process.env.DESIGN_SYSTEMS_REPO = original;
-  await Promise.all(
-    temporary
-      .splice(0)
-      .map((dir) => fs.rm(dir, { recursive: true, force: true })),
-  );
-});
+import { repoFixture } from "./helpers";
 async function fixture() {
-  const dir = await fs.mkdtemp(path.join(os.tmpdir(), "package-parity-"));
-  temporary.push(dir);
-  process.env.DESIGN_SYSTEMS_REPO = dir;
+  const dir = await repoFixture("package-parity-");
   await fs.mkdir(path.join(dir, "systems/demo/components/crops"), {
     recursive: true,
   });

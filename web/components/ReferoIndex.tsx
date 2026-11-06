@@ -6,15 +6,14 @@
 // image tries the local mirror first and falls back to the remote CDN.
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { reducedMotion, scrollBehavior } from "@/components/motion";
 import { useUrlMirror } from "@/components/url-state";
+import { useSlashFocus } from "@/components/keys";
+import { scoreRow, terms, type Facet } from "@/lib/search";
+import { cardFav, cardImg, cardVideo, type MediaPair as Media } from "@/lib/refero-media";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ReferoCard, ReferoIndex as ReferoIndexData } from "@/lib/refero";
 
-const SEARCH_STOP = new Set(
-  "a an the and or of for in on to with by at is it this that site sites website websites page pages design designed style styles app apps web landing product products".split(
-    " ",
-  ),
-);
 const PAGE = 48;
 const HOVER_MS = 200;
 const PROMPTS = [
@@ -29,73 +28,8 @@ const PROMPTS = [
 ];
 type FacetKey = "theme" | "type" | "style" | "industry";
 
-const terms = (q: string) =>
-  q
-    .trim()
-    .toLowerCase()
-    .split(/\s+/)
-    .filter((w) => w && !SEARCH_STOP.has(w));
-
-export const host = (u: string | null) =>
-  String(u || "")
-    .replace(/^https?:\/\//, "")
-    .replace(/^www\./, "")
-    .replace(/\/.*$/, "");
-
-// Local media mirrors live under /refero-media/<kind>/<slug>.<ext>; the
-// index's mediaBase points them at the public host, empty keeps them on the
-// app's own /media/ route — the same rule loadReferoEntity applies.
-export const localMedia = (base: string, kind: string, slug: string, ext: string) =>
-  `${base || "/media"}/refero-media/${kind}/${encodeURIComponent(slug)}.${ext}`;
-export const cdnUrl = (cdn: string, u: string | null) =>
-  u ? (u.includes("://") ? u : `${cdn}${u}`) : null;
-const faviconFor = (src: string | null) =>
-  src
-    ? `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(`https://${host(src)}`)}&size=128`
-    : null;
-
 const hayOf = (s: ReferoCard) =>
   [s.name, s.slug, s.tagline, s.industry, s.src, s.type, s.style, ...s.tags].join(" ").toLowerCase();
-
-type Facet = [Set<string>, (s: ReferoCard, t: string) => boolean];
-
-function scoreOf(s: ReferoCard, haystack: string, toks: string[], facets: Facet[]) {
-  if (!toks.length) return 1;
-  let sat = 0;
-  let sc = 0;
-  for (const t of toks) {
-    let hit = haystack.includes(t) ? 1 : 0;
-    for (const [values, test] of facets)
-      if (values.has(t) && test(s, t)) {
-        hit = 2;
-        break;
-      }
-    if (hit) {
-      sat++;
-      sc += hit;
-    }
-  }
-  if (sat < (toks.length <= 2 ? toks.length : toks.length - 1)) return 0;
-  for (let i = 0; i < toks.length - 1; i++) if (haystack.includes(`${toks[i]} ${toks[i + 1]}`)) sc += 1.5;
-  return sc;
-}
-
-interface Media {
-  local: string | null;
-  remote: string | null;
-}
-export const cardImg = (index: ReferoIndexData, s: ReferoCard): Media => ({
-  local: s.card ? localMedia(index.mediaBase, s.card === "p" ? "posters" : "shots", s.slug, "jpg") : null,
-  remote: cdnUrl(index.cdn, s.cardRemote),
-});
-export const cardFav = (index: ReferoIndexData, s: ReferoCard): Media => ({
-  local: localMedia(index.mediaBase, "favicons", s.slug, "png"),
-  remote: faviconFor(s.src),
-});
-const cardVideo = (index: ReferoIndexData, s: ReferoCard): Media => ({
-  local: localMedia(index.mediaBase, "videos", s.slug, "mp4"),
-  remote: cdnUrl(index.cdn, s.videoRemote),
-});
 
 // Image with the local-first/remote-fallback dance; removes itself when both
 // sources fail so tiles degrade to the letter placeholder or panel colour.
@@ -143,12 +77,12 @@ function Card({ index, s }: { index: ReferoIndexData; s: ReferoCard }) {
   const video = useMemo(() => cardVideo(index, s), [index, s]);
 
   const enter = () => {
-    if (!s.video) return;
+    if (!s.video || reducedMotion()) return;
     if (wantVideo) {
       vid.current?.play().catch(() => {});
       return;
     }
-    if (!timer.current) timer.current = setTimeout(() => setWantVideo(true), HOVER_MS);
+    if (!timer.current) timer.current = setTimeout(() => !reducedMotion() && setWantVideo(true), HOVER_MS);
   };
   const leave = () => {
     if (timer.current) {
@@ -172,14 +106,18 @@ function Card({ index, s }: { index: ReferoIndexData; s: ReferoCard }) {
             <video
               ref={(v) => {
                 vid.current = v;
-                v?.play().catch(() => {});
+                if (!reducedMotion()) v?.play().catch(() => {});
               }}
               src={video.local || video.remote || undefined}
               muted
               loop
               playsInline
               preload="none"
-              onCanPlay={(e) => e.currentTarget.play().catch(() => {})}
+              onCanPlay={(e) => {
+                // Checked at every start, so a preference turned on after
+                // the hover began still stops a late load from playing.
+                if (!reducedMotion()) e.currentTarget.play().catch(() => {});
+              }}
               onPlaying={(e) => e.currentTarget.classList.add("on")}
               onError={(e) => {
                 const v = e.currentTarget;
@@ -238,20 +176,8 @@ export function ReferoIndex({ index }: { index: ReferoIndexData }) {
     setFiltersReady(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key !== "/" || e.metaKey || e.ctrlKey) return;
-      const t = e.target as HTMLElement;
-      if (/^(input|textarea|select)$/i.test(t.tagName) || t.isContentEditable) return;
-      // An open lightbox or the chat drawer traps the page: keep focus in it.
-      if (document.querySelector('[aria-modal="true"], [role="dialog"]:not([aria-hidden="true"])')) return;
-      e.preventDefault();
-      qRef.current?.focus();
-    };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, []);
 
+  useSlashFocus(qRef);
   useUrlMirror({
     q: q.trim() || null,
     theme: theme === "all" ? null : theme,
@@ -291,7 +217,7 @@ export function ReferoIndex({ index }: { index: ReferoIndexData }) {
     [...m.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 
   const toks = useMemo(() => terms(q), [q]);
-  const facets = useMemo<Facet[]>(
+  const facets = useMemo<Facet<ReferoCard>[]>(
     () => [
       [new Set(counts.style.keys()), (s, t) => s.style === t],
       [new Set(counts.type.keys()), (s, t) => s.type === t],
@@ -313,7 +239,7 @@ export function ReferoIndex({ index }: { index: ReferoIndexData }) {
           (!videoOnly || s.video) &&
           (tagSet.size === 0 || [...tagSet].every((t) => s.tags.includes(t))),
       )
-      .map((s) => [scoreOf(s, hay.get(s.slug) || "", toks, facets), s] as const)
+      .map((s) => [scoreRow(s, hay.get(s.slug) || "", toks, facets), s] as const)
       .filter(([sc]) => sc > 0);
     if (toks.length) scored.sort((a, b) => b[0] - a[0]);
     return scored.map(([, s]) => s);
@@ -391,7 +317,7 @@ export function ReferoIndex({ index }: { index: ReferoIndexData }) {
     setTagSet(new Set());
     setQ(label);
     save({ theme: "", type: "", style: "", industry: "", video: false, tags: [] });
-    gridTop.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    gridTop.current?.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
   };
 
   const sel = (key: FacetKey, first: string, value: string, set: (v: string) => void) => (
@@ -451,7 +377,7 @@ export function ReferoIndex({ index }: { index: ReferoIndexData }) {
               value={q}
               onChange={(e) => setQ(e.target.value)}
               onKeyDown={(e) => {
-                if (e.key === "Enter") gridTop.current?.scrollIntoView({ behavior: "smooth" });
+                if (e.key === "Enter") gridTop.current?.scrollIntoView({ behavior: scrollBehavior() });
                 if (e.key === "Escape") {
                   setQ("");
                   e.currentTarget.blur();

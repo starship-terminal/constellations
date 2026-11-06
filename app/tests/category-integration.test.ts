@@ -1,31 +1,13 @@
-import { describe, expect, it, onTestFinished } from "vitest";
-import { mkdtemp, rm } from "node:fs/promises";
-import { tmpdir } from "node:os";
-import { join } from "node:path";
-import { createResearchStore } from "@/server/db";
+import { describe, expect, it } from "vitest";
 import { withReferenceCategories } from "@/server/taxonomy/library";
 import { matchesCategory } from "@/contracts/categories";
 import { queryScreens } from "@/server/sources/screens";
-import type { LibraryItem } from "@/contracts/library";
 import assignments from "@/data/system-categories.json";
 import catalog from "../../catalog.json";
+import { libraryItem, tempStore } from "./helpers";
 
-const item = (slug: string, platform = "web"): LibraryItem => ({
-  id: `systems:${slug}`,
-  source: "systems",
-  slug,
-  name: slug,
-  platform,
-  description: "",
-  themes: [],
-  tags: [],
-  category: "legacy-tag",
-  image: null,
-  icon: null,
-  video: null,
-  evidence: "measured",
-  captured: null,
-});
+const item = (slug: string, platform = "web") =>
+  libraryItem(slug, { platform, category: "legacy-tag" });
 
 describe("database categories across apps and screens", () => {
   it("covers each existing measured system once with platform-correct assignments", () => {
@@ -59,12 +41,7 @@ describe("database categories across apps and screens", () => {
   });
   it("hydrates from SQLite and shares the same assignments with screen filters", async () => {
     // Edit a private store: the shared one feeds the other tests in this file.
-    const dir = await mkdtemp(join(tmpdir(), "category-integration-"));
-    const store = await createResearchStore(dir);
-    onTestFinished(async () => {
-      store.close();
-      await rm(dir, { recursive: true, force: true });
-    });
+    const { store } = await tempStore("category-integration-");
     const [reference] = await withReferenceCategories([item("linear")], store);
     expect(reference.categories?.map((term) => term.label)).toContain(
       "Project Management",

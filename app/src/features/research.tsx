@@ -10,6 +10,7 @@ import { DefaultChatTransport, type UIMessage } from "ai";
 import ReactMarkdown from "react-markdown";
 import { prepareResearchRequest } from "./research-transport";
 import { MarkdownImageAsText } from "./research-markdown";
+import { scrollMotion } from "./capture-viewer-motion";
 import { researchDocumentHref } from "./package-detail-data";
 import remarkGfm from "remark-gfm";
 import {
@@ -569,12 +570,7 @@ function ResearchConversation({ initial }: { initial: Conversation }) {
   }, []);
   useEffect(() => {
     if (busy && nearBottom.current)
-      end.current?.scrollIntoView({
-        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
-          ? "instant"
-          : "smooth",
-        block: "end",
-      });
+      end.current?.scrollIntoView({ behavior: scrollMotion(), block: "end" });
   }, [messages, status]);
   async function submit() {
     const prompt = value.trim();
@@ -583,7 +579,7 @@ function ResearchConversation({ initial }: { initial: Conversation }) {
     setLocalError("");
     clearError();
     nearBottom.current = true;
-    end.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    end.current?.scrollIntoView({ behavior: scrollMotion(), block: "end" });
     try {
       await steeringQueue.current;
       await sendMessage(

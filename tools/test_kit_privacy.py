@@ -84,6 +84,16 @@ class SharedList(unittest.TestCase):
                     self.assertIn("LEAK", res.stderr)
                     self.assertNotIn("Jane", res.stderr)
 
+    def test_unsnap_reads_entities_nbsp_and_split_elements(self):
+        redact = {"replace": [["unrelated", "gi", "x"], ["jane\\s+doe", "gi", "A User"], ["Jane Doe", "g", "A User"]]}
+        for page in ["<p>Jane&nbsp;Doe</p>", "<p>J&#97;ne Doe</p>", "<p>Ja<b>ne</b> Doe</p>",
+                     "<p>Jane</p><p>Doe</p>", '<img alt="Jane&#x20;Doe">', "<p>JANE\u00a0DOE</p>",
+                     '<p>Jane <span title="x>y">Doe</span></p>', "<p>Ja<!-- c -->ne Doe</p>"]:
+            self.assertIn("redaction pattern 2", unsnap.leaks_in(page, redact), page)
+        self.assertEqual(unsnap.leaks_in("<p>Jane&nbsp;Doe</p>", redact), ["redaction pattern 2", "redaction pattern 3"])
+        self.assertEqual(unsnap.leaks_in("<p>A User</p>", redact), [])
+        self.assertEqual(unsnap.leaks_in('<a href="https://x/a?a=1&amp;sig=2">', redact), ["sig"])
+
 
 def js_block(path, start, end):
     """The source lines from the first one starting with `start` through the first after it starting with `end`."""
@@ -131,6 +141,111 @@ class JavaScriptHalves(unittest.TestCase):
                             "noUrl(\"url('https://x/a\\\\'b(2).png?sig=1')\"), noUrl('url(https://x/p.png?sig=1), none')]))")
             self.assertEqual(got, ['url(…), linear-gradient(red, blue)', 'url("data:image/svg+xml,abc")', 'url(#clip)', 'auto', 3,
                                    'url(…) no-repeat', 'url(…)', 'url(…), none'], path)
+
+    def test_recorded_page_urls_keep_only_origin_and_route_words(self):
+        cases = {
+            "https://claude.ai/chat/1f2e3d4c-aaaa-bbbb?q=secret#m": "https://claude.ai/chat/<id>",
+            "https://app.example.test/project/My-Secret-Plan": "https://app.example.test/project/<id>",
+            "https://app.example.test/team/eng/issue/ENG-123/fix-the-login-for-acme": "https://app.example.test/team/<id>/issue/<id>/<id>",
+            "https://app.example.test/new-chat": "https://app.example.test/new-chat",
+            "https://app.example.test/": "https://app.example.test/",
+            "https://x.test/cb?code=abc#access_token=def": "https://x.test/cb",
+            "file:///Users/someone/raw/home.html": "file:///<local file>",
+            "not a url": "<url>",
+            "https://app.example.test/project/my-plan": "https://app.example.test/project/<id>",
+            "https://app.example.test/u/someone/settings": "https://app.example.test/u/<id>/settings",
+            "https://claude.ai/chat/<id>": "https://claude.ai/chat/<id>",            # a second pass changes nothing
+        }
+        mod = (HERE / "kit/capture/safe-url.mjs").as_uri()
+        got = self.node(f"import({json.dumps(mod)}).then(({{ safeUrl }}) => "
+                        f"console.log(JSON.stringify({json.dumps(list(cases))}.map(safeUrl))))")
+        self.assertEqual(got, list(cases.values()))
+        for rel in ("signed-in/measure.mjs", "layout.mjs", "electron/shot.mjs", "public/measure.mjs"):
+            src = (HERE / "kit/capture" / rel).read_text()
+            self.assertIn("safe-url.mjs", src, rel)                  # each writer of a raw/ URL uses it
+            self.assertIn("safeUrl(", src, rel)
+        # a partial rerun cleans what it keeps from the last run too
+        self.assertIn("url: v.url && safeUrl(v.url)", (HERE / "kit/capture/signed-in/measure.mjs").read_text())
+        self.assertIn("out._meta.storyUrl = safeUrl(out._meta.storyUrl)", (HERE / "kit/capture/public/measure.mjs").read_text())
+
+
+PLAYWRIGHT = os.environ.get("PLAYWRIGHT") or str(Path.home() / ".design-systems/pw/node_modules/playwright/index.mjs")
+
+
+@unittest.skipIf(NODE is None or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
+class SnapshotInABrowser(unittest.TestCase):
+    """Runs snapshot.js's __snap on a small page in headless Chromium (the capture's own Playwright,
+    $PLAYWRIGHT or ~/.design-systems/pw), and checks the copy it returns."""
+
+    def snap(self, page, setup="", redact=None):
+        redact = redact or {"replace": [["nothing-matches-this", "g", "x"]]}
+        script = f"""
+const pw = await import({json.dumps(Path(PLAYWRIGHT).as_uri())});
+const b = await pw.chromium.launch();
+const p = await b.newPage();
+await p.setContent({json.dumps(page)});
+await p.evaluate(() => {{ {setup} }});
+await p.addScriptTag({{ content: {json.dumps((SIGNED_IN / "snapshot.js").read_text())} }});
+const out = await p.evaluate((r) => window.__snap('t', r), {json.dumps(redact)});
+await b.close();
+console.log(JSON.stringify(out));
+"""
+        res = subprocess.run([NODE, "--input-type=module", "-e", script], capture_output=True, text=True, timeout=120)
+        self.assertEqual(res.returncode, 0, res.stderr[-2000:])
+        return json.loads(res.stdout).split("SNAPMETA", 1)[1]
+
+    def test_credential_fields_never_reach_the_copy(self):
+        # Each field trips exactly one rule: neutral ids, so the autocomplete rule is tested on its own.
+        page = ('<input type="password" id="f1"><input type="hidden" name="f2" value="HIDDENTOKEN1">'
+                '<input id="f3" autocomplete="one-time-code"><input id="f4" autocomplete="cc-number">'
+                '<input type="text" id="f5" autocomplete="current-password"><input name="api_key" id="f6">'
+                '<input id="q" value="">')
+        setup = ("document.getElementById('f1').value = 'PASSWORDVALUE1';"
+                 "document.getElementById('f3').value = '123987';"
+                 "document.getElementById('f4').value = '4111222233334444';"
+                 "document.getElementById('f5').value = 'SHOWNPASSWORD1';"
+                 "document.getElementById('f6').value = 'APIKEYVALUE1';"
+                 "document.getElementById('q').value = 'plain search';")
+        body = self.snap(page, setup)
+        for secret in ("PASSWORDVALUE1", "HIDDENTOKEN1", "123987", "4111222233334444", "SHOWNPASSWORD1", "APIKEYVALUE1"):
+            self.assertNotIn(secret, body)
+        self.assertIn('value="xxxxxxxx"', body)          # the password field still renders filled
+        self.assertIn('value="plain search"', body)       # ordinary fields keep what was typed
+
+    def test_redaction_reaches_text_nodes_comments_and_attributes(self):
+        page = ('<p>J&#97;ne&nbsp;Doe and Jane Doe</p><!-- Jane Doe --><img alt="Jane Doe" src="data:,">'
+                '<a title="by Jane  Doe" href="#x">x</a><p>JANE\u00a0DOE</p>')
+        redact = {"replace": [["jane\\s+doe", "i", "A User"]]}   # no g: every match must still go
+        script = f"""
+const pw = await import({json.dumps(Path(PLAYWRIGHT).as_uri())});
+const b = await pw.chromium.launch();
+const p = await b.newPage();
+await p.setContent({json.dumps(page)});
+await p.addScriptTag({{ content: {json.dumps((SIGNED_IN / "snapshot.js").read_text())} }});
+const out = await p.evaluate((r) => window.__snap('t', r), {json.dumps(redact)});
+await b.close();
+console.log(JSON.stringify(out));
+"""
+        res = subprocess.run([NODE, "--input-type=module", "-e", script], capture_output=True, text=True, timeout=120)
+        self.assertEqual(res.returncode, 0, res.stderr[-2000:])
+        out = json.loads(res.stdout)
+        body = out.split("SNAPMETA", 1)[1]
+        self.assertEqual(unsnap.leaks_in(body, redact), [], body)
+        self.assertGreaterEqual(body.count("A User"), 6, body)
+
+
+
+@unittest.skipIf(NODE is None or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
+class RawShotsStayOutOfTheRepo(unittest.TestCase):
+    def test_public_capture_needs_a_scratch_dir_outside_a_package(self):
+        env = {k: v for k, v in os.environ.items() if k != "RAW"}
+        res = subprocess.run([NODE, str(HERE / "kit/capture/public/public.mjs")], capture_output=True, text=True,
+                             timeout=60, env={**env, "PLAYWRIGHT": PLAYWRIGHT})
+        self.assertEqual(res.returncode, 2, res.stderr)
+        self.assertIn("set RAW=", res.stderr)
+        src = (HERE / "kit/capture/public/public.mjs").read_text()
+        self.assertIn("'.design-systems', path.basename(PKG), 'raw-shots'", src)
+        self.assertNotIn("raw/full/", src)
 
 
 if __name__ == "__main__":

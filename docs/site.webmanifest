@@ -1,8 +1,8 @@
 {
   "name": "Design systems",
   "short_name": "Design",
-  "description": "Captured design styles: the gallery, the scorecard and the library docs.",
-  "start_url": "./gallery/",
+  "description": "Captured design styles: the scorecard and the library docs.",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f7f7f5",

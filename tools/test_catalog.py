@@ -455,6 +455,27 @@ class ScanTest(unittest.TestCase):
         self.assertTrue(all(h.endswith(":2: redaction pattern 1") for h in hits))
 
 
+class RedactionLoaderTest(unittest.TestCase):
+    def test_one_loader_for_scan_and_redact_images(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            a, b = Path(d) / "a.json", Path(d) / "b.json"
+            a.write_text(json.dumps({"replace": [["Jane\\s+Doe", "g", "x"], ["a(b", "i", "x"]], "email_allow": ["^me@x\\.test$"]}))
+            b.write_text(json.dumps({"replace": [["secret", "gi"]]}))           # a two-item row
+            red = catalog.read_redaction([a, b])
+            self.assertEqual(len(red["replace"]), 3)
+            self.assertEqual(red["email_allow"], ["^me@x\\.test$"])
+            pats = catalog.redaction_patterns(red)
+            self.assertTrue(pats[0].search("Jane Doe") and not pats[0].search("JANE DOE"))   # flags honoured
+            self.assertTrue(pats[1].search("xA(Bx"))                                           # invalid: literal
+            self.assertTrue(pats[2].search("SECRET"))
+            self.assertTrue(catalog.redaction_patterns(red, ignorecase=True)[0].search("JANE DOE"))
+            (Path(d) / "pkg").mkdir()
+            (Path(d) / "pkg" / "n.md").write_text("a(b and Secret\n")
+            hits = catalog.scan(Path(d) / "pkg", red)                # a bad regex no longer crashes scan
+            self.assertEqual(sorted(h.rsplit(" ", 1)[1] for h in hits), ["2", "3"])
+
+
 class ScanFailsLoudlyTest(unittest.TestCase):
     def test_missing_or_empty_folder_is_an_error_not_clean(self):
         import tempfile
@@ -1110,6 +1131,162 @@ class RepoFileTest(unittest.TestCase):
     def test_other_paths_are_left_to_the_built_site(self):
         self.assertIsNone(catalog.repo_file("/gallery/index.html"))
         self.assertIsNone(catalog.repo_file("/"))
+
+    def test_ignored_files_fonts_and_example_clones_are_refused(self):
+        for path in ("/systems/claude/tools/capture/dumps/home.html", "/systems/claude/tools/capture/out/x.json",
+                     "/systems/claude/fonts/Product.woff2", "/systems/claude/raw/x.partial.json",
+                     "/example/README.md", "/tools/kit/../../systems/claude/fonts/a.ttf"):
+            self.assertIsNone(catalog.repo_file(path), path)
+        self.assertIsNotNone(catalog.repo_file("/systems/claude/tokens.json"))
+        self.assertIsNotNone(catalog.repo_file("/tools/kit/README.md"))
+
+    def test_a_git_failure_refuses_rather_than_serves(self):
+        import subprocess
+        from unittest import mock
+        failed = subprocess.CompletedProcess([], 128, b"", b"fatal")
+        with mock.patch.object(catalog.subprocess, "run", return_value=failed):
+            self.assertIsNone(catalog.repo_file("/systems/claude/tokens.json"))
+
+
+class InnerShadowTest(unittest.TestCase):
+    def test_tokens_studio_inner_shadow_exports_as_inset(self):
+        layer = {"offsetX": "0px", "offsetY": "-6px", "blur": "0px", "spread": "0px", "color": "#00000026"}
+        self.assertEqual(catalog.css_value(dict(layer, type="innerShadow")), "inset 0px -6px 0px 0px #00000026")
+        self.assertEqual(catalog.css_value(dict(layer, inset=True)), "inset 0px -6px 0px 0px #00000026")
+        self.assertEqual(catalog.css_value(dict(layer, type="dropShadow")), "0px -6px 0px 0px #00000026")
+        self.assertEqual(catalog.css_value([dict(layer, type="innerShadow"), layer]),
+                         "inset 0px -6px 0px 0px #00000026, 0px -6px 0px 0px #00000026")
+
+
+class SmallBugsTest(unittest.TestCase):
+    def test_resolver_sees_an_edited_tokens_file(self):
+        import os
+        import tempfile
+        with tempfile.NamedTemporaryFile("w", suffix=".json", dir=catalog.ROOT, delete=False) as f:
+            f.write('{"core": {"c": {"$value": "#000000"}}}')
+        rel = Path(f.name).relative_to(catalog.ROOT).as_posix()
+        try:
+            self.assertEqual(catalog.resolver_for(rel).lookup("core.c"), "#000000")
+            Path(f.name).write_text('{"core": {"c": {"$value": "#ffffff"}}}')
+            os.utime(f.name, ns=(1, 10**18))                    # a different mtime, whatever the clock says
+            self.assertEqual(catalog.resolver_for(rel).lookup("core.c"), "#ffffff")
+        finally:
+            os.unlink(f.name)
+
+    def test_check_reports_a_missing_or_broken_tokens_file_instead_of_crashing(self):
+        import copy
+        from unittest import mock
+        cat = copy.deepcopy(catalog.load_catalog())
+        cat["systems"][0]["tokens"] = "systems/no-such/tokens.json"
+        with mock.patch.object(catalog, "load_catalog", return_value=cat):
+            problems = catalog.check()
+        slug = cat["systems"][0]["slug"]
+        self.assertIn(f"{slug}: tokens systems/no-such/tokens.json does not exist", problems)
+        cat["systems"][0]["tokens"] = "README.md"                   # not JSON
+        with mock.patch.object(catalog, "load_catalog", return_value=cat):
+            problems = catalog.check()
+        self.assertTrue(any(p.startswith(f"{slug}: tokens README.md cannot be read") for p in problems), problems)
+
+    def test_build_refero_refuses_a_path_like_slug_before_writing(self):
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            data = Path(d) / "web" / "data"
+            styles = [(Path(d) / "ok", {"slug": "fine", "name": "Fine"}, {}),
+                      (Path(d) / "bad", {"slug": "../../escaped", "name": "Bad"}, {})]
+            with mock.patch.object(catalog, "DATA", data), \
+                 mock.patch.object(catalog, "load_refero", return_value=styles), \
+                 mock.patch.object(catalog, "refero_entry", return_value={}), \
+                 mock.patch.object(catalog, "refero_card", return_value={"name": "x"}), \
+                 self.assertRaises(SystemExit) as cm:
+                catalog.build_refero()
+            self.assertIn("../../escaped", str(cm.exception.code))
+            self.assertFalse((data / "refero" / "style" / "fine.json").exists())
+            self.assertEqual([p for p in Path(d).rglob("*.json")], [])
+
+    def test_check_still_reports_preview_problems_with_a_broken_tokens_file(self):
+        import copy
+        from unittest import mock
+        cat = copy.deepcopy(catalog.load_catalog())
+        s = cat["systems"][0]
+        s["tokens"], s["preview"]["cover"] = "README.md", "systems/no-such/cover.png"
+        with mock.patch.object(catalog, "load_catalog", return_value=cat):
+            problems = catalog.check()
+        self.assertIn(f"{s['slug']}: preview.cover systems/no-such/cover.png does not exist", problems)
+
+    def test_refero_slug_pattern_refuses_paths(self):
+        for ok in ("linear", "a-b-2"):
+            self.assertTrue(catalog.REFERO_SLUG.fullmatch(ok))
+        for bad in ("../x", "a/b", "A", "a_b", "", "-a", "a.json"):
+            self.assertIsNone(catalog.REFERO_SLUG.fullmatch(bad), bad)
+
+
+class EnvTest(unittest.TestCase):
+    def test_dotenv_loads_only_the_listed_keys(self):
+        import os
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d, mock.patch.dict(os.environ, {}, clear=False):
+            env = Path(d) / ".env"
+            env.write_text("STATICRYPT_PASSWORD=hunter2\nexport DS_CHAT_MODEL='m'\n# ANTHROPIC_API_KEY=x\n"
+                           "ANTHROPIC_API_KEY=\"sk-test\"\nSOMETHING_ELSE=1\n")
+            for k in ("STATICRYPT_PASSWORD", "DS_CHAT_MODEL", "ANTHROPIC_API_KEY", "SOMETHING_ELSE"):
+                os.environ.pop(k, None)
+            done = catalog.refero_media.load_env(env_file=env)
+            self.assertEqual(sorted(done), ["ANTHROPIC_API_KEY", "DS_CHAT_MODEL"])
+            self.assertEqual(os.environ["ANTHROPIC_API_KEY"], "sk-test")
+            self.assertNotIn("STATICRYPT_PASSWORD", os.environ)
+            self.assertNotIn("SOMETHING_ELSE", os.environ)
+            os.environ.pop("DS_CHAT_MODEL")
+            self.assertEqual(catalog.refero_media.load_env(("DS_CHAT_MODEL",), env_file=env), ["DS_CHAT_MODEL"])
+            self.assertEqual(catalog.refero_media.load_env(("DS_CHAT_MODEL",), env_file=env), [])   # set wins
+
+    def test_subprocesses_get_a_minimal_env(self):
+        import os
+        import subprocess
+        from unittest import mock
+        with mock.patch.dict(os.environ, {"ANTHROPIC_API_KEY": "sk-test", "R2_SECRET_ACCESS_KEY": "s", "PATH": "/bin"}):
+            env = catalog.tool_env(X="1")
+            self.assertEqual(env["PATH"], "/bin")
+            self.assertEqual(env["X"], "1")
+            self.assertNotIn("ANTHROPIC_API_KEY", env)
+            self.assertNotIn("R2_SECRET_ACCESS_KEY", env)
+            seen = []
+            done = subprocess.CompletedProcess([], 0, '{"findings": []}', "")
+            with mock.patch.object(catalog.shutil, "which", return_value="/bin/npx"), \
+                 mock.patch.object(catalog.subprocess, "run", side_effect=lambda *a, **k: seen.append(k.get("env")) or done):
+                catalog.lint_design_md([catalog.ROOT / "systems" / "claude" / "DESIGN.md"])
+            self.assertTrue(seen and all(e is not None and "ANTHROPIC_API_KEY" not in e for e in seen))
+            seen.clear()
+            with mock.patch.object(catalog, "_thumb_backend", return_value="sips"), \
+                 mock.patch.object(catalog.subprocess, "run", side_effect=lambda *a, **k: seen.append(k.get("env")) or done):
+                import tempfile
+                with tempfile.TemporaryDirectory() as d:
+                    src = Path(d) / "a.png"
+                    src.write_bytes(b"x")
+                    catalog._make_thumb(src, Path(d) / "a.jpg")
+            self.assertEqual(len(seen), 1)
+            self.assertIsNotNone(seen[0])
+            self.assertNotIn("R2_SECRET_ACCESS_KEY", seen[0])
+            self.assertNotIn("ANTHROPIC_API_KEY", seen[0])
+
+    def test_tesseract_gets_a_minimal_env_with_one_thread(self):
+        import os
+        import subprocess
+        from unittest import mock
+        try:
+            from PIL import Image
+            import redact_images
+        except ImportError:
+            self.skipTest("Pillow and numpy are not installed")
+        seen = []
+        done = subprocess.CompletedProcess([], 0, "level\tpage_num\n", "")
+        with mock.patch.dict(os.environ, {"ANTHROPIC_API_KEY": "sk-test", "R2_SECRET_ACCESS_KEY": "s"}), \
+             mock.patch.object(redact_images.subprocess, "run", side_effect=lambda *a, **k: seen.append(k.get("env")) or done):
+            redact_images._tesseract_words(Image.new("RGB", (4, 4)))
+        self.assertEqual(seen[0]["OMP_THREAD_LIMIT"], "1")
+        self.assertNotIn("ANTHROPIC_API_KEY", seen[0])
+        self.assertNotIn("R2_SECRET_ACCESS_KEY", seen[0])
 
 
 if __name__ == "__main__":
