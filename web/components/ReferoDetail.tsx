@@ -491,7 +491,7 @@ function Spacing({ ds }: { ds: Ds }) {
                     <td>
                       <code>{String(v)}</code>
                     </td>
-                    <td>{p ? <span className="rf-bar" style={{ width: `${p}px` }} /> : null}</td>
+                    <td className="rf-bar-cell">{p ? <span className="rf-bar" style={{ width: `min(${p}px, 100%)` }} /> : null}</td>
                   </tr>
                 );
               })}
