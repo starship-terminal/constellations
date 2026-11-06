@@ -6,6 +6,7 @@
 // image tries the local mirror first and falls back to the remote CDN.
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { reducedMotion, scrollBehavior } from "@/components/motion";
 import { useUrlMirror } from "@/components/url-state";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ReferoCard, ReferoIndex as ReferoIndexData } from "@/lib/refero";
@@ -143,12 +144,12 @@ function Card({ index, s }: { index: ReferoIndexData; s: ReferoCard }) {
   const video = useMemo(() => cardVideo(index, s), [index, s]);
 
   const enter = () => {
-    if (!s.video) return;
+    if (!s.video || reducedMotion()) return;
     if (wantVideo) {
       vid.current?.play().catch(() => {});
       return;
     }
-    if (!timer.current) timer.current = setTimeout(() => setWantVideo(true), HOVER_MS);
+    if (!timer.current) timer.current = setTimeout(() => !reducedMotion() && setWantVideo(true), HOVER_MS);
   };
   const leave = () => {
     if (timer.current) {
@@ -172,14 +173,18 @@ function Card({ index, s }: { index: ReferoIndexData; s: ReferoCard }) {
             <video
               ref={(v) => {
                 vid.current = v;
-                v?.play().catch(() => {});
+                if (!reducedMotion()) v?.play().catch(() => {});
               }}
               src={video.local || video.remote || undefined}
               muted
               loop
               playsInline
               preload="none"
-              onCanPlay={(e) => e.currentTarget.play().catch(() => {})}
+              onCanPlay={(e) => {
+                // Checked at every start, so a preference turned on after
+                // the hover began still stops a late load from playing.
+                if (!reducedMotion()) e.currentTarget.play().catch(() => {});
+              }}
               onPlaying={(e) => e.currentTarget.classList.add("on")}
               onError={(e) => {
                 const v = e.currentTarget;
@@ -391,7 +396,7 @@ export function ReferoIndex({ index }: { index: ReferoIndexData }) {
     setTagSet(new Set());
     setQ(label);
     save({ theme: "", type: "", style: "", industry: "", video: false, tags: [] });
-    gridTop.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    gridTop.current?.scrollIntoView({ behavior: scrollBehavior(), block: "start" });
   };
 
   const sel = (key: FacetKey, first: string, value: string, set: (v: string) => void) => (
@@ -451,7 +456,7 @@ export function ReferoIndex({ index }: { index: ReferoIndexData }) {
               value={q}
               onChange={(e) => setQ(e.target.value)}
               onKeyDown={(e) => {
-                if (e.key === "Enter") gridTop.current?.scrollIntoView({ behavior: "smooth" });
+                if (e.key === "Enter") gridTop.current?.scrollIntoView({ behavior: scrollBehavior() });
                 if (e.key === "Escape") {
                   setQ("");
                   e.currentTarget.blur();
