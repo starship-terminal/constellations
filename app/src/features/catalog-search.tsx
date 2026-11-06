@@ -44,6 +44,7 @@ import {
   enterSearchAction,
   screenCountScope,
   verticalChoiceIndex,
+  nextPickerGroup,
 } from "./catalog-search-behavior";
 import { replaceSearch } from "./url-state";
 
@@ -358,12 +359,13 @@ export function CatalogSearch({
       remove(last.key, last.value);
       return;
     }
-    if (event.key === "Tab" && open && !typed && groups.length) {
+    const nextGroup =
+      event.key === "Tab" && open && !typed
+        ? nextPickerGroup(groupIndex, groups.length, event.shiftKey)
+        : null;
+    if (nextGroup !== null) {
       event.preventDefault();
-      setGroupIndex(
-        (value) =>
-          (value + (event.shiftKey ? -1 : 1) + groups.length) % groups.length,
-      );
+      setGroupIndex(nextGroup);
       setHighlight(-1);
       list.current?.scrollTo({ top: 0 });
       return;

@@ -1,7 +1,14 @@
 "use client";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  Suspense,
+  useEffect,
+  useId,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 import {
   Grid2X2,
   BookOpen,
@@ -21,6 +28,8 @@ import {
 } from "lucide-react";
 import { api, Modal } from "./shared";
 export function Mark() {
+  // The mark renders more than once (sidebar, boot screen); each needs its own clip id.
+  const clip = `ds-mark-clip-${useId().replace(/[^\w-]/g, "")}`;
   return (
     <>
       <svg
@@ -32,12 +41,12 @@ export function Mark() {
         viewBox="0 0 64 64"
       >
         <defs>
-          <clipPath id="ds-mark-clip">
+          <clipPath id={clip}>
             <rect width="64" height="64" rx="14" />
           </clipPath>
         </defs>
         <rect width="64" height="64" rx="14" fill="#08090a" />
-        <g clipPath="url(#ds-mark-clip)">
+        <g clipPath={`url(#${clip})`}>
           <polygon
             points="-6.00,28.00 21.31,28.00 16.69,36.00 -6.00,36.00"
             fill="#FFFFFF"
@@ -184,6 +193,7 @@ export function AppShell({ children }: { children: ReactNode }) {
     [editing, setEditing] = useState<Conversation | null>(null),
     [title, setTitle] = useState(""),
     [error, setError] = useState(""),
+    [renameError, setRenameError] = useState(""),
     [historyFailed, setHistoryFailed] = useState(false);
   // Only the newest history request may update the list or its failure state.
   const historyRequest = useRef(0);
@@ -217,9 +227,48 @@ export function AppShell({ children }: { children: ReactNode }) {
       setEditing(null);
       reload();
     } catch (e) {
-      setError((e as Error).message);
+      // Shown inside the dialog: a toast behind the modal is inert and unread.
+      setRenameError((e as Error).message);
     }
   }
+  // Close open history menus on an outside click or Escape, and the mobile
+  // navigation on Escape, returning focus to what opened it.
+  const menuButton = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const menus = () =>
+      document.querySelectorAll<HTMLDetailsElement>(
+        "details.history-menu[open]",
+      );
+    const down = (event: PointerEvent) => {
+      for (const menu of menus())
+        if (!menu.contains(event.target as Node)) menu.open = false;
+    };
+    const key = (event: KeyboardEvent) => {
+      if (event.key !== "Escape" || event.defaultPrevented) return;
+      const open = [...menus()];
+      if (open.length) {
+        for (const menu of open) {
+          menu.open = false;
+          menu.querySelector("summary")?.focus();
+        }
+        return;
+      }
+      if (mobile) {
+        setMobile(false);
+        menuButton.current?.focus();
+      }
+    };
+    document.addEventListener("pointerdown", down);
+    document.addEventListener("keydown", key);
+    return () => {
+      document.removeEventListener("pointerdown", down);
+      document.removeEventListener("keydown", key);
+    };
+  }, [mobile]);
+  const closeMenu = (target: EventTarget) =>
+    (
+      (target as HTMLElement).closest("details") as HTMLDetailsElement | null
+    )?.removeAttribute("open");
   return (
     <div className={`app-shell ${collapsed ? "sidebar-collapsed" : ""}`}>
       <button
@@ -233,6 +282,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         {collapsed ? <PanelLeftOpen size={18} /> : <PanelLeftClose size={18} />}
       </button>
       <button
+        ref={menuButton}
         className="mobile-menu icon-button"
         onClick={() => setMobile((v) => !v)}
         aria-label={mobile ? "Close navigation" : "Open navigation"}
@@ -292,16 +342,19 @@ export function AppShell({ children }: { children: ReactNode }) {
                   </summary>
                   <div>
                     <button
-                      onClick={() => {
+                      onClick={(event) => {
+                        closeMenu(event.currentTarget);
                         setEditing(c);
                         setTitle(c.title);
+                        setRenameError("");
                       }}
                     >
                       <Pencil size={14} />
                       Rename
                     </button>
                     <button
-                      onClick={async () => {
+                      onClick={async (event) => {
+                        closeMenu(event.currentTarget);
                         try {
                           await api(`/api/conversations/${c.id}`, {
                             method: "PATCH",
@@ -384,6 +437,11 @@ export function AppShell({ children }: { children: ReactNode }) {
               required
             />
           </label>
+          {renameError && (
+            <p className="error-text" role="alert">
+              {renameError}
+            </p>
+          )}
           <button className="primary" type="submit">
             Save title
           </button>
