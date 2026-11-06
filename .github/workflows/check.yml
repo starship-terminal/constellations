@@ -1,8 +1,10 @@
-# Run the repo's freshness gates on every push to main and every pull request.
-# pages.yml only watches the site's inputs, so without this a commit that forgot
-# `make brief`/`make grade` (a systems/**, catalog.json or tools change, say) ran
-# no CI at all. `make check` covers catalog.json, Brief sections, scorecard data
-# and scripted grades, and every README's Health section.
+# Run the repo's freshness gates and tests on every push to main and every pull
+# request. pages.yml only watches the site's inputs, so without this a commit that
+# forgot `make brief`/`make grade` (a systems/**, catalog.json or tools change,
+# say) ran no CI at all. `make check` covers catalog.json, Brief sections,
+# scorecard data and scripted grades, and every README's Health section.
+# `make test` runs the tools' tests and every package's own tests; the checkout
+# has no Git LFS content, so tests that read a real screenshot or refero.db skip.
 name: Check
 on:
   push:
@@ -19,3 +21,8 @@ jobs:
         with:
           python-version: "3.13"
       - run: make check
+      # Pillow, numpy and markdown, so the package tests that need Pillow run
+      # instead of reporting a skip.
+      - name: Install the tools' Python dependencies
+        run: pip install -r requirements.txt -r tools/requirements-capture.txt
+      - run: make test

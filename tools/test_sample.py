@@ -39,11 +39,15 @@ def write_png(path, rows, filt=0):
 class SampleTest(unittest.TestCase):
     WHITE, INK, GREY = (255, 255, 255, 255), (17, 17, 17, 255), (120, 120, 120, 255)
 
+    def setUp(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        self.tmp = Path(tmp.name)
+
     def png(self, filt=0):
         rows = [[self.WHITE] * 6 for _ in range(4)]
         rows[1][2], rows[1][3], rows[2][2] = self.INK, self.GREY, self.GREY
-        with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as f:
-            path = f.name
+        path = self.tmp / f"filter-{filt}.png"
         write_png(path, rows, filt)
         return sample.read_png(path)
 
@@ -62,14 +66,15 @@ class SampleTest(unittest.TestCase):
     def test_mask_paints_text_with_the_surrounding_fill_and_round_trips(self):
         _, _, rows = self.png(1)
         self.assertEqual(sample.mask(rows, [(2, 1, 2, 2)]), [self.WHITE])
-        with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as f:
-            out = f.name
+        out = self.tmp / "masked.png"
         sample.write_png(out, rows)
         _, _, back = sample.read_png(out)
         self.assertTrue(all(px == self.WHITE for row in back for px in row))
 
     def test_reads_a_quantised_package_screenshot(self):
         shot = HERE.parent / "systems/claude/screenshots/home-light.png"
+        if shot.read_bytes().startswith(b"version https://git-lfs"):
+            self.skipTest(f"{shot.name} is a Git LFS pointer; run git lfs pull for it")
         _, _, rows = sample.read_png(shot)
         self.assertEqual(sample.hexof(sample.fill(rows, 1500, 100, 200, 40)[0]), "#FCFCFB")
 
