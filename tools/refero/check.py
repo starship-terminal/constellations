@@ -56,9 +56,13 @@ def open_db(refero: Path):
         return None, "no refero.db"
     try:
         db = sqlite3.connect(f"file:{path}?mode=ro", uri=True)
+    except sqlite3.Error:
+        return None, "refero.db is not a readable sqlite database (LFS pointer?)"
+    try:
         db.row_factory = sqlite3.Row
         db.execute("SELECT 1 FROM styles LIMIT 1").fetchone()
     except sqlite3.Error:
+        db.close()
         return None, "refero.db is not a readable sqlite database (LFS pointer?)"
     return db, None
 

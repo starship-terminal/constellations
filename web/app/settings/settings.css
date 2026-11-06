@@ -1,0 +1,8 @@
+/* settings-surface pieces globals.css does not carry (.pref/.pf-* blocks and
+   .shots live there). */
+
+.st-sel {
+  height: 36px; width: 100%; border: 1px solid var(--line-strong); border-radius: 8px;
+  background: var(--field-bg); color: var(--text); padding: 0 9px; font: inherit;
+}
+.st-actions { margin-top: 16px; }

@@ -6,8 +6,10 @@ import json
 import re
 import shutil
 import sys
+import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import catalog  # noqa: E402
@@ -104,6 +106,12 @@ class CaptureCheckTest(unittest.TestCase):
 
 
 class ThumbTest(unittest.TestCase):
+    def setUp(self):
+        # attach_thumbs prunes its directory: never run it against the real one.
+        self._tmp = tempfile.TemporaryDirectory()
+        self.enterContext(self._tmp)
+        self.enterContext(mock.patch.object(catalog, "DATA", Path(self._tmp.name)))
+
     def test_shared_path_is_thumbnailed_once(self):
         calls = []
         original = catalog._make_thumb
@@ -362,13 +370,13 @@ class BuildExportsTest(unittest.TestCase):
             (site / "export").mkdir(parents=True)
             (site / "export/ghost.css").write_text("stale")
             (site / "export/ghost.json").write_text("stale")
-            original_root, original_site = catalog.ROOT, catalog.SITE
-            catalog.ROOT, catalog.SITE = root, site
+            original_root, original_site = catalog.ROOT, catalog.DATA
+            catalog.ROOT, catalog.DATA = root, site
             try:
                 catalog.build_exports([{"slug": "x", "tokens": "systems/x/tokens.json",
                                         "themes": ["light", "dark"]}])
             finally:
-                catalog.ROOT, catalog.SITE = original_root, original_site
+                catalog.ROOT, catalog.DATA = original_root, original_site
             exported = catalog.export_tokens(tokens, ["light", "dark"])
             self.assertEqual((site / "export/x.css").read_text(),
                              catalog.export_css(exported) + "\n")
@@ -865,10 +873,10 @@ class ReferoBuildTest(unittest.TestCase):
         import tempfile
         from unittest import mock
         with tempfile.TemporaryDirectory() as tmp:
-            root, site = Path(tmp), Path(tmp) / "docs" / "gallery"
+            root, site = Path(tmp), Path(tmp) / "web" / "data"
             for slug, meta, ds in styles:
                 self.make(root, slug, meta, ds)
-            with mock.patch.object(catalog, "ROOT", root), mock.patch.object(catalog, "SITE", site):
+            with mock.patch.object(catalog, "ROOT", root), mock.patch.object(catalog, "DATA", site):
                 out = catalog.build_refero()
             return json.loads(out.read_text()), {
                 p.stem: json.loads(p.read_text()) for p in site.glob("refero/style/*.json")}
@@ -977,12 +985,12 @@ class ReferoBuildTest(unittest.TestCase):
         import tempfile
         from unittest import mock
         with tempfile.TemporaryDirectory() as tmp:
-            root, site = Path(tmp), Path(tmp) / "docs" / "gallery"
+            root, site = Path(tmp), Path(tmp) / "web" / "data"
             self.make(root, "alpha", self.ALPHA, self.ALPHA_DS)
             broken = root / "refero" / "broken"
             broken.mkdir(parents=True)
             (broken / "meta.json").write_text("{}")
-            with mock.patch.object(catalog, "ROOT", root), mock.patch.object(catalog, "SITE", site):
+            with mock.patch.object(catalog, "ROOT", root), mock.patch.object(catalog, "DATA", site):
                 out = catalog.build_refero()
             index = json.loads(out.read_text())
         self.assertEqual(len(index["styles"]), 1)
@@ -1000,10 +1008,10 @@ class ReferoBuildTest(unittest.TestCase):
         import tempfile
         from unittest import mock
         with tempfile.TemporaryDirectory() as tmp:
-            root, site = Path(tmp), Path(tmp) / "docs" / "gallery"
+            root, site = Path(tmp), Path(tmp) / "web" / "data"
             self.make(root, "alpha", self.ALPHA, self.ALPHA_DS)
             self.make(root, "beta", self.BETA, self.BETA_DS)
-            with mock.patch.object(catalog, "ROOT", root), mock.patch.object(catalog, "SITE", site):
+            with mock.patch.object(catalog, "ROOT", root), mock.patch.object(catalog, "DATA", site):
                 catalog.build_refero()
                 self.assertTrue((site / "refero/style/beta.json").is_file())
                 # An interrupted rerun leaves retained styles' files in place:
@@ -1018,9 +1026,9 @@ class ReferoBuildTest(unittest.TestCase):
         import tempfile
         from unittest import mock
         with tempfile.TemporaryDirectory() as tmp:
-            root, site = Path(tmp), Path(tmp) / "docs" / "gallery"
+            root, site = Path(tmp), Path(tmp) / "web" / "data"
             self.make(root, "alpha", self.ALPHA, self.ALPHA_DS)
-            with mock.patch.object(catalog, "ROOT", root), mock.patch.object(catalog, "SITE", site):
+            with mock.patch.object(catalog, "ROOT", root), mock.patch.object(catalog, "DATA", site):
                 catalog.build_refero()
                 import shutil
                 shutil.rmtree(root / "refero" / "alpha")

@@ -1,0 +1,211 @@
+#!/usr/bin/env python3
+"""ds — the design-systems style library from a terminal.
+
+A stdlib-only client for the hosted MCP endpoint (POST <base>/api/mcp, the
+streamable-HTTP transport). The server URL comes from $DESIGNS_URL or the
+file install.sh writes:
+
+    curl -fsSL <base>/api/install.sh | sh       # writes ~/.config/design-systems/url
+
+    ds find dark dense          # ranked styles, systems/ first
+    ds style capy-desktop       # one style's distilled entry
+    ds export capy-desktop -g dark   # its token values
+    ds doc capy-desktop         # its README (or: ds doc slug tokens.json)
+    ds media capy-desktop       # screenshot/crop URLs
+    ds handoff capy-desktop     # the apply-style prompt for an agent
+    ds tools                    # the raw MCP tool list
+    ds status                   # the server's name/version banner
+
+Any command takes --json for the raw tool payload and --url to override the
+configured server for one call.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import sys
+import urllib.request
+from pathlib import Path
+
+CFG = Path.home() / ".config" / "design-systems" / "url"
+
+
+def _base(cli_url: str | None) -> str:
+    raw = cli_url or os.environ.get("DESIGNS_URL") or \
+        (CFG.read_text().strip() if CFG.is_file() else "")
+    if not raw:
+        sys.exit("ds: no server configured — run `curl -fsSL <site>/api/install.sh | sh` "
+                 "or set DESIGNS_URL")
+    return raw.rstrip("/")
+
+
+def _rpc(base: str, method: str, params: dict | None = None):
+    req = {"jsonrpc": "2.0", "id": 1, "method": method, "params": params or {}}
+    http_req = urllib.request.Request(
+        base + "/api/mcp", data=json.dumps(req).encode(),
+        headers={"content-type": "application/json",
+                 "accept": "application/json, text/event-stream"})
+    try:
+        with urllib.request.urlopen(http_req, timeout=30) as r:
+            body = r.read()
+    except Exception as e:
+        sys.exit(f"ds: {base}/api/mcp: {e}")
+    if not body:
+        return {}
+    out = json.loads(body)
+    if "error" in out:
+        err = out["error"]
+        sys.exit(f"ds: mcp error {err.get('code')}: {err.get('message')}")
+    return out.get("result")
+
+
+def call(base: str, name: str, args: dict):
+    res = _rpc(base, "tools/call", {"name": name, "arguments": args})
+    if res.get("isError"):
+        text = " ".join(i.get("text", "") for i in res.get("content", []))
+        sys.exit(f"ds: {text.strip() or 'tool error'}")
+    for item in res.get("content", []):
+        if item.get("type") == "text":
+            try:
+                return json.loads(item["text"])
+            except ValueError:
+                return item["text"]
+    return res
+
+
+def _emit(obj, as_json: bool) -> None:
+    print(json.dumps(obj, ensure_ascii=False, indent=2) if as_json else obj)
+
+
+def main() -> int:
+    p = argparse.ArgumentParser(prog="ds", description=__doc__.splitlines()[0],
+                                formatter_class=argparse.RawDescriptionHelpFormatter)
+    p.add_argument("--url", help="server base URL for this call (else DESIGNS_URL/config)")
+    p.add_argument("--json", action="store_true", help="print the raw tool payload")
+    sub = p.add_subparsers(dest="cmd", required=True)
+
+    f = sub.add_parser("find", help="rank styles by free-text words")
+    f.add_argument("words", nargs="+")
+    f.add_argument("--store", choices=["all", "systems", "refero"], default="all")
+    f.add_argument("--platform", choices=["web", "ios", "desktop"])
+    f.add_argument("--style", help="refero design_style filter")
+    f.add_argument("--limit", type=int, default=8)
+
+    s = sub.add_parser("style", help="one style's distilled catalog entry")
+    s.add_argument("slug")
+    s.add_argument("--store", choices=["systems", "refero"])
+
+    e = sub.add_parser("export", help="token values; -g picks one group")
+    e.add_argument("slug")
+    e.add_argument("-g", "--group")
+
+    d = sub.add_parser("doc", aliases=["readme"], help="a text file from a package")
+    d.add_argument("slug")
+    d.add_argument("path", nargs="?")
+
+    m = sub.add_parser("media", help="screenshot/crop/icon/board URLs")
+    m.add_argument("slug")
+    m.add_argument("kind", nargs="?", choices=["screenshots", "components", "icons", "boards"])
+
+    h = sub.add_parser("handoff", help="the apply-style prompt for a coding agent")
+    h.add_argument("slug")
+    h.add_argument("desc", nargs="*", help="what the style is being applied to")
+
+    sub.add_parser("tools", help="the raw MCP tool list")
+    sub.add_parser("status", help="the server's name/version banner")
+    args = p.parse_args()
+    base = _base(args.url)
+
+    if args.cmd == "status":
+        r = _rpc(base, "initialize", {"protocolVersion": "2025-03-26", "capabilities": {},
+                                      "clientInfo": {"name": "ds", "version": "1"}})
+        if args.json:
+            _emit(r, True)
+        else:
+            info = r.get("serverInfo", {})
+            print(f"{info.get('name', '?')} {info.get('version', '')} — {base}")
+            if r.get("instructions"):
+                print(r["instructions"])
+        return 0
+    if args.cmd == "tools":
+        r = _rpc(base, "tools/list")
+        if args.json:
+            _emit(r, True)
+        else:
+            for t in r.get("tools", []):
+                print(f"{t['name']:<15} {t.get('description', '').split('.')[0]}")
+        return 0
+
+    if args.cmd == "find":
+        out = call(base, "search_styles", {"query": " ".join(args.words), "store": args.store,
+                                           "platform": args.platform, "style": args.style,
+                                           "limit": args.limit})
+        if args.json:
+            _emit(out, True)
+        else:
+            for h in out.get("hits", []):
+                desc = h.get("goodFor") or h.get("tagline") or ""
+                print(f"{h['slug']:<22} {h.get('name') or '':<28} {desc[:100]}")
+            if not out.get("hits"):
+                print("no hits")
+        return 0
+    if args.cmd == "style":
+        out = call(base, "get_style", {"slug": args.slug, "store": args.store})
+        if args.json:
+            _emit(out, True)
+        else:
+            for k in ("name", "store", "category", "platform", "goodFor", "tagline", "url",
+                      "themes", "tags", "designStyle", "productType", "note"):
+                if out.get(k):
+                    v = out[k]
+                    print(f"{k:<12} {', '.join(v) if isinstance(v, list) else v}")
+            files = out.get("files") or {}
+            for k, v in files.items():
+                print(f"{k:<12} {v}")
+        return 0
+    if args.cmd == "export":
+        out = call(base, "get_tokens", {"slug": args.slug, "group": args.group})
+        if args.json:
+            _emit(out, True)
+        elif "tokens" in out:
+            for k, v in out["tokens"].items():
+                print(f"{k}: {v}")
+        else:
+            print(f"{out.get('slug')}: token groups — " +
+                  ", ".join(f"{k} ({n})" for k, n in (out.get("groups") or {}).items()))
+            if out.get("note"):
+                print(out["note"])
+        return 0
+    if args.cmd in ("doc", "readme"):
+        out = call(base, "read_doc", {"slug": args.slug, "path": args.path})
+        if args.json:
+            _emit(out, True)
+        else:
+            print(out.get("text", ""))
+            if out.get("truncated"):
+                print("… [truncated]", file=sys.stderr)
+        return 0
+    if args.cmd == "media":
+        out = call(base, "list_media", {"slug": args.slug, "kind": args.kind})
+        if args.json:
+            _emit(out, True)
+        else:
+            for it in out.get("items", []):
+                print(f"{it['kind']}/{it['name']}  {base}{it['url']}")
+            if out.get("capped"):
+                print("… capped at 60", file=sys.stderr)
+        return 0
+    if args.cmd == "handoff":
+        out = call(base, "handoff_prompt",
+                   {"slug": args.slug, "app_description": " ".join(args.desc) or None})
+        if args.json:
+            _emit(out, True)
+        else:
+            print(out.get("prompt", ""))
+        return 0
+    return 2
+
+
+if __name__ == "__main__":
+    sys.exit(main())

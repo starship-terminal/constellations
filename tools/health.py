@@ -90,7 +90,7 @@ def package_section(criteria: dict, audit: dict, system: dict) -> str:
                 + f". Grades last reviewed {when}, package captured {system.get('captured', 'on an unknown date')}.")
         if system.get("captured", "") > when:
             text += " **Re-review due**: the capture is newer than the review."
-        lines += [text + " Every grade with its evidence is on the Scorecard page of `make serve`.", ""]
+        lines += [text + " Every grade with its evidence is on the Scorecard page of `make dev`.", ""]
         titles = {c["id"]: c["title"] for c in criteria["criteria"]}
         order = [c["id"] for c in criteria["criteria"]]
         open_ = sorted((cid for cid, g in graded["grades"].items() if g["grade"] in WORST_FIRST),

@@ -1,0 +1,46 @@
+{
+  "name": "design-research-studio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -H 127.0.0.1 -p 8845",
+    "build": "next build",
+    "start": "next start -H 127.0.0.1 -p 8845",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "format:check": "prettier --check src tests *.ts *.json",
+    "format": "prettier --write src tests *.ts *.json"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "4.0.96",
+    "@ai-sdk/openai": "4.0.108",
+    "@ai-sdk/react": "4.0.166",
+    "@libsql/client": "^0.15.0",
+    "@radix-ui/react-dialog": "^1.1.0",
+    "@radix-ui/react-tabs": "^1.1.0",
+    "ai": "7.0.162",
+    "drizzle-orm": "^0.44.0",
+    "lucide-react": "^0.468.0",
+    "motion": "^12.0.0",
+    "next": "16.4.5",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "prettier": "^3.9.10",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  },
+  "packageManager": "pnpm@10.10.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

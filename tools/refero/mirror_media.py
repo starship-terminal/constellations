@@ -38,10 +38,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 DB = ROOT / "refero" / "refero.db"
-DEFAULT_MEDIA_ROOT = Path(
-    os.environ.get("DESIGN_SYSTEMS_MEDIA")
-    or "~/services/design-systems/media/refero").expanduser()
-
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import refero_media  # noqa: E402
 
@@ -163,22 +159,29 @@ def open_db():
 
 def do_job(job, ffmpeg):
     kind, slug, url, dest, compress = job
-    try:
-        download(kind, url, dest)
-    except Exception as ex:
-        return kind, "failed", False, f"{slug}: {ex}"
+    status = "downloaded"
+    if url is not None:
+        try:
+            download(kind, url, dest)
+        except Exception as ex:
+            return kind, "failed", False, f"{slug}: {ex}"
+    else:
+        # A compress-only job over an already-mirrored file.
+        status = "skipped"
     compressed = False
     if compress and kind in ("videos", "detail") and ffmpeg:
         try:
             compressed = compress_video(dest, ffmpeg)
         except Exception as ex:
-            return kind, "downloaded", False, f"{slug}: compress: {ex}"
-    return kind, "downloaded", compressed, None
+            return kind, status, False, f"{slug}: compress: {ex}"
+    return kind, status, compressed, None
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--media-root", type=Path, default=DEFAULT_MEDIA_ROOT)
+    ap.add_argument("--media-root", type=Path, default=None,
+                    help="media dir (default: $DESIGN_SYSTEMS_MEDIA or "
+                         "~/services/design-systems/media/refero)")
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--only", type=str, default="",
@@ -189,6 +192,8 @@ def main():
                     help="verify every expected file exists under the media root; "
                          "downloads nothing")
     args = ap.parse_args()
+    if args.media_root is None:
+        args.media_root = refero_media.default_media_root()
 
     only = (set(KINDS) if not args.only
             else {s.strip() for s in args.only.split(",") if s.strip()})
@@ -251,12 +256,15 @@ def main():
             dest = media_dest(args.media_root, kind, slug)
             if (dest.exists() and dest.stat().st_size > 0
                     and not args.force):
+                if args.compress_videos and kind in ("videos", "detail"):
+                    jobs.append((kind, slug, None, dest, True))
+                    continue
                 counts[kind]["skipped"] += 1
                 continue
             dest.parent.mkdir(parents=True, exist_ok=True)
             jobs.append((kind, slug, url, dest, args.compress_videos))
 
-    print(f"{len(jobs)} files to fetch under {args.media_root}")
+    print(f"{len(jobs)} files to fetch or compress under {args.media_root}")
     done = 0
     with concurrent.futures.ThreadPoolExecutor(
             max_workers=args.workers) as pool:

@@ -1,0 +1,2529 @@
+{
+  "source": "https://refero.design/",
+  "capturedAt": "2026-11-04",
+  "coverage": "Captured every exposed Page Types / Screen Types, Flows, UX Patterns, UI Elements and Categories list for web and iOS, plus the web-only Fonts list. The web and iOS directories independently exposed the same 40 and 35 category labels as their search selectors. Latest is a sorting control and New is a badge, so neither is a taxonomy term. The account exposed filter vocabulary while limiting screen results; no upgrade, auth, pricing or MCP settings were changed. Styles taxonomy belongs to the separate styles snapshot. Original spelling, ordering, platform differences and subgroup text are preserved. Identical font names are represented once; sourceIds preserve Refero’s distinct original rows for repeated names (123 font rows, 117 names).",
+  "groups": [
+    {
+      "id": "web-page-types",
+      "kind": "taxonomy",
+      "label": "Page Types",
+      "appliesTo": ["web-screen"],
+      "sourceUrl": "https://refero.design/web-apps",
+      "coverage": "All rows exposed by this expanded filter list in the signed-in Refero UI on capture date. The list was fully present in the DOM, including its final row; no additional More control appeared. This is an exposed UI vocabulary snapshot, not a claim about hidden/internal tags or all screen records.",
+      "terms": [
+        {
+          "label": "404 Page",
+          "subgroup": "Business & Legal Pages"
+        },
+        {
+          "label": "About",
+          "subgroup": "Business & Legal Pages"
+        },
+        {
+          "label": "Careers",
+          "subgroup": "Business & Legal Pages"
+        },
+        {
+          "label": "Contacts",
+          "subgroup": "Business & Legal Pages"
+        },
+        {
+          "label": "Developers Page",
+          "subgroup": "Business & Legal Pages"
+        },
+        {
+          "label": "Integration Page",
+          "subgroup": "Business & Legal Pages"
+        },
+        {
+          "label": "Media Kit",
+          "subgroup": "Business & Legal Pages"
+        },
+        {
+          "label": "Newsroom & Updates",
+          "subgroup": "Business & Legal Pages"
+        },
+        {
+          "label": "Privacy Policy",
+          "subgroup": "Business & Legal Pages"
+        },
+        {
+          "label": "Responsibility Page",
+          "subgroup": "Business & Legal Pages"
+        },
+        {
+          "label": "Terms & Conditions",
+          "subgroup": "Business & Legal Pages"
+        },
+        {
+          "label": "Carts & Bags",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Catalog Page",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Checkout",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Order History",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Paywall & Subscription",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Product Details",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Wallet & Balance",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Content Management Page",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Dashboard",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Discover",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Quiz & Poll",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Social Feed",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Task Management",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Whiteboard",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Support & Help",
+          "subgroup": "Customer Support"
+        },
+        {
+          "label": "Blog",
+          "subgroup": "Marketing"
+        },
+        {
+          "label": "Blog Post Page",
+          "subgroup": "Marketing"
+        },
+        {
+          "label": "Home Page",
+          "subgroup": "Marketing"
+        },
+        {
+          "label": "Product Page & Landing",
+          "subgroup": "Marketing"
+        },
+        {
+          "label": "Account Setup",
+          "subgroup": "Onboarding"
+        },
+        {
+          "label": "Guided Tour",
+          "subgroup": "Onboarding"
+        },
+        {
+          "label": "Log In",
+          "subgroup": "Onboarding"
+        },
+        {
+          "label": "Reset Password",
+          "subgroup": "Onboarding"
+        },
+        {
+          "label": "Sign Up",
+          "subgroup": "Onboarding"
+        },
+        {
+          "label": "Verification",
+          "subgroup": "Onboarding"
+        },
+        {
+          "label": "Walkthrough",
+          "subgroup": "Onboarding"
+        },
+        {
+          "label": "Cancel Subscription",
+          "subgroup": "Utility"
+        },
+        {
+          "label": "Delete Account",
+          "subgroup": "Utility"
+        },
+        {
+          "label": "Profile & Account",
+          "subgroup": "Utility"
+        },
+        {
+          "label": "Settings",
+          "subgroup": "Utility"
+        }
+      ]
+    },
+    {
+      "id": "web-flows",
+      "kind": "taxonomy",
+      "label": "Flows",
+      "appliesTo": ["web-screen"],
+      "sourceUrl": "https://refero.design/web-apps",
+      "coverage": "All rows exposed by this expanded filter list in the signed-in Refero UI on capture date. The list was fully present in the DOM, including its final row; no additional More control appeared. This is an exposed UI vocabulary snapshot, not a claim about hidden/internal tags or all screen records.",
+      "terms": [
+        {
+          "label": "Exploring Tutorial",
+          "subgroup": "First-time user experience"
+        },
+        {
+          "label": "Signing Up & Onboarding",
+          "subgroup": "First-time user experience"
+        },
+        {
+          "label": "Canceling Subscription",
+          "subgroup": "Account"
+        },
+        {
+          "label": "Connecting & Linking",
+          "subgroup": "Account"
+        },
+        {
+          "label": "Deleting Account",
+          "subgroup": "Account"
+        },
+        {
+          "label": "Logging In",
+          "subgroup": "Account"
+        },
+        {
+          "label": "Resetting Password",
+          "subgroup": "Account"
+        },
+        {
+          "label": "Subscribing",
+          "subgroup": "Account"
+        },
+        {
+          "label": "Adding to Cart",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Booking",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Checking Out",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Money Transferring",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "AI Assisting",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Adding & Creating",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Bookmarking",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Deleting",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Design Editing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Editing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Filtering & Sorting",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Managing Tasks",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Media Editing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Misc",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Personalizing & Customizing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Profile Editing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Publishing & Listing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Quizzing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Recording & Capturing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Scheduling",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Searching",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Setting Up",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Text Editing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Uploading & Downloading",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Adding & Inviting People",
+          "subgroup": "Social"
+        },
+        {
+          "label": "Banning & Blocking",
+          "subgroup": "Social"
+        },
+        {
+          "label": "Calling",
+          "subgroup": "Social"
+        },
+        {
+          "label": "Chatting & Messaging",
+          "subgroup": "Social"
+        },
+        {
+          "label": "Commenting",
+          "subgroup": "Social"
+        },
+        {
+          "label": "Feedback Submitting",
+          "subgroup": "Social"
+        },
+        {
+          "label": "Flagging & Reporting",
+          "subgroup": "Social"
+        },
+        {
+          "label": "Joining & Applying",
+          "subgroup": "Social"
+        },
+        {
+          "label": "Sharing",
+          "subgroup": "Social"
+        },
+        {
+          "label": "Upvoting",
+          "subgroup": "Social"
+        }
+      ]
+    },
+    {
+      "id": "web-ux-patterns",
+      "kind": "taxonomy",
+      "label": "UX Patterns",
+      "appliesTo": ["web-screen"],
+      "sourceUrl": "https://refero.design/web-apps",
+      "coverage": "All rows exposed by this expanded filter list in the signed-in Refero UI on capture date. The list was fully present in the DOM, including its final row; no additional More control appeared. This is an exposed UI vocabulary snapshot, not a claim about hidden/internal tags or all screen records.",
+      "terms": [
+        {
+          "label": "Billing & Plans",
+          "subgroup": "commerce & finance"
+        },
+        {
+          "label": "Money Transfer",
+          "subgroup": "commerce & finance"
+        },
+        {
+          "label": "Payment Method",
+          "subgroup": "commerce & finance"
+        },
+        {
+          "label": "Shopping",
+          "subgroup": "commerce & finance"
+        },
+        {
+          "label": "Trial & Freemium",
+          "subgroup": "commerce & finance"
+        },
+        {
+          "label": "Activity & Notification Feed",
+          "subgroup": "content"
+        },
+        {
+          "label": "Article & Text",
+          "subgroup": "content"
+        },
+        {
+          "label": "Audio Player",
+          "subgroup": "content"
+        },
+        {
+          "label": "Checklist & To Do",
+          "subgroup": "content"
+        },
+        {
+          "label": "Event",
+          "subgroup": "content"
+        },
+        {
+          "label": "Files",
+          "subgroup": "content"
+        },
+        {
+          "label": "Kanban Board",
+          "subgroup": "content"
+        },
+        {
+          "label": "Mini Game",
+          "subgroup": "content"
+        },
+        {
+          "label": "Mini Player",
+          "subgroup": "content"
+        },
+        {
+          "label": "News Feed",
+          "subgroup": "content"
+        },
+        {
+          "label": "Playlist",
+          "subgroup": "content"
+        },
+        {
+          "label": "Shortcuts",
+          "subgroup": "content"
+        },
+        {
+          "label": "Size Guide",
+          "subgroup": "content"
+        },
+        {
+          "label": "Stats",
+          "subgroup": "content"
+        },
+        {
+          "label": "Suggestion & Similar Items",
+          "subgroup": "content"
+        },
+        {
+          "label": "Templates",
+          "subgroup": "content"
+        },
+        {
+          "label": "Testimonials",
+          "subgroup": "content"
+        },
+        {
+          "label": "Trash & Archive",
+          "subgroup": "content"
+        },
+        {
+          "label": "Tutorial & Education",
+          "subgroup": "content"
+        },
+        {
+          "label": "Video Player",
+          "subgroup": "content"
+        },
+        {
+          "label": "Wish List & Bookmark",
+          "subgroup": "content"
+        },
+        {
+          "label": "Ban & Block",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Booking",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Chat Bot",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Dark Mode",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Drag & Drop",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Draw",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "FAQ",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Feedback & Survey",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Food & Recipe",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Press",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Save",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "User Menu",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Ads & Promo Offer",
+          "subgroup": "marketing"
+        },
+        {
+          "label": "Bento Grid",
+          "subgroup": "marketing"
+        },
+        {
+          "label": "Email Subscription",
+          "subgroup": "marketing"
+        },
+        {
+          "label": "Product Features",
+          "subgroup": "marketing"
+        },
+        {
+          "label": "Promo Code",
+          "subgroup": "marketing"
+        },
+        {
+          "label": "Quickstart Guide",
+          "subgroup": "onboarding"
+        },
+        {
+          "label": "Add & Create",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Confirmation",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Delete",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Edit",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Empty State",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Error",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Filter & Sorting",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Loading & Connecting",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Permission",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Searching",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Select",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Success",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Upload & Download",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Achievements & Awards",
+          "subgroup": "social"
+        },
+        {
+          "label": "Add & Invite People",
+          "subgroup": "social"
+        },
+        {
+          "label": "Chat & Messages",
+          "subgroup": "social"
+        },
+        {
+          "label": "Comments",
+          "subgroup": "social"
+        },
+        {
+          "label": "Flag & Report",
+          "subgroup": "social"
+        },
+        {
+          "label": "Followers & Following",
+          "subgroup": "social"
+        },
+        {
+          "label": "Groups & Community",
+          "subgroup": "social"
+        },
+        {
+          "label": "Leaderboard",
+          "subgroup": "social"
+        },
+        {
+          "label": "Like & Reactions",
+          "subgroup": "social"
+        },
+        {
+          "label": "Members",
+          "subgroup": "social"
+        },
+        {
+          "label": "Reviews & Rating",
+          "subgroup": "social"
+        },
+        {
+          "label": "Share",
+          "subgroup": "social"
+        },
+        {
+          "label": "Social Post",
+          "subgroup": "social"
+        },
+        {
+          "label": "AI Assistant",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Audio & Video Recorder",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Calendar",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Calling",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Camera & Scanner",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Date & Time",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Design Editing",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Location & Address",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Media Editing",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Task",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Text Editing",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Timeline & History",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Timer & Clock",
+          "subgroup": "utility"
+        }
+      ]
+    },
+    {
+      "id": "web-ui-elements",
+      "kind": "taxonomy",
+      "label": "UI Elements",
+      "appliesTo": ["web-screen"],
+      "sourceUrl": "https://refero.design/web-apps",
+      "coverage": "All rows exposed by this expanded filter list in the signed-in Refero UI on capture date. The list was fully present in the DOM, including its final row; no additional More control appeared. This is an exposed UI vocabulary snapshot, not a claim about hidden/internal tags or all screen records.",
+      "terms": [
+        {
+          "label": "Footer",
+          "subgroup": "bars"
+        },
+        {
+          "label": "Navigation Bar",
+          "subgroup": "bars"
+        },
+        {
+          "label": "Sidebar & Drawer",
+          "subgroup": "bars"
+        },
+        {
+          "label": "Toolbar",
+          "subgroup": "bars"
+        },
+        {
+          "label": "3d Illustration",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Animation",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Avatar",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Gradient",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Hero Image",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Icon",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Illustration",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Logo Wall",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Photo",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Product Image",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Sticker",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Thumbnail",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Badge",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Breadcrumb",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Currency",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Map Pin",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Progress Bar",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "QR Code",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Skeleton",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Step Indicator",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Stepper",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Tags & Chips",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Button",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Checkbox & Radio",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Color Picker",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Date & Time Picker",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Dropdown",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Floating Button",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Page Control & Pagination",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Search Field",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Slider",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Switch & Toggle",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Tabs",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Text Field",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Accordion & Collapse",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Cards & Tiles",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Carousel",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Code Snippet",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Line & Bar Chart",
+          "subgroup": "layout"
+        },
+        {
+          "label": "List",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Map",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Media Gallery",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Nodes",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Pie & Donut Chart",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Table",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Tree View",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Action Sheet",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Dialog & Modal Window",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Dropdown Menu",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Full-Screen Overlay",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Mega Menu",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Notifications & Toast",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Overlay Window",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Popover",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Side Sheet",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Tooltip",
+          "subgroup": "overlay"
+        }
+      ]
+    },
+    {
+      "id": "web-categories",
+      "kind": "taxonomy",
+      "label": "Categories",
+      "appliesTo": ["website", "web-screen"],
+      "sourceUrl": "https://refero.design/web-apps",
+      "coverage": "All rows exposed by this expanded filter list in the signed-in Refero UI on capture date. The list was fully present in the DOM, including its final row; no additional More control appeared. This is an exposed UI vocabulary snapshot, not a claim about hidden/internal tags or all screen records.",
+      "terms": [
+        {
+          "label": "AI Tool"
+        },
+        {
+          "label": "Books"
+        },
+        {
+          "label": "Business"
+        },
+        {
+          "label": "Collaboration Tools"
+        },
+        {
+          "label": "Communication Tools"
+        },
+        {
+          "label": "Design & Media Editing"
+        },
+        {
+          "label": "Development Tools"
+        },
+        {
+          "label": "Education"
+        },
+        {
+          "label": "Electronic & Devices"
+        },
+        {
+          "label": "Entertainment"
+        },
+        {
+          "label": "Finance"
+        },
+        {
+          "label": "Fitness"
+        },
+        {
+          "label": "Food & Drink"
+        },
+        {
+          "label": "Food Delivery"
+        },
+        {
+          "label": "Fundraising"
+        },
+        {
+          "label": "Health & Wellness"
+        },
+        {
+          "label": "Home & Decor"
+        },
+        {
+          "label": "Inspiration Board"
+        },
+        {
+          "label": "Job Search"
+        },
+        {
+          "label": "Kids"
+        },
+        {
+          "label": "Lifestyle"
+        },
+        {
+          "label": "Magazines & Newspapers"
+        },
+        {
+          "label": "Map & Navigation"
+        },
+        {
+          "label": "Marketplace"
+        },
+        {
+          "label": "Music Streaming"
+        },
+        {
+          "label": "News"
+        },
+        {
+          "label": "Paperwork"
+        },
+        {
+          "label": "Photo Stock"
+        },
+        {
+          "label": "Productivity"
+        },
+        {
+          "label": "Project Management"
+        },
+        {
+          "label": "Real Estate"
+        },
+        {
+          "label": "Reference"
+        },
+        {
+          "label": "Scheduling Tools"
+        },
+        {
+          "label": "Social Networking"
+        },
+        {
+          "label": "Sports"
+        },
+        {
+          "label": "Transport"
+        },
+        {
+          "label": "Travel & Booking"
+        },
+        {
+          "label": "Video Streaming"
+        },
+        {
+          "label": "Weather"
+        },
+        {
+          "label": "Web3 & Crypto"
+        }
+      ]
+    },
+    {
+      "id": "web-fonts",
+      "kind": "taxonomy",
+      "label": "Fonts",
+      "appliesTo": ["web-screen"],
+      "sourceUrl": "https://refero.design/web-apps",
+      "coverage": "All rows exposed by this expanded filter list in the signed-in Refero UI on capture date. The list was fully present in the DOM, including its final row; no additional More control appeared. This is an exposed UI vocabulary snapshot, not a claim about hidden/internal tags or all screen records. Refero exposed 123 font rows with 117 distinct names. Identical names are represented once; sourceIds preserve the distinct original font rows for repeated names.",
+      "terms": [
+        {
+          "label": "ABC Oracle"
+        },
+        {
+          "label": "AdiHaus"
+        },
+        {
+          "label": "Adihaus Din"
+        },
+        {
+          "label": "Adineue Pro"
+        },
+        {
+          "label": "Adobe Caslon"
+        },
+        {
+          "label": "Aeonik"
+        },
+        {
+          "label": "Aimé"
+        },
+        {
+          "label": "Aktiv Grotesk"
+        },
+        {
+          "label": "Apercu"
+        },
+        {
+          "label": "Apercu Pro"
+        },
+        {
+          "label": "Arial"
+        },
+        {
+          "label": "Atlas Grotesk"
+        },
+        {
+          "label": "Avenir"
+        },
+        {
+          "label": "Avenir Next"
+        },
+        {
+          "label": "Avenir Roman"
+        },
+        {
+          "label": "Averta"
+        },
+        {
+          "label": "Averta Standard"
+        },
+        {
+          "label": "Basier Circle"
+        },
+        {
+          "label": "Berkeley Mono"
+        },
+        {
+          "label": "Cadiz"
+        },
+        {
+          "label": "Cal"
+        },
+        {
+          "label": "Calibre"
+        },
+        {
+          "label": "Capsule"
+        },
+        {
+          "label": "Cera Pro"
+        },
+        {
+          "label": "Chronicle Deck"
+        },
+        {
+          "label": "Circular"
+        },
+        {
+          "label": "Circular Std"
+        },
+        {
+          "label": "DIN Next Rounded"
+        },
+        {
+          "label": "DM Sans"
+        },
+        {
+          "label": "Euclid Circular A"
+        },
+        {
+          "label": "Favorit"
+        },
+        {
+          "label": "FK Grotesk"
+        },
+        {
+          "label": "FK Grotesk Neue"
+        },
+        {
+          "label": "Formular"
+        },
+        {
+          "label": "Futura PT"
+        },
+        {
+          "label": "Garnett"
+        },
+        {
+          "label": "Georgia"
+        },
+        {
+          "label": "Gotham"
+        },
+        {
+          "label": "Graphik",
+          "sourceIds": ["fonts-2965", "fonts-3498"]
+        },
+        {
+          "label": "Grotesk"
+        },
+        {
+          "label": "GT America"
+        },
+        {
+          "label": "GT Eesti",
+          "sourceIds": ["fonts-3455", "fonts-3124", "fonts-3459", "fonts-3456"]
+        },
+        {
+          "label": "GT Super"
+        },
+        {
+          "label": "GT Walsheim"
+        },
+        {
+          "label": "GT Walsheim Pro"
+        },
+        {
+          "label": "Helvetica"
+        },
+        {
+          "label": "Helvetica Neue"
+        },
+        {
+          "label": "Hurme Geometric Sans"
+        },
+        {
+          "label": "IBM Plex Sans"
+        },
+        {
+          "label": "Inter"
+        },
+        {
+          "label": "Iskry"
+        },
+        {
+          "label": "Karla",
+          "sourceIds": ["fonts-3419", "fonts-3086"]
+        },
+        {
+          "label": "Lato"
+        },
+        {
+          "label": "Lucida Grande"
+        },
+        {
+          "label": "Madefor"
+        },
+        {
+          "label": "Maison Neue"
+        },
+        {
+          "label": "Manrope"
+        },
+        {
+          "label": "Mark Pro"
+        },
+        {
+          "label": "Maven Pro"
+        },
+        {
+          "label": "Means"
+        },
+        {
+          "label": "Menlo"
+        },
+        {
+          "label": "Merriweather"
+        },
+        {
+          "label": "Montserrat"
+        },
+        {
+          "label": "Nekst"
+        },
+        {
+          "label": "Neue Haas Grotesk"
+        },
+        {
+          "label": "Neue Haas Unica"
+        },
+        {
+          "label": "Neutraface New Yorker"
+        },
+        {
+          "label": "Noto Sans"
+        },
+        {
+          "label": "Nunito"
+        },
+        {
+          "label": "NY Irvin"
+        },
+        {
+          "label": "NYT Cheltenham"
+        },
+        {
+          "label": "NYT Franklin"
+        },
+        {
+          "label": "Open Sans"
+        },
+        {
+          "label": "PF Square Sans Pro"
+        },
+        {
+          "label": "Pitch Lato UI"
+        },
+        {
+          "label": "Plus Jakarta Sans"
+        },
+        {
+          "label": "Poppins"
+        },
+        {
+          "label": "Proxima Nova"
+        },
+        {
+          "label": "Roboto"
+        },
+        {
+          "label": "Roboto Mono"
+        },
+        {
+          "label": "Roobert"
+        },
+        {
+          "label": "San Francisco"
+        },
+        {
+          "label": "Sanomat",
+          "sourceIds": ["fonts-3458", "fonts-3457"]
+        },
+        {
+          "label": "Segoe UI"
+        },
+        {
+          "label": "SF Mono"
+        },
+        {
+          "label": "SF Pro"
+        },
+        {
+          "label": "Sharp Grotesk"
+        },
+        {
+          "label": "Sharp Sans"
+        },
+        {
+          "label": "Silka"
+        },
+        {
+          "label": "Skiff Mono"
+        },
+        {
+          "label": "Skiff Sans"
+        },
+        {
+          "label": "SoDo Sans"
+        },
+        {
+          "label": "Sofia"
+        },
+        {
+          "label": "Sofia Pro"
+        },
+        {
+          "label": "Sohne"
+        },
+        {
+          "label": "Söhne"
+        },
+        {
+          "label": "Söhne Mono"
+        },
+        {
+          "label": "Soleil"
+        },
+        {
+          "label": "Source Code Pro"
+        },
+        {
+          "label": "Source Sans Pro"
+        },
+        {
+          "label": "Source Serif Pro"
+        },
+        {
+          "label": "Spline Sans"
+        },
+        {
+          "label": "Spoof"
+        },
+        {
+          "label": "SQ Market"
+        },
+        {
+          "label": "Square Sans"
+        },
+        {
+          "label": "TT Commons"
+        },
+        {
+          "label": "TT Norms"
+        },
+        {
+          "label": "TT Norms Pro"
+        },
+        {
+          "label": "UI Monospace"
+        },
+        {
+          "label": "UI Sans Serif"
+        },
+        {
+          "label": "Universal Sans"
+        },
+        {
+          "label": "Untitled Sans"
+        },
+        {
+          "label": "Verdana"
+        },
+        {
+          "label": "Whitney"
+        },
+        {
+          "label": "Whyte"
+        },
+        {
+          "label": "Work Sans"
+        },
+        {
+          "label": "Zara Athleticz"
+        }
+      ]
+    },
+    {
+      "id": "ios-screen-types",
+      "kind": "taxonomy",
+      "label": "Screen Types",
+      "appliesTo": ["ios-screen"],
+      "sourceUrl": "https://refero.design/apps/search?app_id%5Bid%5D%5B%5D=312",
+      "coverage": "All rows exposed by this expanded filter list in the signed-in Refero UI on capture date. The list was fully present in the DOM, including its final row; no additional More control appeared. This is an exposed UI vocabulary snapshot, not a claim about hidden/internal tags or all screen records.",
+      "terms": [
+        {
+          "label": "About",
+          "subgroup": "Business & Legal Pages"
+        },
+        {
+          "label": "Contacts",
+          "subgroup": "Business & Legal Pages"
+        },
+        {
+          "label": "Newsroom & Updates",
+          "subgroup": "Business & Legal Pages"
+        },
+        {
+          "label": "Privacy Policy",
+          "subgroup": "Business & Legal Pages"
+        },
+        {
+          "label": "Terms & Conditions",
+          "subgroup": "Business & Legal Pages"
+        },
+        {
+          "label": "Carts & Bags",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Catalog Page",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Checkout",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Order History",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Paywall & Subscription",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Product Details",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Wallet & Balance",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Dashboard",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Discover",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Quiz & Poll",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Social Feed",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Stories",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Task Management",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Whiteboard",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Support & Help",
+          "subgroup": "Customer Support"
+        },
+        {
+          "label": "Blog",
+          "subgroup": "Marketing"
+        },
+        {
+          "label": "Blog Post Page",
+          "subgroup": "Marketing"
+        },
+        {
+          "label": "Home",
+          "subgroup": "Marketing"
+        },
+        {
+          "label": "Account Setup",
+          "subgroup": "Onboarding"
+        },
+        {
+          "label": "Guided Tour",
+          "subgroup": "Onboarding"
+        },
+        {
+          "label": "Launch Screen",
+          "subgroup": "Onboarding"
+        },
+        {
+          "label": "Log In",
+          "subgroup": "Onboarding"
+        },
+        {
+          "label": "Reset Password",
+          "subgroup": "Onboarding"
+        },
+        {
+          "label": "Sign Up",
+          "subgroup": "Onboarding"
+        },
+        {
+          "label": "Verification",
+          "subgroup": "Onboarding"
+        },
+        {
+          "label": "Walkthrough",
+          "subgroup": "Onboarding"
+        },
+        {
+          "label": "Welcome Screen",
+          "subgroup": "Onboarding"
+        },
+        {
+          "label": "Cancel Subscription",
+          "subgroup": "Utility"
+        },
+        {
+          "label": "Delete Account",
+          "subgroup": "Utility"
+        },
+        {
+          "label": "Profile & Account",
+          "subgroup": "Utility"
+        },
+        {
+          "label": "Settings",
+          "subgroup": "Utility"
+        },
+        {
+          "label": "Widget",
+          "subgroup": "Utility"
+        }
+      ]
+    },
+    {
+      "id": "ios-flows",
+      "kind": "taxonomy",
+      "label": "Flows",
+      "appliesTo": ["ios-screen"],
+      "sourceUrl": "https://refero.design/apps/search?app_id%5Bid%5D%5B%5D=312",
+      "coverage": "All rows exposed by this expanded filter list in the signed-in Refero UI on capture date. The list was fully present in the DOM, including its final row; no additional More control appeared. This is an exposed UI vocabulary snapshot, not a claim about hidden/internal tags or all screen records.",
+      "terms": [
+        {
+          "label": "Exploring Tutorial",
+          "subgroup": "First-time user experience"
+        },
+        {
+          "label": "Signing Up & Onboarding",
+          "subgroup": "First-time user experience"
+        },
+        {
+          "label": "Canceling Subscription",
+          "subgroup": "Account"
+        },
+        {
+          "label": "Connecting & Linking",
+          "subgroup": "Account"
+        },
+        {
+          "label": "Deleting Account",
+          "subgroup": "Account"
+        },
+        {
+          "label": "Logging In",
+          "subgroup": "Account"
+        },
+        {
+          "label": "Resetting Password",
+          "subgroup": "Account"
+        },
+        {
+          "label": "Subscribing",
+          "subgroup": "Account"
+        },
+        {
+          "label": "Adding to Cart",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Booking",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Checking Out",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "Money Transferring",
+          "subgroup": "Commerce"
+        },
+        {
+          "label": "AI Assisting",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Adding & Creating",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Bookmarking",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Deleting",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Design Editing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Editing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Filtering & Sorting",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Managing Tasks",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Media Editing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Misc",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Personalizing & Customizing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Profile Editing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Publishing & Listing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Quizzing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Recording & Capturing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Reordering",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Scheduling",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Searching",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Setting Up",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Starting & Completing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Text Editing",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Uploading & Downloading",
+          "subgroup": "Content"
+        },
+        {
+          "label": "Adding & Inviting People",
+          "subgroup": "Social"
+        },
+        {
+          "label": "Banning & Blocking",
+          "subgroup": "Social"
+        },
+        {
+          "label": "Calling",
+          "subgroup": "Social"
+        },
+        {
+          "label": "Chatting & Messaging",
+          "subgroup": "Social"
+        },
+        {
+          "label": "Commenting",
+          "subgroup": "Social"
+        },
+        {
+          "label": "Feedback Submitting",
+          "subgroup": "Social"
+        },
+        {
+          "label": "Flagging & Reporting",
+          "subgroup": "Social"
+        },
+        {
+          "label": "Joining & Applying",
+          "subgroup": "Social"
+        },
+        {
+          "label": "Sharing",
+          "subgroup": "Social"
+        },
+        {
+          "label": "Upvoting",
+          "subgroup": "Social"
+        }
+      ]
+    },
+    {
+      "id": "ios-ux-patterns",
+      "kind": "taxonomy",
+      "label": "UX Patterns",
+      "appliesTo": ["ios-screen"],
+      "sourceUrl": "https://refero.design/apps/search?app_id%5Bid%5D%5B%5D=312",
+      "coverage": "All rows exposed by this expanded filter list in the signed-in Refero UI on capture date. The list was fully present in the DOM, including its final row; no additional More control appeared. This is an exposed UI vocabulary snapshot, not a claim about hidden/internal tags or all screen records.",
+      "terms": [
+        {
+          "label": "Billing & Plans",
+          "subgroup": "commerce & finance"
+        },
+        {
+          "label": "Money Transfer",
+          "subgroup": "commerce & finance"
+        },
+        {
+          "label": "Payment Method",
+          "subgroup": "commerce & finance"
+        },
+        {
+          "label": "Shopping",
+          "subgroup": "commerce & finance"
+        },
+        {
+          "label": "Trial & Freemium",
+          "subgroup": "commerce & finance"
+        },
+        {
+          "label": "Activity & Notification Feed",
+          "subgroup": "content"
+        },
+        {
+          "label": "Article & Text",
+          "subgroup": "content"
+        },
+        {
+          "label": "Audio Player",
+          "subgroup": "content"
+        },
+        {
+          "label": "Augmented Reality",
+          "subgroup": "content"
+        },
+        {
+          "label": "Checklist & To Do",
+          "subgroup": "content"
+        },
+        {
+          "label": "Event",
+          "subgroup": "content"
+        },
+        {
+          "label": "Files",
+          "subgroup": "content"
+        },
+        {
+          "label": "Kanban Board",
+          "subgroup": "content"
+        },
+        {
+          "label": "Game",
+          "subgroup": "content"
+        },
+        {
+          "label": "Mini Player",
+          "subgroup": "content"
+        },
+        {
+          "label": "News Feed",
+          "subgroup": "content"
+        },
+        {
+          "label": "Playlist",
+          "subgroup": "content"
+        },
+        {
+          "label": "Shortcuts",
+          "subgroup": "content"
+        },
+        {
+          "label": "Size Guide",
+          "subgroup": "content"
+        },
+        {
+          "label": "Stats",
+          "subgroup": "content"
+        },
+        {
+          "label": "Suggestion & Similar Items",
+          "subgroup": "content"
+        },
+        {
+          "label": "Templates",
+          "subgroup": "content"
+        },
+        {
+          "label": "Testimonials",
+          "subgroup": "content"
+        },
+        {
+          "label": "Trash & Archive",
+          "subgroup": "content"
+        },
+        {
+          "label": "Tutorial & Education",
+          "subgroup": "content"
+        },
+        {
+          "label": "Video Player",
+          "subgroup": "content"
+        },
+        {
+          "label": "Wish List & Bookmark",
+          "subgroup": "content"
+        },
+        {
+          "label": "Ban & Block",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Booking",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Chat Bot",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Dark Mode",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Drag & Drop",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Draw",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "FAQ",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Feedback & Survey",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Food & Recipe",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Pull to Action",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Save",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Swipe Actions",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "User Menu",
+          "subgroup": "legal & other"
+        },
+        {
+          "label": "Ads & Promo Offer",
+          "subgroup": "marketing"
+        },
+        {
+          "label": "Email Subscription",
+          "subgroup": "marketing"
+        },
+        {
+          "label": "Product Features",
+          "subgroup": "marketing"
+        },
+        {
+          "label": "Promo Code",
+          "subgroup": "marketing"
+        },
+        {
+          "label": "Quickstart Guide",
+          "subgroup": "onboarding"
+        },
+        {
+          "label": "Add & Create",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Confirmation",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Delete",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Edit",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Empty State",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Error",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Filter & Sorting",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Loading & Connecting",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Permission",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Searching",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Select",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Success",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Upload & Download",
+          "subgroup": "page state"
+        },
+        {
+          "label": "Achievements & Awards",
+          "subgroup": "social"
+        },
+        {
+          "label": "Add & Invite People",
+          "subgroup": "social"
+        },
+        {
+          "label": "Chat & Messages",
+          "subgroup": "social"
+        },
+        {
+          "label": "Comments",
+          "subgroup": "social"
+        },
+        {
+          "label": "Flag & Report",
+          "subgroup": "social"
+        },
+        {
+          "label": "Followers & Following",
+          "subgroup": "social"
+        },
+        {
+          "label": "Groups & Community",
+          "subgroup": "social"
+        },
+        {
+          "label": "Leaderboard",
+          "subgroup": "social"
+        },
+        {
+          "label": "Like & Reactions",
+          "subgroup": "social"
+        },
+        {
+          "label": "Members",
+          "subgroup": "social"
+        },
+        {
+          "label": "Reviews & Rating",
+          "subgroup": "social"
+        },
+        {
+          "label": "Share",
+          "subgroup": "social"
+        },
+        {
+          "label": "Social Post",
+          "subgroup": "social"
+        },
+        {
+          "label": "AI Assistant",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Audio & Video Recorder",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Browser",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Calendar",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Calling",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Camera & Scanner",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Date & Time",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Design Editing",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Location & Address",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Media Editing",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Task",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Text Editing",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Timeline & History",
+          "subgroup": "utility"
+        },
+        {
+          "label": "Timer & Clock",
+          "subgroup": "utility"
+        }
+      ]
+    },
+    {
+      "id": "ios-ui-elements",
+      "kind": "taxonomy",
+      "label": "UI Elements",
+      "appliesTo": ["ios-screen"],
+      "sourceUrl": "https://refero.design/apps/search?app_id%5Bid%5D%5B%5D=312",
+      "coverage": "All rows exposed by this expanded filter list in the signed-in Refero UI on capture date. The list was fully present in the DOM, including its final row; no additional More control appeared. This is an exposed UI vocabulary snapshot, not a claim about hidden/internal tags or all screen records.",
+      "terms": [
+        {
+          "label": "Footer",
+          "subgroup": "bars"
+        },
+        {
+          "label": "Navigation Bar",
+          "subgroup": "bars"
+        },
+        {
+          "label": "Sidebar & Drawer",
+          "subgroup": "bars"
+        },
+        {
+          "label": "Tabbar",
+          "subgroup": "bars"
+        },
+        {
+          "label": "Toolbar",
+          "subgroup": "bars"
+        },
+        {
+          "label": "3d Illustration",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Animation",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Avatar",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Gradient",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Hero Image",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Icon",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Illustration",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Photo",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Product Image",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Sticker",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Thumbnail",
+          "subgroup": "graphics"
+        },
+        {
+          "label": "Badge",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Bounding Box",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Breadcrumb",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Currency",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Map Pin",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Progress Bar",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "QR Code",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Skeleton",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Step Indicator",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Stepper",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Tags & Chips",
+          "subgroup": "helper elements"
+        },
+        {
+          "label": "Button",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Checkbox & Radio",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Color Picker",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Date & Time Picker",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Dropdown",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Floating Button",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Onscreen Keyboard",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Page Control & Pagination",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Search Field",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Slider",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Switch & Toggle",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Tabs",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Text Field",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Wheel Picker",
+          "subgroup": "input controls"
+        },
+        {
+          "label": "Accordion & Collapse",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Cards & Tiles",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Carousel",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Code Snippet",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Line & Bar Chart",
+          "subgroup": "layout"
+        },
+        {
+          "label": "List",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Map",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Media Gallery",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Nodes",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Pie & Donut Chart",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Table",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Tree View",
+          "subgroup": "layout"
+        },
+        {
+          "label": "Action Sheet",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Bottom Sheet",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Bottom Sheet (Expanded)",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Dialog & Modal Window",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Dropdown Menu",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Edit Menu",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Full-Screen Overlay",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Notifications & Toast",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Popover",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Radial Menu",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Side Sheet",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "Tooltip",
+          "subgroup": "overlay"
+        },
+        {
+          "label": "iOS Alert",
+          "subgroup": "overlay"
+        }
+      ]
+    },
+    {
+      "id": "ios-categories",
+      "kind": "taxonomy",
+      "label": "Categories",
+      "appliesTo": ["ios-app", "ios-screen"],
+      "sourceUrl": "https://refero.design/apps/search?app_id%5Bid%5D%5B%5D=312",
+      "coverage": "All rows exposed by this expanded filter list in the signed-in Refero UI on capture date. The list was fully present in the DOM, including its final row; no additional More control appeared. This is an exposed UI vocabulary snapshot, not a claim about hidden/internal tags or all screen records.",
+      "terms": [
+        {
+          "label": "AI Tool"
+        },
+        {
+          "label": "Books"
+        },
+        {
+          "label": "Business"
+        },
+        {
+          "label": "Collaboration Tools"
+        },
+        {
+          "label": "Communication Tools"
+        },
+        {
+          "label": "Dating & Relationships"
+        },
+        {
+          "label": "Design & Media Editing"
+        },
+        {
+          "label": "Education"
+        },
+        {
+          "label": "Entertainment"
+        },
+        {
+          "label": "Finance"
+        },
+        {
+          "label": "Fitness"
+        },
+        {
+          "label": "Food & Drink"
+        },
+        {
+          "label": "Food Delivery"
+        },
+        {
+          "label": "Fundraising"
+        },
+        {
+          "label": "Health & Wellness"
+        },
+        {
+          "label": "Inspiration Board"
+        },
+        {
+          "label": "Job Search"
+        },
+        {
+          "label": "Lifestyle"
+        },
+        {
+          "label": "Magazines & Newspapers"
+        },
+        {
+          "label": "Map & Navigation"
+        },
+        {
+          "label": "Marketplace"
+        },
+        {
+          "label": "Music Streaming"
+        },
+        {
+          "label": "News"
+        },
+        {
+          "label": "Productivity"
+        },
+        {
+          "label": "Project Management"
+        },
+        {
+          "label": "Real Estate"
+        },
+        {
+          "label": "Reference"
+        },
+        {
+          "label": "Scheduling Tools"
+        },
+        {
+          "label": "Social Networking"
+        },
+        {
+          "label": "Sports"
+        },
+        {
+          "label": "Travel & Booking"
+        },
+        {
+          "label": "Utility"
+        },
+        {
+          "label": "Video Streaming"
+        },
+        {
+          "label": "Weather"
+        },
+        {
+          "label": "Web3 & Crypto"
+        }
+      ]
+    }
+  ]
+}
