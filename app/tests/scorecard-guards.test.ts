@@ -107,3 +107,41 @@ test("load reuses parsed snapshots until a scorecard file changes", async () => 
   expect(second).not.toBe(first);
   expect(second.audits).toHaveLength(2);
 });
+
+test("load rereads after an audit edit, a rubric edit or a removed snapshot", async () => {
+  const root = await fixture();
+  const audit = path.join(root, "scorecard/audits/2026-10-01.json");
+  await writeAudit(root, "2026-10-01", {
+    F1: { grade: "partly", evidence: "One state" },
+    F2: { grade: "missing", evidence: "None" },
+  });
+  await writeAudit(root, "2026-10-02", {
+    F1: { grade: "meets", evidence: "All states" },
+    F2: { grade: "missing", evidence: "None" },
+  });
+  const touch = (file: string, seconds: number) =>
+    fs.utimes(file, seconds, seconds);
+  await touch(audit, 1_700_000_000);
+  const first = load();
+  // A same-size edit: only the explicit timestamp change tells them apart.
+  const text = await fs.readFile(audit, "utf8");
+  await fs.writeFile(audit, text.replace('"partly"', '"meets!"'));
+  await touch(audit, 1_700_000_100);
+  const edited = load();
+  expect(edited).not.toBe(first);
+  expect(edited.audits[0].systems[0].grades.F1.grade).toBe("meets!");
+  const rubric = path.join(root, "scorecard/criteria.json");
+  await fs.writeFile(
+    rubric,
+    JSON.stringify({ ...criteria, version: "4" }).padEnd(
+      JSON.stringify(criteria).length,
+    ),
+  );
+  await touch(rubric, 1_700_000_200);
+  const reworded = load();
+  expect(reworded).not.toBe(edited);
+  expect(reworded.criteria.version).toBe("4");
+  await fs.rm(path.join(root, "scorecard/audits/2026-10-02.json"));
+  const removed = load();
+  expect(removed.audits).toHaveLength(1);
+});
