@@ -26,6 +26,16 @@ class CountTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "size.tile.x/y: 1 and"):
             build_tokens.core()
 
+    def test_too_few_tile_edges_down_fails(self):
+        build_tokens.READ["size.tile.y"]["dark"]["value"] = [100, 300]   # two runs, one short of three
+        with self.assertRaisesRegex(ValueError, r"size.tile.x/y: \d+ and 2 edge runs"):
+            build_tokens.core()
+
+    def test_too_few_single_row_dividers_fails(self):
+        build_tokens.READ["rows.single"]["dark"]["value"] = [500]
+        with self.assertRaisesRegex(ValueError, "rows.single/rows.double: 1 dividers"):
+            build_tokens.core()
+
     def test_too_few_row_dividers_fails(self):
         build_tokens.READ["rows.double"]["dark"]["value"] = [500]
         with self.assertRaisesRegex(ValueError, "rows.single/rows.double"):

@@ -23,7 +23,7 @@ class CountTest(unittest.TestCase):
 
     def test_too_few_settings_dividers_fails(self):
         build_tokens.READ["rows.settings"]["dark"]["value"] = build_tokens.READ["rows.settings"]["dark"]["value"][:3]
-        with self.assertRaisesRegex(ValueError, "rows.settings: 3 dividers"):
+        with self.assertRaisesRegex(ValueError, "rows.settings: 3 positions"):
             build_tokens.core()
 
 if __name__ == "__main__":
