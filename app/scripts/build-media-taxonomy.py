@@ -133,9 +133,13 @@ UX_RULES = [
 
 
 def term_id(group: str, label: str) -> str:
+    """Mirror taxonomyTermId in app/src/contracts/taxonomy.ts exactly."""
     value = unicodedata.normalize("NFKC", label).lower()
     slug = re.sub("-+", "-", "".join(c if c.isalnum() else "-" for c in value)).strip("-")
-    return f"{group}:{slug}"
+    # A label with no letters or digits (say "&" or an emoji) would otherwise
+    # give an empty, colliding ID; the app falls back to its code points.
+    fallback = "-".join(format(ord(c), "x") for c in value)
+    return f"{group}:{slug or f'u-{fallback}'}"
 
 
 def build() -> dict:
