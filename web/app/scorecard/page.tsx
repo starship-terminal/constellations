@@ -82,8 +82,10 @@ export default function ScorecardPage() {
           <span>grade cells</span>
         </div>
         <div>
-          <b>{stats.pct}%</b>
-          <span>{stats.meets} grades meet their criterion</span>
+          <b>{stats.pct === null ? 'N/A' : `${stats.pct}%`}</b>
+          <span>
+            {stats.meets} of {stats.applicableCells} applicable grades meet their criterion
+          </span>
         </div>
         <div>
           <b>

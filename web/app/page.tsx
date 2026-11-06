@@ -99,8 +99,8 @@ export default async function HomePage() {
         </div>
         {stats ? (
           <div>
-            <b>{stats.pct}%</b>
-            <span>criteria met{auditDate ? ` · ${auditDate}` : ""}</span>
+            <b>{stats.pct === null ? "N/A" : `${stats.pct}%`}</b>
+            <span>applicable criteria met{auditDate ? ` · ${auditDate}` : ""}</span>
           </div>
         ) : null}
       </div>

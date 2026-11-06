@@ -365,10 +365,15 @@ export interface IndexStats {
   systemCount: number;
   /** systemCount × number of criteria. */
   totalCells: number;
-  /** Grades that fully meet their criterion, across every system. */
+  /** Recorded grades whose criterion applies; not-applicable cells are excluded. */
+  applicableCells: number;
+  /** Applicable grades that fully meet their criterion, across every system. */
   meets: number;
-  /** `round(100 * meets / totalCells)`, with Python's round-half-to-even. */
-  pct: number;
+  /**
+   * `round(100 * meets / applicableCells)`, with Python's round-half-to-even,
+   * or null when no cell applies. Matches the research app and tools/scorecard.py.
+   */
+  pct: number | null;
   /** The top-ranked system; `name` is its short name. */
   leader: { name: string; slug: string; meets: number };
   /**
@@ -383,23 +388,25 @@ export interface IndexStats {
 export function indexStats(criteria: Criteria, audit: Audit): IndexStats {
   const systems = ranked(audit.systems);
   const totalCells = systems.length * criteria.criteria.length;
-  const meets = systems.reduce((sum, s) => sum + counts(s).meets, 0);
   const best = systems[0];
-  const byCriterion = criteria.criteria.flatMap((c) => {
+  const graded = criteria.criteria.map((c) => {
     const applicable = systems
       .map((s) => s.grades[c.id]?.grade)
       .filter((g) => g && g !== 'na');
-    if (!applicable.length) return [];
     const meets = applicable.filter((g) => g === 'meets').length;
-    return [{ id: c.id, title: c.title, meets, applicable: applicable.length }];
+    return { id: c.id, title: c.title, meets, applicable: applicable.length };
   });
+  const applicableCells = graded.reduce((sum, c) => sum + c.applicable, 0);
+  const meets = graded.reduce((sum, c) => sum + c.meets, 0);
+  const byCriterion = graded.filter((c) => c.applicable > 0);
   const floor = Math.min(...byCriterion.map((c) => c.meets / c.applicable));
   const weakest = byCriterion.filter((c) => c.meets / c.applicable === floor);
   return {
     systemCount: systems.length,
     totalCells,
+    applicableCells,
     meets,
-    pct: roundHalfEven((100 * meets) / totalCells),
+    pct: applicableCells ? roundHalfEven((100 * meets) / applicableCells) : null,
     leader: { name: short(best), slug: best.slug, meets: counts(best).meets },
     weakest,
   };

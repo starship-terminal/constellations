@@ -207,6 +207,17 @@ class PageTest(unittest.TestCase):
         weakest = bp.weakest_criteria(CRITERIA, systems)
         self.assertEqual([(c["id"], m, n) for c, m, n in weakest], [("F2", 2, 4)])
 
+    def test_the_headline_share_counts_only_applicable_cells(self):
+        # F1 meets, F2 partly, V1 not applicable: 1 of 2 applicable is 50%,
+        # not 1 of 3 (33%).
+        criteria = copy.deepcopy(CRITERIA)
+        criteria["criteria"].append({"id": "V1", "layer": "Foundations", "title": "Voice", "doneWhen": "z"})
+        s = copy.deepcopy(SYSTEM)
+        s["grades"]["V1"] = {"grade": "na", "evidence": "n"}
+        md = bp.index_page(criteria, audit(s))
+        self.assertIn("**1 of 2 applicable cells meet**", md)
+        self.assertIn("50% of applicable grades fully meet", md)
+
     def test_only_the_index_page_hides_the_rail(self):
         self.assertTrue(bp.index_page(CRITERIA, audit(SYSTEM)).startswith("---\nhide:\n  - navigation\n---\n"))
         for md in (bp.system_page(CRITERIA, audit(SYSTEM), SYSTEM, 1),
