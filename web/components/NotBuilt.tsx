@@ -9,3 +9,8 @@ export function NotBuilt({ what = "The catalog" }: { what?: string }) {
     </div>
   );
 }
+
+/** True when a data load failed because web/data is absent, the one failure
+    NotBuilt explains; anything else should reach the error page and logs. */
+export const isNotBuilt = (e: unknown): boolean =>
+  !!e && typeof e === "object" && (e as { code?: unknown }).code === "ENOENT";

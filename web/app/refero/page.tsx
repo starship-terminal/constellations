@@ -3,7 +3,7 @@
 import { Suspense } from "react";
 import { loadReferoIndex } from "@/lib/refero";
 import type { ReferoIndex as ReferoIndexData } from "@/lib/refero";
-import { NotBuilt } from "@/components/NotBuilt";
+import { NotBuilt, isNotBuilt } from "@/components/NotBuilt";
 import { ReferoIndex } from "@/components/ReferoIndex";
 import "./refero.css";
 
@@ -14,7 +14,9 @@ export default async function ReferoPage() {
   let index: ReferoIndexData | null = null;
   try {
     index = await loadReferoIndex();
-  } catch {}
+  } catch (e) {
+    if (!isNotBuilt(e)) throw e;
+  }
   if (!index) return <NotBuilt what="The refero index" />;
   return (
     <Suspense>

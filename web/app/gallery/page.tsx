@@ -1,6 +1,6 @@
 import { loadData } from "@/lib/catalog";
 import type { GalleryData } from "@/lib/catalog";
-import { NotBuilt } from "@/components/NotBuilt";
+import { NotBuilt, isNotBuilt } from "@/components/NotBuilt";
 import { GalleryIndex } from "@/components/GalleryIndex";
 import { Suspense } from "react";
 
@@ -13,7 +13,9 @@ export default async function GalleryPage() {
   let data: GalleryData | null = null;
   try {
     data = await loadData();
-  } catch {}
+  } catch (e) {
+    if (!isNotBuilt(e)) throw e;
+  }
   if (!data) return <NotBuilt />;
   return (
     <Suspense>
