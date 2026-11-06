@@ -184,9 +184,19 @@ class Resolver:
         return value
 
 
-@functools.lru_cache(maxsize=None)
 def resolver_for(tokens_path: str) -> Resolver:
+    """The Resolver of a tokens file, cached by the file's modification time and size, so a
+    long-running server sees an edited file instead of the copy it read first."""
+    st = (ROOT / tokens_path).stat()
+    return _resolver(tokens_path, st.st_mtime_ns, st.st_size)
+
+
+@functools.lru_cache(maxsize=256)
+def _resolver(tokens_path: str, mtime_ns: int, size: int) -> Resolver:
     return Resolver(json.loads((ROOT / tokens_path).read_text()))
+
+
+resolver_for.cache_clear = _resolver.cache_clear
 
 
 def swatches(system: dict) -> dict[str, list[dict]]:
@@ -1158,6 +1168,12 @@ def check() -> list[str]:
         problems += layout_problems(s)
         if "preview" not in s or "tokens" not in s:
             continue
+        try:
+            resolver_for(s["tokens"])
+        except (OSError, ValueError) as e:     # missing (reported above) or not JSON: nothing below can run
+            if (ROOT / s["tokens"]).exists():
+                problems.append(f"{slug}: tokens {s['tokens']} cannot be read ({e.__class__.__name__}: {e})")
+            continue
         cover = s["preview"].get("cover")
         if not cover or not (ROOT / cover).exists():
             problems.append(f"{slug}: preview.cover {cover} does not exist")
@@ -1521,6 +1537,8 @@ def build_refero() -> Path | None:
     written = set()
     for folder, meta, ds in styles:
         slug = meta.get("slug") or folder.name
+        if not REFERO_SLUG.fullmatch(str(slug)):    # it becomes a file name: never a path
+            raise SystemExit(f"refero: {folder.name}: slug {slug!r} is not lowercase letters, digits and hyphens")
         atomic_write(ent_dir / f"{slug}.json",
                      json.dumps(refero_entry(folder, meta, ds, slug_of), separators=(",", ":")))
         written.add(slug)
@@ -1537,6 +1555,9 @@ def build_refero() -> Path | None:
                                   "styles": index},
                                  separators=(",", ":")))
     return out
+
+
+REFERO_SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 
 
 def build() -> Path:
@@ -1575,7 +1596,8 @@ def build() -> Path:
     attach_thumbs(all_shots)
     build_exports(systems)
     out = DATA / "data.json"
-    atomic_write(out, json.dumps({"root": str(ROOT), "categories": catalog.get("categories", {}),
+    # No absolute checkout path: nothing reads one, and web/data is served under /media/data/.
+    atomic_write(out, json.dumps({"categories": catalog.get("categories", {}),
                                   "systems": systems},
                                  separators=(",", ":")))
     build_refero()

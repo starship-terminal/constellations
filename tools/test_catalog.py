@@ -1127,5 +1127,41 @@ class RepoFileTest(unittest.TestCase):
             self.assertIsNone(catalog.repo_file("/systems/claude/tokens.json"))
 
 
+class SmallBugsTest(unittest.TestCase):
+    def test_resolver_sees_an_edited_tokens_file(self):
+        import os
+        import tempfile
+        with tempfile.NamedTemporaryFile("w", suffix=".json", dir=catalog.ROOT, delete=False) as f:
+            f.write('{"core": {"c": {"$value": "#000000"}}}')
+        rel = Path(f.name).relative_to(catalog.ROOT).as_posix()
+        try:
+            self.assertEqual(catalog.resolver_for(rel).lookup("core.c"), "#000000")
+            Path(f.name).write_text('{"core": {"c": {"$value": "#ffffff"}}}')
+            os.utime(f.name, ns=(1, 10**18))                    # a different mtime, whatever the clock says
+            self.assertEqual(catalog.resolver_for(rel).lookup("core.c"), "#ffffff")
+        finally:
+            os.unlink(f.name)
+
+    def test_check_reports_a_missing_or_broken_tokens_file_instead_of_crashing(self):
+        import copy
+        from unittest import mock
+        cat = copy.deepcopy(catalog.load_catalog())
+        cat["systems"][0]["tokens"] = "systems/no-such/tokens.json"
+        with mock.patch.object(catalog, "load_catalog", return_value=cat):
+            problems = catalog.check()
+        slug = cat["systems"][0]["slug"]
+        self.assertIn(f"{slug}: tokens systems/no-such/tokens.json does not exist", problems)
+        cat["systems"][0]["tokens"] = "README.md"                   # not JSON
+        with mock.patch.object(catalog, "load_catalog", return_value=cat):
+            problems = catalog.check()
+        self.assertTrue(any(p.startswith(f"{slug}: tokens README.md cannot be read") for p in problems), problems)
+
+    def test_refero_slug_pattern_refuses_paths(self):
+        for ok in ("linear", "a-b-2"):
+            self.assertTrue(catalog.REFERO_SLUG.fullmatch(ok))
+        for bad in ("../x", "a/b", "A", "a_b", "", "-a", "a.json"):
+            self.assertIsNone(catalog.REFERO_SLUG.fullmatch(bad), bad)
+
+
 if __name__ == "__main__":
     unittest.main()
