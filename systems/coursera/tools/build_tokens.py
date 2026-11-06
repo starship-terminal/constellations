@@ -129,7 +129,6 @@ LS = {  # the legacy styles carry a letter-spacing variable of their own
 typography = {}
 names = sorted({k[len(C + "typography-"):] for k in ROOT if k.startswith(C + "typography-")})
 for n in names:
-    base = n.split("-")[0].replace("-strong", "")
     key = next((v for k, v in LS.items() if n == k or n.startswith(k + "-")), None)
     ls_var = f"{C}letter-spacing-{key}" if key else None
     ls = BY_W["1440"].get(ls_var, "0em") if ls_var else "0em"
