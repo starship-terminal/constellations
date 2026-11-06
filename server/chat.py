@@ -39,7 +39,7 @@ MODELS_TIMEOUT = 25
 
 SYSTEM = """You are the librarian of a private design-systems library. It holds two stores:
 
-- systems/: 40 style packages captured and measured from real products. Every
+- systems/: the style packages captured and measured from real products. Every
   value carries an evidence label. These are the only values to design from.
 - refero/: a snapshot of styles.refero.design (~1,300 styles), third-party
   interpreted data at lower confidence. Breadth for inspiration, never the
