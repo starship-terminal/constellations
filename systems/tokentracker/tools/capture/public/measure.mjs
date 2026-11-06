@@ -57,6 +57,7 @@ let THEME = 'dark';
 
 let page, cdp, current, context, run;
 const touched = new Set();
+const listed = new Map(); // component -> the states this run's specs list for it
 
 // ---------- helpers ----------
 
@@ -155,6 +156,8 @@ async function S(key, target, list, meta = {}, opts = {}) {
   if (THEME !== 'dark') key = `${key}.light`;
   await mask(page);
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
+  if (!listed.has(key)) listed.set(key, new Set());
+  for (const st of list) listed.get(key).add(st);
   delete out.components[key].missing;
   if (opts.open) { await reset(); await opts.open(); }
   const loc = target.filter({ visible: true }).first();
@@ -684,6 +687,11 @@ for (const theme of ['dark', 'light']) {
   }
 }
 for (const [key, c] of Object.entries(out.components)) if (done.has(c.run) && !touched.has(key)) { delete out.components[key]; log('dropped stale', key); }
+// the same for states: a state an earlier run recorded that this finished run's spec no longer lists goes
+for (const [key, c] of Object.entries(out.components)) {
+  if (!done.has(c.run) || !listed.has(key)) continue;
+  for (const st of Object.keys(c.states || {})) if (!listed.get(key).has(st)) { delete c.states[st]; log('dropped stale state', key, st); }
+}
 if (!failures.length) {
   out._meta.read = new Date().toLocaleDateString('en-CA');
   out._meta.source = 'TokenTracker v1.4.3 dashboard served by the local CLI at 127.0.0.1:7680, measured headless in Chromium (Playwright) at 1440x900, 2x';
