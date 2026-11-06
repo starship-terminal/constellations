@@ -283,5 +283,63 @@ class HttpApiTest(unittest.TestCase):
         self.assertEqual(status, 400)
 
 
+class HostAllowlistTest(unittest.TestCase):
+    """routes.py refuses a Host it does not know, so a DNS-rebound name cannot
+    pass the Origin==Host check."""
+    api = _load("agent_api_hosts", "api.py")
+
+    @classmethod
+    def setUpClass(cls):
+        import http.server
+        import threading
+        cls.httpd = http.server.ThreadingHTTPServer(("127.0.0.1", 0), cls.api.Handler)
+        cls.base = f"http://127.0.0.1:{cls.httpd.server_address[1]}"
+        threading.Thread(target=cls.httpd.serve_forever, daemon=True).start()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.httpd.shutdown()
+        cls.httpd.server_close()
+
+    def _status(self, host, origin=None):
+        import urllib.error
+        import urllib.request
+        headers = {"Host": host}
+        if origin:
+            headers["Origin"] = origin
+        req = urllib.request.Request(self.base + "/api/mcp", data=b'{"jsonrpc":"2.0","id":1,"method":"ping"}',
+                                     headers={"content-type": "application/json", **headers})
+        try:
+            with urllib.request.urlopen(req) as r:
+                return r.status
+        except urllib.error.HTTPError as e:
+            e.close()
+            return e.code
+
+    def test_rebound_name_is_refused(self):
+        # Origin matches Host, as it does under DNS rebinding.
+        self.assertEqual(self._status("evil.test:8190", "http://evil.test:8190"), 403)
+        for host in ("evil.test", "evil.ts.net.evil.test", "127.0.0.1:1,evil.test", "a@localhost", "x:port"):
+            self.assertEqual(self._status(host), 403, host)
+
+    def test_known_hosts_pass(self):
+        for host in ("127.0.0.1:8190", "localhost:8800", "[::1]:8190", "100.64.0.7:8108",
+                     "box.tail123.ts.net:8108", "app.localhost"):
+            self.assertEqual(self._status(host), 200, host)
+
+    def test_env_allowlist(self):
+        old = os.environ.get("DESIGN_SYSTEMS_ALLOWED_HOSTS")
+        os.environ["DESIGN_SYSTEMS_ALLOWED_HOSTS"] = "designs.example.test, other.test:8108"
+        try:
+            self.assertEqual(self._status("designs.example.test:443"), 200)
+            self.assertEqual(self._status("other.test:8108"), 200)
+            self.assertEqual(self._status("other.test:9999"), 403)
+        finally:
+            if old is None:
+                os.environ.pop("DESIGN_SYSTEMS_ALLOWED_HOSTS", None)
+            else:
+                os.environ["DESIGN_SYSTEMS_ALLOWED_HOSTS"] = old
+
+
 if __name__ == "__main__":
     unittest.main()
