@@ -6,12 +6,20 @@
 // renders both themes and no account setting is touched.
 import fs from 'fs';
 import path from 'path';
+import { pathToFileURL } from 'url';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
 const [,, dirArg, label, ...flags] = process.argv;
+if (!dirArg || !label) { console.error('usage: render.mjs <dir> <label> [full] [light] [scroll=<top>]'); process.exit(2); }
 const dir = path.resolve(dirArg);   // a relative <dir> would make a broken file:// URL
 const meta = JSON.parse(fs.readFileSync(`${dir}/${label}.json`));
 const light = flags.includes('light');
+// The light render is written under the label with -dark swapped for -light: a label without -dark
+// would overwrite the dark render's own PNG.
+if (light && !/-dark(?=-|$)/.test(label)) {
+  console.error(`render.mjs: 'light' needs a copy taken in dark (a label containing -dark), got ${label}`);
+  process.exit(1);
+}
 const out = light ? label.replace(/-dark(?=-|$)/, '-light') : label;
 const b = await chromium.launch();
 const ctx = await b.newContext({ viewport: { width: meta.w, height: meta.h }, deviceScaleFactor: 2, colorScheme: light ? 'light' : 'dark' });
@@ -21,7 +29,7 @@ process.env.SNAPS ??= dir;
 const { routeCdn } = await import('./lib.mjs');
 await routeCdn(ctx);
 const p = await ctx.newPage();
-await p.goto('file://' + dir + '/' + label + '.html', { waitUntil: 'load', timeout: 60000 });
+await p.goto(pathToFileURL(path.join(dir, label + '.html')).href, { waitUntil: 'load', timeout: 60000 });
 // ChatGPT paints dark from a `dark` class on <html> (and on each message's markdown body), Claude from data-mode="dark" on <html> and on
 // every design-system root (`.cds-root`, portals included); both paint light
 // when that is taken away, so one copy renders both themes and no account setting changes.

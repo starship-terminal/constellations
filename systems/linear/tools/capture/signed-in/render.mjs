@@ -3,10 +3,15 @@
 // Linear copies keep the theme they were taken in (the palette is a script-generated constructed
 // stylesheet), so each copy renders once, as captured; there is no 'light' flag.
 import fs from 'fs';
+import path from 'path';
+import { pathToFileURL } from 'url';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
-const [,, dir, label, ...flags] = process.argv;
-const meta = JSON.parse(fs.readFileSync(`${dir}/${label}.json`));
+const [,, dirArg, label, ...flags] = process.argv;
+if (!dirArg || !label) { console.error('usage: render.mjs <dir> <label> [full] [scroll=<top>]'); process.exit(2); }
+const dir = path.resolve(dirArg);   // a relative <dir> would make a broken file:// URL
+process.env.SNAPS ??= dir;           // lib.mjs keys its CDN cache off SNAPS
+const meta = JSON.parse(fs.readFileSync(path.join(dir, `${label}.json`)));
 // PRODUCT (adapt): Linear has no in-copy theme switch.
 const light = false;
 const out = label;
@@ -15,7 +20,7 @@ const ctx = await b.newContext({ viewport: { width: meta.w, height: meta.h }, de
 const { routeCdn } = await import('./lib.mjs');
 await routeCdn(ctx);
 const p = await ctx.newPage();
-await p.goto('file://' + dir + '/' + label + '.html', { waitUntil: 'load', timeout: 60000 });
+await p.goto(pathToFileURL(path.join(dir, label + '.html')).href, { waitUntil: 'load', timeout: 60000 });
 await p.waitForTimeout(2500);
 if (meta.scrollY) await p.evaluate(y => scrollTo(0, y), meta.scrollY);
 // Restore inner scrollers: from the data-snap-scroll marks snapshot.js leaves on scrolled elements
