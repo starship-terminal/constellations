@@ -194,7 +194,7 @@ const out = {
   readAt: new Date().toLocaleDateString('en-CA'), // the local date of the run
   // PRODUCT (adapt): where this product's CSS came from.
   source: 'the <style> blocks snapshot.js inlined into each signed-in page copy (claude.ai\'s CSS from assets-proxy.anthropic.com), deduplicated by content',
-  sheets: sheets.map(({ name, media, bytes, copies }) => ({ name, media, bytes, copies: copies.length === COPIES ? `all ${COPIES} copies` : copies })),
+  sheets: sheets.map(({ name, media, bytes, copies }) => ({ name, media, bytes, copies: new Set(copies).size === COPIES ? `all ${COPIES} copies` : [...new Set(copies)] })),
   counts: {
     rules: ok.length,
     fonts: result.fonts.length,
