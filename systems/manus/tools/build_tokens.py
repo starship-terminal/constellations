@@ -603,8 +603,10 @@ for s_ in RULES["spacing"]:
         sp[step] = {"$value": "%gpx" % v, "$type": "dimension", "$extensions": {"source": f"Measured: Tailwind spacing utilities (p-, m-, gap-, space-) resolving to {v:g}px on {s_['elements']} elements across the refresh's page copies (raw/css-rules.json spacing)", "elements": s_["elements"]}}
 sp["$description"] = ("Tailwind's spacing scale on a 4px base, as Manus uses it: a key is the class step, so `space.2` is gap-2 / p-2 = 8px, and `space.2_5` is the 10px half step. "
                       "Every step carries its element count. Values off the grid are kept apart in $extensions.offGrid; the density tokens (density.*) hold the component paddings Manus sets by variable.")
+# Summed outside the f-string: a same-quote string inside one is a SyntaxError before Python 3.12.
+on_scale = sum(x["elements"] for x in RULES["spacing"] if x["px"] > 0)
 sp["$extensions"] = {"base": "4px", "offGrid": off,
-                     "note": f"{sum(off.values())} of {sum(x["elements"] for x in RULES["spacing"] if x["px"] > 0)} spacing class uses are off the grid (1px rules and arbitrary 7, 9, 11 and 34px values); everything else is on the scale"}
+                     "note": f"{sum(off.values())} of {on_scale} spacing class uses are off the grid (1px rules and arbitrary 7, 9, 11 and 34px values); everything else is on the scale"}
 core["space"] = sp
 bw = RULES["borderWidth"]
 core["radius"]["dialog"] = {"$value": "16px", "$type": "dimension", "$extensions": {"source": "Measured: rounded-[16px] on every role=dialog in the 2026-10-17 copies (confirm, form, invite and Settings dialogs)"}}
