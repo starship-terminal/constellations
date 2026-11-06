@@ -302,7 +302,7 @@ Tokens named in its classes: `--fill-tsp-white-light`.
 
 <a id="share-banner"></a>`share-banner`, on home-dark. Radius 12, a 0.5px --border-dark hairline, --background-mask-white fill; serif title over a 12px grey line, a chevron at the end.
 
-<img src="components/crops/share-banner-default.png" alt="Share banner ("Share Manus with a friend"), default" height="54"> <img src="components/crops/share-banner-hover.png" alt="Share banner ("Share Manus with a friend"), hover" height="54"> <img src="components/crops/share-banner-light.png" alt="Share banner ("Share Manus with a friend"), light" height="54"> <img src="components/crops/share-banner-light-hover.png" alt="Share banner ("Share Manus with a friend"), light-hover" height="54"> <img src="components/crops/share-banner-focus-visible.png" alt="Share banner ("Share Manus with a friend"), focus-visible" height="54"> 
+<img src="components/crops/share-banner-default.png" alt="Share banner (&quot;Share Manus with a friend&quot;), default" height="54"> <img src="components/crops/share-banner-hover.png" alt="Share banner (&quot;Share Manus with a friend&quot;), hover" height="54"> <img src="components/crops/share-banner-light.png" alt="Share banner (&quot;Share Manus with a friend&quot;), light" height="54"> <img src="components/crops/share-banner-light-hover.png" alt="Share banner (&quot;Share Manus with a friend&quot;), light-hover" height="54"> <img src="components/crops/share-banner-focus-visible.png" alt="Share banner (&quot;Share Manus with a friend&quot;), focus-visible" height="54"> 
 
 | State | Values |
 |---|---|
