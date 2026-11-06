@@ -11,7 +11,8 @@ finds anything the rectangles missed, using the same detection patterns as `tool
     python3 tools/redact_images.py check systems/manus --patterns ~/.design-systems/cleanup-redact.json
     python3 tools/redact_images.py lines systems/manus/screenshots/home-dark.png   # author a rules file
 
-`check` reads the package's own rules file, tools/redact-rules/<slug>.json, when one exists (its ocr
+`check` reads every image file under the package that git does not ignore (any folder, every frame;
+a file of an image type it cannot read fails the check), and the package's own rules file, tools/redact-rules/<slug>.json, when one exists (its ocr
 block: email_allow, wrap_ignore) and prints which file it loaded; `--rules` names another one instead.
 `apply` never guesses: it edits files, so its `--rules` stays required.
 
@@ -75,7 +76,10 @@ import warnings
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageFilter
+from PIL import Image, ImageFilter, ImageSequence
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from catalog import IMAGE_EXT  # noqa: E402  (the image types a package holds)
 
 Image.MAX_IMAGE_PIXELS = None
 warnings.simplefilter("ignore", Image.DecompressionBombWarning)
@@ -145,6 +149,62 @@ def package_images(pkg, subdirs=("screenshots", "components/crops", "components"
                 seen.add(f)
                 out.append(f)
     return out
+
+
+# `check` reads every image a package holds, wherever it sits (icons/, raw/, the top-level icon.png),
+# in each format catalog.py lists a package image under. A file of any other image type cannot be
+# read for text here, so `check` fails on it rather than pass it unread.
+OTHER_IMAGE_EXT = {".ico", ".bmp", ".tif", ".tiff", ".avif", ".heic", ".heif", ".jxl", ".apng", ".jp2", ".psd"}
+IMAGE_MAGIC = (b"\x89PNG", b"\xff\xd8\xff", b"GIF8", b"BM", b"II*\x00", b"MM\x00*", b"\x00\x00\x01\x00")
+SKIP_DIRS = {".git", "node_modules", "__pycache__"}
+
+
+def _is_image(f):
+    """By extension, or by content for a file whose name does not say (an extensionless dump)."""
+    ext = f.suffix.lower()
+    if ext in IMAGE_EXT or ext in OTHER_IMAGE_EXT:
+        return True
+    try:
+        with open(f, "rb") as fh:
+            head = fh.read(12)
+    except OSError:
+        return False
+    return (head.startswith(IMAGE_MAGIC) or (head[:4] == b"RIFF" and head[8:12] == b"WEBP")
+            or (head[4:8] == b"ftyp" and head[8:12] in (b"avif", b"heic", b"heix", b"mif1")))
+
+
+def _git_ignored(paths):
+    """The paths git ignores (a package's local fonts/, capture dumps/): never committed, so not checked.
+    Outside a git checkout, or without git, nothing counts as ignored."""
+    if not paths:
+        return set()
+    try:
+        out = subprocess.run(["git", "-C", str(paths[0].parent), "check-ignore", "--stdin"], capture_output=True,
+                             text=True, input="\n".join(str(p.resolve()) for p in paths), timeout=60)
+    except (OSError, subprocess.SubprocessError):
+        return set()
+    if out.returncode not in (0, 1):
+        return set()
+    return {Path(line) for line in out.stdout.splitlines() if line}
+
+
+def check_images(pkg):
+    """(images `check` reads, image files it cannot read): every image file anywhere under the package
+    that git does not ignore, in any folder."""
+    found = []
+    for root, dirs, files in os.walk(pkg):
+        dirs[:] = sorted(d for d in dirs if d not in SKIP_DIRS)
+        found += [Path(root) / n for n in sorted(files) if _is_image(Path(root) / n)]
+    ignored = _git_ignored(found)
+    found = [f for f in found if f.resolve() not in ignored]
+    readable = [f for f in found if f.suffix.lower() in IMAGE_EXT]
+    return readable, [f for f in found if f.suffix.lower() not in IMAGE_EXT]
+
+
+def frames(f):
+    """Every frame of an image as RGB: an animated GIF or WebP can hide text in a later frame."""
+    with Image.open(f) as im:
+        return [fr.convert("RGB") for fr in ImageSequence.Iterator(im)]
 
 
 def size_matches(sizes, wh):
@@ -468,22 +528,34 @@ def cmd_check(args):
               + ("" if args.rules else " (loaded for this package)"), flush=True)
     cfg["email_allow"] = cfg.get("email_allow", []) + load_email_allow(args.patterns)
     bad = 0
-    targets = [Path(p) for p in args.files] if args.files else package_images(pkg)
-    if not targets:
+    if args.files:
+        targets = [Path(p) for p in args.files]
+        unreadable = [f for f in targets if f.suffix.lower() not in IMAGE_EXT]
+        targets = [f for f in targets if f not in unreadable]
+    else:
+        targets, unreadable = check_images(pkg)
+    for f in unreadable:
+        bad += 1
+        print(f"UNREADABLE {f.relative_to(pkg) if pkg in f.parents else f}: {f.suffix or 'this'} image type "
+              f"is not one check reads ({', '.join(sorted(IMAGE_EXT))}); convert it or remove it")
+    if not targets and not unreadable:
         sys.exit(f"no images found under {pkg}")
     for f in targets:
-        im = open_rgb(f)
-        reads = [ocr_words(im)]
-        if max(im.size) >= 400:
-            reads.append(ocr_words(im, boost=True))
-        found, wrapped = ocr_hits(patterns, cfg, reads)
+        found, wrapped = [], False
+        for im in frames(f):
+            reads = [ocr_words(im)]
+            if max(im.size) >= 400:
+                reads.append(ocr_words(im, boost=True))
+            hit, wrap = ocr_hits(patterns, cfg, reads)
+            found += hit
+            wrapped = wrapped or wrap
         rel = f.relative_to(pkg).as_posix() if pkg in f.parents else f.as_posix()
         if wrapped and not found and any(fnmatch.fnmatch(rel, g) for g in cfg.get("wrap_ignore", [])):
             wrapped = False               # a pattern that matches two unrelated lines, reviewed by hand
         if found or wrapped:
             bad += 1
             print(f"HIT {f.relative_to(pkg) if pkg in f.parents else f}: {len(found)} match boxes" + (" (spans lines)" if wrapped else ""))
-    print(f"{len(targets)} images read, {bad} with a match")
+    print(f"{len(targets)} images read, {bad} with a match" + (f" or unreadable ({len(unreadable)})" if unreadable else ""))
     return 1 if bad else 0
 
 

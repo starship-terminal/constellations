@@ -172,6 +172,57 @@ class Commands(unittest.TestCase):
             self.assertEqual(allow, [])
             self.assertNotIn("rules:", out)
 
+    def test_check_reads_every_image_in_every_folder_and_fails_on_unknown_types(self):
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            pkg = Path(d)
+            for rel in ("screenshots/a.png", "icons/b.webp", "raw/c.gif", "icon.png", "raw/deep/d.jpg"):
+                (pkg / rel).parent.mkdir(parents=True, exist_ok=True)
+                Image.new("RGB", (4, 4)).save(pkg / rel)
+            (pkg / "raw/notes.json").write_text("{}")
+            pats = pkg / "p.json"
+            pats.write_text(json.dumps({"replace": [["x", "y"]]}))
+            seen = []
+
+            def fake_words(im, boost=False):
+                seen.append(im.size)
+                return []
+
+            def run():
+                seen.clear()
+                with mock.patch.object(R, "ocr_words", side_effect=fake_words), \
+                     contextlib.redirect_stdout(io.StringIO()) as out, self.assertRaises(SystemExit) as cm:
+                    R.main(["check", d, "--patterns", str(pats)])
+                return cm.exception.code, out.getvalue()
+
+            code, out = run()
+            self.assertEqual(code, 0, out)
+            self.assertEqual(len(seen), 5)                        # png, webp, gif, root icon, nested jpg
+            self.assertIn("5 images read", out)
+            readable, unreadable = R.check_images(pkg)
+            self.assertEqual(sorted(f.relative_to(pkg).as_posix() for f in readable),
+                             ["icon.png", "icons/b.webp", "raw/c.gif", "raw/deep/d.jpg", "screenshots/a.png"])
+            Image.new("RGB", (4, 4)).save(pkg / "icons/e.bmp")    # a type check cannot read
+            (pkg / "raw/dump").write_bytes((pkg / "icon.png").read_bytes())   # an image with no extension
+            code, out = run()
+            self.assertEqual(code, 1)
+            self.assertIn("UNREADABLE icons/e.bmp", out)
+            self.assertIn("UNREADABLE raw/dump", out)
+
+    def test_check_reads_every_frame_of_an_animation(self):
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d:
+            pkg = Path(d)
+            frames = [Image.new("RGB", (8, 8), c) for c in ("red", "blue", "green")]
+            frames[0].save(pkg / "anim.gif", save_all=True, append_images=frames[1:])
+            pats = pkg / "p.json"
+            pats.write_text(json.dumps({"replace": [["x", "y"]]}))
+            calls = []
+            with mock.patch.object(R, "ocr_words", side_effect=lambda im, boost=False: calls.append(1) or []), \
+                 contextlib.redirect_stdout(io.StringIO()), self.assertRaises(SystemExit):
+                R.main(["check", d, "--patterns", str(pats)])
+            self.assertEqual(len(calls), 3)
+
     def test_apply_still_requires_rules(self):
         with tempfile.TemporaryDirectory() as d, contextlib.redirect_stderr(io.StringIO()):
             with self.assertRaises(SystemExit) as cm:
