@@ -361,10 +361,6 @@ class RealLibraryTest(unittest.TestCase):
                 self.assertIn(g["grade"], scorecard.GRADES)
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 class NextPathTest(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
@@ -389,3 +385,6 @@ class NextPathTest(unittest.TestCase):
     def test_other_dates_do_not_count(self):
         self.touch("2026-11-05-9.json", "2026-11-060.json")
         self.assertEqual(grade.next_path("2026-11-06").name, "2026-11-06.json")
+
+if __name__ == "__main__":
+    unittest.main()
