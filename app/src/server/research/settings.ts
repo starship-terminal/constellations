@@ -84,9 +84,23 @@ function originOf(url: string) {
     return null;
   }
 }
+// The endpoint a provider's key is already trusted with: the saved endpoint
+// while that provider is the saved one, otherwise the one the environment
+// sets for it. A saved endpoint never vouches for the other provider's key.
+function trustedBaseURL(saved: Stored, provider: Provider) {
+  return resolveProvider(saved) === provider
+    ? resolveBaseURL(saved, provider)
+    : resolveBaseURL({}, provider);
+}
+export async function readTrustedBaseURL(provider: Provider) {
+  return trustedBaseURL(
+    storedSettings.parse(await (await getStore()).getSettings()),
+    provider,
+  );
+}
 // A saved or environment key may go to the provider's own API or to the
-// endpoint the owner already saved, and nowhere else. Anything new must come
-// with its own key.
+// endpoint it is already trusted with, and nowhere else. Anything new must
+// come with its own key.
 export function trustsEndpoint(
   provider: Provider,
   baseURL: string | null,
@@ -99,15 +113,16 @@ export function trustsEndpoint(
       (savedBaseURL !== null && origin === originOf(savedBaseURL)))
   );
 }
-// Apply a validated PATCH to the stored row. When the endpoint moves to an
-// origin the stored key was never sent to and the same PATCH brings no new
-// key, the stored key for that provider is dropped rather than carried over.
+// Apply a validated PATCH to the stored row. When the active provider ends up
+// on an origin its stored key was not trusted with and the same PATCH brings
+// no new key, that stored key is dropped rather than carried over.
 export function applySettingsPatch(
   raw: Record<string, unknown>,
   patch: z.infer<typeof settingsPatch>,
 ): Stored {
   const saved = storedSettings.parse(raw);
-  const previousBaseURL = resolveBaseURL(saved, resolveProvider(saved));
+  const target = resolveProvider({ ...saved, ...patch });
+  const previousBaseURL = trustedBaseURL(saved, target);
   if (patch.provider && patch.provider !== saved.provider) {
     if (!patch.model) delete saved.model;
     if (patch.baseURL === undefined) delete saved.baseURL;
@@ -119,14 +134,11 @@ export function applySettingsPatch(
     if (key === null) delete keys[name];
     else if (key !== undefined) keys[name] = key;
   }
-  if (patch.baseURL !== undefined) {
-    const provider = resolveProvider(next);
-    if (
-      typeof patch.apiKeys?.[provider] !== "string" &&
-      !trustsEndpoint(provider, patch.baseURL, previousBaseURL)
-    )
-      delete keys[provider];
-  }
+  if (
+    typeof patch.apiKeys?.[target] !== "string" &&
+    !trustsEndpoint(target, resolveBaseURL(next, target), previousBaseURL)
+  )
+    delete keys[target];
   if (patch.apiKeys || saved.apiKeys) next.apiKeys = keys;
   return next;
 }

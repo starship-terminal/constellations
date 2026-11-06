@@ -8,6 +8,7 @@ import {
 import {
   readApiKey,
   readSettings,
+  readTrustedBaseURL,
   submittedBaseURL,
   trustsEndpoint,
 } from "@/server/research/settings";
@@ -30,7 +31,10 @@ export function POST(request: Request) {
     const saved = await readSettings();
     const provider = probe.provider ?? saved.provider;
     const baseURL = probe.baseURL === undefined ? saved.baseURL : probe.baseURL;
-    if (!probe.apiKey && !trustsEndpoint(provider, baseURL, saved.baseURL))
+    if (
+      !probe.apiKey &&
+      !trustsEndpoint(provider, baseURL, await readTrustedBaseURL(provider))
+    )
       throw new HttpError(
         400,
         "Enter an API key to test this endpoint. A saved key is only sent to the provider's own API or the saved endpoint.",

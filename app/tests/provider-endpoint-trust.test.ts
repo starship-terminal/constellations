@@ -207,3 +207,43 @@ test("switching provider to a new endpoint drops only the target provider's key"
   });
   expect(state.saved.apiKeys).toEqual({ openai: "test-key-openai" });
 });
+
+test("a saved endpoint for one provider does not vouch for the other provider's key", async () => {
+  state.saved = {
+    provider: "openai",
+    baseURL: "https://proxy.example/v1",
+    apiKeys: { openai: "test-key-openai", anthropic: "test-key-anthropic" },
+  };
+  expect((await probe({ provider: "anthropic" })).status).toBe(400);
+  expect(
+    (
+      await probe({
+        provider: "anthropic",
+        baseURL: "https://proxy.example/v1",
+      })
+    ).status,
+  ).toBe(400);
+  expect(state.probes).toEqual([]);
+  await patch({ provider: "anthropic", baseURL: "https://proxy.example/v1" });
+  expect(state.saved.apiKeys).toEqual({ openai: "test-key-openai" });
+});
+
+test("a provider-only switch keeps the key when the endpoint becomes the provider's own or the environment's", async () => {
+  state.saved = {
+    provider: "openai",
+    baseURL: "https://proxy.example/v1",
+    apiKeys: { openai: "test-key-openai", anthropic: "test-key-anthropic" },
+  };
+  await patch({ provider: "anthropic" });
+  expect(state.saved.apiKeys).toEqual({
+    openai: "test-key-openai",
+    anthropic: "test-key-anthropic",
+  });
+  vi.stubEnv("ANTHROPIC_BASE_URL", "https://operator-proxy.example/v1");
+  await patch({ provider: "openai" });
+  await patch({ provider: "anthropic" });
+  expect(state.saved.apiKeys).toEqual({
+    openai: "test-key-openai",
+    anthropic: "test-key-anthropic",
+  });
+});
