@@ -1,0 +1,15 @@
+# Live capture procedure
+
+Use the owner-selected visible Codex in-app browser. The owner signs in. Open existing organization/project pages; never resume a project or run SQL without separate authority. Open one popup at a time, wait until visibly settled, and save a viewport screenshot plus computed styles from the same state.
+
+The capture used read-only `tab.playwright.evaluate`: `getComputedStyle` on body and visible buttons, anchors, inputs, headings, comboboxes, dialogs and menus; record colour, background, border, radius, font family/size/weight/line-height, padding, gap, shadow, dimensions and transitions. Store tag, role, label, disabled/expanded attributes and bounding rectangle. Custom-property enumeration is partial; do not call it complete. Record innerWidth, innerHeight, devicePixelRatio, visualViewport, timestamp, safe URL and theme classes. Raw unfiltered outputs stay outside Git.
+
+Read screenshot format from decoded bytes, not the filename. Convert accepted JPEG screenshots to PNG and quantize with Pillow. Full-page attempts with missing lazy content or shifted fixed navigation are rejected. Review every screenshot, then select crop coordinates from native PNGs and put them in crops.json. Never use DPR alone to compute crop boxes.
+
+Original scratch root: ~/.design-systems/supabase. No raw DOM, cookies or proprietary fonts were stored in this package. Owner profile is permitted. Scan all text and images using the current repository policy before committing.
+
+Light appearance was authorized, captured on desktop/mobile project lists and the status filter, then restored to System. app-restored-system-theme is verification. Reset temporary viewport overrides afterwards.
+
+Expanded pass: 57 additional screenshots captured through the same visible browser, including project/organization/account navigation and nested panels. The role-based team table uses div elements, so read [role=columnheader] and [role=cell], not only native th/td. New measurements live in raw/expanded/. The interaction inventory records discovered controls and explicitly retains pending work. New screenshots were decoded from JPEG and converted to quantized PNG. System theme was restored and verified; viewport override reset. No invitations, feedback, support messages, deployments, purchases or saved settings changes were submitted. A temporary local editor draft was discarded.
+
+Second continuation: 56 additional accepted images and per-state controls in raw/continuation/. One invoice screenshot was rejected for loading placeholders. Nested UI animations were allowed to settle and re-captured. The source JPEGs and action scratch log remain outside the repository under ~/.design-systems/supabase/continuation. Filter changes and callback draft rows were restored/discarded; theme returned to System and viewport reset. raw/continuation/interaction-results.json records actual actions separately from merely discovered controls. Warning colours, radius and padding come from live computed styles in both themes.

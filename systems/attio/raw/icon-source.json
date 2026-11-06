@@ -1,0 +1,12 @@
+{
+  "url": "https://attio.com/favicon.ico?favicon.0t61hvyp-jaev.ico",
+  "source": "Observed rel=icon on official attio.com; standard fetch_icon helper failed, curl retrieved official ICO and Pillow converted it.",
+  "originalSize": [
+    32,
+    32
+  ],
+  "outputSize": [
+    128,
+    128
+  ]
+}
