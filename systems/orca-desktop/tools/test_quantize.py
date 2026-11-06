@@ -70,6 +70,31 @@ class QuantizeTest(unittest.TestCase):
             self.q.main()
         self.assertTrue(committed.exists())
 
+    def test_incomplete_later_theme_leaves_earlier_theme_untouched(self):
+        self.q.RUN_FRAMES = {"light": {"step-00": "run-started"}}
+        for theme in ("dark", "light"):
+            png(self.raw / theme / "home.png")
+            (self.raw / theme / "captures.json").write_text(json.dumps({"home": {"state": "default", "parts": {}}}))
+        stored = self.pkg / "screenshots" / "dark" / "old.png"
+        png(stored)
+        before = stored.read_bytes()
+        with self.assertRaises(SystemExit):
+            self.q.main()
+        self.assertEqual(stored.read_bytes(), before)
+        self.assertEqual(sorted(p.name for p in (self.pkg / "screenshots" / "dark").glob("*.png")), ["old.png"])
+        self.assertFalse((self.pkg / "raw" / "components.dark.json").exists())
+
+    def test_later_theme_without_captures_leaves_earlier_theme_untouched(self):
+        self.q.RUN_FRAMES = {}
+        png(self.raw / "dark" / "home.png")
+        (self.raw / "dark" / "captures.json").write_text(json.dumps({"home": {"state": "default", "parts": {}}}))
+        png(self.raw / "light" / "home.png")
+        stored = self.pkg / "screenshots" / "dark" / "old.png"
+        png(stored)
+        with self.assertRaises(SystemExit):
+            self.q.main()
+        self.assertEqual(sorted(p.name for p in (self.pkg / "screenshots" / "dark").glob("*.png")), ["old.png"])
+
 
 if __name__ == "__main__":
     unittest.main()
