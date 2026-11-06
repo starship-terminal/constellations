@@ -6,6 +6,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useChat } from "@/components/Chat";
+import { setCollapsed, setTheme, usePrefs } from "@/components/prefs";
 
 const I = (d: React.ReactNode) => (
   <svg className="nav-ic" width="17" height="17" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
@@ -52,27 +53,14 @@ export function Rail() {
   const pathname = usePathname();
   const chat = useChat();
 
-  const toggleTheme = () => {
-    const root = document.documentElement;
-    root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
-    try {
-      localStorage.setItem("ds-theme", root.dataset.theme);
-    } catch {}
-  };
+  const { theme, collapsed } = usePrefs();
+
+  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
   const toggleNav = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const root = document.documentElement;
-    if (root.dataset.nav === "collapsed") {
-      delete root.dataset.nav;
-      try { localStorage.removeItem("ds-nav"); } catch {}
-    } else {
-      root.dataset.nav = "collapsed";
-      try { localStorage.setItem("ds-nav", "collapsed"); } catch {}
-    }
+    setCollapsed(!collapsed);
     if (e.detail) e.currentTarget.blur();
   };
-
-  const collapsed = typeof document !== "undefined" && document.documentElement.dataset.nav === "collapsed";
 
   return (
     <header className="bar">

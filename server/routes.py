@@ -28,6 +28,8 @@ import importlib.util
 import ipaddress
 import json
 import os
+import sys
+import traceback
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -251,8 +253,10 @@ def handle_post(handler) -> bool:
             _reply(handler, 200, chat.run(messages, cfg))
         except chat.ProviderError as e:
             _reply(handler, 200, {"reply": "", "error": str(e), "results": [], "media": []})
-        except Exception as e:
-            _reply(handler, 500, {"error": f"{type(e).__name__}: {e}"})
+        except Exception:
+            # The detail (paths, upstream text) goes to the server log only.
+            traceback.print_exc(file=sys.stderr)
+            _reply(handler, 500, {"error": "internal error"})
         return True
     _reply(handler, 404, {"error": "no such api route"})
     return True

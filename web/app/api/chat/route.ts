@@ -60,7 +60,7 @@ export async function POST(req: Request) {
     const result = await runChat(messages, cfg);
     return NextResponse.json({
       ...result,
-      reply: result.reply ? markdown(result.reply, { base: "chat" }) : "",
+      reply: result.reply ? markdown(result.reply, { base: "chat", remoteImages: false }) : "",
       results: await enrich(result.results),
     });
   } catch (e) {
