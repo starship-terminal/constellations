@@ -1,12 +1,14 @@
 // Discovery pass: for each page, lists every cds-* class used in the DOM (with
 // a sample element), every cds-* class named in a stylesheet selector, and the
 // fixed/sticky elements (banners, chat panels) that need removing.
-// Writes JSON to $OUT (default: the scratch dir given as argv[2]).
+// Writes JSON and full-colour PNGs to $OUT, or the scratch dir given as argv[2]; one is required, so
+// nothing lands in the current directory (often this package's tools/capture).
 import fs from 'node:fs';
 import path from 'node:path';
 import { launch } from './lib.mjs';
 
-const OUT = process.argv[2] || '.';
+const OUT = process.env.OUT || process.argv[2];
+if (!OUT) { console.error('usage: OUT=<scratch dir> node explore.mjs  (or: node explore.mjs <scratch dir>)'); process.exit(2); }
 const PAGES = {
   search: 'https://www.coursera.org/search?query=machine%20learning',
   course: 'https://www.coursera.org/learn/machine-learning',
