@@ -73,7 +73,7 @@ class SampleTest(unittest.TestCase):
 
     def test_reads_a_quantised_package_screenshot(self):
         shot = HERE.parent / "systems/claude/screenshots/home-light.png"
-        if shot.read_bytes()[:8] != b"\x89PNG\r\n\x1a\n":
+        if shot.read_bytes().startswith(b"version https://git-lfs"):
             self.skipTest(f"{shot.name} is a Git LFS pointer; run git lfs pull for it")
         _, _, rows = sample.read_png(shot)
         self.assertEqual(sample.hexof(sample.fill(rows, 1500, 100, 200, 40)[0]), "#FCFCFB")
