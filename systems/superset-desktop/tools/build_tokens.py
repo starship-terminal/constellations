@@ -335,12 +335,18 @@ for path, part, prop, use in SIZES:
     if v:
         put(CORE, tuple(path.split(".")), tok(px("%gpx" % round(float(v[:-2]))), "dimension", "Measured",
             f"computed {prop} of {part} in {shot}, dark, {DATE} ({use}); {v} before rounding"))
-shot, s = need("dark", "panel-tab-selected")
 WINDOW = C["dark"]["home-default"]["viewport"]
 put(CORE, ("layout", "window-width"), tok(f"{WINDOW['css'][0]}px", "dimension", "Measured",
     f"the window's viewport, {WINDOW['css'][0]} x {WINDOW['css'][1]} CSS px at devicePixelRatio {WINDOW['dpr']} (the window maximised on the built-in display), {DATE}"))
 put(CORE, ("layout", "window-height"), tok(f"{WINDOW['css'][1]}px", "dimension", "Measured", f"the window's viewport height, {DATE}"))
 shot, s = need("dark", "panel-tab-selected")
+# The panel runs from its first tab's left edge to the window's right edge. The value is kept as read (340, the
+# tab strip's 339 plus its 1px edge), but a recapture whose boxes say otherwise must not keep it under Measured.
+_vp = C["dark"][shot]["viewport"]
+_first = min(p["box"][0] for n, p in C["dark"][shot]["parts"].items() if n.startswith("panel-tab") and "box" in p)
+_span = (_vp["device"][0] - _first) / _vp["dpr"]
+if abs(_span - 340) > 1:
+    raise SystemExit(f"layout.right-panel: the tabs in {shot} span {_span:g}px from the window's right edge, not about 340px; update the token")
 put(CORE, ("layout", "right-panel"), tok("340px", "dimension", "Measured",
     f"the workspace's right panel (Files, Changes, Review), 339 to 340px from the boxes of its tabs in {shot}, {DATE}"))
 shot, s = need("dark", "menu")
