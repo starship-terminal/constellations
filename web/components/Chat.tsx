@@ -63,6 +63,9 @@ const Ctx = createContext<ChatCtx>({
 
 export const useChat = () => useContext(Ctx);
 
+/** Dispatched on window after Settings saves or removes "ds-provider". */
+export const PROVIDER_EVENT = "ds-provider-change";
+
 const dsProvider = (): Cfg | null => {
   try {
     const p = JSON.parse(localStorage.getItem("ds-provider") || "null");
@@ -82,11 +85,23 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
   const [envProvider, setEnvProvider] = useState(false);
   const [hasLocal, setHasLocal] = useState(false);
   useEffect(() => {
-    setHasLocal(!!dsProvider());
+    // Settings saves or clears the provider in this tab (PROVIDER_EVENT) or
+    // in another one (storage); either way the chat's availability follows.
+    const sync = () => setHasLocal(!!dsProvider());
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === "ds-provider" || e.key === null) sync();
+    };
+    sync();
+    window.addEventListener(PROVIDER_EVENT, sync);
+    window.addEventListener("storage", onStorage);
     fetch("/api/status")
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => setEnvProvider(!!(d && d.envProvider)))
       .catch(() => {});
+    return () => {
+      window.removeEventListener(PROVIDER_EVENT, sync);
+      window.removeEventListener("storage", onStorage);
+    };
   }, []);
   const open = useCallback((d?: string) => {
     setIsOpen(true);
