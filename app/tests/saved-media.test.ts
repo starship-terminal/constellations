@@ -26,16 +26,9 @@ vi.mock("@/server/sources", () => ({
 }));
 import { POST as importMedia } from "@/app/api/saved-media/import/route";
 import { POST as saveMedia } from "@/app/api/saved-media/route";
-function request(path: string, body: unknown) {
-  return new Request(`http://localhost:8845${path}`, {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      origin: "http://localhost:8845",
-    },
-    body: JSON.stringify(body),
-  });
-}
+import { jsonRequest } from "./helpers";
+const request = (path: string, body: unknown) =>
+  jsonRequest(path, "POST", body);
 beforeEach(() => {
   vi.clearAllMocks();
   mocks.get.mockResolvedValue({

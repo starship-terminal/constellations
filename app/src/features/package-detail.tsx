@@ -53,6 +53,7 @@ import {
   packageFileHref,
   safeDecode,
 } from "./package-detail-data";
+import { headingId, nodeText } from "./markdown-heading";
 import styles from "./package-detail.module.css";
 import {
   animateCaptureViewer,
@@ -809,25 +810,30 @@ export function PackageMarkdown({
               <span>{alt}</span>
             );
           },
-          h1: ({ children }) => <h1 id={headingId(children)}>{children}</h1>,
-          h2: ({ children }) => <h2 id={headingId(children)}>{children}</h2>,
-          h3: ({ children }) => <h3 id={headingId(children)}>{children}</h3>,
-          h4: ({ children }) => <h4 id={headingId(children)}>{children}</h4>,
-          h5: ({ children }) => <h5 id={headingId(children)}>{children}</h5>,
-          h6: ({ children }) => <h6 id={headingId(children)}>{children}</h6>,
+          h1: ({ children }) => (
+            <h1 id={headingId(nodeText(children))}>{children}</h1>
+          ),
+          h2: ({ children }) => (
+            <h2 id={headingId(nodeText(children))}>{children}</h2>
+          ),
+          h3: ({ children }) => (
+            <h3 id={headingId(nodeText(children))}>{children}</h3>
+          ),
+          h4: ({ children }) => (
+            <h4 id={headingId(nodeText(children))}>{children}</h4>
+          ),
+          h5: ({ children }) => (
+            <h5 id={headingId(nodeText(children))}>{children}</h5>
+          ),
+          h6: ({ children }) => (
+            <h6 id={headingId(nodeText(children))}>{children}</h6>
+          ),
         }}
       >
         {text}
       </ReactMarkdown>
     </article>
   );
-}
-function headingId(children: unknown): string {
-  return String(children)
-    .toLowerCase()
-    .replace(/[^\p{L}\p{N}\s-]/gu, "")
-    .trim()
-    .replace(/\s+/g, "-");
 }
 function PackageDocumentView({ slug, path }: { slug: string; path: string }) {
   const { data, error, loading } = useResource<PackageDocumentContent>(

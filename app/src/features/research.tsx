@@ -10,6 +10,7 @@ import { DefaultChatTransport, type UIMessage } from "ai";
 import ReactMarkdown from "react-markdown";
 import { prepareResearchRequest } from "./research-transport";
 import { MarkdownImageAsText } from "./research-markdown";
+import { researchDocumentHref } from "./package-detail-data";
 import remarkGfm from "remark-gfm";
 import {
   ArrowRight,
@@ -1025,7 +1026,11 @@ function Message({
                         <Link
                           key={document.path}
                           className="pill small"
-                          href={document.url}
+                          href={researchDocumentHref(
+                            output.referenceId,
+                            document.path,
+                            document.url,
+                          )}
                         >
                           {document.path}
                         </Link>
@@ -1043,7 +1048,15 @@ function Message({
                     {output.truncated ? " (excerpt)" : ""}
                   </summary>
                   <p>
-                    <Link href={output.url}>Open full document</Link>
+                    <Link
+                      href={researchDocumentHref(
+                        output.referenceId,
+                        output.path,
+                        output.url,
+                      )}
+                    >
+                      Open full document
+                    </Link>
                   </p>
                   <pre
                     style={{

@@ -7,7 +7,8 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState } f
 import Link from "next/link";
 import { useLightbox } from "@/components/Lightbox";
 import { useToast } from "@/components/Toast";
-import { copyText } from "@/components/CopyButton";
+import { copyWithToast } from "@/components/CopyButton";
+import { readStoredProvider } from "@/components/storage";
 
 interface ChatResultCard {
   cover?: string;
@@ -70,12 +71,8 @@ export const useChat = () => useContext(Ctx);
 export const PROVIDER_EVENT = "ds-provider-change";
 
 const dsProvider = (): Cfg | null => {
-  try {
-    const p = JSON.parse(localStorage.getItem("ds-provider") || "null");
-    return p && p.api_key && p.model ? p : null;
-  } catch {
-    return null;
-  }
+  const p = readStoredProvider();
+  return p && p.api_key && p.model ? p : null;
 };
 
 // The history the model sees: each question with the markdown answer it got.
@@ -319,10 +316,7 @@ function ChatTurn({ t, lb, toast }: { t: Turn; lb: ReturnType<typeof useLightbox
                 key={i}
                 className="btn"
                 type="button"
-                onClick={async () => {
-                  await copyText(r.prompt || "");
-                  toast("Agent prompt copied");
-                }}
+                onClick={() => copyWithToast(r.prompt || "", toast, "Agent prompt copied")}
               >
                 Copy agent prompt · {r.slug}
               </button>

@@ -6,21 +6,14 @@ import {
 } from "@/server/sources/screens";
 import { parseReferenceId } from "@/server/sources";
 import type { ScreenQuery } from "@/contracts/screens";
+import { parsePagination } from "@/server/sources/pagination";
 export const runtime = "nodejs";
 export async function GET(request: Request) {
   const params = new URL(request.url).searchParams;
-  const pagination = (name: string, fallback: number, max: number) => {
-    const raw = params.get(name);
-    if (raw === null) return fallback;
-    const value = Number(raw);
-    return Number.isSafeInteger(value) && value >= 0
-      ? Math.min(max, value)
-      : null;
-  };
-  const offset = pagination("offset", 0, Number.MAX_SAFE_INTEGER);
-  const limit = pagination("limit", 60, 200);
-  if (offset === null || limit === null)
+  const page = parsePagination(params, { limit: 60, maxLimit: 200 });
+  if (!page)
     return Response.json({ error: "Invalid pagination" }, { status: 400 });
+  const { limit, offset } = page;
   const kind = params.get("kind"),
     sort = params.get("sort") || params.get("order"),
     scope = params.get("scope"),

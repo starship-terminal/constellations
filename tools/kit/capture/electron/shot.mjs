@@ -12,6 +12,7 @@
 // Read-only: it never clicks or navigates.
 // Quit the app and open it normally afterwards; an open port lets any local process drive it.
 import { screenshotWithMetadata } from '../screenshot.mjs';
+import { safeUrl } from '../safe-url.mjs';
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const [out, name, prefix = 'https://'] = process.argv.slice(2).filter(a => !a.startsWith('--'));
 const hover = process.argv.find(a => a.startsWith('--hover='))?.slice(8);
@@ -49,6 +50,7 @@ const vars = await page.evaluate(() => {
 });
 if (hover) await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] });
 const { writeFileSync } = await import('node:fs');
+vars.url = safeUrl(vars.url);
 writeFileSync(`${out}/${name}.vars.json`, JSON.stringify(vars, null, 1) + '\n');
 console.log(`${out}/${name}.png`, Object.keys(vars.vars).length, 'variables');
 await browser.close().catch(() => {});

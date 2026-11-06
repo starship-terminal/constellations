@@ -12,7 +12,7 @@
  *
  * node:fs and node:path only, no dependencies.
  */
-import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { basename, join } from "node:path";
 import { repoRoot } from "@/server/sources/files";
 
@@ -76,6 +76,12 @@ export const GRADES: Record<GradeValue, { glyph: string; word: string }> = {
   missing: { glyph: "○", word: "Missing" },
   na: { glyph: "–", word: "Not applicable" },
 };
+/** The word for a grade, or the raw value when a snapshot holds an unknown one. */
+function gradeWord(grade: unknown): string {
+  return typeof grade === "string" && Object.hasOwn(GRADES, grade)
+    ? GRADES[grade as GradeValue].word
+    : String(grade);
+}
 
 /**
  * The platform a snapshot entry without one was graded as: before rubric 3 every
@@ -144,8 +150,38 @@ export function platformLabel(platforms: string[]): string {
  * run of a day sorts after the earlier ones. Throws when scorecard/audits/ is
  * missing or holds no snapshots, mirroring the Python's sys.exit.
  */
+// Every scorecard render calls load(); reparse only when a file changes.
+let loaded: {
+  key: string;
+  value: { criteria: Criteria; audits: Audit[] };
+} | null = null;
+function stamp(file: string): string {
+  try {
+    const stat = statSync(/* turbopackIgnore: true */ file);
+    return `${stat.mtimeMs}:${stat.size}`;
+  } catch {
+    return "-";
+  }
+}
 export function load(): { criteria: Criteria; audits: Audit[] } {
   const DATA = join(/* turbopackIgnore: true */ repoRoot(), "scorecard");
+  const auditDir = join(DATA, "audits");
+  const files = existsSync(/* turbopackIgnore: true */ auditDir)
+    ? readdirSync(/* turbopackIgnore: true */ auditDir)
+        .filter((name) => name.endsWith(".json"))
+        .sort()
+    : [];
+  const key = [
+    DATA,
+    stamp(join(DATA, "criteria.json")),
+    ...files.map((name) => `${name}=${stamp(join(auditDir, name))}`),
+  ].join("|");
+  if (loaded?.key === key) return loaded.value;
+  const value = readScorecard(DATA);
+  loaded = { key, value };
+  return value;
+}
+function readScorecard(DATA: string): { criteria: Criteria; audits: Audit[] } {
   const criteria = JSON.parse(
     readFileSync(
       /* turbopackIgnore: true */ join(DATA, "criteria.json"),
@@ -290,7 +326,7 @@ export function counts(system: AuditSystem): Record<GradeValue, number> {
     na: 0,
   };
   for (const g of Object.values(system.grades)) {
-    out[g.grade] += 1;
+    if (g && Object.hasOwn(out, g.grade)) out[g.grade] += 1;
   }
   return out;
 }
@@ -363,8 +399,8 @@ export function changelog(
         if (oldGrade && oldGrade.grade !== g.grade) {
           changed.push(
             `${cid} ${titles.get(cid) ?? cid} ` +
-              `${GRADES[oldGrade.grade].word.toLowerCase()} → ` +
-              GRADES[g.grade].word.toLowerCase(),
+              `${gradeWord(oldGrade.grade).toLowerCase()} → ` +
+              gradeWord(g.grade).toLowerCase(),
           );
         }
       }
@@ -508,13 +544,16 @@ export function systemReport(
     rows: criteria.criteria
       .filter((c) => c.layer === name)
       .map((c) => {
+        // A snapshot written before a criterion existed has no grade for it;
+        // show it as not graded instead of failing the whole page.
         const g = system.grades[c.id];
+        const known = !!g && Object.hasOwn(GRADES, g.grade);
         return {
           id: c.id,
           title: c.title,
           doneWhen: doneWhen(c, platform),
-          grade: g.grade,
-          evidence: g.evidence,
+          grade: known ? g.grade : ("na" as GradeValue),
+          evidence: known ? g.evidence : "Not graded in this audit.",
         };
       }),
   }));

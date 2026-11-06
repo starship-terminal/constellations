@@ -6,17 +6,14 @@ import { loadData, mediaUrl } from "@/lib/catalog";
 import type { DesignSystem, GalleryData } from "@/lib/catalog";
 import { loadReferoIndex } from "@/lib/refero";
 import { NotBuilt } from "@/components/NotBuilt";
+import { tintOf } from "@/lib/style-labels";
 import { counts, indexStats, load as loadScorecard } from "@/lib/scorecard";
 
 export const dynamic = "force-dynamic";
 
-const tintOf = (s: DesignSystem) =>
-  Object.values(s.swatches)
-    .flat()
-    .find((x) => /accent|primary|brand|face/i.test(x.role))?.value || "";
 
 function Card({ s }: { s: DesignSystem }) {
-  const tint = tintOf(s);
+  const tint = tintOf(s.swatches);
   return (
     <Link
       className={`card${s.tags.includes("ios") ? " portrait" : ""}`}
