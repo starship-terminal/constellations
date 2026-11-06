@@ -17,9 +17,13 @@ const only = process.argv[2];
 
 const types = {'.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json',
   '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.png': 'image/png', '.md': 'text/plain'};
+const root = process.cwd();
 const server = http.createServer((req, res) => {
-  const file = path.join(process.cwd(), decodeURIComponent(new URL(req.url, 'http://x').pathname));
-  if (!file.startsWith(process.cwd()) || !fs.existsSync(file) || fs.statSync(file).isDirectory()) { res.writeHead(404); res.end(); return; }
+  let file;
+  try { file = path.join(root, decodeURIComponent(new URL(req.url, 'http://x').pathname)); }
+  catch { res.writeHead(400); res.end(); return; }   // a malformed %-escape must not crash the run
+  // Inside the package folder only: a bare prefix test would also pass a sibling such as polaris-other/.
+  if (!file.startsWith(root + path.sep) || !fs.existsSync(file) || fs.statSync(file).isDirectory()) { res.writeHead(404); res.end(); return; }
   res.writeHead(200, {'content-type': types[path.extname(file)] || 'application/octet-stream'});
   fs.createReadStream(file).pipe(res);
 });
