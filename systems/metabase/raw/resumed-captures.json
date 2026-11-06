@@ -1,0 +1,1447 @@
+[
+  {
+    "name": "model-courses-light-desktop",
+    "reading": "raw/model-courses-light-desktop.json",
+    "screenshot": "screenshots/model-courses-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-info-light-desktop",
+    "reading": "raw/model-info-light-desktop.json",
+    "screenshot": "screenshots/model-info-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-history-light-desktop",
+    "reading": "raw/model-history-light-desktop.json",
+    "screenshot": "screenshots/model-history-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-relationships-light-desktop",
+    "reading": "raw/model-relationships-light-desktop.json",
+    "screenshot": "screenshots/model-relationships-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-actions-disabled-light-desktop",
+    "reading": "raw/model-actions-disabled-light-desktop.json",
+    "screenshot": "screenshots/model-actions-disabled-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-menu-light-desktop",
+    "reading": "raw/model-menu-light-desktop.json",
+    "screenshot": "screenshots/model-menu-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-duplicate-light-desktop",
+    "reading": "raw/model-duplicate-light-desktop.json",
+    "screenshot": "screenshots/model-duplicate-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-column-menu-light-desktop",
+    "reading": "raw/model-column-menu-light-desktop.json",
+    "screenshot": "screenshots/model-column-menu-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-column-format-light-desktop",
+    "reading": "raw/model-column-format-light-desktop.json",
+    "screenshot": "screenshots/model-column-format-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-column-link-radio-light-desktop",
+    "reading": "raw/model-column-link-radio-light-desktop.json",
+    "screenshot": "screenshots/model-column-link-radio-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-column-alignment-light-desktop",
+    "reading": "raw/model-column-alignment-light-desktop.json",
+    "screenshot": "screenshots/model-column-alignment-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-export-options-light-desktop",
+    "reading": "raw/model-export-options-light-desktop.json",
+    "screenshot": "screenshots/model-export-options-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-export-xlsx-light-desktop",
+    "reading": "raw/model-export-xlsx-light-desktop.json",
+    "screenshot": "screenshots/model-export-xlsx-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-assignments-light-desktop",
+    "reading": "raw/model-assignments-light-desktop.json",
+    "screenshot": "screenshots/model-assignments-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-assignments-info-light-desktop",
+    "reading": "raw/model-assignments-info-light-desktop.json",
+    "screenshot": "screenshots/model-assignments-info-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-assignments-relationships-light-desktop",
+    "reading": "raw/model-assignments-relationships-light-desktop.json",
+    "screenshot": "screenshots/model-assignments-relationships-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-student-courses-light-desktop",
+    "reading": "raw/model-student-courses-light-desktop.json",
+    "screenshot": "screenshots/model-student-courses-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-student-courses-info-light-desktop",
+    "reading": "raw/model-student-courses-info-light-desktop.json",
+    "screenshot": "screenshots/model-student-courses-info-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-student-courses-relationships-light-desktop",
+    "reading": "raw/model-student-courses-relationships-light-desktop.json",
+    "screenshot": "screenshots/model-student-courses-relationships-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-students-error-light-desktop",
+    "reading": "raw/model-students-error-light-desktop.json",
+    "screenshot": "screenshots/model-students-error-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-students-info-light-desktop",
+    "reading": "raw/model-students-info-light-desktop.json",
+    "screenshot": "screenshots/model-students-info-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-students-relationships-light-desktop",
+    "reading": "raw/model-students-relationships-light-desktop.json",
+    "screenshot": "screenshots/model-students-relationships-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-submissions-error-light-desktop",
+    "reading": "raw/model-submissions-error-light-desktop.json",
+    "screenshot": "screenshots/model-submissions-error-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-submissions-info-light-desktop",
+    "reading": "raw/model-submissions-info-light-desktop.json",
+    "screenshot": "screenshots/model-submissions-info-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "model-submissions-relationships-light-desktop",
+    "reading": "raw/model-submissions-relationships-light-desktop.json",
+    "screenshot": "screenshots/model-submissions-relationships-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "table-assignments-light-desktop",
+    "reading": "raw/table-assignments-light-desktop.json",
+    "screenshot": "screenshots/table-assignments-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "reference-databases-light-desktop",
+    "reading": "raw/reference-databases-light-desktop.json",
+    "screenshot": "screenshots/reference-databases-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "reference-segments-light-desktop",
+    "reading": "raw/reference-segments-light-desktop.json",
+    "screenshot": "screenshots/reference-segments-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "reference-glossary-light-desktop",
+    "reading": "raw/reference-glossary-light-desktop.json",
+    "screenshot": "screenshots/reference-glossary-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "reference-postgres-light-desktop",
+    "reading": "raw/reference-postgres-light-desktop.json",
+    "screenshot": "screenshots/reference-postgres-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "reference-tables-light-desktop",
+    "reading": "raw/reference-tables-light-desktop.json",
+    "screenshot": "screenshots/reference-tables-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "reference-assignments-light-desktop",
+    "reading": "raw/reference-assignments-light-desktop.json",
+    "screenshot": "screenshots/reference-assignments-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "reference-assignment-fields-light-desktop",
+    "reading": "raw/reference-assignment-fields-light-desktop.json",
+    "screenshot": "screenshots/reference-assignment-fields-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "reference-course-id-field-light-desktop",
+    "reading": "raw/reference-course-id-field-light-desktop.json",
+    "screenshot": "screenshots/reference-course-id-field-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "reference-assignment-questions-light-desktop",
+    "reading": "raw/reference-assignment-questions-light-desktop.json",
+    "screenshot": "screenshots/reference-assignment-questions-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "reports-page-two-light-desktop",
+    "reading": "raw/reports-page-two-light-desktop.json",
+    "screenshot": "screenshots/reports-page-two-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-37-score-distribution-light-desktop",
+    "reading": "raw/report-37-score-distribution-light-desktop.json",
+    "screenshot": "screenshots/report-37-score-distribution-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-filters-expanded-light-desktop",
+    "reading": "raw/report-filters-expanded-light-desktop.json",
+    "screenshot": "screenshots/report-filters-expanded-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-34-all-submissions-light-desktop",
+    "reading": "raw/report-34-all-submissions-light-desktop.json",
+    "screenshot": "screenshots/report-34-all-submissions-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-25-assignment-name-light-desktop",
+    "reading": "raw/report-25-assignment-name-light-desktop.json",
+    "screenshot": "screenshots/report-25-assignment-name-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-menu-light-desktop",
+    "reading": "raw/report-menu-light-desktop.json",
+    "screenshot": "screenshots/report-menu-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-settings-denied-light-desktop",
+    "reading": "raw/report-settings-denied-light-desktop.json",
+    "screenshot": "screenshots/report-settings-denied-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-dashboard-picker-light-desktop",
+    "reading": "raw/report-dashboard-picker-light-desktop.json",
+    "screenshot": "screenshots/report-dashboard-picker-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-dashboard-search-empty-light-desktop",
+    "reading": "raw/report-dashboard-search-empty-light-desktop.json",
+    "screenshot": "screenshots/report-dashboard-search-empty-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-12-assignment-breakdown-light-desktop",
+    "reading": "raw/report-12-assignment-breakdown-light-desktop.json",
+    "screenshot": "screenshots/report-12-assignment-breakdown-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-series-toggle-light-desktop",
+    "reading": "raw/report-series-toggle-light-desktop.json",
+    "screenshot": "screenshots/report-series-toggle-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-20-assignment-types-light-desktop",
+    "reading": "raw/report-20-assignment-types-light-desktop.json",
+    "screenshot": "screenshots/report-20-assignment-types-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "donut-data-settings-light-desktop",
+    "reading": "raw/donut-data-settings-light-desktop.json",
+    "screenshot": "screenshots/donut-data-settings-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "donut-color-picker-light-desktop",
+    "reading": "raw/donut-color-picker-light-desktop.json",
+    "screenshot": "screenshots/donut-color-picker-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "donut-display-light-desktop",
+    "reading": "raw/donut-display-light-desktop.json",
+    "screenshot": "screenshots/donut-display-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "donut-percentages-both-light-desktop",
+    "reading": "raw/donut-percentages-both-light-desktop.json",
+    "screenshot": "screenshots/donut-percentages-both-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-10-average-scores-light-desktop",
+    "reading": "raw/report-10-average-scores-light-desktop.json",
+    "screenshot": "screenshots/report-10-average-scores-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-share-menu-light-desktop",
+    "reading": "raw/report-share-menu-light-desktop.json",
+    "screenshot": "screenshots/report-share-menu-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-info-light-desktop",
+    "reading": "raw/report-info-light-desktop.json",
+    "screenshot": "screenshots/report-info-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-history-error-light-desktop",
+    "reading": "raw/report-history-error-light-desktop.json",
+    "screenshot": "screenshots/report-history-error-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-relationships-light-desktop",
+    "reading": "raw/report-relationships-light-desktop.json",
+    "screenshot": "screenshots/report-relationships-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-21-course-pass-rate-light-desktop",
+    "reading": "raw/report-21-course-pass-rate-light-desktop.json",
+    "screenshot": "screenshots/report-21-course-pass-rate-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-15-assignments-light-desktop",
+    "reading": "raw/report-15-assignments-light-desktop.json",
+    "screenshot": "screenshots/report-15-assignments-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-43-assignments-mapped-light-desktop",
+    "reading": "raw/report-43-assignments-mapped-light-desktop.json",
+    "screenshot": "screenshots/report-43-assignments-mapped-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-22-assignment-status-light-desktop",
+    "reading": "raw/report-22-assignment-status-light-desktop.json",
+    "screenshot": "screenshots/report-22-assignment-status-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-27-assignment-status-light-desktop",
+    "reading": "raw/report-27-assignment-status-light-desktop.json",
+    "screenshot": "screenshots/report-27-assignment-status-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-30-assignment-weight-light-desktop",
+    "reading": "raw/report-30-assignment-weight-light-desktop.json",
+    "screenshot": "screenshots/report-30-assignment-weight-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-39-average-grade-light-desktop",
+    "reading": "raw/report-39-average-grade-light-desktop.json",
+    "screenshot": "screenshots/report-39-average-grade-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-17-average-student-score-light-desktop",
+    "reading": "raw/report-17-average-student-score-light-desktop.json",
+    "screenshot": "screenshots/report-17-average-student-score-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-18-course-assignments-light-desktop",
+    "reading": "raw/report-18-course-assignments-light-desktop.json",
+    "screenshot": "screenshots/report-18-course-assignments-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-35-course-rating-light-desktop",
+    "reading": "raw/report-35-course-rating-light-desktop.json",
+    "screenshot": "screenshots/report-35-course-rating-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-14-courses-light-desktop",
+    "reading": "raw/report-14-courses-light-desktop.json",
+    "screenshot": "screenshots/report-14-courses-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-33-grade-distribution-light-desktop",
+    "reading": "raw/report-33-grade-distribution-light-desktop.json",
+    "screenshot": "screenshots/report-33-grade-distribution-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-19-late-submissions-light-desktop",
+    "reading": "raw/report-19-late-submissions-light-desktop.json",
+    "screenshot": "screenshots/report-19-late-submissions-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-7-number-of-students-light-desktop",
+    "reading": "raw/report-7-number-of-students-light-desktop.json",
+    "screenshot": "screenshots/report-7-number-of-students-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-16-number-of-students-light-desktop",
+    "reading": "raw/report-16-number-of-students-light-desktop.json",
+    "screenshot": "screenshots/report-16-number-of-students-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-41-student-courses-mapped-light-desktop",
+    "reading": "raw/report-41-student-courses-mapped-light-desktop.json",
+    "screenshot": "screenshots/report-41-student-courses-mapped-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-36-student-geographical-locations-light-desktop",
+    "reading": "raw/report-36-student-geographical-locations-light-desktop.json",
+    "screenshot": "screenshots/report-36-student-geographical-locations-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-24-students-light-desktop",
+    "reading": "raw/report-24-students-light-desktop.json",
+    "screenshot": "screenshots/report-24-students-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-42-students-mapped-light-desktop",
+    "reading": "raw/report-42-students-mapped-light-desktop.json",
+    "screenshot": "screenshots/report-42-students-mapped-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-31-submission-breakdown-light-desktop",
+    "reading": "raw/report-31-submission-breakdown-light-desktop.json",
+    "screenshot": "screenshots/report-31-submission-breakdown-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-44-submissions-mapped-light-desktop",
+    "reading": "raw/report-44-submissions-mapped-light-desktop.json",
+    "screenshot": "screenshots/report-44-submissions-mapped-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "report-13-submitted-assignments-light-desktop",
+    "reading": "raw/report-13-submitted-assignments-light-desktop.json",
+    "screenshot": "screenshots/report-13-submitted-assignments-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "assignment-dashboard-recapture-light-desktop",
+    "reading": "raw/assignment-dashboard-recapture-light-desktop.json",
+    "screenshot": "screenshots/assignment-dashboard-recapture-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "assignment-id-filter-recapture-light-desktop",
+    "reading": "raw/assignment-id-filter-recapture-light-desktop.json",
+    "screenshot": "screenshots/assignment-id-filter-recapture-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "assignment-id-filter-filled-light-desktop",
+    "reading": "raw/assignment-id-filter-filled-light-desktop.json",
+    "screenshot": "screenshots/assignment-id-filter-filled-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "assignment-dashboard-menu-light-desktop",
+    "reading": "raw/assignment-dashboard-menu-light-desktop.json",
+    "screenshot": "screenshots/assignment-dashboard-menu-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "assignment-auto-refresh-light-desktop",
+    "reading": "raw/assignment-auto-refresh-light-desktop.json",
+    "screenshot": "screenshots/assignment-auto-refresh-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "overview-dashboard-recapture-light-desktop",
+    "reading": "raw/overview-dashboard-recapture-light-desktop.json",
+    "screenshot": "screenshots/overview-dashboard-recapture-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "metabot-unavailable-light-desktop",
+    "reading": "raw/metabot-unavailable-light-desktop.json",
+    "screenshot": "screenshots/metabot-unavailable-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  }
+]

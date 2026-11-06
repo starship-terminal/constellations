@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-31T05:00:55.429Z",
+  "screenshot": "alert-filter-menu-dark.png",
+  "source": "signed-in app",
+  "actual": {
+    "devicePixelRatio": 1,
+    "innerHeight": 1000,
+    "innerWidth": 1440
+  },
+  "theme": {
+    "bodyClass": "",
+    "colorScheme": "normal",
+    "rootClass": ""
+  },
+  "capture": {
+    "mode": "viewport",
+    "originalFormat": "JPEG",
+    "note": "Browser CSS-scale JPEG; converted to 256-colour PNG after credential masking."
+  },
+  "png": {
+    "width": 1440,
+    "height": 1000
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "basis": "Decoded image within one pixel of actual viewport"
+  },
+  "visualReview": {
+    "status": "accepted",
+    "note": "Reviewed visible segment of scrollable menu; remaining menu options are not claimed captured."
+  },
+  "redaction": {
+    "rules": "tools/redact-rules/sentry.json",
+    "rectangleCount": 0
+  },
+  "cropCoordinates": {
+    "status": "unverified"
+  }
+}

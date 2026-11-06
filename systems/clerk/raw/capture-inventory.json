@@ -1,0 +1,490 @@
+{
+  "date": "2026-10-30",
+  "source": "https://dashboard.clerk.com",
+  "publicSource": "https://clerk.com/user-authentication",
+  "iconSource": "https://clerk.com/v2/favicon.ico",
+  "route": "Owner-signed-in Codex browser; live read-only computed styles and screenshots",
+  "screenshots": [
+    "access-mode-dark-desktop.png",
+    "account-menu-dark-desktop.png",
+    "account-portal-dark-desktop.png",
+    "application-settings-dark-desktop.png",
+    "application-switcher-dark-desktop.png",
+    "apps-dark-desktop.png",
+    "authentication-biometric-dark-desktop.png",
+    "authentication-desktop.png",
+    "authentication-email-dark-1440.png",
+    "authentication-email-dark-desktop.png",
+    "authentication-email-dark-mobile.png",
+    "authentication-email-light-desktop.png",
+    "authentication-hero.png",
+    "authentication-mobile.png",
+    "authentication-passkeys-dark-desktop.png",
+    "authentication-password-dark-desktop.png",
+    "authentication-password-light-desktop.png",
+    "authentication-phone-dark-desktop.png",
+    "authentication-preview-menu-dark-desktop.png",
+    "authentication-user-model-dark-desktop.png",
+    "authentication-username-dark-desktop.png",
+    "avatars-dark-desktop.png",
+    "billing-onboarding-dark-desktop.png",
+    "blocklist-dark-desktop.png",
+    "command-menu-dark-desktop.png",
+    "country-select-menu-dark-desktop.png",
+    "create-user-dialog-dark-desktop.png",
+    "disable-native-confirmation-dark-desktop.png",
+    "domains-dark-desktop.png",
+    "email-templates-dark-desktop.png",
+    "features-dark-desktop.png",
+    "integrations-dark-desktop.png",
+    "legal-dark-desktop.png",
+    "logs-empty-dark-desktop.png",
+    "logs-event-filter-dark-desktop.png",
+    "mcp-servers-dark-desktop.png",
+    "multi-factor-dark-desktop.png",
+    "native-applications-dark-desktop.png",
+    "oauth-applications-dark-desktop.png",
+    "organizations-onboarding-dark-desktop.png",
+    "overview-dark-desktop.png",
+    "password-dialog-focus-dark-desktop.png",
+    "password-requirements-dialog-dark-desktop.png",
+    "password-requirements-dialog-light-desktop.png",
+    "paths-dark-desktop.png",
+    "protections-dark-desktop.png",
+    "redirect-url-dialog-dark-desktop.png",
+    "sessions-dark-desktop.png",
+    "sms-templates-dark-desktop.png",
+    "sso-add-menu-dark-desktop.png",
+    "sso-connections-dark-desktop.png",
+    "users-columns-menu-dark-desktop.png",
+    "users-dark-desktop.png",
+    "users-dark-mobile.png",
+    "users-light-desktop.png",
+    "web3-dark-desktop.png",
+    "workspace-settings-dark-desktop.png",
+    "workspace-settings-light-desktop.png",
+    "workspace-team-dark-desktop.png"
+  ],
+  "readings": [
+    {
+      "file": "raw/readings/access-mode-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 76
+    },
+    {
+      "file": "raw/readings/account-menu-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 32
+    },
+    {
+      "file": "raw/readings/account-portal-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 101
+    },
+    {
+      "file": "raw/readings/application-settings-dark-desktop.json",
+      "width": 1440,
+      "height": 1000,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 93
+    },
+    {
+      "file": "raw/readings/application-switcher-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 165
+    },
+    {
+      "file": "raw/readings/apps-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 23
+    },
+    {
+      "file": "raw/readings/authentication-biometric-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 86
+    },
+    {
+      "file": "raw/readings/authentication-email-dark-1440.json",
+      "width": 1440,
+      "height": 1000,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 104
+    },
+    {
+      "file": "raw/readings/authentication-email-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 103
+    },
+    {
+      "file": "raw/readings/authentication-email-dark-mobile.json",
+      "width": 390,
+      "height": 844,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 51
+    },
+    {
+      "file": "raw/readings/authentication-email-light-desktop.json",
+      "width": 884,
+      "height": 1104,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip light",
+      "elements": 58
+    },
+    {
+      "file": "raw/readings/authentication-passkeys-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 90
+    },
+    {
+      "file": "raw/readings/authentication-password-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 93
+    },
+    {
+      "file": "raw/readings/authentication-password-light-desktop.json",
+      "width": 884,
+      "height": 1104,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip light",
+      "elements": 47
+    },
+    {
+      "file": "raw/readings/authentication-phone-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 92
+    },
+    {
+      "file": "raw/readings/authentication-preview-menu-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 101
+    },
+    {
+      "file": "raw/readings/authentication-user-model-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 95
+    },
+    {
+      "file": "raw/readings/authentication-username-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 91
+    },
+    {
+      "file": "raw/readings/avatars-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 99
+    },
+    {
+      "file": "raw/readings/billing-onboarding-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 28
+    },
+    {
+      "file": "raw/readings/blocklist-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 74
+    },
+    {
+      "file": "raw/readings/command-menu-dark-desktop.json",
+      "width": 1440,
+      "height": 1000,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 121
+    },
+    {
+      "file": "raw/readings/country-select-menu-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 430
+    },
+    {
+      "file": "raw/readings/create-user-dialog-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 190
+    },
+    {
+      "file": "raw/readings/create-user-dialog-dark-mobile.json",
+      "width": 390,
+      "height": 844,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 185
+    },
+    {
+      "file": "raw/readings/disable-native-confirmation-dark-desktop.json",
+      "width": 1440,
+      "height": 1000,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 137
+    },
+    {
+      "file": "raw/readings/domains-dark-desktop.json",
+      "width": 1440,
+      "height": 1000,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 82
+    },
+    {
+      "file": "raw/readings/email-templates-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 123
+    },
+    {
+      "file": "raw/readings/features-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 82
+    },
+    {
+      "file": "raw/readings/integrations-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 85
+    },
+    {
+      "file": "raw/readings/legal-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 73
+    },
+    {
+      "file": "raw/readings/logs-empty-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 60
+    },
+    {
+      "file": "raw/readings/logs-event-filter-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 295
+    },
+    {
+      "file": "raw/readings/mcp-servers-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 69
+    },
+    {
+      "file": "raw/readings/multi-factor-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 89
+    },
+    {
+      "file": "raw/readings/native-applications-dark-desktop.json",
+      "width": 1440,
+      "height": 1000,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 132
+    },
+    {
+      "file": "raw/readings/oauth-applications-dark-desktop.json",
+      "width": 1440,
+      "height": 1000,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 105
+    },
+    {
+      "file": "raw/readings/organizations-onboarding-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 60
+    },
+    {
+      "file": "raw/readings/overview-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 156
+    },
+    {
+      "file": "raw/readings/password-dialog-focus-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 118
+    },
+    {
+      "file": "raw/readings/password-requirements-dialog-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 118
+    },
+    {
+      "file": "raw/readings/password-requirements-dialog-light-desktop.json",
+      "width": 884,
+      "height": 1104,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip light",
+      "elements": 72
+    },
+    {
+      "file": "raw/readings/paths-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 119
+    },
+    {
+      "file": "raw/readings/protections-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 155
+    },
+    {
+      "file": "raw/readings/redirect-url-dialog-dark-desktop.json",
+      "width": 1440,
+      "height": 1000,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 142
+    },
+    {
+      "file": "raw/readings/sessions-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 164
+    },
+    {
+      "file": "raw/readings/sms-templates-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 157
+    },
+    {
+      "file": "raw/readings/sso-add-menu-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 104
+    },
+    {
+      "file": "raw/readings/sso-connections-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 88
+    },
+    {
+      "file": "raw/readings/users-columns-menu-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 173
+    },
+    {
+      "file": "raw/readings/users-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 156
+    },
+    {
+      "file": "raw/readings/users-dark-mobile.json",
+      "width": 390,
+      "height": 844,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 155
+    },
+    {
+      "file": "raw/readings/users-light-desktop.json",
+      "width": 884,
+      "height": 1104,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip light",
+      "elements": 156
+    },
+    {
+      "file": "raw/readings/web3-dark-desktop.json",
+      "width": 1600,
+      "height": 1111,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 83
+    },
+    {
+      "file": "raw/readings/workspace-settings-dark-desktop.json",
+      "width": 1440,
+      "height": 1000,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 42
+    },
+    {
+      "file": "raw/readings/workspace-settings-light-desktop.json",
+      "width": 884,
+      "height": 1104,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip light",
+      "elements": 36
+    },
+    {
+      "file": "raw/readings/workspace-team-dark-desktop.json",
+      "width": 1440,
+      "height": 1000,
+      "theme": "-8iSaq_variable EQUZna_variable Zd3vxa_variable h-full overflow-x-clip dark",
+      "elements": 68
+    }
+  ],
+  "exclusions": [
+    "Clipped mobile create-user dialog",
+    "API key pages and test credential settings",
+    "Light mobile and light dashboard states beyond the five retained light readings",
+    "Paid activation, financial details, user profile detail pages",
+    "Hover/pressed, post-submit validation, successful mutation feedback",
+    "Other nested tabs not listed in screenshots"
+  ],
+  "publicNote": "Marketing measurements are stored separately and excluded from dashboard semantic tokens.",
+  "appearanceApproval": {
+    "approved": true,
+    "scope": "Temporary account appearance change for the five retained light states",
+    "lightReadings": [
+      "raw/readings/authentication-email-light-desktop.json",
+      "raw/readings/authentication-password-light-desktop.json",
+      "raw/readings/password-requirements-dialog-light-desktop.json",
+      "raw/readings/users-light-desktop.json",
+      "raw/readings/workspace-settings-light-desktop.json"
+    ],
+    "restored": "Original dark appearance restored and verified after capture"
+  }
+}

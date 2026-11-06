@@ -1,0 +1,326 @@
+{
+  "brandMeta": [
+    {
+      "color": null,
+      "content": "#ffffff",
+      "name": "theme-color",
+      "tag": "META"
+    }
+  ],
+  "iconLinks": [
+    "app/assets/img/apple-touch-icon.png",
+    "app/assets/img/favicon.ico"
+  ],
+  "icons": [
+    {
+      "height": 20,
+      "label": "burger icon",
+      "viewBox": "0 0 16 16",
+      "width": 20
+    },
+    {
+      "height": 16,
+      "label": "official_collection icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 16,
+      "label": "search icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 16,
+      "label": "add icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 16,
+      "label": "metabot icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 0,
+      "label": "home icon",
+      "viewBox": "0 0 16 16",
+      "width": 0
+    },
+    {
+      "height": 0,
+      "label": "chevrondown icon",
+      "viewBox": "0 0 16 16",
+      "width": 0
+    },
+    {
+      "height": 0,
+      "label": "official_collection icon",
+      "viewBox": "0 0 16 16",
+      "width": 0
+    },
+    {
+      "height": 0,
+      "label": "bookmark icon",
+      "viewBox": "0 0 16 16",
+      "width": 0
+    },
+    {
+      "height": 0,
+      "label": "chevrondown icon",
+      "viewBox": "0 0 16 16",
+      "width": 0
+    },
+    {
+      "height": 0,
+      "label": "add icon",
+      "viewBox": "0 0 16 16",
+      "width": 0
+    },
+    {
+      "height": 0,
+      "label": "chevronright icon",
+      "viewBox": "0 0 16 16",
+      "width": 0
+    },
+    {
+      "height": 0,
+      "label": "person icon",
+      "viewBox": "0 0 16 16",
+      "width": 0
+    },
+    {
+      "height": 0,
+      "label": "chevronright icon",
+      "viewBox": "0 0 16 16",
+      "width": 0
+    },
+    {
+      "height": 0,
+      "label": "official_collection icon",
+      "viewBox": "0 0 16 16",
+      "width": 0
+    },
+    {
+      "height": 0,
+      "label": "chevrondown icon",
+      "viewBox": "0 0 16 16",
+      "width": 0
+    },
+    {
+      "height": 0,
+      "label": "database icon",
+      "viewBox": "0 0 16 16",
+      "width": 0
+    },
+    {
+      "height": 0,
+      "label": "model icon",
+      "viewBox": "0 0 16 16",
+      "width": 0
+    },
+    {
+      "height": 0,
+      "label": "metric icon",
+      "viewBox": "0 0 16 16",
+      "width": 0
+    },
+    {
+      "height": 0,
+      "label": "chevronright icon",
+      "viewBox": "0 0 16 16",
+      "width": 0
+    },
+    {
+      "height": 0,
+      "label": "trash icon",
+      "viewBox": "0 0 16 16",
+      "width": 0
+    },
+    {
+      "height": 16,
+      "label": "share icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 16,
+      "label": "bookmark icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 16,
+      "label": "info icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 16,
+      "label": "ellipsis icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 16,
+      "label": "string icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 16,
+      "label": "close icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 12,
+      "label": "ellipsis icon",
+      "viewBox": "0 0 16 16",
+      "width": 12
+    },
+    {
+      "height": 16,
+      "label": "info icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 12,
+      "label": "ellipsis icon",
+      "viewBox": "0 0 16 16",
+      "width": 12
+    },
+    {
+      "height": 16,
+      "label": "info icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 12,
+      "label": "ellipsis icon",
+      "viewBox": "0 0 16 16",
+      "width": 12
+    },
+    {
+      "height": 16,
+      "label": "info icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 16,
+      "label": "info icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 50,
+      "label": "warning icon",
+      "viewBox": "0 0 16 16",
+      "width": 50
+    },
+    {
+      "height": 16,
+      "label": "info icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 12,
+      "label": "ellipsis icon",
+      "viewBox": "0 0 16 16",
+      "width": 12
+    },
+    {
+      "height": 16,
+      "label": "info icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 50,
+      "label": "warning icon",
+      "viewBox": "0 0 16 16",
+      "width": 50
+    },
+    {
+      "height": 16,
+      "label": "info icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 12,
+      "label": "ellipsis icon",
+      "viewBox": "0 0 16 16",
+      "width": 12
+    },
+    {
+      "height": 16,
+      "label": "info icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 12,
+      "label": "ellipsis icon",
+      "viewBox": "0 0 16 16",
+      "width": 12
+    },
+    {
+      "height": 16,
+      "label": "info icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 50,
+      "label": "warning icon",
+      "viewBox": "0 0 16 16",
+      "width": 50
+    },
+    {
+      "height": 16,
+      "label": "info icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 50,
+      "label": "warning icon",
+      "viewBox": "0 0 16 16",
+      "width": 50
+    },
+    {
+      "height": 16,
+      "label": "info icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    },
+    {
+      "height": 12,
+      "label": "ellipsis icon",
+      "viewBox": "0 0 16 16",
+      "width": 12
+    },
+    {
+      "height": 16,
+      "label": "info icon",
+      "viewBox": "0 0 16 16",
+      "width": 16
+    }
+  ],
+  "rootFont": "16px",
+  "catalogueIcon": {
+    "source": "https://cdn.metabase.com/images/apple-touch-icon.png",
+    "discovered": "Official metabase.com apple-touch-icon link",
+    "size": [
+      128,
+      128
+    ],
+    "method": "fetch_icon.py failed; downloaded same official URL using curl, resized with Pillow"
+  }
+}

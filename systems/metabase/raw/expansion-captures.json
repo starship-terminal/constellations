@@ -1,0 +1,1454 @@
+[
+  {
+    "name": "archived-timelines-light-desktop",
+    "reading": "raw/archived-timelines-light-desktop.json",
+    "screenshot": "screenshots/archived-timelines-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "browse-databases-light-desktop",
+    "reading": "raw/browse-databases-light-desktop.json",
+    "screenshot": "screenshots/browse-databases-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "browse-metrics-light-desktop",
+    "reading": "raw/browse-metrics-light-desktop.json",
+    "screenshot": "screenshots/browse-metrics-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "browse-models-light-desktop",
+    "reading": "raw/browse-models-light-desktop.json",
+    "screenshot": "screenshots/browse-models-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "browse-postgres-light-desktop",
+    "reading": "raw/browse-postgres-light-desktop.json",
+    "screenshot": "screenshots/browse-postgres-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "collection-bulk-actions-light-desktop",
+    "reading": "raw/collection-bulk-actions-light-desktop.json",
+    "screenshot": "screenshots/collection-bulk-actions-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "collection-bulk-selection-light-desktop",
+    "reading": "raw/collection-bulk-selection-light-desktop.json",
+    "screenshot": "screenshots/collection-bulk-selection-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "collection-events-empty-light-desktop",
+    "reading": "raw/collection-events-empty-light-desktop.json",
+    "screenshot": "screenshots/collection-events-empty-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "collection-filter-dark-desktop",
+    "reading": "raw/collection-filter-dark-desktop.json",
+    "screenshot": "screenshots/collection-filter-dark-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "collection-filter-dark-mobile",
+    "reading": "raw/collection-filter-dark-mobile.json",
+    "screenshot": "screenshots/collection-filter-dark-mobile.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 843,
+      "visualViewport": {
+        "height": 843.8423461914062,
+        "scale": 1,
+        "width": 390.1477966308594
+      },
+      "width": 390
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 390,
+      "height": 843,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "collection-info-light-desktop",
+    "reading": "raw/collection-info-light-desktop.json",
+    "screenshot": "screenshots/collection-info-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "collection-location-loading-light-desktop",
+    "reading": "raw/collection-location-loading-light-desktop.json",
+    "screenshot": "screenshots/collection-location-loading-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "collection-location-picker-light-desktop",
+    "reading": "raw/collection-location-picker-light-desktop.json",
+    "screenshot": "screenshots/collection-location-picker-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "collection-menu-light-desktop",
+    "reading": "raw/collection-menu-light-desktop.json",
+    "screenshot": "screenshots/collection-menu-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "collection-row-actions-light-desktop",
+    "reading": "raw/collection-row-actions-light-desktop.json",
+    "screenshot": "screenshots/collection-row-actions-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "collection-search-pending-light-desktop",
+    "reading": "raw/collection-search-pending-light-desktop.json",
+    "screenshot": "screenshots/collection-search-pending-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "collection-validation-light-desktop",
+    "reading": "raw/collection-validation-light-desktop.json",
+    "screenshot": "screenshots/collection-validation-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "create-collection-light-desktop",
+    "reading": "raw/create-collection-light-desktop.json",
+    "screenshot": "screenshots/create-collection-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "create-event-light-desktop",
+    "reading": "raw/create-event-light-desktop.json",
+    "screenshot": "screenshots/create-event-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "dashboard-copy-link-feedback-light-desktop",
+    "reading": "raw/dashboard-copy-link-feedback-light-desktop.json",
+    "screenshot": "screenshots/dashboard-copy-link-feedback-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "dashboard-history-light-desktop",
+    "reading": "raw/dashboard-history-light-desktop.json",
+    "screenshot": "screenshots/dashboard-history-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "dashboard-info-light-desktop",
+    "reading": "raw/dashboard-info-light-desktop.json",
+    "screenshot": "screenshots/dashboard-info-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "document-actions-light-desktop",
+    "reading": "raw/document-actions-light-desktop.json",
+    "screenshot": "screenshots/document-actions-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "event-date-picker-light-desktop",
+    "reading": "raw/event-date-picker-light-desktop.json",
+    "screenshot": "screenshots/event-date-picker-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "event-icon-picker-light-desktop",
+    "reading": "raw/event-icon-picker-light-desktop.json",
+    "screenshot": "screenshots/event-icon-picker-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "event-time-fields-light-desktop",
+    "reading": "raw/event-time-fields-light-desktop.json",
+    "screenshot": "screenshots/event-time-fields-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "global-search-recents-light-desktop",
+    "reading": "raw/global-search-recents-light-desktop.json",
+    "screenshot": "screenshots/global-search-recents-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "global-search-results-light-desktop",
+    "reading": "raw/global-search-results-light-desktop.json",
+    "screenshot": "screenshots/global-search-results-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "home-light-desktop",
+    "reading": "raw/home-light-desktop.json",
+    "screenshot": "screenshots/home-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "metric-about-light-desktop",
+    "reading": "raw/metric-about-light-desktop.json",
+    "screenshot": "screenshots/metric-about-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "metric-actions-light-desktop",
+    "reading": "raw/metric-actions-light-desktop.json",
+    "screenshot": "screenshots/metric-actions-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "metric-available-dimensions-light-desktop",
+    "reading": "raw/metric-available-dimensions-light-desktop.json",
+    "screenshot": "screenshots/metric-available-dimensions-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "metric-caching-dialog-light-desktop",
+    "reading": "raw/metric-caching-dialog-light-desktop.json",
+    "screenshot": "screenshots/metric-caching-dialog-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "metric-definition-light-desktop",
+    "reading": "raw/metric-definition-light-desktop.json",
+    "screenshot": "screenshots/metric-definition-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "metric-dimension-settings-light-desktop",
+    "reading": "raw/metric-dimension-settings-light-desktop.json",
+    "screenshot": "screenshots/metric-dimension-settings-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "metric-dimensions-light-desktop",
+    "reading": "raw/metric-dimensions-light-desktop.json",
+    "screenshot": "screenshots/metric-dimensions-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "metric-duplicate-dialog-light-desktop",
+    "reading": "raw/metric-duplicate-dialog-light-desktop.json",
+    "screenshot": "screenshots/metric-duplicate-dialog-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "metric-history-light-desktop",
+    "reading": "raw/metric-history-light-desktop.json",
+    "screenshot": "screenshots/metric-history-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "metric-overview-light-desktop",
+    "reading": "raw/metric-overview-light-desktop.json",
+    "screenshot": "screenshots/metric-overview-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "move-item-dialog-light-desktop",
+    "reading": "raw/move-item-dialog-light-desktop.json",
+    "screenshot": "screenshots/move-item-dialog-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "new-dashboard-dialog-dark-desktop",
+    "reading": "raw/new-dashboard-dialog-dark-desktop.json",
+    "screenshot": "screenshots/new-dashboard-dialog-dark-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "new-dashboard-dialog-light-desktop",
+    "reading": "raw/new-dashboard-dialog-light-desktop.json",
+    "screenshot": "screenshots/new-dashboard-dialog-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "new-document-editor-light-desktop",
+    "reading": "raw/new-document-editor-light-desktop.json",
+    "screenshot": "screenshots/new-document-editor-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "new-question-data-picker-light-desktop",
+    "reading": "raw/new-question-data-picker-light-desktop.json",
+    "screenshot": "screenshots/new-question-data-picker-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "new-timeline-light-desktop",
+    "reading": "raw/new-timeline-light-desktop.json",
+    "screenshot": "screenshots/new-timeline-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "personal-collection-light-desktop",
+    "reading": "raw/personal-collection-light-desktop.json",
+    "screenshot": "screenshots/personal-collection-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "personal-collection-type-filter-light-desktop",
+    "reading": "raw/personal-collection-type-filter-light-desktop.json",
+    "screenshot": "screenshots/personal-collection-type-filter-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "profile-language-options-light-desktop",
+    "reading": "raw/profile-language-options-light-desktop.json",
+    "screenshot": "screenshots/profile-language-options-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "profile-login-history-loading-light-desktop",
+    "reading": "raw/profile-login-history-loading-light-desktop.json",
+    "screenshot": "screenshots/profile-login-history-loading-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "profile-notifications-empty-light-desktop",
+    "reading": "raw/profile-notifications-empty-light-desktop.json",
+    "screenshot": "screenshots/profile-notifications-empty-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "profile-settings-dark-desktop",
+    "reading": "raw/profile-settings-dark-desktop.json",
+    "screenshot": "screenshots/profile-settings-dark-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "profile-settings-light-desktop",
+    "reading": "raw/profile-settings-light-desktop.json",
+    "screenshot": "screenshots/profile-settings-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "profile-theme-options-light-desktop",
+    "reading": "raw/profile-theme-options-light-desktop.json",
+    "screenshot": "screenshots/profile-theme-options-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "question-table-picker-light-desktop",
+    "reading": "raw/question-table-picker-light-desktop.json",
+    "screenshot": "screenshots/question-table-picker-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "reports-dark-desktop",
+    "reading": "raw/reports-dark-desktop.json",
+    "screenshot": "screenshots/reports-dark-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "reports-dark-mobile",
+    "reading": "raw/reports-dark-mobile.json",
+    "screenshot": "screenshots/reports-dark-mobile.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 843,
+      "visualViewport": {
+        "height": 843.8423461914062,
+        "scale": 1,
+        "width": 390.1477966308594
+      },
+      "width": 390
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 390,
+      "height": 843,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "reports-sidebar-dark-mobile",
+    "reading": "raw/reports-sidebar-dark-mobile.json",
+    "screenshot": "screenshots/reports-sidebar-dark-mobile.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 843,
+      "visualViewport": {
+        "height": 843.8423461914062,
+        "scale": 1,
+        "width": 390.1477966308594
+      },
+      "width": 390
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 390,
+      "height": 843,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "reports-sidebar-light-desktop",
+    "reading": "raw/reports-sidebar-light-desktop.json",
+    "screenshot": "screenshots/reports-sidebar-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "shortcuts-admin-light-desktop",
+    "reading": "raw/shortcuts-admin-light-desktop.json",
+    "screenshot": "screenshots/shortcuts-admin-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "shortcuts-collections-light-desktop",
+    "reading": "raw/shortcuts-collections-light-desktop.json",
+    "screenshot": "screenshots/shortcuts-collections-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "shortcuts-dashboards-light-desktop",
+    "reading": "raw/shortcuts-dashboards-light-desktop.json",
+    "screenshot": "screenshots/shortcuts-dashboards-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "shortcuts-general-light-desktop",
+    "reading": "raw/shortcuts-general-light-desktop.json",
+    "screenshot": "screenshots/shortcuts-general-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "shortcuts-questions-light-desktop",
+    "reading": "raw/shortcuts-questions-light-desktop.json",
+    "screenshot": "screenshots/shortcuts-questions-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "timeline-menu-light-desktop",
+    "reading": "raw/timeline-menu-light-desktop.json",
+    "screenshot": "screenshots/timeline-menu-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "trash-list-light-desktop",
+    "reading": "raw/trash-list-light-desktop.json",
+    "screenshot": "screenshots/trash-list-light-desktop.png",
+    "viewport": {
+      "dpr": 2.0299999713897705,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1439.9014892578125
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1440,
+      "height": 1000,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  },
+  {
+    "name": "upload-dialog-light-desktop",
+    "reading": "raw/upload-dialog-light-desktop.json",
+    "screenshot": "screenshots/upload-dialog-light-desktop.png",
+    "viewport": {
+      "dpr": 0.8999999761581421,
+      "height": 1000,
+      "visualViewport": {
+        "height": 1000,
+        "scale": 1,
+        "width": 1440
+      },
+      "width": 1440
+    },
+    "image": {
+      "sourceFormat": "JPEG",
+      "width": 1600,
+      "height": 1111,
+      "retainedFormat": "PNG",
+      "conversion": "256-colour MEDIANCUT, no dither"
+    }
+  }
+]
