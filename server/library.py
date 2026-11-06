@@ -193,6 +193,9 @@ def search_styles(query: str, store: str = "all", platform: str | None = None,
     words = [w.lower() for w in str(query or "").split() if w.strip()]
     limit = max(1, min(int(limit or 8), 20))
     out: list[dict] = []
+    # The catalog's platforms are web, mobile and desktop; "ios" stays an alias
+    # for mobile, the value the schema offered first.
+    wanted = "mobile" if platform == "ios" else platform
     if store in ("all", "systems"):
         # One catalog read per call, not one per hit.
         by_slug = {s["slug"]: s for s in _catalog()["systems"]}
@@ -200,7 +203,7 @@ def search_styles(query: str, store: str = "all", platform: str | None = None,
             e = by_slug.get(hit["slug"])
             if e is None:
                 continue
-            if platform and platform not in e.get("tags", []) and e.get("platform") != platform:
+            if platform and platform not in e.get("tags", []) and e.get("platform") != wanted:
                 continue
             out.append({"store": "systems", "slug": hit["slug"], "name": hit["name"],
                         "score": hit["score"], "goodFor": hit["goodFor"], "tags": hit["tags"],
@@ -403,7 +406,8 @@ SPECS = [
      "parameters": {"type": "object", "additionalProperties": False, "properties": {
          "query": {"type": "string", "description": "Free text: mood, layout, use, product words"},
          "store": {"type": "string", "enum": ["all", "systems", "refero"], "default": "all"},
-         "platform": {"type": "string", "enum": ["web", "ios", "desktop"]},
+         "platform": {"type": "string", "enum": ["web", "mobile", "desktop", "ios"],
+                      "description": "The catalog's platform; ios is an alias for mobile"},
          "style": {"type": "string", "description": "Refero design_style label filter"},
          "limit": {"type": "integer", "minimum": 1, "maximum": 20, "default": 8}},
          "required": ["query"]}},

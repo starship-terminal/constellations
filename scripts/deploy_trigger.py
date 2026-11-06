@@ -16,22 +16,41 @@ loudly instead of deploying a stale HEAD.
 
 A click while a run is active gets 409: systemd-run refuses the duplicate
 unit name, and deploy.sh's .deploy.lock is the second line of defence.
+POSTs are also serialised here, and one within DEPLOY_TRIGGER_COOLDOWN
+seconds of the last queued run gets 429, so a burst of clicks coalesces
+into one deploy.
 
-The port listens on all interfaces because the nginx container reaches the
-host over its docker gateway (docker-compose override: extra_hosts
-host-gateway). It only ever queues the one fixed command: no arguments,
-no output streaming, so tailnet exposure is harmless.
+Who may POST:
+
+- The socket binds DEPLOY_TRIGGER_HOST (default 127.0.0.1), never every
+  interface. The nginx container reaches the host over its docker gateway
+  (docker-compose override: extra_hosts host-gateway), so on
+  kai-home-server set it to that gateway's address (usually 172.17.0.1,
+  the docker0 bridge), which LAN hosts cannot reach.
+- Every POST must carry DEPLOY_TRIGGER_TOKEN in the X-Deploy-Token header.
+  nginx adds it (proxy_set_header in the /api/redeploy location), so the
+  token never reaches a browser. With the variable unset, every POST is
+  refused with 503 (fail closed); GET keeps working.
+- A browser POST must be same-origin: one whose Sec-Fetch-Site says
+  cross-site or same-site is refused, and the footer button sends an
+  X-Designs-Redeploy header that a cross-site form or simple fetch cannot
+  send without a CORS preflight, which this server never grants.
 
 Environment overrides: DESIGNS_REPO (working clone), DESIGNS_DEPLOY
 (deploy.sh), DESIGNS_STATE (built-sha file), DESIGNS_TRIGGER_PORT
-(default 8189).
+(default 8189), DEPLOY_TRIGGER_HOST (default 127.0.0.1),
+DEPLOY_TRIGGER_TOKEN (required for POST), DEPLOY_TRIGGER_COOLDOWN
+(default 30 seconds).
 """
 
 from __future__ import annotations
 
+import hmac
 import json
 import os
 import subprocess
+import threading
+import time
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
@@ -41,22 +60,63 @@ DEPLOY = os.environ.get("DESIGNS_DEPLOY",
 STATE = os.environ.get("DESIGNS_STATE",
                        os.path.expanduser("~/services/design-systems/state/built-sha"))
 PORT = int(os.environ.get("DESIGNS_TRIGGER_PORT", "8189"))
+HOST = os.environ.get("DEPLOY_TRIGGER_HOST", "127.0.0.1")
+TOKEN = os.environ.get("DEPLOY_TRIGGER_TOKEN", "")
+COOLDOWN = float(os.environ.get("DEPLOY_TRIGGER_COOLDOWN", "30"))
+
+UNIT = "designs-manual-redeploy"
+# The paths travel as positional parameters ($1, $2), never spliced into the
+# script text, so a space or shell metacharacter in either stays a path.
+SCRIPT = 'git -C "$1" pull --ff-only --quiet && "$2" --force'
+
+_lock = threading.Lock()
+_last_queued = 0.0
+
+
+def command(repo: str | None = None, deploy: str | None = None) -> list[str]:
+    return ["systemd-run", "--user", "--collect", "--unit", UNIT,
+            "/bin/sh", "-c", SCRIPT, "sh",
+            REPO if repo is None else repo,
+            DEPLOY if deploy is None else deploy]
+
+
+def authorize(headers, token: str | None = None) -> tuple[int, dict] | None:
+    """None when this POST may queue a deploy, else the (status, body) refusal."""
+    token = TOKEN if token is None else token
+    if not token:
+        print("[trigger] refused POST: DEPLOY_TRIGGER_TOKEN is not set", flush=True)
+        return 503, {"error": "redeploy is disabled: DEPLOY_TRIGGER_TOKEN is not set on the host"}
+    sent = headers.get("X-Deploy-Token") or ""
+    if not hmac.compare_digest(sent.encode(), token.encode()):
+        return 403, {"error": "bad or missing deploy token"}
+    site = (headers.get("Sec-Fetch-Site") or "").lower()
+    if site and site not in ("same-origin", "none"):
+        return 403, {"error": "cross-site redeploy refused"}
+    if not headers.get("X-Designs-Redeploy"):
+        return 403, {"error": "missing X-Designs-Redeploy header"}
+    return None
 
 
 def queue() -> tuple[int, dict]:
-    unit = "designs-manual-redeploy"
-    cmd = f"git -C {REPO} pull --ff-only --quiet && {DEPLOY} --force"
+    global _last_queued
+    with _lock:
+        if _last_queued and time.monotonic() - _last_queued < COOLDOWN:
+            return 429, {"error": "a redeploy was just queued; try again shortly"}
+        code, body = _run()
+        if code == 202:
+            _last_queued = time.monotonic()
+        return code, body
+
+
+def _run() -> tuple[int, dict]:
     try:
-        p = subprocess.run(
-            ["systemd-run", "--user", "--collect", "--unit", unit,
-             "/bin/sh", "-c", cmd],
-            capture_output=True, text=True, timeout=30)
+        p = subprocess.run(command(), capture_output=True, text=True, timeout=30)
     except OSError as ex:
         return 500, {"error": f"systemd-run unavailable: {ex}"}
     except subprocess.TimeoutExpired:
         return 500, {"error": "systemd-run timed out"}
     if p.returncode == 0:
-        return 202, {"queued": "redeploy", "unit": unit}
+        return 202, {"queued": "redeploy", "unit": UNIT}
     detail = (p.stderr or p.stdout).strip()
     busy = "already" in detail.lower() or "exists" in detail.lower()
     return (409 if busy else 500), {"error": detail or "systemd-run failed"}
@@ -92,7 +152,8 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self) -> None:
         if self.path == "/api/redeploy":
-            code, body = queue()
+            refusal = authorize(self.headers)
+            code, body = refusal or queue()
             self._json(code, body)
         else:
             self._json(404, {"error": "unknown action"})
@@ -102,8 +163,11 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main() -> int:
-    server = ThreadingHTTPServer(("0.0.0.0", PORT), Handler)
-    print(f"[trigger] POST /api/redeploy on :{PORT}", flush=True)
+    server = ThreadingHTTPServer((HOST, PORT), Handler)
+    print(f"[trigger] POST /api/redeploy on {HOST}:{PORT}", flush=True)
+    if not TOKEN:
+        print("[trigger] DEPLOY_TRIGGER_TOKEN is not set: every POST will be "
+              "refused until it is", flush=True)
     server.serve_forever()
     return 0
 

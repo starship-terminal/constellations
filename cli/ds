@@ -89,7 +89,8 @@ def main() -> int:
     f = sub.add_parser("find", help="rank styles by free-text words")
     f.add_argument("words", nargs="+")
     f.add_argument("--store", choices=["all", "systems", "refero"], default="all")
-    f.add_argument("--platform", choices=["web", "ios", "desktop"])
+    f.add_argument("--platform", choices=["web", "mobile", "desktop", "ios"],
+                   help="ios is an alias for mobile")
     f.add_argument("--style", help="refero design_style filter")
     f.add_argument("--limit", type=int, default=8)
 
