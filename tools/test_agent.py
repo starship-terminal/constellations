@@ -341,6 +341,50 @@ class HostAllowlistTest(unittest.TestCase):
                 os.environ["DESIGN_SYSTEMS_ALLOWED_HOSTS"] = old
 
 
+class ChatErrorTest(unittest.TestCase):
+    """An unexpected failure in /api/chat answers a generic 500; the exception
+    text (paths, upstream content) stays in the server log."""
+
+    def test_500_hides_exception_text(self):
+        import contextlib
+        import io
+        import types
+        routes = _load("agent_routes_500", "routes.py")
+
+        class ProviderError(Exception):
+            pass
+
+        def boom(messages, cfg):
+            raise RuntimeError("/srv/secret/path leaked")
+        fake = types.SimpleNamespace(ProviderError=ProviderError, run=boom,
+                                     provider_config=lambda p: {"api": "openai"})
+        routes._load = lambda name: fake
+        body = json.dumps({"messages": []}).encode()
+
+        class H:
+            path = "/api/chat"
+            headers = {"content-length": str(len(body)), "host": "127.0.0.1:1"}
+            rfile = io.BytesIO(body)
+            wfile = io.BytesIO()
+            status = None
+
+            def send_response(self, code):
+                self.status = code
+
+            def send_header(self, *a):
+                pass
+
+            def end_headers(self):
+                pass
+        h = H()
+        log = io.StringIO()
+        with contextlib.redirect_stderr(log):
+            self.assertTrue(routes.handle_post(h))
+        self.assertEqual(h.status, 500)
+        self.assertNotIn(b"secret", h.wfile.getvalue())
+        self.assertIn("/srv/secret/path leaked", log.getvalue())
+
+
 class InstallScriptHostTest(unittest.TestCase):
     """/api/install.sh splices the forwarded host into BASE="..." of a script
     piped to sh, so only host characters may get in."""
