@@ -7,27 +7,15 @@
 // instead of refero.db's sqlite, and view_media falls back to a prebuilt
 // web/data/thumbs/ thumbnail instead of a Pillow downscale. Site-relative
 // media URLs are "/media/<repo-relative>" for the app's media route.
-import { existsSync, promises as fs, realpathSync } from "node:fs";
+import { promises as fs, realpathSync } from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+// The checkout comes from the one resolver every server route uses, so
+// DESIGN_SYSTEMS_REPO points the tools at the same tree as /media/ and docs.
+import { ROOT } from "@/lib/repo";
+
+export { ROOT };
 
 type Obj = Record<string, unknown>;
-
-export const ROOT = (() => {
-  const cwd = path.resolve(process.cwd());
-  // `next dev`/`next start` run from web/, so the checkout is its parent; a
-  // plain node run from the repo root also lands on the checkout.
-  const primary = path.basename(cwd) === "web" ? path.dirname(cwd) : cwd;
-  if (existsSync(path.join(primary, "catalog.json"))) return primary;
-  try {
-    const here = path.dirname(fileURLToPath(import.meta.url));
-    const fromModule = path.resolve(here, "..", "..", ".."); // web/lib/chat -> root
-    if (existsSync(path.join(fromModule, "catalog.json"))) return fromModule;
-  } catch {
-    // import.meta.url unavailable in a CJS bundle; keep the cwd guess.
-  }
-  return primary;
-})();
 
 // The checkout with symlinks resolved, as Python's ROOT.resolve(): every
 // containment check and every repo-relative URL is computed from real paths.
@@ -65,6 +53,8 @@ const PRIVATE_PREFIXES = ["tools/capture/dumps/", "tools/capture/out/", "tools/c
 export const RESULT_CAP = 32_000;
 export const DOC_CAP = 24_000;
 export const TOKEN_PAGE = RESULT_CAP - 1_000; // bytes of name/value pairs one get_tokens page carries
+// How a handoff prompt names the library's checkout.
+const HOME_VAR = "$DESIGN_SYSTEMS_HOME";
 export const IMAGE_CAP = 3_500_000; // bytes on disk
 
 export class ToolError extends Error {
@@ -787,10 +777,14 @@ async function handoffPrompt(args: Obj): Promise<Obj> {
   const e = await entry(slug);
   const tokens = JSON.parse(await fs.readFile(await repoFileRequired(asStr(e.tokens)), "utf8"));
   const groups = isObj(tokens) ? Object.keys(tokens).filter((k) => !k.startsWith("$")).join(", ") : "";
-  const root = path.resolve(ROOT);
+  // Paths are repo-relative under $DESIGN_SYSTEMS_HOME, the variable the
+  // design-systems plugin and AGENTS.md use to find a checkout, so the
+  // prompt works on the agent's machine instead of naming the server's.
+  const root = HOME_VAR;
   const target = appDescription ? ` for ${appDescription}` : "";
   const text =
     `Match the ${asStr(e.name)} design style from my design-systems library${target}.\n` +
+    `${root} is that library's checkout on this machine (set it, or replace it with the path).\n` +
     `1. Read ${root}/${asStr(e.entry)} in full first. It says what was captured and what to distrust.\n` +
     `2. Take colour, type, spacing and radius values from ${root}/${asStr(e.tokens)}. Its top-level ` +
     `token groups are ${groups}; the README says which group holds colour roles and which holds ` +

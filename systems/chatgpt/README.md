@@ -250,7 +250,7 @@ PLAYWRIGHT=... SNAPS=<dir> node tools/capture/layout.mjs
 PLAYWRIGHT=... SNAPS=<dir> node tools/capture/icons.mjs
 ```
 
-To take a new page copy: open the page in a signed-in tab, paste `snapshot.js` into its console, `await __sprites()`, then `__snap('<page>-dark-<state>', REDACT)` with the redaction file's contents (it needs `replace`, and `scrub` as `[selector, "filler"]` pairs for message text), save the returned string to a file and run `unsnap.py <file> <dir>`. Labels and their render flags are in [shots.tsv](tools/capture/signed-in/shots.tsv).
+To take a new page copy: open the page in a signed-in tab, paste `snapshot.js` into its console, `await __sprites()`, then `__snap('<page>-dark-<state>', REDACT)` with the redaction file's contents (it needs `replace`, and `scrub` as `[selector, "filler"]` pairs for message text), save the returned string to a file and run `SNAP_REDACT=<redaction file> unsnap.py <file> <dir>`. Labels and their render flags are in [shots.tsv](tools/capture/signed-in/shots.tsv).
 
 ## Use in Figma
 

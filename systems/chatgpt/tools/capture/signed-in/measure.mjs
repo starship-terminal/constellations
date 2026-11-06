@@ -633,7 +633,7 @@ out._meta = {
     other: 'active / selected / checked / open / typed / enabled / ... are other elements or snapshots captured in that state',
   },
   tokens: '`vars` lists every var(--x) named in the classes of the element and its first descendants, resolved in that state\'s theme.',
-  snapshots: { ...(out._meta && out._meta.snapshots), ...Object.fromEntries(labels.map((l) => { const m = metaOf(l); return [l, { url: m.url.replace(/\/c\/[0-9a-f-]+/, '/c/<id>').replace(/\/g\/g-p-[^/]+/, '/g/<project>'), title: m.title.replace(/^.* - ChatGPT$/, '<chat title> - ChatGPT'), w: m.w, h: m.h, ...(SCROLL[l] ? { scroll: SCROLL[l] } : {}) }]; })) },
+  snapshots: { ...(out._meta && out._meta.snapshots), ...Object.fromEntries(labels.map((l) => { const m = metaOf(l); return [l, { url: m.url.replace(/\/c\/[0-9a-f-]+/, '/c/<id>').replace(/\/g\/g-p-[^/]+/, '/g/<project>'), ...(m.title ? { title: m.title.replace(/^.* - ChatGPT$/, '<chat title> - ChatGPT') } : {}), w: m.w, h: m.h, ...(SCROLL[l] ? { scroll: SCROLL[l] } : {}) }]; })) },
 };
 out.components ??= {};
 fs.mkdirSync(CROPS, { recursive: true });

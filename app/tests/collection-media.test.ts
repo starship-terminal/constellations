@@ -4,6 +4,8 @@ const mocks = vi.hoisted(() => ({
   put: vi.fn(),
   remove: vi.fn(),
   reference: vi.fn(),
+  fullDetail: vi.fn(),
+  mediaList: vi.fn(),
   collections: vi.fn(),
   memberships: vi.fn(),
 }));
@@ -17,7 +19,10 @@ vi.mock("@/server/db", () => ({
   }),
 }));
 vi.mock("@/server/sources", () => ({
-  getReference: mocks.reference,
+  getReference: (id: string) => {
+    mocks.fullDetail(id);
+    return mocks.reference(id);
+  },
   // Routes read a card or a media list instead of the full detail.
   getReferenceSummary: async (id: string) => {
     const detail = await mocks.reference(id);
@@ -25,9 +30,13 @@ vi.mock("@/server/sources", () => ({
     const { media, measured, ...summary } = detail;
     return summary;
   },
+  // Like the real one: the card summary plus the media list.
   getReferenceMedia: async (id: string) => {
+    mocks.mediaList(id);
     const detail = await mocks.reference(id);
-    return detail ? { reference: detail, media: detail.media } : null;
+    if (!detail) return null;
+    const { media, measured, ...reference } = detail;
+    return { reference, media };
   },
 }));
 import { GET, POST, DELETE } from "@/app/api/collections/[id]/media/route";
@@ -126,6 +135,9 @@ test("board detail and media listing hydrate exact assets without embedding full
   const board = await (await detail(request("GET"), context)).json();
   expect(board.mediaItems).toEqual(listed.items);
   expect(board.items).toEqual([]);
+  // Hydration reads media lists only, never the full package detail.
+  expect(mocks.mediaList).toHaveBeenCalledWith("systems:example");
+  expect(mocks.fullDetail).not.toHaveBeenCalled();
   mocks.reference.mockResolvedValue(null);
   expect(
     (await (await GET(request("GET"), context)).json()).items[0],

@@ -161,11 +161,14 @@ def main() -> int:
         if args.json:
             _emit(out, True)
         else:
+            # Systems entries use camelCase keys; refero rows keep refero.db's
+            # column names (design_style, product_type, source_url, page_url).
             for k in ("name", "store", "category", "platform", "goodFor", "tagline", "url",
-                      "themes", "tags", "designStyle", "productType", "note"):
+                      "source_url", "page_url", "themes", "tags", "designStyle", "design_style",
+                      "productType", "product_type", "note"):
                 if out.get(k):
                     v = out[k]
-                    print(f"{k:<12} {', '.join(v) if isinstance(v, list) else v}")
+                    print(f"{k:<12} {', '.join(map(str, v)) if isinstance(v, list) else v}")
             files = out.get("files") or {}
             for k, v in files.items():
                 print(f"{k:<12} {v}")

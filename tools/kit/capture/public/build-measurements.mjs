@@ -4,20 +4,11 @@
 //   node build-measurements.mjs
 import fs from 'node:fs';
 import path from 'node:path';
+import { hex } from '../css-colour.mjs';
 
 const REF = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..', '..');
 const J = JSON.parse(fs.readFileSync(path.join(REF, 'raw', 'components-computed.json'), 'utf8'));
 
-const hex = (c) => {
-  if (!c) return c;
-  return c.replace(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/g, (m, r, g, b, a) => {
-    const h = '#' + [r, g, b].map((v) => (+v).toString(16).padStart(2, '0')).join('');
-    return a === undefined || +a === 1 ? h : `${h} @ ${+a}`;
-  }).replace(/color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: \/ ([\d.]+))?\)/g, (m, r, g, b, a) => {
-    const h = '#' + [r, g, b].map((v) => Math.round(+v * 255).toString(16).padStart(2, '0')).join('');
-    return a === undefined ? h : `${h} @ ${+a}`;
-  });
-};
 const sides = (t, r, b, l) => (t === r && r === b && b === l ? t : t === b && r === l ? `${t} ${r}` : `${t} ${r} ${b} ${l}`);
 const fam = (f) => (f || '').split(',')[0].replace(/"/g, '');
 const esc = (s) => String(s ?? '').replace(/\|/g, '/').replace(/\n/g, ' ');

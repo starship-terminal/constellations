@@ -192,5 +192,37 @@ class PlatformFilterTest(unittest.TestCase):
                          {"web", "mobile", "desktop", "ios"})
 
 
+def _has_refero() -> bool:
+    db = library._refero_db()
+    if db is None:
+        return False
+    db.close()
+    return True
+
+
+@unittest.skipUnless(_has_refero(), "refero.db is an LFS pointer here")
+class ReferoFieldsTest(unittest.TestCase):
+    def test_get_style_tags_are_a_list(self):
+        out = library.get_style("linear", "refero")
+        self.assertIsInstance(out["tags"], list)
+        self.assertTrue(all(isinstance(t, str) for t in out["tags"]))
+
+    def test_search_scores_and_reports_the_host(self):
+        hits = library.search_styles("stripe.com", store="refero", limit=5)["hits"]
+        self.assertEqual(hits[0]["slug"], "stripe")
+        self.assertEqual(hits[0]["src"], "stripe.com")
+        # The scheme is not part of what is scored, so it matches nothing.
+        self.assertEqual(library.search_styles("https", store="refero")["hits"], [])
+
+
+class HandoffPromptTest(unittest.TestCase):
+    def test_paths_are_relative_to_the_library_home(self):
+        prompt = library.call("handoff_prompt", {"slug": "linear"})["prompt"]
+        self.assertNotIn(str(library.ROOT.resolve()), prompt)
+        self.assertIn("$DESIGN_SYSTEMS_HOME/systems/linear/README.md", prompt)
+        self.assertIn("$DESIGN_SYSTEMS_HOME/systems/linear/tokens.json", prompt)
+        self.assertIn("$DESIGN_SYSTEMS_HOME/systems/linear/screenshots/", prompt)
+
+
 if __name__ == "__main__":
     unittest.main()

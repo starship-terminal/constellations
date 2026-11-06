@@ -675,10 +675,10 @@ Shadows, resolved to CSS:
 | `light.shadow.md` | `0px 0px 25px 0px #00000033` |
 | `light.shadow.outline` | `0px 0px 0px 3px #456dff` |
 | `light.shadow.subtle` | `0px 1px 3px 0px #0000000a` |
-| `light.shadow.plan-card` | `0px -6px 0px 0px #00000026` |
+| `light.shadow.plan-card` | `inset 0px -6px 0px 0px #00000026` |
 | `light.shadow.button3d` | `0px 4px 0px 0px #000000` |
 | `light.shadow.tile3d` | `0px 4px 0px 0px #e5e5e5` |
-| `light.shadow.input-focus` | `0px 0px 0px 1px #000000` |
+| `light.shadow.input-focus` | `inset 0px 0px 0px 1px #000000` |
 
 ## Shapes
 
