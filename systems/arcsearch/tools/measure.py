@@ -230,7 +230,11 @@ def op_extent(rows, axis, line, a, b, bgpt, thr):
     bg = rows[bgpt[1]][bgpt[0]]
     pix = (lambda i: rows[line][i]) if axis == "row" else (lambda i: rows[i][line])
     hits = [i for i in range(a, b) if d(pix(i), bg) > thr]
+    if not hits:
+        raise ValueError(f"extent: nothing on {axis} {line} from {a} to {b - 1} differs from the background by more than {thr}")
     start, end = hits[0], hits[-1]
+    if start == a or end == b - 1:   # the control runs to the scan's end, so the scan did not find its edge
+        raise ValueError(f"extent reached the scan limit ({a} to {b - 1}): widen the scan or move the background point")
     return {"value": f"{(end - start + 1) / SCALE:g}pt", "from": start, "to": end, "evidence": "Sampled"}
 
 
@@ -243,6 +247,8 @@ def op_bbox(rows, point, window, tol):
             if d(rows[y][x], ref) <= tol:
                 xs.append(x)
                 ys.append(y)
+    if not xs:
+        raise ValueError(f"bbox: no pixel within {tol} of {hexof(ref)} in window {window}")
     bw, bh = (max(xs) - min(xs) + 1) / SCALE, (max(ys) - min(ys) + 1) / SCALE
     return {"value": f"{bw:g}x{bh:g}pt", "box": [min(xs), min(ys), max(xs), max(ys)],
             "colour": hexof(ref), "evidence": "Sampled"}
@@ -263,18 +269,24 @@ def op_find(rows, axis, line, a, b, ref, tol):
 def op_diag(rows, cx, cyc, cxr, cy):
     f = rows[cy][cxr]
     x = cxr
-    while d(rows[cy][x - 1], f) <= 3:
+    while x > 0 and d(rows[cy][x - 1], f) <= 3:
         x -= 1
+    if x < 5:
+        raise ValueError(f"diag: no edge with background beyond it left of ({cxr}, {cy})")
     bg = rows[cy][x - 5]
     tol = max(2, d(bg, f) // 2)
-    while d(rows[cy][x - 1], f) <= tol:
+    while x > 0 and d(rows[cy][x - 1], f) <= tol:
         x -= 1
     x0, y = x, cyc
-    while d(rows[y - 1][cx], f) <= tol:
+    while y > 0 and d(rows[y - 1][cx], f) <= tol:
         y -= 1
+    if x0 == 0 or y == 0:
+        raise ValueError(f"diag: the fill at ({cxr}, {cy}) runs to the image edge")
     t = 0
     while d(rows[y + t][x0 + t], f) > tol:
         t += 1
+        if y + t >= len(rows) or x0 + t >= len(rows[0]):
+            raise ValueError(f"diag: no fill on the diagonal from corner ({x0}, {y})")
     r = t / (1 - 2 ** -0.5) / SCALE
     return {"value": f"{r:.1f}pt", "inset": t, "corner": [x0, y], "evidence": "Derived"}
 
@@ -308,6 +320,8 @@ def op_mean(rows, x, y, w, h):
 def op_cap(rows, x0, y0, x1, y1):
     bg = rows[y0][x0]
     ys = [y for y in range(y0, y1) if any(d(rows[y][x], bg) > 30 for x in range(x0, x1))]
+    if not ys:
+        raise ValueError(f"cap: no ink in ({x0}, {y0}, {x1}, {y1})")
     ink = ys[-1] - ys[0] + 1
     cap = (ink - 1) / SCALE          # one pixel of the ink height is anti-aliasing
     return {"value": f"{round(cap / CAP_EM)}pt", "capHeight": f"{cap:g}pt", "inkPx": ink, "top": ys[0],
@@ -317,6 +331,8 @@ def op_cap(rows, x0, y0, x1, y1):
 def op_lines(rows, x0, y0, x1, y1):
     bg = rows[y0][x0]
     ink = [y for y in range(y0, y1) if any(d(rows[y][x], bg) > 30 for x in range(x0, x1))]
+    if not ink:
+        raise ValueError(f"lines: no ink in ({x0}, {y0}, {x1}, {y1})")
     bands, start = [], ink[0]
     for a, b in zip(ink, ink[1:] + [None]):
         if b is None or b != a + 1:
