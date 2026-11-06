@@ -215,5 +215,14 @@ class ReferoFieldsTest(unittest.TestCase):
         self.assertEqual(library.search_styles("https", store="refero")["hits"], [])
 
 
+class HandoffPromptTest(unittest.TestCase):
+    def test_paths_are_relative_to_the_library_home(self):
+        prompt = library.call("handoff_prompt", {"slug": "linear"})["prompt"]
+        self.assertNotIn(str(library.ROOT.resolve()), prompt)
+        self.assertIn("$DESIGN_SYSTEMS_HOME/systems/linear/README.md", prompt)
+        self.assertIn("$DESIGN_SYSTEMS_HOME/systems/linear/tokens.json", prompt)
+        self.assertIn("$DESIGN_SYSTEMS_HOME/systems/linear/screenshots/", prompt)
+
+
 if __name__ == "__main__":
     unittest.main()

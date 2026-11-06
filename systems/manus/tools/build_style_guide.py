@@ -68,6 +68,8 @@ def slim(node):
 
 
 data = json.dumps({k: slim(T[k]) for k in ("core", "light", "dark")}, ensure_ascii=False, separators=(",", ":"))
+# Inside a <script>, so a "</" in any value (a source quoting </style>, say) must not end it.
+data = data.replace("</", "<\\/")
 
 _uid = [0]
 ICON_SRC = {}

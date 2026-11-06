@@ -9,10 +9,30 @@
 // account photo replaced by a disc, and every text node inside a `scrub` selector replaced.
 // Adapted from systems/linear/tools/capture/signed-in/snapshot.js (itself from the Manus kit);
 // the sprite and thumbnail helpers are dropped because NotebookLM draws icons with a font.
+// The page URL is kept as origin and path with ids masked: a copy of ../safe-url.mjs (a console
+// paste cannot import), which tools/test_package_snapshots.py keeps identical.
+const RESOURCE = /^(?:c|g|p|u|chat|chats|project|projects|artifact|artifacts|cowork|share|shared|doc|docs|document|documents|page|pages|file|files|folder|folders|thread|threads|conversation|conversations|task|tasks|issue|issues|notebook|notebooks|workspace|workspaces|space|spaces|team|teams|org|orgs|organization|user|users|profile|people|member|members|channel|channels|board|boards|session|sessions|course|courses|lesson|lessons|story|stories|collection|collections|dashboard|dashboards|database|databases|calendar|calendars|event|events|deck|decks|app|apps|repo|repos)$/i;
+
+function safeUrl(u) {
+  let x;
+  try { x = new URL(u); } catch { return '<url>'; }
+  if (x.protocol === 'file:') return 'file:///<local file>';   // a local path names the owner's home folder
+  const base = x.origin !== 'null' ? x.origin : `${x.protocol}//${x.host}`;
+  const parts = x.pathname.split('/');
+  return base + parts.map((s, i) => (!s || (/^[a-z]+(?:[-_][a-z]+)?$/.test(s) && s.length <= 20
+    && !RESOURCE.test(parts[i - 1] || '')) ? s : '<id>')).join('/');
+}
+
 window.__snap = function (label, REDACT) {
   if (!REDACT || !Array.isArray(REDACT.replace)) throw new Error('pass the redaction selectors as the second argument');
-  const SIGNED = /[?&](X-Amz-[A-Za-z-]+|Signature|Key-Pair-Id|Policy|Expires|token|access_token|auth|sig)=/i;
-  const abs = (u) => { let h; try { h = new URL(u, location.href).href; } catch { return u; } return SIGNED.test(h) ? h.split('?')[0] : h; };
+  // The credential-carrying URL parameters: a copy of signed-params.json beside unsnap.py (a console
+  // paste cannot read files), matched after ?, &, &amp;, # or their %-encodings. Same regex as unsnap.py.
+  const SIGNED_PARAMS = {"prefixes": ["X-Amz-", "X-Goog-"], "params": ["Signature", "Key-Pair-Id", "Policy", "Expires", "sig", "token", "access_token", "id_token", "refresh_token", "code", "auth"]};
+  const SIGNED = new RegExp('(?:[?&#]|%3F|%26|%23)(?:amp;)?(' + [
+    ...SIGNED_PARAMS.prefixes.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '[A-Za-z0-9-]*'),
+    ...SIGNED_PARAMS.params.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+  ].join('|') + ')(?:=|%3D)', 'i');
+  const abs = (u) => { let h; try { h = new URL(u, location.href).href; } catch { return u; } return SIGNED.test(h) ? h.split(/[?#]/)[0] : h; };
   const parts = [];
   for (const ss of document.styleSheets) {
     try {
@@ -59,6 +79,8 @@ window.__snap = function (label, REDACT) {
   srcIn.forEach((el, i) => {
     const c = cIn[i];
     if (!c) return;
+    // A password or hidden field (a CSRF or session token) keeps no value in the copy.
+    if (el.type === 'password' || el.type === 'hidden') { c.removeAttribute('value'); return; }
     if (el.type === 'checkbox' || el.type === 'radio') { if (el.checked) c.setAttribute('checked', ''); else c.removeAttribute('checked'); }
     else if (el.tagName === 'TEXTAREA') c.textContent = el.value;
     else if (el.tagName === 'SELECT') [...c.options].forEach((o, j) => { o.selected = el.options[j] && el.options[j].selected; });
@@ -119,7 +141,7 @@ window.__snap = function (label, REDACT) {
   const html = '<!doctype html>\n' + clone.outerHTML;
   const pathOf = (el) => { const out = []; for (let n = el; n && n !== document.documentElement; n = n.parentElement) out.unshift([...n.parentElement.children].indexOf(n)); return out; };
   const scrolls = [...document.querySelectorAll('*')].filter((e) => e.scrollTop > 0).map((e) => ({ path: pathOf(e), top: e.scrollTop, left: e.scrollLeft, max: e.scrollHeight - e.clientHeight }));
-  const meta = { label, url: location.href, title: '', scrollY, w: innerWidth, h: innerHeight, docH: document.documentElement.scrollHeight, scrolls };
+  const meta = { label, url: safeUrl(location.href), title: '', scrollY, w: innerWidth, h: innerHeight, docH: document.documentElement.scrollHeight, scrolls };
   return 'SNAPSTART' + JSON.stringify(meta) + 'SNAPMETA' + html + 'SNAPEND';
 };
 'snapshot.js loaded';

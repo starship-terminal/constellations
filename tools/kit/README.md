@@ -115,11 +115,11 @@ Search each file for `PRODUCT (adapt)` first, then work down this list.
 | `capture/signed-in/lib.mjs` | The `CDN` pattern, how to switch the copy to light (`setLight`), the stylesheet count that proves a copy came up styled |
 | `capture/signed-in/render.mjs` | The light-theme switch, if it differs from `lib.mjs` |
 | `capture/signed-in/measure.mjs` | `SPECS`: one entry per checklist component the product has, found by role or structure, never by account text; `M()` and `S()` helpers; the attribute list; the `_meta` source strings |
-| `capture/signed-in/build-measurements.mjs` | The heading and intro of `measurements.md` |
-| `capture/vars.mjs` | Which selectors carry the theme, how names are binned, the source string. If stylesheets are cross-origin, swap in manus's CDN-chunk reader or gauth's network-response reader |
+| `capture/signed-in/build-measurements.mjs` | The heading (`PRODUCT`, or the `PRODUCT` env var; the kit's copy says ChatGPT) and the intro and States paragraph of `measurements.md` |
+| `capture/vars.mjs` | The probe `shell` (the kit's copy carries Claude's `data-theme="claude"` root and `.dframe` sidebar), which selectors carry the theme, how names are binned, the source string. If stylesheets are cross-origin, swap in manus's CDN-chunk reader or gauth's network-response reader |
 | `capture/layout.mjs` | The product block naming the shell's regions; keep the generic part (widths, grids, fixed bars, dialogs, menus) |
 | `capture/icons.mjs` | Ships the inline-SVG strategy. For an icon font use `systems/claude/tools/capture/icons.mjs`; for SVG sprites, `systems/chatgpt/tools/capture/icons.mjs`. Fill `icon-names.tsv` |
-| `capture/public/*.mjs` | `BASE`, `PAGES`, the promo and dialog dismissers, `M()`, and the two prose blocks in `build-measurements.mjs` |
+| `capture/public/*.mjs` | `BASE`, `PAGES`, the promo and dialog dismissers, `M()`, and the two prose blocks in `build-measurements.mjs`. `public.mjs` writes full-colour shots to `~/.design-systems/<slug>/raw-shots` unless `RAW` names another scratch folder |
 | `build/build_tokens.py` | The header constants and the whole mapping from readings to `core`, `light` and `dark`; keep the helpers, build and checks |
 | `build/build_components_md.py` (signed-in) or `build_components_md.public.py` (public) | `PREFER`, `ORDER_GROUPS`, group and page descriptions, the intro and the Gaps section. The two read different measurement files, so use the one that matches the route |
 | `build/style-guide.template.html` | The theme attribute (`data-mode` or a `.dark` class), the token group names, and the whole Components section |

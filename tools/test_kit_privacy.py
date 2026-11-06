@@ -234,5 +234,19 @@ console.log(JSON.stringify(out));
         self.assertGreaterEqual(body.count("A User"), 6, body)
 
 
+
+@unittest.skipIf(NODE is None or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
+class RawShotsStayOutOfTheRepo(unittest.TestCase):
+    def test_public_capture_needs_a_scratch_dir_outside_a_package(self):
+        env = {k: v for k, v in os.environ.items() if k != "RAW"}
+        res = subprocess.run([NODE, str(HERE / "kit/capture/public/public.mjs")], capture_output=True, text=True,
+                             timeout=60, env={**env, "PLAYWRIGHT": PLAYWRIGHT})
+        self.assertEqual(res.returncode, 2, res.stderr)
+        self.assertIn("set RAW=", res.stderr)
+        src = (HERE / "kit/capture/public/public.mjs").read_text()
+        self.assertIn("'.design-systems', path.basename(PKG), 'raw-shots'", src)
+        self.assertNotIn("raw/full/", src)
+
+
 if __name__ == "__main__":
     unittest.main()
