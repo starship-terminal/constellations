@@ -1190,5 +1190,73 @@ class SmallBugsTest(unittest.TestCase):
             self.assertIsNone(catalog.REFERO_SLUG.fullmatch(bad), bad)
 
 
+class EnvTest(unittest.TestCase):
+    def test_dotenv_loads_only_the_listed_keys(self):
+        import os
+        import tempfile
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as d, mock.patch.dict(os.environ, {}, clear=False):
+            env = Path(d) / ".env"
+            env.write_text("STATICRYPT_PASSWORD=hunter2\nexport DS_CHAT_MODEL='m'\n# ANTHROPIC_API_KEY=x\n"
+                           "ANTHROPIC_API_KEY=\"sk-test\"\nSOMETHING_ELSE=1\n")
+            for k in ("STATICRYPT_PASSWORD", "DS_CHAT_MODEL", "ANTHROPIC_API_KEY", "SOMETHING_ELSE"):
+                os.environ.pop(k, None)
+            done = catalog.refero_media.load_env(env_file=env)
+            self.assertEqual(sorted(done), ["ANTHROPIC_API_KEY", "DS_CHAT_MODEL"])
+            self.assertEqual(os.environ["ANTHROPIC_API_KEY"], "sk-test")
+            self.assertNotIn("STATICRYPT_PASSWORD", os.environ)
+            self.assertNotIn("SOMETHING_ELSE", os.environ)
+            os.environ.pop("DS_CHAT_MODEL")
+            self.assertEqual(catalog.refero_media.load_env(("DS_CHAT_MODEL",), env_file=env), ["DS_CHAT_MODEL"])
+            self.assertEqual(catalog.refero_media.load_env(("DS_CHAT_MODEL",), env_file=env), [])   # set wins
+
+    def test_subprocesses_get_a_minimal_env(self):
+        import os
+        import subprocess
+        from unittest import mock
+        with mock.patch.dict(os.environ, {"ANTHROPIC_API_KEY": "sk-test", "R2_SECRET_ACCESS_KEY": "s", "PATH": "/bin"}):
+            env = catalog.tool_env(X="1")
+            self.assertEqual(env["PATH"], "/bin")
+            self.assertEqual(env["X"], "1")
+            self.assertNotIn("ANTHROPIC_API_KEY", env)
+            self.assertNotIn("R2_SECRET_ACCESS_KEY", env)
+            seen = []
+            done = subprocess.CompletedProcess([], 0, '{"findings": []}', "")
+            with mock.patch.object(catalog.shutil, "which", return_value="/bin/npx"), \
+                 mock.patch.object(catalog.subprocess, "run", side_effect=lambda *a, **k: seen.append(k.get("env")) or done):
+                catalog.lint_design_md([catalog.ROOT / "systems" / "claude" / "DESIGN.md"])
+            self.assertTrue(seen and all(e is not None and "ANTHROPIC_API_KEY" not in e for e in seen))
+            seen.clear()
+            with mock.patch.object(catalog, "_thumb_backend", return_value="sips"), \
+                 mock.patch.object(catalog.subprocess, "run", side_effect=lambda *a, **k: seen.append(k.get("env")) or done):
+                import tempfile
+                with tempfile.TemporaryDirectory() as d:
+                    src = Path(d) / "a.png"
+                    src.write_bytes(b"x")
+                    catalog._make_thumb(src, Path(d) / "a.jpg")
+            self.assertEqual(len(seen), 1)
+            self.assertIsNotNone(seen[0])
+            self.assertNotIn("R2_SECRET_ACCESS_KEY", seen[0])
+            self.assertNotIn("ANTHROPIC_API_KEY", seen[0])
+
+    def test_tesseract_gets_a_minimal_env_with_one_thread(self):
+        import os
+        import subprocess
+        from unittest import mock
+        try:
+            from PIL import Image
+            import redact_images
+        except ImportError:
+            self.skipTest("Pillow and numpy are not installed")
+        seen = []
+        done = subprocess.CompletedProcess([], 0, "level\tpage_num\n", "")
+        with mock.patch.dict(os.environ, {"ANTHROPIC_API_KEY": "sk-test", "R2_SECRET_ACCESS_KEY": "s"}), \
+             mock.patch.object(redact_images.subprocess, "run", side_effect=lambda *a, **k: seen.append(k.get("env")) or done):
+            redact_images._tesseract_words(Image.new("RGB", (4, 4)))
+        self.assertEqual(seen[0]["OMP_THREAD_LIMIT"], "1")
+        self.assertNotIn("ANTHROPIC_API_KEY", seen[0])
+        self.assertNotIn("R2_SECRET_ACCESS_KEY", seen[0])
+
+
 if __name__ == "__main__":
     unittest.main()
