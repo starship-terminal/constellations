@@ -17,9 +17,12 @@ permissions:
   contents: read
   pages: write
   id-token: write
+# Deploys from main queue one at a time and are never cancelled. A pull request's
+# build gets its own group, so PR builds no longer cancel each other's queued
+# runs (only one pending run per group survives) and a newer push supersedes it.
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: ${{ github.event_name == 'pull_request' && format('pages-pr-{0}', github.event.pull_request.number) || 'pages' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   build:
     runs-on: ubuntu-latest

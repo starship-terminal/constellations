@@ -21,6 +21,7 @@ import {
   type StyleFilters,
 } from "./styles-data";
 import styles from "./styles.module.css";
+import { replaceSearch } from "./url-state";
 
 // Representative prompts observed on the live source. Queries use captured facets
 // where the source's semantic search uses words absent from this local snapshot.
@@ -271,11 +272,7 @@ function StylesContent() {
     // Styles owns its source. A legacy ?source=systems cannot mix the stores.
     next.delete("source");
     next.delete("platform");
-    window.history.replaceState(
-      null,
-      "",
-      `/styles${next.size ? `?${next}` : ""}`,
-    );
+    replaceSearch(next, "/styles");
     try {
       localStorage.setItem(
         "ds-style-filters",
@@ -292,7 +289,7 @@ function StylesContent() {
       const next = new URLSearchParams();
       for (const key of ["theme", "type", "style", "industry", "tag", "video"])
         if (typeof saved[key] === "string") next.set(key, saved[key]);
-      if (next.size) window.history.replaceState(null, "", `/styles?${next}`);
+      if (next.size) replaceSearch(next, "/styles");
     } catch {}
   }, []);
   useEffect(() => {

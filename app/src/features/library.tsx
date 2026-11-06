@@ -43,6 +43,7 @@ import {
   canSwitchPlatform,
 } from "./catalog-search-state";
 import { loadCatalog, type LibraryResponse } from "./library-data";
+import { replaceSearch } from "./url-state";
 
 export function LibraryPage() {
   return (
@@ -118,14 +119,7 @@ function LibraryContent() {
     const next = new URLSearchParams(window.location.search);
     for (const [key, value] of Object.entries(patch))
       value ? next.set(key, value) : next.delete(key);
-    const search = next.toString();
-    // Native history integrates with useSearchParams without an asynchronous
-    // server navigation that could restore an older search over newer typing.
-    window.history.replaceState(
-      null,
-      "",
-      `${window.location.pathname}${search ? `?${search}` : ""}${window.location.hash}`,
-    );
+    replaceSearch(next);
   }
   useEffect(() => {
     setVisibleCount(24);
@@ -170,11 +164,7 @@ function LibraryContent() {
     const inferred = inferredProductPlatform(current, allItems);
     if (inferred) {
       current.set("platform", inferred);
-      window.history.replaceState(
-        null,
-        "",
-        `${window.location.pathname}?${current}${window.location.hash}`,
-      );
+      replaceSearch(current);
     }
   }, [params, allItems]);
   const scoped = useMemo(

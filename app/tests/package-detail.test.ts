@@ -12,6 +12,7 @@ import {
   filterPackageMedia,
   mediaDetailHref,
   packageDocumentLink,
+  safeDecode,
 } from "../src/features/package-detail-data";
 import { GET as guideGet } from "../src/app/api/packages/[slug]/guide/[...path]/route";
 const original = process.env.DESIGN_SYSTEMS_REPO;
@@ -246,6 +247,16 @@ describe("package navigation", () => {
         true,
       ),
     ).toBeUndefined();
+  });
+  it("keeps a malformed percent escape in a package link instead of throwing", () => {
+    expect(packageDocumentLink("demo", "README.md", "50%off.md")).toBe(
+      "/library/demo?tab=files&file=50%25off.md",
+    );
+    expect(packageDocumentLink("demo", "README.md", "50%off.png", true)).toBe(
+      "/media/systems/demo/50%25off.png",
+    );
+    expect(safeDecode("a%20b")).toBe("a b");
+    expect(safeDecode("50%off")).toBe("50%off");
   });
 });
 
