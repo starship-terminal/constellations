@@ -12,8 +12,9 @@ is exact ("Sampled"); a text colour is the darkest anti-aliased pixel on a light
 lightest with --dark), so the true value is the same or slightly further from the fill
 ("Sampled (text)"); a radius or a font size read off pixels is "Derived" (docs/EVIDENCE.md).
 
-Standard library only. Reads 8-bit PNGs: RGB, RGBA, grey and palette (the repo's quantised
-screenshots).
+Standard library only. Reads non-interlaced PNGs: 8-bit RGB, RGBA and grey-alpha, and grey or
+palette at 1, 2, 4 or 8 bits (the repo's quantised screenshots, which Pillow writes below 8 bits
+when the palette is small).
 """
 import argparse
 import struct
@@ -43,10 +44,16 @@ def read_png(path):
             idat += chunk
         elif kind == b"IEND":
             break
-    if depth != 8 or interlace:
-        raise ValueError(f"{path}: only 8-bit, non-interlaced PNGs are supported")
+    packed = colour in (0, 3) and depth in (1, 2, 4)
+    if interlace or not (depth == 8 or packed):
+        raise ValueError(f"{path}: only non-interlaced 8-bit PNGs (or 1/2/4-bit grey or palette) are supported")
+    if colour == 3 and palette is None:
+        raise ValueError(f"{path}: palette PNG without a PLTE chunk")
     channels = {0: 1, 2: 3, 3: 1, 4: 2, 6: 4}[colour]
-    stride = width * channels
+    # Filters work on whole bytes: a packed row is ceil(width * depth / 8) bytes, one byte per "pixel".
+    stride = (width * depth + 7) // 8 if packed else width * channels
+    if packed:
+        channels = 1
     raw = zlib.decompress(idat)
     rows, prev = [], bytearray(stride)
     for y in range(height):
@@ -67,9 +74,14 @@ def read_png(path):
                 pa, pb, pc = abs(p - a), abs(p - b), abs(p - c)
                 line[i] = (line[i] + (a if pa <= pb and pa <= pc else b if pb <= pc else c)) & 255
         prev = line
+        if packed:
+            per, top = 8 // depth, (1 << depth) - 1
+            line = bytearray((line[x // per] >> (8 - depth * (x % per + 1))) & top for x in range(width))
+            if colour == 0:
+                line = bytearray(v * 255 // top for v in line)
         px = []
         for x in range(width):
-            v = line[x * channels:(x + 1) * channels]
+            v = line[x:x + 1] if packed else line[x * channels:(x + 1) * channels]
             if colour == 2:
                 px.append((v[0], v[1], v[2], 255))
             elif colour == 6:
@@ -102,6 +114,8 @@ def mask(rows, boxes):
     used = []
     for x, y, w, h in boxes:
         x0, y0, x1, y1 = max(x, 0), max(y, 0), min(x + w, width), min(y + h, height)
+        if x1 <= x0 or y1 <= y0:
+            raise ValueError(f"box {x},{y},{w},{h} lies outside the {width}x{height} image")
         ring = [rows[j][i] for j in (max(y0 - 1, 0), min(y1, height - 1)) for i in range(x0, x1)]
         ring += [rows[j][i] for i in (max(x0 - 1, 0), min(x1, width - 1)) for j in range(y0, y1)]
         colour = Counter(ring).most_common(1)[0][0]
@@ -117,6 +131,11 @@ def hexof(p):
 
 
 def region(rows, x, y, w, h):
+    """The pixels of box (x, y, w, h), which must be non-empty and inside the image: a negative
+    index would otherwise wrap to the far edge and read the wrong pixels without a word."""
+    height, width = len(rows), len(rows[0])
+    if w <= 0 or h <= 0 or x < 0 or y < 0 or x + w > width or y + h > height:
+        raise ValueError(f"region {x},{y},{w},{h} is not inside the {width}x{height} image")
     return [rows[j][i] for j in range(y, y + h) for i in range(x, x + w)]
 
 
@@ -183,12 +202,19 @@ def main():
         write_png(a.out or a.png, rows)
         print(f"masked {len(boxes)} region(s) in {a.out or a.png} with {', '.join(hexof(c) for c in used)}")
     elif a.cmd == "pick":
+        if not (0 <= a.x < width and 0 <= a.y < height):
+            sys.exit(f"{a.x},{a.y} is outside the {width}x{height} image")
         print(hexof(rows[a.y][a.x]))
     else:
+        if not (0 <= (a.row if a.row is not None else a.col) < (height if a.row is not None else width)):
+            sys.exit(f"{'row' if a.row is not None else 'column'} is outside the {width}x{height} image")
         for start, length, colour in edges(rows, a.row, a.col):
             if length >= a.min:
                 print(f"{start:>5} +{length:<5} {hexof(colour)}")
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except ValueError as e:
+        sys.exit(f"sample.py: {e}")
