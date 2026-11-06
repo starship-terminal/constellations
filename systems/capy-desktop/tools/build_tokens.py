@@ -571,8 +571,14 @@ def build_roles_and_components(t):
     # Roles that are states of a component rather than a declared colour.
     for key, (comp_path, why) in {"accent.hover": ("component.button-accent.bg-hover", "the accent button under the pointer"),
                                   "accent.pressed": ("component.button-accent.bg-pressed", "the accent button with :active forced")}.items():
-        hit = get(tree, comp_path) or get(tree, "component.button-accent.bg")
-        put(tree, ("role",) + tuple(key.split(".")), tok(hit["$value"], "color", "Measured", hit["$extensions"]["source"]["from"] + f"; {why}"))
+        hit = get(tree, comp_path)
+        if hit:
+            put(tree, ("role",) + tuple(key.split(".")), tok(hit["$value"], "color", "Measured", hit["$extensions"]["source"]["from"] + f"; {why}"))
+        else:
+            # No distinct state fill was read (the state painted the rest fill, or was not captured): say so rather
+            # than label the rest fill's reading as the state's.
+            put(tree, ("role",) + tuple(key.split(".")), tok("{component.button-accent.bg}", "color", "Derived",
+                f"no {key.split('.')[1]} fill differing from the rest fill was read for {why}; the rest fill stands in"))
     tree["$extensions"] = {"componentValues": {"measured": measured_n, "aliased": aliased_n}}
 
 
