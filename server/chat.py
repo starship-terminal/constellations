@@ -16,6 +16,7 @@ whichever shape the provider takes.
 """
 from __future__ import annotations
 
+import http.client
 import importlib.util
 import ipaddress
 import json
@@ -130,8 +131,10 @@ def check_url(url: str) -> None:
 
 def _same_origin(a: str, b: str) -> bool:
     try:
-        ua, ub = urlparse(a), urlparse(b)
-        return (ua.scheme, ua.hostname, ua.port) == (ub.scheme, ub.hostname, ub.port)
+        def origin(u):
+            u = urlparse(u)
+            return u.scheme, u.hostname, u.port or {"https": 443, "http": 80}.get(u.scheme)
+        return origin(a) == origin(b)
     except ValueError:
         return False
 
@@ -152,7 +155,9 @@ def _request(method: str, url: str, cfg: dict, body: dict | None, timeout: int,
         if 300 <= e.code < 400:
             raise ProviderError(f"{url} answered HTTP {e.code} (redirects are not followed)")
         raise ProviderError(f"{url} answered HTTP {e.code}")
-    except (urllib.error.URLError, TimeoutError, OSError):
+    except (urllib.error.URLError, http.client.HTTPException, TimeoutError, OSError):
+        # HTTPException covers a non-HTTP reply (BadStatusLine carries the
+        # other side's first line); none of these messages are passed on.
         raise ProviderError(f"{url} unreachable")
 
 

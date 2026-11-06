@@ -350,6 +350,29 @@ class ProviderUrlTest(unittest.TestCase):
         self.assertIn("HTTP 401", out["error"])
         self.assertNotIn("internal-secret-body", out["error"])
 
+    def test_default_port_is_same_origin(self):
+        self.assertTrue(chat._same_origin("https://p.test:443/v1", "https://p.test/models"))
+        self.assertFalse(chat._same_origin("https://p.test:8443/v1", "https://p.test/models"))
+
+    def test_non_http_greeting_not_echoed(self):
+        import socket
+        import threading
+        srv = socket.socket()
+        srv.bind(("127.0.0.1", 0))
+        srv.listen(1)
+
+        def greet():
+            conn, _ = srv.accept()
+            conn.sendall(b"220 internal-smtp-banner ESMTP\r\n")
+            conn.close()
+        threading.Thread(target=greet, daemon=True).start()
+        try:
+            out = self._models(f"http://127.0.0.1:{srv.getsockname()[1]}")
+        finally:
+            srv.close()
+        self.assertFalse(out["ok"])
+        self.assertNotIn("internal-smtp-banner", out["error"])
+
     def test_models_url_must_share_origin(self):
         out = self._models("https://api.x.test/v1", models_url=self.base + "/models")
         self.assertFalse(out["ok"])
