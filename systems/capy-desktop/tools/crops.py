@@ -37,7 +37,9 @@ def crops(theme):
     for shot, d in caps.items():
         src = PKG / "screenshots" / theme / f"{shot}.png"
         if not src.exists():
-            continue
+            # A missing screenshot (a partial checkout, an unpulled LFS tree) must stop the build: skipping it
+            # would leave its crops out of `made`, and the sweep below would delete them as stale.
+            raise SystemExit(f"{shot}: no {src.relative_to(PKG)}")
         im = None
         for part, v in d["parts"].items():
             key = f"{part}-{d['state']}"

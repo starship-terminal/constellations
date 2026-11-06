@@ -343,6 +343,10 @@ def aliases(v):
     return []
 
 
+class CheckError(ValueError):
+    """A token file check() rejects. Raised explicitly so the check still runs under python3 -O."""
+
+
 def check(doc):
     sets = [s for s in ("core", "light", "dark") if s in doc]  # a one-theme app has no light or no dark
     paths = {".".join(p) for name in sets for p, _ in walk(doc[name])}
@@ -350,19 +354,24 @@ def check(doc):
         for p, t in walk(doc[name]):
             where = name + "." + ".".join(p)
             src = t.get("$extensions", {}).get("source", {})
-            assert src.get("evidence") and src.get("capture"), f"{where}: no source"
+            if not (src.get("evidence") and src.get("capture")):
+                raise CheckError(f"{where}: no source")
             v = t["$value"]
             for a in aliases(v):
-                assert a in paths, f"{where}: alias {{{a}}} points at nothing"
+                if a not in paths:
+                    raise CheckError(f"{where}: alias {{{a}}} points at nothing")
             if isinstance(v, str) and v.startswith("{"):
                 continue
             elif t["$type"] == "color":
-                assert re.fullmatch(r"#[0-9A-F]{6}([0-9A-F]{2})?", v), f"{where}: bad colour {v}"
+                if not re.fullmatch(r"#[0-9A-F]{6}([0-9A-F]{2})?", v):
+                    raise CheckError(f"{where}: bad colour {v}")
             elif t["$type"] == "dimension":
-                assert re.fullmatch(r"-?\d+(\.\d+)?px", v), f"{where}: bad dimension {v}"
+                if not re.fullmatch(r"-?\d+(\.\d+)?px", v):
+                    raise CheckError(f"{where}: bad dimension {v}")
     keys = lambda s: sorted(".".join(p) for p, _ in walk(doc[s]))
     if "light" in doc and "dark" in doc:
-        assert keys("light") == keys("dark"), "light and dark keys differ"
+        if keys("light") != keys("dark"):
+            raise CheckError("light and dark keys differ")
 
 
 def build():

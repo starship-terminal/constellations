@@ -18,13 +18,13 @@ class CheckTest(unittest.TestCase):
     def test_missing_alias_inside_a_typography_style_fails(self):
         doc = copy.deepcopy(DOC)
         doc["core"]["typography"]["body"]["$value"]["fontWeight"] = "{fontWeight.doesNotExist}"
-        with self.assertRaisesRegex(AssertionError, "doesNotExist"):
+        with self.assertRaisesRegex(build_tokens.CheckError, "doesNotExist"):
             build_tokens.check(doc)
 
     def test_missing_top_level_alias_fails(self):
         doc = copy.deepcopy(DOC)
         doc["light"]["color"]["status"]["info"]["$value"] = "{color.accent.nothing}"
-        with self.assertRaisesRegex(AssertionError, "nothing"):
+        with self.assertRaisesRegex(build_tokens.CheckError, "nothing"):
             build_tokens.check(doc)
 
     def test_neutral_list_keeps_the_readings_evidence(self):
