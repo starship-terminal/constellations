@@ -60,7 +60,13 @@ def safe_url(url):
         return 'file:///<local file>'
     if x.scheme and x.scheme not in ('http', 'https'):
         return x.scheme + ':<id>'   # mailto:, tel:, javascript: name a person or carry code
-    base = f'{x.scheme}://{x.netloc}' if x.scheme else ''
+    # hostname and port only: a user:password@ in the authority is never kept. A //host link
+    # keeps its host, so an external link never reads as an internal path.
+    try:
+        host = (x.hostname or '') + (f':{x.port}' if x.port else '')
+    except ValueError:
+        return '<url>'
+    base = f'{x.scheme}://{host}' if x.scheme else (f'//{host}' if x.netloc else '')
     parts = x.path.split('/')
     return base + '/'.join(s if not s or (ROUTE_WORD.match(s) and len(s) <= 20 and not RESOURCE.match(parts[i - 1] if i else ''))
                            else '<id>' for i, s in enumerate(parts))
@@ -126,6 +132,17 @@ def validate(source, pages, decisions):
         if not reading_path.exists():
             errors.append(f'{name}: missing {reading_path.name}')
             continue
+        # Every file the import reads is parsed here, so a malformed one stops it before the
+        # first deletion or write.
+        parsed = {}
+        for path in (reading_path, source / f'{name}.controls.json'):
+            if path.exists():
+                try:
+                    parsed[path.name] = json.loads(path.read_text())
+                except ValueError as err:
+                    errors.append(f'{name}: {path.name} is not valid JSON ({err})')
+        if reading_path.name not in parsed:
+            continue
         if kind == 'duplicate' and decision.get('duplicateOf') not in accepted:
             errors.append(f"{name}: duplicateOf {decision.get('duplicateOf')!r} is not an accepted capture")
         if kind != 'accept':
@@ -134,7 +151,7 @@ def validate(source, pages, decisions):
         if not shot.exists():
             errors.append(f'{name}: missing {shot.name}')
             continue
-        viewport = json.loads(reading_path.read_text()).get('viewport') or {}
+        viewport = parsed[reading_path.name].get('viewport') or {}
         with Image.open(shot) as im:
             size = im.size
         if (abs(size[0] - viewport.get('innerWidth', -9)) > 1

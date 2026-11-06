@@ -77,6 +77,10 @@ class BreadthEvidenceTests(unittest.TestCase):
             '#main': '#main',
             '#access_token=abc': '#<id>',
             'mailto:someone@example.test': 'mailto:<id>',
+            'https://reader:secret@example.test/path': 'https://example.test/path',
+            'https://example.test:8443/a': 'https://example.test:8443/a',
+            '//docs.sentry.io/product/': '//docs.sentry.io/product/',
+            '//user:pw@cdn.example.test/x': '//cdn.example.test/x',
             None: None,
         }
         for raw, want in cases.items():
@@ -128,6 +132,12 @@ class BreadthEvidenceTests(unittest.TestCase):
                 self.assertTrue(any(e.startswith(name + ':') for e in errors), (name, errors))
             decisions['dup']['duplicateOf'] = 'good'   # an original later in the list is fine
             self.assertEqual(len(validate(src, pages, decisions)), 3)
+            # Malformed JSON is caught for rejected captures and controls files too.
+            (src / 'no-reading.json').write_text('{not json')
+            (src / 'good.controls.json').write_text('[')
+            errors = validate(src, pages, decisions)
+            self.assertTrue(any(e.startswith('no-reading: no-reading.json is not valid JSON') for e in errors), errors)
+            self.assertTrue(any(e.startswith('good: good.controls.json is not valid JSON') for e in errors), errors)
 
 
 if __name__ == '__main__':
