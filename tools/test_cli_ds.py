@@ -257,6 +257,7 @@ class ErrorsTest(StubTest):
         self.handler.answer = lambda req: (502, b"bad gateway")
         self.assertIn("HTTP Error 502", self.ds("status")[0])
         httpd, base = _serve(Stub)
+        httpd.shutdown()
         httpd.server_close()                                          # nothing listens there now
         code = run_ds("--url", base, "status")[0]
         self.assertTrue(code.startswith(f"ds: {base}/api/mcp: "), code)
