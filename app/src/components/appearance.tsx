@@ -80,6 +80,20 @@ current=next;apply(next);
 document.dispatchEvent(new CustomEvent('ds-icon-change',{detail:next}));
 });
 }catch(e){}})();`;
+const THEME_KEY = "studio-theme";
+// Runs before hydration inside the layout <body>, ahead of any content, so a
+// light-theme user never sees a dark first paint. AppearanceBootstrap keeps it
+// current afterwards; both resolve the stored choice the same way.
+export const themeInitScript = `(function(){try{
+var t=localStorage.getItem('${THEME_KEY}');
+if(t!=='dark'&&t!=='light'&&t!=='system')t='dark';
+if(t==='system')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+document.documentElement.dataset.theme=t;
+}catch(e){document.documentElement.dataset.theme='dark'}})();`;
+function storedTheme(): Theme {
+  const value = localStorage.getItem(THEME_KEY);
+  return value === "light" || value === "system" ? value : "dark";
+}
 function apply(theme: Theme) {
   document.documentElement.dataset.theme =
     theme === "system"
@@ -90,15 +104,20 @@ function apply(theme: Theme) {
 }
 export function AppearanceBootstrap() {
   useEffect(() => {
-    const update = () =>
-      apply((localStorage.getItem("studio-theme") as Theme) || "dark");
+    const update = () => apply(storedTheme());
+    // Another tab changed the theme in Settings.
+    const onStorage = (event: StorageEvent) => {
+      if (event.key === THEME_KEY || event.key === null) update();
+    };
     const media = matchMedia("(prefers-color-scheme: dark)");
     update();
     media.addEventListener("change", update);
     window.addEventListener("studio-appearance", update);
+    window.addEventListener("storage", onStorage);
     return () => {
       media.removeEventListener("change", update);
       window.removeEventListener("studio-appearance", update);
+      window.removeEventListener("storage", onStorage);
     };
   }, []);
   return null;
@@ -107,11 +126,19 @@ export function AppearanceSettings() {
   const [theme, setTheme] = useState<Theme>("dark");
   const [icon, setIcon] = useState<IconChoice>("flat");
   useEffect(() => {
-    setTheme((localStorage.getItem("studio-theme") as Theme) || "dark");
+    setTheme(storedTheme());
     const sync = () => setIcon(appIcon()?.get() || "flat");
+    const onStorage = (event: StorageEvent) => {
+      if (event.key === THEME_KEY || event.key === null)
+        setTheme(storedTheme());
+    };
     sync();
     document.addEventListener("ds-icon-change", sync);
-    return () => document.removeEventListener("ds-icon-change", sync);
+    window.addEventListener("storage", onStorage);
+    return () => {
+      document.removeEventListener("ds-icon-change", sync);
+      window.removeEventListener("storage", onStorage);
+    };
   }, []);
   return (
     <>
@@ -132,7 +159,7 @@ export function AppearanceSettings() {
               onChange={(value) => {
                 const next = value as Theme;
                 setTheme(next);
-                localStorage.setItem("studio-theme", next);
+                localStorage.setItem(THEME_KEY, next);
                 window.dispatchEvent(new Event("studio-appearance"));
               }}
               options={[
