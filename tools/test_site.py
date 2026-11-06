@@ -8,7 +8,9 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -120,6 +122,83 @@ class AppIconTest(unittest.TestCase):
         flat = {p.name for p in (self.ASSETS / "icons").iterdir() if p.is_file()}
         glass = {p.name for p in (self.ASSETS / "icons" / "glass").iterdir()}
         self.assertEqual(flat, glass)
+
+
+class FrontmatterTest(unittest.TestCase):
+    def test_hide_block_is_split_off(self):
+        hidden, body = sitegen.frontmatter("---\nhide:\n  - navigation\n  - toc\n---\n# Title\n")
+        self.assertEqual((hidden, body), ({"navigation", "toc"}, "# Title\n"))
+
+    def test_no_block_or_a_later_rule_is_left_alone(self):
+        self.assertEqual(sitegen.frontmatter("# Title\n"), (set(), "# Title\n"))
+        md = "# Title\n\n---\nhide:\n  - toc\n---\n"
+        self.assertEqual(sitegen.frontmatter(md), (set(), md))
+
+    def test_page_title_strips_markup_and_falls_back_to_the_stem(self):
+        self.assertEqual(sitegen.page_title("intro\n# The **`tokens`** file\n", "x"), "The tokens file")
+        self.assertEqual(sitegen.page_title("<div>raw</div>\n", "PACKAGE"), "PACKAGE")
+
+
+class RewriteLinksTest(unittest.TestCase):
+    def rewrite(self, href, src="index.md", url=""):
+        page = sitegen.Page(sitegen.DOCS / src, url, None)
+        return sitegen.rewrite_links(f'<a href="{href}">x</a>', page)
+
+    def test_md_links_become_dir_urls_relative_to_the_page(self):
+        self.assertEqual(self.rewrite("PACKAGE.md"), '<a href="PACKAGE/">x</a>')
+        self.assertEqual(self.rewrite("PACKAGE.md#layout", "EVIDENCE.md", "EVIDENCE/"),
+                         '<a href="../PACKAGE/#layout">x</a>')
+        self.assertEqual(self.rewrite("index.md", "EVIDENCE.md", "EVIDENCE/"), '<a href="../">x</a>')
+
+    def test_links_resolve_from_the_source_folder(self):
+        self.assertEqual(self.rewrite("../PACKAGE.md", "scorecard/linear.md", "scorecard/linear/"),
+                         '<a href="../../PACKAGE/">x</a>')
+        self.assertEqual(self.rewrite("index.md", "scorecard/linear.md", "scorecard/linear/"),
+                         '<a href="../">x</a>')
+
+    def test_external_and_non_md_links_are_untouched(self):
+        for href in ("https://example.test/a.md", "//host/a.md", "mailto:a@example.test", "assets/x.png"):
+            self.assertEqual(self.rewrite(href), f'<a href="{href}">x</a>')
+
+
+@unittest.skipUnless(importlib.util.find_spec("markdown"), "needs markdown (requirements.txt)")
+class BuildTest(unittest.TestCase):
+    """build() into a temporary folder: pages, the statics and nothing else."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.TemporaryDirectory()
+        cls.out = Path(cls.tmp.name) / "site"
+        with mock.patch.object(sitegen, "OUT", cls.out), mock.patch("sys.stdout"):
+            sitegen.build()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.tmp.cleanup()
+
+    def files(self):
+        return sorted(p.relative_to(self.out).as_posix() for p in self.out.rglob("*") if p.is_file())
+
+    def test_no_gallery_and_no_package_media(self):
+        files = self.files()
+        self.assertFalse((self.out / "gallery").exists())
+        self.assertFalse([f for f in files if "gallery" in f or f.startswith("systems/")])
+        self.assertFalse([f for f in files if f in ("search.json", "sitemap.xml")])
+
+    def test_only_pages_and_the_docs_statics_are_written(self):
+        statics = ("assets/", "stylesheets/")
+        for f in self.files():
+            if f.startswith(statics) or f == "site.webmanifest":
+                self.assertTrue((sitegen.DOCS / f).is_file(), f"{f} is not a copy of docs/{f}")
+            else:
+                self.assertTrue(f.endswith(".html"), f"unexpected output {f}")
+
+    def test_every_page_is_written(self):
+        files = set(self.files())
+        for page in sitegen.pages():
+            if page.src.exists():
+                self.assertIn(f"{page.url}index.html", files)
+        self.assertTrue({"settings/index.html", "404.html"} <= files)
 
 
 if __name__ == "__main__":
