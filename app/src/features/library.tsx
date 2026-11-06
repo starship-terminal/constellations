@@ -42,11 +42,7 @@ import {
   inferredProductPlatform,
   canSwitchPlatform,
 } from "./catalog-search-state";
-import {
-  loadLibraryPages,
-  mergeLibraryItems,
-  type LibraryResponse,
-} from "./library-data";
+import { loadCatalog, type LibraryResponse } from "./library-data";
 
 export function LibraryPage() {
   return (
@@ -140,15 +136,16 @@ function LibraryContent() {
     setError("");
     // Publish available cards immediately; later pages enrich exact filters/categories.
     // Retain already loaded items on retry, including when a later page failed.
-    loadLibraryPages(
+    loadCatalog(
+      "systems",
       (offset) =>
         api<LibraryResponse>(
           `/api/library?source=systems&limit=200&offset=${offset}`,
         ),
-      (page) => {
+      (catalog) => {
         if (!alive) return;
-        setAllItems((previous) => mergeLibraryItems(previous, page.items));
-        setCatalogTotal(page.total);
+        setAllItems(catalog.items);
+        setCatalogTotal(catalog.total);
       },
       () => {
         if (alive)

@@ -12,11 +12,7 @@ import {
   SkeletonGrid,
   Spinner,
 } from "@/components/shared";
-import {
-  loadLibraryPages,
-  mergeLibraryItems,
-  type LibraryResponse,
-} from "./library-data";
+import { loadCatalog, type LibraryResponse } from "./library-data";
 import {
   filterStyles,
   orderStyles,
@@ -303,20 +299,19 @@ function StylesContent() {
     let live = true;
     setLoading(true);
     setError("");
-    loadLibraryPages(
+    loadCatalog(
+      "refero",
       (offset) =>
         api<LibraryResponse>(
           `/api/library?source=refero&limit=200&offset=${offset}`,
-        ),
-      (page) => {
+        ).then((page) => ({
+          ...page,
+          items: page.items.filter((item) => item.source === "refero"),
+        })),
+      (catalog) => {
         if (live) {
-          setItems((previous) =>
-            mergeLibraryItems(
-              previous,
-              page.items.filter((item) => item.source === "refero"),
-            ),
-          );
-          setTotal(page.total);
+          setItems(catalog.items);
+          setTotal(catalog.total);
         }
       },
       () => {

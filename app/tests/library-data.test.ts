@@ -1,5 +1,8 @@
 import { describe, expect, it, vi } from "vitest";
 import {
+  CATALOG_TTL_MS,
+  clearCatalogCache,
+  loadCatalog,
   loadLibraryPages,
   mergeLibraryItems,
   type LibraryResponse,
@@ -100,5 +103,64 @@ describe("progressive library metadata", () => {
       ),
     ).rejects.toThrow("Offline");
     expect(onPage).not.toHaveBeenCalled();
+  });
+});
+
+describe("shared catalog cache", () => {
+  const page = (slugs: string[], total: number): LibraryResponse => ({
+    items: slugs.map(item),
+    total,
+    stats: { systems: total, refero: 0 },
+  });
+  it("reuses a complete catalog across visits until it expires", async () => {
+    clearCatalogCache();
+    const fetchPage = vi.fn(async () => page(["a", "b"], 2));
+    const seen: string[][] = [];
+    const onUpdate = (snapshot: { items: LibraryItem[] }) =>
+      seen.push(snapshot.items.map((value) => value.slug));
+    await loadCatalog("systems", fetchPage, onUpdate, () => {}, 1000);
+    await loadCatalog("systems", fetchPage, onUpdate, () => {}, 2000);
+    expect(fetchPage).toHaveBeenCalledTimes(1);
+    expect(seen).toEqual([
+      ["a", "b"],
+      ["a", "b"],
+    ]);
+    await loadCatalog(
+      "systems",
+      fetchPage,
+      onUpdate,
+      () => {},
+      1000 + CATALOG_TTL_MS,
+    );
+    expect(fetchPage).toHaveBeenCalledTimes(2);
+  });
+  it("fetches an incomplete catalog again, keeping the items it had", async () => {
+    clearCatalogCache();
+    const failing = vi.fn(async (offset: number) => {
+      if (offset) throw new Error("page failed");
+      return page(["a"], 201);
+    });
+    const errors: unknown[] = [];
+    await loadCatalog(
+      "systems",
+      failing,
+      () => {},
+      (e) => errors.push(e),
+      0,
+    );
+    expect(errors).toHaveLength(1);
+    const retry = vi.fn(async (offset: number) =>
+      page(offset ? ["z"] : ["a"], 201),
+    );
+    let last: string[] = [];
+    await loadCatalog(
+      "systems",
+      retry,
+      (snapshot) => (last = snapshot.items.map((value) => value.slug)),
+      () => {},
+      1,
+    );
+    expect(retry).toHaveBeenCalledTimes(2);
+    expect(last).toEqual(["a", "z"]);
   });
 });
