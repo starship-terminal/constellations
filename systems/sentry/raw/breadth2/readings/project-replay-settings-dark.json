@@ -2574,7 +2574,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://10xswe.sentry.io/settings/projects/javascript-nextjs/replays/",
+  "url": "https://10xswe.sentry.io/settings/projects/<id>/replays/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

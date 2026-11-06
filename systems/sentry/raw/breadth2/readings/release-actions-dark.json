@@ -5274,7 +5274,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://10xswe.sentry.io/explore/releases/f6caa28ad41aee2ba62f9af8975565460c74fe90/",
+  "url": "https://10xswe.sentry.io/explore/releases/<id>/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

@@ -2634,7 +2634,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://sentry.io/settings/10xswe/feature-flags/",
+  "url": "https://sentry.io/settings/<id>/feature-flags/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

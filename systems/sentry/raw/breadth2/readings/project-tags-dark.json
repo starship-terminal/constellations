@@ -2364,7 +2364,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://10xswe.sentry.io/settings/projects/javascript-nextjs/tags/",
+  "url": "https://10xswe.sentry.io/settings/projects/<id>/tags/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

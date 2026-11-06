@@ -3744,7 +3744,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://10xswe.sentry.io/settings/projects/javascript-nextjs/",
+  "url": "https://10xswe.sentry.io/settings/projects/<id>/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

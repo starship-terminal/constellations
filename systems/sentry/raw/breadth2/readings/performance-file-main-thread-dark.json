@@ -3294,7 +3294,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://10xswe.sentry.io/settings/projects/javascript-nextjs/performance/",
+  "url": "https://10xswe.sentry.io/settings/projects/<id>/performance/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

@@ -23754,7 +23754,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://10xswe.sentry.io/settings/projects/javascript-nextjs/source-maps/62fb505e-a481-5695-9b8f-4705d8502a6f/",
+  "url": "https://10xswe.sentry.io/settings/projects/<id>/source-maps/<id>/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

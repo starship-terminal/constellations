@@ -2754,7 +2754,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://sentry.io/settings/10xswe/relay/",
+  "url": "https://sentry.io/settings/<id>/relay/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

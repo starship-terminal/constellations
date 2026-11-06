@@ -4584,7 +4584,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://sentry.io/settings/10xswe/stats/",
+  "url": "https://sentry.io/settings/<id>/stats/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

@@ -6744,7 +6744,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://sentry.io/settings/10xswe/billing/overview/",
+  "url": "https://sentry.io/settings/<id>/billing/overview/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

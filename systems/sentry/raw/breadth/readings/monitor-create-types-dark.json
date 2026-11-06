@@ -1284,7 +1284,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://sentry.io/organizations/10xswe/monitors/new/",
+  "url": "https://sentry.io/organizations/<id>/monitors/new/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

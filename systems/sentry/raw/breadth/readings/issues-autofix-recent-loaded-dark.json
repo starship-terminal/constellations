@@ -2994,7 +2994,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://sentry.io/organizations/10xswe/issues/autofix/recent/",
+  "url": "https://sentry.io/organizations/<id>/issues/<id>/recent/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,

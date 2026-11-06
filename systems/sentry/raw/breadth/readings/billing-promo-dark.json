@@ -2574,7 +2574,7 @@
     "colorScheme": "normal",
     "rootClass": ""
   },
-  "url": "https://sentry.io/settings/10xswe/subscription/redeem-code/",
+  "url": "https://sentry.io/settings/<id>/subscription/redeem-code/",
   "viewport": {
     "devicePixelRatio": 1,
     "innerHeight": 1000,
