@@ -79,7 +79,7 @@ for (const label of LABELS) {
   const ctx = await newContext(browser, meta);
   try {
     const page = await openSnap(ctx, label);
-    res[`${label}@${meta.w}`] = { label, url: meta.url.replace(/\/(chat|project)\/[0-9a-f-]+/, '/$1/<id>'), ...(await page.evaluate(measure)) };
+    res[`${label}@${meta.w}`] = { label, url: meta.url.replace(/\/(chat|project|artifact|cowork)\/[0-9a-fA-F-]{8,}/, '/$1/<id>'), ...(await page.evaluate(measure)) };
     console.log(label, meta.w);
   } catch (e) {
     console.log('failed', label, e.message.split('\n')[0]);
