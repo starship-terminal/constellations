@@ -10,7 +10,40 @@
 // either one naming another site is rejected. Non-browser clients send
 // neither header and pass. The same rules as app/'s mutationGuard
 // (app/src/server/research/http.ts).
+//
+// Every request, reads included, must also name an allowed Host. Without
+// that, DNS rebinding (an attacker's name re-pointed at 127.0.0.1) makes the
+// attacker's page same-origin with this app, so the checks below pass and it
+// can read the library and spend the key. Loopback names on any port are
+// always allowed; DESIGN_SYSTEMS_ALLOWED_HOSTS adds more, comma-separated,
+// each `name` (any port) or `name:port`, case-insensitive: the same format
+// server/routes.py reads. Unset means loopback only.
 import { NextResponse, type NextRequest } from "next/server";
+// Loads the repo-root .env, where DESIGN_SYSTEMS_ALLOWED_HOSTS may live.
+import "@/lib/env";
+
+const LOOPBACK = /^(localhost|127\.0\.0\.1|\[::1\])(:\d{1,5})?$/i;
+
+// "Name:port" -> [name, port]; brackets keep an IPv6 literal's colons.
+function splitHost(value: string): [string, string] {
+  const m = /^(\[[^\]]*\]|[^:]*)(?::(\d*))?$/.exec(value.trim().toLowerCase());
+  return m ? [m[1], m[2] ?? ""] : ["", ""];
+}
+
+function hostAllowed(host: string | null): boolean {
+  if (!host || /[\s/\\?#@,]/.test(host)) return false;
+  if (LOOPBACK.test(host)) return true;
+  const [name, port] = splitHost(host);
+  if (!name) return false;
+  return (process.env.DESIGN_SYSTEMS_ALLOWED_HOSTS ?? "")
+    .split(",")
+    .map((x) => x.trim())
+    .filter(Boolean)
+    .some((entry) => {
+      const [n, p] = splitHost(entry);
+      return n === name && (!p || p === port);
+    });
+}
 
 const SAFE_METHODS = new Set(["GET", "HEAD", "OPTIONS"]);
 
@@ -40,6 +73,9 @@ function refuse(status: number, error: string) {
 }
 
 export function proxy(request: NextRequest) {
+  if (!hostAllowed(request.headers.get("host")))
+    return refuse(403, "This app only answers loopback hosts or DESIGN_SYSTEMS_ALLOWED_HOSTS.");
+
   if (SAFE_METHODS.has(request.method)) return NextResponse.next();
 
   if (request.headers.get("sec-fetch-site") === "cross-site")

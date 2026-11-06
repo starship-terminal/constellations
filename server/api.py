@@ -37,8 +37,8 @@ The repo clone's root .env is loaded the same way the refero tools load it,
 so ANTHROPIC_API_KEY on the host gives every browser on the tailnet a working
 chat with no per-browser setup. Every request re-loads the agent modules, so
 a `git pull` by deploy.sh updates the API with no restart of this unit
-(catalog, which library.py imports by name, is dropped from the module cache
-per request for the same reason).
+(catalog, which library.py imports by name, is reloaded in place when
+catalog.py changes, for the same reason).
 """
 from __future__ import annotations
 
@@ -46,6 +46,7 @@ import argparse
 import http.server
 import importlib.util
 import sys
+import threading
 from pathlib import Path
 
 _HERE = Path(__file__).resolve()
@@ -67,19 +68,44 @@ def _server():
 
 
 _TOOLS = str(ROOT / "tools")
+_CATALOG = ROOT / "tools" / "catalog.py"
+_lock = threading.Lock()
+_catalog_mtime: float | None = None
+
+
+def _refresh_catalog() -> None:
+    """library.py imports catalog by name, so the module cache would pin the
+    code from the first request and a `git pull` would never reach it. Reload
+    it in place (the module object stays in sys.modules, so a request that is
+    importing or using it concurrently never loses it) when catalog.py
+    changed, under a lock so only one thread reloads."""
+    global _catalog_mtime
+    with _lock:
+        mod = sys.modules.get("catalog")
+        try:
+            mtime = _CATALOG.stat().st_mtime
+        except OSError:
+            return
+        if mod is not None and _catalog_mtime is not None and mtime != _catalog_mtime:
+            importlib.reload(mod)
+        _catalog_mtime = mtime
+
+
+def _trim_path() -> None:
+    """library.py puts tools/ on sys.path each time it runs; keep one copy so
+    sys.path does not grow per request."""
+    with _lock:
+        while sys.path.count(_TOOLS) > 1:
+            sys.path.remove(_TOOLS)
 
 
 def _dispatch(method: str, handler) -> bool:
-    """Run one request against freshly loaded modules. library.py imports
-    catalog by name, so drop the cached module first or a `git pull` would
-    never reach it; and library.py puts tools/ on sys.path each time it runs,
-    so trim the extra copies afterwards or sys.path grows per request."""
-    sys.modules.pop("catalog", None)
+    """Run one request against freshly loaded modules."""
+    _refresh_catalog()
     try:
         return getattr(_server(), method)(handler)
     finally:
-        while sys.path.count(_TOOLS) > 1:
-            sys.path.remove(_TOOLS)
+        _trim_path()
 
 
 class Handler(http.server.BaseHTTPRequestHandler):

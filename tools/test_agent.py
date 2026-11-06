@@ -47,6 +47,8 @@ class SearchTest(unittest.TestCase):
     def test_get_style_store_disambiguates(self):
         sys_row = library.get_style("linear", "systems")
         self.assertEqual(sys_row.get("slug"), "linear")
+        if library.REFERO_DB.read_bytes()[:40].startswith(b"version https://git-lfs"):
+            self.skipTest("refero/refero.db is a Git LFS pointer; run git lfs pull for it")
         ref = library.get_style("linear", "refero")
         self.assertEqual(ref.get("slug"), "linear")
         self.assertNotEqual(ref, sys_row)
@@ -341,32 +343,103 @@ class HostAllowlistTest(unittest.TestCase):
                 os.environ["DESIGN_SYSTEMS_ALLOWED_HOSTS"] = old
 
 
+class ChatErrorTest(unittest.TestCase):
+    """An unexpected failure in /api/chat answers a generic 500; the exception
+    text (paths, upstream content) stays in the server log."""
+
+    def test_500_hides_exception_text(self):
+        import contextlib
+        import io
+        import types
+        routes = _load("agent_routes_500", "routes.py")
+
+        class ProviderError(Exception):
+            pass
+
+        def boom(messages, cfg):
+            raise RuntimeError("/srv/secret/path leaked")
+        fake = types.SimpleNamespace(ProviderError=ProviderError, run=boom,
+                                     provider_config=lambda p: {"api": "openai"})
+        routes._load = lambda name: fake
+        body = json.dumps({"messages": []}).encode()
+
+        class H:
+            path = "/api/chat"
+            headers = {"content-length": str(len(body)), "host": "127.0.0.1:1"}
+            rfile = io.BytesIO(body)
+            wfile = io.BytesIO()
+            status = None
+
+            def send_response(self, code):
+                self.status = code
+
+            def send_header(self, *a):
+                pass
+
+            def end_headers(self):
+                pass
+        h = H()
+        log = io.StringIO()
+        with contextlib.redirect_stderr(log):
+            self.assertTrue(routes.handle_post(h))
+        self.assertEqual(h.status, 500)
+        self.assertNotIn(b"secret", h.wfile.getvalue())
+        self.assertIn("/srv/secret/path leaked", log.getvalue())
+
+
 class ApiReloadTest(unittest.TestCase):
-    """api.py re-runs the agent modules per request: sys.path must not grow
-    and catalog must be re-imported so a pull reaches it."""
+    """api.py re-runs the agent modules per request: sys.path must not grow,
+    and catalog is reloaded in place once catalog.py changes."""
     api = _load("agent_api_reload", "api.py")
 
-    def test_requests_do_not_grow_sys_path_and_reload_catalog(self):
-        import http.server
-        import sys
-        import threading
-        import urllib.request
-        httpd = http.server.ThreadingHTTPServer(("127.0.0.1", 0), self.api.Handler)
-        threading.Thread(target=httpd.serve_forever, daemon=True).start()
-        base = f"http://127.0.0.1:{httpd.server_address[1]}"
-        tools = str(SERVER.parent / "tools")
-        try:
-            urllib.request.urlopen(base + "/api/status").close()
-            first = sys.modules.get("catalog")
-            before = sys.path.count(tools)
-            for _ in range(3):
-                urllib.request.urlopen(base + "/api/status").close()
-            self.assertLessEqual(sys.path.count(tools), max(before, 1))
-            self.assertIsNot(sys.modules.get("catalog"), first)
-        finally:
-            httpd.shutdown()
-            httpd.server_close()
+    def _get(self, path):
+        import io
 
+        class H:
+            headers = {"host": "127.0.0.1:1"}
+            wfile = io.BytesIO()
+            status = None
+
+            def send_response(self, code):
+                self.status = code
+
+            def send_header(self, *a):
+                pass
+
+            def end_headers(self):
+                pass
+        h = H()
+        h.path = path
+        self.assertTrue(self.api._dispatch("handle_get", h))
+        return h.status
+
+    def test_requests_do_not_grow_sys_path(self):
+        import sys
+        tools = str(SERVER.parent / "tools")
+        self.assertEqual(self._get("/api/status"), 200)
+        before = sys.path.count(tools)
+        for _ in range(3):
+            self._get("/api/status")
+        self.assertLessEqual(sys.path.count(tools), max(before, 1))
+
+    def test_catalog_reloads_in_place_after_change(self):
+        import importlib
+        import sys
+        from unittest import mock
+        self._get("/api/status")
+        mod = sys.modules["catalog"]
+        path = SERVER.parent / "tools" / "catalog.py"
+        st = path.stat()
+        try:
+            with mock.patch.object(importlib, "reload", wraps=importlib.reload) as reload:
+                self._get("/api/status")
+                self.assertEqual(reload.call_count, 0)  # unchanged file: no reload
+                os.utime(path, (st.st_atime, st.st_mtime + 5))
+                self._get("/api/status")
+                self.assertEqual(reload.call_count, 1)
+            self.assertIs(sys.modules["catalog"], mod)
+        finally:
+            os.utime(path, (st.st_atime, st.st_mtime))
 
 if __name__ == "__main__":
     unittest.main()
