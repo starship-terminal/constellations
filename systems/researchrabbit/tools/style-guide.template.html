@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>ResearchRabbit style guide</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="ResearchRabbit (app.researchrabbit.ai) design tokens, chrome components and a live reproduction of its citation graph engine, rendered from tokens.json. Light only: ResearchRabbit paints one theme.">
@@ -519,7 +520,7 @@ const show = (t) => (t.t === 'shadow' ? t.v.map((l) => `${l.inset ? 'inset ' : '
     const v = cssv(n);
     const sw = t.t === 'color' ? `<span style="display:inline-block;width:28px;height:28px;border-radius:8px;border:1px solid var(--border-rule);background:var(${v})"></span>`
       : t.t === 'shadow' ? `<span style="display:inline-block;width:28px;height:28px;border-radius:8px;background:#fff;box-shadow:var(${v})"></span>` : '';
-    roles.insertAdjacentHTML('beforeend', `<tr><td>${sw}</td><td><code>${esc(n)}</code></td><td><code>${esc(show(t)).slice(0, 140)}</code>${t.d ? `<br><span class="cap">${esc(t.d)}</span>` : ''}</td><td class="src">${esc(t.s)}</td></tr>`);
+    roles.insertAdjacentHTML('beforeend', `<tr><td>${sw}</td><td><code>${esc(n)}</code></td><td><code>${esc(show(t).slice(0, 140))}</code>${t.d ? `<br><span class="cap">${esc(t.d)}</span>` : ''}</td><td class="src">${esc(t.s)}</td></tr>`);
   }
   const typo = document.getElementById('typo');
   for (const [n, t] of flatT(TOKENS.core.typography)) {

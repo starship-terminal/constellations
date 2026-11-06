@@ -4,6 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 export const { chromium } = pw.default ?? pw;
@@ -11,7 +12,7 @@ export const { chromium } = pw.default ?? pw;
 export const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
 
-export const HERE = path.dirname(new URL(import.meta.url).pathname);
+export const HERE = path.dirname(fileURLToPath(import.meta.url));
 export const REF = path.resolve(HERE, '..', '..');
 export const CROPS = path.join(REF, 'components', 'crops');
 export const RAW = path.join(REF, 'raw');

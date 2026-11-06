@@ -29,6 +29,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
+import { safeUrl } from '../safe-url.mjs';
 import { chromium, REF, RAW, CROPS, SNAPS, SCROLL, metaOf, newContext, openSnap, setLight } from './lib.mjs';
 
 if (!SNAPS) { console.error('SNAPS=<snapshot dir> is required'); process.exit(2); }
@@ -543,7 +544,9 @@ out._meta = {
     other: 'selected / open / readonly / off / option-highlighted are other elements or copies captured in that state',
   },
   tokens: '`vars` lists every var(--x) named in the classes of the element and its first descendants (NotebookLM\'s classes name none, so this is usually empty; the theme variables are read by tools/capture/read-css.mjs).',
-  snapshots: { ...(out._meta && out._meta.snapshots), ...Object.fromEntries(labels.filter((l) => !l.endsWith('#light')).map((l) => { const m = metaOf(l); return [l, { url: m.url, w: m.w, h: m.h }]; })) },
+  // Entries kept from an earlier run go through safeUrl again, so a partial rerun never writes an
+  // older copy's full URL back.
+  snapshots: { ...Object.fromEntries(Object.entries((out._meta && out._meta.snapshots) || {}).map(([l, v]) => [l, { ...v, url: v.url && safeUrl(v.url) }])), ...Object.fromEntries(labels.filter((l) => !l.endsWith('#light')).map((l) => { const m = metaOf(l); return [l, { url: safeUrl(m.url), w: m.w, h: m.h }]; })) },
 };
 out.components ??= {};
 fs.mkdirSync(CROPS, { recursive: true });

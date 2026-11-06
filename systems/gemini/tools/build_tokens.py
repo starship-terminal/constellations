@@ -127,7 +127,11 @@ def core():
     voice = rd("size.card")["box"]
     voice_div = rd("border.divider")["args"][1]
     rows = rd("rows.settings")["value"]
-    pitch = (rows[4] - rows[0]) / 2 if len(rows) >= 5 else 54
+    # The positions are divider pixel rows: four for the first divider (959-962), then rows[4] is where the
+    # next divider starts, so rows[4] - rows[0] is one row. Fewer means the reading moved, not that rows are 54 pt.
+    if len(rows) < 5:
+        raise ValueError(f"rows.settings: {len(rows)} positions found, need 5 (the first divider's rows, then the next divider's first)")
+    pitch = (rows[4] - rows[0]) / 2
     c["size"] = {
         "row": tok(px(pitch), "dimension", "Single-line settings row, divider to divider (rows.settings: dividers every 108 px).", "Sampled", rd("rows.settings")["capture"]),
         "rowSubtitle": derived(px((voice_div - voice[1]) / 2), "dimension", f"Settings row with a one-line subtitle (Gemini's voice): the Voice card's top edge (y {voice[1]}) to its divider (y {voice_div}).", rd("size.card")["capture"]),

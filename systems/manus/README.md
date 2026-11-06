@@ -284,7 +284,7 @@ python3 tools/capture/rules.py <dir of the .css chunks> <dir of page copies>
 python3 tools/capture/name_icons.py
 ```
 
-`python3 tools/capture/quantize.py <dir of renders>` stores renders into `screenshots/`. To take a new page copy: open the page in a signed-in tab, paste `snapshot.js` into its console, call `await __inline()` on a page with thumbnails, then `__snap('<page>-dark-<state>', REDACT)` with the redaction file's contents, save the returned string to a file and run `unsnap.py <file> <dir>`.
+`python3 tools/capture/quantize.py <dir of renders>` stores renders into `screenshots/`. To take a new page copy: open the page in a signed-in tab, paste `snapshot.js` into its console, call `await __inline()` on a page with thumbnails, then `__snap('<page>-dark-<state>', REDACT)` with the redaction file's contents, save the returned string to a file and run `SNAP_REDACT=<redaction file> unsnap.py <file> <dir>`.
 
 ## Use in Figma
 
