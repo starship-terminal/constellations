@@ -17,7 +17,7 @@ const hex = (c) => {
   }).replace(/color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?: \/ ([\d.]+))?\)/g, (m, r, g, b, a) => {
     const h = '#' + [r, g, b].map((v) => Math.round(+v * 255).toString(16).padStart(2, '0')).join('');
     return a === undefined ? h : `${h} @ ${+a}`;
-  }).replace(/lch\(([-\d.e]+)%? ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+))?\)/g, (m, L, C, H, al) => {
+  }).replace(/(?<![a-z])lch\(([-\d.e]+)%? ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+))?\)/g, (m, L, C, H, al) => {
     // Linear computes its whole palette in lch(); lch is lab in polar form.
     const [r, g, b] = labToSrgb(+L, +C * Math.cos(+H * Math.PI / 180), +C * Math.sin(+H * Math.PI / 180));
     const h = '#' + [r, g, b].map((v) => Math.round(Math.min(1, Math.max(0, v)) * 255).toString(16).padStart(2, '0')).join('');

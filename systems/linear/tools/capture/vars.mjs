@@ -36,7 +36,7 @@ const browser = await chromium.launch();
 
 const out = {
   _meta: {
-    read: '2026-10-17',
+    read: new Date().toLocaleDateString('en-CA'),   // the date of this run (YYYY-MM-DD), not a fixed one
     source: 'Static redacted copies of the signed-in linear.app web app; theme values are getComputedStyle on <main> (inside the theme provider) in the dark copy (issue-dark) and the light copy (issue-light); everything else is parsed from the inlined stylesheets. Nothing was fetched.',
     copies: COPIES,
   },
