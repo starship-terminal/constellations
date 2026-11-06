@@ -70,6 +70,12 @@ if [ "$MODE" = update ]; then
   git -C "$REPO" fetch --quiet origin main
   SHA="$(git -C "$REPO" rev-parse origin/main)"
   if [ "$(cat "$SERVICE/deployed-sha" 2>/dev/null || true)" = "$SHA" ]; then exit 0; fi
+  # A commit that already failed its health check stays off until main moves;
+  # retrying it every timer run would restart the service into a broken release.
+  if [ "$(cat "$SERVICE/failed-sha" 2>/dev/null || true)" = "$SHA" ]; then
+    echo "Skipping $SHA: it failed its health check; waiting for a new commit." >&2
+    exit 0
+  fi
   # Refuse divergence or tracked edits. Leave unrelated untracked evidence alone.
   [ -z "$(git -C "$REPO" status --porcelain --untracked-files=no)" ] || { echo 'Tracked checkout edits block automatic deployment.' >&2; exit 1; }
   [ "$(git -C "$REPO" branch --show-current)" = main ] || { echo 'Automatic deployment requires main.' >&2; exit 1; }
@@ -111,6 +117,7 @@ for attempt in $(seq 1 30); do
     printf '%s\n' "$SHA" > "$SERVICE/deployed-sha.next"
     mv -f "$SERVICE/deployed-sha.next" "$SERVICE/deployed-sha"
     printf '%s\n' "$PREVIOUS" > "$SERVICE/previous-release"
+    rm -f "$SERVICE/failed-sha"
     echo "Activated $SHA"
     exit 0
   fi
@@ -123,5 +130,6 @@ if [ -n "$PREVIOUS" ]; then
 else
   systemctl --user stop design-research.service
 fi
+printf '%s\n' "$SHA" > "$SERVICE/failed-sha"
 echo 'Studio health check failed; restored the previous service release when available.' >&2
 exit 1
