@@ -54,11 +54,14 @@ for (const [k, st] of Object.entries(forced)) {{ const s = parts[k]; const e = t
 await C.sleep(Object.keys(forced).length ? 350 : 0);
 return {{ state: {json.dumps(shot.get('state', 'default'))}, viewport: C.viewport(), parts: C.measure(parts) }};
 """
-    # `after` (close the menu, clear the typed text) runs even when the reveal, the reading or the capture
-    # fails, so a failed shot never leaves text in a field or a menu open.
-    failed = True
+    # `after` (close the menu, clear the typed text) runs once the reveal has run, even when the capture or the
+    # write then fails, so such a shot never leaves text in a field or a menu open. A reveal that failed (a guard
+    # such as P.onlyScratch() refusing, say) gets no `after`: it may not have changed anything, and clearing the
+    # composer then would erase whatever the owner had typed there. main() still closes menus for it.
+    failed, revealed = True, False
     try:
         res = run_js(body)
+        revealed = True
         data = json.loads(res)
         path = shoot(theme, shot["name"])
         data["file"] = f"{theme}/{shot['name']}.png"
@@ -74,7 +77,7 @@ return {{ state: {json.dumps(shot.get('state', 'default'))}, viewport: C.viewpor
         write(theme, shot["name"], entries)
         failed = False
     finally:
-        if shot.get("after") or shot.get("force"):
+        if revealed and (shot.get("after") or shot.get("force")):
             try:
                 run_js("C.unforce();\n" + shot.get("after", "") + "\nreturn 'after ok';")
             except Exception:

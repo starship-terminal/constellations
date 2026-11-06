@@ -1,6 +1,7 @@
 """The inspector capture's own helpers. rjs.sh returns the page's result, puts the owner's clipboard text back and leaves no
 temporary file. pbcopy, pbpaste and osascript are replaced by stubs over a file, so the real clipboard and
 Safari are never touched. shots.py runs a shot's `after` even when the shot fails."""
+import json
 import os
 import pathlib
 import shutil
@@ -39,7 +40,7 @@ class RjsTest(unittest.TestCase):
 
 
 class AfterRunsTest(unittest.TestCase):
-    def test_after_runs_when_the_shot_fails(self):
+    def take(self, fail_on):
         sys.path.insert(0, str(INSPECTOR))
         try:
             import shots
@@ -49,19 +50,30 @@ class AfterRunsTest(unittest.TestCase):
 
         def run_js(body, out=None):
             calls.append(body)
-            if "after ok" not in body:
-                raise RuntimeError("reveal failed")
-            return "after ok"
+            if "after ok" in body:
+                return "after ok"
+            if fail_on == "reveal":
+                raise RuntimeError("reveal refused")
+            return json.dumps({"state": "default", "viewport": {}, "parts": {}})
 
-        saved = shots.run_js
-        shots.run_js = run_js
+        def shoot(theme, name):
+            raise RuntimeError("capture failed")
+
+        saved = shots.run_js, shots.shoot
+        shots.run_js, shots.shoot = run_js, shoot
         try:
             with self.assertRaises(RuntimeError):
                 shots.take("dark", {"name": "menu", "after": "await P.closeAll();"})
         finally:
-            shots.run_js = saved
-        self.assertTrue(any("await P.closeAll();" in c and "after ok" in c for c in calls))
+            shots.run_js, shots.shoot = saved
+        return any("await P.closeAll();" in c and "after ok" in c for c in calls)
 
+    def test_after_runs_when_the_capture_fails(self):
+        self.assertTrue(self.take("capture"))
+
+    def test_no_after_when_the_reveal_fails(self):
+        # A refused reveal (P.onlyScratch()) changed nothing; its `after` would clear the owner's composer.
+        self.assertFalse(self.take("reveal"))
 
 if __name__ == "__main__":
     unittest.main()
