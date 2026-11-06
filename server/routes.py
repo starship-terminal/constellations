@@ -13,6 +13,8 @@ from the Next.js app.
   GET  /api/install.sh       cli/install.sh with @DS_BASE@ filled from the
                              request's forwarded Host/proto
   POST /api/provider/test    {api, base_url, api_key, key_header?, models_url?}
+                             (https only, http for loopback; models_url must
+                             share base_url's origin; redirects refused)
                              -> {ok, models:[{id,label}], error?} for the
                              settings page's test-gated model field
   POST /api/chat             {messages, provider?} -> {reply, results, media}
@@ -28,6 +30,7 @@ import importlib.util
 import ipaddress
 import json
 import os
+import re
 import sys
 import traceback
 from pathlib import Path
@@ -35,6 +38,7 @@ from urllib.parse import urlparse
 
 
 _ROOT = Path(__file__).resolve().parent.parent
+_SAFE_HOST = re.compile(r"[A-Za-z0-9.:\[\]-]+")
 
 
 def _load(name: str):
@@ -72,7 +76,10 @@ def _base_url(handler) -> str:
         return (handler.headers.get(name) or "").split(",")[0].strip()
     host = fwd("x-forwarded-host") or fwd("host")
     proto = fwd("x-forwarded-proto") or "http"
-    if host:
+    # The value lands inside BASE="..." in a script piped to sh, so anything
+    # beyond host characters (quotes, $, backticks) falls back to the bind
+    # address instead of being spliced in.
+    if host and _SAFE_HOST.fullmatch(host) and proto in ("http", "https"):
         return f"{proto}://{host}"
     addr = getattr(handler.server, "server_address", ("127.0.0.1", 80))
     return f"http://{addr[0]}:{addr[1]}"

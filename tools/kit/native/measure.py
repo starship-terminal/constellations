@@ -242,20 +242,28 @@ def op_find(rows, axis, line, a, b, ref, tol):
     return {"value": [i for i in range(a, b) if d(pix(i), ref) <= tol], "evidence": "Sampled"}
 
 
+def at(rows, x, y):
+    """rows[y][x], refusing a coordinate off the image: a negative index would
+    silently wrap to the far edge and a walk would read the wrong pixels."""
+    if not (0 <= y < len(rows) and 0 <= x < len(rows[y])):
+        raise ValueError(f"walked off the capture at ({x}, {y}); check the reading's box")
+    return rows[y][x]
+
+
 def op_diag(rows, cx, cyc, cxr, cy):
-    f = rows[cy][cxr]
+    f = at(rows, cxr, cy)
     x = cxr
-    while d(rows[cy][x - 1], f) <= 3:
+    while d(at(rows, x - 1, cy), f) <= 3:
         x -= 1
-    bg = rows[cy][x - 5]
+    bg = at(rows, x - 5, cy)
     tol = max(2, d(bg, f) // 2)
-    while d(rows[cy][x - 1], f) <= tol:
+    while d(at(rows, x - 1, cy), f) <= tol:
         x -= 1
     x0, y = x, cyc
-    while d(rows[y - 1][cx], f) <= tol:
+    while d(at(rows, cx, y - 1), f) <= tol:
         y -= 1
     t = 0
-    while d(rows[y + t][x0 + t], f) > tol:
+    while d(at(rows, x0 + t, y + t), f) > tol:
         t += 1
     r = t / (1 - 2 ** -0.5) / SCALE
     return {"value": f"{r:.1f}pt", "inset": t, "corner": [x0, y], "evidence": "Derived"}

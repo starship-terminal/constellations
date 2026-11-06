@@ -66,8 +66,21 @@ jobs:
             --template-title "Design systems" \
             --template-instructions "Enter the password to view the design-systems docs." \
             --template-color-primary "#1d9e75" --template-color-secondary "#1f2125"
-          if grep -rlq -e "graded against" -e "Criteria and method" -e "five layers" encrypted/site; then
-            echo "::error::Readable page text found after encryption"; exit 1
+          # Every page must come out encrypted, not just the three phrases this used
+          # to grep for. Assets (docs/assets PNG, JS, CSS) are copied as-is by design.
+          # grep -q per file: grep -L's exit status depends on the other files, and
+          # a page grep cannot read (status 2) is listed as unencrypted too.
+          unencrypted=""
+          while IFS= read -r -d '' page; do
+            grep -q staticryptEncryptedMsgUniqueVariableName "$page" || unencrypted+="$page"$'\n'
+          done < <(find encrypted/site -type f \( -name '*.html' -o -name '*.htm' \) -print0)
+          if [ -n "$unencrypted" ]; then
+            echo "::error::Pages without StatiCrypt encryption:"; echo "$unencrypted"; exit 1
+          fi
+          src=$(find site -type f \( -name '*.html' -o -name '*.htm' \) | wc -l)
+          out=$(find encrypted/site -type f \( -name '*.html' -o -name '*.htm' \) | wc -l)
+          if [ "$src" -ne "$out" ]; then
+            echo "::error::site/ has $src pages but encrypted/site/ has $out"; exit 1
           fi
       - uses: actions/configure-pages@v6
         if: github.event_name != 'pull_request'
