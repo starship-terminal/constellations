@@ -1,0 +1,34 @@
+# Typecheck and build the gallery app (web/) whenever it or the data it reads
+# changes. The build prerenders pages from web/data/, so the job generates it
+# first with tools/catalog.py; the checkout has no Git LFS content, so the
+# thumbnails fall back to the screenshot paths, which the build does not read.
+name: Web
+on:
+  pull_request:
+    paths: ['web/**', 'tools/catalog.py', 'catalog.json', '.github/workflows/web.yml']
+  push:
+    branches: [main]
+    paths: ['web/**', 'tools/catalog.py', 'catalog.json', '.github/workflows/web.yml']
+permissions:
+  contents: read
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Install pnpm
+        run: npm install -g pnpm@10.10.0
+      - name: Install locked dependencies
+        run: pnpm --dir web install --frozen-lockfile
+      - name: Typecheck
+        run: npx --prefix web tsc --noEmit -p web
+      - name: Generate web/data
+        run: python3 tools/catalog.py build
+      - name: Production build
+        run: pnpm --dir web build
