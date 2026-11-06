@@ -76,6 +76,18 @@ test('an unknown stored value falls back to Flat', () => {
   assert.deepEqual(page('neon').icons(), FLAT);
 });
 
+test('inherited Object property names are not icon sets', () => {
+  for (const name of ['constructor', 'toString', '__proto__', 'hasOwnProperty']) {
+    const p = page(name);
+    assert.deepEqual(p.icons(), FLAT, name);
+    assert.equal(p.icon(), 'flat', name);
+    assert.ok(p.api, name + ' left window.dsAppIcon unset');
+    p.api.set(name);
+    assert.equal(p.icon(), 'flat', name);
+    assert.deepEqual(p.icons(), FLAT, name);
+  }
+});
+
 test('a live switch removes every old link before adding the new set', () => {
   // Chrome re-picks the tab icon on insertion only; inserting first leaves it on the old set.
   const p = page();

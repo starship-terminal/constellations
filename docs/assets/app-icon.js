@@ -27,7 +27,7 @@
   };
 
   function stored() {
-    try { var v = localStorage.getItem(KEY); return SETS[v] ? v : DEFAULT; } catch (e) { return DEFAULT; }
+    try { var v = localStorage.getItem(KEY); return Object.hasOwn(SETS, v) ? v : DEFAULT; } catch (e) { return DEFAULT; }
   }
 
   function apply(name) {
@@ -57,7 +57,7 @@
     options: Object.keys(SETS),
     get: function () { return current; },
     set: function (name) {
-      if (!SETS[name] || name === current) return;
+      if (!Object.hasOwn(SETS, name) || name === current) return;
       current = name;
       try { localStorage.setItem(KEY, name); } catch (e) {}
       apply(name);
