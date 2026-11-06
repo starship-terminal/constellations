@@ -165,6 +165,7 @@ SETS = {t: {} for t in THEMES}
 SKIPPED = {t: [] for t in THEMES}
 for t in THEMES:
     comp, painted = computed(t), V[t]["colors"]
+    owner = {}   # token path -> the custom property that took it
     for n in sorted(comp):
         if not re.match(r"--c[adl]?-", n):
             continue
@@ -174,12 +175,18 @@ for t in THEMES:
         except KeyError:
             continue
         if n in painted and is_color(painted[n]) and is_color(v):
-            put(SETS[t], (group, key), tok(color(painted[n]), "color", "Measured", where(t, n), css=n))
+            path, value = (group, key), tok(color(painted[n]), "color", "Measured", where(t, n), css=n)
         elif is_shadow(v):
-            put(SETS[t], ("shadow" if group == "shadow" else "shadow", key if group == "shadow" else "-".join(words(n[n.index("-", 2) + 1:]))),
-                tok(shadow(v), "shadow", "Measured", where(t, n), css=n, declared=v))
+            path = ("shadow", key if group == "shadow" else "-".join(words(n[n.index("-", 2) + 1:])))
+            value = tok(shadow(v), "shadow", "Measured", where(t, n), css=n, declared=v)
         else:
             SKIPPED[t].append({"name": n, "value": v[:120], "why": "not a colour or a box-shadow (a gradient or a keyword)"})
+            continue
+        # Two properties that land on the same token path (--c-x and --ca-x, or a shadow named both ways) would
+        # silently overwrite each other: stop, naming both. Checked on the path actually written.
+        if owner.setdefault(path, n) != n:
+            raise SystemExit(f"{t}: {n} and {owner[path]} both map to {'.'.join(path)}; extend path_of or ABBR")
+        put(SETS[t], path, value)
 
 
 def resolve(t, value, depth=0):
