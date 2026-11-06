@@ -17,6 +17,7 @@ import json
 import posixpath
 import sqlite3
 import sys
+import urllib.parse
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
@@ -66,13 +67,19 @@ def _repo_file(rel: str) -> Path:
 
 def _bounded(entry: dict, rel: str) -> Path:
     """Resolve a package-relative path, refusing anything that climbs out.
-    Accepts the repo-relative and site-absolute forms other tools emit, so the
-    model can pass a path it saw verbatim."""
+    Accepts the repo-relative and site-absolute forms other tools emit, and
+    the /media/ URL list_media returns (percent-decoded), so the model can pass
+    a path it saw verbatim."""
     base = _pkg_dir(entry)
-    clean = posixpath.normpath("/" + rel.lstrip("/")).lstrip("/")
-    for prefix in (f"systems/{entry['slug']}/",):
+    slug = entry["slug"]
+    raw = str(rel)
+    if raw.lstrip("/").startswith("media/"):
+        raw = urllib.parse.unquote(raw.split("?", 1)[0].split("#", 1)[0])
+    clean = posixpath.normpath("/" + raw.lstrip("/")).lstrip("/")
+    for prefix in (f"media/systems/{slug}/", f"systems/{slug}/"):
         if clean.startswith(prefix):
             clean = clean[len(prefix):]
+            break
     target = (base / clean).resolve()
     if target != base and base not in target.parents:
         raise ToolError(f"path leaves the package: {rel}")
@@ -83,7 +90,9 @@ def _site_url(path: Path) -> str:
     # The app's /media/ route answers repo files on every frontend that serves
     # them (Next dev, standalone, the deployment); a bare /<repo path> only the
     # retired python server ever answered.
-    return "/media/" + path.resolve().relative_to(ROOT.resolve()).as_posix()
+    # Each segment is quoted the way the web twin's encodeURIComponent does.
+    rel = path.resolve().relative_to(ROOT.resolve()).as_posix()
+    return "/media/" + "/".join(urllib.parse.quote(seg, safe="!~*'()") for seg in rel.split("/"))
 
 
 # ---------------------------------------------------------------- refero store
