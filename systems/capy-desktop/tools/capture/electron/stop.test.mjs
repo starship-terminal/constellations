@@ -33,3 +33,14 @@ test('fails loudly when the run is still going after the timeout', async () => {
   assert.equal(f.s.clicks, 1);
   assert.equal(f.s.slept, 1000);
 });
+
+test('a run that ends before the click lands counts as stopped', async () => {
+  let done = false;
+  const f = { running: async () => !done, stop: async () => { done = true; throw new Error('Stop run is gone'); }, wait: async () => {} };
+  assert.equal(await stopRun(f), true);
+});
+
+test('a failed click on a run that is still going is thrown', async () => {
+  const f = { running: async () => true, stop: async () => { throw new Error('Stop run is covered'); }, wait: async () => {} };
+  await assert.rejects(stopRun(f), /Stop run is covered/);
+});
