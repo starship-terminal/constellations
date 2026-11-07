@@ -8,7 +8,10 @@ through shot.sh, which refuses unless Raycast is frontmost.
 
 Look, don't act: steps type harmless queries and clear them, open menus and close them with
 Escape, and never press Return on a result except to open a view (a Store page, Settings, AI chat).
+Before pressing Return on a result or clicking a Settings sidebar row, the step reads the target's
+accessibility text through the compiled ax.swift and stops when it is not the one the step expects.
 """
+import json
 import pathlib
 import subprocess
 import sys
@@ -78,6 +81,50 @@ def shot(name, window=None, wait=0.6):
     print(out.stdout.strip() or out.stderr.strip(), flush=True)
     if out.returncode:
         raise SystemExit(f"capture {name} failed")
+
+
+def ax(*args):
+    """Raycast's accessibility tree as ax.swift reads it (JSON). Stops when it cannot be read."""
+    r = subprocess.run([str(BIN / "ax"), *map(str, args)], capture_output=True, text=True)
+    if r.returncode:
+        raise SystemExit(f"could not read the accessibility tree ({r.stderr.strip()}); stopped before acting")
+    return json.loads(r.stdout)
+
+
+def first_result(items):
+    """The title of the launcher's first result row: the first text after the first section header, in the
+    `ax results` items. Raycast's web view exposes no selected state, so the first row is the one a fresh query
+    selects; nothing moves the selection between typing and this check."""
+    seen_header = False
+    for kind, value in items:
+        if kind == "h":
+            seen_header = True
+        elif seen_header:
+            return value
+    return None
+
+
+def row_matches(read, label):
+    """True when an `ax at` reading is one of Raycast's rows labelled `label`: the element under the point is in
+    a Raycast window and holds `label` among at most three texts (a row's label, a Pro badge, the account name).
+    A wider reading (the whole sidebar) does not count."""
+    t = read.get("texts") or []
+    return read.get("owner") == "Raycast" and label in t and len(t) <= 3
+
+
+def expect_top_result(query, title):
+    """Stop unless the launcher's search field holds `query` and its first (selected) result is `title`."""
+    got = ax("results")
+    top = first_result(got.get("items") or [])
+    if got.get("query") != query or top != title:
+        raise SystemExit(f"the launcher shows {top!r} for {got.get('query')!r}, not {title!r} for {query!r}; stopped before Return")
+
+
+def expect_row(x, y, label):
+    """Stop unless the row at global point (x, y) is Raycast's row labelled `label`."""
+    got = ax("at", round(x), round(y))
+    if not row_matches(got, label):
+        raise SystemExit(f"{got.get('owner')!r} shows {got.get('texts')!r} at {x:.0f},{y:.0f}, not the {label!r} row; stopped before clicking")
 
 
 def wins():
@@ -213,6 +260,7 @@ def loading():
 @step
 def emoji():
     query("emoji")
+    expect_top_result("emoji", "Search Emoji & Symbols")
     key(RET, wait=2.0)
     park()
     shot("11-emoji-grid", "Main Window")
@@ -235,21 +283,23 @@ def settings_open():
         raise SystemExit("Settings did not open")
 
 
-def side(scroll, y):
-    """Click a sidebar row: scroll the sidebar (lines, negative is down) from the top, then click at y pt."""
+def side(scroll, y, label):
+    """Click the sidebar row labelled `label`: scroll the sidebar (lines, negative is down) from the top, then
+    click at y pt once the row there reads `label`."""
     settings_open()
     sx, sy = at("Settings", 120, 500)      # a point inside the sidebar, wherever the window sits
     mouse("scroll", sx, sy, 80, wait=0.6)
     if scroll:
         mouse("scroll", sx, sy, scroll, wait=0.8)
     x, yy = at("Settings", 77, y)
+    expect_row(x, yy, label)
     mouse("click", x, yy, wait=1.5)
     park()
 
 
 @step
 def settings():
-    side(0, 176)          # General
+    side(0, 176, "General")
     shot("20-settings-general", "Settings")
     x, y = at("Settings", 200, 296)
     mouse("move", x, y, wait=0.2)
@@ -258,22 +308,23 @@ def settings():
     park()
 
 
+# step: (sidebar scroll, row y in the window, the row's label as Raycast's accessibility tree reads it, shot)
 SETTINGS = {
-    "settings-launcher": (0, 210, "22-settings-launcher"),
-    "settings-shortcuts": (0, 244, "23-settings-shortcuts"),
-    "settings-keyboard": (0, 278, "24-settings-keyboard"),
-    "settings-advanced": (0, 346, "25-settings-advanced"),
-    "settings-about": (0, 414, "26-settings-about"),
-    "settings-ai": (0, 462, "27-settings-ai"),
-    "settings-account": (0, 120, "28-settings-account"),
-    "settings-raycast": (-15, 405, "29-settings-extension-raycast"),
+    "settings-launcher": (0, 210, "Launcher", "22-settings-launcher"),
+    "settings-shortcuts": (0, 244, "Shortcuts", "23-settings-shortcuts"),
+    "settings-keyboard": (0, 278, "Keyboard", "24-settings-keyboard"),
+    "settings-advanced": (0, 346, "Advanced", "25-settings-advanced"),
+    "settings-about": (0, 414, "About", "26-settings-about"),
+    "settings-ai": (0, 462, "AI", "27-settings-ai"),
+    "settings-account": (0, 120, "Account", "28-settings-account"),
+    "settings-raycast": (-15, 405, "Raycast", "29-settings-extension-raycast"),
 }
 
 
 def _settings_pane(name):
-    sc, y, out = SETTINGS[name]
+    sc, y, label, out = SETTINGS[name]
     def fn():
-        side(sc, y)
+        side(sc, y, label)
         shot(out, "Settings")
     fn.__name__ = name.replace("-", "_")
     return fn
@@ -298,7 +349,7 @@ def settings_search():
 
 @step
 def settings_theme_menu():
-    side(0, 176)
+    side(0, 176, "General")
     x, y = at("Settings", 700, 315)
     mouse("click", x, y, wait=1.0)
     park()
