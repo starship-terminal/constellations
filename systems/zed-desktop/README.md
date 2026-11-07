@@ -193,6 +193,8 @@ git status --short .
 
 To capture again: `python3 tools/capture/fetch_upstream.py`, then `python3 tools/capture/read_settings.py`; compile the helpers (`swiftc -O -o tools/capture/zwin tools/capture/zwin.swift`, the same for `mouse.swift` and `wins.swift`; the binaries are not committed), open Zed on a scratch folder with `open -a Zed --args <folder>`, set the theme with `python3 tools/capture/set_mode.py dark` (back up the settings file first and restore it after), and run `python3 tools/capture/drive.py dark <step> ...` (its steps are the shot list); `tools/capture/quantize.py <raw-shots>` writes `screenshots/`. From the repository root, `make design-md` regenerates DESIGN.md and the Brief.
 
+**The user-menu clicks are unchecked (issue 408).** `user_menu` and `settings` in `drive.py` click the user menu and its Settings item at fixed points. A check of the item's accessibility title before the click is not possible: Zed 1.27.0 (checked 2026-11-07) exposes one `AXWindow` with no children, since GPUI draws the window itself, so neither the menu nor its items have an accessibility title. Look at the `zz-check` frame the `settings` step takes before its second click.
+
 ## Zed beside the other coding harnesses
 
 Zed is the one native app in issue 107's set: the others are web views (Electron, or Tauri for Conductor). It is an editor first, like [cursor-desktop](../cursor-desktop/README.md), and its agent panel hosts external agents (Claude Agent, Cursor, OpenCode) over the Agent Client Protocol as well as Zed's own. It is filed under `ai-agent` with the other harnesses for that reason; as a product it is also a plain editor.
