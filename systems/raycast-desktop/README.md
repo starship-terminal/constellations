@@ -199,7 +199,7 @@ python3 -m unittest discover -s tools
 git status --short .
 ```
 
-To capture again: compile the helpers into `~/.design-systems/raycast-desktop/bin/` (`swiftc -O -o ~/.design-systems/raycast-desktop/bin/rwin tools/capture/rwin.swift`, the same for `wins.swift` and `mouse.swift`), then run `python3 tools/capture/drive.py dark <step> ...` (its steps are the shot list: `root calc results commands actions appmenu empty emoji settings settings-launcher ...`). Switch the theme in Settings > General for the light pass and put it back after. `python3 tools/capture/quantize.py ~/.design-systems/raycast-desktop/raw-shots` writes `screenshots/`. From the repository root, `make design-md` regenerates DESIGN.md and the Brief.
+To capture again: compile the helpers into `~/.design-systems/raycast-desktop/bin/` (`swiftc -O -o ~/.design-systems/raycast-desktop/bin/rwin tools/capture/rwin.swift`, the same for `wins.swift`, `mouse.swift` and `ax.swift`; drive.py reads the launcher's first result and each Settings sidebar row through `ax` before pressing Return or clicking, and stops on a mismatch), then run `python3 tools/capture/drive.py dark <step> ...` (its steps are the shot list: `root calc results commands actions appmenu empty emoji settings settings-launcher ...`). Switch the theme in Settings > General for the light pass and put it back after. `python3 tools/capture/quantize.py ~/.design-systems/raycast-desktop/raw-shots` writes `screenshots/`. From the repository root, `make design-md` regenerates DESIGN.md and the Brief.
 
 ## Raycast beside the other desktop packages
 
