@@ -22,6 +22,7 @@
 // on"), whose sample data is the product's fixtures. The owner's own threads are never opened.
 import { resolve as resolvePath } from 'node:path';
 import { allowance, ancestors, approvableCard } from './approve.mjs';
+import { stopRun } from './stop.mjs';
 
 export const NAME = 'Capy';
 export const WINDOWS = { app: /\bCapy$/ };
@@ -419,6 +420,9 @@ async function approveInside({ page }) {
   await allow.click(); await wait(page, 800);
   return true;
 }
+// Any sign that the run is still working: the Stop run button, the tab's Working glyph or a live shimmer.
+const STOP = 'button[aria-label="Stop run"]';
+const busy = async page => (await page.locator(`${STOP}, svg[aria-label=Working][data-state=working], ${slot('shimmer-text')}[data-state=live]`).filter({ visible: true }).count()) > 0;
 export const RUN = {
   window: 'app',
   async start(h) {
@@ -437,11 +441,20 @@ export const RUN = {
   async finish(h) {
     const { page } = h;
     if (!before) return;
+    // A run still going (a step past TIMEOUT, or a frame that failed) is stopped first, from its own thread:
+    // Capy's Stop run button (role button, name "Stop run", in the composer; disabled for a moment while the
+    // thread starts, so the click waits for it). Stopped, the thread shows "Worked for Ns" with no reply, the
+    // composer's Stop run button gives way to Voice input, and the Working glyph and live shimmer go
+    // (seen live on 2026-11-07). A run that will not stop fails the capture (stop.mjs).
+    if (await stopRun({ running: () => busy(page), stop: () => vis(page, STOP).click({ timeout: 15000 }), wait: ms => wait(page, ms) })) console.log('stopped the agent run');
     await closeAll(page);
     for (const t of await page.locator('[data-sonner-toast] button[aria-label^=Close], [data-sonner-toast] [data-close-button]').all()) await t.click().catch(() => {});
-    // The inspector pane was opened in the run's own thread; close it there before leaving.
-    const close = page.locator('button[aria-label="Close pane"]').filter({ visible: true });
-    if ((await path(page)).startsWith('/thread/') && await close.count()) { await close.first().click(); await wait(page, 600); }
+    // The inspector pane was opened in the run's own thread; close it there before leaving. Only when its Close
+    // pane button can take a click: a run that stopped before the inspector step leaves the pane slid out of view,
+    // its button covered by the header, and a plain click would wait out its timeout and skip the restore below.
+    const close = page.locator('button[aria-label="Close pane"]').filter({ visible: true }).first();
+    const closable = await close.click({ trial: true, timeout: 2000 }).then(() => true, () => false);
+    if ((await path(page)).startsWith('/thread/') && closable) { await close.click(); await wait(page, 600); }
     await home(h);
     await pickProject(page, before.project);
     await clearEditor(page);
@@ -462,7 +475,7 @@ export const RUN = {
     if (await failed.count()) throw new Error(`Capy refused: ${(await failed.first().innerText()).replace(/\s+/g, ' ')}`);
     if (!(await path(page)).startsWith('/thread/')) return 'starting';
     if (await page.locator('button').filter({ visible: true }).filter({ hasText: /^(Allow|Approve|Accept)\b/ }).count()) return 'approval';
-    const running = await page.locator('button[aria-label="Stop run"], svg[aria-label=Working][data-state=working]').filter({ visible: true }).count();
+    const running = await page.locator(`${STOP}, svg[aria-label=Working][data-state=working]`).filter({ visible: true }).count();
     return page.evaluate(running => {
       const live = [...document.querySelectorAll('[data-slot=shimmer-text][data-state=live]')].map(e => e.textContent.trim());
       const msgs = [...document.querySelectorAll('[data-slot=user-message], [data-slot=agent-message]')];
@@ -484,7 +497,7 @@ export const RUN = {
     { name: 'inspector', send: async ({ page }) => { await btn(page, 'Open pane').click(); await wait(page, 1200); } },
   ],
   parts: {
-    composer: S.composer, 'send-button': `${S.composer} button[aria-label=Send], ${S.send}`, 'stop-button': 'button[aria-label="Stop run"]',
+    composer: S.composer, 'send-button': `${S.composer} button[aria-label=Send], ${S.send}`, 'stop-button': STOP,
     'user-message': slot('user-message'), 'agent-message': slot('agent-message'), 'message-section': slot('message-section'),
     'message-footer': slot('message-footer'), 'chat-stamp': slot('chat-stamp'), 'activity-line': slot('activity-line'),
     'work-row': `${slot('work-group-panel')} ${slot('collapsible')}`, 'shimmer-live': `${slot('shimmer-text')}[data-state=live]`,

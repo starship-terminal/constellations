@@ -453,7 +453,15 @@ export const RUN = {
     await wait(page, 7000);
     if ((await tabs(page).count()) !== runTab + 1) throw new Error('the Claude preset did not open one new tab');
   },
-  async finish(h) { await home(h); },
+  // A run still going when run.mjs gives up (a step past TIMEOUT, or a failed frame) is `claude
+  // --dangerously-skip-permissions` working on the Mac, so finish refuses to leave it: it fails the capture and
+  // leaves the run's tab in front for the person to stop. Superset 2.0.5 (2026-11-07) no longer opens the
+  // remote-debugging port, so its own Stop control could not be read live; until it is, the run is stopped by hand.
+  async finish(h) {
+    const { page } = h;
+    if (runTab !== null && await runningDot(page).count()) throw new Error('the Claude run is still working in the scratch workspace (its tab shows the amber dot): stop it by hand (Esc, then /exit) before anything else');
+    await home(h);
+  },
   async state({ page }) { return (await runningDot(page).count()) ? 'running' : 'done'; },
   async reject() {},
   steps: [
