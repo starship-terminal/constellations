@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Allbirds style guide</title>
+<meta name="description" content="Allbirds (allbirds.com) design tokens and the storefront's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Geograph", system-ui, sans-serif;
+  --sg-serif: "Self Modern", Georgia, serif;
+  --sg-mono: "Akkurat Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.5 var(--sg-sans); color: var(--text-primary); background: var(--background-page); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: var(--tracking-widest); text-transform: uppercase; color: var(--text-secondary); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-stroke); }
+.lead { max-width: 62ch; color: var(--text-secondary); }
+.note { font-size: 13px; color: var(--text-secondary); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-secondary); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-stroke); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-secondary); }
+.typerow { display: grid; grid-template-columns: 210px 1fr; gap: 16px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--border-divider); }
+.typerow .k { font: 500 12px/1.5 var(--sg-mono); }
+.typerow .k small { display: block; color: var(--text-secondary); font-weight: 400; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-stroke); background: var(--background-surface); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-secondary); }
+/* ---- storefront mock ---- */
+.mock { border: 1px solid var(--border-stroke); border-radius: 12px; overflow: hidden; background: var(--background-page); }
+.promo { background: var(--background-ink); color: var(--text-inverse); font-size: 10px; letter-spacing: .06em; text-align: center; height: var(--component-promo-bar-height); line-height: var(--component-promo-bar-height); }
+.navbar { display: flex; align-items: center; gap: 18px; height: var(--component-header-height); padding: 0 20px; background: var(--background-surface); border-radius: var(--component-header-radius); box-shadow: var(--elevation-header); margin: 10px; font-size: 12px; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; }
+.navbar .wm { font-family: var(--sg-serif); font-size: 15px; text-transform: none; letter-spacing: 0; }
+.navbar .sp { flex: 1; }
+.pill { display: inline-flex; align-items: center; border-radius: var(--radius-pill); font-size: 12px; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; padding: 8px 16px; }
+.pill.primary { background: var(--action-primary-background); color: var(--action-primary-text); border: 1px solid var(--action-primary-border); height: var(--component-button-height); padding: 0 24px; }
+.pill.secondary { background: var(--action-secondary-background); color: var(--action-secondary-text); border: 1px solid var(--action-secondary-border); }
+.pill.outline { background: transparent; color: var(--action-outline-inverse-text); border: 1px solid var(--action-outline-inverse-border); }
+.pill.darkpress { background: var(--background-pill-dark); color: var(--text-inverse); border: 0; text-transform: none; letter-spacing: 0; font-weight: 400; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; max-width: 340px; }
+.chip { width: 62px; height: var(--component-size-chip-height); display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--component-size-chip-border); border-radius: var(--component-size-chip-radius); font-size: 12px; font-weight: 500; background: transparent; }
+.chip.sel { background: var(--action-primary-background); color: var(--action-primary-text); border-color: var(--action-primary-border); }
+.chip.press { background: var(--action-pressed-fill); }
+.chip.out { color: var(--status-sold-out); text-decoration: line-through; opacity: .7; }
+.swr { display: flex; gap: 10px; }
+.swr i { width: var(--component-swatch-size); height: var(--component-swatch-size); border-radius: 50%; display: block; border: 1px solid var(--border-stroke); }
+.hero { border-radius: var(--radius-card); background: var(--background-ink); color: var(--text-inverse); padding: 48px 40px; margin: 10px; font-family: var(--sg-serif); font-size: 34px; line-height: 1.2; }
+/* drawer mock */
+.drawerwrap { position: relative; overflow: hidden; border-radius: 12px; border: 1px solid var(--border-stroke); background: var(--background-page); height: 340px; }
+.drawer { position: absolute; top: 0; right: 0; width: min(var(--component-drawer-width), 85%); height: 100%; background: var(--background-surface); box-shadow: var(--elevation-drawer); padding: 16px 18px; font-size: 14px; }
+.drawer h4 { margin: 0 0 8px; font: 500 13px/1 var(--sg-sans); letter-spacing: .05em; }
+.meter { height: 4px; background: var(--border-divider); border-radius: 2px; margin: 8px 0 16px; }
+.meter i { display: block; height: 100%; width: 100%; background: var(--background-ink); border-radius: 2px; }
+.row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border-divider); }
+.upsell { background: var(--background-muted); margin: 12px -18px; padding: 10px 18px; font-size: 12px; }
+.upsell .card { background: var(--component-upsell-card-background); border: 1px solid var(--component-upsell-card-border); border-radius: var(--component-upsell-card-radius); padding: 8px 10px; margin-top: 8px; display: flex; justify-content: space-between; align-items: center; }
+.ck { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+.ck .pill.primary { justify-content: center; }
+.wallets { display: flex; gap: 6px; }
+.wallets i { flex: 1; height: 30px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font: 700 10px/1 var(--sg-sans); font-style: normal; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-stroke); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Allbirds style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number.</p>
+
+  <h2 class="sh">Allbirds, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the Tailwind&nbsp;v4 theme Allbirds ships in <code>theme.css</code> (its <code>--color-*</code> palette, fluid type scale, radii, tracking, easing and z-order) plus the values measured on the live storefront — the promo strip, the white nav bar, the pill buttons, the size chips, the cart drawer. One light theme only; nothing dark is served. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from www.allbirds.com on 2026-11-08, signed out, in headless Chromium. Geograph, Self Modern and Akkurat Mono are Allbirds' own faces and are not loaded here: the sans falls back to the system face, the serif to Georgia, the mono to ui-monospace.</p>
+
+  <h2 class="sh">The storefront chrome</h2>
+  <p class="lead">A black promo strip, then the rounded white nav bar floating over the warm <code>natural-white-25</code> page: serif wordmark, uppercase <code>xs medium tracking-widest</code> links, and pill buttons everywhere. Ink is the brand's near-black (#212121) — nothing is pure black.</p>
+  <div class="mock">
+    <div class="promo">FREE GROUND SHIPPING ON ORDERS OVER $100</div>
+    <div class="navbar"><span class="wm">allbirds</span><span>NEW ARRIVALS</span><span>SHOP ALL</span><span>MEN</span><span>WOMEN</span><span class="sp"></span><span>Search</span><span>Bag&nbsp;(1)</span></div>
+    <div class="hero">Wildly Comfortable.<br>Super Natural.<br><span class="pill secondary" style="margin-top:18px">Shop Men</span> <span class="pill outline" style="margin-top:18px">Shop Women</span></div>
+    <div style="display:flex;gap:10px;align-items:center;padding:14px 18px">
+      <span class="pill primary">Add to cart — $100</span>
+      <span class="pill secondary">Shop Men</span>
+      <span class="pill darkpress">Tree-based upper for lightweight comfort</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Buy box</h2>
+  <p class="lead">Serif product title, uppercase tracking price, circular swatches, then the 62×42 size grid: <code>radius-xs</code> chips with the <code>stroke</code> hairline — held chips fill with <code>light-charcoal-0.3</code>, sold-out ones strike through at 70%.</p>
+  <div class="mock" style="padding:20px">
+    <div style="font:400 30px/36px var(--sg-serif)">Men's Tree Runner NZ</div>
+    <div style="font:500 18px/28px var(--sg-sans);letter-spacing:0.9px;text-transform:uppercase;margin:6px 0 14px">$100</div>
+    <div class="swr"><i style="background:#6e6a63"></i><i style="background:#b8b4aa"></i><i style="background:#212121"></i><i style="background:#7a8ba0"></i></div>
+    <div class="chips" style="margin-top:14px"><span class="chip">7</span><span class="chip">7.5</span><span class="chip">8</span><span class="chip sel">8.5</span><span class="chip press">9</span><span class="chip out">9.5</span><span class="chip">10</span><span class="chip">10.5</span><span class="chip">11</span><span class="chip out">12</span></div>
+  </div>
+
+  <h2 class="sh">Cart drawer</h2>
+  <p class="lead">The right-hand <code>.z-takeover</code> takeover: CART heading, the free-shipping meter, item rows, a <code>natural-white-60</code> upsell band, subtotal and the black checkout pill — wallets render inside Shopify-hosted iframes and are drawn here as labels.</p>
+  <div class="drawerwrap"><div class="drawer">
+    <h4>CART (1)</h4>
+    <small>You've earned free shipping!</small>
+    <div class="meter"><i></i></div>
+    <div class="row"><span><b>MEN'S TREE RUNNER NZ</b><br><small>Medium Grey · Size 8.5</small></span><span>$100</span></div>
+    <div class="upsell">RECOMMENDED FOR YOU
+      <div class="card"><span>Anytime Crew Sock</span><span>$18 <u>Add+</u></span></div>
+    </div>
+    <div class="row" style="border-bottom:0"><span>Subtotal</span><b>$104.98</b></div>
+    <div class="ck"><span class="pill primary">Checkout+ | $104.98</span>
+      <div class="wallets"><i style="background:#ffc439;color:#253b80">PayPal</i><i style="background:#5a31f4;color:#fff">shop Pay</i><i style="background:#212121;color:#fff">G Pay</i></div></div>
+  </div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">Warm naturals over ink: <code>natural-white</code> (undyed-wool beige) and its steps, the near-black ink family with fixed-opacity variants, then Tailwind's gray/neutral ramps and small accent sets. <code>stroke</code> (#cdcdcd) is the universal hairline.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two voices: <b>Self Modern</b> for headlines and product titles, <b>Geograph</b> for everything else. Buttons and nav links are uppercase <code>xs medium</code> with wide tracking; the scale is Tailwind's steps plus a fluid ramp that resolves at the viewport.</p>
+  <div id="type-out"></div>
+
+  <h2 class="sh">Radius and geometry</h2>
+  <p class="lead">Two shapes: <code>radius.card</code> 20px on hero and photo cards, and <code>radius.pill</code> (full) on every button, field, chip and swatch. Small squares use the 2-12px steps.</p>
+  <div id="radius-out"></div>
+
+  <h2 class="sh">Motion and layers</h2>
+  <p class="lead">One motion vocabulary: sine easings for small state changes, <code>snappy</code> for the drawers that slide in on <code>z-takeover</code>. Layering is named, not numeric: the header sits at <code>--z-header</code> 80, every takeover at 90.</p>
+  <div id="motion-out" class="kv"></div>
+  <div id="z-out" class="kv" style="margin-top:12px"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live CSSOM and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.palette)) {
+    const items = flat(grp, 'palette.' + g + '.').filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const g of ['background', 'text', 'border', 'status']) {
+    const items = flat(TOK.light[g], g + '.').filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">light.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography, 'typography.')) {
+    const v = t.v;
+    const ref = (x) => String(x).replace(/[{}]/g, '');
+    const get = (p) => p.split('.').reduce((o, k) => o && o[k], TOK.core);
+    const fam = /mono/.test(ref(v.fontFamily)) ? 'var(--sg-mono)' : /serif/.test(ref(v.fontFamily)) ? 'var(--sg-serif)' : 'var(--sg-sans)';
+    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(ref(v.fontSize))} / ${esc(ref(v.lineHeight))} · w ${esc(String(v.fontWeight))}</small></div><div class="sample" style="font-family:${fam};font-size:${esc(ref(v.fontSize))};line-height:${esc(ref(v.lineHeight))};font-weight:${v.fontWeight}">The quick brown fox jumps over the lazy dog</div></div>`;
+  }
+  $('#type-out').innerHTML = h;
+})();
+
+(function radius() {
+  let r = '';
+  for (const [n, t] of flat(TOK.core.radius, 'radius.')) r += `<div class="bx" style="border-radius:min(var(${cssname(n)}), 24px)">${esc(n.replace('radius.', ''))}<br>${esc(t.v)}</div>`;
+  $('#radius-out').innerHTML = r;
+})();
+
+(function misc() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.easing, 'easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(',') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#motion-out').innerHTML = m;
+  let z = '';
+  for (const [n, t] of flat(TOK.core.zIndex, 'zIndex.').sort((a, b) => a[1].v - b[1].v)) z += `<div><b>${esc(n.replace('zIndex.', ''))}</b> <span>${esc(t.v)}</span></div>`;
+  $('#z-out').innerHTML = z;
+  let e = '';
+  for (const [n, t] of flat(TOK.light.elevation, 'elevation.')) e += `<div><b>${esc(n.replace('elevation.', ''))}</b> <span>${esc(JSON.stringify(t.v).slice(0, 90))}</span></div>`;
+  $('#elev-out').innerHTML = e;
+})();
+</script>
+</body>
+</html>

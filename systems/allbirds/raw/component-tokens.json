@@ -1,0 +1,269 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. A leaf with \"var\" takes its value from that Allbirds variable's resolved entry in css-vars.json; a leaf with \"value\" carries a measured value and names the measurement in \"source\" (an anchor of raw/measurements.md, written from raw/components-computed.json). Allbirds' theme.css is a Tailwind v4 build: the palette, type scale, radii, tracking, easing and z-order are its --color-*/--text-*/--radius-*/--z-* theme variables; component tokens quote the measured styles where a variable does not carry the value. One light theme only.",
+ "core": {
+  "palette": {
+   "natural-white": {
+    "DEFAULT": { "var": "--color-natural-white", "type": "color", "description": "The brand's warm beige, from undyed wool; category cards and the footer-tinted bands" },
+    "25": { "var": "--color-natural-white-25", "type": "color" },
+    "60": { "var": "--color-natural-white-60", "type": "color", "description": "The upsell band in the cart drawer and other muted fills" },
+    "60-05": { "var": "--color-natural-white-60-0.5", "type": "color", "description": "50% translucent veil of natural-white-60" }
+   },
+   "ink": {
+    "DEFAULT": { "var": "--color-black", "type": "color", "description": "Allbirds' near-black (#212121, not pure black): footer, promo bar, primary buttons, body text" },
+    "charcoal": { "var": "--color-charcoal", "type": "color" },
+    "light-charcoal": { "var": "--color-light-charcoal", "type": "color", "description": "Secondary text and quiet borders" },
+    "light-charcoal-03": { "var": "--color-light-charcoal-0.3", "type": "color", "description": "19% wash: pressed state of chips and ghost fills" },
+    "light-charcoal-07": { "var": "--color-light-charcoal-0.7", "type": "color" },
+    "khaki": { "var": "--color-khaki", "type": "color" },
+    "midnight": { "var": "--color-midnight", "type": "color" }
+   },
+   "gray": {
+    "100": { "var": "--color-gray-100", "type": "color" },
+    "200": { "var": "--color-gray-200", "type": "color" },
+    "300": { "var": "--color-gray-300", "type": "color" },
+    "400": { "var": "--color-gray-400", "type": "color" },
+    "500": { "var": "--color-gray-500", "type": "color" },
+    "600": { "var": "--color-gray-600", "type": "color" },
+    "700": { "var": "--color-gray-700", "type": "color" },
+    "900": { "var": "--color-gray-900", "type": "color" }
+   },
+   "neutral": {
+    "500": { "var": "--color-neutral-500", "type": "color" },
+    "600": { "var": "--color-neutral-600", "type": "color" },
+    "800": { "var": "--color-neutral-800", "type": "color" },
+    "900": { "var": "--color-neutral-900", "type": "color" }
+   },
+   "red": {
+    "DEFAULT": { "var": "--color-red", "type": "color", "description": "Brand red (#9c0f0f): sale and error text" },
+    "500": { "var": "--color-red-500", "type": "color" },
+    "600": { "var": "--color-red-600", "type": "color" },
+    "700": { "var": "--color-red-700", "type": "color" }
+   },
+   "green": {
+    "DEFAULT": { "var": "--color-green", "type": "color", "description": "Deep brand green (#10714e): sustainability badges and confirmation copy" },
+    "500": { "var": "--color-green-500", "type": "color" },
+    "600": { "var": "--color-green-600", "type": "color" }
+   },
+   "amber": {
+    "100": { "var": "--color-amber-100", "type": "color" },
+    "800": { "var": "--color-amber-800", "type": "color" }
+   },
+   "yellow": {
+    "50": { "var": "--color-yellow-50", "type": "color" },
+    "400": { "var": "--color-yellow-400", "type": "color" },
+    "500": { "var": "--color-yellow-500", "type": "color" },
+    "700": { "var": "--color-yellow-700", "type": "color" },
+    "800": { "var": "--color-yellow-800", "type": "color" }
+   },
+   "blue": {
+    "500": { "var": "--color-blue-500", "type": "color" },
+    "600": { "var": "--color-blue-600", "type": "color" }
+   },
+   "orange-500": { "var": "--color-orange-500", "type": "color" },
+   "pink-300": { "var": "--color-pink-300", "type": "color" },
+   "purple-500": { "var": "--color-purple-500", "type": "color" },
+   "white": { "var": "--color-white", "type": "color" },
+   "stroke": { "var": "--color-stroke", "type": "color", "description": "The shared hairline (#cdcdcd): size chips, card borders, dividers" }
+  },
+  "fontFamily": {
+   "sans": { "var": "--font-sans", "type": "fontFamily", "description": "Geograph, Allbirds' custom grotesque, on everything but display copy" },
+   "serif": { "var": "--font-serif", "type": "fontFamily", "description": "Self Modern, the brand serif reserved for headlines and product titles" },
+   "mono": { "var": "--font-mono", "type": "fontFamily" }
+  },
+  "fontWeight": {
+   "light": { "var": "--font-weight-light", "type": "fontWeight" },
+   "normal": { "var": "--font-weight-normal", "type": "fontWeight" },
+   "medium": { "var": "--font-weight-medium", "type": "fontWeight" },
+   "semibold": { "var": "--font-weight-semibold", "type": "fontWeight" },
+   "bold": { "var": "--font-weight-bold", "type": "fontWeight" }
+  },
+  "fontSize": {
+   "xs": { "var": "--text-xs", "type": "dimension" },
+   "sm": { "var": "--text-sm", "type": "dimension" },
+   "base": { "var": "--text-base", "type": "dimension" },
+   "lg": { "var": "--text-lg", "type": "dimension" },
+   "xl": { "var": "--text-xl", "type": "dimension" },
+   "2xl": { "var": "--text-2xl", "type": "dimension" },
+   "3xl": { "var": "--text-3xl", "type": "dimension" },
+   "4xl": { "var": "--text-4xl", "type": "dimension" },
+   "fluid-xs": { "var": "--text-fluid-xs", "type": "dimension", "description": "Fluid sizes resolve at 1440px viewport; they scale with the window" },
+   "fluid-sm": { "var": "--text-fluid-sm", "type": "dimension" },
+   "fluid-md": { "var": "--text-fluid-md", "type": "dimension" },
+   "fluid-lg": { "var": "--text-fluid-lg", "type": "dimension" },
+   "fluid-xl": { "var": "--text-fluid-xl", "type": "dimension" }
+  },
+  "lineHeight": {
+   "tight": { "var": "--leading-tight", "type": "number" },
+   "normal": { "var": "--leading-normal", "type": "number" },
+   "relaxed": { "var": "--leading-relaxed", "type": "number" },
+   "text-xs": { "var": "--text-xs--line-height", "type": "number" },
+   "text-sm": { "var": "--text-sm--line-height", "type": "number" },
+   "text-base": { "var": "--text-base--line-height", "type": "number" },
+   "text-3xl": { "var": "--text-3xl--line-height", "type": "number" }
+  },
+  "tracking": {
+   "wide": { "var": "--tracking-wide", "type": "dimension", "description": "0.39px — price and label copy" },
+   "wider": { "var": "--tracking-wider", "type": "dimension", "description": "0.8px — buttons" },
+   "widest": { "var": "--tracking-widest", "type": "dimension", "description": "1.6px — nav links and overlines" }
+  },
+  "spacing": {
+   "base": { "var": "--spacing", "type": "dimension", "description": "Tailwind's 4px base; paddings are multiples" }
+  },
+  "radius": {
+   "xs": { "var": "--radius-xs", "type": "dimension" },
+   "sm": { "var": "--radius-sm", "type": "dimension" },
+   "md": { "var": "--radius-md", "type": "dimension" },
+   "lg": { "var": "--radius-lg", "type": "dimension" },
+   "xl": { "var": "--radius-xl", "type": "dimension" },
+   "2xl": { "var": "--radius-2xl", "type": "dimension" },
+   "3xl": { "var": "--radius-3xl", "type": "dimension" },
+   "card": { "var": "--radius", "type": "dimension", "description": "The 20px signature corner on hero and photo cards" },
+   "pill": { "value": "9999px", "type": "dimension", "source": "measured raw/measurements.md#cta-primary (border-radius computes to a clamped 3.36e7px = rounded-full)", "description": "Buttons, swatches, chips and the email field are fully rounded" }
+  },
+  "easing": {
+   "default": { "value": [0.4, 0, 0.2, 1], "type": "cubicBezier", "source": "css-var --default-transition-timing-function", "description": "Tailwind's default, and what buttons use" },
+   "out": { "value": [0, 0, 0.2, 1], "type": "cubicBezier", "source": "css-var --ease-out" },
+   "in-out": { "value": [0.4, 0, 0.2, 1], "type": "cubicBezier", "source": "css-var --ease-in-out" },
+   "sine-in": { "value": [0.12, 0, 0.39, 0], "type": "cubicBezier", "source": "css-var --ease-sine-in" },
+   "sine-out": { "value": [0.61, 1, 0.88, 1], "type": "cubicBezier", "source": "css-var --ease-sine-out" },
+   "sine-in-out": { "value": [0.37, 0, 0.63, 1], "type": "cubicBezier", "source": "css-var --ease-sine-in-out", "description": "The measured 0.2s chip transition uses this" },
+   "snappy": { "value": [0.2, 0, 0, 1], "type": "cubicBezier", "source": "css-var --ease-snappy", "description": "Drawers and takeovers slide on this" }
+  },
+  "duration": {
+   "default": { "value": "150ms", "type": "duration", "source": "css-var --default-transition-duration" },
+   "chip": { "value": "200ms", "type": "duration", "source": "measured raw/measurements.md#size-button (transition-duration 0.2s)" }
+  },
+  "zIndex": {
+   "background": { "var": "--z-background", "type": "number" },
+   "base": { "var": "--z-base", "type": "number" },
+   "content": { "var": "--z-content", "type": "number" },
+   "swiper-button": { "var": "--z-swiper-button", "type": "number" },
+   "background-overlay": { "var": "--z-background-overlay", "type": "number" },
+   "floating-card": { "var": "--z-floating-card", "type": "number" },
+   "filter-dropdown": { "var": "--z-filter-dropdown", "type": "number" },
+   "floating-widget": { "var": "--z-floating-widget", "type": "number" },
+   "navigation-content": { "var": "--z-navigation-content", "type": "number" },
+   "header": { "var": "--z-header", "type": "number" },
+   "global-banner": { "var": "--z-global-banner", "type": "number" },
+   "takeover": { "var": "--z-takeover", "type": "number", "description": "Cart drawer, mobile menu, filter sheet and the geo dialog all sit on this layer" }
+  },
+  "container": {
+   "sm": { "var": "--container-sm", "type": "dimension" },
+   "md": { "var": "--container-md", "type": "dimension" },
+   "lg": { "var": "--container-lg", "type": "dimension" },
+   "2xl": { "var": "--container-2xl", "type": "dimension" },
+   "3xl": { "var": "--container-3xl", "type": "dimension" },
+   "4xl": { "var": "--container-4xl", "type": "dimension" },
+   "5xl": { "var": "--container-5xl", "type": "dimension" },
+   "7xl": { "var": "--container-7xl", "type": "dimension" }
+  },
+  "typography": {
+   "display": { "value": { "fontFamily": "{fontFamily.serif}", "fontWeight": 400, "fontSize": "54px", "lineHeight": "64px", "letterSpacing": "0px" }, "type": "typography", "source": "measured raw/measurements.md#hero-title (fluid, at 1440px)", "description": "Serif display on hero and story headers" },
+   "section-title": { "value": { "fontFamily": "{fontFamily.serif}", "fontWeight": 400, "fontSize": "40px", "lineHeight": "60px", "letterSpacing": "0px" }, "type": "typography", "source": "measured raw/measurements.md#section-title" },
+   "product-title": { "value": { "fontFamily": "{fontFamily.serif}", "fontWeight": 400, "fontSize": "30px", "lineHeight": "36px", "letterSpacing": "0px" }, "type": "typography", "source": "measured raw/measurements.md#pdp-title" },
+   "body": { "value": { "fontFamily": "{fontFamily.sans}", "fontWeight": 400, "fontSize": "16px", "lineHeight": "24px", "letterSpacing": "0px" }, "type": "typography", "source": "measured raw/measurements.md#accordion, #footer" },
+   "price": { "value": { "fontFamily": "{fontFamily.sans}", "fontWeight": 500, "fontSize": "18px", "lineHeight": "28px", "letterSpacing": "0.9px" }, "type": "typography", "source": "measured raw/measurements.md#pdp-price", "description": "Uppercase tracking on the PDP price" },
+   "nav-link": { "value": { "fontFamily": "{fontFamily.sans}", "fontWeight": 500, "fontSize": "12px", "lineHeight": "16px", "letterSpacing": "0.6px" }, "type": "typography", "source": "measured raw/measurements.md#nav-link", "description": "Uppercase xs medium" },
+   "button-label": { "value": { "fontFamily": "{fontFamily.sans}", "fontWeight": 500, "fontSize": "12px", "lineHeight": "15px", "letterSpacing": "0.6px" }, "type": "typography", "source": "measured raw/measurements.md#atc-button, #cta-primary", "description": "Uppercase 12px medium on every button" },
+   "field": { "value": { "fontFamily": "{fontFamily.sans}", "fontWeight": 400, "fontSize": "16px", "lineHeight": "24px", "letterSpacing": "0px" }, "type": "typography", "source": "measured raw/measurements.md#email-input" }
+  }
+ },
+ "light": {
+  "background": {
+   "page": { "value": "{palette.natural-white.25}", "type": "color", "source": "measured raw/measurements.md#footer (ancestor paint); the store's default page fill", "description": "Warm off-white the whole storefront sits on" },
+   "surface": { "value": "{palette.white}", "type": "color", "source": "measured raw/measurements.md#header, #cart-drawer, #filter-sheet", "description": "Header bar, drawers, filter sheet, upsell cards" },
+   "ink": { "value": "{palette.ink.DEFAULT}", "type": "color", "source": "measured raw/measurements.md#footer, #m-header", "description": "Footer, mobile header bar and the promo strip fill" },
+   "muted": { "value": "{palette.natural-white.60}", "type": "color", "source": "measured raw/measurements.md#cart-upsell-card (band behind RECOMMENDED FOR YOU)", "description": "Beige band fills (drawer upsells, inset cards)" },
+   "pill-dark": { "value": "#242424", "type": "color", "source": "measured raw/measurements.md#tooltip-pill (rgb(36,36,36))", "description": "The gallery tooltip pill" }
+  },
+  "text": {
+   "primary": { "value": "{palette.ink.DEFAULT}", "type": "color", "source": "measured raw/measurements.md#nav-link, #atc-button border, #pdp-price", "description": "rgb(33,33,33) on all UI copy" },
+   "secondary": { "value": "{palette.ink.light-charcoal}", "type": "color", "source": "measured raw/measurements.md#fit-guide (rgb(87,87,87))", "description": "Muted labels and underline links" },
+   "inverse": { "value": "{palette.white}", "type": "color", "source": "measured raw/measurements.md#promo-bar, #atc-button, #hero" },
+   "disabled": { "value": "rgba(87, 87, 87, 0.7)", "type": "color", "source": "measured raw/measurements.md#size-button-disabled (struck-through chip text at 70% light-charcoal)" }
+  },
+  "border": {
+   "stroke": { "value": "{palette.stroke}", "type": "color", "source": "measured raw/measurements.md#size-button (1px #cdcdcd)", "description": "The 1px hairline on chips, cards and inputs" },
+   "divider": { "value": "#ece9e2", "type": "color", "source": "measured raw/measurements.md#cart-upsell-card (1px ≈ natural-white-60)", "description": "Drawer row separators" },
+   "ink": { "value": "{palette.ink.DEFAULT}", "type": "color", "source": "measured raw/measurements.md#email-input (1px #212121)", "description": "Field and active outlines" },
+   "inverse": { "value": "{palette.white}", "type": "color", "source": "measured raw/measurements.md#cta-primary, #cta-outline-white" }
+  },
+  "action": {
+   "primary": {
+    "background": { "value": "{palette.ink.DEFAULT}", "type": "color", "source": "measured raw/measurements.md#atc-button" },
+    "text": { "value": "{palette.white}", "type": "color", "source": "measured raw/measurements.md#atc-button" },
+    "border": { "value": "{palette.ink.DEFAULT}", "type": "color", "source": "measured raw/measurements.md#atc-button (1px)" }
+   },
+   "secondary": {
+    "background": { "value": "{palette.white}", "type": "color", "source": "measured raw/measurements.md#cta-primary" },
+    "text": { "value": "{palette.ink.DEFAULT}", "type": "color", "source": "measured raw/measurements.md#cta-primary" },
+    "border": { "value": "{palette.white}", "type": "color", "source": "measured raw/measurements.md#cta-primary (1px)" },
+    "hover-background": { "value": "{palette.ink.DEFAULT}", "type": "color", "source": "measured raw/measurements.md#cta-primary (hover)", "description": "White pill inverts to ink on hover" },
+    "hover-text": { "value": "{palette.white}", "type": "color", "source": "measured raw/measurements.md#cta-primary (hover)" }
+   },
+   "outline-inverse": {
+    "text": { "value": "{palette.white}", "type": "color", "source": "measured raw/measurements.md#cta-outline-white" },
+    "border": { "value": "{palette.white}", "type": "color", "source": "measured raw/measurements.md#cta-outline-white (1px)" }
+   },
+   "pressed-fill": { "value": "{palette.ink.light-charcoal-03}", "type": "color", "source": "measured raw/measurements.md#size-button (pressed)", "description": "The 19% light-charcoal wash chips take when held" }
+  },
+  "component": {
+   "header": {
+    "background": { "value": "{background.surface}", "type": "color", "source": "measured raw/measurements.md#header" },
+    "radius": { "value": "{radius.xl}", "type": "dimension", "source": "measured raw/measurements.md#header (12px)" },
+    "height": { "value": "48px", "type": "dimension", "source": "measured raw/measurements.md#header" }
+   },
+   "promo-bar": {
+    "background": { "value": "{background.ink}", "type": "color", "source": "measured raw/measurements.md#promo-bar (white text on the ink strip)" },
+    "text": { "value": "{text.inverse}", "type": "color", "source": "measured raw/measurements.md#promo-bar" },
+    "height": { "value": "32px", "type": "dimension", "source": "measured raw/measurements.md#promo-bar" }
+   },
+   "mobile-header": {
+    "background": { "value": "{background.ink}", "type": "color", "source": "measured raw/measurements.md#m-header" },
+    "height": { "value": "46px", "type": "dimension", "source": "measured raw/measurements.md#m-header" }
+   },
+   "drawer": {
+    "background": { "value": "{background.surface}", "type": "color", "source": "measured raw/measurements.md#cart-drawer" },
+    "width": { "value": "531px", "type": "dimension", "source": "measured raw/measurements.md#cart-drawer (max-w-[531px])" }
+   },
+   "size-chip": {
+    "border": { "value": "{border.stroke}", "type": "color", "source": "measured raw/measurements.md#size-button" },
+    "radius": { "value": "{radius.xs}", "type": "dimension", "source": "measured raw/measurements.md#size-button (2px)" },
+    "height": { "value": "42px", "type": "dimension", "source": "measured raw/measurements.md#size-button" }
+   },
+   "swatch": {
+    "size": { "value": "36px", "type": "dimension", "source": "measured raw/measurements.md#swatch", "description": "Circular colour swatches in the picker" }
+   },
+   "upsell-card": {
+    "background": { "value": "{background.surface}", "type": "color", "source": "measured raw/measurements.md#cart-upsell-card" },
+    "radius": { "value": "10px", "type": "dimension", "source": "measured raw/measurements.md#cart-upsell-card" },
+    "border": { "value": "{border.divider}", "type": "color", "source": "measured raw/measurements.md#cart-upsell-card" }
+   },
+   "field": {
+    "background": { "value": "{background.surface}", "type": "color", "source": "measured raw/measurements.md#email-input" },
+    "border": { "value": "{border.ink}", "type": "color", "source": "measured raw/measurements.md#email-input" },
+    "radius": { "value": "{radius.pill}", "type": "dimension", "source": "measured raw/measurements.md#email-input" },
+    "height": { "value": "42px", "type": "dimension", "source": "measured raw/measurements.md#email-input" }
+   },
+   "button": {
+    "radius": { "value": "{radius.pill}", "type": "dimension", "source": "measured raw/measurements.md#cta-primary, #atc-button (rounded-full)" },
+    "height": { "value": "49px", "type": "dimension", "source": "measured raw/measurements.md#atc-button" },
+    "height-sm": { "value": "33px", "type": "dimension", "source": "measured raw/measurements.md#cta-primary" }
+   },
+   "accordion": {
+    "padding-y": { "value": "24px", "type": "dimension", "source": "measured raw/measurements.md#accordion" }
+   }
+  },
+  "elevation": {
+   "header": { "value": [{ "color": "rgba(0, 0, 0, 0.1)", "offsetX": "0px", "offsetY": "1px", "blur": "3px", "spread": "0px", "inset": false }, { "color": "rgba(0, 0, 0, 0.1)", "offsetX": "0px", "offsetY": "1px", "blur": "2px", "spread": "-1px", "inset": false }], "type": "shadow", "source": "measured raw/measurements.md#header (shadow-sm)" },
+   "sheet": { "value": [{ "color": "rgba(0, 0, 0, 0.1)", "offsetX": "0px", "offsetY": "10px", "blur": "15px", "spread": "-3px", "inset": false }, { "color": "rgba(0, 0, 0, 0.1)", "offsetX": "0px", "offsetY": "4px", "blur": "6px", "spread": "-4px", "inset": false }], "type": "shadow", "source": "measured raw/measurements.md#filter-sheet (shadow-lg)" },
+   "drawer": { "value": [{ "color": "rgba(0, 0, 0, 0.1)", "offsetX": "0px", "offsetY": "20px", "blur": "25px", "spread": "-5px", "inset": false }, { "color": "rgba(0, 0, 0, 0.1)", "offsetX": "0px", "offsetY": "8px", "blur": "10px", "spread": "-6px", "inset": false }], "type": "shadow", "source": "measured raw/measurements.md#cart-drawer (shadow-xl)" },
+   "backdrop": { "value": "rgba(0, 0, 0, 0.5)", "type": "color", "source": "measured raw/components-computed.json _meta (z-takeover bg-black/50)", "description": "The dim behind drawers and dialogs" }
+  },
+  "status": {
+   "error": { "value": "{palette.red.DEFAULT}", "type": "color", "source": "css-var --color-red", "description": "Sale/error copy" },
+   "success": { "value": "{palette.green.DEFAULT}", "type": "color", "source": "css-var --color-green", "description": "Free-shipping meter and sustainability claims" },
+   "sold-out": { "value": "{text.disabled}", "type": "color", "source": "measured raw/measurements.md#size-button-disabled" }
+  }
+ }
+}

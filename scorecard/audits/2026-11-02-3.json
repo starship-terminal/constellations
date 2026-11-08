@@ -926,7 +926,7 @@
    "grades": {
     "F1": {
      "grade": "missing",
-     "evidence": "tokens/linear.tokens.json has no primitive palette at all: core holds type, radius, space, size, motion, breakpoints and z-index, and dark/light/web/brand are flat semantic or single-value colours, so no hue (neutral, accent, status) has a ramp."
+     "evidence": "tokens/tokens-studio.json has no primitive palette at all: core holds type, radius, space, size, motion, breakpoints and z-index, and dark/light/web/brand are flat semantic or single-value colours, so no hue (neutral, accent, status) has a ramp."
     },
     "F2": {
      "grade": "meets",
@@ -1382,11 +1382,11 @@
     },
     "C1": {
      "grade": "meets",
-     "evidence": "No components.md exists (audit shape); counting README 'Coverage' rows plus evidence/component-findings.md entries backed by screenshots or measured values, 18 of 19 are present and switch is absent (the product has none). Table, avatar, toast, list row, link and text area have only a coverage row plus a screenshot or a measurement, not a written spec; graded on accepting those as entries."
+     "evidence": "Counting README 'Coverage' rows plus components.md entries (moved from evidence/component-findings.md) backed by screenshots or measured values, 18 of 19 are present and switch is absent (the product has none). Table, avatar, toast, list row, link and text area have only a coverage row plus a screenshot or a measurement, not a written spec; graded on accepting those as entries."
     },
     "C2": {
      "grade": "partly",
-     "evidence": "Focus-visible (23 crops), button disabled/loading/pressed-selected (05-buttons.png), text field error/disabled, checkbox indeterminate/disabled and tab selected are captured. Hover is shot nowhere and component-findings.md names hover tokens only for buttons, tabs and tags (not TextField, Select, Checkbox); select and text area error/disabled, radio disabled and tab disabled are not captured."
+     "evidence": "Focus-visible (23 crops), button disabled/loading/pressed-selected (05-buttons.png), text field error/disabled, checkbox indeterminate/disabled and tab selected are captured. Hover is shot nowhere and components.md names hover tokens only for buttons, tabs and tags (not TextField, Select, Checkbox); select and text area error/disabled, radio disabled and tab disabled are not captured."
     },
     "C3": {
      "grade": "meets",
@@ -1394,7 +1394,7 @@
     },
     "C4": {
      "grade": "partly",
-     "evidence": "Of the 12 entries in evidence/component-findings.md, 6 (Button, Badge, Select, Card, Banner, Tabs) use only token names; Tag, TextField, Checkbox/Radio, Modal, Popover and Tooltip mix in raw px, several of which duplicate package tokens (Modal 620/380/980px vs core.layout.modal-width*, choice 18/20px vs size.choice-control, Tag 24px vs size.tag-large-min-height). README 'Buttons' also gives heights as raw px."
+     "evidence": "Of the 12 entries in components.md, 6 (Button, Badge, Select, Card, Banner, Tabs) use only token names; Tag, TextField, Checkbox/Radio, Modal, Popover and Tooltip mix in raw px, several of which duplicate package tokens (Modal 620/380/980px vs core.layout.modal-width*, choice 18/20px vs size.choice-control, Tag 24px vs size.tag-large-min-height). README 'Buttons' also gives heights as raw px."
     },
     "C5": {
      "grade": "na",
@@ -1418,7 +1418,7 @@
     },
     "K1": {
      "grade": "partly",
-     "evidence": "README covers what was captured, how (pinned commit, package versions, headless Chromium) and caveats, and 8 of 10 spot checks held (534 icons, 23 focus crops, 14x16 ramps, 894/904 aliases, 1,812 tokens, radius/breakpoint/z-index values, 9 dark shots). But it tells readers to unzip polaris-design-library.zip, which is not in the package (catalog lists it as excluded), and claims component-findings.md 'gives each component's hover tokens' when TextField, Select and Checkbox entries do not name them; there is no dedicated what-to-distrust section."
+     "evidence": "README covers what was captured, how (pinned commit, package versions, headless Chromium) and caveats, and 8 of 10 spot checks held (534 icons, 23 focus crops, 14x16 ramps, 894/904 aliases, 1,812 tokens, radius/breakpoint/z-index values, 9 dark shots). But it tells readers to unzip polaris-design-library.zip, which is not in the package (catalog lists it as excluded), and claims components.md 'gives each component's hover tokens' when TextField, Select and Checkbox entries do not name them; there is no dedicated what-to-distrust section."
     },
     "K2": {
      "grade": "meets",

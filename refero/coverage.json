@@ -3,11 +3,11 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 42,
-    "system_domains": 34,
-    "matched_domains": 16,
-    "missing_domains": 417,
-    "system_domains_absent_from_catalog": 18
+    "system_packages": 48,
+    "system_domains": 40,
+    "matched_domains": 17,
+    "missing_domains": 416,
+    "system_domains_absent_from_catalog": 23
   },
   "matched": {
     "allbirds.com": {
@@ -51,6 +51,23 @@
           "name": "ChatGPT for iOS",
           "url": "https://apps.apple.com/app/chatgpt/id6448311069",
           "name_match": false
+        }
+      ]
+    },
+    "attio.com": {
+      "catalog": [
+        {
+          "name": "Attio",
+          "domain": "attio.com",
+          "id": 37
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "attio",
+          "name": "Attio",
+          "url": "https://attio.com",
+          "name_match": true
         }
       ]
     },
@@ -505,13 +522,6 @@
         "name": "Asos",
         "domain": "asos.com",
         "id": 66
-      }
-    ],
-    "attio.com": [
-      {
-        "name": "Attio",
-        "domain": "attio.com",
-        "id": 37
       }
     ],
     "avnier.com": [
@@ -3281,6 +3291,22 @@
         "ios_guess": []
       }
     ],
+    "clerk.com": [
+      {
+        "slug": "clerk",
+        "name": "Clerk",
+        "url": "https://clerk.com",
+        "ios_guess": []
+      }
+    ],
+    "cloudflare.com": [
+      {
+        "slug": "cloudflare",
+        "name": "Cloudflare",
+        "url": "https://www.cloudflare.com",
+        "ios_guess": []
+      }
+    ],
     "conductor.build": [
       {
         "slug": "conductor-desktop",
@@ -3340,6 +3366,14 @@
         ]
       }
     ],
+    "metabase.com": [
+      {
+        "slug": "metabase",
+        "name": "Metabase (Edumation demo)",
+        "url": "https://www.metabase.com",
+        "ios_guess": []
+      }
+    ],
     "notion.com": [
       {
         "slug": "notion-ios",
@@ -3390,6 +3424,14 @@
         "ios_guess": []
       }
     ],
+    "sentry.io": [
+      {
+        "slug": "sentry",
+        "name": "Sentry",
+        "url": "https://sentry.io",
+        "ios_guess": []
+      }
+    ],
     "stably.ai": [
       {
         "slug": "orca-desktop",
@@ -3406,6 +3448,14 @@
         "ios_guess": [
           "Substack"
         ]
+      }
+    ],
+    "supabase.com": [
+      {
+        "slug": "supabase",
+        "name": "Supabase",
+        "url": "https://supabase.com",
+        "ios_guess": []
       }
     ],
     "superset.sh": [
