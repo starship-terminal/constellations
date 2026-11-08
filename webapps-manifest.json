@@ -24,9 +24,9 @@
         413
       ],
       "description": "Password Manager for Families, Enterprise & Business",
-      "status": "pending",
-      "package": null,
-      "notes": "",
+      "status": "captured",
+      "package": "systems/1password",
+      "notes": "public marketing surface only; the vault is credential-gated (account + secret key + master password) and out of scope. start.1password.com gates headless browsers to /unsupported, captured as the boundary",
       "batch": 1
     },
     {

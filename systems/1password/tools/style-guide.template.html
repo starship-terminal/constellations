@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1Password style guide</title>
+<meta name="description" content="1Password (1password.com) design tokens and the public site's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: agileSans, "agileSans Fallback", system-ui, sans-serif;
+  --sg-mono: agileMono, "agileMono Fallback", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 350 16px/1.5 var(--sg-sans); color: var(--text-primary); background: var(--background-page); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 300 40px/1.2 var(--sg-sans); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-secondary); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-stroke); }
+.lead { max-width: 62ch; color: var(--text-secondary); }
+.note { font-size: 13px; color: var(--text-secondary); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-secondary); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-stroke); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-secondary); }
+.typerow { display: grid; grid-template-columns: 210px 1fr; gap: 16px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--border-divider); }
+.typerow .k { font: 500 12px/1.5 var(--sg-mono); }
+.typerow .k small { display: block; color: var(--text-secondary); font-weight: 400; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-stroke); background: var(--background-surface); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-secondary); }
+/* ---- site mock ---- */
+.mock { border: 1px solid var(--border-stroke); border-radius: 12px; overflow: hidden; background: var(--background-page); }
+.promo { background: var(--background-announcement); color: var(--text-primary); font-size: 11px; text-align: left; padding: 8px 16px; display: flex; justify-content: space-between; }
+.navbar { display: flex; align-items: center; gap: 18px; height: 64px; padding: 0 20px; background: var(--background-surface); border-bottom: 1px solid var(--border-divider); font-size: 14px; }
+.navbar .wm { font-weight: 600; font-size: 15px; }
+.navbar .sp { flex: 1; }
+.pill { display: inline-flex; align-items: center; border-radius: var(--component-button-primary-radius); font-size: 14px; font-weight: 400; padding: 8px 20px; }
+.pill.primary { background: var(--component-button-primary-bg); color: var(--component-button-primary-text); }
+.pill.secondary { background: var(--component-button-secondary-bg); color: var(--component-button-secondary-text); border: 1px solid var(--component-button-secondary-border); }
+.pill.heroprim { background: var(--component-button-primary-hero-bg); color: var(--background-action); }
+.pill.heroout { background: transparent; color: var(--text-inverse); border: 1px solid var(--text-inverse); }
+.hero { background: var(--background-brand); color: var(--text-inverse); padding: 56px 40px; font-size: 40px; font-weight: 300; line-height: 1.15; }
+.hero small { display: block; font-size: 15px; font-weight: 350; opacity: .9; margin: 18px 0 22px; max-width: 46ch; }
+.seg { display: inline-flex; border: 1px solid var(--border-stroke); border-radius: 49px; overflow: hidden; font-size: 15px; }
+.seg b { padding: 10px 22px; font-weight: 400; }
+.seg b.on { background: var(--background-action); color: var(--text-inverse); }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); border: 1px solid var(--border-stroke); border-radius: 12px; overflow: hidden; font-size: 12px; }
+.cols > div { padding: 14px; border-right: 1px solid var(--border-divider); }
+.cols > div:last-child { border-right: 0; }
+.cols .k { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-secondary); display: block; margin-bottom: 6px; }
+.cols .nm { font-size: 14px; font-weight: 500; display: block; margin-bottom: 10px; }
+.cols .pill { font-size: 11px; padding: 6px 14px; margin: 4px 0 10px; }
+.cols ul { margin: 0; padding: 0 0 0 14px; color: var(--text-secondary); }
+.faqrow { display: flex; justify-content: space-between; align-items: center; padding: 14px 4px; border-bottom: 1px solid var(--border-divider); font-size: 15px; }
+.faqrow .a { color: var(--text-secondary); font-size: 13px; padding: 8px 4px 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-stroke); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>1Password style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number.</p>
+
+  <h2 class="sh">1Password, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the <b>Knox</b> design system 1password.com ships as <code>--knox-*</code> variables (background/text/border state ramps, motion, radii, the 90px button pill) plus the values measured on the live marketing site — the tan announcement strip, the white nav bar, the navy hero, the segment-selector plan pill, the pricing columns. One light theme only; nothing dark is served. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from 1password.com on 2026-11-08, signed out, in headless Chromium. Agile Sans and Agile Mono are 1Password's own variable faces and are not loaded here: the sans falls back to the system face, the mono to ui-monospace. The vault behind sign-in was never reached and is not represented.</p>
+
+  <h2 class="sh">The site chrome</h2>
+  <p class="lead">A tan announcement strip, then the white <code>header-navigation</code> bar: wordmark, nav-group flyout buttons, Pricing link, Talk to sales and the <code>secure-blue</code> Get started free pill. Below it, the <code>midnight-navy</code> gradient hero carries the 88px light display headline.</p>
+  <div class="mock">
+    <div class="promo"><span>1Password for Agents: Give AI Agents access, not your passwords. <u>Learn more</u></span><span>Sign in</span></div>
+    <div class="navbar"><span class="wm">1Password</span><span>Business &#8964;</span><span>Personal &#8964;</span><span>Developers</span><span>Partners &#8964;</span><span>Resources &#8964;</span><span>Pricing</span><span class="sp"></span><span>Talk to sales</span><span class="pill primary">Get started free</span></div>
+    <div class="hero">Secure access for every human and AI agent
+      <small>Visibility and control for humans and AI agents, built on the most trusted vault for identities, credentials, and secrets.</small>
+      <span class="pill heroprim">Talk to sales</span> <span class="pill heroout">View plans</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">The <code>segment-selector</code> plan pill switches the grid between Enterprise, Business and Individual; each column is a product with its blurb, a Request a quote pill and a feature list. FAQ rows expand below.</p>
+  <div class="mock" style="padding:20px">
+    <div style="font:300 34px/1.2 var(--sg-sans);margin-bottom:14px">Pricing and plans for <span class="seg"><b class="on">Enterprise</b><b>Business</b><b>Individual</b></span></div>
+    <div class="cols">
+      <div><span class="k">Platform</span><span class="nm">Unified Access</span><span class="pill secondary">Request a quote</span><ul><li>One vault for every identity</li><li>Shadow AI and SaaS discovery</li></ul></div>
+      <div><span class="k">Product</span><span class="nm">Enterprise Password Manager</span><span class="pill primary">Request a quote</span><ul><li>Protect apps outside SSO</li><li>Granular vault permissions</li></ul></div>
+      <div><span class="k">Product</span><span class="nm">SaaS Manager</span><span class="pill primary">Request a quote</span><ul><li>Control variable AI spend</li><li>SaaS &amp; AI app discovery</li></ul></div>
+    </div>
+    <div class="faqrow"><span>Can I buy 1Password products separately?</span><span>+</span></div>
+    <div class="faqrow"><span class="a">Yes. Every product can be licensed on its own or as part of Unified Access.</span><span></span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">Knox paints in named roles: <code>secure-blue</code> (#0364d3) is the action colour, <code>midnight-navy</code> (#1a2860) the brand field, ink is #303136 rather than pure black. Every accent ships default/hover/pressed/weak steps.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">One voice: <b>Agile Sans Variable</b> for everything, pulled thin (300) for the 88px display and page titles, and held at the variable-font 350 for body and nav. <b>Agile Mono</b> is the code face.</p>
+  <div id="type-out"></div>
+
+  <h2 class="sh">Radius and geometry</h2>
+  <p class="lead">Knox has three shapes: <code>corner-radius.large</code> 90px (the pill profile on buttons, coachmarks and the plan selector), <code>medium</code> 12px (cards, callouts, disclosures) and <code>small</code> 4px (fields, checkboxes).</p>
+  <div id="radius-out"></div>
+
+  <h2 class="sh">Motion and layers</h2>
+  <p class="lead">Knox motion is measured: a 17ms-500ms duration scale and four named beziers; the CTA colour transition runs at the 300ms slow step, and the nav flyout is a <code>transition-all duration-300</code> panel under the z-50 header.</p>
+  <div id="motion-out" class="kv"></div>
+  <div id="z-out" class="kv" style="margin-top:12px"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live CSSOM and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.palette)) {
+    const items = flat(grp, 'palette.' + g + '.').filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const g of ['background', 'text', 'border', 'status']) {
+    const items = flat(TOK.light[g] || {}, g + '.').filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">light.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v;
+    const ref = (x) => String(x).replace(/[{}]/g, '');
+    const fam = /mono/.test(ref(v.fontFamily)) ? 'var(--sg-mono)' : 'var(--sg-sans)';
+    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(ref(v.fontSize))} / ${esc(ref(v.lineHeight))} · w ${esc(String(v.fontWeight))}</small></div><div class="sample" style="font-family:${fam};font-size:${esc(ref(v.fontSize))};line-height:${esc(ref(v.lineHeight))};font-weight:${v.fontWeight}">The quick brown fox jumps over the lazy dog</div></div>`;
+  }
+  $('#type-out').innerHTML = h;
+})();
+
+(function radius() {
+  let r = '';
+  for (const [n, t] of flat(TOK.core.radius, 'radius.')) r += `<div class="bx" style="border-radius:min(var(${cssname(n)}), 24px)">${esc(n.replace('radius.', ''))}<br>${esc(t.v)}</div>`;
+  $('#radius-out').innerHTML = r;
+})();
+
+(function misc() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(',') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#motion-out').innerHTML = m;
+  let z = '';
+  for (const [n, t] of flat(TOK.core.zIndex || {}, 'zIndex.').sort((a, b) => a[1].v - b[1].v)) z += `<div><b>${esc(n.replace('zIndex.', ''))}</b> <span>${esc(t.v)}</span></div>`;
+  $('#z-out').innerHTML = z;
+  let e = '';
+  for (const [n, t] of flat(TOK.light.elevation || {}, 'elevation.')) e += `<div><b>${esc(n.replace('elevation.', ''))}</b> <span>${esc(JSON.stringify(t.v).slice(0, 90))}</span></div>`;
+  $('#elev-out').innerHTML = e;
+})();
+</script>
+</body>
+</html>
