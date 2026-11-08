@@ -219,9 +219,9 @@
         1432
       ],
       "description": "Comfortable, Sustainable Shoes & Apparel",
-      "status": "pending",
-      "package": null,
-      "notes": "",
+      "status": "captured",
+      "package": "allbirds",
+      "notes": "captured signed out at 1440x900 + 390x844; systems/allbirds; PR #438",
       "batch": 1
     },
     {
