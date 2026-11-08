@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/e8c4206d-9a2a-4c08-9524-6f14a25e792f",
   "source_url": "https://theverge.com",
   "extracted_at": "2026-06-03T18:39:56.188Z",
-  "fetched_at": "2026-10-20T08:22:34Z",
+  "fetched_at": "2026-11-08T04:20:59Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e00eae7c-b2fb-4683-93ff-c092aa07e13f.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ac6fc530-850b-4284-b1ff-ef752ca3ec30.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/43e2d081-4f11-4b75-a4bf-8735c8743ef8.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/288ca6f0-265e-43d1-b2ac-6e5f70f4adca.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

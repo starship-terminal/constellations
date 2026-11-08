@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/6bc9448b-5d39-4aba-9007-25c7a2aedbad",
   "source_url": "https://relate.app",
   "extracted_at": "2026-06-03T22:09:31.766Z",
-  "fetched_at": "2026-10-20T08:23:21Z",
+  "fetched_at": "2026-11-08T04:20:44Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b88128ed-ebb1-4898-bc1b-c288418bdad9.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

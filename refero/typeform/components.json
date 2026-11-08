@@ -1,0 +1,65 @@
+[
+  {
+    "html": "<div style=\"--color-aubergine-ink:#2a222b;--color-deep-plum:#3e3040;--color-violet-mist:#9454ab;--color-lavender-whisper:#ddb7f0;--color-cream-canvas:#faf9fb;--color-pure-white:#ffffff;--color-charcoal:#222222;--color-slate-mid:#564b58;--color-ash:#655d67;--color-fog:#837a85;--color-mist:#d4d1d5;--color-parchment:#f5f3f6;--font-tobias:'Playfair Display',Georgia,serif;--font-twk-lausanne:'Inter',system-ui,sans-serif;width:600px;box-sizing:border-box;font-family:var(--font-twk-lausanne);\"><div style=\"background:var(--color-aubergine-ink);padding:14px 48px;display:flex;align-items:center;justify-content:center;position:relative;min-height:48px;\"><p style=\"margin:0;font-family:var(--font-twk-lausanne);font-size:15px;font-weight:400;color:var(--color-cream-canvas);line-height:1.4;text-align:center;font-feature-settings:'clig','liga','ss01','ss11';\">Don't just collect leads\u2014close them.&nbsp;<a href=\"#\" style=\"color:var(--color-cream-canvas);text-decoration:underline;font-family:var(--font-twk-lausanne);font-size:15px;font-weight:400;\">Learn more about Typeform for Growth.</a></p><button style=\"position:absolute;right:20px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;padding:4px;display:flex;align-items:center;justify-content:center;\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M12 4L4 12M4 4L12 12\" stroke=\"#faf9fb\" stroke-width=\"1.5\" stroke-linecap=\"round\"/></svg></button></div></div>",
+    "name": "Announcement Banner",
+    "role": "",
+    "description": ""
+  },
+  {
+    "html": "<div style=\"--color-aubergine-ink:#2a222b;--color-deep-plum:#3e3040;--color-violet-mist:#9454ab;--color-lavender-whisper:#ddb7f0;--color-cream-canvas:#faf9fb;--color-pure-white:#ffffff;--color-charcoal:#222222;--color-slate-mid:#564b58;--color-ash:#655d67;--color-fog:#837a85;--color-mist:#d4d1d5;--color-parchment:#f5f3f6;--font-tobias:'Playfair Display',Georgia,serif;--font-twk-lausanne:'Inter',system-ui,sans-serif;width:600px;box-sizing:border-box;font-family:var(--font-twk-lausanne);background:var(--color-cream-canvas);padding:56px 48px;\"><div style=\"display:flex;gap:32px;align-items:flex-start;\"><div style=\"flex:1;min-width:0;\"><p style=\"margin:0 0 16px 0;font-family:var(--font-twk-lausanne);font-size:13px;font-weight:400;color:var(--color-violet-mist);text-transform:uppercase;letter-spacing:0.1em;font-feature-settings:'clig','liga','ss01','ss11';\">Data Collection</p><h2 style=\"margin:0 0 20px 0;font-family:var(--font-tobias);font-size:40px;font-weight:400;color:var(--color-aubergine-ink);line-height:1.08;letter-spacing:-1.2px;font-feature-settings:'clig','liga','ss01','ss11';\">Get 3.5x more data with a form expert</h2><p style=\"margin:0 0 32px 0;font-family:var(--font-twk-lausanne);font-size:16px;font-weight:400;color:var(--color-ash);line-height:1.49;font-feature-settings:'clig','liga','ss01','ss11';\">Backed by over a decade of experience, Typeform AI helps you build expertly-designed, best-practice forms proven to get more responses.</p><a href=\"#\" style=\"display:inline-block;background:var(--color-aubergine-ink);color:var(--color-cream-canvas);font-family:var(--font-twk-lausanne);font-size:16px;font-weight:400;padding:10px 24px;border-radius:12px;text-decoration:none;font-feature-settings:'clig','liga','ss01','ss11';\">Get started\u2014it's free</a></div><div style=\"width:180px;flex-shrink:0;\"><div style=\"width:180px;height:220px;background:linear-gradient(145deg,#f0eaf8,#e8dff4);border-radius:24px;display:flex;align-items:center;justify-content:center;\"><div style=\"width:130px;\"><div style=\"background:rgba(255,255,255,0.7);border-radius:8px;padding:10px 12px;margin-bottom:8px;\"><div style=\"height:6px;background:#c8b8d8;border-radius:3px;width:80%;margin-bottom:5px;\"></div><div style=\"height:6px;background:#c8b8d8;border-radius:3px;width:55%;\"></div></div><div style=\"background:rgba(255,255,255,0.5);border-radius:8px;padding:10px 12px;margin-bottom:8px;\"><div style=\"height:6px;background:#d4c5e2;border-radius:3px;width:90%;margin-bottom:5px;\"></div><div style=\"height:6px;background:#d4c5e2;border-radius:3px;width:65%;\"></div></div><div style=\"background:rgba(255,255,255,0.4);border-radius:8px;padding:8px 12px;\"><div style=\"height:6px;background:#ddd0ea;border-radius:3px;width:70%;\"></div></div></div></div></div></div></div>",
+    "name": "Feature Content Block",
+    "role": "",
+    "description": ""
+  },
+  {
+    "html": "<div style=\"--color-aubergine-ink:#2a222b;--color-deep-plum:#3e3040;--color-violet-mist:#9454ab;--color-lavender-whisper:#ddb7f0;--color-cream-canvas:#faf9fb;--color-pure-white:#ffffff;--color-charcoal:#222222;--color-slate-mid:#564b58;--color-ash:#655d67;--color-fog:#837a85;--color-mist:#d4d1d5;--color-parchment:#f5f3f6;--font-tobias:'Playfair Display',Georgia,serif;--font-twk-lausanne:'Inter',system-ui,sans-serif;width:600px;box-sizing:border-box;font-family:var(--font-twk-lausanne);background:var(--color-pure-white);padding:56px 40px;\"><div style=\"text-align:center;margin-bottom:40px;\"><p style=\"margin:0 0 16px 0;font-family:var(--font-twk-lausanne);font-size:13px;font-weight:400;color:var(--color-violet-mist);text-transform:uppercase;letter-spacing:0.1em;font-feature-settings:'clig','liga','ss01','ss11';\">Integrations</p><h2 style=\"margin:0;font-family:var(--font-tobias);font-size:40px;font-weight:400;color:var(--color-aubergine-ink);line-height:1.08;letter-spacing:-1.2px;font-feature-settings:'clig','liga','ss01','ss11';\">Connect with hundreds of your business-critical tools</h2></div><div style=\"display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px;\"><div style=\"background:var(--color-pure-white);border:1px solid var(--color-mist);border-radius:24px;padding:14px 20px;display:flex;align-items:center;justify-content:center;min-height:52px;\"><span style=\"font-family:var(--font-twk-lausanne);font-size:15px;font-weight:700;color:var(--color-aubergine-ink);letter-spacing:-0.3px;\">CallRail</span></div><div style=\"background:var(--color-pure-white);border:1px solid var(--color-mist);border-radius:24px;padding:14px 20px;display:flex;align-items:center;justify-content:center;min-height:52px;\"><span style=\"font-family:var(--font-twk-lausanne);font-size:15px;font-weight:600;color:var(--color-aubergine-ink);\">\u2299 Calendly</span></div><div style=\"background:var(--color-pure-white);border:1px solid var(--color-mist);border-radius:24px;padding:14px 20px;display:flex;align-items:center;justify-content:center;min-height:52px;\"><span style=\"font-family:var(--font-twk-lausanne);font-size:15px;font-weight:600;color:var(--color-aubergine-ink);\">INTERCOM</span></div><div style=\"background:var(--color-pure-white);border:1px solid var(--color-mist);border-radius:24px;padding:14px 20px;display:flex;align-items:center;justify-content:center;min-height:52px;\"><span style=\"font-family:var(--font-twk-lausanne);font-size:15px;font-weight:700;color:var(--color-aubergine-ink);letter-spacing:-0.5px;\">klaviyo</span></div><div style=\"background:var(--color-pure-white);border:1px solid var(--color-mist);border-radius:24px;padding:14px 20px;display:flex;align-items:center;justify-content:center;min-height:52px;\"><span style=\"font-family:var(--font-twk-lausanne);font-size:15px;font-weight:600;color:var(--color-aubergine-ink);\">\u2726 slack</span></div><div style=\"background:var(--color-pure-white);border:1px solid var(--color-mist);border-radius:24px;padding:14px 20px;display:flex;align-items:center;justify-content:center;min-height:52px;\"><span style=\"font-family:var(--font-twk-lausanne);font-size:15px;font-weight:700;color:var(--color-aubergine-ink);\">Stripe</span></div></div><div style=\"display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:36px;\"><div style=\"background:var(--color-pure-white);border:1px solid var(--color-mist);border-radius:24px;padding:14px 20px;display:flex;align-items:center;justify-content:center;min-height:52px;\"><span style=\"font-family:var(--font-twk-lausanne);font-size:14px;font-weight:600;color:var(--color-aubergine-ink);\">ActiveCampaign \u203a</span></div><div style=\"background:var(--color-pure-white);border:1px solid var(--color-mist);border-radius:24px;padding:14px 20px;display:flex;align-items:center;justify-content:center;min-height:52px;\"><span style=\"font-family:var(--font-twk-lausanne);font-size:15px;font-weight:700;color:var(--color-aubergine-ink);\">\u2014Zapier</span></div><div style=\"background:var(--color-pure-white);border:1px solid var(--color-mist);border-radius:24px;padding:14px 20px;display:flex;align-items:center;justify-content:center;min-height:52px;\"><span style=\"font-family:var(--font-twk-lausanne);font-size:15px;font-weight:700;color:var(--color-aubergine-ink);\">Webflow</span></div></div><div style=\"text-align:center;\"><a href=\"#\" style=\"display:inline-block;background:var(--color-aubergine-ink);color:var(--color-cream-canvas);font-family:var(--font-twk-lausanne);font-size:16px;font-weight:400;padding:12px 28px;border-radius:12px;text-decoration:none;font-feature-settings:'clig','liga','ss01','ss11';\">See all integrations</a></div></div>",
+    "name": "Integrations Section",
+    "role": "",
+    "description": ""
+  },
+  {
+    "name": "Primary CTA Button",
+    "role": "Main call to action throughout the page",
+    "description": "Background #2a222b, text #faf9fb, border-radius 12px, padding 8px 24px. TWK Lausanne 400 at 16px. The near-black fill with cream text is restrained \u2014 no color accent on CTAs, letting the form contrast with surrounding light sections do the work."
+  },
+  {
+    "name": "Ghost Navigation Button",
+    "role": "Secondary actions, nav-level text links with chevrons",
+    "description": "Transparent background, text #222222, no border-radius (0px), minimal padding 0px 8px. Used for Platform/Solutions/Resources dropdown triggers. Invisible until needed \u2014 the nav reads as pure text."
+  },
+  {
+    "name": "Section Eyebrow Label",
+    "role": "Category identifier above section headings",
+    "description": "TWK Lausanne 400 at 14px, uppercase, letter-spacing wide, color #9454ab (Violet Mist). No background, no pill, no border \u2014 pure typographic color accent. This is the only place saturated purple appears in content."
+  },
+  {
+    "name": "Integration Logo Pill",
+    "role": "Partner/integration logos in the integrations section",
+    "description": "White (#ffffff) background, border #d4d1d5, border-radius 24px, padding 12px 24px. Logos rendered at grayscale/monochrome. The rounded-rectangle container unifies disparate brand marks into a cohesive grid."
+  },
+  {
+    "name": "Dark Hero Section",
+    "role": "Full-width page hero with dark background",
+    "description": "Background #2a222b, full viewport width, centered content. Heading in Tobias 400 at 64-80px, color #faf9fb with negative tracking. Subheading in TWK Lausanne 400 at 20px, color #faf9fb. CTA button inherits primary button style but the border becomes #faf9fb on the dark surface."
+  },
+  {
+    "name": "Light Content Section",
+    "role": "Alternating content blocks in cream/white backgrounds",
+    "description": "Background #faf9fb or #f5f3f6, padding 64px vertical. Headings in Tobias 400 at 64px, #2a222b. Two-column layout: text left, product visual right. Contains section eyebrow, heading, body copy at 16px, and CTA button."
+  },
+  {
+    "name": "Product Preview Card",
+    "role": "Embedded UI/screenshot previews in content sections",
+    "description": "Border-radius 24px, background #f5f3f6 or light lavender tint (#f9f2fd from CSS tokens), no hard border visible. Acts as a contained viewport for product UI. Padding internal 24px. Shadow minimal or absent."
+  },
+  {
+    "name": "Primary Navigation Bar",
+    "role": "Top navigation with logo, links, and auth CTAs",
+    "description": "Background #faf9fb, height ~72px. Logo left. Center nav links in TWK Lausanne 400 16px #2a222b. Right side: 'Log in' ghost text, 'Sign up' filled button (#2a222b, #faf9fb text, 12px radius, 8px 24px padding). Sticky on scroll."
+  },
+  {
+    "name": "Trust Stat Block",
+    "role": "Social proof number display",
+    "description": "Background cream or white, centered. Stat value in Tobias 400 at 64px #2a222b with -1.98px tracking. Supporting text in TWK Lausanne 400 16px #655d67 (Ash). No card container \u2014 floats on section background."
+  }
+]

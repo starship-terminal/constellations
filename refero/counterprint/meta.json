@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/36ab47c3-3d47-42a5-af2e-1760bc348bcd",
   "source_url": "https://www.counter-print.co.uk",
   "extracted_at": "2026-06-03T21:19:01.888Z",
-  "fetched_at": "2026-10-20T08:23:35Z",
+  "fetched_at": "2026-11-08T04:19:57Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/94555632-a83b-4279-beac-c88a7caafd69.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

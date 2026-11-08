@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/528683fb-6b17-4fc6-b37e-d831ee1b20e2",
   "source_url": "https://www.myrch.club",
   "extracted_at": "2026-06-03T22:06:20.457Z",
-  "fetched_at": "2026-10-20T08:21:42Z",
+  "fetched_at": "2026-11-08T04:20:33Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/259c3276-0274-432a-971e-03397d661a51.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/48105cf4-0103-4816-9bcd-a7b4a74d1c9e.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/49d44fdf-3eab-4032-bc03-16e749c98af1.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b066222b-258c-4554-b35a-a20fea40124b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

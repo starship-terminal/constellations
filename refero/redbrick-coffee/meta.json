@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/9307193e-7ce3-48c1-b650-8ab77aa83c3f",
   "source_url": "https://redbrick.coffee",
   "extracted_at": "2026-06-03T18:15:41.140Z",
-  "fetched_at": "2026-10-20T08:22:41Z",
+  "fetched_at": "2026-11-08T04:20:43Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/95522e8d-4eec-41c3-8e80-de844c04f7c2.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/b1ff43ea-e34f-40f8-8be0-202c28aa86f2.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/59691f4f-0d0f-447a-b1b9-4b78fe9344b0.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/3e4ec7ed-2435-4794-bb6f-d692eb2d19a8.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/b3fb8359-84c7-4bc0-b1cf-e8d225bcaa77",
   "source_url": "https://www.andre-candido.com",
   "extracted_at": "2026-06-03T17:58:46.339Z",
-  "fetched_at": "2026-10-20T08:24:37Z",
+  "fetched_at": "2026-11-08T04:19:42Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e92365b5-bb1a-4e91-8208-3d6a05caa801.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/32b33b1c-1722-44dd-82bc-a0c02ee36fb1.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/3f24106a-c57c-424c-b008-b6fb36a388f0.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e4d0f032-9403-40fe-b3e8-856934e9896f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

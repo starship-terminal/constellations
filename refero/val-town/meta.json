@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/4d0a5051-1c4c-4338-8406-2babdc97915c",
   "source_url": "https://val.town",
   "extracted_at": "2026-06-03T15:35:13.618Z",
-  "fetched_at": "2026-10-20T08:25:02Z",
+  "fetched_at": "2026-11-08T04:21:02Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/11eec79e-191c-4cc1-91ec-6b21eec2f667.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/d41bf7ff-a8ba-4aa8-921b-0c03ab8f584e.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/87f8913c-6c92-4275-b61b-ba45f1df016b.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/fc0a5ba9-0463-424f-8b49-e39346256dab.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

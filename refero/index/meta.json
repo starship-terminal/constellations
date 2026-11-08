@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/b1ec2120-ceb0-42d1-9f96-2c9db2bf009b",
   "source_url": "https://index-space.org",
   "extracted_at": "2026-06-03T21:50:47.852Z",
-  "fetched_at": "2026-10-20T08:23:26Z",
+  "fetched_at": "2026-11-08T04:20:20Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5ddd76cf-dfa7-4df3-b221-b9b077f1c98f.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

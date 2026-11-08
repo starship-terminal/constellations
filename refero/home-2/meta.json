@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/606d4af9-9d8c-41ea-a122-f515f38f20e5",
   "source_url": "https://www.fluidtouch.biz",
   "extracted_at": "2026-06-03T21:13:12.934Z",
-  "fetched_at": "2026-10-20T08:21:42Z",
+  "fetched_at": "2026-11-08T04:20:17Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/34dc9f23-a285-4ba4-8544-959b24498c72.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

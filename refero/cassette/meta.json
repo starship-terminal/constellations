@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/fb4cfe58-00b5-4e6a-b251-0c65e60b6649",
   "source_url": "https://cassettemusic.com",
   "extracted_at": "2026-06-03T18:27:04.829Z",
-  "fetched_at": "2026-10-20T08:22:36Z",
+  "fetched_at": "2026-11-08T04:19:53Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/9555c35e-c72b-4db0-a38d-aa9460b2bee8.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/8ed76713-309a-43b5-9d69-13779b33c7d0.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/f7a381e4-6d51-4041-a20f-ad2585ddf0e5.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/bcb5c660-9856-4e76-acc3-96990d332946.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

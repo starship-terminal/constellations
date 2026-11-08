@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/206c6c51-df38-425f-8d07-b0cc9dd065cf",
   "source_url": "https://microsoft.com/teams",
   "extracted_at": "2026-04-11T19:21:51.014Z",
-  "fetched_at": "2026-10-20T08:25:11Z",
+  "fetched_at": "2026-11-08T04:19:32Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b0808fcc-aa05-4907-a5a4-709df9dc5974.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/d4f0401b-13eb-4892-85f1-7185a0006eb9.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/f2582e29-efeb-4b1f-80a0-5bc68578de4a.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e5acac7d-7f1d-42ab-bf46-76d822d29a9b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": true
 }

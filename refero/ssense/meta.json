@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/fa157687-ee42-443e-a992-5f8a3fcdd48f",
   "source_url": "https://ssense.com",
   "extracted_at": "2026-06-03T18:33:16.771Z",
-  "fetched_at": "2026-10-20T08:24:22Z",
+  "fetched_at": "2026-11-08T04:20:52Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/7b109301-9595-4763-a3ce-af959db6a4e3.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

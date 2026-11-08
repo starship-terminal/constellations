@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/d3caa7bf-2e2e-489a-845d-5cab274e7a92",
   "source_url": "https://mistral.ai",
   "extracted_at": "2026-06-03T17:45:40.193Z",
-  "fetched_at": "2026-10-20T08:24:40Z",
+  "fetched_at": "2026-11-08T04:20:11Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d8c2a4ca-0f2e-48db-8c38-c87ab4364557.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/9a6ca1f9-e93d-408a-93c7-469493a77355.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/4da4432f-ba11-4371-8a12-07f743c615b3.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/774fd528-520b-4fd1-9809-c2900b343b57.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

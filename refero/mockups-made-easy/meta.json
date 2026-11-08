@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/ef545f0f-e7ad-4296-b3eb-65f8d045a5d9",
   "source_url": "https://maneken.app",
   "extracted_at": "2026-06-03T21:39:21.812Z",
-  "fetched_at": "2026-10-20T08:23:30Z",
+  "fetched_at": "2026-11-08T04:20:30Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/600149e8-2db3-4fc9-90e0-abbe9b84bc0e.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/d28291b9-9b13-4184-a090-0afdd87ac054.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d722817b-2c9a-407e-9d87-14749945841e.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/ca6a23e2-b0f4-4c63-b2a0-24f406fa92a6.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

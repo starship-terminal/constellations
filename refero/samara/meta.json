@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/934a61aa-50ff-4e90-852b-4ad0b8262d54",
   "source_url": "https://samara.com",
   "extracted_at": "2026-04-11T17:53:21.380Z",
-  "fetched_at": "2026-10-20T08:25:19Z",
+  "fetched_at": "2026-11-08T04:19:34Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/84cc80b6-a715-4ea5-92ae-af8ee9d0a282.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/cbc88baa-2a85-4bb5-a7ce-2f7d6b62d092.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/6bf9c572-7e7b-4f24-9c37-774199443baf.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/d1d4d69b-97e1-4c6e-8a4f-744f3b62d2c1.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": true
 }

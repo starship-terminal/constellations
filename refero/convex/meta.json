@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/f71e92b0-d7a5-4203-b975-394f185218c2",
   "source_url": "https://convex.dev",
   "extracted_at": "2026-06-03T17:34:57.360Z",
-  "fetched_at": "2026-10-20T08:24:42Z",
+  "fetched_at": "2026-11-08T04:19:57Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/17b2e485-9352-4769-8b87-c576cc055ec2.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/44a35e39-c309-47ae-b7e2-1b2a4551fc5a.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/7d28745b-419c-4a9c-b23d-ac8e2b6f3868.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b3bc8973-f8b1-4bdf-8430-fe888e29c031.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

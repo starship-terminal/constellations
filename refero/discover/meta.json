@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/86de6781-d22b-4879-90df-44acb1fe20f3",
   "source_url": "https://fonts.ninja",
   "extracted_at": "2026-06-03T20:57:16.917Z",
-  "fetched_at": "2026-10-20T08:23:40Z",
+  "fetched_at": "2026-11-08T04:20:01Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/19e830b6-fc9a-4c44-95bc-f22a194c0dcc.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/75874ef9-aaa3-41b9-93a5-0f19c3896938.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/fe58a281-983e-4734-b509-0c9fdc25e82c.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/a5817ec8-2dd8-4919-a028-c564e954c728.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

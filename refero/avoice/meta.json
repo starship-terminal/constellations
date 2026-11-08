@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/e0afdaa3-c90a-4ec7-8d0d-f5a72000c4b1",
   "source_url": "https://www.avoice.co",
   "extracted_at": "2026-09-20T19:23:25.316Z",
-  "fetched_at": "2026-10-20T08:21:30Z",
+  "fetched_at": "2026-11-08T04:19:47Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/2a1c7b30-60c8-4e30-839e-dc3ddc77c06b.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/95278c33-c4a6-4699-b25c-2d66887a0847.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/e9129c0b-f3e4-44e5-b179-79b23d7d5c29.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0a0ff709-7bb9-4881-940b-a9cf50cf27b5.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

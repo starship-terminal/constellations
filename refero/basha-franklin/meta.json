@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/ffd5932b-c78c-491b-b03e-78ebeb6b0a1b",
   "source_url": "https://www.basha-franklin.com",
   "extracted_at": "2026-09-20T19:28:01.432Z",
-  "fetched_at": "2026-10-20T08:21:28Z",
+  "fetched_at": "2026-11-08T04:19:49Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e106d239-739d-4cd2-8548-016753620242.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a6213465-e83c-4de4-922b-533db8aa184c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/215c1e3a-4051-4086-b572-4db07e91312a.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/d515a655-c1ab-4d8d-b942-626f6a9be932.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

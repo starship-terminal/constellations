@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/9a23d457-a23a-404a-9f75-12007ea7eb0f",
   "source_url": "https://aptosnetwork.com",
   "extracted_at": "2026-06-03T20:32:43.159Z",
-  "fetched_at": "2026-10-20T08:23:46Z",
+  "fetched_at": "2026-11-08T04:19:44Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/af38c62c-fcc9-4a2b-96df-cc866cff7bde.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/55167867-9c87-4481-8064-f4c893ae297c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/8207691f-a746-40f0-98bf-5e5e52012441.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0a7347b5-cd8f-4b11-aed4-0b64b69bc320.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

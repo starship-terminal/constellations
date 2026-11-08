@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/da6ad92d-4f29-4f92-a59a-3a46295d0d1c",
   "source_url": "https://fingerprint.com",
   "extracted_at": "2026-06-03T15:43:23.474Z",
-  "fetched_at": "2026-10-20T08:25:01Z",
+  "fetched_at": "2026-11-08T04:20:08Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/ddecdb11-a6bf-412e-9ae5-e8c437a758e3.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/901be1a0-2b19-43e9-8a64-103918b767e5.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a76575a9-0c45-4e41-8abf-fe58854027b8.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/bc553560-74b0-4de0-879f-8b5b1cceeaad.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

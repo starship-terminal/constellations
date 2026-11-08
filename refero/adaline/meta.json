@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/312423bf-72ea-42fb-b8f5-ab0104e778f3",
   "source_url": "https://www.adaline.ai",
   "extracted_at": "2026-07-03T03:02:41.642Z",
-  "fetched_at": "2026-10-20T08:21:39Z",
+  "fetched_at": "2026-11-08T04:19:38Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/329632f2-1a3c-462f-ae1d-59b33bb36eb1.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/45f38f30-c043-4fd9-80bd-69d98606b1a7.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/b03016d4-fe35-4412-9cb8-74927c64386d.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e3b2cbcf-7130-4c23-ae4a-c6da64d8c277.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

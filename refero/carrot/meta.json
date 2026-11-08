@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/a7a69d27-e1a9-4322-b58f-3c7633fdc60d",
   "source_url": "https://carrot.tech",
   "extracted_at": "2026-06-03T22:02:30.136Z",
-  "fetched_at": "2026-10-20T08:23:23Z",
+  "fetched_at": "2026-11-08T04:19:53Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/08cef181-ac91-423d-b01b-de41565ecd4f.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

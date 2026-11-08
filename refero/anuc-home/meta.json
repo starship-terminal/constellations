@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/5e9409c4-d130-42f3-b224-5bd66cdfbe28",
   "source_url": "https://www.anuchome.com",
   "extracted_at": "2026-06-03T20:31:22.390Z",
-  "fetched_at": "2026-10-20T08:23:47Z",
+  "fetched_at": "2026-11-08T04:19:42Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/ccdb9a97-1db2-4d18-943d-8521c374135e.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/81c93436-b9fa-4730-8772-68742f392473.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/ee75b934-efe7-4333-b5db-91aa023b3ef9.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/085539f8-af2e-4a3a-8ce5-9e85f1efb991.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/dfbcffc2-79a3-4349-b5c6-1aa9fae4fcf4",
   "source_url": "https://getapron.com",
   "extracted_at": "2026-06-03T17:14:05.621Z",
-  "fetched_at": "2026-10-20T08:24:49Z",
+  "fetched_at": "2026-11-08T04:19:47Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/0b089746-fe7e-4a86-9b7a-532d40b01377.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/c02c6f05-9742-4739-9fcb-c97e523641e9.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/887619c5-620e-4abc-94d9-ab46d8b8d153.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/57249002-0de2-4431-b85b-a47fbb25e9a0.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

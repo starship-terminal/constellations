@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/e4e8fe86-47ed-4ddd-a6c6-2c28eae9aabe",
   "source_url": "https://eightsleep.com",
   "extracted_at": "2026-06-03T19:50:37.133Z",
-  "fetched_at": "2026-10-20T08:23:58Z",
+  "fetched_at": "2026-11-08T04:20:04Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b2851bbc-126c-4dde-a7d4-1d3c0af8be6c.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/1c494adc-78c2-4acc-b6fe-4eb5fb95249a.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/ad8ff1f5-50ad-4c4d-9f5a-585688637b10.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/87518208-c5f5-4bfc-b2e1-71edbf84b2ca.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

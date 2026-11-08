@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/329075e8-97ed-4722-8952-d9bf001de233",
   "source_url": "https://itscraft.com",
   "extracted_at": "2026-06-03T20:55:58.644Z",
-  "fetched_at": "2026-10-20T08:21:54Z",
+  "fetched_at": "2026-11-08T04:19:57Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5e8e703d-7ab6-4bc1-8e25-2ff995900ffc.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/c81b3b4f-3687-4933-9379-980f26388f87.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/c3db65dd-2e38-4e9d-9d36-1bdd8c393b82.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e956b019-297e-46dc-9681-dc8e872fa993.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

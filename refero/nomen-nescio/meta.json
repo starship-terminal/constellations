@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/2fd71e12-12fc-4346-8281-52afe12bb951",
   "source_url": "https://nomennescio.fi",
   "extracted_at": "2026-06-03T20:36:39.025Z",
-  "fetched_at": "2026-10-20T08:23:45Z",
+  "fetched_at": "2026-11-08T04:20:33Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/361cc059-21c6-4d5c-9091-da0f68393690.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/0ecfea58-c1f3-4671-806d-5ae0eb779f38",
   "source_url": "https://vision-naire.com",
   "extracted_at": "2026-06-03T21:42:12.556Z",
-  "fetched_at": "2026-10-20T08:23:29Z",
+  "fetched_at": "2026-11-08T04:21:04Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d1a2cc4a-a3c0-43b0-aae4-b3d069d168d7.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

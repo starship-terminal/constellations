@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/3677bc04-7461-4aa4-aec7-5291bac41b0b",
   "source_url": "https://cycle.app",
   "extracted_at": "2026-06-03T16:13:43.013Z",
-  "fetched_at": "2026-10-20T08:24:56Z",
+  "fetched_at": "2026-11-08T04:19:58Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/96d47989-9e38-431d-ac58-d837368bd9bf.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

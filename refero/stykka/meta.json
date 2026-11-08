@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/b43fdb3c-85e9-4282-9262-1d3deb4b679d",
   "source_url": "https://stykka.com",
   "extracted_at": "2026-06-03T17:53:57.777Z",
-  "fetched_at": "2026-10-20T08:22:52Z",
+  "fetched_at": "2026-11-08T04:20:53Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/74c5717c-7b3c-4e5b-b03b-1db6c5ec0804.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/71ef7325-e73f-4bb7-8291-7f57b232fba1.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/851d0ae3-d674-40f0-b529-0432af8509d8.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/77ff91ed-e81b-4188-b470-8728d65da483.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

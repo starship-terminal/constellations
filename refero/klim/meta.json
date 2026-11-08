@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/0dad8530-9422-4d9e-8622-1f50ee4bc702",
   "source_url": "https://klim.co.nz",
   "extracted_at": "2026-06-03T21:59:28.904Z",
-  "fetched_at": "2026-10-20T08:21:43Z",
+  "fetched_at": "2026-11-08T04:20:23Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/1852e0ae-6521-44f3-b111-cdf27418e4b5.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ad3e38a6-b396-4eae-a48a-05fed7ec1b83.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/c6617c35-8c5f-4a23-9e8a-79af846cb35e.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b3caeb1e-041d-4fe9-83a4-d64e379c650c.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }
