@@ -3447,7 +3447,8 @@
           "Cart route renders the home page when the bag is empty",
           "Geo/region variant is the served Singapore storefront; other regions not captured"
         ],
-        "durationMin": null
+        "durationMin": null,
+        "pr": "https://github.com/c-wenlong/designs/pull/445"
       },
       "layoutGaps": {
         "icons/": "Acne's UI is almost icon-free (text labels everywhere); the few SVGs are brand artwork not kept here (docs/RIGHTS.md)"
