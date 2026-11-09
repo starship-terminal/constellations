@@ -1,0 +1,404 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. A leaf with \"var\" takes its value from that variable in css-vars.json, resolved inside its \"owner\" (framer = the marketing pages' body tokens; anam = the Next.js apps' :root set on /pricing, /get-demo, /tools; mintlify = the docs' :root theme vars). A leaf with \"value\" carries a measured value and names the measurement in \"source\" (raw/measurements.md / components-computed.json). anam.ai is three surfaces: the Framer marketing pages (white ground, black ink, one orange accent, glass pills on the avatar videos), the Next.js app pages (a small semantic :root set), and the Mintlify docs (a warm-stone ramp; the only surface with a dark theme).",
+ "core": {
+  "color": {
+   "brand": {
+    "500": {
+     "var": "--brand",
+     "owner": "anam",
+     "type": "color",
+     "description": "Anam orange #ff6200. The one accent every surface shares: hero badge, nav-underline on docs, active sidebar tint, link underline, primary icon colour. The Framer body declares it as --token-ae7f21ed-…; the docs as --primary 255 98 0."
+    },
+    "600": {
+     "var": "--brand-hover",
+     "owner": "anam",
+     "type": "color",
+     "description": "#ff8133, the hover shade the apps declare (--brand-hover)"
+    },
+    "700": {
+     "var": "--accent-deep",
+     "owner": "anam",
+     "type": "color",
+     "description": "#e45500, the deep accent on /tools (--accent-deep)"
+    },
+    "tint": {
+     "type": "color",
+     "value": "rgba(255, 98, 0, 0.05)",
+     "source": "measured hero-sub pill fill, home (raw/measurements.md hero-sub)",
+     "description": "The hero badge's wash: brand orange at 5% over white"
+    },
+    "tint-strong": {
+     "type": "color",
+     "value": "rgba(255, 98, 0, 0.1)",
+     "source": "measured docs-nav-active pill fill = oklab(0.690826 0.153447 0.139516 / 0.1), docs (raw/measurements.md docs-nav-active)",
+     "description": "The active-item tint on docs: brand orange at ~10%"
+    },
+    "$description": "One orange carries the whole brand. It is never a ramp: hover goes one step lighter, active fills sit at 5–10% alpha."
+   },
+   "cream": {
+    "100": {
+     "var": "--token-14badd18-683f-4fdb-9fc8-ba22a2f95714",
+     "owner": "framer",
+     "type": "color",
+     "description": "#fff8ed, the warm cream the Framer pages keep on body. Used sparingly (section accents); the pages read as white."
+    },
+    "900": {
+     "var": "--token-51497a74-7f48-4d8a-b184-ed07bc3753ea",
+     "owner": "framer",
+     "type": "color",
+     "description": "#4a1c00, deep roasted brown — the dark end of the cream pair"
+    },
+    "$description": "The warm pair the marketing pages declare on body as hashed Framer tokens. The measured page ground is white; the cream shows up as an accent ground."
+   },
+   "neutral": {
+    "50": {
+     "type": "color", "value": "250 245 242",
+     "source": "css-var --gray-50 (:root), anam.ai/docs Mintlify sheet"
+    },
+    "100": {
+     "type": "color", "value": "245 241 238",
+     "source": "css-var --gray-100 (:root), anam.ai/docs; also the docs' light --default-border-color",
+     "description": "Docs hairline borders and quiet fills"
+    },
+    "200": {
+     "type": "color", "value": "230 225 222",
+     "source": "css-var --gray-200 (:root), anam.ai/docs",
+     "description": "Docs input/dialog borders"
+    },
+    "300": {
+     "type": "color", "value": "213 209 206",
+     "source": "css-var --gray-300 (:root), anam.ai/docs"
+    },
+    "400": {
+     "type": "color", "value": "166 161 158",
+     "source": "css-var --gray-400 (:root), anam.ai/docs; measured docs body text in dark",
+     "description": "Docs icons and dark-theme body text"
+    },
+    "500": {
+     "type": "color", "value": "119 114 111",
+     "source": "css-var --gray-500 (:root), anam.ai/docs; measured docs-nav-link colour",
+     "description": "Docs secondary text"
+    },
+    "600": {
+     "type": "color", "value": "87 82 79",
+     "source": "css-var --gray-600 (:root), anam.ai/docs"
+    },
+    "700": {
+     "type": "color", "value": "70 65 62",
+     "source": "css-var --gray-700 (:root), anam.ai/docs; measured docs-body colour",
+     "description": "Docs reading text"
+    },
+    "800": {
+     "type": "color", "value": "45 40 37",
+     "source": "css-var --gray-800 (:root), anam.ai/docs; also the docs' dark --default-border-color",
+     "description": "Docs dark-theme borders"
+    },
+    "900": {
+     "type": "color", "value": "30 25 22",
+     "source": "css-var --gray-900 (:root), anam.ai/docs; measured docs-h1 colour",
+     "description": "Docs headings and strong text"
+    },
+    "950": {
+     "type": "color", "value": "17 13 10",
+     "source": "css-var --gray-950 (:root), anam.ai/docs; measured docs-search-input text",
+     "description": "The warm ramp's near-black"
+    },
+    "$description": "The warm stone ramp the Mintlify docs run on (RGB triplets on :root). It is not the apps' neutral scale — those use pure-black alphas."
+   },
+   "ink": {
+    "DEFAULT": {
+     "var": "--black",
+     "owner": "anam",
+     "type": "color",
+     "description": "#0a0a0a, the apps' near-black (--black, --text)"
+    },
+    "secondary": {
+     "var": "--text-secondary",
+     "owner": "anam",
+     "type": "color",
+     "description": "Pure black at 56% (--text-secondary, #0000008f) — the apps' quiet text"
+    },
+    "tertiary": {
+     "var": "--text-tertiary",
+     "owner": "anam",
+     "type": "color",
+     "description": "Pure black at 40% (--text-tertiary, #0006) — placeholders, captions"
+    },
+    "$description": "The Next.js app pages' ink: opaque #0a0a0a for text, then straight alpha steps of pure black. The marketing site paints the same idea directly (#000 text, rgb(0,0,0) @ .5/.7 fills)."
+   },
+   "gray": {
+    "100": {
+     "type": "color", "value": "#f5f5f5",
+     "source": "measured nav-signin pill and consent-accept fill, home (raw/measurements.md)",
+     "description": "The secondary-button gray shared by the marketing pill and the consent card's choice buttons"
+    },
+    "$description": "The one flat gray the marketing surface uses; everything else is alpha-on-white."
+   },
+   "white": {
+    "type": "color", "value": "#fff",
+    "source": "measured consent-card fill and page screenshots (raw/measurements.md consent-card); also --bg/:root on the apps",
+    "description": "Page and card ground everywhere in light"
+   },
+   "black": {
+    "type": "color", "value": "#000",
+    "source": "measured hero-cta fill and footer panel, home (raw/measurements.md); also --background-dark on docs",
+    "description": "Primary-button fill, the dark footer panel, and the docs' dark ground"
+   },
+   "glass": {
+    "fill": {
+     "type": "color", "value": "rgba(255, 255, 255, 0.5)",
+     "source": "measured demo-cta and persona-chip controls, home (raw/measurements.md)",
+     "description": "Frosted-white fill for controls sitting on avatar video"
+    },
+    "border": {
+     "type": "color", "value": "rgba(255, 255, 255, 0.12)",
+     "source": "measured persona-chip ring, home (raw/measurements.md persona-chip)",
+     "description": "The 2px inner ring on the glass chips"
+    },
+    "dark-icon": {
+     "type": "color", "value": "rgba(0, 0, 0, 0.7)",
+     "source": "measured persona-chip icon well, home (raw/measurements.md)",
+     "description": "Black at 70% for icons on the frosted chips"
+    },
+    "$description": "Controls that float on the avatar videos: white at 50% fill, a faint white ring, black-at-70% icons."
+   },
+   "blue": {
+    "var": "--blue",
+    "owner": "anam",
+    "type": "color",
+    "description": "#09f, the apps' info blue (--blue)"
+   },
+   "method-blue": {
+    "type": "color", "value": "#1d4ed8",
+    "source": "measured docs-method-badge text (raw/measurements.md docs-method-badge)",
+    "description": "The GET/POST badge blue on docs"
+   },
+   "danger": {
+    "var": "--danger",
+    "owner": "anam",
+    "type": "color",
+    "description": "#d23a3a on pricing/get-demo; #9d1f24 on /tools (the same name, darker)"
+   },
+   "danger-deep": {
+    "type": "color", "value": "#9d1f24",
+    "source": "css-var --danger (:root), anam.ai/tools sheet",
+    "description": "The deeper danger shade the tools page declares"
+   },
+   "muted": {
+    "type": "color", "value": "#707070",
+    "source": "css-var --muted (:root), anam.ai/tools sheet",
+    "description": "Tools' secondary gray text"
+   }
+  },
+  "font": {
+   "family": {
+    "sans": {
+     "type": "fontFamily",
+     "value": "Inter, \"Inter Placeholder\", sans-serif",
+     "source": "measured hero-title/nav/footer and every docs component (raw/measurements.md); --default-font-family on docs",
+     "description": "Inter everywhere — marketing, apps and docs"
+    },
+    "mono": {
+     "type": "fontFamily",
+     "value": "\"IBM Plex Mono\", ui-monospace, \"SF Mono\", Menlo, monospace",
+     "source": "css-var --mono (:root) = var(--font-ibm-plex-mono) resolved to its loaded face; --font-ibm-plex-mono served by the app pages (raw/css-vars.json fontsLoaded)",
+     "description": "IBM Plex Mono — code, metrics and the benchmark UI (feature-card, apps' --mono)"
+    },
+    "docs-mono": {
+     "type": "fontFamily",
+     "value": "\"Paper Mono\", ui-monospace, SFMono-Regular, Menlo, monospace",
+     "source": "measured docs-code-block/docs-inline-code; --default-mono-font-family on docs (raw/measurements.md)",
+     "description": "Paper Mono, Mintlify's code face on the docs"
+    },
+    "display": {
+     "type": "fontFamily",
+     "value": "\"MD Thermochrome 0.4 Trial\", \"IBM Plex Mono\", monospace",
+     "source": "document.fonts loaded on home (raw/css-vars.json fontsLoaded); Framer sheet @font-face",
+     "description": "The trial Thermochrome face Anam licenses for display accents (labelled 'Trial')"
+    }
+   },
+   "weight": {
+    "regular": { "type": "fontWeight", "value": "400", "source": "measured body text everywhere (raw/measurements.md)" },
+    "medium": { "type": "fontWeight", "value": "500", "source": "measured buttons, nav links, docs headings' siblings (raw/measurements.md)" },
+    "semibold": { "type": "fontWeight", "value": "600", "source": "measured docs-h1 36px and docs-card title (raw/measurements.md); --font-weight-semibold on docs" },
+    "bold": { "type": "fontWeight", "value": "700", "source": "measured docs-method-badge (raw/measurements.md); --font-weight-bold on docs" }
+   },
+   "size": {
+    "xs": { "type": "dimension", "value": "12px", "source": "measured nav text and consent body (raw/measurements.md); --text-xs .75rem on docs" },
+    "sm": { "type": "dimension", "value": "14px", "source": "measured nav-link text and docs body/nav (raw/measurements.md); --text-sm on docs" },
+    "base": { "type": "dimension", "value": "15px", "source": "measured buttons (hero-cta, consent-accept, footer-link) — Anam's button size is 15px (raw/measurements.md)" },
+    "md": { "type": "dimension", "value": "16px", "source": "measured docs-body copy and apps' text (raw/measurements.md); --text-base on docs" },
+    "lg": { "type": "dimension", "value": "18px", "source": "measured docs-body paragraph (raw/measurements.md); --text-lg on docs" },
+    "xl": { "type": "dimension", "value": "24px", "source": "measured tab-item label (raw/measurements.md tab-item); --text-xl/2xl on docs" },
+    "2xl": { "type": "dimension", "value": "36px", "source": "measured docs-h1 (raw/measurements.md docs-h1); --text-4xl on docs" },
+    "display": { "type": "dimension", "value": "40px", "source": "measured hero-title, home (raw/measurements.md hero-title)" },
+    "jumbo": { "type": "dimension", "value": "48px", "source": "measured cta-band headline, home (raw/measurements.md cta-band)" }
+   },
+   "leading": {
+    "tight": { "type": "number", "value": 1.1, "source": "measured hero-title 40px/44px (raw/measurements.md)" },
+    "button": { "type": "number", "value": 1.2, "source": "measured hero-cta 15px/18px (raw/measurements.md)" },
+    "normal": { "type": "number", "value": 1.5, "source": "--leading-normal on docs (raw/css-vars.json)" },
+    "relaxed": { "type": "number", "value": 1.625, "source": "--leading-relaxed on docs (raw/css-vars.json)" }
+   },
+   "tracking": {
+    "tight": { "type": "dimension", "value": "-0.8px", "source": "measured hero-title -0.8px at 40px, home (raw/measurements.md); --tracking-tight -.025em on docs" },
+    "button": { "type": "dimension", "value": "-0.3px", "source": "measured demo-cta and logo-cloud -0.3px at 15px (raw/measurements.md)" },
+    "normal": { "type": "dimension", "value": "0px", "source": "--tracking-normal 0em on docs (raw/css-vars.json)" }
+   }
+  },
+  "radius": {
+   "sm": { "type": "dimension", "value": "6px", "source": "measured docs-inline-code and docs-method-badge (raw/measurements.md)" },
+   "md": { "type": "dimension", "value": "12px", "source": "measured docs-search-btn/sidebar-active pills (raw/measurements.md); --radius-xl .75rem on docs" },
+   "lg": { "type": "dimension", "value": "16px", "source": "measured consent-card and docs-card (raw/measurements.md)" },
+   "xl": { "type": "dimension", "value": "20px", "source": "measured docs-search-dialog (raw/measurements.md)" },
+   "2xl": { "type": "dimension", "value": "32px", "source": "measured persona-chip card and the footer's dark panel (raw/measurements.md)" },
+   "badge": { "type": "dimension", "value": "40px", "source": "measured hero-sub badge pill, home (raw/measurements.md)" },
+   "pill": { "type": "dimension", "value": "50px", "source": "measured hero-cta, nav-signin, demo-cta, persona-chip buttons (raw/measurements.md) — the marketing site's universal button radius" },
+   "full": { "type": "dimension", "value": "999px", "source": "measured consent-accept/manage buttons (raw/measurements.md); 9999px on docs-assistant-send" }
+  },
+  "space": {
+   "1": { "type": "dimension", "value": "4px", "source": "--spacing .25rem on docs (raw/css-vars.json) — the 4px base unit" },
+   "2": { "type": "dimension", "value": "8px", "source": "measured nav-link padding-block and demo-cta gap (raw/measurements.md)" },
+   "3": { "type": "dimension", "value": "12px", "source": "measured consent-card gap row (raw/measurements.md)" },
+   "4": { "type": "dimension", "value": "16px", "source": "measured nav-link padding-inline, button padding-block, logo-cloud gap (raw/measurements.md)" },
+   "5": { "type": "dimension", "value": "20px", "source": "measured consent-card padding and --anam-layout-gutter on /tools (raw/measurements.md, css-vars.json)" },
+   "6": { "type": "dimension", "value": "24px", "source": "measured button padding-inline and cta-band/feature-card gaps (raw/measurements.md)" },
+   "8": { "type": "dimension", "value": "32px", "source": "measured demo-card gap region (raw/measurements.md)" },
+   "gutter": { "var": "--anam-layout-gutter", "owner": "anam", "type": "dimension", "description": "20px page gutter on /tools" },
+   "max-width": { "var": "--anam-layout-max-width", "owner": "anam", "type": "dimension", "description": "1280px content cap on /tools; the marketing sections measure 1240–1280px" }
+  },
+  "shadow": {
+   "card": {
+    "type": "shadow",
+    "value": [
+     { "color": "rgba(0, 0, 0, 0.18)", "offsetX": "0px", "offsetY": "12px", "blur": "32px", "spread": "-8px" },
+     { "color": "rgba(0, 0, 0, 0.06)", "offsetX": "0px", "offsetY": "1px", "blur": "2px", "spread": "0px" }
+    ],
+    "source": "measured consent-card box-shadow, home (raw/measurements.md consent-card)",
+    "$description": "The floating-card shadow: a soft 12/32/-8 drop over a 1px contact shadow."
+   },
+   "persona-card": {
+    "type": "shadow",
+    "value": [
+     { "color": "rgba(0, 0, 0, 0.01)", "offsetX": "0px", "offsetY": "124px", "blur": "50px", "spread": "0px" },
+     { "color": "rgba(0, 0, 0, 0.05)", "offsetX": "0px", "offsetY": "70px", "blur": "42px", "spread": "0px" },
+     { "color": "rgba(0, 0, 0, 0.09)", "offsetX": "0px", "offsetY": "31px", "blur": "31px", "spread": "0px" },
+     { "color": "rgba(0, 0, 0, 0.1)", "offsetX": "0px", "offsetY": "8px", "blur": "17px", "spread": "0px" }
+    ],
+    "source": "measured persona-chip card layer, home (raw/measurements.md persona-chip paint)",
+    "$description": "The long soft shadow under the persona cards — four stacked layers reaching 124px down."
+   }
+  },
+  "motion": {
+   "duration": {
+    "fast": { "type": "duration", "value": "150ms", "source": "--default-transition-duration .15s on docs (raw/css-vars.json)" },
+    "normal": { "type": "duration", "value": "300ms", "source": "measured persona-chip transform transition 0.3s (raw/measurements.md)" }
+   },
+   "easing": {
+    "out": { "type": "cubicBezier", "value": [0.4, 0, 0.2, 1], "source": "--default-transition-timing-function on docs (raw/css-vars.json)" },
+    "spring": { "type": "cubicBezier", "value": [0.12, 0.23, 0.5, 1], "source": "measured persona-chip transition-timing-function (raw/measurements.md) — the gentle overshoot curve Framer emits" }
+   }
+  }
+ },
+ "light": {
+  "bg": {
+   "var": "--bg", "owner": "anam", "type": "color",
+   "description": "Page ground, #fff on every captured surface (screenshots confirm the Framer pages read white; the cream token is an accent only)"
+  },
+  "surface": {
+   "var": "--surface", "owner": "anam", "type": "color",
+   "description": "Quiet fill, #fafafa on pricing/get-demo (/tools declares #fff); cards on docs are #fff"
+  },
+  "card": {
+   "value": "#fff", "type": "color",
+   "source": "measured consent-card and docs-card fill (raw/measurements.md)"
+  },
+  "well": {
+   "value": "{color.gray.100}", "type": "color",
+   "description": "Secondary-button and chip fill, the marketing surface's flat gray (#f5f5f5)"
+  },
+  "footer-panel": {
+   "value": "{color.black}", "type": "color",
+   "source": "measured footer dark panel, 32px radius (raw/measurements.md footer paint)",
+   "description": "The footer's inverted rounded panel"
+  },
+  "text": {
+   "DEFAULT": {
+    "var": "--text", "owner": "anam", "type": "color",
+    "description": "#0a0a0a on the apps; the marketing site paints #000 and the docs #1e1916 — all near-black ink"
+   },
+   "secondary": { "value": "{color.ink.secondary}", "type": "color" },
+   "tertiary": { "value": "{color.ink.tertiary}", "type": "color" },
+   "warm": {
+    "DEFAULT": { "value": "{color.neutral.900}", "type": "color", "description": "Docs headings" },
+    "secondary": { "value": "{color.neutral.700}", "type": "color", "description": "Docs body text" },
+    "tertiary": { "value": "{color.neutral.500}", "type": "color", "description": "Docs nav and muted text" }
+   },
+   "inverse": { "value": "{color.white}", "type": "color", "source": "measured hero-cta text and footer text, rgba(255,255,255,.8) links (raw/measurements.md)" },
+   "inverse-dim": {
+    "value": "rgba(255, 255, 255, 0.5)", "type": "color",
+    "source": "measured footer text and links at .5–.8 alpha on the dark panel (raw/measurements.md footer)"
+   }
+  },
+  "border": {
+   "DEFAULT": { "var": "--border", "owner": "anam", "type": "color", "description": "Black at 12% on the apps" },
+   "strong": { "var": "--border-strong", "owner": "anam", "type": "color", "description": "Black at 22% on the apps" },
+   "warm": { "value": "{color.neutral.200}", "type": "color", "description": "Docs input borders; /tools uses the near twin #e6e2df" },
+   "hairline": { "value": "{color.neutral.100}", "type": "color", "description": "Docs' lightest rules (--default-border-color in light)" }
+  },
+  "accent": { "value": "{color.brand.500}", "type": "color" },
+  "accent-hover": { "value": "{color.brand.600}", "type": "color" },
+  "accent-deep": { "value": "{color.brand.700}", "type": "color" },
+  "accent-tint": { "value": "{color.brand.tint}", "type": "color" },
+  "accent-tint-strong": { "value": "{color.brand.tint-strong}", "type": "color" },
+  "info": { "value": "{color.blue}", "type": "color" },
+  "danger": { "value": "{color.danger}", "type": "color" },
+  "button": {
+   "primary-bg": { "value": "{color.black}", "type": "color", "source": "measured hero-cta fill, home (raw/measurements.md hero-cta) — the marketing primary button is black, not orange" },
+   "primary-text": { "value": "{color.white}", "type": "color", "source": "measured hero-cta text (raw/measurements.md)" },
+   "secondary-bg": { "value": "{color.gray.100}", "type": "color", "source": "measured nav-signin pill (raw/measurements.md)" },
+   "secondary-text": { "value": "{color.black}", "type": "color", "source": "measured nav-signin text (raw/measurements.md)" },
+   "glass-bg": { "value": "{color.glass.fill}", "type": "color", "source": "measured demo-cta over the avatar video (raw/measurements.md)" },
+   "glass-text": { "value": "{color.glass.dark-icon}", "type": "color", "source": "measured demo-cta text (raw/measurements.md)" }
+  },
+  "focus": {
+   "ring": { "value": "{color.brand.500}", "type": "color", "source": "the docs' primary colour used for focus treatment; hover/focus states measured kept the layout (raw/measurements.md)", "description": "Focus reads as the accent where visible" }
+  }
+ },
+ "dark": {
+  "$description": "Only the docs ship a dark theme: .dark on html, reached by the theme toggle (measured in the docsDark run). The marketing pages and the /pricing, /get-demo, /tools apps have no dark declarations at all.",
+  "bg": {
+   "type": "color", "value": "0 0 0",
+   "source": "css-var --background-dark (:root) and the docs-dark screenshot ground, anam.ai/docs",
+   "description": "Pure black ground — the docs go to #000, not a gray"
+  },
+  "surface": {
+   "type": "color", "value": "rgba(255, 255, 255, 0.05)",
+   "source": "measured docs-dark control fills (buttons) near-white tint over the black ground (raw/measurements.md docs-dark-main paint)",
+   "description": "Raised pieces read as white at ~5%"
+  },
+  "card": { "value": "{color.neutral.950}", "type": "color", "description": "The warm ramp's near-black for panels on the black ground" },
+  "text": {
+   "DEFAULT": { "value": "{color.neutral.200}", "type": "color", "source": "measured docs-dark-h1 #e6e1de (raw/measurements.md)", "description": "Headings" },
+   "secondary": { "value": "{color.neutral.300}", "type": "color", "source": "measured docs-dark-main text node #d5d1ce (raw/measurements.md)", "description": "Body" },
+   "tertiary": { "value": "{color.neutral.400}", "type": "color", "source": "measured docs-dark-main colour #a6a19e (raw/measurements.md)", "description": "Muted" },
+   "inverse": { "value": "{color.black}", "type": "color" }
+  },
+  "border": {
+   "DEFAULT": { "value": "{color.neutral.800}", "type": "color", "source": "css-var --default-border-color = var(--gray-800) on .dark (raw/css-vars.json)", "description": "Warm dark hairlines" }
+  },
+  "accent": {
+   "type": "color", "value": "255 98 0",
+   "source": "css-var --primary-dark (:root), anam.ai/docs — the same orange in both themes",
+   "description": "#ff6200, unchanged from light"
+  },
+  "accent-tint": { "value": "{color.brand.tint-strong}", "type": "color" },
+  "button": {
+   "primary-bg": { "value": "{color.brand.500}", "type": "color", "source": "measured docs-dark primary controls and the sidebar's orange icon fill (raw/measurements.md docs-dark-sidebar paint)" },
+   "primary-text": { "value": "{color.white}", "type": "color" }
+  },
+  "focus": {
+   "ring": { "value": "{color.brand.500}", "type": "color" }
+  }
+ }
+}
