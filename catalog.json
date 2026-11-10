@@ -3496,7 +3496,8 @@
         ],
         "durationMin": null,
         "durationNote": "wall-clock duration was not recorded for this capture",
-        "gaps": "The product app (app.acctual.com) sits behind a sign-in that was never opened; the home invoice mock is a marketing demo, not the app. ~30 /locations/* corridors and the persona/product landing pages share templates; one of each was captured. Disabled, error, loading and selected states never appear on the public surface."
+        "gaps": "The product app (app.acctual.com) sits behind a sign-in that was never opened; the home invoice mock is a marketing demo, not the app. ~30 /locations/* corridors and the persona/product landing pages share templates; one of each was captured. Disabled, error, loading and selected states never appear on the public surface.",
+        "pr": "https://github.com/c-wenlong/designs/pull/453"
       }
     }
   ]
