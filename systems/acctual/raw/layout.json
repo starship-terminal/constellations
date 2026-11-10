@@ -1,0 +1,4676 @@
+{
+ "home@1440": {
+  "vw": 1440,
+  "docH": 12147,
+  "h1": {
+   "text": "Small business invoices:\nGet paid on time",
+   "font": "600 64px / 72px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 336,
+   "y": 248,
+   "w": 768,
+   "h": 72
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1d2aeb3-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "8",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "8px",
+    "x": 203,
+    "y": 32,
+    "w": 1034,
+    "h": 48
+   },
+   {
+    "el": "div.framer-6wl13u",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 208,
+    "y": 0,
+    "w": 1024,
+    "h": 1636
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1250,
+    "w": 1392,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1250,
+    "w": 1392,
+    "h": 48
+   },
+   {
+    "el": "div.framer-d7ubpl",
+    "max": "1024px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 208,
+    "y": 1370,
+    "w": 1024,
+    "h": 371
+   },
+   {
+    "el": "div.framer-5j6x0g",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 336,
+    "y": 1509,
+    "w": 768,
+    "h": 80
+   },
+   {
+    "el": "div.framer-12fpupa",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 208,
+    "y": 1837,
+    "w": 1024,
+    "h": 540
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-1pef0c9",
+    "cols": "325.328px 325.328px 325.344px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 208,
+    "y": 2021,
+    "w": 1024,
+    "h": 356
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 12147
+  }
+ },
+ "home@1920": {
+  "vw": 1920,
+  "docH": 12147,
+  "h1": {
+   "text": "Small business invoices:\nGet paid on time",
+   "font": "600 64px / 72px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 576,
+   "y": 248,
+   "w": 768,
+   "h": 72
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1d2aeb3-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "8",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "8px",
+    "x": 443,
+    "y": 32,
+    "w": 1034,
+    "h": 48
+   },
+   {
+    "el": "div.framer-6wl13u",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 448,
+    "y": 0,
+    "w": 1024,
+    "h": 1636
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1250,
+    "w": 1872,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1250,
+    "w": 1872,
+    "h": 48
+   },
+   {
+    "el": "div.framer-d7ubpl",
+    "max": "1024px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 448,
+    "y": 1370,
+    "w": 1024,
+    "h": 371
+   },
+   {
+    "el": "div.framer-5j6x0g",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 576,
+    "y": 1509,
+    "w": 768,
+    "h": 80
+   },
+   {
+    "el": "div.framer-12fpupa",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 448,
+    "y": 1837,
+    "w": 1024,
+    "h": 540
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-1pef0c9",
+    "cols": "325.328px 325.328px 325.344px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 448,
+    "y": 2021,
+    "w": 1024,
+    "h": 356
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 12147
+  }
+ },
+ "home@1024": {
+  "vw": 1024,
+  "docH": 13057,
+  "h1": {
+   "text": "Small business invoices:\nGet paid on time",
+   "font": "600 56px / 64px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 0,
+   "y": 248,
+   "w": 1024,
+   "h": 64
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1d2aeb3-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "8",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-TvleB.framer-135zmhh.framer-v-1b7kfqs",
+    "max": "100%",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "24px",
+    "x": 16,
+    "y": 32,
+    "w": 992,
+    "h": 48
+   },
+   {
+    "el": "div.framer-6wl13u",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 1628
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1250,
+    "w": 976,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1250,
+    "w": 976,
+    "h": 48
+   },
+   {
+    "el": "div.framer-d7ubpl",
+    "max": "1024px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 24,
+    "y": 1370,
+    "w": 976,
+    "h": 371
+   },
+   {
+    "el": "div.framer-5j6x0g",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 128,
+    "y": 1509,
+    "w": 768,
+    "h": 80
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-1pef0c9",
+    "cols": "476px 476px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 2069,
+    "w": 976,
+    "h": 546
+   },
+   {
+    "el": "div.framer-1xfrq5i",
+    "cols": "428px 428px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 72,
+    "y": 8598,
+    "w": 880,
+    "h": 48
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 13057
+  }
+ },
+ "home@390": {
+  "vw": 390,
+  "docH": 15282,
+  "h1": {
+   "text": "Small business invoices:\nGet paid on time",
+   "font": "600 40px / 48px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 24,
+   "y": 208,
+   "w": 342,
+   "h": 48
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1d2aeb3-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "8",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-TvleB.framer-135zmhh.framer-v-1b7kfqs",
+    "max": "100%",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "24px",
+    "x": 16,
+    "y": 32,
+    "w": 358,
+    "h": 48
+   },
+   {
+    "el": "div.framer-6wl13u",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 554
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1220,
+    "w": 342,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1220,
+    "w": 342,
+    "h": 48
+   },
+   {
+    "el": "div.framer-d7ubpl",
+    "max": "1024px",
+    "padL": "32px",
+    "padR": "32px",
+    "x": 24,
+    "y": 1340,
+    "w": 342,
+    "h": 299
+   },
+   {
+    "el": "div.framer-12fpupa",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1735,
+    "w": 342,
+    "h": 1364
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-1osjm80",
+    "cols": "171px 171px",
+    "colGap": "0px",
+    "rowGap": "34px",
+    "x": 24,
+    "y": 14440,
+    "w": 342,
+    "h": 842
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 15282
+  }
+ },
+ "pricing@1440": {
+  "vw": 1440,
+  "docH": 6634,
+  "h1": {
+   "text": "We offer faster payouts and lower fees than any accounting platform",
+   "font": "600 48px / 56px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 336,
+   "y": 248,
+   "w": 768,
+   "h": 112
+  },
+  "fixed": [
+   {
+    "el": "div.framer-vuhq8z-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "8px",
+    "x": 203,
+    "y": 32,
+    "w": 1034,
+    "h": 48
+   },
+   {
+    "el": "div.framer-9fut9b",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 208,
+    "y": 0,
+    "w": 1024,
+    "h": 1676
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1796,
+    "w": 1392,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1796,
+    "w": 1392,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1co4t1n",
+    "max": "1024px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 208,
+    "y": 1916,
+    "w": 1024,
+    "h": 427
+   },
+   {
+    "el": "div.framer-1w2vdug",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 336,
+    "y": 2063,
+    "w": 768,
+    "h": 120
+   },
+   {
+    "el": "div.framer-1kbqjyx",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 208,
+    "y": 2439,
+    "w": 1024,
+    "h": 520
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 6634
+  }
+ },
+ "pricing@1920": {
+  "vw": 1920,
+  "docH": 6634,
+  "h1": {
+   "text": "We offer faster payouts and lower fees than any accounting platform",
+   "font": "600 48px / 56px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 576,
+   "y": 248,
+   "w": 768,
+   "h": 112
+  },
+  "fixed": [
+   {
+    "el": "div.framer-vuhq8z-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "8px",
+    "x": 443,
+    "y": 32,
+    "w": 1034,
+    "h": 48
+   },
+   {
+    "el": "div.framer-9fut9b",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 448,
+    "y": 0,
+    "w": 1024,
+    "h": 1676
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1796,
+    "w": 1872,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1796,
+    "w": 1872,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1co4t1n",
+    "max": "1024px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 448,
+    "y": 1916,
+    "w": 1024,
+    "h": 427
+   },
+   {
+    "el": "div.framer-1w2vdug",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 576,
+    "y": 2063,
+    "w": 768,
+    "h": 120
+   },
+   {
+    "el": "div.framer-1kbqjyx",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 448,
+    "y": 2439,
+    "w": 1024,
+    "h": 520
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 6634
+  }
+ },
+ "pricing@1024": {
+  "vw": 1024,
+  "docH": 6856,
+  "h1": {
+   "text": "We offer faster payouts and lower fees than any accounting platform",
+   "font": "600 48px / 56px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 192,
+   "y": 248,
+   "w": 640,
+   "h": 168
+  },
+  "fixed": [
+   {
+    "el": "div.framer-vuhq8z-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-TvleB.framer-135zmhh.framer-v-1b7kfqs",
+    "max": "100%",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "24px",
+    "x": 16,
+    "y": 32,
+    "w": 992,
+    "h": 48
+   },
+   {
+    "el": "div.framer-9fut9b",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 1732
+   },
+   {
+    "el": "div.framer-j2q9si",
+    "max": "640px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 192,
+    "y": 248,
+    "w": 640,
+    "h": 168
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1852,
+    "w": 976,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1852,
+    "w": 976,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1co4t1n",
+    "max": "1024px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 24,
+    "y": 1972,
+    "w": 976,
+    "h": 427
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 6856
+  }
+ },
+ "pricing@390": {
+  "vw": 390,
+  "docH": 6991,
+  "h1": {
+   "text": "We offer faster payouts and lower fees than any accounting platform",
+   "font": "600 40px / 48px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 24,
+   "y": 208,
+   "w": 342,
+   "h": 240
+  },
+  "fixed": [
+   {
+    "el": "div.framer-vuhq8z-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   },
+   {
+    "el": "div.framer-qp10fm-container.hidden-1bl51jx.hidden-vv06f1",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "7",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-TvleB.framer-135zmhh.framer-v-1b7kfqs",
+    "max": "100%",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "24px",
+    "x": 16,
+    "y": 32,
+    "w": 358,
+    "h": 48
+   },
+   {
+    "el": "div.framer-9fut9b",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 1640
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1760,
+    "w": 342,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1760,
+    "w": 342,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1co4t1n",
+    "max": "1024px",
+    "padL": "32px",
+    "padR": "32px",
+    "x": 24,
+    "y": 1880,
+    "w": 342,
+    "h": 315
+   },
+   {
+    "el": "div.framer-1kbqjyx",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 2291,
+    "w": 342,
+    "h": 984
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-1osjm80",
+    "cols": "171px 171px",
+    "colGap": "0px",
+    "rowGap": "34px",
+    "x": 24,
+    "y": 6149,
+    "w": 342,
+    "h": 842
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 6991
+  }
+ },
+ "teams@1440": {
+  "vw": 1440,
+  "docH": 8351,
+  "h1": {
+   "text": "Billing for agencies.",
+   "font": "600 48px / 56px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 336,
+   "y": 248,
+   "w": 768,
+   "h": 56
+  },
+  "fixed": [
+   {
+    "el": "div.framer-sr81ly-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "8px",
+    "x": 203,
+    "y": 32,
+    "w": 1034,
+    "h": 48
+   },
+   {
+    "el": "div.framer-9fi4z8",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 208,
+    "y": 0,
+    "w": 1024,
+    "h": 1730
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1250,
+    "w": 1392,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1250,
+    "w": 1392,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1k0c1x4",
+    "max": "1024px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 208,
+    "y": 1370,
+    "w": 1024,
+    "h": 467
+   },
+   {
+    "el": "div.framer-1poncjj",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 336,
+    "y": 1517,
+    "w": 768,
+    "h": 160
+   },
+   {
+    "el": "div.framer-y4x4zn",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 208,
+    "y": 2029,
+    "w": 1024,
+    "h": 448
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 8351
+  }
+ },
+ "teams@1920": {
+  "vw": 1920,
+  "docH": 8351,
+  "h1": {
+   "text": "Billing for agencies.",
+   "font": "600 48px / 56px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 576,
+   "y": 248,
+   "w": 768,
+   "h": 56
+  },
+  "fixed": [
+   {
+    "el": "div.framer-sr81ly-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "8px",
+    "x": 443,
+    "y": 32,
+    "w": 1034,
+    "h": 48
+   },
+   {
+    "el": "div.framer-9fi4z8",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 448,
+    "y": 0,
+    "w": 1024,
+    "h": 1730
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1250,
+    "w": 1872,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1250,
+    "w": 1872,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1k0c1x4",
+    "max": "1024px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 448,
+    "y": 1370,
+    "w": 1024,
+    "h": 467
+   },
+   {
+    "el": "div.framer-1poncjj",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 576,
+    "y": 1517,
+    "w": 768,
+    "h": 160
+   },
+   {
+    "el": "div.framer-y4x4zn",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 448,
+    "y": 2029,
+    "w": 1024,
+    "h": 448
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 8351
+  }
+ },
+ "teams@1024": {
+  "vw": 1024,
+  "docH": 8605,
+  "h1": {
+   "text": "Billing for agencies.",
+   "font": "600 48px / 56px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 192,
+   "y": 248,
+   "w": 640,
+   "h": 56
+  },
+  "fixed": [
+   {
+    "el": "div.framer-sr81ly-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-TvleB.framer-135zmhh.framer-v-1b7kfqs",
+    "max": "100%",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "24px",
+    "x": 16,
+    "y": 32,
+    "w": 992,
+    "h": 48
+   },
+   {
+    "el": "div.framer-9fi4z8",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 1786
+   },
+   {
+    "el": "div.framer-1b9o8o0",
+    "max": "640px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 192,
+    "y": 248,
+    "w": 640,
+    "h": 224
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1250,
+    "w": 976,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1250,
+    "w": 976,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1k0c1x4",
+    "max": "1024px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 24,
+    "y": 1370,
+    "w": 976,
+    "h": 467
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-tip4gy",
+    "cols": "428px 428px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 72,
+    "y": 5209,
+    "w": 880,
+    "h": 48
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 8605
+  }
+ },
+ "teams@390": {
+  "vw": 390,
+  "docH": 9422,
+  "h1": {
+   "text": "Billing for agencies.",
+   "font": "600 40px / 48px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 24,
+   "y": 208,
+   "w": 342,
+   "h": 96
+  },
+  "fixed": [
+   {
+    "el": "div.framer-sr81ly-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   },
+   {
+    "el": "div.framer-18p8fz6-container.hidden-1l01duv.hidden-1s70xrw",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "7",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-TvleB.framer-135zmhh.framer-v-1b7kfqs",
+    "max": "100%",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "24px",
+    "x": 16,
+    "y": 32,
+    "w": 358,
+    "h": 48
+   },
+   {
+    "el": "div.framer-9fi4z8",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 860
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1320,
+    "w": 342,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1320,
+    "w": 342,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1k0c1x4",
+    "max": "1024px",
+    "padL": "32px",
+    "padR": "32px",
+    "x": 24,
+    "y": 1440,
+    "w": 342,
+    "h": 315
+   },
+   {
+    "el": "div.framer-y4x4zn",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1851,
+    "w": 342,
+    "h": 1072
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-1osjm80",
+    "cols": "171px 171px",
+    "colGap": "0px",
+    "rowGap": "34px",
+    "x": 24,
+    "y": 8580,
+    "w": 342,
+    "h": 842
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 9422
+  }
+ },
+ "about@1440": {
+  "vw": 1440,
+  "docH": 10151,
+  "h1": {
+   "text": "Send invoices for free. Get paid today, with 0% subscription fees.",
+   "font": "600 48px / 56px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 336,
+   "y": 248,
+   "w": 768,
+   "h": 112
+  },
+  "fixed": [
+   {
+    "el": "div.framer-12b4ewp-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "8px",
+    "x": 203,
+    "y": 32,
+    "w": 1034,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1i82p87",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 208,
+    "y": 0,
+    "w": 1024,
+    "h": 1674
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1380,
+    "w": 1392,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1380,
+    "w": 1392,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1n9caxr",
+    "max": "1024px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 208,
+    "y": 1500,
+    "w": 1024,
+    "h": 411
+   },
+   {
+    "el": "div.framer-1fqoiyv",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 336,
+    "y": 1639,
+    "w": 768,
+    "h": 120
+   },
+   {
+    "el": "div.framer-711r04",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 208,
+    "y": 2007,
+    "w": 1024,
+    "h": 520
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 10151
+  }
+ },
+ "about@1920": {
+  "vw": 1920,
+  "docH": 10151,
+  "h1": {
+   "text": "Send invoices for free. Get paid today, with 0% subscription fees.",
+   "font": "600 48px / 56px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 576,
+   "y": 248,
+   "w": 768,
+   "h": 112
+  },
+  "fixed": [
+   {
+    "el": "div.framer-12b4ewp-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "8px",
+    "x": 443,
+    "y": 32,
+    "w": 1034,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1i82p87",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 448,
+    "y": 0,
+    "w": 1024,
+    "h": 1674
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1380,
+    "w": 1872,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1380,
+    "w": 1872,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1n9caxr",
+    "max": "1024px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 448,
+    "y": 1500,
+    "w": 1024,
+    "h": 411
+   },
+   {
+    "el": "div.framer-1fqoiyv",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 576,
+    "y": 1639,
+    "w": 768,
+    "h": 120
+   },
+   {
+    "el": "div.framer-711r04",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 448,
+    "y": 2007,
+    "w": 1024,
+    "h": 520
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 10151
+  }
+ },
+ "about@1024": {
+  "vw": 1024,
+  "docH": 10492,
+  "h1": {
+   "text": "Send invoices for free. Get paid today, with 0% subscription fees.",
+   "font": "600 48px / 56px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 192,
+   "y": 248,
+   "w": 640,
+   "h": 168
+  },
+  "fixed": [
+   {
+    "el": "div.framer-12b4ewp-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-TvleB.framer-135zmhh.framer-v-1b7kfqs",
+    "max": "100%",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "24px",
+    "x": 16,
+    "y": 32,
+    "w": 992,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1i82p87",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 1730
+   },
+   {
+    "el": "div.framer-13a72sf",
+    "max": "640px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 192,
+    "y": 248,
+    "w": 640,
+    "h": 168
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1380,
+    "w": 976,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1380,
+    "w": 976,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1n9caxr",
+    "max": "1024px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 24,
+    "y": 1500,
+    "w": 976,
+    "h": 411
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-oytgwa",
+    "cols": "428px 428px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 72,
+    "y": 7022,
+    "w": 880,
+    "h": 48
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 10492
+  }
+ },
+ "about@390": {
+  "vw": 390,
+  "docH": 11152,
+  "h1": {
+   "text": "Send invoices for free. Get paid today, with 0% subscription fees.",
+   "font": "600 40px / 48px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 24,
+   "y": 208,
+   "w": 342,
+   "h": 192
+  },
+  "fixed": [
+   {
+    "el": "div.framer-12b4ewp-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   },
+   {
+    "el": "div.framer-zvvqd0-container.hidden-kbhjbl.hidden-3afwkj",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "7",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-TvleB.framer-135zmhh.framer-v-1b7kfqs",
+    "max": "100%",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "24px",
+    "x": 16,
+    "y": 32,
+    "w": 358,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1i82p87",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 696
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1220,
+    "w": 342,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1220,
+    "w": 342,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1n9caxr",
+    "max": "1024px",
+    "padL": "32px",
+    "padR": "32px",
+    "x": 24,
+    "y": 1340,
+    "w": 342,
+    "h": 363
+   },
+   {
+    "el": "div.framer-711r04",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1799,
+    "w": 342,
+    "h": 960
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-1osjm80",
+    "cols": "171px 171px",
+    "colGap": "0px",
+    "rowGap": "34px",
+    "x": 24,
+    "y": 10310,
+    "w": 342,
+    "h": 842
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 11152
+  }
+ },
+ "blog@1440": {
+  "vw": 1440,
+  "docH": 9372,
+  "h1": {
+   "text": "Blog",
+   "font": "600 64px / 72px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 208,
+   "y": 150,
+   "w": 130,
+   "h": 72
+  },
+  "fixed": [
+   {
+    "el": "div.framer-r252zh-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "8px",
+    "x": 203,
+    "y": 32,
+    "w": 1034,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1ch0i6n",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 208,
+    "y": 150,
+    "w": 1024,
+    "h": 72
+   },
+   {
+    "el": "div.framer-12dttmi",
+    "max": "1032px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 204,
+    "y": 286,
+    "w": 1032,
+    "h": 7936
+   },
+   {
+    "el": "div.framer-s1exjn",
+    "max": "1280px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 204,
+    "y": 286,
+    "w": 1032,
+    "h": 7816
+   },
+   {
+    "el": "div.framer-riip7s",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 208,
+    "y": 8322,
+    "w": 1024,
+    "h": 404
+   },
+   {
+    "el": "div.framer-fjkd99-container",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 208,
+    "y": 8916,
+    "w": 1024,
+    "h": 456
+   },
+   {
+    "el": "div.framer-Lch7e.framer-1vwmqqy.framer-v-1vwmqqy",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 208,
+    "y": 8916,
+    "w": 1024,
+    "h": 456
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main.framer-egi90z",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 8222
+  }
+ },
+ "blog@1920": {
+  "vw": 1920,
+  "docH": 9372,
+  "h1": {
+   "text": "Blog",
+   "font": "600 64px / 72px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 448,
+   "y": 150,
+   "w": 130,
+   "h": 72
+  },
+  "fixed": [
+   {
+    "el": "div.framer-r252zh-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "8px",
+    "x": 443,
+    "y": 32,
+    "w": 1034,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1ch0i6n",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 448,
+    "y": 150,
+    "w": 1024,
+    "h": 72
+   },
+   {
+    "el": "div.framer-12dttmi",
+    "max": "1032px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 444,
+    "y": 286,
+    "w": 1032,
+    "h": 7936
+   },
+   {
+    "el": "div.framer-s1exjn",
+    "max": "1280px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 444,
+    "y": 286,
+    "w": 1032,
+    "h": 7816
+   },
+   {
+    "el": "div.framer-riip7s",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 448,
+    "y": 8322,
+    "w": 1024,
+    "h": 404
+   },
+   {
+    "el": "div.framer-fjkd99-container",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 448,
+    "y": 8916,
+    "w": 1024,
+    "h": 456
+   },
+   {
+    "el": "div.framer-Lch7e.framer-1vwmqqy.framer-v-1vwmqqy",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 448,
+    "y": 8916,
+    "w": 1024,
+    "h": 456
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main.framer-egi90z",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 8222
+  }
+ },
+ "blog@1024": {
+  "vw": 1024,
+  "docH": 8929,
+  "h1": {
+   "text": "Blog",
+   "font": "600 56px / 64px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 24,
+   "y": 150,
+   "w": 976,
+   "h": 64
+  },
+  "fixed": [
+   {
+    "el": "div.framer-r252zh-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-TvleB.framer-135zmhh.framer-v-1b7kfqs",
+    "max": "100%",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "24px",
+    "x": 16,
+    "y": 32,
+    "w": 992,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1ch0i6n",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 150,
+    "w": 1024,
+    "h": 64
+   },
+   {
+    "el": "div.framer-12dttmi",
+    "max": "1032px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 262,
+    "w": 1024,
+    "h": 7275
+   },
+   {
+    "el": "div.framer-s1exjn",
+    "max": "1280px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 262,
+    "w": 1024,
+    "h": 7155
+   },
+   {
+    "el": "div.framer-riip7s",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 7637,
+    "w": 976,
+    "h": 693
+   },
+   {
+    "el": "div.framer-fjkd99-container",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 8520,
+    "w": 976,
+    "h": 456
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main.framer-egi90z",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 7537
+  }
+ },
+ "blog@390": {
+  "vw": 390,
+  "docH": 24915,
+  "h1": {
+   "text": "Blog",
+   "font": "600 40px / 48px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 16,
+   "y": 128,
+   "w": 81,
+   "h": 48
+  },
+  "fixed": [
+   {
+    "el": "div.framer-r252zh-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-TvleB.framer-135zmhh.framer-v-1b7kfqs",
+    "max": "100%",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "24px",
+    "x": 16,
+    "y": 32,
+    "w": 358,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1ch0i6n",
+    "max": "1024px",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 128,
+    "w": 390,
+    "h": 48
+   },
+   {
+    "el": "div.framer-12dttmi",
+    "max": "1032px",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 212,
+    "w": 390,
+    "h": 23472
+   },
+   {
+    "el": "div.framer-s1exjn",
+    "max": "1280px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 212,
+    "w": 358,
+    "h": 23352
+   },
+   {
+    "el": "div.framer-riip7s",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 23784,
+    "w": 342,
+    "h": 1131
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-1osjm80",
+    "cols": "171px 171px",
+    "colGap": "0px",
+    "rowGap": "34px",
+    "x": 24,
+    "y": 24073,
+    "w": 342,
+    "h": 842
+   }
+  ],
+  "main": {
+   "el": "main.framer-egi90z",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 23684
+  }
+ },
+ "freelancer-invoicing@1440": {
+  "vw": 1440,
+  "docH": 8923,
+  "h1": {
+   "text": "Invoices for freelancers.  \nEarn more on every project.\nLower fees and faster pa",
+   "font": "600 48px / 56px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 330,
+   "y": 248,
+   "w": 780,
+   "h": 168
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1e6dr6z-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "8px",
+    "x": 203,
+    "y": 32,
+    "w": 1034,
+    "h": 48
+   },
+   {
+    "el": "div.framer-ow37xb",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 208,
+    "y": 0,
+    "w": 1024,
+    "h": 1730
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1250,
+    "w": 1392,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1250,
+    "w": 1392,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1mbvly8",
+    "max": "1024px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 208,
+    "y": 1370,
+    "w": 1024,
+    "h": 467
+   },
+   {
+    "el": "div.framer-1kccrza",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 336,
+    "y": 1517,
+    "w": 768,
+    "h": 160
+   },
+   {
+    "el": "div.framer-xe5rql",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 208,
+    "y": 2029,
+    "w": 1024,
+    "h": 448
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 8923
+  }
+ },
+ "freelancer-invoicing@1920": {
+  "vw": 1920,
+  "docH": 8923,
+  "h1": {
+   "text": "Invoices for freelancers.  \nEarn more on every project.\nLower fees and faster pa",
+   "font": "600 48px / 56px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 570,
+   "y": 248,
+   "w": 780,
+   "h": 168
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1e6dr6z-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "8px",
+    "x": 443,
+    "y": 32,
+    "w": 1034,
+    "h": 48
+   },
+   {
+    "el": "div.framer-ow37xb",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 448,
+    "y": 0,
+    "w": 1024,
+    "h": 1730
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1250,
+    "w": 1872,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1250,
+    "w": 1872,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1mbvly8",
+    "max": "1024px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 448,
+    "y": 1370,
+    "w": 1024,
+    "h": 467
+   },
+   {
+    "el": "div.framer-1kccrza",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 576,
+    "y": 1517,
+    "w": 768,
+    "h": 160
+   },
+   {
+    "el": "div.framer-xe5rql",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 448,
+    "y": 2029,
+    "w": 1024,
+    "h": 448
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 8923
+  }
+ },
+ "freelancer-invoicing@1024": {
+  "vw": 1024,
+  "docH": 9186,
+  "h1": {
+   "text": "Invoices for freelancers.  \nEarn more on every project.\nLower fees and faster pa",
+   "font": "600 48px / 56px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 192,
+   "y": 248,
+   "w": 640,
+   "h": 224
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1e6dr6z-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-TvleB.framer-135zmhh.framer-v-1b7kfqs",
+    "max": "100%",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "24px",
+    "x": 16,
+    "y": 32,
+    "w": 992,
+    "h": 48
+   },
+   {
+    "el": "div.framer-ow37xb",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 1786
+   },
+   {
+    "el": "div.framer-1tah6tu",
+    "max": "640px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 192,
+    "y": 248,
+    "w": 640,
+    "h": 224
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1250,
+    "w": 976,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1250,
+    "w": 976,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1mbvly8",
+    "max": "1024px",
+    "padL": "48px",
+    "padR": "48px",
+    "x": 24,
+    "y": 1370,
+    "w": 976,
+    "h": 467
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 9186
+  }
+ },
+ "freelancer-invoicing@390": {
+  "vw": 390,
+  "docH": 9816,
+  "h1": {
+   "text": "Invoices for freelancers.  \nEarn more on every project. Lower fees and faster pa",
+   "font": "600 40px / 48px \"Open Runde\", \"Open Runde Placeholder\", sans-serif",
+   "x": 24,
+   "y": 208,
+   "w": 342,
+   "h": 288
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1e6dr6z-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   },
+   {
+    "el": "div.framer-tv8qbd-container.hidden-1ujagic.hidden-z2z4rm",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "7",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-TvleB.framer-135zmhh.framer-v-1b7kfqs",
+    "max": "100%",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "24px",
+    "x": 16,
+    "y": 32,
+    "w": 358,
+    "h": 48
+   },
+   {
+    "el": "div.framer-ow37xb",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 816
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1220,
+    "w": 342,
+    "h": 48
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1220,
+    "w": 342,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1mbvly8",
+    "max": "1024px",
+    "padL": "32px",
+    "padR": "32px",
+    "x": 24,
+    "y": 1340,
+    "w": 342,
+    "h": 315
+   },
+   {
+    "el": "div.framer-xe5rql",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1751,
+    "w": 342,
+    "h": 1072
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-1osjm80",
+    "cols": "171px 171px",
+    "colGap": "0px",
+    "rowGap": "34px",
+    "x": 24,
+    "y": 8974,
+    "w": 342,
+    "h": 842
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 9816
+  }
+ },
+ "stablecoin-invoicing@1440": {
+  "vw": 1440,
+  "docH": 11019,
+  "h1": {
+   "text": "Send invoices \nin USDC, USDT \nor both",
+   "font": "",
+   "x": 120,
+   "y": 297,
+   "w": 576,
+   "h": 216
+  },
+  "fixed": [
+   {
+    "el": "div.framer-14w6pgy-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 80
+   },
+   {
+    "el": "div.framer-pypweu",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "7",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   {
+    "el": "div.framer-n7rjv1",
+    "pos": "sticky",
+    "top": "144px",
+    "z": "3",
+    "x": 744,
+    "y": 9189,
+    "w": 496,
+    "h": 552
+   },
+   {
+    "el": "div.framer-henxlp-container.hidden-1ums4t7.hidden-z0cbwk",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "1",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "8px",
+    "x": 203,
+    "y": 32,
+    "w": 1034,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1tc6sz",
+    "max": "1200px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 220,
+    "w": 1200,
+    "h": 587
+   },
+   {
+    "el": "div.framer-zxwf3t",
+    "max": "700px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 233,
+    "w": 576,
+    "h": 561
+   },
+   {
+    "el": "div.framer-nskps7",
+    "max": "600px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 297,
+    "w": 576,
+    "h": 216
+   },
+   {
+    "el": "div.framer-9j1dla",
+    "max": "700px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 537,
+    "w": 576,
+    "h": 52
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 731,
+    "w": 576,
+    "h": 63
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": -115,
+    "y": 731,
+    "w": 576,
+    "h": 63
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 11019
+  }
+ },
+ "stablecoin-invoicing@1920": {
+  "vw": 1920,
+  "docH": 10727,
+  "h1": {
+   "text": "Send invoices \nin USDC, USDT \nor both",
+   "font": "",
+   "x": 360,
+   "y": 297,
+   "w": 576,
+   "h": 216
+  },
+  "fixed": [
+   {
+    "el": "div.framer-14w6pgy-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 80
+   },
+   {
+    "el": "div.framer-pypweu",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "7",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 900
+   },
+   {
+    "el": "div.framer-n7rjv1",
+    "pos": "sticky",
+    "top": "144px",
+    "z": "3",
+    "x": 984,
+    "y": 8897,
+    "w": 496,
+    "h": 552
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "8px",
+    "x": 443,
+    "y": 32,
+    "w": 1034,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1tc6sz",
+    "max": "1200px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 360,
+    "y": 220,
+    "w": 1200,
+    "h": 587
+   },
+   {
+    "el": "div.framer-zxwf3t",
+    "max": "700px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 360,
+    "y": 233,
+    "w": 576,
+    "h": 561
+   },
+   {
+    "el": "div.framer-nskps7",
+    "max": "600px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 360,
+    "y": 297,
+    "w": 576,
+    "h": 216
+   },
+   {
+    "el": "div.framer-9j1dla",
+    "max": "700px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 360,
+    "y": 537,
+    "w": 576,
+    "h": 52
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 360,
+    "y": 731,
+    "w": 576,
+    "h": 63
+   },
+   {
+    "el": "ul",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 125,
+    "y": 731,
+    "w": 576,
+    "h": 63
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 10727
+  }
+ },
+ "stablecoin-invoicing@1024": {
+  "vw": 1024,
+  "docH": 12080,
+  "h1": {
+   "text": "Send invoices \nin USDC, USDT \nor both",
+   "font": "",
+   "x": 212,
+   "y": 164,
+   "w": 600,
+   "h": 168
+  },
+  "fixed": [
+   {
+    "el": "div.framer-14w6pgy-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 80
+   },
+   {
+    "el": "div.framer-pypweu",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "7",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 900
+   },
+   {
+    "el": "div.framer-n7rjv1",
+    "pos": "sticky",
+    "top": "144px",
+    "z": "3",
+    "x": 40,
+    "y": 10036,
+    "w": 944,
+    "h": 524
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-TvleB.framer-135zmhh.framer-v-1b7kfqs",
+    "max": "100%",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 16,
+    "y": 0,
+    "w": 992,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "24px",
+    "x": 16,
+    "y": 32,
+    "w": 992,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1tc6sz",
+    "max": "1200px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 50,
+    "y": 0,
+    "w": 924,
+    "h": 947
+   },
+   {
+    "el": "div.framer-zxwf3t",
+    "max": "700px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 162,
+    "y": 100,
+    "w": 700,
+    "h": 513
+   },
+   {
+    "el": "div.framer-nskps7",
+    "max": "600px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 212,
+    "y": 164,
+    "w": 600,
+    "h": 168
+   },
+   {
+    "el": "div.framer-9j1dla",
+    "max": "700px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 162,
+    "y": 356,
+    "w": 700,
+    "h": 52
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 162,
+    "y": 550,
+    "w": 700,
+    "h": 63
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 12080
+  }
+ },
+ "stablecoin-invoicing@390": {
+  "vw": 390,
+  "docH": 11604,
+  "h1": {
+   "text": "Stablecoins supported",
+   "font": "500 40px / 40px \"Selecta Medium\", \"Selecta Medium Placeholder\", sans-serif",
+   "x": 20,
+   "y": 5652,
+   "w": 350,
+   "h": 80
+  },
+  "fixed": [
+   {
+    "el": "div.framer-14w6pgy-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   },
+   {
+    "el": "div.framer-pypweu",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "7",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 900
+   },
+   {
+    "el": "div.framer-n7rjv1",
+    "pos": "sticky",
+    "top": "144px",
+    "z": "3",
+    "x": 16,
+    "y": 9937,
+    "w": 358,
+    "h": 388
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-TvleB.framer-135zmhh.framer-v-1b7kfqs",
+    "max": "100%",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "24px",
+    "x": 16,
+    "y": 32,
+    "w": 358,
+    "h": 48
+   },
+   {
+    "el": "div.framer-1tc6sz",
+    "max": "1200px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 823
+   },
+   {
+    "el": "div.framer-zxwf3t",
+    "max": "400px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 100,
+    "w": 358,
+    "h": 491
+   },
+   {
+    "el": "div.framer-nskps7",
+    "max": "600px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 164,
+    "w": 358,
+    "h": 120
+   },
+   {
+    "el": "div.framer-9j1dla",
+    "max": "700px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 308,
+    "w": 358,
+    "h": 78
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 528,
+    "w": 358,
+    "h": 63
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-1osjm80",
+    "cols": "171px 171px",
+    "colGap": "0px",
+    "rowGap": "34px",
+    "x": 24,
+    "y": 10762,
+    "w": 342,
+    "h": 842
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 11604
+  }
+ },
+ "location@1440": {
+  "vw": 1440,
+  "docH": 6426,
+  "h1": {
+   "text": "Send money to      Japan from the      United States",
+   "font": "500 64px / 64px \"Selecta Medium\", \"Selecta Medium Placeholder\", sans-serif",
+   "x": 373,
+   "y": 230,
+   "w": 695,
+   "h": 128
+  },
+  "fixed": [
+   {
+    "el": "div.framer-10sq8ca",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   {
+    "el": "div.framer-12i7xtb-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 80
+   },
+   {
+    "el": "div.framer-2lrk4o",
+    "pos": "sticky",
+    "top": "0px",
+    "z": "3",
+    "x": 744,
+    "y": 4509,
+    "w": 496,
+    "h": 684
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 203,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "8px",
+    "x": 203,
+    "y": 32,
+    "w": 1034,
+    "h": 48
+   },
+   {
+    "el": "div.framer-jz7yv1",
+    "max": "900px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 270,
+    "y": 230,
+    "w": 900,
+    "h": 300
+   },
+   {
+    "el": "div.framer-386n6m",
+    "max": "758px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 341,
+    "y": 230,
+    "w": 758,
+    "h": 128
+   },
+   {
+    "el": "div.framer-td94b2",
+    "max": "695px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 373,
+    "y": 230,
+    "w": 695,
+    "h": 128
+   },
+   {
+    "el": "div.framer-z4camh",
+    "max": "670px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 385,
+    "y": 382,
+    "w": 670,
+    "h": 84
+   },
+   {
+    "el": "div.framer-1x2vsw5",
+    "max": "856px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 292,
+    "y": 594,
+    "w": 856,
+    "h": 626
+   },
+   {
+    "el": "div.framer-flb988",
+    "max": "1100px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 170,
+    "y": 874,
+    "w": 1100,
+    "h": 584
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-kt772q",
+    "cols": "508px 508px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 200,
+    "y": 1754,
+    "w": 1040,
+    "h": 558
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 6426
+  }
+ },
+ "location@1920": {
+  "vw": 1920,
+  "docH": 6471,
+  "h1": {
+   "text": "Send money to      Japan from the      United States",
+   "font": "500 64px / 64px \"Selecta Medium\", \"Selecta Medium Placeholder\", sans-serif",
+   "x": 613,
+   "y": 230,
+   "w": 695,
+   "h": 128
+  },
+  "fixed": [
+   {
+    "el": "div.framer-10sq8ca",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 900
+   },
+   {
+    "el": "div.framer-12i7xtb-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 80
+   },
+   {
+    "el": "div.framer-2lrk4o",
+    "pos": "sticky",
+    "top": "0px",
+    "z": "3",
+    "x": 984,
+    "y": 4509,
+    "w": 496,
+    "h": 684
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 443,
+    "y": 0,
+    "w": 1034,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "8px",
+    "x": 443,
+    "y": 32,
+    "w": 1034,
+    "h": 48
+   },
+   {
+    "el": "div.framer-jz7yv1",
+    "max": "900px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 510,
+    "y": 230,
+    "w": 900,
+    "h": 300
+   },
+   {
+    "el": "div.framer-386n6m",
+    "max": "758px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 581,
+    "y": 230,
+    "w": 758,
+    "h": 128
+   },
+   {
+    "el": "div.framer-td94b2",
+    "max": "695px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 613,
+    "y": 230,
+    "w": 695,
+    "h": 128
+   },
+   {
+    "el": "div.framer-z4camh",
+    "max": "670px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 625,
+    "y": 382,
+    "w": 670,
+    "h": 84
+   },
+   {
+    "el": "div.framer-1x2vsw5",
+    "max": "856px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 532,
+    "y": 594,
+    "w": 856,
+    "h": 626
+   },
+   {
+    "el": "div.framer-flb988",
+    "max": "1100px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 410,
+    "y": 874,
+    "w": 1100,
+    "h": 584
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-kt772q",
+    "cols": "508px 508px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 440,
+    "y": 1754,
+    "w": 1040,
+    "h": 558
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 6471
+  }
+ },
+ "location@1024": {
+  "vw": 1024,
+  "docH": 6459,
+  "h1": {
+   "text": "Send money to      Japan from the      United States",
+   "font": "500 64px / 64px \"Selecta Medium\", \"Selecta Medium Placeholder\", sans-serif",
+   "x": 165,
+   "y": 160,
+   "w": 695,
+   "h": 128
+  },
+  "fixed": [
+   {
+    "el": "div.framer-10sq8ca",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 900
+   },
+   {
+    "el": "div.framer-12i7xtb-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 80
+   },
+   {
+    "el": "div.framer-2lrk4o",
+    "pos": "sticky",
+    "top": "0px",
+    "z": "3",
+    "x": 536,
+    "y": 4451,
+    "w": 448,
+    "h": 580
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 20,
+    "y": 0,
+    "w": 984,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 20,
+    "y": 0,
+    "w": 984,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 20,
+    "y": 0,
+    "w": 984,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "8px",
+    "x": 20,
+    "y": 32,
+    "w": 984,
+    "h": 48
+   },
+   {
+    "el": "div.framer-jz7yv1",
+    "max": "900px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 62,
+    "y": 160,
+    "w": 900,
+    "h": 300
+   },
+   {
+    "el": "div.framer-386n6m",
+    "max": "736px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 144,
+    "y": 160,
+    "w": 736,
+    "h": 128
+   },
+   {
+    "el": "div.framer-td94b2",
+    "max": "695px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 165,
+    "y": 160,
+    "w": 695,
+    "h": 128
+   },
+   {
+    "el": "div.framer-z4camh",
+    "max": "670px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 177,
+    "y": 312,
+    "w": 670,
+    "h": 84
+   },
+   {
+    "el": "div.framer-1x2vsw5",
+    "max": "775px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 125,
+    "y": 524,
+    "w": 775,
+    "h": 626
+   },
+   {
+    "el": "div.framer-flb988",
+    "max": "1100px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 40,
+    "y": 804,
+    "w": 944,
+    "h": 584
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-kt772q",
+    "cols": "460px 460px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 40,
+    "y": 1668,
+    "w": 944,
+    "h": 586
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 6459
+  }
+ },
+ "location@390": {
+  "vw": 390,
+  "docH": 7553,
+  "h1": {
+   "text": "Send money to      Japan from the      United States",
+   "font": "",
+   "x": 16,
+   "y": 160,
+   "w": 358,
+   "h": 144
+  },
+  "fixed": [
+   {
+    "el": "div.framer-10sq8ca",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 900
+   },
+   {
+    "el": "div.framer-12i7xtb-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   },
+   {
+    "el": "div.framer-2lrk4o",
+    "pos": "sticky",
+    "top": "0px",
+    "z": "3",
+    "x": 16,
+    "y": 5624,
+    "w": 358,
+    "h": 368
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-TvleB.framer-135zmhh.framer-v-1b7kfqs",
+    "max": "100%",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1ve1fz9",
+    "max": "1034px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 80
+   },
+   {
+    "el": "div.framer-1pf5mm4-container",
+    "max": "1072px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 32
+   },
+   {
+    "el": "a.framer-r1UWv.framer-w2wy95.framer-v-w2wy95",
+    "max": "100%",
+    "padL": "20px",
+    "padR": "14px",
+    "x": 16,
+    "y": 0,
+    "w": 358,
+    "h": 32
+   },
+   {
+    "el": "div.framer-lplmcd",
+    "max": "1072px",
+    "padL": "20px",
+    "padR": "24px",
+    "x": 16,
+    "y": 32,
+    "w": 358,
+    "h": 48
+   },
+   {
+    "el": "div.framer-386n6m",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 160,
+    "w": 358,
+    "h": 144
+   },
+   {
+    "el": "div.framer-td94b2",
+    "max": "695px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 160,
+    "w": 358,
+    "h": 144
+   },
+   {
+    "el": "div.framer-z4camh",
+    "max": "500px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 328,
+    "w": 358,
+    "h": 120
+   },
+   {
+    "el": "div.framer-ayyg7y.hidden-1np0xyn.hidden-1x02k70",
+    "max": "500px",
+    "padL": "10px",
+    "padR": "10px",
+    "x": 16,
+    "y": 626,
+    "w": 358,
+    "h": 1000
+   },
+   {
+    "el": "section",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 554,
+    "w": 358,
+    "h": 48
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-riwdwr",
+    "cols": "171px 171px",
+    "colGap": "0px",
+    "rowGap": "34px",
+    "x": 24,
+    "y": 6445,
+    "w": 342,
+    "h": 786
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 7553
+  }
+ }
+}
