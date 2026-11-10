@@ -291,16 +291,22 @@ W()
 W("Values that apply across entries, from the measurement files.")
 W()
 foc = []
+failed = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
     if not st or "style" not in st:
+        continue
+    # A 'focus failed' via means the keyboard never reached the element: it is
+    # not evidence of what the site's focus looks like, so it is not counted.
+    if "failed" in str(st.get("via", "")):
+        failed.append(k)
         continue
     s = st["style"]
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
     foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring) or 'none'}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}.")
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring) or 'none'}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}." + (f" Focus could not be driven to {len(failed)}: {', '.join('`'+k+'`' for k in failed)}." if failed else ""))
 W()
 W("**Pressed.** untitled's pills hold flat under :active (the interactions are opacity hovers, not colour steps) — see the per-component state rows.")
 W()
@@ -337,10 +343,10 @@ def dur_ms(d):
 for (d, e), (ps, ks) in sorted(mot.items(), key=lambda kv: (dur_ms(kv[0][0]), kv[0][1])):
     W(f"| {d} | `{e}` | {', '.join(sorted(ps))} | {', '.join(sorted(ks)[:8])}{' and more' if len(ks) > 8 else ''} |")
 W()
-W("**Card shapes.** Default-state values; the entries hold the states.")
+W("**Card shapes.** Default-state values; the entries hold the states. The Painted child column names the first node inside a transparent root that carries the paint — it is the child's radius and fill, not the container's, and its size is the child's own.")
 W()
-W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
-W("|---|---|---|---|---|---|---|")
+W("| Card | Size | Border | Radius | Background | Shadow | Padding | Painted child |")
+W("|---|---|---|---|---|---|---|---|")
 # The card-like and chrome surfaces, compared in one table.
 for k in ["header", "pricing-header", "consent-card", "plan-card", "plan-card-paid", "login-card", "pill-bar", "billing-toggle", "disc-carousel", "feature-section", "feature-video", "trust-list"]:
     c = C.get(k)
@@ -351,10 +357,17 @@ for k in ["header", "pricing-header", "consent-card", "plan-card", "plan-card-pa
     if st is None:
         continue
     p = props(st)
+    child = "-"
     if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
         p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
-    W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
+        child = f"{re.sub(r'\\..*$', '', p0['node'])} {p0['size'].replace('.0x', 'x').replace('.0', '')}"
+        if p0.get("bg"):
+            child += f", {colour(p0['bg'])}"
+        if p0.get("radius"):
+            child += f", radius {p0['radius']}"
+        if p0.get("shadow"):
+            child += f", shadow {colour(p0['shadow'], tokens=False)[:80]}"
+    W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} | {child} |")
 W()
 
 # ------------------------------------------------ entries

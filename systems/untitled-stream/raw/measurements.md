@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from untitled.stream on 2026-11-08 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from untitled.stream on 2026-11-10 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -396,7 +396,7 @@ Page: home. Selector: `disc strip`. States: default.
 | Letter spacing | -0.45px |
 | Colour | #191919 |
 | Transition | none |
-| Painted layers | div.bg-shading.rounded-full 842.0x842.0 bg #1a1a1a @ 0.05 r 3.35544e+07px; div.bg-shading.rounded-full 690.6x690.6 bg #1a1a1a @ 0.05 r 3.35544e+07px; div.bg-shading.rounded-full 820.8x820.8 bg #1a1a1a @ 0.05 r 3.35544e+07px; div.bg-shading.rounded-full 647.5x647.5 bg #1a1a1a @ 0.05 r 3.35544e+07px; div.bg-shading.rounded-full 0.0x0.0 bg #1a1a1a @ 0.05 r 3.35544e+07px; div.absolute.blur-sm 0.0x0.0 image linear-gradient(to top in oklab, #ffffff 0%, #ffffff 80%, #000000 @ 0 100%) |
+| Painted layers | div.bg-shading.rounded-full 818.6x818.6 bg #1a1a1a @ 0.05 r 3.35544e+07px; div.bg-shading.rounded-full 771.3x771.3 bg #1a1a1a @ 0.05 r 3.35544e+07px; div.bg-shading.rounded-full 791.0x791.0 bg #1a1a1a @ 0.05 r 3.35544e+07px; div.bg-shading.rounded-full 696.6x696.6 bg #1a1a1a @ 0.05 r 3.35544e+07px; div.bg-shading.rounded-full 0.0x0.0 bg #1a1a1a @ 0.05 r 3.35544e+07px; div.absolute.blur-sm 0.0x0.0 image linear-gradient(to top in oklab, #ffffff 0%, #ffffff 80%, #000000 @ 0 100%) |
 | How | at rest |
 
 Crops: `disc-carousel-default.png`.
@@ -409,7 +409,7 @@ Page: home. Selector: `div.rounded-full disc`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 695.03 x 695.03 |
+| Size (w x h) | 802.64 x 802.64 |
 | Padding | 0px |
 | Border | none |
 | Radius | 3.35544e+07px |
@@ -421,8 +421,8 @@ Page: home. Selector: `div.rounded-full disc`. States: default.
 | Letter spacing | -0.45px |
 | Colour | #191919 |
 | Transition | none |
-| Transform | matrix(0.173569, 0.984822, -0.984822, 0.173569, 0, 0) |
-| Painted layers | div.bg-shading.rounded-full 695.0x695.0 bg #1a1a1a @ 0.05 r 3.35544e+07px |
+| Transform | matrix(-0.439488, 0.898249, -0.898249, -0.439488, 0, 0) |
+| Painted layers | div.bg-shading.rounded-full 802.6x802.6 bg #1a1a1a @ 0.05 r 3.35544e+07px |
 | How | at rest |
 
 Crops: none.
@@ -449,7 +449,7 @@ Page: home. Selector: `floating pill bar`. States: default.
 | Text node | a.body-semibold.pointer-events-auto: Untitled Sans 15px/20px 500, #191919, ls -0.45px |
 | Transition | none |
 | Icon | 20 x 20, colour #191919 |
-| Painted layers | div.sm:bg-shading.flex 272.4x44.0 bg #1a1a1a @ 0.05 r 3.35544e+07px; a.body-semibold.bg-primary-label 130.7x44.0 bg #191919 r 3.35544e+07px; button.sm:bg-shading.pointer-events-auto 148.7x44.0 bg #1a1a1a @ 0.05 r 3.35544e+07px; a.body-semibold.bg-shading 96.4x44.0 bg #1a1a1a @ 0.05 r 3.35544e+07px; a.body-semibold.bg-shading 127.9x44.0 bg #1a1a1a @ 0.05 r 3.35544e+07px; a.body-semibold.bg-shading 127.0x44.0 bg #1a1a1a @ 0.05 r 3.35544e+07px |
+| Painted layers | div.sm:bg-shading.flex 342.4x44.0 bg #1a1a1a @ 0.05 r 3.35544e+07px; a.body-semibold.bg-primary-label 130.7x44.0 bg #191919 r 3.35544e+07px; button.sm:bg-shading.pointer-events-auto 148.7x44.0 bg #1a1a1a @ 0.05 r 3.35544e+07px; a.body-semibold.bg-shading 96.4x44.0 bg #1a1a1a @ 0.05 r 3.35544e+07px; a.body-semibold.bg-shading 127.9x44.0 bg #1a1a1a @ 0.05 r 3.35544e+07px; a.body-semibold.bg-shading 127.0x44.0 bg #1a1a1a @ 0.05 r 3.35544e+07px |
 | Ancestor paint | 1 up body bg #ffffff |
 | How | at rest |
 
@@ -457,13 +457,13 @@ Crops: `pill-bar-default.png`.
 
 #### pill-social
 
-Social pill. A frosted pill in the bottom bar holding the social links (Texting Interviews, IG, X).
+Social pill. A frosted pill in the bottom bar holding the social links (a campaign link — "[untitled broadcast network]", earlier "Texting Interviews" — then IG, X).
 
 Page: home. Selector: `social pill`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 150.94 x 20 | = | = | = |
+| Size (w x h) | 220.91 x 20 | = | = | = |
 | Padding | 0px 12px | = | = | = |
 | Gap | 8px | = | = | = |
 | Border | none | = | = | = |
@@ -511,7 +511,7 @@ Crops: `cta-hiring-default.png`, `cta-hiring-hover.png`, `cta-hiring-focus-visib
 
 #### pill-learn-more
 
-Learn more pill. The frosted pill that scrolls the page to the product sections.
+Learn more pill. The frosted pill that scrolls the page to the product sections. It fades to opacity 0 as soon as the page scrolls and back at the top — these states are measured at scrollY 0.
 
 Page: home. Selector: `button Learn more`. States: default, hover, focus-visible, pressed.
 
@@ -530,7 +530,6 @@ Page: home. Selector: `button Learn more`. States: default, hover, focus-visible
 | Colour | #191919 | = | = | = |
 | Text node | span.body-semibold.flex: Untitled Sans 15px/20px 500, #191919, ls -0.45px | = | = | = |
 | Transition | opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Opacity | 0 | = | = | = |
 | Cursor | pointer | = | = | = |
 | Icon | 20 x 20, colour #191919 | = | = | = |
 | Painted layers | button.sm:bg-shading.pointer-events-auto 148.7x44.0 bg #1a1a1a @ 0.05 r 3.35544e+07px | = | = | = |
@@ -1100,23 +1099,23 @@ Crops: `trust-list-default.png`.
 
 #### trust-link
 
-Trust link.
+Trust link. The untitled-blue outbound link inside the practices column (the Latacora link).
 
-Page: trust. Selector: `trust a`. States: default, hover, focus-visible, pressed.
+Page: trust. Selector: `trust outbound a`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 112.25 x 32 | = | = | = |
+| Size (w x h) | 58.69 x 19 | = | = | = |
 | Padding | 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | = | = |
-| Font | Untitled Sans 26px/32px 500 | = | = | = |
-| Letter spacing | -0.78px | = | = | = |
+| Font | Untitled Sans 15px/20px 400 | = | = | = |
+| Letter spacing | -0.45px | = | = | = |
 | Colour | #191919 | = | = | = |
-| Transition | opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Transition | opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Opacity | - | 0.8 | = | 0.8 |
@@ -1154,24 +1153,25 @@ Crops: `login-card-default.png`.
 
 #### login-icon
 
-App icon. The iridescent-disc app icon at the top of the sign-in card.
+App icon. The iridescent-disc app icon at the top of the sign-in card (the 220 px amulet mask, not its inner ring).
 
-Page: login. Selector: `login icon`. States: default.
+Page: login. Selector: `.amulet-clip-mask`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 189.22 x 189.22 |
+| Size (w x h) | 220 x 220 |
 | Padding | 0px |
 | Border | none |
-| Radius | 3.35544e+07px |
-| Background | oklab(0 none none / 0.1) |
+| Radius | 0px |
+| Background | transparent |
+| Background image | linear-gradient(#eeeeee, #d0d0d0) |
 | Box shadow | none |
 | Outline | none |
 | Font | Untitled Sans 15px/20px 400 |
 | Letter spacing | -0.45px |
 | Colour | #191919 |
 | Transition | none |
-| Painted layers | div.absolute.inset-[7%] 189.2x189.2 bg oklab(0 none none / 0.1) r 3.35544e+07px |
+| Painted layers | div.amulet-clip-mask.bg-amulet 220.0x220.0 image linear-gradient(#eeeeee, #d0d0d0); div.absolute.inset-[7%] 189.2x189.2 bg oklab(0 none none / 0.1) r 3.35544e+07px; div.absolute.inset-[12%] 167.2x167.2 bg oklab(0 none none / 0.1) r 3.35544e+07px; div.absolute.inset-[47%] 13.2x13.2 bg oklab(0 none none / 0.1) r 3.35544e+07px |
 | How | at rest |
 
 Crops: `login-icon-default.png`.

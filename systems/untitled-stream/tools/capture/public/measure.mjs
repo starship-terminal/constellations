@@ -33,7 +33,7 @@ const URLS = {
   trust: '/trust',
   login: '/login',
 };
-let page, cdp, current, context, contextMobile, run;
+let page, cdp, current, browser, context, contextMobile, ctx, run;
 const touched = new Set();
 
 // The Cloudflare waiting room and the Remix error boundary both render a
@@ -47,12 +47,21 @@ async function blocked() {
 
 // ---------- helpers ----------
 
+// Closes the per-page context: a bare page.close() leaves the context (and so
+// the command) alive.
+async function closeCtx() {
+  if (ctx) await ctx.close().catch(() => {});
+  ctx = null;
+  page = null;
+  cdp = null;
+}
+
 async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {}) {
   current = key;
   // A fresh context per page: Cloudflare is measurably more willing to clear
   // a first-party path on a clean session than after several navigations.
   const b = context.browser();
-  const ctx = await b.newContext(mobile
+  ctx = await b.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
   await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
@@ -72,6 +81,37 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {
   if (promo === 'close') await killGeo(page);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
   return true;
+}
+
+// Tags the first element matching `sel` whose text matches reText AND that a
+// reader can actually see: Playwright's `visible` ignores opacity, so an
+// opacity:0 duplicate (the hidden Learn more copy) or an element under a
+// transparent parent wins the first match otherwise. Multiplies opacity up
+// the ancestor chain. Retries a few times: the pill bar reveals itself through
+// an opacity transition, so a match read mid-reveal is retried until settled.
+async function opaqueText(reText, { sel = 'button, a', tag = 'op', tries = 4 } = {}) {
+  for (let i = 0; i < tries; i++) {
+    const ok = await page.evaluate(
+      ([src, flags, s, t]) => {
+        const re = new RegExp(src, flags);
+        document.querySelectorAll(`[data-m-mark="${t}"]`).forEach((n) => n.removeAttribute('data-m-mark'));
+        const els = [...document.querySelectorAll(s)].filter((n) => {
+          const r = n.getBoundingClientRect();
+          if (!(r.width > 0 && r.height > 0)) return false;
+          if (getComputedStyle(n).visibility === 'hidden') return false;
+          for (let m = n; m; m = m.parentElement) if (parseFloat(getComputedStyle(m).opacity) < 0.5) return false;
+          return re.test((n.innerText || n.getAttribute('aria-label') || '').trim());
+        });
+        if (!els[0]) return false;
+        els[0].setAttribute('data-m-mark', t);
+        return true;
+      },
+      [reText.source, reText.flags, sel, tag],
+    );
+    if (ok) return page.locator(`[data-m-mark="${tag}"]`);
+    await page.waitForTimeout(900);
+  }
+  return page.locator('[data-m-mark="__none__"]');
 }
 
 async function reset() {
@@ -146,7 +186,12 @@ async function measure(key, state, target, opts = {}) {
 }
 
 // Records the listed states of one component. meta: title, group, desc, sel.
+// When the selector misses but earlier states exist, those states stay — and
+// the entry keeps the run timestamp they were measured under, with the miss
+// recorded as recaptureMissed instead of re-dating stale readings.
 async function S(key, target, list, meta = {}, opts = {}) {
+  const prev = out.components[key];
+  const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   delete out.components[key].missing;
   if (opts.open) { await reset(); await opts.open(); }
@@ -155,6 +200,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
     const has = Object.keys(out.components[key].states || {}).length > 0;
     log('  ! missing', key, has ? '(earlier states kept)' : '');
     if (!has) out.components[key].missing = true;
+    else { Object.assign(out.components[key], keep); out.components[key].recaptureMissed = run; }
     return;
   }
   for (const st of list) {
@@ -228,7 +274,7 @@ const G = {
 async function home() {
   // promo 'keep': the consent card is measured first, then hidden (never
   // clicked — the buttons POST a Remix action that 403s into an error page).
-  if (!(await newPage('home', { promo: 'keep' }))) { await page.close(); return; }
+  if (!(await newPage('home', { promo: 'keep' }))) { await closeCtx(); return; }
   await sheetsFor('home');
   const g = G.shell;
 
@@ -259,9 +305,18 @@ async function home() {
   const bar = q('a.bg-shading:has-text("iOS")').filter({ visible: true }).first()
     .locator('xpath=ancestor::*[contains(@class,"pointer-events") or contains(@class,"fixed") or contains(@class,"absolute")][1]');
   await S('pill-bar', (await bar.count()) ? bar : q('a.bg-shading:has-text("iOS")').filter({ visible: true }).first(), ['default'], { group: h, title: 'Bottom pill bar', desc: 'The floating bar pinned to the viewport bottom: social pills (Texting Interviews, IG, X), the black We\'re hiring pill, Learn more, and the iOS / Android / MacOS platform pills.', sel: 'floating pill bar' });
-  await S('pill-social', q('a.body-semibold:has-text("Texting Interviews")').filter({ visible: true }).first(), B4, { group: h, title: 'Social pill', desc: 'A frosted pill in the bottom bar holding the social links (Texting Interviews, IG, X).', sel: 'social pill' });
+  // The social pill's copy changes with campaigns (it read "Texting
+  // Interviews" in the 2026-11-08 capture, "[untitled broadcast network]" a
+  // day later) — match either, and the IG/X links beside it stay out.
+  await S('pill-social', await opaqueText(/interviews|broadcast/i, { sel: 'a.body-semibold', tag: 'ps' }), B4, { group: h, title: 'Social pill', desc: 'A frosted pill in the bottom bar holding the social links (a campaign link — "[untitled broadcast network]", earlier "Texting Interviews" — then IG, X).', sel: 'social pill' });
   await S('cta-hiring', q('a:has-text("We\'re hiring"), a.bg-primary-label').filter({ visible: true }).first(), B4, { group: h, title: 'Hiring pill', desc: 'The inverted (black) "We\'re hiring" pill in the bottom bar; links to jobs.untitled.stream.', sel: 'a We\'re hiring' });
-  await S('pill-learn-more', q('button:has-text("Learn more")').filter({ visible: true }).first(), B4, { group: h, title: 'Learn more pill', desc: 'The frosted pill that scrolls the page to the product sections.', sel: 'button Learn more' });
+  // Learn more fades to opacity 0 the moment the page leaves the top (its job
+  // is to scroll you to the product sections) and fades back at scrollY 0 —
+  // real behaviour, verified live. Scroll to top before tagging, and don't
+  // centre() it back down during the states.
+  await page.evaluate(() => scrollTo(0, 0));
+  await page.waitForTimeout(1200);
+  await S('pill-learn-more', await opaqueText(/learn more/i, { tag: 'plm' }), B4, { group: h, title: 'Learn more pill', desc: 'The frosted pill that scrolls the page to the product sections. It fades to opacity 0 as soon as the page scrolls and back at the top — these states are measured at scrollY 0.', sel: 'button Learn more' }, { noScroll: true });
   await S('pill-platform', q('a.bg-shading:has-text("iOS")').filter({ visible: true }).first(), B4, { group: h, title: 'Platform pill', desc: 'One of the iOS / Android / MacOS download pills in the bottom bar, each with a platform icon.', sel: 'a.bg-shading platform' });
 
   // Down-page product sections (the full page is ~4800px).
@@ -275,11 +330,11 @@ async function home() {
   await S('footer', q('a:has-text("Cookie Policy")').filter({ visible: true }).first().locator('xpath=ancestor::*[self::footer or self::div][1]'), ['default'], { group: g, title: 'Footer', desc: 'The legal row at the foot: Terms, Privacy, Cookie Policy, Contact Us and a Cookie Settings button, plus the Made in Brooklyn, NY mark.', sel: 'footer row' });
   await S('footer-link', q('a.subhead:has-text("Terms")').filter({ visible: true }).first(), B4, { group: g, title: 'Footer legal link', sel: 'a.subhead Terms' });
   await S('cookie-settings', q('button:has-text("Cookie Settings")').filter({ visible: true }).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Cookie settings button', desc: 'The footer control that re-opens the consent card. Focused and hovered only — pressing it reposts the gated consent flow.', sel: 'button Cookie Settings' });
-  await page.close();
+  await closeCtx();
 }
 
 async function pricing() {
-  if (!(await newPage('pricing'))) { await page.close(); return; }
+  if (!(await newPage('pricing'))) { await closeCtx(); return; }
   await sheetsFor('pricing');
   const g = G.pricing;
   const hdr = q('div.flex.w-full.flex-col, header').filter({ visible: true }).first();
@@ -314,46 +369,50 @@ async function pricing() {
   await S('plan-name', starter.filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan name', desc: 'A bracketed plan name ([starter], [membership]).', sel: 'plan name' });
   await S('plan-price', q('text=/^Free$|\\$49\\.99|\\$[0-9]+\\.[0-9]+/').filter({ visible: true }).first(), ['default'], { group: g, title: 'Plan price', sel: 'price text' });
   await S('feature-row', q('li:has(h3), h3.body-semibold').filter({ visible: true }).first(), ['default'], { group: g, title: 'Feature row', desc: 'A plan feature line: icon + h3.body-semibold name + sub copy ("Unlimited listening").', sel: 'feature li' });
-  await page.close();
+  await closeCtx();
 }
 
 async function trust() {
-  if (!(await newPage('trust'))) { await page.close(); return; }
+  if (!(await newPage('trust'))) { await closeCtx(); return; }
   await sheetsFor('trust');
   const g = G.trust;
   await S('trust-title', q('h1, h2').filter({ visible: true }).first(), ['default'], { group: g, title: 'Trust title', desc: '"Trust & Security" — the page is a single long-text column.', sel: 'trust h1' });
   const sec = await domFind(page, /\[\d\]|Passwordless|Encryption|Face ID/i, { sel: 'h2, h3, h4, p, strong', tag: 'ts' });
   await S('trust-section-title', sec, ['default'], { group: g, title: 'Trust section title', desc: 'A numbered practice heading ("[1] Passwordless sign-in").', sel: 'trust heading' });
   await S('trust-list', q('ul, ol').filter({ visible: true }).first(), ['default'], { group: g, title: 'Trust bullet list', desc: 'The encryption-standards bullet list (TLS in transit, AES-256 at rest).', sel: 'trust ul' });
-  await S('trust-link', q('a').filter({ visible: true }).first(), B4, { group: g, title: 'Trust link', sel: 'trust a' });
-  await page.close();
+  // The first <a> on the page is the [untitled] header wordmark; the described
+  // element is the outbound link inside the practices column (the Latacora link).
+  await S('trust-link', await opaqueText(/latacora|cloudflare|security@|https?:\/\//i, { sel: 'a[href^="http"], a[href^="mailto:"]', tag: 'tl' }), B4, { group: g, title: 'Trust link', desc: 'The untitled-blue outbound link inside the practices column (the Latacora link).', sel: 'trust outbound a' });
+  await closeCtx();
 }
 
 async function login() {
-  if (!(await newPage('login', { wait: 9000 }))) { await page.close(); return; }
+  if (!(await newPage('login', { wait: 9000 }))) { await closeCtx(); return; }
   await sheetsFor('login');
   const g = G.signin;
   const card = await domFind(page, /sacred place|continue with/i, { sel: 'main, section, div', tag: 'lc', leaf: false, minW: 280, minH: 300 });
   await S('login-card', card, ['default'], { group: g, title: 'Sign-in card', desc: 'The centred sign-in column: app icon, the tagline, and three choices — Continue with Google, Continue with Apple, Sign in with phone. OAuth and phone sign-in were measured at rest only; nothing was pressed or sent.', sel: 'login column' });
-  await S('login-icon', q('img, div.rounded-full, [style*="background-image"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'App icon', desc: 'The iridescent-disc app icon at the top of the sign-in card.', sel: 'login icon' });
+  // The mark is the 220px .amulet-clip-mask disc; a first-match rounded-full
+  // is its 189px inset-[7%] inner circle, not the icon.
+  await S('login-icon', q('div.amulet-clip-mask, div.bg-amulet').filter({ visible: true }).first(), ['default'], { group: g, title: 'App icon', desc: 'The iridescent-disc app icon at the top of the sign-in card (the 220 px amulet mask, not its inner ring).', sel: '.amulet-clip-mask' });
   await S('login-title', q('h1, h2').filter({ visible: true }).first(), ['default'], { group: g, title: 'Sign-in title', sel: 'login h1' });
   // Rest states only: these leave the site (OAuth) or start a flow.
   await S('oauth-google', q('a:has-text("Continue with Google"), button:has-text("Continue with Google")').filter({ visible: true }).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Continue with Google', desc: 'The frosted OAuth pill. Hovered and focused only — pressing it leaves for accounts.google.com.', sel: 'Google oauth pill' });
   await S('oauth-apple', q('a:has-text("Continue with Apple"), button:has-text("Continue with Apple")').filter({ visible: true }).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Continue with Apple', desc: 'The matching Apple OAuth pill. Hovered and focused only.', sel: 'Apple oauth pill' });
   await S('phone-signin', q('a:has-text("Sign in with phone"), button:has-text("Sign in with phone")').filter({ visible: true }).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Phone sign-in link', desc: 'The text option under the OAuth pills; leads to the passwordless SMS flow.', sel: 'phone sign-in' });
   await S('legal-link', q('a:has-text("Terms"), a:has-text("Privacy Policy")').filter({ visible: true }).first(), B4, { group: g, title: 'Legal link', desc: 'The Terms / Privacy Policy links under the sign-in choices.', sel: 'login legal a' });
-  await page.close();
+  await closeCtx();
 }
 
 async function mobile() {
-  if (!(await newPage('home', { mobile: true }))) { await page.close(); return; }
+  if (!(await newPage('home', { mobile: true }))) { await closeCtx(); return; }
   const g = G.mobile;
   await closePromo(page);
   await S('m-hero-title', q('p.super-title').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile hero title', sel: 'mobile super-title' }, { noScroll: true });
   await S('m-appstore', q('a:has-text("App Store"), img[alt*="App Store" i], a[href*="apple" i]').filter({ visible: true }).first(), ['default', 'pressed'], { group: g, title: 'App Store badge', desc: 'The Download on the App Store badge under the mobile hero title.', sel: 'app store badge' }, { noScroll: true });
   await S('m-disc', q('div.rounded-full').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile disc', desc: 'The oversized iridescent disc filling the lower half of the mobile hero.', sel: 'mobile disc div' });
   await S('m-membership', q('a:has-text("[membership]"), a:has-text("Enter App")').filter({ visible: true }).first(), B4, { group: g, title: 'Mobile nav link', sel: 'mobile header link' }, { noScroll: true });
-  await page.close();
+  await closeCtx();
 }
 
 const RUNNERS = { home, pricing, trust, login, mobile };
@@ -361,10 +420,20 @@ run = new Date().toISOString();
 out._meta.run = run;
 out._meta.product = 'untitled.stream';
 const wanted = process.argv.slice(2).join(',').split(',').map((s) => s.trim()).filter(Boolean);
-({ context } = await launch());
+({ browser, context } = await launch());
 for (const [k, fn] of Object.entries(RUNNERS)) {
   if (wanted.length && !wanted.includes(k)) continue;
-  try { await fn(); } catch (e) { log('PAGE FAILED', k, String(e.message).split('\n')[0]); }
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try { await fn(); break; } catch (e) {
+      log('PAGE FAILED', k, String(e.message).split('\n')[0]);
+      // A renderer crash ("Target page/context/browser has been closed") is
+      // retried with a fresh browser; anything else fails the page once.
+      if (!/closed|crash|Terminated|target/i.test(e.message) || attempt === 2) break;
+      try { await browser.close(); } catch {}
+      ({ browser, context } = await launch());
+      log('  relaunched browser, retrying', k);
+    }
+  }
   save();
 }
 // mark components from this run whose selectors matched nothing; a component
@@ -375,4 +444,5 @@ for (const [k, c] of Object.entries(out.components)) {
   else c.missing = true;
 }
 save();
+await browser.close();
 log('done ->', OUT);

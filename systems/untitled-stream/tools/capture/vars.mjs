@@ -20,15 +20,30 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { BASE, launch } from './public/lib.mjs';
+import { BASE, launch, clearChallenge } from './public/lib.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const REF = path.resolve(here, '..', '..');
+const OUT_FILE = path.join(REF, 'raw', 'css-vars.json');
 
 const { browser, context } = await launch();
 const page = await context.newPage();
-await page.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 90000 });
-await page.waitForTimeout(6000);
+// The Cloudflare waiting room and the Remix error boundary are both known
+// outcomes for this site — the same checks the measure runner makes. A
+// blocked page must not replace the saved readings, so bail out instead.
+let ok = false;
+for (let attempt = 0; attempt < 3 && !ok; attempt++) {
+  await page.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+  if (!(await clearChallenge(page))) break;
+  await page.waitForTimeout(6000);
+  const err = await page.evaluate(() => /something went wrong/i.test((document.body && document.body.innerText) || '')).catch(() => true);
+  ok = !err;
+}
+if (!ok) {
+  await browser.close();
+  console.error('blocked: the Cloudflare waiting room or the Remix error boundary is up — keeping the existing raw/css-vars.json');
+  process.exit(1);
+}
 
 // ---- harvest: every rule with --* declarations, live CSSOM ----
 const result = await page.evaluate(() => {
@@ -126,6 +141,15 @@ const resolved = await page.evaluate((names) => {
 }, want);
 await browser.close();
 
+// Verify the page delivered its token layer before replacing the saved
+// readings: an error page's or an empty CSSOM yields none of them.
+const REQUIRED = ['--color-primary-label', '--color-primary-background', '--body-size', '--super-title-size'];
+const missingRequired = REQUIRED.filter((n) => !resolved[n]);
+if (!result.rules.length || missingRequired.length) {
+  console.error(`refusing to write: ${result.rules.length} rules harvested, missing ${missingRequired.join(', ') || 'none'} — keeping the existing raw/css-vars.json`);
+  process.exit(1);
+}
+
 const THEME = /^--(color|font|text|spacing|radius|breakpoint|container|shadow|inset-shadow|drop-shadow|ease|animate|blur|perspective|aspect|leading|tracking|weight|default)-?/;
 const binOf = (r) => {
   const names = Object.keys(r.properties);
@@ -159,6 +183,6 @@ const out = {
   resolved,
 };
 fs.mkdirSync(path.join(REF, 'raw'), { recursive: true });
-fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(out, null, 1) + '\n');
+fs.writeFileSync(OUT_FILE, JSON.stringify(out, null, 1) + '\n');
 console.log(`css-vars.json: ${result.rules.length} rules, ${result.fonts.length} font faces; names theme ${out.counts.names.theme}, app ${out.counts.names.app}, utility ${out.counts.names.utility}, tailwind ${out.counts.names.tailwind}; resolved ${Object.keys(resolved).length}; skipped ${result.skipped.length} cross-origin sheets`);
 for (const [k, v] of Object.entries(bySelector).sort((a, b) => b[1] - a[1]).slice(0, 20)) console.log(`  ${v}\t${k.slice(0, 150)}`);

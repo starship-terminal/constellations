@@ -306,8 +306,20 @@
      "lineHeight": "16px",
      "letterSpacing": "-0.39px"
     },
-    "source": "measured raw/measurements.md#footer-link, #cta-enter-app",
-    "description": "Small labels: legal links, the Enter App pill label"
+    "source": "measured raw/measurements.md#footer-link, #read-more, #cookie-settings",
+    "description": "Small labels: legal links, Read more, cookie settings"
+   },
+   "subhead-medium": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{font.family.untitled-sans}",
+     "fontWeight": 500,
+     "fontSize": "13px",
+     "lineHeight": "16px",
+     "letterSpacing": "-0.39px"
+    },
+    "source": "measured raw/measurements.md#cta-enter-app, #cta-subscribe",
+    "description": "The pill-label cut: Enter App, Subscribe (the same 13/16 as subhead at weight 500)"
    },
    "footnote": {
     "type": "typography",
@@ -409,7 +421,7 @@
     "text": { "type": "color", "value": "#ffffff", "source": "cta-enter-app default color" },
     "radius": { "type": "dimension", "value": "33554400px", "source": "cta-enter-app default (rounded-full / CSS infinity)" },
     "height": { "type": "dimension", "value": "44px", "source": "cta-enter-app default rect height" },
-    "label": { "value": "{typography.subhead}", "type": "typography", "source": "cta-enter-app default: 13/16 semibold" }
+    "label": { "value": "{typography.subhead-medium}", "type": "typography", "source": "cta-enter-app default: 13/16 500 (medium)" }
    },
    "secondary": {
     "bg": { "type": "color", "value": "rgba(26, 26, 26, 0.05)", "source": "oauth-google default backgroundColor (bg-shading)" },
@@ -463,7 +475,7 @@
   "login-card": {
    "width": { "type": "dimension", "value": "342px", "source": "oauth-google default rect width (the pill column)" },
    "oauth-height": { "type": "dimension", "value": "52px", "source": "oauth-google default rect height" },
-   "icon-size": { "type": "dimension", "value": "189px", "source": "login-icon default rect (the disc app icon)" }
+   "icon-size": { "type": "dimension", "value": "220px", "source": "login-icon default rect (the 220px .amulet-clip-mask disc mark; its 189px inset ring is inside it)" }
   }
  }
 }

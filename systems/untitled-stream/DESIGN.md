@@ -70,6 +70,12 @@ typography:
     fontWeight: 400
     lineHeight: "16px"
     letterSpacing: "-0.39px"
+  subhead-medium:
+    fontFamily: "Untitled Sans"
+    fontSize: "13px"
+    fontWeight: 500
+    lineHeight: "16px"
+    letterSpacing: "-0.39px"
   footnote:
     fontFamily: "Untitled Sans"
     fontSize: "12px"
@@ -111,7 +117,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Typography
 
-7 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Untitled Sans.
+8 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Untitled Sans.
 
 ### Fonts (from README.md)
 
@@ -154,7 +160,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### Do and don't (from README.md)
 
-1. **Do keep one black-gradient pill for the primary action.** Enter App, We're hiring (inverted) and the pricing Subscribe CTA all take `component.button.primary` — a `#242424`→`#101010` vertical gradient, white `subhead` label, fully rounded. No other element is painted that dark on the light site. See [pricing-light-default](screenshots/pricing-light-default.png).
+1. **Do keep one black-gradient pill for the primary action.** Enter App and the pricing Subscribe CTA take `component.button.primary` — a `#242424`→`#101010` vertical gradient, white `subhead-medium` label (13/16 500), fully rounded; the We're hiring pill is the same pill shape at a flat `#191919`. No other element is painted that dark on the light site. See [pricing-light-default](screenshots/pricing-light-default.png).
 2. **Do pin a frosted pill bar to the viewport bottom.** Home floats a `component.pill-bar` (92 px) above the footer: `background.action-secondary` pills at 44 px, the platform pills' icons in `text.primary`. See [home-light-default](screenshots/home-light-default.png).
 3. **Do set display type in `super-title` with negative tracking.** Hero and page titles are `typography.super-title` — 26/32 medium at `-0.78px` — and everything below it keeps the scale's tight negative trackings (`font.tracking.*`). Rounded or loosely-tracked titles are off-brand. See [home-light-default](screenshots/home-light-default.png).
 4. **Do bracket the chrome.** The site has no wordmark on home; chrome and plan names read `[membership]` and `[starter]` in `body-semibold`. The brackets are the brand voice, not placeholders. See [pricing-light-default](screenshots/pricing-light-default.png).

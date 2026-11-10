@@ -12,6 +12,11 @@
   --sg-sans: "Untitled Sans", system-ui, sans-serif;
   --sg-mono: "IBM Plex Mono", ui-monospace, monospace;
 }
+/* The light block is repeated under [data-mode="light"] so a sample scoped to
+   the light theme keeps its values while the page itself is toggled dark. */
+[data-mode="light"] {
+/*LIGHT*/
+}
 [data-mode="dark"] {
 /*DARK*/
 }
@@ -94,7 +99,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--border-stroke); padding: 6p
   <div class="mock">
     <div class="navbar"><span class="tag">A sacred place for your<br>work-in-progress music</span><span class="sp"></span><span class="mbr">[membership]</span><span class="pill primary">Enter App</span></div>
     <div class="discs"><div class="disc a"><div class="hole"></div></div><div class="disc b"><div class="hole"></div></div><div class="disc c"><div class="hole"></div></div></div>
-    <div class="pillbar"><span class="pill ghost">Texting Interviews&nbsp;&nbsp;IG&nbsp;&nbsp;X</span><span class="pill dark">We're hiring</span><span class="pill ghost">Learn more &#8964;</span><span class="pill ghost">&#63743; iOS</span><span class="pill ghost">&#9654; Android</span><span class="pill ghost">&#128187; MacOS</span></div>
+    <div class="pillbar"><span class="pill ghost">[untitled broadcast network]&nbsp;&nbsp;IG&nbsp;&nbsp;X</span><span class="pill dark">We're hiring</span><span class="pill ghost">Learn more &#8964;</span><span class="pill ghost">&#63743; iOS</span><span class="pill ghost">&#9654; Android</span><span class="pill ghost">&#128187; MacOS</span></div>
   </div>
 
   <h2 class="sh">Pricing</h2>
@@ -140,25 +145,31 @@ const flat = (node, prefix = '') => Object.entries(node).flatMap(([k, v]) => v &
 
 (function palette() {
   let h = '';
+  const sw = (n, t) => `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
   for (const [g, grp] of Object.entries(TOK.core.palette)) {
-    const items = flat(grp, 'palette.' + g + '.').filter(([, t]) => t.t === 'color');
+    // A leaf (black, untitled-blue, untitled-pink) is already a colour token:
+    // flat() on it returns nothing, so it is handled directly.
+    const items = grp && grp.t ? [[`palette.${g}`, grp]].filter(([, t]) => t.t === 'color')
+      : flat(grp, 'palette.' + g + '.').filter(([, t]) => t.t === 'color');
     if (!items.length) continue;
     h += `<div class="pal-h">${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    for (const [n, t] of items) h += sw(n, t);
     h += '</div>';
   }
   for (const g of ['background', 'text', 'border', 'tape', 'accent']) {
     const items = flat(TOK.light[g] || {}, g + '.').filter(([, t]) => t.t === 'color');
     if (!items.length) continue;
-    h += `<div class="pal-h">light.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    // data-mode scopes the row to its own theme: the light and dark sets share
+    // var names, so an unscoped swatch always paints the page's current mode.
+    h += `<div class="pal-h">light.${esc(g)}</div><div class="pal" data-mode="light">`;
+    for (const [n, t] of items) h += sw(n, t);
     h += '</div>';
   }
   for (const g of ['background', 'text', 'border', 'tape', 'accent']) {
     const items = flat(TOK.dark[g] || {}, g + '.').filter(([, t]) => t.t === 'color');
     if (!items.length) continue;
-    h += `<div class="pal-h">dark.${esc(g)}</div><div class="pal">`;
-    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += `<div class="pal-h">dark.${esc(g)}</div><div class="pal" data-mode="dark">`;
+    for (const [n, t] of items) h += sw(n, t);
     h += '</div>';
   }
   $('#roles-out').innerHTML = h;
@@ -166,11 +177,13 @@ const flat = (node, prefix = '') => Object.entries(node).flatMap(([k, v]) => v &
 
 (function type() {
   let h = '';
+  // Aliases ({font.tracking.subhead}) resolve to their emitted var, literals pass through.
+  const cssv = (x) => String(x).replace(/\{([^{}]+)\}/g, (m, p) => `var(${cssname(p)})`);
+  const ref = (x) => String(x).replace(/[{}]/g, '');
   for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
     const v = t.v;
-    const ref = (x) => String(x).replace(/[{}]/g, '');
     const fam = /mono|plex/.test(ref(v.fontFamily)) ? 'var(--sg-mono)' : 'var(--sg-sans)';
-    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(ref(v.fontSize))} / ${esc(ref(v.lineHeight))} · w ${esc(String(v.fontWeight))}</small></div><div class="sample" style="font-family:${fam};font-size:${esc(ref(v.fontSize))};line-height:${esc(ref(v.lineHeight))};font-weight:${v.fontWeight}">The quick brown fox jumps over the lazy dog</div></div>`;
+    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(ref(v.fontSize))} / ${esc(ref(v.lineHeight))} · w ${esc(String(v.fontWeight))}${v.letterSpacing !== undefined ? ' · ' + esc(ref(v.letterSpacing)) : ''}</small></div><div class="sample" style="font-family:${fam};font-size:${cssv(v.fontSize)};line-height:${cssv(v.lineHeight)};font-weight:${cssv(v.fontWeight)};letter-spacing:${v.letterSpacing !== undefined ? cssv(v.letterSpacing) : 'normal'}">The quick brown fox jumps over the lazy dog</div></div>`;
   }
   $('#type-out').innerHTML = h;
 })();

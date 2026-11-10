@@ -51,6 +51,9 @@ def css_val(name, t):
         return f'{alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])}'
     if ty == "gradient":
         angle = t["$extensions"].get("angle", "180deg")
+        # A numeric angle is degrees; without the unit linear-gradient(180, ...) is invalid CSS.
+        if isinstance(angle, (int, float)):
+            angle = f"{angle:g}deg"
         return f"linear-gradient({angle}, " + ", ".join(f'{alias(s["color"])} {round(s["position"] * 100, 2)}%' for s in v) + ")"
     return alias(v)
 

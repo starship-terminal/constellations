@@ -1,6 +1,6 @@
 # [untitled] components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured from untitled.stream on 2026-11-08, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was bought, downloaded, signed into, sent or submitted.
+The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured from untitled.stream on 2026-11-10, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was bought, downloaded, signed into, sent or submitted.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (51 components, 101 states).
 
@@ -45,26 +45,26 @@ Values that apply across entries, from the measurement files.
 
 | Duration | Easing | Property | Where |
 |---|---|---|---|
-| 0.15s | `cubic-bezier(0.4, 0, 0.2, 1)` | opacity | cta-enter-app, cta-subscribe, legal-link, nav-membership, read-more, trust-link |
-| 0.2s | `cubic-bezier(0.4, 0, 0.2, 1)` | opacity | pill-platform |
+| 0.15s | `cubic-bezier(0.4, 0, 0.2, 1)` | opacity | cta-enter-app, cta-subscribe, legal-link, nav-membership, read-more |
+| 0.2s | `cubic-bezier(0.4, 0, 0.2, 1)` | opacity | pill-platform, trust-link |
 | 0.3s | `cubic-bezier(0.4, 0, 0.2, 1)` | all, opacity | billing-monthly, billing-monthly-on, billing-yearly, consent-accept, consent-customize, consent-reject, cookie-settings, cta-hiring and more |
 
-**Card shapes.** Default-state values; the entries hold the states.
+**Card shapes.** Default-state values; the entries hold the states. The Painted child column names the first node inside a transparent root that carries the paint — it is the child's radius and fill, not the container's, and its size is the child's own.
 
-| Card | Size | Border | Radius | Background | Shadow | Padding |
-|---|---|---|---|---|---|---|
-| [Header](#header) | 1312 x 88 | - | 3.35544e+07px | - | transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.15) 0px 4px 15px 0px | 0 |
-| [Pricing header](#pricing-header) | 1440 x 108 | - | 3.35544e+07px | rgba(26, 26, 26, 0.05) `shading.DEFAULT` | none | 32px 64px |
-| [Cookie consent card](#cookie-consent-card) | 500 x 224 | - | 16px | rgba(38, 38, 38, 0.9) `surface-frost` | rgba(0, 0, 0, 0.2) 0px 4px 10px 0px | 0 |
-| [Plan card (starter)](#plan-card-starter) | 350 x 536 | - | 20px | #eeeeee | none | 32px 24px |
-| [Plan card (membership)](#plan-card-membership) | 350 x 536 | - | - | #eeeeee | none | 32px 24px 32px 0px |
-| [Sign-in card](#sign-in-card) | 1440 x 762 | - | 3.35544e+07px | oklab(0 none none / 0.1) | none | 32px 0px 128px 0px |
-| [Bottom pill bar](#bottom-pill-bar) | 1440 x 92 | - | 3.35544e+07px | rgba(26, 26, 26, 0.05) `shading.DEFAULT` | none | 24px 64px |
-| [Billing toggle](#billing-toggle) | 121.95 x 536 | - | 20px | rgba(26, 26, 26, 0.05) `shading.DEFAULT` | none | 0 |
-| [Disc carousel](#disc-carousel) | 1440 x 900 | - | 3.35544e+07px | rgba(26, 26, 26, 0.05) `shading.DEFAULT` | none | 0 |
-| [Feature section](#feature-section) | 319 x 72 | - | - | transparent | none | 0 |
-| [Feature video](#feature-video) | 450 x 345.94 | - | - | rgba(26, 26, 26, 0.05) `shading.DEFAULT` | none | 0 |
-| [Trust bullet list](#trust-bullet-list) | 528 x 86 | - | - | transparent | none | 0px 24px |
+| Card | Size | Border | Radius | Background | Shadow | Padding | Painted child |
+|---|---|---|---|---|---|---|---|
+| [Header](#header) | 1312 x 88 | - | - | transparent | none | 0 | a.clean-btn.inline-flex 150x44, radius 3.35544e+07px, shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0p |
+| [Pricing header](#pricing-header) | 1440 x 108 | - | - | transparent | none | 32px 64px | a.clean-btn.inline-flex 150x44, rgba(26, 26, 26, 0.05) `shading.DEFAULT`, radius 3.35544e+07px |
+| [Cookie consent card](#cookie-consent-card) | 500 x 224 | - | 16px | rgba(38, 38, 38, 0.9) `surface-frost` | rgba(0, 0, 0, 0.2) 0px 4px 10px 0px | 0 | - |
+| [Plan card (starter)](#plan-card-starter) | 350 x 536 | - | 20px | #eeeeee | none | 32px 24px | - |
+| [Plan card (membership)](#plan-card-membership) | 350 x 536 | - | - | #eeeeee | none | 32px 24px 32px 0px | div.bg-secondary-background-dark.relative 350x536, #eeeeee |
+| [Sign-in card](#sign-in-card) | 1440 x 762 | - | - | transparent | none | 32px 0px 128px 0px | div.absolute.inset-[7%] 189.2x189.2, oklab(0 none none / 0.1), radius 3.35544e+07px |
+| [Bottom pill bar](#bottom-pill-bar) | 1440 x 92 | - | - | transparent | none | 24px 64px | div.sm:bg-shading.flex 342.4x44, rgba(26, 26, 26, 0.05) `shading.DEFAULT`, radius 3.35544e+07px |
+| [Billing toggle](#billing-toggle) | 121.95 x 536 | - | - | transparent | none | 0 | span.bg-shading.rounded-20 91.1x44, rgba(26, 26, 26, 0.05) `shading.DEFAULT`, radius 20px |
+| [Disc carousel](#disc-carousel) | 1440 x 900 | - | - | transparent | none | 0 | div.bg-shading.rounded-full 818.6x818.6, rgba(26, 26, 26, 0.05) `shading.DEFAULT`, radius 3.35544e+07px |
+| [Feature section](#feature-section) | 319 x 72 | - | - | transparent | none | 0 | - |
+| [Feature video](#feature-video) | 450 x 345.94 | - | - | rgba(26, 26, 26, 0.05) `shading.DEFAULT` | none | 0 | video.opacity-0.shadow-device 450x345.9, rgba(26, 26, 26, 0.05) `shading.DEFAULT` |
+| [Trust bullet list](#trust-bullet-list) | 528 x 86 | - | - | transparent | none | 0px 24px | - |
 
 ## Components
 
@@ -173,14 +173,14 @@ The signature element: a strip of oversized iridescent CD renders (div.rounded-f
 
 **Values (default).** size 1440 x 900; background transparent; text Untitled Sans 15/20 400, #191919 `black`.
 
-Child layers that carry the look: div 842x842 background rgba(26, 26, 26, 0.05) `shading.DEFAULT` radius 3.35544e+07px; div 690.6x690.6 background rgba(26, 26, 26, 0.05) `shading.DEFAULT` radius 3.35544e+07px; div 820.8x820.8 background rgba(26, 26, 26, 0.05) `shading.DEFAULT` radius 3.35544e+07px.
+Child layers that carry the look: div 818.6x818.6 background rgba(26, 26, 26, 0.05) `shading.DEFAULT` radius 3.35544e+07px; div 771.3x771.3 background rgba(26, 26, 26, 0.05) `shading.DEFAULT` radius 3.35544e+07px; div 791x791 background rgba(26, 26, 26, 0.05) `shading.DEFAULT` radius 3.35544e+07px.
 
 ![Disc carousel default](components/crops/disc-carousel-default.png)
 
 #### Disc
 One iridescent CD render: a rounded-full div whose background-image is a webp disc artwork. Read as `disc` on the home page.
 
-**Values (default).** size 695.03 x 695.03; radius 3.35544e+07px; background rgba(26, 26, 26, 0.05) `shading.DEFAULT`; image url(…); text Untitled Sans 15/20 400, #191919 `black`; transform matrix(0.173569, 0.984822, -0.984822, 0.173569, 0, 0).
+**Values (default).** size 802.64 x 802.64; radius 3.35544e+07px; background rgba(26, 26, 26, 0.05) `shading.DEFAULT`; image url(…); text Untitled Sans 15/20 400, #191919 `black`; transform matrix(-0.439488, 0.898249, -0.898249, -0.439488, 0, 0).
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
@@ -189,16 +189,16 @@ The floating bar pinned to the viewport bottom: social pills (Texting Interviews
 
 **Values (default).** size 1440 x 92; padding 24px 64px; background transparent; text Untitled Sans 15/20 500, #191919 `black`; icon 20 x 20, #191919 `black`.
 
-Child layers that carry the look: div 272.4x44 background rgba(26, 26, 26, 0.05) `shading.DEFAULT` radius 3.35544e+07px; a 130.7x44 background #191919 `black` radius 3.35544e+07px; button 148.7x44 background rgba(26, 26, 26, 0.05) `shading.DEFAULT` radius 3.35544e+07px.
+Child layers that carry the look: div 342.4x44 background rgba(26, 26, 26, 0.05) `shading.DEFAULT` radius 3.35544e+07px; a 130.7x44 background #191919 `black` radius 3.35544e+07px; button 148.7x44 background rgba(26, 26, 26, 0.05) `shading.DEFAULT` radius 3.35544e+07px.
 
 ![Bottom pill bar default](components/crops/pill-bar-default.png)
 
 #### Social pill
-A frosted pill in the bottom bar holding the social links (Texting Interviews, IG, X). Read as `pill-social` on the home page.
+A frosted pill in the bottom bar holding the social links (a campaign link — "[untitled broadcast network]", earlier "Texting Interviews" — then IG, X). Read as `pill-social` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 150.94 x 20; padding 0px 12px; background transparent; text Untitled Sans 15/20 500, #191919 `black` |
+| default (same: focus-visible) | size 220.91 x 20; padding 0px 12px; background transparent; text Untitled Sans 15/20 500, #191919 `black` |
 | hover, pressed | opacity 0.8 |
 
 ![Social pill default](components/crops/pill-social-default.png) ![Social pill hover](components/crops/pill-social-hover.png) ![Social pill focus-visible](components/crops/pill-social-focus-visible.png) ![Social pill pressed](components/crops/pill-social-pressed.png)
@@ -214,11 +214,11 @@ The inverted (black) "We're hiring" pill in the bottom bar; links to jobs.untitl
 ![Hiring pill default](components/crops/cta-hiring-default.png) ![Hiring pill hover](components/crops/cta-hiring-hover.png) ![Hiring pill focus-visible](components/crops/cta-hiring-focus-visible.png) ![Hiring pill pressed](components/crops/cta-hiring-pressed.png)
 
 #### Learn more pill
-The frosted pill that scrolls the page to the product sections. Read as `pill-learn-more` on the home page.
+The frosted pill that scrolls the page to the product sections. It fades to opacity 0 as soon as the page scrolls and back at the top — these states are measured at scrollY 0. Read as `pill-learn-more` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 148.67 x 44; padding 12px; radius 3.35544e+07px; background rgba(26, 26, 26, 0.05) `shading.DEFAULT`; text Untitled Sans 15/20 500, #191919 `black`; transition opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1); opacity 0; icon 20 x 20, #191919 `black` |
+| default (same: hover, focus-visible, pressed) | size 148.67 x 44; padding 12px; radius 3.35544e+07px; background rgba(26, 26, 26, 0.05) `shading.DEFAULT`; text Untitled Sans 15/20 500, #191919 `black`; transition opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #191919 `black` |
 
 ![Learn more pill default](components/crops/pill-learn-more-default.png) ![Learn more pill hover](components/crops/pill-learn-more-hover.png) ![Learn more pill focus-visible](components/crops/pill-learn-more-focus-visible.png) ![Learn more pill pressed](components/crops/pill-learn-more-pressed.png)
 
@@ -382,11 +382,11 @@ The encryption-standards bullet list (TLS in transit, AES-256 at rest). Read as 
 ![Trust bullet list default](components/crops/trust-list-default.png)
 
 #### Trust link
-Read as `trust-link` on the trust page.
+The untitled-blue outbound link inside the practices column (the Latacora link). Read as `trust-link` on the trust page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 112.25 x 32; background transparent; text Untitled Sans 26/32 500, #191919 `black`; transition opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| default (same: focus-visible) | size 58.69 x 19; background transparent; text Untitled Sans 15/20 400, #191919 `black`; transition opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
 | hover, pressed | opacity 0.8 |
 
 ![Trust link default](components/crops/trust-link-default.png) ![Trust link hover](components/crops/trust-link-hover.png) ![Trust link focus-visible](components/crops/trust-link-focus-visible.png) ![Trust link pressed](components/crops/trust-link-pressed.png)
@@ -479,9 +479,9 @@ Child layers that carry the look: div 220x220 image linear-gradient(#eeeeee, #d0
 ![Sign-in card default](components/crops/login-card-default.png)
 
 #### App icon
-The iridescent-disc app icon at the top of the sign-in card. Read as `login-icon` on the login page.
+The iridescent-disc app icon at the top of the sign-in card (the 220 px amulet mask, not its inner ring). Read as `login-icon` on the login page.
 
-**Values (default).** size 189.22 x 189.22; radius 3.35544e+07px; background oklab(0 none none / 0.1); text Untitled Sans 15/20 400, #191919 `black`.
+**Values (default).** size 220 x 220; background transparent; image linear-gradient(#eeeeee, #d0d0d0); text Untitled Sans 15/20 400, #191919 `black`.
 
 ![App icon default](components/crops/login-icon-default.png)
 

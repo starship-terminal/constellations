@@ -3486,7 +3486,9 @@
         "harness": "Devin",
         "model": "SWE-2 Max",
         "route": "public-web",
-        "durationMin": null
+        "durationMin": null,
+        "durationNote": "Total capture time across the Cloudflare-gated retries was not recorded; the measure runs' timestamps are in raw/components-computed.json.",
+        "pr": "https://github.com/c-wenlong/designs/pull/440"
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run on this capture; the product's mark is visible on the login card and the fetched icon.png"

@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "run": "2026-11-08T19:35:47.635Z",
+  "run": "2026-11-10T04:38:09.645Z",
   "product": "untitled.stream",
   "sheets": {
    "home": [
@@ -443,7 +443,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Cookie consent card",
    "group": "Dialogs and overlays",
@@ -636,7 +636,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Accept all button",
    "group": "Dialogs and overlays",
@@ -829,7 +829,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Reject all button",
    "group": "Dialogs and overlays",
@@ -1024,7 +1024,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Customize link",
    "group": "Dialogs and overlays",
@@ -1036,7 +1036,7 @@
     "default": {
      "tag": "div",
      "classes": "flex w-full flex-col items-center",
-     "text": "[untitled] A sacred place for your work-in-progress music [membership] Take your",
+     "text": "[untitled] A sacred place for your work-in-progress music [shop] [membership] Ta",
      "rect": {
       "x": 64,
       "y": 32,
@@ -1146,7 +1146,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Header",
    "group": "Shell and navigation",
@@ -1551,7 +1551,7 @@
      "classes": "pointer-events-auto hidden transition-opacity hover:opacity-80",
      "text": "[membership]",
      "rect": {
-      "x": 1082.7,
+      "x": 1094.7,
       "y": 44,
       "w": 99.3,
       "h": 20
@@ -1634,7 +1634,7 @@
      "classes": "pointer-events-auto hidden transition-opacity hover:opacity-80",
      "text": "[membership]",
      "rect": {
-      "x": 1082.7,
+      "x": 1094.7,
       "y": 44,
       "w": 99.3,
       "h": 20
@@ -1717,7 +1717,7 @@
      "classes": "pointer-events-auto hidden transition-opacity hover:opacity-80",
      "text": "[membership]",
      "rect": {
-      "x": 1082.7,
+      "x": 1094.7,
       "y": 44,
       "w": 99.3,
       "h": 20
@@ -1800,7 +1800,7 @@
      "classes": "pointer-events-auto hidden transition-opacity hover:opacity-80",
      "text": "[membership]",
      "rect": {
-      "x": 1082.7,
+      "x": 1094.7,
       "y": 44,
       "w": 99.3,
       "h": 20
@@ -1880,7 +1880,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Membership nav link",
    "group": "Shell and navigation",
@@ -2259,7 +2259,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Enter App CTA",
    "group": "Shell and navigation",
@@ -2353,7 +2353,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Hero title",
    "group": "Home",
@@ -2445,25 +2445,25 @@
      "paint": [
       {
        "node": "div.bg-shading.rounded-full",
-       "size": "842.0x842.0",
+       "size": "818.6x818.6",
        "bg": "rgba(26, 26, 26, 0.05)",
        "radius": "3.35544e+07px"
       },
       {
        "node": "div.bg-shading.rounded-full",
-       "size": "690.6x690.6",
+       "size": "771.3x771.3",
        "bg": "rgba(26, 26, 26, 0.05)",
        "radius": "3.35544e+07px"
       },
       {
        "node": "div.bg-shading.rounded-full",
-       "size": "820.8x820.8",
+       "size": "791.0x791.0",
        "bg": "rgba(26, 26, 26, 0.05)",
        "radius": "3.35544e+07px"
       },
       {
        "node": "div.bg-shading.rounded-full",
-       "size": "647.5x647.5",
+       "size": "696.6x696.6",
        "bg": "rgba(26, 26, 26, 0.05)",
        "radius": "3.35544e+07px"
       },
@@ -2484,7 +2484,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Disc carousel",
    "group": "Home",
@@ -2498,10 +2498,10 @@
      "classes": "bg-shading rounded-full tall:max-h-[600px] tall:min-h-[600px]",
      "text": "",
      "rect": {
-      "x": -569.5,
-      "y": 102.5,
-      "w": 695.03,
-      "h": 695.03
+      "x": -623.3,
+      "y": 48.7,
+      "w": 802.64,
+      "h": 802.64
      },
      "style": {
       "display": "block",
@@ -2568,7 +2568,7 @@
       "transitionDelay": "0s",
       "cursor": "auto",
       "opacity": "1",
-      "transform": "matrix(0.173569, 0.984822, -0.984822, 0.173569, 0, 0)",
+      "transform": "matrix(-0.439488, 0.898249, -0.898249, -0.439488, 0, 0)",
       "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
@@ -2576,17 +2576,17 @@
      "paint": [
       {
        "node": "div.bg-shading.rounded-full",
-       "size": "695.0x695.0",
+       "size": "802.6x802.6",
        "bg": "rgba(26, 26, 26, 0.05)",
        "radius": "3.35544e+07px"
       }
      ],
-     "cropError": "locator.screenshot: Timeout 7997.509999999998ms exceeded.\nCall log:\n  - taking element screenshot\n  - waiting for fonts ",
+     "cropError": "locator.screenshot: Timeout 7996.544000000005ms exceeded.\nCall log:\n  - taking element screenshot\n  - waiting for fonts ",
      "via": "at rest"
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Disc",
    "group": "Home",
@@ -2598,7 +2598,7 @@
     "default": {
      "tag": "footer",
      "classes": "pointer-events-none inset-x-0 bottom-0 z-6",
-     "text": "Texting Interviews IG X We're hiring Learn more iOS Android MacOS",
+     "text": "[untitled broadcast network] IG X We're hiring Learn more iOS Android MacOS",
      "rect": {
       "x": 0,
       "y": 808,
@@ -2678,7 +2678,7 @@
      "paint": [
       {
        "node": "div.sm:bg-shading.flex",
-       "size": "272.4x44.0",
+       "size": "342.4x44.0",
        "bg": "rgba(26, 26, 26, 0.05)",
        "radius": "3.35544e+07px"
       },
@@ -2723,7 +2723,7 @@
      ],
      "textStyle": {
       "node": "a.body-semibold.pointer-events-auto",
-      "text": "Texting Interviews",
+      "text": "[untitled broadcast network]",
       "fontFamily": "\"Untitled Sans\", sans-serif",
       "fontSize": "15px",
       "lineHeight": "20px",
@@ -2745,7 +2745,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Bottom pill bar",
    "group": "Home",
@@ -2757,18 +2757,18 @@
     "default": {
      "tag": "a",
      "classes": "body-semibold pointer-events-auto relative flex",
-     "text": "Texting Interviews",
+     "text": "[untitled broadcast network]",
      "rect": {
       "x": 76,
       "y": 844,
-      "w": 150.94,
+      "w": 220.91,
       "h": 20
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "150.938px",
+      "width": "220.906px",
       "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2848,18 +2848,18 @@
     "hover": {
      "tag": "a",
      "classes": "body-semibold pointer-events-auto relative flex",
-     "text": "Texting Interviews",
+     "text": "[untitled broadcast network]",
      "rect": {
       "x": 76,
       "y": 844,
-      "w": 150.94,
+      "w": 220.91,
       "h": 20
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "150.938px",
+      "width": "220.906px",
       "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -2939,18 +2939,18 @@
     "focus-visible": {
      "tag": "a",
      "classes": "body-semibold pointer-events-auto relative flex",
-     "text": "Texting Interviews",
+     "text": "[untitled broadcast network]",
      "rect": {
       "x": 76,
       "y": 844,
-      "w": 150.94,
+      "w": 220.91,
       "h": 20
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "150.938px",
+      "width": "220.906px",
       "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -3030,18 +3030,18 @@
     "pressed": {
      "tag": "a",
      "classes": "body-semibold pointer-events-auto relative flex",
-     "text": "Texting Interviews",
+     "text": "[untitled broadcast network]",
      "rect": {
       "x": 76,
       "y": 844,
-      "w": 150.94,
+      "w": 220.91,
       "h": 20
      },
      "style": {
       "display": "flex",
       "position": "relative",
       "boxSizing": "border-box",
-      "width": "150.938px",
+      "width": "220.906px",
       "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -3120,12 +3120,13 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Social pill",
    "group": "Home",
-   "desc": "A frosted pill in the bottom bar holding the social links (Texting Interviews, IG, X).",
-   "selector": "social pill"
+   "desc": "A frosted pill in the bottom bar holding the social links (a campaign link — \"[untitled broadcast network]\", earlier \"Texting Interviews\" — then IG, X).",
+   "selector": "social pill",
+   "recaptureMissed": "2026-11-10T04:33:10.729Z"
   },
   "cta-hiring": {
    "states": {
@@ -3134,7 +3135,7 @@
      "classes": "body-semibold bg-primary-label text-primary-background pointer-events-auto",
      "text": "We're hiring",
      "rect": {
-      "x": 348.4,
+      "x": 418.4,
       "y": 832,
       "w": 130.72,
       "h": 44
@@ -3225,7 +3226,7 @@
      "classes": "body-semibold bg-primary-label text-primary-background pointer-events-auto",
      "text": "We're hiring",
      "rect": {
-      "x": 348.4,
+      "x": 418.4,
       "y": 832,
       "w": 130.72,
       "h": 44
@@ -3316,7 +3317,7 @@
      "classes": "body-semibold bg-primary-label text-primary-background pointer-events-auto",
      "text": "We're hiring",
      "rect": {
-      "x": 348.4,
+      "x": 418.4,
       "y": 832,
       "w": 130.72,
       "h": 44
@@ -3407,7 +3408,7 @@
      "classes": "body-semibold bg-primary-label text-primary-background pointer-events-auto",
      "text": "We're hiring",
      "rect": {
-      "x": 348.4,
+      "x": 418.4,
       "y": 832,
       "w": 130.72,
       "h": 44
@@ -3495,7 +3496,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Hiring pill",
    "group": "Home",
@@ -3509,7 +3510,7 @@
      "classes": "sm:bg-shading pointer-events-auto hidden w-full",
      "text": "Learn more",
      "rect": {
-      "x": 645.7,
+      "x": 685.5,
       "y": 832,
       "w": 148.67,
       "h": 44
@@ -3578,7 +3579,7 @@
       "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
       "transitionDelay": "0s",
       "cursor": "pointer",
-      "opacity": "0",
+      "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
@@ -3619,7 +3620,7 @@
      "classes": "sm:bg-shading pointer-events-auto hidden w-full",
      "text": "Learn more",
      "rect": {
-      "x": 645.7,
+      "x": 685.5,
       "y": 832,
       "w": 148.67,
       "h": 44
@@ -3688,7 +3689,7 @@
       "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
       "transitionDelay": "0s",
       "cursor": "pointer",
-      "opacity": "0",
+      "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
@@ -3729,7 +3730,7 @@
      "classes": "sm:bg-shading pointer-events-auto hidden w-full",
      "text": "Learn more",
      "rect": {
-      "x": 645.7,
+      "x": 685.5,
       "y": 832,
       "w": 148.67,
       "h": 44
@@ -3798,7 +3799,7 @@
       "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
       "transitionDelay": "0s",
       "cursor": "pointer",
-      "opacity": "0",
+      "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
@@ -3839,7 +3840,7 @@
      "classes": "sm:bg-shading pointer-events-auto hidden w-full",
      "text": "Learn more",
      "rect": {
-      "x": 645.7,
+      "x": 685.5,
       "y": 832,
       "w": 148.67,
       "h": 44
@@ -3908,7 +3909,7 @@
       "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
       "transitionDelay": "0s",
       "cursor": "pointer",
-      "opacity": "0",
+      "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
@@ -3946,12 +3947,13 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Learn more pill",
    "group": "Home",
-   "desc": "The frosted pill that scrolls the page to the product sections.",
-   "selector": "button Learn more"
+   "desc": "The frosted pill that scrolls the page to the product sections. It fades to opacity 0 as soon as the page scrolls and back at the top — these states are measured at scrollY 0.",
+   "selector": "button Learn more",
+   "recaptureMissed": "2026-11-10T04:35:54.078Z"
   },
   "pill-platform": {
    "states": {
@@ -4397,7 +4399,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Platform pill",
    "group": "Home",
@@ -4491,7 +4493,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Feature title",
    "group": "Home",
@@ -4597,7 +4599,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Feature section",
    "group": "Home",
@@ -4940,7 +4942,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Read more link",
    "group": "Home",
@@ -5046,7 +5048,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Footer",
    "group": "Shell and navigation",
@@ -5389,7 +5391,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Footer legal link",
    "group": "Shell and navigation",
@@ -5648,7 +5650,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Cookie settings button",
    "group": "Shell and navigation",
@@ -5662,7 +5664,7 @@
      "classes": "opacity-0 shadow-device bg-shading relative",
      "text": "",
      "rect": {
-      "x": 315,
+      "x": 315.4,
       "y": 277,
       "w": 450,
       "h": 345.94
@@ -5757,7 +5759,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T19:35:47.635Z",
+   "run": "2026-11-10T04:38:09.645Z",
    "url": "https://untitled.stream/",
    "title": "Feature video",
    "group": "Home",
@@ -8183,7 +8185,7 @@
     }
    },
    "page": "trust",
-   "run": "2026-11-08T19:06:08.059Z",
+   "run": "2026-11-10T04:33:10.729Z",
    "url": "https://untitled.stream/trust",
    "title": "Trust title",
    "group": "Trust and security",
@@ -8277,7 +8279,7 @@
     }
    },
    "page": "trust",
-   "run": "2026-11-08T19:06:08.059Z",
+   "run": "2026-11-10T04:33:10.729Z",
    "url": "https://untitled.stream/trust",
    "title": "Trust section title",
    "group": "Trust and security",
@@ -8383,7 +8385,7 @@
     }
    },
    "page": "trust",
-   "run": "2026-11-08T19:06:08.059Z",
+   "run": "2026-11-10T04:33:10.729Z",
    "url": "https://untitled.stream/trust",
    "title": "Trust bullet list",
    "group": "Trust and security",
@@ -8394,23 +8396,23 @@
    "states": {
     "default": {
      "tag": "a",
-     "classes": "super-title pointer-events-auto transition-opacity hover:opacity-80",
-     "text": "[untitled]",
+     "classes": "",
+     "text": "Latacora",
      "rect": {
-      "x": 64,
-      "y": 32,
-      "w": 112.25,
-      "h": 32
+      "x": 614.9,
+      "y": 440,
+      "w": 58.69,
+      "h": 19
      },
      "style": {
-      "display": "block",
+      "display": "inline",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "112.25px",
-      "height": "32px",
-      "minWidth": "auto",
+      "width": "auto",
+      "height": "auto",
+      "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "auto",
+      "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -8451,18 +8453,18 @@
       "outlineColor": "rgb(25, 25, 25)",
       "outlineOffset": "0px",
       "fontFamily": "\"Untitled Sans\", sans-serif",
-      "fontSize": "26px",
-      "fontWeight": "500",
-      "lineHeight": "32px",
-      "letterSpacing": "-0.78px",
+      "fontSize": "15px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "-0.45px",
       "textTransform": "none",
       "color": "rgb(25, 25, 25)",
-      "textDecorationLine": "none",
+      "textDecorationLine": "underline",
       "textDecorationColor": "rgb(25, 25, 25)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "opacity",
-      "transitionDuration": "0.15s",
+      "transitionDuration": "0.2s",
       "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
       "transitionDelay": "0s",
       "cursor": "pointer",
@@ -8477,23 +8479,23 @@
     },
     "hover": {
      "tag": "a",
-     "classes": "super-title pointer-events-auto transition-opacity hover:opacity-80",
-     "text": "[untitled]",
+     "classes": "",
+     "text": "Latacora",
      "rect": {
-      "x": 64,
-      "y": 32,
-      "w": 112.25,
-      "h": 32
+      "x": 614.9,
+      "y": 440,
+      "w": 58.69,
+      "h": 19
      },
      "style": {
-      "display": "block",
+      "display": "inline",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "112.25px",
-      "height": "32px",
-      "minWidth": "auto",
+      "width": "auto",
+      "height": "auto",
+      "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "auto",
+      "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -8534,18 +8536,18 @@
       "outlineColor": "rgb(25, 25, 25)",
       "outlineOffset": "0px",
       "fontFamily": "\"Untitled Sans\", sans-serif",
-      "fontSize": "26px",
-      "fontWeight": "500",
-      "lineHeight": "32px",
-      "letterSpacing": "-0.78px",
+      "fontSize": "15px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "-0.45px",
       "textTransform": "none",
       "color": "rgb(25, 25, 25)",
-      "textDecorationLine": "none",
+      "textDecorationLine": "underline",
       "textDecorationColor": "rgb(25, 25, 25)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "opacity",
-      "transitionDuration": "0.15s",
+      "transitionDuration": "0.2s",
       "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
       "transitionDelay": "0s",
       "cursor": "pointer",
@@ -8560,23 +8562,23 @@
     },
     "focus-visible": {
      "tag": "a",
-     "classes": "super-title pointer-events-auto transition-opacity hover:opacity-80",
-     "text": "[untitled]",
+     "classes": "",
+     "text": "Latacora",
      "rect": {
-      "x": 64,
-      "y": 32,
-      "w": 112.25,
-      "h": 32
+      "x": 614.9,
+      "y": 440,
+      "w": 58.69,
+      "h": 19
      },
      "style": {
-      "display": "block",
+      "display": "inline",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "112.25px",
-      "height": "32px",
-      "minWidth": "auto",
+      "width": "auto",
+      "height": "auto",
+      "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "auto",
+      "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -8617,18 +8619,18 @@
       "outlineColor": "rgb(25, 25, 25)",
       "outlineOffset": "1px",
       "fontFamily": "\"Untitled Sans\", sans-serif",
-      "fontSize": "26px",
-      "fontWeight": "500",
-      "lineHeight": "32px",
-      "letterSpacing": "-0.78px",
+      "fontSize": "15px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "-0.45px",
       "textTransform": "none",
       "color": "rgb(25, 25, 25)",
-      "textDecorationLine": "none",
+      "textDecorationLine": "underline",
       "textDecorationColor": "rgb(25, 25, 25)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "opacity",
-      "transitionDuration": "0.15s",
+      "transitionDuration": "0.2s",
       "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
       "transitionDelay": "0s",
       "cursor": "pointer",
@@ -8643,23 +8645,23 @@
     },
     "pressed": {
      "tag": "a",
-     "classes": "super-title pointer-events-auto transition-opacity hover:opacity-80",
-     "text": "[untitled]",
+     "classes": "",
+     "text": "Latacora",
      "rect": {
-      "x": 64,
-      "y": 32,
-      "w": 112.25,
-      "h": 32
+      "x": 614.9,
+      "y": 440,
+      "w": 58.69,
+      "h": 19
      },
      "style": {
-      "display": "block",
+      "display": "inline",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "112.25px",
-      "height": "32px",
-      "minWidth": "auto",
+      "width": "auto",
+      "height": "auto",
+      "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "auto",
+      "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -8700,18 +8702,18 @@
       "outlineColor": "rgb(25, 25, 25)",
       "outlineOffset": "0px",
       "fontFamily": "\"Untitled Sans\", sans-serif",
-      "fontSize": "26px",
-      "fontWeight": "500",
-      "lineHeight": "32px",
-      "letterSpacing": "-0.78px",
+      "fontSize": "15px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "-0.45px",
       "textTransform": "none",
       "color": "rgb(25, 25, 25)",
-      "textDecorationLine": "none",
+      "textDecorationLine": "underline",
       "textDecorationColor": "rgb(25, 25, 25)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "opacity",
-      "transitionDuration": "0.15s",
+      "transitionDuration": "0.2s",
       "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
       "transitionDelay": "0s",
       "cursor": "pointer",
@@ -8726,11 +8728,13 @@
     }
    },
    "page": "trust",
-   "run": "2026-11-08T19:06:08.059Z",
+   "run": "2026-11-10T04:33:10.729Z",
    "url": "https://untitled.stream/trust",
    "title": "Trust link",
    "group": "Trust and security",
-   "selector": "trust a"
+   "selector": "trust outbound a",
+   "desc": "The untitled-blue outbound link inside the practices column (the Latacora link).",
+   "recaptureMissed": "2026-11-10T04:31:50.092Z"
   },
   "login-card": {
    "states": {
@@ -8883,7 +8887,7 @@
     }
    },
    "page": "login",
-   "run": "2026-11-08T19:06:08.059Z",
+   "run": "2026-11-10T04:31:50.092Z",
    "url": "https://untitled.stream/login",
    "title": "Sign-in card",
    "group": "Sign-in boundary",
@@ -8894,23 +8898,23 @@
    "states": {
     "default": {
      "tag": "div",
-     "classes": "absolute inset-[7%] rounded-full bg-black/10",
+     "classes": "amulet-clip-mask bg-amulet relative z-4",
      "text": "",
      "rect": {
-      "x": 625.4,
-      "y": 155.4,
-      "w": 189.22,
-      "h": 189.22
+      "x": 610,
+      "y": 140,
+      "w": 220,
+      "h": 220
      },
      "style": {
       "display": "block",
-      "position": "absolute",
+      "position": "relative",
       "boxSizing": "border-box",
-      "width": "189.219px",
-      "height": "189.219px",
-      "minWidth": "0px",
+      "width": "220px",
+      "height": "220px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -8938,12 +8942,12 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "rgb(25, 25, 25)",
-      "borderTopLeftRadius": "3.35544e+07px",
-      "borderTopRightRadius": "3.35544e+07px",
-      "borderBottomRightRadius": "3.35544e+07px",
-      "borderBottomLeftRadius": "3.35544e+07px",
-      "backgroundColor": "oklab(0 none none / 0.1)",
-      "backgroundImage": "none",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "linear-gradient(rgb(238, 238, 238), rgb(208, 208, 208))",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
@@ -8969,13 +8973,30 @@
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
-      "zIndex": "auto",
-      "top": "15.3906px"
+      "zIndex": "4",
+      "top": "0px"
      },
      "paint": [
       {
+       "node": "div.amulet-clip-mask.bg-amulet",
+       "size": "220.0x220.0",
+       "bgImage": "linear-gradient(rgb(238, 238, 238), rgb(208, 208, 208))"
+      },
+      {
        "node": "div.absolute.inset-[7%]",
        "size": "189.2x189.2",
+       "bg": "oklab(0 none none / 0.1)",
+       "radius": "3.35544e+07px"
+      },
+      {
+       "node": "div.absolute.inset-[12%]",
+       "size": "167.2x167.2",
+       "bg": "oklab(0 none none / 0.1)",
+       "radius": "3.35544e+07px"
+      },
+      {
+       "node": "div.absolute.inset-[47%]",
+       "size": "13.2x13.2",
        "bg": "oklab(0 none none / 0.1)",
        "radius": "3.35544e+07px"
       }
@@ -8985,12 +9006,12 @@
     }
    },
    "page": "login",
-   "run": "2026-11-08T19:06:08.059Z",
+   "run": "2026-11-10T04:31:50.092Z",
    "url": "https://untitled.stream/login",
    "title": "App icon",
    "group": "Sign-in boundary",
-   "desc": "The iridescent-disc app icon at the top of the sign-in card.",
-   "selector": "login icon"
+   "desc": "The iridescent-disc app icon at the top of the sign-in card (the 220 px amulet mask, not its inner ring).",
+   "selector": ".amulet-clip-mask"
   },
   "login-title": {
    "states": {
@@ -9079,7 +9100,7 @@
     }
    },
    "page": "login",
-   "run": "2026-11-08T19:06:08.059Z",
+   "run": "2026-11-10T04:31:50.092Z",
    "url": "https://untitled.stream/login",
    "title": "Sign-in title",
    "group": "Sign-in boundary",
@@ -9419,7 +9440,7 @@
     }
    },
    "page": "login",
-   "run": "2026-11-08T19:06:08.059Z",
+   "run": "2026-11-10T04:31:50.092Z",
    "url": "https://untitled.stream/login",
    "title": "Continue with Google",
    "group": "Sign-in boundary",
@@ -9760,7 +9781,7 @@
     }
    },
    "page": "login",
-   "run": "2026-11-08T19:06:08.059Z",
+   "run": "2026-11-10T04:31:50.092Z",
    "url": "https://untitled.stream/login",
    "title": "Continue with Apple",
    "group": "Sign-in boundary",
@@ -10020,7 +10041,7 @@
     }
    },
    "page": "login",
-   "run": "2026-11-08T19:06:08.059Z",
+   "run": "2026-11-10T04:31:50.092Z",
    "url": "https://untitled.stream/login",
    "title": "Phone sign-in link",
    "group": "Sign-in boundary",
@@ -10363,7 +10384,7 @@
     }
    },
    "page": "login",
-   "run": "2026-11-08T19:06:08.059Z",
+   "run": "2026-11-10T04:31:50.092Z",
    "url": "https://untitled.stream/login",
    "title": "Legal link",
    "group": "Sign-in boundary",
