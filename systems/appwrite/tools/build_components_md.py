@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 os.chdir(ROOT)
 J = json.load(open("raw/components-computed.json"))
 C = J["components"]
-LAYOUT = json.load(open("raw/layout.json"))
+LAYOUT = {}
 T = json.load(open("tokens.json"))
 
 # --------------------------------------------------------------------------- colours and tokens
@@ -35,7 +35,7 @@ def flat(node, prefix=""):
 
 
 BY_COLOR = {}
-for n, t in flat(T["core"]["palette"]):
+for n, t in flat(T["core"]):
     if t["$type"] == "color":
         BY_COLOR.setdefault(t["$value"], n)
 
@@ -203,43 +203,29 @@ def child_layers(c):
 
 # --------------------------------------------------------------------------- page and group text
 
-PAGE_NAME = {"home": "Homework home", "science": "Academy (Science Labs)", "math": "Academy (Math Curriculum)", "history": "Academy (History Signature)",
-             "my": "Academy (My Course)", "unit": "unit", "lesson-science": "science lesson", "lesson-math": "math lesson",
-             "lesson-history": "history lesson", "atlas": "Atlas", "story": "Atlas story", "news": "Insights"}
+PAGE_NAME = {"home": "marketing home", "pricing": "pricing", "docs": "docs quick-start", "blog": "blog index", "signin": "sign-in gate"}
 
 GROUP_INTRO = {
-    "Shell and navigation": "The app shell shared by Homework, Academy and Insights: a fixed 220px sidebar and a 60px top bar over the content. The sidebar is white with a cool grey current item on Homework and Insights, and takes the warm `#faf9f5` ground with a beige current item on Academy. Atlas and the lesson players have shells of their own (their groups below).",
-    "Homework home": "The question-first home page: a serif hero over a lilac gradient, the question field, an upload panel and subject chips, then marketing sections. Nothing was ever sent or uploaded.",
-    "Academy catalogue": "The course catalogue: the Playfair title and Create Course, four category tabs, then course sections of card grids. Science Labs and History Signature use cover cards with a progress track; Math Curriculum uses unit cards with an 80px cover tile.",
-    "Unit page": "A math course's page: a back link, a tinted course banner, the unit rail at the left and the topic path at the right, with a floating Start panel.",
-    "Lesson player: science canvas": "The science player is built in Astryx, a separate design system (`astryx-*` classes, StyleX variables, the \"stone\" theme): a narrated canvas that pans by itself, a section rail, transport controls and a docked Ask Tutor bar. Its focus ring is the only blue one on the site.",
-    "Lesson player: math": "The math player puts a tutor column at the left and the slide in a white frame at the right, on the warm ground.",
-    "Lesson player: history": "The history player is immersive: chapter pills at the top, the scene in the middle, a play disc and a caption line.",
-    "Atlas": "Atlas has its own shell (a 56px header and a 230px drawer), a prompt box, recommendation chips and a grid of story cards. A story opens as a video preview, then a story page.",
-    "Insights": "The news and blog list in the app shell.",
-    "Dialogs and overlays": "The promo dialog every page opens with, the Create a Course dialog, the science player's audio dialog, the math player's audio gate and the Atlas story preview. The promo's overlay is `rgba(15, 17, 20, 0.45)`.",
-    "Mobile (390 wide)": "A few components as a phone draws them, at 390 x 844 with an iPhone user agent.",
+    "Shell and navigation": "The fixed dark bar over every marketing page and the strip above it.",
+    "Home": "The hero and product grid of appwrite.io.",
+    "Pricing": "The plan columns and the FAQ accordion.",
+    "Docs": "The quick-start page's sidebar, prose and code.",
+    "Blog": "The index's story tiles.",
+    "Sign-in gate": "The public sign-in card; nothing was submitted.",
+    "Footer": "The page footer.",
+    "Mobile (390 wide)": "The same surface at phone width, with the menu sheet open.",
 }
 
 SHOTS = [
-    ("home", "Homework home. Serif hero, question field, upload panel, subject chips, then the Atlas, AI solution and live tutor bands, comments and the footer. The promo dialog, the field focused and the folded sidebar captured.", "/"),
-    ("academy-science", "Academy, Science Labs. Title, Create Course, tabs, course sections of lesson cards.", "/course/science"),
-    ("academy-math", "Academy, Math Curriculum. Unit cards, six per course, and Show more expanded (the toolbar sticks with Create Course in it).", "/course/math"),
-    ("academy-history", "Academy, History Signature. Illustrated lesson cards.", "/course/history"),
-    ("academy-my", "Academy, My Course. The signed-out empty state, and the Create a Course dialog.", "/course/my"),
-    ("unit", "Unit page (Algebra 1). Banner, unit rail, topic path, Start panel; scrolled down the path; Unit 2 chosen in the rail.", "/course/math/algebra-1?unit=real-numbers-and-sets"),
-    ("lesson-science", "Science lesson. The audio dialog, the first chapter, Settings open, Ask Tutor opened, a figure with its callout and list, and a quiz.", "/course/science/how-things-work-1/learn"),
-    ("lesson-math", "Math lesson. The audio gate, the playing slide with the tutor column, the chapters panel.", "/course/math/algebra-1/fundamentals-of-set-theory/learn"),
-    ("lesson-history", "History lesson. The opening scene, the chapter panel.", "/course/history/crossing-the-ocean-wall/learn"),
-    ("atlas", "Atlas. Landing, prompt box, chips, Popular Stories, FAQ; a story card's video preview; the Apollo 11 story page, and its Video Settings popover.", "/atlas"),
-    ("news", "Insights. Breadcrumb, News and Blog tabs, featured article, article rows.", "/news"),
+    ("home", "Home", "/"), ("pricing", "Pricing", "/pricing"), ("product", "Product: Databases", "/products/databases"),
+    ("docs", "Docs home", "/docs"), ("docs-react", "Docs: Start with React", "/docs/quick-starts/react"),
+    ("blog", "Blog", "/blog"), ("changelog", "Changelog", "/changelog"), ("integrations", "Integrations", "/integrations"),
+    ("company", "Company", "/company"), ("assets", "Brand assets", "/assets"), ("enterprise", "Enterprise", "/enterprise"),
+    ("startups", "Startups", "/startups"), ("sign-in", "Sign in", "/sign-in"),
 ]
 MOBILE = [
-    ("mobile-home", "Homework home at 390: the promo dialog, the hero, the full page with the app banner.", "/"),
-    ("mobile-academy", "Academy at 390: Math Curriculum (Science Labs is not offered on a phone).", "/course/math"),
-    ("mobile-unit", "Unit page at 390, and scrolled down the path.", "/course/math/algebra-1?unit=real-numbers-and-sets"),
-    ("mobile-lesson-math", "Math lesson at 390: the audio gate and the slide.", "/course/math/algebra-1/fundamentals-of-set-theory/learn"),
-    ("mobile-atlas", "Atlas at 390, and a story page (Artemis II).", "/atlas"),
+    ("mobile-home", "Home, phone", "/"), ("mobile-pricing", "Pricing, phone", "/pricing"),
+    ("mobile-docs-react", "Docs quick-start, phone", "/docs/quick-starts/react"),
 ]
 
 L = []
@@ -263,11 +249,11 @@ def links(prefix):
 
 n_crops = len(list(Path("components/crops").glob("*.png")))
 n_states = sum(len(c["states"]) for c in C.values())
-icons = [r.split("\t") for r in open("icons/INDEX.tsv").read().strip().split("\n")[1:]]
+icons = []
 
-W("# Gauth components")
+W("# Appwrite components")
 W()
-W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, the icon index and the Gaps. Captured from www.gauth.com on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.")
+W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from appwrite.io on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.")
 W()
 W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [raw/pages.md](raw/pages.md).")
 W()
@@ -279,7 +265,7 @@ W(f"- Crops are images of the component read from the live page, in [components/
 W()
 W("## Discovery list")
 W()
-W("Screenshots are named `{page}-light-{state}.png` (Gauth has one theme). Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x).")
+W("Screenshots are named `{page}-dark-{state}.png`: the marketing site pins the dark theme on every captured route. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-dark-{state}.png`, 780 wide (390 at 2x).")
 W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")
@@ -291,19 +277,9 @@ W()
 W("| State | Where | How it was reached | Captured |")
 W("|---|---|---|---|")
 OVER = [
-    ("Promo dialog (\"Introducing Gauth Academy\")", "every page, on load", "at rest; then dismissed with its own close button for every other capture", "[home-light-promo](screenshots/home-light-promo.png), [promo-dialog](#promo-dialog)"),
-    ("Create a Course dialog", "Academy", "Create Course pressed (opens the dialog); a prompt typed and deleted, no suggestion pressed", "[academy-my-light-create-dialog](screenshots/academy-my-light-create-dialog.png), [create-a-course-dialog](#create-a-course-dialog)"),
-    ("Enable audio dialog", "science lesson", "on load; Not now pressed, Enable audio never pressed", "[lesson-science-light-audio-dialog](screenshots/lesson-science-light-audio-dialog.png)"),
-    ("Audio gate", "math lesson", "on load; Continue pressed to start playback", "[lesson-math-light-audio-gate](screenshots/lesson-math-light-audio-gate.png)"),
-    ("Settings popover", "science lesson", "the lesson's Settings button", "[lesson-science-light-settings](screenshots/lesson-science-light-settings.png)"),
-    ("Ask Tutor, opened", "science lesson", "clicked into the bar; sample text typed and deleted, nothing sent", "[lesson-science-light-ask-tutor](screenshots/lesson-science-light-ask-tutor.png)"),
-    ("Quiz", "science lesson", "reached by letting the lesson play about three minutes; no option chosen", "[lesson-science-light-quiz](screenshots/lesson-science-light-quiz.png)"),
-    ("Chapters panel", "math and history lessons", "the chapters button", "[lesson-math-light-chapters](screenshots/lesson-math-light-chapters.png), [lesson-history-light-chapters](screenshots/lesson-history-light-chapters.png)"),
-    ("Show more", "Math Curriculum", "the Show 14 more button", "[academy-math-light-show-more](screenshots/academy-math-light-show-more.png)"),
-    ("Folded sidebar", "Homework home", "the sidebar's collapse button", "[home-light-sidebar-folded](screenshots/home-light-sidebar-folded.png)"),
-    ("Story preview", "Atlas", "a story card pressed (opens a video preview)", "[atlas-light-story-preview](screenshots/atlas-light-story-preview.png)"),
-    ("Story page", "Atlas", "Explore in the preview (opens the published story)", "[atlas-light-story](screenshots/atlas-light-story.png), [mobile-atlas-light-story](screenshots/mobile-atlas-light-story.png)"),
-    ("Video Settings popover", "Atlas story", "hovering Generate Video; nothing in it pressed", "[atlas-light-story-video-settings](screenshots/atlas-light-story-video-settings.png)"),
+    ("Nav flyout, open", "header, every page", "the Products button's own toggle", "[nav-menu-open](#nav-flyout-open)"),
+    ("Pricing FAQ, open", "pricing", "the accordion's own toggle", "[faq-open](#faq-accordion-open), [pricing-dark-faq](screenshots/pricing-dark-faq.png)"),
+    ("Mobile menu sheet", "home, phone", "the menu button's own toggle", "[m-menu-open](#mobile-menu-open), [mobile-home-dark-menu](screenshots/mobile-home-dark-menu.png)"),
 ]
 for r in OVER:
     W("| " + " | ".join(r) + " |")
@@ -324,9 +300,9 @@ for k, c in C.items():
     foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}. The Upgrade and Sign in buttons in the top bar are a `div` and a `span` and cannot take focus at all.")
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}.")
 W()
-W("**Pressed.** Gauth's primary buttons shrink when pressed instead of changing colour much: Create, Start, Create Course and the Astryx buttons scale to 0.98, the math player's round buttons to 0.94, the promo button to 0.99. Cards deepen their shadow on hover and keep it when pressed.")
+W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): controls deepen their fill or dim rather than scale; the nav flyout and framework icons keep their hover scale. Nothing a real press would submit was ever pressed.")
 W()
 W("**Motion.** Transitions measured on the components, by duration.")
 W()
@@ -361,31 +337,12 @@ def dur_ms(d):
 for (d, e), (ps, ks) in sorted(mot.items(), key=lambda kv: (dur_ms(kv[0][0]), kv[0][1])):
     W(f"| {d} | `{e}` | {', '.join(sorted(ps))} | {', '.join(sorted(ks)[:8])}{' and more' if len(ks) > 8 else ''} |")
 W()
-W("**Layout grid.** Read on each page at each width ([raw/layout.json](raw/layout.json)).")
-W()
-W("| Page | 1440 | 1920 | 1024 | 390 |")
-W("|---|---|---|---|---|")
-
-
-def grid_of(key):
-    v = LAYOUT.get(key)
-    if not v:
-        return "-"
-    g = v["grids"][0] if v["grids"] else None
-    cols = re.sub(r"(\d+\.\d)\d*px", r"\1", g["cols"]).replace("px", "") if g else ""
-    main = f"content x {v['main']['x']}, {v['main']['w']} wide" if v["main"]["w"] else "content full width"
-    return f"{main}; grid {cols} gap {g['colGap']}" if g else main
-
-
-for page in ["home", "academy-science", "academy-math", "unit", "lesson-math", "atlas"]:
-    W(f"| {page} | " + " | ".join(grid_of(f"{page}@{w}") for w in (1440, 1920, 1024, 390)) + " |")
-W()
 W("**Card shapes.** Default-state values; the entries hold the states.")
 W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
 W("|---|---|---|---|---|---|---|")
 # PRODUCT (adapt): the card-like components to compare in one table.
-for k in ["lesson-card", "unit-card", "story-card", "feature-card", "solution-option", "create-suggestion", "quiz-card", "quiz-option", "learning-panel", "settings-popover", "chapters-panel", "video-settings", "view-rail", "m-unit-card"]:
+for k in ["plan-card", "post-card", "product-card", "signin-card"]:
     c = C.get(k)
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
@@ -446,7 +403,7 @@ for g in groups:
 W()
 W("## Icons")
 W()
-W(f"{len(icons)} SVGs were lifted from the pages into [icons/](icons), named by role, with the source table in [icons/INDEX.tsv](icons/INDEX.tsv). Colour is `currentColor` wherever the icon took its colour from the text, so each recolours from CSS `color`. Lesson content (the canvas, slides and formulas) was left out; these are the interface icons. The SVGs are Gauth's property, kept for reference only.")
+W("No standalone SVG icon set was lifted on this pass; the icons in the crops and screenshots are Appwrite's artwork. Declared under layoutGaps in the catalog entry.")
 W()
 W("| Icon | Rendered sizes | View box | Style | Seen on | Next to |")
 W("|---|---|---|---|---|---|")
@@ -460,39 +417,33 @@ W("## Gaps")
 W()
 W("### Pages")
 W()
-W("- **Signed-in pages.** Nothing behind sign-in was captured: a learner's own My Course list, course progress, history, the homework answer page, Atlas topics a learner made, account settings and the subscription checkout. The kit never signs in.")
-W("- **Anything that sends or creates.** No homework question was submitted (so the answer and step-by-step pages are missing), no course was generated from Create a Course, no tutor message or voice question was sent, no Atlas story was generated, no file was uploaded, no quiz option was chosen.")
-W("- **Study Resources.** `/study-resources/*` redirects to gauthmath.com, which answers a headless browser with Access Denied.")
-W("- **The science lesson's Completed screen** (a cover, a laurel \"Completed\" title, Share and View Canvas) was seen while exploring, after a lesson played to its end, but the kit does not wait the several minutes it takes, so there is no crop or measurement.")
-W("- **Mobile science lessons.** A phone is redirected from `/course/science` to `/course/math`; Science Labs is not offered on a phone.")
-W("- **Other lesson kinds.** Math lessons carry interactive steps (matching, drag, number lines, flashcards, graphs; their CSS is in the stylesheets) that only appear as a lesson plays on; the capture saw the first slides only.")
+W("- **The console app.** Everything behind sign-in (projects, dashboards, account) is the product, not this marketing surface; the kit never signs in. The `/sign-in` card itself is public and is captured.")
+W("- **Anything that sends or creates.** No form was submitted (the sign-in fields were typed into and cleared), no search was run, no checkout or trial was started.")
+W("- **The nav flyout panels and the search palette** were toggled open for the screenshots but their innards were not measured.")
 W()
 W("### States")
 W()
-W("- **Pressed** was forced with DevTools on every control except toggles, so a state a script adds on mousedown (if any) is missing.")
-W("- **Hover on the feature cards, the article rows, the Share button and the play disc** changed nothing measurable; their entries read 'same'.")
-W("- **The tutor transcript** held only the status line during the 25 seconds of playback the kit waits; transcript text was not captured.")
-W("- **Disabled states** were not seen on any public control.")
+W("- **Pressed** was forced with DevTools on every control, so a state a script adds on mousedown (if any) is missing.")
+W("- **Disabled, error and loading states** were not seen on the public surface.")
 W()
 W("### Themes")
 W()
-W("Gauth shows one light theme. Its stylesheets do declare dark values: TikTok's TUX theme under `[data-theme=\"dark\"]` and `.twv-container` with `prefers-color-scheme: dark`, the lesson palette under `[data-lesson-style=\"dark\"]`, and Astryx's stone theme as `light-dark()` pairs. None of them is applied on any page captured: no page sets a dark attribute, the science player pins `data-theme=\"light\"`, and every page painted the same under `prefers-color-scheme: dark` (`themeChecks` in [raw/css-vars.json](raw/css-vars.json)). There is no theme switch in the sidebar, the lesson Settings or the footer. The token file therefore ships no dark set, and the dark declarations stay in the raw file for reference.")
+W("Every captured marketing page pins `html.dark`: dark is the painted theme, the `dark` set in tokens.json is the measured one. The same stylesheet declares the light values on `:root` — the `light` set is the declared system the console app uses, never painted on the captured routes. The stylesheet also carries seven easter-egg console skins (.crazy, .stealth, .premium, .high-contrast, .barbie, .nineties, .legacy): recorded in [raw/css-vars.json](raw/css-vars.json) under the `skins` bin, never applied and not tokenised.")
 W()
 W("### Fonts")
 W()
-W("- **SF Pro** is Apple's system face; Gauth declares an \"SF Pro\" family over `local()` only, so it renders as SF Pro on Apple devices and falls back elsewhere.")
-W("- **Satoshi** (the science canvas's \"Canvas Print\" and \"Canvas Heading\") is from Fontshare and is not on Google Fonts; the style guide falls back to the system font.")
-W("- **Rubik**, named on small Atlas labels, has no `@font-face` on the page and rendered as a fallback in the capture.")
+W("- **Aeonik Pro** (`--font-aeonik-pro`) is Appwrite's licensed face and is not distributed; the style guide falls back to the system sans.")
+W("- **Inter** (`--font-inter`) is the product face, free and substitutable.")
+W("- Code blocks use the ui-monospace stack (`--font-mono`).")
 W()
 W("### Screenshots")
 W()
-W("- Covers, illustrations, videos and story images are Gauth's content and appear only inside screenshots and crops. The lesson canvas and the Atlas story keep moving, so two captures of the same view can differ in what the narration has drawn.")
+W("- Product renders, illustrations and logos in the screenshots are Appwrite's content. The page reports devicePixelRatio 1 to scripts while painting at 2x; the .capture.json sidecars record both (devicePixelRatio is the real one, reportedDevicePixelRatio the page's).")
 W("- Screenshots are stored as 256-colour PNGs; read exact colours from the tokens or the raw files.")
 W()
 W("### Content left out")
 W()
-W("- Lesson content (slides, canvas drawings, formulas, narration) was not transcribed; only the frames around it were measured.")
-W("- No personal data was captured: the pages were read signed out, and the Atlas drawer was empty.")
+W("- Article bodies, blog prose and docs copy are the product's content; only the frames and components were measured.")
 
 Path("components.md").write_text("\n".join(L) + "\n")
-print("components.md:", len(L), "lines,", len(C), "entries,", n_crops, "crops,", len(icons), "icons")
+print("components.md:", len(L), "lines")
