@@ -29,7 +29,7 @@ The footer inverts the palette: a `radius.2xl` 32px **black** panel spanning the
 
 At 390 wide the nav collapses to the mark plus a menu button (`m-nav-bar` 390x75; [mobile-home-light-nav-open](screenshots/mobile-home-light-nav-open.png)).
 
-**Screens.** [home-light-default](screenshots/home-light-default.png), [home-light-nav-submenu](screenshots/home-light-nav-submenu.png), [api-light-default](screenshots/api-light-default.png), [mobile-home-light-default](screenshots/mobile-home-light-default.png).
+**Screens.** [home-light-default](screenshots/home-light-default.png), [home-light-nav-submenu](screenshots/home-light-nav-submenu.png), [api-light-default](screenshots/api-light-default.png), [mobile-home-light-default](screenshots/mobile-home-light-default.png); crops [nav-submenu](components/crops/nav-submenu-default.png), [footer](components/crops/footer-default.png).
 
 ## The avatar carousel
 
@@ -41,7 +41,7 @@ At 390 wide the nav collapses to the mark plus a menu button (`m-nav-bar` 390x75
 
 **Behaviour.** The carousel keeps parked copies of every card off-screen and re-renders on its own clock; the measurement re-resolves the live card per state for that reason. A click brings a parked card to the centre — the only click-state on the page.
 
-**Screens.** [home-light-default](screenshots/home-light-default.png), [home-light-persona-tab](screenshots/home-light-persona-tab.png), [mobile-home-light-default](screenshots/mobile-home-light-default.png).
+**Screens.** [home-light-default](screenshots/home-light-default.png), [home-light-persona-tab](screenshots/home-light-persona-tab.png), [mobile-home-light-default](screenshots/mobile-home-light-default.png); crops [persona-chip](components/crops/persona-chip-default.png), [persona-chip, selected](components/crops/persona-chip-selected-default.png).
 
 ## Talking to an avatar
 
@@ -51,7 +51,7 @@ At 390 wide the nav collapses to the mark plus a menu button (`m-nav-bar` 390x75
 
 **Layout.** The selected persona's card carries the call row beside it: a `radius.pill` `color.glass.fill` 48px-tall "Talk with …" control (measured 184.58x48, `button.glass-bg` / `button.glass-text`) and a matching 48px unmute disc. Hovering and focusing were captured; **pressing was not** — a press opens a WebRTC session on Anam's servers and asks for the microphone.
 
-**Screens.** [home-light-default](screenshots/home-light-default.png), [persona-tab](screenshots/home-light-persona-tab.png).
+**Screens.** [home-light-default](screenshots/home-light-default.png), [persona-tab](screenshots/home-light-persona-tab.png); crops [demo-cta](components/crops/demo-cta-default.png), [demo-cta-focus-visible](components/crops/demo-cta-focus-visible.png).
 
 ## Scroll-driven feature sections
 
@@ -61,7 +61,7 @@ At 390 wide the nav collapses to the mark plus a menu button (`m-nav-bar` 390x75
 
 **Layout.** TabSection (1280x765) is a scroll-driven showcase: 24px tab labels (Human realism, Expression control, …) whose active item fills as you scroll, beside a video/metric card. The feature card pairs an Inter claim with `IBM Plex Mono` metrics (the latency benchmark numbers). The logo cloud is a quiet 1280x82 row of customer marks under a 15/21 `text-tertiary` line ("Trusted by over 8,000 builders"). The sticky CTA band ("Build the future of customer experience. Today.", Inter 48/52.8) parks at the foot of the page at 700 wide with the same black Get started pill.
 
-**Screens.** [home-light-full](screenshots/home-light-full.png).
+**Screens.** [home-light-full](screenshots/home-light-full.png); crops [feature-card](components/crops/feature-card-default.png), [tab-item](components/crops/tab-item-default.png), [cta-band](components/crops/cta-band-default.png), [logo-cloud](components/crops/logo-cloud-default.png).
 
 ## Pricing and plans
 
@@ -71,7 +71,7 @@ At 390 wide the nav collapses to the mark plus a menu button (`m-nav-bar` 390x75
 
 **Layout.** A 72px sticky header (the same links, Next.js-flavoured) over an 820px title, the monthly/annual toggle (measured 92.33x40 — a pair of buttons, not a switch), then plan cards on the 1280 grid: Free, Pro, Enterprise. `plan-cta` is a black pill 137.81x44 that measurably shrinks under forced `:active` (133.68x42.68 — a ~3% scale press, the product's one pressed state with real paint). FAQ items are 728px rows. The page's declared set (`--bg #fff`, `--surface #fafafa`, `--text #0a0a0a`, `--border #0000001f`, `--brand #ff6200`) is the semantic layer this package's light set is built from.
 
-**Screens.** [pricing-light-default](screenshots/pricing-light-default.png), [pricing-light-billing-toggle](screenshots/pricing-light-billing-toggle.png), [mobile-pricing-light-default](screenshots/mobile-pricing-light-default.png).
+**Screens.** [pricing-light-default](screenshots/pricing-light-default.png), [pricing-light-billing-toggle](screenshots/pricing-light-billing-toggle.png), [mobile-pricing-light-default](screenshots/mobile-pricing-light-default.png); crops [plan-card](components/crops/plan-card-default.png), [billing-toggle](components/crops/billing-toggle-default.png), [plan-cta pressed](components/crops/plan-cta-pressed.png).
 
 ## Asking for a demo
 
@@ -79,9 +79,9 @@ At 390 wide the nav collapses to the mark plus a menu button (`m-nav-bar` 390x75
 
 **Components.** [Demo page title](components.md#demo-page-title), [Demo request form](components.md#demo-request-form), [Field label](components.md#field-label), [Text field](components.md#text-field), [Text field box](components.md#text-field-box), [Text area](components.md#text-area), [Submit button](components.md#submit-button).
 
-**Layout.** A 420px column on `bg` white: 14/20 labels over 46.5px fields with `border` hairlines and 12px radii, a taller textarea, then a full-width 52.5px black submit. States were captured with sample text typed and deleted — **nothing was submitted**. The field-focused screenshot shows the browser's own outline doing the focus work.
+**Layout.** A 420px column on `bg` white: 14/20 labels over 46.5px fields — unbordered #f5f5f5 fills at an 11px radius — a taller textarea, then a full-width 52.5px orange pill submit (`accent` #ff6200 at a 50px radius). States were captured with sample text typed and deleted — **nothing was submitted**. The field-focused screenshot shows the browser's own outline doing the focus work.
 
-**Screens.** [get-demo-light-default](screenshots/get-demo-light-default.png), [get-demo-light-field-focused](screenshots/get-demo-light-field-focused.png).
+**Screens.** [get-demo-light-default](screenshots/get-demo-light-default.png), [get-demo-light-field-focused](screenshots/get-demo-light-field-focused.png); crops [text field box](components/crops/form-input-box-default.png), [submit](components/crops/form-submit-default.png), [demo-form](components/crops/demo-form-default.png).
 
 ## Docs chrome, search and assistant
 
@@ -93,7 +93,7 @@ At 390 wide the nav collapses to the mark plus a menu button (`m-nav-bar` 390x75
 
 ⌘K opens the 640px `radius.xl` 20 search dialog at the top of the page (nothing was typed); the assistant sheet is a 368px fixed right rail that is open by default (its send button a `radius.full` disc at 30% accent tint — nothing was sent). Code is Paper Mono: a warm near-black `neutral.950` block for fenced code and a light tinted `radius.sm` span inline; API methods are 8.8px bold badges in `method-blue`.
 
-**Screens.** [docs-overview-light-default](screenshots/docs-overview-light-default.png), [docs-overview-light-search-dialog](screenshots/docs-overview-light-search-dialog.png), [docs-overview-light-assistant-panel](screenshots/docs-overview-light-assistant-panel.png), [docs-api-light-default](screenshots/docs-api-light-default.png), [mobile-docs-overview-light-default](screenshots/mobile-docs-overview-light-default.png).
+**Screens.** [docs-overview-light-default](screenshots/docs-overview-light-default.png), [docs-overview-light-search-dialog](screenshots/docs-overview-light-search-dialog.png), [docs-overview-light-assistant-panel](screenshots/docs-overview-light-assistant-panel.png), [docs-api-light-default](screenshots/docs-api-light-default.png), [mobile-docs-overview-light-default](screenshots/mobile-docs-overview-light-default.png); crops [docs-card](components/crops/docs-card-default.png), [search dialog](components/crops/docs-search-dialog-default.png), [sidebar link, current page](components/crops/docs-nav-active-default.png), [prev/next](components/crops/docs-prev-next-default.png).
 
 ## Docs dark theme
 
@@ -103,7 +103,7 @@ At 390 wide the nav collapses to the mark plus a menu button (`m-nav-bar` 390x75
 
 **Layout.** The ground goes pure `#000` (`--background-dark 0 0 0`), headings read `neutral.200` #e6e1de, body `neutral.300`/`400`, hairlines move to `neutral.800` (`--default-border-color` swaps gray-100 for gray-800), and the accent stays #ff6200. Sidebar and TOC keep their light-theme geometry with dark values — no relayout.
 
-**Screens.** [docs-dark-dark-default](screenshots/docs-dark-dark-default.png), [docs-dark-dark-full](screenshots/docs-dark-dark-full.png).
+**Screens.** [docs-dark-dark-default](screenshots/docs-dark-dark-default.png), [docs-dark-dark-full](screenshots/docs-dark-dark-full.png); crops [sidebar, dark](components/crops/docs-dark-sidebar-default.png), [docs card, dark](components/crops/docs-dark-card-default.png).
 
 ## Consent
 
@@ -113,7 +113,7 @@ At 390 wide the nav collapses to the mark plus a menu button (`m-nav-bar` 390x75
 
 **Layout.** A 420x180 `radius.lg` white card pinned bottom-right on `shadow.card` with a 1px `border` hairline: the 15/21 dimmed body, then Manage cookies (text), Reject all and Accept all (gray `radius.full` pills). It rises in over 240ms (`anam-cc-rise`). It was photographed and measured in place and then **hidden without a click** — a consent choice is a submission.
 
-**Screens.** [home-light-consent](screenshots/home-light-consent.png), [mobile-home-light-consent](screenshots/mobile-home-light-consent.png).
+**Screens.** [home-light-consent](screenshots/home-light-consent.png), [mobile-home-light-consent](screenshots/mobile-home-light-consent.png); crop [consent-card](components/crops/consent-card-default.png).
 
 ## Empty, loading and error states
 

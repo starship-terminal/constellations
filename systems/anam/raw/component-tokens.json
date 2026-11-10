@@ -374,10 +374,14 @@
   },
   "surface": {
    "type": "color", "value": "rgba(255, 255, 255, 0.05)",
-   "source": "measured docs-dark control fills (buttons) near-white tint over the black ground (raw/measurements.md docs-dark-main paint)",
+   "source": "Reconstruction — suggested raised fill; the measured docs-dark controls are black fills with ~7% white borders, not a white tint",
    "description": "Raised pieces read as white at ~5%"
   },
-  "card": { "value": "{color.neutral.950}", "type": "color", "description": "The warm ramp's near-black for panels on the black ground" },
+  "card": {
+   "type": "color", "value": "0 0 0",
+   "source": "Reconstruction — the captured docs cards render black on the black ground; no card surface var was measured",
+   "description": "Panels sit flat on the black ground"
+  },
   "text": {
    "DEFAULT": { "value": "{color.neutral.200}", "type": "color", "source": "measured docs-dark-h1 #e6e1de (raw/measurements.md)", "description": "Headings" },
    "secondary": { "value": "{color.neutral.300}", "type": "color", "source": "measured docs-dark-main text node #d5d1ce (raw/measurements.md)", "description": "Body" },
@@ -394,7 +398,7 @@
   },
   "accent-tint": { "value": "{color.brand.tint-strong}", "type": "color" },
   "button": {
-   "primary-bg": { "value": "{color.brand.500}", "type": "color", "source": "measured docs-dark primary controls and the sidebar's orange icon fill (raw/measurements.md docs-dark-sidebar paint)" },
+   "primary-bg": { "value": "{color.brand.500}", "type": "color", "source": "Reconstruction — the accent orange; the docs' dark button fill was not separately measured (the cited sidebar reading is an icon fill, not a button background)" },
    "primary-text": { "value": "{color.white}", "type": "color" }
   },
   "focus": {

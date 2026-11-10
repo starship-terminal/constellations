@@ -777,5 +777,46 @@
   ],
   "maxWidths": [],
   "grids": []
+ },
+ "changelog": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 27777,
+  "fixed": [
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 100,
+    "text": "Developers\n\nPricing\n\nResources\n\nSign in\n\nCompany\n\nTeam\n\nRese"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": 218,
+    "w": 200,
+    "h": 717,
+    "text": "Nov 3, 2026\nOct 22, 2026\nOct 11, 2026\nSep 22, 2026\nSep 9, 20"
+   },
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 619,
+    "w": 168,
+    "h": 261,
+    "text": ""
+   }
+  ],
+  "maxWidths": [],
+  "grids": [
+   {
+    "el": "div.LinksCols",
+    "cols": "200px 200px 200px 200px 200px",
+    "colGap": "30px",
+    "rowGap": "30px",
+    "w": 1280
+   }
+  ]
  }
 }

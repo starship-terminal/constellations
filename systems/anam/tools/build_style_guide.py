@@ -30,7 +30,9 @@ def flat(node, prefix=""):
 
 
 def cssname(path):
-    return "--" + re.sub(r"[^a-zA-Z0-9-]", "-", path.replace(".", "-"))
+    # A Tokens Studio DEFAULT leaf emits lowercase: --text-default, not
+    # --text-DEFAULT (custom properties are case-sensitive).
+    return "--" + re.sub(r"[^a-zA-Z0-9-]", "-", path.replace(".", "-")).replace("-DEFAULT", "-default")
 
 
 def alias(v):

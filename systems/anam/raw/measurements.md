@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from anam.ai on 2026-11-09 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from anam.ai on 2026-11-10 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -173,23 +173,24 @@ Page: docs-overview. Selector: `"Send message" in the assistant panel`. States: 
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 24 x 24 | = | = |
-| Padding | 4px | = | = |
-| Border | none | = | = |
-| Radius | 9999px | = | = |
-| Background | #ff6200 @ 0.3 | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | Inter 16px/24px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #77726f | = | = |
-| Transition | none | = | = |
-| Cursor | default | = | = |
-| Icon | 10 x 10, colour #ffffff, fill #000000 | = | = |
-| Painted layers | button.chat-assistant-send-button.flex 24.0x24.0 bg #ff6200 @ 0.3 r 9999px | = | = |
-| How | at rest | mouse hover | focus failed |
+| Size (w x h) | 24 x 24 | = | - |
+| Padding | 4px | = | - |
+| Border | none | = | - |
+| Radius | 9999px | = | - |
+| Background | #ff6200 @ 0.3 | = | - |
+| Box shadow | none | = | - |
+| Outline | none | = | - |
+| Font | Inter 16px/24px 400 | = | - |
+| Letter spacing | normal | = | - |
+| Colour | #77726f | = | - |
+| Transition | none | = | - |
+| Cursor | default | = | - |
+| Icon | 10 x 10, colour #ffffff, fill #000000 | = | - |
+| Painted layers | button.chat-assistant-send-button.flex 24.0x24.0 bg #ff6200 @ 0.3 r 9999px | = | - |
+| How | at rest | mouse hover | - |
+| Error | - | = | keyboard focus could not be moved to the element |
 
-Crops: `docs-assistant-send-default.png`, `docs-assistant-send-hover.png`, `docs-assistant-send-focus-visible.png`.
+Crops: `docs-assistant-send-default.png`, `docs-assistant-send-hover.png`.
 
 ### Shell and navigation
 
@@ -197,7 +198,7 @@ Crops: `docs-assistant-send-default.png`, `docs-assistant-send-hover.png`, `docs
 
 Top navigation bar. The floating pill nav on every marketing page: the Anam logo, the section links (Developers, Pricing, Resources, Company), Sign in and the Get started button.
 
-Page: home. Selector: `the fixed nav container`. States: default.
+Page: tools. Selector: `the fixed nav container`. States: default.
 
 | Property | default |
 |---|---|
@@ -208,13 +209,14 @@ Page: home. Selector: `the fixed nav container`. States: default.
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | sans-serif 12px/normal 400 |
+| Font | Inter 16px/normal 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
-| Text node | p.framer-text: Inter 14px/16.8px 500, #000000 |
+| Text node | a.anam-nav-link: Inter 14px/16.8px 500, #000000 |
 | Transition | none |
-| Painted layers | div 1440.0x100.0 bg #ffffff @ 0; div.framer-WP6gO 60.0x22.0 bg #000000; a.framer-Ey2WY.framer-v-1amifyt 96.6x34.0 bg #f5f5f5 r 50px |
-| Ancestor paint | 1 up div.framer-Hbfhx.framer-WoKRt bg #ffffff |
+| Icon | 60 x 22, colour #000000 |
+| ::after | 1440px x 523px, fixed, bg #f4f4f4 @ 0.55, radius 0px |
+| Painted layers | header::after.anam-site-nav 1440pxx523px bg #f4f4f4 @ 0.55; div.anam-nav-shell 1440.0x100.0 bg #ffffff; a.anam-signin-pill 96.6x34.0 bg #f5f5f5 r 50px; button.anam-mobile-toggle 0.0x0.0 bg #efefef border T:2px outset #000000 / R:2px outset #000000 / B:2px outset #000000 / L:2px outset #000000 |
 | How | at rest |
 
 Crops: `nav-bar-default.png`.
@@ -223,27 +225,24 @@ Crops: `nav-bar-default.png`.
 
 Nav link. A section link in the pill nav. Measured, never followed.
 
-Page: home. Selector: `"Pricing" inside the nav`. States: default, hover, focus-visible, pressed.
+Page: tools. Selector: `"Pricing" inside the nav`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 78.81 x 32.8 | = | = | = |
+| Size (w x h) | 78.73 x 32.8 | = | = | = |
 | Padding | 8px 16px | = | = | = |
-| Gap | 10px | = | = | = |
 | Border | none | = | = | = |
-| Radius | 0px | = | = | = |
+| Radius | 0px | = | 6px | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #005fcc offset 1px | = |
-| Font | sans-serif 12px/normal 400 | = | = | = |
+| Outline | none | = | 1px solid #000000 @ 0.18 offset 2px | = |
+| Font | Inter 14px/16.8px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #0000ee | = | = | #ff0000 |
-| Text node | p.framer-text: Inter 14px/16.8px 500, #000000 | = | = | = |
-| Transition | none | = | = | = |
+| Colour | #000000 | #000000 @ 0.5 | #000000 @ 0.5 | #000000 @ 0.5 |
+| Transition | color 0.2s cubic-bezier(0.44, 0, 0.56, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Opacity | - | 0.5 | = | = |
-| Painted layers | - | = | a 78.8x32.8 outline 1px auto #005fcc offset 1px | = |
+| Painted layers | - | = | a.anam-nav-link 78.7x32.8 r 6px outline 1px solid #000000 @ 0.18 offset 2px | = |
 
 Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-focus-visible.png`, `nav-link-pressed.png`.
 
@@ -251,25 +250,23 @@ Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-focus-visible.png
 
 Sign in link. The quiet "Sign in" action (lab.anam.ai/login). Measured, never followed.
 
-Page: home. Selector: `"Sign in" inside the nav`. States: default, hover, focus-visible.
+Page: tools. Selector: `"Sign in" inside the nav`. States: default, hover, focus-visible.
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 96.59 x 34 | = | = |
+| Size (w x h) | 96.58 x 34 | = | = |
 | Padding | 16px 24px | = | = |
-| Gap | 10px | = | = |
 | Border | none | = | = |
 | Radius | 50px | = | = |
 | Background | #f5f5f5 | #e8e6e6 | = |
 | Box shadow | none | = | = |
 | Outline | none | = | 1px auto #005fcc offset 1px |
-| Font | sans-serif 12px/normal 400 | = | = |
+| Font | Inter 15px/15px 500 | = | = |
 | Letter spacing | normal | = | = |
-| Colour | #0000ee | = | = |
-| Text node | p.framer-text: Inter 15px/18px 500, #000000 | = | = |
-| Transition | none | = | = |
+| Colour | #000000 | = | = |
+| Transition | background, transform 0.4s, 0.4s cubic-bezier(0.44, 0, 0.56, 1), cubic-bezier(0.44, 0, 0.56, 1) delay 0s, 0s | = | = |
 | Cursor | pointer | = | = |
-| Painted layers | a.framer-Ey2WY.framer-v-1amifyt 96.6x34.0 bg #f5f5f5 r 50px | a.framer-Ey2WY.framer-v-1amifyt 96.6x34.0 bg #e8e6e6 r 50px | a.framer-Ey2WY.framer-v-1amifyt 96.6x34.0 bg #f5f5f5 r 50px outline 1px auto #005fcc offset 1px |
+| Painted layers | a.anam-signin-pill 96.6x34.0 bg #f5f5f5 r 50px | a.anam-signin-pill 96.6x34.0 bg #e8e6e6 r 50px | a.anam-signin-pill 96.6x34.0 bg #f5f5f5 r 50px outline 1px auto #005fcc offset 1px |
 | How | at rest | mouse hover | Shift+Tab, Tab |
 
 Crops: `nav-signin-default.png`, `nav-signin-hover.png`, `nav-signin-focus-visible.png`.
@@ -278,7 +275,7 @@ Crops: `nav-signin-default.png`, `nav-signin-hover.png`, `nav-signin-focus-visib
 
 Nav submenu. The dropdown that opens under a nav section on hover (Developers: Documentation, Tools, Changelog; Company: Team, Research, Security). Shown in its hover-open state.
 
-Page: home. Selector: `the open ContentSubMenu`. States: default.
+Page: tools. Selector: `the open ContentSubMenu`. States: default.
 
 | Property | default |
 |---|---|
@@ -290,12 +287,11 @@ Page: home. Selector: `the open ContentSubMenu`. States: default.
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | sans-serif 12px/normal 400 |
+| Font | Inter 16px/normal 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
-| Text node | p.framer-text: Inter 13px/16.9px 500, #000000 @ 0.5, ls -0.26px |
+| Text node | p.anam-submenu-eyebrow: Inter 13px/16.9px 500, #000000 @ 0.5 |
 | Transition | none |
-| Cursor | pointer |
 | How | at rest |
 
 Crops: `nav-submenu-default.png`.
@@ -304,25 +300,23 @@ Crops: `nav-submenu-default.png`.
 
 Footer. The page footer: product/company/legal link columns, socials and the status line.
 
-Page: home. Selector: `the footer block`. States: default.
+Page: tools. Selector: `the footer block`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1440 x 1170.53 |
-| Padding | 0px 20px 16px 20px |
-| Gap | 10px |
+| Size (w x h) | 1400 x 1154.59 |
+| Padding | 64px 0px 40px 0px |
 | Border | none |
-| Radius | 0px |
-| Background | transparent |
+| Radius | 32px |
+| Background | #000000 |
 | Box shadow | none |
 | Outline | none |
-| Font | sans-serif 12px/normal 400 |
+| Font | Inter 16px/normal 400 |
 | Letter spacing | normal |
-| Colour | #000000 |
-| Text node | p.framer-text: Inter 15px/18px 400, #ffffff @ 0.5 |
+| Colour | #ffffff |
+| Text node | p.anam-footer-group-title: Inter 15px/18px 400, #ffffff @ 0.5 |
 | Transition | none |
-| Painted layers | div 1400.0x1154.5 bg #000000 r 32px |
-| Ancestor paint | 1 up div.framer-Hbfhx.framer-WoKRt bg #ffffff |
+| Painted layers | footer.anam-footer 1400.0x1154.6 bg #000000 r 32px |
 | How | at rest |
 
 Crops: `footer-default.png`.
@@ -331,11 +325,11 @@ Crops: `footer-default.png`.
 
 Footer link. A quiet link in the footer columns. Measured, never followed.
 
-Page: home. Selector: `a legal link inside the footer`. States: default, hover, focus-visible.
+Page: tools. Selector: `a legal link inside the footer`. States: default, hover, focus-visible.
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 112.44 x 19 | = | = |
+| Size (w x h) | 112.44 x 18 | = | = |
 | Padding | 0px | = | = |
 | Border | none | = | = |
 | Radius | 0px | = | = |
@@ -344,11 +338,11 @@ Page: home. Selector: `a legal link inside the footer`. States: default, hover, 
 | Outline | none | = | 1px auto #005fcc offset 1px |
 | Font | Inter 15px/18px 400 | = | = |
 | Letter spacing | normal | = | = |
-| Colour | #ffffff @ 0.8 | #ffffff | = |
-| Transition | none | = | = |
+| Colour | #ffffff @ 0.8 | #ffffff | #ffffff |
+| Transition | color 0.15s ease | = | = |
 | Cursor | pointer | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab |
-| Painted layers | - | = | a.framer-text 112.4x19.0 outline 1px auto #005fcc offset 1px |
+| Painted layers | - | = | a 112.4x18.0 outline 1px auto #005fcc offset 1px |
 
 Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`.
 
@@ -1184,13 +1178,196 @@ Page: tools. Selector: `h1`. States: default.
 
 Crops: `tool-card-title-default.png`.
 
+#### avatar-card
+
+Avatar card. A card in the avatar gallery: a face, its style tag and name.
+
+Page: interactive-avatars. Selector: `the first card on /interactive-avatars`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 222 x 128.91 | = | = |
+| Padding | 0px | = | = |
+| Gap | 16px | = | = |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | sans-serif 12px/normal 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #000000 | = | = |
+| Text node | p.framer-text: Inter 13px/16.9px 500, #000000 @ 0.5, ls -0.26px | = | = |
+| Transition | none | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+| Painted layers | - | = | a.framer-text 51.0x24.0 outline 1px auto #005fcc offset 1px |
+
+Crops: `avatar-card-default.png`, `avatar-card-hover.png`, `avatar-card-focus-visible.png`.
+
+#### about-card
+
+About card. A card on the team/company page.
+
+Page: about. Selector: `the first card on /about`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 222 x 128.91 | = | = |
+| Padding | 0px | = | = |
+| Gap | 16px | = | = |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | sans-serif 12px/normal 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #000000 | = | = |
+| Text node | p.framer-text: Inter 13px/16.9px 500, #000000 @ 0.5, ls -0.26px | = | = |
+| Transition | none | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+| Painted layers | - | = | a.framer-text 51.0x24.0 outline 1px auto #005fcc offset 1px |
+
+Crops: `about-card-default.png`, `about-card-hover.png`, `about-card-focus-visible.png`.
+
+#### research-card
+
+Research entry. A paper or model entry on the research page.
+
+Page: research. Selector: `the first card on /research`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 222 x 128.91 | = | = |
+| Padding | 0px | = | = |
+| Gap | 16px | = | = |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | sans-serif 12px/normal 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #000000 | = | = |
+| Text node | p.framer-text: Inter 13px/16.9px 500, #000000 @ 0.5, ls -0.26px | = | = |
+| Transition | none | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+| Painted layers | - | = | a.framer-text 51.0x24.0 outline 1px auto #005fcc offset 1px |
+
+Crops: `research-card-default.png`, `research-card-hover.png`, `research-card-focus-visible.png`.
+
+#### case-card
+
+Case study card. A customer story card.
+
+Page: case-studies. Selector: `the first card on /case-studies`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 222 x 128.91 | = | = |
+| Padding | 0px | = | = |
+| Gap | 16px | = | = |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | sans-serif 12px/normal 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #000000 | = | = |
+| Text node | p.framer-text: Inter 13px/16.9px 500, #000000 @ 0.5, ls -0.26px | = | = |
+| Transition | none | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+| Painted layers | - | = | a.framer-text 51.0x24.0 outline 1px auto #005fcc offset 1px |
+
+Crops: `case-card-default.png`, `case-card-hover.png`, `case-card-focus-visible.png`.
+
+#### post-card
+
+Blog post card. A post card in the blog index.
+
+Page: blog. Selector: `the first card on /blog`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 222 x 128.91 | = | = |
+| Padding | 0px | = | = |
+| Gap | 16px | = | = |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | sans-serif 12px/normal 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #000000 | = | = |
+| Text node | p.framer-text: Inter 13px/16.9px 500, #000000 @ 0.5, ls -0.26px | = | = |
+| Transition | none | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+| Painted layers | - | = | a.framer-text 51.0x24.0 outline 1px auto #005fcc offset 1px |
+
+Crops: `post-card-default.png`, `post-card-hover.png`, `post-card-focus-visible.png`.
+
+#### changelog-entry
+
+Changelog entry. A release entry on the changelog page.
+
+Page: changelog. Selector: `the first card on /changelog`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 222 x 128.91 | = | = |
+| Padding | 0px | = | = |
+| Gap | 16px | = | = |
+| Border | none | = | = |
+| Radius | 0px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | = |
+| Font | sans-serif 12px/normal 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #000000 | = | = |
+| Text node | p.framer-text: Inter 13px/16.9px 500, #000000 @ 0.5, ls -0.26px | = | = |
+| Transition | none | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+| Painted layers | - | = | a.framer-text 51.0x24.0 outline 1px auto #005fcc offset 1px |
+
+Crops: `changelog-entry-default.png`, `changelog-entry-hover.png`, `changelog-entry-focus-visible.png`.
+
+#### tool-card
+
+Tool card. A card in the tools index.
+
+Page: tools. Selector: `the first card on /tools`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 598 x 506.5 | = | = |
+| Padding | 30px | = | = |
+| Border | none | = | = |
+| Radius | 32px | = | = |
+| Background | #fafafa | #f5f5f5 | = |
+| Box shadow | none | = | = |
+| Outline | none | = | 2px solid #ff6200 offset 4px |
+| Font | Inter 16px/normal 400 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #000000 | = | = |
+| Text node | strong: Inter 10px/10px 600, #000000, ls 0.1px | = | = |
+| Transition | background-color, transform 0.4s, 0.4s cubic-bezier(0.44, 0, 0.56, 1), cubic-bezier(0.44, 0, 0.56, 1) delay 0s, 0s | = | = |
+| Cursor | pointer | = | = |
+| Painted layers | a.KUizFa_toolCard.KUizFa_featuredCard 598.0x506.5 bg #fafafa r 32px; div.KUizFa_previewWrap 538.0x303.5 bg #ffffff border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 12px; div.KUizFa_preview.KUizFa_interviewPreview 536.0x301.5 bg #ffffff; div.KUizFa_previewHeader 536.0x43.0 bg #ffffff border B:1px solid #000000 @ 0.08; div.KUizFa_interviewPortrait 230.5x258.5 bg #e8e6e6; span 210.5x22.0 bg #ffffff @ 0.93 r 50px | a.KUizFa_toolCard.KUizFa_featuredCard 598.0x506.5 bg #f5f5f5 r 32px; div.KUizFa_previewWrap 538.0x303.5 bg #ffffff border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 12px; div.KUizFa_preview.KUizFa_interviewPreview 540.3x303.9 bg #ffffff; div.KUizFa_previewHeader 540.3x43.3 bg #ffffff border B:1px solid #000000 @ 0.08; div.KUizFa_interviewPortrait 232.3x260.6 bg #e8e6e6; span 212.2x22.2 bg #ffffff @ 0.93 r 50px | a.KUizFa_toolCard.KUizFa_featuredCard 598.0x506.5 bg #fafafa r 32px outline 2px solid #ff6200 offset 4px; div.KUizFa_previewWrap 538.0x303.5 bg #ffffff border T:1px solid #000000 @ 0.08 / R:1px solid #000000 @ 0.08 / B:1px solid #000000 @ 0.08 / L:1px solid #000000 @ 0.08 r 12px; div.KUizFa_preview.KUizFa_interviewPreview 536.0x301.5 bg #ffffff; div.KUizFa_previewHeader 536.0x43.0 bg #ffffff border B:1px solid #000000 @ 0.08; div.KUizFa_interviewPortrait 230.5x258.5 bg #e8e6e6; span 210.5x22.0 bg #ffffff @ 0.93 r 50px |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+| Transform | - | matrix(1, 0, 0, 1, 0, -2) | = |
+
+Crops: `tool-card-default.png`, `tool-card-hover.png`, `tool-card-focus-visible.png`.
+
 ### Docs (Mintlify)
 
 #### docs-sidebar
 
 Docs sidebar. The left navigation tree on the Mintlify docs (section groups, page links, POST/GET method badges on the API reference).
 
-Page: docs-overview. Selector: `#sidebar`. States: default.
+Page: docs-api. Selector: `#sidebar`. States: default.
 
 | Property | default |
 |---|---|
@@ -1206,8 +1383,7 @@ Page: docs-overview. Selector: `#sidebar`. States: default.
 | Colour | #77726f |
 | Text node | span: Inter 14px/24px 600, #1e1916 |
 | Transition | none |
-| Icon | 16 x 16, colour #ff6200, fill #000000 |
-| Painted layers | div.sticky.top-0 256.0x32.0 image linear-gradient(in oklab, #ffffff 0%, #000000 @ 0 100%); a.group.flex 256.0x36.0 bg #ff6200 @ 0.1 r 12px; svg.size-4.bg-primary 16.0x16.0 bg #ff6200; svg.size-4.bg-gray-400 16.0x16.0 bg #a6a19e; svg.size-4.bg-gray-400 16.0x16.0 bg #a6a19e; svg.size-4.bg-gray-400 16.0x16.0 bg #a6a19e |
+| Painted layers | div.sticky.top-0 256.0x32.0 image linear-gradient(in oklab, #ffffff 0%, #000000 @ 0 100%); a.group.flex 256.0x36.0 bg #ff6200 @ 0.1 r 12px; span.px-1.py-0.5 32.1x15.0 bg #60a5fa @ 0.2 r 6px; span.px-1.py-0.5 25.8x15.0 bg #4ade80 @ 0.2 r 6px; span.px-1.py-0.5 25.8x15.0 bg #4ade80 @ 0.2 r 6px; span.px-1.py-0.5 25.8x15.0 bg #4ade80 @ 0.2 r 6px |
 | How | at rest |
 
 Crops: `docs-sidebar-default.png`.
@@ -1216,33 +1392,33 @@ Crops: `docs-sidebar-default.png`.
 
 Sidebar link. A page link inside a sidebar group. Measured, never followed.
 
-Page: docs-overview. Selector: `a link inside the sidebar`. States: default, hover, focus-visible.
+Page: docs-api. Selector: `a link inside the sidebar`. States: default, hover, focus-visible.
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 256 x 36 | = | = |
-| Padding | 0px | = | = |
-| Border | none | = | = |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | Inter 14px/24px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #77726f | = | = |
-| Text node | span.min-w-0.max-w-full: Inter 14px/24px 400, #46413e | span.min-w-0.max-w-full: Inter 14px/24px 400, #1e1916 | = |
-| Transition | none | = | = |
-| Icon | 16 x 16, colour #46413e, fill #000000 | 16 x 16, colour #1e1916, fill #000000 | = |
-| Painted layers | svg.size-4.bg-gray-400 16.0x16.0 bg #a6a19e | a.group.flex 256.0x36.0 bg #57524f @ 0.05 r 12px; svg.size-4.bg-gray-400 16.0x16.0 bg #a6a19e | = |
-| How | at rest | mouse hover | focus failed |
+| Size (w x h) | 256 x 24 | = | - |
+| Padding | 0px 0px 0px 16px | = | - |
+| Gap | 10px | = | - |
+| Border | none | = | - |
+| Radius | 0px | = | - |
+| Background | transparent | = | - |
+| Box shadow | none | = | - |
+| Outline | none | = | - |
+| Font | Inter 14px/24px 600 | = | - |
+| Letter spacing | normal | = | - |
+| Colour | #1e1916 | = | - |
+| Text node | span: Inter 14px/24px 600, #1e1916 | = | - |
+| Transition | none | = | - |
+| How | at rest | mouse hover | - |
+| Error | - | = | keyboard focus could not be moved to the element |
 
-Crops: `docs-nav-link-default.png`, `docs-nav-link-hover.png`, `docs-nav-link-focus-visible.png`.
+Crops: `docs-nav-link-default.png`, `docs-nav-link-hover.png`.
 
 #### docs-nav-active
 
 Sidebar link, current page. The link for the open page, in its selected style.
 
-Page: docs-overview. Selector: `[aria-current=page] in the sidebar`. States: default.
+Page: docs-api. Selector: `[aria-current=page] in the sidebar`. States: default.
 
 | Property | default |
 |---|---|
@@ -1258,8 +1434,7 @@ Page: docs-overview. Selector: `[aria-current=page] in the sidebar`. States: def
 | Colour | #77726f |
 | Text node | span.min-w-0.max-w-full: Inter 14px/24px 400, #ff6200 |
 | Transition | none |
-| Icon | 16 x 16, colour #ff6200, fill #000000 |
-| Painted layers | a.group.flex 256.0x36.0 bg #ff6200 @ 0.1 r 12px; svg.size-4.bg-primary 16.0x16.0 bg #ff6200 |
+| Painted layers | a.group.flex 256.0x36.0 bg #ff6200 @ 0.1 r 12px |
 | How | at rest |
 
 Crops: `docs-nav-active-default.png`.
@@ -1268,7 +1443,7 @@ Crops: `docs-nav-active-default.png`.
 
 Top nav tab. A section tab in the docs top bar (Documentation / API Reference).
 
-Page: docs-overview. Selector: `a top-nav link`. States: default, hover, focus-visible.
+Page: docs-api. Selector: `a top-nav link`. States: default, hover, focus-visible.
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
@@ -1282,11 +1457,11 @@ Page: docs-overview. Selector: `a top-nav link`. States: default, hover, focus-v
 | Outline | none | = | 1px auto #ff6200 offset 1px |
 | Font | Inter 14px/20px 500 | = | = |
 | Letter spacing | normal | = | = |
-| Colour | #2d2825 | = | = |
+| Colour | #57524f | #2d2825 | = |
 | Transition | none | = | = |
 | Cursor | pointer | = | = |
-| Painted layers | div.absolute.bottom-0 63.5x1.5 bg #ff6200 | = | a.link.nav-tabs-item 63.5x48.0 outline 1px auto #ff6200 offset 1px; div.absolute.bottom-0 63.5x1.5 bg #ff6200 |
 | How | at rest | mouse hover | Shift+Tab, Tab |
+| Painted layers | - | div.absolute.bottom-0 63.5x1.5 bg #e6e1de | a.link.nav-tabs-item 63.5x48.0 outline 1px auto #ff6200 offset 1px |
 
 Crops: `docs-topnav-link-default.png`, `docs-topnav-link-hover.png`, `docs-topnav-link-focus-visible.png`.
 
@@ -1294,7 +1469,7 @@ Crops: `docs-topnav-link-default.png`, `docs-topnav-link-hover.png`, `docs-topna
 
 Search button. The "Search… ⌘K" pill in the docs bar. Pressed is forced; a real press opens the search dialog.
 
-Page: docs-overview. Selector: `the Search button`. States: default, hover, focus-visible, pressed.
+Page: docs-api. Selector: `the Search button`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -1322,7 +1497,7 @@ Crops: `docs-search-btn-default.png`, `docs-search-btn-hover.png`, `docs-search-
 
 Ask Assistant button. Opens the AI assistant panel (⌘I). Pressed is forced; the panel was opened by keyboard for its own entry.
 
-Page: docs-overview. Selector: `the Ask Assistant button`. States: default, hover, focus-visible, pressed.
+Page: docs-api. Selector: `the Ask Assistant button`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -1350,7 +1525,7 @@ Crops: `docs-assistant-btn-default.png`, `docs-assistant-btn-hover.png`, `docs-a
 
 Theme menu button. The "Change theme preference" menu trigger. A local toggle; the dark run pressed it once.
 
-Page: docs-overview. Selector: `#theme-preference-menu-trigger`. States: default, hover, focus-visible.
+Page: docs-api. Selector: `#theme-preference-menu-trigger`. States: default, hover, focus-visible.
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
@@ -1377,7 +1552,7 @@ Crops: `docs-theme-btn-default.png`, `docs-theme-btn-hover.png`, `docs-theme-btn
 
 On-this-page rail. The sticky right-hand table of contents.
 
-Page: docs-overview. Selector: `#content-side-layout`. States: default.
+Page: docs-api. Selector: `#content-side-layout`. States: default.
 
 | Property | default |
 |---|---|
@@ -1402,28 +1577,26 @@ Crops: `docs-toc-default.png`.
 
 TOC link.
 
-Page: docs-overview. Selector: `a link inside the TOC rail`. States: default, hover, focus-visible.
+Page: docs-api. Selector: `a link inside the TOC rail`. States: default, hover, focus-visible.
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 104.52 x 24 | = | = |
-| Padding | 0px | = | = |
-| Border | none | = | = |
-| Radius | 0px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | = |
-| Outline | none | = | 1px auto #ff6200 offset 0px |
-| Font | Inter 14px/24px 500 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #46413e | #1e1916 | = |
-| Text node | span: Inter 14px/24px 500, #46413e | span: Inter 14px/24px 500, #1e1916 | = |
-| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = |
-| Cursor | pointer | = | = |
-| Icon | 12 x 12, colour #46413e, fill #000000 | 12 x 12, colour #1e1916, fill #000000 | = |
-| How | at rest | mouse hover | Shift+Tab, Tab |
-| Painted layers | - | = | button 104.5x24.0 outline 1px auto #ff6200 offset 0px |
+| Size (w x h) | 264 x 32 | = | - |
+| Padding | 0px | = | - |
+| Border | none | = | - |
+| Radius | 0px | = | - |
+| Background | transparent | = | - |
+| Box shadow | none | = | - |
+| Outline | none | = | - |
+| Font | Inter 14px/24px 400 | = | - |
+| Letter spacing | normal | = | - |
+| Colour | #57524f | = | - |
+| Text node | a.text-primary: Inter 14px/24px 400, #ff6200 | = | - |
+| Transition | none | = | - |
+| How | at rest | mouse hover | - |
+| Error | - | = | keyboard focus could not be moved to the element |
 
-Crops: `docs-toc-link-default.png`, `docs-toc-link-hover.png`, `docs-toc-link-focus-visible.png`.
+Crops: `docs-toc-link-default.png`, `docs-toc-link-hover.png`.
 
 #### docs-h1
 
@@ -1475,25 +1648,25 @@ Crops: none.
 
 Docs link card. A card linking to another docs page (the "Learn" cards). Measured, never followed.
 
-Page: docs-overview. Selector: `a card link in main`. States: default, hover, focus-visible, pressed.
+Page: docs-overview. Selector: `.card in main`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 688.81 x 246 | = | = | = |
+| Size (w x h) | 218.94 x 230 | = | = | = |
 | Padding | 0px | = | = | = |
-| Gap | 0px 16px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
+| Border | 1px solid #110d0a @ 0.1 | 1px solid #ff6200 | = | 1px solid #ff6200 |
+| Radius | 16px | = | = | = |
+| Background | #ffffff | = | = | = |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px | = | = | = |
+| Outline | none | = | 1px auto #ff6200 offset 0px | = |
 | Font | Inter 16px/28px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #46413e | = | = | = |
 | Text node | h2.not-prose.font-semibold: Inter 16px/24px 600, #2d2825 | = | = | = |
 | Transition | none | = | = | = |
-| Icon | 0 x 0, colour #a6a19e, fill #000000 | = | = | = |
-| Painted layers | div.card.block 218.9x230.0 bg #ffffff border T:1px solid #110d0a @ 0.1 / R:1px solid #110d0a @ 0.1 / B:1px solid #110d0a @ 0.1 / L:1px solid #110d0a @ 0.1 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; a 0.0x0.0 border B:1px solid #ff6200; svg.size-6.m-0! 24.0x24.0 bg #ff6200; div.card.block 218.9x230.0 bg #ffffff border T:1px solid #110d0a @ 0.1 / R:1px solid #110d0a @ 0.1 / B:1px solid #110d0a @ 0.1 / L:1px solid #110d0a @ 0.1 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; a 0.0x0.0 border B:1px solid #ff6200; svg.size-6.m-0! 24.0x24.0 bg #ff6200 | div.card.block 218.9x230.0 bg #ffffff border T:1px solid #110d0a @ 0.1 / R:1px solid #110d0a @ 0.1 / B:1px solid #110d0a @ 0.1 / L:1px solid #110d0a @ 0.1 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; a 0.0x0.0 border B:1px solid #ff6200; svg.size-6.m-0! 24.0x24.0 bg #ff6200; div.card.block 218.9x230.0 bg #ffffff border T:1px solid #ff6200 / R:1px solid #ff6200 / B:1px solid #ff6200 / L:1px solid #ff6200 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; a 0.0x0.0 border B:2px solid #ff6200; svg.size-6.m-0! 24.0x24.0 bg #ff6200 | div.card.block 218.9x230.0 bg #ffffff border T:1px solid #110d0a @ 0.1 / R:1px solid #110d0a @ 0.1 / B:1px solid #110d0a @ 0.1 / L:1px solid #110d0a @ 0.1 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px outline 1px auto #ff6200 offset 0px; a 0.0x0.0 border B:1px solid #ff6200; svg.size-6.m-0! 24.0x24.0 bg #ff6200; div.card.block 218.9x230.0 bg #ffffff border T:1px solid #110d0a @ 0.1 / R:1px solid #110d0a @ 0.1 / B:1px solid #110d0a @ 0.1 / L:1px solid #110d0a @ 0.1 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; a 0.0x0.0 border B:1px solid #ff6200; svg.size-6.m-0! 24.0x24.0 bg #ff6200 | = |
+| Cursor | pointer | = | = | = |
+| Icon | 0 x 0, colour #a6a19e, fill #000000 | 0 x 0, colour #ff6200, fill #000000 | = | 0 x 0, colour #ff6200, fill #000000 |
+| Painted layers | div.card.block 218.9x230.0 bg #ffffff border T:1px solid #110d0a @ 0.1 / R:1px solid #110d0a @ 0.1 / B:1px solid #110d0a @ 0.1 / L:1px solid #110d0a @ 0.1 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; a 0.0x0.0 border B:1px solid #ff6200; svg.size-6.m-0! 24.0x24.0 bg #ff6200 | div.card.block 218.9x230.0 bg #ffffff border T:1px solid #ff6200 / R:1px solid #ff6200 / B:1px solid #ff6200 / L:1px solid #ff6200 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; a 0.0x0.0 border B:2px solid #ff6200; svg.size-6.m-0! 24.0x24.0 bg #ff6200 | div.card.block 218.9x230.0 bg #ffffff border T:1px solid #110d0a @ 0.1 / R:1px solid #110d0a @ 0.1 / B:1px solid #110d0a @ 0.1 / L:1px solid #110d0a @ 0.1 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px outline 1px auto #ff6200 offset 0px; a 0.0x0.0 border B:1px solid #ff6200; svg.size-6.m-0! 24.0x24.0 bg #ff6200 | div.card.block 218.9x230.0 bg #ffffff border T:1px solid #ff6200 / R:1px solid #ff6200 / B:1px solid #ff6200 / L:1px solid #ff6200 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; a 0.0x0.0 border B:1px solid #ff6200; svg.size-6.m-0! 24.0x24.0 bg #ff6200 |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `docs-card-default.png`, `docs-card-hover.png`, `docs-card-focus-visible.png`, `docs-card-pressed.png`.
@@ -1679,6 +1852,61 @@ Page: docs-dark. Selector: `main h1 in dark`. States: default.
 | How | at rest |
 
 Crops: `docs-dark-h1-default.png`.
+
+#### docs-prev-next
+
+Prev/next link. The page-footer pagination link. Measured, never followed.
+
+Page: docs-api. Selector: `a pagination link`. States: default, hover, focus-visible.
+
+| Property | default | hover | focus-visible |
+|---|---|---|---|
+| Size (w x h) | 154.95 x 20 | = | = |
+| Padding | 0px | = | = |
+| Gap | 12px | = | = |
+| Border | none | = | = |
+| Radius | 2px | = | = |
+| Background | transparent | = | = |
+| Box shadow | none | = | = |
+| Outline | none | = | 2px solid #ff6200 offset 2px |
+| Font | Inter 14px/20px 600 | = | = |
+| Letter spacing | normal | = | = |
+| Colour | #46413e | = | = |
+| Text node | div.truncate: Inter 14px/20px 600, #46413e | div.truncate: Inter 14px/20px 600, #1e1916 | = |
+| Transition | none | = | = |
+| Cursor | pointer | = | = |
+| Icon | 3 x 6, colour #46413e, fill #000000 | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab |
+| Painted layers | - | = | a.group.flex 155.0x20.0 r 2px outline 2px solid #ff6200 offset 2px |
+
+Crops: `docs-prev-next-default.png`, `docs-prev-next-hover.png`, `docs-prev-next-focus-visible.png`.
+
+#### docs-dark-card
+
+Docs card, dark.
+
+Page: docs-dark. Selector: `a card link in dark`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 218.94 x 230 |
+| Padding | 0px |
+| Border | 1px solid #ffffff @ 0.1 |
+| Radius | 16px |
+| Background | #000000 |
+| Box shadow | #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px |
+| Outline | none |
+| Font | Inter 16px/28px 400 |
+| Letter spacing | normal |
+| Colour | #a6a19e |
+| Text node | h2.not-prose.font-semibold: Inter 16px/24px 600, #ffffff |
+| Transition | none |
+| Cursor | pointer |
+| Icon | 0 x 0, colour #77726f, fill #000000 |
+| Painted layers | div.card.block 218.9x230.0 bg #000000 border T:1px solid #ffffff @ 0.1 / R:1px solid #ffffff @ 0.1 / B:1px solid #ffffff @ 0.1 / L:1px solid #ffffff @ 0.1 r 16px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 2px, #000000 @ 0 0px 0px 0px 0px; a 0.0x0.0 border B:1px solid #ff6200; svg.size-6.m-0! 24.0x24.0 bg #ff6200 |
+| How | at rest |
+
+Crops: `docs-dark-card-default.png`.
 
 ### Mobile (390 wide)
 

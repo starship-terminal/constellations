@@ -1,16 +1,16 @@
 # Anam components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured from anam.ai on 2026-11-09, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running pages. Nothing was signed into, created, sent or uploaded; the avatar call button was never pressed and no consent choice was made.
+The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured from anam.ai on 2026-11-10, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running pages. Nothing was signed into, created, sent or uploaded; the avatar call button was never pressed and no consent choice was made.
 
 anam.ai is three public surfaces with one accent: the **marketing pages** (Framer: white ground, black ink and pills, orange #ff6200, frosted-glass chips on the avatar videos), the **app pages** /pricing, /get-demo and /tools (Next.js: a small `:root` token set — `--bg`, `--surface`, `--text`, `--border`, `--brand`), and the **docs** (Mintlify: a warm-stone gray ramp on `:root`, Inter and Paper Mono, the same orange as `--primary`). Only the docs ship a dark theme.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (70 components, 121 states). The page layouts are described in [raw/layout.json](raw/layout.json).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (79 components, 146 states). The page layouts are described in [raw/layout.json](raw/layout.json).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 15/18 500, #000`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (111 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (133 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -77,7 +77,7 @@ The 19 components of the library's checklist ([docs/DESIGN-SYSTEM.md](../../docs
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 21 components were given a real keyboard focus. 17 show a change: `consent-manage` (2px solid #000000 `black`, offset 2px), `consent-accept` (2px solid #000000 `black`, offset 2px), `nav-link` (1px auto #005fcc, offset 1px), `nav-signin` (1px auto #005fcc, offset 1px), `footer-link` (1px auto #005fcc, offset 1px), `hero-cta` (1px auto #005fcc, offset 1px), `persona-chip` (1px auto #005fcc, offset 0px), `nav-sub-link` (2px solid #ff6200 `brand.500`, offset 3px), `billing-toggle` (2px solid #ff6200 `brand.500`, offset 3px), `plan-cta` (2px solid #ff6200 `brand.500`, offset 3px), `form-submit` (1px auto #005fcc, offset 0px), `docs-topnav-link` (1px auto #ff6200 `brand.500`, offset 1px), `docs-search-btn` (1px auto #ff6200 `brand.500`, offset 0px), `docs-assistant-btn` (1px auto #ff6200 `brand.500`, offset 0px), `docs-theme-btn` (1px auto #ff6200 `brand.500`, offset 0px), `docs-toc-link` (1px auto #ff6200 `brand.500`, offset 0px), `demo-cta` (1px auto #005fcc, offset 0px). The other 4 draw nothing new — anam.ai largely lets the browser's own outline stand (Framer links take the default `auto` outline; the docs buttons keep their resting style): `tab-item`, `docs-nav-link`, `docs-card`, `docs-assistant-send`.
+**Focus.** 26 components were given a real keyboard focus. 19 show a change: `consent-manage` (2px solid #000000 `black`, offset 2px), `consent-accept` (2px solid #000000 `black`, offset 2px), `nav-link` (1px solid rgba(0, 0, 0, 0.18), offset 2px), `nav-signin` (1px auto #005fcc, offset 1px), `footer-link` (1px auto #005fcc, offset 1px), `hero-cta` (1px auto #005fcc, offset 1px), `persona-chip` (1px auto #005fcc, offset 0px), `nav-sub-link` (2px solid #ff6200 `brand.500`, offset 3px), `billing-toggle` (2px solid #ff6200 `brand.500`, offset 3px), `plan-cta` (2px solid #ff6200 `brand.500`, offset 3px), `form-submit` (1px auto #005fcc, offset 0px), `docs-topnav-link` (1px auto #ff6200 `brand.500`, offset 1px), `docs-search-btn` (1px auto #ff6200 `brand.500`, offset 0px), `docs-assistant-btn` (1px auto #ff6200 `brand.500`, offset 0px), `docs-theme-btn` (1px auto #ff6200 `brand.500`, offset 0px), `docs-card` (1px auto #ff6200 `brand.500`, offset 0px), `demo-cta` (1px auto #005fcc, offset 0px), `tool-card` (2px solid #ff6200 `brand.500`, offset 4px), `docs-prev-next` (2px solid #ff6200 `brand.500`, offset 2px). The other 7 draw nothing new — anam.ai largely lets the browser's own outline stand (Framer links take the default `auto` outline; the docs buttons keep their resting style): `tab-item`, `avatar-card`, `about-card`, `research-card`, `case-card`, `post-card`, `changelog-entry`. Keyboard focus could not be moved to `docs-nav-link`, `docs-toc-link`, `docs-assistant-send`, so those have no focus reading.
 
 **Pressed.** Pressed was forced with DevTools, so it is the :active styles only: the plan CTA measurably shrinks a couple of pixels under :active (137.81x44 to 133.68x42.68 — a scale press), while the marketing pills and docs buttons keep their resting paint; the call controls were never really pressed because a press opens a live session.
 
@@ -86,13 +86,14 @@ Values that apply across entries, from the measurement files.
 | Duration | Easing | Property | Where |
 |---|---|---|---|
 | 0.04s | `ease` | transform | form-submit |
-| 0.15s | `cubic-bezier(0.4, 0, 0.2, 1)` | --tw-gradient-from, --tw-gradient-to, --tw-gradient-via, background-color, border-color, color, fill, outline-color, stroke, text-decoration-color | docs-toc-link |
-| 0.15s | `ease` | background, box-shadow, opacity | form-input, form-submit, form-textarea |
+| 0.15s | `ease` | background, box-shadow, color, opacity | footer-link, form-input, form-submit, form-textarea |
 | 0.16s | `cubic-bezier(0.16, 1, 0.3, 1)` | background-color | consent-accept, consent-manage |
 | 0.16s | `ease` | border-color, transform | consent-accept, consent-manage, plan-cta |
+| 0.2s | `cubic-bezier(0.44, 0, 0.56, 1)` | color | nav-link |
 | 0.2s | `ease` | background-color, box-shadow, color | billing-toggle, plan-cta |
 | 0.25s | `cubic-bezier(0.22, 1, 0.36, 1)` | opacity, scale, transform | docs-search-dialog |
 | 0.3s | `cubic-bezier(0.12, 0.23, 0.5, 1)` | transform | m-persona-chip, persona-chip, persona-chip-selected |
+| 0.4s | `cubic-bezier(0.44, 0, 0.56, 1)` | background, background-color, transform | nav-signin, tool-card |
 
 **Layout.** Read on each page ([raw/layout.json](raw/layout.json)).
 
@@ -112,6 +113,7 @@ Values that apply across entries, from the measurement files.
 | docs-api | - | max-width 1535.2px | - | Anam home page (sticky), Use the API (sticky), div (sticky) |
 | mobile-home | - | full width | 3 grids (2 col gap 12px; 2 col gap 12px) | Sign in (fixed) |
 | mobile-docs | - | full width | - | Anam home page (fixed), span (fixed), div (sticky) |
+| changelog | - | full width | 1 grids (5 col gap 30px) | Developers (fixed), Nov 3, 2026 (sticky), div (fixed) |
 
 **Card shapes.** Default-state values; the entries hold the states. The marketing site's signature card is the 32px-radius persona tile over a long soft shadow with frosted-glass chips; the docs' is a 16px-radius white card with a warm hairline border.
 
@@ -120,7 +122,7 @@ Values that apply across entries, from the measurement files.
 | [Persona chip](#persona-chip) | 340 x 451 | - | 50px | rgba(255, 255, 255, 0.5) `glass.fill` | none | 0 |
 | [Avatar demo card](#avatar-demo-card) | 408 x 483.6 | - | 50px | rgba(255, 255, 255, 0.5) `glass.fill` | none | 0 |
 | [Plan card](#plan-card) | 520 x 1133.19 | - | 50px | #000000 `black` | none | 0 |
-| [Docs link card](#docs-link-card) | 688.81 x 246 | 1px solid rgba(17, 13, 10, 0.1) | 16px | #ffffff `white` | transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 2px, transparent 0px 0px 0px 0px | 0 |
+| [Docs link card](#docs-link-card) | 218.94 x 230 | 1px solid rgba(17, 13, 10, 0.1) | 16px | #ffffff `white` | none | 0 |
 | [Cookie consent card](#cookie-consent-card) | 420 x 180 | 1px solid rgba(0, 0, 0, 0.08) | 16px | #ffffff `white` | rgba(0, 0, 0, 0.18) 0px 12px 32px -8px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px | 20px |
 | [Feature card](#feature-card) | 600 x 144 | - | - | transparent | none | 0 |
 | [Search dialog](#search-dialog) | 640 x 62 | - | 20px | #ffffff `white` | rgba(17, 13, 10, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.01) 0px 57px 34px 0px, rgba(0, 0, 0, 0.02) 0px 25px 25px 0px, rgba(0, 0, 0, 0.02) 0px 6px 14px 0px | 0 |
@@ -133,60 +135,59 @@ Values that apply across entries, from the measurement files.
 The chrome shared by the marketing pages: a floating pill nav (Anam mark; Developers / Pricing / Resources with hover submenus; Sign in; a black Get started pill) and the footer, whose link columns sit on a 32px-radius black panel. On a phone the nav collapses to a menu button.
 
 #### Top navigation bar
-The floating pill nav on every marketing page: the Anam logo, the section links (Developers, Pricing, Resources, Company), Sign in and the Get started button. Read as `nav-bar` on the anam.ai home page.
+The floating pill nav on every marketing page: the Anam logo, the section links (Developers, Pricing, Resources, Company), Sign in and the Get started button. Read as `nav-bar` on the anam.ai tools page.
 
-**Values (default).** size 1440 x 100; background transparent; text Inter 14/16.8 500, #000000 `black`.
+**Values (default).** size 1440 x 100; background transparent; text Inter 14/16.8 500, #000000 `black`; icon 60 x 22, #000000 `black`.
 
-Child layers that carry the look: div 1440x100 background rgba(255, 255, 255, 0); div 60x22 background #000000 `black`; a 96.6x34 background #f5f5f5 `gray.100` radius 50px.
+Child layers that carry the look: header::after 1440pxx523px background rgba(244, 244, 244, 0.55); div 1440x100 background #ffffff `white`; a 96.6x34 background #f5f5f5 `gray.100` radius 50px.
 
 ![Top navigation bar default](components/crops/nav-bar-default.png)
 
 #### Nav link
-A section link in the pill nav. Measured, never followed. Read as `nav-link` on the anam.ai home page.
+A section link in the pill nav. Measured, never followed. Read as `nav-link` on the anam.ai tools page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: pressed) | size 78.81 x 32.8; padding 8px 16px; background transparent; text Inter 14/16.8 500, #000000 `black` |
-| hover | opacity 0.5 |
-| focus-visible | outline 1px auto #005fcc, offset 1px |
+| default | size 78.73 x 32.8; padding 8px 16px; background transparent; text Inter 14/16.8 500, #000000 `black`; transition color 0.2s cubic-bezier(0.44, 0, 0.56, 1) |
+| hover | text Inter 14/16.8 500, rgba(0, 0, 0, 0.5) |
+| focus-visible | radius 6px; outline 1px solid rgba(0, 0, 0, 0.18), offset 2px; text Inter 14/16.8 500, rgba(0, 0, 0, 0.5) |
+| pressed | text Inter 14/16.8 500, rgba(0, 0, 0, 0.5) |
 
 ![Nav link default](components/crops/nav-link-default.png) ![Nav link hover](components/crops/nav-link-hover.png) ![Nav link focus-visible](components/crops/nav-link-focus-visible.png) ![Nav link pressed](components/crops/nav-link-pressed.png)
 
 #### Sign in link
-The quiet "Sign in" action (lab.anam.ai/login). Measured, never followed. Read as `nav-signin` on the anam.ai home page.
+The quiet "Sign in" action (lab.anam.ai/login). Measured, never followed. Read as `nav-signin` on the anam.ai tools page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 96.59 x 34; padding 16px 24px; radius 50px; background #f5f5f5 `gray.100`; text Inter 15/18 500, #000000 `black` |
+| default | size 96.58 x 34; padding 16px 24px; radius 50px; background #f5f5f5 `gray.100`; text Inter 15/15 500, #000000 `black`; transition background 0.4s cubic-bezier(0.44, 0, 0.56, 1), transform 0.4s cubic-bezier(0.44, 0, 0.56, 1) |
 | hover | background #e8e6e6 |
 | focus-visible | outline 1px auto #005fcc, offset 1px |
 
 ![Sign in link default](components/crops/nav-signin-default.png) ![Sign in link hover](components/crops/nav-signin-hover.png) ![Sign in link focus-visible](components/crops/nav-signin-focus-visible.png)
 
 #### Nav submenu
-The dropdown that opens under a nav section on hover (Developers: Documentation, Tools, Changelog; Company: Team, Research, Security). Shown in its hover-open state. Read as `nav-submenu` on the anam.ai home page.
+The dropdown that opens under a nav section on hover (Developers: Documentation, Tools, Changelog; Company: Team, Research, Security). Shown in its hover-open state. Read as `nav-submenu` on the anam.ai tools page.
 
 **Values (default).** size 222 x 128.91; background transparent; text Inter 13/16.9 500, rgba(0, 0, 0, 0.5).
 
 ![Nav submenu default](components/crops/nav-submenu-default.png)
 
 #### Footer
-The page footer: product/company/legal link columns, socials and the status line. Read as `footer` on the anam.ai home page.
+The page footer: product/company/legal link columns, socials and the status line. Read as `footer` on the anam.ai tools page.
 
-**Values (default).** size 1440 x 1170.53; padding 0px 20px 16px 20px; background transparent; text Inter 15/18 400, rgba(255, 255, 255, 0.5) `glass.fill`.
-
-Child layers that carry the look: div 1400x1154.5 background #000000 `black` radius 32px.
+**Values (default).** size 1400 x 1154.59; padding 64px 0px 40px 0px; radius 32px; background #000000 `black`; text Inter 15/18 400, rgba(255, 255, 255, 0.5) `glass.fill`.
 
 ![Footer default](components/crops/footer-default.png)
 
 #### Footer link
-A quiet link in the footer columns. Measured, never followed. Read as `footer-link` on the anam.ai home page.
+A quiet link in the footer columns. Measured, never followed. Read as `footer-link` on the anam.ai tools page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 112.44 x 19; background transparent; text Inter 15/18 400, rgba(255, 255, 255, 0.8) |
+| default | size 112.44 x 18; background transparent; text Inter 15/18 400, rgba(255, 255, 255, 0.8); transition color 0.15s ease |
 | hover | text Inter 15/18 400, #ffffff `white` |
-| focus-visible | outline 1px auto #005fcc, offset 1px |
+| focus-visible | outline 1px auto #005fcc, offset 1px; text Inter 15/18 400, #ffffff `white` |
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png)
 
@@ -450,49 +451,45 @@ The form’s submit. Measured and hovered, never pressed: a press sends the lead
 anam.ai/docs, a Mintlify site: the top tabs, search pill, Ask Assistant button, warm-stone sidebar and TOC rails, link cards, code and method badges. The ⌘K dialog and ⌘I panel were opened by keyboard, never submitted; the dark theme was toggled once.
 
 #### Docs sidebar
-The left navigation tree on the Mintlify docs (section groups, page links, POST/GET method badges on the API reference). Read as `docs-sidebar` on the anam.ai docs (overview) page.
+The left navigation tree on the Mintlify docs (section groups, page links, POST/GET method badges on the API reference). Read as `docs-sidebar` on the anam.ai docs (API reference) page.
 
-**Values (default).** size 288 x 788; background transparent; text Inter 14/24 600, #1e1916 `neutral.900`; icon 16 x 16, #ff6200 `brand.500`.
+**Values (default).** size 288 x 788; background transparent; text Inter 14/24 600, #1e1916 `neutral.900`.
 
-Child layers that carry the look: div 256x32 image linear-gradient(in oklab, #ffffff `white` 0%, transparent 100%); a 256x36 background rgba(255, 98, 0, 0.1) `brand.tint-strong` `brand.tint-strong` radius 12px; svg 16x16 background #ff6200 `brand.500`.
+Child layers that carry the look: div 256x32 image linear-gradient(in oklab, #ffffff `white` 0%, transparent 100%); a 256x36 background rgba(255, 98, 0, 0.1) `brand.tint-strong` `brand.tint-strong` radius 12px; span 32.1x15 background rgba(96, 165, 250, 0.2) radius 6px.
 
 ![Docs sidebar default](components/crops/docs-sidebar-default.png)
 
 #### Sidebar link
-A page link inside a sidebar group. Measured, never followed. Read as `docs-nav-link` on the anam.ai docs (overview) page.
+A page link inside a sidebar group. Measured, never followed. Read as `docs-nav-link` on the anam.ai docs (API reference) page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 256 x 36; background transparent; text Inter 14/24 400, #46413e `neutral.700`; icon 16 x 16, #46413e `neutral.700` |
-| hover | text Inter 14/24 400, #1e1916 `neutral.900`; icon 16 x 16, #1e1916 `neutral.900` |
+| default (same: hover) | size 256 x 24; padding 0px 0px 0px 16px; background transparent; text Inter 14/24 600, #1e1916 `neutral.900` |
 
-Child layers that carry the look: svg 16x16 background #a6a19e `neutral.400`.
-
-![Sidebar link default](components/crops/docs-nav-link-default.png) ![Sidebar link hover](components/crops/docs-nav-link-hover.png) ![Sidebar link focus-visible](components/crops/docs-nav-link-focus-visible.png)
+![Sidebar link default](components/crops/docs-nav-link-default.png) ![Sidebar link hover](components/crops/docs-nav-link-hover.png)
 
 #### Sidebar link, current page
-The link for the open page, in its selected style. Read as `docs-nav-active` on the anam.ai docs (overview) page.
+The link for the open page, in its selected style. Read as `docs-nav-active` on the anam.ai docs (API reference) page.
 
-**Values (default).** size 256 x 36; background transparent; text Inter 14/24 400, #ff6200 `brand.500`; icon 16 x 16, #ff6200 `brand.500`.
+**Values (default).** size 256 x 36; background transparent; text Inter 14/24 400, #ff6200 `brand.500`.
 
-Child layers that carry the look: a 256x36 background rgba(255, 98, 0, 0.1) `brand.tint-strong` `brand.tint-strong` radius 12px; svg 16x16 background #ff6200 `brand.500`.
+Child layers that carry the look: a 256x36 background rgba(255, 98, 0, 0.1) `brand.tint-strong` `brand.tint-strong` radius 12px.
 
 ![Sidebar link, current page default](components/crops/docs-nav-active-default.png)
 
 #### Top nav tab
-A section tab in the docs top bar (Documentation / API Reference). Read as `docs-topnav-link` on the anam.ai docs (overview) page.
+A section tab in the docs top bar (Documentation / API Reference). Read as `docs-topnav-link` on the anam.ai docs (API reference) page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 63.53 x 48; background transparent; text Inter 14/20 500, #2d2825 `neutral.800` |
+| default | size 63.53 x 48; background transparent; text Inter 14/20 500, #57524f `neutral.600` |
+| hover | text Inter 14/20 500, #2d2825 `neutral.800` |
 | focus-visible | outline 1px auto #ff6200 `brand.500`, offset 1px |
-
-Child layers that carry the look: div 63.5x1.5 background #ff6200 `brand.500`.
 
 ![Top nav tab default](components/crops/docs-topnav-link-default.png) ![Top nav tab hover](components/crops/docs-topnav-link-hover.png) ![Top nav tab focus-visible](components/crops/docs-topnav-link-focus-visible.png)
 
 #### Search button
-The "Search… ⌘K" pill in the docs bar. Pressed is forced; a real press opens the search dialog. Read as `docs-search-btn` on the anam.ai docs (overview) page.
+The "Search… ⌘K" pill in the docs bar. Pressed is forced; a real press opens the search dialog. Read as `docs-search-btn` on the anam.ai docs (API reference) page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -504,7 +501,7 @@ The "Search… ⌘K" pill in the docs bar. Pressed is forced; a real press opens
 ![Search button default](components/crops/docs-search-btn-default.png) ![Search button hover](components/crops/docs-search-btn-hover.png) ![Search button focus-visible](components/crops/docs-search-btn-focus-visible.png) ![Search button pressed](components/crops/docs-search-btn-pressed.png)
 
 #### Ask Assistant button
-Opens the AI assistant panel (⌘I). Pressed is forced; the panel was opened by keyboard for its own entry. Read as `docs-assistant-btn` on the anam.ai docs (overview) page.
+Opens the AI assistant panel (⌘I). Pressed is forced; the panel was opened by keyboard for its own entry. Read as `docs-assistant-btn` on the anam.ai docs (API reference) page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -516,7 +513,7 @@ Opens the AI assistant panel (⌘I). Pressed is forced; the panel was opened by 
 ![Ask Assistant button default](components/crops/docs-assistant-btn-default.png) ![Ask Assistant button hover](components/crops/docs-assistant-btn-hover.png) ![Ask Assistant button focus-visible](components/crops/docs-assistant-btn-focus-visible.png) ![Ask Assistant button pressed](components/crops/docs-assistant-btn-pressed.png)
 
 #### Theme menu button
-The "Change theme preference" menu trigger. A local toggle; the dark run pressed it once. Read as `docs-theme-btn` on the anam.ai docs (overview) page.
+The "Change theme preference" menu trigger. A local toggle; the dark run pressed it once. Read as `docs-theme-btn` on the anam.ai docs (API reference) page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -526,22 +523,20 @@ The "Change theme preference" menu trigger. A local toggle; the dark run pressed
 ![Theme menu button default](components/crops/docs-theme-btn-default.png) ![Theme menu button hover](components/crops/docs-theme-btn-hover.png) ![Theme menu button focus-visible](components/crops/docs-theme-btn-focus-visible.png)
 
 #### On-this-page rail
-The sticky right-hand table of contents. Read as `docs-toc` on the anam.ai docs (overview) page.
+The sticky right-hand table of contents. Read as `docs-toc` on the anam.ai docs (API reference) page.
 
 **Values (default).** size 304 x 748; background transparent; text Inter 14/24 500, #46413e `neutral.700`; icon 12 x 12, #46413e `neutral.700`.
 
 ![On-this-page rail default](components/crops/docs-toc-default.png)
 
 #### TOC link
-Read as `docs-toc-link` on the anam.ai docs (overview) page.
+Read as `docs-toc-link` on the anam.ai docs (API reference) page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 104.52 x 24; background transparent; text Inter 14/24 500, #46413e `neutral.700`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, #46413e `neutral.700` |
-| hover | text Inter 14/24 500, #1e1916 `neutral.900`; icon 12 x 12, #1e1916 `neutral.900` |
-| focus-visible | outline 1px auto #ff6200 `brand.500`, offset 0px |
+| default (same: hover) | size 264 x 32; background transparent; text Inter 14/24 400, #ff6200 `brand.500` |
 
-![TOC link default](components/crops/docs-toc-link-default.png) ![TOC link hover](components/crops/docs-toc-link-hover.png) ![TOC link focus-visible](components/crops/docs-toc-link-focus-visible.png)
+![TOC link default](components/crops/docs-toc-link-default.png) ![TOC link hover](components/crops/docs-toc-link-hover.png)
 
 #### Docs page title
 "Anam Documentation" in the docs display type. Read as `docs-h1` on the anam.ai docs (overview) page.
@@ -562,9 +557,10 @@ A card linking to another docs page (the "Learn" cards). Measured, never followe
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 688.81 x 246; background transparent; text Inter 16/24 600, #2d2825 `neutral.800` |
-
-Child layers that carry the look: div 218.9x230 background #ffffff `white` border 1px solid rgba(17, 13, 10, 0.1) radius 16px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 2px, transparent 0px 0px 0px 0px; a 0x0 border 1px solid #ff6200 `brand.500`; svg 24x24 background #ff6200 `brand.500`.
+| default | size 218.94 x 230; border 1px solid rgba(17, 13, 10, 0.1); radius 16px; background #ffffff `white`; text Inter 16/24 600, #2d2825 `neutral.800` |
+| hover | border 1px solid #ff6200 `brand.500` |
+| focus-visible | outline 1px auto #ff6200 `brand.500`, offset 0px |
+| pressed | border 1px solid #ff6200 `brand.500` |
 
 ![Docs link card default](components/crops/docs-card-default.png) ![Docs link card hover](components/crops/docs-card-hover.png) ![Docs link card focus-visible](components/crops/docs-card-focus-visible.png) ![Docs link card pressed](components/crops/docs-card-pressed.png)
 
@@ -628,6 +624,24 @@ Read as `docs-dark-h1` on the anam.ai docs, dark theme page.
 
 ![Docs title, dark default](components/crops/docs-dark-h1-default.png)
 
+#### Prev/next link
+The page-footer pagination link. Measured, never followed. Read as `docs-prev-next` on the anam.ai docs (API reference) page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 154.95 x 20; radius 2px; background transparent; text Inter 14/20 600, #46413e `neutral.700`; icon 3 x 6, #46413e `neutral.700` |
+| hover | text Inter 14/20 600, #1e1916 `neutral.900` |
+| focus-visible | outline 2px solid #ff6200 `brand.500`, offset 2px |
+
+![Prev/next link default](components/crops/docs-prev-next-default.png) ![Prev/next link hover](components/crops/docs-prev-next-hover.png) ![Prev/next link focus-visible](components/crops/docs-prev-next-focus-visible.png)
+
+#### Docs card, dark
+Read as `docs-dark-card` on the anam.ai docs, dark theme page.
+
+**Values (default).** size 218.94 x 230; border 1px solid rgba(255, 255, 255, 0.1); radius 16px; background #000000 `black`; text Inter 16/24 600, #ffffff `white`.
+
+![Docs card, dark default](components/crops/docs-dark-card-default.png)
+
 ### Cards and lists
 
 The card grids on the secondary pages: avatar cards on /interactive-avatars, team cards on /about, paper entries on /research, customer stories on /case-studies, post cards on /blog, release entries on /changelog and tool cards on /tools.
@@ -680,6 +694,71 @@ Read as `tool-card-title` on the anam.ai tools page.
 **Values (default).** size 417.59 x 44; background transparent; text Inter 40/44 500, #000000 `black`.
 
 ![Tool card title default](components/crops/tool-card-title-default.png)
+
+#### Avatar card
+A card in the avatar gallery: a face, its style tag and name. Read as `avatar-card` on the anam.ai interactive avatars page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover, focus-visible) | size 222 x 128.91; background transparent; text Inter 13/16.9 500, rgba(0, 0, 0, 0.5) |
+
+![Avatar card default](components/crops/avatar-card-default.png) ![Avatar card hover](components/crops/avatar-card-hover.png) ![Avatar card focus-visible](components/crops/avatar-card-focus-visible.png)
+
+#### About card
+A card on the team/company page. Read as `about-card` on the anam.ai about page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover, focus-visible) | size 222 x 128.91; background transparent; text Inter 13/16.9 500, rgba(0, 0, 0, 0.5) |
+
+![About card default](components/crops/about-card-default.png) ![About card hover](components/crops/about-card-hover.png) ![About card focus-visible](components/crops/about-card-focus-visible.png)
+
+#### Research entry
+A paper or model entry on the research page. Read as `research-card` on the anam.ai research page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover, focus-visible) | size 222 x 128.91; background transparent; text Inter 13/16.9 500, rgba(0, 0, 0, 0.5) |
+
+![Research entry default](components/crops/research-card-default.png) ![Research entry hover](components/crops/research-card-hover.png) ![Research entry focus-visible](components/crops/research-card-focus-visible.png)
+
+#### Case study card
+A customer story card. Read as `case-card` on the anam.ai case studies page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover, focus-visible) | size 222 x 128.91; background transparent; text Inter 13/16.9 500, rgba(0, 0, 0, 0.5) |
+
+![Case study card default](components/crops/case-card-default.png) ![Case study card hover](components/crops/case-card-hover.png) ![Case study card focus-visible](components/crops/case-card-focus-visible.png)
+
+#### Blog post card
+A post card in the blog index. Read as `post-card` on the anam.ai blog page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover, focus-visible) | size 222 x 128.91; background transparent; text Inter 13/16.9 500, rgba(0, 0, 0, 0.5) |
+
+![Blog post card default](components/crops/post-card-default.png) ![Blog post card hover](components/crops/post-card-hover.png) ![Blog post card focus-visible](components/crops/post-card-focus-visible.png)
+
+#### Changelog entry
+A release entry on the changelog page. Read as `changelog-entry` on the anam.ai changelog page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover, focus-visible) | size 222 x 128.91; background transparent; text Inter 13/16.9 500, rgba(0, 0, 0, 0.5) |
+
+![Changelog entry default](components/crops/changelog-entry-default.png) ![Changelog entry hover](components/crops/changelog-entry-hover.png) ![Changelog entry focus-visible](components/crops/changelog-entry-focus-visible.png)
+
+#### Tool card
+A card in the tools index. Read as `tool-card` on the anam.ai tools page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 598 x 506.5; padding 30px; radius 32px; background #fafafa; text Inter 10/10 600, #000000 `black`; transition background-color 0.4s cubic-bezier(0.44, 0, 0.56, 1), transform 0.4s cubic-bezier(0.44, 0, 0.56, 1) |
+| hover | background #f5f5f5 `gray.100`; transform translate(0px, -2px) |
+| focus-visible | outline 2px solid #ff6200 `brand.500`, offset 4px |
+
+![Tool card default](components/crops/tool-card-default.png) ![Tool card hover](components/crops/tool-card-hover.png) ![Tool card focus-visible](components/crops/tool-card-focus-visible.png)
 
 ### Panels and dialogs
 
@@ -739,9 +818,9 @@ The send control in the assistant sheet. Measured, never pressed. Read as `docs-
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 24 x 24; padding 4px; radius 9999px; background rgba(255, 98, 0, 0.3); text Inter 16/24 400, #77726f `neutral.500`; icon 10 x 10, #ffffff `white` |
+| default (same: hover) | size 24 x 24; padding 4px; radius 9999px; background rgba(255, 98, 0, 0.3); text Inter 16/24 400, #77726f `neutral.500`; icon 10 x 10, #ffffff `white` |
 
-![Assistant send button default](components/crops/docs-assistant-send-default.png) ![Assistant send button hover](components/crops/docs-assistant-send-hover.png) ![Assistant send button focus-visible](components/crops/docs-assistant-send-focus-visible.png)
+![Assistant send button default](components/crops/docs-assistant-send-default.png) ![Assistant send button hover](components/crops/docs-assistant-send-hover.png)
 
 ### Mobile (390 wide)
 

@@ -394,9 +394,16 @@ W()
 W("Values that apply across entries, from the measurement files.")
 W()
 foc = []
+unfocusable = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if not st or "style" not in st:
+    if not st:
+        continue
+    # A state whose focus failed is a failed attempt, not a focus reading:
+    # it is named here rather than counted or painted as captured.
+    if "style" not in st:
+        if st.get("via") == "focus failed" or "error" in st:
+            unfocusable.append(k)
         continue
     s = st["style"]
     base = c["states"].get("default", {}).get("style", s)
@@ -405,7 +412,8 @@ for k, c in C.items():
     foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else ("ring shadow " + colour(s["boxShadow"], tokens=False) if ring_shadow else None)))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} show a change: {', '.join(with_ring)}. The other {len(without)} draw nothing new — anam.ai largely lets the browser's own outline stand (Framer links take the default `auto` outline; the docs buttons keep their resting style): {', '.join(without)}.")
+failed_note = f" Keyboard focus could not be moved to {', '.join(f'`{k}`' for k in unfocusable)}, so those have no focus reading." if unfocusable else ""
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} show a change: {', '.join(with_ring)}. The other {len(without)} draw nothing new — anam.ai largely lets the browser's own outline stand (Framer links take the default `auto` outline; the docs buttons keep their resting style): {', '.join(without)}.{failed_note}")
 W()
 W("**Pressed.** Pressed was forced with DevTools, so it is the :active styles only: the plan CTA measurably shrinks a couple of pixels under :active (137.81x44 to 133.68x42.68 — a scale press), while the marketing pills and docs buttons keep their resting paint; the call controls were never really pressed because a press opens a live session.")
 W()

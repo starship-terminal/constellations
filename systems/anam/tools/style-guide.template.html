@@ -18,6 +18,14 @@
 [data-mode="dark"] {
 /*DARK*/
   color-scheme: dark;
+  /* The docs examples reference warm/light-only roles that the dark set does
+     not declare; map them onto the dark roles so the mockups read correctly. */
+  --text-warm-default: var(--text-default);
+  --text-warm-secondary: var(--text-secondary);
+  --text-warm-tertiary: var(--text-tertiary);
+  --text-warm-900: var(--text-default);
+  --border-warm: var(--border-default);
+  --border-hairline: var(--border-default);
 }
 
 /* ---------- guide chrome (built from the same tokens) ---------- */
@@ -138,9 +146,10 @@ table.t td.src { color: var(--text-tertiary); font-size: 12px; }
 
 /* form */
 .an-label { font: 500 14px/20px var(--sg-sans); color: var(--text-default); margin-bottom: 6px; display: block; }
-.an-input { width: min(420px, 100%); height: 46.5px; border: 1px solid var(--border-default); border-radius: var(--radius-md); padding: 0 14px; font: 400 15px/22px var(--sg-sans); background: var(--card); color: var(--text-default); }
-.an-input.filled { border-color: var(--border-strong); }
-.an-submit { width: min(420px, 100%); height: 52.5px; border-radius: var(--radius-md); background: var(--button-primary-bg); color: var(--button-primary-text); font: 500 15px/22px var(--sg-sans); border: 0; }
+/* measured on the live form: an unbordered #f5f5f5 field at 11px, an orange 50px pill submit */
+.an-input { width: min(420px, 100%); height: 46.5px; border: 0; border-radius: 11px; padding: 0 14px; font: 400 15px/22px var(--sg-sans); background: #f5f5f5; color: var(--text-default); }
+.an-input.filled { background: #eee; }
+.an-submit { width: min(420px, 100%); height: 52.5px; border-radius: 50px; background: var(--accent); color: #fff; font: 500 15px/22px var(--sg-sans); border: 0; }
 
 /* consent card */
 .an-consent { width: min(420px, 100%); border: 1px solid rgba(0,0,0,.08); border-radius: var(--radius-lg); background: var(--card); box-shadow: var(--shadow-card); padding: 20px; }
@@ -301,17 +310,21 @@ table.t td.src { color: var(--text-tertiary); font-size: 12px; }
 <script>
 const T = /*TOKENS*/null;
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-const css = (path) => '--' + path.replace(/[^a-zA-Z0-9-]/g, '-');
+// Matches the builder: a DEFAULT leaf emits lowercase (--text-default).
+const css = (path) => '--' + path.replace(/[^a-zA-Z0-9-]/g, '-').replace('-DEFAULT', '-default');
 const flat = (node, prefix = '') => Object.entries(node).flatMap(([k, v]) => (v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : [])));
 const show = (v) => (typeof v === 'object' ? JSON.stringify(v) : String(v));
 // palette
 const pal = document.getElementById('pal');
 for (const [group, node] of Object.entries(T.core.color)) {
-  if (node.t) continue;
+  // A leaf (method-blue, danger-deep, muted) is itself a colour token — render
+  // it as a swatch too instead of skipping it for having no children.
+  const items = node.t ? [[group, node]] : flat(node).map(([k, t]) => [group + '.' + k, t]);
+  if (!items.length) continue;
   const h = document.createElement('div'); h.className = 'pal-h'; h.textContent = group; pal.appendChild(h);
   const g = document.createElement('div'); g.className = 'pal'; pal.appendChild(g);
-  for (const [k, t] of flat(node)) {
-    const n = 'color.' + group + '.' + k;
+  for (const [k, t] of items) {
+    const n = 'color.' + k;
     g.insertAdjacentHTML('beforeend', `<div class="sw" title="${esc(t.s)}"><span class="dot"><i style="background:var(${css(n.replace(/\./g, '-'))})"></i></span><span><span class="nm">${esc(n)}</span><br><span class="vl">${esc(t.v)}${t.d ? ' · ' + esc(t.d) : ''}</span></span></div>`);
   }
 }

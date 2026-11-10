@@ -48,9 +48,22 @@ class Shooter {
     await lazyScroll(p);
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
-    const f = `${RAW}/${this.prefix}-${name}`;
-    if (H <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < H; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, H - y) } }, this.requested);
+    const base = `${this.prefix}-${name}`;
+    // The new shot goes to a scratch folder first. Only once every tile is
+    // written are this shot's earlier name.png and name.partN.png (and their
+    // .capture.json sidecars) removed — stale tiles would otherwise be
+    // stitched over the new shot — and the new files moved in, so a failed
+    // refresh leaves the earlier full-colour shot in place.
+    const tmp = fs.mkdtempSync(path.join(RAW, '.shot-'));
+    try {
+      const f = path.join(tmp, base);
+      if (H <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
+      else for (let i = 0, y = 0; y < H; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, H - y) } }, this.requested);
+      for (const old of fs.readdirSync(RAW)) if (old === base + '.png' || old === base + '.png.capture.json' || (old.startsWith(base + '.part') && /\.part\d+\.png(\.capture\.json)?$/.test(old))) fs.rmSync(path.join(RAW, old));
+      for (const n of fs.readdirSync(tmp)) fs.renameSync(path.join(tmp, n), path.join(RAW, n));
+    } finally {
+      fs.rmSync(tmp, { recursive: true, force: true });
+    }
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
   }

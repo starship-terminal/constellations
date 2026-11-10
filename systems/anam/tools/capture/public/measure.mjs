@@ -158,6 +158,13 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = 'mouse hover';
       } else if (st === 'focus-visible') {
         via = await kbFocus((opts.focusLoc || loc).filter({ visible: true }).first());
+        // A failed focus is not a focus reading: record the failed attempt,
+        // never the resting styles under a focus-visible label.
+        if (via === 'focus failed') {
+          out.components[key].states[st] = { error: 'keyboard focus could not be moved to the element', via };
+          log('  !', key, st, 'focus failed');
+          continue;
+        }
       } else if (st === 'pressed') {
         undo = await forcePseudo((opts.pressLoc || loc).filter({ visible: true }).first(), ['active', 'hover']);
         via = 'CDP forcePseudoState :active:hover';
@@ -188,13 +195,15 @@ const q = (sel) => page.locator(sel);
 
 // Tags the first element matching an in-page probe so a locator can find it:
 // await tag('nav', () => {...return element or null...}) then q('[data-m="nav"]').
-async function tag(name, probe) {
-  return page.evaluate(([n, src]) => {
-    const el = (new Function('return (' + src + ')')())();
+// Extra args are forwarded to the probe inside the page — a closure like a
+// RegExp built in Node does NOT exist in the browser and throws ReferenceError.
+async function tag(name, probe, ...args) {
+  return page.evaluate(([n, src, a]) => {
+    const el = (new Function('return (' + src + ')')())(...a);
     if (!el) return false;
     el.setAttribute('data-m', n);
     return true;
-  }, [name, probe.toString()]).catch(() => false);
+  }, [name, probe.toString(), args]).catch(() => false);
 }
 
 // Tags the smallest element whose trimmed text matches reSrc inside scopeSel,
@@ -495,13 +504,14 @@ async function gallery(key, headingRe, cardRe, compKey, title, desc) {
   await shell();
   const g = G.cards;
   await S(`${compKey}-title`, q('h1').first(), ['default'], { group: g, title: `${title} title`, sel: 'h1' }, { noScroll: true });
-  const card = await tag('gcard', () => {
+  const card = await tag('gcard', (reSrc, reFlags) => {
+    const cardRe = new RegExp(reSrc, reFlags);
     const cands = [...document.querySelectorAll('a, article, [data-framer-name]')].filter((e) => {
       const r = e.getBoundingClientRect();
       return (e.querySelector('img, video') || cardRe.test(e.innerText || '')) && r.width > 200 && r.width < 900 && r.height > 100 && r.top > 60;
     });
     return cands.sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top || a.getBoundingClientRect().left - b.getBoundingClientRect().left)[0] || null;
-  });
+  }, cardRe.source, cardRe.flags);
   if (card) {
     await S(compKey, q('[data-m="gcard"]'), ['default', 'hover', 'focus-visible'], { group: g, title, desc, sel: `the first card on ${URLS[key]}` });
   }
@@ -574,11 +584,13 @@ async function docsOverview() {
   await S('docs-h1', q('main h1, h1').first(), ['default'], { group: g, title: 'Docs page title', desc: '"Anam Documentation" in the docs display type.', sel: 'main h1' }, { noScroll: true });
   const para = await tag('dpara', () => [...document.querySelectorAll('main p, article p')].find((x) => (x.innerText || '').trim().length > 60) || null);
   if (para) await S('docs-body', q('[data-m="dpara"]'), ['default'], { group: g, title: 'Body text', sel: 'a main paragraph' }, { crop: false });
-  const card = await tag('dcard', () => [...document.querySelectorAll('main a, article a, [class*=card]')].find((e) => {
+  // One painted card, not the three-column grid holding them: Mintlify cards
+  // are div.card.block / a.card elements ~219x230 at radius 16.
+  const card = await tag('dcard', () => [...document.querySelectorAll('main .card, article .card, main a.card')].find((e) => {
     const r = e.getBoundingClientRect();
-    return r.width > 200 && r.height > 80 && /learn|read|guide|overview/i.test(e.innerText || '') && e.querySelector('svg, img, [class*=icon]');
+    return r.width > 100 && r.width < 500 && r.height > 80;
   }) || [...document.querySelectorAll('main a')].find((e) => e.getBoundingClientRect().width > 200 && e.getBoundingClientRect().height > 60) || null);
-  if (card) await S('docs-card', q('[data-m="dcard"]'), B4, { group: g, title: 'Docs link card', desc: 'A card linking to another docs page (the "Learn" cards). Measured, never followed.', sel: 'a card link in main' });
+  if (card) await S('docs-card', q('[data-m="dcard"]'), B4, { group: g, title: 'Docs link card', desc: 'A card linking to another docs page (the "Learn" cards). Measured, never followed.', sel: '.card in main' });
   const bc = await tag('dcrumb', () => [...document.querySelectorAll('nav, [class*=breadcrumb], header *')].find((e) => /introduction|documentation/i.test(e.innerText || '') && e.getBoundingClientRect().top < 160 && (e.innerText || '').length < 60) || null);
   if (bc) await S('docs-breadcrumb', q('[data-m="dcrumb"]'), ['default'], { group: g, title: 'Breadcrumb', desc: 'The section/page breadcrumb over the title.', sel: 'the breadcrumb row' }, { noScroll: true });
   // The ⌘K search dialog and the ⌘I assistant sheet, opened by keyboard.
@@ -624,7 +636,7 @@ async function docsApi() {
   if (ic) await S('docs-inline-code', q('[data-m="dinline"]'), ['default'], { group: g, title: 'Inline code', sel: 'a code span in body text' }, { crop: false });
   const badge = await tag('dbadge', () => [...document.querySelectorAll('#sidebar *')].find((e) => /^(post|get|put|delete|patch)$/i.test((e.innerText || '').trim()) && e.getBoundingClientRect().width < 80) || null);
   if (badge) await S('docs-method-badge', q('[data-m="dbadge"]'), ['default'], { group: g, title: 'Method badge', desc: 'The POST/GET verb chip beside an API endpoint in the sidebar.', sel: 'a method label in the sidebar' }, { crop: false, noScroll: true });
-  const pn = await tag('dprev', () => [...document.querySelectorAll('main a, article a')].find((e) => /previous|next|create session/i.test(e.innerText || '') && e.getBoundingClientRect().top > document.getBoundingClientRect().height * 0.5) || [...document.querySelectorAll('[class*=pagination] a, main > a')].pop() || null);
+  const pn = await tag('dprev', () => [...document.querySelectorAll('main a, article a')].find((e) => /previous|next|create session/i.test(e.innerText || '') && e.getBoundingClientRect().top > document.documentElement.scrollHeight * 0.5) || [...document.querySelectorAll('[class*=pagination] a, main > a')].pop() || null);
   if (pn) await S('docs-prev-next', q('[data-m="dprev"]'), ['default', 'hover', 'focus-visible'], { group: g, title: 'Prev/next link', desc: 'The page-footer pagination link. Measured, never followed.', sel: 'a pagination link' });
   await page.close();
 }
@@ -652,7 +664,7 @@ async function docsDark() {
   const side = await tag('dside', () => document.querySelector('#sidebar, [id*=sidebar]') || null);
   if (side) await S('docs-dark-sidebar', q('[data-m="dside"]'), ['default'], { group: g, title: 'Sidebar, dark', sel: '#sidebar in dark' }, { noScroll: true });
   await S('docs-dark-h1', q('main h1, h1').first(), ['default'], { group: g, title: 'Docs title, dark', sel: 'main h1 in dark' }, { noScroll: true });
-  const card = await tag('dcard', () => [...document.querySelectorAll('main a')].find((e) => e.getBoundingClientRect().width > 200 && e.getBoundingClientRect().height > 60) || null);
+  const card = await tag('dcard', () => [...document.querySelectorAll('main .card, article .card, main a')].find((e) => e.getBoundingClientRect().width > 200 && e.getBoundingClientRect().height > 60) || null);
   if (card) await S('docs-dark-card', q('[data-m="dcard"]'), ['default'], { group: g, title: 'Docs card, dark', sel: 'a card link in dark' });
   await page.close();
 }
