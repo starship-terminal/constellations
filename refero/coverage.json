@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 67,
-    "system_domains": 59,
-    "matched_domains": 35,
-    "missing_domains": 398,
+    "system_packages": 68,
+    "system_domains": 60,
+    "matched_domains": 36,
+    "missing_domains": 397,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -343,6 +343,23 @@
         }
       ]
     },
+    "arcade.software": {
+      "catalog": [
+        {
+          "name": "Arcade Software",
+          "domain": "arcade.software",
+          "id": 745
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "arcade",
+          "name": "Arcade",
+          "url": "https://www.arcade.software",
+          "name_match": true
+        }
+      ]
+    },
     "attio.com": {
       "catalog": [
         {
@@ -667,13 +684,6 @@
         "name": "adidas",
         "domain": "adidas.com",
         "id": 46
-      }
-    ],
-    "arcade.software": [
-      {
-        "name": "Arcade Software",
-        "domain": "arcade.software",
-        "id": 745
       }
     ],
     "arket.com": [
