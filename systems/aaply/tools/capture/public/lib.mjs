@@ -103,7 +103,9 @@ export async function domFind(page, reText, { sel = 'button, a', tag = 'm', up =
       const els = [...document.querySelectorAll(s)].filter((n) => {
         const r = n.getBoundingClientRect();
         const cs = getComputedStyle(n);
-        return r.width >= w && r.height >= h && r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && re.test((n.innerText || '').trim());
+        // Tilda keeps hidden scroll-animation duplicates in the DOM: they read
+        // opacity 0 or sit left of the viewport, so visibility alone is not enough
+        return r.width >= w && r.height >= h && r.width > 0 && r.height > 0 && r.x + r.width > 0 && cs.visibility !== 'hidden' && parseFloat(cs.opacity) > 0 && re.test((n.innerText || '').trim());
       });
       // leaf: a container holding another match is a wrapper, not the target
       const pool = leafOnly ? els.filter((n) => !els.some((o) => o !== n && n.contains(o))) : els;

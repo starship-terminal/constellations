@@ -298,18 +298,22 @@ W()
 W("Values that apply across entries, from the measurement files.")
 W()
 foc = []
+failed = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
     if not st or "style" not in st:
+        continue
+    if "failed" in str(st.get("via", "")):
+        failed.append(f"`{k}`")
         continue
     s = st["style"]
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
     foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring) or 'none'}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}.")
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring) or 'none'}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}." + (f" Focus could not be driven to {', '.join(failed)} — its focus state is recorded as not captured." if failed else ""))
 W()
-W("**Pressed.** The dark pills invert to lime under :active — the same swap the hover makes — while the lime pills hold flat; see the per-component state rows.")
+W("**Pressed.** Only the nav Sign up pill swaps under :active — black to lime, the same as its hover; the hero and mega demo pills hold black through hover and pressed, and the lime pills hold flat; see the per-component state rows.")
 W()
 W("**Motion.** Transitions measured on the components, by duration.")
 W()

@@ -37,7 +37,7 @@ code { font-family: ui-monospace, monospace; font-size: .9em; }
 /* ---- site mock ---- */
 .mock { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--page); position: relative; }
 .topwrap { padding: 14px 18px 0; }
-.navbar { display: flex; align-items: center; gap: 20px; height: 66px; padding: 0 22px; border-radius: var(--radius-card-lg); background: var(--nav-surface); font: 400 var(--font-size-button)/var(--font-leading-button) var(--sg-sans); box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+.navbar { display: flex; align-items: center; gap: 20px; height: 66px; padding: 0 22px; border-radius: var(--radius-card-lg); background: var(--component-nav-surface); font: 400 var(--font-size-button)/var(--font-leading-button) var(--sg-sans); box-shadow: 0 1px 4px rgba(0,0,0,.06); }
 .navbar .wm { font: 700 20px/1 var(--sg-display); letter-spacing: -.5px; }
 .navbar .wm i { color: var(--accent); font-style: normal; }
 .navbar .sp { flex: 1; }
@@ -45,9 +45,9 @@ code { font-family: ui-monospace, monospace; font-size: .9em; }
 .navbar a.lk:hover { color: var(--text-hover); }
 .pill { display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-pill); font: 400 var(--font-size-button)/1 var(--sg-sans); padding: 0 26px; height: var(--layout-button-height); border: 0; }
 .pill.sm { height: var(--layout-button-height-sm); padding: 0 20px; }
-.pill.primary { background: var(--button-primary-bg); color: var(--button-primary-fg); }
-.pill.dark { background: var(--button-dark-bg); color: var(--button-dark-fg); }
-.pill.dark:hover { background: var(--button-dark-hover-bg); color: var(--button-primary-fg); }
+.pill.primary { background: var(--component-button-primary-bg); color: var(--component-button-primary-fg); }
+.pill.dark { background: var(--component-button-dark-bg); color: var(--component-button-dark-fg); }
+.pill.dark:hover { background: var(--component-button-dark-hover-bg); color: var(--component-button-primary-fg); }
 .pill.ghost { background: transparent; color: var(--text); border: 1px solid var(--border); font-weight: 300; }
 .hero { text-align: left; padding: 48px 26px 40px; }
 .hero h3 { font: var(--typography-display); font-family: var(--sg-display); max-width: 15ch; margin: 0 0 22px; }
@@ -59,11 +59,11 @@ code { font-family: ui-monospace, monospace; font-size: .9em; }
 .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 26px; align-items: start; }
 .railbar { grid-column: 1 / -1; display: flex; justify-content: center; gap: 4px; padding: 8px 0; }
 .railbar b { display: inline-flex; align-items: center; justify-content: center; width: 152px; height: var(--layout-button-height); border-radius: var(--radius-pill); font: 400 var(--font-size-button)/1 var(--sg-sans); }
-.railbar b.on { background: var(--card-lime); }
-.badge { display: inline-block; background: var(--badge-bg); color: #fff; border-radius: var(--radius-pill); font: 400 var(--font-size-small)/var(--font-leading-small) var(--sg-sans); padding: 6px 14px; vertical-align: middle; margin-left: 10px; }
+.railbar b.on { background: var(--component-card-lime); }
+.badge { display: inline-block; background: var(--component-badge-bg); color: #fff; border-radius: var(--radius-pill); font: 400 var(--font-size-small)/var(--font-leading-small) var(--sg-sans); padding: 6px 14px; vertical-align: middle; margin-left: 10px; }
 .plan { border-radius: var(--radius-card); padding: 26px; min-height: 220px; }
-.plan.w { background: var(--card-surface); }
-.plan.l { background: var(--card-lime); }
+.plan.w { background: var(--component-card-surface); }
+.plan.l { background: var(--component-card-lime); }
 .plan .nm { font: 700 var(--font-size-sub-display)/var(--font-leading-sub-display) var(--sg-display); }
 .plan .pr { font: 500 var(--font-size-sub-display)/var(--font-leading-sub-display) var(--sg-display); margin: 10px 0 16px; }
 .plan .pr small { font: 400 var(--font-size-small)/1 var(--sg-sans); }
@@ -71,12 +71,12 @@ code { font-family: ui-monospace, monospace; font-size: .9em; }
 .plan li { font: 400 var(--font-size-body)/1.6 var(--sg-sans); padding: 6px 0; }
 .plan li::before { content: "✓ "; font-weight: 500; }
 /* reviews */
-.slide { border-radius: var(--radius-card-lg); background: var(--card-lime); padding: 30px; margin: 0 26px 26px; }
+.slide { border-radius: var(--radius-card-lg); background: var(--component-card-lime); padding: 30px; margin: 0 26px 26px; }
 .slide .who { display: flex; gap: 12px; align-items: center; margin-bottom: 14px; }
 .slide .who b { font: 400 var(--font-size-body)/1.4 var(--sg-sans); }
 .slide .q { font: 500 var(--font-size-sub-display)/var(--font-leading-sub-display) var(--sg-display); max-width: 34ch; }
 /* footer */
-.fband { background: var(--footer-surface); color: var(--text-inverse); border-radius: 0; padding: 34px 30px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.fband { background: var(--component-footer-surface); color: var(--text-inverse); border-radius: 0; padding: 34px 30px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
 .fband h4 { font: 700 var(--font-size-display-band)/var(--font-leading-display-band) var(--sg-display); letter-spacing: var(--font-tracking-display); margin: 0; flex: 1 1 100%; }
 .fband a { color: var(--accent); font: 400 var(--font-size-small)/var(--font-leading-small) var(--sg-sans); text-decoration: none; }
 .fband a:hover { color: var(--text-muted); }
@@ -155,25 +155,26 @@ const flat = (node, prefix = '') => Object.entries(node).flatMap(([k, v]) => v &
   h += '</div>';
   const lit = flat(TOK.light, 'light.').filter(([, t]) => t.t === 'color');
   h += `<div class="pal-h">light</div><div class="pal">`;
-  for (const [n, t] of lit) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+  for (const [n, t] of lit) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n.replace(/^light\./, ''))})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
   h += '</div>';
   $('#roles-out').innerHTML = h;
 })();
 
 (function type() {
   let h = '';
+  const cv = (x) => /^\{.+\}$/.test(String(x)) ? 'var(' + cssname(String(x).slice(1, -1)) + ')' : String(x);
   for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
     const v = t.v;
     const ref = (x) => String(x).replace(/[{}]/g, '');
     const fam = /display|poppins/i.test(ref(v.fontFamily)) ? 'var(--sg-display)' : 'var(--sg-sans)';
-    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(ref(v.fontSize))} / ${esc(ref(v.lineHeight))} · w ${esc(String(v.fontWeight))}</small></div><div class="sample" style="font-family:${fam};font-size:${esc(ref(v.fontSize))};line-height:${esc(ref(v.lineHeight))};font-weight:${v.fontWeight}">Tool that helps teams design mobile apps</div></div>`;
+    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(ref(v.fontSize))} / ${esc(ref(v.lineHeight))} · w ${esc(String(v.fontWeight))}</small></div><div class="sample" style="font-family:${fam};font-size:${cv(v.fontSize)};line-height:${cv(v.lineHeight)};font-weight:${cv(v.fontWeight)}">Tool that helps teams design mobile apps</div></div>`;
   }
   $('#type-out').innerHTML = h;
 })();
 
 (function radius() {
   let r = '';
-  for (const [n, t] of flat(TOK.core.radius, 'radius.')) r += `<div class="bx" style="border-radius:min(var(${cssname(n)}), 24px)">${esc(n.replace('radius.', ''))}<br>${esc(t.v)}</div>`;
+  for (const [n, t] of flat(TOK.core.radius, 'radius.')) r += `<div class="bx" style="border-radius:var(${cssname(n)})">${esc(n.replace('radius.', ''))}<br>${esc(t.v)}</div>`;
   $('#radius-out').innerHTML = r;
 })();
 

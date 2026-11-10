@@ -34,7 +34,7 @@ const URLS = {
   team: '/team',
   figma: '/figma_plugin',
 };
-let page, cdp, current, context, contextMobile, run;
+let page, cdp, current, context, contextMobile, run, curCtx;
 const touched = new Set();
 
 // A bot interstitial or the app host's bare "Not found" body both render a
@@ -53,7 +53,7 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {
   // A fresh context per page keeps Tilda's scroll-animated mount state from
   // leaking between routes.
   const b = context.browser();
-  const ctx = await b.newContext(mobile
+  const ctx = curCtx = await b.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
   await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
@@ -73,6 +73,12 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {
   if (promo === 'close') await killGeo(page);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
   return true;
+}
+
+async function closePage() {
+  await page?.close().catch(() => {});
+  await curCtx?.close().catch(() => {});
+  page = cdp = curCtx = null;
 }
 
 async function reset() {
@@ -148,6 +154,8 @@ async function measure(key, state, target, opts = {}) {
 
 // Records the listed states of one component. meta: title, group, desc, sel.
 async function S(key, target, list, meta = {}, opts = {}) {
+  const prev = out.components[key];
+  const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   delete out.components[key].missing;
   if (opts.open) { await reset(); await opts.open(); }
@@ -156,6 +164,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
     const has = Object.keys(out.components[key].states || {}).length > 0;
     log('  ! missing', key, has ? '(earlier states kept)' : '');
     if (!has) out.components[key].missing = true;
+    else { Object.assign(out.components[key], keep); out.components[key].recaptureMissed = run; }
     return;
   }
   for (const st of list) {
@@ -231,7 +240,7 @@ const G = {
 };
 
 async function home() {
-  if (!(await newPage('home'))) { await page.close(); return; }
+  if (!(await newPage('home'))) { await closePage(); return; }
   await sheetsFor('home');
   const g = G.shell;
 
@@ -250,7 +259,16 @@ async function home() {
 
   const h = G.home;
   await S('hero-title', await domFind(page, /tool that helps/i, { sel: '.tn-atom', tag: 'ht', minH: 40 }), ['default'], { group: h, title: 'Hero title', desc: 'The Poppins 700 display headline with inline emoji/avatar atoms inside the sentence flow ("Tool that helps teams design mobile apps…").', sel: 'hero text atom' }, { noScroll: true });
-  await S('hero-emoji', q('[data-elem-type="image"] .tn-atom').filter({ visible: true }).nth(1), ['default'], { group: h, title: 'Hero inline image', desc: 'One of the inline emoji/squiggle/avatar atoms set inside the headline flow — the design\'s signature move.', sel: 'inline emoji atom' }, { noScroll: true });
+  // the inline emoji atoms are duplicated hidden for scroll animation; pick the
+  // first painted on-screen one (opacity > 0, inside the viewport, in the hero band)
+  await page.evaluate(() => {
+    const el = [...document.querySelectorAll('[data-elem-type="image"] .tn-atom')].find((n) => {
+      const r = n.getBoundingClientRect(), cs = getComputedStyle(n);
+      return r.width > 0 && r.y > 120 && r.y < 460 && r.x > 150 && r.x < 1200 && parseFloat(cs.opacity) > 0;
+    });
+    if (el) el.setAttribute('data-m-mark', 'he');
+  });
+  await S('hero-emoji', q('[data-m-mark="he"]').first(), ['default'], { group: h, title: 'Hero inline image', desc: 'One of the inline emoji/squiggle/avatar atoms set inside the headline flow — the design\'s signature move.', sel: 'inline emoji atom' }, { noScroll: true });
   await S('cta-signup-free', q('a.tn-atom:has-text("Sign up fo free"), a.tn-atom:has-text("Sign up to aaply")').filter({ visible: true }).first(), B4, { group: h, title: 'Sign up free CTA', desc: 'The lime "Sign up fo free →" pill (the typo is the product\'s own). Links to go.aaply.app/signup; hovered and focused only.', sel: 'lime hero CTA' }, { noScroll: true });
   await S('cta-demo', q('a.tn-atom:has-text("Try demo project")').filter({ visible: true }).first(), B4, { group: h, title: 'Try demo CTA', desc: 'The black "Try demo project" pill beside the lime CTA. Links to the app host\'s demo workspace; hovered and focused only.', sel: 'black hero CTA' }, { noScroll: true });
   // The product mockup is a browser-chrome-framed image atom — the biggest
@@ -275,11 +293,11 @@ async function home() {
   await S('footer-link', q('a.tn-atom[href*="mailto"], a:has-text("aaply@aaply.app")').filter({ visible: true }).first(), B4, { group: g, title: 'Footer mail link', desc: 'The aaply@aaply.app contact link in the footer.', sel: 'footer mailto' });
   await S('social-icon', q('a.tn-atom[href*="twitter.com"], a[href*="discord"], a[href*="linkedin"]').filter({ visible: true }).first(), B4, { group: g, title: 'Social icon', desc: 'One of the social-icon links in the footer.', sel: 'social icon a' });
   await S('early-birds', await domFind(page, /join the early birds/i, { sel: '.tn-atom', tag: 'eb', minH: 40 }), ['default'], { group: g, title: 'Early birds heading', desc: '"Join the early birds" — the Poppins display heading of the pre-footer CTA band ("Be the first to try").', sel: 'early birds heading' });
-  await page.close();
+  await closePage();
 }
 
 async function features() {
-  if (!(await newPage('features'))) { await page.close(); return; }
+  if (!(await newPage('features'))) { await closePage(); return; }
   await sheetsFor('features');
   const g = G.features;
   await S('features-title', await domFind(page, /here.?s what|workflow/i, { sel: '.tn-atom', tag: 'ft', minH: 40 }), ['default'], { group: g, title: 'Features title', desc: '"Here\'s what aaply workflow looks like" — Poppins display with an inline squiggle.', sel: 'features title' }, { noScroll: true });
@@ -295,11 +313,11 @@ async function features() {
   });
   await S('step-card', panel ? await atom('panel') : await domFind(page, /let.?s get it started/i, { sel: '.tn-atom, div', tag: 'sc', leaf: false, minW: 200, minH: 80 }), ['default'], { group: g, title: 'Step card', desc: 'A workflow step\'s product panel: the browser-chrome-framed app screenshot beside the chat annotation bubble.', sel: 'step panel' });
   await S('mega-demo-cta', q('a.tn-atom:has-text("Try DEMO project")').filter({ visible: true }).first(), B4, { group: g, title: 'Mega demo CTA', desc: 'The oversized "Try DEMO project →" button (520x96) closing the features page. Links to the demo workspace; hovered and focused only.', sel: 'mega demo cta' });
-  await page.close();
+  await closePage();
 }
 
 async function value() {
-  if (!(await newPage('value'))) { await page.close(); return; }
+  if (!(await newPage('value'))) { await closePage(); return; }
   await sheetsFor('value');
   const g = G.value;
   await S('value-title', await domFind(page, /boost your creativity|aaply.?s value/i, { sel: '.tn-atom', tag: 'vt', minH: 40 }), ['default'], { group: g, title: 'Value title', desc: '"Aaply is here to boost your creativity" — the Poppins display heading.', sel: 'value title' }, { noScroll: true });
@@ -309,11 +327,11 @@ async function value() {
     if (!el) return false; el.setAttribute('data-m-mark', 'vcard'); return true;
   });
   await S('value-card', vcard ? await atom('vcard') : q('[data-elem-type="shape"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Value card', desc: 'A square value-proposition cell in the Value grid (lime/white rounded shape with icon and caption atoms).', sel: 'value cell' });
-  await page.close();
+  await closePage();
 }
 
 async function pricing() {
-  if (!(await newPage('pricing'))) { await page.close(); return; }
+  if (!(await newPage('pricing'))) { await closePage(); return; }
   await sheetsFor('pricing');
   const g = G.pricing;
   await S('pricing-title', await domFind(page, /^Pricing$/, { sel: '.tn-atom', tag: 'pt', minH: 40 }), ['default'], { group: g, title: 'Pricing title', desc: 'The page heading in Poppins 700.', sel: 'pricing title' }, { noScroll: true });
@@ -358,11 +376,11 @@ async function pricing() {
     if (!el) return false; el.setAttribute('data-m-mark', 'ftable'); return true;
   });
   await S('feature-table', ftable ? await atom('ftable') : await domFind(page, /unlimited|soon|active project/i, { sel: '.tn-atom, td, div', tag: 'fc', minW: 40, minH: 20 }), ['default'], { group: g, title: 'Feature table', desc: 'The feature-comparison table card: rows of features with checkmarks, "+" and "soon" pills.', sel: 'feature table' });
-  await page.close();
+  await closePage();
 }
 
 async function reviews() {
-  if (!(await newPage('reviews'))) { await page.close(); return; }
+  if (!(await newPage('reviews'))) { await closePage(); return; }
   await sheetsFor('reviews');
   const g = G.reviews;
   // The page opens with a wide lime carousel slide (avatar, name, quote,
@@ -378,20 +396,20 @@ async function reviews() {
   });
   await S('review-card', rcard ? await atom('rcard') : q('[data-elem-type="shape"]').filter({ visible: true }).nth(1), ['default'], { group: g, title: 'Review card', desc: 'A testimonial card in the grid (370x580): quote text, an embedded image or chat screenshot.', sel: 'review card' });
   await S('review-text', await domFind(page, /product manager|aaply feels|great product|wireframes/i, { sel: '.tn-atom, [data-elem-type="text"]', tag: 'rt', minH: 60 }), ['default'], { group: g, title: 'Review quote', desc: 'The quote text inside a review card or the featured slide.', sel: 'review text' });
-  await page.close();
+  await closePage();
 }
 
 async function story() {
-  if (!(await newPage('story'))) { await page.close(); return; }
+  if (!(await newPage('story'))) { await closePage(); return; }
   await sheetsFor('story');
   const g = G.story;
   await S('story-lead', await domFind(page, /started with a wish|aaply fixes/i, { sel: '.tn-atom, [data-elem-type="text"]', tag: 'sl', minH: 60 }), ['default'], { group: g, title: 'Story lead', desc: '"Our story started with a wish!" — the page\'s opening editorial block.', sel: 'story lead' }, { noScroll: true });
   await S('story-block', await domFind(page, /modern products can|making things happen|app development|henry ford/i, { sel: '.tn-atom, [data-elem-type="text"]', tag: 'sb', minH: 60 }), ['default'], { group: g, title: 'Story paragraph', desc: 'A long-form body paragraph in the story.', sel: 'story text' });
-  await page.close();
+  await closePage();
 }
 
 async function team() {
-  if (!(await newPage('team'))) { await page.close(); return; }
+  if (!(await newPage('team'))) { await closePage(); return; }
   await sheetsFor('team');
   const g = G.team;
   await S('team-title', await domFind(page, /^Our Team$|dreamteam/i, { sel: '.tn-atom', tag: 'tt', minH: 40 }), ['default'], { group: g, title: 'Team title', desc: '"Our Team" — the Poppins display heading.', sel: 'team title' }, { noScroll: true });
@@ -401,11 +419,11 @@ async function team() {
     if (!el) return false; el.setAttribute('data-m-mark', 'mcard'); return true;
   });
   await S('member-card', mcard ? await atom('mcard') : q('[data-elem-type="shape"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Member card', desc: 'A team-member card (359x479): 3D character avatar, name, role.', sel: 'member card' });
-  await page.close();
+  await closePage();
 }
 
 async function figma() {
-  if (!(await newPage('figma'))) { await page.close(); return; }
+  if (!(await newPage('figma'))) { await closePage(); return; }
   await sheetsFor('figma');
   const g = G.figma;
   await S('figma-title', await domFind(page, /aaply figma plugin|figma plugin/i, { sel: '.tn-atom', tag: 'fg', minH: 40 }), ['default'], { group: g, title: 'Figma plugin title', desc: '"Aaply Figma Plugin" display heading.', sel: 'figma title' }, { noScroll: true });
@@ -418,20 +436,29 @@ async function figma() {
     el.setAttribute('data-m-mark', 'fstep'); return true;
   });
   await S('figma-step', fstep ? await atom('fstep') : await domFind(page, /design your app|export button|follow the link/i, { sel: '.tn-atom, div', tag: 'fs', leaf: false, minW: 300 }), ['default'], { group: g, title: 'Export step card', desc: 'A numbered step card in the export instructions (Design your app in Aaply → Click the export button → Follow the link).', sel: 'figma step card' });
-  await page.close();
+  await closePage();
 }
 
 async function mobile() {
-  if (!(await newPage('home', { mobile: true }))) { await page.close(); return; }
+  if (!(await newPage('home', { mobile: true }))) { await closePage(); return; }
   const g = G.mobile;
   await closePromo(page);
   await S('m-nav-bar', q('[data-elem-type="shape"], [data-elem-type="button"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile nav bar', desc: 'The mobile header: logo left, hamburger right.', sel: 'mobile nav' }, { noScroll: true });
   await S('m-burger', q('[data-elem-type="button"] .tn-atom, [class*="burger" i], .tn-atom:has(img)').filter({ visible: true }).first(), ['default', 'pressed'], { group: g, title: 'Hamburger', desc: 'The mobile menu button at the top right. Not opened — the menu overlays the measured content.', sel: 'burger' }, { noScroll: true });
-  await S('m-hero-title', await domFind(page, /tool that helps/i, { sel: '.tn-atom', tag: 'mh', minH: 40 }), ['default'], { group: g, title: 'Mobile hero title', sel: 'mobile hero' }, { noScroll: true });
+  // the mobile headline is split into one painted atom per line; the full-text
+  // duplicates stay hidden off-viewport for scroll animation — pick the painted line
+  await page.evaluate(() => {
+    const el = [...document.querySelectorAll('.tn-atom')].find((n) => {
+      const r = n.getBoundingClientRect(), cs = getComputedStyle(n);
+      return /tool that helps/i.test(n.innerText || '') && r.x >= 0 && r.width > 0 && parseFloat(cs.opacity) > 0;
+    });
+    if (el) el.setAttribute('data-m-mark', 'mh');
+  });
+  await S('m-hero-title', q('[data-m-mark="mh"]').first(), ['default'], { group: g, title: 'Mobile hero title', desc: 'The first painted line of the mobile Poppins headline — the mobile title splits one atom per line.', sel: 'mobile hero' }, { noScroll: true });
   await S('m-cta-signup', q('a.tn-atom:has-text("Sign up fo free"), a.tn-atom:has-text("Sign up to aaply")').filter({ visible: true }).first(), ['default', 'pressed'], { group: g, title: 'Mobile sign up CTA', desc: 'The full-width lime pill.', sel: 'mobile lime cta' }, { noScroll: true });
   await S('m-cta-demo', q('a.tn-atom:has-text("Try demo project")').filter({ visible: true }).first(), ['default', 'pressed'], { group: g, title: 'Mobile demo CTA', desc: 'The full-width black pill.', sel: 'mobile black cta' }, { noScroll: true });
   await S('m-step-number', await domFind(page, /^1$/, { sel: '.tn-atom, div, span', tag: 'ms', minW: 20 }), ['default'], { group: g, title: 'Mobile step number', desc: 'The circled step numeral in the mobile how-it-works column.', sel: 'mobile step numeral' });
-  await page.close();
+  await closePage();
 }
 
 const RUNNERS = { home, features, value, pricing, reviews, story, team, figma, mobile };
@@ -439,11 +466,16 @@ run = new Date().toISOString();
 out._meta.run = run;
 out._meta.product = 'aaply.app';
 const wanted = process.argv.slice(2).join(',').split(',').map((s) => s.trim()).filter(Boolean);
+try {
 ({ context } = await launch());
 for (const [k, fn] of Object.entries(RUNNERS)) {
   if (wanted.length && !wanted.includes(k)) continue;
   try { await fn(); } catch (e) { log('PAGE FAILED', k, String(e.message).split('\n')[0]); }
   save();
+}
+} finally {
+  await closePage();
+  await context?.browser()?.close().catch(() => {});
 }
 // mark components from this run whose selectors matched nothing; a component
 // with recorded states (from an earlier merged run) is covered, not missing

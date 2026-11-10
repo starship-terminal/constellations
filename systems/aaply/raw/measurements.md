@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from aaply.app on 2026-11-08 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from aaply.app on 2026-11-10 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -267,7 +267,7 @@ Page: home. Selector: `inline emoji atom`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 24 x 24 |
+| Size (w x h) | 144 x 60 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -276,10 +276,8 @@ Page: home. Selector: `inline emoji atom`. States: default.
 | Outline | none |
 | Font | Times 16px/normal 400 |
 | Letter spacing | normal |
-| Colour | #ff8562 |
+| Colour | #000000 |
 | Transition | background-color, color, border-color, box-shadow 0s, 0s, 0s, 0.2s ease-in-out, ease-in-out, ease-in-out, ease-in-out delay 0s, 0s, 0s, 0s |
-| Opacity | 0 |
-| Cursor | pointer |
 | How | at rest |
 
 Crops: `hero-emoji-default.png`.
@@ -1171,24 +1169,23 @@ Crops: `m-burger-default.png`, `m-burger-pressed.png`.
 
 #### m-hero-title
 
-Mobile hero title.
+Mobile hero title. The first painted line of the mobile Poppins headline — the mobile title splits one atom per line.
 
 Page: home. Selector: `mobile hero`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 304 x 112 |
+| Size (w x h) | 264 x 27 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | Poppins 27px/28px 700 |
+| Font | Poppins 27px/27px 700 |
 | Letter spacing | -1px |
 | Colour | #000000 |
 | Transition | background-color, color, border-color, box-shadow 0s, 0s, 0s, 0.2s ease-in-out, ease-in-out, ease-in-out, ease-in-out delay 0s, 0s, 0s, 0s |
-| Opacity | 0 |
 | How | at rest |
 
 Crops: `m-hero-title-default.png`.

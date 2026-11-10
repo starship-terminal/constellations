@@ -121,7 +121,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 - **The app is absent.** go.aaply.app returned "Not found" on every route, so nothing in this package describes the product's own screens, flows or states — only the marketing site that links to it. The footer reads ©2024 and the app host looks retired or down; treat the product's live state as unknown.
 - **The billing segment's held state** paints its lime fill on a sibling shape, not the text atom — the segments measure transparent in both positions; the lime chip is visible in the screenshots.
-- **Hover-measured values are sparse.** Tilda applies most hovers through `--t396-*hover*` custom properties on the element, many of which read as unchanged at the atom level; the real swaps that were measured (black pills inverting to lime, link grey fades) are in the state rows.
+- **Hover-measured values are sparse.** Tilda applies most hovers through `--t396-*hover*` custom properties on the element, many of which read as unchanged at the atom level; the real swaps that were measured (the nav Sign up pill inverting to lime, link grey fades) are in the state rows.
 - **Prices are split across atoms.** A plan price is a `$` atom plus a `.1 /month` numeral atom; the price tokens cite the numeral atom.
 - **Screenshots are 256-colour PNGs** — read exact colours from tokens.json or the raw JSON, never from a screenshot pixel.
 
@@ -129,7 +129,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 - **Do use the lime sparingly — it is the only primary accent.** Primary CTAs, the held billing segment, the Plus card and the featured review slide paint `lime`; everything else is black, white or page grey. Don't add a second brand colour. ([cta-signup-free](components/crops/cta-signup-free-default.png), [plan-card-plus](components/crops/plan-card-plus-default.png))
 - **Do pair Poppins 700 display with Inter UI.** Headings are one 57px size at −1px tracking; body/buttons are Inter 16–18px. Don't set buttons or links in Poppins, and don't set display copy in Inter. ([hero-title](components/crops/hero-title-default.png), [nav-link](components/crops/nav-link-default.png))
-- **Do invert dark pills to lime on hover**, not to a darker grey: the black Sign up/demo pills fill lime with black text. Don't fade primary actions with opacity. ([nav-signup hover](components/crops/nav-signup-hover.png))
+- **Do invert the nav Sign up pill to lime on hover**, not to a darker grey: it fills lime with black text. The hero and mega demo pills stay black through hover and pressed — don't extend the swap to them, and don't fade primary actions with opacity. ([nav-signup hover](components/crops/nav-signup-hover.png))
 - **Do keep pills at radius 30 and cards at 36–40.** Buttons, links, badges and the billing segments are 30px pills; plan/member cards 36px; the nav bar, review cards and the feature table 40px. Don't use small radii — nothing on the site is under 30px except square media. ([plan-card-free](components/crops/plan-card-free-default.png))
 - **Do put the footer on black.** The footer is a full-bleed black band with white Poppins headings, lime mail links and coral social icons — the site's one dark surface. Don't render it on the page grey. ([footer](components/crops/footer-default.png))
 - **Don't ship the marketing style as the app.** Nothing here was measured inside the product; a screen claiming aaply's app UI from these tokens would be invented. The honest gap is recorded in components.md.

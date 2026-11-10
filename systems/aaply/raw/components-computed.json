@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "run": "2026-11-08T20:34:44.222Z",
+  "run": "2026-11-10T01:27:06.064Z",
   "product": "aaply.app",
   "sheets": {
    "home": [
@@ -4867,7 +4867,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:34:44.222Z",
+   "run": "2026-11-10T01:27:06.064Z",
    "url": "https://aaply.app/",
    "title": "Nav bar",
    "group": "Shell and navigation",
@@ -5217,7 +5217,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:34:44.222Z",
+   "run": "2026-11-10T01:27:06.064Z",
    "url": "https://aaply.app/",
    "title": "Logo",
    "group": "Shell and navigation",
@@ -5706,7 +5706,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:34:44.222Z",
+   "run": "2026-11-10T01:27:06.064Z",
    "url": "https://aaply.app/",
    "title": "Nav link",
    "group": "Shell and navigation",
@@ -6194,7 +6194,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:34:44.222Z",
+   "run": "2026-11-10T01:27:06.064Z",
    "url": "https://aaply.app/",
    "title": "Log in button",
    "group": "Shell and navigation",
@@ -6638,7 +6638,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:34:44.222Z",
+   "run": "2026-11-10T01:27:06.064Z",
    "url": "https://aaply.app/",
    "title": "Sign up button",
    "group": "Shell and navigation",
@@ -6732,7 +6732,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:34:44.222Z",
+   "run": "2026-11-10T01:27:06.064Z",
    "url": "https://aaply.app/",
    "title": "Hero title",
    "group": "Home",
@@ -6742,21 +6742,21 @@
   "hero-emoji": {
    "states": {
     "default": {
-     "tag": "a",
+     "tag": "div",
      "classes": "tn-atom",
      "text": "",
      "rect": {
-      "x": -330,
-      "y": 20,
-      "w": 24,
-      "h": 24
+      "x": 761,
+      "y": 169,
+      "w": 144,
+      "h": 60
      },
      "style": {
       "display": "table-cell",
       "position": "static",
       "boxSizing": "content-box",
-      "width": "24px",
-      "height": "24px",
+      "width": "144px",
+      "height": "60px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
@@ -6797,7 +6797,7 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(255, 133, 98)",
+      "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
       "fontFamily": "Times",
       "fontSize": "16px",
@@ -6805,17 +6805,17 @@
       "lineHeight": "normal",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(255, 133, 98)",
+      "color": "rgb(0, 0, 0)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(255, 133, 98)",
+      "textDecorationColor": "rgb(0, 0, 0)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "background-color, color, border-color, box-shadow",
       "transitionDuration": "0s, 0s, 0s, 0.2s",
       "transitionTimingFunction": "ease-in-out, ease-in-out, ease-in-out, ease-in-out",
       "transitionDelay": "0s, 0s, 0s, 0s",
-      "cursor": "pointer",
-      "opacity": "0",
+      "cursor": "auto",
+      "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
@@ -6826,7 +6826,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:34:44.222Z",
+   "run": "2026-11-10T01:27:06.064Z",
    "url": "https://aaply.app/",
    "title": "Hero inline image",
    "group": "Home",
@@ -7314,7 +7314,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:34:44.222Z",
+   "run": "2026-11-10T01:27:06.064Z",
    "url": "https://aaply.app/",
    "title": "Sign up free CTA",
    "group": "Home",
@@ -7802,7 +7802,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:34:44.222Z",
+   "run": "2026-11-10T01:27:06.064Z",
    "url": "https://aaply.app/",
    "title": "Try demo CTA",
    "group": "Home",
@@ -7896,7 +7896,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:34:44.222Z",
+   "run": "2026-11-10T01:27:06.064Z",
    "url": "https://aaply.app/",
    "title": "Hero product mockup",
    "group": "Home",
@@ -7990,7 +7990,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:34:44.222Z",
+   "run": "2026-11-10T01:27:06.064Z",
    "url": "https://aaply.app/",
    "title": "Chat annotation bubble",
    "group": "Home",
@@ -8084,7 +8084,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:34:44.222Z",
+   "run": "2026-11-10T01:27:06.064Z",
    "url": "https://aaply.app/",
    "title": "Step number",
    "group": "Home",
@@ -8185,7 +8185,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:34:44.222Z",
+   "run": "2026-11-10T01:27:06.064Z",
    "url": "https://aaply.app/",
    "title": "Footer",
    "group": "Shell and navigation",
@@ -8535,7 +8535,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:34:44.222Z",
+   "run": "2026-11-10T01:27:06.064Z",
    "url": "https://aaply.app/",
    "title": "Footer mail link",
    "group": "Shell and navigation",
@@ -8885,7 +8885,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:34:44.222Z",
+   "run": "2026-11-10T01:27:06.064Z",
    "url": "https://aaply.app/",
    "title": "Social icon",
    "group": "Shell and navigation",
@@ -8979,7 +8979,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:34:44.222Z",
+   "run": "2026-11-10T01:27:06.064Z",
    "url": "https://aaply.app/",
    "title": "Early birds heading",
    "group": "Shell and navigation",
@@ -13109,7 +13109,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:17:51.385Z",
+   "run": "2026-11-10T01:26:23.128Z",
    "url": "https://aaply.app/",
    "title": "Mobile nav bar",
    "group": "Mobile (390 wide)",
@@ -13286,7 +13286,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:17:51.385Z",
+   "run": "2026-11-10T01:26:23.128Z",
    "url": "https://aaply.app/",
    "title": "Hamburger",
    "group": "Mobile (390 wide)",
@@ -13298,19 +13298,19 @@
     "default": {
      "tag": "div",
      "classes": "tn-atom",
-     "text": "Tool that helps design create a product experience",
+     "text": "Tool that helps",
      "rect": {
-      "x": -404,
-      "y": 143,
-      "w": 304,
-      "h": 112
+      "x": 63,
+      "y": 98,
+      "w": 264,
+      "h": 27
      },
      "style": {
       "display": "table-cell",
       "position": "static",
       "boxSizing": "content-box",
-      "width": "304px",
-      "height": "112px",
+      "width": "264px",
+      "height": "27px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
@@ -13356,7 +13356,7 @@
       "fontFamily": "Poppins, Arial, sans-serif",
       "fontSize": "27px",
       "fontWeight": "700",
-      "lineHeight": "28px",
+      "lineHeight": "27px",
       "letterSpacing": "-1px",
       "textTransform": "none",
       "color": "rgb(0, 0, 0)",
@@ -13369,7 +13369,7 @@
       "transitionTimingFunction": "ease-in-out, ease-in-out, ease-in-out, ease-in-out",
       "transitionDelay": "0s, 0s, 0s, 0s",
       "cursor": "auto",
-      "opacity": "0",
+      "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
@@ -13380,11 +13380,13 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:17:51.385Z",
+   "run": "2026-11-10T01:26:23.128Z",
    "url": "https://aaply.app/",
    "title": "Mobile hero title",
    "group": "Mobile (390 wide)",
-   "selector": "mobile hero"
+   "selector": "mobile hero",
+   "recaptureMissed": "2026-11-10T01:24:51.453Z",
+   "desc": "The first painted line of the mobile Poppins headline — the mobile title splits one atom per line."
   },
   "m-cta-signup": {
    "states": {
@@ -13628,7 +13630,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:17:51.385Z",
+   "run": "2026-11-10T01:26:23.128Z",
    "url": "https://aaply.app/",
    "title": "Mobile sign up CTA",
    "group": "Mobile (390 wide)",
@@ -13877,7 +13879,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:17:51.385Z",
+   "run": "2026-11-10T01:26:23.128Z",
    "url": "https://aaply.app/",
    "title": "Mobile demo CTA",
    "group": "Mobile (390 wide)",
@@ -13971,7 +13973,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T20:17:51.385Z",
+   "run": "2026-11-10T01:26:23.128Z",
    "url": "https://aaply.app/",
    "title": "Mobile step number",
    "group": "Mobile (390 wide)",

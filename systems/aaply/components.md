@@ -1,6 +1,6 @@
 # aaply components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured from aaply.app on 2026-11-08, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was bought, downloaded, signed into, sent or submitted.
+The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured from aaply.app on 2026-11-10, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was bought, downloaded, signed into, sent or submitted.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (51 components, 90 states).
 
@@ -40,9 +40,9 @@ Screenshots are named `{page}-light-{state}.png` (the marketing site is light, w
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 11 components were given a real keyboard focus. 10 draw a ring: `logo` (3px auto #2015ff, offset 4px), `nav-link` (3px auto #2015ff, offset 4px), `nav-login` (3px auto #2015ff, offset 4px), `nav-signup` (3px auto #2015ff, offset 4px), `cta-signup-free` (3px auto #2015ff, offset 4px), `cta-demo` (3px auto #2015ff, offset 4px), `footer-link` (3px auto #2015ff, offset 4px), `social-icon` (3px auto #2015ff, offset 4px), `plan-cta` (3px auto #2015ff, offset 4px), `mega-demo-cta` (3px auto #2015ff, offset 4px). The other 1 draw none, so a keyboard user sees no change: `compare-cta`.
+**Focus.** 10 components were given a real keyboard focus. 10 draw a ring: `logo` (3px auto #2015ff, offset 4px), `nav-link` (3px auto #2015ff, offset 4px), `nav-login` (3px auto #2015ff, offset 4px), `nav-signup` (3px auto #2015ff, offset 4px), `cta-signup-free` (3px auto #2015ff, offset 4px), `cta-demo` (3px auto #2015ff, offset 4px), `footer-link` (3px auto #2015ff, offset 4px), `social-icon` (3px auto #2015ff, offset 4px), `plan-cta` (3px auto #2015ff, offset 4px), `mega-demo-cta` (3px auto #2015ff, offset 4px). The other 0 draw none, so a keyboard user sees no change: . Focus could not be driven to `compare-cta` — its focus state is recorded as not captured.
 
-**Pressed.** The dark pills invert to lime under :active — the same swap the hover makes — while the lime pills hold flat; see the per-component state rows.
+**Pressed.** Only the nav Sign up pill swaps under :active — black to lime, the same as its hover; the hero and mega demo pills hold black through hover and pressed, and the lime pills hold flat; see the per-component state rows.
 
 **Motion.** Transitions measured on the components, by duration.
 
@@ -178,7 +178,7 @@ The Poppins 700 display headline with inline emoji/avatar atoms inside the sente
 #### Hero inline image
 One of the inline emoji/squiggle/avatar atoms set inside the headline flow — the design's signature move. Read as `hero-emoji` on the home page.
 
-**Values (default).** size 24 x 24; background transparent; text Times 16/normal 400, #ff8562 `coral`; transition box-shadow 0.2s ease-in-out; opacity 0.
+**Values (default).** size 144 x 60; background transparent; text Times 16/normal 400, #000000 `black`; transition box-shadow 0.2s ease-in-out.
 
 ![Hero inline image default](components/crops/hero-emoji-default.png)
 
@@ -489,9 +489,9 @@ The mobile menu button at the top right. Not opened — the menu overlays the me
 ![Hamburger default](components/crops/m-burger-default.png) ![Hamburger pressed](components/crops/m-burger-pressed.png)
 
 #### Mobile hero title
-Read as `m-hero-title` on the home page at 390 wide.
+The first painted line of the mobile Poppins headline — the mobile title splits one atom per line. Read as `m-hero-title` on the home page at 390 wide.
 
-**Values (default).** size 304 x 112; background transparent; text Poppins 27/28 700, #000000 `black`; transition box-shadow 0.2s ease-in-out; opacity 0.
+**Values (default).** size 264 x 27; background transparent; text Poppins 27/27 700, #000000 `black`; transition box-shadow 0.2s ease-in-out.
 
 ![Mobile hero title default](components/crops/m-hero-title-default.png)
 
