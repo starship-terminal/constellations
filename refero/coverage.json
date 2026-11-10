@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 52,
-    "system_domains": 44,
-    "matched_domains": 21,
-    "missing_domains": 412,
+    "system_packages": 53,
+    "system_domains": 45,
+    "matched_domains": 22,
+    "missing_domains": 411,
     "system_domains_absent_from_catalog": 23
   },
   "matched": {
@@ -74,6 +74,23 @@
           "slug": "allbirds",
           "name": "Allbirds",
           "url": "https://www.allbirds.com",
+          "name_match": true
+        }
+      ]
+    },
+    "anam.ai": {
+      "catalog": [
+        {
+          "name": "Anam",
+          "domain": "anam.ai",
+          "id": 929
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "anam",
+          "name": "Anam",
+          "url": "https://anam.ai",
           "name_match": true
         }
       ]
@@ -499,13 +516,6 @@
         "name": "Amie",
         "domain": "amie.so",
         "id": 426
-      }
-    ],
-    "anam.ai": [
-      {
-        "name": "Anam",
-        "domain": "anam.ai",
-        "id": 929
       }
     ],
     "anthropic.com": [
