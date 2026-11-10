@@ -48,8 +48,14 @@ const L = [];
 const W = (s = '') => L.push(s);
 W('# Component measurements'); // PRODUCT (adapt): the product's name
 W('');
+// measure.mjs never sets _meta.run: the timestamp lives on each component
+// record, so the header derives the capture date (or span) from them.
+const runs = Object.values(J.components).map((c) => c.run).filter(Boolean).sort();
+const runDate = !runs.length ? '(unknown)'
+  : runs[0].slice(0, 10) === runs[runs.length - 1].slice(0, 10) ? runs[0].slice(0, 10)
+    : `${runs[0].slice(0, 10)} to ${runs[runs.length - 1].slice(0, 10)}`;
 // PRODUCT (adapt): describe this product's capture.
-W(`Computed styles read from aesop.com on ${(J._meta.run || '').slice(0, 10)} by \`tools/capture/public/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
+W(`Computed styles read from aesop.com on ${runDate} by \`tools/capture/public/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
 W('');
 W('States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.');
 W('');

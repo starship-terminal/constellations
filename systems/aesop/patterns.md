@@ -20,7 +20,7 @@ Title + count ("Shop all · 165 products"), All filters toggle, Sort select, the
 
 ## Product page
 
-Breadcrumbs over two columns: 700px gallery left; badge, title, price, descriptor, bordered variant box, ink add-to-cart bar, promo note, accordion rows right. Suggested-partners rail below. [pdp-light-default](screenshots/pdp-light-default.png), [pdp-light-accordion](screenshots/pdp-light-accordion.png)
+Breadcrumbs over two columns: 700px gallery left; badge, title, price, descriptor, bordered variant box, ink add-to-cart bar, promo note right, a Description tab below. The information accordion rows render only at phone widths (h-hide-for-large) — the open state is on the mobile capture. Suggested-partners rail below. [pdp-light-default](screenshots/pdp-light-default.png), [mobile-pdp-light-accordion](screenshots/mobile-pdp-light-accordion.png)
 
 ## Footer
 

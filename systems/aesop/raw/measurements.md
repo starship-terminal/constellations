@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from aesop.com on  by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from aesop.com on 2026-11-10 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -629,21 +629,20 @@ Crops: `tile-badge-default.png`.
 
 Category title. The Skin Care landing title.
 
-Page: skincare. Selector: `h1`. States: default.
+Page: skincare. Selector: `main h1`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 64.89 x 50.8 |
+| Size (w x h) | 1170 x 37.5 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | SuisseIntl 14px/16.8px 400 |
+| Font | SuisseIntl 30px/37.5px 400 |
 | Letter spacing | normal |
-| Colour | #333333 |
-| Text node | span.c-navigation__link-name: SuisseIntl-Medium 14px/16.8px 400, #333333 |
+| Colour | #fffef2 |
 | Transition | none |
 | How | at rest |
 
@@ -968,34 +967,6 @@ Page: pdp. Selector: `pdp gallery`. States: default.
 
 Crops: `pdp-image-default.png`.
 
-#### accordion
-
-Accordion row. An expandable information row on the PDP (usage, ingredients, shipping).
-
-Page: pdp. Selector: `pdp accordion`. States: default, hover, focus-visible, pressed.
-
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 64.89 x 50.8 | = | = | = |
-| Padding | 17px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | SuisseIntl-Medium 14px/16.8px 400 | SuisseIntl-Medium 14px/16.8px 700 | = | SuisseIntl-Medium 14px/16.8px 700 |
-| Letter spacing | normal | = | = | = |
-| Colour | #333333 | = | = | = |
-| Text node | span.c-navigation__link-name: SuisseIntl-Medium 14px/16.8px 400, #333333 | span.c-navigation__link-name: SuisseIntl-Medium 14px/16.8px 700, #333333 | = | span.c-navigation__link-name: SuisseIntl-Medium 14px/16.8px 700, #333333 |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| ::after | 30.8906px x 0px, static, bg #000000 @ 0, radius 0px | = | = | = |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| ::before | - | 64.8906px x 3px, absolute, bg #333333, radius 0px | = | 64.8906px x 3px, absolute, bg #333333, radius 0px |
-| Painted layers | - | a::before.c-navigation__link.m-level-1 64.8906pxx3px bg #333333 | = | a::before.c-navigation__link.m-level-1 64.8906pxx3px bg #333333 |
-
-Crops: `accordion-default.png`, `accordion-hover.png`, `accordion-focus-visible.png`, `accordion-pressed.png`.
-
 #### info-row
 
 Service line. A service message near the purchase bar (complimentary shipping, samples).
@@ -1043,6 +1014,31 @@ Page: pdp. Selector: `variant box`. States: default, hover, focus-visible, press
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `variant-box-default.png`, `variant-box-hover.png`, `variant-box-focus-visible.png`, `variant-box-pressed.png`.
+
+#### accordion
+
+Accordion row. An expandable information row on the PDP (Description). The block carries h-hide-for-large — desktop never paints it — so this is measured on the mobile PDP at 390.
+
+Page: mobile-pdp. Selector: `.c-accordion__title`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 360 x 49 |
+| Padding | 14px 60px 14px 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | SuisseIntl-Medium 14px/21px 400 |
+| Letter spacing | normal |
+| Colour | #333333 |
+| Text node | span: SuisseIntl-Medium 14px/21px 400, #333333 |
+| Transition | none |
+| Cursor | pointer |
+| How | at rest |
+
+Crops: `accordion-default.png`.
 
 ### Panels and overlays
 

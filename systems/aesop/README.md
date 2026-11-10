@@ -42,7 +42,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | page | #fffef2 `light.background.page` |
 | surface | #ebeade `light.background.surface` |
 | text | #333333 `light.text.primary` |
-| muted | #bcbbb4 `light.text.muted` |
+| muted | #666666 `light.text.muted` |
 | accent | #945c26 `light.text.accent` |
 | border | #333333 `light.border.default` |
 
@@ -50,15 +50,15 @@ Fonts: `core.font.family.sans` is SuisseIntl, then 4 fallbacks; `core.font.famil
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 152 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 149 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
 | Theme | text on page | text on surface | muted on page | muted on surface |
 |---|---|---|---|---|
-| light | 12.46:1 pass | 10.44:1 pass | 1.89:1 fail | 1.59:1 fail |
+| light | 12.46:1 pass | 10.44:1 pass | 5.66:1 pass | 4.74:1 pass |
 
-2 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.focus.ring` #333333; `core.focusRing.color` #333333; `core.focusRing.width` 0px.
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.focus.ring` #333333; `core.focusRing.color` #333333; `core.focusRing.width` 0px.
 
 <!-- brief:end -->
 
@@ -135,4 +135,4 @@ python3 tools/build_style_guide.py              # style-guide.html
 cd ../.. && python3 tools/fetch_icon.py aesop   # icon.png
 ```
 
-Then `make design-md` at the repo root refreshes [DESIGN.md](DESIGN.md), and `make check` re-grades the package.
+Then at the repo root, `make design-md` refreshes the Brief and [DESIGN.md](DESIGN.md), `make grade` re-grades the package and rewrites the Health section, and `make check` verifies none of the generated output is stale.

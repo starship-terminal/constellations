@@ -377,7 +377,17 @@ async function shopall() {
 async function skincare() {
   if (!(await newPage('skincare'))) { await page.close(); return; }
   const g = G.plp;
-  await S('category-title', q('h1, [class*="title" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Category title', desc: 'The Skin Care landing title.', sel: 'h1' }, { noScroll: true });
+  const ct = await page.evaluate(() => {
+    // The landing's own h1, scoped to page content: a page-wide
+    // `h1, [class*="title" i]` match caught the header nav's item title
+    // ("Gifts") instead — anything inside header/nav is rejected.
+    const el = [...document.querySelectorAll('main h1, [role="main"] h1, .experience-main h1, h1')].filter((n) => {
+      const r = n.getBoundingClientRect(); const cs = getComputedStyle(n);
+      return r.width > 40 && r.height > 10 && cs.visibility !== 'hidden' && !n.closest('header, nav, .l-header, [class*="navigation" i]');
+    })[0];
+    if (!el) return false; el.setAttribute('data-m-mark', 'ct'); return true;
+  });
+  await S('category-title', ct ? q('[data-m-mark="ct"]') : page.locator('__none__'), ['default'], { group: g, title: 'Category title', desc: 'The Skin Care landing title.', sel: 'main h1' }, { noScroll: true });
   await S('category-quicklink', q('.c-quicklinks__link').filter({ visible: true }).first(), B4, { group: g, title: 'Category quicklink', desc: 'A quicklink pill on the category landing (Category, Skin type, Skin concern).', sel: '.c-quicklinks__link' });
   await S('category-product', q('.c-product-tile, [class*="product-tile" i]').filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Category product tile', desc: 'A product tile on the Skin Care landing.', sel: '.c-product-tile' });
   await page.close();
@@ -458,7 +468,10 @@ async function pdp() {
   await S('variant-box', await domFind(page, /^kit\b|select a size|^size$/i, { sel: '[class*="variant" i], [class*="attribute" i], [class*="option" i], button, fieldset, legend, label, span, div', tag: 'vb', minH: 20, minW: 150, up: '[class*="variant" i], [class*="option" i], [class*="attribute" i], fieldset, div[class]' }), B4, { group: g, title: 'Variant box', desc: 'The variant/size selector above the purchase bar (the bordered "Kit $600.00" box on a kit).', sel: 'variant box' });
   await S('qty-select', q('select, input[type="number"], [class*="quantity" i] select, [class*="quantity" i]').filter({ visible: true }).first(), ['default', 'focused'], { group: g, title: 'Quantity control', desc: 'The quantity selector beside Add to cart, when the product offers one.', sel: 'quantity' });
   await S('pdp-image', q('[class*="gallery" i], [class*="image" i] picture, [class*="carousel" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Product gallery', desc: 'The product photograph column.', sel: 'pdp gallery' });
-  await S('accordion', q('[data-js-accordion-control], details summary, [class*="accordion" i] > *').filter({ visible: true }).first(), B4, { group: g, title: 'Accordion row', desc: 'An expandable information row on the PDP (usage, ingredients, shipping).', sel: 'pdp accordion' });
+  // The PDP's information accordion (.c-accordion) carries h-hide-for-large:
+  // it renders only at phone widths, so the desktop record is an honest miss
+  // and the real measurement happens in mobile() below.
+  await S('accordion', page.locator('__none__'), B4, { group: g, title: 'Accordion row', desc: 'An expandable information row on the PDP (Description). Desktop never paints it — the block carries h-hide-for-large — so it is measured on the mobile PDP instead; this desktop record stays an honest miss.', sel: '.c-accordion__title' });
   await S('info-row', await domFind(page, /complimentary|free (shipping|delivery)|returns|samples/i, { sel: 'p, li, div, span', tag: 'ir', minH: 14 }), ['default'], { group: g, title: 'Service line', desc: 'A service message near the purchase bar (complimentary shipping, samples).', sel: 'pdp service line' });
   await footerRun();
   await page.close();
@@ -514,6 +527,15 @@ async function mobile() {
   await S('m-menu-drawer', drawer ? q('[data-m-mark="md"]') : page.locator('__none__'), ['default'], { group: g, title: 'Mobile menu drawer', desc: 'The navigation accordion the burger button opens.', sel: 'mobile drawer' }, { noScroll: true });
   await S('m-nav-item', q('[data-m-mark="md"] button.c-navigation__button.m-level-1, [data-m-mark="md"] .c-navigation__button').filter({ visible: true }).first(), B4, { group: g, title: 'Mobile nav item', desc: 'A level-1 accordion row inside the drawer (Gifts, New & Notable, Skin Care…).', sel: 'm nav item' }, { noScroll: true });
   await page.close();
+  // The PDP's information accordion carries h-hide-for-large — it only paints
+  // at phone widths — so it is measured here, on the product page at 390.
+  const pdpUrl = out._meta.pdpUrl || (await resolvePdpUrl());
+  current = 'mobile-pdp';
+  URLS['mobile-pdp'] = pdpUrl;
+  if (await newPageAt(pdpUrl, { mobile: true })) {
+    await S('accordion', q('.c-accordion__title, [data-js-accordion-control]').filter({ visible: true }).first(), ['default'], { group: G.pdp, title: 'Accordion row', desc: 'An expandable information row on the PDP (Description). The block carries h-hide-for-large — desktop never paints it — so this is measured on the mobile PDP at 390.', sel: '.c-accordion__title' });
+    await page.close();
+  }
 }
 
 run = new Date().toISOString();

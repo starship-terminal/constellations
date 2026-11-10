@@ -2,13 +2,13 @@
 
 The discovery list of every page and state captured, then one entry per component with crops of the real site, the shared values and the Gaps. Captured from aesop.com on 2026-11-10 — the US storefront (Sites-aesop-us-Site, prices in US$) — as static pages rendered at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the live DOM. Nothing was submitted, bought or signed into; the only presses were local UI toggles (the Search disclosure, Email sign up modal, My cart drawer, All filters rail, burger menu). The OneTrust consent SDK was blocked at the network layer — its banner was never mounted, and no consent button was ever pressed.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (68 components, 152 states).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (68 components, 149 states).
 
 How to read an entry:
 
 - A colour is its value followed by the token in [tokens.json](tokens.json) whose value is the same, when there is one. Text is written family size/line-height weight, then its colour, for example `SuisseIntl 12/20 400, #000000`, and is read from the first text node inside the component.
-- The first state of each entry lists every value; later states list only what changed. A state identical to the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component in [components/crops/](components/crops) (152 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- The first state of each entry lists every value; later states list only what changed, pseudo-elements and child paint included — a hover underline or a recoloured icon shows as `before`, `after`, `icon` or `layers` in the row. A state identical to the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
+- Crops are images of the component in [components/crops/](components/crops) (149 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -19,14 +19,14 @@ Screenshots are named `{page}-light-{state}.png`. Desktop shots are 1440 x 900 a
 | Home. The hero, product rows and footer. Captured at rest, search open, sign-up modal, cart drawer, nav hover, and full-page. | `/` | [cart (light)](screenshots/home-light-cart.png), [default (light)](screenshots/home-light-default.png), [full (light)](screenshots/home-light-full.png), [nav-flyout (light)](screenshots/home-light-nav-flyout.png), [search (light)](screenshots/home-light-search.png), [signup (light)](screenshots/home-light-signup.png) |
 | Shop all, the catalogue page. Captured at rest, filters rail open, and full-page. | `/shop-all/` | [default (light)](screenshots/shopall-light-default.png), [full (light)](screenshots/shopall-light-full.png), [sort (light)](screenshots/shopall-light-sort.png) |
 | The Skin Care category landing. | `/skin-care/` | [default (light)](screenshots/skincare-light-default.png), [full (light)](screenshots/skincare-light-full.png) |
-| A product page (The Aesop Valise, APB399). Captured at rest, an accordion open, and full-page. | `/gifts/seasonal-gift-kits/the-aesop-valise/APB399.html` | [accordion (light)](screenshots/pdp-light-accordion.png), [default (light)](screenshots/pdp-light-default.png), [full (light)](screenshots/pdp-light-full.png) |
+| A product page (The Aesop Valise, APB399). Captured at rest and full-page; its information accordion only renders at phone widths, so the open shot lives on the mobile capture. | `/gifts/seasonal-gift-kits/the-aesop-valise/APB399.html` | [default (light)](screenshots/pdp-light-default.png), [full (light)](screenshots/pdp-light-full.png) |
 | The store locator. | `/stores` | [default (light)](screenshots/stores-light-default.png), [full (light)](screenshots/stores-light-full.png) |
 | The cart route, empty. | `/cart` | [default (light)](screenshots/cart-light-default.png), [full (light)](screenshots/cart-light-full.png) |
 | The Demandware sign-in page. | `/on/demandware.store/Sites-aesop-us-Site/en_US/Login-Show` | [default (light)](screenshots/login-light-default.png), [full (light)](screenshots/login-light-full.png) |
 | The styled 404 / unexpected-error page. | `/account` | [default (light)](screenshots/notfound-light-default.png), [full (light)](screenshots/notfound-light-full.png) |
 | Home at 390, at rest, the burger drawer open, and full-page. | `/` | [default (light)](screenshots/mobile-home-light-default.png), [full (light)](screenshots/mobile-home-light-full.png), [menu (light)](screenshots/mobile-home-light-menu.png) |
 | The catalogue page at 390. | `/shop-all/` | [default (light)](screenshots/mobile-shopall-light-default.png), [full (light)](screenshots/mobile-shopall-light-full.png) |
-| The product page at 390. | `/gifts/seasonal-gift-kits/the-aesop-valise/APB399.html` | [default (light)](screenshots/mobile-pdp-light-default.png), [full (light)](screenshots/mobile-pdp-light-full.png) |
+| The product page at 390. | `/gifts/seasonal-gift-kits/the-aesop-valise/APB399.html` | [accordion (light)](screenshots/mobile-pdp-light-accordion.png), [default (light)](screenshots/mobile-pdp-light-default.png), [full (light)](screenshots/mobile-pdp-light-full.png) |
 
 ### Overlays and transient states
 
@@ -36,24 +36,24 @@ Screenshots are named `{page}-light-{state}.png`. Desktop shots are 1440 x 900 a
 | Email sign up modal | home | the Email sign up button | [home-light-signup](screenshots/home-light-signup.png), [signup-dialog](#signup-dialog) |
 | My cart drawer | home | the My cart button | [home-light-cart](screenshots/home-light-cart.png), [cart-panel](#cart-panel) |
 | Filter rail | PLP | the All filters button | [shopall-light-sort](screenshots/shopall-light-sort.png), [filter-panel](#filter-panel) |
-| Accordion opened | PDP | a PDP accordion row | [pdp-light-accordion](screenshots/pdp-light-accordion.png) |
+| PDP information accordion | PDP at 390 | the Description row on the mobile product page — the block carries h-hide-for-large, so desktop never paints it | [mobile-pdp-light-accordion](screenshots/mobile-pdp-light-accordion.png), [accordion](#accordion) |
 | Mobile burger drawer | home at 390 | the burger button | [mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [m-menu-drawer](#m-menu-drawer) |
 
 ## Shared values
 
 Values that apply across entries, tallied from the measurement file.
 
-**Radius.** 4px (6), 2px (4). The single curve is the filter rail's 10px radio dot (`border-radius:100%` on a `::before`).
+**Radius.** 4px (6), 2px (4). 4px rounds the category quicklink pills and the floating label tabs of the size selects, 2px the Map/Satellite toggle, and the filter toggle's count dot is a 50% circle — every control edge stays square.
 
-**Hover.** Acne hovers with colour, never fills or shadows: no change on the element (23), #fffef2 `action.outline` to #f6f5e8 `background.inset` (2), text #333333 `text.primary` to #000000 `text.black` (2), transparent to #fffef2 `action.outline` (1), #333333 `action.primary` to #252525 `background.dark` (1), #393939 `action.secondary` to #252525 `background.dark` (1), #ffffff `color.white` to #ebebeb (1). Black fills (LOAD MORE, CONTINUE, SHOW N ITEMS) flip to Acne blue; blue fills (ADD TO BAG) deepen to #051574; blue links deepen the same way; black labels (nav, FILTER, Menu) grey to #6b6b6b.
+**Hover.** no change on the element (20), #fffef2 `action.outline` to #f6f5e8 `background.inset` (2), text #333333 `text.primary` to #000000 `text.black` (2), weight 400 to 700 (1), transparent to #fffef2 `action.outline` (1), #333333 `action.primary` to #252525 `background.dark` (1), a painted ::before/::after or icon change (1), #393939 `action.secondary` to #252525 `background.dark` (1). A hover stays quiet: the nav link goes bold and grows a 3px ink underline under its label (a `::before` bar), footer links pick up an underline, the ink buttons (ADD TO CART, the sign-in submit) deepen from #333333/#393939 to #252525, the quicklink pills go from a muted border to an ink keyline on a #f6f5e8 `background.inset` fill, the Search disclosure's Close icon dot darkens (#666666 to #343434), and the hero CTA card fills cream with ink text.
 
-**Focus.** Of 26 elements given a real keyboard focus: no ring on the element (26). The ring Acne does draw is a 1px solid keyline 3px inside the control — white on the black/blue buttons, deep blue on the white wishlist button, black on the size cells. Text links show no ring.
+**Focus.** Of 25 elements given a real keyboard focus: no ring on the element (25). Aesop paints no focus ring — the computed outlineWidth stays 0 on every measured control; focus is at most the hover's colour shift.
 
-**Motion.** 0.5s ease-out (26), 0.2s ease (24), 0.25s ease-out (12), 0.3s ease (6). The only transitions the stylesheet carries are the drawers' 150ms padding-bottom safe-area slide, the accordions' 200ms max-height reveal and a 500ms fade on campaign layers, none on the controls themselves.
+**Motion.** 0.5s ease-out (26), 0.2s ease (24), 0.25s ease-out (12), 0.3s ease (6). Eases are short and gentle: 0.5s ease-out colour fades on the header controls, 0.2s ease on field keylines, 0.25s ease-out on the ink buttons and CTA card, 0.3s on the quicklink pills. The stylesheets add a 0.1s max-height reveal on accordions and navigation groups and a 0.4s padding slide on the sliding content panels.
 
-**Layout.** The header is a 60px rail (45px at 390); every page is a 1440-wide fluid grid of 4-px-base cells (`as-cell`). Primary buttons and the email fields share one 60px height; the small search field, menu links, suggestions and gift-guide bars are 30px rows; size cells are 77 x 45; every right-side drawer is 360 wide with a 45px head. Hairline 1px rules in #f2f2f2 (or black on drawers and the mega-menu's top edge) separate everything — several are painted as 1px background gradients rather than borders.
+**Layout.** The header is a two-tier rail — a 30px utility row over a 50.8px nav row (50px at 390) — above a fluid grid. Fields are 40px, buttons and CTA cards 48px, the cart drawer 405px, the filter rail 400px and the sign-up dialog 970px; the hero band runs 720px tall at 1440. Hairline 1px keylines in ink or `color.creamDark` separate everything — several are painted as 1px box-shadows rather than borders.
 
-**Accent.** Acne blue (#0018a8) is the only accent: every text link, the ADD TO BAG fill, the wishlist border, the picked size cell's border and fill, the geo selector, and the hover step of every black button. Its deeper step #051574 is hover-only. Everything else is black, white or one of four warm greys.
+**Accent.** One accent only: the tannin amber #945c26 (`color.amber`), on tile badges (New addition, Beloved formulation), promos and inline links. Everything else is ink — #333333 for text, keylines and the dark fills, #252525/#393939 for the deep and soft steps — on the cream grounds #fffef2, #ebeade and #f6f5e8.
 
 ## Components
 
@@ -79,7 +79,7 @@ The two-tier header every page shares: a thin utility row (Stores, Customer serv
 
 | State | Values |
 |---|---|
-| default | size 140 x 44.09; background transparent; text SuisseIntl 12/18 400, #333333 `text.primary` |
+| default | size 140 x 44.09; background transparent; text SuisseIntl 12/18 400, #333333 `text.primary`; decoration underline |
 
 #### Utility link
 
@@ -89,7 +89,7 @@ The two-tier header every page shares: a thin utility row (Stores, Customer serv
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 58.17 x 19; padding 0px 0px 0px 12px; background transparent; text SuisseIntl 12/14.4 700, #333333 `text.primary`; transition color 0.5s ease-out |
+| default (same: hover, focus-visible, pressed) | size 58.17 x 19; padding 0px 0px 0px 12px; background transparent; text SuisseIntl 12/14.4 700, #333333 `text.primary`; transition color 0.5s ease-out; before 0px x 19px; bg #333333 `action.primary`; after 0px x 20px; bg rgba(51, 51, 51, 0.2) `border.field` |
 
 Child layers: a::before 0pxx19px background #333333 `action.primary`; a::after 0pxx20px background rgba(51, 51, 51, 0.2) `border.field`
 
@@ -101,7 +101,7 @@ Child layers: a::before 0pxx19px background #333333 `action.primary`; a::after 0
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 109.53 x 14.39; padding 0px 0px 0px 12px; background transparent; text SuisseIntl 12/14.4 700, #333333 `text.primary`; transition color 0.5s ease-out |
+| default (same: hover, focus-visible, pressed) | size 109.53 x 14.39; padding 0px 0px 0px 12px; background transparent; text SuisseIntl 12/14.4 700, #333333 `text.primary`; transition color 0.5s ease-out; after 0px x 20px; bg rgba(51, 51, 51, 0.2) `border.field` |
 
 Child layers: button::after 0pxx20px background rgba(51, 51, 51, 0.2) `border.field`
 
@@ -113,7 +113,7 @@ Child layers: button::after 0pxx20px background rgba(51, 51, 51, 0.2) `border.fi
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 73.47 x 14.39; background transparent; text SuisseIntl 12/14.4 700, #333333 `text.primary`; transition color 0.5s ease-out |
+| default (same: hover, focus-visible, pressed) | size 73.47 x 14.39; background transparent; text SuisseIntl 12/14.4 700, #333333 `text.primary`; transition color 0.5s ease-out; after 0px x 20px; bg rgba(51, 51, 51, 0.2) `border.field` |
 
 Child layers: button::after 0pxx20px background rgba(51, 51, 51, 0.2) `border.field`; span::before 18pxx18px background #333333 `action.primary`
 
@@ -125,7 +125,7 @@ Child layers: button::after 0pxx20px background rgba(51, 51, 51, 0.2) `border.fi
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 58.2 x 14.39; padding 0px 0px 0px 12px; background transparent; text SuisseIntl 12/14.4 700, #333333 `text.primary` |
+| default (same: hover) | size 58.2 x 14.39; padding 0px 0px 0px 12px; background transparent; text SuisseIntl 12/14.4 700, #333333 `text.primary`; after 0px x 20px; bg rgba(51, 51, 51, 0.2) `border.field` |
 
 Child layers: li::after 0pxx20px background rgba(51, 51, 51, 0.2) `border.field`
 
@@ -149,8 +149,8 @@ Child layers: i 0x20 background #333333 `action.primary`
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 64.89 x 50.8; padding 17px; background transparent; text SuisseIntl-Medium 14/16.8 400, #333333 `text.primary` |
-| hover, pressed | text SuisseIntl-Medium 14/16.8 700, #333333 `text.primary` |
+| default (same: focus-visible) | size 64.89 x 50.8; padding 17px; background transparent; text SuisseIntl-Medium 14/16.8 400, #333333 `text.primary`; after 30.8906px x 0px |
+| hover, pressed | text SuisseIntl-Medium 14/16.8 700, #333333 `text.primary`; before 64.8906px x 3px; bg #333333 `action.primary` |
 
 #### Search button
 
@@ -160,7 +160,7 @@ Child layers: i 0x20 background #333333 `action.primary`
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 140 x 50.8; padding 16px; border L: 2px solid #ebeade `border.secondary`; background #fffef2 `action.outline`; text SuisseIntl 14/16.8 700, #333333 `text.primary`; transition background 0.5s ease-out, color 0.5s ease-out |
+| default (same: hover, focus-visible, pressed) | size 140 x 50.8; padding 16px; border L: 2px solid #ebeade `border.secondary`; background #fffef2 `action.outline`; text SuisseIntl 14/16.8 700, #333333 `text.primary`; transition background 0.5s ease-out, color 0.5s ease-out; before 16px x 16px; bg #333333 `action.primary` |
 
 ### Home
 
@@ -186,7 +186,7 @@ Child layers: div 1440x720 background #333333 `action.primary`; flowplayer-endsc
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 390 x 48; padding 13px 24px 12px 24px; border 1px solid #fffef2 `border.light`; background transparent; text SuisseIntl-Medium 14/21 400, #fffef2 `text.onDark`; transition background-color 0.25s ease-out, color 0.25s ease-out |
+| default (same: focus-visible) | size 390 x 48; padding 13px 24px 12px 24px; border 1px solid #fffef2 `border.light`; background transparent; text SuisseIntl-Medium 14/21 400, #fffef2 `text.onDark`; transition background-color 0.25s ease-out, color 0.25s ease-out; before 0px x 0px; after 16px x 16px; bg #fffef2 `action.outline` |
 | hover, pressed | background #fffef2 `action.outline`; text SuisseIntl-Medium 14/21 400, #333333 `text.primary` |
 
 ### Footer
@@ -223,7 +223,8 @@ Child layers: h2 176x43 border 1px solid #fffef2 `border.light`
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 70 x 24.8; padding 0px 0px 8px 0px; background transparent; text SuisseIntl 14/16.8 400, #fffef2 `text.onDark` |
+| default (same: focus-visible) | size 70 x 24.8; padding 0px 0px 8px 0px; background transparent; text SuisseIntl 14/16.8 400, #fffef2 `text.onDark` |
+| hover, pressed | decoration underline |
 
 #### Online Preferences link
 
@@ -233,7 +234,8 @@ Child layers: h2 176x43 border 1px solid #fffef2 `border.light`
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 123.64 x 24.8; padding 0px 0px 8px 0px; background transparent; text SuisseIntl 14/16.8 400, #fffef2 `text.onDark` |
+| default (same: focus-visible) | size 123.64 x 24.8; padding 0px 0px 8px 0px; background transparent; text SuisseIntl 14/16.8 400, #fffef2 `text.onDark` |
+| hover, pressed | decoration underline |
 
 #### Newsletter field
 
@@ -268,7 +270,7 @@ A catalogue page such as Shop all: the category title and product count, an All 
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 96.77 x 21; padding 0px 40px 0px 0px; background transparent; text SuisseIntl-Medium 14/21 400, #333333 `text.primary` |
+| default (same: hover, focus-visible, pressed) | size 96.77 x 21; padding 0px 40px 0px 0px; background transparent; text SuisseIntl-Medium 14/21 400, #333333 `text.primary`; after 16px x 16px; bg #333333 `action.primary` |
 
 Child layers: button::after 16pxx16px background #333333 `action.primary`; span 0x0 background #333333 `action.primary` radius 50%
 
@@ -290,7 +292,7 @@ Child layers: button::after 16pxx16px background #333333 `action.primary`; span 
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 30.41 x 24; background transparent; text SuisseIntl 14/24 400, #333333 `text.primary`; transition transform 0.2s ease, font-size 0.2s ease, left 0.2s ease |
+| default (same: hover) | size 30.41 x 24; background transparent; text SuisseIntl 14/24 400, #333333 `text.primary`; transition transform 0.2s ease, font-size 0.2s ease, left 0.2s ease; before 100% x calc(50% + 2px); bg #fffef2 `action.outline` |
 
 Child layers: label::before 100%xcalc(50% + 2px) background #fffef2 `action.outline` radius 4px 4px 0px 0px
 
@@ -340,11 +342,11 @@ Child layers: span::after 16pxx16px background #000000 `text.black`; label::befo
 
 <a id="category-title"></a>`category-title`, on skincare. The Skin Care landing title.
 
-<img src="components/crops/category-title-default.png" alt="Category title, default" height="51"> 
+<img src="components/crops/category-title-default.png" alt="Category title, default" height="38"> 
 
 | State | Values |
 |---|---|
-| default | size 64.89 x 50.8; background transparent; text SuisseIntl-Medium 14/16.8 400, #333333 `text.primary` |
+| default | size 1170 x 37.5; background transparent; text SuisseIntl 30/37.5 400, #fffef2 `text.onDark` |
 
 #### Category card
 
@@ -354,7 +356,7 @@ Child layers: span::after 16pxx16px background #000000 `text.black`; label::befo
 
 | State | Values |
 |---|---|
-| default | size 72.8 x 26.8; padding 4px 8px 4px 4px; border 1px solid #bcbbb4 `text.muted`; radius 4px; background #fffef2 `action.outline`; text SuisseIntl 14/16.8 400, #333333 `text.primary`; transition background 0.3s ease, color 0.3s ease, border 0.3s ease |
+| default | size 72.8 x 26.8; padding 4px 8px 4px 4px; border 1px solid #bcbbb4 `color.muted`; radius 4px; background #fffef2 `action.outline`; text SuisseIntl 14/16.8 400, #333333 `text.primary`; transition background 0.3s ease, color 0.3s ease, border 0.3s ease |
 | hover | border 1px solid #252525 `background.dark`; background #f6f5e8 `background.inset` |
 
 #### Filter group row
@@ -393,7 +395,7 @@ Child layers: span::after 16pxx16px background #333333 `action.primary`
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 72.8 x 26.8; padding 4px 8px 4px 4px; border 1px solid #bcbbb4 `text.muted`; radius 4px; background #fffef2 `action.outline`; text SuisseIntl 14/16.8 400, #333333 `text.primary`; transition background 0.3s ease, color 0.3s ease, border 0.3s ease |
+| default (same: focus-visible) | size 72.8 x 26.8; padding 4px 8px 4px 4px; border 1px solid #bcbbb4 `color.muted`; radius 4px; background #fffef2 `action.outline`; text SuisseIntl 14/16.8 400, #333333 `text.primary`; transition background 0.3s ease, color 0.3s ease, border 0.3s ease |
 | hover, pressed | border 1px solid #252525 `background.dark`; background #f6f5e8 `background.inset` |
 
 #### Category product tile
@@ -470,7 +472,7 @@ A product detail page: breadcrumbs over a two-column canvas (gallery left, purch
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 409.5 x 48; padding 13px 24px 12px 24px; border 1px solid transparent; background #333333 `action.primary`; text SuisseIntl-Medium 14/21 400, #fffef2 `text.onDark`; transition background-color 0.25s ease-out, color 0.25s ease-out |
+| default (same: focus-visible) | size 409.5 x 48; padding 13px 24px 12px 24px; border 1px solid transparent; background #333333 `action.primary`; text SuisseIntl-Medium 14/21 400, #fffef2 `text.onDark`; transition background-color 0.25s ease-out, color 0.25s ease-out; before 14px x 14px; bg #fffef2 `action.outline`; after 0px x 0px |
 | hover, pressed | background #252525 `background.dark` |
 
 #### Quantity control
@@ -491,17 +493,6 @@ A product detail page: breadcrumbs over a two-column canvas (gallery left, purch
 
 Child layers: button::before 15pxx40px background #333333 `action.primary`; button::before 15pxx40px background #333333 `action.primary`
 
-#### Accordion row
-
-<a id="accordion"></a>`accordion`, on pdp. An expandable information row on the PDP (usage, ingredients, shipping).
-
-<img src="components/crops/accordion-default.png" alt="Accordion row, default" height="51"> <img src="components/crops/accordion-hover.png" alt="Accordion row, hover" height="51"> <img src="components/crops/accordion-focus-visible.png" alt="Accordion row, focus-visible" height="51"> <img src="components/crops/accordion-pressed.png" alt="Accordion row, pressed" height="51"> 
-
-| State | Values |
-|---|---|
-| default (same: focus-visible) | size 64.89 x 50.8; padding 17px; background transparent; text SuisseIntl-Medium 14/16.8 400, #333333 `text.primary` |
-| hover, pressed | text SuisseIntl-Medium 14/16.8 700, #333333 `text.primary` |
-
 #### Service line
 
 <a id="info-row"></a>`info-row`, on pdp. A service message near the purchase bar (complimentary shipping, samples).
@@ -520,9 +511,19 @@ Child layers: button::before 15pxx40px background #333333 `action.primary`; butt
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 173 x 46.5; background transparent; text SuisseIntl 11/16.5 400, #666666 |
+| default (same: hover, focus-visible, pressed) | size 173 x 46.5; background transparent; text SuisseIntl 11/16.5 400, #666666 `text.muted` |
 
 Child layers: a 66.9x25 background #fffef2 `action.outline` border 1px solid #333333 `border.default`; a 97.5x25 background #fffef2 `action.outline` border 1px solid #fffef2 `border.light`; button 0x0 background #fffef2 `action.outline`
+
+#### Accordion row
+
+<a id="accordion"></a>`accordion`, on mobile-pdp. An expandable information row on the PDP (Description). The block carries h-hide-for-large — desktop never paints it — so this is measured on the mobile PDP at 390.
+
+<img src="components/crops/accordion-default.png" alt="Accordion row, default" height="49"> 
+
+| State | Values |
+|---|---|
+| default | size 360 x 49; padding 14px 60px 14px 0px; background transparent; text SuisseIntl-Medium 14/21 400, #333333 `text.primary` |
 
 ### Panels and overlays
 
@@ -542,7 +543,7 @@ The overlays: the search disclosure under the nav, the right-hand My cart drawer
 
 | State | Values |
 |---|---|
-| default (same: focused, filled) | size 960.66 x 40; padding 0px 10px; background #fffef2 `action.outline`; transition box-shadow 0.2s ease, border-color 0.2s ease-in-out; placeholder #666666 |
+| default (same: focused, filled) | size 960.66 x 40; padding 0px 10px; background #fffef2 `action.outline`; transition box-shadow 0.2s ease, border-color 0.2s ease-in-out; placeholder #666666 `text.muted` |
 
 #### Search close button
 
@@ -552,7 +553,9 @@ The overlays: the search disclosure under the nav, the right-hand My cart drawer
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 140 x 50.8; padding 16px; border L: 2px solid #ebeade `border.secondary`; background #fffef2 `action.outline`; text SuisseIntl 14/16.8 700, #333333 `text.primary`; transition background 0.5s ease-out, color 0.5s ease-out |
+| default (same: focus-visible) | size 140 x 50.8; padding 16px; border L: 2px solid #ebeade `border.secondary`; background #fffef2 `action.outline`; text SuisseIntl 14/16.8 700, #333333 `text.primary`; transition background 0.5s ease-out, color 0.5s ease-out; before 12px x 12px; bg #666666 `text.muted`; after 138px x 2px; border 1px solid #fffef2 `border.light` |
+| hover | before 12px x 12px; bg #343434 |
+| pressed | before 12px x 12px; bg #363636 |
 
 #### Cart drawer
 
@@ -637,7 +640,7 @@ The store locator: Find a store title, an address field with a floating label, G
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 116.13 x 21; background transparent; text SuisseIntl-Medium 14/21 400, #000000 `text.black` |
+| default (same: hover, focus-visible, pressed) | size 116.13 x 21; background transparent; text SuisseIntl-Medium 14/21 400, #000000 `text.black`; before 16px x 16px; bg #333333 `action.primary` |
 
 Child layers: button::before 16pxx16px background #333333 `action.primary`
 
@@ -649,7 +652,7 @@ Child layers: button::before 16pxx16px background #333333 `action.primary`
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 178.13 x 40; padding 0px 45px 0px 20px; border 1px solid rgba(51, 51, 51, 0.2) `border.field`; background #fffef2 `action.outline`; text SuisseIntl 14/40 400, #333333 `text.primary`; transition box-shadow 0.2s ease, border-color 0.2s ease-in-out |
+| default (same: focus-visible) | size 178.13 x 40; padding 0px 45px 0px 20px; border 1px solid rgba(51, 51, 51, 0.2) `border.field`; background #fffef2 `action.outline`; text SuisseIntl 14/40 400, #333333 `text.primary`; transition box-shadow 0.2s ease, border-color 0.2s ease-in-out; after 22px x 22px; bg #333333 `action.primary` |
 | hover, pressed | border 1px solid #333333 `border.default`; shadow #333333 0px 0px 0px 1px inset; text SuisseIntl 14/40 500, #000000 `text.black` |
 
 #### Map/Satellite toggle
@@ -740,7 +743,7 @@ The Demandware sign-in page (Login-Show): My Account heading, full-width email a
 
 | State | Values |
 |---|---|
-| default (same: focus-visible) | size 130.39 x 16; background transparent; text SuisseIntl 12/18 400, #333333 `text.primary` |
+| default (same: focus-visible) | size 130.39 x 16; background transparent; text SuisseIntl 12/18 400, #333333 `text.primary`; decoration underline |
 | hover, pressed | text SuisseIntl 12/18 400, #000000 `text.black` |
 
 ### Mobile (390 wide)
@@ -765,7 +768,7 @@ The same storefront at 390: the header collapses to Stores, wordmark and My cart
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 50 x 52; padding 18px 16px 10px 10px; background transparent; text SuisseIntl 12/normal 400, #000000 `text.black` |
+| default (same: hover, focus-visible, pressed) | size 50 x 52; padding 18px 16px 10px 10px; background transparent; text SuisseIntl 12/normal 400, #000000 `text.black`; before 20px x 20px; bg #333333 `action.primary` |
 
 Child layers: button::before 20pxx20px background #333333 `action.primary`
 

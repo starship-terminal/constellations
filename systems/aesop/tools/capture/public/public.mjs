@@ -114,8 +114,12 @@ const desktop = {
   pdp: { resolve: (b) => resolvePdp(b, false), run: async (p, S) => {
     await killGeo(p);
     await S.view('default');
+    // The PDP's information accordion only paints at phone widths
+    // (h-hide-for-large); nothing matches here at 1440 and the shot is taken
+    // in the mobile run instead — a page-wide "accordion" match used to open
+    // the header nav's flyout instead.
     await step('accordion', async () => {
-      const acc = p.locator('[class*="accordion" i] button, button[class*="accordion" i], [data-js-accordion-control]').filter({ visible: true }).first();
+      const acc = p.locator('.c-accordion__title').filter({ visible: true }).first();
       if (await acc.count()) { await clickEl(acc); await wait(p, 1200); await S.view('accordion'); }
     });
     await S.full();
@@ -153,7 +157,12 @@ const mobile = {
   } },
   shopall: { path: '/shop-all/', run: async (p, S) => { await S.view('default'); await S.full(); } },
   pdp: { resolve: (b) => resolvePdp(b, true), run: async (p, S) => {
-    await S.view('default'); await S.full();
+    await S.view('default');
+    await step('accordion', async () => {
+      const acc = p.locator('.c-accordion__title').filter({ visible: true }).first();
+      if (await acc.count()) { await clickEl(acc); await wait(p, 1200); await S.view('accordion'); }
+    });
+    await S.full();
   } },
 };
 

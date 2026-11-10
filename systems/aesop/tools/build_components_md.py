@@ -183,24 +183,82 @@ def props(v):
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "backdrop", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "backdrop", "outline", "text", "decoration", "transition", "transform", "opacity", "icon", "placeholder", "before", "after", "layers"]
+
+
+def painted(v):
+    """The parts of a state props() never sees: the ::before/::after boxes and
+    the svg icon. state_rows compares them per state so a hover underline or an
+    icon recolour is not collapsed into "same"."""
+    o = {}
+    for pe, key in (("::before", "before"), ("::after", "after")):
+        p = v.get(pe)
+        if not p:
+            continue
+        bits = [f"{p['width']} x {p['height']}"]
+        if p.get("backgroundColor") and p["backgroundColor"] != "rgba(0, 0, 0, 0)":
+            bits.append("bg " + colour(p["backgroundColor"]))
+        if p.get("backgroundImage") and p["backgroundImage"] != "none":
+            bits.append("image " + colour(p["backgroundImage"])[:100])
+        if float((p.get("borderTopWidth") or "0px").replace("px", "") or 0) > 0 and p.get("borderTopStyle") != "none":
+            bits.append(f"border {p['borderTopWidth']} {p['borderTopStyle']} {colour(p['borderTopColor'], role='border')}")
+        if p.get("boxShadow") and p["boxShadow"] != "none":
+            bits.append("shadow " + colour(p["boxShadow"], tokens=False)[:120])
+        o[key] = "; ".join(bits)
+    ic = v.get("icon")
+    if ic:
+        o["icon"] = f"{ic['w']} x {ic['h']}, colour {colour(ic['color'], role='icon')}"
+        if ic.get("fill") and ic["fill"] not in ("none", ic["color"]):
+            o["icon"] += f", fill {colour(ic['fill'], role='icon')}"
+    return o
+
+
+def layer_str(p):
+    bits = [re.sub(r"\..*$", "", p["node"]) if "::" not in p["node"] else p["node"].split(".")[0],
+            p["size"].replace(".0x", "x").replace(".0", "")]
+    if p.get("bg"):
+        bits.append("background " + colour(p["bg"]))
+    if p.get("border"):
+        bits.append("border " + colour(p["border"].split(" | ")[0][2:], role="border"))
+    if p.get("radius"):
+        bits.append("radius " + p["radius"])
+    if p.get("shadow"):
+        bits.append("shadow " + colour(p["shadow"]))
+    if p.get("bgImage"):
+        bits.append("image " + colour(p["bgImage"])[:120])
+    return " ".join(bits)
+
+
+def child_sig(v):
+    """The paint layers inside the component, minus the root itself and the
+    pseudo-elements the 'before'/'after' rows already report."""
+    root = v.get("tag", "") + "".join("." + c for c in (v.get("classes") or "").split()[:2])
+    return [layer_str(p) for p in v.get("paint", []) if p["node"] != root and "::" not in p["node"]]
 
 
 def state_rows(c):
-    """The first state lists every value; later rows list only what changed."""
+    """The first state lists every value; later rows list only what changed,
+    ::before/::after, icon and child paint included."""
     rows = []
     states = [s for s, v in c["states"].items() if "style" in v]
     if not states:
         return rows
-    base = props(c["states"][states[0]])
+    base_v = c["states"][states[0]]
+    base = {**props(base_v), **painted(base_v)}
+    base_sig = child_sig(base_v)
     rows.append((states[0], base))
     same = []
     for st in states[1:]:
-        p = props(c["states"][st])
+        v = c["states"][st]
+        p = {**props(v), **painted(v)}
         diff = {k: p[k] for k in ORDER if k in p and p.get(k) != base.get(k)}
         for k in ORDER:
             if k in base and k not in p:
                 diff[k] = "none"
+        sig = child_sig(v)
+        if sig != base_sig:
+            changed = [s2 for i, s2 in enumerate(sig) if i >= len(base_sig) or s2 != base_sig[i]]
+            diff["layers"] = "; ".join(changed[:3])
         if not diff:
             same.append(st)
             continue
@@ -226,18 +284,7 @@ def child_layers(c):
         return None
     out = []
     for p in st["paint"][:3]:
-        bits = [re.sub(r"\..*$", "", p["node"]) if "::" not in p["node"] else p["node"].split(".")[0], p["size"].replace(".0x", "x").replace(".0", "")]
-        if p.get("bg"):
-            bits.append("background " + colour(p["bg"]))
-        if p.get("border"):
-            bits.append("border " + colour(p["border"].split(" | ")[0][2:], role="border"))
-        if p.get("radius"):
-            bits.append("radius " + p["radius"])
-        if p.get("shadow"):
-            bits.append("shadow " + colour(p["shadow"]))
-        if p.get("bgImage"):
-            bits.append("image " + colour(p["bgImage"])[:120])
-        out.append(" ".join(bits))
+        out.append(layer_str(p))
     return "; ".join(out).replace("|", "/")
 
 
@@ -259,7 +306,7 @@ PAGE_DESC = [
     ("home", "Home. The hero, product rows and footer. Captured at rest, search open, sign-up modal, cart drawer, nav hover, and full-page.", "/"),
     ("shopall", "Shop all, the catalogue page. Captured at rest, filters rail open, and full-page.", "/shop-all/"),
     ("skincare", "The Skin Care category landing.", "/skin-care/"),
-    ("pdp", "A product page (The Aesop Valise, APB399). Captured at rest, an accordion open, and full-page.", "/gifts/seasonal-gift-kits/the-aesop-valise/APB399.html"),
+    ("pdp", "A product page (The Aesop Valise, APB399). Captured at rest and full-page; its information accordion only renders at phone widths, so the open shot lives on the mobile capture.", "/gifts/seasonal-gift-kits/the-aesop-valise/APB399.html"),
     ("stores", "The store locator.", "/stores"),
     ("cart", "The cart route, empty.", "/cart"),
     ("login", "The Demandware sign-in page.", "/on/demandware.store/Sites-aesop-us-Site/en_US/Login-Show"),
@@ -302,7 +349,7 @@ W()
 W("How to read an entry:")
 W()
 W("- A colour is its value followed by the token in [tokens.json](tokens.json) whose value is the same, when there is one. Text is written family size/line-height weight, then its colour, for example `SuisseIntl 12/20 400, #000000`, and is read from the first text node inside the component.")
-W("- The first state of each entry lists every value; later states list only what changed. A state identical to the first is named in its label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
+W("- The first state of each entry lists every value; later states list only what changed, pseudo-elements and child paint included — a hover underline or a recoloured icon shows as `before`, `after`, `icon` or `layers` in the row. A state identical to the first is named in its label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
 W(f"- Crops are images of the component in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
 W()
 W("## Discovery list")
@@ -323,7 +370,7 @@ OVER = [
     ("Email sign up modal", "home", "the Email sign up button", "[home-light-signup](screenshots/home-light-signup.png), [signup-dialog](#signup-dialog)"),
     ("My cart drawer", "home", "the My cart button", "[home-light-cart](screenshots/home-light-cart.png), [cart-panel](#cart-panel)"),
     ("Filter rail", "PLP", "the All filters button", "[shopall-light-sort](screenshots/shopall-light-sort.png), [filter-panel](#filter-panel)"),
-    ("Accordion opened", "PDP", "a PDP accordion row", "[pdp-light-accordion](screenshots/pdp-light-accordion.png)"),
+    ("PDP information accordion", "PDP at 390", "the Description row on the mobile product page — the block carries h-hide-for-large, so desktop never paints it", "[mobile-pdp-light-accordion](screenshots/mobile-pdp-light-accordion.png), [accordion](#accordion)"),
     ("Mobile burger drawer", "home at 390", "the burger button", "[mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [m-menu-drawer](#m-menu-drawer)"),
 ]
 for row in OVER:
@@ -372,6 +419,10 @@ for cid, c in C.items():
         hovers[f"text {colour(a['style']['color'], role='text')} to {colour(b['style']['color'], role='text')}"] += 1
     elif a["style"]["borderTopColor"] != b["style"]["borderTopColor"]:
         hovers[f"border {colour(a['style']['borderTopColor'], role='border')} to {colour(b['style']['borderTopColor'], role='border')}"] += 1
+    elif a["style"]["fontWeight"] != b["style"]["fontWeight"]:
+        hovers[f"weight {a['style']['fontWeight']} to {b['style']['fontWeight']}"] += 1
+    elif painted(a) != painted(b):
+        hovers["a painted ::before/::after or icon change"] += 1
     else:
         hovers["no change on the element"] += 1
 
@@ -380,17 +431,17 @@ def top(ctr, n):
     return ", ".join(f"{k} ({v})" for k, v in ctr.most_common(n))
 
 
-W(f"**Radius.** {top(radii, 5) if radii else 'none — every corner on the site is 0px'}. The single curve is the filter rail's 10px radio dot (`border-radius:100%` on a `::before`).")
+W(f"**Radius.** {top(radii, 5) if radii else 'none — every corner on the site is 0px'}. 4px rounds the category quicklink pills and the floating label tabs of the size selects, 2px the Map/Satellite toggle, and the filter toggle's count dot is a 50% circle — every control edge stays square.")
 W()
-W(f"**Hover.** Acne hovers with colour, never fills or shadows: {top(hovers, 8)}. Black fills (LOAD MORE, CONTINUE, SHOW N ITEMS) flip to Acne blue; blue fills (ADD TO BAG) deepen to {colour('rgb(5, 21, 116)')}; blue links deepen the same way; black labels (nav, FILTER, Menu) grey to {colour('rgb(107, 107, 107)', role='text')}.")
+W(f"**Hover.** {top(hovers, 8)}. A hover stays quiet: the nav link goes bold and grows a 3px ink underline under its label (a `::before` bar), footer links pick up an underline, the ink buttons (ADD TO CART, the sign-in submit) deepen from #333333/#393939 to #252525, the quicklink pills go from a muted border to an ink keyline on a {colour('rgb(246, 245, 232)')} fill, the Search disclosure's Close icon dot darkens (#666666 to #343434), and the hero CTA card fills cream with ink text.")
 W()
-W(f"**Focus.** Of {focus_n} elements given a real keyboard focus: {top(focus, 6)}. The ring Acne does draw is a 1px solid keyline 3px inside the control — white on the black/blue buttons, deep blue on the white wishlist button, black on the size cells. Text links show no ring.")
+W(f"**Focus.** Of {focus_n} elements given a real keyboard focus: {top(focus, 6)}. Aesop paints no focus ring — the computed outlineWidth stays 0 on every measured control; focus is at most the hover's colour shift.")
 W()
-W(f"**Motion.** {top(trans, 6) if trans else 'Instant: every measured control reports transition-duration 0s — hover, focus and pressed changes have no easing'}. The only transitions the stylesheet carries are the drawers' 150ms padding-bottom safe-area slide, the accordions' 200ms max-height reveal and a 500ms fade on campaign layers, none on the controls themselves.")
+W(f"**Motion.** {top(trans, 6) if trans else 'Instant: every measured control reports transition-duration 0s'}. Eases are short and gentle: 0.5s ease-out colour fades on the header controls, 0.2s ease on field keylines, 0.25s ease-out on the ink buttons and CTA card, 0.3s on the quicklink pills. The stylesheets add a 0.1s max-height reveal on accordions and navigation groups and a 0.4s padding slide on the sliding content panels.")
 W()
-W("**Layout.** The header is a 60px rail (45px at 390); every page is a 1440-wide fluid grid of 4-px-base cells (`as-cell`). Primary buttons and the email fields share one 60px height; the small search field, menu links, suggestions and gift-guide bars are 30px rows; size cells are 77 x 45; every right-side drawer is 360 wide with a 45px head. Hairline 1px rules in #f2f2f2 (or black on drawers and the mega-menu's top edge) separate everything — several are painted as 1px background gradients rather than borders.")
+W("**Layout.** The header is a two-tier rail — a 30px utility row over a 50.8px nav row (50px at 390) — above a fluid grid. Fields are 40px, buttons and CTA cards 48px, the cart drawer 405px, the filter rail 400px and the sign-up dialog 970px; the hero band runs 720px tall at 1440. Hairline 1px keylines in ink or `color.creamDark` separate everything — several are painted as 1px box-shadows rather than borders.")
 W()
-W("**Accent.** Acne blue (#0018a8) is the only accent: every text link, the ADD TO BAG fill, the wishlist border, the picked size cell's border and fill, the geo selector, and the hover step of every black button. Its deeper step #051574 is hover-only. Everything else is black, white or one of four warm greys.")
+W("**Accent.** One accent only: the tannin amber #945c26 (`color.amber`), on tile badges (New addition, Beloved formulation), promos and inline links. Everything else is ink — #333333 for text, keylines and the dark fills, #252525/#393939 for the deep and soft steps — on the cream grounds #fffef2, #ebeade and #f6f5e8.")
 W()
 
 

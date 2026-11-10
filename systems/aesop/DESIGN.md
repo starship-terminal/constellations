@@ -12,7 +12,7 @@ colors:
   neutral: "#fffef2"
   surface: "#ebeade"
   on-surface: "#333333"
-  on-surface-variant: "#bcbbb4"
+  on-surface-variant: "#666666"
   outline: "#333333"
   background-page: "#fffef2"
   background-surface: "#ebeade"
@@ -20,7 +20,7 @@ colors:
   background-header: "rgba(255, 254, 242, 0.686)"
   background-dark: "#252525"
   text-primary: "#333333"
-  text-muted: "#bcbbb4"
+  text-muted: "#666666"
   text-onDark: "#fffef2"
   text-accent: "#945c26"
   text-black: "#000000"
@@ -127,7 +127,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 - **neutral (#fffef2):** `light.background.page`
 - **surface (#ebeade):** `light.background.surface`
 - **on-surface (#333333):** `light.text.primary`
-- **on-surface-variant (#bcbbb4):** `light.text.muted`
+- **on-surface-variant (#666666):** `light.text.muted`
 - **outline (#333333):** `light.border.default`
 
 ## Typography

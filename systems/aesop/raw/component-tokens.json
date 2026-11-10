@@ -10,7 +10,8 @@
       "creamDark": { "type": "color", "value": "rgb(235, 234, 222)", "source": "computed borderTopColor of search-button, search-close defaults (raw/components-computed.json)", "description": "The deeper cream of secondary fills and hairlines." },
       "creamAlt": { "type": "color", "value": "rgb(246, 245, 232)", "source": "computed backgroundColor on interior surface sections (raw/components-computed.json)", "description": "A mid cream for inset bands." },
       "creamHover": { "type": "color", "value": "rgb(252, 251, 239)", "source": "computed color of login-submit default (raw/components-computed.json)", "description": "The light ink of the sign-in submit." },
-      "muted": { "type": "color", "value": "rgb(188, 187, 180)", "source": "computed color of disabled/muted text nodes (raw/components-computed.json)", "description": "Muted grey-beige for secondary text." },
+      "muted": { "type": "color", "value": "rgb(188, 187, 180)", "source": "computed borderTopColor of category-card and category-quicklink defaults (raw/components-computed.json)", "description": "The muted grey-beige keyline the quicklink pills rest in; it deepens to inkDeep on hover." },
+      "mutedText": { "type": "color", "value": "rgb(102, 102, 102)", "source": "computed color of the variant-box 'Select a size' label and backgroundColor of the search-close icon dot (raw/components-computed.json)", "description": "Secondary-label grey; the only muted text measured on the public pages." },
       "amber": { "type": "color", "value": "rgb(148, 92, 38)", "source": "computed color of tile-badge default (New addition, Beloved formulation) and 'Learn more' links (raw/components-computed.json)", "description": "The one accent: a tannin amber for badges, promos and inline links." },
       "black": { "type": "color", "value": "rgb(0, 0, 0)", "source": "computed color of stores-title, m-menu-button, m-nav-item (raw/components-computed.json)", "description": "True black, used sparingly: locator title, mobile drawer items." },
       "white": { "type": "color", "value": "rgb(255, 255, 255)", "source": "computed backgroundColor on a few interior controls (raw/components-computed.json)" },
@@ -113,7 +114,7 @@
       }
     },
     "breakpoint": {
-      "mobile": { "type": "dimension", "value": "390px", "source": "the width at which the burger menu replaces the nav row" }
+      "mobile": { "type": "dimension", "value": "390px", "source": "derived, not captured: the phone width the mobile group was measured at; the exact viewport at which the burger menu replaces the nav row was not swept" }
     }
   },
   "light": {
@@ -127,7 +128,7 @@
     },
     "text": {
       "primary": { "type": "color", "value": "{color.ink}", "source": "computed color of nearly every measured text node" },
-      "muted": { "type": "color", "value": "{color.muted}", "source": "computed color of secondary text" },
+      "muted": { "type": "color", "value": "{color.mutedText}", "source": "computed color of secondary labels: the variant-box 'Select a size' line and the search-close icon" },
       "onDark": { "type": "color", "value": "{color.cream}", "source": "computed color of footer-link, footer-col-title, add-to-cart, hero-cta on dark fills" },
       "accent": { "type": "color", "value": "{color.amber}", "source": "computed color of tile-badge and promo links" },
       "black": { "type": "color", "value": "{color.black}", "source": "computed color of stores-title and mobile drawer items" }
