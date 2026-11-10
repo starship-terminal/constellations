@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/c556ab50-a242-4854-9395-450c0004bac5",
   "source_url": "https://replit.com",
   "extracted_at": "2026-06-03T19:20:26.750Z",
-  "fetched_at": "2026-10-20T08:22:18Z",
+  "fetched_at": "2026-11-08T04:20:45Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/80531c90-9e07-4340-8503-53e559340fb2.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/dab76300-dbba-4df7-98f3-9489115f5546.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/f9d0cf01-49ce-4c70-86c7-676aac7e420a.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/eb9a3beb-81ad-498e-8550-08746649cb96.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

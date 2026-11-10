@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/ab7996ed-e0ed-40a0-81a5-d37f19ef35b0",
   "source_url": "https://mrpops.ua/en",
   "extracted_at": "2026-06-03T19:46:54.155Z",
-  "fetched_at": "2026-10-20T08:22:06Z",
+  "fetched_at": "2026-11-08T04:20:32Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/dfc0ab0b-73f1-4c13-8d16-9001c39787fe.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/6afe77c2-ce42-4d0f-87da-9c27f2d0a09c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/3ea25349-0953-4170-ae4a-75cf4cd0f0ee.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0e9ba53c-0b3e-4bde-baf3-5a7426756b41.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

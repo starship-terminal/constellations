@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/973332dc-4e10-4e90-85d8-3bce9c3cd3ed",
   "source_url": "https://socio-type.com",
   "extracted_at": "2026-06-03T14:59:19.335Z",
-  "fetched_at": "2026-10-20T08:25:07Z",
+  "fetched_at": "2026-11-08T04:20:50Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/4dab43bc-8ccd-490b-b315-4f72fed3759c.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/8317a84f-7488-445f-94b4-fbe7123cafe3.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/993de67a-e375-440d-92ec-010090c4292e.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0f7692a5-7551-4f59-866a-903999e398b8.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/9c60e0a4-a702-49af-9fc1-52edbc9dd902",
   "source_url": "https://thefascination.com",
   "extracted_at": "2026-06-03T21:54:22.676Z",
-  "fetched_at": "2026-10-20T08:23:25Z",
+  "fetched_at": "2026-11-08T04:20:58Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/4e912400-4313-497e-a5ca-40ec127bdfc4.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/2318d650-b229-4be0-9adc-9f17cecfd253",
   "source_url": "https://newgenre.studio",
   "extracted_at": "2026-06-03T16:09:05.659Z",
-  "fetched_at": "2026-10-20T08:24:57Z",
+  "fetched_at": "2026-11-08T04:20:33Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/c092cd73-7fe5-442f-9094-9e1d4ce3771a.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/08054746-9c8e-4467-8932-602ffb4cb8ec.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/269ea5cc-cffc-4a5a-be85-f60707a3eed7.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/ed5e3dcc-8656-49a2-aa28-d4c3cd06fdab.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

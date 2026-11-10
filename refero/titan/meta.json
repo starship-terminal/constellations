@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/964b9215-396b-492c-abec-7bd778d7b1c9",
   "source_url": "https://www.titan.com",
   "extracted_at": "2026-07-03T03:22:10.162Z",
-  "fetched_at": "2026-10-20T08:21:35Z",
+  "fetched_at": "2026-11-08T04:20:59Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/c72adccf-b427-4b8b-bfc6-413fc1091ac9.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/2a73c66d-ba33-437b-8b35-5e38a4565235.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/5c48a27e-2a74-4b77-b337-3b9b7518b631.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/f3032863-236e-460b-b7c5-23b8a1a6a3b8.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

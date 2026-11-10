@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/bce52fd3-ac16-4e67-a45f-78bfc2350aad",
   "source_url": "https://www.tripolis-park.com",
   "extracted_at": "2026-06-03T22:06:49.735Z",
-  "fetched_at": "2026-10-20T08:21:42Z",
+  "fetched_at": "2026-11-08T04:21:00Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/3aae7f2d-ff2a-4873-a7d5-8298769de90d.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/365a4e3f-4382-47cd-a4f5-9981a1435ff2.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/95f2f268-8258-4f97-b4f6-99fd71e001be.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/06324554-a8cc-4b27-bc53-ce256ead8469.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

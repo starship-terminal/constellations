@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/8f42603d-7ff9-446e-99a3-6bdd1f388ae5",
   "source_url": "https://www.frontify.com/en",
   "extracted_at": "2026-06-03T17:43:54.070Z",
-  "fetched_at": "2026-10-20T08:24:40Z",
+  "fetched_at": "2026-11-08T04:20:11Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d73b5366-b19e-4f9f-a376-58f5c3e51a03.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/51097b89-2c4e-4e05-a7ad-a7456a7f7236.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/556e40e9-7fc6-488d-b6bb-ed2f705bed8d.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b9bc0361-dc0e-47ed-b8be-459d7a8570b7.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

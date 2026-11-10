@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/667c59e3-aaba-46e8-a2b3-255254328b6e",
   "source_url": "https://endlesstools.io",
   "extracted_at": "2026-06-03T20:50:34.817Z",
-  "fetched_at": "2026-10-20T08:23:41Z",
+  "fetched_at": "2026-11-08T04:20:05Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5b53b7ed-f189-4181-a84d-e5b298286d20.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/b0181a2d-14e4-413e-8e5e-38392fdcc608.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/78697a96-d0da-47be-ba7f-ffc829ce9a0c.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/5bea33f4-8fe2-4721-a906-87453884db1b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

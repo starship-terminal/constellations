@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/e9001d5a-504d-47ed-aef0-d0d35fa86418",
   "source_url": "https://trustditto.com",
   "extracted_at": "2026-06-03T18:10:42.858Z",
-  "fetched_at": "2026-10-20T08:24:32Z",
+  "fetched_at": "2026-11-08T04:20:01Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/309849f2-fdbf-4e31-b79f-f75fb5f7c014.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a738b338-7e9c-4a31-a05c-087dc763a531.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/028632d9-a967-4a3a-bbba-9b2058669d13.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/a13774c0-68bb-43c8-b4de-6b7e189648a1.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

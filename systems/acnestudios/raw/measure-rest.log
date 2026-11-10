@@ -1,0 +1,152 @@
+03:28:10 open woman 
+03:28:17    subnav-link default 94.59x30
+03:28:18    subnav-link hover 94.59x30
+03:28:19    subnav-link focus-visible 94.59x30
+03:28:19    subnav-link pressed 94.59x30
+03:28:20    plp-title default 1440x30
+03:28:21    filter-toggle default 83.47x30
+03:28:22    filter-toggle hover 83.47x30
+03:28:22    filter-toggle focus-visible 83.47x30
+03:28:23    filter-toggle pressed 83.47x30
+03:28:24    product-card default 360x590
+03:28:26    product-card hover 360x590
+03:28:26    product-card-name default 287.88x20
+03:28:27    product-card-price default 52.13x20
+03:28:28    load-more default 320x60
+03:28:30    load-more hover 320x60
+03:28:31    load-more focus-visible 320x60
+03:28:32    load-more pressed 320x60
+03:28:33    footer default 1440x572
+03:28:34    newsletter-label default 430x20
+03:28:35    newsletter-field default 430x60
+03:28:36    newsletter-field focused 430x60
+03:28:37    newsletter-field filled 430x60
+03:28:39    footer-col-title default 340x20
+03:28:40    footer-link default 340x24
+03:28:41    footer-link hover 340x24
+03:28:42    footer-link focus-visible 340x24
+03:28:43    footer-link pressed 340x24
+03:28:44    social-link default 33.45x30
+03:28:45    social-link hover 33.45x30
+03:28:46    social-link focus-visible 33.45x30
+03:28:47    social-link pressed 33.45x30
+03:28:48    geo-selector default 227.52x20
+03:28:50    geo-selector hover 227.52x20
+03:28:51    geo-selector focus-visible 227.52x20
+03:28:52    geo-selector pressed 227.52x20
+03:28:52 open pdp 
+03:29:05    breadcrumbs default 1440x31
+03:29:06    breadcrumb-link default 85.8x30
+03:29:07    breadcrumb-link hover 85.8x30
+03:29:08    breadcrumb-link focus-visible 85.8x30
+03:29:09    breadcrumb-link pressed 85.8x30
+03:29:10    pdp-title default 345x20
+03:29:11    pdp-price default 115x20
+03:29:12    pdp-color default 68x17
+03:29:13   ! missing fit-predictor 
+03:29:13    size-guide-link default 106.19x49
+03:29:15    size-guide-link hover 106.19x49
+03:29:16    size-guide-link focus-visible 106.19x49
+03:29:17    size-guide-link pressed 106.19x49
+03:29:18    size-cell default 77.34x45
+03:29:20    size-cell hover 77.34x45
+03:29:21    size-cell focus-visible 77.34x45
+03:29:22    size-cell pressed 77.34x45
+03:29:23    size-cell-selected default 77.33x45
+03:29:24    add-to-bag default 400x60
+03:29:33   ! add-to-bag hover locator.evaluate: Timeout 8000ms exceeded.
+Call log:
+  - waiting for locator('button.action--primary.action--color-blue'
+03:29:42   ! add-to-bag focus-visible locator.evaluate: Timeout 8000ms exceeded.
+Call log:
+  - waiting for locator('button.action--primary.action--color-blue'
+03:29:43    add-to-bag pressed 400x60
+03:29:44    wishlist-button default 60x60
+03:29:45    wishlist-button hover 60x60
+03:29:46    wishlist-button focus-visible 60x60
+03:29:47    wishlist-button pressed 60x60
+03:29:48    info-row default 460x50
+03:29:50    info-row hover 460x50
+03:29:51    description default 250x40
+03:29:51    show-more default 460x30
+03:29:53    show-more hover 460x30
+03:29:54    show-more focus-visible 460x30
+03:29:55    show-more pressed 460x30
+03:29:56    footer default 1440x572
+03:29:57    newsletter-label default 430x20
+03:29:58    newsletter-field default 430x60
+03:29:59    newsletter-field focused 430x60
+03:30:00    newsletter-field filled 430x60
+03:30:02    footer-col-title default 340x20
+03:30:03    footer-link default 340x24
+03:30:04    footer-link hover 340x24
+03:30:05    footer-link focus-visible 340x24
+03:30:06    footer-link pressed 340x24
+03:30:07    social-link default 33.45x30
+03:30:08    social-link hover 33.45x30
+03:30:09    social-link focus-visible 33.45x30
+03:30:10    social-link pressed 33.45x30
+03:30:11    geo-selector default 227.52x20
+03:30:13    geo-selector hover 227.52x20
+03:30:14    geo-selector focus-visible 227.52x20
+03:30:15    geo-selector pressed 227.52x20
+03:30:15 open search 
+03:30:24    search-panel default 1440x899
+03:30:25    search-field default 430x60
+03:30:29   ! search-field focused locator.click: Timeout 4000ms exceeded.
+Call log:
+  - waiting for locator('input.search-field, input[type="search"], [da
+03:30:34   ! search-field filled locator.click: Timeout 4000ms exceeded.
+Call log:
+  - waiting for locator('input.search-field, input[type="search"], [da
+03:30:35    search-suggestion default 360x30
+03:30:36    search-suggestion hover 360x30
+03:30:37    search-suggestion focus-visible 360x30
+03:30:38    search-suggestion pressed 360x30
+03:30:39 open menu 
+03:30:47    menu-panel default 1440x391
+03:30:48    menu-link default 360x30
+03:30:49    menu-link hover 360x30
+03:30:50    menu-link focus-visible 360x30
+03:30:51    menu-link pressed 360x30
+03:30:52 open filter 
+03:31:00    filter-rail default 360x901
+03:31:01    sort-option default 320x20
+03:31:02    sort-option hover 320x20
+03:31:03    sort-option focus-visible 320x20
+03:31:04    sort-option pressed 320x20
+03:31:05    show-items default 165x44
+03:31:07    show-items hover 165x44
+03:31:08    show-items focus-visible 165x44
+03:31:09    show-items pressed 165x44
+03:31:10    filter-close default 77.48x42
+03:31:11    filter-close hover 77.48x42
+03:31:12    filter-close focus-visible 77.48x42
+03:31:13    filter-close pressed 77.48x42
+03:31:13 open login 
+03:31:21    login-title default 510x20
+03:31:22    login-benefit default 490x20
+03:31:23    login-email default 520x60
+03:31:24    login-email focused 520x60
+03:31:26    login-email filled 520x60
+03:31:28    login-continue default 520x60
+03:31:29    login-continue hover 520x60
+03:31:30    login-continue focus-visible 520x60
+03:31:31    login-continue pressed 520x60
+03:31:32    login-google default 520x60
+03:31:34    login-google hover 520x60
+03:31:35    login-google focus-visible 520x60
+03:31:36    login-google pressed 520x60
+03:31:37    change-location default 97.16x20
+03:31:38    change-location hover 97.16x20
+03:31:39    change-location focus-visible 97.16x20
+03:31:40    change-location pressed 97.16x20
+03:31:40 open home (mobile)
+03:31:47    m-header default 390x45
+03:31:48    m-menu-button default 45x45
+03:31:49    m-menu-button hover 45x45
+03:31:50    m-menu-button focus-visible 45x45
+03:31:50    m-menu-button pressed 45x45
+03:31:52    m-menu-drawer default 390x180
+03:31:55    m-hero default 390x4251
+components: 57

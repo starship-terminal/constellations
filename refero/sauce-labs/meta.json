@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/d271a6c4-942f-4abf-a3de-66795f15f031",
   "source_url": "https://saucelabs.com",
   "extracted_at": "2026-06-03T20:01:57.689Z",
-  "fetched_at": "2026-10-20T08:23:55Z",
+  "fetched_at": "2026-11-08T04:20:47Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/cbe92249-5dbd-4539-8b16-8f8ee3e57c34.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/12353298-cf58-4643-b976-fb3f38ad6dc1.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/53108e2b-3867-4fcb-9d35-3cf7b05b7cc5.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/fdefb2cf-9fff-4dd0-8ba3-1cd67f807e21.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

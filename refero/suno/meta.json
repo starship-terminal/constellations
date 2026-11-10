@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/3b5ff57f-a371-4c7f-82ae-5fc5485da073",
   "source_url": "https://suno.com",
   "extracted_at": "2026-06-03T17:22:36.887Z",
-  "fetched_at": "2026-10-20T08:23:04Z",
+  "fetched_at": "2026-11-08T04:20:54Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/212d0ac3-70a8-48d6-a0c0-9cdaab35f631.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/61ddad42-9b75-4eab-a979-ef38e7d0f691.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/de666020-9995-4dc2-80c4-d26cbd7c6caa.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/99e87f58-a4f8-460f-a3fb-3d32e8967e54.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/9b9b0ca1-5067-4115-b62f-ee0e43d1f37f",
   "source_url": "https://liveblocks.io",
   "extracted_at": "2026-06-03T18:39:31.908Z",
-  "fetched_at": "2026-10-20T08:22:31Z",
+  "fetched_at": "2026-11-08T04:20:26Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/cf19717a-de65-4998-8c45-3d537ba4fcc3.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/8ada97d2-198c-45df-9f6e-726b781d9ab7.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/5ad63d56-4398-4f4a-91a5-392f0f068aee.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/3dcf4448-8cda-4c66-ac0f-e94d35b3dbd2.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

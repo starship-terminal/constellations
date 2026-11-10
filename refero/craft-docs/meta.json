@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/9f228e72-997a-4410-9190-68359028e3d0",
   "source_url": "https://craft.do",
   "extracted_at": "2026-04-11T17:34:08.934Z",
-  "fetched_at": "2026-10-20T08:25:20Z",
+  "fetched_at": "2026-11-08T04:19:35Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/8e18bdc4-071d-4c8c-8f78-18a90f44eb01.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a46cbe24-fe37-4527-bd21-e51c96d43c61.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/bf177d03-1dd1-404a-9dff-615dae084524.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/94b522f4-bc5f-4e89-bd66-c5519def0d91.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": true
 }

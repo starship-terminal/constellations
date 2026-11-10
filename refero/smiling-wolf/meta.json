@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/75be52f8-4dbe-45da-9a0e-a11bc92f6927",
   "source_url": "https://www.smilingwolf.co.uk",
   "extracted_at": "2026-06-03T21:32:41.879Z",
-  "fetched_at": "2026-10-20T08:23:33Z",
+  "fetched_at": "2026-11-08T04:20:50Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/a0168fd6-d22a-4102-89ff-117d4fc08e46.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/b8899cbd-e2ca-4069-83cf-d8f8b0d71100",
   "source_url": "https://bmw.com",
   "extracted_at": "2026-06-03T15:25:48.551Z",
-  "fetched_at": "2026-10-20T08:23:17Z",
+  "fetched_at": "2026-11-08T04:19:51Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b7a1a713-82ac-4e4c-9b6e-3b8f1ffeb16c.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/21f82e54-f211-43de-aaa5-2c61a217066a.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/4d030400-17fe-488e-be06-5d0f3890e65a.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/d4fa4388-be5d-4a85-97c7-e0b5340fc7dc.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

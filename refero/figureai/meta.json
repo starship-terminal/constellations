@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/2997507c-ba60-4653-b217-3eca4858dec8",
   "source_url": "https://www.figure.ai/figure",
   "extracted_at": "2026-09-20T22:15:01.223Z",
-  "fetched_at": "2026-10-20T08:21:27Z",
+  "fetched_at": "2026-11-08T04:20:08Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/26c00315-490e-482d-8690-494c538802af.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ece59651-88bb-43f6-b101-cbf07dc52a6f.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/0f8c07d5-3550-4d03-b249-baac1edb68b1.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/4013ec3f-e325-4df2-913f-66143c1ad1d3.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

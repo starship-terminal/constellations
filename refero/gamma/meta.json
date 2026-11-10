@@ -10,7 +10,7 @@
   "page_url": "https://styles.refero.design/style/4782832c-1c23-4fe3-997c-2a08d7b6c5d1",
   "source_url": "https://www.gamma.io",
   "extracted_at": "2026-06-03T19:45:15.850Z",
-  "fetched_at": "2026-10-20T08:22:07Z",
+  "fetched_at": "2026-11-08T04:20:12Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/3d2626ba-f626-4f01-8bae-ec1cb542622d.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/690064b7-56c0-4653-ae4a-8fbb32d0975e.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a71151f9-cdf0-4ed7-8640-003b74c79159.jpg",
@@ -18,5 +18,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/09dbf734-2aab-481b-9e69-bb5e1e6f7d09.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

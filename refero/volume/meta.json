@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/edc0c03e-8c20-4e22-badd-2735fcb9f4a8",
   "source_url": "https://vol.co",
   "extracted_at": "2026-06-03T17:20:14.125Z",
-  "fetched_at": "2026-10-20T08:24:46Z",
+  "fetched_at": "2026-11-08T04:21:04Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d10695e0-8240-49e7-86f7-4f299d0fe3f8.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/717a2f6f-bc7d-4f9a-adcb-1465fdf77c9a",
   "source_url": "https://www.elvinaprasad.com",
   "extracted_at": "2026-06-03T21:02:06.817Z",
-  "fetched_at": "2026-10-20T08:23:39Z",
+  "fetched_at": "2026-11-08T04:20:04Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b60f7b76-fa69-418c-85ec-08a27b1fa7f5.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

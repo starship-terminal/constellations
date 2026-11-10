@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/17ce9ad2-f22d-4e48-92de-e28fb8551cc5",
   "source_url": "https://www.fallengrape.com",
   "extracted_at": "2026-06-03T15:57:06.846Z",
-  "fetched_at": "2026-10-20T08:23:05Z",
+  "fetched_at": "2026-11-08T04:20:07Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/cc0e7025-6a44-4cdb-8b6a-6d9059bc5082.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0cc00fd3-0f8a-47d1-bbef-1549c4311b23.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/026bbb76-5679-4edf-88cd-9ebe538b3b5a.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/10fbc6dc-18a1-45c5-afae-b07cc94eae7e.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

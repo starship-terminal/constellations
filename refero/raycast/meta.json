@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/3b6a17f0-3bdf-418c-a95e-0b89e5a8b2f8",
   "source_url": "https://raycast.com",
   "extracted_at": "2026-07-03T02:55:06.053Z",
-  "fetched_at": "2026-10-20T08:21:39Z",
+  "fetched_at": "2026-11-08T04:20:43Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/63fd158b-7189-4cdd-954a-ef7108a217a8.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0a6dc73e-31cb-49b2-8951-a492dbc150ca.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d6ce6b8e-33c9-4025-9f78-e2f1ca55bee8.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/ee40e139-0b24-47a0-9ea0-98372d317c5b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/07f5281d-2a18-4e12-a8ff-d54d3e03d198",
   "source_url": "https://www.essiewine.com",
   "extracted_at": "2026-06-03T20:42:23.893Z",
-  "fetched_at": "2026-10-20T08:21:56Z",
+  "fetched_at": "2026-11-08T04:20:06Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6ce2ccab-701e-4d58-aef8-99afcd439859.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/f1b0e5bd-8e8f-493d-8ee7-5b66a00e426a.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/77017381-4680-45aa-91dd-cb9e0358e292.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/ce38dce2-2b52-4fcd-add3-72a34de009d9.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

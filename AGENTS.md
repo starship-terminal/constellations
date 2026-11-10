@@ -10,11 +10,20 @@ the Next.js apps in web/ (the gallery) and app/ (the newer research app)
 locally, and published as a static docs site. Two stores of styles:
 
 - `systems/<slug>/`: the packages, one per product, measured from real
-  captures and indexed in [catalog.json](catalog.json). Values here carry
-  per-value evidence labels and are the only ones to design from.
+  captures and indexed in [catalog.json](catalog.json). A system is design
+  *and* functionality: tokens plus app walkthroughs, flows, components and
+  screens. Values here carry per-value evidence labels and are the only
+  ones to design from.
 - `refero/<slug>/`: a snapshot of styles.refero.design (1,342 styles),
-  third-party interpreted data at lower confidence. Breadth for inspiration,
-  never the source for a value a package holds.
+  third-party interpreted data at lower confidence. A style is *design
+  only*: an interpretation of the product's public landing page (tokens,
+  surfaces, guidance, marketing components), with no app functionality,
+  flows or inner screens. Breadth for inspiration, never the source for a
+  value a package holds.
+
+Keep the two apart: never read functionality, flows or component behavior
+out of a refero style, and never promote a style into "we have this app"
+— a product is only covered once a `systems/` package exists.
 
 [README.md](README.md) is the human front door; the docs below hold the
 detail. Browsing (gallery, refero, scorecard, library docs, the chat) happens
@@ -27,7 +36,7 @@ in the web/ app, and app/ covers the same stores plus research;
 ```
 catalog.json            index of every systems/ package: slug, platform, tags,
                         goodFor, preview paths, capture provenance
-systems/<slug>/         the packages (47). Standard parts:
+systems/<slug>/         the packages (58). Standard parts:
   README.md               Brief (generated) + what was captured + Health (generated)
   tokens.json             every value, evidence-labelled
   DESIGN.md               generated export, one theme, no provenance
@@ -123,6 +132,7 @@ Makefile                `make help` lists targets; `make dev` is the way in
 | [docs/PACKAGE.md](docs/PACKAGE.md) | You need to know which file in a package holds what |
 | [docs/EVIDENCE.md](docs/EVIDENCE.md) | You are about to copy a value and need to know how far to trust it |
 | [docs/CAPTURE.md](docs/CAPTURE.md) | You are adding or refreshing a product; start from [tools/kit/](tools/kit) |
+| [docs/FIELD-NOTES.md](docs/FIELD-NOTES.md) | A capture is going wrong — the table of what has already gone wrong and the fix that worked |
 | [docs/RIGHTS.md](docs/RIGHTS.md) | Anything might leave this repo |
 | [docs/TODO.md](docs/TODO.md) | You are picking up open work; the list is newest first |
 | [refero/README.md](refero/README.md) | You are working with the refero snapshot: its layout, provenance, refresh and media mirror |
@@ -190,6 +200,12 @@ illustrations or brand colours into something that ships
   [.gitattributes](.gitattributes)). Run `git lfs install` once per
   machine. Never commit a binary type that is not covered; add the pattern
   to `.gitattributes` first.
+- **Bound every full-page capture.** A page that reports an unbounded
+  `scrollHeight` (infinite scroll) must be truncated and recorded as a
+  boundary, never tiled forever — the kit's shooter caps at 8 chunks.
+  Delete a dead run's scratch dir (`~/.design-systems/<slug>/`) before
+  retrying. [docs/FIELD-NOTES.md](docs/FIELD-NOTES.md) lists the other
+  ways captures have gone wrong.
 - **New packages follow the layout** in
   [docs/PACKAGE.md](docs/PACKAGE.md#layout), with the README in its outline,
   and label every value ([docs/EVIDENCE.md](docs/EVIDENCE.md)). Add each one
@@ -244,10 +260,15 @@ illustrations or brand colours into something that ships
   infer them from screenshots.
 - **Refero is a separate store, refreshed by its own pipeline.** `refero/`
   mirrors styles.refero.design: `refero.db` is canonical, the `<slug>/`
-  folders and `catalog.json` are materialised from it, and
-  `tools/refero/check.py` (part of `make check`) fails when the three
-  disagree. Fetch, label and verify with `tools/refero/fetch.py`,
-  `classify.py` and `check.py`; screenshots and videos are mirrored
+  folders, `catalog.json` and the derived stores (`similar`,
+  `collections`, `screens` tables and their flat files) are materialised
+  from it, and `tools/refero/check.py` (part of `make check`) fails when
+  the stores disagree. Fetch, label and verify with `tools/refero/fetch.py`,
+  `classify.py` and `check.py`; component markup is backfilled by
+  `backfill_components.py`, the similar graph by `index_similar.py`,
+  curated collections by `fetch_collections.py`, and the paid-catalog
+  directory by `fetch_screens.py`; `coverage.py` diffs that directory
+  against the systems/ packages into `coverage.json`. Screenshots and videos are mirrored
   host-side by `tools/refero/mirror_media.py` into
   `~/services/design-systems/media/refero/` (outside git; the videos are
   gigabytes). [refero/README.md](refero/README.md) has the detail. Prefer

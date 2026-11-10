@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/48fa5bef-d910-40e1-b9b0-c0fcad055c6f",
   "source_url": "https://shopping.google.com/m/bestthings",
   "extracted_at": "2026-06-03T21:55:00.077Z",
-  "fetched_at": "2026-10-20T08:21:44Z",
+  "fetched_at": "2026-11-08T04:20:17Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/50442238-19f5-4918-a5ff-8c9b9447fce5.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/cd3e6450-98a0-4dcc-8dcd-d30048b14412.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/fd997431-09fa-4c83-b36d-b43a3fb3ef7d.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/c7f2dcc5-09df-4893-b6d3-032b51917b90.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

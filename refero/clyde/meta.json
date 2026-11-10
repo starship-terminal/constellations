@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/39098e34-b911-4ad3-bcb5-ee80a392cd95",
   "source_url": "https://joinclyde.com",
   "extracted_at": "2026-06-03T17:39:47.209Z",
-  "fetched_at": "2026-10-20T08:22:56Z",
+  "fetched_at": "2026-11-08T04:19:55Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/66e4bcd7-7623-4935-b2a7-450893872d50.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/4ad21ee3-7317-4045-b968-cc937c49af49.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/2de5fcd5-0901-44b7-80d5-595a3e77e1b0.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/5cce88b6-3679-4e3b-987a-f850dce74305.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

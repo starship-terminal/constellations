@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/6b51388b-d00f-4b22-8297-68fb9fc00bc7",
   "source_url": "https://portrait.so",
   "extracted_at": "2026-06-03T17:50:33.919Z",
-  "fetched_at": "2026-10-20T08:22:50Z",
+  "fetched_at": "2026-11-08T04:20:41Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/714b4686-5f6d-4ae9-b4ab-50a09672f695.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/67c9a33c-09c1-444e-8e89-1dfcda7b15ac.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/fd405690-25ec-4757-b310-1b8140302ad5.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/c739a2d7-a453-4cda-8aae-cfdb7b00512a.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

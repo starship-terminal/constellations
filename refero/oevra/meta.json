@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/01d6013d-a176-4a22-b7dd-fbd113592956",
   "source_url": "https://oevra.com",
   "extracted_at": "2026-06-03T18:43:22.345Z",
-  "fetched_at": "2026-10-20T08:22:31Z",
+  "fetched_at": "2026-11-08T04:20:35Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/76ef0c7d-0f14-4c01-907f-032c4fd105ef.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/291d6ab7-8624-4525-aaae-a550fba78235.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/b59a5bd4-e617-432d-a39a-a3c46a0446a9.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/6dc46fae-021a-4957-b244-ccba949d43e2.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

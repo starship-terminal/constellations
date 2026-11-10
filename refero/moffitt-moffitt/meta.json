@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/4244637b-e27b-4962-b586-cb3ac605e5aa",
   "source_url": "https://moffittmoffitt.com",
   "extracted_at": "2026-06-03T18:28:34.014Z",
-  "fetched_at": "2026-10-20T08:22:36Z",
+  "fetched_at": "2026-11-08T04:20:30Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d96b952f-bdbe-4adb-b4db-b1e2cd2d99a0.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0a35934c-1c00-44e2-92c7-0aefd7c3ea2c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d1ab0aec-26cc-4e1e-a007-1ac2af70f2be.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/95499e8d-9f7b-4664-b360-8fffe9f74ea2.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

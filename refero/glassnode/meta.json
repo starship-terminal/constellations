@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/a79b6a74-6b67-4c9f-9d69-bff80869b943",
   "source_url": "https://glassnode.com",
   "extracted_at": "2026-06-03T17:44:52.271Z",
-  "fetched_at": "2026-10-20T08:22:55Z",
+  "fetched_at": "2026-11-08T04:20:13Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5eeeeec2-46fd-4247-9695-0d306c35e80a.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/35b9ca15-b3d8-4622-9cae-b5fbd3fb0d76.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/8c2e96ec-d38e-4a77-98fd-15c918e5ac10.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0e12a4fa-1a14-4622-b680-7bb93fe37a4d.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

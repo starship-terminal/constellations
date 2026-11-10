@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/5076959f-f849-4b50-8f8a-2040d4756f98",
   "source_url": "https://www.daylit.com",
   "extracted_at": "2026-06-03T21:20:52.340Z",
-  "fetched_at": "2026-10-20T08:21:48Z",
+  "fetched_at": "2026-11-08T04:19:59Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/7f41c9d6-f082-4178-8025-69aee326e808.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/80f4a537-0860-4935-8c04-a7f86090fafb.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/07627e1d-5fe2-4c76-99e5-786dc586a0fb.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b2c2d69f-6709-43eb-adce-97297297623c.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

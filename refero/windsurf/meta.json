@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/cfab7b43-ed24-41e9-9272-c858700b865b",
   "source_url": "https://windsurf.com",
   "extracted_at": "2026-06-03T19:22:33.412Z",
-  "fetched_at": "2026-10-20T08:22:17Z",
+  "fetched_at": "2026-11-08T04:21:06Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/80e60dd8-a86a-4fd6-9423-4aff3108bec1.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/eeb7dfb1-8b24-4b7d-a65c-1a8280984dbb.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/796e12cc-9c85-445d-8956-e4b5aeeb157e.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/d1210920-680e-4169-8898-7ca0df3472ea.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

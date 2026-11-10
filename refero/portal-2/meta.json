@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/b9aeb945-2f6e-4557-9115-e3ff3a8f8dc8",
   "source_url": "https://useportal.net",
   "extracted_at": "2026-06-03T17:26:39.402Z",
-  "fetched_at": "2026-10-20T08:24:45Z",
+  "fetched_at": "2026-11-08T04:20:41Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/95095877-3249-412d-8220-2c66fc821238.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/66ffdaf0-07be-418c-9547-ea6c82f9f992.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/9d491e52-09f7-4feb-aad5-6e16576c5fbb.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/48037069-35f5-4fad-87e8-51d295c249df.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

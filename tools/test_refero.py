@@ -144,6 +144,37 @@ class ParsePageTest(unittest.TestCase):
         self.assertIsNone(fetch.style_name({"meta": {}}, "<html/>"))
 
 
+class ResolveComponentHtmlTest(unittest.TestCase):
+    def test_refs_resolve_to_their_text_rows(self):
+        # The row length counts UTF-8 bytes; ⌘ (3 bytes) exercises the slice.
+        html = '<style>.a{content:"⌘"}</style><div>hi</div>'
+        row = "1e:T" + format(len(html.encode()), "x") + "," + html
+        result = {"designSystem": {"components": [
+            {"name": "a", "html": "$1e"}, {"name": "b"}]}}
+        blob = '"result":' + json.dumps(result) + "}" + row + "tail"
+        self.assertEqual(fetch.resolve_component_html(result, blob), 0)
+        self.assertEqual(
+            result["designSystem"]["components"][0]["html"], html)
+
+    def test_unresolved_refs_and_undefined_become_none(self):
+        result = {"designSystem": {"components": [
+            {"html": "$zz"}, {"html": "$undefined"}]}}
+        misses = fetch.resolve_component_html(result, "blob without rows")
+        self.assertEqual(misses, 1)
+        self.assertIsNone(result["designSystem"]["components"][0]["html"])
+        self.assertIsNone(result["designSystem"]["components"][1]["html"])
+
+    def test_parse_page_resolves_component_refs(self):
+        html = "<div>ok</div>"
+        row = "1e:T" + format(len(html.encode()), "x") + "," + html
+        result = {**RESULT,
+                  "designSystem": {"components": [{"html": "$1e"}]}}
+        page = push('"result":' + json.dumps(result) + "}" + row)
+        got, _ = fetch.parse_page(page)
+        self.assertEqual(
+            got["designSystem"]["components"][0]["html"], html)
+
+
 class ExtractMediaTest(unittest.TestCase):
     def test_media_comes_from_the_style_s_own_record(self):
         page = media_page(media_record(
@@ -178,22 +209,23 @@ def styles_db():
     db = sqlite3.connect(":memory:")
     db.execute("""CREATE TABLE styles (uuid, slug, name, tagline, theme,
         product_type, design_style, tags, page_url, source_url, extracted_at,
-        fetched_at, screenshot_url)""")
-    db.execute("INSERT INTO styles VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        fetched_at, screenshot_url, components_json)""")
+    db.execute("INSERT INTO styles VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                ("u1", "acme", "Acme", "tag", "light", "devtools", "technical",
                 '["neon"]', "https://p/acme", "https://acme.example",
-                "t0", "t1", "https://img/s.jpg"))
+                "t0", "t1", "https://img/s.jpg", None))
     return db
 
 
 MEDIA = {k: None for k in fetch.MEDIA_URL_FIELDS}
 MEDIA["video_url"] = "https://img/v.mp4"
 
-# What fetch writes to meta.json: the base keys, the label keys and the media
-# URL keys. tools/refero/check.py compares META_FIELDS of it against the db.
+# What fetch writes to meta.json: the base keys, the label keys, the media
+# URL keys and the component flag. tools/refero/check.py compares META_FIELDS
+# of it against the db.
 META_KEYS = {"uuid", "slug", "name", "tagline", "theme", "product_type",
              "design_style", "tags", "page_url", "source_url", "extracted_at",
-             "fetched_at", "screenshot_url"} | set(MEDIA)
+             "fetched_at", "screenshot_url", "has_components"} | set(MEDIA)
 
 
 class StyleMetaTest(unittest.TestCase):
@@ -242,8 +274,10 @@ class WriteMetaTest(unittest.TestCase):
         self.assertEqual(list(meta)[:3], ["uuid", "slug", "name"])
         self.assertEqual(meta["custom"], 1)
         self.assertEqual(meta["video_url"], "https://img/v.mp4")
+        self.assertEqual(meta["has_components"], False)
         self.assertEqual(set(meta),
-                         {"uuid", "slug", "name", "custom"} | set(MEDIA))
+                         {"uuid", "slug", "name", "custom", "has_components"}
+                         | set(MEDIA))
 
     def test_a_missing_meta_is_rebuilt_from_the_styles_row(self):
         self.write_meta("acme", MEDIA)
@@ -607,7 +641,9 @@ class MetaCatalogContractTest(unittest.TestCase):
                          {"version", "about", "source", "sitemap", "count",
                           "styles"})
         self.assertEqual(cat["count"], 1)
-        self.assertEqual(set(cat["styles"][0]), set(refero_check.CATALOG_FIELDS))
+        self.assertEqual(set(cat["styles"][0]),
+                         set(refero_check.CATALOG_FIELDS)
+                         | set(refero_check.CATALOG_DERIVED_FIELDS))
 
 
 if __name__ == "__main__":

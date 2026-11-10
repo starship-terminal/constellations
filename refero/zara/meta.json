@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/97823ba1-ee1e-489d-aefd-8d72a578669a",
   "source_url": "https://zara.com",
   "extracted_at": "2026-06-03T18:15:42.357Z",
-  "fetched_at": "2026-10-20T08:24:31Z",
+  "fetched_at": "2026-11-08T04:21:08Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b2f29d4c-e0a1-4ef6-8db5-9fb328e69fb4.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

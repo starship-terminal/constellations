@@ -1,0 +1,49 @@
+20:22:05 open features 
+20:22:13    features-title default 792x180
+20:22:14    step-title default 380x156
+20:22:18    step-card default 1440x9851
+20:22:19    mega-demo-cta default 520x96
+20:22:21    mega-demo-cta hover 520x96
+20:22:22    mega-demo-cta focus-visible 520x96
+20:22:23    mega-demo-cta pressed 520x96
+20:22:23 open value 
+20:22:31    value-title default 605x120
+20:22:32    value-card default 271x272
+20:22:33 open pricing 
+20:22:41    pricing-title default 851x60
+20:22:42    billing-toggle default 1440x75
+20:22:43    billing-yearly default 152x60
+20:22:44    billing-yearly hover 152x60
+20:22:46    billing-yearly pressed 152x60
+20:22:47    billing-monthly default 152x60
+20:22:48    billing-monthly hover 152x60
+20:22:50    billing-monthly-on open 152x60
+20:22:51    plan-price-monthly open 308x47
+20:22:53    save-badge default 87x34
+20:22:54    plan-card-free default 88x47
+20:22:55    plan-card-plus default 88x47
+20:22:56    plan-name default 88x47
+20:22:57    plan-price default 308x47
+20:22:58    plan-cta default 227x60
+20:22:59    plan-cta hover 227x60
+20:23:01    plan-cta focus-visible 227x60
+20:23:02    plan-cta pressed 227x60
+20:23:03    compare-cta default 851x60
+20:23:05    compare-cta hover 851x60
+20:23:06    compare-cta focus-visible 851x60
+20:23:07    compare-cta pressed 851x60
+20:23:08    feature-cell default 308x186
+20:23:09 open reviews 
+20:23:17    review-slide default 1157x418
+20:23:18    review-card default 370x580
+20:23:19    review-text default 951x84
+20:23:19 open story 
+20:23:28    story-lead default 851x420
+20:23:29    story-block default 565x230
+20:23:29 open team 
+20:23:37    team-title default 851x60
+20:23:38    member-card default 359x479
+20:23:39 open figma 
+20:23:47    figma-title default 605x60
+20:23:49    figma-step default 1440x3606
+20:23:49 done -> /Users/kaichen/Desktop/Personal/Internal/Projects/ai-engineering/design/design-systems/systems/aaply/raw/components-computed.json

@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/ba0e947f-0ffa-4ea9-b483-86c981a42464",
   "source_url": "https://advenedesign.com",
   "extracted_at": "2026-06-03T19:11:34.012Z",
-  "fetched_at": "2026-10-20T08:22:20Z",
+  "fetched_at": "2026-11-08T04:19:39Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/a6aa9582-123e-4cfe-8358-3a399e82c1d8.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/2c1a09d7-8df0-4e4c-bca4-9dba82fd6f63.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/40dc75c4-22e7-4a46-8bf5-736276c86510.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/bd190a61-0aeb-4fd8-850d-08a9d0c8f846.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/b7fc2173-c9b1-45ed-bd3a-9999320b3248",
   "source_url": "https://www.nakedcityfilms.com",
   "extracted_at": "2026-06-03T19:24:04.168Z",
-  "fetched_at": "2026-10-20T08:24:04Z",
+  "fetched_at": "2026-11-08T04:20:33Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/70a1390f-3d21-45d1-93e5-2690fb28d21e.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

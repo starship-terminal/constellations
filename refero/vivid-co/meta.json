@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/8875b14e-c59a-492f-8780-8027a480f21c",
   "source_url": "https://vividand.co",
   "extracted_at": "2026-07-03T03:09:37.717Z",
-  "fetched_at": "2026-10-20T08:21:37Z",
+  "fetched_at": "2026-11-08T04:21:04Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/1365ef61-c295-488f-8538-04d8bb2de362.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/4830086b-49f9-48a0-865e-aac393a9c3ab.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/0baab439-ae90-42ec-97d6-a7b93e3b6c90.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/6b5cfb90-537c-42fd-8864-fc215967b690.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }
