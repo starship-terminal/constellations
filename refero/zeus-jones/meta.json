@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/b619e1b9-86ee-4a10-b6e6-47b10927c3a2",
   "source_url": "https://zeusjones.com",
   "extracted_at": "2026-06-03T21:31:30.554Z",
-  "fetched_at": "2026-10-20T08:21:47Z",
+  "fetched_at": "2026-11-08T04:21:08Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/de424bae-450a-4754-97a2-66a174a1becf.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/955d2455-e404-4716-a40d-661319d492a1.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/e7b5bc2d-30ee-4822-92e7-e4e4d3632930.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/80787af2-b825-47ba-931b-963eed593786.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

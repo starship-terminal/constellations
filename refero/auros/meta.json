@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/21cfe0c1-778d-4613-9f47-a5718eb929b3",
   "source_url": "https://auros.global",
   "extracted_at": "2026-07-03T03:04:41.961Z",
-  "fetched_at": "2026-10-20T08:21:38Z",
+  "fetched_at": "2026-11-08T04:19:47Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/9a713fb1-3d16-476f-a455-8ea8f3de173f.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/55288795-6ee8-4950-acf1-49bbdbbba5de.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/274bd266-522b-4eae-a08a-d8d9643a3d1e.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/3758d41c-ba25-4aad-9f7f-cca79e3469ef.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

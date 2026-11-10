@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/9130ad37-bf80-458f-b808-ac0ef6a8d1e9",
   "source_url": "https://mindmarket.com",
   "extracted_at": "2026-06-03T22:39:57.287Z",
-  "fetched_at": "2026-10-20T08:22:58Z",
+  "fetched_at": "2026-11-08T04:20:30Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5bde397c-d309-4ab1-80fc-cfe1ff285693.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/454116b6-1788-43e5-8410-7b43f5cf2b07.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/48b67ac1-b107-4de1-b25a-674699c5953f.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/51602e6c-ba11-468e-9e2a-c687e22c113a.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/bb94375b-cf09-47d4-a2e3-7b332b2c9216",
   "source_url": "https://www.patreon.com",
   "extracted_at": "2026-06-03T19:53:40.401Z",
-  "fetched_at": "2026-10-20T08:23:57Z",
+  "fetched_at": "2026-11-08T04:20:38Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/18ebfaf2-0af9-44f2-9a0b-5dc4be0e3459.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/1266b613-dbf0-4f97-aacb-0ab7735395c9.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/fa787b92-c301-4001-8000-b215d5ab831b.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/34795c82-132a-4ded-9c82-16e2fe5220ab.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

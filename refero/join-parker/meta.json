@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/f08f9870-2018-4c0b-80d4-0b2e525ff49c",
   "source_url": "https://www.getparker.com",
   "extracted_at": "2026-06-03T18:29:08.442Z",
-  "fetched_at": "2026-10-20T08:22:37Z",
+  "fetched_at": "2026-11-08T04:20:22Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/081e38e7-a6dd-47c9-aecc-fbddc689eb33.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/e9b2ae72-fd1d-47d9-81de-92ae50b2289c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/684f646b-a239-4593-8794-8ccbd5cf4053.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e794a635-977e-4259-80d5-47cfdc95bb4d.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

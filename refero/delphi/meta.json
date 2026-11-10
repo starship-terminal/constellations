@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/43c1b150-0dab-42f9-9bce-fe0be3dde26c",
   "source_url": "https://delphi.ai",
   "extracted_at": "2026-06-03T15:38:48.639Z",
-  "fetched_at": "2026-10-20T08:25:01Z",
+  "fetched_at": "2026-11-08T04:19:59Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/75d02a4e-ac0e-452a-b7fb-996d3932089b.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/7ac25fe9-5758-434d-aed7-5a015c5c25ee.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/3d32e573-c19c-4f4c-9012-fdc1f78b5a76.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/4b3becd3-db00-49ea-9f94-0f5d1476140e.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

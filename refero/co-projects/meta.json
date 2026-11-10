@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/5c9743ad-fe33-4d21-9185-db012f6f96c7",
   "source_url": "https://co-projects.xyz",
   "extracted_at": "2026-06-03T20:14:53.934Z",
-  "fetched_at": "2026-10-20T08:22:01Z",
+  "fetched_at": "2026-11-08T04:19:56Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b95ac49a-5565-4cbd-86a0-7b5c8290d508.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

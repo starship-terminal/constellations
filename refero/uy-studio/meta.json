@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/b376d42c-b2cb-4a52-8cec-ebf19cf1883f",
   "source_url": "https://www.uy-studio.com",
   "extracted_at": "2026-06-03T19:24:56.148Z",
-  "fetched_at": "2026-10-20T08:22:14Z",
+  "fetched_at": "2026-11-08T04:21:02Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/2a04bb3e-4633-4a16-a4d4-dce1a9e4c4b1.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/de9403dd-48d0-406c-a849-9b6603a39d27.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/fb8ad5c8-3cc9-4aa4-a1fa-412826757d93.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/792739cf-37cb-499f-bda0-b675720c13e9.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

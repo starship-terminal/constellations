@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/febf1c02-2c4d-46e6-ad16-8ee2a99ae0d5",
   "source_url": "https://www.clouarchitects.com",
   "extracted_at": "2026-06-03T20:37:26.008Z",
-  "fetched_at": "2026-10-20T08:23:45Z",
+  "fetched_at": "2026-11-08T04:19:55Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d55d9cc1-8a5a-441c-a2aa-c12ea1c1f9e6.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

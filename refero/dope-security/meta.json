@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/e1f18a7e-5af1-46b3-8f89-bce6c78b80d4",
   "source_url": "https://dope.security",
   "extracted_at": "2026-07-03T03:26:00.046Z",
-  "fetched_at": "2026-10-20T08:21:35Z",
+  "fetched_at": "2026-11-08T04:20:02Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/743dff94-e2b6-4e0a-95c8-90d173802ed3.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ae9e51d3-3187-4eb4-bc9c-faf602ab7e32.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/90ce0f92-3744-481d-bad5-f1c00ac3f287.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/feafb142-af24-46e6-afb6-79ffd120a124.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

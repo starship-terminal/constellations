@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/e287e026-3433-4a1d-9b23-9a65f8b9c138",
   "source_url": "https://www.stinkstudios.com",
   "extracted_at": "2026-06-03T21:42:02.371Z",
-  "fetched_at": "2026-10-20T08:21:47Z",
+  "fetched_at": "2026-11-08T04:20:52Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/80cf5da2-c2ba-4689-9511-e12dd870d2a5.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/3fd7cbe6-e824-4daa-bde6-ca27e2bdb403.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/1a618603-0ea5-4db0-9ed3-3e3d96237d60.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/2816e23a-c45b-474e-84aa-9fde2925924a.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

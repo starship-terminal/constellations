@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/29567671-da1e-4f85-ae52-8b611fecc384",
   "source_url": "https://amie.so",
   "extracted_at": "2026-04-29T21:01:53.656Z",
-  "fetched_at": "2026-10-20T08:22:38Z",
+  "fetched_at": "2026-11-08T04:19:32Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5e5a815e-4dfd-45df-9f2f-d906cb11e9da.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/83b93f63-6fe9-4292-a5ad-606ecdc5a266.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/9281f711-3c45-4121-8e11-9928e1e30e38.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/574b4dcd-b43f-4ac5-9adf-fe0c26decb06.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": true
 }

@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/711a2c41-a5f4-49d5-930b-f0abaad6933d",
   "source_url": "https://www.bolt.com",
   "extracted_at": "2026-06-03T20:04:25.925Z",
-  "fetched_at": "2026-10-20T08:23:54Z",
+  "fetched_at": "2026-11-08T04:19:51Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5ea8787b-aabc-4bcc-8b4d-00481280c6c6.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/6fcba22a-444c-47ce-91c7-afa0c77cbec4.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/caf063b7-8e0f-499f-8e3d-025ee2ad5448.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/fa8eee3e-ebec-4d40-ab7e-7934b9c05f0a.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

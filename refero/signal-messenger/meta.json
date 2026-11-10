@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/41c479a9-7b41-445b-9ea7-c7a6331828f0",
   "source_url": "https://signal.org",
   "extracted_at": "2026-06-03T19:38:05.159Z",
-  "fetched_at": "2026-10-20T08:22:08Z",
+  "fetched_at": "2026-11-08T04:20:49Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/7b793d13-837f-4807-b0e5-f8fa83acd7f9.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/2546c70b-313b-4fc5-bee7-3e128a965c01.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/0273708d-8b77-4038-bd73-ce33867729de.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/c686eeb8-0fb8-4d82-8ea3-f5b2427db479.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

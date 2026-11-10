@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/029d3ce0-0fe5-4a8c-99c4-4f9d704f1c60",
   "source_url": "https://www.pally.com",
   "extracted_at": "2026-06-03T17:13:22.544Z",
-  "fetched_at": "2026-10-20T08:23:08Z",
+  "fetched_at": "2026-11-08T04:20:37Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/8c9d25cc-e8b5-4c4c-8893-427d9ed151be.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ecdbab4d-54bd-4260-8b1f-1212c2116d2e.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/8725ceeb-8f6f-4659-a10a-7cd735c7bfcb.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0f9740d4-1711-4b7c-8eb8-98b3e89870a4.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

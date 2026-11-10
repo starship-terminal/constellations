@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/af55f85e-1c82-44c1-a8d0-32634bfa6296",
   "source_url": "https://reducto.ai",
   "extracted_at": "2026-06-03T19:57:55.685Z",
-  "fetched_at": "2026-10-20T08:22:03Z",
+  "fetched_at": "2026-11-08T04:20:44Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b2c71c2c-6272-48be-8717-c4d736f3e488.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a2caf331-8422-49f4-9ef7-e845bbd02111.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/809bcd5f-c739-4a78-8dbe-56664aedfd2b.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/14297253-4eb0-46a5-aa23-c8c896f7dff0.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

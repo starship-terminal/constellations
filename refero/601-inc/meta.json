@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/1cb31aee-608e-4dec-a44d-5745e4fd6bab",
   "source_url": "https://www.rokumaruichi.tokyo",
   "extracted_at": "2026-06-03T18:52:40.408Z",
-  "fetched_at": "2026-10-20T08:22:28Z",
+  "fetched_at": "2026-11-08T04:19:36Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/12ee12d4-e9c5-496a-a8b5-ec56fd4ede85.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/47e45748-f8cc-4b20-9da1-72d02a832804.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/2e2e1878-4a63-4020-b8a9-9114ae194615.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0ed174f0-b63d-4fb4-8d05-4dabcc3f171d.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

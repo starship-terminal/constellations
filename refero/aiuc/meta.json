@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/6b9ab3aa-13ea-49e5-9889-d0c9ae629add",
   "source_url": "https://aiuc.com",
   "extracted_at": "2026-06-03T21:37:47.982Z",
-  "fetched_at": "2026-10-20T08:23:30Z",
+  "fetched_at": "2026-11-08T04:19:39Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/25093b63-b6f2-4698-a88e-5531748f47de.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/2a21bc2b-86a7-4222-98ad-5f37c49355e5.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/38c01aff-1fcb-4185-9e7c-e06085e1f3bc.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e39f767f-9b4b-489c-b91d-941f7a6b27da.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

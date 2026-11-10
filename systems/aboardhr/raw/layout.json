@@ -1,0 +1,3611 @@
+{
+ "home@1440": {
+  "vw": 1440,
+  "docH": 7324,
+  "h1": {
+   "text": "Run people operations.",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 336,
+   "y": 182,
+   "w": 768,
+   "h": 70
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-brblks",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 336,
+    "y": 132,
+    "w": 768,
+    "h": 357
+   },
+   {
+    "el": "a.framer-jahuoy.framer-7t4prs",
+    "max": "380px",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 530,
+    "y": 132,
+    "w": 380,
+    "h": 26
+   },
+   {
+    "el": "div.framer-r79nxq",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 208,
+    "y": 609,
+    "w": 1024,
+    "h": 728
+   },
+   {
+    "el": "div.framer-tjpqv5",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 208,
+    "y": 1338,
+    "w": 1024,
+    "h": 5661
+   },
+   {
+    "el": "div.framer-29n8mm",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 380,
+    "y": 1575,
+    "w": 680,
+    "h": 140
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 1835,
+    "w": 680,
+    "h": 358
+   },
+   {
+    "el": "div.framer-1557mu7",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 2241,
+    "w": 680,
+    "h": 136
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 380,
+    "y": 3223,
+    "w": 680,
+    "h": 270
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 5105,
+    "w": 680,
+    "h": 302
+   },
+   {
+    "el": "div.framer-d0e8ni",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 5455,
+    "w": 680,
+    "h": 136
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-1557mu7",
+    "cols": "330px 330px",
+    "colGap": "20px",
+    "rowGap": "20px",
+    "x": 232,
+    "y": 2241,
+    "w": 680,
+    "h": 136
+   },
+   {
+    "el": "div.framer-d0e8ni",
+    "cols": "330px 330px",
+    "colGap": "20px",
+    "rowGap": "20px",
+    "x": 232,
+    "y": 5455,
+    "w": 680,
+    "h": 136
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 7324
+  }
+ },
+ "home@1920": {
+  "vw": 1920,
+  "docH": 7324,
+  "h1": {
+   "text": "Run people operations.",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 576,
+   "y": 182,
+   "w": 768,
+   "h": 70
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-brblks",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 576,
+    "y": 132,
+    "w": 768,
+    "h": 357
+   },
+   {
+    "el": "a.framer-jahuoy.framer-7t4prs",
+    "max": "380px",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 770,
+    "y": 132,
+    "w": 380,
+    "h": 26
+   },
+   {
+    "el": "div.framer-r79nxq",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 448,
+    "y": 609,
+    "w": 1024,
+    "h": 728
+   },
+   {
+    "el": "div.framer-tjpqv5",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 448,
+    "y": 1338,
+    "w": 1024,
+    "h": 5661
+   },
+   {
+    "el": "div.framer-29n8mm",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 620,
+    "y": 1575,
+    "w": 680,
+    "h": 140
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 1835,
+    "w": 680,
+    "h": 358
+   },
+   {
+    "el": "div.framer-1557mu7",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 2241,
+    "w": 680,
+    "h": 136
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 620,
+    "y": 3223,
+    "w": 680,
+    "h": 270
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 5105,
+    "w": 680,
+    "h": 302
+   },
+   {
+    "el": "div.framer-d0e8ni",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 5455,
+    "w": 680,
+    "h": 136
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-1557mu7",
+    "cols": "330px 330px",
+    "colGap": "20px",
+    "rowGap": "20px",
+    "x": 472,
+    "y": 2241,
+    "w": 680,
+    "h": 136
+   },
+   {
+    "el": "div.framer-d0e8ni",
+    "cols": "330px 330px",
+    "colGap": "20px",
+    "rowGap": "20px",
+    "x": 472,
+    "y": 5455,
+    "w": 680,
+    "h": 136
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 7324
+  }
+ },
+ "home@1024": {
+  "vw": 1024,
+  "docH": 7232,
+  "h1": {
+   "text": "Run people operations.",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 128,
+   "y": 182,
+   "w": 768,
+   "h": 70
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-brblks",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 128,
+    "y": 132,
+    "w": 768,
+    "h": 357
+   },
+   {
+    "el": "a.framer-jahuoy.framer-7t4prs",
+    "max": "380px",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 322,
+    "y": 132,
+    "w": 380,
+    "h": 26
+   },
+   {
+    "el": "div.framer-r79nxq",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 64,
+    "y": 609,
+    "w": 896,
+    "h": 637
+   },
+   {
+    "el": "div.framer-tjpqv5",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 1247,
+    "w": 1024,
+    "h": 5661
+   },
+   {
+    "el": "div.framer-29n8mm",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 172,
+    "y": 1484,
+    "w": 680,
+    "h": 140
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1744,
+    "w": 680,
+    "h": 358
+   },
+   {
+    "el": "div.framer-1557mu7",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 2150,
+    "w": 680,
+    "h": 136
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 172,
+    "y": 3132,
+    "w": 680,
+    "h": 270
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 5014,
+    "w": 680,
+    "h": 302
+   },
+   {
+    "el": "div.framer-d0e8ni",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 5364,
+    "w": 680,
+    "h": 136
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-1557mu7",
+    "cols": "330px 330px",
+    "colGap": "20px",
+    "rowGap": "20px",
+    "x": 24,
+    "y": 2150,
+    "w": 680,
+    "h": 136
+   },
+   {
+    "el": "div.framer-d0e8ni",
+    "cols": "330px 330px",
+    "colGap": "20px",
+    "rowGap": "20px",
+    "x": 24,
+    "y": 5364,
+    "w": 680,
+    "h": 136
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 7232
+  }
+ },
+ "home@390": {
+  "vw": 390,
+  "docH": 8518,
+  "h1": {
+   "text": "Run people operations.",
+   "font": "600 48px / 52.8px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 16,
+   "y": 190,
+   "w": 358,
+   "h": 106
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 64
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-brblks",
+    "max": "768px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 140,
+    "w": 358,
+    "h": 437
+   },
+   {
+    "el": "a.framer-jahuoy.framer-7t4prs",
+    "max": "380px",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 16,
+    "y": 140,
+    "w": 358,
+    "h": 26
+   },
+   {
+    "el": "div.framer-r79nxq",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 36,
+    "y": 645,
+    "w": 318,
+    "h": 226
+   },
+   {
+    "el": "div.framer-tjpqv5",
+    "max": "1024px",
+    "padL": "16px",
+    "padR": "16px",
+    "x": 0,
+    "y": 871,
+    "w": 390,
+    "h": 7291
+   },
+   {
+    "el": "div.framer-29n8mm",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 1190,
+    "w": 358,
+    "h": 420
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 1706,
+    "w": 358,
+    "h": 390
+   },
+   {
+    "el": "div.framer-1557mu7",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 2144,
+    "w": 358,
+    "h": 240
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 2774,
+    "w": 358,
+    "h": 318
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 5868,
+    "w": 358,
+    "h": 350
+   },
+   {
+    "el": "div.framer-d0e8ni",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 16,
+    "y": 6266,
+    "w": 358,
+    "h": 292
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 8518
+  }
+ },
+ "everyday-hr@1440": {
+  "vw": 1440,
+  "docH": 5554,
+  "h1": {
+   "text": "Let the essentials run smoothly.",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 232,
+   "y": 132,
+   "w": 976,
+   "h": 70
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-w7c7vc",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 208,
+    "y": 0,
+    "w": 1024,
+    "h": 5229
+   },
+   {
+    "el": "div.framer-uvjt2f",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 330,
+    "w": 976,
+    "h": 4899
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 426,
+    "w": 680,
+    "h": 286
+   },
+   {
+    "el": "div.framer-cj6zfj",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 760,
+    "w": 680,
+    "h": 104
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 380,
+    "y": 1710,
+    "w": 680,
+    "h": 222
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 3544,
+    "w": 680,
+    "h": 198
+   },
+   {
+    "el": "div.framer-unb9nu",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 3790,
+    "w": 680,
+    "h": 32
+   },
+   {
+    "el": "div.framer-1vjkw95",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 4667,
+    "w": 976,
+    "h": 466
+   },
+   {
+    "el": "div.framer-mg3j4u",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 4667,
+    "w": 976,
+    "h": 466
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 208,
+    "y": 5294,
+    "w": 1024,
+    "h": 260
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-cj6zfj",
+    "cols": "330px 330px",
+    "colGap": "20px",
+    "rowGap": "20px",
+    "x": 232,
+    "y": 760,
+    "w": 680,
+    "h": 104
+   },
+   {
+    "el": "div.framer-unb9nu",
+    "cols": "330px 330px",
+    "colGap": "20px",
+    "rowGap": "20px",
+    "x": 232,
+    "y": 3790,
+    "w": 680,
+    "h": 32
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 5554
+  }
+ },
+ "everyday-hr@1920": {
+  "vw": 1920,
+  "docH": 5554,
+  "h1": {
+   "text": "Let the essentials run smoothly.",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 472,
+   "y": 132,
+   "w": 976,
+   "h": 70
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-w7c7vc",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 448,
+    "y": 0,
+    "w": 1024,
+    "h": 5229
+   },
+   {
+    "el": "div.framer-uvjt2f",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 330,
+    "w": 976,
+    "h": 4899
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 426,
+    "w": 680,
+    "h": 286
+   },
+   {
+    "el": "div.framer-cj6zfj",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 760,
+    "w": 680,
+    "h": 104
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 620,
+    "y": 1710,
+    "w": 680,
+    "h": 222
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 3544,
+    "w": 680,
+    "h": 198
+   },
+   {
+    "el": "div.framer-unb9nu",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 3790,
+    "w": 680,
+    "h": 32
+   },
+   {
+    "el": "div.framer-1vjkw95",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 4667,
+    "w": 976,
+    "h": 466
+   },
+   {
+    "el": "div.framer-mg3j4u",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 4667,
+    "w": 976,
+    "h": 466
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 448,
+    "y": 5294,
+    "w": 1024,
+    "h": 260
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-cj6zfj",
+    "cols": "330px 330px",
+    "colGap": "20px",
+    "rowGap": "20px",
+    "x": 472,
+    "y": 760,
+    "w": 680,
+    "h": 104
+   },
+   {
+    "el": "div.framer-unb9nu",
+    "cols": "330px 330px",
+    "colGap": "20px",
+    "rowGap": "20px",
+    "x": 472,
+    "y": 3790,
+    "w": 680,
+    "h": 32
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 5554
+  }
+ },
+ "everyday-hr@1024": {
+  "vw": 1024,
+  "docH": 5554,
+  "h1": {
+   "text": "Let the essentials run smoothly.",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 24,
+   "y": 132,
+   "w": 976,
+   "h": 70
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-w7c7vc",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 5229
+   },
+   {
+    "el": "div.framer-uvjt2f",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 330,
+    "w": 976,
+    "h": 4899
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 426,
+    "w": 680,
+    "h": 286
+   },
+   {
+    "el": "div.framer-cj6zfj",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 760,
+    "w": 680,
+    "h": 104
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 172,
+    "y": 1710,
+    "w": 680,
+    "h": 222
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 3544,
+    "w": 680,
+    "h": 198
+   },
+   {
+    "el": "div.framer-unb9nu",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 3790,
+    "w": 680,
+    "h": 32
+   },
+   {
+    "el": "div.framer-1vjkw95",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 4667,
+    "w": 976,
+    "h": 466
+   },
+   {
+    "el": "div.framer-mg3j4u",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 4667,
+    "w": 976,
+    "h": 466
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 5294,
+    "w": 1024,
+    "h": 260
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-cj6zfj",
+    "cols": "330px 330px",
+    "colGap": "20px",
+    "rowGap": "20px",
+    "x": 24,
+    "y": 760,
+    "w": 680,
+    "h": 104
+   },
+   {
+    "el": "div.framer-unb9nu",
+    "cols": "330px 330px",
+    "colGap": "20px",
+    "rowGap": "20px",
+    "x": 24,
+    "y": 3790,
+    "w": 680,
+    "h": 32
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 5554
+  }
+ },
+ "everyday-hr@390": {
+  "vw": 390,
+  "docH": 6831,
+  "h1": {
+   "text": "Let the essentials run smoothly.",
+   "font": "600 48px / 52.8px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 24,
+   "y": 132,
+   "w": 342,
+   "h": 158
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 64
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-w7c7vc",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 6476
+   },
+   {
+    "el": "div.framer-uvjt2f",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 450,
+    "w": 342,
+    "h": 6026
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 546,
+    "w": 342,
+    "h": 318
+   },
+   {
+    "el": "div.framer-cj6zfj",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 912,
+    "w": 342,
+    "h": 136
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1451,
+    "w": 342,
+    "h": 222
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 4473,
+    "w": 342,
+    "h": 254
+   },
+   {
+    "el": "div.framer-unb9nu",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 4775,
+    "w": 342,
+    "h": 84
+   },
+   {
+    "el": "div.framer-1vjkw95",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 5262,
+    "w": 342,
+    "h": 1118
+   },
+   {
+    "el": "div.framer-mg3j4u",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 5262,
+    "w": 342,
+    "h": 1118
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 6509,
+    "w": 390,
+    "h": 322
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 6831
+  }
+ },
+ "growth-feedback@1440": {
+  "vw": 1440,
+  "docH": 6375,
+  "h1": {
+   "text": "Support your team, one conversation at a time.",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 232,
+   "y": 132,
+   "w": 976,
+   "h": 141
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-dhhjz8",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 208,
+    "y": 0,
+    "w": 1024,
+    "h": 6050
+   },
+   {
+    "el": "div.framer-cbwv9f",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 401,
+    "w": 976,
+    "h": 5650
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 497,
+    "w": 680,
+    "h": 222
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 380,
+    "y": 1564,
+    "w": 680,
+    "h": 254
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 2990,
+    "w": 680,
+    "h": 254
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 380,
+    "y": 4118,
+    "w": 680,
+    "h": 198
+   },
+   {
+    "el": "div.framer-f5cvt4",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 5488,
+    "w": 976,
+    "h": 466
+   },
+   {
+    "el": "div.framer-av95zj",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 5488,
+    "w": 976,
+    "h": 466
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 208,
+    "y": 6115,
+    "w": 1024,
+    "h": 260
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 6375
+  }
+ },
+ "growth-feedback@1920": {
+  "vw": 1920,
+  "docH": 6375,
+  "h1": {
+   "text": "Support your team, one conversation at a time.",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 472,
+   "y": 132,
+   "w": 976,
+   "h": 141
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-dhhjz8",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 448,
+    "y": 0,
+    "w": 1024,
+    "h": 6050
+   },
+   {
+    "el": "div.framer-cbwv9f",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 401,
+    "w": 976,
+    "h": 5650
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 497,
+    "w": 680,
+    "h": 222
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 620,
+    "y": 1564,
+    "w": 680,
+    "h": 254
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 2990,
+    "w": 680,
+    "h": 254
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 620,
+    "y": 4118,
+    "w": 680,
+    "h": 198
+   },
+   {
+    "el": "div.framer-f5cvt4",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 5488,
+    "w": 976,
+    "h": 466
+   },
+   {
+    "el": "div.framer-av95zj",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 5488,
+    "w": 976,
+    "h": 466
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 448,
+    "y": 6115,
+    "w": 1024,
+    "h": 260
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 6375
+  }
+ },
+ "growth-feedback@1024": {
+  "vw": 1024,
+  "docH": 6375,
+  "h1": {
+   "text": "Support your team, one conversation at a time.",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 24,
+   "y": 132,
+   "w": 976,
+   "h": 141
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-dhhjz8",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 6050
+   },
+   {
+    "el": "div.framer-cbwv9f",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 401,
+    "w": 976,
+    "h": 5650
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 497,
+    "w": 680,
+    "h": 222
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 172,
+    "y": 1564,
+    "w": 680,
+    "h": 254
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 2990,
+    "w": 680,
+    "h": 254
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 172,
+    "y": 4118,
+    "w": 680,
+    "h": 198
+   },
+   {
+    "el": "div.framer-f5cvt4",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 5488,
+    "w": 976,
+    "h": 466
+   },
+   {
+    "el": "div.framer-av95zj",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 5488,
+    "w": 976,
+    "h": 466
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 6115,
+    "w": 1024,
+    "h": 260
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 6375
+  }
+ },
+ "growth-feedback@390": {
+  "vw": 390,
+  "docH": 8300,
+  "h1": {
+   "text": "Support your team, one conversation at a time.",
+   "font": "600 48px / 52.8px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 24,
+   "y": 132,
+   "w": 342,
+   "h": 211
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 64
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-dhhjz8",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 7945
+   },
+   {
+    "el": "div.framer-cbwv9f",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 503,
+    "w": 342,
+    "h": 7442
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 599,
+    "w": 342,
+    "h": 254
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1256,
+    "w": 342,
+    "h": 286
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 3678,
+    "w": 342,
+    "h": 286
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 4381,
+    "w": 342,
+    "h": 214
+   },
+   {
+    "el": "div.framer-f5cvt4",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 6731,
+    "w": 342,
+    "h": 1118
+   },
+   {
+    "el": "div.framer-av95zj",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 6731,
+    "w": 342,
+    "h": 1118
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 7978,
+    "w": 390,
+    "h": 322
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 8300
+  }
+ },
+ "team-culture@1440": {
+  "vw": 1440,
+  "docH": 5273,
+  "h1": {
+   "text": "Where connection becomes culture.",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 232,
+   "y": 132,
+   "w": 976,
+   "h": 141
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-e5vs2w",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 208,
+    "y": 0,
+    "w": 1024,
+    "h": 4948
+   },
+   {
+    "el": "div.framer-1bo6tg6",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 401,
+    "w": 976,
+    "h": 4547
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 497,
+    "w": 680,
+    "h": 198
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 380,
+    "y": 1540,
+    "w": 680,
+    "h": 222
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 3374,
+    "w": 680,
+    "h": 166
+   },
+   {
+    "el": "div.framer-1jfiw1y",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 4385,
+    "w": 976,
+    "h": 466
+   },
+   {
+    "el": "div.framer-195bdc1",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 4385,
+    "w": 976,
+    "h": 466
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 208,
+    "y": 5013,
+    "w": 1024,
+    "h": 260
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 5273
+  }
+ },
+ "team-culture@1920": {
+  "vw": 1920,
+  "docH": 5273,
+  "h1": {
+   "text": "Where connection becomes culture.",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 472,
+   "y": 132,
+   "w": 976,
+   "h": 141
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-e5vs2w",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 448,
+    "y": 0,
+    "w": 1024,
+    "h": 4948
+   },
+   {
+    "el": "div.framer-1bo6tg6",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 401,
+    "w": 976,
+    "h": 4547
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 497,
+    "w": 680,
+    "h": 198
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 620,
+    "y": 1540,
+    "w": 680,
+    "h": 222
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 3374,
+    "w": 680,
+    "h": 166
+   },
+   {
+    "el": "div.framer-1jfiw1y",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 4385,
+    "w": 976,
+    "h": 466
+   },
+   {
+    "el": "div.framer-195bdc1",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 4385,
+    "w": 976,
+    "h": 466
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 448,
+    "y": 5013,
+    "w": 1024,
+    "h": 260
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 5273
+  }
+ },
+ "team-culture@1024": {
+  "vw": 1024,
+  "docH": 5273,
+  "h1": {
+   "text": "Where connection becomes culture.",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 24,
+   "y": 132,
+   "w": 976,
+   "h": 141
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-e5vs2w",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 4948
+   },
+   {
+    "el": "div.framer-1bo6tg6",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 401,
+    "w": 976,
+    "h": 4547
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 497,
+    "w": 680,
+    "h": 198
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 172,
+    "y": 1540,
+    "w": 680,
+    "h": 222
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 3374,
+    "w": 680,
+    "h": 166
+   },
+   {
+    "el": "div.framer-1jfiw1y",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 4385,
+    "w": 976,
+    "h": 466
+   },
+   {
+    "el": "div.framer-195bdc1",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 4385,
+    "w": 976,
+    "h": 466
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 5013,
+    "w": 1024,
+    "h": 260
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 5273
+  }
+ },
+ "team-culture@390": {
+  "vw": 390,
+  "docH": 6504,
+  "h1": {
+   "text": "Where connection becomes culture.",
+   "font": "600 48px / 52.8px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 24,
+   "y": 132,
+   "w": 342,
+   "h": 211
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 64
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-e5vs2w",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 6149
+   },
+   {
+    "el": "div.framer-1bo6tg6",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 535,
+    "w": 342,
+    "h": 5614
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 631,
+    "w": 342,
+    "h": 254
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 1288,
+    "w": 342,
+    "h": 222
+   },
+   {
+    "el": "div.framer-4zlfu6",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 4310,
+    "w": 342,
+    "h": 222
+   },
+   {
+    "el": "div.framer-1jfiw1y",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 4935,
+    "w": 342,
+    "h": 1118
+   },
+   {
+    "el": "div.framer-195bdc1",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 4935,
+    "w": 342,
+    "h": 1118
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 6182,
+    "w": 390,
+    "h": 322
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 6504
+  }
+ },
+ "pricing@1440": {
+  "vw": 1440,
+  "docH": 1427,
+  "h1": {
+   "text": "80 kr",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 646,
+   "y": 400,
+   "w": 148,
+   "h": 70
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-dtls6u",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 208,
+    "y": 0,
+    "w": 1024,
+    "h": 1102
+   },
+   {
+    "el": "div.framer-i97zjw",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 132,
+    "w": 976,
+    "h": 970
+   },
+   {
+    "el": "div.framer-1okjhnk",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 380,
+    "y": 622,
+    "w": 680,
+    "h": 328
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 208,
+    "y": 1167,
+    "w": 1024,
+    "h": 260
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-1okjhnk",
+    "cols": "330px 330px",
+    "colGap": "20px",
+    "rowGap": "32px",
+    "x": 380,
+    "y": 622,
+    "w": 680,
+    "h": 328
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 1427
+  }
+ },
+ "pricing@1920": {
+  "vw": 1920,
+  "docH": 1427,
+  "h1": {
+   "text": "80 kr",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 886,
+   "y": 400,
+   "w": 148,
+   "h": 70
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-dtls6u",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 448,
+    "y": 0,
+    "w": 1024,
+    "h": 1102
+   },
+   {
+    "el": "div.framer-i97zjw",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 132,
+    "w": 976,
+    "h": 970
+   },
+   {
+    "el": "div.framer-1okjhnk",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 620,
+    "y": 622,
+    "w": 680,
+    "h": 328
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 448,
+    "y": 1167,
+    "w": 1024,
+    "h": 260
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-1okjhnk",
+    "cols": "330px 330px",
+    "colGap": "20px",
+    "rowGap": "32px",
+    "x": 620,
+    "y": 622,
+    "w": 680,
+    "h": 328
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1427
+  }
+ },
+ "pricing@1024": {
+  "vw": 1024,
+  "docH": 1427,
+  "h1": {
+   "text": "80 kr",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 438,
+   "y": 400,
+   "w": 148,
+   "h": 70
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-dtls6u",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 1102
+   },
+   {
+    "el": "div.framer-i97zjw",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 132,
+    "w": 976,
+    "h": 970
+   },
+   {
+    "el": "div.framer-1okjhnk",
+    "max": "680px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 172,
+    "y": 622,
+    "w": 680,
+    "h": 328
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 1167,
+    "w": 1024,
+    "h": 260
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.framer-1okjhnk",
+    "cols": "330px 330px",
+    "colGap": "20px",
+    "rowGap": "32px",
+    "x": 172,
+    "y": 622,
+    "w": 680,
+    "h": 328
+   }
+  ],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 1427
+  }
+ },
+ "pricing@390": {
+  "vw": 390,
+  "docH": 1984,
+  "h1": {
+   "text": "80 kr",
+   "font": "600 48px / 52.8px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 138,
+   "y": 456,
+   "w": 113,
+   "h": 53
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 64
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-dtls6u",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 1629
+   },
+   {
+    "el": "div.framer-i97zjw",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 132,
+    "w": 342,
+    "h": 1497
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 1662,
+    "w": 390,
+    "h": 322
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 1984
+  }
+ },
+ "whats-new@1440": {
+  "vw": 1440,
+  "docH": 21126,
+  "h1": {
+   "text": "What’s new",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 232,
+   "y": 132,
+   "w": 976,
+   "h": 70
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 90
+   },
+   {
+    "el": "div.framer-1iyt2d0",
+    "pos": "sticky",
+    "top": "100px",
+    "z": "1",
+    "x": 232,
+    "y": 340,
+    "w": 240,
+    "h": 44
+   },
+   {
+    "el": "div.framer-1iyt2d0",
+    "pos": "sticky",
+    "top": "100px",
+    "z": "1",
+    "x": 232,
+    "y": 6576,
+    "w": 240,
+    "h": 44
+   },
+   {
+    "el": "div.framer-1iyt2d0",
+    "pos": "sticky",
+    "top": "100px",
+    "z": "1",
+    "x": 232,
+    "y": 9161,
+    "w": 240,
+    "h": 44
+   },
+   {
+    "el": "div.framer-1iyt2d0",
+    "pos": "sticky",
+    "top": "100px",
+    "z": "1",
+    "x": 232,
+    "y": 16176,
+    "w": 240,
+    "h": 44
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ygor3w",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 208,
+    "y": 0,
+    "w": 1024,
+    "h": 20801
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 504,
+    "y": 693,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 504,
+    "y": 1676,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 504,
+    "y": 2754,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 504,
+    "y": 3631,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 504,
+    "y": 4508,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 504,
+    "y": 5364,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 504,
+    "y": 6871,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 504,
+    "y": 7903,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 504,
+    "y": 9427,
+    "w": 704,
+    "h": 519
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 21126
+  }
+ },
+ "whats-new@1920": {
+  "vw": 1920,
+  "docH": 21126,
+  "h1": {
+   "text": "What’s new",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 472,
+   "y": 132,
+   "w": 976,
+   "h": 70
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 90
+   },
+   {
+    "el": "div.framer-1iyt2d0",
+    "pos": "sticky",
+    "top": "100px",
+    "z": "1",
+    "x": 472,
+    "y": 340,
+    "w": 240,
+    "h": 44
+   },
+   {
+    "el": "div.framer-1iyt2d0",
+    "pos": "sticky",
+    "top": "100px",
+    "z": "1",
+    "x": 472,
+    "y": 6576,
+    "w": 240,
+    "h": 44
+   },
+   {
+    "el": "div.framer-1iyt2d0",
+    "pos": "sticky",
+    "top": "100px",
+    "z": "1",
+    "x": 472,
+    "y": 9161,
+    "w": 240,
+    "h": 44
+   },
+   {
+    "el": "div.framer-1iyt2d0",
+    "pos": "sticky",
+    "top": "100px",
+    "z": "1",
+    "x": 472,
+    "y": 16176,
+    "w": 240,
+    "h": 44
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ygor3w",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 448,
+    "y": 0,
+    "w": 1024,
+    "h": 20801
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 744,
+    "y": 693,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 744,
+    "y": 1676,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 744,
+    "y": 2754,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 744,
+    "y": 3631,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 744,
+    "y": 4508,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 744,
+    "y": 5364,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 744,
+    "y": 6871,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 744,
+    "y": 7903,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 744,
+    "y": 9427,
+    "w": 704,
+    "h": 519
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 21126
+  }
+ },
+ "whats-new@1024": {
+  "vw": 1024,
+  "docH": 21126,
+  "h1": {
+   "text": "What’s new",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 24,
+   "y": 132,
+   "w": 976,
+   "h": 70
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 90
+   },
+   {
+    "el": "div.framer-1iyt2d0",
+    "pos": "sticky",
+    "top": "100px",
+    "z": "1",
+    "x": 24,
+    "y": 340,
+    "w": 240,
+    "h": 44
+   },
+   {
+    "el": "div.framer-1iyt2d0",
+    "pos": "sticky",
+    "top": "100px",
+    "z": "1",
+    "x": 24,
+    "y": 6576,
+    "w": 240,
+    "h": 44
+   },
+   {
+    "el": "div.framer-1iyt2d0",
+    "pos": "sticky",
+    "top": "100px",
+    "z": "1",
+    "x": 24,
+    "y": 9161,
+    "w": 240,
+    "h": 44
+   },
+   {
+    "el": "div.framer-1iyt2d0",
+    "pos": "sticky",
+    "top": "100px",
+    "z": "1",
+    "x": 24,
+    "y": 16176,
+    "w": 240,
+    "h": 44
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ygor3w",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 20801
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 296,
+    "y": 693,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 296,
+    "y": 1676,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 296,
+    "y": 2754,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 296,
+    "y": 3631,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 296,
+    "y": 4508,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 296,
+    "y": 5364,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 296,
+    "y": 6871,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 296,
+    "y": 7903,
+    "w": 704,
+    "h": 519
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 296,
+    "y": 9427,
+    "w": 704,
+    "h": 519
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 21126
+  }
+ },
+ "whats-new@390": {
+  "vw": 390,
+  "docH": 22977,
+  "h1": {
+   "text": "What’s new",
+   "font": "600 48px / 52.8px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 24,
+   "y": 132,
+   "w": 342,
+   "h": 53
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 64
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-1ygor3w",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 22622
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 992,
+    "w": 342,
+    "h": 252
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 2025,
+    "w": 342,
+    "h": 252
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 3355,
+    "w": 342,
+    "h": 252
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 4203,
+    "w": 342,
+    "h": 252
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 5051,
+    "w": 342,
+    "h": 252
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 5944,
+    "w": 342,
+    "h": 252
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 7820,
+    "w": 342,
+    "h": 252
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 8873,
+    "w": 342,
+    "h": 252
+   },
+   {
+    "el": "img.framer-text.framer-image.framer-styles-preset-hr1adc",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 10916,
+    "w": 342,
+    "h": 252
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 22977
+  }
+ },
+ "book-demo@1440": {
+  "vw": 1440,
+  "docH": 1396,
+  "h1": null,
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-4qm93c",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 208,
+    "y": 0,
+    "w": 1024,
+    "h": 1071
+   },
+   {
+    "el": "div.framer-1jlq9x1",
+    "max": "1200px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 132,
+    "w": 976,
+    "h": 939
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 208,
+    "y": 1136,
+    "w": 1024,
+    "h": 260
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 1396
+  }
+ },
+ "book-demo@1920": {
+  "vw": 1920,
+  "docH": 1396,
+  "h1": null,
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-4qm93c",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 448,
+    "y": 0,
+    "w": 1024,
+    "h": 1071
+   },
+   {
+    "el": "div.framer-1jlq9x1",
+    "max": "1200px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 132,
+    "w": 976,
+    "h": 939
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 448,
+    "y": 1136,
+    "w": 1024,
+    "h": 260
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 1396
+  }
+ },
+ "book-demo@1024": {
+  "vw": 1024,
+  "docH": 1396,
+  "h1": null,
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-4qm93c",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 1071
+   },
+   {
+    "el": "div.framer-1jlq9x1",
+    "max": "1200px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 132,
+    "w": 976,
+    "h": 939
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 1136,
+    "w": 1024,
+    "h": 260
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 1396
+  }
+ },
+ "book-demo@390": {
+  "vw": 390,
+  "docH": 1442,
+  "h1": null,
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 64
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-4qm93c",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 1087
+   },
+   {
+    "el": "div.framer-1jlq9x1",
+    "max": "1200px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 132,
+    "w": 342,
+    "h": 955
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 1120,
+    "w": 390,
+    "h": 322
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 1442
+  }
+ },
+ "teamtailor@1440": {
+  "vw": 1440,
+  "docH": 4051,
+  "h1": {
+   "text": "The best candidate experience deserves an equally great employee experience.",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 280,
+   "y": 321,
+   "w": 880,
+   "h": 211
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-jv3spu",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 208,
+    "y": 0,
+    "w": 1024,
+    "h": 3726
+   },
+   {
+    "el": "div.framer-5qkgto",
+    "max": "1200px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 232,
+    "y": 132,
+    "w": 976,
+    "h": 3594
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 208,
+    "y": 3791,
+    "w": 1024,
+    "h": 260
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 4051
+  }
+ },
+ "teamtailor@1920": {
+  "vw": 1920,
+  "docH": 4051,
+  "h1": {
+   "text": "The best candidate experience deserves an equally great employee experience.",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 520,
+   "y": 321,
+   "w": 880,
+   "h": 211
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-jv3spu",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 448,
+    "y": 0,
+    "w": 1024,
+    "h": 3726
+   },
+   {
+    "el": "div.framer-5qkgto",
+    "max": "1200px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 472,
+    "y": 132,
+    "w": 976,
+    "h": 3594
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 448,
+    "y": 3791,
+    "w": 1024,
+    "h": 260
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1920,
+   "h": 4051
+  }
+ },
+ "teamtailor@1024": {
+  "vw": 1024,
+  "docH": 4051,
+  "h1": {
+   "text": "The best candidate experience deserves an equally great employee experience.",
+   "font": "600 64px / 70.4px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 72,
+   "y": 321,
+   "w": 880,
+   "h": 211
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 90
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-jv3spu",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 3726
+   },
+   {
+    "el": "div.framer-5qkgto",
+    "max": "1200px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 132,
+    "w": 976,
+    "h": 3594
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 3791,
+    "w": 1024,
+    "h": 260
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 1024,
+   "h": 4051
+  }
+ },
+ "teamtailor@390": {
+  "vw": 390,
+  "docH": 5362,
+  "h1": {
+   "text": "The best candidate experience deserves an equally great employee experience.",
+   "font": "600 48px / 52.8px \"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+   "x": 24,
+   "y": 226,
+   "w": 342,
+   "h": 370
+  },
+  "fixed": [
+   {
+    "el": "div.framer-1jwbtuu-container",
+    "pos": "fixed",
+    "top": "0px",
+    "z": "10",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 64
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.framer-jv3spu",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 5007
+   },
+   {
+    "el": "div.framer-5qkgto",
+    "max": "1200px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 24,
+    "y": 132,
+    "w": 342,
+    "h": 4875
+   },
+   {
+    "el": "div.framer-1wzquv6",
+    "max": "1024px",
+    "padL": "24px",
+    "padR": "24px",
+    "x": 0,
+    "y": 5040,
+    "w": 390,
+    "h": 322
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "div",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 5362
+  }
+ }
+}

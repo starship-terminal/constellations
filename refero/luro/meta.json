@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/4e10797e-03eb-4efb-a16d-1d93272e1cab",
   "source_url": "https://luroapp.com",
   "extracted_at": "2026-06-03T21:06:03.390Z",
-  "fetched_at": "2026-10-20T08:23:38Z",
+  "fetched_at": "2026-11-08T04:20:27Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/ca611445-935c-4cba-9864-dd10d4598646.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/3274fcf2-0169-4b0d-9ed9-076ce4f65cd7.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/80d2b937-747e-4831-9d2c-3602bc884b51.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/046580d6-5e5f-44f1-be63-e61b577cc434.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/3e32db74-a61d-4e72-93b8-1fb949af2c00",
   "source_url": "https://hex.tech",
   "extracted_at": "2026-06-03T17:39:31.908Z",
-  "fetched_at": "2026-10-20T08:22:57Z",
+  "fetched_at": "2026-11-08T04:20:17Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/aca0eb08-872c-4438-b4f9-14f038552c33.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/777c557f-f4b6-4ba0-bee7-f47796bfda49.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/9d60e076-0c34-45cd-aa76-1eb51ce3692d.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/9c3db2ca-2272-43f9-9a32-38e206e93302.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/1e675740-7935-4a49-b4c8-e5aa9fda06dd",
   "source_url": "https://www.composer.trade",
   "extracted_at": "2026-06-03T20:12:16.457Z",
-  "fetched_at": "2026-10-20T08:23:53Z",
+  "fetched_at": "2026-11-08T04:19:56Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e7a70662-16b1-4bf5-99fb-5b7400aa6edf.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/f393ac44-a9db-46a0-ad48-011134143dd3.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d38021ae-7ab5-4d66-b79d-25ab80a127c2.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/980ebd6f-5cc8-4964-a835-ed5996897871.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

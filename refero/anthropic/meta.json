@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/d469cba4-c448-4a43-a033-883f8bfcdc42",
   "source_url": "https://anthropic.com",
   "extracted_at": "2026-07-03T03:04:05.854Z",
-  "fetched_at": "2026-10-20T08:21:38Z",
+  "fetched_at": "2026-11-08T04:19:42Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d0b5b39f-2be5-442b-8c13-2690f3147a2e.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/f7e065eb-c28b-44bc-aeca-149160860548.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/3c58c86b-e39d-4e99-ad5e-34ec163886f5.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/88915535-2c5c-4c3e-bafc-d3649c236f4c.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

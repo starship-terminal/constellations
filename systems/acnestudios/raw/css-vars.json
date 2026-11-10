@@ -1,0 +1,225 @@
+{
+ "readAt": "2026-11-09",
+ "source": "the live CSSOM on acnestudios.com/sg/en/home (css/main.css and the experience-component sheets are same-origin, readable); one theme, resolved at 1440 x 900",
+ "sheetsSkippedCrossOrigin": [],
+ "counts": {
+  "rules": 9,
+  "fonts": 3,
+  "names": {
+   "theme": 0,
+   "app": 2,
+   "utility": 0,
+   "tailwind": 49,
+   "vendor": 15
+  },
+  "bySelector": {
+   "[app] @media (max-width: 991px) @supports (padding-bottom:env(safe-area-inset-bottom)) .navigation-state-container": 1,
+   "[app] @media (max-width: 991px) @supports (padding-bottom:env(safe-area-inset-bottom)) .category-state-container": 1,
+   "[app] @media (max-width: 767px) @supports (padding-bottom:env(safe-area-inset-bottom)) .state-container--pos-bottom---small-down": 1,
+   "[app] @media (max-width: 767px) @supports (padding-bottom:env(safe-area-inset-bottom)) .minicart--fixed": 1,
+   "[app] @media (max-width: 767px) @supports (padding-bottom:env(safe-area-inset-bottom)) .drawer": 1,
+   "[app] @supports (padding-bottom:env(safe-area-inset-bottom)) .drawer__scroll-area": 1,
+   "[app] .search-section__nav": 1,
+   "[vendor] [data-checkout-section=\"paymentMethods\"]": 15,
+   "[tailwind] @layer properties @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) *, ::before, ::after, ::backdrop": 49
+  }
+ },
+ "theme": [],
+ "app": [
+  {
+   "file": "main.css",
+   "selector": ".navigation-state-container",
+   "context": [
+    "@media (max-width: 991px)",
+    "@supports (padding-bottom:env(safe-area-inset-bottom))"
+   ],
+   "properties": {
+    "--safe-area-inset-bottom": "env(safe-area-inset-bottom,0)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "main.css",
+   "selector": ".category-state-container",
+   "context": [
+    "@media (max-width: 991px)",
+    "@supports (padding-bottom:env(safe-area-inset-bottom))"
+   ],
+   "properties": {
+    "--safe-area-inset-bottom": "env(safe-area-inset-bottom,0)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "main.css",
+   "selector": ".state-container--pos-bottom---small-down",
+   "context": [
+    "@media (max-width: 767px)",
+    "@supports (padding-bottom:env(safe-area-inset-bottom))"
+   ],
+   "properties": {
+    "--safe-area-inset-bottom": "env(safe-area-inset-bottom,0)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "main.css",
+   "selector": ".minicart--fixed",
+   "context": [
+    "@media (max-width: 767px)",
+    "@supports (padding-bottom:env(safe-area-inset-bottom))"
+   ],
+   "properties": {
+    "--safe-area-inset-bottom": "env(safe-area-inset-bottom,0)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "main.css",
+   "selector": ".drawer",
+   "context": [
+    "@media (max-width: 767px)",
+    "@supports (padding-bottom:env(safe-area-inset-bottom))"
+   ],
+   "properties": {
+    "--safe-area-inset-bottom": "env(safe-area-inset-bottom,0)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "main.css",
+   "selector": ".drawer__scroll-area",
+   "context": [
+    "@supports (padding-bottom:env(safe-area-inset-bottom))"
+   ],
+   "properties": {
+    "--safe-area-inset-bottom": "env(safe-area-inset-bottom,0)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "main.css",
+   "selector": ".search-section__nav",
+   "context": [],
+   "properties": {
+    "--intersection-ratio": "45px"
+   },
+   "bin": "app"
+  }
+ ],
+ "utility": [],
+ "tailwind": [
+  {
+   "file": "inline-3",
+   "selector": "*, ::before, ::after, ::backdrop",
+   "context": [
+    "@layer properties",
+    "@supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b))))"
+   ],
+   "properties": {
+    "--tw-rotate-x": "initial",
+    "--tw-rotate-y": "initial",
+    "--tw-rotate-z": "initial",
+    "--tw-skew-x": "initial",
+    "--tw-skew-y": "initial",
+    "--tw-pan-x": "initial",
+    "--tw-pan-y": "initial",
+    "--tw-pinch-zoom": "initial",
+    "--tw-scroll-snap-strictness": "proximity",
+    "--tw-border-style": "solid",
+    "--tw-leading": "initial",
+    "--tw-ordinal": "initial",
+    "--tw-slashed-zero": "initial",
+    "--tw-numeric-figure": "initial",
+    "--tw-numeric-spacing": "initial",
+    "--tw-numeric-fraction": "initial",
+    "--tw-shadow": "0 0 #0000",
+    "--tw-shadow-color": "initial",
+    "--tw-shadow-alpha": "100%",
+    "--tw-inset-shadow": "0 0 #0000",
+    "--tw-inset-shadow-color": "initial",
+    "--tw-inset-shadow-alpha": "100%",
+    "--tw-ring-color": "initial",
+    "--tw-ring-shadow": "0 0 #0000",
+    "--tw-inset-ring-color": "initial",
+    "--tw-inset-ring-shadow": "0 0 #0000",
+    "--tw-ring-inset": "initial",
+    "--tw-ring-offset-width": "0px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-offset-shadow": "0 0 #0000",
+    "--tw-outline-style": "solid",
+    "--tw-blur": "initial",
+    "--tw-brightness": "initial",
+    "--tw-contrast": "initial",
+    "--tw-grayscale": "initial",
+    "--tw-hue-rotate": "initial",
+    "--tw-invert": "initial",
+    "--tw-opacity": "initial",
+    "--tw-saturate": "initial",
+    "--tw-sepia": "initial",
+    "--tw-drop-shadow": "initial",
+    "--tw-drop-shadow-color": "initial",
+    "--tw-drop-shadow-alpha": "100%",
+    "--tw-drop-shadow-size": "initial",
+    "--tw-ease": "initial",
+    "--tw-content": "\"\"",
+    "--tw-translate-x": "0",
+    "--tw-translate-y": "0",
+    "--tw-translate-z": "0"
+   },
+   "bin": "tailwind"
+  }
+ ],
+ "vendor": [
+  {
+   "file": "main.css",
+   "selector": "[data-checkout-section=\"paymentMethods\"]",
+   "context": [],
+   "properties": {
+    "--adyen-sdk-text-caption-font-size": "12px",
+    "--adyen-sdk-text-caption-line-height": "20px",
+    "--adyen-sdk-text-body-font-weight": "normal",
+    "--adyen-sdk-spacer-020": "5px",
+    "--adyen-sdk-spacer-040": "5px",
+    "--adyen-sdk-color-label-primary": "#000",
+    "--adyen-sdk-color-label-secondary": "#000",
+    "--adyen-sdk-color-label-critical": "#dc0000",
+    "--adyen-sdk-color-background-disabled": "#f7f7f7",
+    "--adyen-sdk-color-background-primary": "#fff",
+    "--adyen-sdk-border-width-s": "1px",
+    "--adyen-sdk-color-outline-primary": "transparent",
+    "--adyen-sdk-color-outline-tertiary": "#000",
+    "--adyen-sdk-border-radius-m": "0px",
+    "--adyen-sdk-spacer-070": "10px"
+   },
+   "bin": "vendor"
+  }
+ ],
+ "fonts": [
+  {
+   "file": "inline-1",
+   "font-display": "swap",
+   "font-family": "\"Helvetica Now Text\"",
+   "font-style": "normal",
+   "font-weight": "normal",
+   "src": "url(\"/on/demandware.static/Sites-acne_sg-Site/-/default/dw53c54d7d/fonts/helvetica-now-w05-text-regular.woff2\") format(\"woff2\"), url(\"/on/demandware.static/Sites-acne_sg-Site/-/default/dwff33b42c/fonts/helvetica-now-w05-text-regular.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline-1",
+   "font-display": "swap",
+   "font-family": "\"Helvetica Now Micro\"",
+   "font-style": "normal",
+   "font-weight": "normal",
+   "src": "url(\"/on/demandware.static/Sites-acne_sg-Site/-/default/dwdb98e615/fonts/helvetica-now-w05-micro-medium.woff2\") format(\"woff2\"), url(\"/on/demandware.static/Sites-acne_sg-Site/-/default/dweeb0babf/fonts/helvetica-now-w05-micro-medium.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline-1",
+   "font-display": "swap",
+   "font-family": "\"Helvetica Monospaced Pro\"",
+   "font-style": "normal",
+   "font-weight": "normal",
+   "src": "url(\"/on/demandware.static/Sites-acne_sg-Site/-/default/dw32404582/fonts/helvetica-monospaced-w05-paneuropean-roman.woff2\") format(\"woff2\"), url(\"/on/demandware.static/Sites-acne_sg-Site/-/default/dw70af8eb6/fonts/helvetica-monospaced-w05-paneuropean-roman.woff\") format(\"woff\")"
+  }
+ ],
+ "resolved": {}
+}

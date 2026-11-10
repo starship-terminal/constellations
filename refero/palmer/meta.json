@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/7cae43cd-dd0e-4658-86e6-d66935cfb213",
   "source_url": "https://www.palmer-dinnerware.com",
   "extracted_at": "2026-06-03T19:46:36.187Z",
-  "fetched_at": "2026-10-20T08:22:06Z",
+  "fetched_at": "2026-11-08T04:20:37Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/1b98b255-7c50-432b-8b1d-a067a510ef90.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/3b02b1f6-6f3c-4f24-9969-f0719dadcd93.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/ab6a1766-ab4b-4f9d-9d99-b61c872fc122.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/885d30fc-749b-4a36-aba5-35fda6ec8a91.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

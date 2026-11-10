@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/fa8ecd97-5052-4909-a4b4-50419ad9d00a",
   "source_url": "https://specifyapp.com",
   "extracted_at": "2026-06-03T18:41:53.827Z",
-  "fetched_at": "2026-10-20T08:24:19Z",
+  "fetched_at": "2026-11-08T04:20:50Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/21afc0c9-51f6-4db0-8c81-178faa43e095.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/6bb31eb0-89bc-442d-a75b-d11f28de0a5f.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/599b7472-3b28-48a0-a55d-701f5eac67c5.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/05051667-6582-4dac-8053-0ffd1b206abc.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

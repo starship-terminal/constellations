@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/371df039-a090-402b-b2e4-21ab38e07625",
   "source_url": "https://www.ameba.ai",
   "extracted_at": "2026-06-03T17:28:13.420Z",
-  "fetched_at": "2026-10-20T08:24:44Z",
+  "fetched_at": "2026-11-08T04:19:41Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/8ca45d3f-0f78-4592-8d85-1ea521b9232d.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/c696d538-bf09-4042-951d-d10a660afa70.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d40fc325-64f6-4898-be3c-ac77ae247296.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/fb46232c-0a7d-4573-b122-32ff1d9cd5cc.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

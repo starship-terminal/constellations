@@ -1,0 +1,3750 @@
+{
+ "readAt": "2026-11-09",
+ "source": "the live CSSOM on aboard.com (the WordPress theme stylesheets are same-origin, readable); one theme, resolved at 1440 x 900",
+ "sheetsSkippedCrossOrigin": [
+  "css2",
+  "css2"
+ ],
+ "counts": {
+  "rules": 270,
+  "fonts": 1,
+  "names": {
+   "theme": 116,
+   "app": 71,
+   "utility": 9,
+   "tailwind": 49
+  },
+  "bySelector": {
+   "[app] :root": 14,
+   "[app] @media (min-resolution: 192dpi) :root": 1,
+   "[theme] :root": 106,
+   "[app] html :where(.is-position-sticky)": 1,
+   "[app] @media screen and (max-width: 600px) html :where(.is-position-sticky)": 1,
+   "[app] .block-homepage-hero .cc": 1,
+   "[app] .block-homepage-hero .cc .tb": 1,
+   "[app] .block-homepage-hero .cc .tb .tb-hero.map": 1,
+   "[app] .block-homepage-hero .cc-logo": 1,
+   "[app] @media (max-width: 900px) .block-homepage-hero .cc": 1,
+   "[app] @media (max-width: 900px) .block-homepage-hero .cc-logo": 1,
+   "[app] .block-about-us": 2,
+   "[app] @media (prefers-reduced-motion: no-preference) html.js .block-about-us[data-frost]": 2,
+   "[theme] .wp-block-button": 4,
+   "[tailwind] ::after, ::before": 1,
+   "[tailwind] *, ::after, ::before": 44,
+   "[tailwind] ::backdrop": 44,
+   "[app] .btn": 12,
+   "[app] .btn-lg": 4,
+   "[app] .btn-sm": 4,
+   "[app] .btn-primary": 1,
+   "[app] .btn-secondary": 1,
+   "[app] .btn-dark:not(.btn-outline)": 4,
+   "[app] .btn-light:not(.btn-outline)": 4,
+   "[app] .btn-outline": 6,
+   "[app] .btn-outline.btn-light": 5,
+   "[app] .btn-rd": 10,
+   "[app] .btn-rd-disc": 4,
+   "[app] .btn-rd-light": 4,
+   "[app] .btn-rd-ghost": 4,
+   "[app] .btn-rd-orange": 4,
+   "[app] .btn-rd-paper": 4,
+   "[app] .btn-rd-cream": 10,
+   "[tailwind] .\\!translate-y-0": 1,
+   "[tailwind] .-translate-x-1\\/2": 1,
+   "[tailwind] .-translate-y-1\\/2": 1,
+   "[tailwind] .rotate-180": 1,
+   "[tailwind] .border-bright-citrus": 1,
+   "[tailwind] .border-light-grey": 1,
+   "[tailwind] .border-orange-peel": 1,
+   "[tailwind] .border-peach": 1,
+   "[tailwind] .border-tan-suit": 1,
+   "[tailwind] .\\!bg-bright-citrus": 1,
+   "[tailwind] .\\!bg-dark-citrus": 1,
+   "[tailwind] .\\!bg-neutral-400": 1,
+   "[tailwind] .\\!bg-tan-suit": 1,
+   "[tailwind] .bg-black-black": 1,
+   "[tailwind] .bg-bright-citrus": 1,
+   "[tailwind] .bg-cream": 1,
+   "[tailwind] .bg-gray-200": 1,
+   "[tailwind] .bg-off-white": 1,
+   "[tailwind] .bg-parchment": 1,
+   "[tailwind] .bg-rd-cream-hover": 1,
+   "[tailwind] .bg-rd-espresso": 1,
+   "[tailwind] .bg-rd-forest": 1,
+   "[tailwind] .bg-rd-panel": 1,
+   "[tailwind] .bg-rd-placeholder": 1,
+   "[tailwind] .bg-rd-placeholder-shot": 1,
+   "[tailwind] .bg-rd-surface-about": 1,
+   "[tailwind] .bg-tan-suit": 1,
+   "[tailwind] .bg-tree-bark": 1,
+   "[tailwind] .bg-warm-black": 1,
+   "[tailwind] .bg-white": 1,
+   "[tailwind] .tabular-nums": 1,
+   "[tailwind] .\\!text-off-white": 1,
+   "[tailwind] .\\!text-warm-black": 1,
+   "[tailwind] .\\!text-white": 1,
+   "[tailwind] .text-black": 1,
+   "[tailwind] .text-bright-citrus": 1,
+   "[tailwind] .text-cream": 1,
+   "[tailwind] .text-gray-700": 1,
+   "[tailwind] .text-light-grey": 1,
+   "[tailwind] .text-neutral-250": 1,
+   "[tailwind] .text-neutral-950": 1,
+   "[tailwind] .text-off-white": 1,
+   "[tailwind] .text-orange-peel": 1,
+   "[tailwind] .text-parchment": 1,
+   "[tailwind] .text-rd-cream-hover": 1,
+   "[tailwind] .text-rd-espresso": 1,
+   "[tailwind] .text-rd-forest": 1,
+   "[tailwind] .text-rd-panel": 1,
+   "[tailwind] .text-rd-placeholder": 1,
+   "[tailwind] .text-rd-placeholder-shot": 1,
+   "[tailwind] .text-rd-surface-about": 1,
+   "[tailwind] .text-tan-suit": 1,
+   "[tailwind] .text-warm-black": 1,
+   "[tailwind] .text-warm-grey": 1,
+   "[tailwind] .text-white": 1,
+   "[tailwind] .\\!shadow-\\[0px_1px_2px_0px_\\#0A0D1408\\]": 2,
+   "[tailwind] .shadow": 2,
+   "[tailwind] .shadow-\\[0_4px_10\\.4px_0_rgba\\(0\\,0\\,0\\,0\\.25\\)\\]": 2,
+   "[tailwind] .shadow-\\[0_4px_18px_rgba\\(0\\,0\\,0\\,0\\.25\\)\\]": 2,
+   "[tailwind] .shadow-\\[inset_0_0_0_1px_rgba\\(39\\,21\\,3\\,0\\.08\\)\\]": 2,
+   "[tailwind] .shadow-md": 2,
+   "[tailwind] .shadow-rd-badge": 2,
+   "[tailwind] .shadow-rd-case": 2,
+   "[tailwind] .shadow-rd-case-interior": 2,
+   "[tailwind] .shadow-rd-case-rest": 2,
+   "[tailwind] .shadow-rd-dock": 2,
+   "[tailwind] .shadow-rd-event": 2,
+   "[tailwind] .shadow-rd-field-focus": 2,
+   "[tailwind] .shadow-rd-field-invalid": 2,
+   "[tailwind] .shadow-rd-halo": 2,
+   "[tailwind] .shadow-rd-halo-dark": 2,
+   "[tailwind] .shadow-rd-lightbox": 2,
+   "[tailwind] .shadow-rd-sheet": 2,
+   "[tailwind] .shadow-rd-bg": 2,
+   "[tailwind] .shadow-rd-body": 2,
+   "[tailwind] .shadow-rd-cream-hover": 2,
+   "[tailwind] .shadow-rd-espresso": 2,
+   "[tailwind] .shadow-rd-forest": 2,
+   "[tailwind] .shadow-rd-ink": 2,
+   "[tailwind] .shadow-rd-line": 2,
+   "[tailwind] .shadow-rd-muted": 2,
+   "[tailwind] .shadow-rd-panel": 2,
+   "[tailwind] .shadow-rd-placeholder": 2,
+   "[tailwind] .shadow-rd-placeholder-figure": 2,
+   "[tailwind] .shadow-rd-placeholder-shot": 2,
+   "[tailwind] .shadow-rd-surface-about": 2,
+   "[tailwind] .ring": 2,
+   "[tailwind] .blur": 1,
+   "[tailwind] .drop-shadow-2xl": 1,
+   "[tailwind] .drop-shadow-lg": 1,
+   "[tailwind] .drop-shadow-md": 1,
+   "[tailwind] .drop-shadow-xl": 1,
+   "[tailwind] .grayscale": 1,
+   "[tailwind] .invert": 1,
+   "[utility] .\\[--rd-body\\:\\#54493f\\]": 1,
+   "[utility] .\\[--rd-d\\:0\\.25s\\]": 1,
+   "[utility] .\\[--rd-d\\:0\\.35s\\]": 1,
+   "[utility] .\\[--rd-d\\:0\\.45s\\]": 1,
+   "[utility] .\\[--rd-film-delay\\:0\\.75s\\]": 1,
+   "[utility] .\\[--rd-film-zoom\\:2\\.2s\\]": 1,
+   "[utility] .\\[--rd-ink\\:theme\\(colors\\.warm-black\\)\\]": 1,
+   "[utility] .\\[--rd-muted\\:\\#766757\\]": 1,
+   "[utility] .\\[--rd-rise-delay\\:0\\.1s\\]": 1,
+   "[utility] .\\[--rd-rise-delay\\:0\\.55s\\]": 1,
+   "[utility] .\\[--rd-rise-delay\\:0\\.7s\\]": 1,
+   "[utility] .\\[--rd-veil\\:\\#1c1000\\]": 1,
+   "[utility] .\\[--rd-word-step\\:0\\.07s\\]": 1,
+   "[app] .wp-block-button__link, .wp-element-button": 6,
+   "[app] .wp-block-button .wp-block-button__link.is-style-outline, .wp-block-button.is-style-outline > .wp-block-button__link": 6,
+   "[app] body.has-announcement-banner": 1,
+   "[app] @media (max-width: 799px) body.has-announcement-banner": 1,
+   "[app] body": 1,
+   "[theme] .site-header": 1,
+   "[theme] .rd-nav": 1,
+   "[theme] body:has([data-nav-theme=\"dark\"]) .site-header:not(.is-stuck, .is-open) .rd-nav": 1,
+   "[theme] @media (max-width: 380px) .site-header": 1,
+   "[tailwind] .wp-block-pullquote cite, .wp-block-pullquote p": 1,
+   "[tailwind] .wp-block-code": 2,
+   "[tailwind] .caption, .wp-element-caption": 1,
+   "[tailwind] .wp-block-video::after": 1,
+   "[tailwind] .gp-prose address, .gp-prose p": 1,
+   "[tailwind] .gp-prose h2": 2,
+   "[tailwind] .gp-prose h3": 2,
+   "[tailwind] .gp-prose hr": 1,
+   "[tailwind] .gp-prose ol, .gp-prose ul": 1,
+   "[tailwind] .gp-prose blockquote": 1,
+   "[tailwind] .gp-prose--bordered > address:last-child, .gp-prose--bordered > ol:last-child, .gp-prose--bordered > p:last-child, .gp-prose--bordered > ul:last-child": 1,
+   "[app] div.wpforms-container-full": 1,
+   "[tailwind] div.wpforms-container-full .wpforms-field-container .wpforms-field-label": 1,
+   "[tailwind] div.wpforms-container-full .wpforms-field-container .wpforms-field-label .wpforms-required-label": 1,
+   "[tailwind] div.wpforms-container-full .wpforms-field-container .wpforms-field-textarea .wpforms-field-label": 1,
+   "[tailwind] div.wpforms-container-full .wpforms-field-container .wpforms-field-email.has-value .wpforms-field-label, div.wpforms-container-full .wpforms-field-container .wp": 1,
+   "[tailwind] div.wpforms-container-full .wpforms-field-container .wpforms-field-email.wpforms-has-error .wpforms-field-label, div.wpforms-container-full .wpforms-field-conta": 1,
+   "[tailwind] div.wpforms-container-full .wpforms-field-container .wpforms-field.wpforms-has-error label, div.wpforms-container-full .wpforms-field-container em.wpforms-error": 1,
+   "[tailwind] div.wpforms-container-full input[type=\"email\"]:focus, div.wpforms-container-full input[type=\"text\"]:focus, div.wpforms-container-full textarea:focus": 3,
+   "[tailwind] div.wpforms-container-full input[type=\"email\"].wpforms-error, div.wpforms-container-full input[type=\"text\"].wpforms-error, div.wpforms-container-full textarea.w": 1,
+   "[tailwind] div.wpforms-container-full button[type=\"submit\"].wpforms-submit": 3,
+   "[tailwind] div.wpforms-container-full button[type=\"submit\"].wpforms-submit:hover": 1,
+   "[tailwind] div.wpforms-container-full button[type=\"submit\"].wpforms-submit:focus": 1,
+   "[tailwind] div.wpforms-container-full button[type=\"submit\"].disable, div.wpforms-container-full button[type=\"submit\"].disable:hover": 1,
+   "[tailwind] div.wpforms-container-full em.wpforms-error": 1,
+   "[tailwind] div.wpforms-container-full .wpforms-confirmation-container-full": 1,
+   "[tailwind] div.wpforms-container-full .wpforms-confirmation-container-full > p": 1,
+   "[app] .wpforms-on-citrus div.wpforms-container-full": 1,
+   "[tailwind] .wpforms-on-citrus div.wpforms-container-full input[type=\"email\"], .wpforms-on-citrus div.wpforms-container-full input[type=\"text\"], .wpforms-on-citrus div.wpfo": 2,
+   "[tailwind] .wpforms-on-citrus div.wpforms-container-full input[type=\"email\"]:focus, .wpforms-on-citrus div.wpforms-container-full input[type=\"text\"]:focus, .wpforms-on-cit": 1,
+   "[tailwind] .wpforms-on-citrus div.wpforms-container-full .wpforms-field-container .wpforms-field-label": 1,
+   "[tailwind] .wpforms-on-citrus div.wpforms-container-full .wpforms-field-container .wpforms-field-email.has-value .wpforms-field-label, .wpforms-on-citrus div.wpforms-conta": 1,
+   "[tailwind] .wpforms-on-citrus div.wpforms-container-full button[type=\"submit\"].wpforms-submit": 2,
+   "[tailwind] .wpforms-on-citrus div.wpforms-container-full button[type=\"submit\"].wpforms-submit:hover": 1,
+   "[tailwind] .wpforms-on-citrus div.wpforms-container-full .wpforms-field-checkbox .wpforms-field-description, .wpforms-on-citrus div.wpforms-container-full .wpforms-field-c": 1,
+   "[tailwind] .wpforms-on-citrus div.wpforms-container-full .wpforms-field-container .wpforms-field.wpforms-has-error label, .wpforms-on-citrus div.wpforms-container-full em.": 1,
+   "[tailwind] .wpforms-on-citrus div.wpforms-container-full input[type=\"email\"].wpforms-error, .wpforms-on-citrus div.wpforms-container-full input[type=\"text\"].wpforms-error,": 1,
+   "[tailwind] .wpforms-on-citrus div.wpforms-container-full .wpforms-confirmation-container-full > p": 1,
+   "[tailwind] .contact-form-iframe div.wpforms-container-full .wpforms-form .wpforms-field-checkbox a, .contact-form-iframe div.wpforms-container-full .wpforms-form .wpforms-": 1,
+   "[tailwind] .campaign-landing .entry-content": 1,
+   "[tailwind] .pagination:not(.rd-pagination) .page-numbers": 1,
+   "[tailwind] .pagination:not(.rd-pagination) .page-numbers.current": 2,
+   "[tailwind] .pagination:not(.rd-pagination) .page-numbers:is(a):hover": 1,
+   "[tailwind] .pagination:not(.rd-pagination) .page-numbers:is(a):focus": 2,
+   "[tailwind] .pagination:not(.rd-pagination) .next, .pagination:not(.rd-pagination) .prev": 1,
+   "[tailwind] .pagination:not(.rd-pagination) .next.disabled, .pagination:not(.rd-pagination) .prev.disabled": 1,
+   "[tailwind] .pagination:not(.rd-pagination) .next:is(a):hover, .pagination:not(.rd-pagination) .prev:is(a):hover": 1,
+   "[tailwind] .pagination:not(.rd-pagination) .next:is(a):focus, .pagination:not(.rd-pagination) .prev:is(a):focus": 2,
+   "[app] .campaign-capture--on-citrus .btn": 4,
+   "[app] .campaign-capture .btn": 1,
+   "[app] @media (max-width: 799px) .campaign-capture .btn": 2,
+   "[app] .campaign-capture--compact .btn": 4,
+   "[tailwind] .campaign-capture-message--error": 1,
+   "[tailwind] .campaign-peeker": 1,
+   "[theme] .rd-home": 16,
+   "[theme] @media (prefers-reduced-motion: reduce) .rd-home": 1,
+   "[theme] :root[data-mode=\"cream\"] .rd-home": 1,
+   "[theme] :root[data-mode=\"cream\"] .post-type-archive-case-studies.rd-home": 1,
+   "[app] .rd-ob": 4,
+   "[app] .rd-ob-dots": 1,
+   "[app] .rd-ob-lines": 3,
+   "[app] .rd-ob-fade, .rd-photo-fade": 1,
+   "[app] @media (max-width: 900px) .rd-ob-fade, .rd-photo-fade": 1,
+   "[app] .rd-ob-sm": 2,
+   "[app] .rd-ob-xs": 2,
+   "[app] .rd-case-pairs > .rd-case": 1,
+   "[app] .rd-case-pairs > .rd-case-feature": 1,
+   "[app] .rd-case-logo": 2,
+   "[app] .rd-case-pairs .rd-case-logo": 1,
+   "[app] .tb": 5,
+   "[app] .tb-cover.wall": 1,
+   "[app] [data-tb=\"lq-a\"] .tb-cover": 1,
+   "[app] .tb-pin.ok": 1,
+   "[app] .tb-pin.flag": 1,
+   "[app] .tb-pin.peak": 1,
+   "[app] .tb-pin.mai": 1,
+   "[app] .tb-pin.et": 1,
+   "[app] .tb-pin.lq": 1,
+   "[app] .tb-pin.cb": 1,
+   "[app] .tb-pin.hs": 1,
+   "[app] .tb-steps.an": 2,
+   "[app] .rd-nl-form": 13,
+   "[app] .rd-nl-form.is-dark": 13,
+   "[app] .rd-nl-form.is-card": 1,
+   "[theme] .rd-pd": 4,
+   "[theme] .rd-pd-hero": 1,
+   "[app] .rd-pd-dock-seek": 1,
+   "[theme] .rd-ev-year": 1,
+   "[theme] .rd-ev-signup + .rd-ev-year": 1,
+   "[theme] .single-case-studies.rd-home": 5,
+   "[app] .rd-cs-hero-fig": 1,
+   "[theme] .rd-cs-stat-num": 1,
+   "[theme] .rd-cs-stat-num.is-long": 1,
+   "[theme] .rd-fd-hero h1": 1,
+   "[app] @media (max-width: 900px) .rd-fd-block": 2,
+   "[app] html": 2,
+   "[tailwind] body": 1,
+   "[tailwind] .before\\:bg-bright-citrus::before": 1,
+   "[tailwind] .before\\:content-\\[\\'\\'\\]::before": 1,
+   "[tailwind] .hover\\:\\!bg-bright-citrus-hover:hover": 1,
+   "[tailwind] .hover\\:\\!bg-tan-suit-hover:hover": 1,
+   "[tailwind] .hover\\:bg-bright-citrus-hover:hover": 1,
+   "[tailwind] .hover\\:bg-neutral-100:hover": 1,
+   "[tailwind] .hover\\:text-\\[\\#f3d9c8\\]:hover": 1,
+   "[tailwind] .focus\\:\\!border-bright-citrus:focus": 1,
+   "[tailwind] .focus\\:\\!border-burnt-citrus:focus": 1,
+   "[tailwind] .focus\\:border-bright-citrus:focus": 1,
+   "[tailwind] .focus\\:\\!shadow-none:focus": 2,
+   "[tailwind] .group:hover .group-hover\\:text-bright-citrus": 1,
+   "[tailwind] .group:hover .group-hover\\:text-warm-grey": 1,
+   "[tailwind] @media (max-width: 799px) .mobile\\:rotate-0": 1,
+   "[tailwind] @media (max-width: 900px) .max-\\[900px\\]\\:rotate-90": 1,
+   "[tailwind] .\\[\\&_p\\]\\:\\!text-tan-suit p": 1,
+   "[tailwind] .\\[\\&_p\\]\\:text-tan-suit p": 1,
+   "[tailwind] .\\[\\&_strong\\]\\:text-cream strong": 1,
+   "[tailwind] .\\[\\&_strong\\]\\:text-tan-suit strong": 1
+  }
+ },
+ "theme": [
+  {
+   "file": "inline-4",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--wp--preset--font-size--normal": "16px",
+    "--wp--preset--font-size--huge": "42px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "inline-7",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--wp--preset--aspect-ratio--square": "1",
+    "--wp--preset--aspect-ratio--4-3": "4/3",
+    "--wp--preset--aspect-ratio--3-4": "3/4",
+    "--wp--preset--aspect-ratio--3-2": "3/2",
+    "--wp--preset--aspect-ratio--2-3": "2/3",
+    "--wp--preset--aspect-ratio--16-9": "16/9",
+    "--wp--preset--aspect-ratio--9-16": "9/16",
+    "--wp--preset--color--black": "#000000",
+    "--wp--preset--color--cyan-bluish-gray": "#abb8c3",
+    "--wp--preset--color--white": "#ffffff",
+    "--wp--preset--color--pale-pink": "#f78da7",
+    "--wp--preset--color--vivid-red": "#cf2e2e",
+    "--wp--preset--color--luminous-vivid-orange": "#ff6900",
+    "--wp--preset--color--luminous-vivid-amber": "#fcb900",
+    "--wp--preset--color--light-green-cyan": "#7bdcb5",
+    "--wp--preset--color--vivid-green-cyan": "#00d084",
+    "--wp--preset--color--pale-cyan-blue": "#8ed1fc",
+    "--wp--preset--color--vivid-cyan-blue": "#0693e3",
+    "--wp--preset--color--vivid-purple": "#9b51e0",
+    "--wp--preset--color--off-white": "#FFFEFB",
+    "--wp--preset--color--parchment": "#F3F2EE",
+    "--wp--preset--color--cream": "#FBF3EC",
+    "--wp--preset--color--tan-suit": "#EADFCF",
+    "--wp--preset--color--bright-citrus": "#DE4C00",
+    "--wp--preset--color--dark-citrus": "#C44300",
+    "--wp--preset--color--burnt-citrus": "#712C03",
+    "--wp--preset--color--orange-peel": "#E67940",
+    "--wp--preset--color--peach": "#EFA680",
+    "--wp--preset--color--forest-green": "#053524",
+    "--wp--preset--color--merlot": "#490101",
+    "--wp--preset--color--merlot-deep": "#280000",
+    "--wp--preset--color--ox-blood": "#5B0202",
+    "--wp--preset--color--black-black": "#040C06",
+    "--wp--preset--color--warm-black": "#271503",
+    "--wp--preset--color--warm-grey": "#4E4A46",
+    "--wp--preset--color--light-grey": "#C1BDBA",
+    "--wp--preset--color--neutral-250": "#E0E0E0",
+    "--wp--preset--color--tree-bark": "#392101",
+    "--wp--preset--color--muted-brown": "#4E3725",
+    "--wp--preset--color--muted-red": "#6D3939",
+    "--wp--preset--color--dark-slate": "#343A4E",
+    "--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple": "linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%)",
+    "--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan": "linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%)",
+    "--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange": "linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%)",
+    "--wp--preset--gradient--luminous-vivid-orange-to-vivid-red": "linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%)",
+    "--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray": "linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%)",
+    "--wp--preset--gradient--cool-to-warm-spectrum": "linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%)",
+    "--wp--preset--gradient--blush-light-purple": "linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%)",
+    "--wp--preset--gradient--blush-bordeaux": "linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%)",
+    "--wp--preset--gradient--luminous-dusk": "linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%)",
+    "--wp--preset--gradient--pale-ocean": "linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%)",
+    "--wp--preset--gradient--electric-grass": "linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%)",
+    "--wp--preset--gradient--midnight": "linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%)",
+    "--wp--preset--font-size--small": "13px",
+    "--wp--preset--font-size--medium": "20px",
+    "--wp--preset--font-size--large": "36px",
+    "--wp--preset--font-size--x-large": "42px",
+    "--wp--preset--font-size--display": "72px",
+    "--wp--preset--font-size--h-1": "48px",
+    "--wp--preset--font-size--h-2": "40px",
+    "--wp--preset--font-size--section-title": "32px",
+    "--wp--preset--font-size--listing-title": "24px",
+    "--wp--preset--font-size--body-lg": "16px",
+    "--wp--preset--font-size--body-md": "14px",
+    "--wp--preset--font-size--caption": "12px",
+    "--wp--preset--font-size--micro": "10px",
+    "--wp--preset--spacing--20": ".5rem",
+    "--wp--preset--spacing--30": "0.67rem",
+    "--wp--preset--spacing--40": "1rem",
+    "--wp--preset--spacing--50": "1.5rem",
+    "--wp--preset--spacing--60": "2.25rem",
+    "--wp--preset--spacing--70": "3.38rem",
+    "--wp--preset--spacing--80": "5.06rem",
+    "--wp--preset--spacing--10": "0.25rem",
+    "--wp--preset--spacing--100": "2.5rem",
+    "--wp--preset--spacing--120": "3rem",
+    "--wp--preset--spacing--160": "4rem",
+    "--wp--preset--spacing--200": "5rem",
+    "--wp--preset--spacing--240": "6rem",
+    "--wp--preset--shadow--natural": "6px 6px 9px rgba(0, 0, 0, 0.2)",
+    "--wp--preset--shadow--deep": "12px 12px 50px rgba(0, 0, 0, 0.4)",
+    "--wp--preset--shadow--sharp": "6px 6px 0px rgba(0, 0, 0, 0.2)",
+    "--wp--preset--shadow--outlined": "6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0)",
+    "--wp--preset--shadow--crisp": "6px 6px 0px rgb(0, 0, 0)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "inline-7",
+   "selector": ".wp-block-button",
+   "context": [],
+   "properties": {
+    "--wp--preset--dimension--25": "25%",
+    "--wp--preset--dimension--50": "50%",
+    "--wp--preset--dimension--75": "75%",
+    "--wp--preset--dimension--100": "100%"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "app.css",
+   "selector": ".site-header",
+   "context": [],
+   "properties": {
+    "--rd-nav-full": "calc(min(100vw, 1440px) - var(--rd-gutter)*2)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-nav",
+   "context": [],
+   "properties": {
+    "--rd-nav-fg": "#271503"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "app.css",
+   "selector": "body:has([data-nav-theme=\"dark\"]) .site-header:not(.is-stuck, .is-open) .rd-nav",
+   "context": [],
+   "properties": {
+    "--rd-nav-fg": "#fbf3ec"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "app.css",
+   "selector": ".site-header",
+   "context": [
+    "@media (max-width: 380px)"
+   ],
+   "properties": {
+    "--rd-nav-full": "100%"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "app.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--rd-ease": "cubic-bezier(0.32,0.72,0,1)",
+    "--rd-ease-out": "cubic-bezier(0.16,1,0.3,1)",
+    "--rd-ease-io": "cubic-bezier(0.65,0,0.35,1)",
+    "--rd-ease-mode": "cubic-bezier(0.4,0,0.2,1)",
+    "--rd-bg": "#fff",
+    "--rd-ink": "#06070a",
+    "--rd-body": "#3d3a36",
+    "--rd-muted": "#6f6a63",
+    "--rd-line": "rgba(6,7,10,.1)",
+    "--rd-lh": "1.5",
+    "--rd-heading-lh": "1.04",
+    "--rd-gutter": "clamp(20px,3.4vw,48px)",
+    "--rd-eyebrow-size": "0.78rem",
+    "--rd-eyebrow-tracking": "0.18em",
+    "--rd-reveal-y": "48px",
+    "--rd-reveal-fade": "1s var(--rd-ease-io)",
+    "--rd-reveal-move": "1.2s var(--rd-ease-out)",
+    "--rd-stagger-y": "40px",
+    "--rd-word-step": "0.05s",
+    "--rd-rise-delay": "0.75s"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-home",
+   "context": [],
+   "properties": {
+    "--rd-bg": "#fffefb",
+    "--rd-ink": "#271503",
+    "--rd-body": "#54493f",
+    "--rd-muted": "#766757",
+    "--rd-line": "rgba(39,21,3,.1)",
+    "--rd-lh": "1.6",
+    "--rd-heading-lh": "1.02",
+    "--rd-gutter": "clamp(20px,4vw,56px)",
+    "--rd-eyebrow-size": "0.8rem",
+    "--rd-eyebrow-tracking": "0.15em",
+    "--rd-reveal-y": "32px",
+    "--rd-reveal-fade": "1s var(--rd-ease-out)",
+    "--rd-reveal-move": "1s var(--rd-ease-out)",
+    "--rd-word-step": "0.055s",
+    "--rd-rise-delay": "1s",
+    "--rd-mode-dur": "1.1s"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-home",
+   "context": [
+    "@media (prefers-reduced-motion: reduce)"
+   ],
+   "properties": {
+    "--rd-mode-dur": "0.01s"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "app.css",
+   "selector": ":root[data-mode=\"cream\"] .rd-home",
+   "context": [],
+   "properties": {
+    "--rd-bg": "#fbf3ec"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "app.css",
+   "selector": ":root[data-mode=\"cream\"] .post-type-archive-case-studies.rd-home",
+   "context": [],
+   "properties": {
+    "--rd-line": "rgba(39,21,3,.12)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-pd",
+   "context": [],
+   "properties": {
+    "--rd-ink": "#fbf3ec",
+    "--rd-body": "hsla(36,39%,86%,.74)",
+    "--rd-muted": "hsla(36,39%,86%,.62)",
+    "--rd-line": "hsla(36,39%,86%,.16)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-pd-hero",
+   "context": [],
+   "properties": {
+    "--rd-veil": "#00040f"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-ev-year",
+   "context": [],
+   "properties": {
+    "--rd-ev-pad": "clamp(56px,7vw,96px)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-ev-signup + .rd-ev-year",
+   "context": [],
+   "properties": {
+    "--rd-ev-pad": "clamp(8px,1vw,16px)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "app.css",
+   "selector": ".single-case-studies.rd-home",
+   "context": [],
+   "properties": {
+    "--rd-lh": "1.5",
+    "--rd-heading-lh": "1.04",
+    "--rd-reveal-y": "48px",
+    "--rd-reveal-fade": "1s var(--rd-ease-io)",
+    "--rd-reveal-move": "1.2s var(--rd-ease-out)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-cs-stat-num",
+   "context": [],
+   "properties": {
+    "--rd-stat-size": "clamp(3.4rem,6.4vw,6rem)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-cs-stat-num.is-long",
+   "context": [],
+   "properties": {
+    "--rd-stat-size": "clamp(2.2rem,3.6vw,3.6rem)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-fd-hero h1",
+   "context": [],
+   "properties": {
+    "--rd-word-step": "0.06s"
+   },
+   "bin": "theme"
+  }
+ ],
+ "app": [
+  {
+   "file": "inline-4",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--wp-block-synced-color": "#7a00df",
+    "--wp-block-synced-color--rgb": "122,0,223",
+    "--wp-bound-block-color": "var(--wp-block-synced-color)",
+    "--wp-editor-canvas-background": "#ddd",
+    "--wp-admin-theme-color": "#007cba",
+    "--wp-admin-theme-color--rgb": "0,124,186",
+    "--wp-admin-theme-color-darker-10": "#006ba1",
+    "--wp-admin-theme-color-darker-10--rgb": "0,107,160.5",
+    "--wp-admin-theme-color-darker-20": "#005a87",
+    "--wp-admin-theme-color-darker-20--rgb": "0,90,135",
+    "--wp-admin-border-width-focus": "2px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "selector": ":root",
+   "context": [
+    "@media (min-resolution: 192dpi)"
+   ],
+   "properties": {
+    "--wp-admin-border-width-focus": "1.5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "selector": "html :where(.is-position-sticky)",
+   "context": [],
+   "properties": {
+    "--wp-admin--admin-bar--position-offset": "var(--wp-admin--admin-bar--height,0px)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "selector": "html :where(.is-position-sticky)",
+   "context": [
+    "@media screen and (max-width: 600px)"
+   ],
+   "properties": {
+    "--wp-admin--admin-bar--position-offset": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-5",
+   "selector": ".block-homepage-hero .cc",
+   "context": [],
+   "properties": {
+    "--pad": "clamp(18px,2vw,30px)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-5",
+   "selector": ".block-homepage-hero .cc .tb",
+   "context": [],
+   "properties": {
+    "--sw": "min(50cqw,104cqh)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-5",
+   "selector": ".block-homepage-hero .cc .tb .tb-hero.map",
+   "context": [],
+   "properties": {
+    "--sw": "min(50cqw,calc(100cqh*1.192 - 8cqw*1.192))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-5",
+   "selector": ".block-homepage-hero .cc-logo",
+   "context": [],
+   "properties": {
+    "--box": "calc(var(--ih, 20px)*var(--bh, 1))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-5",
+   "selector": ".block-homepage-hero .cc",
+   "context": [
+    "@media (max-width: 900px)"
+   ],
+   "properties": {
+    "--pad": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-5",
+   "selector": ".block-homepage-hero .cc-logo",
+   "context": [
+    "@media (max-width: 900px)"
+   ],
+   "properties": {
+    "--box": "calc(var(--ih, 20px)*var(--bh, 1)*1.12)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-6",
+   "selector": ".block-about-us",
+   "context": [],
+   "properties": {
+    "--frost": "1",
+    "--reveal": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-6",
+   "selector": "html.js .block-about-us[data-frost]",
+   "context": [
+    "@media (prefers-reduced-motion: no-preference)"
+   ],
+   "properties": {
+    "--frost": "0",
+    "--reveal": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-7",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--wp--style--global--content-size": "1048px",
+    "--wp--style--global--wide-size": "1280px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-7",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--wp--style--block-gap": "1.5rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".btn",
+   "context": [],
+   "properties": {
+    "--btn-bg": "#de4c00",
+    "--btn-bg-hover": "#a23800",
+    "--btn-text": "#fffefb",
+    "--btn-text-hover": "#fffefb",
+    "--btn-border": "transparent",
+    "--btn-border-hover": "transparent",
+    "--btn-radius": "9999px",
+    "--btn-px": "1.25rem",
+    "--btn-py": "10px",
+    "--btn-fs": "16px",
+    "--btn-lh": "26px",
+    "--btn-ls": "-0.02em"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".btn-lg",
+   "context": [],
+   "properties": {
+    "--btn-px": "1.25rem",
+    "--btn-py": "10px",
+    "--btn-fs": "16px",
+    "--btn-lh": "26px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".btn-sm",
+   "context": [],
+   "properties": {
+    "--btn-px": "0.75rem",
+    "--btn-py": "6px",
+    "--btn-fs": "12px",
+    "--btn-lh": "14px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".btn-primary",
+   "context": [],
+   "properties": {
+    "--btn-radius": "9999px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".btn-secondary",
+   "context": [],
+   "properties": {
+    "--btn-radius": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".btn-dark:not(.btn-outline)",
+   "context": [],
+   "properties": {
+    "--btn-bg": "#de4c00",
+    "--btn-bg-hover": "#a23800",
+    "--btn-text": "#fffefb",
+    "--btn-text-hover": "#fffefb"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".btn-light:not(.btn-outline)",
+   "context": [],
+   "properties": {
+    "--btn-bg": "#eadfcf",
+    "--btn-bg-hover": "#d9c7ab",
+    "--btn-text": "#490101",
+    "--btn-text-hover": "#490101"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".btn-outline",
+   "context": [],
+   "properties": {
+    "--btn-bg": "transparent",
+    "--btn-bg-hover": "color-mix(in srgb,#490101 10%,transparent)",
+    "--btn-border": "#490101",
+    "--btn-border-hover": "#280000",
+    "--btn-text": "#490101",
+    "--btn-text-hover": "#280000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".btn-outline.btn-light",
+   "context": [],
+   "properties": {
+    "--btn-bg-hover": "color-mix(in srgb,#eadfcf 10%,transparent)",
+    "--btn-border": "#eadfcf",
+    "--btn-border-hover": "#d9c7ab",
+    "--btn-text": "#eadfcf",
+    "--btn-text-hover": "#d9c7ab"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".btn-rd",
+   "context": [],
+   "properties": {
+    "--btn-bg": "var(--rd-ink)",
+    "--btn-bg-hover": "#de4c00",
+    "--btn-text": "#fff",
+    "--btn-text-hover": "#fff",
+    "--btn-radius": "999px",
+    "--btn-px": "20px",
+    "--btn-py": "12px",
+    "--btn-fs": "0.94rem",
+    "--btn-lh": "1.5",
+    "--btn-ls": "normal"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".btn-rd-disc",
+   "context": [],
+   "properties": {
+    "--btn-text": "var(--rd-bg)",
+    "--btn-text-hover": "var(--rd-bg)",
+    "--btn-fs": "0.95rem",
+    "--btn-lh": "1.6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".btn-rd-light",
+   "context": [],
+   "properties": {
+    "--btn-bg": "#fbf3ec",
+    "--btn-bg-hover": "#fff",
+    "--btn-text": "var(--rd-ink)",
+    "--btn-text-hover": "var(--rd-ink)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".btn-rd-ghost",
+   "context": [],
+   "properties": {
+    "--btn-bg": "transparent",
+    "--btn-bg-hover": "hsla(28,65%,95%,.1)",
+    "--btn-text": "#fbf3ec",
+    "--btn-text-hover": "#fbf3ec"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".btn-rd-orange",
+   "context": [],
+   "properties": {
+    "--btn-bg": "#de4c00",
+    "--btn-bg-hover": "#c44300",
+    "--btn-text": "#fffefb",
+    "--btn-text-hover": "#fffefb"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".btn-rd-paper",
+   "context": [],
+   "properties": {
+    "--btn-bg": "#fffefb",
+    "--btn-bg-hover": "#271503",
+    "--btn-text": "#271503",
+    "--btn-text-hover": "#fffefb"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".btn-rd-cream",
+   "context": [],
+   "properties": {
+    "--btn-bg": "#fbf3ec",
+    "--btn-bg-hover": "#f6e8db",
+    "--btn-text": "var(--rd-ink)",
+    "--btn-text-hover": "var(--rd-ink)",
+    "--btn-radius": "999px",
+    "--btn-px": "24px",
+    "--btn-py": "13px",
+    "--btn-fs": "0.94rem",
+    "--btn-lh": "1",
+    "--btn-ls": "normal"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".wp-block-button__link, .wp-element-button",
+   "context": [],
+   "properties": {
+    "--btn-bg": "#de4c00",
+    "--btn-bg-hover": "#a23800",
+    "--btn-text": "#fffefb",
+    "--btn-text-hover": "#fffefb",
+    "--btn-border": "transparent",
+    "--btn-border-hover": "transparent"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".wp-block-button .wp-block-button__link.is-style-outline, .wp-block-button.is-style-outline > .wp-block-button__link",
+   "context": [],
+   "properties": {
+    "--btn-bg": "transparent",
+    "--btn-bg-hover": "color-mix(in srgb,#490101 10%,transparent)",
+    "--btn-border": "#490101",
+    "--btn-border-hover": "#280000",
+    "--btn-text": "#490101",
+    "--btn-text-hover": "#280000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": "body.has-announcement-banner",
+   "context": [],
+   "properties": {
+    "--banner-h": "39px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": "body.has-announcement-banner",
+   "context": [
+    "@media (max-width: 799px)"
+   ],
+   "properties": {
+    "--banner-h": "54px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": "body",
+   "context": [],
+   "properties": {
+    "--admin-bar-h": "var(--wp-admin--admin-bar--height,0px)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": "div.wpforms-container-full",
+   "context": [],
+   "properties": {
+    "--wpforms-field-text-color": "#000000de"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".wpforms-on-citrus div.wpforms-container-full",
+   "context": [],
+   "properties": {
+    "--wpforms-field-text-color": "#fffefb"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".campaign-capture--on-citrus .btn",
+   "context": [],
+   "properties": {
+    "--btn-bg": "#271503",
+    "--btn-bg-hover": "#040c06",
+    "--btn-text": "#eadfcf",
+    "--btn-text-hover": "#eadfcf"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".campaign-capture .btn",
+   "context": [],
+   "properties": {
+    "--btn-px": "18px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".campaign-capture .btn",
+   "context": [
+    "@media (max-width: 799px)"
+   ],
+   "properties": {
+    "--btn-px": "12px",
+    "--btn-fs": "15px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".campaign-capture--compact .btn",
+   "context": [],
+   "properties": {
+    "--btn-px": "16px",
+    "--btn-py": "8px",
+    "--btn-fs": "14px",
+    "--btn-lh": "22px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-ob",
+   "context": [],
+   "properties": {
+    "--cell": "clamp(44px,4.4vw,64px)",
+    "--r": "calc(var(--cell)*0.098)",
+    "--pad": "clamp(22px,2.6vw,40px)",
+    "--fade": "linear-gradient(#000,#000)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-ob-dots",
+   "context": [],
+   "properties": {
+    "--dots": "radial-gradient(circle,#000 var(--r),transparent calc(var(--r) + 1px))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-ob-lines",
+   "context": [],
+   "properties": {
+    "--lw": "calc(var(--r)*2)",
+    "--pitch": "calc(var(--cell)*0.7071)",
+    "--lines": "repeating-linear-gradient(-45deg,transparent 0,transparent calc(var(--pitch) - var(--lw) - 0.5px),#000 calc(var(--pitch) - var(--lw)),#000 calc(var(--pitch) - 0.5px),transparent var(--pitch))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-ob-fade, .rd-photo-fade",
+   "context": [],
+   "properties": {
+    "--fade": "linear-gradient(90deg,transparent,rgba(0,0,0,.35) 22%,#000 55%)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-ob-fade, .rd-photo-fade",
+   "context": [
+    "@media (max-width: 900px)"
+   ],
+   "properties": {
+    "--fade": "linear-gradient(180deg,#000,#000 45%,rgba(0,0,0,.3) 75%,transparent)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-ob-sm",
+   "context": [],
+   "properties": {
+    "--cell": "clamp(36px,3.4vw,52px)",
+    "--pad": "clamp(20px,2.2vw,32px)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-ob-xs",
+   "context": [],
+   "properties": {
+    "--cell": "26px",
+    "--pad": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-case-pairs > .rd-case",
+   "context": [],
+   "properties": {
+    "--tfs": "clamp(1.2rem,1.45vw,1.45rem)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-case-pairs > .rd-case-feature",
+   "context": [],
+   "properties": {
+    "--tfs": "clamp(1.5rem,2.2vw,2.1rem)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-case-logo",
+   "context": [],
+   "properties": {
+    "--ls": "0.62",
+    "--box": "calc(var(--ih, 20px)*var(--bh, 1)*var(--ls))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-case-pairs .rd-case-logo",
+   "context": [],
+   "properties": {
+    "--ls": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".tb",
+   "context": [],
+   "properties": {
+    "--tb-ok": "#1f8a5b",
+    "--tb-flag": "#d92d3a",
+    "--tb-mai": "#7f00ff",
+    "--tb-lq": "#a6122d",
+    "--tb-ease": "cubic-bezier(0.16,1,0.3,1)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".tb-cover.wall",
+   "context": [],
+   "properties": {
+    "--W": "max(100cqw,227.25cqh)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": "[data-tb=\"lq-a\"] .tb-cover",
+   "context": [],
+   "properties": {
+    "--fx": "0.43"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".tb-pin.ok",
+   "context": [],
+   "properties": {
+    "--c": "var(--tb-ok)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".tb-pin.flag",
+   "context": [],
+   "properties": {
+    "--c": "var(--tb-flag)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".tb-pin.peak",
+   "context": [],
+   "properties": {
+    "--c": "#8d5cf6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".tb-pin.mai",
+   "context": [],
+   "properties": {
+    "--c": "var(--tb-mai)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".tb-pin.et",
+   "context": [],
+   "properties": {
+    "--c": "#a0603a"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".tb-pin.lq",
+   "context": [],
+   "properties": {
+    "--c": "var(--tb-lq)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".tb-pin.cb",
+   "context": [],
+   "properties": {
+    "--c": "#1871bd"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".tb-pin.hs",
+   "context": [],
+   "properties": {
+    "--c": "#18a957"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".tb-steps.an",
+   "context": [],
+   "properties": {
+    "--tb-step-on": "#1d5fa0",
+    "--tb-step-off": "#b7bcc4"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-nl-form",
+   "context": [],
+   "properties": {
+    "--nl-field-bg": "#fffefb",
+    "--nl-field-line": "var(--rd-line)",
+    "--nl-field-fg": "var(--rd-ink)",
+    "--nl-placeholder": "var(--rd-muted)",
+    "--nl-focus": "#de4c00",
+    "--nl-halo": "0 0 0 3px rgba(222,76,0,.16)",
+    "--nl-submit-bg": "var(--rd-ink)",
+    "--nl-submit-bg-hover": "#de4c00",
+    "--nl-submit-fg": "#fff",
+    "--nl-note": "var(--rd-body)",
+    "--nl-note-size": "1.02rem",
+    "--nl-note-lh": "1.6",
+    "--nl-error": "#b3261e"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-nl-form.is-dark",
+   "context": [],
+   "properties": {
+    "--nl-field-bg": "hsla(28,65%,95%,.08)",
+    "--nl-field-line": "hsla(36,39%,86%,.28)",
+    "--nl-field-fg": "#fbf3ec",
+    "--nl-placeholder": "hsla(36,39%,86%,.6)",
+    "--nl-focus": "#e67940",
+    "--nl-halo": "0 0 0 3px rgba(230,121,64,.25)",
+    "--nl-submit-bg": "#de4c00",
+    "--nl-submit-bg-hover": "#c44300",
+    "--nl-submit-fg": "#fffefb",
+    "--nl-note": "hsla(36,39%,86%,.82)",
+    "--nl-note-size": "1.08rem",
+    "--nl-note-lh": "1.55",
+    "--nl-error": "#efa680"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-nl-form.is-card",
+   "context": [],
+   "properties": {
+    "--nl-note-size": "0.98rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-pd-dock-seek",
+   "context": [],
+   "properties": {
+    "--p": "0%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-cs-hero-fig",
+   "context": [],
+   "properties": {
+    "--hp": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rd-fd-block",
+   "context": [
+    "@media (max-width: 900px)"
+   ],
+   "properties": {
+    "--cell": "clamp(30px,6.4vw,38px)",
+    "--pad": "clamp(16px,4vw,24px)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "app.css",
+   "selector": "html",
+   "context": [],
+   "properties": {
+    "--header-height": "80px",
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "app"
+  }
+ ],
+ "utility": [
+  {
+   "file": "app.css",
+   "selector": ".\\[--rd-body\\:\\#54493f\\]",
+   "context": [],
+   "properties": {
+    "--rd-body": "#54493f"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\[--rd-d\\:0\\.25s\\]",
+   "context": [],
+   "properties": {
+    "--rd-d": "0.25s"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\[--rd-d\\:0\\.35s\\]",
+   "context": [],
+   "properties": {
+    "--rd-d": "0.35s"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\[--rd-d\\:0\\.45s\\]",
+   "context": [],
+   "properties": {
+    "--rd-d": "0.45s"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\[--rd-film-delay\\:0\\.75s\\]",
+   "context": [],
+   "properties": {
+    "--rd-film-delay": "0.75s"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\[--rd-film-zoom\\:2\\.2s\\]",
+   "context": [],
+   "properties": {
+    "--rd-film-zoom": "2.2s"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\[--rd-ink\\:theme\\(colors\\.warm-black\\)\\]",
+   "context": [],
+   "properties": {
+    "--rd-ink": "#271503"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\[--rd-muted\\:\\#766757\\]",
+   "context": [],
+   "properties": {
+    "--rd-muted": "#766757"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\[--rd-rise-delay\\:0\\.1s\\]",
+   "context": [],
+   "properties": {
+    "--rd-rise-delay": "0.1s"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\[--rd-rise-delay\\:0\\.55s\\]",
+   "context": [],
+   "properties": {
+    "--rd-rise-delay": "0.55s"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\[--rd-rise-delay\\:0\\.7s\\]",
+   "context": [],
+   "properties": {
+    "--rd-rise-delay": "0.7s"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\[--rd-veil\\:\\#1c1000\\]",
+   "context": [],
+   "properties": {
+    "--rd-veil": "#1c1000"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\[--rd-word-step\\:0\\.07s\\]",
+   "context": [],
+   "properties": {
+    "--rd-word-step": "0.07s"
+   },
+   "bin": "utility"
+  }
+ ],
+ "tailwind": [
+  {
+   "file": "app.css",
+   "selector": "::after, ::before",
+   "context": [],
+   "properties": {
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": "*, ::after, ::before",
+   "context": [],
+   "properties": {
+    "--tw-border-spacing-x": "0",
+    "--tw-border-spacing-y": "0",
+    "--tw-translate-x": "0",
+    "--tw-translate-y": "0",
+    "--tw-rotate": "0",
+    "--tw-skew-x": "0",
+    "--tw-skew-y": "0",
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1",
+    "--tw-pan-x": "",
+    "--tw-pan-y": "",
+    "--tw-pinch-zoom": "",
+    "--tw-scroll-snap-strictness": "proximity",
+    "--tw-ordinal": "",
+    "--tw-slashed-zero": "",
+    "--tw-numeric-figure": "",
+    "--tw-numeric-spacing": "",
+    "--tw-numeric-fraction": "",
+    "--tw-ring-inset": "",
+    "--tw-ring-offset-width": "0px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-color": "rgba(59,130,246,.5)",
+    "--tw-ring-offset-shadow": "0 0 #0000",
+    "--tw-ring-shadow": "0 0 #0000",
+    "--tw-shadow": "0 0 #0000",
+    "--tw-shadow-colored": "0 0 #0000",
+    "--tw-blur": "",
+    "--tw-brightness": "",
+    "--tw-contrast": "",
+    "--tw-grayscale": "",
+    "--tw-hue-rotate": "",
+    "--tw-invert": "",
+    "--tw-saturate": "",
+    "--tw-sepia": "",
+    "--tw-drop-shadow": "",
+    "--tw-backdrop-blur": "",
+    "--tw-backdrop-brightness": "",
+    "--tw-backdrop-contrast": "",
+    "--tw-backdrop-grayscale": "",
+    "--tw-backdrop-hue-rotate": "",
+    "--tw-backdrop-invert": "",
+    "--tw-backdrop-opacity": "",
+    "--tw-backdrop-saturate": "",
+    "--tw-backdrop-sepia": ""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": "::backdrop",
+   "context": [],
+   "properties": {
+    "--tw-border-spacing-x": "0",
+    "--tw-border-spacing-y": "0",
+    "--tw-translate-x": "0",
+    "--tw-translate-y": "0",
+    "--tw-rotate": "0",
+    "--tw-skew-x": "0",
+    "--tw-skew-y": "0",
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1",
+    "--tw-pan-x": "",
+    "--tw-pan-y": "",
+    "--tw-pinch-zoom": "",
+    "--tw-scroll-snap-strictness": "proximity",
+    "--tw-ordinal": "",
+    "--tw-slashed-zero": "",
+    "--tw-numeric-figure": "",
+    "--tw-numeric-spacing": "",
+    "--tw-numeric-fraction": "",
+    "--tw-ring-inset": "",
+    "--tw-ring-offset-width": "0px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-color": "rgba(59,130,246,.5)",
+    "--tw-ring-offset-shadow": "0 0 #0000",
+    "--tw-ring-shadow": "0 0 #0000",
+    "--tw-shadow": "0 0 #0000",
+    "--tw-shadow-colored": "0 0 #0000",
+    "--tw-blur": "",
+    "--tw-brightness": "",
+    "--tw-contrast": "",
+    "--tw-grayscale": "",
+    "--tw-hue-rotate": "",
+    "--tw-invert": "",
+    "--tw-saturate": "",
+    "--tw-sepia": "",
+    "--tw-drop-shadow": "",
+    "--tw-backdrop-blur": "",
+    "--tw-backdrop-brightness": "",
+    "--tw-backdrop-contrast": "",
+    "--tw-backdrop-grayscale": "",
+    "--tw-backdrop-hue-rotate": "",
+    "--tw-backdrop-invert": "",
+    "--tw-backdrop-opacity": "",
+    "--tw-backdrop-saturate": "",
+    "--tw-backdrop-sepia": ""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\!translate-y-0",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".-translate-x-1\\/2",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "-50%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".-translate-y-1\\/2",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-50%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".rotate-180",
+   "context": [],
+   "properties": {
+    "--tw-rotate": "180deg"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".border-bright-citrus",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".border-light-grey",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".border-orange-peel",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".border-peach",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".border-tan-suit",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\!bg-bright-citrus",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\!bg-dark-citrus",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\!bg-neutral-400",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\!bg-tan-suit",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".bg-black-black",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".bg-bright-citrus",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".bg-cream",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".bg-gray-200",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".bg-off-white",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".bg-parchment",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".bg-rd-cream-hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".bg-rd-espresso",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".bg-rd-forest",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".bg-rd-panel",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".bg-rd-placeholder",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".bg-rd-placeholder-shot",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".bg-rd-surface-about",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".bg-tan-suit",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".bg-tree-bark",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".bg-warm-black",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".bg-white",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".tabular-nums",
+   "context": [],
+   "properties": {
+    "--tw-numeric-spacing": "tabular-nums"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\!text-off-white",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\!text-warm-black",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\!text-white",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-black",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-bright-citrus",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-cream",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-gray-700",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-light-grey",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-neutral-250",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-neutral-950",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-off-white",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-orange-peel",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-parchment",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-rd-cream-hover",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-rd-espresso",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-rd-forest",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-rd-panel",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-rd-placeholder",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-rd-placeholder-shot",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-rd-surface-about",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-tan-suit",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-warm-black",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-warm-grey",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".text-white",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\!shadow-\\[0px_1px_2px_0px_\\#0A0D1408\\]",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0px 1px 2px 0px #0a0d1408",
+    "--tw-shadow-colored": "0px 1px 2px 0px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1)",
+    "--tw-shadow-colored": "0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-\\[0_4px_10\\.4px_0_rgba\\(0\\,0\\,0\\,0\\.25\\)\\]",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 4px 10.4px 0 rgba(0,0,0,.25)",
+    "--tw-shadow-colored": "0 4px 10.4px 0 var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-\\[0_4px_18px_rgba\\(0\\,0\\,0\\,0\\.25\\)\\]",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 4px 18px rgba(0,0,0,.25)",
+    "--tw-shadow-colored": "0 4px 18px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-\\[inset_0_0_0_1px_rgba\\(39\\,21\\,3\\,0\\.08\\)\\]",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "inset 0 0 0 1px rgba(39,21,3,.08)",
+    "--tw-shadow-colored": "inset 0 0 0 1px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-md",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1)",
+    "--tw-shadow-colored": "0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-badge",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 4px 14px -6px rgba(0,0,0,.35)",
+    "--tw-shadow-colored": "0 4px 14px -6px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-case",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 40px 80px -48px rgba(0,0,0,.55)",
+    "--tw-shadow-colored": "0 40px 80px -48px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-case-interior",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 40px 80px -48px rgba(20,28,19,.55)",
+    "--tw-shadow-colored": "0 40px 80px -48px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-case-rest",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 40px 80px -48px transparent",
+    "--tw-shadow-colored": "0 40px 80px -48px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-dock",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 0 0 1px hsla(36,39%,86%,.12),0 24px 60px -24px rgba(0,0,0,.7)",
+    "--tw-shadow-colored": "0 0 0 1px var(--tw-shadow-color),0 24px 60px -24px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-event",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 30px 60px -36px rgba(39,21,3,.5)",
+    "--tw-shadow-colored": "0 30px 60px -36px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-field-focus",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "inset 0 0 0 1px rgba(255,254,251,.6)",
+    "--tw-shadow-colored": "inset 0 0 0 1px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-field-invalid",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "inset 0 0 0 2px #fffefb",
+    "--tw-shadow-colored": "inset 0 0 0 2px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-halo",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 0 0 3px rgba(222,76,0,.16)",
+    "--tw-shadow-colored": "0 0 0 3px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-halo-dark",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 0 0 3px rgba(230,121,64,.25)",
+    "--tw-shadow-colored": "0 0 0 3px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-lightbox",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 40px 120px -30px rgba(0,0,0,.6)",
+    "--tw-shadow-colored": "0 40px 120px -30px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-sheet",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 -1px 0 rgba(6,7,10,.08),0 -24px 60px -36px rgba(39,21,3,.3)",
+    "--tw-shadow-colored": "0 -1px 0 var(--tw-shadow-color),0 -24px 60px -36px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-bg",
+   "context": [],
+   "properties": {
+    "--tw-shadow-color": "var(--rd-bg)",
+    "--tw-shadow": "var(--tw-shadow-colored)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-body",
+   "context": [],
+   "properties": {
+    "--tw-shadow-color": "var(--rd-body)",
+    "--tw-shadow": "var(--tw-shadow-colored)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-cream-hover",
+   "context": [],
+   "properties": {
+    "--tw-shadow-color": "#f6e8db",
+    "--tw-shadow": "var(--tw-shadow-colored)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-espresso",
+   "context": [],
+   "properties": {
+    "--tw-shadow-color": "#1a110a",
+    "--tw-shadow": "var(--tw-shadow-colored)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-forest",
+   "context": [],
+   "properties": {
+    "--tw-shadow-color": "#2c3a2a",
+    "--tw-shadow": "var(--tw-shadow-colored)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-ink",
+   "context": [],
+   "properties": {
+    "--tw-shadow-color": "var(--rd-ink)",
+    "--tw-shadow": "var(--tw-shadow-colored)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-line",
+   "context": [],
+   "properties": {
+    "--tw-shadow-color": "var(--rd-line)",
+    "--tw-shadow": "var(--tw-shadow-colored)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-muted",
+   "context": [],
+   "properties": {
+    "--tw-shadow-color": "var(--rd-muted)",
+    "--tw-shadow": "var(--tw-shadow-colored)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-panel",
+   "context": [],
+   "properties": {
+    "--tw-shadow-color": "#f5f4f1",
+    "--tw-shadow": "var(--tw-shadow-colored)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-placeholder",
+   "context": [],
+   "properties": {
+    "--tw-shadow-color": "#efe7db",
+    "--tw-shadow": "var(--tw-shadow-colored)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-placeholder-figure",
+   "context": [],
+   "properties": {
+    "--tw-shadow-color": "hsla(0,0%,50%,.12)",
+    "--tw-shadow": "var(--tw-shadow-colored)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-placeholder-shot",
+   "context": [],
+   "properties": {
+    "--tw-shadow-color": "#e7e3dc",
+    "--tw-shadow": "var(--tw-shadow-colored)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".shadow-rd-surface-about",
+   "context": [],
+   "properties": {
+    "--tw-shadow-color": "#efe8de",
+    "--tw-shadow": "var(--tw-shadow-colored)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".ring",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".blur",
+   "context": [],
+   "properties": {
+    "--tw-blur": "blur(8px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".drop-shadow-2xl",
+   "context": [],
+   "properties": {
+    "--tw-drop-shadow": "drop-shadow(0 25px 25px rgba(0,0,0,.15))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".drop-shadow-lg",
+   "context": [],
+   "properties": {
+    "--tw-drop-shadow": "drop-shadow(0 10px 8px rgba(0,0,0,.04)) drop-shadow(0 4px 3px rgba(0,0,0,.1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".drop-shadow-md",
+   "context": [],
+   "properties": {
+    "--tw-drop-shadow": "drop-shadow(0 4px 3px rgba(0,0,0,.07)) drop-shadow(0 2px 2px rgba(0,0,0,.06))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".drop-shadow-xl",
+   "context": [],
+   "properties": {
+    "--tw-drop-shadow": "drop-shadow(0 20px 13px rgba(0,0,0,.03)) drop-shadow(0 8px 5px rgba(0,0,0,.08))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".grayscale",
+   "context": [],
+   "properties": {
+    "--tw-grayscale": "grayscale(100%)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".invert",
+   "context": [],
+   "properties": {
+    "--tw-invert": "invert(100%)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".wp-block-pullquote cite, .wp-block-pullquote p",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".wp-block-code",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1",
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".caption, .wp-element-caption",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".wp-block-video::after",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".gp-prose address, .gp-prose p",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".gp-prose h2",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1",
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".gp-prose h3",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1",
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".gp-prose hr",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".gp-prose ol, .gp-prose ul",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".gp-prose blockquote",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".gp-prose--bordered > address:last-child, .gp-prose--bordered > ol:last-child, .gp-prose--bordered > p:last-child, .gp-prose--bordered > ul:last-child",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": "div.wpforms-container-full .wpforms-field-container .wpforms-field-label",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-50%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": "div.wpforms-container-full .wpforms-field-container .wpforms-field-label .wpforms-required-label",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": "div.wpforms-container-full .wpforms-field-container .wpforms-field-textarea .wpforms-field-label",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": "div.wpforms-container-full .wpforms-field-container .wpforms-field-email.has-value .wpforms-field-label, div.wpforms-container-full .wpforms-field-container .wp",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": "div.wpforms-container-full .wpforms-field-container .wpforms-field-email.wpforms-has-error .wpforms-field-label, div.wpforms-container-full .wpforms-field-conta",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": "div.wpforms-container-full .wpforms-field-container .wpforms-field.wpforms-has-error label, div.wpforms-container-full .wpforms-field-container em.wpforms-error",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": "div.wpforms-container-full input[type=\"email\"]:focus, div.wpforms-container-full input[type=\"text\"]:focus, div.wpforms-container-full textarea:focus",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1",
+    "--tw-shadow": "0 0 #0000",
+    "--tw-shadow-colored": "0 0 #0000"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": "div.wpforms-container-full input[type=\"email\"].wpforms-error, div.wpforms-container-full input[type=\"text\"].wpforms-error, div.wpforms-container-full textarea.w",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": "div.wpforms-container-full button[type=\"submit\"].wpforms-submit",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1",
+    "--tw-shadow": "0px 1px 2px 0px #0a0d1408",
+    "--tw-shadow-colored": "0px 1px 2px 0px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": "div.wpforms-container-full button[type=\"submit\"].wpforms-submit:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": "div.wpforms-container-full button[type=\"submit\"].wpforms-submit:focus",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": "div.wpforms-container-full button[type=\"submit\"].disable, div.wpforms-container-full button[type=\"submit\"].disable:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": "div.wpforms-container-full em.wpforms-error",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": "div.wpforms-container-full .wpforms-confirmation-container-full",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": "div.wpforms-container-full .wpforms-confirmation-container-full > p",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".wpforms-on-citrus div.wpforms-container-full input[type=\"email\"], .wpforms-on-citrus div.wpforms-container-full input[type=\"text\"], .wpforms-on-citrus div.wpfo",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1",
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".wpforms-on-citrus div.wpforms-container-full input[type=\"email\"]:focus, .wpforms-on-citrus div.wpforms-container-full input[type=\"text\"]:focus, .wpforms-on-cit",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".wpforms-on-citrus div.wpforms-container-full .wpforms-field-container .wpforms-field-label",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".wpforms-on-citrus div.wpforms-container-full .wpforms-field-container .wpforms-field-email.has-value .wpforms-field-label, .wpforms-on-citrus div.wpforms-conta",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".wpforms-on-citrus div.wpforms-container-full button[type=\"submit\"].wpforms-submit",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1",
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".wpforms-on-citrus div.wpforms-container-full button[type=\"submit\"].wpforms-submit:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".wpforms-on-citrus div.wpforms-container-full .wpforms-field-checkbox .wpforms-field-description, .wpforms-on-citrus div.wpforms-container-full .wpforms-field-c",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".wpforms-on-citrus div.wpforms-container-full .wpforms-field-container .wpforms-field.wpforms-has-error label, .wpforms-on-citrus div.wpforms-container-full em.",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".wpforms-on-citrus div.wpforms-container-full input[type=\"email\"].wpforms-error, .wpforms-on-citrus div.wpforms-container-full input[type=\"text\"].wpforms-error,",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".wpforms-on-citrus div.wpforms-container-full .wpforms-confirmation-container-full > p",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".contact-form-iframe div.wpforms-container-full .wpforms-form .wpforms-field-checkbox a, .contact-form-iframe div.wpforms-container-full .wpforms-form .wpforms-",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".campaign-landing .entry-content",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".pagination:not(.rd-pagination) .page-numbers",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".pagination:not(.rd-pagination) .page-numbers.current",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1",
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".pagination:not(.rd-pagination) .page-numbers:is(a):hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".pagination:not(.rd-pagination) .page-numbers:is(a):focus",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".pagination:not(.rd-pagination) .page-numbers:is(a):focus",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".pagination:not(.rd-pagination) .next, .pagination:not(.rd-pagination) .prev",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".pagination:not(.rd-pagination) .next.disabled, .pagination:not(.rd-pagination) .prev.disabled",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".pagination:not(.rd-pagination) .next:is(a):hover, .pagination:not(.rd-pagination) .prev:is(a):hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".pagination:not(.rd-pagination) .next:is(a):focus, .pagination:not(.rd-pagination) .prev:is(a):focus",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1",
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".campaign-capture-message--error",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".campaign-peeker",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": "body",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".before\\:bg-bright-citrus::before",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".before\\:content-\\[\\'\\'\\]::before",
+   "context": [],
+   "properties": {
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".hover\\:\\!bg-bright-citrus-hover:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".hover\\:\\!bg-tan-suit-hover:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".hover\\:bg-bright-citrus-hover:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".hover\\:bg-neutral-100:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".hover\\:text-\\[\\#f3d9c8\\]:hover",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".focus\\:\\!border-bright-citrus:focus",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".focus\\:\\!border-burnt-citrus:focus",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".focus\\:border-bright-citrus:focus",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".focus\\:\\!shadow-none:focus",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 0 #0000",
+    "--tw-shadow-colored": "0 0 #0000"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".group:hover .group-hover\\:text-bright-citrus",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".group:hover .group-hover\\:text-warm-grey",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".mobile\\:rotate-0",
+   "context": [
+    "@media (max-width: 799px)"
+   ],
+   "properties": {
+    "--tw-rotate": "0deg"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".max-\\[900px\\]\\:rotate-90",
+   "context": [
+    "@media (max-width: 900px)"
+   ],
+   "properties": {
+    "--tw-rotate": "90deg"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\[\\&_p\\]\\:\\!text-tan-suit p",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\[\\&_p\\]\\:text-tan-suit p",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\[\\&_strong\\]\\:text-cream strong",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "app.css",
+   "selector": ".\\[\\&_strong\\]\\:text-tan-suit strong",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  }
+ ],
+ "fonts": [
+  {
+   "file": "app.css",
+   "font-display": "swap",
+   "font-family": "Tobias",
+   "font-style": "normal",
+   "font-weight": "300 400",
+   "src": "url(\"../fonts/Tobias-Light.woff2\") format(\"woff2\")"
+  }
+ ],
+ "resolved": {
+  "--admin-bar-h": {
+   "raw": "0px",
+   "kind": "dimension",
+   "value": "0px"
+  },
+  "--banner-h": {
+   "raw": "0px",
+   "kind": "dimension",
+   "value": "0px"
+  },
+  "--header-height": {
+   "raw": "80px",
+   "kind": "dimension",
+   "value": "80px"
+  },
+  "--rd-bg": {
+   "raw": "rgb(255, 255, 255)",
+   "kind": "color",
+   "value": "#ffffff"
+  },
+  "--rd-body": {
+   "raw": "rgb(61, 58, 54)",
+   "kind": "color",
+   "value": "#3d3a36"
+  },
+  "--rd-ease": {
+   "raw": "cubic-bezier(0.32,0.72,0,1)",
+   "kind": "easing",
+   "value": "cubic-bezier(0.32,0.72,0,1)"
+  },
+  "--rd-ease-io": {
+   "raw": "cubic-bezier(0.65,0,0.35,1)",
+   "kind": "easing",
+   "value": "cubic-bezier(0.65,0,0.35,1)"
+  },
+  "--rd-ease-mode": {
+   "raw": "cubic-bezier(0.4,0,0.2,1)",
+   "kind": "easing",
+   "value": "cubic-bezier(0.4,0,0.2,1)"
+  },
+  "--rd-ease-out": {
+   "raw": "cubic-bezier(0.16,1,0.3,1)",
+   "kind": "easing",
+   "value": "cubic-bezier(0.16,1,0.3,1)"
+  },
+  "--rd-eyebrow-size": {
+   "raw": "0.78rem",
+   "kind": "dimension",
+   "value": "12.4688px"
+  },
+  "--rd-eyebrow-tracking": {
+   "raw": "0.18em",
+   "kind": "dimension",
+   "value": "2.875px"
+  },
+  "--rd-gutter": {
+   "raw": "clamp(20px,3.4vw,48px)",
+   "kind": "dimension",
+   "value": "48px",
+   "note": "viewport-relative, resolved at 1440 x 900"
+  },
+  "--rd-heading-lh": {
+   "raw": "1.04",
+   "kind": "number",
+   "value": 1.04
+  },
+  "--rd-ink": {
+   "raw": "rgb(6, 7, 10)",
+   "kind": "color",
+   "value": "#06070a"
+  },
+  "--rd-lh": {
+   "raw": "1.5",
+   "kind": "number",
+   "value": 1.5
+  },
+  "--rd-line": {
+   "raw": "rgba(6, 7, 10, 0.1)",
+   "kind": "color",
+   "value": "rgba(6, 7, 10, 0.1)"
+  },
+  "--rd-mode-dur": {
+   "raw": "1.1s",
+   "kind": "duration",
+   "value": "1.1s"
+  },
+  "--rd-muted": {
+   "raw": "rgb(111, 106, 99)",
+   "kind": "color",
+   "value": "#6f6a63"
+  },
+  "--rd-reveal-fade": {
+   "raw": "1s cubic-bezier(0.65,0,0.35,1)",
+   "kind": "other"
+  },
+  "--rd-reveal-move": {
+   "raw": "1.2s cubic-bezier(0.16,1,0.3,1)",
+   "kind": "other"
+  },
+  "--rd-reveal-y": {
+   "raw": "48px",
+   "kind": "dimension",
+   "value": "48px"
+  },
+  "--rd-rise-delay": {
+   "raw": "0.75s",
+   "kind": "duration",
+   "value": "0.75s"
+  },
+  "--rd-stagger-y": {
+   "raw": "40px",
+   "kind": "dimension",
+   "value": "40px"
+  },
+  "--rd-word-step": {
+   "raw": "0.05s",
+   "kind": "duration",
+   "value": "0.05s"
+  },
+  "--wp--preset--aspect-ratio--16-9": {
+   "raw": "16/9",
+   "kind": "other"
+  },
+  "--wp--preset--aspect-ratio--2-3": {
+   "raw": "2/3",
+   "kind": "other"
+  },
+  "--wp--preset--aspect-ratio--3-2": {
+   "raw": "3/2",
+   "kind": "other"
+  },
+  "--wp--preset--aspect-ratio--3-4": {
+   "raw": "3/4",
+   "kind": "other"
+  },
+  "--wp--preset--aspect-ratio--4-3": {
+   "raw": "4/3",
+   "kind": "other"
+  },
+  "--wp--preset--aspect-ratio--9-16": {
+   "raw": "9/16",
+   "kind": "other"
+  },
+  "--wp--preset--aspect-ratio--square": {
+   "raw": "1",
+   "kind": "number",
+   "value": 1
+  },
+  "--wp--preset--color--black": {
+   "raw": "#000000",
+   "kind": "color",
+   "value": "#000000"
+  },
+  "--wp--preset--color--black-black": {
+   "raw": "#040C06",
+   "kind": "color",
+   "value": "#040c06"
+  },
+  "--wp--preset--color--bright-citrus": {
+   "raw": "#DE4C00",
+   "kind": "color",
+   "value": "#de4c00"
+  },
+  "--wp--preset--color--burnt-citrus": {
+   "raw": "#712C03",
+   "kind": "color",
+   "value": "#712c03"
+  },
+  "--wp--preset--color--cream": {
+   "raw": "#FBF3EC",
+   "kind": "color",
+   "value": "#fbf3ec"
+  },
+  "--wp--preset--color--cyan-bluish-gray": {
+   "raw": "#abb8c3",
+   "kind": "color",
+   "value": "#abb8c3"
+  },
+  "--wp--preset--color--dark-citrus": {
+   "raw": "#C44300",
+   "kind": "color",
+   "value": "#c44300"
+  },
+  "--wp--preset--color--dark-slate": {
+   "raw": "#343A4E",
+   "kind": "color",
+   "value": "#343a4e"
+  },
+  "--wp--preset--color--forest-green": {
+   "raw": "#053524",
+   "kind": "color",
+   "value": "#053524"
+  },
+  "--wp--preset--color--light-green-cyan": {
+   "raw": "#7bdcb5",
+   "kind": "color",
+   "value": "#7bdcb5"
+  },
+  "--wp--preset--color--light-grey": {
+   "raw": "#C1BDBA",
+   "kind": "color",
+   "value": "#c1bdba"
+  },
+  "--wp--preset--color--luminous-vivid-amber": {
+   "raw": "#fcb900",
+   "kind": "color",
+   "value": "#fcb900"
+  },
+  "--wp--preset--color--luminous-vivid-orange": {
+   "raw": "#ff6900",
+   "kind": "color",
+   "value": "#ff6900"
+  },
+  "--wp--preset--color--merlot": {
+   "raw": "#490101",
+   "kind": "color",
+   "value": "#490101"
+  },
+  "--wp--preset--color--merlot-deep": {
+   "raw": "#280000",
+   "kind": "color",
+   "value": "#280000"
+  },
+  "--wp--preset--color--muted-brown": {
+   "raw": "#4E3725",
+   "kind": "color",
+   "value": "#4e3725"
+  },
+  "--wp--preset--color--muted-red": {
+   "raw": "#6D3939",
+   "kind": "color",
+   "value": "#6d3939"
+  },
+  "--wp--preset--color--neutral-250": {
+   "raw": "#E0E0E0",
+   "kind": "color",
+   "value": "#e0e0e0"
+  },
+  "--wp--preset--color--off-white": {
+   "raw": "#FFFEFB",
+   "kind": "color",
+   "value": "#fffefb"
+  },
+  "--wp--preset--color--orange-peel": {
+   "raw": "#E67940",
+   "kind": "color",
+   "value": "#e67940"
+  },
+  "--wp--preset--color--ox-blood": {
+   "raw": "#5B0202",
+   "kind": "color",
+   "value": "#5b0202"
+  },
+  "--wp--preset--color--pale-cyan-blue": {
+   "raw": "#8ed1fc",
+   "kind": "color",
+   "value": "#8ed1fc"
+  },
+  "--wp--preset--color--pale-pink": {
+   "raw": "#f78da7",
+   "kind": "color",
+   "value": "#f78da7"
+  },
+  "--wp--preset--color--parchment": {
+   "raw": "#F3F2EE",
+   "kind": "color",
+   "value": "#f3f2ee"
+  },
+  "--wp--preset--color--peach": {
+   "raw": "#EFA680",
+   "kind": "color",
+   "value": "#efa680"
+  },
+  "--wp--preset--color--tan-suit": {
+   "raw": "#EADFCF",
+   "kind": "color",
+   "value": "#eadfcf"
+  },
+  "--wp--preset--color--tree-bark": {
+   "raw": "#392101",
+   "kind": "color",
+   "value": "#392101"
+  },
+  "--wp--preset--color--vivid-cyan-blue": {
+   "raw": "#0693e3",
+   "kind": "color",
+   "value": "#0693e3"
+  },
+  "--wp--preset--color--vivid-green-cyan": {
+   "raw": "#00d084",
+   "kind": "color",
+   "value": "#00d084"
+  },
+  "--wp--preset--color--vivid-purple": {
+   "raw": "#9b51e0",
+   "kind": "color",
+   "value": "#9b51e0"
+  },
+  "--wp--preset--color--vivid-red": {
+   "raw": "#cf2e2e",
+   "kind": "color",
+   "value": "#cf2e2e"
+  },
+  "--wp--preset--color--warm-black": {
+   "raw": "#271503",
+   "kind": "color",
+   "value": "#271503"
+  },
+  "--wp--preset--color--warm-grey": {
+   "raw": "#4E4A46",
+   "kind": "color",
+   "value": "#4e4a46"
+  },
+  "--wp--preset--color--white": {
+   "raw": "#ffffff",
+   "kind": "color",
+   "value": "#ffffff"
+  },
+  "--wp--preset--font-size--body-lg": {
+   "raw": "16px",
+   "kind": "dimension",
+   "value": "16px"
+  },
+  "--wp--preset--font-size--body-md": {
+   "raw": "14px",
+   "kind": "dimension",
+   "value": "14px"
+  },
+  "--wp--preset--font-size--caption": {
+   "raw": "12px",
+   "kind": "dimension",
+   "value": "12px"
+  },
+  "--wp--preset--font-size--display": {
+   "raw": "72px",
+   "kind": "dimension",
+   "value": "72px"
+  },
+  "--wp--preset--font-size--h-1": {
+   "raw": "48px",
+   "kind": "dimension",
+   "value": "48px"
+  },
+  "--wp--preset--font-size--h-2": {
+   "raw": "40px",
+   "kind": "dimension",
+   "value": "40px"
+  },
+  "--wp--preset--font-size--huge": {
+   "raw": "42px",
+   "kind": "dimension",
+   "value": "42px"
+  },
+  "--wp--preset--font-size--large": {
+   "raw": "36px",
+   "kind": "dimension",
+   "value": "36px"
+  },
+  "--wp--preset--font-size--listing-title": {
+   "raw": "24px",
+   "kind": "dimension",
+   "value": "24px"
+  },
+  "--wp--preset--font-size--medium": {
+   "raw": "20px",
+   "kind": "dimension",
+   "value": "20px"
+  },
+  "--wp--preset--font-size--micro": {
+   "raw": "10px",
+   "kind": "dimension",
+   "value": "10px"
+  },
+  "--wp--preset--font-size--normal": {
+   "raw": "16px",
+   "kind": "dimension",
+   "value": "16px"
+  },
+  "--wp--preset--font-size--section-title": {
+   "raw": "32px",
+   "kind": "dimension",
+   "value": "32px"
+  },
+  "--wp--preset--font-size--small": {
+   "raw": "13px",
+   "kind": "dimension",
+   "value": "13px"
+  },
+  "--wp--preset--font-size--x-large": {
+   "raw": "42px",
+   "kind": "dimension",
+   "value": "42px"
+  },
+  "--wp--preset--gradient--blush-bordeaux": {
+   "raw": "linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%)",
+   "kind": "other"
+  },
+  "--wp--preset--gradient--blush-light-purple": {
+   "raw": "linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%)",
+   "kind": "other"
+  },
+  "--wp--preset--gradient--cool-to-warm-spectrum": {
+   "raw": "linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%)",
+   "kind": "other"
+  },
+  "--wp--preset--gradient--electric-grass": {
+   "raw": "linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%)",
+   "kind": "other"
+  },
+  "--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan": {
+   "raw": "linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%)",
+   "kind": "other"
+  },
+  "--wp--preset--gradient--luminous-dusk": {
+   "raw": "linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%)",
+   "kind": "other"
+  },
+  "--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange": {
+   "raw": "linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%)",
+   "kind": "other"
+  },
+  "--wp--preset--gradient--luminous-vivid-orange-to-vivid-red": {
+   "raw": "linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%)",
+   "kind": "other"
+  },
+  "--wp--preset--gradient--midnight": {
+   "raw": "linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%)",
+   "kind": "other"
+  },
+  "--wp--preset--gradient--pale-ocean": {
+   "raw": "linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%)",
+   "kind": "other"
+  },
+  "--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray": {
+   "raw": "linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%)",
+   "kind": "other"
+  },
+  "--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple": {
+   "raw": "linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%)",
+   "kind": "other"
+  },
+  "--wp--preset--shadow--crisp": {
+   "raw": "6px 6px 0px rgb(0, 0, 0)",
+   "kind": "shadow",
+   "value": "rgb(0, 0, 0) 6px 6px 0px 0px"
+  },
+  "--wp--preset--shadow--deep": {
+   "raw": "12px 12px 50px rgba(0, 0, 0, 0.4)",
+   "kind": "shadow",
+   "value": "rgba(0, 0, 0, 0.4) 12px 12px 50px 0px"
+  },
+  "--wp--preset--shadow--natural": {
+   "raw": "6px 6px 9px rgba(0, 0, 0, 0.2)",
+   "kind": "shadow",
+   "value": "rgba(0, 0, 0, 0.2) 6px 6px 9px 0px"
+  },
+  "--wp--preset--shadow--outlined": {
+   "raw": "6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0)",
+   "kind": "shadow",
+   "value": "rgb(255, 255, 255) 6px 6px 0px -3px, rgb(0, 0, 0) 6px 6px 0px 0px"
+  },
+  "--wp--preset--shadow--sharp": {
+   "raw": "6px 6px 0px rgba(0, 0, 0, 0.2)",
+   "kind": "shadow",
+   "value": "rgba(0, 0, 0, 0.2) 6px 6px 0px 0px"
+  },
+  "--wp--preset--spacing--10": {
+   "raw": "0.25rem",
+   "kind": "dimension",
+   "value": "4px"
+  },
+  "--wp--preset--spacing--100": {
+   "raw": "2.5rem",
+   "kind": "dimension",
+   "value": "40px"
+  },
+  "--wp--preset--spacing--120": {
+   "raw": "3rem",
+   "kind": "dimension",
+   "value": "48px"
+  },
+  "--wp--preset--spacing--160": {
+   "raw": "4rem",
+   "kind": "dimension",
+   "value": "64px"
+  },
+  "--wp--preset--spacing--20": {
+   "raw": ".5rem",
+   "kind": "dimension",
+   "value": "8px"
+  },
+  "--wp--preset--spacing--200": {
+   "raw": "5rem",
+   "kind": "dimension",
+   "value": "80px"
+  },
+  "--wp--preset--spacing--240": {
+   "raw": "6rem",
+   "kind": "dimension",
+   "value": "96px"
+  },
+  "--wp--preset--spacing--30": {
+   "raw": "0.67rem",
+   "kind": "dimension",
+   "value": "10.7188px"
+  },
+  "--wp--preset--spacing--40": {
+   "raw": "1rem",
+   "kind": "dimension",
+   "value": "16px"
+  },
+  "--wp--preset--spacing--50": {
+   "raw": "1.5rem",
+   "kind": "dimension",
+   "value": "24px"
+  },
+  "--wp--preset--spacing--60": {
+   "raw": "2.25rem",
+   "kind": "dimension",
+   "value": "36px"
+  },
+  "--wp--preset--spacing--70": {
+   "raw": "3.38rem",
+   "kind": "dimension",
+   "value": "54.0781px"
+  },
+  "--wp--preset--spacing--80": {
+   "raw": "5.06rem",
+   "kind": "dimension",
+   "value": "80.9531px"
+  },
+  "--wp--style--block-gap": {
+   "raw": "1.5rem",
+   "kind": "dimension",
+   "value": "24px"
+  },
+  "--wp--style--global--content-size": {
+   "raw": "1048px",
+   "kind": "dimension",
+   "value": "1048px"
+  },
+  "--wp--style--global--wide-size": {
+   "raw": "1280px",
+   "kind": "dimension",
+   "value": "1280px"
+  },
+  "--wp-admin-border-width-focus": {
+   "raw": "1.5px",
+   "kind": "dimension",
+   "value": "1.5px"
+  },
+  "--wp-admin-theme-color": {
+   "raw": "#007cba",
+   "kind": "color",
+   "value": "#007cba"
+  },
+  "--wp-admin-theme-color--rgb": {
+   "raw": "0,124,186",
+   "kind": "other"
+  },
+  "--wp-admin-theme-color-darker-10": {
+   "raw": "#006ba1",
+   "kind": "color",
+   "value": "#006ba1"
+  },
+  "--wp-admin-theme-color-darker-10--rgb": {
+   "raw": "0,107,160.5",
+   "kind": "other"
+  },
+  "--wp-admin-theme-color-darker-20": {
+   "raw": "#005a87",
+   "kind": "color",
+   "value": "#005a87"
+  },
+  "--wp-admin-theme-color-darker-20--rgb": {
+   "raw": "0,90,135",
+   "kind": "other"
+  },
+  "--wp-block-synced-color": {
+   "raw": "#7a00df",
+   "kind": "color",
+   "value": "#7a00df"
+  },
+  "--wp-block-synced-color--rgb": {
+   "raw": "122,0,223",
+   "kind": "other"
+  },
+  "--wp-bound-block-color": {
+   "raw": "#7a00df",
+   "kind": "color",
+   "value": "#7a00df"
+  },
+  "--wp-editor-canvas-background": {
+   "raw": "#ddd",
+   "kind": "color",
+   "value": "#dddddd"
+  }
+ }
+}

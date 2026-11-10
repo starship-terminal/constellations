@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/6a5f9438-7ae6-4743-a0bd-f9087d467eff",
   "source_url": "https://abetterlou.com",
   "extracted_at": "2026-06-03T18:44:46.882Z",
-  "fetched_at": "2026-10-20T08:24:17Z",
+  "fetched_at": "2026-11-08T04:19:37Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/7c15df3d-bf9e-4088-b1ba-23fde131f19a.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0db38d0c-f357-4455-929d-530a189d8604.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/39106a1e-96a1-401f-a13c-9aeed9cc4189.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/012d2ce9-e74a-4588-aee3-cce1e9c49f4d.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/73359194-de93-436e-af53-81d4029f5e7a",
   "source_url": "https://clasebcn.com",
   "extracted_at": "2026-06-03T21:54:23.798Z",
-  "fetched_at": "2026-10-20T08:21:44Z",
+  "fetched_at": "2026-11-08T04:19:55Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/87853e61-be23-49e4-8335-b92fa06e0033.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/db1538cf-574d-4d9b-a12f-513f42a6872c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/8ddc65fd-5e41-48f9-90e5-be9ebdb8d576.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/ec20ca9d-a102-49b9-96db-896f2750499e.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

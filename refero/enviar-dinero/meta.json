@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/46c16139-b0bb-49e6-95dc-74bef576e5ce",
   "source_url": "https://paypal.com",
   "extracted_at": "2026-04-11T19:14:39.744Z",
-  "fetched_at": "2026-10-20T08:25:13Z",
+  "fetched_at": "2026-11-08T04:19:32Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b9ae4aad-eb30-46a1-9ee6-374aa419ea4d.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/d6c9308c-fa04-4cb1-9a13-b313b07f6c02.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/aa00e640-c8c8-407f-916c-ffcdb70d5748.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/4eb4c694-2aaf-4e7c-9b82-a2dbee4202a6.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": true
 }

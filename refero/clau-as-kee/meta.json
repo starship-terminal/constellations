@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/9aad4722-413d-4b32-bda7-6f94bbd9938c",
   "source_url": "https://clauaskee.com",
   "extracted_at": "2026-06-03T20:48:55.234Z",
-  "fetched_at": "2026-10-20T08:21:53Z",
+  "fetched_at": "2026-11-08T04:19:55Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d73e9bd7-e8c3-45cc-995d-46feb8c1f30d.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/fa795e1b-6acc-4c23-947d-a0bf814881c0.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/4e5f33d3-d724-47f8-ac95-6a9711464725.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/709332cb-8716-4357-8584-645175e78494.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

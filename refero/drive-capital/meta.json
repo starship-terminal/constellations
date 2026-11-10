@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/241ebab6-1f3a-4637-8754-4f6b164ea090",
   "source_url": "https://www.thesummerdrive.com",
   "extracted_at": "2026-06-03T18:17:14.872Z",
-  "fetched_at": "2026-10-20T08:22:42Z",
+  "fetched_at": "2026-11-08T04:20:03Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/230c1343-985f-4312-bf43-518366608af9.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/041ae535-15d8-4b85-b315-3b3ef55d4d7d.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/f8fee41d-c5d7-4306-8487-ee79c2ef59d9.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/bddec99b-2c01-4380-9ada-8304c55e6e29.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }
