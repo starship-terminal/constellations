@@ -76,7 +76,7 @@ const L = [];
 const W = (s = '') => L.push(s);
 W('# Component measurements'); // PRODUCT (adapt): the product's name
 W('');
-W(`Computed styles read from www.anthropic.com, claude.com and docs.claude.com on ${J._meta.read} by \`tools/capture/public/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
+W(`Computed styles read from www.airtable.com on ${J._meta.read} by \`tools/capture/public/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
 W('');
 W('States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.');
 W('');
@@ -124,7 +124,7 @@ if (J._meta.backdrop) {
 W('');
 W('## Transitions declared in the readable stylesheets');
 W('');
-W('The Anthropic sites serve their stylesheets same-origin but as CSS modules with hashed prefixes, so this list holds the transition rules the CSSOM could read on each page; the per-state Transition rows above are computed values and cover the real rules.');
+W('Airtable\'s site serves its stylesheets same-origin but as CSS modules with hashed prefixes, so this list holds the transition rules the CSSOM could read on each page; the per-state Transition rows above are computed values and cover the real rules.');
 for (const [pg, list] of Object.entries(J._meta.sheets || {}).sort()) {
   const uniq = [...new Map(list.filter((t) => t.transition).map((t) => [t.transition, t])).values()].slice(0, 12);
   W('');

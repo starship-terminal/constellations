@@ -16,7 +16,7 @@
 }
 * { box-sizing: border-box; margin: 0; }
 body {
-  font-family: var(--font-family-haas);
+  font-family: var(--font-family-haas), system-ui, sans-serif;
   background: var(--page);
   color: var(--text);
   line-height: 1.45;
@@ -25,9 +25,9 @@ body {
 a { color: var(--link); }
 header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
 header .ic { display: block; }
-h1 { font-family: var(--font-family-display); font-size: 40px; font-weight: 600; letter-spacing: -.02em; }
+h1 { font-family: var(--font-family-display), system-ui, sans-serif; font-size: 40px; font-weight: 600; letter-spacing: -.02em; }
 .sub { color: var(--muted); font-size: 14px; margin-bottom: 40px; max-width: 72ch; }
-h2 { font-family: var(--font-family-display); font-size: 22px; font-weight: 600; margin: 48px 0 16px; border-top: 1px solid var(--border); padding-top: 32px; }
+h2 { font-family: var(--font-family-display), system-ui, sans-serif; font-size: 22px; font-weight: 600; margin: 48px 0 16px; border-top: 1px solid var(--border); padding-top: 32px; }
 h2:first-of-type { border-top: 0; padding-top: 0; }
 .note { color: var(--muted); font-size: 13px; margin: -8px 0 16px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
@@ -35,20 +35,20 @@ h2:first-of-type { border-top: 0; padding-top: 0; }
 .sw .chip { height: 64px; }
 .sw .meta { padding: 8px 10px; background: var(--surface-raised); }
 .sw .meta b { display: block; font-weight: 600; }
-.sw .meta span { color: var(--muted); font-family: var(--font-family-mono); font-size: 11px; word-break: break-all; }
+.sw .meta span { color: var(--muted); font-family: var(--font-family-mono), monospace; font-size: 11px; word-break: break-all; }
 table { border-collapse: collapse; width: 100%; font-size: 13px; }
 th, td { text-align: left; padding: 7px 12px; border-bottom: 1px solid var(--border-subtle); vertical-align: top; }
 th { color: var(--muted); font-weight: 600; }
-td.name { font-family: var(--font-family-mono); font-size: 12px; }
-td.src { color: var(--faint); font-size: 11px; font-family: var(--font-family-mono); }
+td.name { font-family: var(--font-family-mono), monospace; font-size: 12px; }
+td.src { color: var(--faint); font-size: 11px; font-family: var(--font-family-mono), monospace; }
 .chip-inline { display: inline-block; width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--border-subtle); vertical-align: -2px; margin-right: 8px; }
 .demo { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin: 16px 0 8px; }
-.card-demo { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--card-radius); padding: 24px; width: 320px; }
+.card-demo { background: var(--component-card-bg); border: 1px solid var(--component-card-border); border-radius: var(--component-card-radius); padding: 24px; width: 320px; }
 .card-demo h4 { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
 .card-demo p { color: var(--muted); font-size: 14px; }
-.tile-demo { background: var(--chip-blue-bg); color: var(--chip-blue-fg); border-radius: var(--card-tile-radius); padding: 28px; width: 320px; }
-.tile-demo h4 { font-family: var(--font-family-display); font-size: 22px; font-weight: 600; margin-bottom: 6px; }
-.btn { display: inline-flex; align-items: center; gap: 8px; border-radius: var(--component-button-primary-radius); height: var(--component-button-primary-height); padding: 0 28px; font-family: var(--font-family-season-sans); font-size: 16px; font-weight: 650; border: 1px solid transparent; cursor: default; }
+.tile-demo { background: var(--component-chip-blue-bg); color: var(--component-chip-blue-fg); border-radius: var(--component-card-tile-radius); padding: 28px; width: 320px; }
+.tile-demo h4 { font-family: var(--font-family-display), system-ui, sans-serif; font-size: 22px; font-weight: 600; margin-bottom: 6px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; border-radius: var(--component-button-primary-radius); height: var(--component-button-primary-height); padding: 0 28px; font-family: var(--font-family-season-sans), system-ui, sans-serif; font-size: 16px; font-weight: 650; border: 1px solid transparent; cursor: default; }
 .btn-ink { background: var(--component-button-primary-bg); color: var(--component-button-primary-fg); border-color: var(--component-button-primary-bg); }
 .btn-ink:hover { background: var(--component-button-primary-hover-bg); border-color: var(--component-button-primary-hover-bg); }
 .btn-ink:active { background: var(--component-button-primary-pressed-bg); border-color: var(--component-button-primary-pressed-bg); }
@@ -57,13 +57,13 @@ td.src { color: var(--faint); font-size: 11px; font-family: var(--font-family-mo
 .btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 .field { display: flex; align-items: center; height: var(--component-field-height); width: 320px; border: 1px solid var(--component-field-border); border-radius: var(--radius-md); padding: 0 16px; background: var(--surface-raised); color: var(--muted); font-size: 15px; }
 .field:focus-within { outline: 1px solid var(--component-field-focus); }
-.promo-demo { background: var(--component-promo-bg); color: var(--component-promo-text); font-family: var(--font-family-season-sans); font-weight: 650; font-size: 14px; text-align: center; padding: 12px; border-radius: var(--radius-sm); width: 100%; }
+.promo-demo { background: var(--component-promo-bg); color: var(--component-promo-text); font-family: var(--font-family-season-sans), system-ui, sans-serif; font-weight: 650; font-size: 14px; text-align: center; padding: 12px; border-radius: var(--radius-sm); width: 100%; }
 .promo-demo a { color: var(--link-deep); margin-left: 8px; }
 .tag { display: inline-block; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-full); padding: 4px 14px; font-size: 13px; }
 .tab-demo { display: flex; gap: 0; background: var(--surface); border-radius: var(--radius-md); padding: 4px; }
 .tab-demo span { padding: 10px 20px; border-radius: var(--radius-sm); font-size: 14px; color: var(--muted); }
-.tab-demo .on { background: var(--tablist-bg); color: var(--text); box-shadow: var(--shadow-low); }
-.sp-row { display: flex; align-items: center; gap: 16px; margin: 6px 0; font-family: var(--font-family-mono); font-size: 12px; color: var(--muted); }
+.tab-demo .on { background: var(--component-tablist-bg); color: var(--text); box-shadow: var(--shadow-low); }
+.sp-row { display: flex; align-items: center; gap: 16px; margin: 6px 0; font-family: var(--font-family-mono), monospace; font-size: 12px; color: var(--muted); }
 .sp-row i { display: block; background: var(--accent); border-radius: 2px; height: 16px; }
 footer { margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--faint); font-size: 12px; }
 </style>
@@ -132,7 +132,7 @@ substituted here by system fonts.</p>
 <div class="demo">
   <button class="btn btn-ink" type="button">Sign up for free</button>
   <button class="btn btn-line" type="button">Book Demo</button>
-  <a href="#" style="font-family:var(--font-family-season-sans);font-weight:650">Log in</a>
+  <a href="#" style="font-family:var(--font-family-season-sans),system-ui,sans-serif;font-weight:650">Log in</a>
 </div>
 <div class="demo">
   <div class="field">* Work Email</div>
@@ -166,9 +166,10 @@ const esc = s => String(s).replace(/</g, "&lt;");
 function swatch(name, v, s) {
   return `<div class="sw" title="${esc(s)}"><div class="chip" style="background:${esc(v)}"></div><div class="meta"><b>${esc(name)}</b><span>${esc(v)}</span></div></div>`;
 }
-// brand accents
+// brand accents: every value is an alias ({color.brand-*}), so the chip must
+// paint the emitted CSS variable, not the alias text
 document.getElementById('brand').innerHTML =
-  [...flat(T.light.brand || {})].map(([n, t]) => swatch('brand-' + n, t.v, t.s)).join('');
+  [...flat(T.light.brand || {})].map(([n, t]) => swatch('brand-' + n, t.v.startsWith('{') ? 'var(--brand-' + n + ')' : t.v, t.s)).join('');
 // primitive ramps grouped by hue
 const ramps = {};
 for (const [n, t] of flat(T.core.color || {})) {
@@ -181,14 +182,45 @@ document.getElementById('ramps').innerHTML = Object.entries(ramps).map(([hue, xs
 // component colours
 document.getElementById('comp').innerHTML =
   [...flat(T.light.component || {})].filter(([n, t]) => t.t === 'color')
-    .map(([n, t]) => swatch('component-' + n, t.v.startsWith('{') ? 'var(--' + n + ')' : t.v, t.s)).join('');
-// type table
-document.getElementById('type').innerHTML =
-  '<tr><th>token</th><th>sample</th><th>source</th></tr>' +
-  [...flat(T.core.typography || {})].map(([n, t]) =>
-    `<tr><td class="name">typography-${n}</td><td style="font:${t.v.fontWeight} ${t.v.fontSize}/${t.v.lineHeight} ${t.v.fontFamily}">Ag <span style="color:var(--muted);font-size:12px">${t.v.fontSize}/${t.v.lineHeight} w${t.v.fontWeight}</span></td><td class="src">${esc(t.s)}</td></tr>`).join('') +
-  [...flat(T.core.font?.family || {})].map(([n, t]) =>
-    `<tr><td class="name">font-family-${n}</td><td style="font-family:${t.v}">${esc(t.v.split(',')[0])}</td><td class="src">${esc(t.s)}</td></tr>`).join('');
+    .map(([n, t]) => swatch('component-' + n, t.v.startsWith('{') ? 'var(--component-' + n + ')' : t.v, t.s)).join('');
+// type table: the composites, the font families, then the type-size and
+// type-weight tokens. fontFamily values carry double quotes ("Haas Groot
+// Disp"), which would close the double-quoted style attribute early, so the
+// samples assign styles through the DOM instead.
+const typeTbl = document.getElementById('type');
+typeTbl.innerHTML = '<tr><th>token</th><th>sample</th><th>source</th></tr>';
+for (const [n, t] of flat(T.core.typography || {})) {
+  const tr = typeTbl.insertRow();
+  tr.insertCell().outerHTML = `<td class="name">typography-${n}</td>`;
+  const td = tr.insertCell();
+  td.style.font = `${t.v.fontWeight} ${t.v.fontSize}/${t.v.lineHeight} ${t.v.fontFamily}, system-ui, sans-serif`;
+  td.innerHTML = `Ag <span style="color:var(--muted);font-size:12px">${t.v.fontSize}/${t.v.lineHeight} w${t.v.fontWeight}</span>`;
+  tr.insertCell().outerHTML = `<td class="src">${esc(t.s)}</td>`;
+}
+for (const [n, t] of flat(T.core.font?.family || {})) {
+  const tr = typeTbl.insertRow();
+  tr.insertCell().outerHTML = `<td class="name">font-family-${n}</td>`;
+  const td = tr.insertCell();
+  td.style.fontFamily = `${t.v}, system-ui, sans-serif`;
+  td.textContent = t.v.split(',')[0].replace(/"/g, '');
+  tr.insertCell().outerHTML = `<td class="src">${esc(t.s)}</td>`;
+}
+for (const [n, t] of flat(T.core.type?.size || {})) {
+  const tr = typeTbl.insertRow();
+  tr.insertCell().outerHTML = `<td class="name">type-size-${n}</td>`;
+  const td = tr.insertCell();
+  td.style.fontSize = t.v;
+  td.textContent = `Ag ${t.v}`;
+  tr.insertCell().outerHTML = `<td class="src">${esc(t.s)}</td>`;
+}
+for (const [n, t] of flat(T.core.type?.weight || {})) {
+  const tr = typeTbl.insertRow();
+  tr.insertCell().outerHTML = `<td class="name">type-weight-${n}</td>`;
+  const td = tr.insertCell();
+  td.style.fontWeight = t.v;
+  td.textContent = `Ag ${t.v}`;
+  tr.insertCell().outerHTML = `<td class="src">${esc(t.s)}</td>`;
+}
 // space bars
 document.getElementById('space').innerHTML =
   [...flat(T.core.space || {})].map(([n, t]) =>
@@ -199,7 +231,7 @@ document.getElementById('radius').innerHTML =
     `<div class="sw" title="${esc(t.s)}"><div class="chip" style="background:var(--surface);display:flex;align-items:center;justify-content:center"><div style="width:70%;height:60%;background:var(--accent-deep);border-radius:${esc(t.v)}"></div></div><div class="meta"><b>radius-${n}</b><span>${esc(t.v)}</span></div></div>`).join('');
 // shadows
 document.getElementById('shadow').innerHTML =
-  [...flat(T.core.shadow || {})].slice(0, 6).map(([n, t]) =>
+  [...flat(T.core.shadow || {})].map(([n, t]) =>
     `<div class="sw" style="width:180px" title="${esc(t.s)}"><div class="chip" style="background:var(--surface);display:flex;align-items:center;justify-content:center"><div style="width:70%;height:56%;background:#fff;border-radius:8px;box-shadow:${typeof t.v === 'string' ? t.v : t.v.map(l => `${l.inset ? 'inset ' : ''}${l.offsetX} ${l.offsetY} ${l.blur} ${l.spread} ${l.color}`).join(', ')}"></div></div><div class="meta"><b>shadow-${n}</b></div></div>`).join('');
 // motion
 document.getElementById('motion').innerHTML =

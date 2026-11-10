@@ -1,10 +1,10 @@
 # Airtable components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured from www.airtable.com's public marketing pages on 2026-11-10, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running pages. Nothing was signed into, submitted, bought or sent; no consent dialog was answered and no form was submitted.
+The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured from www.airtable.com's public marketing pages on 2026-11-11, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running pages. Nothing was signed into, submitted, bought or sent; no consent dialog was answered and no form was submitted.
 
 The public surface is the **www.airtable.com marketing site**: white surfaces, #181d26 ink text in Haas, a --color-primitive-* ramp system plus --color-surface/text/border-* semantics and a per-section --theme_* set all declared on :root. Most pages typeset in Haas/ATSeasonSans; /pricing runs Inter Display and /marketplace GT Eesti Display. The site is light-only - prefers-color-scheme changes nothing (`themeChecks` in raw/css-vars.json). Third-party UI (the Qualified 'Riley' chat widget and Google One Tap) is swept out of every shot.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (79 components, 169 states). The page layouts are described in [raw/layout.json](raw/layout.json).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (79 components, 168 states). The page layouts are described in [raw/layout.json](raw/layout.json).
 
 How to read an entry:
 
@@ -120,7 +120,6 @@ Values that apply across entries, from the measurement files.
 | [What's new card](#whats-new-card) | 387 x 565 | - | 6px | #ffffff `primitive-neutrals-white` | rgba(0, 0, 0, 0.24) 0px 0px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 2px 0px, rgba(0, 0, 0, 0.08) 0px 2px 4px 0px | 0 |
 | [Plan card](#plan-card) | 296.5 x 454.5 | R: 1px solid #0d52ac; B: 1px solid #0d52ac; L: 1px solid #0d52ac | 0px 0px 12px 12px | rgba(240, 246, 255, 0.5) | none | 0px 24px 16px 24px |
 | [Nav drawer](#nav-drawer) | 710.59 x 900 | - | 50% | #ffffff `primitive-neutrals-white` | none | 121.297px 0px 0px 0px |
-| [Mobile nav sheet](#mobile-nav-sheet) | 342 x 684.97 | 2px solid transparent | - | - | none | 0 |
 
 ## Components
 
@@ -419,7 +418,7 @@ A collapsible filter group in the templates rail (By Use Case / By Industry / By
 #### Filter section, open
 The filter group clicked open; a local expand. Read as `filter-section-open` on the www.airtable.com/templates page.
 
-**Values (default).** size 224 x 27.23; background transparent; text Haas Groot Disp 14.8/19.24 700, #9ca3af; icon 14 x 14, #9ca3af.
+**Values (default).** size 224 x 286.92; background transparent; text Haas Groot Disp 14.8/19.24 700, #9ca3af; icon 14 x 14, #9ca3af.
 
 ![Filter section, open default](components/crops/filter-section-open-default.png)
 
@@ -654,7 +653,9 @@ An accordion question in the "You have questions? We have answers." section. Rea
 #### FAQ item, open
 The same accordion item clicked open; a local expand. Read as `faq-item-open` on the www.airtable.com/platform/ai page.
 
-**Values (default).** size 814 x 32; background transparent; text ATSeasonSans 16/21.6 600, #181d26 `primitive-neutrals-black`; icon 32 x 32, #9297a0 `primitive-gray-brand`.
+**Values (default).** size 814 x 110.78; padding 0px 0px 24px 0px; border B: 1px solid #e0dcdb `primitive-warm-gray-300`; background transparent; text ATSeasonSans 16/21.6 600, #181d26 `primitive-neutrals-black`; icon 32 x 32, #9297a0 `primitive-gray-brand`.
+
+Child layers that carry the look: div 814x110.8 border 1px solid #e0dcdb `primitive-warm-gray-300`.
 
 ![FAQ item, open default](components/crops/faq-item-open-default.png)
 
@@ -713,7 +714,9 @@ An accordion question in the pricing FAQ ("How does Airtable's pricing work?"). 
 #### Pricing FAQ item, open
 The same accordion item clicked open; a local expand. Read as `pricing-faq-item-open` on the www.airtable.com/pricing page.
 
-**Values (default).** size 768 x 25.5; background transparent; text Inter Display 17/25.5 575, #1d1f25; icon 16 x 16, #1d1f25.
+**Values (default).** size 768 x 206.73; padding 0px 0px 2.24px 0px; border B: 3px solid rgba(0, 0, 0, 0.1); background transparent; text Inter Display 17/25.5 575, #1d1f25; icon 16 x 16, #1d1f25.
+
+Child layers that carry the look: div 768x206.7 border 3px solid rgba(0, 0, 0, 0.1).
 
 ![Pricing FAQ item, open default](components/crops/pricing-faq-item-open-default.png)
 
@@ -840,9 +843,7 @@ Child layers that carry the look: div 430.7x56.6 border 1px solid rgba(0, 14, 38
 #### Select field, open
 The Country dropdown clicked open; a local disclosure, nothing chosen. Read as `select-field-open` on the www.airtable.com/contact-sales page.
 
-**Values (default).** size 430.66 x 56.59; background transparent; text Haas 20/30 400, #c2214c; icon 20 x 20, #cccccc.
-
-Child layers that carry the look: div 430.7x56.6 border 1px solid rgba(0, 14, 38, 0.23) radius 8px.
+**Values (default).** size 430.66 x 300; radius 4px; background #ffffff `primitive-neutrals-white`; shadow rgba(0, 0, 0, 0.1) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 4px 11px 0px; text Haas 16/24 400, #333333.
 
 ![Select field, open default](components/crops/select-field-open-default.png)
 
@@ -882,11 +883,7 @@ Child layers that carry the look: span 24x2 background #181d26 `primitive-neutra
 #### Mobile nav sheet
 The side drawer the "Open side menu" button opens at 390. Read as `m-nav-sheet` on the www.airtable.com at 390 page at 390 wide.
 
-**Values (default).** size 342 x 684.97; background transparent; text Haas 16/21.6 500, #181d26 `primitive-neutrals-black`; icon 32 x 27, #181d26 `primitive-neutrals-black`.
-
-Child layers that carry the look: a 36x31 border 2px solid transparent; a 70.6x25.6 border 2px solid transparent; a 76.9x25.6 border 2px solid transparent.
-
-![Mobile nav sheet default](components/crops/m-nav-sheet-default.png)
+Not on the page when it was captured.
 
 #### Hero title (mobile)
 The h1 at 390. Read as `m-hero-title` on the www.airtable.com home page at 390 wide.

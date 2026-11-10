@@ -146,7 +146,21 @@ const FILL = 'a workflow tracker for a studio';
 async function S(key, target, list, meta = {}, opts = {}) {
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   delete out.components[key].missing;
-  if (opts.open) { await reset(); await opts.open(); }
+  if (opts.open) {
+    await reset();
+    await opts.open();
+    if (opts.openTarget) {
+      // The open state is the expanded container or the popup, not the trigger:
+      // an accordion answer lies outside the trigger's own box.
+      const ok = await tag('open-' + key, opts.openTarget);
+      if (!ok) {
+        log('  ! did not open', key);
+        for (const st of list) out.components[key].states[st] = { error: 'the toggle did not open the target' };
+        return;
+      }
+      target = q(`[data-m="open-${key}"]`);
+    }
+  }
   const loc = target.filter({ visible: true }).first();
   if (!(await loc.count())) { log('  ! missing', key); out.components[key].missing = true; return; }
   for (const st of list) {
@@ -161,6 +175,8 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = 'mouse hover';
       } else if (st === 'focus-visible') {
         via = await kbFocus((opts.focusLoc || loc).filter({ visible: true }).first());
+        // a state that did not receive keyboard focus is not a captured focus
+        if (via === 'focus failed') throw new Error('keyboard focus did not land on the element');
       } else if (st === 'pressed') {
         undo = await forcePseudo((opts.pressLoc || loc).filter({ visible: true }).first(), ['active', 'hover']);
         via = 'CDP forcePseudoState :active:hover';
@@ -175,7 +191,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
         await page.waitForTimeout(500);
         undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
         via = `typed "${opts.fillText || FILL}", then deleted; nothing sent`;
-      } else via = via || 'at rest';
+      } else via = via || opts.via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
       out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
@@ -188,6 +204,43 @@ async function S(key, target, list, meta = {}, opts = {}) {
 }
 
 const q = (sel) => page.locator(sel);
+
+// openTarget probes for S({open, openTarget}): each returns the element that
+// shows the opened state (the capture guide wants the whole popup, not the
+// trigger), or null when the toggle did not open, so the state is recorded as
+// an error rather than a measurement of the still-closed trigger. tag()
+// serializes the probe's source, so the factories build a free-variable-free
+// function with the trigger's data-m name inlined.
+// The smallest ancestor of the trigger that holds both the question and the
+// opened answer; gated on an opened marker so a closed accordion's parents
+// (which hold the hidden answers) do not count.
+const openItem = (tagName) => new Function(`
+  const t = document.querySelector('[data-m="${tagName}"]');
+  if (!t) return null;
+  let opened = t.getAttribute('aria-expanded') === 'true' || !!t.closest('[aria-expanded="true"], details[open], [data-state="open"]');
+  for (let n = t; !opened && n && n !== document.body; n = n.parentElement) opened = /(^|[^a-z])(is|has|show)(open|expanded)([^a-z]|$)/i.test(String(n.className));
+  if (!opened) return null;
+  let n = t;
+  for (let i = 0; n.parentElement && i < 6; i++) {
+    n = n.parentElement;
+    const r = n.getBoundingClientRect();
+    if (r.height > t.getBoundingClientRect().height + 20 && (n.innerText || '').replace(t.innerText || '', '').trim().length > 4) return n;
+  }
+  return null;
+`);
+// The popup the combobox raised: the field wrapper when the menu mounts inside
+// it, otherwise the portaled menu itself; null when nothing opened.
+const openMenu = (tagName) => new Function(`
+  const t = document.querySelector('[data-m="${tagName}"]');
+  if (!t) return null;
+  const menus = [...document.querySelectorAll('[role=listbox], [class*="-menu" i], [class*="menuList" i], [class*="dropdown-menu" i], [id*="listbox" i]')].filter((e) => {
+    const r = e.getBoundingClientRect();
+    return r.width > 100 && r.height > 40 && (e.innerText || '').trim().length > 2;
+  });
+  const menu = menus.sort((a, b) => a.getBoundingClientRect().height - b.getBoundingClientRect().height)[0];
+  if (!menu) return null;
+  return menu; // the popup itself: a mounted menu overflows the field box, so cropping the field would clip it
+`);
 
 // Tags the first element matching an in-page probe so a locator can find it:
 // await tag('nav', () => {...return element or null...}) then q('[data-m="nav"]').
@@ -397,8 +450,8 @@ async function home() {
   });
   if (faq) {
     await S('faq-item', q('[data-m="faqitem"]'), ['default', 'hover'], { group: g, title: 'FAQ item', desc: 'An accordion question on the home page.', sel: 'an accordion question' });
-    // open state: a local expand
-    await S('faq-item-open', q('[data-m="faqitem"]'), ['default'], { group: g, title: 'FAQ item, open', desc: 'The same accordion item clicked open; a local expand.', sel: 'the open accordion item' }, { open: async () => { await toggle(q('[data-m="faqitem"]')).catch(() => {}); await page.waitForTimeout(1200); } });
+    // open state: a local expand; measure the opened item, not the trigger
+    await S('faq-item-open', q('[data-m="faqitem"]'), ['default'], { group: g, title: 'FAQ item, open', desc: 'The same accordion item clicked open; a local expand.', sel: 'the open accordion item' }, { open: async () => { const l = q('[data-m="faqitem"]').filter({ visible: true }).first(); const exp = await l.evaluate((el) => el.getAttribute('aria-expanded')).catch(() => null); if (exp !== 'true') { await toggle(q('[data-m="faqitem"]')).catch(() => {}); await page.waitForTimeout(1200); } }, openTarget: openItem('faqitem'), via: 'clicked the question open' });
   }
   // The "path to 10x" coloured tiles.
   const tile = await tag('tile', () => {
@@ -562,7 +615,7 @@ async function pricing() {
   });
   if (faq) {
     await S('pricing-faq-item', q('[data-m="faqitem"]'), ['default', 'hover'], { group: g, title: 'Pricing FAQ item', desc: 'An accordion question in the pricing FAQ ("How does Airtable\'s pricing work?").', sel: 'an accordion row' });
-    await S('pricing-faq-item-open', q('[data-m="faqitem"]'), ['default'], { group: g, title: 'Pricing FAQ item, open', desc: 'The same accordion item clicked open; a local expand.', sel: 'the open accordion row' }, { open: async () => { await toggle(q('[data-m="faqitem"]')).catch(() => {}); await page.waitForTimeout(1200); } });
+    await S('pricing-faq-item-open', q('[data-m="faqitem"]'), ['default'], { group: g, title: 'Pricing FAQ item, open', desc: 'The same accordion item clicked open; a local expand.', sel: 'the open accordion row' }, { open: async () => { const l = q('[data-m="faqitem"]').filter({ visible: true }).first(); const exp = await l.evaluate((el) => el.getAttribute('aria-expanded')).catch(() => null); if (exp !== 'true') { await toggle(q('[data-m="faqitem"]')).catch(() => {}); await page.waitForTimeout(1200); } }, openTarget: openItem('faqitem'), via: 'clicked the question open' });
   }
   await layoutFor('pricing');
   await page.close();
@@ -614,7 +667,7 @@ async function contactSales() {
     });
     if (csel) {
       await S('select-field', q('[data-m="csel"]'), ['default', 'hover'], { group: g, title: 'Select field', desc: 'The "Country" dropdown in the form (a custom combobox, not a native select). Measured at rest; never submitted.', sel: 'the Country field' });
-      await S('select-field-open', q('[data-m="csel"]'), ['default'], { group: g, title: 'Select field, open', desc: 'The Country dropdown clicked open; a local disclosure, nothing chosen.', sel: 'the open dropdown' }, { open: async () => { await toggle(q('[data-m="csel"]')).catch(() => {}); await page.waitForTimeout(1200); } });
+      await S('select-field-open', q('[data-m="csel"]'), ['default'], { group: g, title: 'Select field, open', desc: 'The Country dropdown clicked open; a local disclosure, nothing chosen.', sel: 'the open dropdown' }, { open: async () => { const inner = q('[data-m="csel"] [class*="-control" i], [data-m="csel"] [role=combobox], [data-m="csel"] button').filter({ visible: true }).first(); await toggle((await inner.count()) ? inner : q('[data-m="csel"]')).catch(() => {}); await page.waitForTimeout(1500); }, openTarget: openMenu('csel'), noReset: true, via: 'clicked the field open; nothing chosen' });
       await page.keyboard.press('Escape').catch(() => {});
     }
     const cb = q('form input[type=checkbox]').filter({ visible: true }).first();
@@ -640,7 +693,7 @@ async function templates() {
   const filt = await tag('filt', () => [...document.querySelectorAll('button')].find((e) => /^by (use case|industry|feature)/i.test((e.innerText || '').trim())) || null);
   if (filt) {
     await S('filter-section', q('[data-m="filt"]'), ['default', 'hover', 'focus-visible'], { group: g, title: 'Filter section', desc: 'A collapsible filter group in the templates rail (By Use Case / By Industry / By Feature).', sel: 'a filter group button' });
-    await S('filter-section-open', q('[data-m="filt"]'), ['default'], { group: g, title: 'Filter section, open', desc: 'The filter group clicked open; a local expand.', sel: 'the open filter group' }, { open: async () => { await toggle(q('[data-m="filt"]')).catch(() => {}); await page.waitForTimeout(1200); } });
+    await S('filter-section-open', q('[data-m="filt"]'), ['default'], { group: g, title: 'Filter section, open', desc: 'The filter group clicked open; a local expand.', sel: 'the open filter group' }, { open: async () => { const l = q('[data-m="filt"]').filter({ visible: true }).first(); const exp = await l.evaluate((el) => el.getAttribute('aria-expanded')).catch(() => null); if (exp !== 'true') { await toggle(q('[data-m="filt"]')).catch(() => {}); await page.waitForTimeout(1200); } }, openTarget: openItem('filt'), via: 'clicked the filter group open' });
     const cb = q('[data-m="filt"] + * input[type=checkbox], [data-m="filt"] ~ * input[type=checkbox], form input[type=checkbox], [class*="filter" i] input[type=checkbox]').filter({ visible: true }).first();
     if (await cb.count()) await S('filter-checkbox', cb, ['default'], { group: g, title: 'Filter checkbox', desc: 'A checkbox inside the open filter group.', sel: 'a filter checkbox' });
   }
@@ -711,19 +764,25 @@ async function mobile() {
     return cands.sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top)[0] || null;
   });
   if (nav) await S('m-nav-bar', q('[data-m="mnav"]'), ['default'], { group: g, title: 'Top navigation bar (mobile)', desc: 'The header at 390: wordmark and menu button.', sel: 'the mobile header' }, { noScroll: true });
-  const menu = await tag('mmenu', () => [...document.querySelectorAll('button')].find((e) => /menu|nav/i.test((e.innerText || e.getAttribute('aria-label') || '').trim())) || null);
+  // The hamburger: visible, and not the drawer's own hidden back/close buttons.
+  const menu = await tag('mmenu', () => [...document.querySelectorAll('button')].find((e) => {
+    const r = e.getBoundingClientRect();
+    return r.width > 8 && r.height > 8 && /menu|nav/i.test((e.innerText || e.getAttribute('aria-label') || '').trim()) && !/back|close|previous/i.test(e.getAttribute('aria-label') || '');
+  }) || null);
   if (menu) {
     await S('m-nav-menu-btn', q('[data-m="mmenu"]'), ['default'], { group: g, title: 'Nav menu button (mobile)', desc: 'The "Open side menu" button in the mobile header. Opened for the screenshot; nothing is followed.', sel: 'the menu button' }, { noScroll: true });
     await toggle(q('[data-m="mmenu"]')).catch(() => {});
     await page.waitForTimeout(2200);
     const sheet = await tag('msheet', () => {
-      const cands = [...document.querySelectorAll('[role=dialog], [class*="navDrawer" i], [class*="drawer" i], [class*="sheet" i], [class*="menu" i], nav, aside')].filter((e) => {
-        const r = e.getBoundingClientRect();
-        return r.height > 200 && r.width > 150 && r.left < 100 && (e.innerText || '').trim().length > 10 && e.querySelectorAll('a, button').length > 2;
+      // The opened drawer is a positioned overlay pinned to the viewport top;
+      // an in-flow nav (the footer link columns at top>1000) is not the sheet.
+      const cands = [...document.querySelectorAll('[role=dialog], [class*="navDrawer" i], [class*="drawer" i], [class*="sheet" i], [class*="menu" i], [class*="modal" i], nav, aside')].filter((e) => {
+        const r = e.getBoundingClientRect(), cs = getComputedStyle(e);
+        return r.top <= 200 && (cs.position === 'fixed' || cs.position === 'absolute') && r.height > 200 && r.width > 150 && r.left < 100 && (e.innerText || '').trim().length > 10 && e.querySelectorAll('a, button').length > 2;
       });
       return cands.sort((a, b) => a.getBoundingClientRect().width * a.getBoundingClientRect().height - b.getBoundingClientRect().width * b.getBoundingClientRect().height)[0] || null;
     });
-    if (sheet) await S('m-nav-sheet', q('[data-m="msheet"]'), ['default'], { group: g, title: 'Mobile nav sheet', desc: 'The open side drawer at 390.', sel: 'the open menu' }, { noScroll: true });
+    if (sheet) await S('m-nav-sheet', q('[data-m="msheet"]'), ['default'], { group: g, title: 'Mobile nav sheet', desc: 'The open side drawer at 390.', sel: 'the open menu' }, { noScroll: true, via: 'clicked the menu button' });
     await page.keyboard.press('Escape').catch(() => {});
     await page.waitForTimeout(600);
   }

@@ -37,3 +37,19 @@ def parity_gap(light, dark):
     """The roles only light names and the ones only dark names."""
     lt, dk = {n for n, _ in tokens_of(light)}, {n for n, _ in tokens_of(dark)}
     return sorted(lt - dk), sorted(dk - lt)
+
+
+if __name__ == "__main__":
+    """Validate the package's tokens.json: every alias resolves, and light/dark name the same roles."""
+    import json, pathlib, sys
+
+    T = json.loads((pathlib.Path(__file__).resolve().parent.parent / "tokens.json").read_text())
+    errors = alias_errors(T.get("core", {}), T.get("light", {}), T.get("dark", {}))
+    for e in errors:
+        print("error:", e)
+    if "dark" in T:
+        only_l, only_d = parity_gap(T["light"], T["dark"])
+        if only_l or only_d:
+            print(f"warning: {len(only_l)} only in light ({', '.join(only_l)}); {len(only_d)} only in dark ({', '.join(only_d)})")
+    print("ok" if not errors else f"{len(errors)} broken alias(es)")
+    sys.exit(1 if errors else 0)

@@ -2238,8 +2238,8 @@
    },
    "field-border": {
     "type": "color",
-    "value": "{color.border-keyline}",
-    "source": "the field box border; css-var --color-border-keyline (:root) — the visible border is painted by the field container, not the input"
+    "value": "rgba(0, 14, 38, 0.23)",
+    "source": "measured border color of the select-field and contact-form field containers (1px solid); the visible border is painted by the field container, not the input"
    },
    "field-focus": {
     "type": "color",

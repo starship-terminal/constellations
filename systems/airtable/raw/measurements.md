@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from www.anthropic.com, claude.com and docs.claude.com on 2026-11-10 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from www.airtable.com on 2026-11-11 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -271,7 +271,7 @@ Page: platform. Selector: `the open navDrawerMenu`. States: default.
 | ::before | 710.594px x 900px, absolute, bg #ffffff, radius 0px |
 | ::after | 20px x 900px, absolute, bg #000000 @ 0, radius 0px, shadow #0f306a @ 0.05 15px 0px 15px -15px inset |
 | Painted layers | nav.NKCPB.fncgA 710.6x900.0 bg #ffffff; nav::before.NKCPB.fncgA 710.594pxx900px bg #ffffff; nav::after.NKCPB.fncgA 20pxx900px shadow #0f306a @ 0.05 15px 0px 15px -15px inset; hr.--1b5 427.6x2.0 bg #181d26; div.xOoYx 480.0x778.7 bg #f8fafc; hr.--1b5 292.2x2.0 bg #181d26 |
-| How | at rest |
+| How | clicked the Platform trigger |
 
 Crops: `nav-dropdown-default.png`.
 
@@ -1023,10 +1023,9 @@ Page: platform-ai. Selector: `the open accordion item`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 814 x 32 |
-| Padding | 0px |
-| Gap | 24px |
-| Border | none |
+| Size (w x h) | 814 x 110.78 |
+| Padding | 0px 0px 24px 0px |
+| Border | T: none; R: none; B: 1px solid #e0dcdb; L: none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
@@ -1036,9 +1035,9 @@ Page: platform-ai. Selector: `the open accordion item`. States: default.
 | Colour | #333333 |
 | Text node | span.N0p0YG_question: ATSeasonSans 16px/21.6px 600, #181d26, ls 0.16px |
 | Transition | none |
-| Cursor | pointer |
 | Icon | 32 x 32, colour #9297a0 |
-| How | at rest |
+| Painted layers | div.N0p0YG_root 814.0x110.8 border B:1px solid #e0dcdb |
+| How | clicked the question open |
 
 Crops: `faq-item-open-default.png`.
 
@@ -1176,9 +1175,9 @@ Page: pricing. Selector: `the open accordion row`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 768 x 25.5 |
-| Padding | 0px |
-| Border | none |
+| Size (w x h) | 768 x 206.73 |
+| Padding | 0px 0px 2.24px 0px |
+| Border | T: none; R: none; B: 3px solid #000000 @ 0.1; L: none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
@@ -1188,9 +1187,9 @@ Page: pricing. Selector: `the open accordion row`. States: default.
 | Colour | #1d1f25 |
 | Text node | p.flex-auto.heading-size-small: Inter Display 17px/25.5px 575, #1d1f25, ls -0.16px |
 | Transition | none |
-| Cursor | pointer |
 | Icon | 16 x 16, colour #1d1f25, fill #000000 |
-| How | at rest |
+| Painted layers | div.understroke.thick 768.0x206.7 border B:3px solid #000000 @ 0.1 |
+| How | clicked the question open |
 
 Crops: `pricing-faq-item-open-default.png`.
 
@@ -1536,21 +1535,20 @@ Page: contact-sales. Selector: `the open dropdown`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 430.66 x 56.59 |
+| Size (w x h) | 430.66 x 300 |
 | Padding | 0px |
 | Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
+| Radius | 4px |
+| Background | #ffffff |
+| Box shadow | #000000 @ 0.1 0px 0px 0px 1px, #000000 @ 0.1 0px 4px 11px 0px |
 | Outline | none |
 | Font | Haas 20px/30px 400 |
 | Letter spacing | normal |
 | Colour | #333333 |
-| Text node | span.GTBbWq_requiredIcon: Haas 20px/30px 400, #c2214c |
+| Text node | div.option.css-10wo9uf-option: Haas 16px/24px 400, #333333 |
 | Transition | none |
-| Icon | 20 x 20, colour #cccccc |
-| Painted layers | div.control.css-s16wi8-control 430.7x56.6 border T:1px solid #000e26 @ 0.23 / R:1px solid #000e26 @ 0.23 / B:1px solid #000e26 @ 0.23 / L:1px solid #000e26 @ 0.23 r 8px |
-| How | at rest |
+| Painted layers | div.menu.css-1nmdiq5-menu 430.7x300.0 bg #ffffff r 4px shadow #000000 @ 0.1 0px 0px 0px 1px, #000000 @ 0.1 0px 4px 11px 0px; div.option.option--is-focused 430.7x40.0 bg #deebff |
+| How | clicked the field open; nothing chosen |
 
 Crops: `select-field-open-default.png`.
 
@@ -1717,8 +1715,9 @@ Page: templates. Selector: `the open filter group`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 224 x 27.23 |
+| Size (w x h) | 224 x 286.92 |
 | Padding | 0px |
+| Gap | 12px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
@@ -1726,12 +1725,11 @@ Page: templates. Selector: `the open filter group`. States: default.
 | Outline | none |
 | Font | Haas Groot Disp 20px/30px 400 |
 | Letter spacing | normal |
-| Colour | #9ca3af |
+| Colour | #333333 |
 | Text node | h3.font-bold: Haas Groot Disp 14.8px/19.24px 700, #9ca3af |
 | Transition | none |
-| Cursor | pointer |
 | Icon | 14 x 14, colour #9ca3af |
-| How | at rest |
+| How | clicked the filter group open |
 
 Crops: `filter-section-open-default.png`.
 
@@ -1997,27 +1995,9 @@ Crops: `m-nav-menu-btn-default.png`.
 
 Mobile nav sheet. The side drawer the "Open side menu" button opens at 390.
 
-Page: mobile. Selector: `the open menu`. States: default.
+Page: mobile. Selector: `the open menu`. States: .
 
-| Property | default |
-|---|---|
-| Size (w x h) | 342 x 684.97 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Haas Groot Disp 20px/30px 400 |
-| Letter spacing | normal |
-| Colour | #333333 |
-| Text node | p.pnUGO.rEl6J: Haas 16px/21.6px 500, #181d26, ls 0.16px |
-| Transition | none |
-| Icon | 32 x 27, colour #181d26, fill #000000 |
-| Painted layers | a.8-ScE.niUal 36.0x31.0 border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0; a.A9SpB.cwxsV 70.6x25.6 border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0; a.A9SpB.cwxsV 76.9x25.6 border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0; a.A9SpB.cwxsV 86.8x25.6 border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0; a.A9SpB.cwxsV 85.2x25.6 border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0; a.A9SpB.cwxsV 58.1x25.6 border T:2px solid #000000 @ 0 / R:2px solid #000000 @ 0 / B:2px solid #000000 @ 0 / L:2px solid #000000 @ 0 |
-| How | at rest |
-
-Crops: `m-nav-sheet-default.png`.
+Not found on the page at capture time.
 
 #### m-hero-title
 
@@ -2044,6 +2024,6 @@ Crops: `m-hero-title-default.png`.
 
 ## Transitions declared in the readable stylesheets
 
-The Anthropic sites serve their stylesheets same-origin but as CSS modules with hashed prefixes, so this list holds the transition rules the CSSOM could read on each page; the per-state Transition rows above are computed values and cover the real rules.
+Airtable's site serves its stylesheets same-origin but as CSS modules with hashed prefixes, so this list holds the transition rules the CSSOM could read on each page; the per-state Transition rows above are computed values and cover the real rules.
 
 - home: `0.15s ease-in`, `none`, `0.2s linear`, `opacity 0.3s ease-in-out`, `width 0.3s ease-in-out`, `opacity 0.2s ease-out`, `opacity 0.5s ease-out, transform 0.5s ease-out, filter 0.5s ease-out`, `transform 0.3s ease-in-out`, `color 0.2s`, `fill 0.2s`, `0.25s`, `0.1s linear`

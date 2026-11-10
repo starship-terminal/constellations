@@ -1079,7 +1079,7 @@
     }
    ]
   },
-  "read": "2026-11-10"
+  "read": "2026-11-11"
  },
  "components": {
   "promo-bar": {
@@ -4397,7 +4397,7 @@
       "color": "rgb(51, 51, 51)"
      },
      "crop": "components/crops/nav-dropdown-default.png",
-     "via": "at rest"
+     "via": "clicked the Platform trigger"
     }
    },
    "page": "platform",
@@ -5022,7 +5022,7 @@
      "text": "All your teams, all their workflows—connected in one workspace",
      "rect": {
       "x": 266.7,
-      "y": -6646,
+      "y": 161,
       "w": 906.67,
       "h": 96
      },
@@ -6553,7 +6553,7 @@
      "text": "Humans and agents, on the same page",
      "rect": {
       "x": 128,
-      "y": -3980.8,
+      "y": 228.2,
       "w": 1184,
       "h": 174.22
      },
@@ -11403,36 +11403,36 @@
    "states": {
     "default": {
      "tag": "div",
-     "classes": "flex pointer transparent focus-visible",
-     "text": "How does Airtable's pricing work?",
+     "classes": "understroke thick mb2 flex",
+     "text": "How does Airtable's pricing work? Airtable plans are charged per seat. If you ar",
      "rect": {
       "x": 336,
-      "y": 437.2,
+      "y": 346.2,
       "w": 768,
-      "h": 25.5
+      "h": 206.73
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
       "width": "768px",
-      "height": "25.5px",
+      "height": "206.734px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
-      "paddingBottom": "0px",
+      "paddingBottom": "2.24px",
       "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
-      "marginBottom": "8px",
+      "marginBottom": "16px",
       "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "center",
+      "flexDirection": "column",
+      "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
@@ -11441,9 +11441,9 @@
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
       "borderRightColor": "rgb(29, 31, 37)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(29, 31, 37)",
+      "borderBottomWidth": "3px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(0, 0, 0, 0.1)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
       "borderLeftColor": "rgb(29, 31, 37)",
@@ -11474,13 +11474,20 @@
       "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
-      "cursor": "pointer",
+      "cursor": "auto",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
      },
+     "paint": [
+      {
+       "node": "div.understroke.thick",
+       "size": "768.0x206.7",
+       "border": "B:3px solid rgba(0, 0, 0, 0.1)"
+      }
+     ],
      "textStyle": {
       "node": "p.flex-auto.heading-size-small",
       "text": "How does Airtable's pricing work?",
@@ -11501,7 +11508,7 @@
       "color": "rgb(29, 31, 37)"
      },
      "crop": "components/crops/pricing-faq-item-open-default.png",
-     "via": "at rest"
+     "via": "clicked the question open"
     }
    },
    "page": "pricing",
@@ -13854,7 +13861,7 @@
      "text": "By Use Case",
      "rect": {
       "x": 160,
-      "y": 435,
+      "y": 417,
       "w": 224,
       "h": 27.23
      },
@@ -14173,21 +14180,21 @@
   "filter-section-open": {
    "states": {
     "default": {
-     "tag": "button",
-     "classes": "flex w-full items-center justify-between",
-     "text": "By Use Case",
+     "tag": "div",
+     "classes": "flex flex-col gap-3",
+     "text": "By Use Case Project Management Marketing Product Management Sales & CRM HR & Rec",
      "rect": {
       "x": 160,
-      "y": 435,
+      "y": 307,
       "w": 224,
-      "h": 27.23
+      "h": 286.92
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
       "width": "224px",
-      "height": "27.2344px",
+      "height": "286.922px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -14199,25 +14206,25 @@
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "space-between",
+      "gap": "12px",
+      "rowGap": "12px",
+      "columnGap": "12px",
+      "flexDirection": "column",
+      "alignItems": "normal",
+      "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(156, 163, 175)",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgb(51, 51, 51)",
       "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(156, 163, 175)",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgb(51, 51, 51)",
       "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(156, 163, 175)",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgb(51, 51, 51)",
       "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(156, 163, 175)",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgb(51, 51, 51)",
       "borderTopLeftRadius": "0px",
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
@@ -14228,7 +14235,7 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(156, 163, 175)",
+      "outlineColor": "rgb(51, 51, 51)",
       "outlineOffset": "0px",
       "fontFamily": "\"Haas Groot Disp\", Haas, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
       "fontSize": "20px",
@@ -14236,16 +14243,16 @@
       "lineHeight": "30px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(156, 163, 175)",
+      "color": "rgb(51, 51, 51)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(156, 163, 175)",
+      "textDecorationColor": "rgb(51, 51, 51)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
       "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
-      "cursor": "pointer",
+      "cursor": "auto",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
@@ -14272,7 +14279,7 @@
       "color": "rgb(156, 163, 175)"
      },
      "crop": "components/crops/filter-section-open-default.png",
-     "via": "at rest"
+     "via": "clicked the filter group open"
     }
    },
    "page": "templates",
@@ -15850,189 +15857,15 @@
    "selector": "the menu button"
   },
   "m-nav-sheet": {
-   "states": {
-    "default": {
-     "tag": "nav",
-     "classes": "IMPkR",
-     "text": "Airtable home Platform Solutions Resources Enterprise Pricing Book Demo Facebook",
-     "rect": {
-      "x": 24,
-      "y": 7721.8,
-      "w": 342,
-      "h": 684.97
-     },
-     "style": {
-      "display": "grid",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "342px",
-      "height": "684.969px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "68px 70px 204px",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgb(51, 51, 51)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "rgb(51, 51, 51)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(51, 51, 51)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(51, 51, 51)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(51, 51, 51)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"Haas Groot Disp\", Haas, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
-      "fontSize": "20px",
-      "fontWeight": "400",
-      "lineHeight": "30px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(51, 51, 51)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(51, 51, 51)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "a.8-ScE.niUal",
-       "size": "36.0x31.0",
-       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "a.A9SpB.cwxsV",
-       "size": "70.6x25.6",
-       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "a.A9SpB.cwxsV",
-       "size": "76.9x25.6",
-       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "a.A9SpB.cwxsV",
-       "size": "86.8x25.6",
-       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "a.A9SpB.cwxsV",
-       "size": "85.2x25.6",
-       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "a.A9SpB.cwxsV",
-       "size": "58.1x25.6",
-       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "a.A9SpB.cwxsV",
-       "size": "94.4x25.6",
-       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "a.P4abY.cwxsV",
-       "size": "21.0x21.0",
-       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "a.P4abY.cwxsV",
-       "size": "20.0x21.0",
-       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "a.P4abY.cwxsV",
-       "size": "21.0x21.4",
-       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "a.P4abY.cwxsV",
-       "size": "21.0x21.0",
-       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "a.P4abY.cwxsV",
-       "size": "25.0x19.0",
-       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "div.90iwH",
-       "size": "342.0x2.0",
-       "bg": "rgba(1, 20, 53, 0.12)"
-      },
-      {
-       "node": "a.AdEPz.cwxsV",
-       "size": "119.5x25.6",
-       "border": "T:2px solid rgba(0, 0, 0, 0) | R:2px solid rgba(0, 0, 0, 0) | B:2px solid rgba(0, 0, 0, 0) | L:2px solid rgba(0, 0, 0, 0)"
-      }
-     ],
-     "textStyle": {
-      "node": "p.pnUGO.rEl6J",
-      "text": "Platform",
-      "fontFamily": "Haas, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "21.6px",
-      "fontWeight": "500",
-      "letterSpacing": "0.16px",
-      "color": "rgb(24, 29, 38)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 32,
-      "h": 27,
-      "fill": "rgb(0, 0, 0)",
-      "stroke": "none",
-      "color": "rgb(24, 29, 38)"
-     },
-     "crop": "components/crops/m-nav-sheet-default.png",
-     "via": "at rest"
-    }
-   },
+   "states": {},
    "page": "mobile",
    "run": "mobile",
    "url": "https://www.airtable.com/",
    "title": "Mobile nav sheet",
    "group": "Mobile (390 wide)",
    "desc": "The side drawer the \"Open side menu\" button opens at 390.",
-   "selector": "the open menu"
+   "selector": "the open menu",
+   "missing": true
   },
   "m-hero-title": {
    "states": {
@@ -17191,51 +17024,51 @@
   "faq-item-open": {
    "states": {
     "default": {
-     "tag": "button",
-     "classes": "N0p0YG_trigger",
-     "text": "What is Omni?",
+     "tag": "div",
+     "classes": "N0p0YG_root",
+     "text": "What is Omni? Omni is Airtable’s conversational AI builder. It helps you create ",
      "rect": {
       "x": 537,
-      "y": 434.5,
+      "y": 394.5,
       "w": 814,
-      "h": 32
+      "h": 110.78
      },
      "style": {
       "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
       "width": "814px",
-      "height": "32px",
-      "minWidth": "0px",
+      "height": "110.781px",
+      "minWidth": "auto",
       "maxWidth": "none",
-      "minHeight": "0px",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
-      "paddingBottom": "0px",
+      "paddingBottom": "24px",
       "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
       "marginLeft": "0px",
-      "gap": "24px",
-      "rowGap": "24px",
-      "columnGap": "24px",
-      "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "space-between",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "column",
+      "alignItems": "normal",
+      "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "solid",
-      "borderTopColor": "rgb(51, 51, 51)",
+      "borderTopColor": "rgb(224, 220, 219)",
       "borderRightWidth": "0px",
       "borderRightStyle": "solid",
-      "borderRightColor": "rgb(51, 51, 51)",
-      "borderBottomWidth": "0px",
+      "borderRightColor": "rgb(224, 220, 219)",
+      "borderBottomWidth": "1px",
       "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(51, 51, 51)",
+      "borderBottomColor": "rgb(224, 220, 219)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(51, 51, 51)",
+      "borderLeftColor": "rgb(224, 220, 219)",
       "borderTopLeftRadius": "0px",
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
@@ -17263,13 +17096,20 @@
       "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
-      "cursor": "pointer",
+      "cursor": "auto",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
      },
+     "paint": [
+      {
+       "node": "div.N0p0YG_root",
+       "size": "814.0x110.8",
+       "border": "B:1px solid rgb(224, 220, 219)"
+      }
+     ],
      "textStyle": {
       "node": "span.N0p0YG_question",
       "text": "What is Omni?",
@@ -17290,7 +17130,7 @@
       "color": "rgb(146, 151, 160)"
      },
      "crop": "components/crops/faq-item-open-default.png",
-     "via": "at rest"
+     "via": "clicked the question open"
     }
    },
    "page": "platform-ai",
@@ -17658,20 +17498,20 @@
    "states": {
     "default": {
      "tag": "div",
-     "classes": "bo7yTW_conditionalFields",
-     "text": "* Country",
+     "classes": "menu css-1nmdiq5-menu",
+     "text": "United States of America Afghanistan Albania Algeria American Samoa Andorra Ango",
      "rect": {
       "x": 929.3,
-      "y": 422,
+      "y": 299.6,
       "w": 430.66,
-      "h": 56.59
+      "h": 300
      },
      "style": {
       "display": "block",
-      "position": "static",
+      "position": "absolute",
       "boxSizing": "border-box",
       "width": "430.656px",
-      "height": "56.5938px",
+      "height": "300px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
@@ -17679,7 +17519,7 @@
       "paddingRight": "0px",
       "paddingBottom": "0px",
       "paddingLeft": "0px",
-      "marginTop": "0px",
+      "marginTop": "8px",
       "marginRight": "0px",
       "marginBottom": "8px",
       "marginLeft": "0px",
@@ -17702,13 +17542,13 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "solid",
       "borderLeftColor": "rgb(51, 51, 51)",
-      "borderTopLeftRadius": "0px",
-      "borderTopRightRadius": "0px",
-      "borderBottomRightRadius": "0px",
-      "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "4px",
+      "borderTopRightRadius": "4px",
+      "borderBottomRightRadius": "4px",
+      "borderBottomLeftRadius": "4px",
+      "backgroundColor": "rgb(255, 255, 255)",
       "backgroundImage": "none",
-      "boxShadow": "none",
+      "boxShadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 4px 11px 0px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
@@ -17733,38 +17573,37 @@
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
+      "zIndex": "1",
+      "top": "56.5938px"
      },
      "paint": [
       {
-       "node": "div.control.css-s16wi8-control",
-       "size": "430.7x56.6",
-       "border": "T:1px solid rgba(0, 14, 38, 0.23) | R:1px solid rgba(0, 14, 38, 0.23) | B:1px solid rgba(0, 14, 38, 0.23) | L:1px solid rgba(0, 14, 38, 0.23)",
-       "radius": "8px"
+       "node": "div.menu.css-1nmdiq5-menu",
+       "size": "430.7x300.0",
+       "bg": "rgb(255, 255, 255)",
+       "shadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 4px 11px 0px",
+       "radius": "4px"
+      },
+      {
+       "node": "div.option.option--is-focused",
+       "size": "430.7x40.0",
+       "bg": "rgb(222, 235, 255)"
       }
      ],
      "textStyle": {
-      "node": "span.GTBbWq_requiredIcon",
-      "text": "*",
+      "node": "div.option.css-10wo9uf-option",
+      "text": "United States of America",
       "fontFamily": "Haas, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
-      "fontSize": "20px",
-      "lineHeight": "30px",
+      "fontSize": "16px",
+      "lineHeight": "24px",
       "fontWeight": "400",
       "letterSpacing": "normal",
-      "color": "rgb(194, 33, 76)",
+      "color": "rgb(51, 51, 51)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "icon": {
-      "w": 20,
-      "h": 20,
-      "fill": "rgb(204, 204, 204)",
-      "stroke": "rgb(204, 204, 204)",
-      "color": "rgb(204, 204, 204)"
-     },
      "crop": "components/crops/select-field-open-default.png",
-     "via": "at rest"
+     "via": "clicked the field open; nothing chosen"
     }
    },
    "page": "contact-sales",

@@ -59,7 +59,12 @@ for d in V["decls"]:
     theme = "dark" if is_dark(d) else "light"
     media = d["media"] or ""
     narrow = "max-width" in media or "min-width" in media or "prefers-contrast" in media or "forced-colors" in media
-    rank = RANK.get(d["selector"], 2) + (3 if narrow else 0) + (9 if "[--" in d["selector"] else 0)
+    # Unlayered author rules outrank every @layer rule in the real cascade: the
+    # unlayered :root defaults win over the @layer theme `:root, :host` ones
+    # (--radius-xl is 32px, not .75rem), so layered declarations rank below
+    # them but above an arbitrary-property one-off.
+    layered = "@layer" in media
+    rank = RANK.get(d["selector"], 2) + (3 if narrow else 0) + (6 if layered else 0) + (9 if "[--" in d["selector"] else 0)
     cur = DECL[o][theme].get(d["name"])
     if cur is None or rank < cur[0]:
         DECL[o][theme][d["name"]] = (rank, d)

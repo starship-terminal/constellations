@@ -11,6 +11,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { pngDimensions } from '../screenshot.mjs';
 
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 export const { chromium } = pw.default ?? pw;
@@ -236,6 +237,39 @@ export async function markFixed(page) {
 export async function crop(page, locator, name, pad = 8) {
   fs.mkdirSync(CROPS, { recursive: true });
   const file = path.join(CROPS, `${name}.png`);
+  // Riley and other fixed chrome can mount after the page-open sweep and the
+  // first markFixed pass, so sweep again at the crop boundary, the way
+  // Shooter.view does for page screenshots.
+  await closePromo(page);
+  await markFixed(page);
+  // A .capture.json sidecar per crop, the same fields screenshotWithMetadata
+  // records for page shots (docs/CAPTURE.md: the browser's real inner size and
+  // pixel ratio plus the PNG's pixel dimensions), plus the final PNG
+  // dimensions after quantize() may have halved the file.
+  const meta = {
+    schemaVersion: 1,
+    capturedAt: new Date().toISOString(),
+    screenshot: `${name}.png`,
+    sanitizedSourceUrl: null,
+    requested: { viewport: page.viewportSize(), deviceScaleFactor: null },
+    configuredViewport: page.viewportSize(),
+    actual: null,
+    capture: { mode: null, scale: 'device', clip: null },
+    png: null,
+    pngFinal: null,
+    resize: null,
+    dimensionCheck: { status: 'pending', expected: null, basis: 'crop' },
+    visualReview: { status: 'pending', note: 'Inspect the final image for complete, settled contents; dimensions alone cannot accept it.' },
+    cropCoordinates: { status: 'unverified', note: 'Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG.' },
+  };
+  const writeMeta = () => fs.writeFileSync(`${file}.capture.json`, JSON.stringify(meta, null, 2) + '\n');
+  writeMeta(); // invalidate a previous same-name pass before any browser call can fail
+  try {
+    meta.actual = await page.evaluate(() => {
+      const visual = window.visualViewport;
+      return { innerWidth, innerHeight, devicePixelRatio,
+        visualViewport: visual ? { width: visual.width, height: visual.height, scale: visual.scale } : null };
+    });
   const hidden = await locator.evaluate((el, sel) => {
     let n = 0;
     document.querySelectorAll(sel).forEach((s) => {
@@ -249,6 +283,7 @@ export async function crop(page, locator, name, pad = 8) {
   try {
     const box = await locator.boundingBox();
     if (!box) throw new Error(`no box for ${name}`);
+    meta.capture.box = box;
     const vp = page.viewportSize();
     const inView = box.y - pad >= 0 && box.y + box.height + pad <= vp.height && box.x >= 0 && box.x + box.width <= vp.width + 1;
     if (inView) {
@@ -258,15 +293,37 @@ export async function crop(page, locator, name, pad = 8) {
         width: Math.min(vp.width - Math.max(0, box.x - pad), box.width + 2 * pad),
         height: Math.min(vp.height - Math.max(0, box.y - pad), box.height + 2 * pad),
       };
+      meta.capture.mode = 'clip';
+      meta.capture.clip = clip;
       await page.screenshot({ path: file, clip, animations: 'allow' });
     } else {
+      meta.capture.mode = 'element';
       await locator.screenshot({ path: file, animations: 'allow' });
     }
   } finally {
     if (hidden) await page.evaluate(() => document.querySelectorAll('[data-m-hidden]').forEach((n) => { n.style.removeProperty('visibility'); n.removeAttribute('data-m-hidden'); }));
   }
+  meta.png = pngDimensions(fs.readFileSync(file));
+  const dpr = meta.actual?.devicePixelRatio || 1;
+  const region = meta.capture.clip || meta.capture.box;
+  meta.dimensionCheck.expected = { width: Math.round(region.width * dpr), height: Math.round(region.height * dpr) };
+  meta.dimensionCheck.basis = meta.capture.mode;
+  meta.dimensionCheck.status = Math.abs(meta.png.width - meta.dimensionCheck.expected.width) <= 2
+    && Math.abs(meta.png.height - meta.dimensionCheck.expected.height) <= 2 ? 'pass' : 'fail';
   quantize(file);
+  meta.pngFinal = pngDimensions(fs.readFileSync(file));
+  if (meta.pngFinal.width !== meta.png.width || meta.pngFinal.height !== meta.png.height) {
+    meta.resize = { factor: +(meta.pngFinal.width / meta.png.width).toFixed(4), note: 'halved by crop() so the folder stays small' };
+    meta.dimensionCheck.note = `png holds the captured pixels; pngFinal is the committed file after halving`;
+  }
+  writeMeta();
   return path.relative(REF, file);
+  } catch (e) {
+    meta.dimensionCheck.status = 'fail';
+    meta.dimensionCheck.error = String(e.message || e);
+    writeMeta();
+    throw e;
+  }
 }
 
 export async function centre(locator) {

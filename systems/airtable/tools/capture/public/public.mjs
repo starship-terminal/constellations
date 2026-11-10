@@ -50,13 +50,17 @@ class Shooter {
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
+    // Retire any tiles from an earlier run before writing this capture's, so a
+    // shorter page cannot be stitched back together with stale trailing tiles.
+    for (const stale of fs.readdirSync(RAW).filter((x) => x.startsWith(`${this.prefix}-${name}.part`))) fs.rmSync(path.join(RAW, stale), { force: true });
     if (H <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
     else for (let i = 0, y = 0; y < H; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, H - y) } }, this.requested);
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
   }
 }
-const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
+const failed = new Set(); // pages and states whose capture did not complete
+const step = async (label, fn) => { try { await fn(); } catch (e) { failed.add(label); log('  FAILED', label, String(e.message).split('\n')[0]); } };
 
 // Clicks one top-nav trigger so its drawer opens (airtable.com's drawers open on click;
 // the trigger is a <button>, a local disclosure — never a link or a submission).
@@ -139,9 +143,12 @@ for (const { k, mob } of runs) {
     await wait(p, spec.wait || 6000);
     if (spec.promo !== 'keep') await closePromo(p);
     await spec.run(p, S);
-  } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
+  } catch (e) { failed.add(name); log('  PAGE FAILED', name, e.message.split('\n')[0]); }
   total += S.count;
   await ctx.close();
 }
 log('done', total, 'screenshots ->', RAW);
 await b.close();
+// A caller chaining this into quantize.py must not publish old files after a
+// failed recapture, so a failure leaves a nonzero exit status.
+if (failed.size) { log('failed:', [...failed].join(', ')); process.exit(1); }
