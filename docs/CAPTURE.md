@@ -52,7 +52,12 @@ how it was captured. The `extract-style` skill in the quiver-hub
    generated Brief, DESIGN.md and Health content; `make grade` also updates
    the root README catalog table. Never add that table's row by hand. Set
    reviewed grades against the platform rubric as described in [AGENTS.md](../AGENTS.md),
-   then rerun the checks after writing those grades.
+   then rerun the checks after writing those grades. This review is not
+   optional: the package is not done until `tools/grade.py --write --review`
+   has written its grades, and every criterion that cannot grade `yes`
+   carries a written justification in the grades file.
+9. **Clean up when it merges.** `git worktree remove` the capture worktree,
+   delete `~/.design-systems/<slug>/`, and delete the merged branch.
 
 The Playwright scripts take `PLAYWRIGHT` as the path to any Playwright
 install's `index.mjs`. The package READMEs show the `~/.design-systems/pw`
