@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 55,
-    "system_domains": 47,
-    "matched_domains": 24,
-    "missing_domains": 409,
+    "system_packages": 56,
+    "system_domains": 48,
+    "matched_domains": 25,
+    "missing_domains": 408,
     "system_domains_absent_from_catalog": 23
   },
   "matched": {
@@ -125,6 +125,23 @@
           "slug": "anam",
           "name": "Anam",
           "url": "https://anam.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "anthropic.com": {
+      "catalog": [
+        {
+          "name": "Anthropic",
+          "domain": "anthropic.com",
+          "id": 508
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "anthropic",
+          "name": "Anthropic",
+          "url": "https://www.anthropic.com",
           "name_match": true
         }
       ]
@@ -536,13 +553,6 @@
         "name": "Amie",
         "domain": "amie.so",
         "id": 426
-      }
-    ],
-    "anthropic.com": [
-      {
-        "name": "Anthropic",
-        "domain": "anthropic.com",
-        "id": 508
       }
     ],
     "apollographql.com": [
