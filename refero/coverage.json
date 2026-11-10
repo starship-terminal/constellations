@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 55,
-    "system_domains": 47,
-    "matched_domains": 24,
-    "missing_domains": 409,
+    "system_packages": 56,
+    "system_domains": 48,
+    "matched_domains": 25,
+    "missing_domains": 408,
     "system_domains_absent_from_catalog": 23
   },
   "matched": {
@@ -75,6 +75,23 @@
           "name": "Acne Studios",
           "url": "https://www.acnestudios.com",
           "name_match": false
+        }
+      ]
+    },
+    "aesop.com": {
+      "catalog": [
+        {
+          "name": "Aesop",
+          "domain": "aesop.com",
+          "id": 621
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "aesop",
+          "name": "Aesop",
+          "url": "https://www.aesop.com",
+          "name_match": true
         }
       ]
     },
@@ -508,13 +525,6 @@
         "name": "adidas",
         "domain": "adidas.com",
         "id": 46
-      }
-    ],
-    "aesop.com": [
-      {
-        "name": "Aesop",
-        "domain": "aesop.com",
-        "id": 621
       }
     ],
     "airtable.com": [
