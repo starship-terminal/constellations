@@ -156,8 +156,11 @@ for name in sorted(k for k in R1440 if k.startswith("--palette-")):
         continue
     v = val(name)
     if "gradient" in str(v) or "color-mix" in str(v):
-        # a colour DTCG cannot carry (a gradient or a color-mix): literal other
-        leaf = {"value": str(v), "type": "other", "source": src(name)}
+        # a colour DTCG cannot carry (a gradient or a color-mix): keep the var
+        # reference anyway so each theme resolves its own declared value — a
+        # literal copied from the light page would misreport the dark value
+        # (the always-dark class declares 60% black where light resolves 30%)
+        leaf = {"var": name, "type": "other"}
     else:
         leaf = {"var": name, "type": "color"}
     for side in ("light", "dark"):
@@ -264,7 +267,10 @@ for name in sorted(k for k in R1440 if k.startswith("--material-")):
 # each named style is a font-size + line-height + letter-spacing triple; the
 # family and the weights are their own vars.
 
-FAM = val("--typography-font-family-cereal-font-family").strip().strip('"\'')
+# the whole stack, quotes kept — it publishes as core.typography.family, a
+# valid CSS font-family list; quotes are stripped only where one family name
+# is picked out of it (typo_leaf below)
+FAM = val("--typography-font-family-cereal-font-family").strip()
 
 
 def typo_leaf(base, weight_name=None):
@@ -302,13 +308,18 @@ for name in sorted(k for k in R1440 if k.startswith("--typography-")):
         continue
     seen.add(base)
     key = typo_key(base)
+    # the style's own -font-weight var when it declares one (the display
+    # styles declare 600, which no name fragment maps to); the name-based map
+    # is only a fallback
     wvar = base + "-font-weight"
-    wname = None
-    for frag, w in WEIGHT_OF.items():
-        if frag in key:
-            wname = "--typography-weight-" + w + ("500" if w == "medium" else "600" if w == "semibold" else "400")
-            break
-    SPEC["core"].setdefault("typography", {})[key] = typo_leaf(base, wname if wname in R1440 else None)
+    wname = wvar if wvar in R1440 else None
+    if wname is None:
+        for frag, w in WEIGHT_OF.items():
+            if frag in key:
+                cand = "--typography-weight-" + w + ("500" if w == "medium" else "600" if w == "semibold" else "400")
+                wname = cand if cand in R1440 else None
+                break
+    SPEC["core"].setdefault("typography", {})[key] = typo_leaf(base, wname)
 
 # weights + tracking + family as their own tokens
 for name in sorted(k for k in R1440 if k.startswith("--typography-weight-")):
@@ -333,7 +344,7 @@ def parse_gradient(v):
     for st in re.split(r",(?![^(]*\))", m.group(2)):
         c, _, pct = st.strip().partition(" ")
         stops.append({"color": norm_color(c), "position": round(float(pct.rstrip("%")) / 100, 4)})
-    angle = "0deg" if m.group(1) == "right" else "180deg"
+    angle = "90deg" if m.group(1) == "right" else "270deg"
     return stops, angle
 
 
@@ -364,12 +375,15 @@ def state_style(comp, state):
 
 
 # The focus ring every header control draws on keyboard focus: a 2px #222
-# shadow hugging the shape. No --palette name holds the ring.
+# shadow hugging the shape. No --palette name holds the ring. The computed
+# value comes colour-first ("rgb(34, 34, 34) 0px 0px 0px 2px"), so it goes
+# through the same layer parser the --elevation-* vars use — taking the last
+# word as the colour would publish "2px" as a colour and a zero spread.
 s = state_style("header-host-link", "focus-visible")
-meas["focus-ring"] = {"$value": [{"color": norm_color(s["boxShadow"].split()[-1]),
-                                  "offsetX": "0px", "offsetY": "0px", "blur": "0px",
-                                  "spread": px(re.search(r"([\d.]+)px", s["boxShadow"]).group(1)),
-                                  "inset": False}],
+ring_layers = parse_shadow(s["boxShadow"])
+if not ring_layers or any(not re.fullmatch(r"-?\d*\.?\d+px", l["spread"]) for l in ring_layers):
+    raise ValueError("focus ring shadow did not parse: " + s["boxShadow"])
+meas["focus-ring"] = {"$value": ring_layers,
                       "$type": "shadow",
                       "$description": "The keyboard-focus ring drawn on every header control.",
                       "$extensions": {"source": "measured header-host-link focus-visible, raw/components-computed.json"}}

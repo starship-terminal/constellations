@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from www.airbnb.com (geo-redirected to www.airbnb.com.sg from this network) on 2026-11-09 by `tools/capture/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from www.airbnb.com (geo-redirected to www.airbnb.com.sg from this network) on 2026-11-10 by `tools/capture/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -65,27 +65,9 @@ Crops: `header-host-link-default.png`, `header-host-link-hover.png`, `header-hos
 
 Language button. The globe icon button that opens the language/region sheet. Hovered and focused only.
 
-Page: home. Selector: `the icon-only globe button in the header`. States: default, hover, focus-visible.
+Page: home. Selector: `the icon-only globe button in the header`. States: .
 
-| Property | default | hover | focus-visible |
-|---|---|---|---|
-| Size (w x h) | 48 x 48 | = | = |
-| Padding | 0px | = | = |
-| Border | none | = | = |
-| Radius | 50px | = | = |
-| Background | transparent | = | = |
-| Box shadow | none | = | #ffffff 0px 0px 0px 2px, #222222 0px 0px 0px 4px |
-| Outline | none | = | = |
-| Font | Airbnb Cereal VF 14px/20.02px 400 | = | = |
-| Letter spacing | normal | = | = |
-| Colour | #222222 | = | = |
-| Transition | none | = | = |
-| Cursor | pointer | = | = |
-| Icon | 16 x 16, colour #ffffff | = | = |
-| Painted layers | div.s1n779tz.atm_26_x1skbv_1nos8r 48.0x48.0 bg #da1249 r 50px | div.s1n779tz.atm_26_x1skbv_1nos8r 48.0x48.0 image linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%) r 50px | button.bc003v3.atm_3f_glywfm_jo46a5 48.0x48.0 r 50px shadow #ffffff 0px 0px 0px 2px, #222222 0px 0px 0px 4px; div.s1n779tz.atm_26_x1skbv_1nos8r 48.0x48.0 bg #da1249 r 50px |
-| How | at rest | mouse hover | Shift+Tab, Tab |
-
-Crops: `header-globe-default.png`, `header-globe-hover.png`, `header-globe-focus-visible.png`.
+Not found on the page at capture time.
 
 #### header-menu
 
@@ -325,8 +307,8 @@ Page: home. Selector: `a gallery section title row`. States: default, hover.
 | Text node | span.t1myg1k4.dir: Airbnb Cereal VF 20px/24px 600, #222222, ls -0.18px | = |
 | Transition | box-shadow, transform 0.2s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1) delay 0s, 0s | = |
 | Cursor | pointer | = |
-| Icon | 12 x 12, colour #222222 | = |
-| Painted layers | span.ipfb646.dir 28.0x28.0 bg #f2f2f2 r 14px | = |
+| Icon | 12 x 12, colour #222222 | 12.92 x 12.92, colour #222222 |
+| Painted layers | span.ipfb646.dir 28.0x28.0 bg #f2f2f2 r 14px | span.ipfb646.dir 30.2x30.2 bg #ebebeb r 14px |
 | How | at rest | mouse hover |
 
 Crops: `section-title-default.png`, `section-title-hover.png`.
@@ -349,10 +331,10 @@ Page: home. Selector: `the first listing-card container in the rail`. States: de
 | Font | Airbnb Cereal VF 14px/20.02px 400 | = |
 | Letter spacing | normal | = |
 | Colour | #222222 | = |
-| Text node | div.t1ms2xzu.atm_ks_zryt35__1rgatj2: Airbnb Cereal VF 13px/16px 500, #222222 | = |
+| Text node | span.to6yqhz.tpka78r: Airbnb Cereal VF 11px/13px 600, #222222 | = |
 | Transition | none | = |
 | Icon | 24 x 24, colour #222222, fill #000000 @ 0.5 | = |
-| Painted layers | div.c11jbcjg.atm_ks_zryt35__1rgatj2 181.7x172.6 bg #dddddd r 20px | = |
+| Painted layers | div.c11jbcjg.atm_ks_zryt35__1rgatj2 181.7x172.6 bg #dddddd r 20px; div.bxuv6ej.bjcf2mg 103.6x26.0 bg #ffffff @ 0.8 border T:1px solid #ffffff @ 0.5 / R:1px solid #ffffff @ 0.5 / B:1px solid #ffffff @ 0.5 / L:1px solid #ffffff @ 0.5 r 14px shadow #000000 @ 0.02 0px 0px 0px 1px, #000000 @ 0.04 0px 2px 6px 0px, #000000 @ 0.1 0px 4px 8px 0px | = |
 | How | at rest | mouse hover |
 
 Crops: `listing-card-default.png`, `listing-card-hover.png`.
@@ -365,27 +347,28 @@ Page: home. Selector: `the next arrow on a card rail`. States: default, hover, f
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 28 x 28 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 50% | = | = | = |
-| Background | #f2f2f2 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Airbnb Cereal VF 14px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #c1c1c1 | = | = | = |
-| Transition | transform 0.25s cubic-bezier(0.2, 0, 0, 1) | = | = | = |
-| Opacity | 0.5 | = | = | = |
-| Cursor | not-allowed | = | = | = |
-| Icon | 12 x 12, colour #c1c1c1 | = | = | 12.92 x 12.92, colour #c1c1c1 |
-| ::before | 28px x 28px, absolute, bg #f2f2f2, radius 50% | = | = | = |
-| Painted layers | button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 28.0x28.0 bg #f2f2f2 r 50%; button::before.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 28pxx28px bg #f2f2f2 r 50% | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 28 x 28 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 50% | = | - | = |
+| Background | #f2f2f2 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Airbnb Cereal VF 14px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #c1c1c1 | = | - | = |
+| Transition | transform 0.25s cubic-bezier(0.2, 0, 0, 1) | = | - | = |
+| Opacity | 0.5 | = | - | = |
+| Cursor | not-allowed | = | - | = |
+| Icon | 12 x 12, colour #c1c1c1 | 11.2 x 11.2, colour #c1c1c1 | - | 12.92 x 12.92, colour #c1c1c1 |
+| ::before | 28px x 28px, absolute, bg #f2f2f2, radius 50% | = | - | = |
+| Painted layers | button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 28.0x28.0 bg #f2f2f2 r 50%; button::before.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 28pxx28px bg #f2f2f2 r 50% | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Transform | - | matrix(1, 0, 0, 1, 0, 0) | = | matrix(1, 0, 0, 1, 0, 0) |
+| Error | - | = | keyboard focus did not reach the element | = |
 | Text node | - | = | = | span.vkhxe59.dir: Airbnb Cereal VF 14px/normal 400, #c1c1c1 |
-| Transform | - | = | = | matrix(1, 0, 0, 1, 0, 0) |
 
-Crops: `rail-arrow-default.png`, `rail-arrow-hover.png`, `rail-arrow-focus-visible.png`, `rail-arrow-pressed.png`.
+Crops: `rail-arrow-default.png`, `rail-arrow-hover.png`, `rail-arrow-pressed.png`.
 
 #### card-heart
 
@@ -395,7 +378,7 @@ Page: home. Selector: `the heart button inside the card`. States: default, hover
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 32 x 32 | = | 34.56 x 34.56 | 29.44 x 29.44 |
+| Size (w x h) | 32 x 32 | 34.56 x 34.56 | 34.56 x 34.56 | 29.44 x 29.44 |
 | Padding | 2px 0px 0px 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 50% | = | = | = |
@@ -407,9 +390,9 @@ Page: home. Selector: `the heart button inside the card`. States: default, hover
 | Colour | #222222 | = | = | = |
 | Transition | transform 0.25s cubic-bezier(0.2, 0, 0, 1) | = | box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1) | = |
 | Cursor | pointer | = | = | = |
-| Icon | 24 x 24, colour #222222, fill #000000 @ 0.5 | = | 25.92 x 25.92, colour #222222, fill #000000 @ 0.5 | 22.08 x 22.08, colour #222222, fill #000000 @ 0.5 |
+| Icon | 24 x 24, colour #222222, fill #000000 @ 0.5 | 25.92 x 25.92, colour #222222, fill #000000 @ 0.5 | 25.92 x 25.92, colour #222222, fill #000000 @ 0.5 | 22.08 x 22.08, colour #222222, fill #000000 @ 0.5 |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Transform | - | = | matrix(1.08, 0, 0, 1.08, 0, 0) | matrix(0.92, 0, 0, 0.92, 0, 0) |
+| Transform | - | matrix(1.08, 0, 0, 1.08, 0, 0) | matrix(1.08, 0, 0, 1.08, 0, 0) | matrix(0.92, 0, 0, 0.92, 0, 0) |
 | Painted layers | - | = | button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 34.6x34.6 r 50% shadow #ffffff 0px 0px 0px 2px, #222222 0px 0px 0px 4px | = |
 
 Crops: `card-heart-default.png`, `card-heart-hover.png`, `card-heart-focus-visible.png`, `card-heart-pressed.png`.
@@ -422,7 +405,7 @@ Page: home. Selector: `the rating text inside the card`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 16.53 x 16 |
+| Size (w x h) | 23.92 x 16 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -549,23 +532,20 @@ Page: help. Selector: `a topic card in the help grid`. States: default, hover, f
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 400 x 48 | = | = | 384 x 46.08 |
-| Padding | 14px 24px | = | = | = |
+| Size (w x h) | 344 x 48 | = | = | = |
+| Padding | 0px | = | = | = |
 | Border | none | = | = | = |
-| Radius | 8px | = | = | = |
+| Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
-| Background image | linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%) | = | = | = |
-| Box shadow | none | = | #ffffff @ 0.8 0px 0px 0px 2px, #222222 0px 0px 0px 4px | = |
-| Outline | none | = | = | = |
-| Font | Airbnb Cereal VF 16px/20px 500 | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 1px auto #005fcc offset 1px | = |
+| Font | Airbnb Cereal VF 18px/24px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | #222222 | = |
-| Text node | span.cbx4cei.dir: Airbnb Cereal VF 16px/20px 500, #ffffff | = | span.cbx4cei.dir: Airbnb Cereal VF 16px/20px 500, #222222 | = |
-| Transition | box-shadow, transform 0.2s, 0.1s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1) delay 0s, 0s | = | box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1) | = |
+| Colour | #222222 | = | = | = |
+| Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 400.0x48.0 image linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%) r 8px; span.t1setlb.atm_k4_kb7nvz_1nos8r 400.0x48.0 image radial-gradient(circle, #ff385c 0%, #e61e4d 27.5%, #e31c5f 40%, #d70466 57.5%, #bd1e59 75% | = | a.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 400.0x48.0 image linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%) r 8px shadow #ffffff @ 0.8 0px 0px 0px 2px, #222222 0px 0px 0px 4px; span.t1setlb.atm_k4_kb7nvz_1nos8r 400.0x48.0 image radial-gradient(circle, #ff385c 0%, #e61e4d 27.5%, #e31c5f 40%, #d70466 57.5%, #bd1e59 75% | a.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 384.0x46.1 image linear-gradient(to right, #e61e4d 0%, #e31c5f 50%, #d70466 100%) r 8px; span.t1setlb.atm_k4_kb7nvz_1nos8r 384.0x46.1 image radial-gradient(circle, #ff385c 0%, #e61e4d 27.5%, #e31c5f 40%, #d70466 57.5%, #bd1e59 75% |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Transform | - | = | = | matrix(0.96, 0, 0, 0.96, 0, 0) |
+| Painted layers | - | = | a.t1imbvyv.dir 344.0x48.0 outline 1px auto #005fcc offset 1px | = |
 
 Crops: `help-tile-default.png`, `help-tile-hover.png`, `help-tile-focus-visible.png`, `help-tile-pressed.png`.
 
@@ -737,7 +717,7 @@ Page: room. Selector: `main h1`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 669.11 x 34 |
+| Size (w x h) | 973.89 x 64 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -894,16 +874,17 @@ Page: room. Selector: `the laurel plaque under the subtitle`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 156.91 x 34 |
-| Padding | 0px 0px 8px 0px |
+| Size (w x h) | 1120 x 242 |
+| Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | Airbnb Cereal VF 22px/26px 500 |
-| Letter spacing | -0.44px |
+| Font | Airbnb Cereal VF 16px/20px 400 |
+| Letter spacing | normal |
 | Colour | #222222 |
+| Text node | span: Airbnb Cereal VF 100px/100px 500, #222222, ls -2px |
 | Transition | none |
 | How | at rest |
 
@@ -917,12 +898,12 @@ Page: room. Selector: `the card with the date and guest fields`. States: default
 
 | Property | default |
 |---|---|
-| Size (w x h) | 372.33 x 278 |
-| Padding | 24px |
+| Size (w x h) | 372.33 x 312 |
+| Padding | 0px |
 | Border | none |
-| Radius | 12px |
+| Radius | 0px |
 | Background | transparent |
-| Box shadow | #000000 @ 0.12 0px 6px 16px 0px |
+| Box shadow | none |
 | Outline | none |
 | Font | Airbnb Cereal VF 16px/20px 400 |
 | Letter spacing | normal |
@@ -930,7 +911,9 @@ Page: room. Selector: `the card with the date and guest fields`. States: default
 | Text node | span.u10vhw1l.dir: Airbnb Cereal VF 22px/26px 500, #222222 |
 | Transition | none |
 | Icon | 16 x 16, colour #222222 |
-| Painted layers | aside.b13oolvs.atm_6h_idpfg4_vmdu4 372.3x278.0 r 12px shadow #000000 @ 0.12 0px 6px 16px 0px; div.r4cfcaw.rx1v2qp 324.3x116.0 bg #ffffff r 12px; button.c1nv5ob0.dir 324.3x56.0 bg #ffffff; div.cwf8ttw.ilm12jv 162.7x56.0 border L:1px solid #8c8c8c; div.fj95cgj.d1h1yz8o 324.3x57.0 border T:1px solid #8c8c8c / R:1px solid #8c8c8c / B:1px solid #8c8c8c / L:1px solid #8c8c8c r 12px 12px 0px 0px; div.fj95cgj.d1h1yz8o 324.3x61.0 border T:1px solid #8c8c8c / R:1px solid #8c8c8c / B:1px solid #8c8c8c / L:1px solid #8c8c8c r 0px 0px 12px 12px |
+| ::before | 372.328px x 0px, static, bg #000000 @ 0, radius 0px |
+| ::after | 372.328px x 0px, static, bg #000000 @ 0, radius 0px |
+| Painted layers | aside.b13oolvs.atm_6h_idpfg4_vmdu4 372.3x280.0 border T:1px solid #dddddd / R:1px solid #dddddd / B:1px solid #dddddd / L:1px solid #dddddd r 12px shadow #000000 @ 0.12 0px 6px 16px 0px; div.r4cfcaw.rx1v2qp 322.3x116.0 bg #ffffff r 12px; button.c1nv5ob0.dir 322.3x56.0 bg #ffffff; div.cwf8ttw.ilm12jv 161.7x56.0 border L:1px solid #8c8c8c; div.fj95cgj.d1h1yz8o 322.3x57.0 border T:1px solid #8c8c8c / R:1px solid #8c8c8c / B:1px solid #8c8c8c / L:1px solid #8c8c8c r 12px 12px 0px 0px; div.fj95cgj.d1h1yz8o 322.3x61.0 border T:1px solid #8c8c8c / R:1px solid #8c8c8c / B:1px solid #8c8c8c / L:1px solid #8c8c8c r 0px 0px 12px 12px |
 | How | at rest |
 
 Crops: `reserve-card-default.png`.
@@ -943,18 +926,20 @@ Page: room. Selector: `the CHECK-IN field cell`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 137.67 x 12 | = |
+| Size (w x h) | 160.67 x 56 | = |
 | Padding | 0px | = |
 | Border | none | = |
 | Radius | 0px | = |
 | Background | transparent | = |
 | Box shadow | none | = |
 | Outline | none | = |
-| Font | Airbnb Cereal VF 10px/12px 700 | = |
+| Font | Airbnb Cereal VF 16px/normal 400 | = |
 | Letter spacing | normal | = |
-| Colour | #222222 | = |
+| Colour | #000000 | = |
+| Text node | div.kpk3g6v.dir: Airbnb Cereal VF 10px/12px 700, #222222 | = |
 | Transition | none | = |
 | Cursor | pointer | = |
+| Ancestor paint | 1 up button.c1nv5ob0.dir bg #ffffff | = |
 | How | at rest | mouse hover |
 
 Crops: `reserve-field-default.png`, `reserve-field-hover.png`.
@@ -965,26 +950,7 @@ Promo strip. The discount banner ("Get $25 SGD off your getaway") with the outli
 
 Page: room. Selector: `the promo banner near the top of the listing`. States: default.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 340.33 x 36 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | Airbnb Cereal VF 16px/20px 400 |
-| Letter spacing | normal |
-| Colour | #222222 |
-| Text node | div.terqdvd.atm_9s_1o8liyq_1ht1xp4: Airbnb Cereal VF 14px/18px 400, #222222 |
-| Transition | none |
-| Icon | 32 x 32, colour #222222, fill #000000 |
-| Painted layers | button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 75.0x32.0 bg #f2f2f2 r 8px |
-| Ancestor paint | 1 up div.c31vnhe.dir shadow #000000 @ 0.02 0px 0px 0px 1px, #000000 @ 0.04 0px 2px 6px 0px, #000000 @ 0.1 0px 4px 8px 0px |
-| How | at rest |
-
-Crops: `promo-strip-default.png`.
+Not found on the page at capture time.
 
 #### promo-claim
 
@@ -992,27 +958,7 @@ Claim button. The outlined Claim action on the promo strip. Pressed is forced: c
 
 Page: room. Selector: `the Claim button on the promo strip`. States: default, hover, focus-visible, pressed.
 
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 75 x 32 | = | = | 73 x 30 |
-| Padding | 8px 16px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 8px | = | = | = |
-| Background | #f2f2f2 | #ebebeb | = | #ebebeb |
-| Box shadow | none | = | #ffffff 0px 0px 0px 2px, #222222 0px 0px 0px 4px | = |
-| Outline | none | = | = | = |
-| Font | Airbnb Cereal VF 12px/16px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #222222 | = | = | = |
-| Text node | span.bi19i11.dir: Airbnb Cereal VF 12px/16px 500, #222222 | = | = | = |
-| Transition | box-shadow, transform, background-color, border-color, color 0.2s, 0.25s, 0.3s, 0.3s, 0.3s cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1) delay 0s, 0s, 0s, 0s, 0s | = | box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1) | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 75.0x32.0 bg #f2f2f2 r 8px | button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 75.0x32.0 bg #ebebeb r 8px | button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 75.0x32.0 bg #f2f2f2 r 8px shadow #ffffff 0px 0px 0px 2px, #222222 0px 0px 0px 4px | button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9 73.0x30.0 bg #ebebeb r 8px |
-| Ancestor paint | 2 up div.c31vnhe.dir shadow #000000 @ 0.02 0px 0px 0px 1px, #000000 @ 0.04 0px 2px 6px 0px, #000000 @ 0.1 0px 4px 8px 0px | = | = | = |
-| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Transform | - | = | = | matrix(0.973333, 0, 0, 0.9375, 0, 0) |
-
-Crops: `promo-claim-default.png`, `promo-claim-hover.png`, `promo-claim-focus-visible.png`, `promo-claim-pressed.png`.
+Not found on the page at capture time.
 
 #### host-row
 
@@ -1022,7 +968,7 @@ Page: room. Selector: `the Hosted-by row under the plaque`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 188.44 x 20 |
+| Size (w x h) | 177.28 x 20 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |

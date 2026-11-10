@@ -275,8 +275,11 @@ export async function crop(page, locator, name, pad = 8) {
   } finally {
     if (hidden) await page.evaluate(() => document.querySelectorAll('[data-m-hidden]').forEach((n) => { n.style.removeProperty('visibility'); n.removeAttribute('data-m-hidden'); }));
   }
-  quantize(file);
-  return path.relative(REF, file);
+  const shrink = quantize(file);
+  // the scale the crop was actually saved at: the page's devicePixelRatio,
+  // halved when quantize had to shrink it past the 1.2 megapixel cap
+  const dpr = await page.evaluate(() => devicePixelRatio).catch(() => 1);
+  return { file: path.relative(REF, file), scale: +(dpr * shrink).toFixed(2) };
 }
 
 export async function centre(locator) {
@@ -285,13 +288,15 @@ export async function centre(locator) {
 }
 
 // 256 colours, and a crop larger than about 1.2 megapixels (a whole sidebar or
-// section at 2x) is halved, so the folder stays small.
+// section at 2x) is halved, so the folder stays small. Returns the shrink
+// factor applied: 1 normally, 0.5 when the crop was halved.
 export function quantize(file) {
-  execFileSync(PYTHON, [
+  const out = execFileSync(PYTHON, [
     '-c',
-    'import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert("RGB")\nif im.width*im.height>1200000: im=im.resize((im.width//2, im.height//2), Image.LANCZOS)\nim.quantize(256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(f, optimize=True)',
+    'import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert("RGB")\nhalved=im.width*im.height>1200000\nif halved: im=im.resize((im.width//2, im.height//2), Image.LANCZOS)\nim.quantize(256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(f, optimize=True)\nprint(0.5 if halved else 1)',
     file,
   ]);
+  return parseFloat(String(out).trim()) || 1;
 }
 
 export function slug(s) {

@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "read": "2026-11-09"
+  "read": "2026-11-10"
  },
  "components": {
   "header": {
@@ -186,6 +186,7 @@
       "stroke": "none",
       "color": "rgb(255, 56, 92)"
      },
+     "cropScale": 2,
      "crop": "components/crops/header-default.png",
      "via": "at rest"
     }
@@ -196,7 +197,8 @@
    "title": "Header",
    "group": "Header and navigation",
    "desc": "The fixed top bar: the B\u00e9lo logo, the category tabs (All, Homes, Experiences, Services) with their icons, \"Become a host\", the language globe and the profile menu. The search pill sits under it.",
-   "selector": "the fixed top bar holding the logo, tabs and user controls"
+   "selector": "the fixed top bar holding the logo, tabs and user controls",
+   "read": "2026-11-10"
   },
   "header-host-link": {
    "states": {
@@ -292,6 +294,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/header-host-link-default.png",
      "via": "at rest"
     },
@@ -395,6 +398,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/header-host-link-hover.png",
      "via": "mouse hover"
     },
@@ -498,6 +502,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/header-host-link-focus-visible.png",
      "via": "Shift+Tab, Tab"
     },
@@ -601,6 +606,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/header-host-link-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
@@ -611,318 +617,20 @@
    "title": "Become a host link",
    "group": "Header and navigation",
    "desc": "The host entry point in the header. Measured and focused, never followed.",
-   "selector": "header \"Become a host\""
+   "selector": "header \"Become a host\"",
+   "read": "2026-11-10"
   },
   "header-globe": {
-   "states": {
-    "default": {
-     "tag": "button",
-     "classes": "bc003v3 atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
-     "text": "Search",
-     "rect": {
-      "x": 1087,
-      "y": 111,
-      "w": 48,
-      "h": 48
-     },
-     "style": {
-      "display": "inline-block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "48px",
-      "height": "48px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(34, 34, 34)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(34, 34, 34)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(34, 34, 34)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(34, 34, 34)",
-      "borderTopLeftRadius": "50px",
-      "borderTopRightRadius": "50px",
-      "borderBottomRightRadius": "50px",
-      "borderBottomLeftRadius": "50px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(34, 34, 34)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "20.02px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(34, 34, 34)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(34, 34, 34)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div.s1n779tz.atm_26_x1skbv_1nos8r",
-       "size": "48.0x48.0",
-       "bg": "rgb(218, 18, 73)",
-       "radius": "50px"
-      }
-     ],
-     "icon": {
-      "w": 16,
-      "h": 16,
-      "fill": "none",
-      "stroke": "rgb(255, 255, 255)",
-      "color": "rgb(255, 255, 255)"
-     },
-     "crop": "components/crops/header-globe-default.png",
-     "via": "at rest"
-    },
-    "hover": {
-     "tag": "button",
-     "classes": "bc003v3 atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
-     "text": "Search",
-     "rect": {
-      "x": 1087,
-      "y": 111,
-      "w": 48,
-      "h": 48
-     },
-     "style": {
-      "display": "inline-block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "48px",
-      "height": "48px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(34, 34, 34)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(34, 34, 34)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(34, 34, 34)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(34, 34, 34)",
-      "borderTopLeftRadius": "50px",
-      "borderTopRightRadius": "50px",
-      "borderBottomRightRadius": "50px",
-      "borderBottomLeftRadius": "50px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(34, 34, 34)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "20.02px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(34, 34, 34)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(34, 34, 34)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div.s1n779tz.atm_26_x1skbv_1nos8r",
-       "size": "48.0x48.0",
-       "bgImage": "linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%)",
-       "radius": "50px"
-      }
-     ],
-     "icon": {
-      "w": 16,
-      "h": 16,
-      "fill": "none",
-      "stroke": "rgb(255, 255, 255)",
-      "color": "rgb(255, 255, 255)"
-     },
-     "crop": "components/crops/header-globe-hover.png",
-     "via": "mouse hover"
-    },
-    "focus-visible": {
-     "tag": "button",
-     "classes": "bc003v3 atm_3f_glywfm_jo46a5 atm_l8_idpfg4_jo46a5 atm_gi_idpfg4_jo46a5",
-     "text": "Search",
-     "rect": {
-      "x": 1087,
-      "y": 111,
-      "w": 48,
-      "h": 48
-     },
-     "style": {
-      "display": "inline-block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "48px",
-      "height": "48px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(34, 34, 34)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(34, 34, 34)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(34, 34, 34)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(34, 34, 34)",
-      "borderTopLeftRadius": "50px",
-      "borderTopRightRadius": "50px",
-      "borderBottomRightRadius": "50px",
-      "borderBottomLeftRadius": "50px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 2px, rgb(34, 34, 34) 0px 0px 0px 4px",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(34, 34, 34)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "20.02px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(34, 34, 34)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(34, 34, 34)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "button.bc003v3.atm_3f_glywfm_jo46a5",
-       "size": "48.0x48.0",
-       "shadow": "rgb(255, 255, 255) 0px 0px 0px 2px, rgb(34, 34, 34) 0px 0px 0px 4px",
-       "radius": "50px"
-      },
-      {
-       "node": "div.s1n779tz.atm_26_x1skbv_1nos8r",
-       "size": "48.0x48.0",
-       "bg": "rgb(218, 18, 73)",
-       "radius": "50px"
-      }
-     ],
-     "icon": {
-      "w": 16,
-      "h": 16,
-      "fill": "none",
-      "stroke": "rgb(255, 255, 255)",
-      "color": "rgb(255, 255, 255)"
-     },
-     "crop": "components/crops/header-globe-focus-visible.png",
-     "via": "Shift+Tab, Tab"
-    }
-   },
+   "states": {},
    "page": "home",
    "run": "home",
    "url": "https://www.airbnb.com/",
    "title": "Language button",
    "group": "Header and navigation",
    "desc": "The globe icon button that opens the language/region sheet. Hovered and focused only.",
-   "selector": "the icon-only globe button in the header"
+   "selector": "the icon-only globe button in the header",
+   "missing": true,
+   "note": "Not found on the captured page: the header has no language/region-labelled control. An earlier run's readings under this key measured the Search submit and were removed."
   },
   "header-menu": {
    "states": {
@@ -1043,6 +751,7 @@
       "stroke": "rgb(34, 34, 34)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/header-menu-default.png",
      "via": "at rest"
     },
@@ -1163,6 +872,7 @@
       "stroke": "rgb(34, 34, 34)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/header-menu-hover.png",
      "via": "mouse hover"
     },
@@ -1284,6 +994,7 @@
       "stroke": "rgb(34, 34, 34)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/header-menu-focus-visible.png",
      "via": "Shift+Tab, Tab"
     },
@@ -1404,6 +1115,7 @@
       "stroke": "rgb(34, 34, 34)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/header-menu-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
@@ -1414,7 +1126,8 @@
    "title": "Profile menu button",
    "group": "Header and navigation",
    "desc": "The account buttons rightmost in the header (navigation menu and Log in or sign up). Pressed state is forced, not clicked: the menu leads to sign-up.",
-   "selector": "the menu button rightmost in the header"
+   "selector": "the menu button rightmost in the header",
+   "read": "2026-11-10"
   },
   "tab-active": {
    "states": {
@@ -1510,6 +1223,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/tab-active-default.png",
      "via": "at rest"
     },
@@ -1605,6 +1319,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/tab-active-hover.png",
      "via": "mouse hover"
     },
@@ -1708,6 +1423,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/tab-active-focus-visible.png",
      "via": "keydown then focus()"
     },
@@ -1803,6 +1519,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/tab-active-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
@@ -1813,7 +1530,8 @@
    "title": "Category tab (active)",
    "group": "Header and navigation",
    "desc": "A category tab in the header (Homes / Experiences / Services), the current one underlined.",
-   "selector": "header tab \"Homes\""
+   "selector": "header tab \"Homes\"",
+   "read": "2026-11-10"
   },
   "tab": {
    "states": {
@@ -1909,6 +1627,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/tab-default.png",
      "via": "at rest"
     },
@@ -2004,6 +1723,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/tab-hover.png",
      "via": "mouse hover"
     },
@@ -2107,6 +1827,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/tab-focus-visible.png",
      "via": "keydown then focus()"
     },
@@ -2202,6 +1923,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/tab-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
@@ -2212,7 +1934,8 @@
    "title": "Category tab",
    "group": "Header and navigation",
    "desc": "A resting category tab. Pressed is forced: a real click would navigate.",
-   "selector": "header tab \"Experiences\""
+   "selector": "header tab \"Experiences\"",
+   "read": "2026-11-10"
   },
   "search-bar": {
    "states": {
@@ -2320,6 +2043,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/search-bar-default.png",
      "via": "at rest"
     },
@@ -2438,6 +2162,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/search-bar-hover.png",
      "via": "mouse hover"
     }
@@ -2448,7 +2173,8 @@
    "title": "Search bar",
    "group": "Search bar",
    "desc": "The big white pill: Where, When and Who segments with hairline dividers and the pink gradient submit button. Hovering a segment greys it.",
-   "selector": "the pill holding the Where/When/Who segments"
+   "selector": "the pill holding the Where/When/Who segments",
+   "read": "2026-11-10"
   },
   "search-segment": {
    "states": {
@@ -2576,6 +2302,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/search-segment-default.png",
      "via": "at rest"
     },
@@ -2716,6 +2443,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/search-segment-hover.png",
      "via": "mouse hover"
     },
@@ -2853,6 +2581,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/search-segment-focus-visible.png",
      "via": "Shift+Tab, Tab"
     },
@@ -3001,6 +2730,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/search-segment-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
@@ -3011,7 +2741,8 @@
    "title": "Search segment",
    "group": "Search bar",
    "desc": "One labelled segment of the search pill (Where / When / Who): a label line over a placeholder line. Pressed is forced, never submitted.",
-   "selector": "the \"Where\" segment"
+   "selector": "the \"Where\" segment",
+   "read": "2026-11-10"
   },
   "section-title": {
    "states": {
@@ -3021,7 +2752,7 @@
      "text": "Places to stay in Busan",
      "rect": {
       "x": 48,
-      "y": 333.1,
+      "y": 333.7,
       "w": 243.52,
       "h": 28
      },
@@ -3122,6 +2853,7 @@
       "stroke": "rgb(34, 34, 34)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/section-title-default.png",
      "via": "at rest"
     },
@@ -3131,7 +2863,7 @@
      "text": "Places to stay in Busan",
      "rect": {
       "x": 48,
-      "y": 330.6,
+      "y": 436.2,
       "w": 243.52,
       "h": 28
      },
@@ -3208,8 +2940,8 @@
      "paint": [
       {
        "node": "span.ipfb646.dir",
-       "size": "28.0x28.0",
-       "bg": "rgb(242, 242, 242)",
+       "size": "30.2x30.2",
+       "bg": "rgb(235, 235, 235)",
        "radius": "14px"
       }
      ],
@@ -3226,12 +2958,13 @@
       "textTransform": "none"
      },
      "icon": {
-      "w": 12,
-      "h": 12,
+      "w": 12.92,
+      "h": 12.92,
       "fill": "none",
       "stroke": "rgb(34, 34, 34)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/section-title-hover.png",
      "via": "mouse hover"
     }
@@ -3242,17 +2975,18 @@
    "title": "Section title",
    "group": "Home galleries",
    "desc": "A gallery section head (\"Places to stay in Busan\") with a chevron that follows to the search page.",
-   "selector": "a gallery section title row"
+   "selector": "a gallery section title row",
+   "read": "2026-11-10"
   },
   "listing-card": {
    "states": {
     "default": {
      "tag": "div",
      "classes": "c1r8sk5a c94hwn5 dir dir-ltr",
-     "text": "Home in Dong-gu $556 SGD for 2 nights $556 SGD for 2 nights , \u00b7 5.0 out of 5 ave",
+     "text": "Guest favourite Guest favourite Home in Batam Kota $397 SGD for 2 nights $397 SG",
      "rect": {
       "x": 48,
-      "y": 374.6,
+      "y": 342.6,
       "w": 181.7,
       "h": 214.61
      },
@@ -3332,15 +3066,23 @@
        "size": "181.7x172.6",
        "bg": "rgb(221, 221, 221)",
        "radius": "20px"
+      },
+      {
+       "node": "div.bxuv6ej.bjcf2mg",
+       "size": "103.6x26.0",
+       "border": "T:1px solid color(srgb 1 1 1 / 0.5) | R:1px solid color(srgb 1 1 1 / 0.5) | B:1px solid color(srgb 1 1 1 / 0.5) | L:1px solid color(srgb 1 1 1 / 0.5)",
+       "bg": "color(srgb 1 1 1 / 0.8)",
+       "shadow": "color(srgb 0 0 0 / 0.02) 0px 0px 0px 1px, color(srgb 0 0 0 / 0.04) 0px 2px 6px 0px, color(srgb 0 0 0 / 0.1) 0px 4px 8px 0px",
+       "radius": "14px"
       }
      ],
      "textStyle": {
-      "node": "div.t1ms2xzu.atm_ks_zryt35__1rgatj2",
-      "text": "Home in Dong-gu",
+      "node": "span.to6yqhz.tpka78r",
+      "text": "Guest favourite",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "13px",
-      "lineHeight": "16px",
-      "fontWeight": "500",
+      "fontSize": "11px",
+      "lineHeight": "13px",
+      "fontWeight": "600",
       "letterSpacing": "normal",
       "color": "rgb(34, 34, 34)",
       "textDecorationLine": "none",
@@ -3353,16 +3095,17 @@
       "stroke": "rgb(255, 255, 255)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/listing-card-default.png",
      "via": "at rest"
     },
     "hover": {
      "tag": "div",
      "classes": "c1r8sk5a c94hwn5 dir dir-ltr",
-     "text": "Home in Dong-gu $556 SGD for 2 nights $556 SGD for 2 nights , \u00b7 5.0 out of 5 ave",
+     "text": "Guest favourite Guest favourite Home in Batam Kota $397 SGD for 2 nights $397 SG",
      "rect": {
       "x": 48,
-      "y": 374.6,
+      "y": 342.6,
       "w": 181.7,
       "h": 214.61
      },
@@ -3442,15 +3185,23 @@
        "size": "181.7x172.6",
        "bg": "rgb(221, 221, 221)",
        "radius": "20px"
+      },
+      {
+       "node": "div.bxuv6ej.bjcf2mg",
+       "size": "103.6x26.0",
+       "border": "T:1px solid color(srgb 1 1 1 / 0.5) | R:1px solid color(srgb 1 1 1 / 0.5) | B:1px solid color(srgb 1 1 1 / 0.5) | L:1px solid color(srgb 1 1 1 / 0.5)",
+       "bg": "color(srgb 1 1 1 / 0.8)",
+       "shadow": "color(srgb 0 0 0 / 0.02) 0px 0px 0px 1px, color(srgb 0 0 0 / 0.04) 0px 2px 6px 0px, color(srgb 0 0 0 / 0.1) 0px 4px 8px 0px",
+       "radius": "14px"
       }
      ],
      "textStyle": {
-      "node": "div.t1ms2xzu.atm_ks_zryt35__1rgatj2",
-      "text": "Home in Dong-gu",
+      "node": "span.to6yqhz.tpka78r",
+      "text": "Guest favourite",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "13px",
-      "lineHeight": "16px",
-      "fontWeight": "500",
+      "fontSize": "11px",
+      "lineHeight": "13px",
+      "fontWeight": "600",
       "letterSpacing": "normal",
       "color": "rgb(34, 34, 34)",
       "textDecorationLine": "none",
@@ -3463,6 +3214,7 @@
       "stroke": "rgb(255, 255, 255)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/listing-card-hover.png",
      "via": "mouse hover"
     }
@@ -3473,7 +3225,8 @@
    "title": "Listing card",
    "group": "Home galleries",
    "desc": "A home card in a rail: a 12px-radius photo with the Guest favourite badge and wishlist heart over it, then the title, price and star rating rows.",
-   "selector": "the first listing-card container in the rail"
+   "selector": "the first listing-card container in the rail",
+   "read": "2026-11-10"
   },
   "rail-arrow": {
    "states": {
@@ -3483,7 +3236,7 @@
      "text": "_",
      "rect": {
       "x": 1332,
-      "y": 330.6,
+      "y": 435.6,
       "w": 28,
       "h": 28
      },
@@ -3594,6 +3347,7 @@
       "stroke": "rgb(193, 193, 193)",
       "color": "rgb(193, 193, 193)"
      },
+     "cropScale": 2,
      "crop": "components/crops/rail-arrow-default.png",
      "via": "at rest"
     },
@@ -3603,7 +3357,7 @@
      "text": "_",
      "rect": {
       "x": 1332,
-      "y": 330.6,
+      "y": 435.6,
       "w": 28,
       "h": 28
      },
@@ -3672,7 +3426,7 @@
       "transitionDelay": "0s",
       "cursor": "not-allowed",
       "opacity": "0.5",
-      "transform": "none",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
       "overflow": "visible",
       "zIndex": "auto",
       "top": "0px"
@@ -3708,133 +3462,18 @@
       }
      ],
      "icon": {
-      "w": 12,
-      "h": 12,
+      "w": 11.2,
+      "h": 11.2,
       "fill": "none",
       "stroke": "rgb(193, 193, 193)",
       "color": "rgb(193, 193, 193)"
      },
+     "cropScale": 2,
      "crop": "components/crops/rail-arrow-hover.png",
      "via": "mouse hover"
     },
     "focus-visible": {
-     "tag": "button",
-     "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "_",
-     "rect": {
-      "x": 1332,
-      "y": 330.6,
-      "w": 28,
-      "h": 28
-     },
-     "style": {
-      "display": "flex",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "28px",
-      "height": "28px",
-      "minWidth": "auto",
-      "maxWidth": "none",
-      "minHeight": "auto",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "center",
-      "justifyContent": "center",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(193, 193, 193)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(193, 193, 193)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(193, 193, 193)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(193, 193, 193)",
-      "borderTopLeftRadius": "50%",
-      "borderTopRightRadius": "50%",
-      "borderBottomRightRadius": "50%",
-      "borderBottomLeftRadius": "50%",
-      "backgroundColor": "rgb(242, 242, 242)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(193, 193, 193)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "14px",
-      "fontWeight": "400",
-      "lineHeight": "normal",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(193, 193, 193)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(193, 193, 193)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "transform",
-      "transitionDuration": "0.25s",
-      "transitionTimingFunction": "cubic-bezier(0.2, 0, 0, 1)",
-      "transitionDelay": "0s",
-      "cursor": "not-allowed",
-      "opacity": "0.5",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "::before": {
-      "content": "\"\"",
-      "width": "28px",
-      "height": "28px",
-      "position": "absolute",
-      "backgroundColor": "rgb(242, 242, 242)",
-      "backgroundImage": "none",
-      "boxShadow": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgb(221, 221, 221)",
-      "borderRadius": "50%",
-      "inset": "14px -14px -14px 14px",
-      "opacity": "1",
-      "transition": "background-color 0.3s cubic-bezier(0.2, 0, 0, 1), border-color 0.3s cubic-bezier(0.2, 0, 0, 1), backdrop-filter 0.3s cubic-bezier(0.2, 0, 0, 1), -webkit-backdrop-filter 0.3s cubic-bezier(0.2, 0, 0, 1)"
-     },
-     "paint": [
-      {
-       "node": "button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
-       "size": "28.0x28.0",
-       "bg": "rgb(242, 242, 242)",
-       "radius": "50%"
-      },
-      {
-       "node": "button::before.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
-       "size": "28pxx28px",
-       "bg": "rgb(242, 242, 242)",
-       "radius": "50%"
-      }
-     ],
-     "icon": {
-      "w": 12,
-      "h": 12,
-      "fill": "none",
-      "stroke": "rgb(193, 193, 193)",
-      "color": "rgb(193, 193, 193)"
-     },
-     "crop": "components/crops/rail-arrow-focus-visible.png",
+     "error": "keyboard focus did not reach the element",
      "via": "focus failed"
     },
     "pressed": {
@@ -3843,7 +3482,7 @@
      "text": "_",
      "rect": {
       "x": 1332,
-      "y": 330.6,
+      "y": 435.6,
       "w": 28,
       "h": 28
      },
@@ -3966,6 +3605,7 @@
       "stroke": "rgb(193, 193, 193)",
       "color": "rgb(193, 193, 193)"
      },
+     "cropScale": 2,
      "crop": "components/crops/rail-arrow-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
@@ -3976,7 +3616,8 @@
    "title": "Carousel arrow",
    "group": "Home galleries",
    "desc": "The small white round button that pages a card rail. Hovered and focused only; pressing pages the rail.",
-   "selector": "the next arrow on a card rail"
+   "selector": "the next arrow on a card rail",
+   "read": "2026-11-10"
   },
   "footer-link": {
    "states": {
@@ -4072,6 +3713,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/footer-link-default.png",
      "via": "at rest"
     },
@@ -4167,6 +3809,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/footer-link-hover.png",
      "via": "mouse hover"
     },
@@ -4271,6 +3914,7 @@
       "textDecorationLine": "underline",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/footer-link-focus-visible.png",
      "via": "Shift+Tab, Tab"
     },
@@ -4366,6 +4010,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/footer-link-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
@@ -4376,7 +4021,8 @@
    "title": "Footer link",
    "group": "Help Centre",
    "desc": "A quick link in the footer grid. Pressed is forced: a real click navigates.",
-   "selector": "a link in the footer"
+   "selector": "a link in the footer",
+   "read": "2026-11-10"
   },
   "search-submit": {
    "states": {
@@ -4487,6 +4133,7 @@
       "stroke": "rgb(255, 255, 255)",
       "color": "rgb(255, 255, 255)"
      },
+     "cropScale": 2,
      "crop": "components/crops/search-submit-default.png",
      "via": "at rest"
     },
@@ -4597,6 +4244,7 @@
       "stroke": "rgb(255, 255, 255)",
       "color": "rgb(255, 255, 255)"
      },
+     "cropScale": 2,
      "crop": "components/crops/search-submit-hover.png",
      "via": "mouse hover"
     },
@@ -4713,6 +4361,7 @@
       "stroke": "rgb(255, 255, 255)",
       "color": "rgb(255, 255, 255)"
      },
+     "cropScale": 2,
      "crop": "components/crops/search-submit-focus-visible.png",
      "via": "Shift+Tab, Tab"
     },
@@ -4823,6 +4472,7 @@
       "stroke": "rgb(255, 255, 255)",
       "color": "rgb(255, 255, 255)"
      },
+     "cropScale": 2,
      "crop": "components/crops/search-submit-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
@@ -4833,17 +4483,18 @@
    "title": "Search submit button",
    "group": "Search bar",
    "desc": "The pink gradient round button with the magnifier (icon only at rest, icon + \"Search\" when the bar is expanded). Pressed is forced: a real press runs the search.",
-   "selector": "the pink button inside the search bar"
+   "selector": "the pink button inside the search bar",
+   "read": "2026-11-10"
   },
   "card-heart": {
    "states": {
     "default": {
      "tag": "button",
      "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "Add to wishlist: Home in Dong-gu",
+     "text": "Add to wishlist: Home in Batam Kota",
      "rect": {
       "x": 189.7,
-      "y": 382.6,
+      "y": 330.1,
       "w": 32,
       "h": 32
      },
@@ -4924,18 +4575,19 @@
       "stroke": "rgb(255, 255, 255)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/card-heart-default.png",
      "via": "at rest"
     },
     "hover": {
      "tag": "button",
      "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "Add to wishlist: Home in Dong-gu",
+     "text": "Add to wishlist: Home in Batam Kota",
      "rect": {
-      "x": 189.7,
-      "y": 382.6,
-      "w": 32,
-      "h": 32
+      "x": 188.4,
+      "y": 432.3,
+      "w": 34.56,
+      "h": 34.56
      },
      "style": {
       "display": "flex",
@@ -5002,28 +4654,29 @@
       "transitionDelay": "0s",
       "cursor": "pointer",
       "opacity": "1",
-      "transform": "none",
+      "transform": "matrix(1.08, 0, 0, 1.08, 0, 0)",
       "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
      },
      "icon": {
-      "w": 24,
-      "h": 24,
+      "w": 25.92,
+      "h": 25.92,
       "fill": "rgba(0, 0, 0, 0.5)",
       "stroke": "rgb(255, 255, 255)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/card-heart-hover.png",
      "via": "mouse hover"
     },
     "focus-visible": {
      "tag": "button",
      "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "Add to wishlist: Home in Dong-gu",
+     "text": "Add to wishlist: Home in Batam Kota",
      "rect": {
       "x": 188.4,
-      "y": 381.3,
+      "y": 432.3,
       "w": 34.56,
       "h": 34.56
      },
@@ -5112,16 +4765,17 @@
       "stroke": "rgb(255, 255, 255)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/card-heart-focus-visible.png",
      "via": "Shift+Tab, Tab"
     },
     "pressed": {
      "tag": "button",
      "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "Add to wishlist: Home in Dong-gu",
+     "text": "Add to wishlist: Home in Batam Kota",
      "rect": {
       "x": 191,
-      "y": 383.9,
+      "y": 434.9,
       "w": 29.44,
       "h": 29.44
      },
@@ -5202,6 +4856,7 @@
       "stroke": "rgb(255, 255, 255)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/card-heart-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
@@ -5212,25 +4867,26 @@
    "title": "Wishlist heart",
    "group": "Home galleries",
    "desc": "The heart toggle over the card photo. Pressed is forced: a real tap opens the sign-up sheet signed out.",
-   "selector": "the heart button inside the card"
+   "selector": "the heart button inside the card",
+   "read": "2026-11-10"
   },
   "card-rating": {
    "states": {
     "default": {
      "tag": "span",
      "classes": "",
-     "text": "5.0",
+     "text": "4.86",
      "rect": {
-      "x": 191.1,
-      "y": 573.2,
-      "w": 16.53,
+      "x": 190.8,
+      "y": 442.2,
+      "w": 23.92,
       "h": 16
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "16.5312px",
+      "width": "23.9219px",
       "height": "16px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -5305,14 +4961,15 @@
    "title": "Rating row",
    "group": "Home galleries",
    "desc": "The star and average under the card title.",
-   "selector": "the rating text inside the card"
+   "selector": "the rating text inside the card",
+   "read": "2026-11-10"
   },
   "search-panel-open": {
    "states": {
     "open": {
      "tag": "div",
      "classes": "s1te41wh atm_h3_exct8b_95nicl dir dir-ltr",
-     "text": "Suggested destinations Nearby Find what\u2019s around you Find what\u2019s around you Toky",
+     "text": "Suggested destinations Nearby Find what\u2019s around you Find what\u2019s around you Kual",
      "rect": {
       "x": 303,
       "y": 212,
@@ -5487,6 +5144,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 1,
      "crop": "components/crops/search-panel-open-open.png",
      "via": "clicked the Where segment"
     }
@@ -5497,7 +5155,8 @@
    "title": "Search panel (open)",
    "group": "Search bar",
    "desc": "The suggestion panel the Where segment opens (\"Suggested destinations\": Nearby and city rows with pictograms). Opened by clicking the segment, a local UI toggle; nothing was searched.",
-   "selector": "the panel under the expanded search bar"
+   "selector": "the panel under the expanded search bar",
+   "read": "2026-11-10"
   },
   "card-badge": {
    "states": {
@@ -5507,7 +5166,7 @@
      "text": "Guest favourite Guest favourite",
      "rect": {
       "x": 60,
-      "y": 72,
+      "y": 308,
       "w": 157.7,
       "h": 53.53
      },
@@ -5610,6 +5269,7 @@
       "stroke": "rgb(255, 255, 255)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/card-badge-default.png",
      "via": "at rest"
     }
@@ -5620,7 +5280,8 @@
    "title": "Guest favourite badge",
    "group": "Home galleries",
    "desc": "The white pill over the card photo (Guest favourite / Superhost).",
-   "selector": "the badge pill over a card photo"
+   "selector": "the badge pill over a card photo",
+   "read": "2026-11-10"
   },
   "mini-search": {
    "states": {
@@ -7786,12 +7447,12 @@
     "default": {
      "tag": "h1",
      "classes": "rghzvl1 atm_kd_idpfg4_pfnrn2 i1wofiac dir",
-     "text": "madoi rin/170\u33a1/16Guests/Shinjuku5min/Shibuya15min",
+     "text": "Uguisudani, 3-minute walk from JR Line Station, New Hotel Opening in 2026, 1 Bed",
      "rect": {
       "x": 160,
       "y": 118,
-      "w": 669.11,
-      "h": 34
+      "w": 973.89,
+      "h": 64
      },
      "style": {
       "display": "inline",
@@ -7863,17 +7524,19 @@
       "zIndex": "auto",
       "top": "auto"
      },
+     "cropScale": 2,
      "crop": "components/crops/room-title-default.png",
      "via": "at rest"
     }
    },
    "page": "room",
    "run": "room",
-   "url": "https://www.airbnb.com/rooms/1804830691330794179",
+   "url": "https://www.airbnb.com/rooms/1797553523397819193",
    "title": "Room title",
    "group": "Room page",
    "desc": "The listing headline under the header.",
-   "selector": "main h1"
+   "selector": "main h1",
+   "read": "2026-11-10"
   },
   "room-share": {
    "states": {
@@ -7883,7 +7546,7 @@
      "text": "Share",
      "rect": {
       "x": 1135.9,
-      "y": 122,
+      "y": 152,
       "w": 77.14,
       "h": 34
      },
@@ -7976,6 +7639,7 @@
       "stroke": "rgb(34, 34, 34)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/room-share-default.png",
      "via": "at rest"
     },
@@ -7985,7 +7649,7 @@
      "text": "Share",
      "rect": {
       "x": 1135.9,
-      "y": 122,
+      "y": 152,
       "w": 77.14,
       "h": 34
      },
@@ -8086,6 +7750,7 @@
       "stroke": "rgb(0, 0, 0)",
       "color": "rgb(0, 0, 0)"
      },
+     "cropScale": 2,
      "crop": "components/crops/room-share-hover.png",
      "via": "mouse hover"
     },
@@ -8095,7 +7760,7 @@
      "text": "Share",
      "rect": {
       "x": 1135.9,
-      "y": 122,
+      "y": 152,
       "w": 77.14,
       "h": 34
      },
@@ -8197,6 +7862,7 @@
       "stroke": "rgb(34, 34, 34)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/room-share-focus-visible.png",
      "via": "Shift+Tab, Tab"
     },
@@ -8206,7 +7872,7 @@
      "text": "Share",
      "rect": {
       "x": 1137.4,
-      "y": 122.7,
+      "y": 152.7,
       "w": 74.05,
       "h": 32.64
      },
@@ -8307,17 +7973,19 @@
       "stroke": "rgb(0, 0, 0)",
       "color": "rgb(0, 0, 0)"
      },
+     "cropScale": 2,
      "crop": "components/crops/room-share-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
    },
    "page": "room",
    "run": "room",
-   "url": "https://www.airbnb.com/rooms/1804830691330794179",
+   "url": "https://www.airbnb.com/rooms/1797553523397819193",
    "title": "Share button",
    "group": "Room page",
    "desc": "The underlined Share action beside Save. Pressed is forced.",
-   "selector": "the \"Share\" button by the title"
+   "selector": "the \"Share\" button by the title",
+   "read": "2026-11-10"
   },
   "room-save": {
    "states": {
@@ -8327,7 +7995,7 @@
      "text": "Save",
      "rect": {
       "x": 1217,
-      "y": 122,
+      "y": 152,
       "w": 71,
       "h": 34
      },
@@ -8420,6 +8088,7 @@
       "stroke": "rgb(34, 34, 34)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/room-save-default.png",
      "via": "at rest"
     },
@@ -8429,7 +8098,7 @@
      "text": "Save",
      "rect": {
       "x": 1217,
-      "y": 122,
+      "y": 152,
       "w": 71,
       "h": 34
      },
@@ -8530,6 +8199,7 @@
       "stroke": "rgb(0, 0, 0)",
       "color": "rgb(0, 0, 0)"
      },
+     "cropScale": 2,
      "crop": "components/crops/room-save-hover.png",
      "via": "mouse hover"
     },
@@ -8539,7 +8209,7 @@
      "text": "Save",
      "rect": {
       "x": 1217,
-      "y": 122,
+      "y": 152,
       "w": 71,
       "h": 34
      },
@@ -8641,6 +8311,7 @@
       "stroke": "rgb(34, 34, 34)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/room-save-focus-visible.png",
      "via": "Shift+Tab, Tab"
     },
@@ -8650,7 +8321,7 @@
      "text": "Save",
      "rect": {
       "x": 1218.4,
-      "y": 122.7,
+      "y": 152.7,
       "w": 68.16,
       "h": 32.64
      },
@@ -8751,17 +8422,19 @@
       "stroke": "rgb(0, 0, 0)",
       "color": "rgb(0, 0, 0)"
      },
+     "cropScale": 2,
      "crop": "components/crops/room-save-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
    },
    "page": "room",
    "run": "room",
-   "url": "https://www.airbnb.com/rooms/1804830691330794179",
+   "url": "https://www.airbnb.com/rooms/1797553523397819193",
    "title": "Save button",
    "group": "Room page",
    "desc": "The heart+Save action. Pressed is forced: signed out, a real press opens the sign-up sheet.",
-   "selector": "the \"Save\" button by the title"
+   "selector": "the \"Save\" button by the title",
+   "read": "2026-11-10"
   },
   "photo-grid": {
    "states": {
@@ -8771,7 +8444,7 @@
      "text": "Show all photos",
      "rect": {
       "x": 160,
-      "y": 174,
+      "y": 204,
       "w": 1120,
       "h": 476
      },
@@ -8922,17 +8595,19 @@
       "stroke": "none",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 1,
      "crop": "components/crops/photo-grid-default.png",
      "via": "at rest"
     }
    },
    "page": "room",
    "run": "room",
-   "url": "https://www.airbnb.com/rooms/1804830691330794179",
+   "url": "https://www.airbnb.com/rooms/1797553523397819193",
    "title": "Photo collage",
    "group": "Room page",
    "desc": "The 5-photo mosaic: one large tile left, a 2x2 grid right, 12px radius.",
-   "selector": "the photo mosaic under the title"
+   "selector": "the photo mosaic under the title",
+   "read": "2026-11-10"
   },
   "show-photos": {
    "states": {
@@ -8942,7 +8617,7 @@
      "text": "Show all photos",
      "rect": {
       "x": 1115.7,
-      "y": 594,
+      "y": 624,
       "w": 140.28,
       "h": 32
      },
@@ -9043,6 +8718,7 @@
       "stroke": "none",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/show-photos-default.png",
      "via": "at rest"
     },
@@ -9052,7 +8728,7 @@
      "text": "Show all photos",
      "rect": {
       "x": 1115.7,
-      "y": 594,
+      "y": 624,
       "w": 140.28,
       "h": 32
      },
@@ -9153,6 +8829,7 @@
       "stroke": "none",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/show-photos-hover.png",
      "via": "mouse hover"
     },
@@ -9162,7 +8839,7 @@
      "text": "Show all photos",
      "rect": {
       "x": 1115.7,
-      "y": 594,
+      "y": 624,
       "w": 140.28,
       "h": 32
      },
@@ -9264,6 +8941,7 @@
       "stroke": "none",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/show-photos-focus-visible.png",
      "via": "Shift+Tab, Tab"
     },
@@ -9273,7 +8951,7 @@
      "text": "Show all photos",
      "rect": {
       "x": 1116.7,
-      "y": 595,
+      "y": 625,
       "w": 138.28,
       "h": 30
      },
@@ -9374,27 +9052,29 @@
       "stroke": "none",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/show-photos-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
    },
    "page": "room",
    "run": "room",
-   "url": "https://www.airbnb.com/rooms/1804830691330794179",
+   "url": "https://www.airbnb.com/rooms/1797553523397819193",
    "title": "Show all photos button",
    "group": "Room page",
    "desc": "The white pill bottom-right of the collage. Pressed is forced: it opens the photo viewer.",
-   "selector": "the \"Show all photos\" pill"
+   "selector": "the \"Show all photos\" pill",
+   "read": "2026-11-10"
   },
   "room-subtitle": {
    "states": {
     "default": {
      "tag": "div",
      "classes": "tqnk8fx dir dir-ltr",
-     "text": "Entire home in Setagaya-ku, Japan",
+     "text": "Entire rental unit in Tait\u014d-ku, Japan",
      "rect": {
       "x": 160,
-      "y": 437,
+      "y": 712,
       "w": 653.33,
       "h": 26
      },
@@ -9470,7 +9150,7 @@
      },
      "textStyle": {
       "node": "h2.rghzvl1.atm_kd_idpfg4_pfnrn2",
-      "text": "Entire home in Setagaya-ku, Japan",
+      "text": "Entire rental unit in Tait\u014d-ku, Japan",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
       "fontSize": "22px",
       "lineHeight": "26px",
@@ -9480,52 +9160,54 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/room-subtitle-default.png",
      "via": "at rest"
     }
    },
    "page": "room",
    "run": "room",
-   "url": "https://www.airbnb.com/rooms/1804830691330794179",
+   "url": "https://www.airbnb.com/rooms/1797553523397819193",
    "title": "Listing subtitle",
    "group": "Room page",
    "desc": "The \"Entire rental unit in \u2026\" line and the guests/bedrooms/beds row.",
-   "selector": "the subtitle under the collage"
+   "selector": "the subtitle under the collage",
+   "read": "2026-11-10"
   },
   "guest-plaque": {
    "states": {
     "default": {
      "tag": "div",
-     "classes": "gxmgrd dir dir-ltr",
-     "text": "Guest favourite",
+     "classes": "g2lv343 dir dir-ltr",
+     "text": "Rated 5.0 out of 5 from 42 reviews. 5.0 Guest favourite This home is in the top ",
      "rect": {
-      "x": 641.5,
-      "y": 433.4,
-      "w": 156.91,
-      "h": 34
+      "x": 160,
+      "y": 3207.5,
+      "w": 1120,
+      "h": 242
      },
      "style": {
-      "display": "block",
+      "display": "flex",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "156.906px",
-      "height": "34px",
-      "minWidth": "auto",
+      "width": "1120px",
+      "height": "242px",
+      "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "auto",
+      "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
-      "paddingBottom": "8px",
+      "paddingBottom": "0px",
       "paddingLeft": "0px",
-      "marginTop": "0px",
+      "marginTop": "16px",
       "marginRight": "0px",
-      "marginBottom": "0px",
+      "marginBottom": "48px",
       "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
+      "flexDirection": "column",
+      "alignItems": "center",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
@@ -9547,100 +9229,6 @@
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "backgroundImage": "none",
       "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(34, 34, 34)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "22px",
-      "fontWeight": "500",
-      "lineHeight": "26px",
-      "letterSpacing": "-0.44px",
-      "textTransform": "none",
-      "color": "rgb(34, 34, 34)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(34, 34, 34)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
-      "cursor": "auto",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "crop": "components/crops/guest-plaque-default.png",
-     "via": "at rest"
-    }
-   },
-   "page": "room",
-   "run": "room",
-   "url": "https://www.airbnb.com/rooms/1804830691330794179",
-   "title": "Guest favourite plaque",
-   "group": "Room page",
-   "desc": "The laurel-bordered strip: \"Guest favourite / One of the most loved homes on Airbnb\" with the rating and review count.",
-   "selector": "the laurel plaque under the subtitle"
-  },
-  "reserve-card": {
-   "states": {
-    "default": {
-     "tag": "aside",
-     "classes": "b13oolvs atm_6h_idpfg4_vmdu4 dir dir-ltr",
-     "text": "Add dates for prices Add dates for prices CHECK-IN Add date CHECKOUT Add date GU",
-     "rect": {
-      "x": 906.7,
-      "y": 204,
-      "w": 372.33,
-      "h": 278
-     },
-     "style": {
-      "display": "block",
-      "position": "static",
-      "boxSizing": "border-box",
-      "width": "372.328px",
-      "height": "278px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "24px",
-      "paddingRight": "24px",
-      "paddingBottom": "24px",
-      "paddingLeft": "24px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "solid",
-      "borderTopColor": "rgb(221, 221, 221)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "solid",
-      "borderRightColor": "rgb(221, 221, 221)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "solid",
-      "borderBottomColor": "rgb(221, 221, 221)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "solid",
-      "borderLeftColor": "rgb(221, 221, 221)",
-      "borderTopLeftRadius": "12px",
-      "borderTopRightRadius": "12px",
-      "borderBottomRightRadius": "12px",
-      "borderBottomLeftRadius": "12px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "none",
-      "boxShadow": "rgba(0, 0, 0, 0.12) 0px 6px 16px 0px",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
@@ -9668,50 +9256,191 @@
       "zIndex": "auto",
       "top": "auto"
      },
+     "textStyle": {
+      "node": "span",
+      "text": "Rated 5.0 out of 5 from 42 reviews.",
+      "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
+      "fontSize": "100px",
+      "lineHeight": "100px",
+      "fontWeight": "500",
+      "letterSpacing": "-2px",
+      "color": "rgb(34, 34, 34)",
+      "textDecorationLine": "none",
+      "textTransform": "none"
+     },
+     "cropScale": 2,
+     "crop": "components/crops/guest-plaque-default.png",
+     "via": "at rest"
+    }
+   },
+   "page": "room",
+   "run": "room",
+   "url": "https://www.airbnb.com/rooms/1797553523397819193",
+   "title": "Guest favourite plaque",
+   "group": "Room page",
+   "desc": "The laurel-bordered strip: \"Guest favourite / One of the most loved homes on Airbnb\" with the rating and review count.",
+   "selector": "the laurel plaque under the subtitle",
+   "read": "2026-11-10"
+  },
+  "reserve-card": {
+   "states": {
+    "default": {
+     "tag": "div",
+     "classes": "c1yo0219 atm_9s_1txwivl_vmtskl atm_92_1yyfdc7_vmtskl atm_9s_1txwivl_9in345",
+     "text": "Add dates for prices Add dates for prices CHECK-IN Add date CHECKOUT Add date GU",
+     "rect": {
+      "x": 906.7,
+      "y": 680,
+      "w": 372.33,
+      "h": 312
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "372.328px",
+      "height": "312px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(34, 34, 34)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(34, 34, 34)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(34, 34, 34)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(34, 34, 34)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(34, 34, 34)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(34, 34, 34)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(34, 34, 34)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "::before": {
+      "content": "\"\"",
+      "width": "372.328px",
+      "height": "0px",
+      "position": "static",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(34, 34, 34)",
+      "borderRadius": "0px",
+      "inset": "auto auto auto auto",
+      "opacity": "1",
+      "transition": "all"
+     },
+     "::after": {
+      "content": "\"\"",
+      "width": "372.328px",
+      "height": "0px",
+      "position": "static",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(34, 34, 34)",
+      "borderRadius": "0px",
+      "inset": "auto auto auto auto",
+      "opacity": "1",
+      "transition": "all"
+     },
      "paint": [
       {
        "node": "aside.b13oolvs.atm_6h_idpfg4_vmdu4",
-       "size": "372.3x278.0",
+       "size": "372.3x280.0",
+       "border": "T:1px solid rgb(221, 221, 221) | R:1px solid rgb(221, 221, 221) | B:1px solid rgb(221, 221, 221) | L:1px solid rgb(221, 221, 221)",
        "shadow": "rgba(0, 0, 0, 0.12) 0px 6px 16px 0px",
        "radius": "12px"
       },
       {
        "node": "div.r4cfcaw.rx1v2qp",
-       "size": "324.3x116.0",
+       "size": "322.3x116.0",
        "bg": "rgb(255, 255, 255)",
        "radius": "12px"
       },
       {
        "node": "button.c1nv5ob0.dir",
-       "size": "324.3x56.0",
+       "size": "322.3x56.0",
        "bg": "rgb(255, 255, 255)"
       },
       {
        "node": "div.cwf8ttw.ilm12jv",
-       "size": "162.7x56.0",
+       "size": "161.7x56.0",
        "border": "L:1px solid rgb(140, 140, 140)"
       },
       {
        "node": "div.fj95cgj.d1h1yz8o",
-       "size": "324.3x57.0",
+       "size": "322.3x57.0",
        "border": "T:1px solid rgb(140, 140, 140) | R:1px solid rgb(140, 140, 140) | B:1px solid rgb(140, 140, 140) | L:1px solid rgb(140, 140, 140)",
        "radius": "12px 12px 0px 0px"
       },
       {
        "node": "div.fj95cgj.d1h1yz8o",
-       "size": "324.3x61.0",
+       "size": "322.3x61.0",
        "border": "T:1px solid rgb(140, 140, 140) | R:1px solid rgb(140, 140, 140) | B:1px solid rgb(140, 140, 140) | L:1px solid rgb(140, 140, 140)",
        "radius": "0px 0px 12px 12px"
       },
       {
        "node": "button.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
-       "size": "324.3x48.0",
+       "size": "322.3x48.0",
        "bgImage": "linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%)",
        "radius": "999px"
       },
       {
        "node": "span.t1setlb.atm_k4_kb7nvz_1nos8r",
-       "size": "324.3x48.0",
+       "size": "322.3x48.0",
        "bgImage": "radial-gradient(circle, rgb(255, 56, 92) 0%, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%, rgb(215, 4, 102) 57.5%, rgb(189, 30, 89) 75%, rgb(189, 30, 89) 100%)"
       }
      ],
@@ -9734,39 +9463,41 @@
       "stroke": "rgb(34, 34, 34)",
       "color": "rgb(34, 34, 34)"
      },
+     "cropScale": 2,
      "crop": "components/crops/reserve-card-default.png",
      "via": "at rest"
     }
    },
    "page": "room",
    "run": "room",
-   "url": "https://www.airbnb.com/rooms/1804830691330794179",
+   "url": "https://www.airbnb.com/rooms/1797553523397819193",
    "title": "Reservation card",
    "group": "Room page",
    "desc": "The booking card pinned right: \"Add dates for prices\", the CHECK-IN/CHECK-OUT/GUESTS field grid. Nothing was booked.",
-   "selector": "the card with the date and guest fields"
+   "selector": "the card with the date and guest fields",
+   "read": "2026-11-10"
   },
   "reserve-field": {
    "states": {
     "default": {
      "tag": "div",
-     "classes": "kpk3g6v dir dir-ltr",
-     "text": "CHECK-IN",
+     "classes": "ilm12jv dir dir-ltr",
+     "text": "CHECK-IN Add date",
      "rect": {
-      "x": 942.7,
-      "y": 290,
-      "w": 137.67,
-      "h": 12
+      "x": 931.7,
+      "y": 787,
+      "w": 160.67,
+      "h": 56
      },
      "style": {
       "display": "block",
-      "position": "absolute",
+      "position": "relative",
       "boxSizing": "border-box",
-      "width": "137.672px",
-      "height": "12px",
-      "minWidth": "0px",
-      "maxWidth": "100%",
-      "minHeight": "0px",
+      "width": "160.672px",
+      "height": "56px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -9784,16 +9515,16 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
-      "borderTopColor": "rgb(34, 34, 34)",
+      "borderTopColor": "rgb(0, 0, 0)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(34, 34, 34)",
+      "borderRightColor": "rgb(0, 0, 0)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(34, 34, 34)",
+      "borderBottomColor": "rgb(0, 0, 0)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(34, 34, 34)",
+      "borderLeftColor": "rgb(0, 0, 0)",
       "borderTopLeftRadius": "0px",
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
@@ -9804,17 +9535,17 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(34, 34, 34)",
+      "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "10px",
-      "fontWeight": "700",
-      "lineHeight": "12px",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "normal",
       "letterSpacing": "normal",
-      "textTransform": "uppercase",
-      "color": "rgb(34, 34, 34)",
+      "textTransform": "none",
+      "color": "rgb(0, 0, 0)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(34, 34, 34)",
+      "textDecorationColor": "rgb(0, 0, 0)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -9826,30 +9557,51 @@
       "transform": "none",
       "overflow": "hidden",
       "zIndex": "auto",
-      "top": "12px"
+      "top": "0px"
      },
+     "ancestors": [
+      {
+       "up": 1,
+       "node": "button.c1nv5ob0.dir",
+       "radius": "0px",
+       "bg": "rgb(255, 255, 255)"
+      }
+     ],
+     "textStyle": {
+      "node": "div.kpk3g6v.dir",
+      "text": "Check-in",
+      "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
+      "fontSize": "10px",
+      "lineHeight": "12px",
+      "fontWeight": "700",
+      "letterSpacing": "normal",
+      "color": "rgb(34, 34, 34)",
+      "textDecorationLine": "none",
+      "textTransform": "uppercase"
+     },
+     "cropScale": 2,
      "crop": "components/crops/reserve-field-default.png",
      "via": "at rest"
     },
     "hover": {
      "tag": "div",
-     "classes": "kpk3g6v dir dir-ltr",
-     "text": "CHECK-IN",
+     "classes": "ilm12jv dir dir-ltr",
+     "text": "CHECK-IN Add date",
      "rect": {
-      "x": 942.7,
-      "y": 290,
-      "w": 137.67,
-      "h": 12
+      "x": 931.7,
+      "y": 787,
+      "w": 160.67,
+      "h": 56
      },
      "style": {
       "display": "block",
-      "position": "absolute",
+      "position": "relative",
       "boxSizing": "border-box",
-      "width": "137.672px",
-      "height": "12px",
-      "minWidth": "0px",
-      "maxWidth": "100%",
-      "minHeight": "0px",
+      "width": "160.672px",
+      "height": "56px",
+      "minWidth": "auto",
+      "maxWidth": "none",
+      "minHeight": "auto",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -9867,16 +9619,16 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
-      "borderTopColor": "rgb(34, 34, 34)",
+      "borderTopColor": "rgb(0, 0, 0)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(34, 34, 34)",
+      "borderRightColor": "rgb(0, 0, 0)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(34, 34, 34)",
+      "borderBottomColor": "rgb(0, 0, 0)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(34, 34, 34)",
+      "borderLeftColor": "rgb(0, 0, 0)",
       "borderTopLeftRadius": "0px",
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
@@ -9887,17 +9639,17 @@
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(34, 34, 34)",
+      "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "10px",
-      "fontWeight": "700",
-      "lineHeight": "12px",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "normal",
       "letterSpacing": "normal",
-      "textTransform": "uppercase",
-      "color": "rgb(34, 34, 34)",
+      "textTransform": "none",
+      "color": "rgb(0, 0, 0)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(34, 34, 34)",
+      "textDecorationColor": "rgb(0, 0, 0)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
       "transitionProperty": "all",
@@ -9909,19 +9661,41 @@
       "transform": "none",
       "overflow": "hidden",
       "zIndex": "auto",
-      "top": "12px"
+      "top": "0px"
      },
+     "ancestors": [
+      {
+       "up": 1,
+       "node": "button.c1nv5ob0.dir",
+       "radius": "0px",
+       "bg": "rgb(255, 255, 255)"
+      }
+     ],
+     "textStyle": {
+      "node": "div.kpk3g6v.dir",
+      "text": "Check-in",
+      "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
+      "fontSize": "10px",
+      "lineHeight": "12px",
+      "fontWeight": "700",
+      "letterSpacing": "normal",
+      "color": "rgb(34, 34, 34)",
+      "textDecorationLine": "none",
+      "textTransform": "uppercase"
+     },
+     "cropScale": 2,
      "crop": "components/crops/reserve-field-hover.png",
      "via": "mouse hover"
     }
    },
    "page": "room",
    "run": "room",
-   "url": "https://www.airbnb.com/rooms/1804830691330794179",
+   "url": "https://www.airbnb.com/rooms/1797553523397819193",
    "title": "Date field",
    "group": "Room page",
    "desc": "A labelled field cell in the booking grid (CHECK-IN / CHECKOUT / GUESTS).",
-   "selector": "the CHECK-IN field cell"
+   "selector": "the CHECK-IN field cell",
+   "read": "2026-11-10"
   },
   "promo-strip": {
    "states": {
@@ -10051,7 +9825,8 @@
    "title": "Promo strip",
    "group": "Room page",
    "desc": "The discount banner (\"Get $25 SGD off your getaway\") with the outlined Claim button. Measured, never pressed.",
-   "selector": "the promo banner near the top of the listing"
+   "selector": "the promo banner near the top of the listing",
+   "missing": true
   },
   "promo-claim": {
    "states": {
@@ -10511,25 +10286,26 @@
    "title": "Claim button",
    "group": "Room page",
    "desc": "The outlined Claim action on the promo strip. Pressed is forced: claiming needs an account.",
-   "selector": "the Claim button on the promo strip"
+   "selector": "the Claim button on the promo strip",
+   "missing": true
   },
   "host-row": {
    "states": {
     "default": {
      "tag": "div",
      "classes": "tlsa35g dir dir-ltr",
-     "text": "Hosted by \u2068Hama Family 2\u2069",
+     "text": "Hosted by Yuqian",
      "rect": {
       "x": 224,
-      "y": 440,
-      "w": 188.44,
+      "y": 919,
+      "w": 177.28,
       "h": 20
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "188.438px",
+      "width": "177.281px",
       "height": "20px",
       "minWidth": "auto",
       "maxWidth": "none",
@@ -10595,17 +10371,19 @@
       "zIndex": "auto",
       "top": "auto"
      },
+     "cropScale": 2,
      "crop": "components/crops/host-row-default.png",
      "via": "at rest"
     }
    },
    "page": "room",
    "run": "room",
-   "url": "https://www.airbnb.com/rooms/1804830691330794179",
+   "url": "https://www.airbnb.com/rooms/1797553523397819193",
    "title": "Host row",
    "group": "Room page",
    "desc": "The \"Hosted by\" row with the circular avatar.",
-   "selector": "the Hosted-by row under the plaque"
+   "selector": "the Hosted-by row under the plaque",
+   "read": "2026-11-10"
   },
   "help-title": {
    "states": {
@@ -10701,6 +10479,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
+     "cropScale": 2,
      "crop": "components/crops/help-title-default.png",
      "via": "at rest"
     }
@@ -10711,7 +10490,8 @@
    "title": "Help title",
    "group": "Help Centre",
    "desc": "\"Hi, how can we help?\" \u2014 the Help Centre headline.",
-   "selector": "h1"
+   "selector": "h1",
+   "read": "2026-11-10"
   },
   "help-search": {
    "states": {
@@ -10808,6 +10588,7 @@
       "opacity": "1",
       "fontSize": "16px"
      },
+     "cropScale": 2,
      "crop": "components/crops/help-search-default.png",
      "via": "at rest"
     },
@@ -10904,6 +10685,7 @@
       "opacity": "1",
       "fontSize": "16px"
      },
+     "cropScale": 2,
      "crop": "components/crops/help-search-focus-visible.png",
      "via": "Shift+Tab, Tab"
     }
@@ -10914,252 +10696,37 @@
    "title": "Help search field",
    "group": "Help Centre",
    "desc": "The search field under the headline (the icon + placeholder). Focused only; nothing was searched.",
-   "selector": "the search input on the help home"
+   "selector": "the search input on the help home",
+   "read": "2026-11-10"
   },
   "help-tile": {
    "states": {
     "default": {
      "tag": "a",
-     "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "Log in or sign up",
+     "classes": "t1imbvyv dir dir-ltr",
+     "text": "Change the date or time of your service or experience reservation",
      "rect": {
-      "x": 835,
+      "x": 548,
       "y": 426,
-      "w": 400,
+      "w": 344,
       "h": 48
      },
      "style": {
-      "display": "inline-block",
-      "position": "relative",
+      "display": "block",
+      "position": "static",
       "boxSizing": "border-box",
-      "width": "400px",
+      "width": "344px",
       "height": "48px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
-      "paddingTop": "14px",
-      "paddingRight": "24px",
-      "paddingBottom": "14px",
-      "paddingLeft": "24px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(255, 255, 255)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%)",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(255, 255, 255)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "500",
-      "lineHeight": "20px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(255, 255, 255)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "box-shadow, transform",
-      "transitionDuration": "0.2s, 0.1s",
-      "transitionTimingFunction": "cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
-      "transitionDelay": "0s, 0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "paint": [
-      {
-       "node": "a.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
-       "size": "400.0x48.0",
-       "bgImage": "linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%)",
-       "radius": "8px"
-      },
-      {
-       "node": "span.t1setlb.atm_k4_kb7nvz_1nos8r",
-       "size": "400.0x48.0",
-       "bgImage": "radial-gradient(circle, rgb(255, 56, 92) 0%, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%, rgb(215, 4, 102) 57.5%, rgb(189, 30, 89) 75%, rgb(189, 30, 89) 100%)"
-      }
-     ],
-     "textStyle": {
-      "node": "span.cbx4cei.dir",
-      "text": "Log in or sign up",
-      "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "20px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/help-tile-default.png",
-     "via": "at rest"
-    },
-    "hover": {
-     "tag": "a",
-     "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "Log in or sign up",
-     "rect": {
-      "x": 835,
-      "y": 426,
-      "w": 400,
-      "h": 48
-     },
-     "style": {
-      "display": "inline-block",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "400px",
-      "height": "48px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "14px",
-      "paddingRight": "24px",
-      "paddingBottom": "14px",
-      "paddingLeft": "24px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
-      "marginLeft": "0px",
-      "gap": "normal",
-      "rowGap": "normal",
-      "columnGap": "normal",
-      "flexDirection": "row",
-      "alignItems": "normal",
-      "justifyContent": "normal",
-      "gridTemplateColumns": "none",
-      "borderTopWidth": "0px",
-      "borderTopStyle": "none",
-      "borderTopColor": "rgb(255, 255, 255)",
-      "borderRightWidth": "0px",
-      "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
-      "borderBottomWidth": "0px",
-      "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
-      "borderLeftWidth": "0px",
-      "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%)",
-      "boxShadow": "none",
-      "backdropFilter": "none",
-      "outlineWidth": "0px",
-      "outlineStyle": "none",
-      "outlineColor": "rgb(255, 255, 255)",
-      "outlineOffset": "0px",
-      "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "16px",
-      "fontWeight": "500",
-      "lineHeight": "20px",
-      "letterSpacing": "normal",
-      "textTransform": "none",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textDecorationColor": "rgb(255, 255, 255)",
-      "textDecorationThickness": "auto",
-      "textUnderlineOffset": "auto",
-      "transitionProperty": "box-shadow, transform",
-      "transitionDuration": "0.2s, 0.1s",
-      "transitionTimingFunction": "cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
-      "transitionDelay": "0s, 0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "0px"
-     },
-     "paint": [
-      {
-       "node": "a.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
-       "size": "400.0x48.0",
-       "bgImage": "linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%)",
-       "radius": "8px"
-      },
-      {
-       "node": "span.t1setlb.atm_k4_kb7nvz_1nos8r",
-       "size": "400.0x48.0",
-       "bgImage": "radial-gradient(circle, rgb(255, 56, 92) 0%, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%, rgb(215, 4, 102) 57.5%, rgb(189, 30, 89) 75%, rgb(189, 30, 89) 100%)"
-      }
-     ],
-     "textStyle": {
-      "node": "span.cbx4cei.dir",
-      "text": "Log in or sign up",
-      "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "20px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/help-tile-hover.png",
-     "via": "mouse hover"
-    },
-    "focus-visible": {
-     "tag": "a",
-     "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "Log in or sign up",
-     "rect": {
-      "x": 835,
-      "y": 426,
-      "w": 400,
-      "h": 48
-     },
-     "style": {
-      "display": "inline-block",
-      "position": "relative",
-      "boxSizing": "border-box",
-      "width": "400px",
-      "height": "48px",
-      "minWidth": "0px",
-      "maxWidth": "none",
-      "minHeight": "0px",
-      "paddingTop": "14px",
-      "paddingRight": "24px",
-      "paddingBottom": "14px",
-      "paddingLeft": "24px",
-      "marginTop": "0px",
-      "marginRight": "0px",
-      "marginBottom": "0px",
+      "marginBottom": "4px",
       "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
@@ -11180,95 +10747,70 @@
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
       "borderLeftColor": "rgb(34, 34, 34)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
       "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%)",
-      "boxShadow": "color(srgb 1 1 1 / 0.8) 0px 0px 0px 2px, rgb(34, 34, 34) 0px 0px 0px 4px",
+      "backgroundImage": "none",
+      "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
       "outlineColor": "rgb(34, 34, 34)",
-      "outlineOffset": "1px",
+      "outlineOffset": "0px",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "16px",
+      "fontSize": "18px",
       "fontWeight": "500",
-      "lineHeight": "20px",
+      "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(34, 34, 34)",
-      "textDecorationLine": "none",
+      "textDecorationLine": "underline",
       "textDecorationColor": "rgb(34, 34, 34)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "box-shadow",
-      "transitionDuration": "0.2s",
-      "transitionTimingFunction": "cubic-bezier(0.2, 0, 0, 1)",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
       "cursor": "pointer",
       "opacity": "1",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "0px"
+      "top": "auto"
      },
-     "paint": [
-      {
-       "node": "a.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
-       "size": "400.0x48.0",
-       "bgImage": "linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%)",
-       "shadow": "color(srgb 1 1 1 / 0.8) 0px 0px 0px 2px, rgb(34, 34, 34) 0px 0px 0px 4px",
-       "radius": "8px"
-      },
-      {
-       "node": "span.t1setlb.atm_k4_kb7nvz_1nos8r",
-       "size": "400.0x48.0",
-       "bgImage": "radial-gradient(circle, rgb(255, 56, 92) 0%, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%, rgb(215, 4, 102) 57.5%, rgb(189, 30, 89) 75%, rgb(189, 30, 89) 100%)"
-      }
-     ],
-     "textStyle": {
-      "node": "span.cbx4cei.dir",
-      "text": "Log in or sign up",
-      "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "20px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(34, 34, 34)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "crop": "components/crops/help-tile-focus-visible.png",
-     "via": "Shift+Tab, Tab"
+     "cropScale": 2,
+     "crop": "components/crops/help-tile-default.png",
+     "via": "at rest"
     },
-    "pressed": {
+    "hover": {
      "tag": "a",
-     "classes": "l1lx1n3h atm_npmupv_14b5rvc_10saat9 atm_4s4swg_18xq13z_10saat9 atm_u9em2p_1r3889l_10saat9",
-     "text": "Log in or sign up",
+     "classes": "t1imbvyv dir dir-ltr",
+     "text": "Change the date or time of your service or experience reservation",
      "rect": {
-      "x": 843,
-      "y": 427,
-      "w": 384,
-      "h": 46.08
+      "x": 548,
+      "y": 426,
+      "w": 344,
+      "h": 48
      },
      "style": {
-      "display": "inline-block",
-      "position": "relative",
+      "display": "block",
+      "position": "static",
       "boxSizing": "border-box",
-      "width": "400px",
+      "width": "344px",
       "height": "48px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
-      "paddingTop": "14px",
-      "paddingRight": "24px",
-      "paddingBottom": "14px",
-      "paddingLeft": "24px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
-      "marginBottom": "0px",
+      "marginBottom": "4px",
       "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
@@ -11279,75 +10821,226 @@
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
-      "borderTopColor": "rgb(255, 255, 255)",
+      "borderTopColor": "rgb(34, 34, 34)",
       "borderRightWidth": "0px",
       "borderRightStyle": "none",
-      "borderRightColor": "rgb(255, 255, 255)",
+      "borderRightColor": "rgb(34, 34, 34)",
       "borderBottomWidth": "0px",
       "borderBottomStyle": "none",
-      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderBottomColor": "rgb(34, 34, 34)",
       "borderLeftWidth": "0px",
       "borderLeftStyle": "none",
-      "borderLeftColor": "rgb(255, 255, 255)",
-      "borderTopLeftRadius": "8px",
-      "borderTopRightRadius": "8px",
-      "borderBottomRightRadius": "8px",
-      "borderBottomLeftRadius": "8px",
+      "borderLeftColor": "rgb(34, 34, 34)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
       "backgroundColor": "rgba(0, 0, 0, 0)",
-      "backgroundImage": "linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%)",
+      "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
       "outlineWidth": "0px",
       "outlineStyle": "none",
-      "outlineColor": "rgb(255, 255, 255)",
+      "outlineColor": "rgb(34, 34, 34)",
       "outlineOffset": "0px",
       "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "16px",
+      "fontSize": "18px",
       "fontWeight": "500",
-      "lineHeight": "20px",
+      "lineHeight": "24px",
       "letterSpacing": "normal",
       "textTransform": "none",
-      "color": "rgb(255, 255, 255)",
+      "color": "rgb(34, 34, 34)",
       "textDecorationLine": "none",
-      "textDecorationColor": "rgb(255, 255, 255)",
+      "textDecorationColor": "rgb(34, 34, 34)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "box-shadow, transform",
-      "transitionDuration": "0.2s, 0.1s",
-      "transitionTimingFunction": "cubic-bezier(0.2, 0, 0, 1), cubic-bezier(0.2, 0, 0, 1)",
-      "transitionDelay": "0s, 0s",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
       "cursor": "pointer",
       "opacity": "1",
-      "transform": "matrix(0.96, 0, 0, 0.96, 0, 0)",
+      "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "0px"
+      "top": "auto"
+     },
+     "cropScale": 2,
+     "crop": "components/crops/help-tile-hover.png",
+     "via": "mouse hover"
+    },
+    "focus-visible": {
+     "tag": "a",
+     "classes": "t1imbvyv dir dir-ltr",
+     "text": "Change the date or time of your service or experience reservation",
+     "rect": {
+      "x": 548,
+      "y": 426,
+      "w": 344,
+      "h": 48
+     },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "344px",
+      "height": "48px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "4px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(34, 34, 34)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(34, 34, 34)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(34, 34, 34)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(34, 34, 34)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "1px",
+      "outlineStyle": "auto",
+      "outlineColor": "rgb(0, 95, 204)",
+      "outlineOffset": "1px",
+      "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
+      "fontSize": "18px",
+      "fontWeight": "500",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(34, 34, 34)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(34, 34, 34)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
      },
      "paint": [
       {
-       "node": "a.l1lx1n3h.atm_npmupv_14b5rvc_10saat9",
-       "size": "384.0x46.1",
-       "bgImage": "linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%)",
-       "radius": "8px"
-      },
-      {
-       "node": "span.t1setlb.atm_k4_kb7nvz_1nos8r",
-       "size": "384.0x46.1",
-       "bgImage": "radial-gradient(circle, rgb(255, 56, 92) 0%, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%, rgb(215, 4, 102) 57.5%, rgb(189, 30, 89) 75%, rgb(189, 30, 89) 100%)"
+       "node": "a.t1imbvyv.dir",
+       "size": "344.0x48.0",
+       "outline": "1px auto rgb(0, 95, 204) offset 1px"
       }
      ],
-     "textStyle": {
-      "node": "span.cbx4cei.dir",
-      "text": "Log in or sign up",
-      "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
-      "fontSize": "16px",
-      "lineHeight": "20px",
-      "fontWeight": "500",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
+     "cropScale": 2,
+     "crop": "components/crops/help-tile-focus-visible.png",
+     "via": "Shift+Tab, Tab"
+    },
+    "pressed": {
+     "tag": "a",
+     "classes": "t1imbvyv dir dir-ltr",
+     "text": "Change the date or time of your service or experience reservation",
+     "rect": {
+      "x": 548,
+      "y": 426,
+      "w": 344,
+      "h": 48
      },
+     "style": {
+      "display": "block",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "344px",
+      "height": "48px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "4px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(34, 34, 34)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(34, 34, 34)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(34, 34, 34)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(34, 34, 34)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(34, 34, 34)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Airbnb Cereal VF\", Circular, -apple-system, \"system-ui\", Roboto, \"Helvetica Neue\", sans-serif",
+      "fontSize": "18px",
+      "fontWeight": "500",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(34, 34, 34)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(34, 34, 34)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "cropScale": 2,
      "crop": "components/crops/help-tile-pressed.png",
      "via": "CDP forcePseudoState :active:hover"
     }
@@ -11358,7 +11051,8 @@
    "title": "Help tile",
    "group": "Help Centre",
    "desc": "A topic card in the help grid. Pressed is forced: a real click navigates.",
-   "selector": "a topic card in the help grid"
+   "selector": "a topic card in the help grid",
+   "read": "2026-11-10"
   },
   "host-hero": {
    "states": {

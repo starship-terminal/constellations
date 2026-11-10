@@ -143,10 +143,59 @@ def props(v):
         o["icon"] = f"{num(v['icon']['w'])} x {num(v['icon']['h'])}, {colour(v['icon']['color'])}"
     if v.get("placeholder"):
         o["placeholder"] = colour(v["placeholder"]["color"])
+    # painted pseudo elements count toward the state: the menu's hover fill
+    # and every focus ring it draws live on ::before, and a state table that
+    # only compared the root would report them as unchanged
+    for pe, tag in (("::before", "before"), ("::after", "after")):
+        p = v.get(pe)
+        if not p:
+            continue
+        bits = []
+        if p.get("backgroundColor") and p["backgroundColor"] != "rgba(0, 0, 0, 0)":
+            bits.append("background " + colour(p["backgroundColor"]))
+        if p.get("backgroundImage") and p["backgroundImage"] != "none":
+            bits.append("image " + colour(p["backgroundImage"])[:60])
+        if p.get("boxShadow") and p["boxShadow"] != "none":
+            bits.append("shadow " + colour(p["boxShadow"], tokens=False))
+        if p.get("borderTopWidth") and p["borderTopWidth"] != "0px":
+            bits.append("border " + p["borderTopWidth"] + " " + colour(p["borderTopColor"]))
+        if p.get("borderRadius") and p["borderRadius"] != "0px":
+            bits.append("radius " + p["borderRadius"])
+        if bits:
+            o[tag] = ", ".join(bits)
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "before", "after", "layers"]
+
+
+# The painted non-pseudo nodes inside the component, as a state-comparison
+# signature: pseudo elements are compared through the before/after props.
+LAYER_PAINT = ("bg", "bgImage", "shadow", "outline", "border")
+
+
+def layer_map(v):
+    m = {}
+    for pl in v.get("paint") or []:
+        if "::" in pl["node"]:
+            continue
+        m[pl["node"]] = tuple(pl.get(k) for k in LAYER_PAINT)
+    return m
+
+
+def layer_diff(base_m, new_m):
+    """Readable note of which painted child changed, with the new state's paint."""
+    bits = []
+    for node in dict.fromkeys(list(new_m) + list(base_m)):
+        if new_m.get(node) == base_m.get(node):
+            continue
+        name = node.split(".")[0]
+        vals = new_m.get(node) or base_m.get(node) or ()
+        desc = "; ".join(f"{k} {colour(str(x)) if x else 'none'}" for k, x in zip(LAYER_PAINT, vals) if x)
+        bits.append(f"{name} ({desc})" if desc else name)
+        if len(bits) >= 4:
+            break
+    return "; ".join(bits)
 
 
 def state_rows(c):
@@ -154,6 +203,7 @@ def state_rows(c):
     if not states:
         return [], states
     base = props(c["states"][states[0]])
+    base_l = layer_map(c["states"][states[0]])
     rows = [(states[0], base)]
     same = []
     for st in states[1:]:
@@ -162,6 +212,13 @@ def state_rows(c):
         for k in ORDER:
             if k in base and k not in p:
                 diff[k] = "none"
+        # a state is not "same" when the painted layers inside the component
+        # changed, even where every root prop is identical
+        lm = layer_map(c["states"][st])
+        if lm != base_l:
+            note = layer_diff(base_l, lm)
+            if note:
+                diff["layers"] = note
         if not diff:
             same.append(st)
             continue
@@ -265,7 +322,7 @@ W("How to read an entry:")
 W()
 W("- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Airbnb Cereal VF 14/18 500, #222222`, and is read from the first text node inside the component.")
 W("- The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
-W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
+W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`). Most are at 2x; a crop over about 1.2 megapixels is saved at 1x — each state's `cropScale` in [raw/components-computed.json](raw/components-computed.json) says which. Screenshots are in [screenshots/](screenshots).")
 W()
 W("## Discovery list")
 W()
@@ -296,8 +353,14 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
+def pseudo_shadow(st):
+    return any((st.get(pe) or {}).get("boxShadow", "none") not in (None, "none") for pe in ("::before", "::after"))
+
+
 foc = []
 for k, c in C.items():
+    if c.get("missing"):
+        continue  # stale states from an earlier run are not evidence
     st = c["states"].get("focus-visible")
     if not st or "style" not in st:
         continue
@@ -306,17 +369,23 @@ for k, c in C.items():
     foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
-with_ring = [f"`{k}` ({r})" for k, r in foc if r]
-without = [f"`{k}`" for k, r in foc if not r]
 sh_ring = []
 for k, c in C.items():
+    if c.get("missing"):
+        continue
     st = c["states"].get("focus-visible")
     if not st or "style" not in st:
         continue
     s = st["style"]
-    if s["boxShadow"] != "none" and s["outlineStyle"] == "none":
+    # the ring counts whether the root or a pseudo element paints it — the
+    # menu's focus circle lives on ::before
+    if (s["boxShadow"] != "none" or pseudo_shadow(st)) and s["outlineStyle"] == "none":
         sh_ring.append(f"`{k}`")
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw an outline ring — the category tabs' 2px `#222` with a 4px offset ({', '.join(with_ring)}). The other buttons draw it as a box-shadow instead: a white 2px halo plus a `#222` ring hugging the shape ({', '.join(sh_ring)}). `header-menu`, `search-segment`, `rail-arrow` and `footer-link` show neither on the measured element.")
+without = [w for w in without if w.strip("`") not in {x.strip("`") for x in sh_ring}]
+focus_fail = [k for k, c in C.items() if (c["states"].get("focus-visible") or {}).get("via") == "focus failed"]
+fail_txt = (" " + " and ".join(f"`{k}`" for k in focus_fail) +
+            " could not be given a real keyboard focus at all, so its focus state is unmeasured rather than reported.") if focus_fail else ""
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw an outline ring ({', '.join(with_ring)}), the category tabs' being the 2px `#222` outline 4px out. The other buttons draw it as a box-shadow instead: a white 2px halo plus a `#222` ring hugging the shape ({', '.join(sh_ring)}). {', '.join(without) + ' show' if without else 'None shows'} neither on the measured element.{fail_txt}")
 W()
 W("**Pressed.** Airbnb's controls shrink rather than change colour when pressed: buttons scale to about 0.96 (the header links, the search submit, the filter chips), the wishlist heart to 0.92, and the footer link stays put. Hovering greys the background behind the target (`#f7f7f7`); the search bar deepens its shadow.")
 W()
@@ -326,6 +395,8 @@ W("| Duration | Easing | Property | Where |")
 W("|---|---|---|---|")
 mot = {}
 for k, c in C.items():
+    if c.get("missing"):
+        continue
     for st in c["states"].values():
         if "style" not in st:
             continue
@@ -385,10 +456,29 @@ for k in ["listing-card", "result-card", "search-bar", "search-panel-open", "hel
     if st is None:
         continue
     p = props(st)
-    if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
-        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
-    W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
+    # a root that paints nothing borrows its look from the painted children —
+    # property by property, each from the layer that actually paints it, so a
+    # real root value is never overwritten and a missing one (reserve-card's
+    # shadow lives on the aside, not the white inner div) is not lost
+    if ("radius" not in p or p["background"] == "transparent" or "border" not in p or "shadow" not in p) and st.get("paint"):
+        paints = st["paint"]
+        p = dict(p)
+
+        def first(k):
+            e = next((x for x in paints if x.get(k)), None)
+            return e[k] if e else None
+        if "border" not in p and first("border"):
+            p["border"] = colour(first("border").split(" | ")[0][2:])
+        if "radius" not in p and first("radius"):
+            p["radius"] = first("radius")
+        if p.get("background") == "transparent" and first("bg"):
+            p["background"] = colour(first("bg"))
+        if "shadow" not in p and first("shadow"):
+            layers = [x.strip() for x in re.split(r",(?![^(]*\))", colour(first("shadow"), tokens=False))]
+            layers = [x for x in layers if not x.startswith("transparent")]
+            if layers:
+                p["shadow"] = ", ".join(layers)
+    W(f"| [{c['title']}](#{k}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 
 # ------------------------------------------------ entries
@@ -406,7 +496,7 @@ for g in groups:
         if c["group"] != g:
             continue
         W()
-        W(f"#### {c['title']}")
+        W(f"#### {c['title']} <a id=\"{k}\"></a>")
         desc = (c.get("desc") or "").strip()
         if desc and not desc.endswith((".", ")", '"')):
             desc += "."
@@ -414,7 +504,7 @@ for g in groups:
         W(f"{desc + ' ' if desc else ''}Read as `{k}` on the {where} page{' at 390 wide' if g.startswith('Mobile') else ''}.")
         W()
         if c.get("missing"):
-            W("Not on the page when it was captured.")
+            W("Not on the page when it was captured." + (" " + c["note"] if c.get("note") else ""))
             continue
         rows, states = state_rows(c)
         if len(states) == 1 and rows:

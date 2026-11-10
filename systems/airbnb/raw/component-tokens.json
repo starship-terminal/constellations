@@ -1581,12 +1581,12 @@
      "fontFamily": "Airbnb Cereal VF",
      "fontSize": "2.5rem",
      "lineHeight": "2.75rem",
-     "fontWeight": 500,
+     "fontWeight": 600,
      "letterSpacing": "0px"
     },
     "$type": "typography",
     "$extensions": {
-     "source": "css-var --typography-special-display-medium_40_44-font-size/-line-height/-letter-spacing (:root), weight --typography-weight-medium500"
+     "source": "css-var --typography-special-display-medium_40_44-font-size/-line-height/-letter-spacing (:root), weight --typography-special-display-medium_40_44-font-weight"
     }
    },
    "special-display-medium-48-54": {
@@ -1594,12 +1594,12 @@
      "fontFamily": "Airbnb Cereal VF",
      "fontSize": "3rem",
      "lineHeight": "3.375rem",
-     "fontWeight": 500,
+     "fontWeight": 600,
      "letterSpacing": "0px"
     },
     "$type": "typography",
     "$extensions": {
-     "source": "css-var --typography-special-display-medium_48_54-font-size/-line-height/-letter-spacing (:root), weight --typography-weight-medium500"
+     "source": "css-var --typography-special-display-medium_48_54-font-size/-line-height/-letter-spacing (:root), weight --typography-special-display-medium_48_54-font-weight"
     }
    },
    "special-display-medium-60-68": {
@@ -1607,12 +1607,12 @@
      "fontFamily": "Airbnb Cereal VF",
      "fontSize": "3.75rem",
      "lineHeight": "4.25rem",
-     "fontWeight": 500,
+     "fontWeight": 600,
      "letterSpacing": "0px"
     },
     "$type": "typography",
     "$extensions": {
-     "source": "css-var --typography-special-display-medium_60_68-font-size/-line-height/-letter-spacing (:root), weight --typography-weight-medium500"
+     "source": "css-var --typography-special-display-medium_60_68-font-size/-line-height/-letter-spacing (:root), weight --typography-special-display-medium_60_68-font-weight"
     }
    },
    "special-display-medium-72-74": {
@@ -1620,12 +1620,12 @@
      "fontFamily": "Airbnb Cereal VF",
      "fontSize": "4.5rem",
      "lineHeight": "4.625rem",
-     "fontWeight": 500,
+     "fontWeight": 600,
      "letterSpacing": "0px"
     },
     "$type": "typography",
     "$extensions": {
-     "source": "css-var --typography-special-display-medium_72_74-font-size/-line-height/-letter-spacing (:root), weight --typography-weight-medium500"
+     "source": "css-var --typography-special-display-medium_72_74-font-size/-line-height/-letter-spacing (:root), weight --typography-special-display-medium_72_74-font-weight"
     }
    },
    "subtitles-book-14-18": {
@@ -1638,7 +1638,7 @@
     },
     "$type": "typography",
     "$extensions": {
-     "source": "css-var --typography-subtitles-book_14_18-font-size/-line-height/-letter-spacing (:root), weight --typography-weight-book400"
+     "source": "css-var --typography-subtitles-book_14_18-font-size/-line-height/-letter-spacing (:root), weight --typography-subtitles-book_14_18-font-weight"
     }
    },
    "subtitles-book-16-22": {
@@ -1651,7 +1651,7 @@
     },
     "$type": "typography",
     "$extensions": {
-     "source": "css-var --typography-subtitles-book_16_22-font-size/-line-height/-letter-spacing (:root), weight --typography-weight-book400"
+     "source": "css-var --typography-subtitles-book_16_22-font-size/-line-height/-letter-spacing (:root), weight --typography-subtitles-book_16_22-font-weight"
     }
    },
    "subtitles-book-18-24": {
@@ -1664,7 +1664,7 @@
     },
     "$type": "typography",
     "$extensions": {
-     "source": "css-var --typography-subtitles-book_18_24-font-size/-line-height/-letter-spacing (:root), weight --typography-weight-book400"
+     "source": "css-var --typography-subtitles-book_18_24-font-size/-line-height/-letter-spacing (:root), weight --typography-subtitles-book_18_24-font-weight"
     }
    },
    "titles-medium-14-18": {
@@ -1677,7 +1677,7 @@
     },
     "$type": "typography",
     "$extensions": {
-     "source": "css-var --typography-titles-medium_14_18-font-size/-line-height/-letter-spacing (:root), weight --typography-weight-medium500"
+     "source": "css-var --typography-titles-medium_14_18-font-size/-line-height/-letter-spacing (:root), weight --typography-titles-medium_14_18-font-weight"
     }
    },
    "titles-medium-16-20": {
@@ -1690,7 +1690,7 @@
     },
     "$type": "typography",
     "$extensions": {
-     "source": "css-var --typography-titles-medium_16_20-font-size/-line-height/-letter-spacing (:root), weight --typography-weight-medium500"
+     "source": "css-var --typography-titles-medium_16_20-font-size/-line-height/-letter-spacing (:root), weight --typography-titles-medium_16_20-font-weight"
     }
    },
    "titles-medium-18-24": {
@@ -1703,7 +1703,7 @@
     },
     "$type": "typography",
     "$extensions": {
-     "source": "css-var --typography-titles-medium_18_24-font-size/-line-height/-letter-spacing (:root), weight --typography-weight-medium500"
+     "source": "css-var --typography-titles-medium_18_24-font-size/-line-height/-letter-spacing (:root), weight --typography-titles-medium_18_24-font-weight"
     }
    },
    "titles-semibold-14-18": {
@@ -1716,7 +1716,7 @@
     },
     "$type": "typography",
     "$extensions": {
-     "source": "css-var --typography-titles-semibold_14_18-font-size/-line-height/-letter-spacing (:root), weight --typography-weight-semibold600"
+     "source": "css-var --typography-titles-semibold_14_18-font-size/-line-height/-letter-spacing (:root), weight --typography-titles-semibold_14_18-font-weight"
     }
    },
    "titles-semibold-16-20": {
@@ -1729,7 +1729,7 @@
     },
     "$type": "typography",
     "$extensions": {
-     "source": "css-var --typography-titles-semibold_16_20-font-size/-line-height/-letter-spacing (:root), weight --typography-weight-semibold600"
+     "source": "css-var --typography-titles-semibold_16_20-font-size/-line-height/-letter-spacing (:root), weight --typography-titles-semibold_16_20-font-weight"
     }
    },
    "titles-semibold-18-24": {
@@ -1742,7 +1742,7 @@
     },
     "$type": "typography",
     "$extensions": {
-     "source": "css-var --typography-titles-semibold_18_24-font-size/-line-height/-letter-spacing (:root), weight --typography-weight-semibold600"
+     "source": "css-var --typography-titles-semibold_18_24-font-size/-line-height/-letter-spacing (:root), weight --typography-titles-semibold_18_24-font-weight"
     }
    },
    "titles-semibold-22-26": {
@@ -1755,7 +1755,7 @@
     },
     "$type": "typography",
     "$extensions": {
-     "source": "css-var --typography-titles-semibold_22_26-font-size/-line-height/-letter-spacing (:root), weight --typography-weight-semibold600"
+     "source": "css-var --typography-titles-semibold_22_26-font-size/-line-height/-letter-spacing (:root), weight --typography-titles-semibold_22_26-font-weight"
     }
    },
    "titles-semibold-26-30": {
@@ -1768,7 +1768,7 @@
     },
     "$type": "typography",
     "$extensions": {
-     "source": "css-var --typography-titles-semibold_26_30-font-size/-line-height/-letter-spacing (:root), weight --typography-weight-semibold600"
+     "source": "css-var --typography-titles-semibold_26_30-font-size/-line-height/-letter-spacing (:root), weight --typography-titles-semibold_26_30-font-weight"
     }
    },
    "titles-semibold-32-36": {
@@ -1781,7 +1781,7 @@
     },
     "$type": "typography",
     "$extensions": {
-     "source": "css-var --typography-titles-semibold_32_36-font-size/-line-height/-letter-spacing (:root), weight --typography-weight-semibold600"
+     "source": "css-var --typography-titles-semibold_32_36-font-size/-line-height/-letter-spacing (:root), weight --typography-titles-semibold_32_36-font-weight"
     }
    },
    "weight": {
@@ -1817,7 +1817,7 @@
     }
    },
    "family": {
-    "value": "Airbnb Cereal VF','Circular',-apple-system,'BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif",
+    "value": "'Airbnb Cereal VF','Circular',-apple-system,'BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif",
     "type": "fontFamily",
     "source": "css-var --typography-font-family-cereal-font-family (:root)"
    }
@@ -1841,7 +1841,7 @@
     "$type": "gradient",
     "$extensions": {
      "source": "css-var --palette-bg-secondary-core (:root)",
-     "angle": "0deg"
+     "angle": "90deg"
     }
    },
    "luxe-linear": {
@@ -1862,7 +1862,7 @@
     "$type": "gradient",
     "$extensions": {
      "source": "css-var --palette-luxe-gradient-linear-gradient (:root)",
-     "angle": "0deg"
+     "angle": "90deg"
     }
    },
    "luxe-linear-rtl": {
@@ -1883,7 +1883,7 @@
     "$type": "gradient",
     "$extensions": {
      "source": "css-var --palette-luxe-gradient-linear-gradient-rtl (:root)",
-     "angle": "180deg"
+     "angle": "270deg"
     }
    },
    "luxe-radial": {
@@ -1909,7 +1909,7 @@
     "$type": "gradient",
     "$extensions": {
      "source": "css-var --palette-plus-gradient-linear-gradient (:root)",
-     "angle": "0deg"
+     "angle": "90deg"
     }
    },
    "plus-linear-rtl": {
@@ -1930,7 +1930,7 @@
     "$type": "gradient",
     "$extensions": {
      "source": "css-var --palette-plus-gradient-linear-gradient-rtl (:root)",
-     "angle": "180deg"
+     "angle": "270deg"
     }
    },
    "plus-radial": {
@@ -1956,7 +1956,7 @@
     "$type": "gradient",
     "$extensions": {
      "source": "css-var --palette-rausch-gradient-linear-gradient (:root)",
-     "angle": "0deg"
+     "angle": "90deg"
     }
    },
    "rausch-linear-rtl": {
@@ -1977,7 +1977,7 @@
     "$type": "gradient",
     "$extensions": {
      "source": "css-var --palette-rausch-gradient-linear-gradient-rtl (:root)",
-     "angle": "180deg"
+     "angle": "270deg"
     }
    },
    "rausch-radial": {
@@ -1990,11 +1990,11 @@
    "focus-ring": {
     "$value": [
      {
-      "color": "2px",
+      "color": "#222222",
       "offsetX": "0px",
       "offsetY": "0px",
       "blur": "0px",
-      "spread": "0px",
+      "spread": "2px",
       "inset": false
      }
     ],
@@ -2211,9 +2211,8 @@
     },
     "material": {
      "focused": {
-      "value": "color-mix(in srgb,#FFFFFF 0.5%,transparent)",
-      "type": "other",
-      "source": "css-var --palette-bg-material-focused (:root)"
+      "var": "--palette-bg-material-focused",
+      "type": "other"
      }
     },
     "on": {
@@ -2234,9 +2233,8 @@
      "dots": {
       "on": {
        "media": {
-        "value": "color-mix(in srgb,#FFFFFF 60%,transparent)",
-        "type": "other",
-        "source": "css-var --palette-bg-pagination-dots-on-media (:root)"
+        "var": "--palette-bg-pagination-dots-on-media",
+        "type": "other"
        }
       }
      },
@@ -2398,19 +2396,16 @@
      },
      "core": {
       "default": {
-       "value": "linear-gradient(to right,#E61E4D 0%,#E31C5F 50%,#D70466 100%)",
-       "type": "other",
-       "source": "css-var --palette-bg-secondary-core (:root)"
+       "var": "--palette-bg-secondary-core",
+       "type": "other"
       },
       "hover": {
-       "value": "radial-gradient(circle at center,#FF385C 0%,#E61E4D 27.5%,#E31C5F 40%,#D70466 57.5%,#BD1E59 75%,#BD1E59 100%)",
-       "type": "other",
-       "source": "css-var --palette-bg-secondary-core-hover (:root)"
+       "var": "--palette-bg-secondary-core-hover",
+       "type": "other"
       },
       "rtl": {
-       "value": "linear-gradient(to left,#E61E4D 0%,#E31C5F 50%,#D70466 100%)",
-       "type": "other",
-       "source": "css-var --palette-bg-secondary-core-rtl (:root)"
+       "var": "--palette-bg-secondary-core-rtl",
+       "type": "other"
       }
      },
      "disabled": {
@@ -2419,36 +2414,30 @@
      },
      "luxe": {
       "default": {
-       "value": "linear-gradient(to right,#E61E4D 0%,#E31C5F 50%,#D70466 100%)",
-       "type": "other",
-       "source": "css-var --palette-bg-secondary-luxe (:root)"
+       "var": "--palette-bg-secondary-luxe",
+       "type": "other"
       },
       "hover": {
-       "value": "radial-gradient(circle at center,#FF385C 0%,#E61E4D 30%,#E31C5F 55%,#D70466 72.5%,#BD1E59 90%,#BD1E59 100%)",
-       "type": "other",
-       "source": "css-var --palette-bg-secondary-luxe-hover (:root)"
+       "var": "--palette-bg-secondary-luxe-hover",
+       "type": "other"
       },
       "rtl": {
-       "value": "linear-gradient(to left,#E61E4D 0%,#E31C5F 50%,#D70466 100%)",
-       "type": "other",
-       "source": "css-var --palette-bg-secondary-luxe-rtl (:root)"
+       "var": "--palette-bg-secondary-luxe-rtl",
+       "type": "other"
       }
      },
      "plus": {
       "default": {
-       "value": "linear-gradient(to right,#BD1E59 0%,#92174D 50%,#861453 100%)",
-       "type": "other",
-       "source": "css-var --palette-bg-secondary-plus (:root)"
+       "var": "--palette-bg-secondary-plus",
+       "type": "other"
       },
       "hover": {
-       "value": "radial-gradient(circle at center,#D70466 0%,#BD1E59 30%,#92174D 55%,#861453 72.5%,#6C0D63 90%,#6C0D63 100%)",
-       "type": "other",
-       "source": "css-var --palette-bg-secondary-plus-hover (:root)"
+       "var": "--palette-bg-secondary-plus-hover",
+       "type": "other"
       },
       "rtl": {
-       "value": "linear-gradient(to left,#BD1E59 0%,#92174D 50%,#861453 100%)",
-       "type": "other",
-       "source": "css-var --palette-bg-secondary-plus-rtl (:root)"
+       "var": "--palette-bg-secondary-plus-rtl",
+       "type": "other"
       }
      }
     },
@@ -2722,9 +2711,8 @@
    "icon": {
     "badge": {
      "fill": {
-      "value": "color-mix(in srgb,#000000 50%,transparent)",
-      "type": "other",
-      "source": "css-var --palette-icon-badge-fill (:root)"
+      "var": "--palette-icon-badge-fill",
+      "type": "other"
      }
     },
     "beige": {
@@ -2777,9 +2765,8 @@
     },
     "material": {
      "disabled": {
-      "value": "color-mix(in srgb,#FFFFFF 30%,transparent)",
-      "type": "other",
-      "source": "css-var --palette-icon-material-disabled (:root)"
+      "var": "--palette-icon-material-disabled",
+      "type": "other"
      },
      "inverse": {
       "default": {
@@ -2787,9 +2774,8 @@
        "type": "color"
       },
       "disabled": {
-       "value": "color-mix(in srgb,#000000 30%,transparent)",
-       "type": "other",
-       "source": "css-var --palette-icon-material-inverse-disabled (:root)"
+       "var": "--palette-icon-material-inverse-disabled",
+       "type": "other"
       }
      }
     },
@@ -2967,14 +2953,12 @@
    "overlay": {
     "scrim": {
      "primary": {
-      "value": "color-mix(in srgb,#000000 30%,transparent)",
-      "type": "other",
-      "source": "css-var --palette-overlay-scrim-primary (:root)"
+      "var": "--palette-overlay-scrim-primary",
+      "type": "other"
      },
      "secondary": {
-      "value": "color-mix(in srgb,#000000 20%,transparent)",
-      "type": "other",
-      "source": "css-var --palette-overlay-scrim-secondary (:root)"
+      "var": "--palette-overlay-scrim-secondary",
+      "type": "other"
      }
     }
    },
@@ -3081,9 +3065,8 @@
     },
     "material": {
      "disabled": {
-      "value": "color-mix(in srgb,#000000 24%,transparent)",
-      "type": "other",
-      "source": "css-var --palette-text-material-disabled (:root)"
+      "var": "--palette-text-material-disabled",
+      "type": "other"
      },
      "inverse": {
       "default": {
@@ -3091,9 +3074,8 @@
        "type": "color"
       },
       "disabled": {
-       "value": "color-mix(in srgb,#000000 30%,transparent)",
-       "type": "other",
-       "source": "css-var --palette-text-material-inverse-disabled (:root)"
+       "var": "--palette-text-material-inverse-disabled",
+       "type": "other"
       }
      },
      "tooltip": {
@@ -3143,9 +3125,8 @@
       "type": "color"
      },
      "core": {
-      "value": "linear-gradient(to right,#E61E4D 0%,#E31C5F 50%,#D70466 100%)",
-      "type": "other",
-      "source": "css-var --palette-text-primary-core (:root)"
+      "var": "--palette-text-primary-core",
+      "type": "other"
      },
      "disabled": {
       "var": "--palette-text-primary-disabled",
@@ -3464,9 +3445,8 @@
     },
     "material": {
      "focused": {
-      "value": "color-mix(in srgb,#FFFFFF 0.5%,transparent)",
-      "type": "other",
-      "source": "css-var --palette-bg-material-focused (:root)"
+      "var": "--palette-bg-material-focused",
+      "type": "other"
      }
     },
     "on": {
@@ -3487,9 +3467,8 @@
      "dots": {
       "on": {
        "media": {
-        "value": "color-mix(in srgb,#FFFFFF 60%,transparent)",
-        "type": "other",
-        "source": "css-var --palette-bg-pagination-dots-on-media (:root)"
+        "var": "--palette-bg-pagination-dots-on-media",
+        "type": "other"
        }
       }
      },
@@ -3651,19 +3630,16 @@
      },
      "core": {
       "default": {
-       "value": "linear-gradient(to right,#E61E4D 0%,#E31C5F 50%,#D70466 100%)",
-       "type": "other",
-       "source": "css-var --palette-bg-secondary-core (:root)"
+       "var": "--palette-bg-secondary-core",
+       "type": "other"
       },
       "hover": {
-       "value": "radial-gradient(circle at center,#FF385C 0%,#E61E4D 27.5%,#E31C5F 40%,#D70466 57.5%,#BD1E59 75%,#BD1E59 100%)",
-       "type": "other",
-       "source": "css-var --palette-bg-secondary-core-hover (:root)"
+       "var": "--palette-bg-secondary-core-hover",
+       "type": "other"
       },
       "rtl": {
-       "value": "linear-gradient(to left,#E61E4D 0%,#E31C5F 50%,#D70466 100%)",
-       "type": "other",
-       "source": "css-var --palette-bg-secondary-core-rtl (:root)"
+       "var": "--palette-bg-secondary-core-rtl",
+       "type": "other"
       }
      },
      "disabled": {
@@ -3672,36 +3648,30 @@
      },
      "luxe": {
       "default": {
-       "value": "linear-gradient(to right,#E61E4D 0%,#E31C5F 50%,#D70466 100%)",
-       "type": "other",
-       "source": "css-var --palette-bg-secondary-luxe (:root)"
+       "var": "--palette-bg-secondary-luxe",
+       "type": "other"
       },
       "hover": {
-       "value": "radial-gradient(circle at center,#FF385C 0%,#E61E4D 30%,#E31C5F 55%,#D70466 72.5%,#BD1E59 90%,#BD1E59 100%)",
-       "type": "other",
-       "source": "css-var --palette-bg-secondary-luxe-hover (:root)"
+       "var": "--palette-bg-secondary-luxe-hover",
+       "type": "other"
       },
       "rtl": {
-       "value": "linear-gradient(to left,#E61E4D 0%,#E31C5F 50%,#D70466 100%)",
-       "type": "other",
-       "source": "css-var --palette-bg-secondary-luxe-rtl (:root)"
+       "var": "--palette-bg-secondary-luxe-rtl",
+       "type": "other"
       }
      },
      "plus": {
       "default": {
-       "value": "linear-gradient(to right,#BD1E59 0%,#92174D 50%,#861453 100%)",
-       "type": "other",
-       "source": "css-var --palette-bg-secondary-plus (:root)"
+       "var": "--palette-bg-secondary-plus",
+       "type": "other"
       },
       "hover": {
-       "value": "radial-gradient(circle at center,#D70466 0%,#BD1E59 30%,#92174D 55%,#861453 72.5%,#6C0D63 90%,#6C0D63 100%)",
-       "type": "other",
-       "source": "css-var --palette-bg-secondary-plus-hover (:root)"
+       "var": "--palette-bg-secondary-plus-hover",
+       "type": "other"
       },
       "rtl": {
-       "value": "linear-gradient(to left,#BD1E59 0%,#92174D 50%,#861453 100%)",
-       "type": "other",
-       "source": "css-var --palette-bg-secondary-plus-rtl (:root)"
+       "var": "--palette-bg-secondary-plus-rtl",
+       "type": "other"
       }
      }
     },
@@ -3975,9 +3945,8 @@
    "icon": {
     "badge": {
      "fill": {
-      "value": "color-mix(in srgb,#000000 50%,transparent)",
-      "type": "other",
-      "source": "css-var --palette-icon-badge-fill (:root)"
+      "var": "--palette-icon-badge-fill",
+      "type": "other"
      }
     },
     "beige": {
@@ -4030,9 +3999,8 @@
     },
     "material": {
      "disabled": {
-      "value": "color-mix(in srgb,#FFFFFF 30%,transparent)",
-      "type": "other",
-      "source": "css-var --palette-icon-material-disabled (:root)"
+      "var": "--palette-icon-material-disabled",
+      "type": "other"
      },
      "inverse": {
       "default": {
@@ -4040,9 +4008,8 @@
        "type": "color"
       },
       "disabled": {
-       "value": "color-mix(in srgb,#000000 30%,transparent)",
-       "type": "other",
-       "source": "css-var --palette-icon-material-inverse-disabled (:root)"
+       "var": "--palette-icon-material-inverse-disabled",
+       "type": "other"
       }
      }
     },
@@ -4220,14 +4187,12 @@
    "overlay": {
     "scrim": {
      "primary": {
-      "value": "color-mix(in srgb,#000000 30%,transparent)",
-      "type": "other",
-      "source": "css-var --palette-overlay-scrim-primary (:root)"
+      "var": "--palette-overlay-scrim-primary",
+      "type": "other"
      },
      "secondary": {
-      "value": "color-mix(in srgb,#000000 20%,transparent)",
-      "type": "other",
-      "source": "css-var --palette-overlay-scrim-secondary (:root)"
+      "var": "--palette-overlay-scrim-secondary",
+      "type": "other"
      }
     }
    },
@@ -4334,9 +4299,8 @@
     },
     "material": {
      "disabled": {
-      "value": "color-mix(in srgb,#000000 24%,transparent)",
-      "type": "other",
-      "source": "css-var --palette-text-material-disabled (:root)"
+      "var": "--palette-text-material-disabled",
+      "type": "other"
      },
      "inverse": {
       "default": {
@@ -4344,9 +4308,8 @@
        "type": "color"
       },
       "disabled": {
-       "value": "color-mix(in srgb,#000000 30%,transparent)",
-       "type": "other",
-       "source": "css-var --palette-text-material-inverse-disabled (:root)"
+       "var": "--palette-text-material-inverse-disabled",
+       "type": "other"
       }
      },
      "tooltip": {
@@ -4396,9 +4359,8 @@
       "type": "color"
      },
      "core": {
-      "value": "linear-gradient(to right,#E61E4D 0%,#E31C5F 50%,#D70466 100%)",
-      "type": "other",
-      "source": "css-var --palette-text-primary-core (:root)"
+      "var": "--palette-text-primary-core",
+      "type": "other"
      },
      "disabled": {
       "var": "--palette-text-primary-disabled",

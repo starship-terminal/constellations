@@ -126,11 +126,14 @@ table.t td.src { color: var(--color-text-tertiary, #b0b0b0); font-size: 12px; }
 .ab-star::before { content: "★ "; }
 
 /* filter chips, buttons, footer link */
-.ab-chip { display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 20px; border: 1px solid var(--color-border-secondary-default, #ddd); background: var(--color-bg-primary-default, #fff); font: 500 14px/18px var(--sg-sans); color: var(--color-text-primary-default, #222); }
-.ab-chip.is-hover { border-color: var(--color-text-primary-default, #222); background: var(--color-bg-primary-hover, #f7f7f7); }
+.ab-chip { display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 24px; border: 1px solid var(--color-border-secondary-default, #ddd); background: var(--color-bg-primary-default, #fff); font: 400 12px/16px var(--sg-sans); color: var(--color-text-primary-default, #222); }
+.ab-chip.is-hover { border-color: #c1c1c1; }
 .ab-chip.ring { box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--color-text-primary-default, #222); }
 .ab-btn { display: inline-flex; align-items: center; height: 48px; padding: 0 22px; border-radius: 8px; background: var(--color-bg-primary-inverse-default, #222); color: var(--color-text-primary-inverse, #fff); font: 500 16px/20px var(--sg-sans); }
 .ab-btn.is-pressed { transform: scale(.96); }
+/* the host landing's Get started CTA as captured: brand gradient, 40px pill */
+.ab-cta { display: inline-flex; align-items: center; height: 48px; padding: 0 22px; border-radius: 40px; background: var(--gradient-brand-core, linear-gradient(90deg, #e61e4d, #e31c5f, #d70466)); color: #fff; font: 500 16px/20px var(--sg-sans); }
+.ab-cta.is-pressed { transform: scale(.96); }
 .ab-obtn { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--color-text-primary-default, #222); background: var(--color-bg-primary-default, #fff); font: 500 14px/18px var(--sg-sans); color: var(--color-text-primary-default, #222); }
 .ab-obtn.is-hover { background: var(--color-bg-primary-hover, #f7f7f7); }
 .ab-flink { font: 400 14px/18px var(--sg-sans); color: var(--color-text-primary-default, #222); text-decoration: none; }
@@ -283,8 +286,8 @@ table.t td.src { color: var(--color-text-tertiary, #b0b0b0); font-size: 12px; }
     <div class="cell"><span class="ab-chip">⊞ Filters</span><span class="cap">filters button 84 x 34</span></div>
     <div class="cell"><span class="ab-chip is-hover">Price ⌄</span><span class="cap">chip hovered: darker border</span></div>
     <div class="cell"><span class="ab-chip ring">Type of place ⌄</span><span class="cap">focused: halo + ring</span></div>
-    <div class="cell"><span class="ab-btn">Get started</span><span class="cap">dark CTA (inverse fill)</span></div>
-    <div class="cell"><span class="ab-btn is-pressed">Get started</span><span class="cap">pressed 0.96</span></div>
+    <div class="cell"><span class="ab-cta">Get started</span><span class="cap">host CTA: brand gradient, 40px pill (measured)</span></div>
+    <div class="cell"><span class="ab-cta is-pressed">Get started</span><span class="cap">pressed 0.96</span></div>
     <div class="cell"><span class="ab-obtn is-hover">Show all photos</span><span class="cap">outline button hovered</span></div>
   </div>
 

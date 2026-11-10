@@ -322,25 +322,25 @@ typography:
   special-display-medium-40-44:
     fontFamily: "Airbnb Cereal VF"
     fontSize: "2.5rem"
-    fontWeight: 500
+    fontWeight: 600
     lineHeight: "2.75rem"
     letterSpacing: "0px"
   special-display-medium-48-54:
     fontFamily: "Airbnb Cereal VF"
     fontSize: "3rem"
-    fontWeight: 500
+    fontWeight: 600
     lineHeight: "3.375rem"
     letterSpacing: "0px"
   special-display-medium-60-68:
     fontFamily: "Airbnb Cereal VF"
     fontSize: "3.75rem"
-    fontWeight: 500
+    fontWeight: 600
     lineHeight: "4.25rem"
     letterSpacing: "0px"
   special-display-medium-72-74:
     fontFamily: "Airbnb Cereal VF"
     fontSize: "4.5rem"
-    fontWeight: 500
+    fontWeight: 600
     lineHeight: "4.625rem"
     letterSpacing: "0px"
   subtitles-book-14-18:
@@ -453,7 +453,7 @@ Good for: Public travel marketplace: the capsule Where/When/Who search bar, phot
 
 Captured 2026-11-09, signed out; www.airbnb.com geo-redirected to www.airbnb.com.sg from this network (same system on the regional mirror). Themes: light, dark.
 
-A token set and component reference for Airbnb's public site — for building travel-gallery, listing and marketing surfaces in the style of the real thing. It was read from **www.airbnb.com**, which geo-redirected to **www.airbnb.com.sg** from this network (the same design system on a regional mirror), on **2026-11-09**, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the home page with its search pill open, the Experiences and Services landings, a Tokyo search-results page, a public listing page the results linked, the Help Centre and the Host landing page, plus the mobile home and results.
+A token set and component reference for Airbnb's public site — for building travel-gallery, listing and marketing surfaces in the style of the real thing. It was read from **www.airbnb.com**, which geo-redirected to **www.airbnb.com.sg** from this network (the same design system on a regional mirror), on **2026-11-09 and 2026-11-10**, signed out, in headless Chromium at 1440 x 900 and 390 x 844: the home page with its search pill open, the Experiences and Services landings, a Tokyo search-results page, a public listing page the results linked, the Help Centre and the Host landing page, plus the mobile home and results.
 
 The reason Airbnb is worth a capture at all: it is the marketplace reference almost every travel, rental or gallery product is compared against — one brand pink (Rausch, #FF385C) doing all the work over an otherwise black-white-grey surface, the 66px capsule search bar that splits into Where/When/Who, photo-first listing cards with the semi-transparent wishlist heart, hairline-separated surfaces instead of shadows, and a complete set of declared dark values that the site never applies.
 
@@ -528,21 +528,20 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **The wishlist heart is not white.** It paints as a black-at-50% glyph with a white stroke over the photo (`measured.heart-idle`, `measured.heart-stroke`); a real tap opens a sign-up sheet, so its pressed state was CDP-forced, never clicked.
 - **Coachmarks are hidden, not dismissed.** The `home-*-default` and search/room default shots have first-load dialogs and dimmers hidden by CSS so the page underneath is measurable; `*-modal` shots keep them. Nothing was clicked away.
 - **Some readings are ancestors.** Where a component's root paints transparent, the entry names the nearest painted ancestor (several cards read `#dddddd` from the photo holder behind them — that is the element that paints, not the card's own fill).
-- **Rounded corners on photos.** The listing-photo rounding is a measured 20px at desktop width, drawn over the `radius` scale's `large` 16/`xlarge` 24 steps rather than landing exactly on one.
+- **Rounded corners on photos.** The listing-photo rounding is a measured 20px at desktop width — that is the scale's `xlarge` step (`core.radius.xlarge`), so take the token rather than an off-scale literal.
+- **Three components are missing on the current pages.** The header has no language-globe control (an earlier run's `header-globe` readings were the Search submit, since removed), and the promo strip with its Claim button is a per-listing feature the captured room does not show; `promo-strip` and `promo-claim` are flagged `missing`, not re-published as fresh. `rail-arrow`'s keyboard focus could not be driven, so its focus-visible state is an error entry, not a measurement.
 - **No icons.** Airbnb's glyph set is its artwork; this package keeps the text components that show the glyphs in context but no standalone SVG files (declared under `layoutGaps` in catalog.json).
 - **No layout.json.** Page geometry comes from the measured component boxes in `raw/components-computed.json` and the screenshots; there is no separate layout dump.
 
 ### Do and don't (from README.md)
 
-- Do use the brand pink (#FF385C, `color.bg.brand.*`/`palette.rausch`) only for the actions that end a flow: Search submit, Reserve, save confirmations. Everything else is black on white.
-- Do make the search bar a 66px capsule (`radius` 100px measured) that splits Where | When | Who with hairline dividers; it is the site's signature.
-- Do round listing photos ~20px and keep cards chrome-free — badge pill and heart float on the photo, title/price/rating sit under it on the page.
-- Do separate surfaces with `#ddd`/`#ebebeb` hairlines and fills; reserve real shadows for the floating layers (`elevation.high`, the `elevationN` steps).
-- Do use medium 500 weight for nearly all UI text; semibold only for the largest titles.
-- Do draw focus as the white halo + #222 ring shadow on controls, and the 2px outline 4px out on the category tabs.
-- Don't add a second accent colour: the support ramps are dataviz/status furniture, not UI colour.
-- Don't ship the declared dark set as a finished dark mode — it is an unapplied declaration; nothing paints it today.
-- Don't expect the heart or other icon buttons to have filled backgrounds; they are bare glyphs with strokes for readability.
-- Don't compress type the way dense apps do: the body scale runs 14–18px with 18–28px line-heights.
-
-Each rule links the screenshot or crop that shows it in [components.md](components.md).
+1. **Do use the brand pink only for the actions that end a flow.** #FF385C (`color.bg.brand.*`/`palette.rausch`) marks Search submit, Reserve and save confirmations; everything else is black on white. See [search-submit-default](components/crops/search-submit-default.png) and [host-cta-default](components/crops/host-cta-default.png).
+2. **Do make the search bar a 66px capsule.** The Where | When | Who pill (`radius` 100px measured, hairline dividers) is the site's signature. See [search-bar-default](components/crops/search-bar-default.png) and [home-light-default](screenshots/home-light-default.png).
+3. **Do round listing photos ~20px and keep cards chrome-free.** The photo radius is the measured `core.radius.xlarge` 20px; the badge pill and heart float on the photo while title, price and rating sit on the page. See [listing-card-default](components/crops/listing-card-default.png).
+4. **Do separate surfaces with hairlines and fills, not shadows.** `#ddd`/`#ebebeb` lines divide; real shadows are reserved for floating layers (`elevation.high`, the `elevationN` steps). See [reserve-card-default](components/crops/reserve-card-default.png) and [home-light-default](screenshots/home-light-default.png).
+5. **Do use medium 500 weight for nearly all UI text.** Semibold is kept for the largest titles only. See [section-title-default](components/crops/section-title-default.png) and [listing-card-default](components/crops/listing-card-default.png).
+6. **Do draw focus as the white halo + #222 ring shadow on controls**, and the 2px outline 4px out on the category tabs. See [filter-chip-focus-visible](components/crops/filter-chip-focus-visible.png) and [tab-active-focus-visible](components/crops/tab-active-focus-visible.png).
+7. **Don't add a second accent colour.** The support ramps are dataviz/status furniture, not UI colour. See [search-light-default](screenshots/search-light-default.png) and [host-light-default](screenshots/host-light-default.png).
+8. **Don't ship the declared dark set as a finished dark mode.** It is an unapplied declaration; nothing paints it today — the evidence is `themeChecks` in [raw/css-vars.json](raw/css-vars.json) and the light-pinned surface in [home-light-default](screenshots/home-light-default.png).
+9. **Don't expect filled icon buttons.** The heart and friends are bare glyphs; the heart is a black-at-50% glyph with a white stroke so it reads over photos. See [card-heart-default](components/crops/card-heart-default.png).
+10. **Don't compress type the way dense apps do.** The body scale runs 14–18px with 18–28px line-heights. See [room-title-default](components/crops/room-title-default.png) and [listing-card-default](components/crops/listing-card-default.png).

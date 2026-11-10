@@ -18,7 +18,7 @@
 //   anything else  a resting state reached by the page itself
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, UA, UA_MOBILE, launch, open, sweepOverlays, firstRoomHref, styleOf, crop, centre, markFixed, RAW } from './lib.mjs';
+import { BASE, UA, UA_MOBILE, launch, open, sweepOverlays, firstRoomHref, styleOf, crop, centre, markFixed, RAW, REF } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -91,7 +91,9 @@ async function forcePseudo(loc, classes) {
 
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
-  Object.assign(c, { page: current, run, url: URLS[current] && urlFor(current) }, meta);
+  // each component stamps its own read date: a page that fails later in the
+  // run keeps its older readings visibly dated instead of looking fresh
+  Object.assign(c, { page: current, run, url: URLS[current] && urlFor(current), read: new Date().toISOString().slice(0, 10) }, meta);
   touched.add(key);
   c.states ??= {};
   return c;
@@ -105,7 +107,9 @@ async function measure(key, state, target, opts = {}) {
     let file;
     if (opts.crop !== false) {
       try {
-        file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
+        const shot = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
+        file = shot.file;
+        s.cropScale = shot.scale; // 2x normally, 1x when the crop was too large to keep at full scale
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
     c.states[state] = { ...s, crop: file, via: opts.via };
@@ -140,7 +144,17 @@ async function S(key, target, list, meta = {}, opts = {}) {
         undo = await forcePseudo((opts.pressLoc || loc).filter({ visible: true }).first(), ['active', 'hover']);
         via = 'CDP forcePseudoState :active:hover';
       } else via = via || opts.via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      if (st === 'focus-visible' && via === 'focus failed') {
+        // kbFocus could not land keyboard focus on the element: record the
+        // failure instead of measuring the untouched control as a captured
+        // focus, and drop any crop a previous run saved for this state
+        const prev = out.components[key].states[st];
+        if (prev && prev.crop) fs.rmSync(path.join(REF, prev.crop), { force: true });
+        out.components[key].states[st] = { error: 'keyboard focus did not reach the element', via };
+        log('  !', key, st, 'focus failed');
+      } else {
+        await measure(key, st, loc, { ...opts, via });
+      }
     } catch (e) {
       out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
       log('  !', key, st, String(e.message).slice(0, 120));
@@ -244,12 +258,15 @@ async function home() {
     await S('header', q('[data-m="header"]'), ['default'], { group: g, title: 'Header', desc: 'The fixed top bar: the Bélo logo, the category tabs (All, Homes, Experiences, Services) with their icons, "Become a host", the language globe and the profile menu. The search pill sits under it.', sel: 'the fixed top bar holding the logo, tabs and user controls' }, { noScroll: true, pad: 4 });
     if (await tagEl('hostlink', '^Become a host$', '[data-m="header"]'))
       await S('header-host-link', q('[data-m="hostlink"]'), B4, { group: g, title: 'Become a host link', desc: 'The host entry point in the header. Measured and focused, never followed.', sel: 'header "Become a host"' }, { noScroll: true });
-    // The globe language button: the icon-only button before the menu buttons.
+    // The globe language button. Only a control that names language/region
+    // counts: a generic "first small icon-only button" guess once picked the
+    // Search submit, so a miss here means the component is missing this run.
     const globe = await tag('globe', () => {
       const h = document.querySelector('[data-m="header"]') || document;
-      return h.querySelector('[aria-label*="language" i], [aria-label*="region" i]')
-        || [...h.querySelectorAll('button, a, [role=button], [tabindex]')].find((e) => { const r = e.getBoundingClientRect(); return r.width > 20 && r.width < 60 && r.height > 20 && r.height < 60 && e.querySelector('svg') && !(e.innerText || '').trim(); })
-        || null;
+      return [...h.querySelectorAll('button, a, [role=button], [tabindex], [aria-label], [title]')].find((e) => {
+        const al = `${e.getAttribute('aria-label') || ''} ${e.getAttribute('title') || ''}`;
+        return /language|region|locale|translate|langue|sprache|idioma| lingua/i.test(al) && e.getBoundingClientRect().width < 80;
+      }) || null;
     });
     if (globe) await S('header-globe', q('[data-m="globe"]'), B3, { group: g, title: 'Language button', desc: 'The globe icon button that opens the language/region sheet. Hovered and focused only.', sel: 'the icon-only globe button in the header' }, { noScroll: true });
     const menu = await tag('menu', () => document.querySelector('button[aria-label*="navigation menu" i], button[aria-label*="Log in or sign up" i]'));
@@ -440,7 +457,19 @@ async function room() {
   // The guest favourite plaque: laurels + "One of the most loved homes" + rating + reviews.
   const plaque = await tag('plaque', () => {
     const cands = [...document.querySelectorAll('body *')].filter((e) => /most loved homes|Guest favourite/.test(e.innerText || '') && (e.innerText || '').length < 300);
-    return cands.sort((a, b) => (a.innerText || '').length - (b.innerText || '').length)[0] || null;
+    const m = cands.sort((a, b) => (a.innerText || '').length - (b.innerText || '').length)[0];
+    if (!m) return null;
+    // m can be the bare "Guest favourite" label; the plaque is the smallest
+    // ancestor that holds the whole strip — the loved-homes line and the
+    // rating digits beside it
+    let n = m;
+    for (let i = 0; i < 8 && n.parentElement; i++) {
+      const p = n.parentElement, t = p.innerText || '';
+      if (t.length > 500 || !/most loved homes|Guest favourite/i.test(t)) break;
+      n = p;
+      if (/most loved homes/i.test(t) && /\d/.test(t)) break;
+    }
+    return n;
   });
   if (plaque) await S('guest-plaque', q('[data-m="plaque"]'), ['default'], { group: g, title: 'Guest favourite plaque', desc: 'The laurel-bordered strip: "Guest favourite / One of the most loved homes on Airbnb" with the rating and review count.', sel: 'the laurel plaque under the subtitle' });
   // The reservation card.
@@ -453,7 +482,27 @@ async function room() {
   });
   if (res) {
     await S('reserve-card', q('[data-m="rescard"]'), ['default'], { group: g, title: 'Reservation card', desc: 'The booking card pinned right: "Add dates for prices", the CHECK-IN/CHECK-OUT/GUESTS field grid. Nothing was booked.', sel: 'the card with the date and guest fields' });
-    if (await tagEl('gfield', '^(CHECK-IN|Add date)$', '[data-m="rescard"]'))
+    // The CHECK-IN field cell. The label alone is a 12px line, so the probe
+    // climbs to the smallest ancestor that also holds the value line without
+    // swallowing the CHECKOUT / GUESTS siblings.
+    const gfield = await tag('gfield', () => {
+      const card = document.querySelector('[data-m="rescard"]');
+      if (!card) return null;
+      const lab = [...card.querySelectorAll('*')].filter((e) => {
+        const t = (e.innerText || '').trim();
+        return /^(CHECK-IN|Add date)$/i.test(t) && t.length < 20;
+      }).sort((a, b) => (a.innerText || '').length - (b.innerText || '').length)[0];
+      if (!lab) return null;
+      let n = lab;
+      for (let i = 0; i < 8 && n.parentElement; i++) {
+        const p = n.parentElement, t = (p.innerText || '').trim(), r = p.getBoundingClientRect();
+        if (/CHECKOUT|CHECK-OUT|GUESTS|TRAVELLERS/i.test(t)) break;
+        n = p;
+        if (r.height > 30 && t.length > (lab.innerText || '').trim().length) break;
+      }
+      return n;
+    });
+    if (gfield)
       await S('reserve-field', q('[data-m="gfield"]'), ['default', 'hover'], { group: g, title: 'Date field', desc: 'A labelled field cell in the booking grid (CHECK-IN / CHECKOUT / GUESTS).', sel: 'the CHECK-IN field cell' });
   }
   // The promo strip ("Get $25 SGD off your getaway" + Claim) — measured, never pressed.
@@ -481,13 +530,17 @@ async function help() {
   await S('help-title', q('h1').first(), ['default'], { group: g, title: 'Help title', desc: '"Hi, how can we help?" — the Help Centre headline.', sel: 'h1' }, { noScroll: true });
   const inp = await tag('helpsearch', () => document.querySelector('input[type=text], input[type=search], input[placeholder]'));
   if (inp) await S('help-search', q('[data-m="helpsearch"]'), ['default', 'focus-visible'], { group: g, title: 'Help search field', desc: 'The search field under the headline (the icon + placeholder). Focused only; nothing was searched.', sel: 'the search input on the help home' });
-  // A help tile/card in the grid.
+  // A help tile/card in the topic grid: a link into /help/ content. The size
+  // window alone once picked the "Log in or sign up" button, so the probe
+  // requires a help href and rejects account and nav text.
   const tile = await tag('helptile', () => {
-    const cands = [...document.querySelectorAll('a, [role=link], article, li, div')].filter((e) => {
+    const cands = [...document.querySelectorAll('a[href]')].filter((e) => {
       const r = e.getBoundingClientRect(); const t = (e.innerText || '').trim();
-      return r.width > 200 && r.width < 700 && r.height > 40 && r.height < 300 && r.top > 300 && t.length > 10 && t.length < 120 && (e.tagName === 'A' || e.tagName === 'ARTICLE' || e.tagName === 'LI');
+      const href = e.getAttribute('href') || '';
+      return r.width > 200 && r.width < 700 && r.height > 40 && r.height < 300 && r.top > 300 && t.length > 10 && t.length < 120
+        && /\/help\//i.test(href) && !/log in|sign up|menu|search/i.test(t);
     });
-    return cands[0] || null;
+    return cands.sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top)[0] || null;
   });
   if (tile) await S('help-tile', q('[data-m="helptile"]'), B4, { group: g, title: 'Help tile', desc: 'A topic card in the help grid. Pressed is forced: a real click navigates.', sel: 'a topic card in the help grid' });
   // A footer quick link — the help page scrolls normally, so the footer is a
@@ -549,6 +602,18 @@ async function mobile() {
 
 // ---------- run ----------
 
+// Any component recorded for a page that this run never touched is stale
+// evidence from an earlier capture (a probe that returned false, or a page
+// that changed): flag it missing so it cannot read as a fresh measurement.
+function sweepMissing(pageName) {
+  for (const [k, c] of Object.entries(out.components)) {
+    if (c.page === pageName && !touched.has(k) && !c.missing) {
+      c.missing = true;
+      log('  ! not found this run', k);
+    }
+  }
+}
+
 const ALL = { home, search, room, help, host, mobile };
 const wanted = process.argv.slice(2);
 const { browser } = await launch();
@@ -569,9 +634,16 @@ for (const name of process.argv.slice(2).length ? wanted : Object.keys(ALL)) {
   }
   try {
     await ALL[name]();
+    sweepMissing(name);
+    if (out._meta.failed) delete out._meta.failed[name];
     save();
   } catch (e) {
-    log('PAGE FAILED', name, e.message.split('\n')[0]);
+    const msg = e.message.split('\n')[0].slice(0, 160);
+    log('PAGE FAILED', name, msg);
+    // record the failure against the page instead of silently refreshing the
+    // shared date over its old components; untouched entries keep their own
+    // per-component read dates
+    (out._meta.failed ??= {})[name] = msg;
     save();
   }
   for (const p of context.pages()) await p.close().catch(() => {});
@@ -581,4 +653,5 @@ await browser.close();
 // missing report
 const missing = Object.entries(out.components).filter(([, c]) => c.missing).map(([k]) => k);
 const errors = Object.entries(out.components).flatMap(([k, c]) => Object.entries(c.states || {}).filter(([, s]) => s.error).map(([s]) => `${k}:${s}`));
-log('components:', touched.size, 'missing:', missing.length ? missing.join(', ') : 'none', 'errors:', errors.length ? errors.join(', ') : 'none');
+const failedPages = Object.keys(out._meta.failed || {});
+log('components:', touched.size, 'missing:', missing.length ? missing.join(', ') : 'none', 'errors:', errors.length ? errors.join(', ') : 'none', 'failed pages:', failedPages.length ? failedPages.join(', ') : 'none');
