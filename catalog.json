@@ -3486,7 +3486,8 @@
      "consent SDKs were aborted at request level before any banner mounted, so no consent UI exists in the package",
      "the testimonials carousel auto-plays and was measured on its first slide",
      "the pricing hero's dark band is a background photograph, not a flat fill"
-    ]
+    ],
+    "pr": "https://github.com/c-wenlong/designs/pull/450"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run on this capture; the wordmark and social glyphs are the product's artwork and stay on the screenshots"

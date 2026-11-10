@@ -197,7 +197,14 @@ async function S(key, target, list, meta = {}, opts = {}) {
         undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
         via = `typed "${opts.fillText || FILL}", then deleted; nothing sent`;
       } else via = via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      if (via === 'focus failed') {
+        // The element never took focus: a resting read labelled focus-visible is
+        // not a captured focus, so the attempt is recorded as an error instead.
+        out.components[key].states[st] = { error: 'keyboard focus could not reach the element', via };
+        log('  !', key, st, 'focus failed');
+      } else {
+        await measure(key, st, loc, { ...opts, via });
+      }
     } catch (e) {
       out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
       log('  !', key, st, String(e.message).slice(0, 120));
@@ -247,7 +254,7 @@ async function footerRun() {
 }
 
 async function home() {
-  if (!(await newPage('home'))) { await page.close(); return; }
+  if (!(await newPage('home'))) { await page.context().close(); return; }
   await sheetsFor('home');
   await shell();
   const h = G.home;
@@ -275,18 +282,21 @@ async function home() {
   });
   await S('testimonial-card', tcard ? q('[data-m-mark="tc"]') : q('.testimonials-carousel').first(), ['default'], { group: h, title: 'Testimonial card', desc: 'A quote card in "Real results from professionals just like you".', sel: 'testimonial card' });
   await S('carousel-dots', q('.testimonial-card__dots').filter({ visible: true }).first(), ['default'], { group: h, title: 'Carousel dots', desc: 'The testimonials carousel has no arrows: a .testimonial-card__dots row of thin dash indicators (the active one wider) marks position while slides auto-play.', sel: '.testimonial-card__dots' });
+  // A partner mark only: an <img>/<svg> inside the integrations section, never
+  // the "View integrations" text link (which matched the earlier any-link probe).
   const integ = await page.evaluate(() => {
-    const el = [...document.querySelectorAll('.integrations-v2 img, .integrations-v2 [class*=logo], .integrations-v2 a')].filter((n) => n.getBoundingClientRect().width > 30)[0];
+    const el = [...document.querySelectorAll('.integrations-v2 img, .integrations-v2 svg, .integrations-v2 [class*=logo] img, .integrations-v2 [class*=logo] svg')]
+      .filter((n) => n.getBoundingClientRect().width > 30 && n.getBoundingClientRect().height > 20)[0];
     if (!el) return false; el.setAttribute('data-m-mark', 'ig'); return true;
   });
-  await S('integration-logo', integ ? q('[data-m-mark="ig"]') : q('.integrations-v2').first(), ['default'], { group: h, title: 'Integration logo', desc: 'A partner mark in "Connect your calendar and so much more" (Google, Outlook, Stripe…).', sel: 'integration logo' });
+  await S('integration-logo', integ ? q('[data-m-mark="ig"]') : q('.integrations-v2 img').first(), ['default'], { group: h, title: 'Integration logo', desc: 'A partner mark in "Connect your calendar and so much more" (Google, Outlook, Stripe…).', sel: '.integrations-v2 img' });
   await S('bottom-cta', q('section.bottom-cta').first(), ['default'], { group: h, title: 'Bottom CTA', desc: 'The closing "Get started for free" band before the footer.', sel: 'section.bottom-cta' });
   await footerRun();
-  await page.close();
+  await page.context().close();
 }
 
 async function pricing() {
-  if (!(await newPage('pricing'))) { await page.close(); return; }
+  if (!(await newPage('pricing'))) { await page.context().close(); return; }
   await sheetsFor('pricing');
   const g = G.pricing;
   await S('pricing-hero', q('.pricing-hero-plans-wrapper').first(), ['default'], { group: g, title: 'Pricing plans block', desc: 'The plan cards row: three or four tiers each with a name, blurb, monthly price, feature list and a CTA.', sel: '.pricing-hero-plans-wrapper' });
@@ -311,12 +321,12 @@ async function pricing() {
     await S('accordion-title-open', q('button.accordion-title.accordion-active, button.accordion-title[aria-expanded="true"]').first(), ['default'], { group: g, title: 'FAQ question, open', desc: 'The question in its expanded state (accordion-active / aria-expanded).', sel: 'button.accordion-title.open' });
   }
   await footerRun();
-  await page.close();
+  await page.context().close();
 }
 
-async function gate() {
+async function getstarted() {
   // The Squarespace "Create your account" dialog /get-started lands on.
-  if (!(await newPage('getstarted'))) { await page.close(); return; }
+  if (!(await newPage('getstarted'))) { await page.context().close(); return; }
   const g = G.gate;
   await S('gate-card', q('[class*=Dialog-container], [role=dialog], main').first(), ['default'], { group: g, title: 'Create-account card', desc: 'The Squarespace account gate "Create your account": a centred ~540px card with provider buttons and legal links — the start of the signup flow, never submitted.', sel: 'dialog card' });
   await S('gate-google', await domFind(page, /continue with google/i, { sel: 'button, a', tag: 'gg', minH: 30 }), B4, { group: g, title: 'Continue with Google', desc: 'The Google OAuth row on the create-account card. Measured, never pressed.', sel: '"Continue with Google" button' });
@@ -334,11 +344,11 @@ async function gate() {
     });
     await S('more-options-open', extra ? q('[data-m-mark="xp"]') : mo.first(), ['default'], { group: g, title: 'Extra provider, revealed', desc: 'A provider row revealed by MORE OPTIONS.', sel: 'extra provider' });
   }
-  await page.close();
+  await page.context().close();
 }
 
 async function login() {
-  if (!(await newPage('login'))) { await page.close(); return; }
+  if (!(await newPage('login'))) { await page.context().close(); return; }
   const g = G.gate;
   const lcard = await page.evaluate(() => {
     const inp = document.querySelector('input[type=email], input[type=password]');
@@ -358,11 +368,11 @@ async function login() {
   await S('oauth-facebook', await domFind(page, /continue with facebook/i, { sel: 'button, a', tag: 'of', minH: 30 }), B4, { group: g, title: 'OAuth Facebook', desc: 'The Facebook OAuth row.', sel: '"Continue with Facebook"' });
   await S('cant-login', await domFind(page, /can.?t log in/i, { sel: 'a, button', tag: 'cl', minH: 10 }), B4, { group: g, title: "Can't log in link", desc: 'The recovery link under the OAuth rows.', sel: '"CAN\'T LOG IN?"' });
   await S('create-account-link', await domFind(page, /create account/i, { sel: 'a, button', tag: 'ca', minH: 10 }), B4, { group: g, title: 'Create account link', desc: 'The CREATE ACCOUNT tab beside LOG IN on the gate.', sel: '"CREATE ACCOUNT" link' });
-  await page.close();
+  await page.context().close();
 }
 
 async function mobile() {
-  if (!(await newPage('mobile', { mobile: true }))) { await page.close(); return; }
+  if (!(await newPage('mobile', { mobile: true }))) { await page.context().close(); return; }
   const g = G.mobile;
   await S('m-header', q('.menu-container.frontsite-hero-nav, header').first(), ['default'], { group: g, title: 'Mobile header', desc: 'The bar at 390: 55px, wordmark and a hamburger.', sel: '.menu-container' }, { noScroll: true });
   await S('m-hamburger', q('button.hamburger-icon').filter({ visible: true }).first(), B4, { group: g, title: 'Hamburger button', desc: 'The menu trigger; opens the full-screen menu.', sel: 'button.hamburger-icon' }, { noScroll: true });
@@ -381,12 +391,12 @@ async function mobile() {
   // DOM order, so falling back to `[data-m-mark="mm"] a` measured the wordmark.
   await S('m-menu-link', q('[data-m-mark="mm"] a.mobile-link').filter({ visible: true }).first(), B4, { group: g, title: 'Mobile menu link', desc: 'A primary link in the mobile menu.', sel: '.mobile-menu-primary a.mobile-link' }, { noScroll: true });
   await S('m-hero', q('section.hero-block').first(), ['default'], { group: g, title: 'Mobile hero', desc: 'The hero at 390.', sel: 'section.hero-block' }, { open: async () => { await page.keyboard.press('Escape').catch(() => {}); await page.evaluate(() => { document.querySelectorAll('.mobile-menu-container').forEach((n) => { n.style.display = 'none'; }); }); await page.waitForTimeout(500); } });
-  await page.close();
+  await page.context().close();
 }
 
 run = new Date().toISOString();
 const which = process.argv.slice(2).flatMap((a) => a.split(',')).filter(Boolean);
-const ALL = { home, pricing, gate, login, mobile };
+const ALL = { home, pricing, getstarted, login, mobile };
 let browser;
 ({ browser, context } = await launch());
 for (const [k, fn] of Object.entries(ALL)) {

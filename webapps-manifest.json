@@ -3,7 +3,7 @@
  "method": "extract-style skill + tools/kit/ (docs/CAPTURE.md), then the systems/<slug>/ layout in docs/PACKAGE.md with evidence labels and a catalog.json entry in the same change.",
  "agent_notes": [
   "Dismiss popups and consent dialogs yourself: cookie banners (allow/disallow), OneTrust/Cookiebot prompts, newsletter modals, app-install banners, region pickers. Never hand a dismissable popup back to the user.",
-  "Google OAuth is already authenticated in the capture browser profile: prefer \"Continue with Google\" and complete it without asking. For email signup use a disposable test account and record it in the package notes.",
+  "Sign-in is the owner's, not the agent's: when a flow needs an authenticated account (Google OAuth, email signup), pause and hand the browser to the owner to sign in, then continue. Never create accounts or complete OAuth yourself.",
   "Escalate only real blockers: CAPTCHA loops, phone/SMS verification, payment walls, org SSO or invite gates, hardware keys. Set status to \"blocked\" with the reason in notes instead of deferring silently.",
   "Capture functionality, not just design: walk onboarding and the core flows (first run, main screens, settings, key actions). The refero style for the same domain is landing-page design only; do not reuse it as app evidence.",
   "One app per PR: when it merges set status to \"captured\" and package to the systems/<slug>. Keep this manifest in the commit."
@@ -428,7 +428,7 @@
    "refero_site_ids": [
     896
    ],
-   "description": "Des v\u00eatements et accessoires fonctionnels et durables pour les professionnels du cin\u00e9ma et de la musique",
+   "description": "Des vêtements et accessoires fonctionnels et durables pour les professionnels du cinéma et de la musique",
    "status": "pending",
    "package": null,
    "notes": "",
@@ -630,9 +630,9 @@
    "batch": 3
   },
   {
-   "name": "BYBORRE\u00ae",
+   "name": "BYBORRE®",
    "catalog_names": [
-    "BYBORRE\u00ae"
+    "BYBORRE®"
    ],
    "domain": "byborre.com",
    "refero_site_ids": [
@@ -1448,7 +1448,7 @@
    "refero_site_ids": [
     917
    ],
-   "description": "AI Music Generator \u2014 Create & Stream Music",
+   "description": "AI Music Generator — Create & Stream Music",
    "status": "pending",
    "package": null,
    "notes": "",
@@ -2708,7 +2708,7 @@
    "refero_site_ids": [
     551
    ],
-   "description": "Personalized AI powered by what you\u2019ve seen, said, and heard",
+   "description": "Personalized AI powered by what you’ve seen, said, and heard",
    "status": "pending",
    "package": null,
    "notes": "",
@@ -2993,7 +2993,7 @@
    "refero_site_ids": [
     752
    ],
-   "description": "It\u2019s the ultimate reading client for the open web",
+   "description": "It’s the ultimate reading client for the open web",
    "status": "pending",
    "package": null,
    "notes": "",
@@ -3190,7 +3190,7 @@
    "refero_site_ids": [
     882
    ],
-   "description": "AI-Powered No\u2011Code App Builder for Entrepreneurs",
+   "description": "AI-Powered No‑Code App Builder for Entrepreneurs",
    "status": "pending",
    "package": null,
    "notes": "",
@@ -4975,7 +4975,7 @@
    "refero_site_ids": [
     356
    ],
-   "description": "You\u2019ve never designed this easy before",
+   "description": "You’ve never designed this easy before",
    "status": "pending",
    "package": null,
    "notes": "",
@@ -5950,7 +5950,7 @@
    "refero_site_ids": [
     88
    ],
-   "description": "The developer-first \u200dMLOps platform",
+   "description": "The developer-first ‍MLOps platform",
    "status": "pending",
    "package": null,
    "notes": "",
@@ -6257,9 +6257,9 @@
    "batch": 21
   },
   {
-   "name": "\u0421ontra",
+   "name": "Сontra",
    "catalog_names": [
-    "\u0421ontra"
+    "Сontra"
    ],
    "domain": "contra.com",
    "refero_site_ids": [
@@ -6272,9 +6272,9 @@
    "batch": 21
   },
   {
-   "name": "\u30c4Supercut",
+   "name": "ツSupercut",
    "catalog_names": [
-    "\u30c4Supercut"
+    "ツSupercut"
    ],
    "domain": "supercut.ai",
    "refero_site_ids": [

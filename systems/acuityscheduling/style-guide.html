@@ -205,7 +205,7 @@ table.t td.src { color: var(--text); opacity: .55; font-size: 12px; }
 .shadows { display: flex; gap: 24px; flex-wrap: wrap; }
 .shadows .sh { width: 150px; height: 96px; background: var(--surface); border-radius: var(--radius-button); display: flex; align-items: flex-end; justify-content: center; padding: 8px; font-size: 11px; color: var(--text); }
 .motion-rows { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
-.track { position: relative; height: 32px; background: var(--fog, #f2f2f2); border-radius: var(--radius-pill); overflow: hidden; cursor: pointer; }
+.track { position: relative; height: 32px; width: 100%; min-width: 180px; background: var(--fog, #f2f2f2); border-radius: var(--radius-pill); overflow: hidden; cursor: pointer; }
 .track .dot { position: absolute; top: 4px; left: 4px; width: 24px; height: 24px; border-radius: var(--radius-pill); background: var(--accent); }
 .track.go .dot { left: calc(100% - 28px); }
 
@@ -221,6 +221,7 @@ table.t td.src { color: var(--text); opacity: .55; font-size: 12px; }
 
 /* ---------- Acuity components, drawn from the tokens ---------- */
 .ac-nav { display: flex; align-items: center; gap: 28px; height: 80px; padding: 0 40px; background: var(--surface); border-radius: var(--radius-card); font: 400 var(--font-size-small)/var(--font-leading-control) var(--sg-sans); }
+@media (max-width: 767px) { .ac-nav { gap: 12px; padding: 0 12px; overflow-x: auto; scrollbar-width: none; } .ac-nav a { white-space: nowrap; } }
 .ac-nav .wm { font-weight: 500; color: var(--text-strong); font-size: 16px; }
 .ac-nav a { color: var(--text-strong); text-decoration: none; }
 .ac-nav a:hover { opacity: .5; }
@@ -237,6 +238,7 @@ table.t td.src { color: var(--text); opacity: .55; font-size: 12px; }
 .btn.ink:hover { background: var(--component-button-primary-hover-bg); }
 .btn.plan { background: var(--component-button-primary-bg); color: var(--component-button-primary-fg); }
 .btn.plan:hover { background: var(--component-button-plan-hover-bg); }
+.btn.plan:active { transform: scale(0.9); }
 .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--component-button-outline-border); padding: 16px 33px; }
 .btn.ghost:hover { opacity: .8; }
 .btn.gate { background: transparent; color: var(--text-strong); border: 1px solid var(--component-button-gate-border); border-radius: 0; padding: 16px 24px; min-width: 240px; }
@@ -256,7 +258,7 @@ table.t td.src { color: var(--text); opacity: .55; font-size: 12px; }
 .seg .on { background: var(--surface); }
 .plan-card { width: 300px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-button); padding: 24px; }
 .plan-card h4 { font: 500 var(--font-size-plan)/var(--font-leading-plan) var(--sg-serif); color: var(--text-soft); margin: 0 0 4px; }
-.plan-card .price { font: 400 var(--font-size-body)/16px var(--sg-sans); margin-bottom: 16px; }
+.plan-card .price { font: 500 18px/27px var(--sg-sans); margin-bottom: 16px; }
 .plan-card ul { list-style: none; margin: 16px 0 0; padding: 16px 0 0; border-top: 1px solid var(--palette-line-divider); }
 .plan-card li { font: 500 var(--font-size-small)/var(--font-leading-body) var(--sg-sans); color: var(--text-soft); padding: 4px 0 4px 24px; position: relative; }
 .plan-card li::before { content: "✓"; position: absolute; left: 0; }
@@ -271,7 +273,7 @@ table.t td.src { color: var(--text); opacity: .55; font-size: 12px; }
 .band-sky { background: var(--surface-band); border-radius: var(--radius-card); padding: 32px; }
 .tag { display: inline-block; background: var(--component-tag-bg); border-radius: var(--radius-tag); padding: 2px 10px; font: 400 12px/16px var(--sg-sans); }
 .faq { background: var(--surface-inverse); border-radius: var(--radius-card); padding: 24px 32px; }
-.faq .q { display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid var(--border-on-dark); color: var(--text-inverse); font: 400 var(--font-size-body)/18.4px var(--sg-sans); }
+.faq .q { display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid var(--border-on-dark); color: var(--text-inverse); font: 500 24px/27.6px var(--sg-serif); }
 
 .gate { width: 480px; max-width: 100%; background: var(--surface); border-radius: var(--radius-card-sm); box-shadow: var(--shadow-modal); padding: 44px; }
 .gate h4 { font: 500 var(--font-size-title)/var(--font-leading-title) var(--sg-sans); margin: 0 0 20px; }
@@ -437,7 +439,7 @@ table.t td.src { color: var(--text); opacity: .55; font-size: 12px; }
 <div class="states">
 <div class="cell"><span class="seg"><span class="on">Pay annually</span><span>Pay monthly</span></span><div class="cap">segment pill, 100px radius</div></div>
 <div class="cell"><div class="plan-card"><h4>Starter</h4><div class="price">$16 / month</div><button class="btn plan">Start free trial</button><ul><li>1 calendar</li><li>Payments via Stripe, Square, PayPal</li><li>Email reminders</li></ul><div class="cap">plan card: white, hairline, r12</div></div></div>
-<div class="cell"><div class="faq" style="width:340px"><div class="q">Why should I use Acuity Scheduling?<span>+</span></div><div class="q">How does the free trial work?<span>+</span></div><div class="cap" style="color:var(--text-inverse);opacity:.6">FAQ rows on ink, 10% white hairlines</div></div></div>
+<div class="cell"><div class="faq" style="width:min(340px,100%)"><div class="q">Why should I use Acuity Scheduling?<span>+</span></div><div class="q">How does the free trial work?<span>+</span></div><div class="cap" style="color:var(--text-inverse);opacity:.6">FAQ rows on ink, 10% white hairlines</div></div></div>
 </div>
 </div>
 </section>

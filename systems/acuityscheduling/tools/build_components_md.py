@@ -184,6 +184,44 @@ def props(v):
 ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "backdrop", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
 
 
+def layer_diff(a, b):
+    """Changes in the parts props() does not carry: child paint layers,
+    ::before/::after and text decoration, so a visible hover/focus change on a
+    child is not reported as 'same'."""
+    out = {}
+    for pe in ("::before", "::after"):
+        pa, pb = a.get(pe), b.get(pe)
+        if pa != pb:
+            bits = []
+            for k in ("backgroundColor", "boxShadow", "borderTopColor", "borderTopWidth", "opacity", "content"):
+                va, vb = (pa or {}).get(k), (pb or {}).get(k)
+                if va != vb:
+                    bits.append(f"{k} {colour(str(vb), role='border') if vb else 'none'}")
+            if bits:
+                out[pe] = "; ".join(bits[:3])
+    ta, tb = a.get("style", {}), b.get("style", {})
+    for k in ("textDecorationLine", "textDecorationColor", "textDecorationThickness", "textUnderlineOffset"):
+        if ta.get(k) != tb.get(k):
+            out["decoration"] = f"{k} {tb.get(k)}"
+    pa, pb = a.get("paint"), b.get("paint")
+    if pa != pb:
+        ch = []
+        for x, y in zip(pa or [], pb or []):
+            for f in ("bg", "border", "shadow", "outline", "bgImage"):
+                if x.get(f) != y.get(f):
+                    ch.append(f"{x['node'].split('.')[0]} {f} {colour(str(y[f]), role='border') if y[f] else 'none'}")
+                    break
+        if (pa or [])[(len(pb or [])):] or (pb or [])[len(pa or []):]:
+            ch.append("layer added or removed")
+        if ch:
+            out["layers"] = "; ".join(ch[:3])
+    return out
+
+
+LAYER_ORDER = ["::before", "::after", "decoration", "layers"]
+ALL_ORDER = ORDER + LAYER_ORDER
+
+
 def state_rows(c):
     """The first state lists every value; later rows list only what changed."""
     rows = []
@@ -194,11 +232,13 @@ def state_rows(c):
     rows.append((states[0], base))
     same = []
     for st in states[1:]:
-        p = props(c["states"][st])
+        v = c["states"][st]
+        p = props(v)
         diff = {k: p[k] for k in ORDER if k in p and p.get(k) != base.get(k)}
         for k in ORDER:
             if k in base and k not in p:
                 diff[k] = "none"
+        diff.update(layer_diff(c["states"][states[0]], v))
         if not diff:
             same.append(st)
             continue
@@ -212,7 +252,7 @@ def state_rows(c):
 
 
 def fmt(d):
-    return "; ".join(f"{k} {d[k]}" for k in ORDER if k in d).replace("|", "/")
+    return "; ".join(f"{k} {d[k]}" for k in ALL_ORDER if k in d).replace("|", "/")
 
 
 def child_layers(c):

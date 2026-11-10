@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from www.gauth.com on undefined by `tools/capture/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from acuityscheduling.com and secure.acuityscheduling.com on 2026-11-10 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -508,24 +508,22 @@ Not found on the page at capture time.
 
 Integration logo. A partner mark in "Connect your calendar and so much more" (Google, Outlook, Stripe…).
 
-Page: home. Selector: `integration logo`. States: default.
+Page: home. Selector: `.integrations-v2 img`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 151.42 x 55 |
+| Size (w x h) | 60 x 60 |
 | Padding | 0px |
-| Gap | 6px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | Clarkson 16px/22px 500 |
+| Font | Clarkson 16px/16px 400 |
 | Letter spacing | normal |
-| Colour | #0e0e0e |
-| Text node | span.integrations-v2__cta-label: Clarkson 16px/22px 500, #0e0e0e |
+| Colour | #222222 |
 | Transition | none |
-| Cursor | pointer |
+| Ancestor paint | 1 up div.integrations-v2__tile bg #ffffff @ 0.78; 3 up div.integrations-v2 shadow #283849 @ 0.06 0px 12px 40px 0px |
 | How | at rest |
 
 Crops: `integration-logo-default.png`.
@@ -1212,24 +1210,25 @@ Page: login. Selector: `LOG IN button`. States: default, hover, focus-visible, p
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 326.63 x 44 | = | = | = |
-| Padding | 0px 16px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | #f2f2f2 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Clarkson 12px/22px 500 | = | = | = |
-| Letter spacing | 0.5px | = | = | = |
-| Colour | #b7b7b7 | = | = | = |
-| Text node | span: Clarkson 12px/22px 500, #b7b7b7, ls 0.5px | = | = | = |
-| Transition | transform 0.05s ease | = | = | = |
-| Transform | matrix(1, 0, 0, 1, 0, 0) | = | = | = |
-| Cursor | not-allowed | = | = | = |
-| Painted layers | button.css-14vi2qu 326.6x44.0 bg #f2f2f2 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 326.63 x 44 | = | - | = |
+| Padding | 0px 16px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | #f2f2f2 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Clarkson 12px/22px 500 | = | - | = |
+| Letter spacing | 0.5px | = | - | = |
+| Colour | #b7b7b7 | = | - | = |
+| Text node | span: Clarkson 12px/22px 500, #b7b7b7, ls 0.5px | = | - | = |
+| Transition | transform 0.05s ease | = | - | = |
+| Transform | matrix(1, 0, 0, 1, 0, 0) | = | - | = |
+| Cursor | not-allowed | = | - | = |
+| Painted layers | button.css-14vi2qu 326.6x44.0 bg #f2f2f2 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Error | - | = | keyboard focus could not reach the element | = |
 
-Crops: `login-submit-default.png`, `login-submit-hover.png`, `login-submit-focus-visible.png`, `login-submit-pressed.png`.
+Crops: `login-submit-default.png`, `login-submit-hover.png`, `login-submit-pressed.png`.
 
 #### oauth-google
 
@@ -1507,7 +1506,7 @@ Crops: `m-hero-default.png`.
 
 ## Transitions declared in the readable stylesheets
 
-Gauth's own CSS is served cross-origin, so this list holds only what the CSSOM could read on each page (antd's CSS-in-JS and inline styles); the per-state Transition rows above are computed values and cover Gauth's own rules.
+Acuity's frontsite CSS is readable in the CSSOM on each page; the per-state Transition rows above are computed values measured on the components themselves, this list is what the stylesheets declare.
 
 - home: none
 

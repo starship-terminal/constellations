@@ -47,9 +47,9 @@ Values that apply across entries, tallied from the measurement file.
 
 **Hover.** no change on the element (26), transparent to #f2f2f2 `palette.fog` (1), #283849 `surface-inverse` to #3e5772 `palette.ink-hover` (1), transparent to #f0f0f0 `palette.fog-deep` (1), #283849 `surface-inverse` to #1e2d3a `palette.ink-pressed` (1). Links fade to 50% opacity or gain an underline rather than recolouring; the ink fills split — the header pill lightens to #3e5772 `palette.ink-hover` while the plan button darkens to #1e2d3a `palette.ink-pressed`.
 
-**Focus.** Of 27 elements given a real keyboard focus: 1px auto #005fcc `palette.focus-blue` offset 1px (10), 2px solid transparent offset 2px (6), no ring on the element (4), 1px auto #005fcc `palette.focus-blue` offset 0px (3), 2px auto #000000 `border-strong` offset 4px (1), 2px solid #283849 `palette.ink` offset 2px (1). Links and accordions take Chromium's 1px #005fcc `palette.focus-blue` auto ring; the mobile menu's controls draw #e59700 `palette.focus-amber` amber; the gate's buttons paint a double box-shadow ring (2px white, 4px black); plan-cta draws a 2px solid #283849 `palette.ink` ring offset 2px.
+**Focus.** Of 26 elements given a real keyboard focus: 1px auto #005fcc `palette.focus-blue` offset 1px (10), 2px solid transparent offset 2px (6), 1px auto #005fcc `palette.focus-blue` offset 0px (3), no ring on the element (3), 2px auto #000000 `border-strong` offset 4px (1), 2px solid #283849 `palette.ink` offset 2px (1). Links and accordions take Chromium's 1px #005fcc `palette.focus-blue` auto ring; the mobile menu's controls draw #e59700 `palette.focus-amber` amber; the gate's buttons paint a double box-shadow ring (2px white, 4px black); plan-cta draws a 2px solid #283849 `palette.ink` ring offset 2px.
 
-**Motion.** 0.05s ease (41), 0.15s ease-in (4), 0.2s ease (4), 0.15s ease (4), 0.25s ease-in-out (3), 0.2s ease-out (1). The blanket step is 50ms ease on links and gate rows; the header pill takes 150ms ease-in; the mega-menu opens over 250ms ease-in-out.
+**Motion.** 0.05s ease (40), 0.15s ease-in (4), 0.2s ease (4), 0.15s ease (4), 0.25s ease-in-out (3), 0.2s ease-out (1). The blanket step is 50ms ease on links and gate rows; the header pill takes 150ms ease-in; the mega-menu opens over 250ms ease-in-out.
 
 **Layout.** The desktop bar is an 80px rail (55px at 390; the open mobile menu's header block 104px). Controls come in four heights: the 42.8px nav pill, 46px plan buttons, 55px gate/OAuth rows and the 56px hero CTAs (the bottom CTA stretches to 72px). The mega-menu panel pads 44px at a 22px radius; the FAQ column is 640px; plan cards are ~449px across on 1px #e4e4e4 hairlines.
 
@@ -91,7 +91,7 @@ The 80px white bar every marketing page shares (55px at 390): the acuity:schedul
 |---|---|
 | default | size 85.39 x 18.77; background transparent; text Clarkson 14/18.76 400, #000000 `text-strong` |
 | hover | opacity 0.5 |
-| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px |
+| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px; layers layer added or removed |
 | pressed | opacity 0.5 |
 
 #### Nav dropdown trigger
@@ -104,7 +104,7 @@ The 80px white bar every marketing page shares (55px at 390): the acuity:schedul
 |---|---|
 | default | size 80.86 x 18.77; background transparent; text Clarkson 14/18.76 400, #000000 `text-strong` |
 | hover | opacity 0.5 |
-| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 0px |
+| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 0px; layers layer added or removed |
 | pressed | opacity 0.5 |
 
 #### Nav dropdown
@@ -126,9 +126,9 @@ The 80px white bar every marketing page shares (55px at 390): the acuity:schedul
 | State | Values |
 |---|---|
 | default | size 353 x 65; padding 11px; border B: 1px solid #f2f2f2 `palette.fog`; background transparent; text Clarkson 14/22 400, #000000 `text-strong` |
-| hover | radius 8px; background #f2f2f2 `palette.fog` |
-| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px |
-| pressed | radius 8px; background #f2f2f2 `palette.fog` |
+| hover | radius 8px; background #f2f2f2 `palette.fog`; layers a bg #f2f2f2 `palette.fog` |
+| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px; layers a outline 1px auto #005fcc `palette.focus-blue` offset 1px |
+| pressed | radius 8px; background #f2f2f2 `palette.fog`; layers a bg #f2f2f2 `palette.fog` |
 
 Child layers: a 353x65 border 1px solid #f2f2f2 `palette.fog`
 
@@ -142,7 +142,7 @@ Child layers: a 353x65 border 1px solid #f2f2f2 `palette.fog`
 |---|---|
 | default | size 40.27 x 18; background transparent; text Clarkson 14/18.76 400, #000000 `text-strong` |
 | hover | opacity 0.5 |
-| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px |
+| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px; layers layer added or removed |
 | pressed | opacity 0.5 |
 
 #### Nav CTA
@@ -154,9 +154,9 @@ Child layers: a 353x65 border 1px solid #f2f2f2 `palette.fog`
 | State | Values |
 |---|---|
 | default | size 121.48 x 42.77; padding 12px 24px; radius 12px; background #283849 `surface-inverse`; text Clarkson 14/18.76 400, #ffffff `text-inverse`; transition all 0.15s ease-in |
-| hover | background #3e5772 `palette.ink-hover` |
-| focus-visible | background #3e5772 `palette.ink-hover`; outline 2px auto #000000 `border-strong`, offset 4px |
-| pressed | background #3e5772 `palette.ink-hover` |
+| hover | background #3e5772 `palette.ink-hover`; layers a bg #3e5772 `palette.ink-hover` |
+| focus-visible | background #3e5772 `palette.ink-hover`; outline 2px auto #000000 `border-strong`, offset 4px; layers a bg #3e5772 `palette.ink-hover` |
+| pressed | background #3e5772 `palette.ink-hover`; layers a bg #3e5772 `palette.ink-hover` |
 
 ### Home
 
@@ -204,7 +204,7 @@ Child layers: div 1440x1317.3 image linear-gradient(66deg, #f0ece1 `palette.hero
 |---|---|
 | default | size 220.06 x 56; padding 16px 33px; border 1px solid #283849 `palette.ink`; radius 12px; background transparent; text Clarkson 14/22 400, #283849 `accent` |
 | hover | opacity 0.8 |
-| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px |
+| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px; layers a outline 1px auto #005fcc `palette.focus-blue` offset 1px |
 | pressed | opacity 0.8 |
 
 #### Sign up with Google
@@ -217,7 +217,7 @@ Child layers: div 1440x1317.3 image linear-gradient(66deg, #f0ece1 `palette.hero
 |---|---|
 | default | size 211.98 x 56; padding 16px 25px; border 1px solid #283849 `palette.ink`; radius 12px; background transparent; text Clarkson 14/22 400, #283849 `accent` |
 | hover | opacity 0.8 |
-| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px |
+| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px; layers a outline 1px auto #005fcc `palette.focus-blue` offset 1px |
 | pressed | opacity 0.8 |
 
 #### Signup legal line
@@ -239,7 +239,7 @@ Child layers: div 1440x1317.3 image linear-gradient(66deg, #f0ece1 `palette.hero
 | State | Values |
 |---|---|
 | default (same: hover, pressed) | size 458.89 x 150; padding 10px; radius 16px; background #fdf9f7 `surface-warm`; shadow rgba(0, 0, 0, 0.08) 0px 0px 0.5px 0px, rgba(0, 0, 0, 0.12) 0px 16px 32px 0px; text Clarkson 16/19.44 500, #000000 `text-strong` |
-| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px |
+| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px; layers a outline 1px auto #005fcc `palette.focus-blue` offset 1px |
 
 #### Industries CTA
 
@@ -250,7 +250,7 @@ Child layers: div 1440x1317.3 image linear-gradient(66deg, #f0ece1 `palette.hero
 | State | Values |
 |---|---|
 | default (same: hover, pressed) | size 155.73 x 22; background transparent; text Clarkson 16/22 400, #0e0e0e `text-soft` |
-| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px |
+| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px; layers layer added or removed |
 
 #### Feature card
 
@@ -292,11 +292,11 @@ Child layers: div 1440x1317.3 image linear-gradient(66deg, #f0ece1 `palette.hero
 
 <a id="integration-logo"></a>`integration-logo`, on home. A partner mark in "Connect your calendar and so much more" (Google, Outlook, Stripe…).
 
-<img src="components/crops/integration-logo-default.png" alt="Integration logo, default" height="55"> 
+<img src="components/crops/integration-logo-default.png" alt="Integration logo, default" height="60"> 
 
 | State | Values |
 |---|---|
-| default | size 151.42 x 55; background transparent; text Clarkson 16/22 500, #0e0e0e `text-soft` |
+| default | size 60 x 60; background transparent |
 
 #### Bottom CTA
 
@@ -345,7 +345,7 @@ The white page foot: 'Get Started' link columns in Clarkson 16/18.4 titles and 1
 | State | Values |
 |---|---|
 | default (same: hover, pressed) | size 203.59 x 41.19; background transparent; text Clarkson 12/19.2 600, #0e0e0e `text-soft` |
-| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 0px |
+| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 0px; layers layer added or removed |
 
 #### Footer link
 
@@ -355,8 +355,10 @@ The white page foot: 'Get Started' link columns in Clarkson 16/18.4 titles and 1
 
 | State | Values |
 |---|---|
-| default (same: hover, pressed) | size 203.59 x 37; padding 11px 0px; background transparent; text Clarkson 12/normal 400, #0e0e0e `text-soft` |
-| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px |
+| default | size 203.59 x 37; padding 11px 0px; background transparent; text Clarkson 12/normal 400, #0e0e0e `text-soft` |
+| hover | decoration textDecorationLine underline |
+| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px; layers layer added or removed |
+| pressed | decoration textDecorationLine underline |
 
 #### Social link
 
@@ -367,9 +369,9 @@ The white page foot: 'Get Started' link columns in Clarkson 16/18.4 titles and 1
 | State | Values |
 |---|---|
 | default | size 32 x 32; radius 50%; background transparent; text Clarkson 16/16 400, #0000ee; transition background-color 0.2s ease |
-| hover | background #f0f0f0 `palette.fog-deep` |
-| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px |
-| pressed | background #f0f0f0 `palette.fog-deep`; text Clarkson 16/16 400, #ff0000 |
+| hover | background #f0f0f0 `palette.fog-deep`; layers layer added or removed |
+| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px; layers layer added or removed |
+| pressed | background #f0f0f0 `palette.fog-deep`; text Clarkson 16/16 400, #ff0000; decoration textDecorationColor rgb(255, 0, 0); layers layer added or removed |
 
 #### Legal link
 
@@ -379,8 +381,10 @@ The white page foot: 'Get Started' link columns in Clarkson 16/18.4 titles and 1
 
 | State | Values |
 |---|---|
-| default (same: hover, pressed) | size 40.52 x 15; background transparent; text Clarkson 12/normal 400, #0e0e0e `text-soft` |
-| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px |
+| default | size 40.52 x 15; background transparent; text Clarkson 12/normal 400, #0e0e0e `text-soft` |
+| hover | decoration textDecorationLine underline |
+| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 1px; layers layer added or removed |
+| pressed | decoration textDecorationLine underline |
 
 ### Pricing
 
@@ -437,9 +441,9 @@ Child layers: a 0x0 background #283849 `surface-inverse` radius 12px; a 138.7x46
 | State | Values |
 |---|---|
 | default | size 138.66 x 46; padding 12px 24px; radius 12px; background #283849 `surface-inverse`; text Clarkson 14/22 500, #ffffff `text-inverse`; transition all 0.15s ease |
-| hover | background #1e2d3a `palette.ink-pressed` |
-| focus-visible | background #1e2d3a `palette.ink-pressed`; outline 2px solid #283849 `palette.ink`, offset 2px |
-| pressed | size 124.79 x 41.4; background #1e2d3a `palette.ink-pressed`; transform scale(0.9) |
+| hover | background #1e2d3a `palette.ink-pressed`; layers a bg #1e2d3a `palette.ink-pressed` |
+| focus-visible | background #1e2d3a `palette.ink-pressed`; outline 2px solid #283849 `palette.ink`, offset 2px; layers a bg #1e2d3a `palette.ink-pressed` |
+| pressed | size 124.79 x 41.4; background #1e2d3a `palette.ink-pressed`; transform scale(0.9); layers a bg #1e2d3a `palette.ink-pressed` |
 
 #### Plan feature row
 
@@ -474,7 +478,7 @@ Child layers: button 640x92.6 border 1px solid rgba(255, 255, 255, 0.1) `border-
 | State | Values |
 |---|---|
 | default (same: hover, pressed) | size 640 x 92.59; padding 32px 0px; border B: 1px solid rgba(255, 255, 255, 0.1) `border-on-dark`; background transparent; text Clarkson Serif 24/27.6 500, #ffffff `text-inverse` |
-| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 0px |
+| focus-visible | outline 1px auto #005fcc `palette.focus-blue`, offset 0px; layers button outline 1px auto #005fcc `palette.focus-blue` offset 0px |
 
 Child layers: button 640x92.6 border 1px solid rgba(255, 255, 255, 0.1) `border-on-dark`
 
@@ -522,8 +526,10 @@ Squarespace's shared account surface: /get-started lands on a white 'Create your
 
 | State | Values |
 |---|---|
-| default (same: hover, pressed) | size 452 x 55; padding 0px 22px; border 1px solid #000000 `border-strong`; background transparent; text Clarkson 14/22 500, #000000 `text-strong`; transition transform 0.05s ease |
-| focus-visible | shadow #ffffff 0px 0px 0px 2px, #000000 0px 0px 0px 4px; outline 2px solid transparent, offset 2px |
+| default | size 452 x 55; padding 0px 22px; border 1px solid #000000 `border-strong`; background transparent; text Clarkson 14/22 500, #000000 `text-strong`; transition transform 0.05s ease |
+| hover | ::before opacity 1 |
+| focus-visible | shadow #ffffff 0px 0px 0px 2px, #000000 0px 0px 0px 4px; outline 2px solid transparent, offset 2px; layers button shadow #ffffff `palette.white` 0px 0px 0px 2px, #000000 `border-strong` 0px 0px 0px 4px |
+| pressed | ::before opacity 0.933262 |
 
 #### Continue with Apple
 
@@ -533,8 +539,10 @@ Squarespace's shared account surface: /get-started lands on a white 'Create your
 
 | State | Values |
 |---|---|
-| default (same: hover, pressed) | size 452 x 55; padding 0px 22px; border 1px solid #000000 `border-strong`; background transparent; text Clarkson 14/22 500, #000000 `text-strong`; transition transform 0.05s ease |
-| focus-visible | shadow #ffffff 0px 0px 0px 2px, #000000 0px 0px 0px 4px; outline 2px solid transparent, offset 2px |
+| default | size 452 x 55; padding 0px 22px; border 1px solid #000000 `border-strong`; background transparent; text Clarkson 14/22 500, #000000 `text-strong`; transition transform 0.05s ease |
+| hover | ::before opacity 0.999946 |
+| focus-visible | shadow #ffffff 0px 0px 0px 2px, #000000 0px 0px 0px 4px; outline 2px solid transparent, offset 2px; layers button shadow #ffffff `palette.white` 0px 0px 0px 2px, #000000 `border-strong` 0px 0px 0px 4px |
+| pressed | ::before opacity 0.833286 |
 
 #### Continue with Email
 
@@ -544,8 +552,10 @@ Squarespace's shared account surface: /get-started lands on a white 'Create your
 
 | State | Values |
 |---|---|
-| default (same: hover, pressed) | size 452 x 55; padding 0px 22px; border 1px solid #000000 `border-strong`; background transparent; text Clarkson 14/22 500, #000000 `text-strong`; transition transform 0.05s ease |
-| focus-visible | shadow #ffffff 0px 0px 0px 2px, #000000 0px 0px 0px 4px; outline 2px solid transparent, offset 2px |
+| default | size 452 x 55; padding 0px 22px; border 1px solid #000000 `border-strong`; background transparent; text Clarkson 14/22 500, #000000 `text-strong`; transition transform 0.05s ease |
+| hover | ::before opacity 0.899958 |
+| focus-visible | shadow #ffffff 0px 0px 0px 2px, #000000 0px 0px 0px 4px; outline 2px solid transparent, offset 2px; layers button shadow #ffffff `palette.white` 0px 0px 0px 2px, #000000 `border-strong` 0px 0px 0px 4px |
+| pressed | ::before opacity 0.833302 |
 
 #### More options expander
 
@@ -555,7 +565,10 @@ Squarespace's shared account surface: /get-started lands on a white 'Create your
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 98.59 x 55; background transparent; text Clarkson 12/22 500, #0e0e0e `text-soft`; transition transform 0.05s ease |
+| default | size 98.59 x 55; background transparent; text Clarkson 12/22 500, #0e0e0e `text-soft`; transition transform 0.05s ease |
+| hover | ::before opacity 0.93337 |
+| focus-visible | ::after backgroundColor transparent; boxShadow none; borderTopColor #0e0e0e `palette.ink-0e`; layers div border T:2px solid #0e0e0e `palette.ink-0e` / R:2px solid #0e0e0e `palette.ink-0e` / B:2px solid #0e0e0e `palette.ink-0e` / L:2px solid #0e0e0e `palette.ink-0e`; layer added or removed |
+| pressed | ::before opacity 0.866634 |
 
 Child layers: div 0x2 border 2px solid #0e0e0e `palette.ink-0e`
 
@@ -599,11 +612,11 @@ Child layers: div 0x2 border 2px solid #0e0e0e `palette.ink-0e`
 
 <a id="login-submit"></a>`login-submit`, on login. The LOG IN submit. Measured, never pressed.
 
-<img src="components/crops/login-submit-default.png" alt="Log in button, default" height="44"> <img src="components/crops/login-submit-hover.png" alt="Log in button, hover" height="44"> <img src="components/crops/login-submit-focus-visible.png" alt="Log in button, focus-visible" height="44"> <img src="components/crops/login-submit-pressed.png" alt="Log in button, pressed" height="44"> 
+<img src="components/crops/login-submit-default.png" alt="Log in button, default" height="44"> <img src="components/crops/login-submit-hover.png" alt="Log in button, hover" height="44"> <img src="components/crops/login-submit-pressed.png" alt="Log in button, pressed" height="44"> 
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 326.63 x 44; padding 0px 16px; background #f2f2f2 `palette.fog`; text Clarkson 12/22 500, #b7b7b7 `disabled-text`; transition transform 0.05s ease |
+| default (same: hover, pressed) | size 326.63 x 44; padding 0px 16px; background #f2f2f2 `palette.fog`; text Clarkson 12/22 500, #b7b7b7 `disabled-text`; transition transform 0.05s ease |
 
 #### OAuth Google
 
@@ -613,8 +626,10 @@ Child layers: div 0x2 border 2px solid #0e0e0e `palette.ink-0e`
 
 | State | Values |
 |---|---|
-| default (same: hover, pressed) | size 326.63 x 55; padding 0px 22px; border 1px solid #000000 `border-strong`; background transparent; text Clarkson 14/22 500, #000000 `text-strong`; transition transform 0.05s ease |
-| focus-visible | shadow #ffffff 0px 0px 0px 2px, #000000 0px 0px 0px 4px; outline 2px solid transparent, offset 2px |
+| default | size 326.63 x 55; padding 0px 22px; border 1px solid #000000 `border-strong`; background transparent; text Clarkson 14/22 500, #000000 `text-strong`; transition transform 0.05s ease |
+| hover | ::before opacity 0.900128 |
+| focus-visible | shadow #ffffff 0px 0px 0px 2px, #000000 0px 0px 0px 4px; outline 2px solid transparent, offset 2px; ::before opacity 0.03324; layers button shadow #ffffff `palette.white` 0px 0px 0px 2px, #000000 `border-strong` 0px 0px 0px 4px |
+| pressed | ::before opacity 0.80014 |
 
 #### OAuth Apple
 
@@ -624,8 +639,10 @@ Child layers: div 0x2 border 2px solid #0e0e0e `palette.ink-0e`
 
 | State | Values |
 |---|---|
-| default (same: hover, pressed) | size 326.63 x 55; padding 0px 22px; border 1px solid #000000 `border-strong`; background transparent; text Clarkson 14/22 500, #000000 `text-strong`; transition transform 0.05s ease |
-| focus-visible | shadow #ffffff 0px 0px 0px 2px, #000000 0px 0px 0px 4px; outline 2px solid transparent, offset 2px |
+| default | size 326.63 x 55; padding 0px 22px; border 1px solid #000000 `border-strong`; background transparent; text Clarkson 14/22 500, #000000 `text-strong`; transition transform 0.05s ease |
+| hover | ::before opacity 0.900068 |
+| focus-visible | shadow #ffffff 0px 0px 0px 2px, #000000 0px 0px 0px 4px; outline 2px solid transparent, offset 2px; ::before opacity 0.03324; layers button shadow #ffffff `palette.white` 0px 0px 0px 2px, #000000 `border-strong` 0px 0px 0px 4px |
+| pressed | ::before opacity 0.80014 |
 
 #### OAuth Facebook
 
@@ -635,8 +652,10 @@ Child layers: div 0x2 border 2px solid #0e0e0e `palette.ink-0e`
 
 | State | Values |
 |---|---|
-| default (same: hover, pressed) | size 326.63 x 55; padding 0px 22px; border 1px solid #000000 `border-strong`; background transparent; text Clarkson 14/22 500, #000000 `text-strong`; transition transform 0.05s ease |
-| focus-visible | shadow #ffffff 0px 0px 0px 2px, #000000 0px 0px 0px 4px; outline 2px solid transparent, offset 2px |
+| default | size 326.63 x 55; padding 0px 22px; border 1px solid #000000 `border-strong`; background transparent; text Clarkson 14/22 500, #000000 `text-strong`; transition transform 0.05s ease |
+| hover | ::before opacity 0.90008 |
+| focus-visible | shadow #ffffff 0px 0px 0px 2px, #000000 0px 0px 0px 4px; outline 2px solid transparent, offset 2px; ::before opacity 0.033224; layers button shadow #ffffff `palette.white` 0px 0px 0px 2px, #000000 `border-strong` 0px 0px 0px 4px |
+| pressed | ::before opacity 0.800156 |
 
 #### Can't log in link
 
@@ -646,7 +665,10 @@ Child layers: div 0x2 border 2px solid #0e0e0e `palette.ink-0e`
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 93.05 x 36; background transparent; text Clarkson 12/22 500, #0e0e0e `text-soft`; transition transform 0.05s ease |
+| default | size 93.05 x 36; background transparent; text Clarkson 12/22 500, #0e0e0e `text-soft`; transition transform 0.05s ease |
+| hover | ::before opacity 0.999928 |
+| focus-visible | ::after backgroundColor transparent; boxShadow none; borderTopColor #0e0e0e `palette.ink-0e`; layers div border T:2px solid #0e0e0e `palette.ink-0e` / R:2px solid #0e0e0e `palette.ink-0e` / B:2px solid #0e0e0e `palette.ink-0e` / L:2px solid #0e0e0e `palette.ink-0e`; layer added or removed |
+| pressed | ::before opacity 1 |
 
 Child layers: div 0x2 border 2px solid #0e0e0e `palette.ink-0e`
 
@@ -658,7 +680,10 @@ Child layers: div 0x2 border 2px solid #0e0e0e `palette.ink-0e`
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 116.27 x 36; background transparent; text Clarkson 12/22 500, #0e0e0e `text-soft`; transition transform 0.05s ease |
+| default | size 116.27 x 36; background transparent; text Clarkson 12/22 500, #0e0e0e `text-soft`; transition transform 0.05s ease |
+| hover | ::before opacity 1 |
+| focus-visible | ::after backgroundColor transparent; boxShadow none; borderTopColor #0e0e0e `palette.ink-0e`; layers div border T:2px solid #0e0e0e `palette.ink-0e` / R:2px solid #0e0e0e `palette.ink-0e` / B:2px solid #0e0e0e `palette.ink-0e` / L:2px solid #0e0e0e `palette.ink-0e`; layer added or removed |
+| pressed | ::before opacity 0.833436 |
 
 Child layers: div 0x2 border 2px solid #0e0e0e `palette.ink-0e`
 
@@ -685,7 +710,7 @@ The same site at 390: the bar collapses to wordmark plus hamburger, which opens 
 | State | Values |
 |---|---|
 | default (same: hover, pressed) | size 25 x 16; background transparent; text Clarkson 16/16 400, #222222 `text` |
-| focus-visible | outline 1px auto #e59700 `palette.focus-amber`, offset 0px |
+| focus-visible | outline 1px auto #e59700 `palette.focus-amber`, offset 0px; layers layer added or removed |
 
 #### Mobile menu
 
@@ -706,7 +731,7 @@ The same site at 390: the bar collapses to wordmark plus hamburger, which opens 
 | State | Values |
 |---|---|
 | default (same: hover, pressed) | size 350 x 37.52; background transparent; text Clarkson 28/37.52 400, #2d2d2d `palette.ink-2d` |
-| focus-visible | outline 1px auto #e59700 `palette.focus-amber`, offset 1px |
+| focus-visible | outline 1px auto #e59700 `palette.focus-amber`, offset 1px; layers layer added or removed |
 
 #### Mobile hero
 
