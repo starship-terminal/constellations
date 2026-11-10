@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 61,
-    "system_domains": 53,
-    "matched_domains": 30,
-    "missing_domains": 403,
+    "system_packages": 62,
+    "system_domains": 54,
+    "matched_domains": 31,
+    "missing_domains": 402,
     "system_domains_absent_from_catalog": 23
   },
   "matched": {
@@ -159,6 +159,23 @@
           "slug": "airbnb",
           "name": "Airbnb",
           "url": "https://www.airbnb.com",
+          "name_match": true
+        }
+      ]
+    },
+    "airtable.com": {
+      "catalog": [
+        {
+          "name": "Airtable",
+          "domain": "airtable.com",
+          "id": 164
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "airtable",
+          "name": "Airtable",
+          "url": "https://www.airtable.com",
           "name_match": true
         }
       ]
@@ -589,13 +606,6 @@
         "name": "Aesop",
         "domain": "aesop.com",
         "id": 621
-      }
-    ],
-    "airtable.com": [
-      {
-        "name": "Airtable",
-        "domain": "airtable.com",
-        "id": 164
       }
     ],
     "aloyoga.com": [

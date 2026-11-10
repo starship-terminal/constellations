@@ -19,6 +19,63 @@
   },
   "systems": [
     {
+      "slug": "airtable",
+      "name": "Airtable",
+      "url": "https://www.airtable.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "SaaS marketing: Haas grotesque on white, a 13-hue brand accent system painting 32px-radius pastel tiles, dark ink pill CTAs, a slide-in nav drawer, a plan grid and a lead form",
+      "tags": [
+        "web",
+        "marketing",
+        "saas",
+        "productivity",
+        "pastel",
+        "rounded",
+        "multi-accent"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-10",
+      "access": "signed out (every captured surface is public); the contact-sales form measured and focused but never submitted; the Qualified chat widget and Google One Tap swept out of every shot",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/airtable/README.md",
+      "tokens": "systems/airtable/tokens.json",
+      "styleGuide": "systems/airtable/style-guide.html",
+      "preview": {
+        "cover": "systems/airtable/screenshots/home-light-default.png",
+        "icon": "systems/airtable/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.haas"
+        ]
+      },
+      "capture": {
+        "harness": "Devin",
+        "model": "Devin",
+        "route": "public-web",
+        "version": "www.airtable.com, 2026-11-10/12; release not exposed",
+        "durationMin": null,
+        "durationNote": "Split across two sittings: the first pass on 2026-11-10, then a repair and rebuild pass (broken selectors re-measured, widgets re-swept, shots re-taken) on 2026-11-12; active time was not clocked.",
+        "pr": "https://github.com/c-wenlong/designs/pull/454",
+        "gaps": "app.airtable.com (the signed-in product: workspace, bases, interfaces, automations) deliberately uncaptured, as are signup, login and Book Demo flows and the checkout; the contact-sales form was never submitted; whatsnew's release gallery was measured inside Airtable's own embed iframe; the templates filter rail and marketplace tab rail not componentised; no checkbox/radio/switch/tooltip/dialog/toast/avatar/badge exists on the public surface"
+      }
+    },
+    {
       "slug": "duolingo",
       "name": "Duolingo",
       "url": "https://www.duolingo.com",
