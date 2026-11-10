@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 49,
-    "system_domains": 41,
-    "matched_domains": 18,
-    "missing_domains": 415,
+    "system_packages": 50,
+    "system_domains": 42,
+    "matched_domains": 19,
+    "missing_domains": 414,
     "system_domains_absent_from_catalog": 23
   },
   "matched": {
@@ -23,6 +23,23 @@
           "slug": "1password",
           "name": "1Password",
           "url": "https://1password.com",
+          "name_match": true
+        }
+      ]
+    },
+    "ableton.com": {
+      "catalog": [
+        {
+          "name": "Ableton",
+          "domain": "ableton.com",
+          "id": 59
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "ableton",
+          "name": "Ableton",
+          "url": "https://www.ableton.com",
           "name_match": true
         }
       ]
@@ -378,13 +395,6 @@
         "name": "Aaply",
         "domain": "aaply.app",
         "id": 278
-      }
-    ],
-    "ableton.com": [
-      {
-        "name": "Ableton",
-        "domain": "ableton.com",
-        "id": 59
       }
     ],
     "aboard.com": [

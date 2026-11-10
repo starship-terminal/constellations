@@ -252,6 +252,7 @@ what is open, with the evidence.
 | <img src="systems/supabase/icon.png" width="20" alt="supabase"> | [supabase](systems/supabase/README.md) | Developer dashboards, code editors, member tables, settings, log filters, invitations and responsive navigation; database editing gaps documented | 2026-10-31 | dark, light | 5 of 25 met, 18 partly, 2 missing | `icons/` |
 | <img src="systems/1password/icon.png" width="20" alt="1password"> | [1password](systems/1password/README.md) | Password/security product marketing: announcement strip + white nav chrome, navy gradient hero, segment-selector plan pill, pricing columns, FAQ accordions | 2026-11-08 | light | not graded yet | `icons/` |
 | <img src="systems/ableton/icon.png" width="20" alt="ableton"> | [ableton](systems/ableton/README.md) | Music software marketing: restrained black Futura on white, one signature #0000ff blue, zero border radius, full-bleed teaser cells, a black consent card and resting login/register forms | 2026-11-08 | light | not graded yet | none |
+| <img src="systems/allbirds/icon.png" width="20" alt="allbirds"> | [allbirds](systems/allbirds/README.md) | Sustainable-footwear retail: storefront chrome, collection grid with filter sheet, product page with size grid, cart drawer | 2026-11-08 | light | not graded yet | `icons/` |
 
 <!-- catalog:end -->
 
