@@ -2,6 +2,25 @@
 
 What is not finished in this library. Newest first.
 
+## 2026-11-11
+
+- [ ] **Batch-1 scorecard flags** — follow-ups the rubric reviews (#463) surfaced,
+  graded honestly rather than softened. Package fixes: untokenised measured values
+  (airbnb status roles + control heights; aaply `#2015ff` focus ring + `Times 16`
+  fallback readings leaking into the spec; appwrite components.md has zero token
+  annotation → C4 missing; spacing/type scales measured-but-not-tokenised on
+  amie, apollographql, appwrite, untitled-stream, acuityscheduling); internal
+  contradictions (1password accent is unresolved Knox `#0364d3` while every CTA
+  paints `#145fe4`; acnestudios README cites a missing `icons/` dir and a font
+  name tokens disagree with; anam README cites `core.size`/`core.layout` keys
+  that don't exist; apollographql components.md lacks the checklist-coverage
+  table). Missing `icons/` dirs on amie, appwrite, untitled-stream. Kit fixes:
+  capture never probes `prefers-reduced-motion` (F13 capped at partly ×20) and
+  never records z-index layers (F14 capped at partly ×20).
+- [ ] **Capture batches 2–21** — 398 apps remain in
+  [webapps-manifest.json](../webapps-manifest.json); procedure is
+  [HANDOVER.md](HANDOVER.md).
+
 ## 2026-10-24
 
 - [ ] **Hevy package gaps** (`systems/hevy`), each claim checked against the package on
