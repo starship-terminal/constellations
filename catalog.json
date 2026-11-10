@@ -3426,6 +3426,62 @@
         "durationMin": null,
         "gaps": "Signed-in account area, checkout, downloads and post-consent UI deliberately uncaptured (no form submitted, no purchase or download started); media players measured at rest only; learning microsites (learn., learningsynths., makingmusic.ableton.com) are separate front ends not covered"
       }
+    },
+    {
+      "slug": "aboard",
+      "name": "Aboard",
+      "url": "https://aboard.com",
+      "category": "ai-agent",
+      "platform": "web",
+      "goodFor": "AI consultancy marketing: warm editorial Tobias serif on a cream ground, Work Sans UI, pill-everything controls, one loud bright-citrus accent, frosted floating nav, dark content bands inside a single light theme",
+      "tags": [
+        "web",
+        "marketing",
+        "editorial",
+        "serif",
+        "warm",
+        "single-accent",
+        "pill"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-09",
+      "access": "signed out (every captured surface is public); newsletter signup measured at rest and focus only, never submitted; the CookieYes consent strip never rendered headless",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/aboard/README.md",
+      "tokens": "systems/aboard/tokens.json",
+      "styleGuide": "systems/aboard/style-guide.html",
+      "preview": {
+        "cover": "systems/aboard/screenshots/home-light-default.png",
+        "icon": "systems/aboard/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted-warm",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.tobias",
+          "core.font.family.work-sans"
+        ]
+      },
+      "capture": {
+        "harness": "Devin",
+        "model": "Devin",
+        "route": "public-web",
+        "version": "aboard.com, 2026-11-09; WordPress theme, release not exposed",
+        "durationMin": null,
+        "gaps": "The CookieYes consent strip never rendered in headless Chromium (four cookie-* components record missing and the banner screenshot shows no strip). No account area exists to capture: the site is the whole public surface. The newsletter form was never submitted and consent never answered; podcast players measured at rest only; the hero dashboard is a marketing animation, not a live product."
+      }
     }
   ]
 }
