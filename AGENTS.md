@@ -133,6 +133,7 @@ Makefile                `make help` lists targets; `make dev` is the way in
 | [docs/EVIDENCE.md](docs/EVIDENCE.md) | You are about to copy a value and need to know how far to trust it |
 | [docs/CAPTURE.md](docs/CAPTURE.md) | You are adding or refreshing a product; start from [tools/kit/](tools/kit) |
 | [docs/FIELD-NOTES.md](docs/FIELD-NOTES.md) | A capture is going wrong — the table of what has already gone wrong and the fix that worked |
+| [docs/HANDOVER.md](docs/HANDOVER.md) | You are picking up the capture program (manifest batches, worktree pattern, review loop, merge train, cleanup) |
 | [docs/RIGHTS.md](docs/RIGHTS.md) | Anything might leave this repo |
 | [docs/TODO.md](docs/TODO.md) | You are picking up open work; the list is newest first |
 | [refero/README.md](refero/README.md) | You are working with the refero snapshot: its layout, provenance, refresh and media mirror |
@@ -206,6 +207,17 @@ illustrations or brand colours into something that ships
   Delete a dead run's scratch dir (`~/.design-systems/<slug>/`) before
   retrying. [docs/FIELD-NOTES.md](docs/FIELD-NOTES.md) lists the other
   ways captures have gone wrong.
+- **Review every new package against the rubric before calling it done.**
+  After `make check` is green, grade the package against
+  `scorecard/criteria.json`: `python3 tools/grade.py --write --review
+  <slug>=<grades.json> --method "<how you reviewed>"`. Any criterion that
+  cannot grade `yes` needs a written justification in the grades file —
+  not a silent gap. This is how delegated captures get audited, so a
+  package is not done until its grades are written.
+- **Clean up after every capture.** Once a package's PR merges: `git
+  worktree remove` its working tree, delete its scratch dir under
+  `~/.design-systems/`, and delete the merged branch. Worktrees and
+  scratch are disposable; only the merged package is evidence.
 - **New packages follow the layout** in
   [docs/PACKAGE.md](docs/PACKAGE.md#layout), with the README in its outline,
   and label every value ([docs/EVIDENCE.md](docs/EVIDENCE.md)). Add each one
