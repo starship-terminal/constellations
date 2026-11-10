@@ -88,7 +88,7 @@ Crops: `nav-flyout-button-default.png`, `nav-flyout-button-hover.png`, `nav-flyo
 
 #### nav-flyout-open
 
-Features flyout, open. The button after its own toggle; the panel shows in the crop.
+Features flyout, open. The Features button after its own toggle; the crop is the opened panel.
 
 Page: home. Selector: `button:has-text("Features")`. States: opened.
 
@@ -868,6 +868,6 @@ Crops: `m-cta-default.png`, `m-cta-hover.png`, `m-cta-focus-visible.png`, `m-cta
 
 ## Transitions declared in the readable stylesheets
 
-appwrite.io's bundle is served cross-origin from cdn.appwrite.io, so this list holds only what the CSSOM could read on each page (inline styles and same-origin sheets); the per-state Transition rows above are computed values and cover the bundle's rules.
+This list holds only what the CSSOM could read on each page (inline styles and same-origin sheets; cross-origin bundles are unreadable); the per-state Transition rows above are computed values and cover the rest.
 
 - home: `none`

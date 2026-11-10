@@ -19,7 +19,7 @@
 // Bins (Tailwind v4 + shadcn naming):
 //   theme     the Tailwind v4 theme layer: --color-*, --font-*, --text-*,
 //             --spacing, --radius-*, --shadow-*, --ease-*, --animate-* ...
-//   app       the semantic layer appwrite declares on :root/.dark/html:
+//   app       the semantic layer amie declares on :root/.dark/html:
 //             --background/--foreground/--card/--primary/.../ --border, --ring,
 //             --chart-*, --sidebar-*, --code-*, --selection-*, --brand-*,
 //             --tone*, --editor-*, --network-globe-*

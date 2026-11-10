@@ -839,7 +839,7 @@
    "url": "https://amie.so/",
    "title": "Features flyout, open",
    "group": "Shell and navigation",
-   "desc": "The button after its own toggle; the panel shows in the crop.",
+   "desc": "The Features button after its own toggle; the crop is the opened panel.",
    "selector": "button:has-text(\"Features\")"
   },
   "nav-link": {
@@ -5614,7 +5614,7 @@
      "text": "Blog Our Story Calendar Changelog Tools Templates Alternatives Best Apps MCP Ser",
      "rect": {
       "x": 0,
-      "y": 322.5,
+      "y": 323.4,
       "w": 1440,
       "h": 577
      },
@@ -5733,7 +5733,7 @@
      "text": "Blog",
      "rect": {
       "x": 232,
-      "y": 439.5,
+      "y": 440.4,
       "w": 154.2,
       "h": 20
      },
@@ -5816,7 +5816,7 @@
      "text": "Blog",
      "rect": {
       "x": 232,
-      "y": 439.5,
+      "y": 440.4,
       "w": 154.2,
       "h": 20
      },
@@ -5899,7 +5899,7 @@
      "text": "Blog",
      "rect": {
       "x": 232,
-      "y": 439.5,
+      "y": 440.4,
       "w": 154.2,
       "h": 20
      },
@@ -5989,7 +5989,7 @@
      "text": "Blog",
      "rect": {
       "x": 232,
-      "y": 439.5,
+      "y": 440.4,
       "w": 154.2,
       "h": 20
      },
@@ -6082,7 +6082,7 @@
      "text": "LinkedIn",
      "rect": {
       "x": 1141,
-      "y": 439.5,
+      "y": 440.4,
       "w": 66.94,
       "h": 20
      },
@@ -6165,7 +6165,7 @@
      "text": "LinkedIn",
      "rect": {
       "x": 1141,
-      "y": 439.5,
+      "y": 440.4,
       "w": 66.94,
       "h": 20
      },
@@ -6248,7 +6248,7 @@
      "text": "LinkedIn",
      "rect": {
       "x": 1141,
-      "y": 439.5,
+      "y": 440.4,
       "w": 66.94,
       "h": 20
      },
@@ -6338,7 +6338,7 @@
      "text": "LinkedIn",
      "rect": {
       "x": 1141,
-      "y": 439.5,
+      "y": 440.4,
       "w": 66.94,
       "h": 20
      },
@@ -6431,7 +6431,7 @@
      "text": "Privacy Policy",
      "rect": {
       "x": 770.4,
-      "y": 831.5,
+      "y": 832.4,
       "w": 109.78,
       "h": 28
      },
@@ -6514,7 +6514,7 @@
      "text": "Privacy Policy",
      "rect": {
       "x": 770.4,
-      "y": 831.5,
+      "y": 832.4,
       "w": 109.78,
       "h": 28
      },
@@ -6597,7 +6597,7 @@
      "text": "Privacy Policy",
      "rect": {
       "x": 770.4,
-      "y": 831.5,
+      "y": 832.4,
       "w": 109.78,
       "h": 28
      },
@@ -6687,7 +6687,7 @@
      "text": "Privacy Policy",
      "rect": {
       "x": 770.4,
-      "y": 831.5,
+      "y": 832.4,
       "w": 109.78,
       "h": 28
      },

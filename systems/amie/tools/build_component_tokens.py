@@ -107,7 +107,13 @@ meas = SPEC["core"].setdefault("measured", {})
 
 
 def st(comp, state):
-    return C[comp]["states"][state]["style"]
+    c = C[comp]
+    # A component that was not found on the last run carries missing (no
+    # states) or recaptureMissed (earlier states kept under their own
+    # provenance): neither is a current reading, so refuse it as a source.
+    if c.get("missing") or c.get("recaptureMissed"):
+        raise KeyError(comp)
+    return c["states"][state]["style"]
 
 
 def norm_color(v):
@@ -146,6 +152,7 @@ for key, cname, state, prop, desc in [
     ("control.height", "cta-primary", "default", "height", "Hero CTAs are ~50px rounded-xl."),
     ("control.heightSmall", "nav-link", "default", "height", "Nav controls are 32px."),
     ("control.fieldHeight", "contact-field", "default", "height", "The contact field height."),
+    ("control.heightPlan", "plan-cta", "default", "height", "The black trial CTA height."),
     ("control.radius", "cta-primary", "default", "borderTopLeftRadius", "The hero CTA corner."),
     ("control.radiusSmall", "nav-cta", "default", "borderTopLeftRadius", "The nav CTA corner."),
     ("header.height", "header", "default", "height", "The floating header height at 1440px."),

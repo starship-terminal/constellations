@@ -3992,7 +3992,8 @@
      ".dark barely declared (--foreground + two shadows); no dark set emitted"
     ],
     "durationMin": null,
-    "durationNote": "wall-clock duration was not recorded for this capture"
+    "durationNote": "wall-clock duration was not recorded for this capture",
+    "pr": "https://github.com/c-wenlong/designs/pull/459"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the site's icons (logo dot, flyout glyphs, socials) are visible in the crops and screenshots"

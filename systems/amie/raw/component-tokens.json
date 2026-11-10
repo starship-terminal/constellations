@@ -889,6 +889,12 @@
     "source": "computed height of contact-field default (raw/components-computed.json)",
     "description": "The contact field height."
    },
+   "heightPlan": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed height of plan-cta default (raw/components-computed.json)",
+    "description": "The black trial CTA height."
+   },
    "radius": {
     "type": "dimension",
     "value": "12px",

@@ -35,15 +35,32 @@ class Shooter {
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
-    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
     // Infinite-scroll pages grow scrollHeight without bound after lazyScroll;
     // without a ceiling the tile loop writes forever. Truncate hard and record
     // the boundary instead.
     const MAXH = 8 * chunk;
     const hCap = Math.min(H, MAXH);
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
-    if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+    // Stage every tile under a .new name and swap it in only after the whole
+    // shot succeeds, so a failed tile never truncates the previous capture.
+    const staged = [];
+    try {
+      if (hCap <= chunk) {
+        await screenshotWithMetadata(p, { path: f + '.new.png', fullPage: true }, this.requested);
+        staged.push([f + '.new.png', f + '.png']);
+      } else {
+        for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
+          const tmp = `${f}.part${i}.new.png`;
+          await screenshotWithMetadata(p, { path: tmp, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+          staged.push([tmp, `${f}.part${i}.png`]);
+        }
+      }
+    } catch (e) {
+      for (const [tmp] of staged) fs.existsSync(tmp) && fs.unlinkSync(tmp);
+      throw e;
+    }
+    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`) || n === `${this.prefix}-${name}.png`)) fs.unlinkSync(`${RAW}/${old}`);
+    for (const [tmp, final] of staged) fs.renameSync(tmp, final);
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
   }

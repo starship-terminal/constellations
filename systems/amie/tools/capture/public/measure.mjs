@@ -118,13 +118,24 @@ async function measure(key, state, target, opts = {}) {
 }
 
 async function S(key, target, list, meta = {}, opts = {}) {
+  const prev = out.components[key];
+  const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   if (!listed.has(key)) listed.set(key, new Set());
   for (const st of list) listed.get(key).add(st);
   delete out.components[key].missing;
   if (opts.open) { await reset(); try { await opts.open(); } catch (e) { log('  ! open failed', key, String(e.message).slice(0, 80)); } }
   const loc = target.filter({ visible: true }).first();
-  if (!(await loc.count())) { log('  ! missing', key); out.components[key].missing = true; return; }
+  if (!(await loc.count())) {
+    const has = Object.keys(out.components[key].states || {}).length > 0;
+    log('  ! missing', key, has ? '(earlier states kept)' : '');
+    // Keep earlier evidence under its own provenance: the states stay but the
+    // entry keeps its original page/run/url and records the miss, so a re-run
+    // never republishes old readings under a new date.
+    if (!has) out.components[key].missing = true;
+    else { Object.assign(out.components[key], keep); out.components[key].recaptureMissed = run; }
+    return;
+  }
   for (const st of list) {
     let undo, via;
     try {
@@ -212,7 +223,12 @@ async function home() {
   await S('logo', q('header a, nav a').first(), ['default'], { group: g, title: 'Logo', sel: 'header a' }, { noScroll: true });
   const features = q('button').filter({ hasText: /^Features$/ }).first();
   await S('nav-flyout-button', features, B4, { group: g, title: 'Nav flyout button', desc: 'A Radix dropdown trigger; opens the Features panel.', sel: 'button:has-text("Features")' }, { noScroll: true });
-  await S('nav-flyout-open', features, ['opened'], { group: g, title: 'Features flyout, open', desc: 'The button after its own toggle; the panel shows in the crop.', sel: 'button:has-text("Features")' }, { noScroll: true });
+  // The opened Radix panel mounts under the header's navigation-menu viewport;
+  // crop that container so the crop actually holds the panel, not just the button.
+  // The opened Radix panel mounts a navigation-menu viewport (it is not a
+  // descendant of <header>, so no header qualifier on the selector).
+  const flyoutPanel = q('[class*="navigation-menu-viewport" i], [data-radix-navigation-menu-viewport]').filter({ visible: true }).first();
+  await S('nav-flyout-open', features, ['opened'], { group: g, title: 'Features flyout, open', desc: 'The Features button after its own toggle; the crop is the opened panel.', sel: 'button:has-text("Features")' }, { noScroll: true, cropLoc: flyoutPanel });
   await page.keyboard.press('Escape'); await page.waitForTimeout(500);
   await S('nav-link', q('header a, nav a').filter({ hasText: /^Pricing$/ }), B4, { group: g, title: 'Nav link', sel: 'a:has-text("Pricing")' }, { noScroll: true });
   await S('nav-login', q('header a, nav a').filter({ hasText: /^Login$/ }), B4, { group: g, title: 'Login link', desc: 'The secondary nav link. Measured, never followed.', sel: 'a:has-text("Login")' }, { noScroll: true });
@@ -269,7 +285,10 @@ async function contact() {
 }
 
 async function footer() {
-  current = 'home';
+  // The footer is measured on the home page, so home must be the document that
+  // is actually open — assigning `current` alone would keep the contact page
+  // and mislabel a contact-footer reading as home's.
+  if (!(await newPage('home'))) return;
   const g = G.footer;
   const fl = q('footer a').filter({ hasText: /\w{3,}/ }).first();
   if (await fl.count()) {

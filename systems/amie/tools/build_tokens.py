@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """Build tokens.json (W3C DTCG, Tokens Studio multi-set layout) from the raw captures.
 
-Sources, read from appwrite.io on 2026-11-10:
-  raw/css-vars.json          every custom property the SvelteKit + Tailwind v4 bundle declares,
-                             read from the cdn.appwrite.io stylesheet body (tools/capture/vars.mjs),
-                             plus `resolved.light` and `resolved.dark`: each name as the browser
+Sources, read from amie.so on 2026-11-10:
+  raw/css-vars.json          every custom property the Tailwind + Radix bundle declares,
+                             read from the live stylesheets (tools/capture/vars.mjs), plus
+                             `resolved.light` and `resolved.dark`: each name as the browser
                              resolves it on a probe html element without and with the .dark class
   raw/component-tokens.json  the token tree (tools/build_component_tokens.py): each leaf either
                              names a variable ("var") resolved per theme, or carries a measured
                              value and the measurement it came from ("source")
 Every token carries $extensions.source: "css-var <name>" or "measured <where>".
 
-appwrite.io's marketing pages pin html.dark on every captured route: the dark set is the painted
-one, and the light set holds the :root declarations the console app uses.
+amie.so paints one light theme on every captured route: the dark set is not emitted because
+.dark re-declares only --foreground and the two --shadow-wysiwyg-* values and nothing applies it.
 
 Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
 """

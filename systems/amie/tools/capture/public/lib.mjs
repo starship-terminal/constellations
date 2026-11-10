@@ -1,4 +1,4 @@
-// Shared helpers for the appwrite.io public captures (adapted from the kit's
+// Shared helpers for the amie.so public captures (adapted from the kit's
 // Gauth copy, which came from Coursera). Run with PLAYWRIGHT pointing at a
 // Playwright install (index.mjs) when this directory has no node_modules.
 import fs from 'node:fs';
@@ -29,7 +29,7 @@ export const RAW = path.join(REF, 'raw');
 export const M = (name) => name;
 
 // The per-context patches every page gets: the webdriver mask, plus a record of
-// the real devicePixelRatio before app code runs — appwrite.io's scripts make
+// the real devicePixelRatio before app code runs — amie.so's scripts make
 // window.devicePixelRatio read 1 while the renderer still paints at the
 // context's deviceScaleFactor (a 780x1688 PNG from a 390x844 viewport).
 // __captureDPR keeps the launch-time value for the screenshot sidecar.
@@ -50,7 +50,7 @@ export async function launch({ width = 1440, height = 900, mobile = false } = {}
 }
 
 // Waits out any bot interstitial and reports whether the real document
-// arrived. appwrite.io does not challenge this client.
+// arrived. amie.so does not challenge this client.
 export async function clearChallenge(page, { tries = 12, step = 2000 } = {}) {
   for (let i = 0; i < tries; i++) {
     const s = await page.evaluate(() => ({

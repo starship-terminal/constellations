@@ -259,7 +259,7 @@ W("# Amie components")
 W()
 W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from amie.so on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.")
 W()
-W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [raw/pages.md](raw/pages.md).")
+W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states).")
 W()
 W("How to read an entry:")
 W()
@@ -294,17 +294,37 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
-foc = []
+TRANSPARENT = re.compile(r"rgba\(\d+, \d+, \d+, 0\)$")
+foc, failed = [], []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
     if not st or "style" not in st:
         continue
+    if "failed" in str(st.get("via", "")):
+        failed.append(k)
+        continue
     s = st["style"]
-    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
-    foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
+    base = (c["states"].get("default") or {}).get("style") or {}
+    # A focus only counts as visible when something a user can see changed:
+    # a non-transparent outline, or a shadow/border/colour repaint. A 2px
+    # transparent outline (the Tailwind focus-visible reset) is not a ring.
+    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0 and not TRANSPARENT.match(s["outlineColor"] or "")
+    if ring:
+        foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}"))
+    elif any(s.get(f) != base.get(f) for f in ("boxShadow", "borderTopColor", "backgroundColor", "color")):
+        changed = [f for f in ("boxShadow", "borderTopColor", "backgroundColor", "color") if s.get(f) != base.get(f)]
+        foc.append((k, "visible change in " + "/".join(changed)))
+    else:
+        foc.append((k, None))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}.")
+line = f"**Focus.** {len(foc)} components were given a real keyboard focus"
+if failed:
+    line += f" (a further {len(failed)} could not be driven: {', '.join('`'+x+'`' for x in failed)})"
+line += f". {len(with_ring)} show a visible focus state: {', '.join(with_ring)}." if with_ring else ". None shows a visible focus state."
+if without:
+    line += f" The other {len(without)} show no change a keyboard user can see: {', '.join(without)}."
+W(line)
 W()
 W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): controls deepen their fill or dim rather than scale; the nav flyout and framework icons keep their hover scale. Nothing a real press would submit was ever pressed.")
 W()

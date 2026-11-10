@@ -2,7 +2,7 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from amie.so on 2026-11-10, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (35 components, 87 states). The page layouts are described in [raw/pages.md](raw/pages.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (35 components, 87 states).
 
 How to read an entry:
 
@@ -41,7 +41,7 @@ Screenshots are named `{page}-light-{state}.png`: the site paints one light them
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 18 components were given a real keyboard focus. 10 draw a ring: `nav-link` (2px solid transparent, offset 2px), `nav-login` (2px solid transparent, offset 2px), `nav-cta` (1px auto #005fcc `measured.focus-outline`, offset 1px), `changelog-pill` (1px auto #005fcc `measured.focus-outline`, offset 1px), `cta-primary` (1px auto #005fcc `measured.focus-outline`, offset 1px), `contact-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-social` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-legal` (1px auto #005fcc `measured.focus-outline`, offset 1px), `m-cta` (1px auto #e59700, offset 1px). The other 8 draw none, so a keyboard user sees no change: `nav-flyout-button`, `cta-secondary`, `billing-monthly`, `billing-yearly`, `plan-select`, `download-button`, `plan-cta`, `faq-question`.
+**Focus.** 18 components were given a real keyboard focus. 9 show a visible focus state: `nav-cta` (1px auto #005fcc `measured.focus-outline`, offset 1px), `changelog-pill` (1px auto #005fcc `measured.focus-outline`, offset 1px), `cta-primary` (1px auto #005fcc `measured.focus-outline`, offset 1px), `download-button` (visible change in boxShadow), `contact-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-social` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-legal` (1px auto #005fcc `measured.focus-outline`, offset 1px), `m-cta` (1px auto #e59700, offset 1px). The other 9 show no change a keyboard user can see: `nav-flyout-button`, `nav-link`, `nav-login`, `cta-secondary`, `billing-monthly`, `billing-yearly`, `plan-select`, `plan-cta`, `faq-question`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): controls deepen their fill or dim rather than scale; the nav flyout and framework icons keep their hover scale. Nothing a real press would submit was ever pressed.
 
@@ -96,7 +96,7 @@ Child layers that carry the look: button 78.2x32 radius 8px.
 ![Nav flyout button default](components/crops/nav-flyout-button-default.png) ![Nav flyout button hover](components/crops/nav-flyout-button-hover.png) ![Nav flyout button focus-visible](components/crops/nav-flyout-button-focus-visible.png) ![Nav flyout button pressed](components/crops/nav-flyout-button-pressed.png)
 
 #### Features flyout, open
-The button after its own toggle; the panel shows in the crop. Read as `nav-flyout-open` on the home page.
+The Features button after its own toggle; the crop is the opened panel. Read as `nav-flyout-open` on the home page.
 
 **Values (opened).** size 78.16 x 32; padding 6px 10px; radius 8px; background rgba(0, 0, 0, 0.05); text Inter 14/14 500, #000000 `color.black`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1).
 
