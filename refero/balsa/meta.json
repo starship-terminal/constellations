@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/ebbfbc6a-988b-4f33-b261-d431b2327545",
   "source_url": "https://www.balsa.com",
   "extracted_at": "2026-06-03T21:37:57.959Z",
-  "fetched_at": "2026-10-20T08:23:30Z",
+  "fetched_at": "2026-11-08T04:19:48Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/8607bbea-2ed3-4f8c-9d16-75361cba2097.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

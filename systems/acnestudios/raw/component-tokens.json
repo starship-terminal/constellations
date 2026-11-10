@@ -1,0 +1,128 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. Acne Studios' storefront CSS declares almost no design custom properties (raw/css-vars.json found two app vars: --safe-area-inset-bottom), so every leaf is a \"value\" leaf carrying a measured value and naming the measurement it came from in \"source\" (a component + state in raw/components-computed.json, a rule in raw/css-vars.json, or a capture artifact). Values inside \"{…}\" are unprefixed aliases into the core set. One theme only: the site paints a single light scheme; there is no dark variant to capture.",
+
+ "core": {
+  "color": {
+   "$description": "The whole storefront palette: near-pure monochrome with one electric Acne blue (#0018a8) carrying every link, accent action and selected state, its deeper hover step, a pale-blue selected fill, and four warm-grey steps for muted text, borders, hairlines and field fills.",
+   "black": {"type": "color", "value": "rgb(0, 0, 0)", "source": "computed color of nav-item default; backgroundColor of load-more default (raw/components-computed.json)", "description": "Text and the primary button fill. No near-black: the ink is #000."},
+   "white": {"type": "color", "value": "rgb(255, 255, 255)", "source": "computed backgroundColor of header default (raw/components-computed.json)", "description": "Page ground, surfaces, text on dark."},
+   "blue": {
+    "default": {"type": "color", "value": "rgb(0, 24, 168)", "source": "computed color of footer-link default; backgroundColor of add-to-bag default; borderColor of size-cell-selected (raw/components-computed.json)", "description": "Acne blue: every text link, the ADD TO BAG fill, wishlist border, the picked size cell."},
+    "hover": {"type": "color", "value": "rgb(5, 21, 116)", "source": "computed backgroundColor of add-to-bag hover; color of footer-link hover (raw/components-computed.json)", "description": "The deeper step every blue element darkens to on hover/pressed."},
+    "tint": {"type": "color", "value": "rgb(232, 240, 254)", "source": "computed backgroundColor of size-cell-selected default (raw/components-computed.json)", "description": "Pale-blue selected fill on the picked size cell."}
+   },
+   "grey": {
+    "text": {"type": "color", "value": "rgb(107, 107, 107)", "source": "computed color of nav-item hover, bag-button default, pdp-color default (raw/components-computed.json)", "description": "Muted text: hover colour of black header items, the bag count, the colourway name."},
+    "secondary": {"type": "color", "value": "rgb(92, 92, 92)", "source": "computed color of subnav-link default; breadcrumb-link hover (raw/components-computed.json)", "description": "The second muted step, on the PLP subnav."},
+    "border": {"type": "color", "value": "rgb(194, 194, 194)", "source": "computed borderTopColor of size-cell default (raw/components-computed.json)", "description": "Control borders: the unselected size cells."},
+    "hairline": {"type": "color", "value": "rgb(242, 242, 242)", "source": "computed borderTopColor of info-row default; the header/footer inset rules and row separators in the painted layers (raw/components-computed.json)", "description": "The 1px rules everywhere: header/footer edges, footer column rules, menu row separators, info-row boxes."},
+    "fill": {"type": "color", "value": "rgb(247, 247, 247)", "source": "computed backgroundColor of newsletter-field, login-email, search-field default (raw/components-computed.json)", "description": "Field fills and the mega-menu's alternate row striping."}
+   }
+  },
+  "font": {
+   "family": {
+    "sans": {"type": "fontFamily", "value": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif", "source": "computed fontFamily of nav-item default and every measured text component (raw/components-computed.json)", "description": "Helvetica Now Text carries the entire storefront."},
+    "mono": {"type": "fontFamily", "value": "\"Helvetica Monospaced Pro\", monospace", "source": "computed fontFamily of pdp-price and size-cell default (raw/components-computed.json)", "description": "Monospaced numerals: PDP price and the size grid."}
+   },
+   "scale": {
+    "12": {"type": "dimension", "value": "12px", "source": "computed fontSize of nav-item, load-more, footer-link, description default (raw/components-computed.json)", "description": "The one label size: nearly every piece of chrome is 12px."},
+    "18": {"type": "dimension", "value": "18px", "source": "computed fontSize of newsletter-field, login-title default (raw/components-computed.json)", "description": "Field text and the rare display line (Sign in or register)."}
+   },
+   "weight": {
+    "regular": {"type": "fontWeight", "value": 400, "source": "computed fontWeight of every measured component (raw/components-computed.json)", "description": "No bold anywhere: hierarchy is size, case and colour only."}
+   },
+   "lineHeight": {
+    "tight": {"type": "dimension", "value": "20px", "source": "computed lineHeight of nav-item, load-more, login-title default (raw/components-computed.json)"},
+    "link": {"type": "dimension", "value": "24px", "source": "computed lineHeight of footer-link, size-guide-link default (raw/components-computed.json)"},
+    "loose": {"type": "dimension", "value": "30px", "source": "computed lineHeight of show-more default (raw/components-computed.json)"}
+   },
+   "letterSpacing": {
+    "caps": {"type": "dimension", "value": "0.3px", "source": "computed letterSpacing of every measured component (raw/components-computed.json)", "description": "A single uniform tracking on everything."}
+   }
+  },
+  "typography": {
+   "microCaps": {"$value": {"fontFamily": "{font.family.sans}", "fontSize": "{font.scale.12}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.lineHeight.tight}", "letterSpacing": "{font.letterSpacing.caps}"}, "$type": "typography", "$extensions": {"source": "nav-item, load-more, footer-col-title, plp-title defaults (raw/components-computed.json)", "textTransform": "uppercase"}, "$description": "The Acne voice: 12/20 Helvetica Now Text uppercase at 0.3px tracking. Nav, buttons, labels, headings."},
+   "body": {"$value": {"fontFamily": "{font.family.sans}", "fontSize": "{font.scale.12}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.lineHeight.tight}", "letterSpacing": "{font.letterSpacing.caps}"}, "$type": "typography", "$extensions": {"source": "description, login-benefit defaults (raw/components-computed.json)", "textTransform": "none"}, "$description": "Same font and size in sentence case: product copy, benefit lines."},
+   "price": {"$value": {"fontFamily": "{font.family.mono}", "fontSize": "{font.scale.12}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.lineHeight.tight}", "letterSpacing": "{font.letterSpacing.caps}"}, "$type": "typography", "$extensions": {"source": "pdp-price, size-cell defaults (raw/components-computed.json)", "textTransform": "uppercase"}, "$description": "Monospaced numerals: PDP price and the size grid."},
+   "field": {"$value": {"fontFamily": "{font.family.sans}", "fontSize": "{font.scale.18}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.lineHeight.tight}", "letterSpacing": "{font.letterSpacing.caps}"}, "$type": "typography", "$extensions": {"source": "newsletter-field, login-email defaults (raw/components-computed.json)", "textTransform": "none"}, "$description": "The text you type: 18px in the email fields."},
+   "title": {"$value": {"fontFamily": "{font.family.sans}", "fontSize": "{font.scale.18}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.lineHeight.tight}", "letterSpacing": "{font.letterSpacing.caps}"}, "$type": "typography", "$extensions": {"source": "login-title default (raw/components-computed.json)", "textTransform": "none"}, "$description": "The one larger line on the sign-in gate."},
+   "link": {"$value": {"fontFamily": "{font.family.sans}", "fontSize": "{font.scale.12}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.lineHeight.link}", "letterSpacing": "{font.letterSpacing.caps}"}, "$type": "typography", "$extensions": {"source": "footer-link, size-guide-link defaults (raw/components-computed.json)", "textTransform": "none"}, "$description": "Blue links on a 24px leading."}
+  },
+  "radius": {
+   "none": {"type": "dimension", "value": "0px", "source": "computed borderTopLeftRadius of every measured component (raw/components-computed.json)", "description": "Every corner is square. The only curve on the site is the filter rail's 10px radio dot drawn with border-radius:100% — a percentage DTCG cannot carry, noted here."}
+  },
+  "border": {
+   "width": {"hairline": {"type": "dimension", "value": "1px", "source": "computed borderTopWidth of size-cell, login-google, search-field, menu-panel (raw/components-computed.json)", "description": "Every border is one hairline; thickness never changes between states (colour does)."}}
+  },
+  "size": {
+   "header": {"height": {"type": "dimension", "value": "60px", "source": "rendered height of header default at 1440px (raw/components-computed.json)"}, "heightMobile": {"type": "dimension", "value": "45px", "source": "rendered height of m-header default at 390px (raw/components-computed.json)"}},
+   "control": {"height": {"type": "dimension", "value": "60px", "source": "rendered height of add-to-bag, load-more, login-continue, login-google, newsletter-field, login-email defaults (raw/components-computed.json)", "description": "Primary buttons and the big email fields share a 60px rail."}, "small": {"type": "dimension", "value": "44px", "source": "rendered height of show-items default (raw/components-computed.json)", "description": "The filter rail's apply button."}},
+   "navRow": {"height": {"type": "dimension", "value": "30px", "source": "rendered height of menu-link, search-suggestion, subnav-link, search-field, gift-link defaults (raw/components-computed.json)", "description": "The repeating 30px row: menu links, suggestions, subnav, the small search field, gift-guide bars."}},
+   "field": {"height": {"type": "dimension", "value": "60px", "source": "rendered height of newsletter-field and login-email defaults (raw/components-computed.json)"}},
+   "sizeCell": {"height": {"type": "dimension", "value": "45px", "source": "rendered height of size-cell default (raw/components-computed.json)"}},
+   "drawer": {"width": {"type": "dimension", "value": "360px", "source": "rendered width of search-panel and filter-rail defaults (raw/components-computed.json)", "description": "Every right-side drawer (search, filter, bag) opens at 360 wide."}},
+   "headerBar": {"height": {"type": "dimension", "value": "45px", "source": "painted drawer head (div.drawer.flex 360x45) inside search-panel/filter-rail defaults (raw/components-computed.json)"}},
+   "radioDot": {"diameter": {"type": "dimension", "value": "10px", "source": "painted button::before.filter-button.as-radio 10px inside filter-rail default (raw/components-computed.json)"}}
+  },
+  "space": {
+   "nav": {"x": {"type": "dimension", "value": "9px", "source": "computed paddingLeft of nav-item default (raw/components-computed.json)"}, "y": {"type": "dimension", "value": "4px", "source": "computed paddingTop of nav-item default (raw/components-computed.json)"}},
+   "control": {"x": {"type": "dimension", "value": "9px", "source": "computed paddingLeft of load-more, add-to-bag defaults (raw/components-computed.json)"}, "y": {"type": "dimension", "value": "19px", "source": "computed paddingTop of load-more, add-to-bag, login-google defaults (raw/components-computed.json)"}},
+   "field": {"x": {"type": "dimension", "value": "10px", "source": "computed paddingLeft of newsletter-field, login-email defaults (raw/components-computed.json)"}, "y": {"type": "dimension", "value": "19px", "source": "computed paddingTop of newsletter-field, login-email defaults (raw/components-computed.json)"}},
+   "searchField": {"x": {"type": "dimension", "value": "31px", "source": "computed paddingLeft of search-field default (raw/components-computed.json)"}},
+   "indent": {"type": "dimension", "value": "20px", "source": "computed paddingLeft of show-more, login-benefit defaults (raw/components-computed.json)", "description": "The en-dash bullet indent and the SHOW MORE offset."}
+  },
+  "focusRing": {
+   "width": {"type": "dimension", "value": "1px", "source": "computed outlineWidth of add-to-bag, wishlist-button, size-cell focus-visible (raw/components-computed.json)"},
+   "offset": {"type": "dimension", "value": "-3px", "source": "computed outlineOffset of add-to-bag, wishlist-button, size-cell focus-visible (raw/components-computed.json)", "description": "The ring draws inside the control: a 1px keyline 3px in. On dark fills it is white, on white fills it is the deep blue (#051574) or black. Text links draw no outline: focus is a colour shift only."}
+  },
+  "motion": {
+   "duration": {
+    "instant": {"type": "duration", "value": "0ms", "source": "computed transitionDuration of every measured component (raw/components-computed.json)", "description": "Hover and focus colour changes are instant; no easing on any measured control."},
+    "drawer": {"type": "duration", "value": "150ms", "source": "transition padding-bottom 0.15s on .drawer and the state containers in main.css (raw/components-computed.json _meta.sheets)", "description": "The drawers' safe-area pad transition."},
+    "slider": {"type": "duration", "value": "200ms", "source": "transition max-height 0.2s cubic-bezier(0,0,0.2,1) on .slider in main.css (raw/components-computed.json _meta.sheets)", "description": "Accordion max-height reveal."},
+    "fade": {"type": "duration", "value": "500ms", "source": "transition opacity 0.5s ease-in-out on [data-component-animation=fade] in main.css (raw/components-computed.json _meta.sheets)"}
+   },
+   "easing": {"slider": {"type": "cubicBezier", "value": [0, 0, 0.2, 1], "source": "transition-timing-function cubic-bezier(0,0,0.2,1) on .slider in main.css (raw/components-computed.json _meta.sheets)"}}
+  },
+  "breakpoint": {
+   "smallDown": {"type": "dimension", "value": "767px", "source": "@media (max-width: 767px) blocks in main.css (raw/css-vars.json)", "description": "Small-down cut-off: mobile rules."},
+   "mediumDown": {"type": "dimension", "value": "991px", "source": "@media (max-width: 991px) blocks in main.css (raw/css-vars.json)", "description": "Medium-down cut-off: under it the header collapses to Menu + wordmark + bag (the 390px capture)."}
+  }
+ },
+
+ "light": {
+  "$description": "The only theme the storefront paints. Aliases point into core.",
+  "background": {
+   "page": {"type": "color", "value": "{color.white}", "source": "computed backgroundColor of header, filter-rail, search-panel defaults (raw/components-computed.json)"},
+   "field": {"type": "color", "value": "{color.grey.fill}", "source": "computed backgroundColor of newsletter-field, login-email, search-field defaults (raw/components-computed.json)"},
+   "inset": {"type": "color", "value": "{color.grey.fill}", "source": "the mega-menu's alternate 30px row striping, repeating-linear-gradient in the menu-panel painted layers (raw/components-computed.json)"},
+   "overlay": {"type": "color", "value": "{color.white}", "source": "computed backgroundColor of filter-rail, search-panel defaults (raw/components-computed.json)", "description": "Drawers sit on opaque white over the page."}
+  },
+  "text": {
+   "primary": {"type": "color", "value": "{color.black}", "source": "computed color of nav-item, pdp-title, description defaults (raw/components-computed.json)"},
+   "muted": {"type": "color", "value": "{color.grey.text}", "source": "computed color of bag-button, pdp-color defaults and nav-item hover (raw/components-computed.json)"},
+   "secondary": {"type": "color", "value": "{color.grey.secondary}", "source": "computed color of subnav-link default (raw/components-computed.json)"},
+   "link": {"type": "color", "value": "{color.blue.default}", "source": "computed color of footer-link, menu-link, search-suggestion, geo-selector defaults (raw/components-computed.json)", "description": "Every navigable text link is Acne blue; black is reserved for labels."},
+   "linkHover": {"type": "color", "value": "{color.blue.hover}", "source": "computed color of footer-link, menu-link, geo-selector hover (raw/components-computed.json)"},
+   "onDark": {"type": "color", "value": "{color.white}", "source": "computed color of load-more, add-to-bag, login-continue defaults and the hero's Gift Guide text node (raw/components-computed.json)"}
+  },
+  "action": {
+   "primary": {"type": "color", "value": "{color.black}", "source": "computed backgroundColor of load-more, login-continue, show-items defaults (raw/components-computed.json)", "description": "The black bar: LOAD MORE, CONTINUE, SHOW N ITEMS."},
+   "primaryHover": {"type": "color", "value": "{color.blue.default}", "source": "computed backgroundColor of load-more, login-continue, show-items hover (raw/components-computed.json)", "description": "Black bars flip to Acne blue on hover/focus/pressed, not to a darker grey."},
+   "accent": {"type": "color", "value": "{color.blue.default}", "source": "computed backgroundColor of add-to-bag default (raw/components-computed.json)", "description": "The one resting-blue action: ADD TO BAG."},
+   "accentHover": {"type": "color", "value": "{color.blue.hover}", "source": "computed backgroundColor of add-to-bag hover (raw/components-computed.json)"},
+   "onAction": {"type": "color", "value": "{color.white}", "source": "computed color of load-more, add-to-bag defaults (raw/components-computed.json)"},
+   "selected": {"type": "color", "value": "{color.blue.tint}", "source": "computed backgroundColor of size-cell-selected default (raw/components-computed.json)", "description": "Pale-blue fill marking the picked size."},
+   "selectedBorder": {"type": "color", "value": "{color.blue.default}", "source": "computed borderTopColor of size-cell-selected default (raw/components-computed.json)"}
+  },
+  "border": {
+   "default": {"type": "color", "value": "{color.black}", "source": "computed borderTopColor of login-google, search-field, menu-panel, the filter rail head (raw/components-computed.json)", "description": "The 1px black keyline: outline buttons, the small search field, drawer heads, the mega-menu's top and bottom edge."},
+   "subtle": {"type": "color", "value": "{color.grey.border}", "source": "computed borderTopColor of size-cell default (raw/components-computed.json)"},
+   "hairline": {"type": "color", "value": "{color.grey.hairline}", "source": "computed borderTopColor of info-row, footer, header inset rules (raw/components-computed.json)"},
+   "field": {"type": "color", "value": "{color.grey.fill}", "source": "computed borderTopColor of newsletter-field, login-email defaults (raw/components-computed.json)", "description": "The big fields' border is their own fill grey — the field reads as a flat grey rail."}
+  },
+  "focus": {
+   "ring": {"type": "color", "value": "{color.blue.hover}", "source": "computed outlineColor of wishlist-button focus-visible (raw/components-computed.json)", "description": "1px solid, offset -3px: deep blue on white surfaces (wishlist button), black on the size cells, white inside the blue/black buttons. Text links show no ring."}
+  }
+ }
+}

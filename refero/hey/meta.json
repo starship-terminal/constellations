@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/eb5e696d-353c-4094-ad54-151ecdc50cb5",
   "source_url": "https://hey.com",
   "extracted_at": "2026-09-24T17:39:03.126Z",
-  "fetched_at": "2026-10-20T08:21:26Z",
+  "fetched_at": "2026-11-08T04:20:17Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/875758b4-06ce-4b2a-a0df-1564d1fb8b14.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/6530179c-59ac-47c5-8357-63533ace0e2c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/9c7dade6-632a-41de-9540-f2887f3604e8.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/3083e247-127f-4897-829f-f3deac8feb7a.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

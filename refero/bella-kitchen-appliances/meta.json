@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/e327d332-270d-4779-a55c-cd82b8624d2a",
   "source_url": "https://bellakitchenware.com",
   "extracted_at": "2026-06-03T17:39:42.820Z",
-  "fetched_at": "2026-10-20T08:22:56Z",
+  "fetched_at": "2026-11-08T04:19:50Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/fdab8a95-5e5c-4ef5-aeb4-94750ced9b36.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/e22fcf9c-2a64-4a70-a119-27f2dc02a422.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d177a2f7-5e5f-409c-b036-293d9735c51c.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b1e5dab4-46c6-448f-86bf-068210b19eff.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

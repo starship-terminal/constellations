@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/6d0db1c7-5500-40cd-b2f3-d3d9abbd3a2f",
   "source_url": "https://www.driesbos.com",
   "extracted_at": "2026-06-03T17:05:22.539Z",
-  "fetched_at": "2026-10-20T08:23:10Z",
+  "fetched_at": "2026-11-08T04:20:03Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6e29cd7f-c315-4c62-b7bb-4cde7cd8ef63.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/2fef1e96-b5c4-40ee-98ca-8b0fe214a07d.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/1373f2e0-8f86-4125-a4a6-621422e5ce95.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/22f0e388-5ac1-4665-a49d-3c0105ab5357.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

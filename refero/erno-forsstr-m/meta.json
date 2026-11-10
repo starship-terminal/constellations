@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/cffa5959-4283-41d2-ad11-bada2d731419",
   "source_url": "https://erno.works",
   "extracted_at": "2026-06-03T21:50:34.144Z",
-  "fetched_at": "2026-10-20T08:21:46Z",
+  "fetched_at": "2026-11-08T04:20:06Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/28548083-c661-4b55-a9ec-d0fd33e6fcbe.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a0a1b387-754a-40f8-9f5e-b55a954fb5a5.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/c4cac8d9-54c6-46ca-ac65-749133b1e0bf.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0eed064b-187a-4f16-a0b7-c8012cfc98ff.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

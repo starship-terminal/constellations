@@ -1,0 +1,801 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. acuityscheduling.com's frontsite stylesheet declares almost no design-system custom properties (raw/css-vars.json records the result: carousel frame dimensions and the nine --c1/--c2/--c3 hero-gradient variants, recorded as evidence, not tokenised), so every leaf carries a measured \"value\" and names the measurement in \"source\" (a component entry in raw/components-computed.json, a painted layer in its paint list, or a pixel sampled from raw/full). One theme: the marketing site and the Squarespace account gate are light only, with navy ink bands on the pricing FAQ and the support card.",
+
+ "core": {
+  "palette": {
+   "ink": {
+    "value": "#283849",
+    "type": "color",
+    "source": "measured backgroundColor of nav-cta / plan-cta / bottom-cta / feature-card CTA; color of hero-title / hero-sub / hero-cta borders; backgroundColor of section.signup-faqs and the support card",
+    "description": "#283849, the signature dark navy ink: every primary button fill, the serif headlines' colour, the hero CTA borders, and the FAQ and support-card bands"
+   },
+   "ink-hover": {
+    "value": "#3e5772",
+    "type": "color",
+    "source": "measured backgroundColor of nav-cta at hover / focus-visible / pressed",
+    "description": "#3e5772, the header Get-started pill's lighter hover"
+   },
+   "ink-pressed": {
+    "value": "#1e2d3a",
+    "type": "color",
+    "source": "measured backgroundColor of plan-cta at hover / focus-visible / pressed",
+    "description": "#1e2d3a, the plan card Start-free-trial button's darker hover — the two inks move in opposite directions (see What to distrust)"
+   },
+   "black": {
+    "value": "#000000",
+    "type": "color",
+    "source": "measured color of nav-link / footer-col-title / gate and oauth button text and their 1px borders",
+    "description": "#000: nav and footer-column titles, the gate and OAuth rows' text and 1px rules"
+   },
+   "ink-0e": {
+    "value": "#0e0e0e",
+    "type": "color",
+    "source": "measured color of plan-name / plan-feature / footer-link / login field text / more-options / cant-login",
+    "description": "#0e0e0e, the near-black working text on light surfaces and on the gate"
+   },
+   "ink-22": {
+    "value": "#222222",
+    "type": "color",
+    "source": "measured color of header / hero / footer / pricing-hero / plan-card body text and segmented-control-pill",
+    "description": "#222, the marketing pages' body text"
+   },
+   "ink-2d": {
+    "value": "#2d2d2d",
+    "type": "color",
+    "source": "measured color of a.mobile-link rows and the mobile menu Log in CTA (m-menu paint)",
+    "description": "#2d2d2d, the mobile menu's link and secondary-CTA text"
+   },
+   "white": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "measured backgroundColor of body / footer / nav-dropdown / gate-card / plan-wrapper / mobile-menu-content; color of every ink button's text",
+    "description": "#fff: the page ground, cards, the dropdown panel and the gate card; text on ink fills"
+   },
+   "cream": {
+    "value": "#fdf9f7",
+    "type": "color",
+    "source": "measured backgroundColor of vertical-card (the industry cards)",
+    "description": "#fdf9f7, the warm near-white of the industry cards"
+   },
+   "cloud": {
+    "value": "#fafafa",
+    "type": "color",
+    "source": "measured backgroundColor of .carousel__frame-slide (testimonial-card paint)",
+    "description": "#fafafa, the testimonial slide's ground under the lavender card"
+   },
+   "mist": {
+    "value": "#f4f4f4",
+    "type": "color",
+    "source": "measured backgroundColor of feature-card (the 'Book beautifully' feature band card)",
+    "description": "#f4f4f4, the feature card's light grey fill"
+   },
+   "fog": {
+    "value": "#f2f2f2",
+    "type": "color",
+    "source": "measured backgroundColor of dropdown-item at hover / login-submit (disabled); borderBottomColor of mobile menu li rows; segmented-control tint at 20%",
+    "description": "#f2f2f2, hover row wash, disabled fill, mobile-menu hairlines"
+   },
+   "fog-deep": {
+    "value": "#f0f0f0",
+    "type": "color",
+    "source": "measured backgroundColor of social-link at hover and pressed",
+    "description": "#f0f0f0, the social circle buttons' hover wash"
+   },
+   "line": {
+    "value": "#e4e4e4",
+    "type": "color",
+    "source": "measured border color of .plan-wrapper.phase2-plan-wrapper (plan-card paint), 1px all around",
+    "description": "#e4e4e4, the pricing cards' hairline border"
+   },
+   "line-divider": {
+    "value": "#e7e7e7",
+    "type": "color",
+    "source": "measured backgroundColor of .phase2-plan-divider inside the plan cards",
+    "description": "#e7e7e7, the plan cards' 1px divider fill"
+   },
+   "line-dark": {
+    "value": "#e0e0e0",
+    "type": "color",
+    "source": "measured borderTopColor of the footer legal row (footer paint)",
+    "description": "#e0e0e0, the footer's top rule"
+   },
+   "gray": {
+    "value": "#b7b7b7",
+    "type": "color",
+    "source": "measured color of login-submit (disabled) text and the feature-tooltip-trigger's dashed marker",
+    "description": "#b7b7b7, disabled text and the tooltip dashes"
+   },
+   "placeholder": {
+    "value": "#949494",
+    "type": "color",
+    "source": "measured ::placeholder color of login-email / login-password",
+    "description": "#949494, the gate fields' placeholder grey"
+   },
+   "sky": {
+    "value": "#e0ebf4",
+    "type": "color",
+    "source": "measured backgroundColor of the home bottom-section band (bottom-cta paint)",
+    "description": "#e0ebf4, the pale blue band under the support card and bottom CTA"
+   },
+   "lavender": {
+    "value": "#d6d0ed",
+    "type": "color",
+    "source": "measured backgroundColor of .testimonial-card--purple (testimonial-card paint)",
+    "description": "#d6d0ed, the lavender testimonial card"
+   },
+   "lavender-light": {
+    "value": "#ebe7f6",
+    "type": "color",
+    "source": "measured backgroundColor of .testimonial-card__tag (testimonial-card paint)",
+    "description": "#ebe7f6, the tag pill on the lavender card"
+   },
+   "grape": {
+    "value": "#574f8a",
+    "type": "color",
+    "source": "measured backgroundColor of .testimonial-card__tag-icon (testimonial-card paint)",
+    "description": "#574f8a, the tag's purple glyph fill"
+   },
+   "focus-blue": {
+    "value": "#005fcc",
+    "type": "color",
+    "source": "measured outlineColor of nav-link / hero-cta / footer-link / accordion-title / every text control at focus-visible (the browser's 1px auto ring)",
+    "description": "#005fcc, Chromium's auto focus ring on links and accordions, 1px"
+   },
+   "focus-amber": {
+    "value": "#e59700",
+    "type": "color",
+    "source": "measured outlineColor of m-hamburger / m-menu-link at focus-visible",
+    "description": "#e59700, the amber focus ring inside the mobile menu"
+   },
+   "hero-c1": {
+    "value": "#f0ece1",
+    "type": "color",
+    "source": "computed backgroundImage stop 0 of .large-csp-hero__gradient--9 (hero paint); declared variants --c1/--c2/--c3 in raw/css-vars.json",
+    "description": "hero gradient stop 1 of the live home page; the site rotates nine pastel variants (see raw/css-vars.json)"
+   },
+   "hero-c2": {
+    "value": "#f9f6ea",
+    "type": "color",
+    "source": "computed backgroundImage stop 2 of .large-csp-hero__gradient--9",
+    "description": "hero gradient stop 2"
+   },
+   "hero-c3": {
+    "value": "#f6f3ed",
+    "type": "color",
+    "source": "computed backgroundImage stop 3 of .large-csp-hero__gradient--9",
+    "description": "hero gradient stop 3"
+   },
+   "scrim": {
+    "value": "rgba(0, 0, 0, 0.5)",
+    "type": "color",
+    "source": "measured backgroundColor of .mobile-menu-container.enter (m-menu paint)",
+    "description": "50% black scrim behind the mobile menu sheet"
+   },
+   "divider-on-dark": {
+    "value": "rgba(255, 255, 255, 0.1)",
+    "type": "color",
+    "source": "measured borderBottomColor of button.accordion-title rows on the navy FAQ band",
+    "description": "10% white hairline between FAQ rows on ink"
+   }
+  },
+  "gradient": {
+   "hero": {
+    "$type": "gradient",
+    "$value": [
+     { "color": "{palette.hero-c1}", "position": 0 },
+     { "color": "{palette.hero-c2}", "position": 0.75 },
+     { "color": "{palette.hero-c3}", "position": 1 }
+    ],
+    "$extensions": {
+     "angle": "66deg",
+     "source": "computed backgroundImage of .large-csp-hero__gradient--9 (hero paint)"
+    },
+    "$description": "the home hero's pastel wash, linear-gradient(66deg) — one of nine declared variants (raw/css-vars.json)"
+   }
+  },
+  "font": {
+   "family": {
+    "clarkson": {
+     "value": "Clarkson, \"Avenir Next\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+     "type": "fontFamily",
+     "source": "measured fontFamily of header / nav-dropdown / footer / pricing-hero / m-menu (the frontsite stack; hero, gate and login measure shorter Clarkson stacks ending in sans-serif)",
+     "description": "Clarkson (Squarespace's brand sans, served at 400 and 500) is every control, nav item and body line"
+    },
+    "clarkson-serif": {
+     "value": "\"Clarkson Serif\", Clarkson-Serif, Recoleta, serif",
+     "type": "fontFamily",
+     "source": "measured fontFamily of hero-title / feature-card-title ('Clarkson-Serif, Recoleta') and plan-name ('\"Clarkson Serif\", serif')",
+     "description": "Clarkson Serif at weight 500 sets every display headline; Recoleta (also served, 300/400/500) is the fallback in the stacks"
+    }
+   },
+   "size": {
+    "micro": {
+     "value": "10px",
+     "type": "dimension",
+     "source": "measured fontSize of hero-terms",
+     "description": "10px, the legal line under the hero CTAs"
+    },
+    "meta": {
+     "value": "12px",
+     "type": "dimension",
+     "source": "measured fontSize of footer-link / footer-legal / login-submit / cant-login / create-account-link / more-options",
+     "description": "12px, footer and legal links, and the gate's uppercase labels"
+    },
+    "small": {
+     "value": "14px",
+     "type": "dimension",
+     "source": "measured fontSize of nav-link / nav-cta / hero-cta / dropdown-item / plan-cta / plan-feature / gate + oauth buttons / login fields",
+     "description": "14px, the working control size: nav, every button, fields, dropdown rows"
+    },
+    "body": {
+     "value": "16px",
+     "type": "dimension",
+     "source": "measured fontSize of header / hero-sub / footer-col-title / accordion / vertical-cta / mobile CTAs",
+     "description": "16px, body copy, column titles, accordion rows and the mobile menu CTAs"
+    },
+    "price": {
+     "value": "18px",
+     "type": "dimension",
+     "source": "measured fontSize of the plan-price text node",
+     "description": "18px, the price figure on plan cards"
+    },
+    "title": {
+     "value": "24px",
+     "type": "dimension",
+     "source": "measured fontSize of feature-card-title",
+     "description": "24px serif, card headlines"
+    },
+    "menu": {
+     "value": "28px",
+     "type": "dimension",
+     "source": "measured fontSize of a.mobile-link rows (m-menu-link / m-menu paint)",
+     "description": "28px, the mobile menu's primary links"
+    },
+    "plan": {
+     "value": "32px",
+     "type": "dimension",
+     "source": "measured fontSize of plan-name",
+     "description": "32px serif, the pricing plan names"
+    },
+    "display": {
+     "value": "40px",
+     "type": "dimension",
+     "source": "measured fontSize of hero-title at 1440",
+     "description": "40px serif, the home hero headline"
+    },
+    "display-lg": {
+     "value": "48px",
+     "type": "dimension",
+     "source": "measured fontSize of the pricing hero's serif title",
+     "description": "48px serif, the larger display step on the pricing band"
+    }
+   },
+   "leading": {
+    "micro": {
+     "value": "16px",
+     "type": "dimension",
+     "source": "measured lineHeight of hero-terms"
+    },
+    "control": {
+     "value": "18.76px",
+     "type": "dimension",
+     "source": "measured lineHeight of nav-link / nav-trigger / nav-cta / dropdown-item",
+     "description": "18.76px on 14px controls — the header's computed 1.34 leading"
+    },
+    "body": {
+     "value": "22px",
+     "type": "dimension",
+     "source": "measured lineHeight of hero-cta / plan-cta / plan-feature / gate + oauth buttons / login fields / vertical-cta / caps labels",
+     "description": "22px, the workhorse leading on 14px buttons/fields and 12px caps"
+    },
+    "price": {
+     "value": "27px",
+     "type": "dimension",
+     "source": "measured lineHeight of the plan-price text node"
+    },
+    "title": {
+     "value": "28px",
+     "type": "dimension",
+     "source": "measured lineHeight of feature-card-title"
+    },
+    "menu": {
+     "value": "37.52px",
+     "type": "dimension",
+     "source": "measured lineHeight of a.mobile-link rows",
+     "description": "37.52px on 28px mobile menu links"
+    },
+    "plan": {
+     "value": "40px",
+     "type": "dimension",
+     "source": "measured lineHeight of plan-name"
+    },
+    "display": {
+     "value": "48px",
+     "type": "dimension",
+     "source": "measured lineHeight of hero-title",
+     "description": "48px on 40px display (1.2)"
+    }
+   },
+   "weight": {
+    "regular": {
+     "value": 400,
+     "type": "fontWeight",
+     "source": "measured fontWeight of nav links, body copy, fields, hero-cta, m-menu-link",
+     "description": "400 — most text: nav, body, fields, outline CTAs, mobile menu links"
+    },
+    "medium": {
+     "value": 500,
+     "type": "fontWeight",
+     "source": "measured fontWeight of hero-title / feature-card-title / plan-name / plan-cta / gate + oauth buttons / caps labels / mobile CTAs / integration-logo",
+     "description": "500 — serif headlines, filled buttons, the gate's caps labels, emphasis rows"
+    }
+   },
+   "tracking": {
+    "normal": {
+     "value": "0px",
+     "type": "dimension",
+     "source": "measured letterSpacing 'normal' on every marketing component",
+     "description": "marketing text is never letter-spaced"
+    },
+    "caps": {
+     "value": "0.5px",
+     "type": "dimension",
+     "source": "measured letterSpacing of login-submit / cant-login / create-account-link / more-options",
+     "description": "0.5px tracking on the gate's uppercase 12px labels"
+    }
+   }
+  },
+  "radius": {
+   "tooltip": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "measured borderRadius of .feature-tooltip (plan-card paint)",
+    "description": "4px, the pricing feature tooltips"
+   },
+   "card-sm": {
+    "value": "6px",
+    "type": "dimension",
+    "source": "measured borderRadius of gate-card (the account gate dialog)",
+    "description": "6px, the Squarespace gate dialog"
+   },
+   "image": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "measured borderRadius of .feature-area-card__desktop-image (feature-card paint)",
+    "description": "8px, media inside cards"
+   },
+   "button": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "measured borderRadius of nav-cta / hero-cta / plan-cta / bottom-cta / feature CTA / .plan-wrapper",
+    "description": "12px, the everywhere button and card radius — Acuity's signature soft corner"
+   },
+   "tag": {
+    "value": "15px",
+    "type": "dimension",
+    "source": "measured borderRadius of .testimonial-card__tag",
+    "description": "15px, the testimonial tag pill"
+   },
+   "card": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "measured borderRadius of vertical-card / feature-card",
+    "description": "16px, industry and feature cards"
+   },
+   "panel": {
+    "value": "22px",
+    "type": "dimension",
+    "source": "measured borderRadius of nav-dropdown and .carousel__frame-slide",
+    "description": "22px, the mega-menu panel and the testimonial slide"
+   },
+   "frame": {
+    "value": "24px",
+    "type": "dimension",
+    "source": "measured borderRadius of .carousel__frame-slide-wrapper (testimonial-card paint)",
+    "description": "24px, the testimonial frame and the support card"
+   },
+   "pill": {
+    "value": "100px",
+    "type": "dimension",
+    "source": "measured borderRadius of .segmented-control and .segmented-control-pill",
+    "description": "100px pill on the pricing annual/monthly toggle; the social icon buttons are 50% circles (50% is not a DTCG dimension)"
+   }
+  },
+  "shadow": {
+   "card": {
+    "type": "shadow",
+    "value": [
+     { "offsetX": "0px", "offsetY": "0px", "blur": "0.5px", "spread": "0px", "color": "rgba(0, 0, 0, 0.08)" },
+     { "offsetX": "0px", "offsetY": "16px", "blur": "32px", "spread": "0px", "color": "rgba(0, 0, 0, 0.12)" }
+    ],
+    "source": "measured boxShadow of vertical-card",
+    "description": "the industry card lift: a hairline ring plus a soft 16px drop"
+   },
+   "media": {
+    "type": "shadow",
+    "value": [
+     { "offsetX": "0px", "offsetY": "0px", "blur": "0.38px", "spread": "0px", "color": "rgba(0, 0, 0, 0.08)" },
+     { "offsetX": "0px", "offsetY": "6px", "blur": "24px", "spread": "0px", "color": "rgba(0, 0, 0, 0.12)" }
+    ],
+    "source": "measured boxShadow of .feature-area-card__desktop-image (feature-card paint)",
+    "description": "the smaller lift on card imagery"
+   },
+   "overlay": {
+    "type": "shadow",
+    "value": [
+     { "offsetX": "0px", "offsetY": "0px", "blur": "1px", "spread": "0px", "color": "rgba(0, 0, 0, 0.08)" },
+     { "offsetX": "0px", "offsetY": "8px", "blur": "32px", "spread": "0px", "color": "rgba(0, 0, 0, 0.12)" }
+    ],
+    "source": "measured boxShadow of .feature-tooltip (plan-card paint)",
+    "description": "tooltip pop: hairline plus 8px drop"
+   },
+   "modal": {
+    "type": "shadow",
+    "value": [
+     { "offsetX": "0px", "offsetY": "16px", "blur": "64px", "spread": "0px", "color": "rgba(0, 0, 0, 0.12)" },
+     { "offsetX": "0px", "offsetY": "0px", "blur": "1px", "spread": "0px", "color": "rgba(0, 0, 0, 0.08)" }
+    ],
+    "source": "measured boxShadow of gate-card (.Dialog-container)",
+    "description": "the account gate's deep lift"
+   },
+   "focus-ring": {
+    "type": "shadow",
+    "value": [
+     { "offsetX": "0px", "offsetY": "0px", "blur": "0px", "spread": "2px", "color": "#ffffff" },
+     { "offsetX": "0px", "offsetY": "0px", "blur": "0px", "spread": "4px", "color": "#000000" }
+    ],
+    "source": "measured boxShadow of gate-* / oauth-* buttons at focus-visible",
+    "description": "the gate's double-ring keyboard focus: 2px white then 4px black, painted as box-shadow"
+   }
+  },
+  "duration": {
+   "snap": {
+    "value": "50ms",
+    "type": "duration",
+    "source": "measured transitionDuration 0.05s ease on nav-link / dropdown-item / footer-link / gate + oauth buttons — the frontsite's blanket fade",
+    "description": "50ms, the default link/button fade"
+   },
+   "fast": {
+    "value": "150ms",
+    "type": "duration",
+    "source": "measured transitionDuration 0.15s ease-in on nav-cta (also 0.15s ease elsewhere)",
+    "description": "150ms, the header pill's colour change"
+   },
+   "medium": {
+    "value": "200ms",
+    "type": "duration",
+    "source": "measured transitionDuration 0.2s on gates and dropdown rows",
+    "description": "200ms, dropdown and gate transitions"
+   },
+   "slow": {
+    "value": "250ms",
+    "type": "duration",
+    "source": "measured transitionDuration 0.25s ease-in-out on header / nav-dropdown",
+    "description": "250ms, the mega-menu reveal"
+   },
+   "reveal": {
+    "value": "300ms",
+    "type": "duration",
+    "source": "measured transitionDuration 0.3s ease-in on a gate control",
+    "description": "300ms, the longest measured transition"
+   }
+  },
+  "easing": {
+   "ease": { "type": "cubicBezier", "value": [0.25, 0.1, 0.25, 1], "source": "computed transitionTimingFunction 'ease' on most controls" },
+   "ease-in": { "type": "cubicBezier", "value": [0.42, 0, 1, 1], "source": "computed transitionTimingFunction 'ease-in' on nav-cta" },
+   "ease-out": { "type": "cubicBezier", "value": [0, 0, 0.58, 1], "source": "computed transitionTimingFunction 'ease-out' on a gate control" },
+   "ease-in-out": { "type": "cubicBezier", "value": [0.42, 0, 0.58, 1], "source": "computed transitionTimingFunction 'ease-in-out' on the dropdown panel" }
+  },
+  "layout": {
+   "nav-height": {
+    "value": "80px",
+    "type": "dimension",
+    "source": "measured rect height of header at 1440",
+    "description": "the desktop marketing bar"
+   },
+   "nav-height-mobile": {
+    "value": "55px",
+    "type": "dimension",
+    "source": "measured rect height of m-header at 390; the mobile menu header measures 104px including its lower row",
+    "description": "the mobile bar"
+   },
+   "nav-cta-height": {
+    "value": "42.77px",
+    "type": "dimension",
+    "source": "measured rect height of nav-cta",
+    "description": "the header Get started pill"
+   },
+   "button-hero-height": {
+    "value": "56px",
+    "type": "dimension",
+    "source": "measured rect height of hero-cta-email / hero-cta-google",
+    "description": "56px hero signup buttons"
+   },
+   "button-height": {
+    "value": "46px",
+    "type": "dimension",
+    "source": "measured rect height of plan-cta (bottom-cta is 72px tall at 230px wide)",
+    "description": "the plan card's Start free trial button"
+   },
+   "gate-row-height": {
+    "value": "55px",
+    "type": "dimension",
+    "source": "measured rect height of gate-google / gate-apple / gate-email / oauth-* buttons and more-options",
+    "description": "55px OAuth rows on the account gate and login card"
+   },
+   "dropdown-pad": {
+    "value": "44px",
+    "type": "dimension",
+    "source": "measured padding of nav-dropdown",
+    "description": "the mega-menu panel's padding"
+   },
+   "column-narrow": {
+    "value": "640px",
+    "type": "dimension",
+    "source": "measured rect width of faq-accordion / accordion-title",
+    "description": "the FAQ accordion's 640px column"
+   },
+   "plan-card-width": {
+    "value": "448.7px",
+    "type": "dimension",
+    "source": "measured rect width of .plan-wrapper.phase2-plan-wrapper (plan-card paint)",
+    "description": "the pricing card, three across at 1440"
+   }
+  },
+  "typography": {
+   "display": {
+    "type": "typography",
+    "value": { "fontFamily": "{font.family.clarkson-serif}", "fontSize": "{font.size.display}", "fontWeight": "{font.weight.medium}", "lineHeight": "{font.leading.display}", "letterSpacing": "{font.tracking.normal}" },
+    "source": "composite of hero-title (and plan-name at 32/40)",
+    "description": "the serif display step: 40/48 medium"
+   },
+   "title": {
+    "type": "typography",
+    "value": { "fontFamily": "{font.family.clarkson-serif}", "fontSize": "{font.size.title}", "fontWeight": "{font.weight.medium}", "lineHeight": "{font.leading.title}", "letterSpacing": "{font.tracking.normal}" },
+    "source": "composite of feature-card-title",
+    "description": "serif card headlines, 24/28 medium"
+   },
+   "body": {
+    "type": "typography",
+    "value": { "fontFamily": "{font.family.clarkson}", "fontSize": "{font.size.body}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.leading.body}", "letterSpacing": "{font.tracking.normal}" },
+    "source": "composite of hero-sub / footer-col-title / vertical-cta measurements",
+    "description": "Clarkson body copy, 16/22 regular"
+   },
+   "control": {
+    "type": "typography",
+    "value": { "fontFamily": "{font.family.clarkson}", "fontSize": "{font.size.small}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.leading.control}", "letterSpacing": "{font.tracking.normal}" },
+    "source": "composite of nav-link / dropdown-item measurements",
+    "description": "Clarkson controls, 14/18.76 regular"
+   },
+   "button": {
+    "type": "typography",
+    "value": { "fontFamily": "{font.family.clarkson}", "fontSize": "{font.size.small}", "fontWeight": "{font.weight.medium}", "lineHeight": "{font.leading.body}", "letterSpacing": "{font.tracking.normal}" },
+    "source": "composite of plan-cta / gate + oauth button measurements",
+    "description": "Clarkson buttons, 14/22 medium"
+   },
+   "caps": {
+    "type": "typography",
+    "value": { "fontFamily": "{font.family.clarkson}", "fontSize": "{font.size.meta}", "fontWeight": "{font.weight.medium}", "lineHeight": "{font.leading.body}", "letterSpacing": "{font.tracking.caps}" },
+    "source": "composite of login-submit / cant-login / more-options measurements (textTransform uppercase)",
+    "description": "the gate's uppercase labels, 12/22 medium tracked 0.5px"
+   },
+   "menu": {
+    "type": "typography",
+    "value": { "fontFamily": "{font.family.clarkson}", "fontSize": "{font.size.menu}", "fontWeight": "{font.weight.regular}", "lineHeight": "{font.leading.menu}", "letterSpacing": "{font.tracking.normal}" },
+    "source": "composite of a.mobile-link measurements",
+    "description": "mobile menu links, 28/37.52 regular"
+   }
+  }
+ },
+
+ "light": {
+  "page": {
+   "value": "{palette.white}",
+   "type": "color",
+   "source": "measured backgroundColor of body on marketing pages and the gate (rgb(255,255,255)); the hero washes a pastel gradient over it",
+   "description": "the page ground; the home hero paints the hero gradient over it"
+  },
+  "surface": {
+   "value": "{palette.white}",
+   "type": "color",
+   "source": "cards, dropdown panel, gate dialog, mobile menu sheet, footer",
+   "description": "white surfaces on the white page; separation comes from shadows, not fills"
+  },
+  "surface-warm": {
+   "value": "{palette.cream}",
+   "type": "color",
+   "source": "vertical-card fill",
+   "description": "the cream industry cards"
+  },
+  "surface-mist": {
+   "value": "{palette.mist}",
+   "type": "color",
+   "source": "feature-card fill",
+   "description": "the light-grey feature card"
+  },
+  "surface-band": {
+   "value": "{palette.sky}",
+   "type": "color",
+   "source": "the bottom-section band (bottom-cta paint)",
+   "description": "the pale-blue closing band"
+  },
+  "surface-inverse": {
+   "value": "{palette.ink}",
+   "type": "color",
+   "source": "the pricing FAQ section and the support card",
+   "description": "navy ink bands"
+  },
+  "text": {
+   "value": "{palette.ink-22}",
+   "type": "color",
+   "source": "measured color of header / hero / footer / plan-card body text",
+   "description": "the working text colour"
+  },
+  "text-strong": {
+   "value": "{palette.black}",
+   "type": "color",
+   "source": "nav-link / footer-col-title / gate text",
+   "description": "titles and the gate's controls"
+  },
+  "text-soft": {
+   "value": "{palette.ink-0e}",
+   "type": "color",
+   "source": "plan-feature / footer-link / field text / caps labels",
+   "description": "secondary near-black"
+  },
+  "muted": {
+   "value": "{palette.placeholder}",
+   "type": "color",
+   "source": "login field ::placeholder",
+   "description": "#949494 placeholders; the site paints no lighter body grey"
+  },
+  "text-inverse": {
+   "value": "{palette.white}",
+   "type": "color",
+   "source": "button text on ink fills, accordion and support-card text on navy",
+   "description": "white on ink"
+  },
+  "accent": {
+   "value": "{palette.ink}",
+   "type": "color",
+   "source": "every primary button fill, serif headline colour, CTA borders",
+   "description": "the navy ink does all the work — buttons, headlines, bands"
+  },
+  "accent-hover": {
+   "value": "{palette.ink-hover}",
+   "type": "color",
+   "source": "nav-cta at hover",
+   "description": "the header pill's lighter hover"
+  },
+  "accent-pressed": {
+   "value": "{palette.ink-pressed}",
+   "type": "color",
+   "source": "plan-cta at hover/pressed",
+   "description": "the plan button's darker hover"
+  },
+  "link": {
+   "value": "{palette.ink-0e}",
+   "type": "color",
+   "source": "footer-link / vertical-cta / integration-logo; hover underlines (footer-link, footer-legal) or fades to 50% (nav-link)",
+   "description": "links are plain text, never a link blue"
+  },
+  "focus": {
+   "value": "{palette.focus-blue}",
+   "type": "color",
+   "source": "browser auto ring on links and accordions",
+   "description": "1px #005fcc auto ring"
+  },
+  "focus-alt": {
+   "value": "{palette.focus-amber}",
+   "type": "color",
+   "source": "mobile menu controls at focus-visible",
+   "description": "1px #e59700 ring inside the mobile menu"
+  },
+  "border": {
+   "value": "{palette.line}",
+   "type": "color",
+   "source": "the plan cards' 1px hairline",
+   "description": "the default hairline"
+  },
+  "border-strong": {
+   "value": "{palette.black}",
+   "type": "color",
+   "source": "gate + oauth buttons' 1px solid #000, hero CTAs' 1px ink",
+   "description": "the gate's heavy rules"
+  },
+  "border-on-dark": {
+   "value": "{palette.divider-on-dark}",
+   "type": "color",
+   "source": "FAQ row hairlines on navy",
+   "description": "10% white on ink"
+  },
+  "disabled-bg": {
+   "value": "{palette.fog}",
+   "type": "color",
+   "source": "login-submit at rest (the submit stays grey until both fields validate)",
+   "description": "#f2f2f2 disabled fill"
+  },
+  "disabled-text": {
+   "value": "{palette.gray}",
+   "type": "color",
+   "source": "login-submit text at rest",
+   "description": "#b7b7b7 on the disabled submit"
+  },
+  "overlay": {
+   "value": "{palette.scrim}",
+   "type": "color",
+   "source": "the mobile menu's backdrop",
+   "description": "50% black scrim"
+  },
+  "component": {
+   "button-primary-bg": {
+    "value": "{palette.ink}",
+    "type": "color",
+    "source": "nav-cta / plan-cta / bottom-cta / feature CTA backgroundColor",
+    "description": "ink fill on every primary button"
+   },
+   "button-primary-fg": {
+    "value": "{palette.white}",
+    "type": "color",
+    "source": "same buttons' color"
+   },
+   "button-primary-hover-bg": {
+    "value": "{palette.ink-hover}",
+    "type": "color",
+    "source": "nav-cta hover",
+    "description": "the header pill lightens"
+   },
+   "button-plan-hover-bg": {
+    "value": "{palette.ink-pressed}",
+    "type": "color",
+    "source": "plan-cta hover",
+    "description": "the plan button darkens instead — both hovers are real"
+   },
+   "button-outline-border": {
+    "value": "{palette.ink}",
+    "type": "color",
+    "source": "hero-cta-email / hero-cta-google borderColor (1px solid)",
+    "description": "the hero's ghost CTAs draw an ink rule"
+   },
+   "button-gate-border": {
+    "value": "{palette.black}",
+    "type": "color",
+    "source": "gate-* / oauth-* borderColor (1px solid #000)",
+    "description": "the gate's 1px black rules"
+   },
+   "link-hover-opacity": {
+    "value": 0.5,
+    "type": "number",
+    "source": "measured opacity of nav-link / nav-trigger / login-link at hover and pressed",
+    "description": "marketing links fade to 50%, not recolour"
+   },
+   "cta-hover-opacity": {
+    "value": 0.8,
+    "type": "number",
+    "source": "measured opacity of hero-cta-email / hero-cta-google at hover and pressed",
+    "description": "the hero ghost CTAs fade to 80%"
+   },
+   "field-disabled-bg": {
+    "value": "{palette.fog}",
+    "type": "color",
+    "source": "login-submit fill before the form validates"
+   },
+   "tooltip-bg": {
+    "value": "{palette.ink-0e}",
+    "type": "color",
+    "source": ".feature-tooltip fill",
+    "description": "near-black tooltips on the plan cards"
+   },
+   "tag-bg": {
+    "value": "{palette.lavender-light}",
+    "type": "color",
+    "source": "testimonial tag pill"
+   },
+   "testimonial-bg": {
+    "value": "{palette.lavender}",
+    "type": "color",
+    "source": "the lavender testimonial card"
+   }
+  }
+ }
+}

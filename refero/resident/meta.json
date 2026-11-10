@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/f451c085-f048-4c9c-ae3b-03acc88320ab",
   "source_url": "https://resident.co.nz",
   "extracted_at": "2026-06-03T19:07:07.606Z",
-  "fetched_at": "2026-10-20T08:22:25Z",
+  "fetched_at": "2026-11-08T04:20:45Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e2a9363f-cdff-481e-9d9f-8150b59eac58.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/b4356d6c-3c48-4568-ad35-b9547d5ef83e.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/5abe8b12-5047-4904-aa2f-0e4d2cd755de.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/fbc4d0b9-d55f-45c3-8c91-75c201dfcb61.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

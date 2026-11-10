@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/31903c2b-99bf-4fa8-8c92-238858f3563c",
   "source_url": "https://walden.us",
   "extracted_at": "2026-06-03T19:29:21.907Z",
-  "fetched_at": "2026-10-20T08:22:16Z",
+  "fetched_at": "2026-11-08T04:21:05Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b336c94c-4be1-43a4-8c66-addeb35288b8.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/68f2f6a3-4b97-4253-a048-c56307ce5dbe.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/67e83f76-b8b6-4ecf-9b08-6fe11cf32a7a.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/9300de65-0019-4e40-bb0d-289061a45ece.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

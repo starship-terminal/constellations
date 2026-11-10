@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/a0630421-7b66-48b4-aa14-6194a3b2c2b9",
   "source_url": "https://www.fey.com",
   "extracted_at": "2026-06-03T17:41:40.011Z",
-  "fetched_at": "2026-10-20T08:22:55Z",
+  "fetched_at": "2026-11-08T04:20:07Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d0dc6b33-5970-43e5-af34-5c9694b45b13.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/49c61cd8-0979-4922-8b03-ecc8d88215a7.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/76569cd0-d38a-4e06-ab72-6a6013d15e0e.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/8b7589f4-0520-4fd5-9aba-ca8a782140ee.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

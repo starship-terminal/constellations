@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/51a9246f-9238-47dd-b254-48983b8713a2",
   "source_url": "https://lovi.care",
   "extracted_at": "2026-06-03T15:09:48.384Z",
-  "fetched_at": "2026-10-20T08:25:06Z",
+  "fetched_at": "2026-11-08T04:20:27Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/74284360-e004-4293-be29-0a139365ed46.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/77dcecc7-4f75-44ba-98b9-c29f1f0de65d.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/6b1a8c1e-8f95-4300-9162-582dfc9fa3ea.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/09447be6-4c45-46f0-85f0-d4468acd73e4.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

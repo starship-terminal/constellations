@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/375e255f-6e7b-4091-bf73-6df42a094263",
   "source_url": "https://www.apple.com/apple-watch-series-12",
   "extracted_at": "2026-09-20T21:34:21.942Z",
-  "fetched_at": "2026-10-20T08:21:27Z",
+  "fetched_at": "2026-11-08T04:19:43Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/ad775339-ee6f-40bc-8f03-c1f7dd4228ca.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/32c55d6e-aaa7-45de-b2a7-63c8d0304daa.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/73da23a8-9782-4321-b892-615731662014.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/3438831f-81d1-4f33-ae73-ff9684f2a986.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

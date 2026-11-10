@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/0057e55a-8a66-4ffc-9c21-f0b757e580b3",
   "source_url": "https://hausotto.com",
   "extracted_at": "2026-06-03T19:18:01.351Z",
-  "fetched_at": "2026-10-20T08:22:09Z",
+  "fetched_at": "2026-11-08T04:20:16Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d31d3fc2-8c8f-41b2-8824-789cb63090f2.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

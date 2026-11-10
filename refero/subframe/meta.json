@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/c65db621-7faa-45f3-8e30-dc3ef9ffe660",
   "source_url": "https://www.subframe.com",
   "extracted_at": "2026-06-03T17:55:49.754Z",
-  "fetched_at": "2026-10-20T08:24:38Z",
+  "fetched_at": "2026-11-08T04:20:54Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e056019d-4e35-4a3d-b89c-664fb36ac485.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/2ca426e4-e172-4cf6-a477-4668af2f2e42.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/1f3dfe41-1d3e-4c3a-98df-8580fa1ad38d.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/a7658c4d-a269-46d2-b590-b05ac8964198.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

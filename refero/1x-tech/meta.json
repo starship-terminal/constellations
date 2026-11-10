@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/7aa1dbff-f5f1-4a64-9dba-f4caad7f1ebf",
   "source_url": "https://www.1x.tech/neo",
   "extracted_at": "2026-09-20T22:15:06.310Z",
-  "fetched_at": "2026-10-20T08:21:27Z",
+  "fetched_at": "2026-11-08T04:19:35Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/369fa421-0243-4cc5-ad43-b5a905b6a117.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/e9f13d25-8096-48f2-a217-7c61fd358615.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/39038831-f5fa-42e5-9d2b-8cbb00702ff2.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/12eca495-d8a2-403a-a592-852828002ce4.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

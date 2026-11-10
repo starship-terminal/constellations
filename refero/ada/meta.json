@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/f23e132d-3bfb-498d-a2e4-6d069b4dbc59",
   "source_url": "https://www.ada.cx",
   "extracted_at": "2026-06-03T18:20:26.162Z",
-  "fetched_at": "2026-10-20T08:24:30Z",
+  "fetched_at": "2026-11-08T04:19:38Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/8ecbe361-db0d-47e1-b346-a8cf4931a448.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/e2344342-66e2-4b25-b11b-de023b55a345.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/f0cf2511-5a2f-46e4-8838-9464ce7fb2e4.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/6cce95a6-93f6-4d78-afb9-2f84febf11d0.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

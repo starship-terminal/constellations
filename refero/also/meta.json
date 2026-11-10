@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/d04a3970-45f0-4030-8375-d0d26c083c0f",
   "source_url": "https://ridealso.com",
   "extracted_at": "2026-06-03T21:02:20.553Z",
-  "fetched_at": "2026-10-20T08:23:39Z",
+  "fetched_at": "2026-11-08T04:19:40Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/04e7cb1d-2707-4551-abe4-d4c0580a2749.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/c75611da-e327-454b-bc64-c15cbdfb4219.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/512a841a-1d1e-4290-be48-ecc670720089.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/d6ceac7d-e7eb-4d81-b760-48be92f582d7.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/715a3ad2-5b6d-421f-b72b-3aa6fec86351",
   "source_url": "https://era.app",
   "extracted_at": "2026-06-03T20:53:47.514Z",
-  "fetched_at": "2026-10-20T08:23:40Z",
+  "fetched_at": "2026-11-08T04:20:05Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/068c7650-99ad-440c-9db1-9c15381ab513.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/1c2e44d2-3340-47d0-ab61-5d88a17a726d.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d145b09a-7b63-4676-aa76-7f956b25b745.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/6219a97b-3ece-4a16-b1c8-359cadda1fe7.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

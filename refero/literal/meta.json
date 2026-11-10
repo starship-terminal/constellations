@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/7e698bf6-6b31-40ed-a89a-40f4c37ade38",
   "source_url": "https://literal.club",
   "extracted_at": "2026-06-03T20:56:31.318Z",
-  "fetched_at": "2026-10-20T08:23:40Z",
+  "fetched_at": "2026-11-08T04:20:26Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/2b30d39b-d619-4120-a573-9e1fdbcd2120.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/e6178f21-10d2-402e-a497-969528d3f553.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/05ca903a-d4a2-4b70-8423-40d269d8afd1.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/c2c3b950-4c10-4807-9780-98c6f595cff3.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

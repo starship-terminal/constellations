@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/607c2098-bbbb-40bb-b23e-adf2b72c63dd",
   "source_url": "https://slite.com",
   "extracted_at": "2026-07-03T03:44:10.775Z",
-  "fetched_at": "2026-10-20T08:21:32Z",
+  "fetched_at": "2026-11-08T04:20:50Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d3abeb03-d5d3-40da-a493-a87308e748b4.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0e758711-ee42-45a3-b660-22c325ef15ee.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/4718f643-df4e-41f0-8baa-0939f086a777.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0d01dede-63ee-4e52-a864-a1bb911f6418.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

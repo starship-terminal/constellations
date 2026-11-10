@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/f93ac72e-73b2-4b2c-80eb-351ddfa56f4d",
   "source_url": "https://playful.software",
   "extracted_at": "2026-06-03T16:03:07.634Z",
-  "fetched_at": "2026-10-20T08:23:16Z",
+  "fetched_at": "2026-11-08T04:20:40Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/0f859620-30c2-4f1b-b9cc-edb992924070.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/50668e71-ec76-4dab-a1a6-3296b21070f6.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/c4be9e8d-9497-4ae6-8e0c-90201fb27f5b.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/883dc34f-9207-4182-aded-cc49be1776e9.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

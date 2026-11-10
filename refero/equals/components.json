@@ -1,0 +1,55 @@
+[
+  {
+    "html": "<div style=\"--color-analyst-yellow:#FFCC00;--color-orchid-cta:#B074CE;--color-brand-green:#20A277;--color-glacier:#2DCBDC;--color-midnight-ink:#000000;--color-warm-cream:#FAF9F5;--color-cloud-white:#FFFFFF;--color-slate-body:#646462;--color-fog-border:#CDCCC9;--font-serrif-condensed:'Georgia','Times New Roman',serif;--font-unica77:'Inter','Helvetica Neue',Arial,sans-serif;box-sizing:border-box;background:var(--color-warm-cream);padding:48px 40px;display:flex;flex-direction:column;align-items:center;gap:32px;width:600px;font-family:var(--font-unica77);\"><h1 style=\"font-family:var(--font-serrif-condensed);font-size:72px;font-weight:400;line-height:1.02;letter-spacing:-1.4px;color:var(--color-midnight-ink);text-align:center;margin:0;padding:0;\">What's after Excel?</h1><p style=\"font-family:var(--font-unica77);font-size:18px;font-weight:400;line-height:1.44;letter-spacing:-0.072px;color:var(--color-slate-body);text-align:center;margin:0;padding:0;max-width:420px;\">Equals is the first new spreadsheet in 20 years, engineered for AI, designed for trust.</p><div style=\"display:flex;align-items:center;background:var(--color-cloud-white);border:1px solid var(--color-fog-border);border-radius:60px;padding:6px 6px 6px 20px;width:100%;max-width:440px;box-sizing:border-box;\"><input type=\"email\" placeholder=\"Enter your work email\" style=\"flex:1;border:none;outline:none;background:transparent;font-family:var(--font-unica77);font-size:16px;font-weight:400;letter-spacing:-0.08px;color:var(--color-midnight-ink);padding:8px 0;\"/><button style=\"background:var(--color-orchid-cta);color:var(--color-cloud-white);border:none;border-radius:60px;padding:10px 22px;font-family:var(--font-unica77);font-size:14px;font-weight:400;letter-spacing:-0.084px;cursor:pointer;white-space:nowrap;\">Get a demo</button></div></div>",
+    "name": "Orchid CTA Email Capture",
+    "role": "",
+    "description": ""
+  },
+  {
+    "html": "<div style=\"--color-analyst-yellow:#FFCC00;--color-orchid-cta:#B074CE;--color-brand-green:#20A277;--color-glacier:#2DCBDC;--color-midnight-ink:#000000;--color-warm-cream:#FAF9F5;--color-cloud-white:#FFFFFF;--color-slate-body:#646462;--color-fog-border:#CDCCC9;--font-serrif-condensed:'Georgia','Times New Roman',serif;--font-unica77:'Inter','Helvetica Neue',Arial,sans-serif;background:var(--color-warm-cream);width:600px;box-sizing:border-box;font-family:var(--font-unica77);\"><div style=\"border-top:1px solid var(--color-midnight-ink);display:flex;align-items:center;justify-content:space-between;padding:36px 40px;\"><div style=\"display:flex;flex-direction:column;gap:10px;\"><h2 style=\"font-family:var(--font-serrif-condensed);font-size:40px;font-weight:400;line-height:1.1;letter-spacing:-0.4px;color:var(--color-midnight-ink);margin:0;padding:0;\">Equals for RevOps</h2><p style=\"font-family:var(--font-unica77);font-size:16px;font-weight:400;line-height:1.5;letter-spacing:-0.08px;color:var(--color-slate-body);margin:0;padding:0;\">Next-level clarity into your pipeline and funnel.</p></div><div style=\"width:44px;height:22px;background:#FF3716;flex-shrink:0;\"></div></div><div style=\"border-top:1px solid var(--color-midnight-ink);display:flex;align-items:center;justify-content:space-between;padding:36px 40px;\"><div style=\"display:flex;flex-direction:column;gap:10px;\"><h2 style=\"font-family:var(--font-serrif-condensed);font-size:40px;font-weight:400;line-height:1.1;letter-spacing:-0.4px;color:var(--color-midnight-ink);margin:0;padding:0;\">Equals for Founders</h2><p style=\"font-family:var(--font-unica77);font-size:16px;font-weight:400;line-height:1.5;letter-spacing:-0.08px;color:var(--color-slate-body);margin:0;padding:0;\">Real-time feedback on how each bet is playing out.</p></div><div style=\"width:44px;height:22px;background:#0000BB;flex-shrink:0;\"></div></div><div style=\"border-top:1px solid var(--color-midnight-ink);border-bottom:1px solid var(--color-midnight-ink);display:flex;align-items:center;justify-content:space-between;padding:36px 40px;\"><div style=\"display:flex;flex-direction:column;gap:10px;\"><h2 style=\"font-family:var(--font-serrif-condensed);font-size:40px;font-weight:400;line-height:1.1;letter-spacing:-0.4px;color:var(--color-midnight-ink);margin:0;padding:0;\">Equals for Finance</h2><p style=\"font-family:var(--font-unica77);font-size:16px;font-weight:400;line-height:1.5;letter-spacing:-0.08px;color:var(--color-slate-body);margin:0;padding:0;\">Stand up board-ready sales and ARR reporting.</p></div><div style=\"width:44px;height:22px;background:var(--color-brand-green);flex-shrink:0;\"></div></div></div>",
+    "name": "Solution Rows",
+    "role": "",
+    "description": ""
+  },
+  {
+    "html": "<div style=\"--color-analyst-yellow:#FFCC00;--color-orchid-cta:#B074CE;--color-brand-green:#20A277;--color-glacier:#2DCBDC;--color-midnight-ink:#000000;--color-warm-cream:#FAF9F5;--color-cloud-white:#FFFFFF;--color-slate-body:#646462;--color-fog-border:#CDCCC9;--font-serrif-condensed:'Georgia','Times New Roman',serif;--font-unica77:'Inter','Helvetica Neue',Arial,sans-serif;background:var(--color-warm-cream);padding:56px 40px;width:600px;box-sizing:border-box;display:flex;flex-direction:column;gap:24px;\"><div style=\"font-family:var(--font-serrif-condensed);font-size:80px;font-weight:400;line-height:0.7;color:var(--color-midnight-ink);\">\u201c</div><blockquote style=\"margin:0;padding:0;\"><p style=\"font-family:var(--font-serrif-condensed);font-size:40px;font-weight:400;line-height:1.1;letter-spacing:-0.4px;color:var(--color-midnight-ink);margin:0;padding:0;\">Equals has fundamentally changed how we operate as a company.</p></blockquote><div style=\"display:flex;flex-direction:column;gap:4px;padding-top:8px;\"><span style=\"font-family:var(--font-unica77);font-size:16px;font-weight:400;line-height:1.5;letter-spacing:-0.08px;color:var(--color-midnight-ink);\">Sarah Chen</span><span style=\"font-family:var(--font-unica77);font-size:16px;font-weight:400;line-height:1.5;letter-spacing:-0.08px;color:var(--color-slate-body);\">Head of Revenue Operations, Notion</span></div></div>",
+    "name": "Testimonial Pull Quote",
+    "role": "",
+    "description": ""
+  },
+  {
+    "name": "Orchid CTA Button",
+    "role": "Primary call-to-action",
+    "description": "Background #B074CE, white text, 60px border-radius (full pill), 4px 12px padding, Unica77 14px weight 400. The pill radius against the otherwise 0px-radius input it sits beside creates deliberate contrast. Used for 'Get a demo' globally."
+  },
+  {
+    "name": "Ghost Nav Link",
+    "role": "Primary navigation items",
+    "description": "Transparent background, #000000 text, 0px radius, 0px padding, Unica77 16px weight 400 with -0.08px letter-spacing. No underline at rest. Navigation links are completely unstyled except for hover state."
+  },
+  {
+    "name": "Solution Row",
+    "role": "Feature/use-case listing separated by horizontal rules",
+    "description": "Full-width row separated by 1px #000000 horizontal rule top and bottom. Left: heading in Serrif Condensed 40px + body in Unica77 16px #646462. Right: a 24\u00d712px solid color block (red for RevOps #FF3716, navy #00B for Founders, green #20A277 for Finance) functioning as a category icon. No card background \u2014 content sits directly on #FAF9F5."
+  },
+  {
+    "name": "Nav Dropdown Panel",
+    "role": "Mega-menu navigation dropdown",
+    "description": "White #FFFFFF background, 6px border-radius, box-shadow rgba(0,0,0,0.1) 0 0 0 0.5px + rgba(0,0,0,0.05) 0 2px 8px -2px + rgba(0,0,0,0.14) 0 2px 10px -4px. Interior items use Unica77 14px-16px. The layered three-value shadow creates thin-bezel framing without aggressive depth."
+  },
+  {
+    "name": "Logo Tag",
+    "role": "Social proof / customer logo display",
+    "description": "Monochrome customer logos displayed at uniform size in a horizontal or grid layout directly on #FAF9F5. No card, no border, no padding container \u2014 logos float on the page surface. Brand names (Notion, Intercom, Cursor, etc.) rendered in their own logotype styling but forced to black."
+  },
+  {
+    "name": "Floating Color Swatch",
+    "role": "Hero background decorative element",
+    "description": "Rectangular blocks of flat color (glacier teal #2DCBDC, soft purple, warm yellow, pastel green) scattered in the hero background at varying sizes. No radius, no border, no shadow. They reference spreadsheet cell fills, creating an ambient visual field without interfering with foreground content."
+  },
+  {
+    "name": "Testimonial Pull Quote",
+    "role": "Social proof text block",
+    "description": "Large opening quotation mark in Serrif Condensed, quote body in Serrif Condensed 40-48px, attribution in Unica77 16px #646462. Placed on #FAF9F5 with no container or border. The serif quote type against the sans-serif attribution creates deliberate register shift."
+  }
+]

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/f401f04f-c45b-4261-9441-f502c6569a29",
   "source_url": "https://www.fillingpieces.com",
   "extracted_at": "2026-06-03T21:00:51.448Z",
-  "fetched_at": "2026-10-20T08:23:39Z",
+  "fetched_at": "2026-11-08T04:20:08Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/97cb09de-c61e-4b51-aefb-5bbe7f85a6b3.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/44c69f5d-68bf-4507-8f00-e6aa1c96246b",
   "source_url": "https://rarible.com",
   "extracted_at": "2026-06-03T18:29:39.412Z",
-  "fetched_at": "2026-10-20T08:22:38Z",
+  "fetched_at": "2026-11-08T04:20:43Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/0c4070f2-db66-4016-b90d-92e85adf48f4.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/d8c666bb-7439-4f35-9bf3-1a110267440b.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a8924f8c-02f0-4941-a3c9-cbf99690059f.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/3c04dd51-290d-4e6b-ae75-4bb93a37669b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/e85a82b1-c70e-42de-8c42-4bd95dd5e047",
   "source_url": "https://zoox.com",
   "extracted_at": "2026-06-03T20:49:18.000Z",
-  "fetched_at": "2026-10-20T08:21:53Z",
+  "fetched_at": "2026-11-08T04:21:08Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/0ea15888-71c2-4a69-aa4d-410790d03989.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/964aa7a9-7aee-4bcb-9e5a-51e0501be676.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/9f534409-98c2-4e95-be57-0db0ce2ed0a1.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/51bf44d2-0555-4bcf-bedf-77eee38ab5a4.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

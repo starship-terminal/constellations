@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/14efe0a8-5abf-441c-919d-add271317bf9",
   "source_url": "https://www.hartzlerdairy.com",
   "extracted_at": "2026-06-03T18:39:48.187Z",
-  "fetched_at": "2026-10-20T08:22:33Z",
+  "fetched_at": "2026-11-08T04:20:16Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/cb18a4e6-e02c-4b2c-89d7-5ecc7cc1c897.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/4d53630a-9e01-4f8a-9588-280682f3a691.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/e53d6159-6cf3-4542-8670-e9dff87d594a.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/78cb41fe-b4bb-4265-a2e2-5a963cc6f541.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

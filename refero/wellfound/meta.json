@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/f8286b32-cc41-43e3-8b43-067333bb2e32",
   "source_url": "https://wellfound.com",
   "extracted_at": "2026-06-03T20:55:50.841Z",
-  "fetched_at": "2026-10-20T08:23:41Z",
+  "fetched_at": "2026-11-08T04:21:06Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/91ca79a4-4283-4ec0-ab91-e24849f6b12c.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

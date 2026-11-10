@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/f3c955e4-0fea-462d-b05f-868552e9628c",
   "source_url": "https://ambrook.com",
   "extracted_at": "2026-06-03T20:05:27.377Z",
-  "fetched_at": "2026-10-20T08:23:54Z",
+  "fetched_at": "2026-11-08T04:19:41Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/9db9ce24-156c-4f68-81a9-4bd775d22094.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/b91a639f-cc74-475f-8567-87deaabd7249.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/831f7016-d296-4b7b-b8d0-3fe9558a42bd.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/cfbe474b-2de0-425d-8176-5fd620cfa15f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

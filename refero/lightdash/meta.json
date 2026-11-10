@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/d0f65d12-a8e6-4631-99f7-bb7cdcd5b6c5",
   "source_url": "https://www.lightdash.com",
   "extracted_at": "2026-06-03T15:42:56.888Z",
-  "fetched_at": "2026-10-20T08:23:08Z",
+  "fetched_at": "2026-11-08T04:20:25Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/48f686cd-6980-42e1-a398-f4d0e8d29c75.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/7428fb59-3adf-4282-b643-5c35e49c552a.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/879c706e-7080-4b64-9c0d-9536a0a685f7.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/4d79f4e7-3abc-4f17-9068-9aa27f6ccca4.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

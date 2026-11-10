@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/9f9a4a4f-1a27-47ca-a65b-68b9850a84e4",
   "source_url": "https://antimetal.com",
   "extracted_at": "2026-07-03T03:06:29.588Z",
-  "fetched_at": "2026-10-20T08:21:38Z",
+  "fetched_at": "2026-11-08T04:19:43Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/a0dbe529-cf44-47cc-a047-ed671e80dede.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/717ed036-d899-4574-96c0-1ebe7f656ce9.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/845eb16f-f695-43a2-8a7c-372691927bdf.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/7c78b0dc-58e3-4207-b529-626a4764cee8.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

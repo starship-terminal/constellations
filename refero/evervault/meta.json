@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/03dcd158-bc4d-447b-aaf2-8e522671a109",
   "source_url": "https://evervault.com",
   "extracted_at": "2026-06-03T20:48:08.220Z",
-  "fetched_at": "2026-10-20T08:23:42Z",
+  "fetched_at": "2026-11-08T04:20:06Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/21968a22-8f95-4001-9793-e510549505a7.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

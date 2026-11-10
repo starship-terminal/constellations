@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/6d4ef8f4-badd-4e3c-a168-0cc89c833b26",
   "source_url": "https://maquilts.com",
   "extracted_at": "2026-06-03T21:19:48.491Z",
-  "fetched_at": "2026-10-20T08:23:35Z",
+  "fetched_at": "2026-11-08T04:20:27Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/64f98192-9eb4-403f-8674-d955caaa7f5d.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

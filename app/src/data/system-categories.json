@@ -1,284 +1,414 @@
 [
-  {
-    "referenceId": "systems:duolingo",
-    "groupId": "web-categories",
-    "labels": ["Education"],
-    "reason": "catalog.json describes gamified learning, lessons, streaks and leaderboards."
-  },
-  {
-    "referenceId": "systems:brilliant",
-    "groupId": "web-categories",
-    "labels": ["Education"],
-    "reason": "catalog.json describes interactive problem-solving lessons and course paths."
-  },
-  {
-    "referenceId": "systems:notebooklm",
-    "groupId": "web-categories",
-    "labels": ["AI Tool", "Productivity"],
-    "reason": "catalog.json describes a source-grounded AI workspace with sources, chat and studio outputs."
-  },
-  {
-    "referenceId": "systems:coursera",
-    "groupId": "web-categories",
-    "labels": ["Education"],
-    "reason": "catalog.json describes the course catalogue, course pages and modules."
-  },
-  {
-    "referenceId": "systems:gauth",
-    "groupId": "web-categories",
-    "labels": ["AI Tool", "Education"],
-    "reason": "catalog.json describes AI tutoring, lesson players and an Ask Tutor panel."
-  },
-  {
-    "referenceId": "systems:researchrabbit",
-    "groupId": "web-categories",
-    "labels": ["Reference"],
-    "reason": "systems/researchrabbit/README.md describes literature search, citation graphs, article collections and citation copying. Reference fits the captured workflow; the legacy ai-research category alone does not establish a captured AI interaction."
-  },
-  {
-    "referenceId": "systems:manus",
-    "groupId": "web-categories",
-    "labels": ["AI Tool"],
-    "reason": "catalog.json describes agent task threads and a library of agent outputs."
-  },
-  {
-    "referenceId": "systems:chatgpt",
-    "groupId": "web-categories",
-    "labels": ["AI Tool"],
-    "reason": "catalog.json identifies the AI chat product and its composer, thread and history."
-  },
-  {
-    "referenceId": "systems:claude",
-    "groupId": "web-categories",
-    "labels": ["AI Tool"],
-    "reason": "catalog.json identifies the AI chat product with Artifacts and Projects."
-  },
-  {
-    "referenceId": "systems:hevy",
-    "groupId": "ios-categories",
-    "labels": ["Fitness"],
-    "reason": "catalog.json describes native iOS workout logging, set tables and rest timers."
-  },
-  {
-    "referenceId": "systems:tokentracker",
-    "groupId": "web-categories",
-    "labels": ["Development Tools"],
-    "reason": "systems/tokentracker/README.md describes the local CLI dashboard for token usage, sessions, limits and skills. This monitors developer tooling; displaying usage costs does not make it a Finance product."
-  },
-  {
-    "referenceId": "systems:linear",
-    "groupId": "web-categories",
-    "labels": ["Project Management"],
-    "reason": "catalog.json describes issue boards, issue detail and issue tracking."
-  },
-  {
-    "referenceId": "systems:polaris",
-    "groupId": "web-categories",
-    "labels": ["Development Tools"],
-    "reason": "systems/polaris/README.md identifies a published React component and token archive with a local reference gallery. Development Tools fits this library package; it is not evidence of a captured Shopify marketplace or merchant application."
-  },
-  {
-    "referenceId": "systems:grokbot",
-    "groupId": "ios-categories",
-    "labels": ["AI Tool"],
-    "reason": "catalog.json describes native iOS agent chat with a conversation per bot."
-  },
-  {
-    "referenceId": "systems:telegram",
-    "groupId": "ios-categories",
-    "labels": ["Communication Tools"],
-    "reason": "catalog.json describes native iOS messaging, chat lists and outgoing message bubbles."
-  },
-  {
-    "referenceId": "systems:youtube",
-    "groupId": "ios-categories",
-    "labels": ["Video Streaming"],
-    "reason": "catalog.json describes the native iOS video feed, thumbnails and video media controls."
-  },
-  {
-    "referenceId": "systems:gemini",
-    "groupId": "ios-categories",
-    "labels": ["AI Tool"],
-    "reason": "catalog.json describes the native iOS AI assistant and its chat composer."
-  },
-  {
-    "referenceId": "systems:spotify",
-    "groupId": "ios-categories",
-    "labels": ["Music Streaming"],
-    "reason": "catalog.json describes the native iOS music app and mini player."
-  },
-  {
-    "referenceId": "systems:grab",
-    "groupId": "ios-categories",
-    "labels": ["Food Delivery", "Travel & Booking"],
-    "reason": "systems/grab/README.md records GrabFood and a ride-booking flow. iOS has no Transport category, so Travel & Booking covers the captured rides; Food Delivery covers the separate GrabFood flow."
-  },
-  {
-    "referenceId": "systems:github-ios",
-    "groupId": "ios-categories",
-    "labels": ["Collaboration Tools", "Project Management"],
-    "reason": "systems/github-ios/README.md records issues, pull requests, code review and notifications. iOS has no Development Tools category; collaboration and project tracking cover those captured workflows without inventing a new label."
-  },
-  {
-    "referenceId": "systems:claude-ios",
-    "groupId": "ios-categories",
-    "labels": ["AI Tool"],
-    "reason": "catalog.json describes native iOS AI chat and the assistant composer."
-  },
-  {
-    "referenceId": "systems:substack",
-    "groupId": "ios-categories",
-    "labels": ["Magazines & Newspapers", "Social Networking"],
-    "reason": "systems/substack/README.md describes newsletter reading and publishing, notes, followed publications, activity and chat. Magazines & Newspapers is the closest publication category; Social Networking covers the captured social activity and chat."
-  },
-  {
-    "referenceId": "systems:notion-ios",
-    "groupId": "ios-categories",
-    "labels": ["AI Tool", "Productivity"],
-    "reason": "systems/notion-ios/README.md records notes, docs, pages, databases and Notion AI chat. These support productivity and an explicitly captured AI workflow."
-  },
-  {
-    "referenceId": "systems:chatgpt-ios",
-    "groupId": "ios-categories",
-    "labels": ["AI Tool"],
-    "reason": "catalog.json describes native iOS assistant chat and its composer."
-  },
-  {
-    "referenceId": "systems:arcsearch",
-    "groupId": "ios-categories",
-    "labels": ["Utility"],
-    "reason": "systems/arcsearch/README.md records browser chrome, searching, tab switching and history. Utility is the iOS category for this browser; no captured AI feature is required by this assignment."
-  },
-  {
-    "referenceId": "systems:cursor-ios",
-    "groupId": "ios-categories",
-    "labels": ["AI Tool"],
-    "reason": "catalog.json describes a native iOS coding-agent client and agent replies. iOS has no Development Tools category, so the directly supported AI Tool label stands alone."
-  },
-  {
-    "referenceId": "systems:cursor-desktop",
-    "groupId": "web-categories",
-    "labels": ["AI Tool", "Development Tools"],
-    "reason": "catalog.json describes the desktop coding-agent application and project/agent workspace."
-  },
-  {
-    "referenceId": "systems:devin-desktop",
-    "groupId": "web-categories",
-    "labels": ["AI Tool", "Development Tools"],
-    "reason": "catalog.json describes a desktop coding agent on a VS Code workbench."
-  },
-  {
-    "referenceId": "systems:superset-desktop",
-    "groupId": "web-categories",
-    "labels": ["AI Tool", "Development Tools"],
-    "reason": "catalog.json describes parallel coding agents, CLI terminals and development workspaces."
-  },
-  {
-    "referenceId": "systems:orca-desktop",
-    "groupId": "web-categories",
-    "labels": ["AI Tool", "Development Tools"],
-    "reason": "catalog.json describes a desktop coding-agent harness, worktrees, terminals and an inspector."
-  },
-  {
-    "referenceId": "systems:capy-desktop",
-    "groupId": "web-categories",
-    "labels": ["AI Tool", "Development Tools"],
-    "reason": "catalog.json describes a desktop application for cloud coding agents, projects and agent runs."
-  },
-  {
-    "referenceId": "systems:conductor-desktop",
-    "groupId": "web-categories",
-    "labels": ["AI Tool", "Development Tools"],
-    "reason": "catalog.json describes a desktop coding-agent application with repositories, workspaces, files and changes."
-  },
-  {
-    "referenceId": "systems:luma-ios",
-    "groupId": "ios-categories",
-    "labels": ["Scheduling Tools", "Social Networking"],
-    "reason": "systems/luma-ios/README.md records event discovery, event creation, calendars, following and event chat. iOS has no Events category; scheduling and community interaction cover these captured workflows."
-  },
-  {
-    "referenceId": "systems:grokbot-desktop",
-    "groupId": "web-categories",
-    "labels": ["AI Tool"],
-    "reason": "systems/grokbot-desktop/README.md describes a messenger for AI agents with one conversation per bot. The capture supports AI Tool; a general agent messenger is insufficient evidence for a Development Tools label."
-  },
-  {
-    "referenceId": "systems:opencode-desktop",
-    "groupId": "web-categories",
-    "labels": ["AI Tool", "Development Tools"],
-    "reason": "catalog.json describes a desktop coding agent with projects, sessions and tool calls."
-  },
-  {
-    "referenceId": "systems:codex-desktop",
-    "groupId": "web-categories",
-    "labels": ["AI Tool", "Development Tools"],
-    "reason": "catalog.json describes a desktop coding-agent application with projects and chats."
-  },
-  {
-    "referenceId": "systems:notion-calendar-desktop",
-    "groupId": "web-categories",
-    "labels": ["Scheduling Tools"],
-    "reason": "catalog.json describes calendar lists, a week grid, event chips and event scheduling."
-  },
-  {
-    "referenceId": "systems:zed-desktop",
-    "groupId": "web-categories",
-    "labels": ["AI Tool", "Development Tools"],
-    "reason": "catalog.json describes a native code editor with an agent panel, code, diffs and a terminal."
-  },
-  {
-    "referenceId": "systems:raycast-desktop",
-    "groupId": "web-categories",
-    "labels": ["Productivity"],
-    "reason": "catalog.json describes a keyboard-first launcher and command palette. The captured account had an ended AI trial, so the general launcher workflow supports Productivity without adding AI Tool."
-  },
-  {
-    "referenceId": "systems:notion-desktop",
-    "groupId": "web-categories",
-    "labels": ["AI Tool", "Productivity"],
-    "reason": "catalog.json describes the desktop docs, notes and database workspace and an explicitly captured docked AI panel."
-  },
-  {
-    "referenceId": "systems:refero-design",
-    "groupId": "web-categories",
-    "labels": ["Inspiration Board", "Reference"],
-    "reason": "systems/refero-design/README.md records screenshot research galleries, a styles gallery and style-documentation pages. Inspiration Board covers visual discovery and Reference covers documentation; the legacy ai-research label alone does not prove a captured AI workflow."
-  },
-  {
-    "referenceId": "systems:clerk",
-    "groupId": "web-categories",
-    "labels": ["Development Tools"],
-    "reason": "catalog.json describes developer administration: authentication forms, settings screens and searchable tables."
-  },
-  {
-    "referenceId": "systems:sentry",
-    "groupId": "web-categories",
-    "labels": ["Development Tools"],
-    "reason": "catalog.json describes monitoring dashboards, trace waterfalls and diagnostic tables."
-  },
-  {
-    "referenceId": "systems:metabase",
-    "groupId": "web-categories",
-    "labels": ["Business", "Productivity"],
-    "reason": "catalog.json describes visual query notebooks, analytics dashboards and drill-through tables."
-  },
-  {
-    "referenceId": "systems:cloudflare",
-    "groupId": "web-categories",
-    "labels": ["Development Tools"],
-    "reason": "catalog.json describes security dashboards, condition builders and configuration tables."
-  },
-  {
-    "referenceId": "systems:attio",
-    "groupId": "web-categories",
-    "labels": ["Business", "Productivity"],
-    "reason": "catalog.json describes CRM tables, configurable views and record panels."
-  },
-  {
-    "referenceId": "systems:supabase",
-    "groupId": "web-categories",
-    "labels": ["Development Tools"],
-    "reason": "catalog.json describes developer dashboards, code editors, log filters and database settings."
-  }
+ {
+  "referenceId": "systems:duolingo",
+  "groupId": "web-categories",
+  "labels": [
+   "Education"
+  ],
+  "reason": "catalog.json describes gamified learning, lessons, streaks and leaderboards."
+ },
+ {
+  "referenceId": "systems:brilliant",
+  "groupId": "web-categories",
+  "labels": [
+   "Education"
+  ],
+  "reason": "catalog.json describes interactive problem-solving lessons and course paths."
+ },
+ {
+  "referenceId": "systems:notebooklm",
+  "groupId": "web-categories",
+  "labels": [
+   "AI Tool",
+   "Productivity"
+  ],
+  "reason": "catalog.json describes a source-grounded AI workspace with sources, chat and studio outputs."
+ },
+ {
+  "referenceId": "systems:coursera",
+  "groupId": "web-categories",
+  "labels": [
+   "Education"
+  ],
+  "reason": "catalog.json describes the course catalogue, course pages and modules."
+ },
+ {
+  "referenceId": "systems:gauth",
+  "groupId": "web-categories",
+  "labels": [
+   "AI Tool",
+   "Education"
+  ],
+  "reason": "catalog.json describes AI tutoring, lesson players and an Ask Tutor panel."
+ },
+ {
+  "referenceId": "systems:researchrabbit",
+  "groupId": "web-categories",
+  "labels": [
+   "Reference"
+  ],
+  "reason": "systems/researchrabbit/README.md describes literature search, citation graphs, article collections and citation copying. Reference fits the captured workflow; the legacy ai-research category alone does not establish a captured AI interaction."
+ },
+ {
+  "referenceId": "systems:manus",
+  "groupId": "web-categories",
+  "labels": [
+   "AI Tool"
+  ],
+  "reason": "catalog.json describes agent task threads and a library of agent outputs."
+ },
+ {
+  "referenceId": "systems:chatgpt",
+  "groupId": "web-categories",
+  "labels": [
+   "AI Tool"
+  ],
+  "reason": "catalog.json identifies the AI chat product and its composer, thread and history."
+ },
+ {
+  "referenceId": "systems:claude",
+  "groupId": "web-categories",
+  "labels": [
+   "AI Tool"
+  ],
+  "reason": "catalog.json identifies the AI chat product with Artifacts and Projects."
+ },
+ {
+  "referenceId": "systems:hevy",
+  "groupId": "ios-categories",
+  "labels": [
+   "Fitness"
+  ],
+  "reason": "catalog.json describes native iOS workout logging, set tables and rest timers."
+ },
+ {
+  "referenceId": "systems:tokentracker",
+  "groupId": "web-categories",
+  "labels": [
+   "Development Tools"
+  ],
+  "reason": "systems/tokentracker/README.md describes the local CLI dashboard for token usage, sessions, limits and skills. This monitors developer tooling; displaying usage costs does not make it a Finance product."
+ },
+ {
+  "referenceId": "systems:linear",
+  "groupId": "web-categories",
+  "labels": [
+   "Project Management"
+  ],
+  "reason": "catalog.json describes issue boards, issue detail and issue tracking."
+ },
+ {
+  "referenceId": "systems:polaris",
+  "groupId": "web-categories",
+  "labels": [
+   "Development Tools"
+  ],
+  "reason": "systems/polaris/README.md identifies a published React component and token archive with a local reference gallery. Development Tools fits this library package; it is not evidence of a captured Shopify marketplace or merchant application."
+ },
+ {
+  "referenceId": "systems:grokbot",
+  "groupId": "ios-categories",
+  "labels": [
+   "AI Tool"
+  ],
+  "reason": "catalog.json describes native iOS agent chat with a conversation per bot."
+ },
+ {
+  "referenceId": "systems:telegram",
+  "groupId": "ios-categories",
+  "labels": [
+   "Communication Tools"
+  ],
+  "reason": "catalog.json describes native iOS messaging, chat lists and outgoing message bubbles."
+ },
+ {
+  "referenceId": "systems:youtube",
+  "groupId": "ios-categories",
+  "labels": [
+   "Video Streaming"
+  ],
+  "reason": "catalog.json describes the native iOS video feed, thumbnails and video media controls."
+ },
+ {
+  "referenceId": "systems:gemini",
+  "groupId": "ios-categories",
+  "labels": [
+   "AI Tool"
+  ],
+  "reason": "catalog.json describes the native iOS AI assistant and its chat composer."
+ },
+ {
+  "referenceId": "systems:spotify",
+  "groupId": "ios-categories",
+  "labels": [
+   "Music Streaming"
+  ],
+  "reason": "catalog.json describes the native iOS music app and mini player."
+ },
+ {
+  "referenceId": "systems:grab",
+  "groupId": "ios-categories",
+  "labels": [
+   "Food Delivery",
+   "Travel & Booking"
+  ],
+  "reason": "systems/grab/README.md records GrabFood and a ride-booking flow. iOS has no Transport category, so Travel & Booking covers the captured rides; Food Delivery covers the separate GrabFood flow."
+ },
+ {
+  "referenceId": "systems:github-ios",
+  "groupId": "ios-categories",
+  "labels": [
+   "Collaboration Tools",
+   "Project Management"
+  ],
+  "reason": "systems/github-ios/README.md records issues, pull requests, code review and notifications. iOS has no Development Tools category; collaboration and project tracking cover those captured workflows without inventing a new label."
+ },
+ {
+  "referenceId": "systems:claude-ios",
+  "groupId": "ios-categories",
+  "labels": [
+   "AI Tool"
+  ],
+  "reason": "catalog.json describes native iOS AI chat and the assistant composer."
+ },
+ {
+  "referenceId": "systems:substack",
+  "groupId": "ios-categories",
+  "labels": [
+   "Magazines & Newspapers",
+   "Social Networking"
+  ],
+  "reason": "systems/substack/README.md describes newsletter reading and publishing, notes, followed publications, activity and chat. Magazines & Newspapers is the closest publication category; Social Networking covers the captured social activity and chat."
+ },
+ {
+  "referenceId": "systems:notion-ios",
+  "groupId": "ios-categories",
+  "labels": [
+   "AI Tool",
+   "Productivity"
+  ],
+  "reason": "systems/notion-ios/README.md records notes, docs, pages, databases and Notion AI chat. These support productivity and an explicitly captured AI workflow."
+ },
+ {
+  "referenceId": "systems:chatgpt-ios",
+  "groupId": "ios-categories",
+  "labels": [
+   "AI Tool"
+  ],
+  "reason": "catalog.json describes native iOS assistant chat and its composer."
+ },
+ {
+  "referenceId": "systems:arcsearch",
+  "groupId": "ios-categories",
+  "labels": [
+   "Utility"
+  ],
+  "reason": "systems/arcsearch/README.md records browser chrome, searching, tab switching and history. Utility is the iOS category for this browser; no captured AI feature is required by this assignment."
+ },
+ {
+  "referenceId": "systems:cursor-ios",
+  "groupId": "ios-categories",
+  "labels": [
+   "AI Tool"
+  ],
+  "reason": "catalog.json describes a native iOS coding-agent client and agent replies. iOS has no Development Tools category, so the directly supported AI Tool label stands alone."
+ },
+ {
+  "referenceId": "systems:cursor-desktop",
+  "groupId": "web-categories",
+  "labels": [
+   "AI Tool",
+   "Development Tools"
+  ],
+  "reason": "catalog.json describes the desktop coding-agent application and project/agent workspace."
+ },
+ {
+  "referenceId": "systems:devin-desktop",
+  "groupId": "web-categories",
+  "labels": [
+   "AI Tool",
+   "Development Tools"
+  ],
+  "reason": "catalog.json describes a desktop coding agent on a VS Code workbench."
+ },
+ {
+  "referenceId": "systems:superset-desktop",
+  "groupId": "web-categories",
+  "labels": [
+   "AI Tool",
+   "Development Tools"
+  ],
+  "reason": "catalog.json describes parallel coding agents, CLI terminals and development workspaces."
+ },
+ {
+  "referenceId": "systems:orca-desktop",
+  "groupId": "web-categories",
+  "labels": [
+   "AI Tool",
+   "Development Tools"
+  ],
+  "reason": "catalog.json describes a desktop coding-agent harness, worktrees, terminals and an inspector."
+ },
+ {
+  "referenceId": "systems:capy-desktop",
+  "groupId": "web-categories",
+  "labels": [
+   "AI Tool",
+   "Development Tools"
+  ],
+  "reason": "catalog.json describes a desktop application for cloud coding agents, projects and agent runs."
+ },
+ {
+  "referenceId": "systems:conductor-desktop",
+  "groupId": "web-categories",
+  "labels": [
+   "AI Tool",
+   "Development Tools"
+  ],
+  "reason": "catalog.json describes a desktop coding-agent application with repositories, workspaces, files and changes."
+ },
+ {
+  "referenceId": "systems:luma-ios",
+  "groupId": "ios-categories",
+  "labels": [
+   "Scheduling Tools",
+   "Social Networking"
+  ],
+  "reason": "systems/luma-ios/README.md records event discovery, event creation, calendars, following and event chat. iOS has no Events category; scheduling and community interaction cover these captured workflows."
+ },
+ {
+  "referenceId": "systems:grokbot-desktop",
+  "groupId": "web-categories",
+  "labels": [
+   "AI Tool"
+  ],
+  "reason": "systems/grokbot-desktop/README.md describes a messenger for AI agents with one conversation per bot. The capture supports AI Tool; a general agent messenger is insufficient evidence for a Development Tools label."
+ },
+ {
+  "referenceId": "systems:opencode-desktop",
+  "groupId": "web-categories",
+  "labels": [
+   "AI Tool",
+   "Development Tools"
+  ],
+  "reason": "catalog.json describes a desktop coding agent with projects, sessions and tool calls."
+ },
+ {
+  "referenceId": "systems:codex-desktop",
+  "groupId": "web-categories",
+  "labels": [
+   "AI Tool",
+   "Development Tools"
+  ],
+  "reason": "catalog.json describes a desktop coding-agent application with projects and chats."
+ },
+ {
+  "referenceId": "systems:notion-calendar-desktop",
+  "groupId": "web-categories",
+  "labels": [
+   "Scheduling Tools"
+  ],
+  "reason": "catalog.json describes calendar lists, a week grid, event chips and event scheduling."
+ },
+ {
+  "referenceId": "systems:zed-desktop",
+  "groupId": "web-categories",
+  "labels": [
+   "AI Tool",
+   "Development Tools"
+  ],
+  "reason": "catalog.json describes a native code editor with an agent panel, code, diffs and a terminal."
+ },
+ {
+  "referenceId": "systems:raycast-desktop",
+  "groupId": "web-categories",
+  "labels": [
+   "Productivity"
+  ],
+  "reason": "catalog.json describes a keyboard-first launcher and command palette. The captured account had an ended AI trial, so the general launcher workflow supports Productivity without adding AI Tool."
+ },
+ {
+  "referenceId": "systems:notion-desktop",
+  "groupId": "web-categories",
+  "labels": [
+   "AI Tool",
+   "Productivity"
+  ],
+  "reason": "catalog.json describes the desktop docs, notes and database workspace and an explicitly captured docked AI panel."
+ },
+ {
+  "referenceId": "systems:refero-design",
+  "groupId": "web-categories",
+  "labels": [
+   "Inspiration Board",
+   "Reference"
+  ],
+  "reason": "systems/refero-design/README.md records screenshot research galleries, a styles gallery and style-documentation pages. Inspiration Board covers visual discovery and Reference covers documentation; the legacy ai-research label alone does not prove a captured AI workflow."
+ },
+ {
+  "referenceId": "systems:clerk",
+  "groupId": "web-categories",
+  "labels": [
+   "Development Tools"
+  ],
+  "reason": "catalog.json describes developer administration: authentication forms, settings screens and searchable tables."
+ },
+ {
+  "referenceId": "systems:sentry",
+  "groupId": "web-categories",
+  "labels": [
+   "Development Tools"
+  ],
+  "reason": "catalog.json describes monitoring dashboards, trace waterfalls and diagnostic tables."
+ },
+ {
+  "referenceId": "systems:metabase",
+  "groupId": "web-categories",
+  "labels": [
+   "Business",
+   "Productivity"
+  ],
+  "reason": "catalog.json describes visual query notebooks, analytics dashboards and drill-through tables."
+ },
+ {
+  "referenceId": "systems:cloudflare",
+  "groupId": "web-categories",
+  "labels": [
+   "Development Tools"
+  ],
+  "reason": "catalog.json describes security dashboards, condition builders and configuration tables."
+ },
+ {
+  "referenceId": "systems:attio",
+  "groupId": "web-categories",
+  "labels": [
+   "Business",
+   "Productivity"
+  ],
+  "reason": "catalog.json describes CRM tables, configurable views and record panels."
+ },
+ {
+  "referenceId": "systems:supabase",
+  "groupId": "web-categories",
+  "labels": [
+   "Development Tools"
+  ],
+  "reason": "catalog.json describes developer dashboards, code editors, log filters and database settings."
+ },
+ {
+  "referenceId": "systems:ableton",
+  "groupId": "web-categories",
+  "labels": [
+   "Music Streaming"
+  ],
+  "reason": "catalog.json describes the Ableton music software storefront: product pages, Packs, shop, trial and login, captured signed out."
+ },
+ {
+  "referenceId": "systems:allbirds",
+  "groupId": "web-categories",
+  "labels": [
+   "Marketplace"
+  ],
+  "reason": "catalog.json describes a Shopify storefront: collection grid, product page, cart drawer and login card."
+ }
 ]

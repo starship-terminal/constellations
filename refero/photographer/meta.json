@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/837ba115-568f-4ada-8182-3dc100c8b3e4",
   "source_url": "https://juliajohnson.com",
   "extracted_at": "2026-06-03T18:40:12.211Z",
-  "fetched_at": "2026-10-20T08:22:33Z",
+  "fetched_at": "2026-11-08T04:20:39Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/0669f94e-2f96-4130-9653-b428d7d22fd8.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/12e5f41b-1e77-4358-8c78-2bf086a0b527.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/e3d0e3eb-78db-4e59-8e4e-31fa568ce1b1.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/c9219c93-55f5-4961-82c2-abdff078bb57.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }
