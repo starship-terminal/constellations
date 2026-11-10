@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 55,
-    "system_domains": 47,
-    "matched_domains": 24,
-    "missing_domains": 409,
+    "system_packages": 56,
+    "system_domains": 48,
+    "matched_domains": 25,
+    "missing_domains": 408,
     "system_domains_absent_from_catalog": 23
   },
   "matched": {
@@ -109,6 +109,23 @@
           "name": "Allbirds",
           "url": "https://www.allbirds.com",
           "name_match": true
+        }
+      ]
+    },
+    "aloyoga.com": {
+      "catalog": [
+        {
+          "name": "ALO",
+          "domain": "aloyoga.com",
+          "id": 911
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "aloyoga",
+          "name": "Alo Yoga",
+          "url": "https://www.aloyoga.com",
+          "name_match": false
         }
       ]
     },
@@ -522,13 +539,6 @@
         "name": "Airtable",
         "domain": "airtable.com",
         "id": 164
-      }
-    ],
-    "aloyoga.com": [
-      {
-        "name": "ALO",
-        "domain": "aloyoga.com",
-        "id": 911
       }
     ],
     "amie.so": [
