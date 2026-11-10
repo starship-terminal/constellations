@@ -1,0 +1,3372 @@
+{
+ "home@1440": {
+  "vw": 1440,
+  "docH": 3338,
+  "h1": {
+   "text": "Live 12.4 is out now – with Link Audio, updated devices and more",
+   "font": "",
+   "x": 60,
+   "y": 129,
+   "w": 720,
+   "h": 198
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.abl-ratio-fill.abl-object-fit-cover",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 69,
+    "w": 840,
+    "h": 560
+   },
+   {
+    "el": "img.abl-ratio-fill.abl-object-fit-cover",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 960,
+    "y": 309,
+    "w": 480,
+    "h": 320
+   },
+   {
+    "el": "img.abl-ratio-fill.abl-object-fit-cover",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 600,
+    "y": 569,
+    "w": 480,
+    "h": 320
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 1578,
+    "w": 360,
+    "h": 203
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 540,
+    "y": 1578,
+    "w": 360,
+    "h": 203
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 960,
+    "y": 1578,
+    "w": 360,
+    "h": 203
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 2031,
+    "w": 360,
+    "h": 203
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 540,
+    "y": 2031,
+    "w": 360,
+    "h": 203
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 960,
+    "y": 2031,
+    "w": 360,
+    "h": 203
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 69,
+   "w": 1440,
+   "h": 2484
+  }
+ },
+ "home@1920": {
+  "vw": 1920,
+  "docH": 3603,
+  "h1": {
+   "text": "Live 12.4 is out now – with Link Audio, updated devices and more",
+   "font": "",
+   "x": 227,
+   "y": 136,
+   "w": 800,
+   "h": 198
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.abl-ratio-fill.abl-object-fit-cover",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 160,
+    "y": 69,
+    "w": 933,
+    "h": 622
+   },
+   {
+    "el": "img.abl-ratio-fill.abl-object-fit-cover",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1227,
+    "y": 336,
+    "w": 533,
+    "h": 356
+   },
+   {
+    "el": "img.abl-ratio-fill.abl-object-fit-cover",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 827,
+    "y": 625,
+    "w": 533,
+    "h": 356
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 293,
+    "y": 1715,
+    "w": 400,
+    "h": 225
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 760,
+    "y": 1715,
+    "w": 400,
+    "h": 225
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1227,
+    "y": 1715,
+    "w": 400,
+    "h": 225
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 293,
+    "y": 2201,
+    "w": 400,
+    "h": 225
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 760,
+    "y": 2201,
+    "w": 400,
+    "h": 225
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1227,
+    "y": 2201,
+    "w": 400,
+    "h": 225
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 160,
+   "y": 69,
+   "w": 1600,
+   "h": 2702
+  }
+ },
+ "home@1024": {
+  "vw": 1024,
+  "docH": 2544,
+  "h1": {
+   "text": "Live 12.4 is out now – with Link Audio, updated devices and more",
+   "font": "",
+   "x": 43,
+   "y": 112,
+   "w": 512,
+   "h": 144
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.abl-ratio-fill.abl-object-fit-cover",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 69,
+    "w": 597,
+    "h": 398
+   },
+   {
+    "el": "img.abl-ratio-fill.abl-object-fit-cover",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 683,
+    "y": 240,
+    "w": 341,
+    "h": 228
+   },
+   {
+    "el": "img.abl-ratio-fill.abl-object-fit-cover",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 427,
+    "y": 425,
+    "w": 341,
+    "h": 228
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 69,
+   "w": 1024,
+   "h": 1831
+  }
+ },
+ "home@390": {
+  "vw": 390,
+  "docH": 4767,
+  "h1": {
+   "text": "Live 12.4 is out now – with Link Audio, updated devices and more",
+   "font": "700 20px / 30px futura-pt, Avenir, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "x": 32,
+   "y": 101,
+   "w": 325,
+   "h": 60
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.abl-ratio-fill.abl-object-fit-cover",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 69,
+    "w": 390,
+    "h": 260
+   },
+   {
+    "el": "img.abl-ratio-fill.abl-object-fit-cover",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 361,
+    "w": 358,
+    "h": 238
+   },
+   {
+    "el": "img.abl-ratio-fill.abl-object-fit-cover",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 567,
+    "w": 358,
+    "h": 238
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 1858,
+    "w": 325,
+    "h": 183
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 2134,
+    "w": 325,
+    "h": 183
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 2410,
+    "w": 325,
+    "h": 183
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 2758,
+    "w": 325,
+    "h": 183
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 3011,
+    "w": 325,
+    "h": 183
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 3263,
+    "w": 325,
+    "h": 183
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 69,
+   "w": 390,
+   "h": 3615
+  }
+ },
+ "live@1440": {
+  "vw": 1440,
+  "docH": 21045,
+  "h1": {
+   "text": "Find",
+   "font": "700 60px / 78px \"Futura PT\", Avenir, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "x": 143,
+   "y": 241,
+   "w": 115,
+   "h": 77
+  },
+  "fixed": [
+   {
+    "el": "header.header-bg.header-bg-solid.has-sub-nav",
+    "pos": "sticky",
+    "top": "-72px",
+    "z": "1001",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 140
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.container-fluid",
+    "max": "100%",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 130
+   },
+   {
+    "el": "div.flex-nav",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 68
+   },
+   {
+    "el": "div.row.main-sub-nav-wrapper",
+    "max": "1440px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 68,
+    "w": 1440,
+    "h": 72
+   },
+   {
+    "el": "nav.main_sub-navigation",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 70,
+    "w": 1295,
+    "h": 70
+   },
+   {
+    "el": "div.cmp-page-banner.c27-bg.c27-bg-solid",
+    "max": "400px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1040,
+    "y": 160,
+    "w": 400,
+    "h": 76
+   },
+   {
+    "el": "figure.video.abl-figure",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 140,
+    "w": 1440,
+    "h": 832
+   },
+   {
+    "el": "div.abl-figure__media-container.abl-relative.abl-ratio-16-10",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 140,
+    "w": 1440,
+    "h": 832
+   },
+   {
+    "el": "div.container",
+    "max": "100%",
+    "padL": "120px",
+    "padR": "120px",
+    "x": 0,
+    "y": 140,
+    "w": 1440,
+    "h": 772
+   },
+   {
+    "el": "div.info.col",
+    "max": "100%",
+    "padL": "5px",
+    "padR": "20px",
+    "x": 138,
+    "y": 140,
+    "w": 1224,
+    "h": 772
+   },
+   {
+    "el": "span._animated-header.abl-type-30-xs.abl-type-60-md",
+    "max": "600px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 260,
+    "y": 231,
+    "w": 327,
+    "h": 90
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 140,
+   "w": 1440,
+   "h": 20134
+  }
+ },
+ "live@1920": {
+  "vw": 1920,
+  "docH": 22172,
+  "h1": {
+   "text": "Find",
+   "font": "700 60px / 78px \"Futura PT\", Avenir, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "x": 308,
+   "y": 241,
+   "w": 115,
+   "h": 77
+  },
+  "fixed": [
+   {
+    "el": "header.header-bg.header-bg-solid.has-sub-nav",
+    "pos": "sticky",
+    "top": "-72px",
+    "z": "1001",
+    "x": 160,
+    "y": 0,
+    "w": 1600,
+    "h": 140
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.container-fluid",
+    "max": "100%",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 160,
+    "y": 0,
+    "w": 1600,
+    "h": 130
+   },
+   {
+    "el": "div.flex-nav",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 160,
+    "y": 0,
+    "w": 1600,
+    "h": 68
+   },
+   {
+    "el": "nav.main_sub-navigation",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 160,
+    "y": 70,
+    "w": 1295,
+    "h": 70
+   },
+   {
+    "el": "div.cmp-page-banner.c27-bg.c27-bg-solid",
+    "max": "400px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1360,
+    "y": 160,
+    "w": 400,
+    "h": 76
+   },
+   {
+    "el": "figure.video.abl-figure",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 160,
+    "y": 140,
+    "w": 1600,
+    "h": 832
+   },
+   {
+    "el": "div.abl-figure__media-container.abl-relative.abl-ratio-16-10",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 160,
+    "y": 140,
+    "w": 1600,
+    "h": 832
+   },
+   {
+    "el": "div.container",
+    "max": "100%",
+    "padL": "125px",
+    "padR": "125px",
+    "x": 160,
+    "y": 140,
+    "w": 1600,
+    "h": 772
+   },
+   {
+    "el": "div.info.col",
+    "max": "100%",
+    "padL": "5px",
+    "padR": "20px",
+    "x": 303,
+    "y": 140,
+    "w": 1374,
+    "h": 772
+   },
+   {
+    "el": "span._animated-header.abl-type-30-xs.abl-type-60-md",
+    "max": "600px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 425,
+    "y": 231,
+    "w": 327,
+    "h": 90
+   },
+   {
+    "el": "div.container-fluid",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 160,
+    "y": 1050,
+    "w": 1600,
+    "h": 511
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 160,
+   "y": 140,
+   "w": 1600,
+   "h": 21207
+  }
+ },
+ "live@1024": {
+  "vw": 1024,
+  "docH": 16569,
+  "h1": {
+   "text": "Find",
+   "font": "700 60px / 78px \"Futura PT\", Avenir, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "x": 87,
+   "y": 220,
+   "w": 115,
+   "h": 77
+  },
+  "fixed": [
+   {
+    "el": "header.header-bg.header-bg-solid.has-sub-nav",
+    "pos": "sticky",
+    "top": "-72px",
+    "z": "1001",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 140
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.container-fluid",
+    "max": "100%",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 130
+   },
+   {
+    "el": "div.flex-nav",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 68
+   },
+   {
+    "el": "div.row.main-sub-nav-wrapper",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 68,
+    "w": 1024,
+    "h": 70
+   },
+   {
+    "el": "nav.main_sub-navigation",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 70,
+    "w": 993,
+    "h": 68
+   },
+   {
+    "el": "div.cmp-page-banner.c27-bg.c27-bg-solid",
+    "max": "400px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 624,
+    "y": 160,
+    "w": 400,
+    "h": 73
+   },
+   {
+    "el": "figure.video.abl-figure",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 140,
+    "w": 1024,
+    "h": 832
+   },
+   {
+    "el": "div.abl-figure__media-container.abl-relative.abl-ratio-16-10",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 140,
+    "w": 1024,
+    "h": 832
+   },
+   {
+    "el": "div.container",
+    "max": "100%",
+    "padL": "85.3333px",
+    "padR": "85.3333px",
+    "x": 0,
+    "y": 140,
+    "w": 1024,
+    "h": 772
+   },
+   {
+    "el": "div.info.col",
+    "max": "80%",
+    "padL": "0px",
+    "padR": "20px",
+    "x": 87,
+    "y": 140,
+    "w": 702,
+    "h": 772
+   },
+   {
+    "el": "span._animated-header.abl-type-30-xs.abl-type-60-md",
+    "max": "600px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 204,
+    "y": 210,
+    "w": 327,
+    "h": 90
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 140,
+   "w": 1024,
+   "h": 15773
+  }
+ },
+ "live@390": {
+  "vw": 390,
+  "docH": 17584,
+  "h1": {
+   "text": "Find",
+   "font": "700 30px / 42.6px \"Futura PT\", Avenir, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "x": 31,
+   "y": 241,
+   "w": 58,
+   "h": 38
+  },
+  "fixed": [
+   {
+    "el": "header.header-bg.header-bg-solid.has-sub-nav",
+    "pos": "sticky",
+    "top": "-72px",
+    "z": "1001",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 134
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.container-fluid",
+    "max": "100%",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 130
+   },
+   {
+    "el": "div.flex-nav",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 69
+   },
+   {
+    "el": "div.row.main-sub-nav-wrapper",
+    "max": "390px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 69,
+    "w": 390,
+    "h": 64
+   },
+   {
+    "el": "nav.main_sub-navigation",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 71,
+    "w": 390,
+    "h": 62
+   },
+   {
+    "el": "div.container",
+    "max": "100%",
+    "padL": "32.5px",
+    "padR": "32.5px",
+    "x": 0,
+    "y": 176,
+    "w": 390,
+    "h": 831
+   },
+   {
+    "el": "div.info.col",
+    "max": "100%",
+    "padL": "10px",
+    "padR": "20px",
+    "x": 21,
+    "y": 176,
+    "w": 349,
+    "h": 831
+   },
+   {
+    "el": "div.container-fluid",
+    "max": "100%",
+    "padL": "32.5px",
+    "padR": "32.5px",
+    "x": 0,
+    "y": 1027,
+    "w": 390,
+    "h": 273
+   },
+   {
+    "el": "div.item.item_has-bg.items-1",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 21,
+    "y": 1027,
+    "w": 349,
+    "h": 273
+   },
+   {
+    "el": "div.container",
+    "max": "100%",
+    "padL": "30px",
+    "padR": "30px",
+    "x": 0,
+    "y": 1301,
+    "w": 390,
+    "h": 168
+   },
+   {
+    "el": "div.container",
+    "max": "100%",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 0,
+    "y": 1489,
+    "w": 390,
+    "h": 228
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 176,
+   "w": 390,
+   "h": 16183
+  }
+ },
+ "packs@1440": {
+  "vw": 1440,
+  "docH": 40472,
+  "h1": {
+   "text": "Softube Tape and Saturation Bundle",
+   "font": "",
+   "x": 120,
+   "y": 159,
+   "w": 1200,
+   "h": 66
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.abl-ratio-fill.abl-object-fit-cover",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 69,
+    "w": 1440,
+    "h": 348
+   },
+   {
+    "el": "h2.packs-banner__subheadline.text-malachite",
+    "max": "50%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 255,
+    "w": 600,
+    "h": 42
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 69,
+   "w": 1440,
+   "h": 39558
+  }
+ },
+ "packs@1920": {
+  "vw": 1920,
+  "docH": 41651,
+  "h1": {
+   "text": "Softube Tape and Saturation Bundle",
+   "font": "",
+   "x": 293,
+   "y": 169,
+   "w": 1333,
+   "h": 66
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.abl-ratio-fill.abl-object-fit-cover",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 160,
+    "y": 69,
+    "w": 1600,
+    "h": 368
+   },
+   {
+    "el": "h2.packs-banner__subheadline.text-malachite",
+    "max": "50%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 293,
+    "y": 265,
+    "w": 667,
+    "h": 42
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 160,
+   "y": 69,
+   "w": 1600,
+   "h": 40684
+  }
+ },
+ "packs@1024": {
+  "vw": 1024,
+  "docH": 49042,
+  "h1": {
+   "text": "Softube Tape and Saturation Bundle",
+   "font": "",
+   "x": 85,
+   "y": 133,
+   "w": 853,
+   "h": 48
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.abl-ratio-fill.abl-object-fit-cover",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 69,
+    "w": 1024,
+    "h": 246
+   },
+   {
+    "el": "h2.packs-banner__subheadline.text-malachite",
+    "max": "50%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 85,
+    "y": 201,
+    "w": 427,
+    "h": 30
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 69,
+   "w": 1024,
+   "h": 48286
+  }
+ },
+ "packs@390": {
+  "vw": 390,
+  "docH": 104463,
+  "h1": {
+   "text": "Softube Tape and Saturation Bundle",
+   "font": "",
+   "x": 32,
+   "y": 101,
+   "w": 325,
+   "h": 84
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.abl-ratio-fill.abl-object-fit-cover",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 69,
+    "w": 390,
+    "h": 244
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 69,
+   "w": 390,
+   "h": 103295
+  }
+ },
+ "shop@1440": {
+  "vw": 1440,
+  "docH": 3392,
+  "h1": {
+   "text": "Live",
+   "font": "",
+   "x": 120,
+   "y": 259,
+   "w": 360,
+   "h": 66
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 139,
+    "w": 720,
+    "h": 720
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 259,
+    "w": 360,
+    "h": 193
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 720,
+    "y": 139,
+    "w": 720,
+    "h": 720
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 840,
+    "y": 259,
+    "w": 360,
+    "h": 167
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 859,
+    "w": 720,
+    "h": 720
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 979,
+    "w": 360,
+    "h": 197
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 720,
+    "y": 859,
+    "w": 720,
+    "h": 720
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 840,
+    "y": 979,
+    "w": 360,
+    "h": 433
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 1699,
+    "w": 360,
+    "h": 173
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 840,
+    "y": 1699,
+    "w": 360,
+    "h": 173
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 139,
+   "w": 1440,
+   "h": 2348
+  }
+ },
+ "shop@1920": {
+  "vw": 1920,
+  "docH": 3660,
+  "h1": {
+   "text": "Live",
+   "font": "",
+   "x": 293,
+   "y": 272,
+   "w": 360,
+   "h": 66
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 160,
+    "y": 139,
+    "w": 800,
+    "h": 800
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 293,
+    "y": 272,
+    "w": 360,
+    "h": 193
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 960,
+    "y": 139,
+    "w": 800,
+    "h": 800
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1093,
+    "y": 272,
+    "w": 360,
+    "h": 167
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 160,
+    "y": 939,
+    "w": 800,
+    "h": 800
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 293,
+    "y": 1072,
+    "w": 360,
+    "h": 197
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 960,
+    "y": 939,
+    "w": 800,
+    "h": 800
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1093,
+    "y": 1072,
+    "w": 360,
+    "h": 433
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 293,
+    "y": 1872,
+    "w": 360,
+    "h": 173
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1093,
+    "y": 1872,
+    "w": 360,
+    "h": 173
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 160,
+   "y": 139,
+   "w": 1600,
+   "h": 2556
+  }
+ },
+ "shop@1024": {
+  "vw": 1024,
+  "docH": 2722,
+  "h1": {
+   "text": "Live",
+   "font": "",
+   "x": 85,
+   "y": 216,
+   "w": 341,
+   "h": 48
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 131,
+    "w": 512,
+    "h": 597
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 85,
+    "y": 216,
+    "w": 341,
+    "h": 150
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 512,
+    "y": 131,
+    "w": 512,
+    "h": 597
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 597,
+    "y": 216,
+    "w": 341,
+    "h": 126
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 728,
+    "w": 512,
+    "h": 597
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 85,
+    "y": 814,
+    "w": 341,
+    "h": 150
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 512,
+    "y": 728,
+    "w": 512,
+    "h": 597
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 597,
+    "y": 814,
+    "w": 341,
+    "h": 354
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 85,
+    "y": 1411,
+    "w": 341,
+    "h": 132
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 597,
+    "y": 1411,
+    "w": 341,
+    "h": 108
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 131,
+   "w": 1024,
+   "h": 1862
+  }
+ },
+ "shop@390": {
+  "vw": 390,
+  "docH": 3727,
+  "h1": {
+   "text": "Live",
+   "font": "",
+   "x": 32,
+   "y": 163,
+   "w": 325,
+   "h": 48
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 131,
+    "w": 390,
+    "h": 390
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 163,
+    "w": 325,
+    "h": 150
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 521,
+    "w": 390,
+    "h": 390
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 553,
+    "w": 325,
+    "h": 126
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 911,
+    "w": 390,
+    "h": 390
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 943,
+    "w": 325,
+    "h": 150
+   },
+   {
+    "el": "img.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 1301,
+    "w": 390,
+    "h": 419
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 1753,
+    "w": 325,
+    "h": 132
+   },
+   {
+    "el": "div.product-teaser__content",
+    "max": "360px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 1950,
+    "w": 325,
+    "h": 108
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 131,
+   "w": 390,
+   "h": 2480
+  }
+ },
+ "trial@1440": {
+  "vw": 1440,
+  "docH": 3155,
+  "h1": {
+   "text": "Start your free trial of Ableton Live",
+   "font": "700 90px / 108px futura-pt, Avenir, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "x": 600,
+   "y": 189,
+   "w": 720,
+   "h": 216
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.abl-h-100p.abl-object-pos-br.lazyloaded",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 69,
+    "w": 480,
+    "h": 655
+   },
+   {
+    "el": "img.abl-ratio-fill.lazyloaded",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 720,
+    "y": 914,
+    "w": 480,
+    "h": 270
+   },
+   {
+    "el": "figcaption.abl-figure__caption.abl-pa-10",
+    "max": "1200px",
+    "padL": "10px",
+    "padR": "10px",
+    "x": 720,
+    "y": 1184,
+    "w": 480,
+    "h": 30
+   }
+  ],
+  "grids": [
+   {
+    "el": "section.abl-grid.abl-grid-cols-12.abl-bg-live12-coral-lighter",
+    "cols": "120px 120px 120px 120px 120px 120px 120px 120px 120px 120px 120px 120px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 69,
+    "w": 1440,
+    "h": 655
+   },
+   {
+    "el": "div.abl-tour-section__full-width-item.abl-text-beside-media.abl-text-beside-media--layout-2",
+    "cols": "180px [text-start] 420px [text-end] 120px [media-start] 480px [media-end] 240px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 914,
+    "w": 1440,
+    "h": 300
+   },
+   {
+    "el": "section.abl-grid.abl-grid-cols-2-ms.abl-grid-gap-35",
+    "cols": "540.016px 540.031px",
+    "colGap": "120px",
+    "rowGap": "120px",
+    "x": 0,
+    "y": 1333,
+    "w": 1440,
+    "h": 694
+   },
+   {
+    "el": "section.abl-grid.abl-grid-cols-12.abl-bg-live12-coral-lighter",
+    "cols": "120px 120px 120px 120px 120px 120px 120px 120px 120px 120px 120px 120px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 2027,
+    "w": 1440,
+    "h": 352
+   }
+  ],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 69,
+   "w": 1440,
+   "h": 2310
+  }
+ },
+ "trial@1920": {
+  "vw": 1920,
+  "docH": 3339,
+  "h1": {
+   "text": "Start your free trial of Ableton Live",
+   "font": "700 90px / 108px futura-pt, Avenir, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "x": 827,
+   "y": 202,
+   "w": 800,
+   "h": 216
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.abl-h-100p.abl-object-pos-br.lazyloaded",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 160,
+    "y": 69,
+    "w": 533,
+    "h": 682
+   },
+   {
+    "el": "img.abl-ratio-fill.lazyloaded",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 960,
+    "y": 954,
+    "w": 533,
+    "h": 300
+   },
+   {
+    "el": "figcaption.abl-figure__caption.abl-pa-10",
+    "max": "1333.33px",
+    "padL": "10px",
+    "padR": "10px",
+    "x": 960,
+    "y": 1254,
+    "w": 533,
+    "h": 30
+   }
+  ],
+  "grids": [
+   {
+    "el": "section.abl-grid.abl-grid-cols-12.abl-bg-live12-coral-lighter",
+    "cols": "133.328px 133.328px 133.328px 133.328px 133.328px 133.328px 133.328px 133.328px 133.328px 133.328px 133.328px 133.328px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 160,
+    "y": 69,
+    "w": 1600,
+    "h": 682
+   },
+   {
+    "el": "div.abl-tour-section__full-width-item.abl-text-beside-media.abl-text-beside-media--layout-2",
+    "cols": "200px [text-start] 466.656px [text-end] 133.328px [media-start] 533.344px [media-end] 266.656px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 160,
+    "y": 954,
+    "w": 1600,
+    "h": 330
+   },
+   {
+    "el": "section.abl-grid.abl-grid-cols-2-ms.abl-grid-gap-35",
+    "cols": "600px 600.016px",
+    "colGap": "133.333px",
+    "rowGap": "133.333px",
+    "x": 160,
+    "y": 1417,
+    "w": 1600,
+    "h": 721
+   },
+   {
+    "el": "section.abl-grid.abl-grid-cols-12.abl-bg-live12-coral-lighter",
+    "cols": "133.328px 133.328px 133.328px 133.328px 133.328px 133.328px 133.328px 133.328px 133.328px 133.328px 133.328px 133.328px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 160,
+    "y": 2138,
+    "w": 1600,
+    "h": 379
+   }
+  ],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 69,
+   "w": 1920,
+   "h": 2447
+  }
+ },
+ "trial@1024": {
+  "vw": 1024,
+  "docH": 3229,
+  "h1": {
+   "text": "Start your free trial of Ableton Live",
+   "font": "700 90px / 108px futura-pt, Avenir, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "x": 427,
+   "y": 154,
+   "w": 512,
+   "h": 324
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.abl-h-100p.abl-object-pos-br.lazyloaded",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 69,
+    "w": 341,
+    "h": 767
+   },
+   {
+    "el": "img.abl-ratio-fill.lazyloaded",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 512,
+    "y": 1089,
+    "w": 341,
+    "h": 192
+   },
+   {
+    "el": "figcaption.abl-figure__caption.abl-pa-10",
+    "max": "853.333px",
+    "padL": "10px",
+    "padR": "10px",
+    "x": 512,
+    "y": 1281,
+    "w": 341,
+    "h": 30
+   }
+  ],
+  "grids": [
+   {
+    "el": "section.abl-grid.abl-grid-cols-12.abl-bg-live12-coral-lighter",
+    "cols": "85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3438px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 69,
+    "w": 1024,
+    "h": 767
+   },
+   {
+    "el": "div.abl-tour-section__full-width-item.abl-text-beside-media.abl-text-beside-media--layout-2",
+    "cols": "128px [text-start] 298.656px [text-end] 85.3438px [media-start] 341.328px [media-end] 170.672px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 991,
+    "w": 1024,
+    "h": 418
+   },
+   {
+    "el": "section.abl-grid.abl-grid-cols-2-ms.abl-grid-gap-35",
+    "cols": "384px 384.016px",
+    "colGap": "85.3333px",
+    "rowGap": "85.3333px",
+    "x": 0,
+    "y": 1494,
+    "w": 1024,
+    "h": 745
+   },
+   {
+    "el": "section.abl-grid.abl-grid-cols-12.abl-bg-live12-coral-lighter",
+    "cols": "85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3438px 85.3281px 85.3281px 85.3281px 85.3281px 85.3281px 85.3438px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 2239,
+    "w": 1024,
+    "h": 355
+   }
+  ],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 69,
+   "w": 1024,
+   "h": 2524
+  }
+ },
+ "trial@390": {
+  "vw": 390,
+  "docH": 3865,
+  "h1": {
+   "text": "Start your free trial of Ableton Live",
+   "font": "700 48px / 56.016px futura-pt, Avenir, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "x": 33,
+   "y": 101,
+   "w": 325,
+   "h": 168
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.abl-ratio-fill.lazyloaded",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 777,
+    "w": 325,
+    "h": 183
+   },
+   {
+    "el": "figcaption.abl-figure__caption.abl-pa-10",
+    "max": "325px",
+    "padL": "10px",
+    "padR": "10px",
+    "x": 32,
+    "y": 959,
+    "w": 325,
+    "h": 30
+   }
+  ],
+  "grids": [
+   {
+    "el": "section.abl-grid.abl-grid-cols-12.abl-bg-live12-coral-lighter",
+    "cols": "32.5px 32.5px 32.5px 32.5px 32.5px 32.5px 32.5px 32.5px 32.5px 32.5px 32.5px 32.5px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 69,
+    "w": 390,
+    "h": 563
+   },
+   {
+    "el": "section.abl-grid.abl-grid-cols-12.abl-bg-live12-coral-lighter",
+    "cols": "32.5px 32.5px 32.5px 32.5px 32.5px 32.5px 32.5px 32.5px 32.5px 32.5px 32.5px 32.5px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 0,
+    "y": 2427,
+    "w": 390,
+    "h": 363
+   }
+  ],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 69,
+   "w": 390,
+   "h": 2721
+  }
+ },
+ "blog@1440": {
+  "vw": 1440,
+  "docH": 4439,
+  "h1": {
+   "text": "The latest from Ableton",
+   "font": "700 60px / 78px futura-pt, Avenir, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "x": 120,
+   "y": 240,
+   "w": 1200,
+   "h": 78
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 364,
+    "w": 360,
+    "h": 203
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 540,
+    "y": 364,
+    "w": 360,
+    "h": 203
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 960,
+    "y": 364,
+    "w": 360,
+    "h": 203
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 949,
+    "w": 360,
+    "h": 203
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 540,
+    "y": 949,
+    "w": 360,
+    "h": 203
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 960,
+    "y": 949,
+    "w": 360,
+    "h": 203
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 1472,
+    "w": 360,
+    "h": 203
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 540,
+    "y": 1472,
+    "w": 360,
+    "h": 203
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 960,
+    "y": 1472,
+    "w": 360,
+    "h": 203
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 2021,
+    "w": 360,
+    "h": 203
+   }
+  ],
+  "grids": [
+   {
+    "el": "ul.abl-list-reset.abl-mv-0.abl-grid",
+    "cols": "360px 360.016px 360px",
+    "colGap": "60px",
+    "rowGap": "64px",
+    "x": 120,
+    "y": 364,
+    "w": 1200,
+    "h": 3188
+   }
+  ],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 139,
+   "w": 1440,
+   "h": 3524
+  }
+ },
+ "blog@1920": {
+  "vw": 1920,
+  "docH": 4544,
+  "h1": {
+   "text": "The latest from Ableton",
+   "font": "700 60px / 78px futura-pt, Avenir, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "x": 293,
+   "y": 254,
+   "w": 1333,
+   "h": 78
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 293,
+    "y": 377,
+    "w": 400,
+    "h": 225
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 760,
+    "y": 377,
+    "w": 400,
+    "h": 225
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1227,
+    "y": 377,
+    "w": 400,
+    "h": 225
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 293,
+    "y": 949,
+    "w": 400,
+    "h": 225
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 760,
+    "y": 949,
+    "w": 400,
+    "h": 225
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1227,
+    "y": 949,
+    "w": 400,
+    "h": 225
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 293,
+    "y": 1494,
+    "w": 400,
+    "h": 225
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 760,
+    "y": 1494,
+    "w": 400,
+    "h": 225
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1227,
+    "y": 1494,
+    "w": 400,
+    "h": 225
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 293,
+    "y": 2066,
+    "w": 400,
+    "h": 225
+   }
+  ],
+  "grids": [
+   {
+    "el": "ul.abl-list-reset.abl-mv-0.abl-grid",
+    "cols": "400px 400.016px 400px",
+    "colGap": "66.6667px",
+    "rowGap": "64px",
+    "x": 293,
+    "y": 377,
+    "w": 1333,
+    "h": 3233
+   }
+  ],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 139,
+   "w": 1920,
+   "h": 3582
+  }
+ },
+ "blog@1024": {
+  "vw": 1024,
+  "docH": 4073,
+  "h1": {
+   "text": "The latest from Ableton",
+   "font": "700 60px / 78px futura-pt, Avenir, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "x": 85,
+   "y": 198,
+   "w": 853,
+   "h": 78
+  },
+  "fixed": [],
+  "maxWidths": [],
+  "grids": [
+   {
+    "el": "ul.abl-list-reset.abl-mv-0.abl-grid",
+    "cols": "256px 256.016px 256px",
+    "colGap": "42.6667px",
+    "rowGap": "64px",
+    "x": 85,
+    "y": 321,
+    "w": 853,
+    "h": 3005
+   }
+  ],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 131,
+   "w": 1024,
+   "h": 3306
+  }
+ },
+ "blog@390": {
+  "vw": 390,
+  "docH": 9756,
+  "h1": {
+   "text": "The latest from Ableton",
+   "font": "700 36px / 44.028px futura-pt, Avenir, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "x": 32,
+   "y": 154,
+   "w": 325,
+   "h": 88
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 264,
+    "w": 325,
+    "h": 183
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 755,
+    "w": 325,
+    "h": 183
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 1273,
+    "w": 325,
+    "h": 183
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 1706,
+    "w": 325,
+    "h": 183
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 2170,
+    "w": 325,
+    "h": 183
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 2661,
+    "w": 325,
+    "h": 183
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 3125,
+    "w": 325,
+    "h": 183
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 3589,
+    "w": 325,
+    "h": 183
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 4107,
+    "w": 325,
+    "h": 183
+   },
+   {
+    "el": "img.lazyloaded.abl-ratio-fill",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 4567,
+    "w": 325,
+    "h": 183
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 131,
+   "w": 390,
+   "h": 8550
+  }
+ },
+ "about@1440": {
+  "vw": 1440,
+  "docH": 9034,
+  "h1": {
+   "text": "We make software, hardware and learning platforms for music creation and perform",
+   "font": "700 30px / 42px \"Futura PT\", Avenir, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "x": 387,
+   "y": 1017,
+   "w": 667,
+   "h": 84
+  },
+  "fixed": [
+   {
+    "el": "header.header-bg.header-bg-solid.has-sub-nav",
+    "pos": "sticky",
+    "top": "-72px",
+    "z": "1001",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 140
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.container-fluid",
+    "max": "100%",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 130
+   },
+   {
+    "el": "div.flex-nav",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 68
+   },
+   {
+    "el": "div.row.main-sub-nav-wrapper",
+    "max": "1440px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 68,
+    "w": 1440,
+    "h": 72
+   },
+   {
+    "el": "nav.main_sub-navigation",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 70,
+    "w": 369,
+    "h": 70
+   },
+   {
+    "el": "div.container",
+    "max": "100%",
+    "padL": "120px",
+    "padR": "120px",
+    "x": 133,
+    "y": 140,
+    "w": 1173,
+    "h": 700
+   },
+   {
+    "el": "div.info.col",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 241,
+    "y": 140,
+    "w": 957,
+    "h": 700
+   },
+   {
+    "el": "div.container",
+    "max": "100%",
+    "padL": "120px",
+    "padR": "120px",
+    "x": 267,
+    "y": 1017,
+    "w": 907,
+    "h": 164
+   },
+   {
+    "el": "div.container",
+    "max": "100%",
+    "padL": "120px",
+    "padR": "120px",
+    "x": 0,
+    "y": 1448,
+    "w": 1440,
+    "h": 588
+   },
+   {
+    "el": "div.item.item_block.usn_cmp_gallery",
+    "max": "100%",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 108,
+    "y": 1448,
+    "w": 612,
+    "h": 588
+   },
+   {
+    "el": "div.item.items-1.col-12",
+    "max": "100%",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 108,
+    "y": 1448,
+    "w": 612,
+    "h": 588
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 140,
+   "w": 1440,
+   "h": 8123
+  }
+ },
+ "about@1920": {
+  "vw": 1920,
+  "docH": 9469,
+  "h1": {
+   "text": "We make software, hardware and learning platforms for music creation and perform",
+   "font": "700 30px / 42px \"Futura PT\", Avenir, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "x": 552,
+   "y": 1017,
+   "w": 817,
+   "h": 84
+  },
+  "fixed": [
+   {
+    "el": "header.header-bg.header-bg-solid.has-sub-nav",
+    "pos": "sticky",
+    "top": "-72px",
+    "z": "1001",
+    "x": 160,
+    "y": 0,
+    "w": 1600,
+    "h": 140
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.container-fluid",
+    "max": "100%",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 160,
+    "y": 0,
+    "w": 1600,
+    "h": 130
+   },
+   {
+    "el": "div.flex-nav",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 160,
+    "y": 0,
+    "w": 1600,
+    "h": 68
+   },
+   {
+    "el": "nav.main_sub-navigation",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 160,
+    "y": 70,
+    "w": 369,
+    "h": 70
+   },
+   {
+    "el": "div.container",
+    "max": "100%",
+    "padL": "125px",
+    "padR": "125px",
+    "x": 293,
+    "y": 140,
+    "w": 1333,
+    "h": 700
+   },
+   {
+    "el": "div.info.col",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 406,
+    "y": 140,
+    "w": 1107,
+    "h": 700
+   },
+   {
+    "el": "div.container",
+    "max": "100%",
+    "padL": "125px",
+    "padR": "125px",
+    "x": 427,
+    "y": 1017,
+    "w": 1067,
+    "h": 164
+   },
+   {
+    "el": "div.container",
+    "max": "100%",
+    "padL": "125px",
+    "padR": "125px",
+    "x": 160,
+    "y": 1448,
+    "w": 1600,
+    "h": 663
+   },
+   {
+    "el": "div.item.item_block.usn_cmp_gallery",
+    "max": "100%",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 273,
+    "y": 1448,
+    "w": 687,
+    "h": 663
+   },
+   {
+    "el": "div.item.items-1.col-12",
+    "max": "100%",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 273,
+    "y": 1448,
+    "w": 687,
+    "h": 663
+   },
+   {
+    "el": "img.lazypreload.lazyloaded",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 285,
+    "y": 1448,
+    "w": 663,
+    "h": 663
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 160,
+   "y": 140,
+   "w": 1600,
+   "h": 8504
+  }
+ },
+ "about@1024": {
+  "vw": 1024,
+  "docH": 6297,
+  "h1": {
+   "text": "We make software, hardware and learning platforms for music creation and perform",
+   "font": "700 20px / 30px \"Futura PT\", Avenir, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "x": 155,
+   "y": 960,
+   "w": 713,
+   "h": 30
+  },
+  "fixed": [
+   {
+    "el": "header.header-bg.header-bg-solid.has-sub-nav",
+    "pos": "sticky",
+    "top": "-72px",
+    "z": "1001",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 140
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.container-fluid",
+    "max": "100%",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 130
+   },
+   {
+    "el": "div.flex-nav",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 68
+   },
+   {
+    "el": "div.row.main-sub-nav-wrapper",
+    "max": "1024px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 68,
+    "w": 1024,
+    "h": 70
+   },
+   {
+    "el": "div.container",
+    "max": "100%",
+    "padL": "85.3333px",
+    "padR": "85.3333px",
+    "x": 60,
+    "y": 140,
+    "w": 904,
+    "h": 700
+   },
+   {
+    "el": "div.info.col",
+    "max": "80%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 209,
+    "y": 140,
+    "w": 606,
+    "h": 700
+   },
+   {
+    "el": "div.container",
+    "max": "100%",
+    "padL": "85.3333px",
+    "padR": "85.3333px",
+    "x": 70,
+    "y": 960,
+    "w": 884,
+    "h": 98
+   },
+   {
+    "el": "div.container",
+    "max": "100%",
+    "padL": "85.3333px",
+    "padR": "85.3333px",
+    "x": 0,
+    "y": 1178,
+    "w": 1024,
+    "h": 415
+   },
+   {
+    "el": "div.item.item_block.usn_cmp_gallery",
+    "max": "100%",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 73,
+    "y": 1178,
+    "w": 439,
+    "h": 415
+   },
+   {
+    "el": "div.item.items-1.col-12",
+    "max": "100%",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 73,
+    "y": 1178,
+    "w": 439,
+    "h": 415
+   },
+   {
+    "el": "img.lazypreload.lazyloaded",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 85,
+    "y": 1178,
+    "w": 415,
+    "h": 415
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 140,
+   "w": 1024,
+   "h": 5501
+  }
+ },
+ "about@390": {
+  "vw": 390,
+  "docH": 7488,
+  "h1": {
+   "text": "We make software, hardware and learning platforms for music creation and perform",
+   "font": "700 20px / 30px \"Futura PT\", Avenir, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+   "x": 30,
+   "y": 1005,
+   "w": 330,
+   "h": 90
+  },
+  "fixed": [
+   {
+    "el": "header.header-bg.header-bg-solid.has-sub-nav",
+    "pos": "sticky",
+    "top": "-72px",
+    "z": "1001",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 134
+   }
+  ],
+  "maxWidths": [
+   {
+    "el": "div.container-fluid",
+    "max": "100%",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 130
+   },
+   {
+    "el": "div.flex-nav",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 69
+   },
+   {
+    "el": "div.row.main-sub-nav-wrapper",
+    "max": "390px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 0,
+    "y": 69,
+    "w": 390,
+    "h": 64
+   },
+   {
+    "el": "div.container",
+    "max": "100%",
+    "padL": "32.5px",
+    "padR": "32.5px",
+    "x": 30,
+    "y": 134,
+    "w": 330,
+    "h": 831
+   },
+   {
+    "el": "div.container",
+    "max": "100%",
+    "padL": "30px",
+    "padR": "30px",
+    "x": 0,
+    "y": 1005,
+    "w": 390,
+    "h": 206
+   },
+   {
+    "el": "div.container",
+    "max": "100%",
+    "padL": "32.5px",
+    "padR": "32.5px",
+    "x": 0,
+    "y": 1301,
+    "w": 390,
+    "h": 689
+   },
+   {
+    "el": "div.item.item_block.usn_cmp_gallery",
+    "max": "100%",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 21,
+    "y": 1301,
+    "w": 349,
+    "h": 325
+   },
+   {
+    "el": "div.item.items-1.col-12",
+    "max": "100%",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 21,
+    "y": 1301,
+    "w": 349,
+    "h": 325
+   },
+   {
+    "el": "img.lazypreload.lazyloaded",
+    "max": "100%",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 33,
+    "y": 1301,
+    "w": 325,
+    "h": 325
+   },
+   {
+    "el": "div.item.item_block.usn_cmp_gallery",
+    "max": "100%",
+    "padL": "12px",
+    "padR": "12px",
+    "x": 21,
+    "y": 1686,
+    "w": 349,
+    "h": 304
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 134,
+   "w": 390,
+   "h": 6129
+  }
+ },
+ "login@1440": {
+  "vw": 1440,
+  "docH": 2208,
+  "h1": {
+   "text": "Log in",
+   "font": "",
+   "x": 120,
+   "y": 176,
+   "w": 540,
+   "h": 66
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 445,
+    "w": 380,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 471,
+    "w": 380,
+    "h": 46
+   },
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 537,
+    "w": 380,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 120,
+    "y": 563,
+    "w": 380,
+    "h": 46
+   },
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 780,
+    "y": 415,
+    "w": 380,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 780,
+    "y": 441,
+    "w": 380,
+    "h": 46
+   },
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 780,
+    "y": 507,
+    "w": 380,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 780,
+    "y": 533,
+    "w": 380,
+    "h": 46
+   },
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 780,
+    "y": 599,
+    "w": 380,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 780,
+    "y": 626,
+    "w": 380,
+    "h": 46
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 71,
+   "w": 1440,
+   "h": 1113
+  }
+ },
+ "login@1920": {
+  "vw": 1920,
+  "docH": 2295,
+  "h1": {
+   "text": "Log in",
+   "font": "",
+   "x": 293,
+   "y": 189,
+   "w": 600,
+   "h": 66
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 293,
+    "y": 458,
+    "w": 380,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 293,
+    "y": 484,
+    "w": 380,
+    "h": 46
+   },
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 293,
+    "y": 550,
+    "w": 380,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 293,
+    "y": 577,
+    "w": 380,
+    "h": 46
+   },
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1027,
+    "y": 428,
+    "w": 380,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1027,
+    "y": 454,
+    "w": 380,
+    "h": 46
+   },
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1027,
+    "y": 520,
+    "w": 380,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1027,
+    "y": 547,
+    "w": 380,
+    "h": 46
+   },
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1027,
+    "y": 613,
+    "w": 380,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 1027,
+    "y": 639,
+    "w": 380,
+    "h": 46
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 160,
+   "y": 71,
+   "w": 1600,
+   "h": 1126
+  }
+ },
+ "login@1024": {
+  "vw": 1024,
+  "docH": 1922,
+  "h1": {
+   "text": "Log in",
+   "font": "",
+   "x": 85,
+   "y": 146,
+   "w": 384,
+   "h": 48
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 85,
+    "y": 364,
+    "w": 380,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 85,
+    "y": 390,
+    "w": 380,
+    "h": 37
+   },
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 85,
+    "y": 447,
+    "w": 380,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 85,
+    "y": 473,
+    "w": 380,
+    "h": 37
+   },
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 555,
+    "y": 340,
+    "w": 380,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 555,
+    "y": 366,
+    "w": 380,
+    "h": 37
+   },
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 555,
+    "y": 423,
+    "w": 380,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 555,
+    "y": 449,
+    "w": 380,
+    "h": 37
+   },
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 555,
+    "y": 506,
+    "w": 380,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 555,
+    "y": 533,
+    "w": 380,
+    "h": 37
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 71,
+   "w": 1024,
+   "h": 1037
+  }
+ },
+ "login@390": {
+  "vw": 390,
+  "docH": 2631,
+  "h1": {
+   "text": "Log in",
+   "font": "",
+   "x": 32,
+   "y": 93,
+   "w": 325,
+   "h": 48
+  },
+  "fixed": [],
+  "maxWidths": [
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 321,
+    "w": 325,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 348,
+    "w": 325,
+    "h": 37
+   },
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 405,
+    "w": 325,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 431,
+    "w": 325,
+    "h": 37
+   },
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 733,
+    "w": 325,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 759,
+    "w": 325,
+    "h": 37
+   },
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 816,
+    "w": 325,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 843,
+    "w": 325,
+    "h": 37
+   },
+   {
+    "el": "div.form__element__label",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 899,
+    "w": 325,
+    "h": 24
+   },
+   {
+    "el": "div.form__element__field",
+    "max": "380px",
+    "padL": "0px",
+    "padR": "0px",
+    "x": 32,
+    "y": 926,
+    "w": 325,
+    "h": 37
+   }
+  ],
+  "grids": [],
+  "main": {
+   "el": "main",
+   "x": 0,
+   "y": 71,
+   "w": 390,
+   "h": 1412
+  }
+ }
+}

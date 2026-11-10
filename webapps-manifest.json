@@ -24,9 +24,9 @@
         413
       ],
       "description": "Password Manager for Families, Enterprise & Business",
-      "status": "pending",
-      "package": null,
-      "notes": "",
+      "status": "captured",
+      "package": "systems/1password",
+      "notes": "public marketing surface only; the vault is credential-gated (account + secret key + master password) and out of scope. start.1password.com gates headless browsers to /unsupported, captured as the boundary",
       "batch": 1
     },
     {
@@ -39,9 +39,9 @@
         372
       ],
       "description": "Organize your music the way you want",
-      "status": "pending",
-      "package": null,
-      "notes": "",
+      "status": "captured",
+      "package": "systems/untitled-stream",
+      "notes": "public marketing surface + login card; legal pages intermittently Cloudflare-gated. Reject-all on the consent card 403s into the Remix error boundary so the card is hidden, never clicked",
       "batch": 1
     },
     {
@@ -54,9 +54,9 @@
         278
       ],
       "description": "Make Your App Happen",
-      "status": "pending",
-      "package": null,
-      "notes": "",
+      "status": "captured",
+      "package": "systems/aaply",
+      "notes": "public marketing surface only (Tilda site); the app host go.aaply.app returned Not found on every route, captured as the boundary",
       "batch": 1
     },
     {
