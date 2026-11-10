@@ -123,6 +123,7 @@ Makefile                `make help` lists targets; `make dev` is the way in
 | [docs/PACKAGE.md](docs/PACKAGE.md) | You need to know which file in a package holds what |
 | [docs/EVIDENCE.md](docs/EVIDENCE.md) | You are about to copy a value and need to know how far to trust it |
 | [docs/CAPTURE.md](docs/CAPTURE.md) | You are adding or refreshing a product; start from [tools/kit/](tools/kit) |
+| [docs/FIELD-NOTES.md](docs/FIELD-NOTES.md) | A capture is going wrong — the table of what has already gone wrong and the fix that worked |
 | [docs/RIGHTS.md](docs/RIGHTS.md) | Anything might leave this repo |
 | [docs/TODO.md](docs/TODO.md) | You are picking up open work; the list is newest first |
 | [refero/README.md](refero/README.md) | You are working with the refero snapshot: its layout, provenance, refresh and media mirror |
@@ -190,6 +191,12 @@ illustrations or brand colours into something that ships
   [.gitattributes](.gitattributes)). Run `git lfs install` once per
   machine. Never commit a binary type that is not covered; add the pattern
   to `.gitattributes` first.
+- **Bound every full-page capture.** A page that reports an unbounded
+  `scrollHeight` (infinite scroll) must be truncated and recorded as a
+  boundary, never tiled forever — the kit's shooter caps at 8 chunks.
+  Delete a dead run's scratch dir (`~/.design-systems/<slug>/`) before
+  retrying. [docs/FIELD-NOTES.md](docs/FIELD-NOTES.md) lists the other
+  ways captures have gone wrong.
 - **New packages follow the layout** in
   [docs/PACKAGE.md](docs/PACKAGE.md#layout), with the README in its outline,
   and label every value ([docs/EVIDENCE.md](docs/EVIDENCE.md)). Add each one
