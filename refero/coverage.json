@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 67,
-    "system_domains": 59,
-    "matched_domains": 35,
-    "missing_domains": 398,
+    "system_packages": 68,
+    "system_domains": 60,
+    "matched_domains": 36,
+    "missing_domains": 397,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -339,6 +339,23 @@
           "slug": "appwrite",
           "name": "Appwrite",
           "url": "https://appwrite.io",
+          "name_match": true
+        }
+      ]
+    },
+    "asos.com": {
+      "catalog": [
+        {
+          "name": "Asos",
+          "domain": "asos.com",
+          "id": 66
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "asos",
+          "name": "ASOS",
+          "url": "https://www.asos.com",
           "name_match": true
         }
       ]
@@ -702,13 +719,6 @@
         "name": "Asana",
         "domain": "asana.com",
         "id": 69
-      }
-    ],
-    "asos.com": [
-      {
-        "name": "Asos",
-        "domain": "asos.com",
-        "id": 66
       }
     ],
     "avnier.com": [
