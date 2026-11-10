@@ -1,0 +1,310 @@
+{
+ "readAt": "2026-11-10",
+ "source": "the live CSSOM on acuityscheduling.com; the cdn-marketing stylesheet denies CSSOM reads but serves CORS *, so its rules were refetched and parsed in a detached CSSStyleSheet; one theme, resolved at 1440 x 900",
+ "sheetsSkippedCrossOrigin": [],
+ "counts": {
+  "rules": 16,
+  "fonts": 8,
+  "names": {
+   "theme": 0,
+   "app": 6,
+   "utility": 0,
+   "tailwind": 0,
+   "vendor": 0
+  },
+  "bySelector": {
+   "[app] :root": 3,
+   "[app] @media (max-width: 1024px) :root": 3,
+   "[app] @media (max-width: 744px) :root": 2,
+   "[app] .testimonials-carousel": 2,
+   "[app] @media (max-width: 1024px) .testimonials-carousel": 2,
+   "[app] @media (max-width: 744px) .testimonials-carousel": 2,
+   "[app] #large-csp-hero-block-wrapper .large-csp-hero__gradient": 3,
+   "[app] #large-csp-hero-block-wrapper .large-csp-hero__gradient--1": 3,
+   "[app] #large-csp-hero-block-wrapper .large-csp-hero__gradient--2": 3,
+   "[app] #large-csp-hero-block-wrapper .large-csp-hero__gradient--3": 3,
+   "[app] #large-csp-hero-block-wrapper .large-csp-hero__gradient--4": 3,
+   "[app] #large-csp-hero-block-wrapper .large-csp-hero__gradient--5": 3,
+   "[app] #large-csp-hero-block-wrapper .large-csp-hero__gradient--6": 3,
+   "[app] #large-csp-hero-block-wrapper .large-csp-hero__gradient--7": 3,
+   "[app] #large-csp-hero-block-wrapper .large-csp-hero__gradient--8": 3,
+   "[app] #large-csp-hero-block-wrapper .large-csp-hero__gradient--9": 3
+  }
+ },
+ "theme": [],
+ "app": [
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--carousel-frame-width": "926px",
+    "--carousel-frame-height": "617.333px",
+    "--carousel-frame-gap": "40px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "selector": ":root",
+   "context": [
+    "@media (max-width: 1024px)"
+   ],
+   "properties": {
+    "--carousel-frame-width": "664px",
+    "--carousel-frame-height": "442.667px",
+    "--carousel-frame-gap": "20px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "selector": ":root",
+   "context": [
+    "@media (max-width: 744px)"
+   ],
+   "properties": {
+    "--carousel-frame-width": "282px",
+    "--carousel-frame-height": "526.4px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "selector": ".testimonials-carousel",
+   "context": [],
+   "properties": {
+    "--carousel-frame-width": "927px",
+    "--carousel-frame-height": "523px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "selector": ".testimonials-carousel",
+   "context": [
+    "@media (max-width: 1024px)"
+   ],
+   "properties": {
+    "--carousel-frame-width": "550px",
+    "--carousel-frame-height": "556px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "selector": ".testimonials-carousel",
+   "context": [
+    "@media (max-width: 744px)"
+   ],
+   "properties": {
+    "--carousel-frame-width": "320px",
+    "--carousel-frame-height": "630px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "selector": "#large-csp-hero-block-wrapper .large-csp-hero__gradient",
+   "context": [],
+   "properties": {
+    "--c1": "#d6dcd3",
+    "--c2": "#f7f2e4",
+    "--c3": "#d4dad1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "selector": "#large-csp-hero-block-wrapper .large-csp-hero__gradient--1",
+   "context": [],
+   "properties": {
+    "--c1": "#d6dcd3",
+    "--c2": "#f7f2e4",
+    "--c3": "#d4dad1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "selector": "#large-csp-hero-block-wrapper .large-csp-hero__gradient--2",
+   "context": [],
+   "properties": {
+    "--c1": "#fcd6b6",
+    "--c2": "#fdf2e9",
+    "--c3": "#fcebe1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "selector": "#large-csp-hero-block-wrapper .large-csp-hero__gradient--3",
+   "context": [],
+   "properties": {
+    "--c1": "#e8e3e5",
+    "--c2": "#e5e5f1",
+    "--c3": "#e5e8f0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "selector": "#large-csp-hero-block-wrapper .large-csp-hero__gradient--4",
+   "context": [],
+   "properties": {
+    "--c1": "#f9edd2",
+    "--c2": "#fcf6e9",
+    "--c3": "#f9edd2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "selector": "#large-csp-hero-block-wrapper .large-csp-hero__gradient--5",
+   "context": [],
+   "properties": {
+    "--c1": "#ebddda",
+    "--c2": "#ebdadb",
+    "--c3": "#f5eff6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "selector": "#large-csp-hero-block-wrapper .large-csp-hero__gradient--6",
+   "context": [],
+   "properties": {
+    "--c1": "#f6e6bb",
+    "--c2": "#f4f3d0",
+    "--c3": "#f8f9d3"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "selector": "#large-csp-hero-block-wrapper .large-csp-hero__gradient--7",
+   "context": [],
+   "properties": {
+    "--c1": "#c7d7cd",
+    "--c2": "#dee7e2",
+    "--c3": "#c5d8cc"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "selector": "#large-csp-hero-block-wrapper .large-csp-hero__gradient--8",
+   "context": [],
+   "properties": {
+    "--c1": "#fffef6",
+    "--c2": "#fffdf0",
+    "--c3": "#fffefa"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "selector": "#large-csp-hero-block-wrapper .large-csp-hero__gradient--9",
+   "context": [],
+   "properties": {
+    "--c1": "#d6cdbf",
+    "--c2": "#f0e9e0",
+    "--c3": "#e8e1d8"
+   },
+   "bin": "app"
+  }
+ ],
+ "utility": [],
+ "tailwind": [],
+ "vendor": [],
+ "fonts": [
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "font-display": "swap",
+   "font-family": "Recoleta",
+   "font-weight": "300",
+   "src": "url(\"/font/Recoleta/Recoleta-Light.woff2\") format(\"woff2\"), url(\"/font/Recoleta/Recoleta-Light.woff\") format(\"woff\")"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "font-display": "swap",
+   "font-family": "Recoleta",
+   "font-weight": "400",
+   "src": "url(\"/font/Recoleta/Recoleta-Regular.woff2\") format(\"woff2\"), url(\"/font/Recoleta/Recoleta-Regular.woff\") format(\"woff\")"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "font-display": "swap",
+   "font-family": "Recoleta",
+   "font-weight": "500",
+   "src": "url(\"/font/Recoleta/Recoleta-Medium.woff2\") format(\"woff2\"), url(\"/font/Recoleta/Recoleta-Medium.woff\") format(\"woff\")"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "font-display": "swap",
+   "font-family": "Clarkson",
+   "font-weight": "400",
+   "src": "url(\"/font/Clarkson-Light.woff2\") format(\"woff2\"), url(\"/font/Clarkson-Light.woff\") format(\"woff\")"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "font-display": "swap",
+   "font-family": "Clarkson",
+   "font-weight": "500",
+   "src": "url(\"/font/Clarkson-Medium.woff2\") format(\"woff2\"), url(\"/font/Clarkson-Medium.woff\") format(\"woff\")"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "font-display": "swap",
+   "font-family": "Clarkson-Serif",
+   "font-weight": "300",
+   "src": "url(\"/font/Clarkson Serif/ClarksonSerif-Light.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "font-display": "swap",
+   "font-family": "Clarkson-Serif",
+   "font-weight": "400",
+   "src": "url(\"/font/Clarkson Serif/ClarksonSerif-Regular.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "marketing-frontsite.min.css (fetched)",
+   "font-display": "swap",
+   "font-family": "Clarkson-Serif",
+   "font-weight": "500",
+   "src": "url(\"/font/Clarkson Serif/ClarksonSerif-Medium.woff2\") format(\"woff2\")"
+  }
+ ],
+ "resolved": {
+  "--c1": {
+   "raw": "rgb(255, 255, 255)",
+   "kind": "color",
+   "value": "#ffffff"
+  },
+  "--c2": {
+   "raw": "rgb(255, 255, 255)",
+   "kind": "color",
+   "value": "#ffffff"
+  },
+  "--c3": {
+   "raw": "rgb(255, 255, 255)",
+   "kind": "color",
+   "value": "#ffffff"
+  },
+  "--carousel-frame-gap": {
+   "raw": "40px",
+   "kind": "dimension",
+   "value": "40px"
+  },
+  "--carousel-frame-height": {
+   "raw": "617.333px",
+   "kind": "dimension",
+   "value": "617.328px"
+  },
+  "--carousel-frame-width": {
+   "raw": "926px",
+   "kind": "dimension",
+   "value": "926px"
+  }
+ }
+}

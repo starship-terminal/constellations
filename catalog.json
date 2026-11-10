@@ -3665,7 +3665,7 @@
         "durationMin": null,
         "gaps": [
           "go.aaply.app returned \"Not found\" on /login, /sign, /signup and /workspace/demo: the authenticated product is unreachable to this client, so only the marketing site is measured",
-          "the billing segment's held lime fill paints on a sibling shape, not the text atom \u2014 segments measure transparent in both positions",
+          "the billing segment's held lime fill paints on a sibling shape, not the text atom — segments measure transparent in both positions",
           "reviews carousel measured on its first slide only"
         ],
         "pr": "https://github.com/c-wenlong/designs/pull/441",
@@ -3902,8 +3902,8 @@
           "/sg/en/cart"
         ],
         "gaps": [
-          "Fit Predictor widget (Fits.me) never mounted in headless Chromium on this product/geo \u2014 recorded as an honest miss",
-          "Bag drawer, checkout, account area, store stock check, size-guide drawer and search results need a cart item, account, purchase or form submit \u2014 not captured",
+          "Fit Predictor widget (Fits.me) never mounted in headless Chromium on this product/geo — recorded as an honest miss",
+          "Bag drawer, checkout, account area, store stock check, size-guide drawer and search results need a cart item, account, purchase or form submit — not captured",
           "OneTrust consent banner never mounted (SDK network-blocked); its selectors are known, its styling unmeasured",
           "Cart route renders the home page when the bag is empty",
           "Geo/region variant is the served Singapore storefront; other regions not captured"
@@ -3914,6 +3914,195 @@
       },
       "layoutGaps": {
         "icons/": "Acne's UI is almost icon-free (text labels everywhere); the few SVGs are brand artwork not kept here (docs/RIGHTS.md)"
+      }
+    },
+    {
+      "slug": "acuityscheduling",
+      "name": "Acuity Scheduling",
+      "url": "https://acuityscheduling.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Booking-software marketing pages: pastel hero gradients, Clarkson Serif headlines in navy #283849, 12px-radius ink buttons, cream and lavender cards, a Squarespace account gate with square black-ruled OAuth rows",
+      "tags": [
+        "web",
+        "marketing",
+        "scheduling",
+        "squarespace",
+        "serif",
+        "pastel",
+        "navy"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-10",
+      "access": "signed out (every captured surface is public); the Squarespace account gate was measured and state-forced, never submitted",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/acuityscheduling/README.md",
+      "tokens": "systems/acuityscheduling/tokens.json",
+      "styleGuide": "systems/acuityscheduling/style-guide.html",
+      "preview": {
+        "cover": "systems/acuityscheduling/screenshots/home-light-default.png",
+        "icon": "systems/acuityscheduling/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.clarkson",
+          "core.font.family.clarkson-serif"
+        ]
+      },
+      "capture": {
+        "harness": "Devin",
+        "model": "Devin",
+        "route": "public-web",
+        "version": "acuityscheduling.com, 2026-11-09/10; release not exposed",
+        "durationMin": null,
+        "durationNote": "wall-clock duration was not recorded for this capture",
+        "gaps": [
+          "the scheduling app itself sits behind a Squarespace account and was never entered; the create-account gate and sign-in card were measured at rest and state-forced only",
+          "consent SDKs were aborted at request level before any banner mounted, so no consent UI exists in the package",
+          "the testimonials carousel auto-plays and was measured on its first slide",
+          "the pricing hero's dark band is a background photograph, not a flat fill"
+        ],
+        "pr": "https://github.com/c-wenlong/designs/pull/450"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run on this capture; the wordmark and social glyphs are the product's artwork and stay on the screenshots"
+      }
+    },
+    {
+      "slug": "anthropic",
+      "name": "Anthropic",
+      "url": "https://www.anthropic.com",
+      "category": "ai-research",
+      "platform": "web",
+      "goodFor": "AI-product marketing pages, pricing pages, sales forms and developer docs; ivory editorial surfaces with serif headlines, pill nav chrome and a restrained clay accent",
+      "tags": [
+        "web",
+        "marketing",
+        "editorial",
+        "serif",
+        "light",
+        "docs"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-09",
+      "access": "public marketing surface only; signed out; nothing submitted or signed into",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/anthropic/README.md",
+      "tokens": "systems/anthropic/tokens.json",
+      "styleGuide": "systems/anthropic/style-guide.html",
+      "preview": {
+        "cover": "systems/anthropic/screenshots/home-light-default.png",
+        "icon": "systems/anthropic/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text.DEFAULT",
+            "muted": "light.text.muted",
+            "accent": "light.accent",
+            "border": "light.border.DEFAULT"
+          },
+          "dark": {
+            "page": "dark.page",
+            "surface": "dark.surface",
+            "text": "dark.text.DEFAULT",
+            "muted": "dark.text.muted",
+            "accent": "dark.accent",
+            "border": "dark.border.DEFAULT"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.serif"
+        ]
+      },
+      "capture": {
+        "harness": "Devin",
+        "model": "Claude",
+        "route": "public-web",
+        "version": "Live sites, 2026-11-09; release not exposed",
+        "durationMin": null,
+        "durationNote": "Continued a partially completed capture; total active time not recorded.",
+        "pr": "https://github.com/c-wenlong/designs/pull/448"
+      }
+    },
+    {
+      "slug": "aboardhr",
+      "name": "Aboard HR",
+      "url": "https://www.aboardhr.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "HR product marketing: flat #fafafa ground, OS-ui stack semibold display type, pastel card tints (blue, mint, pink, lavender) with no borders or shadows, full-pill CTAs in a single bright blue",
+      "tags": [
+        "web",
+        "marketing",
+        "framer",
+        "flat",
+        "pastel",
+        "pill",
+        "system-ui",
+        "single-accent"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-10",
+      "access": "signed out (every captured surface is public); the book-a-demo form measured at rest and focus only, never submitted; app.aboardhr.com sign-in never opened",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/aboardhr/README.md",
+      "tokens": "systems/aboardhr/tokens.json",
+      "styleGuide": "systems/aboardhr/style-guide.html",
+      "preview": {
+        "cover": "systems/aboardhr/screenshots/home-light-default.png",
+        "icon": "systems/aboardhr/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.system",
+          "core.font.family.inter"
+        ]
+      },
+      "capture": {
+        "harness": "Devin",
+        "model": "Devin",
+        "route": "public-web",
+        "version": "www.aboardhr.com, 2026-11-10; Framer site, release not exposed",
+        "durationMin": null,
+        "durationNote": "Capture ran across two sessions; total active time was not recorded.",
+        "gaps": "The product app sits behind an app.aboardhr.com sign-in the capture never opened. The demo form was never submitted (its submit states are measured but unpressed). The pricing page has no billing toggle (billing-toggle records missing). Hover and reveal motion is JS-driven, so CSS transitions read 0s; focus rings are the browser default; pressed links paint #ff0000 by a Framer :active rule. No consent manager renders on the site."
       }
     },
     {
