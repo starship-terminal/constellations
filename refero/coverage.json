@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 58,
-    "system_domains": 50,
-    "matched_domains": 27,
-    "missing_domains": 406,
+    "system_packages": 60,
+    "system_domains": 52,
+    "matched_domains": 29,
+    "missing_domains": 404,
     "system_domains_absent_from_catalog": 23
   },
   "matched": {
@@ -61,20 +61,37 @@
         }
       ]
     },
-    "acctual.com": {
+    "aboard.com": {
       "catalog": [
         {
-          "name": "Acctual",
-          "domain": "acctual.com",
-          "id": 780
+          "name": "Aboard",
+          "domain": "aboard.com",
+          "id": 526
         }
       ],
       "pkgs": [
         {
-          "slug": "acctual",
-          "name": "Acctual",
-          "url": "https://www.acctual.com",
+          "slug": "aboard",
+          "name": "Aboard",
+          "url": "https://aboard.com",
           "name_match": true
+        }
+      ]
+    },
+    "aboardhr.com": {
+      "catalog": [
+        {
+          "name": "Aboard",
+          "domain": "aboardhr.com",
+          "id": 545
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "aboardhr",
+          "name": "Aboard HR",
+          "url": "https://www.aboardhr.com",
+          "name_match": false
         }
       ]
     },
@@ -177,6 +194,23 @@
           "name": "Anthropic",
           "url": "https://www.anthropic.com",
           "name_match": true
+        }
+      ]
+    },
+    "apollographql.com": {
+      "catalog": [
+        {
+          "name": "Apollo GraphQL",
+          "domain": "apollographql.com",
+          "id": 79
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "apollographql",
+          "name": "Apollo GraphQL",
+          "url": "https://www.apollographql.com",
+          "name_match": false
         }
       ]
     },
@@ -526,18 +560,11 @@
     }
   },
   "missing": {
-    "aboard.com": [
+    "acctual.com": [
       {
-        "name": "Aboard",
-        "domain": "aboard.com",
-        "id": 526
-      }
-    ],
-    "aboardhr.com": [
-      {
-        "name": "Aboard",
-        "domain": "aboardhr.com",
-        "id": 545
+        "name": "Acctual",
+        "domain": "acctual.com",
+        "id": 780
       }
     ],
     "adidas.com": [
@@ -573,13 +600,6 @@
         "name": "Amie",
         "domain": "amie.so",
         "id": 426
-      }
-    ],
-    "apollographql.com": [
-      {
-        "name": "Apollo GraphQL",
-        "domain": "apollographql.com",
-        "id": 79
       }
     ],
     "appwrite.io": [
