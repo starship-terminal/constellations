@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/75eb47d6-2526-4936-b15a-7474cf4cdc69",
   "source_url": "https://www.quicken.com",
   "extracted_at": "2026-06-03T20:07:56.407Z",
-  "fetched_at": "2026-10-20T08:22:02Z",
+  "fetched_at": "2026-11-08T04:20:42Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e1751741-3cf2-4734-b5b9-a424b0fab9e7.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/e3635e40-4b95-4e45-9c36-ebc5e7f00164.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/ac1d4abe-c741-4e09-b74d-04f8a8a07af1.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/948df6cb-1e28-40ec-b43b-a49d68465142.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

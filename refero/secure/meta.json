@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/7942590d-b11b-4cfb-8fe8-945b3867d865",
   "source_url": "https://whereby.com",
   "extracted_at": "2026-06-03T21:20:55.656Z",
-  "fetched_at": "2026-10-20T08:23:35Z",
+  "fetched_at": "2026-11-08T04:20:48Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/1cbc5500-cc8f-41f8-956e-96b53345e1ee.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/6607e4ff-2de6-4a6a-a7ed-53a9e4b550b9",
   "source_url": "https://af1.analogueshop.com",
   "extracted_at": "2026-06-03T21:18:03.325Z",
-  "fetched_at": "2026-10-20T08:23:36Z",
+  "fetched_at": "2026-11-08T04:19:42Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/769fef83-e19c-4b6b-a98f-70f4b02737db.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/52f80bb9-68d1-4405-94e0-5c32ad953a91.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/2c36760e-cddf-44c2-b09e-ce163d277821.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/27f18510-6b05-48d6-90e4-893f9999871a.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

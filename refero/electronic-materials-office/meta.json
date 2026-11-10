@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/297f65f7-0fbd-4521-ab91-a5f6e17175d9",
   "source_url": "https://electronicmaterialsoffice.com",
   "extracted_at": "2026-06-03T20:53:44.735Z",
-  "fetched_at": "2026-10-20T08:21:53Z",
+  "fetched_at": "2026-11-08T04:20:04Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f76b49b5-559e-45d0-897b-7122d8b439de.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/4c39c060-9dce-4e86-8a36-8b081fc67201.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a93832d3-3f98-4386-a769-27d4eaa5e0ee.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/8bd96e37-9352-45d1-b54f-bcb7e29ff8a3.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

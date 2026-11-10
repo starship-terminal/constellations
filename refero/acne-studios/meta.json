@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/234e9a17-236d-4446-9d58-f83f6806d012",
   "source_url": "https://acnestudios.com",
   "extracted_at": "2026-06-03T18:15:17.678Z",
-  "fetched_at": "2026-10-20T08:22:41Z",
+  "fetched_at": "2026-11-08T04:19:38Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/2ecd8111-aa58-494c-9540-b0689b97ed7d.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/4d14f06d-ca8f-49ad-a24b-6891069a3400.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/bc717f00-aa1f-4c3e-ab67-324e0625ef2f.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/442d36d5-2368-4b74-993e-88909ec7eaf6.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

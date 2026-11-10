@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/3f6e3076-e77f-487e-b212-3b5946a34e87",
   "source_url": "https://www.niccolomiranda.com",
   "extracted_at": "2026-06-03T19:16:57.231Z",
-  "fetched_at": "2026-10-20T08:22:19Z",
+  "fetched_at": "2026-11-08T04:20:30Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/14e8cfdd-dd70-40f2-9e6b-ee9033739081.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0582f65a-b483-4b60-b774-9d7d119b1961.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d48392f0-54c9-4cb2-a3d4-f2eb463fe378.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/c14cbc49-f910-47e0-ae17-043801691f46.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

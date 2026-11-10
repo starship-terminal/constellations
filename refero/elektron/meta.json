@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/6b5a0bf4-3d2a-4c3b-aa2e-652f1acb82c0",
   "source_url": "https://elektron.se",
   "extracted_at": "2026-06-03T18:02:54.118Z",
-  "fetched_at": "2026-10-20T08:24:35Z",
+  "fetched_at": "2026-11-08T04:20:04Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/cfc27d25-793f-473f-9adc-05ebe3e392aa.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0f86a102-d5ff-4589-bf6f-c9dade630bd2.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/0e3bc7b1-f0c7-4a17-8287-2cfa0fa4e8fa.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/732e0455-f2f1-4477-8a0c-43fb842049be.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

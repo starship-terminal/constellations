@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/26dac924-d1c8-4097-af0f-0417ccb12128",
   "source_url": "https://www.honeybook.com",
   "extracted_at": "2026-06-03T17:27:24.050Z",
-  "fetched_at": "2026-10-20T08:23:02Z",
+  "fetched_at": "2026-11-08T04:20:18Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b63abfc5-b27b-484e-b1e5-12576d9fdf1e.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/da56427b-3d85-4d77-8006-ce3e4995d49f.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/b6d2b180-a3f1-406a-9d55-0de06d001558.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/33c70a47-63a4-4f40-8cdf-46f6c7074e99.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

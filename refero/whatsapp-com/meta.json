@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/a643f3a0-6c99-4076-b03f-6f0691c21bd0",
   "source_url": "https://www.whatsapp.com",
   "extracted_at": "2026-06-03T17:58:17.369Z",
-  "fetched_at": "2026-10-20T08:22:48Z",
+  "fetched_at": "2026-11-08T04:21:06Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/c7b076fe-9c39-4482-b3ba-3b875d5b8707.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a7742012-5a07-4368-8e29-1f0c63be5e5c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/f2a5a908-2e99-4f4e-a0ff-e924316e072e.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/8969ba41-5aa4-4f16-b588-52248aa349ac.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

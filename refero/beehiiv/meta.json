@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/350b1557-56f0-4361-8c8b-b7a88081982b",
   "source_url": "https://beehiiv.com",
   "extracted_at": "2026-06-03T17:32:00.026Z",
-  "fetched_at": "2026-10-20T08:24:43Z",
+  "fetched_at": "2026-11-08T04:19:50Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d40e20b7-ddc8-4ed7-9448-29d75cbafe95.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

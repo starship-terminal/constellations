@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/9946887b-ffa9-4276-af81-ae6352795afb",
   "source_url": "https://calendly.com",
   "extracted_at": "2026-07-03T03:23:43.697Z",
-  "fetched_at": "2026-10-20T08:21:35Z",
+  "fetched_at": "2026-11-08T04:19:52Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/8790afdf-d95b-4840-9adf-4e739f67d63e.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/8e025803-7b60-4ae7-bc9c-e58b48bed1c8.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/5bbca430-e196-4c31-8d58-d23d00ac9c3e.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/aa18b126-f1de-41cb-8c8b-c0ac4fbc8926.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

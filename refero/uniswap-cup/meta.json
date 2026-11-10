@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/fabb51a0-0f83-4177-b83e-4969705a389c",
   "source_url": "https://unicup.uniswap.org",
   "extracted_at": "2026-06-03T20:45:14.175Z",
-  "fetched_at": "2026-10-20T08:21:55Z",
+  "fetched_at": "2026-11-08T04:21:02Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/c6e870bc-aaac-4983-8b8a-6fa42635fa35.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/91021e65-2808-4d74-b55e-5699a75f5c91.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/6747b767-c659-462c-b74b-78cf4c94a018.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/d5c4d32f-1493-4326-8382-79ed869bf35e.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

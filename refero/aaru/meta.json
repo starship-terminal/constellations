@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/ad98aac8-347c-47da-91c5-9c020febeb92",
   "source_url": "https://aaru.com",
   "extracted_at": "2026-06-03T18:10:01.777Z",
-  "fetched_at": "2026-10-20T08:24:34Z",
+  "fetched_at": "2026-11-08T04:19:36Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b8cf3a10-12fd-4218-9c03-004498b0cce4.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/da12e8f7-c036-4276-9e70-2eaa4dd784cd.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/fe2f4037-7b27-4d69-99ed-cdc06496259e.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/7bb8c11c-34d6-4470-be44-caa05bdcdca2.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

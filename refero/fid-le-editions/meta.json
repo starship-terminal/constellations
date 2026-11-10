@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/957da5c3-7063-4992-9d25-e255752dc9b3",
   "source_url": "https://fidele-editions.com",
   "extracted_at": "2026-06-03T19:47:11.904Z",
-  "fetched_at": "2026-10-20T08:22:09Z",
+  "fetched_at": "2026-11-08T04:20:08Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/c727efc5-49d7-48f1-bc2d-2f1819536e50.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/97cc7660-93b5-4b56-8701-9eea66c87445.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/de0ea800-2fdf-48bd-b833-2477a5c00078.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/2f0a7a7e-5a5e-4104-90d9-847618654ba8.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

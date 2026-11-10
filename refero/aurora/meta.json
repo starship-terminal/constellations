@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/fe7b8533-f56b-46bd-8713-f18886a1e986",
   "source_url": "https://aurora.tech",
   "extracted_at": "2026-06-03T19:00:05.482Z",
-  "fetched_at": "2026-10-20T08:24:11Z",
+  "fetched_at": "2026-11-08T04:19:46Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/95d9e90a-170e-4e98-8ed6-cf05bb66d59e.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

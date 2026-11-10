@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/9b5203a8-07c8-4987-94c5-6411970896d2",
   "source_url": "https://aletagency.com",
   "extracted_at": "2026-06-03T19:44:19.579Z",
-  "fetched_at": "2026-10-20T08:22:09Z",
+  "fetched_at": "2026-11-08T04:19:40Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/bb940d95-6b9a-4b1a-83ab-5cc9b7bf1426.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/33c52cec-0dba-4ae6-b672-4f58a05fa0f6.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/f0722b94-5dcf-419b-a5ce-85c4fc75805b.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/1d5074e4-ec13-411d-966d-38b8eeadfbde.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/9929101b-90d4-4306-bc4a-4d8f65b527f5",
   "source_url": "https://fora-concept.com",
   "extracted_at": "2026-06-03T20:52:40.941Z",
-  "fetched_at": "2026-10-20T08:21:53Z",
+  "fetched_at": "2026-11-08T04:20:10Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/122b40c3-471f-4617-92a3-6dfc0840107a.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/dc15d8c9-b436-4544-ab8d-9cf745c40d00.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/85e88793-59de-4993-a337-65dd4881c433.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/959d9036-7095-4e0c-9017-84965444c36c.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

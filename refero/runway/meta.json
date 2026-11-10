@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/874aaea0-c718-454e-8a58-f3beed1284ec",
   "source_url": "https://runway.com",
   "extracted_at": "2026-06-03T19:03:23.827Z",
-  "fetched_at": "2026-10-20T08:22:26Z",
+  "fetched_at": "2026-11-08T04:20:46Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/4e914c76-ee63-41aa-9da9-729d30b5a241.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

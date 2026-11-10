@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/afde66c4-ad74-4d19-94df-0216e945ac5e",
   "source_url": "https://audyr.com",
   "extracted_at": "2026-06-03T15:39:37.355Z",
-  "fetched_at": "2026-10-20T08:25:01Z",
+  "fetched_at": "2026-11-08T04:19:46Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/1a61be85-0b39-4a07-8a54-3c45ae6542ce.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/bb9e094b-129b-4c3e-b9e8-2385ea2b9bb2.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d74f8026-49fe-41e4-9482-7c90effbecca.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/9c48b44e-bb7a-4604-bd85-1e5fd22f1670.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

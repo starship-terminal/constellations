@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/131d07b0-f71b-4bd2-8046-f61485ed545c",
   "source_url": "https://locomotive.ca",
   "extracted_at": "2026-06-03T19:14:07.711Z",
-  "fetched_at": "2026-10-20T08:22:18Z",
+  "fetched_at": "2026-11-08T04:20:26Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/84f912c7-b35b-41cd-883f-2e9133116dff.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/26459528-f566-4bf0-a5ec-8aaf6da0bc87.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/02a6484a-bfea-44bf-b029-ebfe0b9c880b.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/04c608bb-c7f1-4ca3-b288-c4e48dfc1c84.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

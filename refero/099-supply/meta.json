@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/e4a7b5f3-f393-4f6d-b4a5-ecf874024bed",
   "source_url": "https://099.supply",
   "extracted_at": "2026-07-03T03:40:37.533Z",
-  "fetched_at": "2026-10-20T08:21:32Z",
+  "fetched_at": "2026-11-08T04:19:35Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/42002c4e-46e9-41ef-b0a2-e7e2030ba77d.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/f34c46ae-5e40-40f7-acf7-958f6ed0c46c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/b0ea3706-cfbf-4465-a7ab-2c8d3f9b0168.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e777e989-d115-4d94-824a-396ecd26253b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

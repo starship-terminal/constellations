@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/f4e1b510-6085-4fb8-8597-05d479d3c00c",
   "source_url": "https://www.cupofcouple.com",
   "extracted_at": "2026-06-03T20:34:52.239Z",
-  "fetched_at": "2026-10-20T08:23:46Z",
+  "fetched_at": "2026-11-08T04:19:58Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f17b8cc8-d9b5-4031-bc93-c66ca98a9e5d.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

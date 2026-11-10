@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/8acf6400-f43f-4b0c-b455-e92fa134d2a4",
   "source_url": "https://www.callbaba.com",
   "extracted_at": "2026-09-20T19:26:49.571Z",
-  "fetched_at": "2026-10-20T08:21:30Z",
+  "fetched_at": "2026-11-08T04:19:48Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/92457e24-2034-4e1a-b27b-eb52be62916b.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/b22133e2-fd39-4302-bf11-e84b6c710527.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/c8947e7a-7f46-41d8-8ecd-edb9dd6e114c.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/42064fab-eb77-4704-884d-02d78dc2b156.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

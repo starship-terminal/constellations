@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/dd89ce6c-f0aa-4ca8-bd63-19dcd81920a7",
   "source_url": "https://www.todesktop.com",
   "extracted_at": "2026-06-03T17:11:15.635Z",
-  "fetched_at": "2026-10-20T08:23:10Z",
+  "fetched_at": "2026-11-08T04:20:59Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/3fe4fa64-046c-4a8c-9a53-d68ffc022054.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/d2ab96b9-29e7-4979-9a9e-45a1d724c1c6.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/71d60158-d368-4bd0-b948-459c9df9c28b.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/461b7a94-f32a-4ba1-9185-506739daaceb.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

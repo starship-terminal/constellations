@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/3720657f-2b59-475e-a43d-b18cac718325",
   "source_url": "https://wiza.co",
   "extracted_at": "2026-06-03T18:49:26.710Z",
-  "fetched_at": "2026-10-20T08:24:15Z",
+  "fetched_at": "2026-11-08T04:21:06Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/2579225b-9e73-42ed-a7ec-db073db3ba2b.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/915ccf4e-8017-46c9-9c06-88c431fdd849.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/e68097d9-5553-403b-ab29-2b455049b956.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/689c13e0-9318-48e8-b3c8-9dd2998920e6.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

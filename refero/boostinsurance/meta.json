@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/e60c61d3-2657-429e-a581-568aea27a448",
   "source_url": "https://boostinsurance.com",
   "extracted_at": "2026-06-03T21:33:18.271Z",
-  "fetched_at": "2026-10-20T08:23:32Z",
+  "fetched_at": "2026-11-08T04:19:51Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b5e385af-5791-4775-aabb-ac39f3f1b9a4.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/79fc3107-efeb-4257-a634-727f7a50492f.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/faabf76e-bd73-4f88-8a4c-c1afd3da7dc8.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/062abc90-b6cb-40f0-a02c-3c66449ff87f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

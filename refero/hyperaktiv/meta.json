@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/d19c6fc3-1fc6-44a0-9c22-a0a82f7f79b4",
   "source_url": "https://hyperaktiv.li",
   "extracted_at": "2026-06-03T18:07:18.039Z",
-  "fetched_at": "2026-10-20T08:22:43Z",
+  "fetched_at": "2026-11-08T04:20:19Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/4444d00e-51d9-43f6-8445-39d978104ee6.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

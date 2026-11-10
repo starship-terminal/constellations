@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/1d51a2db-18fc-4de3-bff7-d1e73ace8b6e",
   "source_url": "https://dovetail.no",
   "extracted_at": "2026-06-03T18:20:22.789Z",
-  "fetched_at": "2026-10-20T08:22:41Z",
+  "fetched_at": "2026-11-08T04:20:02Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b3e6f293-9fd2-4cbf-a6e7-3f782db89f24.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/99ecfce8-059e-40f0-8e46-b01d6e64ff35.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/1ce56527-2b8b-4628-9978-fb0be80f55ff.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/cd785534-e594-4365-b443-fc63e293c467.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

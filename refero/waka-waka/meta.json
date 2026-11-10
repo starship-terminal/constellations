@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/ea55601d-e953-48b3-99db-374b39bf2f56",
   "source_url": "https://wakawaka.world",
   "extracted_at": "2026-06-03T21:57:37.582Z",
-  "fetched_at": "2026-10-20T08:21:43Z",
+  "fetched_at": "2026-11-08T04:21:05Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/64bb9b6d-733e-43b7-96cd-1e958976f769.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/3970dfdf-dc9a-4a1b-9637-24e7a50cad80.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/1269991e-e92e-409c-bfb2-4316fdca4672.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/41f3fcc9-ae56-44b9-9f53-d797f78bf732.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

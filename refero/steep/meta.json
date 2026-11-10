@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/75fdb89f-ca64-41b3-af36-7a78bd09448e",
   "source_url": "https://steep.app",
   "extracted_at": "2026-07-03T02:46:12.201Z",
-  "fetched_at": "2026-10-20T08:21:40Z",
+  "fetched_at": "2026-11-08T04:20:52Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5edfff70-2510-4254-8337-d069fb651bb6.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ca1db84c-e307-47bf-9fad-27606e371f72.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/484fe832-325b-4c0b-9164-9cc8a7f278b5.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0e848f7e-22b2-49ec-ab39-e2016858cf61.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

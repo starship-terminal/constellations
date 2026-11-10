@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/c03afcbd-96ed-4b7f-8d0a-277fc0042ba7",
   "source_url": "https://www.udemy.com",
   "extracted_at": "2026-06-03T17:48:42.658Z",
-  "fetched_at": "2026-10-20T08:24:39Z",
+  "fetched_at": "2026-11-08T04:21:01Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/85a50c2f-ee8d-4ce2-8bc5-cf462efecb2e.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

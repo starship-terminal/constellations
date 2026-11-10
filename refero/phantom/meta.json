@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/6144c3ae-fc57-4efe-b6ed-2b5eab2dc108",
   "source_url": "https://phantom.com",
   "extracted_at": "2026-06-03T19:30:18.163Z",
-  "fetched_at": "2026-10-20T08:22:10Z",
+  "fetched_at": "2026-11-08T04:20:39Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/7287406d-43a7-4b4b-ad32-62509fdd7763.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/65d075d8-db28-438d-8c5d-d356a2b2ad5a.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/de2eeee3-2713-4b37-8ff8-e150351c65df.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b10c1ac3-159e-4f68-ab42-12f73ed0a917.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

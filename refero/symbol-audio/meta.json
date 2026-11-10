@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/3b742f76-25ad-446c-a942-09b09b93f6a3",
   "source_url": "https://www.symbolaudio.com",
   "extracted_at": "2026-06-03T21:28:37.052Z",
-  "fetched_at": "2026-10-20T08:21:48Z",
+  "fetched_at": "2026-11-08T04:20:56Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/42d954d4-ca24-4b74-bca7-e158dda86d4a.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/aabffde3-bf02-4f26-a112-861726c0611f.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a9d4743e-9ba1-4654-9a09-ed92715712fc.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/441dd27c-2a3d-43b2-a76c-d0ff538afb8a.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

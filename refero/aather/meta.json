@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/3b080dc3-1992-43fe-91d6-2a721f934435",
   "source_url": "https://aather.com",
   "extracted_at": "2026-06-03T17:05:48.371Z",
-  "fetched_at": "2026-10-20T08:23:09Z",
+  "fetched_at": "2026-11-08T04:19:37Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/3a683030-b3a9-401c-95ae-b1d202694180.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

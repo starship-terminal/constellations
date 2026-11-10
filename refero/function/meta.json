@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/21b71be3-78a0-4681-a5b9-64cc4b40eb67",
   "source_url": "https://www.functionhealth.com",
   "extracted_at": "2026-06-03T15:39:10.246Z",
-  "fetched_at": "2026-10-20T08:23:16Z",
+  "fetched_at": "2026-11-08T04:20:11Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/166bdb7d-2154-460a-8879-3c7240c34463.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/f1f2db12-bc0b-487e-9ed9-275c1ea6d589.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/ceb50923-99d0-46e4-9a8d-e94cba91b8f9.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/a413569d-af14-4ac6-9324-a00dec0efc9b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

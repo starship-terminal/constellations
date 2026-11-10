@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/528eb1d4-8508-4dc6-87b4-c7b92d648dac",
   "source_url": "https://quizlet.com",
   "extracted_at": "2026-06-03T15:12:21.890Z",
-  "fetched_at": "2026-10-20T08:25:04Z",
+  "fetched_at": "2026-11-08T04:20:42Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f116898c-8782-436c-90b9-261f0f9d1657.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

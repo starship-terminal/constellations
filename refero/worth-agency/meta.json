@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/906ef782-4be7-45ee-9800-0514d46e7518",
   "source_url": "https://worth.agency",
   "extracted_at": "2026-06-03T17:23:21.286Z",
-  "fetched_at": "2026-10-20T08:23:05Z",
+  "fetched_at": "2026-11-08T04:21:07Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f9f66eb8-8e15-4819-aca2-a1b05c950070.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/33c32040-0e03-4774-884e-4ab2af416bb3.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/6337b89a-0ac5-48a4-8906-db0acf0848bb.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/73d58ad9-ee56-406e-8fe8-ebb276a35d16.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/bcfc6cb0-1b39-4f3f-a95e-bd7b563b0efc",
   "source_url": "https://letter.co",
   "extracted_at": "2026-06-03T20:17:29.470Z",
-  "fetched_at": "2026-10-20T08:22:06Z",
+  "fetched_at": "2026-11-08T04:20:25Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/08652932-a3f5-452c-9363-82bb9bd02abd.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/607a1ffc-42f7-4d62-a9fe-1406ab0d8978.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/6ff5eddc-0a1d-46a3-aae0-f4a6d63949e4.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b169a524-4537-430f-ab8c-7d93174dbfae.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

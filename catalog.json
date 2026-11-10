@@ -14,7 +14,8 @@
     "super-app": "Super apps",
     "browser": "Browsers",
     "events": "Events",
-    "e-commerce": "E-commerce"
+    "e-commerce": "E-commerce",
+    "travel": "Travel"
   },
   "systems": [
     {
@@ -3426,6 +3427,412 @@
         "version": "www.ableton.com, 2026-11-08; release not exposed",
         "durationMin": null,
         "gaps": "Signed-in account area, checkout, downloads and post-consent UI deliberately uncaptured (no form submitted, no purchase or download started); media players measured at rest only; learning microsites (learn., learningsynths., makingmusic.ableton.com) are separate front ends not covered"
+      }
+    },
+    {
+      "slug": "allbirds",
+      "name": "Allbirds",
+      "url": "https://www.allbirds.com",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Sustainable-footwear retail: storefront chrome, collection grid with filter sheet, product page with size grid, cart drawer",
+      "tags": [
+        "web",
+        "shopify",
+        "retail",
+        "warm",
+        "pill",
+        "serif-display"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-08",
+      "access": "signed out (every surface captured is public)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/allbirds/README.md",
+      "tokens": "systems/allbirds/tokens.json",
+      "styleGuide": "systems/allbirds/style-guide.html",
+      "preview": {
+        "cover": "systems/allbirds/screenshots/home-light-default.png",
+        "icon": "systems/allbirds/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.action.primary.background",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.fontFamily.serif",
+          "core.fontFamily.sans"
+        ]
+      },
+      "capture": {
+        "harness": "Devin",
+        "model": "SWE-2 Max",
+        "route": "public-web",
+        "durationMin": null,
+        "pr": "https://github.com/c-wenlong/designs/pull/438",
+        "durationNote": "wall-clock duration was not recorded for this capture"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run on this capture; the storefront's inline SVGs (bag, search, chevrons, plus) are visible in the crops and screenshots"
+      }
+    },
+    {
+      "slug": "1password",
+      "name": "1Password",
+      "url": "https://1password.com",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Password/security product marketing: announcement strip + white nav chrome, navy gradient hero, segment-selector plan pill, pricing columns, FAQ accordions",
+      "tags": [
+        "web",
+        "security",
+        "saas",
+        "marketing",
+        "pill",
+        "knox"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-08",
+      "access": "signed out (the vault is credential-gated and was never reached)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/1password/README.md",
+      "tokens": "systems/1password/tokens.json",
+      "styleGuide": "systems/1password/style-guide.html",
+      "preview": {
+        "cover": "systems/1password/screenshots/home-light-default.png",
+        "icon": "systems/1password/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "light.background.action",
+            "border": "light.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.agile-sans",
+          "core.font.family.agile-mono"
+        ]
+      },
+      "capture": {
+        "harness": "Devin",
+        "model": "SWE-2 Max",
+        "route": "public-web",
+        "durationMin": null,
+        "pr": "https://github.com/c-wenlong/designs/pull/439",
+        "durationNote": "wall-clock duration was not recorded for this capture"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run on this capture; the site's inline SVGs (wordmark, chevrons, social marks) are visible in the crops and screenshots"
+      }
+    },
+    {
+      "slug": "untitled-stream",
+      "name": "Untitled",
+      "url": "https://untitled.stream",
+      "category": "media",
+      "platform": "web",
+      "goodFor": "Music-collaboration product marketing: bracketed chrome, black-gradient pill CTAs, iridescent disc artwork, frosted bottom pill bar, pricing rail with plan cards",
+      "tags": [
+        "web",
+        "music",
+        "creator-tool",
+        "minimal",
+        "pill",
+        "grayscale"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-08",
+      "access": "signed out (every surface captured is public; the app behind login was not captured)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/untitled-stream/README.md",
+      "tokens": "systems/untitled-stream/tokens.json",
+      "styleGuide": "systems/untitled-stream/style-guide.html",
+      "preview": {
+        "cover": "systems/untitled-stream/screenshots/home-light-default.png",
+        "icon": "systems/untitled-stream/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.secondary",
+            "accent": "core.palette.black",
+            "border": "light.border.stroke"
+          },
+          "dark": {
+            "page": "dark.background.page",
+            "surface": "dark.background.surface",
+            "text": "dark.text.primary",
+            "muted": "dark.text.secondary",
+            "accent": "dark.background.action",
+            "border": "dark.border.stroke"
+          }
+        },
+        "fonts": [
+          "core.font.family.untitled-sans",
+          "core.font.family.plex-mono"
+        ]
+      },
+      "capture": {
+        "harness": "Devin",
+        "model": "SWE-2 Max",
+        "route": "public-web",
+        "durationMin": null,
+        "durationNote": "Total capture time across the Cloudflare-gated retries was not recorded; the measure runs' timestamps are in raw/components-computed.json.",
+        "pr": "https://github.com/c-wenlong/designs/pull/440"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run on this capture; the product's mark is visible on the login card and the fetched icon.png"
+      }
+    },
+    {
+      "slug": "aaply",
+      "name": "aaply",
+      "url": "https://aaply.app",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Playful product-marketing pages: floating pill nav, Poppins display with inline emoji atoms, lime/black CTA pairs, chat-annotation bubbles, pricing rail with lime plan card, black footer band",
+      "tags": [
+        "web",
+        "design-tool",
+        "playful",
+        "lime",
+        "pill",
+        "tilda"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-08",
+      "access": "signed out (every surface captured is public; the app host go.aaply.app returned \"Not found\" on every route and was not captured)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/aaply/README.md",
+      "tokens": "systems/aaply/tokens.json",
+      "styleGuide": "systems/aaply/style-guide.html",
+      "preview": {
+        "cover": "systems/aaply/screenshots/home-light-default.png",
+        "icon": "systems/aaply/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.text-muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.ui"
+        ]
+      },
+      "capture": {
+        "harness": "Devin",
+        "model": "SWE-2 Max",
+        "route": "public-web",
+        "durationMin": null,
+        "gaps": [
+          "go.aaply.app returned \"Not found\" on /login, /sign, /signup and /workspace/demo: the authenticated product is unreachable to this client, so only the marketing site is measured",
+          "the billing segment's held lime fill paints on a sibling shape, not the text atom — segments measure transparent in both positions",
+          "reviews carousel measured on its first slide only"
+        ],
+        "pr": "https://github.com/c-wenlong/designs/pull/441",
+        "durationNote": "wall-clock duration was not recorded for this capture"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run on this capture; the product's lime-chevron mark is on the nav bar and the fetched icon.png"
+      }
+    },
+    {
+      "slug": "anam",
+      "name": "Anam",
+      "url": "https://anam.ai",
+      "category": "ai-agent",
+      "platform": "web",
+      "goodFor": "Real-time AI avatar marketing and docs: live video persona cards, frosted-glass controls over video, a single orange accent on black and white, and a Mintlify docs surface with a dark theme",
+      "tags": [
+        "web",
+        "avatar",
+        "video",
+        "one-accent",
+        "monochrome",
+        "docs",
+        "glass"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-09",
+      "access": "signed out (every surface is public)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/anam/README.md",
+      "tokens": "systems/anam/tokens.json",
+      "styleGuide": "systems/anam/style-guide.html",
+      "preview": {
+        "cover": "systems/anam/screenshots/home-light-default.png",
+        "icon": "systems/anam/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.bg",
+            "surface": "light.surface",
+            "text": "light.text.DEFAULT",
+            "muted": "light.text.secondary",
+            "accent": "light.accent",
+            "border": "light.border.DEFAULT"
+          },
+          "dark": {
+            "page": "dark.bg",
+            "surface": "dark.surface",
+            "text": "dark.text.DEFAULT",
+            "muted": "dark.text.secondary",
+            "accent": "dark.accent",
+            "border": "dark.border.DEFAULT"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.mono",
+          "core.font.family.docs-mono",
+          "core.font.family.display"
+        ]
+      },
+      "capture": {
+        "harness": "Devin",
+        "model": "SWE-2 Max",
+        "route": "public-web",
+        "version": "anam.ai, 2026-11-09; release not exposed",
+        "durationMin": null,
+        "durationNote": "Total active time across the capture and its review fix passes was not kept; component readings carry per-page run keys in raw/components-computed.json.",
+        "pr": "https://github.com/c-wenlong/designs/pull/443"
+      }
+    },
+    {
+      "slug": "airbnb",
+      "name": "Airbnb",
+      "url": "https://www.airbnb.com",
+      "category": "travel",
+      "platform": "web",
+      "goodFor": "Public travel marketplace: the capsule Where/When/Who search bar, photo-led listing cards with the stroked wishlist heart, hairline-separated surfaces, one Rausch pink for end-of-flow actions, and a full set of declared-but-unapplied dark values",
+      "tags": [
+        "web",
+        "marketplace",
+        "travel",
+        "search",
+        "cards",
+        "gallery",
+        "single-accent",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-09",
+      "access": "signed out; www.airbnb.com geo-redirected to www.airbnb.com.sg from this network (same system on the regional mirror)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/airbnb/README.md",
+      "tokens": "systems/airbnb/tokens.json",
+      "styleGuide": "systems/airbnb/style-guide.html",
+      "preview": {
+        "cover": "systems/airbnb/screenshots/home-light-default.png",
+        "icon": "systems/airbnb/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.primary.default",
+            "surface": "light.color.bg.secondary.default",
+            "text": "light.color.text.primary.default",
+            "muted": "light.color.text.secondary.default",
+            "accent": "light.color.bg.primary.core",
+            "border": "light.color.border.secondary.default"
+          },
+          "dark": {
+            "page": "dark.color.bg.primary.default",
+            "surface": "dark.color.bg.secondary.default",
+            "text": "dark.color.text.primary.default",
+            "muted": "dark.color.text.secondary.default",
+            "accent": "dark.color.bg.primary.core",
+            "border": "dark.color.border.secondary.default"
+          }
+        },
+        "fonts": [
+          "core.typography.family"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/airbnb/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "harness": "Devin",
+        "model": "SWE-2 Max",
+        "route": "public-web",
+        "method": "public-web",
+        "source": "https://www.airbnb.com (geo-redirected to https://www.airbnb.com.sg)",
+        "at": "2026-11-09",
+        "pr": "https://github.com/c-wenlong/designs/pull/444",
+        "routes": [
+          "/",
+          "/experiences",
+          "/services",
+          "/s/Tokyo--Japan/homes",
+          "/rooms/<id> (a public listing the results linked)",
+          "/help",
+          "/host/homes",
+          "mobile /",
+          "mobile /s/Tokyo--Japan/homes"
+        ],
+        "gaps": [
+          "sign-in and everything behind the account: wishlist save, promo claim, host onboarding, booking and payment",
+          "search submission: the Where panel was opened and measured, never submitted",
+          "the results map's interactions",
+          "icons: Airbnb's glyph artwork is not kept",
+          "a second market: the SG mirror's content differs from other regions"
+        ],
+        "durationMin": null
+      },
+      "layoutGaps": {
+        "icons/": "Airbnb's icon glyphs are its artwork and are not kept here (docs/RIGHTS.md)"
       }
     },
     {

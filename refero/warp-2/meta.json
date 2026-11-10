@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/79714b4e-c89a-44b3-8da4-931daa9a466f",
   "source_url": "https://warp.dev/code",
   "extracted_at": "2026-06-03T17:29:14.310Z",
-  "fetched_at": "2026-10-20T08:23:02Z",
+  "fetched_at": "2026-11-08T04:21:05Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b057783f-07db-483b-9907-3b1b023ab93c.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/3198faa7-0005-4a91-82f2-b70476c3309d.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/e0dbbaeb-229e-4439-8b58-288ef46d6c55.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/26450c2c-e215-4758-a6eb-22b5e39c94db.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

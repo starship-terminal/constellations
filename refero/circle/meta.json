@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/ab8450d9-1b42-4395-aa24-9e277f021aa1",
   "source_url": "https://www.circle.so",
   "extracted_at": "2026-06-03T18:02:03.287Z",
-  "fetched_at": "2026-10-20T08:22:46Z",
+  "fetched_at": "2026-11-08T04:19:54Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/4c88fe60-c3bf-4dd5-b65f-a533d0b038aa.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0e7addda-3aeb-4f17-be70-cf7bf67da787.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/e27174d8-87ce-4f88-a183-b9ca976fb256.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/370b74b3-a7c5-466c-b7eb-36b3a82ceaf1.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

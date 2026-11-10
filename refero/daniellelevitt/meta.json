@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/1a8d2d66-bb84-4929-acbe-2685fc9ab6e7",
   "source_url": "https://www.daniellelevitt.com",
   "extracted_at": "2026-06-03T21:16:53.370Z",
-  "fetched_at": "2026-10-20T08:21:48Z",
+  "fetched_at": "2026-11-08T04:19:59Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6fe09980-e5e4-46f7-83b4-cae8ad2538e7.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a3dc6c92-ef6c-4620-b0d8-e944edb919a1.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/b90efbef-b596-4201-9a68-26a7ed49eaf1.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/8d6f6a6d-b3a2-4e11-8f57-0051c110b55d.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }
