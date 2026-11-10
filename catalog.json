@@ -4848,7 +4848,8 @@
           "no dark variant is declared in the bundle; light only"
         ],
         "durationMin": null,
-        "durationNote": "wall-clock duration was not recorded for this capture"
+        "durationNote": "wall-clock duration was not recorded for this capture",
+        "pr": "https://github.com/c-wenlong/designs/pull/466"
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the site's icons (social glyphs, logo marks) are visible in the crops and screenshots"
