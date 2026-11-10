@@ -1,0 +1,1153 @@
+{
+ "home": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 7707,
+  "fixed": [
+   {
+    "el": "header.uX4mq",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 121,
+    "text": "Bring your Airtable data into Claude.\nTry it now\nAirtable ho"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 1376,
+    "max": "1536px"
+   },
+   {
+    "w": 1376,
+    "max": "1536px"
+   },
+   {
+    "w": 1114,
+    "max": "1114px"
+   },
+   {
+    "w": 1376,
+    "max": "1536px"
+   },
+   {
+    "w": 1376,
+    "max": "1536px"
+   },
+   {
+    "w": 1376,
+    "max": "1536px"
+   },
+   {
+    "w": 1376,
+    "max": "1536px"
+   },
+   {
+    "w": 1376,
+    "max": "1536px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "nav.HmlLk",
+    "cols": "738.141px 701.859px",
+    "colGap": "0px",
+    "rowGap": "0px",
+    "w": 1440
+   },
+   {
+    "el": "div.LVslZ",
+    "cols": "42.3906px 599.75px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 738
+   },
+   {
+    "el": "div._9jse1q_sectionGrid",
+    "cols": "[main-start col] 85.3281px [col] 85.3281px [col] 85.3281px [col] 85.3281px [col] 85.3281px",
+    "colGap": "32px",
+    "rowGap": "normal",
+    "w": 1376
+   },
+   {
+    "el": "div.XUexzW_bkGrid",
+    "cols": "[main-start col] 85.3281px [col] 85.3281px [col] 85.3281px [col] 85.3281px [col] 85.3281px",
+    "colGap": "32px",
+    "rowGap": "normal",
+    "w": 1376
+   },
+   {
+    "el": "div.Aj_6TG_logoHeadingFullContainer",
+    "cols": "[main-start col] 85.3281px [col] 85.3281px [col] 85.3281px [col] 85.3281px [col] 85.3281px",
+    "colGap": "32px",
+    "rowGap": "normal",
+    "w": 1376
+   },
+   {
+    "el": "div.XUexzW_bkGrid",
+    "cols": "[main-start col] 85.3281px [col] 85.3281px [col] 85.3281px [col] 85.3281px [col] 85.3281px",
+    "colGap": "32px",
+    "rowGap": "normal",
+    "w": 1376
+   },
+   {
+    "el": "div._9jse1q_sectionGrid",
+    "cols": "[main-start col] 85.3281px [col] 85.3281px [col] 85.3281px [col] 85.3281px [col] 85.3281px",
+    "colGap": "32px",
+    "rowGap": "normal",
+    "w": 1376
+   },
+   {
+    "el": "div.ewihwa_section",
+    "cols": "[main-start col] 55.6094px [col] 55.6094px [col] 55.6094px [col] 55.6094px [col] 55.6094px",
+    "colGap": "32px",
+    "rowGap": "normal",
+    "w": 1101
+   }
+  ]
+ },
+ "platform": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 6657,
+  "fixed": [
+   {
+    "el": "header.Gmjfy",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 121,
+    "text": "Bring your Airtable data into Claude.\nTry it now\nAirtable ho"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 1344,
+    "max": "1344px"
+   },
+   {
+    "w": 1264,
+    "max": "1264px"
+   },
+   {
+    "w": 490,
+    "max": "616px"
+   },
+   {
+    "w": 1024,
+    "max": "1024px"
+   },
+   {
+    "w": 1344,
+    "max": "1344px"
+   },
+   {
+    "w": 654,
+    "max": "654px"
+   },
+   {
+    "w": 1344,
+    "max": "1344px"
+   },
+   {
+    "w": 1344,
+    "max": "1344px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "nav.HmlLk",
+    "cols": "710.594px 729.406px",
+    "colGap": "0px",
+    "rowGap": "0px",
+    "w": 1440
+   },
+   {
+    "el": "div.LVslZ",
+    "cols": "42.3906px 572.203px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 711
+   },
+   {
+    "el": "ul.GboOzG_bento",
+    "cols": "671px 671px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1342
+   },
+   {
+    "el": "nav.IMPkR",
+    "cols": "68px 976px 204px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1248
+   },
+   {
+    "el": "ul.KEBxg",
+    "cols": "211.188px 211.203px 211.203px 211.203px 211.188px",
+    "colGap": "48px",
+    "rowGap": "48px",
+    "w": 1248
+   }
+  ]
+ },
+ "platform-ai": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 5806,
+  "fixed": [
+   {
+    "el": "header.Gmjfy",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 121,
+    "text": "Bring your Airtable data into Claude.\nTry it now\nAirtable ho"
+   },
+   {
+    "el": "div.NgekxG_breadcrumbWrap",
+    "pos": "sticky",
+    "top": 120,
+    "w": 1440,
+    "h": 42,
+    "text": "Home\nPlatform\nPlatform AI"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 1344,
+    "max": "1344px"
+   },
+   {
+    "w": 884,
+    "max": "884px"
+   },
+   {
+    "w": 809,
+    "max": "884px"
+   },
+   {
+    "w": 1344,
+    "max": "1344px"
+   },
+   {
+    "w": 884,
+    "max": "884px"
+   },
+   {
+    "w": 1344,
+    "max": "1344px"
+   },
+   {
+    "w": 628,
+    "max": "884px"
+   },
+   {
+    "w": 638,
+    "max": "884px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "nav.HmlLk",
+    "cols": "710.594px 729.406px",
+    "colGap": "0px",
+    "rowGap": "0px",
+    "w": 1440
+   },
+   {
+    "el": "div.LVslZ",
+    "cols": "42.3906px 572.203px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 711
+   },
+   {
+    "el": "ul._8-XBpW_cardGrid",
+    "cols": "447.328px 447.328px 447.344px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1342
+   },
+   {
+    "el": "ul._8-XBpW_cardGrid",
+    "cols": "335.5px 335.5px 335.5px 335.5px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1342
+   },
+   {
+    "el": "ul._8-XBpW_cardGrid",
+    "cols": "447.328px 447.328px 447.344px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1342
+   },
+   {
+    "el": "nav.IMPkR",
+    "cols": "68px 976px 204px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1248
+   },
+   {
+    "el": "ul.KEBxg",
+    "cols": "211.188px 211.203px 211.203px 211.203px 211.188px",
+    "colGap": "48px",
+    "rowGap": "48px",
+    "w": 1248
+   }
+  ]
+ },
+ "solutions": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 7840,
+  "fixed": [
+   {
+    "el": "header.uX4mq",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 121,
+    "text": "Bring your Airtable data into Claude.\nTry it now\nAirtable ho"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 1376,
+    "max": "1536px"
+   },
+   {
+    "w": 1376,
+    "max": "1536px"
+   },
+   {
+    "w": 84,
+    "max": "844px"
+   },
+   {
+    "w": 768,
+    "max": "844px"
+   },
+   {
+    "w": 1440,
+    "max": "1536px"
+   },
+   {
+    "w": 1392,
+    "max": "1536px"
+   },
+   {
+    "w": 1440,
+    "max": "1536px"
+   },
+   {
+    "w": 1392,
+    "max": "1536px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "nav.HmlLk",
+    "cols": "738.141px 701.859px",
+    "colGap": "0px",
+    "rowGap": "0px",
+    "w": 1440
+   },
+   {
+    "el": "div.LVslZ",
+    "cols": "42.3906px 599.75px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 738
+   },
+   {
+    "el": "div._9jse1q_sectionGrid",
+    "cols": "[main-start col] 85.3281px [col] 85.3281px [col] 85.3281px [col] 85.3281px [col] 85.3281px",
+    "colGap": "32px",
+    "rowGap": "normal",
+    "w": 1376
+   },
+   {
+    "el": "div.XUexzW_bkGrid",
+    "cols": "[main-start col] 85.3281px [col] 85.3281px [col] 85.3281px [col] 85.3281px [col] 85.3281px",
+    "colGap": "32px",
+    "rowGap": "normal",
+    "w": 1376
+   },
+   {
+    "el": "div.PeB-pG_cardsGrid",
+    "cols": "437.328px 437.328px 437.344px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 1376
+   },
+   {
+    "el": "div._9jse1q_sectionGrid",
+    "cols": "[main-start col] 86.6562px [col] 86.6562px [col] 86.6562px [col] 86.6562px [col] 86.6562px",
+    "colGap": "32px",
+    "rowGap": "normal",
+    "w": 1392
+   },
+   {
+    "el": "div._9jse1q_sectionGrid",
+    "cols": "[main-start col] 86.6562px [col] 86.6562px [col] 86.6562px [col] 86.6562px [col] 86.6562px",
+    "colGap": "32px",
+    "rowGap": "normal",
+    "w": 1392
+   },
+   {
+    "el": "div._9jse1q_sectionGrid",
+    "cols": "[main-start col] 86.6562px [col] 86.6562px [col] 86.6562px [col] 86.6562px [col] 86.6562px",
+    "colGap": "32px",
+    "rowGap": "normal",
+    "w": 1392
+   }
+  ]
+ },
+ "enterprise": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 7210,
+  "fixed": [
+   {
+    "el": "header.Gmjfy",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 121,
+    "text": "Bring your Airtable data into Claude.\nTry it now\nAirtable ho"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 1344,
+    "max": "1344px"
+   },
+   {
+    "w": 1264,
+    "max": "1264px"
+   },
+   {
+    "w": 616,
+    "max": "616px"
+   },
+   {
+    "w": 1344,
+    "max": "1344px"
+   },
+   {
+    "w": 1344,
+    "max": "1344px"
+   },
+   {
+    "w": 654,
+    "max": "654px"
+   },
+   {
+    "w": 1344,
+    "max": "1344px"
+   },
+   {
+    "w": 884,
+    "max": "884px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "nav.HmlLk",
+    "cols": "710.594px 729.406px",
+    "colGap": "0px",
+    "rowGap": "0px",
+    "w": 1440
+   },
+   {
+    "el": "div.LVslZ",
+    "cols": "42.3906px 572.203px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 711
+   },
+   {
+    "el": "ul.jWOJtq_grid",
+    "cols": "335.5px 335.5px 335.5px 335.5px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1342
+   },
+   {
+    "el": "ul._5be9lW_bento",
+    "cols": "447.328px 447.328px 447.344px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1342
+   },
+   {
+    "el": "nav.IMPkR",
+    "cols": "68px 976px 204px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1248
+   },
+   {
+    "el": "ul.KEBxg",
+    "cols": "211.188px 211.203px 211.203px 211.203px 211.188px",
+    "colGap": "48px",
+    "rowGap": "48px",
+    "w": 1248
+   }
+  ]
+ },
+ "pricing": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 8824,
+  "fixed": [
+   {
+    "el": "div.sticky",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 121,
+    "text": "Bring your Airtable data into Claude.\nTry it now\n\nAirtable h"
+   },
+   {
+    "el": "header.3rK1K",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 121,
+    "text": "Bring your Airtable data into Claude.\nTry it now\n\nAirtable h"
+   }
+  ],
+  "maxWidths": [],
+  "grids": [
+   {
+    "el": "nav.WHzem",
+    "cols": "615.234px 824.766px",
+    "colGap": "0px",
+    "rowGap": "0px",
+    "w": 1440
+   },
+   {
+    "el": "div.Mgzqi",
+    "cols": "42.3906px 476.844px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 615
+   },
+   {
+    "el": "nav.2Pafd",
+    "cols": "68px 976px 204px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1248
+   },
+   {
+    "el": "ul.2Iz7E",
+    "cols": "211.188px 211.203px 211.203px 211.203px 211.188px",
+    "colGap": "48px",
+    "rowGap": "48px",
+    "w": 1248
+   }
+  ]
+ },
+ "contact-sales": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 1724,
+  "fixed": [
+   {
+    "el": "header.uX4mq",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 121,
+    "text": "Bring your Airtable data into Claude.\nTry it now\nAirtable ho"
+   },
+   {
+    "el": "div.md:col-span-5",
+    "pos": "sticky",
+    "top": -101,
+    "w": 543,
+    "h": 831,
+    "text": "Contact our sales team\n\n*First Name\n\n*Last Name\n\n*Work Email"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 1440,
+    "max": "1536px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "nav.HmlLk",
+    "cols": "738.141px 701.859px",
+    "colGap": "0px",
+    "rowGap": "0px",
+    "w": 1440
+   },
+   {
+    "el": "div.LVslZ",
+    "cols": "42.3906px 599.75px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 738
+   },
+   {
+    "el": "div.grid",
+    "cols": "57.3281px 57.3281px 57.3281px 57.3281px 57.3281px 57.3281px 57.3281px 57.3281px 57.3281px ",
+    "colGap": "64px",
+    "rowGap": "64px",
+    "w": 1392
+   },
+   {
+    "el": "div._0-Izga_fieldsGrid",
+    "cols": "[one] 211.328px [two] 211.328px [end]",
+    "colGap": "8px",
+    "rowGap": "normal",
+    "w": 431
+   },
+   {
+    "el": "div.value-container",
+    "cols": "192.328px 192.328px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 385
+   },
+   {
+    "el": "div.input-container",
+    "cols": "0px 4.26562px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 385
+   },
+   {
+    "el": "div.value-container",
+    "cols": "192.328px 192.328px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 385
+   },
+   {
+    "el": "div.input-container",
+    "cols": "0px 4.26562px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 385
+   }
+  ]
+ },
+ "customer-stories": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 4124,
+  "fixed": [
+   {
+    "el": "header.uX4mq",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 121,
+    "text": "Bring your Airtable data into Claude.\nTry it now\nAirtable ho"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 766,
+    "max": "1536px"
+   },
+   {
+    "w": 1008,
+    "max": "1536px"
+   },
+   {
+    "w": 1376,
+    "max": "1536px"
+   },
+   {
+    "w": 1376,
+    "max": "1536px"
+   },
+   {
+    "w": 1440,
+    "max": "1536px"
+   },
+   {
+    "w": 1376,
+    "max": "1536px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "nav.HmlLk",
+    "cols": "738.141px 701.859px",
+    "colGap": "0px",
+    "rowGap": "0px",
+    "w": 1440
+   },
+   {
+    "el": "div.LVslZ",
+    "cols": "42.3906px 599.75px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 738
+   },
+   {
+    "el": "div._9jse1q_sectionGrid",
+    "cols": "[main-start col] 34.5312px [col] 34.5312px [col] 34.5312px [col] 34.5312px [col] 34.5312px",
+    "colGap": "32px",
+    "rowGap": "normal",
+    "w": 766
+   },
+   {
+    "el": "div.Aj_6TG_logoHeadingFullContainer",
+    "cols": "[main-start col] 85.3281px [col] 85.3281px [col] 85.3281px [col] 85.3281px [col] 85.3281px",
+    "colGap": "32px",
+    "rowGap": "normal",
+    "w": 1376
+   },
+   {
+    "el": "div.XUexzW_bkGrid",
+    "cols": "[main-start col] 85.3281px [col] 85.3281px [col] 85.3281px [col] 85.3281px [col] 85.3281px",
+    "colGap": "32px",
+    "rowGap": "normal",
+    "w": 1376
+   },
+   {
+    "el": "div.iUyCra_cardsWrapper",
+    "cols": "442.656px 442.672px 442.656px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 1392
+   },
+   {
+    "el": "div._9jse1q_sectionGrid",
+    "cols": "[main-start col] 92.6562px [col] 92.6562px [col] 92.6562px [col] 92.6562px [col] 92.6562px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "w": 1376
+   },
+   {
+    "el": "nav.IMPkR",
+    "cols": "68px 976px 204px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1248
+   }
+  ]
+ },
+ "templates": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 18709,
+  "fixed": [
+   {
+    "el": "header.uX4mq",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 121,
+    "text": "Bring your Airtable data into Claude.\nTry it now\nAirtable ho"
+   },
+   {
+    "el": "aside.w-full",
+    "pos": "sticky",
+    "top": 375,
+    "w": 224,
+    "h": 617,
+    "text": "Search templates\nBy Use Case\nBy Industry\nEducation & Nonprof"
+   }
+  ],
+  "maxWidths": [],
+  "grids": [
+   {
+    "el": "nav.HmlLk",
+    "cols": "836.141px 603.859px",
+    "colGap": "0px",
+    "rowGap": "0px",
+    "w": 1440
+   },
+   {
+    "el": "div.LVslZ",
+    "cols": "140.391px 599.75px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 836
+   },
+   {
+    "el": "div.grid",
+    "cols": "161.594px 161.594px 161.609px 161.594px 161.609px",
+    "colGap": "12px",
+    "rowGap": "12px",
+    "w": 856
+   },
+   {
+    "el": "div.grid",
+    "cols": "420px 420px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 856
+   },
+   {
+    "el": "div.grid",
+    "cols": "274.656px 274.672px 274.656px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 856
+   },
+   {
+    "el": "div.grid",
+    "cols": "274.656px 274.672px 274.656px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 856
+   },
+   {
+    "el": "div.grid",
+    "cols": "274.656px 274.672px 274.656px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 856
+   },
+   {
+    "el": "div.grid",
+    "cols": "274.656px 274.672px 274.656px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 856
+   }
+  ]
+ },
+ "marketplace": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 2995,
+  "fixed": [
+   {
+    "el": "div.sticky",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 121,
+    "text": "Bring your Airtable data into Claude.\nTry it now\n\nAirtable h"
+   },
+   {
+    "el": "header.3rK1K",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 121,
+    "text": "Bring your Airtable data into Claude.\nTry it now\n\nAirtable h"
+   }
+  ],
+  "maxWidths": [],
+  "grids": [
+   {
+    "el": "nav.WHzem",
+    "cols": "615.234px 824.766px",
+    "colGap": "0px",
+    "rowGap": "0px",
+    "w": 1440
+   },
+   {
+    "el": "div.Mgzqi",
+    "cols": "42.3906px 476.844px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 615
+   },
+   {
+    "el": "nav.2Pafd",
+    "cols": "68px 976px 204px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1248
+   },
+   {
+    "el": "ul.2Iz7E",
+    "cols": "211.188px 211.203px 211.203px 211.203px 211.188px",
+    "colGap": "48px",
+    "rowGap": "48px",
+    "w": 1248
+   }
+  ]
+ },
+ "whatsnew": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 1807,
+  "fixed": [
+   {
+    "el": "header.uX4mq",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 121,
+    "text": "Bring your Airtable data into Claude.\nTry it now\nAirtable ho"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 1440,
+    "max": "1536px"
+   },
+   {
+    "w": 350,
+    "max": "350px"
+   },
+   {
+    "w": 1440,
+    "max": "1536px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "nav.HmlLk",
+    "cols": "836.141px 603.859px",
+    "colGap": "0px",
+    "rowGap": "0px",
+    "w": 1440
+   },
+   {
+    "el": "div.LVslZ",
+    "cols": "140.391px 599.75px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 836
+   },
+   {
+    "el": "section._vdtCW_root",
+    "cols": "459.328px 693.469px",
+    "colGap": "56px",
+    "rowGap": "56px",
+    "w": 1209
+   },
+   {
+    "el": "nav.IMPkR",
+    "cols": "68px 976px 204px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1248
+   },
+   {
+    "el": "ul.KEBxg",
+    "cols": "211.188px 211.203px 211.203px 211.203px 211.188px",
+    "colGap": "48px",
+    "rowGap": "48px",
+    "w": 1248
+   }
+  ]
+ },
+ "about": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 4764,
+  "fixed": [
+   {
+    "el": "header.Gmjfy",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 121,
+    "text": "Bring your Airtable data into Claude.\nTry it now\nAirtable ho"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 1344,
+    "max": "1344px"
+   },
+   {
+    "w": 742,
+    "max": "884px"
+   },
+   {
+    "w": 884,
+    "max": "884px"
+   },
+   {
+    "w": 1344,
+    "max": "1344px"
+   },
+   {
+    "w": 591,
+    "max": "884px"
+   },
+   {
+    "w": 591,
+    "max": "884px"
+   },
+   {
+    "w": 1344,
+    "max": "1344px"
+   },
+   {
+    "w": 884,
+    "max": "884px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "nav.HmlLk",
+    "cols": "710.594px 729.406px",
+    "colGap": "0px",
+    "rowGap": "0px",
+    "w": 1440
+   },
+   {
+    "el": "div.LVslZ",
+    "cols": "42.3906px 572.203px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 711
+   },
+   {
+    "el": "ul._8-XBpW_cardGrid",
+    "cols": "447.328px 447.328px 447.344px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1342
+   },
+   {
+    "el": "ul._8-XBpW_cardGrid",
+    "cols": "447.328px 447.328px 447.344px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1342
+   },
+   {
+    "el": "nav.IMPkR",
+    "cols": "68px 976px 204px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1248
+   },
+   {
+    "el": "ul.KEBxg",
+    "cols": "211.188px 211.203px 211.203px 211.203px 211.188px",
+    "colGap": "48px",
+    "rowGap": "48px",
+    "w": 1248
+   }
+  ]
+ },
+ "mobile-home": {
+  "vw": 390,
+  "vh": 844,
+  "docH": 8620,
+  "fixed": [
+   {
+    "el": "header.uX4mq",
+    "pos": "sticky",
+    "top": 0,
+    "w": 390,
+    "h": 144,
+    "text": "Bring your Airtable data into Claude.\nTry it now\nAirtable ho"
+   },
+   {
+    "el": "div.qV-rI",
+    "pos": "fixed",
+    "top": 0,
+    "w": 390,
+    "h": 844,
+    "text": "Platform\nSolutions\nResources\nEnterprise\nPricing\nWhat’s new\nB"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 342,
+    "max": "1536px"
+   },
+   {
+    "w": 342,
+    "max": "1536px"
+   },
+   {
+    "w": 342,
+    "max": "1114px"
+   },
+   {
+    "w": 342,
+    "max": "1536px"
+   },
+   {
+    "w": 342,
+    "max": "1536px"
+   },
+   {
+    "w": 342,
+    "max": "1536px"
+   },
+   {
+    "w": 342,
+    "max": "1536px"
+   },
+   {
+    "w": 342,
+    "max": "1536px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "nav.HmlLk",
+    "cols": "90.3906px 299.609px",
+    "colGap": "0px",
+    "rowGap": "0px",
+    "w": 390
+   },
+   {
+    "el": "div.LVslZ",
+    "cols": "42.3906px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 90
+   },
+   {
+    "el": "div._9jse1q_sectionGrid",
+    "cols": "[col] 33px [col] 33px [col] 33px [col] 33px [col] 33px [col] 33px [end] 0px",
+    "colGap": "24px",
+    "rowGap": "normal",
+    "w": 342
+   },
+   {
+    "el": "div.XUexzW_bkGrid",
+    "cols": "[main-start col] 6.5px [col] 6.5px [col] 6.5px [col] 6.5px [col] 6.5px [col] 6.5px [col] 6",
+    "colGap": "24px",
+    "rowGap": "normal",
+    "w": 342
+   },
+   {
+    "el": "div.Aj_6TG_logoHeadingFullContainer",
+    "cols": "[main-start col] 6.5px [col] 6.5px [col] 6.5px [col] 6.5px [col] 6.5px [col] 6.5px [col] 6",
+    "colGap": "24px",
+    "rowGap": "normal",
+    "w": 342
+   },
+   {
+    "el": "div.XUexzW_bkGrid",
+    "cols": "[main-start col] 6.5px [col] 6.5px [col] 6.5px [col] 6.5px [col] 6.5px [col] 6.5px [col] 6",
+    "colGap": "24px",
+    "rowGap": "normal",
+    "w": 342
+   },
+   {
+    "el": "div._9jse1q_sectionGrid",
+    "cols": "[col] 37px [col] 37px [col] 37px [col] 37px [col] 37px [col] 37px [end]",
+    "colGap": "24px",
+    "rowGap": "normal",
+    "w": 342
+   },
+   {
+    "el": "div.ewihwa_section",
+    "cols": "[main-start col] 1px [col] 1px [col] 1px [col] 1px [col] 1px [col] 1px [col] 1px [col] 1px",
+    "colGap": "24px",
+    "rowGap": "normal",
+    "w": 342
+   }
+  ]
+ }
+}
