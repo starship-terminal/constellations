@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Airtable — style guide</title>
+<style>
+:root {
+/*CORE*/
+}
+:root {
+/*LIGHT*/
+}
+[data-mode="dark"] {
+/*DARK*/
+}
+* { box-sizing: border-box; margin: 0; }
+body {
+  font-family: var(--font-family-haas);
+  background: var(--page);
+  color: var(--text);
+  line-height: 1.45;
+  padding: 48px 5vw 96px;
+}
+a { color: var(--link); }
+header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+header .ic { display: block; }
+h1 { font-family: var(--font-family-display); font-size: 40px; font-weight: 600; letter-spacing: -.02em; }
+.sub { color: var(--muted); font-size: 14px; margin-bottom: 40px; max-width: 72ch; }
+h2 { font-family: var(--font-family-display); font-size: 22px; font-weight: 600; margin: 48px 0 16px; border-top: 1px solid var(--border); padding-top: 32px; }
+h2:first-of-type { border-top: 0; padding-top: 0; }
+.note { color: var(--muted); font-size: 13px; margin: -8px 0 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+.sw { border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; font-size: 12px; }
+.sw .chip { height: 64px; }
+.sw .meta { padding: 8px 10px; background: var(--surface-raised); }
+.sw .meta b { display: block; font-weight: 600; }
+.sw .meta span { color: var(--muted); font-family: var(--font-family-mono); font-size: 11px; word-break: break-all; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { text-align: left; padding: 7px 12px; border-bottom: 1px solid var(--border-subtle); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; }
+td.name { font-family: var(--font-family-mono); font-size: 12px; }
+td.src { color: var(--faint); font-size: 11px; font-family: var(--font-family-mono); }
+.chip-inline { display: inline-block; width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--border-subtle); vertical-align: -2px; margin-right: 8px; }
+.demo { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin: 16px 0 8px; }
+.card-demo { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--card-radius); padding: 24px; width: 320px; }
+.card-demo h4 { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+.card-demo p { color: var(--muted); font-size: 14px; }
+.tile-demo { background: var(--chip-blue-bg); color: var(--chip-blue-fg); border-radius: var(--card-tile-radius); padding: 28px; width: 320px; }
+.tile-demo h4 { font-family: var(--font-family-display); font-size: 22px; font-weight: 600; margin-bottom: 6px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; border-radius: var(--component-button-primary-radius); height: var(--component-button-primary-height); padding: 0 28px; font-family: var(--font-family-season-sans); font-size: 16px; font-weight: 650; border: 1px solid transparent; cursor: default; }
+.btn-ink { background: var(--component-button-primary-bg); color: var(--component-button-primary-fg); border-color: var(--component-button-primary-bg); }
+.btn-ink:hover { background: var(--component-button-primary-hover-bg); border-color: var(--component-button-primary-hover-bg); }
+.btn-ink:active { background: var(--component-button-primary-pressed-bg); border-color: var(--component-button-primary-pressed-bg); }
+.btn-line { background: transparent; color: var(--component-button-outline-border); border-color: var(--component-button-outline-border); }
+.btn-line:active { background: var(--component-button-outline-pressed-bg); }
+.btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.field { display: flex; align-items: center; height: var(--component-field-height); width: 320px; border: 1px solid var(--component-field-border); border-radius: var(--radius-md); padding: 0 16px; background: var(--surface-raised); color: var(--muted); font-size: 15px; }
+.field:focus-within { outline: 1px solid var(--component-field-focus); }
+.promo-demo { background: var(--component-promo-bg); color: var(--component-promo-text); font-family: var(--font-family-season-sans); font-weight: 650; font-size: 14px; text-align: center; padding: 12px; border-radius: var(--radius-sm); width: 100%; }
+.promo-demo a { color: var(--link-deep); margin-left: 8px; }
+.tag { display: inline-block; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-full); padding: 4px 14px; font-size: 13px; }
+.tab-demo { display: flex; gap: 0; background: var(--surface); border-radius: var(--radius-md); padding: 4px; }
+.tab-demo span { padding: 10px 20px; border-radius: var(--radius-sm); font-size: 14px; color: var(--muted); }
+.tab-demo .on { background: var(--tablist-bg); color: var(--text); box-shadow: var(--shadow-low); }
+.sp-row { display: flex; align-items: center; gap: 16px; margin: 6px 0; font-family: var(--font-family-mono); font-size: 12px; color: var(--muted); }
+.sp-row i { display: block; background: var(--accent); border-radius: 2px; height: 16px; }
+footer { margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--faint); font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <!--icon:brandmark-0200c62c:36-->
+  <h1>Airtable</h1>
+</header>
+<p class="sub">The design language of www.airtable.com's public marketing pages, captured signed-out on 2026-11-10/12.
+Every value below is a token from tokens.json rendered as a CSS custom property; hover a row for its provenance.
+The site ships one light theme only — prefers-color-scheme does not change it, so there is no dark set.
+Haas / Haas Groot Disp / ATSeasonSans / Inter Display / GT Eesti Display are commercial faces and are
+substituted here by system fonts.</p>
+
+<h2>Roles</h2>
+<div class="grid">
+  <div class="sw"><div class="chip" style="background:var(--page)"></div><div class="meta"><b>page</b><span>--page · #fff</span></div></div>
+  <div class="sw"><div class="chip" style="background:var(--surface)"></div><div class="meta"><b>surface</b><span>--surface · #f8f6f6</span></div></div>
+  <div class="sw"><div class="chip" style="background:var(--surface-sunken)"></div><div class="meta"><b>surface sunken</b><span>--surface-sunken</span></div></div>
+  <div class="sw"><div class="chip" style="background:var(--text)"></div><div class="meta"><b>text</b><span>--text · #181d26</span></div></div>
+  <div class="sw"><div class="chip" style="background:var(--muted)"></div><div class="meta"><b>muted</b><span>--muted</span></div></div>
+  <div class="sw"><div class="chip" style="background:var(--accent)"></div><div class="meta"><b>accent</b><span>--accent · #2572ff</span></div></div>
+  <div class="sw"><div class="chip" style="background:var(--link)"></div><div class="meta"><b>link</b><span>--link · #0768f8</span></div></div>
+  <div class="sw"><div class="chip" style="background:var(--border)"></div><div class="meta"><b>border</b><span>--border · #e0dcdb</span></div></div>
+  <div class="sw"><div class="chip" style="background:var(--border-strong)"></div><div class="meta"><b>border strong</b><span>--border-strong · #181d26</span></div></div>
+  <div class="sw"><div class="chip" style="background:var(--focus)"></div><div class="meta"><b>focus</b><span>--focus ring</span></div></div>
+  <div class="sw"><div class="chip" style="background:var(--focus-field)"></div><div class="meta"><b>focus field</b><span>--focus-field · #005fcc</span></div></div>
+  <div class="sw"><div class="chip" style="background:var(--error)"></div><div class="meta"><b>error</b><span>--error · #dc043b</span></div></div>
+</div>
+
+<h2>Brand accents</h2>
+<p class="note">The --color-brand-* accents that paint the coloured tiles and illustrations.</p>
+<div class="grid" id="brand"></div>
+
+<h2>Primitive ramps</h2>
+<p class="note">The --color-primitive-* scale declared on :root (100 → 900).</p>
+<div id="ramps"></div>
+
+<h2>Component colours</h2>
+<div class="grid" id="comp"></div>
+
+<h2>Type</h2>
+<table id="type"></table>
+<div class="demo">
+  <p style="font:var(--typography-display-md)">The quick brown fox</p>
+</div>
+<div class="demo">
+  <p style="font:var(--typography-body);color:var(--text)">Body 16/21.6 — the running text of the marketing pages.</p>
+</div>
+
+<h2>Space</h2>
+<div id="space"></div>
+
+<h2>Radius</h2>
+<div class="grid" id="radius"></div>
+
+<h2>Shadow</h2>
+<div class="demo" id="shadow"></div>
+
+<h2>Motion</h2>
+<table id="motion"></table>
+
+<h2>Components</h2>
+<div class="demo promo-demo">Bring your Airtable data into Claude.<a href="#">Try it now →</a></div>
+<div class="demo">
+  <button class="btn btn-ink" type="button">Sign up for free</button>
+  <button class="btn btn-line" type="button">Book Demo</button>
+  <a href="#" style="font-family:var(--font-family-season-sans);font-weight:650">Log in</a>
+</div>
+<div class="demo">
+  <div class="field">* Work Email</div>
+  <div class="field">Country <span style="margin-left:auto">▾</span></div>
+</div>
+<div class="demo">
+  <div class="card-demo"><h4>Solutions card</h4><p>16px white index card on a #e0e2e6 hairline.</p></div>
+  <div class="tile-demo"><h4>Path tile</h4><p>32px-radius coloured tile — the signature shape of the home and AI pages.</p></div>
+</div>
+<div class="demo">
+  <div class="tab-demo"><span class="on">Featured</span><span>Extensions by Airtable</span><span>All extensions</span><span>Scripts</span></div>
+  <span class="tag">Project Management</span>
+</div>
+
+<footer>
+  Tokens: <span id="count"></span> · captured 2026-11-10/12 · every leaf carries its evidence in tokens.json $extensions.source
+</footer>
+
+<script id="tok" type="application/json">/*TOKENS*/null</script>
+<script>
+const T = JSON.parse(document.getElementById('tok').textContent);
+function* flat(node, p = "") {
+  for (const [k, v] of Object.entries(node)) {
+    if (v && typeof v === 'object' && 'v' in v) yield [p + k, v];
+    else if (v && typeof v === 'object') yield* flat(v, p + k + ".");
+  }
+}
+const ALL = [...flat(T.core), ...flat(T.light), ...flat(T.dark || {})];
+document.getElementById('count').textContent = ALL.length;
+const esc = s => String(s).replace(/</g, "&lt;");
+function swatch(name, v, s) {
+  return `<div class="sw" title="${esc(s)}"><div class="chip" style="background:${esc(v)}"></div><div class="meta"><b>${esc(name)}</b><span>${esc(v)}</span></div></div>`;
+}
+// brand accents
+document.getElementById('brand').innerHTML =
+  [...flat(T.light.brand || {})].map(([n, t]) => swatch('brand-' + n, t.v, t.s)).join('');
+// primitive ramps grouped by hue
+const ramps = {};
+for (const [n, t] of flat(T.core.color || {})) {
+  const m = n.match(/^primitive-([a-z-]+)-(\d+)$/);
+  if (m) (ramps[m[1]] ||= []) .push([+m[2], t]);
+}
+document.getElementById('ramps').innerHTML = Object.entries(ramps).map(([hue, xs]) =>
+  `<h3 style="margin:18px 0 8px;font-size:13px;color:var(--muted)">${hue}</h3><div class="grid">` +
+  xs.sort((a, b) => a[0] - b[0]).map(([step, t]) => swatch(step, t.v, t.s)).join('') + '</div>').join('');
+// component colours
+document.getElementById('comp').innerHTML =
+  [...flat(T.light.component || {})].filter(([n, t]) => t.t === 'color')
+    .map(([n, t]) => swatch('component-' + n, t.v.startsWith('{') ? 'var(--' + n + ')' : t.v, t.s)).join('');
+// type table
+document.getElementById('type').innerHTML =
+  '<tr><th>token</th><th>sample</th><th>source</th></tr>' +
+  [...flat(T.core.typography || {})].map(([n, t]) =>
+    `<tr><td class="name">typography-${n}</td><td style="font:${t.v.fontWeight} ${t.v.fontSize}/${t.v.lineHeight} ${t.v.fontFamily}">Ag <span style="color:var(--muted);font-size:12px">${t.v.fontSize}/${t.v.lineHeight} w${t.v.fontWeight}</span></td><td class="src">${esc(t.s)}</td></tr>`).join('') +
+  [...flat(T.core.font?.family || {})].map(([n, t]) =>
+    `<tr><td class="name">font-family-${n}</td><td style="font-family:${t.v}">${esc(t.v.split(',')[0])}</td><td class="src">${esc(t.s)}</td></tr>`).join('');
+// space bars
+document.getElementById('space').innerHTML =
+  [...flat(T.core.space || {})].map(([n, t]) =>
+    `<div class="sp-row" title="${esc(t.s)}"><i style="width:${esc(t.v)}"></i> space-${n} · ${esc(t.v)}</div>`).join('');
+// radius
+document.getElementById('radius').innerHTML =
+  [...flat(T.core.radius || {})].map(([n, t]) =>
+    `<div class="sw" title="${esc(t.s)}"><div class="chip" style="background:var(--surface);display:flex;align-items:center;justify-content:center"><div style="width:70%;height:60%;background:var(--accent-deep);border-radius:${esc(t.v)}"></div></div><div class="meta"><b>radius-${n}</b><span>${esc(t.v)}</span></div></div>`).join('');
+// shadows
+document.getElementById('shadow').innerHTML =
+  [...flat(T.core.shadow || {})].slice(0, 6).map(([n, t]) =>
+    `<div class="sw" style="width:180px" title="${esc(t.s)}"><div class="chip" style="background:var(--surface);display:flex;align-items:center;justify-content:center"><div style="width:70%;height:56%;background:#fff;border-radius:8px;box-shadow:${typeof t.v === 'string' ? t.v : t.v.map(l => `${l.inset ? 'inset ' : ''}${l.offsetX} ${l.offsetY} ${l.blur} ${l.spread} ${l.color}`).join(', ')}"></div></div><div class="meta"><b>shadow-${n}</b></div></div>`).join('');
+// motion
+document.getElementById('motion').innerHTML =
+  '<tr><th>token</th><th>value</th><th>source</th></tr>' +
+  [...flat(T.core.motion || {})].map(([n, t]) =>
+    `<tr><td class="name">motion-${n}</td><td>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</td><td class="src">${esc(t.s)}</td></tr>`).join('');
+</script>
+</body>
+</html>
