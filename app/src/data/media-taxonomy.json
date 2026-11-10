@@ -798,9 +798,9 @@
       "assignedMedia": 66
     },
     {
-      "referenceId": "systems:amie",
-      "media": 116,
-      "assignedMedia": 55
+      "referenceId": "systems:adidas",
+      "media": 55,
+      "assignedMedia": 18
     }
   ],
   "assignments": [
@@ -184751,74 +184751,30 @@
       ]
     },
     {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/screenshots/calendar-light-default.png",
+      "referenceId": "systems:adidas",
+      "mediaId": "systems/adidas/screenshots/cart-light-default.png",
       "terms": [
         {
-          "termId": "web-ux-patterns:calendar",
-          "rule": "ux-calendar",
-          "reason": "Capture filename explicitly names calendar; local classification from recorded capture metadata."
+          "termId": "web-page-types:carts-bags",
+          "rule": "page-cart",
+          "reason": "Capture filename explicitly names carts & bags; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/screenshots/calendar-light-full.png",
+      "referenceId": "systems:adidas",
+      "mediaId": "systems/adidas/screenshots/cart-light-full.png",
       "terms": [
         {
-          "termId": "web-ux-patterns:calendar",
-          "rule": "ux-calendar",
-          "reason": "Capture filename explicitly names calendar; local classification from recorded capture metadata."
+          "termId": "web-page-types:carts-bags",
+          "rule": "page-cart",
+          "reason": "Capture filename explicitly names carts & bags; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/screenshots/contact-light-default.png",
-      "terms": [
-        {
-          "termId": "web-page-types:contacts",
-          "rule": "page-contacts",
-          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/screenshots/contact-light-full.png",
-      "terms": [
-        {
-          "termId": "web-page-types:contacts",
-          "rule": "page-contacts",
-          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/screenshots/download-light-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:upload-download",
-          "rule": "ux-upload-download",
-          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/screenshots/download-light-full.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:upload-download",
-          "rule": "ux-upload-download",
-          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/screenshots/home-light-default.png",
+      "referenceId": "systems:adidas",
+      "mediaId": "systems/adidas/screenshots/home-light-default.png",
       "terms": [
         {
           "termId": "web-page-types:home-page",
@@ -184828,8 +184784,8 @@
       ]
     },
     {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/screenshots/home-light-features.png",
+      "referenceId": "systems:adidas",
+      "mediaId": "systems/adidas/screenshots/home-light-full.png",
       "terms": [
         {
           "termId": "web-page-types:home-page",
@@ -184839,325 +184795,134 @@
       ]
     },
     {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/screenshots/home-light-full.png",
+      "referenceId": "systems:adidas",
+      "mediaId": "systems/adidas/screenshots/home-light-search.png",
       "terms": [
         {
           "termId": "web-page-types:home-page",
           "rule": "page-home",
           "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/screenshots/pricing-light-faq.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:faq",
-          "rule": "ux-faq",
-          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/screenshots/templates-light-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:templates",
-          "rule": "ux-templates",
-          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/screenshots/templates-light-full.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:templates",
-          "rule": "ux-templates",
-          "reason": "Capture filename explicitly names templates; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/billing-monthly-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:billing-plans",
-          "rule": "ux-billing",
-          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/billing-monthly-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:billing-plans",
-          "rule": "ux-billing",
-          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/billing-monthly-hover.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:billing-plans",
-          "rule": "ux-billing",
-          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/billing-monthly-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:billing-plans",
-          "rule": "ux-billing",
-          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/billing-yearly-default.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:billing-plans",
-          "rule": "ux-billing",
-          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/billing-yearly-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:billing-plans",
-          "rule": "ux-billing",
-          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/billing-yearly-hover.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:billing-plans",
-          "rule": "ux-billing",
-          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/billing-yearly-on-opened.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:billing-plans",
-          "rule": "ux-billing",
-          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/billing-yearly-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ux-patterns:billing-plans",
-          "rule": "ux-billing",
-          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/changelog-pill-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tags-chips",
-          "rule": "ui-chips",
-          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/changelog-pill-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tags-chips",
-          "rule": "ui-chips",
-          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/changelog-pill-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tags-chips",
-          "rule": "ui-chips",
-          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/changelog-pill-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:tags-chips",
-          "rule": "ui-chips",
-          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/download-button-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:button",
-          "rule": "ui-button",
-          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
         },
         {
-          "termId": "web-ux-patterns:upload-download",
-          "rule": "ux-upload-download",
-          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+          "termId": "web-ux-patterns:searching",
+          "rule": "ux-search",
+          "reason": "Capture filename explicitly names searching; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/download-button-focus-visible.png",
+      "referenceId": "systems:adidas",
+      "mediaId": "systems/adidas/screenshots/plp-light-filter.png",
       "terms": [
         {
-          "termId": "web-ui-elements:button",
-          "rule": "ui-button",
-          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-ux-patterns:upload-download",
-          "rule": "ux-upload-download",
-          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/download-button-hover.png",
+      "referenceId": "systems:adidas",
+      "mediaId": "systems/adidas/components/crops/filter-row-default.png",
       "terms": [
         {
-          "termId": "web-ui-elements:button",
-          "rule": "ui-button",
-          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-ux-patterns:upload-download",
-          "rule": "ux-upload-download",
-          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/download-button-pressed.png",
+      "referenceId": "systems:adidas",
+      "mediaId": "systems/adidas/components/crops/filter-row-focus-visible.png",
       "terms": [
         {
-          "termId": "web-ui-elements:button",
-          "rule": "ui-button",
-          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
-        },
-        {
-          "termId": "web-ux-patterns:upload-download",
-          "rule": "ux-upload-download",
-          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/download-title-default.png",
+      "referenceId": "systems:adidas",
+      "mediaId": "systems/adidas/components/crops/filter-row-hover.png",
       "terms": [
         {
-          "termId": "web-ux-patterns:upload-download",
-          "rule": "ux-upload-download",
-          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/faq-open-opened.png",
+      "referenceId": "systems:adidas",
+      "mediaId": "systems/adidas/components/crops/filter-row-pressed.png",
       "terms": [
         {
-          "termId": "web-ux-patterns:faq",
-          "rule": "ux-faq",
-          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/faq-question-default.png",
+      "referenceId": "systems:adidas",
+      "mediaId": "systems/adidas/components/crops/footer-default.png",
       "terms": [
         {
-          "termId": "web-ux-patterns:faq",
-          "rule": "ux-faq",
-          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/faq-question-focus-visible.png",
+      "referenceId": "systems:adidas",
+      "mediaId": "systems/adidas/components/crops/footer-link-default.png",
       "terms": [
         {
-          "termId": "web-ux-patterns:faq",
-          "rule": "ux-faq",
-          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/faq-question-hover.png",
+      "referenceId": "systems:adidas",
+      "mediaId": "systems/adidas/components/crops/footer-link-focus-visible.png",
       "terms": [
         {
-          "termId": "web-ux-patterns:faq",
-          "rule": "ux-faq",
-          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/faq-question-pressed.png",
+      "referenceId": "systems:adidas",
+      "mediaId": "systems/adidas/components/crops/footer-link-hover.png",
       "terms": [
         {
-          "termId": "web-ux-patterns:faq",
-          "rule": "ux-faq",
-          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
         }
       ]
     },
     {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/feature-card-default.png",
+      "referenceId": "systems:adidas",
+      "mediaId": "systems/adidas/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:adidas",
+      "mediaId": "systems/adidas/components/crops/product-card-default.png",
       "terms": [
         {
           "termId": "web-ui-elements:cards-tiles",
@@ -185167,8 +184932,8 @@
       ]
     },
     {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/feature-card-hover.png",
+      "referenceId": "systems:adidas",
+      "mediaId": "systems/adidas/components/crops/product-card-hover.png",
       "terms": [
         {
           "termId": "web-ui-elements:cards-tiles",
@@ -185178,195 +184943,8 @@
       ]
     },
     {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/footer-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/footer-legal-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/footer-legal-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/footer-legal-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/footer-legal-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/footer-link-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/footer-link-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/footer-link-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/footer-link-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/footer-social-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/footer-social-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/footer-social-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/footer-social-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/nav-flyout-button-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:button",
-          "rule": "ui-button",
-          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/nav-flyout-button-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:button",
-          "rule": "ui-button",
-          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/nav-flyout-button-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:button",
-          "rule": "ui-button",
-          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/nav-flyout-button-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:button",
-          "rule": "ui-button",
-          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:amie",
-      "mediaId": "systems/amie/components/crops/plan-card-default.png",
+      "referenceId": "systems:adidas",
+      "mediaId": "systems/adidas/components/crops/product-card-name-default.png",
       "terms": [
         {
           "termId": "web-ui-elements:cards-tiles",

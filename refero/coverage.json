@@ -5,9 +5,9 @@
     "catalog_domains": 433,
     "system_packages": 66,
     "system_domains": 58,
-    "matched_domains": 35,
-    "missing_domains": 398,
-    "system_domains_absent_from_catalog": 23
+    "matched_domains": 34,
+    "missing_domains": 399,
+    "system_domains_absent_from_catalog": 24
   },
   "matched": {
     "1password.com": {
@@ -228,23 +228,6 @@
           "name": "Alo Yoga",
           "url": "https://www.aloyoga.com",
           "name_match": false
-        }
-      ]
-    },
-    "amie.so": {
-      "catalog": [
-        {
-          "name": "Amie",
-          "domain": "amie.so",
-          "id": 426
-        }
-      ],
-      "pkgs": [
-        {
-          "slug": "amie",
-          "name": "Amie",
-          "url": "https://amie.so",
-          "name_match": true
         }
       ]
     },
@@ -667,6 +650,13 @@
         "name": "adidas",
         "domain": "adidas.com",
         "id": 46
+      }
+    ],
+    "amie.so": [
+      {
+        "name": "Amie",
+        "domain": "amie.so",
+        "id": 426
       }
     ],
     "arcade.software": [
@@ -3455,6 +3445,14 @@
     ]
   },
   "systems_absent_from_catalog": {
+    "adidas.com.cn": [
+      {
+        "slug": "adidas",
+        "name": "adidas",
+        "url": "https://www.adidas.com.cn",
+        "ios_guess": []
+      }
+    ],
     "arc.net": [
       {
         "slug": "arcsearch",
