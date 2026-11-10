@@ -61,6 +61,23 @@
         }
       ]
     },
+    "aboardhr.com": {
+      "catalog": [
+        {
+          "name": "Aboard",
+          "domain": "aboardhr.com",
+          "id": 545
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "aboardhr",
+          "name": "Aboard HR",
+          "url": "https://www.aboardhr.com",
+          "name_match": false
+        }
+      ]
+    },
     "acnestudios.com": {
       "catalog": [
         {
@@ -531,13 +548,6 @@
         "name": "Aboard",
         "domain": "aboard.com",
         "id": 526
-      }
-    ],
-    "aboardhr.com": [
-      {
-        "name": "Aboard",
-        "domain": "aboardhr.com",
-        "id": 545
       }
     ],
     "acctual.com": [
