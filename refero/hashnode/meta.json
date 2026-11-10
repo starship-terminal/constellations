@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/6a8bf4c2-8cf2-463a-bcb9-36c15ea177c2",
   "source_url": "https://hashnode.com",
   "extracted_at": "2026-06-03T20:47:55.284Z",
-  "fetched_at": "2026-10-20T08:23:43Z",
+  "fetched_at": "2026-11-08T04:20:16Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6cd76e7f-88c4-4dfd-8953-18c8e6b0fc53.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

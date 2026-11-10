@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/59ac8248-1d64-4df3-92f1-919b50e05602",
   "source_url": "https://www.bento.me",
   "extracted_at": "2026-06-03T18:13:57.754Z",
-  "fetched_at": "2026-10-20T08:24:31Z",
+  "fetched_at": "2026-11-08T04:19:50Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/48236527-c2a9-4deb-af06-cb6f1f62302a.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/e45a4db1-2b03-43b1-9789-983396e636d8.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/9864d1a6-eedb-4526-b619-823e5c1f1919.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/2014b867-7ff5-4c94-a118-c0da53b9124d.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

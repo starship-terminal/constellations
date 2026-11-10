@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/8f79ab5b-a91a-4bf4-a64f-4a5ba3ada7d5",
   "source_url": "https://tailwindcss.com",
   "extracted_at": "2026-04-11T18:03:36.589Z",
-  "fetched_at": "2026-10-20T08:25:20Z",
+  "fetched_at": "2026-11-08T04:14:03Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e30703aa-ddfb-4fda-b9a6-35fc4d0e498e.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/851d4fa8-0414-4880-b022-2816de18b2c6.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/341a6464-74ba-4cec-bf96-409a4d02d012.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/c2de3f61-599f-4e49-a9c9-3c570db7234b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": true
 }

@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/5d8ad116-b3d8-4890-a969-5b856b35c678",
   "source_url": "https://www.campsite.com",
   "extracted_at": "2026-06-03T19:00:09.708Z",
-  "fetched_at": "2026-10-20T08:22:25Z",
+  "fetched_at": "2026-11-08T04:19:53Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/cbdea682-a4f6-415b-8d58-acf4b1b95c88.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/f6819a9a-0613-47f2-ad65-54d85288c61b.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/11797d07-8de4-4cbb-b0cf-a80f9cf821e9.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/766e5476-a87a-4676-807b-ba9612bd648c.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

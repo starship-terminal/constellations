@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/530eb4cf-7e75-4833-95c9-746818050db7",
   "source_url": "https://www.base.org",
   "extracted_at": "2026-06-03T18:26:44.810Z",
-  "fetched_at": "2026-10-20T08:22:39Z",
+  "fetched_at": "2026-11-08T04:19:48Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/c4f13a7d-a007-4543-a4fe-f0fbb9fcde11.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/4595e385-8a7f-4c76-9662-5ce392e0095c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/1fccf25c-4dd8-497b-a6b1-32fa8d650481.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0f3e2e07-3c87-4406-91a6-f7e7af2118a4.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

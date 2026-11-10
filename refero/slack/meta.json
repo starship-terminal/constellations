@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/e26cb9b0-f876-41ff-9f24-fd67a6b9776c",
   "source_url": "https://slack.com",
   "extracted_at": "2026-07-03T03:28:46.188Z",
-  "fetched_at": "2026-10-20T08:21:34Z",
+  "fetched_at": "2026-11-08T04:20:49Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/95bb28c8-a51d-4148-9a79-fc3bcad3dc4a.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/da68987f-236b-4880-991a-90de9794fc8d.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/25430e80-afbc-41ea-a32f-45db0c956d0b.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/355dd21c-9752-40ec-b176-2988c7112962.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

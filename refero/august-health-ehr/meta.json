@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/81bd6ad6-b02b-4fb3-a600-91ecf8324171",
   "source_url": "https://www.augusthealth.com",
   "extracted_at": "2026-06-03T17:18:13.434Z",
-  "fetched_at": "2026-10-20T08:24:46Z",
+  "fetched_at": "2026-11-08T04:19:46Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/17704778-71a1-4090-97a6-56501d24ff42.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/46dcd700-76b9-4dd1-8956-f93d9fda311f.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/5271d587-c9bf-4ff8-84dd-e84e6a8e031b.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/ae3532dc-2495-44cc-813a-551206880db6.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

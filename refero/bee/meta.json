@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/84a0fc5e-3610-4c10-a922-7848daa68b92",
   "source_url": "https://www.bee.computer",
   "extracted_at": "2026-09-20T19:29:54.519Z",
-  "fetched_at": "2026-10-20T08:21:29Z",
+  "fetched_at": "2026-11-08T04:19:50Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/ddd2c3fb-1e2e-450b-bf90-85552979afc0.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/d4d3fb02-41f1-4f54-8ee8-f3b2a49befe9.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/527b772c-e013-4367-a239-f353e7b99526.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/bfb82879-d012-4ecc-8d7f-613242a6444b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/f493133e-e289-4fb1-9729-f611d9816aae",
   "source_url": "https://solana.com",
   "extracted_at": "2026-06-03T19:16:23.963Z",
-  "fetched_at": "2026-10-20T08:24:06Z",
+  "fetched_at": "2026-11-08T04:20:50Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5ab4ed15-484f-4e8b-9302-0a68c1fde032.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a3a326ce-8039-4d85-a487-da42afa6db33.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a5ea9108-5e7e-4250-9d35-368390eab615.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/3182a67e-0d7f-4fa7-a739-129b5a7755dd.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

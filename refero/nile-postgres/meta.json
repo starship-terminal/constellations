@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/7671d0fc-b9fc-462e-9c74-38511264aabd",
   "source_url": "https://www.thenile.dev",
   "extracted_at": "2026-06-03T22:00:49.336Z",
-  "fetched_at": "2026-10-20T08:23:24Z",
+  "fetched_at": "2026-11-08T04:20:33Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/069571fd-d6fe-454e-8e49-6faa30082d07.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/1459379a-5786-4b43-8d02-378175be9999.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/3517871d-3e04-4a25-99cb-a2fbb2d6e1bd.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/5ceb9684-a7df-44f4-baf9-e609d9fc00db.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

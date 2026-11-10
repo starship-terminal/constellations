@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/c1052d8d-3663-46a4-a882-e50d9b8a1166",
   "source_url": "https://www.jobyaviation.com",
   "extracted_at": "2026-06-03T18:57:55.678Z",
-  "fetched_at": "2026-10-20T08:24:12Z",
+  "fetched_at": "2026-11-08T04:20:22Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e0c1e9c3-ebfd-4dcb-92d5-cd40dd43e3e6.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/31471407-598a-45fd-a505-d921980d8855",
   "source_url": "https://webflow.com",
   "extracted_at": "2026-06-03T15:10:42.812Z",
-  "fetched_at": "2026-10-20T08:25:05Z",
+  "fetched_at": "2026-11-08T04:21:05Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/559f07f8-97c0-41fd-adf5-089675bebf1d.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/58f18f8b-9d2c-48b9-80a2-9a269d1c85e3.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/13cbfac5-3b2a-446c-871f-0ec99b5f8bae.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/31e1dedb-334a-4f57-958d-df722273eeba.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

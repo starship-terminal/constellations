@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/4c637873-7632-46c0-ac36-5744efa00444",
   "source_url": "https://aligne.co",
   "extracted_at": "2026-06-03T20:09:31.620Z",
-  "fetched_at": "2026-10-20T08:23:53Z",
+  "fetched_at": "2026-11-08T04:19:40Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e14b7ace-8084-42a7-b260-59e973e870bb.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/11ec68a2-35ed-4534-9650-bf4ea171cf68.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/c7ecda37-6418-4a74-bb3e-7e8c8945abdb.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b9d087b1-af8e-4259-8133-2271b42381b8.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

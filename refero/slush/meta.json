@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/8b6b547f-a357-4f1b-9842-4579c62dd42b",
   "source_url": "https://slush.app",
   "extracted_at": "2026-06-03T19:22:20.717Z",
-  "fetched_at": "2026-10-20T08:22:17Z",
+  "fetched_at": "2026-11-08T04:20:49Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/a745070b-03dd-452c-81fe-e8f5577dd858.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/b1eeb068-d7f5-4a3d-973f-2005e84d8960.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/85ceb027-9e26-4066-8ef1-5323169be1c5.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/5bb564c4-e5ce-47c4-b5d5-fd0371d83d8c.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

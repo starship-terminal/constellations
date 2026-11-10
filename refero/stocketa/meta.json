@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/c1f7749f-319b-491b-8243-22050e85994f",
   "source_url": "https://stocketa.com",
   "extracted_at": "2026-06-03T17:43:29.910Z",
-  "fetched_at": "2026-10-20T08:22:55Z",
+  "fetched_at": "2026-11-08T04:20:53Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/3efe18c9-7702-491f-a9f1-978ac36da033.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/45c3d30f-137a-4e97-a2a1-2f4d2afcdf01.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/097c0310-8481-4c9f-9f28-bbd597dd1200.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/4d8bb6b1-746d-4b5a-8707-3dce7a9edb23.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/3389358b-68b2-4fca-82a8-52c07b3a3475",
   "source_url": "https://becklyn.com",
   "extracted_at": "2026-06-03T22:03:28.258Z",
-  "fetched_at": "2026-10-20T08:23:22Z",
+  "fetched_at": "2026-11-08T04:19:50Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/dac11f38-4133-44a4-82b0-d4a0b20a8098.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

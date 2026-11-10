@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/194faa2f-2f69-4bbf-9e29-290f28fa8ca2",
   "source_url": "https://airbnb.org",
   "extracted_at": "2026-06-03T17:47:17.707Z",
-  "fetched_at": "2026-10-20T08:22:51Z",
+  "fetched_at": "2026-11-08T04:19:39Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/52440a68-a5ea-4756-8415-98175d32bebd.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/b4e4af9f-fb84-4c64-a94c-68aea43c6f9f.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a20b642b-83fb-40ba-8ab4-8581eaa38016.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/534f6232-80b0-4042-abb4-86710eef228f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

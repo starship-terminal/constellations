@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/3634d5eb-ccfa-4881-b234-3dd735fb7ae4",
   "source_url": "https://fruitful.com",
   "extracted_at": "2026-06-03T17:21:14.726Z",
-  "fetched_at": "2026-10-20T08:23:05Z",
+  "fetched_at": "2026-11-08T04:20:11Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5a3003ad-63f7-4421-a520-92f79a9d4677.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0a321ca4-460c-4de5-a1d1-ce63407143d5.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/c07f8277-54ab-4fe0-85d3-6b53e4fa83f5.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/979f1585-405d-4d4a-891a-c6a815153768.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

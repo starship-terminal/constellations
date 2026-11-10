@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/01b3bfc1-95df-425f-9b7a-15cff09adc5f",
   "source_url": "https://amaterasu.ai",
   "extracted_at": "2026-06-03T17:32:41.071Z",
-  "fetched_at": "2026-10-20T08:22:59Z",
+  "fetched_at": "2026-11-08T04:19:41Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/8dca280b-5e0d-49ff-bc92-53ca468ea91f.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

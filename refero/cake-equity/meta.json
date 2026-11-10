@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/4c33d8fe-81d5-46cb-9dc1-dd231be1c9ec",
   "source_url": "https://www.cakeequity.com",
   "extracted_at": "2026-06-03T18:13:36.941Z",
-  "fetched_at": "2026-10-20T08:24:31Z",
+  "fetched_at": "2026-11-08T04:19:52Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/4d59b112-d21c-437a-9965-e6f03d8a5d06.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

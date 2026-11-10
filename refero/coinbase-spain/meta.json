@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/df5e2be4-c2bd-42bb-bbc7-409bae6355c3",
   "source_url": "https://coinbase.com",
   "extracted_at": "2026-04-11T17:43:55.835Z",
-  "fetched_at": "2026-10-20T08:25:14Z",
+  "fetched_at": "2026-11-08T04:19:33Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/fea0137f-1b3a-457e-9a6b-fc86d51d1174.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/787ff9bc-e79c-4274-97cf-aa5df8f9674b.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/58f8b1d1-50d5-4aa3-bac3-7cfcb076077a.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0120abfe-f170-4832-85f7-335d26bf6754.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": true
 }

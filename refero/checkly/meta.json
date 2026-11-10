@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/78558b01-c101-4b8e-8401-db91269b1150",
   "source_url": "https://www.checklyhq.com",
   "extracted_at": "2026-06-03T15:52:38.926Z",
-  "fetched_at": "2026-10-20T08:24:59Z",
+  "fetched_at": "2026-11-08T04:19:54Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/0738800a-87c6-411f-a5de-b5b3099e55cb.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/bdaad3b7-db49-4e87-8696-ac504a306441.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d9e7366a-4da8-4da2-8933-83d2a740e9df.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/66393f3c-e45d-4cdc-83de-0acb239ab7d1.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

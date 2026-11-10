@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/3792d0ca-6c74-4667-a64d-76efe9f87076",
   "source_url": "https://xbox.com",
   "extracted_at": "2026-06-03T19:09:29.419Z",
-  "fetched_at": "2026-10-20T08:22:21Z",
+  "fetched_at": "2026-11-08T04:21:07Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/12ef26da-ad9c-48cf-9f2f-6e7592dde2bd.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a1ebd54a-5f54-48f3-8473-f4f886dce4bc.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/168d9f02-a32a-4ac0-8621-5e3f96b87c4e.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/190969d6-51e5-45db-b688-a223873e3fbb.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

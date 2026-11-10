@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/3e70af05-a07f-4c11-98ca-6ecb4765e967",
   "source_url": "https://itsnicethat.com",
   "extracted_at": "2026-06-03T18:36:08.743Z",
-  "fetched_at": "2026-10-20T08:24:22Z",
+  "fetched_at": "2026-11-08T04:20:21Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/0d0fbb2f-0f2c-483f-a6c4-88cc1dc4bf7b.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/38fc43c6-a9c9-41e7-abf6-efd1aebd183d.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/3e2103d3-b2a7-4e0e-9761-0ceb77779aa0.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0c76948a-84d0-4305-805d-dbe55cd0d314.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

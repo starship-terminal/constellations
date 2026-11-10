@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/1775bf6a-afdd-48b1-8435-b92ec585c674",
   "source_url": "https://www.hardworkclub.com",
   "extracted_at": "2026-06-03T21:38:44.624Z",
-  "fetched_at": "2026-10-20T08:23:30Z",
+  "fetched_at": "2026-11-08T04:20:16Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/0817aac4-0440-48d6-a001-e27ff837a32f.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/ea11696a-17c0-41f8-9b08-c820851e0ea9",
   "source_url": "https://www.blueyard.com",
   "extracted_at": "2026-06-03T20:07:35.302Z",
-  "fetched_at": "2026-10-20T08:22:02Z",
+  "fetched_at": "2026-11-08T04:19:51Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/3f6e6b99-9b09-43f8-bbb0-1509a2c8dbf6.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/c7374232-17c4-48c6-8c10-50af27e3e4ec.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/9b88080b-6d84-437f-9a81-e0856c75fd2a.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e216ac53-6749-4b89-856f-436bed9c7ed3.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

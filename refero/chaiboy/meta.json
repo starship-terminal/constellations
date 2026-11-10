@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/442dfaf8-c0c6-467b-a8d4-54e953c049f3",
   "source_url": "https://wearechaiboy.com",
   "extracted_at": "2026-06-03T21:32:46.796Z",
-  "fetched_at": "2026-10-20T08:21:46Z",
+  "fetched_at": "2026-11-08T04:19:53Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f7841923-fa2c-4bcb-9d1c-0c7fa9869968.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/b8569db1-b193-4e25-afce-4e4d5f7b3674.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/1215c2b8-a01e-485a-b4ab-934623a03e7d.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/4ec64977-0a58-4a91-a773-77bbf6fa974e.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

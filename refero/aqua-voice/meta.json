@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/6734fe92-6a02-45d5-8d72-0c55b37ace82",
   "source_url": "https://withaqua.com",
   "extracted_at": "2026-06-03T18:59:19.477Z",
-  "fetched_at": "2026-10-20T08:24:11Z",
+  "fetched_at": "2026-11-08T04:19:44Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5842de25-0665-43be-82dc-98282413967e.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/8ef539cf-41e7-444c-9159-f83dbeba231a.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/4cc30faf-657e-4338-bb98-8d2da9565cc5.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/ff59fede-acc6-4f6b-ad26-da40a03d3038.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

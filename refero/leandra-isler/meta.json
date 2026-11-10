@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/515da65c-f9e3-4296-a05d-0d921f5cdab1",
   "source_url": "https://www.leandra-isler.ch",
   "extracted_at": "2026-06-03T17:59:59.853Z",
-  "fetched_at": "2026-10-20T08:22:46Z",
+  "fetched_at": "2026-11-08T04:20:24Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6b9e1439-7aad-466a-9a73-0dce38c8117c.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/4bc4755a-26c2-4365-b670-e91c25ebea3a.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/ce021ca5-4391-4e9f-89d5-0437ffd99420.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/5cc6d14c-86f2-4e8f-a589-6c683ce14d18.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

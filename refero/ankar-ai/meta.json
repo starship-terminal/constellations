@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/478c8660-f1a0-4339-ac8c-4cf7ca4cf738",
   "source_url": "https://ankar.ai",
   "extracted_at": "2026-06-03T15:45:45.699Z",
-  "fetched_at": "2026-10-20T08:25:00Z",
+  "fetched_at": "2026-11-08T04:19:42Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b23d4f87-3b75-4228-ab9d-38fc4ac2d35d.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/4eafa2de-3b24-419e-adbf-901ad9cb8f91.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/7bf4cb75-4180-4b5d-81a4-4f18f20d0bfd.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/85dd3865-cbf1-4ac7-bfa5-6911dd399ee8.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

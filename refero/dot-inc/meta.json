@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/4bcd0728-0d28-4835-ba9f-d61554f797b1",
   "source_url": "https://pad.dotincorp.com",
   "extracted_at": "2026-06-03T20:18:32.038Z",
-  "fetched_at": "2026-10-20T08:21:59Z",
+  "fetched_at": "2026-11-08T04:20:02Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/0142ed27-2db9-4d33-bee6-dce662a6a706.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/632d023b-af5c-448c-9c43-9e5cf721d014.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/71182e73-3cc8-4b4a-8886-9b2f9d5e7362.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/37538068-4f2b-4be9-b23b-920875b25a4f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

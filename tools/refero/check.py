@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
-"""Check that the three refero stores agree.
+"""Check that the refero stores agree.
 
     python3 tools/refero/check.py [--refero DIR]
 
 The stores: the styles rows in refero.db, the refero/<slug>/ folders and
-their meta.json, and the committed refero/catalog.json. Every disagreement
-is printed and the exit code is 1 when any is found.
+their meta.json (+ components.json where upstream shipped markup), the
+committed refero/catalog.json, and the derived stores — similar table vs
+similar.json, collections tables vs collections.json, screens table vs
+directory.json, coverage.json vs a recomputation. Every disagreement is
+printed and the exit code is 1 when any is found.
 
 File-only safe: when refero.db is missing or is not a readable sqlite (a
 clone without `git lfs pull` holds the LFS pointer file), the folder and
@@ -22,6 +25,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 REFERO = ROOT / "refero"
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import coverage as coverage_mod  # noqa: E402  (sibling module)
+
 # The files every style folder carries. prompt.txt lives only in the db
 # (refero/README.md).
 STYLE_FILES = ("meta.json", "design-system.json", "DESIGN.md", "variables.css",
@@ -31,6 +37,10 @@ STYLE_FILES = ("meta.json", "design-system.json", "DESIGN.md", "variables.css",
 CATALOG_FIELDS = ("slug", "name", "tagline", "uuid", "page_url", "source_url",
                   "theme", "product_type", "design_style", "tags",
                   "extracted_at", "fetched_at")
+# catalog.json entries also carry fields derived from the component columns
+# and the similar/collections tables; checked against those stores, not the
+# styles row itself.
+CATALOG_DERIVED_FIELDS = ("has_components", "similar", "collections")
 # meta.json repeats the media URLs on top of the catalog fields.
 META_FIELDS = CATALOG_FIELDS + ("screenshot_url", "video_url", "video_poster_url",
                                 "video_detail_url", "video_detail_poster_url")
@@ -95,6 +105,13 @@ def check(refero: Path) -> list[str]:
                 json.loads((folder / "design-system.json").read_text())
             except (OSError, json.JSONDecodeError) as e:
                 problems.append(f"{tag}: design-system.json does not parse: {e}")
+        if (folder / "components.json").is_file():
+            try:
+                comps = json.loads((folder / "components.json").read_text())
+                if not isinstance(comps, list):
+                    problems.append(f"{tag}: components.json is not a list")
+            except (OSError, json.JSONDecodeError) as e:
+                problems.append(f"{tag}: components.json does not parse: {e}")
     meta_uuids = [m.get("uuid") for m in metas.values()]
     for uuid in sorted({u for u in meta_uuids if u and meta_uuids.count(u) > 1}):
         problems.append(f"uuid {uuid} appears in more than one meta.json")
@@ -126,6 +143,10 @@ def check(refero: Path) -> list[str]:
     # ---- refero.db: slugs/uuids unique, fetch_errors empty. None when the db
     # cannot be opened; the db-pair checks below are skipped then.
     rows: dict[str, dict] | None = None
+    tables: set[str] = set()
+    sim_map: dict[str, list] = {}
+    coll_map: dict[str, set] = {}
+    similar_styles = ncoll = nscreens = 0
     db, why = open_db(refero)
     if db is None:
         print(f"note: {why}; checking folders and catalog.json only", file=sys.stderr)
@@ -147,6 +168,24 @@ def check(refero: Path) -> list[str]:
         else:
             if errors:
                 problems.append(f"refero.db: fetch_errors holds {errors} rows")
+        tables = {r[0] for r in db.execute(
+            "SELECT name FROM sqlite_master WHERE type='table'")}
+        if "similar" in tables:
+            for u, s in db.execute(
+                    "SELECT uuid, matched_slug FROM similar "
+                    "WHERE matched_slug IS NOT NULL ORDER BY uuid, rank"):
+                sim_map.setdefault(u, []).append(s)
+            similar_styles = db.execute(
+                "SELECT COUNT(DISTINCT uuid) FROM similar").fetchone()[0]
+        if "collection_styles" in tables:
+            for u, c in db.execute(
+                    "SELECT style_uuid, collection_slug "
+                    "FROM collection_styles"):
+                coll_map.setdefault(u, set()).add(c)
+        if "collections" in tables:
+            ncoll = db.execute("SELECT COUNT(*) FROM collections").fetchone()[0]
+        if "screens" in tables:
+            nscreens = db.execute("SELECT COUNT(*) FROM screens").fetchone()[0]
         db.close()
 
     # ---- the stores' slug sets agree
@@ -169,12 +208,69 @@ def check(refero: Path) -> list[str]:
                 if norm(field, meta.get(field)) != norm(field, row.get(field)):
                     problems.append(f"refero/{slug}: meta.json {field} "
                                     f"does not match the styles row")
+            has_data = row.get("components_json") is not None
+            has_file = (refero / slug / "components.json").is_file()
+            if has_file != has_data:
+                problems.append(
+                    f"refero/{slug}: components.json "
+                    f"{'missing for' if has_data else 'present but'}"
+                    f" a styles row with{'out' if has_data else ''}"
+                    f" components_json")
+            if bool(meta.get("has_components", False)) != has_data:
+                problems.append(f"refero/{slug}: meta.json has_components "
+                                f"does not match the styles row")
         for slug in sorted(set(catalog) & set(rows)):
             entry, row = catalog[slug], rows[slug]
             for field in CATALOG_FIELDS:
                 if norm(field, entry.get(field)) != norm(field, row.get(field)):
                     problems.append(f"refero/catalog.json: {slug} {field} "
                                     f"does not match the styles row")
+            if "has_components" in entry and bool(entry["has_components"]) \
+                    != (row.get("components_json") is not None):
+                problems.append(f"refero/catalog.json: {slug} has_components "
+                                f"does not match the styles row")
+            if "similar" in entry and entry["similar"] \
+                    != sim_map.get(row["uuid"], []):
+                problems.append(f"refero/catalog.json: {slug} similar "
+                                f"does not match the similar table")
+            if "collections" in entry and entry["collections"] \
+                    != sorted(coll_map.get(row["uuid"], ())):
+                problems.append(f"refero/catalog.json: {slug} collections "
+                                f"does not match the collection_styles table")
+
+        # ---- derived index files match their db tables
+        if "similar" in tables:
+            try:
+                sj = json.loads((refero / "similar.json").read_text())
+                n = len(sj.get("styles") or [])
+                if sj.get("count") != similar_styles or n != similar_styles:
+                    problems.append(
+                        "refero/similar.json: styles count does not match "
+                        "the similar table")
+            except (OSError, json.JSONDecodeError) as e:
+                problems.append(f"refero/similar.json does not parse: {e}")
+        if "collections" in tables:
+            try:
+                cj = json.loads((refero / "collections.json").read_text())
+                n = len(cj.get("collections") or [])
+                if cj.get("count") != ncoll or n != ncoll:
+                    problems.append(
+                        "refero/collections.json: collections count does not "
+                        "match the collections table")
+            except (OSError, json.JSONDecodeError) as e:
+                problems.append(f"refero/collections.json does not parse: {e}")
+        if "screens" in tables:
+            try:
+                dj = json.loads((refero / "directory.json").read_text())
+                n = sum(len(e.get("screens") or [])
+                        for k in ("ios_apps", "web_sites")
+                        for e in (dj.get(k) or []))
+                if n != nscreens:
+                    problems.append(
+                        "refero/directory.json: embedded screens do not "
+                        "match the screens table")
+            except (OSError, json.JSONDecodeError) as e:
+                problems.append(f"refero/directory.json does not parse: {e}")
     else:
         # Without the db, meta.json is the row's stand-in: the catalog fields
         # it shares with meta.json are still compared.
@@ -184,6 +280,24 @@ def check(refero: Path) -> list[str]:
                 if norm(field, entry.get(field)) != norm(field, meta.get(field)):
                     problems.append(f"refero/catalog.json: {slug} {field} "
                                     f"does not match meta.json")
+
+    # ---- coverage.json: a generated diff (directory.json x the systems
+    # catalog.json); recompute it and demand the file match exactly
+    try:
+        directory = json.loads((refero / "directory.json").read_text())
+        systems_cat = json.loads((ROOT / "catalog.json").read_text())
+    except (OSError, json.JSONDecodeError):
+        directory = systems_cat = None
+    if directory is not None and systems_cat is not None:
+        expected_cov = coverage_mod.build(directory, systems_cat)
+        try:
+            actual_cov = json.loads((refero / "coverage.json").read_text())
+        except (OSError, json.JSONDecodeError) as e:
+            problems.append(f"refero/coverage.json does not parse: {e}")
+        else:
+            if actual_cov != expected_cov:
+                problems.append("refero/coverage.json is stale; "
+                                "run tools/refero/coverage.py")
 
     # ---- refero/README.md's stated style count stays honest
     readme = refero / "README.md"

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/9eeab5f0-eece-4898-a1d2-2db48ac2bc7d",
   "source_url": "https://whop.com",
   "extracted_at": "2026-06-03T21:10:46.376Z",
-  "fetched_at": "2026-10-20T08:21:50Z",
+  "fetched_at": "2026-11-08T04:21:06Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/eb15637a-806d-4e89-ac0c-e41e056f87ea.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ccfa948b-a7f4-4ce5-8ff6-b58613d75249.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a0f13dd6-d25c-446b-8953-58dc435f926e.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/613d30dc-a53a-4a13-995f-518062a6437b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

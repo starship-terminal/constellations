@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/7976704d-549b-4ba6-9a0f-c792766a9df3",
   "source_url": "https://www.osmo.supply",
   "extracted_at": "2026-06-03T19:59:03.587Z",
-  "fetched_at": "2026-10-20T08:23:56Z",
+  "fetched_at": "2026-11-08T04:20:36Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f6d826b9-bab8-43f0-85f3-4ba7821ba93b.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/37ad58a2-de7d-4545-b769-f27f9c88bb27.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a85d52af-8036-41cd-9163-21ed6f88626d.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e6b083b2-17a5-4e7d-b1d2-0e778c8788ba.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

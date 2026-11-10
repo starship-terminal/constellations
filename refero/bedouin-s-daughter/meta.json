@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/3043d3b9-6bcc-472b-b339-1013c37ef4ab",
   "source_url": "https://bedouinsdaughter.com",
   "extracted_at": "2026-09-20T19:29:36.676Z",
-  "fetched_at": "2026-10-20T08:21:28Z",
+  "fetched_at": "2026-11-08T04:19:50Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/ddbd9696-d4a8-4697-8d73-bfae27ca12c2.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/8d00935a-1508-425d-b381-5b2f916e0b54.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/0a2512f9-7820-44e2-9361-a6e67c04920d.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/1a839b9e-c546-4123-9e04-fa07aaa5016c.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

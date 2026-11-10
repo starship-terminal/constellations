@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/e7b37c82-239c-48d5-b293-79a2bfa235cc",
   "source_url": "https://www.ikea.com",
   "extracted_at": "2026-06-03T20:49:37.912Z",
-  "fetched_at": "2026-10-20T08:21:54Z",
+  "fetched_at": "2026-11-08T04:20:20Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6c0dfb07-df90-46f2-99ac-b6d81a8089a4.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/c7df58f2-1e4d-4470-8db9-0f7032963db0.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/e5348757-56b8-4249-954d-14b7598dff40.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/2427d8df-674c-4e2e-8145-c8b852d97993.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/a7530405-e523-4268-bba5-ef13549fd61c",
   "source_url": "https://datalands.co",
   "extracted_at": "2026-06-03T18:20:46.760Z",
-  "fetched_at": "2026-10-20T08:22:40Z",
+  "fetched_at": "2026-11-08T04:19:59Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/711ed332-a6fc-4ba0-ae51-807069c208a0.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/9530a7bd-959d-4dba-9086-52a649e27060.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/8e3a20ec-f037-4748-bfd1-6441bedb40f5.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/f176976c-2a20-403f-9e2e-3448c1195802.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

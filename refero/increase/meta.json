@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/1ad4f49f-275a-4268-8ed1-677dc3c6e475",
   "source_url": "https://increase.com",
   "extracted_at": "2026-06-03T21:11:54.277Z",
-  "fetched_at": "2026-10-20T08:23:37Z",
+  "fetched_at": "2026-11-08T04:20:20Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/ff391de7-952f-4f11-b104-07169c5b2a81.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

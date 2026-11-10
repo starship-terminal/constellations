@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/13b74e34-b824-4d1d-bd2c-bb9bfbc2d6e1",
   "source_url": "https://spacex.com",
   "extracted_at": "2026-06-03T16:10:15.905Z",
-  "fetched_at": "2026-10-20T08:23:15Z",
+  "fetched_at": "2026-11-08T04:20:50Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e3405be6-a005-4075-a262-15689b62bba2.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ac6688ce-e531-4ebf-b523-dbcd2d59f25a.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/3dbb0465-9c7e-4015-a080-9418cb8e5a01.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/8eca8d76-8271-41d4-a7b5-27abba488d0d.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/7c84da5d-b7a0-436f-bfaa-68d0a14f8e86",
   "source_url": "https://frankys-hats.com",
   "extracted_at": "2026-06-03T22:39:52.730Z",
-  "fetched_at": "2026-10-20T08:22:58Z",
+  "fetched_at": "2026-11-08T04:20:11Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/7b4e1368-3159-4e4e-b090-dfc5d9aea7b5.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/66854bda-841b-49ef-9f3b-4382cbdd6946.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/af6dd19e-c918-434d-897f-a3ea366b3907.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/1de242de-6ae1-4994-919d-0748ba503e1b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

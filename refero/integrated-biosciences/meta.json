@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/80099f79-72b7-4367-b2e9-6a3d4a3e9e6a",
   "source_url": "https://integratedbiosciences.com",
   "extracted_at": "2026-06-03T17:37:02.986Z",
-  "fetched_at": "2026-10-20T08:22:58Z",
+  "fetched_at": "2026-11-08T04:20:20Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/2a8cb21c-b76b-4ea9-8e13-5c157fe2d4f3.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/5b3514e2-91af-461f-8465-8ca9ef94e0e8.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/89537295-cf27-4b1b-83d3-885624bafd0a.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/8b166f44-2d7d-4b77-8748-4b0955cea28c.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

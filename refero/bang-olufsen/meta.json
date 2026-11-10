@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/27a4a4fa-4b1a-4e7e-b2c3-3e5bf57f00e5",
   "source_url": "https://bang-olufsen.com",
   "extracted_at": "2026-06-03T15:06:20.007Z",
-  "fetched_at": "2026-10-20T08:25:07Z",
+  "fetched_at": "2026-11-08T04:19:49Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6b79e9ec-4c19-4987-9fc9-6e523f667ee9.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/199a2b2e-5b87-4f59-a7fb-a14c90c16aaf.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/2ea7242b-9167-4453-9b18-cd84a6f36773.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/871dc93f-c3df-4d32-a644-62c86d0d6ea0.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

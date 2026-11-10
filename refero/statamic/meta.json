@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/1efb4cc9-0923-4d4f-884a-b06d4fca4db2",
   "source_url": "https://statamic.com",
   "extracted_at": "2026-06-03T21:47:59.310Z",
-  "fetched_at": "2026-10-20T08:23:27Z",
+  "fetched_at": "2026-11-08T04:20:52Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5ccb2617-87ac-4e16-b7c9-a91bf45b30ea.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/12108e0d-35a7-4eb9-982d-8fc3a34eeb38.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/4e7af888-d79e-4c57-9649-3b9febcdbeca.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/dc23c357-61b9-45f3-a0ff-1e1e17385485.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }
