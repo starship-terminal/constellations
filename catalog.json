@@ -4774,6 +4774,88 @@
    }
   },
   {
+   "slug": "ballpark",
+   "name": "Ballpark",
+   "url": "https://ballparkhq.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "Product-research marketing: white-ground editorial SaaS surface with Inter Display headlines, one near-black 36px pill CTA recipe, hairline ghost buttons, a coral flame ramp reserved for the NEW chip, and the full Tailwind palette under Framer's --token-* vars",
+   "tags": [
+    "web",
+    "research",
+    "productivity",
+    "marketing",
+    "light",
+    "framer",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-11",
+   "access": "signed out (every captured surface is public; the app behind /sign-in was never reached and no form was submitted)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/ballpark/README.md",
+   "tokens": "systems/ballpark/tokens.json",
+   "styleGuide": "systems/ballpark/style-guide.html",
+   "preview": {
+    "cover": "systems/ballpark/screenshots/home-light-default.png",
+    "icon": "systems/ballpark/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.page",
+      "surface": "core.color.gray.50",
+      "text": "light.foreground",
+      "muted": "core.color.gray.500",
+      "accent": "core.color.brand.flame.500",
+      "border": "core.color.gray.200"
+     }
+    },
+    "fonts": []
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "ballparkhq.com in headless Chromium (Playwright), desktop 1440x900 and mobile 390x844 at 2x; computed styles and crops from the live DOM; CSS vars read from the stylesheet bodies (mostly inline) and resolved in a probe",
+    "timestamp": "2026-11-11T19:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/features",
+     "/coach",
+     "/templates",
+     "/enterprise",
+     "/blog",
+     "/contact/sales",
+     "/sign-in",
+     "mobile /",
+     "mobile /pricing",
+     "mobile /features"
+    ],
+    "gaps": [
+     "the product behind /sign-in: surveys, participants, reports and billing were never reached",
+     "no form was submitted and no link followed off-site; sign-in fields were focused/filled then cleared",
+     "the Ask Coach demo widget's send button was measured, never pressed; the widget mounts only while on screen",
+     "the mobile menu sheet scrolls; the shot shows its top group",
+     "icons: no standalone SVG set lifted this pass",
+     "no dark variant is declared in the bundle; light only"
+    ],
+    "durationMin": null,
+    "durationNote": "wall-clock duration was not recorded for this capture",
+    "pr": "https://github.com/c-wenlong/designs/pull/466"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the site's icons (social glyphs, logo marks) are visible in the crops and screenshots"
+   }
+  },
+  {
    "slug": "arcade",
    "name": "Arcade",
    "url": "https://www.arcade.software",

@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 68,
-    "system_domains": 60,
-    "matched_domains": 36,
-    "missing_domains": 397,
+    "system_packages": 69,
+    "system_domains": 61,
+    "matched_domains": 37,
+    "missing_domains": 396,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -377,6 +377,23 @@
         }
       ]
     },
+    "ballparkhq.com": {
+      "catalog": [
+        {
+          "name": "Ballpark",
+          "domain": "ballparkhq.com",
+          "id": 563
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "ballpark",
+          "name": "Ballpark",
+          "url": "https://ballparkhq.com",
+          "name_match": true
+        }
+      ]
+    },
     "brilliant.org": {
       "catalog": [
         {
@@ -740,13 +757,6 @@
         "name": "B150",
         "domain": "b150.ai",
         "id": 753
-      }
-    ],
-    "ballparkhq.com": [
-      {
-        "name": "Ballpark",
-        "domain": "ballparkhq.com",
-        "id": 563
       }
     ],
     "base44.com": [
