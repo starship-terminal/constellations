@@ -1,9 +1,9 @@
-// Reads every custom property amie.so's stylesheets declare and writes
-// raw/css-vars.json.
+// Reads every custom property arcade.software's stylesheets declare and
+// writes raw/css-vars.json.
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/vars.mjs
 //
-// amie.so is a Tailwind + Radix build; every stylesheet body is captured
+// arcade.software is a Webflow build; every stylesheet body is captured
 // from the network responses and re-parsed in the page with a constructed
 // CSSStyleSheet — the same parse the browser does — so inline and external
 // rules are handled alike. Every rule declaring a --* property is kept with
@@ -16,17 +16,17 @@
 // record), computed the way the browser computes it: colours come back as
 // sRGB hex, lengths as px at 1440 x 900.
 //
-// Bins (Tailwind v4 + shadcn naming):
-//   theme     the Tailwind v4 theme layer: --color-*, --font-*, --text-*,
-//             --spacing, --radius-*, --shadow-*, --ease-*, --animate-* ...
-//   app       the semantic layer amie declares on :root/.dark/html:
-//             --background/--foreground/--card/--primary/.../ --border, --ring,
-//             --chart-*, --sidebar-*, --code-*, --selection-*, --brand-*,
-//             --tone*, --editor-*, --network-globe-*
-//   skins     the easter-egg console themes (.crazy & friends)
-//   vendor    embedded widget vars (sonner toasts: --toast-*, --gray*, --y ...)
-//   utility   a one-off `[--x:value]` arbitrary-property utility class
-//   tailwind  Tailwind internals: --tw-*, @layer properties
+// Bins (kept from the shared kit; on this site nearly everything lands in
+// `app` — the Webflow :root block and its component media-query vars):
+//   theme     a framework theme layer (--color-*, --font-*, --text-* ...)
+//   app       the site's own vars: the Webflow :root palette (--primary-*,
+//             --neutral-*, --gray*, --card-bg-*, --gold/--green/--red), the
+//             scatter/player metrics (--marginanim*, --progressive*) and the
+//             component media-query rules
+//   skins     easter-egg console themes (none here)
+//   vendor    embedded widget vars (none on the captured pages)
+//   utility   one-off arbitrary-property utility classes
+//   tailwind  Tailwind internals (none; this is not a Tailwind site)
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -181,7 +181,7 @@ for (const r of ok) {
 const names = (bin) => [...new Set(ok.filter((r) => r.bin === bin).flatMap((r) => Object.keys(r.properties)))].sort();
 const out = {
   readAt: new Date().toLocaleDateString('en-CA'),
-  source: 'the stylesheet bodies fetched during a live home load on amie.so (response bodies plus the page\'s inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class (unbound on this site), at 1440 x 900',
+  source: 'the stylesheet bodies fetched during a live home load on arcade.software (response bodies plus the page\'s inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class (unbound on this site), at 1440 x 900',
   sheets: sheets.map(([n, t]) => `${n} (${t.length} bytes)`),
   counts: {
     rules: ok.length,

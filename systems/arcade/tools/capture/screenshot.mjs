@@ -41,7 +41,7 @@ export async function screenshotWithMetadata(page, options, requested = {}) {
       const root = document.documentElement, body = document.body, visual = window.visualViewport;
       return {
         innerWidth, innerHeight,
-        // amie.so's scripts report devicePixelRatio 1 to JS while the
+        // the site's scripts report devicePixelRatio 1 to JS while the
         // renderer keeps painting at the context's deviceScaleFactor;
         // __captureDPR (set by patch() before page code runs) is the real one.
         devicePixelRatio: window.__captureDPR ?? devicePixelRatio,

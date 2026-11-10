@@ -1,6 +1,6 @@
 {
  "readAt": "2026-11-11",
- "source": "the stylesheet bodies fetched during a live home load on amie.so (response bodies plus the page's inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class (unbound on this site), at 1440 x 900",
+ "source": "the stylesheet bodies fetched during a live home load on arcade.software (response bodies plus the page's inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class (unbound on this site), at 1440 x 900",
  "sheets": [
   "https://cdn.prod.website-files.com/61d72a2cda50bc679e28766b/css/arcade-software.shared.ef172d0fe.min.css (560967 bytes)",
   "inline-0 (62 bytes)",
