@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/5e427a82-a223-4b69-be7f-01c6656ce823",
   "source_url": "https://www.figura.digital",
   "extracted_at": "2026-06-03T19:13:21.505Z",
-  "fetched_at": "2026-10-20T08:24:06Z",
+  "fetched_at": "2026-11-08T04:20:08Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/baea5d46-d49f-4ef6-b7e4-4fd37c3581c8.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/141f70f3-a704-4436-8c03-3ac124fe3403.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/86b51b1e-e835-411d-83dd-074922cc27c1.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/43eb974c-f3f1-47c1-8597-aacb5c8b74b9.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

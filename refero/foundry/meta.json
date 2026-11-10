@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/896f0ea9-6f1a-40a6-aba7-fdaa579c7352",
   "source_url": "https://foundry.basement.studio",
   "extracted_at": "2026-06-03T17:52:01.302Z",
-  "fetched_at": "2026-10-20T08:22:49Z",
+  "fetched_at": "2026-11-08T04:20:10Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/15d4c71b-0564-4731-8393-5058093b7dd2.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/430a91f4-f158-4221-9797-1b983c1d8e26.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/846dd9ab-78dc-4c30-ad77-dc249c04208e.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b85fb246-063e-4bd3-8a6f-eac2440e8eec.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

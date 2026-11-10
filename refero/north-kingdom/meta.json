@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/145e70b3-e0a4-4fbd-8d9e-23bd93dd0021",
   "source_url": "https://www.northkingdom.com",
   "extracted_at": "2026-06-03T21:55:43.378Z",
-  "fetched_at": "2026-10-20T08:21:44Z",
+  "fetched_at": "2026-11-08T04:20:34Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/7f313b7e-fab4-46af-9d97-9c864c4eaf55.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/db427837-4464-4c64-906d-eb9e74ec1295.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a57fb468-9898-4440-bf8c-2614752039b4.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/1ce6e98b-c97b-49a0-8da0-7802cfcec1ee.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

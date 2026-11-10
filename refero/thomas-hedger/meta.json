@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/9fe18d8b-58b7-404d-bcc6-9e8a73b8862c",
   "source_url": "https://thomashedger.co.uk",
   "extracted_at": "2026-06-03T21:40:50.885Z",
-  "fetched_at": "2026-10-20T08:21:46Z",
+  "fetched_at": "2026-11-08T04:20:58Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b30cb8af-d233-44c2-92cc-452382da9cae.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/f33d1586-17d7-42ad-9b7c-7183b62e6ddf.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/53b71a38-b99f-4b15-9a1f-fdd9633e10e7.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b02e5863-f056-458a-bdab-64c58fbe48d4.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

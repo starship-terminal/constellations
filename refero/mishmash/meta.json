@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/ebac84e6-b22c-4d21-845f-9165158af844",
   "source_url": "https://mishmash.pt",
   "extracted_at": "2026-06-03T19:03:01.315Z",
-  "fetched_at": "2026-10-20T08:22:24Z",
+  "fetched_at": "2026-11-08T04:20:30Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/a7d6b6d9-ac32-4113-af31-60b2deb25432.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/7e252cbc-b12a-4e98-8b17-cacef7fbb7ab.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/df8afe8e-b3bb-4fe2-8bb1-4dc7e1531e2e.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/6a3177c5-0b7c-4d71-9baf-ceffc7d8b2d6.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

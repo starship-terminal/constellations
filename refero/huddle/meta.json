@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/2cfd1a08-e5b1-4bd8-9270-29aa08f80aa0",
   "source_url": "https://www.huddle.works",
   "extracted_at": "2026-06-03T20:29:42.429Z",
-  "fetched_at": "2026-10-20T08:23:48Z",
+  "fetched_at": "2026-11-08T04:20:19Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5203d22a-353d-411f-b8ec-b896fdc848b6.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/d2d7e049-36e6-430e-94f2-fd87166e7c2d.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/8b788781-6ba3-4ac4-9fa4-22b4f98bc67d.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/1ff72dba-c465-442c-9414-8aa252f3246a.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

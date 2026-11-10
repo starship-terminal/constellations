@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/b63cc4ca-52c6-4b70-9a5a-cb04bae15edb",
   "source_url": "https://www.logo-archive.org",
   "extracted_at": "2026-06-03T22:05:16.175Z",
-  "fetched_at": "2026-10-20T08:21:42Z",
+  "fetched_at": "2026-11-08T04:20:26Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b4ef29aa-e818-45bd-b495-673a3bb960fe.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/c8566788-b048-4479-8a4b-8e02e0bcf2fb.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/5d7b3c3b-2e20-4cc2-8523-10a07d5053e4.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/4a7536aa-2c00-47fe-bf5a-3b28064309b7.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

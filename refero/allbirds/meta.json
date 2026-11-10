@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/79d83fce-84bf-4e12-8039-5d283c98917c",
   "source_url": "https://allbirds.com",
   "extracted_at": "2026-06-03T19:37:16.265Z",
-  "fetched_at": "2026-10-20T08:24:00Z",
+  "fetched_at": "2026-11-08T04:19:40Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/56a99f6a-b2cb-4530-855d-bd7de4c134d4.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/3dfd2d99-c286-4dae-a1e8-5564ce5c35a8.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/407bc1da-60e6-4909-bf99-0dabb2495bb5.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/4846b4fa-a52d-4e76-85c2-afdc2680191c.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

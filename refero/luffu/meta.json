@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/3da7b444-ded8-406b-90b7-96851604b92b",
   "source_url": "https://luffu.com",
   "extracted_at": "2026-04-12T10:44:07.656Z",
-  "fetched_at": "2026-10-20T08:25:16Z",
+  "fetched_at": "2026-11-08T04:19:33Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d8cafa2a-3caa-414d-9ba6-cdaac075188b.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/c9a12c0e-8be8-4214-b09c-02f71daaf92a.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/e80f754f-cc24-487f-8c43-f139869edcb0.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/84d399ab-eac3-45bf-bd44-10a800c9d823.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": true
 }

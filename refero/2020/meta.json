@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/ac660bff-3b21-4753-a80f-3692da6e735e",
   "source_url": "https://albumcolors.com",
   "extracted_at": "2026-06-03T21:45:03.975Z",
-  "fetched_at": "2026-10-20T08:21:45Z",
+  "fetched_at": "2026-11-08T04:19:36Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/90c338d1-33f1-40dd-a8fa-a920778736e9.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0257d413-ae4f-4e58-8d2e-5980dad50ded.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a7afbc89-2e69-40d1-8c92-1599454e9aa2.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0b0e9024-7170-4845-83b8-aa154d9a36d4.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

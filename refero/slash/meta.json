@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/7c38e84b-aea0-4c8f-b3e9-60b994ee6c6b",
   "source_url": "https://www.slash.com",
   "extracted_at": "2026-07-03T03:52:06.621Z",
-  "fetched_at": "2026-10-20T08:21:37Z",
+  "fetched_at": "2026-11-08T04:20:49Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/c74df455-7532-4c5b-9433-358b96853adb.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/c17ddacd-7083-4709-82d7-378ca0796a4a.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/f51cd771-1bf7-4ea4-8510-f3a46d0f83cb.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/03cde3c7-03ac-4ca7-b853-df8b2bdfaae3.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

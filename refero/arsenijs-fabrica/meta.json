@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/eb3bf6c1-a18f-4d72-801e-50c2cdbbaa21",
   "source_url": "https://www.arsenijsfabrica.com",
   "extracted_at": "2026-06-03T19:14:40.454Z",
-  "fetched_at": "2026-10-20T08:24:06Z",
+  "fetched_at": "2026-11-08T04:19:44Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/59f09c9f-921d-4aa2-bc1e-c05d92cff5d8.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a9d1fe38-8b21-4efe-b9ea-f40098f8a7cf.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/92671421-7c07-4fa0-a675-ac6f9af1d57a.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/fb25f408-b96f-49c1-a32d-e94608a9a693.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

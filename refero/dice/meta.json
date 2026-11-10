@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/f4af4c42-2cba-4aa6-8d06-2f728bce702d",
   "source_url": "https://dice.fm",
   "extracted_at": "2026-06-03T17:44:42.754Z",
-  "fetched_at": "2026-10-20T08:22:54Z",
+  "fetched_at": "2026-11-08T04:20:00Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/31765856-e706-43ab-91cf-f08f0c8b9705.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a03c04d3-f329-47c3-b248-0e82a3f4f79b.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/aca942e8-9495-428d-a619-1dd642c424ab.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/02d24a49-d9fc-47dd-ae3e-7f839a1e5548.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

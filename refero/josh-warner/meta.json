@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/e2e9b80c-b548-4f86-a4d7-7a6b07d1c2e1",
   "source_url": "https://www.joshwarner.design",
   "extracted_at": "2026-06-03T20:58:25.017Z",
-  "fetched_at": "2026-10-20T08:21:51Z",
+  "fetched_at": "2026-11-08T04:20:22Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/60ca5060-cf70-4163-9d81-5eec2f81cdda.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/c7b30cd1-c8d8-47ed-be2c-635d3bd9a7b7.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/8abcbdbf-b5ba-44e8-87da-daa454fc93bd.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e706ea3a-5c5c-42fb-abb8-d248e051fa26.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

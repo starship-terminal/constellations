@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/bf523387-03fc-4243-86ca-25af34daa0ce",
   "source_url": "https://heartaerospace.com",
   "extracted_at": "2026-06-03T18:44:12.211Z",
-  "fetched_at": "2026-10-20T08:22:30Z",
+  "fetched_at": "2026-11-08T04:20:16Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5c9f6d3d-75c4-4476-a2cf-c68a58b24db1.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/38aaa981-6e39-4718-a8e9-cf182bf22b2d.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d756d57d-1929-4f1a-99f6-89138ded95c7.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/23e307f4-6053-4c1e-a145-73957273defe.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

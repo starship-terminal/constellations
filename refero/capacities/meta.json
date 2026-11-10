@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/586b97ac-f687-46ba-bbf7-31031cfcc110",
   "source_url": "https://capacities.io",
   "extracted_at": "2026-09-24T17:33:59.887Z",
-  "fetched_at": "2026-10-20T08:21:26Z",
+  "fetched_at": "2026-11-08T04:19:53Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/1cb0c1d5-a5a9-482a-b9f5-55ae53ce0913.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/f96b8f5e-2410-4454-8863-4f8fcb70c3ce.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/368c37de-76d4-4ebf-95fe-a0e37f494f14.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/82a8e27e-32ee-4511-a175-41a21e4f1c87.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/da332394-784c-4df2-9e66-c3f7b1d28f28",
   "source_url": "https://pitch.com",
   "extracted_at": "2026-06-03T16:17:03.024Z",
-  "fetched_at": "2026-10-20T08:24:55Z",
+  "fetched_at": "2026-11-08T04:20:39Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/c2c85b4c-3e5f-469c-bd37-11653e4fb468.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a2813d4b-238c-42ff-86bb-73965dc93414.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/2be46da2-99be-473b-9207-684d02b1f74d.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/375064bc-6c7d-45cb-9ad8-230981c9c34b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

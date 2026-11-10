@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/6d64a4da-ef40-453e-86f7-4bfabc0c9051",
   "source_url": "https://pangrampangram.com",
   "extracted_at": "2026-06-03T21:20:44.798Z",
-  "fetched_at": "2026-10-20T08:21:48Z",
+  "fetched_at": "2026-11-08T04:20:37Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/c8b2610c-2645-4a10-b3d4-01c6be506726.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/402e7081-e117-47f2-91e4-cd046569a347.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/9c2a41db-36e8-4255-9346-419b97caf49e.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/5b429c1c-f2ff-47b2-a74c-b0a54432141a.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

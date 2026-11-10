@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/22cc86bc-6c5f-4413-a4a2-66b8ddc82ad0",
   "source_url": "https://www.yellowbirdfoods.com",
   "extracted_at": "2026-06-03T19:53:50.055Z",
-  "fetched_at": "2026-10-20T08:22:05Z",
+  "fetched_at": "2026-11-08T04:21:07Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/a6de281f-12f0-49d5-957d-dbe04cbb1b31.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a92fa8b2-502c-4f69-b2c4-3f5def4ab86d.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/5c35bf69-80a9-40fb-9c04-15d95a707075.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/a5f74dd0-0766-46ca-b7c6-d92e6fe072f2.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

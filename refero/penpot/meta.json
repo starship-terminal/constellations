@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/7be94705-3666-4fb1-a389-0cfd7cb223cd",
   "source_url": "https://penpot.app",
   "extracted_at": "2026-06-03T21:57:44.239Z",
-  "fetched_at": "2026-10-20T08:23:25Z",
+  "fetched_at": "2026-11-08T04:20:38Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/314c6647-95d2-48dc-9ac1-a0c61ef1ae75.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/81d156f2-1094-4d38-a170-10668236c8c1.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/4d631c90-8f64-4489-8b18-e88cb674de3c.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/48822675-3022-4a47-bbf6-f1fee103697c.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

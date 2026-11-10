@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/94c4fc51-4323-4f06-a4a4-27517e190445",
   "source_url": "https://www.planhat.com",
   "extracted_at": "2026-06-03T20:13:26.791Z",
-  "fetched_at": "2026-10-20T08:23:52Z",
+  "fetched_at": "2026-11-08T04:20:40Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/cc4aaa48-ad00-447f-b95a-5fcf0d36b22e.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ed23258f-77e5-44f6-98c5-e7350a39d9ca.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/54b6ba44-e0c5-416a-b5f3-4624f7ce10a5.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/2b98c402-48d2-42ac-8aa0-7a2b2db0117f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

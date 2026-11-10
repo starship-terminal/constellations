@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/7eed2626-ab11-472c-b04a-603476ff8957",
   "source_url": "https://qatalog.com",
   "extracted_at": "2026-06-03T19:08:14.403Z",
-  "fetched_at": "2026-10-20T08:22:21Z",
+  "fetched_at": "2026-11-08T04:20:42Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5aaa4d06-ecca-4eb9-ba96-d34b83156d51.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/8302aced-4b13-4392-98a2-0fb554caec8e.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a3a67410-29e1-43c8-989f-bca757d88705.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0d22639f-275f-4b22-942c-25acb2f6d9e5.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

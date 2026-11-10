@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/87574d45-e35d-4ffd-8560-99fee4008d2b",
   "source_url": "https://www.kikin.io",
   "extracted_at": "2026-06-03T21:22:45.752Z",
-  "fetched_at": "2026-10-20T08:23:35Z",
+  "fetched_at": "2026-11-08T04:20:23Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b5a1a4d6-e393-44b5-84d1-6f4c2843ff7e.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/46a79463-3cec-4828-b71d-fe2d78363a37.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a89baaf5-723b-4d17-929c-51548ccb851c.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/6804c42a-0be6-43a8-993f-98b4d4bfe01e.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

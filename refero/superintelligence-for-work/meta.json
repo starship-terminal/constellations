@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/1db2adc9-2f10-4f20-af1b-27fa4b25f729",
   "source_url": "https://sanalabs.com",
   "extracted_at": "2026-06-03T15:01:01.229Z",
-  "fetched_at": "2026-10-20T08:23:19Z",
+  "fetched_at": "2026-11-08T04:20:54Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/a30235ab-29cf-49a4-a66d-683577b32fc8.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/56d6fc71-1d91-4f0d-acd4-da380baa4f8c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/f66e0fd1-f429-4a47-aa7a-dd1b78d554af.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/7845f82f-5311-43e2-85a0-47f2a5a00aeb.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

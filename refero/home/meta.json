@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/1a519123-071a-449f-b5df-0def73ed7f35",
   "source_url": "https://www.newformcap.com",
   "extracted_at": "2026-07-03T03:08:30.113Z",
-  "fetched_at": "2026-10-20T08:21:37Z",
+  "fetched_at": "2026-11-08T04:20:17Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/7c3ba206-e006-45ad-b671-d4e4ae331533.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0a3ba52b-3e03-4969-a98e-dcff80a65fae.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d4a28d3d-7c4d-4d09-bcfe-19a68f175748.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/dd768846-c591-4ef8-a687-4d75c37d2174.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

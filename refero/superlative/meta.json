@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/10ab6120-3d03-48ff-aebe-0b4910edc046",
   "source_url": "https://playsuperlative.com",
   "extracted_at": "2026-06-03T16:28:40.426Z",
-  "fetched_at": "2026-10-20T08:23:15Z",
+  "fetched_at": "2026-11-08T04:20:55Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b6567cb1-ff33-46e6-a903-1521c16dae31.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/447b0730-83e9-44f4-a0a0-d76649ae0091.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/7d7d644b-c705-4c1e-bc13-4c0a894ec9d1.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0960799a-c661-49dd-81c7-5586f88ba846.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

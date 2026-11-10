@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/2bf4c61f-de10-4614-ba1b-20c0453bd2a9",
   "source_url": "https://notion.so",
   "extracted_at": "2026-07-03T03:31:31.670Z",
-  "fetched_at": "2026-10-20T08:21:34Z",
+  "fetched_at": "2026-11-08T04:20:34Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/9641c703-4791-46f3-a830-a7dcc327baba.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/e17cf977-d19d-424c-b59a-c16dfc311b40.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/8c33c8ce-d574-45a5-8d78-070bbc9835bf.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/c764716e-5d17-4e8d-8ad8-cb93511e743d.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }
