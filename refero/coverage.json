@@ -3,11 +3,11 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 55,
-    "system_domains": 47,
+    "system_packages": 56,
+    "system_domains": 48,
     "matched_domains": 24,
     "missing_domains": 409,
-    "system_domains_absent_from_catalog": 23
+    "system_domains_absent_from_catalog": 24
   },
   "matched": {
     "1password.com": {
@@ -3345,6 +3345,14 @@
     ]
   },
   "systems_absent_from_catalog": {
+    "adidas.com.cn": [
+      {
+        "slug": "adidas",
+        "name": "adidas",
+        "url": "https://www.adidas.com.cn",
+        "ios_guess": []
+      }
+    ],
     "arc.net": [
       {
         "slug": "arcsearch",
