@@ -1,0 +1,28 @@
+<svg viewBox="0 0 36 18" width="36" height="18" xmlns="http://www.w3.org/2000/svg">
+<path data-stage="a" d="M15.07 9.65L11.2 10.51M15.46 7.41L11.91 5.19M20.93 8.35L24.8 7.49M20.54 10.59L24.09 12.81" stroke="#87867f" stroke-width="0.75">
+</path>
+<path data-stage="b" d="M8.31 9.17L11.58 6.77M13.67 7.98L13.25 11.76M16.83 6L20.38 7.25M24.51 6.99L27.49 5.51" stroke="#87867f" stroke-width="0.75">
+</path>
+<path data-stage="c" d="M8.21 7.63L9.29 10.87M12.25 13L16.5 13M22.43 12.35L26.3 11.49M20.97 10.39L22.9 6.96" stroke="#87867f" stroke-width="0.75">
+</path>
+<g>
+<circle cx="18" cy="9" r="1.75" fill="currentColor">
+</circle>
+</g>
+<g>
+<circle cx="18" cy="9" r="1.75" fill="currentColor">
+</circle>
+</g>
+<g>
+<circle cx="18" cy="9" r="2.5" fill="currentColor">
+</circle>
+</g>
+<g>
+<circle cx="18" cy="9" r="1.75" fill="currentColor">
+</circle>
+</g>
+<g>
+<circle cx="18" cy="9" r="1.75" fill="currentColor">
+</circle>
+</g>
+</svg>

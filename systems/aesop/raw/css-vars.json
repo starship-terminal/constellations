@@ -1,0 +1,149 @@
+{
+ "readAt": "2026-11-10",
+ "source": "the live CSSOM on aesop.com (the Demandware experience/stylesheet bundles, same-origin where readable); one theme, resolved at 1440 x 900",
+ "sheetsSkippedCrossOrigin": [
+  "flowplayer.css"
+ ],
+ "counts": {
+  "rules": 5,
+  "fonts": 3,
+  "names": {
+   "theme": 0,
+   "app": 28,
+   "utility": 0,
+   "tailwind": 0,
+   "vendor": 0
+  },
+  "bySelector": {
+   "[app] @supports (height:1dvh) :root": 3,
+   "[app] [location=\"pdp\"], [location=\"repurchase\"], [location=\"cart\"]": 27,
+   "[app] [location=\"checkout\"], [location=\"confirmation\"]": 10
+  }
+ },
+ "theme": [],
+ "app": [
+  {
+   "file": "commons.css",
+   "selector": ":root",
+   "context": [
+    "@supports (height:1dvh)"
+   ],
+   "properties": {
+    "--dvh": "1dvh"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "pagedesigner.css",
+   "selector": ":root",
+   "context": [
+    "@supports (height:1dvh)"
+   ],
+   "properties": {
+    "--dvh": "1dvh"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "header-transparent.css",
+   "selector": ":root",
+   "context": [
+    "@supports (height:1dvh)"
+   ],
+   "properties": {
+    "--dvh": "1dvh"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-3",
+   "selector": "[location=\"pdp\"], [location=\"repurchase\"], [location=\"cart\"]",
+   "context": [],
+   "properties": {
+    "--og-checkbox-border-color": "#000",
+    "--og-global-color": "#000",
+    "--og-global-family": "inherit",
+    "--og-global-line-height": "inherit",
+    "--og-global-size": "inherit",
+    "--og-radio-height": "1.25rem",
+    "--og-radio-margin": "0 .25rem 0 0",
+    "--og-radio-width": "1.25rem",
+    "--og-radio-bg-color": "#fffef2",
+    "--og-select-bg-color": "#fffef2",
+    "--og-select-border": "1px solid #d8d8d8",
+    "--og-select-font-size": ".75rem",
+    "--og-select-padding": "5px 25px 5px 15px",
+    "--og-tooltip-background": "#fffef2",
+    "--og-tooltip-border-radius": "0",
+    "--og-tooltip-box-shadow": "0 5px 10px rgba(0, 0, 0, 0.2)",
+    "--og-tooltip-color": "#000",
+    "--og-tooltip-family": "inherit",
+    "--og-tooltip-padding": "10px",
+    "--og-tooltip-placement": "left",
+    "--og-tooltip-position": "absolute",
+    "--og-tooltip-size": ".75rem",
+    "--og-tooltip-text-align": "left",
+    "--og-upsell-color": "#000",
+    "--og-upsell-family": "inherit",
+    "--og-upsell-size": ".75rem",
+    "--og-wrapper-padding": ".5rem 0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-3",
+   "selector": "[location=\"checkout\"], [location=\"confirmation\"]",
+   "context": [],
+   "properties": {
+    "--og-global-family": "inherit",
+    "--og-global-color": "inherit",
+    "--og-global-size": "inherit",
+    "--og-wrapper-padding": "10px 0",
+    "--og-tooltip-family": "Arial, Helvetica, sans-serif",
+    "--og-tooltip-size": "13px",
+    "--og-tooltip-color": "#000",
+    "--og-upsell-family": "Arial, Helvetica, sans-serif",
+    "--og-upsell-size": "13px",
+    "--og-upsell-color": "#298266"
+   },
+   "bin": "app"
+  }
+ ],
+ "utility": [],
+ "tailwind": [],
+ "vendor": [],
+ "fonts": [
+  {
+   "file": "commons.css",
+   "font-display": "swap",
+   "font-family": "SuisseIntl",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"../fonts/SuisseIntl-Regular-WebXL.woff2\") format(\"woff2\"), url(\"../fonts/SuisseIntl-Regular-WebXL.woff\") format(\"woff\"), url(\"../fonts/SuisseIntl-Regular-WebXL.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "commons.css",
+   "font-display": "swap",
+   "font-family": "SuisseIntl-Medium",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"../fonts/SuisseIntl-Medium-WebXL.woff2\") format(\"woff2\"), url(\"../fonts/SuisseIntl-Medium-WebXL.woff\") format(\"woff\"), url(\"../fonts/SuisseIntl-Medium-WebXL.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "commons.css",
+   "font-display": "swap",
+   "font-family": "Zapf-Humanist",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"../fonts/Zapf-Humanist.woff2\") format(\"woff2\"), url(\"../fonts/Zapf-Humanist.woff\") format(\"woff\"), url(\"../fonts/Zapf-Humanist.ttf\") format(\"truetype\")"
+  }
+ ],
+ "resolved": {
+  "--dvh": {
+   "raw": "1dvh",
+   "kind": "dimension",
+   "value": "9px",
+   "note": "viewport-relative, resolved at 1440 x 900"
+  }
+ }
+}
