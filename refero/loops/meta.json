@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/4d832c12-dd14-45b0-bba7-2d3bc25d8264",
   "source_url": "https://loops.so",
   "extracted_at": "2026-06-03T20:43:48.838Z",
-  "fetched_at": "2026-10-20T08:23:44Z",
+  "fetched_at": "2026-11-08T04:20:26Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/71871994-7a1d-45aa-a6a3-fc9ba73ccffb.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

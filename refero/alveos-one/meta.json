@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/811f0fc6-3353-4ed6-bf3e-c98b261dcc1c",
   "source_url": "https://www.alveoslabs.com",
   "extracted_at": "2026-06-03T19:54:31.490Z",
-  "fetched_at": "2026-10-20T08:23:57Z",
+  "fetched_at": "2026-11-08T04:19:41Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/0b6e5059-cb74-49e0-8143-1e35c5d4c491.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

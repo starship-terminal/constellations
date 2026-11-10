@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/41e65213-1c4a-41c4-b715-50427fa8926e",
   "source_url": "https://resume.io",
   "extracted_at": "2026-06-03T17:56:45.791Z",
-  "fetched_at": "2026-10-20T08:22:47Z",
+  "fetched_at": "2026-11-08T04:20:11Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/0e13deac-b194-4155-b20d-1e8b290b42ed.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a4559f15-7ab9-41c1-9399-4c4822bea8a6.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/b677ce98-1d6a-489f-9d0b-80e1e082c9be.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/3b417714-de83-41c8-bc4d-2029dc317737.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

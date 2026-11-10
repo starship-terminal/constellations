@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/74be1036-f867-4cee-959a-a9a9129111c0",
   "source_url": "https://moonli.me",
   "extracted_at": "2026-06-03T20:18:39.108Z",
-  "fetched_at": "2026-10-20T08:23:51Z",
+  "fetched_at": "2026-11-08T04:20:31Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/27d58ca6-59d6-4d78-bb10-67851f8876cd.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0be7199f-8879-4c5c-a2a4-277a29e33724.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/89b8cfb0-112f-4e8c-8748-a8bba593e356.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/cee7b999-ac2c-4f2a-8094-ab97264fdf25.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

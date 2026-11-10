@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/90b8631c-4e2c-407e-86a3-d2bff456dc93",
   "source_url": "https://superhi.com",
   "extracted_at": "2026-06-03T17:49:35.630Z",
-  "fetched_at": "2026-10-20T08:24:40Z",
+  "fetched_at": "2026-11-08T04:20:54Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/3181ddf6-00ae-4d13-8ff2-bf0c9a2bc896.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/867d61a6-752a-444e-8cad-c2ae2ec75ed4.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/f3f5faae-7f4a-4caf-8a36-7685526c50b3.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/49ee1679-50df-4241-adc0-719841e2ca9e.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

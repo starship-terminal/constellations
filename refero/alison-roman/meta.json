@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/b2ace2c1-d6ee-4d57-915e-901224cded11",
   "source_url": "https://www.alisoneroman.com",
   "extracted_at": "2026-06-03T20:57:40.601Z",
-  "fetched_at": "2026-10-20T08:21:53Z",
+  "fetched_at": "2026-11-08T04:19:40Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/ae45e02c-c237-4235-b076-72821aff1d2c.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/f6cc7c72-7eaf-4f7e-9b14-732212ef7890.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/c93fb610-421e-465e-86ca-e030ddd12985.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0c301d44-fc42-4d71-bcd1-96a83b9a8dea.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

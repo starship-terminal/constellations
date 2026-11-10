@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/dfe5faa4-a108-45a8-a68c-ed19be2db766",
   "source_url": "https://vectary.com",
   "extracted_at": "2026-06-03T21:00:39.373Z",
-  "fetched_at": "2026-10-20T08:23:07Z",
+  "fetched_at": "2026-11-08T04:21:03Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/ba867a4e-03d9-48d6-b3cc-767ca5bb46bc.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/b9b08445-b8aa-4723-8022-733ac5c53a76.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/08e5a319-36f5-41e8-be6e-16d33bc49ea5.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/021db147-0ea4-47df-97c5-747ebccf1b3b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

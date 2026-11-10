@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/0d68dc70-15ec-494a-855d-fdb6a4e7c982",
   "source_url": "https://danilorodrigues.com",
   "extracted_at": "2026-06-03T20:29:10.776Z",
-  "fetched_at": "2026-10-20T08:23:48Z",
+  "fetched_at": "2026-11-08T04:19:59Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/1d3137d9-41cb-411f-af90-0847d3b0c4d3.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

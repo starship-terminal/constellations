@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/3963a727-8dec-4308-80c0-3ae198d15b87",
   "source_url": "https://www.apollo.io",
   "extracted_at": "2026-06-03T18:30:02.409Z",
-  "fetched_at": "2026-10-20T08:24:25Z",
+  "fetched_at": "2026-11-08T04:19:42Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/ca032f5d-9234-4b5e-a7ce-06b5674226b2.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

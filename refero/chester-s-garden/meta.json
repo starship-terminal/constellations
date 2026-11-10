@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/a639fa6c-1705-47c2-b452-d4479469a734",
   "source_url": "https://chester.how",
   "extracted_at": "2026-06-03T18:19:45.224Z",
-  "fetched_at": "2026-10-20T08:24:30Z",
+  "fetched_at": "2026-11-08T04:19:54Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/fa44fd85-d7a4-4802-98cd-bf8d4551af03.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/9d7565d6-328a-4fda-bf85-0de52074011e.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/9de463a3-d143-40a2-a763-e9c8b2f11535.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/9db0eb66-9ace-42cf-878a-bfceb1e4ad85.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

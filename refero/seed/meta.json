@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/cd723d5a-e7ea-4e4c-a3bb-6cf56e05057a",
   "source_url": "https://seed.com",
   "extracted_at": "2026-07-03T03:34:14.607Z",
-  "fetched_at": "2026-10-20T08:21:33Z",
+  "fetched_at": "2026-11-08T04:20:48Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/4b944596-3d82-44b8-b691-40cc4ff126af.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/49908464-ddef-499a-b1eb-5d6d8e5f80c2.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/2f7e50e2-406b-41e0-8c92-d114f53356b7.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/df7c3492-c8ce-428d-85c0-0d08f9a15bb2.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

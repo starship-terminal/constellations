@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/156462ab-7b11-4029-be45-c2dba853e894",
   "source_url": "https://drinkghia.com",
   "extracted_at": "2026-06-03T18:46:21.791Z",
-  "fetched_at": "2026-10-20T08:24:16Z",
+  "fetched_at": "2026-11-08T04:20:12Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/8a03bbb6-aade-4bd0-90f2-53622e3bd8a2.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

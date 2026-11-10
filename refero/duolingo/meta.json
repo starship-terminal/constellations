@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/7088d695-362b-4e09-b325-fa8136d4f350",
   "source_url": "https://duolingo.com",
   "extracted_at": "2026-07-03T02:54:54.809Z",
-  "fetched_at": "2026-10-20T08:21:40Z",
+  "fetched_at": "2026-11-08T04:20:03Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/3eef8754-ff17-4c1c-98f8-7f9dc986d01f.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/15d4f4fc-0d36-4f22-bb4c-790b0b2951eb.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/81d97a69-fb9f-4a0a-aeeb-89e3fcc503f6.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/f4ef9960-b394-465b-b178-11616649a4de.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

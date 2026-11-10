@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/46bca11b-6920-4d70-8dd7-c4e3dbc123c7",
   "source_url": "https://www.coinshift.xyz",
   "extracted_at": "2026-06-03T21:17:51.997Z",
-  "fetched_at": "2026-10-20T08:23:36Z",
+  "fetched_at": "2026-11-08T04:20:21Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/507a8a6e-c1b0-4eb3-b18c-690dfc500e64.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/02c934d6-8f82-4fb1-9ec8-914578291a4d.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/179e15d8-343f-4388-81d6-97353ef3093e.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b317f308-f4ed-4bab-9fa2-b41d2018d734.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

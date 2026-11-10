@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/5c94c49f-0612-4261-842c-e1d501f3e13d",
   "source_url": "https://developers.openai.com",
   "extracted_at": "2026-06-03T17:12:54.234Z",
-  "fetched_at": "2026-10-20T08:23:09Z",
+  "fetched_at": "2026-11-08T04:20:35Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/976e6175-5a6e-41f0-b2a0-eda93160b0d2.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/cd6cfc5e-d8c5-41e1-a281-a2b7ca6c7940.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/c1121ed9-a0cf-401f-9735-1d9acbf060fd.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e2649e95-17f2-436d-b4fd-914df44ca2fa.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

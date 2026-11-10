@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/6f3fb64d-d4c9-4ec1-86a1-7983e5180985",
   "source_url": "https://peakdesign.com",
   "extracted_at": "2026-06-03T16:44:14.809Z",
-  "fetched_at": "2026-10-20T08:23:13Z",
+  "fetched_at": "2026-11-08T04:20:38Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/197ec1a5-a558-423f-beea-53742b99a9e7.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/e53a56ae-06b0-4cf4-8e59-c9b3ede10bbb.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/505dbdea-8262-4c40-b215-7ab70fa08589.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/5bef66d4-00af-4f7e-bf2a-d4a95efaa9b8.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

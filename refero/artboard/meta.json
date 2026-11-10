@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/989d8d71-c161-4410-8157-ad6ade0bd4be",
   "source_url": "https://artboard.studio",
   "extracted_at": "2026-06-03T20:23:43.803Z",
-  "fetched_at": "2026-10-20T08:23:50Z",
+  "fetched_at": "2026-11-08T04:19:45Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f6077d75-cfc3-4e73-b559-a5d4fedc5bb6.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/248839f7-a9be-4f3a-9a55-5c2bcfbff40f.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/df57a80a-7302-4984-804b-0e3ea6808744.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/020c2c88-560c-4625-b1d9-87719bb2ec0f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

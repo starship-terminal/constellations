@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/d69af89b-cb31-426d-b9aa-c21d127b8947",
   "source_url": "https://ohdada.de",
   "extracted_at": "2026-06-03T21:25:36.041Z",
-  "fetched_at": "2026-10-20T08:21:48Z",
+  "fetched_at": "2026-11-08T04:20:35Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6bdb1030-c8a4-441d-8b91-effc3c3ced2f.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/be6ee322-a717-4aa8-a7e2-e372d96dbba2.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/e10752f7-0f8d-4854-93dc-f328209cef9e.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b4e9b457-c982-44e0-8417-2d9167e7aa6a.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/5af8ba79-c73f-4388-8ea8-b805e24599f8",
   "source_url": "https://magicbeans.app",
   "extracted_at": "2026-06-03T19:44:53.966Z",
-  "fetched_at": "2026-10-20T08:23:59Z",
+  "fetched_at": "2026-11-08T04:20:28Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/56e81cc0-5b46-45b6-9357-17fa1a5a39c7.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/43ae4795-4b4d-4a2c-8998-9632a3430f55.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/70a208da-d278-4caf-9833-631d1238995b.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/04947b26-6fab-4aeb-b977-d4c2608c0278.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

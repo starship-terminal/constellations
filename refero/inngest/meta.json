@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/62e8e59e-17a5-4eba-a6c6-1c7f67ded518",
   "source_url": "https://inngest.com",
   "extracted_at": "2026-06-03T16:18:24.048Z",
-  "fetched_at": "2026-10-20T08:24:55Z",
+  "fetched_at": "2026-11-08T04:20:21Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d86b0c62-a799-4ba8-a96f-71edf5c1d8f6.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0336a6bc-3a5b-48dd-a8b5-227ef4953560.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/c1b7136e-b63f-4e92-9d64-b574c788eb54.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0d28a682-3008-4ed6-8c4e-469ce92e467d.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

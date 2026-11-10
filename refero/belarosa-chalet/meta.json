@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/46c8dbc5-47c8-4796-b94c-5e46dcda3532",
   "source_url": "https://www.belarosa-chalet.ch",
   "extracted_at": "2026-06-03T17:50:24.459Z",
-  "fetched_at": "2026-10-20T08:24:39Z",
+  "fetched_at": "2026-11-08T04:19:50Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/ac8b2074-2aef-4993-9a14-a002148c94d6.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

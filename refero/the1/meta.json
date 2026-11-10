@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/04d2e256-61b0-4184-a834-e36c15d09ea5",
   "source_url": "https://the1.amsterdam",
   "extracted_at": "2026-06-03T19:28:42.221Z",
-  "fetched_at": "2026-10-20T08:24:02Z",
+  "fetched_at": "2026-11-08T04:20:58Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/dc2f4aea-3777-424f-aea4-be49c08833b6.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/541e261f-7a1c-455c-9717-2ea8d718363d.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/ceeef56a-e799-46e4-9ebd-12d8478c9a09.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/70100f10-8899-4c5c-999b-b887229f3a77.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

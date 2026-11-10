@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/a6284fcd-fa69-4469-ac40-4239e5b84a39",
   "source_url": "https://freshman.tv",
   "extracted_at": "2026-06-03T19:41:29.048Z",
-  "fetched_at": "2026-10-20T08:22:07Z",
+  "fetched_at": "2026-11-08T04:20:11Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/a10fea92-69df-43c6-b1ff-2487c0009b63.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ae33fac9-ec00-41d1-8156-63d519f0883b.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/73e7ed34-6524-450d-b9be-d22d65c1321c.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/537f3938-5eca-45ef-93e5-9e7d728c2b5f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

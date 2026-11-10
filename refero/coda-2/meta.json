@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/e0ad1a25-5609-45e6-a355-9bdeec86c5ae",
   "source_url": "https://www.coda.co",
   "extracted_at": "2026-06-03T16:57:55.775Z",
-  "fetched_at": "2026-10-20T08:24:51Z",
+  "fetched_at": "2026-11-08T04:19:56Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/20140c33-8ebb-41e4-88a4-ff797a702b93.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

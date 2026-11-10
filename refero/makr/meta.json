@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/f2bf6db7-37b6-4394-be97-6bbb2c45c268",
   "source_url": "https://makr.com",
   "extracted_at": "2026-06-03T18:08:20.965Z",
-  "fetched_at": "2026-10-20T08:22:44Z",
+  "fetched_at": "2026-11-08T04:20:28Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/bd006a4c-e504-4701-876d-a5afddf7a715.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/90247750-933c-4f2c-93ab-dfc5fec622df.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/08da9380-98fb-4682-a417-375f7173dac0.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/9cec4e9d-e998-4410-bfb8-983caa4cda4e.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

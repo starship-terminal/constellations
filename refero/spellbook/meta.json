@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/9dced8d7-3d19-45d3-9dc5-e5906c3e1578",
   "source_url": "https://www.spellbook.legal",
   "extracted_at": "2026-06-03T22:04:23.170Z",
-  "fetched_at": "2026-10-20T08:23:22Z",
+  "fetched_at": "2026-11-08T04:20:51Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/bbbc1f4d-0285-4911-898c-3bba2f650021.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/e72f6ec6-18c1-426e-8940-7c75fcb42c75.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/5a4d7a4c-1477-42c5-b63c-c9261a507856.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/c6b2496b-db0e-49b1-9085-4a153f7c0d31.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

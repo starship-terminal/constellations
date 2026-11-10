@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/6f365ecd-a040-4533-88c1-3f60fe062632",
   "source_url": "https://atlantic.vc",
   "extracted_at": "2026-06-03T18:06:02.805Z",
-  "fetched_at": "2026-10-20T08:24:34Z",
+  "fetched_at": "2026-11-08T04:19:46Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/2e7803f7-31f7-4f28-9fce-81affd93c279.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ba1645de-8c7b-4cf0-8aef-31c3e3e91604.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/f6317392-9d9f-4daa-be71-ff5d9c15a8d8.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/db97d1b8-b3c7-479d-8bd2-1331a0623fa9.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

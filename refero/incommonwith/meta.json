@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/1f9089e1-4170-482f-b988-afe1124a70a9",
   "source_url": "https://www.incommonwith.com",
   "extracted_at": "2026-06-03T19:06:51.699Z",
-  "fetched_at": "2026-10-20T08:24:09Z",
+  "fetched_at": "2026-11-08T04:20:20Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d6d39093-fd34-4299-b22d-b3893042836f.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

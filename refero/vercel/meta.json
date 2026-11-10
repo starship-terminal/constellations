@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/f24daf3a-d43f-4dec-85a9-8ac1d5148a03",
   "source_url": "https://vercel.com",
   "extracted_at": "2026-07-03T03:20:12.094Z",
-  "fetched_at": "2026-10-20T08:21:35Z",
+  "fetched_at": "2026-11-08T04:21:03Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/c6136f5d-0537-4be5-aea3-7a81341d41e8.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/f3a3a457-72aa-456c-bbf4-244bd2e2ea8c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/408c9b89-50cd-43cf-94fe-9640fcebbfba.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/7cc65532-d148-43e4-be5a-c50a0e13dc16.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

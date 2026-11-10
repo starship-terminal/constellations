@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/8a6dc9c8-7892-4eab-baaa-3c342d5671f2",
   "source_url": "https://inversa.com",
   "extracted_at": "2026-06-03T20:30:47.778Z",
-  "fetched_at": "2026-10-20T08:21:58Z",
+  "fetched_at": "2026-11-08T04:20:21Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/7f03550a-29d9-43a9-b98b-fcbc0c5918f7.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/376a649f-4b39-41f4-9280-db75bd915313.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a6c19a63-5ebb-424c-8c63-1169e778b324.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/85674942-d84e-4b4e-967a-95abd119f7ec.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

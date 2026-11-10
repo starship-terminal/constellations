@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/fb812ddb-d7c0-4540-82d7-1562dff16f09",
   "source_url": "https://www.textla.com",
   "extracted_at": "2026-06-03T20:53:52.002Z",
-  "fetched_at": "2026-10-20T08:23:40Z",
+  "fetched_at": "2026-11-08T04:20:58Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f2c2da0e-64aa-449f-bd91-aed23613ac2f.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/f7b9e2a9-f6b3-4c7f-8c81-5b172eed81bc.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/464d7dd9-fac9-40fe-b5bb-2f83e4c14b04.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/8ee71775-6146-402c-a694-7ccd408e702f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

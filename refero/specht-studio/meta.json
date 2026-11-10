@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/dd646da4-36f5-42b1-83dd-6a1c90cf8983",
   "source_url": "https://stephaniespecht.com",
   "extracted_at": "2026-06-03T21:12:14.171Z",
-  "fetched_at": "2026-10-20T08:21:50Z",
+  "fetched_at": "2026-11-08T04:20:51Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5d1d72f2-104c-4d70-85ca-132cc8659831.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/e9089bef-d80c-4842-997d-aaad77fe4b3b.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/2c1bcac3-929b-48e6-be2e-7f92f1b4989f.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/31a19b95-ec1f-43d4-999f-1b8461412f43.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

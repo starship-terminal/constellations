@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/47b15ce2-34c8-46e3-b2de-f7eed0b6a3b9",
   "source_url": "https://www.pencilbooth.com",
   "extracted_at": "2026-06-03T21:33:43.238Z",
-  "fetched_at": "2026-10-20T08:23:32Z",
+  "fetched_at": "2026-11-08T04:20:38Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/05084d2c-a726-4881-aacf-c4a694b0a4e7.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/e66297ad-7f3f-4c25-883a-e2b1b9a69ede.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/32caed91-b0e2-474d-aa1b-d23e971d7950.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/85565217-a6f4-4f5c-ab92-03828a542af0.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }
