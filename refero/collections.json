@@ -1,0 +1,4814 @@
+{
+  "version": 1,
+  "about": "Curated collections scraped from styles.refero.design \u2014 third-party interpreted data.",
+  "source": "https://styles.refero.design/sitemaps/collections.xml",
+  "count": 50,
+  "collections": [
+    {
+      "slug": "design-md-examples",
+      "url": "https://styles.refero.design/ai-agents/design-md-examples",
+      "title": "DESIGN.md examples",
+      "description": "Open real styles to inspect their type, colors, layout, and DESIGN.md. These are deliberately different directions, so you can choose a system that suits your own content.",
+      "sections": [
+        {
+          "heading": "Editorial examples",
+          "styles": [
+            {
+              "uuid": "30a8b128-a5bb-4d86-85eb-743b78091596",
+              "slug": "pravah"
+            },
+            {
+              "uuid": "94ed6ce8-c2e5-45bf-83bd-e5d1daf63efc",
+              "slug": "flim"
+            },
+            {
+              "uuid": "75c06591-34d2-493a-bd49-70551b5e4a53",
+              "slug": "perk"
+            },
+            {
+              "uuid": "973332dc-4e10-4e90-85d8-3bce9c3cd3ed",
+              "slug": "sociotype"
+            },
+            {
+              "uuid": "3f6e3076-e77f-487e-b212-3b5946a34e87",
+              "slug": "miranda"
+            },
+            {
+              "uuid": "6f3fb64d-d4c9-4ec1-86a1-7983e5180985",
+              "slug": "peak-design"
+            }
+          ]
+        },
+        {
+          "heading": "Product-focused examples",
+          "styles": [
+            {
+              "uuid": "d4c51049-58eb-404a-9fcb-f195928b1c99",
+              "slug": "warp"
+            },
+            {
+              "uuid": "8e9e585f-5ad4-4273-8418-e1f82cdb51cf",
+              "slug": "prisma"
+            },
+            {
+              "uuid": "2230ba53-445e-411d-b483-16410a072639",
+              "slug": "home-8"
+            },
+            {
+              "uuid": "0fd67ec5-7e9c-4ca9-b368-5d9c7388477a",
+              "slug": "ui"
+            },
+            {
+              "uuid": "3b6a17f0-3bdf-418c-a95e-0b89e5a8b2f8",
+              "slug": "raycast"
+            },
+            {
+              "uuid": "1f204e95-454a-437e-845b-c1b169d35607",
+              "slug": "oryzo-ai"
+            }
+          ]
+        },
+        {
+          "heading": "Visual brand examples",
+          "styles": [
+            {
+              "uuid": "cdc4a162-cefa-49a1-81e7-4857e421ae24",
+              "slug": "adam-lippes"
+            },
+            {
+              "uuid": "d75a643b-a518-4550-b430-679cd989a447",
+              "slug": "freitag"
+            },
+            {
+              "uuid": "c2325884-4391-4688-85cd-e143f5107517",
+              "slug": "airbnb"
+            },
+            {
+              "uuid": "97823ba1-ee1e-489d-aefd-8d72a578669a",
+              "slug": "zara"
+            },
+            {
+              "uuid": "27a4a4fa-4b1a-4e7e-b2c3-3e5bf57f00e5",
+              "slug": "bang-olufsen"
+            },
+            {
+              "uuid": "d7ace114-0548-41f5-a2ff-2afbf32be94d",
+              "slug": "nike-com"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "design-prompts",
+      "url": "https://styles.refero.design/ai-agents/design-prompts",
+      "title": "Design prompts from real website styles",
+      "description": "Start with the visual direction rather than a generic prompt. Browse distinct systems, open the styles you like, and use their real details in your design work.",
+      "sections": [
+        {
+          "heading": "For focused products",
+          "styles": [
+            {
+              "uuid": "03dcd158-bc4d-447b-aaf2-8e522671a109",
+              "slug": "evervault"
+            },
+            {
+              "uuid": "934a61aa-50ff-4e90-852b-4ad0b8262d54",
+              "slug": "samara"
+            },
+            {
+              "uuid": "19f92be1-65ac-4432-a82b-0aa1e685d97d",
+              "slug": "sst"
+            },
+            {
+              "uuid": "50aa2b8e-4760-4379-a3c1-59b65d8576a7",
+              "slug": "v0-by-vercel"
+            },
+            {
+              "uuid": "f23e132d-3bfb-498d-a2e4-6d069b4dbc59",
+              "slug": "ada"
+            },
+            {
+              "uuid": "fabacd2a-acb6-46c4-939c-4a464df15440",
+              "slug": "aboard-2"
+            }
+          ]
+        },
+        {
+          "heading": "For editorial stories",
+          "styles": [
+            {
+              "uuid": "ddd9ffaa-d831-4cb4-a5bf-a1efce421dca",
+              "slug": "writer"
+            },
+            {
+              "uuid": "66eb1c37-a8e5-4e6c-b17f-a75385b462e7",
+              "slug": "rox"
+            },
+            {
+              "uuid": "17e5ff99-38c1-4ad6-8910-648f5798b3a5",
+              "slug": "norgram"
+            },
+            {
+              "uuid": "600002c5-c5f5-4df0-adf6-6324ee6255c0",
+              "slug": "farfetch-espa-a"
+            },
+            {
+              "uuid": "1c516bc6-278b-4cf6-bfe8-c5a39118e730",
+              "slug": "nathan-riley"
+            },
+            {
+              "uuid": "ef44a995-6745-4dc7-86ab-f7227f108f81",
+              "slug": "mobbin"
+            }
+          ]
+        },
+        {
+          "heading": "For a louder launch",
+          "styles": [
+            {
+              "uuid": "62f89392-609d-45b7-b9df-7a5acd529864",
+              "slug": "canva-2"
+            },
+            {
+              "uuid": "d271a6c4-942f-4abf-a3de-66795f15f031",
+              "slug": "sauce-labs"
+            },
+            {
+              "uuid": "e327d332-270d-4779-a55c-cd82b8624d2a",
+              "slug": "bella-kitchen-appliances"
+            },
+            {
+              "uuid": "b6f2b036-e48e-452f-b003-941c491015c0",
+              "slug": "liquid-death"
+            },
+            {
+              "uuid": "12b3e1b6-31b9-4843-9b3b-8f39c9dd1474",
+              "slug": "twomuch-studio"
+            },
+            {
+              "uuid": "190d4a0b-0353-4fc8-be09-affa6e977146",
+              "slug": "offfice"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "website-design-styles",
+      "url": "https://styles.refero.design/ai-agents/website-design-styles",
+      "title": "Website design styles for AI",
+      "description": "Choose a website direction by how it organizes attention: a quiet product explanation, an editorial reading experience, or an atmospheric launch. Open a style to inspect its actual colors, type, and DESIGN.md before giving it to an AI builder.",
+      "sections": [
+        {
+          "heading": "Quiet product systems",
+          "styles": [
+            {
+              "uuid": "e7876363-181a-44a9-9e5c-2255cf98aea5",
+              "slug": "visitors"
+            },
+            {
+              "uuid": "d95a35c2-d3f7-49e7-9ba7-282d52d3211d",
+              "slug": "orderful"
+            },
+            {
+              "uuid": "f99aca3e-5289-4595-a7cc-77a72052f4b8",
+              "slug": "ventriloc"
+            },
+            {
+              "uuid": "e7d4a7de-aeaf-4d49-8c0c-0dedd05a8992",
+              "slug": "pop-site"
+            },
+            {
+              "uuid": "3677bc04-7461-4aa4-aec7-5291bac41b0b",
+              "slug": "cycle"
+            },
+            {
+              "uuid": "736830b5-90b1-47b0-99dd-d79454a0d22a",
+              "slug": "7shifts"
+            }
+          ]
+        },
+        {
+          "heading": "Editorial and image-led",
+          "styles": [
+            {
+              "uuid": "eb804e3a-1b75-446c-8374-114bbabaf0cd",
+              "slug": "cosmos"
+            },
+            {
+              "uuid": "9c92c3d1-a2fe-4a27-a324-826b19501774",
+              "slug": "medium"
+            },
+            {
+              "uuid": "e4a7b5f3-f393-4f6d-b4a5-ecf874024bed",
+              "slug": "099-supply"
+            },
+            {
+              "uuid": "597355de-6167-4f37-8f14-b3897919a94c",
+              "slug": "exhibition-magazine"
+            },
+            {
+              "uuid": "a6791bc8-c49d-4e7a-a09d-877afcd04c25",
+              "slug": "oak-me"
+            },
+            {
+              "uuid": "418b374a-be64-44f0-b17e-1d45308c7e62",
+              "slug": "superhuman"
+            }
+          ]
+        },
+        {
+          "heading": "Dark and atmospheric",
+          "styles": [
+            {
+              "uuid": "8eb9c53e-d69c-497a-b640-610856cf3a60",
+              "slug": "hyperstudio"
+            },
+            {
+              "uuid": "3416bd14-96bb-4c23-bd01-b2ea178ba5ce",
+              "slug": "active-theory"
+            },
+            {
+              "uuid": "8875b14e-c59a-492f-8780-8027a480f21c",
+              "slug": "vivid-co"
+            },
+            {
+              "uuid": "13d6fc89-eba2-4724-ac37-20f4f2e5efec",
+              "slug": "factory"
+            },
+            {
+              "uuid": "30c3aa18-4323-4448-8ddd-3ca933fe5780",
+              "slug": "frame-io"
+            },
+            {
+              "uuid": "c9c5be5a-aaa1-4338-9681-8378d2e24fbd",
+              "slug": "lamborghini-com"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ui-design-examples",
+      "url": "https://styles.refero.design/ai-agents/ui-design-examples",
+      "title": "UI design examples from real product websites",
+      "description": "Study how real products frame a workspace, a data view, or a focused task. Each captured website shows part of its interface; open a style for the full preview, palette, typography, and DESIGN.md.",
+      "sections": [
+        {
+          "heading": "A quiet frame for work",
+          "styles": [
+            {
+              "uuid": "754ad72f-9abd-43df-ac72-c6abf2036ed4",
+              "slug": "viewport"
+            },
+            {
+              "uuid": "c7fe6b78-9ce3-4d69-a3f0-b8310c779e7a",
+              "slug": "goodnotes"
+            },
+            {
+              "uuid": "f58e99d1-940d-4254-8822-5d856bba6505",
+              "slug": "notion-2"
+            },
+            {
+              "uuid": "01771d1f-43c6-4e91-88c5-e4d213fe4ff2",
+              "slug": "paper"
+            },
+            {
+              "uuid": "14e563d8-a35a-4867-b4bf-15d1620ddae7",
+              "slug": "substack"
+            },
+            {
+              "uuid": "aaca1e02-7b5a-4c03-ac40-454f0d477356",
+              "slug": "ready"
+            }
+          ]
+        },
+        {
+          "heading": "Make dense information legible",
+          "styles": [
+            {
+              "uuid": "476184db-a4e6-440b-aa53-27294668361c",
+              "slug": "cron-calendar"
+            },
+            {
+              "uuid": "4657db98-0c6c-4848-91e9-c339f3bb7815",
+              "slug": "ordinal"
+            },
+            {
+              "uuid": "1c1d3939-8d82-4907-aa3c-c9b2fcfbab4f",
+              "slug": "grafbase"
+            },
+            {
+              "uuid": "45c4f990-e6b4-472d-89a4-06870ac17b9f",
+              "slug": "ortto"
+            },
+            {
+              "uuid": "cd293b92-71a3-4cc2-a56b-0fa60425b42a",
+              "slug": "shares"
+            },
+            {
+              "uuid": "6b4c8ca5-476e-442b-b713-d5fc58cf04ac",
+              "slug": "vanta"
+            }
+          ]
+        },
+        {
+          "heading": "Show one task in progress",
+          "styles": [
+            {
+              "uuid": "c363a216-873c-4112-b960-8e823db76f74",
+              "slug": "stable-audio"
+            },
+            {
+              "uuid": "720c9806-2d70-4dd1-9a19-12efd71fc742",
+              "slug": "warp-3"
+            },
+            {
+              "uuid": "41c479a9-7b41-445b-9ea7-c7a6331828f0",
+              "slug": "signal-messenger"
+            },
+            {
+              "uuid": "5d8ad116-b3d8-4890-a969-5b856b35c678",
+              "slug": "campsite"
+            },
+            {
+              "uuid": "029d3ce0-0fe5-4a8c-99c4-4f9d704f1c60",
+              "slug": "pally"
+            },
+            {
+              "uuid": "6b2777fd-7021-4a96-add3-ec4a32374214",
+              "slug": "mews"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "landing-page-design-prompts",
+      "url": "https://styles.refero.design/ai-agents/landing-page-design-prompts",
+      "title": "Landing page design prompts",
+      "description": "A gallery of visual directions for explaining a product quickly. Compare how the best pages use type, imagery, and contrast to make the offer visible.",
+      "sections": [
+        {
+          "heading": "Product-led explanation",
+          "styles": [
+            {
+              "uuid": "31471407-598a-45fd-a505-d921980d8855",
+              "slug": "webflow"
+            },
+            {
+              "uuid": "6bd8007f-01bc-46cc-8599-b396a39c1474",
+              "slug": "unicorn-studio"
+            },
+            {
+              "uuid": "db451eca-8de6-43a9-a5d5-35271befdffd",
+              "slug": "amplemarket"
+            },
+            {
+              "uuid": "f65b0b91-bdd1-458d-8775-2f6fa8a9d4b1",
+              "slug": "arcade"
+            },
+            {
+              "uuid": "77ee57e9-9f8e-4ec1-93f7-cc1c4b84307a",
+              "slug": "monday-com"
+            },
+            {
+              "uuid": "cf8cd07d-bff0-41dc-ab70-fa85750f6168",
+              "slug": "flora"
+            }
+          ]
+        },
+        {
+          "heading": "Editorial and restrained",
+          "styles": [
+            {
+              "uuid": "d469cba4-c448-4a43-a033-883f8bfcdc42",
+              "slug": "anthropic"
+            },
+            {
+              "uuid": "47cb86b6-cb2d-41c8-94ba-8607cd7c41cd",
+              "slug": "claude"
+            },
+            {
+              "uuid": "2bf4c61f-de10-4614-ba1b-20c0453bd2a9",
+              "slug": "notion"
+            },
+            {
+              "uuid": "f24daf3a-d43f-4dec-85a9-8ac1d5148a03",
+              "slug": "vercel"
+            },
+            {
+              "uuid": "9165ecb1-f068-4093-8783-1f3c98898b8a",
+              "slug": "monocle"
+            },
+            {
+              "uuid": "0a489bce-4f93-4b38-b612-d87b1d00999e",
+              "slug": "hims-app"
+            }
+          ]
+        },
+        {
+          "heading": "Expressive and memorable",
+          "styles": [
+            {
+              "uuid": "3e52dd36-6ab1-48c6-bc40-47ef6d33abc2",
+              "slug": "monopo-saigon"
+            },
+            {
+              "uuid": "00537a20-e99e-4ef2-b119-c6f532c44cc9",
+              "slug": "gsap"
+            },
+            {
+              "uuid": "2175034b-96d7-417e-886f-ff5a4d8551ae",
+              "slug": "playdate"
+            },
+            {
+              "uuid": "12255b63-e506-4bc1-a4cd-d05487de32f3",
+              "slug": "intercom"
+            },
+            {
+              "uuid": "139c4bee-396d-494c-baf0-fe211bf4928d",
+              "slug": "14islands"
+            },
+            {
+              "uuid": "6db1057d-3457-4173-9184-df160415f060",
+              "slug": "partiful"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "dashboard-design-prompts",
+      "url": "https://styles.refero.design/ai-agents/dashboard-design-prompts",
+      "title": "Dashboard design prompts",
+      "description": "Explore visual directions for data-heavy products: calm analytics, dense workspaces, and expressive business tools. These are website styles to borrow visual rules from, not screenshots of finished dashboards.",
+      "sections": [
+        {
+          "heading": "Analytics on warm paper",
+          "styles": [
+            {
+              "uuid": "75fdb89f-ca64-41b3-af36-7a78bd09448e",
+              "slug": "steep"
+            },
+            {
+              "uuid": "7967c6d9-e50c-42b5-b4d1-74003ba41781",
+              "slug": "seline-analytics"
+            },
+            {
+              "uuid": "e4b9d41a-8165-47dd-818a-5f6810046ea9",
+              "slug": "pirsch-analytics"
+            },
+            {
+              "uuid": "7479c233-6fee-468b-af95-9169d01a293e",
+              "slug": "modern-business-intelligence"
+            },
+            {
+              "uuid": "d0f65d12-a8e6-4631-99f7-bb7cdcd5b6c5",
+              "slug": "lightdash"
+            },
+            {
+              "uuid": "77b723ca-9583-4349-9b5e-2ef8b4fde002",
+              "slug": "basedash"
+            }
+          ]
+        },
+        {
+          "heading": "Darkness with structure",
+          "styles": [
+            {
+              "uuid": "90ce5883-bb24-4466-93f7-801cd617b0d1",
+              "slug": "linear"
+            },
+            {
+              "uuid": "3172cd4d-118a-4a16-a259-6b634d32322e",
+              "slug": "mercury"
+            },
+            {
+              "uuid": "a0630421-7b66-48b4-aa14-6194a3b2c2b9",
+              "slug": "fey-2"
+            },
+            {
+              "uuid": "c809190a-035c-458d-87ed-4758807dd84e",
+              "slug": "axiom"
+            },
+            {
+              "uuid": "c45b115b-dcb5-446d-8952-85aef740f8e4",
+              "slug": "retool"
+            },
+            {
+              "uuid": "6f9452a4-3b64-4c6f-a05e-528d7a586f24",
+              "slug": "dovetail-3"
+            }
+          ]
+        },
+        {
+          "heading": "One accent with a job",
+          "styles": [
+            {
+              "uuid": "b38702a0-75ab-474c-9106-00b624535825",
+              "slug": "ramp"
+            },
+            {
+              "uuid": "08c8700c-f278-42bc-812e-f60dc6ce996e",
+              "slug": "attio"
+            },
+            {
+              "uuid": "56cd3725-3ff0-459e-894d-5da58d1fc549",
+              "slug": "posthog"
+            },
+            {
+              "uuid": "f4ef80f4-f6e5-4aea-8045-f99efaf208b8",
+              "slug": "airtable"
+            },
+            {
+              "uuid": "d018e81d-6bb6-4445-86d7-39fd6be7e74d",
+              "slug": "huly"
+            },
+            {
+              "uuid": "874aaea0-c718-454e-8a58-f3beed1284ec",
+              "slug": "runway"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "design-context",
+      "url": "https://styles.refero.design/ai-agents/design-context",
+      "title": "Design Context for AI Agents",
+      "description": "Give AI agents better design context with real references, extracted DESIGN.md files, visual systems, product constraints, and practical UI examples.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "e5f5f8cf-e68d-4ed1-bbf5-6b67569af648",
+              "slug": "your-workplace-has-the-answer-just-ask-dala-for-it"
+            },
+            {
+              "uuid": "3172cd4d-118a-4a16-a259-6b634d32322e",
+              "slug": "mercury"
+            },
+            {
+              "uuid": "90ce5883-bb24-4466-93f7-801cd617b0d1",
+              "slug": "linear"
+            },
+            {
+              "uuid": "1f204e95-454a-437e-845b-c1b169d35607",
+              "slug": "oryzo-ai"
+            },
+            {
+              "uuid": "75fdb89f-ca64-41b3-af36-7a78bd09448e",
+              "slug": "steep"
+            },
+            {
+              "uuid": "c9cabb96-32fa-4896-837a-f2497ce1c856",
+              "slug": "apple-espa-a-3"
+            },
+            {
+              "uuid": "0fd67ec5-7e9c-4ca9-b368-5d9c7388477a",
+              "slug": "ui"
+            },
+            {
+              "uuid": "031056ff-7af1-46db-8daa-115f731c5d26",
+              "slug": "elevenlabs"
+            },
+            {
+              "uuid": "a73148b9-449b-42cd-9f38-86ef694f500e",
+              "slug": "apple"
+            },
+            {
+              "uuid": "3e52dd36-6ab1-48c6-bc40-47ef6d33abc2",
+              "slug": "monopo-saigon"
+            },
+            {
+              "uuid": "e80231a2-e4d6-406a-a2c9-2e6109679690",
+              "slug": "authkit"
+            },
+            {
+              "uuid": "21cfe0c1-778d-4613-9f47-a5718eb929b3",
+              "slug": "auros"
+            },
+            {
+              "uuid": "aecac5da-f397-4ddf-b71f-de1efc434cb8",
+              "slug": "apple-6"
+            },
+            {
+              "uuid": "2bf4c61f-de10-4614-ba1b-20c0453bd2a9",
+              "slug": "notion"
+            },
+            {
+              "uuid": "8512e28d-5385-4c20-a336-214568c4370c",
+              "slug": "awesomic"
+            },
+            {
+              "uuid": "ee403055-480e-4bd4-9216-07c9ae2dde2e",
+              "slug": "ai-for-business"
+            },
+            {
+              "uuid": "fc84e9f0-2058-4a0a-8d26-9cc1ba84ec9c",
+              "slug": "monad"
+            },
+            {
+              "uuid": "b0d80806-b724-4ed1-a1d1-074edd3c9bc9",
+              "slug": "dub"
+            },
+            {
+              "uuid": "c60f05ff-2420-4a24-92db-80c4b6a74683",
+              "slug": "origin-financial"
+            },
+            {
+              "uuid": "7088d695-362b-4e09-b325-fa8136d4f350",
+              "slug": "duolingo"
+            },
+            {
+              "uuid": "34baa524-5d5b-4165-bbab-d01f05e6d6b9",
+              "slug": "general-intelligence-company"
+            },
+            {
+              "uuid": "f99aca3e-5289-4595-a7cc-77a72052f4b8",
+              "slug": "ventriloc"
+            },
+            {
+              "uuid": "3b6a17f0-3bdf-418c-a95e-0b89e5a8b2f8",
+              "slug": "raycast"
+            },
+            {
+              "uuid": "8b6b547f-a357-4f1b-9842-4579c62dd42b",
+              "slug": "slush"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "cursor-design-prompts",
+      "url": "https://styles.refero.design/ai-agents/cursor-design-prompts",
+      "title": "Cursor Design Prompts",
+      "description": "Use Cursor design prompts with DESIGN.md references to help AI agents build better landing pages, dashboards, components, and polished product UI.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "90ce5883-bb24-4466-93f7-801cd617b0d1",
+              "slug": "linear"
+            },
+            {
+              "uuid": "0fd67ec5-7e9c-4ca9-b368-5d9c7388477a",
+              "slug": "ui"
+            },
+            {
+              "uuid": "e80231a2-e4d6-406a-a2c9-2e6109679690",
+              "slug": "authkit"
+            },
+            {
+              "uuid": "0d914ef0-fa84-4c60-a9aa-cef0b5eb6e5d",
+              "slug": "resend"
+            },
+            {
+              "uuid": "4e3b4717-84c8-4599-baaf-a343c3d619b6",
+              "slug": "cursor"
+            },
+            {
+              "uuid": "f24daf3a-d43f-4dec-85a9-8ac1d5148a03",
+              "slug": "vercel"
+            },
+            {
+              "uuid": "00537a20-e99e-4ef2-b119-c6f532c44cc9",
+              "slug": "gsap"
+            },
+            {
+              "uuid": "e1f18a7e-5af1-46b3-8f89-bce6c78b80d4",
+              "slug": "dope-security"
+            },
+            {
+              "uuid": "68c15685-5db9-4869-b71d-27240568c9d8",
+              "slug": "modal"
+            },
+            {
+              "uuid": "80d7ef36-ed7e-48bb-b558-f772eb40106f",
+              "slug": "mintlify"
+            },
+            {
+              "uuid": "18a75348-513a-49d8-94f5-e2df8c118b6b",
+              "slug": "launchdarkly"
+            },
+            {
+              "uuid": "632249f1-fd78-4c77-9b34-7bae37ff3e9b",
+              "slug": "supabase"
+            },
+            {
+              "uuid": "d271a6c4-942f-4abf-a3de-66795f15f031",
+              "slug": "sauce-labs"
+            },
+            {
+              "uuid": "8601c8ef-e1ea-4186-adb2-6f9a74caf436",
+              "slug": "n8n"
+            },
+            {
+              "uuid": "56cd3725-3ff0-459e-894d-5da58d1fc549",
+              "slug": "posthog"
+            },
+            {
+              "uuid": "6f3652cf-583f-411d-a117-3a03f6342917",
+              "slug": "harness-io"
+            },
+            {
+              "uuid": "cc38369a-41e3-4bcd-b619-230ccffe7e8e",
+              "slug": "neon"
+            },
+            {
+              "uuid": "c3ceca5c-d329-4559-b947-016172941ba2",
+              "slug": "github"
+            },
+            {
+              "uuid": "d4c51049-58eb-404a-9fcb-f195928b1c99",
+              "slug": "warp"
+            },
+            {
+              "uuid": "c809190a-035c-458d-87ed-4758807dd84e",
+              "slug": "axiom"
+            },
+            {
+              "uuid": "10654184-eb92-4b75-a7af-bd92bc6cdc5c",
+              "slug": "doppler"
+            },
+            {
+              "uuid": "c14bfde7-6f08-4b54-bd9b-39989d10cfef",
+              "slug": "render"
+            },
+            {
+              "uuid": "1c1d3939-8d82-4907-aa3c-c9b2fcfbab4f",
+              "slug": "grafbase"
+            },
+            {
+              "uuid": "fb459c9d-c089-4d0b-b5b0-d147b1c4ebd7",
+              "slug": "moving-parts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "claude-code-design-prompts",
+      "url": "https://styles.refero.design/ai-agents/claude-code-design-prompts",
+      "title": "Claude Code Design Prompts",
+      "description": "Compare 12 real website styles and use their DESIGN.md documents as visual context for Claude Code frontend work, from components to complex screens.",
+      "sections": [
+        {
+          "heading": "Pick the system that fits your product",
+          "styles": [
+            {
+              "uuid": "4e3b4717-84c8-4599-baaf-a343c3d619b6",
+              "slug": "cursor"
+            },
+            {
+              "uuid": "90ce5883-bb24-4466-93f7-801cd617b0d1",
+              "slug": "linear"
+            },
+            {
+              "uuid": "f24daf3a-d43f-4dec-85a9-8ac1d5148a03",
+              "slug": "vercel"
+            },
+            {
+              "uuid": "632249f1-fd78-4c77-9b34-7bae37ff3e9b",
+              "slug": "supabase"
+            }
+          ]
+        },
+        {
+          "heading": "Use a component reference for component work",
+          "styles": [
+            {
+              "uuid": "0fd67ec5-7e9c-4ca9-b368-5d9c7388477a",
+              "slug": "ui"
+            },
+            {
+              "uuid": "e80231a2-e4d6-406a-a2c9-2e6109679690",
+              "slug": "authkit"
+            },
+            {
+              "uuid": "ed10ae04-24ec-4e42-9bf2-ea12a4b58d67",
+              "slug": "clerk"
+            },
+            {
+              "uuid": "9905b62f-007b-4b3a-9357-84e85c07ef96",
+              "slug": "react-email"
+            }
+          ]
+        },
+        {
+          "heading": "Check how technical content is organized",
+          "styles": [
+            {
+              "uuid": "c809190a-035c-458d-87ed-4758807dd84e",
+              "slug": "axiom"
+            },
+            {
+              "uuid": "56cd3725-3ff0-459e-894d-5da58d1fc549",
+              "slug": "posthog"
+            },
+            {
+              "uuid": "80d7ef36-ed7e-48bb-b558-f772eb40106f",
+              "slug": "mintlify"
+            },
+            {
+              "uuid": "c14bfde7-6f08-4b54-bd9b-39989d10cfef",
+              "slug": "render"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "v0-design-prompts",
+      "url": "https://styles.refero.design/ai-agents/v0-design-prompts",
+      "title": "v0 Design Prompts",
+      "description": "Use v0 design prompts with real website references, DESIGN.md context, and product-specific constraints for stronger AI-generated UI drafts and pages.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "75fdb89f-ca64-41b3-af36-7a78bd09448e",
+              "slug": "steep"
+            },
+            {
+              "uuid": "8512e28d-5385-4c20-a336-214568c4370c",
+              "slug": "awesomic"
+            },
+            {
+              "uuid": "fc84e9f0-2058-4a0a-8d26-9cc1ba84ec9c",
+              "slug": "monad"
+            },
+            {
+              "uuid": "b0d80806-b724-4ed1-a1d1-074edd3c9bc9",
+              "slug": "dub"
+            },
+            {
+              "uuid": "f99aca3e-5289-4595-a7cc-77a72052f4b8",
+              "slug": "ventriloc"
+            },
+            {
+              "uuid": "418b374a-be64-44f0-b17e-1d45308c7e62",
+              "slug": "superhuman"
+            },
+            {
+              "uuid": "7967c6d9-e50c-42b5-b4d1-74003ba41781",
+              "slug": "seline-analytics"
+            },
+            {
+              "uuid": "d3289fe7-a85e-42d8-96b7-eb7faa62a104",
+              "slug": "air"
+            },
+            {
+              "uuid": "9946887b-ffa9-4276-af81-ae6352795afb",
+              "slug": "calendly-com"
+            },
+            {
+              "uuid": "0f7da1b2-9d06-4ef5-b5a8-ef7f92e57ab2",
+              "slug": "augen-pro"
+            },
+            {
+              "uuid": "e7876363-181a-44a9-9e5c-2255cf98aea5",
+              "slug": "visitors"
+            },
+            {
+              "uuid": "75c06591-34d2-493a-bd49-70551b5e4a53",
+              "slug": "perk"
+            },
+            {
+              "uuid": "77ee57e9-9f8e-4ec1-93f7-cc1c4b84307a",
+              "slug": "monday-com"
+            },
+            {
+              "uuid": "337ade6a-4bae-49ba-b4aa-8994ac805a81",
+              "slug": "relate"
+            },
+            {
+              "uuid": "8b91f4c9-74e5-4925-90a3-3dd31fd5725e",
+              "slug": "say-briefly"
+            },
+            {
+              "uuid": "12255b63-e506-4bc1-a4cd-d05487de32f3",
+              "slug": "intercom"
+            },
+            {
+              "uuid": "2eab438d-32cd-40c2-b160-1e4127dac569",
+              "slug": "gleap"
+            },
+            {
+              "uuid": "e9001d5a-504d-47ed-aef0-d0d35fa86418",
+              "slug": "ditto-2"
+            },
+            {
+              "uuid": "ced1c98f-d489-48f7-a01f-1fa59a07b706",
+              "slug": "officevibe"
+            },
+            {
+              "uuid": "db451eca-8de6-43a9-a5d5-35271befdffd",
+              "slug": "amplemarket"
+            },
+            {
+              "uuid": "6f9452a4-3b64-4c6f-a05e-528d7a586f24",
+              "slug": "dovetail-3"
+            },
+            {
+              "uuid": "371df039-a090-402b-b2e4-21ab38e07625",
+              "slug": "ameba"
+            },
+            {
+              "uuid": "108e2695-6970-47d5-b5b0-eea8fc34e048",
+              "slug": "dovetail-2"
+            },
+            {
+              "uuid": "b9aeb945-2f6e-4557-9115-e3ff3a8f8dc8",
+              "slug": "portal-2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "clean-saas",
+      "url": "https://styles.refero.design/design-styles/clean-saas",
+      "title": "Clean SaaS Design Examples",
+      "description": "Compare 12 clean SaaS website examples grouped by product proof, editorial clarity, and workflow-focused conversion, with real visual references.",
+      "sections": [
+        {
+          "heading": "Let the interface carry the claim",
+          "styles": [
+            {
+              "uuid": "75fdb89f-ca64-41b3-af36-7a78bd09448e",
+              "slug": "steep"
+            },
+            {
+              "uuid": "b0d80806-b724-4ed1-a1d1-074edd3c9bc9",
+              "slug": "dub"
+            },
+            {
+              "uuid": "7967c6d9-e50c-42b5-b4d1-74003ba41781",
+              "slug": "seline-analytics"
+            },
+            {
+              "uuid": "08c8700c-f278-42bc-812e-f60dc6ce996e",
+              "slug": "attio"
+            }
+          ]
+        },
+        {
+          "heading": "Use type and space to set the tone",
+          "styles": [
+            {
+              "uuid": "ced1c98f-d489-48f7-a01f-1fa59a07b706",
+              "slug": "officevibe"
+            },
+            {
+              "uuid": "607c2098-bbbb-40bb-b23e-adf2b72c63dd",
+              "slug": "slite"
+            },
+            {
+              "uuid": "e4b9d41a-8165-47dd-818a-5f6810046ea9",
+              "slug": "pirsch-analytics"
+            },
+            {
+              "uuid": "376baf20-9ace-405d-bf4a-086016f2b1e3",
+              "slug": "user-interviews"
+            }
+          ]
+        },
+        {
+          "heading": "Make the workflow and action obvious",
+          "styles": [
+            {
+              "uuid": "9946887b-ffa9-4276-af81-ae6352795afb",
+              "slug": "calendly-com"
+            },
+            {
+              "uuid": "337ade6a-4bae-49ba-b4aa-8994ac805a81",
+              "slug": "relate"
+            },
+            {
+              "uuid": "d0f65d12-a8e6-4631-99f7-bb7cdcd5b6c5",
+              "slug": "lightdash"
+            },
+            {
+              "uuid": "d7fb1721-1878-4cbb-a24b-051800557c75",
+              "slug": "dock"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "editorial-websites",
+      "url": "https://styles.refero.design/design-styles/editorial-websites",
+      "title": "Editorial Website Design Examples",
+      "description": "Browse editorial website design examples with real references for typography, layout rhythm, image treatment, long-form content, and AI page prompts.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "7d254296-6817-487a-a58c-4d5eca89cbf3",
+              "slug": "flying-papers"
+            },
+            {
+              "uuid": "a6284fcd-fa69-4469-ac40-4239e5b84a39",
+              "slug": "freshman"
+            },
+            {
+              "uuid": "9165ecb1-f068-4093-8783-1f3c98898b8a",
+              "slug": "monocle"
+            },
+            {
+              "uuid": "cb266ff9-f168-4a42-a522-f0e84508f90f",
+              "slug": "desktop-fm"
+            },
+            {
+              "uuid": "79b4ebc4-30f6-45b6-b2d2-922e28e05ca9",
+              "slug": "lpalo"
+            },
+            {
+              "uuid": "32959012-f50d-4465-bb01-2aa4d506e0a8",
+              "slug": "netflix-spain-2"
+            },
+            {
+              "uuid": "4367b4cd-b002-4719-a418-cbce020f0d33",
+              "slug": "masterclass"
+            },
+            {
+              "uuid": "9c92c3d1-a2fe-4a27-a324-826b19501774",
+              "slug": "medium"
+            },
+            {
+              "uuid": "1514a95f-878c-4d4d-bb14-99d1b83f6227",
+              "slug": "spotify-2"
+            },
+            {
+              "uuid": "f4af4c42-2cba-4aa6-8d06-2f728bce702d",
+              "slug": "dice"
+            },
+            {
+              "uuid": "35f89ccd-614d-4f8f-9cce-bb94309df237",
+              "slug": "soundcloud"
+            },
+            {
+              "uuid": "1cb31aee-608e-4dec-a44d-5745e4fd6bab",
+              "slug": "601-inc"
+            },
+            {
+              "uuid": "94c15607-2f19-4dc4-9aec-2b40f28b754f",
+              "slug": "minimal-collective"
+            },
+            {
+              "uuid": "162e9ba9-7487-4b57-aee8-0bbeadcc586d",
+              "slug": "skillshare"
+            },
+            {
+              "uuid": "ab650279-aa18-43e5-a998-34190d7bedc7",
+              "slug": "fable"
+            },
+            {
+              "uuid": "d9fbc68b-0d42-4c09-829d-1207b781f46a",
+              "slug": "wayfinder"
+            },
+            {
+              "uuid": "e6fb72b4-877d-46ab-8f94-590b971d4dc1",
+              "slug": "telescope"
+            },
+            {
+              "uuid": "597355de-6167-4f37-8f14-b3897919a94c",
+              "slug": "exhibition-magazine"
+            },
+            {
+              "uuid": "51b5d80e-d898-4d70-bd16-9e50406e014c",
+              "slug": "cards-against-humanity"
+            },
+            {
+              "uuid": "97f7787e-bba0-4d37-8b74-4b0cb8d5a57c",
+              "slug": "switch-lit"
+            },
+            {
+              "uuid": "4235ebdc-a070-46ef-abbf-692151449bea",
+              "slug": "nofilter-space"
+            },
+            {
+              "uuid": "6afa22a6-bec8-47c3-b5ee-5d11d64902cb",
+              "slug": "a24"
+            },
+            {
+              "uuid": "8fc58a26-47be-406e-8429-37925551c0ec",
+              "slug": "youtube"
+            },
+            {
+              "uuid": "d5ed8712-0e42-4c6c-83b1-b3d7f27d1d10",
+              "slug": "amra"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "dark-mode-websites",
+      "url": "https://styles.refero.design/design-styles/dark-mode-websites",
+      "title": "Dark Mode Website Examples",
+      "description": "Browse dark mode website examples for AI agents, with references for contrast, typography, product screenshots, developer tools, AI products, and premium UI.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "e5f5f8cf-e68d-4ed1-bbf5-6b67569af648",
+              "slug": "your-workplace-has-the-answer-just-ask-dala-for-it"
+            },
+            {
+              "uuid": "3172cd4d-118a-4a16-a259-6b634d32322e",
+              "slug": "mercury"
+            },
+            {
+              "uuid": "90ce5883-bb24-4466-93f7-801cd617b0d1",
+              "slug": "linear"
+            },
+            {
+              "uuid": "1f204e95-454a-437e-845b-c1b169d35607",
+              "slug": "oryzo-ai"
+            },
+            {
+              "uuid": "e80231a2-e4d6-406a-a2c9-2e6109679690",
+              "slug": "authkit"
+            },
+            {
+              "uuid": "21cfe0c1-778d-4613-9f47-a5718eb929b3",
+              "slug": "auros"
+            },
+            {
+              "uuid": "c60f05ff-2420-4a24-92db-80c4b6a74683",
+              "slug": "origin-financial"
+            },
+            {
+              "uuid": "3b6a17f0-3bdf-418c-a95e-0b89e5a8b2f8",
+              "slug": "raycast"
+            },
+            {
+              "uuid": "0d914ef0-fa84-4c60-a9aa-cef0b5eb6e5d",
+              "slug": "resend"
+            },
+            {
+              "uuid": "d3289fe7-a85e-42d8-96b7-eb7faa62a104",
+              "slug": "air"
+            },
+            {
+              "uuid": "13d6fc89-eba2-4724-ac37-20f4f2e5efec",
+              "slug": "factory"
+            },
+            {
+              "uuid": "00537a20-e99e-4ef2-b119-c6f532c44cc9",
+              "slug": "gsap"
+            },
+            {
+              "uuid": "7c38e84b-aea0-4c8f-b3e9-60b994ee6c6b",
+              "slug": "slash"
+            },
+            {
+              "uuid": "8eb9c53e-d69c-497a-b640-610856cf3a60",
+              "slug": "hyperstudio"
+            },
+            {
+              "uuid": "e1f18a7e-5af1-46b3-8f89-bce6c78b80d4",
+              "slug": "dope-security"
+            },
+            {
+              "uuid": "8875b14e-c59a-492f-8780-8027a480f21c",
+              "slug": "vivid-co"
+            },
+            {
+              "uuid": "fbcf9cbb-7c6b-449d-862a-bce521a8ab1d",
+              "slug": "dimension"
+            },
+            {
+              "uuid": "40be36d7-7fe6-4451-9f2d-7ceccfd43be8",
+              "slug": "apple-4"
+            },
+            {
+              "uuid": "47f15da7-8905-45b3-bcab-06a4277c6168",
+              "slug": "hungry-tiger"
+            },
+            {
+              "uuid": "1bd3b2ba-9ad9-44ed-9130-03f9d94de821",
+              "slug": "sequel"
+            },
+            {
+              "uuid": "68c15685-5db9-4869-b71d-27240568c9d8",
+              "slug": "modal"
+            },
+            {
+              "uuid": "3416bd14-96bb-4c23-bd01-b2ea178ba5ce",
+              "slug": "active-theory"
+            },
+            {
+              "uuid": "82d52a5f-b1bb-4a69-91a3-15a7eb8bbe99",
+              "slug": "thoughtlab"
+            },
+            {
+              "uuid": "eeeb6ac9-fc07-4965-935a-e1989ed831f1",
+              "slug": "default"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "fintech-websites",
+      "url": "https://styles.refero.design/design-styles/fintech-websites",
+      "title": "Fintech website design examples",
+      "description": "Compare real financial websites by the visual job they solve: making complex services legible, giving consumer finance a recognizable voice, or establishing a more premium tone. These captures show website design, not a complete banking interface.",
+      "sections": [
+        {
+          "heading": "Clarity before color",
+          "styles": [
+            {
+              "uuid": "a76ec6ba-20b3-495c-9d89-1e58281e79e7",
+              "slug": "column"
+            },
+            {
+              "uuid": "077aecd0-4401-4696-a196-164d74ac8746",
+              "slug": "lithic"
+            },
+            {
+              "uuid": "aeefc294-a8f7-443d-b76a-538dddc29afe",
+              "slug": "acctual"
+            },
+            {
+              "uuid": "86a6814d-2485-4fad-b6fd-56c2d0a23620",
+              "slug": "square"
+            },
+            {
+              "uuid": "8cf4a580-bfb6-4090-a899-f734ffe62370",
+              "slug": "duna"
+            },
+            {
+              "uuid": "4c33d8fe-81d5-46cb-9dc1-dd231be1c9ec",
+              "slug": "cake-equity"
+            }
+          ]
+        },
+        {
+          "heading": "Consumer finance with a voice",
+          "styles": [
+            {
+              "uuid": "e8a1d114-6924-4f03-acd2-996dd30f15a6",
+              "slug": "monzo"
+            },
+            {
+              "uuid": "367c0c6e-73a7-441c-a8ff-91d139ac60dc",
+              "slug": "wise"
+            },
+            {
+              "uuid": "a3161c3c-26d4-425b-aaa3-4fc3f06b77ee",
+              "slug": "revolut"
+            },
+            {
+              "uuid": "1f32d914-6fdd-4692-b4fc-fcee2c414766",
+              "slug": "jeton"
+            },
+            {
+              "uuid": "043341c3-cf82-4be1-9142-fa5e6a370ca9",
+              "slug": "wealthsimple"
+            },
+            {
+              "uuid": "a9dd8050-c03a-4901-b7fa-a9cc0ca54812",
+              "slug": "monarch"
+            }
+          ]
+        },
+        {
+          "heading": "Dark, premium finance",
+          "styles": [
+            {
+              "uuid": "7c38e84b-aea0-4c8f-b3e9-60b994ee6c6b",
+              "slug": "slash"
+            },
+            {
+              "uuid": "c60f05ff-2420-4a24-92db-80c4b6a74683",
+              "slug": "origin-financial"
+            },
+            {
+              "uuid": "3f6ef3c1-f98f-4cd9-bdf0-545059758705",
+              "slug": "atlas-card"
+            },
+            {
+              "uuid": "91b110da-902b-4d09-8bf0-26bd1f25f8b2",
+              "slug": "copilot-money"
+            },
+            {
+              "uuid": "10a77cbd-7847-4e1b-a09e-447ebad0f7c6",
+              "slug": "galileo-ft"
+            },
+            {
+              "uuid": "bcfc6cb0-1b39-4f3f-a95e-bd7b563b0efc",
+              "slug": "letter"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "devtools-websites",
+      "url": "https://styles.refero.design/design-styles/devtools-websites",
+      "title": "Devtool Website Design Examples",
+      "description": "Browse devtool website design examples for AI agents, with references for technical positioning, docs, dashboards, code UI, dark mode, and product proof.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "90ce5883-bb24-4466-93f7-801cd617b0d1",
+              "slug": "linear"
+            },
+            {
+              "uuid": "0fd67ec5-7e9c-4ca9-b368-5d9c7388477a",
+              "slug": "ui"
+            },
+            {
+              "uuid": "e80231a2-e4d6-406a-a2c9-2e6109679690",
+              "slug": "authkit"
+            },
+            {
+              "uuid": "0d914ef0-fa84-4c60-a9aa-cef0b5eb6e5d",
+              "slug": "resend"
+            },
+            {
+              "uuid": "4e3b4717-84c8-4599-baaf-a343c3d619b6",
+              "slug": "cursor"
+            },
+            {
+              "uuid": "f24daf3a-d43f-4dec-85a9-8ac1d5148a03",
+              "slug": "vercel"
+            },
+            {
+              "uuid": "00537a20-e99e-4ef2-b119-c6f532c44cc9",
+              "slug": "gsap"
+            },
+            {
+              "uuid": "e1f18a7e-5af1-46b3-8f89-bce6c78b80d4",
+              "slug": "dope-security"
+            },
+            {
+              "uuid": "68c15685-5db9-4869-b71d-27240568c9d8",
+              "slug": "modal"
+            },
+            {
+              "uuid": "80d7ef36-ed7e-48bb-b558-f772eb40106f",
+              "slug": "mintlify"
+            },
+            {
+              "uuid": "18a75348-513a-49d8-94f5-e2df8c118b6b",
+              "slug": "launchdarkly"
+            },
+            {
+              "uuid": "632249f1-fd78-4c77-9b34-7bae37ff3e9b",
+              "slug": "supabase"
+            },
+            {
+              "uuid": "d271a6c4-942f-4abf-a3de-66795f15f031",
+              "slug": "sauce-labs"
+            },
+            {
+              "uuid": "8601c8ef-e1ea-4186-adb2-6f9a74caf436",
+              "slug": "n8n"
+            },
+            {
+              "uuid": "56cd3725-3ff0-459e-894d-5da58d1fc549",
+              "slug": "posthog"
+            },
+            {
+              "uuid": "6f3652cf-583f-411d-a117-3a03f6342917",
+              "slug": "harness-io"
+            },
+            {
+              "uuid": "cc38369a-41e3-4bcd-b619-230ccffe7e8e",
+              "slug": "neon"
+            },
+            {
+              "uuid": "c3ceca5c-d329-4559-b947-016172941ba2",
+              "slug": "github"
+            },
+            {
+              "uuid": "d4c51049-58eb-404a-9fcb-f195928b1c99",
+              "slug": "warp"
+            },
+            {
+              "uuid": "c809190a-035c-458d-87ed-4758807dd84e",
+              "slug": "axiom"
+            },
+            {
+              "uuid": "10654184-eb92-4b75-a7af-bd92bc6cdc5c",
+              "slug": "doppler"
+            },
+            {
+              "uuid": "c14bfde7-6f08-4b54-bd9b-39989d10cfef",
+              "slug": "render"
+            },
+            {
+              "uuid": "1c1d3939-8d82-4907-aa3c-c9b2fcfbab4f",
+              "slug": "grafbase"
+            },
+            {
+              "uuid": "fb459c9d-c089-4d0b-b5b0-d147b1c4ebd7",
+              "slug": "moving-parts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ai-startup-websites",
+      "url": "https://styles.refero.design/design-styles/ai-startup-websites",
+      "title": "AI startup website design examples",
+      "description": "Compare real AI product websites by what they make clear first: the task a visitor can do, the technical evidence behind it, or a distinct visual identity. Open any style for its full capture, colors, typography, and DESIGN.md.",
+      "sections": [
+        {
+          "heading": "Put a task in front of the claim",
+          "styles": [
+            {
+              "uuid": "e869e214-f672-4ac3-bfc2-bd25de7b003b",
+              "slug": "base44"
+            },
+            {
+              "uuid": "dc541737-8bf2-4b31-b729-0352f696e82f",
+              "slug": "openai"
+            },
+            {
+              "uuid": "95913740-3ff7-45ec-a05b-4acf040850a0",
+              "slug": "reworkd"
+            },
+            {
+              "uuid": "5bfbe8b0-de0e-470f-b130-929f50437160",
+              "slug": "sana-agents"
+            },
+            {
+              "uuid": "f99856e1-3627-4624-a811-f6053a978b62",
+              "slug": "metaview"
+            },
+            {
+              "uuid": "c90e63f8-76c1-4159-9460-29e0d18751ae",
+              "slug": "parloa"
+            }
+          ]
+        },
+        {
+          "heading": "Make the technical proof visible",
+          "styles": [
+            {
+              "uuid": "78fec83e-4b27-44ab-9f64-31e9dee53e46",
+              "slug": "firecrawl"
+            },
+            {
+              "uuid": "461da0f0-fde6-46bc-8137-7eca006260a8",
+              "slug": "together-ai"
+            },
+            {
+              "uuid": "32845f27-6b24-48be-af25-8e664f826b30",
+              "slug": "parallel-web-systems"
+            },
+            {
+              "uuid": "d5307f56-76de-4d13-9741-f969c42e9aa5",
+              "slug": "agentql"
+            },
+            {
+              "uuid": "063be10d-593d-4c81-a99e-a7543737b9db",
+              "slug": "openserv"
+            },
+            {
+              "uuid": "ad48f4ad-42c0-4c91-a189-fa7a73a7a9e9",
+              "slug": "langbase"
+            }
+          ]
+        },
+        {
+          "heading": "Give the category a visual identity",
+          "styles": [
+            {
+              "uuid": "031056ff-7af1-46db-8daa-115f731c5d26",
+              "slug": "elevenlabs"
+            },
+            {
+              "uuid": "ee403055-480e-4bd4-9216-07c9ae2dde2e",
+              "slug": "ai-for-business"
+            },
+            {
+              "uuid": "9f9a4a4f-1a27-47ca-a65b-68b9850a84e4",
+              "slug": "antimetal"
+            },
+            {
+              "uuid": "34baa524-5d5b-4165-bbab-d01f05e6d6b9",
+              "slug": "general-intelligence-company"
+            },
+            {
+              "uuid": "8c3f2805-dfce-4edd-8a9c-946bee4f1cff",
+              "slug": "leonardo-ai"
+            },
+            {
+              "uuid": "50833119-cb36-4b75-b0cc-be48afea050a",
+              "slug": "krea"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ecommerce-websites",
+      "url": "https://styles.refero.design/design-styles/ecommerce-websites",
+      "title": "Ecommerce Website Design Examples",
+      "description": "Browse ecommerce website design examples for AI agents, with references for product storytelling, category pages, conversion, imagery, and shopping UI.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "c9cabb96-32fa-4896-837a-f2497ce1c856",
+              "slug": "apple-espa-a-3"
+            },
+            {
+              "uuid": "a73148b9-449b-42cd-9f38-86ef694f500e",
+              "slug": "apple"
+            },
+            {
+              "uuid": "4fa67bd1-f01d-454a-b522-4a0359ff9815",
+              "slug": "shop"
+            },
+            {
+              "uuid": "40be36d7-7fe6-4451-9f2d-7ceccfd43be8",
+              "slug": "apple-4"
+            },
+            {
+              "uuid": "47f15da7-8905-45b3-bcab-06a4277c6168",
+              "slug": "hungry-tiger"
+            },
+            {
+              "uuid": "c2325884-4391-4688-85cd-e143f5107517",
+              "slug": "airbnb"
+            },
+            {
+              "uuid": "c9c5be5a-aaa1-4338-9681-8378d2e24fbd",
+              "slug": "lamborghini-com"
+            },
+            {
+              "uuid": "aecf9dda-5cba-4dc7-9e73-59b65d895cdf",
+              "slug": "teenage-engineering"
+            },
+            {
+              "uuid": "a4f123f2-cd4b-4d26-998f-a3d3ee158024",
+              "slug": "apple-espa-a-2"
+            },
+            {
+              "uuid": "04961c7d-8ca6-4e87-ba88-6ad7ffa3b245",
+              "slug": "home-page-impossible-foods"
+            },
+            {
+              "uuid": "6f3fb64d-d4c9-4ec1-86a1-7983e5180985",
+              "slug": "peak-design"
+            },
+            {
+              "uuid": "d91841cf-c717-43ef-97a2-400778fa6e1a",
+              "slug": "sweetgreen"
+            },
+            {
+              "uuid": "da7e5084-9e5d-4eb2-bb10-4c2d7733a56e",
+              "slug": "apple-espa-a-5"
+            },
+            {
+              "uuid": "569ba4c0-0431-44fb-92df-0dbea7f3e63d",
+              "slug": "apple-espa-a-7"
+            },
+            {
+              "uuid": "06ee0fd5-c4ab-4d5f-b66a-7285aeacd0b0",
+              "slug": "apple-3"
+            },
+            {
+              "uuid": "764b6a64-c233-4e0f-b8e1-bc01e2f8aa16",
+              "slug": "apple-espa-a-4"
+            },
+            {
+              "uuid": "80164adf-a898-4f7c-bce7-12f3f62e1649",
+              "slug": "ferrari"
+            },
+            {
+              "uuid": "a6791bc8-c49d-4e7a-a09d-877afcd04c25",
+              "slug": "oak-me"
+            },
+            {
+              "uuid": "d7ace114-0548-41f5-a2ff-2afbf32be94d",
+              "slug": "nike-com"
+            },
+            {
+              "uuid": "022cf675-42d1-44e7-953a-68facc802117",
+              "slug": "apple-espa-a-8"
+            },
+            {
+              "uuid": "a48ef430-8c6a-42d8-8c53-ab7bb43cf33b",
+              "slug": "apple-espa-a"
+            },
+            {
+              "uuid": "c8c22958-ec50-47f1-aedc-a131d7aeb442",
+              "slug": "dialog"
+            },
+            {
+              "uuid": "fdcd4cbb-4db6-4138-9cfd-964795f1e1d6",
+              "slug": "lightship"
+            },
+            {
+              "uuid": "4887c681-d4e6-41d3-b83c-5650cf925ee9",
+              "slug": "vanmoof"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "minimal-websites",
+      "url": "https://styles.refero.design/design-styles/minimal-websites",
+      "title": "Minimal Website Design Examples",
+      "description": "Browse minimal website design examples for AI agents, with references for restrained typography, spacing, navigation, imagery, and focused product pages.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "75fdb89f-ca64-41b3-af36-7a78bd09448e",
+              "slug": "steep"
+            },
+            {
+              "uuid": "c9cabb96-32fa-4896-837a-f2497ce1c856",
+              "slug": "apple-espa-a-3"
+            },
+            {
+              "uuid": "0fd67ec5-7e9c-4ca9-b368-5d9c7388477a",
+              "slug": "ui"
+            },
+            {
+              "uuid": "031056ff-7af1-46db-8daa-115f731c5d26",
+              "slug": "elevenlabs"
+            },
+            {
+              "uuid": "a73148b9-449b-42cd-9f38-86ef694f500e",
+              "slug": "apple"
+            },
+            {
+              "uuid": "3e52dd36-6ab1-48c6-bc40-47ef6d33abc2",
+              "slug": "monopo-saigon"
+            },
+            {
+              "uuid": "aecac5da-f397-4ddf-b71f-de1efc434cb8",
+              "slug": "apple-6"
+            },
+            {
+              "uuid": "2bf4c61f-de10-4614-ba1b-20c0453bd2a9",
+              "slug": "notion"
+            },
+            {
+              "uuid": "8512e28d-5385-4c20-a336-214568c4370c",
+              "slug": "awesomic"
+            },
+            {
+              "uuid": "ee403055-480e-4bd4-9216-07c9ae2dde2e",
+              "slug": "ai-for-business"
+            },
+            {
+              "uuid": "fc84e9f0-2058-4a0a-8d26-9cc1ba84ec9c",
+              "slug": "monad"
+            },
+            {
+              "uuid": "b0d80806-b724-4ed1-a1d1-074edd3c9bc9",
+              "slug": "dub"
+            },
+            {
+              "uuid": "7088d695-362b-4e09-b325-fa8136d4f350",
+              "slug": "duolingo"
+            },
+            {
+              "uuid": "34baa524-5d5b-4165-bbab-d01f05e6d6b9",
+              "slug": "general-intelligence-company"
+            },
+            {
+              "uuid": "f99aca3e-5289-4595-a7cc-77a72052f4b8",
+              "slug": "ventriloc"
+            },
+            {
+              "uuid": "8b6b547f-a357-4f1b-9842-4579c62dd42b",
+              "slug": "slush"
+            },
+            {
+              "uuid": "418b374a-be64-44f0-b17e-1d45308c7e62",
+              "slug": "superhuman"
+            },
+            {
+              "uuid": "7967c6d9-e50c-42b5-b4d1-74003ba41781",
+              "slug": "seline-analytics"
+            },
+            {
+              "uuid": "4e3b4717-84c8-4599-baaf-a343c3d619b6",
+              "slug": "cursor"
+            },
+            {
+              "uuid": "48e5de76-05d5-4c4e-a269-c7c245b291ec",
+              "slug": "stripe"
+            },
+            {
+              "uuid": "4fa67bd1-f01d-454a-b522-4a0359ff9815",
+              "slug": "shop"
+            },
+            {
+              "uuid": "367c0c6e-73a7-441c-a8ff-91d139ac60dc",
+              "slug": "wise"
+            },
+            {
+              "uuid": "d469cba4-c448-4a43-a033-883f8bfcdc42",
+              "slug": "anthropic"
+            },
+            {
+              "uuid": "fe8cdcf9-c850-4d52-be07-5ad269bf9ebf",
+              "slug": "caldera"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "agency-websites",
+      "url": "https://styles.refero.design/design-styles/agency-websites",
+      "title": "Agency Website Design Examples",
+      "description": "Browse agency website design examples for AI agents, with references for portfolios, case studies, service pages, positioning, and visual storytelling.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "3e52dd36-6ab1-48c6-bc40-47ef6d33abc2",
+              "slug": "monopo-saigon"
+            },
+            {
+              "uuid": "8eb9c53e-d69c-497a-b640-610856cf3a60",
+              "slug": "hyperstudio"
+            },
+            {
+              "uuid": "8875b14e-c59a-492f-8780-8027a480f21c",
+              "slug": "vivid-co"
+            },
+            {
+              "uuid": "6b667ffc-5158-4000-9252-3a107d5161ee",
+              "slug": "off-brand"
+            },
+            {
+              "uuid": "3416bd14-96bb-4c23-bd01-b2ea178ba5ce",
+              "slug": "active-theory"
+            },
+            {
+              "uuid": "82d52a5f-b1bb-4a69-91a3-15a7eb8bbe99",
+              "slug": "thoughtlab"
+            },
+            {
+              "uuid": "b1e82907-d1cf-46cd-8ae7-3561c5b15fd0",
+              "slug": "dylanbrouwer"
+            },
+            {
+              "uuid": "4d4772a3-e1da-415f-a6d7-658dcefdcecd",
+              "slug": "branding"
+            },
+            {
+              "uuid": "c1534c74-f7b8-44de-a913-586d0f78fb08",
+              "slug": "agence-foudre"
+            },
+            {
+              "uuid": "ff8f39ee-a10e-4a9d-a94d-6993c6084060",
+              "slug": "creative-giants"
+            },
+            {
+              "uuid": "934a61aa-50ff-4e90-852b-4ad0b8262d54",
+              "slug": "samara"
+            },
+            {
+              "uuid": "c90b584e-de5b-4971-9e13-8ab991bd96c0",
+              "slug": "eindhoven-design-district"
+            },
+            {
+              "uuid": "6036b661-3886-4f76-a5e6-bb8960eb7db5",
+              "slug": "dash-digital-studio"
+            },
+            {
+              "uuid": "12b3e1b6-31b9-4843-9b3b-8f39c9dd1474",
+              "slug": "twomuch-studio"
+            },
+            {
+              "uuid": "bb63a015-b018-4bd9-be66-0973ac6be753",
+              "slug": "patrick-miller"
+            },
+            {
+              "uuid": "16be276a-d8ce-484e-8f7a-cbbb09f717f7",
+              "slug": "outsource-consultants"
+            },
+            {
+              "uuid": "139c4bee-396d-494c-baf0-fe211bf4928d",
+              "slug": "14islands"
+            },
+            {
+              "uuid": "03e03554-d7aa-40da-9764-79320ecfa1d0",
+              "slug": "ohzi-interactive-studio-dive-into-digital-magic"
+            },
+            {
+              "uuid": "1b44386e-31a8-40b0-a577-27c088b51264",
+              "slug": "lusion"
+            },
+            {
+              "uuid": "e1afed53-6854-40dd-8157-dfc1dd3505f0",
+              "slug": "hatch"
+            },
+            {
+              "uuid": "04f6cb02-de90-4d78-9c5f-0eb52f826484",
+              "slug": "mike-matas"
+            },
+            {
+              "uuid": "e045b276-ae8d-442e-98de-fa8650e284de",
+              "slug": "studio-oker"
+            },
+            {
+              "uuid": "ff4b9eff-dc0b-4886-bd65-c2f5e9069318",
+              "slug": "henry"
+            },
+            {
+              "uuid": "2318d650-b229-4be0-9adc-9f17cecfd253",
+              "slug": "new-genre"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "productivity-apps",
+      "url": "https://styles.refero.design/design-styles/productivity-apps",
+      "title": "Productivity App Design Examples",
+      "description": "Browse productivity app design examples for AI agents, with references for calm SaaS UI, dashboards, workflows, task lists, collaboration, and app pages.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "2bf4c61f-de10-4614-ba1b-20c0453bd2a9",
+              "slug": "notion"
+            },
+            {
+              "uuid": "3b6a17f0-3bdf-418c-a95e-0b89e5a8b2f8",
+              "slug": "raycast"
+            },
+            {
+              "uuid": "efcb73cb-b84a-4ae7-9a2b-e1116f79f130",
+              "slug": "clickup"
+            },
+            {
+              "uuid": "d018e81d-6bb6-4445-86d7-39fd6be7e74d",
+              "slug": "huly"
+            },
+            {
+              "uuid": "b458ca1a-70f0-4f85-b745-f879a4d08457",
+              "slug": "dia-browser"
+            },
+            {
+              "uuid": "e7f92774-3c08-402b-917d-020ba1f3d489",
+              "slug": "reflect-notes"
+            },
+            {
+              "uuid": "faec4b0c-cf93-4150-97de-0a8e7eed1840",
+              "slug": "discord"
+            },
+            {
+              "uuid": "1eee9aa2-1e23-4675-9f6e-fb98c93969bd",
+              "slug": "getharvest"
+            },
+            {
+              "uuid": "5d7aa503-8cfa-49a4-bd3b-0c2f0f075c70",
+              "slug": "cal-com"
+            },
+            {
+              "uuid": "528eb1d4-8508-4dc6-87b4-c7b92d648dac",
+              "slug": "quizlet"
+            },
+            {
+              "uuid": "cc43cfe3-195b-4081-b586-c42db054a466",
+              "slug": "micro"
+            },
+            {
+              "uuid": "c0717d1a-b446-4166-a445-6497fe287fea",
+              "slug": "bevel"
+            },
+            {
+              "uuid": "1e7dae3b-cb34-4fcf-8c32-051152aebbab",
+              "slug": "foodnoms"
+            },
+            {
+              "uuid": "035a098b-5a27-48a3-8a3a-c68a698e3eab",
+              "slug": "headspace"
+            },
+            {
+              "uuid": "a5cc9b0f-d274-458a-b990-d18482b70838",
+              "slug": "changelog"
+            },
+            {
+              "uuid": "b136f0a0-8064-4978-a18e-db54b9362c24",
+              "slug": "index-3"
+            },
+            {
+              "uuid": "34788d94-1147-4d38-8df7-6f47ef7efb12",
+              "slug": "tracky"
+            },
+            {
+              "uuid": "59ac8248-1d64-4df3-92f1-919b50e05602",
+              "slug": "bento"
+            },
+            {
+              "uuid": "742b500d-3e10-4daa-bb89-d0d26272e5f6",
+              "slug": "paste"
+            },
+            {
+              "uuid": "729ba7a8-35d5-44f3-abc0-1078ff6a3467",
+              "slug": "todoist"
+            },
+            {
+              "uuid": "ec0f5bca-8367-49e7-b8aa-73b3fa09a4a0",
+              "slug": "things"
+            },
+            {
+              "uuid": "13f27e7a-d84f-4ff9-a030-ae4e2c930757",
+              "slug": "superlist"
+            },
+            {
+              "uuid": "5bfe6c1d-1b15-4f8d-b0c9-677a33291c5d",
+              "slug": "mymind"
+            },
+            {
+              "uuid": "c57ba3f8-1d76-4660-8ba4-48ddce26e759",
+              "slug": "google-for-education"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "website-font-pairings",
+      "url": "https://styles.refero.design/design-styles/website-font-pairings",
+      "title": "Website font pairings from real designs",
+      "description": "Compare how twelve real websites divide work between display, body, and technical type. Open any style to see its captured typography, colors, preview, and DESIGN.md before choosing a direction for your own content.",
+      "sections": [
+        {
+          "heading": "Serif for the message, sans for the work",
+          "styles": [
+            {
+              "uuid": "3f2b79c1-d980-4380-a903-29856975fc37",
+              "slug": "midday"
+            },
+            {
+              "uuid": "c6ec55c7-0bd9-47c5-a4d2-669b7790c9cc",
+              "slug": "olipop"
+            },
+            {
+              "uuid": "ab650279-aa18-43e5-a998-34190d7bedc7",
+              "slug": "fable"
+            },
+            {
+              "uuid": "0e971626-ca51-45ba-acf6-35a53c561b2c",
+              "slug": "altitude"
+            }
+          ]
+        },
+        {
+          "heading": "Display sans with a quieter reading face",
+          "styles": [
+            {
+              "uuid": "fe8cdcf9-c850-4d52-be07-5ad269bf9ebf",
+              "slug": "caldera"
+            },
+            {
+              "uuid": "8b6b547f-a357-4f1b-9842-4579c62dd42b",
+              "slug": "slush"
+            },
+            {
+              "uuid": "1bcae895-2245-4d33-aa43-1c1e80719554",
+              "slug": "family"
+            },
+            {
+              "uuid": "ab1e41e9-7d21-4762-b498-51b8c63ae7ce",
+              "slug": "jitter"
+            }
+          ]
+        },
+        {
+          "heading": "Monospace for code and metadata",
+          "styles": [
+            {
+              "uuid": "4e3b4717-84c8-4599-baaf-a343c3d619b6",
+              "slug": "cursor"
+            },
+            {
+              "uuid": "3a398f82-579e-4ec4-a442-9962bf007edf",
+              "slug": "zkpass"
+            },
+            {
+              "uuid": "7f8c0c07-86e9-4b7c-a042-a7563b169143",
+              "slug": "index-2"
+            },
+            {
+              "uuid": "79714b4e-c89a-44b3-8da4-931daa9a466f",
+              "slug": "warp-2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "design-system-context-files",
+      "url": "https://styles.refero.design/ai-agents/design-system-context-files",
+      "title": "Design System Context Files for AI Agents",
+      "description": "Use design system context files for AI agents with DESIGN.md examples, tokens, component rules, and visual constraints for better frontend output.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "e5f5f8cf-e68d-4ed1-bbf5-6b67569af648",
+              "slug": "your-workplace-has-the-answer-just-ask-dala-for-it"
+            },
+            {
+              "uuid": "3172cd4d-118a-4a16-a259-6b634d32322e",
+              "slug": "mercury"
+            },
+            {
+              "uuid": "90ce5883-bb24-4466-93f7-801cd617b0d1",
+              "slug": "linear"
+            },
+            {
+              "uuid": "1f204e95-454a-437e-845b-c1b169d35607",
+              "slug": "oryzo-ai"
+            },
+            {
+              "uuid": "75fdb89f-ca64-41b3-af36-7a78bd09448e",
+              "slug": "steep"
+            },
+            {
+              "uuid": "c9cabb96-32fa-4896-837a-f2497ce1c856",
+              "slug": "apple-espa-a-3"
+            },
+            {
+              "uuid": "0fd67ec5-7e9c-4ca9-b368-5d9c7388477a",
+              "slug": "ui"
+            },
+            {
+              "uuid": "031056ff-7af1-46db-8daa-115f731c5d26",
+              "slug": "elevenlabs"
+            },
+            {
+              "uuid": "a73148b9-449b-42cd-9f38-86ef694f500e",
+              "slug": "apple"
+            },
+            {
+              "uuid": "3e52dd36-6ab1-48c6-bc40-47ef6d33abc2",
+              "slug": "monopo-saigon"
+            },
+            {
+              "uuid": "e80231a2-e4d6-406a-a2c9-2e6109679690",
+              "slug": "authkit"
+            },
+            {
+              "uuid": "21cfe0c1-778d-4613-9f47-a5718eb929b3",
+              "slug": "auros"
+            },
+            {
+              "uuid": "aecac5da-f397-4ddf-b71f-de1efc434cb8",
+              "slug": "apple-6"
+            },
+            {
+              "uuid": "2bf4c61f-de10-4614-ba1b-20c0453bd2a9",
+              "slug": "notion"
+            },
+            {
+              "uuid": "8512e28d-5385-4c20-a336-214568c4370c",
+              "slug": "awesomic"
+            },
+            {
+              "uuid": "ee403055-480e-4bd4-9216-07c9ae2dde2e",
+              "slug": "ai-for-business"
+            },
+            {
+              "uuid": "fc84e9f0-2058-4a0a-8d26-9cc1ba84ec9c",
+              "slug": "monad"
+            },
+            {
+              "uuid": "b0d80806-b724-4ed1-a1d1-074edd3c9bc9",
+              "slug": "dub"
+            },
+            {
+              "uuid": "c60f05ff-2420-4a24-92db-80c4b6a74683",
+              "slug": "origin-financial"
+            },
+            {
+              "uuid": "7088d695-362b-4e09-b325-fa8136d4f350",
+              "slug": "duolingo"
+            },
+            {
+              "uuid": "34baa524-5d5b-4165-bbab-d01f05e6d6b9",
+              "slug": "general-intelligence-company"
+            },
+            {
+              "uuid": "f99aca3e-5289-4595-a7cc-77a72052f4b8",
+              "slug": "ventriloc"
+            },
+            {
+              "uuid": "3b6a17f0-3bdf-418c-a95e-0b89e5a8b2f8",
+              "slug": "raycast"
+            },
+            {
+              "uuid": "8b6b547f-a357-4f1b-9842-4579c62dd42b",
+              "slug": "slush"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "tailwind-design-tokens",
+      "url": "https://styles.refero.design/ai-agents/tailwind-design-tokens",
+      "title": "Tailwind Design Tokens for AI Agents",
+      "description": "Use Tailwind design tokens for AI agents with real color palettes, type scales, spacing rules, radius systems, and component constraints.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "75fdb89f-ca64-41b3-af36-7a78bd09448e",
+              "slug": "steep"
+            },
+            {
+              "uuid": "8512e28d-5385-4c20-a336-214568c4370c",
+              "slug": "awesomic"
+            },
+            {
+              "uuid": "fc84e9f0-2058-4a0a-8d26-9cc1ba84ec9c",
+              "slug": "monad"
+            },
+            {
+              "uuid": "b0d80806-b724-4ed1-a1d1-074edd3c9bc9",
+              "slug": "dub"
+            },
+            {
+              "uuid": "f99aca3e-5289-4595-a7cc-77a72052f4b8",
+              "slug": "ventriloc"
+            },
+            {
+              "uuid": "418b374a-be64-44f0-b17e-1d45308c7e62",
+              "slug": "superhuman"
+            },
+            {
+              "uuid": "7967c6d9-e50c-42b5-b4d1-74003ba41781",
+              "slug": "seline-analytics"
+            },
+            {
+              "uuid": "d3289fe7-a85e-42d8-96b7-eb7faa62a104",
+              "slug": "air"
+            },
+            {
+              "uuid": "9946887b-ffa9-4276-af81-ae6352795afb",
+              "slug": "calendly-com"
+            },
+            {
+              "uuid": "0f7da1b2-9d06-4ef5-b5a8-ef7f92e57ab2",
+              "slug": "augen-pro"
+            },
+            {
+              "uuid": "e7876363-181a-44a9-9e5c-2255cf98aea5",
+              "slug": "visitors"
+            },
+            {
+              "uuid": "75c06591-34d2-493a-bd49-70551b5e4a53",
+              "slug": "perk"
+            },
+            {
+              "uuid": "77ee57e9-9f8e-4ec1-93f7-cc1c4b84307a",
+              "slug": "monday-com"
+            },
+            {
+              "uuid": "337ade6a-4bae-49ba-b4aa-8994ac805a81",
+              "slug": "relate"
+            },
+            {
+              "uuid": "8b91f4c9-74e5-4925-90a3-3dd31fd5725e",
+              "slug": "say-briefly"
+            },
+            {
+              "uuid": "12255b63-e506-4bc1-a4cd-d05487de32f3",
+              "slug": "intercom"
+            },
+            {
+              "uuid": "2eab438d-32cd-40c2-b160-1e4127dac569",
+              "slug": "gleap"
+            },
+            {
+              "uuid": "e9001d5a-504d-47ed-aef0-d0d35fa86418",
+              "slug": "ditto-2"
+            },
+            {
+              "uuid": "ced1c98f-d489-48f7-a01f-1fa59a07b706",
+              "slug": "officevibe"
+            },
+            {
+              "uuid": "db451eca-8de6-43a9-a5d5-35271befdffd",
+              "slug": "amplemarket"
+            },
+            {
+              "uuid": "6f9452a4-3b64-4c6f-a05e-528d7a586f24",
+              "slug": "dovetail-3"
+            },
+            {
+              "uuid": "371df039-a090-402b-b2e4-21ab38e07625",
+              "slug": "ameba"
+            },
+            {
+              "uuid": "108e2695-6970-47d5-b5b0-eea8fc34e048",
+              "slug": "dovetail-2"
+            },
+            {
+              "uuid": "b9aeb945-2f6e-4557-9115-e3ff3a8f8dc8",
+              "slug": "portal-2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "component-design-prompts",
+      "url": "https://styles.refero.design/ai-agents/component-design-prompts",
+      "title": "Component design prompts",
+      "description": "Study repeatable visual rules: typography, controls, surfaces, and spacing. The reference gives direction; your components still need real states and behavior.",
+      "sections": [
+        {
+          "heading": "Quiet foundations",
+          "styles": [
+            {
+              "uuid": "a6771960-b826-49bc-9ee7-7f7a5e29642b",
+              "slug": "planetscale"
+            },
+            {
+              "uuid": "60793669-28e2-41bd-bf9d-972151630f7c",
+              "slug": "figma-2"
+            },
+            {
+              "uuid": "04793c2a-ca1a-4edd-a661-56c965e42aec",
+              "slug": "grain"
+            },
+            {
+              "uuid": "c65db621-7faa-45f3-8e30-dc3ef9ffe660",
+              "slug": "subframe"
+            },
+            {
+              "uuid": "4caadb3c-3865-4a4d-9e1a-46478ac71078",
+              "slug": "sketch"
+            },
+            {
+              "uuid": "c5326639-873a-4257-ad1a-7da9111e9286",
+              "slug": "wise-design"
+            }
+          ]
+        },
+        {
+          "heading": "Dense interfaces",
+          "styles": [
+            {
+              "uuid": "0acef011-07da-4416-b874-ccdd675140f6",
+              "slug": "twingate"
+            },
+            {
+              "uuid": "65b8df27-36a3-47a6-be53-735d1f6a485d",
+              "slug": "rekki"
+            },
+            {
+              "uuid": "c08ebca5-87d4-4c19-a5d7-ae5e670dae11",
+              "slug": "atlassian"
+            },
+            {
+              "uuid": "408a149c-702f-4442-99df-bea49d9c0d9b",
+              "slug": "bun"
+            },
+            {
+              "uuid": "722f32e7-8217-4808-843d-b454eea7320a",
+              "slug": "dashlane"
+            },
+            {
+              "uuid": "57160546-4cf7-4d52-bb05-cd8b88e1fbf9",
+              "slug": "three"
+            }
+          ]
+        },
+        {
+          "heading": "Expressive systems",
+          "styles": [
+            {
+              "uuid": "a0244aab-0dba-45fe-a595-416c1f0715be",
+              "slug": "speakeasy"
+            },
+            {
+              "uuid": "a80cb179-2d90-4896-b52d-4e674b421498",
+              "slug": "glideapps"
+            },
+            {
+              "uuid": "e67ac20e-6497-4756-b7e2-17859a794fb6",
+              "slug": "silencio"
+            },
+            {
+              "uuid": "1329b661-39d8-4f0b-a12a-11ed13671ccb",
+              "slug": "buddy"
+            },
+            {
+              "uuid": "6d8dc9bb-78b7-4eaa-9b08-66b431760e9f",
+              "slug": "tilda"
+            },
+            {
+              "uuid": "342f1c3b-a123-49b6-a980-3491bc7793db",
+              "slug": "podia"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "form-design-prompts",
+      "url": "https://styles.refero.design/ai-agents/form-design-prompts",
+      "title": "Form design prompts",
+      "description": "Use these website styles for typography, surfaces, contrast, and tone in a form. They are visual references, not examples of validated form behavior.",
+      "sections": [
+        {
+          "heading": "A quiet field around the action",
+          "styles": [
+            {
+              "uuid": "742b500d-3e10-4daa-bb89-d0d26272e5f6",
+              "slug": "paste"
+            },
+            {
+              "uuid": "6b2a0513-df80-4140-87a8-38b1fef34313",
+              "slug": "asana"
+            },
+            {
+              "uuid": "376baf20-9ace-405d-bf4a-086016f2b1e3",
+              "slug": "user-interviews"
+            },
+            {
+              "uuid": "bb94375b-cf09-47d4-a2e3-7b332b2c9216",
+              "slug": "patreon"
+            },
+            {
+              "uuid": "1e7dae3b-cb34-4fcf-8c32-051152aebbab",
+              "slug": "foodnoms"
+            },
+            {
+              "uuid": "7ad5549e-9baa-4fda-ac43-79d568a86b98",
+              "slug": "scheduling"
+            }
+          ]
+        },
+        {
+          "heading": "Let the input lead",
+          "styles": [
+            {
+              "uuid": "e9fff87a-63ce-4c19-840f-98233db62f58",
+              "slug": "perplexity-ai-2"
+            },
+            {
+              "uuid": "8b91f4c9-74e5-4925-90a3-3dd31fd5725e",
+              "slug": "say-briefly"
+            },
+            {
+              "uuid": "deb6c017-d2d3-4945-aaee-fa3d9ea6de70",
+              "slug": "strut"
+            },
+            {
+              "uuid": "21b71be3-78a0-4681-a5b9-64cc4b40eb67",
+              "slug": "function"
+            },
+            {
+              "uuid": "e9f5e976-53f7-42f5-a882-4e63b3c2f734",
+              "slug": "ease-health"
+            },
+            {
+              "uuid": "a6d39bad-6e32-462e-afce-67c9cb76cf40",
+              "slug": "supahub"
+            }
+          ]
+        },
+        {
+          "heading": "Compact controls on dark surfaces",
+          "styles": [
+            {
+              "uuid": "eeeb6ac9-fc07-4965-935a-e1989ed831f1",
+              "slug": "default"
+            },
+            {
+              "uuid": "faec4b0c-cf93-4150-97de-0a8e7eed1840",
+              "slug": "discord"
+            },
+            {
+              "uuid": "afde66c4-ad74-4d19-94df-0216e945ac5e",
+              "slug": "audyr"
+            },
+            {
+              "uuid": "707a9081-3d1d-4a0b-b1aa-b58b3fab09af",
+              "slug": "sequence-2"
+            },
+            {
+              "uuid": "4433dfe7-315a-4459-bfd7-f59ccdc09bad",
+              "slug": "atoms-2"
+            },
+            {
+              "uuid": "d3289fe7-a85e-42d8-96b7-eb7faa62a104",
+              "slug": "air"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "pricing-page-design-prompts",
+      "url": "https://styles.refero.design/ai-agents/pricing-page-design-prompts",
+      "title": "Pricing page design prompts",
+      "description": "Visual directions for pricing pages, from restrained business software to more expressive brands. Use these website styles for typography and color, then bring your actual plans and terms.",
+      "sections": [
+        {
+          "heading": "Restrained and legible",
+          "styles": [
+            {
+              "uuid": "48e5de76-05d5-4c4e-a269-c7c245b291ec",
+              "slug": "stripe"
+            },
+            {
+              "uuid": "34d438ad-0647-471e-9a6f-7c1fa29d5df6",
+              "slug": "browserbase"
+            },
+            {
+              "uuid": "1ad4f49f-275a-4268-8ed1-677dc3c6e475",
+              "slug": "increase"
+            },
+            {
+              "uuid": "b58d92f6-68a8-4358-8fc9-6ea58e6d483b",
+              "slug": "brex"
+            },
+            {
+              "uuid": "a5c06875-c374-4af3-923b-6e66a5d58493",
+              "slug": "basis-theory"
+            },
+            {
+              "uuid": "859d51e6-fc3f-45e0-a4c4-fe280c400ca7",
+              "slug": "outseta"
+            }
+          ]
+        },
+        {
+          "heading": "More character, same clarity",
+          "styles": [
+            {
+              "uuid": "c8c22958-ec50-47f1-aedc-a131d7aeb442",
+              "slug": "dialog"
+            },
+            {
+              "uuid": "aecf9dda-5cba-4dc7-9e73-59b65d895cdf",
+              "slug": "teenage-engineering"
+            },
+            {
+              "uuid": "d67e1407-6d16-47e8-89cf-22f5c5f2dd88",
+              "slug": "gumroad"
+            },
+            {
+              "uuid": "4fa67bd1-f01d-454a-b522-4a0359ff9815",
+              "slug": "shop"
+            },
+            {
+              "uuid": "f2a84e0f-cf77-41fa-ade0-b062a3a42495",
+              "slug": "graza"
+            },
+            {
+              "uuid": "d91841cf-c717-43ef-97a2-400778fa6e1a",
+              "slug": "sweetgreen"
+            }
+          ]
+        },
+        {
+          "heading": "Technical products",
+          "styles": [
+            {
+              "uuid": "86541d12-7870-4d51-8c47-0880fdb1ea01",
+              "slug": "trigger-dev"
+            },
+            {
+              "uuid": "cc38369a-41e3-4bcd-b619-230ccffe7e8e",
+              "slug": "neon"
+            },
+            {
+              "uuid": "68c15685-5db9-4869-b71d-27240568c9d8",
+              "slug": "modal"
+            },
+            {
+              "uuid": "f71e92b0-d7a5-4203-b975-394f185218c2",
+              "slug": "convex"
+            },
+            {
+              "uuid": "1de273f2-166f-4526-8442-16cc39fc7fd5",
+              "slug": "better-stack"
+            },
+            {
+              "uuid": "485ae5fb-8f25-4aa3-a4e4-1deb1590d7d6",
+              "slug": "cord-com"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "brand-matching-prompts",
+      "url": "https://styles.refero.design/ai-agents/brand-matching-prompts",
+      "title": "Brand Matching Prompts for AI Agents",
+      "description": "Use brand matching prompts for AI agents with real DESIGN.md references, extracted palettes, typography, spacing, and component constraints.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "e5f5f8cf-e68d-4ed1-bbf5-6b67569af648",
+              "slug": "your-workplace-has-the-answer-just-ask-dala-for-it"
+            },
+            {
+              "uuid": "3172cd4d-118a-4a16-a259-6b634d32322e",
+              "slug": "mercury"
+            },
+            {
+              "uuid": "90ce5883-bb24-4466-93f7-801cd617b0d1",
+              "slug": "linear"
+            },
+            {
+              "uuid": "1f204e95-454a-437e-845b-c1b169d35607",
+              "slug": "oryzo-ai"
+            },
+            {
+              "uuid": "75fdb89f-ca64-41b3-af36-7a78bd09448e",
+              "slug": "steep"
+            },
+            {
+              "uuid": "c9cabb96-32fa-4896-837a-f2497ce1c856",
+              "slug": "apple-espa-a-3"
+            },
+            {
+              "uuid": "0fd67ec5-7e9c-4ca9-b368-5d9c7388477a",
+              "slug": "ui"
+            },
+            {
+              "uuid": "031056ff-7af1-46db-8daa-115f731c5d26",
+              "slug": "elevenlabs"
+            },
+            {
+              "uuid": "a73148b9-449b-42cd-9f38-86ef694f500e",
+              "slug": "apple"
+            },
+            {
+              "uuid": "3e52dd36-6ab1-48c6-bc40-47ef6d33abc2",
+              "slug": "monopo-saigon"
+            },
+            {
+              "uuid": "e80231a2-e4d6-406a-a2c9-2e6109679690",
+              "slug": "authkit"
+            },
+            {
+              "uuid": "21cfe0c1-778d-4613-9f47-a5718eb929b3",
+              "slug": "auros"
+            },
+            {
+              "uuid": "aecac5da-f397-4ddf-b71f-de1efc434cb8",
+              "slug": "apple-6"
+            },
+            {
+              "uuid": "2bf4c61f-de10-4614-ba1b-20c0453bd2a9",
+              "slug": "notion"
+            },
+            {
+              "uuid": "8512e28d-5385-4c20-a336-214568c4370c",
+              "slug": "awesomic"
+            },
+            {
+              "uuid": "ee403055-480e-4bd4-9216-07c9ae2dde2e",
+              "slug": "ai-for-business"
+            },
+            {
+              "uuid": "fc84e9f0-2058-4a0a-8d26-9cc1ba84ec9c",
+              "slug": "monad"
+            },
+            {
+              "uuid": "b0d80806-b724-4ed1-a1d1-074edd3c9bc9",
+              "slug": "dub"
+            },
+            {
+              "uuid": "c60f05ff-2420-4a24-92db-80c4b6a74683",
+              "slug": "origin-financial"
+            },
+            {
+              "uuid": "7088d695-362b-4e09-b325-fa8136d4f350",
+              "slug": "duolingo"
+            },
+            {
+              "uuid": "34baa524-5d5b-4165-bbab-d01f05e6d6b9",
+              "slug": "general-intelligence-company"
+            },
+            {
+              "uuid": "f99aca3e-5289-4595-a7cc-77a72052f4b8",
+              "slug": "ventriloc"
+            },
+            {
+              "uuid": "3b6a17f0-3bdf-418c-a95e-0b89e5a8b2f8",
+              "slug": "raycast"
+            },
+            {
+              "uuid": "8b6b547f-a357-4f1b-9842-4579c62dd42b",
+              "slug": "slush"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "agentic-ui-quality-checklist",
+      "url": "https://styles.refero.design/ai-agents/agentic-ui-quality-checklist",
+      "title": "AI Generated UI Quality Checklist",
+      "description": "Use an AI generated UI quality checklist for typography, spacing, contrast, components, responsiveness, content fit, and agent design reviews.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "e5f5f8cf-e68d-4ed1-bbf5-6b67569af648",
+              "slug": "your-workplace-has-the-answer-just-ask-dala-for-it"
+            },
+            {
+              "uuid": "3172cd4d-118a-4a16-a259-6b634d32322e",
+              "slug": "mercury"
+            },
+            {
+              "uuid": "90ce5883-bb24-4466-93f7-801cd617b0d1",
+              "slug": "linear"
+            },
+            {
+              "uuid": "1f204e95-454a-437e-845b-c1b169d35607",
+              "slug": "oryzo-ai"
+            },
+            {
+              "uuid": "75fdb89f-ca64-41b3-af36-7a78bd09448e",
+              "slug": "steep"
+            },
+            {
+              "uuid": "c9cabb96-32fa-4896-837a-f2497ce1c856",
+              "slug": "apple-espa-a-3"
+            },
+            {
+              "uuid": "0fd67ec5-7e9c-4ca9-b368-5d9c7388477a",
+              "slug": "ui"
+            },
+            {
+              "uuid": "031056ff-7af1-46db-8daa-115f731c5d26",
+              "slug": "elevenlabs"
+            },
+            {
+              "uuid": "a73148b9-449b-42cd-9f38-86ef694f500e",
+              "slug": "apple"
+            },
+            {
+              "uuid": "3e52dd36-6ab1-48c6-bc40-47ef6d33abc2",
+              "slug": "monopo-saigon"
+            },
+            {
+              "uuid": "e80231a2-e4d6-406a-a2c9-2e6109679690",
+              "slug": "authkit"
+            },
+            {
+              "uuid": "21cfe0c1-778d-4613-9f47-a5718eb929b3",
+              "slug": "auros"
+            },
+            {
+              "uuid": "aecac5da-f397-4ddf-b71f-de1efc434cb8",
+              "slug": "apple-6"
+            },
+            {
+              "uuid": "2bf4c61f-de10-4614-ba1b-20c0453bd2a9",
+              "slug": "notion"
+            },
+            {
+              "uuid": "8512e28d-5385-4c20-a336-214568c4370c",
+              "slug": "awesomic"
+            },
+            {
+              "uuid": "ee403055-480e-4bd4-9216-07c9ae2dde2e",
+              "slug": "ai-for-business"
+            },
+            {
+              "uuid": "fc84e9f0-2058-4a0a-8d26-9cc1ba84ec9c",
+              "slug": "monad"
+            },
+            {
+              "uuid": "b0d80806-b724-4ed1-a1d1-074edd3c9bc9",
+              "slug": "dub"
+            },
+            {
+              "uuid": "c60f05ff-2420-4a24-92db-80c4b6a74683",
+              "slug": "origin-financial"
+            },
+            {
+              "uuid": "7088d695-362b-4e09-b325-fa8136d4f350",
+              "slug": "duolingo"
+            },
+            {
+              "uuid": "34baa524-5d5b-4165-bbab-d01f05e6d6b9",
+              "slug": "general-intelligence-company"
+            },
+            {
+              "uuid": "f99aca3e-5289-4595-a7cc-77a72052f4b8",
+              "slug": "ventriloc"
+            },
+            {
+              "uuid": "3b6a17f0-3bdf-418c-a95e-0b89e5a8b2f8",
+              "slug": "raycast"
+            },
+            {
+              "uuid": "8b6b547f-a357-4f1b-9842-4579c62dd42b",
+              "slug": "slush"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "css-variables-design-tokens",
+      "url": "https://styles.refero.design/ai-agents/css-variables-design-tokens",
+      "title": "CSS Variables for AI Website Design",
+      "description": "Use CSS variables for AI website design with real references for color roles, typography, spacing, radius, shadows, and reusable UI tokens.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "e5f5f8cf-e68d-4ed1-bbf5-6b67569af648",
+              "slug": "your-workplace-has-the-answer-just-ask-dala-for-it"
+            },
+            {
+              "uuid": "3172cd4d-118a-4a16-a259-6b634d32322e",
+              "slug": "mercury"
+            },
+            {
+              "uuid": "90ce5883-bb24-4466-93f7-801cd617b0d1",
+              "slug": "linear"
+            },
+            {
+              "uuid": "1f204e95-454a-437e-845b-c1b169d35607",
+              "slug": "oryzo-ai"
+            },
+            {
+              "uuid": "75fdb89f-ca64-41b3-af36-7a78bd09448e",
+              "slug": "steep"
+            },
+            {
+              "uuid": "c9cabb96-32fa-4896-837a-f2497ce1c856",
+              "slug": "apple-espa-a-3"
+            },
+            {
+              "uuid": "0fd67ec5-7e9c-4ca9-b368-5d9c7388477a",
+              "slug": "ui"
+            },
+            {
+              "uuid": "031056ff-7af1-46db-8daa-115f731c5d26",
+              "slug": "elevenlabs"
+            },
+            {
+              "uuid": "a73148b9-449b-42cd-9f38-86ef694f500e",
+              "slug": "apple"
+            },
+            {
+              "uuid": "3e52dd36-6ab1-48c6-bc40-47ef6d33abc2",
+              "slug": "monopo-saigon"
+            },
+            {
+              "uuid": "e80231a2-e4d6-406a-a2c9-2e6109679690",
+              "slug": "authkit"
+            },
+            {
+              "uuid": "21cfe0c1-778d-4613-9f47-a5718eb929b3",
+              "slug": "auros"
+            },
+            {
+              "uuid": "aecac5da-f397-4ddf-b71f-de1efc434cb8",
+              "slug": "apple-6"
+            },
+            {
+              "uuid": "2bf4c61f-de10-4614-ba1b-20c0453bd2a9",
+              "slug": "notion"
+            },
+            {
+              "uuid": "8512e28d-5385-4c20-a336-214568c4370c",
+              "slug": "awesomic"
+            },
+            {
+              "uuid": "ee403055-480e-4bd4-9216-07c9ae2dde2e",
+              "slug": "ai-for-business"
+            },
+            {
+              "uuid": "fc84e9f0-2058-4a0a-8d26-9cc1ba84ec9c",
+              "slug": "monad"
+            },
+            {
+              "uuid": "b0d80806-b724-4ed1-a1d1-074edd3c9bc9",
+              "slug": "dub"
+            },
+            {
+              "uuid": "c60f05ff-2420-4a24-92db-80c4b6a74683",
+              "slug": "origin-financial"
+            },
+            {
+              "uuid": "7088d695-362b-4e09-b325-fa8136d4f350",
+              "slug": "duolingo"
+            },
+            {
+              "uuid": "34baa524-5d5b-4165-bbab-d01f05e6d6b9",
+              "slug": "general-intelligence-company"
+            },
+            {
+              "uuid": "f99aca3e-5289-4595-a7cc-77a72052f4b8",
+              "slug": "ventriloc"
+            },
+            {
+              "uuid": "3b6a17f0-3bdf-418c-a95e-0b89e5a8b2f8",
+              "slug": "raycast"
+            },
+            {
+              "uuid": "8b6b547f-a357-4f1b-9842-4579c62dd42b",
+              "slug": "slush"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "settings-page-design-prompts",
+      "url": "https://styles.refero.design/ai-agents/settings-page-design-prompts",
+      "title": "Settings design prompts",
+      "description": "Choose typography and surface treatment for a settings area from these website styles. Define permissions and control behavior from your own product rules.",
+      "sections": [
+        {
+          "heading": "Cool canvas, clear cards",
+          "styles": [
+            {
+              "uuid": "528eb1d4-8508-4dc6-87b4-c7b92d648dac",
+              "slug": "quizlet"
+            },
+            {
+              "uuid": "c556ab50-a242-4854-9395-450c0004bac5",
+              "slug": "replit"
+            },
+            {
+              "uuid": "e8589e7c-5ba9-4923-aa7f-0f1bf0d679be",
+              "slug": "campsite-2"
+            },
+            {
+              "uuid": "e7f92774-3c08-402b-917d-020ba1f3d489",
+              "slug": "reflect-notes"
+            },
+            {
+              "uuid": "b5ca4e9a-2322-4796-b4c5-3b3bf194821f",
+              "slug": "clay"
+            },
+            {
+              "uuid": "729ba7a8-35d5-44f3-abc0-1078ff6a3467",
+              "slug": "todoist"
+            }
+          ]
+        },
+        {
+          "heading": "Layers inside a dark workspace",
+          "styles": [
+            {
+              "uuid": "4e1ac04c-02ae-41cf-b588-3f6226a882f8",
+              "slug": "flutterflow"
+            },
+            {
+              "uuid": "a5cc9b0f-d274-458a-b990-d18482b70838",
+              "slug": "changelog"
+            },
+            {
+              "uuid": "b458ca1a-70f0-4f85-b745-f879a4d08457",
+              "slug": "dia-browser"
+            },
+            {
+              "uuid": "b0d80806-b724-4ed1-a1d1-074edd3c9bc9",
+              "slug": "dub"
+            },
+            {
+              "uuid": "371df039-a090-402b-b2e4-21ab38e07625",
+              "slug": "ameba"
+            },
+            {
+              "uuid": "78558b01-c101-4b8e-8401-db91269b1150",
+              "slug": "checkly"
+            }
+          ]
+        },
+        {
+          "heading": "A friendlier account area",
+          "styles": [
+            {
+              "uuid": "bc2c6ecc-7a0d-4693-86e5-9fa93b165601",
+              "slug": "loom"
+            },
+            {
+              "uuid": "45080e55-1fbe-4726-be23-4c9f54e442aa",
+              "slug": "feedhive"
+            },
+            {
+              "uuid": "5b90e218-b325-4901-a1c5-ea1134339826",
+              "slug": "spatialchat"
+            },
+            {
+              "uuid": "81bd6ad6-b02b-4fb3-a600-91ecf8324171",
+              "slug": "august-health-ehr"
+            },
+            {
+              "uuid": "be2af3f3-3886-4d70-973f-f7b5ab8d1a99",
+              "slug": "grammarly"
+            },
+            {
+              "uuid": "2cfd1a08-e5b1-4bd8-9270-29aa08f80aa0",
+              "slug": "huddle"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "onboarding-design-prompts",
+      "url": "https://styles.refero.design/ai-agents/onboarding-design-prompts",
+      "title": "Onboarding design prompts",
+      "description": "Use these captured website styles to choose the tone of a first-run experience: calm, guided, or playful. The onboarding steps must come from your product.",
+      "sections": [
+        {
+          "heading": "A warm first step",
+          "styles": [
+            {
+              "uuid": "1eee9aa2-1e23-4675-9f6e-fb98c93969bd",
+              "slug": "getharvest"
+            },
+            {
+              "uuid": "9946887b-ffa9-4276-af81-ae6352795afb",
+              "slug": "calendly-com"
+            },
+            {
+              "uuid": "5d7aa503-8cfa-49a4-bd3b-0c2f0f075c70",
+              "slug": "cal-com"
+            },
+            {
+              "uuid": "b9aeb945-2f6e-4557-9115-e3ff3a8f8dc8",
+              "slug": "portal-2"
+            },
+            {
+              "uuid": "fc84e9f0-2058-4a0a-8d26-9cc1ba84ec9c",
+              "slug": "monad"
+            },
+            {
+              "uuid": "e9001d5a-504d-47ed-aef0-d0d35fa86418",
+              "slug": "ditto-2"
+            }
+          ]
+        },
+        {
+          "heading": "Show the product early",
+          "styles": [
+            {
+              "uuid": "fbcf9cbb-7c6b-449d-862a-bce521a8ab1d",
+              "slug": "dimension"
+            },
+            {
+              "uuid": "fb812ddb-d7c0-4540-82d7-1562dff16f09",
+              "slug": "textla"
+            },
+            {
+              "uuid": "2eab438d-32cd-40c2-b160-1e4127dac569",
+              "slug": "gleap"
+            },
+            {
+              "uuid": "337ade6a-4bae-49ba-b4aa-8994ac805a81",
+              "slug": "relate"
+            },
+            {
+              "uuid": "ced1c98f-d489-48f7-a01f-1fa59a07b706",
+              "slug": "officevibe"
+            },
+            {
+              "uuid": "6221ba67-26e7-4657-91b7-efd77cbb1f12",
+              "slug": "clearbit"
+            }
+          ]
+        },
+        {
+          "heading": "A memorable welcome",
+          "styles": [
+            {
+              "uuid": "7088d695-362b-4e09-b325-fa8136d4f350",
+              "slug": "duolingo"
+            },
+            {
+              "uuid": "f93ac72e-73b2-4b2c-80eb-351ddfa56f4d",
+              "slug": "playful"
+            },
+            {
+              "uuid": "d417b42f-824d-45ba-a02e-cbef3b8ea0d8",
+              "slug": "framer"
+            },
+            {
+              "uuid": "fdcd4cbb-4db6-4138-9cfd-964795f1e1d6",
+              "slug": "lightship"
+            },
+            {
+              "uuid": "035a098b-5a27-48a3-8a3a-c68a698e3eab",
+              "slug": "headspace"
+            },
+            {
+              "uuid": "8512e28d-5385-4c20-a336-214568c4370c",
+              "slug": "awesomic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "devtools-design-prompts",
+      "url": "https://styles.refero.design/ai-agents/devtools-design-prompts",
+      "title": "Developer tool design prompts",
+      "description": "Explore how developer products make technical depth approachable, from quiet documentation to bold infrastructure brands.",
+      "sections": [
+        {
+          "heading": "Documentation as the front door",
+          "styles": [
+            {
+              "uuid": "2bd7363d-7aae-4b1f-9d5a-1edeb17ca567",
+              "slug": "motherduck"
+            },
+            {
+              "uuid": "80d7ef36-ed7e-48bb-b558-f772eb40106f",
+              "slug": "mintlify"
+            },
+            {
+              "uuid": "18a75348-513a-49d8-94f5-e2df8c118b6b",
+              "slug": "launchdarkly"
+            },
+            {
+              "uuid": "0d914ef0-fa84-4c60-a9aa-cef0b5eb6e5d",
+              "slug": "resend"
+            },
+            {
+              "uuid": "f4636c5b-1342-48b2-b9b1-a82e2182440e",
+              "slug": "depot"
+            },
+            {
+              "uuid": "ed10ae04-24ec-4e42-9bf2-ea12a4b58d67",
+              "slug": "clerk"
+            }
+          ]
+        },
+        {
+          "heading": "Dark infrastructure",
+          "styles": [
+            {
+              "uuid": "b721fa94-72e6-49ad-a9bc-bab3d075f19c",
+              "slug": "oxide-computer-company"
+            },
+            {
+              "uuid": "5a7ec81f-03b6-4d21-a706-0d1d323d8899",
+              "slug": "turso"
+            },
+            {
+              "uuid": "6f3652cf-583f-411d-a117-3a03f6342917",
+              "slug": "harness-io"
+            },
+            {
+              "uuid": "bd96c1a6-32ba-42e0-bd5c-23c70a23142c",
+              "slug": "clickhouse"
+            },
+            {
+              "uuid": "632249f1-fd78-4c77-9b34-7bae37ff3e9b",
+              "slug": "supabase"
+            },
+            {
+              "uuid": "10654184-eb92-4b75-a7af-bd92bc6cdc5c",
+              "slug": "doppler"
+            }
+          ]
+        },
+        {
+          "heading": "A more expressive tool",
+          "styles": [
+            {
+              "uuid": "c3ceca5c-d329-4559-b947-016172941ba2",
+              "slug": "github"
+            },
+            {
+              "uuid": "c14bfde7-6f08-4b54-bd9b-39989d10cfef",
+              "slug": "render"
+            },
+            {
+              "uuid": "8601c8ef-e1ea-4186-adb2-6f9a74caf436",
+              "slug": "n8n"
+            },
+            {
+              "uuid": "b054773d-2d14-4a35-b366-81b4ac00f171",
+              "slug": "expo"
+            },
+            {
+              "uuid": "fb459c9d-c089-4d0b-b5b0-d147b1c4ebd7",
+              "slug": "moving-parts"
+            },
+            {
+              "uuid": "b5fdba21-fd4d-427e-b551-1e22c51e42db",
+              "slug": "revenuecat"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "pricing-page-design",
+      "url": "https://styles.refero.design/examples/pricing-page-design",
+      "title": "Pricing Page Design Examples",
+      "description": "Browse pricing page design examples with references for SaaS plan cards, comparison tables, billing toggles, trust copy, CTAs, and AI prompts.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "75fdb89f-ca64-41b3-af36-7a78bd09448e",
+              "slug": "steep"
+            },
+            {
+              "uuid": "8512e28d-5385-4c20-a336-214568c4370c",
+              "slug": "awesomic"
+            },
+            {
+              "uuid": "fc84e9f0-2058-4a0a-8d26-9cc1ba84ec9c",
+              "slug": "monad"
+            },
+            {
+              "uuid": "b0d80806-b724-4ed1-a1d1-074edd3c9bc9",
+              "slug": "dub"
+            },
+            {
+              "uuid": "f99aca3e-5289-4595-a7cc-77a72052f4b8",
+              "slug": "ventriloc"
+            },
+            {
+              "uuid": "418b374a-be64-44f0-b17e-1d45308c7e62",
+              "slug": "superhuman"
+            },
+            {
+              "uuid": "7967c6d9-e50c-42b5-b4d1-74003ba41781",
+              "slug": "seline-analytics"
+            },
+            {
+              "uuid": "d3289fe7-a85e-42d8-96b7-eb7faa62a104",
+              "slug": "air"
+            },
+            {
+              "uuid": "9946887b-ffa9-4276-af81-ae6352795afb",
+              "slug": "calendly-com"
+            },
+            {
+              "uuid": "0f7da1b2-9d06-4ef5-b5a8-ef7f92e57ab2",
+              "slug": "augen-pro"
+            },
+            {
+              "uuid": "e7876363-181a-44a9-9e5c-2255cf98aea5",
+              "slug": "visitors"
+            },
+            {
+              "uuid": "75c06591-34d2-493a-bd49-70551b5e4a53",
+              "slug": "perk"
+            },
+            {
+              "uuid": "77ee57e9-9f8e-4ec1-93f7-cc1c4b84307a",
+              "slug": "monday-com"
+            },
+            {
+              "uuid": "337ade6a-4bae-49ba-b4aa-8994ac805a81",
+              "slug": "relate"
+            },
+            {
+              "uuid": "8b91f4c9-74e5-4925-90a3-3dd31fd5725e",
+              "slug": "say-briefly"
+            },
+            {
+              "uuid": "12255b63-e506-4bc1-a4cd-d05487de32f3",
+              "slug": "intercom"
+            },
+            {
+              "uuid": "2eab438d-32cd-40c2-b160-1e4127dac569",
+              "slug": "gleap"
+            },
+            {
+              "uuid": "e9001d5a-504d-47ed-aef0-d0d35fa86418",
+              "slug": "ditto-2"
+            },
+            {
+              "uuid": "ced1c98f-d489-48f7-a01f-1fa59a07b706",
+              "slug": "officevibe"
+            },
+            {
+              "uuid": "db451eca-8de6-43a9-a5d5-35271befdffd",
+              "slug": "amplemarket"
+            },
+            {
+              "uuid": "6f9452a4-3b64-4c6f-a05e-528d7a586f24",
+              "slug": "dovetail-3"
+            },
+            {
+              "uuid": "371df039-a090-402b-b2e4-21ab38e07625",
+              "slug": "ameba"
+            },
+            {
+              "uuid": "108e2695-6970-47d5-b5b0-eea8fc34e048",
+              "slug": "dovetail-2"
+            },
+            {
+              "uuid": "b9aeb945-2f6e-4557-9115-e3ff3a8f8dc8",
+              "slug": "portal-2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "dashboard-ui-design",
+      "url": "https://styles.refero.design/examples/dashboard-ui-design",
+      "title": "Dashboard UI Design Examples",
+      "description": "Explore 12 real website styles from analytics, workspaces, and operational tools to choose visual direction for a dashboard.",
+      "sections": [
+        {
+          "heading": "Start with a calm analytical hierarchy",
+          "styles": [
+            {
+              "uuid": "75fdb89f-ca64-41b3-af36-7a78bd09448e",
+              "slug": "steep"
+            },
+            {
+              "uuid": "7967c6d9-e50c-42b5-b4d1-74003ba41781",
+              "slug": "seline-analytics"
+            },
+            {
+              "uuid": "e7876363-181a-44a9-9e5c-2255cf98aea5",
+              "slug": "visitors"
+            },
+            {
+              "uuid": "e4b9d41a-8165-47dd-818a-5f6810046ea9",
+              "slug": "pirsch-analytics"
+            }
+          ]
+        },
+        {
+          "heading": "Let dense work stay scannable",
+          "styles": [
+            {
+              "uuid": "90ce5883-bb24-4466-93f7-801cd617b0d1",
+              "slug": "linear"
+            },
+            {
+              "uuid": "08c8700c-f278-42bc-812e-f60dc6ce996e",
+              "slug": "attio"
+            },
+            {
+              "uuid": "efcb73cb-b84a-4ae7-9a2b-e1116f79f130",
+              "slug": "clickup"
+            },
+            {
+              "uuid": "2bf4c61f-de10-4614-ba1b-20c0453bd2a9",
+              "slug": "notion"
+            }
+          ]
+        },
+        {
+          "heading": "Reserve contrast for signals that need action",
+          "styles": [
+            {
+              "uuid": "b38702a0-75ab-474c-9106-00b624535825",
+              "slug": "ramp"
+            },
+            {
+              "uuid": "3172cd4d-118a-4a16-a259-6b634d32322e",
+              "slug": "mercury"
+            },
+            {
+              "uuid": "18a75348-513a-49d8-94f5-e2df8c118b6b",
+              "slug": "launchdarkly"
+            },
+            {
+              "uuid": "6f9452a4-3b64-4c6f-a05e-528d7a586f24",
+              "slug": "dovetail-3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "saas-app-design-prompts",
+      "url": "https://styles.refero.design/ai-agents/saas-app-design-prompts",
+      "title": "SaaS app design prompts",
+      "description": "Compare visual systems for work software: dense, content-led, or warm and approachable. Choose for the kind of work your users repeat every day.",
+      "sections": [
+        {
+          "heading": "Focused workspaces",
+          "styles": [
+            {
+              "uuid": "e793a53c-537e-46b0-881d-b15b63b9ff26",
+              "slug": "obsidian"
+            },
+            {
+              "uuid": "04109c48-f591-4110-9739-622243d4ecc2",
+              "slug": "letters"
+            },
+            {
+              "uuid": "59ac8248-1d64-4df3-92f1-919b50e05602",
+              "slug": "bento"
+            },
+            {
+              "uuid": "e1c7cab3-dae7-47c3-bb2c-c8f616a8124f",
+              "slug": "wrike"
+            },
+            {
+              "uuid": "cb6e4ab0-b8fe-45b0-bd22-6339b073e26d",
+              "slug": "tatem"
+            },
+            {
+              "uuid": "13f27e7a-d84f-4ff9-a030-ae4e2c930757",
+              "slug": "superlist"
+            }
+          ]
+        },
+        {
+          "heading": "Content-led products",
+          "styles": [
+            {
+              "uuid": "efcb73cb-b84a-4ae7-9a2b-e1116f79f130",
+              "slug": "clickup"
+            },
+            {
+              "uuid": "2b939c70-c08e-4bb6-8fac-ade99b0d1cf0",
+              "slug": "lazy"
+            },
+            {
+              "uuid": "607c2098-bbbb-40bb-b23e-adf2b72c63dd",
+              "slug": "slite"
+            },
+            {
+              "uuid": "e26cb9b0-f876-41ff-9f24-fd67a6b9776c",
+              "slug": "slack"
+            },
+            {
+              "uuid": "1a03b8d7-9204-4c16-ad3c-16306f99fba9",
+              "slug": "mesh"
+            },
+            {
+              "uuid": "cbb335e5-c8df-49be-a0fc-0ec5dfa0d61f",
+              "slug": "lattice"
+            }
+          ]
+        },
+        {
+          "heading": "Friendly operations",
+          "styles": [
+            {
+              "uuid": "c955d25a-b32a-441d-9f07-a260d1df897b",
+              "slug": "boords-com"
+            },
+            {
+              "uuid": "cc43cfe3-195b-4081-b586-c42db054a466",
+              "slug": "micro"
+            },
+            {
+              "uuid": "da332394-784c-4df2-9e66-c3f7b1d28f28",
+              "slug": "pitch"
+            },
+            {
+              "uuid": "d7fb1721-1878-4cbb-a24b-051800557c75",
+              "slug": "dock"
+            },
+            {
+              "uuid": "0ab4c544-6147-4998-8365-3a0f6191e54f",
+              "slug": "workable"
+            },
+            {
+              "uuid": "fbc60c55-da20-4684-a279-0ed86590272e",
+              "slug": "contractbook"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "api-documentation-websites",
+      "url": "https://styles.refero.design/examples/api-documentation-websites",
+      "title": "API Documentation Website Examples",
+      "description": "Browse API documentation website examples with references for code blocks, navigation, docs IA, developer onboarding, dark mode, and technical UI.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "90ce5883-bb24-4466-93f7-801cd617b0d1",
+              "slug": "linear"
+            },
+            {
+              "uuid": "0fd67ec5-7e9c-4ca9-b368-5d9c7388477a",
+              "slug": "ui"
+            },
+            {
+              "uuid": "e80231a2-e4d6-406a-a2c9-2e6109679690",
+              "slug": "authkit"
+            },
+            {
+              "uuid": "0d914ef0-fa84-4c60-a9aa-cef0b5eb6e5d",
+              "slug": "resend"
+            },
+            {
+              "uuid": "4e3b4717-84c8-4599-baaf-a343c3d619b6",
+              "slug": "cursor"
+            },
+            {
+              "uuid": "f24daf3a-d43f-4dec-85a9-8ac1d5148a03",
+              "slug": "vercel"
+            },
+            {
+              "uuid": "00537a20-e99e-4ef2-b119-c6f532c44cc9",
+              "slug": "gsap"
+            },
+            {
+              "uuid": "e1f18a7e-5af1-46b3-8f89-bce6c78b80d4",
+              "slug": "dope-security"
+            },
+            {
+              "uuid": "68c15685-5db9-4869-b71d-27240568c9d8",
+              "slug": "modal"
+            },
+            {
+              "uuid": "80d7ef36-ed7e-48bb-b558-f772eb40106f",
+              "slug": "mintlify"
+            },
+            {
+              "uuid": "18a75348-513a-49d8-94f5-e2df8c118b6b",
+              "slug": "launchdarkly"
+            },
+            {
+              "uuid": "632249f1-fd78-4c77-9b34-7bae37ff3e9b",
+              "slug": "supabase"
+            },
+            {
+              "uuid": "d271a6c4-942f-4abf-a3de-66795f15f031",
+              "slug": "sauce-labs"
+            },
+            {
+              "uuid": "8601c8ef-e1ea-4186-adb2-6f9a74caf436",
+              "slug": "n8n"
+            },
+            {
+              "uuid": "56cd3725-3ff0-459e-894d-5da58d1fc549",
+              "slug": "posthog"
+            },
+            {
+              "uuid": "6f3652cf-583f-411d-a117-3a03f6342917",
+              "slug": "harness-io"
+            },
+            {
+              "uuid": "cc38369a-41e3-4bcd-b619-230ccffe7e8e",
+              "slug": "neon"
+            },
+            {
+              "uuid": "c3ceca5c-d329-4559-b947-016172941ba2",
+              "slug": "github"
+            },
+            {
+              "uuid": "d4c51049-58eb-404a-9fcb-f195928b1c99",
+              "slug": "warp"
+            },
+            {
+              "uuid": "c809190a-035c-458d-87ed-4758807dd84e",
+              "slug": "axiom"
+            },
+            {
+              "uuid": "10654184-eb92-4b75-a7af-bd92bc6cdc5c",
+              "slug": "doppler"
+            },
+            {
+              "uuid": "c14bfde7-6f08-4b54-bd9b-39989d10cfef",
+              "slug": "render"
+            },
+            {
+              "uuid": "1c1d3939-8d82-4907-aa3c-c9b2fcfbab4f",
+              "slug": "grafbase"
+            },
+            {
+              "uuid": "fb459c9d-c089-4d0b-b5b0-d147b1c4ebd7",
+              "slug": "moving-parts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "product-screenshot-heroes",
+      "url": "https://styles.refero.design/examples/product-screenshot-heroes",
+      "title": "Product Screenshot Hero Examples",
+      "description": "Browse product screenshot hero examples with references for app windows, dashboard previews, shadows, background treatment, CTAs, and AI prompts.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "75fdb89f-ca64-41b3-af36-7a78bd09448e",
+              "slug": "steep"
+            },
+            {
+              "uuid": "8512e28d-5385-4c20-a336-214568c4370c",
+              "slug": "awesomic"
+            },
+            {
+              "uuid": "fc84e9f0-2058-4a0a-8d26-9cc1ba84ec9c",
+              "slug": "monad"
+            },
+            {
+              "uuid": "b0d80806-b724-4ed1-a1d1-074edd3c9bc9",
+              "slug": "dub"
+            },
+            {
+              "uuid": "f99aca3e-5289-4595-a7cc-77a72052f4b8",
+              "slug": "ventriloc"
+            },
+            {
+              "uuid": "418b374a-be64-44f0-b17e-1d45308c7e62",
+              "slug": "superhuman"
+            },
+            {
+              "uuid": "7967c6d9-e50c-42b5-b4d1-74003ba41781",
+              "slug": "seline-analytics"
+            },
+            {
+              "uuid": "d3289fe7-a85e-42d8-96b7-eb7faa62a104",
+              "slug": "air"
+            },
+            {
+              "uuid": "9946887b-ffa9-4276-af81-ae6352795afb",
+              "slug": "calendly-com"
+            },
+            {
+              "uuid": "0f7da1b2-9d06-4ef5-b5a8-ef7f92e57ab2",
+              "slug": "augen-pro"
+            },
+            {
+              "uuid": "e7876363-181a-44a9-9e5c-2255cf98aea5",
+              "slug": "visitors"
+            },
+            {
+              "uuid": "75c06591-34d2-493a-bd49-70551b5e4a53",
+              "slug": "perk"
+            },
+            {
+              "uuid": "77ee57e9-9f8e-4ec1-93f7-cc1c4b84307a",
+              "slug": "monday-com"
+            },
+            {
+              "uuid": "337ade6a-4bae-49ba-b4aa-8994ac805a81",
+              "slug": "relate"
+            },
+            {
+              "uuid": "8b91f4c9-74e5-4925-90a3-3dd31fd5725e",
+              "slug": "say-briefly"
+            },
+            {
+              "uuid": "12255b63-e506-4bc1-a4cd-d05487de32f3",
+              "slug": "intercom"
+            },
+            {
+              "uuid": "2eab438d-32cd-40c2-b160-1e4127dac569",
+              "slug": "gleap"
+            },
+            {
+              "uuid": "e9001d5a-504d-47ed-aef0-d0d35fa86418",
+              "slug": "ditto-2"
+            },
+            {
+              "uuid": "ced1c98f-d489-48f7-a01f-1fa59a07b706",
+              "slug": "officevibe"
+            },
+            {
+              "uuid": "db451eca-8de6-43a9-a5d5-35271befdffd",
+              "slug": "amplemarket"
+            },
+            {
+              "uuid": "6f9452a4-3b64-4c6f-a05e-528d7a586f24",
+              "slug": "dovetail-3"
+            },
+            {
+              "uuid": "371df039-a090-402b-b2e4-21ab38e07625",
+              "slug": "ameba"
+            },
+            {
+              "uuid": "108e2695-6970-47d5-b5b0-eea8fc34e048",
+              "slug": "dovetail-2"
+            },
+            {
+              "uuid": "b9aeb945-2f6e-4557-9115-e3ff3a8f8dc8",
+              "slug": "portal-2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "design-md-resources",
+      "url": "https://styles.refero.design/design-md/design-md-resources",
+      "title": "DESIGN.md Resources for AI Agents",
+      "description": "Browse DESIGN.md resources for AI agents, including Google Stitch context, examples, templates, AI-readable design systems, and agent workflows.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "e80231a2-e4d6-406a-a2c9-2e6109679690",
+              "slug": "authkit"
+            },
+            {
+              "uuid": "7967c6d9-e50c-42b5-b4d1-74003ba41781",
+              "slug": "seline-analytics"
+            },
+            {
+              "uuid": "1f204e95-454a-437e-845b-c1b169d35607",
+              "slug": "oryzo-ai"
+            },
+            {
+              "uuid": "efcb73cb-b84a-4ae7-9a2b-e1116f79f130",
+              "slug": "clickup"
+            },
+            {
+              "uuid": "80d7ef36-ed7e-48bb-b558-f772eb40106f",
+              "slug": "mintlify"
+            },
+            {
+              "uuid": "8eb9c53e-d69c-497a-b640-610856cf3a60",
+              "slug": "hyperstudio"
+            },
+            {
+              "uuid": "a76ec6ba-20b3-495c-9d89-1e58281e79e7",
+              "slug": "column"
+            },
+            {
+              "uuid": "c2325884-4391-4688-85cd-e143f5107517",
+              "slug": "airbnb"
+            },
+            {
+              "uuid": "367c0c6e-73a7-441c-a8ff-91d139ac60dc",
+              "slug": "wise"
+            },
+            {
+              "uuid": "6f9452a4-3b64-4c6f-a05e-528d7a586f24",
+              "slug": "dovetail-3"
+            },
+            {
+              "uuid": "cd723d5a-e7ea-4e4c-a3bb-6cf56e05057a",
+              "slug": "seed"
+            },
+            {
+              "uuid": "b38702a0-75ab-474c-9106-00b624535825",
+              "slug": "ramp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "what-is-design-md",
+      "url": "https://styles.refero.design/design-md/what-is-design-md",
+      "title": "What Is DESIGN.md?",
+      "description": "Learn what DESIGN.md is, why Google Stitch introduced it, and how AI agents use markdown design systems to generate more consistent UI.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "e5f5f8cf-e68d-4ed1-bbf5-6b67569af648",
+              "slug": "your-workplace-has-the-answer-just-ask-dala-for-it"
+            },
+            {
+              "uuid": "3172cd4d-118a-4a16-a259-6b634d32322e",
+              "slug": "mercury"
+            },
+            {
+              "uuid": "90ce5883-bb24-4466-93f7-801cd617b0d1",
+              "slug": "linear"
+            },
+            {
+              "uuid": "1f204e95-454a-437e-845b-c1b169d35607",
+              "slug": "oryzo-ai"
+            },
+            {
+              "uuid": "75fdb89f-ca64-41b3-af36-7a78bd09448e",
+              "slug": "steep"
+            },
+            {
+              "uuid": "c9cabb96-32fa-4896-837a-f2497ce1c856",
+              "slug": "apple-espa-a-3"
+            },
+            {
+              "uuid": "0fd67ec5-7e9c-4ca9-b368-5d9c7388477a",
+              "slug": "ui"
+            },
+            {
+              "uuid": "031056ff-7af1-46db-8daa-115f731c5d26",
+              "slug": "elevenlabs"
+            },
+            {
+              "uuid": "a73148b9-449b-42cd-9f38-86ef694f500e",
+              "slug": "apple"
+            },
+            {
+              "uuid": "3e52dd36-6ab1-48c6-bc40-47ef6d33abc2",
+              "slug": "monopo-saigon"
+            },
+            {
+              "uuid": "e80231a2-e4d6-406a-a2c9-2e6109679690",
+              "slug": "authkit"
+            },
+            {
+              "uuid": "21cfe0c1-778d-4613-9f47-a5718eb929b3",
+              "slug": "auros"
+            },
+            {
+              "uuid": "aecac5da-f397-4ddf-b71f-de1efc434cb8",
+              "slug": "apple-6"
+            },
+            {
+              "uuid": "2bf4c61f-de10-4614-ba1b-20c0453bd2a9",
+              "slug": "notion"
+            },
+            {
+              "uuid": "8512e28d-5385-4c20-a336-214568c4370c",
+              "slug": "awesomic"
+            },
+            {
+              "uuid": "ee403055-480e-4bd4-9216-07c9ae2dde2e",
+              "slug": "ai-for-business"
+            },
+            {
+              "uuid": "fc84e9f0-2058-4a0a-8d26-9cc1ba84ec9c",
+              "slug": "monad"
+            },
+            {
+              "uuid": "b0d80806-b724-4ed1-a1d1-074edd3c9bc9",
+              "slug": "dub"
+            },
+            {
+              "uuid": "c60f05ff-2420-4a24-92db-80c4b6a74683",
+              "slug": "origin-financial"
+            },
+            {
+              "uuid": "7088d695-362b-4e09-b325-fa8136d4f350",
+              "slug": "duolingo"
+            },
+            {
+              "uuid": "34baa524-5d5b-4165-bbab-d01f05e6d6b9",
+              "slug": "general-intelligence-company"
+            },
+            {
+              "uuid": "f99aca3e-5289-4595-a7cc-77a72052f4b8",
+              "slug": "ventriloc"
+            },
+            {
+              "uuid": "3b6a17f0-3bdf-418c-a95e-0b89e5a8b2f8",
+              "slug": "raycast"
+            },
+            {
+              "uuid": "8b6b547f-a357-4f1b-9842-4579c62dd42b",
+              "slug": "slush"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "google-stitch-design-md",
+      "url": "https://styles.refero.design/design-md/google-stitch-design-md",
+      "title": "Google Stitch DESIGN.md Guide",
+      "description": "Learn how Google Stitch uses DESIGN.md, why the markdown design-system format matters, and how AI agents can use it for consistent UI.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "1f204e95-454a-437e-845b-c1b169d35607",
+              "slug": "oryzo-ai"
+            },
+            {
+              "uuid": "eb804e3a-1b75-446c-8374-114bbabaf0cd",
+              "slug": "cosmos"
+            },
+            {
+              "uuid": "30c3aa18-4323-4448-8ddd-3ca933fe5780",
+              "slug": "frame-io"
+            },
+            {
+              "uuid": "5fd3b3b4-02ab-456a-87aa-e4395636b671",
+              "slug": "figma"
+            },
+            {
+              "uuid": "3f6e3076-e77f-487e-b212-3b5946a34e87",
+              "slug": "miranda"
+            },
+            {
+              "uuid": "dd8b7191-a992-4dab-88f8-f67e8819b461",
+              "slug": "karl"
+            },
+            {
+              "uuid": "e4a7b5f3-f393-4f6d-b4a5-ecf874024bed",
+              "slug": "099-supply"
+            },
+            {
+              "uuid": "31471407-598a-45fd-a505-d921980d8855",
+              "slug": "webflow"
+            },
+            {
+              "uuid": "c65db621-7faa-45f3-8e30-dc3ef9ffe660",
+              "slug": "subframe"
+            },
+            {
+              "uuid": "6bd8007f-01bc-46cc-8599-b396a39c1474",
+              "slug": "unicorn-studio"
+            },
+            {
+              "uuid": "a7891223-a93e-4731-a1aa-4079f1ee928b",
+              "slug": "max-yinger"
+            },
+            {
+              "uuid": "41af8353-6a8f-416d-947b-57932f591497",
+              "slug": "programa"
+            },
+            {
+              "uuid": "bb2e29c9-d20a-4b8d-8959-5b506f517ec4",
+              "slug": "studio-design"
+            },
+            {
+              "uuid": "357e6fee-72db-40cf-b858-254b802018bd",
+              "slug": "aaply"
+            },
+            {
+              "uuid": "e67ac20e-6497-4756-b7e2-17859a794fb6",
+              "slug": "silencio"
+            },
+            {
+              "uuid": "d417b42f-824d-45ba-a02e-cbef3b8ea0d8",
+              "slug": "framer"
+            },
+            {
+              "uuid": "ab1e41e9-7d21-4762-b498-51b8c63ae7ce",
+              "slug": "jitter"
+            },
+            {
+              "uuid": "542453bb-1895-45fe-95c9-66dbacbf1b08",
+              "slug": "palette-supply"
+            },
+            {
+              "uuid": "c5326639-873a-4257-ad1a-7da9111e9286",
+              "slug": "wise-design"
+            },
+            {
+              "uuid": "ef44a995-6745-4dc7-86ab-f7227f108f81",
+              "slug": "mobbin"
+            },
+            {
+              "uuid": "973332dc-4e10-4e90-85d8-3bce9c3cd3ed",
+              "slug": "sociotype"
+            },
+            {
+              "uuid": "7976704d-549b-4ba6-9a0f-c792766a9df3",
+              "slug": "osmo"
+            },
+            {
+              "uuid": "3f22028a-05d4-4648-a6d1-591134af06a4",
+              "slug": "gt-planar"
+            },
+            {
+              "uuid": "76faeb42-b43d-4cc7-ac03-1e4bd74f04b7",
+              "slug": "contract"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "design-md-specification",
+      "url": "https://styles.refero.design/design-md/design-md-specification",
+      "title": "DESIGN.md Specification for AI Design Systems",
+      "description": "Understand the DESIGN.md specification for AI design systems: tokens, markdown rationale, component rules, accessibility, and agent workflows.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "e5f5f8cf-e68d-4ed1-bbf5-6b67569af648",
+              "slug": "your-workplace-has-the-answer-just-ask-dala-for-it"
+            },
+            {
+              "uuid": "3172cd4d-118a-4a16-a259-6b634d32322e",
+              "slug": "mercury"
+            },
+            {
+              "uuid": "90ce5883-bb24-4466-93f7-801cd617b0d1",
+              "slug": "linear"
+            },
+            {
+              "uuid": "1f204e95-454a-437e-845b-c1b169d35607",
+              "slug": "oryzo-ai"
+            },
+            {
+              "uuid": "75fdb89f-ca64-41b3-af36-7a78bd09448e",
+              "slug": "steep"
+            },
+            {
+              "uuid": "c9cabb96-32fa-4896-837a-f2497ce1c856",
+              "slug": "apple-espa-a-3"
+            },
+            {
+              "uuid": "0fd67ec5-7e9c-4ca9-b368-5d9c7388477a",
+              "slug": "ui"
+            },
+            {
+              "uuid": "031056ff-7af1-46db-8daa-115f731c5d26",
+              "slug": "elevenlabs"
+            },
+            {
+              "uuid": "a73148b9-449b-42cd-9f38-86ef694f500e",
+              "slug": "apple"
+            },
+            {
+              "uuid": "3e52dd36-6ab1-48c6-bc40-47ef6d33abc2",
+              "slug": "monopo-saigon"
+            },
+            {
+              "uuid": "e80231a2-e4d6-406a-a2c9-2e6109679690",
+              "slug": "authkit"
+            },
+            {
+              "uuid": "21cfe0c1-778d-4613-9f47-a5718eb929b3",
+              "slug": "auros"
+            },
+            {
+              "uuid": "aecac5da-f397-4ddf-b71f-de1efc434cb8",
+              "slug": "apple-6"
+            },
+            {
+              "uuid": "2bf4c61f-de10-4614-ba1b-20c0453bd2a9",
+              "slug": "notion"
+            },
+            {
+              "uuid": "8512e28d-5385-4c20-a336-214568c4370c",
+              "slug": "awesomic"
+            },
+            {
+              "uuid": "ee403055-480e-4bd4-9216-07c9ae2dde2e",
+              "slug": "ai-for-business"
+            },
+            {
+              "uuid": "fc84e9f0-2058-4a0a-8d26-9cc1ba84ec9c",
+              "slug": "monad"
+            },
+            {
+              "uuid": "b0d80806-b724-4ed1-a1d1-074edd3c9bc9",
+              "slug": "dub"
+            },
+            {
+              "uuid": "c60f05ff-2420-4a24-92db-80c4b6a74683",
+              "slug": "origin-financial"
+            },
+            {
+              "uuid": "7088d695-362b-4e09-b325-fa8136d4f350",
+              "slug": "duolingo"
+            },
+            {
+              "uuid": "34baa524-5d5b-4165-bbab-d01f05e6d6b9",
+              "slug": "general-intelligence-company"
+            },
+            {
+              "uuid": "f99aca3e-5289-4595-a7cc-77a72052f4b8",
+              "slug": "ventriloc"
+            },
+            {
+              "uuid": "3b6a17f0-3bdf-418c-a95e-0b89e5a8b2f8",
+              "slug": "raycast"
+            },
+            {
+              "uuid": "8b6b547f-a357-4f1b-9842-4579c62dd42b",
+              "slug": "slush"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "design-md-template",
+      "url": "https://styles.refero.design/design-md/design-md-template",
+      "title": "DESIGN.md template",
+      "description": "Look at real styles before writing your own DESIGN.md. Compare which rules are visible in the page and which decisions you would need to make for your product.",
+      "sections": [
+        {
+          "heading": "Typography as structure",
+          "styles": [
+            {
+              "uuid": "e81d4724-9615-4159-8678-cef35f986cab",
+              "slug": "scale"
+            },
+            {
+              "uuid": "51a9246f-9238-47dd-b254-48983b8713a2",
+              "slug": "lovi"
+            },
+            {
+              "uuid": "c2fadeda-8ef3-4ab2-9909-ffdf02ab0a24",
+              "slug": "aevi-wellness"
+            },
+            {
+              "uuid": "ae175f23-1ec7-47ea-9380-7bff7041028b",
+              "slug": "timescale"
+            },
+            {
+              "uuid": "1ded7f89-3df0-4e7c-9cac-28218d038575",
+              "slug": "flatfile"
+            },
+            {
+              "uuid": "f8c92b6b-a3a7-4141-ae61-3d865a106761",
+              "slug": "ingmar-coenen"
+            }
+          ]
+        },
+        {
+          "heading": "Color with a job",
+          "styles": [
+            {
+              "uuid": "e1f18a7e-5af1-46b3-8f89-bce6c78b80d4",
+              "slug": "dope-security"
+            },
+            {
+              "uuid": "febf1c02-2c4d-46e6-ad16-8ee2a99ae0d5",
+              "slug": "clou-architects"
+            },
+            {
+              "uuid": "0f7da1b2-9d06-4ef5-b5a8-ef7f92e57ab2",
+              "slug": "augen-pro"
+            },
+            {
+              "uuid": "261a4ad3-e835-4f7a-beb7-72187f84d462",
+              "slug": "amp"
+            },
+            {
+              "uuid": "707a1648-eaef-4629-9c5a-b835cedde250",
+              "slug": "earlydog"
+            },
+            {
+              "uuid": "542453bb-1895-45fe-95c9-66dbacbf1b08",
+              "slug": "palette-supply"
+            }
+          ]
+        },
+        {
+          "heading": "Layout you can repeat",
+          "styles": [
+            {
+              "uuid": "055f12af-b7b9-46af-81b7-93e0ed6d5ce2",
+              "slug": "krepling"
+            },
+            {
+              "uuid": "3f22028a-05d4-4648-a6d1-591134af06a4",
+              "slug": "gt-planar"
+            },
+            {
+              "uuid": "3963a727-8dec-4308-80c0-3ae198d15b87",
+              "slug": "apollo"
+            },
+            {
+              "uuid": "f63b4703-db8b-4bc9-8d8f-17262b12d4b3",
+              "slug": "acceptandproceed"
+            },
+            {
+              "uuid": "26a9840f-f128-4cfc-84a5-feb7db1bf577",
+              "slug": "adora"
+            },
+            {
+              "uuid": "c8ca6c83-3197-4b19-af1c-b29d6f829c5f",
+              "slug": "dul-zorigoo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ai-readable-design-systems",
+      "url": "https://styles.refero.design/design-md/ai-readable-design-systems",
+      "title": "AI-Readable Design Systems",
+      "description": "See 12 captured website styles and the color, type, surface, and image rules worth recording in an agent-readable DESIGN.md.",
+      "sections": [
+        {
+          "heading": "A palette needs roles, not just hex values",
+          "styles": [
+            {
+              "uuid": "0fd67ec5-7e9c-4ca9-b368-5d9c7388477a",
+              "slug": "ui"
+            },
+            {
+              "uuid": "f24daf3a-d43f-4dec-85a9-8ac1d5148a03",
+              "slug": "vercel"
+            },
+            {
+              "uuid": "80d7ef36-ed7e-48bb-b558-f772eb40106f",
+              "slug": "mintlify"
+            },
+            {
+              "uuid": "0d914ef0-fa84-4c60-a9aa-cef0b5eb6e5d",
+              "slug": "resend"
+            }
+          ]
+        },
+        {
+          "heading": "Tell the agent which type belongs where",
+          "styles": [
+            {
+              "uuid": "d469cba4-c448-4a43-a033-883f8bfcdc42",
+              "slug": "anthropic"
+            },
+            {
+              "uuid": "4e3b4717-84c8-4599-baaf-a343c3d619b6",
+              "slug": "cursor"
+            },
+            {
+              "uuid": "48e5de76-05d5-4c4e-a269-c7c245b291ec",
+              "slug": "stripe"
+            },
+            {
+              "uuid": "3b6a17f0-3bdf-418c-a95e-0b89e5a8b2f8",
+              "slug": "raycast"
+            }
+          ]
+        },
+        {
+          "heading": "Describe surfaces, imagery, and restraint",
+          "styles": [
+            {
+              "uuid": "e80231a2-e4d6-406a-a2c9-2e6109679690",
+              "slug": "authkit"
+            },
+            {
+              "uuid": "367c0c6e-73a7-441c-a8ff-91d139ac60dc",
+              "slug": "wise"
+            },
+            {
+              "uuid": "7088d695-362b-4e09-b325-fa8136d4f350",
+              "slug": "duolingo"
+            },
+            {
+              "uuid": "c2325884-4391-4688-85cd-e143f5107517",
+              "slug": "airbnb"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "design-md-vs-design-tokens",
+      "url": "https://styles.refero.design/design-md/design-md-vs-design-tokens",
+      "title": "DESIGN.md vs Design Tokens",
+      "description": "Compare DESIGN.md and design tokens for AI agents: structured values, semantic roles, markdown rationale, component rules, and frontend implementation.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "e5f5f8cf-e68d-4ed1-bbf5-6b67569af648",
+              "slug": "your-workplace-has-the-answer-just-ask-dala-for-it"
+            },
+            {
+              "uuid": "3172cd4d-118a-4a16-a259-6b634d32322e",
+              "slug": "mercury"
+            },
+            {
+              "uuid": "90ce5883-bb24-4466-93f7-801cd617b0d1",
+              "slug": "linear"
+            },
+            {
+              "uuid": "1f204e95-454a-437e-845b-c1b169d35607",
+              "slug": "oryzo-ai"
+            },
+            {
+              "uuid": "75fdb89f-ca64-41b3-af36-7a78bd09448e",
+              "slug": "steep"
+            },
+            {
+              "uuid": "c9cabb96-32fa-4896-837a-f2497ce1c856",
+              "slug": "apple-espa-a-3"
+            },
+            {
+              "uuid": "0fd67ec5-7e9c-4ca9-b368-5d9c7388477a",
+              "slug": "ui"
+            },
+            {
+              "uuid": "031056ff-7af1-46db-8daa-115f731c5d26",
+              "slug": "elevenlabs"
+            },
+            {
+              "uuid": "a73148b9-449b-42cd-9f38-86ef694f500e",
+              "slug": "apple"
+            },
+            {
+              "uuid": "3e52dd36-6ab1-48c6-bc40-47ef6d33abc2",
+              "slug": "monopo-saigon"
+            },
+            {
+              "uuid": "e80231a2-e4d6-406a-a2c9-2e6109679690",
+              "slug": "authkit"
+            },
+            {
+              "uuid": "21cfe0c1-778d-4613-9f47-a5718eb929b3",
+              "slug": "auros"
+            },
+            {
+              "uuid": "aecac5da-f397-4ddf-b71f-de1efc434cb8",
+              "slug": "apple-6"
+            },
+            {
+              "uuid": "2bf4c61f-de10-4614-ba1b-20c0453bd2a9",
+              "slug": "notion"
+            },
+            {
+              "uuid": "8512e28d-5385-4c20-a336-214568c4370c",
+              "slug": "awesomic"
+            },
+            {
+              "uuid": "ee403055-480e-4bd4-9216-07c9ae2dde2e",
+              "slug": "ai-for-business"
+            },
+            {
+              "uuid": "fc84e9f0-2058-4a0a-8d26-9cc1ba84ec9c",
+              "slug": "monad"
+            },
+            {
+              "uuid": "b0d80806-b724-4ed1-a1d1-074edd3c9bc9",
+              "slug": "dub"
+            },
+            {
+              "uuid": "c60f05ff-2420-4a24-92db-80c4b6a74683",
+              "slug": "origin-financial"
+            },
+            {
+              "uuid": "7088d695-362b-4e09-b325-fa8136d4f350",
+              "slug": "duolingo"
+            },
+            {
+              "uuid": "34baa524-5d5b-4165-bbab-d01f05e6d6b9",
+              "slug": "general-intelligence-company"
+            },
+            {
+              "uuid": "f99aca3e-5289-4595-a7cc-77a72052f4b8",
+              "slug": "ventriloc"
+            },
+            {
+              "uuid": "3b6a17f0-3bdf-418c-a95e-0b89e5a8b2f8",
+              "slug": "raycast"
+            },
+            {
+              "uuid": "8b6b547f-a357-4f1b-9842-4579c62dd42b",
+              "slug": "slush"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "design-md-vs-figma",
+      "url": "https://styles.refero.design/design-md/design-md-vs-figma",
+      "title": "DESIGN.md vs Figma for AI Agents",
+      "description": "Compare DESIGN.md and Figma for AI agents, including design context, implementation handoff, markdown files, tokens, components, and frontend generation.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "1f204e95-454a-437e-845b-c1b169d35607",
+              "slug": "oryzo-ai"
+            },
+            {
+              "uuid": "eb804e3a-1b75-446c-8374-114bbabaf0cd",
+              "slug": "cosmos"
+            },
+            {
+              "uuid": "30c3aa18-4323-4448-8ddd-3ca933fe5780",
+              "slug": "frame-io"
+            },
+            {
+              "uuid": "5fd3b3b4-02ab-456a-87aa-e4395636b671",
+              "slug": "figma"
+            },
+            {
+              "uuid": "3f6e3076-e77f-487e-b212-3b5946a34e87",
+              "slug": "miranda"
+            },
+            {
+              "uuid": "dd8b7191-a992-4dab-88f8-f67e8819b461",
+              "slug": "karl"
+            },
+            {
+              "uuid": "e4a7b5f3-f393-4f6d-b4a5-ecf874024bed",
+              "slug": "099-supply"
+            },
+            {
+              "uuid": "31471407-598a-45fd-a505-d921980d8855",
+              "slug": "webflow"
+            },
+            {
+              "uuid": "c65db621-7faa-45f3-8e30-dc3ef9ffe660",
+              "slug": "subframe"
+            },
+            {
+              "uuid": "6bd8007f-01bc-46cc-8599-b396a39c1474",
+              "slug": "unicorn-studio"
+            },
+            {
+              "uuid": "a7891223-a93e-4731-a1aa-4079f1ee928b",
+              "slug": "max-yinger"
+            },
+            {
+              "uuid": "41af8353-6a8f-416d-947b-57932f591497",
+              "slug": "programa"
+            },
+            {
+              "uuid": "bb2e29c9-d20a-4b8d-8959-5b506f517ec4",
+              "slug": "studio-design"
+            },
+            {
+              "uuid": "357e6fee-72db-40cf-b858-254b802018bd",
+              "slug": "aaply"
+            },
+            {
+              "uuid": "e67ac20e-6497-4756-b7e2-17859a794fb6",
+              "slug": "silencio"
+            },
+            {
+              "uuid": "d417b42f-824d-45ba-a02e-cbef3b8ea0d8",
+              "slug": "framer"
+            },
+            {
+              "uuid": "ab1e41e9-7d21-4762-b498-51b8c63ae7ce",
+              "slug": "jitter"
+            },
+            {
+              "uuid": "542453bb-1895-45fe-95c9-66dbacbf1b08",
+              "slug": "palette-supply"
+            },
+            {
+              "uuid": "c5326639-873a-4257-ad1a-7da9111e9286",
+              "slug": "wise-design"
+            },
+            {
+              "uuid": "ef44a995-6745-4dc7-86ab-f7227f108f81",
+              "slug": "mobbin"
+            },
+            {
+              "uuid": "973332dc-4e10-4e90-85d8-3bce9c3cd3ed",
+              "slug": "sociotype"
+            },
+            {
+              "uuid": "7976704d-549b-4ba6-9a0f-c792766a9df3",
+              "slug": "osmo"
+            },
+            {
+              "uuid": "3f22028a-05d4-4648-a6d1-591134af06a4",
+              "slug": "gt-planar"
+            },
+            {
+              "uuid": "76faeb42-b43d-4cc7-ac03-1e4bd74f04b7",
+              "slug": "contract"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "design-md-for-ai-agents",
+      "url": "https://styles.refero.design/design-md/design-md-for-ai-agents",
+      "title": "DESIGN.md for AI Agents",
+      "description": "Use DESIGN.md for AI agents to provide markdown design-system context, visual rules, tokens, component guidance, and consistent UI generation.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "30a8b128-a5bb-4d86-85eb-743b78091596",
+              "slug": "pravah"
+            },
+            {
+              "uuid": "94ed6ce8-c2e5-45bf-83bd-e5d1daf63efc",
+              "slug": "flim"
+            },
+            {
+              "uuid": "d4c51049-58eb-404a-9fcb-f195928b1c99",
+              "slug": "warp"
+            },
+            {
+              "uuid": "8e9e585f-5ad4-4273-8418-e1f82cdb51cf",
+              "slug": "prisma"
+            },
+            {
+              "uuid": "cdc4a162-cefa-49a1-81e7-4857e421ae24",
+              "slug": "adam-lippes"
+            },
+            {
+              "uuid": "d75a643b-a518-4550-b430-679cd989a447",
+              "slug": "freitag"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "design-md-for-cursor",
+      "url": "https://styles.refero.design/design-md/design-md-for-cursor",
+      "title": "DESIGN.md for Cursor",
+      "description": "Use DESIGN.md with Cursor to give AI coding agents design-system context, visual rules, tokens, component guidance, and UI review criteria.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "90ce5883-bb24-4466-93f7-801cd617b0d1",
+              "slug": "linear"
+            },
+            {
+              "uuid": "0fd67ec5-7e9c-4ca9-b368-5d9c7388477a",
+              "slug": "ui"
+            },
+            {
+              "uuid": "e80231a2-e4d6-406a-a2c9-2e6109679690",
+              "slug": "authkit"
+            },
+            {
+              "uuid": "0d914ef0-fa84-4c60-a9aa-cef0b5eb6e5d",
+              "slug": "resend"
+            },
+            {
+              "uuid": "4e3b4717-84c8-4599-baaf-a343c3d619b6",
+              "slug": "cursor"
+            },
+            {
+              "uuid": "f24daf3a-d43f-4dec-85a9-8ac1d5148a03",
+              "slug": "vercel"
+            },
+            {
+              "uuid": "00537a20-e99e-4ef2-b119-c6f532c44cc9",
+              "slug": "gsap"
+            },
+            {
+              "uuid": "e1f18a7e-5af1-46b3-8f89-bce6c78b80d4",
+              "slug": "dope-security"
+            },
+            {
+              "uuid": "68c15685-5db9-4869-b71d-27240568c9d8",
+              "slug": "modal"
+            },
+            {
+              "uuid": "80d7ef36-ed7e-48bb-b558-f772eb40106f",
+              "slug": "mintlify"
+            },
+            {
+              "uuid": "18a75348-513a-49d8-94f5-e2df8c118b6b",
+              "slug": "launchdarkly"
+            },
+            {
+              "uuid": "632249f1-fd78-4c77-9b34-7bae37ff3e9b",
+              "slug": "supabase"
+            },
+            {
+              "uuid": "d271a6c4-942f-4abf-a3de-66795f15f031",
+              "slug": "sauce-labs"
+            },
+            {
+              "uuid": "8601c8ef-e1ea-4186-adb2-6f9a74caf436",
+              "slug": "n8n"
+            },
+            {
+              "uuid": "56cd3725-3ff0-459e-894d-5da58d1fc549",
+              "slug": "posthog"
+            },
+            {
+              "uuid": "6f3652cf-583f-411d-a117-3a03f6342917",
+              "slug": "harness-io"
+            },
+            {
+              "uuid": "cc38369a-41e3-4bcd-b619-230ccffe7e8e",
+              "slug": "neon"
+            },
+            {
+              "uuid": "c3ceca5c-d329-4559-b947-016172941ba2",
+              "slug": "github"
+            },
+            {
+              "uuid": "d4c51049-58eb-404a-9fcb-f195928b1c99",
+              "slug": "warp"
+            },
+            {
+              "uuid": "c809190a-035c-458d-87ed-4758807dd84e",
+              "slug": "axiom"
+            },
+            {
+              "uuid": "10654184-eb92-4b75-a7af-bd92bc6cdc5c",
+              "slug": "doppler"
+            },
+            {
+              "uuid": "c14bfde7-6f08-4b54-bd9b-39989d10cfef",
+              "slug": "render"
+            },
+            {
+              "uuid": "1c1d3939-8d82-4907-aa3c-c9b2fcfbab4f",
+              "slug": "grafbase"
+            },
+            {
+              "uuid": "fb459c9d-c089-4d0b-b5b0-d147b1c4ebd7",
+              "slug": "moving-parts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "design-md-for-claude-code",
+      "url": "https://styles.refero.design/design-md/design-md-for-claude-code",
+      "title": "DESIGN.md for Claude Code",
+      "description": "Use DESIGN.md with Claude Code to provide agent-readable design-system context, frontend rules, component guidance, and UI quality checks.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "2bd7363d-7aae-4b1f-9d5a-1edeb17ca567",
+              "slug": "motherduck"
+            },
+            {
+              "uuid": "80d7ef36-ed7e-48bb-b558-f772eb40106f",
+              "slug": "mintlify"
+            },
+            {
+              "uuid": "b721fa94-72e6-49ad-a9bc-bab3d075f19c",
+              "slug": "oxide-computer-company"
+            },
+            {
+              "uuid": "5a7ec81f-03b6-4d21-a706-0d1d323d8899",
+              "slug": "turso"
+            },
+            {
+              "uuid": "e793a53c-537e-46b0-881d-b15b63b9ff26",
+              "slug": "obsidian"
+            },
+            {
+              "uuid": "04109c48-f591-4110-9739-622243d4ecc2",
+              "slug": "letters"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "semantic-design-systems",
+      "url": "https://styles.refero.design/design-md/semantic-design-systems",
+      "title": "Semantic Design Systems for AI Agents",
+      "description": "Explore semantic design systems for AI agents, with DESIGN.md context, token roles, component rules, usage guidance, and consistent UI generation.",
+      "sections": [
+        {
+          "heading": "Styles to explore",
+          "styles": [
+            {
+              "uuid": "e5f5f8cf-e68d-4ed1-bbf5-6b67569af648",
+              "slug": "your-workplace-has-the-answer-just-ask-dala-for-it"
+            },
+            {
+              "uuid": "3172cd4d-118a-4a16-a259-6b634d32322e",
+              "slug": "mercury"
+            },
+            {
+              "uuid": "90ce5883-bb24-4466-93f7-801cd617b0d1",
+              "slug": "linear"
+            },
+            {
+              "uuid": "1f204e95-454a-437e-845b-c1b169d35607",
+              "slug": "oryzo-ai"
+            },
+            {
+              "uuid": "75fdb89f-ca64-41b3-af36-7a78bd09448e",
+              "slug": "steep"
+            },
+            {
+              "uuid": "c9cabb96-32fa-4896-837a-f2497ce1c856",
+              "slug": "apple-espa-a-3"
+            },
+            {
+              "uuid": "0fd67ec5-7e9c-4ca9-b368-5d9c7388477a",
+              "slug": "ui"
+            },
+            {
+              "uuid": "031056ff-7af1-46db-8daa-115f731c5d26",
+              "slug": "elevenlabs"
+            },
+            {
+              "uuid": "a73148b9-449b-42cd-9f38-86ef694f500e",
+              "slug": "apple"
+            },
+            {
+              "uuid": "3e52dd36-6ab1-48c6-bc40-47ef6d33abc2",
+              "slug": "monopo-saigon"
+            },
+            {
+              "uuid": "e80231a2-e4d6-406a-a2c9-2e6109679690",
+              "slug": "authkit"
+            },
+            {
+              "uuid": "21cfe0c1-778d-4613-9f47-a5718eb929b3",
+              "slug": "auros"
+            },
+            {
+              "uuid": "aecac5da-f397-4ddf-b71f-de1efc434cb8",
+              "slug": "apple-6"
+            },
+            {
+              "uuid": "2bf4c61f-de10-4614-ba1b-20c0453bd2a9",
+              "slug": "notion"
+            },
+            {
+              "uuid": "8512e28d-5385-4c20-a336-214568c4370c",
+              "slug": "awesomic"
+            },
+            {
+              "uuid": "ee403055-480e-4bd4-9216-07c9ae2dde2e",
+              "slug": "ai-for-business"
+            },
+            {
+              "uuid": "fc84e9f0-2058-4a0a-8d26-9cc1ba84ec9c",
+              "slug": "monad"
+            },
+            {
+              "uuid": "b0d80806-b724-4ed1-a1d1-074edd3c9bc9",
+              "slug": "dub"
+            },
+            {
+              "uuid": "c60f05ff-2420-4a24-92db-80c4b6a74683",
+              "slug": "origin-financial"
+            },
+            {
+              "uuid": "7088d695-362b-4e09-b325-fa8136d4f350",
+              "slug": "duolingo"
+            },
+            {
+              "uuid": "34baa524-5d5b-4165-bbab-d01f05e6d6b9",
+              "slug": "general-intelligence-company"
+            },
+            {
+              "uuid": "f99aca3e-5289-4595-a7cc-77a72052f4b8",
+              "slug": "ventriloc"
+            },
+            {
+              "uuid": "3b6a17f0-3bdf-418c-a95e-0b89e5a8b2f8",
+              "slug": "raycast"
+            },
+            {
+              "uuid": "8b6b547f-a357-4f1b-9842-4579c62dd42b",
+              "slug": "slush"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "figma-to-design-md",
+      "url": "https://styles.refero.design/design-md/figma-to-design-md",
+      "title": "Figma to DESIGN.md for AI Agents",
+      "description": "A practical guide to translating Figma decisions into DESIGN.md, illustrated with 12 captured website styles for type, color, layout, and imagery.",
+      "sections": [
+        {
+          "heading": "Capture the hierarchy behind the frame",
+          "styles": [
+            {
+              "uuid": "3e52dd36-6ab1-48c6-bc40-47ef6d33abc2",
+              "slug": "monopo-saigon"
+            },
+            {
+              "uuid": "8eb9c53e-d69c-497a-b640-610856cf3a60",
+              "slug": "hyperstudio"
+            },
+            {
+              "uuid": "eb804e3a-1b75-446c-8374-114bbabaf0cd",
+              "slug": "cosmos"
+            },
+            {
+              "uuid": "00537a20-e99e-4ef2-b119-c6f532c44cc9",
+              "slug": "gsap"
+            }
+          ]
+        },
+        {
+          "heading": "Give every color a job",
+          "styles": [
+            {
+              "uuid": "031056ff-7af1-46db-8daa-115f731c5d26",
+              "slug": "elevenlabs"
+            },
+            {
+              "uuid": "b0d80806-b724-4ed1-a1d1-074edd3c9bc9",
+              "slug": "dub"
+            },
+            {
+              "uuid": "cd723d5a-e7ea-4e4c-a3bb-6cf56e05057a",
+              "slug": "seed"
+            },
+            {
+              "uuid": "8512e28d-5385-4c20-a336-214568c4370c",
+              "slug": "awesomic"
+            }
+          ]
+        },
+        {
+          "heading": "Write rules for what tokens cannot express",
+          "styles": [
+            {
+              "uuid": "30c3aa18-4323-4448-8ddd-3ca933fe5780",
+              "slug": "frame-io"
+            },
+            {
+              "uuid": "1f204e95-454a-437e-845b-c1b169d35607",
+              "slug": "oryzo-ai"
+            },
+            {
+              "uuid": "d3289fe7-a85e-42d8-96b7-eb7faa62a104",
+              "slug": "air"
+            },
+            {
+              "uuid": "4fa67bd1-f01d-454a-b522-4a0359ff9815",
+              "slug": "shop"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/14f10100-a102-427a-88d1-7cc80cbb332d",
   "source_url": "https://www.danieltriendl.com",
   "extracted_at": "2026-06-03T18:51:06.348Z",
-  "fetched_at": "2026-10-20T08:22:27Z",
+  "fetched_at": "2026-11-08T04:19:58Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6c53c053-cd3e-4c61-b629-a5d072e0cde1.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/70146f86-7bf7-4d95-8292-b7bf4560a489.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a81f1d17-6fae-42fa-9caa-d6199ac554ef.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/704726a1-a0f5-40ad-a15b-c1f6d875126f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/5b90e218-b325-4901-a1c5-ea1134339826",
   "source_url": "https://spatial.chat",
   "extracted_at": "2026-06-03T20:39:01.373Z",
-  "fetched_at": "2026-10-20T08:21:57Z",
+  "fetched_at": "2026-11-08T04:20:51Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b858b2af-0d48-4ce5-9027-535c8854cf57.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ffa11f91-c01c-4152-a699-fff5ed99e513.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/bdc721d5-9388-4e9f-b299-24bbffe21bce.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/3cb13b12-f247-4dfd-91c6-66ce59cdaf58.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

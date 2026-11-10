@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/80392d80-3970-46f0-a7ed-f213f316c933",
   "source_url": "https://sublime.app",
   "extracted_at": "2026-06-03T22:02:57.107Z",
-  "fetched_at": "2026-10-20T08:23:23Z",
+  "fetched_at": "2026-11-08T04:20:54Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/8c7c93d2-52fe-4337-b730-293e7c40377e.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/261ae963-09f8-4a43-b12c-9fbc1246049e.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/de21747b-40d7-4d9d-a5cb-baabca86b373.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/05b849cd-61f2-4e66-a253-b36921ad27e8.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

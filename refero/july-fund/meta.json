@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/adc127f5-c6ec-4892-984d-5445c2b6104e",
   "source_url": "https://july.fund",
   "extracted_at": "2026-06-03T19:55:33.083Z",
-  "fetched_at": "2026-10-20T08:22:04Z",
+  "fetched_at": "2026-11-08T04:20:22Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/870feb59-a356-4821-801e-a862aaf95fa7.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/30de4d16-93a9-403a-91e8-a06d87360ec8.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/04373d7a-5d36-4533-ab10-3a0e136f0e70.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/ab4c89dd-3d14-473e-89a7-493d2216cffd.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

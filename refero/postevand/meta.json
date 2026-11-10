@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/76bfda6b-125f-4d9b-96c0-356de1e9fc10",
   "source_url": "https://postevand.com",
   "extracted_at": "2026-06-03T20:07:27.786Z",
-  "fetched_at": "2026-10-20T08:23:53Z",
+  "fetched_at": "2026-11-08T04:20:41Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/ea31ae48-bb6d-4157-9170-107234f5a736.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/be34bbe8-9a50-4f36-b379-840328f6350c",
   "source_url": "https://mapbox.com",
   "extracted_at": "2026-04-11T19:10:46.520Z",
-  "fetched_at": "2026-10-20T08:25:12Z",
+  "fetched_at": "2026-11-08T04:19:32Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6f4c44d4-d245-463c-9744-0e25ef94b29f.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/1b90c82e-d8d9-491f-ae39-412d3347ab4c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/1eae27a0-e9d6-454b-96ee-634c48da20ff.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b04fbe5d-2338-47d9-ae82-ef024bf7fcc0.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": true
 }

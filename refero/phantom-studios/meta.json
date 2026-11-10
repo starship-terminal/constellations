@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/1f0cc2ef-9de0-4cbb-909f-ca120ef6d0ae",
   "source_url": "https://www.phantom.land",
   "extracted_at": "2026-06-03T18:43:13.463Z",
-  "fetched_at": "2026-10-20T08:24:17Z",
+  "fetched_at": "2026-11-08T04:20:39Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/2808cb1a-7c37-4c8f-a0ee-d7707d7ff437.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/34baa524-5d5b-4165-bbab-d01f05e6d6b9",
   "source_url": "https://www.generalintelligencecompany.com",
   "extracted_at": "2026-07-03T02:53:17.405Z",
-  "fetched_at": "2026-10-20T08:21:41Z",
+  "fetched_at": "2026-11-08T04:20:12Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b9fe3776-1c5c-46b6-bf7c-0642249582d0.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/df59923b-04d4-4f52-926f-1e9d17cf130a.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/4b9292c9-feaa-4c00-87e3-c3de6995281a.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/10681cb3-8a8a-41c9-9386-317598b50f12.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

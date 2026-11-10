@@ -1,0 +1,875 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. A leaf with \"var\" takes its value from that custom property's resolved entry in css-vars.json (1password.com is a Next.js/Tailwind build that ships the Knox design system's --knox-* variables plus Tailwind utilities); a leaf with \"value\" carries a measured value and names the measurement in \"source\" (an anchor of raw/measurements.md, written from raw/components-computed.json). One light theme.",
+ "core": {
+  "palette": {
+   "secure-blue": {
+    "DEFAULT": {
+     "var": "--knox-background-attention",
+     "type": "color",
+     "description": "The product's action blue: primary CTA pills, links, the plan-selector wordmark"
+    },
+    "hover": {
+     "var": "--knox-background-attention-hover",
+     "type": "color"
+    },
+    "pressed": {
+     "var": "--knox-background-attention-pressed",
+     "type": "color"
+    },
+    "weak": {
+     "var": "--knox-background-attention-weak",
+     "type": "color",
+     "description": "Pale blue used for selected/weak fills"
+    }
+   },
+   "midnight-navy": {
+    "DEFAULT": {
+     "var": "--knox-background-brand",
+     "type": "color",
+     "description": "The brand navy: the dark hero/gradient bands"
+    },
+    "hover": {
+     "var": "--knox-background-brand-hover",
+     "type": "color"
+    },
+    "pressed": {
+     "var": "--knox-background-brand-pressed",
+     "type": "color"
+    },
+    "weak": {
+     "var": "--knox-background-brand-weak",
+     "type": "color"
+    }
+   },
+   "ink": {
+    "DEFAULT": {
+     "var": "--knox-text-icon-neutral",
+     "type": "color",
+     "description": "Near-black body text (#303136)"
+    },
+    "hover": {
+     "var": "--knox-text-icon-neutral-hover",
+     "type": "color"
+    },
+    "pressed": {
+     "var": "--knox-text-icon-neutral-pressed",
+     "type": "color"
+    },
+    "footer": {
+     "type": "color",
+     "value": "#1d1d21",
+     "source": "footer default backgroundColor",
+     "description": "The footer's dark ground, measured"
+    }
+   },
+   "paper": {
+    "DEFAULT": {
+     "var": "--knox-background-neutral",
+     "type": "color",
+     "description": "Page white"
+    },
+    "low": {
+     "var": "--knox-background-neutral-low",
+     "type": "color",
+     "description": "#ededed alternate sections"
+    }
+   },
+   "inverse": {
+    "DEFAULT": {
+     "var": "--knox-background-inverse",
+     "type": "color",
+     "description": "White on the dark bands / white pill text inverse"
+    },
+    "weak": {
+     "var": "--knox-background-inverse-weak",
+     "type": "color"
+    }
+   },
+   "critical": {
+    "DEFAULT": {
+     "var": "--knox-background-critical",
+     "type": "color"
+    },
+    "hover": {
+     "var": "--knox-background-critical-hover",
+     "type": "color"
+    },
+    "pressed": {
+     "var": "--knox-background-critical-pressed",
+     "type": "color"
+    },
+    "weak": {
+     "var": "--knox-background-critical-weak",
+     "type": "color"
+    },
+    "text": {
+     "var": "--knox-text-icon-critical",
+     "type": "color"
+    }
+   },
+   "success": {
+    "DEFAULT": {
+     "var": "--knox-background-success",
+     "type": "color"
+    },
+    "hover": {
+     "var": "--knox-background-success-hover",
+     "type": "color"
+    },
+    "pressed": {
+     "var": "--knox-background-success-pressed",
+     "type": "color"
+    },
+    "weak": {
+     "var": "--knox-background-success-weak",
+     "type": "color"
+    },
+    "text": {
+     "var": "--knox-text-icon-success",
+     "type": "color"
+    }
+   },
+   "warning": {
+    "DEFAULT": {
+     "var": "--knox-background-warning",
+     "type": "color"
+    },
+    "hover": {
+     "var": "--knox-background-warning-hover",
+     "type": "color"
+    },
+    "pressed": {
+     "var": "--knox-background-warning-pressed",
+     "type": "color"
+    },
+    "weak": {
+     "var": "--knox-background-warning-weak",
+     "type": "color"
+    },
+    "text": {
+     "var": "--knox-text-icon-warning",
+     "type": "color"
+    }
+   },
+   "violet": {
+    "DEFAULT": {
+     "var": "--knox-text-icon-attention",
+     "type": "color",
+     "description": "Knox 'attention' violet used for attention-text roles"
+    },
+    "hover": {
+     "var": "--knox-text-icon-attention-hover",
+     "type": "color"
+    },
+    "pressed": {
+     "var": "--knox-text-icon-attention-pressed",
+     "type": "color"
+    }
+   },
+   "brand-navy": {
+    "DEFAULT": {
+     "var": "--knox-text-icon-brand",
+     "type": "color",
+     "description": "Brand navy for text"
+    },
+    "hover": {
+     "var": "--knox-text-icon-brand-hover",
+     "type": "color"
+    },
+    "pressed": {
+     "var": "--knox-text-icon-brand-pressed",
+     "type": "color"
+    }
+   },
+   "tan": {
+    "DEFAULT": {
+     "type": "color",
+     "value": "#cbb88e",
+     "source": "promo-strip default (the measured tan of the announcement band's ancestor fill)",
+     "description": "The warm tan of the announcement strip, measured"
+    }
+   }
+  },
+  "font": {
+   "family": {
+    "agile-sans": {
+     "type": "fontFamily",
+     "value": "agileSans, \"agileSans Fallback\", sans-serif",
+     "source": "cta-header-primary default fontFamily",
+     "description": "Agile Sans Variable, 1Password's custom face, everywhere on the site"
+    },
+    "agile-mono": {
+     "type": "fontFamily",
+     "value": "agileMono, \"agileMono Fallback\", monospace",
+     "source": "css-vars.json fonts: Agile Mono Variable @font-face",
+     "description": "Agile Mono Variable, the code/mono face"
+    },
+    "code": {
+     "var": "--knox-font-family-code",
+     "type": "fontFamily"
+    }
+   },
+   "size": {
+    "body-small": {
+     "var": "--knox-text-font-size-small",
+     "type": "dimension"
+    },
+    "body-medium": {
+     "var": "--knox-text-font-size-medium",
+     "type": "dimension"
+    },
+    "body-large": {
+     "var": "--knox-text-font-size-large",
+     "type": "dimension"
+    },
+    "heading-xs": {
+     "var": "--knox-font-size-heading-xs",
+     "type": "dimension"
+    },
+    "heading-small": {
+     "var": "--knox-font-size-heading-small",
+     "type": "dimension"
+    },
+    "heading-medium": {
+     "var": "--knox-font-size-heading-medium",
+     "type": "dimension"
+    },
+    "heading-large": {
+     "var": "--knox-font-size-heading-large",
+     "type": "dimension",
+     "description": "The 88px hero/display size"
+    },
+    "heading-xl": {
+     "var": "--knox-font-size-heading-xl",
+     "type": "dimension"
+    },
+    "heading-2xs": {
+     "var": "--knox-font-size-heading-2xs",
+     "type": "dimension"
+    }
+   },
+   "weight": {
+    "body-default": {
+     "var": "--knox-font-weight-body-default",
+     "type": "fontWeight"
+    },
+    "body-strong": {
+     "var": "--knox-font-weight-body-strong",
+     "type": "fontWeight"
+    },
+    "heading-default": {
+     "var": "--knox-font-weight-heading-default",
+     "type": "fontWeight"
+    },
+    "hero-light": {
+     "type": "fontWeight",
+     "value": 300,
+     "source": "hero-title default fontWeight",
+     "description": "The 88px display copy paints at weight 300"
+    }
+   },
+   "tracking": {
+    "hero": {
+     "type": "dimension",
+     "value": "-1.76px",
+     "source": "hero-title default letterSpacing",
+     "description": "Tight display tracking on the 88px headline"
+    }
+   }
+  },
+  "radius": {
+   "none": {
+    "var": "--knox-corner-radius-none",
+    "type": "dimension"
+   },
+   "small": {
+    "var": "--knox-corner-radius-small",
+    "type": "dimension"
+   },
+   "medium": {
+    "var": "--knox-corner-radius-medium",
+    "type": "dimension"
+   },
+   "large": {
+    "var": "--knox-corner-radius-large",
+    "type": "dimension"
+   },
+   "circular": {
+    "var": "--knox-corner-radius-circular",
+    "type": "dimension"
+   },
+   "card": {
+    "var": "--knox-card-corner-radius",
+    "type": "dimension"
+   },
+   "field": {
+    "var": "--knox-field-corner-radius",
+    "type": "dimension"
+   },
+   "combobox": {
+    "var": "--knox-combobox-border-radius",
+    "type": "dimension"
+   },
+   "callout": {
+    "var": "--knox-callout-corner-radius",
+    "type": "dimension"
+   },
+   "button": {
+    "var": "--knox-button-corner-radius",
+    "type": "dimension",
+    "description": "90px: the pill profile"
+   }
+  },
+  "border": {
+   "neutral": {
+    "var": "--knox-border-neutral",
+    "type": "color"
+   },
+   "neutral-weak": {
+    "var": "--knox-border-neutral-weak",
+    "type": "color"
+   },
+   "neutral-strong": {
+    "var": "--knox-border-neutral-strong",
+    "type": "color"
+   },
+   "focus": {
+    "var": "--knox-border-focus",
+    "type": "color",
+    "description": "The 3b65ba focus ring"
+   },
+   "focus-contrast": {
+    "var": "--knox-border-focus-contrast",
+    "type": "color"
+   },
+   "brand": {
+    "var": "--knox-border-brand",
+    "type": "color"
+   },
+   "critical": {
+    "var": "--knox-border-critical",
+    "type": "color"
+   },
+   "success": {
+    "var": "--knox-border-success",
+    "type": "color"
+   },
+   "warning": {
+    "var": "--knox-border-warning",
+    "type": "color"
+   }
+  },
+  "typography": {
+   "display": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{font.family.agile-sans}",
+     "fontWeight": 300,
+     "fontSize": "88px",
+     "lineHeight": "96.8px",
+     "letterSpacing": "-1.76px"
+    },
+    "source": "measured raw/measurements.md#hero-title (at 1440px)",
+    "description": "The 88px light display on the navy hero"
+   },
+   "title": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{font.family.agile-sans}",
+     "fontWeight": 300,
+     "fontSize": "64px",
+     "lineHeight": "70.4px",
+     "letterSpacing": "-1.28px"
+    },
+    "source": "measured raw/measurements.md#download-title, #pricing-title",
+    "description": "The 64px page-title weight"
+   },
+   "section-title": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{font.family.agile-sans}",
+     "fontWeight": 300,
+     "fontSize": "64px",
+     "lineHeight": "70.4px",
+     "letterSpacing": "-1.28px"
+    },
+    "source": "measured raw/measurements.md#section-title",
+    "description": "Marketing section headline"
+   },
+   "body": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{font.family.agile-sans}",
+     "fontWeight": 350,
+     "fontSize": "16px",
+     "lineHeight": "24px",
+     "letterSpacing": "0px"
+    },
+    "source": "measured raw/measurements.md#nav-link, #footer",
+    "description": "Site body: agileSans 16/24 at the variable-font 350"
+   },
+   "button-label": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{font.family.agile-sans}",
+     "fontWeight": 400,
+     "fontSize": "16px",
+     "lineHeight": "24px",
+     "letterSpacing": "0px"
+    },
+    "source": "measured raw/measurements.md#cta-header-primary, #cta-quote",
+    "description": "CTA pill label"
+   },
+   "small": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{font.family.agile-sans}",
+     "fontWeight": 350,
+     "fontSize": "14px",
+     "lineHeight": "20px",
+     "letterSpacing": "0px"
+    },
+    "source": "css-var --knox-text-font-size-small (14px)"
+   }
+  },
+  "easing": {
+   "ease": {
+    "type": "cubicBezier",
+    "value": [
+     0.4,
+     0.1,
+     0.2,
+     1
+    ],
+    "source": "css-var --knox-motion-easing-ease"
+   },
+   "ease-in": {
+    "type": "cubicBezier",
+    "value": [
+     0.4,
+     0,
+     1,
+     1
+    ],
+    "source": "css-var --knox-motion-easing-ease-in"
+   },
+   "ease-out": {
+    "type": "cubicBezier",
+    "value": [
+     0,
+     0,
+     0.25,
+     1
+    ],
+    "source": "css-var --knox-motion-easing-ease-out"
+   },
+   "ease-in-out": {
+    "type": "cubicBezier",
+    "value": [
+     0.5,
+     0,
+     0.5,
+     1
+    ],
+    "source": "css-var --knox-motion-easing-ease-in-out"
+   },
+   "linear": {
+    "type": "cubicBezier",
+    "value": [
+     0,
+     0,
+     1,
+     1
+    ],
+    "source": "css-var --knox-motion-easing-linear"
+   }
+  },
+  "duration": {
+   "instant": {
+    "type": "duration",
+    "value": "17ms",
+    "source": "css-var --knox-motion-duration-instant (0.017s)"
+   },
+   "extra-fast": {
+    "type": "duration",
+    "value": "70ms",
+    "source": "css-var --knox-motion-duration-extra-fast (0.07s)"
+   },
+   "fast": {
+    "type": "duration",
+    "value": "175ms",
+    "source": "css-var --knox-motion-duration-fast (0.175s)"
+   },
+   "medium": {
+    "type": "duration",
+    "value": "250ms",
+    "source": "css-var --knox-motion-duration-medium (0.25s)"
+   },
+   "slow": {
+    "type": "duration",
+    "value": "300ms",
+    "source": "css-var --knox-motion-duration-slow (0.3s); the nav flyout runs transition-all duration-300",
+    "description": "Also the measured CTA colour transition"
+   },
+   "extra-slow": {
+    "type": "duration",
+    "value": "500ms",
+    "source": "css-var --knox-motion-duration-extra-slow (0.5s)"
+   }
+  },
+  "zIndex": {
+   "header": {
+    "type": "number",
+    "value": 50,
+    "source": "header-navigation__logo-container z-50",
+    "description": "The logo sits above the nav flyout"
+   },
+   "flyout": {
+    "type": "number",
+    "value": 40,
+    "source": "header-navigation__dropdown (below the bar)"
+   }
+  }
+ },
+ "light": {
+  "background": {
+   "page": {
+    "value": "{palette.paper.DEFAULT}",
+    "type": "color",
+    "source": "semantic of core.palette.paper",
+    "description": "Page white"
+   },
+   "surface": {
+    "value": "{palette.paper.DEFAULT}",
+    "type": "color",
+    "source": "semantic of core.palette.paper",
+    "description": "Cards and the header bar"
+   },
+   "alt": {
+    "value": "{palette.paper.low}",
+    "type": "color",
+    "source": "semantic of core.palette.paper.low"
+   },
+   "brand": {
+    "value": "{palette.midnight-navy.DEFAULT}",
+    "type": "color",
+    "source": "semantic of core.palette.midnight-navy",
+    "description": "The navy hero/gradient bands"
+   },
+   "footer": {
+    "value": "{palette.ink.footer}",
+    "type": "color",
+    "source": "measured footer bg"
+   },
+   "action": {
+    "value": "{palette.secure-blue.DEFAULT}",
+    "type": "color",
+    "source": "semantic of core.palette.secure-blue"
+   },
+   "action-hover": {
+    "value": "{palette.secure-blue.hover}",
+    "type": "color",
+    "source": "semantic of core.palette.secure-blue"
+   },
+   "action-pressed": {
+    "value": "{palette.secure-blue.pressed}",
+    "type": "color",
+    "source": "semantic of core.palette.secure-blue"
+   },
+   "announcement": {
+    "value": "{palette.tan.DEFAULT}",
+    "type": "color",
+    "source": "measured promo strip"
+   }
+  },
+  "text": {
+   "primary": {
+    "value": "{palette.ink.DEFAULT}",
+    "type": "color",
+    "source": "semantic of core.palette.ink"
+   },
+   "secondary": {
+    "value": "{palette.ink.hover}",
+    "type": "color",
+    "source": "semantic of core.palette.ink.hover"
+   },
+   "inverse": {
+    "value": "{palette.inverse.DEFAULT}",
+    "type": "color",
+    "source": "semantic of core.palette.inverse"
+   },
+   "link": {
+    "value": "{palette.brand-navy.DEFAULT}",
+    "type": "color",
+    "source": "semantic of core.palette.brand-navy"
+   },
+   "critical": {
+    "value": "{palette.critical.text}",
+    "type": "color",
+    "source": "semantic of core.palette.critical"
+   },
+   "success": {
+    "value": "{palette.success.text}",
+    "type": "color",
+    "source": "semantic of core.palette.success"
+   },
+   "warning": {
+    "value": "{palette.warning.text}",
+    "type": "color",
+    "source": "semantic of core.palette.warning"
+   }
+  },
+  "border": {
+   "stroke": {
+    "value": "{border.neutral-strong}",
+    "type": "color",
+    "source": "semantic of core.border.neutral-strong"
+   },
+   "divider": {
+    "value": "{border.neutral-weak}",
+    "type": "color",
+    "source": "semantic of core.border.neutral-weak"
+   }
+  },
+  "elevation": {
+   "modal": {
+    "type": "shadow",
+    "value": [
+     {
+      "offsetX": "0px",
+      "offsetY": "8px",
+      "blur": "40px",
+      "spread": "0px",
+      "color": "rgba(0, 0, 0, 0.13)"
+     },
+     {
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "16px",
+      "spread": "0px",
+      "color": "rgba(0, 0, 0, 0.07)"
+     },
+     {
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px",
+      "color": "rgba(0, 0, 0, 0.13)"
+     }
+    ],
+    "source": "css-var --knox-modal-content-box-shadow",
+    "description": "The Knox dialog elevation: drop + ambient + 1px keyline"
+   },
+   "field": {
+    "type": "shadow",
+    "value": [
+     {
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px",
+      "color": "rgba(26, 53, 116, 1)",
+      "inset": true
+     }
+    ],
+    "source": "css-var --knox-field-box-shadow-default",
+    "description": "The field keyline is a 1px inset shadow, not a border"
+   }
+  }
+ },
+ "component": {
+  "button": {
+   "primary": {
+    "bg": {
+     "var": "--knox-button-background-color-primary-default",
+     "type": "color",
+     "description": "#0364d3, the secure-blue pill"
+    },
+    "text": {
+     "var": "--knox-button-text-icon-color-primary-default",
+     "type": "color"
+    },
+    "radius": {
+     "var": "--knox-button-corner-radius",
+     "type": "dimension"
+    },
+    "height-large": {
+     "var": "--knox-button-height-large",
+     "type": "dimension"
+    },
+    "height-medium": {
+     "var": "--knox-button-height-medium",
+     "type": "dimension"
+    },
+    "font-size-large": {
+     "var": "--knox-button-font-size-large",
+     "type": "dimension"
+    },
+    "font-size-medium": {
+     "var": "--knox-button-font-size-medium",
+     "type": "dimension"
+    },
+    "hero-bg": {
+     "type": "color",
+     "value": "#ffffff",
+     "source": "cta-hero-secondary default color (white pill on the navy hero)",
+     "description": "On the dark hero the primary pill is white with blue text"
+    }
+   },
+   "secondary": {
+    "bg": {
+     "var": "--knox-button-background-color-secondary-default",
+     "type": "color"
+    },
+    "bg-hover": {
+     "var": "--knox-button-background-color-secondary-hover",
+     "type": "color"
+    },
+    "bg-pressed": {
+     "var": "--knox-button-background-color-secondary-pressed",
+     "type": "color"
+    },
+    "text": {
+     "var": "--knox-button-text-icon-color-secondary-default",
+     "type": "color"
+    },
+    "text-hover": {
+     "var": "--knox-button-text-icon-color-secondary-hover",
+     "type": "color"
+    },
+    "border": {
+     "var": "--knox-button-border-color-secondary",
+     "type": "color"
+    }
+   },
+   "tertiary": {
+    "bg": {
+     "var": "--knox-button-background-color-tertiary-default",
+     "type": "color"
+    },
+    "bg-hover": {
+     "var": "--knox-button-background-color-tertiary-hover",
+     "type": "color"
+    },
+    "text": {
+     "var": "--knox-button-text-icon-color-tertiary-default",
+     "type": "color"
+    },
+    "text-hover": {
+     "var": "--knox-button-text-icon-color-tertiary-hover",
+     "type": "color"
+    }
+   }
+  },
+  "header": {
+   "bg": {
+    "type": "color",
+    "value": "#ffffff",
+    "source": "header default backgroundColor"
+   },
+   "height": {
+    "type": "dimension",
+    "value": "132px",
+    "source": "header default rect height",
+    "description": "Includes the nav bar at desktop width"
+   },
+   "text": {
+    "type": "color",
+    "value": "#303136",
+    "source": "nav-link default color"
+   },
+   "font-weight": {
+    "type": "fontWeight",
+    "value": 350,
+    "source": "nav-link default fontWeight",
+    "description": "Agile Sans at a variable-font 350"
+   }
+  },
+  "nav-flyout": {
+   "open-height": {
+    "type": "dimension",
+    "value": "675px",
+    "source": "nav-flyout open rect height"
+   },
+   "width": {
+    "type": "dimension",
+    "value": "1248px",
+    "source": "nav-flyout open rect width"
+   }
+  },
+  "plan-selector": {
+   "radius": {
+    "type": "dimension",
+    "value": "49px",
+    "source": "plan-selector default (pill border)",
+    "description": "The bordered Enterprise/Business pill pair"
+   },
+   "border": {
+    "type": "color",
+    "value": "{border.neutral-strong}",
+    "source": "semantic role of core.border.neutral-strong"
+   }
+  },
+  "footer": {
+   "bg": {
+    "type": "color",
+    "value": "#1d1d21",
+    "source": "footer default backgroundColor"
+   },
+   "text": {
+    "type": "color",
+    "value": "rgba(255, 255, 255, 0.8)",
+    "source": "footer default color"
+   }
+  },
+  "faq": {
+   "row-size": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "faq-row default fontSize"
+   },
+   "answer-bg": {
+    "type": "color",
+    "value": "#ffffff",
+    "source": "faq-answer open",
+    "description": "The expanded answer body"
+   }
+  },
+  "callout": {
+   "bg-informational": {
+    "var": "--knox-callout-background-color-informational",
+    "type": "color"
+   },
+   "radius": {
+    "var": "--knox-callout-corner-radius",
+    "type": "dimension"
+   }
+  },
+  "form-embed": {
+   "height": {
+    "type": "dimension",
+    "value": "915px",
+    "source": "form-embed default rect height",
+    "description": "The cross-origin Marketo iframe's box"
+   },
+   "width": {
+    "type": "dimension",
+    "value": "504px",
+    "source": "form-embed default rect width"
+   }
+  },
+  "video-embed": {
+   "height": {
+    "type": "dimension",
+    "value": "702px",
+    "source": "video-embed default rect height",
+    "description": "The Vimeo iframe's box"
+   },
+   "width": {
+    "type": "dimension",
+    "value": "1248px",
+    "source": "video-embed default rect width"
+   }
+  }
+ }
+}

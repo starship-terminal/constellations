@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/fff821ec-a3bf-41a5-aea2-626185bcd227",
   "source_url": "https://www.veed.io",
   "extracted_at": "2026-06-03T18:32:02.467Z",
-  "fetched_at": "2026-10-20T08:22:39Z",
+  "fetched_at": "2026-11-08T04:21:03Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f2aca67c-8d09-4cf3-b38c-87022f818976.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/f13100d5-3562-4359-8fac-c594b658983a.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/5eb6792b-b525-4474-92df-95605c56d56b.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/be44b501-1734-4dc8-af01-bed95ad08174.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

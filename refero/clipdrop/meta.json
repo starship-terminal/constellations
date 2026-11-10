@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/935f22cb-04ec-48c8-a6da-aa8c2c5abe8b",
   "source_url": "https://clipdrop.co",
   "extracted_at": "2026-06-03T21:40:52.643Z",
-  "fetched_at": "2026-10-20T08:23:29Z",
+  "fetched_at": "2026-11-08T04:19:55Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d8a12262-6d82-4e93-8ace-8077eade59fc.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a2fc3636-e376-4486-976c-f7ca2931d298.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/51b6725a-6be2-4924-bac0-1b94e0eb2c01.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/23be8f9d-af0a-46dc-bece-bad2faaa1f13.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

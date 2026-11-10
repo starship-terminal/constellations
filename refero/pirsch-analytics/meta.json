@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/e4b9d41a-8165-47dd-818a-5f6810046ea9",
   "source_url": "https://pirsch.io",
   "extracted_at": "2026-06-03T15:32:35.765Z",
-  "fetched_at": "2026-10-20T08:25:02Z",
+  "fetched_at": "2026-11-08T04:20:40Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e7cc714b-180a-48fa-ac80-cba712fa71c6.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/4528498c-bda9-42cc-a053-486a6a2b793b.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/04ce0b43-9085-4364-8218-47335bc7e2fc.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/2c94c47f-3a62-40af-9861-69d3692b6f58.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

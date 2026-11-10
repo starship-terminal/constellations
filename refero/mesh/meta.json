@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/1a03b8d7-9204-4c16-ad3c-16306f99fba9",
   "source_url": "https://clay.earth",
   "extracted_at": "2026-06-03T15:51:10.744Z",
-  "fetched_at": "2026-10-20T08:23:07Z",
+  "fetched_at": "2026-11-08T04:20:28Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/55c96c84-afc9-48c8-b24c-9f0a7a4d38d1.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/7e408989-9ad5-4973-a27f-7c1f91c33da8.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/5a9f38d9-36e7-4f7d-b9cc-c389a71b796f.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/ab0113d4-a6c8-4eea-bf19-35c08ddcd78f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

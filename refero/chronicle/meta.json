@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/1c60b014-473b-443b-b0f5-220612feebb7",
   "source_url": "https://chroniclehq.com",
   "extracted_at": "2026-05-01T15:51:33.254Z",
-  "fetched_at": "2026-10-20T08:25:21Z",
+  "fetched_at": "2026-11-08T04:19:54Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/059736dd-d2eb-4869-9807-3c579d9cd00b.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/b208af5f-8f12-4336-a4b2-bb18ceec5e59.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/e5941a84-bccd-4a08-bf71-bcf7e82f82fe.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/6b6dfbfb-dc8b-4442-bd91-bce06e12a2d5.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

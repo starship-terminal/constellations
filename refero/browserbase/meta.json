@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/34d438ad-0647-471e-9a6f-7c1fa29d5df6",
   "source_url": "https://www.browserbase.com",
   "extracted_at": "2026-06-03T20:36:03.247Z",
-  "fetched_at": "2026-10-20T08:23:45Z",
+  "fetched_at": "2026-11-08T04:19:52Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/68ba137b-d107-428e-9ba5-0d0798c3bdcb.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/2c4c7d8d-e15a-4239-9efb-c9b7c33db3f2.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/37f2e47d-da68-46e3-a2a2-d673cf3eb0f3.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/64c8ba6a-17ec-44f4-aae1-c0a5a8082ae6.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

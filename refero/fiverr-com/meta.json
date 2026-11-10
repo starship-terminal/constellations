@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/c3b34927-0638-463e-bf85-180d73bfc367",
   "source_url": "https://www.fiverr.com",
   "extracted_at": "2026-06-03T18:19:06.160Z",
-  "fetched_at": "2026-10-20T08:24:30Z",
+  "fetched_at": "2026-11-08T04:20:09Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/7eb3093e-603b-4738-b5c0-16a10cf3fbb9.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

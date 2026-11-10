@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/2230ba53-445e-411d-b483-16410a072639",
   "source_url": "https://www.useparallel.com",
   "extracted_at": "2026-06-03T15:53:28.456Z",
-  "fetched_at": "2026-10-20T08:24:59Z",
+  "fetched_at": "2026-11-08T04:20:18Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/9a68d9ac-b795-47fa-bbf4-365caa1bee24.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/15ec292b-369f-4bc0-a687-b9db2fd543f9.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/99adcb9c-9be7-4d82-9c41-ee8622eaae3b.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/21ed64f6-cabd-4fcd-96de-97c1ac6631e8.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

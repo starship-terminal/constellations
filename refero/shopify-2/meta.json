@@ -10,7 +10,7 @@
   "page_url": "https://styles.refero.design/style/1a8ba699-24cb-4b35-8db1-c595c578199c",
   "source_url": "https://shopify.com",
   "extracted_at": "2026-06-03T16:08:11.792Z",
-  "fetched_at": "2026-10-20T08:24:57Z",
+  "fetched_at": "2026-11-08T04:20:48Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f73c19f1-4da5-4936-a3bc-27bc3a0377c3.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/4da87dc7-ecf0-4cd4-b738-f182c857f003.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/fd1befbe-3285-4551-8188-9f4215654a02.jpg",
@@ -18,5 +18,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/559fc862-5528-4ff1-bce7-3001b7372c7c.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

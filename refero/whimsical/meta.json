@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/8e153a14-40a9-4793-b94b-c144d325c730",
   "source_url": "https://whimsical.com",
   "extracted_at": "2026-06-03T18:36:43.070Z",
-  "fetched_at": "2026-10-20T08:24:21Z",
+  "fetched_at": "2026-11-08T04:21:06Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6cfcf88f-d1dd-42cf-bc42-b9940908308a.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/78a39163-af71-4ab0-95db-95d0223fb49f.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a82d2ce9-29cf-4796-8d7a-7efa74f4b50a.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/7fa911b6-480a-43b4-9b9c-efac624492de.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

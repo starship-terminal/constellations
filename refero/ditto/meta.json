@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/2db41cd9-c898-4f59-b704-3042c0d87f45",
   "source_url": "https://www.dittowords.com",
   "extracted_at": "2026-06-03T19:01:41.956Z",
-  "fetched_at": "2026-10-20T08:22:23Z",
+  "fetched_at": "2026-11-08T04:20:01Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/3e2c4051-7142-4880-99e3-6ca2e5ccb2a6.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/9bc7b942-7fc8-4e75-aa26-30da41c115a0.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/66499053-ddb6-48c2-901b-8d6db6397147.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/4b147390-0577-4af9-9419-0b1e3f49b11f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

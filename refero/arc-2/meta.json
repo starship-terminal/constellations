@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/acfb6fa1-3aed-4e64-8522-7f332a796de8",
   "source_url": "https://arcboats.com",
   "extracted_at": "2026-06-03T18:21:23.122Z",
-  "fetched_at": "2026-10-20T08:24:29Z",
+  "fetched_at": "2026-11-08T04:19:44Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b2ba8acd-8b20-47e1-be8d-b14af2ac99f7.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/c59a887b-858b-4b52-a34c-8e0441171ec8.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/00aa9cb6-a2d8-4da2-9ecd-f26994d661df.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/da4631c8-4a01-4b34-8694-189a30ba048b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

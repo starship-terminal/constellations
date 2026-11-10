@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/12255b63-e506-4bc1-a4cd-d05487de32f3",
   "source_url": "https://intercom.com",
   "extracted_at": "2026-06-03T14:57:12.763Z",
-  "fetched_at": "2026-10-20T08:25:08Z",
+  "fetched_at": "2026-11-08T04:20:21Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/4bd60c2e-328c-47f7-9e16-6cf28f935929.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/7105b3bf-4042-4abb-81c5-95f1ee3df244.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/6804778e-19d9-4900-8d23-ba672697fdff.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/1207c4cb-3427-497d-86a3-5b1414d8ed25.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

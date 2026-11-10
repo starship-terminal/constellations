@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/5a7ba5ff-0476-4f3f-99f9-0b920534dde5",
   "source_url": "https://leonidkostetskyi.com",
   "extracted_at": "2026-06-03T15:17:41.185Z",
-  "fetched_at": "2026-10-20T08:25:03Z",
+  "fetched_at": "2026-11-08T04:20:25Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b4b6877b-5097-4fc1-9d79-9d2d049ca300.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/4800d940-2e15-4632-9a04-d5adc9a73e57.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/2b653ed9-edac-48d1-8c59-6eb86bfb6092.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/d7b2f279-4513-41b4-87cd-2b1eb7e60f64.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

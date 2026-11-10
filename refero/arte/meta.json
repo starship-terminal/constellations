@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/2f94c1f0-cd23-4bf1-95f3-0e531174c4f4",
   "source_url": "https://www.makearte.ca",
   "extracted_at": "2026-06-03T19:27:50.712Z",
-  "fetched_at": "2026-10-20T08:24:02Z",
+  "fetched_at": "2026-11-08T04:19:45Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/42b9e932-4749-44bb-876e-1387373bde82.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/83562142-7f08-4631-9305-8f9b3997fba4.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/639721b6-76bc-4b13-861a-a79e207ee85b.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e8ef8430-e203-4e1a-b430-05c655c77c0f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

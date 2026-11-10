@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/a7891223-a93e-4731-a1aa-4079f1ee928b",
   "source_url": "https://yinger.dev",
   "extracted_at": "2026-06-03T18:42:44.802Z",
-  "fetched_at": "2026-10-20T08:22:31Z",
+  "fetched_at": "2026-11-08T04:20:28Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5584446a-c5ee-4efc-89a0-71d9176801a4.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/fa124807-6fee-482c-9fcc-cf0b0dfc2530.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/59a5d1a5-1396-4f8e-ac14-ec9c738e662d.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/c540c82c-d6ad-49f7-b940-d82feba87b97.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

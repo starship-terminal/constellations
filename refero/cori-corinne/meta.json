@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/2c18e573-0ffb-4f0d-848c-ff72a5839fd3",
   "source_url": "https://www.coricorinne.com",
   "extracted_at": "2026-06-03T17:02:17.746Z",
-  "fetched_at": "2026-10-20T08:23:11Z",
+  "fetched_at": "2026-11-08T04:19:57Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/45ddd07a-f591-40d9-be4f-bcf9a6f1ceb0.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/225bb9b1-0332-44c7-b552-7f304e710fd8.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a142a46a-b26d-43ac-ad32-9ed81602a993.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/ad2c454b-53f2-422a-a1b6-99e3292a9d5b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

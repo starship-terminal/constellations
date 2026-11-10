@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/7fdd9506-0a85-41a5-b2a7-c5ce1f31d863",
   "source_url": "https://www.houseplant.com",
   "extracted_at": "2026-06-03T19:46:52.215Z",
-  "fetched_at": "2026-10-20T08:23:59Z",
+  "fetched_at": "2026-11-08T04:20:18Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/c462a391-07b7-49a0-a26b-b915abe1e18e.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/aa9234ca-0cc8-470b-bd38-398712de3e95",
   "source_url": "https://bsky.app",
   "extracted_at": "2026-06-03T19:49:09.406Z",
-  "fetched_at": "2026-10-20T08:23:58Z",
+  "fetched_at": "2026-11-08T04:19:51Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/bf430eb1-f6d7-4323-b961-f8ce2ddac230.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

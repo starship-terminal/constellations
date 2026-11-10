@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/c3ceca5c-d329-4559-b947-016172941ba2",
   "source_url": "https://github.com",
   "extracted_at": "2026-07-03T03:46:17.051Z",
-  "fetched_at": "2026-10-20T08:21:32Z",
+  "fetched_at": "2026-11-08T04:20:13Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/c5919982-efde-4b02-b464-7a0d8b198a50.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/dd313a66-f283-44e5-b46d-e158fb80a2e0.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/7fdcf3fb-aa82-4dff-8186-3a37c3785f91.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/774bcea2-bf9c-4877-b207-c8aec2b0a66a.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

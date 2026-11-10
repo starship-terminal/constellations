@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/a90dbcb6-e42c-4992-a83b-94879699dd4f",
   "source_url": "https://www.liesingers.com",
   "extracted_at": "2026-06-03T18:49:45.007Z",
-  "fetched_at": "2026-10-20T08:24:15Z",
+  "fetched_at": "2026-11-08T04:20:49Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b0651150-45fa-45d3-a4d0-e4de28e2c4fc.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

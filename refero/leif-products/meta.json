@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/3f56ea4d-ed9d-4a36-8fb5-a801519ef80b",
   "source_url": "https://leifproducts.com",
   "extracted_at": "2026-06-03T20:08:44.606Z",
-  "fetched_at": "2026-10-20T08:22:01Z",
+  "fetched_at": "2026-11-08T04:20:25Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/db3e2d16-4e6b-41f9-a7c5-010f76aadb79.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/7899a155-d075-4283-a950-b2a4d6bb3c78.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/130c9131-e30d-496e-b938-877b3079830c.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0f4186b9-a3e1-4ba5-a810-48481895f0a7.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

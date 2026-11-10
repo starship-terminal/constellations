@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/80028bf5-0c05-43a4-8c9e-b98750d610bd",
   "source_url": "https://phantom.app",
   "extracted_at": "2026-06-03T17:51:59.669Z",
-  "fetched_at": "2026-10-20T08:22:48Z",
+  "fetched_at": "2026-11-08T04:20:39Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/1d3974ca-488b-44c4-a33c-83e7c08d7274.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/bbd2b136-3dde-4b83-ad43-a77ba540cf2d.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/ef059861-1a68-4521-9351-e442d61d0010.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/258d2088-10f3-4809-8015-21443507982f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

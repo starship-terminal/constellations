@@ -1,0 +1,25 @@
+{
+ "readAt": "2026-11-08",
+ "source": "the live CSSOM on ableton.com (the SASS-built stylesheets are same-origin, readable); one theme, resolved at 1440 x 900",
+ "sheetsSkippedCrossOrigin": [
+  "output.1dd98d07efb4.css",
+  "output.f6bcf578d4e1.css"
+ ],
+ "counts": {
+  "rules": 0,
+  "fonts": 0,
+  "names": {
+   "theme": 0,
+   "app": 0,
+   "utility": 0,
+   "tailwind": 0
+  },
+  "bySelector": {}
+ },
+ "theme": [],
+ "app": [],
+ "utility": [],
+ "tailwind": [],
+ "fonts": [],
+ "resolved": {}
+}

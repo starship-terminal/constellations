@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/6665a3dd-606f-4fd1-80dd-a84e3b3a6226",
   "source_url": "https://hypertria.com",
   "extracted_at": "2026-06-03T20:42:45.387Z",
-  "fetched_at": "2026-10-20T08:21:56Z",
+  "fetched_at": "2026-11-08T04:20:19Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6ce2bb15-def4-44cf-821e-748f82fec2ee.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/083fe541-d12a-4840-ba62-4f770b6e0f81.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/6586c6ea-fb39-49ea-ae5b-5bdaf722d35c.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/d80ebc8d-4656-47eb-a277-b535ed9a37ee.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

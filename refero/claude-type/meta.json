@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/134cfb76-12e0-4e2e-9995-5a1617190c56",
   "source_url": "https://claudetype.com",
   "extracted_at": "2026-06-03T21:09:25.067Z",
-  "fetched_at": "2026-10-20T08:21:50Z",
+  "fetched_at": "2026-11-08T04:19:55Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/96105fd2-7ccb-423a-8aec-dce490cc836a.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ecf8f7c7-02de-41c0-a205-eeb023eea5d4.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/fd791480-180c-4003-b34a-a380a6383f27.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/95706fb2-f84b-405d-b4b9-8ae71379c745.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

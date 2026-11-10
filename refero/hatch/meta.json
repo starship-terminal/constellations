@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/e1afed53-6854-40dd-8157-dfc1dd3505f0",
   "source_url": "https://www.hatch.fm",
   "extracted_at": "2026-06-03T18:38:37.954Z",
-  "fetched_at": "2026-10-20T08:24:20Z",
+  "fetched_at": "2026-11-08T04:20:15Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/89e06157-0568-4db2-8794-355dccb1f2b4.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/adfa82b7-31eb-45c2-9780-539f4e1e561d.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/2a519bc8-71f0-4dbf-860b-4e273dd49bcd.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/72098b57-af2c-42ea-9777-0d0084c619e5.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }
