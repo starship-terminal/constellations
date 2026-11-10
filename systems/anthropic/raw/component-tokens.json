@@ -275,8 +275,8 @@
      "lineHeight": "1.25",
      "letterSpacing": "{font.tracking.tight}"
     },
-    "source": "composite of hero-title / engineering-card-title (serif ~41/51 at scaled size) and m-hero-title (25px serif)",
-    "description": "Serif headlines: heroes and card titles"
+    "source": "composite of hero-title / engineering-card-title (serif ~41/51 at scaled size) and m-hero-title (25px serif); the home hero's h1 is serif while its lead line inside renders anthropicSans 600 at the same size (raw/measurements.md hero-title textStyle)",
+    "description": "Serif headlines: heroes and card titles; the home hero mixes a sans-600 lead line inside the serif heading"
    },
    "body": {
     "type": "typography",
@@ -431,8 +431,14 @@
   "focus-periwinkle": {
    "var": "--color-periwinkle-interactive",
    "type": "color",
-   "source": "measured outlineColor rgb(21,76,146) on nav-cta / nav-pill / hero-cta / plan-cta at focus-visible, 2px solid offset 4px (raw/measurements.md)",
-   "description": "#154c92, the focus ring the product pages actually draw"
+   "source": "measured outlineColor rgb(21,76,146) on nav-cta / nav-pill / nav-search / hero-cta at focus-visible, 2px solid offset 4px (raw/measurements.md)",
+   "description": "#154c92, the focus ring the marketing pages draw on their pills and CTAs"
+  },
+  "focus-product": {
+   "var": "--color-clay-dark",
+   "type": "color",
+   "source": "css-var --color-focus on claude.com = var(--color-clay-dark); measured outlineColor rgb(196,104,73) on product-cta / plan-cta / plan-tab / nav-trigger at focus-visible, 2px solid offset 2-4px (raw/measurements.md)",
+   "description": "#c46849 clay-dark, the focus ring the claude.com product pages draw"
   },
   "docs-focus": {
    "var": "--cds-blue-450",
@@ -770,6 +776,69 @@
    "owner": "docs",
    "type": "color",
    "source": "css-var --cds-clay (shared decl #d97757 applies in both scopes); clay does not change in the docs dark theme"
+  },
+  "docs-focus": {
+   "var": "--cds-blue-450",
+   "owner": "docs",
+   "type": "color",
+   "source": "css-var --cds-shadow-drop-ring = inset 0 0 0 2px #2a78d6 under .cds-dark-scope[data-mode=\"dark\"]: the focus blue does not change in the docs dark theme",
+   "description": "#2a78d6 on the docs, both themes"
+  },
+  "docs": {
+   "page": {
+    "var": "--cds-surface-1",
+    "owner": "docs",
+    "type": "color",
+    "source": "css-var --cds-surface-1 (.cds-dark-scope[data-mode=\"dark\"] -> --cds-gray-850 = #151515); same token as dark.page",
+    "description": "The docs' dark ground"
+   },
+   "surface": {
+    "var": "--cds-surface-2",
+    "owner": "docs",
+    "type": "color",
+    "source": "css-var --cds-surface-2 (.cds-dark-scope[data-mode=\"dark\"] -> --cds-gray-830 = #1a1a19); same token as dark.surface"
+   },
+   "text": {
+    "value": "{text.DEFAULT}",
+    "type": "color",
+    "source": "alias of the dark set's text.DEFAULT (the docs' --cds-text-primary in dark)"
+   },
+   "text-secondary": {
+    "value": "{text.secondary}",
+    "type": "color",
+    "source": "alias of the dark set's text.secondary"
+   },
+   "muted": {
+    "value": "{text.muted}",
+    "type": "color",
+    "source": "alias of the dark set's text.muted"
+   },
+   "border": {
+    "value": "{border.DEFAULT}",
+    "type": "color",
+    "source": "alias of the dark set's border.DEFAULT (the docs' #ffffff0a dark hairline)"
+   },
+   "nav-active": {
+    "type": "color",
+    "value": "rgba(255, 255, 255, 0.1)",
+    "source": "css-var --cds-alpha-2 under .cds-dark-scope[data-mode=\"dark\"] = hsl(from --cds-neutral-900 / 10%), dark neutral-900 -> --cds-gray-0 (white at 10%)"
+   },
+   "field-bg": {
+    "type": "color",
+    "value": "rgba(255, 255, 255, 0.05)",
+    "source": "css-var --cds-fill-field (.cds-dark-scope[data-mode=\"dark\"] -> --cds-alpha-1 = hsl(from --cds-neutral-900 / 5%), white at 5% in dark)"
+   },
+   "kbd-border": {
+    "type": "color",
+    "value": "rgba(255, 255, 255, 0.18)",
+    "source": "the dark-side counterpart of light.docs.kbd-border (ink at 18%): white at 18% on the dark ground; no dark decl to resolve"
+   },
+   "accent": {
+    "var": "--cds-text-accent",
+    "owner": "docs",
+    "type": "color",
+    "source": "css-var --cds-text-accent (.cds-dark-scope[data-mode=\"dark\"] -> --cds-role-accent-300; the docs' accent lightens in dark)"
+   }
   }
  }
 }

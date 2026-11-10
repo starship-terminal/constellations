@@ -27,7 +27,7 @@ Read this before designing in this style. Take every value from [tokens.json](to
 ### Principles
 
 1. Do keep the ground warm and quiet.
-2. Do set headlines in the serif.
+2. Do set headlines in the serif — the home hero is the exception.
 3. Don't waste the clay.
 4. Do round pills fully, cards moderately.
 5. Do invert pills on hover.
@@ -59,7 +59,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 | light | 17.49:1 pass | 16.71:1 pass | 6.25:1 pass | 5.97:1 pass |
 | dark | 15.88:1 pass | 15.14:1 pass | 5.08:1 pass | 4.84:1 pass |
 
-8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.focus` #2c84db; `light.docs-focus` #2a78d6; `light.field.border-focus` #5e5d59; `light.focus-periwinkle` #154c92.
+8 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.focus` #2c84db; `dark.docs-focus` #2a78d6; `light.docs-focus` #2a78d6; `light.field.border-focus` #5e5d59.
 
 <!-- brief:end -->
 
@@ -126,7 +126,7 @@ All are commercial faces served from Anthropic's hosts; none is committed. The s
 ## Do and don't
 
 1. **Do keep the ground warm and quiet.** The page is ivory #faf9f5, fills step down the gray ramp (#f5f4ed, #f0eee6, #e8e6dc) and text is near-black #141413. See [home-light-default](screenshots/home-light-default.png) and [pricing-light-default](screenshots/pricing-light-default.png).
-2. **Do set headlines in the serif.** Display titles are anthropicSerif at weight 400-500, ~1.1 leading, slightly tight tracking; body and chrome stay in anthropicSans. See [hero-title](components/crops/hero-title-default.png) and [faq-item](components/crops/faq-item-default.png).
+2. **Do set headlines in the serif — the home hero is the exception.** Display titles are anthropicSerif at weight 400-500, ~1.1 leading, slightly tight tracking; body and chrome stay in anthropicSans. The home hero's heading mixes the two: the h1 is serif while its lead line inside renders anthropicSans at weight 600 and the same size (the mobile entry reads the same way). See [hero-title](components/crops/hero-title-default.png) and [faq-item](components/crops/faq-item-default.png).
 3. **Don't waste the clay.** Clay #d97757/#c6613f is a brand accent, not a UI colour: primary buttons are ink fills and links are ink or underlined. The clay shows up on the footer send, pictograms and badges. See [footer](components/crops/footer-default.png).
 4. **Do round pills fully, cards moderately.** Nav chrome and radios are 999999px pills; buttons run 8-10px, fields 16, cards 19-24. See [nav-cta](components/crops/nav-cta-default.png) and [plan-card](components/crops/plan-card-default.png).
 5. **Do invert pills on hover.** The signature hover is the ivory pill flipping to ink with a 1px ink ring; pressed steps to #e8e6dc. Keyboard focus is a 2px #154c92 ring offset 4px. See [nav-cta-hover](components/crops/nav-cta-hover.png) and [nav-cta-focus-visible](components/crops/nav-cta-focus-visible.png).

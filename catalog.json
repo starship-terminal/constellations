@@ -3435,7 +3435,7 @@
     "version": "Live sites, 2026-11-09; release not exposed",
     "durationMin": null,
     "durationNote": "Continued a partially completed capture; total active time not recorded.",
-    "pr": ""
+    "pr": "https://github.com/c-wenlong/designs/pull/448"
    }
   }
  ]

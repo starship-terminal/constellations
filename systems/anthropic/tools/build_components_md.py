@@ -399,7 +399,7 @@ for k, c in C.items():
     foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else ("ring shadow " + colour(s["boxShadow"], tokens=False) if ring_shadow else None)))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} show a change: {', '.join(with_ring)}. The other {len(without)} draw nothing new - the product pages draw a deliberate 2px #154c92 ring offset 4px, the docs outline in #2a78d6, and text links take the browser's ring: {', '.join(without)}.")
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} show a change: {', '.join(with_ring)}. The other {len(without)} draw nothing new - the marketing pills draw a deliberate 2px #154c92 periwinkle ring offset 4px, the product pages a 2px #c46849 clay-dark ring offset 2-4px, the docs outline in #2a78d6, and text links take the browser's ring: {', '.join(without)}.")
 W()
 W("**Pressed.** Pressed was forced with DevTools, so it is the :active styles only: the nav pills swap to their #e8e6dc pressed fill under :active, while the ink CTAs and docs controls keep their resting paint. The submit button and every sign-in link were never pressed for real.")
 W()
@@ -476,9 +476,18 @@ for k in ["feature-card", "news-card", "product-card", "plan-card", "docs-search
     if st is None:
         continue
     p = props(st)
-    if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
+    # Borrow a child's paint only for what the root does not itself carry: a
+    # missing radius may come from a painted child, but a square corner must not
+    # replace a measured root background with a child's fill.
+    if st.get("paint") and ("radius" not in p or p["background"] == "transparent"):
         p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
+        p = dict(p)
+        if "radius" not in p:
+            p["radius"] = p0.get("radius", "-")
+        if p["background"] == "transparent":
+            p["border"] = colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-"
+            p["background"] = colour(p0.get("bg", "")) or "-"
+            p["shadow"] = colour(p0.get("shadow", ""), tokens=False) or "none"
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 

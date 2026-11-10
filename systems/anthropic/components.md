@@ -72,7 +72,7 @@ The 19 components of the library's checklist ([docs/DESIGN-SYSTEM.md](../../docs
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 15 components were given a real keyboard focus. 10 show a change: `nav-search` (2px solid #154c92 `brand.periwinkle-interactive`, offset 4px), `nav-cta` (2px solid #154c92 `brand.periwinkle-interactive`, offset 4px), `hero-cta` (2px solid #154c92 `brand.periwinkle-interactive`, offset 4px), `product-cta` (2px solid #c46849, offset 4px), `plan-tab` (2px solid #c46849, offset 2px), `plan-cta` (2px solid #c46849, offset 4px), `docs-nav-link` (ring shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px), `docs-search-field` (ring shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px), `nav-pill` (2px solid #154c92 `brand.periwinkle-interactive`, offset 4px), `nav-trigger` (2px solid #c46849, offset 2px). The other 5 draw nothing new - the product pages draw a deliberate 2px #154c92 ring offset 4px, the docs outline in #2a78d6, and text links take the browser's ring: `footer-link`, `api-cta`, `submit-button`, `docs-tab`, `batch-toggle`.
+**Focus.** 13 components were given a real keyboard focus. 11 show a change: `nav-search` (2px solid #154c92 `brand.periwinkle-interactive`, offset 4px), `nav-cta` (2px solid #154c92 `brand.periwinkle-interactive`, offset 4px), `hero-cta` (2px solid #154c92 `brand.periwinkle-interactive`, offset 4px), `product-cta` (2px solid #c46849, offset 4px), `plan-tab` (2px solid #c46849, offset 2px), `plan-cta` (2px solid #c46849, offset 4px), `docs-nav-link` (ring shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px), `batch-toggle` (2px solid #c46849, offset 2px), `docs-search-field` (ring shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px), `nav-pill` (2px solid #154c92 `brand.periwinkle-interactive`, offset 4px), `nav-trigger` (2px solid #c46849, offset 2px). The other 2 draw nothing new - the marketing pills draw a deliberate 2px #154c92 periwinkle ring offset 4px, the product pages a 2px #c46849 clay-dark ring offset 2-4px, the docs outline in #2a78d6, and text links take the browser's ring: `footer-link`, `submit-button`.
 
 **Pressed.** Pressed was forced with DevTools, so it is the :active styles only: the nav pills swap to their #e8e6dc pressed fill under :active, while the ink CTAs and docs controls keep their resting paint. The submit button and every sign-in link were never pressed for real.
 
@@ -88,6 +88,7 @@ Values that apply across entries, from the measurement files.
 | 0.2s | `ease` | background-color, border-color, box-shadow | topic-radio |
 | 0.2s | `ease-in-out` | background-color, border-color, box-shadow, color | hero-cta, m-nav-menu-btn, nav-pill, nav-search, plan-cta, plan-tab, plan-tab-active, product-cta |
 | 0.3s | `ease` | background-color, border-color, box-shadow, color, transform | engineering-card-title, hero-title, m-hero-title, m-nav-bar, select-field, text-area, text-field, text-field-box |
+| 0.4s | `cubic-bezier(0.35, 1.5, 0.6, 1)` | background-color, border-color | batch-toggle |
 | 0.5s | `cubic-bezier(0.19, 1, 0.22, 1)` | color | nav-trigger |
 | 0.75s | `cubic-bezier(0.25, 1, 0.5, 1)` | opacity, transform | api-title, contact-title |
 
@@ -112,12 +113,12 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Feature card](#feature-card) | 1440 x 810 | 1px solid #141413 `gray.950` | 10px | #141413 `gray.950` | none | 224px 0px |
+| [Feature card](#feature-card) | 1440 x 810 | - | 10px | #f5f4ed `gray.100` | none | 224px 0px |
 | [News card](#news-card) | 632 x 104.17 | - | - | transparent | none | 0 |
 | [Product card](#product-card) | 480 x 270 | 1px solid #e8e6dc `gray.200` | 19px | #f0eee6 `gray.150` | none | 0 |
 | [Plan card](#plan-card) | 420 x 375.2 | 1px solid #f0eee6 `gray.150` | 24px | #ffffff `gray.000` | none | 40px 32px 48px 32px |
 | [Search dialog](#search-dialog) | 672 x 500 | - | 12px | #ffffff `gray.000` | rgba(11, 11, 11, 0.1) 0px 0px 0px 0px inset, rgba(11, 11, 11, 0.1) 0px 0px 0px 1px, rgba(11, 11, 11, 0.08) 0px 4px 8px 0px, rgba(11, 11, 11, 0.08) 0px 12px 28px -2px | 0 |
-| [Mobile nav sheet](#mobile-nav-sheet) | 390 x 844 | 1px solid #3d3d3a `gray.700` | 8px | #262624 `gray.800` | none | 0 |
+| [Mobile nav sheet](#mobile-nav-sheet) | 390 x 844 | - | 8px | #141413 `gray.950` | none | 0 |
 
 ## Components
 
@@ -365,9 +366,9 @@ A primary button or link on the platform page. Read as `api-cta` on the claude.c
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 238.03 x 20; background transparent; text anthropicSans 12/19.2 400, #5e5d59 `gray.600`; icon 20 x 20, #5e5d59 `gray.600` |
+| default (same: hover, pressed) | size 238.03 x 20; background transparent; text anthropicSans 12/19.2 400, #5e5d59 `gray.600`; icon 20 x 20, #5e5d59 `gray.600` |
 
-![Platform CTA default](components/crops/api-cta-default.png) ![Platform CTA hover](components/crops/api-cta-hover.png) ![Platform CTA focus-visible](components/crops/api-cta-focus-visible.png) ![Platform CTA pressed](components/crops/api-cta-pressed.png)
+![Platform CTA default](components/crops/api-cta-default.png) ![Platform CTA hover](components/crops/api-cta-hover.png) ![Platform CTA pressed](components/crops/api-cta-pressed.png)
 
 ### Pricing
 
@@ -452,7 +453,8 @@ The switch that shows batch-processing prices; a local toggle. Read as `batch-to
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 122.02 x 24; background transparent; text anthropicSans 15/24 400, #3d3d3a `gray.700` |
+| default (same: hover, pressed) | size 56 x 34; padding 4px; border 1px solid #c2c0b6 `gray.350`; radius 30px; background #dedcd1 `gray.250`; text anthropicSans 15/22.5 400, #141413 `gray.950`; transition background-color 0.4s cubic-bezier(0.35, 1.5, 0.6, 1), border-color 0.4s cubic-bezier(0.35, 1.5, 0.6, 1) |
+| focus-visible | outline 2px solid #c46849, offset 2px |
 
 ![Batch toggle default](components/crops/batch-toggle-default.png) ![Batch toggle hover](components/crops/batch-toggle-hover.png) ![Batch toggle focus-visible](components/crops/batch-toggle-focus-visible.png) ![Batch toggle pressed](components/crops/batch-toggle-pressed.png)
 
@@ -562,9 +564,9 @@ A product tab in the docs header. Read as `docs-tab` on the docs.claude.com API 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 66.47 x 32; background transparent; text anthropicSans 14/20 400, #898781 `docs.gray-400` |
+| default (same: hover, pressed) | size 66.47 x 32; background transparent; text anthropicSans 14/20 400, #898781 `docs.gray-400` |
 
-![Docs top tab default](components/crops/docs-tab-default.png) ![Docs top tab hover](components/crops/docs-tab-hover.png) ![Docs top tab focus-visible](components/crops/docs-tab-focus-visible.png) ![Docs top tab pressed](components/crops/docs-tab-pressed.png)
+![Docs top tab default](components/crops/docs-tab-default.png) ![Docs top tab hover](components/crops/docs-tab-hover.png) ![Docs top tab pressed](components/crops/docs-tab-pressed.png)
 
 #### Language picker
 The "English" locale picker in the docs header. Read as `docs-lang` on the docs.claude.com API reference page.
@@ -637,9 +639,15 @@ Inline `code` in the docs body. Read as `docs-start-inline-code` on the docs.cla
 ![Docs inline code default](components/crops/docs-start-inline-code-default.png)
 
 #### Copy page button
-The "Copy page" utility button above the docs body. Read as `docs-copy-page` on the docs.claude.com API reference page.
+The "Copy page" utility button above the docs body. Read as `docs-copy-page` on the docs.claude.com get-started page.
 
-Not on the page when it was captured.
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: hover) | size 111.86 x 28; padding 0px 10px; radius 7px 0px 0px 7px; background transparent; text Anthropicons-Variable 20/20 433.25, #0b0b0b `docs.gray-900`; transition box-shadow 0.06s cubic-bezier(0.4, 0, 0.2, 1) |
+
+Child layers that carry the look: span 111.9x28 background rgba(255, 255, 255, 0.1) radius 7px 0px 0px 7px.
+
+![Copy page button default](components/crops/docs-copy-page-default.png) ![Copy page button hover](components/crops/docs-copy-page-hover.png)
 
 #### Docs page title
 The h1 at the top of a docs page. Read as `docs-api-title` on the docs.claude.com API reference page.

@@ -141,12 +141,19 @@ async function measure(key, state, target, opts = {}) {
 const FILL = 'a voice agent for a clinic';
 
 // Records the listed states of one component. meta: title, group, desc, sel.
+// The target is checked before comp() touches the entry: a component several
+// pages share keeps its earlier states and page details when a later page does
+// not carry it, instead of being rewritten page-details-and-all as missing.
 async function S(key, target, list, meta = {}, opts = {}) {
-  comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
-  delete out.components[key].missing;
   if (opts.open) { await reset(); await opts.open(); }
   const loc = target.filter({ visible: true }).first();
-  if (!(await loc.count())) { log('  ! missing', key); out.components[key].missing = true; return; }
+  if (!(await loc.count())) {
+    if (Object.keys(out.components[key]?.states || {}).length) { touched.add(key); log('  ! not on this page, keeping earlier capture', key); }
+    else { comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel }); out.components[key].missing = true; log('  ! missing', key); }
+    return;
+  }
+  comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
+  delete out.components[key].missing;
   for (const st of list) {
     let undo, via;
     try {
@@ -158,7 +165,9 @@ async function S(key, target, list, meta = {}, opts = {}) {
         await page.waitForTimeout(450);
         via = 'mouse hover';
       } else if (st === 'focus-visible') {
-        via = await kbFocus((opts.focusLoc || loc).filter({ visible: true }).first());
+        // opts.focusLoc may name an sr-only control (the real focus target of a
+        // styled switch, say): it is not visibility-filtered the way loc is.
+        via = await kbFocus(opts.focusLoc ? opts.focusLoc.first() : loc.filter({ visible: true }).first());
       } else if (st === 'pressed') {
         undo = await forcePseudo((opts.pressLoc || loc).filter({ visible: true }).first(), ['active', 'hover']);
         via = 'CDP forcePseudoState :active:hover';
@@ -174,7 +183,14 @@ async function S(key, target, list, meta = {}, opts = {}) {
         undo = async () => { await f.focus(); await page.keyboard.press('ControlOrMeta+a'); await page.keyboard.press('Backspace'); await page.waitForTimeout(300); };
         via = `typed "${opts.fillText || FILL}", then deleted; nothing sent`;
       } else via = via || 'at rest';
-      await measure(key, st, loc, { ...opts, via });
+      if (via === 'focus failed') {
+        // The element never took focus: a resting read labelled focus-visible is
+        // not a captured focus, so the attempt is recorded as an error instead.
+        out.components[key].states[st] = { error: 'keyboard focus could not reach the element', via };
+        log('  !', key, st, 'focus failed');
+      } else {
+        await measure(key, st, loc, { ...opts, via });
+      }
     } catch (e) {
       out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
       log('  !', key, st, String(e.message).slice(0, 120));
@@ -444,8 +460,11 @@ async function pricing() {
   });
   if (bt) {
     await S('batch-banner', q('[data-m="batch"]'), ['default'], { group: g, title: 'Batch processing banner', desc: 'The "Save 50% with batch processing" toggle banner on the API pricing tab.', sel: 'the batch banner' });
-    if (await tagEl('bswitch', 'batch processing', '[data-m="batch"]'))
-      await S('batch-toggle', q('[data-m="bswitch"]'), B4, { group: g, title: 'Batch toggle', desc: 'The switch that shows batch-processing prices; a local toggle.', sel: 'the batch switch' });
+    // The switch is label.bannerToggle > input[role=switch].sr-only + a painted
+    // track span: measure the painted track, focus the sr-only input behind it.
+    const sw = await tag('bswitch', () => document.querySelector('[data-m="batch"] [class*="__switch"], [data-m="batch"] [class*="Switch"], [data-m="batch"] input[role=switch]') || null);
+    if (sw)
+      await S('batch-toggle', q('[data-m="bswitch"]'), B4, { group: g, title: 'Batch toggle', desc: 'The switch that shows batch-processing prices; a local toggle.', sel: 'the painted track of the batch switch (input[role=switch])' }, { focusLoc: q('[data-m="batch"] input[role=switch]') });
     const trow = await tag('apirow', () => {
       const cands = [...document.querySelectorAll('tr, [class*="row" i], li')].filter((e) => {
         const r = e.getBoundingClientRect();
@@ -630,7 +649,10 @@ async function docsPage(key) {
     if (meth) await S('docs-method-badge', q('[data-m="dmeth"]'), ['default'], { group: g, title: 'HTTP method badge', desc: 'The method badge on an endpoint (POST, GET).', sel: 'the method pill' });
   }
   const copy = await tag('dcopy', () => {
-    const cands = [...document.querySelectorAll('button, a')].filter((e) => /copy page|copy/i.test((e.innerText || e.getAttribute('aria-label') || '').trim()));
+    const cands = [...document.querySelectorAll('button, a')].filter((e) => {
+      const r = e.getBoundingClientRect();
+      return r.width > 4 && r.height > 4 && /copy page|copy/i.test((e.innerText || e.getAttribute('aria-label') || '').trim());
+    });
     return cands[0] || null;
   });
   if (copy) await S('docs-copy-page', q('[data-m="dcopy"]'), ['default', 'hover'], { group: g, title: 'Copy page button', desc: 'The "Copy page" utility button above the docs body.', sel: 'the Copy page button' });

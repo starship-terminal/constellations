@@ -24,6 +24,15 @@ for f in RAW.glob('*.part*.png'):
         continue
     parts.setdefault(m.group(1), []).append((int(m.group(2)), f))
 for name, ps in parts.items():
+    # Only stitch tiles from the latest capture: public.mjs deletes a family's
+    # old .partN files before each shot, but a crashed or filtered run can still
+    # leave some behind. A base PNG newer than every tile means the last run
+    # wrote a single image, and the surviving tiles are stale — skip them.
+    base = RAW / f'{name}.png'
+    newest_tile = max(f.stat().st_mtime for _, f in ps)
+    if base.exists() and base.stat().st_mtime >= newest_tile:
+        print('skipped stale tiles for', name)
+        continue
     ims = [Image.open(f).convert('RGB') for _, f in sorted(ps)]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
     y = 0

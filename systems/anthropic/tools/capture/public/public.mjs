@@ -34,28 +34,44 @@ const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
 const wait = (p, ms) => p.waitForTimeout(ms);
 
-async function lazyScroll(p) {
-  const h = await p.evaluate(() => document.documentElement.scrollHeight);
+// Infinite-scroll pages grow scrollHeight without bound; the tile cap below
+// must bound the lazy-scroll pass too, not just the tile loop.
+const TILE_CAP = 8;
+const chunkFor = (dpr) => Math.floor(14000 / dpr);
+async function lazyScroll(p, maxY = Infinity) {
+  const h = Math.min(await p.evaluate(() => document.documentElement.scrollHeight), maxY);
   for (let y = 0; y < h; y += 600) { await p.evaluate((y) => scrollTo(0, y), y); await wait(p, 200); }
   await p.evaluate(() => scrollTo(0, 0)); await wait(p, 900);
 }
+
+let failures = 0;
 
 class Shooter {
   constructor(p, prefix, vw, vh, dpr) { this.p = p; this.prefix = prefix; this.vw = vw; this.dpr = dpr; this.requested = { viewport: { width: vw, height: vh }, deviceScaleFactor: dpr }; this.count = 0; }
   async view(name) { await screenshotWithMetadata(this.p, { path: `${RAW}/${this.prefix}-${name}.png` }, this.requested); this.count++; log('  shot', name); }
   async full(name = 'full') {
     const p = this.p;
-    await lazyScroll(p);
+    const chunk = chunkFor(this.dpr);
+    const MAXH = TILE_CAP * chunk;
+    // Check the height before scrolling: a runaway page fails the guard here,
+    // not after a lazy-scroll pass that could take the better part of an hour.
+    const H0 = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
+    if (H0 > MAXH) log(`  ! ${name}: page is ${H0}px tall before scrolling, capturing first ${MAXH}px only (infinite/growing page boundary)`);
+    await lazyScroll(p, Math.min(H0, MAXH));
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
-    const chunk = Math.floor(14000 / this.dpr);
+    const hCap = Math.min(H, MAXH);
+    if (H > MAXH && H0 <= MAXH) log(`  ! ${name}: page grew to ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
     const f = `${RAW}/${this.prefix}-${name}`;
-    if (H <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < H; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, H - y) } }, this.requested);
+    // Clear last run's tiles for this shot family first: a page that is short
+    // now must not pick up stale .partN files from a taller earlier capture.
+    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
+    if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
+    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
   }
 }
-const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
+const step = async (label, fn) => { try { await fn(); } catch (e) { failures++; log('  FAILED', label, String(e.message).split('\n')[0]); } };
 
 // Hovers one top-nav trigger so its dropdown opens (anthropic.com opens them on hover).
 async function navMenu(p, S, item = 'Product') {
@@ -159,9 +175,10 @@ for (const { k, mob } of runs) {
     await wait(p, spec.wait || 6000);
     if (spec.promo !== 'keep') await closePromo(p);
     await spec.run(p, S);
-  } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
+  } catch (e) { failures++; log('  PAGE FAILED', name, e.message.split('\n')[0]); }
   total += S.count;
   await ctx.close();
 }
 log('done', total, 'screenshots ->', RAW);
 await b.close();
+if (failures) { console.error(`${failures} capture(s) failed`); process.exit(1); }

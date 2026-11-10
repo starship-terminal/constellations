@@ -1,4 +1,5 @@
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Anthropic style guide</title>
 <meta name="description" content="Anthropic (anthropic.com, claude.com, docs.claude.com) design tokens and components, rendered from tokens.json with the measured values, in both themes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,15 +24,15 @@
 
 /* ---------- guide chrome (built from the same tokens) ---------- */
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--page); color: var(--text-default); font: 400 16px/24px var(--sg-sans); -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--page); color: var(--text-DEFAULT); font: 400 16px/24px var(--sg-sans); -webkit-font-smoothing: antialiased; }
 .wrap { max-width: 1180px; margin: 0 auto; padding-inline: 24px; padding-block: 0 64px; }
 @media (max-width: 767px) { .wrap, header.top .in { padding-inline: 16px !important; } }
-header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--page); backdrop-filter: blur(24px); border-bottom: 1px solid var(--border-default, transparent); }
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--page); backdrop-filter: blur(24px); border-bottom: 1px solid var(--border-DEFAULT, transparent); }
 header.top .in { max-width: 1180px; margin: 0 auto; padding: 10px 24px; display: flex; gap: 8px 20px; align-items: center; flex-wrap: wrap; }
 header.top h1 { margin: 0; font: 500 18px/24px var(--sg-serif); letter-spacing: 0; display: flex; align-items: center; gap: 8px; }
 header.top nav { display: flex; gap: 14px; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; }
 header.top nav a { white-space: nowrap; color: var(--text-muted); text-decoration: none; font-size: 13px; }
-header.top nav a:hover { color: var(--text-default); }
+header.top nav a:hover { color: var(--text-DEFAULT); }
 section.s { padding-top: 48px; scroll-margin-top: 72px; }
 h2.sh { font: 500 30px/36px var(--sg-serif); letter-spacing: -0.3px; margin: 0 0 8px; }
 h3.sub { font: 500 15px/20px var(--sg-sans); margin: 32px 0 12px; }
@@ -41,10 +42,10 @@ p.note, p.mapnote { font-size: 12px; line-height: 17px; color: var(--text-muted)
 code { font-family: var(--sg-mono); font-size: 12px; }
 .tbl { overflow-x: auto; }
 table.t { border-collapse: collapse; width: 100%; font-size: 13px; }
-table.t th, table.t td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--border-default, #eee); vertical-align: top; }
+table.t th, table.t td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--border-DEFAULT, #eee); vertical-align: top; }
 table.t th { color: var(--text-muted); font-weight: 500; }
 table.t td.src { color: var(--text-muted); font-size: 12px; }
-.panel { border: 1px solid var(--border-default, #eee); border-radius: var(--radius-lg); padding: 24px; background: var(--surface-raised); }
+.panel { border: 1px solid var(--border-DEFAULT, #eee); border-radius: var(--radius-lg); padding: 24px; background: var(--surface-raised); }
 .panel + .panel { margin-top: 16px; }
 .panel > h4.lbl:first-child { margin-top: 0; }
 .states { display: flex; gap: 24px 32px; flex-wrap: wrap; align-items: flex-start; }
@@ -56,37 +57,37 @@ table.t td.src { color: var(--text-muted); font-size: 12px; }
 /* palette and semantic swatches */
 .pal { display: grid; gap: 12px 24px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); margin-bottom: 24px; }
 .sw { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: center; }
-.sw .dot { width: 44px; height: 44px; border-radius: var(--radius-sm); border: 1px solid var(--border-default, #eee); background-image: linear-gradient(45deg, #e9e9ec 25%, transparent 25%, transparent 75%, #e9e9ec 75%), linear-gradient(45deg, #e9e9ec 25%, transparent 25%, transparent 75%, #e9e9ec 75%); background-size: 10px 10px; background-position: 0 0, 5px 5px; position: relative; overflow: hidden; }
+.sw .dot { width: 44px; height: 44px; border-radius: var(--radius-sm); border: 1px solid var(--border-DEFAULT, #eee); background-image: linear-gradient(45deg, #e9e9ec 25%, transparent 25%, transparent 75%, #e9e9ec 75%), linear-gradient(45deg, #e9e9ec 25%, transparent 25%, transparent 75%, #e9e9ec 75%); background-size: 10px 10px; background-position: 0 0, 5px 5px; position: relative; overflow: hidden; }
 .sw .dot i { position: absolute; inset: 0; }
 .sw .nm { font: 600 12px/1.3 ui-monospace, Menlo, monospace; word-break: break-all; }
 .sw .vl { font-size: 12px; color: var(--text-muted); }
 .pal-h { font: 600 11px/1.3 var(--sg-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin: 16px 0 8px; }
 
 /* type, space, radius, elevation, motion */
-.typerow { display: grid; grid-template-columns: minmax(170px, 250px) 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border-default, #eee); align-items: baseline; }
+.typerow { display: grid; grid-template-columns: minmax(170px, 250px) 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border-DEFAULT, #eee); align-items: baseline; }
 @media (max-width: 599px) { .typerow { grid-template-columns: 1fr; gap: 4px; } }
 .typerow .k { font: 600 12px/1.4 ui-monospace, Menlo, monospace; }
 .typerow .k small { display: block; color: var(--text-muted); font-weight: 400; }
 .typerow .sample { overflow-wrap: anywhere; min-width: 0; }
 .bars { display: flex; flex-direction: column; gap: 4px; }
 .bars .b { display: grid; grid-template-columns: 90px 1fr; gap: 12px; align-items: center; font-size: 12px; color: var(--text-muted); }
-.bars .b i { display: block; height: 12px; background: var(--text-default); border-radius: 2px; }
+.bars .b i { display: block; height: 12px; background: var(--text-DEFAULT); border-radius: 2px; }
 .boxes { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; }
-.boxes .bx { width: 84px; height: 84px; border: 1px solid var(--border-default, #eee); background: var(--surface); display: flex; align-items: flex-end; justify-content: center; padding: 6px; font-size: 11px; color: var(--text-muted); }
+.boxes .bx { width: 84px; height: 84px; border: 1px solid var(--border-DEFAULT, #eee); background: var(--surface); display: flex; align-items: flex-end; justify-content: center; padding: 6px; font-size: 11px; color: var(--text-muted); }
 .shadow-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
 .shadow-grid .box { height: 92px; border-radius: var(--radius-lg); background: var(--surface-raised); margin-bottom: 8px; }
 .motion-rows { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 .track { position: relative; height: 32px; background: var(--surface); border-radius: 999px; overflow: hidden; cursor: pointer; }
-.track .dot { position: absolute; top: 4px; left: 4px; width: 24px; height: 24px; border-radius: 50%; background: var(--text-default); }
+.track .dot { position: absolute; top: 4px; left: 4px; width: 24px; height: 24px; border-radius: 50%; background: var(--text-DEFAULT); }
 .track.go .dot { left: calc(100% - 28px); }
 
 /* layout diagrams */
-.diag-wrap { overflow-x: auto; border: 1px solid var(--border-default, #eee); border-radius: var(--radius-lg); padding: 16px; background: var(--surface-raised); }
+.diag-wrap { overflow-x: auto; border: 1px solid var(--border-DEFAULT, #eee); border-radius: var(--radius-lg); padding: 16px; background: var(--surface-raised); }
 .diag { position: relative; min-width: 720px; width: 100%; max-width: 960px; font: 600 11px/1.25 var(--sg-sans); }
-.diag .r { position: absolute; border-radius: 4px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2px; overflow: hidden; color: var(--text-default); }
-.diag .frame { border: 1px solid var(--border-default, #ddd); background: var(--page); }
+.diag .r { position: absolute; border-radius: 4px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2px; overflow: hidden; color: var(--text-DEFAULT); }
+.diag .frame { border: 1px solid var(--border-DEFAULT, #ddd); background: var(--page); }
 .diag .fill { background: var(--surface); }
-.diag .card { background: var(--surface-raised); border: 1px solid var(--border-default, #eee); }
+.diag .card { background: var(--surface-raised); border: 1px solid var(--border-DEFAULT, #eee); }
 .diag .dark { background: var(--sheet-bg); color: var(--text-inverse); }
 .diag .acc { background: var(--accent); color: var(--text-inverse); }
 .diag .dim { color: var(--text-muted); font-weight: 400; }
@@ -97,10 +98,10 @@ table.t td.src { color: var(--text-muted); font-size: 12px; }
 .an-nav { display: flex; align-items: center; gap: 8px; padding: 12px 0; font: 400 15px/22.5px var(--sg-sans); }
 .an-nav .mark { font: 500 22px/1 var(--sg-serif); margin-right: 16px; }
 .an-nav a { padding: 8px 12px; color: var(--text-secondary); text-decoration: none; }
-.an-nav a.is-hover { color: var(--text-default); }
+.an-nav a.is-hover { color: var(--text-DEFAULT); }
 .an-pill { display: inline-flex; align-items: center; gap: 8px; height: 28px; padding: 8px 16px; border-radius: var(--radius-pill); border: 1px solid var(--button-pill-border); background: var(--button-pill-bg); color: var(--button-pill-fg); font: 400 13px/20px var(--sg-sans); letter-spacing: var(--font-tracking-pill); text-decoration: none; }
 .an-pill.is-hover { background: var(--button-pill-bg-hover); color: var(--button-pill-fg-hover); border-color: var(--button-pill-bg-hover); box-shadow: 0 0 0 1px var(--button-pill-bg-hover); }
-.an-pill.is-pressed { background: var(--button-pill-bg-pressed); color: var(--text-default); border-color: var(--button-pill-bg-pressed); box-shadow: 0 0 0 1px var(--button-pill-bg-pressed); }
+.an-pill.is-pressed { background: var(--button-pill-bg-pressed); color: var(--text-DEFAULT); border-color: var(--button-pill-bg-pressed); box-shadow: 0 0 0 1px var(--button-pill-bg-pressed); }
 .an-pill.square { border-radius: var(--radius-sm); width: 28px; justify-content: center; padding: 0; }
 
 /* buttons */
@@ -120,7 +121,7 @@ table.t td.src { color: var(--text-muted); font-size: 12px; }
 .an-card b { font: 500 19px/1.2 var(--sg-serif); }
 .an-card .price { font: 400 32px/1.1 var(--sg-serif); margin: 16px 0 8px; }
 .an-card li { font: 400 15px/22.5px var(--sg-sans); color: var(--text-muted); }
-.an-mcard { width: min(480px, 100%); border: 1px solid var(--border-default); border-radius: var(--radius-2xl); background: var(--surface-sunken); padding: 20px; font: 400 20px/32px var(--sg-sans); }
+.an-mcard { width: min(480px, 100%); border: 1px solid var(--border-DEFAULT); border-radius: var(--radius-2xl); background: var(--surface-sunken); padding: 20px; font: 400 20px/32px var(--sg-sans); }
 
 /* switch */
 .an-switch { width: 38px; height: 22px; border-radius: 30px; border: 1px solid var(--switch-track-border); background: var(--switch-track); position: relative; display: inline-block; }
@@ -129,7 +130,7 @@ table.t td.src { color: var(--text-muted); font-size: 12px; }
 .an-switch.on::after { left: 18px; border-color: var(--switch-knob); }
 
 /* form */
-.an-label { font: 500 15px/19.5px var(--sg-sans); color: var(--text-default); margin-bottom: 6px; display: block; }
+.an-label { font: 500 15px/19.5px var(--sg-sans); color: var(--text-DEFAULT); margin-bottom: 6px; display: block; }
 .an-input { width: min(420px, 100%); height: 56px; border: 1px solid var(--field-border); border-radius: var(--radius-lg); padding: 0 24px; font: 400 15px/18px var(--sg-sans); background: var(--field-bg); color: var(--field-text); }
 .an-input.focused { border-color: var(--field-border-focus); }
 .an-radio { width: 20px; height: 20px; border-radius: 9999px; border: 1px solid var(--radio-border); background: var(--radio-bg); box-shadow: inset 0 0 0 1px rgba(0,0,0,.02); display: inline-block; }
@@ -218,11 +219,12 @@ table.t td.src { color: var(--text-muted); font-size: 12px; }
 
 <section class="s" id="focus">
   <h2 class="sh">Focus</h2>
-  <p class="lead">Three focus treatments, one per surface: the product pages draw a deliberate 2px #154c92 ring offset 4px on buttons and pills, the docs outline in #2a78d6, and text links take the browser's ring. Keep the offset ring — it is the signature.</p>
+  <p class="lead">Four measured rings: the marketing pills draw a deliberate 2px #154c92 periwinkle ring offset 4px, the product pages draw a 2px #c46849 clay-dark ring offset 2-4px, the docs outline in #2a78d6, and text links take the browser's ring. Keep the offset ring — it is the signature.</p>
   <div class="states">
-    <div class="cell"><span class="an-pill" style="outline: 2px solid var(--focus-periwinkle); outline-offset: 4px">Try Claude</span><span class="cap">product pill: 2px #154c92, offset 4px</span></div>
+    <div class="cell"><span class="an-pill" style="outline: 2px solid var(--focus-periwinkle); outline-offset: 4px">Try Claude</span><span class="cap">marketing pill: 2px #154c92, offset 4px</span></div>
+    <div class="cell"><span class="an-pill" style="outline: 2px solid var(--focus-product); outline-offset: 4px">Start free trial</span><span class="cap">product/plan CTA: 2px #c46849, offset 2-4px</span></div>
     <div class="cell"><span class="an-dsearch" style="outline: 2px solid var(--docs-focus); outline-offset: 1px">Search <kbd>⌘K</kbd></span><span class="cap">docs: #2a78d6 ring</span></div>
-    <div class="cell"><a href="#" style="color: var(--text-default)" onclick="return false">Read the docs</a><span class="cap">links: browser outline</span></div>
+    <div class="cell"><a href="#" style="color: var(--text-DEFAULT)" onclick="return false">Read the docs</a><span class="cap">links: browser outline</span></div>
   </div>
 </section>
 
@@ -311,9 +313,14 @@ const show = (v) => (typeof v === 'object' ? JSON.stringify(v) : String(v));
 // palette
 const pal = document.getElementById('pal');
 for (const [group, node] of Object.entries(T.core.color)) {
-  if (node.t) continue;
   const h = document.createElement('div'); h.className = 'pal-h'; h.textContent = group; pal.appendChild(h);
   const g = document.createElement('div'); g.className = 'pal'; pal.appendChild(g);
+  if (node.t) {
+    // a standalone colour under color/ (error) still gets a swatch
+    const n = 'color.' + group;
+    g.insertAdjacentHTML('beforeend', `<div class="sw" title="${esc(node.s)}"><span class="dot"><i style="background:var(${css(n.replace(/\./g, '-'))})"></i></span><span><span class="nm">${esc(n)}</span><br><span class="vl">${esc(node.v)}${node.d ? ' · ' + esc(node.d) : ''}</span></span></div>`);
+    continue;
+  }
   for (const [k, t] of flat(node)) {
     const n = 'color.' + group + '.' + k;
     g.insertAdjacentHTML('beforeend', `<div class="sw" title="${esc(t.s)}"><span class="dot"><i style="background:var(${css(n.replace(/\./g, '-'))})"></i></span><span><span class="nm">${esc(n)}</span><br><span class="vl">${esc(t.v)}${t.d ? ' · ' + esc(t.d) : ''}</span></span></div>`);
@@ -326,7 +333,7 @@ function fillRoles() {
   const set = document.documentElement.dataset.mode === 'dark' ? T.dark : T.light;
   for (const [n, t] of flat(set)) {
     const v = css(n.replace(/\./g, '-'));
-    const sw = t.t === 'color' ? `<span class="dot" style="display:inline-block;width:28px;height:28px;border-radius:8px;border:1px solid var(--border-default, #eee);background:var(${v})"></span>`
+    const sw = t.t === 'color' ? `<span class="dot" style="display:inline-block;width:28px;height:28px;border-radius:8px;border:1px solid var(--border-DEFAULT, #eee);background:var(${v})"></span>`
       : t.t === 'shadow' ? `<span style="display:inline-block;width:28px;height:28px;border-radius:8px;background:#fff;box-shadow:var(${v})"></span>` : '';
     roles.insertAdjacentHTML('beforeend', `<tr><td>${sw}</td><td><code>${esc(n)}</code></td><td><code>${esc(show(t.v).slice(0, 160))}</code></td><td class="src">${esc(t.s)}</td></tr>`);
   }
@@ -350,6 +357,15 @@ const rd = document.getElementById('radius');
 for (const [n, t] of flat(T.core.radius)) rd.insertAdjacentHTML('beforeend', `<div class="bx" title="${esc(t.s)}" style="border-radius:var(--radius-${n})">${esc(n)}</div>`);
 const sz = document.querySelector('#sizes tbody');
 for (const grp of ['weight', 'leading', 'tracking']) for (const [n, t] of flat(T.core.font[grp] || {})) sz.insertAdjacentHTML('beforeend', `<tr><td><code>font.${grp}.${esc(n)}</code></td><td>${esc(show(t.v))}</td><td class="src">${esc(t.s)}${t.d ? '. ' + esc(t.d) : ''}</td></tr>`);
+// the remaining core scales and the typography composites render as table rows
+const tok = (path) => { let n = T.core; for (const p of path.split('.')) n = n && n[p]; return n && n.v !== undefined ? n.v : ''; };
+const unref = (v) => String(v).replace(/\{([^{}]+)\}/g, (m, p) => tok(p) || m);
+for (const grp of ['border', 'layout']) for (const [n, t] of flat(T.core[grp] || {})) sz.insertAdjacentHTML('beforeend', `<tr><td><code>${grp}.${esc(n)}</code></td><td>${esc(show(t.v))}</td><td class="src">${esc(t.s)}${t.d ? '. ' + esc(t.d) : ''}</td></tr>`);
+for (const [n, t] of flat(T.core.typography || {})) {
+  const v = t.v || {};
+  const short = [unref(v.fontWeight), unref(v.fontSize) + '/' + unref(v.lineHeight), unref(v.fontFamily).split(',')[0].replace(/"/g, '')].join(' ');
+  sz.insertAdjacentHTML('beforeend', `<tr><td><code>typography.${esc(n)}</code></td><td>${esc(short)}${v.letterSpacing ? ' · ls ' + esc(unref(v.letterSpacing)) : ''}</td><td class="src">${esc(t.s)}${t.d ? '. ' + esc(t.d) : ''}</td></tr>`);
+}
 // shadows
 const sh = document.getElementById('shadows');
 for (const [n, t] of flat(T.core.shadow)) sh.insertAdjacentHTML('beforeend', `<div><div class="box" style="box-shadow:var(--shadow-${n})"></div><div class="cap"><b>${esc(n)}</b> · ${esc(t.s)}</div></div>`);

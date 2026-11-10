@@ -12,7 +12,7 @@ Every page on www.anthropic.com and claude.com runs the same chrome on the `ligh
 
 ## The serif hero page
 
-The marketing pattern: an `core.typography.display`/`headline` serif line on the ivory ground, one `light.button.primary-*` ink CTA (radius 10, 12/24 padding), then big quiet cards. The home hero is ~41px at 1440 because claude.com's clamp() fluid scale lands between the marketing px steps. See [hero-title](components/crops/hero-title-default.png), [hero-cta](components/crops/hero-cta-default.png), [home-light-full](screenshots/home-light-full.png).
+The marketing pattern: an `core.typography.display`/`headline` serif line on the ivory ground, one `light.button.primary-*` ink CTA (radius 10, 12/24 padding), then big quiet cards. The home hero is ~41px at 1440 because claude.com's clamp() fluid scale lands between the marketing px steps — and it is a mixed face: the h1 is anthropicSerif while its lead line inside renders anthropicSans 600 at the same size (the 390 hero reads the same). See [hero-title](components/crops/hero-title-default.png), [hero-cta](components/crops/hero-cta-default.png), [home-light-full](screenshots/home-light-full.png).
 
 ## Card indexes
 
