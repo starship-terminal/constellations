@@ -30,12 +30,12 @@ Screenshots are named `{page}-light-{state}.png`: the news surface paints one li
 
 | State | Where | How it was reached | Captured |
 |---|---|---|---|
-| Privacy preferences modal | front pages, on some loads | measured as it arrives, then hidden (never answered: its checkbox and buttons are never clicked) | [privacy-dialog](#privacy-preferences-modal) |
-| Company sitemap | utility bar, home | the 'Bloomberg the Company & Its Products' button's own toggle | [home-light-sitemap](screenshots/home-light-sitemap.png), [utility-toggle-open](#company-sitemap-open) |
-| Sign-in sheet | logo bar, home | the Sign In button mounts the /account/iframe/login sheet; opened and left | [signin-sheet](#sign-in-sheet) |
-| Article paywall | every article | the page's resting state for a signed-out reader; never crossed | [article-light-default](screenshots/article-light-default.png), [paywall](#paywall-fence) |
+| Privacy preferences modal | front pages, on some loads | did not mount on this pass; measured states would be recorded as they arrive, then hidden (never answered) | component specs recorded as missing |
+| Company sitemap | utility bar, home | the 'Bloomberg the Company & Its Products' button's own toggle | [home-light-sitemap](screenshots/home-light-sitemap.png) |
+| Sign-in sheet | logo bar, home | the Sign In button mounts the /account/iframe/login sheet; opened and left | [home-light-signin](screenshots/home-light-signin.png), [signin-sheet](#sign-in-sheet) |
+| Article paywall | every article | the page's resting state for a signed-out reader; never crossed. The article screenshot run was PerimeterX-blocked on every retry | [paywall](#paywall-fence) |
 | Live TV paywall | /live | the gated player's resting state | [live-light-default](screenshots/live-light-default.png), [live-paywall](#live-paywall) |
-| Mobile menu drawer | home, phone | the Menu button's own toggle | [mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [m-menu-open](#mobile-menu-open) |
+| Mobile menu drawer | home, phone | the mobile home front was PerimeterX-blocked on every retry of this pass | not captured |
 
 ## Shared values
 
@@ -400,9 +400,9 @@ The paywall’s action; links to the offers page, measured, never followed. Read
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 171.08 x 46; padding 0px 24px; radius 8px; background #ffffff `color.neutral.paper`; text BWHaasGroteskWeb 16/16 500, #000000 `color.neutral.ink`; transition color 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), fill 0.2s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | background #efefef |
+| hover | background #efefef `color.neutral.smoke` |
 | focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 0px |
-| pressed | background #efefef |
+| pressed | background #efefef `color.neutral.smoke` |
 
 ![Claim offer CTA default](components/crops/claim-offer-default.png) ![Claim offer CTA hover](components/crops/claim-offer-hover.png) ![Claim offer CTA focus-visible](components/crops/claim-offer-focus-visible.png) ![Claim offer CTA pressed](components/crops/claim-offer-pressed.png)
 
@@ -576,6 +576,10 @@ No standalone SVG icon set was lifted on this pass; the icons in the crops and s
 |---|---|---|---|---|---|
 
 ## Gaps
+
+### PerimeterX rate-limiting
+
+bloomberg.com runs PerimeterX: after a run of automated loads it serves an "unusual activity / PRESS & HOLD" challenge for a while to this client. On this pass the article route's screenshots and every 390px mobile load were challenge-gated on every retry, and the stylesheet harvest (raw/css-vars.json) came back thin for the same reason — so the tokens are measured computed values, not var aliases, and the mobile group is recorded as missing rather than fabricated.
 
 ### Pages
 

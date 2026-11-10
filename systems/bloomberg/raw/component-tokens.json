@@ -132,6 +132,12 @@
      "type": "color",
      "source": "painted fill inside/under logo-bar default (raw/components-computed.json)",
      "description": "The black logo-bar / section-nav chrome."
+    },
+    "smoke": {
+     "value": "#efefef",
+     "type": "color",
+     "source": "painted fill inside claim-offer hover (raw/components-computed.json)",
+     "description": "The light grey hover fill on the paywall's Claim button."
     }
    },
    "brand": {
@@ -152,6 +158,20 @@
      "type": "color",
      "source": "painted fill inside offer-cta hover (raw/components-computed.json)",
      "description": "CTA blue on hover."
+    }
+   },
+   "market": {
+    "live": {
+     "value": "#f34f4e",
+     "type": "color",
+     "source": "painted fill inside section-nav default (raw/components-computed.json)",
+     "description": "The Live TV red in the section nav."
+    },
+    "live-strong": {
+     "value": "#e51503",
+     "type": "color",
+     "source": "painted fill inside live-paywall default (raw/components-computed.json)",
+     "description": "The stronger live red on the player surface."
     }
    }
   },

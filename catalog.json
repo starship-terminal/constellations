@@ -4810,7 +4810,7 @@
     "swatches": {
      "light": {
       "page": "core.color.neutral.paper",
-      "surface": "core.color.neutral.ticker",
+      "surface": "core.color.neutral.smoke",
       "text": "core.color.neutral.ink",
       "muted": "core.color.neutral.body",
       "accent": "core.color.brand.accent",
@@ -4850,7 +4850,7 @@
     ],
     "durationMin": null,
     "durationNote": "capture ran in several passes across 2026-11-10/11 because PerimeterX throttling forced pauses; wall-clock duration not recorded",
-    "pr": ""
+    "pr": "https://github.com/c-wenlong/designs/pull/467"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the site's icons (wordmark, search, market arrows) are visible in the crops and screenshots"

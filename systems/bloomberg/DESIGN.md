@@ -16,7 +16,7 @@ omitted:
 colors:
   primary: "#3523ff"
   neutral: "#ffffff"
-  surface: "#1c1c1c"
+  surface: "#efefef"
   on-surface: "#000000"
   on-surface-variant: "#3c3c3c"
   outline: "#e5e7eb"
@@ -27,9 +27,12 @@ colors:
   color-neutral-paper: "#ffffff"
   color-neutral-ticker: "#1c1c1c"
   color-neutral-chrome: "#000000"
+  color-neutral-smoke: "#efefef"
   color-brand-paywall: "#1c1c1c"
   color-brand-accent: "#3523ff"
   color-brand-accent-hover: "#4f4fff"
+  color-market-live: "#f34f4e"
+  color-market-live-strong: "#e51503"
   measured-focus-outline: "#005fcc"
   measured-button-hover: "#1c1c1c"
 ---
@@ -56,7 +59,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 - **primary (#3523ff):** `core.color.brand.accent`
 - **neutral (#ffffff):** `core.color.neutral.paper`
-- **surface (#1c1c1c):** `core.color.neutral.ticker`
+- **surface (#efefef):** `core.color.neutral.smoke`
 - **on-surface (#000000):** `core.color.neutral.ink`
 - **on-surface-variant (#3c3c3c):** `core.color.neutral.body`
 - **outline (#e5e7eb):** `core.color.neutral.line`

@@ -132,6 +132,34 @@ def painted(comp, state):
     return None
 
 
+def find_paint(comp, state, pred):
+    """Every painted fill on/under the component, filtered by pred(rgb string)."""
+    try:
+        c = C[comp]["states"][state]
+    except KeyError:
+        return None
+    for n in (c.get("paint") or []) + (c.get("ancestors") or []):
+        bg = n.get("bg")
+        if bg and pred(bg):
+            return bg
+    return None
+
+
+def rgb_of(v):
+    m = re.match(r"rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)", v or "")
+    return (int(float(m.group(1))), int(float(m.group(2))), int(float(m.group(3)))) if m else None
+
+
+def reddish(v):
+    c = rgb_of(v)
+    return bool(c and c[0] > c[1] + 60 and c[0] > c[2] + 60)
+
+
+def lightgrey(v):
+    c = rgb_of(v)
+    return bool(c and 200 <= c[0] < 250 and abs(c[0] - c[1]) < 12 and abs(c[1] - c[2]) < 12)
+
+
 fam = SPEC["core"].setdefault("font", {}).setdefault("family", {})
 for key, comp, state, desc in [
     ("headline", "hero-headline", "default", "The news/headline stack (BWHaasGroteskWeb first)."),
@@ -170,6 +198,12 @@ for key, comp, state, desc in [
         neutral[key] = {"value": v, "type": "color",
                         "source": f"painted fill inside/under {comp} {state} (raw/components-computed.json)",
                         "description": desc}
+# The light grey the Claim button repaints to on hover.
+v = norm_color(find_paint("claim-offer", "hover", lightgrey) or "")
+if v:
+    neutral["smoke"] = {"value": v, "type": "color",
+                        "source": "painted fill inside claim-offer hover (raw/components-computed.json)",
+                        "description": "The light grey hover fill on the paywall's Claim button."}
 
 brand = SPEC["core"].setdefault("color", {}).setdefault("brand", {})
 for key, comp, state, prop, desc in [
@@ -190,6 +224,17 @@ for key, comp, state, desc in [
         brand[key] = {"value": v, "type": "color",
                       "source": f"painted fill inside {comp} {state} (raw/components-computed.json)",
                       "description": desc}
+
+market = SPEC["core"].setdefault("color", {}).setdefault("market", {})
+for key, comp, state, desc in [
+    ("live", "section-nav", "default", "The Live TV red in the section nav."),
+    ("live-strong", "live-paywall", "default", "The stronger live red on the player surface."),
+]:
+    v = norm_color(find_paint(comp, state, reddish) or "")
+    if v:
+        market[key] = {"value": v, "type": "color",
+                       "source": f"painted fill inside {comp} {state} (raw/components-computed.json)",
+                       "description": desc}
 
 # -------------------------------------------------------------------- roles
 
