@@ -4357,6 +4357,84 @@
         "gaps": "The product app (app.acctual.com) sits behind a sign-in that was never opened; the home invoice mock is a marketing demo, not the app. ~30 /locations/* corridors and the persona/product landing pages share templates; one of each was captured. Disabled, error, loading and selected states never appear on the public surface.",
         "pr": "https://github.com/c-wenlong/designs/pull/453"
       }
+    },
+    {
+      "slug": "aesop",
+      "name": "Aesop",
+      "url": "https://www.aesop.com",
+      "category": "e-commerce",
+      "platform": "web",
+      "goodFor": "Skincare storefront: one warm ink on a cream ground, a single tannin-amber accent, Suisse Intl sentence-case, 1px keylines (many drawn as box-shadows), 40px fields, 48px bars, 400px side rails",
+      "tags": [
+        "web",
+        "ecommerce",
+        "beauty",
+        "warm",
+        "minimal",
+        "one-accent",
+        "cream"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-10",
+      "access": "signed out (every captured surface is public); US storefront Sites-aesop-us-Site, OneTrust consent SDK network-blocked",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/aesop/README.md",
+      "tokens": "systems/aesop/tokens.json",
+      "styleGuide": "systems/aesop/style-guide.html",
+      "preview": {
+        "cover": "systems/aesop/screenshots/home-light-default.png",
+        "icon": "systems/aesop/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.background.page",
+            "surface": "light.background.surface",
+            "text": "light.text.primary",
+            "muted": "light.text.muted",
+            "accent": "light.text.accent",
+            "border": "light.border.default"
+          }
+        },
+        "fonts": [
+          "core.font.family.sans",
+          "core.font.family.medium"
+        ]
+      },
+      "capture": {
+        "method": "public-web",
+        "source": "aesop.com US storefront in headless Chromium (Playwright), desktop 1440x900 and mobile 390x844; computed styles and crops from the live DOM; OneTrust/CF third-party resources network-blocked; PDPs loaded as a fresh context's first request (Cloudflare challenges second document loads)",
+        "timestamp": "2026-11-10T17:00:00Z",
+        "harness": "Devin",
+        "model": "SWE-2 Max",
+        "route": "public-web",
+        "routes": [
+          "/",
+          "/shop-all/",
+          "/skin-care/",
+          "/gifts/seasonal-gift-kits/the-aesop-valise/APB399.html",
+          "/stores",
+          "/cart",
+          "/account",
+          "/on/demandware.store/Sites-aesop-us-Site/en_US/Login-Show"
+        ],
+        "gaps": [
+          "Email sign up modal mounts empty: its remote Demandware fragment did not render headless, so its fields are unmeasured",
+          "Add to cart captured mid-hydration as 'Loading …'; resting label state not captured",
+          "sign-in beyond the form, account area, checkout and purchases deliberately uncaptured (nothing submitted)",
+          "search-panel container and cart-close button eluded marking; qty-select absent on a one-variant PDP",
+          "OneTrust consent banner never mounted (SDK network-blocked); selectors known, styling unmeasured"
+        ],
+        "durationMin": null,
+        "durationNote": "wall-clock duration was not recorded for this capture"
+      },
+      "layoutGaps": {
+        "icons/": "Aesop's icon artwork is its branding and is not kept here (docs/RIGHTS.md)"
+      }
     }
   ]
 }

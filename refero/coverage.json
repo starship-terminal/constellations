@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 62,
-    "system_domains": 54,
-    "matched_domains": 31,
-    "missing_domains": 402,
+    "system_packages": 63,
+    "system_domains": 55,
+    "matched_domains": 32,
+    "missing_domains": 401,
     "system_domains_absent_from_catalog": 23
   },
   "matched": {
@@ -143,6 +143,23 @@
           "name": "Acuity Scheduling",
           "url": "https://acuityscheduling.com",
           "name_match": false
+        }
+      ]
+    },
+    "aesop.com": {
+      "catalog": [
+        {
+          "name": "Aesop",
+          "domain": "aesop.com",
+          "id": 621
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "aesop",
+          "name": "Aesop",
+          "url": "https://www.aesop.com",
+          "name_match": true
         }
       ]
     },
@@ -599,13 +616,6 @@
         "name": "adidas",
         "domain": "adidas.com",
         "id": 46
-      }
-    ],
-    "aesop.com": [
-      {
-        "name": "Aesop",
-        "domain": "aesop.com",
-        "id": 621
       }
     ],
     "aloyoga.com": [
