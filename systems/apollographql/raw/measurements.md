@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from aaply.app on 2026-11-10 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from apollographql.com on 2026-11-10 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -536,22 +536,20 @@ Page: home. Selector: `carousel arrow`. States: default, hover, focus-visible, p
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 118.91 x 34 | = | = | = |
-| Padding | 8px 12px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | 1px solid oklab(0.999994 0.0000455678 0.0000200868 / 0.2) | = | = | = |
-| Radius | 4px | = | = | = |
-| Background | oklab(0.117506 -0.00815131 -0.0132371 / 0.8) | = | = | = |
+| Size (w x h) | 42 x 42 | = | = | = |
+| Padding | 0px | = | = | = |
+| Border | 1px solid #bec4c2 | = | = | = |
+| Radius | 16px | = | = | = |
+| Background | #ffffff | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 2px solid #e75e15 offset 2px | = |
-| Font | __aeonikFont_a2019c 12px/16px 400 | = | = | = |
+| Outline | none | = | 5px auto #99c8ff offset 0px | = |
+| Font | __aeonikFont_a2019c 16px/24px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | oklab(0.999994 0.0000455677 0.0000200868 / 0.7) | #ffffff | = | #ffffff |
-| Transition | none | = | = | = |
+| Colour | #000000 | = | = | = |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 12 x 12, colour oklab(0.999994 0.0000455677 0.0000200868 / 0.7), fill #000000 | 12 x 12, colour #ffffff, fill #000000 | = | 12 x 12, colour #ffffff, fill #000000 |
-| Painted layers | button.hero-depth_pause.absolute 118.9x34.0 bg oklab(0.117506 -0.00815131 -0.0132371 / 0.8) border T:1px solid oklab(0.999994 0.0000455678 0.0000200868 / 0.2) / R:1px solid oklab(0.999994 0.0000455678 0.0000200868 / 0.2) / B:1px solid oklab(0.999994 0.0000455678 0.0000200868 / 0.2) / L:1px solid oklab(0.999994 0.0000455678 0.0000200868 / 0.2) r 4px | = | button.hero-depth_pause.absolute 118.9x34.0 bg oklab(0.117506 -0.00815131 -0.0132371 / 0.8) border T:1px solid oklab(0.999994 0.0000455678 0.0000200868 / 0.2) / R:1px solid oklab(0.999994 0.0000455678 0.0000200868 / 0.2) / B:1px solid oklab(0.999994 0.0000455678 0.0000200868 / 0.2) / L:1px solid oklab(0.999994 0.0000455678 0.0000200868 / 0.2) r 4px outline 2px solid #e75e15 offset 2px | = |
-| Ancestor paint | 1 up section.relative.isolate bg #02060a | = | = | = |
+| Icon | 20 x 20, colour #000000 | = | = | = |
+| Painted layers | button.flex.h-[42px] 42.0x42.0 bg #ffffff border T:1px solid #bec4c2 / R:1px solid #bec4c2 / B:1px solid #bec4c2 / L:1px solid #bec4c2 r 16px | = | button.flex.h-[42px] 42.0x42.0 bg #ffffff border T:1px solid #bec4c2 / R:1px solid #bec4c2 / B:1px solid #bec4c2 / L:1px solid #bec4c2 r 16px outline 5px auto #99c8ff offset 0px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `carousel-arrow-default.png`, `carousel-arrow-hover.png`, `carousel-arrow-focus-visible.png`, `carousel-arrow-pressed.png`.
@@ -591,21 +589,21 @@ Page: home. Selector: `footer link`. States: default, hover, focus-visible, pres
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 85 x 30 | = | = | = |
-| Padding | 0px | = | = | = |
+| Size (w x h) | 129.86 x 36 | = | = | = |
+| Padding | 8px 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 1px auto #99c8ff offset 1px | = |
-| Font | __interFont_b14d2f 16px/24px 400 | = | = | = |
+| Font | __interFont_b14d2f 14px/20.006px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #f8f8f8 | = | = | = |
-| Transition | none | = | = | = |
+| Transition | transform, translate, scale, rotate 0.1s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 85 x 30, colour #f8f8f8 | = | = | = |
+| Icon | 16 x 16, colour #f8f8f8 | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a 85.0x30.0 outline 1px auto #99c8ff offset 1px | = |
+| Painted layers | - | = | a.text-surface-default.text-body-sm 129.9x36.0 outline 1px auto #99c8ff offset 1px | = |
 
 Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`, `footer-link-pressed.png`.
 
@@ -772,19 +770,20 @@ Page: pricing. Selector: `pricing cta`. States: default, hover, focus-visible, p
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 123.42 x 40 | = | = | = |
-| Padding | 0px 18px | = | = | = |
-| Border | 1px solid #e75e15 | 1px solid #d84f08 | = | 1px solid #d84f08 |
+| Size (w x h) | 146.78 x 49.03 | = | = | = |
+| Padding | 16px 24px | = | = | = |
+| Border | 1px solid #000000 @ 0 | = | = | = |
 | Radius | 999px | = | = | = |
-| Background | #e75e15 | #d84f08 | = | #d84f08 |
+| Background | #e75e15 | oklab(0.649255 0.136349 0.125914 / 0.9) | = | oklab(0.649255 0.136349 0.125914 / 0.9) |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 2px solid #ff7b3c offset 2px | = |
-| Font | __interFont_b14d2f 14px/21px 500 | = | = | = |
+| Outline | none | = | 2px solid #e75e15 offset 8px | = |
+| Font | __interFont_b14d2f 16px/15.04px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
+| Colour | #f8f8f8 | = | = | = |
+| Text node | span.hide-mobile-and-tablet: __interFont_b14d2f 16px/15.04px 500, #f8f8f8 | = | = | = |
 | Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.h-10.items-center 123.4x40.0 bg #e75e15 border T:1px solid #e75e15 / R:1px solid #e75e15 / B:1px solid #e75e15 / L:1px solid #e75e15 r 999px | a.h-10.items-center 123.4x40.0 bg #d84f08 border T:1px solid #d84f08 / R:1px solid #d84f08 / B:1px solid #d84f08 / L:1px solid #d84f08 r 999px | a.h-10.items-center 123.4x40.0 bg #e75e15 border T:1px solid #e75e15 / R:1px solid #e75e15 / B:1px solid #e75e15 / L:1px solid #e75e15 r 999px outline 2px solid #ff7b3c offset 2px | a.h-10.items-center 123.4x40.0 bg #d84f08 border T:1px solid #d84f08 / R:1px solid #d84f08 / B:1px solid #d84f08 / L:1px solid #d84f08 r 999px |
+| Painted layers | a.relative.flex 146.8x49.0 bg #e75e15 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 999px | a.relative.flex 146.8x49.0 bg oklab(0.649255 0.136349 0.125914 / 0.9) border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 999px | a.relative.flex 146.8x49.0 bg #e75e15 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 999px outline 2px solid #e75e15 offset 8px | a.relative.flex 146.8x49.0 bg oklab(0.649255 0.136349 0.125914 / 0.9) border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 999px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-focus-visible.png`, `plan-cta-pressed.png`.
@@ -1434,7 +1433,7 @@ Crops: `m-cta-secondary-default.png`, `m-cta-secondary-pressed.png`.
 
 ## Transitions declared in the readable stylesheets
 
-aaply.app is a Tilda build: its stylesheets are same-origin and readable, but they declare almost no design tokens (the --w* layout widths and --anim-nav) — the design values live in per-elem inline styles, read as computed styles above; the per-state Transition rows are computed values.
+apollographql.com is a Next.js build: its stylesheets are same-origin and readable, and it ships a real token layer — the --color-*, --font-*, --radius-* and --duration-* custom properties recorded in css-vars.json — plus Tailwind utilities and CSS modules; the per-state Transition rows are computed values.
 
 - blog: `opacity 0.2s ease-in, filter 0.2s ease-in`, `none`, `background-color var(--duration-normal) var(--ease-slow),border-color var(--duration-normal) var(--ease-slow)`, `color var(--duration-normal) var(--ease-slow)`, `background-color 0.15s`, `background-color 0.15s, border-color 0.15s, color 0.15s`, `color 0.15s, background-color 0.15s`, `transform 0.2s, opacity 0.2s`, `height 0.2s ease-out`, `color 0.15s`, `background-color 0.15s, color 0.15s`, `transform 0.15s`
 

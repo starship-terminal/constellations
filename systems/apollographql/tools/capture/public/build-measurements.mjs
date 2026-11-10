@@ -58,7 +58,7 @@ const W = (s = '') => L.push(s);
 W('# Component measurements'); // PRODUCT (adapt): the product's name
 W('');
 // PRODUCT (adapt): describe this product's capture.
-W(`Computed styles read from aaply.app on ${(J._meta.run || '').slice(0, 10)} by \`tools/capture/public/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
+W(`Computed styles read from apollographql.com on ${(J._meta.run || '').slice(0, 10)} by \`tools/capture/public/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
 W('');
 W('States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.');
 W('');
@@ -107,7 +107,7 @@ W('');
 W('## Transitions declared in the readable stylesheets');
 W('');
 // PRODUCT (adapt): describe this product's capture.
-W('aaply.app is a Tilda build: its stylesheets are same-origin and readable, but they declare almost no design tokens (the --w* layout widths and --anim-nav) — the design values live in per-elem inline styles, read as computed styles above; the per-state Transition rows are computed values.');
+W('apollographql.com is a Next.js build: its stylesheets are same-origin and readable, and it ships a real token layer — the --color-*, --font-*, --radius-* and --duration-* custom properties recorded in css-vars.json — plus Tailwind utilities and CSS modules; the per-state Transition rows are computed values.');
 for (const [pg, list] of Object.entries(J._meta.sheets || {}).sort()) {
   const uniq = [...new Map(list.filter((t) => t.transition).map((t) => [t.transition, t])).values()].slice(0, 12);
   W('');

@@ -3489,7 +3489,9 @@
     "route": "public-web",
     "version": "www.apollographql.com, 2026-11-10; release not exposed",
     "durationMin": null,
-    "gaps": "Apollo Studio and every authenticated surface (login/signup pages captured at rest only); consent answers, form submission, checkout and downloads deliberately uncaptured; nav search overlay, mobile menu drawer, open FAQ rows and carousel/video play states not captured"
+    "durationNote": "not timed; the capture ran across several sessions on 2026-11-10, and per-shot timestamps are kept in raw/full/*.capture.json",
+    "gaps": "Apollo Studio and every authenticated surface (login/signup pages captured at rest only); consent answers, form submission, checkout and downloads deliberately uncaptured; nav search overlay, mobile menu drawer, open FAQ rows and carousel/video play states not captured",
+    "pr": "https://github.com/c-wenlong/designs/pull/449"
    }
   }
  ]

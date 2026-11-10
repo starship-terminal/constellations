@@ -44,7 +44,7 @@ Screenshots are named `{page}-{theme}-{state}.png`: the marketing pages paint da
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 27 components were given a real keyboard focus. 23 draw a ring: `logo` (2px solid #ff7b3c `focus-orange`, offset 2px), `nav-trigger` (2px solid #ff7b3c `focus-orange`, offset 2px), `nav-cta` (2px solid #ff7b3c `focus-orange`, offset 2px), `nav-search` (1px solid #f8f8f8 `offwhite`, offset 8px), `cta-primary` (2px solid #2fd1e0 `focus-cyan`, offset 4px), `cta-secondary` (2px solid #2fd1e0 `focus-cyan`, offset 4px), `pause-motion` (2px solid #e75e15 `brand-accent`, offset 2px), `text-link` (2px solid #e75e15 `brand-accent`, offset 4px), `link-pill` (2px solid #e75e15 `brand-accent`, offset 4px), `video-card` (2px solid #e75e15 `brand-accent`, offset -4px), `copy-row` (2px solid #666666 `content-muted`, offset 4px), `carousel-arrow` (2px solid #e75e15 `brand-accent`, offset 2px), `footer-link` (1px auto #99c8ff `focus-blue`, offset 1px), `social-link` (1px auto #99c8ff `focus-blue`, offset 1px), `tier-segment` (5px auto #99c8ff `focus-blue`, offset 0px), `billing-segment` (5px auto #99c8ff `focus-blue`, offset 0px), `volume-pill-on` (2px solid #f8f8f8 `offwhite`, offset 2px), `volume-pill` (2px solid #f8f8f8 `offwhite`, offset 2px), `plan-cta` (2px solid #ff7b3c `focus-orange`, offset 2px), `cta-orange` (2px solid #e75e15 `brand-accent`, offset 8px), `cta-orange-outline` (2px solid #e75e15 `brand-accent`, offset 8px), `pagination` (5px auto #99c8ff `focus-blue`, offset 0px), `submit` (2px solid #e75e15 `brand-accent`, offset 8px). The other 4 draw none, so a keyboard user sees no change: `faq-item`, `story-card`, `article-card`, `article-card-regolith`.
+**Focus.** 27 components were given a real keyboard focus. 23 draw a ring: `logo` (2px solid #ff7b3c `focus-orange`, offset 2px), `nav-trigger` (2px solid #ff7b3c `focus-orange`, offset 2px), `nav-cta` (2px solid #ff7b3c `focus-orange`, offset 2px), `nav-search` (1px solid #f8f8f8 `offwhite`, offset 8px), `cta-primary` (2px solid #2fd1e0 `focus-cyan`, offset 4px), `cta-secondary` (2px solid #2fd1e0 `focus-cyan`, offset 4px), `pause-motion` (2px solid #e75e15 `brand-accent`, offset 2px), `text-link` (2px solid #e75e15 `brand-accent`, offset 4px), `link-pill` (2px solid #e75e15 `brand-accent`, offset 4px), `video-card` (2px solid #e75e15 `brand-accent`, offset -4px), `copy-row` (2px solid #666666 `content-muted`, offset 4px), `carousel-arrow` (5px auto #99c8ff `focus-blue`, offset 0px), `footer-link` (1px auto #99c8ff `focus-blue`, offset 1px), `social-link` (1px auto #99c8ff `focus-blue`, offset 1px), `tier-segment` (5px auto #99c8ff `focus-blue`, offset 0px), `billing-segment` (5px auto #99c8ff `focus-blue`, offset 0px), `volume-pill-on` (2px solid #f8f8f8 `offwhite`, offset 2px), `volume-pill` (2px solid #f8f8f8 `offwhite`, offset 2px), `plan-cta` (2px solid #e75e15 `brand-accent`, offset 8px), `cta-orange` (2px solid #e75e15 `brand-accent`, offset 8px), `cta-orange-outline` (2px solid #e75e15 `brand-accent`, offset 8px), `pagination` (5px auto #99c8ff `focus-blue`, offset 0px), `submit` (2px solid #e75e15 `brand-accent`, offset 8px). The other 4 draw none, so a keyboard user sees no change: `faq-item`, `story-card`, `article-card`, `article-card-regolith`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). The filled orange pills darken to #d84f08 — the same colour the hover draws — and the ghost pills pick up the translucent hover fill; see the per-component state rows.
 
@@ -52,9 +52,10 @@ Values that apply across entries, from the measurement files.
 
 | Duration | Easing | Property | Where |
 |---|---|---|---|
+| 0.1s | `cubic-bezier(0.4, 0, 0.2, 1)` | rotate, scale, transform, translate | footer-link |
 | 0.12s | `ease` | background-color, border-color | cookie-accept |
 | 0.15s | `cubic-bezier(0.17, 0.17, 0, 1)` | transform | social-link |
-| 0.15s | `cubic-bezier(0.4, 0, 0.2, 1)` | --tw-gradient-from, --tw-gradient-to, --tw-gradient-via, background-color, border-color, color, fill, outline-color, stroke, text-decoration-color | cta-orange, cta-orange-outline, cta-primary, cta-secondary, link-pill, m-burger, m-cta-primary, m-cta-secondary and more |
+| 0.15s | `cubic-bezier(0.4, 0, 0.2, 1)` | --tw-gradient-from, --tw-gradient-to, --tw-gradient-via, background-color, border-color, color, fill, outline-color, stroke, text-decoration-color | carousel-arrow, cta-orange, cta-orange-outline, cta-primary, cta-secondary, link-pill, m-burger, m-cta-primary and more |
 | 0.2s | `cubic-bezier(0, 0, 0.2, 1)` | height | nav-menu |
 | 0.2s | `cubic-bezier(0.4, 0, 0.2, 1)` | all | billing-segment, tier-segment, volume-pill, volume-pill-on |
 | 0.2s | `ease` | background-color | submit |
@@ -67,7 +68,7 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Nav bar](#nav-bar) | 1440 x 65 | 1px solid #e75e15 `brand-accent` | 999px | #e75e15 `brand-accent` | none | 0 |
+| [Nav bar](#nav-bar) | 1440 x 65 | 1px solid oklab(0.999994 0.0000455678 0.0000200868 / 0.08) | - | #02060a `lightfall` | none | 0 |
 | [Cookie consent card](#cookie-consent-card) | 760 x 188.56 | 1px solid #e3e7ea | 16px | #ffffff `white` | rgba(21, 37, 45, 0.14) 0px 12px 32px 0px, rgba(21, 37, 45, 0.06) 0px 2px 6px 0px | 20px 20px 18px 20px |
 | [Stats band card](#stats-band-card) | 1344 x 669.5 | - | 32px | #15252d `nebula` | none | 94px 80px |
 | [FAQ card](#faq-card) | 1344 x 612.5 | - | 32px | #e3e3e3 `faq-gray` | none | 72px |
@@ -77,7 +78,7 @@ Values that apply across entries, from the measurement files.
 | [Article card (satellite)](#article-card-satellite) | 444 x 298.81 | - | 32px | #cfd7d6 `satellite-dark` | none | 0 |
 | [Article card (regolith)](#article-card-regolith) | 672 x 209.39 | - | 32px | #ffffff `white` | none | 0 |
 | [Video card](#video-card) | 520 x 292.5 | - | 24px | #15252d `nebula` | none | 0 |
-| [Footer](#footer) | 1440 x 627.47 | 1px solid transparent | 999px | #e75e15 `brand-accent` | none | 0 |
+| [Footer](#footer) | 1440 x 627.47 | - | - | transparent | none | 0 |
 
 ## Components
 
@@ -183,7 +184,7 @@ The Algolia detached search icon in the nav. Read as `nav-search` on the home pa
 
 ### Home
 
-The landing page: the 60px Aeonik hero over the near-black space field, the conic-ring primary CTA and outline secondary, the pause-motion and carousel chips, the alternating dark/light sections and the video card.
+The landing page: the 60px Aeonik hero over the near-black space field, the conic-ring primary CTA and outline secondary, the pause-motion ghost chip and the testimonial-carousel arrow, the alternating dark/light sections and the video card.
 
 #### Hero title
 "Give AI access to the systems that run your business" — Aeonik 60px white over the dark animated hero. Read as `hero-title` on the home page.
@@ -295,10 +296,8 @@ A 42x42 white 16px-radius arrow button on the logo/customer carousel. Read as `c
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 118.91 x 34; padding 8px 12px; border 1px solid oklab(0.999994 0.0000455678 0.0000200868 / 0.2); radius 4px; background oklab(0.117506 -0.00815131 -0.0132371 / 0.8); text __aeonikFont_a2019c 12/16 400, oklab(0.999994 0.0000455677 0.0000200868 / 0.7); icon 12 x 12, oklab(0.999994 0.0000455677 0.0000200868 / 0.7) |
-| hover | text __aeonikFont_a2019c 12/16 400, #ffffff `white`; icon 12 x 12, #ffffff `white` |
-| focus-visible | outline 2px solid #e75e15 `brand-accent`, offset 2px |
-| pressed | text __aeonikFont_a2019c 12/16 400, #ffffff `white`; icon 12 x 12, #ffffff `white` |
+| default (same: hover, pressed) | size 42 x 42; border 1px solid #bec4c2; radius 16px; background #ffffff `white`; text __aeonikFont_a2019c 16/24 400, #000000; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 20 x 20, #000000 |
+| focus-visible | outline 5px auto #99c8ff `focus-blue`, offset 0px |
 
 ![Carousel arrow default](components/crops/carousel-arrow-default.png) ![Carousel arrow hover](components/crops/carousel-arrow-hover.png) ![Carousel arrow focus-visible](components/crops/carousel-arrow-focus-visible.png) ![Carousel arrow pressed](components/crops/carousel-arrow-pressed.png)
 
@@ -316,7 +315,7 @@ A 14px Inter footer column link at 97% white. Read as `footer-link` on the home 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 85 x 30; background transparent; text __interFont_b14d2f 16/24 400, #f8f8f8 `offwhite`; icon 85 x 30, #f8f8f8 `offwhite` |
+| default (same: hover, pressed) | size 129.86 x 36; padding 8px 0px; background transparent; text __interFont_b14d2f 14/20.00 400, #f8f8f8 `offwhite`; transition transform 0.1s cubic-bezier(0.4, 0, 0.2, 1), translate 0.1s cubic-bezier(0.4, 0, 0.2, 1), scale 0.1s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.1s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, #f8f8f8 `offwhite` |
 | focus-visible | outline 1px auto #99c8ff `focus-blue`, offset 1px |
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
@@ -393,10 +392,10 @@ The orange "Start for free" pill on pricing (49px, Inter 16px 500). Links to Stu
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 123.42 x 40; padding 0px 18px; border 1px solid #e75e15 `brand-accent`; radius 999px; background #e75e15 `brand-accent`; text __interFont_b14d2f 14/21 500, #ffffff `white`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| hover | border 1px solid #d84f08 `brand-hover`; background #d84f08 `brand-hover` |
-| focus-visible | outline 2px solid #ff7b3c `focus-orange`, offset 2px |
-| pressed | border 1px solid #d84f08 `brand-hover`; background #d84f08 `brand-hover` |
+| default | size 146.78 x 49.03; padding 16px 24px; border 1px solid transparent; radius 999px; background #e75e15 `brand-accent`; text __interFont_b14d2f 16/15.04 500, #f8f8f8 `offwhite`; transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | background oklab(0.649255 0.136349 0.125914 / 0.9) |
+| focus-visible | outline 2px solid #e75e15 `brand-accent`, offset 8px |
+| pressed | background oklab(0.649255 0.136349 0.125914 / 0.9) |
 
 ![Plan CTA default](components/crops/plan-cta-default.png) ![Plan CTA hover](components/crops/plan-cta-hover.png) ![Plan CTA focus-visible](components/crops/plan-cta-focus-visible.png) ![Plan CTA pressed](components/crops/plan-cta-pressed.png)
 

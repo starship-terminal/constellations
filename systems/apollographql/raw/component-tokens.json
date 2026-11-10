@@ -83,7 +83,7 @@
    "brand-hover": {
     "value": "#d84f08",
     "type": "color",
-    "source": "measured backgroundColor/borderColor of nav-cta and plan-cta at hover and pressed",
+    "source": "measured backgroundColor/borderColor of nav-cta at hover and pressed; plan-cta instead fades the accent fill to 90% opacity",
     "description": "#d84f08, the CTA fill's darker hover/pressed step"
    },
    "horizon-dark": {
@@ -125,7 +125,7 @@
    "focus-orange": {
     "value": "#ff7b3c",
     "type": "color",
-    "source": "measured outlineColor of logo / nav-cta / plan-cta at focus-visible (2px solid, offset 2px)",
+    "source": "measured outlineColor of logo / nav-cta at focus-visible (2px solid, offset 2px); plan-cta instead draws its own accent fill as the ring at 8px offset",
     "description": "#ff7b3c, the keyboard focus ring on dark nav and CTA controls"
    },
    "focus-cyan": {
@@ -137,7 +137,7 @@
    "focus-blue": {
     "value": "#99c8ff",
     "type": "color",
-    "source": "measured outlineColor of tier-segment / billing-segment (5px) and footer-link / pagination (1px) at focus-visible",
+    "source": "measured outlineColor of tier-segment / billing-segment / carousel-arrow (5px) and footer-link / pagination (1px) at focus-visible",
     "description": "#99c8ff, the soft-blue focus ring on segments and quiet links"
    },
    "teal": {
@@ -164,14 +164,14 @@
     "display": {
      "value": "Aeonik, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
      "type": "fontFamily",
-     "source": "measured fontFamily of hero-title / pricing-title / cta-primary (--font-aeonik, served through next/font as __aeonikFont_*)",
+     "source": "measured fontFamily of hero-title / blog-title / section-title-light / hero-sub / cta-primary (--font-aeonik, served through next/font as __aeonikFont_*)",
      "description": "Aeonik: display headings, hero CTAs and the big numerals. Proprietary; falls back to the system sans here"
     },
     "ui": {
      "value": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
      "type": "fontFamily",
-     "source": "measured fontFamily of nav-bar / submit / plan-cta / field (--font-inter, next/font __interFont_*)",
-     "description": "Inter: nav, buttons, forms, footer and body text"
+     "source": "measured fontFamily of nav-bar / submit / plan-cta / field / pricing-title / customers-title / contact-title / faq-item (--font-inter, next/font __interFont_*)",
+     "description": "Inter: page titles, nav, buttons, forms, footer and body text"
     },
     "mono": {
      "value": "\"Fira Code\", ui-monospace, SFMono-Regular, Menlo, monospace",
@@ -200,10 +200,10 @@
      "description": "42px, section headings"
     },
     "faq": {
-     "value": "38px",
+     "value": "24px",
      "type": "dimension",
-     "source": "measured fontSize of faq-item (the pricing FAQ accordion headings)",
-     "description": "38px, large accordion/feature headings"
+     "source": "measured fontSize of the faq-item question text node (the row's own font computes 38px; the question it paints is 24px)",
+     "description": "24px, the FAQ accordion's question rows"
     },
     "sub": {
      "value": "20px",
@@ -244,7 +244,7 @@
     "xs": {
      "var": "--font-size-xs",
      "type": "dimension",
-     "source": "measured fontSize of pause-motion / carousel-arrow (12px)",
+     "source": "measured fontSize of pause-motion (12px)",
      "description": "12px, micro labels"
     }
    },
@@ -258,7 +258,7 @@
     "hero": { "value": "63px", "type": "dimension", "source": "measured lineHeight of hero-title (60/63)" },
     "title": { "value": "55px", "type": "dimension", "source": "measured lineHeight of pricing-title / customers-title (50/55)" },
     "section": { "value": "52.5px", "type": "dimension", "source": "measured lineHeight of section-title-light" },
-    "faq": { "value": "47.5px", "type": "dimension", "source": "measured lineHeight of faq-item" },
+    "faq": { "value": "31.2px", "type": "dimension", "source": "measured lineHeight of the faq-item question text node (24/31.2; the row computes 47.5px)" },
     "sub": { "value": "32.5px", "type": "dimension", "source": "measured lineHeight of hero-sub" },
     "body": { "value": "24px", "type": "dimension", "source": "measured lineHeight of nav-bar / footer / copy-row (16/24)" },
     "field": { "value": "25.2px", "type": "dimension", "source": "measured lineHeight of field / select / textarea (18/25.2)" },
@@ -309,7 +309,7 @@
    "xs": {
     "var": "--border-radius-4",
     "type": "dimension",
-    "source": "measured borderRadius of pause-motion / carousel-arrow",
+    "source": "measured borderRadius of pause-motion",
     "description": "4px, micro controls"
    }
   },
@@ -397,15 +397,15 @@
    },
    "title": {
     "value": {
-     "fontFamily": "{font.family.display}",
+     "fontFamily": "{font.family.ui}",
      "fontSize": "{font.size.title}",
      "fontWeight": "{font.weight.medium}",
      "lineHeight": "{font.leading.title}",
      "letterSpacing": "{font.tracking.normal}"
     },
     "type": "typography",
-    "source": "composite of pricing-title / customers-title / contact-title",
-    "description": "the 50/55 page-title step"
+    "source": "composite of pricing-title / customers-title / contact-title (all three measured Inter)",
+    "description": "the 50/55 page-title step, Inter at 500"
    },
    "body": {
     "value": {
@@ -444,7 +444,7 @@
  "component": {
   "button-primary-bg": { "var": "--color-brand-accent", "type": "color", "source": "measured backgroundColor of nav-cta / plan-cta / submit / cta-orange", "description": "the filled CTA's burnt orange" },
   "button-primary-fg": { "var": "--color-white", "type": "color", "source": "the same buttons' color" },
-  "button-primary-hover-bg": { "value": "#d84f08", "type": "color", "source": "measured backgroundColor of nav-cta / plan-cta at hover and pressed" },
+  "button-primary-hover-bg": { "value": "#d84f08", "type": "color", "source": "measured backgroundColor of nav-cta at hover and pressed (plan-cta fades the accent fill to 90% opacity instead)" },
   "button-dark-fg": { "var": "--color-nebula", "type": "color", "source": "measured color of cta-orange and volume-pill-on (navy text on the orange fill)" },
   "button-outline-border": { "var": "--color-brand-accent", "type": "color", "source": "measured borderColor of cta-orange-outline" },
   "button-outline-hover-bg": { "value": "rgba(231, 94, 21, 0.1)", "type": "color", "source": "measured backgroundColor of cta-orange-outline at hover/pressed (the accent at 10%)" },
@@ -470,7 +470,7 @@
   "nav-text": { "value": "rgba(255, 255, 255, 0.72)", "type": "color", "source": "measured color of nav-trigger / m-burger (oklab white at 72%)" },
   "nav-hover-bg": { "value": "rgba(255, 255, 255, 0.15)", "type": "color", "source": "measured backgroundColor of nav-trigger at hover (white 15%); pressed is white 10%" },
   "nav-hover-fg": { "var": "--color-white", "type": "color", "source": "measured color of nav-trigger at hover" },
-  "overlay-dark": { "value": "rgba(18, 21, 24, 0.8)", "type": "color", "source": "measured backgroundColor of pause-motion / carousel-arrow (oklab near-black at 80%)", "description": "the translucent chip fill on video controls" }
+  "overlay-dark": { "value": "rgba(2, 6, 10, 0.8)", "type": "color", "source": "measured backgroundColor of pause-motion (oklab(0.1175 -0.0082 -0.0132 / 0.8), which converts to rgba(2, 6, 10, 0.8))", "description": "the translucent chip fill on video controls" }
  },
  "light": {
   "page": { "var": "--color-offwhite", "type": "color", "source": "the blog/contact page ground (#f8f8f8)" },
@@ -482,7 +482,7 @@
   "accent-brand": { "var": "--color-brand", "type": "color", "source": "the #fc5200 signal orange: field focus border, volume-pill-on, article dots, --color-ring" },
   "text-link": { "var": "--color-horizon-dark-3", "type": "color", "source": "measured color of text-link / nav-menu-item (#c74100)" },
   "border": { "var": "--color-border-default", "type": "color", "source": "the light hairline" },
-  "focus": { "value": "#ff7b3c", "type": "color", "source": "measured focus ring on logo/nav-cta/plan-cta (2px)" },
+  "focus": { "value": "#ff7b3c", "type": "color", "source": "measured focus ring on logo/nav-cta (2px)" },
   "focus-alt": { "value": "#99c8ff", "type": "color", "source": "measured focus ring on footer-link / pagination / segments (1px and 5px)" }
  },
  "dark": {
@@ -498,7 +498,7 @@
   "accent-brand": { "var": "--color-brand", "type": "color", "source": "volume-pill-on fill and the focus ring" },
   "border": { "var": "--color-offwhite", "type": "color", "source": "measured 1px borders of segments, volume pills and form fields on dark" },
   "border-muted": { "var": "--color-surface-muted", "type": "color", "source": "the stat tiles' #9fb2bc borders" },
-  "focus": { "value": "#ff7b3c", "type": "color", "source": "measured focus ring on nav-cta / plan-cta (2px #ff7b3c)" },
+  "focus": { "value": "#ff7b3c", "type": "color", "source": "measured focus ring on nav-cta (2px #ff7b3c); plan-cta rings with its own accent fill at 8px offset" },
   "focus-alt": { "var": "--color-lightfall-cyan", "type": "color", "source": "measured focus ring on cta-primary / cta-secondary (2px #2fd1e0)" }
  }
 }

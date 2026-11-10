@@ -22,12 +22,20 @@ for f in RAW.glob('*.part*.png'):
     m = re.match(r'(.+)\.part(\d+)\.png$', f.name)
     parts.setdefault(m.group(1), []).append((int(m.group(2)), f))
 for name, ps in parts.items():
+    # Tiles belong to the run that wrote them. If name.png is newer than every
+    # part, the tiles are leftovers from an older, taller capture: stitching
+    # them would overwrite the fresh single-shot image.
+    target = RAW / f'{name}.png'
+    newest_part = max(f.stat().st_mtime for _, f in ps)
+    if target.exists() and target.stat().st_mtime >= newest_part:
+        print('skipped stale tiles for', name)
+        continue
     ims = [Image.open(f).convert('RGB') for _, f in sorted(ps)]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
     y = 0
     for i in ims:
         sheet.paste(i, (0, y)); y += i.height
-    sheet.save(RAW / f'{name}.png')
+    sheet.save(target)
     print('stitched', name, sheet.size)
 
 n = 0

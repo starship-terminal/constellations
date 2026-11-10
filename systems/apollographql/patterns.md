@@ -27,7 +27,7 @@ site's signature: a 60px pill whose border is a rotating conic gradient —
 teal `component.cta-ring` around a space-dark fill — beside a 1px
 white-35 outline pill ([cta-primary](components/crops/cta-primary-default.png),
 [cta-secondary](components/crops/cta-secondary-default.png)). Inner pages
-drop to Aeonik/Inter 50/55 titles with plain orange CTAs.
+drop to Inter 50/55 titles with plain orange CTAs.
 
 ## Orange CTAs
 
@@ -47,7 +47,7 @@ hero pair, `focus-blue` on quiet links and segments.
 The pricing page stacks three pill shapes: 43px filter and billing segments
 (1px offwhite border, `radius.segment` 20px, `all 0.2s`), 39px request-volume
 pills (`radius.sm` 8px; the held one fills `brand` #fc5200 with nebula text),
-and per-plan 40px orange CTAs ([tier-segment](components/crops/tier-segment-default.png),
+and per-plan 49px orange CTAs ([tier-segment](components/crops/tier-segment-default.png),
 [volume-pill-on](components/crops/volume-pill-on-default.png),
 [plan-cta](components/crops/plan-cta-default.png)).
 

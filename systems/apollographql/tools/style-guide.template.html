@@ -13,7 +13,7 @@
   --sg-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --sg-mono: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
-[data-mode="dark"] {
+[data-mode="dark"], .darkctx {
 /*DARK*/
 }
 * { box-sizing: border-box; }
@@ -59,7 +59,7 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .hero .sub { font: 500 var(--font-size-sub)/var(--font-leading-sub) var(--sg-display); color: var(--text-muted); max-width: 52ch; margin: 0 0 30px; }
 .hero .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .pill { display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-pill); font: 500 var(--font-size-body-lg)/1 var(--sg-display); padding: 0 48px; height: 60px; border: 0; }
-.pill.ring { position: relative; color: var(--component-button-primary-fg); background: var(--component-cta-inner-bg); border: 2px solid transparent; background-clip: padding-box; }
+.pill.ring { position: relative; isolation: isolate; color: var(--component-button-primary-fg); background: var(--component-cta-inner-bg); border: 2px solid transparent; background-clip: padding-box; }
 .pill.ring::before { content: ""; position: absolute; inset: -2px; border-radius: var(--radius-pill); background: conic-gradient(from 52deg, var(--palette-teal), var(--palette-cta-glow-orange), var(--palette-teal)); z-index: -1; }
 .pill.outline { background: transparent; color: var(--component-button-primary-fg); border: 1px solid rgba(255,255,255,.35); font-family: var(--sg-display); }
 .pill.outline:hover { background: rgba(255,255,255,.1); border-color: #fff; }
@@ -95,8 +95,15 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .fband .col { min-width: 120px; }
 .fband .col b { display: block; font: 900 var(--font-size-body)/2 var(--sg-sans); color: var(--text); }
 .fband .soc { width: 28px; height: 28px; border-radius: 50%; background: var(--accent-brand); display: inline-block; }
-.cookie { position: absolute; left: 18px; bottom: 18px; width: 330px; background: var(--component-card-light-bg); color: #3d4a52; border: 1px solid #e3e7ea; border-radius: var(--radius-field); box-shadow: var(--shadow-cookie-card); padding: 20px; font: 400 13px/1.5 var(--sg-sans); }
+.cookie { position: absolute; left: 18px; bottom: 18px; width: 330px; max-width: calc(100% - 36px); background: var(--component-card-light-bg); color: #3d4a52; border: 1px solid #e3e7ea; border-radius: var(--radius-field); box-shadow: var(--shadow-cookie-card); padding: 20px; font: 400 13px/1.5 var(--sg-sans); }
 .cookie .cc-go { margin-top: 12px; display: inline-block; background: var(--page); color: #fff; border-radius: var(--radius-pill); padding: 8px 18px; font: 600 var(--font-size-tiny)/1 var(--sg-sans); }
+@media (max-width: 560px) {
+  .hero { padding: 36px 16px 44px; }
+  .price-wrap { padding: 24px 14px; }
+  .formband { margin: 0 14px 14px !important; }
+  .fband { padding: 22px 16px; }
+  .cookie { left: 12px; bottom: 12px; max-width: calc(100% - 24px); padding: 14px; }
+}
 table.cmp { border-collapse: collapse; font-size: 14px; }
 table.cmp td, table.cmp th { border: 1px solid var(--border); padding: 6px 14px; text-align: left; }
 </style>
@@ -113,7 +120,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--border); padding: 6px 14px;
 
   <h2 class="sh">The dark hero</h2>
   <p class="lead">The Summit eyebrow strip sits over a transparent nav: wordmark, disclosure links at <code>component.nav-text</code> (white 72%), and the <code>brand-accent</code> Start-for-free pill. The hero is Aeonik 60/63 at −1.5px tracking on the <code>lightfall</code> near-black field; the primary CTA draws its signature conic teal-to-orange ring (<code>component.cta-ring</code>) around a space-dark fill, beside a white-35 outline pill.</p>
-  <div class="mock space">
+  <div class="mock space darkctx">
     <div class="eyebrow"><b>Apollo Summit 2026</b> keynote now available<span class="cta">Watch keynote</span></div>
     <div class="navbar"><span class="wm"><i>◆</i> Apollo</span><a class="lk" href="#">Products</a><a class="lk" href="#">Solutions</a><a class="lk" href="#">Resources</a><a class="lk" href="#">Company</a><span class="sp"></span><span class="pill orange">Start for free</span></div>
     <div class="hero"><h3>Give AI access to the systems that run your business</h3><div class="sub">The GraphOS platform: one schema, every API, all the tooling your team needs to ship.</div><div class="row"><span class="pill ring">Talk to Apollo</span><span class="pill outline">Try GraphOS free</span><span class="chip">❚❚ Pause motion</span></div></div>
@@ -122,7 +129,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--border); padding: 6px 14px;
 
   <h2 class="sh">Pricing</h2>
   <p class="lead">Tier and billing segments are 43px offwhite-border pills at <code>radius.segment</code> 20px; the request-volume pills are squarer (<code>radius.sm</code> 8px) and the held one fills <code>brand</code> orange with nebula text. Below, the 32px stats card carries <code>surface-muted</code>-bordered tiles, and the grey FAQ card is one of the site's light islands on a dark page.</p>
-  <div class="mock space">
+  <div class="mock space darkctx">
     <div class="price-wrap">
       <h3>Pricing that makes sense at any scale</h3>
       <div class="segs"><span class="seg">Developer</span><span class="seg">Standard</span><span class="seg">Enterprise</span><span class="vol on">100M</span><span class="vol">250M</span><span class="vol">500M</span><span class="pill orange">Start for free</span></div>
@@ -133,7 +140,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--border); padding: 6px 14px;
 
   <h2 class="sh">Contact form and footer</h2>
   <p class="lead">The HubSpot form floats on the <code>nebula</code> band: 54px fields at <code>radius.field</code> 16px, offwhite borders that flip to <code>brand</code> orange on focus, and a 999px-radius orange submit. The footer is a space-dark band with white column heads and quiet links.</p>
-  <div class="mock space">
+  <div class="mock space darkctx">
     <div style="padding:26px 26px 0"></div>
     <div class="formband" style="margin:0 26px 26px"><h3>Contact us</h3><span class="fld">First name</span><span class="fld focus">Email — name@example.com</span><span class="fld area">How can we help?</span><span class="pill orange go">Submit</span></div>
     <div class="fband"><h4>API orchestration for the agentic era</h4><div class="col"><b>Products</b><a href="#">GraphOS</a><a href="#">Router</a><a href="#">Apollo Client</a></div><div class="col"><b>Company</b><a href="#">About</a><a href="#">Blog</a><a href="#">Careers</a></div><span class="soc"></span><span class="soc"></span><span class="soc"></span></div>
@@ -144,7 +151,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--border); padding: 6px 14px;
   <div id="roles-out"></div>
 
   <h2 class="sh">Type</h2>
-  <p class="lead">Two voices: <b>Aeonik</b> for display — 60/63 hero at −1.5px tracking, 50/55 page titles at 500 weight, 38px FAQ heads — and <b>Inter</b> for everything else: 15px nav links, 14px segments and buttons, 16px body, 18px form text. Fira Code covers code.</p>
+  <p class="lead">Two voices: <b>Aeonik</b> for display — 60/63 hero at −1.5px tracking, 42px section heads, the 20px lede — and <b>Inter</b> for everything else: 50/55 page titles at 500 weight, 24px FAQ questions, 15px nav links, 14px segments and buttons, 16px body, 18px form text. Fira Code covers code.</p>
   <div id="type-out"></div>
 
   <h2 class="sh">Radius and geometry</h2>
@@ -164,6 +171,7 @@ const TOK = /*TOKENS*/null;
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const resolve = (v) => String(v).replace(/\{([^{}]+)\}/g, (m, p) => `var(${cssname(p)})`);
 const flat = (node, prefix = '') => Object.entries(node).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
 function setMode(m) {
   document.documentElement.dataset.mode = m;
@@ -180,7 +188,9 @@ function setMode(m) {
     const lit = flat(TOK[set] || {}, set + '.').filter(([, t]) => t.t === 'color');
     if (!lit.length) continue;
     h += `<div class="pal-h">${set}</div><div class="pal">`;
-    for (const [n, t] of lit) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    // theme sets re-bind the same unprefixed names (--page), so a swatch paints
+    // its resolved value rather than a nonexistent --light-page / --dark-page
+    for (const [n, t] of lit) h += `<div class="sw"><span class="dot"><i style="background:${esc(resolve(t.v))}"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
     h += '</div>';
   }
   $('#roles-out').innerHTML = h;
@@ -191,8 +201,9 @@ function setMode(m) {
   for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
     const v = t.v;
     const ref = (x) => String(x).replace(/[{}]/g, '');
-    const fam = /display|aeonik/i.test(ref(v.fontFamily)) ? 'var(--sg-display)' : 'var(--sg-sans)';
-    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(ref(v.fontSize))} / ${esc(ref(v.lineHeight))} · w ${esc(String(v.fontWeight))}</small></div><div class="sample" style="font-family:${fam};font-size:${esc(ref(v.fontSize))};line-height:${esc(ref(v.lineHeight))};font-weight:${v.fontWeight}">Give AI access to the systems that run your business</div></div>`;
+    // the composite is emitted as --typography-*; the sample uses it so the
+    // measured size, leading, weight and tracking all apply
+    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(ref(v.fontSize))} / ${esc(ref(v.lineHeight))} · w ${esc(ref(String(v.fontWeight)))}</small></div><div class="sample" style="font:var(${cssname(n)})">Give AI access to the systems that run your business</div></div>`;
   }
   $('#type-out').innerHTML = h;
 })();

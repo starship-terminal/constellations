@@ -115,6 +115,10 @@ async function toggle(loc) {
   await l.click({ timeout: 4000 }).catch(() => l.evaluate((el) => el.click()));
 }
 
+// ONLY=key1,key2 limits the run to those components, so a wrong selector's
+// entries can be recaptured without re-measuring every control on the page.
+const ONLY = new Set((process.env.ONLY || '').split(',').map((s) => s.trim()).filter(Boolean));
+
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
   Object.assign(c, { page: current, run, url: URLS[current] && (URLS[current].startsWith('http') ? URLS[current] : BASE + URLS[current]) }, meta);
@@ -145,6 +149,7 @@ async function measure(key, state, target, opts = {}) {
 
 // Records the listed states of one component. meta: title, group, desc, sel.
 async function S(key, target, list, meta = {}, opts = {}) {
+  if (ONLY.size && !ONLY.has(key)) return;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   delete out.components[key].missing;
   if (opts.open) { await reset(); await opts.open(); }
@@ -260,10 +265,10 @@ async function home() {
   await S('section-title-light', await domFind(page, /Enterprise teams trust Apollo|shared foundation/i, { sel: 'h2, h3', tag: 'st', minH: 30 }), ['default'], { group: h, title: 'Section title (light)', desc: 'An Aeonik 42px heading on a light content section — the site alternates dark hero / light content bands.', sel: 'section h2' });
   await S('video-card', q('button:has-text("PLAY VIDEO"), ' + M('video')).filter({ visible: true }).first(), B4, { group: h, title: 'Video card', desc: 'The 520x293 "PLAY VIDEO" card, 24px radius on eclipse.', sel: 'video card' });
   await S('copy-row', q(M('architecture-animation_copyControl')).filter({ visible: true }).first(), B4, { group: h, title: 'Copy control row', desc: 'One of the three 416x84 copy rows in the architecture animation panel.', sel: 'copyControl row' });
-  await S('carousel-arrow', q('button.h-\\[42px\\], main button:has(svg)').filter({ visible: true }).first(), B4, { group: h, title: 'Carousel arrow', desc: 'A 42x42 white 16px-radius arrow button on the logo/customer carousel.', sel: 'carousel arrow' });
+  await S('carousel-arrow', q('button.h-\\[42px\\], main button[aria-label*="next" i], main button[aria-label*="previous" i], main button[aria-label*="slide" i]').filter({ visible: true }).first(), B4, { group: h, title: 'Carousel arrow', desc: 'A 42x42 white 16px-radius arrow button on the logo/customer carousel.', sel: 'carousel arrow' });
   // Footer: dark band, link columns, social icons, small Start for free pill.
   await S('footer', q('footer').filter({ visible: true }).first(), ['default'], { group: h, title: 'Footer', desc: 'The footer band: tagline, five link columns, small orange Start for free pill, social icons.', sel: 'footer' });
-  await S('footer-link', q('footer a[class*="text-body-sm"], footer a').filter({ visible: true }).first(), B4, { group: h, title: 'Footer link', desc: 'A 14px Inter footer column link at 97% white.', sel: 'footer link' });
+  await S('footer-link', q('footer a[class*="text-body-sm"], footer li a, footer nav a, footer a:has-text("Pricing")').filter({ visible: true }).first(), B4, { group: h, title: 'Footer link', desc: 'A 14px Inter footer column link at offwhite #f8f8f8.', sel: 'footer link' });
   await S('social-link', q('footer ' + M('footer_socialLink')).filter({ visible: true }).first(), B4, { group: h, title: 'Social icon', desc: 'A 28x28 social icon in the footer row.', sel: 'social link' });
   await page.close();
 }
@@ -279,7 +284,7 @@ async function pricing() {
   // Request-volume pills: the held one fills solar orange.
   await S('volume-pill-on', q('button:has-text("1m")').filter({ visible: true }).first(), B4, { group: g, title: 'Volume pill (selected)', desc: 'The held request-volume pill: #fc5200 solar fill, eclipse text, 8px radius.', sel: 'volume pill on' });
   await S('volume-pill', q('button:has-text("10m")').filter({ visible: true }).first(), B4, { group: g, title: 'Volume pill', desc: 'An unheld volume pill: transparent, 1px border, 8px radius.', sel: 'volume pill' });
-  await S('plan-cta', q('a:has-text("Start for free")').filter({ visible: true }).first(), B4, { group: g, title: 'Plan CTA', desc: 'The orange "Start for free" pill on pricing (49px, Inter 16px 500). Links to Studio signup; hovered and focused only.', sel: 'pricing cta' });
+  await S('plan-cta', q('main a:has-text("Start for free")').filter({ visible: true }).first(), B4, { group: g, title: 'Plan CTA', desc: 'The orange "Start for free" pill on pricing (49px, Inter 16px 500). Links to Studio signup; hovered and focused only.', sel: 'pricing cta' });
   // The rounded-32 feature cards: dark "Trusted by" band, light FAQ band.
   await S('stats-card', q('div[class*="border-radius-32"]').filter({ hasText: /Trusted by digital leaders/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Stats band card', desc: 'The 1344x670 eclipse card ("Trusted by digital leaders"), 32px radius.', sel: 'stats card' });
   await S('faq-card', q('div[class*="border-radius-32"]').filter({ hasText: /FAQs/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'FAQ card', desc: 'The light regolith-grey FAQ card (#e3e3e3), 32px radius.', sel: 'faq card' });
@@ -344,18 +349,25 @@ run = new Date().toISOString();
 out._meta.run = run;
 out._meta.product = 'apollographql.com';
 const wanted = process.argv.slice(2).join(',').split(',').map((s) => s.trim()).filter(Boolean);
-({ context } = await launch());
-for (const [k, fn] of Object.entries(RUNNERS)) {
-  if (wanted.length && !wanted.includes(k)) continue;
-  try { await fn(); } catch (e) { log('PAGE FAILED', k, String(e.message).split('\n')[0]); }
+const lh = await launch();
+({ context } = lh);
+try {
+  for (const [k, fn] of Object.entries(RUNNERS)) {
+    if (wanted.length && !wanted.includes(k)) continue;
+    try { await fn(); } catch (e) { log('PAGE FAILED', k, String(e.message).split('\n')[0]); }
+    save();
+  }
+  // mark components from this run whose selectors matched nothing; a component
+  // with recorded states (from an earlier merged run) is covered, not missing
+  for (const [k, c] of Object.entries(out.components)) {
+    if (!touched.has(k)) continue;
+    if (Object.keys(c.states || {}).length) delete c.missing;
+    else c.missing = true;
+  }
   save();
+  log('done ->', OUT);
+} finally {
+  // closing each page leaves the browser itself running; close it so the
+  // documented command exits
+  await lh.browser.close().catch(() => {});
 }
-// mark components from this run whose selectors matched nothing; a component
-// with recorded states (from an earlier merged run) is covered, not missing
-for (const [k, c] of Object.entries(out.components)) {
-  if (!touched.has(k)) continue;
-  if (Object.keys(c.states || {}).length) delete c.missing;
-  else c.missing = true;
-}
-save();
-log('done ->', OUT);

@@ -91,7 +91,7 @@ export async function closePromo(page) {
 }
 
 // Alias kept for callers that clear a one-shot modal before each step;
-// aaply.app has no region gate, so this is just the overlay sweep.
+// apollographql.com has no region gate, so this is just the overlay sweep.
 export async function killGeo(page) {
   await closePromo(page);
 }

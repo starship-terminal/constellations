@@ -205,7 +205,7 @@ PAGE_NAME = {"home": "home", "pricing": "pricing", "customers": "customers", "bl
 
 GROUP_INTRO = {
     "Shell and navigation": "The chrome on the public pages: the Summit eyebrow strip, the sticky transparent nav over the dark hero (Apollo wordmark left, Products/Solutions/Resources/Company disclosures centre, search icon and the Start-for-free orange pill right), the Products dropdown menu, the footer band, and the OneTrust consent card (captured, never answered).",
-    "Home": "The landing page: the 60px Aeonik hero over the near-black space field, the conic-ring primary CTA and outline secondary, the pause-motion and carousel chips, the alternating dark/light sections and the video card.",
+    "Home": "The landing page: the 60px Aeonik hero over the near-black space field, the conic-ring primary CTA and outline secondary, the pause-motion ghost chip and the testimonial-carousel arrow, the alternating dark/light sections and the video card.",
     "Pricing": "The pricing page: the plan-tier and Monthly/Yearly segment pills, the request-volume pills (the held one paints #fc5200), the per-plan orange CTAs, the eclipse stats card, the grey FAQ card and the connectors promo banner.",
     "Customers": "The customers page: the 50px title, the filled and outline orange CTA pair, the stats band and the white customer-story cards.",
     "Blog": "The blog index: \"What's new\" in Aeonik 60px on the light page, the satellite-grey featured cards, the white regolith archive cards and the numbered pagination.",
@@ -360,8 +360,16 @@ for k in ["nav-bar", "cookie-card", "stats-card", "faq-card", "promo-banner", "s
         continue
     p = props(st)
     if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
-        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
+        # A painted child counts as the container's surface only when it fills
+        # most of it: the first rounded child is often a control (the nav's and
+        # footer's orange pill), which would misdescribe the surface.
+        area = st["rect"]["w"] * st["rect"]["h"]
+        def covers(x):
+            m = re.match(r"([\d.]+)x([\d.]+)", x.get("size", ""))
+            return bool(m) and float(m.group(1)) * float(m.group(2)) >= 0.6 * area
+        p0 = next((x for x in st["paint"] if x.get("bg") and covers(x)), None)
+        if p0:
+            p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 

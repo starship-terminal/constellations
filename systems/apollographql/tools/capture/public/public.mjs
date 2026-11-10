@@ -38,6 +38,10 @@ class Shooter {
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
+    // Clear this capture's stale tiles first: a page that shrank since the
+    // last run would otherwise leave old partN files for quantize.py to
+    // stitch over the fresh capture.
+    for (const old of fs.readdirSync(RAW)) if (old.startsWith(`${this.prefix}-${name}.part`)) fs.rmSync(`${RAW}/${old}`, { force: true });
     if (H <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
     else for (let i = 0, y = 0; y < H; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, H - y) } }, this.requested);
     this.count++; log('  shot', name, 'H=' + H);
@@ -143,7 +147,9 @@ for (const { k, mob } of runs) {
       ok = clean;
     }
     if (!ok) { log('  BLOCKED challenge-or-error', spec.path); await ctx.close(); continue; }
-    await killGeo(p);
+    // No promo sweep here: S.raw() must find the consent card as mounted for
+    // the cookie-banner shot. S.view()/S.full() call closePromo before every
+    // later shot, so nothing else needs killGeo up front.
     await spec.run(p, S);
   } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }
   total += S.count;
