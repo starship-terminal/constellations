@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/a31f5b99-6e7d-4e13-9b80-cd60e455bd76",
   "source_url": "https://www.wix.com",
   "extracted_at": "2026-06-03T21:18:56.559Z",
-  "fetched_at": "2026-10-20T08:23:36Z",
+  "fetched_at": "2026-11-08T04:21:06Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/a48d55a3-a011-4185-9175-13a330547c7d.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

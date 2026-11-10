@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/4bbc63cf-c995-4c56-9873-e7f300f1c9e7",
   "source_url": "https://elementor.com",
   "extracted_at": "2026-04-11T19:12:35.931Z",
-  "fetched_at": "2026-10-20T08:25:12Z",
+  "fetched_at": "2026-11-08T04:19:32Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/c767bdce-36c0-48d8-a8b6-55f78b3763ce.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/3a74e146-3f1c-4cb8-997e-d89ebcf67d3d.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/87473f12-3534-43c0-a610-2b69bb5dac0c.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/a5bb9974-fbf1-46f9-9b9d-2785d99b9f52.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": true
 }

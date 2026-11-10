@@ -1,0 +1,35 @@
+20:17:51 open features 
+20:18:00    features-title default 792x180
+20:18:01    step-title default 380x156
+20:18:05    step-card default 1440x9851
+20:18:06    mega-demo-cta default 520x96
+20:18:08    mega-demo-cta hover 520x96
+20:18:09    mega-demo-cta focus-visible 520x96
+20:18:10    mega-demo-cta pressed 520x96
+20:18:10 open value 
+20:18:19    value-title default 59x35
+20:18:19   ! missing value-card 
+20:18:20 open reviews 
+20:18:29    reviews-title default 72.34x35
+20:18:29   ! missing review-card 
+20:18:30    review-text default 355x26
+20:18:30 open story 
+20:18:38    story-title default 851x420
+20:18:38   ! missing story-block 
+20:18:38 open team 
+20:18:47    team-title default 851x60
+20:18:47   ! missing member-card 
+20:18:47 open figma 
+20:18:55    figma-title default 605x60
+20:18:56    figma-step default 991x39
+20:18:56 open home (mobile)
+20:19:05    m-nav-bar default 370.5x166
+20:19:06    m-burger default 92x24.53
+20:19:06    m-burger pressed 92x24.53
+20:19:07    m-hero-title default 304x112
+20:19:08    m-cta-signup default 280x55
+20:19:08    m-cta-signup pressed 280x55
+20:19:09    m-cta-demo default 280x55
+20:19:10    m-cta-demo pressed 280x55
+20:19:11    m-step-number default 30x23
+20:19:11 done -> /Users/kaichen/Desktop/Personal/Internal/Projects/ai-engineering/design/design-systems/systems/aaply/raw/components-computed.json

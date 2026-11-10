@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/b1e82907-d1cf-46cd-8ae7-3561c5b15fd0",
   "source_url": "https://www.dylanbrouwer.design",
   "extracted_at": "2026-07-03T03:43:58.087Z",
-  "fetched_at": "2026-10-20T08:21:31Z",
+  "fetched_at": "2026-11-08T04:20:04Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d8f02b48-e00c-4c90-bb58-cdbd4e90af4e.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/6de278cd-6fb1-4c21-98a0-cb0ef4fcba79.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/fa26dee9-45ba-4825-9b5d-e0f9a0c5f00e.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/4077aeac-a01a-4abd-902a-574501ed8a22.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

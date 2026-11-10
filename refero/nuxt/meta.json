@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/d9a19632-e9ee-4c9c-849b-ed48b1c43ee7",
   "source_url": "https://nuxt.com",
   "extracted_at": "2026-09-24T17:43:43.467Z",
-  "fetched_at": "2026-10-20T08:21:09Z",
+  "fetched_at": "2026-11-08T04:20:34Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/45fdba1b-1efb-4ef7-9903-81d16b66d594.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ef6f916f-302b-4d04-9ae5-e1f2c02b642c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/6d5406d1-181c-4237-9a05-55fd292a7502.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/3e2e24b1-0679-44cc-9b8f-e6befeefa4f0.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

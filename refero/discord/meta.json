@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/faec4b0c-cf93-4150-97de-0a8e7eed1840",
   "source_url": "https://discord.com",
   "extracted_at": "2026-04-11T18:08:26.644Z",
-  "fetched_at": "2026-10-20T08:25:15Z",
+  "fetched_at": "2026-11-08T04:19:33Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/042a4589-4f5c-4d77-9212-3aeb5f7032c2.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/3ff1c1fd-3dea-40ad-a731-f4317283b84f.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/ec67ea4e-5de7-4520-b39b-fbd01a2289f0.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/ed6ea420-f81b-43dd-9f4b-9f26e68be75b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": true
 }

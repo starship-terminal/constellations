@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/8f623d19-51f6-4da2-bc45-05573cc98283",
   "source_url": "https://runwayml.com",
   "extracted_at": "2026-06-03T18:48:28.392Z",
-  "fetched_at": "2026-10-20T08:22:29Z",
+  "fetched_at": "2026-11-08T04:20:46Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/aa4b8eb8-1121-4a48-99a6-aaad361c9068.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/f256b1ed-e517-4f25-a449-b1195142f247.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/c51c1022-99f4-4b5e-bde2-dc6f9f2f64d8.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0ac53a8d-e21e-4c7c-95ef-cb9b1fa438a2.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

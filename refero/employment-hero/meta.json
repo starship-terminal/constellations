@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/f4ebfdf4-c79c-4d95-8221-9330254fb1f9",
   "source_url": "https://employmenthero.com",
   "extracted_at": "2026-06-03T17:32:35.734Z",
-  "fetched_at": "2026-10-20T08:24:43Z",
+  "fetched_at": "2026-11-08T04:20:05Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/9ce5b5e0-e4f3-4f74-a967-b29d8ec80729.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/22f17a40-c616-4e3b-9a8a-e1002f404186.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/fd949c5d-d056-4b5e-bef5-c79bae640cee.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/91467bec-a16f-4d30-8a8f-cd6a29063b05.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

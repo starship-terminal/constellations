@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/7fdcf5eb-4d65-49a2-b887-60119bca4edc",
   "source_url": "https://spacelab.co.uk",
   "extracted_at": "2026-06-03T18:18:47.985Z",
-  "fetched_at": "2026-10-20T08:22:39Z",
+  "fetched_at": "2026-11-08T04:20:50Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/def740b6-b7b2-4de9-bb5c-a63382caa642.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0216c349-2280-4a2e-984d-36e03c1f7bc2.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/62eaae99-48f9-4372-8f0f-c4b4c6f5236f.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/195e5250-9b68-4030-9bdd-eebc1cbf5c29.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

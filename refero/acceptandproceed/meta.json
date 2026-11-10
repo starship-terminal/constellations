@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/f63b4703-db8b-4bc9-8d8f-17262b12d4b3",
   "source_url": "https://www.acceptandproceed.com",
   "extracted_at": "2026-06-03T20:39:21.828Z",
-  "fetched_at": "2026-10-20T08:21:55Z",
+  "fetched_at": "2026-11-08T04:19:37Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/947b6b4e-47b3-4ebd-b1fe-f3c4e67784b5.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/7d9056fa-5e99-4fa2-aad2-083dfcc584c9.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/e4d68f59-3b2c-4284-9d2c-acf6251b8b70.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/f4510193-b3f8-4447-bc34-4f378ff44525.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

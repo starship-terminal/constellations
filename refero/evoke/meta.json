@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/a69de146-6ff1-4ea8-b4a4-9d182ca2de31",
   "source_url": "https://studioevoke.co.uk",
   "extracted_at": "2026-06-03T17:24:23.665Z",
-  "fetched_at": "2026-10-20T08:23:03Z",
+  "fetched_at": "2026-11-08T04:20:06Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/3c738566-1226-490f-be6f-dc1e9bbe072e.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/185aeea1-fa14-4e11-ade5-2b56d5ae5aa9.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/e50d26d5-5146-4fe7-8894-810b23514eb1.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/2a3edbc1-ad90-4bec-aec7-6da2e9f2f62b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

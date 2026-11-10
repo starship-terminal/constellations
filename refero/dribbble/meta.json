@@ -10,7 +10,7 @@
   "page_url": "https://styles.refero.design/style/b8ce0a90-40c6-4518-940c-8c97ccf9c1a0",
   "source_url": "https://dribbble.com",
   "extracted_at": "2026-06-03T18:49:40.779Z",
-  "fetched_at": "2026-10-20T08:22:32Z",
+  "fetched_at": "2026-11-08T04:20:03Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/23133bca-7553-4ba5-9c9f-aa4adf1e06da.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a0f6fda1-4310-4a50-9962-f69346963250.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/4edabb80-9b1f-4541-b006-9af82633a443.jpg",
@@ -18,5 +18,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/5f47f3e7-df6a-4da1-a53c-e7ea33ca7331.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

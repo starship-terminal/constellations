@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/1f782141-d407-4c27-8cee-2246720a9f42",
   "source_url": "https://www.lottielab.com",
   "extracted_at": "2026-06-03T22:00:45.937Z",
-  "fetched_at": "2026-10-20T08:23:24Z",
+  "fetched_at": "2026-11-08T04:20:27Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d0872642-aabf-4251-9e72-8d4ab87c6966.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/5e91b71b-da5a-4f5c-bc19-330d723b78b8.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/7a85725c-16e0-4999-8690-e29dbc9168eb.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/09a2ef2a-1b72-4a5c-b46e-b6b98ee6195f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

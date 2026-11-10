@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/9cc537fc-97d8-4632-8703-f9aa296c2206",
   "source_url": "https://eco.com",
   "extracted_at": "2026-06-03T16:14:59.838Z",
-  "fetched_at": "2026-10-20T08:24:56Z",
+  "fetched_at": "2026-11-08T04:20:04Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5c5e565b-80c3-49d7-b429-c10c2a7de134.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/aba14586-387b-4e69-9f3a-381704278e50.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/f2e7c319-6049-43cf-8b9f-79f4c528c37c.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b6cb9bab-9890-4027-8842-9b04748b2ad4.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

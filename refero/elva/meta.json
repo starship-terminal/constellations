@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/9568198a-5a51-4cbb-9dc3-b7610757cdd6",
   "source_url": "https://helloelva.com",
   "extracted_at": "2026-06-03T19:34:21.159Z",
-  "fetched_at": "2026-10-20T08:22:04Z",
+  "fetched_at": "2026-11-08T04:20:05Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/51b3bf02-da1d-4f55-85bb-fdf058816532.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

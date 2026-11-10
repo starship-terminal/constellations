@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/729ba7a8-35d5-44f3-abc0-1078ff6a3467",
   "source_url": "https://todoist.com",
   "extracted_at": "2026-06-03T16:45:48.410Z",
-  "fetched_at": "2026-10-20T08:24:53Z",
+  "fetched_at": "2026-11-08T04:21:00Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/afc3137c-60f4-4bb5-9391-857246244fa7.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/96d531a9-5385-4889-b6fd-c4ec7c47369e.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/0d0cf1a1-66d7-4438-b478-887cf212e9e2.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/3880ec1e-a6fa-4184-a083-4ca74ca1c8cd.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

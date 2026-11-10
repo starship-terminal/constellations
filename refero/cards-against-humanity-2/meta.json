@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/cef9a300-8513-46c2-9c2c-c0016e5a5d30",
   "source_url": "https://www.climatecatastrophepack.com",
   "extracted_at": "2026-06-03T21:06:36.930Z",
-  "fetched_at": "2026-10-20T08:23:38Z",
+  "fetched_at": "2026-11-08T04:19:53Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/9ab8a575-8c30-4d80-9aee-c387dbd6bfb6.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

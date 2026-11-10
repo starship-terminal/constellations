@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/bb2a2b0b-c84e-48ee-9dd9-7b623f81a422",
   "source_url": "https://ysl.com",
   "extracted_at": "2026-06-03T17:56:58.227Z",
-  "fetched_at": "2026-10-20T08:22:46Z",
+  "fetched_at": "2026-11-08T04:21:08Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/25fb59f6-e45f-4988-a4d5-765fea08d581.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/695336e6-7eaa-49de-9e56-3aa176547fc0.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/edf24a4a-35ab-4fff-ba09-56c0d20dba08.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b514b546-734c-4826-afe1-d059525e5acb.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

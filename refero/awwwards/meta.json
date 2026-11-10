@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/a77a7289-3438-46ba-8194-214739e47514",
   "source_url": "https://awwwards.com",
   "extracted_at": "2026-06-03T20:17:37.638Z",
-  "fetched_at": "2026-10-20T08:23:51Z",
+  "fetched_at": "2026-11-08T04:19:47Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6910f352-7a86-4de9-a581-93f9aa796757.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

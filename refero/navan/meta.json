@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/a5089389-4220-4fc2-82d9-973203d2e2f5",
   "source_url": "https://navan.com",
   "extracted_at": "2026-06-03T17:52:13.655Z",
-  "fetched_at": "2026-10-20T08:24:39Z",
+  "fetched_at": "2026-11-08T04:20:33Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f233878e-4ce5-4ad6-9c33-30525bbdb09d.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/7c41d2f5-5fa1-4623-a3d9-e463253f66de.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/5c6a6cb0-7a5e-475a-8a4b-5437a93ecc5e.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/f17a3238-deeb-4a3b-ab68-5f4c7cae1070.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

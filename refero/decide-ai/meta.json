@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/5d9e1cc2-4b81-40fe-aa92-640f2e1d7420",
   "source_url": "https://decideai.xyz",
   "extracted_at": "2026-06-03T18:58:30.843Z",
-  "fetched_at": "2026-10-20T08:24:11Z",
+  "fetched_at": "2026-11-08T04:19:59Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/3ddd1c08-d7b0-42ab-93b2-ee0abfe6888c.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/70c7fe54-f47c-4341-941b-2b9f439410fd.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/73dd6458-15fd-46bc-86cf-3c96c07f2fef.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/46c61320-eacd-4d31-8de5-cb2ad0526aba.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

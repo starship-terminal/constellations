@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/ad48f4ad-42c0-4c91-a189-fa7a73a7a9e9",
   "source_url": "https://langbase.com",
   "extracted_at": "2026-06-03T19:06:24.660Z",
-  "fetched_at": "2026-10-20T08:24:09Z",
+  "fetched_at": "2026-11-08T04:20:24Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/9793b9f1-fb21-4e93-afbb-a78dff55d8ba.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a3f310bd-c1bb-460d-b328-e623acf53970.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/76cdcd83-ff0c-4133-994d-9ab733658c84.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/03ea5fe3-4b33-473a-bd43-7c878d641c35.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

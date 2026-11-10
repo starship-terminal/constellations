@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/d703d9f7-4821-468e-8fe4-c8b5790b00ed",
   "source_url": "https://sundayapp.com",
   "extracted_at": "2026-06-03T17:23:01.116Z",
-  "fetched_at": "2026-10-20T08:23:04Z",
+  "fetched_at": "2026-11-08T04:20:54Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d9648d59-1040-4281-949b-577f89eabfe2.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/75f1d0e8-6677-437d-b266-64e13ed78df7.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/5d386c4a-35bd-4db3-9a61-cd1e29312dcd.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/d1f79030-1d6c-4b32-a9df-918ead4c3b3e.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/81afaa5c-73ac-4ef4-9a99-296da325ea6c",
   "source_url": "https://perplexity.ai",
   "extracted_at": "2026-07-03T03:24:13.114Z",
-  "fetched_at": "2026-10-20T08:21:35Z",
+  "fetched_at": "2026-11-08T04:20:38Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/989e3161-4c99-4fe2-9ef7-2b672134c9b9.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/1fabb15b-1ae7-4bb0-995e-5b173acb048a.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/bab5ad0c-01c8-4266-9b81-9a18860cabbc.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/9406cb52-01b9-437e-88fc-a1db4d0c9c80.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

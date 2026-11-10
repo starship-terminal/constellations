@@ -13,22 +13,50 @@ every value here as lower-confidence than the packages under `systems/`.
   (the product site), theme, `extracted_at`, `fetched_at`, every artifact
   (`design_md`, `variables_css`, `theme_css`, `tokens_json`,
   `design_system_json`, `prompt_txt`), the full `result_json` the artifacts
-  were generated from, `screenshot_url`, and the media columns
+  were generated from (component `html` resolved from its `$<hexid>` flight
+  refs at fetch time), `screenshot_url`, the media columns
   (`video_url`, `video_poster_url`, `video_detail_url`,
-  `video_detail_poster_url`, `media_fetched_at`), and the label columns
+  `video_detail_poster_url`, `media_fetched_at`), the component columns
+  (`components_json`, `components_at`; NULL unless upstream shipped
+  component markup), and the label columns
   `product_type`, `design_style`, `tags` (a JSON array of secondary labels;
   `tags` is TEXT in the db, an array in `meta.json`). `fetch_errors` records
   pages that failed. (`raw-result.json` is not stored: it is derivable from
   `result_json` with `generateRawResultJson` in
   [../tools/refero/generators.js](../tools/refero/generators.js).)
-  `meta.json` repeats the media fields, and the three label keys sit
-  after `theme`. Older files may still carry `video_w`, `video_h` and
-  `video_ms`: keys the db dropped, kept on disk because `write_meta`
-  preserves existing keys.
+  `meta.json` repeats the media fields plus `has_components`, and the three
+  label keys sit after `theme`. Older files may still carry `video_w`,
+  `video_h` and `video_ms`: keys the db dropped, kept on disk because
+  `write_meta` preserves existing keys. Two derived stores also live in the
+  db: `similar` (Refero's "similar businesses" per style, `matched_slug`
+  resolved to our slug where it can be), `collections` +
+  `collection_styles` (Refero's curated collection pages and their ordered
+  style memberships, `section` carrying the editorial heading), and
+  `screens` (one row per preview screenshot of the refero.design paid
+  catalog — shot URL, thumbnail, extracted palette, the exact captured
+  `page_url` for web entries, `page_id` for iOS screens, and NULL
+  `patterns_json`/`elements_json` pending a tag pass).
 - `<slug>/` — per-style files: `DESIGN.md`, `variables.css`, `theme.css`
   (Tailwind v4 `@theme`), `tokens.json` (DTCG-style), `design-system.json`,
-  `meta.json`. `prompt.txt` lives only in the db.
-- `catalog.json` — flat index of every style with its URLs.
+  `meta.json`. `prompt.txt` lives only in the db. `components.json` — the
+  style's `designSystem.components` verbatim with reconstructed markup —
+  exists only for the ~55 styles upstream has enriched so far.
+- `catalog.json` — flat index of every style with its URLs, labels,
+  `has_components`, `similar` (matched slugs) and `collections`
+  (collection slugs the style appears in).
+- `similar.json` — the same graph in flat-file form for consumers without
+  sqlite: per style, Refero's `business`/`why` pairs plus the matched slug
+  or null when the cited business is not in the snapshot.
+- `collections.json` — the collections index: slug, url, title, description
+  and ordered sections (`heading` + style uuid/slug pairs).
+- `directory.json` — the refero.design *paid* catalog directory (iOS apps +
+  web sites) with each entry's five preview screenshots embedded (`uuid`,
+  `url`, `thumb`, `page_url` where it exists, `page_id`, `palette`). Index
+  data only; the screenshot library and flows are not mirrored.
+- `coverage.json` — which catalog sites a `systems/` package covers, matched
+  on root domain (`name_match` flags same-domain different-product hits) and
+  which package domains the web catalog lacks (`ios_guess` checks their iOS
+  catalog by name). Derived, not a store.
 
 ## Provenance
 
@@ -43,9 +71,14 @@ verbatim from each page.
 python3 tools/refero/fetch.py            # fetch new/changed styles, re-export
 python3 tools/refero/fetch.py --force    # re-fetch everything
 python3 tools/refero/fetch.py --enrich-media   # backfill video/poster URLs into db + meta.json
+python3 tools/refero/backfill_components.py  # re-fetch styles missing component html; writes components.json + has_components
 python3 tools/refero/classify.py         # label unlabeled styles into product_type/design_style/tags
 python3 tools/refero/classify.py --stats # print the label distribution
-python3 tools/refero/check.py            # assert refero.db, the style folders and catalog.json agree (make check runs it)
+python3 tools/refero/index_similar.py    # rebuild the similar table + similar.json from stored results
+python3 tools/refero/fetch_collections.py # scrape the collections sitemap → collections.json + collections tables
+python3 tools/refero/fetch_screens.py    # fetch the paid-catalog directory → directory.json + screens table
+python3 tools/refero/coverage.py         # diff the catalog against systems/ → coverage.json
+python3 tools/refero/check.py            # assert refero.db, the style folders, catalog.json and the derived stores agree (make check runs it)
 ```
 
 Labels come from [../tools/refero/classify.py](../tools/refero/classify.py):

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/035a098b-5a27-48a3-8a3a-c68a698e3eab",
   "source_url": "https://headspace.com",
   "extracted_at": "2026-06-03T14:58:55.460Z",
-  "fetched_at": "2026-10-20T08:25:08Z",
+  "fetched_at": "2026-11-08T04:20:16Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/3774296c-8c36-45f7-b061-702dcc8c903e.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/4617b4aa-e618-4cde-b0ab-90a94c090743.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/51078916-6f9e-4545-b6f1-956d309a5785.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/faec9cd8-ac95-4a54-ac7d-68c2a32e3d8f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

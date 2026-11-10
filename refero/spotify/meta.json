@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/cc59e195-fed0-4928-96d1-303752786073",
   "source_url": "https://www.spotify.com",
   "extracted_at": "2026-06-03T22:09:01.041Z",
-  "fetched_at": "2026-10-20T08:21:42Z",
+  "fetched_at": "2026-11-08T04:20:51Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/bd011f49-f4a9-4526-9edc-6011c829cd7b.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/fabaceb0-8249-4578-ac33-507272853f32.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/586c432c-a136-4d87-bafa-7961ed8a770f.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/6ba14e5d-21c0-4420-8996-d43a7c466cd5.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

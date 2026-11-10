@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/08c8700c-f278-42bc-812e-f60dc6ce996e",
   "source_url": "https://attio.com",
   "extracted_at": "2026-07-03T03:43:47.505Z",
-  "fetched_at": "2026-10-20T08:21:41Z",
+  "fetched_at": "2026-11-08T04:19:46Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/53500141-c640-4810-99d2-3c5c50ab7956.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/c5e60f24-f27c-47c9-b238-fa902ca0f163.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/1c210bcf-2264-4e84-8360-9e3333c8e876.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/fc7852fd-b4c7-4423-a540-3146397b68ac.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

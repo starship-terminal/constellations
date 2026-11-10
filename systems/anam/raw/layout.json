@@ -1,0 +1,822 @@
+{
+ "home": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 14496,
+  "fixed": [
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 100,
+    "text": "Developers\n\nPricing\n\nResources\n\nSign in\n\nCompany\n\nTeam\n\nRese"
+   }
+  ],
+  "maxWidths": [],
+  "grids": [
+   {
+    "el": "div",
+    "cols": "328px 328px 328px",
+    "colGap": "8px",
+    "rowGap": "8px",
+    "w": 1000
+   },
+   {
+    "el": "div.MaxWidthWrapper",
+    "cols": "260px 260px 260px 260px",
+    "colGap": "20px",
+    "rowGap": "32px",
+    "w": 1100
+   },
+   {
+    "el": "div",
+    "cols": "408px 408px 408px",
+    "colGap": "8px",
+    "rowGap": "8px",
+    "w": 1240
+   },
+   {
+    "el": "div.LinksCols",
+    "cols": "200px 200px 200px 200px 200px",
+    "colGap": "30px",
+    "rowGap": "30px",
+    "w": 1280
+   }
+  ]
+ },
+ "api": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 4632,
+  "fixed": [
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 100,
+    "text": "Developers\n\nPricing\n\nResources\n\nSign in\n\nCompany\n\nTeam\n\nRese"
+   },
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 619,
+    "w": 168,
+    "h": 261,
+    "text": ""
+   }
+  ],
+  "maxWidths": [],
+  "grids": [
+   {
+    "el": "div.LinksCols",
+    "cols": "200px 200px 200px 200px 200px",
+    "colGap": "30px",
+    "rowGap": "30px",
+    "w": 1280
+   }
+  ]
+ },
+ "pricing": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 6440,
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 72,
+    "text": "Skip to content\nDevelopers\nPricing\nResources\nSign in"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 820,
+    "max": "820px"
+   },
+   {
+    "w": 560,
+    "max": "560px"
+   },
+   {
+    "w": 760,
+    "max": "760px"
+   },
+   {
+    "w": 386,
+    "max": "760px"
+   },
+   {
+    "w": 760,
+    "max": "760px"
+   },
+   {
+    "w": 300,
+    "max": "300px"
+   },
+   {
+    "w": 760,
+    "max": "760px"
+   },
+   {
+    "w": 760,
+    "max": "760px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "div",
+    "cols": "206.656px 206.672px 206.672px 206.656px 206.672px 206.672px",
+    "colGap": "8px",
+    "rowGap": "0px",
+    "w": 1280
+   },
+   {
+    "el": "div",
+    "cols": "530px 742px",
+    "colGap": "8px",
+    "rowGap": "8px",
+    "w": 1280
+   },
+   {
+    "el": "li",
+    "cols": "190px 360px 96px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 678
+   },
+   {
+    "el": "li",
+    "cols": "190px 360px 96px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 678
+   },
+   {
+    "el": "li",
+    "cols": "190px 360px 96px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 678
+   },
+   {
+    "el": "li",
+    "cols": "190px 360px 96px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 678
+   },
+   {
+    "el": "li",
+    "cols": "190px 360px 96px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 678
+   },
+   {
+    "el": "div",
+    "cols": "386.453px 869.547px",
+    "colGap": "24px",
+    "rowGap": "8px",
+    "w": 1280
+   }
+  ]
+ },
+ "get-demo": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 900,
+  "fixed": [],
+  "maxWidths": [
+   {
+    "w": 420,
+    "max": "420px"
+   },
+   {
+    "w": 600,
+    "max": "600px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "main",
+    "cols": "684px 755.984px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1440
+   },
+   {
+    "el": "div",
+    "cols": "184px 184px 184px",
+    "colGap": "24px",
+    "rowGap": "34px",
+    "w": 600
+   }
+  ]
+ },
+ "interactive-avatars": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 9866,
+  "fixed": [
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 100,
+    "text": "Developers\n\nPricing\n\nResources\n\nSign in\n\nCompany\n\nTeam\n\nRese"
+   },
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 619,
+    "w": 168,
+    "h": 261,
+    "text": ""
+   }
+  ],
+  "maxWidths": [],
+  "grids": [
+   {
+    "el": "div.Grid L",
+    "cols": "612px 612px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 1240
+   },
+   {
+    "el": "div.MaxWidthWrapper",
+    "cols": "260px 260px 260px 260px",
+    "colGap": "20px",
+    "rowGap": "32px",
+    "w": 1100
+   },
+   {
+    "el": "div",
+    "cols": "640px 640px",
+    "colGap": "0px",
+    "rowGap": "0px",
+    "w": 1280
+   },
+   {
+    "el": "div.LinksCols",
+    "cols": "200px 200px 200px 200px 200px",
+    "colGap": "30px",
+    "rowGap": "30px",
+    "w": 1280
+   }
+  ]
+ },
+ "about": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 6680,
+  "fixed": [
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 100,
+    "text": "Developers\n\nPricing\n\nResources\n\nSign in\n\nCompany\n\nTeam\n\nRese"
+   },
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 619,
+    "w": 168,
+    "h": 261,
+    "text": ""
+   }
+  ],
+  "maxWidths": [],
+  "grids": [
+   {
+    "el": "div",
+    "cols": "136.625px 136.625px 136.625px 136.625px 136.625px 136.625px 136.625px 136.625px",
+    "colGap": "21px",
+    "rowGap": "21px",
+    "w": 1280
+   },
+   {
+    "el": "div",
+    "cols": "232px 232px 232px 232px 232px",
+    "colGap": "20px",
+    "rowGap": "20px",
+    "w": 1280
+   },
+   {
+    "el": "div",
+    "cols": "174px 174px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "w": 372
+   },
+   {
+    "el": "div.Logos",
+    "cols": "240px 240px 240px 240px 240px",
+    "colGap": "10px",
+    "rowGap": "10px",
+    "w": 1240
+   },
+   {
+    "el": "div.LinksCols",
+    "cols": "200px 200px 200px 200px 200px",
+    "colGap": "30px",
+    "rowGap": "30px",
+    "w": 1280
+   }
+  ]
+ },
+ "research": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 4587,
+  "fixed": [
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 100,
+    "text": "Developers\n\nPricing\n\nResources\n\nSign in\n\nCompany\n\nTeam\n\nRese"
+   },
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 619,
+    "w": 168,
+    "h": 261,
+    "text": ""
+   }
+  ],
+  "maxWidths": [],
+  "grids": [
+   {
+    "el": "div",
+    "cols": "210px 210px 210px 210px",
+    "colGap": "20px",
+    "rowGap": "20px",
+    "w": 900
+   },
+   {
+    "el": "div.LinksCols",
+    "cols": "200px 200px 200px 200px 200px",
+    "colGap": "30px",
+    "rowGap": "30px",
+    "w": 1280
+   }
+  ]
+ },
+ "case-studies": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 3098,
+  "fixed": [
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 100,
+    "text": "Developers\n\nPricing\n\nResources\n\nSign in\n\nCompany\n\nTeam\n\nRese"
+   },
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 619,
+    "w": 168,
+    "h": 261,
+    "text": ""
+   }
+  ],
+  "maxWidths": [],
+  "grids": [
+   {
+    "el": "div",
+    "cols": "640px 640px",
+    "colGap": "0px",
+    "rowGap": "0px",
+    "w": 1280
+   },
+   {
+    "el": "div.LinksCols",
+    "cols": "200px 200px 200px 200px 200px",
+    "colGap": "30px",
+    "rowGap": "30px",
+    "w": 1280
+   }
+  ]
+ },
+ "blog": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 5557,
+  "fixed": [
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 100,
+    "text": "Developers\n\nPricing\n\nResources\n\nSign in\n\nCompany\n\nTeam\n\nRese"
+   },
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 619,
+    "w": 168,
+    "h": 261,
+    "text": ""
+   }
+  ],
+  "maxWidths": [],
+  "grids": [
+   {
+    "el": "div.Featured",
+    "cols": "610px 610px",
+    "colGap": "20px",
+    "rowGap": "20px",
+    "w": 1240
+   },
+   {
+    "el": "div",
+    "cols": "400px 400px 400px",
+    "colGap": "20px",
+    "rowGap": "20px",
+    "w": 1240
+   },
+   {
+    "el": "div.LinksCols",
+    "cols": "200px 200px 200px 200px 200px",
+    "colGap": "30px",
+    "rowGap": "30px",
+    "w": 1280
+   }
+  ]
+ },
+ "tools": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 5140,
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 100,
+    "text": "Developers\nPricing\nResources\nSign in\n\nCompany\n\nTeam\nResearch"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 418,
+    "max": "470px"
+   },
+   {
+    "w": 418,
+    "max": "460px"
+   },
+   {
+    "w": 418,
+    "max": "455px"
+   },
+   {
+    "w": 620,
+    "max": "620px"
+   },
+   {
+    "w": 254,
+    "max": "260px"
+   },
+   {
+    "w": 243,
+    "max": "250px"
+   },
+   {
+    "w": 620,
+    "max": "620px"
+   },
+   {
+    "w": 386,
+    "max": "430px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "header",
+    "cols": "417.594px 742.406px",
+    "colGap": "56px",
+    "rowGap": "56px",
+    "w": 1216
+   },
+   {
+    "el": "div",
+    "cols": "739.234px 428.766px",
+    "colGap": "48px",
+    "rowGap": "48px",
+    "w": 1216
+   },
+   {
+    "el": "div",
+    "cols": "598px 598px",
+    "colGap": "20px",
+    "rowGap": "20px",
+    "w": 1216
+   },
+   {
+    "el": "div",
+    "cols": "230.469px 305.516px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 536
+   },
+   {
+    "el": "div",
+    "cols": "241.188px 294.797px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 536
+   },
+   {
+    "el": "div",
+    "cols": "300.156px 235.828px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 536
+   },
+   {
+    "el": "div",
+    "cols": "282.688px 231.297px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 516
+   },
+   {
+    "el": "div",
+    "cols": "93.1406px 93.1562px",
+    "colGap": "5px",
+    "rowGap": "5px",
+    "w": 191
+   }
+  ]
+ },
+ "docs-overview": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 2049,
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 112,
+    "text": "Anam home page\nSearch...\n⌘K\nAsk Assistant\n⌘I\nCookbook\nllms.t"
+   },
+   {
+    "el": "nav",
+    "pos": "sticky",
+    "top": 112,
+    "w": 288,
+    "h": 788,
+    "text": "Introduction\nOverview\nModels\nPersonas\nUnderstanding Personas"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": 112,
+    "w": 256,
+    "h": 32,
+    "text": ""
+   },
+   {
+    "el": "span",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 900,
+    "text": ""
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": 152,
+    "w": 304,
+    "h": 748,
+    "text": "On this page\nWho builds with Anam\nHow it works\nThree ways to"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": 814,
+    "w": 689,
+    "h": 86,
+    "text": ""
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 304,
+    "max": "448px"
+   },
+   {
+    "w": 784,
+    "max": "1535.2px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "div",
+    "cols": "218.938px 218.938px 218.938px",
+    "colGap": "16px",
+    "rowGap": "0px",
+    "w": 689
+   }
+  ]
+ },
+ "docs-api": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 1567,
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 112,
+    "text": "Anam home page\nSearch...\n⌘K\nAsk Assistant\n⌘I\nCookbook\nllms.t"
+   },
+   {
+    "el": "nav",
+    "pos": "sticky",
+    "top": 112,
+    "w": 288,
+    "h": 788,
+    "text": "Use the API\nIntroduction\nSessions\nPOST\ncreate session token\n"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": 112,
+    "w": 256,
+    "h": 32,
+    "text": ""
+   },
+   {
+    "el": "span",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 900,
+    "text": ""
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": 152,
+    "w": 304,
+    "h": 748,
+    "text": "On this page\nGet an API key\nAuthenticate requests\nConnecting"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": 814,
+    "w": 689,
+    "h": 86,
+    "text": ""
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 304,
+    "max": "448px"
+   },
+   {
+    "w": 784,
+    "max": "1535.2px"
+   }
+  ],
+  "grids": []
+ },
+ "mobile-home": {
+  "vw": 390,
+  "vh": 844,
+  "docH": 16945,
+  "fixed": [
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 0,
+    "w": 390,
+    "h": 75,
+    "text": "Sign in"
+   }
+  ],
+  "maxWidths": [],
+  "grids": [
+   {
+    "el": "div",
+    "cols": "169px 169px",
+    "colGap": "12px",
+    "rowGap": "12px",
+    "w": 350
+   },
+   {
+    "el": "div",
+    "cols": "169px 169px",
+    "colGap": "12px",
+    "rowGap": "12px",
+    "w": 350
+   },
+   {
+    "el": "div.LinksCols",
+    "cols": "140px 140px",
+    "colGap": "30px",
+    "rowGap": "30px",
+    "w": 350
+   }
+  ]
+ },
+ "mobile-docs": {
+  "vw": 390,
+  "vh": 844,
+  "docH": 2778,
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "fixed",
+    "top": 0,
+    "w": 390,
+    "h": 120,
+    "text": "Anam home page\nSearch...\nNavigation\nIntroduction\nAnam Docume"
+   },
+   {
+    "el": "span",
+    "pos": "fixed",
+    "top": 0,
+    "w": 390,
+    "h": 844,
+    "text": ""
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": 758,
+    "w": 350,
+    "h": 86,
+    "text": ""
+   }
+  ],
+  "maxWidths": [],
+  "grids": []
+ },
+ "changelog": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 27777,
+  "fixed": [
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 100,
+    "text": "Developers\n\nPricing\n\nResources\n\nSign in\n\nCompany\n\nTeam\n\nRese"
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": 218,
+    "w": 200,
+    "h": 717,
+    "text": "Nov 3, 2026\nOct 22, 2026\nOct 11, 2026\nSep 22, 2026\nSep 9, 20"
+   },
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 619,
+    "w": 168,
+    "h": 261,
+    "text": ""
+   }
+  ],
+  "maxWidths": [],
+  "grids": [
+   {
+    "el": "div.LinksCols",
+    "cols": "200px 200px 200px 200px 200px",
+    "colGap": "30px",
+    "rowGap": "30px",
+    "w": 1280
+   }
+  ]
+ }
+}

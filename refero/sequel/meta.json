@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/1bd3b2ba-9ad9-44ed-9130-03f9d94de821",
   "source_url": "https://sequel.co",
   "extracted_at": "2026-07-03T02:56:12.987Z",
-  "fetched_at": "2026-10-20T08:21:39Z",
+  "fetched_at": "2026-11-08T04:20:48Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/376c6390-9a47-4fcd-a408-8a55b57c9861.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/6c513a59-1bb8-497a-9e51-1f5f43c4e712.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/b7fd5acd-69cc-4933-a5c2-422c3dffa962.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e4684bd6-0716-46aa-8ff1-fc329e6037d8.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

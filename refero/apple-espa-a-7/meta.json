@@ -10,7 +10,7 @@
   "page_url": "https://styles.refero.design/style/569ba4c0-0431-44fb-92df-0dbea7f3e63d",
   "source_url": "https://www.apple.com/apple-watch-se-3",
   "extracted_at": "2026-06-03T19:27:03.556Z",
-  "fetched_at": "2026-10-20T08:24:03Z",
+  "fetched_at": "2026-11-08T04:19:44Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/c33166b3-9187-445d-90a2-3466ebc2bf10.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/bdb5e879-09a8-4478-bcb7-7fab337f6fec.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/3672ec9c-901a-45f0-ab03-e4608095e09f.jpg",
@@ -18,5 +18,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/f1e7dcda-109f-44ff-aee0-3737ef575f50.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }
