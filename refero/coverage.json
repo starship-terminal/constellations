@@ -309,6 +309,23 @@
         }
       ]
     },
+    "appwrite.io": {
+      "catalog": [
+        {
+          "name": "Appwrite",
+          "domain": "appwrite.io",
+          "id": 664
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "appwrite",
+          "name": "Appwrite",
+          "url": "https://appwrite.io",
+          "name_match": true
+        }
+      ]
+    },
     "attio.com": {
       "catalog": [
         {
@@ -640,13 +657,6 @@
         "name": "Amie",
         "domain": "amie.so",
         "id": 426
-      }
-    ],
-    "appwrite.io": [
-      {
-        "name": "Appwrite",
-        "domain": "appwrite.io",
-        "id": 664
       }
     ],
     "arcade.software": [
