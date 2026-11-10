@@ -3610,6 +3610,69 @@
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run on this capture; the product's mark is visible on the login card and the fetched icon.png"
       }
+    },
+    {
+      "slug": "aaply",
+      "name": "aaply",
+      "url": "https://aaply.app",
+      "category": "productivity",
+      "platform": "web",
+      "goodFor": "Playful product-marketing pages: floating pill nav, Poppins display with inline emoji atoms, lime/black CTA pairs, chat-annotation bubbles, pricing rail with lime plan card, black footer band",
+      "tags": [
+        "web",
+        "design-tool",
+        "playful",
+        "lime",
+        "pill",
+        "tilda"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-08",
+      "access": "signed out (every surface captured is public; the app host go.aaply.app returned \"Not found\" on every route and was not captured)",
+      "themes": [
+        "light"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/aaply/README.md",
+      "tokens": "systems/aaply/tokens.json",
+      "styleGuide": "systems/aaply/style-guide.html",
+      "preview": {
+        "cover": "systems/aaply/screenshots/home-light-default.png",
+        "icon": "systems/aaply/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.page",
+            "surface": "light.surface",
+            "text": "light.text",
+            "muted": "light.text-muted",
+            "accent": "light.accent",
+            "border": "light.border"
+          }
+        },
+        "fonts": [
+          "core.font.family.display",
+          "core.font.family.ui"
+        ]
+      },
+      "capture": {
+        "harness": "Devin",
+        "model": "SWE-2 Max",
+        "route": "public-web",
+        "durationMin": null,
+        "gaps": [
+          "go.aaply.app returned \"Not found\" on /login, /sign, /signup and /workspace/demo: the authenticated product is unreachable to this client, so only the marketing site is measured",
+          "the billing segment's held lime fill paints on a sibling shape, not the text atom — segments measure transparent in both positions",
+          "reviews carousel measured on its first slide only"
+        ],
+        "pr": "https://github.com/c-wenlong/designs/pull/441",
+        "durationNote": "wall-clock duration was not recorded for this capture"
+      },
+      "layoutGaps": {
+        "icons/": "the icon extraction pass was not run on this capture; the product's lime-chevron mark is on the nav bar and the fetched icon.png"
+      }
     }
   ]
 }
