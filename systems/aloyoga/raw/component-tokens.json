@@ -1,0 +1,336 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. aloyoga.com styles itself with the --color-* design-system ramps and the shop's named neutrals on :root; semantic roles land in the light set (the only theme the shop paints). A leaf with \"var\" resolves through the live document (css-vars.json resolved light); \"value\" leaves are measured on the running page.",
+ "core": {
+  "color": {
+   "neutral": {
+    "alto": {
+     "var": "--alto",
+     "type": "color"
+    },
+    "charcoal": {
+     "var": "--charcoal",
+     "type": "color"
+    },
+    "chicago": {
+     "var": "--chicago",
+     "type": "color"
+    },
+    "dawn": {
+     "var": "--dawn",
+     "type": "color"
+    },
+    "mercury": {
+     "var": "--mercury",
+     "type": "color"
+    },
+    "mine": {
+     "var": "--mine",
+     "type": "color"
+    },
+    "sand": {
+     "var": "--sand",
+     "type": "color"
+    },
+    "smoke": {
+     "var": "--smoke",
+     "type": "color"
+    },
+    "white": {
+     "var": "--white",
+     "type": "color"
+    }
+   }
+  },
+  "font": {
+   "family": {
+    "primary": {
+     "var": "--primary-font",
+     "type": "fontFamily"
+    }
+   }
+  },
+  "spacing": {
+   "0": {
+    "var": "--spacing-0",
+    "type": "dimension"
+   },
+   "2xl": {
+    "var": "--spacing-2xl",
+    "type": "dimension"
+   },
+   "3xl": {
+    "var": "--spacing-3xl",
+    "type": "dimension"
+   },
+   "4xl": {
+    "var": "--spacing-4xl",
+    "type": "dimension"
+   },
+   "5xl": {
+    "var": "--spacing-5xl",
+    "type": "dimension"
+   },
+   "6xl": {
+    "var": "--spacing-6xl",
+    "type": "dimension"
+   },
+   "7xl": {
+    "var": "--spacing-7xl",
+    "type": "dimension"
+   },
+   "8xl": {
+    "var": "--spacing-8xl",
+    "type": "dimension"
+   },
+   "9xl": {
+    "var": "--spacing-9xl",
+    "type": "dimension"
+   },
+   "lg": {
+    "var": "--spacing-lg",
+    "type": "dimension"
+   },
+   "m-lg": {
+    "var": "--spacing-m-lg",
+    "type": "dimension"
+   },
+   "m-sm": {
+    "var": "--spacing-m-sm",
+    "type": "dimension"
+   },
+   "md": {
+    "var": "--spacing-md",
+    "type": "dimension"
+   },
+   "sm": {
+    "var": "--spacing-sm",
+    "type": "dimension"
+   },
+   "xl": {
+    "var": "--spacing-xl",
+    "type": "dimension"
+   },
+   "xs": {
+    "var": "--spacing-xs",
+    "type": "dimension"
+   }
+  },
+  "shadow": {
+   "level": {
+    "1": {
+     "value": [
+      {
+       "offsetX": "0px",
+       "offsetY": "2px",
+       "blur": "6px",
+       "spread": "0px",
+       "color": "rgba(0, 0, 0, 0.06)"
+      },
+      {
+       "offsetX": "0px",
+       "offsetY": "4px",
+       "blur": "12px",
+       "spread": "0px",
+       "color": "rgba(35, 41, 54, 0.08)"
+      }
+     ],
+     "type": "shadow",
+     "source": "css-var --shadow-level-1"
+    },
+    "2": {
+     "value": [
+      {
+       "offsetX": "0px",
+       "offsetY": "1px",
+       "blur": "4px",
+       "spread": "0px",
+       "color": "rgba(0, 0, 0, 0.06)"
+      },
+      {
+       "offsetX": "0px",
+       "offsetY": "8px",
+       "blur": "16px",
+       "spread": "0px",
+       "color": "rgba(35, 41, 54, 0.08)"
+      }
+     ],
+     "type": "shadow",
+     "source": "css-var --shadow-level-2"
+    },
+    "3": {
+     "value": [
+      {
+       "offsetX": "0px",
+       "offsetY": "4px",
+       "blur": "8px",
+       "spread": "0px",
+       "color": "rgba(0, 0, 0, 0.06)"
+      },
+      {
+       "offsetX": "0px",
+       "offsetY": "12px",
+       "blur": "32px",
+       "spread": "0px",
+       "color": "rgba(35, 41, 54, 0.14)"
+      }
+     ],
+     "type": "shadow",
+     "source": "css-var --shadow-level-3"
+    },
+    "4": {
+     "value": [
+      {
+       "offsetX": "0px",
+       "offsetY": "4px",
+       "blur": "16px",
+       "spread": "0px",
+       "color": "rgba(0, 0, 0, 0.06)"
+      },
+      {
+       "offsetX": "0px",
+       "offsetY": "16px",
+       "blur": "64px",
+       "spread": "0px",
+       "color": "rgba(35, 41, 54, 0.2)"
+      }
+     ],
+     "type": "shadow",
+     "source": "css-var --shadow-level-4"
+    }
+   }
+  },
+  "measured": {
+   "focus-outline": {
+    "value": "#005fcc",
+    "type": "color",
+    "source": "computed outlineColor of nav-item focus-visible (raw/components-computed.json)",
+    "description": "The keyboard-focus ring on nav items."
+   },
+   "button-hover": {
+    "value": "#000000",
+    "type": "color",
+    "source": "computed backgroundColor of hero-button hover (raw/components-computed.json)",
+    "description": "The hero button's hover fill."
+   },
+   "action-bg": {
+    "value": "#000000",
+    "type": "color",
+    "source": "computed backgroundColor of add-to-bag default (raw/components-computed.json)",
+    "description": "The Add to bag fill."
+   },
+   "action-bg-hover": {
+    "value": "#000000",
+    "type": "color",
+    "source": "computed backgroundColor of add-to-bag hover (raw/components-computed.json)",
+    "description": "Add to bag on hover."
+   }
+  }
+ },
+ "light": {
+  "accent": {
+   "dark": {
+    "var": "--accent-dark",
+    "type": "color"
+   },
+   "light": {
+    "var": "--accent-light",
+    "type": "color"
+   },
+   "medium": {
+    "var": "--accent-medium",
+    "type": "color"
+   }
+  },
+  "alert": {
+   "dark": {
+    "var": "--alert-dark",
+    "type": "color"
+   },
+   "light": {
+    "var": "--alert-light",
+    "type": "color"
+   },
+   "medium": {
+    "var": "--alert-medium",
+    "type": "color"
+   }
+  },
+  "highlight": {
+   "dark": {
+    "var": "--highlight-dark",
+    "type": "color"
+   },
+   "light": {
+    "var": "--highlight-light",
+    "type": "color"
+   },
+   "medium": {
+    "var": "--highlight-medium",
+    "type": "color"
+   }
+  },
+  "primary": {
+   "var": "--primary",
+   "type": "color"
+  },
+  "success": {
+   "dark": {
+    "var": "--success-dark",
+    "type": "color"
+   },
+   "light": {
+    "var": "--success-light",
+    "type": "color"
+   },
+   "medium": {
+    "var": "--success-medium",
+    "type": "color"
+   }
+  }
+ },
+ "dark": {},
+ "component": {
+  "control": {
+   "height": {
+    "type": "dimension",
+    "value": "52px",
+    "source": "computed height of add-to-bag default (raw/components-computed.json)",
+    "description": "The buy button is 52px."
+   },
+   "heightSmall": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of size-button default (raw/components-computed.json)",
+    "description": "Size chips are 40px."
+   },
+   "fieldHeight": {
+    "type": "dimension",
+    "value": "35px",
+    "source": "computed height of email-input default (raw/components-computed.json)",
+    "description": "The login field height."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "0px",
+    "source": "computed borderTopLeftRadius of hero-button default (raw/components-computed.json)",
+    "description": "The hero/buy button corner."
+   }
+  },
+  "swatch": {
+   "size": {
+    "type": "dimension",
+    "value": "46px",
+    "source": "computed width of pdp-swatch default (raw/components-computed.json)",
+    "description": "The PDP colour tile is square."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "84px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The desktop header height at 1440px."
+   }
+  }
+ }
+}

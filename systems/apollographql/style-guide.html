@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apollo GraphQL style guide</title>
+<meta name="description" content="Apollo GraphQL (apollographql.com) design tokens and the public site's components, rendered from tokens.json with the measured values, in both themes.">
+<style>
+:root {
+  --palette-nebula: #15252d;
+  --palette-nebula-deep: #0b1418;
+  --palette-lightfall: #02060a;
+  --palette-navy-deep: #091b23;
+  --palette-offwhite: #f8f8f8;
+  --palette-white: #ffffff;
+  --palette-satellite: #efefef;
+  --palette-satellite-dark: #cfd7d6;
+  --palette-regolith: #ffeadb;
+  --palette-faq-gray: #e3e3e3;
+  --palette-eyebrow: #1a1a1a;
+  --palette-brand: #fc5200;
+  --palette-brand-accent: #e75e15;
+  --palette-brand-hover: #d84f08;
+  --palette-horizon-dark: #c74100;
+  --palette-content: #15252d;
+  --palette-content-muted: #666666;
+  --palette-muted-dark: #9aa3b2;
+  --palette-border: #d1d1d1;
+  --palette-stats-border: #9fb2bc;
+  --palette-focus-orange: #ff7b3c;
+  --palette-focus-cyan: #2fd1e0;
+  --palette-focus-blue: #99c8ff;
+  --palette-teal: #4ca6b5;
+  --palette-cta-glow-orange: #f06d2b;
+  --palette-error: #ff5151;
+  --font-family-display: Aeonik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-ui: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-mono: "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-size-hero: 60px;
+  --font-size-title: 50px;
+  --font-size-section: 42px;
+  --font-size-faq: 24px;
+  --font-size-sub: 20px;
+  --font-size-body-lg: 18px;
+  --font-size-body: 16px;
+  --font-size-nav: 15px;
+  --font-size-sm: 14px;
+  --font-size-tiny: 12.5px;
+  --font-size-xs: 12px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-leading-hero: 63px;
+  --font-leading-title: 55px;
+  --font-leading-section: 52.5px;
+  --font-leading-faq: 31.2px;
+  --font-leading-sub: 32.5px;
+  --font-leading-body: 24px;
+  --font-leading-field: 25.2px;
+  --font-leading-sm: 21px;
+  --font-tracking-hero: -1.5px;
+  --font-tracking-normal: 0px;
+  --radius-pill: 999px;
+  --radius-card-lg: 32px;
+  --radius-card: 24px;
+  --radius-field: 16px;
+  --radius-segment: 20px;
+  --radius-sm: 8px;
+  --radius-xs: 4px;
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-segment: 200ms;
+  --duration-slow: 500ms;
+  --easing-default: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --easing-galactic: cubic-bezier(0.06, 0.47, 0.1, 1.0);
+  --easing-galactic-out: cubic-bezier(0.17, 0.17, 0.0, 1.0);
+  --layout-content-max: 1344px;
+  --layout-container-7xl: 1280px;
+  --layout-article-width: 900px;
+  --layout-header-height: 78px;
+  --layout-nav-height: 65px;
+  --layout-side-space: 47.9844px;
+  --typography-hero: var(--font-weight-regular) var(--font-size-hero)/var(--font-leading-hero) var(--font-family-display);
+  --typography-title: var(--font-weight-medium) var(--font-size-title)/var(--font-leading-title) var(--font-family-ui);
+  --typography-body: var(--font-weight-regular) var(--font-size-body)/var(--font-leading-body) var(--font-family-ui);
+  --typography-button: var(--font-weight-medium) var(--font-size-body)/var(--font-leading-body) var(--font-family-ui);
+  --shadow-cookie-card: 0px 12px 32px 0px rgba(21, 37, 45, 0.14), 0px 2px 6px 0px rgba(21, 37, 45, 0.06);
+  --component-button-primary-bg: #e75e15;
+  --component-button-primary-fg: #ffffff;
+  --component-button-primary-hover-bg: #d84f08;
+  --component-button-dark-fg: #15252d;
+  --component-button-outline-border: #e75e15;
+  --component-button-outline-hover-bg: rgba(231, 94, 21, 0.1);
+  --component-cta-ring: linear-gradient(412deg, var(--palette-teal) 0%, var(--palette-cta-glow-orange) 50.0%, var(--palette-teal) 100%);
+  --component-cta-inner-bg: #02060a;
+  --component-field-bg: #15252d;
+  --component-field-border: #f8f8f8;
+  --component-field-focus-border: #fc5200;
+  --component-card-dark-bg: #15252d;
+  --component-card-border-dark: #9fb2bc;
+  --component-card-light-bg: #ffffff;
+  --component-card-satellite-bg: #cfd7d6;
+  --component-faq-bg: #e3e3e3;
+  --component-eyebrow-bg: #1a1a1a;
+  --component-segment-border: #f8f8f8;
+  --component-segment-on-bg: #fc5200;
+  --component-nav-text: rgba(255, 255, 255, 0.72);
+  --component-nav-hover-bg: rgba(255, 255, 255, 0.15);
+  --component-nav-hover-fg: #ffffff;
+  --component-overlay-dark: rgba(2, 6, 10, 0.8);
+  --page: #f8f8f8;
+  --surface: #ffffff;
+  --surface-alt: #efefef;
+  --text: #15252d;
+  --text-muted: #666666;
+  --accent: #e75e15;
+  --accent-brand: #fc5200;
+  --text-link: #c74100;
+  --border: #d1d1d1;
+  --focus: #ff7b3c;
+  --focus-alt: #99c8ff;
+  --sg-display: Aeonik, "Aeonik Air", Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sg-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sg-mono: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+[data-mode="dark"], .darkctx {
+  --page: #15252d;
+  --page-space: #02060a;
+  --surface: #15252d;
+  --surface-raised: #254250;
+  --text: #f8f8f8;
+  --text-strong: #ffffff;
+  --text-muted: #d1d1d1;
+  --text-muted-2: #9aa3b2;
+  --accent: #e75e15;
+  --accent-brand: #fc5200;
+  --border: #f8f8f8;
+  --border-muted: #9fb2bc;
+  --focus: #ff7b3c;
+  --focus-alt: #2fd1e0;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text); background: var(--page); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: var(--typography-hero); font-family: var(--sg-display); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.lead { max-width: 62ch; color: var(--text-muted); }
+.note { font-size: 13px; color: var(--text-muted); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-muted); }
+.typerow { display: grid; grid-template-columns: 210px 1fr; gap: 16px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.typerow .k { font: 500 12px/1.5 var(--sg-mono); }
+.typerow .k small { display: block; color: var(--text-muted); font-weight: 400; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-muted); }
+/* theme toggle */
+.themes { position: fixed; top: 14px; right: 16px; z-index: 10; display: flex; gap: 4px; padding: 4px; border-radius: var(--radius-pill); background: var(--surface); border: 1px solid var(--border); }
+.themes button { border: 0; border-radius: var(--radius-pill); padding: 6px 14px; font: 500 12px/1 var(--sg-sans); background: transparent; color: var(--text); cursor: pointer; }
+.themes button.on { background: var(--accent); color: var(--component-button-primary-fg); }
+/* ---- site mock ---- */
+.mock { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--page); position: relative; }
+.mock.space { background: var(--page-space); }
+.eyebrow { background: var(--component-eyebrow-bg); color: var(--text-strong); font: 400 14px/1 var(--sg-sans); text-align: center; padding: 19px 16px; }
+.eyebrow b { font-weight: 500; }
+.eyebrow .cta { display: inline-block; margin-left: 14px; background: #fff; color: #1a1a1a; border-radius: var(--radius-pill); padding: 9px 16px; font-size: 13px; font-weight: 500; }
+.navbar { display: flex; align-items: center; gap: 18px; height: var(--layout-nav-height); padding: 0 22px; font: 500 var(--font-size-nav)/var(--font-leading-sm) var(--sg-sans); color: var(--component-nav-text); }
+.navbar .wm { font: 700 19px/1 var(--sg-sans); letter-spacing: -.3px; color: var(--text-strong); }
+.navbar .wm i { color: var(--accent-brand); font-style: normal; }
+.navbar .sp { flex: 1; }
+.navbar a.lk { color: var(--component-nav-text); text-decoration: none; padding: 8px 12px; border-radius: var(--radius-sm); }
+.navbar a.lk:hover { color: var(--component-nav-hover-fg); background: var(--component-nav-hover-bg); }
+.hero { text-align: left; padding: 64px 26px 56px; }
+.hero h3 { font: var(--typography-hero); font-family: var(--sg-display); letter-spacing: var(--font-tracking-hero); max-width: 16ch; margin: 0 0 18px; color: var(--text-strong); }
+.hero .sub { font: 500 var(--font-size-sub)/var(--font-leading-sub) var(--sg-display); color: var(--text-muted); max-width: 52ch; margin: 0 0 30px; }
+.hero .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.pill { display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-pill); font: 500 var(--font-size-body-lg)/1 var(--sg-display); padding: 0 48px; height: 60px; border: 0; }
+.pill.ring { position: relative; isolation: isolate; color: var(--component-button-primary-fg); background: var(--component-cta-inner-bg); border: 2px solid transparent; background-clip: padding-box; }
+.pill.ring::before { content: ""; position: absolute; inset: -2px; border-radius: var(--radius-pill); background: conic-gradient(from 52deg, var(--palette-teal), var(--palette-cta-glow-orange), var(--palette-teal)); z-index: -1; }
+.pill.outline { background: transparent; color: var(--component-button-primary-fg); border: 1px solid rgba(255,255,255,.35); font-family: var(--sg-display); }
+.pill.outline:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+.pill.orange { background: var(--component-button-primary-bg); color: var(--component-button-primary-fg); font: 500 var(--font-size-sm)/1 var(--sg-sans); height: 40px; padding: 0 18px; }
+.pill.orange:hover { background: var(--component-button-primary-hover-bg); }
+.pill.orange.ghosty { background: transparent; color: var(--component-button-primary-fg); border: 1px solid var(--component-button-outline-border); }
+.pill.orange.ghosty:hover { background: var(--component-button-outline-hover-bg); }
+.chip { display: inline-flex; align-items: center; gap: 6px; background: var(--component-overlay-dark); color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.2); border-radius: var(--radius-xs); font: 400 var(--font-size-xs)/1.3 var(--sg-sans); padding: 8px 12px; }
+/* pricing */
+.price-wrap { padding: 40px 26px; background: var(--page); }
+.price-wrap h3 { font: var(--typography-title); font-family: var(--sg-display); color: var(--text-strong); margin: 0 0 24px; }
+.segs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.seg { display: inline-flex; align-items: center; height: 43px; padding: 0 16px; border-radius: var(--radius-segment); border: 1px solid var(--component-segment-border); color: var(--text); font: 400 var(--font-size-sm)/1 var(--sg-sans); background: transparent; }
+.vol { display: inline-flex; align-items: center; height: 39px; padding: 0 10px; border-radius: var(--radius-sm); border: 1px solid var(--component-segment-border); color: var(--text); font: 400 var(--font-size-sm)/1 var(--sg-sans); background: transparent; }
+.vol.on { background: var(--component-segment-on-bg); border-color: var(--component-segment-on-bg); color: var(--component-button-dark-fg); }
+.stats { background: var(--component-card-dark-bg); border-radius: var(--radius-card-lg); padding: 26px; color: var(--text); margin-top: 20px; }
+.stats .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.stats .tile { border: 1px solid var(--component-card-border-dark); border-radius: var(--radius-field); padding: 16px; font: 500 var(--font-size-sm)/1.5 var(--sg-sans); }
+.stats .tile b { display: block; font: 400 var(--font-size-section)/1.2 var(--sg-display); color: var(--text-strong); }
+.faq { background: var(--component-faq-bg); color: #15252d; border-radius: var(--radius-card-lg); padding: 22px 26px; margin-top: 16px; }
+.faq .q { font: 700 var(--font-size-faq)/var(--font-leading-faq) var(--sg-display); border-top: 1px solid #15252d; padding: 10px 0; }
+/* contact form */
+.formband { background: var(--component-field-bg); border-radius: var(--radius-card-lg); padding: 30px; display: grid; gap: 12px; max-width: 620px; }
+.formband h3 { font: var(--typography-title); font-family: var(--sg-display); color: var(--text-strong); margin: 0 0 6px; }
+.fld { height: 54px; border-radius: var(--radius-field); border: 1px solid var(--component-field-border); background: var(--component-field-bg); color: var(--text); font: 400 var(--font-size-body-lg)/var(--font-leading-field) var(--sg-sans); padding: 0 24px; display: flex; align-items: center; }
+.fld.focus { border-color: var(--component-field-focus-border); }
+.fld.area { height: 120px; align-items: flex-start; padding-top: 16px; }
+.formband .go { justify-self: start; }
+/* footer */
+.fband { background: var(--page-space); color: var(--text); padding: 34px 30px; display: flex; align-items: flex-start; gap: 28px; flex-wrap: wrap; }
+.fband h4 { font: 400 var(--font-size-section)/1.2 var(--sg-display); margin: 0; flex: 1 1 100%; color: var(--text-strong); }
+.fband a { color: var(--text); font: 400 var(--font-size-sm)/1.8 var(--sg-sans); text-decoration: none; display: block; }
+.fband .col { min-width: 120px; }
+.fband .col b { display: block; font: 900 var(--font-size-body)/2 var(--sg-sans); color: var(--text); }
+.fband .soc { width: 28px; height: 28px; border-radius: 50%; background: var(--accent-brand); display: inline-block; }
+.cookie { position: absolute; left: 18px; bottom: 18px; width: 330px; max-width: calc(100% - 36px); background: var(--component-card-light-bg); color: #3d4a52; border: 1px solid #e3e7ea; border-radius: var(--radius-field); box-shadow: var(--shadow-cookie-card); padding: 20px; font: 400 13px/1.5 var(--sg-sans); }
+.cookie .cc-go { margin-top: 12px; display: inline-block; background: var(--page); color: #fff; border-radius: var(--radius-pill); padding: 8px 18px; font: 600 var(--font-size-tiny)/1 var(--sg-sans); }
+@media (max-width: 560px) {
+  .hero { padding: 36px 16px 44px; }
+  .price-wrap { padding: 24px 14px; }
+  .formband { margin: 0 14px 14px !important; }
+  .fband { padding: 22px 16px; }
+  .cookie { left: 12px; bottom: 12px; max-width: calc(100% - 24px); padding: 14px; }
+}
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<div class="themes"><button data-m="light" onclick="setMode('light')">Light</button><button data-m="dark" class="on" onclick="setMode('dark')">Dark</button></div>
+<main>
+  <h1>Apollo GraphQL style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The toggle previews the <code>light</code> and <code>dark</code> semantic sets — the site paints both, dark on the marketing pages and light on the blog and the contact intro.</p>
+
+  <h2 class="sh">Apollo, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. apollographql.com is a Next.js/Tailwind site with a real token layer, so most values come straight from the declared <code>--color-*</code>/<code>--font-*</code>/<code>--radius-*</code> variables, the rest from measured components: the deep <code>nebula</code> navy and near-black space field, the <code>#fc5200</code> signal orange and <code>#e75e15</code> CTA fill, fully-round pill buttons, 16–32px radii, Aeonik display over Inter UI. <b>Two themes:</b> dark marketing sections, light blog/contact surfaces. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from apollographql.com on 2026-11-10, signed out, in headless Chromium. Aeonik and Fira Code are served through next/font; Aeonik falls back to the system sans here. studio.apollographql.com's login/signup pages were captured at rest and never submitted — every authenticated surface is a recorded boundary.</p>
+
+  <h2 class="sh">The dark hero</h2>
+  <p class="lead">The Summit eyebrow strip sits over a transparent nav: wordmark, disclosure links at <code>component.nav-text</code> (white 72%), and the <code>brand-accent</code> Start-for-free pill. The hero is Aeonik 60/63 at −1.5px tracking on the <code>lightfall</code> near-black field; the primary CTA draws its signature conic teal-to-orange ring (<code>component.cta-ring</code>) around a space-dark fill, beside a white-35 outline pill.</p>
+  <div class="mock space darkctx">
+    <div class="eyebrow"><b>Apollo Summit 2026</b> keynote now available<span class="cta">Watch keynote</span></div>
+    <div class="navbar"><span class="wm"><i>◆</i> Apollo</span><a class="lk" href="#">Products</a><a class="lk" href="#">Solutions</a><a class="lk" href="#">Resources</a><a class="lk" href="#">Company</a><span class="sp"></span><span class="pill orange">Start for free</span></div>
+    <div class="hero"><h3>Give AI access to the systems that run your business</h3><div class="sub">The GraphOS platform: one schema, every API, all the tooling your team needs to ship.</div><div class="row"><span class="pill ring">Talk to Apollo</span><span class="pill outline">Try GraphOS free</span><span class="chip">❚❚ Pause motion</span></div></div>
+    <div class="cookie">We use cookies to make Apollo's website work. The consent card is white with a <code>radius.field</code> radius and the only real drop shadow on the site.<span class="cc-go">Accept all</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">Tier and billing segments are 43px offwhite-border pills at <code>radius.segment</code> 20px; the request-volume pills are squarer (<code>radius.sm</code> 8px) and the held one fills <code>brand</code> orange with nebula text. Below, the 32px stats card carries <code>surface-muted</code>-bordered tiles, and the grey FAQ card is one of the site's light islands on a dark page.</p>
+  <div class="mock space darkctx">
+    <div class="price-wrap">
+      <h3>Pricing that makes sense at any scale</h3>
+      <div class="segs"><span class="seg">Developer</span><span class="seg">Standard</span><span class="seg">Enterprise</span><span class="vol on">100M</span><span class="vol">250M</span><span class="vol">500M</span><span class="pill orange">Start for free</span></div>
+      <div class="stats"><div class="tiles"><div class="tile"><b>0M</b>monthly downloads</div><div class="tile"><b>0%</b>of the Fortune 100</div><div class="tile"><b>0</b>production graphs</div></div></div>
+      <div class="faq"><div class="q">What counts as a request? +</div><div class="q">Can I change plans later? +</div></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Contact form and footer</h2>
+  <p class="lead">The HubSpot form floats on the <code>nebula</code> band: 54px fields at <code>radius.field</code> 16px, offwhite borders that flip to <code>brand</code> orange on focus, and a 999px-radius orange submit. The footer is a space-dark band with white column heads and quiet links.</p>
+  <div class="mock space darkctx">
+    <div style="padding:26px 26px 0"></div>
+    <div class="formband" style="margin:0 26px 26px"><h3>Contact us</h3><span class="fld">First name</span><span class="fld focus">Email — name@example.com</span><span class="fld area">How can we help?</span><span class="pill orange go">Submit</span></div>
+    <div class="fband"><h4>API orchestration for the agentic era</h4><div class="col"><b>Products</b><a href="#">GraphOS</a><a href="#">Router</a><a href="#">Apollo Client</a></div><div class="col"><b>Company</b><a href="#">About</a><a href="#">Blog</a><a href="#">Careers</a></div><span class="soc"></span><span class="soc"></span><span class="soc"></span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">Space names, one accent family: <code>nebula</code>/<code>lightfall</code>/<code>navy-deep</code> dark grounds, <code>offwhite</code>/<code>satellite</code>/<code>regolith</code> light surfaces, then the oranges — <code>brand</code> #fc5200 for held states and focus, <code>brand-accent</code> #e75e15 for every filled CTA, <code>horizon-dark</code> #c74100 for text links on light.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two voices: <b>Aeonik</b> for display — 60/63 hero at −1.5px tracking, 42px section heads, the 20px lede — and <b>Inter</b> for everything else: 50/55 page titles at 500 weight, 24px FAQ questions, 15px nav links, 14px segments and buttons, 16px body, 18px form text. Fira Code covers code.</p>
+  <div id="type-out"></div>
+
+  <h2 class="sh">Radius and geometry</h2>
+  <p class="lead">Pills all the way down for actions (<code>radius.pill</code> 999px), 20px segments, 16px fields and the consent card, 24–32px cards. The wide card rail measures 1344px inside a 1440 page; the visible nav bar is 65px.</p>
+  <div id="radius-out"></div>
+
+  <h2 class="sh">Motion and layout</h2>
+  <p class="lead">Colour and border swaps run at <code>duration.fast</code> 150ms, the toggle segments and submit at 200ms, nav transforms and field borders at 300ms, card lifts at 500ms — mostly on the <code>galactic</code> easings.</p>
+  <div id="motion-out" class="kv"></div>
+  <div id="z-out" class="kv" style="margin-top:12px"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live CSSOM and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and focused states measured per component; the billing segment pressed once (client-side)</td></tr><tr><td>No provenance</td><td>Every token names the variable or the measurement it came from</td></tr><tr><td>App implied</td><td>studio.apollographql.com login/signup captured at rest, never submitted — authenticated surfaces recorded as a boundary</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"palette":{"nebula":{"v":"#15252d","t":"color","s":"css-var --color-nebula; also measured backgroundColor of stats-card / promo-banner / video-card / field and the dark page bands","d":"#15252d, the deep navy that is every dark section, the contact form and the dark cards"},"nebula-deep":{"v":"#0b1418","t":"color","s":"css-var --color-nebula-dark-1; the darkest navy step; near-black section ends","d":"#0b1418"},"lightfall":{"v":"#02060a","t":"color","s":"css-var --color-lightfall-background; measured page fill of the home hero band (screenshot #02060a)","d":"#02060a, the near-black space background the home hero and product pages paint"},"navy-deep":{"v":"#091b23","t":"color","s":"measured band fill on /graphos and /graphos-agent-services (the .events-refresh scope rebinds --color-navy-900 to #091b23; its :root value is the nebula navy)","d":"#091b23, the darker navy the product pages use for long bands"},"offwhite":{"v":"#f8f8f8","t":"color","s":"css-var --color-offwhite; measured color of tier-segment / volume-pill / field borders and footer text; the light pages' ground","d":"#f8f8f8, text and hairline borders on dark, page fill on light"},"white":{"v":"#ffffff","t":"color","s":"css-var --color-white; measured color of hero-title / cta text / nav-cta; backgroundColor of article-card-regolith and cookie-card","d":"#fff, headings and button text on the dark surfaces, card fill on light"},"satellite":{"v":"#efefef","t":"color","s":"css-var --color-satellite; the #efefef grey of light surface bands (measured on /why-apollo sections)","d":"#efefef, alternating light section fill"},"satellite-dark":{"v":"#cfd7d6","t":"color","s":"measured backgroundColor of article-card (card_theme-satellite) on /blog","d":"#cfd7d6, the grey-green card fill on the blog index; near satellite-dark-3 but measured, not declared"},"regolith":{"v":"#ffeadb","t":"color","s":"css-var --color-regolith; the warm #ffeadb tint the palette keeps for light feature surfaces","d":"#ffeadb, warm off-white"},"faq-gray":{"v":"#e3e3e3","t":"color","s":"measured backgroundColor of faq-card on /pricing (= --color-surface-alt-3)","d":"#e3e3e3, the light FAQ panel fill inside the dark pricing page"},"eyebrow":{"v":"#1a1a1a","t":"color","s":"measured backgroundColor of eyebrow (the Summit promo strip)","d":"#1a1a1a, the promo eyebrow strip's fill"},"brand":{"v":"#fc5200","t":"color","s":"css-var --color-brand; measured backgroundColor of volume-pill-on and the article-card ellipse dot; --color-ring","d":"#fc5200, Apollo's signal orange: held states, focus ring, accent dots"},"brand-accent":{"v":"#e75e15","t":"color","s":"css-var --color-brand-accent; measured backgroundColor of nav-cta / plan-cta / submit / cta-orange and borderColor of cta-orange-outline","d":"#e75e15, the burnt orange every filled CTA actually paints"},"brand-hover":{"v":"#d84f08","t":"color","s":"measured backgroundColor/borderColor of nav-cta at hover and pressed; plan-cta instead fades the accent fill to 90% opacity","d":"#d84f08, the CTA fill's darker hover/pressed step"},"horizon-dark":{"v":"#c74100","t":"color","s":"css-var --color-horizon-dark-3; measured color of nav-menu-item and text-link (#c74100 = rgb(199,65,0))","d":"#c74100, the dark orange of text links on light surfaces"},"content":{"v":"#15252d","t":"color","s":"css-var --color-content-primary; measured color of blog-title / contact-title / faq-item and body text on light","d":"#15252d, text on light surfaces (the nebula navy doubled as ink)"},"content-muted":{"v":"#666666","t":"color","s":"css-var --color-content-muted; the muted text grey on light surfaces","d":"#666"},"muted-dark":{"v":"#9aa3b2","t":"color","s":"[data-theme=dark] --color-content-muted override; muted text inside dark sections","d":"#9aa3b2"},"border":{"v":"#d1d1d1","t":"color","s":"css-var --color-border-default; the light-theme hairline; faq accordion rules and card edges use it","d":"#d1d1d1"},"stats-border":{"v":"#9fb2bc","t":"color","s":"css-var --color-surface-muted; measured borderColor of the stat tiles inside stats-card (#9fb2bc)","d":"#9fb2bc, muted border inside dark cards"},"focus-orange":{"v":"#ff7b3c","t":"color","s":"measured outlineColor of logo / nav-cta at focus-visible (2px solid, offset 2px); plan-cta instead draws its own accent fill as the ring at 8px offset","d":"#ff7b3c, the keyboard focus ring on dark nav and CTA controls"},"focus-cyan":{"v":"#2fd1e0","t":"color","s":"css-var --color-lightfall-cyan; measured outlineColor of cta-primary / cta-secondary at focus-visible (2px, offset 4px)","d":"#2fd1e0, the cyan focus ring the hero's space-dark CTAs draw"},"focus-blue":{"v":"#99c8ff","t":"color","s":"measured outlineColor of tier-segment / billing-segment / carousel-arrow (5px) and footer-link / pagination (1px) at focus-visible","d":"#99c8ff, the soft-blue focus ring on segments and quiet links"},"teal":{"v":"#4ca6b5","t":"color","s":"css-var --color-teal-500; one half of the hero CTA's conic border gradient (#4ca6b5, with brand orange)","d":"#4ca6b5"},"cta-glow-orange":{"v":"#f06d2b","t":"color","s":"measured conic-gradient stop of cta-primary / m-cta-primary (rgb(240,109,43))","d":"#f06d2b, the warm stop of the hero CTA's conic ring"},"error":{"v":"#ff5151","t":"color","s":"css-var --color-error; the declared error/danger colour (no error state was reachable on the public surface)","d":"#ff5151"}},"font":{"family":{"display":{"v":"Aeonik, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif","t":"fontFamily","s":"measured fontFamily of hero-title / blog-title / section-title-light / hero-sub / cta-primary (--font-aeonik, served through next/font as __aeonikFont_*)","d":"Aeonik: display headings, hero CTAs and the big numerals. Proprietary; falls back to the system sans here"},"ui":{"v":"Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif","t":"fontFamily","s":"measured fontFamily of nav-bar / submit / plan-cta / field / pricing-title / customers-title / contact-title / faq-item (--font-inter, next/font __interFont_*)","d":"Inter: page titles, nav, buttons, forms, footer and body text"},"mono":{"v":"\"Fira Code\", ui-monospace, SFMono-Regular, Menlo, monospace","t":"fontFamily","s":"--font-fira-code, declared on the homepage root (--font-mono); code accents and the copy rows","d":"Fira Code for code and command snippets"}},"size":{"hero":{"v":"60px","t":"dimension","s":"measured fontSize of hero-title and blog-title","d":"60px, the page-hero display size (36px at 390)"},"title":{"v":"50px","t":"dimension","s":"measured fontSize of pricing-title / customers-title / contact-title","d":"50px, inner-page titles"},"section":{"v":"42px","t":"dimension","s":"measured fontSize of section-title-light","d":"42px, section headings"},"faq":{"v":"24px","t":"dimension","s":"measured fontSize of the faq-item question text node (the row's own font computes 38px; the question it paints is 24px)","d":"24px, the FAQ accordion's question rows"},"sub":{"v":"20px","t":"dimension","s":"measured fontSize of hero-sub","d":"20px, hero sub-copy and lead text"},"body-lg":{"v":"18px","t":"dimension","s":"measured fontSize of cta-primary / text-link / field / pagination","d":"18px, large CTAs, links and form text"},"body":{"v":"16px","t":"dimension","s":"css-var --font-size-base; measured fontSize of nav-bar / footer / card body text","d":"16px, the base size"},"nav":{"v":"15px","t":"dimension","s":"measured fontSize of the nav link text node (nav-bar textStyle)","d":"15px, top-nav links"},"sm":{"v":"14px","t":"dimension","s":"css-var --font-size-sm; measured fontSize of nav-cta / plan-cta / tier-segment / volume-pill","d":"14px, compact buttons and segments"},"tiny":{"v":"12.5px","t":"dimension","s":"measured fontSize of cookie-accept","d":"12.5px, the consent card's small button"},"xs":{"v":"12px","t":"dimension","s":"css-var --font-size-xs; measured fontSize of pause-motion (12px)","d":"12px, micro labels"}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"css-var --font-weight-normal; hero and body text"},"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium; nav links, CTAs, page titles (pricing-title is 500)"},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold; cookie-accept (600)"},"bold":{"v":700,"t":"fontWeight","s":"css-var --font-weight-bold; text-link and faq-item (700); the footer's heaviest labels reach 900"}},"leading":{"hero":{"v":"63px","t":"dimension","s":"measured lineHeight of hero-title (60/63)"},"title":{"v":"55px","t":"dimension","s":"measured lineHeight of pricing-title / customers-title (50/55)"},"section":{"v":"52.5px","t":"dimension","s":"measured lineHeight of section-title-light"},"faq":{"v":"31.2px","t":"dimension","s":"measured lineHeight of the faq-item question text node (24/31.2; the row computes 47.5px)"},"sub":{"v":"32.5px","t":"dimension","s":"measured lineHeight of hero-sub"},"body":{"v":"24px","t":"dimension","s":"measured lineHeight of nav-bar / footer / copy-row (16/24)"},"field":{"v":"25.2px","t":"dimension","s":"measured lineHeight of field / select / textarea (18/25.2)"},"sm":{"v":"21px","t":"dimension","s":"measured lineHeight of nav-cta / plan-cta / segments (14/21)"}},"tracking":{"hero":{"v":"-1.5px","t":"dimension","s":"measured letterSpacing of hero-title"},"normal":{"v":"0px","t":"dimension","s":"css-var --tracking-normal; body and controls"}}},"radius":{"pill":{"v":"999px","t":"dimension","s":"css-var --radius-full; measured borderRadius of every CTA, nav-cta, plan-cta, submit, link-pill, volume-pill border 999px; submit 9999px","d":"fully-round pills: every button and link chip"},"card-lg":{"v":"32px","t":"dimension","s":"measured borderRadius of stats-card / faq-card / promo-banner / article-card","d":"32px, the big content cards"},"card":{"v":"24px","t":"dimension","s":"css-var --radius-2xl; measured borderRadius of video-card","d":"24px, media cards"},"field":{"v":"16px","t":"dimension","s":"css-var --radius-xl; measured borderRadius of field / select / textarea / cookie-card","d":"16px, form fields and the consent card"},"segment":{"v":"20px","t":"dimension","s":"measured borderRadius of tier-segment / billing-segment","d":"20px, the pricing toggle segments"},"sm":{"v":"8px","t":"dimension","s":"css-var --radius-md; measured borderRadius of volume-pill / volume-pill-on and logo (8px)","d":"8px, small pills and controls"},"xs":{"v":"4px","t":"dimension","s":"css-var --border-radius-4; measured borderRadius of pause-motion","d":"4px, micro controls"}},"duration":{"fast":{"v":"150ms","t":"duration","s":"css-var --duration-fast; measured transitionDuration of every button/link colour swap (0.15s)","d":"150ms, the default transition"},"normal":{"v":"300ms","t":"duration","s":"css-var --duration-normal; measured transitionDuration of social-link transform / field border-color / nav-bar (0.3s)","d":"300ms"},"segment":{"v":"200ms","t":"duration","s":"measured transitionDuration 'all 0.2s' of tier-segment / billing-segment / volume-pill / submit / nav-menu height","d":"200ms, the toggle and submit timings"},"slow":{"v":"500ms","t":"duration","s":"css-var --duration-slow; measured transitionDuration of article-card transform (0.5s)","d":"500ms, card lifts"}},"easing":{"default":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-in-out; the --default-transition-timing-function"},"galactic":{"v":[0.06,0.47,0.1,1.0],"t":"cubicBezier","s":"css-var --ease-galactic; the entrance/check-rotate easing (cubic-bezier .06,.47,.1,1)"},"galactic-out":{"v":[0.17,0.17,0.0,1.0],"t":"cubicBezier","s":"css-var --ease-galactic-out; the 'appear' entrance easing (cubic-bezier .17,.17,0,1)"}},"layout":{"content-max":{"v":"1344px","t":"dimension","s":"measured width of stats-card / faq-card / promo-banner at 1440 (the card rail; --layout-lg is 1440px)","d":"1344px, the wide card rail inside the 1440 page"},"container-7xl":{"v":"1280px","t":"dimension","s":"css-var --container-7xl; the largest Tailwind container step","d":"1280px"},"article-width":{"v":"900px","t":"dimension","s":"css-var --article-main-content-width; the blog article column","d":"900px"},"header-height":{"v":"78px","t":"dimension","s":"css-var --header-height; the declared header block (the measured nav bar itself is 65px)","d":"78px"},"nav-height":{"v":"65px","t":"dimension","s":"measured height of nav-bar and m-nav-bar","d":"65px, the visible nav bar"},"side-space":{"v":"47.9844px","t":"dimension","s":"css-var --container-side-spaces; the page side gutter (16px under 767px)","d":"~48px desktop side padding"}},"typography":{"hero":{"v":{"fontFamily":"{font.family.display}","fontSize":"{font.size.hero}","fontWeight":"{font.weight.regular}","lineHeight":"{font.leading.hero}","letterSpacing":"{font.tracking.hero}"},"t":"typography","s":"composite of hero-title / blog-title / m-hero-title","d":"the 60/63 display step, −1.5px tracking (36/37.8 at 390)"},"title":{"v":{"fontFamily":"{font.family.ui}","fontSize":"{font.size.title}","fontWeight":"{font.weight.medium}","lineHeight":"{font.leading.title}","letterSpacing":"{font.tracking.normal}"},"t":"typography","s":"composite of pricing-title / customers-title / contact-title (all three measured Inter)","d":"the 50/55 page-title step, Inter at 500"},"body":{"v":{"fontFamily":"{font.family.ui}","fontSize":"{font.size.body}","fontWeight":"{font.weight.regular}","lineHeight":"{font.leading.body}","letterSpacing":"{font.tracking.normal}"},"t":"typography","s":"composite of nav-bar / footer / card body measurements","d":"Inter 16/24, body and default text"},"button":{"v":{"fontFamily":"{font.family.ui}","fontSize":"{font.size.body}","fontWeight":"{font.weight.medium}","lineHeight":"{font.leading.body}","letterSpacing":"{font.tracking.normal}"},"t":"typography","s":"composite of submit / cta-orange (16px/500); large hero CTAs use {font.size.body-lg}","d":"Inter 16/24 medium, buttons and form controls"}},"shadow":{"cookie-card":{"v":[{"offsetX":"0px","offsetY":"12px","blur":"32px","spread":"0px","color":"rgba(21, 37, 45, 0.14)"},{"offsetX":"0px","offsetY":"2px","blur":"6px","spread":"0px","color":"rgba(21, 37, 45, 0.06)"}],"t":"shadow","s":"measured boxShadow of cookie-card (the consent card's lift)","d":"the only real drop shadow on the site; cards elsewhere are flat fills"}},"component":{"button-primary-bg":{"v":"#e75e15","t":"color","s":"css-var --color-brand-accent; measured backgroundColor of nav-cta / plan-cta / submit / cta-orange","d":"the filled CTA's burnt orange"},"button-primary-fg":{"v":"#ffffff","t":"color","s":"css-var --color-white; the same buttons' color"},"button-primary-hover-bg":{"v":"#d84f08","t":"color","s":"measured backgroundColor of nav-cta at hover and pressed (plan-cta fades the accent fill to 90% opacity instead)"},"button-dark-fg":{"v":"#15252d","t":"color","s":"css-var --color-nebula; measured color of cta-orange and volume-pill-on (navy text on the orange fill)"},"button-outline-border":{"v":"#e75e15","t":"color","s":"css-var --color-brand-accent; measured borderColor of cta-orange-outline"},"button-outline-hover-bg":{"v":"rgba(231, 94, 21, 0.1)","t":"color","s":"measured backgroundColor of cta-orange-outline at hover/pressed (the accent at 10%)"},"cta-ring":{"v":[{"color":"{palette.teal}","position":0},{"color":"{palette.cta-glow-orange}","position":0.5},{"color":"{palette.teal}","position":1}],"t":"gradient","s":"measured backgroundImage of cta-primary / m-cta-primary: a conic-gradient(from ~412deg, #4ca6b5, #f06d2b, #4ca6b5) ring behind a #02060a fill","d":"the hero CTA's signature rotating teal-to-orange conic ring (conic in the browser; recorded as a gradient ramp)"},"cta-inner-bg":{"v":"#02060a","t":"color","s":"css-var --color-lightfall-background; measured linear-gradient(#02060a,#02060a) fill inside cta-primary's conic ring"},"field-bg":{"v":"#15252d","t":"color","s":"css-var --color-nebula; measured backgroundColor of field / select / textarea"},"field-border":{"v":"#f8f8f8","t":"color","s":"css-var --color-offwhite; measured borderColor of field / select / textarea"},"field-focus-border":{"v":"#fc5200","t":"color","s":"css-var --color-brand; measured borderColor of field/select/textarea focused and field-filled filled (#fc5200)"},"card-dark-bg":{"v":"#15252d","t":"color","s":"css-var --color-nebula; measured backgroundColor of stats-card / promo-banner / video-card"},"card-border-dark":{"v":"#9fb2bc","t":"color","s":"css-var --color-surface-muted; measured borderColor of the stat tiles (#9fb2bc)"},"card-light-bg":{"v":"#ffffff","t":"color","s":"css-var --color-white; measured backgroundColor of article-card-regolith / cookie-card"},"card-satellite-bg":{"v":"#cfd7d6","t":"color","s":"measured backgroundColor of article-card"},"faq-bg":{"v":"#e3e3e3","t":"color","s":"measured backgroundColor of faq-card"},"eyebrow-bg":{"v":"#1a1a1a","t":"color","s":"measured backgroundColor of eyebrow"},"segment-border":{"v":"#f8f8f8","t":"color","s":"css-var --color-offwhite; measured borderColor of tier-segment / billing-segment / volume-pill (1px offwhite)"},"segment-on-bg":{"v":"#fc5200","t":"color","s":"css-var --color-brand; measured backgroundColor of volume-pill-on (#fc5200)"},"nav-text":{"v":"rgba(255, 255, 255, 0.72)","t":"color","s":"measured color of nav-trigger / m-burger (oklab white at 72%)"},"nav-hover-bg":{"v":"rgba(255, 255, 255, 0.15)","t":"color","s":"measured backgroundColor of nav-trigger at hover (white 15%); pressed is white 10%"},"nav-hover-fg":{"v":"#ffffff","t":"color","s":"css-var --color-white; measured color of nav-trigger at hover"},"overlay-dark":{"v":"rgba(2, 6, 10, 0.8)","t":"color","s":"measured backgroundColor of pause-motion (oklab(0.1175 -0.0082 -0.0132 / 0.8), which converts to rgba(2, 6, 10, 0.8))","d":"the translucent chip fill on video controls"}}},"light":{"page":{"v":"#f8f8f8","t":"color","s":"css-var --color-offwhite; the blog/contact page ground (#f8f8f8)"},"surface":{"v":"#ffffff","t":"color","s":"css-var --color-white; article-card-regolith / cookie-card fills and the contact form's panel"},"surface-alt":{"v":"#efefef","t":"color","s":"css-var --color-satellite; the alternating #efefef light bands"},"text":{"v":"#15252d","t":"color","s":"css-var --color-content-primary; blog-title / contact-title / faq-item / story-card body text"},"text-muted":{"v":"#666666","t":"color","s":"css-var --color-content-muted; the muted grey on light surfaces"},"accent":{"v":"#e75e15","t":"color","s":"css-var --color-brand-accent; submit / plan-cta / cta-orange fills","d":"the burnt-orange CTA fill"},"accent-brand":{"v":"#fc5200","t":"color","s":"css-var --color-brand; the #fc5200 signal orange: field focus border, volume-pill-on, article dots, --color-ring"},"text-link":{"v":"#c74100","t":"color","s":"css-var --color-horizon-dark-3; measured color of text-link / nav-menu-item (#c74100)"},"border":{"v":"#d1d1d1","t":"color","s":"css-var --color-border-default; the light hairline"},"focus":{"v":"#ff7b3c","t":"color","s":"measured focus ring on logo/nav-cta (2px)"},"focus-alt":{"v":"#99c8ff","t":"color","s":"measured focus ring on footer-link / pagination / segments (1px and 5px)"}},"dark":{"page":{"v":"#15252d","t":"color","s":"css-var --color-nebula; the dark section fill measured on pricing / customers / why-apollo / contact bands (#15252d)"},"page-space":{"v":"#02060a","t":"color","s":"css-var --color-lightfall-background; the home hero and graphos bands' near-black (#02060a; #091b23 on the product pages)","d":"the deepest ground"},"surface":{"v":"#15252d","t":"color","s":"css-var --color-nebula; stats-card / promo-banner / video-card / field fills"},"surface-raised":{"v":"#254250","t":"color","s":"css-var --color-regolith-light-1 [data-theme=dark]; the dark remap's raised step (#254250)"},"text":{"v":"#f8f8f8","t":"color","s":"css-var --color-offwhite; footer / stats-card / tier-segment / field text (#f8f8f8)"},"text-strong":{"v":"#ffffff","t":"color","s":"css-var --color-white; hero-title / pricing-title / customers-title"},"text-muted":{"v":"#d1d1d1","t":"color","s":"measured color of hero-sub"},"text-muted-2":{"v":"#9aa3b2","t":"color","s":"the [data-theme=dark] --color-content-muted value"},"accent":{"v":"#e75e15","t":"color","s":"css-var --color-brand-accent; nav-cta / plan-cta / cta-orange fills on dark"},"accent-brand":{"v":"#fc5200","t":"color","s":"css-var --color-brand; volume-pill-on fill and the focus ring"},"border":{"v":"#f8f8f8","t":"color","s":"css-var --color-offwhite; measured 1px borders of segments, volume pills and form fields on dark"},"border-muted":{"v":"#9fb2bc","t":"color","s":"css-var --color-surface-muted; the stat tiles' #9fb2bc borders"},"focus":{"v":"#ff7b3c","t":"color","s":"measured focus ring on nav-cta (2px #ff7b3c); plan-cta rings with its own accent fill at 8px offset"},"focus-alt":{"v":"#2fd1e0","t":"color","s":"css-var --color-lightfall-cyan; measured focus ring on cta-primary / cta-secondary (2px #2fd1e0)"}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const resolve = (v) => String(v).replace(/\{([^{}]+)\}/g, (m, p) => `var(${cssname(p)})`);
+const flat = (node, prefix = '') => Object.entries(node).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+function setMode(m) {
+  document.documentElement.dataset.mode = m;
+  document.querySelectorAll('.themes button').forEach((b) => b.classList.toggle('on', b.dataset.m === m));
+}
+
+(function palette() {
+  let h = '';
+  const items = flat(TOK.core.palette, 'palette.').filter(([, t]) => t.t === 'color');
+  h += `<div class="pal-h">core.palette</div><div class="pal">`;
+  for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+  h += '</div>';
+  for (const set of ['light', 'dark']) {
+    const lit = flat(TOK[set] || {}, set + '.').filter(([, t]) => t.t === 'color');
+    if (!lit.length) continue;
+    h += `<div class="pal-h">${set}</div><div class="pal">`;
+    // theme sets re-bind the same unprefixed names (--page), so a swatch paints
+    // its resolved value rather than a nonexistent --light-page / --dark-page
+    for (const [n, t] of lit) h += `<div class="sw"><span class="dot"><i style="background:${esc(resolve(t.v))}"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v;
+    const ref = (x) => String(x).replace(/[{}]/g, '');
+    // the composite is emitted as --typography-*; the sample uses it so the
+    // measured size, leading, weight and tracking all apply
+    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(ref(v.fontSize))} / ${esc(ref(v.lineHeight))} · w ${esc(ref(String(v.fontWeight)))}</small></div><div class="sample" style="font:var(${cssname(n)})">Give AI access to the systems that run your business</div></div>`;
+  }
+  $('#type-out').innerHTML = h;
+})();
+
+(function radius() {
+  let r = '';
+  for (const [n, t] of flat(TOK.core.radius, 'radius.')) r += `<div class="bx" style="border-radius:min(var(${cssname(n)}), 24px)">${esc(n.replace('radius.', ''))}<br>${esc(t.v)}</div>`;
+  $('#radius-out').innerHTML = r;
+})();
+
+(function misc() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(',') + ')' : t.v)}</span></div>`;
+  $('#motion-out').innerHTML = m;
+  let z = '';
+  for (const [n, t] of flat(TOK.core.zIndex || {}, 'zIndex.').sort((a, b) => a[1].v - b[1].v)) z += `<div><b>${esc(n.replace('zIndex.', ''))}</b> <span>${esc(t.v)}</span></div>`;
+  $('#z-out').innerHTML = z;
+})();
+</script>
+</body>
+</html>

@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 56,
-    "system_domains": 48,
-    "matched_domains": 25,
-    "missing_domains": 408,
+    "system_packages": 66,
+    "system_domains": 58,
+    "matched_domains": 35,
+    "missing_domains": 398,
     "system_domains_absent_from_catalog": 23
   },
   "matched": {
@@ -61,6 +61,57 @@
         }
       ]
     },
+    "aboard.com": {
+      "catalog": [
+        {
+          "name": "Aboard",
+          "domain": "aboard.com",
+          "id": 526
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "aboard",
+          "name": "Aboard",
+          "url": "https://aboard.com",
+          "name_match": true
+        }
+      ]
+    },
+    "aboardhr.com": {
+      "catalog": [
+        {
+          "name": "Aboard",
+          "domain": "aboardhr.com",
+          "id": 545
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "aboardhr",
+          "name": "Aboard HR",
+          "url": "https://www.aboardhr.com",
+          "name_match": false
+        }
+      ]
+    },
+    "acctual.com": {
+      "catalog": [
+        {
+          "name": "Acctual",
+          "domain": "acctual.com",
+          "id": 780
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "acctual",
+          "name": "Acctual",
+          "url": "https://www.acctual.com",
+          "name_match": true
+        }
+      ]
+    },
     "acnestudios.com": {
       "catalog": [
         {
@@ -75,6 +126,40 @@
           "name": "Acne Studios",
           "url": "https://www.acnestudios.com",
           "name_match": false
+        }
+      ]
+    },
+    "acuityscheduling.com": {
+      "catalog": [
+        {
+          "name": "Acuity Scheduling",
+          "domain": "acuityscheduling.com",
+          "id": 825
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "acuityscheduling",
+          "name": "Acuity Scheduling",
+          "url": "https://acuityscheduling.com",
+          "name_match": false
+        }
+      ]
+    },
+    "aesop.com": {
+      "catalog": [
+        {
+          "name": "Aesop",
+          "domain": "aesop.com",
+          "id": 621
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "aesop",
+          "name": "Aesop",
+          "url": "https://www.aesop.com",
+          "name_match": true
         }
       ]
     },
@@ -95,6 +180,23 @@
         }
       ]
     },
+    "airtable.com": {
+      "catalog": [
+        {
+          "name": "Airtable",
+          "domain": "airtable.com",
+          "id": 164
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "airtable",
+          "name": "Airtable",
+          "url": "https://www.airtable.com",
+          "name_match": true
+        }
+      ]
+    },
     "allbirds.com": {
       "catalog": [
         {
@@ -109,6 +211,23 @@
           "name": "Allbirds",
           "url": "https://www.allbirds.com",
           "name_match": true
+        }
+      ]
+    },
+    "aloyoga.com": {
+      "catalog": [
+        {
+          "name": "ALO",
+          "domain": "aloyoga.com",
+          "id": 911
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "aloyoga",
+          "name": "Alo Yoga",
+          "url": "https://www.aloyoga.com",
+          "name_match": false
         }
       ]
     },
@@ -146,6 +265,40 @@
         }
       ]
     },
+    "anthropic.com": {
+      "catalog": [
+        {
+          "name": "Anthropic",
+          "domain": "anthropic.com",
+          "id": 508
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "anthropic",
+          "name": "Anthropic",
+          "url": "https://www.anthropic.com",
+          "name_match": true
+        }
+      ]
+    },
+    "apollographql.com": {
+      "catalog": [
+        {
+          "name": "Apollo GraphQL",
+          "domain": "apollographql.com",
+          "id": 79
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "apollographql",
+          "name": "Apollo GraphQL",
+          "url": "https://www.apollographql.com",
+          "name_match": false
+        }
+      ]
+    },
     "apple.com": {
       "catalog": [
         {
@@ -170,6 +323,23 @@
           "name": "ChatGPT for iOS",
           "url": "https://apps.apple.com/app/chatgpt/id6448311069",
           "name_match": false
+        }
+      ]
+    },
+    "appwrite.io": {
+      "catalog": [
+        {
+          "name": "Appwrite",
+          "domain": "appwrite.io",
+          "id": 664
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "appwrite",
+          "name": "Appwrite",
+          "url": "https://appwrite.io",
+          "name_match": true
         }
       ]
     },
@@ -492,81 +662,11 @@
     }
   },
   "missing": {
-    "aboard.com": [
-      {
-        "name": "Aboard",
-        "domain": "aboard.com",
-        "id": 526
-      }
-    ],
-    "aboardhr.com": [
-      {
-        "name": "Aboard",
-        "domain": "aboardhr.com",
-        "id": 545
-      }
-    ],
-    "acctual.com": [
-      {
-        "name": "Acctual",
-        "domain": "acctual.com",
-        "id": 780
-      }
-    ],
-    "acuityscheduling.com": [
-      {
-        "name": "Acuity Scheduling",
-        "domain": "acuityscheduling.com",
-        "id": 825
-      }
-    ],
     "adidas.com": [
       {
         "name": "adidas",
         "domain": "adidas.com",
         "id": 46
-      }
-    ],
-    "aesop.com": [
-      {
-        "name": "Aesop",
-        "domain": "aesop.com",
-        "id": 621
-      }
-    ],
-    "airtable.com": [
-      {
-        "name": "Airtable",
-        "domain": "airtable.com",
-        "id": 164
-      }
-    ],
-    "aloyoga.com": [
-      {
-        "name": "ALO",
-        "domain": "aloyoga.com",
-        "id": 911
-      }
-    ],
-    "anthropic.com": [
-      {
-        "name": "Anthropic",
-        "domain": "anthropic.com",
-        "id": 508
-      }
-    ],
-    "apollographql.com": [
-      {
-        "name": "Apollo GraphQL",
-        "domain": "apollographql.com",
-        "id": 79
-      }
-    ],
-    "appwrite.io": [
-      {
-        "name": "Appwrite",
-        "domain": "appwrite.io",
-        "id": 664
       }
     ],
     "arcade.software": [
