@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/143d553e-d71f-4e86-98ed-b80b9ef78ea9",
   "source_url": "https://area17.com",
   "extracted_at": "2026-06-03T18:59:39.509Z",
-  "fetched_at": "2026-10-20T08:22:26Z",
+  "fetched_at": "2026-11-08T04:19:44Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/2d2153af-d94a-449a-940b-90a39816d709.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a87e7a76-e14a-4403-9b8b-7f22eb466c78.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/4eb303f9-c577-4ce8-a32d-c40922b0310a.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0f89e62e-4510-49b8-a125-7a195ceba6fc.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/607e0dbf-e2fc-45c9-b939-946b8981c156",
   "source_url": "https://giga.ai",
   "extracted_at": "2026-07-03T03:23:13.251Z",
-  "fetched_at": "2026-10-20T08:21:35Z",
+  "fetched_at": "2026-11-08T04:20:13Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/1ab88d75-accf-40cb-9230-2b374ddf89bf.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a592089c-73fe-44b3-aaab-4d2e4e9767d7.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d67c69d8-d884-4e89-b89a-c5d5e51f125e.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/878416ad-49c6-45c2-831f-e14dc8ad6981.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

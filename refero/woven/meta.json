@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/76483bd1-37d3-4fb9-889b-aecf27b08b83",
   "source_url": "https://wovenwhisky.com",
   "extracted_at": "2026-06-03T20:46:50.721Z",
-  "fetched_at": "2026-10-20T08:21:54Z",
+  "fetched_at": "2026-11-08T04:21:07Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/aa4d7328-959d-4387-8f54-55a929bd5559.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/6014b4fd-8c77-4068-ba0c-6fb40983bec9.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/2bb781a2-f994-45d6-956a-cde12150d7fd.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e7f788ea-a63a-4484-b479-6aeccadd15f9.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/81a66e75-23af-4525-8a4e-f4a54c2700e7",
   "source_url": "https://linusrogge.com",
   "extracted_at": "2026-06-03T16:30:04.560Z",
-  "fetched_at": "2026-10-20T08:23:13Z",
+  "fetched_at": "2026-11-08T04:20:25Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/8c6f61a9-3677-45f1-9cad-b3949b83d2a1.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/fc853af1-05f0-41ac-882c-2f9197d7c50d.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/9c3044d0-bd5f-4f6c-9da7-6bda380fea29.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/5b74ade4-5911-4f3b-9897-cfb46055b49b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

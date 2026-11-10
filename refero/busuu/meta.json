@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/72b85d0a-1ff8-4dd3-b33a-f55aad6df5c9",
   "source_url": "https://busuu.com",
   "extracted_at": "2026-06-03T18:00:17.345Z",
-  "fetched_at": "2026-10-20T08:22:46Z",
+  "fetched_at": "2026-11-08T04:19:52Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d9c417c5-ba35-4d0f-812b-369956982ed6.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/e35d42c4-4c65-491f-b484-0209a446a5fa.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/7f034b51-e0cd-4949-97cb-422da58aa82a.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/65604899-3cda-4123-8fe3-eda4e1fe4a9c.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

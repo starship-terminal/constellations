@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/c6ec55c7-0bd9-47c5-a4d2-669b7790c9cc",
   "source_url": "https://drinkolipop.com",
   "extracted_at": "2026-06-03T17:12:16.293Z",
-  "fetched_at": "2026-10-20T08:24:48Z",
+  "fetched_at": "2026-11-08T04:20:35Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/eed5bd83-d74d-4364-b21e-178f7c56947e.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/3dac8cd1-3a85-4db3-8b3e-085256645f0a.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/13d18d5b-97d5-4775-93c0-bcca896d0286.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/a0276da1-f0a8-41e3-9a7e-745bdfe661e0.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

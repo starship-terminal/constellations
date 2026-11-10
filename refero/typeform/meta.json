@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/a0d54731-58dc-448b-a6b0-ed543f397ab1",
   "source_url": "https://typeform.com",
   "extracted_at": "2026-04-11T19:07:51.673Z",
-  "fetched_at": "2026-10-20T08:25:16Z",
+  "fetched_at": "2026-11-08T04:19:34Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d268963c-ca1a-4384-bf5b-3007cbd00985.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/23f90289-7262-4469-996e-55ae0d01dabd.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/fef21ed3-ed5b-4ed3-80c4-0dc5bb7596ac.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/3dc5ed1a-c5a2-4843-9caf-d0e646e4025d.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": true
 }

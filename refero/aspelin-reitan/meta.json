@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/3a331157-f5a5-4640-ada8-8a3ad262ee6a",
   "source_url": "https://www.aspelineiendom.no",
   "extracted_at": "2026-06-03T21:33:24.654Z",
-  "fetched_at": "2026-10-20T08:23:32Z",
+  "fetched_at": "2026-11-08T04:19:45Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/0247ad62-81bb-48c9-9350-bb9da1e862cb.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/cd9a86a2-5221-4353-ab6d-8ab74376dcbe.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/e1b5e9dc-cc7b-4f37-b095-e8041decd3fd.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/c9cdbcef-3d95-4ca0-9d3f-3a1a4dd5f271.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

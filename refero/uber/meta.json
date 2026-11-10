@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/caf8d2ef-4173-4431-9d26-05be0272e9f8",
   "source_url": "https://uber.com",
   "extracted_at": "2026-06-03T16:14:29.443Z",
-  "fetched_at": "2026-10-20T08:24:56Z",
+  "fetched_at": "2026-11-08T04:21:01Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/4174e4af-4a09-4a54-a2d7-5065aa3f59da.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/d7272897-dacf-4325-9047-137e0ce413f0.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/f5a3d9c9-b0a7-4aeb-9e40-c5cec058727a.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/6ded3ba2-832c-4233-9695-3461b6c98949.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

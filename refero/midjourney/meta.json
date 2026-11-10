@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/225059ac-0450-49d3-b2b7-d0e98b7ae938",
   "source_url": "https://midjourney.com",
   "extracted_at": "2026-04-11T18:05:53.023Z",
-  "fetched_at": "2026-10-20T08:23:14Z",
+  "fetched_at": "2026-11-08T04:19:31Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/698dd6e9-1f77-4eb4-a8a6-b50df6bbda02.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/95eb5c46-271c-4503-81a5-d1003a95efcc.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/2287534d-d905-4482-9200-e26a38eaa6be.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/50e75698-0356-4fbf-ba94-15381261bacf.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": true
 }

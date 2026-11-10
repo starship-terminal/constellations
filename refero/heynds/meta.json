@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/7027ecd6-41d9-4bc6-b919-3df5c573b950",
   "source_url": "https://www.heynds.com/en",
   "extracted_at": "2026-06-03T21:00:52.630Z",
-  "fetched_at": "2026-10-20T08:23:39Z",
+  "fetched_at": "2026-11-08T04:20:17Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/ff759f21-1c2c-4a99-84ea-db7545ac9930.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/e1ee79cd-37b3-42d9-9822-44861e474ac1.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/423c5ac6-1793-479a-865d-3f4e6d2802cb.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/daddb86b-239f-42ae-bd42-e188e6f1860f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

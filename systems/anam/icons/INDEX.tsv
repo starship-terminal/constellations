@@ -1,0 +1,20 @@
+file	inferred_name	hash	sizes	viewBox	style	seen_on	place	text_or_label
+copy-code.svg	copy-code	4f1e6a45	20x20	0 0 24 24	stroke	home; interactive-avatars	button	Copy code
+icon-12a454bc.svg	icon-12a454bc	12a454bc	12x12		fill	docs; docs-api	a	Navigate to header: Who builds with Anam / Navigate to header: How it works / Navigate to header: Three ways to start
+open-search.svg	open-search	17ecd960	16x16		fill	docs; docs-api	button	Open search
+change-theme-preference.svg	change-theme-preference	3f8ff99d	16x16		fill	docs; docs-api	button	Change theme preference
+send-message.svg	send-message	5b3511ce	10x10		fill	docs; docs-api	button	Send message
+icon-612eb9ac.svg	icon-612eb9ac	612eb9ac	49x14	0 0 1274 367	fill	docs; docs-api	a	Powered by This documentation is built a
+on-this-page.svg	on-this-page	96d5e5ce	12x12		fill	docs; docs-api	button	On this page
+toggle-assistant-panel.svg	toggle-assistant-panel	992fb0c3	16x16		fill	docs; docs-api	button; button [.code-block_[data-floating-buttons]_&]:bg-gray-100	Toggle assistant panel / Ask Assistant
+sign-in.svg	sign-in	a758fb0c	12x12		fill	docs; docs-api	a; button	Sign In / Integrations / More actions
+unmute-call.svg	unmute-call	aa540a12	16x18 24x24	0 0 24 24	fill	home	button	unmute call / unmute
+call.svg	call	b3479269	14x14 24x24	0 0 24 24	fill	home	button	call
+overview.svg	overview	351de367	16x16		fill	docs	a [text-shadow:-0.2px_0_0_currentColor,0.2px_0_0_currentColor]; a; button	Overview / Models / Understanding Personas
+icon-74d3ee27.svg	icon-74d3ee27	74d3ee27	24x24		fill	docs	a	Learn Read how personas work. Avatars, v / Embed Add an avatar to a site you alread / Build Use the JavaScript or Python SDK t
+icon-75bf1d73.svg	icon-75bf1d73	75bf1d73	31x31		fill	api	div	
+icon-c259a485.svg	icon-c259a485	c259a485	35x36	0 0 16 16	stroke	api	div	
+icon-d39a703f.svg	icon-d39a703f	d39a703f	20x20	0 0 20 20	stroke	home	div	
+data-floating-buttons-bg-gray-10.svg	data-floating-buttons-bg-gray-10	e19ffa4a	16x16		fill	docs-api	button [.code-block_[data-floating-buttons]_&]:bg-gray-100	Copy the contents from the code block
+anam-home.svg	anam-home	e404bc58	60x22	0 0 60 22	fill	tools	a	Anam home
+0-5px-1px-rgb-0-0-0-0-12-0-1px-2.svg	0-5px-1px-rgb-0-0-0-0-12-0-1px-2	fd20729d	16x16		fill	docs	button shadow-[0_0.5px_1px_rgb(0_0_0/0.12),0_1px_2px_rgb(0_0_0/0.08),inset_0_0.5px_0_rgb(255_255_255/0.65)]	Expand image: Anam AI Avatars

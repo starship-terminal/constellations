@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/6fd5c4e6-7003-4768-bc62-1b9c0c774054",
   "source_url": "https://www.affinity.studio",
   "extracted_at": "2026-06-03T22:01:38.639Z",
-  "fetched_at": "2026-10-20T08:23:23Z",
+  "fetched_at": "2026-11-08T04:19:39Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/2bd1088b-59f5-41f5-b86f-e68d3685fec3.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

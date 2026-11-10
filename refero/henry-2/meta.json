@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/a9941737-7a01-47b0-b187-df2bb16b27d8",
   "source_url": "https://www.ai.work",
   "extracted_at": "2026-06-03T17:46:22.754Z",
-  "fetched_at": "2026-10-20T08:22:53Z",
+  "fetched_at": "2026-11-08T04:20:16Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6d867c2e-5576-4d73-a110-93ad93c5de9d.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/b499c61b-91ed-4baf-a911-adb48628cc58.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/fbb1c955-7ea6-482b-a737-08586c7eeb17.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/f85c69f3-0d49-425d-a73f-db92152a72bb.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

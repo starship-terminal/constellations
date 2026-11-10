@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/9e5bd4b1-0ba8-4592-a5ec-a935bd4ea9c6",
   "source_url": "https://umbrel.com",
   "extracted_at": "2026-06-03T15:48:44.041Z",
-  "fetched_at": "2026-10-20T08:25:00Z",
+  "fetched_at": "2026-11-08T04:21:01Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/da9f3004-3346-48de-ba71-c188147d1271.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ab67010c-511e-46f3-bc47-74e93ebf67a9.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/77087c8c-e999-4209-983b-32b1f51ed898.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e2edde70-abcc-4608-9a12-db7ad13106d5.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

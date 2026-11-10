@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/26a9840f-f128-4cfc-84a5-feb7db1bf577",
   "source_url": "https://www.adora.so",
   "extracted_at": "2026-06-03T15:03:57.303Z",
-  "fetched_at": "2026-10-20T08:25:07Z",
+  "fetched_at": "2026-11-08T04:19:38Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5cd60dbd-5c82-4ae8-9172-62c36602340d.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/c85dec46-940f-44c1-adfe-8ffae77c5bc0.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/685f8881-9b83-4e4f-a162-ed4a7f6d269c.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e2746af5-1fa4-44c0-9f8b-7134a1b3cd38.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/6db1057d-3457-4173-9184-df160415f060",
   "source_url": "https://partiful.com",
   "extracted_at": "2026-04-29T23:17:09.758Z",
-  "fetched_at": "2026-10-20T08:25:12Z",
+  "fetched_at": "2026-11-08T04:19:33Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/8be60b09-d028-4a17-b61a-0fa76af8b63e.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/3def44d9-74ff-4b4c-a4c1-5102c136d976.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/b5d0f179-ffaa-4929-ba61-e06e14e3d3be.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/4b261c83-3b0d-447d-85e5-d24d49684c78.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": true
 }

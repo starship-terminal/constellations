@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/3172cd4d-118a-4a16-a259-6b634d32322e",
   "source_url": "https://mercury.com",
   "extracted_at": "2026-07-03T02:46:39.901Z",
-  "fetched_at": "2026-10-20T08:21:40Z",
+  "fetched_at": "2026-11-08T04:20:29Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f5e7b964-aab6-4d9c-b1f6-96565ddde880.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/eb803ed8-c299-4423-87bc-61d1a41b88f2.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/1e084062-4041-41dd-9a11-f439cd733af1.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0ca7b304-01bd-43a7-b5a9-06f22714d05d.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/1f32d914-6fdd-4692-b4fc-fcee2c414766",
   "source_url": "https://www.jeton.com",
   "extracted_at": "2026-07-03T03:16:30.698Z",
-  "fetched_at": "2026-10-20T08:21:36Z",
+  "fetched_at": "2026-11-08T04:20:22Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/4dad2b89-1fb2-4578-bf8a-b117dbd373e1.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/99d2cd40-cc3e-4199-bec3-0d15fac32a9b.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d7fede4f-4baa-4643-8e07-0d4fcd766c69.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/a296b261-df5a-484f-b657-3b24fa6ad0dd.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

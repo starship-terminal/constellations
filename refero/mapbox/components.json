@@ -1,0 +1,75 @@
+[
+  {
+    "html": "<div style=\"--color-void-black:#0e1012;--color-deep-charcoal:#15171b;--color-gunmetal:#1c1f24;--color-graphite:#23262d;--color-steel:#333943;--color-pewter:#444d5a;--color-slate:#566171;--color-ash:#8b96aa;--color-fog:#a0aaba;--color-silver:#bbc2ce;--color-cloud:#d5dae2;--color-white:#ffffff;--color-signal-blue:#007afc;--color-deep-signal:#0062ca;--color-map-green:#228a56;--font-cera-pro:'DM Sans',sans-serif; display:flex; align-items:center; justify-content:center; gap:16px; background:var(--color-void-black); padding:48px 32px; border-radius:0; flex-wrap:wrap;\"><a href=\"#\" style=\"display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-cera-pro);font-size:16px;font-weight:700;color:var(--color-white);background:var(--color-signal-blue);border:2px solid var(--color-signal-blue);border-radius:100px;padding:13px 28px;text-decoration:none;letter-spacing:-0.01em;transition:opacity 0.15s;\">Get started for free</a><a href=\"#\" style=\"display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-cera-pro);font-size:16px;font-weight:700;color:var(--color-white);background:transparent;border:1.5px solid var(--color-silver);border-radius:100px;padding:13px 28px;text-decoration:none;letter-spacing:-0.01em;\">Contact us</a></div>",
+    "name": "CTA Button Group",
+    "role": "",
+    "description": ""
+  },
+  {
+    "html": "<div style=\"--color-void-black:#0e1012;--color-deep-charcoal:#15171b;--color-gunmetal:#1c1f24;--color-graphite:#23262d;--color-steel:#333943;--color-pewter:#444d5a;--color-slate:#566171;--color-ash:#8b96aa;--color-fog:#a0aaba;--color-silver:#bbc2ce;--color-cloud:#d5dae2;--color-white:#ffffff;--color-signal-blue:#007afc;--color-deep-signal:#0062ca;--color-map-green:#228a56;--font-cera-pro:'DM Sans',sans-serif; background:var(--color-void-black); padding:48px 32px; display:flex; flex-direction:column; align-items:center; gap:32px;\"><div style=\"text-align:center;\"><h2 style=\"font-family:var(--font-cera-pro);font-size:44px;font-weight:700;color:var(--color-white);letter-spacing:-0.88px;line-height:1.14;margin:0 0 12px 0;\">Customer stories</h2><p style=\"font-family:var(--font-cera-pro);font-size:18px;font-weight:400;color:var(--color-fog);line-height:1.5;margin:0;max-width:480px;\">The world's leading businesses, from startups to global enterprises, build with Mapbox</p></div><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;\"><a href=\"#\" style=\"display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-cera-pro);font-size:15px;font-weight:500;color:var(--color-white);background:var(--color-signal-blue);border:1.5px solid var(--color-signal-blue);border-radius:100px;padding:10px 20px;text-decoration:none;cursor:pointer;\">Automotive</a><a href=\"#\" style=\"display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-cera-pro);font-size:15px;font-weight:500;color:var(--color-fog);background:transparent;border:1.5px solid var(--color-steel);border-radius:100px;padding:10px 20px;text-decoration:none;cursor:pointer;\">Weather</a><a href=\"#\" style=\"display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-cera-pro);font-size:15px;font-weight:500;color:var(--color-fog);background:transparent;border:1.5px solid var(--color-steel);border-radius:100px;padding:10px 20px;text-decoration:none;cursor:pointer;\">Fleets</a><a href=\"#\" style=\"display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-cera-pro);font-size:15px;font-weight:500;color:var(--color-fog);background:transparent;border:1.5px solid var(--color-steel);border-radius:100px;padding:10px 20px;text-decoration:none;cursor:pointer;\">Telecom</a><a href=\"#\" style=\"display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-cera-pro);font-size:15px;font-weight:500;color:var(--color-fog);background:transparent;border:1.5px solid var(--color-steel);border-radius:100px;padding:10px 20px;text-decoration:none;cursor:pointer;\">On-Demand Logistics</a></div></div>",
+    "name": "Category Filter Tab Bar",
+    "role": "",
+    "description": ""
+  },
+  {
+    "html": "<div style=\"--color-void-black:#0e1012;--color-deep-charcoal:#15171b;--color-gunmetal:#1c1f24;--color-graphite:#23262d;--color-steel:#333943;--color-pewter:#444d5a;--color-slate:#566171;--color-ash:#8b96aa;--color-fog:#a0aaba;--color-silver:#bbc2ce;--color-cloud:#d5dae2;--color-white:#ffffff;--color-signal-blue:#007afc;--color-deep-signal:#0062ca;--color-map-green:#228a56;--font-cera-pro:'DM Sans',sans-serif; background:var(--color-void-black); padding:40px 24px; display:flex; justify-content:center;\"><div style=\"width:100%;max-width:560px;background:var(--color-deep-charcoal);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;\"><div style=\"width:100%;height:220px;background:linear-gradient(135deg,#0d2133 0%,#0a1a2e 40%,#111a24 70%,#1a2030 100%);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;\"><div style=\"position:absolute;inset:0;background:radial-gradient(ellipse at 40% 50%,#1a3a4a 0%,#0a1520 60%,#050c12 100%);\"></div><div style=\"position:relative;z-index:1;width:140px;height:140px;border-radius:50%;border:3px solid rgba(255,255,255,0.08);background:radial-gradient(circle at 50% 40%,#1c3a50 0%,#0d1f2e 60%,#050e18 100%);display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(0,0,0,0.8);\"><div style=\"width:100px;height:100px;border-radius:50%;background:linear-gradient(160deg,#162d3d 0%,#0d2030 50%,#091520 100%);border:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;\"><span style=\"font-family:var(--font-cera-pro);font-size:11px;font-weight:700;color:rgba(255,255,255,0.25);letter-spacing:0.1em;text-align:center;line-height:1.4;\">MAP<br>VIEW</span></div></div><div style=\"position:absolute;top:16px;left:16px;\"><span style=\"display:inline-block;font-family:var(--font-cera-pro);font-size:10px;font-weight:700;color:var(--color-white);background:var(--color-map-green);border-radius:4px;padding:4px 8px;letter-spacing:0.08em;text-transform:uppercase;\">Product Update</span></div></div><div style=\"padding:28px 28px 32px;\"><div style=\"width:48px;height:48px;border-radius:50%;background:var(--color-gunmetal);border:1px solid var(--color-steel);display:flex;align-items:center;justify-content:center;margin-bottom:18px;\"><div style=\"width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#1a5fc8 0%,#ffffff 50%,#1a5fc8 100%);opacity:0.9;\"></div></div><h3 style=\"font-family:var(--font-cera-pro);font-size:22px;font-weight:700;color:var(--color-white);line-height:1.25;margin:0 0 14px 0;letter-spacing:-0.02em;\">The Operating System 9 delivers all-new navigation built with Mapbox</h3><p style=\"font-family:var(--font-cera-pro);font-size:15px;font-weight:400;color:var(--color-fog);line-height:1.55;margin:0 0 24px 0;\">BMW and MINI set a new standard for in-vehicle navigation with an immersive 3D map style and sophisticated EV features.</p><a href=\"#\" style=\"display:inline-flex;align-items:center;gap:6px;font-family:var(--font-cera-pro);font-size:15px;font-weight:500;color:var(--color-signal-blue);text-decoration:none;letter-spacing:-0.01em;\">Discover Mapbox for Automotive <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M3 8h10M9 4l4 4-4 4\" stroke=\"#007afc\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a></div></div></div>",
+    "name": "Customer Story Card",
+    "role": "",
+    "description": ""
+  },
+  {
+    "name": "Primary CTA Button",
+    "role": "Main call-to-action, 'Get started for free', 'Sign up'",
+    "description": "backgroundColor #007afc, color #ffffff, borderRadius 100px, padding 12px 24px. No border visible (border matches background). The only filled blue element on the page \u2014 stands alone against the black field."
+  },
+  {
+    "name": "Outlined Pill Button",
+    "role": "Secondary actions like 'Contact us', nav secondary links",
+    "description": "backgroundColor transparent, color #ffffff, border 1px solid #bbc2ce, borderRadius 100px, padding 12px 24px. On hover, likely shifts border to #ffffff. Maintains pill geometry to match primary CTA."
+  },
+  {
+    "name": "Ghost Text Button",
+    "role": "Inline text links, 'Learn more \u2192', 'Read more \u2192', footer links",
+    "description": "backgroundColor transparent, color #ffffff or #007afc for links, borderRadius 0px, no padding. Used for narrative-flow links where a button frame would over-formalize the action."
+  },
+  {
+    "name": "Icon Frame Button",
+    "role": "Utility buttons like language selector 'EN', compact controls",
+    "description": "backgroundColor transparent, color #ffffff, border 1px solid #444d5a, borderRadius 6px, padding 8px 10px. Sharp radius breaks from the pill system \u2014 signals 'tool', not 'action'."
+  },
+  {
+    "name": "Product Update Badge",
+    "role": "Labels marking new features, product announcements",
+    "description": "backgroundColor #228a56, color #ffffff, borderRadius 4px, padding 5.6px 7.7px. All-caps Cera Pro at 10px with +1.00em letter-spacing. Green signals 'new/live', echoing map layer status indicators."
+  },
+  {
+    "name": "Info Badge",
+    "role": "Announcement or info-type labels",
+    "description": "backgroundColor #0062ca, color #ffffff, borderRadius 3px, padding 3px 6px. Slightly tighter radius and padding than Product Update badge \u2014 distinguishes tier."
+  },
+  {
+    "name": "Category Tab / Filter Pill",
+    "role": "Section filters like 'Automotive', 'Weather', 'Fleets'",
+    "description": "Active state: backgroundColor #007afc, color #ffffff, borderRadius 100px. Inactive: backgroundColor transparent, color #a0aaba, borderRadius 100px with visible border. Cera Pro 500 at 15\u201316px."
+  },
+  {
+    "name": "News / Product Carousel Card",
+    "role": "Homepage feature cards for recent updates and partnerships",
+    "description": "borderRadius 24px, dark surface #15171b, badge at top-left, headline Cera Pro 700, directional arrow link in #007afc. Card edges use inset shadow rgb(14,16,18) to bleed into page background."
+  },
+  {
+    "name": "Logo Grid (Social Proof Rail)",
+    "role": "Partner/customer logo display \u2014 GM, CNN, BMW, Strava etc.",
+    "description": "Logos rendered in #a0aaba (desaturated) against #0e1012 background. No card frames. Two rows, roughly 6 logos per row. Tight letter-spaced all-caps Cera Pro label above in #566171 at 12px."
+  },
+  {
+    "name": "Top Navigation Bar",
+    "role": "Sticky site nav with logo, dropdown menus, CTA",
+    "description": "backgroundColor #0e1012, height 62px, boxShadow rgb(14,16,18) 0px 0px 100px 50px on scroll. Left: Mapbox wordmark in #ffffff. Center: dropdown nav links in Cera Pro 400/500 at 15px color #ffffff. Right: 'Log in' ghost text + 'Sign up' primary pill (#007afc)."
+  },
+  {
+    "name": "Video / Map Embed Block",
+    "role": "Full-width media with inset shadow fade at bottom edge",
+    "description": "borderRadius 24px, inset shadow rgb(14,16,18) 0px -175px 175px -75px at bottom \u2014 the map tile or video appears to dissolve into the page background. Plays on the 'emerging from darkness' surface philosophy."
+  }
+]

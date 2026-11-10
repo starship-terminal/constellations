@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/5618f26a-4df6-42cb-8081-15e4318b54ff",
   "source_url": "https://dropmark.com",
   "extracted_at": "2026-06-03T20:03:45.682Z",
-  "fetched_at": "2026-10-20T08:21:54Z",
+  "fetched_at": "2026-11-08T04:20:03Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e3120ea3-ccb0-4a69-871a-f524b6b4faf4.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

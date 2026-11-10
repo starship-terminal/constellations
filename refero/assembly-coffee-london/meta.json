@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/8288950a-2731-44fd-85ef-211aecd8091d",
   "source_url": "https://assemblycoffee.co.uk",
   "extracted_at": "2026-06-03T18:15:44.656Z",
-  "fetched_at": "2026-10-20T08:21:31Z",
+  "fetched_at": "2026-11-08T04:19:45Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/8765a1de-348c-46ad-8cae-0ce3fd44f17f.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/1275781a-2157-4193-8de2-478254ba0c92.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/b83232d3-a603-4d39-be80-5d5a036d6d0b.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/7827703a-409b-4969-b33b-f15ebb8eeb45.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

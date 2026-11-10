@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/3f6ef3c1-f98f-4cd9-bdf0-545059758705",
   "source_url": "https://atlascard.com",
   "extracted_at": "2026-06-03T15:45:55.597Z",
-  "fetched_at": "2026-10-20T08:25:00Z",
+  "fetched_at": "2026-11-08T04:19:46Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/40c6449e-a783-4276-a34c-2facafd8aafe.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ba3a30d1-93a5-47c6-8a18-e1f0d0345f58.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/92c80c15-9e67-408c-b99d-4676e67d6858.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/55b8665f-1277-45d3-a4f7-e4f8b9c6ed4d.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

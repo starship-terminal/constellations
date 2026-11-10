@@ -36,7 +36,7 @@ one place instead of in whichever project first needed them.
 
 It holds two stores of styles at two confidence levels:
 
-- [systems/](systems): the packages, one per product (47 today), measured
+- [systems/](systems): the packages, one per product (50 today), measured
   from real captures. Every value carries an evidence label saying where it
   came from. These are the only values to design from.
 - [refero/](refero): a snapshot of [styles.refero.design](https://styles.refero.design)
@@ -85,7 +85,7 @@ agent (the MCP server and `ds`).
 
 | Area | What you get |
 | --- | --- |
-| **Packages** | 47 products under [systems/](systems), all in one layout: `tokens.json` (W3C DTCG, Tokens Studio multi-set), a generated `DESIGN.md`, a `style-guide.html` rendering every token, `components.md`, `patterns.md`, screenshots, and the tools that rebuild it |
+| **Packages** | 50 products under [systems/](systems), all in one layout: `tokens.json` (W3C DTCG, Tokens Studio multi-set), a generated `DESIGN.md`, a `style-guide.html` rendering every token, `components.md`, `patterns.md`, screenshots, and the tools that rebuild it |
 | **Evidence** | Every token says where it came from: a measured CSS read, a reconstruction, or a reviewer's call ([docs/EVIDENCE.md](docs/EVIDENCE.md)) |
 | **Gallery** | One card per package with cover, icon, colour roles and fonts; per-package pages running Screenshots, Brief, Colors, Type, Spacing, Shape, Components, Icons, Health and Files (sections a package has nothing for are hidden); search over names, uses, tags and themes |
 | **Refero** | 1,342 styles labelled by product type and design style, browsed beside the packages but never trusted over them |
@@ -250,8 +250,17 @@ what is open, with the evidence.
 | <img src="systems/sentry/icon.png" width="20" alt="sentry"> | [sentry](systems/sentry/README.md) | Dense monitoring dashboards, trace waterfalls, diagnostic tables, query builders and filters | 2026-10-31 | light, dark | 6 of 25 met, 15 partly, 4 missing | `components/`, `icons/` |
 | <img src="systems/attio/icon.png" width="20" alt="attio"> | [attio](systems/attio/README.md) | Dense CRM tables, configurable views, record panels and progressive onboarding with quiet neutral chrome and blue primary actions. | 2026-10-31 | light, dark | 5 of 25 met, 19 partly, 1 missing | `icons/` |
 | <img src="systems/supabase/icon.png" width="20" alt="supabase"> | [supabase](systems/supabase/README.md) | Developer dashboards, code editors, member tables, settings, log filters, invitations and responsive navigation; database editing gaps documented | 2026-10-31 | dark, light | 5 of 25 met, 18 partly, 2 missing | `icons/` |
+| <img src="systems/1password/icon.png" width="20" alt="1password"> | [1password](systems/1password/README.md) | Password/security product marketing: announcement strip + white nav chrome, navy gradient hero, segment-selector plan pill, pricing columns, FAQ accordions | 2026-11-08 | light | not graded yet | `icons/` |
+| <img src="systems/aaply/icon.png" width="20" alt="aaply"> | [aaply](systems/aaply/README.md) | Playful product-marketing pages: floating pill nav, Poppins display with inline emoji atoms, lime/black CTA pairs, chat-annotation bubbles, pricing rail with lime plan card, black footer band | 2026-11-08 | light | not graded yet | `icons/` |
 | <img src="systems/ableton/icon.png" width="20" alt="ableton"> | [ableton](systems/ableton/README.md) | Music software marketing: restrained black Futura on white, one signature #0000ff blue, zero border radius, full-bleed teaser cells, a black consent card and resting login/register forms | 2026-11-08 | light | not graded yet | none |
 | <img src="systems/aboardhr/icon.png" width="20" alt="aboardhr"> | [aboardhr](systems/aboardhr/README.md) | HR product marketing: flat #fafafa ground, OS-ui stack semibold display type, pastel card tints (blue, mint, pink, lavender) with no borders or shadows, full-pill CTAs in a single bright blue | 2026-11-10 | light | not graded yet | none |
+| <img src="systems/acnestudios/icon.png" width="20" alt="acnestudios"> | [acnestudios](systems/acnestudios/README.md) | Fashion storefront: near-pure monochrome with one electric-blue accent, 12px Helvetica caps labels, hairline rules, 60px rails, 360px side drawers, mono price numerals | 2026-11-09 | light | not graded yet | `icons/` |
+| <img src="systems/acuityscheduling/icon.png" width="20" alt="acuityscheduling"> | [acuityscheduling](systems/acuityscheduling/README.md) | Booking-software marketing pages: pastel hero gradients, Clarkson Serif headlines in navy #283849, 12px-radius ink buttons, cream and lavender cards, a Squarespace account gate with square black-ruled OAuth rows | 2026-11-10 | light | not graded yet | `icons/` |
+| <img src="systems/airbnb/icon.png" width="20" alt="airbnb"> | [airbnb](systems/airbnb/README.md) | Public travel marketplace: the capsule Where/When/Who search bar, photo-led listing cards with the stroked wishlist heart, hairline-separated surfaces, one Rausch pink for end-of-flow actions, and a full set of declared-but-unapplied dark values | 2026-11-09 | light, dark | not graded yet | `icons/` |
+| <img src="systems/allbirds/icon.png" width="20" alt="allbirds"> | [allbirds](systems/allbirds/README.md) | Sustainable-footwear retail: storefront chrome, collection grid with filter sheet, product page with size grid, cart drawer | 2026-11-08 | light | not graded yet | `icons/` |
+| <img src="systems/anam/icon.png" width="20" alt="anam"> | [anam](systems/anam/README.md) | Real-time AI avatar marketing and docs: live video persona cards, frosted-glass controls over video, a single orange accent on black and white, and a Mintlify docs surface with a dark theme | 2026-11-09 | light, dark | not graded yet | none |
+| <img src="systems/anthropic/icon.png" width="20" alt="anthropic"> | [anthropic](systems/anthropic/README.md) | AI-product marketing pages, pricing pages, sales forms and developer docs; ivory editorial surfaces with serif headlines, pill nav chrome and a restrained clay accent | 2026-11-09 | light, dark | not graded yet | none |
+| <img src="systems/untitled-stream/icon.png" width="20" alt="untitled-stream"> | [untitled-stream](systems/untitled-stream/README.md) | Music-collaboration product marketing: bracketed chrome, black-gradient pill CTAs, iridescent disc artwork, frosted bottom pill bar, pricing rail with plan cards | 2026-11-08 | light, dark | not graded yet | `icons/` |
 
 <!-- catalog:end -->
 

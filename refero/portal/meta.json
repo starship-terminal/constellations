@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/632b65d0-17de-4972-a3d1-63d5ab062ab8",
   "source_url": "https://portalgaming.com",
   "extracted_at": "2026-06-03T20:12:42.390Z",
-  "fetched_at": "2026-10-20T08:23:52Z",
+  "fetched_at": "2026-11-08T04:20:40Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e2b5e365-5f9c-4fab-9323-4a8e04c1fd42.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/d71fb026-0fca-4e13-8021-397452f2330e.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/8b5b2bfb-12d8-47ea-80f1-f792b282840e.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/3898305c-71d3-45bf-82a7-56bbd81c9d33.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -1,0 +1,60 @@
+[
+  {
+    "html": "<div style=\"--color-sky-blue:#0096f7;--color-signal-orange:#ff4000;--color-ink:#000000;--color-pure-white:#ffffff;--color-parchment:#fdfdf7;--color-warm-sand:#f5f2de;--color-driftwood:#e7e3e1;--color-ash:#d3d3d3;--color-stone:#999999;--color-graphite:#666666;--font-regola:'Plus Jakarta Sans',Manrope,sans-serif;box-sizing:border-box;width:600px;background:var(--color-ink);padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;font-family:var(--font-regola);\"><p style=\"font-family:var(--font-regola);font-size:16px;line-height:1.49;letter-spacing:-0.22px;color:var(--color-pure-white);margin:0;font-weight:400;\">Support for homeowners in fire-affected Southern California communities</p><a href=\"#\" style=\"display:inline-block;background:var(--color-signal-orange);color:var(--color-pure-white);font-family:var(--font-regola);font-size:14px;font-weight:400;letter-spacing:-0.56px;padding:10px 20px;border-radius:12px;text-decoration:none;white-space:nowrap;\">Find out more</a></div>",
+    "name": "Alert Banner",
+    "role": "",
+    "description": ""
+  },
+  {
+    "html": "<div style=\"--color-sky-blue:#0096f7;--color-signal-orange:#ff4000;--color-ink:#000000;--color-pure-white:#ffffff;--color-parchment:#fdfdf7;--color-warm-sand:#f5f2de;--color-driftwood:#e7e3e1;--color-ash:#d3d3d3;--color-stone:#999999;--color-graphite:#666666;--font-regola:'Plus Jakarta Sans',Manrope,sans-serif;box-sizing:border-box;width:600px;background:var(--color-parchment);padding:48px 40px;display:flex;flex-direction:column;gap:32px;align-items:flex-start;font-family:var(--font-regola);\"><p style=\"font-family:var(--font-regola);font-size:13px;font-weight:400;letter-spacing:-0.48px;color:var(--color-graphite);margin:0;text-transform:uppercase;\">Actions</p><div style=\"display:flex;flex-wrap:wrap;gap:12px;align-items:center;\"><a href=\"#\" style=\"display:inline-block;background:var(--color-sky-blue);color:var(--color-pure-white);font-family:var(--font-regola);font-size:15px;font-weight:400;letter-spacing:-0.56px;padding:14px 24px;border-radius:12px;text-decoration:none;box-shadow:rgba(0,0,0,0.12) 0px 0.5px 2px 0px;\">Design yours</a><a href=\"#\" style=\"display:inline-block;background:var(--color-driftwood);color:var(--color-ink);font-family:var(--font-regola);font-size:15px;font-weight:400;letter-spacing:-0.56px;padding:14px 24px;border-radius:12px;text-decoration:none;box-shadow:rgba(0,0,0,0.12) 0px 0.5px 2px 0px;\">View models</a><a href=\"#\" style=\"display:inline-flex;align-items:center;gap:6px;background:rgba(0,0,0,0.04);color:var(--color-ink);font-family:var(--font-regola);font-size:15px;font-weight:400;letter-spacing:-0.56px;padding:14px 24px;border-radius:24px;text-decoration:none;\">Learn more <svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M3 7h8M7.5 3.5L11 7l-3.5 3.5\" stroke=\"#000\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a><a href=\"#\" style=\"display:inline-flex;align-items:center;gap:6px;background:transparent;color:var(--color-graphite);font-family:var(--font-regola);font-size:15px;font-weight:400;letter-spacing:-0.56px;padding:14px 0;border-radius:0;text-decoration:none;\">Tell us where to build next <svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M3 7h8M7.5 3.5L11 7l-3.5 3.5\" stroke=\"#666\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a></div></div>",
+    "name": "Button Group",
+    "role": "",
+    "description": ""
+  },
+  {
+    "html": "<div style=\"--color-sky-blue:#0096f7;--color-signal-orange:#ff4000;--color-ink:#000000;--color-pure-white:#ffffff;--color-parchment:#fdfdf7;--color-warm-sand:#f5f2de;--color-driftwood:#e7e3e1;--color-ash:#d3d3d3;--color-stone:#999999;--color-graphite:#666666;--font-regola:'Plus Jakarta Sans',Manrope,sans-serif;box-sizing:border-box;width:600px;background:var(--color-parchment);padding:40px;font-family:var(--font-regola);\"><div style=\"background:var(--color-warm-sand);border-radius:18px;padding:36px;box-shadow:rgba(0,0,0,0.12) 0px 0.5px 2px 0px;display:flex;flex-direction:column;gap:24px;\"><div style=\"width:100%;height:200px;background:linear-gradient(135deg,#e2ddc8 0%,#ccc8b0 100%);border-radius:12px;display:flex;align-items:center;justify-content:center;\"><div style=\"display:flex;flex-direction:column;align-items:center;gap:6px;\"><div style=\"width:100px;height:48px;background:#4a5240;border-radius:6px 6px 0 0;position:relative;\"><div style=\"position:absolute;bottom:0;left:10px;width:18px;height:28px;background:#2a3020;border-radius:3px 3px 0 0;\"></div><div style=\"position:absolute;top:12px;right:12px;width:20px;height:14px;background:rgba(255,255,255,0.3);border-radius:2px;\"></div></div><div style=\"width:116px;height:8px;background:#3a3a3a;border-radius:0 0 3px 3px;\"></div></div></div><div style=\"display:flex;flex-direction:column;gap:8px;\"><div style=\"display:flex;align-items:baseline;justify-content:space-between;gap:12px;\"><h2 style=\"font-family:var(--font-regola);font-size:48px;line-height:1;letter-spacing:-1.3px;color:var(--color-ink);margin:0;font-weight:400;\">XL 10</h2><span style=\"font-family:var(--font-regola);font-size:14px;line-height:1.5;letter-spacing:-0.56px;color:var(--color-graphite);font-weight:400;\">New model</span></div><p style=\"font-family:var(--font-regola);font-size:18px;line-height:1.33;letter-spacing:-0.18px;color:var(--color-ink);margin:0;font-weight:400;\">Introducing Backyard XL 10: Two bedrooms, two baths. 950 square feet.</p></div><div style=\"display:flex;flex-wrap:wrap;gap:10px;\"><div style=\"background:rgba(0,0,0,0.06);border-radius:24px;padding:8px 16px;font-family:var(--font-regola);font-size:13px;letter-spacing:-0.48px;color:var(--color-ink);\">2 bed</div><div style=\"background:rgba(0,0,0,0.06);border-radius:24px;padding:8px 16px;font-family:var(--font-regola);font-size:13px;letter-spacing:-0.48px;color:var(--color-ink);\">2 bath</div><div style=\"background:rgba(0,0,0,0.06);border-radius:24px;padding:8px 16px;font-family:var(--font-regola);font-size:13px;letter-spacing:-0.48px;color:var(--color-ink);\">950 sq ft</div><div style=\"background:rgba(0,0,0,0.06);border-radius:24px;padding:8px 16px;font-family:var(--font-regola);font-size:13px;letter-spacing:-0.48px;color:var(--color-ink);\">Solar-ready</div></div><a href=\"#\" style=\"display:inline-flex;align-items:center;gap:6px;background:var(--color-pure-white);color:var(--color-ink);font-family:var(--font-regola);font-size:15px;font-weight:400;letter-spacing:-0.56px;padding:14px 22px;border-radius:12px;text-decoration:none;box-shadow:rgba(0,0,0,0.2) 0px 2px 4px 0px;align-self:flex-start;\">Learn more <svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M3 7h8M7.5 3.5L11 7l-3.5 3.5\" stroke=\"#000\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a></div></div>",
+    "name": "Model Feature Card",
+    "role": "",
+    "description": ""
+  },
+  {
+    "name": "Primary Button",
+    "role": "The main call-to-action button.",
+    "description": "Background: #0096f7 (Sky Blue). Text: #ffffff (Pure White). Padding: 14px. Radius: 12px. Font: regola, 14-15px."
+  },
+  {
+    "name": "Urgent CTA Button",
+    "role": "A high-contrast call-to-action for dark headers.",
+    "description": "Background: #ff4000 (Signal Orange). Text: #ffffff (Pure White). Padding: ~8px 18px. Radius: 12px."
+  },
+  {
+    "name": "Pill Ghost Button",
+    "role": "A subtle, secondary action link styled as a button.",
+    "description": "Background: rgba(0, 0, 0, 0.04). Text: #000000 (Ink). Radius: 24px. Padding may vary, often used for text links."
+  },
+  {
+    "name": "Standard Card",
+    "role": "Default content container for features or testimonials.",
+    "description": "Background: #f7f7f0 (darker Parchment). Radius: 12px. Shadow: `rgba(0, 0, 0, 0.2) 0px 2px 4px 0px`. Contains its own padded content."
+  },
+  {
+    "name": "Warm Sand Card",
+    "role": "A warmer, more prominent card variant.",
+    "description": "Background: #f5f2de (Warm Sand). Radius: 18px. Shadow: `rgba(0, 0, 0, 0.12) 0px 0.5px 2px 0px`. Padding: 36px."
+  },
+  {
+    "name": "Text Input Field",
+    "role": "Standard user input field.",
+    "description": "Background: rgba(0, 0, 0, 0.03). Border: 1px solid rgba(0, 0, 0, 0.1). Radius: 12px. Padding: 15px. Text: #000000 (Ink)."
+  },
+  {
+    "name": "Hero Banner",
+    "role": "The top-of-page introduction, transitioning on scroll.",
+    "description": "Initial state: Black (#000000) background with white text and a Sky Blue or Signal Orange CTA. Scrolls to a transparent or white background integrated with the main page content."
+  },
+  {
+    "name": "Inline-Render Headline",
+    "role": "A signature component mixing large text with small 3D product renders.",
+    "description": "Uses `display` or `heading-lg` typography with small, floating product models (e.g., houses) interspersed within the text flow, creating a dynamic, informational headline."
+  }
+]

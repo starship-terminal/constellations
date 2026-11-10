@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/fabacd2a-acb6-46c4-939c-4a464df15440",
   "source_url": "https://aboardhr.com",
   "extracted_at": "2026-06-03T18:06:00.772Z",
-  "fetched_at": "2026-10-20T08:24:34Z",
+  "fetched_at": "2026-11-08T04:19:37Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e69a8242-71bb-43b4-abc4-777ea9b3a109.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/6fc44347-d101-4743-bb89-2378c017c558.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/b8839fb8-e0c0-4013-a157-cf96df88851f.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b4b988e6-dc51-415e-86e5-5bad4b201cba.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

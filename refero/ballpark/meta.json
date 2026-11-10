@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/9342e89b-c2fe-4acf-9993-53b44e0c13b5",
   "source_url": "https://ballparkhq.com",
   "extracted_at": "2026-06-03T15:43:57.455Z",
-  "fetched_at": "2026-10-20T08:25:01Z",
+  "fetched_at": "2026-11-08T04:19:48Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6a4d55ee-f9db-49c3-baea-5d5efe9985d3.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/53aef408-89f0-46cd-9b66-c9afec2b0b0b.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/5b594ea4-3a89-4337-8f4b-36e06677b757.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/99c4dc84-3adf-452d-9c11-80c060f4969c.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

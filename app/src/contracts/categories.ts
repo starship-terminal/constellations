@@ -16,6 +16,7 @@ const legacyCategoryLabels: Record<string, string | string[]> = {
   fintech: "Finance",
   finance: "Finance",
   ecommerce: "Marketplace",
+  "e-commerce": "Marketplace",
   commerce: "Marketplace",
   entertainment: [
     "Entertainment",

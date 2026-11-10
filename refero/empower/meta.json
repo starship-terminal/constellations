@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/8d3dc65e-4443-4bb3-b1a9-b0fc98381db9",
   "source_url": "https://empower.me",
   "extracted_at": "2026-06-03T19:19:29.646Z",
-  "fetched_at": "2026-10-20T08:22:16Z",
+  "fetched_at": "2026-11-08T04:20:05Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/c59112fe-2886-45aa-b1fd-3cee8e0501d6.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/04fac027-ce20-4836-9473-38ccc98c3bb6.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/0373329a-a601-46dd-827a-a70be32f9434.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/8d7a433b-2130-495c-bfd4-7a6c4fd03180.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

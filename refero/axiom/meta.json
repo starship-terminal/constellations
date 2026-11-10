@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/c809190a-035c-458d-87ed-4758807dd84e",
   "source_url": "https://axiom.co",
   "extracted_at": "2026-06-03T17:36:40.258Z",
-  "fetched_at": "2026-10-20T08:24:42Z",
+  "fetched_at": "2026-11-08T04:19:47Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/1b5c27c9-e0be-475f-a9be-70850759dd8a.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/6f530b45-fda0-4855-b78c-4558f35bedbf.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/3ce49ef3-22c9-48de-adcb-c765fe292c3c.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/4035444e-8fff-4aef-8f3b-2a7f780e70a8.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

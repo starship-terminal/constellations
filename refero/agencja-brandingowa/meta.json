@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/c43237e3-dae2-4fc6-a917-519b25c870e5",
   "source_url": "https://247studio.co",
   "extracted_at": "2026-06-03T17:35:02.637Z",
-  "fetched_at": "2026-10-20T08:22:58Z",
+  "fetched_at": "2026-11-08T04:19:39Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/22aafc51-be27-4458-9763-96c2b5e17d25.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/e168042f-8ee7-4609-9487-38592bec5e67.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/3a8e800b-ae67-491f-8e59-4ed97d825f84.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b96cfec9-5e7a-468c-b1aa-91675e983df8.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

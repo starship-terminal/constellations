@@ -1,0 +1,481 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. A leaf with \"var\" takes its value from that custom property's resolved entry in css-vars.json — the Vite/Tailwind build declares a custom semantic set (--color-primary-label, --color-shading, --super-title-size, the --daw-* production colours) plus Tailwind v4 utilities; with \"theme\": \"dark\" the value is read from the stylesheet's own [data-theme=\"dark\"] override block. A leaf with \"value\" carries a measured value and names the measurement in \"source\" (an anchor of raw/measurements.md, written from raw/components-computed.json). Two themes: light (the marketing site) and dark (the app).",
+ "core": {
+  "palette": {
+   "black": {
+    "var": "--color-black",
+    "type": "color",
+    "description": "#191919, the product's near-black: primary label, inverted pills, the button gradient's top"
+   },
+   "white": {
+    "var": "--color-white",
+    "type": "color",
+    "description": "#fff: page background and inverted-pill text"
+   },
+   "gray": {
+    "var": "--color-gray",
+    "type": "color",
+    "description": "#7e7e7e, the secondary label grey"
+   },
+   "light-gray": {
+    "var": "--color-light-gray",
+    "type": "color"
+   },
+   "tertiary-gray": {
+    "var": "--color-tertiary-label",
+    "type": "color",
+    "description": "#a6a6a6 placeholder/disabled-adjacent grey"
+   },
+   "blue": {
+    "var": "--color-blue",
+    "type": "color",
+    "description": "#0056fc, the link/action blue"
+   },
+   "untitled-blue": {
+    "var": "--color-untitled-blue",
+    "type": "color",
+    "description": "#5a8ff7, the softer brand blue"
+   },
+   "untitled-pink": {
+    "var": "--color-untitled-pink",
+    "type": "color",
+    "description": "#e699ab, the brand pink"
+   },
+   "untitled-pink-bg": {
+    "var": "--color-untitled-pink-background",
+    "type": "color",
+    "description": "#ffe7f1, the pink tint surface"
+   },
+   "green": {
+    "var": "--color-green",
+    "type": "color"
+   },
+   "orange": {
+    "var": "--color-orange",
+    "type": "color"
+   },
+   "pink": {
+    "var": "--color-pink",
+    "type": "color",
+    "description": "#ff91e7 hot pink accent"
+   },
+   "red": {
+    "var": "--color-red",
+    "type": "color",
+    "description": "#ff0d16 signal red"
+   },
+   "unwrap-red": {
+    "var": "--color-unwrap-red",
+    "type": "color",
+    "description": "#f34d4d, the unwrap/share red"
+   },
+   "yellow": {
+    "var": "--color-yellow",
+    "type": "color",
+    "description": "#f9e749, the DAW marker yellow"
+   },
+   "yellow-warn": {
+    "var": "--color-yellow-warn",
+    "type": "color"
+   },
+   "accent-green": {
+    "var": "--color-accent-green",
+    "type": "color"
+   },
+   "accent-pink": {
+    "var": "--color-accent-pink",
+    "type": "color"
+   },
+   "accent-purple": {
+    "var": "--color-accent-purple",
+    "type": "color"
+   },
+   "daw": {
+    "black": { "var": "--color-daw-black", "type": "color" },
+    "gray": { "var": "--color-daw-gray", "type": "color" },
+    "blue": { "var": "--color-daw-blue", "type": "color" },
+    "red": { "var": "--color-daw-red", "type": "color" },
+    "yellow": { "var": "--color-daw-yellow", "type": "color" },
+    "light-yellow": { "var": "--color-daw-light-yellow", "type": "color" },
+    "_doc": "The DAW (digital-audio-workstation) production palette inside the app"
+   },
+   "shading": {
+    "DEFAULT": {
+     "var": "--color-shading",
+     "type": "color",
+     "description": "rgba(26,26,26,.05), the frosted fill of every ghost pill"
+    },
+    "dark": { "var": "--color-shading-dark", "type": "color" },
+    "light": { "var": "--color-shading-light", "type": "color" }
+   },
+   "hover": {
+    "var": "--color-hover",
+    "type": "color",
+    "description": "rgba(26,26,26,.02), the hairline hover wash"
+   },
+   "border": {
+    "var": "--color-border",
+    "type": "color",
+    "description": "rgba(26,26,26,.1), the 10% keyline"
+   },
+   "surface-frost": {
+    "var": "--color-surface-frost-always-on-dark",
+    "type": "color",
+    "description": "rgba(38,38,38,.9), the frosted dark glass the consent card paints even on the light site"
+   },
+   "tape": {
+    "background": { "var": "--color-tape-background", "type": "color", "description": "rgba(255,255,255,.5), the cassette-tape label surface" },
+    "text": { "var": "--color-tape-text", "type": "color", "description": "rgba(26,26,26,.5) on the tape label" }
+   }
+  },
+  "font": {
+   "family": {
+    "untitled-sans": {
+     "type": "fontFamily",
+     "value": "\"Untitled Sans\", sans-serif",
+     "source": "hero-title default fontFamily; css-vars.json fonts: UntitledSans-Regular @font-face",
+     "description": "Untitled Sans, the brand's own grotesque, everywhere on the site"
+    },
+    "plex-mono": {
+     "type": "fontFamily",
+     "value": "\"IBM Plex Mono\", monospace",
+     "source": "css-vars.json fonts: IBMPlexMono-Regular @font-face",
+     "description": "IBM Plex Mono, the note-mono face used for code and metadata"
+    }
+   },
+   "size": {
+    "footnote": { "var": "--footnote-size", "type": "dimension", "description": "12px, the consent/button micro copy" },
+    "subhead": { "var": "--subhead-size", "type": "dimension", "description": "13px, nav links, pill labels, legal" },
+    "body": { "var": "--body-size", "type": "dimension", "description": "15px, the base text" },
+    "title": { "var": "--title-size", "type": "dimension", "description": "18px" },
+    "large-title": { "var": "--large-title-size", "type": "dimension", "description": "22px" },
+    "super-title": { "var": "--super-title-size", "type": "dimension", "description": "26px, the display size: hero, pricing and plan names" },
+    "note-mono": { "var": "--note-mono-size", "type": "dimension", "description": "12px Plex Mono metadata" },
+    "text-4xl": { "var": "--text-4xl", "type": "dimension", "description": "28px, the mobile display size (measured m-hero-title)" }
+   },
+   "leading": {
+    "footnote": { "var": "--footnote-height", "type": "dimension" },
+    "subhead": { "var": "--subhead-height", "type": "dimension" },
+    "body": { "var": "--body-height", "type": "dimension" },
+    "title": { "var": "--title-height", "type": "dimension" },
+    "large-title": { "var": "--large-title-height", "type": "dimension" },
+    "super-title": { "var": "--super-title-height", "type": "dimension" },
+    "note-mono": { "var": "--note-mono-height", "type": "dimension" },
+    "4xl": { "var": "--leading-4xl", "type": "dimension", "description": "34px, paired with the 28px mobile display" }
+   },
+   "weight": {
+    "regular": { "var": "--font-weight-normal", "type": "fontWeight" },
+    "medium": { "var": "--font-weight-medium", "type": "fontWeight" },
+    "semibold": {
+     "var": "--font-weight-semibold",
+     "type": "fontWeight",
+     "description": "600 everywhere a *-semibold utility is applied; measured components paint at 500/600"
+    },
+    "bold": { "var": "--font-weight-bold", "type": "fontWeight" }
+   },
+   "tracking": {
+    "footnote": { "var": "--footnote-tracking", "type": "dimension", "description": "-0.41px" },
+    "subhead": { "var": "--subhead-tracking", "type": "dimension", "description": "-0.39px" },
+    "body": { "var": "--body-tracking", "type": "dimension", "description": "-0.45px, the signature tight tracking" },
+    "title": { "var": "--title-tracking", "type": "dimension", "description": "-0.54px" },
+    "large-title": { "var": "--large-title-tracking", "type": "dimension", "description": "-0.66px" },
+    "super-title": { "var": "--super-title-tracking", "type": "dimension", "description": "-0.78px" },
+    "mobile-display": {
+     "var": "--tracking-tight-4",
+     "type": "dimension",
+     "description": "-1.64px, the tightest tracking; measured on the 28px mobile hero"
+    }
+   }
+  },
+  "radius": {
+   "card": {
+    "type": "dimension",
+    "value": "20px",
+    "source": "plan-card default (rounded-20); billing-yearly selected span.rounded-20",
+    "description": "The card/segment radius"
+   },
+   "consent": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "consent-card default borderTopLeftRadius",
+    "description": "The frosted consent card"
+   },
+   "pill": {
+    "type": "dimension",
+    "value": "33554400px",
+    "source": "cta-enter-app default borderTopLeftRadius (rounded-full resolves to CSS infinity)",
+    "description": "rounded-full: every pill is a full capsule"
+   }
+  },
+  "blur": {
+   "xs": { "var": "--blur-xs", "type": "dimension" },
+   "sm": { "var": "--blur-sm", "type": "dimension" },
+   "md": { "var": "--blur-md", "type": "dimension", "description": "12px, the frosted-pill backdrop blur" },
+   "xl": { "var": "--blur-xl", "type": "dimension" }
+  },
+  "easing": {
+   "default": { "var": "--default-transition-timing-function", "type": "cubicBezier" },
+   "in": { "var": "--ease-in", "type": "cubicBezier" },
+   "out": { "var": "--ease-out", "type": "cubicBezier" },
+   "in-out": { "var": "--ease-in-out", "type": "cubicBezier" }
+  },
+  "duration": {
+   "default": {
+    "type": "duration",
+    "value": "150ms",
+    "source": "css-var --default-transition-duration (.15s)",
+    "description": "The opacity hovers run transition-opacity duration-150/300"
+   },
+   "slow": {
+    "type": "duration",
+    "value": "300ms",
+    "source": "a.transition-opacity.duration-300 throughout the footer and pills"
+   }
+  },
+  "layout": {
+   "header-height": { "var": "--header-height", "type": "dimension", "description": "152px, the app's declared header budget" },
+   "perspective": { "var": "--perspective-distant", "type": "dimension", "description": "1200px, the 3D perspective for disc tilts" }
+  },
+  "typography": {
+   "super-title": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{font.family.untitled-sans}",
+     "fontWeight": 500,
+     "fontSize": "26px",
+     "lineHeight": "32px",
+     "letterSpacing": "-0.78px"
+    },
+    "source": "measured raw/measurements.md#hero-title, #pricing-title, #plan-name",
+    "description": "The display cut: hero tagline, page titles, plan names"
+   },
+   "mobile-display": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{font.family.untitled-sans}",
+     "fontWeight": 500,
+     "fontSize": "28px",
+     "lineHeight": "34px",
+     "letterSpacing": "-1.64px"
+    },
+    "source": "measured raw/measurements.md#m-hero-title",
+    "description": "The mobile hero sets 28/34 at the tightest tracking"
+   },
+   "title": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{font.family.untitled-sans}",
+     "fontWeight": 500,
+     "fontSize": "18px",
+     "lineHeight": "22px",
+     "letterSpacing": "-0.54px"
+    },
+    "source": "measured raw/measurements.md#trust-section-title",
+    "description": "Section headings inside the text pages"
+   },
+   "body": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{font.family.untitled-sans}",
+     "fontWeight": 400,
+     "fontSize": "15px",
+     "lineHeight": "20px",
+     "letterSpacing": "-0.45px"
+    },
+    "source": "measured raw/measurements.md#feature-row, #footer",
+    "description": "Site body"
+   },
+   "body-semibold": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{font.family.untitled-sans}",
+     "fontWeight": 500,
+     "fontSize": "15px",
+     "lineHeight": "20px",
+     "letterSpacing": "-0.45px"
+    },
+    "source": "measured raw/measurements.md#pill-social, #cta-hiring, #nav-membership",
+    "description": "The pill-label and heading weight — nearly every label is semibold"
+   },
+   "subhead": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{font.family.untitled-sans}",
+     "fontWeight": 400,
+     "fontSize": "13px",
+     "lineHeight": "16px",
+     "letterSpacing": "-0.39px"
+    },
+    "source": "measured raw/measurements.md#footer-link, #read-more, #cookie-settings",
+    "description": "Small labels: legal links, Read more, cookie settings"
+   },
+   "subhead-medium": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{font.family.untitled-sans}",
+     "fontWeight": 500,
+     "fontSize": "13px",
+     "lineHeight": "16px",
+     "letterSpacing": "-0.39px"
+    },
+    "source": "measured raw/measurements.md#cta-enter-app, #cta-subscribe",
+    "description": "The pill-label cut: Enter App, Subscribe (the same 13/16 as subhead at weight 500)"
+   },
+   "footnote": {
+    "type": "typography",
+    "value": {
+     "fontFamily": "{font.family.untitled-sans}",
+     "fontWeight": 500,
+     "fontSize": "12px",
+     "lineHeight": "16px",
+     "letterSpacing": "-0.41px"
+    },
+    "source": "measured raw/measurements.md#consent-accept, #consent-reject",
+    "description": "The consent card's button micro copy"
+   }
+  }
+ },
+ "light": {
+  "background": {
+   "page": { "value": "{palette.white}", "type": "color", "source": "css-var --color-primary-background (#fff)" },
+   "surface": { "var": "--color-secondary-background", "type": "color", "description": "#f2f2f2 raised panels" },
+   "surface-raised": { "var": "--color-secondary-background-dark", "type": "color", "description": "#eee, the plan cards" },
+   "tertiary": { "var": "--color-tertiary-background", "type": "color" },
+   "frost": { "value": "{palette.surface-frost}", "type": "color", "source": "consent-card default backgroundColor", "description": "The dark frosted glass of the consent card, always dark even on light" },
+   "action": {
+    "type": "gradient",
+    "value": [
+     { "color": "#242424", "position": 0 },
+     { "color": "#101010", "position": 1 }
+    ],
+    "source": "css-var --color-button-background-primary (linear-gradient 180deg); cta-enter-app paint bgImage",
+    "description": "The black pill is a vertical 242424→101010 gradient, not a flat fill"
+   },
+   "action-secondary": { "var": "--color-button-background-secondary", "type": "color", "description": "#f2f2f2" },
+   "shading": { "value": "{palette.shading.DEFAULT}", "type": "color", "source": "semantic of core.palette.shading", "description": "The ghost-pill fill" },
+   "hover": { "value": "{palette.hover}", "type": "color", "source": "semantic of core.palette.hover" }
+  },
+  "text": {
+   "primary": { "var": "--color-primary-label", "type": "color", "description": "#191919" },
+   "secondary": { "var": "--color-secondary-label", "type": "color", "description": "#7e7e7e, footer/legal links" },
+   "tertiary": { "var": "--color-tertiary-label", "type": "color" },
+   "inverse": { "value": "{palette.white}", "type": "color", "source": "cta-enter-app default color" },
+   "disabled": { "var": "--color-disabled", "type": "color", "description": "#ccc" },
+   "on-action": { "var": "--color-button-label-primary", "type": "color", "description": "#fff on the black gradient pill" }
+  },
+  "border": {
+   "stroke": { "value": "{palette.border}", "type": "color", "source": "css-var --color-border" }
+  },
+  "tape": {
+   "background": { "value": "{palette.tape.background}", "type": "color", "source": "semantic of core.palette.tape" },
+   "text": { "value": "{palette.tape.text}", "type": "color", "source": "semantic of core.palette.tape" }
+  }
+ },
+ "dark": {
+  "background": {
+   "page": { "var": "--color-primary-background", "type": "color", "theme": "dark", "description": "var(--color-black) → #191919" },
+   "surface": { "var": "--color-secondary-background", "type": "color", "theme": "dark", "description": "#202020" },
+   "surface-raised": { "var": "--color-secondary-background-dark", "type": "color", "theme": "dark", "description": "#252525" },
+   "tertiary": { "var": "--color-tertiary-background", "type": "color", "theme": "dark", "description": "#282828" },
+   "gradient": { "var": "--color-background-gradient", "type": "gradient", "theme": "dark", "description": "#545454→#464646 hero gradient" },
+   "elevated": { "var": "--color-elevated-background-gradient", "type": "gradient", "theme": "dark", "description": "#3c3c3c→#1f1f1f" },
+   "action": { "var": "--color-button-background-primary", "type": "color", "theme": "dark", "description": "var(--color-white) → #fff: the primary pill inverts to white on dark" },
+   "action-secondary": { "var": "--color-button-background-secondary", "type": "color", "theme": "dark", "description": "#464646" },
+   "shading": { "var": "--color-shading", "type": "color", "theme": "dark", "description": "hsla(white,.05)" },
+   "shading-dark": { "var": "--color-shading-dark", "type": "color", "theme": "dark" },
+   "hover": { "var": "--color-hover", "type": "color", "theme": "dark", "description": "hsla(white,.02)" }
+  },
+  "text": {
+   "primary": { "var": "--color-primary-label", "type": "color", "theme": "dark", "description": "var(--color-white) → #fff" },
+   "secondary": { "var": "--color-secondary-label", "type": "color", "theme": "dark", "description": "var(--color-gray) → #7e7e7e" },
+   "tertiary": { "var": "--color-tertiary-label", "type": "color", "theme": "dark", "description": "#a6a6a6" },
+   "inverse": { "value": "{palette.black}", "type": "color", "source": "dark inverse of primary" },
+   "disabled": { "var": "--color-disabled", "type": "color", "theme": "dark", "description": "#4c4c4c" },
+   "on-action": { "var": "--color-button-label-primary", "type": "color", "theme": "dark", "description": "var(--color-black) → #191919 on the white pill" }
+  },
+  "border": {
+   "stroke": { "var": "--color-border", "type": "color", "theme": "dark", "description": "hsla(white,.1)" }
+  },
+  "tape": {
+   "background": { "var": "--color-tape-background", "type": "color", "theme": "dark", "description": "hsla(black,.4)" },
+   "text": { "var": "--color-tape-text", "type": "color", "theme": "dark", "description": "hsla(white,.7)" }
+  },
+  "accent": {
+   "yellow": { "var": "--color-yellow", "type": "color", "theme": "dark", "description": "→ daw-yellow #f9e749" },
+   "red": { "var": "--color-red", "type": "color", "theme": "dark", "description": "→ daw-red #ff0d16" },
+   "blue": { "var": "--color-blue", "type": "color", "theme": "dark", "description": "→ daw-blue #0056fc" }
+  }
+ },
+ "component": {
+  "button": {
+   "primary": {
+    "bg": {
+     "type": "gradient",
+     "value": [
+      { "color": "#242424", "position": 0 },
+      { "color": "#101010", "position": 1 }
+     ],
+     "source": "cta-enter-app paint: a.clean-btn bgImage linear-gradient(#242424,#101010)",
+     "description": "Enter App / Subscribe: the black pill is a 180deg gradient"
+    },
+    "text": { "type": "color", "value": "#ffffff", "source": "cta-enter-app default color" },
+    "radius": { "type": "dimension", "value": "33554400px", "source": "cta-enter-app default (rounded-full / CSS infinity)" },
+    "height": { "type": "dimension", "value": "44px", "source": "cta-enter-app default rect height" },
+    "label": { "value": "{typography.subhead-medium}", "type": "typography", "source": "cta-enter-app default: 13/16 500 (medium)" }
+   },
+   "secondary": {
+    "bg": { "type": "color", "value": "rgba(26, 26, 26, 0.05)", "source": "oauth-google default backgroundColor (bg-shading)" },
+    "text": { "type": "color", "value": "#191919", "source": "oauth-google default color" },
+    "radius": { "type": "dimension", "value": "33554400px", "source": "oauth-google default (rounded-full)" },
+    "height": { "type": "dimension", "value": "52px", "source": "oauth-google default rect height" }
+   },
+   "consent-accept": {
+    "bg": { "type": "color", "value": "#ffffff", "source": "consent-accept default backgroundColor" },
+    "text": { "type": "color", "value": "#000000", "source": "consent-accept default color" },
+    "radius": { "type": "dimension", "value": "33554400px", "source": "consent-accept default" },
+    "height": { "type": "dimension", "value": "40px", "source": "consent-accept default rect height" }
+   },
+   "consent-reject": {
+    "bg": { "type": "color", "value": "rgba(255, 255, 255, 0.05)", "source": "consent-reject default backgroundColor (bg-white/5)" },
+    "text": { "type": "color", "value": "#ffffff", "source": "consent-reject default color" },
+    "radius": { "type": "dimension", "value": "33554400px", "source": "consent-reject default" },
+    "height": { "type": "dimension", "value": "40px", "source": "consent-reject default rect height" }
+   }
+  },
+  "header": {
+   "height": { "type": "dimension", "value": "88px", "source": "header default rect height (the marketing band)" },
+   "text": { "type": "color", "value": "#191919", "source": "nav-membership default color" }
+  },
+  "pill-bar": {
+   "height": { "type": "dimension", "value": "92px", "source": "pill-bar default rect height (fixed bottom band)" },
+   "pill-bg": { "type": "color", "value": "rgba(26, 26, 26, 0.05)", "source": "pill-platform default backgroundColor" },
+   "pill-height": { "type": "dimension", "value": "44px", "source": "pill-platform default rect height" }
+  },
+  "plan-card": {
+   "bg": { "type": "color", "value": "#eeeeee", "source": "plan-card default backgroundColor (bg-secondary-background-dark)" },
+   "radius": { "type": "dimension", "value": "20px", "source": "plan-card default borderTopLeftRadius (rounded-20)" },
+   "width": { "type": "dimension", "value": "350px", "source": "plan-card default rect width" },
+   "height": { "type": "dimension", "value": "536px", "source": "plan-card default rect height" }
+  },
+  "billing-toggle": {
+   "selected-bg": { "type": "color", "value": "rgba(26, 26, 26, 0.05)", "source": "billing-yearly paint: span.bg-shading (the selected segment)" },
+   "selected-radius": { "type": "dimension", "value": "20px", "source": "billing-yearly paint: span.rounded-20" },
+   "option-height": { "type": "dimension", "value": "44px", "source": "billing-yearly default rect height" }
+  },
+  "consent-card": {
+   "bg": { "type": "color", "value": "rgba(38, 38, 38, 0.9)", "source": "consent-card default backgroundColor (frost-background, surface-frost-always-on-dark)" },
+   "text": { "type": "color", "value": "#ffffff", "source": "consent-card default color" },
+   "radius": { "type": "dimension", "value": "16px", "source": "consent-card default borderTopLeftRadius" },
+   "width": { "type": "dimension", "value": "500px", "source": "consent-card default rect width" }
+  },
+  "disc": {
+   "size": { "type": "dimension", "value": "656px", "source": "disc default rect (the hero CD renders, background-image webp)" },
+   "radius": { "value": "{radius.pill}", "type": "dimension", "source": "div.rounded-full" }
+  },
+  "login-card": {
+   "width": { "type": "dimension", "value": "342px", "source": "oauth-google default rect width (the pill column)" },
+   "oauth-height": { "type": "dimension", "value": "52px", "source": "oauth-google default rect height" },
+   "icon-size": { "type": "dimension", "value": "220px", "source": "login-icon default rect (the 220px .amulet-clip-mask disc mark; its 189px inset ring is inside it)" }
+  }
+ }
+}

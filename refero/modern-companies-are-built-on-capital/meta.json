@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/37e20981-1f35-4314-87c1-fdb61ab2f0c0",
   "source_url": "https://capital.xyz",
   "extracted_at": "2026-06-03T18:36:48.159Z",
-  "fetched_at": "2026-10-20T08:24:21Z",
+  "fetched_at": "2026-11-08T04:20:31Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/90b5be16-2bc6-4761-8d96-281bec595343.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/32e539af-65fd-4031-b861-670d84b81f2c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d4145adb-be47-4829-b0de-0e4f94467f93.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/36689c8e-9aac-4f87-88cd-ccdd38fb2b70.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

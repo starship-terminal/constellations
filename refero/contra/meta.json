@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/1608cf19-b249-46d4-bd37-b4c6a7fc4b56",
   "source_url": "https://contra.com",
   "extracted_at": "2026-06-03T20:03:40.165Z",
-  "fetched_at": "2026-10-20T08:23:55Z",
+  "fetched_at": "2026-11-08T04:19:56Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/35749411-849e-412d-9e5e-c6c7b202563d.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

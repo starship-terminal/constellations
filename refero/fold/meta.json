@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/4d1d50ff-18b8-4acf-a356-48eb5c414711",
   "source_url": "https://fold.money",
   "extracted_at": "2026-06-03T18:29:54.656Z",
-  "fetched_at": "2026-10-20T08:24:25Z",
+  "fetched_at": "2026-11-08T04:20:10Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6a7cd42b-1a09-4372-ac4f-366c230b6667.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/239ccb6c-e263-466f-9232-a0fb0770e663.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/e765b0e7-7452-413c-989f-7c748a3380b0.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/38576056-92db-4c3d-95ef-4a767124ce22.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

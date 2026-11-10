@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/cc20715c-e9ab-42a7-a34b-d43d76677219",
   "source_url": "https://prismic.io",
   "extracted_at": "2026-06-03T20:03:47.833Z",
-  "fetched_at": "2026-10-20T08:23:54Z",
+  "fetched_at": "2026-11-08T04:20:41Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/ccf50034-e47b-4fbf-ba92-3a43280c758a.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/9b9da03b-3244-4565-bbff-3ac1cd01adec.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a1401b12-7cbd-4405-894b-458a75997dc1.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/5275820c-1db6-4d66-9a86-2cd2e8e148e1.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

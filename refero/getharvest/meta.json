@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/1eee9aa2-1e23-4675-9f6e-fb98c93969bd",
   "source_url": "https://www.getharvest.com",
   "extracted_at": "2026-06-03T19:38:34.816Z",
-  "fetched_at": "2026-10-20T08:22:14Z",
+  "fetched_at": "2026-11-08T04:20:12Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/eeb99904-b045-4b09-a2b3-83a591568d96.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/b2e96c9f-341c-443d-b0c7-94a558c9e6d0.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/87994482-0273-4a28-b3e4-2effe511e846.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/1527046d-003e-4f92-8242-0208b26ff89c.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

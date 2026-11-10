@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/5f128a23-f60e-4d2d-a845-c35c16d0534b",
   "source_url": "https://azak.co",
   "extracted_at": "2026-09-20T19:24:35.459Z",
-  "fetched_at": "2026-10-20T08:21:30Z",
+  "fetched_at": "2026-11-08T04:19:47Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/c7e18ba5-1921-412c-8a6b-14604e9bc664.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/4171bf1e-b354-4983-86fc-01d620b6805e.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/6b469b14-92f0-4b85-b829-b57673c16a90.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/a413f402-6ef0-4e7a-bee1-274090020b65.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

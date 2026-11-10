@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/227ff379-9b46-44fc-8ff1-37e0472239a6",
   "source_url": "https://www.altiuslabs.xyz",
   "extracted_at": "2026-06-03T21:39:22.697Z",
-  "fetched_at": "2026-10-20T08:23:30Z",
+  "fetched_at": "2026-11-08T04:19:41Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/27b643c5-afe9-4bb4-aed5-5c7dcde86385.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/d7968ea5-cad3-492e-abd8-ec2c92f9afb4.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/8d292e45-3977-4573-a24e-29d7d84f75a5.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b44bbc39-f1a1-4c1e-b1ec-a1138ed2f1e2.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

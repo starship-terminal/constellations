@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/10b9e7bb-9ffb-43eb-9360-5628d8390107",
   "source_url": "https://www.studioheed.com",
   "extracted_at": "2026-06-03T21:57:54.117Z",
-  "fetched_at": "2026-10-20T08:21:43Z",
+  "fetched_at": "2026-11-08T04:20:53Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/120a8337-2f1a-48ec-82ba-45af55f30783.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/99b923c1-3443-40ef-a900-1288b21f9530.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/19c3e65d-32a5-48a1-9b66-e13a0275120e.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/37486463-fac0-480f-80bb-57efc199be7b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

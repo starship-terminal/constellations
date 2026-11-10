@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/ccbb774f-d1a9-4cc6-b1be-31379ba0baf1",
   "source_url": "https://www.sandclock.org",
   "extracted_at": "2026-06-03T19:24:02.480Z",
-  "fetched_at": "2026-10-20T08:24:04Z",
+  "fetched_at": "2026-11-08T04:20:47Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d3f8d559-15e9-4936-8e7d-e3257b0802b6.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/2cea6882-377a-4b9a-81e0-8113d9aaaac2.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/2bb658fd-3b65-44ac-aa3c-b3f88669962f.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/958f43d5-68dd-488c-aaa7-0511f290454f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }
