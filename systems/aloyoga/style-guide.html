@@ -7,129 +7,6 @@
 <meta name="description" content="Alo Yoga (aloyoga.com) design tokens and the public shop's components, rendered from tokens.json with the measured values.">
 <style>
 :root {
-  --color-accentBlue-default: #345eb2;
-  --color-accentBlue-100: #eceef7;
-  --color-accentBlue-200: #d1d4ec;
-  --color-accentBlue-300: #abb3dd;
-  --color-accentBlue-400: #7b8bc9;
-  --color-accentBlue-50: #f6f6fb;
-  --color-accentBlue-500: #345eb2;
-  --color-accentBlue-600: #0049a2;
-  --color-accentBlue-700: #002d88;
-  --color-accentBlue-800: #001770;
-  --color-accentBlue-900: #00275e;
-  --color-accentBrown-default: #863d0e;
-  --color-accentBrown-100: #f5eae5;
-  --color-accentBrown-200: #e6ccbe;
-  --color-accentBrown-300: #d0a48d;
-  --color-accentBrown-400: #b07452;
-  --color-accentBrown-50: #faf5f2;
-  --color-accentBrown-500: #863d0e;
-  --color-accentBrown-600: #712400;
-  --color-accentBrown-700: #560000;
-  --color-accentBrown-800: #450000;
-  --color-accentBrown-900: #461400;
-  --color-accentGreen-default: #089b57;
-  --color-accentGreen-100: #eaf5ed;
-  --color-accentGreen-200: #cbe6d3;
-  --color-accentGreen-300: #a2d3b1;
-  --color-accentGreen-400: #6cba87;
-  --color-accentGreen-50: #f5faf6;
-  --color-accentGreen-500: #089b57;
-  --color-accentGreen-600: #00843c;
-  --color-accentGreen-700: #006417;
-  --color-accentGreen-800: #004a00;
-  --color-accentGreen-900: #004118;
-  --color-accentLightBlue-default: #5ea4ed;
-  --color-accentLightBlue-100: #f1f5fd;
-  --color-accentLightBlue-200: #dce7fb;
-  --color-accentLightBlue-300: #bed5f7;
-  --color-accentLightBlue-400: #97bef3;
-  --color-accentLightBlue-50: #f8fafe;
-  --color-accentLightBlue-500: #5ea4ed;
-  --color-accentLightBlue-600: #268ddd;
-  --color-accentLightBlue-700: #006ec3;
-  --color-accentLightBlue-800: #0054ab;
-  --color-accentLightBlue-900: #004274;
-  --color-accentOrange-default: #ec881b;
-  --color-accentOrange-100: #fff3e8;
-  --color-accentOrange-200: #ffe1c7;
-  --color-accentOrange-300: #ffc99b;
-  --color-accentOrange-400: #faab65;
-  --color-accentOrange-50: #fff9f4;
-  --color-accentOrange-500: #ec881b;
-  --color-accentOrange-600: #d36f00;
-  --color-accentOrange-700: #b04c00;
-  --color-accentOrange-800: #932d00;
-  --color-accentOrange-900: #653100;
-  --color-accentPurple-default: #8659a6;
-  --color-accentPurple-100: #f3eef6;
-  --color-accentPurple-200: #e1d4e9;
-  --color-accentPurple-300: #c9b2d7;
-  --color-accentPurple-400: #ab89c1;
-  --color-accentPurple-50: #f9f6fb;
-  --color-accentPurple-500: #8659a6;
-  --color-accentPurple-600: #704094;
-  --color-accentPurple-700: #511e7a;
-  --color-accentPurple-800: #360062;
-  --color-accentPurple-900: #3d1f54;
-  --color-accentRed-default: #e94e2a;
-  --color-accentRed-100: #ffeee8;
-  --color-accentRed-200: #ffd5c7;
-  --color-accentRed-300: #ffb39b;
-  --color-accentRed-400: #fa8767;
-  --color-accentRed-50: #fff6f4;
-  --color-accentRed-500: #e94e2a;
-  --color-accentRed-600: #d12b0a;
-  --color-accentRed-700: #ad0000;
-  --color-accentRed-800: #900000;
-  --color-accentRed-900: #6a1400;
-  --color-accentYellow-default: #ffbb33;
-  --color-accentYellow-100: #fff8eb;
-  --color-accentYellow-200: #ffedce;
-  --color-accentYellow-300: #ffe0a7;
-  --color-accentYellow-400: #ffcf76;
-  --color-accentYellow-50: #fffbf5;
-  --color-accentYellow-500: #ffbb33;
-  --color-accentYellow-600: #e5a200;
-  --color-accentYellow-700: #c18000;
-  --color-accentYellow-800: #a26400;
-  --color-accentYellow-900: #674500;
-  --color-background-1: #ffffff;
-  --color-background-2: #fafafa;
-  --color-background-3: #f5f5f5;
-  --color-background-4: #eeeeee;
-  --color-background-invert-1: #111111;
-  --color-background-invert-2: rgba(17, 17, 17, 0.72);
-  --color-background-invert-3: rgba(17, 17, 17, 0.3);
-  --color-background-invert-4: rgba(17, 17, 17, 0.1);
-  --color-background-invert-5: rgba(17, 17, 17, 0.05);
-  --color-background-tint-hover-destructive: rgba(233, 78, 42, 0.03);
-  --color-background-tint-hover-heavy: rgba(17, 17, 17, 0.16);
-  --color-background-tint-hover-light: rgba(17, 17, 17, 0.03);
-  --color-background-tint-pressed-destructive: rgba(233, 78, 42, 0.06);
-  --color-background-tint-pressed-heavy: rgba(17, 17, 17, 0.32);
-  --color-background-tint-pressed-light: rgba(17, 17, 17, 0.06);
-  --color-chart-1: #268ddd;
-  --color-chart-2: #089b57;
-  --color-chart-3: #345eb2;
-  --color-chart-4: #8659a6;
-  --color-chart-5: #c18000;
-  --color-chart-6: #d36f00;
-  --color-chart-7: #e94e2a;
-  --color-chart-8: #863d0e;
-  --color-foreground-1: #111111;
-  --color-foreground-2: rgba(17, 17, 17, 0.72);
-  --color-foreground-3: rgba(17, 17, 17, 0.42);
-  --color-foreground-4: rgba(17, 17, 17, 0.1);
-  --color-foreground-5: rgba(17, 17, 17, 0.05);
-  --color-foreground-invert-1: #ffffff;
-  --color-foreground-invert-2: rgba(255, 255, 255, 0.72);
-  --color-foreground-invert-3: rgba(255, 255, 255, 0.46);
-  --color-foreground-invert-4: rgba(255, 255, 255, 0.2);
-  --color-foreground-invert-5: rgba(255, 255, 255, 0.118);
-  --color-text-alert: #d12b0a;
-  --color-text-tertiary: rgba(17, 17, 17, 0.584);
   --color-neutral-alto: #cccccc;
   --color-neutral-charcoal: #242424;
   --color-neutral-chicago: #636363;
@@ -160,7 +37,6 @@
   --shadow-level-2: 0px 1px 4px 0px rgba(0, 0, 0, 0.06), 0px 8px 16px 0px rgba(35, 41, 54, 0.08);
   --shadow-level-3: 0px 4px 8px 0px rgba(0, 0, 0, 0.06), 0px 12px 32px 0px rgba(35, 41, 54, 0.14);
   --shadow-level-4: 0px 4px 16px 0px rgba(0, 0, 0, 0.06), 0px 16px 64px 0px rgba(35, 41, 54, 0.2);
-  --border-opacity-stroke: 0.1;
   --measured-focus-outline: #005fcc;
   --measured-button-hover: #000000;
   --measured-action-bg: #000000;
@@ -188,56 +64,56 @@
   --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--mine, #3b3b3b); background: var(--white, #fff); }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-mine, #3b3b3b); background: var(--color-neutral-white, #fff); }
 main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
 h1 { font: 400 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--chicago, #636363); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--mercury, #e1e1e1); }
-.lead { max-width: 62ch; color: var(--chicago, #636363); }
-.note { font-size: 13px; color: var(--chicago, #636363); max-width: 62ch; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-chicago, #636363); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-mercury, #e1e1e1); }
+.lead { max-width: 62ch; color: var(--color-neutral-chicago, #636363); }
+.note { font-size: 13px; color: var(--color-neutral-chicago, #636363); max-width: 62ch; }
 code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--chicago, #636363); margin: 18px 0 6px; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-chicago, #636363); margin: 18px 0 6px; }
 .pal { display: flex; flex-wrap: wrap; gap: 8px; }
 .sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--mercury, #e1e1e1); display: inline-flex; flex: 0 0 auto; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-mercury, #e1e1e1); display: inline-flex; flex: 0 0 auto; }
 .sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
 .sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--chicago, #636363); }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--mercury, #e1e1e1); background: var(--color-background-2, #fafafa); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-chicago, #636363); }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-mercury, #e1e1e1); background: var(--color-neutral-smoke, #f2f2f2); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
 .kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
 .kv b { font-weight: 500; }
-.kv span { color: var(--chicago, #636363); }
+.kv span { color: var(--color-neutral-chicago, #636363); }
 /* ---- shop mock ---- */
-.mock { border: 1px solid var(--mercury, #e1e1e1); overflow: hidden; background: var(--white, #fff); }
-.promo { background: var(--primary, #000); color: var(--white, #fff); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; text-align: center; padding: 8px 16px; }
-.navbar { display: flex; align-items: center; gap: 22px; height: 84px; padding: 0 24px; background: var(--white, #fff); border-bottom: 1px solid var(--mercury, #e1e1e1); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.mock { border: 1px solid var(--color-neutral-mercury, #e1e1e1); overflow: hidden; background: var(--color-neutral-white, #fff); }
+.promo { background: var(--primary, #000); color: var(--color-neutral-white, #fff); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; text-align: center; padding: 8px 16px; }
+.navbar { display: flex; align-items: center; gap: 22px; height: 84px; padding: 0 24px; background: var(--color-neutral-white, #fff); border-bottom: 1px solid var(--color-neutral-mercury, #e1e1e1); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
 .navbar .wm { font-weight: 700; font-size: 18px; letter-spacing: 0; text-transform: lowercase; }
 .navbar .sp { flex: 1; }
 .btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 26px; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; border: 1px solid transparent; }
-.btn.primary { background: var(--primary, #000); color: var(--white, #fff); }
-.btn.ghost { background: transparent; color: var(--primary, #000); border-color: var(--mine, #3b3b3b); }
+.btn.primary { background: var(--primary, #000); color: var(--color-neutral-white, #fff); }
+.btn.ghost { background: transparent; color: var(--primary, #000); border-color: var(--color-neutral-mine, #3b3b3b); }
 .btn.big { height: var(--component-control-height, 52px); font-size: 14px; }
-.hero { background: var(--smoke, #f2f2f2); color: var(--primary, #000); padding: 72px 40px; font-size: 44px; line-height: 1.1; letter-spacing: -0.02em; }
-.hero small { display: block; font-size: 15px; font-weight: 400; color: var(--chicago, #636363); margin: 16px 0 22px; max-width: 46ch; }
+.hero { background: var(--color-neutral-smoke, #f2f2f2); color: var(--primary, #000); padding: 72px 40px; font-size: 44px; line-height: 1.1; letter-spacing: -0.02em; }
+.hero small { display: block; font-size: 15px; font-weight: 400; color: var(--color-neutral-chicago, #636363); margin: 16px 0 22px; max-width: 46ch; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.tile { border: 1px solid var(--mercury, #e1e1e1); padding: 14px; font-size: 13px; }
-.tile .img { height: 140px; background: var(--color-background-3, #f5f5f5); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile { border: 1px solid var(--color-neutral-mercury, #e1e1e1); padding: 14px; font-size: 13px; }
+.tile .img { height: 140px; background: var(--color-neutral-mercury, #e1e1e1); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
 .tile b { display: block; font-weight: 600; margin-bottom: 2px; }
-.tile .sub { color: var(--chicago, #636363); font-size: 12px; }
+.tile .sub { color: var(--color-neutral-chicago, #636363); font-size: 12px; }
 .swatchrow { display: flex; gap: 6px; margin-top: 8px; }
-.sw2 { width: var(--component-swatch-size, 46px); height: var(--component-swatch-size, 46px); border: 1px solid var(--mercury, #e1e1e1); }
+.sw2 { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--color-neutral-mercury, #e1e1e1); }
 .sw2.on { border: 2px solid var(--primary, #000); }
 .sizes { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 14px; }
-.sizes span { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height-small, 40px); padding: 0 16px; border: 1px solid var(--mercury, #e1e1e1); font-size: 13px; }
-.sizes span.oos { color: var(--dawn, #a3a3a3); text-decoration: line-through; }
-.field { display: flex; align-items: center; height: var(--component-control-field-height, 35px); border: 1px solid var(--mercury, #e1e1e1); padding: 0 12px; font-size: 14px; color: var(--dawn, #a3a3a3); max-width: 340px; margin-bottom: 8px; }
+.sizes span { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightSmall, 40px); padding: 0 16px; border: 1px solid var(--color-neutral-mercury, #e1e1e1); font-size: 13px; }
+.sizes span.oos { color: var(--color-neutral-dawn, #a3a3a3); text-decoration: line-through; }
+.field { display: flex; align-items: center; height: var(--component-control-fieldHeight, 35px); border: 1px solid var(--color-neutral-mercury, #e1e1e1); padding: 0 12px; font-size: 14px; color: var(--color-neutral-dawn, #a3a3a3); max-width: 340px; margin-bottom: 8px; }
 table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--mercury, #e1e1e1); padding: 6px 14px; text-align: left; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-mercury, #e1e1e1); padding: 6px 14px; text-align: left; }
 </style>
 </head>
 <body>
 <main>
   <h1>Alo Yoga style guide</h1>
-  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number.</p>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
 
   <h2 class="sh">Alo Yoga, measured</h2>
   <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the <code>--color-*</code> design-system ramps aloyoga.com's Shopify theme declares (accentBlue…accentYellow at 50–900, background-1…4, tints, charts), the shop's named neutrals (<code>--charcoal</code>, <code>--mine</code>, <code>--chicago</code>, <code>--dawn</code>, <code>--alto</code>, <code>--mercury</code>, <code>--smoke</code>, <code>--sand</code>), the semantic roles (<code>--accent-*</code>, <code>--alert-*</code>, <code>--highlight-*</code>, <code>--success-*</code>, <code>--primary</code>), the 4–120px spacing scale and the four shadow levels. One light theme; nothing dark is served. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
@@ -250,7 +126,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--mercury, #e1e1e1); padding:
     <div class="navbar"><span class="wm">alo</span><span>Women</span><span>Men</span><span>Shoes</span><span>Gift guide</span><span class="sp"></span><span>&#9906;</span><span>&#9825;</span><span>&#128717;</span></div>
     <div class="hero">Join &amp; get 30% off
       <small>Studio-to-street yoga wear. New arrivals drop weekly.</small>
-      <span class="btn primary">Join now</span>
+      <span class="btn primary" style="background:var(--color-neutral-white,#fff);color:#000;font-size:18px;font-weight:900">Join now</span>
     </div>
   </div>
 
@@ -294,7 +170,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--mercury, #e1e1e1); padding:
   <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheet and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, picked and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
 </main>
 <script>
-const TOK = {"core":{"color":{"accentBlue":{"default":{"v":"#345eb2","t":"color","s":"css-var --color-accentBlue (light)"},"100":{"v":"#eceef7","t":"color","s":"css-var --color-accentBlue-100 (light)"},"200":{"v":"#d1d4ec","t":"color","s":"css-var --color-accentBlue-200 (light)"},"300":{"v":"#abb3dd","t":"color","s":"css-var --color-accentBlue-300 (light)"},"400":{"v":"#7b8bc9","t":"color","s":"css-var --color-accentBlue-400 (light)"},"50":{"v":"#f6f6fb","t":"color","s":"css-var --color-accentBlue-50 (light)"},"500":{"v":"#345eb2","t":"color","s":"css-var --color-accentBlue-500 (light)"},"600":{"v":"#0049a2","t":"color","s":"css-var --color-accentBlue-600 (light)"},"700":{"v":"#002d88","t":"color","s":"css-var --color-accentBlue-700 (light)"},"800":{"v":"#001770","t":"color","s":"css-var --color-accentBlue-800 (light)"},"900":{"v":"#00275e","t":"color","s":"css-var --color-accentBlue-900 (light)"}},"accentBrown":{"default":{"v":"#863d0e","t":"color","s":"css-var --color-accentBrown (light)"},"100":{"v":"#f5eae5","t":"color","s":"css-var --color-accentBrown-100 (light)"},"200":{"v":"#e6ccbe","t":"color","s":"css-var --color-accentBrown-200 (light)"},"300":{"v":"#d0a48d","t":"color","s":"css-var --color-accentBrown-300 (light)"},"400":{"v":"#b07452","t":"color","s":"css-var --color-accentBrown-400 (light)"},"50":{"v":"#faf5f2","t":"color","s":"css-var --color-accentBrown-50 (light)"},"500":{"v":"#863d0e","t":"color","s":"css-var --color-accentBrown-500 (light)"},"600":{"v":"#712400","t":"color","s":"css-var --color-accentBrown-600 (light)"},"700":{"v":"#560000","t":"color","s":"css-var --color-accentBrown-700 (light)"},"800":{"v":"#450000","t":"color","s":"css-var --color-accentBrown-800 (light)"},"900":{"v":"#461400","t":"color","s":"css-var --color-accentBrown-900 (light)"}},"accentGreen":{"default":{"v":"#089b57","t":"color","s":"css-var --color-accentGreen (light)"},"100":{"v":"#eaf5ed","t":"color","s":"css-var --color-accentGreen-100 (light)"},"200":{"v":"#cbe6d3","t":"color","s":"css-var --color-accentGreen-200 (light)"},"300":{"v":"#a2d3b1","t":"color","s":"css-var --color-accentGreen-300 (light)"},"400":{"v":"#6cba87","t":"color","s":"css-var --color-accentGreen-400 (light)"},"50":{"v":"#f5faf6","t":"color","s":"css-var --color-accentGreen-50 (light)"},"500":{"v":"#089b57","t":"color","s":"css-var --color-accentGreen-500 (light)"},"600":{"v":"#00843c","t":"color","s":"css-var --color-accentGreen-600 (light)"},"700":{"v":"#006417","t":"color","s":"css-var --color-accentGreen-700 (light)"},"800":{"v":"#004a00","t":"color","s":"css-var --color-accentGreen-800 (light)"},"900":{"v":"#004118","t":"color","s":"css-var --color-accentGreen-900 (light)"}},"accentLightBlue":{"default":{"v":"#5ea4ed","t":"color","s":"css-var --color-accentLightBlue (light)"},"100":{"v":"#f1f5fd","t":"color","s":"css-var --color-accentLightBlue-100 (light)"},"200":{"v":"#dce7fb","t":"color","s":"css-var --color-accentLightBlue-200 (light)"},"300":{"v":"#bed5f7","t":"color","s":"css-var --color-accentLightBlue-300 (light)"},"400":{"v":"#97bef3","t":"color","s":"css-var --color-accentLightBlue-400 (light)"},"50":{"v":"#f8fafe","t":"color","s":"css-var --color-accentLightBlue-50 (light)"},"500":{"v":"#5ea4ed","t":"color","s":"css-var --color-accentLightBlue-500 (light)"},"600":{"v":"#268ddd","t":"color","s":"css-var --color-accentLightBlue-600 (light)"},"700":{"v":"#006ec3","t":"color","s":"css-var --color-accentLightBlue-700 (light)"},"800":{"v":"#0054ab","t":"color","s":"css-var --color-accentLightBlue-800 (light)"},"900":{"v":"#004274","t":"color","s":"css-var --color-accentLightBlue-900 (light)"}},"accentOrange":{"default":{"v":"#ec881b","t":"color","s":"css-var --color-accentOrange (light)"},"100":{"v":"#fff3e8","t":"color","s":"css-var --color-accentOrange-100 (light)"},"200":{"v":"#ffe1c7","t":"color","s":"css-var --color-accentOrange-200 (light)"},"300":{"v":"#ffc99b","t":"color","s":"css-var --color-accentOrange-300 (light)"},"400":{"v":"#faab65","t":"color","s":"css-var --color-accentOrange-400 (light)"},"50":{"v":"#fff9f4","t":"color","s":"css-var --color-accentOrange-50 (light)"},"500":{"v":"#ec881b","t":"color","s":"css-var --color-accentOrange-500 (light)"},"600":{"v":"#d36f00","t":"color","s":"css-var --color-accentOrange-600 (light)"},"700":{"v":"#b04c00","t":"color","s":"css-var --color-accentOrange-700 (light)"},"800":{"v":"#932d00","t":"color","s":"css-var --color-accentOrange-800 (light)"},"900":{"v":"#653100","t":"color","s":"css-var --color-accentOrange-900 (light)"}},"accentPurple":{"default":{"v":"#8659a6","t":"color","s":"css-var --color-accentPurple (light)"},"100":{"v":"#f3eef6","t":"color","s":"css-var --color-accentPurple-100 (light)"},"200":{"v":"#e1d4e9","t":"color","s":"css-var --color-accentPurple-200 (light)"},"300":{"v":"#c9b2d7","t":"color","s":"css-var --color-accentPurple-300 (light)"},"400":{"v":"#ab89c1","t":"color","s":"css-var --color-accentPurple-400 (light)"},"50":{"v":"#f9f6fb","t":"color","s":"css-var --color-accentPurple-50 (light)"},"500":{"v":"#8659a6","t":"color","s":"css-var --color-accentPurple-500 (light)"},"600":{"v":"#704094","t":"color","s":"css-var --color-accentPurple-600 (light)"},"700":{"v":"#511e7a","t":"color","s":"css-var --color-accentPurple-700 (light)"},"800":{"v":"#360062","t":"color","s":"css-var --color-accentPurple-800 (light)"},"900":{"v":"#3d1f54","t":"color","s":"css-var --color-accentPurple-900 (light)"}},"accentRed":{"default":{"v":"#e94e2a","t":"color","s":"css-var --color-accentRed (light)"},"100":{"v":"#ffeee8","t":"color","s":"css-var --color-accentRed-100 (light)"},"200":{"v":"#ffd5c7","t":"color","s":"css-var --color-accentRed-200 (light)"},"300":{"v":"#ffb39b","t":"color","s":"css-var --color-accentRed-300 (light)"},"400":{"v":"#fa8767","t":"color","s":"css-var --color-accentRed-400 (light)"},"50":{"v":"#fff6f4","t":"color","s":"css-var --color-accentRed-50 (light)"},"500":{"v":"#e94e2a","t":"color","s":"css-var --color-accentRed-500 (light)"},"600":{"v":"#d12b0a","t":"color","s":"css-var --color-accentRed-600 (light)"},"700":{"v":"#ad0000","t":"color","s":"css-var --color-accentRed-700 (light)"},"800":{"v":"#900000","t":"color","s":"css-var --color-accentRed-800 (light)"},"900":{"v":"#6a1400","t":"color","s":"css-var --color-accentRed-900 (light)"}},"accentYellow":{"default":{"v":"#ffbb33","t":"color","s":"css-var --color-accentYellow (light)"},"100":{"v":"#fff8eb","t":"color","s":"css-var --color-accentYellow-100 (light)"},"200":{"v":"#ffedce","t":"color","s":"css-var --color-accentYellow-200 (light)"},"300":{"v":"#ffe0a7","t":"color","s":"css-var --color-accentYellow-300 (light)"},"400":{"v":"#ffcf76","t":"color","s":"css-var --color-accentYellow-400 (light)"},"50":{"v":"#fffbf5","t":"color","s":"css-var --color-accentYellow-50 (light)"},"500":{"v":"#ffbb33","t":"color","s":"css-var --color-accentYellow-500 (light)"},"600":{"v":"#e5a200","t":"color","s":"css-var --color-accentYellow-600 (light)"},"700":{"v":"#c18000","t":"color","s":"css-var --color-accentYellow-700 (light)"},"800":{"v":"#a26400","t":"color","s":"css-var --color-accentYellow-800 (light)"},"900":{"v":"#674500","t":"color","s":"css-var --color-accentYellow-900 (light)"}},"background":{"1":{"v":"#ffffff","t":"color","s":"css-var --color-background-1 (light)"},"2":{"v":"#fafafa","t":"color","s":"css-var --color-background-2 (light)"},"3":{"v":"#f5f5f5","t":"color","s":"css-var --color-background-3 (light)"},"4":{"v":"#eeeeee","t":"color","s":"css-var --color-background-4 (light)"},"invert":{"1":{"v":"#111111","t":"color","s":"css-var --color-background-invert-1 (light)"},"2":{"v":"rgba(17, 17, 17, 0.72)","t":"color","s":"css-var --color-background-invert-2 (light)"},"3":{"v":"rgba(17, 17, 17, 0.3)","t":"color","s":"css-var --color-background-invert-3 (light)"},"4":{"v":"rgba(17, 17, 17, 0.1)","t":"color","s":"css-var --color-background-invert-4 (light)"},"5":{"v":"rgba(17, 17, 17, 0.05)","t":"color","s":"css-var --color-background-invert-5 (light)"}},"tint":{"hover":{"destructive":{"v":"rgba(233, 78, 42, 0.03)","t":"color","s":"css-var --color-background-tint-hover-destructive (light)"},"heavy":{"v":"rgba(17, 17, 17, 0.16)","t":"color","s":"css-var --color-background-tint-hover-heavy (light)"},"light":{"v":"rgba(17, 17, 17, 0.03)","t":"color","s":"css-var --color-background-tint-hover-light (light)"}},"pressed":{"destructive":{"v":"rgba(233, 78, 42, 0.06)","t":"color","s":"css-var --color-background-tint-pressed-destructive (light)"},"heavy":{"v":"rgba(17, 17, 17, 0.32)","t":"color","s":"css-var --color-background-tint-pressed-heavy (light)"},"light":{"v":"rgba(17, 17, 17, 0.06)","t":"color","s":"css-var --color-background-tint-pressed-light (light)"}}}},"chart":{"1":{"v":"#268ddd","t":"color","s":"css-var --color-chart-1 (light)"},"2":{"v":"#089b57","t":"color","s":"css-var --color-chart-2 (light)"},"3":{"v":"#345eb2","t":"color","s":"css-var --color-chart-3 (light)"},"4":{"v":"#8659a6","t":"color","s":"css-var --color-chart-4 (light)"},"5":{"v":"#c18000","t":"color","s":"css-var --color-chart-5 (light)"},"6":{"v":"#d36f00","t":"color","s":"css-var --color-chart-6 (light)"},"7":{"v":"#e94e2a","t":"color","s":"css-var --color-chart-7 (light)"},"8":{"v":"#863d0e","t":"color","s":"css-var --color-chart-8 (light)"}},"foreground":{"1":{"v":"#111111","t":"color","s":"css-var --color-foreground-1 (light)"},"2":{"v":"rgba(17, 17, 17, 0.72)","t":"color","s":"css-var --color-foreground-2 (light)"},"3":{"v":"rgba(17, 17, 17, 0.42)","t":"color","s":"css-var --color-foreground-3 (light)"},"4":{"v":"rgba(17, 17, 17, 0.1)","t":"color","s":"css-var --color-foreground-4 (light)"},"5":{"v":"rgba(17, 17, 17, 0.05)","t":"color","s":"css-var --color-foreground-5 (light)"},"invert":{"1":{"v":"#ffffff","t":"color","s":"css-var --color-foreground-invert-1 (light)"},"2":{"v":"rgba(255, 255, 255, 0.72)","t":"color","s":"css-var --color-foreground-invert-2 (light)"},"3":{"v":"rgba(255, 255, 255, 0.46)","t":"color","s":"css-var --color-foreground-invert-3 (light)"},"4":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"css-var --color-foreground-invert-4 (light)"},"5":{"v":"rgba(255, 255, 255, 0.118)","t":"color","s":"css-var --color-foreground-invert-5 (light)"}}},"text":{"alert":{"v":"#d12b0a","t":"color","s":"css-var --color-text-alert (light)"},"tertiary":{"v":"rgba(17, 17, 17, 0.584)","t":"color","s":"css-var --color-text-tertiary (light)"}},"neutral":{"alto":{"v":"#cccccc","t":"color","s":"css-var --alto (light)"},"charcoal":{"v":"#242424","t":"color","s":"css-var --charcoal (light)"},"chicago":{"v":"#636363","t":"color","s":"css-var --chicago (light)"},"dawn":{"v":"#a3a3a3","t":"color","s":"css-var --dawn (light)"},"mercury":{"v":"#e1e1e1","t":"color","s":"css-var --mercury (light)"},"mine":{"v":"#3b3b3b","t":"color","s":"css-var --mine (light)"},"sand":{"v":"#e0d7d1","t":"color","s":"css-var --sand (light)"},"smoke":{"v":"#f2f2f2","t":"color","s":"css-var --smoke (light)"},"white":{"v":"#ffffff","t":"color","s":"css-var --white (light)"}}},"font":{"family":{"primary":{"v":"\"proxima-nova\",Helvetica,sans-serif","t":"fontFamily","s":"css-var --primary-font (light)"}}},"spacing":{"0":{"v":"0px","t":"dimension","s":"css-var --spacing-0 (light)"},"2xl":{"v":"40px","t":"dimension","s":"css-var --spacing-2xl (light)"},"3xl":{"v":"48px","t":"dimension","s":"css-var --spacing-3xl (light)"},"4xl":{"v":"56px","t":"dimension","s":"css-var --spacing-4xl (light)"},"5xl":{"v":"64px","t":"dimension","s":"css-var --spacing-5xl (light)"},"6xl":{"v":"72px","t":"dimension","s":"css-var --spacing-6xl (light)"},"7xl":{"v":"80px","t":"dimension","s":"css-var --spacing-7xl (light)"},"8xl":{"v":"96px","t":"dimension","s":"css-var --spacing-8xl (light)"},"9xl":{"v":"120px","t":"dimension","s":"css-var --spacing-9xl (light)"},"lg":{"v":"24px","t":"dimension","s":"css-var --spacing-lg (light)"},"m-lg":{"v":"20px","t":"dimension","s":"css-var --spacing-m-lg (light)"},"m-sm":{"v":"12px","t":"dimension","s":"css-var --spacing-m-sm (light)"},"md":{"v":"16px","t":"dimension","s":"css-var --spacing-md (light)"},"sm":{"v":"8px","t":"dimension","s":"css-var --spacing-sm (light)"},"xl":{"v":"32px","t":"dimension","s":"css-var --spacing-xl (light)"},"xs":{"v":"4px","t":"dimension","s":"css-var --spacing-xs (light)"}},"shadow":{"level":{"1":{"v":[{"offsetX":"0px","offsetY":"2px","blur":"6px","spread":"0px","color":"rgba(0, 0, 0, 0.06)"},{"offsetX":"0px","offsetY":"4px","blur":"12px","spread":"0px","color":"rgba(35, 41, 54, 0.08)"}],"t":"shadow","s":"css-var --shadow-level-1"},"2":{"v":[{"offsetX":"0px","offsetY":"1px","blur":"4px","spread":"0px","color":"rgba(0, 0, 0, 0.06)"},{"offsetX":"0px","offsetY":"8px","blur":"16px","spread":"0px","color":"rgba(35, 41, 54, 0.08)"}],"t":"shadow","s":"css-var --shadow-level-2"},"3":{"v":[{"offsetX":"0px","offsetY":"4px","blur":"8px","spread":"0px","color":"rgba(0, 0, 0, 0.06)"},{"offsetX":"0px","offsetY":"12px","blur":"32px","spread":"0px","color":"rgba(35, 41, 54, 0.14)"}],"t":"shadow","s":"css-var --shadow-level-3"},"4":{"v":[{"offsetX":"0px","offsetY":"4px","blur":"16px","spread":"0px","color":"rgba(0, 0, 0, 0.06)"},{"offsetX":"0px","offsetY":"16px","blur":"64px","spread":"0px","color":"rgba(35, 41, 54, 0.2)"}],"t":"shadow","s":"css-var --shadow-level-4"}}},"border":{"opacity":{"stroke":{"v":0.1,"t":"number","s":"css-var --border-stroke-opacity"}}},"measured":{"focus-outline":{"v":"#005fcc","t":"color","s":"computed outlineColor of nav-item focus-visible (raw/components-computed.json)","d":"The keyboard-focus ring on nav items."},"button-hover":{"v":"#000000","t":"color","s":"computed backgroundColor of hero-button hover (raw/components-computed.json)","d":"The hero button's hover fill."},"action-bg":{"v":"#000000","t":"color","s":"computed backgroundColor of add-to-bag default (raw/components-computed.json)","d":"The Add to bag fill."},"action-bg-hover":{"v":"#000000","t":"color","s":"computed backgroundColor of add-to-bag hover (raw/components-computed.json)","d":"Add to bag on hover."}}},"light":{"accent":{"dark":{"v":"#384669","t":"color","s":"css-var --accent-dark (light)"},"light":{"v":"#d7ddeb","t":"color","s":"css-var --accent-light (light)"},"medium":{"v":"#7183b0","t":"color","s":"css-var --accent-medium (light)"}},"alert":{"dark":{"v":"#740031","t":"color","s":"css-var --alert-dark (light)"},"light":{"v":"#fdecea","t":"color","s":"css-var --alert-light (light)"},"medium":{"v":"#b00020","t":"color","s":"css-var --alert-medium (light)"}},"highlight":{"dark":{"v":"#826646","t":"color","s":"css-var --highlight-dark (light)"},"light":{"v":"#f1e8dd","t":"color","s":"css-var --highlight-light (light)"},"medium":{"v":"#ceb18f","t":"color","s":"css-var --highlight-medium (light)"}},"primary":{"v":"#000000","t":"color","s":"css-var --primary (light)"},"success":{"dark":{"v":"#3c4b37","t":"color","s":"css-var --success-dark (light)"},"light":{"v":"#d8e1d5","t":"color","s":"css-var --success-light (light)"},"medium":{"v":"#758e6d","t":"color","s":"css-var --success-medium (light)"}},"component":{"control":{"height":{"v":"52px","t":"dimension","s":"computed height of add-to-bag default (raw/components-computed.json)","d":"The buy button is 52px."},"heightSmall":{"v":"40px","t":"dimension","s":"computed height of size-button default (raw/components-computed.json)","d":"Size chips are 40px."},"fieldHeight":{"v":"35px","t":"dimension","s":"computed height of email-input default (raw/components-computed.json)","d":"The login field height."},"radius":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of hero-button default (raw/components-computed.json)","d":"The hero/buy button corner."}},"swatch":{"size":{"v":"46px","t":"dimension","s":"computed width of pdp-swatch default (raw/components-computed.json)","d":"The PDP colour tile is square."}},"header":{"height":{"v":"84px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The desktop header height at 1440px."}}}},"dark":{}};
+const TOK = {"core":{"color":{"neutral":{"alto":{"v":"#cccccc","t":"color","s":"css-var --alto (light)"},"charcoal":{"v":"#242424","t":"color","s":"css-var --charcoal (light)"},"chicago":{"v":"#636363","t":"color","s":"css-var --chicago (light)"},"dawn":{"v":"#a3a3a3","t":"color","s":"css-var --dawn (light)"},"mercury":{"v":"#e1e1e1","t":"color","s":"css-var --mercury (light)"},"mine":{"v":"#3b3b3b","t":"color","s":"css-var --mine (light)"},"sand":{"v":"#e0d7d1","t":"color","s":"css-var --sand (light)"},"smoke":{"v":"#f2f2f2","t":"color","s":"css-var --smoke (light)"},"white":{"v":"#ffffff","t":"color","s":"css-var --white (light)"}}},"font":{"family":{"primary":{"v":"\"proxima-nova\",Helvetica,sans-serif","t":"fontFamily","s":"css-var --primary-font (light)"}}},"spacing":{"0":{"v":"0px","t":"dimension","s":"css-var --spacing-0 (light)"},"2xl":{"v":"40px","t":"dimension","s":"css-var --spacing-2xl (light)"},"3xl":{"v":"48px","t":"dimension","s":"css-var --spacing-3xl (light)"},"4xl":{"v":"56px","t":"dimension","s":"css-var --spacing-4xl (light)"},"5xl":{"v":"64px","t":"dimension","s":"css-var --spacing-5xl (light)"},"6xl":{"v":"72px","t":"dimension","s":"css-var --spacing-6xl (light)"},"7xl":{"v":"80px","t":"dimension","s":"css-var --spacing-7xl (light)"},"8xl":{"v":"96px","t":"dimension","s":"css-var --spacing-8xl (light)"},"9xl":{"v":"120px","t":"dimension","s":"css-var --spacing-9xl (light)"},"lg":{"v":"24px","t":"dimension","s":"css-var --spacing-lg (light)"},"m-lg":{"v":"20px","t":"dimension","s":"css-var --spacing-m-lg (light)"},"m-sm":{"v":"12px","t":"dimension","s":"css-var --spacing-m-sm (light)"},"md":{"v":"16px","t":"dimension","s":"css-var --spacing-md (light)"},"sm":{"v":"8px","t":"dimension","s":"css-var --spacing-sm (light)"},"xl":{"v":"32px","t":"dimension","s":"css-var --spacing-xl (light)"},"xs":{"v":"4px","t":"dimension","s":"css-var --spacing-xs (light)"}},"shadow":{"level":{"1":{"v":[{"offsetX":"0px","offsetY":"2px","blur":"6px","spread":"0px","color":"rgba(0, 0, 0, 0.06)"},{"offsetX":"0px","offsetY":"4px","blur":"12px","spread":"0px","color":"rgba(35, 41, 54, 0.08)"}],"t":"shadow","s":"css-var --shadow-level-1"},"2":{"v":[{"offsetX":"0px","offsetY":"1px","blur":"4px","spread":"0px","color":"rgba(0, 0, 0, 0.06)"},{"offsetX":"0px","offsetY":"8px","blur":"16px","spread":"0px","color":"rgba(35, 41, 54, 0.08)"}],"t":"shadow","s":"css-var --shadow-level-2"},"3":{"v":[{"offsetX":"0px","offsetY":"4px","blur":"8px","spread":"0px","color":"rgba(0, 0, 0, 0.06)"},{"offsetX":"0px","offsetY":"12px","blur":"32px","spread":"0px","color":"rgba(35, 41, 54, 0.14)"}],"t":"shadow","s":"css-var --shadow-level-3"},"4":{"v":[{"offsetX":"0px","offsetY":"4px","blur":"16px","spread":"0px","color":"rgba(0, 0, 0, 0.06)"},{"offsetX":"0px","offsetY":"16px","blur":"64px","spread":"0px","color":"rgba(35, 41, 54, 0.2)"}],"t":"shadow","s":"css-var --shadow-level-4"}}},"measured":{"focus-outline":{"v":"#005fcc","t":"color","s":"computed outlineColor of nav-item focus-visible (raw/components-computed.json)","d":"The keyboard-focus ring on nav items."},"button-hover":{"v":"#000000","t":"color","s":"computed backgroundColor of hero-button hover (raw/components-computed.json)","d":"The hero button's hover fill."},"action-bg":{"v":"#000000","t":"color","s":"computed backgroundColor of add-to-bag default (raw/components-computed.json)","d":"The Add to bag fill."},"action-bg-hover":{"v":"#000000","t":"color","s":"computed backgroundColor of add-to-bag hover (raw/components-computed.json)","d":"Add to bag on hover."}}},"light":{"accent":{"dark":{"v":"#384669","t":"color","s":"css-var --accent-dark (light)"},"light":{"v":"#d7ddeb","t":"color","s":"css-var --accent-light (light)"},"medium":{"v":"#7183b0","t":"color","s":"css-var --accent-medium (light)"}},"alert":{"dark":{"v":"#740031","t":"color","s":"css-var --alert-dark (light)"},"light":{"v":"#fdecea","t":"color","s":"css-var --alert-light (light)"},"medium":{"v":"#b00020","t":"color","s":"css-var --alert-medium (light)"}},"highlight":{"dark":{"v":"#826646","t":"color","s":"css-var --highlight-dark (light)"},"light":{"v":"#f1e8dd","t":"color","s":"css-var --highlight-light (light)"},"medium":{"v":"#ceb18f","t":"color","s":"css-var --highlight-medium (light)"}},"primary":{"v":"#000000","t":"color","s":"css-var --primary (light)"},"success":{"dark":{"v":"#3c4b37","t":"color","s":"css-var --success-dark (light)"},"light":{"v":"#d8e1d5","t":"color","s":"css-var --success-light (light)"},"medium":{"v":"#758e6d","t":"color","s":"css-var --success-medium (light)"}},"component":{"control":{"height":{"v":"52px","t":"dimension","s":"computed height of add-to-bag default (raw/components-computed.json)","d":"The buy button is 52px."},"heightSmall":{"v":"40px","t":"dimension","s":"computed height of size-button default (raw/components-computed.json)","d":"Size chips are 40px."},"fieldHeight":{"v":"35px","t":"dimension","s":"computed height of email-input default (raw/components-computed.json)","d":"The login field height."},"radius":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of hero-button default (raw/components-computed.json)","d":"The hero/buy button corner."}},"swatch":{"size":{"v":"46px","t":"dimension","s":"computed width of pdp-swatch default (raw/components-computed.json)","d":"The PDP colour tile is square."}},"header":{"height":{"v":"84px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The desktop header height at 1440px."}}}},"dark":{}};
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');

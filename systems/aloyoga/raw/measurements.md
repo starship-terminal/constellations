@@ -131,8 +131,8 @@ Page: home. Selector: `a.main-nav__item:hover`. States: opened.
 | Colour | #000000 |
 | Transition | color 0.3s ease |
 | Cursor | pointer |
-| ::after | 71.9531px x 3px, absolute, bg #000000 @ 0.008, radius 0px |
-| Painted layers | a::after.main-nav__item.hover-target 71.9531pxx3px bg #000000 @ 0.008 |
+| ::after | 71.9531px x 3px, absolute, bg #000000, radius 0px |
+| Painted layers | a::after.main-nav__item.hover-target 71.9531pxx3px bg #000000 |
 | How | flyout held open by opts.open |
 
 Crops: `nav-mega-opened.png`.
@@ -145,22 +145,23 @@ Page: home. Selector: `#main-navbar-search-icon`. States: default, hover, focus-
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 20 x 25 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | proxima-nova 16px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | #595959 | = | #595959 |
-| Transition | color 0.3s ease | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | span.icon-search-static 20.0x20.0 image url(data:…) | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 20 x 25 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | proxima-nova 16px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | #595959 | - | #595959 |
+| Transition | color 0.3s ease | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | span.icon-search-static 20.0x20.0 image url(data:…) | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Error | - | = | keyboard focus did not land on the element | = |
 
-Crops: `search-icon-default.png`, `search-icon-hover.png`, `search-icon-focus-visible.png`, `search-icon-pressed.png`.
+Crops: `search-icon-default.png`, `search-icon-hover.png`, `search-icon-pressed.png`.
 
 #### account-icon
 
@@ -622,7 +623,7 @@ Page: pdp. Selector: `[class*="price"]`. States: default.
 | Colour | #000000 |
 | Text node | span.gated-sale-display-price: proxima-nova 18px/24px 400, #000000 |
 | Transition | none |
-| Painted layers | a::after 67.5312pxx0.5px bg #4f7541; div::before.review-star autoxauto image linear-gradient(90deg, #ceb18f calc(92.4508%), #ffffff calc(92.4508%)) |
+| Painted layers | a::after 67.5312pxx0.5px bg #4f7541; div::before.review-star autoxauto image linear-gradient(90deg, #ceb18f calc(92.459%), #ffffff calc(92.459%)) |
 | How | at rest |
 
 Crops: `pdp-price-default.png`.
@@ -761,7 +762,7 @@ Crops: `size-guide-default.png`, `size-guide-hover.png`, `size-guide-focus-visib
 
 PDP accordion. Details/shipping disclosure row.
 
-Page: pdp. Selector: `button[aria-expanded]`. States: default, hover, focus-visible, pressed.
+Page: pdp. Selector: `button[aria-expanded]`. States: .
 
 Not found on the page at capture time.
 
@@ -769,7 +770,7 @@ Not found on the page at capture time.
 
 PDP accordion, open.
 
-Page: pdp. Selector: `button[aria-expanded]`. States: opened.
+Page: pdp. Selector: `button[aria-expanded]`. States: .
 
 Not found on the page at capture time.
 
@@ -868,18 +869,18 @@ Crops: `cart-continue-default.png`, `cart-continue-hover.png`, `cart-continue-fo
 
 Login title.
 
-Page: account. Selector: `h1/heading`. States: default.
+Page: account. Selector: `login form heading`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 206 x 22.39 |
+| Size (w x h) | 448 x 22.39 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | proxima-nova 16px/22.4px 600 |
+| Font | proxima-nova 16px/22.4px 500 |
 | Letter spacing | 0.352px |
 | Colour | #ffffff |
 | Transition | none |
@@ -943,28 +944,28 @@ Crops: `password-input-default.png`, `password-input-focused.png`.
 
 Sign in button. The submit; measured except a real press — the form was never submitted.
 
-Page: account. Selector: `button:has-text("Sign in")`. States: default, hover, focus-visible.
+Page: account. Selector: `login form submit`. States: default, hover, focus-visible.
 
 | Property | default | hover | focus-visible |
 |---|---|---|---|
-| Size (w x h) | 588 x 38 | = | 29 x 29 |
-| Padding | 14px 16px | = | 2px |
+| Size (w x h) | 588 x 38 | = | - |
+| Padding | 14px 16px | = | - |
 | Gap | 12px | = | - |
-| Border | 1px solid #cccccc | = | none |
-| Radius | 0px | = | 50% |
-| Background | #cccccc | = | transparent |
-| Box shadow | none | = | = |
-| Outline | none | = | = |
-| Font | proxima-nova 16px/5.6px 900 | = | proxima-nova 24px/19.0016px 400 |
-| Letter spacing | 1.28px | = | normal |
-| Colour | #636363 | = | #000000 @ 0.54 |
-| Transition | none | = | background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
-| Cursor | not-allowed | = | pointer |
-| Painted layers | button.button-primary.btn-primary 588.0x38.0 bg #cccccc border T:1px solid #cccccc / R:1px solid #cccccc / B:1px solid #cccccc / L:1px solid #cccccc | = | span.MuiTouchRipple-child.MuiTouchRipple-childPulsate 31.9x31.0 bg #000000 r 50% |
-| How | at rest | mouse hover | keydown then focus() |
-| Icon | - | = | 25 x 25, colour #000000 |
+| Border | 1px solid #cccccc | = | - |
+| Radius | 0px | = | - |
+| Background | #cccccc | = | - |
+| Box shadow | none | = | - |
+| Outline | none | = | - |
+| Font | proxima-nova 16px/5.6px 900 | = | - |
+| Letter spacing | 1.28px | = | - |
+| Colour | #636363 | = | - |
+| Transition | none | = | - |
+| Cursor | not-allowed | = | - |
+| Painted layers | button.button-primary.btn-primary 588.0x38.0 bg #cccccc border T:1px solid #cccccc / R:1px solid #cccccc / B:1px solid #cccccc / L:1px solid #cccccc | = | - |
+| How | at rest | mouse hover | - |
+| Error | - | = | keyboard focus did not land on the element |
 
-Crops: `signin-button-default.png`, `signin-button-hover.png`, `signin-button-focus-visible.png`.
+Crops: `signin-button-default.png`, `signin-button-hover.png`.
 
 #### forgot-link
 
@@ -1066,26 +1067,9 @@ Crops: `m-menu-open-opened.png`.
 
 Mobile nav link. A row inside the opened menu drawer.
 
-Page: home. Selector: `open menu a`. States: default.
+Page: home. Selector: `open menu a`. States: .
 
-| Property | default |
-|---|---|
-| Size (w x h) | 88.16 x 14 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | proxima-nova 12px/16.8px 600 |
-| Letter spacing | 0.6px |
-| Colour | #ffffff |
-| Text node | span: proxima-nova 12px/16.8px 600, #ffffff, ls 0.6px |
-| Transition | color 0.3s ease |
-| Cursor | pointer |
-| How | at rest |
-
-Crops: `m-nav-link-default.png`.
+Not found on the page at capture time.
 
 #### m-hero-button
 
@@ -1222,20 +1206,20 @@ Page: home. Selector: `footer input[type="email"]`. States: default, focused.
 
 | Property | default | focused |
 |---|---|---|
-| Size (w x h) | 293 x 48.39 | = |
-| Padding | 12px 16px | = |
-| Border | 1px solid #a3a3a3 | 1px solid #ffffff |
+| Size (w x h) | 468 x 35 | = |
+| Padding | 0px 0px 0px 14px | = |
+| Border | 1px solid #a3a3a3 | 1px solid #000000 |
 | Radius | 0px | = |
-| Background | transparent | = |
+| Background | #ffffff | = |
 | Box shadow | none | = |
 | Outline | none | = |
-| Font | proxima-nova 16px/22.4px 400 | = |
+| Font | proxima-nova 14px/normal 400 | = |
 | Letter spacing | 0.352px | = |
-| Colour | #ffffff | = |
+| Colour | #000000 | = |
 | Transition | none | = |
 | Cursor | text | = |
 | Placeholder | #636363, opacity 1 | = |
-| Painted layers | input.yoga-ui-input.react-input 293.0x48.4 border T:1px solid #a3a3a3 / R:1px solid #a3a3a3 / B:1px solid #a3a3a3 / L:1px solid #a3a3a3 | input.yoga-ui-input.react-input 293.0x48.4 border T:1px solid #ffffff / R:1px solid #ffffff / B:1px solid #ffffff / L:1px solid #ffffff |
+| Painted layers | input.yoga-ui-input.react-input 468.0x35.0 bg #ffffff border T:1px solid #a3a3a3 / R:1px solid #a3a3a3 / B:1px solid #a3a3a3 / L:1px solid #a3a3a3 | input.yoga-ui-input.react-input 468.0x35.0 bg #ffffff border T:1px solid #000000 / R:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000 |
 | How | at rest | clicked into the field |
 
 Crops: `newsletter-input-default.png`, `newsletter-input-focused.png`.

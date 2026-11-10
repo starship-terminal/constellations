@@ -142,10 +142,24 @@ def props(v):
         o["icon"] = f"{num(v['icon']['w'])} x {num(v['icon']['h'])}, {colour(v['icon']['color'])}"
     if v.get("placeholder"):
         o["placeholder"] = colour(v["placeholder"]["color"])
+    # Painted layers that carry a state but not the root box: the element's own
+    # ::before/::after always, and descendant paint only when the root paints
+    # nothing (the case "Child layers" reports). A nav underline that goes
+    # transparent -> black on hover lives in a::after, so it diffs here.
+    bits = []
+    for pe in ("::before", "::after"):
+        if v.get(pe):
+            p = v[pe]
+            bits.append(" ".join(x for x in (pe, p.get("backgroundColor"), p.get("borderTopWidth"), p.get("boxShadow"), p.get("opacity")) if x))
+    if s["backgroundColor"] == "rgba(0, 0, 0, 0)" and s["boxShadow"] == "none" and s["borderTopWidth"] == "0px" and s["backgroundImage"] == "none":
+        for p in v.get("paint", [])[:6]:
+            bits.append(" ".join(x for x in (p["node"], p.get("size"), p.get("bg"), p.get("border"), p.get("shadow"), p.get("radius")) if x))
+    if bits:
+        o["layers"] = "; ".join(bits)[:400]
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers"]
 
 
 def state_rows(c):
@@ -186,7 +200,7 @@ def child_layers(c):
         return None
     out = []
     for p in st["paint"][:3]:
-        bits = [re.sub(r"\..*$", "", p["node"]) if "::" not in p["node"] else p["node"].split(".")[0], p["size"].replace(".0x", "x").replace(".0", "")]
+        bits = [re.sub(r"\..*$", "", p["node"]) if "::" not in p["node"] else p["node"].split(".")[0], re.sub(r"\.0+(?=x|px|$)", "", p["size"])]
         if p.get("bg"):
             bits.append("background " + colour(p["bg"]))
         if p.get("bgImage"):
@@ -258,7 +272,7 @@ W("# Alo Yoga components")
 W()
 W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from aloyoga.com on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.")
 W()
-W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [raw/pages.md](raw/pages.md).")
+W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [patterns.md](patterns.md).")
 W()
 W("How to read an entry:")
 W()
@@ -282,7 +296,7 @@ W("|---|---|---|---|")
 OVER = [
     ("Osano consent dialog", "every page, on load", "captured as it arrives, then hidden (never answered: no Accept/Reject/Save is ever clicked)", "[home-light-consent](screenshots/home-light-consent.png)"),
     ("WOMEN mega-menu", "header, home", "the nav item hovered; the flyout shows in the crop", "[home-light-megamenu](screenshots/home-light-megamenu.png), [nav-mega](#mega-menu-open)"),
-    ("PDP colour tile", "product page", "a colour label toggled; never an add-to-bag", "[pdp-light-swatch](screenshots/pdp-light-swatch.png), [pdp-swatch-picked](#pdp-swatch-picked)"),
+    ("PDP colour tile", "product page", "a colour label toggled; never an add-to-bag", "[pdp-swatch-picked-opened](components/crops/pdp-swatch-picked-opened.png), [pdp-swatch-picked](#pdp-swatch-picked)"),
     ("Mobile menu drawer", "home, phone", "the menu button's own toggle", "[mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [m-menu-open](#mobile-menu-open)"),
 ]
 for r in OVER:
@@ -297,14 +311,31 @@ W()
 foc = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if not st or "style" not in st:
+    if not st or "style" not in st or st.get("via") == "focus failed":
         continue
     s = st["style"]
+    base = next((v["style"] for v in c["states"].values() if "style" in v), s)
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
-    foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
-with_ring = [f"`{k}` ({r})" for k, r in foc if r]
-without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}.")
+    shadow = s["boxShadow"] != base["boxShadow"] and s["boxShadow"] != "none"
+    border = any(
+        s[f"border{d}{p}"] != base[f"border{d}{p}"]
+        for d in ("Top", "Right", "Bottom", "Left")
+        for p in ("Color", "Width", "Style")
+    )
+    desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None
+    foc.append((k, ring, shadow, border, desc))
+with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, r in foc if ring]
+with_shadow = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and sh]
+with_border = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and bd]
+without = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and not bd]
+parts = [f"{len(with_ring)} draw an outline ring: {', '.join(with_ring)}."]
+if with_shadow:
+    parts.append(f"{len(with_shadow)} draw a focus ring as a shadow instead: {', '.join(with_shadow)}.")
+if with_border:
+    parts.append(f"{len(with_border)} change only their border: {', '.join(with_border)}.")
+if without:
+    parts.append(f"The other {len(without)} show no measured change: {', '.join(without)}.")
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {' '.join(parts)}")
 W()
 W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): controls deepen their fill or dim rather than scale; the nav flyout and framework icons keep their hover scale. Nothing a real press would submit was ever pressed.")
 W()
@@ -355,9 +386,6 @@ for k in ["product-tile", "grid-card", "color-tile", "m-product-tile", "cart-emp
     if st is None:
         continue
     p = props(st)
-    if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
-        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 

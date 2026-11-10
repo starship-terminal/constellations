@@ -90,12 +90,22 @@ async function forcePseudo(loc, classes) {
   return async () => { await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] }).catch(() => {}); };
 }
 
+// comp() merges the spec's meta into the entry and marks it touched. The
+// page/run/url provenance is only written once the target is found, so a
+// re-run whose selector misses keeps the earlier evidence's own page, run and
+// url instead of stamping a new date on stale readings (FIELD-NOTES).
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
-  Object.assign(c, { page: current, run, url: URLS[current] && BASE + URLS[current] }, meta);
+  Object.assign(c, meta);
   touched.add(key);
   c.states ??= {};
   return c;
+}
+
+function found(c) {
+  delete c.missing;
+  delete c.recaptureMissed;
+  Object.assign(c, { page: current, run, url: URLS[current] && BASE + URLS[current] });
 }
 
 async function measure(key, state, target, opts = {}) {
@@ -119,13 +129,19 @@ async function measure(key, state, target, opts = {}) {
 }
 
 async function S(key, target, list, meta = {}, opts = {}) {
-  comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
+  const c = comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   if (!listed.has(key)) listed.set(key, new Set());
   for (const st of list) listed.get(key).add(st);
-  delete out.components[key].missing;
   if (opts.open) { await reset(); try { await opts.open(); } catch (e) { log('  ! open failed', key, String(e.message).slice(0,80)); } }
   const loc = target.filter({ visible: true }).first();
-  if (!(await loc.count())) { log('  ! missing', key); out.components[key].missing = true; return; }
+  if (!(await loc.count())) {
+    log('  ! missing', key);
+    c.missing = true;
+    c.recaptureMissed = run;
+    c.states = {}; // stale states from an earlier run are not current evidence
+    return;
+  }
+  found(c);
   for (const st of list) {
     let undo, via;
     try {
@@ -138,6 +154,8 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = 'mouse hover';
       } else if (st === 'focus-visible') {
         via = await kbFocus((opts.focusLoc || loc).filter({ visible: true }).first());
+        // a state that did not receive keyboard focus is not a captured focus
+        if (via === 'focus failed') throw new Error('keyboard focus did not land on the element');
       } else if (st === 'pressed') {
         undo = await forcePseudo((opts.pressLoc || loc).filter({ visible: true }).first(), ['active', 'hover']);
         via = 'CDP forcePseudoState :active:hover';
@@ -214,7 +232,7 @@ async function home() {
   await S('logo', q('a[href*="/en-sg"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Logo', sel: 'home link' }, { noScroll: true });
   await S('nav-item', q('a.main-nav__item').filter({ hasText: /WOMEN/i }), B4, { group: g, title: 'Nav item', desc: 'A top-level shop category; hover opens the mega-menu.', sel: 'a.main-nav__item' }, { noScroll: true });
   const women = q('a.main-nav__item').filter({ hasText: /WOMEN/i }).first();
-  await S('nav-mega', women, ['opened'], { group: g, title: 'Mega-menu, open', desc: 'The nav item while its flyout is open; the panel shows in the crop.', sel: 'a.main-nav__item:hover' }, { noScroll: true, noToggle: true, open: async () => { await women.hover(); await page.waitForTimeout(1600); } });
+  await S('nav-mega', women, ['opened'], { group: g, title: 'Mega-menu, open', desc: 'The nav item while its flyout is open; the panel shows in the crop.', sel: 'a.main-nav__item:hover' }, { noScroll: true, noReset: true, noToggle: true, open: async () => { await women.hover(); await page.waitForTimeout(1600); } });
   await page.mouse.move(700, 400); await page.waitForTimeout(500);
   await S('search-icon', q('#main-navbar-search-icon, a.main-navbar__icon--search'), B4, { group: g, title: 'Search icon', sel: '#main-navbar-search-icon' }, { noScroll: true });
   await S('account-icon', q('button.account-icon, .account-icon'), B4, { group: g, title: 'Account icon', sel: '.account-icon' }, { noScroll: true });
@@ -294,18 +312,36 @@ async function cart() {
 async function account() {
   if (!(await newPage('account'))) return;
   const g = G.account;
-  await S('login-title', q('h1, h2, [class*="title" i], [class*="heading" i]').filter({ hasText: /log ?in|sign ?in|account|customer/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Login title', sel: 'h1/heading' }, { noScroll: true });
+  // Scope to the login form: a page-wide heading match caught the footer's
+  // "Customer Service" heading, and a loose submit match caught "JOIN NOW".
+  const loginForm = q('form').filter({ has: q('input[type="email"], input[name*="email" i]') });
+  // Shopify hydrates the account sections after first paint; wait the form in.
+  await page.waitForSelector('form h1, form h2, form legend, form [class*="title" i], form [class*="heading" i]', { timeout: 5000 }).catch(() => {});
+  await S('login-title', loginForm.locator('h1, h2, h3, legend, [class*="title" i], [class*="heading" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Login title', sel: 'login form heading' }, { noScroll: true });
   const email = q('input[type="email"], input[name*="email" i]').first();
   await S('email-input', email, ['default', 'focused', 'filled'], { group: g, title: 'Email field', desc: 'Text was typed and deleted; the form was never submitted.', sel: 'input[type="email"]' });
   await S('password-input', q('input[type="password"]'), ['default', 'focused'], { group: g, title: 'Password field', desc: 'Focused only; nothing was typed.', sel: 'input[type="password"]' });
-  await S('signin-button', q('input[type="submit"], button[type="submit"], form button').filter({ visible: true }).first(), ['default', 'hover', 'focus-visible'], { group: g, title: 'Sign in button', desc: 'The submit; measured except a real press — the form was never submitted.', sel: 'button:has-text("Sign in")' });
+  // Prefer the control labelled Sign in; a bare submit still beats any
+  // unrelated button the old page-wide match caught ("JOIN NOW").
+  const loginBtn = loginForm.locator('input[type="submit"], button[type="submit"], button').filter({ hasText: /sign ?in|log ?in|continue/i }).first();
+  const loginBtnAny = loginForm.locator('input[type="submit"], button[type="submit"]').filter({ visible: true }).first();
+  await S('signin-button', (await loginBtn.count()) ? loginBtn : loginBtnAny, ['default', 'hover', 'focus-visible'], { group: g, title: 'Sign in button', desc: 'The submit; measured except a real press — the form was never submitted.', sel: 'login form submit' });
   await S('forgot-link', q('a').filter({ hasText: /forgot|recover/i }).first(), B4, { group: g, title: 'Forgot-password link', sel: 'a:has-text("Forgot")' });
   await S('create-account', q('a, button').filter({ hasText: /create account|sign up/i }).first(), B4, { group: g, title: 'Create-account link', desc: 'Measured, never followed.', sel: 'a:has-text("Create")' });
   save();
 }
 
 async function footer() {
-  current = 'home';
+  // The footer lives on the home page, but a full run ends on /account — open
+  // home first so the readings are the home footer the page/run/url claim.
+  if (!page || page.isClosed()) {
+    if (!(await newPage('home'))) return;
+  } else {
+    current = 'home';
+    await open(page, BASE + URLS.home, {});
+    if (await blocked()) { log('  BLOCKED footer'); return; }
+    await closePromo(page);
+  }
   const g = G.footer;
   const fl = q('footer a').filter({ hasText: /\w{3,}/ }).first();
   if (await fl.count()) {
@@ -325,7 +361,9 @@ async function mobile() {
   const menuBtn = q('button[aria-label*="menu" i], .hamburger, [class*="hamburger" i], header button:has(svg)').filter({ visible: true }).first();
   await S('m-menu-button', menuBtn, B4, { group: g, title: 'Mobile menu button', sel: 'header button' }, { noScroll: true });
   await S('m-menu-open', menuBtn, ['opened'], { group: g, title: 'Mobile menu, open', desc: 'The button after its own toggle; the open drawer shows in the crop.', sel: 'header button' }, { noScroll: true });
-  const mLink = q('a, button').filter({ hasText: /women|men|new arrivals|shop/i }).filter({ visible: true }).first();
+  // A row inside the drawer m-menu-open left open — a page-wide text match
+  // caught the "JOIN TO SHOP" promo instead.
+  const mLink = q('[data-state="open"] a, [class*="drawer" i] a, [class*="menu-drawer" i] a, [class*="menu" i][class*="open" i] a').filter({ hasText: /women|men|new arrivals|shop/i }).filter({ visible: true }).first();
   await S('m-nav-link', mLink, ['default'], { group: g, title: 'Mobile nav link', desc: 'A row inside the opened menu drawer.', sel: 'open menu a' }, { noScroll: true });
   await page.keyboard.press('Escape'); await page.waitForTimeout(500);
   await S('m-hero-button', q('.hero-button, a.hero-button').filter({ visible: true }).first(), B4, { group: g, title: 'Mobile hero button', sel: '.hero-button' });

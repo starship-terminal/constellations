@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
 """Build tokens.json (W3C DTCG, Tokens Studio multi-set layout) from the raw captures.
 
-Sources, read from appwrite.io on 2026-11-10:
-  raw/css-vars.json          every custom property the SvelteKit + Tailwind v4 bundle declares,
-                             read from the cdn.appwrite.io stylesheet body (tools/capture/vars.mjs),
-                             plus `resolved.light` and `resolved.dark`: each name as the browser
-                             resolves it on a probe html element without and with the .dark class
+Sources, read from aloyoga.com on 2026-11-11:
+  raw/css-vars.json          every custom property the Shopify + Builder.io stylesheets declare,
+                             read from the network responses (tools/capture/vars.mjs) and binned
+                             app / vendor / utility / tailwind — the app bin is the shop's own
+                             sheets; the vendor bin is the Sierra chat widget, Osano and Swiper
+                             embedded widgets. `resolved.light` is each name as the browser
+                             resolves it on a probe html element.
   raw/component-tokens.json  the token tree (tools/build_component_tokens.py): each leaf either
                              names a variable ("var") resolved per theme, or carries a measured
                              value and the measurement it came from ("source")
 Every token carries $extensions.source: "css-var <name>" or "measured <where>".
 
-appwrite.io's marketing pages pin html.dark on every captured route: the dark set is the painted
-one, and the light set holds the :root declarations the console app uses.
+aloyoga.com paints one light theme: the light set is the measured one and the spec's dark set
+is empty, so the export holds core and light only.
 
 Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.
 """

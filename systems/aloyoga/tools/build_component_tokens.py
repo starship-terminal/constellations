@@ -4,10 +4,6 @@
 aloyoga.com is Shopify + Builder.io; its theme.css declares on :root
 (raw/css-vars.json, read by tools/capture/vars.mjs):
 
-  --color-*        the design-system ramps: accentBlue/…/accentYellow at
-                   50…900, background-1…4, background-invert-1…5, tint-hover/
-                   pressed steps, chart-1…5, text/border/divider families
-                   ->  core.color
   --alto/-charcoal/-chicago/-dawn/-mercury/-mine/-smoke/-sand/-white
                    the shop's named greys and neutrals -> core.color.neutral
   --accent-*, --alert-*, --highlight-*, --success-*, --primary
@@ -15,7 +11,11 @@ aloyoga.com is Shopify + Builder.io; its theme.css declares on :root
   --primary-font   "proxima-nova", Helvetica, sans-serif -> core.font
   --spacing-*      the 0…9xl spacing scale -> core.spacing
   --shadow-level-1…4 -> core.shadow
-  --border-stroke-opacity -> core.border.opacity
+  --color-*/--border-stroke-opacity
+                   these names are declared ONLY by the embedded Sierra chat
+                   widget's stylesheet (sierra.chat, the vendor bin) — a
+                   chat widget's design tokens, not Alo's. Recorded in
+                   css-vars.json, never tokenised.
   --osano-*/--swiper-*/--spinner-*/--app-only-*/--sign-in-modal-*/--status-*
                    vendor and widget vars: recorded in css-vars.json, not
                    tokenised
@@ -24,6 +24,10 @@ A leaf is {"var": "--name"} (resolved per theme by build_tokens.py) or
 {"value": ..., "source": "..."} for a measured value. The shop paints one
 light theme; the `dark` set is left empty so build_tokens.py emits core and
 light only.
+
+Only names declared by rules in css-vars.json's `app` bin are tokenised:
+resolved.light mixes every loaded sheet, so without the bin check the Sierra
+chat widget's :host/:root declarations would be exported as Alo's palette.
 """
 import json, pathlib, re
 
@@ -79,6 +83,10 @@ def emit(root, name, leaf):
     node[last] = leaf
 
 
+# Names the shop's own stylesheets declare (the `app` bin in css-vars.json);
+# everything else resolved — Sierra's chat widget, Osano, Swiper — is vendor.
+APP = {n for r in V["app"] for n in r["properties"]}
+
 NEUTRAL = {"--alto", "--charcoal", "--chicago", "--dawn", "--mercury", "--mine", "--smoke", "--sand", "--white"}
 ROLE = {"--accent-light", "--accent-medium", "--accent-dark", "--alert-light", "--alert-medium", "--alert-dark",
         "--highlight-light", "--highlight-medium", "--highlight-dark", "--success-light", "--success-medium",
@@ -87,7 +95,10 @@ SKIP = re.compile(r"^--(osano|swiper|spinner|app-only|sign-in-modal|status-dot|s
 
 # --------------------------------------------------------------- core ramps
 
-for name in sorted(n for n in R if n.startswith("--color-")):
+# --color-* names are gated on the app bin: today every one of them is
+# Sierra's widget palette, so the loop emits nothing until Alo's own sheets
+# declare a ramp.
+for name in sorted(n for n in R if n.startswith("--color-") and n in APP):
     emit(SPEC["core"], name, var(name))
 for name in sorted(NEUTRAL):
     if name in R:
@@ -139,7 +150,7 @@ for name in sorted(n for n in R if n.startswith("--shadow-level-")):
     SPEC["core"].setdefault("shadow", {}).setdefault("level", {})[name[len("--shadow-level-"):]] = \
         {"value": arr if arr else str(R[name]), "type": "shadow",
          "source": f"css-var {name}"}
-if "--border-stroke-opacity" in R:
+if "--border-stroke-opacity" in R and "--border-stroke-opacity" in APP:
     SPEC["core"].setdefault("border", {}).setdefault("opacity", {})["stroke"] = \
         {"value": val("--border-stroke-opacity"), "type": "number", "source": "css-var --border-stroke-opacity"}
 
