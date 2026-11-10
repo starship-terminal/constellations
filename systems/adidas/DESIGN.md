@@ -35,15 +35,15 @@ typography:
     fontSize: "15px"
     fontWeight: 700
     lineHeight: "20px"
-    letterSpacing: "0px"
+    letterSpacing: "0.5px"
   buttonLabel:
     fontFamily: "AdihausDIN"
     fontSize: "14px"
     fontWeight: 700
     lineHeight: "20px"
-    letterSpacing: "0px"
+    letterSpacing: "2px"
   body:
-    fontFamily: "AdihausDIN"
+    fontFamily: "ui-sans-serif"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: "24px"
@@ -53,25 +53,25 @@ typography:
     fontSize: "13px"
     fontWeight: 400
     lineHeight: "18px"
-    letterSpacing: "0px"
+    letterSpacing: "0.5px"
   micro:
     fontFamily: "AdihausDIN"
     fontSize: "11px"
     fontWeight: 400
     lineHeight: "16px"
-    letterSpacing: "0px"
+    letterSpacing: "0.5px"
   price:
-    fontFamily: "AdihausDIN"
+    fontFamily: "adineuePRO"
     fontSize: "18px"
     fontWeight: 700
     lineHeight: "22px"
-    letterSpacing: "0px"
+    letterSpacing: "0.5px"
   heading:
     fontFamily: "adineuePRO"
     fontSize: "24px"
     fontWeight: 700
     lineHeight: "30px"
-    letterSpacing: "0px"
+    letterSpacing: "1px"
 rounded:
   none: "0px"
 ---
@@ -105,7 +105,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Typography
 
-7 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: AdihausDIN, adineuePRO.
+7 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: AdihausDIN, adineuePRO, ui-sans-serif.
 
 ### Fonts (from README.md)
 
@@ -142,8 +142,8 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **This is adidas.com.cn, not adidas.com.** Same brand language, different front end and market. Values here are the China flagship's — do not project them onto the global storefront without re-measuring.
 - The PDP captured showed a disabled add-to-cart state (white fill, grey #c8cbcc text/border, "加入购物袋"); an in-stock enabled bar was not captured.
 - The site renders pages as fixed-height app shells with inner scroll containers, so `-full` shots capture the viewport-height shell, not a tall page — a hard boundary of the front end, not a truncation.
-- `plp-title`, `product-card-price`, `size-cell`, `accordion`, `m-header` are recorded misses in components.md; `size-cell`/`accordion` may not exist on this PDP variant.
-- Nav-flyout hover timed out on desktop (menu opens on click for some items); search and menu overlays are in the screenshots.
+- `plp-title`, `product-card-price`, `size-cell`, `accordion` and `m-burger` are recorded misses in components.md; `size-cell`/`accordion` may not exist on this PDP variant, and no burger menu mounts at 390 (the mobile top bar is a search pill, measured as `m-header`).
+- Nav-flyout hover timed out on desktop (menu opens on click for some items); the search overlay is in the screenshots.
 
 ### Do and don't (from README.md)
 

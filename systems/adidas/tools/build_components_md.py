@@ -60,9 +60,9 @@ for theme in ("core", "light"):
 # Which token a colour is named after depends on what it paints: a fill prefers the action and
 # background names, a border the border names, text the text names.
 PREFER = {
-    "bg": ["action.", "background.", "color.ink", "color.cream", "color.amber", "color.white", "text.", "border."],
-    "border": ["border.", "color.keyline", "color.ink", "color.amber", "text.", "background."],
-    "text": ["text.", "action.", "color.amber", "color.ink", "color.cream", "color.black", "border."],
+    "bg": ["action.", "background.", "color.white", "color.offWhite", "color.greyLight", "text.", "border."],
+    "border": ["border.", "color.grey", "color.black", "text.", "background."],
+    "text": ["text.", "action.", "color.black", "color.greyDark", "color.grey", "border."],
     "icon": ["text.", "color.", "border."],
 }
 
@@ -105,7 +105,7 @@ def sides(t, r, b, l):
 
 def fam(f):
     first = (f or "").split(",")[0].replace('"', "").strip()
-    return {"Chinese UI sans": "Chinese UI sans", "Chinese UI sans-Medium": "Chinese UI sans-Medium"}.get(first, first)
+    return {"微软雅黑": "Microsoft YaHei", "AdihausDIN-Woff": "AdihausDIN"}.get(first, first)
 
 
 def num(x):
@@ -183,7 +183,36 @@ def props(v):
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "backdrop", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "backdrop", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "child paint"]
+
+
+def paint_delta(a, b):
+    """Describe how the painted child layers differ between two states.
+
+    props() only reads the component root's computed style, so a hover that
+    repaints a child (the product card's border going #eceff1 to black) would
+    otherwise read 'same'. Layers are aligned by node name; only fields that
+    changed are reported.
+    """
+    if not a or not b:
+        return ""
+    fields = ("border", "bg", "shadow", "outline", "bgImage")
+    out = []
+    bmap = {p["node"]: p for p in b}
+    seen = set()
+    for pa in a:
+        pb = bmap.get(pa["node"])
+        if not pb:
+            continue
+        seen.add(pa["node"])
+        for f in fields:
+            va, vb = pa.get(f), pb.get(f)
+            if va != vb:
+                name = "background" if f == "bg" else ("image" if f == "bgImage" else f)
+                out.append(f"{pa['node']}: {name} {colour(va or 'none', tokens=False)} → {colour(vb or 'none', tokens=False)}")
+    added = [p["node"] for p in b if p["node"] not in seen and p["node"] not in {x["node"] for x in a}]
+    out += [f"{n} appears" for n in added[:3]]
+    return "; ".join(out)
 
 
 def state_rows(c):
@@ -193,14 +222,19 @@ def state_rows(c):
     if not states:
         return rows
     base = props(c["states"][states[0]])
+    base_paint = c["states"][states[0]].get("paint")
     rows.append((states[0], base))
     same = []
     for st in states[1:]:
-        p = props(c["states"][st])
+        v = c["states"][st]
+        p = props(v)
         diff = {k: p[k] for k in ORDER if k in p and p.get(k) != base.get(k)}
         for k in ORDER:
             if k in base and k not in p:
                 diff[k] = "none"
+        delta = paint_delta(base_paint, v.get("paint"))
+        if delta:
+            diff["child paint"] = delta
         if not diff:
             same.append(st)
             continue
@@ -244,31 +278,24 @@ def child_layers(c):
 # --------------------------------------------------------------------------- page and group text
 
 GROUP_INTRO = {
-    "Shell and navigation": "The two-tier header every page shares: a thin utility row (Stores, Customer service / Email sign up, Account, My cart), the centred Aēsop wordmark and the main-nav row ending in a Search disclosure trigger. Cream-on-ink, transparent over the hero.",
-    "Home": "The home canvas: a full-bleed campaign band under the transparent header (photography or film, an overlaid line and a bordered CTA card), then product rows and the dark footer.",
-    "Catalogue page (PLP)": "A catalogue page such as Shop all: the category title and product count, an All filters toggle opening a 400px left rail of accordion groups (Price, Skin type, Skin concern, Form, Ingredients, Aroma), a Sort select, then the tile grid — photograph, bold name, descriptor, size select, price, ink add-to-cart.",
-    "Product page (PDP)": "A product detail page: breadcrumbs over a two-column canvas (gallery left, purchase column right) — badge line, product title, price, descriptor, the bordered variant/size box, the ink Add to cart bar, then expandable rows and a suggested-partners rail.",
-    "Panels and overlays": "The overlays: the search disclosure under the nav, the right-hand My cart drawer (405px), the Email sign up modal shell (its remote fragment did not render in headless), the Filter by rail and the locator's No-result dialog.",
-    "Sign in": "The Demandware sign-in page (Login-Show): My Account heading, full-width email and password fields, a Submit bar and the Create an Account link. Measured, never submitted.",
-    "Stores": "The store locator: Find a store title, an address field with a floating label, Geolocate me, a Filters select, the Map/Satellite toggle over a Google map, and the 'No result found' dialog.",
-    "Footer": "The dark page foot (ink #252525): secure-checkout and complimentary-samples lines, the Orders and support / About / Sustainability link columns in cream, and the Online Preferences OneTrust trigger.",
-    "Mobile (390 wide)": "The same storefront at 390: the header collapses to Stores, wordmark and My cart; the burger button opens a flat accordion drawer of 48px rows.",
+    "Shell and navigation": "The 124px two-strip header every page shares: a 40px black utility strip (在线客服 online service, 请登录 sign in), then an 84px nav bar — the adidas mark, the category nav (男装, 男鞋, 女装…), search, help, account, bag — over a #eceff1 hairline, plus the off-white campaign tag strip.",
+    "Home": "The home canvas: the 540px full-bleed campaign band (.feed-com-carousel) under the header — photography, a banner headline and a lib-button 立即选购 CTA — then product rows and the footer.",
+    "Catalogue page (PLP)": "A catalogue page (/plp/sp_run_app_male): grey filter/sort labels, then the product grid — a bordered photo tile, bold 13/18 name and ¥ price per card.",
+    "Product page (PDP)": "A product page (/pdp?articleId=JP1477): a two-column canvas — gallery left, purchase column right — adineuePRO title and ¥ price, the white disabled add-to-cart bar, size cells and accordion rows.",
+    "Footer": "The page foot (360px): bold 15/20 column titles (帮助中心…) over 11/16 link columns and the service line.",
+    "Mobile (390 wide)": "The same storefront at 390: the top bar collapses to a search-field pill — no nav row and no burger menu.",
 }
 
 PAGE_DESC = [
-    ("home", "Home. The hero, product rows and footer. Captured at rest, search open, sign-up modal, cart drawer, nav hover, and full-page.", "/"),
-    ("shopall", "Shop all, the catalogue page. Captured at rest, filters rail open, and full-page.", "/shop-all/"),
-    ("skincare", "The Skin Care category landing.", "/skin-care/"),
-    ("pdp", "A product page (The adidas Valise, APB399). Captured at rest, an accordion open, and full-page.", "/gifts/seasonal-gift-kits/the-aesop-valise/APB399.html"),
-    ("stores", "The store locator.", "/stores"),
-    ("cart", "The cart route, empty.", "/cart"),
-    ("login", "The Demandware sign-in page.", "/on/demandware.store/Sites-aesop-us-Site/en_US/Login-Show"),
-    ("notfound", "The styled 404 / unexpected-error page.", "/account"),
+    ("home", "Home. The campaign band, tag strip, product rows and footer. Captured at rest, search open, and full-page.", "/"),
+    ("plp", "A catalogue page (跑步 running, men's). Captured at rest, filter open, and full-page.", "/plp/sp_run_app_male"),
+    ("pdp", "A product page (articleId JP1477 — pinned so the screenshots and the measurements describe the same product). Captured at rest and full-page.", "/pdp?articleId=JP1477"),
+    ("cart", "The cart route.", "/cart"),
 ]
 MOBILE_DESC = [
-    ("mobile-home", "Home at 390, at rest, the burger drawer open, and full-page.", "/"),
-    ("mobile-shopall", "The catalogue page at 390.", "/shop-all/"),
-    ("mobile-pdp", "The product page at 390.", "/gifts/seasonal-gift-kits/the-aesop-valise/APB399.html"),
+    ("mobile-home", "Home at 390, at rest and full-page.", "/"),
+    ("mobile-plp", "The catalogue page at 390.", "/plp/sp_run_app_male"),
+    ("mobile-pdp", "The product page at 390.", "/pdp?articleId=JP1477"),
 ]
 
 L = []
@@ -295,14 +322,14 @@ n_states = sum(len(c["states"]) for c in C.values())
 
 W("# adidas components")
 W()
-W(f"The discovery list of every page and state captured, then one entry per component with crops of the real site, the shared values and the Gaps. Captured from adidas.com.cn on 2026-11-10 — the China flagship storefront (prices in CNY ¥) — as static pages rendered at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the live DOM. Nothing was submitted, bought or signed into; the only presses were local UI toggles (the Search disclosure, Email sign up modal, My cart drawer, All filters rail, burger menu). The OneTrust consent SDK was blocked at the network layer — its banner was never mounted, and no consent button was ever pressed.")
+W(f"The discovery list of every page and state captured, then one entry per component with crops of the real site, the shared values and the Gaps. Captured from adidas.com.cn on {J['_meta'].get('read', '2026-11-10')} — the China flagship storefront (prices in CNY ¥) — as static pages rendered at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the live DOM. Nothing was submitted, bought or signed into; the only presses were local UI toggles (the Search disclosure, the nav flyout, the filter rail). No consent SDK mounts on these routes.")
 W()
 W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states).")
 W()
 W("How to read an entry:")
 W()
-W("- A colour is its value followed by the token in [tokens.json](tokens.json) whose value is the same, when there is one. Text is written family size/line-height weight, then its colour, for example `Chinese UI sans 12/20 400, #000000`, and is read from the first text node inside the component.")
-W("- The first state of each entry lists every value; later states list only what changed. A state identical to the first is named in its label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
+W("- A colour is its value followed by the token in [tokens.json](tokens.json) whose value is the same, when there is one. Text is written family size/line-height weight, then its colour, for example `AdihausDIN 15/20 700, #000000`, and is read from the first text node inside the component.")
+W("- The first state of each entry lists every value; later states list only what changed. A state identical to the first is named in its label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do; a state that only repaints a child layer is listed as \"child paint\".")
 W(f"- Crops are images of the component in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
 W()
 W("## Discovery list")
@@ -319,12 +346,8 @@ W()
 W("| State | Where | How it was reached | Captured |")
 W("|---|---|---|---|")
 OVER = [
-    ("Search disclosure", "home", "the Search header button", "[home-light-search](screenshots/home-light-search.png), [search-field](#search-field)"),
-    ("Email sign up modal", "home", "the Email sign up button", "[home-light-signup](screenshots/home-light-signup.png), [signup-dialog](#signup-dialog)"),
-    ("My cart drawer", "home", "the My cart button", "[home-light-cart](screenshots/home-light-cart.png), [cart-panel](#cart-panel)"),
-    ("Filter rail", "PLP", "the All filters button", "[shopall-light-sort](screenshots/shopall-light-sort.png), [filter-panel](#filter-panel)"),
-    ("Accordion opened", "PDP", "a PDP accordion row", "[pdp-light-accordion](screenshots/pdp-light-accordion.png)"),
-    ("Mobile burger drawer", "home at 390", "the burger button", "[mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [m-menu-drawer](#m-menu-drawer)"),
+    ("Search disclosure", "home", "the Search header button", "[home-light-search](screenshots/home-light-search.png)"),
+    ("Filter rail", "PLP", "the filter/sort control", "[plp-light-filter](screenshots/plp-light-filter.png), [filter-row](#filter-row)"),
 ]
 for row in OVER:
     W("| " + " | ".join(row) + " |")
@@ -358,7 +381,9 @@ for cid, c in C.items():
                 focus["focus could not be driven"] += 1
                 continue
             focus_n += 1
-            if st["outlineStyle"] != "none" and float(st["outlineWidth"].replace("px", "")) > 0:
+            oc = st["outlineColor"]
+            transparent = bool(re.fullmatch(r"rgba\(\d+, \d+, \d+, 0\)", oc or ""))
+            if st["outlineStyle"] != "none" and float(st["outlineWidth"].replace("px", "")) > 0 and not transparent:
                 focus[f"{st['outlineWidth']} {st['outlineStyle']} {colour(st['outlineColor'], role='border')} offset {st['outlineOffset']}"] += 1
             else:
                 focus["no ring on the element"] += 1
@@ -372,6 +397,8 @@ for cid, c in C.items():
         hovers[f"text {colour(a['style']['color'], role='text')} to {colour(b['style']['color'], role='text')}"] += 1
     elif a["style"]["borderTopColor"] != b["style"]["borderTopColor"]:
         hovers[f"border {colour(a['style']['borderTopColor'], role='border')} to {colour(b['style']['borderTopColor'], role='border')}"] += 1
+    elif a.get("paint") != b.get("paint"):
+        hovers["a child layer repaints (the entry's child paint row has the detail)"] += 1
     else:
         hovers["no change on the element"] += 1
 
@@ -380,17 +407,17 @@ def top(ctr, n):
     return ", ".join(f"{k} ({v})" for k, v in ctr.most_common(n))
 
 
-W(f"**Radius.** {top(radii, 5) if radii else 'none — every corner on the site is 0px'}. The single curve is the filter rail's 10px radio dot (`border-radius:100%` on a `::before`).")
+W(f"**Radius.** {top(radii, 5) if radii else 'none — every corner measured on the storefront is 0px'} — buttons, fields, tiles, drawers and cells are all square.")
 W()
-W(f"**Hover.** Acne hovers with colour, never fills or shadows: {top(hovers, 8)}. Black fills (LOAD MORE, CONTINUE, SHOW N ITEMS) flip to Acne blue; blue fills (ADD TO BAG) deepen to {colour('rgb(5, 21, 116)')}; blue links deepen the same way; black labels (nav, FILTER, Menu) grey to {colour('rgb(107, 107, 107)', role='text')}.")
+W(f"**Hover.** {top(hovers, 8)}. The one measured hover effect is painted by a child: the product card's border steps from #eceff1 to black while its fill stays grey. Buttons and links show no hover change on the element itself.")
 W()
-W(f"**Focus.** Of {focus_n} elements given a real keyboard focus: {top(focus, 6)}. The ring Acne does draw is a 1px solid keyline 3px inside the control — white on the black/blue buttons, deep blue on the white wishlist button, black on the size cells. Text links show no ring.")
+W(f"**Focus.** Of {focus_n} elements given a real keyboard focus: {top(focus, 6)}. The only ring measured is the browser's own (footer-link takes Chromium's 1px auto #005fcc outline); buttons and nav items paint no focus style at all, and several controls (div nav items, the promo tag) are not keyboard-focusable — {focus['focus could not be driven']} focus attempts could not land.")
 W()
-W(f"**Motion.** {top(trans, 6) if trans else 'Instant: every measured control reports transition-duration 0s — hover, focus and pressed changes have no easing'}. The only transitions the stylesheet carries are the drawers' 150ms padding-bottom safe-area slide, the accordions' 200ms max-height reveal and a 500ms fade on campaign layers, none on the controls themselves.")
+W(f"**Motion.** {top(trans, 6) if trans else 'Instant: every measured control reports transition-duration 0s — hover, focus and pressed changes have no easing'}. The header bar itself carries `all 0.3s ease-in`; the readable stylesheets' declared transitions are listed in [raw/measurements.md](raw/measurements.md).")
 W()
-W("**Layout.** The header is a 60px rail (45px at 390); every page is a 1440-wide fluid grid of 4-px-base cells (`as-cell`). Primary buttons and the email fields share one 60px height; the small search field, menu links, suggestions and gift-guide bars are 30px rows; size cells are 77 x 45; every right-side drawer is 360 wide with a 45px head. Hairline 1px rules in #f2f2f2 (or black on drawers and the mega-menu's top edge) separate everything — several are painted as 1px background gradients rather than borders.")
+W("**Layout.** The header is a 124px rail (a 40px black utility strip over an 84px nav bar); the campaign band under it runs 540px tall at 1440. Buttons share one 48px height with 16px side padding; the PLP grid runs 338.5px product cards at 454.5px tall; the PDP purchase column is ~400px; the footer is a 360px block. Edges, where they exist, are 1px hairlines in #eceff1, #c8cbcc or black.")
 W()
-W("**Accent.** Acne blue (#0018a8) is the only accent: every text link, the ADD TO BAG fill, the wishlist border, the picked size cell's border and fill, the geo selector, and the hover step of every black button. Its deeper step #051574 is hover-only. Everything else is black, white or one of four warm greys.")
+W("**Accent.** None — the storefront is strict monochrome: black text and keylines on white, grey steps (#9a9b9b muted, #c8cbcc disabled/hairline, #eceff1 and #f9f9f9 surfaces). No accent colour was measured on the public surface.")
 W()
 
 
@@ -442,12 +469,13 @@ for g, ids in groups.items():
 
 W("## Gaps")
 W()
-W("- The Email sign up modal mounts as a cream shell (970 x 450 measured); its remote Demandware Newsletter-SignUp fragment did not render in headless Chromium, so the dialog's fields, checkboxes and submit were never measurable — `signup-field`, `signup-checkbox` and `signup-submit` are honest misses.")
-W("- States that submit were never pressed: ADD TO CART, APPLY, the sign-in Submit, the store OK. Their hover, focus and pressed styles come from CDP-forced pseudo-classes and keyboard focus, not real clicks.")
-W("- `search-panel`'s container eluded marking (the disclosure mounts under a different id), but `search-field` and `search-close` inside it are measured, and the open state is in screenshots. `cart-close` has no measurable button: the drawer closes on backdrop/Escape.")
-W("- `qty-select` is absent on this PDP (a one-variant kit); the variant/size box is measured instead. `no-result-dialog` was measured at 415 x 211.")
-W("- Cloudflare Turnstile gates second document loads per context and some system routes: PDPs are reached as a first load in a fresh context (see tools/capture/public/lib.mjs note), and a still-blocked route would be recorded, not fought.")
-W("- Hover/focus on the 390 capture is not meaningful (a phone has neither); mobile entries cover layout and the burger drawer.")
+W("- States that submit were never pressed: 加入购物袋 (add to cart) and the checkout controls. Hover, focus and pressed styles come from CDP-forced pseudo-classes and keyboard focus, not real clicks.")
+W("- The captured PDP showed add-to-cart in its disabled state (white fill, #c8cbcc text and border); an in-stock enabled bar was not measured.")
+W("- The nav flyout did not open on hover in headless (some items open on click); the search disclosure is in the screenshots, its panel is not measured.")
+W("- `plp-title`, `product-card-price`, `size-cell`, `accordion` and `m-burger` are recorded misses — the selectors found nothing, so nothing is reported; `size-cell`/`accordion` may not exist on this PDP variant, and no burger menu mounts at 390 (the top bar is the search pill).")
+W("- Pages are fixed-height app shells with inner scroll containers, so the `-full` screenshots capture the viewport-height shell, not a tall page — a boundary of the front end, not a truncation.")
+W("- The global adidas.com storefront is Akamai-blocked from the capture environment (every regional domain answers HTTP 403), so this package covers adidas.com.cn, a related but different zh-CN front end.")
+W("- Hover/focus on the 390 capture is not meaningful (a phone has neither); the mobile entries cover layout.")
 W()
 
 open("components.md", "w").write("\n".join(L) + "\n")

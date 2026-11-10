@@ -139,11 +139,11 @@ Crops: `logo-default.png`.
 
 Hero. The campaign band under the header: photography, a headline and a 立即选购 CTA.
 
-Page: home. Selector: ``. States: default.
+Page: home. Selector: `.feed-com-carousel`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1143 x 40 |
+| Size (w x h) | 1440 x 540 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -153,7 +153,9 @@ Page: home. Selector: ``. States: default.
 | Font | ui-sans-serif 16px/24px 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
+| Text node | div.major.heading-2: adineuePRO 20px/34px 700, #000000, ls 1px |
 | Transition | none |
+| Painted layers | div.major.heading-2 185.0x34.0 bg #ffffff; div.minor.mt-4 0.0x0.0 bg #ffffff; button.btn.mt-16 200.0x48.0 bg #ffffff; button::before.btn.mt-16 200pxx48px border T:1px solid #000000 / R:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000 |
 | How | at rest |
 
 Crops: `hero-default.png`.
@@ -190,7 +192,7 @@ Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png
 
 Footer. The page foot: link columns and the tel:400-999-5999 service line.
 
-Page: pdp. Selector: ``. States: default.
+Page: home. Selector: ``. States: default.
 
 | Property | default |
 |---|---|
@@ -215,7 +217,7 @@ Crops: `footer-default.png`.
 
 Footer link. A footer link entry.
 
-Page: pdp. Selector: ``. States: default, hover, focus-visible, pressed.
+Page: home. Selector: ``. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -424,36 +426,41 @@ Not found on the page at capture time.
 
 #### m-header
 
-Mobile header. The header at 390 wide.
+Mobile header. The top bar at 390 wide: a search-field pill, no nav row.
 
-Page: home. Selector: ``. States: .
+Page: home. Selector: `.search-bar`. States: default.
 
-Not found on the page at capture time.
+| Property | default |
+|---|---|
+| Size (w x h) | 390 x 48 |
+| Padding | 4px 16px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | ui-sans-serif 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #000000 |
+| Text node | span.label-4.mr-12: AdihausDIN-Woff 13px/18px 400, #9a9b9b, ls 0.5px |
+| Transition | none |
+| Painted layers | div.search-bar-box.cursor-pointer 310.0x32.0 bg #f9f9f9 |
+| How | at rest |
+
+Crops: `m-header-default.png`.
 
 #### m-burger
 
-Burger button. The menu button on mobile, if visible.
+Burger button. The menu button on mobile. None is mounted at 390 — the top bar is the search field, so this records a miss rather than an icon glyph.
 
-Page: home. Selector: ``. States: default, hover, focus-visible, pressed.
+Page: home. Selector: `menu control`. States: .
 
-| Property | default | hover | focus-visible | pressed |
-|---|---|---|---|---|
-| Size (w x h) | 40 x 60 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | iconfont 40px/60px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Transition | none | = | = | = |
-| ::before | auto x auto, static, bg #000000 @ 0, radius 0px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
-
-Crops: `m-burger-default.png`, `m-burger-hover.png`, `m-burger-focus-visible.png`, `m-burger-pressed.png`.
+Not found on the page at capture time.
 
 ## Transitions declared in the readable stylesheets
 
 Every readable stylesheet on each captured page (adidas's Demandware bundles are same-origin); the per-state Transition rows above are computed values.
+
+- home: `opacity 0.25s linear`, `transform 0.25s ease-in-out`, `transform 0.4s`, `transform 0.3s ease-in`, `height 0.25s ease-in-out`, `width 0.1s, opacity 0.4s`, `none`, `transform 0.5s 0.2s`, `1s`, `0.3s ease-in`, `0.1s cubic-bezier(0.3, 0, 0.45, 1)`, `0.2s cubic-bezier(0.2, 0, 0.45, 1)`
+
+- home@390: `opacity 0.25s linear`, `transform 0.25s ease-in-out`, `transform 0.4s`, `transform 0.3s ease-in`, `height 0.25s ease-in-out`, `width 0.1s, opacity 0.4s`, `none`, `transform 0.5s 0.2s`, `1s`, `0.3s ease-in`, `0.1s cubic-bezier(0.3, 0, 0.45, 1)`, `0.2s cubic-bezier(0.2, 0, 0.45, 1)`

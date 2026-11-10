@@ -1,4 +1,4 @@
-// Captures aesop.com's public pages into RAW (full-colour PNGs); quantize.py turns them into screenshots/.
+// Captures adidas.com.cn's public pages into RAW (full-colour PNGs); quantize.py turns them into screenshots/.
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [page,page,...]
 //
@@ -6,12 +6,11 @@
 // Desktop shots are 1440x900 at 1x, mobile 390x844 at 2x, `*-full` shots 1x. A page taller than one GPU
 // texture is saved as name.partN.png tiles, which quantize.py stitches back together.
 // Nothing is sent, bought or signed into: the only presses are local UI toggles — the Search
-// disclosure, the Email sign up dialog, the My cart drawer, the burger menu and PDP accordions.
-// The OneTrust consent SDK is aborted at request level (its banner never mounts; no consent button
-// is ever clicked). The store served is the US site (Sites-aesop-us-Site).
+// disclosure, the nav flyout, the filter rail and PDP accordions. There is no
+// consent SDK on these routes. The store served is the China flagship (zh-CN, ¥).
 import fs from 'fs';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { M, closePromo, killGeo, clearChallenge, chromium, patch, UA, UA_MOBILE, BASE } from './lib.mjs';
+import { closePromo, chromium, patch, UA, UA_MOBILE, BASE } from './lib.mjs';
 
 const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
 fs.mkdirSync(RAW, { recursive: true });
@@ -36,39 +35,49 @@ class Shooter {
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
-    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
     // Infinite-scroll pages grow scrollHeight without bound after lazyScroll;
     // without a ceiling the tile loop writes forever (acuityscheduling filled
     // 111 GB once). Truncate hard and record the boundary instead.
     const MAXH = 8 * chunk;
     const hCap = Math.min(H, MAXH);
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
-    if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+    // Stage every tile under a .new name and swap it in only after the whole
+    // shot succeeds, so a failed tile never truncates the previous capture.
+    const staged = [];
+    try {
+      if (hCap <= chunk) {
+        await screenshotWithMetadata(p, { path: f + '.new.png', fullPage: true }, this.requested);
+        staged.push([f + '.new.png', f + '.png']);
+      } else {
+        for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
+          const tmp = `${f}.part${i}.new.png`;
+          await screenshotWithMetadata(p, { path: tmp, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+          staged.push([tmp, `${f}.part${i}.png`]);
+        }
+      }
+    } catch (e) {
+      for (const [tmp] of staged) fs.existsSync(tmp) && fs.unlinkSync(tmp);
+      throw e;
+    }
+    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`) || n === `${this.prefix}-${name}.png`)) fs.unlinkSync(`${RAW}/${old}`);
+    for (const [tmp, final] of staged) fs.renameSync(tmp, final);
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
   }
 }
 const step = async (label, fn) => { try { await fn(); } catch (e) { log('  FAILED', label, String(e.message).split('\n')[0]); } };
 const clickEl = async (loc, ms = 8000) => { await loc.click({ timeout: ms }).catch(() => loc.evaluate((el) => el.click())); };
-// A PDP is an SPA route (/pdp?articleId=<SKU>) resolved from the first tile on
-// a /plp/ page in a throwaway context, then loaded directly.
-const resolvePdp = async (browser, mobile) => {
-  const ctx = await browser.newContext({ viewport: { width: mobile ? 390 : 1440, height: mobile ? 844 : 900 }, userAgent: mobile ? UA_MOBILE : UA, isMobile: mobile, hasTouch: mobile, locale: 'zh-CN' });
-  await patch(ctx);
-  const p = await ctx.newPage();
-  let url = null;
-  try {
-    await p.goto(BASE + '/plp/sp_run_app_male', { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-    await p.waitForTimeout(8000);
-    url = await p.evaluate(() => {
-      const a = document.querySelector('a[href*="/pdp"]');
-      return a ? a.href : null;
-    });
-  } finally { await ctx.close(); }
-  return url || BASE + '/pdp?articleId=JP1477';
-};
+// The PDP is pinned to one SKU so the screenshot pass and the measurement
+// pass (measure.mjs) always describe the same product.
+const PDP = '/pdp?articleId=JP1477';
 const esc = async (p) => { await p.keyboard.press('Escape'); await wait(p, 800); };
+
+// A storefront page counts as loaded only when the navigation returned a real
+// document: a failed or blank load must not overwrite the images on disk.
+async function loadedOk(p, resp) {
+  if (!resp || !resp.ok()) return false;
+  return p.evaluate(() => !!(document.body && document.body.innerText && document.body.innerText.trim().length > 40)).catch(() => false);
+}
 
 const desktop = {
   home: { path: '/', run: async (p, S) => {
@@ -91,7 +100,7 @@ const desktop = {
     });
     await S.full();
   } },
-  pdp: { resolve: (b) => resolvePdp(b, false), run: async (p, S) => {
+  pdp: { path: PDP, run: async (p, S) => {
     await S.view('default');
     await step('accordion', async () => {
       const acc = p.locator('.lib-collapse-item, [class*="accordion" i] > *, [class*="collapse" i] > *').filter({ visible: true }).first();
@@ -104,14 +113,12 @@ const desktop = {
 const mobile = {
   home: { path: '/', run: async (p, S) => {
     await S.view('default');
-    await step('menu', async () => {
-      const b = p.locator('[class*="hamburger" i], [class*="menu" i].iconfont, .iconfont').filter({ visible: true }).first();
-      if (await b.count()) { await clickEl(b); await wait(p, 1600); await S.view('menu'); await esc(p); }
-    });
+    // No burger/menu control is mounted at 390 — the mobile top bar is the
+    // search pill, so there is no menu state to shoot.
     await S.full();
   } },
   plp: { path: '/plp/sp_run_app_male', run: async (p, S) => { await S.view('default'); await S.full(); } },
-  pdp: { resolve: (b) => resolvePdp(b, true), run: async (p, S) => { await S.view('default'); await S.full(); } },
+  pdp: { path: PDP, run: async (p, S) => { await S.view('default'); await S.full(); } },
 };
 
 const b = await chromium.launch();
@@ -128,10 +135,10 @@ for (const { k, mob } of runs) {
   log(name);
   const S = new Shooter(p, `${name}-light`, vw, vh, dpr);
   try {
-    const path = spec.resolve ? await spec.resolve(b) : spec.path;
-    const target = path && path.startsWith('http') ? path : BASE + path;
+    const target = spec.path.startsWith('http') ? spec.path : BASE + spec.path;
     log('  ->', target);
-    await p.goto(target, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+    const resp = await p.goto(target, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => null);
+    if (!(await loadedOk(p, resp))) { log('  LOAD FAILED', name, '- keeping existing images'); await ctx.close(); continue; }
     await p.waitForTimeout(7000);
     await spec.run(p, S);
   } catch (e) { log('  PAGE FAILED', name, e.message.split('\n')[0]); }

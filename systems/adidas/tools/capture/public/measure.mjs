@@ -1,23 +1,22 @@
-// Measures aesop.com's public components in every state reachable
+// Measures adidas.com.cn's public components in every state reachable
 // without signing in or submitting anything.
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node measure.mjs [page ...]
 //
-// Pages: home shopall skincare pdp search cart signup stores login mobile.
+// Pages: home plp pdp cart mobile.
 // Writes raw/components-computed.json (merged, so a subset of pages can be
 // re-run) and one crop per component and state into components/crops/.
 // raw/measurements.md is then built from the JSON by build-measurements.mjs.
 //
-// aesop.com is Salesforce B2C Commerce (Sites-aesop-us-Site): server-rendered
-// pages with descriptive BEM class names (l-header__, c-product-tile,
-// c-sliding-panel, c-navigation__). Nothing is sent, bought or signed into:
-// the only presses are local UI toggles (the Search disclosure, the Email
-// sign up modal, the My cart drawer, the All filters panel, the burger menu,
-// PDP accordions). Submit controls are measured through CDP-forced
-// pseudo-classes only. The OneTrust consent SDK is aborted at request level.
+// adidas.com.cn is the China flagship storefront: a client-rendered app on a
+// `lib-*` component library with Tailwind utilities and iconfont glyphs, in
+// zh-CN. Nothing is sent, bought or signed into: the only presses are local
+// UI toggles (the Search disclosure, the nav flyout, the burger menu, PDP
+// accordions). Submit controls are measured through CDP-forced
+// pseudo-classes only. There is no consent SDK on these routes.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, M, launch, patch, open, closePromo, killGeo, clearChallenge, domClick, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE, chromium } from './lib.mjs';
+import { BASE, patch, open, killGeo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE, chromium } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -26,10 +25,14 @@ out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 const URLS = {
+  // The PDP is pinned to one SKU so the screenshot pass (public.mjs) and this
+  // pass always describe the same product.
   home: '/', plp: '/plp/sp_run_app_male', pdp: '/pdp?articleId=JP1477', cart: '/cart',
 };
-let page, cdp, current, context, contextMobile, run;
+let page, cdp, current, context, run;
+let activeCtx = null;
 const touched = new Set();
+const sheetsDone = new Set();
 
 // A bot interstitial or an error page renders a minimal body: detect it so a
 // blocked load is skipped, not measured.
@@ -45,9 +48,11 @@ async function blocked() {
 async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {}) {
   current = key;
   const b = context.browser();
+  if (activeCtx) { await activeCtx.close().catch(() => {}); activeCtx = null; }
   const ctx = await b.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'zh-CN' }
     : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'zh-CN' });
+  activeCtx = ctx;
   await patch(ctx);
   page = await ctx.newPage();
   cdp = await ctx.newCDPSession(page);
@@ -63,6 +68,7 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {
   if (await blocked()) { log('  BLOCKED', key); return false; }
   if (promo === 'close') await killGeo(page);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
+  if (!sheetsDone.has(key + (mobile ? '@390' : ''))) { await sheetsFor(key + (mobile ? '@390' : '')); sheetsDone.add(key + (mobile ? '@390' : '')); }
   return true;
 }
 
@@ -224,59 +230,6 @@ async function sheetsFor(key) {
   out._meta.sheets[key] = res;
 }
 
-// Cloudflare lets each browser context load exactly one document before it
-// starts issuing Turnstile challenges, so a PDP is reached as a first load in
-// its own context: the product URL (…/<SKU>.html) is resolved on the
-// catalogue page in a throwaway context, then the current page navigates to
-// it — but the current context already spent its one pass on /shop-all/, so
-// the resolution happens in a fresh context and this page is re-pointed at
-// the URL by the caller via newPageAt(). The resolved URL is recorded.
-async function resolvePdpUrl() {
-  if (out._meta.pdpUrl) return out._meta.pdpUrl;
-  const b = context.browser();
-  const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA, locale: 'zh-CN' });
-  await patch(ctx);
-  const p = await ctx.newPage();
-  let url = null;
-  try {
-    await p.goto(BASE + '/shop-all/', { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-    await clearChallenge(p, { tries: 6, step: 2000 });
-    url = await p.evaluate(() => {
-      const a = [...document.querySelectorAll('a[href$=".html"]')].find((n) => /\/[A-Z]+\d[A-Z0-9]*\.html/i.test(n.getAttribute('href') || ''));
-      return a ? a.href : null;
-    });
-  } finally { await ctx.close(); }
-  if (!url) throw new Error('no product tile link found');
-  out._meta.pdpUrl = url;
-  save();
-  return url;
-}
-
-// A fresh context whose first document request is `url`: the only request
-// Cloudflare reliably lets through unchallenged.
-async function newPageAt(url, { mobile = false, wait = 8000 } = {}) {
-  const b = context.browser();
-  const ctx = await b.newContext(mobile
-    ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'zh-CN' }
-    : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'zh-CN' });
-  await patch(ctx);
-  page = await ctx.newPage();
-  cdp = await ctx.newCDPSession(page);
-  page.setDefaultTimeout(8000);
-  await cdp.send('DOM.enable');
-  await cdp.send('CSS.enable');
-  for (let attempt = 0; attempt < 3; attempt++) {
-    await open(page, url, { wait, promo: 'close' });
-    if (!(await blocked())) break;
-    log('  blocked pass', attempt + 1, '- reloading');
-    await page.waitForTimeout(6000);
-  }
-  if (await blocked()) { log('  BLOCKED', url); return false; }
-  await killGeo(page);
-  await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
-  return true;
-}
-
 // ---------- page runs ----------
 const G = {
   shell: 'Shell and navigation', home: 'Home', plp: 'Catalogue page (PLP)',
@@ -301,7 +254,10 @@ async function footerRun() {
 
 async function home() {
   const g = G.home;
-  await S('hero', q('[class*="hero" i], [class*="banner" i], [class*="carousel" i], [class*="swiper" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Hero', desc: 'The campaign band under the header: photography, a headline and a 立即选购 CTA.' });
+  // The campaign container explicitly: `.feed-com-carousel` is the full-bleed
+  // band under the 124px header. A broad `swiper`/`banner` first-match catches
+  // the 40px tag strip inside the header instead — record a miss over that.
+  await S('hero', q('.feed-com-carousel, .banner-container, a.banner-box').filter({ visible: true }).first(), ['default'], { group: g, title: 'Hero', desc: 'The campaign band under the header: photography, a headline and a 立即选购 CTA.', sel: '.feed-com-carousel' });
   await S('hero-cta', q('.lib-button').filter({ hasText: /选购|查看更多|查看|了解/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Primary CTA', desc: 'A lib-button campaign CTA (立即选购 "Shop now").', sel: '.lib-button' });
 }
 
@@ -326,8 +282,13 @@ async function pdp() {
 async function mobile() {
   if (!(await newPage('home', { mobile: true }))) return;
   const g = G.mobile;
-  await S('m-header', q('.navigation-warpper, header').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile header', desc: 'The header at 390 wide.' }, { noScroll: true });
-  await S('m-burger', q('[class*="hamburger" i], [class*="menu" i], .iconfont').filter({ visible: true }).first(), B4, { group: g, title: 'Burger button', desc: 'The menu button on mobile, if visible.' }, { noScroll: true });
+  // At 390 the top bar is the `.search-bar` pill, not the desktop
+  // `.navigation-warpper` nav.
+  await S('m-header', q('.search-bar, .navigation-warpper, header').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile header', desc: 'The top bar at 390 wide: a search-field pill, no nav row.', sel: '.search-bar' }, { noScroll: true });
+  // Only a real menu control counts — never a bare `.iconfont` glyph (the
+  // first one is the search bar's `icon_performance` logo mark). At 390
+  // adidas.com.cn mounts no burger; this should record a miss.
+  await S('m-burger', q('button[aria-label*="menu" i], [role="button"][aria-label*="menu" i], [class*="hamburger" i], [class*="burger" i]').filter({ visible: true }).first(), B4, { group: g, title: 'Burger button', desc: 'The menu button on mobile. None is mounted at 390 — the top bar is the search field, so this records a miss rather than an icon glyph.', sel: 'menu control' }, { noScroll: true });
 }
 
 const ALL = {
@@ -338,14 +299,24 @@ const ALL = {
   mobile: mobile,
 };
 const pageArg = process.argv.slice(2).join(',').split(',').filter(Boolean);
+out._meta.read = new Date().toISOString().slice(0, 10);
+out._meta.measuredAt = new Date().toISOString();
+out._meta.viewport = '1440 x 900 (mobile group 390 x 844), light theme';
+out._meta.tool = 'tools/capture/public/measure.mjs';
 const browser = await chromium.launch();
-context = browser.contexts()[0] || await browser.newContext();
-for (const [k, fn] of Object.entries(ALL)) {
-  if (pageArg.length && !pageArg.includes(k)) continue;
-  run = k;
-  try { await fn(); } catch (e) { log('PAGE FAILED', k, e.message.split('\n')[0]); }
+try {
+  context = browser.contexts()[0] || await browser.newContext();
+  for (const [k, fn] of Object.entries(ALL)) {
+    if (pageArg.length && !pageArg.includes(k)) continue;
+    run = k;
+    try { await fn(); } catch (e) { log('PAGE FAILED', k, e.message.split('\n')[0]); }
+    if (page) await page.close().catch(() => {});
+    page = null;
+  }
+} finally {
   if (page) await page.close().catch(() => {});
+  if (activeCtx) await activeCtx.close().catch(() => {});
+  save();
+  log('components:', Object.keys(out.components).length);
+  await browser.close().catch(() => {});
 }
-save();
-log('components:', Object.keys(out.components).length);
-await browser.close();

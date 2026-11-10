@@ -1,14 +1,14 @@
 # adidas components
 
-The discovery list of every page and state captured, then one entry per component with crops of the real site, the shared values and the Gaps. Captured from adidas.com.cn on 2026-11-10 — the China flagship storefront (prices in CNY ¥) — as static pages rendered at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the live DOM. Nothing was submitted, bought or signed into; the only presses were local UI toggles (the Search disclosure, Email sign up modal, My cart drawer, All filters rail, burger menu). The OneTrust consent SDK was blocked at the network layer — its banner was never mounted, and no consent button was ever pressed.
+The discovery list of every page and state captured, then one entry per component with crops of the real site, the shared values and the Gaps. Captured from adidas.com.cn on 2026-11-10 — the China flagship storefront (prices in CNY ¥) — as static pages rendered at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the live DOM. Nothing was submitted, bought or signed into; the only presses were local UI toggles (the Search disclosure, the nav flyout, the filter rail). No consent SDK mounts on these routes.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (21 components, 41 states).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (21 components, 38 states).
 
 How to read an entry:
 
-- A colour is its value followed by the token in [tokens.json](tokens.json) whose value is the same, when there is one. Text is written family size/line-height weight, then its colour, for example `Chinese UI sans 12/20 400, #000000`, and is read from the first text node inside the component.
-- The first state of each entry lists every value; later states list only what changed. A state identical to the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component in [components/crops/](components/crops) (41 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- A colour is its value followed by the token in [tokens.json](tokens.json) whose value is the same, when there is one. Text is written family size/line-height weight, then its colour, for example `AdihausDIN 15/20 700, #000000`, and is read from the first text node inside the component.
+- The first state of each entry lists every value; later states list only what changed. A state identical to the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do; a state that only repaints a child layer is listed as "child paint".
+- Crops are images of the component in [components/crops/](components/crops) (38 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -16,50 +16,42 @@ Screenshots are named `{page}-light-{state}.png`. Desktop shots are 1440 x 900 a
 
 | Surface | URL | Screenshots |
 |---|---|---|
-| Home. The hero, product rows and footer. Captured at rest, search open, sign-up modal, cart drawer, nav hover, and full-page. | `/` | [default (light)](screenshots/home-light-default.png), [full (light)](screenshots/home-light-full.png), [search (light)](screenshots/home-light-search.png) |
-| Shop all, the catalogue page. Captured at rest, filters rail open, and full-page. | `/shop-all/` |  |
-| The Skin Care category landing. | `/skin-care/` |  |
-| A product page (The adidas Valise, APB399). Captured at rest, an accordion open, and full-page. | `/gifts/seasonal-gift-kits/the-aesop-valise/APB399.html` | [default (light)](screenshots/pdp-light-default.png), [full (light)](screenshots/pdp-light-full.png) |
-| The store locator. | `/stores` |  |
-| The cart route, empty. | `/cart` | [default (light)](screenshots/cart-light-default.png), [full (light)](screenshots/cart-light-full.png) |
-| The Demandware sign-in page. | `/on/demandware.store/Sites-aesop-us-Site/en_US/Login-Show` |  |
-| The styled 404 / unexpected-error page. | `/account` |  |
-| Home at 390, at rest, the burger drawer open, and full-page. | `/` | [default (light)](screenshots/mobile-home-light-default.png), [full (light)](screenshots/mobile-home-light-full.png), [menu (light)](screenshots/mobile-home-light-menu.png) |
-| The catalogue page at 390. | `/shop-all/` |  |
-| The product page at 390. | `/gifts/seasonal-gift-kits/the-aesop-valise/APB399.html` | [default (light)](screenshots/mobile-pdp-light-default.png), [full (light)](screenshots/mobile-pdp-light-full.png) |
+| Home. The campaign band, tag strip, product rows and footer. Captured at rest, search open, and full-page. | `/` | [default (light)](screenshots/home-light-default.png), [full (light)](screenshots/home-light-full.png), [search (light)](screenshots/home-light-search.png) |
+| A catalogue page (跑步 running, men's). Captured at rest, filter open, and full-page. | `/plp/sp_run_app_male` | [default (light)](screenshots/plp-light-default.png), [filter (light)](screenshots/plp-light-filter.png), [full (light)](screenshots/plp-light-full.png) |
+| A product page (articleId JP1477 — pinned so the screenshots and the measurements describe the same product). Captured at rest and full-page. | `/pdp?articleId=JP1477` | [default (light)](screenshots/pdp-light-default.png), [full (light)](screenshots/pdp-light-full.png) |
+| The cart route. | `/cart` | [default (light)](screenshots/cart-light-default.png), [full (light)](screenshots/cart-light-full.png) |
+| Home at 390, at rest and full-page. | `/` | [default (light)](screenshots/mobile-home-light-default.png), [full (light)](screenshots/mobile-home-light-full.png), [menu (light)](screenshots/mobile-home-light-menu.png) |
+| The catalogue page at 390. | `/plp/sp_run_app_male` | [default (light)](screenshots/mobile-plp-light-default.png), [full (light)](screenshots/mobile-plp-light-full.png) |
+| The product page at 390. | `/pdp?articleId=JP1477` | [default (light)](screenshots/mobile-pdp-light-default.png), [full (light)](screenshots/mobile-pdp-light-full.png) |
 
 ### Overlays and transient states
 
 | State | Where | How it was reached | Captured |
 |---|---|---|---|
-| Search disclosure | home | the Search header button | [home-light-search](screenshots/home-light-search.png), [search-field](#search-field) |
-| Email sign up modal | home | the Email sign up button | [home-light-signup](screenshots/home-light-signup.png), [signup-dialog](#signup-dialog) |
-| My cart drawer | home | the My cart button | [home-light-cart](screenshots/home-light-cart.png), [cart-panel](#cart-panel) |
-| Filter rail | PLP | the All filters button | [shopall-light-sort](screenshots/shopall-light-sort.png), [filter-panel](#filter-panel) |
-| Accordion opened | PDP | a PDP accordion row | [pdp-light-accordion](screenshots/pdp-light-accordion.png) |
-| Mobile burger drawer | home at 390 | the burger button | [mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [m-menu-drawer](#m-menu-drawer) |
+| Search disclosure | home | the Search header button | [home-light-search](screenshots/home-light-search.png) |
+| Filter rail | PLP | the filter/sort control | [plp-light-filter](screenshots/plp-light-filter.png), [filter-row](#filter-row) |
 
 ## Shared values
 
 Values that apply across entries, tallied from the measurement file.
 
-**Radius.** none — every corner on the site is 0px. The single curve is the filter rail's 10px radio dot (`border-radius:100%` on a `::before`).
+**Radius.** none — every corner measured on the storefront is 0px — buttons, fields, tiles, drawers and cells are all square.
 
-**Hover.** Acne hovers with colour, never fills or shadows: no change on the element (8), #ffffff `action.primaryText` to #eceff1 `background.inset` (1). Black fills (LOAD MORE, CONTINUE, SHOW N ITEMS) flip to Acne blue; blue fills (ADD TO BAG) deepen to #051574; blue links deepen the same way; black labels (nav, FILTER, Menu) grey to #6b6b6b.
+**Hover.** no change on the element (6), #ffffff `action.primaryText` to #eceff1 `background.inset` (1), a child layer repaints (the entry's child paint row has the detail) (1). The one measured hover effect is painted by a child: the product card's border steps from #eceff1 to black while its fill stays grey. Buttons and links show no hover change on the element itself.
 
-**Focus.** Of 3 elements given a real keyboard focus: focus could not be driven (5), no ring on the element (2), 1px auto #005fcc offset 1px (1). The ring Acne does draw is a 1px solid keyline 3px inside the control — white on the black/blue buttons, deep blue on the white wishlist button, black on the size cells. Text links show no ring.
+**Focus.** Of 3 elements given a real keyboard focus: focus could not be driven (4), no ring on the element (2), 1px auto #005fcc offset 1px (1). The only ring measured is the browser's own (footer-link takes Chromium's 1px auto #005fcc outline); buttons and nav items paint no focus style at all, and several controls (div nav items, the promo tag) are not keyboard-focusable — 4 focus attempts could not land.
 
-**Motion.** 0.3s ease-in (1). The only transitions the stylesheet carries are the drawers' 150ms padding-bottom safe-area slide, the accordions' 200ms max-height reveal and a 500ms fade on campaign layers, none on the controls themselves.
+**Motion.** 0.3s ease-in (1). The header bar itself carries `all 0.3s ease-in`; the readable stylesheets' declared transitions are listed in [raw/measurements.md](raw/measurements.md).
 
-**Layout.** The header is a 60px rail (45px at 390); every page is a 1440-wide fluid grid of 4-px-base cells (`as-cell`). Primary buttons and the email fields share one 60px height; the small search field, menu links, suggestions and gift-guide bars are 30px rows; size cells are 77 x 45; every right-side drawer is 360 wide with a 45px head. Hairline 1px rules in #f2f2f2 (or black on drawers and the mega-menu's top edge) separate everything — several are painted as 1px background gradients rather than borders.
+**Layout.** The header is a 124px rail (a 40px black utility strip over an 84px nav bar); the campaign band under it runs 540px tall at 1440. Buttons share one 48px height with 16px side padding; the PLP grid runs 338.5px product cards at 454.5px tall; the PDP purchase column is ~400px; the footer is a 360px block. Edges, where they exist, are 1px hairlines in #eceff1, #c8cbcc or black.
 
-**Accent.** Acne blue (#0018a8) is the only accent: every text link, the ADD TO BAG fill, the wishlist border, the picked size cell's border and fill, the geo selector, and the hover step of every black button. Its deeper step #051574 is hover-only. Everything else is black, white or one of four warm greys.
+**Accent.** None — the storefront is strict monochrome: black text and keylines on white, grey steps (#9a9b9b muted, #c8cbcc disabled/hairline, #eceff1 and #f9f9f9 surfaces). No accent colour was measured on the public surface.
 
 ## Components
 
 ### Shell and navigation
 
-The two-tier header every page shares: a thin utility row (Stores, Customer service / Email sign up, Account, My cart), the centred Aēsop wordmark and the main-nav row ending in a Search disclosure trigger. Cream-on-ink, transparent over the hero.
+The 124px two-strip header every page shares: a 40px black utility strip (在线客服 online service, 请登录 sign in), then an 84px nav bar — the adidas mark, the category nav (男装, 男鞋, 女装…), search, help, account, bag — over a #eceff1 hairline, plus the off-white campaign tag strip.
 
 #### Header
 
@@ -99,7 +91,7 @@ The two-tier header every page shares: a thin utility row (Stores, Customer serv
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 261.33 x 32; background #f9f9f9 `background.surface`; text AdihausDIN-Woff 13/18 400, #9a9b9b `text.muted` |
+| default (same: hover, focus-visible, pressed) | size 261.33 x 32; background #f9f9f9 `background.surface`; text AdihausDIN 13/18 400, #9a9b9b `text.muted` |
 
 #### Wordmark
 
@@ -113,17 +105,19 @@ The two-tier header every page shares: a thin utility row (Stores, Customer serv
 
 ### Home
 
-The home canvas: a full-bleed campaign band under the transparent header (photography or film, an overlaid line and a bordered CTA card), then product rows and the dark footer.
+The home canvas: the 540px full-bleed campaign band (.feed-com-carousel) under the header — photography, a banner headline and a lib-button 立即选购 CTA — then product rows and the footer.
 
 #### Hero
 
 <a id="hero"></a>`hero`, on home. The campaign band under the header: photography, a headline and a 立即选购 CTA.
 
-<img src="components/crops/hero-default.png" alt="Hero, default" height="40"> 
+<img src="components/crops/hero-default.png" alt="Hero, default" height="120"> 
 
 | State | Values |
 |---|---|
-| default | size 1143 x 40; background transparent |
+| default | size 1440 x 540; background transparent; text adineuePRO 20/34 700, #000000 `text.primary` |
+
+Child layers: div 185x34 background #ffffff `action.primaryText`; div 0x0 background #ffffff `action.primaryText`; button 200x48 background #ffffff `action.primaryText`
 
 #### Primary CTA
 
@@ -134,15 +128,15 @@ The home canvas: a full-bleed campaign band under the transparent header (photog
 | State | Values |
 |---|---|
 | default (same: focus-visible) | size 200 x 48; padding 0px 16px; background #ffffff `action.primaryText`; text AdihausDIN 14/20 700, #000000 `text.primary` |
-| hover, pressed | background #eceff1 `background.inset` |
+| hover, pressed | background #eceff1 `background.inset`; child paint button.btn.mt-16: background #ffffff → #eceff1 |
 
 ### Footer
 
-The dark page foot (ink #252525): secure-checkout and complimentary-samples lines, the Orders and support / About / Sustainability link columns in cream, and the Online Preferences OneTrust trigger.
+The page foot (360px): bold 15/20 column titles (帮助中心…) over 11/16 link columns and the service line.
 
 #### Footer
 
-<a id="footer"></a>`footer`, on pdp. The page foot: link columns and the tel:400-999-5999 service line.
+<a id="footer"></a>`footer`, on home. The page foot: link columns and the tel:400-999-5999 service line.
 
 <img src="components/crops/footer-default.png" alt="Footer, default" height="120"> 
 
@@ -154,7 +148,7 @@ Child layers: div 1440x360 background #f9f9f9 `background.surface`; div 108x122 
 
 #### Footer link
 
-<a id="footer-link"></a>`footer-link`, on pdp. A footer link entry.
+<a id="footer-link"></a>`footer-link`, on home. A footer link entry.
 
 <img src="components/crops/footer-link-default.png" alt="Footer link, default" height="32"> <img src="components/crops/footer-link-hover.png" alt="Footer link, hover" height="32"> <img src="components/crops/footer-link-focus-visible.png" alt="Footer link, focus-visible" height="32"> <img src="components/crops/footer-link-pressed.png" alt="Footer link, pressed" height="32"> 
 
@@ -165,7 +159,7 @@ Child layers: div 1440x360 background #f9f9f9 `background.surface`; div 108x122 
 
 ### Catalogue page (PLP)
 
-A catalogue page such as Shop all: the category title and product count, an All filters toggle opening a 400px left rail of accordion groups (Price, Skin type, Skin concern, Form, Ingredients, Aroma), a Sort select, then the tile grid — photograph, bold name, descriptor, size select, price, ink add-to-cart.
+A catalogue page (/plp/sp_run_app_male): grey filter/sort labels, then the product grid — a bordered photo tile, bold 13/18 name and ¥ price per card.
 
 #### Page title
 
@@ -191,7 +185,8 @@ A catalogue page such as Shop all: the category title and product count, an All 
 
 | State | Values |
 |---|---|
-| default (same: hover) | size 338.5 x 454.5; background transparent; text AdihausDIN 11/16 400, #000000 `text.primary` |
+| default | size 338.5 x 454.5; background transparent; text AdihausDIN 11/16 400, #000000 `text.primary` |
+| hover | child paint div.product-card-whole.fill-bg-light-gray: border T:1px solid #eceff1 / R:1px solid #eceff1 / B:1px solid #eceff1 / L:1px solid #eceff1 → T:1px solid #000000 / R:1px solid #000000 / B:1px solid #000000 / L:1px solid #000000 |
 
 Child layers: div 338.5x454.5 background #eceff1 `background.inset` border 1px solid #eceff1 `background.inset`; li 40.3x24 background #ffffff `action.primaryText`; div 2x2 background #9a9b9b `text.muted`
 
@@ -213,7 +208,7 @@ Child layers: div 338.5x454.5 background #eceff1 `background.inset` border 1px s
 
 ### Product page (PDP)
 
-A product detail page: breadcrumbs over a two-column canvas (gallery left, purchase column right) — badge line, product title, price, descriptor, the bordered variant/size box, the ink Add to cart bar, then expandable rows and a suggested-partners rail.
+A product page (/pdp?articleId=JP1477): a two-column canvas — gallery left, purchase column right — adineuePRO title and ¥ price, the white disabled add-to-cart bar, size cells and accordion rows.
 
 #### Product title
 
@@ -259,30 +254,33 @@ A product detail page: breadcrumbs over a two-column canvas (gallery left, purch
 
 ### Mobile (390 wide)
 
-The same storefront at 390: the header collapses to Stores, wordmark and My cart; the burger button opens a flat accordion drawer of 48px rows.
+The same storefront at 390: the top bar collapses to a search-field pill — no nav row and no burger menu.
 
 #### Mobile header
 
-<a id="m-header"></a>`m-header`, on home. The header at 390 wide.
+<a id="m-header"></a>`m-header`, on home. The top bar at 390 wide: a search-field pill, no nav row.
 
-*Not found on the captured pages — an honest miss, kept so the gap is visible.*
-
-#### Burger button
-
-<a id="m-burger"></a>`m-burger`, on home. The menu button on mobile, if visible.
-
-<img src="components/crops/m-burger-default.png" alt="Burger button, default" height="60"> <img src="components/crops/m-burger-hover.png" alt="Burger button, hover" height="60"> <img src="components/crops/m-burger-focus-visible.png" alt="Burger button, focus-visible" height="60"> <img src="components/crops/m-burger-pressed.png" alt="Burger button, pressed" height="60"> 
+<img src="components/crops/m-header-default.png" alt="Mobile header, default" height="48"> 
 
 | State | Values |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 40 x 60; background transparent |
+| default | size 390 x 48; padding 4px 16px; background transparent; text AdihausDIN 13/18 400, #9a9b9b `text.muted` |
+
+Child layers: div 310x32 background #f9f9f9 `background.surface`
+
+#### Burger button
+
+<a id="m-burger"></a>`m-burger`, on home. The menu button on mobile. None is mounted at 390 — the top bar is the search field, so this records a miss rather than an icon glyph.
+
+*Not found on the captured pages — an honest miss, kept so the gap is visible.*
 
 ## Gaps
 
-- The Email sign up modal mounts as a cream shell (970 x 450 measured); its remote Demandware Newsletter-SignUp fragment did not render in headless Chromium, so the dialog's fields, checkboxes and submit were never measurable — `signup-field`, `signup-checkbox` and `signup-submit` are honest misses.
-- States that submit were never pressed: ADD TO CART, APPLY, the sign-in Submit, the store OK. Their hover, focus and pressed styles come from CDP-forced pseudo-classes and keyboard focus, not real clicks.
-- `search-panel`'s container eluded marking (the disclosure mounts under a different id), but `search-field` and `search-close` inside it are measured, and the open state is in screenshots. `cart-close` has no measurable button: the drawer closes on backdrop/Escape.
-- `qty-select` is absent on this PDP (a one-variant kit); the variant/size box is measured instead. `no-result-dialog` was measured at 415 x 211.
-- Cloudflare Turnstile gates second document loads per context and some system routes: PDPs are reached as a first load in a fresh context (see tools/capture/public/lib.mjs note), and a still-blocked route would be recorded, not fought.
-- Hover/focus on the 390 capture is not meaningful (a phone has neither); mobile entries cover layout and the burger drawer.
+- States that submit were never pressed: 加入购物袋 (add to cart) and the checkout controls. Hover, focus and pressed styles come from CDP-forced pseudo-classes and keyboard focus, not real clicks.
+- The captured PDP showed add-to-cart in its disabled state (white fill, #c8cbcc text and border); an in-stock enabled bar was not measured.
+- The nav flyout did not open on hover in headless (some items open on click); the search disclosure is in the screenshots, its panel is not measured.
+- `plp-title`, `product-card-price`, `size-cell`, `accordion` and `m-burger` are recorded misses — the selectors found nothing, so nothing is reported; `size-cell`/`accordion` may not exist on this PDP variant, and no burger menu mounts at 390 (the top bar is the search pill).
+- Pages are fixed-height app shells with inner scroll containers, so the `-full` screenshots capture the viewport-height shell, not a tall page — a boundary of the front end, not a truncation.
+- The global adidas.com storefront is Akamai-blocked from the capture environment (every regional domain answers HTTP 403), so this package covers adidas.com.cn, a related but different zh-CN front end.
+- Hover/focus on the 390 capture is not meaningful (a phone has neither); the mobile entries cover layout.
 

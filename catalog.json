@@ -3983,7 +3983,8 @@
      "nothing submitted, bought or signed into; sign-in area and checkout untouched"
     ],
     "durationMin": null,
-    "durationNote": "wall-clock duration was not recorded for this capture"
+    "durationNote": "wall-clock duration was not recorded for this capture",
+    "pr": "https://github.com/c-wenlong/designs/pull/458"
    },
    "layoutGaps": {
     "icons/": "icons are iconfont glyphs (proprietary webfont), not kept (docs/RIGHTS.md)"
