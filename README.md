@@ -251,6 +251,7 @@ what is open, with the evidence.
 | <img src="systems/attio/icon.png" width="20" alt="attio"> | [attio](systems/attio/README.md) | Dense CRM tables, configurable views, record panels and progressive onboarding with quiet neutral chrome and blue primary actions. | 2026-10-31 | light, dark | 5 of 25 met, 19 partly, 1 missing | `icons/` |
 | <img src="systems/supabase/icon.png" width="20" alt="supabase"> | [supabase](systems/supabase/README.md) | Developer dashboards, code editors, member tables, settings, log filters, invitations and responsive navigation; database editing gaps documented | 2026-10-31 | dark, light | 5 of 25 met, 18 partly, 2 missing | `icons/` |
 | <img src="systems/ableton/icon.png" width="20" alt="ableton"> | [ableton](systems/ableton/README.md) | Music software marketing: restrained black Futura on white, one signature #0000ff blue, zero border radius, full-bleed teaser cells, a black consent card and resting login/register forms | 2026-11-08 | light | not graded yet | none |
+| <img src="systems/untitled-stream/icon.png" width="20" alt="untitled-stream"> | [untitled-stream](systems/untitled-stream/README.md) | Music-collaboration product marketing: bracketed chrome, black-gradient pill CTAs, iridescent disc artwork, frosted bottom pill bar, pricing rail with plan cards | 2026-11-08 | light, dark | not graded yet | `icons/` |
 
 <!-- catalog:end -->
 
