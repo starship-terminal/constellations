@@ -56,14 +56,27 @@ class Shooter {
         }
       }
     } catch (e) {
-      for (const [tmp] of staged) fs.existsSync(tmp) && fs.unlinkSync(tmp);
+      for (const [tmp] of staged) { for (const f of [tmp, tmp + '.capture.json']) fs.existsSync(f) && fs.unlinkSync(f); }
       throw e;
     }
     // `.new.png` staging names also start with `${prefix}-${name}.part`, so the
     // stale-tile sweep must skip them or it deletes the files about to be renamed.
     const stale = (n) => !n.includes('.new') && (n.startsWith(`${this.prefix}-${name}.part`) || n === `${this.prefix}-${name}.png` || n === `${this.prefix}-${name}.png.capture.json`);
     for (const old of fs.readdirSync(RAW).filter(stale)) fs.unlinkSync(`${RAW}/${old}`);
-    for (const [tmp, final] of staged) fs.renameSync(tmp, final);
+    for (const [tmp, final] of staged) {
+      fs.renameSync(tmp, final);
+      // The sidecar follows the image: rename it and point its `screenshot`
+      // name at the final file, or a finished capture has no matching record.
+      const sidecar = tmp + '.capture.json';
+      if (fs.existsSync(sidecar)) {
+        try {
+          const meta = JSON.parse(fs.readFileSync(sidecar, 'utf8'));
+          if (meta.screenshot) meta.screenshot = final.split('/').pop();
+          fs.writeFileSync(sidecar, JSON.stringify(meta, null, 2) + '\n');
+        } catch { /* leave the record as-is rather than lose it */ }
+        fs.renameSync(sidecar, final + '.capture.json');
+      }
+    }
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
   }

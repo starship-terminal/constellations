@@ -594,28 +594,28 @@ Crops: `plan-price-default.png`.
 
 Credit calculator radio. A model option on the video cost calculator; the input is visually hidden, the label paints it.
 
-Page: pricing. Selector: `input[name=avc-model] label`. States: default.
+Page: pricing. Selector: `input[name=avc-model] label`. States: default, selected.
 
-| Property | default |
-|---|---|
-| Size (w x h) | 168.66 x 32 |
-| Padding | 4px 6px 4px 12px |
-| Gap | 8px |
-| Border | 1px solid #e5e5e5 |
-| Radius | 12px |
-| Background | #ffffff |
-| Box shadow | none |
-| Outline | none |
-| Font | Inter Variable 14px/20px 400 |
-| Letter spacing | normal |
-| Colour | #171717 |
-| Text node | span.avc-model-name: Inter Variable 14px/20px 400, #171717 |
-| Transition | background-color 0.15s ease |
-| Cursor | pointer |
-| Painted layers | label.avc-model 168.7x32.0 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 12px; span.avc-model-provider 63.6x20.0 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 6px |
-| How | at rest |
+| Property | default | selected |
+|---|---|---|
+| Size (w x h) | 168.66 x 32 | = |
+| Padding | 4px 6px 4px 12px | = |
+| Gap | 8px | = |
+| Border | 1px solid #e5e5e5 | = |
+| Radius | 12px | = |
+| Background | #ffffff | #f5f5f5 |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | Inter Variable 14px/20px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #171717 | = |
+| Text node | span.avc-model-name: Inter Variable 14px/20px 400, #171717 | = |
+| Transition | background-color 0.15s ease | = |
+| Cursor | pointer | = |
+| Painted layers | label.avc-model 168.7x32.0 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 12px; span.avc-model-provider 63.6x20.0 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 6px | label.avc-model 168.7x32.0 bg #f5f5f5 border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 12px; span.avc-model-provider 63.6x20.0 bg #ffffff border T:1px solid #e5e5e5 / R:1px solid #e5e5e5 / B:1px solid #e5e5e5 / L:1px solid #e5e5e5 r 6px |
+| How | at rest | own toggle, pressed once; a local UI state, never submitted |
 
-Crops: `model-radio-default.png`.
+Crops: `model-radio-default.png`, `model-radio-selected.png`.
 
 #### faq-question
 
@@ -647,7 +647,7 @@ Crops: `faq-question-default.png`, `faq-question-hover.png`, `faq-question-focus
 
 #### faq-open
 
-FAQ accordion, open. The same item after its own toggle.
+FAQ accordion, open. The same item after its own toggle; the crop is the whole .avfaq-item, question and answer.
 
 Page: pricing. Selector: `.avfaq-trigger`. States: opened.
 
@@ -1191,7 +1191,7 @@ Crops: `m-menu-button-default.png`, `m-menu-button-hover.png`, `m-menu-button-fo
 
 #### m-menu-open
 
-Mobile menu, open. The button after its own toggle; the open panel shows in the crop.
+Mobile menu, open. The bar after its own toggle; the crop is the opened sheet (the nav panel's grandparent div) that holds the links and actions.
 
 Page: home. Selector: `.w-nav-button`. States: opened.
 

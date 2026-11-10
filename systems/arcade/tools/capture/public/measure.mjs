@@ -29,6 +29,7 @@ const URLS = { home: '/', pricing: '/pricing', demo: '/product/interactive-demo'
 let page, cdp, current, context, run;
 const touched = new Set();
 const listed = new Map();
+const reached = new Set();
 
 async function blocked() {
   return page.evaluate(() => {
@@ -54,6 +55,7 @@ async function newPage(key, { mobile = false, wait = 8000 } = {}) {
   if (await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   await closePromo(page);
+  reached.add(mobile ? '@' + key : key);
   return true;
 }
 
@@ -137,6 +139,9 @@ async function S(key, target, list, meta = {}, opts = {}) {
     else { Object.assign(out.components[key], keep); out.components[key].recaptureMissed = run; }
     return;
   }
+  // Found again: a retry's fresh readings replace the earlier miss record, so
+  // the token builder stops rejecting them.
+  delete out.components[key].recaptureMissed;
   for (const st of list) {
     let undo, via;
     try {
@@ -167,6 +172,10 @@ async function S(key, target, list, meta = {}, opts = {}) {
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'flyout held open by opts.open';
         else { await toggle(loc); await page.waitForTimeout(900); via = 'own toggle'; }
+      } else if (st === 'selected') {
+        await toggle(loc, { allowLink: true });
+        await page.waitForTimeout(500);
+        via = 'own toggle, pressed once; a local UI state, never submitted';
       } else via = via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
@@ -254,11 +263,11 @@ async function pricing() {
   const model = q('input[type="radio"][name="avc-model"]').first();
   if (await model.count()) {
     const lab = model.locator('xpath=ancestor::label[1]');
-    await S('model-radio', (await lab.count()) ? lab : model, ['default'], { group: g, title: 'Credit calculator radio', desc: 'A model option on the video cost calculator; the input is visually hidden, the label paints it.', sel: 'input[name=avc-model] label' });
+    await S('model-radio', (await lab.count()) ? lab : model, ['default', 'selected'], { group: g, title: 'Credit calculator radio', desc: 'A model option on the video cost calculator; the input is visually hidden, the label paints it.', sel: 'input[name=avc-model] label' });
   }
   const faq = q('.avfaq-trigger').filter({ visible: true }).first();
   await S('faq-question', faq, B4, { group: g, title: 'FAQ accordion button', sel: '.avfaq-trigger' });
-  await S('faq-open', faq, ['opened'], { group: g, title: 'FAQ accordion, open', desc: 'The same item after its own toggle.', sel: '.avfaq-trigger' });
+  await S('faq-open', faq, ['opened'], { group: g, title: 'FAQ accordion, open', desc: 'The same item after its own toggle; the crop is the whole .avfaq-item, question and answer.', sel: '.avfaq-trigger' }, { cropLoc: faq.locator('xpath=ancestor::div[contains(@class,"avfaq-item")][1]') });
   await page.keyboard.press('Escape'); await page.waitForTimeout(400);
   const ask = q('.ask-ai-btn').filter({ visible: true }).first();
   if (await ask.count()) await S('ask-ai', ask, B4, { group: g, title: 'Ask AI button', desc: 'The icon pill that opens an AI answer for a FAQ. Measured, never pressed.', sel: '.ask-ai-btn' });
@@ -319,7 +328,7 @@ async function mobile() {
   await S('m-header', q('.navbar.w-nav').first(), ['default'], { group: g, title: 'Mobile header', sel: '.navbar.w-nav' }, { noScroll: true });
   const menuBtn = q('.w-nav-button, .menu-button, button[aria-label*="menu" i]').filter({ visible: true }).first();
   await S('m-menu-button', menuBtn, B4, { group: g, title: 'Mobile menu button', sel: '.w-nav-button' }, { noScroll: true });
-  await S('m-menu-open', menuBtn, ['opened'], { group: g, title: 'Mobile menu, open', desc: 'The button after its own toggle; the open panel shows in the crop.', sel: '.w-nav-button' });
+  await S('m-menu-open', menuBtn, ['opened'], { group: g, title: 'Mobile menu, open', desc: 'The bar after its own toggle; the crop is the opened sheet (the nav panel\'s grandparent div) that holds the links and actions.', sel: '.w-nav-button' }, { cropLoc: q('.navbar nav, .navbar-inner nav').filter({ visible: true }).first().locator('xpath=ancestor::div[2]'), pad: 0 });
   // The nav links and Sign up live inside the open menu panel: measure them
   // before dismissing it.
   const mLink = q('a.nav-btn').filter({ hasText: /^Pricing$/ }).filter({ visible: true }).first();
@@ -345,8 +354,11 @@ try {
   if (!pages.length || pages.includes('mobile')) await plan.mobile();
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
-    if (!touched.has(key) && !pages.length) { delete out.components[key]; continue; }
-    if (!Object.keys(c.states || {}).length && !c.missing) delete out.components[key];
+    // Prune entries this run never touched only when their page was actually
+    // reached: a blocked page must not erase the readings saved under it.
+    const src = c.group === G.mobile ? '@' + c.page : c.page;
+    if (!touched.has(key) && !pages.length && reached.has(src)) { delete out.components[key]; continue; }
+    if (!Object.keys(c.states || {}).length && !c.missing && touched.has(key)) delete out.components[key];
   }
   save();
   await context.close().catch(() => {});

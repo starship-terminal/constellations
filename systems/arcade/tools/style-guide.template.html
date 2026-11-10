@@ -40,15 +40,15 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .btn.big { height: var(--component-control-heightLarge, 42px); padding: 0 20px; border-radius: var(--radius-card, 16px); font-weight: 500; font-size: 14px; }
 .btn.ghost { background: transparent; color: var(--text, #000); border: 0; }
 .btn.trial { height: 42px; width: 100%; }
-.hero { background: var(--page, #fff); color: var(--text, #000); padding: 64px 40px; font-size: 52px; font-weight: 400; line-height: 1.2; letter-spacing: -0.02em; text-align: center; font-family: var(--sg-sans); }
-.hero small { display: block; font-size: 16px; font-weight: 400; color: var(--muted, rgba(0,0,0,.8)); margin: 16px auto 22px; max-width: 46ch; }
+.hero { background: var(--page, #fff); color: var(--text, #000); padding: 64px 40px; font: var(--typography-display, 400 56px/67.2px var(--sg-sans)); letter-spacing: -0.02em; text-align: center; }
+.hero small { display: block; font: var(--typography-body, 400 16px/24px var(--sg-sans)); color: var(--muted, rgba(0,0,0,.8)); margin: 16px auto 22px; max-width: 46ch; }
 .hero .row { display: flex; gap: 10px; justify-content: center; margin-top: 12px; }
-.prompt { display: flex; align-items: center; justify-content: space-between; width: var(--component-prompt-width, 680px); max-width: 90%; height: var(--component-prompt-height, 148px); margin: 0 auto; padding: 0 20px; background: #fff; border-radius: var(--radius-card, 16px); box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.06); font-size: 15px; color: var(--muted, #999); text-align: left; }
+.prompt { display: flex; align-items: center; justify-content: space-between; width: var(--component-prompt-width, 680px); max-width: 90%; height: var(--component-prompt-height, 148px); margin: 0 auto; padding: 0 20px; background: #fff; border-radius: var(--radius-card, 16px); /* the measured composer shadow (prompt-box default, raw/components-computed.json); no shadow token exists */ box-shadow: rgba(0,0,0,.03) 0 16px 16px 0, rgba(0,0,0,.03) 0 8px 8px 0, rgba(0,0,0,.03) 0 4px 4px 0, rgba(0,0,0,.03) 0 2px 2px -2px, rgba(0,0,0,.12) 0 0 0 1px; font-size: 15px; color: var(--muted, #999); text-align: left; }
 .prompt .send { width: 32px; height: 32px; border-radius: var(--radius-control, 12px); background: var(--ink, #000); color: var(--on-ink, #fff); display: inline-flex; align-items: center; justify-content: center; }
 .chip { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: var(--radius-control, 12px); border: 1px solid rgba(0,0,0,.2); background: #fff; font-size: 12px; font-weight: 500; color: var(--chip-text, rgba(0,0,0,.6)); }
 .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; padding: 20px; }
 .plan { border: 0; border-radius: var(--radius-panel, 24px); padding: 22px; background: var(--surface, #f4f4f4); font-size: 13px; }
-.plan .price { font-size: 36px; font-weight: 400; margin: 8px 0 12px; font-family: var(--sg-sans); }
+.plan .price { font: var(--typography-price, 400 36px/36px var(--sg-sans)); margin: 8px 0 12px; }
 .plan .btn { width: 100%; }
 .faqrow { display: flex; justify-content: space-between; align-items: center; height: var(--component-faq-rowHeight, 56px); padding: 0 20px; border-bottom: 1px solid var(--border, #e5e7eb); font-size: 14px; font-weight: 400; background: #fff; }
 .faqrow.a { color: var(--muted, #686868); font-size: 13px; padding: 8px 20px 14px; height: auto; font-weight: 400; }
@@ -131,10 +131,20 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 
 (function palette() {
   let h = '';
-  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
-    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
-    if (!items.length) continue;
-    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+  // Colours sit flat under core (primary.600, neutral.200.201, card.bg.*,
+  // brand.50..900 plus bare names like gold, black, gray.800); group the
+  // flattened list by its first two segments where they form a family, else
+  // the first.
+  const colors = flat(TOK.core || {}, '').filter(([, t]) => t.t === 'color');
+  const groups = new Map();
+  for (const [n, t] of colors) {
+    const p = n.split('.');
+    const g = p.length > 2 ? p[0] + '.' + p[1] : p[0];
+    if (!groups.has(g)) groups.set(g, []);
+    groups.get(g).push([n, t]);
+  }
+  for (const [g, items] of groups) {
+    h += `<div class="pal-h">${esc(g)}</div><div class="pal">`;
     for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
     h += '</div>';
   }
@@ -164,11 +174,23 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   $('#meas-out').innerHTML = m;
 })();
 
+// Resolve a {path.to.token} alias against TOK.core so labels read the real
+// family names, not the alias braces.
+const resolveTok = (a, depth = 0) => {
+  const m = /^\{(.+)\}$/.exec(String(a || '').trim());
+  if (!m || depth > 4) return a;
+  let n = TOK.core;
+  for (const p of m[1].split('.')) n = n && n[p];
+  return n && n.v !== undefined ? resolveTok(n.v, depth + 1) : a;
+};
+
 (function type() {
   let h = '';
   for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
     const v = t.v || {};
-    h += `<div class="trow"><div class="tnm">${esc(n)}</div><div class="tspec" style="font-weight:${String(v.fontWeight||400).replace(/[^0-9]/g,'')||400}">${esc(v.fontFamily||'')} ${esc(v.fontSize||'')}/${esc(v.lineHeight||'')}</div></div>`;
+    const fam = String(resolveTok(v.fontFamily) || 'inherit').replace(/"/g, "'");
+    const wt = String(v.fontWeight || 400).replace(/[^0-9]/g, '') || 400;
+    h += `<div class="trow"><div class="tnm">${esc(n)}</div><div class="tspec" style="font-family:${fam};font-weight:${wt};font-size:${esc(v.fontSize || '16px')};line-height:${esc(v.lineHeight || '1.4')}">${esc(fam.split(',')[0] || '')} ${esc(v.fontSize || '')}/${esc(v.lineHeight || '')}</div></div>`;
   }
   const el = $('#type-out'); if (el) el.innerHTML = h;
 })();

@@ -97,7 +97,7 @@ const shell = (themeClass) => '<!doctype html><html class="' + themeClass + '"><
   + sheets.map(([n, css]) => '<style>' + css.replace(/<\/style/gi, '<\\/style') + '</style>').join('')
   + '</head><body><div id="probe-root"></div></body></html>';
 const want = [...new Set(result.rules.filter((r) => !r.context.includes('@layer properties') && !/\\\[--/.test(r.selector || '')).flatMap((r) => Object.keys(r.properties)))]
-  .filter((n) => !/^--(tw-|_|lightningcss-)/.test(n)).sort();
+  .filter((n) => !/^--(tw-|lightningcss-)/.test(n) && !(n.startsWith('--_') && !n.startsWith('--_new-brand---'))).sort();
 const resolved = {};
 for (const pass of ['dark', 'light']) {
   await probe.setContent(shell(pass === 'dark' ? 'dark' : ''), { waitUntil: 'load' });

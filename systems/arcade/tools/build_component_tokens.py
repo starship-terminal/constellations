@@ -12,6 +12,11 @@ arcade.software is a Webflow build; its stylesheets declare on :root
                            the dark-surface tone
   --gold/--green/--red + --light-* + --card-bg-* + --alice-blue/--light-blue
                            status hues and pastel card washes
+  --_new-brand---50...--900/--white
+                           the brand's own 10-step grey ramp and paper white
+  --_new-brand---heading/--content/--header-size
+                           the real font stacks ("Inter Display",Arial,... /
+                           "Inter Variable",Arial,...) and the 72px header
   --marginanim, --progressive*
                            scatter-section and player-control layout metrics
 
@@ -44,8 +49,9 @@ def var(name, ty="color", **kw):
 SPEC = {"_about": (
     "The token tree build_tokens.py turns into tokens.json. arcade.software "
     "is a Webflow site declaring a Tailwind-shaped palette on :root plus "
-    "scatter/player layout metrics; every colour name is kept under "
-    "core.color, the site roles are the light set, and measured values that "
+    "scatter/player layout metrics; every colour name is kept flat under "
+    "core (the --_new-brand---* ramp lands as core.brand.*), the site roles "
+    "are the light set, and measured values that "
     "no variable declares (surfaces, focus ring, radii, control heights, "
     "the black ink of the CTAs) come from raw/components-computed.json. "
     "\"var\" leaves resolve through the live document; \"value\" leaves are "
@@ -80,6 +86,17 @@ def emit(root, name, leaf):
 for name in sorted(n for n in R if n.startswith("--")):
     if re.match(r"--(marginanim|progressive)", name):
         emit(SPEC["core"], name, var(name, "dimension"))
+        continue
+    if name.startswith("--_new-brand---"):
+        # Webflow prefixes project vars --_new-brand---<name>: a 10-step grey
+        # ramp (50..900), --white, the real font stacks and the header size.
+        # Map them under core.brand.* by their resolved kind.
+        suffix = name[len("--_new-brand---"):]
+        key = re.sub(r"-(\w)", lambda m: m.group(1).upper(), suffix)
+        kind = RL[name].get("kind")
+        ty = {"color": "color", "dimension": "dimension", "fontFamily": "fontFamily",
+              "duration": "duration", "shadow": "shadow"}.get(kind, "other")
+        SPEC["core"].setdefault("brand", {})[key] = var(name, ty)
         continue
     leaf = var(name)
     if name == "--opacity":  # a colour var despite the name
@@ -175,11 +192,11 @@ for comp, state, key, prop, desc in [
 
 font = SPEC["core"].setdefault("font", {})
 font["family"] = {
-    "display": {"value": '"Inter Display", "Inter Variable", sans-serif', "type": "fontFamily",
-                "source": "computed fontFamily of hero-title/plan-price; the 400-700 static faces in raw/css-vars.json",
+    "display": {"value": "{brand.heading}", "type": "fontFamily",
+                "source": 'computed fontFamily of hero-title/plan-price: "Inter Display",Arial,sans-serif, declared by --_new-brand---heading; the 400-700 static faces in raw/css-vars.json',
                 "description": "Display headings (56px hero, 36px plan price)."},
-    "ui": {"value": '"Inter Variable", "Inter Display", sans-serif', "type": "fontFamily",
-           "source": "computed fontFamily on every control; the 100-900 variable face in raw/css-vars.json",
+    "ui": {"value": "{brand.content}", "type": "fontFamily",
+           "source": 'computed fontFamily on every control: "Inter Variable",Arial,sans-serif, declared by --_new-brand---content; the 100-900 variable face in raw/css-vars.json',
            "description": "All UI text, body, fields, buttons."},
     "mono": {"value": '"Geist Mono Variable", monospace', "type": "fontFamily",
              "source": "@font-face in raw/css-vars.json (100-900 variable); code and timestamps on the page",

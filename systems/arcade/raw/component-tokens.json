@@ -1,5 +1,5 @@
 {
- "_about": "The token tree build_tokens.py turns into tokens.json. arcade.software is a Webflow site declaring a Tailwind-shaped palette on :root plus scatter/player layout metrics; every colour name is kept under core.color, the site roles are the light set, and measured values that no variable declares (surfaces, focus ring, radii, control heights, the black ink of the CTAs) come from raw/components-computed.json. \"var\" leaves resolve through the live document; \"value\" leaves are measured.",
+ "_about": "The token tree build_tokens.py turns into tokens.json. arcade.software is a Webflow site declaring a Tailwind-shaped palette on :root plus scatter/player layout metrics; every colour name is kept flat under core (the --_new-brand---* ramp lands as core.brand.*), the site roles are the light set, and measured values that no variable declares (surfaces, focus ring, radii, control heights, the black ink of the CTAs) come from raw/components-computed.json. \"var\" leaves resolve through the live document; \"value\" leaves are measured.",
  "core": {
   "100": {
    "var": "--100",
@@ -12,6 +12,64 @@
   "600": {
    "var": "--600",
    "type": "color"
+  },
+  "brand": {
+   "100": {
+    "var": "--_new-brand---100",
+    "type": "color"
+   },
+   "200": {
+    "var": "--_new-brand---200",
+    "type": "color"
+   },
+   "300": {
+    "var": "--_new-brand---300",
+    "type": "color"
+   },
+   "400": {
+    "var": "--_new-brand---400",
+    "type": "color"
+   },
+   "50": {
+    "var": "--_new-brand---50",
+    "type": "color"
+   },
+   "500": {
+    "var": "--_new-brand---500",
+    "type": "color"
+   },
+   "600": {
+    "var": "--_new-brand---600",
+    "type": "color"
+   },
+   "700": {
+    "var": "--_new-brand---700",
+    "type": "color"
+   },
+   "800": {
+    "var": "--_new-brand---800",
+    "type": "color"
+   },
+   "900": {
+    "var": "--_new-brand---900",
+    "type": "color"
+   },
+   "content": {
+    "var": "--_new-brand---content",
+    "type": "fontFamily"
+   },
+   "headerSize": {
+    "var": "--_new-brand---header-size",
+    "type": "dimension"
+   },
+   "heading": {
+    "var": "--_new-brand---heading",
+    "type": "fontFamily"
+   },
+   "white": {
+    "var": "--_new-brand---white",
+    "type": "color"
+   }
   },
   "alice": {
    "blue": {
@@ -224,15 +282,15 @@
   "font": {
    "family": {
     "display": {
-     "value": "\"Inter Display\", \"Inter Variable\", sans-serif",
+     "value": "{brand.heading}",
      "type": "fontFamily",
-     "source": "computed fontFamily of hero-title/plan-price; the 400-700 static faces in raw/css-vars.json",
+     "source": "computed fontFamily of hero-title/plan-price: \"Inter Display\",Arial,sans-serif, declared by --_new-brand---heading; the 400-700 static faces in raw/css-vars.json",
      "description": "Display headings (56px hero, 36px plan price)."
     },
     "ui": {
-     "value": "\"Inter Variable\", \"Inter Display\", sans-serif",
+     "value": "{brand.content}",
      "type": "fontFamily",
-     "source": "computed fontFamily on every control; the 100-900 variable face in raw/css-vars.json",
+     "source": "computed fontFamily on every control: \"Inter Variable\",Arial,sans-serif, declared by --_new-brand---content; the 100-900 variable face in raw/css-vars.json",
      "description": "All UI text, body, fields, buttons."
     },
     "mono": {
