@@ -46,7 +46,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | accent | #009cff `light.accent` |
 | border | rgba(23, 23, 23, 0.1) `light.border` |
 
-Fonts: `core.font.family.system` is system-ui, then 13 fallbacks; `core.font.family.inter` is Inter, then 2 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 9 type styles (`core.typography`), 5 radius steps (`core.radius`), 8 spacing steps (`core.spacing`).
+Fonts: `core.font.family.system` is system-ui, then 13 fallbacks; `core.font.family.inter` is Inter, then 2 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: 9 type styles (`core.typography`), 6 radius steps (`core.radius`), 8 spacing steps (`core.spacing`).
 
 ### Using components
 

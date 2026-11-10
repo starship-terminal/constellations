@@ -2,11 +2,11 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real site, the icon index and the Gaps. Captured from aboardhr.com on 2026-11-10, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was sent or submitted: the book-a-demo form was measured at rest and focus only, the app.aboardhr.com sign-in was never opened, and no consent strip ever rendered (none was answered).
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (56 components, 109 states). The page layouts at four widths are in [raw/layout.json](raw/layout.json).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (56 components, 108 states). The page layouts at four widths are in [raw/layout.json](raw/layout.json).
 
 How to read an entry:
 
-- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Tobias 64/68 400, #232a20`, and is read from the first text node inside the component.
+- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `system-ui 64/70.4 600, #262626`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
 - Crops are images of the component read from the live page, in [components/crops/](components/crops) (109 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
@@ -44,9 +44,9 @@ Screenshots are named `{page}-light-{state}.png` (aboardhr.com has one theme). D
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 15 components were given a real keyboard focus. 13 draw a ring: `nav-logo` (1px auto #005fcc `focus-blue`, offset 1px), `nav-cta` (1px auto #005fcc `focus-blue`, offset 1px), `footer-link` (1px auto #005fcc `focus-blue`, offset 1px), `cta-demo` (1px auto #005fcc `focus-blue`, offset 1px), `cta-try` (1px auto #005fcc `focus-blue`, offset 1px), `learn-more` (1px auto #005fcc `focus-blue`, offset 1px), `everyday-hr-cta` (1px auto #005fcc `focus-blue`, offset 1px), `growth-feedback-cta` (1px auto #005fcc `focus-blue`, offset 1px), `team-culture-cta` (1px auto #005fcc `focus-blue`, offset 1px), `plan-cta` (1px auto #005fcc `focus-blue`, offset 1px), `demo-submit` (1px auto #005fcc `focus-blue`, offset 0px), `release-back` (1px auto #005fcc `focus-blue`, offset 1px), `teamtailor-cta` (1px auto #005fcc `focus-blue`, offset 1px). The other 2 draw none, so a keyboard user sees no change: `nav-link`, `m-menu-trigger`.
+**Focus.** 13 components were given a real keyboard focus. 13 draw a ring: `nav-logo` (1px auto #005fcc `focus-blue`, offset 1px), `nav-cta` (1px auto #005fcc `focus-blue`, offset 1px), `footer-link` (1px auto #005fcc `focus-blue`, offset 1px), `cta-demo` (1px auto #005fcc `focus-blue`, offset 1px), `cta-try` (1px auto #005fcc `focus-blue`, offset 1px), `learn-more` (1px auto #005fcc `focus-blue`, offset 1px), `everyday-hr-cta` (1px auto #005fcc `focus-blue`, offset 1px), `growth-feedback-cta` (1px auto #005fcc `focus-blue`, offset 1px), `team-culture-cta` (1px auto #005fcc `focus-blue`, offset 1px), `plan-cta` (1px auto #005fcc `focus-blue`, offset 1px), `demo-submit` (1px auto #005fcc `focus-blue`, offset 0px), `release-back` (1px auto #005fcc `focus-blue`, offset 1px), `teamtailor-cta` (1px auto #005fcc `focus-blue`, offset 1px). The other 0 draw none, so a keyboard user sees no change: .
 
-**Pressed.** Forced `:active` was applied to the buttons and links above; the site changes very little under the finger (the nav CTA and consent buttons keep their fills). See each entry's Pressed row for what did move.
+**Pressed.** Forced `:active` was applied to the buttons and links above; the buttons keep their fills, and Framer's stylesheet paints the links `#ff0000` under `:active`. See each entry's Pressed row for what did move.
 
 **Motion.** Transitions measured on the components, by duration.
 
@@ -71,14 +71,14 @@ Values that apply across entries, from the measurement files.
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
 | [Feature card](#feature-card) | 476 x 620 | - | 24px | #afe4ff `card-blue` | none | 0 |
-| [Feature card](#feature-card) | 476 x 620 | - | 24px | #8df1ed `card-teal` | none | 0 |
-| [Feature card](#feature-card) | 476 x 620 | - | - | - | none | 32px |
-| [Feature card](#feature-card) | 476 x 620 | - | 24px | #fbcfe8 `card-pink` | none | 0 |
-| [Partner card](#partner-card) | 976 x 799 | - | 24px | #ffffff `white` | none | 48px 0px |
-| [Plan card](#plan-card) | 976 x 750.41 | - | 24px | #ffffff `white` | none | 48px |
-| [Demo form](#demo-form) | 280 x 638.84 | - | 10px | rgba(23, 23, 23, 0.05) `field-fill` | none | 0 |
+| [Feature card](#everyday-hr-card) | 476 x 620 | - | 24px | #8df1ed `card-teal` | none | 0 |
+| [Feature card](#growth-feedback-card) | 476 x 620 | - | - | - | none | 32px |
+| [Feature card](#team-culture-card) | 476 x 620 | - | 24px | #fbcfe8 `card-pink` | none | 0 |
+| [Partner card](#teamtailor-card) | 340 x 703 | - | 24px | #ffffff `white` | none | 48px 0px |
+| [Plan card](#price-card) | 976 x 750.41 | - | 24px | #ffffff `white` | none | 48px |
+| [Demo form](#demo-form) | 280 x 40 | - | 10px | rgba(23, 23, 23, 0.05) `field-fill` | none | 0 |
 | [Release row](#release-row) | 240 x 44 | - | - | transparent | none | 10px 0px |
-| [Learn-more link](#learn-more-link) | 141.2 x 48 | - | 99px | rgba(255, 255, 255, 0.6) `white-60` | none | 10px 24px |
+| [Learn-more link](#learn-more) | 141.2 x 48 | - | 99px | rgba(255, 255, 255, 0.6) `white-60` | none | 10px 24px |
 
 ## Components
 
@@ -86,6 +86,7 @@ Values that apply across entries, from the measurement files.
 
 The shell every page shares: a 90px fixed header (64px at 390) with the Aboard wordmark, the Product / Price / Resources links and the Sign-in + Book-a-demo actions, and a light footer band with the "Smooth sailing." sign-off and the link columns (Price / What's new / Help center / legal).
 
+<a id="nav-bar"></a>
 #### Top navigation bar
 The floating nav: logo, Product / Price / Resources links and the Sign-in / Book-a-demo actions. Read as `nav-bar` on the home page.
 
@@ -93,6 +94,7 @@ The floating nav: logo, Product / Price / Resources links and the Sign-in / Book
 
 ![Top navigation bar default](components/crops/nav-bar-default.png)
 
+<a id="nav-logo"></a>
 #### Logo
 The Aboard wordmark linking home. Read as `nav-logo` on the home page.
 
@@ -104,16 +106,18 @@ The Aboard wordmark linking home. Read as `nav-logo` on the home page.
 
 ![Logo default](components/crops/nav-logo-default.png) ![Logo hover](components/crops/nav-logo-hover.png) ![Logo focus-visible](components/crops/nav-logo-focus-visible.png) ![Logo pressed](components/crops/nav-logo-pressed.png)
 
+<a id="nav-link"></a>
 #### Nav link
 A section link in the top bar. Read as `nav-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, pressed) | size 74.55 x 38; padding 4px 10px; radius 12px; background transparent; text system-ui 15/30 500, rgba(60, 60, 63, 0.7) `body` |
+| default (same: pressed) | size 74.55 x 38; padding 4px 10px; radius 12px; background transparent; text system-ui 15/30 500, rgba(60, 60, 63, 0.7) `body` |
 | hover | background rgba(112, 112, 121, 0.08) `nav-hover`; text system-ui 15/30 500, rgba(38, 38, 38, 0.996) |
 
-![Nav link default](components/crops/nav-link-default.png) ![Nav link hover](components/crops/nav-link-hover.png) ![Nav link focus-visible](components/crops/nav-link-focus-visible.png) ![Nav link pressed](components/crops/nav-link-pressed.png)
+![Nav link default](components/crops/nav-link-default.png) ![Nav link hover](components/crops/nav-link-hover.png) ![Nav link pressed](components/crops/nav-link-pressed.png)
 
+<a id="nav-cta"></a>
 #### Nav CTA
 The boxed action at the right of the nav (Sign in / Book a demo). Hovered and focused only; app.aboardhr.com is never opened. Read as `nav-cta` on the home page.
 
@@ -124,6 +128,7 @@ The boxed action at the right of the nav (Sign in / Book a demo). Hovered and fo
 
 ![Nav CTA default](components/crops/nav-cta-default.png) ![Nav CTA hover](components/crops/nav-cta-hover.png) ![Nav CTA focus-visible](components/crops/nav-cta-focus-visible.png) ![Nav CTA pressed](components/crops/nav-cta-pressed.png)
 
+<a id="footer"></a>
 #### Footer
 The "Smooth sailing" footer band: link columns (Price / What's new / Help center / legal) and the Teamtailor credit row. Read as `footer` on the home page.
 
@@ -133,6 +138,7 @@ Child layers that carry the look: div::after 976pxx128px border 1px solid rgba(2
 
 ![Footer default](components/crops/footer-default.png)
 
+<a id="footer-heading"></a>
 #### Footer heading
 The "Smooth sailing." sign-off heading in the footer. Read as `footer-heading` on the home page.
 
@@ -140,6 +146,7 @@ The "Smooth sailing." sign-off heading in the footer. Read as `footer-heading` o
 
 ![Footer heading default](components/crops/footer-heading-default.png)
 
+<a id="footer-link"></a>
 #### Footer link
 Read as `footer-link` on the home page.
 
@@ -156,6 +163,7 @@ Read as `footer-link` on the home page.
 
 The home page: the "Run people operations. With clarity." display hero, the animated co-pilot chat demo (a marketing animation, not a live product), the pastel product cards and the logo/feature bands.
 
+<a id="hero-title"></a>
 #### Hero title
 "Run people operations. With clarity." — the display headline. Read as `hero-title` on the home page.
 
@@ -163,6 +171,7 @@ The home page: the "Run people operations. With clarity." display hero, the anim
 
 ![Hero title default](components/crops/hero-title-default.png)
 
+<a id="hero-sub"></a>
 #### Hero subtitle
 The paragraph under the hero title. Read as `hero-sub` on the home page.
 
@@ -170,18 +179,21 @@ The paragraph under the hero title. Read as `hero-sub` on the home page.
 
 ![Hero subtitle default](components/crops/hero-sub-default.png)
 
+<a id="cta-demo"></a>
 #### Primary CTA
 The "Book a demo" button under the hero. Hovered and focused only. Read as `cta-demo` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 154.86 x 48; padding 10px 24px; radius 99px; background transparent; text system-ui 18/28 600, #ffffff `white` |
+| default (same: pressed) | size 154.86 x 48; padding 10px 24px; radius 99px; background transparent; text system-ui 18/28 600, #ffffff `white` |
+| hover | painted layers: div.framer-14owhvr: bg #00acff |
 | focus-visible | outline 1px auto #005fcc `focus-blue`, offset 1px |
 
 Child layers that carry the look: div 154.9x48 background #009cff `accent`.
 
 ![Primary CTA default](components/crops/cta-demo-default.png) ![Primary CTA hover](components/crops/cta-demo-hover.png) ![Primary CTA focus-visible](components/crops/cta-demo-focus-visible.png) ![Primary CTA pressed](components/crops/cta-demo-pressed.png)
 
+<a id="cta-try"></a>
 #### Secondary CTA
 The "Try for free" button. Hovered and focused only. Read as `cta-try` on the home page.
 
@@ -192,6 +204,7 @@ The "Try for free" button. Hovered and focused only. Read as `cta-try` on the ho
 
 ![Secondary CTA default](components/crops/cta-try-default.png) ![Secondary CTA hover](components/crops/cta-try-hover.png) ![Secondary CTA focus-visible](components/crops/cta-try-focus-visible.png) ![Secondary CTA pressed](components/crops/cta-try-pressed.png)
 
+<a id="copilot-demo"></a>
 #### Co-pilot demo panel
 The animated AI-assistant chat mock in the hero (a marketing demo, not a live product): the "Ask me anything" prompt inside the chat panel. Read as `copilot-demo` on the home page.
 
@@ -201,6 +214,7 @@ Child layers that carry the look: div 236.2x37.8 background #e0f2fe `tint-blue` 
 
 ![Co-pilot demo panel default](components/crops/copilot-demo-default.png)
 
+<a id="section-title"></a>
 #### Section title
 A section heading ("Built for people, not just the process"). Read as `section-title` on the home page.
 
@@ -208,6 +222,7 @@ A section heading ("Built for people, not just the process"). Read as `section-t
 
 ![Section title default](components/crops/section-title-default.png)
 
+<a id="feature-card"></a>
 #### Feature card
 A product-area card (Everyday HR / Team culture / Growth & feedback). Read as `feature-card` on the home page.
 
@@ -217,6 +232,7 @@ A product-area card (Everyday HR / Team culture / Growth & feedback). Read as `f
 
 ![Feature card default](components/crops/feature-card-default.png) ![Feature card hover](components/crops/feature-card-hover.png)
 
+<a id="feature-item"></a>
 #### Feature list item
 A feature row inside a product card (People directory, Time off, Contracts & documents). Read as `feature-item` on the home page.
 
@@ -226,6 +242,7 @@ A feature row inside a product card (People directory, Time off, Contracts & doc
 
 ![Feature list item default](components/crops/feature-item-default.png) ![Feature list item hover](components/crops/feature-item-hover.png)
 
+<a id="learn-more"></a>
 #### Learn-more link
 The text link inside a feature card. Read as `learn-more` on the home page.
 
@@ -240,6 +257,7 @@ The text link inside a feature card. Read as `learn-more` on the home page.
 
 The three product pages (Everyday HR, Growth & feedback, Team culture) share one layout: a display headline, pastel 24px-radius cards with feature rows, and a blue CTA pill.
 
+<a id="everyday-hr-title"></a>
 #### Page title
 Read as `everyday-hr-title` on the Everyday HR page.
 
@@ -247,6 +265,7 @@ Read as `everyday-hr-title` on the Everyday HR page.
 
 ![Page title default](components/crops/everyday-hr-title-default.png)
 
+<a id="everyday-hr-section"></a>
 #### Section title
 Read as `everyday-hr-section` on the Everyday HR page.
 
@@ -254,6 +273,7 @@ Read as `everyday-hr-section` on the Everyday HR page.
 
 ![Section title default](components/crops/everyday-hr-section-default.png)
 
+<a id="everyday-hr-card"></a>
 #### Feature card
 Read as `everyday-hr-card` on the Everyday HR page.
 
@@ -263,6 +283,7 @@ Read as `everyday-hr-card` on the Everyday HR page.
 
 ![Feature card default](components/crops/everyday-hr-card-default.png) ![Feature card hover](components/crops/everyday-hr-card-hover.png)
 
+<a id="everyday-hr-item"></a>
 #### Feature item
 Read as `everyday-hr-item` on the Everyday HR page.
 
@@ -270,18 +291,21 @@ Read as `everyday-hr-item` on the Everyday HR page.
 
 ![Feature item default](components/crops/everyday-hr-item-default.png)
 
+<a id="everyday-hr-cta"></a>
 #### Page CTA
 Read as `everyday-hr-cta` on the Everyday HR page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 154.86 x 48; padding 10px 24px; radius 99px; background transparent; text system-ui 18/28 600, #ffffff `white` |
+| default (same: pressed) | size 154.86 x 48; padding 10px 24px; radius 99px; background transparent; text system-ui 18/28 600, #ffffff `white` |
+| hover | painted layers: div.framer-14owhvr: bg #00acff |
 | focus-visible | outline 1px auto #005fcc `focus-blue`, offset 1px |
 
 Child layers that carry the look: div 154.9x48 background #009cff `accent`.
 
 ![Page CTA default](components/crops/everyday-hr-cta-default.png) ![Page CTA hover](components/crops/everyday-hr-cta-hover.png) ![Page CTA focus-visible](components/crops/everyday-hr-cta-focus-visible.png) ![Page CTA pressed](components/crops/everyday-hr-cta-pressed.png)
 
+<a id="growth-feedback-title"></a>
 #### Page title
 Read as `growth-feedback-title` on the Growth & feedback page.
 
@@ -289,6 +313,7 @@ Read as `growth-feedback-title` on the Growth & feedback page.
 
 ![Page title default](components/crops/growth-feedback-title-default.png)
 
+<a id="growth-feedback-section"></a>
 #### Section title
 Read as `growth-feedback-section` on the Growth & feedback page.
 
@@ -296,6 +321,7 @@ Read as `growth-feedback-section` on the Growth & feedback page.
 
 ![Section title default](components/crops/growth-feedback-section-default.png)
 
+<a id="growth-feedback-card"></a>
 #### Feature card
 Read as `growth-feedback-card` on the Growth & feedback page.
 
@@ -303,10 +329,9 @@ Read as `growth-feedback-card` on the Growth & feedback page.
 |---|---|
 | default (same: hover) | size 476 x 620; padding 32px; radius 24px; background transparent; text system-ui 44/48.4 600, #ffffff `white`; icon 62 x 62, #ffffff `white` |
 
-Child layers that carry the look: div 476x620 image linear-gradient(transparent 50%, rgba(0, 0, 0, 0.5) 100%).
-
 ![Feature card default](components/crops/growth-feedback-card-default.png) ![Feature card hover](components/crops/growth-feedback-card-hover.png)
 
+<a id="growth-feedback-item"></a>
 #### Feature item
 A feature row inside a product card. Read as `growth-feedback-item` on the Growth & feedback page.
 
@@ -314,18 +339,21 @@ A feature row inside a product card. Read as `growth-feedback-item` on the Growt
 
 ![Feature item default](components/crops/growth-feedback-item-default.png)
 
+<a id="growth-feedback-cta"></a>
 #### Page CTA
 Read as `growth-feedback-cta` on the Growth & feedback page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 154.86 x 48; padding 10px 24px; radius 99px; background transparent; text system-ui 18/28 600, #ffffff `white` |
+| default (same: pressed) | size 154.86 x 48; padding 10px 24px; radius 99px; background transparent; text system-ui 18/28 600, #ffffff `white` |
+| hover | painted layers: div.framer-14owhvr: bg #00acff |
 | focus-visible | outline 1px auto #005fcc `focus-blue`, offset 1px |
 
 Child layers that carry the look: div 154.9x48 background #009cff `accent`.
 
 ![Page CTA default](components/crops/growth-feedback-cta-default.png) ![Page CTA hover](components/crops/growth-feedback-cta-hover.png) ![Page CTA focus-visible](components/crops/growth-feedback-cta-focus-visible.png) ![Page CTA pressed](components/crops/growth-feedback-cta-pressed.png)
 
+<a id="team-culture-title"></a>
 #### Page title
 Read as `team-culture-title` on the Team culture page.
 
@@ -333,6 +361,7 @@ Read as `team-culture-title` on the Team culture page.
 
 ![Page title default](components/crops/team-culture-title-default.png)
 
+<a id="team-culture-section"></a>
 #### Section title
 Read as `team-culture-section` on the Team culture page.
 
@@ -340,6 +369,7 @@ Read as `team-culture-section` on the Team culture page.
 
 ![Section title default](components/crops/team-culture-section-default.png)
 
+<a id="team-culture-card"></a>
 #### Feature card
 Read as `team-culture-card` on the Team culture page.
 
@@ -349,6 +379,7 @@ Read as `team-culture-card` on the Team culture page.
 
 ![Feature card default](components/crops/team-culture-card-default.png) ![Feature card hover](components/crops/team-culture-card-hover.png)
 
+<a id="team-culture-item"></a>
 #### Feature item
 A feature row inside a product card. Read as `team-culture-item` on the Team culture page.
 
@@ -356,12 +387,14 @@ A feature row inside a product card. Read as `team-culture-item` on the Team cul
 
 ![Feature item default](components/crops/team-culture-item-default.png)
 
+<a id="team-culture-cta"></a>
 #### Page CTA
 Read as `team-culture-cta` on the Team culture page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 154.86 x 48; padding 10px 24px; radius 99px; background transparent; text system-ui 18/28 600, #ffffff `white` |
+| default (same: pressed) | size 154.86 x 48; padding 10px 24px; radius 99px; background transparent; text system-ui 18/28 600, #ffffff `white` |
+| hover | painted layers: div.framer-14owhvr: bg #00acff |
 | focus-visible | outline 1px auto #005fcc `focus-blue`, offset 1px |
 
 Child layers that carry the look: div 154.9x48 background #009cff `accent`.
@@ -372,6 +405,7 @@ Child layers that carry the look: div 154.9x48 background #009cff `accent`.
 
 The pricing page: a single white plan card ("80 kr / user / month") on the flat ground with a light-blue CTA. There is no billing-period toggle on the page.
 
+<a id="pricing-title"></a>
 #### Page title
 Read as `pricing-title` on the pricing page.
 
@@ -379,6 +413,7 @@ Read as `pricing-title` on the pricing page.
 
 ![Page title default](components/crops/pricing-title-default.png)
 
+<a id="price-card"></a>
 #### Plan card
 A pricing plan card. Read as `price-card` on the pricing page.
 
@@ -388,6 +423,7 @@ A pricing plan card. Read as `price-card` on the pricing page.
 
 ![Plan card default](components/crops/price-card-default.png) ![Plan card hover](components/crops/price-card-hover.png)
 
+<a id="price-amount"></a>
 #### Plan price
 The "80 kr / user / month" price figure. Read as `price-amount` on the pricing page.
 
@@ -395,6 +431,7 @@ The "80 kr / user / month" price figure. Read as `price-amount` on the pricing p
 
 ![Plan price default](components/crops/price-amount-default.png)
 
+<a id="plan-cta"></a>
 #### Plan CTA
 Read as `plan-cta` on the pricing page.
 
@@ -405,6 +442,7 @@ Read as `plan-cta` on the pricing page.
 
 ![Plan CTA default](components/crops/plan-cta-default.png) ![Plan CTA hover](components/crops/plan-cta-hover.png) ![Plan CTA focus-visible](components/crops/plan-cta-focus-visible.png) ![Plan CTA pressed](components/crops/plan-cta-pressed.png)
 
+<a id="billing-toggle"></a>
 #### Billing toggle
 The monthly/yearly switch, if rendered (never toggled). Read as `billing-toggle` on the pricing page.
 
@@ -414,6 +452,7 @@ Not on the page when it was captured.
 
 The one real form on the site, Framer's own: Inter labels over ink-at-5% fields and a ringed submit. It was measured at rest and at focus only; nothing was typed and the form was never submitted.
 
+<a id="demo-title"></a>
 #### Page title
 "Request a demo" — the form page heading. Read as `demo-title` on the book a demo page.
 
@@ -421,6 +460,7 @@ The one real form on the site, Framer's own: Inter labels over ink-at-5% fields 
 
 ![Page title default](components/crops/demo-title-default.png)
 
+<a id="demo-form"></a>
 #### Demo form
 The book-a-demo form or scheduler embed. Measured at rest; nothing typed or sent. Read as `demo-form` on the book a demo page.
 
@@ -430,15 +470,18 @@ Child layers that carry the look: div 280x40 background rgba(23, 23, 23, 0.05) `
 
 ![Demo form default](components/crops/demo-form-default.png)
 
+<a id="demo-field"></a>
 #### Demo field
 A text field of the demo form. Clicked into for the focus style; nothing typed. Read as `demo-field` on the book a demo page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focused) | size 256 x 16; background transparent; text Inter 16/16 500, #262626 `ink`; placeholder rgba(60, 60, 63, 0.4) `faint` |
+| default | size 256 x 16; background transparent; text Inter 16/16 500, #262626 `ink`; placeholder rgba(60, 60, 63, 0.4) `faint` |
+| focused | ancestor paint: div.framer-form-text-input.framer-form-input-wrapper: shadow rgba(14, 165, 233, 0.5) 0px 0px 0px 2px |
 
 ![Demo field default](components/crops/demo-field-default.png) ![Demo field focused](components/crops/demo-field-focused.png)
 
+<a id="demo-submit"></a>
 #### Demo submit
 The "Let’s talk" form submit button. Measured in every state, never pressed. Read as `demo-submit` on the book a demo page.
 
@@ -453,6 +496,7 @@ The "Let’s talk" form submit button. Measured in every state, never pressed. R
 
 The changelog index (dated release rows) and one detail page (June 2026), a plain reading column with a back link.
 
+<a id="whatsnew-title"></a>
 #### Page title
 Read as `whatsnew-title` on the What's new page.
 
@@ -460,6 +504,7 @@ Read as `whatsnew-title` on the What's new page.
 
 ![Page title default](components/crops/whatsnew-title-default.png)
 
+<a id="release-row"></a>
 #### Release row
 A dated changelog entry on the Whats-new page. Read as `release-row` on the What's new page.
 
@@ -469,6 +514,7 @@ A dated changelog entry on the Whats-new page. Read as `release-row` on the What
 
 ![Release row default](components/crops/release-row-default.png) ![Release row hover](components/crops/release-row-hover.png)
 
+<a id="release-title"></a>
 #### Release title
 The dated headline of a changelog detail page (June 2026). Read as `release-title` on the What's new release page.
 
@@ -476,17 +522,18 @@ The dated headline of a changelog detail page (June 2026). Read as `release-titl
 
 ![Release title default](components/crops/release-title-default.png)
 
+<a id="release-back"></a>
 #### Back link
 The "Link back" anchor returning to the What's new index. Read as `release-back` on the What's new release page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 111 x 29; background transparent; text sans-serif 12/normal 400, #0000ee; icon 83 x 29, #0000ee |
+| default (same: hover, pressed) | size 86.25 x 18; background transparent; text system-ui 16/24 500, rgba(60, 60, 63, 0.7) `body` |
 | focus-visible | outline 1px auto #005fcc `focus-blue`, offset 1px |
-| pressed | text sans-serif 12/normal 400, #ff0000 `active-red`; icon 83 x 29, #ff0000 `active-red` |
 
 ![Back link default](components/crops/release-back-default.png) ![Back link hover](components/crops/release-back-hover.png) ![Back link focus-visible](components/crops/release-back-focus-visible.png) ![Back link pressed](components/crops/release-back-pressed.png)
 
+<a id="release-post"></a>
 #### Release body
 The changelog post body on a detail page. Read as `release-post` on the What's new release page.
 
@@ -498,6 +545,7 @@ The changelog post body on a detail page. Read as `release-post` on the What's n
 
 The Teamtailor-x-Aboard co-marketing page: a 32px-radius white partner card, the shared display headline and the same blue CTA.
 
+<a id="teamtailor-title"></a>
 #### Page title
 "The best candidate experience deserves an equally great employee experience." Read as `teamtailor-title` on the Teamtailor page.
 
@@ -505,6 +553,7 @@ The Teamtailor-x-Aboard co-marketing page: a 32px-radius white partner card, the
 
 ![Page title default](components/crops/teamtailor-title-default.png)
 
+<a id="teamtailor-card"></a>
 #### Partner card
 Read as `teamtailor-card` on the Teamtailor page.
 
@@ -516,12 +565,14 @@ Child layers that carry the look: div 340x703 background #ffffff `white` radius 
 
 ![Partner card default](components/crops/teamtailor-card-default.png) ![Partner card hover](components/crops/teamtailor-card-hover.png)
 
+<a id="teamtailor-cta"></a>
 #### Page CTA
 Read as `teamtailor-cta` on the Teamtailor page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 154.86 x 48; padding 10px 24px; radius 99px; background transparent; text system-ui 18/28 600, #ffffff `white` |
+| default (same: pressed) | size 154.86 x 48; padding 10px 24px; radius 99px; background transparent; text system-ui 18/28 600, #ffffff `white` |
+| hover | painted layers: div.framer-14owhvr: bg #00acff |
 | focus-visible | outline 1px auto #005fcc `focus-blue`, offset 1px |
 
 Child layers that carry the look: div 154.9x48 background #009cff `accent`.
@@ -532,6 +583,7 @@ Child layers that carry the look: div 154.9x48 background #009cff `accent`.
 
 The data-protection and terms pages: heading plus running legal copy in the same shell.
 
+<a id="dataprotection-title"></a>
 #### Page title
 Read as `dataprotection-title` on the data protection page.
 
@@ -539,6 +591,7 @@ Read as `dataprotection-title` on the data protection page.
 
 ![Page title default](components/crops/dataprotection-title-default.png)
 
+<a id="dataprotection-body"></a>
 #### Body text
 Read as `dataprotection-body` on the data protection page.
 
@@ -546,6 +599,7 @@ Read as `dataprotection-body` on the data protection page.
 
 ![Body text default](components/crops/dataprotection-body-default.png)
 
+<a id="terms-title"></a>
 #### Page title
 Read as `terms-title` on the terms page.
 
@@ -553,6 +607,7 @@ Read as `terms-title` on the terms page.
 
 ![Page title default](components/crops/terms-title-default.png)
 
+<a id="terms-body"></a>
 #### Body text
 Read as `terms-body` on the terms page.
 
@@ -564,6 +619,7 @@ Read as `terms-body` on the terms page.
 
 A few components as a phone draws them, at 390 x 844: the collapsed header with its menu trigger, the opened nav panel and the 48px hero title.
 
+<a id="m-nav-bar"></a>
 #### Mobile top bar
 The mobile header: logo left, menu trigger right. Read as `m-nav-bar` on the home page at 390 wide.
 
@@ -571,22 +627,23 @@ The mobile header: logo left, menu trigger right. Read as `m-nav-bar` on the hom
 
 ![Mobile top bar default](components/crops/m-nav-bar-default.png)
 
+<a id="m-menu-trigger"></a>
 #### Mobile menu trigger
 The menu button. Pressed once below to open the menu; a local disclosure. Read as `m-menu-trigger` on the home page at 390 wide.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 37 x 16; background transparent; text sans-serif 12/normal 400, #000000 |
+| default (same: hover, pressed) | size 37 x 16; background transparent; text sans-serif 12/normal 400, #000000 |
 
-![Mobile menu trigger default](components/crops/m-menu-trigger-default.png) ![Mobile menu trigger hover](components/crops/m-menu-trigger-hover.png) ![Mobile menu trigger focus-visible](components/crops/m-menu-trigger-focus-visible.png) ![Mobile menu trigger pressed](components/crops/m-menu-trigger-pressed.png)
+![Mobile menu trigger default](components/crops/m-menu-trigger-default.png) ![Mobile menu trigger hover](components/crops/m-menu-trigger-hover.png) ![Mobile menu trigger pressed](components/crops/m-menu-trigger-pressed.png)
 
+<a id="m-nav-panel"></a>
 #### Mobile menu (open)
 The opened mobile menu panel; pressed once, nothing navigated. Read as `m-nav-panel` on the home page at 390 wide.
 
-**Values (open).** size 390 x 64; background transparent; shadow rgba(23, 23, 23, 0.08) 0px 0px 0px 0px; text sans-serif 12/normal 400, #000000; icon 83 x 29, #0000ee.
+Not on the page when it was captured.
 
-![Mobile menu (open) open](components/crops/m-nav-panel-open.png)
-
+<a id="m-hero-title"></a>
 #### Mobile hero title
 Read as `m-hero-title` on the home page at 390 wide.
 

@@ -58,7 +58,7 @@ const W = (s = '') => L.push(s);
 W('# Component measurements'); // PRODUCT (adapt): the product's name
 W('');
 // PRODUCT (adapt): describe this product's capture.
-W(`Computed styles read from aboard.com on ${(J._meta.run || '').slice(0, 10)} by \`tools/capture/public/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
+W(`Computed styles read from aboardhr.com on ${(J._meta.run || '').slice(0, 10)} by \`tools/capture/public/measure.mjs\`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by \`tools/capture/public/build-measurements.mjs\` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads \`=\`. Colours are hex, with \`@ alpha\` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.`);
 W('');
 W('States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.');
 W('');
@@ -107,7 +107,7 @@ W('');
 W('## Transitions declared in the readable stylesheets');
 W('');
 // PRODUCT (adapt): describe this product's capture.
-W('aboard.com\'s WordPress theme stylesheets are same-origin readable and declare about 640 custom properties (the --wp--preset--* and --rd-* names; see css-vars.json). The values below are computed styles read off the running pages; the per-state Transition rows are computed values.');
+W('aboardhr.com is a Framer site: its inline stylesheets are same-origin readable and declare 133 custom properties, of which 62 resolve at :root (hashed --token-<uuid> design tokens and the --framer-* typography variables; see css-vars.json). The values below are computed styles read off the running pages; the per-state Transition rows are computed values.');
 for (const [pg, list] of Object.entries(J._meta.sheets || {}).sort()) {
   const uniq = [...new Map(list.filter((t) => t.transition).map((t) => [t.transition, t])).values()].slice(0, 12);
   W('');

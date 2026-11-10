@@ -34,6 +34,13 @@ class Shooter {
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
+    // A page's capture shape can change between runs (a once-tiled page can fit
+    // a single PNG now): drop the obsolete files for this capture name before
+    // writing the new one, so quantize.py can never stitch stale tiles over it.
+    const base = f.split('/').pop();
+    for (const old of fs.readdirSync(RAW)) {
+      if (old === base + '.png' || (old.startsWith(base + '.part') && old.endsWith('.png'))) fs.rmSync(`${RAW}/${old}`, { force: true });
+    }
     if (H <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
     else for (let i = 0, y = 0; y < H; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, H - y) } }, this.requested);
     this.count++; log('  shot', name, 'H=' + H);

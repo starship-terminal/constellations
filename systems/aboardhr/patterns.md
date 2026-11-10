@@ -18,7 +18,7 @@ The home hero centres a 768px column: the 64px display headline (`core.typograph
 
 ## The pastel product-card bands
 
-Sections alternate the flat `#fafafa` ground with pastel bands; inside them, cards are 24px-radius flat panels (`card-blue`, `card-teal`, `card-pink`) with a 44px semibold headline, medium-weight feature rows, and a CTA. Two cards grid at 330px columns with a 20px gap inside a 680px column. No borders, no shadows — the tint does all the separation. The product pages repeat the pattern per product (Everyday HR mint, Growth & feedback, Team culture pink).
+Sections alternate the flat `#fafafa` ground with pastel bands; inside them, the large product cards are 476 x 620 flat panels (`card-blue`, `card-teal`, `card-pink`) at 24px radius with a 44px semibold headline, medium-weight feature rows, and a CTA. The smaller feature-row grids are separate: 330px columns with a 20px gap inside the 680px feature column (that 680px grid strip measures 136px tall, so it is not the card container). No borders, no shadows — the tint does all the separation. The product pages repeat the pattern per product (Everyday HR mint, Growth & feedback, Team culture pink).
 
 - Components: [feature-card](components.md#feature-card), [feature-item](components.md#feature-list-item), [everyday-hr-card](components.md#feature-card-2), [team-culture-card](components.md#feature-card-3), [learn-more](components.md#learn-more-link)
 - Screens: [home-light-full](screenshots/home-light-full.png), [everyday-hr-light-default](screenshots/everyday-hr-light-default.png), [team-culture-light-default](screenshots/team-culture-light-default.png)
@@ -53,6 +53,6 @@ The footer stays on the `#fafafa` ground: the "Smooth sailing." sign-off heading
 
 ## The mobile fold
 
-At 390 every page reflows single-column with a 16px gutter: the display step drops to 48px (`core.typography.display-mobile`), cards stack full-width, the header collapses to a 64px band with the trigger, and the CTA pills keep their 48px height. The menu opens as a full-width sheet under the band.
+At 390 every page reflows single-column: the display step drops to 48px (`core.typography.display-mobile`), cards stack full-width, the header collapses to a 64px band with the trigger, and the CTA pills keep their 48px height. The menu opens as a full-width sheet under the band. Gutters are not uniform: home keeps a 16px gutter, while Everyday HR and pricing pad their content 24px each side (a 342px content width at 390).
 
 - Screens: [mobile-home-light-default](screenshots/mobile-home-light-default.png), [mobile-home-light-full](screenshots/mobile-home-light-full.png), [mobile-everyday-hr-light-full](screenshots/mobile-everyday-hr-light-full.png)

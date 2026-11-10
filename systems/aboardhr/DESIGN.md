@@ -94,6 +94,7 @@ typography:
 rounded:
   none: "0px"
   control: "12px"
+  field: "10px"
   card: "24px"
   sheet: "32px"
   pill: "99px"
@@ -185,7 +186,7 @@ Shadows, resolved to CSS:
 
 ## Shapes
 
-Corner radii from `core.radius`: `none` 0px, `control` 12px, `card` 24px, `sheet` 32px, `pill` 99px.
+Corner radii from `core.radius`: `none` 0px, `control` 12px, `field` 10px, `card` 24px, `sheet` 32px, `pill` 99px.
 
 ## Components
 

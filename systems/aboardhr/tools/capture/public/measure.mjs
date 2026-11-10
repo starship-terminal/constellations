@@ -38,6 +38,7 @@ const URLS = {
   terms: '/terms',
 };
 let page, cdp, current, context, run;
+const tempContexts = [];
 const touched = new Set();
 
 // A bot interstitial or an error body renders a minimal page: detect either
@@ -57,6 +58,7 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {
   const ctx = await b.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
+  tempContexts.push(ctx);
   await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
   page = await ctx.newPage();
   cdp = await ctx.newCDPSession(page);
@@ -120,7 +122,7 @@ async function toggle(loc) {
 
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
-  Object.assign(c, { page: current, run, url: URLS[current] && (URLS[current].startsWith('http') ? URLS[current] : BASE + URLS[current]) }, meta);
+  Object.assign(c, { page: current, url: URLS[current] && (URLS[current].startsWith('http') ? URLS[current] : BASE + URLS[current]) }, meta);
   touched.add(key);
   c.states ??= {};
   return c;
@@ -138,6 +140,9 @@ async function measure(key, state, target, opts = {}) {
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
     c.states[state] = { ...s, crop: file, via: opts.via };
+    // A state actually measured gets this run's timestamp; a component whose
+    // states are only kept from an earlier run keeps its original one.
+    c.run = run;
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
@@ -170,6 +175,13 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = 'mouse hover';
       } else if (st === 'focus-visible') {
         via = await kbFocus((opts.focusLoc || loc).filter({ visible: true }).first());
+        if (via === 'focus failed') {
+          // The element never took keyboard focus: record the failure instead
+          // of saving a resting-style capture under the focus-visible name.
+          out.components[key].states[st] = { error: 'keyboard focus failed' };
+          log('  !', key, st, 'focus failed');
+          continue;
+        }
       } else if (st === 'pressed') {
         undo = await forcePseudo((opts.pressLoc || loc).filter({ visible: true }).first(), ['active', 'hover']);
         via = 'CDP forcePseudoState :active:hover';
@@ -342,11 +354,27 @@ async function mobile() {
   if (await trg.count()) {
     await trg.click().catch(() => trg.evaluate((el) => el.click()));
     await page.waitForTimeout(900);
-    await page.evaluate(() => {
+    // The menu is open only when a nav link sits inside a large fixed/absolute
+    // panel below the header band; an empty nav or the ordinary header is not.
+    const opened = await page.evaluate(() => {
       const link = [...document.querySelectorAll('a')].find((a) => /Product|Price|Resources/.test(a.innerText || '') && a.getBoundingClientRect().top > 60);
-      if (link) for (let n = link; n; n = n.parentElement) { const r = n.getBoundingClientRect(); const cs = getComputedStyle(n); if (r.width > 200 && r.height > 200 && (cs.position === 'fixed' || cs.position === 'absolute')) { n.setAttribute('data-m-mark', 'mnp'); break; } }
-    }).catch(() => {});
-    await S('m-nav-panel', q('[data-m-mark="mnp"], [data-framer-name*="menu" i]').filter({ visible: true }).first(), ['open'], { group: g, title: 'Mobile menu (open)', desc: 'The opened mobile menu panel; pressed once, nothing navigated.', sel: 'mobile menu open' }, { noScroll: true, via: 'menu trigger pressed once' });
+      if (!link) return false;
+      for (let n = link; n; n = n.parentElement) {
+        const r = n.getBoundingClientRect(); const cs = getComputedStyle(n);
+        if (r.width > 200 && r.height > 200 && (cs.position === 'fixed' || cs.position === 'absolute')) { n.setAttribute('data-m-mark', 'mnp'); return true; }
+      }
+      return false;
+    }).catch(() => false);
+    if (opened) {
+      await S('m-nav-panel', q('[data-m-mark="mnp"]').filter({ visible: true }).first(), ['open'], { group: g, title: 'Mobile menu (open)', desc: 'The opened mobile menu panel; pressed once, nothing navigated.', sel: 'mobile menu open' }, { noScroll: true, via: 'menu trigger pressed once' });
+    } else {
+      // The trigger did not open a menu: record the state as unavailable rather
+      // than saving the header as if it were the menu panel.
+      const c = comp('m-nav-panel', { title: 'Mobile menu (open)', group: g, desc: 'The opened mobile menu panel; pressed once, nothing navigated.', selector: 'mobile menu open' });
+      delete c.states.open;
+      c.missing = true;
+      log('  ! m-nav-panel: menu did not open; recorded unavailable');
+    }
     await page.keyboard.press('Escape').catch(() => {});
     await page.waitForTimeout(400);
   }
@@ -358,7 +386,7 @@ async function release() {
   if (!(await newPage('release'))) { await page.close(); return; }
   const g = G.news;
   await S('release-title', q('h1').filter({ visible: true }).first(), ['default'], { group: g, title: 'Release title', desc: 'The dated headline of a changelog detail page (June 2026).', sel: 'h1' }, { noScroll: true });
-  await S('release-back', q('a').filter({ has: page.locator('[data-framer-name="Link back"], svg') }).first(), B4, { group: g, title: 'Back link', desc: 'The "Link back" anchor returning to the What\'s new index.', sel: 'back link' });
+  await S('release-back', q('a').filter({ hasText: /back|what.?s new/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Back link', desc: 'The "Link back" anchor returning to the What\'s new index.', sel: 'back link' });
   await S('release-post', q('[data-framer-name="Post"], [data-framer-name="Content"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Release body', desc: 'The changelog post body on a detail page.', sel: 'release post' });
   await page.close();
 }
@@ -382,18 +410,25 @@ run = new Date().toISOString();
 out._meta.run = run;
 out._meta.product = 'aboardhr.com';
 const wanted = process.argv.slice(2).join(',').split(',').map((s) => s.trim()).filter(Boolean);
-({ context } = await launch());
-for (const [k, fn] of Object.entries(RUNNERS)) {
-  if (wanted.length && !wanted.includes(k)) continue;
-  try { await fn(); } catch (e) { log('PAGE FAILED', k, String(e.message).split('\n')[0]); }
+const { browser, context: launchContext } = await launch();
+context = launchContext;
+try {
+  for (const [k, fn] of Object.entries(RUNNERS)) {
+    if (wanted.length && !wanted.includes(k)) continue;
+    try { await fn(); } catch (e) { log('PAGE FAILED', k, String(e.message).split('\n')[0]); }
+    save();
+  }
+  // mark components from this run whose selectors matched nothing; a component
+  // with recorded states (from an earlier merged run) is covered, not missing
+  for (const [k, c] of Object.entries(out.components)) {
+    if (!touched.has(k)) continue;
+    if (Object.keys(c.states || {}).length) delete c.missing;
+    else c.missing = true;
+  }
   save();
+  log('done ->', OUT);
+} finally {
+  for (const c of tempContexts) await c.close().catch(() => {});
+  await context.close().catch(() => {});
+  await browser.close().catch(() => {});
 }
-// mark components from this run whose selectors matched nothing; a component
-// with recorded states (from an earlier merged run) is covered, not missing
-for (const [k, c] of Object.entries(out.components)) {
-  if (!touched.has(k)) continue;
-  if (Object.keys(c.states || {}).length) delete c.missing;
-  else c.missing = true;
-}
-save();
-log('done ->', OUT);

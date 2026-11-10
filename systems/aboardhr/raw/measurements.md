@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from aboard.com on 2026-11-10 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from aboardhr.com on 2026-11-10 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -70,24 +70,25 @@ Page: home. Selector: `nav a`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 74.55 x 38 | = | = | = |
-| Padding | 4px 10px | = | = | = |
-| Gap | 10px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 12px | = | = | = |
-| Background | transparent | #707079 @ 0.08 | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | sans-serif 12px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | p.framer-text: system-ui 15px/30px 500, #3c3c3f @ 0.7, ls -0.15px | p.framer-text: system-ui 15px/30px 500, #262626 @ 0.996, ls -0.15px | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 74.55 x 38 | = | - | = |
+| Padding | 4px 10px | = | - | = |
+| Gap | 10px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 12px | = | - | = |
+| Background | transparent | #707079 @ 0.08 | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | sans-serif 12px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | p.framer-text: system-ui 15px/30px 500, #3c3c3f @ 0.7, ls -0.15px | p.framer-text: system-ui 15px/30px 500, #262626 @ 0.996, ls -0.15px | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
 | Painted layers | - | a.framer-1tXqu.framer-1a3dznk 74.5x38.0 bg #707079 @ 0.08 r 12px | = | = |
+| Error | - | = | keyboard focus failed | = |
 
-Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-focus-visible.png`, `nav-link-pressed.png`.
+Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-pressed.png`.
 
 #### nav-cta
 
@@ -1098,22 +1099,20 @@ Page: release. Selector: `back link`. States: default, hover, focus-visible, pre
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 111 x 29 | = | = | = |
+| Size (w x h) | 86.25 x 18 | = | = | = |
 | Padding | 0px | = | = | = |
-| Gap | 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 1px auto #005fcc offset 1px | = |
-| Font | sans-serif 12px/normal 400 | = | = | = |
+| Font | system-ui 16px/24px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #0000ee | = | = | #ff0000 |
+| Colour | #3c3c3f @ 0.7 | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 83 x 29, colour #0000ee, fill #000000 | = | = | 83 x 29, colour #ff0000, fill #000000 |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.framer-11t902d.framer-1r3p545 111.0x29.0 outline 1px auto #005fcc offset 1px | = |
+| Painted layers | - | = | a.framer-text.framer-styles-preset-1iscjdd 86.3x18.0 outline 1px auto #005fcc offset 1px | = |
 
 Crops: `release-back-default.png`, `release-back-hover.png`, `release-back-focus-visible.png`, `release-back-pressed.png`.
 
@@ -1271,47 +1270,30 @@ Page: home. Selector: `navtrigger`. States: default, hover, focus-visible, press
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 37 x 16 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | sans-serif 12px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Transition | none | = | = | = |
-| Ancestor paint | 1 up div.framer-d1Hbe.framer-FDHpM bg #fafafa | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 37 x 16 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | sans-serif 12px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Transition | none | = | - | = |
+| Ancestor paint | 1 up div.framer-d1Hbe.framer-FDHpM bg #fafafa | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Error | - | = | keyboard focus failed | = |
 
-Crops: `m-menu-trigger-default.png`, `m-menu-trigger-hover.png`, `m-menu-trigger-focus-visible.png`, `m-menu-trigger-pressed.png`.
+Crops: `m-menu-trigger-default.png`, `m-menu-trigger-hover.png`, `m-menu-trigger-pressed.png`.
 
 #### m-nav-panel
 
 Mobile menu (open). The opened mobile menu panel; pressed once, nothing navigated.
 
-Page: home. Selector: `mobile menu open`. States: open.
+Page: home. Selector: `mobile menu open`. States: .
 
-| Property | open |
-|---|---|
-| Size (w x h) | 390 x 64 |
-| Padding | 0px |
-| Gap | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | #171717 @ 0.08 0px 0px 0px 0px |
-| Outline | none |
-| Font | sans-serif 12px/normal 400 |
-| Letter spacing | normal |
-| Colour | #000000 |
-| Transition | none |
-| Icon | 83 x 29, colour #0000ee, fill #000000 |
-| Painted layers | nav.framer-tBKbW.framer-1mi7pyh 390.0x64.0 shadow #171717 @ 0.08 0px 0px 0px 0px; div.framer-j9s7nw 390.0x64.0 bg #fafafa image linear-gradient(#fafafa 0%, #fafafa 100%); div::after.framer-j9s7nw 390pxx64px border B:1px solid #171717 @ 0.1 |
-| How | menu trigger pressed once |
-
-Crops: `m-nav-panel-open.png`.
+Not found on the page at capture time.
 
 #### m-hero-title
 
@@ -1417,7 +1399,7 @@ Crops: `teamtailor-cta-default.png`, `teamtailor-cta-hover.png`, `teamtailor-cta
 
 ## Transitions declared in the readable stylesheets
 
-aboard.com's WordPress theme stylesheets are same-origin readable and declare about 640 custom properties (the --wp--preset--* and --rd-* names; see css-vars.json). The values below are computed styles read off the running pages; the per-state Transition rows are computed values.
+aboardhr.com is a Framer site: its inline stylesheets are same-origin readable and declare 133 custom properties, of which 62 resolve at :root (hashed --token-<uuid> design tokens and the --framer-* typography variables; see css-vars.json). The values below are computed styles read off the running pages; the per-state Transition rows are computed values.
 
 - book-demo: `color 0.15s`, `opacity 0.4s ease-out`, `unset`
 

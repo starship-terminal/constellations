@@ -1,781 +1,787 @@
 {
- "_about": "The token tree build_tokens.py turns into tokens.json. aboardhr.com is a Framer site: its stylesheets are inline <style> blocks that declare hashed --token-<uuid> custom properties (raw/css-vars.json), and components carry data-framer-name attributes. A leaf either names a variable (\"var\") whose value is the browser-resolved one in css-vars.json, or carries a measured \"value\" with the measurement it came from in \"source\" (a component/state of raw/measurements.md). Several brand fills are painted in Display P3; the token records the sRGB conversion and names the P3 original in the description. One theme: the site paints a single light scheme.",
- "core": {
-  "palette": {
-   "ground": {
-    "value": "#fafafa",
-    "type": "color",
-    "source": "measured page background on every route (--token-b6e2d1fe)",
-    "description": "#fafafa, the flat near-white every page paints"
-   },
-   "white": {
-    "value": "#ffffff",
-    "type": "color",
-    "source": "measured backgroundColor of price-card / teamtailor-card panel (--token-89a7824f)",
-    "description": "#fff, plan and partner cards"
-   },
-   "panel": {
-    "value": "#fcfbfa",
-    "type": "color",
-    "source": "sampled section panel inside home feature bands (#fcfbfa)",
-    "description": "#fcfbfa, the off-white panel cards sit on inside the pastel bands"
-   },
-   "ink": {
-    "value": "#262626",
-    "type": "color",
-    "source": "measured color of hero-title / card titles / demo-submit text (--token-29dad69b)",
-    "description": "#262626, the near-black text colour"
-   },
-   "body": {
-    "value": "rgba(60, 60, 63, 0.7)",
-    "type": "color",
-    "source": "measured color of hero-sub / nav-link / release-row text (--token-ad12f880)",
-    "description": "ink at 70%, the working muted text"
-   },
-   "faint": {
-    "value": "rgba(60, 60, 63, 0.4)",
-    "type": "color",
-    "source": "--token-4b8539df, placeholder and helper text",
-    "description": "ink at 40%, the faintest text"
-   },
-   "grey-link": {
-    "value": "#777777",
-    "type": "color",
-    "source": "measured color of footer-link",
-    "description": "#777, footer links"
-   },
-   "grey-link-hover": {
-    "value": "#555555",
-    "type": "color",
-    "source": "measured color of footer-link at hover and pressed",
-    "description": "#555, the footer link's darker hover"
-   },
-   "grey-label": {
-    "value": "#888888",
-    "type": "color",
-    "source": "measured color of demo-form field labels",
-    "description": "#888, form labels"
-   },
-   "grey-arrow": {
-    "value": "#999999",
-    "type": "color",
-    "source": "measured ::before fill of the select arrow in demo-form",
-    "description": "#999, the select's drawn arrow"
-   },
-   "accent": {
-    "value": "#009cff",
-    "type": "color",
-    "source": "measured painted background of cta-demo / teamtailor-cta / the page CTAs",
-    "description": "#009cff, converted from color(display-p3 0 0.599909 1): the bright blue of every primary button"
-   },
-   "accent-ink": {
-    "value": "#008ae8",
-    "type": "color",
-    "source": "measured color of nav-cta / cta-try / plan-cta text (--token-9ffed88b)",
-    "description": "#008ae8, converted from color(display-p3 0.0014 0.5301 0.8827): blue text on the light-blue tint"
-   },
-   "tint-blue": {
-    "value": "#e0f2fe",
-    "type": "color",
-    "source": "measured backgroundColor of nav-cta / cta-try / plan-cta and the copilot chip (--token-fe30a6fc)",
-    "description": "#e0f2fe (also painted as display-p3 0.89 0.946 0.99): the light-blue button tint"
-   },
-   "card-blue": {
-    "value": "#afe4ff",
-    "type": "color",
-    "source": "measured painted background of feature-card",
-    "description": "#afe4ff, converted from color(display-p3 0.73 0.89 0.99): the Everyday-HR feature card"
-   },
-   "card-teal": {
-    "value": "#8df1ed",
-    "type": "color",
-    "source": "measured backgroundColor of everyday-hr-card",
-    "description": "#8df1ed, the mint product card"
-   },
-   "card-pink": {
-    "value": "#fbcfe8",
-    "type": "color",
-    "source": "measured backgroundColor of team-culture-card and the home pink band",
-    "description": "#fbcfe8, converted from color(display-p3 0.956 0.817 0.904): the pink band and card"
-   },
-   "card-lavender": {
-    "value": "#ddd3ff",
-    "type": "color",
-    "source": "measured painted inner fill of learn-more",
-    "description": "#ddd3ff, converted from color(display-p3 0.86 0.83 0.99): the Learn-more pill's inner fill"
-   },
-   "white-60": {
-    "value": "rgba(255, 255, 255, 0.6)",
-    "type": "color",
-    "source": "measured backgroundColor of learn-more over its lavender fill",
-    "description": "white at 60%, the Learn-more pill's frosted layer"
-   },
-   "field-fill": {
-    "value": "rgba(23, 23, 23, 0.05)",
-    "type": "color",
-    "source": "measured painted background of every demo-form input and select",
-    "description": "ink at 5%, the demo form's field fill"
-   },
-   "ring": {
-    "value": "rgba(23, 23, 23, 0.1)",
-    "type": "color",
-    "source": "measured boxShadow of demo-submit (2px ring) and --token-b2159720 hairline",
-    "description": "ink at 10%, the button ring and hairlines"
-   },
-   "nav-hover": {
-    "value": "rgba(112, 112, 121, 0.08)",
-    "type": "color",
-    "source": "measured backgroundColor of nav-link at hover",
-    "description": "grey at 8%, the nav link's hover wash"
-   },
-   "focus-blue": {
-    "value": "#005fcc",
-    "type": "color",
-    "source": "measured outlineColor of focus-visible states (the browser's own ring; the site sets none)",
-    "description": "#005fcc, the headless Chromium default focus ring"
-   },
-   "active-red": {
-    "value": "#ff0000",
-    "type": "color",
-    "source": "measured color of links under forced :active (a Framer :active rule)",
-    "description": "#ff0000, the pressed link colour Framer's stylesheet declares"
-   }
-  },
-  "font": {
-   "family": {
-    "system": {
-     "value": "\"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
-     "type": "fontFamily",
-     "source": "measured fontFamily of every headline, button, link and body text",
-     "description": "the OS-ui stack (San Francisco on Apple): every marketing face"
+  "_about": "The token tree build_tokens.py turns into tokens.json. aboardhr.com is a Framer site: its stylesheets are inline <style> blocks that declare hashed --token-<uuid> custom properties (raw/css-vars.json), and components carry data-framer-name attributes. A leaf either names a variable (\"var\") whose value is the browser-resolved one in css-vars.json, or carries a measured \"value\" with the measurement it came from in \"source\" (a component/state of raw/measurements.md). Several brand fills are painted in Display P3; the token records the sRGB conversion and names the P3 original in the description. One theme: the site paints a single light scheme.",
+  "core": {
+    "palette": {
+      "ground": {
+        "value": "#fafafa",
+        "type": "color",
+        "source": "measured page background on every route (--token-b6e2d1fe)",
+        "description": "#fafafa, the flat near-white every page paints"
+      },
+      "white": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "measured backgroundColor of price-card / teamtailor-card panel (--token-89a7824f)",
+        "description": "#fff, plan and partner cards"
+      },
+      "panel": {
+        "value": "#fcfbfa",
+        "type": "color",
+        "source": "sampled section panel inside home feature bands (#fcfbfa)",
+        "description": "#fcfbfa, the off-white panel cards sit on inside the pastel bands"
+      },
+      "ink": {
+        "value": "#262626",
+        "type": "color",
+        "source": "measured color of hero-title / card titles / demo-submit text (--token-29dad69b)",
+        "description": "#262626, the near-black text colour"
+      },
+      "body": {
+        "value": "rgba(60, 60, 63, 0.7)",
+        "type": "color",
+        "source": "measured color of hero-sub / nav-link / release-row text (--token-ad12f880)",
+        "description": "ink at 70%, the working muted text"
+      },
+      "faint": {
+        "value": "rgba(60, 60, 63, 0.4)",
+        "type": "color",
+        "source": "--token-4b8539df, placeholder and helper text",
+        "description": "ink at 40%, the faintest text"
+      },
+      "grey-link": {
+        "value": "#777777",
+        "type": "color",
+        "source": "measured color of footer-link",
+        "description": "#777, footer links"
+      },
+      "grey-link-hover": {
+        "value": "#555555",
+        "type": "color",
+        "source": "measured color of footer-link at hover and pressed",
+        "description": "#555, the footer link's darker hover"
+      },
+      "grey-label": {
+        "value": "#888888",
+        "type": "color",
+        "source": "measured color of demo-form field labels",
+        "description": "#888, form labels"
+      },
+      "grey-arrow": {
+        "value": "#999999",
+        "type": "color",
+        "source": "measured ::before fill of the select arrow in demo-form",
+        "description": "#999, the select's drawn arrow"
+      },
+      "accent": {
+        "value": "#009cff",
+        "type": "color",
+        "source": "measured painted background of cta-demo / teamtailor-cta / the page CTAs",
+        "description": "#009cff, converted from color(display-p3 0 0.599909 1): the bright blue of every primary button"
+      },
+      "accent-ink": {
+        "value": "#008ae8",
+        "type": "color",
+        "source": "measured color of nav-cta / cta-try / plan-cta text (--token-9ffed88b)",
+        "description": "#008ae8, converted from color(display-p3 0.0014 0.5301 0.8827): blue text on the light-blue tint"
+      },
+      "tint-blue": {
+        "value": "#e0f2fe",
+        "type": "color",
+        "source": "measured backgroundColor of nav-cta / cta-try / plan-cta and the copilot chip (--token-fe30a6fc)",
+        "description": "#e0f2fe (also painted as display-p3 0.89 0.946 0.99): the light-blue button tint"
+      },
+      "card-blue": {
+        "value": "#afe4ff",
+        "type": "color",
+        "source": "measured painted background of feature-card",
+        "description": "#afe4ff, converted from color(display-p3 0.73 0.89 0.99): the Everyday-HR feature card"
+      },
+      "card-teal": {
+        "value": "#8df1ed",
+        "type": "color",
+        "source": "measured backgroundColor of everyday-hr-card",
+        "description": "#8df1ed, the mint product card"
+      },
+      "card-pink": {
+        "value": "#fbcfe8",
+        "type": "color",
+        "source": "measured backgroundColor of team-culture-card and the home pink band",
+        "description": "#fbcfe8, converted from color(display-p3 0.956 0.817 0.904): the pink band and card"
+      },
+      "card-lavender": {
+        "value": "#ddd3ff",
+        "type": "color",
+        "source": "measured painted inner fill of learn-more",
+        "description": "#ddd3ff, converted from color(display-p3 0.86 0.83 0.99): the Learn-more pill's inner fill"
+      },
+      "white-60": {
+        "value": "rgba(255, 255, 255, 0.6)",
+        "type": "color",
+        "source": "measured backgroundColor of learn-more over its lavender fill",
+        "description": "white at 60%, the Learn-more pill's frosted layer"
+      },
+      "field-fill": {
+        "value": "rgba(23, 23, 23, 0.05)",
+        "type": "color",
+        "source": "measured painted background of every demo-form input and select",
+        "description": "ink at 5%, the demo form's field fill"
+      },
+      "ring": {
+        "value": "rgba(23, 23, 23, 0.1)",
+        "type": "color",
+        "source": "measured boxShadow of demo-submit (2px ring) and --token-b2159720 hairline",
+        "description": "ink at 10%, the button ring and hairlines"
+      },
+      "nav-hover": {
+        "value": "rgba(112, 112, 121, 0.08)",
+        "type": "color",
+        "source": "measured backgroundColor of nav-link at hover",
+        "description": "grey at 8%, the nav link's hover wash"
+      },
+      "focus-blue": {
+        "value": "#005fcc",
+        "type": "color",
+        "source": "measured outlineColor of focus-visible states (the browser's own ring; the site sets none)",
+        "description": "#005fcc, the headless Chromium default focus ring"
+      },
+      "active-red": {
+        "value": "#ff0000",
+        "type": "color",
+        "source": "measured color of links under forced :active (a Framer :active rule)",
+        "description": "#ff0000, the pressed link colour Framer's stylesheet declares"
+      }
     },
-    "inter": {
-     "value": "Inter, \"Inter Placeholder\", sans-serif",
-     "type": "fontFamily",
-     "source": "measured fontFamily of demo-form labels and demo-field",
-     "description": "Inter, the book-a-demo form's face (served by Framer)"
+    "font": {
+      "family": {
+        "system": {
+          "value": "\"system-ui\", -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif, \"System Default\", sans-serif",
+          "type": "fontFamily",
+          "source": "measured fontFamily of every headline, button, link and body text",
+          "description": "the OS-ui stack (San Francisco on Apple): every marketing face"
+        },
+        "inter": {
+          "value": "Inter, \"Inter Placeholder\", sans-serif",
+          "type": "fontFamily",
+          "source": "measured fontFamily of demo-form labels and demo-field",
+          "description": "Inter, the book-a-demo form's face (served by Framer)"
+        }
+      },
+      "size": {
+        "xs": {
+          "value": "12px",
+          "type": "dimension",
+          "source": "measured fontSize of copilot-demo label and demo-form labels",
+          "description": "12px, chips and form labels"
+        },
+        "sm": {
+          "value": "15px",
+          "type": "dimension",
+          "source": "measured fontSize of nav-link / demo-submit",
+          "description": "15px, nav labels and the form submit"
+        },
+        "body": {
+          "value": "16px",
+          "type": "dimension",
+          "source": "measured fontSize of footer-link / release-row / demo-field",
+          "description": "16px, body copy, links and fields"
+        },
+        "button": {
+          "value": "18px",
+          "type": "dimension",
+          "source": "measured fontSize of every CTA's label (cta-demo / nav-cta / plan-cta)",
+          "description": "18px, button labels"
+        },
+        "lead": {
+          "value": "20px",
+          "type": "dimension",
+          "source": "measured fontSize of hero-sub / feature-item / footer-heading",
+          "description": "20px, the lead paragraph and item titles"
+        },
+        "card-title": {
+          "value": "44px",
+          "type": "dimension",
+          "source": "measured fontSize of feature-card / product-card titles",
+          "description": "44px, card headlines"
+        },
+        "display": {
+          "value": "64px",
+          "type": "dimension",
+          "source": "measured fontSize of hero-title / page h1s / price-amount",
+          "description": "64px, display headlines and the price figure"
+        },
+        "m-display": {
+          "value": "48px",
+          "type": "dimension",
+          "source": "measured fontSize of m-hero-title at 390 wide",
+          "description": "48px, the same display step at phone width"
+        }
+      },
+      "leading": {
+        "display": {
+          "value": "70.4px",
+          "type": "dimension",
+          "source": "measured lineHeight of hero-title / price-amount (1.1)",
+          "description": "1.1x on the 64px display step"
+        },
+        "m-display": {
+          "value": "52.8px",
+          "type": "dimension",
+          "source": "measured lineHeight of m-hero-title (1.1)",
+          "description": "1.1x on the 48px mobile display"
+        },
+        "card-title": {
+          "value": "48.4px",
+          "type": "dimension",
+          "source": "measured lineHeight of the 44px card titles (1.1)",
+          "description": "1.1x on card titles"
+        },
+        "lead": {
+          "value": "32px",
+          "type": "dimension",
+          "source": "measured lineHeight of hero-sub (1.6)",
+          "description": "1.6x on the lead paragraph"
+        },
+        "item": {
+          "value": "30px",
+          "type": "dimension",
+          "source": "measured lineHeight of feature-item / footer-heading / nav-link (1.5-2x)",
+          "description": "30px on 15-20px text (1.5-2x)"
+        },
+        "button": {
+          "value": "28px",
+          "type": "dimension",
+          "source": "measured lineHeight of CTA labels (1.56)",
+          "description": "1.56x on 18px button text"
+        },
+        "body": {
+          "value": "24px",
+          "type": "dimension",
+          "source": "measured lineHeight of footer-link / release-row (1.5)",
+          "description": "1.5x on 16px body"
+        },
+        "label": {
+          "value": "14.4px",
+          "type": "dimension",
+          "source": "measured lineHeight of demo-form labels (1.2)",
+          "description": "1.2x on 12px labels"
+        },
+        "caption": {
+          "value": "16.8px",
+          "type": "dimension",
+          "source": "measured lineHeight of copilot-demo text (1.4)",
+          "description": "1.4x on 12px chip text"
+        }
+      },
+      "weight": {
+        "regular": {
+          "value": 400,
+          "type": "fontWeight",
+          "source": "measured fontWeight of copilot-demo and running text",
+          "description": "400, captions and small body text"
+        },
+        "medium": {
+          "value": 500,
+          "type": "fontWeight",
+          "source": "measured fontWeight of nav-link / hero-sub / footer-link / form labels",
+          "description": "500, the working text weight"
+        },
+        "semibold": {
+          "value": 600,
+          "type": "fontWeight",
+          "source": "measured fontWeight of every headline and button label",
+          "description": "600, headlines, buttons, item titles"
+        }
+      },
+      "tracking": {
+        "display": {
+          "value": "-0.6px",
+          "type": "dimension",
+          "source": "measured letterSpacing of hero-title / price-amount (about -0.9%)",
+          "description": "-0.6px on the 64px display"
+        },
+        "m-display": {
+          "value": "-0.1px",
+          "type": "dimension",
+          "source": "measured letterSpacing of m-hero-title at 390",
+          "description": "-0.1px on the 48px mobile display"
+        },
+        "card-title": {
+          "value": "-0.28px",
+          "type": "dimension",
+          "source": "measured letterSpacing of the 44px card titles",
+          "description": "-0.28px on card titles"
+        },
+        "button": {
+          "value": "-0.18px",
+          "type": "dimension",
+          "source": "measured letterSpacing of CTA labels",
+          "description": "-0.18px on 18px buttons"
+        },
+        "nav": {
+          "value": "-0.15px",
+          "type": "dimension",
+          "source": "measured letterSpacing of nav-link / demo-submit",
+          "description": "-0.15px on 15px labels"
+        }
+      }
+    },
+    "radius": {
+      "none": {
+        "value": "0px",
+        "type": "dimension",
+        "source": "measured borderRadius of text blocks and page sections",
+        "description": "square corners, the default"
+      },
+      "control": {
+        "value": "12px",
+        "type": "dimension",
+        "source": "measured borderRadius of nav-link and demo-submit",
+        "description": "12px, form controls and the nav link's hover pill"
+      },
+      "field": {
+        "value": "10px",
+        "type": "dimension",
+        "source": "measured borderRadius of the demo form text-input wrappers (div.framer-form-text-input)",
+        "description": "10px, the demo form text fields and selects"
+      },
+      "card": {
+        "value": "24px",
+        "type": "dimension",
+        "source": "measured borderRadius of feature-card / everyday-hr-card / team-culture-card / price-card",
+        "description": "24px, product and plan cards"
+      },
+      "sheet": {
+        "value": "32px",
+        "type": "dimension",
+        "source": "measured borderRadius of teamtailor-card",
+        "description": "32px, the largest panel radius"
+      },
+      "pill": {
+        "value": "99px",
+        "type": "dimension",
+        "source": "measured borderRadius of nav-cta / cta-demo / cta-try / plan-cta / learn-more",
+        "description": "99px, effectively fully round: every CTA pill"
+      }
+    },
+    "duration": {
+      "fast": {
+        "value": "150ms",
+        "type": "duration",
+        "source": "measured transitionDuration of the form clear control (0.15s); all other transitions are JS-driven (0s in CSS)",
+        "description": "150ms, the only CSS transition measured; Framer animates in JS"
+      }
+    },
+    "spacing": {
+      "10": {
+        "value": "10px",
+        "type": "dimension",
+        "source": "measured gap inside every CTA pill",
+        "description": "10px, icon-to-label gap in buttons"
+      },
+      "16": {
+        "value": "16px",
+        "type": "dimension",
+        "source": "measured page gutter at 390 (390 - 358 content)",
+        "description": "16px, the phone page gutter"
+      },
+      "20": {
+        "value": "20px",
+        "type": "dimension",
+        "source": "measured gap of nav-bar and the card grids (330px columns)",
+        "description": "20px, nav and card-grid gaps"
+      },
+      "24": {
+        "value": "24px",
+        "type": "dimension",
+        "source": "measured paddingLeft of every CTA pill",
+        "description": "24px, horizontal button padding"
+      },
+      "48": {
+        "value": "48px",
+        "type": "dimension",
+        "source": "measured padding of price-card and product cards",
+        "description": "48px, card padding"
+      },
+      "56": {
+        "value": "56px",
+        "type": "dimension",
+        "source": "measured gap of price-card",
+        "description": "56px, the plan card's inner stack"
+      },
+      "64": {
+        "value": "64px",
+        "type": "dimension",
+        "source": "measured height of the fixed header at 390",
+        "description": "64px, the mobile header"
+      },
+      "90": {
+        "value": "90px",
+        "type": "dimension",
+        "source": "measured height of the fixed header at 1440",
+        "description": "90px, the desktop header"
+      }
+    },
+    "shadow": {
+      "ring": {
+        "value": [
+          {
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "2px",
+            "color": "{palette.ring}"
+          }
+        ],
+        "type": "shadow",
+        "source": "measured boxShadow of demo-submit",
+        "description": "a 2px ink-at-10% ring the form submit draws"
+      }
+    },
+    "layout": {
+      "header-height": {
+        "value": "90px",
+        "type": "dimension",
+        "source": "measured height of the fixed nav band (layout.json home@1440)",
+        "description": "90px, the fixed desktop header (64px at 390)"
+      },
+      "header-mobile": {
+        "value": "64px",
+        "type": "dimension",
+        "source": "measured height of the fixed nav band (layout.json home@390)",
+        "description": "64px, the fixed mobile header"
+      },
+      "content": {
+        "value": "1024px",
+        "type": "dimension",
+        "source": "measured maxWidth of the content column (layout.json, several pages)",
+        "description": "1024px, the centred content column"
+      },
+      "content-wide": {
+        "value": "1200px",
+        "type": "dimension",
+        "source": "measured maxWidth of the teamtailor band (layout.json teamtailor@1440)",
+        "description": "1200px, the widest band"
+      },
+      "text-col": {
+        "value": "768px",
+        "type": "dimension",
+        "source": "measured maxWidth of the hero copy block (layout.json home@1440)",
+        "description": "768px, hero and lead text"
+      },
+      "cards-col": {
+        "value": "680px",
+        "type": "dimension",
+        "source": "measured maxWidth of the two-up card grids (layout.json)",
+        "description": "680px, the paired-card column"
+      },
+      "grid-col": {
+        "value": "330px",
+        "type": "dimension",
+        "source": "measured grid columns of the 2-up card grids (330px 330px, 20px gap)",
+        "description": "330px, a grid card column"
+      },
+      "grid-gap": {
+        "value": "20px",
+        "type": "dimension",
+        "source": "measured colGap of the card grids",
+        "description": "20px, the card grid gap"
+      },
+      "gutter-mobile": {
+        "value": "16px",
+        "type": "dimension",
+        "source": "measured (390 - 358) / 2 at phone width",
+        "description": "16px, the phone page gutter"
+      },
+      "button-height": {
+        "value": "48px",
+        "type": "dimension",
+        "source": "measured height of nav-cta / cta-demo / cta-try / plan-cta / teamtailor-cta",
+        "description": "48px, every CTA pill"
+      },
+      "button-pad-x": {
+        "value": "24px",
+        "type": "dimension",
+        "source": "measured paddingLeft of the CTA pills",
+        "description": "24px, horizontal button padding"
+      },
+      "button-pad-y": {
+        "value": "10px",
+        "type": "dimension",
+        "source": "measured paddingTop of the CTA pills",
+        "description": "10px, vertical button padding"
+      },
+      "field-height": {
+        "value": "40px",
+        "type": "dimension",
+        "source": "measured height of demo-form inputs and demo-submit",
+        "description": "40px, form controls"
+      },
+      "card-pad": {
+        "value": "48px",
+        "type": "dimension",
+        "source": "measured padding of price-card",
+        "description": "48px, plan card padding"
+      }
+    },
+    "typography": {
+      "display": {
+        "value": {
+          "fontFamily": "{font.family.system}",
+          "fontSize": "{font.size.display}",
+          "fontWeight": "{font.weight.semibold}",
+          "lineHeight": "{font.leading.display}",
+          "letterSpacing": "{font.tracking.display}"
+        },
+        "type": "typography",
+        "source": "composite of hero-title / release-title / teamtailor-title / price-amount",
+        "description": "system-ui 64/70.4 w600 -0.6px: every display headline"
+      },
+      "display-mobile": {
+        "value": {
+          "fontFamily": "{font.family.system}",
+          "fontSize": "{font.size.m-display}",
+          "fontWeight": "{font.weight.semibold}",
+          "lineHeight": "{font.leading.m-display}",
+          "letterSpacing": "{font.tracking.m-display}"
+        },
+        "type": "typography",
+        "source": "composite of m-hero-title at 390",
+        "description": "system-ui 48/52.8 w600 -0.1px: the display step at phone width"
+      },
+      "card-title": {
+        "value": {
+          "fontFamily": "{font.family.system}",
+          "fontSize": "{font.size.card-title}",
+          "fontWeight": "{font.weight.semibold}",
+          "lineHeight": "{font.leading.card-title}",
+          "letterSpacing": "{font.tracking.card-title}"
+        },
+        "type": "typography",
+        "source": "composite of feature-card / product card titles",
+        "description": "system-ui 44/48.4 w600 -0.28px: product card headlines"
+      },
+      "lead": {
+        "value": {
+          "fontFamily": "{font.family.system}",
+          "fontSize": "{font.size.lead}",
+          "fontWeight": "{font.weight.medium}",
+          "lineHeight": "{font.leading.lead}",
+          "letterSpacing": "0px"
+        },
+        "type": "typography",
+        "source": "composite of hero-sub",
+        "description": "system-ui 20/32 w500: the lead paragraph"
+      },
+      "item-title": {
+        "value": {
+          "fontFamily": "{font.family.system}",
+          "fontSize": "{font.size.lead}",
+          "fontWeight": "{font.weight.semibold}",
+          "lineHeight": "{font.leading.item}",
+          "letterSpacing": "0px"
+        },
+        "type": "typography",
+        "source": "composite of feature-item / footer-heading",
+        "description": "system-ui 20/30 w600: item titles inside cards"
+      },
+      "button": {
+        "value": {
+          "fontFamily": "{font.family.system}",
+          "fontSize": "{font.size.button}",
+          "fontWeight": "{font.weight.semibold}",
+          "lineHeight": "{font.leading.button}",
+          "letterSpacing": "{font.tracking.button}"
+        },
+        "type": "typography",
+        "source": "composite of cta-demo / nav-cta / plan-cta labels",
+        "description": "system-ui 18/28 w600 -0.18px: every CTA label"
+      },
+      "body": {
+        "value": {
+          "fontFamily": "{font.family.system}",
+          "fontSize": "{font.size.body}",
+          "fontWeight": "{font.weight.medium}",
+          "lineHeight": "{font.leading.body}",
+          "letterSpacing": "0px"
+        },
+        "type": "typography",
+        "source": "composite of footer-link / release-row",
+        "description": "system-ui 16/24 w500: body copy and links"
+      },
+      "nav": {
+        "value": {
+          "fontFamily": "{font.family.system}",
+          "fontSize": "{font.size.sm}",
+          "fontWeight": "{font.weight.medium}",
+          "lineHeight": "{font.leading.item}",
+          "letterSpacing": "{font.tracking.nav}"
+        },
+        "type": "typography",
+        "source": "composite of nav-link",
+        "description": "system-ui 15/30 w500 -0.15px: nav labels"
+      },
+      "form-label": {
+        "value": {
+          "fontFamily": "{font.family.inter}",
+          "fontSize": "{font.size.xs}",
+          "fontWeight": "{font.weight.medium}",
+          "lineHeight": "{font.leading.label}",
+          "letterSpacing": "0px"
+        },
+        "type": "typography",
+        "source": "composite of demo-form labels",
+        "description": "Inter 12/14.4 w500: form labels"
+      }
     }
-   },
-   "size": {
-    "xs": {
-     "value": "12px",
-     "type": "dimension",
-     "source": "measured fontSize of copilot-demo label and demo-form labels",
-     "description": "12px, chips and form labels"
+  },
+  "light": {
+    "page": {
+      "value": "{palette.ground}",
+      "type": "color",
+      "source": "the page ground on every route",
+      "description": "the flat #fafafa page"
     },
-    "sm": {
-     "value": "15px",
-     "type": "dimension",
-     "source": "measured fontSize of nav-link / demo-submit",
-     "description": "15px, nav labels and the form submit"
+    "surface": {
+      "value": "{palette.white}",
+      "type": "color",
+      "source": "measured backgroundColor of price-card / teamtailor-card panel",
+      "description": "white cards"
     },
-    "body": {
-     "value": "16px",
-     "type": "dimension",
-     "source": "measured fontSize of footer-link / release-row / demo-field",
-     "description": "16px, body copy, links and fields"
+    "surface-panel": {
+      "value": "{palette.panel}",
+      "type": "color",
+      "source": "sampled section panels inside the pastel bands",
+      "description": "the #fcfbfa panels inside coloured sections"
     },
-    "button": {
-     "value": "18px",
-     "type": "dimension",
-     "source": "measured fontSize of every CTA's label (cta-demo / nav-cta / plan-cta)",
-     "description": "18px, button labels"
+    "text": {
+      "value": "{palette.ink}",
+      "type": "color",
+      "source": "measured color of headlines and strong text",
+      "description": "#262626 text"
     },
-    "lead": {
-     "value": "20px",
-     "type": "dimension",
-     "source": "measured fontSize of hero-sub / feature-item / footer-heading",
-     "description": "20px, the lead paragraph and item titles"
+    "muted": {
+      "value": "{palette.body}",
+      "type": "color",
+      "source": "measured color of hero-sub / nav-link / release-row",
+      "description": "ink at 70%, the muted working text"
     },
-    "card-title": {
-     "value": "44px",
-     "type": "dimension",
-     "source": "measured fontSize of feature-card / product-card titles",
-     "description": "44px, card headlines"
+    "faint": {
+      "value": "{palette.faint}",
+      "type": "color",
+      "source": "--token-4b8539df, helper and placeholder text",
+      "description": "ink at 40%, the faintest text"
     },
-    "display": {
-     "value": "64px",
-     "type": "dimension",
-     "source": "measured fontSize of hero-title / page h1s / price-amount",
-     "description": "64px, display headlines and the price figure"
+    "accent": {
+      "value": "{palette.accent}",
+      "type": "color",
+      "source": "the primary CTA fill",
+      "description": "the bright blue accent"
     },
-    "m-display": {
-     "value": "48px",
-     "type": "dimension",
-     "source": "measured fontSize of m-hero-title at 390 wide",
-     "description": "48px, the same display step at phone width"
+    "accent-ink": {
+      "value": "{palette.accent-ink}",
+      "type": "color",
+      "source": "the blue text on tint pills",
+      "description": "deep blue on light-blue tints"
+    },
+    "accent-tint": {
+      "value": "{palette.tint-blue}",
+      "type": "color",
+      "source": "the secondary CTA and copilot chip fill",
+      "description": "the light-blue tint"
+    },
+    "focus": {
+      "value": "{palette.focus-blue}",
+      "type": "color",
+      "source": "measured outlineColor of keyboard-focused controls (the browser's default ring)",
+      "description": "#005fcc, the UA focus ring"
+    },
+    "active": {
+      "value": "{palette.active-red}",
+      "type": "color",
+      "source": "measured color under forced :active",
+      "description": "the Framer :active link red"
+    },
+    "border": {
+      "value": "{palette.ring}",
+      "type": "color",
+      "source": "--token-b2159720 and the submit's ring",
+      "description": "ink at 10%, hairlines and the button ring"
+    },
+    "component": {
+      "button-primary-bg": {
+        "value": "{palette.accent}",
+        "type": "color",
+        "source": "measured painted background of cta-demo / everyday-hr-cta / growth-feedback-cta / team-culture-cta / teamtailor-cta",
+        "description": "the blue pill every primary CTA paints"
+      },
+      "button-primary-fg": {
+        "value": "{palette.white}",
+        "type": "color",
+        "source": "measured text colour of the primary CTAs",
+        "description": "white labels on the blue pill"
+      },
+      "button-secondary-bg": {
+        "value": "{palette.tint-blue}",
+        "type": "color",
+        "source": "measured backgroundColor of nav-cta / cta-try / plan-cta",
+        "description": "the light-blue tint pill of secondary CTAs"
+      },
+      "button-secondary-fg": {
+        "value": "{palette.accent-ink}",
+        "type": "color",
+        "source": "measured text colour of the secondary CTAs",
+        "description": "deep-blue labels on the tint pill"
+      },
+      "button-ghost-bg": {
+        "value": "{palette.white-60}",
+        "type": "color",
+        "source": "measured backgroundColor of learn-more",
+        "description": "white at 60% over a lavender inner fill"
+      },
+      "button-ghost-fill": {
+        "value": "{palette.card-lavender}",
+        "type": "color",
+        "source": "measured painted inner fill of learn-more",
+        "description": "the lavender layer under the frosted Learn-more pill"
+      },
+      "button-ghost-fg": {
+        "value": "{palette.ink}",
+        "type": "color",
+        "source": "measured text colour of learn-more",
+        "description": "ink text on the ghost pill"
+      },
+      "nav-link-hover-bg": {
+        "value": "{palette.nav-hover}",
+        "type": "color",
+        "source": "measured backgroundColor of nav-link at hover",
+        "description": "the grey wash behind a hovered nav link"
+      },
+      "card-blue-bg": {
+        "value": "{palette.card-blue}",
+        "type": "color",
+        "source": "measured painted background of feature-card",
+        "description": "the Everyday-HR card's blue"
+      },
+      "card-teal-bg": {
+        "value": "{palette.card-teal}",
+        "type": "color",
+        "source": "measured backgroundColor of everyday-hr-card",
+        "description": "the mint product card"
+      },
+      "card-pink-bg": {
+        "value": "{palette.card-pink}",
+        "type": "color",
+        "source": "measured backgroundColor of team-culture-card and the home pink band",
+        "description": "the pink card and section band"
+      },
+      "field-bg": {
+        "value": "{palette.field-fill}",
+        "type": "color",
+        "source": "measured painted background of demo-form inputs and selects",
+        "description": "ink at 5%, the demo form's field fill"
+      },
+      "field-label-fg": {
+        "value": "{palette.grey-label}",
+        "type": "color",
+        "source": "measured color of demo-form labels",
+        "description": "#888, form labels"
+      },
+      "submit-ring": {
+        "value": "{palette.ring}",
+        "type": "color",
+        "source": "measured boxShadow of demo-submit (0 0 0 2px)",
+        "description": "the 2px ink-at-10% ring the submit draws"
+      }
     }
-   },
-   "leading": {
-    "display": {
-     "value": "70.4px",
-     "type": "dimension",
-     "source": "measured lineHeight of hero-title / price-amount (1.1)",
-     "description": "1.1x on the 64px display step"
-    },
-    "m-display": {
-     "value": "52.8px",
-     "type": "dimension",
-     "source": "measured lineHeight of m-hero-title (1.1)",
-     "description": "1.1x on the 48px mobile display"
-    },
-    "card-title": {
-     "value": "48.4px",
-     "type": "dimension",
-     "source": "measured lineHeight of the 44px card titles (1.1)",
-     "description": "1.1x on card titles"
-    },
-    "lead": {
-     "value": "32px",
-     "type": "dimension",
-     "source": "measured lineHeight of hero-sub (1.6)",
-     "description": "1.6x on the lead paragraph"
-    },
-    "item": {
-     "value": "30px",
-     "type": "dimension",
-     "source": "measured lineHeight of feature-item / footer-heading / nav-link (1.5-2x)",
-     "description": "30px on 15-20px text (1.5-2x)"
-    },
-    "button": {
-     "value": "28px",
-     "type": "dimension",
-     "source": "measured lineHeight of CTA labels (1.56)",
-     "description": "1.56x on 18px button text"
-    },
-    "body": {
-     "value": "24px",
-     "type": "dimension",
-     "source": "measured lineHeight of footer-link / release-row (1.5)",
-     "description": "1.5x on 16px body"
-    },
-    "label": {
-     "value": "14.4px",
-     "type": "dimension",
-     "source": "measured lineHeight of demo-form labels (1.2)",
-     "description": "1.2x on 12px labels"
-    },
-    "caption": {
-     "value": "16.8px",
-     "type": "dimension",
-     "source": "measured lineHeight of copilot-demo text (1.4)",
-     "description": "1.4x on 12px chip text"
-    }
-   },
-   "weight": {
-    "regular": {
-     "value": 400,
-     "type": "fontWeight",
-     "source": "measured fontWeight of copilot-demo and running text",
-     "description": "400, captions and small body text"
-    },
-    "medium": {
-     "value": 500,
-     "type": "fontWeight",
-     "source": "measured fontWeight of nav-link / hero-sub / footer-link / form labels",
-     "description": "500, the working text weight"
-    },
-    "semibold": {
-     "value": 600,
-     "type": "fontWeight",
-     "source": "measured fontWeight of every headline and button label",
-     "description": "600, headlines, buttons, item titles"
-    }
-   },
-   "tracking": {
-    "display": {
-     "value": "-0.6px",
-     "type": "dimension",
-     "source": "measured letterSpacing of hero-title / price-amount (about -0.9%)",
-     "description": "-0.6px on the 64px display"
-    },
-    "m-display": {
-     "value": "-0.1px",
-     "type": "dimension",
-     "source": "measured letterSpacing of m-hero-title at 390",
-     "description": "-0.1px on the 48px mobile display"
-    },
-    "card-title": {
-     "value": "-0.28px",
-     "type": "dimension",
-     "source": "measured letterSpacing of the 44px card titles",
-     "description": "-0.28px on card titles"
-    },
-    "button": {
-     "value": "-0.18px",
-     "type": "dimension",
-     "source": "measured letterSpacing of CTA labels",
-     "description": "-0.18px on 18px buttons"
-    },
-    "nav": {
-     "value": "-0.15px",
-     "type": "dimension",
-     "source": "measured letterSpacing of nav-link / demo-submit",
-     "description": "-0.15px on 15px labels"
-    }
-   }
-  },
-  "radius": {
-   "none": {
-    "value": "0px",
-    "type": "dimension",
-    "source": "measured borderRadius of text blocks and page sections",
-    "description": "square corners, the default"
-   },
-   "control": {
-    "value": "12px",
-    "type": "dimension",
-    "source": "measured borderRadius of nav-link and demo-submit",
-    "description": "12px, form controls and the nav link's hover pill"
-   },
-   "card": {
-    "value": "24px",
-    "type": "dimension",
-    "source": "measured borderRadius of feature-card / everyday-hr-card / team-culture-card / price-card",
-    "description": "24px, product and plan cards"
-   },
-   "sheet": {
-    "value": "32px",
-    "type": "dimension",
-    "source": "measured borderRadius of teamtailor-card",
-    "description": "32px, the largest panel radius"
-   },
-   "pill": {
-    "value": "99px",
-    "type": "dimension",
-    "source": "measured borderRadius of nav-cta / cta-demo / cta-try / plan-cta / learn-more",
-    "description": "99px, effectively fully round: every CTA pill"
-   }
-  },
-  "duration": {
-   "fast": {
-    "value": "150ms",
-    "type": "duration",
-    "source": "measured transitionDuration of the form clear control (0.15s); all other transitions are JS-driven (0s in CSS)",
-    "description": "150ms, the only CSS transition measured; Framer animates in JS"
-   }
-  },
-  "spacing": {
-   "10": {
-    "value": "10px",
-    "type": "dimension",
-    "source": "measured gap inside every CTA pill",
-    "description": "10px, icon-to-label gap in buttons"
-   },
-   "16": {
-    "value": "16px",
-    "type": "dimension",
-    "source": "measured page gutter at 390 (390 - 358 content)",
-    "description": "16px, the phone page gutter"
-   },
-   "20": {
-    "value": "20px",
-    "type": "dimension",
-    "source": "measured gap of nav-bar and the card grids (330px columns)",
-    "description": "20px, nav and card-grid gaps"
-   },
-   "24": {
-    "value": "24px",
-    "type": "dimension",
-    "source": "measured paddingLeft of every CTA pill",
-    "description": "24px, horizontal button padding"
-   },
-   "48": {
-    "value": "48px",
-    "type": "dimension",
-    "source": "measured padding of price-card and product cards",
-    "description": "48px, card padding"
-   },
-   "56": {
-    "value": "56px",
-    "type": "dimension",
-    "source": "measured gap of price-card",
-    "description": "56px, the plan card's inner stack"
-   },
-   "64": {
-    "value": "64px",
-    "type": "dimension",
-    "source": "measured height of the fixed header at 390",
-    "description": "64px, the mobile header"
-   },
-   "90": {
-    "value": "90px",
-    "type": "dimension",
-    "source": "measured height of the fixed header at 1440",
-    "description": "90px, the desktop header"
-   }
-  },
-  "shadow": {
-   "ring": {
-    "value": [
-     {
-      "offsetX": "0px",
-      "offsetY": "0px",
-      "blur": "0px",
-      "spread": "2px",
-      "color": "{palette.ring}"
-     }
-    ],
-    "type": "shadow",
-    "source": "measured boxShadow of demo-submit",
-    "description": "a 2px ink-at-10% ring the form submit draws"
-   }
-  },
-  "layout": {
-   "header-height": {
-    "value": "90px",
-    "type": "dimension",
-    "source": "measured height of the fixed nav band (layout.json home@1440)",
-    "description": "90px, the fixed desktop header (64px at 390)"
-   },
-   "header-mobile": {
-    "value": "64px",
-    "type": "dimension",
-    "source": "measured height of the fixed nav band (layout.json home@390)",
-    "description": "64px, the fixed mobile header"
-   },
-   "content": {
-    "value": "1024px",
-    "type": "dimension",
-    "source": "measured maxWidth of the content column (layout.json, several pages)",
-    "description": "1024px, the centred content column"
-   },
-   "content-wide": {
-    "value": "1200px",
-    "type": "dimension",
-    "source": "measured maxWidth of the teamtailor band (layout.json teamtailor@1440)",
-    "description": "1200px, the widest band"
-   },
-   "text-col": {
-    "value": "768px",
-    "type": "dimension",
-    "source": "measured maxWidth of the hero copy block (layout.json home@1440)",
-    "description": "768px, hero and lead text"
-   },
-   "cards-col": {
-    "value": "680px",
-    "type": "dimension",
-    "source": "measured maxWidth of the two-up card grids (layout.json)",
-    "description": "680px, the paired-card column"
-   },
-   "grid-col": {
-    "value": "330px",
-    "type": "dimension",
-    "source": "measured grid columns of the 2-up card grids (330px 330px, 20px gap)",
-    "description": "330px, a grid card column"
-   },
-   "grid-gap": {
-    "value": "20px",
-    "type": "dimension",
-    "source": "measured colGap of the card grids",
-    "description": "20px, the card grid gap"
-   },
-   "gutter-mobile": {
-    "value": "16px",
-    "type": "dimension",
-    "source": "measured (390 - 358) / 2 at phone width",
-    "description": "16px, the phone page gutter"
-   },
-   "button-height": {
-    "value": "48px",
-    "type": "dimension",
-    "source": "measured height of nav-cta / cta-demo / cta-try / plan-cta / teamtailor-cta",
-    "description": "48px, every CTA pill"
-   },
-   "button-pad-x": {
-    "value": "24px",
-    "type": "dimension",
-    "source": "measured paddingLeft of the CTA pills",
-    "description": "24px, horizontal button padding"
-   },
-   "button-pad-y": {
-    "value": "10px",
-    "type": "dimension",
-    "source": "measured paddingTop of the CTA pills",
-    "description": "10px, vertical button padding"
-   },
-   "field-height": {
-    "value": "40px",
-    "type": "dimension",
-    "source": "measured height of demo-form inputs and demo-submit",
-    "description": "40px, form controls"
-   },
-   "card-pad": {
-    "value": "48px",
-    "type": "dimension",
-    "source": "measured padding of price-card",
-    "description": "48px, plan card padding"
-   }
-  },
-  "typography": {
-   "display": {
-    "value": {
-     "fontFamily": "{font.family.system}",
-     "fontSize": "{font.size.display}",
-     "fontWeight": "{font.weight.semibold}",
-     "lineHeight": "{font.leading.display}",
-     "letterSpacing": "{font.tracking.display}"
-    },
-    "type": "typography",
-    "source": "composite of hero-title / release-title / teamtailor-title / price-amount",
-    "description": "system-ui 64/70.4 w600 -0.6px: every display headline"
-   },
-   "display-mobile": {
-    "value": {
-     "fontFamily": "{font.family.system}",
-     "fontSize": "{font.size.m-display}",
-     "fontWeight": "{font.weight.semibold}",
-     "lineHeight": "{font.leading.m-display}",
-     "letterSpacing": "{font.tracking.m-display}"
-    },
-    "type": "typography",
-    "source": "composite of m-hero-title at 390",
-    "description": "system-ui 48/52.8 w600 -0.1px: the display step at phone width"
-   },
-   "card-title": {
-    "value": {
-     "fontFamily": "{font.family.system}",
-     "fontSize": "{font.size.card-title}",
-     "fontWeight": "{font.weight.semibold}",
-     "lineHeight": "{font.leading.card-title}",
-     "letterSpacing": "{font.tracking.card-title}"
-    },
-    "type": "typography",
-    "source": "composite of feature-card / product card titles",
-    "description": "system-ui 44/48.4 w600 -0.28px: product card headlines"
-   },
-   "lead": {
-    "value": {
-     "fontFamily": "{font.family.system}",
-     "fontSize": "{font.size.lead}",
-     "fontWeight": "{font.weight.medium}",
-     "lineHeight": "{font.leading.lead}",
-     "letterSpacing": "0px"
-    },
-    "type": "typography",
-    "source": "composite of hero-sub",
-    "description": "system-ui 20/32 w500: the lead paragraph"
-   },
-   "item-title": {
-    "value": {
-     "fontFamily": "{font.family.system}",
-     "fontSize": "{font.size.lead}",
-     "fontWeight": "{font.weight.semibold}",
-     "lineHeight": "{font.leading.item}",
-     "letterSpacing": "0px"
-    },
-    "type": "typography",
-    "source": "composite of feature-item / footer-heading",
-    "description": "system-ui 20/30 w600: item titles inside cards"
-   },
-   "button": {
-    "value": {
-     "fontFamily": "{font.family.system}",
-     "fontSize": "{font.size.button}",
-     "fontWeight": "{font.weight.semibold}",
-     "lineHeight": "{font.leading.button}",
-     "letterSpacing": "{font.tracking.button}"
-    },
-    "type": "typography",
-    "source": "composite of cta-demo / nav-cta / plan-cta labels",
-    "description": "system-ui 18/28 w600 -0.18px: every CTA label"
-   },
-   "body": {
-    "value": {
-     "fontFamily": "{font.family.system}",
-     "fontSize": "{font.size.body}",
-     "fontWeight": "{font.weight.medium}",
-     "lineHeight": "{font.leading.body}",
-     "letterSpacing": "0px"
-    },
-    "type": "typography",
-    "source": "composite of footer-link / release-row",
-    "description": "system-ui 16/24 w500: body copy and links"
-   },
-   "nav": {
-    "value": {
-     "fontFamily": "{font.family.system}",
-     "fontSize": "{font.size.sm}",
-     "fontWeight": "{font.weight.medium}",
-     "lineHeight": "{font.leading.item}",
-     "letterSpacing": "{font.tracking.nav}"
-    },
-    "type": "typography",
-    "source": "composite of nav-link",
-    "description": "system-ui 15/30 w500 -0.15px: nav labels"
-   },
-   "form-label": {
-    "value": {
-     "fontFamily": "{font.family.inter}",
-     "fontSize": "{font.size.xs}",
-     "fontWeight": "{font.weight.medium}",
-     "lineHeight": "{font.leading.label}",
-     "letterSpacing": "0px"
-    },
-    "type": "typography",
-    "source": "composite of demo-form labels",
-    "description": "Inter 12/14.4 w500: form labels"
-   }
   }
- },
- "light": {
-  "page": {
-   "value": "{palette.ground}",
-   "type": "color",
-   "source": "the page ground on every route",
-   "description": "the flat #fafafa page"
-  },
-  "surface": {
-   "value": "{palette.white}",
-   "type": "color",
-   "source": "measured backgroundColor of price-card / teamtailor-card panel",
-   "description": "white cards"
-  },
-  "surface-panel": {
-   "value": "{palette.panel}",
-   "type": "color",
-   "source": "sampled section panels inside the pastel bands",
-   "description": "the #fcfbfa panels inside coloured sections"
-  },
-  "text": {
-   "value": "{palette.ink}",
-   "type": "color",
-   "source": "measured color of headlines and strong text",
-   "description": "#262626 text"
-  },
-  "muted": {
-   "value": "{palette.body}",
-   "type": "color",
-   "source": "measured color of hero-sub / nav-link / release-row",
-   "description": "ink at 70%, the muted working text"
-  },
-  "faint": {
-   "value": "{palette.faint}",
-   "type": "color",
-   "source": "--token-4b8539df, helper and placeholder text",
-   "description": "ink at 40%, the faintest text"
-  },
-  "accent": {
-   "value": "{palette.accent}",
-   "type": "color",
-   "source": "the primary CTA fill",
-   "description": "the bright blue accent"
-  },
-  "accent-ink": {
-   "value": "{palette.accent-ink}",
-   "type": "color",
-   "source": "the blue text on tint pills",
-   "description": "deep blue on light-blue tints"
-  },
-  "accent-tint": {
-   "value": "{palette.tint-blue}",
-   "type": "color",
-   "source": "the secondary CTA and copilot chip fill",
-   "description": "the light-blue tint"
-  },
-  "focus": {
-   "value": "{palette.focus-blue}",
-   "type": "color",
-   "source": "measured outlineColor of keyboard-focused controls (the browser's default ring)",
-   "description": "#005fcc, the UA focus ring"
-  },
-  "active": {
-   "value": "{palette.active-red}",
-   "type": "color",
-   "source": "measured color under forced :active",
-   "description": "the Framer :active link red"
-  },
-  "border": {
-   "value": "{palette.ring}",
-   "type": "color",
-   "source": "--token-b2159720 and the submit's ring",
-   "description": "ink at 10%, hairlines and the button ring"
-  },
-  "component": {
-   "button-primary-bg": {
-    "value": "{palette.accent}",
-    "type": "color",
-    "source": "measured painted background of cta-demo / everyday-hr-cta / growth-feedback-cta / team-culture-cta / teamtailor-cta",
-    "description": "the blue pill every primary CTA paints"
-   },
-   "button-primary-fg": {
-    "value": "{palette.white}",
-    "type": "color",
-    "source": "measured text colour of the primary CTAs",
-    "description": "white labels on the blue pill"
-   },
-   "button-secondary-bg": {
-    "value": "{palette.tint-blue}",
-    "type": "color",
-    "source": "measured backgroundColor of nav-cta / cta-try / plan-cta",
-    "description": "the light-blue tint pill of secondary CTAs"
-   },
-   "button-secondary-fg": {
-    "value": "{palette.accent-ink}",
-    "type": "color",
-    "source": "measured text colour of the secondary CTAs",
-    "description": "deep-blue labels on the tint pill"
-   },
-   "button-ghost-bg": {
-    "value": "{palette.white-60}",
-    "type": "color",
-    "source": "measured backgroundColor of learn-more",
-    "description": "white at 60% over a lavender inner fill"
-   },
-   "button-ghost-fill": {
-    "value": "{palette.card-lavender}",
-    "type": "color",
-    "source": "measured painted inner fill of learn-more",
-    "description": "the lavender layer under the frosted Learn-more pill"
-   },
-   "button-ghost-fg": {
-    "value": "{palette.ink}",
-    "type": "color",
-    "source": "measured text colour of learn-more",
-    "description": "ink text on the ghost pill"
-   },
-   "nav-link-hover-bg": {
-    "value": "{palette.nav-hover}",
-    "type": "color",
-    "source": "measured backgroundColor of nav-link at hover",
-    "description": "the grey wash behind a hovered nav link"
-   },
-   "card-blue-bg": {
-    "value": "{palette.card-blue}",
-    "type": "color",
-    "source": "measured painted background of feature-card",
-    "description": "the Everyday-HR card's blue"
-   },
-   "card-teal-bg": {
-    "value": "{palette.card-teal}",
-    "type": "color",
-    "source": "measured backgroundColor of everyday-hr-card",
-    "description": "the mint product card"
-   },
-   "card-pink-bg": {
-    "value": "{palette.card-pink}",
-    "type": "color",
-    "source": "measured backgroundColor of team-culture-card and the home pink band",
-    "description": "the pink card and section band"
-   },
-   "field-bg": {
-    "value": "{palette.field-fill}",
-    "type": "color",
-    "source": "measured painted background of demo-form inputs and selects",
-    "description": "ink at 5%, the demo form's field fill"
-   },
-   "field-label-fg": {
-    "value": "{palette.grey-label}",
-    "type": "color",
-    "source": "measured color of demo-form labels",
-    "description": "#888, form labels"
-   },
-   "submit-ring": {
-    "value": "{palette.ring}",
-    "type": "color",
-    "source": "measured boxShadow of demo-submit (0 0 0 2px)",
-    "description": "the 2px ink-at-10% ring the submit draws"
-   }
-  }
- }
 }
