@@ -1,0 +1,922 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. amie.so styles itself with Tailwind ramp vars stored as RGB triplets (converted to hex here), the --color-accent/-background/-amie-pink singles, the app's own layout metrics (--nav-width, --inbox-width, --grid-*, --sidebar-*), and a light theme only: .dark re-declares just --foreground and two wysiwyg shadow vars and is never applied on the captured routes. \"var\" leaves resolve through the live document; \"value\" leaves are measured.",
+ "core": {
+  "color": {
+   "accent": {
+    "var": "--color-accent",
+    "type": "color"
+   },
+   "amber": {
+    "100": {
+     "var": "--color-amber-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-amber-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-amber-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-amber-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-amber-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-amber-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-amber-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-amber-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-amber-900",
+     "type": "color"
+    }
+   },
+   "amie": {
+    "pink": {
+     "var": "--color-amie-pink",
+     "type": "color"
+    }
+   },
+   "background": {
+    "var": "--color-background",
+    "type": "color"
+   },
+   "black": {
+    "var": "--color-black",
+    "type": "color"
+   },
+   "blue": {
+    "100": {
+     "var": "--color-blue-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-blue-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-blue-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-blue-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-blue-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-blue-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-blue-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-blue-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-blue-900",
+     "type": "color"
+    }
+   },
+   "cyan": {
+    "100": {
+     "var": "--color-cyan-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-cyan-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-cyan-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-cyan-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-cyan-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-cyan-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-cyan-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-cyan-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-cyan-900",
+     "type": "color"
+    }
+   },
+   "fuchsia": {
+    "100": {
+     "var": "--color-fuchsia-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-fuchsia-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-fuchsia-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-fuchsia-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-fuchsia-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-fuchsia-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-fuchsia-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-fuchsia-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-fuchsia-900",
+     "type": "color"
+    }
+   },
+   "gray": {
+    "100": {
+     "var": "--color-gray-100",
+     "type": "color"
+    },
+    "150": {
+     "var": "--color-gray-150",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-gray-200",
+     "type": "color"
+    },
+    "250": {
+     "var": "--color-gray-250",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-gray-300",
+     "type": "color"
+    },
+    "350": {
+     "var": "--color-gray-350",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-gray-400",
+     "type": "color"
+    },
+    "450": {
+     "var": "--color-gray-450",
+     "type": "color"
+    },
+    "50": {
+     "var": "--color-gray-50",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-gray-500",
+     "type": "color"
+    },
+    "550": {
+     "var": "--color-gray-550",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-gray-600",
+     "type": "color"
+    },
+    "650": {
+     "var": "--color-gray-650",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-gray-700",
+     "type": "color"
+    },
+    "740": {
+     "var": "--color-gray-740",
+     "type": "color"
+    },
+    "75": {
+     "var": "--color-gray-75",
+     "type": "color"
+    },
+    "750": {
+     "var": "--color-gray-750",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-gray-800",
+     "type": "color"
+    },
+    "850": {
+     "var": "--color-gray-850",
+     "type": "color"
+    },
+    "870": {
+     "var": "--color-gray-870",
+     "type": "color"
+    },
+    "885": {
+     "var": "--color-gray-885",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-gray-900",
+     "type": "color"
+    },
+    "950": {
+     "var": "--color-gray-950",
+     "type": "color"
+    }
+   },
+   "green": {
+    "100": {
+     "var": "--color-green-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-green-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-green-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-green-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-green-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-green-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-green-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-green-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-green-900",
+     "type": "color"
+    }
+   },
+   "indigo": {
+    "100": {
+     "var": "--color-indigo-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-indigo-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-indigo-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-indigo-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-indigo-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-indigo-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-indigo-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-indigo-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-indigo-900",
+     "type": "color"
+    }
+   },
+   "lime": {
+    "100": {
+     "var": "--color-lime-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-lime-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-lime-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-lime-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-lime-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-lime-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-lime-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-lime-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-lime-900",
+     "type": "color"
+    }
+   },
+   "orange": {
+    "100": {
+     "var": "--color-orange-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-orange-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-orange-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-orange-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-orange-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-orange-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-orange-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-orange-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-orange-900",
+     "type": "color"
+    }
+   },
+   "pink": {
+    "100": {
+     "var": "--color-pink-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-pink-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-pink-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-pink-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-pink-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-pink-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-pink-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-pink-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-pink-900",
+     "type": "color"
+    }
+   },
+   "primary": {
+    "var": "--color-primary",
+    "type": "color"
+   },
+   "purple": {
+    "100": {
+     "var": "--color-purple-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-purple-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-purple-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-purple-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-purple-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-purple-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-purple-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-purple-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-purple-900",
+     "type": "color"
+    }
+   },
+   "recording": {
+    "stripe": {
+     "var": "--color-recording-stripe",
+     "type": "color"
+    }
+   },
+   "red": {
+    "100": {
+     "var": "--color-red-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-red-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-red-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-red-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-red-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-red-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-red-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-red-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-red-900",
+     "type": "color"
+    }
+   },
+   "rose": {
+    "100": {
+     "var": "--color-rose-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-rose-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-rose-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-rose-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-rose-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-rose-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-rose-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-rose-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-rose-900",
+     "type": "color"
+    }
+   },
+   "secondary": {
+    "var": "--color-secondary",
+    "type": "color"
+   },
+   "separator": {
+    "var": "--color-separator",
+    "type": "color"
+   },
+   "teal": {
+    "100": {
+     "var": "--color-teal-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-teal-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-teal-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-teal-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-teal-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-teal-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-teal-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-teal-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-teal-900",
+     "type": "color"
+    }
+   },
+   "tertiary": {
+    "var": "--color-tertiary",
+    "type": "color"
+   },
+   "violet": {
+    "100": {
+     "var": "--color-violet-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-violet-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-violet-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-violet-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-violet-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-violet-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-violet-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-violet-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-violet-900",
+     "type": "color"
+    }
+   },
+   "white": {
+    "var": "--color-white",
+    "type": "color"
+   },
+   "yellow": {
+    "100": {
+     "var": "--color-yellow-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-yellow-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-yellow-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-yellow-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-yellow-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-yellow-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-yellow-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-yellow-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-yellow-900",
+     "type": "color"
+    }
+   }
+  },
+  "shadow": {
+   "wysiwyg": {
+    "inner": {
+     "value": "rgba(0, 0, 0, 0.04)",
+     "type": "color",
+     "source": "css-var --shadow-wysiwyg-inner"
+    },
+    "outer": {
+     "value": "rgba(0, 0, 0, 0.12)",
+     "type": "color",
+     "source": "css-var --shadow-wysiwyg-outer"
+    }
+   }
+  },
+  "grid": {
+   "allday": {
+    "event": {
+     "height": {
+      "var": "--grid-allday-event-height",
+      "type": "dimension"
+     }
+    },
+    "height": {
+     "default": {
+      "var": "--grid-allday-height",
+      "type": "dimension"
+     },
+     "uncapped": {
+      "var": "--grid-allday-height-uncapped",
+      "type": "dimension"
+     }
+    }
+   },
+   "labels": {
+    "width": {
+     "var": "--grid-labels-width",
+     "type": "dimension"
+    }
+   },
+   "row": {
+    "height": {
+     "var": "--grid-row-height",
+     "type": "dimension"
+    }
+   },
+   "timezone": {
+    "add": {
+     "width": {
+      "var": "--grid-timezone-add-width",
+      "type": "dimension"
+     }
+    },
+    "gutter": {
+     "var": "--grid-timezone-gutter",
+     "type": "dimension"
+    },
+    "width": {
+     "var": "--grid-timezone-width",
+     "type": "dimension"
+    }
+   },
+   "title": {
+    "height": {
+     "var": "--grid-title-height",
+     "type": "dimension"
+    }
+   }
+  },
+  "inbox": {
+   "width": {
+    "var": "--inbox-width",
+    "type": "dimension"
+   }
+  },
+  "nav": {
+   "width": {
+    "var": "--nav-width",
+    "type": "dimension"
+   }
+  },
+  "sidebar": {
+   "bottom": {
+    "height": {
+     "var": "--sidebar-bottom-height",
+     "type": "dimension"
+    }
+   },
+   "left": {
+    "width": {
+     "var": "--sidebar-left-width",
+     "type": "dimension"
+    }
+   },
+   "right": {
+    "width": {
+     "var": "--sidebar-right-width",
+     "type": "dimension"
+    }
+   },
+   "top": {
+    "height": {
+     "var": "--sidebar-top-height",
+     "type": "dimension"
+    }
+   }
+  },
+  "measured": {
+   "focus-outline": {
+    "value": "#005fcc",
+    "type": "color",
+    "source": "computed outlineColor of nav-cta focus-visible (raw/components-computed.json)",
+    "description": "The keyboard-focus ring on the nav CTA."
+   },
+   "cta-hover": {
+    "value": "#11a8ff",
+    "type": "color",
+    "source": "computed backgroundColor of cta-primary hover (raw/components-computed.json)",
+    "description": "The blue Get started on hover."
+   },
+   "ghost-bg": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "computed backgroundColor of cta-secondary default (raw/components-computed.json)",
+    "description": "The Download ghost's fill."
+   },
+   "plan-cta-bg": {
+    "value": "#000000",
+    "type": "color",
+    "source": "computed backgroundColor of plan-cta default (raw/components-computed.json)",
+    "description": "The black trial button fill."
+   }
+  }
+ },
+ "light": {
+  "foreground": {
+   "var": "--foreground",
+   "type": "color"
+  },
+  "background": {
+   "var": "--color-background",
+   "type": "color"
+  },
+  "accent": {
+   "var": "--color-accent",
+   "type": "color"
+  },
+  "amie": {
+   "pink": {
+    "var": "--color-amie-pink",
+    "type": "color"
+   }
+  },
+  "ink": {
+   "var": "--color-black",
+   "type": "color"
+  }
+ },
+ "dark": {},
+ "component": {
+  "control": {
+   "height": {
+    "type": "dimension",
+    "value": "49.5938px",
+    "source": "computed height of cta-primary default (raw/components-computed.json)",
+    "description": "Hero CTAs are ~50px rounded-xl."
+   },
+   "heightSmall": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed height of nav-link default (raw/components-computed.json)",
+    "description": "Nav controls are 32px."
+   },
+   "fieldHeight": {
+    "type": "dimension",
+    "value": "54px",
+    "source": "computed height of contact-field default (raw/components-computed.json)",
+    "description": "The contact field height."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "12px",
+    "source": "computed borderTopLeftRadius of cta-primary default (raw/components-computed.json)",
+    "description": "The hero CTA corner."
+   },
+   "radiusSmall": {
+    "type": "dimension",
+    "value": "8px",
+    "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)",
+    "description": "The nav CTA corner."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "59px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The floating header height at 1440px."
+   }
+  },
+  "faq": {
+   "height": {
+    "type": "dimension",
+    "value": "68px",
+    "source": "computed height of faq-question default (raw/components-computed.json)",
+    "description": "The FAQ accordion row height."
+   }
+  }
+ }
+}

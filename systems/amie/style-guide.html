@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amie style guide</title>
+<meta name="description" content="Amie (amie.so) design tokens and the public site's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+  --color-accent: #fd2b38;
+  --color-amber-100: #fdecce;
+  --color-amber-200: #fbd89d;
+  --color-amber-300: #f9c56d;
+  --color-amber-400: #f7b13c;
+  --color-amber-500: #f59e0b;
+  --color-amber-600: #c6861c;
+  --color-amber-700: #996f27;
+  --color-amber-800: #73592d;
+  --color-amber-900: #52452e;
+  --color-amie-pink: #f6a6a6;
+  --color-background: #fafafa;
+  --color-black: #000000;
+  --color-blue-100: #cfeeff;
+  --color-blue-200: #a0ddff;
+  --color-blue-300: #70cbff;
+  --color-blue-400: #41baff;
+  --color-blue-500: #11a8ff;
+  --color-blue-600: #218fcd;
+  --color-blue-700: #2c76a0;
+  --color-blue-800: #325f78;
+  --color-blue-900: #324956;
+  --color-cyan-100: #cdf0f6;
+  --color-cyan-200: #9be2ee;
+  --color-cyan-300: #6ad3e5;
+  --color-cyan-400: #38c5dd;
+  --color-cyan-500: #06b6d4;
+  --color-cyan-600: #1594aa;
+  --color-cyan-700: #207584;
+  --color-cyan-800: #265a63;
+  --color-cyan-900: #274146;
+  --color-fuchsia-100: #f7dafc;
+  --color-fuchsia-200: #f0b5f9;
+  --color-fuchsia-300: #e890f5;
+  --color-fuchsia-400: #e16bf2;
+  --color-fuchsia-500: #d946ef;
+  --color-fuchsia-600: #b44ac4;
+  --color-fuchsia-700: #924b9d;
+  --color-fuchsia-800: #73487a;
+  --color-fuchsia-900: #57415a;
+  --color-gray-100: #ebebeb;
+  --color-gray-150: #dcdcdc;
+  --color-gray-200: #cdcdcd;
+  --color-gray-250: #bebebe;
+  --color-gray-300: #afafaf;
+  --color-gray-350: #a0a0a0;
+  --color-gray-400: #919191;
+  --color-gray-450: #828282;
+  --color-gray-50: #fafafa;
+  --color-gray-500: #737373;
+  --color-gray-550: #686868;
+  --color-gray-600: #5c5c5c;
+  --color-gray-650: #515151;
+  --color-gray-700: #454545;
+  --color-gray-740: #313131;
+  --color-gray-75: #f2f2f2;
+  --color-gray-750: #3a3a3a;
+  --color-gray-800: #2e2e2e;
+  --color-gray-850: #222222;
+  --color-gray-870: #1b1b1b;
+  --color-gray-885: #191919;
+  --color-gray-900: #171717;
+  --color-gray-950: #0f0f0f;
+  --color-green-100: #ccf4da;
+  --color-green-200: #99eab5;
+  --color-green-300: #67df90;
+  --color-green-400: #34d56b;
+  --color-green-500: #01ca45;
+  --color-green-600: #10a142;
+  --color-green-700: #1b7d3d;
+  --color-green-800: #225d36;
+  --color-green-900: #24422e;
+  --color-indigo-100: #e0e0fc;
+  --color-indigo-200: #c1c2f9;
+  --color-indigo-300: #a1a3f7;
+  --color-indigo-400: #8285f4;
+  --color-indigo-500: #6366f1;
+  --color-indigo-600: #6264c8;
+  --color-indigo-700: #5d5ea2;
+  --color-indigo-800: #55567f;
+  --color-indigo-900: #4a4b60;
+  --color-lime-100: #e6f5d0;
+  --color-lime-200: #ceeba2;
+  --color-lime-300: #b5e073;
+  --color-lime-400: #9dd645;
+  --color-lime-500: #84cc16;
+  --color-lime-600: #71a521;
+  --color-lime-700: #5e8128;
+  --color-lime-800: #4c622c;
+  --color-lime-900: #3b462b;
+  --color-orange-100: #ffe1cc;
+  --color-orange-200: #ffc299;
+  --color-orange-300: #fea466;
+  --color-orange-400: #fe8533;
+  --color-orange-500: #fe6600;
+  --color-orange-600: #cb5e13;
+  --color-orange-700: #9d5421;
+  --color-orange-800: #75482a;
+  --color-orange-900: #533c2d;
+  --color-pink-100: #ffd6eb;
+  --color-pink-200: #ffadd7;
+  --color-pink-300: #ff84c3;
+  --color-pink-400: #ff5baf;
+  --color-pink-500: #ff329a;
+  --color-pink-600: #cf3b87;
+  --color-pink-700: #a44074;
+  --color-pink-800: #7e4160;
+  --color-pink-900: #5c3d4d;
+  --color-primary: #171717;
+  --color-purple-100: #ecdcff;
+  --color-purple-200: #d9b9ff;
+  --color-purple-300: #c695ff;
+  --color-purple-400: #b372ff;
+  --color-purple-500: #a050ff;
+  --color-purple-600: #8d53d2;
+  --color-purple-700: #7a52a8;
+  --color-purple-800: #664e83;
+  --color-purple-900: #524661;
+  --color-recording-stripe: #000000;
+  --color-red-100: #ffd5d7;
+  --color-red-200: #feaab0;
+  --color-red-300: #fe8088;
+  --color-red-400: #fd5561;
+  --color-red-500: #fd2b38;
+  --color-red-600: #cd3640;
+  --color-red-700: #a23c43;
+  --color-red-800: #7c3d42;
+  --color-red-900: #5a3a3c;
+  --color-rose-100: #ffd5df;
+  --color-rose-200: #ffaabf;
+  --color-rose-300: #ff809f;
+  --color-rose-400: #ff557f;
+  --color-rose-500: #ff2b5f;
+  --color-rose-600: #cf365b;
+  --color-rose-700: #a33c55;
+  --color-rose-800: #7d3e4d;
+  --color-rose-900: #5a3b42;
+  --color-secondary: #5c5c5c;
+  --color-separator: #000000;
+  --color-teal-100: #d0f1ed;
+  --color-teal-200: #a1e3db;
+  --color-teal-300: #72d4ca;
+  --color-teal-400: #43c6b8;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #1e9487;
+  --color-teal-700: #25756c;
+  --color-teal-800: #275853;
+  --color-teal-900: #273f3d;
+  --color-tertiary: #a0a0a0;
+  --color-violet-100: #e8defd;
+  --color-violet-200: #d1befb;
+  --color-violet-300: #b99dfa;
+  --color-violet-400: #a27df8;
+  --color-violet-500: #8b5cf6;
+  --color-violet-600: #7e5ccc;
+  --color-violet-700: #7059a4;
+  --color-violet-800: #615381;
+  --color-violet-900: #504960;
+  --color-white: #ffffff;
+  --color-yellow-100: #fdefcc;
+  --color-yellow-200: #fbdf99;
+  --color-yellow-300: #f8cf66;
+  --color-yellow-400: #f6bf33;
+  --color-yellow-500: #f4af00;
+  --color-yellow-600: #c39113;
+  --color-yellow-700: #977520;
+  --color-yellow-800: #715c28;
+  --color-yellow-900: #4f452b;
+  --shadow-wysiwyg-inner: rgba(0, 0, 0, 0.04);
+  --shadow-wysiwyg-outer: rgba(0, 0, 0, 0.12);
+  --grid-allday-event-height: 24px;
+  --grid-allday-height-default: 24px;
+  --grid-allday-height-uncapped: 24px;
+  --grid-labels-width: 1px;
+  --grid-row-height: 60px;
+  --grid-timezone-add-width: 20px;
+  --grid-timezone-gutter: 10px;
+  --grid-timezone-width: 42px;
+  --grid-title-height: 36px;
+  --inbox-width: 200px;
+  --nav-width: 74px;
+  --sidebar-bottom-height: 64px;
+  --sidebar-left-width: 0px;
+  --sidebar-right-width: 0px;
+  --sidebar-top-height: 36px;
+  --measured-focus-outline: #005fcc;
+  --measured-cta-hover: #11a8ff;
+  --measured-ghost-bg: #ffffff;
+  --measured-plan-cta-bg: #000000;
+  --foreground: #262626;
+  --background: #fafafa;
+  --accent: #fd2b38;
+  --amie-pink: #f6a6a6;
+  --ink: #000000;
+  --component-control-height: 49.5938px;
+  --component-control-heightSmall: 32px;
+  --component-control-fieldHeight: 54px;
+  --component-control-radius: 12px;
+  --component-control-radiusSmall: 8px;
+  --component-header-height: 59px;
+  --component-faq-height: 68px;
+  --sg-sans: -apple-system, BlinkMacSystemFont, "SF Pro", "Inter", system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--foreground, #262626); background: var(--background, #fafafa); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--color-gray-500, #737373); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-gray-150, #dcdcdc); }
+.lead { max-width: 62ch; color: var(--color-gray-550, #686868); }
+.note { font-size: 13px; color: var(--color-gray-550, #686868); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-gray-550, #686868); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-gray-150, #dcdcdc); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-gray-550, #686868); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-gray-550, #686868); }
+/* ---- site mock ---- */
+.mock { border: 1px solid var(--color-gray-150, #dcdcdc); border-radius: 16px; overflow: hidden; background: var(--background, #fafafa); }
+.navbar { display: flex; align-items: center; gap: 18px; height: 59px; padding: 0 20px; background: var(--background, #fafafa); border-bottom: 1px solid var(--color-gray-150, #dcdcdc); font-size: 14px; }
+.navbar .wm { width: 22px; height: 22px; border-radius: 50%; background: var(--accent, #fd2b38); display: inline-block; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height-small, 32px); padding: 0 14px; border-radius: var(--component-control-radius-small, 8px); font-size: 14px; font-weight: 500; border: 1px solid transparent; }
+.btn.primary { background: var(--color-blue-500, #11a8ff); color: #fff; }
+.btn.big { height: var(--component-control-height, 50px); padding: 0 26px; border-radius: var(--component-control-radius, 12px); font-weight: 600; font-size: 15px; }
+.btn.ghost { background: #fff; color: var(--color-gray-650, #515151); border-color: var(--color-gray-150, #dcdcdc); box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+.btn.black { background: var(--ink, #000); color: #fff; }
+.hero { background: var(--background, #fafafa); color: var(--foreground, #262626); padding: 64px 40px; font-size: 44px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; text-align: center; }
+.hero small { display: block; font-size: 16px; font-weight: 400; color: var(--color-gray-550, #686868); margin: 16px auto 22px; max-width: 46ch; }
+.hero .row { display: flex; gap: 10px; justify-content: center; }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; padding: 20px; }
+.plan { border: 1px solid var(--color-gray-150, #dcdcdc); border-radius: 16px; padding: 18px; background: #fff; font-size: 13px; }
+.plan .price { font-size: 28px; font-weight: 700; margin: 8px 0 12px; }
+.plan .btn { width: 100%; }
+.faqrow { display: flex; justify-content: space-between; align-items: center; height: var(--component-faq-height, 68px); padding: 0 20px; border-bottom: 1px solid var(--color-gray-150, #dcdcdc); font-size: 15px; font-weight: 500; background: #fff; }
+.faqrow .a { color: var(--color-gray-550, #686868); font-size: 13px; padding: 8px 20px 14px; height: auto; font-weight: 400; }
+.field { display: flex; align-items: center; height: var(--component-control-field-height, 54px); border: 1px solid var(--color-gray-150, #dcdcdc); border-radius: 12px; padding: 0 14px; font-size: 15px; color: var(--color-gray-400, #919191); max-width: 400px; background: #fff; margin-bottom: 8px; }
+.seg { display: inline-flex; gap: 2px; padding: 3px; border-radius: 8px; background: var(--color-gray-150, #dcdcdc); font-size: 13px; }
+.seg b { padding: 4px 12px; font-weight: 500; border-radius: 6px; }
+.seg b.on { background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-gray-150, #dcdcdc); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Amie style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number.</p>
+
+  <h2 class="sh">Amie, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the <code>--color-*</code> Tailwind ramps amie.so ships as RGB triplets (converted to hex here — amber/blue/cyan/fuchsia/gray/green/indigo/lime/orange and friends, plus the <code>--color-amie-pink</code> single), the app's own layout metrics (<code>--nav-width</code>, <code>--inbox-width</code>, <code>--grid-*</code>, <code>--sidebar-*</code>) and the component values measured on the live pages. One light theme; the <code>.dark</code> block re-declares only <code>--foreground</code> and two wysiwyg shadows. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from amie.so on 2026-11-11, signed out, in headless Chromium. No consent overlay mounts on the captured routes. The app behind login was never reached — nothing was downloaded, sent or signed into.</p>
+
+  <h2 class="sh">The site chrome</h2>
+  <p class="lead">A floating 59px bar over the cream ground: the red-dot logo, a Radix Features flyout, Pricing and Login links, and the small blue Get started. Hero CTAs are 50px rounded-xl pairs — blue primary, white ghost.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm"></span><span>Features &#8964;</span><span>Pricing</span><span style="color:var(--color-gray-550,#686868)">Login</span><span class="sp"></span><span class="btn primary">Get started</span></div>
+    <div class="hero">The AI note taker that<br>just works
+      <small>Meeting notes, todos and calendar in one place. No bots join your calls.</small>
+      <div class="row"><span class="btn primary big">Get started</span><span class="btn ghost big">Download</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">A pill segmented control flips monthly/yearly (the yearly side re-renders the plan cards), then plan cards with a black 36px trial CTA and white Select rows, then hairline-separated 68px Radix FAQ accordions.</p>
+  <div class="mock">
+    <div style="padding:20px;text-align:center"><span class="seg"><b class="on">Bill monthly</b><b>Bill yearly</b></span></div>
+    <div class="plans">
+      <div class="plan"><b>Starter</b><div class="price">$0</div><span class="btn black">Start 7 day free trial</span><p style="color:var(--color-gray-550,#686868);font-size:12px;margin-top:10px">Unlimited notes, 1 device.</p></div>
+      <div class="plan"><b>Pro</b><div class="price">$19<span style="font-size:14px;color:var(--color-gray-550)">/mo</span></div><span class="btn ghost">Select</span><p style="color:var(--color-gray-550,#686868);font-size:12px;margin-top:10px">Everything, every device.</p></div>
+    </div>
+    <div class="faqrow"><span>Can I use Amie at my company?</span><span>+</span></div>
+    <div class="faqrow a"><span>Yes — teams can join the same workspace and share nothing they don't want to.</span><span></span></div>
+  </div>
+
+  <h2 class="sh">Contact</h2>
+  <div class="mock" style="padding:20px">
+    <div class="field">name@example.com</div>
+    <div class="field" style="height:96px;align-items:flex-start;padding-top:12px">Your message</div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead"><code>--color-blue-500</code> (#11a8ff) is the action blue; <code>--color-accent</code> (#fd2b38) is the red brand dot; the ground is <code>--color-background</code> #fafafa cream with ink <code>--foreground</code> #262626. The gray ramp runs in 50-steps (50…950) for hairlines and secondary text; the hue ramps feed illustrations and status.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Layout metrics</h2>
+  <p class="lead">The bundle ships the product's own metrics: <code>--nav-width</code> 74px rail, <code>--inbox-width</code> 200px, the calendar <code>--grid-*</code> geometry and the sidebar frame.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheet and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, toggle and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"accent":{"v":"#fd2b38","t":"color","s":"css-var --color-accent (light)"},"amber":{"100":{"v":"#fdecce","t":"color","s":"css-var --color-amber-100 (light)"},"200":{"v":"#fbd89d","t":"color","s":"css-var --color-amber-200 (light)"},"300":{"v":"#f9c56d","t":"color","s":"css-var --color-amber-300 (light)"},"400":{"v":"#f7b13c","t":"color","s":"css-var --color-amber-400 (light)"},"500":{"v":"#f59e0b","t":"color","s":"css-var --color-amber-500 (light)"},"600":{"v":"#c6861c","t":"color","s":"css-var --color-amber-600 (light)"},"700":{"v":"#996f27","t":"color","s":"css-var --color-amber-700 (light)"},"800":{"v":"#73592d","t":"color","s":"css-var --color-amber-800 (light)"},"900":{"v":"#52452e","t":"color","s":"css-var --color-amber-900 (light)"}},"amie":{"pink":{"v":"#f6a6a6","t":"color","s":"css-var --color-amie-pink (light)"}},"background":{"v":"#fafafa","t":"color","s":"css-var --color-background (light)"},"black":{"v":"#000000","t":"color","s":"css-var --color-black (light)"},"blue":{"100":{"v":"#cfeeff","t":"color","s":"css-var --color-blue-100 (light)"},"200":{"v":"#a0ddff","t":"color","s":"css-var --color-blue-200 (light)"},"300":{"v":"#70cbff","t":"color","s":"css-var --color-blue-300 (light)"},"400":{"v":"#41baff","t":"color","s":"css-var --color-blue-400 (light)"},"500":{"v":"#11a8ff","t":"color","s":"css-var --color-blue-500 (light)"},"600":{"v":"#218fcd","t":"color","s":"css-var --color-blue-600 (light)"},"700":{"v":"#2c76a0","t":"color","s":"css-var --color-blue-700 (light)"},"800":{"v":"#325f78","t":"color","s":"css-var --color-blue-800 (light)"},"900":{"v":"#324956","t":"color","s":"css-var --color-blue-900 (light)"}},"cyan":{"100":{"v":"#cdf0f6","t":"color","s":"css-var --color-cyan-100 (light)"},"200":{"v":"#9be2ee","t":"color","s":"css-var --color-cyan-200 (light)"},"300":{"v":"#6ad3e5","t":"color","s":"css-var --color-cyan-300 (light)"},"400":{"v":"#38c5dd","t":"color","s":"css-var --color-cyan-400 (light)"},"500":{"v":"#06b6d4","t":"color","s":"css-var --color-cyan-500 (light)"},"600":{"v":"#1594aa","t":"color","s":"css-var --color-cyan-600 (light)"},"700":{"v":"#207584","t":"color","s":"css-var --color-cyan-700 (light)"},"800":{"v":"#265a63","t":"color","s":"css-var --color-cyan-800 (light)"},"900":{"v":"#274146","t":"color","s":"css-var --color-cyan-900 (light)"}},"fuchsia":{"100":{"v":"#f7dafc","t":"color","s":"css-var --color-fuchsia-100 (light)"},"200":{"v":"#f0b5f9","t":"color","s":"css-var --color-fuchsia-200 (light)"},"300":{"v":"#e890f5","t":"color","s":"css-var --color-fuchsia-300 (light)"},"400":{"v":"#e16bf2","t":"color","s":"css-var --color-fuchsia-400 (light)"},"500":{"v":"#d946ef","t":"color","s":"css-var --color-fuchsia-500 (light)"},"600":{"v":"#b44ac4","t":"color","s":"css-var --color-fuchsia-600 (light)"},"700":{"v":"#924b9d","t":"color","s":"css-var --color-fuchsia-700 (light)"},"800":{"v":"#73487a","t":"color","s":"css-var --color-fuchsia-800 (light)"},"900":{"v":"#57415a","t":"color","s":"css-var --color-fuchsia-900 (light)"}},"gray":{"100":{"v":"#ebebeb","t":"color","s":"css-var --color-gray-100 (light)"},"150":{"v":"#dcdcdc","t":"color","s":"css-var --color-gray-150 (light)"},"200":{"v":"#cdcdcd","t":"color","s":"css-var --color-gray-200 (light)"},"250":{"v":"#bebebe","t":"color","s":"css-var --color-gray-250 (light)"},"300":{"v":"#afafaf","t":"color","s":"css-var --color-gray-300 (light)"},"350":{"v":"#a0a0a0","t":"color","s":"css-var --color-gray-350 (light)"},"400":{"v":"#919191","t":"color","s":"css-var --color-gray-400 (light)"},"450":{"v":"#828282","t":"color","s":"css-var --color-gray-450 (light)"},"50":{"v":"#fafafa","t":"color","s":"css-var --color-gray-50 (light)"},"500":{"v":"#737373","t":"color","s":"css-var --color-gray-500 (light)"},"550":{"v":"#686868","t":"color","s":"css-var --color-gray-550 (light)"},"600":{"v":"#5c5c5c","t":"color","s":"css-var --color-gray-600 (light)"},"650":{"v":"#515151","t":"color","s":"css-var --color-gray-650 (light)"},"700":{"v":"#454545","t":"color","s":"css-var --color-gray-700 (light)"},"740":{"v":"#313131","t":"color","s":"css-var --color-gray-740 (light)"},"75":{"v":"#f2f2f2","t":"color","s":"css-var --color-gray-75 (light)"},"750":{"v":"#3a3a3a","t":"color","s":"css-var --color-gray-750 (light)"},"800":{"v":"#2e2e2e","t":"color","s":"css-var --color-gray-800 (light)"},"850":{"v":"#222222","t":"color","s":"css-var --color-gray-850 (light)"},"870":{"v":"#1b1b1b","t":"color","s":"css-var --color-gray-870 (light)"},"885":{"v":"#191919","t":"color","s":"css-var --color-gray-885 (light)"},"900":{"v":"#171717","t":"color","s":"css-var --color-gray-900 (light)"},"950":{"v":"#0f0f0f","t":"color","s":"css-var --color-gray-950 (light)"}},"green":{"100":{"v":"#ccf4da","t":"color","s":"css-var --color-green-100 (light)"},"200":{"v":"#99eab5","t":"color","s":"css-var --color-green-200 (light)"},"300":{"v":"#67df90","t":"color","s":"css-var --color-green-300 (light)"},"400":{"v":"#34d56b","t":"color","s":"css-var --color-green-400 (light)"},"500":{"v":"#01ca45","t":"color","s":"css-var --color-green-500 (light)"},"600":{"v":"#10a142","t":"color","s":"css-var --color-green-600 (light)"},"700":{"v":"#1b7d3d","t":"color","s":"css-var --color-green-700 (light)"},"800":{"v":"#225d36","t":"color","s":"css-var --color-green-800 (light)"},"900":{"v":"#24422e","t":"color","s":"css-var --color-green-900 (light)"}},"indigo":{"100":{"v":"#e0e0fc","t":"color","s":"css-var --color-indigo-100 (light)"},"200":{"v":"#c1c2f9","t":"color","s":"css-var --color-indigo-200 (light)"},"300":{"v":"#a1a3f7","t":"color","s":"css-var --color-indigo-300 (light)"},"400":{"v":"#8285f4","t":"color","s":"css-var --color-indigo-400 (light)"},"500":{"v":"#6366f1","t":"color","s":"css-var --color-indigo-500 (light)"},"600":{"v":"#6264c8","t":"color","s":"css-var --color-indigo-600 (light)"},"700":{"v":"#5d5ea2","t":"color","s":"css-var --color-indigo-700 (light)"},"800":{"v":"#55567f","t":"color","s":"css-var --color-indigo-800 (light)"},"900":{"v":"#4a4b60","t":"color","s":"css-var --color-indigo-900 (light)"}},"lime":{"100":{"v":"#e6f5d0","t":"color","s":"css-var --color-lime-100 (light)"},"200":{"v":"#ceeba2","t":"color","s":"css-var --color-lime-200 (light)"},"300":{"v":"#b5e073","t":"color","s":"css-var --color-lime-300 (light)"},"400":{"v":"#9dd645","t":"color","s":"css-var --color-lime-400 (light)"},"500":{"v":"#84cc16","t":"color","s":"css-var --color-lime-500 (light)"},"600":{"v":"#71a521","t":"color","s":"css-var --color-lime-600 (light)"},"700":{"v":"#5e8128","t":"color","s":"css-var --color-lime-700 (light)"},"800":{"v":"#4c622c","t":"color","s":"css-var --color-lime-800 (light)"},"900":{"v":"#3b462b","t":"color","s":"css-var --color-lime-900 (light)"}},"orange":{"100":{"v":"#ffe1cc","t":"color","s":"css-var --color-orange-100 (light)"},"200":{"v":"#ffc299","t":"color","s":"css-var --color-orange-200 (light)"},"300":{"v":"#fea466","t":"color","s":"css-var --color-orange-300 (light)"},"400":{"v":"#fe8533","t":"color","s":"css-var --color-orange-400 (light)"},"500":{"v":"#fe6600","t":"color","s":"css-var --color-orange-500 (light)"},"600":{"v":"#cb5e13","t":"color","s":"css-var --color-orange-600 (light)"},"700":{"v":"#9d5421","t":"color","s":"css-var --color-orange-700 (light)"},"800":{"v":"#75482a","t":"color","s":"css-var --color-orange-800 (light)"},"900":{"v":"#533c2d","t":"color","s":"css-var --color-orange-900 (light)"}},"pink":{"100":{"v":"#ffd6eb","t":"color","s":"css-var --color-pink-100 (light)"},"200":{"v":"#ffadd7","t":"color","s":"css-var --color-pink-200 (light)"},"300":{"v":"#ff84c3","t":"color","s":"css-var --color-pink-300 (light)"},"400":{"v":"#ff5baf","t":"color","s":"css-var --color-pink-400 (light)"},"500":{"v":"#ff329a","t":"color","s":"css-var --color-pink-500 (light)"},"600":{"v":"#cf3b87","t":"color","s":"css-var --color-pink-600 (light)"},"700":{"v":"#a44074","t":"color","s":"css-var --color-pink-700 (light)"},"800":{"v":"#7e4160","t":"color","s":"css-var --color-pink-800 (light)"},"900":{"v":"#5c3d4d","t":"color","s":"css-var --color-pink-900 (light)"}},"primary":{"v":"#171717","t":"color","s":"css-var --color-primary (light)"},"purple":{"100":{"v":"#ecdcff","t":"color","s":"css-var --color-purple-100 (light)"},"200":{"v":"#d9b9ff","t":"color","s":"css-var --color-purple-200 (light)"},"300":{"v":"#c695ff","t":"color","s":"css-var --color-purple-300 (light)"},"400":{"v":"#b372ff","t":"color","s":"css-var --color-purple-400 (light)"},"500":{"v":"#a050ff","t":"color","s":"css-var --color-purple-500 (light)"},"600":{"v":"#8d53d2","t":"color","s":"css-var --color-purple-600 (light)"},"700":{"v":"#7a52a8","t":"color","s":"css-var --color-purple-700 (light)"},"800":{"v":"#664e83","t":"color","s":"css-var --color-purple-800 (light)"},"900":{"v":"#524661","t":"color","s":"css-var --color-purple-900 (light)"}},"recording":{"stripe":{"v":"#000000","t":"color","s":"css-var --color-recording-stripe (light)"}},"red":{"100":{"v":"#ffd5d7","t":"color","s":"css-var --color-red-100 (light)"},"200":{"v":"#feaab0","t":"color","s":"css-var --color-red-200 (light)"},"300":{"v":"#fe8088","t":"color","s":"css-var --color-red-300 (light)"},"400":{"v":"#fd5561","t":"color","s":"css-var --color-red-400 (light)"},"500":{"v":"#fd2b38","t":"color","s":"css-var --color-red-500 (light)"},"600":{"v":"#cd3640","t":"color","s":"css-var --color-red-600 (light)"},"700":{"v":"#a23c43","t":"color","s":"css-var --color-red-700 (light)"},"800":{"v":"#7c3d42","t":"color","s":"css-var --color-red-800 (light)"},"900":{"v":"#5a3a3c","t":"color","s":"css-var --color-red-900 (light)"}},"rose":{"100":{"v":"#ffd5df","t":"color","s":"css-var --color-rose-100 (light)"},"200":{"v":"#ffaabf","t":"color","s":"css-var --color-rose-200 (light)"},"300":{"v":"#ff809f","t":"color","s":"css-var --color-rose-300 (light)"},"400":{"v":"#ff557f","t":"color","s":"css-var --color-rose-400 (light)"},"500":{"v":"#ff2b5f","t":"color","s":"css-var --color-rose-500 (light)"},"600":{"v":"#cf365b","t":"color","s":"css-var --color-rose-600 (light)"},"700":{"v":"#a33c55","t":"color","s":"css-var --color-rose-700 (light)"},"800":{"v":"#7d3e4d","t":"color","s":"css-var --color-rose-800 (light)"},"900":{"v":"#5a3b42","t":"color","s":"css-var --color-rose-900 (light)"}},"secondary":{"v":"#5c5c5c","t":"color","s":"css-var --color-secondary (light)"},"separator":{"v":"#000000","t":"color","s":"css-var --color-separator (light)"},"teal":{"100":{"v":"#d0f1ed","t":"color","s":"css-var --color-teal-100 (light)"},"200":{"v":"#a1e3db","t":"color","s":"css-var --color-teal-200 (light)"},"300":{"v":"#72d4ca","t":"color","s":"css-var --color-teal-300 (light)"},"400":{"v":"#43c6b8","t":"color","s":"css-var --color-teal-400 (light)"},"500":{"v":"#14b8a6","t":"color","s":"css-var --color-teal-500 (light)"},"600":{"v":"#1e9487","t":"color","s":"css-var --color-teal-600 (light)"},"700":{"v":"#25756c","t":"color","s":"css-var --color-teal-700 (light)"},"800":{"v":"#275853","t":"color","s":"css-var --color-teal-800 (light)"},"900":{"v":"#273f3d","t":"color","s":"css-var --color-teal-900 (light)"}},"tertiary":{"v":"#a0a0a0","t":"color","s":"css-var --color-tertiary (light)"},"violet":{"100":{"v":"#e8defd","t":"color","s":"css-var --color-violet-100 (light)"},"200":{"v":"#d1befb","t":"color","s":"css-var --color-violet-200 (light)"},"300":{"v":"#b99dfa","t":"color","s":"css-var --color-violet-300 (light)"},"400":{"v":"#a27df8","t":"color","s":"css-var --color-violet-400 (light)"},"500":{"v":"#8b5cf6","t":"color","s":"css-var --color-violet-500 (light)"},"600":{"v":"#7e5ccc","t":"color","s":"css-var --color-violet-600 (light)"},"700":{"v":"#7059a4","t":"color","s":"css-var --color-violet-700 (light)"},"800":{"v":"#615381","t":"color","s":"css-var --color-violet-800 (light)"},"900":{"v":"#504960","t":"color","s":"css-var --color-violet-900 (light)"}},"white":{"v":"#ffffff","t":"color","s":"css-var --color-white (light)"},"yellow":{"100":{"v":"#fdefcc","t":"color","s":"css-var --color-yellow-100 (light)"},"200":{"v":"#fbdf99","t":"color","s":"css-var --color-yellow-200 (light)"},"300":{"v":"#f8cf66","t":"color","s":"css-var --color-yellow-300 (light)"},"400":{"v":"#f6bf33","t":"color","s":"css-var --color-yellow-400 (light)"},"500":{"v":"#f4af00","t":"color","s":"css-var --color-yellow-500 (light)"},"600":{"v":"#c39113","t":"color","s":"css-var --color-yellow-600 (light)"},"700":{"v":"#977520","t":"color","s":"css-var --color-yellow-700 (light)"},"800":{"v":"#715c28","t":"color","s":"css-var --color-yellow-800 (light)"},"900":{"v":"#4f452b","t":"color","s":"css-var --color-yellow-900 (light)"}}},"shadow":{"wysiwyg":{"inner":{"v":"rgba(0, 0, 0, 0.04)","t":"color","s":"css-var --shadow-wysiwyg-inner"},"outer":{"v":"rgba(0, 0, 0, 0.12)","t":"color","s":"css-var --shadow-wysiwyg-outer"}}},"grid":{"allday":{"event":{"height":{"v":"24px","t":"dimension","s":"css-var --grid-allday-event-height (light)"}},"height":{"default":{"v":"24px","t":"dimension","s":"css-var --grid-allday-height (light)"},"uncapped":{"v":"24px","t":"dimension","s":"css-var --grid-allday-height-uncapped (light)"}}},"labels":{"width":{"v":"1px","t":"dimension","s":"css-var --grid-labels-width (light)"}},"row":{"height":{"v":"60px","t":"dimension","s":"css-var --grid-row-height (light)"}},"timezone":{"add":{"width":{"v":"20px","t":"dimension","s":"css-var --grid-timezone-add-width (light)"}},"gutter":{"v":"10px","t":"dimension","s":"css-var --grid-timezone-gutter (light)"},"width":{"v":"42px","t":"dimension","s":"css-var --grid-timezone-width (light)"}},"title":{"height":{"v":"36px","t":"dimension","s":"css-var --grid-title-height (light)"}}},"inbox":{"width":{"v":"200px","t":"dimension","s":"css-var --inbox-width (light)"}},"nav":{"width":{"v":"74px","t":"dimension","s":"css-var --nav-width (light)"}},"sidebar":{"bottom":{"height":{"v":"64px","t":"dimension","s":"css-var --sidebar-bottom-height (light)"}},"left":{"width":{"v":"0px","t":"dimension","s":"css-var --sidebar-left-width (light)"}},"right":{"width":{"v":"0px","t":"dimension","s":"css-var --sidebar-right-width (light)"}},"top":{"height":{"v":"36px","t":"dimension","s":"css-var --sidebar-top-height (light)"}}},"measured":{"focus-outline":{"v":"#005fcc","t":"color","s":"computed outlineColor of nav-cta focus-visible (raw/components-computed.json)","d":"The keyboard-focus ring on the nav CTA."},"cta-hover":{"v":"#11a8ff","t":"color","s":"computed backgroundColor of cta-primary hover (raw/components-computed.json)","d":"The blue Get started on hover."},"ghost-bg":{"v":"#ffffff","t":"color","s":"computed backgroundColor of cta-secondary default (raw/components-computed.json)","d":"The Download ghost's fill."},"plan-cta-bg":{"v":"#000000","t":"color","s":"computed backgroundColor of plan-cta default (raw/components-computed.json)","d":"The black trial button fill."}}},"light":{"foreground":{"v":"#262626","t":"color","s":"css-var --foreground (light)"},"background":{"v":"#fafafa","t":"color","s":"css-var --color-background (light)"},"accent":{"v":"#fd2b38","t":"color","s":"css-var --color-accent (light)"},"amie":{"pink":{"v":"#f6a6a6","t":"color","s":"css-var --color-amie-pink (light)"}},"ink":{"v":"#000000","t":"color","s":"css-var --color-black (light)"},"component":{"control":{"height":{"v":"49.5938px","t":"dimension","s":"computed height of cta-primary default (raw/components-computed.json)","d":"Hero CTAs are ~50px rounded-xl."},"heightSmall":{"v":"32px","t":"dimension","s":"computed height of nav-link default (raw/components-computed.json)","d":"Nav controls are 32px."},"fieldHeight":{"v":"54px","t":"dimension","s":"computed height of contact-field default (raw/components-computed.json)","d":"The contact field height."},"radius":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of cta-primary default (raw/components-computed.json)","d":"The hero CTA corner."},"radiusSmall":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"The nav CTA corner."}},"header":{"height":{"v":"59px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The floating header height at 1440px."}},"faq":{"height":{"v":"68px","t":"dimension","s":"computed height of faq-question default (raw/components-computed.json)","d":"The FAQ accordion row height."}}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const g of ['grid', 'nav', 'inbox', 'sidebar']) {
+    for (const [n, t] of flat(TOK.core[g] || {}, g + '.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.light.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+</script>
+</body>
+</html>
