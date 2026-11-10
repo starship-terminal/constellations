@@ -10,7 +10,7 @@
 // (document root and a hidden probe under <body>): colours come back as sRGB
 // hex, lengths as px at 1440 x 900.
 //
-// aboard.com declares roughly 640 custom properties, mostly the WordPress
+// aboard.com declares about 245 custom properties (124 resolved), mostly the WordPress
 // presets (--wp--preset--color--*, --wp--preset--font-size--*) plus the
 // theme's --rd-* tokens (palette, type scale, spacing). build_tokens.py reads
 // this file first, then overlays measured component styles.

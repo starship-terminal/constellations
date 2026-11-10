@@ -24,13 +24,27 @@ for f in RAW.glob('*.part*.png'):
         continue
     parts.setdefault(m.group(1), []).append((int(m.group(2)), f))
 for name, ps in parts.items():
+    target = RAW / f'{name}.png'
+    newest = max(f.stat().st_mtime for _, f in ps)
+    if target.exists() and target.stat().st_mtime >= newest:
+        # A fresher whole-page capture already exists (a page that used to tile
+        # and is now short): these tiles are leftovers of an earlier run. Prune
+        # them instead of stitching them back over the replacement capture.
+        for _, f in ps:
+            f.unlink()
+        print('pruned stale tiles for', name)
+        continue
     ims = [Image.open(f).convert('RGB') for _, f in sorted(ps)]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
     y = 0
     for i in ims:
         sheet.paste(i, (0, y)); y += i.height
-    sheet.save(RAW / f'{name}.png')
+    sheet.save(target)
     print('stitched', name, sheet.size)
+    # The stitched copy replaced the tiles; drop them so a later run cannot
+    # mistake them for the current capture.
+    for _, f in ps:
+        f.unlink()
 
 n = 0
 for f in sorted(RAW.glob('*.png')):

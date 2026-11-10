@@ -148,12 +148,52 @@ def props(v):
 ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
 
 
+LAYER_KEYS = ("bg", "bgImage", "border", "radius", "shadow", "outline")
+
+
+def is_root_layer(st, p):
+    """The paint list starts with the component's own element when it paints; a
+    same-tag, same-size first entry is that element, not a child."""
+    if p["node"].split(".", 1)[0].split(":", 1)[0] != st.get("tag"):
+        return False
+    try:
+        w, h = p["size"].split("x")
+        return abs(float(w) - st["rect"]["w"]) < 0.6 and abs(float(h) - st["rect"]["h"]) < 0.6
+    except Exception:
+        return False
+
+
+def child_paint(st):
+    """Painted layers below the root element."""
+    return [p for p in st.get("paint") or [] if not is_root_layer(st, p)]
+
+
+def paint_diff(base_v, v):
+    """Changes in the painted layers between two states, as 'node: key value' bits.
+    The root comparison alone misses hovers the site paints on children (the case
+    cards lift on the figure's shadow, not the card root)."""
+    a = {p["node"]: p for p in child_paint(base_v)}
+    b = {p["node"]: p for p in child_paint(v)}
+    out = []
+    for node, p in b.items():
+        prev = a.get(node, {})
+        bits = []
+        for k in LAYER_KEYS:
+            if p.get(k) == prev.get(k):
+                continue
+            val = colour(p[k])[:160] if k in ("bg", "bgImage", "border", "shadow", "outline") else p[k]
+            bits.append(f"{k} {val}")
+        if bits:
+            out.append(f"{node}: {', '.join(bits)}")
+    return out
+
+
 def state_rows(c):
     states = [s for s in c["states"] if "style" in c["states"][s]]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
-    rows = [(states[0], base)]
+    rows = [(states[0], base, [])]
     same = []
     for st in states[1:]:
         p = props(c["states"][st])
@@ -161,15 +201,16 @@ def state_rows(c):
         for k in ORDER:
             if k in base and k not in p:
                 diff[k] = "none"
-        if not diff:
+        layers = paint_diff(c["states"][states[0]], c["states"][st])
+        if not diff and not layers:
             same.append(st)
             continue
-        if rows[-1][0] != states[0] and rows[-1][1] == diff:
-            rows[-1] = (rows[-1][0] + ", " + st, diff)
+        if rows[-1][0] != states[0] and rows[-1][1] == diff and rows[-1][2] == layers:
+            rows[-1] = (rows[-1][0] + ", " + st, diff, layers)
         else:
-            rows.append((st, diff))
+            rows.append((st, diff, layers))
     if same:
-        rows[0] = (f"{states[0]} (same: {', '.join(same)})", base)
+        rows[0] = (f"{states[0]} (same: {', '.join(same)})", base, [])
     return rows, states
 
 
@@ -182,10 +223,12 @@ def child_layers(c):
     if not st or not st.get("paint"):
         return None
     s = st["style"]
-    if s["backgroundColor"] != "rgba(0, 0, 0, 0)" or s["boxShadow"] != "none" or s["borderTopWidth"] != "0px" or s["backgroundImage"] != "none":
+    # A painted background/image/shadow on the root already carries the look; a
+    # hairline border alone does not, so the children's paint still gets named.
+    if s["backgroundColor"] != "rgba(0, 0, 0, 0)" or s["boxShadow"] != "none" or s["backgroundImage"] != "none":
         return None
     out = []
-    for p in st["paint"][:3]:
+    for p in child_paint(st)[:3]:
         bits = [re.sub(r"\..*$", "", p["node"]) if "::" not in p["node"] else p["node"].split(".")[0], p["size"].replace(".0x", "x").replace(".0", "")]
         if p.get("bg"):
             bits.append("background " + colour(p["bg"]))
@@ -433,15 +476,24 @@ for g in groups:
         elif rows:
             W("| State | Values (later rows list only what changes from the first row) |")
             W("|---|---|")
-            for lab, d in rows:
-                W(f"| {lab} | {fmt(d)} |")
+            for lab, d, layers in rows:
+                cell = fmt(d)
+                if layers:
+                    cell += ("; " if cell else "") + "painted layers: " + "; ".join(layers).replace("|", "/")
+                W(f"| {lab} | {cell} |")
             W()
         cl = child_layers(c)
         if cl:
             W(f"Child layers that carry the look: {cl}.")
             W()
         imgs = [f"![{c['title']} {st}](components/crops/{os.path.basename(c['states'][st]['crop'])})" for st in states if c["states"][st].get("crop")]
-        W(" ".join(imgs) if imgs else "No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.")
+        failed = [st for st in states if c["states"][st].get("cropError")]
+        if imgs:
+            W(" ".join(imgs))
+        elif failed:
+            W(f"No crop was saved: capture failed for {', '.join(f'`{s}`' for s in failed)}; the values are from the computed styles.")
+        else:
+            W("No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.")
 
 # ------------------------------------------------ icons
 W()
@@ -476,7 +528,7 @@ W("- **Disabled states** were not seen on any public control.")
 W()
 W("### Themes")
 W()
-W("Aboard shows one theme. The page paints warm off-white (`--wp--preset--color--parchment` / `--rd-parchment`) with dark forest-green and bright-citrus sections inside the same paint; there is no `prefers-color-scheme` variant and no theme attribute, so the token file ships a single `light` set. Roughly 640 custom properties resolve from the WordPress theme sheets (see [raw/css-vars.json](raw/css-vars.json)); the token file aliases the --wp--preset--* and --rd-* names where the site declares them.")
+W("Aboard shows one theme. The page paints warm off-white (`--wp--preset--color--parchment` / `--rd-parchment`) with dark forest-green and bright-citrus sections inside the same paint; there is no `prefers-color-scheme` variant and no theme attribute, so the token file ships a single `light` set. 124 custom properties resolve from the WordPress theme sheets (245 declared; see [raw/css-vars.json](raw/css-vars.json)); the token file aliases the --wp--preset--* and --rd-* names where the site declares them.")
 W()
 W("### Fonts")
 W()

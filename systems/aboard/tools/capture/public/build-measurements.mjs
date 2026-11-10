@@ -107,7 +107,7 @@ W('');
 W('## Transitions declared in the readable stylesheets');
 W('');
 // PRODUCT (adapt): describe this product's capture.
-W('aboard.com\'s WordPress theme stylesheets are same-origin readable and declare about 640 custom properties (the --wp--preset--* and --rd-* names; see css-vars.json). The values below are computed styles read off the running pages; the per-state Transition rows are computed values.');
+W('aboard.com\'s WordPress theme stylesheets are same-origin readable and declare 245 custom properties, of which 124 resolve at :root (the --wp--preset--* and --rd-* names; see css-vars.json). The values below are computed styles read off the running pages; the per-state Transition rows are computed values.');
 for (const [pg, list] of Object.entries(J._meta.sheets || {}).sort()) {
   const uniq = [...new Map(list.filter((t) => t.transition).map((t) => [t.transition, t])).values()].slice(0, 12);
   W('');

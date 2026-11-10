@@ -15,7 +15,7 @@ aboard.com is a WordPress site; the theme's own custom properties (`--wp--preset
 | [components/crops/](components/crops) | 125 element screenshots, `{component}-{state}.png`, at 2x. |
 | [icons/](icons) | 28 SVGs lifted from the pages (the feed chips, the carousel arrows and pause, the podcast play and RSS badges, the share buttons, the disclosure icons), named by role in [icons/INDEX.tsv](icons/INDEX.tsv). Aboard's property, kept for reference only. |
 | [screenshots/](screenshots) | 41 `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at the same width; `mobile-*` shots are 390 wide. The home page also keeps the contact-section and cookie-banner attempts, and the mobile home keeps the open menu. |
-| [raw/](raw) | The unprocessed readings: every custom property the theme declares (`css-vars.json`, ~640 resolved names), per-component computed styles (`components-computed.json`, and `measurements.md` built from it), the token tree the builder reads (`component-tokens.json`), and page geometry at four widths (`layout.json`). The unquantised screenshot originals and their `.capture.json` sidecars are working evidence in `raw/full/`. |
+| [raw/](raw) | The unprocessed readings: every custom property the theme declares (`css-vars.json`, 245 declared, 124 resolved names), per-component computed styles (`components-computed.json`, and `measurements.md` built from it), the token tree the builder reads (`component-tokens.json`), and page geometry at four widths on eight routes (`layout.json`). The unquantised screenshot originals and their `.capture.json` sidecars are working evidence in `raw/full/`. |
 | [tools/](tools) | The three builders and the capture kit. See Rebuild. |
 
 ## Brief
@@ -74,7 +74,7 @@ Layout: every standard part is here and in the file table ([docs/PACKAGE.md](../
 
 ## How the values were read
 
-aboard.com is WordPress (block theme markup, `wp-singular` body classes, Tailwind-style utilities plus `.rd-*` theme classes), so its stylesheets are same-origin and fully readable. [vars.mjs](tools/capture/vars.mjs) resolved ~640 custom properties at `:root`: the `--wp--preset--*` colour/spacing/type presets and the `--rd-*` design tokens (`--rd-ink`, `--rd-body`, `--rd-line`, the `--rd-ease*` easings and the reveal durations). Where a token's value is one of those variables, its leaf says `"var"` and the builder resolves it against [raw/css-vars.json](raw/css-vars.json); everything else is a literal measured off a computed style, and each leaf's `$extensions.source` names the component or variable it came from.
+aboard.com is WordPress (block theme markup, `wp-singular` body classes, Tailwind-style utilities plus `.rd-*` theme classes), so its stylesheets are same-origin and fully readable. [vars.mjs](tools/capture/vars.mjs) resolved 124 custom properties at `:root` (of 245 declared): the `--wp--preset--*` colour/spacing/type presets and the `--rd-*` design tokens (`--rd-ink`, `--rd-body`, `--rd-line`, the `--rd-ease*` easings and the reveal durations). Where a token's value is one of those variables, its leaf says `"var"` and the builder resolves it against [raw/css-vars.json](raw/css-vars.json); everything else is a literal measured off a computed style, and each leaf's `$extensions.source` names the component or variable it came from.
 
 Component values are computed styles read per state with Playwright ([measure.mjs](tools/capture/public/measure.mjs)). Hover used the pointer, focus-visible a real keyboard Tab, and pressed was forced through DevTools (`CSS.forcePseudoState`), so no button was clicked for real. The only presses were local UI toggles: the FAQ accordion headings and the mobile menu trigger. The newsletter fields were clicked into for their focus style but nothing was typed or sent (the form posts to `/wp-json/aboard/v1/newsletter-signups`). The CookieYes consent strip is hidden by CSS for the clean captures ([lib.mjs](tools/capture/public/lib.mjs)), which is a hide, not a consent; it was re-shown for measurement but its `.cky-*` markup never rendered in headless Chromium, so the four `cookie-*` entries record `missing` rather than values.
 
@@ -112,7 +112,7 @@ Tobias is a commercial face served by the theme, so the style guide previews the
 | Shape | captured | `core.radius`: none, focus 2px, media 10px, card 12px, menu 28px, pill 999px |
 | Sizing | captured | `core.layout` (header 80 declared/78 measured, gutter 48, content 1048, wide 1280, button/field 50) |
 | Motion | captured | `core.duration` (50ms stagger to 1200ms reveal) and `core.easing` (the four `--rd-ease*` curves) |
-| Layout | captured | `raw/layout.json` at 1440/1920/1024/390 for every captured route |
+| Layout | captured | `raw/layout.json` at 1440/1920/1024/390 for eight captured routes |
 | Button, link, text field, card, tag, accordion, nav, footer | captured | [components.md](components.md): citrus/ink pills and the nav CTA, feed rows and titles, case cards, FAQ accordion, share icon buttons, carousel controls |
 | Select, checkbox, switch, tabs, toast, dialog, menu (desktop), avatar, table | not present | none exist on the public marketing surface |
 | Consent overlay | not captured | CookieYes never rendered headless; the four `cookie-*` entries record `missing`, and the banner screenshot shows no strip |

@@ -654,7 +654,7 @@
     },
     {
       "referenceId": "systems:notion-calendar-desktop",
-      "media": 394,
+      "media": 400,
       "assignedMedia": 202
     },
     {
@@ -706,6 +706,16 @@
       "referenceId": "systems:supabase",
       "media": 158,
       "assignedMedia": 158
+    },
+    {
+      "referenceId": "systems:ableton",
+      "media": 200,
+      "assignedMedia": 41
+    },
+    {
+      "referenceId": "systems:aboard",
+      "media": 166,
+      "assignedMedia": 166
     }
   ],
   "assignments": [
@@ -163529,6 +163539,2503 @@
           "termId": "web-fonts:inter",
           "rule": "font-primary",
           "reason": "Exact primary family Inter from systems/supabase/tokens.json#core.fontFamily.body. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/screenshots/about-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/screenshots/about-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/screenshots/help-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:support-help",
+          "rule": "page-support",
+          "reason": "Capture filename explicitly names support & help; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/screenshots/help-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:support-help",
+          "rule": "page-support",
+          "reason": "Capture filename explicitly names support & help; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/screenshots/home-light-cookie-banner.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/screenshots/home-light-more-menu.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/screenshots/login-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/screenshots/login-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/blog-category-badge-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/blog-category-badge-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/collapse-toggle-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/collapse-toggle-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/collapse-toggle-open-open.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:accordion-collapse",
+          "rule": "ui-accordion",
+          "reason": "Capture filename explicitly names accordion & collapse; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/footer-heading-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/footer-locale-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/footer-social-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/footer-social-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/footer-social-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/footer-social-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/home-promo-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/pack-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/pack-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/pack-download-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/pack-download-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/pack-download-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/pack-download-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/product-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/product-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/register-checkbox-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:checkbox-radio",
+          "rule": "ui-checkbox-radio",
+          "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/trial-download-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/trial-download-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/trial-download-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/trial-download-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:upload-download",
+          "rule": "ux-upload-download",
+          "reason": "Capture filename explicitly names upload & download; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:ableton",
+      "mediaId": "systems/ableton/components/crops/trial-edition-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/aboard-sign-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/aboard-sign-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/about-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/about-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/careers-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/careers-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/case-studies-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/case-studies-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/case-study-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/case-study-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/events-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/events-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/faq-light-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/faq-light-full.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/foundry-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/foundry-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/home-light-contact.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/home-light-cookie-banner.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/how-we-work-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/how-we-work-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/media-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/media-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/mobile-case-studies-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/mobile-case-studies-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/mobile-home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/mobile-home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/mobile-home-light-menu-open.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/mobile-how-we-work-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/mobile-how-we-work-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/newsletter-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/newsletter-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/perspectives-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/perspectives-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/podcast-episode-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/podcast-episode-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/podcast-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/podcast-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/security-light-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/screenshots/security-light-full.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/about-body-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/about-person-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/about-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/art-body-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/art-nl-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/art-nl-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/art-share-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:share",
+          "rule": "ux-share",
+          "reason": "Capture filename explicitly names share; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/art-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/careers-body-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/careers-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/carousel-pause-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/carousel-pause-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/carousel-tick-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/carousel-tick-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/carousel-tick-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/carousel-tick-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:carousel",
+          "rule": "ui-carousel",
+          "reason": "Capture filename explicitly names carousel; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/case-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/case-card-feature-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/case-card-feature-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/case-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/case-tag-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/cases-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/contact-iframe-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/cs-body-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/cs-meta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/cs-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/ev-field-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/ev-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/ev-submit-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/ev-submit-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/ev-submit-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/ev-submit-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/ev-tag-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/events-row-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/events-row-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/events-row-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/events-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/eyebrow-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/faq-cat-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/faq-panel-open-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/faq-q-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/faq-q-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/faq-q-open-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/faq-title-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/feed-row-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/feed-row-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/feed-row-tag-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/footer-heading-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/footer-social-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/footer-social-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/footer-social-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/footer-social-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/foundry-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/foundry-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/foundry-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/hero-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/hww-body-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/hww-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/hww-step-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/hww-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/job-row-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/job-row-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/m-feed-row-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/m-hero-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/m-menu-trigger-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/m-menu-trigger-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/m-menu-trigger-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/m-menu-trigger-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/m-nav-bar-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/m-nav-panel-open.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/media-row-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/media-row-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/media-row-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/media-show-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/media-show-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/media-show-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/media-show-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/media-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nav-bar-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nav-cta-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nav-cta-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nav-cta-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nav-cta-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nav-link-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nav-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nav-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nav-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nav-logo-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nav-logo-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nav-logo-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nav-logo-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/newsletter-row-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/newsletter-row-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/newsletter-row-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/newsletter-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nl-field-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nl-field-focused.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nl-form-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nl-form-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nl-latest-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nl-submit-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nl-submit-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nl-submit-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/nl-submit-pressed.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/pe-body-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/pe-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/perspectives-row-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/perspectives-row-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/perspectives-row-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/perspectives-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/pod-ep-row-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/pod-ep-row-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/pod-ep-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/pod-ep-title-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/pod-play-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/pod-play-hover.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/pod-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/section-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/security-body-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:aboard",
+      "mediaId": "systems/aboard/components/crops/security-title-default.png",
+      "terms": [
+        {
+          "termId": "web-fonts:work-sans",
+          "rule": "font-primary",
+          "reason": "Exact primary family Work Sans from systems/aboard/tokens.json#core.font.family.work-sans. Inherited package evidence; fallback families excluded."
         }
       ]
     }

@@ -45,6 +45,7 @@ const URLS = {
   'aboard-sign': '/meet-aboard-sign/',
 };
 let page, cdp, current, context, run;
+const tempContexts = [];
 const touched = new Set();
 
 // A bot interstitial or an error body renders a minimal page: detect either
@@ -64,6 +65,7 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {
   const ctx = await b.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
+  tempContexts.push(ctx);
   await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
   page = await ctx.newPage();
   cdp = await ctx.newCDPSession(page);
@@ -105,13 +107,32 @@ async function kbFocus(loc) {
   return ok ? how : 'focus failed';
 }
 
+// Waits out the element's declared transitions instead of a fixed ms: the
+// longest transition-duration + delay on the element, its pseudo-elements and
+// its children, plus a buffer. A fixed 400-450ms reads mid-transition values —
+// nav-cta changes over 500ms, the feed movement over 600ms.
+async function settle(loc, { floor = 400, cap = 3000 } = {}) {
+  const ms = await loc.evaluate((el) => {
+    const maxOf = (n, pe) => {
+      const c = getComputedStyle(n, pe);
+      const durs = c.transitionDuration.split(',').map((x) => parseFloat(x) || 0);
+      const dels = c.transitionDelay.split(',').map((x) => parseFloat(x) || 0);
+      return Math.max(0, ...durs.map((d, i) => d + (dels[i % dels.length] || 0)));
+    };
+    let m = Math.max(maxOf(el), maxOf(el, '::before'), maxOf(el, '::after'));
+    for (const n of el.querySelectorAll('*')) m = Math.max(m, maxOf(n));
+    return m * 1000;
+  }).catch(() => 0);
+  await page.waitForTimeout(Math.max(floor, Math.min(cap, ms + 150)));
+}
+
 async function forcePseudo(loc, classes) {
   await page.evaluate(() => document.querySelectorAll('[data-m-force]').forEach((n) => n.removeAttribute('data-m-force')));
   await loc.evaluate((el) => el.setAttribute('data-m-force', '1'));
   const { root } = await cdp.send('DOM.getDocument', { depth: 0 });
   const { nodeId } = await cdp.send('DOM.querySelector', { nodeId: root.nodeId, selector: '[data-m-force]' });
   await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: classes });
-  await page.waitForTimeout(400);
+  await settle(loc);
   return async () => { await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] }).catch(() => {}); };
 }
 
@@ -127,7 +148,7 @@ async function toggle(loc) {
 
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
-  Object.assign(c, { page: current, run, url: URLS[current] && (URLS[current].startsWith('http') ? URLS[current] : BASE + URLS[current]) }, meta);
+  Object.assign(c, { page: current, url: URLS[current] && (URLS[current].startsWith('http') ? URLS[current] : BASE + URLS[current]) }, meta);
   touched.add(key);
   c.states ??= {};
   return c;
@@ -145,6 +166,9 @@ async function measure(key, state, target, opts = {}) {
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
     c.states[state] = { ...s, crop: file, via: opts.via };
+    // A state actually measured gets this run's timestamp; a component whose
+    // states are only kept from an earlier run keeps its original one.
+    c.run = run;
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
@@ -173,7 +197,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
       if (opts.before?.[st]) via = await opts.before[st](loc);
       if (st === 'hover') {
         await (opts.hoverLoc || loc).filter({ visible: true }).first().hover({ timeout: 5000 }).catch(() => (opts.hoverLoc || loc).filter({ visible: true }).first().hover({ timeout: 5000, force: true }));
-        await page.waitForTimeout(450);
+        await settle(loc);
         via = 'mouse hover';
       } else if (st === 'focus-visible') {
         via = await kbFocus((opts.focusLoc || loc).filter({ visible: true }).first());
@@ -182,7 +206,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = 'CDP forcePseudoState :active:hover';
       } else if (st === 'focused') {
         await (opts.fieldLoc || loc).filter({ visible: true }).first().click({ timeout: 4000 });
-        await page.waitForTimeout(400);
+        await settle(loc);
         via = 'clicked into the field';
       } else if (st === 'open') {
         via = opts.via || 'resting state after a local toggle';
@@ -458,18 +482,25 @@ run = new Date().toISOString();
 out._meta.run = run;
 out._meta.product = 'aboard.com';
 const wanted = process.argv.slice(2).join(',').split(',').map((s) => s.trim()).filter(Boolean);
-({ context } = await launch());
-for (const [k, fn] of Object.entries(RUNNERS)) {
-  if (wanted.length && !wanted.includes(k)) continue;
-  try { await fn(); } catch (e) { log('PAGE FAILED', k, String(e.message).split('\n')[0]); }
+const { browser, context: launchContext } = await launch();
+context = launchContext;
+try {
+  for (const [k, fn] of Object.entries(RUNNERS)) {
+    if (wanted.length && !wanted.includes(k)) continue;
+    try { await fn(); } catch (e) { log('PAGE FAILED', k, String(e.message).split('\n')[0]); }
+    save();
+  }
+  // mark components from this run whose selectors matched nothing; a component
+  // with recorded states (from an earlier merged run) is covered, not missing
+  for (const [k, c] of Object.entries(out.components)) {
+    if (!touched.has(k)) continue;
+    if (Object.keys(c.states || {}).length) delete c.missing;
+    else c.missing = true;
+  }
   save();
+  log('done ->', OUT);
+} finally {
+  for (const c of tempContexts) await c.close().catch(() => {});
+  await context.close().catch(() => {});
+  await browser.close().catch(() => {});
 }
-// mark components from this run whose selectors matched nothing; a component
-// with recorded states (from an earlier merged run) is covered, not missing
-for (const [k, c] of Object.entries(out.components)) {
-  if (!touched.has(k)) continue;
-  if (Object.keys(c.states || {}).length) delete c.missing;
-  else c.missing = true;
-}
-save();
-log('done ->', OUT);

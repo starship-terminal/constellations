@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from aboard.com on 2026-11-09 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from aboard.com on 2026-11-10 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -99,7 +99,7 @@ Page: home. Selector: `a.rd-nav-cta`. States: default, hover, focus-visible, pre
 | Gap | 12px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 999px | = | = | = |
-| Background | #de4c00 | #291503 | = | #321803 |
+| Background | #de4c00 | #271503 | = | #271503 |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 2px solid #271503 offset 2px | = |
 | Font | Work Sans 14.72px/23.552px 400 | = | = | = |
@@ -108,7 +108,7 @@ Page: home. Selector: `a.rd-nav-cta`. States: default, hover, focus-visible, pre
 | Transition | background, color 0.5s, 0.5s cubic-bezier(0.65, 0, 0.35, 1), cubic-bezier(0.65, 0, 0.35, 1) delay 0s, 0s | = | = | = |
 | Cursor | pointer | = | = | = |
 | Icon | 13 x 13, colour #fffefb | = | = | = |
-| Painted layers | a.rd-nav-cta 157.3x42.0 bg #de4c00 r 999px; span.rd-nav-cta-ico 32.0x32.0 bg #ffffff @ 0.2 r 50% | a.rd-nav-cta 157.3x42.0 bg #291503 r 999px; span.rd-nav-cta-ico 32.0x32.0 bg #ffffff @ 0.2 r 50% | a.rd-nav-cta 157.3x42.0 bg #de4c00 r 999px outline 2px solid #271503 offset 2px; span.rd-nav-cta-ico 32.0x32.0 bg #ffffff @ 0.2 r 50% | a.rd-nav-cta 157.3x42.0 bg #321803 r 999px; span.rd-nav-cta-ico 32.0x32.0 bg #ffffff @ 0.2 r 50% |
+| Painted layers | a.rd-nav-cta 157.3x42.0 bg #de4c00 r 999px; span.rd-nav-cta-ico 32.0x32.0 bg #ffffff @ 0.2 r 50% | a.rd-nav-cta 157.3x42.0 bg #271503 r 999px; span.rd-nav-cta-ico 32.0x32.0 bg #ffffff @ 0.2 r 50% | a.rd-nav-cta 157.3x42.0 bg #de4c00 r 999px outline 2px solid #271503 offset 2px; span.rd-nav-cta-ico 32.0x32.0 bg #ffffff @ 0.2 r 50% | a.rd-nav-cta 157.3x42.0 bg #271503 r 999px; span.rd-nav-cta-ico 32.0x32.0 bg #ffffff @ 0.2 r 50% |
 | How | at rest | mouse hover | keydown then focus() | CDP forcePseudoState :active:hover |
 
 Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-focus-visible.png`, `nav-cta-pressed.png`.
@@ -147,7 +147,7 @@ Page: home. Selector: `footer.rd`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1440 x 1237.78 |
+| Size (w x h) | 1440 x 1232.78 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -159,7 +159,7 @@ Page: home. Selector: `footer.rd`. States: default.
 | Colour | #fffefb |
 | Text node | h2.font-rd-serif.text-rd-footer-h: Tobias 32px/35.2px 300, #fffefb, ls -0.32px |
 | Transition | none |
-| Painted layers | footer.rd.rd-focus-on-orange 1440.0x1237.8 bg #de4c00; div.block-contact-form.bg-bright-citrus 1120.0x442.2 bg #de4c00; div.relative.overflow-hidden 1440.0x555.6 border T:1px solid #fffefb @ 0.3; hr.w-full.border-t 101.5x1.0 border T:1px solid #fffefb @ 0.3; hr.w-full.border-t 98.6x1.0 border T:1px solid #fffefb @ 0.3; hr.w-full.border-t 67.4x1.0 border T:1px solid #fffefb @ 0.3 |
+| Painted layers | footer.rd.rd-focus-on-orange 1440.0x1232.8 bg #de4c00; div.block-contact-form.bg-bright-citrus 1120.0x437.2 bg #de4c00; div.relative.overflow-hidden 1440.0x555.6 border T:1px solid #fffefb @ 0.3; hr.w-full.border-t 101.5x1.0 border T:1px solid #fffefb @ 0.3; hr.w-full.border-t 98.6x1.0 border T:1px solid #fffefb @ 0.3; hr.w-full.border-t 67.4x1.0 border T:1px solid #fffefb @ 0.3 |
 | How | at rest |
 
 Crops: `footer-default.png`.
@@ -334,7 +334,7 @@ Page: home. Selector: `a.rd-feed-row`. States: default, hover.
 | Icon | 13 x 13, colour #de4c00 | = |
 | Painted layers | span.relative.aspect-[4/3] 259.2x194.4 bg #efe7db r 12px | = |
 | How | at rest | mouse hover |
-| Transform | - | matrix(1, 0, 0, 1, 7.93877, 0) |
+| Transform | - | matrix(1, 0, 0, 1, 8, 0) |
 
 Crops: `feed-row-default.png`, `feed-row-hover.png`.
 
@@ -977,9 +977,28 @@ Crops: `events-title-default.png`.
 
 Index row. A content row/card on the index (date, title, thumbnail).
 
-Page: events. Selector: `feed row`. States: .
+Page: events. Selector: `li.rd-ev-item`. States: default, hover.
 
-Not found on the page at capture time.
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 1114.72 x 383.22 | = |
+| Padding | 36px 0px | = |
+| Gap | 34.56px | = |
+| Border | T: none; R: none; B: 1px solid #06070a @ 0.1; L: none | = |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | Work Sans 16px/24px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #06070a | = |
+| Text node | span.rd-ev-tag.rd-ev-tag-office-hours: Work Sans 10.88px/16.32px 600, #06070a, ls 1.5232px | = |
+| Transition | none | = |
+| Icon | 12 x 12, colour #de4c00 | = |
+| Painted layers | li.rd-ev-item 1114.7x383.2 border B:1px solid #06070a @ 0.1; a.rd-ev-art.rd-ev-art-link 240.0x240.0 bg #f5f4f1 r 12px; span.rd-ev-tag.rd-ev-tag-office-hours 118.9x24.3 bg #fbf3ec r 999px shadow #271503 @ 0.08 0px 0px 0px 1px inset; a.rd-ev-watch 186.7x38.0 bg #fbf3ec r 999px shadow #271503 @ 0.1 0px 0px 0px 1px inset; span.rd-ev-watch-ico 30.0x30.0 bg #de4c00 @ 0.12 r 50% | = |
+| How | at rest | mouse hover |
+
+Crops: `events-row-default.png`, `events-row-hover.png`.
 
 #### events-row-title
 
@@ -1003,14 +1022,6 @@ Page: events. Selector: `row title`. States: default.
 | How | at rest |
 
 Crops: `events-row-title-default.png`.
-
-#### event-row
-
-Event row. An office-hours/event row with its date.
-
-Page: events. Selector: `event row`. States: .
-
-Not found on the page at capture time.
 
 #### media-title
 
@@ -1040,9 +1051,29 @@ Crops: `media-title-default.png`.
 
 Index row. A content row/card on the index (date, title, thumbnail).
 
-Page: media. Selector: `feed row`. States: .
+Page: media. Selector: `a.rd-media-link`. States: default, hover.
 
-Not found on the page at capture time.
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 885.45 x 500.53 | = |
+| Padding | 0px | = |
+| Gap | 43.2px | = |
+| Border | none | = |
+| Radius | 0px | = |
+| Background | transparent | = |
+| Box shadow | none | = |
+| Outline | none | = |
+| Font | Work Sans 16px/24px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #06070a | = |
+| Text node | span.inline-block.self-start: Work Sans 11.2px/16.8px 600, #06070a, ls 1.344px | = |
+| Transition | none | = |
+| Cursor | pointer | = |
+| Icon | 13 x 13, colour #fffefb | = |
+| Painted layers | span.inline-block.self-start 93.0x24.8 bg #fbf3ec r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #271503 @ 0.08 0px 0px 0px 1px inset; span.rd-media-go 218.3x46.0 bg #06070a r 999px; span.rd-media-go-ico 36.0x36.0 bg #ffffff @ 0.16 r 50% | span.inline-block.self-start 93.0x24.8 bg #fbf3ec r 9999px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #271503 @ 0.08 0px 0px 0px 1px inset; span.rd-media-go 218.3x46.0 bg #de4c00 r 999px; span.rd-media-go-ico 36.0x36.0 bg #ffffff @ 0.16 r 50% |
+| How | at rest | mouse hover |
+
+Crops: `media-row-default.png`, `media-row-hover.png`.
 
 #### media-row-title
 
@@ -1067,6 +1098,55 @@ Page: media. Selector: `row title`. States: default.
 | How | at rest |
 
 Crops: `media-row-title-default.png`.
+
+#### ev-tag
+
+Event kind tag. The "OFFICE HOURS" caps tag on an event card.
+
+Page: events. Selector: `event tag`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 118.91 x 24.31 |
+| Padding | 4px 10px |
+| Border | none |
+| Radius | 999px |
+| Background | #fbf3ec |
+| Box shadow | #271503 @ 0.08 0px 0px 0px 1px inset |
+| Outline | none |
+| Font | Work Sans 10.88px/16.32px 600 |
+| Letter spacing | 1.5232px |
+| Colour | #06070a |
+| Transition | none |
+| Painted layers | span.rd-ev-tag.rd-ev-tag-office-hours 118.9x24.3 bg #fbf3ec r 999px shadow #271503 @ 0.08 0px 0px 0px 1px inset |
+| How | at rest |
+
+Crops: `ev-tag-default.png`.
+
+#### media-show
+
+Media show-more button. A "show" toggle on a media row. Measured, not pressed.
+
+Page: media. Selector: `button.rd-media-show`. States: default, hover, focus-visible, pressed.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 127.22 x 39.05 | = | = | = |
+| Padding | 12px 22px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 999px | = | = | = |
+| Background | transparent | #fbf3ec | = | #fbf3ec |
+| Box shadow | #271503 @ 0.3 0px 0px 0px 1px inset | = | = | = |
+| Outline | none | = | 2px solid #de4c00 offset 4px | = |
+| Font | Work Sans 15.04px/15.04px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #06070a | = | = | = |
+| Transition | background 0.3s ease | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | button.rd-media-show.[html:not(.js)_&]:hidden 127.2x39.0 r 999px shadow #271503 @ 0.3 0px 0px 0px 1px inset | button.rd-media-show.[html:not(.js)_&]:hidden 127.2x39.0 bg #fbf3ec r 999px shadow #271503 @ 0.3 0px 0px 0px 1px inset | button.rd-media-show.[html:not(.js)_&]:hidden 127.2x39.0 r 999px shadow #271503 @ 0.3 0px 0px 0px 1px inset outline 2px solid #de4c00 offset 4px | button.rd-media-show.[html:not(.js)_&]:hidden 127.2x39.0 bg #fbf3ec r 999px shadow #271503 @ 0.3 0px 0px 0px 1px inset |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+
+Crops: `media-show-default.png`, `media-show-hover.png`, `media-show-focus-visible.png`, `media-show-pressed.png`.
 
 ### Newsletter signup (resting only)
 
@@ -1200,6 +1280,59 @@ Page: aboard-sign. Selector: `form.rd-nl-form.is-card`. States: default.
 
 Crops: `nl-form-card-default.png`.
 
+#### ev-field
+
+Events email field. The email field of the events signup row; clicked into, nothing typed.
+
+Page: events. Selector: `events input[type=email]`. States: default, focused.
+
+| Property | default | focused |
+|---|---|---|
+| Size (w x h) | 796.48 x 50 | = |
+| Padding | 0px 18px | = |
+| Border | 1px solid #06070a @ 0.1 | 1px solid #de4c00 |
+| Radius | 999px | = |
+| Background | #fffefb | = |
+| Box shadow | none | #de4c00 @ 0.16 0px 0px 0px 3px |
+| Outline | none | = |
+| Font | Work Sans 16px/16px 400 | = |
+| Letter spacing | normal | = |
+| Colour | #06070a | = |
+| Transition | border-color, box-shadow 0.3s, 0.3s ease, ease delay 0s, 0s | = |
+| Cursor | text | = |
+| Placeholder | #6f6a63, opacity 1 | = |
+| Painted layers | input 796.5x50.0 bg #fffefb border T:1px solid #06070a @ 0.1 / R:1px solid #06070a @ 0.1 / B:1px solid #06070a @ 0.1 / L:1px solid #06070a @ 0.1 r 999px | input 796.5x50.0 bg #fffefb border T:1px solid #de4c00 / R:1px solid #de4c00 / B:1px solid #de4c00 / L:1px solid #de4c00 r 999px shadow #de4c00 @ 0.16 0px 0px 0px 3px |
+| How | at rest | clicked into the field |
+
+Crops: `ev-field-default.png`, `ev-field-focused.png`.
+
+#### ev-submit
+
+Events submit button. The events signup submit. Measured in every state, never pressed.
+
+Page: events. Selector: `button.rd-ev-submit`. States: default, hover, focus-visible, pressed.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 133.77 x 50 | = | = | = |
+| Padding | 5px 5px 5px 22px | = | = | = |
+| Gap | 12px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 999px | = | = | = |
+| Background | #06070a | #de4c00 | = | #de4c00 |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 2px solid #de4c00 offset 4px | = |
+| Font | Work Sans 15.04px/15.04px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #fffefb | = | = | = |
+| Transition | background 0.35s ease | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 14 x 14, colour #fffefb | = | = | = |
+| Painted layers | button.rd-ev-submit 133.8x50.0 bg #06070a r 999px; span.rd-ev-submit-ico 40.0x40.0 bg #ffffff @ 0.16 r 50% | button.rd-ev-submit 133.8x50.0 bg #de4c00 r 999px; span.rd-ev-submit-ico 40.0x40.0 bg #ffffff @ 0.16 r 50% | button.rd-ev-submit 133.8x50.0 bg #06070a r 999px outline 2px solid #de4c00 offset 4px; span.rd-ev-submit-ico 40.0x40.0 bg #ffffff @ 0.16 r 50% | button.rd-ev-submit 133.8x50.0 bg #de4c00 r 999px; span.rd-ev-submit-ico 40.0x40.0 bg #ffffff @ 0.16 r 50% |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+
+Crops: `ev-submit-default.png`, `ev-submit-hover.png`, `ev-submit-focus-visible.png`, `ev-submit-pressed.png`.
+
 ### Podcast
 
 #### pod-title
@@ -1254,14 +1387,14 @@ Crops: `pod-ep-title-default.png`, `pod-ep-title-hover.png`.
 
 Episode row. An episode row in the index.
 
-Page: podcast. Selector: `episode row`. States: default, hover.
+Page: podcast. Selector: `li.rd-pd-ep`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 1084.91 x 112.08 | = |
-| Padding | 0px | = |
-| Gap | 8px | = |
-| Border | none | = |
+| Size (w x h) | 1344 x 197 | = |
+| Padding | 26px 0px | = |
+| Gap | 34.56px | = |
+| Border | T: none; R: none; B: 1px solid #e9decd @ 0.16; L: none | = |
 | Radius | 0px | = |
 | Background | transparent | = |
 | Box shadow | none | = |
@@ -1270,8 +1403,9 @@ Page: podcast. Selector: `episode row`. States: default, hover.
 | Letter spacing | normal | = |
 | Colour | #eadfcf | = |
 | Text node | h3.rd-pd-ep-title: Tobias 28.8px/32.256px 300, #fbf3ec, ls -0.288px | h3.rd-pd-ep-title: Tobias 28.8px/32.256px 300, #e67940, ls -0.288px |
-| Transition | none | = |
-| Cursor | pointer | = |
+| Transition | opacity, transform 1s, 1.2s cubic-bezier(0.65, 0, 0.35, 1), cubic-bezier(0.16, 1, 0.3, 1) | = |
+| Icon | 15 x 15, colour #fbf3ec, fill #000000 | = |
+| Painted layers | li.rd-pd-ep 1344.0x197.0 border B:1px solid #e9decd @ 0.16; button.rd-pd-art 144.0x144.0 bg #0b2050 r 10px; button.rd-pd-ep-btn 46.0x46.0 border T:1px solid #e9decd @ 0.16 / R:1px solid #e9decd @ 0.16 / B:1px solid #e9decd @ 0.16 / L:1px solid #e9decd @ 0.16 r 50% | = |
 | How | at rest | mouse hover |
 
 Crops: `pod-ep-row-default.png`, `pod-ep-row-hover.png`.
@@ -1286,9 +1420,9 @@ Not found on the page at capture time.
 
 #### pod-play
 
-Player button. A dock-player transport button. Measured, never pressed (it would play).
+Player button. A player transport button. Measured, never pressed (it would play).
 
-Page: podcast. Selector: `dock player button`. States: default, hover.
+Page: podcast. Selector: `player button`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
@@ -1908,7 +2042,7 @@ Crops: `m-feed-row-default.png`.
 
 ## Transitions declared in the readable stylesheets
 
-aboard.com's WordPress theme stylesheets are same-origin readable and declare about 640 custom properties (the --wp--preset--* and --rd-* names; see css-vars.json). The values below are computed styles read off the running pages; the per-state Transition rows are computed values.
+aboard.com's WordPress theme stylesheets are same-origin readable and declare 245 custom properties, of which 124 resolve at :root (the --wp--preset--* and --rd-* names; see css-vars.json). The values below are computed styles read off the running pages; the per-state Transition rows are computed values.
 
 - aboard-sign: `background 0.3s, transform 0.3s`, `background .4s var(--rd-ease),transform .4s var(--rd-ease)`, `transform .6s var(--rd-ease)`, `background 0.35s, box-shadow 0.35s`, `color 0.3s, text-decoration-color 0.3s`, `color .4s var(--rd-ease)`, `color 0.3s`, `background 0.3s, color 0.3s, border-color 0.3s`, `opacity var(--rd-reveal-fade),transform var(--rd-reveal-move)`, `opacity 1.4s var(--rd-ease-io) .1s`, `transform 2s var(--rd-ease-out) .1s`, `none`
 

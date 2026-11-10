@@ -1,6 +1,6 @@
 # Aboard components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real site, the icon index and the Gaps. Captured from aboard.com on 2026-11-09, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was sent or submitted: the newsletter signup was measured at rest and focus only, and the cookie consent was never answered (it was hidden for the clean captures, which is not a consent).
+The discovery list of every page and view captured, then one entry per component with crops of the real site, the icon index and the Gaps. Captured from aboard.com on 2026-11-10, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was sent or submitted: the newsletter signup was measured at rest and focus only, and the cookie consent was never answered (it was hidden for the clean captures, which is not a consent).
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (84 components, 126 states). The page layouts at four widths are in [raw/layout.json](raw/layout.json).
 
@@ -141,9 +141,9 @@ The boxed "Get in Touch" button at the right of the nav; jumps to the contact se
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 157.31 x 42; padding 5px 5px 5px 18px; radius 999px; background #de4c00 `bright-citrus`; text Work Sans 14.72/23.55 400, #fffefb `off-white`; transition background 0.5s cubic-bezier(0.65, 0, 0.35, 1), color 0.5s cubic-bezier(0.65, 0, 0.35, 1); icon 13 x 13, #fffefb `off-white` |
-| hover | background #291503 `cta-hover` |
+| hover | background #271503 `warm-black` |
 | focus-visible | outline 2px solid #271503 `warm-black`, offset 2px |
-| pressed | background #2f1703 |
+| pressed | background #271503 `warm-black` |
 
 ![Get-in-touch CTA default](components/crops/nav-cta-default.png) ![Get-in-touch CTA hover](components/crops/nav-cta-hover.png) ![Get-in-touch CTA focus-visible](components/crops/nav-cta-focus-visible.png) ![Get-in-touch CTA pressed](components/crops/nav-cta-pressed.png)
 
@@ -157,7 +157,7 @@ No crop was saved for this entry (a whole page or a hidden element); the values 
 #### Footer
 The bright-citrus footer: "We Can Help" display heading, the newsletter-signup iframe, link columns, the legal row and the social links. Read as `footer` on the home page.
 
-**Values (default).** size 1440 x 1237.78; background #de4c00 `bright-citrus`; text Tobias 32/35.2 300, #fffefb `off-white`.
+**Values (default).** size 1440 x 1232.78; background #de4c00 `bright-citrus`; text Tobias 32/35.2 300, #fffefb `off-white`.
 
 ![Footer default](components/crops/footer-default.png)
 
@@ -223,7 +223,7 @@ A content row in the home feed: kind tag, title and date in a three-column grid 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 1328 x 242.39; padding 24px 0px; background transparent; text Work Sans 11.52/18.43 600, #271503 `warm-black`; transition transform 0.6s cubic-bezier(0.32, 0.72, 0, 1); icon 13 x 13, #de4c00 `bright-citrus` |
-| hover | transform translate(7.95329px, 0px) |
+| hover | transform translate(8px, 0px) |
 
 Child layers that carry the look: span 259.2x194.4 background #efe7db `thumb-warm` radius 12px.
 
@@ -241,7 +241,8 @@ A pagination tick of the home media carousel (cc-*); is-on marks the current one
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 35 x 20; padding 9px 0px; background transparent; text Work Sans 16/25.6 400, #fffefb `off-white` |
+| default (same: hover, pressed) | size 35 x 20; padding 9px 0px; background transparent; text Work Sans 16/25.6 400, #fffefb `off-white` |
+| focus-visible | painted layers: i: outline 2px solid #ffffff `white` offset 3px |
 
 Child layers that carry the look: i 35x2 background rgba(255, 254, 251, 0.3) `line-inverse` radius 2px; i::after 35pxx2px background #fffefb `off-white`.
 
@@ -339,7 +340,9 @@ The lead case-study card (the full-width SageSure feature). Read as `case-card-f
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 1328 x 703.02; padding 30px 0px 0px 0px; border T: 1px solid rgba(39, 21, 3, 0.114); background transparent; text Work Sans 11.52/12.67 400, #766757 `warm-grey` |
-| hover | border T: 1px solid rgba(39, 21, 3, 0.1) `line-warm` |
+| hover | border T: 1px solid rgba(39, 21, 3, 0.1) `line-warm`; painted layers: figure.rd-case-figure.relative: shadow rgba(0, 0, 0, 0.537) 0px 40px 80px -48px |
+
+Child layers that carry the look: figure 1328x569.1 background rgba(128, 128, 128, 0.12) radius 12px shadow transparent 0px 40px 80px -48px; div 1328x569.1 background #1a110a `case-dark`; div 1328x996 image linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08) 40%, rgba(0, 0, 0, 0.42)).
 
 ![Featured case card default](components/crops/case-card-feature-default.png) ![Featured case card hover](components/crops/case-card-feature-hover.png)
 
@@ -349,7 +352,9 @@ A case-study card in the grid: industry tag, title, client. Read as `case-card` 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 632.31 x 599.17; padding 30px 0px 0px 0px; border T: 1px solid rgba(39, 21, 3, 0.1) `line-warm`; background transparent; text Work Sans 11.52/12.67 400, #766757 `warm-grey`; icon 11.23 x 11.23, #2a2a33 |
-| hover | icon 12.15 x 12.15, #2a2a33 |
+| hover | icon 12.15 x 12.15, #2a2a33; painted layers: figure.rd-case-figure.relative: shadow rgba(0, 0, 0, 0.537) 0px 40px 80px -48px |
+
+Child layers that carry the look: figure 632.3x474.2 background rgba(128, 128, 128, 0.12) radius 12px shadow transparent 0px 40px 80px -48px; div 632.3x474.2 background #1a110a `case-dark`; div 711.3x474.2 image linear-gradient(rgba(0, 0, 0, 0.06), transparent 40%, rgba(20, 10, 40, 0.4)).
 
 ![Case card default](components/crops/case-card-default.png) ![Case card hover](components/crops/case-card-hover.png)
 
@@ -463,7 +468,7 @@ Read as `events-title` on the events page.
 
 **Values (default).** size 1000.08 x 73.44; background transparent; text Tobias 72/73.44 400, #06070a `ink`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Page title default](components/crops/events-title-default.png)
 
 #### Index row
 A content row/card on the index (date, title, thumbnail). Read as `events-row` on the events page.
@@ -472,48 +477,49 @@ A content row/card on the index (date, title, thumbnail). Read as `events-row` o
 |---|---|
 | default (same: hover) | size 1114.72 x 383.22; padding 36px 0px; border B: 1px solid rgba(6, 7, 10, 0.1) `line`; background transparent; text Work Sans 10.88/16.32 600, #06070a `ink`; icon 12 x 12, #de4c00 `bright-citrus` |
 
-Child layers that carry the look: li 1114.7x383.2 border 1px solid rgba(6, 7, 10, 0.1) `line`; a 240x240 background #f5f4f1 `thumb-cool` radius 12px; span 118.9x24.3 background #fbf3ec `cream` radius 999px shadow rgba(39, 21, 3, 0.08) 0px 0px 0px 1px inset.
+Child layers that carry the look: a 240x240 background #f5f4f1 `thumb-cool` radius 12px; span 118.9x24.3 background #fbf3ec `cream` radius 999px shadow rgba(39, 21, 3, 0.08) 0px 0px 0px 1px inset; a 186.7x38 background #fbf3ec `cream` radius 999px shadow rgba(39, 21, 3, 0.1) `line-warm` 0px 0px 0px 1px inset.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Index row default](components/crops/events-row-default.png) ![Index row hover](components/crops/events-row-hover.png)
 
 #### Row title
 Read as `events-row-title` on the events page.
 
 **Values (default).** size 543.22 x 39.67; background transparent; text Tobias 37.44/39.68 400, #06070a `ink`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Row title default](components/crops/events-row-title-default.png)
 
 #### Page title
 Read as `media-title` on the media page.
 
 **Values (default).** size 1000.08 x 73.44; background transparent; text Tobias 72/73.44 400, #06070a `ink`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Page title default](components/crops/media-title-default.png)
 
 #### Index row
 A content row/card on the index (date, title, thumbnail). Read as `media-row` on the media page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 885.45 x 500.53; background transparent; text Work Sans 11.2/16.8 600, #06070a `ink`; icon 13 x 13, #fffefb `off-white` |
+| default | size 885.45 x 500.53; background transparent; text Work Sans 11.2/16.8 600, #06070a `ink`; icon 13 x 13, #fffefb `off-white` |
+| hover | painted layers: span.rd-media-go: bg #de4c00 `bright-citrus` |
 
 Child layers that carry the look: span 93x24.8 background #fbf3ec `cream` radius 9999px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(39, 21, 3, 0.08) 0px 0px 0px 1px inset; span 218.3x46 background #06070a `ink` radius 999px; span 36x36 background rgba(255, 255, 255, 0.16) radius 50%.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Index row default](components/crops/media-row-default.png) ![Index row hover](components/crops/media-row-hover.png)
 
 #### Row title
 Read as `media-row-title` on the media page.
 
 **Values (default).** size 459.42 x 143.72; background transparent; text Tobias 46.08/47.92 400, #06070a `ink`; transition color 0.4s ease.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Row title default](components/crops/media-row-title-default.png)
 
 #### Event kind tag
 The "OFFICE HOURS" caps tag on an event card. Read as `ev-tag` on the events page.
 
 **Values (default).** size 118.91 x 24.31; padding 4px 10px; radius 999px; background #fbf3ec `cream`; shadow rgba(39, 21, 3, 0.08) 0px 0px 0px 1px inset; text Work Sans 10.88/16.32 600, #06070a `ink`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Event kind tag default](components/crops/ev-tag-default.png)
 
 #### Media show-more button
 A "show" toggle on a media row. Measured, not pressed. Read as `media-show` on the media page.
@@ -525,7 +531,7 @@ A "show" toggle on a media row. Measured, not pressed. Read as `media-show` on t
 | focus-visible | outline 2px solid #de4c00 `bright-citrus`, offset 4px |
 | pressed | background #fbf3ec `cream` |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Media show-more button default](components/crops/media-show-default.png) ![Media show-more button hover](components/crops/media-show-hover.png) ![Media show-more button focus-visible](components/crops/media-show-focus-visible.png) ![Media show-more button pressed](components/crops/media-show-pressed.png)
 
 ### Podcast
 
@@ -536,7 +542,7 @@ The latest-episode headline in cream on the dark podcast section. Read as `pod-t
 
 **Values (default).** size 770.8 x 76.44; background transparent; text Tobias 72/73.44 400, #fbf3ec `cream`.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Podcast title default](components/crops/pod-title-default.png)
 
 #### Episode title
 An episode row title ("Allison Fine: Making AI-Driven Change Less Scary"). Read as `pod-ep-title` on the podcast page.
@@ -545,7 +551,7 @@ An episode row title ("Allison Fine: Making AI-Driven Change Less Scary"). Read 
 |---|---|
 | default (same: hover) | size 1084.91 x 32.25; background transparent; text Tobias 28.8/32.25 300, #fbf3ec `cream`; transition color 0.3s ease |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Episode title default](components/crops/pod-ep-title-default.png) ![Episode title hover](components/crops/pod-ep-title-hover.png)
 
 #### Episode row
 An episode row in the index. Read as `pod-ep-row` on the podcast page.
@@ -555,9 +561,9 @@ An episode row in the index. Read as `pod-ep-row` on the podcast page.
 | default | size 1344 x 197; padding 26px 0px; border B: 1px solid rgba(233, 222, 205, 0.16); background transparent; text Tobias 28.8/32.25 300, #fbf3ec `cream`; transition opacity 1s cubic-bezier(0.65, 0, 0.35, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1); icon 15 x 15, #fbf3ec `cream` |
 | hover | text Tobias 28.8/32.25 300, #e67940 `orange-peel` |
 
-Child layers that carry the look: li 1344x197 border 1px solid rgba(233, 222, 205, 0.16); button 144x144 background #0b2050 `pod-navy` radius 10px; button 46x46 border 1px solid rgba(233, 222, 205, 0.16) radius 50%.
+Child layers that carry the look: button 144x144 background #0b2050 `pod-navy` radius 10px; button 46x46 border 1px solid rgba(233, 222, 205, 0.16) radius 50%.
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Episode row default](components/crops/pod-ep-row-default.png) ![Episode row hover](components/crops/pod-ep-row-hover.png)
 
 #### Player seek bar
 The range input of the podcast dock player. Measured at rest, never dragged. Read as `pod-seek` on the podcast page.
@@ -571,7 +577,7 @@ A player transport button. Measured, never pressed (it would play). Read as `pod
 |---|---|
 | default (same: hover) | size 340 x 340; radius 10px; background #0b2050 `pod-navy`; text Work Sans 16/24 400, #eadfcf |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Player button default](components/crops/pod-play-default.png) ![Player button hover](components/crops/pod-play-hover.png)
 
 #### Episode page title
 Read as `pe-title` on the podcast episode page.
@@ -684,7 +690,7 @@ The email field of the events signup row; clicked into, nothing typed. Read as `
 | default | size 796.48 x 50; padding 0px 18px; border 1px solid rgba(6, 7, 10, 0.1) `line`; radius 999px; background #fffefb `off-white`; text Work Sans 16/16 400, #06070a `ink`; transition border-color 0.3s ease, box-shadow 0.3s ease; placeholder #6f6a63 `muted` |
 | focused | border 1px solid #de4c00 `bright-citrus`; shadow rgba(222, 76, 0, 0.16) 0px 0px 0px 3px |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Events email field default](components/crops/ev-field-default.png) ![Events email field focused](components/crops/ev-field-focused.png)
 
 #### Events submit button
 The events signup submit. Measured in every state, never pressed. Read as `ev-submit` on the events page.
@@ -696,7 +702,7 @@ The events signup submit. Measured in every state, never pressed. Read as `ev-su
 | focus-visible | outline 2px solid #de4c00 `bright-citrus`, offset 4px |
 | pressed | background #de4c00 `bright-citrus` |
 
-No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
+![Events submit button default](components/crops/ev-submit-default.png) ![Events submit button hover](components/crops/ev-submit-hover.png) ![Events submit button focus-visible](components/crops/ev-submit-focus-visible.png) ![Events submit button pressed](components/crops/ev-submit-pressed.png)
 
 ### About, careers, security
 
@@ -909,7 +915,7 @@ Child layers that carry the look: span 120x120 background #efe7db `thumb-warm` r
 
 ### Themes
 
-Aboard shows one theme. The page paints warm off-white (`--wp--preset--color--parchment` / `--rd-parchment`) with dark forest-green and bright-citrus sections inside the same paint; there is no `prefers-color-scheme` variant and no theme attribute, so the token file ships a single `light` set. Roughly 640 custom properties resolve from the WordPress theme sheets (see [raw/css-vars.json](raw/css-vars.json)); the token file aliases the --wp--preset--* and --rd-* names where the site declares them.
+Aboard shows one theme. The page paints warm off-white (`--wp--preset--color--parchment` / `--rd-parchment`) with dark forest-green and bright-citrus sections inside the same paint; there is no `prefers-color-scheme` variant and no theme attribute, so the token file ships a single `light` set. 124 custom properties resolve from the WordPress theme sheets (245 declared; see [raw/css-vars.json](raw/css-vars.json)); the token file aliases the --wp--preset--* and --rd-* names where the site declares them.
 
 ### Fonts
 

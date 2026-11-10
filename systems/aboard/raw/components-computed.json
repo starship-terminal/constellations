@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "run": "2026-11-09T04:15:04.444Z",
+  "run": "2026-11-10T16:20:09.424Z",
   "product": "aboard.com",
   "sheets": {
    "home": [
@@ -10020,7 +10020,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T04:15:04.444Z",
+   "run": "2026-11-10T16:20:09.424Z",
    "url": "https://aboard.com/",
    "title": "Top navigation bar",
    "group": "Shell and navigation",
@@ -10032,7 +10032,7 @@
     "default": {
      "tag": "a",
      "classes": "aboard-logo rd-nav-logo",
-     "text": "Aboard — home",
+     "text": "Aboard \u2014 home",
      "rect": {
       "x": 76,
       "y": 35,
@@ -10122,7 +10122,7 @@
     "hover": {
      "tag": "a",
      "classes": "aboard-logo rd-nav-logo",
-     "text": "Aboard — home",
+     "text": "Aboard \u2014 home",
      "rect": {
       "x": 76,
       "y": 35,
@@ -10212,7 +10212,7 @@
     "focus-visible": {
      "tag": "a",
      "classes": "aboard-logo rd-nav-logo",
-     "text": "Aboard — home",
+     "text": "Aboard \u2014 home",
      "rect": {
       "x": 76,
       "y": 35,
@@ -10310,7 +10310,7 @@
     "pressed": {
      "tag": "a",
      "classes": "aboard-logo rd-nav-logo",
-     "text": "Aboard — home",
+     "text": "Aboard \u2014 home",
      "rect": {
       "x": 76,
       "y": 35,
@@ -10399,7 +10399,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T04:15:04.444Z",
+   "run": "2026-11-10T16:20:09.424Z",
    "url": "https://aboard.com/",
    "title": "Logo",
    "group": "Shell and navigation",
@@ -10767,7 +10767,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T04:15:04.444Z",
+   "run": "2026-11-10T16:20:09.424Z",
    "url": "https://aboard.com/",
    "title": "Nav link",
    "group": "Shell and navigation",
@@ -10930,7 +10930,7 @@
       "borderTopRightRadius": "999px",
       "borderBottomRightRadius": "999px",
       "borderBottomLeftRadius": "999px",
-      "backgroundColor": "rgb(41, 21, 3)",
+      "backgroundColor": "rgb(39, 21, 3)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -10964,7 +10964,7 @@
       {
        "node": "a.rd-nav-cta",
        "size": "157.3x42.0",
-       "bg": "rgb(41, 21, 3)",
+       "bg": "rgb(39, 21, 3)",
        "radius": "999px"
       },
       {
@@ -11139,7 +11139,7 @@
       "borderTopRightRadius": "999px",
       "borderBottomRightRadius": "999px",
       "borderBottomLeftRadius": "999px",
-      "backgroundColor": "rgb(47, 23, 3)",
+      "backgroundColor": "rgb(39, 21, 3)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -11173,7 +11173,7 @@
       {
        "node": "a.rd-nav-cta",
        "size": "157.3x42.0",
-       "bg": "rgb(47, 23, 3)",
+       "bg": "rgb(39, 21, 3)",
        "radius": "999px"
       },
       {
@@ -11195,7 +11195,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T04:15:04.444Z",
+   "run": "2026-11-10T16:20:09.424Z",
    "url": "https://aboard.com/",
    "title": "Get-in-touch CTA",
    "group": "Shell and navigation",
@@ -11303,7 +11303,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T04:15:04.444Z",
+   "run": "2026-11-10T16:20:09.424Z",
    "url": "https://aboard.com/",
    "title": "Skip link",
    "group": "Shell and navigation",
@@ -11315,19 +11315,19 @@
     "default": {
      "tag": "footer",
      "classes": "rd rd-focus-on-orange w-full bg-bright-citrus",
-     "text": "We Can Help © Aboard 2026. All rights reserved Aboard How We Work Case Studies F",
+     "text": "We Can Help \u00a9 Aboard 2026. All rights reserved Aboard How We Work Case Studies F",
      "rect": {
       "x": 0,
       "y": -126.7,
       "w": 1440,
-      "h": 1237.78
+      "h": 1232.78
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
       "width": "1440px",
-      "height": "1237.78px",
+      "height": "1232.78px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -11390,17 +11390,17 @@
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
-      "top": "-878px"
+      "top": "-873px"
      },
      "paint": [
       {
        "node": "footer.rd.rd-focus-on-orange",
-       "size": "1440.0x1237.8",
+       "size": "1440.0x1232.8",
        "bg": "rgb(222, 76, 0)"
       },
       {
        "node": "div.block-contact-form.bg-bright-citrus",
-       "size": "1120.0x442.2",
+       "size": "1120.0x437.2",
        "bg": "rgb(222, 76, 0)"
       },
       {
@@ -11446,7 +11446,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T04:15:04.444Z",
+   "run": "2026-11-10T16:20:09.424Z",
    "url": "https://aboard.com/",
    "title": "Footer",
    "group": "Shell and navigation",
@@ -11540,11 +11540,11 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T04:15:04.444Z",
+   "run": "2026-11-10T16:20:09.424Z",
    "url": "https://aboard.com/",
    "title": "Footer heading",
    "group": "Shell and navigation",
-   "desc": "\"We Can Help\" — the serif display heading of the citrus footer.",
+   "desc": "\"We Can Help\" \u2014 the serif display heading of the citrus footer.",
    "selector": "h2.text-rd-footer-h"
   },
   "footer-link": {
@@ -11891,7 +11891,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T04:15:04.444Z",
+   "run": "2026-11-10T16:20:09.424Z",
    "url": "https://aboard.com/",
    "title": "Footer link",
    "group": "Shell and navigation",
@@ -11902,7 +11902,7 @@
     "default": {
      "tag": "a",
      "classes": "text-off-white transition-[color] duration-200 ease-[ease]",
-     "text": "LinkedIn – New York",
+     "text": "LinkedIn \u2013 New York",
      "rect": {
       "x": 1130.5,
       "y": 481.1,
@@ -11985,7 +11985,7 @@
     "hover": {
      "tag": "a",
      "classes": "text-off-white transition-[color] duration-200 ease-[ease]",
-     "text": "LinkedIn – New York",
+     "text": "LinkedIn \u2013 New York",
      "rect": {
       "x": 1130.5,
       "y": 481.1,
@@ -12068,7 +12068,7 @@
     "focus-visible": {
      "tag": "a",
      "classes": "text-off-white transition-[color] duration-200 ease-[ease]",
-     "text": "LinkedIn – New York",
+     "text": "LinkedIn \u2013 New York",
      "rect": {
       "x": 1130.5,
       "y": 481.1,
@@ -12159,7 +12159,7 @@
     "pressed": {
      "tag": "a",
      "classes": "text-off-white transition-[color] duration-200 ease-[ease]",
-     "text": "LinkedIn – New York",
+     "text": "LinkedIn \u2013 New York",
      "rect": {
       "x": 1130.5,
       "y": 481.1,
@@ -12241,7 +12241,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T04:15:04.444Z",
+   "run": "2026-11-10T16:20:09.424Z",
    "url": "https://aboard.com/",
    "title": "Social link",
    "group": "Shell and navigation",
@@ -12347,11 +12347,11 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T04:15:04.444Z",
+   "run": "2026-11-10T16:20:09.424Z",
    "url": "https://aboard.com/",
    "title": "Hero title",
    "group": "Home",
-   "desc": "\"Your partner for the big AI leap\" — the display headline, per-word animated (rd-words).",
+   "desc": "\"Your partner for the big AI leap\" \u2014 the display headline, per-word animated (rd-words).",
    "selector": "h1.rd-words"
   },
   "eyebrow": {
@@ -12441,7 +12441,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T04:15:04.444Z",
+   "run": "2026-11-10T16:20:09.424Z",
    "url": "https://aboard.com/",
    "title": "Eyebrow label",
    "group": "Home",
@@ -12535,7 +12535,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T04:15:04.444Z",
+   "run": "2026-11-10T16:20:09.424Z",
    "url": "https://aboard.com/",
    "title": "Section title",
    "group": "Home",
@@ -12547,7 +12547,7 @@
     "default": {
      "tag": "a",
      "classes": "rd-feed-row grid grid-cols-[clamp(200px,18vw,260px)_minmax(0,1.15fr)_minmax(0,1fr)] items-center",
-     "text": "EVENT Office Hours: Can AI Help Nonprofits Fundraise? ↗ 12 NOV 2026 A conversati",
+     "text": "EVENT Office Hours: Can AI Help Nonprofits Fundraise? \u2197 12 NOV 2026 A conversati",
      "rect": {
       "x": 56,
       "y": 368.9,
@@ -12657,7 +12657,7 @@
     "hover": {
      "tag": "a",
      "classes": "rd-feed-row grid grid-cols-[clamp(200px,18vw,260px)_minmax(0,1.15fr)_minmax(0,1fr)] items-center",
-     "text": "EVENT Office Hours: Can AI Help Nonprofits Fundraise? ↗ 12 NOV 2026 A conversati",
+     "text": "EVENT Office Hours: Can AI Help Nonprofits Fundraise? \u2197 12 NOV 2026 A conversati",
      "rect": {
       "x": 64,
       "y": 368.9,
@@ -12729,7 +12729,7 @@
       "transitionDelay": "0s",
       "cursor": "pointer",
       "opacity": "1",
-      "transform": "matrix(1, 0, 0, 1, 7.95329, 0)",
+      "transform": "matrix(1, 0, 0, 1, 8, 0)",
       "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
@@ -12766,7 +12766,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T04:15:04.444Z",
+   "run": "2026-11-10T16:20:09.424Z",
    "url": "https://aboard.com/",
    "title": "Feed row",
    "group": "Home",
@@ -12867,7 +12867,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T04:15:04.444Z",
+   "run": "2026-11-10T16:20:09.424Z",
    "url": "https://aboard.com/",
    "title": "Feed row kind tag",
    "group": "Home",
@@ -13263,7 +13263,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T04:15:04.444Z",
+   "run": "2026-11-10T16:20:09.424Z",
    "url": "https://aboard.com/",
    "title": "Carousel tick",
    "group": "Home",
@@ -13454,7 +13454,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T04:15:04.444Z",
+   "run": "2026-11-10T16:20:09.424Z",
    "url": "https://aboard.com/",
    "title": "Carousel pause",
    "group": "Home",
@@ -13556,7 +13556,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T04:15:04.444Z",
+   "run": "2026-11-10T16:20:09.424Z",
    "url": "https://aboard.com/",
    "title": "Contact iframe",
    "group": "Home",
@@ -13581,7 +13581,7 @@
    "url": "https://aboard.com/",
    "title": "Accept-all button",
    "group": "Consent overlay",
-   "desc": "The \"Accept All\" button of the consent strip. Measured in every state — never pressed (it would post consent).",
+   "desc": "The \"Accept All\" button of the consent strip. Measured in every state \u2014 never pressed (it would post consent).",
    "selector": "button.cky-btn-accept",
    "missing": true
   },
@@ -13612,7 +13612,7 @@
     "default": {
      "tag": "h1",
      "classes": "rd-words col-start-1 col-end-10 text-rd-statement-hero",
-     "text": "Custom software shouldn’t feel like a leap of faith. It should feel like a plan.",
+     "text": "Custom software shouldn\u2019t feel like a leap of faith. It should feel like a plan.",
      "rect": {
       "x": 48,
       "y": 170.4,
@@ -13718,7 +13718,7 @@
    "url": "https://aboard.com/how-we-work/",
    "title": "Page title",
    "group": "How We Work",
-   "desc": "\"95% of AI software initiatives fail. Why do ours ship?\" — the interior display headline.",
+   "desc": "\"95% of AI software initiatives fail. Why do ours ship?\" \u2014 the interior display headline.",
    "selector": "h1"
   },
   "hww-card": {
@@ -13906,7 +13906,7 @@
    "url": "https://aboard.com/how-we-work/",
    "title": "Process step",
    "group": "How We Work",
-   "desc": "A step of the Landscape → Audit → Blueprint → Architecture → Migrate process row.",
+   "desc": "A step of the Landscape \u2192 Audit \u2192 Blueprint \u2192 Architecture \u2192 Migrate process row.",
    "selector": "h3 process step"
   },
   "hww-body": {
@@ -14479,7 +14479,7 @@
     "default": {
      "tag": "a",
      "classes": "rd-case group text-rd-ink",
-     "text": "HEALTH Unlocking the potential of hundreds of community health centers ↗ Cohen’s",
+     "text": "HEALTH Unlocking the potential of hundreds of community health centers \u2197 Cohen\u2019s",
      "rect": {
       "x": 56,
       "y": 190.4,
@@ -14626,7 +14626,7 @@
     "hover": {
      "tag": "a",
      "classes": "rd-case group text-rd-ink",
-     "text": "HEALTH Unlocking the potential of hundreds of community health centers ↗ Cohen’s",
+     "text": "HEALTH Unlocking the potential of hundreds of community health centers \u2197 Cohen\u2019s",
      "rect": {
       "x": 56,
       "y": 190.4,
@@ -14984,7 +14984,7 @@
     "default": {
      "tag": "p",
      "classes": "rd-rise max-w-[30em] text-[clamp(1.15rem,1.6vw,1.45rem)] leading-[1.4]",
-     "text": "No AI, no shortcuts — just detailed planning, documentation, and a platform buil",
+     "text": "No AI, no shortcuts \u2014 just detailed planning, documentation, and a platform buil",
      "rect": {
       "x": 395.9,
       "y": 345.2,
@@ -15269,7 +15269,7 @@
    "url": "https://aboard.com/foundry/",
    "title": "Page title",
    "group": "Foundry",
-   "desc": "\"Software we build for ourselves\" — the Foundry page title.",
+   "desc": "\"Software we build for ourselves\" \u2014 the Foundry page title.",
    "selector": "h1"
   },
   "foundry-card": {
@@ -15777,7 +15777,7 @@
     "default": {
      "tag": "a",
      "classes": "rd-feed-row grid grid-cols-[clamp(200px,18vw,260px)_minmax(0,1.15fr)_minmax(0,1fr)] items-center",
-     "text": "OFFICE HOURS Can AI Help Nonprofits Fundraise? ↗ 12 NOV 2026 A conversation with",
+     "text": "OFFICE HOURS Can AI Help Nonprofits Fundraise? \u2197 12 NOV 2026 A conversation with",
      "rect": {
       "x": 48,
       "y": 368.8,
@@ -15887,7 +15887,7 @@
     "hover": {
      "tag": "a",
      "classes": "rd-feed-row grid grid-cols-[clamp(200px,18vw,260px)_minmax(0,1.15fr)_minmax(0,1fr)] items-center",
-     "text": "OFFICE HOURS Can AI Help Nonprofits Fundraise? ↗ 12 NOV 2026 A conversation with",
+     "text": "OFFICE HOURS Can AI Help Nonprofits Fundraise? \u2197 12 NOV 2026 A conversation with",
      "rect": {
       "x": 55.9,
       "y": 368.8,
@@ -16008,7 +16008,7 @@
     "default": {
      "tag": "h3",
      "classes": "rd-feed-title text-rd-row [text-wrap:wrap] max-[600px]:text-[1.3rem]",
-     "text": "Can AI Help Nonprofits Fundraise? ↗",
+     "text": "Can AI Help Nonprofits Fundraise? \u2197",
      "rect": {
       "x": 350.4,
       "y": 473.9,
@@ -16206,7 +16206,7 @@
     "default": {
      "tag": "a",
      "classes": "rd-nl-row grid grid-cols-[minmax(0,2fr)_minmax(0,7fr)_minmax(0,3fr)] items-center",
-     "text": "28 OCT 2026 The Great Firmware Flowering It’s only a matter of time before we st",
+     "text": "28 OCT 2026 The Great Firmware Flowering It\u2019s only a matter of time before we st",
      "rect": {
       "x": 48,
       "y": 323.6,
@@ -16309,7 +16309,7 @@
     "hover": {
      "tag": "a",
      "classes": "rd-nl-row grid grid-cols-[minmax(0,2fr)_minmax(0,7fr)_minmax(0,3fr)] items-center",
-     "text": "28 OCT 2026 The Great Firmware Flowering It’s only a matter of time before we st",
+     "text": "28 OCT 2026 The Great Firmware Flowering It\u2019s only a matter of time before we st",
      "rect": {
       "x": 48,
       "y": 355.9,
@@ -16647,7 +16647,7 @@
    "url": "https://aboard.com/newsletter/",
    "title": "Newsletter form",
    "group": "Newsletter signup (resting only)",
-   "desc": "The \"Email address + Subscribe\" signup (dark variant on the newsletter page). Posts to /wp-json/aboard/v1/newsletter-signups — measured at rest, never submitted.",
+   "desc": "The \"Email address + Subscribe\" signup (dark variant on the newsletter page). Posts to /wp-json/aboard/v1/newsletter-signups \u2014 measured at rest, never submitted.",
    "selector": "form.rd-nl-form"
   },
   "nl-field": {
@@ -17281,7 +17281,7 @@
    "url": "https://aboard.com/newsletter/",
    "title": "Subscribe button",
    "group": "Newsletter signup (resting only)",
-   "desc": "The Subscribe submit. Measured in every state — never pressed.",
+   "desc": "The Subscribe submit. Measured in every state \u2014 never pressed.",
    "selector": "newsletter submit"
   },
   "nl-latest-title": {
@@ -17375,7 +17375,7 @@
    "url": "https://aboard.com/newsletter/",
    "title": "Latest issue title",
    "group": "Newsletter signup (resting only)",
-   "desc": "\"Meet Aboard Sign\" — the latest-issue headline.",
+   "desc": "\"Meet Aboard Sign\" \u2014 the latest-issue headline.",
    "selector": ".rd-nl-latest-title"
   },
   "pod-title": {
@@ -17472,8 +17472,8 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/pod-title-default.png"
     }
    },
    "page": "podcast",
@@ -17566,8 +17566,8 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/pod-ep-title-default.png"
     },
     "hover": {
      "tag": "h3",
@@ -17649,8 +17649,8 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/pod-ep-title-hover.png"
     }
    },
    "page": "podcast",
@@ -17781,8 +17781,8 @@
       "stroke": "none",
       "color": "rgb(251, 243, 236)"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/pod-ep-row-default.png"
     },
     "hover": {
      "tag": "li",
@@ -17902,8 +17902,8 @@
       "stroke": "none",
       "color": "rgb(251, 243, 236)"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/pod-ep-row-hover.png"
     }
    },
    "page": "podcast",
@@ -18024,8 +18024,8 @@
        "bg": "rgba(0, 4, 15, 0.42)"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/pod-play-default.png"
     },
     "hover": {
      "tag": "button",
@@ -18124,8 +18124,8 @@
        "bg": "rgba(0, 4, 15, 0.42)"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/pod-play-hover.png"
     }
    },
    "page": "podcast",
@@ -18428,8 +18428,8 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/events-title-default.png"
     }
    },
    "page": "events",
@@ -18573,8 +18573,8 @@
       "stroke": "rgb(222, 76, 0)",
       "color": "rgb(222, 76, 0)"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/events-row-default.png"
     },
     "hover": {
      "tag": "li",
@@ -18708,8 +18708,8 @@
       "stroke": "rgb(222, 76, 0)",
       "color": "rgb(222, 76, 0)"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/events-row-hover.png"
     }
    },
    "page": "events",
@@ -18802,8 +18802,8 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/events-row-title-default.png"
     }
    },
    "page": "events",
@@ -18907,8 +18907,8 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/media-title-default.png"
     }
    },
    "page": "media",
@@ -19040,8 +19040,8 @@
       "stroke": "rgb(255, 254, 251)",
       "color": "rgb(255, 254, 251)"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/media-row-default.png"
     },
     "hover": {
      "tag": "a",
@@ -19163,8 +19163,8 @@
       "stroke": "rgb(255, 254, 251)",
       "color": "rgb(255, 254, 251)"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/media-row-hover.png"
     }
    },
    "page": "media",
@@ -19257,8 +19257,8 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/media-row-title-default.png"
     }
    },
    "page": "media",
@@ -19701,7 +19701,7 @@
     "default": {
      "tag": "h2",
      "classes": "mb-[clamp(10px,1.4vw,18px)] text-rd-h2-sm",
-     "text": "What Aboard is—and isn’t",
+     "text": "What Aboard is\u2014and isn\u2019t",
      "rect": {
       "x": 506.5,
       "y": 465.9,
@@ -20036,7 +20036,7 @@
     "open": {
      "tag": "div",
      "classes": "accordion-content faq-panel",
-     "text": "Aboard is a team of software experts—and an AI consultancy and software delivery",
+     "text": "Aboard is a team of software experts\u2014and an AI consultancy and software delivery",
      "rect": {
       "x": 506.5,
       "y": 297.8,
@@ -20115,7 +20115,7 @@
      },
      "textStyle": {
       "node": "p",
-      "text": "Aboard is a team of software experts—and",
+      "text": "Aboard is a team of software experts\u2014and",
       "fontFamily": "\"Work Sans\", system-ui, sans-serif",
       "fontSize": "16px",
       "lineHeight": "26.4px",
@@ -20269,7 +20269,7 @@
     "default": {
      "tag": "h1",
      "classes": "rd-words col-start-1 col-end-10 text-rd-title",
-     "text": "We’re looking for people who are passionate about tackling challenges at the for",
+     "text": "We\u2019re looking for people who are passionate about tackling challenges at the for",
      "rect": {
       "x": 48,
       "y": 170.4,
@@ -20348,7 +20348,7 @@
      },
      "textStyle": {
       "node": "span",
-      "text": "We’re",
+      "text": "We\u2019re",
       "fontFamily": "Tobias, Georgia, serif",
       "fontSize": "72px",
       "lineHeight": "73.44px",
@@ -20374,7 +20374,7 @@
     "default": {
      "tag": "p",
      "classes": "text-rd-lead",
-     "text": "We’re hiring in New York, Beirut, and for remote roles.",
+     "text": "We\u2019re hiring in New York, Beirut, and for remote roles.",
      "rect": {
       "x": 1079.8,
       "y": 345.7,
@@ -20940,7 +20940,7 @@
    "url": "https://aboard.com/meet-aboard-sign/",
    "title": "Article title",
    "group": "Article page",
-   "desc": "\"Meet Aboard Sign…\" — a long-form piece in the article layout.",
+   "desc": "\"Meet Aboard Sign\u2026\" \u2014 a long-form piece in the article layout.",
    "selector": "h1"
   },
   "art-body": {
@@ -21187,7 +21187,7 @@
     "default": {
      "tag": "a",
      "classes": "rd-nl-card flex flex-col gap-3",
-     "text": "28 OCT 2026 The Great Firmware Flowering It’s only a matter of time before we st",
+     "text": "28 OCT 2026 The Great Firmware Flowering It\u2019s only a matter of time before we st",
      "rect": {
       "x": 48,
       "y": 244.8,
@@ -21290,7 +21290,7 @@
     "hover": {
      "tag": "a",
      "classes": "rd-nl-card flex flex-col gap-3",
-     "text": "28 OCT 2026 The Great Firmware Flowering It’s only a matter of time before we st",
+     "text": "28 OCT 2026 The Great Firmware Flowering It\u2019s only a matter of time before we st",
      "rect": {
       "x": 48,
       "y": 279.1,
@@ -22469,7 +22469,7 @@
     "default": {
      "tag": "a",
      "classes": "rd-feed-row grid grid-cols-[clamp(200px,18vw,260px)_minmax(0,1.15fr)_minmax(0,1fr)] items-center",
-     "text": "EVENT Office Hours: Can AI Help Nonprofits Fundraise? ↗ 12 NOV 2026 A conversati",
+     "text": "EVENT Office Hours: Can AI Help Nonprofits Fundraise? \u2197 12 NOV 2026 A conversati",
      "rect": {
       "x": 20,
       "y": 345.8,
@@ -22675,8 +22675,8 @@
        "radius": "999px"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/ev-tag-default.png"
     }
    },
    "page": "events",
@@ -22783,8 +22783,8 @@
       "opacity": "1",
       "fontSize": "16px"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/ev-field-default.png"
     },
     "focused": {
      "tag": "input",
@@ -22881,8 +22881,8 @@
       "opacity": "1",
       "fontSize": "16px"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "clicked into the field"
+     "via": "clicked into the field",
+     "crop": "components/crops/ev-field-focused.png"
     }
    },
    "page": "events",
@@ -22996,8 +22996,8 @@
       "stroke": "rgb(255, 254, 251)",
       "color": "rgb(255, 254, 251)"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/ev-submit-default.png"
     },
     "hover": {
      "tag": "button",
@@ -23100,8 +23100,8 @@
       "stroke": "rgb(255, 254, 251)",
       "color": "rgb(255, 254, 251)"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/ev-submit-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -23205,8 +23205,8 @@
       "stroke": "rgb(255, 254, 251)",
       "color": "rgb(255, 254, 251)"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/ev-submit-focus-visible.png"
     },
     "pressed": {
      "tag": "button",
@@ -23309,8 +23309,8 @@
       "stroke": "rgb(255, 254, 251)",
       "color": "rgb(255, 254, 251)"
      },
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/ev-submit-pressed.png"
     }
    },
    "page": "events",
@@ -23411,8 +23411,8 @@
        "radius": "999px"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "at rest"
+     "via": "at rest",
+     "crop": "components/crops/media-show-default.png"
     },
     "hover": {
      "tag": "button",
@@ -23503,8 +23503,8 @@
        "radius": "999px"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "mouse hover"
+     "via": "mouse hover",
+     "crop": "components/crops/media-show-hover.png"
     },
     "focus-visible": {
      "tag": "button",
@@ -23595,8 +23595,8 @@
        "radius": "999px"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "Shift+Tab, Tab"
+     "via": "Shift+Tab, Tab",
+     "crop": "components/crops/media-show-focus-visible.png"
     },
     "pressed": {
      "tag": "button",
@@ -23687,8 +23687,8 @@
        "radius": "999px"
       }
      ],
-     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
-     "via": "CDP forcePseudoState :active:hover"
+     "via": "CDP forcePseudoState :active:hover",
+     "crop": "components/crops/media-show-pressed.png"
     }
    },
    "page": "media",

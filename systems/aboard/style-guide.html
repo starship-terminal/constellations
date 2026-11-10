@@ -226,7 +226,7 @@ table.t td.src { color: var(--text); opacity: .55; font-size: 12px; }
 .boxes { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; }
 .boxes .bx { width: 84px; height: 84px; border: 1px solid var(--text); background: var(--surface-warm); display: flex; align-items: flex-end; justify-content: center; padding: 6px; font-size: 11px; color: var(--text); text-align: center; }
 .motion-rows { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
-.track { position: relative; height: 32px; background: var(--surface-warm); overflow: hidden; cursor: pointer; }
+.track { position: relative; width: 100%; height: 32px; background: var(--surface-warm); overflow: hidden; cursor: pointer; }
 .track .dot { position: absolute; top: 4px; left: 4px; width: 24px; height: 24px; background: var(--accent); }
 .track.go .dot { left: calc(100% - 28px); }
 
@@ -250,6 +250,7 @@ table.t td.src { color: var(--text); opacity: .55; font-size: 12px; }
 .rd-nav a:hover { background: var(--component-nav-hover-bg); }
 .rd-nav .sp { flex: 1; }
 .rd-nav a:focus-visible { outline: 2px solid var(--focus-ink); outline-offset: 2px; }
+@media (max-width: 767px) { .rd-nav { height: auto; flex-wrap: wrap; row-gap: 4px; padding: 10px 12px; gap: 4px; } .rd-nav .lg { width: 100%; margin-bottom: 4px; } }
 
 /* pill buttons: the site's one button shape */
 .btn { display: inline-flex; align-items: center; justify-content: center; border: 0; cursor: pointer; white-space: nowrap; font: 500 var(--font-size-small)/1 var(--sg-sans); padding: var(--layout-button-pad-y) var(--layout-button-pad-x); border-radius: var(--radius-pill); }
@@ -303,7 +304,8 @@ table.t td.src { color: var(--text); opacity: .55; font-size: 12px; }
 .foot .nl { display: flex; gap: 8px; margin-top: 8px; }
 .foot .nl .field-dark { width: 220px; height: 44px; }
 .foot .nl .btn { height: 44px; }
-@media (max-width: 767px) { .foot { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 767px) { .foot { grid-template-columns: 1fr 1fr; } .foot .nl { flex-wrap: wrap; } .foot .nl .field-dark { width: 100%; min-width: 0; } }
+@media (max-width: 479px) { .foot { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -341,6 +343,8 @@ table.t td.src { color: var(--text); opacity: .55; font-size: 12px; }
 <h2 class="sh">Space, radius &amp; structure</h2>
 <p class="lead">Every button, field and chip is a full pill (999px radius); media cards and thumbnails carry a small 10-12px radius; text blocks stay square. The WordPress spacing scale runs 4&ndash;96px; the fixed header is 78px (80px declared); pill buttons pad 18-22px on the label side.</p>
 <div class="bars" id="spacebars"></div>
+<h4 class="lbl">Layout dimensions</h4>
+<div class="bars" id="layoutbars"></div>
 <h4 class="lbl">Radius</h4>
 <div class="boxes"><div class="bx" style="border-radius:var(--radius-pill)">radius-pill 999px</div><div class="bx" style="border-radius:var(--radius-media)">radius-media 10px</div><div class="bx" style="border-radius:var(--radius-card)">radius-card 12px</div><div class="bx" style="border-radius:var(--radius-none)">radius-none 0px</div></div>
 </section>
@@ -511,13 +515,20 @@ for (const [n, t] of [...leaves(TOK.core?.font?.size)]) {
   typerows.appendChild(row);
 }
 
-/* space bars */
+/* space bars: the 4-96px spacing scale, then the layout dimensions separately */
 const bars = $('#spacebars');
+for (const [n, t] of [...leaves(TOK.core?.spacing)]) {
+  const px = parseFloat(resolve(t.v, 'core'));
+  const b = document.createElement('div'); b.className = 'b';
+  b.innerHTML = `<span>spacing.${n} &middot; ${resolve(t.v,'core')}</span><i style="width:${Math.min(px, 96) * 4}px"></i>`;
+  bars.appendChild(b);
+}
+const lbars = $('#layoutbars');
 for (const [n, t] of [...leaves(TOK.core?.layout)]) {
   const px = parseFloat(resolve(t.v, 'core'));
   const b = document.createElement('div'); b.className = 'b';
   b.innerHTML = `<span>layout.${n} &middot; ${resolve(t.v,'core')}</span><i style="width:${Math.min(px, 600) / 6}px"></i>`;
-  bars.appendChild(b);
+  lbars.appendChild(b);
 }
 
 /* token index table */
