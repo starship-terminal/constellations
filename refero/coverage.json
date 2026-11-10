@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 68,
-    "system_domains": 60,
-    "matched_domains": 36,
-    "missing_domains": 397,
+    "system_packages": 69,
+    "system_domains": 61,
+    "matched_domains": 37,
+    "missing_domains": 396,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -343,6 +343,23 @@
         }
       ]
     },
+    "arcade.software": {
+      "catalog": [
+        {
+          "name": "Arcade Software",
+          "domain": "arcade.software",
+          "id": 745
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "arcade",
+          "name": "Arcade",
+          "url": "https://www.arcade.software",
+          "name_match": true
+        }
+      ]
+    },
     "attio.com": {
       "catalog": [
         {
@@ -360,19 +377,19 @@
         }
       ]
     },
-    "bloomberg.com": {
+    "ballparkhq.com": {
       "catalog": [
         {
-          "name": "Bloomberg",
-          "domain": "bloomberg.com",
-          "id": 231
+          "name": "Ballpark",
+          "domain": "ballparkhq.com",
+          "id": 563
         }
       ],
       "pkgs": [
         {
-          "slug": "bloomberg",
-          "name": "Bloomberg",
-          "url": "https://www.bloomberg.com",
+          "slug": "ballpark",
+          "name": "Ballpark",
+          "url": "https://ballparkhq.com",
           "name_match": true
         }
       ]
@@ -686,13 +703,6 @@
         "id": 46
       }
     ],
-    "arcade.software": [
-      {
-        "name": "Arcade Software",
-        "domain": "arcade.software",
-        "id": 745
-      }
-    ],
     "arket.com": [
       {
         "name": "ARKET",
@@ -749,13 +759,6 @@
         "id": 753
       }
     ],
-    "ballparkhq.com": [
-      {
-        "name": "Ballpark",
-        "domain": "ballparkhq.com",
-        "id": 563
-      }
-    ],
     "base44.com": [
       {
         "name": "Base44",
@@ -782,6 +785,13 @@
         "name": "Bio Sites",
         "domain": "biosites.com",
         "id": 765
+      }
+    ],
+    "bloomberg.com": [
+      {
+        "name": "Bloomberg",
+        "domain": "bloomberg.com",
+        "id": 231
       }
     ],
     "blueapron.com": [
