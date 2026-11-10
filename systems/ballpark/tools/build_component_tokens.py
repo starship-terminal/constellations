@@ -123,10 +123,21 @@ def st(comp, state):
 
 
 def stprop(comp, state, prop):
-    """prop may be `styleProp`, `textStyle.prop` or `::after.prop`: resolve the
-    dotted path inside the measured state (the anchors keep UA-default colour,
-    so painted text/border lives on the text child or a pseudo)."""
+    """prop may be `styleProp`, `textStyle.prop`, `::after.prop` or the special
+    `ringShadow`: resolve the dotted path inside the measured state (the
+    anchors keep UA-default colour, so painted text/border lives on the text
+    child or a pseudo). `ringShadow` returns the colour of the `0 0 0 Npx`
+    ring layer in the element's own boxShadow — the hairline many Framer
+    controls paint instead of a real border."""
     d = C[comp]["states"][state]
+    if prop == "ringShadow":
+        sh = d.get("style", {}).get("boxShadow", "") or ""
+        for layer in re.split(r",(?![^(]*\))", sh):
+            if re.search(r"0px 0px 0px\s+(?:0\.[5-9]|[1-9])[\d.]*px", layer):
+                m = re.search(r"rgba?\([^)]*\)|#[0-9a-fA-F]{3,8}", layer)
+                if m:
+                    return m.group(0)
+        return ""
     if "." in prop:
         head, tail = prop.split(".", 1)
         node = d.get(head)
@@ -207,7 +218,7 @@ for path, comp, state, prop, desc in [
     ("accentText", "nav-cta", "default", "textStyle.color", "Text painted on the black CTA (the anchor itself keeps the UA link colour)."),
     ("accentHover", "nav-cta", "hover", "backgroundColor", "The CTA fill on hover."),
     ("link", "footer-legal", "default", "color", "The muted legal/footer link colour."),
-    ("border", "nav-signin", "default", "::after.borderTopColor", "The bordered pill's hairline, painted on ::after."),
+    ("border", "nav-signin", "default", "ringShadow", "The bordered pill's hairline, painted as a 1px ring shadow on the anchor (its ::after draws no border)."),
     ("chip", "announcement-bar", "default", "backgroundColor", "The announcement strip's ground."),
     ("focus", "nav-cta", "focus-visible", "outlineColor", "The keyboard-focus ring where one is drawn."),
 ]:

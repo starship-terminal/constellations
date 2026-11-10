@@ -25,7 +25,7 @@ colors:
   accentText: "#f9fafb"
   accentHover: "#1f2937"
   link: "#4b5563"
-  border: "#e5e7eb"
+  border: "rgba(75, 85, 99, 0.2)"
   chip: "#f9fafb"
   focus: "#005fcc"
 components:

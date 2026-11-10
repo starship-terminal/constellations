@@ -259,7 +259,7 @@ Crops: `logo-default.png`.
 
 #### hero-title
 
-Hero title. "Research without the complexity" in the site's serif display (Source Serif 4).
+Hero title. "Research without the complexity" in the site's display face (Inter Display).
 
 Page: home. Selector: `h1`. States: default.
 
@@ -331,29 +331,29 @@ Crops: `section-title-default.png`.
 
 Feature card. A tall image card linking a feature page (live interviews, creative testing, …). Measured, never followed.
 
-Page: home. Selector: `a[href*="features/"]`. States: default, hover.
+Page: home. Selector: `a[href*="features/"]`. States: default, hover, focus-visible, pressed.
 
-| Property | default | hover |
-|---|---|---|
-| Size (w x h) | 366.67 x 600 | = |
-| Padding | 0px | = |
-| Gap | 0px | = |
-| Border | none | = |
-| Radius | 16px | = |
-| Background | #ffffff | = |
-| Box shadow | #000000 @ 0.04 0px 0.597144px 0.597144px -0.9375px, #000000 @ 0.04 0px 1.81088px 1.81088px -1.875px, #000000 @ 0.04 0px 4.78699px 4.78699px -2.8125px, #000000 @ 0.02 0px 15px 15px -3.75px, #4b5563 @ 0.1 0px 0px 0px 1px | = |
-| Outline | none | = |
-| Font | sans-serif 12px/normal 400 | = |
-| Letter spacing | normal | = |
-| Colour | #0000ee | = |
-| Text node | p.framer-text.framer-styles-preset-1v68qu7: Inter 12px/16px 700, #ffffff | = |
-| Transition | none | = |
-| Cursor | pointer | = |
-| Painted layers | a.framer-10f1fwn.framer-xutp51 366.7x600.0 bg #ffffff r 16px shadow #000000 @ 0.04 0px 0.597144px 0.597144px -0.9375px, #000000 @ 0.04 0px 1.81088px 1.81088px -1.875px, #000000 @ 0.04 0px 4.78699px 4.78699px -2.8125px, #000000 @ 0.02 0px 15px 15px -3.75px, #4b5563 @ 0.1 0px 0px 0px 1px; div.framer-Ht8Si.framer-9eiQp 53.0x24.0 bg #dc2626 r 100px; div::after.framer-Ht8Si.framer-9eiQp 53.0469pxx24px border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 100px; div.framer-x21wra 10.0x10.0 bg #ffffff r 100px shadow #ffffff 0px 0px 0px 1px; div::after.framer-x21wra 10pxx10px border T:2px solid #dc2626 / R:2px solid #dc2626 / B:2px solid #dc2626 / L:2px solid #dc2626 r 100px; div.framer-gbkgzl 100.0x108.0 bg #ffffff r 8px shadow #000000 @ 0.2 0px 3px 10px 0px, #000000 @ 0.1 0px 0px 0px 1px | = |
-| How | at rest | mouse hover |
-| Transform | - | matrix(1, 0, 0, 1, 0, -1) |
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 366.67 x 600 | = | = | = |
+| Padding | 0px | = | = | = |
+| Gap | 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 16px | = | = | = |
+| Background | #ffffff | = | = | = |
+| Box shadow | #000000 @ 0.04 0px 0.597144px 0.597144px -0.9375px, #000000 @ 0.04 0px 1.81088px 1.81088px -1.875px, #000000 @ 0.04 0px 4.78699px 4.78699px -2.8125px, #000000 @ 0.02 0px 15px 15px -3.75px, #4b5563 @ 0.1 0px 0px 0px 1px | = | = | = |
+| Outline | none | = | 1px auto #005fcc offset 1px | = |
+| Font | sans-serif 12px/normal 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #0000ee | = | = | #ff0000 |
+| Text node | p.framer-text.framer-styles-preset-1v68qu7: Inter 12px/16px 700, #ffffff | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | a.framer-10f1fwn.framer-xutp51 366.7x600.0 bg #ffffff r 16px shadow #000000 @ 0.04 0px 0.597144px 0.597144px -0.9375px, #000000 @ 0.04 0px 1.81088px 1.81088px -1.875px, #000000 @ 0.04 0px 4.78699px 4.78699px -2.8125px, #000000 @ 0.02 0px 15px 15px -3.75px, #4b5563 @ 0.1 0px 0px 0px 1px; div.framer-Ht8Si.framer-9eiQp 53.0x24.0 bg #dc2626 r 100px; div::after.framer-Ht8Si.framer-9eiQp 53.0469pxx24px border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 100px; div.framer-x21wra 10.0x10.0 bg #ffffff r 100px shadow #ffffff 0px 0px 0px 1px; div::after.framer-x21wra 10pxx10px border T:2px solid #dc2626 / R:2px solid #dc2626 / B:2px solid #dc2626 / L:2px solid #dc2626 r 100px; div.framer-gbkgzl 100.0x108.0 bg #ffffff r 8px shadow #000000 @ 0.2 0px 3px 10px 0px, #000000 @ 0.1 0px 0px 0px 1px | = | a.framer-10f1fwn.framer-xutp51 366.7x600.0 bg #ffffff r 16px shadow #000000 @ 0.04 0px 0.597144px 0.597144px -0.9375px, #000000 @ 0.04 0px 1.81088px 1.81088px -1.875px, #000000 @ 0.04 0px 4.78699px 4.78699px -2.8125px, #000000 @ 0.02 0px 15px 15px -3.75px, #4b5563 @ 0.1 0px 0px 0px 1px outline 1px auto #005fcc offset 1px; div.framer-Ht8Si.framer-9eiQp 53.0x24.0 bg #dc2626 r 100px; div::after.framer-Ht8Si.framer-9eiQp 53.0469pxx24px border T:1px solid #000000 @ 0.1 / R:1px solid #000000 @ 0.1 / B:1px solid #000000 @ 0.1 / L:1px solid #000000 @ 0.1 r 100px; div.framer-x21wra 10.0x10.0 bg #ffffff r 100px shadow #ffffff 0px 0px 0px 1px; div::after.framer-x21wra 10pxx10px border T:2px solid #dc2626 / R:2px solid #dc2626 / B:2px solid #dc2626 / L:2px solid #dc2626 r 100px; div.framer-gbkgzl 100.0x108.0 bg #ffffff r 8px shadow #000000 @ 0.2 0px 3px 10px 0px, #000000 @ 0.1 0px 0px 0px 1px | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Transform | - | matrix(1, 0, 0, 1, 0, -1) | = | = |
 
-Crops: `feature-card-default.png`, `feature-card-hover.png`.
+Crops: `feature-card-default.png`, `feature-card-hover.png`, `feature-card-focus-visible.png`, `feature-card-pressed.png`.
 
 #### cta-request
 
@@ -410,6 +410,72 @@ Page: home. Selector: `button:has-text("Scroll to page")`. States: default, hove
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `carousel-dot-default.png`, `carousel-dot-hover.png`, `carousel-dot-focus-visible.png`, `carousel-dot-pressed.png`.
+
+#### coach-widget
+
+Coach demo widget. The working "Ask Coach" demo box on the home page: the product's chat UI with an "Ask me anything…" field and a round submit.
+
+Page: home. Selector: `Coach box (marked in-page)`. States: default, hover.
+
+| Property | default | hover |
+|---|---|---|
+| Size (w x h) | 320 x 560 | = |
+| Padding | 0px | = |
+| Gap | 0px | = |
+| Border | none | = |
+| Radius | 16px | = |
+| Background | transparent | = |
+| Box shadow | #000000 @ 0.07 0px 0.602187px 0.602187px -1.25px, #000000 @ 0.06 0px 2.28853px 2.28853px -2.5px, #000000 @ 0.03 0px 10px 10px -3.75px, #000000 @ 0.2 0px 20px 40px -15px, #4b5563 @ 0.1 0px 0px 0px 1px, #000000 @ 0.03 0px 0px 0px 5px | = |
+| Outline | none | = |
+| Font | sans-serif 12px/normal 400 | = |
+| Letter spacing | normal | = |
+| Colour | #000000 | = |
+| Text node | p.framer-text.framer-styles-preset-121aysi: Inter 14px/20px 600, #111827, ls -0.14px | = |
+| Transition | none | = |
+| Icon | 30 x 24, colour #000000 | 10 x 10, colour #000000 |
+| Painted layers | div.framer-oxdq0j.hidden-f7oyih 320.0x560.0 r 16px shadow #000000 @ 0.07 0px 0.602187px 0.602187px -1.25px, #000000 @ 0.06 0px 2.28853px 2.28853px -2.5px, #000000 @ 0.03 0px 10px 10px -3.75px, #000000 @ 0.2 0px 20px 40px -15px, #4b5563 @ 0.1 0px 0px 0px 1px, #000000 @ 0.03 0px 0px 0px 5px; div.framer-Mw1Zu.framer-vTRZK 320.0x560.0 bg #f9fafb r 0px 12px 0px 0px; div.framer-tap5oe 320.0x50.0 bg #ffffff @ 0.85 shadow #4b5563 @ 0.1 0px 1px 0px 0px; div.framer-1jn6nqz 48.0x48.0 bg #fca5a5 r 100px; div.framer-5tv6xb 280.0x100.0 bg #ffffff r 6px shadow #ffffff 0px 0px 0px 0px, #9ca3af @ 0.25 0px 0px 0px 3px, #000000 @ 0.05 0px 1px 2px 0px; div::after.framer-5tv6xb 280pxx100px border T:1px solid #111827 / R:1px solid #111827 / B:1px solid #111827 / L:1px solid #111827 r 6px | div.framer-oxdq0j.hidden-f7oyih 320.0x560.0 r 16px shadow #000000 @ 0.07 0px 0.602187px 0.602187px -1.25px, #000000 @ 0.06 0px 2.28853px 2.28853px -2.5px, #000000 @ 0.03 0px 10px 10px -3.75px, #000000 @ 0.2 0px 20px 40px -15px, #4b5563 @ 0.1 0px 0px 0px 1px, #000000 @ 0.03 0px 0px 0px 5px; div.framer-Mw1Zu.framer-vTRZK 320.0x560.0 bg #f9fafb r 0px 12px 0px 0px; div.framer-tap5oe 320.0x50.0 bg #ffffff @ 0.85 shadow #4b5563 @ 0.1 0px 1px 0px 0px; div.framer-j5pe2e 228.0x81.0 bg #e5e7eb @ 0.5 r 12px; div.framer-5tv6xb 280.0x100.0 bg #ffffff r 6px shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px; div::after.framer-5tv6xb 280pxx100px border T:1px solid #4b5563 @ 0.2 / R:1px solid #4b5563 @ 0.2 / B:1px solid #4b5563 @ 0.2 / L:1px solid #4b5563 @ 0.2 r 6px |
+| Ancestor paint | 2 up div.framer-v8hx28 bg #ffffff shadow #000000 @ 0.07 0px 0.602187px 0.602187px -1.25px, #000000 @ 0.06 0px 2.28853px 2.28853px -2.5px, #000000 @ 0.03 0px 10px 10px -3.75px, #000000 @ 0.2 0px 20px 40px -15px, #4b5563 @ 0.1 0px 0px 0px 1px, #000000 @ 0.03 0px 0px 0px 5px | = |
+| How | at rest | mouse hover |
+
+Crops: `coach-widget-default.png`, `coach-widget-hover.png`.
+
+#### coach-field
+
+Coach ask field. The demo's ask field. The box paints a fake field (a Framer div, not an input or textarea), so the entry is recorded missing when the sweep finds no real input.
+
+Page: home. Selector: `input inside the Coach box`. States: .
+
+Not found on the page at capture time.
+
+#### coach-submit
+
+Coach send button. The round send button inside the demo. Measured, never pressed.
+
+Page: home. Selector: `button:has-text("Submit")`. States: default, hover, focus-visible, pressed.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 24 x 24 | = | = | = |
+| Padding | 0px | = | = | = |
+| Gap | 0px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 6px | = | = | = |
+| Background | #e5e7eb | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 1px auto #005fcc offset 0px | = |
+| Font | sans-serif 12px/normal 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #000000 | = | = | = |
+| Text node | p.framer-text.framer-styles-preset-18la29v: Inter 10px/14px 400, #111827 | = | = | = |
+| Transition | none | = | = | = |
+| Cursor | pointer | = | = | = |
+| Icon | 10 x 10, colour #000000 | = | = | = |
+| Painted layers | button.framer-oSb0X.framer-Ihna6 24.0x24.0 bg #e5e7eb r 6px | = | button.framer-oSb0X.framer-Ihna6 24.0x24.0 bg #e5e7eb r 6px outline 1px auto #005fcc offset 0px | = |
+| Ancestor paint | 2 up div.framer-5tv6xb bg #ffffff shadow #000000 @ 0 0px 0px 0px 0px, #000000 @ 0 0px 0px 0px 0px, #000000 @ 0.05 0px 1px 2px 0px | = | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Transform | - | matrix(1, 0, 0, 1, 0, -1) | = | = |
+
+Crops: `coach-submit-default.png`, `coach-submit-hover.png`, `coach-submit-focus-visible.png`, `coach-submit-pressed.png`.
 
 ### Pricing
 
@@ -474,13 +540,13 @@ Page: pricing. Selector: `card ancestor of a plan CTA (marked in-page)`. States:
 
 | Property | default |
 |---|---|
-| Size (w x h) | 768 x 714.39 |
-| Padding | 0px 0px 120px 0px |
+| Size (w x h) | 384 x 594.39 |
+| Padding | 0px |
 | Gap | 0px |
 | Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
+| Radius | 24px |
+| Background | #ffffff |
+| Box shadow | #000000 @ 0.01 0px 0.839802px 0.839802px -0.125px, #000000 @ 0.01 0px 1.99048px 1.99048px -0.25px, #000000 @ 0.01 0px 3.63084px 3.63084px -0.375px, #000000 @ 0.01 0px 6.03627px 6.03627px -0.5px, #000000 @ 0.02 0px 9.74808px 9.74808px -0.625px, #000000 @ 0.02 0px 15.9566px 15.9566px -0.75px, #000000 @ 0.03 0px 27.4762px 27.4762px -0.875px, #000000 @ 0.04 0px 50px 50px -1px, #4b5563 @ 0.2 0px 0px 0px 0.5px |
 | Outline | none |
 | Font | sans-serif 12px/normal 400 |
 | Letter spacing | normal |

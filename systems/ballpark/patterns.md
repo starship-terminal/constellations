@@ -47,8 +47,10 @@ flame ramp (`#fc4a2b` family) next to a plain sentence.
 Below the hero the home page runs a customer-stories carousel whose pagination
 is a row of "Scroll to page N" dots ([carousel-dot](components/crops/carousel-dot-default.png))
 and a working "Ask Coach" demo box — both mount only while their band is on
-screen, so they were hunted by a scroll sweep; the demo's field and send button
-were measured, never pressed. Feature sections use tall 367px image cards
+screen, so they were hunted by a scroll sweep; the 320px widget and its round
+24px send button were measured, never pressed, while the demo's ask field is
+a painted placeholder rather than a real input and is recorded missing.
+Feature sections use tall ~367 x 600px image cards
 linking the feature pages ([feature-card](components/crops/feature-card-default.png)),
 measured, never followed.
 
@@ -56,7 +58,7 @@ measured, never followed.
 
 /pricing opens with the same 96px/800 display headline
 ([pricing-title](components/crops/pricing-title-default.png)) and lays the
-plans out as 768px-tall cards with a layered natural shadow and a 24px radius
+plans out as 384 x 594px white cards with a layered natural shadow and a 24px radius
 ([plan-card](components/crops/plan-card-default.png)), each carrying the wide
 320px black plan CTA. See [pricing-light-full](screenshots/pricing-light-full.png).
 

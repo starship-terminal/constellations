@@ -9,6 +9,7 @@
 // Nothing is sent, downloaded or signed into: the only presses are local UI toggles — the Solutions
 // nav menu (opened by its own trigger) and the mobile menu. No consent overlay mounts on these routes.
 import fs from 'fs';
+import path from 'node:path';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
@@ -55,11 +56,40 @@ class Shooter {
         }
       }
     } catch (e) {
-      for (const [tmp] of staged) fs.existsSync(tmp) && fs.unlinkSync(tmp);
+      for (const [tmp] of staged) {
+        fs.existsSync(tmp) && fs.unlinkSync(tmp);
+        fs.existsSync(tmp + '.capture.json') && fs.unlinkSync(tmp + '.capture.json');
+      }
       throw e;
     }
-    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`) || n === `${this.prefix}-${name}.png`)) fs.unlinkSync(`${RAW}/${old}`);
-    for (const [tmp, final] of staged) fs.renameSync(tmp, final);
+    // Swap the staged files in first: a `.new.png` tile is not a stale tile,
+    // and the previous capture stays intact until its replacement is fully
+    // renamed. The .capture.json sidecar moves with its PNG and records the
+    // final screenshot name.
+    const keep = new Set();
+    for (const [tmp, final] of staged) {
+      fs.renameSync(tmp, final);
+      keep.add(path.basename(final));
+      const sideTmp = tmp + '.capture.json', sideFinal = final + '.capture.json';
+      if (fs.existsSync(sideTmp)) {
+        try {
+          const meta = JSON.parse(fs.readFileSync(sideTmp, 'utf8'));
+          meta.screenshot = path.basename(final);
+          fs.writeFileSync(sideTmp, JSON.stringify(meta, null, 2) + '\n');
+        } catch { /* keep the sidecar as written */ }
+        fs.renameSync(sideTmp, sideFinal);
+        keep.add(path.basename(sideFinal));
+      }
+    }
+    // Only now drop leftovers the new shot does not produce: higher part
+    // numbers of a previous taller capture (and their sidecars), or the old
+    // single-file shot.
+    const isStaged = (n) => n.endsWith('.new.png') || n.endsWith('.new.png.capture.json');
+    for (const old of fs.readdirSync(RAW).filter((n) =>
+      !isStaged(n) && !keep.has(n) &&
+      (n.startsWith(`${this.prefix}-${name}.part`) || n === `${this.prefix}-${name}.png` || n === `${this.prefix}-${name}.png.capture.json`))) {
+      fs.unlinkSync(`${RAW}/${old}`);
+    }
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
   }

@@ -3,104 +3,99 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Amie style guide</title>
-<meta name="description" content="Amie (amie.so) design tokens and the public site's components, rendered from tokens.json with the measured values.">
+<title>Ballpark style guide</title>
+<meta name="description" content="Ballpark (ballparkhq.com) design tokens and the public site's components, rendered from tokens.json with the measured values.">
 <style>
 :root {
 /*CORE*/
 /*LIGHT*/
-  --sg-sans: "Inter", "Inter Fallback", -apple-system, BlinkMacSystemFont, "SF Pro", system-ui, sans-serif;
-  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+  --sg-sans: "Inter", "Inter Placeholder", -apple-system, BlinkMacSystemFont, "SF Pro", system-ui, sans-serif;
+  --sg-display: "Inter Display", "Inter", -apple-system, BlinkMacSystemFont, "SF Pro", system-ui, sans-serif;
+  --sg-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--foreground, #262626); background: var(--background, #fafafa); }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--foreground, #111827); background: var(--page, #ffffff); }
 main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
-h1 { font: 700 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
-h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--color-gray-500, #737373); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-gray-150, #dcdcdc); }
-.lead { max-width: 62ch; color: var(--color-gray-550, #686868); }
-.note { font-size: 13px; color: var(--color-gray-550, #686868); max-width: 62ch; }
+h1 { font: 800 40px/1.2 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted, #6b7280); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, #e5e7eb); }
+.lead { max-width: 62ch; color: var(--muted, #6b7280); }
+.note { font-size: 13px; color: var(--muted, #6b7280); max-width: 62ch; }
 code { font-family: var(--sg-mono); font-size: .9em; }
-.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-gray-550, #686868); margin: 18px 0 6px; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #6b7280); margin: 18px 0 6px; }
 .pal { display: flex; flex-wrap: wrap; gap: 8px; }
 .sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
-.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-gray-150, #dcdcdc); display: inline-flex; flex: 0 0 auto; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, #e5e7eb); display: inline-flex; flex: 0 0 auto; }
 .sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
 .sw .nm { font: 500 11px/1.3 var(--sg-mono); }
-.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-gray-550, #686868); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--muted, #6b7280); }
 .kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
 .kv b { font-weight: 500; }
-.kv span { color: var(--color-gray-550, #686868); }
+.kv span { color: var(--muted, #6b7280); }
 /* ---- site mock ---- */
-.mock { border: 1px solid var(--color-gray-150, #dcdcdc); border-radius: 16px; overflow: hidden; background: var(--background, #fafafa); }
-.navbar { display: flex; align-items: center; gap: 18px; height: 59px; padding: 0 20px; background: var(--background, #fafafa); border-bottom: 1px solid var(--color-gray-150, #dcdcdc); font-size: 14px; }
-.navbar .wm { width: 22px; height: 22px; border-radius: 50%; background: var(--accent, #fd2b38); display: inline-block; }
+.mock { border: 1px solid var(--border, #e5e7eb); border-radius: 16px; overflow: hidden; background: var(--page, #ffffff); }
+.annc { display: flex; align-items: center; justify-content: center; gap: 8px; height: 40px; background: var(--chip, #f9fafb); font: 600 11px/1 var(--sg-mono); color: var(--foreground, #111827); }
+.annc .new { background: var(--color-brand-flame-500, #fc4a2b); color: #fff; border-radius: 4px; padding: 3px 6px; font-size: 10px; letter-spacing: .04em; }
+.navbar { display: flex; align-items: center; gap: 22px; height: 72px; padding: 0 20px; background: var(--page, #ffffff); border-bottom: 1px solid var(--border, #e5e7eb); font-size: 14px; }
+.navbar .wm { font: 800 18px/1 var(--sg-display); letter-spacing: -0.02em; }
 .navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightSmall, 32px); padding: 0 14px; border-radius: var(--component-control-radiusSmall, 8px); font-size: 14px; font-weight: 500; border: 1px solid transparent; }
-.btn.primary { background: var(--color-blue-500, #11a8ff); color: #fff; }
-.btn.big { height: var(--component-control-height, 50px); padding: 0 26px; border-radius: var(--component-control-radius, 12px); font-weight: 600; font-size: 15px; }
-.btn.ghost { background: var(--measured-ghost-bg, #fff); color: var(--color-gray-650, #515151); border: 0; box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 1px 1px -0.5px rgba(0,0,0,.06), 0 3px 3px -1.5px rgba(0,0,0,.06); }
-.btn.black { background: var(--measured-plan-cta-bg, #000); color: #fff; }
-.btn.trial { height: var(--component-control-heightPlan, 36px); }
-.hero { background: var(--background, #fafafa); color: var(--foreground, #262626); padding: 64px 40px; font-size: 44px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; text-align: center; }
-.hero small { display: block; font-size: 16px; font-weight: 400; color: var(--color-gray-550, #686868); margin: 16px auto 22px; max-width: 46ch; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightCta, 36px); padding: 0 16px; border-radius: var(--component-control-radiusPill, 7px); font-size: 13px; font-weight: 500; border: 1px solid transparent; }
+.btn.primary { background: var(--accent, #111827); color: var(--accentText, #f9fafb); }
+.btn.ghost { background: #fff; color: var(--foreground, #111827); border-color: var(--border, #e5e7eb); }
+.hero { background: var(--page, #ffffff); color: var(--foreground, #000); padding: 72px 40px; font: 800 56px/1.02 var(--sg-display); letter-spacing: -0.03em; text-align: center; }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); color: var(--muted, #6b7280); margin: 20px auto 26px; max-width: 46ch; letter-spacing: 0; }
 .hero .row { display: flex; gap: 10px; justify-content: center; }
-.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; padding: 20px; }
-.plan { border: 1px solid var(--color-gray-150, #dcdcdc); border-radius: 16px; padding: 18px; background: #fff; font-size: 13px; }
-.plan .price { font-size: 28px; font-weight: 700; margin: 8px 0 12px; }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; padding: 20px; }
+.plan { border: 1px solid var(--border, #e5e7eb); border-radius: var(--component-control-radiusCard, 16px); padding: 20px; background: #fff; font-size: 13px; box-shadow: 0 0 0 0.5px rgba(75,85,99,.2), 0 15px 15px -3.75px rgba(0,0,0,.02); }
+.plan .price { font: 800 28px/1.2 var(--sg-display); margin: 8px 0 14px; }
 .plan .btn { width: 100%; }
-.faqrow { display: flex; justify-content: space-between; align-items: center; height: var(--component-faq-height, 68px); padding: 0 20px; border-bottom: 1px solid var(--color-gray-150, #dcdcdc); font-size: 15px; font-weight: 500; background: #fff; }
-.faqrow.a { color: var(--color-gray-550, #686868); font-size: 13px; padding: 8px 20px 14px; height: auto; font-weight: 400; }
-.field { display: flex; align-items: center; height: var(--component-control-fieldHeight, 54px); border: 1px solid var(--color-gray-150, #dcdcdc); border-radius: 12px; padding: 0 14px; font-size: 15px; color: var(--color-gray-400, #919191); max-width: 400px; background: #fff; margin-bottom: 8px; }
-.seg { display: inline-flex; gap: 2px; padding: 3px; border-radius: 8px; background: var(--color-gray-150, #dcdcdc); font-size: 13px; }
-.seg b { padding: 4px 12px; font-weight: 500; border-radius: 6px; }
-.seg b.on { background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+.field { display: flex; align-items: center; height: var(--component-control-fieldHeight, 38px); border: 1px solid var(--measured-field-border, #d1d5db); border-radius: var(--component-control-radiusField, 6px); padding: 0 12px; font-size: 14px; color: var(--muted, #9ca3af); max-width: 420px; background: #fff; margin-bottom: 8px; }
+.submit { border: 0; height: var(--component-control-heightSubmit, 40px); padding: 0 18px; border-radius: 6px; background: var(--accent, #111827); color: #fff; font: 500 14px/1 var(--sg-sans); }
 table.cmp { border-collapse: collapse; font-size: 14px; }
-table.cmp td, table.cmp th { border: 1px solid var(--color-gray-150, #dcdcdc); padding: 6px 14px; text-align: left; }
+table.cmp td, table.cmp th { border: 1px solid var(--border, #e5e7eb); padding: 6px 14px; text-align: left; }
 </style>
 </head>
 <body>
 <main>
-  <h1>Amie style guide</h1>
+  <h1>Ballpark style guide</h1>
   <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number.</p>
 
-  <h2 class="sh">Amie, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the <code>--color-*</code> Tailwind ramps amie.so ships as RGB triplets (converted to hex here — amber/blue/cyan/fuchsia/gray/green/indigo/lime/orange and friends, plus the <code>--color-amie-pink</code> single), the app's own layout metrics (<code>--nav-width</code>, <code>--inbox-width</code>, <code>--grid-*</code>, <code>--sidebar-*</code>) and the component values measured on the live pages. One light theme; the <code>.dark</code> block re-declares only <code>--foreground</code> and two wysiwyg shadows. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
-  <p class="note">Read from amie.so on 2026-11-11, signed out, in headless Chromium. No consent overlay mounts on the captured routes. The app behind login was never reached — nothing was downloaded, sent or signed into.</p>
+  <h2 class="sh">Ballpark, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the <code>--token-*</code> palette the Framer bundle declares on <code>body</code> (the Tailwind v3 ramps under their real names, plus Ballpark's own flame, navy, pine and translucent greys) and the component values measured on the live pages. One light theme; the bundle declares no dark variant. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from ballparkhq.com on 2026-11-11, signed out, in headless Chromium. No consent overlay mounts on the captured routes. The app behind sign-in was never reached — nothing was submitted, sent or signed into.</p>
 
   <h2 class="sh">The site chrome</h2>
-  <p class="lead">A floating 59px bar over the cream ground: the red-dot logo, a Radix Features flyout, Pricing and Login links, and the small blue Get started. Hero CTAs are 50px rounded-xl pairs — blue primary, white ghost.</p>
+  <p class="lead">A gray-50 announcement strip (mono type, flame NEW chip) over a white bar: the Ballpark wordmark, the nav (Platform, Solutions, Templates, Pricing), a hairline Sign in ghost and the near-black 36px Book a demo pill.</p>
   <div class="mock">
-    <div class="navbar"><span class="wm"></span><span>Features &#8964;</span><span>Pricing</span><span style="color:var(--color-gray-550,#686868)">Login</span><span class="sp"></span><span class="btn primary">Get started</span></div>
-    <div class="hero">The AI note taker that<br>just works
-      <small>Meeting notes, todos and calendar in one place. No bots join your calls.</small>
-      <div class="row"><span class="btn primary big">Get started</span><span class="btn ghost big">Download</span></div>
+    <div class="annc"><span class="new">NEW</span><span>Ballpark is now available in Claude</span></div>
+    <div class="navbar"><span class="wm">Ballpark</span><span>Platform</span><span>Solutions &#8964;</span><span>Templates</span><span>Pricing</span><span class="sp"></span><span class="btn ghost">Sign in</span><span class="btn primary">Book a demo</span></div>
+    <div class="hero">Research without<br>the complexity
+      <small>Ballpark is the fastest way to run product research — interviews, tests and surveys in one place.</small>
+      <div class="row"><span class="btn primary">Book a demo</span><span class="btn ghost">Watch video</span></div>
     </div>
   </div>
 
   <h2 class="sh">Pricing</h2>
-  <p class="lead">A pill segmented control flips monthly/yearly (the yearly side re-renders the plan cards), then plan cards with a black 36px trial CTA and white Select rows, then hairline-separated 68px Radix FAQ accordions.</p>
+  <p class="lead">Plan cards are white, 24px corners with a hairline grey ring and a long natural shadow; each carries the same near-black 36px CTA recipe as the nav.</p>
   <div class="mock">
-    <div style="padding:20px;text-align:center"><span class="seg"><b class="on">Bill monthly</b><b>Bill yearly</b></span></div>
     <div class="plans">
-      <div class="plan"><b>Starter</b><div class="price">$0</div><span class="btn black trial">Start 7 day free trial</span><p style="color:var(--color-gray-550,#686868);font-size:12px;margin-top:10px">Unlimited notes, 1 device.</p></div>
-      <div class="plan"><b>Pro</b><div class="price">$19<span style="font-size:14px;color:var(--color-gray-550)">/mo</span></div><span class="btn ghost">Select</span><p style="color:var(--color-gray-550,#686868);font-size:12px;margin-top:10px">Everything, every device.</p></div>
+      <div class="plan"><b>Starter</b><div class="price">$0</div><span class="btn primary">Book a demo</span><p style="color:var(--muted,#6b7280);font-size:12px;margin-top:10px">For small teams getting started.</p></div>
+      <div class="plan"><b>Enterprise</b><div class="price">Custom</div><span class="btn ghost">Talk to sales</span><p style="color:var(--muted,#6b7280);font-size:12px;margin-top:10px">Security, SSO and support.</p></div>
     </div>
-    <div class="faqrow"><span>Can I use Amie at my company?</span><span>+</span></div>
-    <div class="faqrow a"><span>Yes — teams can join the same workspace and share nothing they don't want to.</span><span></span></div>
   </div>
 
-  <h2 class="sh">Contact</h2>
+  <h2 class="sh">Contact and sign in</h2>
   <div class="mock" style="padding:20px">
     <div class="field">name@example.com</div>
-    <div class="field" style="height:96px;align-items:flex-start;padding-top:12px">Your message</div>
+    <div class="field" style="height:96px;align-items:flex-start;padding-top:10px">Your message</div>
+    <span class="submit" style="display:inline-flex;align-items:center">Submit request</span>
   </div>
 
   <h2 class="sh">Palette</h2>
-  <p class="lead"><code>--color-blue-500</code> (#11a8ff) is the action blue; <code>--color-accent</code> (#fd2b38) is the red brand dot; the ground is <code>--color-background</code> #fafafa cream with ink <code>--foreground</code> #262626. The gray ramp runs in 50-steps (50…950) for hairlines and secondary text; the hue ramps feed illustrations and status.</p>
+  <p class="lead">The ground is <code>light.page</code> white with ink <code>light.foreground</code> #000; the CTA fill is <code>light.accent</code> #111827 (gray.900). The <code>brand.flame</code> ramp (#fc4a2b at 500) marks the NEW chip and small accents; <code>brand.navy</code> and <code>brand.pine</code> are the deeper brand colours. The Tailwind ramps feed hairlines, secondary text and illustration.</p>
   <div id="roles-out"></div>
 
-  <h2 class="sh">Layout metrics</h2>
-  <p class="lead">The bundle ships the product's own metrics: <code>--nav-width</code> 74px rail, <code>--inbox-width</code> 200px, the calendar <code>--grid-*</code> geometry and the sidebar frame.</p>
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the 36px control heights, the 7px CTA corner against the 6px field corner, and the header and footer blocks at 1440px.</p>
   <div id="layout-out" class="kv"></div>
 
   <h2 class="sh">Measured extras</h2>
@@ -136,17 +131,13 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 
 (function layout() {
   let m = '';
-  for (const g of ['grid', 'nav', 'inbox', 'sidebar']) {
-    for (const [n, t] of flat(TOK.core[g] || {}, g + '.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.light && TOK.light.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   $('#layout-out').innerHTML = m;
 })();
 
 (function meas() {
   let m = '';
   for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const [n, t] of flat(TOK.light.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   $('#meas-out').innerHTML = m;
 })();
 </script>

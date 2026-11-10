@@ -1,14 +1,14 @@
-# Amie components
+# Ballpark components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from amie.so on 2026-11-10, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from ballparkhq.com on 2026-11-10, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (38 components, 101 states).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (41 components, 109 states).
 
 How to read an entry:
 
-- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
+- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 14/21 500, #111827`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (101 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (109 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -17,31 +17,30 @@ Screenshots are named `{page}-light-{state}.png`: the site paints one light them
 | Surface | URL | Screenshots |
 |---|---|---|
 | Home | `/` | [default](screenshots/home-light-default.png), [full](screenshots/home-light-full.png), [solutions-menu](screenshots/home-light-solutions-menu.png) |
-| Pricing | `/pricing` | [default](screenshots/pricing-light-default.png), [full](screenshots/pricing-light-full.png) |
-| Changelog | `/changelog` |  |
-| Blog | `/blog` | [default](screenshots/blog-light-default.png), [full](screenshots/blog-light-full.png) |
-| Stories | `/stories` |  |
-| Calendar | `/calendar` |  |
-| Tools | `/tools` |  |
+| Features | `/features` | [default](screenshots/features-light-default.png), [full](screenshots/features-light-full.png) |
+| Coach | `/coach` | [default](screenshots/coach-light-default.png), [full](screenshots/coach-light-full.png) |
 | Templates | `/templates` | [default](screenshots/templates-light-default.png), [full](screenshots/templates-light-full.png) |
-| Download | `/download` |  |
-| Contact | `/contact` | [default](screenshots/contact-light-default.png), [full](screenshots/contact-light-full.png) |
+| Enterprise | `/enterprise` | [default](screenshots/enterprise-light-default.png), [full](screenshots/enterprise-light-full.png) |
+| Blog | `/blog` | [default](screenshots/blog-light-default.png), [full](screenshots/blog-light-full.png) |
+| Pricing | `/pricing` | [default](screenshots/pricing-light-default.png), [full](screenshots/pricing-light-full.png) |
+| Contact sales | `/contact/sales` | [default](screenshots/contact-light-default.png), [full](screenshots/contact-light-full.png) |
+| Sign in | `/sign-in` | [default](screenshots/signin-light-default.png), [full](screenshots/signin-light-full.png) |
 | Home, phone | `/` | [default](screenshots/mobile-home-light-default.png), [full](screenshots/mobile-home-light-full.png), [menu-open](screenshots/mobile-home-light-menu-open.png) |
+| Features, phone | `/features` | [default](screenshots/mobile-features-light-default.png), [full](screenshots/mobile-features-light-full.png) |
 | Pricing, phone | `/pricing` | [default](screenshots/mobile-pricing-light-default.png), [full](screenshots/mobile-pricing-light-full.png) |
 
 ### Overlays and transient states
 
 | State | Where | How it was reached | Captured |
 |---|---|---|---|
-| Features flyout | header, home | the nav button's own Radix toggle | [home-light-features](screenshots/home-light-features.png), [nav-flyout-open](#features-flyout-open) |
-| Billing, yearly | pricing | the toggle's own press; plan cards re-render | [pricing-light-yearly](screenshots/pricing-light-yearly.png), [billing-yearly-on](#billing-toggle-yearly-on) |
-| Pricing FAQ, open | pricing | the accordion's own toggle | [faq-open](#faq-accordion-open), [pricing-light-faq](screenshots/pricing-light-faq.png) |
+| Solutions menu, open | header, home | the nav link's own hover | [home-light-solutions-menu](screenshots/home-light-solutions-menu.png), [nav-solutions-open](#solutions-menu-open) |
+| Mobile menu, open | header, phone | the menu trigger's own press | [mobile-home-light-menu-open](screenshots/mobile-home-light-menu-open.png), [m-menu-open](#mobile-menu-open) |
 
 ## Shared values
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 17 components were given a real keyboard focus (a further 1 could not be driven: `nav-solutions`). 16 show a visible focus state: `announcement-bar` (1px auto #005fcc `measured.focus-outline`, offset 1px), `nav-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `nav-signin` (1px auto #005fcc `measured.focus-outline`, offset 1px), `nav-cta` (1px auto #005fcc `measured.focus-outline`, offset 1px), `intercom-launcher` (visible change in boxShadow), `cta-request` (1px auto #005fcc `measured.focus-outline`, offset 1px), `plan-cta` (1px auto #005fcc `measured.focus-outline`, offset 1px), `contact-submit` (1px auto #005fcc `measured.focus-outline`, offset 0px), `signin-google` (visible change in boxShadow), `signin-sso` (visible change in boxShadow), `signin-forgot` (2px solid oklab(0.209998 -0.00316383 -0.0338463 / 0.1), offset 4px), `footer-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-social` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-rating` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-legal` (1px auto #005fcc `measured.focus-outline`, offset 1px), `carousel-dot` (1px auto #005fcc `measured.focus-outline`, offset 0px). The other 1 show no change a keyboard user can see: `signin-submit`.
+**Focus.** 19 components were given a real keyboard focus (a further 1 could not be driven: `nav-solutions`). 18 show a visible focus state: `announcement-bar` (1px auto #005fcc `measured.focus-outline`, offset 1px), `nav-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `nav-signin` (1px auto #005fcc `measured.focus-outline`, offset 1px), `nav-cta` (1px auto #005fcc `measured.focus-outline`, offset 1px), `intercom-launcher` (visible change in boxShadow), `feature-card` (1px auto #005fcc `measured.focus-outline`, offset 1px), `cta-request` (1px auto #005fcc `measured.focus-outline`, offset 1px), `plan-cta` (1px auto #005fcc `measured.focus-outline`, offset 1px), `contact-submit` (1px auto #005fcc `measured.focus-outline`, offset 0px), `signin-google` (visible change in boxShadow), `signin-sso` (visible change in boxShadow), `signin-forgot` (2px solid oklab(0.209998 -0.00316383 -0.0338463 / 0.1), offset 4px), `footer-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-social` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-rating` (1px auto #005fcc `measured.focus-outline`, offset 1px), `footer-legal` (1px auto #005fcc `measured.focus-outline`, offset 1px), `carousel-dot` (1px auto #005fcc `measured.focus-outline`, offset 0px), `coach-submit` (1px auto #005fcc `measured.focus-outline`, offset 0px). The other 1 show no change a keyboard user can see: `signin-submit`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): controls deepen their fill or dim rather than scale; the nav flyout and framework icons keep their hover scale. Nothing a real press would submit was ever pressed.
 
@@ -56,14 +55,15 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Plan card](#plan-card) | 768 x 714.39 | - | 24px | #ffffff `color.white` | rgba(0, 0, 0, 0.01) 0px 0.839802px 0.839802px -0.125px, rgba(0, 0, 0, 0.01) 0px 1.99048px 1.99048px -0.25px, rgba(0, 0, 0, 0.01) 0px 3.63084px 3.63084px -0.375px, rgba(0, 0, 0, 0.01) 0px 6.03627px 6.03627px -0.5px, rgba(0, 0, 0, 0.02) 0px 9.74808px 9.74808px -0.625px, rgba(0, 0, 0, 0.02) 0px 15.9566px 15.9566px -0.75px, rgba(0, 0, 0, 0.03) 0px 27.4762px 27.4762px -0.875px, rgba(0, 0, 0, 0.04) 0px 50px 50px -1px, rgba(75, 85, 99, 0.2) 0px 0px 0px 0.5px | 0px 0px 120px 0px |
-| [Contact field](#contact-field) | 204.75 x 19.59 | - | - | transparent | none | 0 |
+| [Plan card](#plan-card) | 384 x 594.39 | - | 24px | #ffffff `color.white` | rgba(0, 0, 0, 0.01) 0px 0.839802px 0.839802px -0.125px, rgba(0, 0, 0, 0.01) 0px 1.99048px 1.99048px -0.25px, rgba(0, 0, 0, 0.01) 0px 3.63084px 3.63084px -0.375px, rgba(0, 0, 0, 0.01) 0px 6.03627px 6.03627px -0.5px, rgba(0, 0, 0, 0.02) 0px 9.74808px 9.74808px -0.625px, rgba(0, 0, 0, 0.02) 0px 15.9566px 15.9566px -0.75px, rgba(0, 0, 0, 0.03) 0px 27.4762px 27.4762px -0.875px, rgba(0, 0, 0, 0.04) 0px 50px 50px -1px, rgba(75, 85, 99, 0.2) 0px 0px 0px 0.5px | 0 |
+| [Feature card](#feature-card) | 366.67 x 600 | - | 16px | #ffffff `color.white` | rgba(0, 0, 0, 0.04) 0px 0.597144px 0.597144px -0.9375px, rgba(0, 0, 0, 0.04) 0px 1.81088px 1.81088px -1.875px, rgba(0, 0, 0, 0.04) 0px 4.78699px 4.78699px -2.8125px, rgba(0, 0, 0, 0.02) 0px 15px 15px -3.75px, rgba(75, 85, 99, 0.1) 0px 0px 0px 1px | 0 |
+| [Coach demo widget](#coach-demo-widget) | 320 x 560 | - | 0px 12px 0px 0px | #f9fafb `color.gray.50` | none | 0 |
 
 ## Components
 
 ### Shell and navigation
 
-The floating bar and the Radix Features flyout.
+The announcement strip, the two-row header with the Solutions flyout, and the Intercom launcher.
 
 #### Header
 The two-row bar under the announcement strip: logo, the nav (Platform, Solutions, Templates, Pricing), Sign in and the black Book a demo pill. Read as `header` on the home page.
@@ -156,10 +156,10 @@ Read as `logo` on the home page.
 
 ### Home
 
-The hero pair and the what's-new pill.
+The serif hero, the feature cards, the closing CTA and the stories carousel dots.
 
 #### Hero title
-"Research without the complexity" in the site's serif display (Source Serif 4). Read as `hero-title` on the home page.
+"Research without the complexity" in the site's display face (Inter Display). Read as `hero-title` on the home page.
 
 **Values (default).** size 850 x 192; background transparent; text Inter Display 96/96 800, #000000 `color.black`.
 
@@ -184,10 +184,11 @@ A tall image card linking a feature page (live interviews, creative testing, …
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 366.67 x 600; radius 16px; background #ffffff `color.white`; shadow rgba(0, 0, 0, 0.04) 0px 0.597144px 0.597144px -0.9375px, rgba(0, 0, 0, 0.04) 0px 1.81088px 1.81088px -1.875px, rgba(0, 0, 0, 0.04) 0px 4.78699px 4.78699px -2.8125px, rgba(0, 0, 0, 0.02) 0px 15px 15px -3.75px, rgba(75, 85, 99, 0.1) 0px 0px 0px 1px; text Inter 12/16 700, #ffffff `color.white` |
+| default (same: pressed) | size 366.67 x 600; radius 16px; background #ffffff `color.white`; shadow rgba(0, 0, 0, 0.04) 0px 0.597144px 0.597144px -0.9375px, rgba(0, 0, 0, 0.04) 0px 1.81088px 1.81088px -1.875px, rgba(0, 0, 0, 0.04) 0px 4.78699px 4.78699px -2.8125px, rgba(0, 0, 0, 0.02) 0px 15px 15px -3.75px, rgba(75, 85, 99, 0.1) 0px 0px 0px 1px; text Inter 12/16 700, #ffffff `color.white` |
 | hover | transform translate(0px, -1px) |
+| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 1px |
 
-![Feature card default](components/crops/feature-card-default.png) ![Feature card hover](components/crops/feature-card-hover.png)
+![Feature card default](components/crops/feature-card-default.png) ![Feature card hover](components/crops/feature-card-hover.png) ![Feature card focus-visible](components/crops/feature-card-focus-visible.png) ![Feature card pressed](components/crops/feature-card-pressed.png)
 
 #### Request a demo button
 The closing CTA over the footer ("Try Ballpark with your team"). Measured, never followed. Read as `cta-request` on the home page.
@@ -213,9 +214,35 @@ Child layers that carry the look: div 8x8 background #ffffff `color.white` radiu
 
 ![Carousel page dot default](components/crops/carousel-dot-default.png) ![Carousel page dot hover](components/crops/carousel-dot-hover.png) ![Carousel page dot focus-visible](components/crops/carousel-dot-focus-visible.png) ![Carousel page dot pressed](components/crops/carousel-dot-pressed.png)
 
+#### Coach demo widget
+The working "Ask Coach" demo box on the home page: the product's chat UI with an "Ask me anything…" field and a round submit. Read as `coach-widget` on the home page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 320 x 560; radius 16px; background transparent; shadow rgba(0, 0, 0, 0.07) 0px 0.602187px 0.602187px -1.25px, rgba(0, 0, 0, 0.06) 0px 2.28853px 2.28853px -2.5px, rgba(0, 0, 0, 0.03) 0px 10px 10px -3.75px, rgba(0, 0, 0, 0.2) 0px 20px 40px -15px, rgba(75, 85, 99, 0.1) 0px 0px 0px 1px, rgba(0, 0, 0, 0.03) 0px 0px 0px 5px; wrapper div.framer-v8hx28: shadow rgba(0, 0, 0, 0.07) 0px 0.602187px 0.602187px -1.25px, rgba(0, 0, 0, 0.06) 0px 2.28853px 2.28853px -2.5px, rgba(0, 0, 0, 0.03) 0px 10px 10px -3.75px, rgba(0, 0, 0, 0.2) 0px 20px 40px -15px, rgba(75, 85, 99, 0.1) 0px 0px 0px 1px, rgba(0, 0, 0, 0.03) 0px 0px 0px 5px; text Inter 14/20 600, #111827 `color.gray.900`; icon 30 x 24, #000000 `color.black` |
+| hover | icon 10 x 10, #000000 `color.black` |
+
+![Coach demo widget default](components/crops/coach-widget-default.png) ![Coach demo widget hover](components/crops/coach-widget-hover.png)
+
+#### Coach ask field
+The demo's ask field. The box paints a fake field (a Framer div, not an input or textarea), so the entry is recorded missing when the sweep finds no real input. Read as `coach-field` on the home page.
+
+Not on the page when it was captured.
+
+#### Coach send button
+The round send button inside the demo. Measured, never pressed. Read as `coach-submit` on the home page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: pressed) | size 24 x 24; radius 6px; background #e5e7eb `color.gray.200`; wrapper div.framer-5tv6xb: shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 10/14 400, #111827 `color.gray.900`; icon 10 x 10, #000000 `color.black` |
+| hover | transform translate(0px, -1px) |
+| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 0px |
+
+![Coach send button default](components/crops/coach-submit-default.png) ![Coach send button hover](components/crops/coach-submit-hover.png) ![Coach send button focus-visible](components/crops/coach-submit-focus-visible.png) ![Coach send button pressed](components/crops/coach-submit-pressed.png)
+
 ### Pricing
 
-The billing toggle, plan cards, trial CTA and FAQ accordions.
+The plan card and its demo CTA.
 
 #### Pricing title
 Read as `pricing-title` on the pricing page.
@@ -239,15 +266,143 @@ The action inside an enterprise plan card. Measured, never followed. Read as `pl
 #### Plan card
 Read as `plan-card` on the pricing page.
 
-**Values (default).** size 768 x 714.39; padding 0px 0px 120px 0px; background transparent; text Inter Display 22/30.8 600, #111827 `color.gray.900`; icon 32 x 32, #4b5563 `color.gray.600`.
-
-Child layers that carry the look: div 384x594.4 background #ffffff `color.white` radius 24px shadow rgba(0, 0, 0, 0.01) 0px 0.839802px 0.839802px -0.125px, rgba(0, 0, 0, 0.01) 0px 1.99048px 1.99048px -0.25px, rgba(0, 0, 0, 0.01) 0px 3.63084px 3.63084px -0.375px, rgba(0, 0, 0, 0.01) 0px 6.03627px 6.03627px -0.5px, rgba(0, 0, 0, 0.02) 0px 9.74808px 9.74808px -0.625px, rgba(0, 0, 0, 0.02) 0px 15.9566px 15.9566px -0.75px, rgba(0, 0, 0, 0.03) 0px 27.4762px 27.4762px -0.875px, rgba(0, 0, 0, 0.04) 0px 50px 50px -1px, rgba(75, 85, 99, 0.2) `color.gray-alpha.20` 0px 0px 0px 0.5px; div 384x256.4 image linear-gradient(#f9fafb `color.gray.50` 0%, #ffffff `color.white` 100%) shadow #ffffff `color.white` 0px 1px 0px 0px inset; div 56x56 background #ffffff `color.white` radius 16px shadow rgba(0, 0, 0, 0.18) 0px 0.602187px 0.602187px -1.25px, rgba(0, 0, 0, 0.16) 0px 2.28853px 2.28853px -2.5px, rgba(0, 0, 0, 0.06) 0px 10px 10px -3.75px, rgba(75, 85, 99, 0.1) `color.gray-alpha.10` 0px 0px 0px 0.5px.
+**Values (default).** size 384 x 594.39; radius 24px; background #ffffff `color.white`; shadow rgba(0, 0, 0, 0.01) 0px 0.839802px 0.839802px -0.125px, rgba(0, 0, 0, 0.01) 0px 1.99048px 1.99048px -0.25px, rgba(0, 0, 0, 0.01) 0px 3.63084px 3.63084px -0.375px, rgba(0, 0, 0, 0.01) 0px 6.03627px 6.03627px -0.5px, rgba(0, 0, 0, 0.02) 0px 9.74808px 9.74808px -0.625px, rgba(0, 0, 0, 0.02) 0px 15.9566px 15.9566px -0.75px, rgba(0, 0, 0, 0.03) 0px 27.4762px 27.4762px -0.875px, rgba(0, 0, 0, 0.04) 0px 50px 50px -1px, rgba(75, 85, 99, 0.2) 0px 0px 0px 0.5px; text Inter Display 22/30.8 600, #111827 `color.gray.900`; icon 32 x 32, #4b5563 `color.gray.600`.
 
 ![Plan card default](components/crops/plan-card-default.png)
 
+### Contact sales
+
+The sales form's fields and submit.
+
+#### Contact title
+Read as `contact-title` on the contact sales page.
+
+**Values (default).** size 489.5 x 42; background transparent; text Inter Display 42/42 700, #111827 `color.gray.900`.
+
+![Contact title default](components/crops/contact-title-default.png)
+
+#### Contact field
+A short text field of the sales form (first/last name pair); sample text was typed and deleted, nothing sent. Read as `contact-field` on the contact sales page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 204.75 x 19.59; background transparent; wrapper div.framer-form-text-input.framer-form-input-wrapper: shadow rgba(0, 0, 0, 0.25) 0px 0px 0px 0px, rgba(0, 0, 0, 0.25) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 14/19.6 400, #111827 `color.gray.900`; placeholder #6b7280 `color.gray.500` |
+| focused, filled | wrapper div.framer-form-text-input.framer-form-input-wrapper: shadow rgba(255, 255, 255, 0.25) 0px 0px 0px 0px, #d0d5db 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
+
+![Contact field default](components/crops/contact-field-default.png) ![Contact field focused](components/crops/contact-field-focused.png) ![Contact field filled](components/crops/contact-field-filled.png)
+
+#### Contact email field
+The wider field under the name pair (work email); focused only, nothing typed. Read as `contact-email` on the contact sales page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 465.5 x 19.59; background transparent; wrapper div.framer-form-text-input.framer-form-input-wrapper: shadow rgba(0, 0, 0, 0.25) 0px 0px 0px 0px, rgba(0, 0, 0, 0.25) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 14/19.6 400, #111827 `color.gray.900`; placeholder #6b7280 `color.gray.500` |
+| focused | wrapper div.framer-form-text-input.framer-form-input-wrapper: shadow rgba(255, 255, 255, 0.25) 0px 0px 0px 0px, #d0d5db 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
+
+![Contact email field default](components/crops/contact-email-default.png) ![Contact email field focused](components/crops/contact-email-focused.png)
+
+#### Message textarea
+The form's message box; focused only, nothing typed. Read as `contact-message` on the contact sales page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 489.5 x 136; padding 10px 12px; background transparent; wrapper div.framer-form-text-input.framer-form-input-wrapper: shadow rgba(0, 0, 0, 0.25) 0px 0px 0px 0px, rgba(0, 0, 0, 0.25) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 14/19.6 400, #111827 `color.gray.900`; placeholder #6b7280 `color.gray.500` |
+| focused | wrapper div.framer-form-text-input.framer-form-input-wrapper: shadow rgba(255, 255, 255, 0.25) 0px 0px 0px 0px, #d0d5db 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
+
+![Message textarea default](components/crops/contact-message-default.png) ![Message textarea focused](components/crops/contact-message-focused.png)
+
+#### Submit request button
+The form's black submit. Measured, never pressed. Read as `contact-submit` on the contact sales page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: pressed) | size 489.5 x 40; radius 6px; background #111827 `color.gray.900`; shadow #ffffff 0px 0px 0px 0px, #111827 0px 0px 0px 0px, rgba(0, 0, 0, 0.06) 0px 2px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px -1px; text Inter 14/20 600, #ffffff `color.white` |
+| hover | background #1f2937 `color.gray.800`; shadow #ffffff 0px 0px 0px 0px, #1f2937 0px 0px 0px 0px, rgba(0, 0, 0, 0.06) 0px 2px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px -1px; transform translate(0px, -1px) |
+| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 0px |
+
+![Submit request button default](components/crops/contact-submit-default.png) ![Submit request button hover](components/crops/contact-submit-hover.png) ![Submit request button focus-visible](components/crops/contact-submit-focus-visible.png) ![Submit request button pressed](components/crops/contact-submit-pressed.png)
+
+### Sign in
+
+The OAuth links, the email and password fields and the submit.
+
+#### Sign-in title
+Read as `signin-title` on the sign-in page.
+
+**Values (default).** size 169.77 x 28; background transparent; text Inter 20/28 600, lab(8.11897 0.811279 -12.254).
+
+![Sign-in title default](components/crops/signin-title-default.png)
+
+#### Continue with Google
+The OAuth link. Measured, never followed — no sign-in was attempted. Read as `signin-google` on the sign-in page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 384 x 36; padding 0px 16px 0px 14px; radius 6px; background #ffffff `color.white`; shadow oklab(0.445998 -0.00685382 -0.0291959 / 0.2) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 2px 2px 0px; text Inter 14/20 600, lab(8.11897 0.811279 -12.254); transition background-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1), color 0.3s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1); icon 16 x 16, lab(8.11897 0.811279 -12.254) |
+| hover | background lab(98.2596 -0.247031 -0.706708); shadow oklab(0.445998 -0.00685382 -0.0291959 / 0.4) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px |
+| focus-visible | shadow lab(35.6337 -1.58697 -10.8425) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 2px 2px 0px |
+| pressed | background lab(96.1596 -0.0823438 -1.13575); shadow oklab(0.445998 -0.00685382 -0.0291959 / 0.25) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 2px 2px 0px |
+
+![Continue with Google default](components/crops/signin-google-default.png) ![Continue with Google hover](components/crops/signin-google-hover.png) ![Continue with Google focus-visible](components/crops/signin-google-focus-visible.png) ![Continue with Google pressed](components/crops/signin-google-pressed.png)
+
+#### Continue with SSO
+The SSO link. Measured, never followed. Read as `signin-sso` on the sign-in page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 384 x 36; padding 0px 16px 0px 14px; radius 6px; background #ffffff `color.white`; shadow oklab(0.445998 -0.00685382 -0.0291959 / 0.2) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 2px 2px 0px; text Inter 14/20 600, lab(8.11897 0.811279 -12.254); transition background-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1), color 0.3s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1); icon 16 x 16, lab(8.11897 0.811279 -12.254) |
+| hover | background lab(98.2596 -0.247031 -0.706708); shadow oklab(0.445998 -0.00685382 -0.0291959 / 0.4) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px |
+| focus-visible | shadow lab(35.6337 -1.58697 -10.8425) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 2px 2px 0px |
+| pressed | background lab(96.1596 -0.0823438 -1.13575); shadow oklab(0.445998 -0.00685382 -0.0291959 / 0.25) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 2px 2px 0px |
+
+![Continue with SSO default](components/crops/signin-sso-default.png) ![Continue with SSO hover](components/crops/signin-sso-hover.png) ![Continue with SSO focus-visible](components/crops/signin-sso-focus-visible.png) ![Continue with SSO pressed](components/crops/signin-sso-pressed.png)
+
+#### Email field
+The sign-in email field; sample text was typed and deleted, nothing sent. Read as `signin-field` on the sign-in page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 384 x 38; padding 0px 12px; border 1px solid oklab(0.445998 -0.00685382 -0.0291959 / 0.2); radius 6px; background #ffffff `color.white`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 14/20 400, lab(8.11897 0.811279 -12.254); transition background-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1), color 0.3s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1); placeholder lab(47.7841 -0.393182 -10.0268) |
+| focused, filled | border 1px solid lab(35.6337 -1.58697 -10.8425); shadow lab(85.1236 -0.612259 -3.7138) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
+
+![Email field default](components/crops/signin-field-default.png) ![Email field focused](components/crops/signin-field-focused.png) ![Email field filled](components/crops/signin-field-filled.png)
+
+#### Password field
+The password field; focused only — nothing was typed into it. Read as `signin-password` on the sign-in page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 384 x 38; padding 0px 12px; border 1px solid oklab(0.445998 -0.00685382 -0.0291959 / 0.2); radius 6px; background #ffffff `color.white`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 14/20 400, lab(8.11897 0.811279 -12.254); transition background-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1), color 0.3s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1); placeholder lab(47.7841 -0.393182 -10.0268) |
+| focused | border 1px solid lab(35.6337 -1.58697 -10.8425); shadow lab(85.1236 -0.612259 -3.7138) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
+
+![Password field default](components/crops/signin-password-default.png) ![Password field focused](components/crops/signin-password-focused.png)
+
+#### Continue with email button
+The email sign-in submit. Measured, never pressed. Read as `signin-submit` on the sign-in page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default (same: focus-visible) | size 384 x 36; padding 0px 16px; radius 6px; background #0a4481 `color.brand.navy.900`; shadow #0a4481 0px 0px 0px 1px; text Inter 14/20 600, lab(98.2596 -0.247031 -0.706708); transition background-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1), color 0.3s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1) |
+| hover | background #0954a5 `color.brand.navy.700`; shadow #0954a5 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px |
+| pressed | background #0954a5 `color.brand.navy.700`; shadow #0954a5 0px 0px 0px 1px |
+
+![Continue with email button default](components/crops/signin-submit-default.png) ![Continue with email button hover](components/crops/signin-submit-hover.png) ![Continue with email button focus-visible](components/crops/signin-submit-focus-visible.png) ![Continue with email button pressed](components/crops/signin-submit-pressed.png)
+
+#### Forgot password link
+Read as `signin-forgot` on the sign-in page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 102.7 x 16; background transparent; text Inter 12/16 500, lab(47.7841 -0.393182 -10.0268); transition all 0.3s cubic-bezier(0.23, 1, 0.32, 1) |
+| hover | text Inter 12/16 500, lab(8.11897 0.811279 -12.254) |
+| focus-visible | radius 2px; outline 2px solid oklab(0.209998 -0.00316383 -0.0338463 / 0.1), offset 4px |
+| pressed | text Inter 12/16 500, lab(8.11897 0.811279 -12.254) |
+
+![Forgot password link default](components/crops/signin-forgot-default.png) ![Forgot password link hover](components/crops/signin-forgot-hover.png) ![Forgot password link focus-visible](components/crops/signin-forgot-focus-visible.png) ![Forgot password link pressed](components/crops/signin-forgot-pressed.png)
+
 ### Footer
 
-The link columns, socials and legal.
+The link columns, socials, the G2 badge and legal.
 
 #### Footer
 Read as `footer` on the home page.
@@ -307,7 +462,7 @@ Read as `footer-legal` on the home page.
 
 ### Mobile (390 wide)
 
-The same surface at phone width.
+The same surface at phone width, with its full-sheet menu.
 
 #### Mobile header
 Read as `m-header` on the home page at 390 wide.
@@ -334,136 +489,9 @@ The trigger after its own toggle; the open overlay shows in the crop. Read as `m
 
 ![Mobile menu, open opened](components/crops/m-menu-open-opened.png)
 
-### Contact sales
-
-
-
-#### Contact title
-Read as `contact-title` on the contact page.
-
-**Values (default).** size 489.5 x 42; background transparent; text Inter Display 42/42 700, #111827 `color.gray.900`.
-
-![Contact title default](components/crops/contact-title-default.png)
-
-#### Contact field
-A short text field of the sales form (first/last name pair); sample text was typed and deleted, nothing sent. Read as `contact-field` on the contact page.
-
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default (same: focused, filled) | size 204.75 x 19.59; background transparent; text Inter 14/19.6 400, #111827 `color.gray.900`; placeholder #6b7280 `color.gray.500` |
-
-![Contact field default](components/crops/contact-field-default.png) ![Contact field focused](components/crops/contact-field-focused.png) ![Contact field filled](components/crops/contact-field-filled.png)
-
-#### Contact email field
-The wider field under the name pair (work email); focused only, nothing typed. Read as `contact-email` on the contact page.
-
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default (same: focused) | size 465.5 x 19.59; background transparent; text Inter 14/19.6 400, #111827 `color.gray.900`; placeholder #6b7280 `color.gray.500` |
-
-![Contact email field default](components/crops/contact-email-default.png) ![Contact email field focused](components/crops/contact-email-focused.png)
-
-#### Message textarea
-The form's message box; focused only, nothing typed. Read as `contact-message` on the contact page.
-
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default (same: focused) | size 489.5 x 136; padding 10px 12px; background transparent; text Inter 14/19.6 400, #111827 `color.gray.900`; placeholder #6b7280 `color.gray.500` |
-
-![Message textarea default](components/crops/contact-message-default.png) ![Message textarea focused](components/crops/contact-message-focused.png)
-
-#### Submit request button
-The form's black submit. Measured, never pressed. Read as `contact-submit` on the contact page.
-
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default (same: pressed) | size 489.5 x 40; radius 6px; background #111827 `color.gray.900`; shadow #ffffff 0px 0px 0px 0px, #111827 0px 0px 0px 0px, rgba(0, 0, 0, 0.06) 0px 2px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px -1px; text Inter 14/20 600, #ffffff `color.white` |
-| hover | background #1f2937 `color.gray.800`; shadow #ffffff 0px 0px 0px 0px, #1f2937 0px 0px 0px 0px, rgba(0, 0, 0, 0.06) 0px 2px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px -1px; transform translate(0px, -1px) |
-| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 0px |
-
-![Submit request button default](components/crops/contact-submit-default.png) ![Submit request button hover](components/crops/contact-submit-hover.png) ![Submit request button focus-visible](components/crops/contact-submit-focus-visible.png) ![Submit request button pressed](components/crops/contact-submit-pressed.png)
-
-### Sign in
-
-
-
-#### Sign-in title
-Read as `signin-title` on the signin page.
-
-**Values (default).** size 169.77 x 28; background transparent; text Inter 20/28 600, lab(8.11897 0.811279 -12.254).
-
-![Sign-in title default](components/crops/signin-title-default.png)
-
-#### Continue with Google
-The OAuth link. Measured, never followed — no sign-in was attempted. Read as `signin-google` on the signin page.
-
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 384 x 36; padding 0px 16px 0px 14px; radius 6px; background #ffffff `color.white`; shadow oklab(0.445998 -0.00685382 -0.0291959 / 0.2) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 2px 2px 0px; text Inter 14/20 600, lab(8.11897 0.811279 -12.254); transition background-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1), color 0.3s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1); icon 16 x 16, lab(8.11897 0.811279 -12.254) |
-| hover | background lab(98.2596 -0.247031 -0.706708); shadow oklab(0.445998 -0.00685382 -0.0291959 / 0.4) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px |
-| focus-visible | shadow lab(35.6337 -1.58697 -10.8425) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 2px 2px 0px |
-| pressed | background lab(96.1596 -0.0823438 -1.13575); shadow oklab(0.445998 -0.00685382 -0.0291959 / 0.25) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 2px 2px 0px |
-
-![Continue with Google default](components/crops/signin-google-default.png) ![Continue with Google hover](components/crops/signin-google-hover.png) ![Continue with Google focus-visible](components/crops/signin-google-focus-visible.png) ![Continue with Google pressed](components/crops/signin-google-pressed.png)
-
-#### Continue with SSO
-The SSO link. Measured, never followed. Read as `signin-sso` on the signin page.
-
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 384 x 36; padding 0px 16px 0px 14px; radius 6px; background #ffffff `color.white`; shadow oklab(0.445998 -0.00685382 -0.0291959 / 0.2) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 2px 2px 0px; text Inter 14/20 600, lab(8.11897 0.811279 -12.254); transition background-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1), color 0.3s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1); icon 16 x 16, lab(8.11897 0.811279 -12.254) |
-| hover | background lab(98.2596 -0.247031 -0.706708); shadow oklab(0.445998 -0.00685382 -0.0291959 / 0.4) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px |
-| focus-visible | shadow lab(35.6337 -1.58697 -10.8425) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 2px 2px 0px |
-| pressed | background lab(96.1596 -0.0823438 -1.13575); shadow oklab(0.445998 -0.00685382 -0.0291959 / 0.25) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 2px 2px 0px |
-
-![Continue with SSO default](components/crops/signin-sso-default.png) ![Continue with SSO hover](components/crops/signin-sso-hover.png) ![Continue with SSO focus-visible](components/crops/signin-sso-focus-visible.png) ![Continue with SSO pressed](components/crops/signin-sso-pressed.png)
-
-#### Email field
-The sign-in email field; sample text was typed and deleted, nothing sent. Read as `signin-field` on the signin page.
-
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 384 x 38; padding 0px 12px; border 1px solid oklab(0.445998 -0.00685382 -0.0291959 / 0.2); radius 6px; background #ffffff `color.white`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 14/20 400, lab(8.11897 0.811279 -12.254); transition background-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1), color 0.3s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1); placeholder lab(47.7841 -0.393182 -10.0268) |
-| focused, filled | border 1px solid lab(35.6337 -1.58697 -10.8425); shadow lab(85.1236 -0.612259 -3.7138) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
-
-![Email field default](components/crops/signin-field-default.png) ![Email field focused](components/crops/signin-field-focused.png) ![Email field filled](components/crops/signin-field-filled.png)
-
-#### Password field
-The password field; focused only — nothing was typed into it. Read as `signin-password` on the signin page.
-
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 384 x 38; padding 0px 12px; border 1px solid oklab(0.445998 -0.00685382 -0.0291959 / 0.2); radius 6px; background #ffffff `color.white`; shadow rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; text Inter 14/20 400, lab(8.11897 0.811279 -12.254); transition background-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1), color 0.3s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1); placeholder lab(47.7841 -0.393182 -10.0268) |
-| focused | border 1px solid lab(35.6337 -1.58697 -10.8425); shadow lab(85.1236 -0.612259 -3.7138) 0px 0px 0px 3px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px |
-
-![Password field default](components/crops/signin-password-default.png) ![Password field focused](components/crops/signin-password-focused.png)
-
-#### Continue with email button
-The email sign-in submit. Measured, never pressed. Read as `signin-submit` on the signin page.
-
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default (same: focus-visible) | size 384 x 36; padding 0px 16px; radius 6px; background #0a4481 `color.brand.navy.900`; shadow #0a4481 0px 0px 0px 1px; text Inter 14/20 600, lab(98.2596 -0.247031 -0.706708); transition background-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s cubic-bezier(0.23, 1, 0.32, 1), color 0.3s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1) |
-| hover | background #0954a5 `color.brand.navy.700`; shadow #0954a5 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.1) 0px 2px 4px -2px |
-| pressed | background #0954a5 `color.brand.navy.700`; shadow #0954a5 0px 0px 0px 1px |
-
-![Continue with email button default](components/crops/signin-submit-default.png) ![Continue with email button hover](components/crops/signin-submit-hover.png) ![Continue with email button focus-visible](components/crops/signin-submit-focus-visible.png) ![Continue with email button pressed](components/crops/signin-submit-pressed.png)
-
-#### Forgot password link
-Read as `signin-forgot` on the signin page.
-
-| State | Values (later rows list only what changes from the first row) |
-|---|---|
-| default | size 102.7 x 16; background transparent; text Inter 12/16 500, lab(47.7841 -0.393182 -10.0268); transition all 0.3s cubic-bezier(0.23, 1, 0.32, 1) |
-| hover | text Inter 12/16 500, lab(8.11897 0.811279 -12.254) |
-| focus-visible | radius 2px; outline 2px solid oklab(0.209998 -0.00316383 -0.0338463 / 0.1), offset 4px |
-| pressed | text Inter 12/16 500, lab(8.11897 0.811279 -12.254) |
-
-![Forgot password link default](components/crops/signin-forgot-default.png) ![Forgot password link hover](components/crops/signin-forgot-hover.png) ![Forgot password link focus-visible](components/crops/signin-forgot-focus-visible.png) ![Forgot password link pressed](components/crops/signin-forgot-pressed.png)
-
 ## Icons
 
-No standalone SVG icon set was lifted on this pass; the icons in the crops and screenshots are Amie's artwork. Declared under layoutGaps in the catalog entry.
+No standalone SVG icon set was lifted on this pass; the icons in the crops and screenshots are Ballpark's artwork. Declared under layoutGaps in the catalog entry.
 
 | Icon | Rendered sizes | View box | Style | Seen on | Next to |
 |---|---|---|---|---|---|
@@ -472,9 +500,8 @@ No standalone SVG icon set was lifted on this pass; the icons in the crops and s
 
 ### Pages
 
-- **The app behind login and the download.** Amie's product (calendar, inbox, notes, recording) sits behind sign-in and was never reached; the download buttons were measured, never pressed.
-- **Anything that sends, downloads or signs in.** No form was submitted, no app was downloaded, no trial was started, no account was created.
-- **The Features flyout innards** were opened for the shot but not measured; the mobile header offers no hamburger at 390px — the links collapse to an icon row, recorded as a gap.
+- **The app behind sign-in.** Ballpark's product sits behind /sign-in and was never reached; the OAuth links and email form were measured, never used.
+- **Anything that sends or signs in.** No form was submitted, no demo was booked, no account was created, the Intercom chat was never opened.
 
 ### States
 
@@ -483,18 +510,17 @@ No standalone SVG icon set was lifted on this pass; the icons in the crops and s
 
 ### Themes
 
-The site paints one light theme on every captured route. The stylesheet does carry a `.dark` block — it re-declares only `--foreground` and the two `--shadow-wysiwyg-*` values — plus `dark:` utility variants, but nothing on the captured routes sets the dark attribute, so the dark set is recorded in [raw/css-vars.json](raw/css-vars.json) and not emitted.
+The site paints one light theme on every captured route; the Framer bundle declares no dark variant, so no dark set is emitted.
 
 ### Fonts
 
-- **The UI font** is the SF/Inter system stack; no custom @font-face ships on the marketing pages.
-- Illustration and wordmark artwork in the screenshots are Amie's property.
+- **The UI fonts** are Framer-served webfonts (Inter Display, Inter, Source Serif 4 and five more faces; `fonts` in [raw/css-vars.json](raw/css-vars.json)); the font files themselves are not committed.
+- Illustration and wordmark artwork in the screenshots are Ballpark's property.
 
 ### Screenshots
 
-- The mobile header at 390px offers no hamburger button (the m-menu-* entries are recorded missing): nav links collapse to the icon row.
 - Screenshots are stored as 256-colour PNGs; read exact colours from the tokens or the raw files.
 
 ### Content left out
 
-- Feature imagery, the animated product shots and the wordmark are Amie's content; only the frames and components were measured.
+- Feature imagery, the animated product shots and the wordmark are Ballpark's content; only the frames and components were measured.

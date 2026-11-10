@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build components.md for the Gauth design reference.
+"""Build components.md for the Ballpark design reference.
 
 Reads raw/components-computed.json (every component and state, measured), raw/layout.json,
 tokens.json, screenshots/ and icons/INDEX.tsv, and writes components.md next to them. Every value
@@ -142,10 +142,27 @@ def props(v):
         o["icon"] = f"{num(v['icon']['w'])} x {num(v['icon']['h'])}, {colour(v['icon']['color'])}"
     if v.get("placeholder"):
         o["placeholder"] = colour(v["placeholder"]["color"])
+    # A focus ring or fill can be painted by an ancestor (Framer draws the
+    # field's focus ring on its wrapper), so parent-drawn changes belong in
+    # the state diff or a focused state reads as unchanged.
+    wrap = []
+    for a in v.get("ancestors") or []:
+        bits = []
+        if a.get("shadow") and a["shadow"] != "none":
+            layers = [x.strip() for x in re.split(r",(?![^(]*\))", colour(a["shadow"], tokens=False))]
+            layers = [x for x in layers if not x.startswith("transparent") and not re.match(r"rgba?\(0, 0, 0, 0\)", x)]
+            if layers:
+                bits.append("shadow " + ", ".join(layers))
+        if a.get("outline"):
+            bits.append("outline " + colour(a["outline"], tokens=False))
+        if bits:
+            wrap.append(f"{a['node']}: " + "; ".join(bits))
+    if wrap:
+        o["wrapper"] = " / ".join(wrap)
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "wrapper", "text", "transition", "transform", "opacity", "icon", "placeholder"]
 
 
 def state_rows(c):
@@ -203,32 +220,32 @@ def child_layers(c):
 
 # --------------------------------------------------------------------------- page and group text
 
-PAGE_NAME = {"home": "home", "pricing": "pricing", "download": "download", "contact": "contact"}
+PAGE_NAME = {"home": "home", "pricing": "pricing", "contact": "contact sales", "signin": "sign-in"}
 
 GROUP_INTRO = {
-    "Shell and navigation": "The floating bar and the Radix Features flyout.",
-    "Home": "The hero pair and the what's-new pill.",
-    "Pricing": "The billing toggle, plan cards, trial CTA and FAQ accordions.",
-    "Download": "The app download action.",
-    "Contact": "The contact form fields.",
-    "Footer": "The link columns, socials and legal.",
-    "Mobile (390 wide)": "The same surface at phone width.",
+    "Shell and navigation": "The announcement strip, the two-row header with the Solutions flyout, and the Intercom launcher.",
+    "Home": "The serif hero, the feature cards, the closing CTA and the stories carousel dots.",
+    "Pricing": "The plan card and its demo CTA.",
+    "Contact sales": "The sales form's fields and submit.",
+    "Sign in": "The OAuth links, the email and password fields and the submit.",
+    "Footer": "The link columns, socials, the G2 badge and legal.",
+    "Mobile (390 wide)": "The same surface at phone width, with its full-sheet menu.",
 }
 
 SHOTS = [
     ("home", "Home", "/"),
-    ("pricing", "Pricing", "/pricing"),
-    ("changelog", "Changelog", "/changelog"),
-    ("blog", "Blog", "/blog"),
-    ("stories", "Stories", "/stories"),
-    ("calendar", "Calendar", "/calendar"),
-    ("tools", "Tools", "/tools"),
+    ("features", "Features", "/features"),
+    ("coach", "Coach", "/coach"),
     ("templates", "Templates", "/templates"),
-    ("download", "Download", "/download"),
-    ("contact", "Contact", "/contact"),
+    ("enterprise", "Enterprise", "/enterprise"),
+    ("blog", "Blog", "/blog"),
+    ("pricing", "Pricing", "/pricing"),
+    ("contact", "Contact sales", "/contact/sales"),
+    ("signin", "Sign in", "/sign-in"),
 ]
 MOBILE = [
     ("mobile-home", "Home, phone", "/"),
+    ("mobile-features", "Features, phone", "/features"),
     ("mobile-pricing", "Pricing, phone", "/pricing"),
 ]
 
@@ -255,15 +272,15 @@ n_crops = len(list(Path("components/crops").glob("*.png")))
 n_states = sum(len(c["states"]) for c in C.values())
 icons = []
 
-W("# Amie components")
+W("# Ballpark components")
 W()
-W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from amie.so on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.")
+W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from ballparkhq.com on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.")
 W()
 W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states).")
 W()
 W("How to read an entry:")
 W()
-W("- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.")
+W("- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Inter 14/21 500, #111827`, and is read from the first text node inside the component.")
 W("- The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
 W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
 W()
@@ -281,9 +298,8 @@ W()
 W("| State | Where | How it was reached | Captured |")
 W("|---|---|---|---|")
 OVER = [
-    ("Features flyout", "header, home", "the nav button's own Radix toggle", "[home-light-features](screenshots/home-light-features.png), [nav-flyout-open](#features-flyout-open)"),
-    ("Billing, yearly", "pricing", "the toggle's own press; plan cards re-render", "[pricing-light-yearly](screenshots/pricing-light-yearly.png), [billing-yearly-on](#billing-toggle-yearly-on)"),
-    ("Pricing FAQ, open", "pricing", "the accordion's own toggle", "[faq-open](#faq-accordion-open), [pricing-light-faq](screenshots/pricing-light-faq.png)"),
+    ("Solutions menu, open", "header, home", "the nav link's own hover", "[home-light-solutions-menu](screenshots/home-light-solutions-menu.png), [nav-solutions-open](#solutions-menu-open)"),
+    ("Mobile menu, open", "header, phone", "the menu trigger's own press", "[mobile-home-light-menu-open](screenshots/mobile-home-light-menu-open.png), [m-menu-open](#mobile-menu-open)"),
 ]
 for r in OVER:
     W("| " + " | ".join(r) + " |")
@@ -366,7 +382,7 @@ W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
 W("|---|---|---|---|---|---|---|")
 # PRODUCT (adapt): the card-like components to compare in one table.
-for k in ["plan-card", "faq-question", "contact-field"]:
+for k in ["plan-card", "feature-card", "coach-widget"]:
     c = C.get(k)
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
@@ -427,7 +443,7 @@ for g in groups:
 W()
 W("## Icons")
 W()
-W("No standalone SVG icon set was lifted on this pass; the icons in the crops and screenshots are Amie's artwork. Declared under layoutGaps in the catalog entry.")
+W("No standalone SVG icon set was lifted on this pass; the icons in the crops and screenshots are Ballpark's artwork. Declared under layoutGaps in the catalog entry.")
 W()
 W("| Icon | Rendered sizes | View box | Style | Seen on | Next to |")
 W("|---|---|---|---|---|---|")
@@ -441,9 +457,8 @@ W("## Gaps")
 W()
 W("### Pages")
 W()
-W("- **The app behind login and the download.** Amie's product (calendar, inbox, notes, recording) sits behind sign-in and was never reached; the download buttons were measured, never pressed.")
-W("- **Anything that sends, downloads or signs in.** No form was submitted, no app was downloaded, no trial was started, no account was created.")
-W("- **The Features flyout innards** were opened for the shot but not measured; the mobile header offers no hamburger at 390px — the links collapse to an icon row, recorded as a gap.")
+W("- **The app behind sign-in.** Ballpark's product sits behind /sign-in and was never reached; the OAuth links and email form were measured, never used.")
+W("- **Anything that sends or signs in.** No form was submitted, no demo was booked, no account was created, the Intercom chat was never opened.")
 W()
 W("### States")
 W()
@@ -452,21 +467,20 @@ W("- **Disabled, error and loading states** were not seen on the public surface.
 W()
 W("### Themes")
 W()
-W("The site paints one light theme on every captured route. The stylesheet does carry a `.dark` block — it re-declares only `--foreground` and the two `--shadow-wysiwyg-*` values — plus `dark:` utility variants, but nothing on the captured routes sets the dark attribute, so the dark set is recorded in [raw/css-vars.json](raw/css-vars.json) and not emitted.")
+W("The site paints one light theme on every captured route; the Framer bundle declares no dark variant, so no dark set is emitted.")
 W()
 W("### Fonts")
 W()
-W("- **The UI font** is the SF/Inter system stack; no custom @font-face ships on the marketing pages.")
-W("- Illustration and wordmark artwork in the screenshots are Amie's property.")
+W("- **The UI fonts** are Framer-served webfonts (Inter Display, Inter, Source Serif 4 and five more faces; `fonts` in [raw/css-vars.json](raw/css-vars.json)); the font files themselves are not committed.")
+W("- Illustration and wordmark artwork in the screenshots are Ballpark's property.")
 W()
 W("### Screenshots")
 W()
-W("- The mobile header at 390px offers no hamburger button (the m-menu-* entries are recorded missing): nav links collapse to the icon row.")
 W("- Screenshots are stored as 256-colour PNGs; read exact colours from the tokens or the raw files.")
 W()
 W("### Content left out")
 W()
-W("- Feature imagery, the animated product shots and the wordmark are Amie's content; only the frames and components were measured.")
+W("- Feature imagery, the animated product shots and the wordmark are Ballpark's content; only the frames and components were measured.")
 
 Path("components.md").write_text("\n".join(L) + "\n")
 print("components.md:", len(L), "lines")

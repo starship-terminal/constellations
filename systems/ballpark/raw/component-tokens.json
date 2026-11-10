@@ -971,9 +971,9 @@
   },
   "border": {
    "type": "color",
-   "description": "The bordered pill's hairline, painted on ::after.",
-   "value": "{color.gray.200}",
-   "source": "computed ::after.borderTopColor of nav-signin default (raw/components-computed.json); same value as core.color.gray.200"
+   "description": "The bordered pill's hairline, painted as a 1px ring shadow on the anchor (its ::after draws no border).",
+   "value": "{color.gray-alpha.20}",
+   "source": "computed ringShadow of nav-signin default (raw/components-computed.json); same value as core.color.gray-alpha.20"
   },
   "chip": {
    "type": "color",

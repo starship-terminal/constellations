@@ -29,6 +29,10 @@ const URLS = { home: '/', pricing: '/pricing', contact: '/contact/sales', signin
 let page, cdp, current, context, run;
 const touched = new Set();
 const listed = new Map();
+// Pages that actually loaded this run (not blocked): readings may only be
+// pruned for components on one of these — a blocked route must not erase
+// evidence captured earlier.
+const opened = new Set();
 
 async function blocked() {
   return page.evaluate(() => {
@@ -52,6 +56,7 @@ async function newPage(key, { mobile = false, wait = 8000 } = {}) {
   log('open', key, mobile ? '(mobile)' : '');
   await open(page, BASE + URLS[key], { wait });
   if (await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); return false; }
+  opened.add(key);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   await closePromo(page);
   return true;
@@ -113,7 +118,12 @@ async function measure(key, state, target, opts = {}) {
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
-    c.states[state] = { error: String(e.message || e).slice(0, 200) };
+    // A failed state capture must not erase a previous reading: keep it under
+    // its own provenance and record the error beside it.
+    const prev = c.states[state];
+    c.states[state] = prev && !prev.error
+      ? { ...prev, recaptureError: String(e.message || e).slice(0, 200) }
+      : { error: String(e.message || e).slice(0, 200) };
     log('  !', key, state, String(e.message).slice(0, 120));
   }
 }
@@ -170,7 +180,10 @@ async function S(key, target, list, meta = {}, opts = {}) {
       } else via = via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
-      out.components[key].states[st] = { error: String(e.message || e).slice(0, 200) };
+      const prev = out.components[key].states[st];
+      out.components[key].states[st] = prev && !prev.error
+        ? { ...prev, recaptureError: String(e.message || e).slice(0, 200) }
+        : { error: String(e.message || e).slice(0, 200) };
       log('  !', key, st, String(e.message).slice(0, 120));
     }
     if (undo) await undo().catch(() => {});
@@ -269,14 +282,16 @@ async function home() {
   await S('intercom-launcher', q('div[role="button"][aria-label*="Intercom" i]'), B4, { group: g, title: 'Intercom launcher', desc: 'The round chat bubble Intercom mounts at the bottom-right of every page (third-party widget).', sel: 'div[role="button"][aria-label*="Intercom"]' }, { noScroll: true });
 
   const h = G.home;
-  await S('hero-title', q('h1').first(), ['default'], { group: h, title: 'Hero title', desc: '"Research without the complexity" in the site\'s serif display (Source Serif 4).', sel: 'h1' }, { noScroll: true });
+  await S('hero-title', q('h1').first(), ['default'], { group: h, title: 'Hero title', desc: '"Research without the complexity" in the site\'s display face (Inter Display).', sel: 'h1' }, { noScroll: true });
   await S('hero-sub', q('h1').first().locator('xpath=following::*[self::p or self::div][string-length(normalize-space())>40][1]'), ['default'], { group: h, title: 'Hero subcopy', sel: 'first long paragraph under h1' }, { noScroll: true });
   await S('section-title', q('h2').first(), ['default'], { group: h, title: 'Section title', sel: 'first h2' });
-  if (await scrollFind(markCoachFn)) {
-    await S('coach-widget', q('[data-m-coach]'), ['default', 'hover'], { group: h, title: 'Coach demo widget', desc: 'The working "Ask Coach" demo box on the home page: the product\'s chat UI with an "Ask me anything…" field and a round submit.', sel: 'Coach box (marked in-page)' }, { noScroll: true });
-    await S('coach-field', q('[data-m-coach-field]'), ['default', 'focused', 'filled'], { group: h, title: 'Coach ask field', desc: 'The demo\'s text field; sample text was typed and deleted, nothing sent.', sel: 'input inside the Coach box' });
-    await S('coach-submit', q('[data-m-coach-submit]'), B4, { group: h, title: 'Coach send button', desc: 'The round send button inside the demo. Measured, never pressed.', sel: 'button:has-text("Submit")' });
-  }
+  // The scroll sweep marks the Coach demo's parts when they mount; when the
+  // widget is absent the S() calls record an explicit missing entry rather
+  // than silently claiming coverage.
+  await scrollFind(markCoachFn);
+  await S('coach-widget', q('[data-m-coach]'), ['default', 'hover'], { group: h, title: 'Coach demo widget', desc: 'The working "Ask Coach" demo box on the home page: the product\'s chat UI with an "Ask me anything…" field and a round submit.', sel: 'Coach box (marked in-page)' }, { noScroll: true });
+  await S('coach-field', q('[data-m-coach-field]'), ['default', 'focused', 'filled'], { group: h, title: 'Coach ask field', desc: 'The demo\'s ask field. The box paints a fake field (a Framer div, not an input or textarea), so the entry is recorded missing when the sweep finds no real input.', sel: 'input inside the Coach box' });
+  await S('coach-submit', q('[data-m-coach-submit]'), B4, { group: h, title: 'Coach send button', desc: 'The round send button inside the demo. Measured, never pressed.', sel: 'button:has-text("Submit")' });
   if (await scrollFind(markDotFn)) {
     await S('carousel-dot', q('[data-m-dot="1"]'), B4, { group: h, title: 'Carousel page dot', desc: 'The pagination dots of the stories carousel ("Scroll to page 1"…).', sel: 'button:has-text("Scroll to page")' }, { noScroll: true });
   } else {
@@ -284,7 +299,7 @@ async function home() {
   }
   await page.evaluate(() => scrollTo(0, 0)); await page.waitForTimeout(600);
   const card = q('a[href*="/features/"], a[href*="./features/"]').filter({ visible: true }).first();
-  await S('feature-card', card, ['default', 'hover'], { group: h, title: 'Feature card', desc: 'A tall image card linking a feature page (live interviews, creative testing, …). Measured, never followed.', sel: 'a[href*="features/"]' });
+  await S('feature-card', card, B4, { group: h, title: 'Feature card', desc: 'A tall image card linking a feature page (live interviews, creative testing, …). Measured, never followed.', sel: 'a[href*="features/"]' });
   await S('cta-request', q('a').filter({ hasText: /^Request a demo$/ }).filter({ visible: true }).first(), B4, { group: h, title: 'Request a demo button', desc: 'The closing CTA over the footer ("Try Ballpark with your team"). Measured, never followed.', sel: 'a:has-text("Request a demo")' });
   save();
 }
@@ -295,16 +310,26 @@ async function pricing() {
   await S('pricing-title', q('h1').first(), ['default'], { group: g, title: 'Pricing title', sel: 'h1' }, { noScroll: true });
   const planBtn = q('main a, section a').filter({ hasText: /demo|trial|started|sales|contact/i }).filter({ visible: true }).first();
   await S('plan-cta', planBtn, B4, { group: g, title: 'Plan CTA', desc: 'The action inside an enterprise plan card. Measured, never followed.', sel: 'a:has-text("demo|trial") inside a plan card' });
-  // The card is the smallest ancestor that actually looks like a card:
-  // wider than a button row and taller than a link.
+  // The card is the smallest ancestor that actually paints its own surface —
+  // a background, a ring shadow or a border. A wider transparent container
+  // (the two-card row is ~768px) would measure empty air around the card.
   await page.evaluate(() => {
     const a = [...document.querySelectorAll('main a, section a')].find((n) => /demo|trial|started|sales|contact/i.test(n.innerText || '') && n.getBoundingClientRect().width > 0);
     if (!a) return;
+    // The card is the outermost ancestor that still paints its own surface —
+    // a background, a ring shadow or a border — within card bounds. A wider
+    // transparent container (the two-card row is ~768px) or an inner painted
+    // band would measure the wrong box.
+    let card = null;
     for (let n = a, i = 0; n && i < 8; i++, n = n.parentElement) {
       const r = n.getBoundingClientRect();
-      if (r.width > 400 && r.height > 140) { n.setAttribute('data-m-plan-card', '1'); return; }
+      if (r.width > 700 || r.height > 1000) break;
+      if (r.width >= 300 && r.height >= 140) {
+        const c = getComputedStyle(n);
+        if (c.backgroundColor !== 'rgba(0, 0, 0, 0)' || c.boxShadow !== 'none' || parseFloat(c.borderTopWidth) > 0) card = n;
+      }
     }
-    (a.parentElement || a).setAttribute('data-m-plan-card', '1');
+    (card || a.parentElement || a).setAttribute('data-m-plan-card', '1');
   });
   await S('plan-card', q('[data-m-plan-card="1"]'), ['default'], { group: g, title: 'Plan card', sel: 'card ancestor of a plan CTA (marked in-page)' });
   save();
@@ -393,7 +418,10 @@ try {
   if (!pages.length || pages.includes('mobile')) await plan.mobile();
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
-    if (!touched.has(key) && !pages.length) { delete out.components[key]; continue; }
+    // Prune only components on a page that actually opened this run: a blocked
+    // or unvisited route keeps its earlier readings (write new captures first,
+    // prune old outputs only after a complete run).
+    if (!touched.has(key) && !pages.length) { if (opened.has(c.page)) delete out.components[key]; continue; }
     if (!touched.has(key)) continue;
     const want = listed.get(key);
     if (want) for (const st of Object.keys(c.states || {})) if (!want.has(st) && pages.length) delete c.states[st];
