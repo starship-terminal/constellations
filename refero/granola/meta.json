@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/d6c2a911-45ed-4860-a992-43df22793c2a",
   "source_url": "https://www.granola.ai",
   "extracted_at": "2026-05-07T22:41:01.983Z",
-  "fetched_at": "2026-10-20T08:25:08Z",
+  "fetched_at": "2026-11-08T04:20:14Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6b177106-961d-4f71-aba1-c93e63fa03cd.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/b4965ba6-6ad6-4b36-ad75-8b21399be74f.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/4f082894-5520-4639-b7d6-58e2f85500bf.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/55d0ecdb-20cd-4014-b11a-bd97602f9bac.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

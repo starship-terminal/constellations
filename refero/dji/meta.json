@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/f11750fc-d7c0-4d26-b32a-3b1d2098ae34",
   "source_url": "https://dji.com",
   "extracted_at": "2026-06-03T16:42:12.976Z",
-  "fetched_at": "2026-10-20T08:23:13Z",
+  "fetched_at": "2026-11-08T04:20:01Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/924a80ab-30a0-4907-a86e-bead1f43883f.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/61ce0e17-2616-4f4e-98a4-5dc72e00f030.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/f0ec6bb0-3072-4520-96f9-b6131dcf3400.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/6cc3a0f1-02b2-441e-8944-60743f6904fa.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

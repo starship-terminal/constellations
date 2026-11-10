@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/2e9b3dcb-f937-488d-891c-351c7366188f",
   "source_url": "https://moderntreasury.com",
   "extracted_at": "2026-09-24T17:42:35.263Z",
-  "fetched_at": "2026-10-20T08:21:09Z",
+  "fetched_at": "2026-11-08T04:20:30Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f37c1e29-38b5-4b2f-b748-13fe5e74dcf5.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/07b03d67-3bce-48a5-a70d-1159f5f1bf30.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/5fe5b505-43f6-4cc7-a75d-f8726c0f132c.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/942e62e7-e877-40db-8a53-8d3d7fdd6cd0.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

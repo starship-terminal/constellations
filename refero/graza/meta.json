@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/f2a84e0f-cf77-41fa-ade0-b062a3a42495",
   "source_url": "https://graza.co",
   "extracted_at": "2026-06-03T17:58:09.573Z",
-  "fetched_at": "2026-10-20T08:22:47Z",
+  "fetched_at": "2026-11-08T04:20:14Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f9fbba96-f0b4-4b75-b3c1-63a3c1433ba0.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ec13dc37-47f8-432a-bd4f-c2d1bec09d03.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/c5e5a448-f2a8-4793-bd7a-c6e82b729879.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b7ca43ba-0082-426b-a93f-5c956b3423ab.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

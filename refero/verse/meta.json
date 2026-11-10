@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/486c3132-9ff7-4e27-9eef-ca2e130bd827",
   "source_url": "https://www.verse.sh",
   "extracted_at": "2026-06-03T21:29:46.159Z",
-  "fetched_at": "2026-10-20T08:23:33Z",
+  "fetched_at": "2026-11-08T04:21:03Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/8c2f3a36-8911-4345-b6bd-bcc2cd26acef.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

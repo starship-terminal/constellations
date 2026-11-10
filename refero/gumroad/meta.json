@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/d67e1407-6d16-47e8-89cf-22f5c5f2dd88",
   "source_url": "https://gumroad.com",
   "extracted_at": "2026-06-03T15:01:11.612Z",
-  "fetched_at": "2026-10-20T08:23:18Z",
+  "fetched_at": "2026-11-08T04:20:15Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/1c22b919-1a70-4621-be34-367d25dfabb9.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/5b3c01ca-546e-4877-895f-63a3b8345a60.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/f40c0f46-fdc8-4b65-afe3-4db18e4834b9.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/9919923e-46ab-4595-b6dc-b91e4d369ffe.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/5fbdad0a-d102-41c2-8253-f201ad6a6673",
   "source_url": "https://apolloworkspace.com",
   "extracted_at": "2026-06-03T17:48:32.670Z",
-  "fetched_at": "2026-10-20T08:24:40Z",
+  "fetched_at": "2026-11-08T04:19:42Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6e0cee11-274d-41dd-8fce-563a212728d0.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0512045c-8c47-4ce5-840a-db80e21fd3c5.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/19809731-c987-4340-b0db-19b84db2d83d.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/710bbf79-8e46-4fd4-8635-610cb3c07d31.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

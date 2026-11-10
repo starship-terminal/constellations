@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/dcd215e5-3511-4e40-87ff-95c095f44ad6",
   "source_url": "https://www.instrument.com",
   "extracted_at": "2026-06-03T20:46:22.578Z",
-  "fetched_at": "2026-10-20T08:23:43Z",
+  "fetched_at": "2026-11-08T04:20:20Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/380c17a9-5456-4266-8cc4-7ed605b4efff.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

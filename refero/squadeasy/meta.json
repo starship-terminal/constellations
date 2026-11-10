@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/3e5c272b-8d68-40d8-9726-b4d6914b4b16",
   "source_url": "https://www.squadeasy.com",
   "extracted_at": "2026-06-03T17:36:27.640Z",
-  "fetched_at": "2026-10-20T08:22:57Z",
+  "fetched_at": "2026-11-08T04:20:51Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/58f13aa4-e566-423d-971f-c7c00954ff17.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/99bfb6b3-3da2-4412-a91f-59d0a3b1e48b.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/6d7fb118-fb74-4506-bed9-d401d75b1c42.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/26e63cfd-029f-4c92-8f2b-9cbdcb38a3b8.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

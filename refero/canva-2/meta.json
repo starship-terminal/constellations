@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/62f89392-609d-45b7-b9df-7a5acd529864",
   "source_url": "https://canva.com",
   "extracted_at": "2026-06-03T15:38:45.503Z",
-  "fetched_at": "2026-10-20T08:25:01Z",
+  "fetched_at": "2026-11-08T04:19:53Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/59348806-5ac4-4d39-976a-52866d5434ca.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a38ce4cd-9bec-4ac3-bcb7-a945f7d9a212.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/e7e656ed-5ca8-48f4-874f-d4ddb3999955.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/658e8d76-5ede-4747-a8d6-39ea191a2f69.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/12b20c12-27f8-4938-89ba-569404d36fe8",
   "source_url": "https://sing-sing.co",
   "extracted_at": "2026-06-03T21:52:11.199Z",
-  "fetched_at": "2026-10-20T08:21:45Z",
+  "fetched_at": "2026-11-08T04:20:49Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/3c57d3d1-98eb-4838-9a6f-0bf0c5c7dc11.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0dd71d48-f4bb-4d96-ab79-722453a9a06c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/7f1a1772-99e2-4873-b0f5-ac729c567032.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/d3be5386-94b7-49a4-b622-fe3d2752ea29.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

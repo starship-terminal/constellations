@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/fb6ac216-c11a-47c3-88e8-0423541da69c",
   "source_url": "https://montecafe.com.au",
   "extracted_at": "2026-06-03T18:05:30.528Z",
-  "fetched_at": "2026-10-20T08:22:45Z",
+  "fetched_at": "2026-11-08T04:20:31Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/62af8b6a-436b-47d0-95cb-5ff3dceebcdb.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/3ade581e-0a6b-4d68-8b88-1279185e7fa7.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/1cc1f742-5ea2-4c6a-b91b-a49fc19645d7.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/4664fda1-dcb7-4cd2-847a-13294ae4c486.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

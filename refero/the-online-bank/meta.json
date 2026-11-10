@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/e9f07a27-bdd4-4f6a-8132-329d014aa5f4",
   "source_url": "https://n26.com",
   "extracted_at": "2026-06-03T18:35:03.395Z",
-  "fetched_at": "2026-10-20T08:22:32Z",
+  "fetched_at": "2026-11-08T04:20:58Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/67a899b8-e029-4e86-8ad3-0e9dd9fe8d67.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/5f800714-60ec-476f-89ab-f646c7040a5d.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/0a666c56-0c8e-42d3-8549-321a4af14c54.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/567a545e-c264-4e8f-90ea-d896cf363a04.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/05a82625-786e-4343-a554-3ba8f4de23d7",
   "source_url": "https://neverhack.com/en",
   "extracted_at": "2026-06-03T20:05:34.171Z",
-  "fetched_at": "2026-10-20T08:22:04Z",
+  "fetched_at": "2026-11-08T04:20:33Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/314e46bd-408e-4f59-9f2b-3e70fea53ce0.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/d2b52ca5-7362-4338-8ff8-82a327997f45.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/66692dff-99e7-4612-befa-0d95bd654152.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/afb9a424-dc1e-4de2-bb5e-7adffe22c381.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

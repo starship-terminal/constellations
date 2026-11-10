@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/6262b0bb-ea6f-481b-b706-65df29507b6c",
   "source_url": "https://weareink.co.uk",
   "extracted_at": "2026-06-03T19:38:11.951Z",
-  "fetched_at": "2026-10-20T08:22:09Z",
+  "fetched_at": "2026-11-08T04:20:20Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/7e13c664-a1b1-4913-93c5-b339e93891c5.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/02e029cb-baa9-4efa-8f29-5092ca7b79cf.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/bfb3d56d-0998-446f-872c-519e856580ef.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/9d1f88cf-0ff6-4561-ba0b-ede10bf54bc0.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

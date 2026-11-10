@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/573fe0d5-8f0b-4c59-bae3-3f2e67cc63f0",
   "source_url": "https://tableland.xyz",
   "extracted_at": "2026-06-03T22:01:16.268Z",
-  "fetched_at": "2026-10-20T08:23:23Z",
+  "fetched_at": "2026-11-08T04:20:57Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/17fe0b6c-b4e6-4e5e-988f-d34f60f38bd4.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/828f96b8-b5d4-4fc0-94f7-f9597fa8d8e5.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/ca9dc83e-bb96-44ae-8742-ef79c5bd99dc.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/dd1e436a-01ba-4296-b6f4-eb52fa36af0d.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

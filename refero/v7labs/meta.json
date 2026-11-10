@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/1ab79e76-a07f-48fd-8e93-0a0fee12abd7",
   "source_url": "https://www.v7labs.com",
   "extracted_at": "2026-06-03T21:10:49.013Z",
-  "fetched_at": "2026-10-20T08:23:37Z",
+  "fetched_at": "2026-11-08T04:21:02Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/1854595c-ddf5-4d2a-9454-f870928e95f3.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

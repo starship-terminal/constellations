@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/96eae189-95ad-4a38-83d1-840497e5daf3",
   "source_url": "https://www.apple.com/apple-watch-series-11",
   "extracted_at": "2026-06-03T19:26:49.385Z",
-  "fetched_at": "2026-10-20T08:24:03Z",
+  "fetched_at": "2026-11-08T04:19:44Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/6acd0c33-3346-4d6e-92ca-d6dc1ad5ee6d.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/5d45250e-c8c7-4098-b637-c4a9c87b9cbf.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/64ae5907-d98c-4d01-b6b7-8fb0b1d181c0.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/99329db5-a7d3-4ffa-9048-291d3074f36f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

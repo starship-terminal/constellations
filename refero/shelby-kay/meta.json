@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/2ab2f666-6da7-4cd8-bc91-52a28bd560ad",
   "source_url": "https://shelbykay.dev",
   "extracted_at": "2026-06-03T21:11:25.668Z",
-  "fetched_at": "2026-10-20T08:21:50Z",
+  "fetched_at": "2026-11-08T04:20:48Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/eeb3d7d9-273a-4d93-ab9f-fe5ff5706d29.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/5e49ce6b-76e6-4b7d-ab67-b160460adc00.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d13a5cec-338a-41e8-bd0c-8a83d418126e.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/cc757b50-1c45-4f03-a22b-a1f06f0cca19.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

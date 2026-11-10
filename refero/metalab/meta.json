@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/da087e69-8832-418a-aa1b-42e1acabb39e",
   "source_url": "https://metalab.com",
   "extracted_at": "2026-06-03T20:13:14.715Z",
-  "fetched_at": "2026-10-20T08:22:00Z",
+  "fetched_at": "2026-11-08T04:20:29Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/ba4d17b1-941e-4ce6-8dcd-090062cd5370.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/34bf7039-25a1-471f-9820-57667d9ff6c1.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/64e8c267-9f2a-4814-8be3-4f8d1cb98c91.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b47cb87d-d425-4dc1-a026-9889b153d510.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

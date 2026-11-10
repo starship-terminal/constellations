@@ -1,0 +1,736 @@
+{
+ "readAt": "2026-11-08",
+ "source": "the live CSSOM on aaply.app (tilda-*.css and page <style> are same-origin, readable); one theme, resolved at 1440 x 900",
+ "sheetsSkippedCrossOrigin": [
+  "tilda-grid-3.0.min.css",
+  "tilda-blocks-page17114234.min.css",
+  "css2",
+  "tilda-animation-2.0.min.css",
+  "css2",
+  "custom.css"
+ ],
+ "counts": {
+  "rules": 60,
+  "fonts": 0,
+  "names": {
+   "theme": 0,
+   "app": 15,
+   "utility": 0,
+   "tailwind": 0
+  },
+  "bySelector": {
+   "[app] #rec507076524 .tn-elem[data-elem-id=\"1658244142031\"] .tn-atom": 3,
+   "[app] #rec507076524 .tn-elem[data-elem-id=\"1658244142033\"] .tn-atom": 8,
+   "[app] #rec507076524 .tn-elem[data-elem-id=\"1663150733467\"] .tn-atom": 2,
+   "[app] #rec507076524 .tn-elem[data-elem-id=\"1663150733469\"] .tn-atom": 2,
+   "[app] #rec507076524 .tn-elem[data-elem-id=\"1663150733472\"] .tn-atom": 2,
+   "[app] #rec507076524 .tn-elem[data-elem-id=\"1668797162690\"] .tn-atom": 2,
+   "[app] :root": 6,
+   "[app] #rec507076526 .tn-elem[data-elem-id=\"1658244556935\"] .tn-atom": 5,
+   "[app] #rec507076526 .tn-elem[data-elem-id=\"1658244726543\"] .tn-atom": 5,
+   "[app] @media screen and (max-width: 959px) #rec507076526 .tn-elem[data-elem-id=\"1658244726543\"] .tn-atom": 2,
+   "[app] #rec606275512 .tn-elem[data-elem-id=\"1658244910317\"] .tn-atom": 3,
+   "[app] #rec606275512 .tn-elem[data-elem-id=\"1687184475478\"] .tn-atom": 3,
+   "[app] #rec467288055 .tn-elem[data-elem-id=\"1657359898701\"] .tn-atom": 2,
+   "[app] #rec467288055 .tn-elem[data-elem-id=\"1657359278840\"] .tn-atom": 2,
+   "[app] #rec467288055 .tn-elem[data-elem-id=\"1657359411456\"] .tn-atom": 2,
+   "[app] #rec467288055 .tn-elem[data-elem-id=\"1657359525244\"] .tn-atom": 1,
+   "[app] #rec467288055 .tn-elem[data-elem-id=\"1657359525253\"] .tn-atom": 2,
+   "[app] #rec467288055 .tn-elem[data-elem-id=\"1657359604150\"] .tn-atom": 1,
+   "[app] #rec467288055 .tn-elem[data-elem-id=\"1657359604158\"] .tn-atom": 2,
+   "[app] #rec467288055 .tn-elem[data-elem-id=\"1657360784942\"] .tn-atom": 2,
+   "[app] #rec467288055 .tn-elem[data-elem-id=\"1657360356463\"] .tn-atom": 2,
+   "[app] #rec467288055 .tn-elem[data-elem-id=\"1657360982229\"] .tn-atom": 2,
+   "[app] #rec467288055 .tn-elem[data-elem-id=\"1657360982236\"] .tn-atom": 2,
+   "[app] #rec467288055 .tn-elem[data-elem-id=\"1657361397012\"] .tn-atom": 2,
+   "[app] #rec467288055 .tn-elem[data-elem-id=\"1657361397020\"] .tn-atom": 2,
+   "[app] #rec467288055 .tn-elem[data-elem-id=\"1657358286069\"] .tn-atom": 2,
+   "[app] #rec467291581 .tn-elem[data-elem-id=\"1657359898701\"] .tn-atom": 2,
+   "[app] #rec467291581 .tn-elem[data-elem-id=\"1657359278840\"] .tn-atom": 2,
+   "[app] #rec467291581 .tn-elem[data-elem-id=\"1657359604150\"] .tn-atom": 1,
+   "[app] #rec467291581 .tn-elem[data-elem-id=\"1657359604158\"] .tn-atom": 2,
+   "[app] #rec467291581 .tn-elem[data-elem-id=\"1657359411456\"] .tn-atom": 2,
+   "[app] #rec467291581 .tn-elem[data-elem-id=\"1657359525244\"] .tn-atom": 1,
+   "[app] #rec467291581 .tn-elem[data-elem-id=\"1657359525253\"] .tn-atom": 2,
+   "[app] #rec467291581 .tn-elem[data-elem-id=\"1657358286069\"] .tn-atom": 2,
+   "[app] #rec278017121 .tn-elem[data-elem-id=\"1612606091630\"] .tn-atom": 2,
+   "[app] #rec278017121 .tn-elem[data-elem-id=\"1612979638482\"] .tn-atom": 4,
+   "[app] #rec278017121 .tn-elem[data-elem-id=\"1612642597407\"] .tn-atom": 6,
+   "[app] #rec278442115 .tn-elem[data-elem-id=\"1612606091630\"] .tn-atom": 2,
+   "[app] #rec278442115 .tn-elem[data-elem-id=\"1612727749977\"] .tn-atom": 2,
+   "[app] #rec278455914 .tn-elem[data-elem-id=\"1612727749977\"] .tn-atom": 2,
+   "[app] #rec278455914 .tn-elem[data-elem-id=\"1612606091630\"] .tn-atom": 2,
+   "[app] #rec278455914 .tn-elem[data-elem-id=\"1684486318819\"] .tn-atom": 3,
+   "[app] #rec507144647 .tn-elem[data-elem-id=\"1612727749977\"] .tn-atom": 2,
+   "[app] #rec507144647 .tn-elem[data-elem-id=\"1666956622841\"] .tn-atom": 3,
+   "[app] #rec479466039 .tn-elem[data-elem-id=\"1615141239041\"] .tn-atom": 4,
+   "[app] #rec479466041 .tn-elem[data-elem-id=\"1612822883298\"] .tn-atom": 1,
+   "[app] #rec479466041 .tn-elem[data-elem-id=\"1612822956104\"] .tn-atom": 1,
+   "[app] #rec479466041 .tn-elem[data-elem-id=\"1612823487590\"] .tn-atom": 1,
+   "[app] #rec479466041 .tn-elem[data-elem-id=\"1612823668386\"] .tn-atom": 1,
+   "[app] #rec479466041 .tn-elem[data-elem-id=\"1612824597385\"] .tn-atom": 1,
+   "[app] #rec479466041 .tn-elem[data-elem-id=\"1612824619254\"] .tn-atom": 1,
+   "[app] #rec479466041 .tn-elem[data-elem-id=\"1614516545309\"] .tn-atom": 1,
+   "[app] #rec479466041 .tn-elem[data-elem-id=\"1615147130610\"] .tn-atom": 1,
+   "[app] #rec479466041 .tn-elem[data-elem-id=\"1615147130624\"] .tn-atom": 1,
+   "[app] #rec479466041 .tn-elem[data-elem-id=\"1658401549210\"] .tn-atom": 1,
+   "[app] #rec479466041 .tn-elem[data-elem-id=\"1658401549213\"] .tn-atom": 1,
+   "[app] #rec479466041 .tn-elem[data-elem-id=\"1658407503662\"] .tn-atom": 3,
+   "[app] #rec479466041 .tn-elem[data-elem-id=\"1661940839269\"] .tn-atom": 1,
+   "[app] #rec479466041 .tn-elem[data-elem-id=\"1663150060304\"] .tn-atom": 1,
+   "[app] #rec479466041 .tn-elem[data-elem-id=\"1670583888256\"] .tn-atom": 1
+  }
+ },
+ "theme": [],
+ "app": [
+  {
+   "file": "inline-12",
+   "selector": "#rec507076524 .tn-elem[data-elem-id=\"1658244142031\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-bordercolor": "#cccccc",
+    "--t396-speedhover": "0.2s"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-12",
+   "selector": "#rec507076524 .tn-elem[data-elem-id=\"1658244142033\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-bordercolor": "#000000",
+    "--t396-speedhover": "0.2s",
+    "--t396-bgcolor-color": "#000000",
+    "--t396-bgcolor-image": "none",
+    "--t396-bgcolor-hover-color": "#e6e51e",
+    "--t396-bgcolor-hover-image": "none",
+    "--t396-bordercolor-hover": "#e6e51e"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-12",
+   "selector": "#rec507076524 .tn-elem[data-elem-id=\"1663150733467\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-speedhover": "0.2s"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-12",
+   "selector": "#rec507076524 .tn-elem[data-elem-id=\"1663150733469\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-speedhover": "0.2s"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-12",
+   "selector": "#rec507076524 .tn-elem[data-elem-id=\"1663150733472\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-speedhover": "0.2s"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-12",
+   "selector": "#rec507076524 .tn-elem[data-elem-id=\"1668797162690\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-speedhover": "0.2s"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-15",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--w": "432px",
+    "--w1200": "432px",
+    "--w960": "428px",
+    "--w640": "400px",
+    "--w480": "400px",
+    "--anim-nav": "600ms"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-16",
+   "selector": "#rec507076526 .tn-elem[data-elem-id=\"1658244556935\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-bordercolor": "#ffffff",
+    "--t396-speedhover": "0.2s",
+    "--t396-bgcolor-color": "#000000",
+    "--t396-bgcolor-image": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-16",
+   "selector": "#rec507076526 .tn-elem[data-elem-id=\"1658244726543\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-bordercolor": "#ffffff",
+    "--t396-speedhover": "0.2s",
+    "--t396-bgcolor-color": "#000000",
+    "--t396-bgcolor-image": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-16",
+   "selector": "#rec507076526 .tn-elem[data-elem-id=\"1658244726543\"] .tn-atom",
+   "context": [
+    "@media screen and (max-width: 959px)"
+   ],
+   "properties": {
+    "--t396-bgcolor-color": "#ffffff",
+    "--t396-bgcolor-image": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-18",
+   "selector": "#rec606275512 .tn-elem[data-elem-id=\"1658244910317\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-speedhover": "0.2s",
+    "--t396-bgcolor-color": "#e6e51e",
+    "--t396-bgcolor-image": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-18",
+   "selector": "#rec606275512 .tn-elem[data-elem-id=\"1687184475478\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-speedhover": "0.2s",
+    "--t396-bgcolor-color": "#000000",
+    "--t396-bgcolor-image": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-19",
+   "selector": "#rec467288055 .tn-elem[data-elem-id=\"1657359898701\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "2px",
+    "--t396-bordercolor": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-19",
+   "selector": "#rec467288055 .tn-elem[data-elem-id=\"1657359278840\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "2px",
+    "--t396-bordercolor": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-19",
+   "selector": "#rec467288055 .tn-elem[data-elem-id=\"1657359411456\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-bordercolor": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-19",
+   "selector": "#rec467288055 .tn-elem[data-elem-id=\"1657359525244\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-bordercolor": "#466cf3"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-19",
+   "selector": "#rec467288055 .tn-elem[data-elem-id=\"1657359525253\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-bordercolor": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-19",
+   "selector": "#rec467288055 .tn-elem[data-elem-id=\"1657359604150\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-bordercolor": "#466cf3"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-19",
+   "selector": "#rec467288055 .tn-elem[data-elem-id=\"1657359604158\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-bordercolor": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-19",
+   "selector": "#rec467288055 .tn-elem[data-elem-id=\"1657360784942\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "2px",
+    "--t396-bordercolor": "#f34646"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-19",
+   "selector": "#rec467288055 .tn-elem[data-elem-id=\"1657360356463\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "2px",
+    "--t396-bordercolor": "#f34646"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-19",
+   "selector": "#rec467288055 .tn-elem[data-elem-id=\"1657360982229\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "2px",
+    "--t396-bordercolor": "#466cf3"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-19",
+   "selector": "#rec467288055 .tn-elem[data-elem-id=\"1657360982236\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "2px",
+    "--t396-bordercolor": "#466cf3"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-19",
+   "selector": "#rec467288055 .tn-elem[data-elem-id=\"1657361397012\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "2px",
+    "--t396-bordercolor": "#e6e51e"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-19",
+   "selector": "#rec467288055 .tn-elem[data-elem-id=\"1657361397020\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "2px",
+    "--t396-bordercolor": "#e6e51e"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-19",
+   "selector": "#rec467288055 .tn-elem[data-elem-id=\"1657358286069\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "4px",
+    "--t396-bordercolor": "#e6e6e6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-20",
+   "selector": "#rec467291581 .tn-elem[data-elem-id=\"1657359898701\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "2px",
+    "--t396-bordercolor": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-20",
+   "selector": "#rec467291581 .tn-elem[data-elem-id=\"1657359278840\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "2px",
+    "--t396-bordercolor": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-20",
+   "selector": "#rec467291581 .tn-elem[data-elem-id=\"1657359604150\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-bordercolor": "#466cf3"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-20",
+   "selector": "#rec467291581 .tn-elem[data-elem-id=\"1657359604158\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-bordercolor": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-20",
+   "selector": "#rec467291581 .tn-elem[data-elem-id=\"1657359411456\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-bordercolor": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-20",
+   "selector": "#rec467291581 .tn-elem[data-elem-id=\"1657359525244\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-bordercolor": "#466cf3"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-20",
+   "selector": "#rec467291581 .tn-elem[data-elem-id=\"1657359525253\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-bordercolor": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-20",
+   "selector": "#rec467291581 .tn-elem[data-elem-id=\"1657358286069\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "4px",
+    "--t396-bordercolor": "#e6e6e6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-22",
+   "selector": "#rec278017121 .tn-elem[data-elem-id=\"1612606091630\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-bordercolor": "#000000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-22",
+   "selector": "#rec278017121 .tn-elem[data-elem-id=\"1612979638482\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-speedhover": "0.2s",
+    "--t396-bgcolor-color": "#ffffff",
+    "--t396-bgcolor-image": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-22",
+   "selector": "#rec278017121 .tn-elem[data-elem-id=\"1612642597407\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-speedhover": "0.2s",
+    "--t396-bgcolor-color": "#e6e51e",
+    "--t396-bgcolor-image": "none",
+    "--t396-bgcolor-hover-color": "#dddc06",
+    "--t396-bgcolor-hover-image": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-23",
+   "selector": "#rec278442115 .tn-elem[data-elem-id=\"1612606091630\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-bordercolor": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-23",
+   "selector": "#rec278442115 .tn-elem[data-elem-id=\"1612727749977\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-bordercolor": "#000000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-24",
+   "selector": "#rec278455914 .tn-elem[data-elem-id=\"1612727749977\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-bordercolor": "#000000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-24",
+   "selector": "#rec278455914 .tn-elem[data-elem-id=\"1612606091630\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-bordercolor": "#000000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-24",
+   "selector": "#rec278455914 .tn-elem[data-elem-id=\"1684486318819\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-speedhover": "0.2s",
+    "--t396-bgcolor-color": "#ffffff",
+    "--t396-bgcolor-image": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-25",
+   "selector": "#rec507144647 .tn-elem[data-elem-id=\"1612727749977\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-bordercolor": "#000000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-25",
+   "selector": "#rec507144647 .tn-elem[data-elem-id=\"1666956622841\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-speedhover": "0.2s",
+    "--t396-bgcolor-color": "#000000",
+    "--t396-bgcolor-image": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-30",
+   "selector": "#rec479466039 .tn-elem[data-elem-id=\"1615141239041\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-borderwidth": "1px",
+    "--t396-speedhover": "0.2s",
+    "--t396-bgcolor-color": "#e6e51e",
+    "--t396-bgcolor-image": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-32",
+   "selector": "#rec479466041 .tn-elem[data-elem-id=\"1612822883298\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-32",
+   "selector": "#rec479466041 .tn-elem[data-elem-id=\"1612822956104\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-32",
+   "selector": "#rec479466041 .tn-elem[data-elem-id=\"1612823487590\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-32",
+   "selector": "#rec479466041 .tn-elem[data-elem-id=\"1612823668386\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-32",
+   "selector": "#rec479466041 .tn-elem[data-elem-id=\"1612824597385\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-32",
+   "selector": "#rec479466041 .tn-elem[data-elem-id=\"1612824619254\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-32",
+   "selector": "#rec479466041 .tn-elem[data-elem-id=\"1614516545309\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-32",
+   "selector": "#rec479466041 .tn-elem[data-elem-id=\"1615147130610\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-32",
+   "selector": "#rec479466041 .tn-elem[data-elem-id=\"1615147130624\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-32",
+   "selector": "#rec479466041 .tn-elem[data-elem-id=\"1658401549210\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-32",
+   "selector": "#rec479466041 .tn-elem[data-elem-id=\"1658401549213\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-32",
+   "selector": "#rec479466041 .tn-elem[data-elem-id=\"1658407503662\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-speedhover": "0.2s",
+    "--t396-bgcolor-color": "#e6e51e",
+    "--t396-bgcolor-image": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-32",
+   "selector": "#rec479466041 .tn-elem[data-elem-id=\"1661940839269\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-32",
+   "selector": "#rec479466041 .tn-elem[data-elem-id=\"1663150060304\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-32",
+   "selector": "#rec479466041 .tn-elem[data-elem-id=\"1670583888256\"] .tn-atom",
+   "context": [],
+   "properties": {
+    "--t396-shadow-text-opacity": "100%"
+   },
+   "bin": "app"
+  }
+ ],
+ "utility": [],
+ "tailwind": [],
+ "fonts": [],
+ "resolved": {
+  "--anim-nav": {
+   "raw": "600ms",
+   "kind": "duration",
+   "value": "0.6s"
+  },
+  "--w": {
+   "raw": "432px",
+   "kind": "dimension",
+   "value": "432px"
+  },
+  "--w1200": {
+   "raw": "432px",
+   "kind": "dimension",
+   "value": "432px"
+  },
+  "--w480": {
+   "raw": "400px",
+   "kind": "dimension",
+   "value": "400px"
+  },
+  "--w640": {
+   "raw": "400px",
+   "kind": "dimension",
+   "value": "400px"
+  },
+  "--w960": {
+   "raw": "428px",
+   "kind": "dimension",
+   "value": "428px"
+  }
+ }
+}

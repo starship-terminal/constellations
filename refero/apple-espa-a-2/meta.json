@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/a4f123f2-cd4b-4d26-998f-a3d3ee158024",
   "source_url": "https://apple.com",
   "extracted_at": "2026-07-03T02:59:29.969Z",
-  "fetched_at": "2026-10-20T08:21:39Z",
+  "fetched_at": "2026-11-08T04:19:44Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/7be36bf9-c976-4301-ab19-527f776fb3c5.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/d661d50a-83ee-4f86-8c44-25708bd2e75e.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/674dca20-1e36-4199-b592-97e3c6e118e2.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/2e4ea107-dd08-47e8-8c60-d48e7a38dd96.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

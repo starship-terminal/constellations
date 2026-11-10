@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/736830b5-90b1-47b0-99dd-d79454a0d22a",
   "source_url": "https://www.7shifts.com",
   "extracted_at": "2026-06-03T18:48:29.978Z",
-  "fetched_at": "2026-10-20T08:22:30Z",
+  "fetched_at": "2026-11-08T04:19:36Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/23966029-5672-4da8-b250-687d0c475586.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/dbc8c36a-6126-412f-ad07-1ff099ae7855.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/88868d25-5617-4d17-a66b-0a2c2e1e557f.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/bb9bb5d9-b00b-471d-8022-ac31487c4d13.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

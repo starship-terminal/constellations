@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/00537a20-e99e-4ef2-b119-c6f532c44cc9",
   "source_url": "https://gsap.com",
   "extracted_at": "2026-07-03T03:17:18.650Z",
-  "fetched_at": "2026-10-20T08:21:37Z",
+  "fetched_at": "2026-11-08T04:20:15Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/a0928c1f-8a5c-4b01-bba0-8cf9d38ab0f5.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/bf033429-75c1-4cc5-931b-6e0ff3ad741c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/4b231b7e-e76f-4d77-a0d7-27ab7c8fad0e.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0a28e803-1d33-4974-8ea3-251ecdd77bef.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/a44424b2-2f87-47f4-b6a5-28b556ed7497",
   "source_url": "https://www.linearity.io",
   "extracted_at": "2026-09-20T22:04:03.946Z",
-  "fetched_at": "2026-10-20T08:21:27Z",
+  "fetched_at": "2026-11-08T04:20:25Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/3a3dbadd-a35b-4981-ac67-f991672296ba.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

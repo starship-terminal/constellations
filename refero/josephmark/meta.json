@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/58c0af12-8706-428f-8282-482d57d7b90e",
   "source_url": "https://josephmark.studio",
   "extracted_at": "2026-06-03T21:41:07.149Z",
-  "fetched_at": "2026-10-20T08:21:47Z",
+  "fetched_at": "2026-11-08T04:20:22Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/8f46e12f-64bf-4fd0-a4e0-77491bd98092.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/06cfe9e2-95d2-4aba-ad43-00888cb7e81c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/47605763-ed3d-4d38-9e77-0b24884a0085.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/be1caff6-3308-4c1b-872e-fbd8bda2ddfe.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

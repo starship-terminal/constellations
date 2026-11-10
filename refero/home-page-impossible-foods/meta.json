@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/04961c7d-8ca6-4e87-ba88-6ad7ffa3b245",
   "source_url": "https://impossiblefoods.com",
   "extracted_at": "2026-06-03T17:58:21.464Z",
-  "fetched_at": "2026-10-20T08:22:48Z",
+  "fetched_at": "2026-11-08T04:20:18Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b005870c-2339-4ed7-8bbe-1ac4e0d89262.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/5fc074a9-3de8-4900-8738-d9228814adb4.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/117ce741-57fe-4a49-89a2-17c7fe740fd3.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e5b306f3-778a-4d1e-a0e3-2862d2caeb11.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

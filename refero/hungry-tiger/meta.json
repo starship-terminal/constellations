@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/47f15da7-8905-45b3-bcab-06a4277c6168",
   "source_url": "https://www.eathungrytiger.com",
   "extracted_at": "2026-06-03T19:04:45.766Z",
-  "fetched_at": "2026-10-20T08:22:22Z",
+  "fetched_at": "2026-11-08T04:20:19Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/42ddcb40-b143-41fa-b4ce-3e865c08a0b6.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/09746af2-d7b4-465f-900d-17d3e662a980.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a32b8b9b-da9f-47fb-8695-3d7aa1cba204.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b465c17d-9622-4925-ac45-524e25a75563.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/9117a4f5-6171-44ad-aa85-a387a5d80620",
   "source_url": "https://promlyapp.com",
   "extracted_at": "2026-06-03T20:20:58.148Z",
-  "fetched_at": "2026-10-20T08:21:59Z",
+  "fetched_at": "2026-11-08T04:20:42Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/fd532125-8f80-4abb-b4b8-b8c3a3e1674b.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/aa2b1a80-3c53-4132-a2b4-9d17b2e231a5.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/85be6607-b29f-4514-878f-f14b0a86f4b9.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/b12a6796-f070-439d-867a-4e30ae5c83a5.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

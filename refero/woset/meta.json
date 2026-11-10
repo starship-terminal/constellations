@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/430813c0-f0c7-434f-92ef-d3a0780ba734",
   "source_url": "https://www.woset.world",
   "extracted_at": "2026-06-03T17:43:16.733Z",
-  "fetched_at": "2026-10-20T08:22:54Z",
+  "fetched_at": "2026-11-08T04:21:07Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/4af597d9-cb86-4478-8f76-97ff5ff0d59f.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/d453298b-a84c-468c-9635-14f1ee33ee6f.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/f2abc8a1-b2be-410e-8082-6181eed1c479.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/a2c26287-930b-429e-9842-897056096cc3.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

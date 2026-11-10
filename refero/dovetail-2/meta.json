@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/108e2695-6970-47d5-b5b0-eea8fc34e048",
   "source_url": "https://dovetail.com",
   "extracted_at": "2026-06-03T16:24:24.796Z",
-  "fetched_at": "2026-10-20T08:23:15Z",
+  "fetched_at": "2026-11-08T04:20:02Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/bee0d544-ec23-4890-871b-764db3950ae6.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/c05644d5-7161-4e05-998a-6d6f18d021bb.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d7a7a4cd-fe73-4bb3-b861-fc13b2678d96.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/bc18f32e-00d0-4cb5-be9d-9af6a3ffdb0d.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/537641a0-5a24-4203-ae9b-cd29516aa3f8",
   "source_url": "https://atoms.dev",
   "extracted_at": "2026-06-03T18:28:58.687Z",
-  "fetched_at": "2026-10-20T08:22:35Z",
+  "fetched_at": "2026-11-08T04:19:46Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e5d9fe5c-e7fa-49af-80d1-f1b745250c2b.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/3ede8744-2a1b-41da-9f2b-fbe60c8606c9.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/711bd64e-beec-4265-8624-a4ef1494cf1c.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/c092dc50-3673-4bce-957c-d8bdc662ac69.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

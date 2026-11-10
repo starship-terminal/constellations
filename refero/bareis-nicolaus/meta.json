@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/e80c5b4a-fd03-460e-a577-49928a4ab5db",
   "source_url": "https://www.bareis-nicolaus.com",
   "extracted_at": "2026-06-03T18:58:13.400Z",
-  "fetched_at": "2026-10-20T08:22:25Z",
+  "fetched_at": "2026-11-08T04:19:49Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/089c1591-e148-489d-921d-57c122130df9.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/f0e0d913-2b9b-40ca-b7bb-b3da09065529.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/8096ebaa-e4dd-4fe2-a0d5-4154fac5a71b.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/a718095a-435a-4813-aa24-5603724f71dd.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

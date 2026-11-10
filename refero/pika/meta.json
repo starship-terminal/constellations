@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/9fe9f106-44d2-45fc-9873-10c6ddcfa59b",
   "source_url": "https://pika.art",
   "extracted_at": "2026-06-03T17:12:25.763Z",
-  "fetched_at": "2026-10-20T08:23:09Z",
+  "fetched_at": "2026-11-08T04:20:39Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/4b2224ee-1200-4972-bcfd-a7406ff148b8.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/4a21e7d1-3590-4076-b149-5ad1aad95ea8.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/c08a240d-ed63-41bc-a670-ca947cd09ba3.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e9be7db9-4b69-44bb-bc54-114be725c944.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

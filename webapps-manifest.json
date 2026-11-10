@@ -144,9 +144,9 @@
     825
    ],
    "description": "Online Booking & Appointment Scheduling",
-   "status": "captured",
-   "package": "systems/acuityscheduling",
-   "notes": "public marketing surface + Squarespace account gate (get-started and secure.acuityscheduling.com login), measured and state-forced, never submitted; the scheduling app sits behind an account and is out of scope. Consent SDKs aborted at request level; no banner mounted",
+   "status": "pending",
+   "package": null,
+   "notes": "",
    "batch": 1
   },
   {

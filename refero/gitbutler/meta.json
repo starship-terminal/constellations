@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/92f92f04-d3a7-4e5b-9a1d-f23c9a4d16dc",
   "source_url": "https://gitbutler.com",
   "extracted_at": "2026-09-24T17:36:32.494Z",
-  "fetched_at": "2026-10-20T08:21:26Z",
+  "fetched_at": "2026-11-08T04:20:13Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/1d8ee4f0-1388-49d2-96e3-3c4a16e76812.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a2cf7b26-ab9c-4ddc-8828-df8fb9b063a4.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a11082a1-5523-4f2c-91d8-5f651293ca75.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/3b3b2c7b-d1dd-4c64-bef4-5d7b4321cef5.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

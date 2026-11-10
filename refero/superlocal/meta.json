@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/a865ac1d-a4c2-425b-90db-2a7ec6d461a3",
   "source_url": "https://superlocaldesign.com",
   "extracted_at": "2026-06-03T18:15:58.107Z",
-  "fetched_at": "2026-10-20T08:24:31Z",
+  "fetched_at": "2026-11-08T04:20:55Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/c6a7aaca-bbfb-4a64-bbad-f1df90d46e86.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/d3fa4ce8-dd6d-46d3-8c7c-8c1ee2f62a1b.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/9bd5596a-9e4b-4c40-b26f-10fcbb3e1ff8.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/12a3debd-20d5-4798-9864-0ae8cc52f4ae.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -1,0 +1,776 @@
+{
+ "_meta": {
+  "sheets": {
+   "home": [
+    {
+     "selector": ".link.active.icon--angle-left, .link.active::before, a.active.icon--angle-left, a.active::before",
+     "transition": "",
+     "animation": "auto ease 0s 1 normal none running none"
+    },
+    {
+     "selector": ".link--main-nav.active.icon--angle-left, .link--main-nav.active::before",
+     "transition": "",
+     "animation": "auto ease 0s 1 normal none running none"
+    },
+    {
+     "selector": ".link---medium-up.active.icon--angle-left, .link---medium-up.active::before",
+     "transition": "",
+     "animation": "auto ease 0s 1 normal none running none"
+    },
+    {
+     "selector": ".link--main-nav---small-down.active.icon--angle-left, .link--main-nav---small-down.active::before",
+     "transition": "",
+     "animation": "auto ease 0s 1 normal none running none"
+    },
+    {
+     "selector": ".icon-animation--blink.icon--angle-right, .icon-animation--blink::after",
+     "transition": "",
+     "animation": "1s step-start 0s infinite normal none running blink"
+    },
+    {
+     "selector": ".scroll-gradients--x::after, .scroll-gradients--x::before, .scroll-gradients--y::after, .scroll-gradients--y::before",
+     "transition": "opacity 0.1s linear",
+     "animation": ""
+    },
+    {
+     "selector": "[data-component-state=\"init\"] [data-component-animation=\"shimmer\"], [data-component-state=\"loading\"] [data-component-animation=\"shimmer\"]",
+     "transition": "",
+     "animation": "1.1s linear 0s infinite normal forwards running moveBackground"
+    },
+    {
+     "selector": "[data-component-state=\"init\"] [data-component-animation=\"tileBlink\"] > *, [data-component-state=\"loading\"] [data-component-animation=\"tileBlink\"] > *",
+     "transition": "",
+     "animation": "2s steps(2) 0s infinite normal none running backgroundTileBlink"
+    },
+    {
+     "selector": "[data-component-state=\"loading\"] [data-component-animation=\"shimmerText\"]",
+     "transition": "",
+     "animation": "1.1s linear 0s infinite normal forwards running moveBackground"
+    },
+    {
+     "selector": "[data-component-state=\"loading\"] [data-component-animation=\"blink\"]",
+     "transition": "",
+     "animation": "2s steps(1) 0s infinite normal none running backgroundBlink"
+    },
+    {
+     "selector": "[data-component-state=\"loading\"] [data-component-animation=\"textBlink\"], [data-component-state=\"loading\"][data-component-animation=\"textBlink\"]",
+     "transition": "",
+     "animation": "0.5s steps(1) 0s 1 normal forwards running textBlink"
+    },
+    {
+     "selector": "[data-component-state=\"loading\"] [data-component-animation=\"inOut\"]",
+     "transition": "",
+     "animation": "1.5s steps(1) 0s infinite normal none running inOut"
+    },
+    {
+     "selector": "[data-component-animation=\"fade\"]",
+     "transition": "opacity 0.5s ease-in-out",
+     "animation": ""
+    },
+    {
+     "selector": "[data-component-state=\"loading\"] [data-component-animation=\"infiniteProgress\"], [data-component-state=\"loading\"][data-component-animation=\"infiniteProgress\"]",
+     "transition": "",
+     "animation": "1.1s linear 0s infinite normal forwards running moveBackground"
+    },
+    {
+     "selector": "[data-component*=\"radio-group\"][data-component-state=\"loading\"] .radio-group__item::after, [data-component*=\"radio-group\"][data-component-state=\"loading\"] .radi",
+     "transition": "",
+     "animation": "1.1s linear 0s infinite normal forwards running moveBackground"
+    },
+    {
+     "selector": ".navigation-state-container",
+     "transition": "padding-bottom 0.15s",
+     "animation": ""
+    },
+    {
+     "selector": ".category-state-container",
+     "transition": "padding-bottom 0.15s",
+     "animation": ""
+    },
+    {
+     "selector": ".state-container--pos-bottom---small-down",
+     "transition": "padding-bottom 0.15s",
+     "animation": ""
+    },
+    {
+     "selector": ".minicart--fixed",
+     "transition": "margin-bottom 0.15s",
+     "animation": ""
+    },
+    {
+     "selector": ".slider",
+     "transition": "max-height 0.2s cubic-bezier(0, 0, 0.2, 1)",
+     "animation": ""
+    },
+    {
+     "selector": ".cookie-banner__container",
+     "transition": "padding-bottom 0.15s",
+     "animation": ""
+    },
+    {
+     "selector": ".drawer",
+     "transition": "padding-bottom 0.15s",
+     "animation": ""
+    },
+    {
+     "selector": ".drawer__scroll-area",
+     "transition": "padding-bottom 0.15s",
+     "animation": ""
+    },
+    {
+     "selector": "[data-component-state=\"placing-order\"] [data-component=\"buttonContentPlacingOrder\"] span:first-child",
+     "transition": "",
+     "animation": "4s step-end 0s infinite normal none running cycleDisplay"
+    },
+    {
+     "selector": "[data-component-state=\"placing-order\"] [data-component=\"buttonContentPlacingOrder\"] span:last-child",
+     "transition": "",
+     "animation": "4s step-start 0s infinite normal none running cycleDisplay"
+    },
+    {
+     "selector": "[data-component=\"checkout\"][data-component-state=\"placed-order\"] button.place-order, [data-component=\"checkout\"][data-component-state=\"placing-order\"] button.pl",
+     "transition": "",
+     "animation": "2s linear 0s infinite normal forwards running checkoutShimmer"
+    },
+    {
+     "selector": ".adyen-checkout__button, .adyen-checkout__checkbox__input + .adyen-checkout__checkbox__label::after, .adyen-checkout__checkbox__input + .adyen-checkout__checkbo",
+     "transition": "none",
+     "animation": ""
+    },
+    {
+     "selector": ".adyen-checkout-contextual-text, .adyen-checkout-contextual-text--error",
+     "transition": "none",
+     "animation": ""
+    },
+    {
+     "selector": "[data-checkout-section=\"paymentMethods\"] .adyen-checkout__input-wrapper",
+     "transition": "none",
+     "animation": ""
+    },
+    {
+     "selector": "[data-checkout-section=\"paymentMethods\"] .adyen-checkout__input",
+     "transition": "none",
+     "animation": ""
+    },
+    {
+     "selector": "#onetrust-banner-sdk, .ot-fade-in",
+     "transition": "none",
+     "animation": "auto ease 0s 1 normal none running none"
+    },
+    {
+     "selector": ".ot-sdk-row:not(.ot-loaded) #onetrust-button-group-parent, .ot-sdk-row:not(.ot-loaded) p#onetrust-policy-text",
+     "transition": "",
+     "animation": "1.1s linear 0s infinite normal forwards running moveBackground"
+    },
+    {
+     "selector": "#ot-sdk-btn.ot-sdk-show-settings, #ot-sdk-btn.optanon-show-settings",
+     "transition": "0.1s",
+     "animation": ""
+    },
+    {
+     "selector": "#onetrust-banner-sdk .ot-arrow-container, #onetrust-banner-sdk .banner-option-details",
+     "transition": "300ms ease-in",
+     "animation": ""
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-switch-nob",
+     "transition": "0.2s ease-in",
+     "animation": ""
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-switch-nob::before",
+     "transition": "0.4s",
+     "animation": ""
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-arw-cntr .ot-arw",
+     "transition": "150ms ease-in",
+     "animation": ""
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-arw-cntr svg",
+     "transition": "300ms ease-in",
+     "animation": ""
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-arw",
+     "transition": "300ms ease-in",
+     "animation": ""
+    },
+    {
+     "selector": "#onetrust-pc-sdk #filter-btn-handler",
+     "transition": "0.1s",
+     "animation": ""
+    },
+    {
+     "selector": "#onetrust-pc-sdk #ot-fltr-modal",
+     "transition": "0.2s",
+     "animation": ""
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-cat-item > button[aria-expanded=\"false\"] ~ .ot-acc-txt, #onetrust-pc-sdk .ot-acc-cntr > button[aria-expanded=\"false\"] ~ .ot-acc-txt, #onetr",
+     "transition": "0.25s ease-out",
+     "animation": ""
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-cat-item > button[aria-expanded=\"true\"] ~ .ot-acc-txt, #onetrust-pc-sdk .ot-acc-cntr > button[aria-expanded=\"true\"] ~ .ot-acc-txt, #onetrus",
+     "transition": "0.1s ease-in",
+     "animation": ""
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-vnd-item > button[aria-expanded=\"false\"] ~ .ot-acc-txt",
+     "transition": "0.25s ease-out",
+     "animation": ""
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-vnd-item > button[aria-expanded=\"true\"] ~ .ot-acc-txt",
+     "transition": "0.1s ease-in",
+     "animation": ""
+    }
+   ]
+  }
+ },
+ "components": {
+  "header": {
+   "states": {
+    "default": {
+     "tag": "header",
+     "classes": "header skip-link-target",
+     "text": "WOMAN MAN BAGS SCARVES GIFTS SEARCH HELP ACCOUNT 00",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 60
+     },
+     "style": {
+      "display": "block",
+      "position": "sticky",
+      "boxSizing": "border-box",
+      "width": "1440px",
+      "height": "60px",
+      "minWidth": "0px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(0, 0, 0)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(0, 0, 0)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(0, 0, 0)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(0, 0, 0)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 0)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "0.3px",
+      "textTransform": "uppercase",
+      "color": "rgb(0, 0, 0)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "visible",
+      "zIndex": "101",
+      "top": "0px"
+     },
+     "paint": [
+      {
+       "node": "header.header.skip-link-target",
+       "size": "1440.0x60.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "nav.header__nav",
+       "size": "1440.0x60.0",
+       "shadow": "rgb(242, 242, 242) 0px 1px 0px 0px inset, rgb(242, 242, 242) 0px -1px 0px 0px inset"
+      },
+      {
+       "node": "button.as-cell.link--main-nav",
+       "size": "70.5x60.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
+      },
+      {
+       "node": "button.as-cell.link--main-nav",
+       "size": "48.8x60.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
+      },
+      {
+       "node": "button.as-cell.link--main-nav",
+       "size": "56.2x60.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
+      },
+      {
+       "node": "button.as-cell.link--main-nav",
+       "size": "80.2x60.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
+      },
+      {
+       "node": "button.as-cell.link--main-nav",
+       "size": "57.2x60.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
+      },
+      {
+       "node": "button.header__icon-button.header__search-button",
+       "size": "94.5x60.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
+      }
+     ],
+     "textStyle": {
+      "node": "button.as-cell.link--main-nav",
+      "text": "Woman",
+      "fontFamily": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif",
+      "fontSize": "12px",
+      "lineHeight": "20px",
+      "fontWeight": "400",
+      "letterSpacing": "0.3px",
+      "color": "rgb(0, 0, 0)",
+      "textDecorationLine": "none",
+      "textTransform": "uppercase"
+     },
+     "icon": {
+      "w": 0,
+      "h": 0,
+      "fill": "none",
+      "stroke": "none",
+      "color": "rgb(0, 0, 0)"
+     },
+     "crop": "components/crops/header-default.png",
+     "via": "at rest"
+    }
+   },
+   "page": "home",
+   "run": "2026-11-08T21:14:09.117Z",
+   "url": "https://www.acnestudios.com/sg/en/home",
+   "title": "Header",
+   "group": "Shell and navigation",
+   "desc": "The fixed top bar: left the section triggers (WOMAN MAN BAGS SCARVES GIFTS on desktop, a Menu button on narrow), centre the Acne Studios wordmark, right SEARCH HELP ACCOUNT and the BAG count, in a two-zone black-on-white layout with hairline rules.",
+   "selector": "header.skip-link-target"
+  },
+  "nav-item": {
+   "states": {},
+   "page": "home",
+   "run": "2026-11-08T21:14:09.117Z",
+   "url": "https://www.acnestudios.com/sg/en/home",
+   "title": "Nav item",
+   "group": "Shell and navigation",
+   "desc": "A section trigger (WOMAN MAN BAGS SCARVES GIFTS): all-caps micro type, opens the section mega-menu on press. Measured, the menu was opened once for its panel.",
+   "selector": "header button.link--main-nav \"WOMAN\"",
+   "missing": true
+  },
+  "logo": {
+   "states": {
+    "default": {
+     "tag": "a",
+     "classes": "header__icon-button link--main-nav text--align-center flex--shrink-0",
+     "text": "ACCOUNT",
+     "rect": {
+      "x": 1280,
+      "y": 0,
+      "w": 101.02,
+      "h": 60
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "101.016px",
+      "height": "60px",
+      "minWidth": "fit-content",
+      "maxWidth": "none",
+      "minHeight": "60px",
+      "paddingTop": "4px",
+      "paddingRight": "9px",
+      "paddingBottom": "33px",
+      "paddingLeft": "9px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "0px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "0px",
+      "borderTopStyle": "none",
+      "borderTopColor": "rgb(0, 0, 0)",
+      "borderRightWidth": "0px",
+      "borderRightStyle": "none",
+      "borderRightColor": "rgb(0, 0, 0)",
+      "borderBottomWidth": "0px",
+      "borderBottomStyle": "none",
+      "borderBottomColor": "rgb(0, 0, 0)",
+      "borderLeftWidth": "0px",
+      "borderLeftStyle": "none",
+      "borderLeftColor": "rgb(0, 0, 0)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 0)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "0.3px",
+      "textTransform": "uppercase",
+      "color": "rgb(0, 0, 0)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "hidden",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "ancestors": [
+      {
+       "up": 1,
+       "node": "nav.header__nav",
+       "shadow": "rgb(242, 242, 242) 0px 1px 0px 0px inset, rgb(242, 242, 242) 0px -1px 0px 0px inset",
+       "radius": "0px",
+       "bg": "rgba(0, 0, 0, 0)"
+      }
+     ],
+     "textStyle": {
+      "node": "span.show-for-large-up",
+      "text": "Account",
+      "fontFamily": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif",
+      "fontSize": "12px",
+      "lineHeight": "20px",
+      "fontWeight": "400",
+      "letterSpacing": "0.3px",
+      "color": "rgb(0, 0, 0)",
+      "textDecorationLine": "none",
+      "textTransform": "uppercase"
+     },
+     "icon": {
+      "w": 10,
+      "h": 11,
+      "fill": "none",
+      "stroke": "none",
+      "color": "rgb(0, 0, 0)"
+     },
+     "crop": "components/crops/logo-default.png",
+     "via": "at rest"
+    }
+   },
+   "page": "home",
+   "run": "2026-11-08T21:14:09.117Z",
+   "url": "https://www.acnestudios.com/sg/en/home",
+   "title": "Wordmark",
+   "group": "Shell and navigation",
+   "desc": "The centred Acne Studios logotype, an SVG mark that links home.",
+   "selector": "header a svg"
+  },
+  "search-button": {
+   "states": {
+    "default": {
+     "tag": "button",
+     "classes": "header__icon-button header__search-button justify-content--left justify-content--center---small-down",
+     "text": "SEARCH",
+     "rect": {
+      "x": 1102.6,
+      "y": 0,
+      "w": 94.55,
+      "h": 60
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "94.5469px",
+      "height": "60px",
+      "minWidth": "fit-content",
+      "maxWidth": "none",
+      "minHeight": "60px",
+      "paddingTop": "4px",
+      "paddingRight": "9px",
+      "paddingBottom": "33px",
+      "paddingLeft": "9px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "764.656px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "left",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgba(0, 0, 0, 0)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgba(0, 0, 0, 0)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(0, 0, 0, 0)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 0)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "0.3px",
+      "textTransform": "uppercase",
+      "color": "rgb(0, 0, 0)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(0, 0, 0)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "hidden",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "button.header__icon-button.header__search-button",
+       "size": "94.5x60.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 1,
+       "node": "nav.header__nav",
+       "shadow": "rgb(242, 242, 242) 0px 1px 0px 0px inset, rgb(242, 242, 242) 0px -1px 0px 0px inset",
+       "radius": "0px",
+       "bg": "rgba(0, 0, 0, 0)"
+      }
+     ],
+     "textStyle": {
+      "node": "span.show-for-large-up",
+      "text": "Search",
+      "fontFamily": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif",
+      "fontSize": "12px",
+      "lineHeight": "20px",
+      "fontWeight": "400",
+      "letterSpacing": "0.3px",
+      "color": "rgb(0, 0, 0)",
+      "textDecorationLine": "none",
+      "textTransform": "uppercase"
+     },
+     "icon": {
+      "w": 12,
+      "h": 12,
+      "fill": "none",
+      "stroke": "none",
+      "color": "rgb(0, 0, 0)"
+     },
+     "crop": "components/crops/search-button-default.png",
+     "via": "at rest"
+    },
+    "hover": {
+     "tag": "button",
+     "classes": "header__icon-button header__search-button justify-content--left justify-content--center---small-down",
+     "text": "SEARCH",
+     "rect": {
+      "x": 1102.6,
+      "y": 0,
+      "w": 94.55,
+      "h": 60
+     },
+     "style": {
+      "display": "flex",
+      "position": "static",
+      "boxSizing": "border-box",
+      "width": "94.5469px",
+      "height": "60px",
+      "minWidth": "fit-content",
+      "maxWidth": "none",
+      "minHeight": "60px",
+      "paddingTop": "4px",
+      "paddingRight": "9px",
+      "paddingBottom": "33px",
+      "paddingLeft": "9px",
+      "marginTop": "0px",
+      "marginRight": "0px",
+      "marginBottom": "0px",
+      "marginLeft": "764.656px",
+      "gap": "normal",
+      "rowGap": "normal",
+      "columnGap": "normal",
+      "flexDirection": "row",
+      "alignItems": "center",
+      "justifyContent": "left",
+      "gridTemplateColumns": "none",
+      "borderTopWidth": "1px",
+      "borderTopStyle": "solid",
+      "borderTopColor": "rgba(0, 0, 0, 0)",
+      "borderRightWidth": "1px",
+      "borderRightStyle": "solid",
+      "borderRightColor": "rgba(0, 0, 0, 0)",
+      "borderBottomWidth": "1px",
+      "borderBottomStyle": "solid",
+      "borderBottomColor": "rgba(0, 0, 0, 0)",
+      "borderLeftWidth": "1px",
+      "borderLeftStyle": "solid",
+      "borderLeftColor": "rgba(0, 0, 0, 0)",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomRightRadius": "0px",
+      "borderBottomLeftRadius": "0px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "boxShadow": "none",
+      "backdropFilter": "none",
+      "outlineWidth": "0px",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(107, 107, 107)",
+      "outlineOffset": "0px",
+      "fontFamily": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "0.3px",
+      "textTransform": "uppercase",
+      "color": "rgb(107, 107, 107)",
+      "textDecorationLine": "none",
+      "textDecorationColor": "rgb(107, 107, 107)",
+      "textDecorationThickness": "auto",
+      "textUnderlineOffset": "auto",
+      "transitionProperty": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "transitionDelay": "0s",
+      "cursor": "pointer",
+      "opacity": "1",
+      "transform": "none",
+      "overflow": "hidden",
+      "zIndex": "auto",
+      "top": "auto"
+     },
+     "paint": [
+      {
+       "node": "button.header__icon-button.header__search-button",
+       "size": "94.5x60.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
+      }
+     ],
+     "ancestors": [
+      {
+       "up": 1,
+       "node": "nav.header__nav",
+       "shadow": "rgb(242, 242, 242) 0px 1px 0px 0px inset, rgb(242, 242, 242) 0px -1px 0px 0px inset",
+       "radius": "0px",
+       "bg": "rgba(0, 0, 0, 0)"
+      }
+     ],
+     "textStyle": {
+      "node": "span.show-for-large-up",
+      "text": "Search",
+      "fontFamily": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif",
+      "fontSize": "12px",
+      "lineHeight": "20px",
+      "fontWeight": "400",
+      "letterSpacing": "0.3px",
+      "color": "rgb(107, 107, 107)",
+      "textDecorationLine": "none",
+      "textTransform": "uppercase"
+     },
+     "icon": {
+      "w": 12,
+      "h": 12,
+      "fill": "none",
+      "stroke": "none",
+      "color": "rgb(107, 107, 107)"
+     },
+     "crop": "components/crops/search-button-hover.png",
+     "via": "mouse hover"
+    },
+    "focus-visible": {
+     "error": "keyboard.press: Target page, context or browser has been closed"
+    },
+    "pressed": {
+     "error": "mouse.move: Target page, context or browser has been closed"
+    }
+   },
+   "page": "home",
+   "run": "2026-11-08T21:14:09.117Z",
+   "url": "https://www.acnestudios.com/sg/en/home",
+   "title": "Search button",
+   "group": "Shell and navigation",
+   "desc": "The SEARCH trigger opening the right-side search panel.",
+   "selector": ".header__search-button"
+  }
+ }
+}

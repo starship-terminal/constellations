@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/fc84e9f0-2058-4a0a-8d26-9cc1ba84ec9c",
   "source_url": "https://www.monad.com",
   "extracted_at": "2026-07-03T03:11:40.065Z",
-  "fetched_at": "2026-10-20T08:21:37Z",
+  "fetched_at": "2026-11-08T04:20:30Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f4a2c9d4-5dd9-4ab8-a698-acd2be4ef776.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/48e72562-69b1-47c9-bc63-7ac369dd5bcb.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/fd7151c1-d876-4691-b4bf-c9367a533cbd.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/81fa27c5-9e29-4571-a5db-0539bc4c8bce.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

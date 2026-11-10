@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/2f9bf724-3829-4c62-bcc8-391b32925d1b",
   "source_url": "https://allfeat.org",
   "extracted_at": "2026-06-03T21:51:30.352Z",
-  "fetched_at": "2026-10-20T08:23:26Z",
+  "fetched_at": "2026-11-08T04:19:40Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/04d2484a-34ad-4346-810c-658ac5226376.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/78fb0cba-743e-43ae-8fe1-de018bf99882.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/ec147f2c-1b14-4a9d-9db6-0072f21d0340.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/a8e06c89-c16e-4652-9b14-98441a63014e.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

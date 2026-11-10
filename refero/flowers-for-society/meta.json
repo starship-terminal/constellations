@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/e00519a1-7b8a-4171-b49b-550c64a57d3c",
   "source_url": "https://flowersforsociety.com",
   "extracted_at": "2026-06-03T20:15:33.521Z",
-  "fetched_at": "2026-10-20T08:23:52Z",
+  "fetched_at": "2026-11-08T04:20:09Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f45b3e01-63a9-40e0-a900-e4d60334da3c.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

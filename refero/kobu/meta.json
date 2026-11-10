@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/355d4b38-1a53-4544-911e-0f5073ab836b",
   "source_url": "https://kobu.co",
   "extracted_at": "2026-06-03T15:46:09.162Z",
-  "fetched_at": "2026-10-20T08:23:07Z",
+  "fetched_at": "2026-11-08T04:20:24Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/fb3c56de-cee0-48d5-b325-98ab87348c82.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/33e95e10-6fc5-42b3-a468-d55766c2e3d4.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/f798616e-03aa-4843-97be-ceda9f07855a.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/048670f1-6f5b-42ed-997e-ada8a985f08f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }
