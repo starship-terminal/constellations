@@ -3480,7 +3480,7 @@
     "version": "www.airtable.com, 2026-11-10/12; release not exposed",
     "durationMin": null,
     "durationNote": "Split across two sittings: the first pass on 2026-11-10, then a repair and rebuild pass (broken selectors re-measured, widgets re-swept, shots re-taken) on 2026-11-12; active time was not clocked.",
-    "pr": "https://github.com/c-wenlong/designs/pull/NEW",
+    "pr": "https://github.com/c-wenlong/designs/pull/454",
     "gaps": "app.airtable.com (the signed-in product: workspace, bases, interfaces, automations) deliberately uncaptured, as are signup, login and Book Demo flows and the checkout; the contact-sales form was never submitted; whatsnew's release gallery was measured inside Airtable's own embed iframe; the templates filter rail and marketplace tab rail not componentised; no checkbox/radio/switch/tooltip/dialog/toast/avatar/badge exists on the public surface"
    }
   }
