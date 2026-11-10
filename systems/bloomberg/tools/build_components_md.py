@@ -153,7 +153,7 @@ def props(v):
             bits.append(" ".join(x for x in (pe, p.get("backgroundColor"), p.get("borderTopWidth"), p.get("boxShadow"), p.get("opacity")) if x))
     if s["backgroundColor"] == "rgba(0, 0, 0, 0)" and s["boxShadow"] == "none" and s["borderTopWidth"] == "0px" and s["backgroundImage"] == "none":
         for p in v.get("paint", [])[:6]:
-            bits.append(" ".join(x for x in (p["node"], p.get("size"), p.get("bg"), p.get("border"), p.get("shadow"), p.get("radius")) if x))
+            bits.append(" ".join(x for x in (p["node"], p.get("size"), p.get("bg"), p.get("border"), p.get("shadow"), p.get("outline"), p.get("radius")) if x))
     if bits:
         o["layers"] = "; ".join(bits)[:400]
     return o
@@ -318,14 +318,18 @@ for k, c in C.items():
     s = st["style"]
     base = next((v["style"] for v in c["states"].values() if "style" in v), s)
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
+    # A ring painted on a child layer instead of the wrapper: offer buttons
+    # draw 1px dotted outlines on their inner anchor while the wrapper's own
+    # outline stays none. Those states must count as ringed too.
+    child_ring = next((n["outline"] for n in st.get("paint", []) if n.get("outline")), None)
     shadow = s["boxShadow"] != base["boxShadow"] and s["boxShadow"] != "none"
     border = any(
         s[f"border{d}{p}"] != base[f"border{d}{p}"]
         for d in ("Top", "Right", "Bottom", "Left")
         for p in ("Color", "Width", "Style")
     )
-    desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None
-    foc.append((k, ring, shadow, border, desc))
+    desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else (f"on a child: {child_ring}" if child_ring else None)
+    foc.append((k, ring or bool(child_ring), shadow, border, desc))
 with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, r in foc if ring]
 with_shadow = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and sh]
 with_border = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and bd]

@@ -7,19 +7,25 @@
      "value": "BWHaasHead, \"Helvetica Neue\", Helvetica, sans-serif",
      "type": "fontFamily",
      "source": "computed fontFamily of hero-headline default (raw/components-computed.json)",
-     "description": "The news/headline stack (BWHaasGroteskWeb first)."
+     "description": "The headline stack (BWHaasHead first)."
     },
     "ui": {
      "value": "BWHaasGroteskWeb, BWHaasGroteskWeb-fallback, Helvetica, Arial, sans-serif",
      "type": "fontFamily",
      "source": "computed fontFamily of nav-link default (raw/components-computed.json)",
-     "description": "The UI/label stack (AvenirNextPForBBG first)."
+     "description": "The UI/label stack (BWHaasGroteskWeb first)."
     },
     "body": {
      "value": "BWHaasGroteskWeb, BWHaasGroteskWeb-fallback, Helvetica, Arial, sans-serif",
      "type": "fontFamily",
      "source": "computed fontFamily of dek default (raw/components-computed.json)",
-     "description": "The body-text stack."
+     "description": "The body-text stack (BWHaasGroteskWeb first)."
+    },
+    "utility": {
+     "value": "AvenirNextPForBBG, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of utility-bar default (raw/components-computed.json)",
+     "description": "The utility-strip stack (AvenirNextPForBBG first)."
     }
    },
    "size": {
@@ -49,13 +55,13 @@
     },
     "caption": {
      "type": "dimension",
-     "value": "16px",
+     "value": "18px",
      "source": "computed fontSize of byline default (raw/components-computed.json)",
      "description": "Byline/caption size."
     },
     "ticker": {
      "type": "dimension",
-     "value": "16px",
+     "value": "14px",
      "source": "computed fontSize of ticker-item default (raw/components-computed.json)",
      "description": "Ticker quote size."
     }
@@ -104,16 +110,16 @@
      "description": "Body text."
     },
     "line": {
-     "value": "#e5e7eb",
-     "type": "color",
-     "source": "computed borderTopColor of story-secondary default (raw/components-computed.json)",
-     "description": "The hairline between story blocks."
-    },
-    "line-strong": {
      "value": "#b3b3b3",
      "type": "color",
-     "source": "computed borderTopColor of plan-card default (raw/components-computed.json)",
-     "description": "The stronger utility/card border grey."
+     "source": "computed borderBottomColor of ticker-bar default (raw/components-computed.json)",
+     "description": "The 1px hairline rails (the ticker rail's edges; utility separators share it)."
+    },
+    "line-strong": {
+     "value": "#767676",
+     "type": "color",
+     "source": "computed borderTopColor of subscribe-nav default (raw/components-computed.json)",
+     "description": "The darker border on bordered buttons."
     },
     "paper": {
      "value": "#ffffff",
@@ -161,12 +167,6 @@
     }
    },
    "market": {
-    "live": {
-     "value": "#f34f4e",
-     "type": "color",
-     "source": "painted fill inside section-nav default (raw/components-computed.json)",
-     "description": "The Live TV red in the section nav."
-    },
     "live-strong": {
      "value": "#e51503",
      "type": "color",
@@ -272,14 +272,6 @@
     "value": "52px",
     "source": "computed height of logo-bar default (raw/components-computed.json)",
     "description": "The black logo bar height."
-   }
-  },
-  "nav": {
-   "height": {
-    "type": "dimension",
-    "value": "120px",
-    "source": "computed height of section-nav default (raw/components-computed.json)",
-    "description": "The section nav strip height."
    }
   },
   "paywall": {

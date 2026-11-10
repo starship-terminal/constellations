@@ -89,6 +89,19 @@ def st(comp, state):
     return C[comp]["states"][state]["style"]
 
 
+def ts(comp, state, prop):
+    """The first text node's reading (textStyle) when the kit recorded one —
+    the wrapper's own fontSize can be the container's, not the text's (the
+    ticker wrapper reads 16px while its quote text paints at 14px)."""
+    try:
+        c = C[comp]["states"][state]
+        t = c.get("textStyle") or {}
+        v = t.get(prop)
+        return v if v else c["style"].get(prop)
+    except KeyError:
+        return None
+
+
 def norm_color(v):
     v = (v or "").strip()
     m = re.fullmatch(r"#([0-9a-fA-F]{3,8})", v)
@@ -162,12 +175,13 @@ def lightgrey(v):
 
 fam = SPEC["core"].setdefault("font", {}).setdefault("family", {})
 for key, comp, state, desc in [
-    ("headline", "hero-headline", "default", "The news/headline stack (BWHaasGroteskWeb first)."),
-    ("ui", "nav-link", "default", "The UI/label stack (AvenirNextPForBBG first)."),
-    ("body", "dek", "default", "The body-text stack."),
+    ("headline", "hero-headline", "default", "The headline stack (BWHaasHead first)."),
+    ("ui", "nav-link", "default", "The UI/label stack (BWHaasGroteskWeb first)."),
+    ("body", "dek", "default", "The body-text stack (BWHaasGroteskWeb first)."),
+    ("utility", "utility-bar", "default", "The utility-strip stack (AvenirNextPForBBG first)."),
 ]:
     if have(comp, state, "fontFamily"):
-        fam[key] = {"value": st(comp, state)["fontFamily"], "type": "fontFamily",
+        fam[key] = {"value": ts(comp, state, "fontFamily"), "type": "fontFamily",
                     "source": f"computed fontFamily of {comp} {state} (raw/components-computed.json)",
                     "description": desc}
 
@@ -177,8 +191,8 @@ neutral = SPEC["core"].setdefault("color", {}).setdefault("neutral", {})
 for key, comp, state, prop, desc in [
     ("ink", "hero-headline", "default", "color", "Headline text."),
     ("body", "dek", "default", "color", "Body text."),
-    ("line", "story-secondary", "default", "borderTopColor", "The hairline between story blocks."),
-    ("line-strong", "plan-card", "default", "borderTopColor", "The stronger utility/card border grey."),
+    ("line", "ticker-bar", "default", "borderBottomColor", "The 1px hairline rails (the ticker rail's edges; utility separators share it)."),
+    ("line-strong", "subscribe-nav", "default", "borderTopColor", "The darker border on bordered buttons."),
     ("paper", "plan-card", "default", "backgroundColor", "The white surface (page and cards)."),
     ("ticker", "ticker-pill", "default", "backgroundColor", "The near-black ticker chip fill."),
 ]:
@@ -272,10 +286,11 @@ for key, comp, state, prop, bag, desc in [
     ("caption", "byline", "default", "fontSize", type_scale, "Byline/caption size."),
     ("ticker", "ticker-item", "default", "fontSize", type_scale, "Ticker quote size."),
 ]:
-    if have(comp, state, prop):
+    v = ts(comp, state, prop)
+    if v:
         bag[key] = {
             "type": "number" if prop == "fontWeight" else "dimension",
-            "value": st(comp, state)[prop],
+            "value": v,
             "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)",
             "description": desc}
 

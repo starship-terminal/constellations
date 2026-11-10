@@ -2,7 +2,7 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from bloomberg.com on 2026-11-10, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, subscribed, bought or submitted; the paywall fence was never crossed.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (59 components, 88 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (59 components, 82 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
@@ -41,7 +41,7 @@ Screenshots are named `{page}-light-{state}.png`: the news surface paints one li
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 14 components were given a real keyboard focus. 12 draw an outline ring: `utility-toggle` (1px auto #005fcc `measured.focus-outline`, offset 2px), `signin-button` (1px auto #005fcc `measured.focus-outline`, offset 0px), `subscribe-nav` (1px auto #005fcc `measured.focus-outline`, offset 1px), `search-button` (1px auto #005fcc `measured.focus-outline`, offset 0px), `nav-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `ticker-item` (1px auto #005fcc `measured.focus-outline`, offset 1px), `story-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `quote-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `follow-button` (1px auto #005fcc `measured.focus-outline`, offset 0px), `topic-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `claim-offer` (1px auto #005fcc `measured.focus-outline`, offset 0px), `footer-link` (1px auto #005fcc `measured.focus-outline`, offset 1px). The other 2 show no measured change: `offer-cta`, `plan-cta`.
+**Focus.** 14 components were given a real keyboard focus. 14 draw an outline ring: `utility-toggle` (1px auto #005fcc `measured.focus-outline`, offset 2px), `signin-button` (1px auto #005fcc `measured.focus-outline`, offset 0px), `subscribe-nav` (1px auto #005fcc `measured.focus-outline`, offset 1px), `search-button` (1px auto #005fcc `measured.focus-outline`, offset 0px), `nav-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `ticker-item` (1px auto #005fcc `measured.focus-outline`, offset 1px), `story-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `quote-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `follow-button` (1px auto #005fcc `measured.focus-outline`, offset 0px), `offer-cta` (on a child: 1px dotted rgb(255, 255, 255) offset 2px), `plan-cta` (on a child: 1px dotted rgb(0, 0, 0) offset 2px), `topic-link` (1px auto #005fcc `measured.focus-outline`, offset 1px), `claim-offer` (1px auto #005fcc `measured.focus-outline`, offset 0px), `footer-link` (1px auto #005fcc `measured.focus-outline`, offset 1px).
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): controls deepen their fill or dim rather than scale; the nav flyout and framework icons keep their hover scale. Nothing a real press would submit was ever pressed.
 
@@ -51,7 +51,6 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|
 | 0.2s | `cubic-bezier(0.4, 0, 0.2, 1)` | background-color, border-color, color, fill, stroke, text-decoration-color | claim-offer |
 | 0.3s | `cubic-bezier(0.4, 0, 0.2, 1)` | background-color, border-color, color, fill, stroke, text-decoration-color | follow-button |
-| 0.3s | `ease` | top | section-nav |
 | 0.3s | `ease-in-out` | gap | live-player |
 
 **Card shapes.** Default-state values; the entries hold the states.
@@ -60,7 +59,7 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|---|---|---|
 | [Secondary story](#secondary-story) | 333 x 38.38 | - | - | transparent | none | 0 |
 | [Media module](#media-module) | 565 x 216.33 | - | - | transparent | none | 0 |
-| [Plan card](#plan-card) | 402 x 255.56 | 1px solid #b3b3b3 `color.neutral.line-strong` | - | #ffffff `color.neutral.paper` | none | 24px 0px |
+| [Plan card](#plan-card) | 402 x 255.56 | 1px solid #b3b3b3 `color.neutral.line` | - | #ffffff `color.neutral.paper` | none | 24px 0px |
 
 ## Components
 
@@ -88,7 +87,7 @@ The thin top strip: "Bloomberg the Company & Its Products", Terminal demo, Anywh
 
 **Values (default).** size 1440 x 30; background transparent; text AvenirNextPForBBG 15/22.5 400, #f3f4ef; layers a.bb-that__skip-to-content 20.0x1.0 rgb(0, 0, 0); a.bb-that-header__link 219.5x12.0 L:1px solid rgb(179, 179, 179); a.bb-that-header__link 239.2x16.0 L:1px solid rgb(179, 179, 179); a.bb-that-header__link 188.5x12.0 L:1px solid rgb(179, 179, 179); section.bb-that-category 327.2x231.0 rgb(20, 20, 20); section.bb-that-category 327.2x193.7 rgb(20, 20, 20).
 
-Child layers that carry the look: a 20x1 background #000000 `color.neutral.ink`; a 219.5x12 border 1px solid #b3b3b3 `color.neutral.line-strong`; a 239.2x16 border 1px solid #b3b3b3 `color.neutral.line-strong`.
+Child layers that carry the look: a 20x1 background #000000 `color.neutral.ink`; a 219.5x12 border 1px solid #b3b3b3 `color.neutral.line`; a 239.2x16 border 1px solid #b3b3b3 `color.neutral.line`.
 
 ![Utility bar default](components/crops/utility-bar-default.png)
 
@@ -99,7 +98,7 @@ Opens the "Bloomberg the Company & Its Products" sitemap dropdown. Read as `util
 |---|---|
 | default | size 246.45 x 12; padding 0px 27px 0px 0px; background transparent; text AvenirNextPForBBG 12/12 600, #f3f4ef; layers ::after rgba(0, 0, 0, 0) 0px none 0.7 |
 | hover | layers ::after rgba(0, 0, 0, 0) 0px none 1 |
-| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 2px; layers ::after rgba(0, 0, 0, 0) 0px none 0.7; a.bb-that-header__link.bb-that-header--sitemap-trigger 246.5x12.0 |
+| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 2px; layers ::after rgba(0, 0, 0, 0) 0px none 0.7; a.bb-that-header__link.bb-that-header--sitemap-trigger 246.5x12.0 1px auto rgb(0, 95, 204) offset 2px |
 | pressed | layers ::after rgba(0, 0, 0, 0) 0px none 1 |
 
 ![Company sitemap toggle default](components/crops/utility-toggle-default.png) ![Company sitemap toggle hover](components/crops/utility-toggle-hover.png) ![Company sitemap toggle focus-visible](components/crops/utility-toggle-focus-visible.png) ![Company sitemap toggle pressed](components/crops/utility-toggle-pressed.png)
@@ -114,7 +113,7 @@ The black bar: wordmark, Sign In, Subscribe, search. Read as `logo-bar` on the h
 
 **Values (default).** size 1326 x 52; background transparent; text BWHaasGroteskWeb 14/21 500, #ffffff `color.neutral.paper`; layers div.nav-ui-Logo__logo__TG9nb.nav-ui-Logo__dark__TG9nb 211.0x42.0 rgb(0, 0, 0); button.nav-ui-LogoBar__signInButton__TG9nb 66.8x30.0 rgb(0, 0, 0); a.nav-ui-LogoBar__subscribeButton__TG9nb 91.2x30.0 rgb(255, 255, 255) T:1px solid rgb(118, 118, 118) / R:1px solid rgb(118, 118, 118) / B:1px solid rgb(118, 118, 118) / L:1px solid rgb(118, 118, 118) 4px; div.nav-ui-LogoBar__search__TG9nb 1440.0x0.0 rgb(.
 
-Child layers that carry the look: div 211x42 background #000000 `color.neutral.ink`; button 66.8x30 background #000000 `color.neutral.ink`; a 91.2x30 background #ffffff `color.neutral.paper` border 1px solid #767676 radius 4px.
+Child layers that carry the look: div 211x42 background #000000 `color.neutral.ink`; button 66.8x30 background #000000 `color.neutral.ink`; a 91.2x30 background #ffffff `color.neutral.paper` border 1px solid #767676 `color.neutral.line-strong` radius 4px.
 
 ![Logo bar default](components/crops/logo-bar-default.png)
 
@@ -142,7 +141,7 @@ The white Subscribe CTA in the logo bar. Measured, never followed. Read as `subs
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 91.16 x 30; padding 6px 10px; border 1px solid #767676; radius 4px; background #ffffff `color.neutral.paper`; text BWHaasGroteskWeb 14/21 500, #000000 `color.neutral.ink` |
+| default | size 91.16 x 30; padding 6px 10px; border 1px solid #767676 `color.neutral.line-strong`; radius 4px; background #ffffff `color.neutral.paper`; text BWHaasGroteskWeb 14/21 500, #000000 `color.neutral.ink` |
 | hover | background #1c1c1c `color.neutral.ticker`; text BWHaasGroteskWeb 14/21 500, #ffffff `color.neutral.paper` |
 | focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 1px |
 | pressed | background #1c1c1c `color.neutral.ticker`; text BWHaasGroteskWeb 14/21 500, #ffffff `color.neutral.paper` |
@@ -156,7 +155,7 @@ Read as `search-button` on the home front page.
 |---|---|
 | default | size 28 x 28; background transparent; text BWHaasGroteskWeb 16/24 400, #ffffff `color.neutral.paper`; icon 24 x 24, #ffffff `color.neutral.paper` |
 | hover | text BWHaasGroteskWeb 16/24 400, #cccccc; icon 24 x 24, #cccccc |
-| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 0px; layers button.nav-ui-LogoBar__searchButton__TG9nb 28.0x28.0 |
+| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 0px; layers button.nav-ui-LogoBar__searchButton__TG9nb 28.0x28.0 1px auto rgb(0, 95, 204) offset 0px |
 | pressed | text BWHaasGroteskWeb 16/24 400, #cccccc; icon 24 x 24, #cccccc |
 
 ![Search button default](components/crops/search-button-default.png) ![Search button hover](components/crops/search-button-hover.png) ![Search button focus-visible](components/crops/search-button-focus-visible.png) ![Search button pressed](components/crops/search-button-pressed.png)
@@ -164,11 +163,7 @@ Read as `search-button` on the home front page.
 #### Section nav
 The strip under the logo bar: Live TV, Markets, Finance, Economics …. Read as `section-nav` on the home front page.
 
-**Values (default).** size 1440 x 120; background transparent; text BWHaasGroteskWeb 14/21 500, #ffffff `color.neutral.paper`; transition top 0.3s ease; layers div.nav-ui-LogoBar__logoBarContainer__TG9nb.nav-ui-LogoBar__dark__TG9nb 1440.0x80.0 rgb(0, 0, 0); div.nav-ui-Logo__logo__TG9nb.nav-ui-Logo__dark__TG9nb 211.0x42.0 rgb(0, 0, 0); button.nav-ui-LogoBar__signInButton__TG9nb 66.8x30.0 rgb(0, 0, 0); a.nav-ui-LogoBar__subscribeButton__TG9nb 91.2x30.0 rgb(255, 255, 255) T:1px solid rgb(118, 118, 118) / R:1px solid rgb(118, 118, 118) / B:1px solid rgb(118,.
-
-Child layers that carry the look: div 1440x80 background #000000 `color.neutral.ink`; div 211x42 background #000000 `color.neutral.ink`; button 66.8x30 background #000000 `color.neutral.ink`.
-
-![Section nav default](components/crops/section-nav-default.png)
+Not on the page when it was captured.
 
 #### Section link
 Read as `nav-link` on the home front page.
@@ -176,7 +171,7 @@ Read as `nav-link` on the home front page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 75.34 x 21; background transparent; text BWHaasGroteskWeb 14/21 500, #ffffff `color.neutral.paper` |
-| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 1px; layers a 75.3x21.0 |
+| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 1px; layers a 75.3x21.0 1px auto rgb(0, 95, 204) offset 1px |
 
 ![Section link default](components/crops/nav-link-default.png) ![Section link hover](components/crops/nav-link-hover.png) ![Section link focus-visible](components/crops/nav-link-focus-visible.png) ![Section link pressed](components/crops/nav-link-pressed.png)
 
@@ -219,9 +214,9 @@ The ticker strip, the lead story, secondary blocks and topic lanes.
 #### Ticker bar
 The securities strip: Top Securities plus index quotes. Read as `ticker-bar` on the home front page.
 
-**Values (default).** size 1326 x 55; padding 0px 0px 1px 0px; border R: 1px solid #b3b3b3 `color.neutral.line-strong`; B: 1px solid #b3b3b3 `color.neutral.line-strong`; L: 1px solid #b3b3b3 `color.neutral.line-strong`; background transparent; text BWHaasGroteskWeb 14/21 500, #000000 `color.neutral.ink`; icon 16 x 16, #000000 `color.neutral.ink`; layers div.PhoenixTickerBarWrapper_tickerBarWrapper__2cAU2 1326.0x55.0 R:1px solid rgb(179, 179, 179) / B:1px solid rgb(179, 179, 179) / L:1px solid rgb(179, 179, 179); div.media-ui-TickerBarWithPill_securities-QkJSeChnEgQ-.button-dropdown 165.4x53.0 rgb(0, 0, 0) 0px 0px 0px 0px; ul.media-ui-ButtonDropdown_menu-nTOQvv7qJHg- 0.0x0.0 rgb(255, 255, 255) T:1px solid rgb(248, 248, 248) / R:1px solid rgb(248, .
+**Values (default).** size 1326 x 55; padding 0px 0px 1px 0px; border R: 1px solid #b3b3b3 `color.neutral.line`; B: 1px solid #b3b3b3 `color.neutral.line`; L: 1px solid #b3b3b3 `color.neutral.line`; background transparent; text BWHaasGroteskWeb 14/21 500, #000000 `color.neutral.ink`; icon 16 x 16, #000000 `color.neutral.ink`; layers div.PhoenixTickerBarWrapper_tickerBarWrapper__2cAU2 1326.0x55.0 R:1px solid rgb(179, 179, 179) / B:1px solid rgb(179, 179, 179) / L:1px solid rgb(179, 179, 179); div.media-ui-TickerBarWithPill_securities-QkJSeChnEgQ-.button-dropdown 165.4x53.0 rgb(0, 0, 0) 0px 0px 0px 0px; ul.media-ui-ButtonDropdown_menu-nTOQvv7qJHg- 0.0x0.0 rgb(255, 255, 255) T:1px solid rgb(248, 248, 248) / R:1px solid rgb(248, .
 
-Child layers that carry the look: div 1326x55 border 1px solid #b3b3b3 `color.neutral.line-strong`; div 165.4x53 shadow #000000 `color.neutral.ink` 0px 0px 0px 0px; ul 0x0 background #ffffff `color.neutral.paper` border 1px solid #f8f8f8 radius 4px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px.
+Child layers that carry the look: div 1326x55 border 1px solid #b3b3b3 `color.neutral.line`; div 165.4x53 shadow #000000 `color.neutral.ink` 0px 0px 0px 0px; ul 0x0 background #ffffff `color.neutral.paper` border 1px solid #f8f8f8 radius 4px shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px.
 
 ![Ticker bar default](components/crops/ticker-bar-default.png)
 
@@ -231,7 +226,7 @@ One index in the strip (S&P 500 and its change). Links to the quote page; measur
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 211.73 x 31.5; padding 0px 10px 0px 0px; background transparent; text BWHaasGroteskWeb 14/17.5 500, #ffffff `color.neutral.paper`; icon 12 x 10, #f05143; layers div.media-ui-SecurityPill_securityPill-tHtSdrlxcjI-.media-ui-SecurityPill_negative-3yJm-9q9Vkg- 201.7x31.5 rgb(28, 28, 28) 8px |
-| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 1px; layers a.media-ui-TickerBarWithPill_ticker-5arx5cdkyZQ- 211.7x31.5; div.media-ui-SecurityPill_securityPill-tHtSdrlxcjI-.media-ui-SecurityPill_negative-3yJm-9q9Vkg- 201.7x31.5 rgb(28, 28, 28) 8px |
+| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 1px; layers a.media-ui-TickerBarWithPill_ticker-5arx5cdkyZQ- 211.7x31.5 1px auto rgb(0, 95, 204) offset 1px; div.media-ui-SecurityPill_securityPill-tHtSdrlxcjI-.media-ui-SecurityPill_negative-3yJm-9q9Vkg- 201.7x31.5 rgb(28, 28, 28) 8px |
 
 Child layers that carry the look: div 201.7x31.5 background #1c1c1c `color.neutral.ticker` radius 8px.
 
@@ -271,7 +266,7 @@ A headline link; measured, never followed. Read as `story-link` on the home fron
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover) | size 333 x 38.38; background transparent; text BWHaasGroteskWeb 16/19.2 500, #000000 `color.neutral.ink` |
-| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 1px; text BWHaasGroteskWeb 16/19.2 500, #545454; layers a.StoryBlock_storyLink__5nXw8 333.0x38.4 |
+| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 1px; text BWHaasGroteskWeb 16/19.2 500, #545454; layers a.StoryBlock_storyLink__5nXw8 333.0x38.4 1px auto rgb(0, 95, 204) offset 1px |
 | pressed | text BWHaasGroteskWeb 16/19.2 500, #545454 |
 
 ![Story link default](components/crops/story-link-default.png) ![Story link hover](components/crops/story-link-hover.png) ![Story link focus-visible](components/crops/story-link-focus-visible.png) ![Story link pressed](components/crops/story-link-pressed.png)
@@ -325,7 +320,7 @@ A row linking a security’s quote page; measured, never followed. Read as `quot
 |---|---|
 | default (same: pressed) | size 211.73 x 31.5; padding 0px 10px 0px 0px; background transparent; text BWHaasGroteskWeb 14/17.5 500, #ffffff `color.neutral.paper`; icon 12 x 10, #f05143; layers div.media-ui-SecurityPill_securityPill-tHtSdrlxcjI-.media-ui-SecurityPill_negative-3yJm-9q9Vkg- 201.7x31.5 rgb(28, 28, 28) 8px |
 | hover | layers div.media-ui-SecurityPill_securityPill-tHtSdrlxcjI-.media-ui-SecurityPill_negative-3yJm-9q9Vkg- 201.7x31.5 rgb(60, 60, 60) 8px |
-| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 1px; layers a.media-ui-TickerBarWithPill_ticker-5arx5cdkyZQ- 211.7x31.5; div.media-ui-SecurityPill_securityPill-tHtSdrlxcjI-.media-ui-SecurityPill_negative-3yJm-9q9Vkg- 201.7x31.5 rgb(28, 28, 28) 8px |
+| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 1px; layers a.media-ui-TickerBarWithPill_ticker-5arx5cdkyZQ- 211.7x31.5 1px auto rgb(0, 95, 204) offset 1px; div.media-ui-SecurityPill_securityPill-tHtSdrlxcjI-.media-ui-SecurityPill_negative-3yJm-9q9Vkg- 201.7x31.5 rgb(28, 28, 28) 8px |
 
 Child layers that carry the look: div 201.7x31.5 background #1c1c1c `color.neutral.ticker` radius 8px.
 
@@ -383,7 +378,7 @@ A related-topic pill under the nav. Read as `topic-link` on the article page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 199.61 x 19; background transparent; text BWHaasGroteskWeb 16/24 400, #000000 `color.neutral.ink` |
-| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 1px; layers a 199.6x19.0 |
+| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 1px; layers a 199.6x19.0 1px auto rgb(0, 95, 204) offset 1px |
 
 ![Topic link default](components/crops/topic-link-default.png) ![Topic link hover](components/crops/topic-link-hover.png) ![Topic link focus-visible](components/crops/topic-link-focus-visible.png) ![Topic link pressed](components/crops/topic-link-pressed.png)
 
@@ -409,9 +404,7 @@ The paywall’s action; links to the offers page, measured, never followed. Read
 #### Body paragraph
 A body-text paragraph; absent while the paywall holds. Read as `article-body` on the article page.
 
-**Values (default).** size 570 x 18.47; background transparent; text BWHaasGroteskWeb 14/18.48 400, rgba(255, 255, 255, 0.85).
-
-![Body paragraph default](components/crops/article-body-default.png)
+Not on the page when it was captured.
 
 ### Quote page
 
@@ -440,23 +433,17 @@ The Follow toggle beside the title — a real press would need an account, so it
 #### Last price
 Read as `quote-price` on the quote page.
 
-**Values (default).** size 120.97 x 14; background transparent; text BWHaasGroteskWeb 14/14 400, #ffffff `color.neutral.paper`; icon 12 x 10, #f05143.
-
-![Last price default](components/crops/quote-price-default.png)
+Not on the page when it was captured.
 
 #### Price change
 Read as `quote-change` on the quote page.
 
-**Values (default).** size 120.97 x 14; background transparent; text BWHaasGroteskWeb 14/14 400, #ffffff `color.neutral.paper`; icon 12 x 10, #f05143.
-
-![Price change default](components/crops/quote-change-default.png)
+Not on the page when it was captured.
 
 #### Key stat
 A key-statistics row (open, range, market cap). Read as `quote-stat` on the quote page.
 
-**Values (default).** size 618 x 32; padding 8px 0px 0px 0px; background transparent; text BWHaasGroteskWeb 16/24 400, #767676.
-
-![Key stat default](components/crops/quote-stat-default.png)
+Not on the page when it was captured.
 
 ### Live TV
 
@@ -483,9 +470,7 @@ Child layers that carry the look: div 813.3x457.5 background #000000 `color.neut
 #### Schedule row
 Read as `live-schedule` on the live TV page.
 
-**Values (default).** size 99.47 x 40; padding 3px 12px; background transparent; text BWHaasGroteskWeb 14/21 500, #ffffff `color.neutral.paper`; icon 20 x 20, #ffffff `color.neutral.paper`.
-
-![Schedule row default](components/crops/live-schedule-default.png)
+Not on the page when it was captured.
 
 ### Subscription offers
 
@@ -496,7 +481,7 @@ Read as `offer-header` on the subscription offers page.
 
 **Values (default).** size 1254 x 30; background transparent; text AvenirNextPForBBG 12/12 600, #f3f4ef; layers ::before rgba(0, 0, 0, 0) 0px none 1; ::after rgba(0, 0, 0, 0) 0px none 1; a.bb-that-header__link 219.5x12.0 L:1px solid rgb(179, 179, 179); a.bb-that-header__link 239.2x16.0 L:1px solid rgb(179, 179, 179); a.bb-that-header__link 188.5x12.0 L:1px solid rgb(179, 179, 179).
 
-Child layers that carry the look: a 219.5x12 border 1px solid #b3b3b3 `color.neutral.line-strong`; a 239.2x16 border 1px solid #b3b3b3 `color.neutral.line-strong`; a 188.5x12 border 1px solid #b3b3b3 `color.neutral.line-strong`.
+Child layers that carry the look: a 219.5x12 border 1px solid #b3b3b3 `color.neutral.line`; a 239.2x16 border 1px solid #b3b3b3 `color.neutral.line`; a 188.5x12 border 1px solid #b3b3b3 `color.neutral.line`.
 
 ![Offers header default](components/crops/offer-header-default.png)
 
@@ -521,8 +506,9 @@ The offer’s own action; links to checkout, measured, never followed. Read as `
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, pressed) | size 247 x 48; background transparent; text BW Haas Grotesk Web 16/24.8 500, #ffffff `color.neutral.paper`; layers a.wp-ga-button.button-dark-theme 247.0x48.0 rgb(53, 35, 255) 8px |
+| default (same: pressed) | size 247 x 48; background transparent; text BW Haas Grotesk Web 16/24.8 500, #ffffff `color.neutral.paper`; layers a.wp-ga-button.button-dark-theme 247.0x48.0 rgb(53, 35, 255) 8px |
 | hover | layers a.wp-ga-button.button-dark-theme 247.0x48.0 rgb(79, 79, 255) 8px |
+| focus-visible | layers a.wp-ga-button.button-dark-theme 247.0x48.0 rgb(53, 35, 255) 1px dotted rgb(255, 255, 255) offset 2px 8px |
 
 Child layers that carry the look: a 247x48 background #3523ff `color.brand.accent` radius 8px.
 
@@ -531,7 +517,7 @@ Child layers that carry the look: a 247x48 background #3523ff `color.brand.accen
 #### Plan card
 A rate-plan option block (billing choices). Read as `plan-card` on the subscription offers page.
 
-**Values (default).** size 402 x 255.56; padding 24px 0px; border 1px solid #b3b3b3 `color.neutral.line-strong`; background #ffffff `color.neutral.paper`; text BW Haas Grotesk Web 20/24 500, #000000 `color.neutral.ink`.
+**Values (default).** size 402 x 255.56; padding 24px 0px; border 1px solid #b3b3b3 `color.neutral.line`; background #ffffff `color.neutral.paper`; text BW Haas Grotesk Web 20/24 500, #000000 `color.neutral.ink`.
 
 ![Plan card default](components/crops/plan-card-default.png)
 
@@ -540,8 +526,9 @@ Read as `plan-cta` on the subscription offers page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible, pressed) | size 376 x 48; background transparent; text BW Haas Grotesk Web 16/19.2 500, #000000 `color.neutral.ink`; layers a.wp-ga-button.button-light-theme 354.0x48.0 rgb(255, 255, 255) T:1px solid rgb(0, 0, 0) / R:1px solid rgb(0, 0, 0) / B:1px solid rgb(0, 0, 0) / L:1px solid rgb(0, 0, 0) 8px |
+| default (same: pressed) | size 376 x 48; background transparent; text BW Haas Grotesk Web 16/19.2 500, #000000 `color.neutral.ink`; layers a.wp-ga-button.button-light-theme 354.0x48.0 rgb(255, 255, 255) T:1px solid rgb(0, 0, 0) / R:1px solid rgb(0, 0, 0) / B:1px solid rgb(0, 0, 0) / L:1px solid rgb(0, 0, 0) 8px |
 | hover | layers a.wp-ga-button.button-light-theme 354.0x48.0 rgb(239, 239, 239) T:1px solid rgb(0, 0, 0) / R:1px solid rgb(0, 0, 0) / B:1px solid rgb(0, 0, 0) / L:1px solid rgb(0, 0, 0) 8px |
+| focus-visible | layers a.wp-ga-button.button-light-theme 354.0x48.0 rgb(255, 255, 255) T:1px solid rgb(0, 0, 0) / R:1px solid rgb(0, 0, 0) / B:1px solid rgb(0, 0, 0) / L:1px solid rgb(0, 0, 0) 1px dotted rgb(0, 0, 0) offset 2px 8px |
 
 Child layers that carry the look: a 354x48 background #ffffff `color.neutral.paper` border 1px solid #000000 `color.neutral.ink` radius 8px.
 
@@ -564,7 +551,7 @@ Read as `footer-link` on the home front page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 177 x 42; background transparent; text BWHaasGroteskWeb 16/24 400, #ffffff `color.neutral.paper` |
-| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 1px; layers a.nav-ui-Logo__logo__TG9nb 177.0x42.0 |
+| focus-visible | outline 1px auto #005fcc `measured.focus-outline`, offset 1px; layers a.nav-ui-Logo__logo__TG9nb 177.0x42.0 1px auto rgb(0, 95, 204) offset 1px |
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
 

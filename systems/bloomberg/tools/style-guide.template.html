@@ -57,6 +57,8 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .field { display: flex; align-items: center; height: var(--component-control-fieldHeight, 35px); border: 1px solid var(--color-neutral-mercury, #e1e1e1); padding: 0 12px; font-size: 14px; color: var(--color-neutral-dawn, #a3a3a3); max-width: 340px; margin-bottom: 8px; }
 table.cmp { border-collapse: collapse; font-size: 14px; }
 table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-mercury, #e1e1e1); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-line, #b3b3b3); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-body, #3c3c3c); font-family: var(--font-family-utility, monospace); }
 </style>
 </head>
 <body>
@@ -72,7 +74,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-mercury, #e1e
   <p class="lead">A thin utility strip, then the black logo bar: the Bloomberg wordmark, Sign In and the Subscribe button, a search icon, then the section nav (Live TV, Markets, Finance, Economics, Industries, Tech, Politics, Businessweek, Opinion, Video) and an edition picker. A securities ticker runs under the nav: dark chips with gain/loss arrows.</p>
   <div class="mock">
     <div class="promo" style="font-size:12px">Bloomberg the Company &amp; Its Products &nbsp;|&nbsp; Bloomberg Terminal Demo Request &nbsp;|&nbsp; Bloomberg Anywhere Remote Login</div>
-    <div class="navbar"><span class="wm" style="font-size:26px;font-weight:800">Bloomberg</span><span class="sp"></span><span>Sign In</span><span class="btn" style="background:#fff;color:#000;height:32px;padding:0 14px;font-size:13px;font-weight:700">Subscribe</span><span>&#9906;</span></div>
+    <div class="navbar" style="background:var(--color-neutral-chrome,#000)"><span class="wm" style="font-size:26px;font-weight:800">Bloomberg</span><span class="sp"></span><span>Sign In</span><span class="btn" style="background:#fff;color:#000;height:32px;padding:0 14px;font-size:13px;font-weight:700">Subscribe</span><span>&#9906;</span></div>
     <div class="hero" style="background:#000;color:#fff;text-align:left;font-size:13px;font-weight:600;letter-spacing:0;padding:10px 14px">&#9679; Live TV &nbsp; Markets &nbsp; Finance &nbsp; Economics &nbsp; Industries &nbsp; Tech &nbsp; Politics &nbsp; Businessweek &nbsp; Opinion &nbsp; Video</div>
     <div style="display:flex;gap:6px;padding:10px 14px;overflow:hidden;background:#fff">
       <span class="btn" style="background:#1b1b1b;color:#fff;height:28px;font-size:12px;padding:0 10px">S&amp;P 500 7,492.67 <span style="color:var(--color-market-loss,#e33e3e)">&#9660;0.76%</span></span>
@@ -91,14 +93,14 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-mercury, #e1e
     <div style="margin-top:18px;max-width:420px">
       <div style="background:#000;color:#fff;padding:18px;font-size:15px;font-weight:700">Get unlimited access to Bloomberg.com</div>
       <div style="border:1px solid #ddd;padding:12px;margin-top:12px;font-size:14px"><b>Annual Digital</b><div class="sub">$399 → $180 for your first year</div></div>
-      <span class="btn primary big" style="width:100%;margin-top:10px;background:var(--color-accent-blue,#065fd4)">Continue</span>
+      <span class="btn primary big" style="width:100%;margin-top:10px;background:var(--color-brand-accent,#3523ff)">Continue</span>
     </div>
   </div>
 
   <h2 class="sh">Sign-in sheet</h2>
   <div class="mock" style="padding:20px">
     <div class="field">Email address</div>
-    <span class="btn primary" style="min-width:200px;height:38px;background:var(--color-accent-blue,#065fd4)">Continue</span>
+    <span class="btn primary" style="min-width:200px;height:38px;background:var(--color-brand-accent,#3523ff)">Continue</span>
   </div>
 
   <h2 class="sh">Palette</h2>
@@ -111,6 +113,11 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-mercury, #e1e
 
   <h2 class="sh">Shadows</h2>
   <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three licensed stacks: <code>BWHaasHead</code> headlines, <code>BWHaasGroteskWeb</code> body and UI labels, <code>AvenirNextPForBBG</code> the utility strip. Sizes are the measured ramp; samples fall back to Helvetica/system because the faces are not distributed.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
 
   <h2 class="sh">Measured extras</h2>
   <div id="meas-out" class="kv"></div>
@@ -161,6 +168,20 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
   for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Bloomberg</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
 })();
 </script>
 </body>

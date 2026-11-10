@@ -45,7 +45,7 @@ Each rule links the screenshot or crop that shows it, under [Do and don't](#do-a
 | text | #000000 `core.color.neutral.ink` |
 | muted | #3c3c3c `core.color.neutral.body` |
 | accent | #3523ff `core.color.brand.accent` |
-| border | #e5e7eb `core.color.neutral.line` |
+| border | #b3b3b3 `core.color.neutral.line` |
 
 Fonts: `core.font.family.headline` is BWHaasHead, then 3 fallbacks; `core.font.family.ui` is BWHaasGroteskWeb, then 4 fallbacks. Scales, counted as [DESIGN.md](DESIGN.md) holds them: no type styles under `core.typography`, no radius steps under `core.radius`, no spacing steps under `core.spacing`.
 
@@ -116,7 +116,7 @@ Nothing was subscribed, bought, signed into or submitted. The privacy modal was 
 
 ## Fonts
 
-**BWHaasGrotesk** (BWHaasGroteskWeb, Haas Grotesk for Bloomberg) is the licensed news face — headlines, prices and big numerals. **Avenir Next for Bloomberg** (AvenirNextPForBBG) is the licensed UI/label face — nav labels, badges, ticker text. Neither is distributed; the style guide falls back to Helvetica/system. Two `@font-face` rules for BWHaasGroteskWeb (400/700, woff2+woff on assets.bwbx.io) are recorded in [raw/css-vars.json](raw/css-vars.json).
+**BWHaasHead** is the licensed headline face — the lead and article headlines. **BWHaasGroteskWeb** (Haas Grotesk for Bloomberg) is the licensed workhorse — nav labels, body text, ticker text and deks. **Avenir Next for Bloomberg** (AvenirNextPForBBG) is the licensed utility face — the thin top strip and its links. None is distributed; the style guide falls back to Helvetica/system. Two `@font-face` rules for BWHaasGroteskWeb (400/700, woff2+woff on assets.bwbx.io) are recorded in [raw/css-vars.json](raw/css-vars.json).
 
 ## Coverage
 
@@ -162,3 +162,28 @@ Nothing was subscribed, bought, signed into or submitted. The privacy modal was 
 6. **Don't ship a dark theme.** None is offered on the captured surface; the dark offer hero is a layout block, not a theme.
 7. **Don't round the chrome.** Bars, nav and the paywall band are square-edged; rounding (8px) is reserved for pills, buttons and cards. See [plan-card-default](components/crops/plan-card-default.png).
 8. **Don't treat throttled or gated surfaces as failures.** The PerimeterX challenge, the paywall fence and the gated live player are the real signed-out surface; document them rather than styling past them.
+
+## Rebuild
+
+Everything derived regenerates offline from the raw readings (run from `systems/bloomberg/`):
+
+```sh
+python3 tools/build_component_tokens.py        # raw/components-computed.json -> raw/component-tokens.json
+python3 tools/build_tokens.py                  # -> tokens.json
+python3 tools/build_style_guide.py             # -> style-guide.html
+python3 tools/build_components_md.py           # -> components.md
+node tools/capture/public/build-measurements.mjs  # -> raw/measurements.md
+python3 tools/capture/quantize.py <raw-dir>    # full-colour PNGs -> screenshots/
+```
+
+Then `make brief && make design-md && make grade && make check` from the repo root refreshes the generated sections and validates the catalog.
+
+Live recapture (needs the site; Playwright at `PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs`):
+
+```sh
+node tools/capture/vars.mjs                    # stylesheet harvest -> raw/css-vars.json
+node tools/capture/public/measure.mjs          # computed styles + crops -> raw/components-computed.json
+RAW=<scratch> node tools/capture/public/public.mjs   # screenshots -> <scratch>
+```
+
+PerimeterX throttles repeated loads: blocked routes log `BLOCKED` and keep earlier readings; wait and retry rather than forcing through.

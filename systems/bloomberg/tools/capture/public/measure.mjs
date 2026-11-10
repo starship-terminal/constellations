@@ -30,6 +30,10 @@ let page, cdp, current, context, run;
 let articleUrl = null;
 const touched = new Set();
 const listed = new Map();
+// Routes PerimeterX gates this run: components last measured on them keep their
+// earlier readings instead of being pruned below (a blocked pass must never
+// erase evidence).
+const failedPages = new Set();
 
 async function blocked() {
   return page.evaluate(() => {
@@ -52,7 +56,7 @@ async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url 
   page.setDefaultTimeout(8000);
   log('open', key, mobile ? '(mobile)' : '');
   await open(page, url || BASE + URLS[key], { wait, promo });
-  if (await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); return false; }
+  if (await blocked()) { log('  BLOCKED', key); failedPages.add(key); await page.close(); await ctx.close(); return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   return true;
 }
@@ -185,7 +189,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = `typed "${opts.fillText || 'name@example.com'}", then deleted; nothing sent`;
       } else if (st === 'opened') {
         if (opts.noToggle) via = 'held open by an earlier toggle';
-        else { await toggle(loc); await page.waitForTimeout(900); via = 'own toggle'; }
+        else { await toggle(loc, { allowLink: opts.allowLink }); await page.waitForTimeout(900); via = 'own toggle'; }
       } else via = via || 'at rest';
       await measure(key, st, loc, { ...opts, via });
     } catch (e) {
@@ -276,7 +280,7 @@ async function home() {
   await S('utility-bar', q('nav.bb-that').first(), ['default'], { group: g, title: 'Utility bar', desc: 'The thin top strip: "Bloomberg the Company & Its Products", Terminal demo, Anywhere login, customer support.', sel: 'nav.bb-that' }, { noScroll: true });
   const util = q('button, a').filter({ hasText: /Bloomberg the Company/i }).first();
   await S('utility-toggle', util, B4, { group: g, title: 'Company sitemap toggle', desc: 'Opens the "Bloomberg the Company & Its Products" sitemap dropdown.', sel: 'button:has-text("Bloomberg the Company")' }, { noScroll: true });
-  await S('utility-toggle-open', util, ['opened'], { group: g, title: 'Company sitemap, open', desc: 'The toggle after its own press; the dropdown shows in the crop of the opened panel.', sel: 'button:has-text("Bloomberg the Company")', noToggle: false }, { noScroll: true, cropLoc: q('nav.bb-that').first() });
+  await S('utility-toggle-open', util, ['opened'], { group: g, title: 'Company sitemap, open', desc: 'The toggle after its own press; the dropdown shows in the crop of the opened panel.', sel: 'button:has-text("Bloomberg the Company")', noToggle: false }, { noScroll: true, cropLoc: q('nav.bb-that').first(), allowLink: true });
   await page.keyboard.press('Escape'); await page.waitForTimeout(500);
   await S('logo-bar', q('[class*="nav-ui-LogoBar__bar"]').first(), ['default'], { group: g, title: 'Logo bar', desc: 'The black bar: wordmark, Sign In, Subscribe, search.', sel: '[class*="nav-ui-LogoBar__bar"]' }, { noScroll: true });
   await S('logo', q('a[class*="nav-ui-Logo__logo"]').first(), ['default'], { group: g, title: 'Logo', sel: 'a[class*="nav-ui-Logo__logo"]' }, { noScroll: true });
@@ -284,7 +288,7 @@ async function home() {
   await S('signin-button', signin, B4, { group: g, title: 'Sign In button', desc: 'Opens the sign-in sheet; never a real sign-in.', sel: 'button:has-text("Sign In")' }, { noScroll: true });
   await S('subscribe-nav', q('a[class*="subscribeButton" i]').first(), B4, { group: g, title: 'Subscribe button', desc: 'The white Subscribe CTA in the logo bar. Measured, never followed.', sel: 'a[class*="subscribeButton"]' }, { noScroll: true });
   await S('search-button', q('a[href*="/search"], button[aria-label*="earch" i], [class*="searchButton" i]').first(), B4, { group: g, title: 'Search button', sel: 'nav search control' }, { noScroll: true });
-  await S('section-nav', q('[class*="nav-ui-Nav__navContainer"], [class*="styles_nav"]').first(), ['default'], { group: g, title: 'Section nav', desc: 'The strip under the logo bar: Live TV, Markets, Finance, Economics …', sel: '[class*="nav-ui-Nav"]' }, { noScroll: true });
+  await S('section-nav', q('[class*="nav-ui-Nav"] nav, [class*="nav-ui-Nav"] [role="list"], [class*="nav-ui-Nav"] ul').first(), ['default'], { group: g, title: 'Section nav', desc: 'The strip under the logo bar: Live TV, Markets, Finance, Economics …', sel: '[class*="nav-ui-Nav"] nav/ul' }, { noScroll: true });
   await S('nav-link', q('[class*="nav-ui-Nav"] a').filter({ hasText: /^Economics$/ }).first(), B4, { group: g, title: 'Section link', sel: 'section nav a:has-text("Economics")' }, { noScroll: true });
   const more = q('[class*="nav-ui-Nav"] button, [class*="styles_nav"] button').filter({ hasText: /More|Markets/i }).filter({ visible: true }).first();
   await S('nav-dropdown', more, B4, { group: g, title: 'Nav dropdown', desc: 'A chevron item in the section nav; opens a subnav list.', sel: 'nav button:has-text("More")' }, { noScroll: true });
@@ -333,8 +337,9 @@ async function markets() {
 }
 
 async function article() {
-  // The article URL is discovered on the home front at run time.
-  if (!(await newPage('home', { promo: 'close', wait: 6000 }))) return;
+  // The article URL is discovered on the home front at run time; a blocked
+  // discovery load means the article route stays uncaptured too.
+  if (!(await newPage('home', { promo: 'close', wait: 6000 }))) { failedPages.add('article'); return; }
   articleUrl = await page.evaluate(() => {
     const a = [...document.querySelectorAll('a[href*="/news/articles/"]')].find((x) => x.offsetParent);
     if (!a) return null;
@@ -357,7 +362,7 @@ async function article() {
   const payLoc = (await pay.count()) ? pay.first() : q('a, button').filter({ hasText: /Claim This Offer/i }).first().locator('xpath=ancestor::*[self::div or self::section or self::aside][3]');
   await S('paywall', payLoc, ['default'], { group: g, title: 'Paywall fence', desc: 'The "Get unlimited access" band that gates the article body. The boundary of the public capture: nothing past it is public.', sel: '[class*="paywall" i] / Claim-offer band' });
   await S('claim-offer', q('a, button').filter({ hasText: /Claim This Offer/i }).first(), B4, { group: g, title: 'Claim offer CTA', desc: 'The paywall’s action; links to the offers page, measured, never followed.', sel: ':has-text("Claim This Offer")' });
-  await S('article-body', q('article p, [class*="body" i] p').filter({ visible: true }).first(), ['default'], { group: g, title: 'Body paragraph', desc: 'A body-text paragraph; absent while the paywall holds.', sel: 'article p' });
+  await S('article-body', q('article p, [class*="body-copy" i] p, [class*="article-body" i] p').filter({ visible: true, hasNotText: /internet connection|refresh the page/i }).first(), ['default'], { group: g, title: 'Body paragraph', desc: 'A body-text paragraph; absent while the paywall holds.', sel: 'article p' });
   save();
 }
 
@@ -367,9 +372,9 @@ async function quote() {
   const g = G.quote;
   await S('quote-title', q('h1').first(), ['default'], { group: g, title: 'Quote title', desc: 'The index name and ticker (S&P 500 INDEX / SPX:IND).', sel: 'h1' }, { noScroll: true });
   await S('follow-button', q('button').filter({ hasText: /^Follow/ }).first(), B4, { group: g, title: 'Follow button', desc: 'The Follow toggle beside the title — a real press would need an account, so it was never pressed.', sel: 'button:has-text("Follow")' }, { noScroll: true });
-  await S('quote-price', q('[class*="price" i], [class*="Price"], [class*="last" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Last price', sel: '[class*="price" i]' });
-  await S('quote-change', q('[class*="change" i], [class*="Change"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Price change', sel: '[class*="change" i]' });
-  await S('quote-stat', q('[class*="stat" i], [class*="Stat"], table tr, dl div, [class*="keyStat" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Key stat', desc: 'A key-statistics row (open, range, market cap).', sel: '[class*="stat" i] / table tr' });
+  await S('quote-price', q('[class*="price" i]:not([class*="icker"]):not([class*="ecurity"]):not([class*="ill"])').filter({ visible: true }).first(), ['default'], { group: g, title: 'Last price', sel: '[class*="price"]:not(ticker/security/pill)' });
+  await S('quote-change', q('[class*="change" i]:not([class*="icker"]):not([class*="ecurity"]):not([class*="ill"])').filter({ visible: true }).first(), ['default'], { group: g, title: 'Price change', sel: '[class*="change"]:not(ticker/security/pill)' });
+  await S('quote-stat', q('[class*="keyStat" i], dl div, table tbody tr').filter({ visible: true, hasNotText: /as of|updated/i }).first(), ['default'], { group: g, title: 'Key stat', desc: 'A key-statistics row (open, range, market cap).', sel: '[class*="keyStat"] / dl div' });
   save();
 }
 
@@ -379,7 +384,7 @@ async function live() {
   const g = G.live;
   await S('live-player', q('[class*="Player" i], [class*="player" i], video, [class*="GatedLiveVideo" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Live player', desc: 'The gated live-TV frame; the stream itself needs an account.', sel: '[class*="GatedLiveVideo"]' }, { noScroll: true });
   await S('live-paywall', q('[class*="PaywallAnchor"], [class*="paywall" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Live paywall', sel: '[class*="PaywallAnchor"]' });
-  await S('live-schedule', q('[class*="schedule" i], [class*="Schedule"], li, tr').filter({ visible: true }).first(), ['default'], { group: g, title: 'Schedule row', sel: 'schedule row' });
+  await S('live-schedule', q('[class*="schedule" i] li, [class*="Schedule"] li, [class*="schedule" i] tr, [class*="upcoming" i] li').filter({ visible: true }).first(), ['default'], { group: g, title: 'Schedule row', sel: '[class*="schedule"] li/tr' });
   save();
 }
 
@@ -397,7 +402,7 @@ async function subscriptions() {
 }
 
 async function footer() {
-  if (!(await newPage('home'))) return;
+  if (!(await newPage('footer', { url: BASE + '/asia' }))) return;
   const g = G.footer;
   await page.evaluate(() => scrollTo(0, document.documentElement.scrollHeight));
   await page.waitForTimeout(1500);
@@ -408,7 +413,7 @@ async function footer() {
 }
 
 async function mobile() {
-  if (!(await newPage('home', { mobile: true }))) return;
+  if (!(await newPage('mobile', { mobile: true, url: BASE + '/asia' }))) return;
   await chrome('mobile');
   const g = G.mobile;
   await S('m-header', q('[class*="LogoBarMobile"], [class*="nav-ui-LogoBar"], header').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile header', sel: '[class*="LogoBarMobile"]' }, { noScroll: true });
@@ -439,7 +444,10 @@ try {
   if (!pages.length || pages.includes('home')) await reducedMotion('home', '[class*="TickerBarWithPill_bar"]');
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
-    if (!touched.has(key) && !pages.length) { delete out.components[key]; continue; }
+    // An untouched entry is pruned only when its page was not blocked this
+    // run: a PerimeterX-gated route keeps its earlier readings under their
+    // original provenance instead of being erased and republished.
+    if (!touched.has(key) && !pages.length && !failedPages.has(c.page)) { delete out.components[key]; continue; }
     const want = listed.get(key);
     if (want) for (const st of Object.keys(c.states || {})) if (!want.has(st)) delete c.states[st];
   }

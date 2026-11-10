@@ -230,28 +230,9 @@ Crops: `search-button-default.png`, `search-button-hover.png`, `search-button-fo
 
 Section nav. The strip under the logo bar: Live TV, Markets, Finance, Economics …
 
-Page: home. Selector: `[class*="nav-ui-Nav"]`. States: default.
+Page: home. Selector: `[class*="nav-ui-Nav"]`. States: .
 
-| Property | default |
-|---|---|
-| Size (w x h) | 1440 x 120 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | BWHaasGroteskWeb 16px/24px 400 |
-| Letter spacing | normal |
-| Colour | #000000 |
-| Text node | button.nav-ui-LogoBar__signInButton__TG9nb: BWHaasGroteskWeb 14px/21px 500, #ffffff, ls 0.2px |
-| Transition | top 0.3s ease |
-| Icon | 211 x 42, colour #ffffff |
-| Painted layers | div.nav-ui-LogoBar__logoBarContainer__TG9nb.nav-ui-LogoBar__dark__TG9nb 1440.0x80.0 bg #000000; div.nav-ui-Logo__logo__TG9nb.nav-ui-Logo__dark__TG9nb 211.0x42.0 bg #000000; button.nav-ui-LogoBar__signInButton__TG9nb 66.8x30.0 bg #000000; a.nav-ui-LogoBar__subscribeButton__TG9nb 91.2x30.0 bg #ffffff border T:1px solid #767676 / R:1px solid #767676 / B:1px solid #767676 / L:1px solid #767676 r 4px; div.nav-ui-LogoBar__search__TG9nb 1440.0x0.0 bg #1c1c1c; div.nav-ui-MenuDesktop__menuDesktopContainer__TWVud.nav-ui-MenuDesktop__dark__TWVud 1440.0x40.0 bg #1c1c1c |
-| Ancestor paint | 1 up div.media-ui-LeaderboardAd_parallaxWrapper-JMVgdxR--aU- bg #ffffff |
-| How | at rest |
-
-Crops: `section-nav-default.png`.
+Not found on the page at capture time.
 
 #### nav-link
 
@@ -722,79 +703,25 @@ Crops: `follow-button-default.png`, `follow-button-hover.png`, `follow-button-fo
 
 Last price.
 
-Page: quote. Selector: `[class*="price" i]`. States: default.
+Page: quote. Selector: `[class*="price" i]`. States: .
 
-| Property | default |
-|---|---|
-| Size (w x h) | 120.97 x 14 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | BWHaasGroteskWeb 12px/18px 400 |
-| Letter spacing | normal |
-| Colour | #ffffff |
-| Text node | div.sized-price.media-ui-SizedPrice_default-jkpJAG-dT-o-: BWHaasGroteskWeb 14px/14px 400, #ffffff, ls -0.3px |
-| Transition | none |
-| Cursor | pointer |
-| Icon | 12 x 10, colour #f05143 |
-| Ancestor paint | 1 up div.media-ui-SecurityPill_securityPill-tHtSdrlxcjI-.media-ui-SecurityPill_negative-3yJm-9q9Vkg- bg #1c1c1c |
-| How | at rest |
-
-Crops: `quote-price-default.png`.
+Not found on the page at capture time.
 
 #### quote-change
 
 Price change.
 
-Page: quote. Selector: `[class*="change" i]`. States: default.
+Page: quote. Selector: `[class*="change" i]`. States: .
 
-| Property | default |
-|---|---|
-| Size (w x h) | 120.97 x 14 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | BWHaasGroteskWeb 12px/18px 400 |
-| Letter spacing | normal |
-| Colour | #ffffff |
-| Text node | div.sized-price.media-ui-SizedPrice_default-jkpJAG-dT-o-: BWHaasGroteskWeb 14px/14px 400, #ffffff, ls -0.3px |
-| Transition | none |
-| Cursor | pointer |
-| Icon | 12 x 10, colour #f05143 |
-| Ancestor paint | 1 up div.media-ui-SecurityPill_securityPill-tHtSdrlxcjI-.media-ui-SecurityPill_negative-3yJm-9q9Vkg- bg #1c1c1c |
-| How | at rest |
-
-Crops: `quote-change-default.png`.
+Not found on the page at capture time.
 
 #### quote-stat
 
 Key stat. A key-statistics row (open, range, market cap).
 
-Page: quote. Selector: `[class*="stat" i] / table tr`. States: default.
+Page: quote. Selector: `[class*="stat" i] / table tr`. States: .
 
-| Property | default |
-|---|---|
-| Size (w x h) | 618 x 32 |
-| Padding | 8px 0px 0px 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | BWHaasGroteskWeb 16px/24px 400 |
-| Letter spacing | normal |
-| Colour | #767676 |
-| Text node | span.marketLastUpdate_exchangeDelay___PZEn: BWHaasGroteskWeb 16px/24px 400, #767676 |
-| Transition | none |
-| How | at rest |
-
-Crops: `quote-stat-default.png`.
+Not found on the page at capture time.
 
 ### Live TV
 
@@ -855,27 +782,9 @@ Crops: `live-paywall-default.png`.
 
 Schedule row.
 
-Page: live. Selector: `schedule row`. States: default.
+Page: live. Selector: `schedule row`. States: .
 
-| Property | default |
-|---|---|
-| Size (w x h) | 99.47 x 40 |
-| Padding | 3px 12px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | BWHaasGroteskWeb 14px/21px 500 |
-| Letter spacing | 0.2px |
-| Colour | #ffffff |
-| Text node | a: BWHaasGroteskWeb 14px/21px 500, #ffffff, ls 0.2px |
-| Transition | none |
-| Cursor | pointer |
-| Icon | 20 x 20, colour #ffffff |
-| How | at rest |
-
-Crops: `live-schedule-default.png`.
+Not found on the page at capture time.
 
 ### Subscription offers
 
@@ -1223,24 +1132,9 @@ Crops: `claim-offer-default.png`, `claim-offer-hover.png`, `claim-offer-focus-vi
 
 Body paragraph. A body-text paragraph; absent while the paywall holds.
 
-Page: article. Selector: `article p`. States: default.
+Page: article. Selector: `article p`. States: .
 
-| Property | default |
-|---|---|
-| Size (w x h) | 570 x 18.47 |
-| Padding | 0px |
-| Border | none |
-| Radius | 0px |
-| Background | transparent |
-| Box shadow | none |
-| Outline | none |
-| Font | BWHaasGroteskWeb 14px/18.48px 400 |
-| Letter spacing | normal |
-| Colour | #ffffff @ 0.85 |
-| Transition | none |
-| How | at rest |
-
-Crops: `article-body-default.png`.
+Not found on the page at capture time.
 
 ### Footer
 
