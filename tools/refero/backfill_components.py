@@ -349,11 +349,6 @@ def main():
           f"unresolved component refs {unresolved_refs}")
     db.close()
 
-    # The backfill changes catalog fields (fetched_at, has_components, media);
-    # rebuild catalog.json so the flat store does not go stale (check.py
-    # fails while it disagrees with the db).
-    fetch.cmd_catalog()
-
 
 if __name__ == "__main__":
     main()

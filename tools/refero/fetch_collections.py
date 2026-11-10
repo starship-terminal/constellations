@@ -269,21 +269,6 @@ def main():
             ],
         })
 
-    # A refresh that did not cover every page keeps the previously stored
-    # records for the pages it never read, so a partial run or a temporary
-    # fetch failure cannot erase collections. A page that fetched cleanly but
-    # now has no styles is still dropped — that is a real change, not a gap.
-    if failures or args.limit:
-        prev = {c["slug"]: c for c in
-                (json.loads(OUT.read_text()).get("collections", [])
-                 if OUT.exists() else [])}
-        got = {c["slug"] for c in collections}
-        keep = [c for s, c in prev.items() if s not in got]
-        collections += keep
-        if keep:
-            print(f"partial refresh: kept {len(keep)} previously stored "
-                  "collections")
-
     doc = {
         "version": 1,
         "about": "Curated collections scraped from styles.refero.design — "
@@ -322,12 +307,6 @@ def main():
         print(f"failed {len(failures)} pages: "
               + ", ".join(s for s, _, _ in failures))
     db.close()
-
-    # The collection tables feed catalog.json's "collections" field; rebuild
-    # it so the flat store does not go stale (check.py fails while it differs).
-    sys.path.insert(0, str(Path(__file__).resolve().parent))
-    import fetch as _fetch  # noqa: E402
-    _fetch.cmd_catalog()
 
 
 if __name__ == "__main__":

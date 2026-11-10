@@ -178,24 +178,15 @@ def main():
     matched_count = sum(1 for e in edges if e[4] is not None)
 
     # One short transaction: other agents write refero.db concurrently.
-    # BEGIN inside the script makes the DROP/CREATE part of the transaction —
-    # DDL outside one autocommits and leaves an empty table if inserts fail.
     with db:
-        db.executescript(
-            "BEGIN;\nDROP TABLE IF EXISTS similar;\n"
-            "CREATE TABLE similar (\n"
-            "    uuid TEXT, business TEXT, why TEXT, rank INTEGER,\n"
-            "    matched_slug TEXT);")
+        db.execute("DROP TABLE IF EXISTS similar")
+        db.execute("""CREATE TABLE similar (
+            uuid TEXT, business TEXT, why TEXT, rank INTEGER,
+            matched_slug TEXT)""")
         db.executemany(
             "INSERT INTO similar (uuid, business, why, rank, matched_slug)"
             " VALUES (?,?,?,?,?)", edges)
     db.close()
-
-    # The similar table feeds catalog.json's "similar" field; rebuild it so
-    # the flat store does not go stale (check.py fails while it differs).
-    sys.path.insert(0, str(Path(__file__).resolve().parent))
-    import fetch as _fetch  # noqa: E402
-    _fetch.cmd_catalog()
 
     write_atomic(args.refero / "similar.json", json.dumps({
         "version": 1,

@@ -3,30 +3,13 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 50,
-    "system_domains": 42,
-    "matched_domains": 19,
-    "missing_domains": 414,
+    "system_packages": 49,
+    "system_domains": 41,
+    "matched_domains": 18,
+    "missing_domains": 415,
     "system_domains_absent_from_catalog": 23
   },
   "matched": {
-    "1password.com": {
-      "catalog": [
-        {
-          "name": "1Password",
-          "domain": "1password.com",
-          "id": 413
-        }
-      ],
-      "pkgs": [
-        {
-          "slug": "1password",
-          "name": "1Password",
-          "url": "https://1password.com",
-          "name_match": true
-        }
-      ]
-    },
     "ableton.com": {
       "catalog": [
         {
@@ -390,6 +373,13 @@
     }
   },
   "missing": {
+    "1password.com": [
+      {
+        "name": "1Password",
+        "domain": "1password.com",
+        "id": 413
+      }
+    ],
     "aaply.app": [
       {
         "name": "Aaply",

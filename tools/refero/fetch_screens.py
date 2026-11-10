@@ -135,10 +135,9 @@ def main() -> None:
                          "run: git lfs install && git lfs pull")
     db = sqlite3.connect(db_path)
     db.execute("PRAGMA busy_timeout=30000")
-    # BEGIN inside the script makes the DROP/CREATE part of the transaction —
-    # DDL outside one autocommits and leaves an empty table if inserts fail.
     with db:
-        db.executescript("BEGIN;\nDROP TABLE IF EXISTS screens;\n" + SCHEMA)
+        db.execute("DROP TABLE IF EXISTS screens")
+        db.executescript(SCHEMA)
         db.executemany(
             """INSERT INTO screens
                (entry_type, entry_id, entry_key, shot_uuid, shot_url,
