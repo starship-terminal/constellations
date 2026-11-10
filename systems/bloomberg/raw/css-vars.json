@@ -1,0 +1,51 @@
+{
+ "readAt": "2026-11-11",
+ "source": "the stylesheet bodies read during a live /asia home load on www.bloomberg.com (the page inlines its CSS-module sheets; response bodies plus inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class (unbound on this site), at 1440 x 900",
+ "sheets": [
+  "inline-0 (667 bytes)",
+  "inline-1 (6590 bytes)",
+  "inline-2 (550 bytes)"
+ ],
+ "counts": {
+  "rules": 0,
+  "fonts": 2,
+  "names": {
+   "theme": 0,
+   "app": 0,
+   "skins": 0,
+   "vendor": 0,
+   "utility": 0,
+   "tailwind": 0
+  },
+  "bySelector": {}
+ },
+ "errors": [],
+ "theme": [],
+ "app": [],
+ "skins": [],
+ "vendor": [],
+ "utility": [],
+ "tailwind": [],
+ "fonts": [
+  {
+   "file": "inline-0",
+   "font-family": "BWHaasGroteskWeb",
+   "font-display": "swap",
+   "font-weight": "400",
+   "font-style": "normal",
+   "src": "local(\"?\"), url(\"https://assets.bwbx.io/s3/fontservice/fonts/BWHaasGrotesk-55Roman-Web-5cf5733cd9.woff2\") format(\"woff2\"), url(\"https://assets.bwbx.io/s3/fontservice/fonts/BWHaasGrotesk-55Roman-Web-a1ea4fd367.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline-0",
+   "font-family": "BWHaasGroteskWeb",
+   "font-display": "swap",
+   "font-weight": "700",
+   "font-style": "normal",
+   "src": "url(\"https://assets.bwbx.io/s3/fontservice/fonts/BWHaasGrotesk-75Bold-Web-de8c77cce2.woff2\") format(\"woff2\"), url(\"https://assets.bwbx.io/s3/fontservice/fonts/BWHaasGrotesk-75Bold-Web-506363704e.woff\") format(\"woff\")"
+  }
+ ],
+ "resolved": {
+  "dark": {},
+  "light": {}
+ }
+}

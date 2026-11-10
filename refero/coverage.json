@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 67,
-    "system_domains": 59,
-    "matched_domains": 35,
-    "missing_domains": 398,
+    "system_packages": 68,
+    "system_domains": 60,
+    "matched_domains": 36,
+    "missing_domains": 397,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -356,6 +356,23 @@
           "slug": "attio",
           "name": "Attio",
           "url": "https://attio.com",
+          "name_match": true
+        }
+      ]
+    },
+    "bloomberg.com": {
+      "catalog": [
+        {
+          "name": "Bloomberg",
+          "domain": "bloomberg.com",
+          "id": 231
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "bloomberg",
+          "name": "Bloomberg",
+          "url": "https://www.bloomberg.com",
           "name_match": true
         }
       ]
@@ -765,13 +782,6 @@
         "name": "Bio Sites",
         "domain": "biosites.com",
         "id": 765
-      }
-    ],
-    "bloomberg.com": [
-      {
-        "name": "Bloomberg",
-        "domain": "bloomberg.com",
-        "id": 231
       }
     ],
     "blueapron.com": [
