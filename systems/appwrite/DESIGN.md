@@ -73,9 +73,25 @@ typography:
     fontFamily: "ui-sans-serif"
     fontSize: "36px"
     fontWeight: 400
+  base:
+    fontFamily: "ui-sans-serif"
+    fontSize: "16px"
+    fontWeight: 400
+  lg:
+    fontFamily: "ui-sans-serif"
+    fontSize: "18px"
+    fontWeight: 400
+  sm:
+    fontFamily: "ui-sans-serif"
+    fontSize: "14px"
+    fontWeight: 400
   xl:
     fontFamily: "ui-sans-serif"
     fontSize: "20px"
+    fontWeight: 400
+  xs:
+    fontFamily: "ui-sans-serif"
+    fontSize: "12px"
     fontWeight: 400
 rounded:
   default: "10px"
@@ -117,7 +133,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 ## Typography
 
-4 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: ui-sans-serif.
+8 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: ui-sans-serif.
 
 ### Fonts (from README.md)
 
@@ -164,7 +180,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 2. **Do reserve the brand pink for the action that ends a flow.** `--brand-cta` #fd366e marks Sign up, Start project and Login; everything else is ghost or muted. See [signup-button-default](components/crops/signup-button-default.png) and [cta-primary-default](components/crops/cta-primary-default.png).
 3. **Do give the hero headline the gradient clip.** Pink to orange through background-clip on the first line only. See [hero-title-default](components/crops/hero-title-default.png).
 4. **Do separate surfaces with hairlines, not shadows.** 1px `#222224` borders and the translucent `measured.card-tint` fill carry the cards. See [plan-card-default](components/crops/plan-card-default.png).
-5. **Do size controls at 36/40px.** Nav rows, OAuth buttons and fields are 36px (`rounded-md` 6px); primary CTAs 40px. See [oauth-button-default](components/crops/oauth-button-default.png) and [email-input-default](components/crops/email-input-default.png).
+5. **Do size controls at 36/40px.** Nav rows, OAuth buttons and fields are 36px with 8px corners; primary CTAs 40px. See [oauth-button-default](components/crops/oauth-button-default.png) and [email-input-default](components/crops/email-input-default.png).
 6. **Don't introduce a second accent.** The `--color-*` ramps feed charts, code and status, not UI chrome; the only hue doing work is the pink. See [pricing-dark-default](screenshots/pricing-dark-default.png).
 7. **Don't ship the light set as a marketing theme.** It is the console's declared system; the marketing pages never paint it. See [raw/css-vars.json](raw/css-vars.json).
 8. **Don't expect the skins to be real themes.** The seven easter-egg palettes are console jokes in the bundle, not user-facing marketing themes.

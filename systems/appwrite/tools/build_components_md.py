@@ -241,7 +241,7 @@ shots = sorted(p.name for p in Path("screenshots").glob("*.png"))
 def links(prefix):
     out = []
     for f in shots:
-        m = re.fullmatch(re.escape(prefix) + r"-light-(.+)\.png", f)
+        m = re.fullmatch(re.escape(prefix) + r"-(?:light|dark)-(.+)\.png", f)
         if m:
             out.append(f"[{m.group(1)}](screenshots/{f})")
     return ", ".join(out)
@@ -255,7 +255,7 @@ W("# Appwrite components")
 W()
 W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from appwrite.io on {J['_meta']['read']}, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.")
 W()
-W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [raw/pages.md](raw/pages.md).")
+W(f"The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) ({len(C)} components, {n_states} states). The page layouts are described in [patterns.md](patterns.md).")
 W()
 W("How to read an entry:")
 W()
@@ -293,14 +293,31 @@ W()
 foc = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if not st or "style" not in st:
+    if not st or "style" not in st or st.get("via") == "focus failed":
         continue
     s = st["style"]
+    base = next((v["style"] for v in c["states"].values() if "style" in v), s)
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
-    foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
-with_ring = [f"`{k}` ({r})" for k, r in foc if r]
-without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}.")
+    shadow = s["boxShadow"] != base["boxShadow"] and s["boxShadow"] != "none"
+    border = any(
+        s[f"border{d}{p}"] != base[f"border{d}{p}"]
+        for d in ("Top", "Right", "Bottom", "Left")
+        for p in ("Color", "Width", "Style")
+    )
+    desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None
+    foc.append((k, ring, shadow, border, desc))
+with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, r in foc if ring]
+with_shadow = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and sh]
+with_border = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and bd]
+without = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and not bd]
+parts = [f"{len(with_ring)} draw an outline ring: {', '.join(with_ring)}."]
+if with_shadow:
+    parts.append(f"{len(with_shadow)} draw a focus ring as a shadow instead: {', '.join(with_shadow)}.")
+if with_border:
+    parts.append(f"{len(with_border)} change only their border: {', '.join(with_border)}.")
+if without:
+    parts.append(f"The other {len(without)} show no measured change: {', '.join(without)}.")
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {' '.join(parts)}")
 W()
 W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): controls deepen their fill or dim rather than scale; the nav flyout and framework icons keep their hover scale. Nothing a real press would submit was ever pressed.")
 W()

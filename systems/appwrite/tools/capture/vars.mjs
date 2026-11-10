@@ -94,7 +94,10 @@ const result = await probe.evaluate((sheets) => {
 }, sheets);
 
 // ---- resolution: probe document with the real sheets, light and dark ----
-const shell = (themeClass) => '<!doctype html><html class="' + themeClass + '"><head>'
+// The probe carries the captured document's lang: the bundle swaps
+// --font-aeonik-pro for Inter under html:not([lang="en"]):not([lang="he"]),
+// so a probe without lang would resolve the marketing face as Inter.
+const shell = (themeClass) => '<!doctype html><html lang="en" class="' + themeClass + '"><head>'
   + sheets.map(([n, css]) => '<style>' + css.replace(/<\/style/gi, '<\\/style') + '</style>').join('')
   + '</head><body><div id="probe-root"></div></body></html>';
 const want = [...new Set(result.rules.filter((r) => !r.context.includes('@layer properties') && !/\\\[--/.test(r.selector || '')).flatMap((r) => Object.keys(r.properties)))]

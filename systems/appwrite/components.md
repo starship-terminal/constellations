@@ -2,13 +2,13 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from appwrite.io on 2026-11-10, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (57 components, 153 states). The page layouts are described in [raw/pages.md](raw/pages.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (60 components, 162 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (153 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (162 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -16,22 +16,22 @@ Screenshots are named `{page}-dark-{state}.png`: the marketing site pins the dar
 
 | Surface | URL | Screenshots |
 |---|---|---|
-| Home | `/` |  |
-| Pricing | `/pricing` |  |
-| Product: Databases | `/products/databases` |  |
-| Docs home | `/docs` |  |
-| Docs: Start with React | `/docs/quick-starts/react` |  |
-| Blog | `/blog` |  |
-| Changelog | `/changelog` |  |
-| Integrations | `/integrations` |  |
-| Company | `/company` |  |
-| Brand assets | `/assets` |  |
-| Enterprise | `/enterprise` |  |
-| Startups | `/startups` |  |
-| Sign in | `/sign-in` |  |
-| Home, phone | `/` |  |
-| Pricing, phone | `/pricing` |  |
-| Docs quick-start, phone | `/docs/quick-starts/react` |  |
+| Home | `/` | [default](screenshots/home-dark-default.png), [full](screenshots/home-dark-full.png) |
+| Pricing | `/pricing` | [default](screenshots/pricing-dark-default.png), [faq](screenshots/pricing-dark-faq.png), [full](screenshots/pricing-dark-full.png) |
+| Product: Databases | `/products/databases` | [default](screenshots/product-dark-default.png), [full](screenshots/product-dark-full.png) |
+| Docs home | `/docs` | [default](screenshots/docs-dark-default.png), [full](screenshots/docs-dark-full.png) |
+| Docs: Start with React | `/docs/quick-starts/react` | [default](screenshots/docs-react-dark-default.png), [full](screenshots/docs-react-dark-full.png) |
+| Blog | `/blog` | [default](screenshots/blog-dark-default.png), [full](screenshots/blog-dark-full.png) |
+| Changelog | `/changelog` | [default](screenshots/changelog-dark-default.png), [full](screenshots/changelog-dark-full.png) |
+| Integrations | `/integrations` | [default](screenshots/integrations-dark-default.png), [full](screenshots/integrations-dark-full.png) |
+| Company | `/company` | [default](screenshots/company-dark-default.png), [full](screenshots/company-dark-full.png) |
+| Brand assets | `/assets` | [default](screenshots/assets-dark-default.png), [full](screenshots/assets-dark-full.png) |
+| Enterprise | `/enterprise` | [default](screenshots/enterprise-dark-default.png), [full](screenshots/enterprise-dark-full.png) |
+| Startups | `/startups` | [default](screenshots/startups-dark-default.png), [full](screenshots/startups-dark-full.png) |
+| Sign in | `/sign-in` | [default](screenshots/sign-in-dark-default.png), [full](screenshots/sign-in-dark-full.png) |
+| Home, phone | `/` | [default](screenshots/mobile-home-dark-default.png), [full](screenshots/mobile-home-dark-full.png), [menu](screenshots/mobile-home-dark-menu.png) |
+| Pricing, phone | `/pricing` | [default](screenshots/mobile-pricing-dark-default.png), [full](screenshots/mobile-pricing-dark-full.png) |
+| Docs quick-start, phone | `/docs/quick-starts/react` | [default](screenshots/mobile-docs-react-dark-default.png), [full](screenshots/mobile-docs-react-dark-full.png) |
 
 ### Overlays and transient states
 
@@ -45,7 +45,7 @@ Screenshots are named `{page}-dark-{state}.png`: the marketing site pins the dar
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 32 components were given a real keyboard focus. 14 draw a ring: `banner-dismiss` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `nav-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `nav-menu-button` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `nav-github` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `framework-icon` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `compare-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `docs-search` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `docs-prose-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `author-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `blog-search` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `category-chip` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `forgot-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `tos-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `m-menu-button` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px). The other 18 draw none, so a keyboard user sees no change: `signin-button`, `signup-button`, `skip-link`, `announcement-pill`, `cta-primary`, `cta-secondary`, `product-card`, `plan-cta`, `plan-cta-contact`, `faq-question`, `docs-nav-link`, `oauth-button`, `oauth-icon-button`, `google-button`, `passkey-button`, `show-password`, `login-button`, `m-cta-primary`.
+**Focus.** 34 components were given a real keyboard focus. 16 draw an outline ring: `banner-dismiss` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `nav-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `nav-menu-button` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `nav-github` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `framework-icon` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `compare-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `docs-search` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `docs-prose-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `author-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `blog-search` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `category-chip` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `forgot-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `tos-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `m-menu-button` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 0px), `footer-link` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px), `footer-social` (1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px). 17 draw a focus ring as a shadow instead: `signin-button`, `signup-button`, `announcement-pill`, `cta-primary`, `cta-secondary`, `product-card`, `plan-cta`, `plan-cta-contact`, `faq-question`, `docs-nav-link`, `oauth-button`, `oauth-icon-button`, `google-button`, `passkey-button`, `show-password`, `login-button`, `m-cta-primary`. The other 1 show no measured change: `skip-link`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): controls deepen their fill or dim rather than scale; the nav flyout and framework icons keep their hover scale. Nothing a real press would submit was ever pressed.
 
@@ -64,7 +64,7 @@ Values that apply across entries, from the measurement files.
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
 | [Plan card](#plan-card) | 358.97 x 923.5 | 1px solid oklab(0.298707 0.00198022 -0.00687116 / 0.3) | 14px | oklab(0.298707 0.00198022 -0.00687116 / 0.08) | rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px | 28px |
-| [Post card](#post-card) | 592 x 72.78 | - | - | transparent | none | 0 |
+| [Post card](#post-card) | 1232 x 333 | 1px solid lab(13.1873 0.517011 -1.80675) | 3.35544e+07px | #2d2d31 | none | 0 |
 | [Product card](#product-card) | 430.33 x 379 | - | - | transparent | none | 0 |
 | [Sign-in card](#sign-in-card) | 896 x 687.5 | 1px solid lab(13.1873 0.517011 -1.80675) | 14px | #1d1d21 | none | 0 |
 
@@ -132,7 +132,7 @@ Products and Solutions open a flyout; measured at rest, never opened (the flyout
 ![Nav flyout button default](components/crops/nav-menu-button-default.png) ![Nav flyout button hover](components/crops/nav-menu-button-hover.png) ![Nav flyout button focus-visible](components/crops/nav-menu-button-focus-visible.png) ![Nav flyout button pressed](components/crops/nav-menu-button-pressed.png)
 
 #### Nav flyout, open
-The button after its own flyout toggle: the panel underneath is captured in the crop. Read as `nav-menu-open` on the marketing home page.
+The button after its own flyout toggle: the opened panel underneath (a popover-foreground div the toggle mounts) is what the crop shows. Read as `nav-menu-open` on the marketing home page.
 
 **Values (opened).** size 93.88 x 36; padding 0px 10px; radius 8px; background #2d2d31; text -apple-system 13/19.5 500, lab(98.26 0 0); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 14 x 14, lab(98.26 0 0).
 
@@ -145,7 +145,7 @@ The star-count link to the repo. Read as `nav-github` on the marketing home page
 |---|---|
 | default | size 76.83 x 36; padding 0px 10px; radius 8px; background transparent; text -apple-system 13/19.5 500, lab(65.6464 1.53497 -5.42429); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(65.6464 1.53497 -5.42429) |
 | hover | background #2d2d31; text -apple-system 13/19.5 500, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
-| focus-visible | background rgba(45, 45, 49, 0.992); outline 1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px; text -apple-system 13/19.5 500, oklab(0.983044 0.000019418 -0.0000776201); icon 16 x 16, oklab(0.983044 0.000019418 -0.0000776201) |
+| focus-visible | background #2d2d31; outline 1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px; text -apple-system 13/19.5 500, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
 | pressed | background #2d2d31; text -apple-system 13/19.5 500, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
 
 ![GitHub stars link default](components/crops/nav-github-default.png) ![GitHub stars link hover](components/crops/nav-github-hover.png) ![GitHub stars link focus-visible](components/crops/nav-github-focus-visible.png) ![GitHub stars link pressed](components/crops/nav-github-pressed.png)
@@ -426,8 +426,10 @@ A story tile: image, headline, author row. Read as `post-card` on the blog index
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 592 x 72.78; background transparent; text Aeonik Pro 28/36.4 400, lab(98.26 0 0) |
+| default | size 1232 x 333; background transparent; text Aeonik Pro 28/36.4 400, lab(98.26 0 0) |
 | hover | text Aeonik Pro 28/36.4 400, oklab(0.984998 -0.00000956654 0.0000230074 / 0.8) |
+
+Child layers that carry the look: div 592x333 background oklab(0.298707 0.00198022 -0.00687116 / 0.4); img 40x40 background #2d2d31 border 1px solid lab(13.1873 0.517011 -1.80675) radius 3.35544e+07px.
 
 ![Post card default](components/crops/post-card-default.png) ![Post card hover](components/crops/post-card-hover.png)
 
@@ -511,7 +513,7 @@ The square GitLab/Bitbucket identity buttons. Measured, never pressed. Read as `
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 36 x 36; padding 8px 0px; border 1px solid #2d2d31; radius 8px; background transparent; text -apple-system 14/20 500, lab(65.6464 1.53497 -5.42429); transition all 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(65.6464 1.53497 -5.42429) |
-| hover | size 278.95 x 36; background #2d2d31; text -apple-system 14/20 500, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
+| hover | size 278.98 x 36; background #2d2d31; text -apple-system 14/20 500, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
 | focus-visible | size 279 x 36; shadow oklab(0.447998 0.00407566 -0.0144229 / 0.5) 0px 0px 0px 3px |
 | pressed | size 279 x 36; background #2d2d31; text -apple-system 14/20 500, lab(98.26 0 0); icon 16 x 16, lab(98.26 0 0) |
 
@@ -609,6 +611,41 @@ Read as `tos-link` on the sign-in gate page.
 
 ![Legal link default](components/crops/tos-link-default.png) ![Legal link hover](components/crops/tos-link-hover.png) ![Legal link focus-visible](components/crops/tos-link-focus-visible.png) ![Legal link pressed](components/crops/tos-link-pressed.png)
 
+### Footer
+
+The page footer.
+
+#### Footer
+Read as `footer` on the marketing home page.
+
+**Values (default).** size 1440 x 718.5; border T: 1px solid lab(13.1873 0.517011 -1.80675); background #19191c; text -apple-system 11/16.5 600, lab(65.6464 1.53497 -5.42429).
+
+![Footer default](components/crops/footer-default.png)
+
+#### Footer link
+Read as `footer-link` on the marketing home page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 27.14 x 20; background transparent; text -apple-system 13/20 400, lab(65.6464 1.53497 -5.42429); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | text -apple-system 13/20 400, lab(98.26 0 0) |
+| focus-visible | outline 1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px |
+| pressed | text -apple-system 13/20 400, lab(98.26 0 0) |
+
+![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
+
+#### Footer social icon
+Read as `footer-social` on the marketing home page.
+
+| State | Values (later rows list only what changes from the first row) |
+|---|---|
+| default | size 57.03 x 20; background transparent; text -apple-system 13/20 400, lab(65.6464 1.53497 -5.42429); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) |
+| hover | text -apple-system 13/20 400, lab(98.26 0 0) |
+| focus-visible | outline 1px auto oklab(0.447998 0.00407566 -0.0144229 / 0.5), offset 1px |
+| pressed | text -apple-system 13/20 400, lab(98.26 0 0) |
+
+![Footer social icon default](components/crops/footer-social-default.png) ![Footer social icon hover](components/crops/footer-social-hover.png) ![Footer social icon focus-visible](components/crops/footer-social-focus-visible.png) ![Footer social icon pressed](components/crops/footer-social-pressed.png)
+
 ### Mobile (390 wide)
 
 The same surface at phone width, with the menu sheet open.
@@ -631,7 +668,7 @@ Read as `m-menu-button` on the marketing home page at 390 wide.
 ![Mobile menu button default](components/crops/m-menu-button-default.png) ![Mobile menu button hover](components/crops/m-menu-button-hover.png) ![Mobile menu button focus-visible](components/crops/m-menu-button-focus-visible.png) ![Mobile menu button pressed](components/crops/m-menu-button-pressed.png)
 
 #### Mobile menu, open
-The button after its own toggle; the open sheet shows in the crop. Read as `m-menu-open` on the marketing home page at 390 wide.
+The button after its own toggle; the open sheet (the data-state=open panel holding the nav links) shows in the crop. Read as `m-menu-open` on the marketing home page at 390 wide.
 
 **Values (opened).** size 36 x 36; radius 8px; background transparent; text -apple-system 16/24 400, lab(65.6464 1.53497 -5.42429); transition color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1); icon 16 x 16, lab(65.6464 1.53497 -5.42429).
 

@@ -12018,9 +12018,9 @@
     "value": "#141416"
    },
    "--font-aeonik-pro": {
-    "raw": "\"Inter\",arial,sans-serif",
+    "raw": "\"Aeonik Pro\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",\"Roboto\",sans-serif",
     "kind": "fontFamily",
-    "value": "\"Inter\",arial,sans-serif"
+    "value": "\"Aeonik Pro\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",\"Roboto\",sans-serif"
    },
    "--font-inter": {
     "raw": "\"Inter\",arial,sans-serif",
@@ -13166,9 +13166,9 @@
     "value": "cubic-bezier(0,0,.2,1)"
    },
    "--font-aeonik-pro": {
-    "raw": "\"Inter\",arial,sans-serif",
+    "raw": "\"Aeonik Pro\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",\"Roboto\",sans-serif",
     "kind": "fontFamily",
-    "value": "\"Inter\",arial,sans-serif"
+    "value": "\"Aeonik Pro\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",\"Roboto\",sans-serif"
    },
    "--font-inter": {
     "raw": "\"Inter\",arial,sans-serif",

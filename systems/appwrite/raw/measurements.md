@@ -170,7 +170,7 @@ Crops: `nav-menu-button-default.png`, `nav-menu-button-hover.png`, `nav-menu-but
 
 #### nav-menu-open
 
-Nav flyout, open. The button after its own flyout toggle: the panel underneath is captured in the crop.
+Nav flyout, open. The button after its own flyout toggle: the opened panel underneath (a popover-foreground div the toggle mounts) is what the crop shows.
 
 Page: home. Selector: `header button:has-text("Products")`. States: opened.
 
@@ -208,18 +208,18 @@ Page: home. Selector: `header a[aria-label*="GitHub" i]`. States: default, hover
 | Gap | 6px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 8px | = | = | = |
-| Background | transparent | #2d2d31 | #2d2d31 @ 0.992 | #2d2d31 |
+| Background | transparent | #2d2d31 | #2d2d31 | #2d2d31 |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 1px auto #54545d @ 0.5 offset 1px | = |
 | Font | -apple-system 13px/19.5px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #9f9fa9 | #fafafa | #f9f9f9 | #fafafa |
-| Text node | span: -apple-system 13px/19.5px 500, #9f9fa9 | span: -apple-system 13px/19.5px 500, #fafafa | span: -apple-system 13px/19.5px 500, #f9f9f9 | span: -apple-system 13px/19.5px 500, #fafafa |
+| Colour | #9f9fa9 | #fafafa | #fafafa | #fafafa |
+| Text node | span: -apple-system 13px/19.5px 500, #9f9fa9 | span: -apple-system 13px/19.5px 500, #fafafa | span: -apple-system 13px/19.5px 500, #fafafa | span: -apple-system 13px/19.5px 500, #fafafa |
 | Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 16 x 16, colour #9f9fa9 | 16 x 16, colour #fafafa | 16 x 16, colour #f9f9f9 | 16 x 16, colour #fafafa |
+| Icon | 16 x 16, colour #9f9fa9 | 16 x 16, colour #fafafa | 16 x 16, colour #fafafa | 16 x 16, colour #fafafa |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | a.inline-flex.h-9 76.8x36.0 bg #2d2d31 r 8px | a.inline-flex.h-9 76.8x36.0 bg #2d2d31 @ 0.992 r 8px outline 1px auto #54545d @ 0.5 offset 1px | a.inline-flex.h-9 76.8x36.0 bg #2d2d31 r 8px |
+| Painted layers | - | a.inline-flex.h-9 76.8x36.0 bg #2d2d31 r 8px | a.inline-flex.h-9 76.8x36.0 bg #2d2d31 r 8px outline 1px auto #54545d @ 0.5 offset 1px | a.inline-flex.h-9 76.8x36.0 bg #2d2d31 r 8px |
 
 Crops: `nav-github-default.png`, `nav-github-hover.png`, `nav-github-focus-visible.png`, `nav-github-pressed.png`.
 
@@ -931,12 +931,13 @@ Crops: `blog-title-default.png`.
 
 Post card. A story tile: image, headline, author row.
 
-Page: blog. Selector: `article card a`. States: default, hover.
+Page: blog. Selector: `article:has(h2)`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 592 x 72.78 | = |
+| Size (w x h) | 1232 x 333 | = |
 | Padding | 0px | = |
+| Gap | 48px | = |
 | Border | none | = |
 | Radius | 0px | = |
 | Background | transparent | = |
@@ -947,7 +948,7 @@ Page: blog. Selector: `article card a`. States: default, hover.
 | Colour | #fafafa | = |
 | Text node | h2.line-clamp-2.min-h-[2lh]: Aeonik Pro 28px/36.4px 400, #fafafa | h2.line-clamp-2.min-h-[2lh]: Aeonik Pro 28px/36.4px 400, #fafafa @ 0.8 |
 | Transition | none | = |
-| Cursor | pointer | = |
+| Painted layers | div.relative.w-full 592.0x333.0 bg #2d2d31 @ 0.4; img.size-10.shrink-0 40.0x40.0 bg #2d2d31 border T:1px solid #222224 / R:1px solid #222224 / B:1px solid #222224 / L:1px solid #222224 r 3.35544e+07px | div.relative.w-full 603.8x339.7 bg #2d2d31 @ 0.4; img.size-10.shrink-0 40.0x40.0 bg #2d2d31 border T:1px solid #222224 / R:1px solid #222224 / B:1px solid #222224 / L:1px solid #222224 r 3.35544e+07px |
 | How | at rest | mouse hover |
 
 Crops: `post-card-default.png`, `post-card-hover.png`.
@@ -1145,7 +1146,7 @@ Page: signin. Selector: `button[aria-label="Login with GitLab"]`. States: defaul
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 36 x 36 | 278.95 x 36 | 279 x 36 | 279 x 36 |
+| Size (w x h) | 36 x 36 | 278.98 x 36 | 279 x 36 | 279 x 36 |
 | Padding | 8px 0px | = | = | = |
 | Gap | 0px | = | = | = |
 | Border | 1px solid #2d2d31 | = | = | = |
@@ -1431,7 +1432,7 @@ Crops: `m-menu-button-default.png`, `m-menu-button-hover.png`, `m-menu-button-fo
 
 #### m-menu-open
 
-Mobile menu, open. The button after its own toggle; the open sheet shows in the crop.
+Mobile menu, open. The button after its own toggle; the open sheet (the data-state=open panel holding the nav links) shows in the crop.
 
 Page: home. Selector: `header button`. States: opened.
 
@@ -1505,6 +1506,87 @@ Page: home. Selector: `a:has-text("Start project")`. States: default, hover, foc
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `m-cta-primary-default.png`, `m-cta-primary-hover.png`, `m-cta-primary-focus-visible.png`, `m-cta-primary-pressed.png`.
+
+### Footer
+
+#### footer
+
+Footer.
+
+Page: home. Selector: `footer`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1440 x 718.5 |
+| Padding | 0px |
+| Border | T: 1px solid #222224; R: none; B: none; L: none |
+| Radius | 0px |
+| Background | #19191c |
+| Box shadow | none |
+| Outline | none |
+| Font | -apple-system 16px/24px 400 |
+| Letter spacing | normal |
+| Colour | #fafafa |
+| Text node | h2.mb-4.text-[11px]: -apple-system 11px/16.5px 600, #9f9fa9, ls 0.55px |
+| Transition | none |
+| Icon | 0 x 0, colour #9f9fa9 |
+| Painted layers | footer.@container/footer.w-full 1440.0x718.5 bg #19191c border T:1px solid #222224; div.border-b.last:border-b-0 0.0x0.0 border B:1px solid #222224; div.border-b.last:border-b-0 0.0x0.0 border B:1px solid #222224; div.border-b.last:border-b-0 0.0x0.0 border B:1px solid #222224; div.border-b.last:border-b-0 0.0x0.0 border B:1px solid #222224; div.border-b.last:border-b-0 0.0x0.0 border B:1px solid #222224 |
+| Ancestor paint | 1 up main.@container.flex bg #19191c |
+| How | at rest |
+
+Crops: `footer-default.png`.
+
+#### footer-link
+
+Footer link.
+
+Page: home. Selector: `footer a`. States: default, hover, focus-visible, pressed.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 27.14 x 20 | = | = | = |
+| Padding | 0px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 1px auto #54545d @ 0.5 offset 1px | = |
+| Font | -apple-system 13px/20px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #9f9fa9 | #fafafa | = | #fafafa |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Painted layers | - | = | a.link-unstyled.inline-flex 27.1x20.0 outline 1px auto #54545d @ 0.5 offset 1px | = |
+
+Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`, `footer-link-pressed.png`.
+
+#### footer-social
+
+Footer social icon.
+
+Page: home. Selector: `footer a[aria-label]`. States: default, hover, focus-visible, pressed.
+
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 57.03 x 20 | = | = | = |
+| Padding | 0px | = | = | = |
+| Gap | 6px | = | = | = |
+| Border | none | = | = | = |
+| Radius | 0px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | 1px auto #54545d @ 0.5 offset 1px | = |
+| Font | -apple-system 13px/20px 400 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #9f9fa9 | #fafafa | = | #fafafa |
+| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
+| Cursor | pointer | = | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Painted layers | - | = | a.link-unstyled.inline-flex 57.0x20.0 outline 1px auto #54545d @ 0.5 offset 1px | = |
+
+Crops: `footer-social-default.png`, `footer-social-hover.png`, `footer-social-focus-visible.png`, `footer-social-pressed.png`.
 
 ## Transitions declared in the readable stylesheets
 

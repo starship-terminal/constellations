@@ -110,7 +110,7 @@ for name in sorted(n for n in R if n.startswith("--font-weight-")):
 # --text-<step> is a font-size; --text-<step>--line-height its leading. The
 # steps land under core.text.* and the named composites under core.typography.*.
 
-for name in sorted(n for n in R if re.fullmatch(r"--text-[\dxl]+", n)):
+for name in sorted(n for n in R if re.fullmatch(r"--text-(xs|sm|base|lg|xl|\d+xl)", n)):
     step = name[len("--text-"):]
     node = SPEC["core"].setdefault("text", {})
     node[step] = var(name, "dimension")
@@ -161,7 +161,9 @@ for name in sorted(n for n in R if n.startswith("--aspect-")):
 
 # ------------------------------------------------------- semantic (per theme)
 
-SEMANTIC = [n for n in R if not re.match(
+# Names come from both resolved maps: a variable declared only under .dark
+# (appwrite's --editor-bg) exists in no light declaration but still tokens.
+SEMANTIC = [n for n in sorted(set(RL) | set(RD)) if not re.match(
     r"--(color|font|text|spacing|radius|container|ease|animate|blur|aspect|leading|tracking|default|shadow|inset|drop|tw|gray\d|toast|y$|lift|gap|offset|mobile|width|height|scale|swipe)-?", n)]
 for name in sorted(SEMANTIC):
     if name in ("--lightningcss-light", "--lightningcss-dark"):
@@ -194,23 +196,40 @@ def norm_color(v):
         if a is None or float(a) >= 1:
             return "#%02x%02x%02x" % (int(float(r)), int(float(g)), int(float(b)))
         return f"rgba({int(float(r))}, {int(float(g))}, {int(float(b))}, {'%g' % float(a)})"
-    m = re.fullmatch(r"oklab\(([\d.]+)\s+([-\d.e]+)\s+([-\d.e]+)(?:\s*/\s*([\d.]+%?))?\)", v)
+    m = re.fullmatch(r"(ok)?lab\(([-\d.e]+%?)\s+([-\d.e]+)\s+([-\d.e]+)(?:\s*/\s*([\d.]+%?))?\)", v)
     if m:
-        L, a_, b_, al = m.groups()
-        fy = (float(L) + 16) / 116
-        fx, fz = fy + float(a_) / 500, fy - float(b_) / 200
-        eps, kap = 216 / 24389, 24389 / 27
-        def f(t):
-            t3 = t ** 3
-            return t3 if t3 > eps else (116 * t - 16) / kap
-        X, Y, Z = 0.96422 * f(fx), f(fy), 0.82521 * f(fz)
-        r = 3.1338561 * X - 1.6168667 * Y - 0.4906146 * Z
-        g = -0.9787684 * X + 1.9161415 * Y + 0.0334540 * Z
-        bl = 0.0719453 * X - 0.2289914 * Y + 1.4052427 * Z
-        def chan(c):
-            c = max(0.0, min(1.0, c))
-            return round((12.92 * c if c <= 0.0031308 else 1.055 * c ** (1 / 2.4) - 0.055) * 255)
-        return "#%02x%02x%02x" % tuple(chan(x) for x in (r, g, bl))
+        # CSS Color 4 conversions, the same math tools/capture/css-colour.mjs
+        # uses: oklab() takes the Oklab LMS path, lab() the CIELAB D50 one with
+        # the Bradford adaptation to D65; the alpha after / is preserved.
+        ok, L, a_, b_, al = m.groups()
+        pct = L.endswith("%")
+        Lf = float(L[:-1] if pct else L) * (0.01 if pct else 1)
+        a_, b_ = float(a_), float(b_)
+        if ok:
+            l = (Lf + 0.3963377774 * a_ + 0.2158037573 * b_) ** 3
+            m2 = (Lf - 0.1055613458 * a_ - 0.0638541728 * b_) ** 3
+            s = (Lf - 0.0894841775 * a_ - 1.2914855480 * b_) ** 3
+            rgb = (4.0767416621 * l - 3.3077115913 * m2 + 0.2309699292 * s,
+                   -1.2684380046 * l + 2.6097574011 * m2 - 0.3413193965 * s,
+                   -0.0041960863 * l - 0.7034186147 * m2 + 1.7076147010 * s)
+        else:
+            fy = (Lf + 16) / 116
+            fx, fz = fy + a_ / 500, fy - b_ / 200
+            eps, kap = 216 / 24389, 24389 / 27
+            f = lambda t: t ** 3 if t ** 3 > eps else (116 * t - 16) / kap
+            X, Y, Z = f(fx) * 0.3457 / 0.3585, (fy ** 3 if Lf > kap * eps else Lf / kap), f(fz) * (1 - 0.3457 - 0.3585) / 0.3585
+            x = 0.955473421488075 * X - 0.02309845494876471 * Y + 0.06325924320057072 * Z
+            y = -0.0283697093338637 * X + 1.0099953980813041 * Y + 0.021041441191917323 * Z
+            z = 0.012314014864481998 * X - 0.020507649298898964 * Y + 1.330365926242124 * Z
+            rgb = (3.2409699419 * x - 1.5373831776 * y - 0.4986107603 * z,
+                   -0.9692436363 * x + 1.8759675015 * y + 0.0415550574 * z,
+                   0.0556300797 * x - 0.2039769589 * y + 1.0569715142 * z)
+        alpha = 1.0 if al is None else (float(al[:-1]) / 100 if al.endswith("%") else float(al))
+        chan = lambda c: round((12.92 * c if c <= 0.0031308 else 1.055 * c ** (1 / 2.4) - 0.055) * 255)
+        r, g, bl = (chan(max(0.0, min(1.0, c))) for c in rgb)
+        if alpha >= 1:
+            return "#%02x%02x%02x" % (r, g, bl)
+        return f"rgba({r}, {g}, {bl}, {'%g' % round(alpha, 3)})"
     return v
 
 

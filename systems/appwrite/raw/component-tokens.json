@@ -564,6 +564,36 @@
      "type": "other"
     }
    },
+   "base": {
+    "fontSize": {
+     "var": "--text-base",
+     "type": "dimension"
+    },
+    "lineHeight": {
+     "var": "--text-base--line-height",
+     "type": "other"
+    }
+   },
+   "lg": {
+    "fontSize": {
+     "var": "--text-lg",
+     "type": "dimension"
+    },
+    "lineHeight": {
+     "var": "--text-lg--line-height",
+     "type": "other"
+    }
+   },
+   "sm": {
+    "fontSize": {
+     "var": "--text-sm",
+     "type": "dimension"
+    },
+    "lineHeight": {
+     "var": "--text-sm--line-height",
+     "type": "other"
+    }
+   },
    "xl": {
     "fontSize": {
      "var": "--text-xl",
@@ -571,6 +601,16 @@
     },
     "lineHeight": {
      "var": "--text-xl--line-height",
+     "type": "other"
+    }
+   },
+   "xs": {
+    "fontSize": {
+     "var": "--text-xs",
+     "type": "dimension"
+    },
+    "lineHeight": {
+     "var": "--text-xs--line-height",
      "type": "other"
     }
    }
@@ -612,6 +652,42 @@
      "source": "css-var --text-4xl + --text-4xl--line-height (@layer theme)"
     }
    },
+   "base": {
+    "$value": {
+     "fontFamily": "{font.family.sans}",
+     "fontSize": "{text.base.fontSize}",
+     "fontWeight": "{font.weight.normal}",
+     "lineHeight": "{text.base.lineHeight}"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "css-var --text-base + --text-base--line-height (@layer theme)"
+    }
+   },
+   "lg": {
+    "$value": {
+     "fontFamily": "{font.family.sans}",
+     "fontSize": "{text.lg.fontSize}",
+     "fontWeight": "{font.weight.normal}",
+     "lineHeight": "{text.lg.lineHeight}"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "css-var --text-lg + --text-lg--line-height (@layer theme)"
+    }
+   },
+   "sm": {
+    "$value": {
+     "fontFamily": "{font.family.sans}",
+     "fontSize": "{text.sm.fontSize}",
+     "fontWeight": "{font.weight.normal}",
+     "lineHeight": "{text.sm.lineHeight}"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "css-var --text-sm + --text-sm--line-height (@layer theme)"
+    }
+   },
    "xl": {
     "$value": {
      "fontFamily": "{font.family.sans}",
@@ -622,6 +698,18 @@
     "$type": "typography",
     "$extensions": {
      "source": "css-var --text-xl + --text-xl--line-height (@layer theme)"
+    }
+   },
+   "xs": {
+    "$value": {
+     "fontFamily": "{font.family.sans}",
+     "fontSize": "{text.xs.fontSize}",
+     "fontWeight": "{font.weight.normal}",
+     "lineHeight": "{text.xs.lineHeight}"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "css-var --text-xs + --text-xs--line-height (@layer theme)"
     }
    }
   },
@@ -833,7 +921,7 @@
   },
   "measured": {
    "focus-outline": {
-    "value": "#020202",
+    "value": "rgba(84, 84, 93, 0.5)",
     "type": "color",
     "source": "computed outlineColor of nav-link focus-visible (raw/components-computed.json)",
     "description": "The keyboard-focus ring colour on nav links."
@@ -845,7 +933,7 @@
     "description": "The pink-to-orange gradient clipped into the hero headline."
    },
    "card-tint": {
-    "value": "#010101",
+    "value": "rgba(45, 45, 49, 0.08)",
     "type": "color",
     "source": "computed backgroundColor of plan-card default (raw/components-computed.json)",
     "description": "The translucent muted fill the pricing cards paint."
@@ -1184,6 +1272,12 @@
    },
    "foreground": {
     "var": "--destructive-foreground",
+    "type": "color"
+   }
+  },
+  "editor": {
+   "bg": {
+    "var": "--editor-bg",
     "type": "color"
    }
   },

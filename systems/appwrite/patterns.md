@@ -26,7 +26,7 @@ filled brand pink (`--brand-cta` #fd366e) for the one that ends a flow
 
 ## Cards and pricing
 
-Feature and plan surfaces are 12px-radius cards with a 1px hairline border and
+Feature and plan surfaces are 14px-radius cards with a 1px hairline border and
 a translucent muted tint (`measured.card-tint`) rather than shadows
 ([plan-card](components/crops/plan-card-default.png),
 [product-card](components/crops/product-card-default.png)). Pricing is three

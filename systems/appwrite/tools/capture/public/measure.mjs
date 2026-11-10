@@ -96,12 +96,22 @@ async function forcePseudo(loc, classes) {
   return async () => { await cdp.send('CSS.forcePseudoState', { nodeId, forcedPseudoClasses: [] }).catch(() => {}); };
 }
 
+// comp() merges the spec's meta into the entry and marks it touched. The
+// page/run/url provenance is only written once the target is found, so a
+// re-run whose selector misses keeps the earlier evidence's own page, run and
+// url instead of stamping a new date on stale readings (FIELD-NOTES).
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
-  Object.assign(c, { page: current, run, url: URLS[current] && BASE + URLS[current] }, meta);
+  Object.assign(c, meta);
   touched.add(key);
   c.states ??= {};
   return c;
+}
+
+function found(c) {
+  delete c.missing;
+  delete c.recaptureMissed;
+  Object.assign(c, { page: current, run, url: URLS[current] && BASE + URLS[current] });
 }
 
 async function measure(key, state, target, opts = {}) {
@@ -128,13 +138,18 @@ const FILL = 'dev@example.com';
 
 // Records the listed states of one component. meta: title, group, desc, sel.
 async function S(key, target, list, meta = {}, opts = {}) {
-  comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
+  const c = comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   if (!listed.has(key)) listed.set(key, new Set());
   for (const st of list) listed.get(key).add(st);
-  delete out.components[key].missing;
   if (opts.open) { await reset(); await opts.open(); }
   const loc = target.filter({ visible: true }).first();
-  if (!(await loc.count())) { log('  ! missing', key); out.components[key].missing = true; return; }
+  if (!(await loc.count())) {
+    log('  ! missing', key);
+    c.missing = true;
+    c.recaptureMissed = run; // earlier states keep their own run's provenance
+    return;
+  }
+  found(c);
   for (const st of list) {
     let undo, via;
     try {
@@ -147,6 +162,8 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = 'mouse hover';
       } else if (st === 'focus-visible') {
         via = await kbFocus((opts.focusLoc || loc).filter({ visible: true }).first());
+        // a state that did not receive keyboard focus is not a captured focus
+        if (via === 'focus failed') throw new Error('keyboard focus did not land on the element');
       } else if (st === 'pressed') {
         undo = await forcePseudo((opts.pressLoc || loc).filter({ visible: true }).first(), ['active', 'hover']);
         via = 'CDP forcePseudoState :active:hover';
@@ -229,7 +246,7 @@ async function home() {
   await S('nav-link', q('header a').filter({ hasText: /^Pricing$/ }), B4, { group: g, title: 'Nav link', desc: 'A top-level destination in the bar: 13px text in a 36px rounded-md row.', sel: 'header a:has-text("Pricing")' }, { noScroll: true });
   const productsBtn = q('header button').filter({ hasText: /^Products$/ });
   await S('nav-menu-button', productsBtn, B4, { group: g, title: 'Nav flyout button', desc: 'Products and Solutions open a flyout; measured at rest, never opened (the flyout is captured in screenshots only when it mounts open).', sel: 'header button:has-text("Products")' }, { noScroll: true });
-  await S('nav-menu-open', productsBtn, ['opened'], { group: g, title: 'Nav flyout, open', desc: 'The button after its own flyout toggle: the panel underneath is captured in the crop.', sel: 'header button:has-text("Products")', }, { noScroll: true });
+  await S('nav-menu-open', productsBtn, ['opened'], { group: g, title: 'Nav flyout, open', desc: 'The button after its own flyout toggle: the opened panel underneath (a popover-foreground div the toggle mounts) is what the crop shows.', sel: 'header button:has-text("Products")', }, { noScroll: true, cropLoc: q('div[class*="popover" i]') });
   await page.keyboard.press('Escape'); await page.waitForTimeout(600);
   await S('nav-github', q('header a[aria-label*="GitHub" i], header a[href*="github"]'), B4, { group: g, title: 'GitHub stars link', desc: 'The star-count link to the repo.', sel: 'header a[aria-label*="GitHub" i]' }, { noScroll: true });
   await S('signin-button', q('header a').filter({ hasText: /^Sign in$/ }), B4, { group: g, title: 'Sign in button', desc: 'Ghost-style header action. Measured, never followed.', sel: 'header a:has-text("Sign in")' }, { noScroll: true });
@@ -257,8 +274,11 @@ async function pricing() {
   await S('plan-cta', q('article a, article button').filter({ hasText: /^Start project$/ }), B4, { group: g, title: 'Plan CTA', desc: 'The per-card action. Measured, never followed.', sel: 'article a:has-text("Start project")' });
   await S('plan-cta-contact', q('a,button').filter({ hasText: /^Contact us$/ }).first(), B4, { group: g, title: 'Enterprise CTA', desc: '"Contact us" on the Enterprise card. Measured, never followed.', sel: 'a:has-text("Contact us")' });
   const faqBtn = q('button[aria-expanded]').filter({ visible: true }).last();
+  // The accordion item the button belongs to: the nearest ancestor that also
+  // holds the answer region, so the open crop shows the question + answer.
+  const faqItem = faqBtn.locator('xpath=ancestor::*[.//*[@role="region" or @data-state="open"]][1]');
   await S('faq-question', faqBtn, B4, { group: g, title: 'FAQ accordion button', sel: 'button[aria-expanded]' });
-  await S('faq-open', faqBtn, ['opened'], { group: g, title: 'FAQ accordion, open', desc: 'The same item after its own toggle; the answer region shows in the crop.', sel: 'button[aria-expanded]' });
+  await S('faq-open', faqBtn, ['opened'], { group: g, title: 'FAQ accordion, open', desc: 'The same item after its own toggle; the answer region shows in the crop.', sel: 'button[aria-expanded]' }, { cropLoc: faqItem });
   await page.keyboard.press('Escape'); await page.waitForTimeout(400);
   await S('compare-link', q('a').filter({ hasText: /^Compare plans$/ }), B4, { group: g, title: 'Compare plans link', desc: 'link-neutral text link.', sel: 'a:has-text("Compare plans")' });
   save();
@@ -287,8 +307,10 @@ async function blog() {
   if (!(await newPage('blog'))) return;
   const g = G.blog;
   await S('blog-title', q('h1').first(), ['default'], { group: g, title: 'Blog title', sel: 'h1' }, { noScroll: true });
-  const card = q('a.block').filter({ hasText: /\w{10,}/ }).first();
-  await S('post-card', card, ['default', 'hover'], { group: g, title: 'Post card', desc: 'A story tile: image, headline, author row.', sel: 'article card a' });
+  // A story card is the article holding the headline: the bare a.block
+  // selector matched only the headline link inside it.
+  const card = q('article').filter({ has: q('h2') }).first();
+  await S('post-card', card, ['default', 'hover'], { group: g, title: 'Post card', desc: 'A story tile: image, headline, author row.', sel: 'article:has(h2)' });
   await S('post-headline', q('h2').filter({ hasText: /\w{10,}/ }).first(), ['default'], { group: g, title: 'Post headline', sel: 'h2' });
   await S('author-link', q('a').filter({ hasText: /^Eldad Fux$|^Aditya Oberai$/ }).first(), B4, { group: g, title: 'Author link', sel: 'author name link' });
   await S('blog-search', q('button').filter({ hasText: /Search articles/i }), B4, { group: g, title: 'Blog search button', desc: 'Measured, never opened.', sel: 'button:has-text("Search articles")' });
@@ -316,8 +338,16 @@ async function signin() {
 }
 
 async function footer() {
-  // Footer is measured on the home page after scrolling to it.
-  current = 'home';
+  // The footer lives on the home page, but a full run ends on /sign-in — an
+  // earlier partial run leaves whatever page ran last open. Open home first so
+  // the readings are the home footer the page/run/url claim they are.
+  if (!page || page.isClosed()) {
+    if (!(await newPage('home'))) return;
+  } else {
+    current = 'home';
+    await open(page, BASE + URLS.home, {});
+    if (await blocked()) { log('  BLOCKED footer'); return; }
+  }
   const g = G.footer;
   const fl = q('footer a').filter({ hasText: /\w{3,}/ }).first();
   if (await fl.count()) {
@@ -335,7 +365,7 @@ async function mobile() {
   await S('m-header', q('header').first(), ['default'], { group: g, title: 'Mobile top bar', sel: 'header' }, { noScroll: true });
   const menuBtn = q('header button[aria-label*="menu" i], header button[aria-expanded], header button:has(svg)').filter({ visible: true }).first();
   await S('m-menu-button', menuBtn, B4, { group: g, title: 'Mobile menu button', sel: 'header button' }, { noScroll: true });
-  await S('m-menu-open', menuBtn, ['opened'], { group: g, title: 'Mobile menu, open', desc: 'The button after its own toggle; the open sheet shows in the crop.', sel: 'header button' }, { noScroll: true });
+  await S('m-menu-open', menuBtn, ['opened'], { group: g, title: 'Mobile menu, open', desc: 'The button after its own toggle; the open sheet (the data-state=open panel holding the nav links) shows in the crop.', sel: 'header button' }, { noScroll: true, cropLoc: q('div[data-state="open"]:has(a[href])') });
   // The menu sheet m-menu-open left open holds the destination rows.
   const mLink = q('a').filter({ hasText: /^Pricing$/ }).last();
   await S('m-nav-link', mLink, ['default'], { group: g, title: 'Mobile nav link', desc: 'A destination row inside the opened menu sheet.', sel: 'open menu a:has-text("Pricing")' }, { noScroll: true });

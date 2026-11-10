@@ -15,6 +15,13 @@
 [data-mode="dark"] {
 /*DARK*/
 }
+/* Each theme's swatch section draws from its own set, whatever the page mode. */
+[data-scope="light"] {
+/*LIGHT*/
+}
+[data-scope="dark"] {
+/*DARK*/
+}
 * { box-sizing: border-box; }
 body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--foreground); background: var(--background); }
 main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
@@ -23,7 +30,7 @@ h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .08em; text-transform: 
 .lead { max-width: 62ch; color: var(--muted-foreground); }
 .note { font-size: 13px; color: var(--muted-foreground); max-width: 62ch; }
 code { font-family: var(--sg-mono); font-size: .9em; }
-.themebar { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 10px; padding: 10px 24px; background: var(--card); border-bottom: 1px solid var(--border); font-size: 13px; color: var(--muted-foreground); }
+.themebar { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 10px; padding: 10px 24px; background: var(--card-default); border-bottom: 1px solid var(--border); font-size: 13px; color: var(--muted-foreground); }
 .themebar label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
 .pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted-foreground); margin: 18px 0 6px; }
 .pal { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -35,38 +42,38 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .typerow { display: grid; grid-template-columns: 210px 1fr; gap: 16px; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--border); }
 .typerow .k { font: 500 12px/1.5 var(--sg-mono); }
 .typerow .k small { display: block; color: var(--muted-foreground); font-weight: 400; }
-.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border); background: var(--card); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border); background: var(--card-default); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
 .kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
 .kv b { font-weight: 500; }
 .kv span { color: var(--muted-foreground); }
 /* ---- site mock ---- */
 .mock { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--background); }
-.banner { background: var(--muted); color: var(--foreground); font-size: 12px; text-align: center; padding: 8px 16px; position: relative; }
+.banner { background: var(--muted-default); color: var(--foreground); font-size: 12px; text-align: center; padding: 8px 16px; position: relative; }
 .banner .x { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); border: 1px solid var(--border); border-radius: 6px; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; }
 .navbar { display: flex; align-items: center; gap: 18px; height: 56px; padding: 0 20px; background: var(--background); border-bottom: 1px solid var(--border); font-size: 13px; }
 .navbar .wm { font-weight: 600; font-size: 15px; }
 .navbar .sp { flex: 1; }
 .btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 40px); padding: 0 18px; border-radius: var(--component-control-radius, 6px); font-size: 14px; font-weight: 500; border: 1px solid transparent; }
-.btn.sm { height: var(--component-control-height-small, 36px); font-size: 13px; }
-.btn.primary { background: var(--brand-cta); color: var(--brand-cta-foreground); }
+.btn.sm { height: var(--component-control-heightSmall, 36px); font-size: 13px; }
+.btn.primary { background: var(--brand-cta-default); color: var(--brand-cta-foreground); }
 .btn.ghost { background: transparent; color: var(--foreground); border-color: var(--input); }
 .btn.fill { background: var(--foreground); color: var(--background); }
 .hero { background: var(--background); color: var(--foreground); padding: 56px 40px; font-size: 44px; line-height: 1.15; letter-spacing: -0.02em; }
 .hero .grad { background: var(--measured-hero-gradient, linear-gradient(90deg,#fd366e,#fe9567)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .hero small { display: block; font-size: 15px; font-weight: 400; color: var(--muted-foreground); margin: 18px 0 22px; max-width: 46ch; }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; padding: 0 0 4px; }
-.pcard { border: 1px solid var(--border); border-radius: var(--component-card-radius, 12px); background: var(--measured-card-tint, var(--muted)); padding: 16px; font-size: 13px; }
+.pcard { border: 1px solid var(--border); border-radius: var(--component-card-radius, 12px); background: var(--measured-card-tint, var(--muted-default)); padding: 16px; font-size: 13px; }
 .pcard b { display: block; font-weight: 600; margin-bottom: 4px; }
 .pcard p { margin: 0; color: var(--muted-foreground); font-size: 12px; }
 .plan { border: 1px solid var(--border); border-radius: 12px; padding: 18px; font-size: 13px; }
 .plan .price { font-size: 30px; margin: 8px 0 12px; }
 .faqrow { display: flex; justify-content: space-between; align-items: center; height: 60px; padding: 0 4px; border-bottom: 1px solid var(--border); font-size: 15px; }
 .faqrow .a { color: var(--muted-foreground); font-size: 13px; padding: 8px 4px 12px; height: auto; }
-.field { display: flex; align-items: center; height: var(--component-control-field-height, 36px); border: 1px solid var(--input); border-radius: var(--component-control-radius, 6px); padding: 0 12px; font-size: 14px; color: var(--muted-foreground); background: transparent; max-width: 340px; }
+.field { display: flex; align-items: center; height: var(--component-control-fieldHeight, 36px); border: 1px solid var(--input); border-radius: var(--component-control-radius, 6px); padding: 0 12px; font-size: 14px; color: var(--muted-foreground); background: transparent; max-width: 340px; }
 .docrow { display: flex; gap: 16px; font-size: 13px; }
 .side { width: 180px; border-right: 1px solid var(--border); padding: 12px; }
 .side div { height: 32px; display: flex; align-items: center; padding: 0 10px; border-radius: 6px; color: var(--muted-foreground); }
-.side div.on { background: var(--muted); color: var(--foreground); }
+.side div.on { background: var(--muted-default); color: var(--foreground); }
 .prose { flex: 1; padding: 12px; }
 .prose h3 { font-weight: 500; margin: 4px 0 8px; }
 .cblock { background: var(--editor-bg, #141416); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; font: 12px/1.6 var(--sg-mono); color: var(--code-plain, #fafafa); overflow: auto; }
@@ -132,7 +139,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--border); padding: 6px 14px;
   <div id="type-out"></div>
 
   <h2 class="sh">Radius and geometry</h2>
-  <p class="lead"><code>--radius</code> is 10px (rounded-md resolves to the 6px controls wear); cards take 12px (rounded-xl). Containers step xs to 7xl; spacing is a 4px base.</p>
+  <p class="lead"><code>--radius</code> is 10px; the measured controls wear 8px corners and the plan/sign-in cards 14px. Containers step xs to 7xl; spacing is a 4px base.</p>
   <div id="radius-out"></div>
 
   <h2 class="sh">Motion</h2>
@@ -162,7 +169,7 @@ $('#theme').addEventListener('change', (e) => setTheme(e.target.checked));
   for (const side of ['dark', 'light']) {
     const items = flat(TOK[side] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
     if (!items.length) continue;
-    h += `<div class="pal-h">${side} roles</div><div class="pal">`;
+    h += `<div class="pal-h">${side} roles</div><div class="pal" data-scope="${side}">`;
     for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
     h += '</div>';
   }
@@ -179,9 +186,12 @@ $('#theme').addEventListener('change', (e) => setTheme(e.target.checked));
   let h = '';
   for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
     const v = t.v;
-    const ref = (x) => String(x).replace(/[{}]/g, '');
-    const fam = /mono/.test(ref(v.fontFamily)) ? 'var(--sg-mono)' : 'var(--sg-sans)';
-    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(ref(v.fontSize))} / ${esc(ref(v.lineHeight))} · w ${esc(String(v.fontWeight))}</small></div><div class="sample" style="font-family:${fam};font-size:${esc(ref(v.fontSize))};line-height:${esc(ref(v.lineHeight))};font-weight:${v.fontWeight}">The quick brown fox jumps over the lazy dog</div></div>`;
+    // A {path.to.token} alias renders as the var() the token emits; anything
+    // else is already a literal. The label shows the alias path.
+    const disp = (x) => String(x).replace(/[{}]/g, '');
+    const ref = (x) => String(x).replace(/^\{(.+)\}$/, (m, p) => `var(${cssname(p)})`);
+    const fam = /mono/.test(disp(v.fontFamily)) ? 'var(--sg-mono)' : 'var(--sg-sans)';
+    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(disp(v.fontSize))} / ${esc(disp(v.lineHeight))} · ${esc(disp(v.fontWeight))}</small></div><div class="sample" style="font-family:${fam};font-size:${esc(ref(v.fontSize))};line-height:${esc(ref(v.lineHeight))};font-weight:${esc(ref(v.fontWeight))}">The quick brown fox jumps over the lazy dog</div></div>`;
   }
   $('#type-out').innerHTML = h;
 })();
