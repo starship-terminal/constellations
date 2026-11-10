@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 51,
-    "system_domains": 43,
-    "matched_domains": 20,
-    "missing_domains": 413,
+    "system_packages": 52,
+    "system_domains": 44,
+    "matched_domains": 21,
+    "missing_domains": 412,
     "system_domains_absent_from_catalog": 23
   },
   "matched": {
@@ -23,6 +23,23 @@
           "slug": "1password",
           "name": "1Password",
           "url": "https://1password.com",
+          "name_match": true
+        }
+      ]
+    },
+    "aaply.app": {
+      "catalog": [
+        {
+          "name": "Aaply",
+          "domain": "aaply.app",
+          "id": 278
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "aaply",
+          "name": "aaply",
+          "url": "https://aaply.app",
           "name_match": true
         }
       ]
@@ -407,13 +424,6 @@
     }
   },
   "missing": {
-    "aaply.app": [
-      {
-        "name": "Aaply",
-        "domain": "aaply.app",
-        "id": 278
-      }
-    ],
     "aboard.com": [
       {
         "name": "Aboard",
