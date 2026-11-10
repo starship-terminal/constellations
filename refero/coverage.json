@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 50,
-    "system_domains": 42,
-    "matched_domains": 19,
-    "missing_domains": 414,
+    "system_packages": 51,
+    "system_domains": 43,
+    "matched_domains": 20,
+    "missing_domains": 413,
     "system_domains_absent_from_catalog": 23
   },
   "matched": {
@@ -362,6 +362,23 @@
           "slug": "telegram",
           "name": "Telegram",
           "url": "https://telegram.org",
+          "name_match": true
+        }
+      ]
+    },
+    "untitled.stream": {
+      "catalog": [
+        {
+          "name": "[untitled]",
+          "domain": "untitled.stream",
+          "id": 372
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "untitled-stream",
+          "name": "Untitled",
+          "url": "https://untitled.stream",
           "name_match": true
         }
       ]
@@ -2976,13 +2993,6 @@
         "name": "Unsplash",
         "domain": "unsplash.com",
         "id": 215
-      }
-    ],
-    "untitled.stream": [
-      {
-        "name": "[untitled]",
-        "domain": "untitled.stream",
-        "id": 372
       }
     ],
     "urbanoutfitters.com": [
