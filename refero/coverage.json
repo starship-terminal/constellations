@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 69,
-    "system_domains": 61,
-    "matched_domains": 37,
-    "missing_domains": 396,
+    "system_packages": 70,
+    "system_domains": 62,
+    "matched_domains": 38,
+    "missing_domains": 395,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -390,6 +390,23 @@
           "slug": "ballpark",
           "name": "Ballpark",
           "url": "https://ballparkhq.com",
+          "name_match": true
+        }
+      ]
+    },
+    "bloomberg.com": {
+      "catalog": [
+        {
+          "name": "Bloomberg",
+          "domain": "bloomberg.com",
+          "id": 231
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "bloomberg",
+          "name": "Bloomberg",
+          "url": "https://www.bloomberg.com",
           "name_match": true
         }
       ]
@@ -785,13 +802,6 @@
         "name": "Bio Sites",
         "domain": "biosites.com",
         "id": 765
-      }
-    ],
-    "bloomberg.com": [
-      {
-        "name": "Bloomberg",
-        "domain": "bloomberg.com",
-        "id": 231
       }
     ],
     "blueapron.com": [
