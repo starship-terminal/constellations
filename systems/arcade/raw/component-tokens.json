@@ -1,0 +1,658 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. arcade.software is a Webflow site declaring a Tailwind-shaped palette on :root plus scatter/player layout metrics; every colour name is kept flat under core (the --_new-brand---* ramp lands as core.brand.*), the site roles are the light set, and measured values that no variable declares (surfaces, focus ring, radii, control heights, the black ink of the CTAs) come from raw/components-computed.json. \"var\" leaves resolve through the live document; \"value\" leaves are measured.",
+ "core": {
+  "100": {
+   "var": "--100",
+   "type": "color"
+  },
+  "500": {
+   "var": "--500",
+   "type": "color"
+  },
+  "600": {
+   "var": "--600",
+   "type": "color"
+  },
+  "brand": {
+   "100": {
+    "var": "--_new-brand---100",
+    "type": "color"
+   },
+   "200": {
+    "var": "--_new-brand---200",
+    "type": "color"
+   },
+   "300": {
+    "var": "--_new-brand---300",
+    "type": "color"
+   },
+   "400": {
+    "var": "--_new-brand---400",
+    "type": "color"
+   },
+   "50": {
+    "var": "--_new-brand---50",
+    "type": "color"
+   },
+   "500": {
+    "var": "--_new-brand---500",
+    "type": "color"
+   },
+   "600": {
+    "var": "--_new-brand---600",
+    "type": "color"
+   },
+   "700": {
+    "var": "--_new-brand---700",
+    "type": "color"
+   },
+   "800": {
+    "var": "--_new-brand---800",
+    "type": "color"
+   },
+   "900": {
+    "var": "--_new-brand---900",
+    "type": "color"
+   },
+   "content": {
+    "var": "--_new-brand---content",
+    "type": "fontFamily"
+   },
+   "headerSize": {
+    "var": "--_new-brand---header-size",
+    "type": "dimension"
+   },
+   "heading": {
+    "var": "--_new-brand---heading",
+    "type": "fontFamily"
+   },
+   "white": {
+    "var": "--_new-brand---white",
+    "type": "color"
+   }
+  },
+  "alice": {
+   "blue": {
+    "var": "--alice-blue",
+    "type": "color"
+   }
+  },
+  "arcade": {
+   "dark": {
+    "default": {
+     "var": "--arcade-dark",
+     "type": "color"
+    },
+    "transparent": {
+     "var": "--arcade-dark-transparent",
+     "type": "color"
+    }
+   }
+  },
+  "black": {
+   "var": "--black",
+   "type": "color"
+  },
+  "card": {
+   "bg": {
+    "blue": {
+     "var": "--card-bg-blue",
+     "type": "color"
+    },
+    "green": {
+     "var": "--card-bg-green",
+     "type": "color"
+    },
+    "pink": {
+     "var": "--card-bg-pink",
+     "type": "color"
+    },
+    "red": {
+     "var": "--card-bg-red",
+     "type": "color"
+    },
+    "white": {
+     "var": "--card-bg-white",
+     "type": "color"
+    },
+    "yellow": {
+     "var": "--card-bg-yellow",
+     "type": "color"
+    }
+   }
+  },
+  "dim": {
+   "grey": {
+    "var": "--dim-grey",
+    "type": "color"
+   }
+  },
+  "gold": {
+   "var": "--gold",
+   "type": "color"
+  },
+  "gray": {
+   "800": {
+    "var": "--gray-800",
+    "type": "color"
+   }
+  },
+  "gray700": {
+   "var": "--gray700",
+   "type": "color"
+  },
+  "green": {
+   "var": "--green",
+   "type": "color"
+  },
+  "light": {
+   "blue": {
+    "var": "--light-blue",
+    "type": "color"
+   },
+   "gold": {
+    "var": "--light-gold",
+    "type": "color"
+   },
+   "green": {
+    "var": "--light-green",
+    "type": "color"
+   },
+   "red": {
+    "var": "--light-red",
+    "type": "color"
+   }
+  },
+  "marginanim": {
+   "var": "--marginanim",
+   "type": "dimension"
+  },
+  "marginanimend": {
+   "var": "--marginanimend",
+   "type": "dimension"
+  },
+  "neutral": {
+   "200": {
+    "default": {
+     "var": "--neutral-200",
+     "type": "color"
+    },
+    "201": {
+     "var": "--neutral-200-201",
+     "type": "color"
+    }
+   },
+   "300": {
+    "var": "--neutral-300",
+    "type": "color"
+   },
+   "50": {
+    "var": "--neutral-50",
+    "type": "color"
+   }
+  },
+  "new": {
+   "text": {
+    "dim": {
+     "black": {
+      "var": "--new-text-dim-black",
+      "type": "color"
+     }
+    }
+   }
+  },
+  "opacity": {
+   "var": "--opacity",
+   "type": "color"
+  },
+  "primary": {
+   "500": {
+    "var": "--primary-500",
+    "type": "color"
+   },
+   "600": {
+    "var": "--primary-600",
+    "type": "color"
+   },
+   "700": {
+    "var": "--primary-700",
+    "type": "color"
+   }
+  },
+  "progressive72xpadding": {
+   "var": "--progressive72xpadding",
+   "type": "dimension"
+  },
+  "progressivelivepadding": {
+   "var": "--progressivelivepadding",
+   "type": "dimension"
+  },
+  "progressiveplayml": {
+   "var": "--progressiveplayml",
+   "type": "dimension"
+  },
+  "progressiveplaymr": {
+   "var": "--progressiveplaymr",
+   "type": "dimension"
+  },
+  "progressiverecpadding": {
+   "var": "--progressiverecpadding",
+   "type": "dimension"
+  },
+  "red": {
+   "var": "--red",
+   "type": "color"
+  },
+  "white": {
+   "var": "--white",
+   "type": "color"
+  },
+  "measured": {
+   "chip-border": {
+    "value": "#e7e7e7",
+    "type": "color",
+    "source": "computed borderTopColor of cta-secondary default (raw/components-computed.json)",
+    "description": "The outlined CTA / suggestion-chip hairline (#e7e7e7 vs rgba(0,0,0,0.2))."
+   },
+   "input-fill": {
+    "value": "#f4f4f4",
+    "type": "color",
+    "source": "computed backgroundColor of field-text default (raw/components-computed.json)",
+    "description": "The .ds-input fill."
+   },
+   "card-fill": {
+    "value": "#f4f4f4",
+    "type": "color",
+    "source": "computed backgroundColor of plan-card-pro default (raw/components-computed.json)",
+    "description": "The plan card fill."
+   },
+   "hover-wash": {
+    "value": "rgba(0, 0, 0, 0.06)",
+    "type": "color",
+    "source": "computed backgroundColor of nav-link hover (raw/components-computed.json)",
+    "description": "The ghost hover wash on nav actions."
+   },
+   "ink-hover": {
+    "value": "#404040",
+    "type": "color",
+    "source": "computed backgroundColor of nav-signup hover (raw/components-computed.json)",
+    "description": "The black CTA on hover."
+   }
+  },
+  "font": {
+   "family": {
+    "display": {
+     "value": "{brand.heading}",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-title/plan-price: \"Inter Display\",Arial,sans-serif, declared by --_new-brand---heading; the 400-700 static faces in raw/css-vars.json",
+     "description": "Display headings (56px hero, 36px plan price)."
+    },
+    "ui": {
+     "value": "{brand.content}",
+     "type": "fontFamily",
+     "source": "computed fontFamily on every control: \"Inter Variable\",Arial,sans-serif, declared by --_new-brand---content; the 100-900 variable face in raw/css-vars.json",
+     "description": "All UI text, body, fields, buttons."
+    },
+    "mono": {
+     "value": "\"Geist Mono Variable\", monospace",
+     "type": "fontFamily",
+     "source": "@font-face in raw/css-vars.json (100-900 variable); code and timestamps on the page",
+     "description": "The mono face (changelog timestamps, code)."
+    },
+    "script": {
+     "value": "\"Balig Script\", cursive",
+     "type": "fontFamily",
+     "source": "@font-face in raw/css-vars.json",
+     "description": "The handwritten accent (marginalia on the page)."
+    },
+    "serif": {
+     "value": "Ptserif, serif",
+     "type": "fontFamily",
+     "source": "@font-face in raw/css-vars.json",
+     "description": "The editorial serif."
+    }
+   }
+  },
+  "typography": {
+   "display": {
+    "$value": {
+     "fontFamily": "{font.family.display}",
+     "fontSize": "56px",
+     "lineHeight": "67.2px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of hero-title default (raw/components-computed.json); the 56px Inter Display hero line"
+    }
+   },
+   "title": {
+    "$value": {
+     "fontFamily": "{font.family.display}",
+     "fontSize": "48px",
+     "lineHeight": "57.6px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of pricing-title default (raw/components-computed.json); the page h1/h2 scale"
+    }
+   },
+   "price": {
+    "$value": {
+     "fontFamily": "{font.family.display}",
+     "fontSize": "36px",
+     "lineHeight": "36px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of plan-price default (raw/components-computed.json); the 36px plan numeral"
+    }
+   },
+   "body": {
+    "$value": {
+     "fontFamily": "{font.family.ui}",
+     "fontSize": "16px",
+     "lineHeight": "24px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of hero-subtitle default (raw/components-computed.json); the 16px body line"
+    }
+   },
+   "ui": {
+    "$value": {
+     "fontFamily": "{font.family.ui}",
+     "fontSize": "14px",
+     "lineHeight": "20px",
+     "fontWeight": 500,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of nav-signup default (raw/components-computed.json); the 14px/500 control label"
+    }
+   },
+   "small": {
+    "$value": {
+     "fontFamily": "{font.family.ui}",
+     "fontSize": "12px",
+     "lineHeight": "16px",
+     "fontWeight": 500,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of suggestion-chip default (raw/components-computed.json); the 12px/500 chip"
+    }
+   },
+   "mobile-nav": {
+    "$value": {
+     "fontFamily": "{font.family.ui}",
+     "fontSize": "24px",
+     "lineHeight": "26.4px",
+     "fontWeight": 400,
+     "letterSpacing": "-0.48px"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of m-nav-link default (raw/components-computed.json); the 24px mobile menu link"
+    }
+   }
+  },
+  "radius": {
+   "control": {
+    "type": "dimension",
+    "value": "12px",
+    "source": "computed borderTopLeftRadius of nav-signup default (raw/components-computed.json)",
+    "description": "nav pills and .btn (12px)"
+   },
+   "field": {
+    "type": "dimension",
+    "value": "12px",
+    "source": "computed borderTopLeftRadius of field-text default (raw/components-computed.json)",
+    "description": ".ds-input fields (12px)"
+   },
+   "card": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "computed borderTopLeftRadius of cta-large default (raw/components-computed.json)",
+    "description": "large CTAs, prompt box, FAQ rows (16px)"
+   },
+   "panel": {
+    "type": "dimension",
+    "value": "24px",
+    "source": "computed borderTopLeftRadius of plan-card-pro default (raw/components-computed.json)",
+    "description": "plan cards (24px)"
+   },
+   "pill": {
+    "type": "dimension",
+    "value": "72px",
+    "source": "computed borderTopLeftRadius of url-button default (raw/components-computed.json)",
+    "description": "the url-to-demo arrow pill (72px)"
+   }
+  },
+  "duration": {
+   "ui": {
+    "type": "duration",
+    "value": "0.15s",
+    "source": "computed transitionDuration of header default (raw/components-computed.json)",
+    "description": "the standard 150ms UI ease (header bg, fields)"
+   },
+   "pop": {
+    "type": "duration",
+    "value": "0.16s",
+    "source": "computed transitionDuration of prompt-send default (raw/components-computed.json)",
+    "description": "the 160ms press/ease on chips and the prompt send"
+   },
+   "cta": {
+    "type": "duration",
+    "value": "0.35s",
+    "source": "computed transitionDuration of demo-signup default (raw/components-computed.json)",
+    "description": "the 350ms CTA sweep on the demo pages"
+   }
+  },
+  "easing": {
+   "standard": {
+    "type": "cubicBezier",
+    "value": "ease-in",
+    "source": "computed transitionTimingFunction of header default (raw/components-computed.json)",
+    "description": "the site's ease-in default"
+   },
+   "out": {
+    "type": "cubicBezier",
+    "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "source": "computed transitionTimingFunction of url-button default (raw/components-computed.json)",
+    "description": "the expo-out used on the demo buttons"
+   }
+  },
+  "layout": {
+   "header-height": {
+    "type": "dimension",
+    "value": "72px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "the fixed top bar"
+   },
+   "content-gutter": {
+    "type": "dimension",
+    "value": "437.328px",
+    "source": "computed width of plan-card-pro default (raw/components-computed.json)",
+    "description": "a plan card column (~437px of the 3-up grid)"
+   }
+  }
+ },
+ "light": {
+  "page": {
+   "value": "#ffffff",
+   "type": "color",
+   "source": "computed backgroundColor of body (raw/components-computed.json); --white",
+   "description": "The page field: pure white."
+  },
+  "surface": {
+   "value": "#f4f4f4",
+   "type": "color",
+   "source": "computed backgroundColor of plan-card-pro/field-text (raw/components-computed.json)",
+   "description": "The card and input fill (plan cards, .ds-input fields, ask-ai chips)."
+  },
+  "text": {
+   "var": "--black",
+   "type": "color",
+   "description": "The primary ink: pure black headings, black CTA fills."
+  },
+  "muted": {
+   "value": "rgba(0, 0, 0, 0.7)",
+   "type": "color",
+   "source": "computed color of nav-link (raw/components-computed.json)",
+   "description": "The secondary ink: nav links at 70% black; deeper mute is --500 #6b7280, footer links #717171."
+  },
+  "accent": {
+   "var": "--primary-600",
+   "type": "color",
+   "description": "The brand blue: url-to-demo button, links inside the demo pages; main CTAs are black."
+  },
+  "border": {
+   "var": "--neutral-200",
+   "type": "color",
+   "description": "The hairline: plan-card edges, spotlight arrows, radios."
+  },
+  "ink": {
+   "var": "--black",
+   "type": "color",
+   "description": "Primary button fill (Sign up, Get started, submits)."
+  },
+  "on-ink": {
+   "var": "--white",
+   "type": "color",
+   "description": "Text on the black CTAs."
+  },
+  "surface-hover": {
+   "value": "rgba(0, 0, 0, 0.06)",
+   "type": "color",
+   "source": "computed backgroundColor of nav-link/nav-login on hover (raw/components-computed.json)",
+   "description": "Ghost hover wash on nav actions and links."
+  },
+  "ink-hover": {
+   "value": "#404040",
+   "type": "color",
+   "source": "computed backgroundColor of nav-signup/plan-cta-pro on hover (raw/components-computed.json)",
+   "description": "The black buttons lift to #404040 on hover — never a colour change."
+  },
+  "focus-ring": {
+   "value": "#005fcc",
+   "type": "color",
+   "source": "computed outlineColor of nav-link/nav-signup/cta-large on focus-visible (raw/components-computed.json)",
+   "description": "Webflow's 1px #005fcc focus ring (offset 1px); the prompt send uses 2px black offset 2px."
+  },
+  "chip-text": {
+   "value": "rgba(0, 0, 0, 0.6)",
+   "type": "color",
+   "source": "computed color of suggestion-chip (raw/components-computed.json)",
+   "description": "Suggestion-chip and secondary-label ink."
+  },
+  "footer-muted": {
+   "value": "#717171",
+   "type": "color",
+   "source": "computed color of footer-link (raw/components-computed.json)",
+   "description": "Footer link ink."
+  }
+ },
+ "dark": {},
+ "component": {
+  "control": {
+   "height": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed height of nav-signup default (raw/components-computed.json)",
+    "description": "Nav pills are 32px."
+   },
+   "heightLarge": {
+    "type": "dimension",
+    "value": "42px",
+    "source": "computed height of cta-large default (raw/components-computed.json)",
+    "description": "Large CTAs are 42px."
+   },
+   "fieldHeight": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of field-text default (raw/components-computed.json)",
+    "description": ".ds-input fields are 40px."
+   },
+   "submitHeight": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of form-submit default (raw/components-computed.json)",
+    "description": "The contact submit height."
+   },
+   "iconButton": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed height of prompt-send default (raw/components-computed.json)",
+    "description": "The 32px square prompt send/plus."
+   },
+   "chip": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed height of suggestion-chip default (raw/components-computed.json)",
+    "description": "Suggestion chips are 32px."
+   },
+   "arrow": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of spotlight-next default (raw/components-computed.json)",
+    "description": "Spotlight arrows are 40px."
+   }
+  },
+  "card": {
+   "height": {
+    "type": "dimension",
+    "value": "522px",
+    "source": "computed height of plan-card-pro default (raw/components-computed.json)",
+    "description": "A plan card at 1440."
+   }
+  },
+  "prompt": {
+   "height": {
+    "type": "dimension",
+    "value": "148px",
+    "source": "computed height of prompt-box default (raw/components-computed.json)",
+    "description": "The hero composer height."
+   },
+   "width": {
+    "type": "dimension",
+    "value": "680px",
+    "source": "computed width of prompt-box default (raw/components-computed.json)",
+    "description": "The hero composer width."
+   }
+  },
+  "faq": {
+   "rowHeight": {
+    "type": "dimension",
+    "value": "56px",
+    "source": "computed height of faq-question default (raw/components-computed.json)",
+    "description": "The FAQ accordion row."
+   }
+  },
+  "footer": {
+   "linkHeight": {
+    "type": "dimension",
+    "value": "17.5px",
+    "source": "computed height of footer-link default (raw/components-computed.json)",
+    "description": "Footer link rows."
+   }
+  },
+  "menu": {
+   "linkHeight": {
+    "type": "dimension",
+    "value": "52px",
+    "source": "computed height of m-nav-link default (raw/components-computed.json)",
+    "description": "The 52px mobile menu rows."
+   }
+  }
+ }
+}
