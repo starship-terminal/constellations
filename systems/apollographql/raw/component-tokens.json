@@ -1,0 +1,504 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. apollographql.com's Next.js/Tailwind build declares a real token layer (raw/css-vars.json): the --color-* palette, --font-* stacks, --radius-* and --duration-* scales, resolved live by tools/capture/vars.mjs. Leaves name that variable (\"var\") where one exists and carry a measured \"value\" + \"source\" where the var is only the start (the dark-page CTA fill is a measured #e75e15 brand-accent, the conic-gradient hero border has no var). Two themes are painted: the marketing pages are dark navy/#02060a surfaces with offwhite text; the blog and the top of contact-sales are light. The stylesheet's [data-theme=\"dark\"] block re-binds the same semantic names for dark sections.",
+ "core": {
+  "palette": {
+   "nebula": {
+    "var": "--color-nebula",
+    "type": "color",
+    "source": "also measured backgroundColor of stats-card / promo-banner / video-card / field and the dark page bands",
+    "description": "#15252d, the deep navy that is every dark section, the contact form and the dark cards"
+   },
+   "nebula-deep": {
+    "var": "--color-nebula-dark-1",
+    "type": "color",
+    "source": "the darkest navy step; near-black section ends",
+    "description": "#0b1418"
+   },
+   "lightfall": {
+    "var": "--color-lightfall-background",
+    "type": "color",
+    "source": "measured page fill of the home hero band (screenshot #02060a)",
+    "description": "#02060a, the near-black space background the home hero and product pages paint"
+   },
+   "navy-deep": {
+    "value": "#091b23",
+    "type": "color",
+    "source": "measured band fill on /graphos and /graphos-agent-services (the .events-refresh scope rebinds --color-navy-900 to #091b23; its :root value is the nebula navy)",
+    "description": "#091b23, the darker navy the product pages use for long bands"
+   },
+   "offwhite": {
+    "var": "--color-offwhite",
+    "type": "color",
+    "source": "measured color of tier-segment / volume-pill / field borders and footer text; the light pages' ground",
+    "description": "#f8f8f8, text and hairline borders on dark, page fill on light"
+   },
+   "white": {
+    "var": "--color-white",
+    "type": "color",
+    "source": "measured color of hero-title / cta text / nav-cta; backgroundColor of article-card-regolith and cookie-card",
+    "description": "#fff, headings and button text on the dark surfaces, card fill on light"
+   },
+   "satellite": {
+    "var": "--color-satellite",
+    "type": "color",
+    "source": "the #efefef grey of light surface bands (measured on /why-apollo sections)",
+    "description": "#efefef, alternating light section fill"
+   },
+   "satellite-dark": {
+    "value": "#cfd7d6",
+    "type": "color",
+    "source": "measured backgroundColor of article-card (card_theme-satellite) on /blog",
+    "description": "#cfd7d6, the grey-green card fill on the blog index; near satellite-dark-3 but measured, not declared"
+   },
+   "regolith": {
+    "var": "--color-regolith",
+    "type": "color",
+    "source": "the warm #ffeadb tint the palette keeps for light feature surfaces",
+    "description": "#ffeadb, warm off-white"
+   },
+   "faq-gray": {
+    "value": "#e3e3e3",
+    "type": "color",
+    "source": "measured backgroundColor of faq-card on /pricing (= --color-surface-alt-3)",
+    "description": "#e3e3e3, the light FAQ panel fill inside the dark pricing page"
+   },
+   "eyebrow": {
+    "value": "#1a1a1a",
+    "type": "color",
+    "source": "measured backgroundColor of eyebrow (the Summit promo strip)",
+    "description": "#1a1a1a, the promo eyebrow strip's fill"
+   },
+   "brand": {
+    "var": "--color-brand",
+    "type": "color",
+    "source": "measured backgroundColor of volume-pill-on and the article-card ellipse dot; --color-ring",
+    "description": "#fc5200, Apollo's signal orange: held states, focus ring, accent dots"
+   },
+   "brand-accent": {
+    "var": "--color-brand-accent",
+    "type": "color",
+    "source": "measured backgroundColor of nav-cta / plan-cta / submit / cta-orange and borderColor of cta-orange-outline",
+    "description": "#e75e15, the burnt orange every filled CTA actually paints"
+   },
+   "brand-hover": {
+    "value": "#d84f08",
+    "type": "color",
+    "source": "measured backgroundColor/borderColor of nav-cta at hover and pressed; plan-cta instead fades the accent fill to 90% opacity",
+    "description": "#d84f08, the CTA fill's darker hover/pressed step"
+   },
+   "horizon-dark": {
+    "var": "--color-horizon-dark-3",
+    "type": "color",
+    "source": "measured color of nav-menu-item and text-link (#c74100 = rgb(199,65,0))",
+    "description": "#c74100, the dark orange of text links on light surfaces"
+   },
+   "content": {
+    "var": "--color-content-primary",
+    "type": "color",
+    "source": "measured color of blog-title / contact-title / faq-item and body text on light",
+    "description": "#15252d, text on light surfaces (the nebula navy doubled as ink)"
+   },
+   "content-muted": {
+    "var": "--color-content-muted",
+    "type": "color",
+    "source": "the muted text grey on light surfaces",
+    "description": "#666"
+   },
+   "muted-dark": {
+    "value": "#9aa3b2",
+    "type": "color",
+    "source": "[data-theme=dark] --color-content-muted override; muted text inside dark sections",
+    "description": "#9aa3b2"
+   },
+   "border": {
+    "var": "--color-border-default",
+    "type": "color",
+    "source": "the light-theme hairline; faq accordion rules and card edges use it",
+    "description": "#d1d1d1"
+   },
+   "stats-border": {
+    "var": "--color-surface-muted",
+    "type": "color",
+    "source": "measured borderColor of the stat tiles inside stats-card (#9fb2bc)",
+    "description": "#9fb2bc, muted border inside dark cards"
+   },
+   "focus-orange": {
+    "value": "#ff7b3c",
+    "type": "color",
+    "source": "measured outlineColor of logo / nav-cta at focus-visible (2px solid, offset 2px); plan-cta instead draws its own accent fill as the ring at 8px offset",
+    "description": "#ff7b3c, the keyboard focus ring on dark nav and CTA controls"
+   },
+   "focus-cyan": {
+    "var": "--color-lightfall-cyan",
+    "type": "color",
+    "source": "measured outlineColor of cta-primary / cta-secondary at focus-visible (2px, offset 4px)",
+    "description": "#2fd1e0, the cyan focus ring the hero's space-dark CTAs draw"
+   },
+   "focus-blue": {
+    "value": "#99c8ff",
+    "type": "color",
+    "source": "measured outlineColor of tier-segment / billing-segment / carousel-arrow (5px) and footer-link / pagination (1px) at focus-visible",
+    "description": "#99c8ff, the soft-blue focus ring on segments and quiet links"
+   },
+   "teal": {
+    "var": "--color-teal-500",
+    "type": "color",
+    "source": "one half of the hero CTA's conic border gradient (#4ca6b5, with brand orange)",
+    "description": "#4ca6b5"
+   },
+   "cta-glow-orange": {
+    "value": "#f06d2b",
+    "type": "color",
+    "source": "measured conic-gradient stop of cta-primary / m-cta-primary (rgb(240,109,43))",
+    "description": "#f06d2b, the warm stop of the hero CTA's conic ring"
+   },
+   "error": {
+    "var": "--color-error",
+    "type": "color",
+    "source": "the declared error/danger colour (no error state was reachable on the public surface)",
+    "description": "#ff5151"
+   }
+  },
+  "font": {
+   "family": {
+    "display": {
+     "value": "Aeonik, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+     "type": "fontFamily",
+     "source": "measured fontFamily of hero-title / blog-title / section-title-light / hero-sub / cta-primary (--font-aeonik, served through next/font as __aeonikFont_*)",
+     "description": "Aeonik: display headings, hero CTAs and the big numerals. Proprietary; falls back to the system sans here"
+    },
+    "ui": {
+     "value": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+     "type": "fontFamily",
+     "source": "measured fontFamily of nav-bar / submit / plan-cta / field / pricing-title / customers-title / contact-title / faq-item (--font-inter, next/font __interFont_*)",
+     "description": "Inter: page titles, nav, buttons, forms, footer and body text"
+    },
+    "mono": {
+     "value": "\"Fira Code\", ui-monospace, SFMono-Regular, Menlo, monospace",
+     "type": "fontFamily",
+     "source": "--font-fira-code, declared on the homepage root (--font-mono); code accents and the copy rows",
+     "description": "Fira Code for code and command snippets"
+    }
+   },
+   "size": {
+    "hero": {
+     "value": "60px",
+     "type": "dimension",
+     "source": "measured fontSize of hero-title and blog-title",
+     "description": "60px, the page-hero display size (36px at 390)"
+    },
+    "title": {
+     "value": "50px",
+     "type": "dimension",
+     "source": "measured fontSize of pricing-title / customers-title / contact-title",
+     "description": "50px, inner-page titles"
+    },
+    "section": {
+     "value": "42px",
+     "type": "dimension",
+     "source": "measured fontSize of section-title-light",
+     "description": "42px, section headings"
+    },
+    "faq": {
+     "value": "24px",
+     "type": "dimension",
+     "source": "measured fontSize of the faq-item question text node (the row's own font computes 38px; the question it paints is 24px)",
+     "description": "24px, the FAQ accordion's question rows"
+    },
+    "sub": {
+     "value": "20px",
+     "type": "dimension",
+     "source": "measured fontSize of hero-sub",
+     "description": "20px, hero sub-copy and lead text"
+    },
+    "body-lg": {
+     "value": "18px",
+     "type": "dimension",
+     "source": "measured fontSize of cta-primary / text-link / field / pagination",
+     "description": "18px, large CTAs, links and form text"
+    },
+    "body": {
+     "var": "--font-size-base",
+     "type": "dimension",
+     "source": "measured fontSize of nav-bar / footer / card body text",
+     "description": "16px, the base size"
+    },
+    "nav": {
+     "value": "15px",
+     "type": "dimension",
+     "source": "measured fontSize of the nav link text node (nav-bar textStyle)",
+     "description": "15px, top-nav links"
+    },
+    "sm": {
+     "var": "--font-size-sm",
+     "type": "dimension",
+     "source": "measured fontSize of nav-cta / plan-cta / tier-segment / volume-pill",
+     "description": "14px, compact buttons and segments"
+    },
+    "tiny": {
+     "value": "12.5px",
+     "type": "dimension",
+     "source": "measured fontSize of cookie-accept",
+     "description": "12.5px, the consent card's small button"
+    },
+    "xs": {
+     "var": "--font-size-xs",
+     "type": "dimension",
+     "source": "measured fontSize of pause-motion (12px)",
+     "description": "12px, micro labels"
+    }
+   },
+   "weight": {
+    "regular": { "var": "--font-weight-normal", "type": "fontWeight", "source": "hero and body text" },
+    "medium": { "var": "--font-weight-medium", "type": "fontWeight", "source": "nav links, CTAs, page titles (pricing-title is 500)" },
+    "semibold": { "var": "--font-weight-semibold", "type": "fontWeight", "source": "cookie-accept (600)" },
+    "bold": { "var": "--font-weight-bold", "type": "fontWeight", "source": "text-link and faq-item (700); the footer's heaviest labels reach 900" }
+   },
+   "leading": {
+    "hero": { "value": "63px", "type": "dimension", "source": "measured lineHeight of hero-title (60/63)" },
+    "title": { "value": "55px", "type": "dimension", "source": "measured lineHeight of pricing-title / customers-title (50/55)" },
+    "section": { "value": "52.5px", "type": "dimension", "source": "measured lineHeight of section-title-light" },
+    "faq": { "value": "31.2px", "type": "dimension", "source": "measured lineHeight of the faq-item question text node (24/31.2; the row computes 47.5px)" },
+    "sub": { "value": "32.5px", "type": "dimension", "source": "measured lineHeight of hero-sub" },
+    "body": { "value": "24px", "type": "dimension", "source": "measured lineHeight of nav-bar / footer / copy-row (16/24)" },
+    "field": { "value": "25.2px", "type": "dimension", "source": "measured lineHeight of field / select / textarea (18/25.2)" },
+    "sm": { "value": "21px", "type": "dimension", "source": "measured lineHeight of nav-cta / plan-cta / segments (14/21)" }
+   },
+   "tracking": {
+    "hero": { "value": "-1.5px", "type": "dimension", "source": "measured letterSpacing of hero-title" },
+    "normal": { "var": "--tracking-normal", "type": "dimension", "source": "body and controls" }
+   }
+  },
+  "radius": {
+   "pill": {
+    "var": "--radius-full",
+    "type": "dimension",
+    "source": "measured borderRadius of every CTA, nav-cta, plan-cta, submit, link-pill, volume-pill border 999px; submit 9999px",
+    "description": "fully-round pills: every button and link chip"
+   },
+   "card-lg": {
+    "value": "32px",
+    "type": "dimension",
+    "source": "measured borderRadius of stats-card / faq-card / promo-banner / article-card",
+    "description": "32px, the big content cards"
+   },
+   "card": {
+    "var": "--radius-2xl",
+    "type": "dimension",
+    "source": "measured borderRadius of video-card",
+    "description": "24px, media cards"
+   },
+   "field": {
+    "var": "--radius-xl",
+    "type": "dimension",
+    "source": "measured borderRadius of field / select / textarea / cookie-card",
+    "description": "16px, form fields and the consent card"
+   },
+   "segment": {
+    "value": "20px",
+    "type": "dimension",
+    "source": "measured borderRadius of tier-segment / billing-segment",
+    "description": "20px, the pricing toggle segments"
+   },
+   "sm": {
+    "var": "--radius-md",
+    "type": "dimension",
+    "source": "measured borderRadius of volume-pill / volume-pill-on and logo (8px)",
+    "description": "8px, small pills and controls"
+   },
+   "xs": {
+    "var": "--border-radius-4",
+    "type": "dimension",
+    "source": "measured borderRadius of pause-motion",
+    "description": "4px, micro controls"
+   }
+  },
+  "duration": {
+   "fast": {
+    "var": "--duration-fast",
+    "type": "duration",
+    "source": "measured transitionDuration of every button/link colour swap (0.15s)",
+    "description": "150ms, the default transition"
+   },
+   "normal": {
+    "var": "--duration-normal",
+    "type": "duration",
+    "source": "measured transitionDuration of social-link transform / field border-color / nav-bar (0.3s)",
+    "description": "300ms"
+   },
+   "segment": {
+    "value": "200ms",
+    "type": "duration",
+    "source": "measured transitionDuration 'all 0.2s' of tier-segment / billing-segment / volume-pill / submit / nav-menu height",
+    "description": "200ms, the toggle and submit timings"
+   },
+   "slow": {
+    "var": "--duration-slow",
+    "type": "duration",
+    "source": "measured transitionDuration of article-card transform (0.5s)",
+    "description": "500ms, card lifts"
+   }
+  },
+  "easing": {
+   "default": { "var": "--ease-in-out", "type": "cubicBezier", "source": "the --default-transition-timing-function" },
+   "galactic": { "var": "--ease-galactic", "type": "cubicBezier", "source": "the entrance/check-rotate easing (cubic-bezier .06,.47,.1,1)" },
+   "galactic-out": { "var": "--ease-galactic-out", "type": "cubicBezier", "source": "the 'appear' entrance easing (cubic-bezier .17,.17,0,1)" }
+  },
+  "layout": {
+   "content-max": {
+    "value": "1344px",
+    "type": "dimension",
+    "source": "measured width of stats-card / faq-card / promo-banner at 1440 (the card rail; --layout-lg is 1440px)",
+    "description": "1344px, the wide card rail inside the 1440 page"
+   },
+   "container-7xl": {
+    "var": "--container-7xl",
+    "type": "dimension",
+    "source": "the largest Tailwind container step",
+    "description": "1280px"
+   },
+   "article-width": {
+    "var": "--article-main-content-width",
+    "type": "dimension",
+    "source": "the blog article column",
+    "description": "900px"
+   },
+   "header-height": {
+    "var": "--header-height",
+    "type": "dimension",
+    "source": "the declared header block (the measured nav bar itself is 65px)",
+    "description": "78px"
+   },
+   "nav-height": {
+    "value": "65px",
+    "type": "dimension",
+    "source": "measured height of nav-bar and m-nav-bar",
+    "description": "65px, the visible nav bar"
+   },
+   "side-space": {
+    "var": "--container-side-spaces",
+    "type": "dimension",
+    "source": "the page side gutter (16px under 767px)",
+    "description": "~48px desktop side padding"
+   }
+  },
+  "typography": {
+   "hero": {
+    "value": {
+     "fontFamily": "{font.family.display}",
+     "fontSize": "{font.size.hero}",
+     "fontWeight": "{font.weight.regular}",
+     "lineHeight": "{font.leading.hero}",
+     "letterSpacing": "{font.tracking.hero}"
+    },
+    "type": "typography",
+    "source": "composite of hero-title / blog-title / m-hero-title",
+    "description": "the 60/63 display step, −1.5px tracking (36/37.8 at 390)"
+   },
+   "title": {
+    "value": {
+     "fontFamily": "{font.family.ui}",
+     "fontSize": "{font.size.title}",
+     "fontWeight": "{font.weight.medium}",
+     "lineHeight": "{font.leading.title}",
+     "letterSpacing": "{font.tracking.normal}"
+    },
+    "type": "typography",
+    "source": "composite of pricing-title / customers-title / contact-title (all three measured Inter)",
+    "description": "the 50/55 page-title step, Inter at 500"
+   },
+   "body": {
+    "value": {
+     "fontFamily": "{font.family.ui}",
+     "fontSize": "{font.size.body}",
+     "fontWeight": "{font.weight.regular}",
+     "lineHeight": "{font.leading.body}",
+     "letterSpacing": "{font.tracking.normal}"
+    },
+    "type": "typography",
+    "source": "composite of nav-bar / footer / card body measurements",
+    "description": "Inter 16/24, body and default text"
+   },
+   "button": {
+    "value": {
+     "fontFamily": "{font.family.ui}",
+     "fontSize": "{font.size.body}",
+     "fontWeight": "{font.weight.medium}",
+     "lineHeight": "{font.leading.body}",
+     "letterSpacing": "{font.tracking.normal}"
+    },
+    "type": "typography",
+    "source": "composite of submit / cta-orange (16px/500); large hero CTAs use {font.size.body-lg}",
+    "description": "Inter 16/24 medium, buttons and form controls"
+   }
+  },
+  "shadow": {
+   "cookie-card": {
+    "value": [{"offsetX": "0px", "offsetY": "12px", "blur": "32px", "spread": "0px", "color": "rgba(21, 37, 45, 0.14)"}, {"offsetX": "0px", "offsetY": "2px", "blur": "6px", "spread": "0px", "color": "rgba(21, 37, 45, 0.06)"}],
+    "type": "shadow",
+    "source": "measured boxShadow of cookie-card (the consent card's lift)",
+    "description": "the only real drop shadow on the site; cards elsewhere are flat fills"
+   }
+  }
+ },
+ "component": {
+  "button-primary-bg": { "var": "--color-brand-accent", "type": "color", "source": "measured backgroundColor of nav-cta / plan-cta / submit / cta-orange", "description": "the filled CTA's burnt orange" },
+  "button-primary-fg": { "var": "--color-white", "type": "color", "source": "the same buttons' color" },
+  "button-primary-hover-bg": { "value": "#d84f08", "type": "color", "source": "measured backgroundColor of nav-cta at hover and pressed (plan-cta fades the accent fill to 90% opacity instead)" },
+  "button-dark-fg": { "var": "--color-nebula", "type": "color", "source": "measured color of cta-orange and volume-pill-on (navy text on the orange fill)" },
+  "button-outline-border": { "var": "--color-brand-accent", "type": "color", "source": "measured borderColor of cta-orange-outline" },
+  "button-outline-hover-bg": { "value": "rgba(231, 94, 21, 0.1)", "type": "color", "source": "measured backgroundColor of cta-orange-outline at hover/pressed (the accent at 10%)" },
+  "cta-ring": {
+   "value": [{"color": "{palette.teal}", "position": 0}, {"color": "{palette.cta-glow-orange}", "position": 0.5}, {"color": "{palette.teal}", "position": 1}],
+   "type": "gradient",
+   "angle": 412,
+   "source": "measured backgroundImage of cta-primary / m-cta-primary: a conic-gradient(from ~412deg, #4ca6b5, #f06d2b, #4ca6b5) ring behind a #02060a fill",
+   "description": "the hero CTA's signature rotating teal-to-orange conic ring (conic in the browser; recorded as a gradient ramp)"
+  },
+  "cta-inner-bg": { "var": "--color-lightfall-background", "type": "color", "source": "measured linear-gradient(#02060a,#02060a) fill inside cta-primary's conic ring" },
+  "field-bg": { "var": "--color-nebula", "type": "color", "source": "measured backgroundColor of field / select / textarea" },
+  "field-border": { "var": "--color-offwhite", "type": "color", "source": "measured borderColor of field / select / textarea" },
+  "field-focus-border": { "var": "--color-brand", "type": "color", "source": "measured borderColor of field/select/textarea focused and field-filled filled (#fc5200)" },
+  "card-dark-bg": { "var": "--color-nebula", "type": "color", "source": "measured backgroundColor of stats-card / promo-banner / video-card" },
+  "card-border-dark": { "var": "--color-surface-muted", "type": "color", "source": "measured borderColor of the stat tiles (#9fb2bc)" },
+  "card-light-bg": { "var": "--color-white", "type": "color", "source": "measured backgroundColor of article-card-regolith / cookie-card" },
+  "card-satellite-bg": { "value": "#cfd7d6", "type": "color", "source": "measured backgroundColor of article-card" },
+  "faq-bg": { "value": "#e3e3e3", "type": "color", "source": "measured backgroundColor of faq-card" },
+  "eyebrow-bg": { "value": "#1a1a1a", "type": "color", "source": "measured backgroundColor of eyebrow" },
+  "segment-border": { "var": "--color-offwhite", "type": "color", "source": "measured borderColor of tier-segment / billing-segment / volume-pill (1px offwhite)" },
+  "segment-on-bg": { "var": "--color-brand", "type": "color", "source": "measured backgroundColor of volume-pill-on (#fc5200)" },
+  "nav-text": { "value": "rgba(255, 255, 255, 0.72)", "type": "color", "source": "measured color of nav-trigger / m-burger (oklab white at 72%)" },
+  "nav-hover-bg": { "value": "rgba(255, 255, 255, 0.15)", "type": "color", "source": "measured backgroundColor of nav-trigger at hover (white 15%); pressed is white 10%" },
+  "nav-hover-fg": { "var": "--color-white", "type": "color", "source": "measured color of nav-trigger at hover" },
+  "overlay-dark": { "value": "rgba(2, 6, 10, 0.8)", "type": "color", "source": "measured backgroundColor of pause-motion (oklab(0.1175 -0.0082 -0.0132 / 0.8), which converts to rgba(2, 6, 10, 0.8))", "description": "the translucent chip fill on video controls" }
+ },
+ "light": {
+  "page": { "var": "--color-offwhite", "type": "color", "source": "the blog/contact page ground (#f8f8f8)" },
+  "surface": { "var": "--color-white", "type": "color", "source": "article-card-regolith / cookie-card fills and the contact form's panel" },
+  "surface-alt": { "var": "--color-satellite", "type": "color", "source": "the alternating #efefef light bands" },
+  "text": { "var": "--color-content-primary", "type": "color", "source": "blog-title / contact-title / faq-item / story-card body text" },
+  "text-muted": { "var": "--color-content-muted", "type": "color", "source": "the muted grey on light surfaces" },
+  "accent": { "var": "--color-brand-accent", "type": "color", "source": "submit / plan-cta / cta-orange fills", "description": "the burnt-orange CTA fill" },
+  "accent-brand": { "var": "--color-brand", "type": "color", "source": "the #fc5200 signal orange: field focus border, volume-pill-on, article dots, --color-ring" },
+  "text-link": { "var": "--color-horizon-dark-3", "type": "color", "source": "measured color of text-link / nav-menu-item (#c74100)" },
+  "border": { "var": "--color-border-default", "type": "color", "source": "the light hairline" },
+  "focus": { "value": "#ff7b3c", "type": "color", "source": "measured focus ring on logo/nav-cta (2px)" },
+  "focus-alt": { "value": "#99c8ff", "type": "color", "source": "measured focus ring on footer-link / pagination / segments (1px and 5px)" }
+ },
+ "dark": {
+  "page": { "var": "--color-nebula", "type": "color", "source": "the dark section fill measured on pricing / customers / why-apollo / contact bands (#15252d)" },
+  "page-space": { "var": "--color-lightfall-background", "type": "color", "source": "the home hero and graphos bands' near-black (#02060a; #091b23 on the product pages)", "description": "the deepest ground" },
+  "surface": { "var": "--color-nebula", "type": "color", "source": "stats-card / promo-banner / video-card / field fills" },
+  "surface-raised": { "var": "--color-regolith-light-1", "theme": "dark", "type": "color", "source": "the dark remap's raised step (#254250)" },
+  "text": { "var": "--color-offwhite", "type": "color", "source": "footer / stats-card / tier-segment / field text (#f8f8f8)" },
+  "text-strong": { "var": "--color-white", "type": "color", "source": "hero-title / pricing-title / customers-title" },
+  "text-muted": { "value": "#d1d1d1", "type": "color", "source": "measured color of hero-sub" },
+  "text-muted-2": { "value": "#9aa3b2", "type": "color", "source": "the [data-theme=dark] --color-content-muted value" },
+  "accent": { "var": "--color-brand-accent", "type": "color", "source": "nav-cta / plan-cta / cta-orange fills on dark" },
+  "accent-brand": { "var": "--color-brand", "type": "color", "source": "volume-pill-on fill and the focus ring" },
+  "border": { "var": "--color-offwhite", "type": "color", "source": "measured 1px borders of segments, volume pills and form fields on dark" },
+  "border-muted": { "var": "--color-surface-muted", "type": "color", "source": "the stat tiles' #9fb2bc borders" },
+  "focus": { "value": "#ff7b3c", "type": "color", "source": "measured focus ring on nav-cta (2px #ff7b3c); plan-cta rings with its own accent fill at 8px offset" },
+  "focus-alt": { "var": "--color-lightfall-cyan", "type": "color", "source": "measured focus ring on cta-primary / cta-secondary (2px #2fd1e0)" }
+ }
+}
