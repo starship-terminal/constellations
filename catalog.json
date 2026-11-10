@@ -13,7 +13,8 @@
     "media": "Media",
     "super-app": "Super apps",
     "browser": "Browsers",
-    "events": "Events"
+    "events": "Events",
+    "e-commerce": "E-commerce"
   },
   "systems": [
     {
@@ -3431,7 +3432,7 @@
       "slug": "acnestudios",
       "name": "Acne Studios",
       "url": "https://www.acnestudios.com",
-      "category": "ecommerce",
+      "category": "e-commerce",
       "platform": "web",
       "goodFor": "Fashion storefront: near-pure monochrome with one electric-blue accent, 12px Helvetica caps labels, hairline rules, 60px rails, 360px side drawers, mono price numerals",
       "tags": [
