@@ -146,6 +146,11 @@ def check(refero: Path) -> list[str]:
     tables: set[str] = set()
     sim_map: dict[str, list] = {}
     coll_map: dict[str, set] = {}
+    sim_edges: dict[str, list] = {}
+    coll_rows: dict[str, dict] = {}
+    coll_head: dict[str, dict] = {}
+    screen_uuids: dict[tuple, list] = {}
+    slug_of: dict[str, str] = {}
     similar_styles = ncoll = nscreens = 0
     db, why = open_db(refero)
     if db is None:
@@ -177,15 +182,35 @@ def check(refero: Path) -> list[str]:
                 sim_map.setdefault(u, []).append(s)
             similar_styles = db.execute(
                 "SELECT COUNT(DISTINCT uuid) FROM similar").fetchone()[0]
+            for u, b, w, m, rk in db.execute(
+                    "SELECT uuid, business, why, matched_slug, rank "
+                    "FROM similar ORDER BY uuid, rank"):
+                sim_edges.setdefault(u, []).append(
+                    {"business": b, "why": w, "slug": m})
         if "collection_styles" in tables:
             for u, c in db.execute(
                     "SELECT style_uuid, collection_slug "
                     "FROM collection_styles"):
                 coll_map.setdefault(u, set()).add(c)
+            # Rebuild each collection's sections in insertion order (first
+            # rowid per section), styles by their in-section rank.
+            for slug_, sec_, rk, u in db.execute(
+                    "SELECT collection_slug, section, rank, style_uuid "
+                    "FROM collection_styles ORDER BY rowid"):
+                coll_rows.setdefault(slug_, {}).setdefault(sec_, []).append(u)
+            slug_of = dict(db.execute("SELECT uuid, slug FROM styles"))
         if "collections" in tables:
             ncoll = db.execute("SELECT COUNT(*) FROM collections").fetchone()[0]
+            for s, u, t, d in db.execute(
+                    "SELECT slug, url, title, description FROM collections"):
+                coll_head[s] = {"slug": s, "url": u, "title": t,
+                                "description": d}
         if "screens" in tables:
             nscreens = db.execute("SELECT COUNT(*) FROM screens").fetchone()[0]
+            for t, e, u in db.execute(
+                    "SELECT entry_type, entry_id, shot_uuid "
+                    "FROM screens ORDER BY rowid"):
+                screen_uuids.setdefault((t, e), []).append(u)
         db.close()
 
     # ---- the stores' slug sets agree
@@ -209,13 +234,24 @@ def check(refero: Path) -> list[str]:
                     problems.append(f"refero/{slug}: meta.json {field} "
                                     f"does not match the styles row")
             has_data = row.get("components_json") is not None
-            has_file = (refero / slug / "components.json").is_file()
+            comp_file = refero / slug / "components.json"
+            has_file = comp_file.is_file()
             if has_file != has_data:
                 problems.append(
                     f"refero/{slug}: components.json "
                     f"{'missing for' if has_data else 'present but'}"
                     f" a styles row with{'out' if has_data else ''}"
                     f" components_json")
+            elif has_file:
+                try:
+                    if json.loads(comp_file.read_text()) \
+                            != json.loads(row["components_json"]):
+                        problems.append(
+                            f"refero/{slug}: components.json content "
+                            f"does not match the styles row")
+                except (OSError, json.JSONDecodeError) as e:
+                    problems.append(
+                        f"refero/{slug}: components.json does not parse: {e}")
             if bool(meta.get("has_components", False)) != has_data:
                 problems.append(f"refero/{slug}: meta.json has_components "
                                 f"does not match the styles row")
@@ -238,7 +274,7 @@ def check(refero: Path) -> list[str]:
                 problems.append(f"refero/catalog.json: {slug} collections "
                                 f"does not match the collection_styles table")
 
-        # ---- derived index files match their db tables
+        # ---- derived index files match their db tables, contents not counts
         if "similar" in tables:
             try:
                 sj = json.loads((refero / "similar.json").read_text())
@@ -247,6 +283,20 @@ def check(refero: Path) -> list[str]:
                     problems.append(
                         "refero/similar.json: styles count does not match "
                         "the similar table")
+                else:
+                    slug_by_uuid = {r["uuid"]: s
+                                    for s, r in rows.items()}
+                    expected = sorted(
+                        ({"slug": slug_by_uuid.get(u), "uuid": u,
+                          "similar": edges}
+                         for u, edges in sim_edges.items()),
+                        key=lambda e: (e["slug"] or "",))
+                    actual = sorted(sj["styles"],
+                                    key=lambda e: (e.get("slug") or "",))
+                    if actual != expected:
+                        problems.append(
+                            "refero/similar.json: styles content does not "
+                            "match the similar table")
             except (OSError, json.JSONDecodeError) as e:
                 problems.append(f"refero/similar.json does not parse: {e}")
         if "collections" in tables:
@@ -257,6 +307,25 @@ def check(refero: Path) -> list[str]:
                     problems.append(
                         "refero/collections.json: collections count does not "
                         "match the collections table")
+                else:
+                    expected = []
+                    for slug_, head in sorted(coll_head.items()):
+                        secs = [
+                            {"heading": sec,
+                             "styles": [{"uuid": u,
+                                         "slug": slug_of.get(u)}
+                                        for u in us]}
+                            for sec, us in (coll_rows.get(slug_) or {}).items()]
+                        expected.append({**head, "sections": secs})
+                    actual = sorted(
+                        ({k: c[k] for k in
+                          ("slug", "url", "title", "description", "sections")}
+                          for c in cj["collections"]),
+                        key=lambda c: c["slug"])
+                    if actual != expected:
+                        problems.append(
+                            "refero/collections.json: collections content "
+                            "does not match the db tables")
             except (OSError, json.JSONDecodeError) as e:
                 problems.append(f"refero/collections.json does not parse: {e}")
         if "screens" in tables:
@@ -269,6 +338,18 @@ def check(refero: Path) -> list[str]:
                     problems.append(
                         "refero/directory.json: embedded screens do not "
                         "match the screens table")
+                else:
+                    kind = {"ios_apps": "ios", "web_sites": "web"}
+                    for k in ("ios_apps", "web_sites"):
+                        for e in (dj.get(k) or []):
+                            want = screen_uuids.get((kind[k], e.get("id")))
+                            got = [s.get("uuid")
+                                   for s in (e.get("screens") or [])]
+                            if want is not None and sorted(got) \
+                                    != sorted(want):
+                                problems.append(
+                                    f"refero/directory.json: {e.get('id', '?')}"
+                                    " screens do not match the screens table")
             except (OSError, json.JSONDecodeError) as e:
                 problems.append(f"refero/directory.json does not parse: {e}")
     else:

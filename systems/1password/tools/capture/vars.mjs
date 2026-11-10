@@ -3,7 +3,8 @@
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/vars.mjs
 //
-// 1password.com is a Shopify theme serving theme.css same-origin, so the live
+// 1password.com is a Next.js/Tailwind build that ships the Knox design
+// system's --knox-* variables; its stylesheets are served same-origin, so the live
 // page's CSSOM is readable: every rule declaring a --* property is kept with
 // its selector and enclosing @media/@supports/@layer context, and @font-face
 // rules are kept too. Each name is then resolved on the live page (document

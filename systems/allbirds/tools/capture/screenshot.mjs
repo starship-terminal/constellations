@@ -62,19 +62,31 @@ export async function screenshotWithMetadata(page, options, requested = {}) {
     // viewportSize can be null for an attached live Electron window. Its current
     // inner viewport is the available dimensional basis, not a requested size.
     const cssSize = region || { width: actual.innerWidth, height: actual.innerHeight };
-    const scale = options.scale === 'css' ? 1 : actual.devicePixelRatio;
+    // The PNG pixel count is cssSize x the emulation's device scale factor. A
+    // page whose meta viewport changes its own scale reports a different
+    // window.devicePixelRatio (refero.design reports 1 under mobile emulation),
+    // while the screenshot bitmap still lands at the requested DSF, so the
+    // requested DSF wins when the caller supplied one.
+    const scale = options.scale === 'css' ? 1 : (requested.deviceScaleFactor ?? actual.devicePixelRatio);
     const expected = { width: Math.round(cssSize.width * scale), height: Math.round(cssSize.height * scale) };
     metadata.configuredViewport = configuredViewport;
     metadata.actual = actual;
     metadata.dimensionCheck.expected = expected;
     metadata.dimensionCheck.basis = mode === 'viewport' ? configuredViewport ? 'configuredViewport' : 'actualInnerViewport' : mode;
-    metadata.png = pngDimensions(await page.screenshot({ ...options, type: 'png' }));
+    // The PNG is taken into memory and written only once it passes, so a shot of the wrong size never
+    // sits at options.path where quantize.py would publish it.
+    const { path: _path, ...shotOptions } = options;
+    const bytes = await page.screenshot({ ...shotOptions, type: 'png' });
+    metadata.png = pngDimensions(bytes);
     // A fractional CSS edge can round in either direction in the browser.
     const matches = Math.abs(metadata.png.width - expected.width) <= 1 && Math.abs(metadata.png.height - expected.height) <= 1;
     metadata.dimensionCheck.status = matches ? 'pass' : 'fail';
     if (!matches) throw new Error(`Screenshot dimension mismatch: PNG ${metadata.png.width}x${metadata.png.height}, expected ${expected.width}x${expected.height}`);
+    fs.writeFileSync(options.path, bytes);
     return metadata;
   } catch (error) {
+    // An older PNG at this path no longer matches its record, which now says fail.
+    fs.rmSync(options.path, { force: true });
     metadata.dimensionCheck.status = 'fail';
     metadata.dimensionCheck.error = error.message;
     throw error;

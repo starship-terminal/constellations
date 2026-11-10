@@ -107,7 +107,7 @@ W('');
 W('## Transitions declared in the readable stylesheets');
 W('');
 // PRODUCT (adapt): describe this product's capture.
-W('Gauth\'s own CSS is served cross-origin, so this list holds only what the CSSOM could read on each page (antd\'s CSS-in-JS and inline styles); the per-state Transition rows above are computed values and cover Gauth\'s own rules.');
+W('Allbirds\' theme.css is served same-origin, so the CSSOM could read every sheet the pages load; this list holds the transitions those stylesheets declare. The per-state Transition rows above are computed values and cover what each element actually animates.');
 for (const [pg, list] of Object.entries(J._meta.sheets || {}).sort()) {
   const uniq = [...new Map(list.filter((t) => t.transition).map((t) => [t.transition, t])).values()].slice(0, 12);
   W('');

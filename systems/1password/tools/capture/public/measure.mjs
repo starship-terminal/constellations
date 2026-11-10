@@ -130,6 +130,8 @@ async function measure(key, state, target, opts = {}) {
 
 // Records the listed states of one component. meta: title, group, desc, sel.
 async function S(key, target, list, meta = {}, opts = {}) {
+  const prev = out.components[key];
+  const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   delete out.components[key].missing;
   if (opts.open) { await reset(); await opts.open(); }
@@ -138,6 +140,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
     const has = Object.keys(out.components[key].states || {}).length > 0;
     log('  ! missing', key, has ? '(earlier states kept)' : '');
     if (!has) out.components[key].missing = true;
+    else { Object.assign(out.components[key], keep); out.components[key].recaptureMissed = run; }
     return;
   }
   for (const st of list) {
@@ -251,12 +254,15 @@ async function pricing() {
   await S('product-column', col, ['default'], { group: g, title: 'Product column', desc: 'One column of the platform/product pricing grid: kicker, product name, blurb, CTA pill and a feature list.', sel: 'pricing grid column' });
   await S('product-name', epm, ['default'], { group: g, title: 'Product name', sel: 'column product name' });
   await S('cta-quote', q('a:has-text("Request a quote"), button:has-text("Request a quote")').filter({ visible: true }).first(), B4, { group: g, title: 'Request a quote CTA', sel: 'Request a quote' });
-  const acc = q('button[aria-expanded], details summary, [class*="accordion" i] button, [class*="faq" i] button').filter({ visible: true }).first();
-  await S('faq-row', acc, B4, { group: g, title: 'FAQ row', desc: 'A collapsible question row in the FAQ block.', sel: 'faq button' });
+  // The FAQ block's toggles are the "Answer to '…'" chevron buttons; a
+  // page-wide aria-expanded query hits the header's nav buttons first.
+  const acc = q('button[aria-label^="Answer to"][aria-expanded="false"]').filter({ visible: true }).first();
+  const accRow = acc.locator('xpath=ancestor::div[contains(@class,"relative") and contains(@class,"flex")][1]');
+  await S('faq-row', accRow, B4, { group: g, title: 'FAQ row', desc: 'A collapsible question row in the dark FAQ band; focus lands on its "Answer to" toggle.', sel: 'faq row' }, { focusLoc: acc });
   if (await acc.count()) {
     await toggle(acc).catch(() => {});
     await page.waitForTimeout(900);
-    await S('faq-answer', q('details[open], [class*="accordion" i] [class*="panel" i], [role="region"], [class*="faq" i] [class*="answer" i]').filter({ visible: true }).first(), ['open'], { group: g, title: 'FAQ answer', desc: 'The expanded answer body under a FAQ row.', sel: 'faq panel' }, { noScroll: true });
+    await S('faq-answer', acc.locator('xpath=ancestor::div[contains(@class,"border")][1]/div[@role="region"]'), ['open'], { group: g, title: 'FAQ answer', desc: 'The expanded answer body under a FAQ row.', sel: 'faq region' }, { noScroll: true });
   }
   await page.close();
 }
@@ -327,7 +333,7 @@ const RUNNERS = { home, pricing, product, download, developer, contact, signin, 
 run = new Date().toISOString();
 out._meta.run = run;
 out._meta.product = '1password.com';
-const wanted = process.argv.slice(2).join(',').split(',').map((s) => s.trim()).filter(Boolean);
+const wanted = process.argv.slice(2).join(',').split(',').map((s) => s.trim()).filter((s) => s && s !== 'all');
 ({ context } = await launch());
 for (const [k, fn] of Object.entries(RUNNERS)) {
   if (wanted.length && !wanted.includes(k)) continue;

@@ -5,7 +5,7 @@ Sources, read from 1password.com on 2026-11-08:
   raw/css-vars.json          every custom property the Next/Tailwind build declares, binned by owner
                              (tailwind v4 theme layer / app), plus `resolved`: each name as the
                              browser resolves it at :root (tools/capture/vars.mjs)
-  raw/component-tokens.json  the token tree: each leaf either names an Allbirds variable ("var")
+  raw/component-tokens.json  the token tree: each leaf either names a resolved variable ("var")
                              whose value is read from css-vars.json's resolved map, or carries a
                              measured value and the measurement it came from ("source")
 Every token carries $extensions.source: "css-var <name>" or "measured <where>".
@@ -129,6 +129,9 @@ def build(node, path=""):
 
 core = build(SPEC["core"])
 light = build(SPEC["light"])
+# The component tokens live in their own top-level spec tree but belong to the
+# exported light theme: light.component.* emits --component-* in the guide.
+light["component"] = build(SPEC["component"])
 
 
 # every alias must point at a token that exists
@@ -163,7 +166,7 @@ tokens = {
     "light": light,
     "$themes": [
         {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "The only theme Allbirds paints; no dark theme is offered on any page captured"},
+         "$description": "The only theme 1password.com paints; no dark theme is offered on any page captured"},
     ],
     "$metadata": {"tokenSetOrder": ["core", "light"]},
 }

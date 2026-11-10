@@ -57,8 +57,10 @@ const openMenu = async (p) => {
     .filter({ visible: true }).first();
   if (!(await fly.count())) { await clickEl(btn); await wait(p, 1600); }
 };
+// The pricing FAQ's toggles carry an "Answer to '…'" label; a page-wide
+// aria-expanded query hits the header's nav flyout buttons first.
 const openAccordion = async (p) => {
-  const a = p.locator('button[aria-expanded="false"], details:not([open]) summary').filter({ visible: true }).first();
+  const a = p.locator('button[aria-label^="Answer to"][aria-expanded="false"], [class*="faq" i] button[aria-expanded="false"], details:not([open]) summary').filter({ visible: true }).first();
   if (await a.count()) { await clickEl(a); await wait(p, 900); return true; }
   return false;
 };

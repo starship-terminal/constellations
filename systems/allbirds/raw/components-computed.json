@@ -8615,7 +8615,7 @@
    "url": "https://www.allbirds.com/",
    "title": "Hero title",
    "group": "Home",
-   "desc": "Display copy in the brand serif, fluid-sized.",
+   "desc": "The home hero headline: it renders in Geograph (24px/32px, 0.6px tracking), not the brand serif.",
    "selector": "h1"
   },
   "cta-primary": {

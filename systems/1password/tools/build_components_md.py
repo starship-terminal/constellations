@@ -296,17 +296,34 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
+def _alpha(c):
+    m = re.search(r"rgba?\([^)]*?,\s*([\d.]+)\s*\)$", c or "")
+    return float(m.group(1)) if m else 1.0
+
+
 foc = []
+focus_failed = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
     if not st or "style" not in st:
         continue
+    if "failed" in str(st.get("via", "")):
+        focus_failed.append(k)
+        continue
     s = st["style"]
-    ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
-    foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
+    base = (c["states"].get("default") or {}).get("style") or {}
+    ring = (s["outlineStyle"] != "none"
+            and float(s["outlineWidth"].replace("px", "")) > 0
+            and _alpha(s["outlineColor"]) > 0)
+    if ring:
+        foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}"))
+    elif base and any(s.get(f) != base.get(f) for f in ("borderTopColor", "borderTopWidth", "borderBottomColor", "borderBottomWidth", "boxShadow", "backgroundColor")):
+        foc.append((k, "border/fill change, no visible outline"))
+    else:
+        foc.append((k, None))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring) or 'none'}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}.")
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} show a visible change (outline, or a border/fill change where the outline stays transparent): {', '.join(with_ring) or 'none'}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}." + (f" Focus could not be driven on: {', '.join(f'`{k}`' for k in focus_failed)}." if focus_failed else ""))
 W()
 W("**Pressed.** 1Password's CTAs darken a step (secure-blue to its pressed navy) or hold flat; the segment-selector pills take a filled state — see the per-component state rows.")
 W()

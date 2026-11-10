@@ -184,8 +184,8 @@
    "tan": {
     "DEFAULT": {
      "type": "color",
-     "value": "#e8d5a3",
-     "source": "promo-strip default (the tan announcement band)",
+     "value": "#cbb88e",
+     "source": "promo-strip default (the measured tan of the announcement band's ancestor fill)",
      "description": "The warm tan of the announcement strip, measured"
     }
    }
@@ -379,7 +379,7 @@
      "fontWeight": 300,
      "fontSize": "64px",
      "lineHeight": "70.4px",
-     "letterSpacing": "0px"
+     "letterSpacing": "-1.28px"
     },
     "source": "measured raw/measurements.md#download-title, #pricing-title",
     "description": "The 64px page-title weight"
@@ -388,10 +388,10 @@
     "type": "typography",
     "value": {
      "fontFamily": "{font.family.agile-sans}",
-     "fontWeight": 350,
-     "fontSize": "40px",
-     "lineHeight": "48px",
-     "letterSpacing": "0px"
+     "fontWeight": 300,
+     "fontSize": "64px",
+     "lineHeight": "70.4px",
+     "letterSpacing": "-1.28px"
     },
     "source": "measured raw/measurements.md#section-title",
     "description": "Marketing section headline"

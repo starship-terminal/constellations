@@ -36,7 +36,7 @@ one place instead of in whichever project first needed them.
 
 It holds two stores of styles at two confidence levels:
 
-- [systems/](systems): the packages, one per product (47 today), measured
+- [systems/](systems): the packages, one per product (50 today), measured
   from real captures. Every value carries an evidence label saying where it
   came from. These are the only values to design from.
 - [refero/](refero): a snapshot of [styles.refero.design](https://styles.refero.design)
@@ -85,7 +85,7 @@ agent (the MCP server and `ds`).
 
 | Area | What you get |
 | --- | --- |
-| **Packages** | 47 products under [systems/](systems), all in one layout: `tokens.json` (W3C DTCG, Tokens Studio multi-set), a generated `DESIGN.md`, a `style-guide.html` rendering every token, `components.md`, `patterns.md`, screenshots, and the tools that rebuild it |
+| **Packages** | 50 products under [systems/](systems), all in one layout: `tokens.json` (W3C DTCG, Tokens Studio multi-set), a generated `DESIGN.md`, a `style-guide.html` rendering every token, `components.md`, `patterns.md`, screenshots, and the tools that rebuild it |
 | **Evidence** | Every token says where it came from: a measured CSS read, a reconstruction, or a reviewer's call ([docs/EVIDENCE.md](docs/EVIDENCE.md)) |
 | **Gallery** | One card per package with cover, icon, colour roles and fonts; per-package pages running Screenshots, Brief, Colors, Type, Spacing, Shape, Components, Icons, Health and Files (sections a package has nothing for are hidden); search over names, uses, tags and themes |
 | **Refero** | 1,342 styles labelled by product type and design style, browsed beside the packages but never trusted over them |

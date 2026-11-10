@@ -1,6 +1,6 @@
 # 1Password components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured from 1password.com on 2026-11-08, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was bought, downloaded, signed into, sent or submitted.
+The discovery list of every page and view captured, then one entry per component with crops of the real product and the Gaps. Captured from 1password.com on 2026-11-10, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was bought, downloaded, signed into, sent or submitted.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (44 components, 97 states).
 
@@ -40,7 +40,7 @@ Screenshots are named `{page}-light-{state}.png` (1password.com serves one light
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 17 components were given a real keyboard focus. 17 draw a ring: `promo-link` (1px auto #005fcc, offset 4px), `signin-link` (1px auto #005fcc, offset 4px), `nav-flyout-button` (1px auto #005fcc, offset 3px), `nav-link` (1px auto #005fcc, offset 4px), `cta-header-primary` (1px solid #145fe4, offset 3px), `cta-header-sales` (1px auto #005fcc, offset 4px), `cta-hero-primary` (1px solid #ffffff `paper.DEFAULT`, offset 3px), `cta-hero-secondary` (1px solid #ffffff `paper.DEFAULT`, offset 3px), `plan-selector` (2px solid transparent, offset 2px), `cta-quote` (1px solid #145fe4, offset 3px), `faq-row` (1px auto #005fcc, offset 3px), `cta-product-primary` (1px solid #145fe4, offset 3px), `download-button` (1px solid #145fe4, offset 3px), `platform-link` (2px solid #3b66bc, offset 2px), `dev-cta` (1px solid #ffffff `paper.DEFAULT`, offset 3px), `cta-marketplace` (1px auto #005fcc, offset 1px), `platform-pill` (2px solid transparent, offset 2px). The other 0 draw none, so a keyboard user sees no change: .
+**Focus.** 17 components were given a real keyboard focus. 15 show a visible change (outline, or a border/fill change where the outline stays transparent): `promo-link` (1px auto #005fcc, offset 4px), `signin-link` (1px auto #005fcc, offset 4px), `nav-flyout-button` (1px auto #005fcc, offset 3px), `nav-link` (1px auto #005fcc, offset 4px), `cta-header-primary` (1px solid #145fe4, offset 3px), `cta-header-sales` (1px auto #005fcc, offset 4px), `cta-hero-primary` (1px solid #ffffff `paper.DEFAULT`, offset 3px), `cta-hero-secondary` (1px solid #ffffff `paper.DEFAULT`, offset 3px), `cta-quote` (1px solid #145fe4, offset 3px), `cta-product-primary` (1px solid #145fe4, offset 3px), `download-button` (1px solid #145fe4, offset 3px), `platform-link` (2px solid #3b66bc, offset 2px), `dev-cta` (1px solid #ffffff `paper.DEFAULT`, offset 3px), `cta-marketplace` (1px auto #005fcc, offset 1px), `platform-pill` (border/fill change, no visible outline). The other 2 draw none, so a keyboard user sees no change: `plan-selector`, `faq-row`.
 
 **Pressed.** 1Password's CTAs darken a step (secure-blue to its pressed navy) or hold flat; the segment-selector pills take a filled state — see the per-component state rows.
 
@@ -49,7 +49,7 @@ Values that apply across entries, from the measurement files.
 | Duration | Easing | Property | Where |
 |---|---|---|---|
 | 0.3s | `cubic-bezier(0, 0, 0.2, 1)` | all | nav-flyout |
-| 0.3s | `cubic-bezier(0.4, 0, 0.2, 1)` | all, background-color, background-size, border-color, color, fill, stroke, text-decoration-color, transform | cta-header-primary, cta-hero-primary, cta-hero-secondary, cta-product-primary, cta-quote, dev-cta, download-button, faq-row and more |
+| 0.3s | `cubic-bezier(0.4, 0, 0.2, 1)` | all, background-color, background-size, border-color, color, fill, stroke, text-decoration-color, transform | cta-header-primary, cta-hero-primary, cta-hero-secondary, cta-product-primary, cta-quote, dev-cta, download-button, logo and more |
 | 0.5s | `cubic-bezier(0.4, 0, 0.2, 1)` | all | faq-answer |
 
 **Card shapes.** Default-state values; the entries hold the states.
@@ -284,12 +284,11 @@ Read as `cta-quote` on the pricing page.
 ![Request a quote CTA default](components/crops/cta-quote-default.png) ![Request a quote CTA hover](components/crops/cta-quote-hover.png) ![Request a quote CTA focus-visible](components/crops/cta-quote-focus-visible.png) ![Request a quote CTA pressed](components/crops/cta-quote-pressed.png)
 
 #### FAQ row
-A collapsible question row in the FAQ block. Read as `faq-row` on the pricing page.
+A collapsible question row in the dark FAQ band; focus lands on its "Answer to" toggle. Read as `faq-row` on the pricing page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 78.09 x 28; padding 2px 0px; background transparent; image linear-gradient(#000000, #000000); text agileSans 16/24 400, #303136 `ink.DEFAULT`; transition background-size 0.3s cubic-bezier(0.4, 0, 0.2, 1); icon 12 x 12, #303136 `ink.DEFAULT` |
-| focus-visible | outline 1px auto #005fcc, offset 3px |
+| default (same: hover, focus-visible, pressed) | size 604 x 121.59; padding 32px 0px; background transparent; text agileSans 24/28.8 400, #ffffff `paper.DEFAULT`; icon 24 x 24, #ffffff `paper.DEFAULT` |
 
 ![FAQ row default](components/crops/faq-row-default.png) ![FAQ row hover](components/crops/faq-row-hover.png) ![FAQ row focus-visible](components/crops/faq-row-focus-visible.png) ![FAQ row pressed](components/crops/faq-row-pressed.png)
 

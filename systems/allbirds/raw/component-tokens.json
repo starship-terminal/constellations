@@ -158,13 +158,13 @@
    "7xl": { "var": "--container-7xl", "type": "dimension" }
   },
   "typography": {
-   "display": { "value": { "fontFamily": "{fontFamily.serif}", "fontWeight": 400, "fontSize": "54px", "lineHeight": "64px", "letterSpacing": "0px" }, "type": "typography", "source": "measured raw/measurements.md#hero-title (fluid, at 1440px)", "description": "Serif display on hero and story headers" },
+   "display": { "value": { "fontFamily": "{fontFamily.sans}", "fontWeight": 400, "fontSize": "24px", "lineHeight": "32px", "letterSpacing": "0.6px" }, "type": "typography", "source": "measured raw/measurements.md#hero-title (text-2xl/8, at 1440px)", "description": "The home hero headline; renders in Geograph, not the brand serif" },
    "section-title": { "value": { "fontFamily": "{fontFamily.serif}", "fontWeight": 400, "fontSize": "40px", "lineHeight": "60px", "letterSpacing": "0px" }, "type": "typography", "source": "measured raw/measurements.md#section-title" },
    "product-title": { "value": { "fontFamily": "{fontFamily.serif}", "fontWeight": 400, "fontSize": "30px", "lineHeight": "36px", "letterSpacing": "0px" }, "type": "typography", "source": "measured raw/measurements.md#pdp-title" },
    "body": { "value": { "fontFamily": "{fontFamily.sans}", "fontWeight": 400, "fontSize": "16px", "lineHeight": "24px", "letterSpacing": "0px" }, "type": "typography", "source": "measured raw/measurements.md#accordion, #footer" },
    "price": { "value": { "fontFamily": "{fontFamily.sans}", "fontWeight": 500, "fontSize": "18px", "lineHeight": "28px", "letterSpacing": "0.9px" }, "type": "typography", "source": "measured raw/measurements.md#pdp-price", "description": "Uppercase tracking on the PDP price" },
    "nav-link": { "value": { "fontFamily": "{fontFamily.sans}", "fontWeight": 500, "fontSize": "12px", "lineHeight": "16px", "letterSpacing": "0.6px" }, "type": "typography", "source": "measured raw/measurements.md#nav-link", "description": "Uppercase xs medium" },
-   "button-label": { "value": { "fontFamily": "{fontFamily.sans}", "fontWeight": 500, "fontSize": "12px", "lineHeight": "15px", "letterSpacing": "0.6px" }, "type": "typography", "source": "measured raw/measurements.md#atc-button, #cta-primary", "description": "Uppercase 12px medium on every button" },
+   "button-label": { "value": { "fontFamily": "{fontFamily.sans}", "fontWeight": 500, "fontSize": "12px", "lineHeight": "15px", "letterSpacing": "0.6px" }, "type": "typography", "source": "measured raw/measurements.md#atc-button (#cta-primary and #cta-outline-white read 0.3px)", "description": "Uppercase 12px medium; ATC tracks 0.6px, the white hero CTAs 0.3px" },
    "field": { "value": { "fontFamily": "{fontFamily.sans}", "fontWeight": 400, "fontSize": "16px", "lineHeight": "24px", "letterSpacing": "0px" }, "type": "typography", "source": "measured raw/measurements.md#email-input" }
   }
  },
@@ -184,7 +184,7 @@
   },
   "border": {
    "stroke": { "value": "{palette.stroke}", "type": "color", "source": "measured raw/measurements.md#size-button (1px #cdcdcd)", "description": "The 1px hairline on chips, cards and inputs" },
-   "divider": { "value": "#ece9e2", "type": "color", "source": "measured raw/measurements.md#cart-upsell-card (1px ≈ natural-white-60)", "description": "Drawer row separators" },
+   "divider": { "value": "{palette.gray.200}", "type": "color", "source": "measured raw/measurements.md#cart-upsell-card (1px gray-200 #e5e7eb)", "description": "Drawer row separators and the upsell card hairline" },
    "ink": { "value": "{palette.ink.DEFAULT}", "type": "color", "source": "measured raw/measurements.md#email-input (1px #212121)", "description": "Field and active outlines" },
    "inverse": { "value": "{palette.white}", "type": "color", "source": "measured raw/measurements.md#cta-primary, #cta-outline-white" }
   },

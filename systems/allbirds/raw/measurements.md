@@ -1087,7 +1087,7 @@ Crops: `hero-default.png`.
 
 #### hero-title
 
-Hero title. Display copy in the brand serif, fluid-sized.
+Hero title. The home hero headline: it renders in Geograph (24px/32px, 0.6px tracking), not the brand serif.
 
 Page: home. Selector: `h1`. States: default.
 
@@ -1208,7 +1208,7 @@ Crops: `carousel-nav-default.png`, `carousel-nav-hover.png`.
 
 ## Transitions declared in the readable stylesheets
 
-Gauth's own CSS is served cross-origin, so this list holds only what the CSSOM could read on each page (antd's CSS-in-JS and inline styles); the per-state Transition rows above are computed values and cover Gauth's own rules.
+Allbirds' theme.css is served same-origin, so the CSSOM could read every sheet the pages load; this list holds the transitions those stylesheets declare. The per-state Transition rows above are computed values and cover what each element actually animates.
 
 - collection: `background-color .2s var(--ease-sine-in-out),color .2s var(--ease-sine-in-out),border-color .2s var(--ease-sine-in-out),opacity .2s var(--ease-sine-out)`, `transform 50ms ease-in-out`, `opacity .2s var(--ease-sine-in-out)`, `opacity .2s var(--ease-sine-out)`, `opacity .8s var(--ease-sine-out)`, `opacity 0.3s`, `transform 0.2s, top 0.2s`, `transform 0.2s, left 0.2s`, `transform 0.2s, right 0.2s`, `opacity 0.2s, transform 0.1s`, `opacity .2s var(--ease-sine-in)`, `top 0.3s cubic-bezier(0.215, 0.61, 0.355, 1)`
 

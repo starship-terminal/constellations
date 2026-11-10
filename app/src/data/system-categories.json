@@ -280,5 +280,29 @@
     "groupId": "web-categories",
     "labels": ["Development Tools"],
     "reason": "catalog.json describes developer dashboards, code editors, log filters and database settings."
-  }
-]
+  },
+ {
+  "referenceId": "systems:ableton",
+  "groupId": "web-categories",
+  "labels": [
+   "Music Streaming"
+  ],
+  "reason": "catalog.json describes the Ableton music software storefront: product pages, Packs, shop, trial and login, captured signed out."
+ },
+ {
+  "referenceId": "systems:allbirds",
+  "groupId": "web-categories",
+  "labels": [
+   "Marketplace"
+  ],
+  "reason": "catalog.json describes a Shopify storefront: collection grid, product page, cart drawer and login card."
+ },
+ {
+  "referenceId": "systems:1password",
+  "groupId": "web-categories",
+  "labels": [
+   "Productivity"
+  ],
+  "reason": "catalog.json describes the 1Password marketing site: pricing, product pages, downloads, developer docs and contact, captured signed out."
+ }]
+

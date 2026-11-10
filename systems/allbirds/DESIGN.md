@@ -21,7 +21,7 @@ colors:
   text-inverse: "#ffffff"
   text-disabled: "rgba(87, 87, 87, 0.7)"
   border-stroke: "#cdcdcd"
-  border-divider: "#ece9e2"
+  border-divider: "#e5e7eb"
   border-ink: "#212121"
   border-inverse: "#ffffff"
   action-primary-background: "#212121"
@@ -42,7 +42,7 @@ colors:
   component-drawer-background: "#ffffff"
   component-size-chip-border: "#cdcdcd"
   component-upsell-card-background: "#ffffff"
-  component-upsell-card-border: "#ece9e2"
+  component-upsell-card-border: "#e5e7eb"
   component-field-background: "#ffffff"
   component-field-border: "#212121"
   elevation-backdrop: "rgba(0, 0, 0, 0.5)"
@@ -51,11 +51,11 @@ colors:
   status-sold-out: "rgba(87, 87, 87, 0.7)"
 typography:
   display:
-    fontFamily: "Self Modern"
-    fontSize: "54px"
+    fontFamily: "Geograph"
+    fontSize: "24px"
     fontWeight: 400
-    lineHeight: "64px"
-    letterSpacing: "0px"
+    lineHeight: "32px"
+    letterSpacing: "0.6px"
   section-title:
     fontFamily: "Self Modern"
     fontSize: "40px"

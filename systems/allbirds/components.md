@@ -175,7 +175,7 @@ Child layers that carry the look: a 122.3x33 background #ffffff `white` border 1
 ![Hero default](components/crops/hero-default.png)
 
 #### Hero title
-Display copy in the brand serif, fluid-sized. Read as `hero-title` on the home page.
+The home hero headline: it renders in Geograph (24px/32px, 0.6px tracking), not the brand serif. Read as `hero-title` on the home page.
 
 **Values (default).** size 414.53 x 32; background transparent; text Geograph 24/32 400, #ffffff `white`.
 
@@ -269,7 +269,7 @@ The "+6" under a card: xs medium underline, points at the product page. Read as 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 16.7 x 14; background transparent; text Geograph 14/14 500, #000000 |
+| default (same: hover) | size 16.7 x 14; background transparent; text Geograph 14/14 500, #000000; decoration underline |
 
 ![More colours link default](components/crops/more-colors-default.png) ![More colours link hover](components/crops/more-colors-hover.png)
 
@@ -315,7 +315,7 @@ Child layers that carry the look: span 36x36 image linear-gradient(135deg, #8b8a
 #### Size tab, active
 The underlined "MEN'S SIZES" tab of the men/women size-grid switch. Read as `size-tab-active` on the product page.
 
-**Values (default).** size 121.95 x 17; background transparent; text Akkurat Mono 14/20 400, #575757 `ink.light-charcoal`.
+**Values (default).** size 121.95 x 17; background transparent; text Akkurat Mono 14/20 400, #575757 `ink.light-charcoal`; decoration underline.
 
 ![Size tab, active default](components/crops/size-tab-active-default.png)
 
@@ -353,7 +353,7 @@ The underlined text button under the size grid. Read as `fit-guide` on the produ
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 51.63 x 16; background transparent; text Geograph 12/16 400, #575757 `ink.light-charcoal` |
+| default (same: hover) | size 51.63 x 16; background transparent; text Geograph 12/16 400, #575757 `ink.light-charcoal`; decoration underline |
 
 ![Fit Guide link default](components/crops/fit-guide-default.png) ![Fit Guide link hover](components/crops/fit-guide-hover.png)
 

@@ -25,11 +25,11 @@ Read this before designing in this style. Take every value from [tokens.json](to
 
 ### Principles
 
-1. Do
-2. Do
-3. Don't
-4. Don't
-5. Don't
+1. Do treat `tokens.json` as truth.
+2. Do read interaction behaviour in `components.md`.
+3. Don't infer vault UI, auth flows or app functionality from these pages.
+4. Don't read exact colours off the PNGs in `screenshots/`.
+5. Don't treat the Marketo or Vimeo iframe internals as measured.
 
 Each rule links the screenshot or crop that shows it, under [Do and don't](#do-and-dont).
 
@@ -99,11 +99,11 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 ## Do and don't
 
-- **Do** treat `tokens.json` as truth: Knox roles (secure-blue #0364d3, midnight-navy #1a2860, ink #303136) and the 90px pill profile are the site's own tokens.
-- **Do** read hover/focus/pressed diffs in `components.md` for interaction behaviour.
-- **Don't** infer vault UI, auth flows or app functionality from these pages — they were never captured.
-- **Don't** trust colours inside `screenshots/` PNGs for exact values (256-colour quantised); use tokens.
-- **Don't** treat the Marketo iframe or Vimeo player internals as measured — they are documented boundaries.
+- **Do treat `tokens.json` as truth.** Knox roles (secure-blue #0364d3, midnight-navy #1a2860, ink #303136) and the 90px pill profile are the site's own tokens.
+- **Do read interaction behaviour in `components.md`.** Every control lists its hover, focus-visible and pressed diffs there.
+- **Don't infer vault UI, auth flows or app functionality from these pages.** They were never captured.
+- **Don't read exact colours off the PNGs in `screenshots/`.** They are 256-colour quantised; use tokens.
+- **Don't treat the Marketo or Vimeo iframe internals as measured.** They are documented boundaries.
 
 ## Rebuild
 

@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from 1password.com on 2026-11-08 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from 1password.com on 2026-11-10 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -582,30 +582,27 @@ Crops: `cta-quote-default.png`, `cta-quote-hover.png`, `cta-quote-focus-visible.
 
 #### faq-row
 
-FAQ row. A collapsible question row in the FAQ block.
+FAQ row. A collapsible question row in the dark FAQ band; focus lands on its "Answer to" toggle.
 
-Page: pricing. Selector: `faq button`. States: default, hover, focus-visible, pressed.
+Page: pricing. Selector: `faq row`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 78.09 x 28 | = | = | = |
-| Padding | 2px 0px | = | = | = |
-| Gap | 4px | = | = | = |
+| Size (w x h) | 604 x 121.59 | = | = | = |
+| Padding | 32px 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
-| Background image | linear-gradient(#000000, #000000) | = | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #005fcc offset 3px | = |
+| Outline | none | = | = | = |
 | Font | agileSans 16px/24px 350 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #000000 | = | = | = |
-| Text node | span.text-iron-ore-new-800.text-opacity-100: agileSans 16px/24px 400, #303136, ls -0.32px | = | = | = |
-| Transition | background-size 0.3s cubic-bezier(0.4, 0, 0.2, 1) | = | = | = |
-| Cursor | pointer | = | = | = |
-| Icon | 12 x 12, colour #303136 | = | = | = |
-| Painted layers | button.group/nav-item.inline-flex 78.1x28.0 image linear-gradient(#000000, #000000) | = | button.group/nav-item.inline-flex 78.1x28.0 image linear-gradient(#000000, #000000) outline 1px auto #005fcc offset 3px | = |
+| Text node | h3.text-[22px].xs:text-2xl: agileSans 24px/28.8px 400, #ffffff, ls -0.48px | = | = | = |
+| Transition | none | = | = | = |
+| Icon | 24 x 24, colour #ffffff | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Painted layers | - | = | button.text-pure-white.self-start 24.0x24.0 outline 1px auto #005fcc offset 0px | = |
 
 Crops: `faq-row-default.png`, `faq-row-hover.png`, `faq-row-focus-visible.png`, `faq-row-pressed.png`.
 
@@ -613,7 +610,7 @@ Crops: `faq-row-default.png`, `faq-row-hover.png`, `faq-row-focus-visible.png`, 
 
 FAQ answer. The expanded answer body under a FAQ row.
 
-Page: pricing. Selector: `faq panel`. States: open.
+Page: pricing. Selector: `faq region`. States: open.
 
 | Property | open |
 |---|---|
