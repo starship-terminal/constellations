@@ -1,0 +1,37 @@
+file	inferred_name	hash	sizes	viewBox	style	seen_on	place	text_or_label
+go-to-homepage.svg	go-to-homepage	0db0aae1	62x22	0 0 85 30	fill	home; graphos; agent-services; pricing; customers; blog; why-apollo; contact	a; a navigation_wordmark	Go to homepage
+icon-15d486fd.svg	icon-15d486fd	15d486fd	20x20 20x24	0 0 24 24	fill	home; graphos; agent-services; pricing; customers; blog; why-apollo; contact	button	
+apollo-graphql-on-github.svg	apollo-graphql-on-github	2830ba79	28x28 28x32	0 0 32 32	fill	home; graphos; agent-services; pricing; customers; blog; why-apollo; contact	a footer_socialLink	Apollo GraphQL on GitHub
+your-privacy-choices.svg	your-privacy-choices	3f52d973	30x14	0 0 30 14	fill	home; graphos; agent-services; pricing; customers; blog; why-apollo; contact	a; a footer_privacyChoicesIcon	Your Privacy Choices
+products.svg	products	401c8cf4	11x11	0 0 24 24	stroke	home; graphos; agent-services; pricing; customers; blog; why-apollo; contact	button; button navigation_desktopCaret	Products / Solutions / Resources
+sociallink-6727abcc.svg	sociallink	6727abcc	28x28 28x32	0 0 32 32	fill	home; graphos; agent-services; pricing; customers; blog; why-apollo; contact	a footer_socialLink	Apollo GraphQL on YouTube
+sociallink-6c9b8fd8.svg	sociallink	6c9b8fd8	28x28 28x32	0 0 24 24	fill	home; graphos; agent-services; pricing; customers; blog; why-apollo; contact	a footer_socialLink	Apollo GraphQL on LinkedIn
+sociallink-78c1197f.svg	sociallink	78c1197f	28x28 28x32	0 0 33 33	fill	home; graphos; agent-services; pricing; customers; blog; why-apollo; contact	a footer_socialLink	Apollo GraphQL on Twitter
+apollo-graphos.svg	apollo-graphos	a373397f	16x16	0 0 24 24	stroke	home; graphos; agent-services; pricing; customers; blog; why-apollo; contact	a; a footer_navLinkTitle	Apollo GraphOS / GraphOS Agent Services / GraphOS Studio
+apollo-router-core.svg	apollo-router-core	fa592896	14x14		stroke	home; graphos; agent-services; pricing; customers; blog; why-apollo; contact	a; a footer_navLinkTitle	Apollo Router Core / Docs / Community
+dismiss-banner.svg	dismiss-banner	01e322e3	20x20	0 0 47 48	stroke	home; graphos; agent-services; pricing; customers; why-apollo; contact	button summit-eyebrow_close	Dismiss banner
+watch-keynote.svg	watch-keynote	d68ccc4e	10x12	0 0 10 12	fill	home; graphos; agent-services; pricing; customers; why-apollo; contact	a summit-eyebrow_playIcon	Watch keynote
+icon-0249fed4.svg	icon-0249fed4	0249fed4	20x20	0 0 16 16	stroke	home	button	Play video: Intuit: See GraphOS in actio
+pause-hero-animation.svg	pause-hero-animation	051c1f27	12x12	0 0 16 16	stroke	home	button hero-depth_pause	Pause hero animation
+previous-testimonial.svg	previous-testimonial	3abaf441	20x20	0 0 16 16	stroke	home	button	Previous testimonial
+icon-3f70aa80.svg	icon-3f70aa80	3f70aa80	25x25 26x26 32x32 40x40	0 0 32 32	stroke	pricing; why-apollo; contact	li	Only pay for the API volume and features / Volume discounts as your workload grows / No limits on your API workload
+icon-a4931061.svg	icon-a4931061	a4931061	16x16 20x20	0 0 16 16	stroke	home	a; button	Read more about domain models / Next testimonial / Apollo GraphOS Platform API Orchestratio
+icon-5c18a5ce.svg	icon-5c18a5ce	5c18a5ce	12x12 24x24 25x25	0 0 16 16	stroke	graphos; pricing	li; td [&_svg]:inline-block; div	Asynchronously execute requests across a / Minimize latency with GraphQL-native cac / Export key metrics and logs with OpenTel
+icon-8081ab1a.svg	icon-8081ab1a	8081ab1a	24x24	0 0 24 24	stroke	graphos; agent-services	a	EXPLORE MORE Explore Apollo GraphOS docu / CUSTOMER STORY How Indeed Built an AI Hi / WEBPAGE Why Apollo? Deliver tomorrow’s r
+trusted-api-access.svg	trusted-api-access	9e1a1912	24x24 32x32	0 0 16 16	stroke	graphos; agent-services	div	Trusted API access
+accordionarrow.svg	accordionarrow	a7902f35	30x30 48x48	0 0 112 112	stroke	pricing; why-apollo	button faqs_accordionArrow; button	How do you measure the number of request / How does the promotional credit work? / How does Apollo's free edition work?
+icon-04791097.svg	icon-04791097	04791097	12x12	0 0 12 12	stroke	home	a	Get Started (opens in a new tab) Start b
+one-access-layer.svg	one-access-layer	0c21c6c8	24x24	0 0 16 16	stroke	graphos	div	One access layer
+icon-24661aa5.svg	icon-24661aa5	24661aa5	15x15	0 0 16 16	stroke	pricing	li	Schema Proposals - Collaboration and app / Single sign-on (SSO) / Audit logging
+icon-3cb239c8.svg	icon-3cb239c8	3cb239c8	32x32	0 0 24 24	stroke	agent-services	div	
+play-video.svg	play-video	480eed78	16x16	0 0 32 32	stroke	why-apollo	button	Play video
+icon.svg	icon	5035ec71	16x16 28x28	0 0 32 32	fill	blog	a rss-link_icon; a footer_socialLink	Subscribe to the RSS feed / RSS feed
+icon-5eec27c2.svg	icon-5eec27c2	5eec27c2	24x24	0 0 16 16	stroke	graphos	div	Ship new capabilities, faster
+icon-6d7d0d48.svg	icon-6d7d0d48	6d7d0d48	24x24		fill	agent-services	div	
+icon-73de2292.svg	icon-73de2292	73de2292	24x24		stroke	agent-services	div	
+link.svg	link	9c87e08f	24x24	0 0 24 24	stroke	why-apollo	a feature-card_link; a recommended_ctaLink	Artificial intelligence Modern AI applic / Mergers & acquisitions Delivering a unif / Cloud modernization As organizations und
+icon-9f1202a3.svg	icon-9f1202a3	9f1202a3	44x44	0 0 61 61	fill	home	a	Apollo GraphOS Platform API Orchestratio / GraphOS Agent Services Domain modeling a
+arrowbtn.svg	arrowbtn	a7c78414	30x30	0 0 25 25	stroke	blog	button pagination_arrowBtn	
+icon-b97dd98f.svg	icon-b97dd98f	b97dd98f	24x24	0 0 16 16	stroke	agent-services	button	What are GraphOS Agent Services? / Do I need an existing graph? / What systems can my agents access?
+icon-d5160243.svg	icon-d5160243	d5160243	32x32	0 0 24 24	stroke	agent-services	div	
+type-field-or-tag.svg	type-field-or-tag	fc35d7ea	16x16 32x32	0 0 16 16	stroke	agent-services	div services-bento_panel; div	Type, field, or tag
