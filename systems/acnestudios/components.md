@@ -49,9 +49,9 @@ Values that apply across entries, tallied from the measurement file.
 
 **Hover.** Acne hovers with colour, never fills or shadows: text #0018a8 `text.link` to #051574 `text.linkHover` (8), text #000000 `text.primary` to #6b6b6b `text.muted` (6), no change on the element (6), #000000 `action.primary` to #0018a8 `action.accent` (3), text #000000 `text.primary` to #051574 `text.linkHover` (2), text #000000 `text.primary` to #5c5c5c `text.secondary` (1), #0018a8 `action.accent` to #051574 `action.accentHover` (1), border #f2f2f2 `border.hairline` to #000000 `border.default` (1). Black fills (LOAD MORE, CONTINUE, SHOW N ITEMS) flip to Acne blue; blue fills (ADD TO BAG) deepen to #051574 `action.accentHover`; blue links deepen the same way; black labels (nav, FILTER, Menu) grey to #6b6b6b `text.muted`.
 
-**Focus.** Of 27 elements given a real keyboard focus: no ring on the element (21), 1px solid #ffffff `text.onDark` offset -3px (3), 1px solid #000000 `border.default` offset -3px (1), 1px solid #051574 `text.linkHover` offset -3px (1), 1px solid #0018a8 `text.link` offset -3px (1). The ring Acne does draw is a 1px solid keyline 3px inside the control — white on the black/blue buttons, deep blue on the white wishlist button, black on the size cells. Text links show no ring.
+**Focus.** Of 24 elements given a real keyboard focus: no ring on the element (18), focus could not be driven (3), 1px solid #ffffff `text.onDark` offset -3px (3), 1px solid #000000 `border.default` offset -3px (1), 1px solid #051574 `text.linkHover` offset -3px (1), 1px solid #0018a8 `text.link` offset -3px (1). The ring Acne does draw is a 1px solid keyline 3px inside the control — white on the black/blue buttons, deep blue on the white wishlist button, black on the size cells. Text links show no ring.
 
-**Motion.** Instant: every measured control reports transition-duration 0s — hover, focus and pressed changes have no easing. The only transitions the stylesheet carries are the drawers' 150ms padding-bottom safe-area slide, the accordions' 200ms max-height reveal and a 500ms fade on campaign layers, none on the controls themselves.
+**Motion.** 0.15s ease (1). The only transitions the stylesheet carries are the drawers' 150ms padding-bottom safe-area slide, the accordions' 200ms max-height reveal and a 500ms fade on campaign layers, none on the controls themselves.
 
 **Layout.** The header is a 60px rail (45px at 390); every page is a 1440-wide fluid grid of 4-px-base cells (`as-cell`). Primary buttons and the email fields share one 60px height; the small search field, menu links, suggestions and gift-guide bars are 30px rows; size cells are 77 x 45; every right-side drawer is 360 wide with a 45px head. Hairline 1px rules in #f2f2f2 (or black on drawers and the mega-menu's top edge) separate everything — several are painted as 1px background gradients rather than borders.
 
@@ -88,13 +88,13 @@ The 60px header every page shares (45px at 390): left the section triggers WOMAN
 
 #### Wordmark
 
-<a id="logo"></a>`logo`, on home. The centred Acne Studios logotype, an SVG mark that links home.
+<a id="logo"></a>`logo`, on home. The centred Acne Studios logotype image (215px), an img that links home.
 
-<img src="components/crops/logo-default.png" alt="Wordmark, default" height="60"> 
+<img src="components/crops/logo-default.png" alt="Wordmark, default" height="28"> 
 
 | State | Values |
 |---|---|
-| default | size 101.02 x 60; padding 4px 9px 33px 9px; background transparent; text Helvetica Now Text 12/20 400, #000000 `text.primary` |
+| default | size 214.86 x 28; background transparent; transform translate(-107.43px, -14px); opacity 0 |
 
 #### Search button
 
@@ -157,15 +157,13 @@ Child layers: div::after 1440pxx810px shadow #000000 `action.primary` 0px 0px 0p
 
 #### Hero wordmark
 
-<a id="hero-wordmark"></a>`hero-wordmark`, on home. The giant white "Acne Studios" headline set over the campaign photo.
+<a id="hero-wordmark"></a>`hero-wordmark`, on home. The giant white "Acne Studios" image headline set over the FW26 campaign photo.
 
 <img src="components/crops/hero-wordmark-default.png" alt="Hero wordmark, default" height="120"> 
 
 | State | Values |
 |---|---|
-| default | size 1440 x 4965.25; background transparent; text Helvetica Now Text 12/20 400, #000000 `text.primary` |
-
-Child layers: header 1440x60 background #ffffff `action.onAction`; nav 1440x60 shadow #f2f2f2 `border.hairline` 0px 1px 0px 0px inset, #f2f2f2 `border.hairline` 0px -1px 0px 0px inset; button 70.5x60 border 1px solid transparent
+| default | size 1080 x 211.19; background transparent |
 
 #### Gift guide bar
 
@@ -184,7 +182,7 @@ The page foot: NEWSLETTER with its email field, contact methods (Live chat, Call
 
 #### Footer
 
-<a id="footer"></a>`footer`, on pdp. The page foot: newsletter signup, contact methods (Live chat / Call / Email), four link columns, social icons, the "SHIPPING TO SINGAPORE (ENGLISH)" region selector and a cookie-settings link.
+<a id="footer"></a>`footer`, on home. The page foot: newsletter signup, contact methods (Live chat / Call / Email), four link columns, social icons, the "SHIPPING TO SINGAPORE (ENGLISH)" region selector and a cookie-settings link.
 
 <img src="components/crops/footer-default.png" alt="Footer, default" height="120"> 
 
@@ -194,7 +192,7 @@ The page foot: NEWSLETTER with its email field, contact methods (Live chat, Call
 
 #### Newsletter heading
 
-<a id="newsletter-label"></a>`newsletter-label`, on pdp. The NEWSLETTER block opening the footer, with the email field under it.
+<a id="newsletter-label"></a>`newsletter-label`, on home. The NEWSLETTER block opening the footer, with the email field under it.
 
 <img src="components/crops/newsletter-label-default.png" alt="Newsletter heading, default" height="24"> 
 
@@ -204,7 +202,7 @@ The page foot: NEWSLETTER with its email field, contact methods (Live chat, Call
 
 #### Newsletter email field
 
-<a id="newsletter-field"></a>`newsletter-field`, on pdp. The EMAIL text field in the footer: typed and deleted, never submitted.
+<a id="newsletter-field"></a>`newsletter-field`, on home. The EMAIL text field in the footer: typed and deleted, never submitted.
 
 <img src="components/crops/newsletter-field-default.png" alt="Newsletter email field, default" height="60"> <img src="components/crops/newsletter-field-focused.png" alt="Newsletter email field, focused" height="60"> <img src="components/crops/newsletter-field-filled.png" alt="Newsletter email field, filled" height="60"> 
 
@@ -215,7 +213,7 @@ The page foot: NEWSLETTER with its email field, contact methods (Live chat, Call
 
 #### Footer column title
 
-<a id="footer-col-title"></a>`footer-col-title`, on pdp. A column heading (HELP, CLIENT SERVICES, COMPANY, CONTACT US) in micro caps.
+<a id="footer-col-title"></a>`footer-col-title`, on home. A column heading (HELP, CLIENT SERVICES, COMPANY, CONTACT US) in micro caps.
 
 <img src="components/crops/footer-col-title-default.png" alt="Footer column title, default" height="24"> 
 
@@ -225,7 +223,7 @@ The page foot: NEWSLETTER with its email field, contact methods (Live chat, Call
 
 #### Footer link
 
-<a id="footer-link"></a>`footer-link`, on pdp. A blue footer link (Contact us, FAQs, Find a store).
+<a id="footer-link"></a>`footer-link`, on home. A blue footer link (Contact us, FAQs, Find a store).
 
 <img src="components/crops/footer-link-default.png" alt="Footer link, default" height="24"> <img src="components/crops/footer-link-hover.png" alt="Footer link, hover" height="24"> <img src="components/crops/footer-link-focus-visible.png" alt="Footer link, focus-visible" height="24"> <img src="components/crops/footer-link-pressed.png" alt="Footer link, pressed" height="24"> 
 
@@ -236,7 +234,7 @@ The page foot: NEWSLETTER with its email field, contact methods (Live chat, Call
 
 #### Social link
 
-<a id="social-link"></a>`social-link`, on pdp. A two-letter social link (IG FB TW YT PT WB).
+<a id="social-link"></a>`social-link`, on home. A two-letter social link (IG FB TW YT PT WB).
 
 <img src="components/crops/social-link-default.png" alt="Social link, default" height="30"> <img src="components/crops/social-link-hover.png" alt="Social link, hover" height="30"> <img src="components/crops/social-link-focus-visible.png" alt="Social link, focus-visible" height="30"> <img src="components/crops/social-link-pressed.png" alt="Social link, pressed" height="30"> 
 
@@ -247,7 +245,7 @@ The page foot: NEWSLETTER with its email field, contact methods (Live chat, Call
 
 #### Region selector
 
-<a id="geo-selector"></a>`geo-selector`, on pdp. "SHIPPING TO SINGAPORE (ENGLISH)": the geo prompt serving the SG storefront. Hovered and focused only.
+<a id="geo-selector"></a>`geo-selector`, on home. "SHIPPING TO SINGAPORE (ENGLISH)": the geo prompt serving the SG storefront. Hovered and focused only.
 
 <img src="components/crops/geo-selector-default.png" alt="Region selector, default" height="24"> <img src="components/crops/geo-selector-hover.png" alt="Region selector, hover" height="24"> <img src="components/crops/geo-selector-focus-visible.png" alt="Region selector, focus-visible" height="24"> <img src="components/crops/geo-selector-pressed.png" alt="Region selector, pressed" height="24"> 
 
@@ -689,9 +687,7 @@ The same storefront at 390: the header collapses to Menu, wordmark and bag; the 
 
 | State | Values |
 |---|---|
-| default | size 390 x 180; background transparent; text Helvetica Now Text 12/20 400, #000000 `text.primary` |
-
-Child layers: button 390x45 border 1px solid transparent image linear-gradient(#f2f2f2 `border.hairline` 1px, transparent 0px); button 0x0 border 1px solid transparent image linear-gradient(#f2f2f2 `border.hairline` 1px, transparent 0px); a 0x0 border 1px solid transparent image linear-gradient(#f2f2f2 `border.hairline` 1px, transparent 0px)
+| default | size 390 x 844; background #ffffff `action.onAction`; text Helvetica Now Text 12/20 400, #000000 `text.primary`; transition padding-bottom 0.15s ease |
 
 #### Mobile main
 

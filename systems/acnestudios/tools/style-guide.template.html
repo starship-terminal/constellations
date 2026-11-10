@@ -99,15 +99,18 @@ table.t th { color: var(--color-grey-text); font-weight: 400; }
 .hdr .it.count { color: var(--color-grey-text); }
 .hdr .wm { display: flex; align-items: center; font: 400 15px/20px var(--sg-sans); letter-spacing: 0; text-transform: none; color: var(--color-black); }
 .btn { display: inline-flex; align-items: center; justify-content: center; height: var(--size-control-height); padding: 0 var(--space-control-x); font: 400 var(--font-scale-12)/20px var(--sg-sans); letter-spacing: var(--font-letterSpacing-caps); text-transform: uppercase; border: 0; cursor: pointer; }
-.btn.primary { background: var(--action-primary); color: var(--action-onAction); width: 320px; }
+.btn.primary { background: var(--action-primary); color: var(--action-onAction); width: 320px; max-width: 100%; }
 .btn.primary:hover, .btn.primary.is-hover { background: var(--action-primaryHover); }
-.btn.accent { background: var(--action-accent); color: var(--action-onAction); width: 400px; }
+.btn.accent { background: var(--action-accent); color: var(--action-onAction); width: 400px; max-width: 100%; }
 .btn.accent:hover, .btn.accent.is-hover { background: var(--action-accentHover); }
-.btn.outline { background: #fff; color: var(--color-black); box-shadow: inset 0 0 0 1px var(--border-default); width: 400px; }
+.btn.outline { background: #fff; color: var(--color-black); box-shadow: inset 0 0 0 1px var(--border-default); width: 400px; max-width: 100%; }
 .btn.outline:hover, .btn.outline.is-hover { color: var(--action-accent); box-shadow: inset 0 0 0 1px var(--action-accent); }
 .btn:focus-visible, .btn.is-focus { outline: var(--focusRing-width) solid var(--focus-ring); outline-offset: var(--focusRing-offset); }
 .btn.accent:focus-visible, .btn.accent.is-focus, .btn.primary:focus-visible, .btn.primary.is-focus { outline-color: #fff; }
-.fld { height: var(--size-field-height); width: 430px; max-width: 100%; padding: 0 var(--space-field-x); border: 1px solid var(--border-field); background: var(--background-field); font: 400 var(--font-scale-18)/20px var(--sg-sans); letter-spacing: var(--font-letterSpacing-caps); color: var(--color-black); }
+.btn.primary:focus-visible, .btn.primary.is-focus { background: var(--action-primaryHover); }
+.fld:focus { background: rgb(232,240,254); border-color: #000; outline: none; }
+.fld:focus::placeholder { color: #c2c2c2; }
+.fld { height: var(--size-field-height); width: 430px; max-width: 100%; padding: 0 var(--space-field-x); border: 1px solid var(--border-field); background: var(--background-field); font: 400 var(--font-scale-18)/20px var(--sg-sans); letter-spacing: var(--font-letterSpacing-caps); color: var(--color-black); max-width: 100%; }
 .fld.sm { height: var(--size-navRow-height); width: 360px; padding: 0 var(--space-searchField-x); border-color: var(--border-default); font-size: var(--font-scale-12); }
 .fld::placeholder { color: var(--color-grey-text); text-transform: uppercase; }
 .lnk { color: var(--text-link); font: 400 var(--font-scale-12)/var(--font-lineHeight-link) var(--sg-sans); letter-spacing: var(--font-letterSpacing-caps); text-decoration: none; }
@@ -139,8 +142,8 @@ table.t th { color: var(--color-grey-text); font-weight: 400; }
 .foot { border-top: 1px solid var(--border-hairline); padding-top: 20px; }
 .foot .cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .foot .colt { height: 20px; font: 400 var(--font-scale-12)/20px var(--sg-sans); letter-spacing: var(--font-letterSpacing-caps); text-transform: uppercase; }
-.foot .col a { display: block; font: 400 var(--font-scale-12)/24px var(--sg-sans); letter-spacing: var(--font-letterSpacing-caps); color: var(--text-link); text-decoration: none; }
-.foot .col a:hover { color: var(--text-linkHover); }
+.foot .cols > div a { display: block; font: 400 var(--font-scale-12)/24px var(--sg-sans); letter-spacing: var(--font-letterSpacing-caps); color: var(--text-link); text-decoration: none; }
+.foot .cols > div a:hover { color: var(--text-linkHover); }
 .geo { color: var(--text-link); font: 400 var(--font-scale-12)/20px var(--sg-sans); letter-spacing: var(--font-letterSpacing-caps); text-transform: uppercase; }
 .geo:hover { color: var(--text-linkHover); }
 </style>
@@ -219,7 +222,7 @@ table.t th { color: var(--color-grey-text); font-weight: 400; }
 
   <h3 class="sub">The header</h3>
   <div class="states">
-    <div class="cell" style="flex:1;min-width:560px">
+    <div class="cell" style="flex:1;min-width:min(560px,100%)">
       <div class="hdr" style="width:100%">
         <span class="it">Woman</span><span class="it">Man</span><span class="it">Bags</span><span class="it">Scarves</span><span class="it">Gifts</span>
         <span class="it mid wm">Acne Studios</span>
@@ -302,7 +305,7 @@ const flat = (node, prefix = '') => Object.entries(node).flatMap(([k, v]) => v &
     const fam = /mono/i.test(v.fontFamily) ? 'var(--sg-mono)' : 'var(--sg-sans)';
     const w = typeof v.fontWeight === 'number' ? v.fontWeight : `var(${cssname(ref(v.fontWeight))})`;
     const caps = (t.s && t.s.textTransform === 'uppercase') || /Caps|price/i.test(n);
-    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(String(fs))} / ${esc(String(lh))} · ${esc(ref(v.fontWeight))}${caps ? ' · uppercase' : ''}</small></div><div class="sample" style="font-family:${fam};font-size:var(${cssname(size)});line-height:var(--font-lineHeight-tight);font-weight:${w};${caps ? 'text-transform:uppercase;letter-spacing:0.3px;' : ''}">Shop the official site — S$4,500</div></div>`;
+    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(String(fs))} / ${esc(String(lh))} · ${esc(ref(v.fontWeight))}${caps ? ' · uppercase' : ''}</small></div><div class="sample" style="font-family:${fam};font-size:${size.startsWith('{') ? `var(${cssname(size)})` : fs};line-height:${lead.startsWith('{') ? `var(${cssname(lead)})` : lh};font-weight:${w};letter-spacing:${v.letterSpacing ? (get(ref(v.letterSpacing)) || {}).v || v.letterSpacing : 'normal'};${caps ? 'text-transform:uppercase;' : ''}">Shop the official site — S$4,500</div></div>`;
   }
   $('#type-out').innerHTML = h;
 })();

@@ -12,8 +12,8 @@ The reason Acne is worth a capture at all: it is one of the most disciplined e-c
 | [style-guide.html](style-guide.html) | One self-contained page that renders every token and the main components (the header rail, the buttons and fields, the size grid, the 360px drawers, the mega-menu, the product tile, the footer) with the real values. |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (57, 145 states) written in tokens with crops of the real site, the shared values (hover, focus, motion, layout), and the Gaps. |
 | [patterns.md](patterns.md) | How the components combine on each surface: the shell, the hero, the PLP, the PDP, the drawers, the footer, the sign-in gate and the 390 layout. |
-| [components/crops/](components/crops) | 145 element screenshots, `{component}-{state}.png`, at 2x. |
-| [screenshots/](screenshots) | 31 `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 2x and `mobile-*` shots 390 x 844 at 2x; `-full` shots are whole pages. |
+| [components/crops/](components/crops) | 145 element screenshots, `{component}-{state}.png`, at the capture scale — 2x on mobile, and large crops are halved by quantize. |
+| [screenshots/](screenshots) | 31 `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 1x, `mobile-*` shots 390 x 844 at 2x; `-full` shots are whole pages. |
 | [raw/](raw) | The unprocessed readings: every custom property the pages declare with font faces (`css-vars.json`); per-component computed styles (`components-computed.json`, and `measurements.md` built from it); the token tree the builder reads (`component-tokens.json`); the measurement run logs. The full-resolution captures the quantized [screenshots/](screenshots) came from stay outside the repo, at `~/.design-systems/acnestudios/raw-full/` with a `.capture.json` provenance record per shot. |
 | [tools/](tools) | The builders and the capture kit. See Rebuild. |
 
@@ -72,6 +72,43 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (Acne's UI is alm
 
 <!-- health:end -->
 
+## What to distrust
+
+- The capture is of the Singapore storefront (`/sg/en/`): prices are SGD, the nav and promo copy are the region's. Other regions may serve different campaigns and layouts.
+- Mobile `m-*` readings cover layout and the menu drawer only; a phone has no hover/focus to measure, and the 390 capture took one drawer open.
+- Several components were re-measured after selector fixes (logo, hero wordmark, menu drawer); components whose `run` predates that fix carry their original capture time, and any component the selectors still miss is marked `missing` in `raw/components-computed.json` rather than re-dated.
+- Nothing was bought, bagged or signed into: ADD TO BAG, CHECKOUT, GOOGLE and the newsletter submit were never pressed; their states come from CDP-forced pseudo-classes.
+
+## Fonts
+
+- The site sets Neue Haas Grotesk (`NeueHaasUnica`, `--font-*` stacks resolve to it) with a Helvetica/Arial system fallback; the style guide renders the fallback, not the licensed face.
+
+## Coverage
+
+| Expectation | Status | Where |
+|---|---|---|
+| Page background, surface, text, muted, accent, border roles | captured | `light.background.page` / `.field` / `.inset`, `light.text.primary` / `.muted` / `.link`, `light.action.primary`, `light.border.default` / `.hairline` / `.field` |
+| Accent states | captured | `light.action.primaryHover` and `.accentHover` (blue hover/deepen), `light.action.selected` (pale-blue picked size), `light.focus.ring` keyline |
+| Theme parity | not present | one light theme; no dark declarations (`raw/css-vars.json`) |
+| Type | captured | `core.font` family/scale/letterSpacing + `core.typography` composites (caps headings, body, price, link) |
+| Shape | captured | `core.radius.none` — the storefront rounds nothing |
+| Sizing | captured | `core.size` (header, navRow, field, sizeCell, drawer) + `core.space` |
+| Motion | partly | `core.motion`; the drawer and accordion transitions plus control hovers that change instantly are in components.md's Shared values |
+| Layout | captured | `raw/layout.json` + full-page screenshots at 1440; 390 for home/PLP |
+| Button, link, text field, select, checkbox, card, badge | captured | [components.md](components.md): nav/auth/bag buttons, PLP cards, size swatches, filter rail, fields, badges |
+| Switch, tabs, toast, tooltip, menu, avatar, table, dialog | partly | the menu drawer and filter rail are captured as opened states; the rest do not exist on the public surface |
+| States | captured | default/hover/focus-visible/pressed on controls; focused/filled on fields; open on drawer/panels. Disabled, error and loading never appear publicly |
+| Signed-in product, checkout, purchase | not captured | account area and bag/checkout never entered; nothing was submitted |
+| Light theme, 1440 and 390 | captured | [screenshots/](screenshots): home/woman/PDP/search/menu/filter/login, mobile home + drawer |
+| Icons | partly | `icons/` holds what the pages served; the brand mark is the header logotype image |
+| Fonts | captured | family and scale in `core.font` |
+
+## How the values were read
+
+Every surface is public, so every page was captured signed out in headless Chromium: a script tours the routes at 1440 x 900 and 390 x 844 at 2x, blocks the OneTrust consent SDK at the network layer (its banner never mounts and no consent button is ever pressed), sweeps leftover overlays remove-only, scrolls to defeat lazy rendering, and writes raw PNGs plus a `.capture.json` per shot. `vars.mjs` dumps every custom property the pages declare — only two are the app's own (`--safe-area-inset-bottom` on drawer containers); the rest are Tailwind framework internals and the Adyen checkout block, kept in `raw/css-vars.json` as evidence rather than tokens. `measure.mjs` measures each component on the live DOM: default, real mouse hover, real keyboard focus, and CDP-forced `:active`/`:hover` for pressed — the size cell's picked state is reached through the grid's own toggle. Crops are clipped from the live page at 2x.
+
+One theme is captured: the storefront has no dark variant. Aliases in the `light` set point into `core` where the semantic role is the palette value; every leaf names its measurement in `$extensions.source`. Values the site never gave (a spacing scale, z-indices, dark theme) are absent rather than invented.
+
 ## Do and don't
 
 - **Do keep it monochrome.** Text, fills and chrome are black on white; the four warm greys carry muted text (#6b6b6b, #5c5c5c), control borders (#c2c2c2), hairlines (#f2f2f2) and field fills (#f7f7f7) — nothing else is a neutral ([header](components/crops/header-default.png), [footer](components/crops/footer-default.png)).
@@ -81,12 +118,6 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (Acne's UI is alm
 - **Do hover with colour, instantly.** Black buttons flip to Acne blue, blue deepens to #051574, links deepen, black labels grey to #6b6b6b — all with transition-duration 0s ([load-more](components/crops/load-more-hover.png), [geo-selector](components/crops/geo-selector-hover.png)).
 - **Don't add shadows, rings or easing.** Nothing elevates: drawers sit on opaque white keyed by a 1px black edge, and the focus ring, when it exists, is a 1px keyline 3px inside the control ([menu-panel](components/crops/menu-panel-default.png), [wishlist-button](components/crops/wishlist-button-focus-visible.png)).
 - **Don't expect the obvious label.** ADD TO BAG retitles to "PLEASE SELECT SIZE" on hover until a size is picked — a real measured state, not a mock ([add-to-bag](components/crops/add-to-bag-hover.png)).
-
-## How the values were read
-
-Every surface is public, so every page was captured signed out in headless Chromium: a script tours the routes at 1440 x 900 and 390 x 844 at 2x, blocks the OneTrust consent SDK at the network layer (its banner never mounts and no consent button is ever pressed), sweeps leftover overlays remove-only, scrolls to defeat lazy rendering, and writes raw PNGs plus a `.capture.json` per shot. `vars.mjs` dumps every custom property the pages declare — only two are the app's own (`--safe-area-inset-bottom` on drawer containers); the rest are Tailwind framework internals and the Adyen checkout block, kept in `raw/css-vars.json` as evidence rather than tokens. `measure.mjs` measures each component on the live DOM: default, real mouse hover, real keyboard focus, and CDP-forced `:active`/`:hover` for pressed — the size cell's picked state is reached through the grid's own toggle. Crops are clipped from the live page at 2x.
-
-One theme is captured: the storefront has no dark variant. Aliases in the `light` set point into `core` where the semantic role is the palette value; every leaf names its measurement in `$extensions.source`. Values the site never gave (a spacing scale, z-indices, dark theme) are absent rather than invented.
 
 ## Rebuild
 
@@ -105,7 +136,7 @@ node tools/capture/public/build-measurements.mjs              # raw/measurements
 python3 tools/build_tokens.py                 # tokens.json from component-tokens.json
 python3 tools/build_components_md.py          # components.md
 python3 tools/build_style_guide.py            # style-guide.html
-python3 tools/fetch_icon.py acnestudios       # icon.png (repo-root tools/fetch_icon.py)
+cd ../.. && python3 tools/fetch_icon.py acnestudios    # icon.png (repo-root tool)
 ```
 
 Then `make design-md` at the repo root refreshes [DESIGN.md](DESIGN.md), and `make check` re-grades the package.

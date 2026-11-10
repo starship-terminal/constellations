@@ -117,6 +117,10 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 
 6 styles from `core.typography`. `fontFamily` is the first family of each stack; the full stacks, and properties DESIGN.md has no field for (text case, decoration), are in tokens.json. Families: Helvetica Monospaced Pro, Helvetica Now Text.
 
+### Fonts (from README.md)
+
+- The site sets Neue Haas Grotesk (`NeueHaasUnica`, `--font-*` stacks resolve to it) with a Helvetica/Arial system fallback; the style guide renders the fallback, not the licensed face.
+
 ## Layout
 
 Spacing from `core.space`: `nav-x` 9px, `nav-y` 4px, `control-x` 9px, `control-y` 19px, `field-x` 10px, `field-y` 19px, `searchField-x` 31px, `indent` 20px.
@@ -142,6 +146,13 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - Don't read colours off the screenshots; they are 256-colour PNGs.
 - Don't copy the product's logo, icons, illustrations or brand colours into something that ships. Borrow structure and proportions.
 - Don't edit this file; it is regenerated from the tokens.
+
+### What to distrust (from README.md)
+
+- The capture is of the Singapore storefront (`/sg/en/`): prices are SGD, the nav and promo copy are the region's. Other regions may serve different campaigns and layouts.
+- Mobile `m-*` readings cover layout and the menu drawer only; a phone has no hover/focus to measure, and the 390 capture took one drawer open.
+- Several components were re-measured after selector fixes (logo, hero wordmark, menu drawer); components whose `run` predates that fix carry their original capture time, and any component the selectors still miss is marked `missing` in `raw/components-computed.json` rather than re-dated.
+- Nothing was bought, bagged or signed into: ADD TO BAG, CHECKOUT, GOOGLE and the newsletter submit were never pressed; their states come from CDP-forced pseudo-classes.
 
 ### Do and don't (from README.md)
 

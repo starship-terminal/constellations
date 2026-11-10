@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from www.gauth.com on undefined by `tools/capture/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from acnestudios.com on  by `tools/capture/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844), and written here by `tools/capture/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -62,14 +62,14 @@ Crops: `nav-item-default.png`, `nav-item-hover.png`, `nav-item-focus-visible.png
 
 #### logo
 
-Wordmark. The centred Acne Studios logotype, an SVG mark that links home.
+Wordmark. The centred Acne Studios logotype image (215px), an img that links home.
 
-Page: home. Selector: `header a svg`. States: default.
+Page: home. Selector: `header .logo`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 101.02 x 60 |
-| Padding | 4px 9px 33px 9px |
+| Size (w x h) | 214.86 x 28 |
+| Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
@@ -78,10 +78,9 @@ Page: home. Selector: `header a svg`. States: default.
 | Font | Helvetica Now Text 12px/20px 400 |
 | Letter spacing | 0.3px |
 | Colour | #000000 |
-| Text node | span.show-for-large-up: Helvetica Now Text 12px/20px 400, #000000, ls 0.3px |
 | Transition | none |
-| Cursor | pointer |
-| Icon | 10 x 11, colour #000000 |
+| Transform | matrix(1, 0, 0, 1, -107.43, -14) |
+| Opacity | 0 |
 | Ancestor paint | 1 up nav.header__nav shadow #f2f2f2 0px 1px 0px 0px inset, #f2f2f2 0px -1px 0px 0px inset |
 | How | at rest |
 
@@ -225,26 +224,23 @@ Crops: `hero-default.png`.
 
 #### hero-wordmark
 
-Hero wordmark. The giant white "Acne Studios" headline set over the campaign photo.
+Hero wordmark. The giant white "Acne Studios" image headline set over the FW26 campaign photo.
 
-Page: home. Selector: `hero title`. States: default.
+Page: home. Selector: `hero wordmark image`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1440 x 4965.25 |
+| Size (w x h) | 1080 x 211.19 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | Helvetica Now Text 12px/20px 400 |
+| Font | Helvetica Monospaced Pro 9px/10.35px 400 |
 | Letter spacing | 0.3px |
 | Colour | #000000 |
-| Text node | button.as-cell.link--main-nav: Helvetica Now Text 12px/20px 400, #000000, ls 0.3px |
 | Transition | none |
-| Icon | 0 x 0, colour #000000 |
-| Painted layers | header.header.skip-link-target 1440.0x60.0 bg #ffffff; nav.header__nav 1440.0x60.0 shadow #f2f2f2 0px 1px 0px 0px inset, #f2f2f2 0px -1px 0px 0px inset; button.as-cell.link--main-nav 70.5x60.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0; button.as-cell.link--main-nav 48.8x60.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0; button.as-cell.link--main-nav 56.2x60.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0; button.as-cell.link--main-nav 80.2x60.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 |
 | How | at rest |
 
 Crops: `hero-wordmark-default.png`.
@@ -281,7 +277,7 @@ Crops: `gift-link-default.png`, `gift-link-hover.png`, `gift-link-focus-visible.
 
 Footer. The page foot: newsletter signup, contact methods (Live chat / Call / Email), four link columns, social icons, the "SHIPPING TO SINGAPORE (ENGLISH)" region selector and a cookie-settings link.
 
-Page: pdp. Selector: `footer.skip-link-target`. States: default.
+Page: home. Selector: `footer.skip-link-target`. States: default.
 
 | Property | default |
 |---|---|
@@ -306,7 +302,7 @@ Crops: `footer-default.png`.
 
 Newsletter heading. The NEWSLETTER block opening the footer, with the email field under it.
 
-Page: pdp. Selector: `footer newsletter block`. States: default.
+Page: home. Selector: `footer newsletter block`. States: default.
 
 | Property | default |
 |---|---|
@@ -329,7 +325,7 @@ Crops: `newsletter-label-default.png`.
 
 Newsletter email field. The EMAIL text field in the footer: typed and deleted, never submitted.
 
-Page: pdp. Selector: `footer input[type=email]`. States: default, focused, filled.
+Page: home. Selector: `footer input[type=email]`. States: default, focused, filled.
 
 | Property | default | focused | filled |
 |---|---|---|---|
@@ -355,7 +351,7 @@ Crops: `newsletter-field-default.png`, `newsletter-field-focused.png`, `newslett
 
 Footer column title. A column heading (HELP, CLIENT SERVICES, COMPANY, CONTACT US) in micro caps.
 
-Page: pdp. Selector: `footer column title`. States: default.
+Page: home. Selector: `footer column title`. States: default.
 
 | Property | default |
 |---|---|
@@ -378,7 +374,7 @@ Crops: `footer-col-title-default.png`.
 
 Footer link. A blue footer link (Contact us, FAQs, Find a store).
 
-Page: pdp. Selector: `footer a`. States: default, hover, focus-visible, pressed.
+Page: home. Selector: `footer a`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -402,7 +398,7 @@ Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-vi
 
 Social link. A two-letter social link (IG FB TW YT PT WB).
 
-Page: pdp. Selector: `footer social link`. States: default, hover, focus-visible, pressed.
+Page: home. Selector: `footer social link`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -427,7 +423,7 @@ Crops: `social-link-default.png`, `social-link-hover.png`, `social-link-focus-vi
 
 Region selector. "SHIPPING TO SINGAPORE (ENGLISH)": the geo prompt serving the SG storefront. Hovered and focused only.
 
-Page: pdp. Selector: `footer shipping selector`. States: default, hover, focus-visible, pressed.
+Page: home. Selector: `footer shipping selector`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
@@ -1408,19 +1404,20 @@ Page: home. Selector: `mobile drawer`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 390 x 180 |
+| Size (w x h) | 390 x 844 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
-| Background | transparent |
+| Background | #ffffff |
 | Box shadow | none |
 | Outline | none |
 | Font | Helvetica Now Text 12px/20px 400 |
 | Letter spacing | 0.3px |
 | Colour | #000000 |
-| Text node | button.link.show-for-small-down: Helvetica Now Text 12px/20px 400, #000000, ls 0.3px |
-| Transition | none |
-| Painted layers | button.link.show-for-small-down 390.0x45.0 image linear-gradient(#f2f2f2 1px, #000000 @ 0 0px) border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0; button.contact-method.as-cell---small-down 0.0x0.0 image linear-gradient(#f2f2f2 1px, #000000 @ 0 0px) border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0; a.contact-method.as-cell---small-down 0.0x0.0 image linear-gradient(#f2f2f2 1px, #000000 @ 0 0px) border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0; a.contact-method.as-cell---small-down 0.0x0.0 image linear-gradient(#f2f2f2 1px, #000000 @ 0 0px) border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0; button.link.show-for-small-down 390.0x45.0 image linear-gradient(#f2f2f2 1px, #000000 @ 0 0px) border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0; a.footer__nav-item.link 0.0x0.0 image linear-gradient(#f2f2f2 1px, #000000 @ 0 0px) |
+| Text node | a.as-cell.color--black: Helvetica Now Text 12px/20px 400, #000000, ls 0.3px |
+| Transition | padding-bottom 0.15s ease |
+| Icon | 12 x 12, colour #000000 |
+| Painted layers | nav.navigation-state-container.state-container--overflow-auto---small-down 390.0x844.0 bg #ffffff; div.state-container.cell--span-all 390.0x46.0 bg #ffffff border B:1px solid #000000; a.as-cell.color--black 144.6x45.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0; button.as-cell.nav__search-button 390.0x45.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0; button.as-cell.link--main-nav 390.0x45.0 image linear-gradient(#f2f2f2 1px, #000000 @ 0 0px) border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0; button.as-cell.link--main-nav 390.0x45.0 image linear-gradient(#f2f2f2 1px, #000000 @ 0 0px) border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 |
 | How | at rest |
 
 Crops: `m-menu-drawer-default.png`.

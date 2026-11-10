@@ -36,6 +36,7 @@ class Shooter {
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
+    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
     if (H <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
     else for (let i = 0, y = 0; y < H; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, H - y) } }, this.requested);
     this.count++; log('  shot', name, 'H=' + H);
@@ -62,7 +63,7 @@ const desktop = {
   } },
   woman: { path: '/sg/en/woman/new-arrivals/', run: async (p, S) => {
     await S.view('default');
-    await step('filter', async () => { if (await openToggle(p, /^filter/i)) { await S.view('filter'); } });
+    await step('filter', async () => { if (await openToggle(p, /^filter/i)) { await S.view('filter'); await p.keyboard.press('Escape'); await wait(p, 800); } });
     await step('load-more', async () => { const b = p.getByRole('button', { name: /load more/i }).filter({ visible: true }).first(); if (await b.count()) { await clickEl(b); await wait(p, 2500); await S.view('load-more'); } });
     await S.full();
   } },
@@ -112,7 +113,7 @@ const desktop = {
 const mobile = {
   home: { path: '/sg/en/home', run: async (p, S) => {
     await S.view('default');
-    await step('menu', async () => { if (await openToggle(p, /^menu$/i)) { await S.view('menu'); } });
+    await step('menu', async () => { if (await openToggle(p, /^menu$/i)) { await S.view('menu'); await p.keyboard.press('Escape'); await wait(p, 800); } });
     await S.full();
   } },
   woman: { path: '/sg/en/woman/new-arrivals/', run: async (p, S) => { await S.view('default'); await S.full(); } },

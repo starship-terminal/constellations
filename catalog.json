@@ -3502,7 +3502,8 @@
           "Geo/region variant is the served Singapore storefront; other regions not captured"
         ],
         "durationMin": null,
-        "pr": "https://github.com/c-wenlong/designs/pull/445"
+        "pr": "https://github.com/c-wenlong/designs/pull/445",
+        "durationNote": "wall-clock duration was not recorded for this capture"
       },
       "layoutGaps": {
         "icons/": "Acne's UI is almost icon-free (text labels everywhere); the few SVGs are brand artwork not kept here (docs/RIGHTS.md)"

@@ -476,7 +476,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T21:20:46.539Z",
+   "run": "2026-11-10T03:55:09.109Z",
    "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Header",
    "group": "Shell and navigation",
@@ -883,7 +883,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T21:20:46.539Z",
+   "run": "2026-11-10T03:55:09.109Z",
    "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Nav item",
    "group": "Shell and navigation",
@@ -893,28 +893,28 @@
   "logo": {
    "states": {
     "default": {
-     "tag": "a",
-     "classes": "header__icon-button link--main-nav text--align-center flex--shrink-0",
-     "text": "ACCOUNT",
+     "tag": "div",
+     "classes": "flex--grow-1 logo flex flex--nowrap",
+     "text": "",
      "rect": {
-      "x": 1280,
-      "y": 0,
-      "w": 101.02,
-      "h": 60
+      "x": 612.6,
+      "y": 16,
+      "w": 214.86,
+      "h": 28
      },
      "style": {
       "display": "flex",
-      "position": "static",
+      "position": "absolute",
       "boxSizing": "border-box",
-      "width": "101.016px",
-      "height": "60px",
-      "minWidth": "fit-content",
+      "width": "214.859px",
+      "height": "28px",
+      "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "60px",
-      "paddingTop": "4px",
-      "paddingRight": "9px",
-      "paddingBottom": "33px",
-      "paddingLeft": "9px",
+      "minHeight": "0px",
+      "paddingTop": "0px",
+      "paddingRight": "0px",
+      "paddingBottom": "0px",
+      "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -923,7 +923,7 @@
       "rowGap": "normal",
       "columnGap": "normal",
       "flexDirection": "row",
-      "alignItems": "center",
+      "alignItems": "normal",
       "justifyContent": "center",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
@@ -965,12 +965,12 @@
       "transitionDuration": "0s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
-      "cursor": "pointer",
-      "opacity": "1",
-      "transform": "none",
-      "overflow": "hidden",
-      "zIndex": "auto",
-      "top": "auto"
+      "cursor": "auto",
+      "opacity": "0",
+      "transform": "matrix(1, 0, 0, 1, -107.43, -14)",
+      "overflow": "visible",
+      "zIndex": "151",
+      "top": "30px"
      },
      "ancestors": [
       {
@@ -981,36 +981,17 @@
        "bg": "rgba(0, 0, 0, 0)"
       }
      ],
-     "textStyle": {
-      "node": "span.show-for-large-up",
-      "text": "Account",
-      "fontFamily": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif",
-      "fontSize": "12px",
-      "lineHeight": "20px",
-      "fontWeight": "400",
-      "letterSpacing": "0.3px",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textTransform": "uppercase"
-     },
-     "icon": {
-      "w": 10,
-      "h": 11,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(0, 0, 0)"
-     },
      "crop": "components/crops/logo-default.png",
      "via": "at rest"
     }
    },
    "page": "home",
-   "run": "2026-11-08T21:20:46.539Z",
+   "run": "2026-11-10T03:55:09.109Z",
    "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Wordmark",
    "group": "Shell and navigation",
-   "desc": "The centred Acne Studios logotype, an SVG mark that links home.",
-   "selector": "header a svg"
+   "desc": "The centred Acne Studios logotype image (215px), an img that links home.",
+   "selector": "header .logo"
   },
   "search-button": {
    "states": {
@@ -1488,7 +1469,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T21:20:46.539Z",
+   "run": "2026-11-10T03:55:09.109Z",
    "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Search button",
    "group": "Shell and navigation",
@@ -1943,7 +1924,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T21:20:46.539Z",
+   "run": "2026-11-10T03:55:09.109Z",
    "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Help button",
    "group": "Shell and navigation",
@@ -2398,7 +2379,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T21:20:46.539Z",
+   "run": "2026-11-10T03:55:09.109Z",
    "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Account link",
    "group": "Shell and navigation",
@@ -2853,7 +2834,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T21:20:46.539Z",
+   "run": "2026-11-10T03:55:09.109Z",
    "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Bag button",
    "group": "Shell and navigation",
@@ -2976,7 +2957,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T21:20:46.539Z",
+   "run": "2026-11-10T03:55:09.109Z",
    "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Hero",
    "group": "Home",
@@ -2986,32 +2967,32 @@
   "hero-wordmark": {
    "states": {
     "default": {
-     "tag": "div",
-     "classes": "page page--default page-home-show",
-     "text": "WOMAN MAN BAGS SCARVES GIFTS SEARCH HELP ACCOUNT 00 ACNE STUDIOS GIFT GUIDE GIFT",
+     "tag": "img",
+     "classes": "",
+     "text": "",
      "rect": {
-      "x": 0,
-      "y": -2018,
-      "w": 1440,
-      "h": 4965.25
+      "x": 180,
+      "y": 329.4,
+      "w": 1080,
+      "h": 211.19
      },
      "style": {
       "display": "block",
-      "position": "static",
+      "position": "sticky",
       "boxSizing": "border-box",
-      "width": "1440px",
-      "height": "4965.25px",
+      "width": "1080px",
+      "height": "211.188px",
       "minWidth": "0px",
-      "maxWidth": "none",
+      "maxWidth": "100%",
       "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
       "paddingLeft": "0px",
       "marginTop": "0px",
-      "marginRight": "0px",
+      "marginRight": "180px",
       "marginBottom": "0px",
-      "marginLeft": "0px",
+      "marginLeft": "180px",
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
@@ -3043,10 +3024,10 @@
       "outlineStyle": "none",
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
-      "fontFamily": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif",
-      "fontSize": "12px",
+      "fontFamily": "\"Helvetica Monospaced Pro\", monospace",
+      "fontSize": "9px",
       "fontWeight": "400",
-      "lineHeight": "20px",
+      "lineHeight": "10.35px",
       "letterSpacing": "0.3px",
       "textTransform": "uppercase",
       "color": "rgb(0, 0, 0)",
@@ -3061,112 +3042,21 @@
       "cursor": "auto",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "header.header.skip-link-target",
-       "size": "1440.0x60.0",
-       "bg": "rgb(255, 255, 255)"
-      },
-      {
-       "node": "nav.header__nav",
-       "size": "1440.0x60.0",
-       "shadow": "rgb(242, 242, 242) 0px 1px 0px 0px inset, rgb(242, 242, 242) 0px -1px 0px 0px inset"
-      },
-      {
-       "node": "button.as-cell.link--main-nav",
-       "size": "70.5x60.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "button.as-cell.link--main-nav",
-       "size": "48.8x60.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "button.as-cell.link--main-nav",
-       "size": "56.2x60.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "button.as-cell.link--main-nav",
-       "size": "80.2x60.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "button.as-cell.link--main-nav",
-       "size": "57.2x60.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "button.header__icon-button.header__search-button",
-       "size": "94.5x60.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "div::after.tile.tile-type--content",
-       "size": "1440pxx810px",
-       "shadow": "rgb(0, 0, 0) 0px 0px 0px 1px inset"
-      },
-      {
-       "node": "div.as-cell.tile__pos--top",
-       "size": "1440.0x30.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "div.as-cell.tile__pos--top",
-       "size": "1440.0x30.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "div::after.tile.tile-type--content",
-       "size": "720pxx1080px",
-       "shadow": "rgb(0, 0, 0) 0px 0px 0px 1px inset"
-      },
-      {
-       "node": "div.as-cell.tile__pos--top",
-       "size": "720.0x30.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
-      },
-      {
-       "node": "div.as-cell.tile__pos--top",
-       "size": "720.0x30.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
-      }
-     ],
-     "textStyle": {
-      "node": "button.as-cell.link--main-nav",
-      "text": "Woman",
-      "fontFamily": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif",
-      "fontSize": "12px",
-      "lineHeight": "20px",
-      "fontWeight": "400",
-      "letterSpacing": "0.3px",
-      "color": "rgb(0, 0, 0)",
-      "textDecorationLine": "none",
-      "textTransform": "uppercase"
-     },
-     "icon": {
-      "w": 0,
-      "h": 0,
-      "fill": "none",
-      "stroke": "none",
-      "color": "rgb(0, 0, 0)"
+      "overflow": "clip",
+      "zIndex": "10",
+      "top": "329.4px"
      },
      "crop": "components/crops/hero-wordmark-default.png",
      "via": "at rest"
     }
    },
    "page": "home",
-   "run": "2026-11-08T21:20:46.539Z",
+   "run": "2026-11-10T03:55:09.109Z",
    "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Hero wordmark",
    "group": "Home",
-   "desc": "The giant white \"Acne Studios\" headline set over the campaign photo.",
-   "selector": "hero title"
+   "desc": "The giant white \"Acne Studios\" image headline set over the FW26 campaign photo.",
+   "selector": "hero wordmark image"
   },
   "gift-link": {
    "states": {
@@ -3580,7 +3470,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-08T21:20:46.539Z",
+   "run": "2026-11-10T03:55:09.109Z",
    "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Gift guide bar",
    "group": "Home",
@@ -3595,7 +3485,7 @@
      "text": "NEWSLETTER Receive news about Acne Studios collections, Acne Paper, events and s",
      "rect": {
       "x": 0,
-      "y": 327,
+      "y": 327.3,
       "w": 1440,
       "h": 572
      },
@@ -3762,9 +3652,9 @@
      "via": "at rest"
     }
    },
-   "page": "pdp",
-   "run": "2026-11-09T03:41:50.912Z",
-   "url": "https://www.acnestudios.com/sg/en/woman/new-arrivals/",
+   "page": "home",
+   "run": "2026-11-10T03:55:09.109Z",
+   "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Footer",
    "group": "Footer",
    "desc": "The page foot: newsletter signup, contact methods (Live chat / Call / Email), four link columns, social icons, the \"SHIPPING TO SINGAPORE (ENGLISH)\" region selector and a cookie-settings link.",
@@ -3778,7 +3668,7 @@
      "text": "NEWSLETTER",
      "rect": {
       "x": 10,
-      "y": 454,
+      "y": 454.3,
       "w": 430,
       "h": 20
      },
@@ -3856,9 +3746,9 @@
      "via": "at rest"
     }
    },
-   "page": "pdp",
-   "run": "2026-11-09T03:41:50.912Z",
-   "url": "https://www.acnestudios.com/sg/en/woman/new-arrivals/",
+   "page": "home",
+   "run": "2026-11-10T03:55:09.109Z",
+   "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Newsletter heading",
    "group": "Footer",
    "desc": "The NEWSLETTER block opening the footer, with the email field under it.",
@@ -3872,7 +3762,7 @@
      "text": "",
      "rect": {
       "x": 10,
-      "y": 463,
+      "y": 463.3,
       "w": 430,
       "h": 60
      },
@@ -3968,7 +3858,7 @@
      "text": "",
      "rect": {
       "x": 10,
-      "y": 463,
+      "y": 463.3,
       "w": 430,
       "h": 60
      },
@@ -4064,7 +3954,7 @@
      "text": "",
      "rect": {
       "x": 10,
-      "y": 463,
+      "y": 463.3,
       "w": 430,
       "h": 60
      },
@@ -4155,9 +4045,9 @@
      "via": "typed \"name@example.com\", then deleted; nothing sent"
     }
    },
-   "page": "pdp",
-   "run": "2026-11-09T03:41:50.912Z",
-   "url": "https://www.acnestudios.com/sg/en/woman/new-arrivals/",
+   "page": "home",
+   "run": "2026-11-10T03:55:09.109Z",
+   "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Newsletter email field",
    "group": "Footer",
    "desc": "The EMAIL text field in the footer: typed and deleted, never submitted.",
@@ -4171,7 +4061,7 @@
      "text": "CONTACT US",
      "rect": {
       "x": 10,
-      "y": 594,
+      "y": 594.3,
       "w": 340,
       "h": 20
      },
@@ -4249,9 +4139,9 @@
      "via": "at rest"
     }
    },
-   "page": "pdp",
-   "run": "2026-11-09T03:41:50.912Z",
-   "url": "https://www.acnestudios.com/sg/en/woman/new-arrivals/",
+   "page": "home",
+   "run": "2026-11-10T03:55:09.109Z",
+   "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Footer column title",
    "group": "Footer",
    "desc": "A column heading (HELP, CLIENT SERVICES, COMPANY, CONTACT US) in micro caps.",
@@ -4265,7 +4155,7 @@
      "text": "Contact us",
      "rect": {
       "x": 370,
-      "y": 624,
+      "y": 624.3,
       "w": 340,
       "h": 24
      },
@@ -4348,7 +4238,7 @@
      "text": "Contact us",
      "rect": {
       "x": 370,
-      "y": 624,
+      "y": 624.3,
       "w": 340,
       "h": 24
      },
@@ -4431,7 +4321,7 @@
      "text": "Contact us",
      "rect": {
       "x": 370,
-      "y": 624,
+      "y": 624.3,
       "w": 340,
       "h": 24
      },
@@ -4514,7 +4404,7 @@
      "text": "Contact us",
      "rect": {
       "x": 370,
-      "y": 624,
+      "y": 624.3,
       "w": 340,
       "h": 24
      },
@@ -4592,9 +4482,9 @@
      "via": "CDP forcePseudoState :active:hover"
     }
    },
-   "page": "pdp",
-   "run": "2026-11-09T03:41:50.912Z",
-   "url": "https://www.acnestudios.com/sg/en/woman/new-arrivals/",
+   "page": "home",
+   "run": "2026-11-10T03:55:09.109Z",
+   "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Footer link",
    "group": "Footer",
    "desc": "A blue footer link (Contact us, FAQs, Find a store).",
@@ -4608,7 +4498,7 @@
      "text": "IG",
      "rect": {
       "x": 567,
-      "y": 839,
+      "y": 839.3,
       "w": 33.45,
       "h": 30
      },
@@ -4698,7 +4588,7 @@
      "text": "IG",
      "rect": {
       "x": 567,
-      "y": 839,
+      "y": 839.3,
       "w": 33.45,
       "h": 30
      },
@@ -4788,7 +4678,7 @@
      "text": "IG",
      "rect": {
       "x": 567,
-      "y": 839,
+      "y": 839.3,
       "w": 33.45,
       "h": 30
      },
@@ -4878,7 +4768,7 @@
      "text": "IG",
      "rect": {
       "x": 567,
-      "y": 839,
+      "y": 839.3,
       "w": 33.45,
       "h": 30
      },
@@ -4963,9 +4853,9 @@
      "via": "CDP forcePseudoState :active:hover"
     }
    },
-   "page": "pdp",
-   "run": "2026-11-09T03:41:50.912Z",
-   "url": "https://www.acnestudios.com/sg/en/woman/new-arrivals/",
+   "page": "home",
+   "run": "2026-11-10T03:55:09.109Z",
+   "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Social link",
    "group": "Footer",
    "desc": "A two-letter social link (IG FB TW YT PT WB).",
@@ -4979,7 +4869,7 @@
      "text": "SHIPPING TO SINGAPORE (ENGLISH)",
      "rect": {
       "x": 1202.5,
-      "y": 844,
+      "y": 844.3,
       "w": 227.52,
       "h": 20
      },
@@ -5074,7 +4964,7 @@
      "text": "SHIPPING TO SINGAPORE (ENGLISH)",
      "rect": {
       "x": 1202.5,
-      "y": 844,
+      "y": 844.3,
       "w": 227.52,
       "h": 20
      },
@@ -5169,7 +5059,7 @@
      "text": "SHIPPING TO SINGAPORE (ENGLISH)",
      "rect": {
       "x": 1202.5,
-      "y": 844,
+      "y": 844.3,
       "w": 227.52,
       "h": 20
      },
@@ -5264,7 +5154,7 @@
      "text": "SHIPPING TO SINGAPORE (ENGLISH)",
      "rect": {
       "x": 1202.5,
-      "y": 844,
+      "y": 844.3,
       "w": 227.52,
       "h": 20
      },
@@ -5354,9 +5244,9 @@
      "via": "CDP forcePseudoState :active:hover"
     }
    },
-   "page": "pdp",
-   "run": "2026-11-09T03:41:50.912Z",
-   "url": "https://www.acnestudios.com/sg/en/woman/new-arrivals/",
+   "page": "home",
+   "run": "2026-11-10T03:55:09.109Z",
+   "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Region selector",
    "group": "Footer",
    "desc": "\"SHIPPING TO SINGAPORE (ENGLISH)\": the geo prompt serving the SG storefront. Hovered and focused only.",
@@ -15277,7 +15167,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T03:28:09.862Z",
+   "run": "2026-11-10T03:55:09.109Z",
    "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Mobile header",
    "group": "Mobile (390 wide)",
@@ -15684,7 +15574,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T03:28:09.862Z",
+   "run": "2026-11-10T03:55:09.109Z",
    "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Mobile menu button",
    "group": "Mobile (390 wide)",
@@ -15695,20 +15585,20 @@
    "states": {
     "default": {
      "tag": "nav",
-     "classes": "footer__top cell--span-16---medium-up grid---medium-up margin-bottom--large",
-     "text": "CONTACT US HELP CLIENT SERVICES COMPANY",
+     "classes": "navigation-state-container state-container--overflow-auto---small-down hide-for-large-up",
+     "text": "ACNESTUDIOS.COM CLOSE SEARCH WOMAN MAN BAGS SCARVES GIFTS WISHLIST 0 ACCOUNT / S",
      "rect": {
       "x": 0,
-      "y": 4716,
+      "y": 0,
       "w": 390,
-      "h": 180
+      "h": 844
      },
      "style": {
       "display": "block",
-      "position": "static",
+      "position": "fixed",
       "boxSizing": "border-box",
       "width": "390px",
-      "height": "180px",
+      "height": "844px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
@@ -15718,12 +15608,12 @@
       "paddingLeft": "0px",
       "marginTop": "0px",
       "marginRight": "0px",
-      "marginBottom": "60px",
+      "marginBottom": "0px",
       "marginLeft": "0px",
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
-      "flexDirection": "row",
+      "flexDirection": "column",
       "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
@@ -15743,7 +15633,7 @@
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
       "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(255, 255, 255)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -15762,98 +15652,102 @@
       "textDecorationColor": "rgb(0, 0, 0)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
+      "transitionProperty": "padding-bottom",
+      "transitionDuration": "0.15s",
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
       "cursor": "auto",
       "opacity": "1",
       "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
+      "overflow": "auto",
+      "zIndex": "109",
+      "top": "0px"
      },
      "paint": [
       {
-       "node": "button.link.show-for-small-down",
+       "node": "nav.navigation-state-container.state-container--overflow-auto---small-down",
+       "size": "390.0x844.0",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "div.state-container.cell--span-all",
+       "size": "390.0x46.0",
+       "border": "B:1px solid rgb(0, 0, 0)",
+       "bg": "rgb(255, 255, 255)"
+      },
+      {
+       "node": "a.as-cell.color--black",
+       "size": "144.6x45.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
+      },
+      {
+       "node": "button.as-cell.nav__search-button",
+       "size": "390.0x45.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)"
+      },
+      {
+       "node": "button.as-cell.link--main-nav",
        "size": "390.0x45.0",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "bgImage": "linear-gradient(rgb(242, 242, 242) 1px, rgba(0, 0, 0, 0) 0px)"
       },
       {
-       "node": "button.contact-method.as-cell---small-down",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
-       "bgImage": "linear-gradient(rgb(242, 242, 242) 1px, rgba(0, 0, 0, 0) 0px)"
-      },
-      {
-       "node": "a.contact-method.as-cell---small-down",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
-       "bgImage": "linear-gradient(rgb(242, 242, 242) 1px, rgba(0, 0, 0, 0) 0px)"
-      },
-      {
-       "node": "a.contact-method.as-cell---small-down",
-       "size": "0.0x0.0",
-       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
-       "bgImage": "linear-gradient(rgb(242, 242, 242) 1px, rgba(0, 0, 0, 0) 0px)"
-      },
-      {
-       "node": "button.link.show-for-small-down",
+       "node": "button.as-cell.link--main-nav",
        "size": "390.0x45.0",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "bgImage": "linear-gradient(rgb(242, 242, 242) 1px, rgba(0, 0, 0, 0) 0px)"
       },
       {
-       "node": "a.footer__nav-item.link",
-       "size": "0.0x0.0",
-       "bgImage": "linear-gradient(rgb(242, 242, 242) 1px, rgba(0, 0, 0, 0) 0px)"
-      },
-      {
-       "node": "a.footer__nav-item.link",
-       "size": "0.0x0.0",
-       "bgImage": "linear-gradient(rgb(242, 242, 242) 1px, rgba(0, 0, 0, 0) 0px)"
-      },
-      {
-       "node": "a.footer__nav-item.link",
-       "size": "0.0x0.0",
-       "bgImage": "linear-gradient(rgb(242, 242, 242) 1px, rgba(0, 0, 0, 0) 0px)"
-      },
-      {
-       "node": "a.footer__nav-item.link",
-       "size": "0.0x0.0",
-       "bgImage": "linear-gradient(rgb(242, 242, 242) 1px, rgba(0, 0, 0, 0) 0px)"
-      },
-      {
-       "node": "button.link.show-for-small-down",
+       "node": "button.as-cell.link--main-nav",
        "size": "390.0x45.0",
        "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "bgImage": "linear-gradient(rgb(242, 242, 242) 1px, rgba(0, 0, 0, 0) 0px)"
       },
       {
-       "node": "a.footer__nav-item.link",
-       "size": "0.0x0.0",
+       "node": "button.as-cell.link--main-nav",
+       "size": "390.0x45.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "bgImage": "linear-gradient(rgb(242, 242, 242) 1px, rgba(0, 0, 0, 0) 0px)"
       },
       {
-       "node": "a.footer__nav-item.link",
-       "size": "0.0x0.0",
+       "node": "button.as-cell.link--main-nav",
+       "size": "390.0x45.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "bgImage": "linear-gradient(rgb(242, 242, 242) 1px, rgba(0, 0, 0, 0) 0px)"
       },
       {
-       "node": "a.footer__nav-item.link",
-       "size": "0.0x0.0",
+       "node": "div.as-cell.border-top--concrete",
+       "size": "390.0x45.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "bgImage": "linear-gradient(rgb(242, 242, 242) 1px, rgba(0, 0, 0, 0) 0px)"
       },
       {
-       "node": "a.footer__nav-item.link",
-       "size": "0.0x0.0",
+       "node": "a.as-cell.link--main-nav",
+       "size": "390.0x45.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
+       "bgImage": "linear-gradient(rgb(242, 242, 242) 1px, rgba(0, 0, 0, 0) 0px)"
+      },
+      {
+       "node": "button.link--main-nav.show-for-small-down",
+       "size": "390.0x45.0",
+       "bgImage": "linear-gradient(rgb(242, 242, 242) 1px, rgba(0, 0, 0, 0) 0px)"
+      },
+      {
+       "node": "a.as-cell.link--main-nav",
+       "size": "390.0x45.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
+       "bgImage": "linear-gradient(rgb(242, 242, 242) 1px, rgba(0, 0, 0, 0) 0px)"
+      },
+      {
+       "node": "button.as-cell.flex",
+       "size": "390.0x45.0",
+       "border": "T:1px solid rgba(0, 0, 0, 0) | R:1px solid rgba(0, 0, 0, 0) | B:1px solid rgba(0, 0, 0, 0) | L:1px solid rgba(0, 0, 0, 0)",
        "bgImage": "linear-gradient(rgb(242, 242, 242) 1px, rgba(0, 0, 0, 0) 0px)"
       }
      ],
      "textStyle": {
-      "node": "button.link.show-for-small-down",
-      "text": "Contact Us",
+      "node": "a.as-cell.color--black",
+      "text": "Acnestudios.com",
       "fontFamily": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif",
       "fontSize": "12px",
       "lineHeight": "20px",
@@ -15863,12 +15757,19 @@
       "textDecorationLine": "none",
       "textTransform": "uppercase"
      },
+     "icon": {
+      "w": 12,
+      "h": 12,
+      "fill": "none",
+      "stroke": "none",
+      "color": "rgb(0, 0, 0)"
+     },
      "crop": "components/crops/m-menu-drawer-default.png",
      "via": "at rest"
     }
    },
    "page": "home",
-   "run": "2026-11-09T03:28:09.862Z",
+   "run": "2026-11-10T03:55:09.109Z",
    "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Mobile menu drawer",
    "group": "Mobile (390 wide)",
@@ -15883,7 +15784,7 @@
      "text": "ACNE STUDIOS GIFT GUIDE > SHOP WOMEN'S GIFT GUIDE > SHOP MEN'S GIFT GUIDE > SHOP",
      "rect": {
       "x": 0,
-      "y": -4188,
+      "y": 45,
       "w": 390,
       "h": 4251
      },
@@ -16046,7 +15947,7 @@
     }
    },
    "page": "home",
-   "run": "2026-11-09T03:28:09.862Z",
+   "run": "2026-11-10T03:55:09.109Z",
    "url": "https://www.acnestudios.com/sg/en/home",
    "title": "Mobile main",
    "group": "Mobile (390 wide)",

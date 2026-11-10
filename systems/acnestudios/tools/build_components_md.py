@@ -154,6 +154,8 @@ def props(v):
         o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'], role='text')}"
     elif v.get("text"):
         o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'], role='text')}"
+    if s.get("textDecorationLine") not in (None, "none"):
+        o["decoration"] = s["textDecorationLine"]
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
         durs = [x.strip() for x in s["transitionDuration"].split(",")]
@@ -353,6 +355,9 @@ for cid, c in C.items():
             tf = re.findall(r"cubic-bezier\([^)]*\)|steps\([^)]*\)|[a-z-]+", st["transitionTimingFunction"])
             trans[f"{st['transitionDuration'].split(',')[0].strip()} {tf[0] if tf else st['transitionTimingFunction']}"] += 1
         if sname == "focus-visible":
+            if "failed" in str(s.get("via", "")):
+                focus["focus could not be driven"] += 1
+                continue
             focus_n += 1
             if st["outlineStyle"] != "none" and float(st["outlineWidth"].replace("px", "")) > 0:
                 focus[f"{st['outlineWidth']} {st['outlineStyle']} {colour(st['outlineColor'], role='border')} offset {st['outlineOffset']}"] += 1

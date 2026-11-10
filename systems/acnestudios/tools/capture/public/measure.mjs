@@ -153,6 +153,8 @@ async function measure(key, state, target, opts = {}) {
 
 // Records the listed states of one component. meta: title, group, desc, sel.
 async function S(key, target, list, meta = {}, opts = {}) {
+  const prev = out.components[key];
+  const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   delete out.components[key].missing;
   if (opts.open) { await reset(); await opts.open(); }
@@ -161,6 +163,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
     const has = Object.keys(out.components[key].states || {}).length > 0;
     log('  ! missing', key, has ? '(earlier states kept)' : '');
     if (!has) out.components[key].missing = true;
+    else { Object.assign(out.components[key], keep); out.components[key].recaptureMissed = run; }
     return;
   }
   for (const st of list) {
@@ -238,7 +241,7 @@ async function shell(page_key = 'home') {
   const g = G.shell;
   await S('header', q('header.skip-link-target'), ['default'], { group: g, title: 'Header', desc: 'The fixed top bar: left the section triggers (WOMAN MAN BAGS SCARVES GIFTS on desktop, a Menu button on narrow), centre the Acne Studios wordmark, right SEARCH HELP ACCOUNT and the BAG count, in a two-zone black-on-white layout with hairline rules.', sel: 'header.skip-link-target' }, { noScroll: true });
   await S('nav-item', q('header button.link--main-nav[aria-label="Woman"]'), B4, { group: g, title: 'Nav item', desc: 'A section trigger (WOMAN MAN BAGS SCARVES GIFTS): all-caps micro type, opens the section mega-menu on press. Measured, the menu was opened once for its panel.', sel: 'header button.link--main-nav "WOMAN"' }, { noScroll: true });
-  await S('logo', q('header a').filter({ has: q('svg') }).first(), ['default'], { group: g, title: 'Wordmark', desc: 'The centred Acne Studios logotype, an SVG mark that links home.', sel: 'header a svg' }, { noScroll: true });
+  await S('logo', q('header .logo, header [class*="logo" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Wordmark', desc: 'The centred Acne Studios logotype image (215px), an img that links home.', sel: 'header .logo' }, { noScroll: true });
   await S('search-button', q('header .header__search-button'), B4, { group: g, title: 'Search button', desc: 'The SEARCH trigger opening the right-side search panel.', sel: '.header__search-button' }, { noScroll: true });
   await S('help-button', q('header button.link--main-nav[aria-label="Help"]'), B4, { group: g, title: 'Help button', desc: 'The HELP trigger in the header.', sel: 'header HELP button' }, { noScroll: true });
   await S('account-link', q('header a.link--main-nav[aria-label="Account"]'), B4, { group: g, title: 'Account link', desc: 'The ACCOUNT entry, an <a> to the sign-in page. Hovered and focused, never followed.', sel: 'header a[href*="account"]' }, { noScroll: true });
@@ -271,7 +274,13 @@ async function home() {
     if (!el) return false; el.setAttribute('data-m-mark', 'hero'); return true;
   });
   await S('hero', hero ? q('[data-m-mark="hero"]') : q('main > *').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero', desc: 'The full-bleed campaign band: black ground, a seasonal photo, the white Acne Studios wordmark set over it, a GIFT GUIDE eyebrow top-left and WOMEN\u2019S/MEN\u2019S GIFT GUIDE bars at the foot.', sel: 'first main band' });
-  await S('hero-wordmark', await domFind(page, /acne studios/i, { sel: 'h1, h2, [class*="title" i], span, div', tag: 'hw', minH: 30, leaf: false }), ['default'], { group: h, title: 'Hero wordmark', desc: 'The giant white "Acne Studios" headline set over the campaign photo.', sel: 'hero title' });
+  // The hero wordmark is the big centred alt-text image over the campaign
+  // photo — h1 is a 1px screen-reader clip and text matches reach the page root
+  await page.evaluate(() => {
+    const el = [...document.querySelectorAll('img[alt="Acne Studios"]')].find((n) => n.getBoundingClientRect().width > 500);
+    if (el) el.setAttribute('data-m-mark', 'hw');
+  });
+  await S('hero-wordmark', q('[data-m-mark="hw"]').first(), ['default'], { group: h, title: 'Hero wordmark', desc: 'The giant white "Acne Studios" image headline set over the FW26 campaign photo.', sel: 'hero wordmark image' });
   await S('gift-link', await domFind(page, /gift guide/i, { sel: '.as-cell.tile__pos--top, [class*="tile" i] .as-cell, a', tag: 'gg', minH: 20 }), B4, { group: h, title: 'Gift guide bar', desc: 'A hero-foot link bar (WOMEN\u2019S GIFT GUIDE / MEN\u2019S GIFT GUIDE).', sel: 'gift guide link' });
   await footerRun();
   await page.close();
@@ -408,16 +417,19 @@ async function mobile() {
   const g = G.mobile;
   await S('m-header', q('header.skip-link-target'), ['default'], { group: g, title: 'Mobile header', desc: 'The bar at 390: a Menu button, the wordmark and the bag count only.', sel: 'header' }, { noScroll: true });
   await S('m-menu-button', q('header button.header__icon-button').filter({ hasText: /menu/i }).first(), B4, { group: g, title: 'Mobile menu button', desc: 'The Menu trigger; opens the drawer.', sel: 'm menu button' }, { noScroll: true });
-  await domClick(page, /menu/i, 'header button.header__icon-button');
+  // The Menu trigger is icon-only (aria-label, no text); the drawer is a
+  // .navigation-state-container overlay, not a nav/aside element
+  await page.locator('header button[aria-label="Menu" i]').first().click().catch(() => {});
   await page.waitForTimeout(1200);
   const drawer = await page.evaluate(() => {
-    const el = [...document.querySelectorAll('nav, aside, [class*="menu" i], [role="dialog"]')].filter((n) => {
-      const r = n.getBoundingClientRect();
-      return r.width > 200 && r.height > 300 && /WOMAN|MAN/i.test(n.innerText || '');
-    })[0];
+    const el = document.querySelector('.navigation-state-container')
+      || [...document.querySelectorAll('[class*="nav" i]')].find((n) => {
+        const r = n.getBoundingClientRect();
+        return r.width > 200 && r.height > 300 && /WOMAN|MAN/i.test(n.innerText || '');
+      });
     if (!el) return false; el.setAttribute('data-m-mark', 'md'); return true;
   });
-  await S('m-menu-drawer', drawer ? q('[data-m-mark="md"]') : q('nav').filter({ visible: true }).last(), ['default'], { group: g, title: 'Mobile menu drawer', desc: 'The navigation drawer the Menu button opens.', sel: 'mobile drawer' }, { noScroll: true });
+  await S('m-menu-drawer', drawer ? q('[data-m-mark="md"]') : page.locator('__none__'), ['default'], { group: g, title: 'Mobile menu drawer', desc: 'The navigation drawer the Menu button opens.', sel: 'mobile drawer' }, { noScroll: true });
   await S('m-hero', q('main').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile main', desc: 'The mobile page canvas under the header.', sel: 'main' }, { noScroll: true, open: async () => { await page.keyboard.press('Escape'); await page.evaluate(() => { document.querySelectorAll('[data-m-mark="md"]').forEach((n) => { n.style.display = 'none'; }); }); await page.waitForTimeout(500); } });
   await page.close();
 }
