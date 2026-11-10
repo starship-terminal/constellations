@@ -150,7 +150,7 @@ const flat = (node, prefix = '') => Object.entries(node).flatMap(([k, v]) => v &
 (function palette() {
   let h = '';
   for (const [g, grp] of Object.entries(TOK.core.palette)) {
-    const items = flat(grp, 'palette.' + g + '.').filter(([, t]) => t.t === 'color');
+    const items = (grp && grp.t ? [['palette.' + g, grp]] : flat(grp, 'palette.' + g + '.')).filter(([, t]) => t.t === 'color');
     if (!items.length) continue;
     h += `<div class="pal-h">${esc(g)}</div><div class="pal">`;
     for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
@@ -173,7 +173,7 @@ const flat = (node, prefix = '') => Object.entries(node).flatMap(([k, v]) => v &
     const ref = (x) => String(x).replace(/[{}]/g, '');
     const get = (p) => p.split('.').reduce((o, k) => o && o[k], TOK.core);
     const fam = /mono/.test(ref(v.fontFamily)) ? 'var(--sg-mono)' : /serif/.test(ref(v.fontFamily)) ? 'var(--sg-serif)' : 'var(--sg-sans)';
-    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(ref(v.fontSize))} / ${esc(ref(v.lineHeight))} · w ${esc(String(v.fontWeight))}</small></div><div class="sample" style="font-family:${fam};font-size:${esc(ref(v.fontSize))};line-height:${esc(ref(v.lineHeight))};font-weight:${v.fontWeight}">The quick brown fox jumps over the lazy dog</div></div>`;
+    h += `<div class="typerow"><div class="k">${esc(n)}<small>${esc(ref(v.fontSize))} / ${esc(ref(v.lineHeight))} · w ${esc(String(v.fontWeight))}</small></div><div class="sample" style="font-family:${fam};font-size:${esc(ref(v.fontSize))};line-height:${esc(ref(v.lineHeight))};font-weight:${v.fontWeight};letter-spacing:${v.letterSpacing ? esc(ref(v.letterSpacing)) : '0'}">The quick brown fox jumps over the lazy dog</div></div>`;
   }
   $('#type-out').innerHTML = h;
 })();

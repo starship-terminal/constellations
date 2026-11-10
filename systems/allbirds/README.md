@@ -14,7 +14,7 @@ Allbirds is the first retail commerce capture in the library. Its design is a cl
 | [patterns.md](patterns.md) | How the components combine: storefront chrome, browse to product, filtering, selection states, the cart drawer, mega-menu, search, the mobile menu drawer, forms and content pages, each with its screenshots |
 | [components/crops/](components/crops) | 92 element screenshots, `{component}-{state}.png`, at 2x |
 | [screenshots/](screenshots) | 32 `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 1x and `mobile-*` shots 390 x 844 at 2x; `-full` shots are whole pages at the same width and scale |
-| [raw/](raw) | The unprocessed readings: every custom property resolved from the live CSSOM with font faces and the transition index (`css-vars.json`); per-component computed styles (`components-computed.json`, and `measurements.md` built from it); the token tree the builder reads (`component-tokens.json`); the tour's full-colour PNGs before quantize.py 256-colours them into screenshots/ |
+| [raw/](raw) | The unprocessed readings: every custom property resolved from the live CSSOM with font faces and the transition index (`css-vars.json`); per-component computed styles (`components-computed.json`, and `measurements.md` built from it); the token tree the builder reads (`component-tokens.json`); the tour's full-colour PNGs in `full/` before quantize.py 256-colours them into screenshots/ |
 | [tools/](tools) | The three builders (`build_tokens.py`, `build_style_guide.py`, `build_components_md.py`), the style-guide template, and the capture kit under `capture/` (`public/` holds the tour, the measure runner and their library; `vars.mjs` resolves the CSSOM variables; `quantize.py` re-encodes screenshots to 256 colours). See Rebuild |
 
 ## Brief
@@ -72,8 +72,6 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 <!-- health:end -->
 
-## Health
-
 ## How the values were read
 
 Everything was read from the running page, signed out, in headless Chromium.
@@ -115,16 +113,16 @@ Three families, all Allbirds' own woff2 served from theme assets (`fonts` in [ra
 
 ```sh
 # from the package root (systems/allbirds); Playwright comes from ~/.design-systems/pw
-node tools/capture/public/public.mjs        # the screenshot tour into raw/ (full colour)
-node tools/capture/public/measure.mjs all   # component readings into raw/components-computed.json
+node tools/capture/public/public.mjs        # the screenshot tour into raw/full/ (full colour)
+node tools/capture/public/measure.mjs       # component readings into raw/components-computed.json
                                           # (or a page list: home,collection,product,search,account,mobile)
 node tools/capture/vars.mjs                 # CSSOM variables into raw/css-vars.json
 node tools/capture/public/build-measurements.mjs   # raw/measurements.md
-python3 tools/capture/quantize.py raw       # 256-colour screenshots into screenshots/
+python3 tools/capture/quantize.py raw/full  # 256-colour screenshots into screenshots/
 python3 tools/build_tokens.py               # tokens.json from raw/component-tokens.json + css-vars.json
 python3 tools/build_style_guide.py          # style-guide.html from tokens.json + the template
 python3 tools/build_components_md.py        # components.md from the readings, crops and screenshots
-python3 ../../tools/fetch_icon.py allbirds  # icon.png
+cd ../.. && python3 tools/fetch_icon.py allbirds   # icon.png (repo-root tool)
 ```
 
 Then from the repo root, `make design-md` regenerates `DESIGN.md` and this README's Brief, `make grade` refreshes Health, and `make check` verifies all three.

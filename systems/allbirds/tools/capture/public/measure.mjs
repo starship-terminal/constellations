@@ -136,6 +136,8 @@ async function measure(key, state, target, opts = {}) {
 
 // Records the listed states of one component. meta: title, group, desc, sel.
 async function S(key, target, list, meta = {}, opts = {}) {
+  const prev = out.components[key];
+  const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   delete out.components[key].missing;
   if (opts.open) { await reset(); await opts.open(); }
@@ -144,6 +146,7 @@ async function S(key, target, list, meta = {}, opts = {}) {
     const has = Object.keys(out.components[key].states || {}).length > 0;
     log('  ! missing', key, has ? '(earlier states kept)' : '');
     if (!has) out.components[key].missing = true;
+    else { Object.assign(out.components[key], keep); out.components[key].recaptureMissed = run; }
     return;
   }
   for (const st of list) {
@@ -259,7 +262,7 @@ async function home() {
 
   const h = G.home;
   await S('hero', q('h1').filter({ visible: true }).first().locator('xpath=ancestor::*[self::section or contains(@class,"rounded")][1]'), ['default'], { group: h, title: 'Hero', desc: 'The first band: a rounded-corner photo card carrying the "Wildly Comfortable. Super Natural." headline and the two pill CTAs.', sel: 'hero container' }, { noScroll: true });
-  await S('hero-title', q('h1').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero title', desc: 'Display copy in the brand serif, fluid-sized.', sel: 'h1' }, { noScroll: true });
+  await S('hero-title', q('h1').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero title', desc: 'The home hero headline: it renders in Geograph (24px/32px, 0.6px tracking), not the brand serif.', sel: 'h1' }, { noScroll: true });
   await S('cta-primary', q('a.btn.btn-primary').filter({ visible: true }).first(), B4, { group: h, title: 'Primary button', desc: '.btn.btn-primary: the white pill CTA ("SHOP MEN"), xs medium uppercase tracking-wider.', sel: 'a.btn.btn-primary' }, { noScroll: true });
   await S('cta-outline-white', q('a.btn.btn-outline-white').filter({ visible: true }).first(), ['default', 'hover'], { group: h, title: 'Outline button', desc: '.btn.btn-outline-white: the bordered pill used on category cards.', sel: 'a.btn.btn-outline-white' }, { noScroll: true });
   await S('section-title', q('h2.font-serif').filter({ visible: true }).first(), ['default'], { group: h, title: 'Section title', desc: 'Marketing section headline in the brand serif, fluid 30-40px.', sel: 'h2.font-serif' });
@@ -391,7 +394,7 @@ const RUNNERS = { geo, home, collection, product, search, account, mobile };
 run = new Date().toISOString();
 out._meta.run = run;
 out._meta.product = 'allbirds.com (Shopify)';
-const wanted = process.argv.slice(2).join(',').split(',').map((s) => s.trim()).filter(Boolean);
+const wanted = process.argv.slice(2).join(',').split(',').map((s) => s.trim()).filter((s) => s && s !== 'all');
 ({ context } = await launch());
 for (const [k, fn] of Object.entries(RUNNERS)) {
   if (wanted.length && !wanted.includes(k)) continue;

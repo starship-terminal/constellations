@@ -33,6 +33,7 @@ class Shooter {
     const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
     const f = `${RAW}/${this.prefix}-${name}`;
+    for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
     if (H <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
     else for (let i = 0, y = 0; y < H; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, H - y) } }, this.requested);
     this.count++; log('  shot', name, 'H=' + H);
@@ -86,7 +87,7 @@ const desktop = {
   home: { path: '/', run: async (p, S) => {
     await closePromo(p);
     await S.view('default');
-    await step('menu', async () => { await openMenu(p); await S.view('menu'); });
+    await step('menu', async () => { await openMenu(p); await S.view('menu'); await p.mouse.move(10, 10); await wait(p, 800); });
     await step('search', async () => { if (await openSearch(p)) { await S.view('search'); await p.keyboard.press('Escape'); await wait(p, 600); } });
     await S.full();
   } },
@@ -131,7 +132,7 @@ const mobile = {
     await S.view('default');
     await step('menu', async () => {
       const m = p.locator('button.header-mobile-menu, .header-mobile-menu button, header button[aria-label*="menu" i], header button[aria-expanded]').filter({ visible: true }).first();
-      if (await m.count()) { await clickEl(m); await wait(p, 1500); await S.view('menu'); }
+      if (await m.count()) { await clickEl(m); await wait(p, 1500); await S.view('menu'); await p.keyboard.press('Escape'); await wait(p, 800); }
     });
     await S.full();
   } },

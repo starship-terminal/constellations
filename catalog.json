@@ -3478,7 +3478,9 @@
         "harness": "Devin",
         "model": "SWE-2 Max",
         "route": "public-web",
-        "durationMin": null
+        "durationMin": null,
+        "pr": "https://github.com/c-wenlong/designs/pull/438",
+        "durationNote": "wall-clock duration was not recorded for this capture"
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run on this capture; the storefront's inline SVGs (bag, search, chevrons, plus) are visible in the crops and screenshots"

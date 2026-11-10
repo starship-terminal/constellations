@@ -40,7 +40,7 @@ Option picking is a two-step grammar: `swatch` circles pick colour (the held one
 
 Hovering MEN or WOMEN opens the flyout under the nav bar: category columns with small circular swatch images and uppercase links, over the same `background.surface` white.
 
-- [home-light-menu](screenshots/home-light-menu.png), [mega-menu](components/crops/mega-menu-open.png)
+- [home-light-menu](screenshots/home-light-menu.png), [mega-menu](components/crops/mega-menu-default.png)
 
 ## Search
 
