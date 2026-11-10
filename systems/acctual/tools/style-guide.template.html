@@ -113,7 +113,7 @@ table.t td.src { color: var(--text); opacity: .55; font-size: 12px; }
 .ac-check i { width: 16px; height: 16px; border-radius: 50%; background: var(--accent); display: inline-block; }
 
 /* persona card: page-coloured, 16px corners */
-.ac-card { display: block; width: 326px; max-width: 100%; border-radius: var(--component-card-radius); padding: var(--component-card-padding); background: var(--component-card-bg); color: var(--text); border: 1px solid var(--border); }
+.ac-card { display: block; width: 326px; max-width: 100%; border-radius: var(--component-card-radius); padding: var(--component-card-padding); background: var(--component-card-bg); color: var(--text); }
 .ac-card h5 { margin: 0 0 6px; font: 600 var(--font-size-lead)/var(--font-leading-lead) var(--sg-sans); letter-spacing: var(--font-tracking-lead); }
 .ac-card p { margin: 0; font: 500 var(--font-size-caption)/var(--font-leading-caption) var(--sg-sans); color: var(--muted); }
 .ac-card .go { margin-top: var(--spacing-lg); font: 500 var(--font-size-body)/var(--font-leading-body) var(--sg-sans); color: var(--accent); }
@@ -132,8 +132,8 @@ table.t td.src { color: var(--text); opacity: .55; font-size: 12px; }
 .ac-faq .q .pm::before { left: 0; right: 0; top: 8px; height: 2px; }
 .ac-faq .q .pm::after { top: 0; bottom: 0; left: 8px; width: 2px; }
 .ac-faq .a { font: 500 var(--font-size-body)/var(--font-leading-body) var(--sg-sans); color: var(--grey); padding: 10px 0 0; display: none; }
-.ac-faq.open .a { display: block; }
-.ac-faq.open .q .pm::after { display: none; }
+.ac-faq .q.open + .a { display: block; }
+.ac-faq .q.open .pm::after { display: none; }
 .ac-faq .sep { height: 1px; background: var(--component-hairline); margin: var(--spacing-lg) 0; }
 
 /* the announcement strip */
@@ -254,8 +254,8 @@ table.t td.src { color: var(--text); opacity: .55; font-size: 12px; }
 </div>
 <div class="states" style="margin-top:24px">
 <div class="cell" style="flex:1;min-width:340px">
-<div class="ac-faq open">
-<div class="q">Is Acctual really free invoicing software?<span class="pm"></span></div>
+<div class="ac-faq">
+<div class="q open">Is Acctual really free invoicing software?<span class="pm"></span></div>
 <div class="a">Yes. Acctual is free for freelancers and small businesses; payment processing fees still apply.</div>
 <div class="sep"></div>
 <div class="q">How fast do I get paid?<span class="pm"></span></div>

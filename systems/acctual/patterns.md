@@ -36,7 +36,7 @@ How Acctual's components combine to do the recurring jobs on its public marketin
 
 **When.** The pricing page and the home hero's fee bullets: the product argues on cost with a simple comparison table.
 
-**Components.** [Page title](components.md#page-title), [Fee comparison row](components.md#fee-comparison-row), [Page CTA](components.md#page-cta).
+**Components.** [Page title](components.md#pricing-title), [Fee comparison row](components.md#fee-comparison-row), [Page CTA](components.md#page-cta).
 
 **Layout.** The comparison table alternates white cells on `row` (#f0f0f0 at 95%) separated by `#dbdbdb` hairlines, 64px rows across the 1024px column; a 48/56 page title tops the page and the dark capsule CTA closes it. The same fee numbers appear on the home hero as blue check bullets — the accent is the only colour in the argument.
 
@@ -46,9 +46,9 @@ How Acctual's components combine to do the recurring jobs on its public marketin
 
 **When.** The templated acquisition pages: persona pages (freelancer-invoicing), product pages (stablecoin-invoicing) and ~30 /locations/* corridors (us-to-japan captured).
 
-**Components.** Page title and Page CTA per template ([freelancer-invoicing](components.md#page-title-2), [stablecoin-invoicing](components.md#page-title-3), [location](components.md#page-title-4)), [Section title](components.md#section-title-2).
+**Components.** Page title and Page CTA per template ([freelancer-invoicing](components.md#freelancer-invoicing-title), [stablecoin-invoicing](components.md#stablecoin-invoicing-title), [location](components.md#location-title)), [Section title](components.md#stablecoin-invoicing-section).
 
-**Layout.** These swap Open Runde for Selecta: dark hero panels run the Medium face at 72/72 or 64/64 (white text on `#0d111b`-class dark fills), interior sections at 56/56. The shell and the dark capsule CTA are unchanged; body copy sits darker at black-90 on the product pages. One template serves every corridor and persona — capture one, and the rest differ only in copy and imagery.
+**Layout.** The product and corridor pages swap Open Runde for Selecta: dark hero panels run the Medium face at 72/72 (stablecoin) or 64/64 (location, white text on `#0d111b`-class dark fills), interior sections at 56/56. The freelancer persona page keeps the marketing fonts: Open Runde 48/56 on its title and 40/48 on sections. The shell and the dark capsule CTA are unchanged across all of them; body copy sits darker at black-90 on the product pages. One template serves every corridor and persona — capture one, and the rest differ only in copy and imagery.
 
 **Screens.** [stablecoin-invoicing-light-default](screenshots/stablecoin-invoicing-light-default.png), [freelancer-invoicing-light-full](screenshots/freelancer-invoicing-light-full.png), [location-light-full](screenshots/location-light-full.png).
 
@@ -56,7 +56,7 @@ How Acctual's components combine to do the recurring jobs on its public marketin
 
 **When.** Terms and privacy: the same shell carrying a heading and long grey body copy.
 
-**Components.** [Page title](components.md#page-title-5), [Body text](components.md#body-text).
+**Components.** [Page title](components.md#terms-title), [Body text](components.md#terms-body).
 
 **Layout.** A 64px semibold title (terms, privacy) over Selecta Regular 18/28 body in `#666`, running the full length of the column; nothing else on the page but the shell. These pages are the longest captures (terms is ~24,400px at 1440) and tile under the 8-chunk cap.
 

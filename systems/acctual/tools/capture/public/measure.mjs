@@ -141,6 +141,10 @@ async function pickVisible(target) {
   return page.locator('[data-m-none]'); // matches nothing -> the component reads missing
 }
 
+// ONLY=key1,key2 limits the run to those components, so a wrong selector's
+// entries can be recaptured without re-measuring every control on the page.
+const ONLY = new Set((process.env.ONLY || '').split(',').map((s) => s.trim()).filter(Boolean));
+
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
   Object.assign(c, { page: current, run, url: URLS[current] && (URLS[current].startsWith('http') ? URLS[current] : BASE + URLS[current]) }, meta);
@@ -171,6 +175,7 @@ async function measure(key, state, target, opts = {}) {
 
 // Records the listed states of one component. meta: title, group, desc, sel.
 async function S(key, target, list, meta = {}, opts = {}) {
+  if (ONLY.size && !ONLY.has(key)) return;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   delete out.components[key].missing;
   if (opts.open) { await reset(); await opts.open(); }
@@ -193,6 +198,12 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = 'mouse hover';
       } else if (st === 'focus-visible') {
         via = await kbFocus((opts.focusLoc || loc).filter({ visible: true }).first());
+        // a focus the keyboard never reached is not a captured state: record
+        // it as an error so builders do not count it among real focuses
+        if (via === 'focus failed') {
+          out.components[key].states[st] = { error: 'keyboard focus never reached the control', via: 'focus failed' };
+          continue;
+        }
       } else if (st === 'pressed') {
         undo = await forcePseudo((opts.pressLoc || loc).filter({ visible: true }).first(), ['active', 'hover']);
         via = 'CDP forcePseudoState :active:hover';
@@ -269,7 +280,7 @@ async function shell(ctxPage = 'home') {
   const g = G.shell;
   const nav = q('[data-framer-name="Navigation/Topbar"], [data-framer-name="Desktop"], header, nav').filter({ visible: true }).first();
   await S('nav-bar', nav, ['default'], { group: g, title: 'Top navigation bar', desc: 'The top bar: wordmark, Freelancer / Agency / Pricing / Blog links, Log in and the Sign-up pill.', sel: 'nav topbar' }, { noScroll: true });
-  await S('nav-logo', q('a').filter({ has: page.locator('[data-framer-name="Logo"], [data-framer-name="logo"], svg, img') }).first(), B4, { group: g, title: 'Logo', desc: 'The Acctual wordmark linking home.', sel: 'nav logo a' }, { noScroll: true });
+  await S('nav-logo', q('[data-framer-name="Desktop"] a[href="./"], [data-framer-name="Navigation/Topbar"] a[href="./"], nav a[href="./"], header a[href="./"]').filter({ visible: true }).first(), B4, { group: g, title: 'Logo', desc: 'The Acctual wordmark linking home.', sel: 'nav logo a' }, { noScroll: true });
   await S('nav-link', q('a').filter({ hasText: 'Pricing' }).first(), B4, { group: g, title: 'Nav link', desc: 'A section link in the top bar.', sel: 'nav a' }, { noScroll: true });
   await S('nav-cta', q('a').filter({ hasText: 'Sign up for free' }).first(), B4, { group: g, title: 'Nav CTA', desc: 'The "Sign up for free" pill. Hovered and focused only; app.acctual.com is never opened.', sel: 'nav cta' }, { noScroll: true });
   await S('nav-login', q('a').filter({ hasText: 'Log in' }).first(), B4, { group: g, title: 'Log-in link', desc: 'The plain Log-in link beside the CTA. app.acctual.com is never opened.', sel: 'nav login' }, { noScroll: true });

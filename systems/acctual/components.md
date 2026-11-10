@@ -8,7 +8,7 @@ How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `system-ui 64/70.4 600, #262626`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (89 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (88 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -44,7 +44,7 @@ Screenshots are named `{page}-light-{state}.png` (acctual.com has one theme). De
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 13 components were given a real keyboard focus. 12 draw a ring: `nav-logo` (1px auto #005fcc `focus`, offset 1px), `nav-link` (1px auto #005fcc `focus`, offset 1px), `nav-cta` (1px auto #005fcc `focus`, offset 1px), `nav-login` (1px auto #005fcc `focus`, offset 1px), `announcement` (1px auto #005fcc `focus`, offset 1px), `footer-link` (1px auto #005fcc `focus`, offset 1px), `plan-cta` (1px auto #005fcc `focus`, offset 1px), `blog-post-link` (1px auto #005fcc `focus`, offset 1px), `altitude-link` (1px auto #005fcc `focus`, offset 1px), `freelancer-invoicing-cta` (1px auto #005fcc `focus`, offset 1px), `stablecoin-invoicing-cta` (1px auto #005fcc `focus`, offset 1px), `location-cta` (1px auto #005fcc `focus`, offset 1px). The other 1 draw none, so a keyboard user sees no change: `m-menu-trigger`.
+**Focus.** 12 components were given a real keyboard focus. 12 draw a ring: `nav-logo` (1px auto #005fcc `focus`, offset 1px), `nav-link` (1px auto #005fcc `focus`, offset 1px), `nav-cta` (1px auto #005fcc `focus`, offset 1px), `nav-login` (1px auto #005fcc `focus`, offset 1px), `announcement` (1px auto #005fcc `focus`, offset 1px), `footer-link` (1px auto #005fcc `focus`, offset 1px), `plan-cta` (1px auto #005fcc `focus`, offset 1px), `blog-post-link` (1px auto #005fcc `focus`, offset 1px), `altitude-link` (1px auto #005fcc `focus`, offset 1px), `freelancer-invoicing-cta` (1px auto #005fcc `focus`, offset 1px), `stablecoin-invoicing-cta` (1px auto #005fcc `focus`, offset 1px), `location-cta` (1px auto #005fcc `focus`, offset 1px). The other 0 draw none, so a keyboard user sees no change: .
 
 **Pressed.** Forced `:active` was applied to the buttons and links above; the buttons keep their fills, and Framer's stylesheet paints the links `#ff0000` under `:active`. See each entry's Pressed row for what did move.
 
@@ -57,14 +57,14 @@ Values that apply across entries, from the measurement files.
 
 | Page | 1440 | 1920 | 1024 | 390 |
 |---|---|---|---|---|
-| home | content x 0, 1440 wide; grid 325.3 325.3 325.3 gap 24px | content x 0, 1920 wide; grid 325.3 325.3 325.3 gap 24px | content x 0, 1024 wide; grid 476 476 gap 24px | content x 0, 390 wide; grid 171 171 gap 0px |
-| pricing | content x 0, 1440 wide | content x 0, 1920 wide | content x 0, 1024 wide | content x 0, 390 wide; grid 171 171 gap 0px |
-| teams | content x 0, 1440 wide | content x 0, 1920 wide | content x 0, 1024 wide; grid 428 428 gap 24px | content x 0, 390 wide; grid 171 171 gap 0px |
-| about | content x 0, 1440 wide | content x 0, 1920 wide | content x 0, 1024 wide; grid 428 428 gap 24px | content x 0, 390 wide; grid 171 171 gap 0px |
-| blog | content x 0, 1440 wide | content x 0, 1920 wide | content x 0, 1024 wide | content x 0, 390 wide; grid 171 171 gap 0px |
-| freelancer-invoicing | content x 0, 1440 wide | content x 0, 1920 wide | content x 0, 1024 wide | content x 0, 390 wide; grid 171 171 gap 0px |
-| stablecoin-invoicing | content x 0, 1440 wide | content x 0, 1920 wide | content x 0, 1024 wide | content x 0, 390 wide; grid 171 171 gap 0px |
-| location | content x 0, 1440 wide; grid 508 508 gap 24px | content x 0, 1920 wide; grid 508 508 gap 24px | content x 0, 1024 wide; grid 460 460 gap 24px | content x 0, 390 wide; grid 171 171 gap 0px |
+| home | content x 208, 1024 wide; grid 325.3 325.3 325.3 gap 24px | content x 448, 1024 wide; grid 325.3 325.3 325.3 gap 24px | content x 0, 1024 wide; grid 476 476 gap 24px | content x 24, 342 wide; grid 171 171 gap 0px |
+| pricing | content x 208, 1024 wide | content x 448, 1024 wide | content x 0, 1024 wide | content x 0, 390 wide; grid 171 171 gap 0px |
+| teams | content x 208, 1024 wide | content x 448, 1024 wide | content x 0, 1024 wide; grid 428 428 gap 24px | content x 24, 342 wide; grid 171 171 gap 0px |
+| about | content x 208, 1024 wide | content x 448, 1024 wide | content x 0, 1024 wide; grid 428 428 gap 24px | content x 24, 342 wide; grid 171 171 gap 0px |
+| blog | content x 204, 1032 wide | content x 444, 1032 wide | content x 0, 1024 wide | content x 0, 390 wide; grid 171 171 gap 0px |
+| freelancer-invoicing | content x 208, 1024 wide | content x 448, 1024 wide | content x 0, 1024 wide | content x 24, 342 wide; grid 171 171 gap 0px |
+| stablecoin-invoicing | content x 120, 1200 wide | content x 360, 1200 wide | content x 50, 924 wide | content x 16, 358 wide; grid 171 171 gap 0px |
+| location | content x 292, 856 wide; grid 508 508 gap 24px | content x 532, 856 wide; grid 508 508 gap 24px | content x 125, 775 wide; grid 460 460 gap 24px | content x 16, 358 wide; grid 171 171 gap 0px |
 
 **Card shapes.** Default-state values; the entries hold the states.
 
@@ -83,7 +83,7 @@ Values that apply across entries, from the measurement files.
 
 The shell every page shares: a top bar with the Acctual wordmark, the Freelancer / Agency / Pricing / Blog links, Log in and the dark Sign-up pill, under the 'Acctual is joining Altitude' announcement strip; and a footer with the 'Create the world&rsquo;s most flexible invoice in seconds' heading, link columns and the 'from NYC' credit.
 
-#### Top navigation bar
+#### Top navigation bar <a id="nav-bar"></a>
 The top bar: wordmark, Freelancer / Agency / Pricing / Blog links, Log in and the Sign-up pill. Read as `nav-bar` on the home page.
 
 **Values (default).** size 1440 x 80; padding 0px 20px; background transparent; text Inter 14/24 500, #0098f2 `blue`; icon 14 x 14, #0000ee.
@@ -92,18 +92,20 @@ Child layers that carry the look: div 1034x80 background rgba(245, 245, 245, 0.6
 
 ![Top navigation bar default](components/crops/nav-bar-default.png)
 
-#### Logo
+#### Logo <a id="nav-logo"></a>
 The Acctual wordmark linking home. Read as `nav-logo` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 1034 x 32; padding 4px 14px 4px 20px; background transparent; text Inter 14/24 500, #0098f2 `blue`; icon 14 x 14, #0000ee |
+| default (same: hover) | size 112 x 32; padding 8px 0px; background transparent; text sans-serif 12/normal 400, #0000ee |
 | focus-visible | outline 1px auto #005fcc `focus`, offset 1px |
-| pressed | icon 14 x 14, #ff0000 `pressed` |
+| pressed | text sans-serif 12/normal 400, #ff0000 `pressed` |
+
+Child layers that carry the look: div 112x16 image url(data:…)%22></path><path d=%22M 17.846 0.4 C 17.846 0.179 17.667 0 17.446 0 L 14.554 0 .
 
 ![Logo default](components/crops/nav-logo-default.png) ![Logo hover](components/crops/nav-logo-hover.png) ![Logo focus-visible](components/crops/nav-logo-focus-visible.png) ![Logo pressed](components/crops/nav-logo-pressed.png)
 
-#### Nav link
+#### Nav link <a id="nav-link"></a>
 A section link in the top bar. Read as `nav-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
@@ -114,7 +116,7 @@ A section link in the top bar. Read as `nav-link` on the home page.
 
 ![Nav link default](components/crops/nav-link-default.png) ![Nav link hover](components/crops/nav-link-hover.png) ![Nav link focus-visible](components/crops/nav-link-focus-visible.png) ![Nav link pressed](components/crops/nav-link-pressed.png)
 
-#### Nav CTA
+#### Nav CTA <a id="nav-cta"></a>
 The "Sign up for free" pill. Hovered and focused only; app.acctual.com is never opened. Read as `nav-cta` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
@@ -125,7 +127,7 @@ The "Sign up for free" pill. Hovered and focused only; app.acctual.com is never 
 
 ![Nav CTA default](components/crops/nav-cta-default.png) ![Nav CTA hover](components/crops/nav-cta-hover.png) ![Nav CTA focus-visible](components/crops/nav-cta-focus-visible.png) ![Nav CTA pressed](components/crops/nav-cta-pressed.png)
 
-#### Log-in link
+#### Log-in link <a id="nav-login"></a>
 The plain Log-in link beside the CTA. app.acctual.com is never opened. Read as `nav-login` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
@@ -136,7 +138,7 @@ The plain Log-in link beside the CTA. app.acctual.com is never opened. Read as `
 
 ![Log-in link default](components/crops/nav-login-default.png) ![Log-in link hover](components/crops/nav-login-hover.png) ![Log-in link focus-visible](components/crops/nav-login-focus-visible.png) ![Log-in link pressed](components/crops/nav-login-pressed.png)
 
-#### Announcement banner
+#### Announcement banner <a id="announcement"></a>
 The "Acctual is joining Altitude" strip above the nav, linking to /altitude. Read as `announcement` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
@@ -147,7 +149,7 @@ The "Acctual is joining Altitude" strip above the nav, linking to /altitude. Rea
 
 ![Announcement banner default](components/crops/announcement-default.png) ![Announcement banner hover](components/crops/announcement-hover.png) ![Announcement banner focus-visible](components/crops/announcement-focus-visible.png) ![Announcement banner pressed](components/crops/announcement-pressed.png)
 
-#### Footer
+#### Footer <a id="footer"></a>
 The footer band: the "Create the world’s most flexible invoice" heading, link columns and the "from NYC" credit. Read as `footer` on the home page.
 
 **Values (default).** size 1024 x 404; background transparent; text Open Runde 20/28 600, #1e1e1e `ink`; icon 112 x 40, #1e1e1e `ink`.
@@ -156,14 +158,14 @@ Child layers that carry the look: a 163.1x40 background #0d111b `cta` radius 100
 
 ![Footer default](components/crops/footer-default.png)
 
-#### Footer heading
+#### Footer heading <a id="footer-heading"></a>
 The sign-off heading in the footer. Read as `footer-heading` on the home page.
 
 **Values (default).** size 256 x 56; background transparent; text Open Runde 20/28 600, #1e1e1e `ink`.
 
 ![Footer heading default](components/crops/footer-heading-default.png)
 
-#### Footer link
+#### Footer link <a id="footer-link"></a>
 Read as `footer-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
@@ -179,14 +181,14 @@ Read as `footer-link` on the home page.
 
 The home page: the 'Small business invoices: Get paid on time' display hero with the interactive invoice mock (a marketing demo, not a live product), the fee-comparison rows, persona cards, the security trust rows and the FAQ accordion.
 
-#### Hero title
+#### Hero title <a id="hero-title"></a>
 "Small business invoices: Get paid on time" — the display headline. Read as `hero-title` on the home page.
 
 **Values (default).** size 768 x 72; background transparent; text Open Runde 64/72 600, #1e1e1e `ink`.
 
 ![Hero title default](components/crops/hero-title-default.png)
 
-#### Invoice demo
+#### Invoice demo <a id="invoice-demo"></a>
 The interactive invoice mock in the hero (a marketing demo, not a live product): payment-method dropdown, amount and currency fields. Read as `invoice-demo` on the home page.
 
 **Values (default).** size 514.92 x 294.11; padding 28px 28px 24px 28px; background transparent; text Open Runde 12/16 500, #8b8b8b `muted-2`.
@@ -195,21 +197,21 @@ Child layers that carry the look: div::after 498pxx260px border 1px solid #eeeee
 
 ![Invoice demo default](components/crops/invoice-demo-default.png)
 
-#### Section title
+#### Section title <a id="section-title"></a>
 A section heading ("We designed an invoice that works harder for your business"). Read as `section-title` on the home page.
 
 **Values (default).** size 768 x 96; background transparent; text Open Runde 40/48 600, #1e1e1e `ink`.
 
 ![Section title default](components/crops/section-title-default.png)
 
-#### Fee item
+#### Fee item <a id="fee-item"></a>
 A fee-comparison row (1% bank transfer / 2.7% card / 1% stablecoin). Read as `fee-item` on the home page.
 
 **Values (default).** size 82.89 x 24; background transparent; text Open Runde 16/24 500, #0098f2 `blue`.
 
 ![Fee item default](components/crops/fee-item-default.png)
 
-#### Persona card
+#### Persona card <a id="persona-card"></a>
 A who-it-is-for card (Contractors). Read as `persona-card` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
@@ -218,14 +220,14 @@ A who-it-is-for card (Contractors). Read as `persona-card` on the home page.
 
 ![Persona card default](components/crops/persona-card-default.png) ![Persona card hover](components/crops/persona-card-hover.png)
 
-#### Security item
+#### Security item <a id="security-item"></a>
 A trust row (PCI standards / SSL encryption & tokenization). Read as `security-item` on the home page.
 
 **Values (default).** size 500 x 84; background transparent; text Open Runde 20/28 600, #1e1e1e `ink`.
 
 ![Security item default](components/crops/security-item-default.png)
 
-#### FAQ item
+#### FAQ item <a id="faq-item"></a>
 An accordion question in the FAQs section; toggled open once (a local disclosure). Read as `faq-item` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
@@ -241,21 +243,21 @@ Child layers that carry the look: div 18x5 image url(data:…)%22></path></svg>"
 
 The pricing page: the fee comparison (bank transfer / card / stablecoin, currencies, payout speed) and the same Sign-up CTA.
 
-#### Page title
+#### Page title <a id="pricing-title"></a>
 Read as `pricing-title` on the pricing page.
 
 **Values (default).** size 768 x 112; background transparent; text Open Runde 48/56 600, #1e1e1e `ink`.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
-#### Fee comparison row
+#### Fee comparison row <a id="fee-row"></a>
 A comparison row on the pricing page (payment method, currencies, payout). Read as `fee-row` on the pricing page.
 
 **Values (default).** size 1024 x 64; background rgba(240, 240, 240, 0.95) `row`; text Open Runde 14/20 500, #1e1e1e `ink`.
 
 No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
-#### Page CTA
+#### Page CTA <a id="plan-cta"></a>
 Read as `plan-cta` on the pricing page.
 
 | State | Values (later rows list only what changes from the first row) |
@@ -269,49 +271,49 @@ Read as `plan-cta` on the pricing page.
 
 Teams, About, the blog index, one post (the Altitude announcement) and the /altitude page the banner links to.
 
-#### Page title
+#### Page title <a id="teams-title"></a>
 Read as `teams-title` on the teams page.
 
 **Values (default).** size 768 x 112; background transparent; text Open Runde 48/56 600, #1e1e1e `ink`.
 
 ![Page title default](components/crops/teams-title-default.png)
 
-#### Body text
+#### Body text <a id="teams-body"></a>
 Read as `teams-body` on the teams page.
 
 **Values (default).** size 600 x 48; background transparent; text Open Runde 16/24 500, #8d8d8d `muted`.
 
 ![Body text default](components/crops/teams-body-default.png)
 
-#### Page title
+#### Page title <a id="about-title"></a>
 Read as `about-title` on the about page.
 
 **Values (default).** size 768 x 112; background transparent; text Open Runde 48/56 600, #1e1e1e `ink`.
 
 ![Page title default](components/crops/about-title-default.png)
 
-#### Body text
+#### Body text <a id="about-body"></a>
 Read as `about-body` on the about page.
 
 **Values (default).** size 600 x 48; background transparent; text Open Runde 16/24 500, #8d8d8d `muted`.
 
 ![Body text default](components/crops/about-body-default.png)
 
-#### Page title
+#### Page title <a id="blog-title"></a>
 Read as `blog-title` on the blog page.
 
 **Values (default).** size 130.02 x 72; background transparent; text Open Runde 64/72 600, #1e1e1e `ink`.
 
 ![Page title default](components/crops/blog-title-default.png)
 
-#### Body text
+#### Body text <a id="blog-body"></a>
 Read as `blog-body` on the blog page.
 
 **Values (default).** size 388 x 72; background transparent; text Open Runde 16/24 500, #8d8d8d `muted`.
 
 ![Body text default](components/crops/blog-body-default.png)
 
-#### Blog item
+#### Blog item <a id="blog-item"></a>
 A post row or card on the blog index. Read as `blog-item` on the blog page.
 
 | State | Values (later rows list only what changes from the first row) |
@@ -320,21 +322,21 @@ A post row or card on the blog index. Read as `blog-item` on the blog page.
 
 ![Blog item default](components/crops/blog-item-default.png) ![Blog item hover](components/crops/blog-item-hover.png)
 
-#### Page title
+#### Page title <a id="blog-post-title"></a>
 Read as `blog-post-title` on the blog post page.
 
 **Values (default).** size 800 x 42; background transparent; text Open Runde 30/42 600, #000000 `cta-edge`.
 
 ![Page title default](components/crops/blog-post-title-default.png)
 
-#### Body text
+#### Body text <a id="blog-post-body"></a>
 Read as `blog-post-body` on the blog post page.
 
 **Values (default).** size 800 x 25.59; background transparent; text Open Runde 16/25.6 400, #666666 `grey`.
 
 ![Body text default](components/crops/blog-post-body-default.png)
 
-#### Back link
+#### Back link <a id="blog-post-link"></a>
 The link returning to the index. Read as `blog-post-link` on the blog post page.
 
 | State | Values (later rows list only what changes from the first row) |
@@ -345,21 +347,21 @@ The link returning to the index. Read as `blog-post-link` on the blog post page.
 
 ![Back link default](components/crops/blog-post-link-default.png) ![Back link hover](components/crops/blog-post-link-hover.png) ![Back link focus-visible](components/crops/blog-post-link-focus-visible.png) ![Back link pressed](components/crops/blog-post-link-pressed.png)
 
-#### Page title
+#### Page title <a id="altitude-title"></a>
 Read as `altitude-title` on the Altitude announcement page.
 
 **Values (default).** size 768 x 112; background transparent; text Open Runde 48/56 600, #ffffff `white`.
 
 ![Page title default](components/crops/altitude-title-default.png)
 
-#### Body text
+#### Body text <a id="altitude-body"></a>
 Read as `altitude-body` on the Altitude announcement page.
 
 **Values (default).** size 600 x 48; background transparent; text Open Runde 16/24 500, #ffffff `white`.
 
 ![Body text default](components/crops/altitude-body-default.png)
 
-#### Back link
+#### Back link <a id="altitude-link"></a>
 The link returning to the index. Read as `altitude-link` on the Altitude announcement page.
 
 | State | Values (later rows list only what changes from the first row) |
@@ -374,14 +376,14 @@ The link returning to the index. Read as `altitude-link` on the Altitude announc
 
 The templated landing pages: freelancer-invoicing, stablecoin-invoicing and one location corridor (US to Japan) standing in for the ~30 corridor pages.
 
-#### Page title
+#### Page title <a id="freelancer-invoicing-title"></a>
 Read as `freelancer-invoicing-title` on the freelancer invoicing page.
 
 **Values (default).** size 780 x 112; background transparent; text Open Runde 48/56 600, #1e1e1e `ink`.
 
 ![Page title default](components/crops/freelancer-invoicing-title-default.png)
 
-#### Page CTA
+#### Page CTA <a id="freelancer-invoicing-cta"></a>
 Read as `freelancer-invoicing-cta` on the freelancer invoicing page.
 
 | State | Values (later rows list only what changes from the first row) |
@@ -392,21 +394,21 @@ Read as `freelancer-invoicing-cta` on the freelancer invoicing page.
 
 ![Page CTA default](components/crops/freelancer-invoicing-cta-default.png) ![Page CTA hover](components/crops/freelancer-invoicing-cta-hover.png) ![Page CTA focus-visible](components/crops/freelancer-invoicing-cta-focus-visible.png) ![Page CTA pressed](components/crops/freelancer-invoicing-cta-pressed.png)
 
-#### Section title
+#### Section title <a id="freelancer-invoicing-section"></a>
 Read as `freelancer-invoicing-section` on the freelancer invoicing page.
 
 **Values (default).** size 640 x 96; background transparent; text Open Runde 40/48 600, #1e1e1e `ink`.
 
 ![Section title default](components/crops/freelancer-invoicing-section-default.png)
 
-#### Page title
+#### Page title <a id="stablecoin-invoicing-title"></a>
 Read as `stablecoin-invoicing-title` on the stablecoin invoicing page.
 
 **Values (default).** size 576 x 216; background transparent; text Selecta Medium 72/72 500, #ffffff `white`.
 
 ![Page title default](components/crops/stablecoin-invoicing-title-default.png)
 
-#### Page CTA
+#### Page CTA <a id="stablecoin-invoicing-cta"></a>
 Read as `stablecoin-invoicing-cta` on the stablecoin invoicing page.
 
 | State | Values (later rows list only what changes from the first row) |
@@ -417,21 +419,21 @@ Read as `stablecoin-invoicing-cta` on the stablecoin invoicing page.
 
 ![Page CTA default](components/crops/stablecoin-invoicing-cta-default.png) ![Page CTA hover](components/crops/stablecoin-invoicing-cta-hover.png) ![Page CTA focus-visible](components/crops/stablecoin-invoicing-cta-focus-visible.png) ![Page CTA pressed](components/crops/stablecoin-invoicing-cta-pressed.png)
 
-#### Section title
+#### Section title <a id="stablecoin-invoicing-section"></a>
 Read as `stablecoin-invoicing-section` on the stablecoin invoicing page.
 
 **Values (default).** size 297.38 x 56; background transparent; text Selecta Medium 56/56 500, rgba(0, 0, 0, 0.9) `black-90`.
 
 ![Section title default](components/crops/stablecoin-invoicing-section-default.png)
 
-#### Page title
+#### Page title <a id="location-title"></a>
 Read as `location-title` on the US to Japan corridor page.
 
 **Values (default).** size 695 x 128; background transparent; text Selecta Medium 64/64 500, #ffffff `white`.
 
 ![Page title default](components/crops/location-title-default.png)
 
-#### Page CTA
+#### Page CTA <a id="location-cta"></a>
 Read as `location-cta` on the US to Japan corridor page.
 
 | State | Values (later rows list only what changes from the first row) |
@@ -442,7 +444,7 @@ Read as `location-cta` on the US to Japan corridor page.
 
 ![Page CTA default](components/crops/location-cta-default.png) ![Page CTA hover](components/crops/location-cta-hover.png) ![Page CTA focus-visible](components/crops/location-cta-focus-visible.png) ![Page CTA pressed](components/crops/location-cta-pressed.png)
 
-#### Section title
+#### Section title <a id="location-section"></a>
 Read as `location-section` on the US to Japan corridor page.
 
 **Values (default).** size 1200 x 64; background transparent; text Selecta Medium 64/64 500, #1a1a1a `ink-2`.
@@ -453,28 +455,28 @@ Read as `location-section` on the US to Japan corridor page.
 
 The terms and privacy pages: heading plus running legal copy in the same shell.
 
-#### Page title
+#### Page title <a id="terms-title"></a>
 Read as `terms-title` on the terms page.
 
 **Values (default).** size 158.05 x 64; background transparent; text Open Runde 64/64 600, #000000 `cta-edge`.
 
 ![Page title default](components/crops/terms-title-default.png)
 
-#### Body text
+#### Body text <a id="terms-body"></a>
 Read as `terms-body` on the terms page.
 
 **Values (default).** size 704 x 196; background transparent; text Selecta Regular 18/28 400, #666666 `grey`.
 
 ![Body text default](components/crops/terms-body-default.png)
 
-#### Page title
+#### Page title <a id="privacy-title"></a>
 Read as `privacy-title` on the privacy page.
 
 **Values (default).** size 158.05 x 64; background transparent; text Open Runde 64/64 600, #000000 `cta-edge`.
 
 ![Page title default](components/crops/privacy-title-default.png)
 
-#### Body text
+#### Body text <a id="privacy-body"></a>
 Read as `privacy-body` on the privacy page.
 
 **Values (default).** size 704 x 308; background transparent; text Selecta Regular 18/28 400, #666666 `grey`.
@@ -485,7 +487,7 @@ Read as `privacy-body` on the privacy page.
 
 A few components as a phone draws them, at 390 x 844: the collapsed header with its menu trigger, the opened nav panel and the hero title.
 
-#### Mobile top bar
+#### Mobile top bar <a id="m-nav-bar"></a>
 The mobile header: logo left, menu trigger right. Read as `m-nav-bar` on the home page at 390 wide.
 
 **Values (default).** size 358 x 48; padding 0px 24px 8px 20px; radius 0px 0px 24px 24px; background transparent; text sans-serif 12/normal 400, #000000 `cta-edge`; icon 18 x 14, #000000 `cta-edge`.
@@ -494,23 +496,23 @@ Child layers that carry the look: div 112x16 image url(data:…)%22></path><path
 
 ![Mobile top bar default](components/crops/m-nav-bar-default.png)
 
-#### Mobile menu trigger
+#### Mobile menu trigger <a id="m-menu-trigger"></a>
 The menu button (the 24px icon box at the right of the top bar). Pressed once below to open the menu; a local disclosure. Read as `m-menu-trigger` on the home page at 390 wide.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 24 x 40; background transparent; text sans-serif 12/normal 400, #000000 `cta-edge`; icon 18 x 14, #000000 `cta-edge` |
+| default (same: hover, pressed) | size 24 x 40; background transparent; text sans-serif 12/normal 400, #000000 `cta-edge`; icon 18 x 14, #000000 `cta-edge` |
 
-![Mobile menu trigger default](components/crops/m-menu-trigger-default.png) ![Mobile menu trigger hover](components/crops/m-menu-trigger-hover.png) ![Mobile menu trigger focus-visible](components/crops/m-menu-trigger-focus-visible.png) ![Mobile menu trigger pressed](components/crops/m-menu-trigger-pressed.png)
+![Mobile menu trigger default](components/crops/m-menu-trigger-default.png) ![Mobile menu trigger hover](components/crops/m-menu-trigger-hover.png) ![Mobile menu trigger pressed](components/crops/m-menu-trigger-pressed.png)
 
-#### Mobile hero title
+#### Mobile hero title <a id="m-hero-title"></a>
 Read as `m-hero-title` on the home page at 390 wide.
 
 **Values (default).** size 342 x 48; background transparent; text Open Runde 40/48 600, #1e1e1e `ink`.
 
 ![Mobile hero title default](components/crops/m-hero-title-default.png)
 
-#### Mobile menu (open)
+#### Mobile menu (open) <a id="m-nav-panel"></a>
 The opened mobile menu panel; pressed once, nothing navigated. Read as `m-nav-panel` on the home page at 390 wide.
 
 **Values (open).** size 390 x 844; padding 0px 16px; background #fafafa `paper`; text Selecta Medium 40/40 500, rgba(0, 0, 0, 0.9) `black-90`; icon 14 x 14, #0000ee.

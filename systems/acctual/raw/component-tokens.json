@@ -254,6 +254,7 @@
     "display": { "value": "-1.92px", "type": "dimension", "source": "letterSpacing of hero-title (-3%)", "description": "-1.92px on the 64px display" },
     "title-2": { "value": "-1.68px", "type": "dimension", "source": "letterSpacing of stablecoin-invoicing-section (-3%)", "description": "-1.68px on the 56px landing sections" },
     "title": { "value": "-1.44px", "type": "dimension", "source": "letterSpacing of pricing-title (-3%)", "description": "-1.44px on 48px titles" },
+    "display-2": { "value": "-1.44px", "type": "dimension", "source": "letterSpacing of stablecoin-invoicing-title (-2% on the 72px Selecta display)", "description": "-1.44px on the landing pages' display" },
     "landing": { "value": "-1.3px", "type": "dimension", "source": "letterSpacing of location-title and -section (-2%)", "description": "-1.3px on Selecta headings" },
     "section": { "value": "-1.2px", "type": "dimension", "source": "letterSpacing of section-title (-3%)", "description": "-1.2px on 40px sections" },
     "lead": { "value": "-0.6px", "type": "dimension", "source": "letterSpacing of footer-heading (-3%)", "description": "-0.6px on 20px titles" },
@@ -371,10 +372,10 @@
      "fontSize": "{font.size.body-lg}",
      "fontWeight": "{font.weight.regular}",
      "lineHeight": "{font.leading.lead}",
-     "letterSpacing": "{font.tracking.normal}"
+     "letterSpacing": "{font.tracking.body}"
     },
     "source": "composite of terms-body and privacy-body",
-    "description": "Selecta Regular 18/28: legal and article body"
+    "description": "Selecta Regular 18/28, -0.32px: legal and article body"
    },
    "caption": {
     "type": "typography",
@@ -383,10 +384,10 @@
      "fontSize": "{font.size.caption}",
      "fontWeight": "{font.weight.medium}",
      "lineHeight": "{font.leading.caption}",
-     "letterSpacing": "{font.tracking.normal}"
+     "letterSpacing": "{font.tracking.small}"
     },
     "source": "composite of fee-row and footer-link",
-    "description": "Open Runde 14/20 medium: table cells and footer links"
+    "description": "Open Runde 14/20 medium, -0.28px: table cells and footer links"
    },
    "small": {
     "type": "typography",
@@ -419,10 +420,10 @@
      "fontSize": "{font.size.display-2}",
      "fontWeight": "{font.weight.medium}",
      "lineHeight": "{font.leading.display-2}",
-     "letterSpacing": "{font.tracking.landing}"
+     "letterSpacing": "{font.tracking.display-2}"
     },
     "source": "composite of stablecoin-invoicing-title",
-    "description": "Selecta Medium 72/72, -1.3px: the landing pages' display"
+    "description": "Selecta Medium 72/72, -1.44px: the landing pages' display"
    },
    "landing-section": {
     "type": "typography",

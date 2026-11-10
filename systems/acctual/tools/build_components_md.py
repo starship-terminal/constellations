@@ -378,7 +378,14 @@ def grid_of(key):
         return "-"
     g = v["grids"][0] if v["grids"] else None
     cols = re.sub(r"(\d+\.\d)\d*px", r"\1", g["cols"]).replace("px", "") if g else ""
-    main = f"content x {v['main']['x']}, {v['main']['w']} wide" if v["main"]["w"] else "content full width"
+    # The content column is the tallest fixed-max-width wrapper in maxWidths;
+    # "main" is the page-width root (1440 at x=0), not the column.
+    cand = [e for e in v.get("maxWidths", []) if re.fullmatch(r"\d+px", e.get("max", ""))]
+    if cand:
+        e = max(cand, key=lambda e: e["h"])
+        main = f"content x {e['x']}, {e['w']} wide"
+    else:
+        main = f"content x {v['main']['x']}, {v['main']['w']} wide (outer page bounds)" if v["main"]["w"] else "content full width"
     return f"{main}; grid {cols} gap {g['colGap']}" if g else main
 
 
@@ -420,7 +427,9 @@ for g in groups:
         if c["group"] != g:
             continue
         W()
-        W(f"#### {c['title']}")
+        # A stable anchor per component key: titles repeat ("Page title" on
+        # every page), so the generated #page-title-N anchors drift.
+        W(f"#### {c['title']} <a id=\"{k}\"></a>")
         desc = (c.get("desc") or "").strip()
         if desc and not desc.endswith((".", ")", '"')):
             desc += "."

@@ -84,13 +84,13 @@ typography:
     fontSize: "18px"
     fontWeight: 400
     lineHeight: "28px"
-    letterSpacing: "0px"
+    letterSpacing: "-0.32px"
   caption:
     fontFamily: "Open Runde"
     fontSize: "14px"
     fontWeight: 500
     lineHeight: "20px"
-    letterSpacing: "0px"
+    letterSpacing: "-0.28px"
   small:
     fontFamily: "Inter"
     fontSize: "14px"
@@ -108,7 +108,7 @@ typography:
     fontSize: "72px"
     fontWeight: 500
     lineHeight: "72px"
-    letterSpacing: "-1.3px"
+    letterSpacing: "-1.44px"
   landing-section:
     fontFamily: "Selecta Medium"
     fontSize: "56px"

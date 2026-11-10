@@ -43,25 +43,21 @@ Page: home. Selector: `nav logo a`. States: default, hover, focus-visible, press
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 1034 x 32 | = | = | = |
-| Padding | 4px 14px 4px 20px | = | = | = |
-| Gap | 8px | = | = | = |
+| Size (w x h) | 112 x 32 | = | = | = |
+| Padding | 8px 0px | = | = | = |
+| Gap | 10px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
-| Backdrop filter | blur(10px) | = | = | = |
 | Outline | none | = | 1px auto #005fcc offset 1px | = |
 | Font | sans-serif 12px/normal 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #0000ee | = | = | #ff0000 |
-| Text node | p.framer-text: Inter 14px/24px 500, #0098f2, ls -0.28px | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 14 x 14, colour #0000ee, fill #000000 | = | = | 14 x 14, colour #ff0000, fill #000000 |
-| Ancestor paint | 2 up div.framer-1ve1fz9 bg #f5f5f5 @ 0.6 shadow #000000 @ 0.1 0px 1px 2px 0px | = | = | = |
+| Painted layers | div.framer-1i2m7ev 112.0x16.0 image url(data:…)%22></path><path d=%22M 17.846 0.4 C 17.846 0.179 17.667 0 17.446 0 L 14.554 0  | = | a.framer-Cq8mm.framer-1hugv89 112.0x32.0 outline 1px auto #005fcc offset 1px; div.framer-1i2m7ev 112.0x16.0 image url(data:…)%22></path><path d=%22M 17.846 0.4 C 17.846 0.179 17.667 0 17.446 0 L 14.554 0  | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.framer-r1UWv.framer-w2wy95 1034.0x32.0 outline 1px auto #005fcc offset 1px | = |
 
 Crops: `nav-logo-default.png`, `nav-logo-hover.png`, `nav-logo-focus-visible.png`, `nav-logo-pressed.png`.
 
@@ -1186,23 +1182,24 @@ Page: home. Selector: `nav icon box`. States: default, hover, focus-visible, pre
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 24 x 40 | = | = | = |
-| Padding | 0px | = | = | = |
-| Gap | 8px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | sans-serif 12px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Transition | none | = | = | = |
-| Icon | 18 x 14, colour #000000 | = | = | = |
-| Ancestor paint | 2 up div.framer-1ve1fz9 bg #f5f5f5 @ 0.6 shadow #000000 @ 0.1 0px 1px 2px 0px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 24 x 40 | = | - | = |
+| Padding | 0px | = | - | = |
+| Gap | 8px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | sans-serif 12px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Transition | none | = | - | = |
+| Icon | 18 x 14, colour #000000 | = | - | = |
+| Ancestor paint | 2 up div.framer-1ve1fz9 bg #f5f5f5 @ 0.6 shadow #000000 @ 0.1 0px 1px 2px 0px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Error | - | = | keyboard focus never reached the control | = |
 
-Crops: `m-menu-trigger-default.png`, `m-menu-trigger-hover.png`, `m-menu-trigger-focus-visible.png`, `m-menu-trigger-pressed.png`.
+Crops: `m-menu-trigger-default.png`, `m-menu-trigger-hover.png`, `m-menu-trigger-pressed.png`.
 
 #### m-hero-title
 

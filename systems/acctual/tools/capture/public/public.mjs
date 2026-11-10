@@ -35,6 +35,10 @@ class Shooter {
     const chunk = Math.floor(14000 / this.dpr);
     const maxChunks = 8; // an unbounded tiler hangs on a runaway page; truncate at the boundary
     const f = `${RAW}/${this.prefix}-${name}`;
+    // Clear this capture's stale tiles first: a page that shrank since the
+    // last run would otherwise leave old partN files for quantize.py to
+    // stitch over the fresh capture.
+    for (const old of fs.readdirSync(RAW)) if (old.startsWith(`${this.prefix}-${name}.part`)) fs.rmSync(`${RAW}/${old}`, { force: true });
     if (H <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
     else {
       const capped = Math.min(H, chunk * maxChunks);
