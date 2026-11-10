@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/670869ea-9576-4f9d-af3a-038910f8b9b8",
   "source_url": "https://emmerer.com",
   "extracted_at": "2026-06-03T20:51:35.223Z",
-  "fetched_at": "2026-10-20T08:21:52Z",
+  "fetched_at": "2026-11-08T04:20:53Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/7fb81784-828b-4f1e-adfd-e4bb85cac284.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0a2c816a-2ed4-4227-b417-696cbcc378e1.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/cddfa602-f097-4e74-9946-599389ca79c8.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/ea3c02eb-d690-4407-8e05-8e25e19a9278.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/523d3e7b-b0a2-4979-a626-00f1487b6e4d",
   "source_url": "https://drepute.xyz",
   "extracted_at": "2026-06-03T20:35:36.073Z",
-  "fetched_at": "2026-10-20T08:21:56Z",
+  "fetched_at": "2026-11-08T04:20:03Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/8f35f4a1-6453-436b-a15b-7d772178d555.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/24d72746-9bac-47f2-bfc8-0d94045f5cc0.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/0f99f9ab-bdce-406f-b934-84fae9fb65ae.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/70bb36dc-e92c-4b6b-82eb-8d6505a91e2b.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/76faeb42-b43d-4cc7-ac03-1e4bd74f04b7",
   "source_url": "https://contract.mdfitalia.com/en",
   "extracted_at": "2026-06-03T18:07:19.972Z",
-  "fetched_at": "2026-10-20T08:24:34Z",
+  "fetched_at": "2026-11-08T04:19:56Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f15fbb5d-5861-4270-a26d-9e382a8858b5.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

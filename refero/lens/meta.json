@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/63c0e759-3175-4f62-a8e3-b9e285f9e998",
   "source_url": "https://lens.xyz",
   "extracted_at": "2026-06-03T18:56:37.360Z",
-  "fetched_at": "2026-10-20T08:22:26Z",
+  "fetched_at": "2026-11-08T04:20:25Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/2fb752de-796d-4550-a664-d652460e74a5.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0bf186fd-5b7e-4ff8-abac-a16b08432179.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/368f2915-8b49-4d68-a3f1-2dea9333b942.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/dce15c58-e927-476d-9014-833f48a56000.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

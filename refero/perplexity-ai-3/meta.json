@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/7c4e9339-591c-46c3-ac3d-20c1b5b5a568",
   "source_url": "https://www.perplexity.ai/products/computer",
   "extracted_at": "2026-04-17T02:02:05.925Z",
-  "fetched_at": "2026-10-20T08:22:52Z",
+  "fetched_at": "2026-11-08T04:19:31Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b3858e2b-e9b7-4ba4-9bb8-e1317b003845.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/bf6a2d3c-2562-4f74-871d-13308732a46c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d45bb24d-0c0b-4268-adaf-d30da4071dab.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/fed2e40d-4900-46b8-ba27-d8632bb5c8ca.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": true
 }

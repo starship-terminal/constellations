@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/6778ff21-44eb-40f3-ba85-2ee7de935f8f",
   "source_url": "https://arthursimonini.com",
   "extracted_at": "2026-06-03T21:42:02.940Z",
-  "fetched_at": "2026-10-20T08:21:46Z",
+  "fetched_at": "2026-11-08T04:19:45Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/799c805c-a920-433f-af17-4e73e028654f.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/1aad4612-6e00-48e0-8c17-e407c9319000.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/54f1d44e-f682-4150-a92b-41da76054b11.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/8e412893-a5b2-4dc5-a188-20d1e5254ee9.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

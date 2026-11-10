@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/4e7daadc-3dc4-4211-bf25-626ea7b216e6",
   "source_url": "https://relievefurniture.com",
   "extracted_at": "2026-06-03T21:17:31.002Z",
-  "fetched_at": "2026-10-20T08:23:36Z",
+  "fetched_at": "2026-11-08T04:20:45Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/7ed6a309-f215-455c-a704-cf9f71fc428d.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/6d9b6fe6-51f4-4978-82dd-a791c28db5cf",
   "source_url": "https://glow.app",
   "extracted_at": "2026-06-03T17:37:15.370Z",
-  "fetched_at": "2026-10-20T08:22:56Z",
+  "fetched_at": "2026-11-08T04:20:13Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e9d93e92-8209-4b11-8252-9c59a390cf9b.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/85697c38-dd3a-4578-87d5-84a70f366cc6.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/35bec2b7-aa91-48c4-b9af-db0c4cad4fec.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/ebaab012-098d-4141-8802-d46ac10c0891.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

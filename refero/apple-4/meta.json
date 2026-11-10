@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/40be36d7-7fe6-4451-9f2d-7ceccfd43be8",
   "source_url": "https://www.apple.com/iphone-18-pro",
   "extracted_at": "2026-09-20T21:33:20.234Z",
-  "fetched_at": "2026-10-20T08:21:28Z",
+  "fetched_at": "2026-11-08T04:19:43Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e27e1dbf-9eba-4920-9d4e-3cf510bc3974.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/804282ed-fb45-4761-9351-388f172dd563.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a8495782-28c8-43b9-a978-0b38a638a915.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/58a8341e-4933-4d8d-9f4c-349c9021e4a5.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

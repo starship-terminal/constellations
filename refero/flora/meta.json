@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/cf8cd07d-bff0-41dc-ab70-fa85750f6168",
   "source_url": "https://www.florafauna.ai",
   "extracted_at": "2026-06-03T18:41:34.218Z",
-  "fetched_at": "2026-10-20T08:22:33Z",
+  "fetched_at": "2026-11-08T04:20:09Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d643c1c2-46b7-486a-848d-da8a7ac4e662.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/35140b49-225d-4f16-a6ff-0fe90f0bd06a.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/4ee2d1bb-12fb-455d-b579-91ebba3cca23.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/6967ade9-0a43-4977-a53d-cace1d810673.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

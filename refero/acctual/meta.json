@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/aeefc294-a8f7-443d-b76a-538dddc29afe",
   "source_url": "https://acctual.com",
   "extracted_at": "2026-07-03T03:15:23.064Z",
-  "fetched_at": "2026-10-20T08:21:36Z",
+  "fetched_at": "2026-11-08T04:19:37Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/bae45293-3752-4d02-bf15-6dd2ce500045.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/7c10149a-0c81-4a63-a913-0cb6253ab5d9.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/ed10f945-39ae-4170-8460-9d5cf59de7a1.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/ab881391-bdef-48cf-9aae-57d608df46ed.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -10,7 +10,7 @@
   "page_url": "https://styles.refero.design/style/4080f6e4-e61c-4d3c-ab93-de74a1b5dfc2",
   "source_url": "https://www.ryanstephen.co",
   "extracted_at": "2026-06-03T21:18:51.229Z",
-  "fetched_at": "2026-10-20T08:21:49Z",
+  "fetched_at": "2026-11-08T04:20:46Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/1a70ba3d-4186-4179-8d98-165d2f39724a.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/38e24139-0651-4de3-bc5d-64e7e28d041a.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/7e8aba16-1d12-4f95-8a51-c9308c68476a.jpg",
@@ -18,5 +18,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/ea1703e1-46b4-4f35-a6d7-a42e26e501ae.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

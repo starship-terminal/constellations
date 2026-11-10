@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/8a3d3f72-9ef0-466d-adde-77189ddff797",
   "source_url": "https://sackville.co",
   "extracted_at": "2026-06-03T20:19:42.245Z",
-  "fetched_at": "2026-10-20T08:22:03Z",
+  "fetched_at": "2026-11-08T04:20:46Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/eaae9ee2-5369-4e65-80db-7b0b2aa76290.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/4bb9c159-1139-4bd6-b235-acc81ec99df3.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/f3ae838f-41ec-4348-86bc-29bb35c156b5.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/cb208b4f-ced2-49bf-bbe3-cce7ec984ced.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

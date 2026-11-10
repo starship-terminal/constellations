@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/e68d2972-4344-4954-b00c-56fdf97d9de4",
   "source_url": "https://appliedlabs.ai",
   "extracted_at": "2026-06-03T19:12:30.874Z",
-  "fetched_at": "2026-10-20T08:24:07Z",
+  "fetched_at": "2026-11-08T04:19:44Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/2a0de9bb-965a-4fe4-9f38-aae5d85a0f50.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/6a8e945c-a1b3-490a-b5e4-a93dcec60f7d.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/26551acb-cc40-4731-949b-a89970fad705.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/2e25bfc9-5d9c-4b66-9886-1d9c8292ddd0.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

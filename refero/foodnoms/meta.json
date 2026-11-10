@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/1e7dae3b-cb34-4fcf-8c32-051152aebbab",
   "source_url": "https://foodnoms.com",
   "extracted_at": "2026-06-03T16:56:49.644Z",
-  "fetched_at": "2026-10-20T08:23:12Z",
+  "fetched_at": "2026-11-08T04:20:10Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/18944cde-ce05-46db-b6d3-b92b28388baf.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/1973c0ba-1fc7-4e38-b4b5-2245d9270d36.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/3150e17a-496c-4c2b-be44-9faa8fecb692.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/d79aade6-1395-4f72-84ea-e0855b9a8938.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

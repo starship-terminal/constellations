@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/b054773d-2d14-4a35-b366-81b4ac00f171",
   "source_url": "https://expo.dev",
   "extracted_at": "2026-06-03T21:03:20.614Z",
-  "fetched_at": "2026-10-20T08:23:39Z",
+  "fetched_at": "2026-11-08T04:20:06Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/31726b63-5d67-4613-9efd-789d3ab3f00e.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

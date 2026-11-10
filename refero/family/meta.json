@@ -10,7 +10,7 @@
   "page_url": "https://styles.refero.design/style/1bcae895-2245-4d33-aa43-1c1e80719554",
   "source_url": "https://family.co",
   "extracted_at": "2026-07-03T02:56:28.073Z",
-  "fetched_at": "2026-10-20T08:21:39Z",
+  "fetched_at": "2026-11-08T04:20:07Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d95bb1df-d2af-4d12-a4b7-0d8d7e3aae6b.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ee58fbf0-1329-48ad-ae8d-1a2631e94416.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/755c4a22-b7f4-4f10-a423-23876a37db2d.jpg",
@@ -18,5 +18,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/7213a4e3-ed47-42b4-a935-402d6e64a5a7.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

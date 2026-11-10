@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/e869e214-f672-4ac3-bfc2-bd25de7b003b",
   "source_url": "https://base44.com",
   "extracted_at": "2026-07-03T03:23:49.893Z",
-  "fetched_at": "2026-10-20T08:21:35Z",
+  "fetched_at": "2026-11-08T04:19:49Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/942ee810-77ed-444a-866d-ae01892a910b.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/4bb58715-cc40-4c95-8831-66a7d8e675c6.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/08888c8b-dc89-4537-9b58-f7c23630a1b8.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/cb4991d6-b00f-4df1-9d8b-24b717c5d98e.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

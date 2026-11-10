@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/b3f7b44d-6564-4015-902a-259b4790b9de",
   "source_url": "https://herokit.design",
   "extracted_at": "2026-06-03T20:45:06.494Z",
-  "fetched_at": "2026-10-20T08:23:43Z",
+  "fetched_at": "2026-11-08T04:20:17Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/9d9c819d-6829-41e8-bda3-e146851edfa9.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/f2aaf1b7-9442-4db0-825c-b05a012d7e2f.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/4e5e35a3-ff2e-473b-a577-2b74b8735e03.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/7a0e7947-d5d3-4038-a6f7-e703f787a667.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/d95a35c2-d3f7-49e7-9ba7-282d52d3211d",
   "source_url": "https://www.orderful.com",
   "extracted_at": "2026-06-03T16:41:38.493Z",
-  "fetched_at": "2026-10-20T08:24:53Z",
+  "fetched_at": "2026-11-08T04:20:36Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/697fbb6a-b586-4dfc-b189-7570806efae4.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/c98b1b62-bdf7-4bf3-88d7-1228e45c158f.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/8f39c560-ecb0-42ee-a690-9c88cf7c9422.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/84a69342-05a3-48fc-8080-fc9be614bf01.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/7af0134b-c299-42f8-9d95-7004e2d0e278",
   "source_url": "https://thepatchsystem.com",
   "extracted_at": "2026-06-03T21:15:15.868Z",
-  "fetched_at": "2026-10-20T08:23:36Z",
+  "fetched_at": "2026-11-08T04:20:38Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d7e388b8-07b5-4ea0-8415-57a2b9997c3c.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/404e021a-e297-40a4-9a4b-f9ad0c2b4d90.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/8b2f850a-2629-4e36-bb0b-a9b746d3d0f4.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/d269dfc9-a002-455a-9c72-429772338ee8.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

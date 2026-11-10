@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/ca9bff3b-d488-46e5-8a32-2d858bb5eed2",
   "source_url": "https://www.backlight.co",
   "extracted_at": "2026-06-03T22:00:10.610Z",
-  "fetched_at": "2026-10-20T08:23:24Z",
+  "fetched_at": "2026-11-08T04:19:48Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/466d9da1-5304-499e-956f-9cc53c6bd8cf.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

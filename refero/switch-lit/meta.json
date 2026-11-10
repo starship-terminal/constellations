@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/97f7787e-bba0-4d37-8b74-4b0cb8d5a57c",
   "source_url": "https://switch-lit.com",
   "extracted_at": "2026-06-03T21:15:29.096Z",
-  "fetched_at": "2026-10-20T08:23:36Z",
+  "fetched_at": "2026-11-08T04:20:56Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f997ee1d-ab2f-4875-9147-c7584c06945b.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/602e1647-0951-408a-b776-554153863806.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/922d3526-bc44-4552-8b7c-480ab549d149.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/530f14c0-7b8c-4a87-befa-c0fb85a62b79.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

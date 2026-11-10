@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/271172f7-9f6d-4d6f-9baa-91a41648d8be",
   "source_url": "https://techbarcelona.com/en",
   "extracted_at": "2026-06-03T20:22:07.660Z",
-  "fetched_at": "2026-10-20T08:21:31Z",
+  "fetched_at": "2026-11-08T04:20:57Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e31da946-e3c3-4aa7-b64c-9fdb8e4c95ce.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/2df40d4d-962a-4ace-9e26-c655850b3822.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/21f6c4fe-0465-4054-96c8-c9190a10d785.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/9a226129-c20f-4d03-ace9-883017a6ce94.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

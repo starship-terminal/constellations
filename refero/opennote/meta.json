@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/24d3b281-04a6-4cc7-8a74-634b08472291",
   "source_url": "https://www.opennote.com",
   "extracted_at": "2026-06-03T17:19:14.702Z",
-  "fetched_at": "2026-10-20T08:23:09Z",
+  "fetched_at": "2026-11-08T04:20:35Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/9b8bf1a9-bd7a-4709-9f5a-934edd5e6d88.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/e4ec2d40-fdd3-4ae7-b881-de23458bcc56.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/fb5fc7aa-e00b-40ed-a700-96722df173af.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/3cb79096-02a5-4c45-9151-f0feafa6e807.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

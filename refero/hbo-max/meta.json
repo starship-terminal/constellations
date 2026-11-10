@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/898f0127-d235-4832-bf33-ab21104f0529",
   "source_url": "https://www.hbomax.com",
   "extracted_at": "2026-06-03T19:06:36.162Z",
-  "fetched_at": "2026-10-20T08:22:21Z",
+  "fetched_at": "2026-11-08T04:20:15Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/cbcac0ef-005e-4d27-b67f-1cb79aba7679.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/d14bc3f8-b0c5-4bd8-a73f-53687755565f.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/ecb34f56-1c6a-4116-9416-0521cf89b5d1.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0cf1c633-46e2-45b4-b37b-db9831b90ae7.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }
