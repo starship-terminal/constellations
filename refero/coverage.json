@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 53,
-    "system_domains": 45,
-    "matched_domains": 22,
-    "missing_domains": 411,
+    "system_packages": 54,
+    "system_domains": 46,
+    "matched_domains": 23,
+    "missing_domains": 410,
     "system_domains_absent_from_catalog": 23
   },
   "matched": {
@@ -57,6 +57,23 @@
           "slug": "ableton",
           "name": "Ableton",
           "url": "https://www.ableton.com",
+          "name_match": true
+        }
+      ]
+    },
+    "airbnb.com": {
+      "catalog": [
+        {
+          "name": "Airbnb",
+          "domain": "airbnb.com",
+          "id": 72
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "airbnb",
+          "name": "Airbnb",
+          "url": "https://www.airbnb.com",
           "name_match": true
         }
       ]
@@ -488,13 +505,6 @@
         "name": "Aesop",
         "domain": "aesop.com",
         "id": 621
-      }
-    ],
-    "airbnb.com": [
-      {
-        "name": "Airbnb",
-        "domain": "airbnb.com",
-        "id": 72
       }
     ],
     "airtable.com": [
