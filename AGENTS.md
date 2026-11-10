@@ -211,7 +211,7 @@ illustrations or brand colours into something that ships
   After `make check` is green, grade the package against
   `scorecard/criteria.json`: `python3 tools/grade.py --write --review
   <slug>=<grades.json> --method "<how you reviewed>"`. Any criterion that
-  cannot grade `yes` needs a written justification in the grades file —
+  cannot grade `meets` needs a written justification in the grades file —
   not a silent gap. This is how delegated captures get audited, so a
   package is not done until its grades are written.
 - **Clean up after every capture.** Once a package's PR merges: `git
