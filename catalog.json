@@ -4851,7 +4851,7 @@
         ],
         "durationMin": null,
         "durationNote": "wall-clock duration was not recorded for this capture",
-        "pr": "PENDING"
+        "pr": "https://github.com/c-wenlong/designs/pull/468"
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the site's icons (wordmark, nav icons, save hearts) are visible in the crops and screenshots"
