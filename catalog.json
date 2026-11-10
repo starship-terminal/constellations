@@ -14,7 +14,8 @@
     "super-app": "Super apps",
     "browser": "Browsers",
     "events": "Events",
-    "e-commerce": "E-commerce"
+    "e-commerce": "E-commerce",
+    "travel": "Travel"
   },
   "systems": [
     {
@@ -3740,6 +3741,98 @@
         "durationMin": null,
         "durationNote": "Total active time across the capture and its review fix passes was not kept; component readings carry per-page run keys in raw/components-computed.json.",
         "pr": "https://github.com/c-wenlong/designs/pull/443"
+      }
+    },
+    {
+      "slug": "airbnb",
+      "name": "Airbnb",
+      "url": "https://www.airbnb.com",
+      "category": "travel",
+      "platform": "web",
+      "goodFor": "Public travel marketplace: the capsule Where/When/Who search bar, photo-led listing cards with the stroked wishlist heart, hairline-separated surfaces, one Rausch pink for end-of-flow actions, and a full set of declared-but-unapplied dark values",
+      "tags": [
+        "web",
+        "marketplace",
+        "travel",
+        "search",
+        "cards",
+        "gallery",
+        "single-accent",
+        "signed-out",
+        "design-tokens"
+      ],
+      "shape": "reference",
+      "captured": "2026-11-09",
+      "access": "signed out; www.airbnb.com geo-redirected to www.airbnb.com.sg from this network (same system on the regional mirror)",
+      "themes": [
+        "light",
+        "dark"
+      ],
+      "widths": [
+        1440,
+        390
+      ],
+      "entry": "systems/airbnb/README.md",
+      "tokens": "systems/airbnb/tokens.json",
+      "styleGuide": "systems/airbnb/style-guide.html",
+      "preview": {
+        "cover": "systems/airbnb/screenshots/home-light-default.png",
+        "icon": "systems/airbnb/icon.png",
+        "swatches": {
+          "light": {
+            "page": "light.color.bg.primary.default",
+            "surface": "light.color.bg.secondary.default",
+            "text": "light.color.text.primary.default",
+            "muted": "light.color.text.secondary.default",
+            "accent": "light.color.bg.primary.core",
+            "border": "light.color.border.secondary.default"
+          },
+          "dark": {
+            "page": "dark.color.bg.primary.default",
+            "surface": "dark.color.bg.secondary.default",
+            "text": "dark.color.text.primary.default",
+            "muted": "dark.color.text.secondary.default",
+            "accent": "dark.color.bg.primary.core",
+            "border": "dark.color.border.secondary.default"
+          }
+        },
+        "fonts": [
+          "core.typography.family"
+        ]
+      },
+      "source": {
+        "path": "~/.design-systems/airbnb/raw-shots (full-colour captures, outside the repo)"
+      },
+      "capture": {
+        "harness": "Devin",
+        "model": "SWE-2 Max",
+        "route": "public-web",
+        "method": "public-web",
+        "source": "https://www.airbnb.com (geo-redirected to https://www.airbnb.com.sg)",
+        "at": "2026-11-09",
+        "pr": "https://github.com/c-wenlong/designs/pull/444",
+        "routes": [
+          "/",
+          "/experiences",
+          "/services",
+          "/s/Tokyo--Japan/homes",
+          "/rooms/<id> (a public listing the results linked)",
+          "/help",
+          "/host/homes",
+          "mobile /",
+          "mobile /s/Tokyo--Japan/homes"
+        ],
+        "gaps": [
+          "sign-in and everything behind the account: wishlist save, promo claim, host onboarding, booking and payment",
+          "search submission: the Where panel was opened and measured, never submitted",
+          "the results map's interactions",
+          "icons: Airbnb's glyph artwork is not kept",
+          "a second market: the SG mirror's content differs from other regions"
+        ],
+        "durationMin": null
+      },
+      "layoutGaps": {
+        "icons/": "Airbnb's icon glyphs are its artwork and are not kept here (docs/RIGHTS.md)"
       }
     }
   ]
