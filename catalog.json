@@ -3920,7 +3920,7 @@
    "slug": "appwrite",
    "name": "Appwrite",
    "url": "https://appwrite.io",
-   "category": "developer-tools",
+   "category": "productivity",
    "platform": "web",
    "goodFor": "Developer-platform marketing: pinned-dark SvelteKit + Tailwind v4 site, brand-pink CTAs and gradient hero text, hairline-bordered cards, docs chrome with sidebar and code blocks, public sign-in form",
    "tags": [
@@ -3954,18 +3954,18 @@
     "swatches": {
      "light": {
       "page": "light.background",
-      "surface": "light.card",
+      "surface": "light.card.default",
       "text": "light.foreground",
       "muted": "light.muted.foreground",
-      "accent": "light.brand.cta",
+      "accent": "light.brand.cta.default",
       "border": "light.border"
      },
      "dark": {
       "page": "dark.background",
-      "surface": "dark.card",
+      "surface": "dark.card.default",
       "text": "dark.foreground",
       "muted": "dark.muted.foreground",
-      "accent": "dark.brand.cta",
+      "accent": "dark.brand.cta.default",
       "border": "dark.border"
      }
     },

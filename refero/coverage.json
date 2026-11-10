@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 55,
-    "system_domains": 47,
-    "matched_domains": 24,
-    "missing_domains": 409,
+    "system_packages": 56,
+    "system_domains": 48,
+    "matched_domains": 25,
+    "missing_domains": 408,
     "system_domains_absent_from_catalog": 23
   },
   "matched": {
@@ -153,6 +153,23 @@
           "name": "ChatGPT for iOS",
           "url": "https://apps.apple.com/app/chatgpt/id6448311069",
           "name_match": false
+        }
+      ]
+    },
+    "appwrite.io": {
+      "catalog": [
+        {
+          "name": "Appwrite",
+          "domain": "appwrite.io",
+          "id": 664
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "appwrite",
+          "name": "Appwrite",
+          "url": "https://appwrite.io",
+          "name_match": true
         }
       ]
     },
@@ -550,13 +567,6 @@
         "name": "Apollo GraphQL",
         "domain": "apollographql.com",
         "id": 79
-      }
-    ],
-    "appwrite.io": [
-      {
-        "name": "Appwrite",
-        "domain": "appwrite.io",
-        "id": 664
       }
     ],
     "arcade.software": [
