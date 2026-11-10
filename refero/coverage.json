@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 56,
-    "system_domains": 48,
-    "matched_domains": 25,
-    "missing_domains": 408,
+    "system_packages": 64,
+    "system_domains": 56,
+    "matched_domains": 33,
+    "missing_domains": 400,
     "system_domains_absent_from_catalog": 23
   },
   "matched": {
@@ -61,6 +61,57 @@
         }
       ]
     },
+    "aboard.com": {
+      "catalog": [
+        {
+          "name": "Aboard",
+          "domain": "aboard.com",
+          "id": 526
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "aboard",
+          "name": "Aboard",
+          "url": "https://aboard.com",
+          "name_match": true
+        }
+      ]
+    },
+    "aboardhr.com": {
+      "catalog": [
+        {
+          "name": "Aboard",
+          "domain": "aboardhr.com",
+          "id": 545
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "aboardhr",
+          "name": "Aboard HR",
+          "url": "https://www.aboardhr.com",
+          "name_match": false
+        }
+      ]
+    },
+    "acctual.com": {
+      "catalog": [
+        {
+          "name": "Acctual",
+          "domain": "acctual.com",
+          "id": 780
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "acctual",
+          "name": "Acctual",
+          "url": "https://www.acctual.com",
+          "name_match": true
+        }
+      ]
+    },
     "acnestudios.com": {
       "catalog": [
         {
@@ -78,6 +129,40 @@
         }
       ]
     },
+    "acuityscheduling.com": {
+      "catalog": [
+        {
+          "name": "Acuity Scheduling",
+          "domain": "acuityscheduling.com",
+          "id": 825
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "acuityscheduling",
+          "name": "Acuity Scheduling",
+          "url": "https://acuityscheduling.com",
+          "name_match": false
+        }
+      ]
+    },
+    "aesop.com": {
+      "catalog": [
+        {
+          "name": "Aesop",
+          "domain": "aesop.com",
+          "id": 621
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "aesop",
+          "name": "Aesop",
+          "url": "https://www.aesop.com",
+          "name_match": true
+        }
+      ]
+    },
     "airbnb.com": {
       "catalog": [
         {
@@ -91,6 +176,23 @@
           "slug": "airbnb",
           "name": "Airbnb",
           "url": "https://www.airbnb.com",
+          "name_match": true
+        }
+      ]
+    },
+    "airtable.com": {
+      "catalog": [
+        {
+          "name": "Airtable",
+          "domain": "airtable.com",
+          "id": 164
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "airtable",
+          "name": "Airtable",
+          "url": "https://www.airtable.com",
           "name_match": true
         }
       ]
@@ -126,6 +228,40 @@
           "name": "Anam",
           "url": "https://anam.ai",
           "name_match": true
+        }
+      ]
+    },
+    "anthropic.com": {
+      "catalog": [
+        {
+          "name": "Anthropic",
+          "domain": "anthropic.com",
+          "id": 508
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "anthropic",
+          "name": "Anthropic",
+          "url": "https://www.anthropic.com",
+          "name_match": true
+        }
+      ]
+    },
+    "apollographql.com": {
+      "catalog": [
+        {
+          "name": "Apollo GraphQL",
+          "domain": "apollographql.com",
+          "id": 79
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "apollographql",
+          "name": "Apollo GraphQL",
+          "url": "https://www.apollographql.com",
+          "name_match": false
         }
       ]
     },
@@ -492,53 +628,11 @@
     }
   },
   "missing": {
-    "aboard.com": [
-      {
-        "name": "Aboard",
-        "domain": "aboard.com",
-        "id": 526
-      }
-    ],
-    "aboardhr.com": [
-      {
-        "name": "Aboard",
-        "domain": "aboardhr.com",
-        "id": 545
-      }
-    ],
-    "acctual.com": [
-      {
-        "name": "Acctual",
-        "domain": "acctual.com",
-        "id": 780
-      }
-    ],
-    "acuityscheduling.com": [
-      {
-        "name": "Acuity Scheduling",
-        "domain": "acuityscheduling.com",
-        "id": 825
-      }
-    ],
     "adidas.com": [
       {
         "name": "adidas",
         "domain": "adidas.com",
         "id": 46
-      }
-    ],
-    "aesop.com": [
-      {
-        "name": "Aesop",
-        "domain": "aesop.com",
-        "id": 621
-      }
-    ],
-    "airtable.com": [
-      {
-        "name": "Airtable",
-        "domain": "airtable.com",
-        "id": 164
       }
     ],
     "aloyoga.com": [
@@ -553,20 +647,6 @@
         "name": "Amie",
         "domain": "amie.so",
         "id": 426
-      }
-    ],
-    "anthropic.com": [
-      {
-        "name": "Anthropic",
-        "domain": "anthropic.com",
-        "id": 508
-      }
-    ],
-    "apollographql.com": [
-      {
-        "name": "Apollo GraphQL",
-        "domain": "apollographql.com",
-        "id": 79
       }
     ],
     "arcade.software": [

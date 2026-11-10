@@ -1,0 +1,1200 @@
+{
+ "home": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 3217,
+  "fixed": [
+   {
+    "el": "header.UTJ3Tq_root",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 84,
+    "text": "News\nResearch\nPolicy\nCommitments\nCompany\nTry Claude"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 605,
+    "max": "604.976px"
+   },
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 1440,
+    "max": "1920px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "nav.UTJ3Tq_bar",
+    "cols": "539px 170px 539px",
+    "colGap": "16px",
+    "rowGap": "normal",
+    "w": 1440
+   },
+   {
+    "el": "div.Bo9kyq_standard",
+    "cols": "[content-start col] 92px [col] 92px [col] 92px [col] 92px [col] 92px [col] 92px [col] 92px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 1280
+   },
+   {
+    "el": "div.fUM8lW_cards",
+    "cols": "416px 416px 416px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 1280
+   },
+   {
+    "el": "div.dU5k9q_footerLayout",
+    "cols": "92px 92px 92px 92px 92px 92px 92px 92px 92px 92px 92px 92px",
+    "colGap": "16px",
+    "rowGap": "80px",
+    "w": 1440
+   },
+   {
+    "el": "div.dU5k9q_copySections",
+    "cols": "408px 408px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 848
+   }
+  ]
+ },
+ "news": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 4425,
+  "fixed": [
+   {
+    "el": "header.UTJ3Tq_root",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 84,
+    "text": "News\nResearch\nPolicy\nCommitments\nCompany\nTry Claude"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 632,
+    "max": "640px"
+   },
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 1280,
+    "max": "1920px"
+   },
+   {
+    "w": 416,
+    "max": "655.39px"
+   },
+   {
+    "w": 308,
+    "max": "308px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "nav.UTJ3Tq_bar",
+    "cols": "539px 170px 539px",
+    "colGap": "16px",
+    "rowGap": "normal",
+    "w": 1440
+   },
+   {
+    "el": "div.W1FydW_root",
+    "cols": "92px 92px 92px 92px 92px 92px 92px 92px 92px 92px 92px 92px",
+    "colGap": "16px",
+    "rowGap": "48px",
+    "w": 1280
+   },
+   {
+    "el": "div._5NNTzG_hero-carousel",
+    "cols": "92px 92px 92px 92px 92px 92px 92px 92px 92px 92px 92px 92px",
+    "colGap": "16px",
+    "rowGap": "0px",
+    "w": 1280
+   },
+   {
+    "el": "header.r5ZdYa_content",
+    "cols": "92px 92px 92px 92px 92px 92px 92px 92px 92px 92px 92px 92px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 1440
+   },
+   {
+    "el": "div.RUAb5W_controls",
+    "cols": "91.1562px 810.672px 134.172px 196px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 1280
+   },
+   {
+    "el": "header.bxgyUW_header",
+    "cols": "379.141px 331.875px 271.062px 140.188px 93.7344px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 1280
+   },
+   {
+    "el": "div.bxgyUW_summary",
+    "cols": "378.531px 331.312px 270.625px 139.938px 93.5781px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 1278
+   },
+   {
+    "el": "div.bxgyUW_summary",
+    "cols": "378.531px 331.312px 270.625px 139.938px 93.5781px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 1278
+   }
+  ]
+ },
+ "research": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 9850,
+  "fixed": [
+   {
+    "el": "header.UTJ3Tq_root",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 84,
+    "text": "News\nResearch\nPolicy\nCommitments\nCompany\nTry Claude"
+   },
+   {
+    "el": "header.UTJ3Tq_root",
+    "pos": "sticky",
+    "top": 230,
+    "w": 1440,
+    "h": 84,
+    "text": "News\nResearch\nPolicy\nCommitments\nCompany\nTry Claude"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 496,
+    "max": "655.39px"
+   },
+   {
+    "w": 308,
+    "max": "308px"
+   },
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 1440,
+    "max": "1920px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "nav.UTJ3Tq_bar",
+    "cols": "539px 170px 539px",
+    "colGap": "16px",
+    "rowGap": "normal",
+    "w": 1440
+   },
+   {
+    "el": "div._5NNTzG_hero-carousel",
+    "cols": "92px 92px 92px 92px 92px 92px 92px 92px 92px 92px 92px 92px",
+    "colGap": "16px",
+    "rowGap": "0px",
+    "w": 1440
+   },
+   {
+    "el": "nav.UTJ3Tq_bar",
+    "cols": "539px 170px 539px",
+    "colGap": "16px",
+    "rowGap": "normal",
+    "w": 1440
+   },
+   {
+    "el": "div.RUAb5W_controls",
+    "cols": "91.1562px 659.625px 285.219px 196px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 1280
+   },
+   {
+    "el": "div.bthjQa_container",
+    "cols": "92px 92px 92px 92px 92px 92px 92px 92px 92px 92px 92px 92px",
+    "colGap": "16px",
+    "rowGap": "96px",
+    "w": 1440
+   },
+   {
+    "el": "div.bthjQa_row",
+    "cols": "subgrid [] [] [] [] [] [] [] [] [] [] [] [] []",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1280
+   },
+   {
+    "el": "div.bthjQa_row",
+    "cols": "subgrid [] [] [] [] [] [] [] [] [] [] [] [] []",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1280
+   },
+   {
+    "el": "div.bthjQa_row",
+    "cols": "subgrid [] [] [] [] [] [] [] [] [] [] [] [] []",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "w": 1280
+   }
+  ]
+ },
+ "engineering": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 5321,
+  "fixed": [
+   {
+    "el": "header.UTJ3Tq_root",
+    "pos": "sticky",
+    "top": 0,
+    "w": 1440,
+    "h": 84,
+    "text": "News\nResearch\nPolicy\nCommitments\nCompany\nTry Claude"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 1280,
+    "max": "1920px"
+   },
+   {
+    "w": 416,
+    "max": "655.39px"
+   },
+   {
+    "w": 308,
+    "max": "308px"
+   },
+   {
+    "w": 1440,
+    "max": "1920px"
+   },
+   {
+    "w": 1440,
+    "max": "1920px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "nav.UTJ3Tq_bar",
+    "cols": "539px 170px 539px",
+    "colGap": "16px",
+    "rowGap": "normal",
+    "w": 1440
+   },
+   {
+    "el": "div._5NNTzG_hero-carousel",
+    "cols": "92px 92px 92px 92px 92px 92px 92px 92px 92px 92px 92px 92px",
+    "colGap": "16px",
+    "rowGap": "0px",
+    "w": 1280
+   },
+   {
+    "el": "div.RUAb5W_controls",
+    "cols": "788.438px 263.562px 196px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 1280
+   },
+   {
+    "el": "div.qB_UoW_container",
+    "cols": "92px 92px 92px 92px 92px 92px 92px 92px 92px 92px 92px 92px",
+    "colGap": "16px",
+    "rowGap": "48px",
+    "w": 1440
+   },
+   {
+    "el": "div.dU5k9q_footerLayout",
+    "cols": "92px 92px 92px 92px 92px 92px 92px 92px 92px 92px 92px 92px",
+    "colGap": "16px",
+    "rowGap": "80px",
+    "w": 1440
+   },
+   {
+    "el": "div.dU5k9q_copySections",
+    "cols": "408px 408px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 848
+   }
+  ]
+ },
+ "product": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 11922,
+  "fixed": [
+   {
+    "el": "div.transition-overlay",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 900,
+    "text": ""
+   },
+   {
+    "el": "aside.toast",
+    "pos": "fixed",
+    "top": 642,
+    "w": 384,
+    "h": 234,
+    "text": "Latest news\n\nIntroducing Claude Duet\n\nA new app and proactiv"
+   },
+   {
+    "el": "header.header",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 129,
+    "text": "Product\nDevelopers\nEnterprise\nResources\nPricing\nLogin\nContac"
+   },
+   {
+    "el": "div.connScrim",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 900,
+    "text": ""
+   },
+   {
+    "el": "div.scrim",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 900,
+    "text": ""
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 384,
+    "max": "384px"
+   },
+   {
+    "w": 606,
+    "max": "704px"
+   },
+   {
+    "w": 550,
+    "max": "550px"
+   },
+   {
+    "w": 600,
+    "max": "600px"
+   },
+   {
+    "w": 1440,
+    "max": "1440px"
+   },
+   {
+    "w": 318,
+    "max": "318px"
+   },
+   {
+    "w": 584,
+    "max": "785px"
+   },
+   {
+    "w": 704,
+    "max": "704px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.grid",
+    "cols": "378.656px 378.672px 378.656px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 1200
+   },
+   {
+    "el": "div.bandGrid",
+    "cols": "125.359px 330.969px 690.359px",
+    "colGap": "2.22222%",
+    "rowGap": "2.22222%",
+    "w": 1200
+   },
+   {
+    "el": "div.grid",
+    "cols": "378.656px 378.672px 378.656px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 1200
+   },
+   {
+    "el": "div.grid",
+    "cols": "426.656px 853.344px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 1312
+   },
+   {
+    "el": "div.desktopLinks",
+    "cols": "189.328px 189.344px 189.328px 189.344px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 853
+   }
+  ]
+ },
+ "platform-api": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 16027,
+  "fixed": [
+   {
+    "el": "div.transition-overlay",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 900,
+    "text": ""
+   },
+   {
+    "el": "header.header",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 129,
+    "text": "Product\nDevelopers\nEnterprise\nResources\nPricing\nLogin\nContac"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 1312,
+    "max": "1440px"
+   },
+   {
+    "w": 752,
+    "max": "830.703px"
+   },
+   {
+    "w": 484,
+    "max": "484.399px"
+   },
+   {
+    "w": 1312,
+    "max": "1440px"
+   },
+   {
+    "w": 1200,
+    "max": "1200px"
+   },
+   {
+    "w": 98,
+    "max": "490.192px"
+   },
+   {
+    "w": 1312,
+    "max": "1440px"
+   },
+   {
+    "w": 677,
+    "max": "1012.42px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.grid",
+    "cols": "80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px",
+    "colGap": "32px",
+    "rowGap": "24px",
+    "w": 1312
+   },
+   {
+    "el": "div.container",
+    "cols": "304px 304px 304px 304px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 1312
+   },
+   {
+    "el": "li.capability",
+    "cols": "20px 206px",
+    "colGap": "12px",
+    "rowGap": "normal",
+    "w": 238
+   },
+   {
+    "el": "li.capability",
+    "cols": "20px 206px",
+    "colGap": "12px",
+    "rowGap": "normal",
+    "w": 238
+   },
+   {
+    "el": "li.capability",
+    "cols": "20px 206px",
+    "colGap": "12px",
+    "rowGap": "normal",
+    "w": 238
+   },
+   {
+    "el": "li.capability",
+    "cols": "20px 206px",
+    "colGap": "12px",
+    "rowGap": "normal",
+    "w": 238
+   },
+   {
+    "el": "li.capability",
+    "cols": "20px 206px",
+    "colGap": "12px",
+    "rowGap": "normal",
+    "w": 238
+   },
+   {
+    "el": "li.capability",
+    "cols": "20px 206px",
+    "colGap": "12px",
+    "rowGap": "normal",
+    "w": 238
+   }
+  ]
+ },
+ "pricing": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 7647,
+  "fixed": [
+   {
+    "el": "div.transition-overlay",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 900,
+    "text": ""
+   },
+   {
+    "el": "header.header",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 129,
+    "text": "Product\nDevelopers\nEnterprise\nResources\nPricing\nLogin\nContac"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 1312,
+    "max": "1440px"
+   },
+   {
+    "w": 1246,
+    "max": "1246.05px"
+   },
+   {
+    "w": 518,
+    "max": "517.59px"
+   },
+   {
+    "w": 1312,
+    "max": "1440px"
+   },
+   {
+    "w": 1012,
+    "max": "1012.42px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.autoGrid",
+    "cols": "310px 310px 310px 310px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "w": 1312
+   },
+   {
+    "el": "div.autoGrid",
+    "cols": "421.328px 421.328px 421.344px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "w": 1312
+   },
+   {
+    "el": "div.autoGrid",
+    "cols": "607px 607px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 1246
+   },
+   {
+    "el": "div.legacy",
+    "cols": "416px 416px 416px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 1312
+   },
+   {
+    "el": "div.autoGrid",
+    "cols": "420px 420px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "w": 864
+   },
+   {
+    "el": "div.grid",
+    "cols": "426.656px 853.344px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 1312
+   },
+   {
+    "el": "div.desktopLinks",
+    "cols": "189.328px 189.344px 189.328px 189.344px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 853
+   }
+  ]
+ },
+ "contact-sales": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 5597,
+  "fixed": [
+   {
+    "el": "div.transition-overlay",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 900,
+    "text": ""
+   },
+   {
+    "el": "header.header",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 129,
+    "text": "Product\nDevelopers\nEnterprise\nResources\nPricing\nLogin\nContac"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 1312,
+    "max": "1440px"
+   },
+   {
+    "w": 448,
+    "max": "1401.81px"
+   },
+   {
+    "w": 824,
+    "max": "837.653px"
+   },
+   {
+    "w": 1312,
+    "max": "1440px"
+   },
+   {
+    "w": 360,
+    "max": "360px"
+   },
+   {
+    "w": 340,
+    "max": "856.018px"
+   },
+   {
+    "w": 360,
+    "max": "544.949px"
+   },
+   {
+    "w": 544,
+    "max": "543.59px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.grid-12",
+    "cols": "80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 1312
+   },
+   {
+    "el": "div.container",
+    "cols": "416px 416px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 864
+   },
+   {
+    "el": "div.split",
+    "cols": "426.656px 853.344px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 1312
+   },
+   {
+    "el": "div.grid",
+    "cols": "426.656px 853.344px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 1312
+   },
+   {
+    "el": "div.desktopLinks",
+    "cols": "189.328px 189.344px 189.328px 189.344px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 853
+   }
+  ]
+ },
+ "docs-home": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 3703,
+  "fixed": [
+   {
+    "el": "canvas.pointer-events-none",
+    "pos": "fixed",
+    "top": 0,
+    "w": 64,
+    "h": 64,
+    "text": ""
+   },
+   {
+    "el": "header.fixed",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 56,
+    "text": "Claude Platform Docs\nMessages\nManaged Agents\nAdmin\nResources"
+   },
+   {
+    "el": "div.fixed",
+    "pos": "fixed",
+    "top": 836,
+    "w": 119,
+    "h": 40,
+    "text": "Ask Docs\n"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 1440,
+    "max": "1440px"
+   },
+   {
+    "w": 1152,
+    "max": "1152px"
+   },
+   {
+    "w": 448,
+    "max": "448px"
+   },
+   {
+    "w": 288,
+    "max": "288px"
+   },
+   {
+    "w": 520,
+    "max": "672px"
+   },
+   {
+    "w": 1152,
+    "max": "1152px"
+   },
+   {
+    "w": 512,
+    "max": "512px"
+   },
+   {
+    "w": 1152,
+    "max": "1152px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.grid",
+    "cols": "538px 538px",
+    "colGap": "28px",
+    "rowGap": "28px",
+    "w": 1104
+   },
+   {
+    "el": "div.grid",
+    "cols": "360px 360px 360px",
+    "colGap": "12px",
+    "rowGap": "12px",
+    "w": 1104
+   },
+   {
+    "el": "div.grid",
+    "cols": "345.328px 345.328px 345.344px",
+    "colGap": "12px",
+    "rowGap": "12px",
+    "w": 1060
+   },
+   {
+    "el": "div.grid",
+    "cols": "345.328px 345.328px 345.344px",
+    "colGap": "12px",
+    "rowGap": "12px",
+    "w": 1060
+   },
+   {
+    "el": "div.grid",
+    "cols": "345.328px 345.328px 345.344px",
+    "colGap": "12px",
+    "rowGap": "12px",
+    "w": 1060
+   },
+   {
+    "el": "div.grid",
+    "cols": "345.328px 345.328px 345.344px",
+    "colGap": "12px",
+    "rowGap": "12px",
+    "w": 1060
+   },
+   {
+    "el": "div.grid",
+    "cols": "264px 264px 264px 264px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 1104
+   },
+   {
+    "el": "div.grid",
+    "cols": "357.328px 357.328px 357.344px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 1104
+   }
+  ]
+ },
+ "docs-start": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 3104,
+  "fixed": [
+   {
+    "el": "canvas.pointer-events-none",
+    "pos": "fixed",
+    "top": 0,
+    "w": 64,
+    "h": 64,
+    "text": ""
+   },
+   {
+    "el": "header.fixed",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 56,
+    "text": "Claude Platform Docs\nMessages\nManaged Agents\nAdmin\nResources"
+   },
+   {
+    "el": "aside.lg:flex",
+    "pos": "fixed",
+    "top": 56,
+    "w": 264,
+    "h": 844,
+    "text": "\nSearch\n⌘\nCommand\nK\nFirst steps\nIntro to Claude\nGet your AP"
+   },
+   {
+    "el": "nav.sticky",
+    "pos": "sticky",
+    "top": 56,
+    "w": 224,
+    "h": 164,
+    "text": "Before you begin\nCall the API\nNext steps"
+   },
+   {
+    "el": "div.fixed",
+    "pos": "fixed",
+    "top": 836,
+    "w": 119,
+    "h": 40,
+    "text": "Ask Docs\n"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 1440,
+    "max": "1440px"
+   },
+   {
+    "w": 1176,
+    "max": "1536px"
+   },
+   {
+    "w": 896,
+    "max": "896px"
+   },
+   {
+    "w": 1048,
+    "max": "1440px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.grid",
+    "cols": "408px 408px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 832
+   },
+   {
+    "el": "div.grid",
+    "cols": "154.719px 154.719px 154.719px 154.719px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 715
+   }
+  ]
+ },
+ "docs-api": {
+  "vw": 1440,
+  "vh": 900,
+  "docH": 25049,
+  "fixed": [
+   {
+    "el": "canvas.pointer-events-none",
+    "pos": "fixed",
+    "top": 0,
+    "w": 64,
+    "h": 64,
+    "text": ""
+   },
+   {
+    "el": "header.fixed",
+    "pos": "fixed",
+    "top": 0,
+    "w": 1440,
+    "h": 56,
+    "text": "Claude Platform Docs\nMessages\nManaged Agents\nAdmin\nResources"
+   },
+   {
+    "el": "aside.lg:flex",
+    "pos": "fixed",
+    "top": 56,
+    "w": 264,
+    "h": 844,
+    "text": "\nSearch\n⌘\nCommand\nK\n\nInclude beta APIs\nUsing the API\nFeatu"
+   },
+   {
+    "el": "div.fixed",
+    "pos": "fixed",
+    "top": 836,
+    "w": 119,
+    "h": 40,
+    "text": "Ask Docs\n"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 1440,
+    "max": "1440px"
+   },
+   {
+    "w": 1176,
+    "max": "1536px"
+   },
+   {
+    "w": 720,
+    "max": "720px"
+   },
+   {
+    "w": 720,
+    "max": "720px"
+   },
+   {
+    "w": 720,
+    "max": "720px"
+   },
+   {
+    "w": 121,
+    "max": "720px"
+   },
+   {
+    "w": 121,
+    "max": "720px"
+   },
+   {
+    "w": 720,
+    "max": "720px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "div.grid",
+    "cols": "154.719px 154.719px 154.719px 154.719px",
+    "colGap": "32px",
+    "rowGap": "32px",
+    "w": 715
+   }
+  ]
+ },
+ "mobile-home": {
+  "vw": 390,
+  "vh": 844,
+  "docH": 4424,
+  "fixed": [
+   {
+    "el": "header.UTJ3Tq_root",
+    "pos": "sticky",
+    "top": 0,
+    "w": 390,
+    "h": 84,
+    "text": "Try Claude"
+   },
+   {
+    "el": "div",
+    "pos": "fixed",
+    "top": 0,
+    "w": 390,
+    "h": 844,
+    "text": ""
+   },
+   {
+    "el": "div.A1YAyq_popup",
+    "pos": "fixed",
+    "top": 0,
+    "w": 390,
+    "h": 844,
+    "text": "Menu\nHome\nNews\nResearch\nPolicy\nCommitments\nCompany\nNov 6, 20"
+   }
+  ],
+  "maxWidths": [
+   {
+    "w": 390,
+    "max": "1920px"
+   },
+   {
+    "w": 390,
+    "max": "1920px"
+   },
+   {
+    "w": 390,
+    "max": "1920px"
+   },
+   {
+    "w": 390,
+    "max": "1920px"
+   },
+   {
+    "w": 294,
+    "max": "579.829px"
+   },
+   {
+    "w": 390,
+    "max": "1920px"
+   },
+   {
+    "w": 390,
+    "max": "1920px"
+   },
+   {
+    "w": 390,
+    "max": "1920px"
+   }
+  ],
+  "grids": [
+   {
+    "el": "nav.UTJ3Tq_bar",
+    "cols": "35px 275px",
+    "colGap": "16px",
+    "rowGap": "normal",
+    "w": 390
+   },
+   {
+    "el": "div.Bo9kyq_standard",
+    "cols": "[content-start col] 69.5px [col] 69.5px [col] 69.5px [col] 69.5px [content-end]",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "w": 326
+   },
+   {
+    "el": "div.dU5k9q_footerLayout",
+    "cols": "69.5px 69.5px 69.5px 69.5px",
+    "colGap": "16px",
+    "rowGap": "80px",
+    "w": 390
+   }
+  ]
+ }
+}
