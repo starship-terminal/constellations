@@ -1,0 +1,2727 @@
+{
+  "about": "Walkthrough queue: iOS apps in the refero.design catalog with no systems/ package. Apps carry no domain, so coverage is matched by name against package slugs — the `covered` list is reference, spot-check before claiming. One measured package per app; refero styles are landing-page design only and never substitute.",
+  "method": "extract-style skill + tools/kit/ native iOS capture through iPhone Mirroring (docs/CAPTURE.md), then the systems/<slug>/ layout in docs/PACKAGE.md with evidence labels and a catalog.json entry in the same change.",
+  "agent_notes": [
+    "Dismiss popups and system prompts yourself: App Tracking Transparency, notification/contacts/photos permission sheets, cookie and consent banners, onboarding carousels, rating prompts. Never hand a dismissable dialog back to the user.",
+    "Sign in yourself: prefer Sign in with Apple or \"Continue with Google\" already configured on the capture device/profile, and complete it without asking. For email signup use a disposable test account and record it in the package notes.",
+    "Escalate only real blockers: SMS/phone verification, paid or region-locked apps, org SSO or invite gates, hardware keys, TestFlight-only builds. Set status to \"blocked\" with the reason in notes instead of deferring silently.",
+    "Capture functionality, not just design: walk onboarding and the core flows (first run, main tabs/screens, settings, key actions). A web marketing page of the same product is not iOS app evidence.",
+    "One app per PR: when it merges set status to \"captured\" and package to the systems/<slug>. Keep this manifest in the commit."
+  ],
+  "totals": {
+    "ios_apps": 312,
+    "covered": 17,
+    "apps": 295
+  },
+  "covered": {
+    "Arc Search": [
+      "arcsearch"
+    ],
+    "Brilliant": [
+      "brilliant"
+    ],
+    "ChatGPT": [
+      "chatgpt-ios"
+    ],
+    "Claude": [
+      "claude-ios"
+    ],
+    "Duolingo": [
+      "duolingo"
+    ],
+    "Google Gemini": [
+      "gemini"
+    ],
+    "Grok": [
+      "grokbot-desktop"
+    ],
+    "Linear": [
+      "linear"
+    ],
+    "Luma": [
+      "luma-ios"
+    ],
+    "Luma AI": [
+      "luma-ios"
+    ],
+    "Notion": [
+      "notion-calendar-desktop",
+      "notion-desktop"
+    ],
+    "Raycast": [
+      "raycast-desktop"
+    ],
+    "Spotify": [
+      "spotify"
+    ],
+    "Substack": [
+      "substack"
+    ],
+    "Telegram": [
+      "telegram"
+    ],
+    "YouTube": [
+      "youtube"
+    ],
+    "YouTube Music": [
+      "youtube"
+    ]
+  },
+  "apps": [
+    {
+      "name": "(Not Boring) Camera",
+      "refero_app_id": 222,
+      "store_url": "https://apps.apple.com/us/app/not-boring-camera/id6737783441?platform=iphone",
+      "description": "Pro Camera with Natural Photos",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "(Not Boring) Habits",
+      "refero_app_id": 177,
+      "store_url": "https://apps.apple.com/us/app/not-boring-habits/id1593891243",
+      "description": "Science-backed habit tracker",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "(Not Boring) Vibes",
+      "refero_app_id": 179,
+      "store_url": "https://apps.apple.com/us/app/not-boring-vibes/id1661440185",
+      "description": "Music to focus, sleep, & relax",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "(Not Boring) Weather",
+      "refero_app_id": 159,
+      "store_url": "https://apps.apple.com/us/app/not-boring-weather/id1531063436",
+      "description": "Simple Design & Live Widgets",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "1Password",
+      "refero_app_id": 68,
+      "store_url": "https://apps.apple.com/us/app/1password-password-manager/id1511601750",
+      "description": "Store your passwords safely",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "222",
+      "refero_app_id": 248,
+      "store_url": "https://apps.apple.com/us/app/222-find-your-people/id6450612690",
+      "description": "explore serendipity.",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "[untitled]",
+      "refero_app_id": 45,
+      "store_url": "https://apps.apple.com/us/app/untitled/id6445854828",
+      "description": "home for your unreleased music",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Abode",
+      "refero_app_id": 167,
+      "store_url": "https://testflight.apple.com/join/9Arozgr9",
+      "description": "Social widgets with friends",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "ABY Journal",
+      "refero_app_id": 229,
+      "store_url": "https://apps.apple.com/us/app/ai-journal-mood-tracker-aby/id6446336653",
+      "description": "Private Diary, Voice Journal",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Acorns",
+      "refero_app_id": 122,
+      "store_url": "https://apps.apple.com/us/app/acorns-invest-spare-change/id883324671",
+      "description": "Investing. Banking. Growing",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Ada",
+      "refero_app_id": 164,
+      "store_url": "https://apps.apple.com/us/app/ada-check-your-health/id1099986434",
+      "description": "Know and track your symptoms",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Adobe Photoshop",
+      "refero_app_id": 172,
+      "store_url": "https://apps.apple.com/us/app/adobe-photoshop/id1457771281",
+      "description": "Powerful AI Image Editor",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Agora 2",
+      "refero_app_id": 275,
+      "store_url": "https://apps.apple.com/us/app/agora-2/id1211813334",
+      "description": "Podcast player",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Ahead",
+      "refero_app_id": 118,
+      "store_url": "https://apps.apple.com/us/app/ahead-emotions-coach/id1570430177",
+      "description": "Anger & Mood Management",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Airbnb",
+      "refero_app_id": 2,
+      "store_url": "https://apps.apple.com/us/app/airbnb/id401626263",
+      "description": "Homes, experiences, services",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Airbuds",
+      "refero_app_id": 150,
+      "store_url": "https://apps.apple.com/us/app/airbuds-widget/id1638906106",
+      "description": "Friends Music",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Airchat",
+      "refero_app_id": 104,
+      "store_url": "https://apps.apple.com/us/app/airchat-just-talk/id1469462351",
+      "description": "Always someone to talk to",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Alive",
+      "refero_app_id": 90,
+      "store_url": "https://apps.apple.com/us/app/alive-by-whitney-simmons/id1488020055",
+      "description": "Workout and Fitness App",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Amie",
+      "refero_app_id": 78,
+      "store_url": "https://apps.apple.com/us/app/amie-calendar-and-todos/id1548277133",
+      "description": "Joyful productivity",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Andante",
+      "refero_app_id": 79,
+      "store_url": "https://apps.apple.com/us/app/andante-practice-journal/id1530262372?platform=iphone",
+      "description": "Perfect your practice",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Any Distance",
+      "refero_app_id": 19,
+      "store_url": "https://apps.apple.com/us/app/any-distance-workout-tracker/id1545233932",
+      "description": "Walk, Run, Ride, Hike, Yoga",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Apple Books",
+      "refero_app_id": 280,
+      "store_url": "https://apps.apple.com/us/app/apple-books/id364709193",
+      "description": "Read, listen, discover",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Apple Games",
+      "refero_app_id": 253,
+      "store_url": "https://apps.apple.com/us/app/apple-games/id6744464675",
+      "description": "Your home for games",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Apple Image Playground",
+      "refero_app_id": 293,
+      "store_url": "https://apps.apple.com/us/app/image-playground/id6479176117",
+      "description": "Create Fun Images Easily",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Apple Invites",
+      "refero_app_id": 163,
+      "store_url": "https://apps.apple.com/us/app/apple-invites/id6472498645",
+      "description": "Invite, Plan & Celebrate",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Apple Music",
+      "refero_app_id": 26,
+      "store_url": "https://apps.apple.com/us/app/apple-music/id1108187390",
+      "description": "Over 100 million songs",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Apple News",
+      "refero_app_id": 136,
+      "store_url": "https://apps.apple.com/us/app/apple-news/id1066498020",
+      "description": "News + magazines, in one app",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Apple Podcasts",
+      "refero_app_id": 186,
+      "store_url": "https://apps.apple.com/us/app/apple-podcasts/id525463029",
+      "description": "Audio that informs & inspires",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Apple Sports",
+      "refero_app_id": 132,
+      "store_url": "https://apps.apple.com/us/app/apple-sports/id6446788829",
+      "description": "Live scores and stats",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Apple Stocks",
+      "refero_app_id": 145,
+      "store_url": "https://apps.apple.com/us/app/stocks/id1069512882",
+      "description": "Finance",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Apple TV",
+      "refero_app_id": 130,
+      "store_url": "https://apps.apple.com/us/app/apple-tv/id1174078549",
+      "description": "Originals, Sports & More",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Apple Weather",
+      "refero_app_id": 65,
+      "store_url": "https://apps.apple.com/us/app/weather/id1069513131",
+      "description": "Conveniently check the weather at your favorite locations on your iPhone",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Arc",
+      "refero_app_id": 21,
+      "store_url": "https://apps.apple.com/us/app/arc-mobile-companion/id1669785846",
+      "description": "Meet the internet again",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Around",
+      "refero_app_id": 102,
+      "store_url": "https://apps.apple.com/us/app/around-by-miro-labs/id1558224935",
+      "description": "Video Collaboration Space",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Artsy",
+      "refero_app_id": 218,
+      "store_url": "https://apps.apple.com/us/app/artsy-buy-sell-fine-art/id703796080",
+      "description": "Discover art that moves you",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Asana",
+      "refero_app_id": 30,
+      "store_url": "https://apps.apple.com/us/app/asana-work-in-one-place/id489969512",
+      "description": "Get to your goals faster",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Asos",
+      "refero_app_id": 6,
+      "store_url": "https://apps.apple.com/us/app/asos/id457876088",
+      "description": "Discover fashion online",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Athleats",
+      "refero_app_id": 271,
+      "store_url": "https://apps.apple.com/us/app/athleats-performance-recipes/id6754655851",
+      "description": "Healthy recipes for results",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Atoms.",
+      "refero_app_id": 99,
+      "store_url": "https://apps.apple.com/us/app/atoms-from-atomic-habits/id6474421906",
+      "description": "The official Atomic Habits app",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Bear",
+      "refero_app_id": 43,
+      "store_url": "https://apps.apple.com/us/app/bear-markdown-notes/id1016366447",
+      "description": "Write naturally",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "BeReal.",
+      "refero_app_id": 174,
+      "store_url": "https://apps.apple.com/us/app/bereal-photos-friends-daily/id1459645446",
+      "description": "Real photo, no filter",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Binge",
+      "refero_app_id": 295,
+      "store_url": "https://apps.apple.com/us/app/binge-movies-and-shows/id6755895331",
+      "description": "Track movies and TV shows",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Binsoo",
+      "refero_app_id": 208,
+      "store_url": "https://apps.apple.com/us/app/binsoo-photo-filters-editor/id6502683720",
+      "description": "Endless aesthetics and effects",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Blackbird",
+      "refero_app_id": 244,
+      "store_url": "https://apps.apple.com/us/app/blackbird-vip-dining-rewards/id6447012323",
+      "description": "Earn points with every meal",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Blue Apron",
+      "refero_app_id": 101,
+      "store_url": "https://apps.apple.com/us/app/blue-apron-meal-kits/id976642810",
+      "description": "Home Cooking Delivery Service",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "BoldVoice",
+      "refero_app_id": 112,
+      "store_url": "https://apps.apple.com/us/app/boldvoice-pronunciation-app/id1567841142?platform=iphone",
+      "description": "Speak English, Accent Practice",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Bond",
+      "refero_app_id": 317,
+      "store_url": "https://apps.apple.com/us/app/bond-connect-memories/id6746621262",
+      "description": "Your memories work for you",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Box Box Club",
+      "refero_app_id": 228,
+      "store_url": "https://apps.apple.com/us/app/box-box-club-formula-widgets/id1621241916",
+      "description": "F1 Widgets, News and Schedule",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Breathwrk",
+      "refero_app_id": 223,
+      "store_url": "https://apps.apple.com/us/app/breathwrk-breathing-exercises/id1481804500",
+      "description": "Stress, Sleep, Focus, Breathe",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Brink",
+      "refero_app_id": 267,
+      "store_url": "https://apps.apple.com/us/app/brink-podcasts-and-news/id6760338948",
+      "description": "Podcasts & News, in one place",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Bump",
+      "refero_app_id": 152,
+      "store_url": "https://apps.apple.com/us/app/bump-ex-zenly-team/id6471519217",
+      "description": "The best friend map",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Buy Me a Coffee",
+      "refero_app_id": 28,
+      "store_url": "https://apps.apple.com/us/app/buy-me-a-coffee/id1480229954",
+      "description": "For Creators and Artists",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Calm",
+      "refero_app_id": 17,
+      "store_url": "https://apps.apple.com/us/app/calm/id571800810?platform=iphone",
+      "description": "Sleep, Meditation, Relaxation",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Camera M",
+      "refero_app_id": 83,
+      "store_url": "https://apps.apple.com/us/app/camera-m-pro-manual-camera/id1239098425",
+      "description": "Powerful Pro Controls",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Canopi",
+      "refero_app_id": 195,
+      "store_url": "https://apps.apple.com/us/app/canopi-memorable-moments/id6483864028",
+      "description": "Memorable Events with Friends",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "CapWords",
+      "refero_app_id": 196,
+      "store_url": "https://apps.apple.com/us/app/capwords-ai-snap-learn-langs/id6738896465",
+      "description": "Photo translate & vocab cards",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Carbon",
+      "refero_app_id": 224,
+      "store_url": "https://apps.apple.com/us/app/carbon-underground-electro/id6476403240",
+      "description": "House, Techno, DJ app, music",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "CARROT Weather",
+      "refero_app_id": 56,
+      "store_url": "https://apps.apple.com/us/app/carrot-weather-alerts-radar/id961390574?platform=iphone",
+      "description": "Local Forecasts & Live Maps",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Cashcaded",
+      "refero_app_id": 312,
+      "store_url": "https://apps.apple.com/us/app/cashcaded-your-money-manager/id6787127683",
+      "description": "Expense tracker & gallery",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Castro",
+      "refero_app_id": 82,
+      "store_url": "https://apps.apple.com/us/app/castro-podcast-player/id1080840241",
+      "description": "The player for heavy listeners",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Chance AI",
+      "refero_app_id": 215,
+      "store_url": "https://apps.apple.com/us/app/chance-ai-curiosity-lens/id6695741291",
+      "description": "Visual Search",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Checker",
+      "refero_app_id": 210,
+      "store_url": "https://apps.apple.com/us/app/daily-habit-tracker-checker/id6502667826",
+      "description": "Build streaks, keep progress",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Chopra",
+      "refero_app_id": 95,
+      "store_url": "https://apps.apple.com/us/app/chopra-meditation-wellbeing/id1504538204?platform=iphone",
+      "description": "Mindful tips for self-care",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Clearful",
+      "refero_app_id": 140,
+      "store_url": "https://apps.apple.com/us/app/clearful-journal-diary/id1513257639?platform=iphone",
+      "description": "Journaling for Personal Growth",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Clime",
+      "refero_app_id": 263,
+      "store_url": "https://apps.apple.com/us/app/clime-noaa-weather-radar-live/id749133753",
+      "description": "Tornado, Rain & Storm Alerts",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Clucky",
+      "refero_app_id": 309,
+      "store_url": "https://apps.apple.com/us/app/clucky-loud-alarm-clock/id6792550911",
+      "description": "No Snooze, Wake Up Missions",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "CocoonWeaver",
+      "refero_app_id": 170,
+      "store_url": "https://apps.apple.com/us/app/cocoonweaver-sound-the-moment/id1464144628",
+      "description": "Voice memo and note keeper",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Coinbase",
+      "refero_app_id": 93,
+      "store_url": "https://apps.apple.com/us/app/coinbase-buy-bitcoin-ether/id886427730",
+      "description": "Most trusted crypto exchange",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "ColorMo",
+      "refero_app_id": 316,
+      "store_url": "https://apps.apple.com/us/app/colormo-photo-scrapbook/id6762374260",
+      "description": "Color Palette Travel Journal",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Comet",
+      "refero_app_id": 266,
+      "store_url": "https://apps.apple.com/us/app/comet-ai-browser-assistant/id6748622471",
+      "description": "Browser and AI assistant",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Copilot",
+      "refero_app_id": 100,
+      "store_url": "https://apps.apple.com/us/app/copilot-track-budget-money/id1447330651?platform=iphone",
+      "description": "Spending, investing, net worth",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Cosmos",
+      "refero_app_id": 54,
+      "store_url": "https://apps.apple.com/us/app/cosmos-curate-your-universe/id1577975475",
+      "description": "A new home for inspiration",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Craft",
+      "refero_app_id": 71,
+      "store_url": "https://apps.apple.com/us/app/craft-write-docs-ai-editing/id1487937127",
+      "description": "Journal ideas, meeting notes",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "CREME",
+      "refero_app_id": 18,
+      "store_url": "https://apps.apple.com/us/app/creme-its-time-to-cook/id1638361026",
+      "description": "Create Memories",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Cron",
+      "refero_app_id": 33,
+      "store_url": "https://apps.apple.com/us/app/cron-calendar/id1607562761",
+      "description": "Next generation calendar for professionals and teams",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Crouton",
+      "refero_app_id": 120,
+      "store_url": "https://apps.apple.com/us/app/crouton-recipe-manager/id1461650987?platform=iphone",
+      "description": "Grocery List, Meal Planner",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "DailyArt",
+      "refero_app_id": 155,
+      "store_url": "https://apps.apple.com/us/app/dailyart/id547982045?platform=iphone",
+      "description": "Daily Dose of Art History",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Daylish",
+      "refero_app_id": 230,
+      "store_url": "https://apps.apple.com/us/app/daylish-visual-schedule/id6751201325",
+      "description": "Appointment Reminder Alarm App",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Days",
+      "refero_app_id": 225,
+      "store_url": "https://apps.apple.com/us/app/days-event-countdown/id939368917",
+      "description": "Countdown, widgets & reminders",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Daze",
+      "refero_app_id": 246,
+      "store_url": "https://apps.apple.com/us/app/daze-freeform-chat/id6497405419",
+      "description": "The most fun place to chat",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Denim",
+      "refero_app_id": 193,
+      "store_url": "https://apps.apple.com/us/app/denim-playlist-cover-maker/id1532250420",
+      "description": "Playlist art, made easy & fun!",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Dime",
+      "refero_app_id": 16,
+      "store_url": "https://apps.apple.com/us/app/dime-budgets-and-expenses/id1635280255",
+      "description": "Personal Spending Tracker",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "District",
+      "refero_app_id": 294,
+      "store_url": "https://apps.apple.com/us/app/district-movies-events-dining/id6670536058",
+      "description": "Book films, shows and tables",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Doji",
+      "refero_app_id": 198,
+      "store_url": "https://apps.apple.com/us/app/doji-try-on-designer-fashion/id6737292650",
+      "description": "Create your AI likeness",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Dot",
+      "refero_app_id": 129,
+      "store_url": "https://apps.apple.com/us/app/dot-living-history/id6450016041",
+      "description": "AI that grows with you",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Drinkit",
+      "refero_app_id": 269,
+      "store_url": "https://apps.apple.com/us/app/drinkit-order-your-coffee/id1495622004",
+      "description": "Coffee drinks and food",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Dropbox",
+      "refero_app_id": 7,
+      "store_url": "https://apps.apple.com/us/app/dropbox-cloud-files-storage/id327630330",
+      "description": "Backup Photos & Save Documents",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Drops",
+      "refero_app_id": 20,
+      "store_url": "https://apps.apple.com/us/app/drops-language-learning-games/id939540371",
+      "description": "Learn Spanish, French, Korean",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Dropset",
+      "refero_app_id": 203,
+      "store_url": "https://apps.apple.com/us/app/dropset-gym-tracker/id6444746146",
+      "description": "Track your gym workouts",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "ElevenLabs",
+      "refero_app_id": 265,
+      "store_url": "https://apps.apple.com/us/app/elevenlabs-ai-voice-generator/id6743162587",
+      "description": "Text to voice for creators",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "ElevenMusic",
+      "refero_app_id": 290,
+      "store_url": "https://apps.apple.com/us/app/elevenmusic-by-elevenlabs/id6755965224",
+      "description": "Discover music, create songs",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "ElevenReader",
+      "refero_app_id": 242,
+      "store_url": "https://apps.apple.com/us/app/elevenreader-read-text-aloud/id6479373050",
+      "description": "Reader for books, PDFs & docs",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Endel",
+      "refero_app_id": 12,
+      "store_url": "https://apps.apple.com/us/app/endel-focus-sleep-relax/id1346247457",
+      "description": "Sounds powered by science",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Exoplan",
+      "refero_app_id": 216,
+      "store_url": "https://apps.apple.com/us/app/exoplan/id6739639089",
+      "description": "Health & Productivity Calendar",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Fable",
+      "refero_app_id": 96,
+      "store_url": "https://apps.apple.com/us/app/fable-your-book-community/id1488170618",
+      "description": "Find, read, & chat about books",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Family",
+      "refero_app_id": 47,
+      "store_url": "https://family.co/",
+      "description": "Explore Ethereum with the best wallet for iOS",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Feels",
+      "refero_app_id": 97,
+      "store_url": "https://apps.apple.com/us/app/feels-dating-app-meet-people/id1455618069",
+      "description": "Chat, Date & Make New Friends",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Figma",
+      "refero_app_id": 72,
+      "store_url": "https://apps.apple.com/us/app/figma/id1152747299?platform=iphone",
+      "description": "Design, collaborate, & mirror",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Flo",
+      "refero_app_id": 134,
+      "store_url": "https://apps.apple.com/us/app/flo-period-pregnancy-tracker/id1038369065",
+      "description": "Cycle and Ovulation Calendar",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "FocusFlight",
+      "refero_app_id": 238,
+      "store_url": "https://apps.apple.com/us/app/focusflight-deepfocus-timer/id6648771147",
+      "description": "Take off into deep focus",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "FocusPomo",
+      "refero_app_id": 181,
+      "store_url": "https://apps.apple.com/us/app/focuspomo-pomodoro-timer/id1528322796?platform=iphone",
+      "description": "Productivity for Work & Study",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Foodllama",
+      "refero_app_id": 278,
+      "store_url": "https://apps.apple.com/us/app/foodllama-ai-calorie-tracker/id6743861207",
+      "description": "Food tracking & nutrition app",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "FoodNoms",
+      "refero_app_id": 48,
+      "store_url": "https://apps.apple.com/us/app/foodnoms-food-tracker/id1479461686?l=us&platform=iphone",
+      "description": "Better nutrition tracking app",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Foodvisor",
+      "refero_app_id": 92,
+      "store_url": "https://apps.apple.com/us/app/foodvisor-nutrition-diet/id1064020872",
+      "description": "Calorie Counter & Diet Plan",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Freeform",
+      "refero_app_id": 32,
+      "store_url": "https://apps.apple.com/us/app/freeform/id6443742539",
+      "description": "Bring your ideas to life",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Fresha",
+      "refero_app_id": 175,
+      "store_url": "https://apps.apple.com/us/app/fresha-for-customers/id1297230801",
+      "description": "Book your appointments",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Fuse",
+      "refero_app_id": 240,
+      "store_url": "https://apps.apple.com/us/app/fuse-solana-smart-wallet/id6470302252",
+      "description": "The safest Solana wallet",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Genie",
+      "refero_app_id": 289,
+      "store_url": "https://testflight.apple.com/join/uC9zvubz",
+      "description": "AI that gets you and the people in your life, together",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Gentler Streak",
+      "refero_app_id": 128,
+      "store_url": "https://apps.apple.com/us/app/gentler-streak-fitness-tracker/id1576857102",
+      "description": "Activity, Gym, Wellness, Rest",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Givingli",
+      "refero_app_id": 232,
+      "store_url": "https://apps.apple.com/us/app/givingli-send-gifts-cards/id1386635163",
+      "description": "Digital Greetings & Gift Cards",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Gizmo",
+      "refero_app_id": 256,
+      "store_url": "https://apps.apple.com/us/app/gizmo-make-gizmos/id6740640581",
+      "description": "A new creative platform",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Glow",
+      "refero_app_id": 66,
+      "store_url": "https://apps.apple.com/us/app/glow-solana-wallet/id1599584512",
+      "description": "Your new favorite wallet",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Gmail",
+      "refero_app_id": 69,
+      "store_url": "https://apps.apple.com/us/app/gmail-email-by-google/id422689480",
+      "description": "Secure, fast & organized email",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "GO Club",
+      "refero_app_id": 202,
+      "store_url": "https://apps.apple.com/us/app/go-club-step-counter/id6739782103",
+      "description": "Pedometer, Walking Tracker",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Google Maps",
+      "refero_app_id": 53,
+      "store_url": "https://apps.apple.com/us/app/google-maps/id585027354",
+      "description": "Places, Navigation & Traffic",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Google Translate",
+      "refero_app_id": 285,
+      "store_url": "https://apps.apple.com/us/app/google-translate/id414706506",
+      "description": "Text, Photo & Voice Translator",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Gowalla",
+      "refero_app_id": 62,
+      "store_url": "https://apps.apple.com/us/app/gowalla-app/id1530503877",
+      "description": "Keep up with your friends IRL",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Granola",
+      "refero_app_id": 313,
+      "store_url": "https://apps.apple.com/us/app/granola-ai-meeting-notes/id6739429409",
+      "description": "AI notes with Google Calendar",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Ground News",
+      "refero_app_id": 217,
+      "store_url": "https://apps.apple.com/us/app/ground-news/id1324203419?platform=iphone",
+      "description": "See every side of every story",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "GrowPal",
+      "refero_app_id": 141,
+      "store_url": "https://apps.apple.com/us/app/growpal-health-fitness/id1560604814",
+      "description": "Daily Routine & Workout & HRV",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Halide Mark II",
+      "refero_app_id": 27,
+      "store_url": "https://apps.apple.com/us/app/halide-mark-ii-pro-camera/id885697368",
+      "description": "RAW, Manual and Macro Capture",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Haptic",
+      "refero_app_id": 146,
+      "store_url": "https://apps.apple.com/us/app/haptic-daily-habit-tracker/id1479167334?platform=iphone",
+      "description": "Track Goals | Simple Journal",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "HBO Max",
+      "refero_app_id": 260,
+      "store_url": "https://apps.apple.com/us/app/hbo-max-stream-movies-tv/id1666653815",
+      "description": "Watch original series & films",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Headspace",
+      "refero_app_id": 4,
+      "store_url": "https://apps.apple.com/us/app/headspace-mindful-meditation/id493145008",
+      "description": "Relaxation for Sleep & Stress",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Hims",
+      "refero_app_id": 135,
+      "store_url": "https://apps.apple.com/us/app/hims-telehealth-for-men/id1455690574",
+      "description": "Hair loss, sexual health",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "How We Feel",
+      "refero_app_id": 14,
+      "store_url": "https://apps.apple.com/us/app/how-we-feel/id1562706384",
+      "description": "An emotional wellbeing journal",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "HYPE",
+      "refero_app_id": 287,
+      "store_url": "https://apps.apple.com/us/app/hype-by-hypebeast/id986768161",
+      "description": "Fashion, Culture & Lifestyle",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "ID by amo",
+      "refero_app_id": 70,
+      "store_url": "https://apps.apple.com/us/app/id-by-amo/id6470037899",
+      "description": "Your new profile",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "IFTTT",
+      "refero_app_id": 61,
+      "store_url": "https://apps.apple.com/us/app/ifttt-automate-work-and-home/id660944635",
+      "description": "Save time and get more done",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Imprint",
+      "refero_app_id": 188,
+      "store_url": "https://apps.apple.com/us/app/imprint-learn-visually/id1482780647",
+      "description": "Read faster. Remember more",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Instagram",
+      "refero_app_id": 41,
+      "store_url": "https://apps.apple.com/us/app/instagram/id389801252",
+      "description": "Bringing you closer to the people and things you love",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Introspect",
+      "refero_app_id": 281,
+      "store_url": "https://apps.apple.com/us/app/introspect-mindful-spending/id6760700044",
+      "description": "Improve your buying habits",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Ivory",
+      "refero_app_id": 84,
+      "store_url": "https://apps.apple.com/us/app/ivory-for-mastodon-by-tapbots/id6444602274?platform=iphone",
+      "description": "A Magnificent App for Mastodon",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Joi",
+      "refero_app_id": 168,
+      "store_url": "https://apps.apple.com/us/app/joi-daily-planner-organizer/id6736852235",
+      "description": "To Do List, Habit Tracker adhd",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Julienne",
+      "refero_app_id": 133,
+      "store_url": "https://apps.apple.com/us/app/julienne",
+      "description": "A Smarter Cookbook",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Kann",
+      "refero_app_id": 245,
+      "store_url": "https://apps.apple.com/us/app/kann/id6736517314",
+      "description": "Japanese Vocabulary Learning",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Kickstarter",
+      "refero_app_id": 171,
+      "store_url": "https://apps.apple.com/us/app/kickstarter/id596961532",
+      "description": "Bring Creativity to Life",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Kin",
+      "refero_app_id": 183,
+      "store_url": "https://apps.apple.com/us/app/kin-personal-ai-companion/id6473448146?platform=iphone",
+      "description": "Privacy-focused AI Assistant",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Kitchen Stories",
+      "refero_app_id": 22,
+      "store_url": "https://apps.apple.com/us/app/kitchen-stories-tasty-recipes/id771068291",
+      "description": "Anyone can cook",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Klarna",
+      "refero_app_id": 50,
+      "store_url": "https://apps.apple.com/us/app/klarna-shop-now-pay-later/id1115120118",
+      "description": "Online Shopping & Payments",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "komoot",
+      "refero_app_id": 234,
+      "store_url": "https://apps.apple.com/us/app/komoot-hike-bike-run/id447374873",
+      "description": "Your all-in-one route planner",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Lake",
+      "refero_app_id": 103,
+      "store_url": "https://apps.apple.com/us/app/lake-coloring-book-for-adults/id1183717726",
+      "description": "Color Therapy, ASMR Drawing",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "LEGO® Builder",
+      "refero_app_id": 258,
+      "store_url": "https://apps.apple.com/us/app/lego-builder-3d-instructions/id1486159728",
+      "description": "Build solo or as a team.",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Lensa AI",
+      "refero_app_id": 25,
+      "store_url": "https://apps.apple.com/us/app/lensa-ai-photo-editor-video/id1436732536",
+      "description": "Magic avatars, picture effects",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "LinkedIn",
+      "refero_app_id": 9,
+      "store_url": "https://apps.apple.com/us/app/linkedin-network-job-finder/id288429040",
+      "description": "Connect, Apply & Get Hired",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Linktree",
+      "refero_app_id": 24,
+      "store_url": "https://apps.apple.com/us/app/linktree-link-in-bio-creator/id1593515263",
+      "description": "Share everything in one link",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Location by amo",
+      "refero_app_id": 75,
+      "store_url": "https://apps.apple.com/us/app/location-by-amo/id6471519217",
+      "description": "The friend map is back",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Locket Widget",
+      "refero_app_id": 80,
+      "store_url": "https://apps.apple.com/us/app/locket-widget/id1600525061",
+      "description": "Live pics from best friends",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Longevity Deck",
+      "refero_app_id": 254,
+      "store_url": "https://apps.apple.com/us/app/longevity-deck/id6753670965",
+      "description": "Track & Grow Healthy Habits",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "LookUp",
+      "refero_app_id": 98,
+      "store_url": "https://apps.apple.com/us/app/lookup-dictionary-learn-daily/id872564448?platform=iphone",
+      "description": "Learn with word of the day",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Loowner",
+      "refero_app_id": 205,
+      "store_url": "https://apps.apple.com/us/app/loowner/id1540809795",
+      "description": "Keep an eye on your things",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "LottieFiles",
+      "refero_app_id": 59,
+      "store_url": "https://apps.apple.com/us/app/lottiefiles-animate-design/id1231821260?platform=iphone",
+      "description": "Stories, posts, templates",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Lovi",
+      "refero_app_id": 87,
+      "store_url": "https://apps.apple.com/us/app/lovi-ai-cosmetic-scanner-app/id1594167292",
+      "description": "Skincare & Face Yoga & Beauty",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Loóna",
+      "refero_app_id": 11,
+      "store_url": "https://apps.apple.com/us/app/lo%C3%B3na-calm-relax-and-sleep/id1465238901",
+      "description": "Stories & sounds to drift off",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Luminar",
+      "refero_app_id": 176,
+      "store_url": "https://apps.apple.com/us/app/luminar-mobile-photo-editor/id6476109261",
+      "description": "Easy picture editing with AI",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Luminary",
+      "refero_app_id": 173,
+      "store_url": "https://apps.apple.com/us/app/luminary-podcasts-originals/id1398370417",
+      "description": "Hear in a new light",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Lumy",
+      "refero_app_id": 197,
+      "store_url": "https://apps.apple.com/us/app/lumy/id908905093?platform=iphone",
+      "description": "Sunrise, Sunset & Golden Hour",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Lungy",
+      "refero_app_id": 52,
+      "store_url": "https://apps.apple.com/us/app/lungy-breathing-exercises/id1545223887",
+      "description": "Calm Breath & Stress Coach",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Mailchimp",
+      "refero_app_id": 51,
+      "store_url": "https://apps.apple.com/us/app/mailchimp-email-marketing/id366794783",
+      "description": "Email, Social, Contacts, Sales",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "MasterClass",
+      "refero_app_id": 125,
+      "store_url": "https://apps.apple.com/us/app/masterclass-become-more-you/id1273867416",
+      "description": "Gain new skills in 10 minutes",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Matter",
+      "refero_app_id": 249,
+      "store_url": "https://apps.apple.com/us/app/matter-save-read-grow/id1501592184",
+      "description": "Daily Reading & Text-to-Speech",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "MD Vinyl",
+      "refero_app_id": 291,
+      "store_url": "https://apps.apple.com/us/app/md-vinyl-music-app/id1606306441",
+      "description": "Music Player & Widget",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Medium",
+      "refero_app_id": 31,
+      "store_url": "https://apps.apple.com/us/app/medium-read-write-stories/id828256236",
+      "description": "News, Tech, Business, Design",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Mela",
+      "refero_app_id": 261,
+      "store_url": "https://apps.apple.com/us/app/mela-recipe-manager/id1548466041",
+      "description": "Your personal cookbook",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Meta AI",
+      "refero_app_id": 300,
+      "store_url": "https://apps.apple.com/us/app/meta-ai/id1558240027",
+      "description": "Your personal AI assistant",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Microsoft Copilot",
+      "refero_app_id": 85,
+      "store_url": "https://apps.apple.com/us/app/microsoft-copilot/id6472538445?platform=iphone",
+      "description": "Your everyday AI companion",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Miles",
+      "refero_app_id": 207,
+      "store_url": "https://apps.apple.com/us/app/miles-running-tracker/id6478332265",
+      "description": "Simple distance, time, and map",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Mindllama",
+      "refero_app_id": 185,
+      "store_url": "https://apps.apple.com/us/app/breathe-sleep-focus-mindllama/id6444920320?platform=iphone",
+      "description": "Breathing exercises companion",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Miro",
+      "refero_app_id": 139,
+      "store_url": "https://apps.apple.com/us/app/miro-your-visual-workspace/id1180074773",
+      "description": "Build the next big thing",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Moises",
+      "refero_app_id": 209,
+      "store_url": "https://apps.apple.com/us/app/moises-the-musicians-app/id1515796612?platform=iphone",
+      "description": "Remove vocals or instruments",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Momently",
+      "refero_app_id": 67,
+      "store_url": "https://apps.apple.com/us/app/momently/id1557152902",
+      "description": "Store your moments privately",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Monday.com",
+      "refero_app_id": 40,
+      "store_url": "https://apps.apple.com/us/app/monday-com-work-management/id1290128888",
+      "description": "Plan & Organize Teamwork",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Moonlitt",
+      "refero_app_id": 221,
+      "store_url": "https://apps.apple.com/us/app/moonlitt-moon-phase-tracker/id6444718902?platform=iphone",
+      "description": "Lunar Calendar and AR locator",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Moonly",
+      "refero_app_id": 109,
+      "store_url": "https://apps.apple.com/us/app/moonly-moon-phases-calendar/id1489889871",
+      "description": "Birth Chart, Tarot, Dreamer",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Mozi",
+      "refero_app_id": 165,
+      "store_url": "https://apps.apple.com/us/app/mozi-a-place-for-your-people/id6482482498",
+      "description": "See Friends as You Mozi About",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "MSCHF Bar & Grill & E-commerce",
+      "refero_app_id": 115,
+      "store_url": "https://apps.apple.com/us/app/mschf-bar-grill-e-commerce/id1598975404?platform=iphone",
+      "description": "Everything is for sale",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "mymind",
+      "refero_app_id": 3,
+      "store_url": "https://apps.apple.com/us/app/mymind-extend-your-mind/id1520332347",
+      "description": "Never forget anything anymore",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Napper",
+      "refero_app_id": 239,
+      "store_url": "https://apps.apple.com/us/app/napper-baby-sleep-tracker/id1491340863",
+      "description": "Nap schedule for YOUR child!",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Netflix",
+      "refero_app_id": 264,
+      "store_url": "https://apps.apple.com/us/app/netflix/id363590051",
+      "description": "Start Watching",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Neuecast",
+      "refero_app_id": 156,
+      "store_url": "https://apps.apple.com/us/app/neuecast/id6446780219",
+      "description": "A premium podcast app",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Newsadoo",
+      "refero_app_id": 10,
+      "store_url": "https://apps.apple.com/us/app/newsadoo-daily-breaking-news/id1387917637",
+      "description": "All News. Your Topics",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Nike Training Club",
+      "refero_app_id": 57,
+      "store_url": "https://apps.apple.com/us/app/nike-training-club-wellness/id301521403",
+      "description": "Holistic Fitness & Workouts",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Nooka",
+      "refero_app_id": 231,
+      "store_url": "https://apps.apple.com/us/app/nooka-your-insight-feed/id6739706947?platform=iphone",
+      "description": "Self Improvement, Learn, Care",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "NYT Audio",
+      "refero_app_id": 110,
+      "store_url": "https://apps.apple.com/us/app/nyt-audio/id1549293936",
+      "description": "Audio News and Podcasts Daily",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Oku",
+      "refero_app_id": 44,
+      "store_url": "https://apps.apple.com/us/app/oku-book-tracker-companion/id1604015977",
+      "description": "TBR, reviews, ratings & more",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "OKURI",
+      "refero_app_id": 279,
+      "store_url": "https://apps.apple.com/us/app/okuri-japanese-lunar-calendar/id6759762270",
+      "description": "Daily Tear-Off Widget Calendar",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Omio",
+      "refero_app_id": 178,
+      "store_url": "https://apps.apple.com/us/app/omio-europe-u-s-travel/id885372509?platform=iphone",
+      "description": "Book Train, Bus, Flight Ticket",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "On",
+      "refero_app_id": 251,
+      "store_url": "https://apps.apple.com/us/app/on-shop-shoes-apparel/id6449706677",
+      "description": "Fast Shopping & Fresh Drops",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "one year",
+      "refero_app_id": 268,
+      "store_url": "https://apps.apple.com/us/app/one-year-daily-journal/id6740510762",
+      "description": "capture one memory every day",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Opal",
+      "refero_app_id": 76,
+      "store_url": "https://apps.apple.com/us/app/opal-screen-time-for-focus/id1497465230",
+      "description": "Focus, block apps & Save Time",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Open",
+      "refero_app_id": 15,
+      "store_url": "https://apps.apple.com/us/app/open-meditation-breathwork/id1482725254",
+      "description": "A Mindfulness Studio",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Oppie",
+      "refero_app_id": 201,
+      "store_url": "https://apps.apple.com/us/app/oppie-vocabulary-flashcards/id6470951159",
+      "description": "Learn New Words Daily | Vocab",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Orbit",
+      "refero_app_id": 255,
+      "store_url": "https://apps.apple.com/us/app/subscription-manager-orbit/id6692620188",
+      "description": "Spending & Expense Tracker",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Patreon",
+      "refero_app_id": 60,
+      "store_url": "https://apps.apple.com/us/app/patreon/id1044456188",
+      "description": "Exclusive creator communities",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "PayPal",
+      "refero_app_id": 213,
+      "store_url": "https://apps.apple.com/us/app/paypal-pay-send-save/id283646709",
+      "description": "Savings, cash back, pay later",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Perplexity",
+      "refero_app_id": 73,
+      "store_url": "https://apps.apple.com/us/app/perplexity-ask-anything/id1668000334",
+      "description": "Search and discovery with AI",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Phantom",
+      "refero_app_id": 160,
+      "store_url": "https://apps.apple.com/us/app/phantom-crypto-wallet/id1598432977",
+      "description": "Web3: Crypto, NFTs, DeFi",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Pi",
+      "refero_app_id": 111,
+      "store_url": "https://apps.apple.com/us/app/pi-personal-ai-assistant/id6445815935",
+      "description": "Talk To Your AI Companion",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Picnic",
+      "refero_app_id": 273,
+      "store_url": "https://apps.apple.com/us/app/photo-organizer-picnic/id6450713784",
+      "description": "Sort, manage & clean photos",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "pico cam",
+      "refero_app_id": 310,
+      "store_url": "https://apps.apple.com/us/app/pico-cam-dynamic-island-pics/id6772559415",
+      "description": "Tiny camera, photo magic",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "pillowtalk",
+      "refero_app_id": 302,
+      "store_url": "https://apps.apple.com/us/app/pillowtalk-voice-reflection/id6484401671",
+      "description": "feel better reflecting with AI",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Pinkllama",
+      "refero_app_id": 189,
+      "store_url": "https://apps.apple.com/us/app/my-period-calendar-pinkllama/id1485208453?platform=iphone",
+      "description": "Period tracker for teens cycle",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Pinterest",
+      "refero_app_id": 8,
+      "store_url": "https://apps.apple.com/us/app/pinterest/id429047995",
+      "description": "Home, fashion, lifestyle ideas",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Plane Finder",
+      "refero_app_id": 262,
+      "store_url": "https://apps.apple.com/us/app/plane-finder-flight-tracker/id361273585",
+      "description": "Flight radar & live tracker",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Planny",
+      "refero_app_id": 106,
+      "store_url": "https://apps.apple.com/us/app/planny-daily-planner/id1515324201?platform=iphone",
+      "description": "To do list, Focus, Teamwork",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Play",
+      "refero_app_id": 88,
+      "store_url": "https://apps.apple.com/us/app/play-design-better-apps/id6444542118?platform=iphone",
+      "description": "Get Play for desktop & mobile",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Playground",
+      "refero_app_id": 243,
+      "store_url": "https://apps.apple.com/us/app/playground-ai-design-editor/id6478421458",
+      "description": "Logos, T-Shirts, Posters, etc",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "PocketShelf",
+      "refero_app_id": 233,
+      "store_url": "https://apps.apple.com/us/app/pocketshelf-track-books-tbr/id6745476834?platform=iphone",
+      "description": "Reading List, AI Note Summary",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Podimo",
+      "refero_app_id": 288,
+      "store_url": "https://apps.apple.com/no/app/podimo-podcasts-audiobooks/id1476538730",
+      "description": "Listen to exclusive shows",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Pool",
+      "refero_app_id": 283,
+      "store_url": "https://apps.apple.com/us/app/pool-the-screenshot-app/id6752956163",
+      "description": "Duck everything",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Poppy",
+      "refero_app_id": 286,
+      "store_url": "https://apps.apple.com/us/app/poppy-simplify-your-life/id6751168744",
+      "description": "Less phone. More day",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Posts",
+      "refero_app_id": 142,
+      "store_url": "https://apps.apple.com/us/app/posts-by-read-cv/id1658640729",
+      "description": "A community app by Read.cv",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Project Indigo",
+      "refero_app_id": 277,
+      "store_url": "https://apps.apple.com/us/app/project-indigo/id6742591546",
+      "description": "A new camera from Adobe Labs",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Promova",
+      "refero_app_id": 55,
+      "store_url": "https://apps.apple.com/us/app/promova/id1460782849",
+      "description": "Learn Spanish, English, French",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "pushr",
+      "refero_app_id": 305,
+      "store_url": "https://apps.apple.com/us/app/pushr-push-up-workouts/id1587610077",
+      "description": "the #1 push-up counting app",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Queue",
+      "refero_app_id": 199,
+      "store_url": "https://apps.apple.com/us/app/queue-simple-podcasts/id6639586996",
+      "description": "One single auto-updated Queue",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "RAD Weather",
+      "refero_app_id": 306,
+      "store_url": "https://apps.apple.com/us/app/rad-weather-honest-forecast/id6758575355",
+      "description": "Brutal briefings. No BS.",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "raum.",
+      "refero_app_id": 301,
+      "store_url": "https://apps.apple.com/us/app/raum/id6770083227",
+      "description": "dotted map of your travels.",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Reeder.",
+      "refero_app_id": 158,
+      "store_url": "https://apps.apple.com/us/app/reeder/id6475002485?platform=iphone",
+      "description": "Your all-in-one inbox for reading",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "REKKI",
+      "refero_app_id": 58,
+      "store_url": "https://apps.apple.com/us/app/rekki-wholesale-ingredients/id1216805389?platform=iphone",
+      "description": "The ordering app for chefs",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Remy",
+      "refero_app_id": 252,
+      "store_url": "https://apps.apple.com/us/app/remy-ai-sleep-health-coach/id6443803441",
+      "description": "Smart Sleeping app for bedtime",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Revolut",
+      "refero_app_id": 74,
+      "store_url": "https://apps.apple.com/us/app/revolut-send-spend-and-save/id932493382?platform=iphone",
+      "description": "Travel, transfer, and exchange",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Rewind",
+      "refero_app_id": 137,
+      "store_url": "https://apps.apple.com/us/app/rewind-truly-personalized-ai/id6449795815",
+      "description": "Find anything you've seen",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Rise",
+      "refero_app_id": 138,
+      "store_url": "https://apps.apple.com/us/app/rise-calendar/id6472171795",
+      "description": "Projects, tasks and scheduling in your pocket",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Riverside",
+      "refero_app_id": 187,
+      "store_url": "https://apps.apple.com/us/app/riverside-podcast-video-studio/id1554443872",
+      "description": "Video Editor & Recorder",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Roi",
+      "refero_app_id": 13,
+      "store_url": "https://apps.apple.com/us/app/roi-stock-crypto-nfts-alts/id1606804397",
+      "description": "Build & track your portfolio",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Roots",
+      "refero_app_id": 190,
+      "store_url": "https://apps.apple.com/us/app/roots-screen-time-control/id6446800962",
+      "description": "App Blocker, Dopamine Detox",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "ROVR",
+      "refero_app_id": 311,
+      "store_url": "https://apps.apple.com/us/app/rovr-radio-reinvented/id6448372142",
+      "description": "Music Discovery Platform",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Savee",
+      "refero_app_id": 180,
+      "store_url": "https://apps.apple.com/us/app/savee/id1375238218?platform=iphone",
+      "description": "A place for creative minds",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "SeatGeek",
+      "refero_app_id": 105,
+      "store_url": "https://apps.apple.com/us/app/seatgeek-buy-event-tickets/id582790430",
+      "description": "Sports, Concerts, & Broadway",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Shazam",
+      "refero_app_id": 23,
+      "store_url": "https://apps.apple.com/us/app/shazam-music-discovery/id284993459",
+      "description": "Identify Songs, Live Shows",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Shopify",
+      "refero_app_id": 37,
+      "store_url": "https://apps.apple.com/us/app/shopify-your-ecommerce-store/id371294472",
+      "description": "Sell online from your phone",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Showcase",
+      "refero_app_id": 220,
+      "store_url": "https://apps.apple.com/us/app/showcase-track-movies-shows/id1576840648",
+      "description": "Tracking Films & TV Fast",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Sky Guide",
+      "refero_app_id": 236,
+      "store_url": "https://apps.apple.com/us/app/sky-guide/id576588894",
+      "description": "Star gaze constellation finder",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Sora",
+      "refero_app_id": 226,
+      "store_url": "https://apps.apple.com/us/app/sora-by-openai/id6744034028",
+      "description": "A new video app by OpenAI",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Soula",
+      "refero_app_id": 77,
+      "store_url": "https://apps.apple.com/us/app/soula-ai-pregnancy-support/id1639942964",
+      "description": "24/7 Doula Care, Chat, Tracker",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Spoil me",
+      "refero_app_id": 182,
+      "store_url": "https://apps.apple.com/us/app/spoil-me-wishlist-maker-app/id1672659025",
+      "description": "Gift List, Friends Spoil You",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "SSENSE",
+      "refero_app_id": 212,
+      "store_url": "https://apps.apple.com/us/app/ssense-shop-designer-fashion/id1418754101",
+      "description": "Luxury and streetwear brands",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Stardust",
+      "refero_app_id": 192,
+      "store_url": "https://apps.apple.com/us/app/stardust-period-pregnancy/id1495829322",
+      "description": "Cycle Tracker & Moon Calendar",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Stemz",
+      "refero_app_id": 296,
+      "store_url": "https://apps.apple.com/us/app/stemz-remover-vocal-audio-pro/id1596495598",
+      "description": "Music editor maker voice logic",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Steps",
+      "refero_app_id": 219,
+      "store_url": "https://apps.apple.com/us/app/steps-step-counter-workouts/id6746096378",
+      "description": "Pedometer, Walking, Activity",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "StrideGate",
+      "refero_app_id": 214,
+      "store_url": "https://apps.apple.com/us/app/stridegate-walk-to-unlock/id6749471895",
+      "description": "Earn app access with steps",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Structured",
+      "refero_app_id": 154,
+      "store_url": "https://apps.apple.com/us/app/structured-daily-planner/id1499198946?platform=iphone",
+      "description": "Visual Calendar & To-Do List",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Subo",
+      "refero_app_id": 237,
+      "store_url": "https://apps.apple.com/us/app/subo-subscription-manager/id6741823650",
+      "description": "Bills, renewals & reminders",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Sunlitt",
+      "refero_app_id": 113,
+      "store_url": "https://apps.apple.com/us/app/sunlitt-sun-position-and-path/id1628751457",
+      "description": "AR, Solar Tracker, Shadow Map",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Suno",
+      "refero_app_id": 126,
+      "store_url": "https://apps.apple.com/us/app/suno-make-music/id6480136315",
+      "description": "The official music app by Suno",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Superlist",
+      "refero_app_id": 108,
+      "store_url": "https://apps.apple.com/us/app/superlist-tasks-lists/id1547585270",
+      "description": "Home to all your lists",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Target",
+      "refero_app_id": 144,
+      "store_url": "https://apps.apple.com/us/app/target/id297430070",
+      "description": "Shop and save from anywhere",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Ten Percent Happier",
+      "refero_app_id": 89,
+      "store_url": "https://apps.apple.com/us/app/ten-percent-happier-meditation/id992210239",
+      "description": "Calm, Relax, Insights & Sleep",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "ten ten",
+      "refero_app_id": 148,
+      "store_url": "https://apps.apple.com/us/app/ten-ten-close-friends-only/id1481768339",
+      "description": "walkie talkie",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "The Athletic",
+      "refero_app_id": 38,
+      "store_url": "https://apps.apple.com/us/app/the-athletic-sports-news/id1135216317",
+      "description": "Stories, scores, stats & more",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "The Body Coach",
+      "refero_app_id": 123,
+      "store_url": "https://apps.apple.com/us/app/the-body-coach-workout-planner/id1502129212",
+      "description": "Fit With Joe Wicks Home & Gym",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "The New York Times",
+      "refero_app_id": 117,
+      "store_url": "https://apps.apple.com/us/app/the-new-york-times/id284862083",
+      "description": "Breaking National & World News",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "The New Yorker",
+      "refero_app_id": 36,
+      "store_url": "https://apps.apple.com/us/app/the-new-yorker/id1081530898",
+      "description": "News, Culture, Audio, Humor",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "The Outsiders",
+      "refero_app_id": 259,
+      "store_url": "https://apps.apple.com/us/app/the-outsiders-athlete-tracker/id6751584800",
+      "description": "Cycling & Running Readiness",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Threads",
+      "refero_app_id": 42,
+      "store_url": "https://apps.apple.com/us/app/threads-an-instagram-app/id6446901002",
+      "description": "Share ideas & trends with text",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "TIDAL",
+      "refero_app_id": 298,
+      "store_url": "https://apps.apple.com/us/app/tidal-music-hifi-sound/id913943275",
+      "description": "Music is better on TIDAL",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "TIDE",
+      "refero_app_id": 206,
+      "store_url": "https://apps.apple.com/us/app/tide-sleep-focus-meditation/id1077776989?platform=iphone",
+      "description": "Calm Sounds, Meditation Music",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Tide Guide",
+      "refero_app_id": 94,
+      "store_url": "https://apps.apple.com/us/app/tide-guide-charts-tables/id1406371071?platform=iphone",
+      "description": "NOAA Surf, Weather, Alerts",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "TikTok",
+      "refero_app_id": 116,
+      "store_url": "https://apps.apple.com/us/app/tiktok/id835599320",
+      "description": "Videos, Music & Live Streams",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Tilt",
+      "refero_app_id": 151,
+      "store_url": "https://apps.apple.com/us/app/tilt-2-sides-to-the-story/id6471519239",
+      "description": "Close friends camera by amo",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Tinder",
+      "refero_app_id": 157,
+      "store_url": "https://apps.apple.com/us/app/tinder-dating-app-chat-date/id547702041",
+      "description": "Meet New People & Date Singles",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Todoist",
+      "refero_app_id": 34,
+      "store_url": "https://apps.apple.com/us/app/todoist-to-do-list-planner/id572688855",
+      "description": "To do, task reminders & habit",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "tone",
+      "refero_app_id": 308,
+      "store_url": "https://apps.apple.com/us/app/tone-photos-printed/id6792391699",
+      "description": "Photos, printed",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Touch Time",
+      "refero_app_id": 282,
+      "store_url": "https://apps.apple.com/us/app/touch-time-world-clock/id6753721487",
+      "description": "Immerse in time through sky",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Train Fitness",
+      "refero_app_id": 211,
+      "store_url": "https://apps.apple.com/us/app/train-fitness-workout-tracker/id1548577496",
+      "description": "Auto-tracking for Apple Watch",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Trip Way",
+      "refero_app_id": 235,
+      "store_url": "https://apps.apple.com/us/app/travel-planner-trip-way/id6737241065",
+      "description": "Trip plans. Organize itinerary",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Tripsy",
+      "refero_app_id": 149,
+      "store_url": "https://apps.apple.com/us/app/travel-planner-guide-tripsy/id1429967544?platform=iphone",
+      "description": "Trip Itinerary Plan Organizer",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Turf",
+      "refero_app_id": 250,
+      "store_url": "https://testflight.apple.com/join/gX71AjfV",
+      "description": "Play the moment",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Uber",
+      "refero_app_id": 124,
+      "store_url": "https://apps.apple.com/us/app/uber-request-a-ride/id368677368",
+      "description": "Rideshare, taxi cabs and more",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Uber Eats",
+      "refero_app_id": 131,
+      "store_url": "https://apps.apple.com/us/app/uber-eats-food-delivery/id1058959277",
+      "description": "Fresh grocery shopping & more",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "UGLYCASH",
+      "refero_app_id": 270,
+      "store_url": "https://apps.apple.com/us/app/uglycash/id1587912468",
+      "description": "Your Bank Won’t Do This",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "UNHINGED",
+      "refero_app_id": 200,
+      "store_url": "https://apps.apple.com/us/app/mood-tracker-unhinged/id6501954555",
+      "description": "Easy Mood Tracker & Journal",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Unwind",
+      "refero_app_id": 191,
+      "store_url": "https://apps.apple.com/us/app/unwind-breathing-exercises/id1470613384",
+      "description": "Stress Sleep Focus Breathwork",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Verse",
+      "refero_app_id": 162,
+      "store_url": "https://apps.apple.com/us/app/verse-your-internet-home/id6472349570",
+      "description": "Customize your profile",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Vinyls",
+      "refero_app_id": 241,
+      "store_url": "https://apps.apple.com/us/app/vinyls-manage-your-collection/id1589128395",
+      "description": "Vinyl record app, Discogs, TV",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Vocabulary",
+      "refero_app_id": 161,
+      "store_url": "https://apps.apple.com/us/app/vocabulary-learn-words-daily/id1084540807?platform=iphone",
+      "description": "Learning English Education",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Voicenotes",
+      "refero_app_id": 315,
+      "store_url": "https://apps.apple.com/us/app/voicenotes-ai-notes-meetings/id6483293628",
+      "description": "Record. Transcribe. Ask AI.",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "voilà",
+      "refero_app_id": 247,
+      "store_url": "https://apps.apple.com/us/app/voil%C3%A0-travel-guides-esims/id6502964445",
+      "description": "Itinerary and hidden gems",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Volv",
+      "refero_app_id": 147,
+      "store_url": "https://apps.apple.com/us/app/volv-news-in-9-seconds/id1474813657?platform=iphone",
+      "description": "AI Generated News Summaries",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "VSCO",
+      "refero_app_id": 107,
+      "store_url": "https://apps.apple.com/us/app/vsco-photo-video-editor/id588013838",
+      "description": "Filters, Effects & Collages",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "W1D1",
+      "refero_app_id": 91,
+      "store_url": "https://apps.apple.com/us/app/w1d1-creative-challenges/id1497155726",
+      "description": "Workouts for your creativity",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Wabi",
+      "refero_app_id": 284,
+      "store_url": "https://apps.apple.com/us/app/wabi/id6747768928",
+      "description": "Discover and create mini-apps",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Waterllama",
+      "refero_app_id": 274,
+      "store_url": "https://apps.apple.com/us/app/water-tracker-waterllama/id1454778585",
+      "description": "My hydration reminder drink it",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Weather mini",
+      "refero_app_id": 297,
+      "store_url": "https://apps.apple.com/us/app/weather-mini-trip-forecasts/id892589817",
+      "description": "Beautiful weather with AI",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Weather Terminal",
+      "refero_app_id": 303,
+      "store_url": "https://apps.apple.com/us/app/weather-terminal/id6758122087",
+      "description": "Minimal pixel weather app",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "WhatsApp",
+      "refero_app_id": 292,
+      "store_url": "https://apps.apple.com/us/app/whatsapp-messenger/id310633997",
+      "description": "Simple. Reliable. Private.",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Willow",
+      "refero_app_id": 299,
+      "store_url": "https://apps.apple.com/us/app/willow-dictation-ai-keyboard/id6753057525",
+      "description": "Voice typing for work & chat",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Wise",
+      "refero_app_id": 39,
+      "store_url": "https://apps.apple.com/us/app/wise-ex-transferwise/id612261027",
+      "description": "Money without borders",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "WishWish",
+      "refero_app_id": 314,
+      "store_url": "https://apps.apple.com/us/app/wishwish-toys/id6755694999",
+      "description": "Open a blind box everyday",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "Wispr Flow",
+      "refero_app_id": 304,
+      "store_url": "https://apps.apple.com/us/app/wispr-flow-ai-voice-keyboard/id6497229487",
+      "description": "Voice dictation & quick notes",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "World App",
+      "refero_app_id": 81,
+      "store_url": "https://apps.apple.com/us/app/world-app-worldcoin-wallet/id1560859847?l",
+      "description": "Worldcoin. World ID. Wallet.",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "WURRD",
+      "refero_app_id": 227,
+      "store_url": "https://apps.apple.com/us/app/wurrd-ai-vocabulary-builder/id6741110461",
+      "description": "Words of the Day, Quiz & Chat",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "X",
+      "refero_app_id": 114,
+      "store_url": "https://apps.apple.com/us/app/x/id333903271",
+      "description": "Formerly Twitter",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    },
+    {
+      "name": "XChat",
+      "refero_app_id": 276,
+      "store_url": "https://apps.apple.com/us/app/xchat/id6760873038",
+      "description": "Chat with Anyone",
+      "status": "pending",
+      "package": null,
+      "notes": ""
+    }
+  ]
+}
