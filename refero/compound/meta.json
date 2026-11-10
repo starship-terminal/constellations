@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/cd31ecdb-297a-4fc5-a727-05f835ff917f",
   "source_url": "https://withcompound.com/membership",
   "extracted_at": "2026-06-03T18:04:54.036Z",
-  "fetched_at": "2026-10-20T08:22:50Z",
+  "fetched_at": "2026-11-08T04:19:56Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/597674ac-6764-42bb-b13d-fe4ec5d730f0.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/44b09064-f317-4c79-ad0f-ab2dbabf324f.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a7908d58-82da-4738-ae46-1b295c44f22d.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/0377e155-4bec-4047-a902-070a650089d4.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

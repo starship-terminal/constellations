@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/1b2aaf14-43b0-4c23-bd25-1d49924fe85e",
   "source_url": "https://buymeacoffee.com",
   "extracted_at": "2026-06-03T17:11:22.129Z",
-  "fetched_at": "2026-10-20T08:24:49Z",
+  "fetched_at": "2026-11-08T04:19:52Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/272fa8a9-6eca-447b-adad-9d1fa78ef4ff.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/5ed85a25-4566-4846-a900-49989fe78d36.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a004d427-4d44-4aa2-8faf-48aeee28550a.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/36c60cc8-7001-4913-a6f8-04bb21eea01c.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

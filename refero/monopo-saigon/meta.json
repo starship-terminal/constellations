@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/3e52dd36-6ab1-48c6-bc40-47ef6d33abc2",
   "source_url": "https://monopo.vn",
   "extracted_at": "2026-07-03T02:46:16.954Z",
-  "fetched_at": "2026-10-20T08:21:40Z",
+  "fetched_at": "2026-11-08T04:20:31Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/9f8b76b0-28b6-4677-b358-4ccdd5539e59.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/b62e4788-969c-4ba7-b8ce-4dbe89ae7117.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/b0930e1d-dfb7-4ac0-ac91-8e2fd00df7de.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/43234aff-092c-4025-988a-018ae75d2252.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

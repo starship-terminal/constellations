@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/c6136c4a-9e89-4dc5-93d3-e1adf58dbc2f",
   "source_url": "https://invisibletech.ai",
   "extracted_at": "2026-06-03T19:08:50.418Z",
-  "fetched_at": "2026-10-20T08:22:24Z",
+  "fetched_at": "2026-11-08T04:20:21Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/4f6c2899-286f-49f7-aa60-8a6f9dda315d.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0a8157f4-afed-48d7-a03c-eaa78deb9f53.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/ed57dfeb-bf42-4879-bfd8-b2f2bd831b0f.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/d699f3fa-84cd-4059-aa28-dca4bc7de305.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

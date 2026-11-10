@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/f89bad29-019a-48d7-9724-c40a0d7d8171",
   "source_url": "https://legora.com",
   "extracted_at": "2026-06-03T15:41:10.801Z",
-  "fetched_at": "2026-10-20T08:25:01Z",
+  "fetched_at": "2026-11-08T04:20:24Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/dbb1725b-7421-4a55-8612-1ae798bb7f5c.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

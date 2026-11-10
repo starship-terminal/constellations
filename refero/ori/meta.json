@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/4ef4a6dc-bee9-420a-b197-f20415b9caaa",
   "source_url": "https://www.ori.co",
   "extracted_at": "2026-06-03T19:43:36.282Z",
-  "fetched_at": "2026-10-20T08:23:59Z",
+  "fetched_at": "2026-11-08T04:20:36Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/f6a2d5d7-59b3-4511-8126-b660ce98ca88.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/6a74644e-45cd-445d-b082-63293c5b575a.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/28d94ef4-9204-4f83-ad63-5d054353f85c.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/a9d18d9b-b740-48cb-bdf4-6c2d930a1470.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

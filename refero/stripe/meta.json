@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/48e5de76-05d5-4c4e-a269-c7c245b291ec",
   "source_url": "https://stripe.com",
   "extracted_at": "2026-07-03T02:51:26.285Z",
-  "fetched_at": "2026-10-20T08:21:39Z",
+  "fetched_at": "2026-11-08T04:20:53Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/554c3193-2b35-4f64-968e-d18f6520f442.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/0ade1fae-daa9-415b-ad2e-9a2d7a9e6414.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/58b55541-f6b3-4129-b78c-17c7969a9881.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/2d6df304-37d6-483f-9f0a-02c7ee1e06ef.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

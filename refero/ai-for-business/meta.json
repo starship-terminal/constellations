@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/ee403055-480e-4bd4-9216-07c9ae2dde2e",
   "source_url": "https://www.dayos.com",
   "extracted_at": "2026-07-03T03:07:26.669Z",
-  "fetched_at": "2026-10-20T08:21:38Z",
+  "fetched_at": "2026-11-08T04:19:39Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/fc7aedf0-9d84-4a44-a379-4e0e57607f75.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/bd238c5f-d7ea-4c30-81a4-8663aa3b7ec5.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/5fdbf822-b2c4-412f-af88-af19a90caad8.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/2017ab1b-5d33-4775-90c0-94083be69d85.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

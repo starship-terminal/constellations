@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/813be405-c2b9-41be-9864-7b53d66483dc",
   "source_url": "https://toggl.com",
   "extracted_at": "2026-06-03T20:34:31.164Z",
-  "fetched_at": "2026-10-20T08:21:58Z",
+  "fetched_at": "2026-11-08T04:21:00Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/74b3aae0-1978-4802-a991-9c725f1dcbe4.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/7214521d-887b-46a7-99c6-913aa0a937dc.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/83b6360e-57b9-4c4d-9701-f5a47dff28a8.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/5e010e52-48b9-42d6-b162-86d96682005f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

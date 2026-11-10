@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/bab94db1-25ec-459d-8c81-5905a0324b65",
   "source_url": "https://artworld.agency",
   "extracted_at": "2026-06-03T20:41:49.027Z",
-  "fetched_at": "2026-10-20T08:21:56Z",
+  "fetched_at": "2026-11-08T04:19:45Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/dd45dca9-5e31-473f-a487-c6999024fc21.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/dc4482bd-bd33-4fad-8f5e-d6d570818d54.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/13c27504-9306-4e59-bff3-1f146d219ccc.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/97806353-46b4-492b-9441-607f7ed395ce.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

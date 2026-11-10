@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/68c15685-5db9-4869-b71d-27240568c9d8",
   "source_url": "https://modal.com",
   "extracted_at": "2026-07-03T03:37:14.735Z",
-  "fetched_at": "2026-10-20T08:21:33Z",
+  "fetched_at": "2026-11-08T04:20:30Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/55454bea-6582-4de9-a10f-35739226b16a.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/ac17ea66-9891-498f-ac55-dbce36254549.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/546562a3-f4d4-4dff-a301-cafeaef151c2.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/e758f5e6-d3be-440a-912f-0089cf81465f.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

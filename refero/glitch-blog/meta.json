@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/8472cc85-e4fa-4011-b742-1b9fc7966d76",
   "source_url": "https://glitch.com",
   "extracted_at": "2026-06-03T19:55:05.942Z",
-  "fetched_at": "2026-10-20T08:23:57Z",
+  "fetched_at": "2026-11-08T04:20:13Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/753d5de0-c2f8-4139-aae1-3cbf190df1be.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/3b25fb23-0bef-4f61-bc3b-cbbba58f173c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/a80289f9-cb49-460b-a1ae-03e354649f41.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/c31d6a6f-40a3-4cb4-9e3b-c68acb9bc309.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

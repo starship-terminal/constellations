@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/2bd7363d-7aae-4b1f-9d5a-1edeb17ca567",
   "source_url": "https://motherduck.com",
   "extracted_at": "2026-06-03T16:48:03.858Z",
-  "fetched_at": "2026-10-20T08:24:52Z",
+  "fetched_at": "2026-11-08T04:20:32Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/58e9d584-c15e-492a-bac9-b828a5cadf79.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/cfd7977f-6108-4a91-bb2e-c0366bc4cad5.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/0a5e684c-9b6b-4f43-814d-30c4165ee3ae.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/016b6669-86b6-4ba4-96e2-467602c79118.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

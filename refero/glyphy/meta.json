@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/6ec18fa7-41ff-41e0-8824-94f6fa104a75",
   "source_url": "https://glyphy.io",
   "extracted_at": "2026-06-03T20:26:35.703Z",
-  "fetched_at": "2026-10-20T08:23:49Z",
+  "fetched_at": "2026-11-08T04:20:13Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/ce073fd5-ff2e-44ab-a88d-d6f747feafc0.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/6e5d4a87-1f62-4cb3-ac4e-6a76117eec9b.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/90424229-998d-4771-abdf-db8b1aed753c.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/3214bc3b-a5b3-4f57-b773-0a0ce3dfe08e.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

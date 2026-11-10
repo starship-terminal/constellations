@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/261a4ad3-e835-4f7a-beb7-72187f84d462",
   "source_url": "https://ampfit.com",
   "extracted_at": "2026-06-03T19:15:38.828Z",
-  "fetched_at": "2026-10-20T08:24:05Z",
+  "fetched_at": "2026-11-08T04:19:41Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/11752e5e-8721-415b-b562-1e81bf33e59a.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/5b9af69d-b353-4917-8b8a-0730893d0e4b.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/d1298234-95e3-4b71-8a93-a7489a037ea0.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/9f4a748e-c053-469a-adf4-a7d1fde662ad.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

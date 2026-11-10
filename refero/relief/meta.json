@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/e6b53c1e-644b-4300-b42f-0e64905d1443",
   "source_url": "https://www.relief.app",
   "extracted_at": "2026-06-03T18:02:30.634Z",
-  "fetched_at": "2026-10-20T08:22:45Z",
+  "fetched_at": "2026-11-08T04:20:45Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/48d9835f-2323-4758-9ec8-31b17e408103.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/b4fac4cd-9f9b-48d1-87a8-8749993d09f4.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/7c83973f-051e-456e-9b10-623d526050dc.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/f08ab573-3f4d-43ba-88d8-d42b10bd8c6c.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

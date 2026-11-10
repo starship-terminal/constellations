@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/859d51e6-fc3f-45e0-a4c4-fe280c400ca7",
   "source_url": "https://www.outseta.com",
   "extracted_at": "2026-06-03T15:59:10.214Z",
-  "fetched_at": "2026-10-20T08:24:58Z",
+  "fetched_at": "2026-11-08T04:20:36Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/afe77a9d-0ba1-44a1-877f-bfce47719720.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/81262352-32cb-4ce9-9ffd-d1f7db432ef9.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/5cc021e4-95e5-4d25-b4e2-63f2505ac967.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/678aa7e6-695f-4f96-999b-cf130bdbf745.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/905beb8c-9788-4ff4-888b-13370cacd4b0",
   "source_url": "https://www.chelsea.com",
   "extracted_at": "2026-06-03T20:53:54.607Z",
-  "fetched_at": "2026-10-20T08:21:52Z",
+  "fetched_at": "2026-11-08T04:19:54Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/d1e82e3c-090e-4c7a-a03d-c1dd42aa57d4.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/7fdc2c32-a80a-485c-ab46-c5e8b0fb3cb2.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/22fd35ee-5d53-44b4-a77a-4678822d07d8.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/85ce424c-016c-4351-a0b2-6e03657031b3.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

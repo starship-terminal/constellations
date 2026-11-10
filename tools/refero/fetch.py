@@ -94,6 +94,11 @@ MEDIA_COLUMNS = ["video_url", "video_poster_url", "video_detail_url",
 # Label columns are written by tools/refero/classify.py, not by the fetch pass.
 LABEL_COLUMNS = ["product_type", "design_style", "tags"]
 
+# Resolved component markup and when it was fetched; NULL when upstream has
+# shipped no component html for the style. backfill_components.py fills these
+# for styles fetched before the column existed.
+COMPONENT_COLUMNS = ["components_json", "components_at"]
+
 # Media fields live in the raw page as escaped JSON inside __next_f.push
 # strings, e.g.  \"previewVideoUrl\":\"https://images.refero.design/...\".
 # The backslashes are literal characters, hence the \\*" fragments below.
@@ -206,11 +211,51 @@ def extract_media(page):
     return media
 
 
+FLIGHT_REF_RE = re.compile(r"^\$[0-9a-z]+$")
+
+
+def resolve_component_html(result, blob):
+    """Resolve designSystem.components[].html flight refs in place.
+
+    A component's html arrives as "$<hexid>" — a reference to a text row
+    "<hexid>:T<hex-byte-length>,<utf8 text>" elsewhere in the same flight
+    blob. The row length counts UTF-8 bytes, so the slice happens on the
+    encoded blob. Refs that do not resolve become None (the miss is still
+    counted) rather than surviving as a broken "$<hexid>" string.
+    Returns the number of refs that did not resolve.
+    """
+    comps = (result.get("designSystem") or {}).get("components") or []
+    encoded, misses = None, 0
+    for comp in comps:
+        html = comp.get("html")
+        if html == "$undefined":
+            comp["html"] = None
+            continue
+        if not isinstance(html, str) or not FLIGHT_REF_RE.match(html):
+            continue
+        if encoded is None:
+            encoded = blob.encode("utf-8")
+        m = re.search(rb"(?<![0-9a-zA-Z])" + html[1:].encode()
+                      + rb":T([0-9a-f]+),", encoded)
+        if not m:
+            comp["html"] = None
+            misses += 1
+            continue
+        n = int(m.group(1), 16)
+        comp["html"] = encoded[m.end():m.end() + n].decode("utf-8", "replace")
+    return misses
+
+
 def parse_page(page):
     """Return (result dict, design_md str) or raise."""
-    result = extract_result(flight_blob(page))
+    blob = flight_blob(page)
+    result = extract_result(blob)
     if result is None:
         raise ValueError("no result object in flight payload")
+    misses = resolve_component_html(result, blob)
+    if misses:
+        print(f"warning: {misses} component html refs unresolved",
+              file=sys.stderr)
     return result, extract_design_md(page)
 
 
@@ -234,7 +279,7 @@ def init_db():
     db.execute("PRAGMA busy_timeout=30000")
     db.executescript(SCHEMA)
     have = {r[1] for r in db.execute("PRAGMA table_info(styles)")}
-    for col in MEDIA_COLUMNS + LABEL_COLUMNS:
+    for col in MEDIA_COLUMNS + LABEL_COLUMNS + COMPONENT_COLUMNS:
         if col not in have:
             db.execute(f"ALTER TABLE styles ADD COLUMN {col} TEXT")
     db.commit()
@@ -303,6 +348,8 @@ def style_meta(uuid, slug, name, result, media, labels, fetched_at):
         "fetched_at": fetched_at,
         "screenshot_url": (result.get("screenshot") or {}).get("url"),
         **media,
+        "has_components": any(
+            c.get("html") for c in ds.get("components") or []),
     }
 
 
@@ -349,6 +396,11 @@ def write_meta(db, slug, media):
             "screenshot_url": row[12],
         } if row else {}
     meta_obj.update(media)
+    row = db.execute(
+        "SELECT components_json IS NOT NULL FROM styles WHERE slug=?",
+        (slug,)).fetchone()
+    if row:
+        meta_obj["has_components"] = bool(row[0])
     meta_path.parent.mkdir(exist_ok=True)
     write_atomic(meta_path, json.dumps(meta_obj, indent=2) + "\n")
 
@@ -403,21 +455,31 @@ def cmd_fetch(args):
                 uuid, slug, name, result, media, labels,
                 time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))
             write_atomic(outdir / "meta.json", json.dumps(meta_obj, indent=2) + "\n")
+            comps = (result.get("designSystem") or {}).get("components") or []
+            resolved = [c for c in comps if c.get("html")]
+            cpath = outdir / "components.json"
+            if resolved:
+                write_atomic(cpath, json.dumps(comps, indent=2) + "\n")
+            elif cpath.exists():
+                cpath.unlink()
             db.execute(
                 """INSERT OR REPLACE INTO styles
                    (uuid, slug, name, tagline, page_url, source_url, theme,
                     extracted_at, fetched_at, design_md, result_json, screenshot_url,
                     video_url, video_poster_url, video_detail_url,
                     video_detail_poster_url, media_fetched_at,
-                    product_type, design_style, tags)
-                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                    product_type, design_style, tags,
+                    components_json, components_at)
+                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
                 (uuid, slug, name, meta_obj["tagline"], url, meta_obj["source_url"],
                  meta_obj["theme"], meta_obj["extracted_at"], meta_obj["fetched_at"],
                  design_md, json.dumps(result), meta_obj["screenshot_url"],
                  media["video_url"], media["video_poster_url"],
                  media["video_detail_url"], media["video_detail_poster_url"],
                  meta_obj["fetched_at"], meta_obj["product_type"],
-                 meta_obj["design_style"], json.dumps(meta_obj["tags"])))
+                 meta_obj["design_style"], json.dumps(meta_obj["tags"]),
+                 json.dumps(comps) if resolved else None,
+                 meta_obj["fetched_at"] if resolved else None))
             # Clear the row's earlier failure, if any, in the same commit.
             db.execute("DELETE FROM fetch_errors WHERE uuid=?", (uuid,))
             db.commit()
@@ -538,8 +600,21 @@ def cmd_catalog():
     db = init_db()
     rows = db.execute(
         """SELECT slug, name, tagline, uuid, page_url, source_url, theme,
-                  extracted_at, fetched_at, product_type, design_style, tags
+                  extracted_at, fetched_at, product_type, design_style, tags,
+                  components_json IS NOT NULL
            FROM styles ORDER BY name""").fetchall()
+    tables = {r[0] for r in db.execute(
+        "SELECT name FROM sqlite_master WHERE type='table'")}
+    similar, colls = {}, {}
+    if "similar" in tables:
+        for u, s in db.execute(
+                "SELECT uuid, matched_slug FROM similar "
+                "WHERE matched_slug IS NOT NULL ORDER BY uuid, rank"):
+            similar.setdefault(u, []).append(s)
+    if "collection_styles" in tables:
+        for u, c in db.execute(
+                "SELECT style_uuid, collection_slug FROM collection_styles"):
+            colls.setdefault(u, set()).add(c)
     catalog = {
         "version": 1,
         "about": "Snapshot of styles.refero.design — third-party interpreted "
@@ -551,8 +626,11 @@ def cmd_catalog():
             {"slug": s, "name": n, "tagline": t, "uuid": u,
              "page_url": p, "source_url": su, "theme": th,
              "product_type": pt, "design_style": st, "tags": json.loads(tg or "[]"),
-             "extracted_at": ea, "fetched_at": fa}
-            for s, n, t, u, p, su, th, ea, fa, pt, st, tg in rows
+             "extracted_at": ea, "fetched_at": fa,
+             "has_components": bool(hc),
+             "similar": similar.get(u, []),
+             "collections": sorted(colls.get(u, ()))}
+            for s, n, t, u, p, su, th, ea, fa, pt, st, tg, hc in rows
         ],
     }
     write_atomic(REFERO / "catalog.json", json.dumps(catalog, indent=2) + "\n")

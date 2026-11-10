@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/2c7a280c-7cc1-4766-b043-bc8bdd9b868c",
   "source_url": "https://takearecess.com",
   "extracted_at": "2026-06-03T18:47:48.084Z",
-  "fetched_at": "2026-10-20T08:24:15Z",
+  "fetched_at": "2026-11-08T04:20:44Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b756bd35-75e0-41b2-93dd-8103d88d550e.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/2517d6fa-92da-485b-a698-d10c7fe87125.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/767b64d5-5233-40ce-bc63-f0d3d0794d68.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/65baba7b-ee0e-449c-8839-ba9bca0fa01e.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

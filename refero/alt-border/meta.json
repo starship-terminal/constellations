@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/5fd2cdc0-05ac-4290-b67c-72e7525a532c",
   "source_url": "https://www.alt-border.com",
   "extracted_at": "2026-06-03T20:28:05.870Z",
-  "fetched_at": "2026-10-20T08:21:58Z",
+  "fetched_at": "2026-11-08T04:19:41Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/bd1b487c-44e8-4ef5-9eb4-006a32f0b617.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/cf1313b1-bce6-4bab-9058-8aceb59dadbb.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/b657b4f6-021c-4535-8b69-89c4b298dff8.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/7f468a54-8f6d-4d0c-96e1-4b68b5085dbe.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

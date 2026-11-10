@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/5cc6e3be-1cbd-4d09-9958-9cb82b2487db",
   "source_url": "https://www.eatbehave.com",
   "extracted_at": "2026-06-03T19:13:33.506Z",
-  "fetched_at": "2026-10-20T08:22:21Z",
+  "fetched_at": "2026-11-08T04:19:50Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/5b20efc5-6f44-4524-b21b-25bc552be348.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/a834d093-dbd4-4ea1-8a85-4578be6e519f.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/97d62ce4-8615-428d-bd0d-e9985695e27d.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/bf77e4f1-c722-4269-99d0-af4ba5b1b3bc.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

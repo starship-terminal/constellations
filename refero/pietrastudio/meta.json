@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/577eb7d8-3555-4378-83df-0cebebc4782f",
   "source_url": "https://www.pietrastudio.com",
   "extracted_at": "2026-06-03T20:11:01.774Z",
-  "fetched_at": "2026-10-20T08:22:02Z",
+  "fetched_at": "2026-11-08T04:20:39Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/1db014d9-1d52-446e-8a29-39e26eaf8b23.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/11cba7d9-2aef-49fa-911c-3e8dd239b3ac.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/1f7faf13-625c-4651-aa33-31b38e7ca387.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/7de6151d-d2e0-450e-8a34-119540837f40.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

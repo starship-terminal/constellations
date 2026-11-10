@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/6323a42b-3b47-4774-92e4-15651a9ba2ac",
   "source_url": "https://rive.app",
   "extracted_at": "2026-04-11T17:42:27.457Z",
-  "fetched_at": "2026-10-20T08:25:14Z",
+  "fetched_at": "2026-11-08T04:19:33Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/9fdc4048-68a8-4284-b8ee-c7078194f7c3.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/3bc6c632-1ded-4337-bee0-5a92c02fd855.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/dfe45b03-989c-4931-8d33-9322b0720899.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/f595fcb0-fec1-466b-9e3d-4d5777614dc3.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": true
 }

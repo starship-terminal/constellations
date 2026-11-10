@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/5ec4eb4f-a37c-4787-b4c1-de49e01770e7",
   "source_url": "https://deel.com",
   "extracted_at": "2026-04-11T19:19:36.969Z",
-  "fetched_at": "2026-10-20T08:25:16Z",
+  "fetched_at": "2026-11-08T04:19:34Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/650ec721-0cb5-4123-bd5c-64e98f4d6847.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/f69957b6-d509-472f-9867-9dab9a98ed36.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/603be088-1eee-404f-8742-fdca14b2c1cd.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/017a6112-505e-4fba-aae5-91dc1ca800b2.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": true
 }

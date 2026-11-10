@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/a6771960-b826-49bc-9ee7-7f7a5e29642b",
   "source_url": "https://planetscale.com",
   "extracted_at": "2026-06-03T18:23:26.707Z",
-  "fetched_at": "2026-10-20T08:22:38Z",
+  "fetched_at": "2026-11-08T04:20:40Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/e43b0188-3f69-49a5-bbc6-c6038d7f0cc8.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/021d4df2-7a6c-47a5-95fe-e971142f434c.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/daf070fd-1bdb-4531-bcf5-81487dcc979d.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/6b212d38-243e-43fa-9715-1c68ddea5cf6.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

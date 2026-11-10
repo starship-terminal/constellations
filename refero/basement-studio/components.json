@@ -1,0 +1,70 @@
+[
+  {
+    "html": "<style>:root{--color-ember-signal:#ff4d00;--color-void:#000000;--color-chalk:#ffffff;--color-fog:#e5e7eb;--color-ash:#c4c4c4;--color-graphite:#757575;--color-carbon:#454545;--color-cinder:#1a1a1a;--font-geist:'Geist',Inter,'Helvetica Neue',sans-serif}</style><div style=\"background:var(--color-void);padding:40px 0;font-family:var(--font-geist);width:600px;box-sizing:border-box;\"><p style=\"color:var(--color-graphite);font-size:13px;font-weight:400;text-align:center;margin:0 0 24px 0;font-family:var(--font-geist);letter-spacing:0;\">Trusted by Visionaries</p><div style=\"display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--color-carbon);border-top:1px solid var(--color-carbon);\"><div style=\"border-right:1px solid var(--color-carbon);border-bottom:1px solid var(--color-carbon);height:72px;display:flex;align-items:center;justify-content:center;\"><span style=\"color:var(--color-chalk);font-size:14px;font-weight:600;font-family:var(--font-geist);letter-spacing:-0.02em;\">\u25b2 Vercel</span></div><div style=\"border-right:1px solid var(--color-carbon);border-bottom:1px solid var(--color-carbon);height:72px;display:flex;align-items:center;justify-content:center;\"><span style=\"color:var(--color-chalk);font-size:14px;font-weight:600;font-family:var(--font-geist);letter-spacing:-0.02em;\">NEXT.js</span></div><div style=\"border-right:1px solid var(--color-carbon);border-bottom:1px solid var(--color-carbon);height:72px;display:flex;align-items:center;justify-content:center;\"><span style=\"color:var(--color-chalk);font-size:14px;font-weight:500;font-family:var(--font-geist);\">\u2b21 Linear</span></div><div style=\"border-right:1px solid var(--color-carbon);border-bottom:1px solid var(--color-carbon);height:72px;display:flex;align-items:center;justify-content:center;\"><span style=\"color:var(--color-chalk);font-size:14px;font-weight:500;font-family:var(--font-geist);\">CURSOR</span></div><div style=\"border-right:1px solid var(--color-carbon);border-bottom:1px solid var(--color-carbon);height:72px;display:flex;align-items:center;justify-content:center;\"><span style=\"color:var(--color-chalk);font-size:14px;font-weight:400;font-family:var(--font-geist);letter-spacing:0.05em;\">scale</span></div><div style=\"border-right:1px solid var(--color-carbon);border-bottom:1px solid var(--color-carbon);height:72px;display:flex;align-items:center;justify-content:center;\"><span style=\"color:var(--color-chalk);font-size:13px;font-weight:500;font-family:var(--font-geist);\">WorldLabs</span></div><div style=\"border-right:1px solid var(--color-carbon);border-bottom:1px solid var(--color-carbon);height:72px;display:flex;align-items:center;justify-content:center;\"><span style=\"color:var(--color-chalk);font-size:12px;font-weight:600;font-family:var(--font-geist);letter-spacing:-0.01em;\">IIElevenLabs</span></div><div style=\"border-right:1px solid var(--color-carbon);border-bottom:1px solid var(--color-carbon);height:72px;display:flex;align-items:center;justify-content:center;\"><span style=\"color:var(--color-chalk);font-size:13px;font-weight:500;font-family:var(--font-geist);\">\u2726 Cognition</span></div><div style=\"border-right:1px solid var(--color-carbon);border-bottom:1px solid var(--color-carbon);height:72px;display:flex;align-items:center;justify-content:center;\"><span style=\"color:var(--color-chalk);font-size:16px;font-weight:400;font-family:Georgia,serif;font-style:italic;\">Harvey</span></div><div style=\"border-right:1px solid var(--color-carbon);border-bottom:1px solid var(--color-carbon);height:72px;display:flex;align-items:center;justify-content:center;\"><span style=\"color:var(--color-chalk);font-size:13px;font-weight:500;font-family:var(--font-geist);\">\u229e baseten</span></div><div style=\"border-right:1px solid var(--color-carbon);border-bottom:1px solid var(--color-carbon);height:72px;display:flex;align-items:center;justify-content:center;\"><span style=\"color:var(--color-chalk);font-size:11px;font-weight:600;font-family:var(--font-geist);letter-spacing:0.02em;\">\u25b2\u25b2 Black Forest Labs</span></div><div style=\"border-right:1px solid var(--color-carbon);border-bottom:1px solid var(--color-carbon);height:72px;display:flex;align-items:center;justify-content:center;\"><span style=\"color:var(--color-chalk);font-size:13px;font-weight:500;font-family:var(--font-geist);\">\u29bf Profound</span></div></div></div>",
+    "name": "Client Logo Grid",
+    "role": "",
+    "description": ""
+  },
+  {
+    "html": "<style>:root{--color-ember-signal:#ff4d00;--color-void:#000000;--color-chalk:#ffffff;--color-fog:#e5e7eb;--color-ash:#c4c4c4;--color-graphite:#757575;--color-carbon:#454545;--color-cinder:#1a1a1a;--font-geist:'Geist',Inter,'Helvetica Neue',sans-serif}</style><div style=\"background:var(--color-void);padding:32px 24px 40px 24px;font-family:var(--font-geist);width:600px;box-sizing:border-box;\"><h1 style=\"color:var(--color-chalk);font-size:76px;font-weight:600;line-height:0.90;letter-spacing:-0.04em;font-family:var(--font-geist);font-feature-settings:'ss01' on;margin:0 0 32px 0;padding:0;\">A digital studio &amp; branding powerhouse making cool shit that performs.</h1><p style=\"color:var(--color-ash);font-size:15px;font-weight:400;line-height:1.5;font-family:var(--font-geist);margin:0;max-width:340px;padding:0;\">We partner with the world's most ambitious startups, scale-ups and brands to unlock their true potential and growth through the convergence of creativity, design, and technology.</p></div>",
+    "name": "Display Headline with Body Copy",
+    "role": "",
+    "description": ""
+  },
+  {
+    "html": "<style>:root{--color-ember-signal:#ff4d00;--color-void:#000000;--color-chalk:#ffffff;--color-fog:#e5e7eb;--color-ash:#c4c4c4;--color-graphite:#757575;--color-carbon:#454545;--color-cinder:#1a1a1a;--font-geist:'Geist',Inter,'Helvetica Neue',sans-serif}</style><div style=\"background:var(--color-void);border-bottom:1px solid var(--color-carbon);width:600px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;padding:0 16px;height:44px;font-family:var(--font-geist);\"><span style=\"color:var(--color-chalk);font-size:16px;font-weight:600;font-family:var(--font-geist);letter-spacing:-0.02em;white-space:nowrap;\">basement.</span><nav style=\"display:flex;align-items:center;gap:20px;\"><a href=\"#\" style=\"color:var(--color-ember-signal);font-size:13px;font-weight:500;font-family:var(--font-geist);text-decoration:none;\">Home</a><a href=\"#\" style=\"color:var(--color-chalk);font-size:13px;font-weight:500;font-family:var(--font-geist);text-decoration:none;\">Services</a><a href=\"#\" style=\"color:var(--color-chalk);font-size:13px;font-weight:500;font-family:var(--font-geist);text-decoration:none;\">Showcase<sup style=\"color:var(--color-graphite);font-size:10px;font-weight:400;\">(25)</sup></a><a href=\"#\" style=\"color:var(--color-chalk);font-size:13px;font-weight:500;font-family:var(--font-geist);text-decoration:none;\">People</a><a href=\"#\" style=\"color:var(--color-chalk);font-size:13px;font-weight:500;font-family:var(--font-geist);text-decoration:none;\">Blog<sup style=\"color:var(--color-graphite);font-size:10px;font-weight:400;\">(27)</sup></a><a href=\"#\" style=\"color:var(--color-chalk);font-size:13px;font-weight:500;font-family:var(--font-geist);text-decoration:none;\">Lab</a></nav><a href=\"#\" style=\"color:var(--color-chalk);font-size:13px;font-weight:500;font-family:var(--font-geist);text-decoration:none;background:var(--color-void);border:1px solid var(--color-fog);padding:4px 8px;border-radius:0px;white-space:nowrap;\">Contact Us</a></div>",
+    "name": "Nav Bar Strip",
+    "role": "",
+    "description": ""
+  },
+  {
+    "name": "Ghost Navigation Link",
+    "role": "Primary nav items",
+    "description": "Transparent background, #ffffff text at 13px Geist weight 500, no padding, no border, no radius. Active state: color switches to #ff4d00 \u2014 the only place this accent appears in the entire system."
+  },
+  {
+    "name": "Contact Us Button",
+    "role": "Primary CTA in nav",
+    "description": "#000000 background, #ffffff text at 13px Geist weight 500, 0px border-radius, 4px padding all sides, border: 1px solid #e5e7eb. Sharp-cornered box against the black nav bar \u2014 distinguishable only by the border rectangle."
+  },
+  {
+    "name": "Scroll to Explore Label",
+    "role": "Scroll prompt / ambient CTA",
+    "description": "Transparent background, #ffffff text at 15px Geist weight 400, accompanied by a down-arrow glyph. No button chrome. Sits at the bottom center of the full-black hero viewport."
+  },
+  {
+    "name": "Client Logo Tile",
+    "role": "Social proof grid cell",
+    "description": "Transparent background, 1px solid #454545 border, 0px radius, 0px explicit padding (content centered within equal-width grid cell). White SVG logo fills. Grid layout 8-wide, dense tessellation \u2014 no gaps between cells, borders collapse against adjacent tiles."
+  },
+  {
+    "name": "Section Label",
+    "role": "Small contextual headers (e.g. 'Trusted by Visionaries')",
+    "description": "#757575 text at 13px Geist weight 400, no decoration. Appears above content blocks as a muted classifier \u2014 lighter than body text, heavier than captions."
+  },
+  {
+    "name": "Display Headline",
+    "role": "Hero primary heading",
+    "description": "#ffffff text at 87px Geist weight 600, line-height 0.89, letter-spacing -0.04em, font-feature-settings 'ss01'. Full-width block, text wraps to fill viewport width. The dominant visual element of the page \u2014 no decoration, no underline, no gradient \u2014 pure compressed type mass."
+  },
+  {
+    "name": "Body Paragraph",
+    "role": "Descriptive sub-headline body copy",
+    "description": "#c4c4c4 text at 15px Geist weight 400, line-height 1.5. Set in a constrained column (~300-350px width) beneath the display headline. The gray-down from white creates visual subordination without a size change."
+  },
+  {
+    "name": "Text Input",
+    "role": "Form input fields",
+    "description": "#1a1a1a background, #1a1a1a border (flush \u2014 border blends with background), #ffffff text at 15px Geist weight 400, 0px border-radius, 4px horizontal padding, 0px vertical padding. The input surface is the only non-black background in the system."
+  },
+  {
+    "name": "Nav Badge / Count",
+    "role": "Numeric label on nav items (e.g. showcase item count)",
+    "description": "Small superscript or inline badge in #757575 at 12px Geist weight 400. No background, no border, no radius. Purely typographic count indicator."
+  },
+  {
+    "name": "Wordmark",
+    "role": "Brand logo in nav",
+    "description": "'basement.' in #ffffff Geist weight 600 at ~16px. The period is part of the brand mark. No icon, no logomark \u2014 logotype only."
+  }
+]

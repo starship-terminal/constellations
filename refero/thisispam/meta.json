@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/f352b093-1ba7-49c7-9ce3-ad73cf9a1aee",
   "source_url": "https://thisispam.com",
   "extracted_at": "2026-06-03T22:11:49.010Z",
-  "fetched_at": "2026-10-20T08:23:20Z",
+  "fetched_at": "2026-11-08T04:20:58Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/ad760a59-38e5-460f-b08a-53eccf59eb8d.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -21,5 +21,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

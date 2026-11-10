@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/355e8465-df7d-486a-9d76-2ace37d076a2",
   "source_url": "https://onepeloton.com",
   "extracted_at": "2026-06-03T19:03:37.207Z",
-  "fetched_at": "2026-10-20T08:24:10Z",
+  "fetched_at": "2026-11-08T04:20:38Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/8d242220-63e9-4db7-9c51-0a3013dce535.jpg",
   "video_url": null,
   "video_poster_url": null,
@@ -20,5 +20,6 @@
   "video_detail_poster_url": null,
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

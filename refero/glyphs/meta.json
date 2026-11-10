@@ -12,7 +12,7 @@
   "page_url": "https://styles.refero.design/style/67bb82e2-d81c-4ead-a882-a8a2534eb221",
   "source_url": "https://glyphsapp.com",
   "extracted_at": "2026-09-24T17:36:38.472Z",
-  "fetched_at": "2026-10-20T08:21:26Z",
+  "fetched_at": "2026-11-08T04:20:13Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/b9a8bebb-117d-4033-b23d-e077a41947b9.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/824a6ad4-a547-4a45-9691-558588ece782.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/8b5b2b47-9d3b-4581-947d-cd1cc7e9d00f.jpg",
@@ -20,5 +20,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/04ea3de4-3c1b-41c5-b88d-c3200f3ded08.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

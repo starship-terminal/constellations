@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/02610b06-d16e-47bd-a1ea-18979a9ed4f5",
   "source_url": "https://www.breakmaiden.co",
   "extracted_at": "2026-06-03T19:16:50.716Z",
-  "fetched_at": "2026-10-20T08:22:18Z",
+  "fetched_at": "2026-11-08T04:19:52Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/a1c3226b-5326-43e5-ad6e-7d14a5b3fde7.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/db5a99a5-6a78-43ea-a105-d4659a141ace.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/1cf01768-111a-4e8e-a109-df90fa1e00d4.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/fab4569f-505e-4b1c-b0c5-f863349e1ce9.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }

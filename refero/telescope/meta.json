@@ -13,7 +13,7 @@
   "page_url": "https://styles.refero.design/style/e6fb72b4-877d-46ab-8f94-590b971d4dc1",
   "source_url": "https://telescope.fyi",
   "extracted_at": "2026-06-03T18:26:59.876Z",
-  "fetched_at": "2026-10-20T08:22:36Z",
+  "fetched_at": "2026-11-08T04:20:58Z",
   "screenshot_url": "https://images.refero.design/styles/refero.design/image/fc4b4633-54fd-4c03-a770-afefaa2b50ed.jpg",
   "video_url": "https://images.refero.design/styles/refero.design/video/e381fdf2-19a9-4a92-94b8-83fe1e5aa31b.mp4",
   "video_poster_url": "https://images.refero.design/styles/refero.design/image/b752aa4a-e9ac-437e-a5a3-29586f81f715.jpg",
@@ -21,5 +21,6 @@
   "video_detail_poster_url": "https://images.refero.design/styles/refero.design/image/5654bd2d-d2ec-4480-95ca-341e253d07f4.jpg",
   "video_w": null,
   "video_h": null,
-  "video_ms": null
+  "video_ms": null,
+  "has_components": false
 }
