@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 78,
-    "system_domains": 70,
-    "matched_domains": 46,
-    "missing_domains": 387,
+    "system_packages": 79,
+    "system_domains": 71,
+    "matched_domains": 47,
+    "missing_domains": 386,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -391,6 +391,23 @@
           "name": "Artboard Studio",
           "url": "https://artboard.studio",
           "name_match": false
+        }
+      ]
+    },
+    "asana.com": {
+      "catalog": [
+        {
+          "name": "Asana",
+          "domain": "asana.com",
+          "id": 69
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "asana",
+          "name": "Asana",
+          "url": "https://asana.com",
+          "name_match": true
         }
       ]
     },
@@ -861,13 +878,6 @@
         "name": "Around",
         "domain": "around.co",
         "id": 129
-      }
-    ],
-    "asana.com": [
-      {
-        "name": "Asana",
-        "domain": "asana.com",
-        "id": 69
       }
     ],
     "awwwards.com": [
