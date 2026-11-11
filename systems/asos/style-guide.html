@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASOS style guide</title>
+<meta name="description" content="ASOS (asos.com) design tokens and the public shop's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+  --color-neutral-black: #000000;
+  --color-neutral-grey-100: #f8f8f8;
+  --color-neutral-grey-200: #eeeeee;
+  --color-neutral-grey-300: #dddddd;
+  --color-neutral-grey-400: #929292;
+  --color-neutral-grey-50: #f9f9f9;
+  --color-neutral-grey-500: #767676;
+  --color-neutral-grey-600: #666666;
+  --color-neutral-grey-700: #525050;
+  --color-neutral-ink-800: #1f1e1e;
+  --color-neutral-ink-850: #282828;
+  --color-neutral-ink-870: #212121;
+  --color-neutral-ink-900: #2d2d2d;
+  --color-neutral-white: #ffffff;
+  --color-green-bright: #5cd881;
+  --color-green-dark: #006637;
+  --color-green-default: #018849;
+  --color-green-mint: #cceede;
+  --color-green-tint: #79e69e;
+  --color-green-wash: #d7ffdb;
+  --color-orange-deep: #f75a27;
+  --color-orange-default: #ff9c32;
+  --color-orange-light: #ff8753;
+  --color-orange-tint: #ffd2bf;
+  --color-orange-wash: #ffebcc;
+  --color-blue-deep: #1862a5;
+  --color-blue-default: #0770cf;
+  --color-blue-tint: #bfc9ff;
+  --color-blue-wash: #cde2f5;
+  --color-red-bright: #ff3b30;
+  --color-red-deep: #d01345;
+  --color-red-wash: #fae7ec;
+  --color-purple-deep: #4f41c5;
+  --color-purple-default: #6f5cff;
+  --color-purple-light: #9797ff;
+  --color-purple-wash: #f1efff;
+  --color-bronze-default: #b6752f;
+  --color-channel-ink: #2d2d2d;
+  --color-channel-inverse: #ffffff;
+  --font-family-primary: futura-pt, Tahoma, Geneva, Verdana, Arial, sans-serif;
+  --font-family-legacy: FuturaStd, "Futura Std", Arial, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-demi: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-heavy: 900;
+  --font-size-xxs: 10.5625px;
+  --font-size-xs: 13px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-md: 17.6px;
+  --font-size-lg: 24px;
+  --font-tracking-tight: 0.4px;
+  --font-tracking-base: 0.6px;
+  --font-tracking-wide: 1px;
+  --font-tracking-wider: 1.7px;
+  --font-tracking-caps: 2px;
+  --font-tracking-capsWide: 2.5px;
+  --measured-focus-outline: #005fcc;
+  --measured-focus-outline-alt: #0770cf;
+  --measured-nav-hover: #051a6e;
+  --measured-anchor-inherit: #0000ee;
+  --measured-hover-wash: #f5f5f5;
+  --measured-action-hover: #006637;
+  --measured-ink-hover: #000000;
+  --action-primary: #018849;
+  --action-primaryHover: #006637;
+  --border-default: #dddddd;
+  --surface-inverse: #000000;
+  --surface-page: #ffffff;
+  --surface-promo: #cde2f5;
+  --surface-subtle: #f8f8f8;
+  --surface-wash: #eeeeee;
+  --text-inverse: #ffffff;
+  --text-primary: #2d2d2d;
+  --text-secondary: #666666;
+  --component-control-height: 44px;
+  --component-control-heightLg: 48px;
+  --component-control-heightWide: 54.5px;
+  --component-control-fieldHeight: 38px;
+  --component-control-pillHeight: 36px;
+  --component-control-heightBar: 43px;
+  --component-radius-none: 0px;
+  --component-radius-round: 100px;
+  --component-header-height: 140px;
+  --component-nav-height: 50px;
+  --component-nav-tabHeight: 60px;
+  --component-icon-tapTarget: 50px;
+  --component-icon-social: 30px;
+  --component-icon-search: 38px;
+  --component-tile-width: 335px;
+  --component-flyout-width: 1302px;
+  --component-focus-width: 5px;
+  --sg-sans: futura-pt, "Futura PT", FuturaStd, "Futura Std", Tahoma, Geneva, Verdana, Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #2d2d2d); background: var(--surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: .04em; text-transform: uppercase; }
+h2.sh { font: 700 12px/1 var(--sg-sans); letter-spacing: .18em; text-transform: uppercase; color: var(--text-secondary, #666); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-default, #ddd); }
+.lead { max-width: 62ch; color: var(--text-secondary, #666); }
+.note { font-size: 13px; color: var(--text-secondary, #666); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 700 11px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-secondary, #666); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-default, #ddd); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 700 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-secondary, #666); }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-default, #ddd); background: var(--surface-subtle, #f8f8f8); font: 700 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 700; }
+.kv span { color: var(--text-secondary, #666); }
+/* ---- shop mock ---- */
+.mock { border: 1px solid var(--border-default, #ddd); overflow: hidden; background: var(--surface-page, #fff); }
+.topstrip { display: flex; justify-content: flex-end; gap: 18px; align-items: center; height: 30px; padding: 0 14px; font-size: 11px; color: var(--text-primary, #2d2d2d); border-bottom: 1px solid var(--border-default, #ddd); }
+.topstrip .app { background: #051a6e; color: #fff; font-weight: 700; padding: 4px 10px; letter-spacing: .04em; }
+.navbar { display: flex; align-items: center; gap: 22px; height: 60px; padding: 0 24px; background: var(--surface-inverse, #000); color: #fff; font-size: 14px; letter-spacing: .2em; }
+.navbar .wm { font-weight: 900; font-size: 22px; letter-spacing: .06em; text-transform: lowercase; }
+.navbar .tab { border-bottom: 3px solid #fff; align-self: stretch; display: inline-flex; align-items: center; font-weight: 900; }
+.navbar .tab.dim { border-color: transparent; font-weight: 400; }
+.navbar .fld { flex: 1; max-width: 560px; height: 38px; background: #fff; color: #767676; display: flex; align-items: center; padding: 0 14px; font-size: 13px; letter-spacing: .04em; }
+.catnav { display: flex; gap: 26px; align-items: center; height: 50px; padding: 0 24px; background: var(--surface-inverse, #000); color: #fff; font-size: 14px; border-top: 1px solid #2d2d2d; }
+.promo { background: var(--surface-inverse, #000); color: #fff; font-size: 13px; text-align: center; padding: 14px 16px; line-height: 1.5; }
+.promo .ptab { display: inline-block; border: 1px solid #fff; padding: 4px 22px; margin: 0 10px; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 44px); padding: 0 26px; font-size: 16px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; border: 1px solid transparent; }
+.btn.buy { background: var(--action-primary, #018849); color: #fff; }
+.btn.dark { background: var(--text-primary, #2d2d2d); color: #fff; }
+.btn.ghost { background: var(--surface-page, #fff); color: var(--text-primary, #2d2d2d); border-color: var(--border-default, #ddd); }
+.btn.herob { background: #fff; color: #000; min-width: 184px; font-size: 16px; }
+.hero { background: var(--surface-subtle, #f8f8f8); color: var(--surface-inverse, #000); padding: 72px 40px; font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: .04em; }
+.hero small { display: block; font-size: 16px; font-weight: 400; letter-spacing: .2em; color: var(--text-primary, #2d2d2d); margin: 16px 0 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: none; padding: 0; font-size: 16px; }
+.tile .img { height: 240px; background: var(--surface-subtle, #f8f8f8); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; position: relative; }
+.tile .heart { position: absolute; top: 8px; right: 8px; width: 46px; height: 45px; border-radius: 50%; background: var(--surface-wash, #eee); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.tile b { display: block; font-weight: 400; margin-bottom: 2px; font-size: 14px; }
+.tile .sub { color: var(--text-secondary, #666); font-size: 13px; }
+.pill { display: inline-flex; align-items: center; height: var(--component-control-pillHeight, 36px); padding: 0 18px; border: 1px solid var(--border-default, #ddd); font-size: 16px; letter-spacing: .06em; margin: 0 6px 6px 0; background: var(--surface-page, #fff); }
+.promoband { background: var(--surface-promo, #cde2f5); color: var(--surface-inverse, #000); padding: 12px 16px; font-size: 16px; margin: 10px 0; }
+.field { display: flex; align-items: center; height: var(--component-control-fieldHeight, 38px); border: 1px solid var(--border-default, #ddd); padding: 0 12px; font-size: 16px; color: var(--text-secondary, #666); max-width: 340px; margin-bottom: 8px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-default, #ddd); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>ASOS style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">ASOS, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the palette asos.com declares as hash-named custom properties on <code>:root</code> (<code>--1fot7dv</code> black, <code>--3pchel</code> white, the <code>--11lcxa5</code> ink, <code>--1e93okh</code>/<code>--14cp6y8</code> buy greens, <code>--xes0jb</code> promo blue, the orange/red/purple accent family), the roles a measurement verified (text, surfaces, borders, the buy action), the Futura type scale and tracking, and the measured control sizes. One light theme; a <code>.dark</code> probe resolves identically. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from asos.com on 2026-11-10, signed out, in headed Chrome — Akamai 403s headless browsers — with the OneTrust consent dialog hidden (never answered). Futura PT is ASOS's licensed face and is not loaded here: samples fall back to a system sans. Checkout and account areas behind sign-in were never reached; prices were geo-served in Singapore (SGD).</p>
+
+  <h2 class="sh">The shop chrome</h2>
+  <p class="lead">A slim top strip (app link, help, country), then the 140px black block: lowercase wordmark, WOMEN/MEN floor tabs underlined in white, a wide white search field, and 50px icon targets. Below it the 50px category nav row — hover fills a button deep navy and opens a white flyout — and the black "New here?" promo strip with its bordered WOMEN/MEN tabs.</p>
+  <div class="mock">
+    <div class="topstrip"><span class="app">Download our new app</span><span>Help &amp; FAQs</span><span>You're in Singapore ⌄</span></div>
+    <div class="navbar"><span class="wm">asos</span><span class="tab">WOMEN</span><span class="tab dim">MEN</span><span class="fld">Search for items and brands &#9906;</span><span>&#9825;</span><span>&#128717;</span></div>
+    <div class="catnav"><span>New in</span><span>Clothing</span><span>Dresses</span><span>Shoes</span><span>Accessories</span><span>Gifting</span><span>Sale</span></div>
+    <div class="promo"><span class="ptab">WOMEN</span><span><b>New here?</b> Get 20% off when you subscribe to our regular updates*. Use code: NEW</span><span class="ptab">MEN</span></div>
+    <div class="hero">STYLE YOUR MOMENT
+      <small>Fashion for the now — new in daily.</small>
+      <span class="btn herob">SHOP WOMENS</span> <span class="btn herob">SHOP MENS</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Product surfaces</h2>
+  <p class="lead">Grid tiles are borderless: image, name, price, a round grey save heart, and SELLING FAST / MORE COLOURS status lines. The PDP runs a native size select, the 44px green ADD TO BAG, a round save button, the light-blue promo band, and square accordion rows.</p>
+  <div class="mock" style="padding:20px">
+    <div style="margin-bottom:10px"><span class="pill">New in: Today</span><span class="pill">New In: Clothing</span><span class="pill">New In: Shoes</span></div>
+    <div class="grid">
+      <div class="tile"><div class="img"><span class="heart">&#9825;</span>NEW IN</div><b>ASOS DESIGN high neck slash shoulder maxi dress</b><span class="sub">SGD$59.99 · SELLING FAST</span></div>
+      <div class="tile"><div class="img"><span class="heart">&#9825;</span>SALE</div><b>ARRANGE velvet plunge halter maxi dress</b><span class="sub">SGD$98.99 · MORE COLOURS</span></div>
+    </div>
+    <div style="margin-top:18px;max-width:420px">
+      <b style="font-size:18px;font-weight:400">ASOS DESIGN maxi dress with open back</b>
+      <div class="promoband">Get 20% off! With code: <b>WOW</b></div>
+      <div class="field">SIZE: Please select</div>
+      <span class="btn buy" style="width:76%">ADD TO BAG</span> <span class="btn" style="width:44px;padding:0;border-radius:100px;background:var(--surface-wash,#eee)">&#9825;</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Account gate</h2>
+  <div class="mock" style="padding:20px">
+    <b style="font-size:24px">Hi friend!</b>
+    <div class="field" style="height:44px;margin-top:10px">Email</div>
+    <span class="btn dark" style="height:48px;min-width:343px;font-weight:600">CONTINUE</span>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The storefront is nearly achromatic — black chrome on white, <code>#2d2d2d</code> ink, <code>#dddddd</code> hairlines — then one loud action green (<code>#018849</code>, hover <code>#006637</code>), the light-blue promo band (<code>#cde2f5</code>) and a small accent family for sale, error and app promos. Swatches list the declared var each alias resolves through.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Futura PT (book 400, demi 500, bold 700) everywhere, the older FuturaStd stack on promo furniture, a 6-step measured size scale (10.5625–24px) and a 6-step tracking scale — Futura PT is licensed and not loaded here, so the named stacks below are the token values, not the rendered face.</p>
+  <div id="type-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">No declared spacing scale — ASOS composes layout in component CSS. Corners are the signature: square (<code>0px</code>) on every button, pill, field and tile; only icon-only buttons go fully round (<code>50%</code>/<code>100px</code>). No shadows anywhere; depth comes from fills alone.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <p class="lead">None measured — the shop is flat. (The list below stays empty unless a future run finds one.)</p>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <p class="lead">Colours no variable declares — the <code>#005fcc</code> focus ring (the <code>#0770cf</code> variant on my.asos.com is <code>--1cf22is</code>), the deep-navy nav hover <code>#051a6e</code>, the <code>#0000ee</code> anchor blue — plus the measured component dimensions.</p>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, picked and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"neutral":{"black":{"v":"#000000","t":"color","s":"css-var --1fot7dv (light); css-var --1fot7dv"},"grey":{"100":{"v":"#f8f8f8","t":"color","s":"css-var --sm859b (light); css-var --sm859b"},"200":{"v":"#eeeeee","t":"color","s":"css-var --1wwppwc (light); css-var --1wwppwc"},"300":{"v":"#dddddd","t":"color","s":"css-var --na3s62 (light); css-var --na3s62"},"400":{"v":"#929292","t":"color","s":"css-var --h1m6hk (light); css-var --h1m6hk"},"50":{"v":"#f9f9f9","t":"color","s":"css-var --6gu3az (light); css-var --6gu3az"},"500":{"v":"#767676","t":"color","s":"css-var --10c6hzt (light); css-var --10c6hzt"},"600":{"v":"#666666","t":"color","s":"css-var --f1xms7 (light); css-var --f1xms7"},"700":{"v":"#525050","t":"color","s":"css-var --4439lq (light); css-var --4439lq"}},"ink":{"800":{"v":"#1f1e1e","t":"color","s":"css-var --198t7lw (light); css-var --198t7lw"},"850":{"v":"#282828","t":"color","s":"css-var --19n3pjb (light); css-var --19n3pjb"},"870":{"v":"#212121","t":"color","s":"css-var --45kpnl (light); css-var --45kpnl"},"900":{"v":"#2d2d2d","t":"color","s":"css-var --11lcxa5 (light); css-var --11lcxa5"}},"white":{"v":"#ffffff","t":"color","s":"css-var --3pchel (light); css-var --3pchel"}},"green":{"bright":{"v":"#5cd881","t":"color","s":"css-var --173zcrj (light); css-var --173zcrj"},"dark":{"v":"#006637","t":"color","s":"css-var --14cp6y8 (light); css-var --14cp6y8"},"default":{"v":"#018849","t":"color","s":"css-var --1e93okh (light); css-var --1e93okh"},"mint":{"v":"#cceede","t":"color","s":"css-var --5eoeaa (light); css-var --5eoeaa"},"tint":{"v":"#79e69e","t":"color","s":"css-var --cod972 (light); css-var --cod972"},"wash":{"v":"#d7ffdb","t":"color","s":"css-var --19t30l9 (light); css-var --19t30l9"}},"orange":{"deep":{"v":"#f75a27","t":"color","s":"css-var --1gu65g4 (light); css-var --1gu65g4"},"default":{"v":"#ff9c32","t":"color","s":"css-var --a5az0j (light); css-var --a5az0j"},"light":{"v":"#ff8753","t":"color","s":"css-var --19qikbp (light); css-var --19qikbp"},"tint":{"v":"#ffd2bf","t":"color","s":"css-var --rrfoye (light); css-var --rrfoye"},"wash":{"v":"#ffebcc","t":"color","s":"css-var --1njx4kw (light); css-var --1njx4kw"}},"blue":{"deep":{"v":"#1862a5","t":"color","s":"css-var --lzto1h (light); css-var --lzto1h"},"default":{"v":"#0770cf","t":"color","s":"css-var --1cf22is (light); css-var --1cf22is"},"tint":{"v":"#bfc9ff","t":"color","s":"css-var --1asa9bf (light); css-var --1asa9bf"},"wash":{"v":"#cde2f5","t":"color","s":"css-var --xes0jb (light); css-var --xes0jb"}},"red":{"bright":{"v":"#ff3b30","t":"color","s":"css-var --1mii22u (light); css-var --1mii22u"},"deep":{"v":"#d01345","t":"color","s":"css-var --1xvrmqx (light); css-var --1xvrmqx"},"wash":{"v":"#fae7ec","t":"color","s":"css-var --1j5f6ai (light); css-var --1j5f6ai"}},"purple":{"deep":{"v":"#4f41c5","t":"color","s":"css-var --1lx7ll5 (light); css-var --1lx7ll5"},"default":{"v":"#6f5cff","t":"color","s":"css-var --1ffq8ns (light); css-var --1ffq8ns"},"light":{"v":"#9797ff","t":"color","s":"css-var --stskl1 (light); css-var --stskl1"},"wash":{"v":"#f1efff","t":"color","s":"css-var --oyq41c (light); css-var --oyq41c"}},"bronze":{"default":{"v":"#b6752f","t":"color","s":"css-var --fc982a (light); css-var --fc982a"}},"channel":{"ink":{"v":"#2d2d2d","t":"color","s":"css-var --18bniqv (channel triplet, used inside rgb()/rgba() composition)"},"inverse":{"v":"#ffffff","t":"color","s":"css-var --1cripqf (channel triplet, used inside rgb()/rgba() composition)"}}},"font":{"family":{"primary":{"v":"futura-pt, Tahoma, Geneva, Verdana, Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of pdp-price (raw/components-computed.json); faces futura-pt 400/500/700 + FuturaStd 400/700 in css-vars.json","d":"Futura PT everywhere — the ASOS face."},"legacy":{"v":"FuturaStd, \"Futura Std\", Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of promo-strip/promo-tab (raw/components-computed.json)","d":"The older FuturaStd stack on promo furniture."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of body copy (pdp-title, tiles)"},"demi":{"v":500,"t":"fontWeight","s":"futura-pt demi @font-face in css-vars.json"},"semibold":{"v":600,"t":"fontWeight","s":"computed fontWeight of continue-button"},"bold":{"v":700,"t":"fontWeight","s":"computed fontWeight of add-to-bag/promo-tab"},"heavy":{"v":900,"t":"fontWeight","s":"computed fontWeight of nav-tab/load-more/m-nav-link"}},"size":{"xxs":{"v":"10.5625px","t":"dimension","s":"computed fontSize of promo-tab (raw/components-computed.json)","d":"10.5625px on the promo-strip WOMEN/MEN tabs."},"xs":{"v":"13px","t":"dimension","s":"computed fontSize of promo-strip (raw/components-computed.json)","d":"13px promo strip copy."},"sm":{"v":"14px","t":"dimension","s":"computed fontSize of nav-item (raw/components-computed.json)","d":"14px on nav rows, footer links, styles-count."},"base":{"v":"16px","t":"dimension","s":"computed fontSize of pdp-price (raw/components-computed.json)","d":"16px body — prices, fields, buttons."},"md":{"v":"17.6px","t":"dimension","s":"computed fontSize of bag-title (raw/components-computed.json)","d":"17.6–18px on page/section titles."},"lg":{"v":"24px","t":"dimension","s":"computed fontSize of plp-title (raw/components-computed.json)","d":"24px on collection and login titles."}},"tracking":{"tight":{"v":"0.4px","t":"dimension","s":"computed letterSpacing of size-select (raw/components-computed.json)","d":"0.4px on fields and inputs."},"base":{"v":"0.6px","t":"dimension","s":"computed letterSpacing of add-to-bag (raw/components-computed.json)","d":"0.6px on buttons and strip copy."},"wide":{"v":"1px","t":"dimension","s":"computed letterSpacing of cat-pill (raw/components-computed.json)","d":"1px on pills and promo tabs."},"wider":{"v":"1.7px","t":"dimension","s":"computed letterSpacing of plp-title (raw/components-computed.json)","d":"1.7px on the collection title."},"caps":{"v":"2px","t":"dimension","s":"computed letterSpacing of hero-cta (raw/components-computed.json)","d":"2px on uppercase CTAs and menu rows."},"capsWide":{"v":"2.5px","t":"dimension","s":"computed letterSpacing of bag-title (raw/components-computed.json)","d":"2.5px on the MY BAG title."}}},"measured":{"focus-outline":{"v":"#005fcc","t":"color","s":"computed outlineColor of nav-item focus-visible (raw/components-computed.json)","d":"The :focus-visible ring on chrome controls."},"focus-outline-alt":{"v":"#0770cf","t":"color","s":"computed outlineColor of continue-button focus-visible (raw/components-computed.json)","d":"The #0770cf focus blue on my.asos.com (matches --1cf22is)."},"nav-hover":{"v":"#051a6e","t":"color","s":"computed backgroundColor of nav-item hover (raw/components-computed.json)","d":"The deep-navy fill a category button takes on hover."},"anchor-inherit":{"v":"#0000ee","t":"color","s":"computed color of tile-name hover (raw/components-computed.json)","d":"The wrapper anchor's unused inherited blue — the visible product link text is text.primary #2d2d2d."},"hover-wash":{"v":"#f5f5f5","t":"color","s":"computed backgroundColor of cat-pill hover (raw/components-computed.json)","d":"#f5f5f5 pill hover wash."},"action-hover":{"v":"#006637","t":"color","s":"computed backgroundColor of add-to-bag hover (raw/components-computed.json)","d":"The darker buy green on hover."},"ink-hover":{"v":"#000000","t":"color","s":"computed backgroundColor of continue-button hover (raw/components-computed.json)","d":"The near-black button hover on my.asos.com."}}},"light":{"action":{"primary":{"v":"#018849","t":"color","s":"css-var --1e93okh (light); css-var --1e93okh","d":"The ASOS buy green — add-to-bag and bag CTA — resolved from --1e93okh."},"primaryHover":{"v":"#006637","t":"color","s":"css-var --14cp6y8 (light); css-var --14cp6y8","d":"rgb(0,102,55) on add-to-bag :hover — resolved from --14cp6y8."}},"border":{"default":{"v":"#dddddd","t":"color","s":"css-var --na3s62 (light); css-var --na3s62","d":"#dddddd hairline on pills, buttons, fields — resolved from --na3s62."}},"surface":{"inverse":{"v":"#000000","t":"color","s":"css-var --1fot7dv (light); css-var --1fot7dv","d":"The black header, nav, drawer and footer — resolved from --1fot7dv."},"page":{"v":"#ffffff","t":"color","s":"css-var --3pchel (light); css-var --3pchel","d":"The white page/field surface — resolved from --3pchel."},"promo":{"v":"#cde2f5","t":"color","s":"css-var --xes0jb (light); css-var --xes0jb","d":"#cde2f5 light-blue promo band under the PDP price — resolved from --xes0jb."},"subtle":{"v":"#f8f8f8","t":"color","s":"css-var --sm859b (light); css-var --sm859b","d":"#f8f8f8 wash under grids — resolved from --sm859b."},"wash":{"v":"#eeeeee","t":"color","s":"css-var --1wwppwc (light); css-var --1wwppwc","d":"#eeeeee on the save heart and mobile menu rows — resolved from --1wwppwc."}},"text":{"inverse":{"v":"#ffffff","t":"color","s":"css-var --3pchel (light); css-var --3pchel","d":"White text on black chrome — resolved from --3pchel."},"primary":{"v":"#2d2d2d","t":"color","s":"css-var --11lcxa5 (light); css-var --11lcxa5","d":"rgb(45,45,45) on titles, prices, fields — resolved from --11lcxa5."},"secondary":{"v":"#666666","t":"color","s":"css-var --f1xms7 (light); css-var --f1xms7","d":"rgb(102,102,102) on flyout links and support copy — resolved from --f1xms7."}},"component":{"control":{"height":{"v":"44px","t":"dimension","s":"computed height of add-to-bag default (raw/components-computed.json)","d":"Buttons are 44px — add-to-bag, save heart, reviews CTA."},"heightLg":{"v":"48px","t":"dimension","s":"computed height of continue-button default (raw/components-computed.json)","d":"The login continue button is 48px."},"heightWide":{"v":"54.5px","t":"dimension","s":"computed height of load-more default (raw/components-computed.json)","d":"LOAD MORE is 54.5px."},"fieldHeight":{"v":"38px","t":"dimension","s":"computed height of size-select default (raw/components-computed.json)","d":"Fields and selects are 38px."},"pillHeight":{"v":"36px","t":"dimension","s":"computed height of cat-pill default (raw/components-computed.json)","d":"Category pills are 36px."},"heightBar":{"v":"43px","t":"dimension","s":"computed height of sort-button default (raw/components-computed.json)","d":"Sort/Filter bar buttons are 43px."}},"radius":{"none":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of add-to-bag default (raw/components-computed.json)","d":"Corners are square — 0px on buttons, pills, fields."},"round":{"v":"100px","t":"dimension","s":"computed borderTopLeftRadius of save-button default (raw/components-computed.json)","d":"Icon-only buttons are fully round."}},"header":{"height":{"v":"140px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The desktop header block is 140px."}},"nav":{"height":{"v":"50px","t":"dimension","s":"computed height of nav-item default (raw/components-computed.json)","d":"The category nav row is 50px."},"tabHeight":{"v":"60px","t":"dimension","s":"computed height of nav-tab default (raw/components-computed.json)","d":"WOMEN/MEN floor tabs are 60px."}},"icon":{"tapTarget":{"v":"50px","t":"dimension","s":"computed width of account-icon default (raw/components-computed.json)","d":"Header icons get a 50x60 tap target."},"social":{"v":"30px","t":"dimension","s":"computed width of footer-social default (raw/components-computed.json)","d":"Social icons are 30px."},"search":{"v":"38px","t":"dimension","s":"computed width of search-button default (raw/components-computed.json)","d":"The inline search button is 38px."}},"tile":{"width":{"v":"335px","t":"dimension","s":"computed width of product-tile default (raw/components-computed.json)","d":"Product tiles are ~335px at 1440 (4 across)."}},"flyout":{"width":{"v":"1302px","t":"dimension","s":"computed width of nav-flyout default (raw/components-computed.json)","d":"The mega-menu panel is ~1302px."}},"focus":{"width":{"v":"5px","t":"dimension","s":"computed outlineWidth of nav-item focus-visible (raw/components-computed.json)","d":"Focus rings run 1–5px; nav buttons take 5px."}}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  const f = TOK.core.font || {};
+  let h = '';
+  for (const [n, t] of flat(f.family || {}, 'font.family.')) h += `<div class="sw"><span class="dot" style="border-radius:4px"><i style="background:var(--text-primary,#2d2d2d);border-radius:4px"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+  if (h) h = `<div class="pal-h">font.family</div><div class="pal">${h}</div>`;
+  let m = '';
+  for (const g of ['weight', 'size', 'tracking'])
+    for (const [n, t] of flat(f[g] || {}, `font.${g}.`)) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  h += `<div class="pal-h">font.weight / font.size / font.tracking</div><div class="kv">${m}</div>`;
+  const out = $('#type-out');
+  if (out) out.innerHTML = h;
+})();
+</script>
+</body>
+</html>

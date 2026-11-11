@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 71,
-    "system_domains": 63,
-    "matched_domains": 39,
-    "missing_domains": 394,
+    "system_packages": 74,
+    "system_domains": 66,
+    "matched_domains": 42,
+    "missing_domains": 391,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -360,19 +360,19 @@
         }
       ]
     },
-    "arket.com": {
+    "asos.com": {
       "catalog": [
         {
-          "name": "ARKET",
-          "domain": "arket.com",
-          "id": 510
+          "name": "Asos",
+          "domain": "asos.com",
+          "id": 66
         }
       ],
       "pkgs": [
         {
-          "slug": "arket",
-          "name": "ARKET",
-          "url": "https://www.arket.com",
+          "slug": "asos",
+          "name": "ASOS",
+          "url": "https://www.asos.com",
           "name_match": true
         }
       ]
@@ -411,6 +411,23 @@
         }
       ]
     },
+    "base44.com": {
+      "catalog": [
+        {
+          "name": "Base44",
+          "domain": "base44.com",
+          "id": 770
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "base44",
+          "name": "Base44",
+          "url": "https://base44.com",
+          "name_match": true
+        }
+      ]
+    },
     "bloomberg.com": {
       "catalog": [
         {
@@ -424,6 +441,40 @@
           "slug": "bloomberg",
           "name": "Bloomberg",
           "url": "https://www.bloomberg.com",
+          "name_match": true
+        }
+      ]
+    },
+    "blueapron.com": {
+      "catalog": [
+        {
+          "name": "Blue Apron",
+          "domain": "blueapron.com",
+          "id": 224
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "blueapron",
+          "name": "Blue Apron",
+          "url": "https://blog.blueapron.com",
+          "name_match": false
+        }
+      ]
+    },
+    "boords.com": {
+      "catalog": [
+        {
+          "name": "Boords",
+          "domain": "boords.com",
+          "id": 458
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "boords",
+          "name": "Boords",
+          "url": "https://boords.com",
           "name_match": true
         }
       ]
@@ -495,14 +546,14 @@
       ],
       "pkgs": [
         {
-          "slug": "cursor-ios",
-          "name": "Cursor for iOS",
+          "slug": "cursor-desktop",
+          "name": "Cursor (desktop)",
           "url": "https://cursor.com",
           "name_match": true
         },
         {
-          "slug": "cursor-desktop",
-          "name": "Cursor (desktop)",
+          "slug": "cursor-ios",
+          "name": "Cursor for iOS",
           "url": "https://cursor.com",
           "name_match": true
         }
@@ -535,10 +586,10 @@
       ],
       "pkgs": [
         {
-          "slug": "tokentracker",
-          "name": "TokenTracker",
-          "url": "https://github.com/xiufengsun/TokenTracker",
-          "name_match": false
+          "slug": "github-ios",
+          "name": "GitHub Mobile",
+          "url": "https://github.com/mobile",
+          "name_match": true
         },
         {
           "slug": "polaris",
@@ -547,10 +598,10 @@
           "name_match": false
         },
         {
-          "slug": "github-ios",
-          "name": "GitHub Mobile",
-          "url": "https://github.com/mobile",
-          "name_match": true
+          "slug": "tokentracker",
+          "name": "TokenTracker",
+          "url": "https://github.com/xiufengsun/TokenTracker",
+          "name_match": false
         }
       ]
     },
@@ -574,15 +625,15 @@
       ],
       "pkgs": [
         {
-          "slug": "notebooklm",
-          "name": "Gemini Notebook (NotebookLM)",
-          "url": "https://notebook.google.com",
-          "name_match": false
-        },
-        {
           "slug": "gemini",
           "name": "Gemini",
           "url": "https://gemini.google.com",
+          "name_match": false
+        },
+        {
+          "slug": "notebooklm",
+          "name": "Gemini Notebook (NotebookLM)",
+          "url": "https://notebook.google.com",
           "name_match": false
         }
       ]
@@ -737,6 +788,13 @@
         "id": 46
       }
     ],
+    "arket.com": [
+      {
+        "name": "ARKET",
+        "domain": "arket.com",
+        "id": 510
+      }
+    ],
     "around.co": [
       {
         "name": "Around",
@@ -756,13 +814,6 @@
         "name": "Asana",
         "domain": "asana.com",
         "id": 69
-      }
-    ],
-    "asos.com": [
-      {
-        "name": "Asos",
-        "domain": "asos.com",
-        "id": 66
       }
     ],
     "avnier.com": [
@@ -786,13 +837,6 @@
         "id": 753
       }
     ],
-    "base44.com": [
-      {
-        "name": "Base44",
-        "domain": "base44.com",
-        "id": 770
-      }
-    ],
     "bento.me": [
       {
         "name": "Bento",
@@ -812,20 +856,6 @@
         "name": "Bio Sites",
         "domain": "biosites.com",
         "id": 765
-      }
-    ],
-    "blueapron.com": [
-      {
-        "name": "Blue Apron",
-        "domain": "blueapron.com",
-        "id": 224
-      }
-    ],
-    "boords.com": [
-      {
-        "name": "Boords",
-        "domain": "boords.com",
-        "id": 458
       }
     ],
     "busuu.com": [
@@ -3604,14 +3634,6 @@
     ],
     "notion.com": [
       {
-        "slug": "notion-ios",
-        "name": "Notion for iOS",
-        "url": "https://www.notion.com/mobile",
-        "ios_guess": [
-          "Notion"
-        ]
-      },
-      {
         "slug": "notion-calendar-desktop",
         "name": "Notion Calendar (desktop)",
         "url": "https://www.notion.com/product/calendar",
@@ -3623,6 +3645,14 @@
         "slug": "notion-desktop",
         "name": "Notion (desktop)",
         "url": "https://www.notion.com/desktop",
+        "ios_guess": [
+          "Notion"
+        ]
+      },
+      {
+        "slug": "notion-ios",
+        "name": "Notion for iOS",
+        "url": "https://www.notion.com/mobile",
         "ios_guess": [
           "Notion"
         ]
