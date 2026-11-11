@@ -161,12 +161,13 @@ for comp, key, desc in [
     ("header", "xs", "13px body/nav copy."),
     ("search-toggle", "sm", "14px icons and pills."),
     ("add-to-cart", "base", "15px uppercase button labels."),
-    ("email-input", "md", "16px field text."),
-    ("pdp-price", "lg", "18px product price."),
+    ("pdp-price", "md", "The 15px visible price span (avnier-font); the wrapper reads 18px."),
+    ("email-input", "lg", "16px field text."),
     ("cart-title", "display", "188-220px avnier-font page titles."),
 ]:
     try:
-        fs = C[comp]["states"]["default"]["style"]["fontSize"]
+        st0 = C[comp]["states"]["default"]
+        fs = (st0.get("textStyle") or {}).get("fontSize") or st0["style"]["fontSize"]
         SPEC["core"]["font"]["size"][key] = {
             "value": fs, "type": "dimension",
             "source": f"computed fontSize of {comp} (raw/components-computed.json)",
@@ -242,6 +243,15 @@ def norm_color(v):
     return v
 
 
+# The pressed-state action colour: a #f4ff7a ::after wipes the black button on
+# :active (also painted on the home action's underline).
+try:
+    v = norm_color(C["add-to-cart"]["states"]["pressed"]["::after"]["backgroundColor"])
+    meas["action-pressed"] = {"value": v, "type": "color",
+        "source": "computed ::after backgroundColor of add-to-cart pressed (raw/components-computed.json)",
+        "description": "The #f4ff7a action yellow painted by the ::after wipe on :active."}
+except KeyError:
+    pass
 for comp, state, key, prop, desc in [
     ("plp-title", "default", "text-muted", "color", "The #7a7a7a count/secondary grey."),
     ("sort-select", "default", "text-faded", "color", "The rgba(0,0,0,.75) dimmed select label."),

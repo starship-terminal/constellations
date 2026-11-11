@@ -30,6 +30,7 @@ const URLS = { home: '/', shop: '/collections/tous-les-produits', pdp: '/collect
 let page, cdp, current, context, run;
 let activeCtx; // the context of the current page; closed when the next route opens
 const touched = new Set();
+const ranPages = new Set();  // pages that actually opened this run
 const listed = new Map();
 
 async function blocked() {
@@ -241,6 +242,7 @@ const tid = (id) => `[data-testid="${id}"]`;
 
 async function home() {
   if (!(await newPage('home'))) return;
+  ranPages.add('home');
   await sheetsFor('home');
   const g = G.shell;
   await S('skip-link', q('a').filter({ hasText: /ignorer|skip/i }).first(), ['default', 'focus-visible'], { group: g, title: 'Skip link', desc: '"IGNORER ET PASSER AU CONTENU" — off-screen until focused.', sel: 'a:has-text("IGNORER")' }, { noScroll: true });
@@ -263,6 +265,7 @@ async function home() {
 
 async function shop() {
   if (!(await newPage('shop', { wait: 8000 }))) return;
+  ranPages.add('shop');
   const g = G.plp;
   await S('plp-title', q('[class*="product-count" i], [id*="ProductCount" i], .facets__heading, h1').filter({ hasText: /\S/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Collection count', desc: 'The "100 PRODUITS" count / collection heading.', sel: '.product-count, .facets__heading' }, { noScroll: true });
   await S('facet', q('details.facets__disclosure').filter({ visible: true }).first(), ['default', 'opened'], { group: g, title: 'Facet filter', desc: 'A PRIX/COULEUR/TAILLE filter disclosure; opened by its own summary.', sel: 'details.facets__disclosure' });
@@ -277,6 +280,7 @@ async function shop() {
 
 async function pdp() {
   if (!(await newPage('pdp', { wait: 8000 }))) return;
+  ranPages.add('pdp');
   const href = await page.evaluate(() => {
     const a = [...document.querySelectorAll('a[href*="/products/"]')].find((x) => x.offsetParent && (x.innerText || '').trim().length > 3);
     return a ? a.getAttribute('href') : null;
@@ -288,6 +292,7 @@ async function pdp() {
     await page.waitForSelector('product-form, .product-form__submit, button[name="add"]', { timeout: 15000 }).catch(() => {});
     await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   }
+  if (href) URLS.pdp = /^https?:/.test(href) ? href : BASE + href;  // component sources name the product, not the grid
   const g = G.pdp;
   out.components.pdp_url ??= { page: 'pdp', title: 'PDP URL', states: {} };
   out.components.pdp_url.states.default = { text: href || 'none found', via: 'first product link on /collections/tous-les-produits' };
@@ -302,16 +307,36 @@ async function pdp() {
 }
 
 async function cart() {
+  // The /cart URL 404s on avnier.com — the cart is the side-cart drawer,
+  // opened by clicking the header's PANIER link (JS intercepts the /cart
+  // href). The 404 page is recorded as cart-page, then the drawer itself is
+  // measured from the home page.
   if (!(await newPage('cart'))) return;
+  ranPages.add('cart');
   const g = G.cart;
-  await S('cart-title', q('main h1, main h2, [class*="cart" i] [class*="title" i]').filter({ hasText: /\S/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Cart title', sel: 'main h1' }, { noScroll: true });
-  await S('cart-empty', q('main').first(), ['default'], { group: g, title: 'Cart body', desc: 'The signed-out cart with nothing in it.', sel: 'main' }, { noScroll: true });
-  await S('cart-cta', q('main a, main button').filter({ hasText: /continuer|shop|découvrir|voir/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Cart CTA', desc: 'Measured, never followed.', sel: 'a:has-text("Continuer")' });
+  out.components['cart-page'] ??= { page: 'cart', title: '/cart is a 404', states: {} };
+  out.components['cart-page'].states.default = {
+    text: (await page.evaluate(() => document.title)) + ' — /cart answers 404 "Page non trouvée" for everyone; the cart opens as the side-cart drawer (PANIER intercepts the link).',
+    via: 'direct GET /cart',
+  };
+  touched.add('cart-page');
+  await S('cart-title', q('main h1, main h2, [class*="cart" i] [class*="title" i], h1').filter({ hasText: /\S/ }).filter({ visible: true }).first(), ['default'], { group: g, title: '/cart 404 title', desc: 'The 404 page /cart serves — the cart is the drawer, measured next.', sel: 'h1' }, { noScroll: true });
+  await open(page, BASE + '/', { wait: 7000 });
+  if (await blocked()) { log('  BLOCKED cart drawer'); return; }
+  await closePromo(page);
+  const cartLink = q('header a').filter({ hasText: /panier/i }).filter({ visible: true }).first();
+  if (await cartLink.count()) {
+    await cartLink.click().catch(() => {});
+    await page.waitForTimeout(2500);
+  }
+  await S('cart-drawer', q('.side-cart__wrapper, [class*="side-cart" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Cart drawer', desc: 'The side-cart opened by PANIER — "MON PANIER - 0 ARTICLE" empty.', sel: '.side-cart__wrapper' }, { noScroll: true });
+  await S('cart-empty', q('[class*="cart-empty" i], .side-cart__cart-empty').filter({ visible: true }).first(), ['default'], { group: g, title: 'Empty cart', desc: 'LE PANIER EST VIDE in the drawer.', sel: '.side-cart__cart-empty' }, { noScroll: true });
   save();
 }
 
 async function login() {
   if (!(await newPage('login'))) return;
+  ranPages.add('login');
   const g = G.login;
   await S('login-title', q('main h1, main h2, #customer_login h1').filter({ hasText: /\S/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Login title', sel: 'main h1' }, { noScroll: true });
   await S('email-input', q('input[type="email"], input[name*="email" i], #CustomerEmail').filter({ visible: true }).first(), ['default', 'focused', 'filled'], { group: g, title: 'Email field', desc: 'Text was typed and deleted; the form was never submitted.', sel: 'input[type=email]' });
@@ -323,11 +348,13 @@ async function login() {
 async function footer() {
   if (!page || page.isClosed()) {
     if (!(await newPage('home'))) return;
+  ranPages.add('home');
   } else {
     current = 'home';
     await open(page, BASE + URLS.home, {});
     if (await blocked()) { log('  BLOCKED footer'); return; }
     await closePromo(page);
+    ranPages.add('home');
   }
   const g = G.footer;
   // The theme's footer is .footer-bottom__* divs (no <footer> element); its
@@ -336,7 +363,7 @@ async function footer() {
   await page.waitForTimeout(1800);
   const fl = q('footer a, .footer a, [class*="footer" i] a').filter({ hasText: /\w{3,}/ }).filter({ visible: true }).first();
   if (await fl.count()) {
-    await S('footer', q('footer, .footer, [class*="footer" i]').filter({ visible: true }).last(), ['default'], { group: g, title: 'Footer', sel: '.footer-bottom__item' });
+    await S('footer', q('.footer-bottom, footer, .footer').filter({ visible: true }).first(), ['default'], { group: g, title: 'Footer', sel: '.footer-bottom' });
     await S('footer-link', fl, B4, { group: g, title: 'Footer link', sel: '.footer a' });
     const nl = q('footer input[type="email"], .footer input[type="email"], [class*="footer" i] input[name*="email" i]').first();
     if (await nl.count()) await S('newsletter-input', nl, ['default', 'focused'], { group: g, title: 'Newsletter field', desc: 'Focused only; never subscribed.', sel: 'footer input[type="email"]' });
@@ -346,14 +373,15 @@ async function footer() {
 
 async function mobile() {
   if (!(await newPage('home', { mobile: true }))) return;
+  ranPages.add('home');
   const g = G.mobile;
   await S('m-header', q('header').first(), ['default'], { group: g, title: 'Mobile header', sel: 'header' }, { noScroll: true });
   const menuSum = q('header details summary, .header__icon--menu, [class*="drawer" i] summary').filter({ visible: true }).first();
   await S('m-menu-button', menuSum, B4, { group: g, title: 'Mobile menu button', sel: 'header details summary' }, { noScroll: true });
   const drawer = q('details.menu-drawer-container, .menu-drawer, menu-drawer, [id*="menu-drawer" i]');
   await S('m-menu-open', menuSum, ['opened'], { group: g, title: 'Mobile menu, open', desc: 'The menu summary after its own toggle; the crop is the open drawer.', sel: 'header details summary' }, { noScroll: true, cropLoc: drawer });
-  const mLink = q('menu-drawer a, [class*="menu-drawer" i] a').filter({ visible: true }).first();
-  await S('m-nav-link', mLink, ['default'], { group: g, title: 'Mobile nav link', desc: 'A row inside the opened drawer.', sel: 'menu-drawer a' }, { noScroll: true });
+  const mLink = q('.toggle-item__header, [class*="menu-drawer" i] a.toggle-item__header').filter({ hasText: /\w{3,}/ }).filter({ visible: true }).first();
+  await S('m-nav-link', mLink, ['default'], { group: g, title: 'Mobile nav link', desc: 'A row inside the opened drawer.', sel: '.toggle-item__header' }, { noScroll: true });
   await page.keyboard.press('Escape'); await page.waitForTimeout(500);
   await S('m-feature-tile', q('[class*="card" i] a, [class*="banner" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile content tile', desc: 'A content tile under the hero.', sel: '.card a' });
   save();
@@ -374,7 +402,10 @@ try {
   if (!pages.length || pages.includes('mobile')) await mobile();
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
-    if (!touched.has(key) && !pages.length) { delete out.components[key]; continue; }
+    // Only a page that actually opened may lose its untouched components; a
+    // blocked or thrown route keeps its earlier readings instead of erasing
+    // them with an incomplete write.
+    if (!touched.has(key) && !pages.length && ranPages.has(c.page)) { delete out.components[key]; continue; }
     if (!touched.has(key)) continue;
     const want = listed.get(key);
     if (want) for (const st of Object.keys(c.states || {})) if (!want.has(st) && pages.length) delete c.states[st];

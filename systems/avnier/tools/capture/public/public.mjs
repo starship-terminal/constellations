@@ -94,9 +94,12 @@ const desktop = {
     });
     await S.full();
   } },
-  cart: { path: '/cart', wait: 8000, run: async (p, S) => {
+  cart: { path: '/', wait: 8000, run: async (p, S) => {
+    // /cart 404s: the cart is the side-cart drawer opened by the header's
+    // PANIER link (JS intercepts the /cart href, so the click stays on '/').
+    const cartLink = p.locator('header a').filter({ hasText: /panier/i }).filter({ visible: true }).first();
+    if (await cartLink.count()) { await cartLink.click().catch(() => {}); await wait(p, 2600); }
     await S.view('default');
-    await S.full();
   } },
   login: { path: '/account/login', wait: 8000, run: async (p, S) => {
     // The customer login form: email + password + CONNEXION. Never submitted.

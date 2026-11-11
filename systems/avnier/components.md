@@ -2,13 +2,13 @@
 
 The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from avnier.com on 2026-11-11, signed out, in headless Chrome at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was added to cart, signed into, created, sent or uploaded.
 
-The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (40 components, 78 states). The page layouts are described in [patterns.md](patterns.md).
+The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (42 components, 80 states). The page layouts are described in [patterns.md](patterns.md).
 
 How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (78 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (79 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -48,7 +48,9 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|
 | 0.1s | `ease` | box-shadow | add-to-cart, cart-cta, email-input, login-button, password-input, skip-link, sort-select |
 | 0.2s | `ease` | all | variant-radio |
-| 0.25s | `ease` | all | footer-link, m-nav-link, newsletter-input |
+| 0.24s | `ease` | background-color | cart-drawer |
+| 0.25s | `ease` | all | footer-link, newsletter-input |
+| 0.35s | `ease` | all | m-nav-link |
 | 0.4s | `ease` | background-color | header, m-header |
 
 **Card shapes.** Default-state values; the entries hold the states.
@@ -78,7 +80,7 @@ The white bar: wordmark, SHOP/MARQUE/SECONDE MAIN/ARCHIVE SALE nav, search, CONN
 
 **Values (default).** size 1440 x 60; padding 10px 50px; background transparent; text Space Mono 13/normal 400, #ffffff `color.neutral.background`; transition background-color 0.4s ease; layers div.mega-menu__dropdown 0.0x0.0 rgb(117, 117, 117) T:1px solid rgb(255, 255, 255) / R:1px solid rgb(255, 255, 255) / B:1px solid rgb(255, 255, 255) / L:1px solid rgb(255, 255, 255); a::after.dropdown-item__list-item-link 0pxx100% rgb(244, 255, 122); a::after.dropdown-item__list-item-link 0pxx100% rgb(244, 255, 122); a::after.dropdown-item__list-item-link 0pxx100% rgb(244, 255, 122); a::after.dropd.
 
-Child layers that carry the look: div 0x0 background #757575 border 1px solid #ffffff `color.neutral.background`; a::after 0pxx100% background #f4ff7a; a::after 0pxx100% background #f4ff7a.
+Child layers that carry the look: div 0x0 background #757575 border 1px solid #ffffff `color.neutral.background`; a::after 0pxx100% background #f4ff7a `measured.action-pressed`; a::after 0pxx100% background #f4ff7a `measured.action-pressed`.
 
 ![Header default](components/crops/header-default.png)
 
@@ -159,7 +161,7 @@ The first call-to-action on the home page. Measured, never followed. Read as `he
 | default (same: hover, focus-visible) | size 481 x 30; background transparent; text Space Mono 13/normal 400, #ffffff `color.neutral.background`; icon 30 x 30, #ffffff `color.neutral.background`; layers span::after 0pxx1px rgb(244, 255, 122) |
 | pressed | layers span::after 232.859pxx1px rgb(244, 255, 122) |
 
-Child layers that carry the look: span::after 0pxx1px background #f4ff7a.
+Child layers that carry the look: span::after 0pxx1px background #f4ff7a `measured.action-pressed`.
 
 ![Hero CTA default](components/crops/hero-cta-default.png) ![Hero CTA hover](components/crops/hero-cta-hover.png) ![Hero CTA focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero CTA pressed](components/crops/hero-cta-pressed.png)
 
@@ -281,21 +283,19 @@ Not on the page when it was captured.
 
 The public /cart page, empty signed out.
 
-#### Cart title
-Read as `cart-title` on the the cart page.
+#### /cart 404 title
+The 404 page /cart serves — the cart is the drawer, measured next. Read as `cart-title` on the the cart page.
 
 **Values (default).** size 1440 x 188; background transparent; text avnier-font 188/188 500, rgba(10, 10, 10, 0).
 
-![Cart title default](components/crops/cart-title-default.png)
+![/cart 404 title default](components/crops/cart-title-default.png)
 
-#### Cart body
-The signed-out cart with nothing in it. Read as `cart-empty` on the the cart page.
+#### Empty cart
+LE PANIER EST VIDE in the drawer. Read as `cart-empty` on the the cart page.
 
-**Values (default).** size 1440 x 583.73; background transparent; text avnier-font 188/188 500, rgba(10, 10, 10, 0); layers a.button 265.6x45.0 rgb(0, 0, 0) T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) rgb(0, 0, 0) 0px 0px 0px 1px.
+**Values (default).** size 458 x 20; background transparent; text Space Mono 13/normal 400, #000000 `color.neutral.accent1`.
 
-Child layers that carry the look: a 265.6x45 background #000000 `color.neutral.accent1` border 1px solid transparent shadow #000000 `color.neutral.accent1` 0px 0px 0px 1px.
-
-![Cart body default](components/crops/cart-empty-default.png)
+![Empty cart default](components/crops/cart-empty-default.png)
 
 #### Cart CTA
 Measured, never followed. Read as `cart-cta` on the the cart page.
@@ -307,6 +307,13 @@ Measured, never followed. Read as `cart-cta` on the the cart page.
 | pressed | shadow none |
 
 ![Cart CTA default](components/crops/cart-cta-default.png) ![Cart CTA hover](components/crops/cart-cta-hover.png) ![Cart CTA focus-visible](components/crops/cart-cta-focus-visible.png) ![Cart CTA pressed](components/crops/cart-cta-pressed.png)
+
+#### Cart drawer
+The side-cart opened by PANIER — "MON PANIER - 0 ARTICLE" empty. Read as `cart-drawer` on the the cart page.
+
+**Values (default).** size 1440 x 900; background rgba(0, 0, 0, 0.55) `measured.border-field`; text avnier-font 14/20.02 500, #000000 `color.neutral.accent1`; transition background-color 0.24s ease; icon 16 x 16, #000000 `color.neutral.accent1`.
+
+![Cart drawer default](components/crops/cart-drawer-default.png)
 
 ### Login gate
 
@@ -354,7 +361,7 @@ The page footer, social icons and newsletter field.
 #### Footer
 Read as `footer` on the the home page page.
 
-**Values (default).** size 83.97 x 29; background transparent; text Space Mono 13/normal 400, #ffffff `color.neutral.background`.
+**Values (default).** size 1340 x 70; padding 20px 50px; border T: 1px solid rgba(255, 255, 255, 0.22); background transparent; text Space Mono 12/15 400, #ffffff `color.neutral.background`.
 
 ![Footer default](components/crops/footer-default.png)
 
@@ -387,7 +394,7 @@ Read as `m-header` on the the home page page at 390 wide.
 
 **Values (default).** size 390 x 50.94; padding 10px 15px; background transparent; text Space Mono 10/normal 400, #ffffff `color.neutral.background`; transition background-color 0.4s ease; layers div.mega-menu__dropdown 0.0x0.0 rgb(117, 117, 117) T:1px solid rgb(255, 255, 255) / R:1px solid rgb(255, 255, 255) / B:1px solid rgb(255, 255, 255) / L:1px solid rgb(255, 255, 255); a::after.dropdown-item__list-item-link 0pxx100% rgb(244, 255, 122); a::after.dropdown-item__list-item-link 0pxx100% rgb(244, 255, 122); a::after.dropdown-item__list-item-link 0pxx100% rgb(244, 255, 122); a::after.dropd.
 
-Child layers that carry the look: div 0x0 background #757575 border 1px solid #ffffff `color.neutral.background`; a::after 0pxx100% background #f4ff7a; a::after 0pxx100% background #f4ff7a.
+Child layers that carry the look: div 0x0 background #757575 border 1px solid #ffffff `color.neutral.background`; a::after 0pxx100% background #f4ff7a `measured.action-pressed`; a::after 0pxx100% background #f4ff7a `measured.action-pressed`.
 
 ![Mobile header default](components/crops/m-header-default.png)
 
@@ -411,7 +418,7 @@ The menu summary after its own toggle; the crop is the open drawer. Read as `m-m
 #### Mobile nav link
 A row inside the opened drawer. Read as `m-nav-link` on the the home page page at 390 wide.
 
-**Values (default).** size 32 x 44; background transparent; text Space Mono 14/normal 400, #000000 `color.neutral.accent1`; transition all 0.25s ease; opacity 0.75; icon 32 x 39, #000000 `color.neutral.accent1`.
+**Values (default).** size 388 x 59.11; padding 10px 10px 10px 20px; border T: 1px solid #ffffff `color.neutral.background`; B: 1px solid #ffffff `color.neutral.background`; background transparent; text avnier-font 20/22.8 500, #ffffff `color.neutral.background`; transition all 0.35s ease; icon 35 x 37.11, #000000 `color.neutral.accent1`.
 
 ![Mobile nav link default](components/crops/m-nav-link-default.png)
 
@@ -421,6 +428,10 @@ A content tile under the hero. Read as `m-feature-tile` on the the home page pag
 **Values (default).** size 390 x 390; padding 390px 0px 0px 0px; background rgba(0, 0, 0, 0.1); text Space Mono 12/normal 400, #000000 `color.neutral.accent1`.
 
 ![Mobile content tile default](components/crops/m-feature-tile-default.png)
+
+### Other
+
+
 
 ### Other
 

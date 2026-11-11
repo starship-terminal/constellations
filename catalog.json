@@ -1808,6 +1808,7 @@
      "mobile /collections/tous-les-produits"
     ],
     "gaps": [
+     "/cart is a 404 for everyone — the cart is the side-cart drawer opened by PANIER (measured as cart-drawer/cart-empty); the 404 page is recorded as cart-page/cart-title",
      "checkout and everything behind sign-in (nothing was added to the cart)",
      "the PDP is a sample: the shop grid's first product at run time",
      "the Axeptio consent layer and the shipping-country popup are hidden in captures, never answered",

@@ -455,6 +455,18 @@ Page: pdp. Selector: ``. States: default.
 
 Crops: none.
 
+#### cart-page
+
+/cart is a 404.
+
+Page: cart. Selector: ``. States: default.
+
+| Property | default |
+|---|---|
+| Note | 404 Page introuvable – AVNIER — /cart answers 404 "Page non trouvée" for everyone; the cart opens as the side-cart drawer (PANIER intercepts the link). |
+
+Crops: none.
+
 ### Product page
 
 #### pdp-title
@@ -579,9 +591,9 @@ Not found on the page at capture time.
 
 #### cart-title
 
-Cart title.
+/cart 404 title. The 404 page /cart serves — the cart is the drawer, measured next.
 
-Page: cart. Selector: `main h1`. States: default.
+Page: cart. Selector: `h1`. States: default.
 
 | Property | default |
 |---|---|
@@ -603,13 +615,13 @@ Crops: `cart-title-default.png`.
 
 #### cart-empty
 
-Cart body. The signed-out cart with nothing in it.
+Empty cart. LE PANIER EST VIDE in the drawer.
 
-Page: cart. Selector: `main`. States: default.
+Page: cart. Selector: `.side-cart__cart-empty`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1440 x 583.73 |
+| Size (w x h) | 458 x 20 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
@@ -619,10 +631,8 @@ Page: cart. Selector: `main`. States: default.
 | Font | Space Mono 13px/normal 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
-| Text node | h1.h1-stroke: avnier-font 188px/188px 500, #0a0a0a @ 0, ls 3% |
+| Text node | p: Space Mono 13px/normal 400, #000000 |
 | Transition | none |
-| Painted layers | a.button 265.6x45.0 bg #000000 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 shadow #000000 0px 0px 0px 1px |
-| Ancestor paint | 1 up body.gradient.template-404 bg #ffffff |
 | How | at rest |
 
 Crops: `cart-empty-default.png`.
@@ -651,6 +661,32 @@ Page: cart. Selector: `a:has-text("Continuer")`. States: default, hover, focus-v
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `cart-cta-default.png`, `cart-cta-hover.png`, `cart-cta-focus-visible.png`, `cart-cta-pressed.png`.
+
+#### cart-drawer
+
+Cart drawer. The side-cart opened by PANIER — "MON PANIER - 0 ARTICLE" empty.
+
+Page: cart. Selector: `.side-cart__wrapper`. States: default.
+
+| Property | default |
+|---|---|
+| Size (w x h) | 1440 x 900 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | #000000 @ 0.55 |
+| Box shadow | none |
+| Outline | none |
+| Font | Space Mono 13px/normal 400 |
+| Letter spacing | normal |
+| Colour | #000000 |
+| Text node | h4.text.text--medium: avnier-font 14px/20.02px 500, #000000 |
+| Transition | background-color 0.24s ease delay 0.16s |
+| Icon | 16 x 16, colour #000000 |
+| Painted layers | side-cart.side-cart.side-cart--open 1440.0x900.0 bg #000000 @ 0.55; form.sidecart--empty 460.0x900.0 bg #ffffff; div.side-cart__wrapper 460.0x900.0 border T:1px solid #0a0a0a / R:1px solid #0a0a0a / B:1px solid #0a0a0a / L:1px solid #0a0a0a; div.side-cart__header 458.0x58.2 bg #ffffff border B:1px solid #000000 |
+| How | at rest |
+
+Crops: `cart-drawer-default.png`.
 
 ### Login gate
 
@@ -842,24 +878,25 @@ Crops: `m-menu-open-opened.png`.
 
 Mobile nav link. A row inside the opened drawer.
 
-Page: home. Selector: `menu-drawer a`. States: default.
+Page: home. Selector: `.toggle-item__header`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 32 x 44 |
-| Padding | 0px |
-| Border | none |
+| Size (w x h) | 388 x 59.11 |
+| Padding | 10px 10px 10px 20px |
+| Border | T: 1px solid #ffffff; R: none; B: 1px solid #ffffff; L: none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | Space Mono 14px/normal 400 |
+| Font | Space Mono 12px/normal 400 |
 | Letter spacing | normal |
 | Colour | #000000 |
-| Transition | all 0.25s ease |
-| Opacity | 0.75 |
+| Text node | h3.h3: avnier-font 20px/22.8px 500, #ffffff |
+| Transition | all 0.35s ease |
 | Cursor | pointer |
-| Icon | 32 x 39, colour #000000 |
+| Icon | 35 x 37.11, colour #000000 |
+| Painted layers | div.toggle-item__header 388.0x59.1 border T:1px solid #ffffff / B:1px solid #ffffff |
 | How | at rest |
 
 Crops: `m-nav-link-default.png`.
@@ -895,13 +932,13 @@ Crops: `m-feature-tile-default.png`.
 
 Footer.
 
-Page: home. Selector: `.footer-bottom__item`. States: default.
+Page: home. Selector: `.footer-bottom`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 83.97 x 29 |
-| Padding | 0px |
-| Border | none |
+| Size (w x h) | 1340 x 70 |
+| Padding | 20px 50px |
+| Border | T: 1px solid #ffffff @ 0.22; R: none; B: none; L: none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
@@ -909,7 +946,10 @@ Page: home. Selector: `.footer-bottom__item`. States: default.
 | Font | Space Mono 13px/normal 400 |
 | Letter spacing | normal |
 | Colour | #ffffff |
+| Text node | label.text--small.opacity-75: Space Mono 12px/15px 400, #ffffff |
 | Transition | none |
+| Painted layers | div.footer-bottom 1340.0x70.0 border T:1px solid #ffffff @ 0.22 |
+| Ancestor paint | 1 up section.section bg #000000 |
 | How | at rest |
 
 Crops: `footer-default.png`.

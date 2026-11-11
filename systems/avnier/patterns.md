@@ -8,7 +8,7 @@ The header is a 60px white bar (`header`, 50.9px on mobile) with a `background-c
 
 The SHOP item is a `.mega-menu__item` whose dropdown opens on hover; the visible dropdown was not captured on this pass (see [components.md](components.md) `nav-dropdown`, recorded missing). The keyboard route in is the skip link: `skip-link` is off-screen until focused, then a 347x45 black rectangle — the same black action style as the buy button.
 
-At 390px the bar collapses to wordmark + `m-menu-button` (35x30) + cart. The button opens the side drawer (`m-menu-open`); rows inside it are `m-nav-link` (44px tall, 14px uppercase). The open drawer is [mobile-home-light-menu](screenshots/mobile-home-light-menu.png).
+At 390px the bar collapses to wordmark + `m-menu-button` (35x30) + cart. The button opens the side drawer (`m-menu-open`); rows inside it are `m-nav-link` (`.toggle-item__header`, ~59px tall full-width rows; the social icons at the drawer's foot are `.list-social__link`). The open drawer is [mobile-home-light-menu](screenshots/mobile-home-light-menu.png).
 
 ## Product surfaces
 
@@ -22,7 +22,7 @@ A product page (whichever the grid lists first — `pdp_url`) stacks a 440px col
 
 ## Cart and login
 
-The cart, signed out, is `cart-title` (avnier-font at display size, 188px) over the `cart-empty` body and `cart-cta` (265x45 black). Login is a 448px column: `login-title` (220px display), `email-input` and `password-input` (448x45, transparent fill, 16px uppercase — their 1px border is painted as a `rgba(0,0,0,.55)` box-shadow ring, not a border), and `login-button` (153.6x48 black). The form was never submitted.
+`/cart` is a 404 — avnier's cart is the **side-cart drawer** `cart-drawer` (`.side-cart__wrapper`), opened by the header's PANIER link (JS intercepts the `/cart` href). Signed out it holds `cart-empty` ("LE PANIER EST VIDE") under its `side-cart__title` ("MON PANIER - 0 ARTICLE"). The 404 page itself is recorded as `cart-page`/`cart-title`. Login is a 448px column: `login-title` (220px display), `email-input` and `password-input` (448x45, transparent fill, 16px uppercase — their 1px border is painted as a `rgba(0,0,0,.55)` box-shadow ring, not a border), and `login-button` (153.6x48 black). The form was never submitted.
 
 ## Buttons and controls
 

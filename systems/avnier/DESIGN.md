@@ -49,7 +49,7 @@ Good for: Fashion e-commerce storefront: achromatic black-on-white Shopify chrom
 
 Captured 2026-11-11, signed out (every captured surface is public; checkout and account behind sign-in were never reached). Themes: light.
 
-A token set and component reference for Avnier's public shop — for building fashion-e-commerce surfaces in the style of the real thing. It was read from **avnier.com** on **2026-11-11**, signed out, in **headless Chrome** at 1440 x 900 and 390 x 844, covering the home page, the all-products shop grid, a product page discovered at run time, the cart, the public `/account/login` gate, and the same surfaces at phone width. The site serves French copy (fr-FR) and EUR prices.
+A token set and component reference for Avnier's public shop — for building fashion-e-commerce surfaces in the style of the real thing. It was read from **avnier.com** on **2026-11-11**, signed out, in **headless Chrome** at 1440 x 900 and 390 x 844, covering the home page, the all-products shop grid, a product page discovered at run time, the side-cart drawer (`/cart` itself is a 404), the public `/account/login` gate, and the same surfaces at phone width. The site serves French copy (fr-FR) and EUR prices.
 
 Avnier is worth a capture because it is the reference for *monospace French streetwear*: an achromatic black-and-white storefront where Space Mono does all the work (body, nav, fields, buttons, prices — tracked uppercase on actions), a licensed display face (`avnier-font`) only for titles, square controls everywhere (0px corners, shadowless but for a 1px field ring), black buys on white paper, and a palette the Shopify theme declares as scheme custom properties (`--color-base-*` channel triplets, `--font-*` settings) — a real-world case of a storefront design layer on a Dawn-family theme.
 
@@ -102,7 +102,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 - **One theme only.** A `dark` probe resolves to the same `:root` values — nothing paints dark. `.color-inverse` and `.color-accent-*` are section schemes that reuse the same black/white pair, not a dark mode. `tokens.json` ships no dark set.
 - **The palette is channel triplets.** `--color-base-text` and friends declare `"0, 0, 0"`-style rgb() channels composed as `rgb(var(--x))` / `rgba(var(--x), α)`. `tokens.json` records the composed colour with the var named as its source.
-- **Roles are verified, not declared.** Every `light` role pairs a var (or a measured colour) with the component that was measured wearing it; the theme declares only scheme colours, no semantic roles. The `#faf6b5` predictive-search highlight (`--PredictiveSearchHover`) is the palette's single hue; it is recorded as `badge.promo`, the only measured accent.
+- **Roles are verified, not declared.** Every `light` role pairs a var (or a measured colour) with the component that was measured wearing it; the theme declares only scheme colours, no semantic roles. The palette carries exactly two hues: the `#faf6b5` predictive-search highlight (`--PredictiveSearchHover`, `badge.promo`) and the `#f4ff7a` action yellow a press paints on the buy button's `::after` and the home CTA's underline (`core.measured.action-pressed`).
 - **`component.*` tokens are measured**, not site variables. The shop declares no spacing or radius scale — corners are simply 0px.
 - **The mega-menu dropdown was not measured.** The SHOP item's hover did not open a visible dropdown inside the capture window; `nav-dropdown` is recorded missing (the item itself is measured on `nav-mega`), not evidence of an absent menu — the desktop full shots show the collapsed nav.
 - **Quantity and PDP accordions are absent on this product**, not missing measurements — the captured product (`pdp_url`) ships no `quantity-input` or disclosure rows.
@@ -114,7 +114,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### Do and don't (from README.md)
 
-1. **Do keep it achromatic.** White paper, black ink, black buttons, grey counts — the only hue is the pale-yellow `#faf6b5` search highlight, and it stays on predictive search. See [home-light-default](screenshots/home-light-default.png).
+1. **Do keep it achromatic.** White paper, black ink, black buttons, grey counts — the only hues are the pale-yellow `#faf6b5` search highlight and the `#f4ff7a` yellow a press wipes on actions. See [home-light-default](screenshots/home-light-default.png).
 2. **Do go square and flat.** Buttons, chips, fields and tiles are 0px radius and shadowless; the single depth cue is the field's 1px shadow ring. See [add-to-cart-default](components/crops/add-to-cart-default.png).
 3. **Do reserve black fills for actions.** AJOUTER AU PANIER, CONNEXION and the skip link are black rectangles with near-white tracked caps — never links or chrome. See [add-to-cart-hover](components/crops/add-to-cart-hover.png).
 4. **Do track the labels.** Uppercase actions run 1–1.3px letter-spacing on 13–15px Space Mono; display titles carry 3%. See [nav-item-default](components/crops/nav-item-default.png).

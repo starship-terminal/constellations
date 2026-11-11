@@ -9,11 +9,11 @@
 :root {
 /*CORE*/
 /*LIGHT*/
-  --sg-sans: futura-pt, "Futura PT", FuturaStd, "Futura Std", Tahoma, Geneva, Verdana, Arial, sans-serif;
+  --sg-sans: "Space Mono", ui-monospace, "Courier New", Courier, monospace;
   --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
 }
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #2d2d2d); background: var(--surface-page, #fff); }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #000); background: var(--surface-page, #fff); }
 main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
 h1 { font: 700 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: .04em; text-transform: uppercase; }
 h2.sh { font: 700 12px/1 var(--sg-sans); letter-spacing: .18em; text-transform: uppercase; color: var(--text-secondary, #666); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-default, #ddd); }
@@ -33,23 +33,23 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .kv span { color: var(--text-secondary, #666); }
 /* ---- shop mock ---- */
 .mock { border: 1px solid var(--border-default, #ddd); overflow: hidden; background: var(--surface-page, #fff); }
-.topstrip { display: flex; justify-content: flex-end; gap: 18px; align-items: center; height: 30px; padding: 0 14px; font-size: 11px; color: var(--text-primary, #2d2d2d); border-bottom: 1px solid var(--border-default, #ddd); }
-.topstrip .app { background: #051a6e; color: #fff; font-weight: 700; padding: 4px 10px; letter-spacing: .04em; }
+.topstrip { display: flex; justify-content: flex-end; gap: 18px; align-items: center; height: 30px; padding: 0 14px; font-size: 11px; color: var(--text-primary, #000); border-bottom: 1px solid var(--border-default, #ddd); }
+.topstrip .app { background: #000; color: #fff; font-weight: 700; padding: 4px 10px; letter-spacing: .04em; }
 .navbar { display: flex; align-items: center; gap: 22px; height: 60px; padding: 0 24px; background: var(--surface-inverse, #000); color: #fff; font-size: 14px; letter-spacing: .2em; }
 .navbar .wm { font-weight: 900; font-size: 22px; letter-spacing: .06em; text-transform: lowercase; }
 .navbar .tab { border-bottom: 3px solid #fff; align-self: stretch; display: inline-flex; align-items: center; font-weight: 900; }
 .navbar .tab.dim { border-color: transparent; font-weight: 400; }
 .navbar .fld { flex: 1; max-width: 560px; height: 38px; background: #fff; color: #767676; display: flex; align-items: center; padding: 0 14px; font-size: 13px; letter-spacing: .04em; }
-.catnav { display: flex; gap: 26px; align-items: center; height: 50px; padding: 0 24px; background: var(--surface-inverse, #000); color: #fff; font-size: 14px; border-top: 1px solid #2d2d2d; }
+.catnav { display: flex; gap: 26px; align-items: center; height: 50px; padding: 0 24px; background: var(--surface-inverse, #000); color: #fff; font-size: 14px; border-top: 1px solid #000; }
 .promo { background: var(--surface-inverse, #000); color: #fff; font-size: 13px; text-align: center; padding: 14px 16px; line-height: 1.5; }
 .promo .ptab { display: inline-block; border: 1px solid #fff; padding: 4px 22px; margin: 0 10px; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; }
 .btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 44px); padding: 0 26px; font-size: 16px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; border: 1px solid transparent; }
-.btn.buy { background: var(--action-primary, #018849); color: #fff; }
-.btn.dark { background: var(--text-primary, #2d2d2d); color: #fff; }
-.btn.ghost { background: var(--surface-page, #fff); color: var(--text-primary, #2d2d2d); border-color: var(--border-default, #ddd); }
+.btn.buy { background: var(--action-primary, #000); color: #fff; }
+.btn.dark { background: var(--text-primary, #000); color: #fff; }
+.btn.ghost { background: var(--surface-page, #fff); color: var(--text-primary, #000); border-color: var(--border-default, #ddd); }
 .btn.herob { background: #fff; color: #000; min-width: 184px; font-size: 16px; }
 .hero { background: var(--surface-subtle, #f8f8f8); color: var(--surface-inverse, #000); padding: 72px 40px; font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: .04em; }
-.hero small { display: block; font-size: 16px; font-weight: 400; letter-spacing: .2em; color: var(--text-primary, #2d2d2d); margin: 16px 0 22px; max-width: 46ch; }
+.hero small { display: block; font-size: 16px; font-weight: 400; letter-spacing: .2em; color: var(--text-primary, #000); margin: 16px 0 22px; max-width: 46ch; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
 .tile { border: none; padding: 0; font-size: 16px; }
 .tile .img { height: 240px; background: var(--surface-subtle, #f8f8f8); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; position: relative; }
@@ -57,7 +57,7 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .tile b { display: block; font-weight: 400; margin-bottom: 2px; font-size: 14px; }
 .tile .sub { color: var(--text-secondary, #666); font-size: 13px; }
 .pill { display: inline-flex; align-items: center; height: var(--component-control-pillHeight, 36px); padding: 0 18px; border: 1px solid var(--border-default, #ddd); font-size: 16px; letter-spacing: .06em; margin: 0 6px 6px 0; background: var(--surface-page, #fff); }
-.promoband { background: var(--surface-promo, #cde2f5); color: var(--surface-inverse, #000); padding: 12px 16px; font-size: 16px; margin: 10px 0; }
+.promoband { background: var(--badge-promo, #faf6b5); color: #000; padding: 12px 16px; font-size: 16px; margin: 10px 0; }
 .field { display: flex; align-items: center; height: var(--component-control-fieldHeight, 38px); border: 1px solid var(--border-default, #ddd); padding: 0 12px; font-size: 16px; color: var(--text-secondary, #666); max-width: 340px; margin-bottom: 8px; }
 table.cmp { border-collapse: collapse; font-size: 14px; }
 table.cmp td, table.cmp th { border: 1px solid var(--border-default, #ddd); padding: 6px 14px; text-align: left; }
@@ -73,47 +73,44 @@ table.cmp td, table.cmp th { border: 1px solid var(--border-default, #ddd); padd
   <p class="note">Read from avnier.com on 2026-11-11, signed out, in headless Chrome, with the Axeptio consent layer and the shipping-country popup hidden (never answered). avnier-font is the licensed display face and is not loaded here: samples fall back to a system font. Checkout and account areas behind sign-in were never reached; the site serves French copy and EUR prices.</p>
 
   <h2 class="sh">The shop chrome</h2>
-  <p class="lead">A slim top strip (app link, help, country), then the 140px black block: lowercase wordmark, WOMEN/MEN floor tabs underlined in white, a wide white search field, and 50px icon targets. Below it the 50px category nav row — hover fills a button deep navy and opens a white flyout — and the black "New here?" promo strip with its bordered WOMEN/MEN tabs.</p>
+  <p class="lead">A 60px white bar: the lowercase wordmark, the SHOP/MARQUE mega-menu items and SECONDE MAIN/ARCHIVE SALE links in tracked Space Mono caps, then 40px icon targets — search, CONNEXION, PANIER. Hovering SHOP opens a mega-menu dropdown; at phone width the bar collapses to wordmark, burger and cart.</p>
   <div class="mock">
-    <div class="topstrip"><span class="app">Download our new app</span><span>Help &amp; FAQs</span><span>You're in Singapore ⌄</span></div>
-    <div class="navbar"><span class="wm">avnier</span><span class="tab">SHOP</span><span class="tab dim">MARQUE</span><span class="fld">SECONDE MAIN · ARCHIVE SALE</span><span>&#9906;</span><span>CONNEXION</span><span>&#128722;</span></div>
-    <div class="catnav"><span>New in</span><span>Clothing</span><span>Dresses</span><span>Shoes</span><span>Accessories</span><span>Gifting</span><span>Sale</span></div>
-    <div class="promo"><span class="ptab">WOMEN</span><span><b>New here?</b> Get 20% off when you subscribe to our regular updates*. Use code: NEW</span><span class="ptab">MEN</span></div>
-    <div class="hero">STYLE YOUR MOMENT
-      <small>Fashion for the now — new in daily.</small>
-      <span class="btn herob">SHOP WOMENS</span> <span class="btn herob">SHOP MENS</span>
+    <div class="navbar"><span class="wm">avnier</span><span class="tab">SHOP</span><span class="tab">MARQUE</span><span class="tab dim">SECONDE MAIN</span><span class="tab dim">ARCHIVE SALE</span><span>&#9906;</span><span>CONNEXION</span><span>&#128722;</span></div>
+    <div class="hero">DÉCOUVRIR LA COLLABORATION
+      <small>Intervalle III — le troisième chapitre de la collaboration Avnier × Saint James.</small>
+      <span class="btn herob">DÉCOUVRIR</span>
     </div>
   </div>
 
   <h2 class="sh">Product surfaces</h2>
-  <p class="lead">Grid tiles are borderless: image, name, price, a round grey save heart, and SELLING FAST / MORE COLOURS status lines. The PDP runs a native size select, the 44px green ADD TO BAG, a round save button, the light-blue promo band, and square accordion rows.</p>
+  <p class="lead">Cards are borderless image+text rows — photo, tracked name, 12px price — three across inside the 160rem page. The PDP stacks a 440px column: avnier-font title, 15px price, black TAILLE chips (the visible labels of hidden radios) and the 48px black AJOUTER AU PANIER. A press wipes the button #f4ff7a.</p>
   <div class="mock" style="padding:20px">
-    <div style="margin-bottom:10px"><span class="pill">New in: Today</span><span class="pill">New In: Clothing</span><span class="pill">New In: Shoes</span></div>
+    <div style="margin-bottom:10px"><span class="pill">PRIX +</span><span class="pill">COULEUR +</span><span class="pill">TAILLE +</span><span class="pill">TYPE DE PRODUIT +</span></div>
     <div class="grid">
       <div class="tile"><div class="img">SAINT JAMES</div><b>Pull Tokyeux Avnier x Saint James</b><span class="sub">185,00 EUR · TAILLE</span></div>
-      <div class="tile"><div class="img"><span class="heart">&#9825;</span>SALE</div><b>ARRANGE velvet plunge halter maxi dress</b><span class="sub">SGD$98.99 · MORE COLOURS</span></div>
+      <div class="tile"><div class="img">AVNIER</div><b>Bonnet Fuji Avnier x Saint James</b><span class="sub">65,00 EUR · TAILLE</span></div>
     </div>
     <div style="margin-top:18px;max-width:420px">
       <b style="font-size:18px;font-weight:500">Pull Tokyeux Avnier x Saint James</b>
-      <div class="promoband">Get 20% off! With code: <b>WOW</b></div>
-      <div class="field">SIZE: Please select</div>
-      <span class="btn buy" style="width:76%">ADD TO BAG</span> <span class="btn" style="width:44px;padding:0;border-radius:100px;background:var(--surface-wash,#eee)">&#9825;</span>
+      <div style="display:flex;gap:8px;margin:10px 0"><span class="pill">S</span><span class="pill">M</span><span class="pill">L</span><span class="pill">XL</span></div>
+      <span class="btn dark" style="width:100%;height:48px;font-weight:400">AJOUTER AU PANIER</span>
     </div>
   </div>
 
-  <h2 class="sh">Account gate</h2>
+  <h2 class="sh">Login gate</h2>
   <div class="mock" style="padding:20px">
-    <b style="font-size:24px">Hi friend!</b>
-    <div class="field" style="height:44px;margin-top:10px">Email</div>
-    <span class="btn dark" style="height:48px;min-width:343px;font-weight:600">CONTINUE</span>
+    <b style="font-size:24px">CONNEXION</b>
+    <div class="field" style="height:45px;margin-top:10px">E-mail</div>
+    <div class="field" style="height:45px;margin-top:8px">Mot de passe</div>
+    <span class="btn dark" style="height:48px;min-width:154px;font-weight:400">SE CONNECTER</span>
   </div>
 
   <h2 class="sh">Palette</h2>
-  <p class="lead">The storefront is nearly achromatic — black chrome on white, <code>#2d2d2d</code> ink, <code>#dddddd</code> hairlines — then one loud action green (<code>#018849</code>, hover <code>#006637</code>), the light-blue promo band (<code>#cde2f5</code>) and a small accent family for sale, error and app promos. Swatches list the declared var each alias resolves through.</p>
+  <p class="lead">The storefront is achromatic — black ink on white paper, a #f3f3f3 wash on alternate sections — then exactly two hues: the <code>#faf6b5</code> predictive-search highlight and the <code>#f4ff7a</code> yellow a press wipes across the action buttons. Swatches list the declared var each alias resolves through.</p>
   <div id="roles-out"></div>
 
   <h2 class="sh">Type</h2>
-  <p class="lead">Futura PT (book 400, demi 500, bold 700) everywhere, the older FuturaStd stack on promo furniture, a 6-step measured size scale (10.5625–24px) and a 6-step tracking scale — Futura PT is licensed and not loaded here, so the named stacks below are the token values, not the rendered face.</p>
+  <p class="lead">Space Mono (400) everywhere — body, nav, fields, buttons, prices at 12–18px — and the licensed avnier-font (500) on titles and product names at 15–220px, tracked 3% at display size. avnier-font is not loaded here, so the named stacks below are the token values, not the rendered face.</p>
   <div id="type-out"></div>
 
   <h2 class="sh">Spacing and radius</h2>
