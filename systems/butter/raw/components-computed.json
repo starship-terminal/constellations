@@ -126,6 +126,11 @@
      "animation": ""
     },
     {
+     "selector": ".dDBTIa",
+     "transition": "transform 0.5s cubic-bezier(0.2, 0.715, 0.205, 0.99), opacity 0.5s cubic-bezier(0.2, 0.715, 0.205, 0.99)",
+     "animation": ""
+    },
+    {
      "selector": ".cqjpGA",
      "transition": "opacity 0.8s cubic-bezier(0.2, 0.715, 0.205, 0.99)",
      "animation": ""
@@ -261,21 +266,6 @@
      "animation": ""
     },
     {
-     "selector": "#gist-inbox-button",
-     "transition": "background-color 0.2s, box-shadow 0.2s, transform 0.15s",
-     "animation": ""
-    },
-    {
-     "selector": "#gist-inbox-panel",
-     "transition": "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s",
-     "animation": ""
-    },
-    {
-     "selector": ".gist-inbox-message-row",
-     "transition": "background-color 0.15s",
-     "animation": ""
-    },
-    {
      "selector": "#iubenda-cs-banner .iub-toggle-checkbox input.style1, #iubenda-iframe .iub-toggle-checkbox input.style1",
      "transition": "background-position 0.4s, background-color 0.4s",
      "animation": ""
@@ -313,6 +303,21 @@
     {
      "selector": ".iub__us-widget__link",
      "transition": "background-color 0.3s",
+     "animation": ""
+    },
+    {
+     "selector": "#gist-inbox-button",
+     "transition": "background-color 0.2s, box-shadow 0.2s, transform 0.15s",
+     "animation": ""
+    },
+    {
+     "selector": "#gist-inbox-panel",
+     "transition": "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": ".gist-inbox-message-row",
+     "transition": "background-color 0.15s",
      "animation": ""
     }
    ],
@@ -855,6 +860,21 @@
      "animation": ""
     },
     {
+     "selector": "#gist-inbox-button",
+     "transition": "background-color 0.2s, box-shadow 0.2s, transform 0.15s",
+     "animation": ""
+    },
+    {
+     "selector": "#gist-inbox-panel",
+     "transition": "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s",
+     "animation": ""
+    },
+    {
+     "selector": ".gist-inbox-message-row",
+     "transition": "background-color 0.15s",
+     "animation": ""
+    },
+    {
      "selector": ".snippyly-user-marker::after",
      "transition": "opacity 0.2s linear, transform 0.3s ease-in-out",
      "animation": ""
@@ -893,21 +913,6 @@
      "selector": ".s-shake",
      "transition": "",
      "animation": "0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) 0s 1 normal both running shake"
-    },
-    {
-     "selector": "#gist-inbox-button",
-     "transition": "background-color 0.2s, box-shadow 0.2s, transform 0.15s",
-     "animation": ""
-    },
-    {
-     "selector": "#gist-inbox-panel",
-     "transition": "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s",
-     "animation": ""
-    },
-    {
-     "selector": ".gist-inbox-message-row",
-     "transition": "background-color 0.15s",
-     "animation": ""
     }
    ]
   },
@@ -1021,9 +1026,9 @@
   },
   "reducedMotion": {
    "home": {
-    "selector": "header",
+    "selector": "[class*=\"CursorButter\"]",
     "reduce": {
-     "transition": "all",
+     "transition": "opacity 0.2s, transform 0.2s",
      "animation": "none 0s ease 0s 1 normal none running",
      "scrollBehavior": "auto"
     }
@@ -1215,7 +1220,7 @@
       "stroke": "none",
       "color": "rgb(30, 30, 30)"
      },
-     "crop": "components/crops/header-default.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "at rest"
     }
    },
@@ -1316,7 +1321,7 @@
       "stroke": "none",
       "color": "rgb(30, 30, 30)"
      },
-     "crop": "components/crops/logo-default.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "at rest"
     }
    },
@@ -1422,7 +1427,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/nav-link-default.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "at rest"
     },
     "hover": {
@@ -1517,7 +1522,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/nav-link-hover.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "mouse hover"
     },
     "focus-visible": {
@@ -1619,7 +1624,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/nav-link-focus-visible.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "Shift+Tab, Tab"
     },
     "pressed": {
@@ -1714,7 +1719,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/nav-link-pressed.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "CDP forcePseudoState :active:hover"
     }
    },
@@ -1841,7 +1846,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/nav-cta-default.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "at rest"
     },
     "hover": {
@@ -1957,7 +1962,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/nav-cta-hover.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "mouse hover"
     },
     "focus-visible": {
@@ -2079,7 +2084,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/nav-cta-focus-visible.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "Shift+Tab, Tab"
     },
     "pressed": {
@@ -2195,7 +2200,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/nav-cta-pressed.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "CDP forcePseudoState :active:hover"
     }
    },
@@ -2301,7 +2306,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/nav-trigger-default.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "at rest"
     },
     "hover": {
@@ -2396,7 +2401,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/nav-trigger-hover.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "mouse hover"
     },
     "focus-visible": {
@@ -2498,7 +2503,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/nav-trigger-focus-visible.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "Shift+Tab, Tab"
     },
     "pressed": {
@@ -2593,7 +2598,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/nav-trigger-pressed.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "CDP forcePseudoState :active:hover"
     }
    },
@@ -2729,7 +2734,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/nav-dropdown-default.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "at rest"
     }
    },
@@ -2842,7 +2847,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/menu-link-default.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "at rest"
     },
     "hover": {
@@ -2944,7 +2949,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/menu-link-hover.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "mouse hover"
     },
     "focus-visible": {
@@ -3051,7 +3056,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/menu-link-focus-visible.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "Shift+Tab, Tab"
     },
     "pressed": {
@@ -3158,7 +3163,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/menu-link-pressed.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "CDP forcePseudoState :active:hover"
     }
    },
@@ -3264,7 +3269,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/hero-title-default.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "at rest"
     }
    },
@@ -3391,7 +3396,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/hero-cta-default.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "at rest"
     },
     "hover": {
@@ -3507,7 +3512,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/hero-cta-hover.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "mouse hover"
     },
     "focus-visible": {
@@ -3629,7 +3634,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/hero-cta-focus-visible.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "Shift+Tab, Tab"
     },
     "pressed": {
@@ -3745,7 +3750,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/hero-cta-pressed.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "CDP forcePseudoState :active:hover"
     }
    },
@@ -3872,7 +3877,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/hero-sub-default.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "at rest"
     }
    },
@@ -3891,10 +3896,10 @@
      "classes": "index-style__CursorButter-sc-804e36a2-2 eXVnrj",
      "text": "Add butter",
      "rect": {
-      "x": 1470.7,
-      "y": 24.2,
-      "w": 62.06,
-      "h": 24.6
+      "x": 922.2,
+      "y": 322.2,
+      "w": 62.54,
+      "h": 25.82
      },
      "style": {
       "display": "block",
@@ -3969,7 +3974,7 @@
      "paint": [
       {
        "node": "span.index-style__CursorButter-sc-804e36a2-2.eXVnrj",
-       "size": "62.1x24.6",
+       "size": "62.5x25.8",
        "bg": "rgb(15, 15, 15)",
        "radius": "12px"
       }
@@ -3986,8 +3991,8 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/cursor-badge-default.png",
-     "via": "at rest"
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "via": "element at rest: the badge does not paint for synthetic pointer movement, so the sampled state is its hidden one (opacity 0, scale .6)"
     }
    },
    "page": "home",
@@ -3995,7 +4000,7 @@
    "url": "https://www.butter.video/",
    "title": "Cursor badge",
    "group": "Home",
-   "desc": "The custom-cursor pill (\"Add butter\") that follows the pointer; painted only while the pointer is on the page.",
+   "desc": "The custom-cursor pill (\"Add butter\") that follows the pointer. Captured in its hidden state (opacity 0, scale .6): it only paints while a real pointer follows the page, which synthetic movement does not wake \u2014 the reported box is the shrunken pill, not its visible size.",
    "selector": "span.CursorButter"
   },
   "section-h2": {
@@ -4092,7 +4097,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/section-h2-default.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "at rest"
     }
    },
@@ -4725,55 +4730,55 @@
       {
        "node": "li::before.index-style__ListItem-sc-a04fc86c-4.iA-DFA-d",
        "size": "16pxx13px",
-       "bgImage": "url(data:…)",
+       "bgImage": "url(data:\u2026)",
        "radius": "0%"
       },
       {
        "node": "li::before.index-style__ListItem-sc-a04fc86c-4.iA-DFA-d",
        "size": "16pxx13px",
-       "bgImage": "url(data:…)",
+       "bgImage": "url(data:\u2026)",
        "radius": "0%"
       },
       {
        "node": "li::before.index-style__ListItem-sc-a04fc86c-4.iA-DFA-d",
        "size": "16pxx13px",
-       "bgImage": "url(data:…)",
+       "bgImage": "url(data:\u2026)",
        "radius": "0%"
       },
       {
        "node": "li::before.index-style__ListItem-sc-a04fc86c-4.iA-DFA-d",
        "size": "16pxx13px",
-       "bgImage": "url(data:…)",
+       "bgImage": "url(data:\u2026)",
        "radius": "0%"
       },
       {
        "node": "li::before.index-style__ListItem-sc-a04fc86c-4.iA-DFA-d",
        "size": "16pxx13px",
-       "bgImage": "url(data:…)",
+       "bgImage": "url(data:\u2026)",
        "radius": "0%"
       },
       {
        "node": "li::before.index-style__ListItem-sc-a04fc86c-4.iA-DFA-d",
        "size": "16pxx13px",
-       "bgImage": "url(data:…)",
+       "bgImage": "url(data:\u2026)",
        "radius": "0%"
       },
       {
        "node": "li::before.index-style__ListItem-sc-a04fc86c-4.iA-DFA-d",
        "size": "16pxx13px",
-       "bgImage": "url(data:…)",
+       "bgImage": "url(data:\u2026)",
        "radius": "0%"
       },
       {
        "node": "li::before.index-style__ListItem-sc-a04fc86c-4.dyDrvT",
        "size": "16pxx13px",
-       "bgImage": "url(data:…)",
+       "bgImage": "url(data:\u2026)",
        "radius": "0%"
       },
       {
        "node": "li::before.index-style__ListItem-sc-a04fc86c-4.dyDrvT",
        "size": "16pxx13px",
-       "bgImage": "url(data:…)",
+       "bgImage": "url(data:\u2026)",
        "radius": "0%"
       }
      ],
@@ -8520,7 +8525,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/footer-default.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "at rest"
     }
    },
@@ -8626,7 +8631,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/footer-link-default.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "at rest"
     },
     "hover": {
@@ -8721,7 +8726,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/footer-link-hover.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "mouse hover"
     },
     "focus-visible": {
@@ -8730,7 +8735,7 @@
      "text": "Product Product",
      "rect": {
       "x": 66.1,
-      "y": 0,
+      "y": 876,
       "w": 71.73,
       "h": 24
      },
@@ -8823,8 +8828,8 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/footer-link-focus-visible.png",
-     "via": "keydown then focus()"
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "via": "Shift+Tab, Tab"
     },
     "pressed": {
      "tag": "a",
@@ -8832,7 +8837,7 @@
      "text": "Product Product",
      "rect": {
       "x": 66.1,
-      "y": 0,
+      "y": 876,
       "w": 71.73,
       "h": 24
      },
@@ -8918,7 +8923,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/footer-link-pressed.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "CDP forcePseudoState :active:hover"
     }
    },
@@ -8937,7 +8942,7 @@
      "text": "Instagram Instagram",
      "rect": {
       "x": 288.2,
-      "y": 0,
+      "y": 876,
       "w": 90.73,
       "h": 24
      },
@@ -9023,7 +9028,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/social-icon-default.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "at rest"
     },
     "hover": {
@@ -9032,7 +9037,7 @@
      "text": "Instagram Instagram",
      "rect": {
       "x": 294.2,
-      "y": 0,
+      "y": 876,
       "w": 90.73,
       "h": 24
      },
@@ -9118,7 +9123,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/social-icon-hover.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "mouse hover"
     },
     "focus-visible": {
@@ -9127,7 +9132,7 @@
      "text": "Instagram Instagram",
      "rect": {
       "x": 288.2,
-      "y": 0,
+      "y": 380,
       "w": 90.73,
       "h": 24
      },
@@ -9220,8 +9225,8 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/social-icon-focus-visible.png",
-     "via": "keydown then focus()"
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
+     "via": "Shift+Tab, Tab"
     },
     "pressed": {
      "tag": "a",
@@ -9229,7 +9234,7 @@
      "text": "Instagram Instagram",
      "rect": {
       "x": 288.2,
-      "y": 0,
+      "y": 380,
       "w": 90.73,
       "h": 24
      },
@@ -9315,7 +9320,7 @@
       "textDecorationLine": "none",
       "textTransform": "none"
      },
-     "crop": "components/crops/social-icon-pressed.png",
+     "cropError": "Command failed: python3 -c import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert(\"RGB\")\nif im.width*im",
      "via": "CDP forcePseudoState :active:hover"
     }
    },
@@ -9636,28 +9641,28 @@
   "m-menu-open": {
    "states": {
     "default": {
-     "tag": "nav",
-     "classes": "index-style__HeaderDropDownSecondaryNav-sc-d968d94e-15 fVCSRz",
-     "text": "Co-Create Co-Create MCP MCP",
+     "tag": "div",
+     "classes": "index-style__HeaderDropdown-sc-d968d94e-11 bfhfPf",
+     "text": "Product Product Blocks Blocks Templates Templates Pricing Pricing Co-Create Co-C",
      "rect": {
-      "x": 63.7,
-      "y": 441.2,
-      "w": 262.66,
-      "h": 54
+      "x": 49.7,
+      "y": 84.2,
+      "w": 290.66,
+      "h": 554
      },
      "style": {
-      "display": "block",
-      "position": "static",
+      "display": "flex",
+      "position": "absolute",
       "boxSizing": "border-box",
-      "width": "262.656px",
-      "height": "54px",
+      "width": "290.656px",
+      "height": "554px",
       "minWidth": "0px",
       "maxWidth": "none",
       "minHeight": "0px",
-      "paddingTop": "0px",
-      "paddingRight": "0px",
-      "paddingBottom": "0px",
-      "paddingLeft": "0px",
+      "paddingTop": "14px",
+      "paddingRight": "14px",
+      "paddingBottom": "22px",
+      "paddingLeft": "14px",
       "marginTop": "0px",
       "marginRight": "0px",
       "marginBottom": "0px",
@@ -9665,7 +9670,7 @@
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
-      "flexDirection": "row",
+      "flexDirection": "column",
       "alignItems": "normal",
       "justifyContent": "normal",
       "gridTemplateColumns": "none",
@@ -9685,7 +9690,7 @@
       "borderTopRightRadius": "0px",
       "borderBottomRightRadius": "0px",
       "borderBottomLeftRadius": "0px",
-      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "backgroundColor": "rgb(237, 237, 237)",
       "backgroundImage": "none",
       "boxShadow": "none",
       "backdropFilter": "none",
@@ -9704,26 +9709,77 @@
       "textDecorationColor": "rgb(30, 30, 30)",
       "textDecorationThickness": "auto",
       "textUnderlineOffset": "auto",
-      "transitionProperty": "all",
-      "transitionDuration": "0s",
-      "transitionTimingFunction": "ease",
-      "transitionDelay": "0s",
+      "transitionProperty": "opacity, transform, clip-path",
+      "transitionDuration": "0.8s, 0.5s, 0.5s",
+      "transitionTimingFunction": "cubic-bezier(0.2, 0.715, 0.205, 0.99), cubic-bezier(0.2, 0.715, 0.205, 0.99), cubic-bezier(0.2, 0.715, 0.205, 0.99)",
+      "transitionDelay": "0s, 0s, 0s",
       "cursor": "auto",
       "opacity": "1",
-      "transform": "none",
-      "overflow": "visible",
-      "zIndex": "auto",
-      "top": "auto"
+      "transform": "matrix(1, 0, 0, 1, 0, 554)",
+      "overflow": "auto",
+      "zIndex": "-1",
+      "top": "-482px"
      },
+     "paint": [
+      {
+       "node": "div.index-style__HeaderDropdown-sc-d968d94e-11.bfhfPf",
+       "size": "290.7x554.0",
+       "bg": "rgb(237, 237, 237)"
+      },
+      {
+       "node": "div::after.index-style__ButterBlockWrapper-sc-dca6eb83-0.kBcKnP",
+       "size": "64pxx64px",
+       "shadow": "rgb(255, 255, 255) 0px 0px 11.7px 0px inset",
+       "radius": "22.4%"
+      },
+      {
+       "node": "hr.index-style__Hr-sc-a31f9adc-0.hyIksl",
+       "size": "262.7x1.0",
+       "bg": "rgba(15, 15, 15, 0.15)"
+      },
+      {
+       "node": "div::after.index-style__ButterBlockWrapper-sc-dca6eb83-0.kBcKnP",
+       "size": "64pxx64px",
+       "shadow": "rgb(255, 255, 255) 0px 0px 11.7px 0px inset",
+       "radius": "22.4%"
+      },
+      {
+       "node": "hr.index-style__Hr-sc-a31f9adc-0.fduGcU",
+       "size": "262.7x1.0",
+       "bg": "rgba(15, 15, 15, 0.15)"
+      },
+      {
+       "node": "div::after.index-style__ButterBlockWrapper-sc-dca6eb83-0.kBcKnP",
+       "size": "64pxx64px",
+       "shadow": "rgb(255, 255, 255) 0px 0px 11.7px 0px inset",
+       "radius": "22.4%"
+      },
+      {
+       "node": "hr.index-style__Hr-sc-a31f9adc-0.fmVxnb",
+       "size": "262.7x1.0",
+       "bg": "rgba(15, 15, 15, 0.15)"
+      },
+      {
+       "node": "div::after.index-style__ButterBlockWrapper-sc-dca6eb83-0.kBcKnP",
+       "size": "64pxx64px",
+       "shadow": "rgb(255, 255, 255) 0px 0px 11.7px 0px inset",
+       "radius": "22.4%"
+      },
+      {
+       "node": "hr.index-style__Hr-sc-a31f9adc-0.etShfG",
+       "size": "262.7x1.0",
+       "bg": "rgba(15, 15, 15, 0.15)"
+      }
+     ],
      "textStyle": {
       "node": "span.line",
-      "text": "Co-Create",
-      "fontFamily": "ABCDiatype, \"ABCDiatype Fallback\"",
-      "fontSize": "12.0211px",
-      "lineHeight": "24px",
+      "text": "Product",
+      "fontFamily": "DieGrotesk, \"DieGrotesk Fallback\"",
+      "fontSize": "16px",
+      "lineHeight": "20px",
       "fontWeight": "400",
-      "letterSpacing": "0.432758px",
-      "color": "rgba(15, 15, 15, 0.5)",
+      "letterSpacing": "0.7px",
+      "color": "rgb(30, 30, 30)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
@@ -9735,8 +9791,8 @@
    "run": "2026-11-11",
    "title": "Mobile menu, open",
    "group": "Mobile (390 wide)",
-   "desc": "The header menu opened by its own toggle.",
-   "selector": "opened header menu"
+   "desc": "The whole header menu panel opened by its own toggle (div.index-style__HeaderDropdown).",
+   "selector": "div.index-style__HeaderDropdown"
   },
   "m-nav-item": {
    "states": {

@@ -25,7 +25,7 @@ out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 const URLS = { home: '/', pricing: '/pricing', explore: '/explore' };
-let page, cdp, current, context, run;
+let page, cdp, current, context, run, liveCtx;
 const touched = new Set();
 const listed = new Map();
 // Routes PerimeterX gates this run: components last measured on them keep their
@@ -42,8 +42,12 @@ async function blocked() {
 
 async function newPage(key, { mobile = false, wait = 8000, promo = 'close', url = null } = {}) {
   current = key;
+  // Close the previous page's context before opening the next: leaving them
+  // alive keeps every captured page (and its animations) running in the
+  // background for the rest of the run.
+  if (liveCtx) { await liveCtx.close().catch(() => {}); liveCtx = null; }
   const b = context.browser();
-  const ctx = await b.newContext(mobile
+  const ctx = liveCtx = await b.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
   await patch(ctx);
@@ -282,7 +286,13 @@ async function home() {
   await S('hero-title', q('h1, [class*="Heading1Styled"]').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero headline', desc: 'The 108px display headline (TextStyles__Heading1Styled).', sel: 'h1' }, { noScroll: true });
   await S('hero-cta', q('main a, section a, main button').filter({ hasText: /^\s*Get Started\s*$|Get started/i }).filter({ visible: true }).first(), B4, { group: h, title: 'Hero CTA', desc: 'The hero Get-Started action; measured never followed.', sel: 'hero CTA' });
   await S('hero-sub', q('[class*="HeroSubcontent" i], main p, section p').filter({ hasText: /video editor|first video|build on/i }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero copy', desc: 'The lede under the headline.', sel: 'hero lede' });
-  await S('cursor-badge', q('span[class*="CursorButter"], [class*="CursorMain"]').filter({ visible: true }).first(), ['default'], { group: h, title: 'Cursor badge', desc: 'The custom-cursor pill ("Add butter") that follows the pointer; painted only while the pointer is on the page.', sel: 'span.CursorButter' }, { noScroll: true });
+  // The badge only paints while the pointer is over the page, and it fades to
+  // opacity 0 / scale .6 the moment the pointer stops. Even a sustained
+  // synthetic mouse.move loop does not wake it (it tracks real pointer input,
+  // not dispatched events), so the sampled entry is its hidden state and the
+  // via records that plainly rather than pretending the pill was painted.
+  await S('cursor-badge', q('span[class*="CursorButter"], [class*="CursorMain"]').filter({ visible: true }).first(), ['default'], { group: h, title: 'Cursor badge', desc: 'The custom-cursor pill ("Add butter") that follows the pointer. Captured in its hidden state (opacity 0, scale .6): it only paints while a real pointer follows the page, which synthetic movement does not wake — the reported box is the shrunken pill, not its visible size.', sel: 'span.CursorButter' }, { noScroll: true,
+    before: { default: async () => 'element at rest: the badge does not paint for synthetic pointer movement, so the sampled state is its hidden one (opacity 0, scale .6)' } });
   await S('section-h2', q('main h2, section h2, [class*="Heading2Styled"]').filter({ visible: true }).first(), ['default'], { group: h, title: 'Section heading', desc: 'A 60px section heading (TextStyles__Heading2Styled).', sel: 'h2' });
   save();
 }
@@ -340,7 +350,10 @@ async function mobile() {
   try {
     if (await menu.count()) { await menu.click({ timeout: 5000 }).catch(() => menu.evaluate((el) => el.click())); await page.waitForTimeout(1500); }
   } catch (e) { log('  ! mobile menu toggle failed', String(e.message).split('\n')[0]); }
-  await S('m-menu-open', q('header nav, header [class*="Menu" i] nav, [class*="MobileMenu" i], header [class*="MenuOpen" i]').filter({ visible: true }).last(), ['default'], { group: g, title: 'Mobile menu, open', desc: 'The header menu opened by its own toggle.', sel: 'opened header menu' }, { noScroll: true });
+  // The outer menu panel is div.index-style__HeaderDropdown (wraps the primary
+  // nav AND the secondary Co-Create/MCP/social nav); .first() on document order
+  // picks that outer container, not a nested nav.
+  await S('m-menu-open', q('header div[class*="HeaderDropdown" i], header [class*="MobileMenu" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile menu, open', desc: 'The whole header menu panel opened by its own toggle (div.index-style__HeaderDropdown).', sel: 'div.index-style__HeaderDropdown' }, { noScroll: true });
   await S('m-nav-item', q('header nav a, header a').filter({ hasText: /^(Product|Blocks|Templates|Pricing|Blog)/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Mobile nav item', desc: 'A link inside the opened header menu.', sel: 'header menu a' }, { noScroll: true });
   await page.keyboard.press('Escape'); await page.waitForTimeout(500);
   await S('m-hero', q('h1, [class*="Heading1Styled"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile headline', sel: 'h1 at 390' });
@@ -360,7 +373,9 @@ try {
   for (const k of order) { if (k !== 'mobile' && k !== 'login') await plan[k](); }
   if (!pages.length || pages.includes('home')) await footer();
   if (!pages.length || pages.includes('mobile')) await plan.mobile();
-  if (!pages.length || pages.includes('home')) await reducedMotion('home', 'header');
+  // Reduced-motion check on an element that actually transitions (the cursor
+  // badge's 0.2s opacity/transform), so the delta is meaningful.
+  if (!pages.length || pages.includes('home')) await reducedMotion('home', '[class*="CursorButter"]');
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
     // An untouched entry is pruned only when its page was not blocked this

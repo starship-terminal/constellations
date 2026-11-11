@@ -55,7 +55,8 @@ Values that apply across entries, from the measurement files.
 |---|---|---|---|
 | 0.16s | `ease` | background-color, border-color, opacity, transform | d-block-card, d-card, d-create, d-login, d-signup |
 | 0.2s | `ease` | opacity, transform | cursor-badge |
-| 0.5s | `cubic-bezier(0.2, 0.715, 0.205, 0.99)` | color, opacity | billing-toggle, nav-trigger |
+| 0.5s | `cubic-bezier(0.2, 0.715, 0.205, 0.99)` | clip-path, color, opacity, transform | billing-toggle, m-menu-open, nav-trigger |
+| 0.8s | `cubic-bezier(0.2, 0.715, 0.205, 0.99)` | opacity | m-menu-open |
 
 **Card shapes.** Default-state values; the entries hold the states.
 
@@ -64,7 +65,7 @@ Values that apply across entries, from the measurement files.
 | [Plan card](#plan-card) | 308.2 x 1132.59 | - | - | transparent | none | 25px 25px 40px 25px |
 | [Feature card](#feature-card) | 637.03 x 437 | 1px solid #212121 `color.app.card-border` | 32px | #151515 `color.app.card` | none | 0 |
 | [Block card](#block-card) | 359 x 181 | - | 42px | #151515 `color.app.card` | none | 13px |
-| [Cursor badge](#cursor-badge) | 62.06 x 24.6 | - | 12px | #0f0f0f `color.neutral.ink` | none | 10px 13px |
+| [Cursor badge](#cursor-badge) | 62.54 x 25.82 | - | 12px | #0f0f0f `color.neutral.ink` | none | 10px 13px |
 | [Mobile nav item](#mobile-nav-item) | 262.66 x 73 | - | - | transparent | none | 0 |
 
 ## Components
@@ -80,14 +81,14 @@ The marketing header: wordmark, the Co-Create/Product dropdown, plain links, Log
 
 Child layers that carry the look: a 137x47 background #1e1e1e `color.neutral.soft-ink` radius 8px; div::before 708.312pxx64px background #ededed `color.neutral.grey` radius 16px; div 694.1x382.7 background #ededed `color.neutral.grey`.
 
-![Header default](components/crops/header-default.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 #### Logo
 The wordmark anchor (an unclassed <a> wrapping the Butter svg). Read as `logo` on the home page.
 
 **Values (default).** size 107 x 23; background transparent; text DieGrotesk 18/27 400, #1e1e1e `color.neutral.soft-ink`; icon 107 x 23, #1e1e1e `color.neutral.soft-ink`.
 
-![Logo default](components/crops/logo-default.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 #### Nav link
 A plain header link (Pricing/Blog). Read as `nav-link` on the home page.
@@ -95,9 +96,9 @@ A plain header link (Pricing/Blog). Read as `nav-link` on the home page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 49.58 x 20; background transparent; text DieGrotesk 16/20 400, #1e1e1e `color.neutral.soft-ink` |
-| focus-visible | shadow #3c3c3c 0px 0px 0px 1px |
+| focus-visible | shadow #3c3c3c 0px 0px 0px 1px; layers a 49.6x20.0 rgb(60, 60, 60) 0px 0px 0px 1px |
 
-![Nav link default](components/crops/nav-link-default.png) ![Nav link hover](components/crops/nav-link-hover.png) ![Nav link focus-visible](components/crops/nav-link-focus-visible.png) ![Nav link pressed](components/crops/nav-link-pressed.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 #### Nav CTA
 The Try-for-free header action; links to /explore, measured never followed. Read as `nav-cta` on the home page.
@@ -105,11 +106,11 @@ The Try-for-free header action; links to /explore, measured never followed. Read
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 110.5 x 39; background transparent; text DieGrotesk 16/21 400, #ebebeb; layers span.index-style__ButtonContent-sc-482eeec2-1.kszsnD 110.5x39.0 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 10px; span::before.index-style__ButtonContent-sc-482eeec2-1.kszsnD 108.5pxx37px rgb(77, 197, 229) rgb(77, 197, 229) 0px 0px 4px 0px, rgb(77, 197, 229) 1px 1px 2px 0px, rgb(99, 173, 69) 1px 2px 2px 0px, rgb(233, 211 |
-| focus-visible | shadow #3c3c3c 0px 0px 0px 1px; layers none |
+| focus-visible | shadow #3c3c3c 0px 0px 0px 1px; layers a 110.5x39.0 rgb(60, 60, 60) 0px 0px 0px 1px; span.index-style__ButtonContent-sc-482eeec2-1.kszsnD 110.5x39.0 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 3px solid rgb(77, 197, 229) offset 3px 10px; span::before.index-style__ButtonContent-sc-482eeec2-1.kszsnD 108.5pxx37px rgb(77, 197, 229) rgb(77, 197, 229) 0px 0px 4px 0 |
 
 Child layers that carry the look: span 110.5x39 border 1px solid transparent radius 10px; span::before 108.5pxx37px background #4dc5e5 `color.brand.blue` radius 10px shadow #4dc5e5 `color.brand.blue` 0px 0px 4px 0px, #4dc5e5 `color.brand.blue` 1px 1px 2px 0px, #63ad45 `color.brand.green` 1px 2px 2px 0px, #e9d352 `color.brand.yellow` 1px 4px 6px 0px, #4dc5e5 `color.brand.blue` 1px 6px 10px 0px; span::after 108.5pxx37px background #1e1e1e `color.neutral.soft-ink` radius 10px.
 
-![Nav CTA default](components/crops/nav-cta-default.png) ![Nav CTA hover](components/crops/nav-cta-hover.png) ![Nav CTA focus-visible](components/crops/nav-cta-focus-visible.png) ![Nav CTA pressed](components/crops/nav-cta-pressed.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 #### Nav trigger
 The Co-Create button that opens the header dropdown; toggled, never followed. Read as `nav-trigger` on the home page.
@@ -118,10 +119,10 @@ The Co-Create button that opens the header dropdown; toggled, never followed. Re
 |---|---|
 | default | size 73.13 x 20; background transparent; text DieGrotesk 16/20 400, #1e1e1e `color.neutral.soft-ink`; transition opacity 0.5s cubic-bezier(0.2, 0.715, 0.205, 0.99) |
 | hover | opacity 0.4 |
-| focus-visible | shadow #3c3c3c 0px 0px 0px 1px |
+| focus-visible | shadow #3c3c3c 0px 0px 0px 1px; layers button.index-style__CoCreateTrigger-sc-adb0d9eb-0.kOPflO 73.1x20.0 rgb(60, 60, 60) 0px 0px 0px 1px |
 | pressed | opacity 0.4 |
 
-![Nav trigger default](components/crops/nav-trigger-default.png) ![Nav trigger hover](components/crops/nav-trigger-hover.png) ![Nav trigger focus-visible](components/crops/nav-trigger-focus-visible.png) ![Nav trigger pressed](components/crops/nav-trigger-pressed.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 #### Nav dropdown
 The Product dropdown panel, opened by hovering its own trigger. Read as `nav-dropdown` on the home page.
@@ -130,7 +131,7 @@ The Product dropdown panel, opened by hovering its own trigger. Read as `nav-dro
 
 Child layers that carry the look: hr 0x1 background rgba(15, 15, 15, 0.15) `color.neutral.hairline`; hr 0x1 background rgba(15, 15, 15, 0.15) `color.neutral.hairline`; hr 0x1 background rgba(15, 15, 15, 0.15) `color.neutral.hairline`.
 
-![Nav dropdown default](components/crops/nav-dropdown-default.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 #### Menu link
 A link inside the opened header dropdown. Read as `menu-link` on the home page.
@@ -138,11 +139,11 @@ A link inside the opened header dropdown. Read as `menu-link` on the home page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover) | size 666.71 x 28.42; background transparent; text DieGrotesk 16/20 400, #1e1e1e `color.neutral.soft-ink`; layers hr.index-style__Hr-sc-a31f9adc-0.hAUIis 0.0x1.0 rgba(15, 15, 15, 0.15) |
-| focus-visible, pressed | shadow #3c3c3c 0px 0px 0px 1px; layers none |
+| focus-visible, pressed | shadow #3c3c3c 0px 0px 0px 1px; layers a 666.7x28.4 rgb(60, 60, 60) 0px 0px 0px 1px; hr.index-style__Hr-sc-a31f9adc-0.hAUIis 0.0x1.0 rgba(15, 15, 15, 0.15) |
 
 Child layers that carry the look: hr 0x1 background rgba(15, 15, 15, 0.15) `color.neutral.hairline`.
 
-![Menu link default](components/crops/menu-link-default.png) ![Menu link hover](components/crops/menu-link-hover.png) ![Menu link focus-visible](components/crops/menu-link-focus-visible.png) ![Menu link pressed](components/crops/menu-link-pressed.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 ### Home
 
@@ -153,7 +154,7 @@ The 108px display headline (TextStyles__Heading1Styled). Read as `hero-title` on
 
 **Values (default).** size 1081.77 x 106.69; background transparent; text DieGrotesk 107.56/106.70 400, #0f0f0f `color.neutral.ink`.
 
-![Hero headline default](components/crops/hero-title-default.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 #### Hero CTA
 The hero Get-Started action; measured never followed. Read as `hero-cta` on the home page.
@@ -161,11 +162,11 @@ The hero Get-Started action; measured never followed. Read as `hero-cta` on the 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 144.95 x 50; background transparent; text DieGrotesk 16/21 400, #ebebeb; layers span.index-style__ButtonContent-sc-482eeec2-1.bsawCq 145.0x50.0 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 16px; span::before.index-style__ButtonContent-sc-482eeec2-1.bsawCq 142.953pxx48px rgb(77, 197, 229) rgb(77, 197, 229) 0px 0px 4px 0px, rgb(77, 197, 229) 1px 1px 2px 0px, rgb(99, 173, 69) 1px 2px 2px 0px, rgb(233, 2 |
-| focus-visible | shadow #3c3c3c 0px 0px 0px 1px; layers none |
+| focus-visible | shadow #3c3c3c 0px 0px 0px 1px; layers a 145.0x50.0 rgb(60, 60, 60) 0px 0px 0px 1px; span.index-style__ButtonContent-sc-482eeec2-1.bsawCq 145.0x50.0 T:1px solid rgba(0, 0, 0, 0) / R:1px solid rgba(0, 0, 0, 0) / B:1px solid rgba(0, 0, 0, 0) / L:1px solid rgba(0, 0, 0, 0) 3px solid rgb(77, 197, 229) offset 3px 16px; span::before.index-style__ButtonContent-sc-482eeec2-1.bsawCq 142.953pxx48px rgb(77, 197, 229) rgb(77, 197, 229) 0px 0px 4px |
 
 Child layers that carry the look: span 145x50 border 1px solid transparent radius 16px; span::before 142.953pxx48px background #4dc5e5 `color.brand.blue` radius 16px shadow #4dc5e5 `color.brand.blue` 0px 0px 4px 0px, #4dc5e5 `color.brand.blue` 1px 1px 2px 0px, #63ad45 `color.brand.green` 1px 2px 2px 0px, #e9d352 `color.brand.yellow` 1px 4px 6px 0px, #4dc5e5 `color.brand.blue` 1px 6px 10px 0px; span::after 142.953pxx48px background #1e1e1e `color.neutral.soft-ink` radius 16px.
 
-![Hero CTA default](components/crops/hero-cta-default.png) ![Hero CTA hover](components/crops/hero-cta-hover.png) ![Hero CTA focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero CTA pressed](components/crops/hero-cta-pressed.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 #### Hero copy
 The lede under the headline. Read as `hero-sub` on the home page.
@@ -174,21 +175,21 @@ The lede under the headline. Read as `hero-sub` on the home page.
 
 Child layers that carry the look: span 145x50 border 1px solid transparent radius 16px; span::before 142.953pxx48px background #4dc5e5 `color.brand.blue` radius 16px shadow #4dc5e5 `color.brand.blue` 0px 0px 4px 0px, #4dc5e5 `color.brand.blue` 1px 1px 2px 0px, #63ad45 `color.brand.green` 1px 2px 2px 0px, #e9d352 `color.brand.yellow` 1px 4px 6px 0px, #4dc5e5 `color.brand.blue` 1px 6px 10px 0px; span::after 142.953pxx48px background #1e1e1e `color.neutral.soft-ink` radius 16px.
 
-![Hero copy default](components/crops/hero-sub-default.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 #### Cursor badge
-The custom-cursor pill ("Add butter") that follows the pointer; painted only while the pointer is on the page. Read as `cursor-badge` on the home page.
+The custom-cursor pill ("Add butter") that follows the pointer. Captured in its hidden state (opacity 0, scale .6): it only paints while a real pointer follows the page, which synthetic movement does not wake — the reported box is the shrunken pill, not its visible size. Read as `cursor-badge` on the home page.
 
-**Values (default).** size 62.06 x 24.6; padding 10px 13px; radius 12px; background #0f0f0f `color.neutral.ink`; text DieGrotesk 16/21 400, #fafafa `color.neutral.paper-warm`; transition opacity 0.2s ease, transform 0.2s ease; transform scale(0.6); opacity 0.
+**Values (default).** size 62.54 x 25.82; padding 10px 13px; radius 12px; background #0f0f0f `color.neutral.ink`; text DieGrotesk 16/21 400, #fafafa `color.neutral.paper-warm`; transition opacity 0.2s ease, transform 0.2s ease; transform scale(0.6); opacity 0.
 
-![Cursor badge default](components/crops/cursor-badge-default.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 #### Section heading
 A 60px section heading (TextStyles__Heading2Styled). Read as `section-h2` on the home page.
 
 **Values (default).** size 1077.59 x 185.86; background transparent; text DieGrotesk 60.4/58.58 400, transparent.
 
-![Section heading default](components/crops/section-h2-default.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 ### Pricing
 
@@ -207,7 +208,7 @@ A Monthly/Annually billing-period button; toggled, never checked out. Read as `b
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 118.89 x 54; padding 15px 20px; background transparent; text DieGrotesk 20.74/24 400, #fafafa `color.neutral.paper-warm`; transition color 0.5s cubic-bezier(0.2, 0.715, 0.205, 0.99), opacity 0.5s cubic-bezier(0.2, 0.715, 0.205, 0.99) |
-| focus-visible | shadow #3c3c3c 0px 0px 0px 1px |
+| focus-visible | shadow #3c3c3c 0px 0px 0px 1px; layers button.index-style__PricingToggle-sc-51b11a00-2.cEBaxH 118.9x54.0 rgb(60, 60, 60) 0px 0px 0px 1px |
 
 ![Billing toggle default](components/crops/billing-toggle-default.png) ![Billing toggle hover](components/crops/billing-toggle-hover.png) ![Billing toggle focus-visible](components/crops/billing-toggle-focus-visible.png) ![Billing toggle pressed](components/crops/billing-toggle-pressed.png)
 
@@ -330,10 +331,12 @@ A block-preview card in the Featured Blocks row. Read as `d-block-card` on the e
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: focus-visible) | size 359 x 181; padding 13px; radius 42px; background #151515 `color.app.card`; text dieGroteskA 14/20 400, #f5f5f5 `color.app.text`; transition transform 0.16s ease, background-color 0.16s ease |
+| default | size 359 x 181; padding 13px; radius 42px; background #151515 `color.app.card`; text dieGroteskA 14/20 400, #f5f5f5 `color.app.text`; transition transform 0.16s ease, background-color 0.16s ease |
 | hover, pressed | size 351.82 x 177.38; transform scale(0.98) |
 
-![Block card default](components/crops/d-block-card-default.png) ![Block card hover](components/crops/d-block-card-hover.png) ![Block card focus-visible](components/crops/d-block-card-focus-visible.png) ![Block card pressed](components/crops/d-block-card-pressed.png)
+**Focus not capturable.** A real keyboard focus could not be held on this element (`focus-visible` recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.
+
+![Block card default](components/crops/d-block-card-default.png) ![Block card hover](components/crops/d-block-card-hover.png) ![Block card pressed](components/crops/d-block-card-pressed.png)
 
 #### Section heading
 An /explore section heading (24px). Read as `d-section` on the explore page.
@@ -351,7 +354,7 @@ The light-grey FooterMain: link columns, social, legal. Read as `footer` on the 
 
 **Values (default).** size 1440 x 1126.81; padding 160px 0px 60px 0px; background #ededed `color.neutral.grey`; text ABCDiatype 13.49/24 400, rgba(15, 15, 15, 0.5) `color.neutral.faint`.
 
-![Footer default](components/crops/footer-default.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 #### Footer link
 Read as `footer-link` on the home page.
@@ -359,9 +362,9 @@ Read as `footer-link` on the home page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 71.73 x 24; background transparent; text DieGrotesk 20.74/24 400, #1e1e1e `color.neutral.soft-ink` |
-| focus-visible | shadow #3c3c3c 0px 0px 0px 1px |
+| focus-visible | shadow #3c3c3c 0px 0px 0px 1px; layers a 71.7x24.0 rgb(60, 60, 60) 0px 0px 0px 1px |
 
-![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 #### Social link
 A social link in the footer (text links, not glyphs). Read as `social-icon` on the home page.
@@ -369,9 +372,9 @@ A social link in the footer (text links, not glyphs). Read as `social-icon` on t
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 90.73 x 24; background transparent; text DieGrotesk 20.74/24 400, #1e1e1e `color.neutral.soft-ink` |
-| focus-visible | shadow #3c3c3c 0px 0px 0px 1px |
+| focus-visible | shadow #3c3c3c 0px 0px 0px 1px; layers a 90.7x24.0 rgb(60, 60, 60) 0px 0px 0px 1px |
 
-![Social link default](components/crops/social-icon-default.png) ![Social link hover](components/crops/social-icon-hover.png) ![Social link focus-visible](components/crops/social-icon-focus-visible.png) ![Social link pressed](components/crops/social-icon-pressed.png)
+No crop was saved for this entry (a whole page or a hidden element); the values are from the computed styles.
 
 ### Mobile (390 wide)
 
@@ -394,9 +397,9 @@ The menu toggle (button.MenuToggleMain). Read as `m-menu-button` on the home pag
 ![Menu button default](components/crops/m-menu-button-default.png)
 
 #### Mobile menu, open
-The header menu opened by its own toggle. Read as `m-menu-open` on the home page at 390 wide.
+The whole header menu panel opened by its own toggle (div.index-style__HeaderDropdown). Read as `m-menu-open` on the home page at 390 wide.
 
-**Values (default).** size 262.66 x 54; background transparent; text ABCDiatype 12.02/24 400, rgba(15, 15, 15, 0.5) `color.neutral.faint`.
+**Values (default).** size 290.66 x 554; padding 14px 14px 22px 14px; background #ededed `color.neutral.grey`; text DieGrotesk 16/20 400, #1e1e1e `color.neutral.soft-ink`; transition opacity 0.8s cubic-bezier(0.2, 0.715, 0.205, 0.99), transform 0.5s cubic-bezier(0.2, 0.715, 0.205, 0.99), clip-path 0.5s cubic-bezier(0.2, 0.715, 0.205, 0.99); transform translate(0px, 554px).
 
 ![Mobile menu, open default](components/crops/m-menu-open-default.png)
 
@@ -406,7 +409,7 @@ A link inside the opened header menu. Read as `m-nav-item` on the home page at 3
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 262.66 x 73; background transparent; text DieGrotesk 16/20 400, #1e1e1e `color.neutral.soft-ink`; layers div::after.index-style__ButterBlockWrapper-sc-dca6eb83-0.kBcKnP 64pxx64px rgb(255, 255, 255) 0px 0px 11.7px 0px inset 22.4%; hr.index-style__Hr-sc-a31f9adc-0.hyIksl 262.7x1.0 rgba(15, 15, 15, 0.15) |
-| focus-visible | shadow #3c3c3c 0px 0px 0px 1px; layers none |
+| focus-visible | shadow #3c3c3c 0px 0px 0px 1px; layers a 262.7x73.0 rgb(60, 60, 60) 0px 0px 0px 1px; div::after.index-style__ButterBlockWrapper-sc-dca6eb83-0.kBcKnP 64pxx64px rgb(255, 255, 255) 0px 0px 11.7px 0px inset 22.4%; hr.index-style__Hr-sc-a31f9adc-0.hyIksl 262.7x1.0 rgba(15, 15, 15, 0.15) |
 
 Child layers that carry the look: div::after 64pxx64px radius 22.4% shadow #ffffff `color.neutral.paper` 0px 0px 11.7px 0px inset; hr 262.7x1 background rgba(15, 15, 15, 0.15) `color.neutral.hairline`.
 

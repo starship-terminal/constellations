@@ -174,7 +174,7 @@ if have("feature-row", "default", "borderTopColor"):
                            "source": "computed borderTopColor of feature-row (raw/components-computed.json)",
                            "description": "The rgba(15,15,15,0.15) hairline under feature rows and the nav dropdown."}
 for key, comp, state, prop, desc in [
-    ("faint", "m-menu-open", "default", "textStyle-color", "The 50% black used for muted marketing text."),
+    ("faint", "footer", "default", "textStyle-color", "The 50% black used for muted marketing text (footer secondary line)."),
 ]:
     try:
         v = norm_color(C[comp]["states"][state].get("textStyle", {}).get("color"))

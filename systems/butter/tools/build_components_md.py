@@ -151,7 +151,10 @@ def props(v):
         if v.get(pe):
             p = v[pe]
             bits.append(" ".join(x for x in (pe, p.get("backgroundColor"), p.get("borderTopWidth"), p.get("boxShadow"), p.get("opacity")) if x))
-    if s["backgroundColor"] == "rgba(0, 0, 0, 0)" and s["boxShadow"] == "none" and s["borderTopWidth"] == "0px" and s["backgroundImage"] == "none":
+    # A root box-shadow (e.g. the 1px focus ring gained on focus-visible) does
+    # not remove the painted children: keep reporting their layers, which is
+    # where a state-carrying child outline (the 3px cyan CTA ring) shows up.
+    if s["backgroundColor"] == "rgba(0, 0, 0, 0)" and s["borderTopWidth"] == "0px" and s["backgroundImage"] == "none":
         for p in v.get("paint", [])[:6]:
             bits.append(" ".join(x for x in (p["node"], p.get("size"), p.get("bg"), p.get("border"), p.get("shadow"), p.get("outline"), p.get("radius")) if x))
     if bits:
@@ -163,7 +166,11 @@ ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow",
 
 
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    # A state whose capture failed (e.g. via: "focus failed" — the element would
+    # not hold a real keyboard focus) is not a captured state: it is reported
+    # separately so a failed attempt can never read as a measured absence of a
+    # focus ring.
+    states = [s for s in c["states"] if "style" in c["states"][s] and c["states"][s].get("via") != "focus failed"]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -421,6 +428,7 @@ for g in groups:
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
+        failed = [s for s, v in c["states"].items() if "style" in v and v.get("via") == "focus failed"]
         rows, states = state_rows(c)
         if len(states) == 1 and rows:
             W(f"**Values ({states[0]}).** {fmt(rows[0][1])}.")
@@ -430,6 +438,9 @@ for g in groups:
             W("|---|---|")
             for lab, d in rows:
                 W(f"| {lab} | {fmt(d)} |")
+            W()
+        if failed:
+            W(f"**Focus not capturable.** A real keyboard focus could not be held on this element ({', '.join(f'`{s}`' for s in failed)} recorded `via: focus failed`), so its focus look is uncaptured — not measured as absent.")
             W()
         cl = child_layers(c)
         if cl:

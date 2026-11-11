@@ -32,7 +32,7 @@ Page: home. Selector: `header.index-style__HeaderContainer`. States: default.
 | Painted layers | a.index-style__SkipToContent-sc-d968d94e-2.gWhVeu 137.0x47.0 bg #1e1e1e r 8px; div::before.index-style__HeaderLeftInner-sc-d968d94e-5.ckqdyg 708.312pxx64px bg #ededed r 16px; div.index-style__HeaderDropdown-sc-d968d94e-11.kVgSbW 694.1x382.7 bg #ededed; hr.index-style__Hr-sc-a31f9adc-0.hAUIis 0.0x1.0 bg #0f0f0f @ 0.15; hr.index-style__Hr-sc-a31f9adc-0.gTNDyN 0.0x1.0 bg #0f0f0f @ 0.15; hr.index-style__Hr-sc-a31f9adc-0.fphVdi 0.0x1.0 bg #0f0f0f @ 0.15 |
 | How | at rest |
 
-Crops: `header-default.png`.
+Crops: none.
 
 #### logo
 
@@ -57,7 +57,7 @@ Page: home. Selector: `header a:has(svg)`. States: default.
 | Icon | 107 x 23, colour #1e1e1e |
 | How | at rest |
 
-Crops: `logo-default.png`.
+Crops: none.
 
 #### nav-link
 
@@ -83,7 +83,7 @@ Page: home. Selector: `header nav a`. States: default, hover, focus-visible, pre
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Painted layers | - | = | a 49.6x20.0 shadow #3c3c3c 0px 0px 0px 1px | = |
 
-Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-focus-visible.png`, `nav-link-pressed.png`.
+Crops: none.
 
 #### nav-cta
 
@@ -109,7 +109,7 @@ Page: home. Selector: `header a Try for free`. States: default, hover, focus-vis
 | Painted layers | span.index-style__ButtonContent-sc-482eeec2-1.kszsnD 110.5x39.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 10px; span::before.index-style__ButtonContent-sc-482eeec2-1.kszsnD 108.5pxx37px bg #4dc5e5 r 10px shadow #4dc5e5 0px 0px 4px 0px, #4dc5e5 1px 1px 2px 0px, #63ad45 1px 2px 2px 0px, #e9d352 1px 4px 6px 0px, #4dc5e5 1px 6px 10px 0px; span::after.index-style__ButtonContent-sc-482eeec2-1.kszsnD 108.5pxx37px bg #1e1e1e r 10px | = | a 110.5x39.0 shadow #3c3c3c 0px 0px 0px 1px; span.index-style__ButtonContent-sc-482eeec2-1.kszsnD 110.5x39.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 10px outline 3px solid #4dc5e5 offset 3px; span::before.index-style__ButtonContent-sc-482eeec2-1.kszsnD 108.5pxx37px bg #4dc5e5 r 10px shadow #4dc5e5 0px 0px 4px 0px, #4dc5e5 1px 1px 2px 0px, #63ad45 1px 2px 2px 0px, #e9d352 1px 4px 6px 0px, #4dc5e5 1px 6px 10px 0px; span::after.index-style__ButtonContent-sc-482eeec2-1.kszsnD 108.5pxx37px bg #1e1e1e r 10px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: `nav-cta-default.png`, `nav-cta-hover.png`, `nav-cta-focus-visible.png`, `nav-cta-pressed.png`.
+Crops: none.
 
 #### nav-trigger
 
@@ -137,7 +137,7 @@ Page: home. Selector: `button.CoCreateTrigger`. States: default, hover, focus-vi
 | Opacity | - | 0.4 | = | 0.4 |
 | Painted layers | - | = | button.index-style__CoCreateTrigger-sc-adb0d9eb-0.kOPflO 73.1x20.0 shadow #3c3c3c 0px 0px 0px 1px | = |
 
-Crops: `nav-trigger-default.png`, `nav-trigger-hover.png`, `nav-trigger-focus-visible.png`, `nav-trigger-pressed.png`.
+Crops: none.
 
 #### nav-dropdown
 
@@ -163,7 +163,7 @@ Page: home. Selector: `nav.HeaderDropdownMain`. States: default.
 | Ancestor paint | 1 up div.index-style__HeaderDropdown-sc-d968d94e-11.kVgSbW bg #ededed |
 | How | at rest |
 
-Crops: `nav-dropdown-default.png`.
+Crops: none.
 
 #### menu-link
 
@@ -189,7 +189,7 @@ Page: home. Selector: `dropdown link`. States: default, hover, focus-visible, pr
 | Painted layers | hr.index-style__Hr-sc-a31f9adc-0.hAUIis 0.0x1.0 bg #0f0f0f @ 0.15 | = | a 666.7x28.4 shadow #3c3c3c 0px 0px 0px 1px; hr.index-style__Hr-sc-a31f9adc-0.hAUIis 0.0x1.0 bg #0f0f0f @ 0.15 | a 666.7x28.4 shadow #3c3c3c 0px 0px 0px 1px; hr.index-style__Hr-sc-a31f9adc-0.hAUIis 0.0x1.0 bg #0f0f0f @ 0.15 |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: `menu-link-default.png`, `menu-link-hover.png`, `menu-link-focus-visible.png`, `menu-link-pressed.png`.
+Crops: none.
 
 ### Home
 
@@ -215,7 +215,7 @@ Page: home. Selector: `h1`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: `hero-title-default.png`.
+Crops: none.
 
 #### hero-cta
 
@@ -241,7 +241,7 @@ Page: home. Selector: `hero CTA`. States: default, hover, focus-visible, pressed
 | Painted layers | span.index-style__ButtonContent-sc-482eeec2-1.bsawCq 145.0x50.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 16px; span::before.index-style__ButtonContent-sc-482eeec2-1.bsawCq 142.953pxx48px bg #4dc5e5 r 16px shadow #4dc5e5 0px 0px 4px 0px, #4dc5e5 1px 1px 2px 0px, #63ad45 1px 2px 2px 0px, #e9d352 1px 4px 6px 0px, #4dc5e5 1px 6px 10px 0px; span::after.index-style__ButtonContent-sc-482eeec2-1.bsawCq 142.953pxx48px bg #1e1e1e r 16px | = | a 145.0x50.0 shadow #3c3c3c 0px 0px 0px 1px; span.index-style__ButtonContent-sc-482eeec2-1.bsawCq 145.0x50.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 16px outline 3px solid #4dc5e5 offset 3px; span::before.index-style__ButtonContent-sc-482eeec2-1.bsawCq 142.953pxx48px bg #4dc5e5 r 16px shadow #4dc5e5 0px 0px 4px 0px, #4dc5e5 1px 1px 2px 0px, #63ad45 1px 2px 2px 0px, #e9d352 1px 4px 6px 0px, #4dc5e5 1px 6px 10px 0px; span::after.index-style__ButtonContent-sc-482eeec2-1.bsawCq 142.953pxx48px bg #1e1e1e r 16px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
-Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`, `hero-cta-pressed.png`.
+Crops: none.
 
 #### hero-sub
 
@@ -267,7 +267,7 @@ Page: home. Selector: `hero lede`. States: default.
 | Painted layers | span.index-style__ButtonContent-sc-482eeec2-1.bsawCq 145.0x50.0 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 16px; span::before.index-style__ButtonContent-sc-482eeec2-1.bsawCq 142.953pxx48px bg #4dc5e5 r 16px shadow #4dc5e5 0px 0px 4px 0px, #4dc5e5 1px 1px 2px 0px, #63ad45 1px 2px 2px 0px, #e9d352 1px 4px 6px 0px, #4dc5e5 1px 6px 10px 0px; span::after.index-style__ButtonContent-sc-482eeec2-1.bsawCq 142.953pxx48px bg #1e1e1e r 16px |
 | How | at rest |
 
-Crops: `hero-sub-default.png`.
+Crops: none.
 
 #### cursor-badge
 
@@ -277,7 +277,7 @@ Page: home. Selector: `span.CursorButter`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 62.06 x 24.6 |
+| Size (w x h) | 62.54 x 25.82 |
 | Padding | 10px 13px |
 | Border | none |
 | Radius | 12px |
@@ -291,10 +291,10 @@ Page: home. Selector: `span.CursorButter`. States: default.
 | Transition | opacity, transform 0.2s, 0.2s ease, ease delay 0s, 0s |
 | Transform | matrix(0.6, 0, 0, 0.6, 0, 0) |
 | Opacity | 0 |
-| Painted layers | span.index-style__CursorButter-sc-804e36a2-2.eXVnrj 62.1x24.6 bg #0f0f0f r 12px |
-| How | at rest |
+| Painted layers | span.index-style__CursorButter-sc-804e36a2-2.eXVnrj 62.5x25.8 bg #0f0f0f r 12px |
+| How | element at rest: the badge does not paint for synthetic pointer movement, so the sampled state is its hidden one (opacity 0, scale .6) |
 
-Crops: `cursor-badge-default.png`.
+Crops: none.
 
 #### section-h2
 
@@ -318,7 +318,7 @@ Page: home. Selector: `h2`. States: default.
 | Transition | none |
 | How | at rest |
 
-Crops: `section-h2-default.png`.
+Crops: none.
 
 ### Pricing
 
@@ -746,7 +746,7 @@ Page: home. Selector: `footer.FooterMain`. States: default.
 | Painted layers | footer.index-style__FooterMain-sc-144eedcf-0.bdNowa 1440.0x1126.8 bg #ededed |
 | How | at rest |
 
-Crops: `footer-default.png`.
+Crops: none.
 
 #### footer-link
 
@@ -769,10 +769,10 @@ Page: home. Selector: `footer a`. States: default, hover, focus-visible, pressed
 | Text node | span.line: DieGrotesk 20.7474px/24px 400, #1e1e1e, ls 0.684663px | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | keydown then focus() | CDP forcePseudoState :active:hover |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Painted layers | - | = | a 71.7x24.0 shadow #3c3c3c 0px 0px 0px 1px | = |
 
-Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`, `footer-link-pressed.png`.
+Crops: none.
 
 #### social-icon
 
@@ -795,10 +795,10 @@ Page: home. Selector: `footer social a`. States: default, hover, focus-visible, 
 | Text node | span.line: DieGrotesk 20.7474px/24px 400, #1e1e1e, ls 0.684663px | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | keydown then focus() | CDP forcePseudoState :active:hover |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Painted layers | - | = | a 90.7x24.0 shadow #3c3c3c 0px 0px 0px 1px | = |
 
-Crops: `social-icon-default.png`, `social-icon-hover.png`, `social-icon-focus-visible.png`, `social-icon-pressed.png`.
+Crops: none.
 
 ### Mobile (390 wide)
 
@@ -856,24 +856,26 @@ Crops: `m-menu-button-default.png`.
 
 #### m-menu-open
 
-Mobile menu, open. The header menu opened by its own toggle.
+Mobile menu, open. The whole header menu panel opened by its own toggle (div.index-style__HeaderDropdown).
 
-Page: mobile. Selector: `opened header menu`. States: default.
+Page: mobile. Selector: `div.index-style__HeaderDropdown`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 262.66 x 54 |
-| Padding | 0px |
+| Size (w x h) | 290.66 x 554 |
+| Padding | 14px 14px 22px 14px |
 | Border | none |
 | Radius | 0px |
-| Background | transparent |
+| Background | #ededed |
 | Box shadow | none |
 | Outline | none |
 | Font | DieGrotesk 18px/27px 400 |
 | Letter spacing | normal |
 | Colour | #1e1e1e |
-| Text node | span.line: ABCDiatype 12.0211px/24px 400, #0f0f0f @ 0.5, ls 0.432758px |
-| Transition | none |
+| Text node | span.line: DieGrotesk 16px/20px 400, #1e1e1e, ls 0.7px |
+| Transition | opacity, transform, clip-path 0.8s, 0.5s, 0.5s cubic-bezier(0.2, 0.715, 0.205, 0.99), cubic-bezier(0.2, 0.715, 0.205, 0.99), cubic-bezier(0.2, 0.715, 0.205, 0.99) delay 0s, 0s, 0s |
+| Transform | matrix(1, 0, 0, 1, 0, 554) |
+| Painted layers | div.index-style__HeaderDropdown-sc-d968d94e-11.bfhfPf 290.7x554.0 bg #ededed; div::after.index-style__ButterBlockWrapper-sc-dca6eb83-0.kBcKnP 64pxx64px r 22.4% shadow #ffffff 0px 0px 11.7px 0px inset; hr.index-style__Hr-sc-a31f9adc-0.hyIksl 262.7x1.0 bg #0f0f0f @ 0.15; div::after.index-style__ButterBlockWrapper-sc-dca6eb83-0.kBcKnP 64pxx64px r 22.4% shadow #ffffff 0px 0px 11.7px 0px inset; hr.index-style__Hr-sc-a31f9adc-0.fduGcU 262.7x1.0 bg #0f0f0f @ 0.15; div::after.index-style__ButterBlockWrapper-sc-dca6eb83-0.kBcKnP 64pxx64px r 22.4% shadow #ffffff 0px 0px 11.7px 0px inset |
 | How | at rest |
 
 Crops: `m-menu-open-default.png`.
