@@ -1,0 +1,1739 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. asana.com ships Asana's design-token layer in the marketing CSS: full colour ramps, the --lightmode-*/--darkmode-* semantic role sets, type/spacing/breakpoint/grid/zIndex/shadow/transition scales and section [data-theme] schemes. The light set aliases the --lightmode-* vars; the dark set aliases the declared --darkmode-* vars (unbound on the captured surface); measured component values come from raw/components-computed.json.",
+ "core": {
+  "amber": {
+   "var": "--amber",
+   "type": "color"
+  },
+  "black": {
+   "100": {
+    "var": "--black-100",
+    "type": "color"
+   },
+   "1000": {
+    "var": "--black-1000",
+    "type": "color"
+   },
+   "1100": {
+    "var": "--black-1100",
+    "type": "color"
+   },
+   "20": {
+    "var": "--black-20",
+    "type": "color"
+   },
+   "200": {
+    "var": "--black-200",
+    "type": "color"
+   },
+   "300": {
+    "var": "--black-300",
+    "type": "color"
+   },
+   "400": {
+    "var": "--black-400",
+    "type": "color"
+   },
+   "50": {
+    "var": "--black-50",
+    "type": "color"
+   },
+   "500": {
+    "var": "--black-500",
+    "type": "color"
+   },
+   "600": {
+    "var": "--black-600",
+    "type": "color"
+   },
+   "700": {
+    "var": "--black-700",
+    "type": "color"
+   },
+   "800": {
+    "var": "--black-800",
+    "type": "color"
+   },
+   "900": {
+    "var": "--black-900",
+    "type": "color"
+   },
+   "950": {
+    "var": "--black-950",
+    "type": "color"
+   },
+   "980": {
+    "var": "--black-980",
+    "type": "color"
+   }
+  },
+  "blue": {
+   "0": {
+    "var": "--blue-0",
+    "type": "color"
+   },
+   "100": {
+    "var": "--blue-100",
+    "type": "color"
+   },
+   "1000": {
+    "var": "--blue-1000",
+    "type": "color"
+   },
+   "20": {
+    "var": "--blue-20",
+    "type": "color"
+   },
+   "200": {
+    "var": "--blue-200",
+    "type": "color"
+   },
+   "300": {
+    "var": "--blue-300",
+    "type": "color"
+   },
+   "400": {
+    "var": "--blue-400",
+    "type": "color"
+   },
+   "50": {
+    "var": "--blue-50",
+    "type": "color"
+   },
+   "500": {
+    "var": "--blue-500",
+    "type": "color"
+   },
+   "600": {
+    "var": "--blue-600",
+    "type": "color"
+   },
+   "700": {
+    "var": "--blue-700",
+    "type": "color"
+   },
+   "800": {
+    "var": "--blue-800",
+    "type": "color"
+   },
+   "900": {
+    "var": "--blue-900",
+    "type": "color"
+   },
+   "950": {
+    "var": "--blue-950",
+    "type": "color"
+   },
+   "980": {
+    "var": "--blue-980",
+    "type": "color"
+   },
+   "v2": {
+    "200": {
+     "var": "--blue-v2-200",
+     "type": "color"
+    },
+    "700": {
+     "var": "--blue-v2-700",
+     "type": "color"
+    }
+   }
+  },
+  "border": {
+   "radius": {
+    "var": "--border-radius",
+    "type": "dimension"
+   }
+  },
+  "bright": {
+   "blue": {
+    "1": {
+     "var": "--bright-blue-1",
+     "type": "color"
+    },
+    "2": {
+     "var": "--bright-blue-2",
+     "type": "color"
+    },
+    "3": {
+     "var": "--bright-blue-3",
+     "type": "color"
+    },
+    "4": {
+     "var": "--bright-blue-4",
+     "type": "color"
+    }
+   },
+   "coral": {
+    "1": {
+     "var": "--bright-coral-1",
+     "type": "color"
+    },
+    "2": {
+     "var": "--bright-coral-2",
+     "type": "color"
+    },
+    "3": {
+     "var": "--bright-coral-3",
+     "type": "color"
+    },
+    "4": {
+     "var": "--bright-coral-4",
+     "type": "color"
+    }
+   },
+   "green": {
+    "1": {
+     "var": "--bright-green-1",
+     "type": "color"
+    },
+    "2": {
+     "var": "--bright-green-2",
+     "type": "color"
+    },
+    "3": {
+     "var": "--bright-green-3",
+     "type": "color"
+    },
+    "4": {
+     "var": "--bright-green-4",
+     "type": "color"
+    }
+   },
+   "purple": {
+    "1": {
+     "var": "--bright-purple-1",
+     "type": "color"
+    },
+    "2": {
+     "var": "--bright-purple-2",
+     "type": "color"
+    },
+    "3": {
+     "var": "--bright-purple-3",
+     "type": "color"
+    },
+    "4": {
+     "var": "--bright-purple-4",
+     "type": "color"
+    }
+   }
+  },
+  "chartreuse": {
+   "200": {
+    "var": "--chartreuse-200",
+    "type": "color"
+   },
+   "700": {
+    "var": "--chartreuse-700",
+    "type": "color"
+   }
+  },
+  "command": {
+   "blue": {
+    "400": {
+     "var": "--command-blue-400",
+     "type": "color"
+    }
+   },
+   "grey": {
+    "110": {
+     "var": "--command-grey-110",
+     "type": "color"
+    },
+    "140": {
+     "var": "--command-grey-140",
+     "type": "color"
+    },
+    "1500": {
+     "var": "--command-grey-1500",
+     "type": "color"
+    },
+    "1800": {
+     "var": "--command-grey-1800",
+     "type": "color"
+    },
+    "200": {
+     "var": "--command-grey-200",
+     "type": "color"
+    },
+    "400": {
+     "var": "--command-grey-400",
+     "type": "color"
+    }
+   }
+  },
+  "coral": {
+   "0": {
+    "var": "--coral-0",
+    "type": "color"
+   },
+   "1": {
+    "var": "--coral-1",
+    "type": "color"
+   },
+   "100": {
+    "var": "--coral-100",
+    "type": "color"
+   },
+   "1000": {
+    "var": "--coral-1000",
+    "type": "color"
+   },
+   "2": {
+    "var": "--coral-2",
+    "type": "color"
+   },
+   "20": {
+    "var": "--coral-20",
+    "type": "color"
+   },
+   "200": {
+    "var": "--coral-200",
+    "type": "color"
+   },
+   "3": {
+    "var": "--coral-3",
+    "type": "color"
+   },
+   "300": {
+    "var": "--coral-300",
+    "type": "color"
+   },
+   "4": {
+    "var": "--coral-4",
+    "type": "color"
+   },
+   "400": {
+    "var": "--coral-400",
+    "type": "color"
+   },
+   "5": {
+    "var": "--coral-5",
+    "type": "color"
+   },
+   "50": {
+    "var": "--coral-50",
+    "type": "color"
+   },
+   "500": {
+    "var": "--coral-500",
+    "type": "color"
+   },
+   "600": {
+    "var": "--coral-600",
+    "type": "color"
+   },
+   "700": {
+    "var": "--coral-700",
+    "type": "color"
+   },
+   "800": {
+    "var": "--coral-800",
+    "type": "color"
+   },
+   "900": {
+    "var": "--coral-900",
+    "type": "color"
+   },
+   "950": {
+    "var": "--coral-950",
+    "type": "color"
+   },
+   "980": {
+    "var": "--coral-980",
+    "type": "color"
+   },
+   "v2": {
+    "200": {
+     "var": "--coral-v2-200",
+     "type": "color"
+    },
+    "700": {
+     "var": "--coral-v2-700",
+     "type": "color"
+    }
+   }
+  },
+  "fontFamily": {
+   "mono": {
+    "var": "--fontFamily-mono",
+    "type": "fontFamily"
+   },
+   "print": {
+    "var": "--fontFamily-print",
+    "type": "fontFamily"
+   },
+   "ui": {
+    "value": "\"Segoe UI\",-apple-system,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",sans-serif",
+    "type": "fontFamily",
+    "source": "computed fontFamily of body/UI elements (raw/components-computed.json); the site paints Segoe UI",
+    "description": "The painted UI stack."
+   }
+  },
+  "fontSize": {
+   "base": {
+    "var": "--fontSize-base",
+    "type": "dimension"
+   },
+   "h1": {
+    "var": "--fontSize-h1",
+    "type": "number"
+   },
+   "h2": {
+    "var": "--fontSize-h2",
+    "type": "number"
+   },
+   "h3": {
+    "var": "--fontSize-h3",
+    "type": "number"
+   },
+   "h4": {
+    "var": "--fontSize-h4",
+    "type": "number"
+   },
+   "h5": {
+    "var": "--fontSize-h5",
+    "type": "number"
+   },
+   "h6": {
+    "var": "--fontSize-h6",
+    "type": "number"
+   },
+   "large": {
+    "var": "--fontSize-large",
+    "type": "dimension"
+   },
+   "larger": {
+    "var": "--fontSize-larger",
+    "type": "dimension"
+   },
+   "medium": {
+    "var": "--fontSize-medium",
+    "type": "dimension"
+   },
+   "regular": {
+    "var": "--fontSize-regular",
+    "type": "dimension"
+   },
+   "small": {
+    "var": "--fontSize-small",
+    "type": "dimension"
+   },
+   "smaller": {
+    "var": "--fontSize-smaller",
+    "type": "dimension"
+   },
+   "xl": {
+    "var": "--fontSize-xl",
+    "type": "number"
+   }
+  },
+  "fontWeight": {
+   "bold": {
+    "var": "--fontWeight-bold",
+    "type": "fontWeight"
+   },
+   "light": {
+    "var": "--fontWeight-light",
+    "type": "fontWeight"
+   },
+   "medium": {
+    "var": "--fontWeight-medium",
+    "type": "fontWeight"
+   },
+   "semibold": {
+    "var": "--fontWeight-semibold",
+    "type": "fontWeight"
+   },
+   "thin": {
+    "var": "--fontWeight-thin",
+    "type": "fontWeight"
+   }
+  },
+  "fuchsia": {
+   "200": {
+    "var": "--fuchsia-200",
+    "type": "color"
+   },
+   "700": {
+    "var": "--fuchsia-700",
+    "type": "color"
+   }
+  },
+  "glow": {
+   "blue": {
+    "var": "--glow-blue",
+    "type": "color"
+   },
+   "coral": {
+    "var": "--glow-coral",
+    "type": "color"
+   },
+   "gray": {
+    "var": "--glow-gray",
+    "type": "color"
+   },
+   "green": {
+    "var": "--glow-green",
+    "type": "color"
+   },
+   "purple": {
+    "var": "--glow-purple",
+    "type": "color"
+   },
+   "white": {
+    "var": "--glow-white",
+    "type": "color"
+   }
+  },
+  "gold": {
+   "1": {
+    "var": "--gold-1",
+    "type": "color"
+   },
+   "2": {
+    "var": "--gold-2",
+    "type": "color"
+   },
+   "3": {
+    "var": "--gold-3",
+    "type": "color"
+   },
+   "4": {
+    "var": "--gold-4",
+    "type": "color"
+   },
+   "5": {
+    "var": "--gold-5",
+    "type": "color"
+   }
+  },
+  "google": {
+   "sign": {
+    "up": {
+     "blue": {
+      "default": {
+       "var": "--google-sign-up-blue",
+       "type": "color"
+      },
+      "light": {
+       "var": "--google-sign-up-blue-light",
+       "type": "color"
+      }
+     }
+    }
+   }
+  },
+  "gray": {
+   "1": {
+    "var": "--gray-1",
+    "type": "color"
+   },
+   "10": {
+    "var": "--gray-10",
+    "type": "color"
+   },
+   "1a": {
+    "var": "--gray-1a",
+    "type": "color"
+   },
+   "2": {
+    "var": "--gray-2",
+    "type": "color"
+   },
+   "3": {
+    "var": "--gray-3",
+    "type": "color"
+   },
+   "4": {
+    "var": "--gray-4",
+    "type": "color"
+   },
+   "5": {
+    "var": "--gray-5",
+    "type": "color"
+   },
+   "6": {
+    "var": "--gray-6",
+    "type": "color"
+   },
+   "7": {
+    "var": "--gray-7",
+    "type": "color"
+   },
+   "8": {
+    "var": "--gray-8",
+    "type": "color"
+   },
+   "9": {
+    "var": "--gray-9",
+    "type": "color"
+   }
+  },
+  "green": {
+   "default": {
+    "var": "--green",
+    "type": "color"
+   },
+   "0": {
+    "var": "--green-0",
+    "type": "color"
+   },
+   "1": {
+    "var": "--green-1",
+    "type": "color"
+   },
+   "100": {
+    "var": "--green-100",
+    "type": "color"
+   },
+   "1000": {
+    "var": "--green-1000",
+    "type": "color"
+   },
+   "2": {
+    "var": "--green-2",
+    "type": "color"
+   },
+   "20": {
+    "var": "--green-20",
+    "type": "color"
+   },
+   "200": {
+    "var": "--green-200",
+    "type": "color"
+   },
+   "3": {
+    "var": "--green-3",
+    "type": "color"
+   },
+   "300": {
+    "var": "--green-300",
+    "type": "color"
+   },
+   "4": {
+    "var": "--green-4",
+    "type": "color"
+   },
+   "400": {
+    "var": "--green-400",
+    "type": "color"
+   },
+   "5": {
+    "var": "--green-5",
+    "type": "color"
+   },
+   "50": {
+    "var": "--green-50",
+    "type": "color"
+   },
+   "500": {
+    "var": "--green-500",
+    "type": "color"
+   },
+   "600": {
+    "var": "--green-600",
+    "type": "color"
+   },
+   "700": {
+    "var": "--green-700",
+    "type": "color"
+   },
+   "800": {
+    "var": "--green-800",
+    "type": "color"
+   },
+   "900": {
+    "var": "--green-900",
+    "type": "color"
+   },
+   "950": {
+    "var": "--green-950",
+    "type": "color"
+   },
+   "980": {
+    "var": "--green-980",
+    "type": "color"
+   },
+   "v2": {
+    "200": {
+     "var": "--green-v2-200",
+     "type": "color"
+    },
+    "700": {
+     "var": "--green-v2-700",
+     "type": "color"
+    }
+   }
+  },
+  "grid": {
+   "columns": {
+    "var": "--grid-columns",
+    "type": "number"
+   },
+   "gutter": {
+    "width": {
+     "var": "--grid-gutter-width",
+     "type": "dimension"
+    }
+   }
+  },
+  "media": {
+   "large": {
+    "default": {
+     "var": "--media-large",
+     "type": "number"
+    },
+    "max": {
+     "var": "--media-large-max",
+     "type": "other"
+    },
+    "min": {
+     "var": "--media-large-min",
+     "type": "other"
+    }
+   },
+   "medium": {
+    "default": {
+     "var": "--media-medium",
+     "type": "number"
+    },
+    "max": {
+     "var": "--media-medium-max",
+     "type": "other"
+    },
+    "min": {
+     "var": "--media-medium-min",
+     "type": "other"
+    }
+   },
+   "small": {
+    "default": {
+     "var": "--media-small",
+     "type": "number"
+    },
+    "max": {
+     "var": "--media-small-max",
+     "type": "other"
+    },
+    "min": {
+     "var": "--media-small-min",
+     "type": "other"
+    }
+   },
+   "xlarge": {
+    "default": {
+     "var": "--media-xlarge",
+     "type": "number"
+    },
+    "max": {
+     "var": "--media-xlarge-max",
+     "type": "other"
+    },
+    "min": {
+     "var": "--media-xlarge-min",
+     "type": "other"
+    }
+   },
+   "xsmall": {
+    "default": {
+     "var": "--media-xsmall",
+     "type": "number"
+    },
+    "max": {
+     "var": "--media-xsmall-max",
+     "type": "other"
+    },
+    "min": {
+     "var": "--media-xsmall-min",
+     "type": "other"
+    }
+   },
+   "xxlarge": {
+    "default": {
+     "var": "--media-xxlarge",
+     "type": "number"
+    },
+    "min": {
+     "var": "--media-xxlarge-min",
+     "type": "other"
+    }
+   },
+   "xxxlarge": {
+    "default": {
+     "var": "--media-xxxlarge",
+     "type": "number"
+    },
+    "min": {
+     "var": "--media-xxxlarge-min",
+     "type": "other"
+    }
+   }
+  },
+  "orange": {
+   "1": {
+    "var": "--orange-1",
+    "type": "color"
+   },
+   "2": {
+    "var": "--orange-2",
+    "type": "color"
+   },
+   "200": {
+    "var": "--orange-200",
+    "type": "color"
+   },
+   "3": {
+    "var": "--orange-3",
+    "type": "color"
+   }
+  },
+  "purple": {
+   "0": {
+    "var": "--purple-0",
+    "type": "color"
+   },
+   "1": {
+    "var": "--purple-1",
+    "type": "color"
+   },
+   "100": {
+    "var": "--purple-100",
+    "type": "color"
+   },
+   "1000": {
+    "var": "--purple-1000",
+    "type": "color"
+   },
+   "2": {
+    "var": "--purple-2",
+    "type": "color"
+   },
+   "20": {
+    "var": "--purple-20",
+    "type": "color"
+   },
+   "200": {
+    "var": "--purple-200",
+    "type": "color"
+   },
+   "3": {
+    "var": "--purple-3",
+    "type": "color"
+   },
+   "300": {
+    "var": "--purple-300",
+    "type": "color"
+   },
+   "4": {
+    "var": "--purple-4",
+    "type": "color"
+   },
+   "400": {
+    "var": "--purple-400",
+    "type": "color"
+   },
+   "5": {
+    "var": "--purple-5",
+    "type": "color"
+   },
+   "50": {
+    "var": "--purple-50",
+    "type": "color"
+   },
+   "500": {
+    "var": "--purple-500",
+    "type": "color"
+   },
+   "600": {
+    "var": "--purple-600",
+    "type": "color"
+   },
+   "700": {
+    "var": "--purple-700",
+    "type": "color"
+   },
+   "800": {
+    "var": "--purple-800",
+    "type": "color"
+   },
+   "900": {
+    "var": "--purple-900",
+    "type": "color"
+   },
+   "950": {
+    "var": "--purple-950",
+    "type": "color"
+   },
+   "980": {
+    "var": "--purple-980",
+    "type": "color"
+   },
+   "v2": {
+    "200": {
+     "var": "--purple-v2-200",
+     "type": "color"
+    }
+   }
+  },
+  "red": {
+   "var": "--red",
+   "type": "color"
+  },
+  "shadow": {
+   "10": {
+    "var": "--shadow-10",
+    "type": "other"
+   },
+   "20": {
+    "var": "--shadow-20",
+    "type": "other"
+   },
+   "30": {
+    "var": "--shadow-30",
+    "type": "other"
+   },
+   "40": {
+    "var": "--shadow-40",
+    "type": "other"
+   },
+   "color": {
+    "var": "--shadow-color",
+    "type": "color"
+   }
+  },
+  "spacing": {
+   "0": {
+    "var": "--spacing-0",
+    "type": "number"
+   },
+   "1": {
+    "var": "--spacing-1",
+    "type": "dimension"
+   },
+   "10": {
+    "var": "--spacing-10",
+    "type": "dimension"
+   },
+   "1half": {
+    "var": "--spacing-1half",
+    "type": "dimension"
+   },
+   "1plus": {
+    "var": "--spacing-1plus",
+    "type": "dimension"
+   },
+   "2": {
+    "var": "--spacing-2",
+    "type": "dimension"
+   },
+   "3": {
+    "var": "--spacing-3",
+    "type": "dimension"
+   },
+   "4": {
+    "var": "--spacing-4",
+    "type": "dimension"
+   },
+   "5": {
+    "var": "--spacing-5",
+    "type": "dimension"
+   },
+   "6": {
+    "var": "--spacing-6",
+    "type": "dimension"
+   },
+   "7": {
+    "var": "--spacing-7",
+    "type": "dimension"
+   },
+   "8": {
+    "var": "--spacing-8",
+    "type": "dimension"
+   },
+   "9": {
+    "var": "--spacing-9",
+    "type": "dimension"
+   }
+  },
+  "teal": {
+   "1": {
+    "var": "--teal-1",
+    "type": "color"
+   },
+   "2": {
+    "var": "--teal-2",
+    "type": "color"
+   },
+   "3": {
+    "var": "--teal-3",
+    "type": "color"
+   },
+   "4": {
+    "var": "--teal-4",
+    "type": "color"
+   },
+   "5": {
+    "var": "--teal-5",
+    "type": "color"
+   }
+  },
+  "transition": {
+   "duration": {
+    "default": {
+     "var": "--transition-duration",
+     "type": "duration"
+    },
+    "long": {
+     "var": "--transition-duration-long",
+     "type": "duration"
+    },
+    "med": {
+     "var": "--transition-duration-med",
+     "type": "duration"
+    },
+    "short": {
+     "var": "--transition-duration-short",
+     "type": "duration"
+    },
+    "xlong": {
+     "var": "--transition-duration-xlong",
+     "type": "duration"
+    }
+   }
+  },
+  "white": {
+   "var": "--white",
+   "type": "color"
+  },
+  "zIndex": {
+   "1": {
+    "var": "--zIndex-1",
+    "type": "number"
+   },
+   "10": {
+    "var": "--zIndex-10",
+    "type": "number"
+   },
+   "2": {
+    "var": "--zIndex-2",
+    "type": "number"
+   },
+   "3": {
+    "var": "--zIndex-3",
+    "type": "number"
+   },
+   "4": {
+    "var": "--zIndex-4",
+    "type": "number"
+   },
+   "5": {
+    "var": "--zIndex-5",
+    "type": "number"
+   },
+   "6": {
+    "var": "--zIndex-6",
+    "type": "number"
+   },
+   "7": {
+    "var": "--zIndex-7",
+    "type": "number"
+   },
+   "8": {
+    "var": "--zIndex-8",
+    "type": "number"
+   },
+   "9": {
+    "var": "--zIndex-9",
+    "type": "number"
+   }
+  },
+  "typography": {
+   "display": {
+    "$value": {
+     "fontFamily": "{fontFamily.ui}",
+     "fontSize": "102px",
+     "lineHeight": "91.8px",
+     "fontWeight": 300,
+     "letterSpacing": "-2.55px"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of hero-title default (raw/components-computed.json); the h1 display line"
+    }
+   },
+   "heading": {
+    "$value": {
+     "fontFamily": "{fontFamily.ui}",
+     "fontSize": "54px",
+     "lineHeight": "54px",
+     "fontWeight": 300,
+     "letterSpacing": "-1.08px"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of section-title default (raw/components-computed.json); the h2 section heading"
+    }
+   },
+   "body": {
+    "$value": {
+     "fontFamily": "{fontFamily.ui}",
+     "fontSize": "14px",
+     "lineHeight": "21px",
+     "fontWeight": 500,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of nav-link default (raw/components-computed.json); the UI line"
+    }
+   },
+   "button": {
+    "$value": {
+     "fontFamily": "{fontFamily.ui}",
+     "fontSize": "14px",
+     "lineHeight": "21px",
+     "fontWeight": 500,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of nav-cta default (raw/components-computed.json); the primary CTA label"
+    }
+   },
+   "small": {
+    "$value": {
+     "fontFamily": "{fontFamily.ui}",
+     "fontSize": "30px",
+     "lineHeight": "36px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of caps-label default (raw/components-computed.json); the caps eyebrow label"
+    }
+   }
+  }
+ },
+ "light": {
+  "a11y": {
+   "focus": {
+    "black": {
+     "var": "--lightmode-a11y-focus-black",
+     "type": "color"
+    },
+    "primary": {
+     "var": "--lightmode-a11y-focus-primary",
+     "type": "color"
+    },
+    "white": {
+     "var": "--lightmode-a11y-focus-white",
+     "type": "color"
+    }
+   }
+  },
+  "accent": {
+   "var": "--lightmode-button-primary",
+   "type": "color",
+   "description": "The action fill."
+  },
+  "bg": {
+   "default": {
+    "var": "--lightmode-bg",
+    "type": "color"
+   },
+   "active": {
+    "var": "--lightmode-bg-active",
+    "type": "color"
+   },
+   "hover": {
+    "var": "--lightmode-bg-hover",
+    "type": "color"
+   },
+   "inverted": {
+    "var": "--lightmode-bg-inverted",
+    "type": "color"
+   },
+   "med": {
+    "default": {
+     "var": "--lightmode-bg-med",
+     "type": "color"
+    },
+    "active": {
+     "var": "--lightmode-bg-med-active",
+     "type": "color"
+    },
+    "hover": {
+     "var": "--lightmode-bg-med-hover",
+     "type": "color"
+    }
+   },
+   "strong": {
+    "default": {
+     "var": "--lightmode-bg-strong",
+     "type": "color"
+    },
+    "active": {
+     "var": "--lightmode-bg-strong-active",
+     "type": "color"
+    },
+    "hover": {
+     "var": "--lightmode-bg-strong-hover",
+     "type": "color"
+    }
+   }
+  },
+  "border": {
+   "var": "--lightmode-border",
+   "type": "color",
+   "description": "Default hairline."
+  },
+  "button": {
+   "disabled": {
+    "var": "--lightmode-button-disabled",
+    "type": "color"
+   },
+   "primary": {
+    "default": {
+     "var": "--lightmode-button-primary",
+     "type": "color"
+    },
+    "hover": {
+     "var": "--lightmode-button-primary-hover",
+     "type": "color"
+    }
+   },
+   "secondary": {
+    "default": {
+     "var": "--lightmode-button-secondary",
+     "type": "color"
+    },
+    "hover": {
+     "var": "--lightmode-button-secondary-hover",
+     "type": "color"
+    }
+   },
+   "text": {
+    "disabled": {
+     "var": "--lightmode-button-text-disabled",
+     "type": "color"
+    },
+    "primary": {
+     "default": {
+      "var": "--lightmode-button-text-primary",
+      "type": "color"
+     },
+     "hover": {
+      "var": "--lightmode-button-text-primary-hover",
+      "type": "color"
+     }
+    },
+    "secondary": {
+     "default": {
+      "var": "--lightmode-button-text-secondary",
+      "type": "color"
+     },
+     "hover": {
+      "var": "--lightmode-button-text-secondary-hover",
+      "type": "color"
+     }
+    }
+   }
+  },
+  "error": {
+   "var": "--lightmode-error",
+   "type": "color"
+  },
+  "icon": {
+   "var": "--lightmode-icon",
+   "type": "color",
+   "description": "Icon ink."
+  },
+  "inline": {
+   "link": {
+    "disabled": {
+     "var": "--lightmode-inline-link-disabled",
+     "type": "color"
+    },
+    "hover": {
+     "var": "--lightmode-inline-link-hover",
+     "type": "color"
+    },
+    "text": {
+     "var": "--lightmode-inline-link-text",
+     "type": "color"
+    }
+   }
+  },
+  "link": {
+   "var": "--lightmode-link-text",
+   "type": "color",
+   "description": "Inline link ink."
+  },
+  "success": {
+   "var": "--lightmode-success",
+   "type": "color",
+   "description": "Success green."
+  },
+  "text": {
+   "var": "--lightmode-text",
+   "type": "color",
+   "description": "Body ink."
+  },
+  "warning": {
+   "var": "--lightmode-warning",
+   "type": "color",
+   "description": "Warning amber."
+  },
+  "page": {
+   "var": "--lightmode-bg",
+   "type": "color",
+   "description": "The page field."
+  },
+  "surface": {
+   "var": "--lightmode-bg-med",
+   "type": "color",
+   "description": "The grey panel surface."
+  },
+  "surface-strong": {
+   "var": "--lightmode-bg-strong",
+   "type": "color",
+   "description": "The stronger panel."
+  },
+  "surface-hover": {
+   "var": "--lightmode-bg-med-hover",
+   "type": "color",
+   "description": "The hover wash on panels."
+  },
+  "text-strong": {
+   "var": "--lightmode-text-strong",
+   "type": "color",
+   "description": "The strong ink."
+  },
+  "muted": {
+   "var": "--lightmode-text-weak",
+   "type": "color",
+   "description": "Secondary ink."
+  },
+  "border-strong": {
+   "var": "--lightmode-border-strong",
+   "type": "color",
+   "description": "Stronger hairline."
+  },
+  "accent-hover": {
+   "var": "--lightmode-button-primary-hover",
+   "type": "color",
+   "description": "The lifted action fill."
+  },
+  "on-accent": {
+   "var": "--lightmode-button-text-primary",
+   "type": "color",
+   "description": "Text on primary buttons."
+  },
+  "danger": {
+   "var": "--lightmode-error",
+   "type": "color",
+   "description": "Error red."
+  },
+  "link-hover": {
+   "var": "--lightmode-link-hover",
+   "type": "color",
+   "description": "Link hover ink."
+  },
+  "focus-ring": {
+   "var": "--lightmode-a11y-focus-primary",
+   "type": "color",
+   "description": "The a11y focus ring colour."
+  },
+  "field": {
+   "var": "--lightmode-button-secondary",
+   "type": "color",
+   "description": "The secondary fill (white fields/buttons)."
+  },
+  "disabled": {
+   "var": "--lightmode-button-disabled",
+   "type": "color",
+   "description": "Disabled control fill."
+  },
+  "text-disabled": {
+   "var": "--lightmode-link-disabled",
+   "type": "color",
+   "description": "Disabled ink."
+  }
+ },
+ "dark": {
+  "a11y": {
+   "focus": {
+    "black": {
+     "var": "--darkmode-a11y-focus-black",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    },
+    "primary": {
+     "var": "--darkmode-a11y-focus-primary",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    },
+    "white": {
+     "var": "--darkmode-a11y-focus-white",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    }
+   }
+  },
+  "accent": {
+   "var": "--darkmode-button-primary",
+   "type": "color",
+   "description": "The action fill.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "bg": {
+   "default": {
+    "var": "--darkmode-bg",
+    "type": "color",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "active": {
+    "var": "--darkmode-bg-active",
+    "type": "color",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "hover": {
+    "var": "--darkmode-bg-hover",
+    "type": "color",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "inverted": {
+    "var": "--darkmode-bg-inverted",
+    "type": "color",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "med": {
+    "default": {
+     "var": "--darkmode-bg-med",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    },
+    "active": {
+     "var": "--darkmode-bg-med-active",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    },
+    "hover": {
+     "var": "--darkmode-bg-med-hover",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    }
+   },
+   "strong": {
+    "default": {
+     "var": "--darkmode-bg-strong",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    },
+    "active": {
+     "var": "--darkmode-bg-strong-active",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    },
+    "hover": {
+     "var": "--darkmode-bg-strong-hover",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    }
+   }
+  },
+  "border": {
+   "var": "--darkmode-border",
+   "type": "color",
+   "description": "Default hairline.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "button": {
+   "disabled": {
+    "var": "--darkmode-button-disabled",
+    "type": "color",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "primary": {
+    "default": {
+     "var": "--darkmode-button-primary",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    },
+    "hover": {
+     "var": "--darkmode-button-primary-hover",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    }
+   },
+   "secondary": {
+    "default": {
+     "var": "--darkmode-button-secondary",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    },
+    "hover": {
+     "var": "--darkmode-button-secondary-hover",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    }
+   },
+   "text": {
+    "disabled": {
+     "var": "--darkmode-button-text-disabled",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    },
+    "primary": {
+     "default": {
+      "var": "--darkmode-button-text-primary",
+      "type": "color",
+      "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+     },
+     "hover": {
+      "var": "--darkmode-button-text-primary-hover",
+      "type": "color",
+      "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+     }
+    },
+    "secondary": {
+     "default": {
+      "var": "--darkmode-button-text-secondary",
+      "type": "color",
+      "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+     },
+     "hover": {
+      "var": "--darkmode-button-text-secondary-hover",
+      "type": "color",
+      "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+     }
+    }
+   }
+  },
+  "error": {
+   "var": "--darkmode-error",
+   "type": "color",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "icon": {
+   "var": "--darkmode-icon",
+   "type": "color",
+   "description": "Icon ink.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "inline": {
+   "inline": {
+    "link": {
+     "text": {
+      "var": "--darkmode-inline-inline-link-text",
+      "type": "color",
+      "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+     }
+    }
+   },
+   "link": {
+    "disabled": {
+     "var": "--darkmode-inline-link-disabled",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    },
+    "hover": {
+     "var": "--darkmode-inline-link-hover",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    }
+   }
+  },
+  "link": {
+   "var": "--darkmode-link-text",
+   "type": "color",
+   "description": "Inline link ink.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "success": {
+   "var": "--darkmode-success",
+   "type": "color",
+   "description": "Success green.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "text": {
+   "var": "--darkmode-text",
+   "type": "color",
+   "description": "Body ink.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "warning": {
+   "var": "--darkmode-warning",
+   "type": "color",
+   "description": "Warning amber.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "page": {
+   "var": "--darkmode-bg",
+   "type": "color",
+   "description": "The page field.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "surface": {
+   "var": "--darkmode-bg-med",
+   "type": "color",
+   "description": "The grey panel surface.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "surface-strong": {
+   "var": "--darkmode-bg-strong",
+   "type": "color",
+   "description": "The stronger panel.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "surface-hover": {
+   "var": "--darkmode-bg-med-hover",
+   "type": "color",
+   "description": "The hover wash on panels.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "text-strong": {
+   "var": "--darkmode-text-strong",
+   "type": "color",
+   "description": "The strong ink.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "muted": {
+   "var": "--darkmode-text-weak",
+   "type": "color",
+   "description": "Secondary ink.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "border-strong": {
+   "var": "--darkmode-border-strong",
+   "type": "color",
+   "description": "Stronger hairline.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "accent-hover": {
+   "var": "--darkmode-button-primary-hover",
+   "type": "color",
+   "description": "The lifted action fill.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "on-accent": {
+   "var": "--darkmode-button-text-primary",
+   "type": "color",
+   "description": "Text on primary buttons.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "danger": {
+   "var": "--darkmode-error",
+   "type": "color",
+   "description": "Error red.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "link-hover": {
+   "var": "--darkmode-link-hover",
+   "type": "color",
+   "description": "Link hover ink.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "focus-ring": {
+   "var": "--darkmode-a11y-focus-primary",
+   "type": "color",
+   "description": "The a11y focus ring colour.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "field": {
+   "var": "--darkmode-button-secondary",
+   "type": "color",
+   "description": "The secondary fill (white fields/buttons).",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "disabled": {
+   "var": "--darkmode-button-disabled",
+   "type": "color",
+   "description": "Disabled control fill.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  },
+  "text-disabled": {
+   "var": "--darkmode-link-disabled",
+   "type": "color",
+   "description": "Disabled ink.",
+   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  }
+ },
+ "component": {
+  "control": {
+   "height": {
+    "type": "dimension",
+    "value": "44px",
+    "source": "computed height of nav-cta default (raw/components-computed.json)",
+    "description": "The primary CTA height."
+   },
+   "buttonSecondary": {
+    "type": "dimension",
+    "value": "44px",
+    "source": "computed height of nav-sales default (raw/components-computed.json)",
+    "description": "The secondary CTA height."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "100px",
+    "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)",
+    "description": "CTA corner radius."
+   },
+   "field": {
+    "type": "dimension",
+    "value": "50px",
+    "source": "computed height of gate-field default (raw/components-computed.json)",
+    "description": "The gate field height."
+   },
+   "iconButton": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of m-menu-button default (raw/components-computed.json)",
+    "description": "The mobile menu button."
+   }
+  },
+  "nav": {
+   "height": {
+    "type": "dimension",
+    "value": "44px",
+    "source": "computed height of nav-link default (raw/components-computed.json)",
+    "description": "Nav link height."
+   }
+  },
+  "shell": {
+   "header": {
+    "type": "dimension",
+    "value": "68px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The nav block at 1440."
+   }
+  },
+  "plan": {
+   "height": {
+    "type": "dimension",
+    "value": "974px",
+    "source": "computed height of plan-card default (raw/components-computed.json)",
+    "description": "A pricing plan column."
+   }
+  },
+  "footer": {
+   "linkHeight": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of footer-link default (raw/components-computed.json)",
+    "description": "Footer link rows."
+   }
+  },
+  "menu": {
+   "linkHeight": {
+    "type": "dimension",
+    "value": "61px",
+    "source": "computed height of m-nav-link default (raw/components-computed.json)",
+    "description": "Mobile menu rows."
+   }
+  }
+ }
+}

@@ -394,6 +394,23 @@
         }
       ]
     },
+    "asana.com": {
+      "catalog": [
+        {
+          "name": "Asana",
+          "domain": "asana.com",
+          "id": 69
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "asana",
+          "name": "Asana",
+          "url": "https://asana.com",
+          "name_match": true
+        }
+      ]
+    },
     "asos.com": {
       "catalog": [
         {
@@ -861,13 +878,6 @@
         "name": "Around",
         "domain": "around.co",
         "id": 129
-      }
-    ],
-    "asana.com": [
-      {
-        "name": "Asana",
-        "domain": "asana.com",
-        "id": 69
       }
     ],
     "awwwards.com": [
