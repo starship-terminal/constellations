@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 82,
-    "system_domains": 74,
-    "matched_domains": 50,
-    "missing_domains": 383,
+    "system_packages": 83,
+    "system_domains": 75,
+    "matched_domains": 51,
+    "missing_domains": 382,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -547,6 +547,23 @@
         }
       ]
     },
+    "biosites.com": {
+      "catalog": [
+        {
+          "name": "Bio Sites",
+          "domain": "biosites.com",
+          "id": 765
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "biosites",
+          "name": "Bio Sites",
+          "url": "https://biosites.com",
+          "name_match": false
+        }
+      ]
+    },
     "bloomberg.com": {
       "catalog": [
         {
@@ -936,13 +953,6 @@
         "name": "Bento",
         "domain": "bento.me",
         "id": 284
-      }
-    ],
-    "biosites.com": [
-      {
-        "name": "Bio Sites",
-        "domain": "biosites.com",
-        "id": 765
       }
     ],
     "buymeacoffee.com": [
