@@ -428,6 +428,23 @@
         }
       ]
     },
+    "avnier.com": {
+      "catalog": [
+        {
+          "name": "AVNIER",
+          "domain": "avnier.com",
+          "id": 896
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "avnier",
+          "name": "Avnier",
+          "url": "https://avnier.com",
+          "name_match": true
+        }
+      ]
+    },
     "ballparkhq.com": {
       "catalog": [
         {
@@ -834,13 +851,6 @@
         "name": "Asana",
         "domain": "asana.com",
         "id": 69
-      }
-    ],
-    "avnier.com": [
-      {
-        "name": "AVNIER",
-        "domain": "avnier.com",
-        "id": 896
       }
     ],
     "awwwards.com": [
