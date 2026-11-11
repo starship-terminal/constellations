@@ -356,11 +356,11 @@
     "source": "computed backgroundColor of nav-item hover (raw/components-computed.json)",
     "description": "The deep-navy fill a category button takes on hover."
    },
-   "link": {
+   "anchor-inherit": {
     "value": "#0000ee",
     "type": "color",
     "source": "computed color of tile-name hover (raw/components-computed.json)",
-    "description": "Unstyled anchor blue on product links."
+    "description": "The wrapper anchor's unused inherited blue — the visible product link text is text.primary #2d2d2d."
    },
    "hover-wash": {
     "value": "#f5f5f5",
@@ -383,14 +383,6 @@
   }
  },
  "light": {
-  "accent": {
-   "purple": {
-    "var": "--1ffq8ns",
-    "type": "color",
-    "source": "css-var --1ffq8ns",
-    "description": "#6f5cff app/promo purple accent — resolved from --1ffq8ns."
-   }
-  },
   "action": {
    "primary": {
     "var": "--1e93okh",
@@ -411,20 +403,6 @@
     "type": "color",
     "source": "css-var --na3s62",
     "description": "#dddddd hairline on pills, buttons, fields — resolved from --na3s62."
-   }
-  },
-  "status": {
-   "error": {
-    "var": "--1mii22u",
-    "type": "color",
-    "source": "css-var --1mii22u",
-    "description": "ASOS's bright red — resolved from --1mii22u."
-   },
-   "sale": {
-    "var": "--1xvrmqx",
-    "type": "color",
-    "source": "css-var --1xvrmqx",
-    "description": "#d01345 sale/promo red — resolved from --1xvrmqx."
    }
   },
   "surface": {

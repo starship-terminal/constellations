@@ -29,6 +29,7 @@ const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 const URLS = { home: '/', women: '/women/', plp: '/women/new-in/new-in-clothing/cat/?cid=2623', pdp: '/women/new-in/new-in-clothing/cat/?cid=2623', bag: '/bag', saved: '/saved-lists/', account: 'https://my.asos.com/my-account' };
 let page, cdp, current, context, run;
+let activeCtx; // the context of the current page; closed when the next route opens
 const touched = new Set();
 const listed = new Map();
 
@@ -42,9 +43,14 @@ async function blocked() {
 async function newPage(key, { mobile = false, wait = 8000 } = {}) {
   current = key;
   const b = context.browser();
+  // Close the previous route's context first: leaving every context and page
+  // running until the whole pass ends keeps each route's scripts, images and
+  // timers alive while later routes are measured.
+  if (activeCtx) { await activeCtx.close().catch(() => {}); activeCtx = undefined; }
   const ctx = await b.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-GB' }
     : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-GB' });
+  activeCtx = ctx;
   await patch(ctx);
   page = await ctx.newPage();
   cdp = await ctx.newCDPSession(page);
@@ -54,7 +60,7 @@ async function newPage(key, { mobile = false, wait = 8000 } = {}) {
   log('open', key, mobile ? '(mobile)' : '');
   const target = URLS[key];
   await open(page, /^https?:/.test(target) ? target : BASE + target, { wait });
-  if (await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); return false; }
+  if (await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); activeCtx = undefined; return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   await closePromo(page);
   return true;
@@ -273,7 +279,11 @@ async function women() {
   await S('hub-banner', banner, ['default'], { group: g, title: 'Hub promo banner', desc: 'The dark "SINGLES\' DAY — UP TO 40% OFF" banner under the header.', sel: 'leaf container:has-text("UP TO 40% OFF")' }, { noScroll: true });
   await S('hub-title', q('h2').filter({ hasText: /the latest drops/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Hub section title', desc: '"The latest drops" — the hub\'s visible section heading (the h1 is screen-reader only).', sel: 'h2:has-text("The latest drops")' });
   await S('hub-tile', q('a.hero__link').filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Hub hero tile', desc: 'The "THE PARTY EDIT / SHOP NOW" campaign tile.', sel: 'a.hero__link' });
-  await S('hub-card', q('main a').filter({ has: q('h2') }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Hub rail card', desc: 'A product card in the "latest drops" rail.', sel: 'main a:has(h2)' });
+  // Scoped to the section carrying the "The latest drops" heading: a bare
+  // `main a:has(h2)` climbs out of the rail and lands on the promo banner.
+  const railHead = q('h2').filter({ hasText: /the latest drops/i }).filter({ visible: true }).first();
+  const rail = railHead.locator('xpath=ancestor::*[(self::section or self::div) and .//a[.//img]][1]');
+  await S('hub-card', rail.locator('a').filter({ has: q('img') }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Hub rail card', desc: 'A card in the "latest drops" rail.', sel: 'section:has(h2 "The latest drops") a:has(img)' });
   save();
 }
 
@@ -399,7 +409,12 @@ async function mobile() {
   await S('m-header', q('header').first(), ['default'], { group: g, title: 'Mobile header', sel: 'header' }, { noScroll: true });
   const menuBtn = q(tid('burger-menu-button')).first();
   await S('m-menu-button', menuBtn, B4, { group: g, title: 'Mobile menu button', sel: tid('burger-menu-button') }, { noScroll: true });
-  await S('m-menu-open', menuBtn, ['opened'], { group: g, title: 'Mobile menu, open', desc: 'The button after its own toggle; the open drawer shows in the crop.', sel: tid('burger-menu-button') }, { noScroll: true });
+  // The button is measured, but the crop is the opened side panel: the
+  // data-testid="sidepanel" portal's fixed 320x844 child (the drawer itself is
+  // a hashed-class div, so the testid portal is the stable handle). A miss
+  // records no crop.
+  const drawer = q(tid('sidepanel')).locator('> div').filter({ visible: true }).first();
+  await S('m-menu-open', menuBtn, ['opened'], { group: g, title: 'Mobile menu, open', desc: 'The button after its own toggle; the crop is the open drawer, not the button.', sel: tid('burger-menu-button') }, { noScroll: true, cropLoc: drawer });
   const mLink = q(tid('menu-item')).filter({ visible: true }).nth(1);
   await S('m-nav-link', mLink, ['default'], { group: g, title: 'Mobile nav link', desc: 'A category row inside the opened side panel (NEW IN, CLOTHING…).', sel: tid('menu-item') }, { noScroll: true });
   await S('m-floor-tab', q(tid('women-floor')).filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile floor tab', desc: 'The WOMEN tab at the top of the open side panel.', sel: tid('women-floor') }, { noScroll: true });

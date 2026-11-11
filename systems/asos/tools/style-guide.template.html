@@ -112,6 +112,10 @@ table.cmp td, table.cmp th { border: 1px solid var(--border-default, #ddd); padd
   <p class="lead">The storefront is nearly achromatic — black chrome on white, <code>#2d2d2d</code> ink, <code>#dddddd</code> hairlines — then one loud action green (<code>#018849</code>, hover <code>#006637</code>), the light-blue promo band (<code>#cde2f5</code>) and a small accent family for sale, error and app promos. Swatches list the declared var each alias resolves through.</p>
   <div id="roles-out"></div>
 
+  <h2 class="sh">Type</h2>
+  <p class="lead">Futura PT (book 400, demi 500, bold 700) everywhere, the older FuturaStd stack on promo furniture, a 6-step measured size scale (10.5625–24px) and a 6-step tracking scale — Futura PT is licensed and not loaded here, so the named stacks below are the token values, not the rendered face.</p>
+  <div id="type-out"></div>
+
   <h2 class="sh">Spacing and radius</h2>
   <p class="lead">No declared spacing scale — ASOS composes layout in component CSS. Corners are the signature: square (<code>0px</code>) on every button, pill, field and tile; only icon-only buttons go fully round (<code>50%</code>/<code>100px</code>). No shadows anywhere; depth comes from fills alone.</p>
   <div id="spacing-out" class="kv"></div>
@@ -167,9 +171,22 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 
 (function meas() {
   let m = '';
-  for (const [n, t] = flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  const f = TOK.core.font || {};
+  let h = '';
+  for (const [n, t] of flat(f.family || {}, 'font.family.')) h += `<div class="sw"><span class="dot" style="border-radius:4px"><i style="background:var(--text-primary,#2d2d2d);border-radius:4px"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+  if (h) h = `<div class="pal-h">font.family</div><div class="pal">${h}</div>`;
+  let m = '';
+  for (const g of ['weight', 'size', 'tracking'])
+    for (const [n, t] of flat(f[g] || {}, `font.${g}.`)) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  h += `<div class="pal-h">font.weight / font.size / font.tracking</div><div class="kv">${m}</div>`;
+  const out = $('#type-out');
+  if (out) out.innerHTML = h;
 })();
 </script>
 </body>

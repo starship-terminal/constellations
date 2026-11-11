@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from asos.com on 2026-11-10 by `tools/capture/public/measure.mjs`, signed out, in headed Chrome at 1440 x 900 (the Mobile group at 390 x 844) in the site's one light theme — Akamai 403s headless browsers — with the OneTrust consent dialog hidden (never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from asos.com on 2026-11-11 by `tools/capture/public/measure.mjs`, signed out, in headed Chrome at 1440 x 900 (the Mobile group at 390 x 844) in the site's one light theme — Akamai 403s headless browsers — with the OneTrust consent dialog hidden (never answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -600,26 +600,25 @@ Crops: `hub-banner-default.png`.
 
 #### hub-card
 
-Hub rail card. A product card in the "latest drops" rail.
+Hub rail card. A card in the "latest drops" rail.
 
-Page: women. Selector: `main a:has(h2)`. States: default, hover.
+Page: women. Selector: `section:has(h2 "The latest drops") a:has(img)`. States: default, hover.
 
 | Property | default | hover |
 |---|---|---|
-| Size (w x h) | 446.69 x 152.78 | = |
+| Size (w x h) | 360 x 543.91 | = |
 | Padding | 0px | = |
 | Border | none | = |
 | Radius | 0px | = |
 | Background | transparent | = |
 | Box shadow | none | = |
 | Outline | none | = |
-| Font | futura-pt 16px/16px 400 | = |
+| Font | futura-pt 12px/12px 400 | = |
 | Letter spacing | normal | = |
 | Colour | #000000 | = |
-| Text node | h2.aria-invisible: futura-pt 16px/16px 400, #ffffff | = |
+| Text node | h2.product__name: futura-pt 16px/16px 400, #2d2d2d, ls 0.8px | = |
 | Transition | none | = |
 | Cursor | pointer | = |
-| Painted layers | div.flexible-banner__background 1440.0x200.8 bg #2d2d2d; mark 92.2x39.3 border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff | = |
 | How | at rest | mouse hover |
 
 Crops: `hub-card-default.png`, `hub-card-hover.png`.
@@ -1712,7 +1711,7 @@ Crops: `m-menu-button-default.png`, `m-menu-button-hover.png`, `m-menu-button-fo
 
 #### m-menu-open
 
-Mobile menu, open. The button after its own toggle; the open drawer shows in the crop.
+Mobile menu, open. The button after its own toggle; the crop is the open drawer, not the button.
 
 Page: home. Selector: `[data-testid="burger-menu-button"]`. States: opened.
 
@@ -1839,6 +1838,6 @@ Crops: `m-feature-tile-default.png`.
 
 ## Transitions declared in the readable stylesheets
 
-appwrite.io's bundle is served cross-origin from cdn.appwrite.io, so this list holds only what the CSSOM could read on each page (inline styles and same-origin sheets); the per-state Transition rows above are computed values and cover the bundle's rules.
+asos.com serves its sitechrome and content-ui-library sheets from www.asos.com itself, so the CSSOM could read nearly every rule on each page; only the Font Awesome CDN sheet (use.fontawesome.com) is cross-origin and invisible. The per-state Transition rows above are computed values and cover those rules too.
 
 - home: `opacity 0.3s linear`, `background-color 0.3s`, `opacity 0.3s ease-in`, `transform 0.2s`, `left 0.25s ease-out`, `opacity 0.4s`, `margin-left 0.5s ease-in-out`, `background-color 0.4s, border-color 0.4s, color 0.4s ease-in-out`, `height 0.5s`, `opacity 300ms`, `transform 200ms, right 200ms`, `opacity 0.3s`

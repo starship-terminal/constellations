@@ -22,9 +22,11 @@ const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
 const wait = (p, ms) => p.waitForTimeout(ms);
 
-async function lazyScroll(p) {
+// Scrolls far enough to trigger lazy loading, but never past maxY: on an
+// unbounded page the scroll target is the tile cap, not the reported height.
+async function lazyScroll(p, maxY = Infinity) {
   const h = await p.evaluate(() => document.documentElement.scrollHeight);
-  for (let y = 0; y < h; y += 600) { await p.evaluate((y) => scrollTo(0, y), y); await wait(p, 200); }
+  for (let y = 0; y < Math.min(h, maxY); y += 600) { await p.evaluate((y) => scrollTo(0, y), y); await wait(p, 200); }
   await p.evaluate(() => scrollTo(0, 0)); await wait(p, 900);
 }
 
@@ -36,15 +38,16 @@ class Shooter {
   async full(name = 'full') {
     const p = this.p;
     await closePromo(p);
-    await lazyScroll(p);
-    const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const chunk = Math.floor(14000 / this.dpr);
+    // Infinite-scroll pages grow scrollHeight without bound while lazyScroll
+    // walks them; the tile ceiling is applied to the scroll itself, so a page
+    // reporting millions of pixels cannot tie up the run before the cap.
+    const MAXH = 8 * chunk;
+    const H0 = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
+    await lazyScroll(p, Math.min(H0, MAXH));
+    const H = await p.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body.scrollHeight));
     const f = `${RAW}/${this.prefix}-${name}`;
     for (const old of fs.readdirSync(RAW).filter((n) => n.startsWith(`${this.prefix}-${name}.part`))) fs.unlinkSync(`${RAW}/${old}`);
-    // Infinite-scroll pages grow scrollHeight without bound after lazyScroll;
-    // without a ceiling the tile loop writes forever. Truncate hard and record
-    // the boundary instead.
-    const MAXH = 8 * chunk;
     const hCap = Math.min(H, MAXH);
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
     if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
@@ -122,11 +125,13 @@ const desktop = {
 const mobile = {
   home: { path: '/', wait: 9000, run: async (p, S) => {
     await S.view('default');
+    // The full-page shot comes first: once the side-panel menu is open it
+    // covers the home view, and full() hides consent/promo layers only.
+    await S.full();
     await step('menu', async () => {
       const m = p.locator('button[aria-label*="menu" i], button[aria-label*="navigation" i], .hamburger, [class*="hamburger" i], header button:has(svg), [class*="burger" i]').filter({ visible: true }).first();
       if (await m.count()) { await clickEl(m); await wait(p, 1600); await S.view('menu'); }
     });
-    await S.full();
   } },
   'shop-women': { path: '/women/new-in/new-in-clothing/cat/?cid=2623', wait: 9000, run: async (p, S) => { await S.view('default'); await S.full(); } },
 };

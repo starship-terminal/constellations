@@ -100,8 +100,7 @@ if (J._meta.backdrop) {
 W('');
 W('## Transitions declared in the readable stylesheets');
 W('');
-// PRODUCT (adapt): describe this product's capture.
-W('appwrite.io\'s bundle is served cross-origin from cdn.appwrite.io, so this list holds only what the CSSOM could read on each page (inline styles and same-origin sheets); the per-state Transition rows above are computed values and cover the bundle\'s rules.');
+W('asos.com serves its sitechrome and content-ui-library sheets from www.asos.com itself, so the CSSOM could read nearly every rule on each page; only the Font Awesome CDN sheet (use.fontawesome.com) is cross-origin and invisible. The per-state Transition rows above are computed values and cover those rules too.');
 for (const [pg, list] of Object.entries(J._meta.sheets || {}).sort()) {
   const uniq = [...new Map(list.filter((t) => t.transition).map((t) => [t.transition, t])).values()].slice(0, 12);
   W('');

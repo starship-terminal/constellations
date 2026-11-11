@@ -285,7 +285,7 @@ W(f"- Crops are images of the component read from the live page, in [components/
 W()
 W("## Discovery list")
 W()
-W("Screenshots are named `{page}-light-{state}.png`: the shop paints one light theme. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x).")
+W("Screenshots are named `{page}-light-{state}.png`: the shop paints one light theme. Desktop shots are 1440 x 900 at 1x, including the `-full` whole-page shots; mobile shots are `mobile-{page}-light-{state}.png` at 2x, so a 390-wide viewport — and a 390-wide full page — comes out 780 pixels wide. Read mobile sizes at half the pixels.")
 W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")

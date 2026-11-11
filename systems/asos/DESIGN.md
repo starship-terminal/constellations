@@ -18,12 +18,9 @@ colors:
   on-surface: "#2d2d2d"
   on-surface-variant: "#666666"
   outline: "#dddddd"
-  accent-purple: "#6f5cff"
   action-primary: "#018849"
   action-primaryHover: "#006637"
   border-default: "#dddddd"
-  status-error: "#ff3b30"
-  status-sale: "#d01345"
   surface-inverse: "#000000"
   surface-page: "#ffffff"
   surface-promo: "#cde2f5"
@@ -112,7 +109,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 - **One theme only.** The `dark` probe resolves to the same `:root` values — nothing paints dark. `tokens.json` ships no dark set.
 - **Var names are build hashes.** `--1fot7dv` and friends will change on the next site deploy; treat the aliases in `tokens.json` as the stable names and the hash names as provenance.
-- **Roles are verified, not declared.** Every `light` role pairs a var with the component that was measured wearing it; the site itself declares no semantic names.
+- **Roles are verified, not declared.** Every `light` role pairs a var with the component that was measured wearing it; the site itself declares no semantic names. The declared error/sale/purple palette members (`--1mii22u`, `--1xvrmqx`, `--1ffq8ns`) appear in no component reading, so they stay under `core.color` — claiming `status.*` or `accent.*` roles for them would be an inference, not a measurement. Likewise `core.measured.anchor-inherit` is the wrapper anchor's unused inherited `#0000ee`, not the product-link colour (the link text is `text.primary`).
 - **`component.*` tokens are measured**, not site variables. The shop declares no spacing or radius scale — corners are simply 0px.
 - **Channel triplets.** `--18bniqv` ("45,45,45") and `--1cripqf` ("255,255,255") are rgb() channels composed into `rgba(var(--x), α)` — tokenised under `core.color.channel` as composed colours.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or `raw/full/`.
@@ -122,7 +119,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 ### Do and don't (from README.md)
 
 1. **Do keep the storefront achromatic.** White ground, black chrome, `#2d2d2d` ink, `#666` secondary, `#ddd` hairlines. Colour lives in product imagery and promo bands, not controls. See [home-light-default](screenshots/home-light-default.png).
-2. **Do go square and flat.** Every control — buttons, pills, fields, tiles — is 0px radius with no shadow; depth comes from fills alone. See [add-to-bag-default](components/crops/add-to-bag-default.png).
+2. **Do go square and flat.** Buttons, pills, selects and tiles are 0px radius and shadowless; the measured exceptions are the stadium-shaped header search field (19px/50%), the fully round icon-only buttons, and a faint shadow the save heart's white disc paints on hover. Depth otherwise comes from fills alone. See [add-to-bag-default](components/crops/add-to-bag-default.png).
 3. **Do reserve green for the buy action.** `#018849` (hover `#006637`) appears only on ADD TO BAG and the bag CTA — never on links or chrome. See [add-to-bag-hover](components/crops/add-to-bag-hover.png).
 4. **Do track the labels.** Uppercase CTAs run 1.7–2.5px letter-spacing on 14–16px Futura; even body copy carries 0.4px. See [m-nav-link-default](components/crops/m-nav-link-default.png).
 5. **Do keep the promo strip functional.** The bordered WOMEN/MEN tabs inside the strip flip the offer audience; they are bordered text buttons, not pills. See [promo-tab-default](components/crops/promo-tab-default.png).

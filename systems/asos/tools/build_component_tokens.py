@@ -21,9 +21,15 @@ measured on a real component (raw/components-computed.json). The pairings:
   action.primaryHover --14cp6y8 #006637  add-to-bag :hover background
   surface.promo    --xes0jb  #cde2f5  promo-message-box background
   surface.wash     --1wwppwc #eeeeee  save-button/m-nav-link background
-  link             (no var)  #0000ee  unstyled anchor colour on tiles/links
+  anchor.inherit   (no var)  #0000ee  the wrapping anchor's inherited colour —
+                          the product description overrides it with #2d2d2d, so
+                          it is the wrapper's unused colour, not a link colour
   focus.outline    (no var)  #005fcc  :focus-visible outline, 1–5 px
   nav.hover        (no var)  #051a6e  nav-item :hover fill
+
+The declared error/sale/purple palette members (--1mii22u, --1xvrmqx,
+--1ffq8ns) stay under core.color only: no component reading records them in
+use, so no role is claimed for them.
 
 A leaf is {"var": "--name"} (resolved per theme by build_tokens.py) or
 {"value": ..., "source": "..."} for a measured value. The site paints one light
@@ -211,8 +217,11 @@ ROLES = {
     "surface-promo": "--xes0jb",
     "border-default": "--na3s62",
     "action-primary": "--1e93okh", "action-primaryHover": "--14cp6y8",
-    "status-error": "--1mii22u", "status-sale": "--1xvrmqx",
-    "accent-purple": "--1ffq8ns",
+    # No status-* or accent-* roles: --1mii22u (red), --1xvrmqx (deep red) and
+    # --1ffq8ns (purple) are declared palette members whose colours appear in
+    # no saved component reading, so a role claim here would look verified
+    # where nothing measured it. They stay under core.color until a measured
+    # use is recorded.
 }
 ROLE_DESC = {
     "text-primary": "rgb(45,45,45) on titles, prices, fields — resolved from {v}.",
@@ -226,9 +235,6 @@ ROLE_DESC = {
     "border-default": "#dddddd hairline on pills, buttons, fields — resolved from {v}.",
     "action-primary": "The ASOS buy green — add-to-bag and bag CTA — resolved from {v}.",
     "action-primaryHover": "rgb(0,102,55) on add-to-bag :hover — resolved from {v}.",
-    "status-error": "ASOS's bright red — resolved from {v}.",
-    "status-sale": "#d01345 sale/promo red — resolved from {v}.",
-    "accent-purple": "#6f5cff app/promo purple accent — resolved from {v}.",
 }
 for role, name in sorted(ROLES.items()):
     if name in R:
@@ -262,7 +268,10 @@ for comp, state, key, prop, desc in [
     ("nav-item", "focus-visible", "focus-outline", "outlineColor", "The :focus-visible ring on chrome controls."),
     ("continue-button", "focus-visible", "focus-outline-alt", "outlineColor", "The #0770cf focus blue on my.asos.com (matches --1cf22is)."),
     ("nav-item", "hover", "nav-hover", "backgroundColor", "The deep-navy fill a category button takes on hover."),
-    ("tile-name", "hover", "link", "color", "Unstyled anchor blue on product links."),
+    # The wrapping anchor's own `color` — its #0000ee never paints text: the
+    # product description inside overrides it with rgb(45,45,45) (text.primary).
+    # Named for what it is, so nobody reuses it as the product-link colour.
+    ("tile-name", "hover", "anchor-inherit", "color", "The wrapper anchor's unused inherited blue — the visible product link text is text.primary #2d2d2d."),
     ("cat-pill", "hover", "hover-wash", "backgroundColor", "#f5f5f5 pill hover wash."),
     ("add-to-bag", "hover", "action-hover", "backgroundColor", "The darker buy green on hover."),
     ("continue-button", "hover", "ink-hover", "backgroundColor", "The near-black button hover on my.asos.com."),

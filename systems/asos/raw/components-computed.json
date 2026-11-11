@@ -1,6 +1,6 @@
 {
  "_meta": {
-  "read": "2026-11-10",
+  "read": "2026-11-11",
   "viewport": "1440 x 900 (mobile group 390 x 844), light theme",
   "tool": "tools/capture/public/measure.mjs",
   "sheets": {
@@ -5803,7 +5803,7 @@
    "desc": "\"The latest drops\" — the hub's visible section heading (the h1 is screen-reader only).",
    "selector": "h2:has-text(\"The latest drops\")",
    "page": "women",
-   "run": "2026-11-10",
+   "run": "2026-11-11",
    "url": "https://www.asos.com/women/"
   },
   "hub-tile": {
@@ -6008,7 +6008,7 @@
    "desc": "The \"THE PARTY EDIT / SHOP NOW\" campaign tile.",
    "selector": "a.hero__link",
    "page": "women",
-   "run": "2026-11-10",
+   "run": "2026-11-11",
    "url": "https://www.asos.com/women/"
   },
   "breadcrumb": {
@@ -17042,7 +17042,7 @@
    "group": "Mobile (390 wide)",
    "selector": "header",
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-11",
    "url": "https://www.asos.com/"
   },
   "m-menu-button": {
@@ -17417,7 +17417,7 @@
    "group": "Mobile (390 wide)",
    "selector": "[data-testid=\"burger-menu-button\"]",
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-11",
    "url": "https://www.asos.com/"
   },
   "m-menu-open": {
@@ -17515,10 +17515,10 @@
    },
    "title": "Mobile menu, open",
    "group": "Mobile (390 wide)",
-   "desc": "The button after its own toggle; the open drawer shows in the crop.",
+   "desc": "The button after its own toggle; the crop is the open drawer, not the button.",
    "selector": "[data-testid=\"burger-menu-button\"]",
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-11",
    "url": "https://www.asos.com/"
   },
   "m-nav-link": {
@@ -17631,7 +17631,7 @@
    "desc": "A category row inside the opened side panel (NEW IN, CLOTHING…).",
    "selector": "[data-testid=\"menu-item\"]",
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-11",
    "url": "https://www.asos.com/"
   },
   "hub-banner": {
@@ -17744,7 +17744,7 @@
    "desc": "The dark \"SINGLES' DAY — UP TO 40% OFF\" banner under the header.",
    "selector": "leaf container:has-text(\"UP TO 40% OFF\")",
    "page": "women",
-   "run": "2026-11-10",
+   "run": "2026-11-11",
    "url": "https://www.asos.com/women/"
   },
   "hub-card": {
@@ -17752,22 +17752,22 @@
     "default": {
      "tag": "a",
      "classes": "",
-     "text": "Promotion SINGLES' DAY UP TO 40% OFF 1000S OF STYLES WITH CODE: WOW Valid on sel",
+     "text": "ARRANGE velvet plunge halter cinch waist maxi dress with train in chocolate SGD$",
      "rect": {
-      "x": 496.7,
-      "y": 214,
-      "w": 446.69,
-      "h": 152.78
+      "x": 0,
+      "y": 178.3,
+      "w": 360,
+      "h": 543.91
      },
      "style": {
-      "display": "block",
+      "display": "flex",
       "position": "static",
       "boxSizing": "content-box",
-      "width": "446.688px",
-      "height": "152.781px",
-      "minWidth": "auto",
+      "width": "360px",
+      "height": "543.906px",
+      "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "auto",
+      "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -17779,9 +17779,9 @@
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
-      "flexDirection": "row",
+      "flexDirection": "column",
       "alignItems": "normal",
-      "justifyContent": "normal",
+      "justifyContent": "space-between",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
@@ -17808,9 +17808,9 @@
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
       "fontFamily": "futura-pt, FuturaStd, Helvetica, Arial, sans-serif",
-      "fontSize": "16px",
+      "fontSize": "12px",
       "fontWeight": "400",
-      "lineHeight": "16px",
+      "lineHeight": "12px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(0, 0, 0)",
@@ -17829,27 +17829,15 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "paint": [
-      {
-       "node": "div.flexible-banner__background",
-       "size": "1440.0x200.8",
-       "bg": "rgb(45, 45, 45)"
-      },
-      {
-       "node": "mark",
-       "size": "92.2x39.3",
-       "border": "T:2px solid rgb(255, 255, 255) | R:2px solid rgb(255, 255, 255) | B:2px solid rgb(255, 255, 255) | L:2px solid rgb(255, 255, 255)"
-      }
-     ],
      "textStyle": {
-      "node": "h2.aria-invisible",
-      "text": "Promotion",
+      "node": "h2.product__name",
+      "text": "ARRANGE velvet plunge halter cinch waist",
       "fontFamily": "futura-pt, FuturaStd, Helvetica, Arial, sans-serif",
       "fontSize": "16px",
       "lineHeight": "16px",
       "fontWeight": "400",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
+      "letterSpacing": "0.8px",
+      "color": "rgb(45, 45, 45)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
@@ -17859,22 +17847,22 @@
     "hover": {
      "tag": "a",
      "classes": "",
-     "text": "Promotion SINGLES' DAY UP TO 40% OFF 1000S OF STYLES WITH CODE: WOW Valid on sel",
+     "text": "ARRANGE velvet plunge halter cinch waist maxi dress with train in chocolate SGD$",
      "rect": {
-      "x": 496.7,
-      "y": 214,
-      "w": 446.69,
-      "h": 152.78
+      "x": 0,
+      "y": 178.3,
+      "w": 360,
+      "h": 543.91
      },
      "style": {
-      "display": "block",
+      "display": "flex",
       "position": "static",
       "boxSizing": "content-box",
-      "width": "446.688px",
-      "height": "152.781px",
-      "minWidth": "auto",
+      "width": "360px",
+      "height": "543.906px",
+      "minWidth": "0px",
       "maxWidth": "none",
-      "minHeight": "auto",
+      "minHeight": "0px",
       "paddingTop": "0px",
       "paddingRight": "0px",
       "paddingBottom": "0px",
@@ -17886,9 +17874,9 @@
       "gap": "normal",
       "rowGap": "normal",
       "columnGap": "normal",
-      "flexDirection": "row",
+      "flexDirection": "column",
       "alignItems": "normal",
-      "justifyContent": "normal",
+      "justifyContent": "space-between",
       "gridTemplateColumns": "none",
       "borderTopWidth": "0px",
       "borderTopStyle": "none",
@@ -17915,9 +17903,9 @@
       "outlineColor": "rgb(0, 0, 0)",
       "outlineOffset": "0px",
       "fontFamily": "futura-pt, FuturaStd, Helvetica, Arial, sans-serif",
-      "fontSize": "16px",
+      "fontSize": "12px",
       "fontWeight": "400",
-      "lineHeight": "16px",
+      "lineHeight": "12px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(0, 0, 0)",
@@ -17936,27 +17924,15 @@
       "zIndex": "auto",
       "top": "auto"
      },
-     "paint": [
-      {
-       "node": "div.flexible-banner__background",
-       "size": "1440.0x200.8",
-       "bg": "rgb(45, 45, 45)"
-      },
-      {
-       "node": "mark",
-       "size": "92.2x39.3",
-       "border": "T:2px solid rgb(255, 255, 255) | R:2px solid rgb(255, 255, 255) | B:2px solid rgb(255, 255, 255) | L:2px solid rgb(255, 255, 255)"
-      }
-     ],
      "textStyle": {
-      "node": "h2.aria-invisible",
-      "text": "Promotion",
+      "node": "h2.product__name",
+      "text": "ARRANGE velvet plunge halter cinch waist",
       "fontFamily": "futura-pt, FuturaStd, Helvetica, Arial, sans-serif",
       "fontSize": "16px",
       "lineHeight": "16px",
       "fontWeight": "400",
-      "letterSpacing": "normal",
-      "color": "rgb(255, 255, 255)",
+      "letterSpacing": "0.8px",
+      "color": "rgb(45, 45, 45)",
       "textDecorationLine": "none",
       "textTransform": "none"
      },
@@ -17966,10 +17942,10 @@
    },
    "title": "Hub rail card",
    "group": "Hub pages",
-   "desc": "A product card in the \"latest drops\" rail.",
-   "selector": "main a:has(h2)",
+   "desc": "A card in the \"latest drops\" rail.",
+   "selector": "section:has(h2 \"The latest drops\") a:has(img)",
    "page": "women",
-   "run": "2026-11-10",
+   "run": "2026-11-11",
    "url": "https://www.asos.com/women/"
   },
   "flyout-link": {
@@ -18270,7 +18246,7 @@
    "desc": "The WOMEN tab at the top of the open side panel.",
    "selector": "[data-testid=\"women-floor\"]",
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-11",
    "url": "https://www.asos.com/"
   },
   "m-search-icon": {
@@ -18646,7 +18622,7 @@
    "desc": "The magnifier that opens the search overlay (there is no inline field on mobile).",
    "selector": "[data-testid=\"searchIcon\"]",
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-11",
    "url": "https://www.asos.com/"
   },
   "m-feature-tile": {
@@ -18740,7 +18716,7 @@
    "desc": "A dark marketing tile under the hero.",
    "selector": "a.feature__link",
    "page": "home",
-   "run": "2026-11-10",
+   "run": "2026-11-11",
    "url": "https://www.asos.com/"
   }
  }

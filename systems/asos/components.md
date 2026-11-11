@@ -1,6 +1,6 @@
 # ASOS components
 
-The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from asos.com on 2026-11-10, signed out, in headed Chrome at 1440 x 900 (the Mobile group at 390 x 844) — Akamai serves a 403 to headless browsers, so the capture ran headed — with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.
+The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from asos.com on 2026-11-11, signed out, in headed Chrome at 1440 x 900 (the Mobile group at 390 x 844) — Akamai serves a 403 to headless browsers, so the capture ran headed — with computed styles read from the running page. Nothing was signed into, created, sent or uploaded.
 
 The full per-state readings are in [raw/measurements.md](raw/measurements.md), with the machine-readable copy in [raw/components-computed.json](raw/components-computed.json) (72 components, 180 states). The page layouts are described in [patterns.md](patterns.md).
 
@@ -12,7 +12,7 @@ How to read an entry:
 
 ## Discovery list
 
-Screenshots are named `{page}-light-{state}.png`: the shop paints one light theme. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x).
+Screenshots are named `{page}-light-{state}.png`: the shop paints one light theme. Desktop shots are 1440 x 900 at 1x, including the `-full` whole-page shots; mobile shots are `mobile-{page}-light-{state}.png` at 2x, so a 390-wide viewport — and a 390-wide full page — comes out 780 pixels wide. Read mobile sizes at half the pixels.
 
 | Surface | URL | Screenshots |
 |---|---|---|
@@ -63,7 +63,7 @@ Values that apply across entries, from the measurement files.
 | [Product tile](#product-tile) | 335 x 559.41 | - | - | transparent | none | 0 |
 | [Content tile](#content-tile) | 345 x 213.73 | - | - | transparent | none | 0 |
 | [Hub hero tile](#hub-hero-tile) | 1440 x 640 | - | - | transparent | none | 0 |
-| [Hub rail card](#hub-rail-card) | 446.69 x 152.78 | - | - | transparent | none | 0 |
+| [Hub rail card](#hub-rail-card) | 360 x 543.91 | - | - | transparent | none | 0 |
 | [Mobile content tile](#mobile-content-tile) | 187 x 115.85 | - | - | transparent | none | 0 |
 | [Bag body](#bag-body) | 1440 x 455 | - | - | transparent | none | 0 |
 
@@ -307,13 +307,11 @@ Child layers that carry the look: mark 92.2x39.3 border 2px solid #ffffff `color
 ![Hub promo banner default](components/crops/hub-banner-default.png)
 
 #### Hub rail card
-A product card in the "latest drops" rail. Read as `hub-card` on the women's hub page.
+A card in the "latest drops" rail. Read as `hub-card` on the women's hub page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 446.69 x 152.78; background transparent; text futura-pt 16/16 400, #ffffff `color.neutral.white`; layers div.flexible-banner__background 1440.0x200.8 rgb(45, 45, 45); mark 92.2x39.3 T:2px solid rgb(255, 255, 255) / R:2px solid rgb(255, 255, 255) / B:2px solid rgb(255, 255, 255) / L:2px solid rgb(255, 255, 255) |
-
-Child layers that carry the look: div 1440x200.8 background #2d2d2d `color.neutral.ink.900`; mark 92.2x39.3 border 2px solid #ffffff `color.neutral.white`.
+| default (same: hover) | size 360 x 543.91; background transparent; text futura-pt 16/16 400, #2d2d2d `color.neutral.ink.900` |
 
 ![Hub rail card default](components/crops/hub-card-default.png) ![Hub rail card hover](components/crops/hub-card-hover.png)
 
@@ -744,7 +742,7 @@ Child layers that carry the look: span 20x20 background #ffffff `color.neutral.w
 ![Mobile menu button default](components/crops/m-menu-button-default.png) ![Mobile menu button hover](components/crops/m-menu-button-hover.png) ![Mobile menu button focus-visible](components/crops/m-menu-button-focus-visible.png) ![Mobile menu button pressed](components/crops/m-menu-button-pressed.png)
 
 #### Mobile menu, open
-The button after its own toggle; the open drawer shows in the crop. Read as `m-menu-open` on the home page at 390 wide.
+The button after its own toggle; the crop is the open drawer, not the button. Read as `m-menu-open` on the home page at 390 wide.
 
 **Values (opened).** size 58 x 50; padding 0px 18px; background transparent; text futura-pt 14/14 400, #000000 `color.neutral.black`; layers span.BKBoO9a.TYb4J9A 20.0x20.0 rgb(255, 255, 255).
 
