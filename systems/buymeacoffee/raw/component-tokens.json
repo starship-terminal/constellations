@@ -1,0 +1,649 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. buymeacoffee.com declares no design-token layer beyond three :root layout vars (raw/css-vars.json), so the light set is built from measured computed styles (raw/components-computed.json) plus the inline --theme-color* accent set a creator page declares on its root element.",
+ "core": {
+  "font": {
+   "family": {
+    "bold": {
+     "value": "\"Circular Bold\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-title default (raw/components-computed.json)",
+     "description": "Circular Bold — display type, headings, buttons and bold menu rows."
+    },
+    "regular": {
+     "value": "\"Circular Regular\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-sub default (raw/components-computed.json)",
+     "description": "Circular Regular — body and tagline copy."
+    },
+    "medium": {
+     "value": "\"Circular Medium\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of nav-link default (raw/components-computed.json)",
+     "description": "Circular Medium — nav links, labels, tabs and field text."
+    },
+    "book": {
+     "value": "\"Circular Book\", sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of c-name default (raw/components-computed.json)",
+     "description": "Circular Book — the Vite app's field and menu text."
+    },
+    "borel": {
+     "value": "\"Borel Regular\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of f-h1 default (raw/components-computed.json)",
+     "description": "Borel Regular — the script display accent (FAQ title, Wall-of-love heart)."
+    },
+    "app": {
+     "value": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of c-header default — the element's own stack, not its text's (raw/components-computed.json)",
+     "description": "The Vite creator/login app's base stack (ui-sans-serif first); widgets that set no face fall through to it."
+    },
+    "black": {
+     "value": "\"Circular Black\"",
+     "type": "fontFamily",
+     "source": "declared @font-face in the harvested buymeacoffee.com sheets (raw/css-vars.json fonts); not painted on a captured component",
+     "description": "Circular Black — declared face; heaviest weight of the marketing family."
+    }
+   },
+   "size": {
+    "display": {
+     "type": "dimension",
+     "value": "96px",
+     "source": "computed fontSize of hero-title default (raw/components-computed.json)",
+     "description": "The 96px marketing display (Fund your creative work)."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "64px",
+     "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
+     "description": "The 64px section headings."
+    },
+    "faq-title": {
+     "type": "dimension",
+     "value": "48px",
+     "source": "computed fontSize of f-h1 default (raw/components-computed.json)",
+     "description": "The 48px Borel page title (FAQ, Wall of love)."
+    },
+    "display-mobile": {
+     "type": "dimension",
+     "value": "48px",
+     "source": "computed fontSize of m-hero default (raw/components-computed.json)",
+     "description": "The display size at 390px."
+    },
+    "lede": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "computed fontSize of section-lede default (raw/components-computed.json)",
+     "description": "The 24px section lede / widget title."
+    },
+    "tagline": {
+     "type": "dimension",
+     "value": "22px",
+     "source": "computed fontSize of hero-sub default (raw/components-computed.json)",
+     "description": "The 22px hero tagline."
+    },
+    "question": {
+     "type": "dimension",
+     "value": "20px",
+     "source": "computed fontSize of f-q default (raw/components-computed.json)",
+     "description": "The 20px FAQ question / mobile menu item."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "18px",
+     "source": "computed fontSize of f-a default (raw/components-computed.json)",
+     "description": "The 18px FAQ answer body."
+    },
+    "button": {
+     "type": "dimension",
+     "value": "17px",
+     "source": "computed fontSize of l-cta default (raw/components-computed.json)",
+     "description": "The 17px Vite-app button / field size."
+    },
+    "base": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of header default (raw/components-computed.json)",
+     "description": "The 16px base size (nav, body, menu rows)."
+    },
+    "tab": {
+     "type": "dimension",
+     "value": "15px",
+     "source": "computed fontSize of c-tab default (raw/components-computed.json)",
+     "description": "The 15px profile-tab size."
+    }
+   },
+   "lineHeight": {
+    "display": {
+     "type": "dimension",
+     "value": "95px",
+     "source": "computed lineHeight of hero-title default (raw/components-computed.json)",
+     "description": "Tight display leading (~0.99x)."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "80px",
+     "source": "computed lineHeight of section-h2 default (raw/components-computed.json)",
+     "description": "Section-heading leading (1.25x)."
+    },
+    "lede": {
+     "type": "dimension",
+     "value": "32px",
+     "source": "computed lineHeight of section-lede default (raw/components-computed.json)",
+     "description": "Lede leading."
+    },
+    "tagline": {
+     "type": "dimension",
+     "value": "33px",
+     "source": "computed lineHeight of hero-sub default (raw/components-computed.json)",
+     "description": "Tagline leading (1.5x)."
+    }
+   },
+   "letterSpacing": {
+    "display": {
+     "type": "dimension",
+     "value": "-2.4px",
+     "source": "computed letterSpacing of hero-title default (raw/components-computed.json)",
+     "description": "The -2.4px display tracking."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "-2px",
+     "source": "computed letterSpacing of section-h2 default (raw/components-computed.json)",
+     "description": "The -2px heading tracking."
+    },
+    "eyebrow": {
+     "type": "dimension",
+     "value": "2px",
+     "source": "computed letterSpacing of section-eyebrow default (raw/components-computed.json)",
+     "description": "The +2px eyebrow tracking (uppercase)."
+    }
+   }
+  },
+  "color": {
+   "neutral": {
+    "ink": {
+     "value": "#222222",
+     "type": "color",
+     "source": "computed color of hero-title default (raw/components-computed.json)",
+     "description": "The #222 ink on headings, body text and button labels."
+    },
+    "ink-v2": {
+     "value": "#151515",
+     "type": "color",
+     "source": "computed color of c-name default (raw/components-computed.json)",
+     "description": "The #151515 ink the Vite app paints in its fields."
+    },
+    "grey": {
+     "value": "#717171",
+     "type": "color",
+     "source": "computed color of section-eyebrow default (raw/components-computed.json)",
+     "description": "The #717171 grey on section eyebrows and secondary copy."
+    },
+    "cream": {
+     "value": "#faf8f0",
+     "type": "color",
+     "source": "computed backgroundColor of page-field default (raw/components-computed.json)",
+     "description": "The #faf8f0 cream field the marketing pages paint on."
+    },
+    "field": {
+     "value": "#f0f0f0",
+     "type": "color",
+     "source": "computed backgroundColor of l-email default (raw/components-computed.json)",
+     "description": "The #f0f0f0 input fill on the login card and support widget."
+    },
+    "divider": {
+     "value": "#e5e5e5",
+     "type": "color",
+     "source": "computed borderTopColor of l-social default (raw/components-computed.json)",
+     "description": "The #e5e5e5 hairline on the social buttons and divider."
+    },
+    "hover-fill": {
+     "value": "rgba(0, 0, 0, 0.05)",
+     "type": "color",
+     "source": "painted layer under nav-link hover (raw/components-computed.json)",
+     "description": "The 5%-black pill a marketing nav link paints on hover (::before)."
+    },
+    "search-fill": {
+     "value": "rgba(0, 0, 0, 0.03)",
+     "type": "color",
+     "source": "painted layer under nav-search default (raw/components-computed.json)",
+     "description": "The 3%-black field the Search-creators pill paints."
+    },
+    "paper": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed backgroundColor of c-widget / c-header / r-tweet on /cara.app (raw/components-computed.json)",
+     "description": "The white creator-page field, cards and dropdowns."
+    }
+   },
+   "brand": {
+    "yellow": {
+     "value": "#ffdd00",
+     "type": "color",
+     "source": "painted layer under nav-cta default (raw/components-computed.json)",
+     "description": "The #ffdd00 yellow pill paint (::before) on every marketing bmc-btn and the login CTA."
+    },
+    "yellow-hover": {
+     "value": "#ffc800",
+     "type": "color",
+     "source": "painted layer under l-cta hover (raw/components-computed.json)",
+     "description": "The #ffc800 the yellow paint deepens to on hover."
+    }
+   },
+   "theme": {
+    "accent": {
+     "value": "#ff813f",
+     "type": "color",
+     "source": "inline --theme-color declared on div.min-h-screen.bg-white.relative at /cara.app (raw/css-vars.json inline)",
+     "description": "The per-creator accent (#ff813f on /cara.app) on the Support button, quantity pills, active tab and field focus."
+    },
+    "accent-hover": {
+     "value": "#ff6b1c",
+     "type": "color",
+     "source": "inline --theme-color-hover-color declared on div.min-h-screen.bg-white.relative at /cara.app (raw/css-vars.json inline)",
+     "description": "The accent's hover step (#ff6b1c on /cara.app)."
+    },
+    "accent-25": {
+     "value": "rgba(255, 129, 63, 0.25)",
+     "type": "color",
+     "source": "inline --theme-color-25 declared on div.min-h-screen.bg-white.relative at /cara.app (raw/css-vars.json inline); cross-checked against borderTopColor of c-qty-off default",
+     "description": "The 25%-accent tint on unchecked pill borders."
+    },
+    "on-accent": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "inline --theme-text-color declared on div.min-h-screen.bg-white.relative at /cara.app (raw/css-vars.json inline); cross-checked against color of c-qty-on default",
+     "description": "The text colour generated against the accent (white here)."
+    },
+    "accent-05": {
+     "value": "rgba(255, 129, 63, 0.05)",
+     "type": "color",
+     "source": "inline --theme-color-05 declared on div.min-h-screen.bg-white.relative at /cara.app (raw/css-vars.json inline)",
+     "description": "The 5%-accent tint (hover fills)."
+    },
+    "accent-08": {
+     "value": "rgba(255, 129, 63, 0.08)",
+     "type": "color",
+     "source": "inline --theme-color-08 declared on div.min-h-screen.bg-white.relative at /cara.app (raw/css-vars.json inline)",
+     "description": "The 8%-accent tint (hover fills)."
+    },
+    "accent-10": {
+     "value": "rgba(255, 129, 63, 0.1)",
+     "type": "color",
+     "source": "inline --theme-color-1 declared on div.min-h-screen.bg-white.relative at /cara.app (raw/css-vars.json inline)",
+     "description": "The 10%-accent tint (selected fills)."
+    }
+   },
+   "focus": {
+    "ring": {
+     "value": "#2563eb",
+     "type": "color",
+     "source": "painted boxShadow under c-qty-on focus-visible (raw/components-computed.json)",
+     "description": "The Tailwind blue-600 focus ring the Vite app draws (4px ring over a 2px white offset)."
+    },
+    "browser": {
+     "value": "#005fcc",
+     "type": "color",
+     "source": "painted outline under nav-link focus-visible (raw/components-computed.json)",
+     "description": "Chromium's 1px auto outline the marketing links keep (no custom ring declared)."
+    }
+   }
+  },
+  "radius": {
+   "pill": {
+    "value": "9999px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of c-qty-on default (raw/components-computed.json)",
+    "description": "The 9999px pill on quantity buttons, the Support/Join buttons and the Vite CTA."
+   },
+   "bmc-pill": {
+    "value": "40px",
+    "type": "dimension",
+    "source": "painted layer radius under nav-cta default (raw/components-computed.json)",
+    "description": "The 40px pill the marketing bmc-btn paints as its ::before layer."
+   },
+   "field": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of l-email default (raw/components-computed.json)",
+    "description": "The 12px field radius (inputs, textarea, custom-amount box)."
+   },
+   "panel": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of nav-dropdown default (raw/components-computed.json)",
+    "description": "The 12px dropdown/panel radius."
+   },
+   "card": {
+    "value": "24px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of r-tweet default (raw/components-computed.json)",
+    "description": "The 24px card radius (tweet cards, the support widget)."
+   },
+   "tile": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of creator-card default (raw/components-computed.json)",
+    "description": "The 16px hero creator-tile radius."
+   },
+   "item": {
+    "value": "10px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of menu-link default (raw/components-computed.json)",
+    "description": "The 10px menu-row radius."
+   },
+   "tab": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of c-tab default (raw/components-computed.json)",
+    "description": "The 8px tab/search field radius."
+   },
+   "check": {
+    "value": "6px",
+    "type": "dimension",
+    "source": "painted layer radius under c-monthly default (raw/components-computed.json)",
+    "description": "The 6px checkbox radius."
+   }
+  },
+  "shadow": {
+   "menu": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.15)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "2px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.04)",
+      "offsetX": "0px",
+      "offsetY": "8px",
+      "blur": "40px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.05)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "5px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of nav-dropdown default (raw/components-computed.json)",
+    "description": "The three-layer dropdown shadow (2px hairline + 40px bloom + 5px contact)."
+   },
+   "card": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.05)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "4px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of r-tweet default (raw/components-computed.json)",
+    "description": "The 4px card shadow on tweet cards."
+   },
+   "header": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.06)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "1px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of c-header default (raw/components-computed.json)",
+    "description": "The 1px line the sticky creator header casts."
+   },
+   "focus-ring": {
+    "value": [
+     {
+      "color": "#ffffff",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "2px"
+     },
+     {
+      "color": "#2563eb",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "4px"
+     }
+    ],
+    "type": "shadow",
+    "source": "painted boxShadow under c-qty-on focus-visible (raw/components-computed.json)",
+    "description": "The focus treatment every Vite-app control draws: a 2px white offset under a 4px #2563eb ring."
+   }
+  },
+  "measured": {
+   "tab-transition": {
+    "value": "0.2s",
+    "type": "duration",
+    "source": "computed transition of c-tab default (raw/components-computed.json)",
+    "description": "The 0.2s transition on the profile tabs. (all)"
+   },
+   "field-transition": {
+    "value": "0.075s",
+    "type": "duration",
+    "source": "computed transition of l-email default (raw/components-computed.json)",
+    "description": "The 0.075s fill/border change on the login fields. (color, background-color, border-color, text-decoration-color)"
+   },
+   "widget-field-transition": {
+    "value": "0.25s",
+    "type": "duration",
+    "source": "computed transition of c-name default (raw/components-computed.json)",
+    "description": "The 0.25s transition on the widget fields. (all)"
+   },
+   "menu-transition": {
+    "value": "0.3s",
+    "type": "duration",
+    "source": "computed transition of m-menu-open default (raw/components-computed.json)",
+    "description": "The 0.3s slide of the mobile menu panel. (all)"
+   },
+   "card-transition": {
+    "value": "0.2s",
+    "type": "duration",
+    "source": "computed transition of creator-card default (raw/components-computed.json)",
+    "description": "The 0.2s float on the hero creator tiles. (all)"
+   },
+   "tweet-transition": {
+    "value": "0.1s",
+    "type": "duration",
+    "source": "computed transition of r-tweet default (raw/components-computed.json)",
+    "description": "The 0.1s lift on the tweet cards. (all)"
+   },
+   "reveal-transition": {
+    "value": "0.8s",
+    "type": "duration",
+    "source": "computed transition of section-h2 default (raw/components-computed.json)",
+    "description": "The 0.8s scroll-reveal on marketing sections. (all)"
+   },
+   "card-hover-scale": {
+    "value": 1.0282,
+    "type": "number",
+    "source": "hover rect / default rect of r-tweet (raw/components-computed.json)",
+    "description": "The ~1.03 scale a tweet card takes on hover."
+   }
+  }
+ },
+ "light": {
+  "text": {
+   "primary": {
+    "value": "{color.neutral.ink}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Body, heading and button-label ink."
+   },
+   "secondary": {
+    "value": "{color.neutral.grey}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Eyebrow and secondary copy."
+   },
+   "on": {
+    "action": {
+     "value": "{color.neutral.ink}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "Text on the yellow pills."
+    },
+    "accent": {
+     "value": "{color.theme.on-accent}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "Text on the accent paint."
+    }
+   }
+  },
+  "surface": {
+   "page": {
+    "value": "{color.neutral.cream}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The marketing page field."
+   },
+   "card": {
+    "value": "{color.neutral.paper}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Cards, the creator field, dropdowns and panels."
+   },
+   "field": {
+    "value": "{color.neutral.field}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Input fills."
+   }
+  },
+  "action": {
+   "primary": {
+    "value": "{color.brand.yellow}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The yellow pill paint on marketing and login CTAs."
+   },
+   "accent": {
+    "value": "{color.theme.accent}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The per-creator accent on the creator page."
+   }
+  },
+  "border": {
+   "field": {
+    "value": "{color.neutral.divider}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Hairlines on social buttons and dividers."
+   }
+  },
+  "focus": {
+   "ring": {
+    "value": "{color.focus.ring}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #2563eb ring the Vite app draws on focus."
+   }
+  }
+ },
+ "dark": {},
+ "component": {
+  "control": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of nav-cta default (raw/components-computed.json)",
+    "description": "The marketing button/pill height."
+   }
+  },
+  "hero-cta": {
+   "height": {
+    "type": "dimension",
+    "value": "74px",
+    "source": "computed height of hero-cta default (raw/components-computed.json)",
+    "description": "The hero Start-my-page pill height."
+   }
+  },
+  "button": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of l-cta default (raw/components-computed.json)",
+    "description": "The Vite-app primary button height."
+   }
+  },
+  "field": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of l-email default (raw/components-computed.json)",
+    "description": "The login/widget field height."
+   }
+  },
+  "qty": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of c-qty-on default (raw/components-computed.json)",
+    "description": "The quantity pill's square size."
+   }
+  },
+  "tab": {
+   "height": {
+    "type": "dimension",
+    "value": "31.5px",
+    "source": "computed height of c-tab default (raw/components-computed.json)",
+    "description": "A profile tab's height."
+   }
+  },
+  "slide": {
+   "size": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of r-slide default (raw/components-computed.json)",
+    "description": "The square carousel button size."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "76px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The marketing header height."
+   },
+   "height-mobile": {
+    "type": "dimension",
+    "value": "65px",
+    "source": "computed height of m-header default (raw/components-computed.json)",
+    "description": "The marketing header at 390px."
+   }
+  },
+  "creator-header": {
+   "height": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "computed height of c-header default (raw/components-computed.json)",
+    "description": "The sticky creator-page header height."
+   }
+  },
+  "widget": {
+   "width": {
+    "type": "dimension",
+    "value": "500px",
+    "source": "computed width of c-widget default (raw/components-computed.json)",
+    "description": "The support widget's width on the creator page."
+   }
+  }
+ }
+}

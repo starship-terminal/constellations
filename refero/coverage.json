@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 84,
-    "system_domains": 76,
-    "matched_domains": 51,
-    "missing_domains": 382,
+    "system_packages": 85,
+    "system_domains": 77,
+    "matched_domains": 52,
+    "missing_domains": 381,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -649,6 +649,23 @@
         }
       ]
     },
+    "buymeacoffee.com": {
+      "catalog": [
+        {
+          "name": "Buy Me a Coffee",
+          "domain": "buymeacoffee.com",
+          "id": 334
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "buymeacoffee",
+          "name": "Buy Me a Coffee",
+          "url": "https://buymeacoffee.com",
+          "name_match": false
+        }
+      ]
+    },
     "chatgpt.com": {
       "catalog": [
         {
@@ -953,13 +970,6 @@
         "name": "Bento",
         "domain": "bento.me",
         "id": 284
-      }
-    ],
-    "buymeacoffee.com": [
-      {
-        "name": "Buy Me a Coffee",
-        "domain": "buymeacoffee.com",
-        "id": 334
       }
     ],
     "byborre.com": [
