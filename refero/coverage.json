@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 79,
-    "system_domains": 71,
-    "matched_domains": 47,
-    "missing_domains": 386,
+    "system_packages": 80,
+    "system_domains": 72,
+    "matched_domains": 48,
+    "missing_domains": 385,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -462,6 +462,23 @@
         }
       ]
     },
+    "awwwards.com": {
+      "catalog": [
+        {
+          "name": "Awwwards",
+          "domain": "awwwards.com",
+          "id": 285
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "awwwards",
+          "name": "Awwwards",
+          "url": "https://www.awwwards.com",
+          "name_match": true
+        }
+      ]
+    },
     "ballparkhq.com": {
       "catalog": [
         {
@@ -878,13 +895,6 @@
         "name": "Around",
         "domain": "around.co",
         "id": 129
-      }
-    ],
-    "awwwards.com": [
-      {
-        "name": "Awwwards",
-        "domain": "awwwards.com",
-        "id": 285
       }
     ],
     "b150.ai": [
