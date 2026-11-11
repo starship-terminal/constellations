@@ -11,7 +11,7 @@
 // rules are kept too. b150.ai serves headless Chrome a 200, so the read
 // runs headless Chrome (see capture/public/lib.mjs).
 //
-// The site paints one theme. It declares no app design-token custom
+// The site paints one theme. Its @layer theme block declares a real token
 // properties — Tailwind v4 internals (--tw-*) and a handful of hashed or
 // font/theme vars are all the sheets carry — so the token tree is measured
 // from computed styles on the components, and this file is kept for the

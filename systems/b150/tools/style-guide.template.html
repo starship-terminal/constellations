@@ -9,7 +9,8 @@
 :root {
 /*CORE*/
 /*LIGHT*/
-  --sg-sans: "Inter Tight", "Inter", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --sg-sans: "Geist Variable", Geist, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sg-sitemono: "Fragment Mono", Monaco, Menlo, "Ubuntu Mono", Consolas, monospace;
   --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
 }
 * { box-sizing: border-box; }
@@ -38,6 +39,8 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .navbar .tab { font-weight: 500; }
 .navbar .tab.dim { font-weight: 400; color: var(--text-secondary, #666); }
 .navbar .sp { flex: 1; }
+.navbar.dark { background: #16110f; color: #fffdf6; border-bottom-color: #16110f; font-family: var(--sg-sitemono); font-size: 10px; }
+.navbar.dark .tab.dim { color: rgba(255,253,246,.55); }
 .btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 48px); padding: 0 24px; font-size: 14px; font-weight: 500; border-radius: var(--radius-normal, 8px); border: 1px solid transparent; }
 .btn.ink { background: var(--action-primary, #222); color: var(--action-primaryText, #fff); }
 .btn.outline { background: transparent; color: var(--text-primary, #222); border-color: var(--text-primary, #222); }
@@ -64,41 +67,39 @@ table.cmp td, table.cmp th { border: 1px solid var(--border-default, #ededed); p
   <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
 
   <h2 class="sh">Awwwards, measured</h2>
-  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the palette measured from b150.ai's computed styles (the cream #fffdf6 ink, the near-black footer surface, the white SIGN UP and JOIN THE BETA pills), the roles a measurement verified (text, surfaces, the action and its hover), the measured type ramp and the control sizes. b150.ai is a Tailwind site: it declares no design-token custom properties, so every value is a measurement. One painted theme (dark header over warm-cream sections). The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared <code>@layer theme</code> palette (paper/cream/light creams on ink and black chrome, the coral-to-lime accent row, the white and #fffdf6 pills) with roles a measurement verified, the roles a measurement verified (text, surfaces, the action and its hover), the measured type ramp and the control sizes. b150.ai is a Tailwind v4 site that declares its tokens in <code>@layer theme</code>; var-backed leaves resolve through those names, the rest are measurements. One painted theme (dark chrome over warm-cream sections). The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
   <p class="note">Read from b150.ai on 2026-11-11, signed out, in headless Chrome, with any consent or promo layer hidden (never answered). LOGIN and SIGN UP point at app.b150.ai, which rate-limits non-browser clients (HTTP 429): the auth gate is documented, not captured. Nothing was joined, sent or submitted; the contact form was measured, never sent.</p>
 
-  <h2 class="sh">The directory chrome</h2>
-  <p class="lead">A 54px white bar: the wordmark, the Explore/Directory/Academy/Jobs/Market nav in 14px Inter Tight 500, then Be Pro (ink pill), the outlined Submit Website and the auth links. At phone width the bar keeps wordmark and the menu button; its own toggle opens the mobile menu.</p>
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A 65px dark bar on the home page: the wordmark, the VIBEATHON/EVENTS/JOBS/MARKETPLACE/TALENT/FREE RESOURCES nav in Fragment Mono 10px uppercase, LOGIN, then SIGN UP — a 40px white pill. At phone width the bar keeps wordmark and the 40px menu button; its own toggle opens the menu layer.</p>
   <div class="mock">
-    <div class="navbar"><span class="wm">B150</span><span class="tab">Vibeathon</span><span class="tab dim">Events</span><span class="tab dim">Jobs</span><span class="tab dim">Marketplace</span><span class="tab dim">Talent</span><span class="sp"></span><span class="tab dim">Login</span><span class="btn ink" style="height:40px;padding:0 20px">Sign Up</span></div>
-    <div class="filterbar"><span class="ftab">Awards</span><span class="ftab">Category</span><span class="ftab">Tag</span><span class="ftab">Technology</span></div>
+    <div class="navbar dark"><span class="wm">B150</span><span class="tab">VIBEATHON</span><span class="tab dim">EVENTS</span><span class="tab dim">JOBS</span><span class="tab dim">MARKETPLACE</span><span class="tab dim">TALENT</span><span class="sp"></span><span class="tab dim">LOGIN</span><span class="btn ink" style="height:40px;padding:0 20px;border-radius:9999px">SIGN UP</span></div>
   </div>
 
   <h2 class="sh">Site surfaces</h2>
-  <p class="lead">Cards are 14px-radius image+caption rows — screenshot, title, author — inside the 1816px page. A site detail stacks a ~127px display title, the 69px jury score box, the 60px gold Vote button and 48px fully-round tag chips. The Vote button was measured, never clicked.</p>
-  <div class="mock" style="padding:20px">
-    <div class="grid">
-      <div class="tile"><div class="img">SITE OF THE DAY</div><b>Creative Reference Library</b><span class="sub">by Bimo Tri · Score 7.44</span></div>
-      <div class="tile"><div class="img">NOMINEE</div><b>Zirka Interceptor</b><span class="sub">Vote for the latest websites</span></div>
+  <p class="lead">The hero runs a 120px Geist Variable display line over the near-black ground with the cream JOIN THE BETA pill (radius is literally infinite). Inner surfaces flip to the warm #f2efe9 paper: 8px-radius cards and a 56px contact field that share the #e6e3dd rule tone.</p>
+  <div class="mock" style="padding:0">
+    <div style="background:#16110f;color:#fffdf6;padding:48px 40px">
+      <div style="font:700 56px/1 var(--sg-sans);letter-spacing:-.02em">Don't wait for the future. Build it.</div>
+      <div style="margin-top:24px"><span class="btn ink" style="background:#fffdf6;color:#1f1915;height:41px;padding:0 22px;border-radius:9999px">JOIN THE BETA</span></div>
     </div>
-    <div style="display:flex;gap:18px;align-items:center;margin-top:18px;flex-wrap:wrap">
-      <span class="score"><b style="font-weight:600">7.44</b><small>/ 10</small></span>
-      <span class="btn gold">Vote for Awwwards Honors</span>
-      <span class="btn pill">Art &amp; Illustration</span>
-      <span class="btn pill">Culture &amp; Education</span>
+    <div style="background:#f2efe9;padding:28px 40px;display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start">
+      <span style="display:block;width:240px;height:120px;border-radius:8px;background:#e6e3dd"></span>
+      <span class="btn ink" style="border:1px solid #e6e3dd;height:56px;padding:0 18px;border-radius:8px;background:#e6e3dd;color:#1f1915;font-family:var(--sg-sans)">Email</span>
+      <span class="btn ink" style="background:#fff;color:#1f1915;height:40px;padding:0 20px;border-radius:9999px;font-family:var(--sg-sitemono);font-size:10px">SEND MESSAGE</span>
     </div>
   </div>
 
   <h2 class="sh">Palette</h2>
-  <p class="lead">The directory is near-achromatic — ink #222 on white, a #f8f8f8 wash on filter bars and the mobile header, #ededed hairlines and hovers — then the orange/blue brand accents and six category triads, plus the measured #e3c352 award gold no variable declares. Swatches list the declared var each alias resolves through.</p>
+  <p class="lead">The declared warm set — paper #f2efe9, cream #f7f5f1 and near-white #fffdf6 against ink #1f1915, black chrome and the #e6e3dd rule — plus the coral/blue/green/red/lime accents Tailwind's theme layer declares but the public surface rarely paints. Swatches list the declared var each alias resolves through.</p>
   <div id="roles-out"></div>
 
   <h2 class="sh">Type</h2>
-  <p class="lead">Inter Tight everywhere — one family at declared weights 300–800 (<code>--font-light</code> to <code>--font-black</code>), four named sizes 11–22px on the UI, and display sizes measured on the components (the ~127px site title, ~42px page headings).</p>
+  <p class="lead">Two declared families: <b>Fragment Mono</b> for chrome (nav, buttons, footer at 10px uppercase) and <b>Geist Variable</b> for body and display (12px fields up to the 120px hero). The <code>--text-*</code> scale names sizes h1–h8, label, body and small with line-height/letter-spacing pairs; the measured components wear label 10px, body 12px, h2 96px and h1 120px.</p>
   <div id="type-out"></div>
 
   <h2 class="sh">Radius, layout and controls</h2>
-  <p class="lead">Radius is the signature: 8px on buttons and the score box, 14px on site cards, 72px fully-round on tag chips. Controls run 42–60px: 42px filter tabs, 48px buttons and fields, the 60px Vote CTA.</p>
+  <p class="lead">Radius is a role, not a scale: 8px on fields and cards, 16px declared on cards, and literally infinite on the pill CTAs (Tailwind <code>rounded-full</code> computes to <code>calc(infinity * 1px)</code>). Controls run 40–56px: 40px pills, the 41px CTA, 56px fields, the 65px header.</p>
   <div id="spacing-out" class="kv"></div>
 
   <h2 class="sh">Shadows</h2>
@@ -106,7 +107,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--border-default, #ededed); p
   <div id="elev-out" class="kv"></div>
 
   <h2 class="sh">Measured extras</h2>
-  <p class="lead">Colours no variable declares — the #e3c352 award gold, the #383838 hover fill on the outlined Submit Website, the #005fcc browser focus ring — plus the measured component dimensions.</p>
+  <p class="lead">Values no variable declares — the #005fcc browser focus ring and the measured component dimensions. The hover fill is the declared <code>--color-rule</code> verified on the CTA.</p>
   <div id="meas-out" class="kv"></div>
 
   <h2 class="sh">How the values were read</h2>

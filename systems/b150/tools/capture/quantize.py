@@ -10,7 +10,7 @@ committed. Flat UI colours are exact, gradients and photographs band a little, s
 from raw/css-vars.json and raw/components-computed.json. Adapted from the Coursera kit.
 """
 from PIL import Image
-import pathlib, re, sys
+import json, pathlib, re, sys
 
 REF = pathlib.Path(__file__).resolve().parent.parent.parent
 RAW = pathlib.Path(sys.argv[1])
@@ -38,5 +38,12 @@ for f in sorted(RAW.glob('*.png')):
         continue
     im = Image.open(f).convert('RGB')
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(OUT / f.name, optimize=True)
+    # The .capture.json sidecar records the measured viewport/dpr and PNG
+    # dimensions; it is retained evidence, so it ships alongside the image.
+    meta = f.with_name(f.name + '.capture.json')
+    if meta.exists():
+        rec = json.loads(meta.read_text())
+        rec['pngWidth'], rec['pngHeight'] = im.size
+        (OUT / meta.name).write_text(json.dumps(rec, indent=1) + '\n')
     n += 1
 print(n, 'screenshots ->', OUT)

@@ -10,8 +10,8 @@
 //
 // b150.ai is a Next.js/Tailwind marketing site in a single painted theme
 // (dark chrome, warm-cream inner pages), served in
-// English; it declares no design-token custom properties, so every value is a
-// computed-style measurement. Selectors key off text and the few semantic
+// English; its @layer theme block declares the tokens; every value here is a
+// computed-style measurement against them. Selectors key off text and the few semantic
 // classes (.label, .vibeathon-link, text-ink). Headless Chrome is served a
 // 200 (see lib.mjs); app.b150.ai rate-limits, so the auth links are measured
 // but never followed. Nothing is sent, joined or subscribed: the only presses

@@ -1,6 +1,6 @@
 # B150 patterns
 
-How the measured components combine on each captured surface of b150.ai, signed out. Every value is measured from computed styles — the site is Tailwind v4 and declares no design-token custom properties.
+How the measured components combine on each captured surface of b150.ai, signed out. Values come from the site's declared `@layer theme` tokens (`--color-*`, `--text-*`, `--radius-*`) where they exist, measured computed styles where they do not.
 
 ## Chrome
 

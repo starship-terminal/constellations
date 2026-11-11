@@ -1,198 +1,335 @@
 {
- "_about": "The token tree build_tokens.py turns into tokens.json. b150.ai is a Tailwind site that declares no design-token custom properties (css-vars.json records only --tw-* internals), so every value is a computed-style measurement on a named component. The site paints one painted theme; dark is empty.",
+ "_about": "The token tree build_tokens.py turns into tokens.json. b150.ai is a Tailwind v4 site whose `@layer theme` block declares --color-*, --font-*, --text-*, --radius-*, --container-*, --spacing and --ease-* (66 vars in raw/css-vars.json's app bin): each leaf either names that variable ('var') or carries a measured value ('source') where nothing declares it. The site paints one theme; dark is empty.",
  "core": {
-  "measured": {},
   "color": {
    "neutral": {
-    "ink": {
-     "value": "#fffdf6",
+    "paper": {
+     "var": "--color-paper",
      "type": "color",
-     "source": "computed color of nav-item default (raw/components-computed.json)",
-     "description": "The body/nav text colour."
+     "description": "The warm-cream section ground."
     },
-    "wash": {
-     "value": "#000000",
+    "cream": {
+     "var": "--color-cream",
      "type": "color",
-     "source": "computed backgroundColor of footer default (raw/components-computed.json)",
-     "description": "The footer's surface."
+     "description": "The slightly lighter cream (hero display text)."
+    },
+    "light": {
+     "var": "--color-light",
+     "type": "color",
+     "description": "The near-white cream: nav ink and CTA fills."
+    },
+    "ink": {
+     "var": "--color-ink",
+     "type": "color",
+     "description": "The warm near-black body ink."
+    },
+    "black": {
+     "var": "--color-black",
+     "type": "color",
+     "description": "The footer surface."
+    },
+    "white": {
+     "var": "--color-white",
+     "type": "color",
+     "description": "The SIGN UP / SEND MESSAGE pill fill."
+    },
+    "muted": {
+     "var": "--color-muted",
+     "type": "color",
+     "description": "Muted text."
+    },
+    "grey": {
+     "var": "--color-grey",
+     "type": "color",
+     "description": "Secondary grey."
+    },
+    "rule": {
+     "var": "--color-rule",
+     "type": "color",
+     "description": "Hairline borders, field fills, CTA hover."
     }
    },
    "accent": {
-    "primary": {
-     "value": "#ffffff",
+    "coral": {
+     "var": "--color-coral",
      "type": "color",
-     "source": "computed backgroundColor of signup-btn default (raw/components-computed.json)",
-     "description": "The SIGN UP pill fill."
+     "description": "The coral accent."
     },
-    "primaryText": {
-     "value": "#1f1915",
+    "coralDeep": {
+     "var": "--color-coral-deep",
      "type": "color",
-     "source": "computed color of signup-btn default (raw/components-computed.json)",
-     "description": "Text on the accent pill."
+     "description": "The deep coral."
     },
-    "cta": {
-     "value": "#fffdf6",
+    "blue": {
+     "var": "--color-blue",
      "type": "color",
-     "source": "computed backgroundColor of hero-cta default (raw/components-computed.json)",
-     "description": "The JOIN THE BETA fill."
+     "description": "Blue accent."
     },
-    "ctaText": {
-     "value": "#1f1915",
+    "green": {
+     "var": "--color-green",
      "type": "color",
-     "source": "computed color of hero-cta default (raw/components-computed.json)",
-     "description": "Text on the hero CTA."
+     "description": "Green accent."
     },
-    "hover": {
-     "value": "#f2efe9",
+    "red": {
+     "var": "--color-red",
      "type": "color",
-     "source": "computed backgroundColor of signup-btn hover (raw/components-computed.json)",
-     "description": "The accent's hover fill."
+     "description": "Red accent."
+    },
+    "lime": {
+     "var": "--color-lime",
+     "type": "color",
+     "description": "Lime accent."
     }
    }
   },
   "font": {
    "family": {
-    "primary": {
-     "value": "Fragment Mono",
+    "sans": {
+     "var": "--font-sans",
      "type": "fontFamily",
-     "source": "computed fontFamily of nav-item (raw/components-computed.json)",
-     "description": "The main family, measured."
+     "description": "Geist Variable stack: body and display copy."
     },
-    "alt1": {
-     "value": "Geist Variable",
+    "mono": {
+     "var": "--font-mono",
      "type": "fontFamily",
-     "source": "computed fontFamily of hero (raw/components-computed.json)",
-     "description": "The secondary family, measured."
+     "description": "Fragment Mono stack: labels, nav, buttons, footer."
     }
    },
    "weight": {
-    "regular": {
-     "value": "400",
-     "type": "fontWeight",
-     "source": "computed fontWeight of nav-item (raw/components-computed.json)"
+    "normal": {
+     "var": "--font-weight-normal",
+     "type": "fontWeight"
     },
     "medium": {
-     "value": "500",
-     "type": "fontWeight",
-     "source": "computed fontWeight of contact-input (raw/components-computed.json)"
+     "var": "--font-weight-medium",
+     "type": "fontWeight"
+    },
+    "semibold": {
+     "var": "--font-weight-semibold",
+     "type": "fontWeight"
+    },
+    "bold": {
+     "var": "--font-weight-bold",
+     "type": "fontWeight"
     }
    },
    "size": {
-    "nav": {
-     "value": "10px",
+    "label": {
+     "var": "--text-label",
      "type": "dimension",
-     "source": "computed fontSize of nav-item (raw/components-computed.json)",
-     "description": "Nav links."
+     "source": "verified: computed fontSize of nav-item (raw/components-computed.json)",
+     "description": "Labels, nav, buttons (10px measured on nav-item)."
     },
-    "button": {
-     "value": "10px",
+    "small": {
+     "var": "--text-small",
      "type": "dimension",
-     "source": "computed fontSize of signup-btn (raw/components-computed.json)",
-     "description": "The SIGN UP pill label."
+     "source": "verified: computed fontSize of footer-link (raw/components-computed.json)",
+     "description": "Small text (10px measured on footer-link)."
     },
-    "display": {
-     "value": "120px",
+    "body": {
+     "var": "--text-body",
      "type": "dimension",
-     "source": "computed fontSize of hero (raw/components-computed.json)",
-     "description": "The hero display heading."
+     "source": "verified: computed fontSize of contact-input (raw/components-computed.json)",
+     "description": "Body/field text (12px measured on contact-input)."
     },
-    "title": {
-     "value": "120px",
+    "h1": {
+     "var": "--text-h1",
      "type": "dimension",
-     "source": "computed fontSize of talent-title (raw/components-computed.json)",
-     "description": "Page titles."
+     "source": "verified: computed fontSize of hero (raw/components-computed.json)",
+     "description": "Display (120px measured on the hero)."
     },
-    "footer": {
-     "value": "10px",
+    "h2": {
+     "var": "--text-h2",
      "type": "dimension",
-     "source": "computed fontSize of footer-link (raw/components-computed.json)",
-     "description": "Footer links."
+     "source": "verified: computed fontSize of res-title (raw/components-computed.json)",
+     "description": "Page titles (96px measured on res-title)."
     },
-    "field": {
-     "value": "12px",
+    "h3": {
+     "var": "--text-h3",
      "type": "dimension",
-     "source": "computed fontSize of contact-input (raw/components-computed.json)",
-     "description": "Form fields."
+     "source": "verified: computed fontSize of about-body (raw/components-computed.json)",
+     "description": "(32px measured on about-body)."
     }
    },
-   "tracking": {}
+   "leading": {
+    "label": {
+     "var": "--text-label--line-height",
+     "type": "number"
+    },
+    "small": {
+     "var": "--text-small--line-height",
+     "type": "number"
+    },
+    "body": {
+     "var": "--text-body--line-height",
+     "type": "number"
+    },
+    "h1": {
+     "var": "--text-h1--line-height",
+     "type": "number"
+    },
+    "h2": {
+     "var": "--text-h2--line-height",
+     "type": "number"
+    },
+    "h3": {
+     "var": "--text-h3--line-height",
+     "type": "number"
+    },
+    "normal": {
+     "var": "--leading-normal",
+     "type": "number"
+    }
+   },
+   "tracking": {
+    "label": {
+     "var": "--text-label--letter-spacing",
+     "type": "dimension"
+    },
+    "normal": {
+     "var": "--tracking-normal",
+     "type": "dimension"
+    }
+   }
   },
   "radius": {
-   "pill": {
-    "value": "3.35544e+07px",
-    "type": "dimension",
-    "source": "computed borderTopLeftRadius of signup-btn (raw/components-computed.json)",
-    "description": "The SIGN UP pill's radius (rounded-full)."
-   },
-   "field": {
-    "value": "8px",
-    "type": "dimension",
-    "source": "computed borderTopLeftRadius of contact-input (raw/components-computed.json)",
-    "description": "Field corners."
-   },
    "card": {
-    "value": "8px",
+    "var": "--radius-card",
     "type": "dimension",
-    "source": "computed borderTopLeftRadius of talent-card (raw/components-computed.json)",
     "description": "Card corners."
    },
-   "cta": {
-    "value": "3.35544e+07px",
+   "lg": {
+    "var": "--radius-lg",
     "type": "dimension",
-    "source": "computed borderTopLeftRadius of hero-cta (raw/components-computed.json)",
-    "description": "CTA corners."
+    "source": "verified: computed borderTopLeftRadius of contact-input and talent-card (raw/components-computed.json)",
+    "description": "Fields and smaller cards (8px measured on contact-input/talent-card)."
+   },
+   "xl": {
+    "var": "--radius-xl",
+    "type": "dimension"
+   },
+   "pill": {
+    "value": "33554432px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of signup-btn/hero-cta/contact-button/m-cta (rounded-full = calc(infinity * 1px)) (raw/components-computed.json)",
+    "description": "The fully-round pill radius."
+   }
+  },
+  "layout": {
+   "container": {
+    "var": "--container-main",
+    "type": "dimension",
+    "description": "The content container width."
+   },
+   "spacing": {
+    "var": "--spacing",
+    "type": "dimension",
+    "description": "The Tailwind spacing unit."
+   }
+  },
+  "motion": {
+   "ease": {
+    "inout": {
+     "var": "--ease-in-out",
+     "type": "cubicBezier"
+    },
+    "outQuart": {
+     "var": "--ease-out-quart",
+     "type": "cubicBezier",
+     "description": "The signature easing."
+    }
+   },
+   "duration": {
+    "var": "--default-transition-duration",
+    "type": "duration"
+   }
+  },
+  "measured": {
+   "focus": {
+    "ring": {
+     "value": "#005fcc",
+     "type": "color",
+     "source": "computed outlineColor of nav-item focus-visible (raw/components-computed.json)",
+     "description": "The browser focus ring."
+    }
    }
   }
  },
  "light": {
   "text": {
    "primary": {
-    "value": "#fffdf6",
+    "var": "--color-ink",
     "type": "color",
-    "source": "computed color of nav-item default (raw/components-computed.json)",
-    "description": "Nav/body text colour — computed on the header nav."
+    "source": "verified: nav-item/footer/body text where it sits on cream (verified: signup-btn/vibe-cta fg) (raw/components-computed.json)",
+    "description": "Body ink on the cream surfaces."
    },
    "inverse": {
-    "value": "#1f1915",
+    "var": "--color-light",
     "type": "color",
-    "source": "computed color of signup-btn default (raw/components-computed.json)",
-    "description": "Text on the accent pill."
+    "source": "verified: nav-item/footer-link fg on the dark chrome (raw/components-computed.json)",
+    "description": "Cream ink on the dark chrome."
    }
   },
   "surface": {
    "page": {
-    "value": "#000000",
+    "var": "--color-paper",
     "type": "color",
-    "source": "computed backgroundColor of footer default (raw/components-computed.json)",
-    "description": "Page/footer surface."
+    "source": "verified: home-section/vibe-card bg (raw/components-computed.json)",
+    "description": "The warm-cream section ground."
+   },
+   "inverse": {
+    "var": "--color-black",
+    "type": "color",
+    "source": "verified: footer bg (raw/components-computed.json)",
+    "description": "The near-black footer/chrome surface."
+   },
+   "field": {
+    "var": "--color-rule",
+    "type": "color",
+    "source": "verified: contact-input/talent-card bg (raw/components-computed.json)",
+    "description": "Field fills and hairlines."
    }
   },
   "action": {
    "primary": {
-    "value": "#fffdf6",
+    "var": "--color-white",
     "type": "color",
-    "source": "computed backgroundColor of hero-cta default (raw/components-computed.json)",
-    "description": "The JOIN THE BETA CTA fill."
+    "source": "verified: signup-btn/contact-button/m-cta bg (raw/components-computed.json)",
+    "description": "The white pill fill."
+   },
+   "secondary": {
+    "var": "--color-light",
+    "type": "color",
+    "source": "verified: hero-cta/talent-cta bg (raw/components-computed.json)",
+    "description": "The cream JOIN THE BETA fill."
    },
    "primaryText": {
-    "value": "#1f1915",
+    "var": "--color-ink",
     "type": "color",
-    "source": "computed color of hero-cta default (raw/components-computed.json)",
-    "description": "Text on the CTA."
+    "source": "verified: signup-btn fg (raw/components-computed.json)",
+    "description": "Text on the pills."
    },
    "hover": {
-    "value": "#e6e3dd",
+    "var": "--color-rule",
     "type": "color",
-    "source": "computed backgroundColor of hero-cta hover (raw/components-computed.json)",
+    "source": "verified: hero-cta hover bg (raw/components-computed.json)",
     "description": "The CTA's hover fill."
+   }
+  },
+  "border": {
+   "default": {
+    "var": "--color-rule",
+    "type": "color",
+    "source": "verified: signup-btn border color (raw/components-computed.json)",
+    "description": "The pill hairline."
    }
   },
   "focus": {
    "ring": {
     "value": "#005fcc",
     "type": "color",
-    "source": "computed outlineColor of nav-item focus-visible (raw/components-computed.json)",
-    "description": "The focus ring on header/footer links."
+    "source": "computed outlineColor of nav-item/footer-link focus-visible (raw/components-computed.json)",
+    "description": "The focus ring."
    }
   }
  },

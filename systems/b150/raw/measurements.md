@@ -26,7 +26,7 @@ Page: home. Selector: `header`. States: default.
 | Font | Geist Variable 10px/15px 500 |
 | Letter spacing | -0.3px |
 | Colour | #1f1915 |
-| Text node | span.vibeathon-char: Fragment Mono 10px/13.33px 700, #90a684, ls 0.3px |
+| Text node | span.vibeathon-char: Fragment Mono 10px/13.33px 700, #a3b2af, ls 0.3px |
 | Transition | none |
 | Icon | 30 x 10, colour #fffdf6 |
 | Painted layers | a.label.ml-1 79.4x40.0 bg #ffffff border T:1px solid #e6e3dd / R:1px solid #e6e3dd / B:1px solid #e6e3dd / L:1px solid #e6e3dd r 3.35544e+07px; div.border-t.border-rule 0.0x0.0 bg #f2efe9 border T:1px solid #e6e3dd; a.label.mt-3 0.0x0.0 bg #ffffff border T:1px solid #e6e3dd / R:1px solid #e6e3dd / B:1px solid #e6e3dd / L:1px solid #e6e3dd r 3.35544e+07px |
@@ -469,8 +469,6 @@ Page: about. Selector: `main p`. States: default.
 | Letter spacing | -1px |
 | Colour | #1f1915 |
 | Transition | opacity, transform 0.9s, 0.9s cubic-bezier(0.25, 1, 0.5, 1), cubic-bezier(0.25, 1, 0.5, 1) |
-| Transform | matrix(1, 0, 0, 1, 0, 5.21885) |
-| Opacity | 0.782548 |
 | How | at rest |
 
 Crops: `about-body-default.png`.
@@ -525,32 +523,6 @@ Page: contact. Selector: `input`. States: default, focused.
 | How | at rest | clicked into the field |
 
 Crops: `contact-input-default.png`, `contact-input-focused.png`.
-
-#### contact-textarea
-
-Contact email field. The email input; focused only, never submitted.
-
-Page: contact. Selector: `input[type="email"]`. States: default, focused.
-
-| Property | default | focused |
-|---|---|---|
-| Size (w x h) | 300 x 56 | = |
-| Padding | 0px 16px | = |
-| Border | 1px solid #e6e3dd | 1px solid #1f1915 @ 0.32 |
-| Radius | 8px | = |
-| Background | #e6e3dd | #f7f5f1 |
-| Box shadow | none | = |
-| Outline | none | = |
-| Font | Geist Variable 12px/18px 500 | = |
-| Letter spacing | -0.3px | = |
-| Colour | #1f1915 | = |
-| Transition | color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) | = |
-| Cursor | text | = |
-| Placeholder | #1f1915 @ 0.48, opacity 1 | = |
-| Painted layers | input.block.w-full 300.0x56.0 bg #e6e3dd border T:1px solid #e6e3dd / R:1px solid #e6e3dd / B:1px solid #e6e3dd / L:1px solid #e6e3dd r 8px | input.block.w-full 300.0x56.0 bg #f7f5f1 border T:1px solid #1f1915 @ 0.32 / R:1px solid #1f1915 @ 0.32 / B:1px solid #1f1915 @ 0.32 / L:1px solid #1f1915 @ 0.32 r 8px |
-| How | at rest | clicked into the field |
-
-Crops: none.
 
 #### contact-button
 

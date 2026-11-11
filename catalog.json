@@ -2066,16 +2066,16 @@
    "url": "https://b150.ai",
    "category": "media",
    "platform": "web",
-   "goodFor": "Gen-AI builders' network marketing site: Tailwind v4 utility styles with measured-only tokens, ink-on-paper palette, pill CTAs (SIGN UP / JOIN THE BETA), uppercase tracked .label nav, marketing sections for Vibeathon, Talent, Free Resources and a contact form",
+   "goodFor": "Gen-AI builders' network marketing site: Tailwind v4 with a declared @layer theme token layer (warm creams on near-black chrome, coral-to-lime accents, --text-* scale, --radius-*), Fragment Mono labels under 120px Geist display, fully-round pill CTAs, marketing sections for Vibeathon, Talent, Free Resources and a contact form",
    "tags": [
     "web",
     "community",
     "ai",
     "marketing",
-    "light",
+    "dark",
     "signed-out",
     "tailwind",
-    "measured-tokens"
+    "design-tokens"
    ],
    "shape": "reference",
    "captured": "2026-11-11",
@@ -2096,20 +2096,21 @@
     "swatches": {
      "light": {
       "page": "light.surface.page",
-      "surface": "light.text.primary",
+      "surface": "light.surface.field",
       "text": "light.text.primary",
-      "muted": "light.text.primary",
+      "muted": "core.color.neutral.muted",
       "accent": "light.action.primary",
-      "border": "light.text.primary"
+      "border": "light.border.default"
      }
     },
     "fonts": [
-     "core.font.family.primary"
+     "core.font.family.sans",
+     "core.font.family.mono"
     ]
    },
    "capture": {
     "method": "public-web",
-    "source": "b150.ai in headless Chrome (Playwright), desktop 1440x900 and mobile 390x844 at 2x; computed styles and crops from the live DOM; CSS vars from stylesheet response bodies + inline styles (Tailwind --tw-* internals only, no app tokens)",
+    "source": "b150.ai in headless Chrome (Playwright), desktop 1440x900 and mobile 390x844 at 2x; computed styles and crops from the live DOM; CSS vars from stylesheet response bodies + inline styles — the declared @layer theme block lands in the app bin",
     "timestamp": "2026-11-11T05:30:00Z",
     "harness": "Devin",
     "model": "SWE-2 Max",
@@ -2126,7 +2127,6 @@
     ],
     "gaps": [
      "app.b150.ai (LOGIN / SIGN UP / auth gate) returns HTTP 429 to non-browser clients and was never reached",
-     "b150.ai declares no design-token custom properties; every token value is a computed-style measurement",
      "/legal and /support render but were not captured in the page set",
      "the contact form was measured and focused, never submitted",
      "any consent or promo layer was hidden, never answered",

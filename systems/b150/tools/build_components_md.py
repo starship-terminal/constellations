@@ -218,31 +218,34 @@ def child_layers(c):
 # --------------------------------------------------------------------------- page and group text
 
 PAGE_NAME = {
-    "home": "the home page", "websites": "the winners grid", "site": "the site-detail page",
-    "collections": "the collections index", "submit": "the submit gate", "?": "the", None: "the",
+    "home": "the home page", "vibeathon": "the vibeathon page", "talent": "the talent page",
+    "resources": "the free-resources page", "about": "the about page", "contact": "the contact page",
+    "?": "the", None: "the",
 }
 
 GROUP_INTRO = {
-    "Shell and navigation": "The header (wordmark, Explore/Directory/Academy/Jobs/Market nav, Log in / Sign Up, Be Pro, Submit Website).",
-    "Home": "The Site of the Day hero card and the nominee cards below.",
-    "Winners grid": "The /websites/ grid: the Awards/Category/Tag/Technology filter bar and the site cards.",
-    "Site detail": "A /sites/ entry: display title, jury score box, the gold Vote button and category tags.",
-    "Collections": "The curated collections index.",
-    "Submit gate": "The public /submit/ page; nothing was submitted.",
-    "Footer": "The page footer and section links.",
+    "Shell and navigation": "The header (wordmark, VIBEATHON/EVENTS/JOBS/MARKETPLACE/TALENT/FREE RESOURCES nav, LOGIN, SIGN UP).",
+    "Home": "The hero — \"Don't wait for the future. Build it.\" — and the sections below it.",
+    "Vibeathon": "The /vibeathon event surface.",
+    "Talent": "The /talent directory surface and its cards.",
+    "Free resources": "The /free-resources cards.",
+    "About": "The /about founder letter.",
+    "Contact": "The /contact form; measured and focused, never submitted.",
+    "Footer": "The near-black page footer and its links.",
     "Mobile (390 wide)": "The same surface at phone width, with the menu layer open.",
 }
 
 SHOTS = [
     ("home", "Home", "/"),
-    ("websites", "Winners grid", "/websites/"),
-    ("site", "Site detail", "first site card on the winners grid"),
-    ("collections", "Collections", "/collections/"),
-    ("submit", "Submit gate", "/submit/"),
+    ("vibeathon", "Vibeathon", "/vibeathon"),
+    ("talent", "Talent", "/talent"),
+    ("resources", "Free resources", "/free-resources"),
+    ("about", "About", "/about"),
+    ("contact", "Contact", "/contact"),
 ]
 MOBILE = [
     ("mobile-home", "Home, phone", "/"),
-    ("mobile-websites", "Winners grid, phone", "/websites/"),
+    ("mobile-talent", "Talent, phone", "/talent"),
 ]
 
 L = []
@@ -268,7 +271,7 @@ n_crops = len(list(Path("components/crops").glob("*.png")))
 n_states = sum(len(c["states"]) for c in C.values())
 icons = []
 
-W("# Awwwards components")
+W("# B150 components")
 W()
 W(f"The discovery list of every page and view captured, then one entry per component with crops of the real product, and the Gaps. Captured from b150.ai on {J['_meta']['read']}, signed out, in headless Chrome at 1440 x 900 (the Mobile group at 390 x 844), with computed styles read from the running page. Nothing was joined, signed into, created, sent or submitted.")
 W()
@@ -295,8 +298,6 @@ W("| State | Where | How it was reached | Captured |")
 W("|---|---|---|---|")
 OVER = [
     ("Arrival view", "home, on load", "the page as it arrives, before any consent or promo layer is hidden (nothing is ever answered)", "[home-light-arrival](screenshots/home-light-arrival.png)"),
-    ("Card hover layer", "home site cards", "the card held under the pointer; the Vote Now layer shows", "[home-light-card-hover](screenshots/home-light-card-hover.png)"),
-    ("Filter dropdown", "winners grid", "the first filter tab's own toggle", "[websites-light-filter-open](screenshots/websites-light-filter-open.png), [filter-dropdown](#filter-dropdown)"),
     ("Mobile menu", "home, phone", "the menu button's own toggle", "[mobile-home-light-menu](screenshots/mobile-home-light-menu.png), [m-menu-open](#mobile-menu-open)"),
 ]
 for r in OVER:
@@ -337,7 +338,7 @@ if without:
     parts.append(f"The other {len(without)} show no measured change: {', '.join(without)}.")
 W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {' '.join(parts)}")
 W()
-W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): controls keep their shape — Awwwards answers hover with fill and outline swaps rather than scale or shadow. Nothing a real press would vote, submit or sign in was ever pressed.")
+W("**Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): controls keep their shape — B150 answers hover with tone and opacity shifts rather than scale or shadow. Nothing a real press would join, send or sign in was ever pressed.")
 W()
 W("**Motion.** Transitions measured on the components, by duration.")
 W()
@@ -377,7 +378,7 @@ W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
 W("|---|---|---|---|---|---|---|")
 # The card-like components to compare in one table.
-for k in ["site-card", "grid-card", "coll-card", "plan-card", "m-site-card", "score-box"]:
+for k in ["home-section", "vibe-card", "talent-card", "res-card", "contact-input", "signup-btn"]:
     c = C.get(k)
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
@@ -435,7 +436,7 @@ for g in groups:
 W()
 W("## Icons")
 W()
-W("No standalone SVG icon set was lifted on this pass; the icons in the crops and screenshots are Awwwards' artwork (inline SVG). Declared under layoutGaps in the catalog entry.")
+W("No standalone SVG icon set was lifted on this pass; the icons in the crops and screenshots are B150's artwork (inline SVG). Declared under layoutGaps in the catalog entry.")
 W()
 W("| Icon | Rendered sizes | View box | Style | Seen on | Next to |")
 W("|---|---|---|---|---|---|")
@@ -449,10 +450,10 @@ W("## Gaps")
 W()
 W("### Pages")
 W()
-W("- **Voting, submitting and anything behind sign-in.** The Vote button was measured but never clicked (a vote records a score), /submit/ was never submitted, and Log in / Sign Up did not render on the headless loads — no public login page exists signed-out. Jury tools, Pro dashboards and account pages were never reached.")
+W("- **The authenticated product.** LOGIN and SIGN UP point at app.b150.ai, which returned HTTP 429 to the recon probe — the app was never reached. Profiles, jobs, the marketplace and account pages are behind that gate.")
 W("- **Anything that sends or joins.** No form was submitted, no vote cast, no search was run, no account was created, no consent choice was made.")
-W("- **The filter dropdown's innards** were measured at the first option only; Academy, Jobs, Market, Directory and Jury pages are outside this pass.")
-W("- **The card hover layer.** The Vote Now overlay on grid cards stayed `display:none` under headless hover on the measured runs (recorded as a gap on `card-cta`/`card-action`, not fabricated); the screenshot `home-light-card-hover` shows it.")
+W("- **/legal and /support render but were not captured** — both return 200; they were out of the page set.")
+W("- **Card components are structural.** With Tailwind utilities only, `talent-card`/`vibe-card`/`res-card` match the first card-ish container; representative measurements, not a lifted component API.")
 W("- **Headless access.** b150.ai serves headless Chrome a 200 on every captured route.")
 W()
 W("### States")
@@ -467,7 +468,7 @@ W("The site paints one theme on every captured route; a `.dark` probe resolves e
 W()
 W("### Fonts")
 W()
-W("- **Inter Tight** is the single family — every measured component resolves to it, at declared weights 300-800 (`--font-light` to `--font-black`). Only one `@font-face` rule was captured; the variable font is self-hosted.")
+W("- **Fragment Mono** carries the chrome (nav/buttons/footer at 10px) and **Geist Variable** carries body and display copy — the declared `--font-mono`/`--font-sans` stacks. The site declares 8 `@font-face` rules (raw/css-vars.json); licences are not stated on-site.")
 W()
 W("### Screenshots")
 W()

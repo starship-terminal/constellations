@@ -27,8 +27,8 @@ export const RAW = path.join(REF, 'raw');
 // b150.ai is a Next.js/Tailwind marketing site for a Gen-AI builders
 // network, in a single painted theme (dark chrome, cream inner pages), served in English. Its classes are Tailwind
 // utilities plus a few semantic names (.label, .vibeathon-link, text-ink);
-// it declares no app design-token custom properties — the token tree is
-// measured from computed styles. The app itself lives on app.b150.ai, which
+// its @layer theme block declares the token layer (--color-*, --text-*,
+// --radius-*), resolved where possible and measured where not. The app itself lives on app.b150.ai, which
 // rate-limits (429) non-browser clients — the auth gate is a documented
 // boundary. Any consent or promo layer is hidden, never answered.
 export const M = (name) => `[class*="${name}"]`;
@@ -281,7 +281,9 @@ export async function crop(page, locator, name, pad = 8) {
 
 export async function centre(locator) {
   await locator.evaluate((el) => el.scrollIntoView({ block: 'center', inline: 'nearest', behavior: 'instant' })).catch(() => {});
-  await locator.page().waitForTimeout(350);
+  // Entrance transitions on this site run ~900ms: wait them out so the
+  // 'default' reading is the at-rest style, not a mid-motion frame.
+  await locator.page().waitForTimeout(1200);
 }
 
 // 256 colours, and a crop larger than about 1.2 megapixels (a whole sidebar or
