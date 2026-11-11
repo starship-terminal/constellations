@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 71,
-    "system_domains": 63,
-    "matched_domains": 39,
-    "missing_domains": 394,
+    "system_packages": 72,
+    "system_domains": 64,
+    "matched_domains": 40,
+    "missing_domains": 393,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -428,6 +428,23 @@
         }
       ]
     },
+    "boords.com": {
+      "catalog": [
+        {
+          "name": "Boords",
+          "domain": "boords.com",
+          "id": 458
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "boords",
+          "name": "Boords",
+          "url": "https://boords.com",
+          "name_match": true
+        }
+      ]
+    },
     "brilliant.org": {
       "catalog": [
         {
@@ -819,13 +836,6 @@
         "name": "Blue Apron",
         "domain": "blueapron.com",
         "id": 224
-      }
-    ],
-    "boords.com": [
-      {
-        "name": "Boords",
-        "domain": "boords.com",
-        "id": 458
       }
     ],
     "busuu.com": [
