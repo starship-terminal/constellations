@@ -1,0 +1,2002 @@
+{
+ "readAt": "2026-11-11",
+ "source": "the stylesheet bodies fetched during a live home load on b150.ai (response bodies plus the page's inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class (unbound on this site), at 1440 x 900",
+ "sheets": [
+  "https://b150.ai/_astro/Layout.SlGQwCim.css (71596 bytes)",
+  "inline-0 (1533 bytes)"
+ ],
+ "counts": {
+  "rules": 89,
+  "fonts": 8,
+  "names": {
+   "generated": 0,
+   "app": 66,
+   "vendor": 0,
+   "utility": 0,
+   "tailwind": 67
+  },
+  "bySelector": {
+   "[tailwind] @layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))) *, ::before, ::after, ::backdrop": 67,
+   "[app] @layer theme :root, :host": 66,
+   "[tailwind] @layer utilities .-translate-x-1\\/2": 1,
+   "[tailwind] @layer utilities .-translate-y-1\\/2": 1,
+   "[tailwind] @layer utilities .scale-140": 3,
+   "[tailwind] @layer utilities .touch-pan-y": 1,
+   "[tailwind] @layer utilities .snap-mandatory": 1,
+   "[tailwind] @layer utilities .bg-linear-to-b": 1,
+   "[tailwind] @layer utilities @supports (background-image:linear-gradient(in lab, red, red)) .bg-linear-to-b": 1,
+   "[tailwind] @layer utilities .bg-linear-to-t": 1,
+   "[tailwind] @layer utilities @supports (background-image:linear-gradient(in lab, red, red)) .bg-linear-to-t": 1,
+   "[tailwind] @layer utilities .from-ink\\/16": 2,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .from-ink\\/16": 1,
+   "[tailwind] @layer utilities .from-paper": 2,
+   "[tailwind] @layer utilities .from-rule": 2,
+   "[tailwind] @layer utilities .from-white": 2,
+   "[tailwind] @layer utilities .to-ink": 2,
+   "[tailwind] @layer utilities .to-transparent": 2,
+   "[tailwind] @layer utilities .to-white\\/0": 2,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .to-white\\/0": 1,
+   "[tailwind] @layer utilities .leading-3": 1,
+   "[tailwind] @layer utilities .leading-\\[0\\.916\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[0\\.933\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[1\\.4\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[1\\.5\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[1\\.7\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[1\\.12\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[1\\.125\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[15px\\]": 1,
+   "[tailwind] @layer utilities .leading-none": 1,
+   "[tailwind] @layer utilities .leading-normal": 1,
+   "[tailwind] @layer utilities .font-bold": 1,
+   "[tailwind] @layer utilities .font-medium": 1,
+   "[tailwind] @layer utilities .font-normal": 1,
+   "[tailwind] @layer utilities .font-semibold": 1,
+   "[tailwind] @layer utilities .tracking-\\[-0\\.3px\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-1\\.5px\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-1px\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-2px\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-3px\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[0\\.3px\\]": 1,
+   "[tailwind] @layer utilities .tracking-normal": 1,
+   "[tailwind] @layer utilities .shadow-\\[0_7px_20px_20px_rgb\\(0_0_0\\/0\\.03\\)\\]": 1,
+   "[tailwind] @layer utilities .invert": 1,
+   "[tailwind] @layer utilities .backdrop-blur-\\[16px\\]": 1,
+   "[tailwind] @layer utilities .duration-200": 1,
+   "[tailwind] @layer utilities .duration-300": 1,
+   "[tailwind] @layer utilities .duration-400": 1,
+   "[tailwind] @layer utilities .ease-in-out": 1,
+   "[tailwind] @layer utilities .outline-none": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\:scale-110:is(:where(.group):hover *)": 3,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:scale-110:hover": 3,
+   "[tailwind] @layer utilities .active\\:scale-90:active": 3,
+   "[tailwind] @layer utilities @media not all and (width >= 767px) .max-\\[767px\\]\\:leading-none": 1,
+   "[tailwind] @layer utilities @media not all and (width >= 767px) .max-\\[767px\\]\\:tracking-\\[-1px\\]": 1,
+   "[tailwind] @layer utilities @media not all and (width >= 767px) .max-\\[767px\\]\\:tracking-\\[-3px\\]": 1,
+   "[tailwind] @layer utilities @media not all and (width >= 48rem) .max-md\\:from-25\\%": 1,
+   "[tailwind] @layer utilities @media (width >= 480px) .min-\\[480px\\]\\:from-ink\\/16": 2,
+   "[tailwind] @layer utilities @media (width >= 480px) @supports (color:color-mix(in lab, red, red)) .min-\\[480px\\]\\:from-ink\\/16": 1,
+   "[tailwind] @layer utilities @media (width >= 480px) .min-\\[480px\\]\\:to-ink\\/0": 2,
+   "[tailwind] @layer utilities @media (width >= 480px) @supports (color:color-mix(in lab, red, red)) .min-\\[480px\\]\\:to-ink\\/0": 1,
+   "[tailwind] @layer utilities @media (width >= 480px) .min-\\[480px\\]\\:leading-\\[1\\.125\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 480px) .min-\\[480px\\]\\:tracking-\\[-1\\.5px\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 480px) .min-\\[480px\\]\\:tracking-\\[-1px\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 480px) .min-\\[480px\\]\\:tracking-\\[-3px\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 768px) .min-\\[768px\\]\\:leading-\\[0\\.916\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 768px) .min-\\[768px\\]\\:leading-\\[0\\.933\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 768px) .min-\\[768px\\]\\:leading-none": 1,
+   "[tailwind] @layer utilities @media (width >= 768px) .min-\\[768px\\]\\:tracking-\\[-2px\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 768px) .min-\\[768px\\]\\:tracking-\\[-3px\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 768px) .min-\\[768px\\]\\:tracking-\\[-8px\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 992px) .min-\\[992px\\]\\:leading-\\[1\\.12\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 992px) .min-\\[992px\\]\\:leading-none": 1,
+   "[tailwind] @layer utilities @media (width >= 1024px) .min-\\[1024px\\]\\:backdrop-blur-\\[8px\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 30rem) .min-\\[30rem\\]\\:leading-\\[1\\.125\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 30rem) .min-\\[30rem\\]\\:tracking-\\[-1px\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 40rem) .sm\\:tracking-\\[-6px\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 48rem) .md\\:leading-\\[0\\.93\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 48rem) .md\\:leading-\\[0\\.916\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 48rem) .md\\:leading-\\[1\\.1\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 48rem) .md\\:tracking-\\[-2px\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 48rem) .md\\:tracking-\\[-8px\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 64rem) .lg\\:leading-\\[1\\.12\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 64rem) .lg\\:tracking-\\[-3px\\]": 1,
+   "[tailwind] @layer utilities @media (width >= 64rem) .lg\\:tracking-\\[-8px\\]": 1
+  }
+ },
+ "errors": [],
+ "generated": [],
+ "app": [
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ":root, :host",
+   "context": [
+    "@layer theme"
+   ],
+   "properties": {
+    "--font-sans": "\"Geist Variable\", Geist, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+    "--font-mono": "\"Fragment Mono\", Monaco, Menlo, \"Ubuntu Mono\", Consolas, monospace",
+    "--color-black": "#000",
+    "--color-white": "#fff",
+    "--spacing": ".25rem",
+    "--font-weight-normal": "400",
+    "--font-weight-medium": "500",
+    "--font-weight-semibold": "600",
+    "--font-weight-bold": "700",
+    "--tracking-normal": "0em",
+    "--leading-normal": "1.5",
+    "--radius-lg": ".5rem",
+    "--radius-xl": ".75rem",
+    "--ease-in-out": "cubic-bezier(.4, 0, .2, 1)",
+    "--aspect-video": "16 / 9",
+    "--default-transition-duration": ".15s",
+    "--default-transition-timing-function": "cubic-bezier(.4, 0, .2, 1)",
+    "--default-font-family": "var(--font-sans)",
+    "--default-mono-font-family": "var(--font-mono)",
+    "--color-paper": "#f2efe9",
+    "--color-cream": "#f7f5f1",
+    "--color-rule": "#e6e3dd",
+    "--color-light": "#fffdf6",
+    "--color-ink": "#1f1915",
+    "--color-muted": "#6d6d6d",
+    "--color-grey": "#616161",
+    "--color-lime": "#d4fd80",
+    "--color-coral": "#fa725a",
+    "--color-coral-deep": "#b83d26",
+    "--color-red": "#fa4149",
+    "--color-blue": "#59a0e2",
+    "--color-green": "#769447",
+    "--text-h1": "120px",
+    "--text-h1--line-height": ".933",
+    "--text-h1--letter-spacing": "-8px",
+    "--text-h2": "96px",
+    "--text-h2--line-height": ".916",
+    "--text-h2--letter-spacing": "-3px",
+    "--text-h3": "64px",
+    "--text-h3--line-height": "1",
+    "--text-h3--letter-spacing": "-2px",
+    "--text-h4": "48px",
+    "--text-h4--line-height": "1",
+    "--text-h4--letter-spacing": "-2px",
+    "--text-h5": "40px",
+    "--text-h5--line-height": "1",
+    "--text-h5--letter-spacing": "-1px",
+    "--text-h6": "32px",
+    "--text-h6--line-height": "1.125",
+    "--text-h6--letter-spacing": "-1px",
+    "--text-h7": "24px",
+    "--text-h7--line-height": "1.166",
+    "--text-h8": "16px",
+    "--text-h8--line-height": "1.1",
+    "--text-h8--letter-spacing": "-.3px",
+    "--text-body": "12px",
+    "--text-body--line-height": "1.7",
+    "--text-small": "10px",
+    "--text-small--line-height": "1.5",
+    "--text-small--letter-spacing": "-.3px",
+    "--text-label": "10px",
+    "--text-label--line-height": "1.333",
+    "--text-label--letter-spacing": ".3px",
+    "--container-main": "1800px",
+    "--radius-card": "16px",
+    "--ease-out-quart": "cubic-bezier(.25, 1, .5, 1)"
+   },
+   "bin": "app"
+  }
+ ],
+ "vendor": [],
+ "utility": [],
+ "tailwind": [
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": "*, ::before, ::after, ::backdrop",
+   "context": [
+    "@layer properties",
+    "@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b))))"
+   ],
+   "properties": {
+    "--tw-translate-x": "0",
+    "--tw-translate-y": "0",
+    "--tw-translate-z": "0",
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1",
+    "--tw-scale-z": "1",
+    "--tw-rotate-x": "initial",
+    "--tw-rotate-y": "initial",
+    "--tw-rotate-z": "initial",
+    "--tw-skew-x": "initial",
+    "--tw-skew-y": "initial",
+    "--tw-pan-x": "initial",
+    "--tw-pan-y": "initial",
+    "--tw-pinch-zoom": "initial",
+    "--tw-scroll-snap-strictness": "proximity",
+    "--tw-border-style": "solid",
+    "--tw-gradient-position": "initial",
+    "--tw-gradient-from": "#0000",
+    "--tw-gradient-via": "#0000",
+    "--tw-gradient-to": "#0000",
+    "--tw-gradient-stops": "initial",
+    "--tw-gradient-via-stops": "initial",
+    "--tw-gradient-from-position": "0%",
+    "--tw-gradient-via-position": "50%",
+    "--tw-gradient-to-position": "100%",
+    "--tw-leading": "initial",
+    "--tw-font-weight": "initial",
+    "--tw-tracking": "initial",
+    "--tw-shadow": "0 0 #0000",
+    "--tw-shadow-color": "initial",
+    "--tw-shadow-alpha": "100%",
+    "--tw-inset-shadow": "0 0 #0000",
+    "--tw-inset-shadow-color": "initial",
+    "--tw-inset-shadow-alpha": "100%",
+    "--tw-ring-color": "initial",
+    "--tw-ring-shadow": "0 0 #0000",
+    "--tw-inset-ring-color": "initial",
+    "--tw-inset-ring-shadow": "0 0 #0000",
+    "--tw-ring-inset": "initial",
+    "--tw-ring-offset-width": "0px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-offset-shadow": "0 0 #0000",
+    "--tw-outline-style": "solid",
+    "--tw-blur": "initial",
+    "--tw-brightness": "initial",
+    "--tw-contrast": "initial",
+    "--tw-grayscale": "initial",
+    "--tw-hue-rotate": "initial",
+    "--tw-invert": "initial",
+    "--tw-opacity": "initial",
+    "--tw-saturate": "initial",
+    "--tw-sepia": "initial",
+    "--tw-drop-shadow": "initial",
+    "--tw-drop-shadow-color": "initial",
+    "--tw-drop-shadow-alpha": "100%",
+    "--tw-drop-shadow-size": "initial",
+    "--tw-backdrop-blur": "initial",
+    "--tw-backdrop-brightness": "initial",
+    "--tw-backdrop-contrast": "initial",
+    "--tw-backdrop-grayscale": "initial",
+    "--tw-backdrop-hue-rotate": "initial",
+    "--tw-backdrop-invert": "initial",
+    "--tw-backdrop-opacity": "initial",
+    "--tw-backdrop-saturate": "initial",
+    "--tw-backdrop-sepia": "initial",
+    "--tw-duration": "initial",
+    "--tw-ease": "initial"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".-translate-x-1\\/2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(calc(1 / 2 * 100%) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".-translate-y-1\\/2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(calc(1 / 2 * 100%) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".scale-140",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "140%",
+    "--tw-scale-y": "140%",
+    "--tw-scale-z": "140%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".touch-pan-y",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-pan-y": "pan-y"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".snap-mandatory",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scroll-snap-strictness": "mandatory"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".bg-linear-to-b",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to bottom"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".bg-linear-to-b",
+   "context": [
+    "@layer utilities",
+    "@supports (background-image:linear-gradient(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to bottom in oklab"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".bg-linear-to-t",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to top"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".bg-linear-to-t",
+   "context": [
+    "@layer utilities",
+    "@supports (background-image:linear-gradient(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to top in oklab"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".from-ink\\/16",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "#1f191529"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".from-ink\\/16",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-ink) 16%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".from-ink\\/16",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".from-paper",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "var(--color-paper)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".from-rule",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "var(--color-rule)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".from-white",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "var(--color-white)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".to-ink",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-to": "var(--color-ink)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".to-transparent",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-to": "transparent",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".to-white\\/0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-to": "#0000"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".to-white\\/0",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-white) 0%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".to-white\\/0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".leading-3",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "calc(var(--spacing) * 3)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".leading-\\[0\\.916\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": ".916"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".leading-\\[0\\.933\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": ".933"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".leading-\\[1\\.4\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1.4"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".leading-\\[1\\.5\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1.5"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".leading-\\[1\\.7\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1.7"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".leading-\\[1\\.12\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1.12"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".leading-\\[1\\.125\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1.125"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".leading-\\[15px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "15px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".leading-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".leading-normal",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-normal)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".font-bold",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-bold)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".font-medium",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-medium)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".font-normal",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-normal)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".font-semibold",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-semibold)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".tracking-\\[-0\\.3px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-.3px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".tracking-\\[-1\\.5px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-1.5px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".tracking-\\[-1px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-1px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".tracking-\\[-2px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-2px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".tracking-\\[-3px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-3px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".tracking-\\[0\\.3px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": ".3px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".tracking-normal",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "var(--tracking-normal)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".shadow-\\[0_7px_20px_20px_rgb\\(0_0_0\\/0\\.03\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 7px 20px 20px var(--tw-shadow-color,#00000008)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".invert",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-invert": "invert(100%)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".backdrop-blur-\\[16px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(16px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".duration-200",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".2s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".duration-300",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".3s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".duration-400",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".4s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".ease-in-out",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ease": "var(--ease-in-out)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".outline-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-outline-style": "none"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".group-hover\\:scale-110:is(:where(.group):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-scale-x": "110%",
+    "--tw-scale-y": "110%",
+    "--tw-scale-z": "110%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".hover\\:scale-110:hover",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-scale-x": "110%",
+    "--tw-scale-y": "110%",
+    "--tw-scale-z": "110%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".active\\:scale-90:active",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "90%",
+    "--tw-scale-y": "90%",
+    "--tw-scale-z": "90%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".max-\\[767px\\]\\:leading-none",
+   "context": [
+    "@layer utilities",
+    "@media not all and (width >= 767px)"
+   ],
+   "properties": {
+    "--tw-leading": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".max-\\[767px\\]\\:tracking-\\[-1px\\]",
+   "context": [
+    "@layer utilities",
+    "@media not all and (width >= 767px)"
+   ],
+   "properties": {
+    "--tw-tracking": "-1px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".max-\\[767px\\]\\:tracking-\\[-3px\\]",
+   "context": [
+    "@layer utilities",
+    "@media not all and (width >= 767px)"
+   ],
+   "properties": {
+    "--tw-tracking": "-3px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".max-md\\:from-25\\%",
+   "context": [
+    "@layer utilities",
+    "@media not all and (width >= 48rem)"
+   ],
+   "properties": {
+    "--tw-gradient-from-position": "25%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[480px\\]\\:from-ink\\/16",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 480px)"
+   ],
+   "properties": {
+    "--tw-gradient-from": "#1f191529"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[480px\\]\\:from-ink\\/16",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 480px)",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab, var(--color-ink) 16%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[480px\\]\\:from-ink\\/16",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 480px)"
+   ],
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[480px\\]\\:to-ink\\/0",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 480px)"
+   ],
+   "properties": {
+    "--tw-gradient-to": "#0000"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[480px\\]\\:to-ink\\/0",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 480px)",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-ink) 0%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[480px\\]\\:to-ink\\/0",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 480px)"
+   ],
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[480px\\]\\:leading-\\[1\\.125\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 480px)"
+   ],
+   "properties": {
+    "--tw-leading": "1.125"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[480px\\]\\:tracking-\\[-1\\.5px\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 480px)"
+   ],
+   "properties": {
+    "--tw-tracking": "-1.5px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[480px\\]\\:tracking-\\[-1px\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 480px)"
+   ],
+   "properties": {
+    "--tw-tracking": "-1px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[480px\\]\\:tracking-\\[-3px\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 480px)"
+   ],
+   "properties": {
+    "--tw-tracking": "-3px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[768px\\]\\:leading-\\[0\\.916\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 768px)"
+   ],
+   "properties": {
+    "--tw-leading": ".916"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[768px\\]\\:leading-\\[0\\.933\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 768px)"
+   ],
+   "properties": {
+    "--tw-leading": ".933"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[768px\\]\\:leading-none",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 768px)"
+   ],
+   "properties": {
+    "--tw-leading": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[768px\\]\\:tracking-\\[-2px\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 768px)"
+   ],
+   "properties": {
+    "--tw-tracking": "-2px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[768px\\]\\:tracking-\\[-3px\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 768px)"
+   ],
+   "properties": {
+    "--tw-tracking": "-3px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[768px\\]\\:tracking-\\[-8px\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 768px)"
+   ],
+   "properties": {
+    "--tw-tracking": "-8px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[992px\\]\\:leading-\\[1\\.12\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 992px)"
+   ],
+   "properties": {
+    "--tw-leading": "1.12"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[992px\\]\\:leading-none",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 992px)"
+   ],
+   "properties": {
+    "--tw-leading": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[1024px\\]\\:backdrop-blur-\\[8px\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 1024px)"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(8px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[30rem\\]\\:leading-\\[1\\.125\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 30rem)"
+   ],
+   "properties": {
+    "--tw-leading": "1.125"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".min-\\[30rem\\]\\:tracking-\\[-1px\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 30rem)"
+   ],
+   "properties": {
+    "--tw-tracking": "-1px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".sm\\:tracking-\\[-6px\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 40rem)"
+   ],
+   "properties": {
+    "--tw-tracking": "-6px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".md\\:leading-\\[0\\.93\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 48rem)"
+   ],
+   "properties": {
+    "--tw-leading": ".93"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".md\\:leading-\\[0\\.916\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 48rem)"
+   ],
+   "properties": {
+    "--tw-leading": ".916"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".md\\:leading-\\[1\\.1\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 48rem)"
+   ],
+   "properties": {
+    "--tw-leading": "1.1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".md\\:tracking-\\[-2px\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 48rem)"
+   ],
+   "properties": {
+    "--tw-tracking": "-2px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".md\\:tracking-\\[-8px\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 48rem)"
+   ],
+   "properties": {
+    "--tw-tracking": "-8px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".lg\\:leading-\\[1\\.12\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 64rem)"
+   ],
+   "properties": {
+    "--tw-leading": "1.12"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".lg\\:tracking-\\[-3px\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 64rem)"
+   ],
+   "properties": {
+    "--tw-tracking": "-3px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "selector": ".lg\\:tracking-\\[-8px\\]",
+   "context": [
+    "@layer utilities",
+    "@media (width >= 64rem)"
+   ],
+   "properties": {
+    "--tw-tracking": "-8px"
+   },
+   "bin": "tailwind"
+  }
+ ],
+ "fonts": [
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "font-family": "\"Geist Variable\"",
+   "font-style": "normal",
+   "font-display": "swap",
+   "font-weight": "100 900",
+   "src": "url(\"/_astro/geist-cyrillic-ext-wght-normal.DjL33-gN.woff2\") format(\"woff2-variations\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "font-family": "\"Geist Variable\"",
+   "font-style": "normal",
+   "font-display": "swap",
+   "font-weight": "100 900",
+   "src": "url(\"/_astro/geist-cyrillic-wght-normal.BEAKL7Jp.woff2\") format(\"woff2-variations\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "font-family": "\"Geist Variable\"",
+   "font-style": "normal",
+   "font-display": "swap",
+   "font-weight": "100 900",
+   "src": "url(\"/_astro/geist-vietnamese-wght-normal.6IgcOCM7.woff2\") format(\"woff2-variations\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "font-family": "\"Geist Variable\"",
+   "font-style": "normal",
+   "font-display": "swap",
+   "font-weight": "100 900",
+   "src": "url(\"/_astro/geist-latin-ext-wght-normal.DC-KSUi6.woff2\") format(\"woff2-variations\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "font-family": "\"Geist Variable\"",
+   "font-style": "normal",
+   "font-display": "swap",
+   "font-weight": "100 900",
+   "src": "url(\"/_astro/geist-latin-wght-normal.BgDaEnEv.woff2\") format(\"woff2-variations\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "font-family": "\"Fragment Mono\"",
+   "font-style": "normal",
+   "font-display": "swap",
+   "font-weight": "400",
+   "src": "url(\"data:font/woff2;base64,d09GMgABAAAAAAvMABEAAAAAGIgAAAtwAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbHhwoBmAAXAiBMgmcDBEICoYghWsLFAABNgIkAyIEIAWEbgddDIFhGxAXIwPBxkEgBD5M9pcHNhkOC9d/TWPHUBgLWadj2h0PhZSK0tw7jx+laU82/ePdIKKcRtWjkSwrTAqxQ6wQ8yFmj+mPyTHAy1ClWfnSsJ4aFAU2rdvAUKgXQ4VVpN4/KjQl8Du/hvfCsMezEvO6//0L31tlazPvuG/VMIdsBxFiXRvhtvfPVw5JSBZpTBIVIaHKdqxnqcnWdplaYCm+ifr/rfnad2fmEwpbQiHx+Na46qrJJPlnZ3cLu/mQ5DNuSkDCoGLeIlkkIdn21Lpa38u2RBts2nC2Z1tIlmAJYhWffydFgFD4xApBMI7N4JCaPpB09QxNYaMBgkEAiG555KG+Nfpo/eqEcACVG2t1IC/CBHWn5oBB6E1WqJRGjwox/YbiSt3y6Q7zlzTb3Q8fw3XfZbwnaIHxIH4XeSmAClUfBFxsZRhWbIcV5Gn6dDhxPYWFSztv4uOi3Hd1Z378Jw3+ysdsayc/nUDgdqLvqi92rxjAYc6hYUf14pHGg/9RLMDMXhZg+bPMqoG56vuVPME89cXgX25G6lHaDn0pNc0hb8GQtwf/jf/b6oMSrdyDf6l9gQDXZevSD88ZPP8B6/KvQvUcBff1pHn6DuXthS0t6RztTogR7oG2WVBhzQkBbj4lFCxaTBjQ9MgYf/lCXhND1Zq7Gl/nnlslir89FKGG4rpN6LOHi6pUWDOZ3TcjiuslfOLiwZtC0fISo2Prmg3Oyl1f4rXSGukEIxLH4tUTz7X0aYMm8bEzdPHXUqAD3B63WKlEDPfzv0tBb5jnAmNnz7UXu9Rf2urvXd2ubhMFbhhJigXMgBJ9rItOmu/alRxdM6YrNp0Lq6XaaHUvdg2UE8ojXBQ4ZDpiI7gsPTH9sD2PlCN5k+emtN2n5kh07zz5cySelj1hQluhvU3Cx0PBZxnbcojRkZywxlp6FFu6r50lUX21g+nqGMXKYTXmepS8Mmp2P+8vxh6oO7q4XeohtHMv5tGFd1mQGCKeGRdL+ICfq4XKHJPd1W/ZBMngDdU+IR1mwLee8EMdnSGcx+da2qpcg5ddHqkb50oOFv+gcJvP4qqhkPlXkR3awM0lGhDtVds5u9Q00i5zs9GJO4c3WlEMJ+1N/asSVtYhpwJYqEfhqjfP7FFYv1TTocRg0c9iIgJdVRJb5SYRCSRLRPD70oFzi2UnEuECkdWJKMTBEfHVcy2dObskilXzWgApJfONxg+/la7fNv4eYV17mKGYutvlh19DJ8SQx/Qei84ofzeij9dGykxUdCDKc4/wEOmPTJow/FC6CCvaic93anPKyPVoSHmzA0UqsA8mTU4E94F0AoIFzNSizN91OxJjG4Sw8yOq8TOLw4VOJf1WiLasLeGWCTOsnFWfJU5flBG5JjnnwVPsHSNlj21FHq3m3vVEPDoTMZEATCiRKUpiBiUzTSnMpFRmURrzUTqzKYP5K4phU39erPzDb8U0IM+vlG0TJZKUePE+ZGlKnvg4aC4uEBGHWIeUT0Jlzzc0ZCIgCwHZCMhBQC4C8hCQj4ACBBQioAihtgwaVyuVeyuJWWu7V9tBN3Ap265NAVAedydnPVEBaa+FrLF23d7UF500w8CpMhTU9PBG2mwXomK9mzqxLR/4AO2qsVl0urYa+rTT5TW4YK8k6ds5EruhRNdk8g8Bur60671aJ4Z5UGqhUfuuR4HsF0rUYXh1TNQXq0Z4LPpeG9CVTLoG7cEOUP7dfLe3vTWVOyE6YnmpV5146SzRCJj8SrCMdrQX8e+hckAIV3fnMpPGud4aRlNEA+sQlmVFX7F2VoR3Xh7pcDWE43WKq7OeswmHmrOVo7arbEdEdVy904U+kc6hWSfDZJuiGTRbwGQNFqh+v80kdGG7dj0YDncox6GGjVZ5ptnahLrCfmN6w2wwhi4MSNeujWP4XXQePQ2eaJ6GASRhFlEbr+entERwKGNnqxbVAo5rFQd7EprkK8JVGTRaDKicSmHOQwzL0XLffW8JzeBCN3p4oUxb7+PantTEFyQy2aGbT37B/LZ4MA0T+Jd3JLAcwrkXjT70gI6vEu3EqOfhsPKOaousvM+doDG21rULNMXZjdX22sS5vpgHiwMBZeqOMLk17WLS2xqhlvutVufkplGDXW/6N96D7tQ8w+R6/if2G1gNR72H7Tra9RC3SlH0LlJvBRtxQnQfknFRNH8Ddr3/6LcnXvLuwqvbuCZKrV0fkYGmQXT0zqHOqx4CDScavhyTyTRoN2eXE+WOYDU7DF89o1iQngeMMaXxdBFMMDUnafSyKWXTdLoIZph6Z/EIodPHHFeazxDBAldazEcES1xpOUMEK1zNVX3oZmtIbB2J0TVk6i5mhnLJTMfBYs+yuwTcAe4C94D7wAPgIfAIOmN0+rNnJchBBiKFMrMRDyJwfY4Omook8DIJVJXQGkQthkbMbq9g6gBI0UOJAUxjCWkKk4BZwCJgFbAJ2AUcKeEU4RLhFuER4RXhE9X+WMS32i5xrLlFVy63LhZDdM8r7C7G8uHhB/VbSE8hggQRAYAfgGjABsaBSyAViAV5PwoV5PP8+v/atLaN+EQdGhFqhu2FmaFhM86UsxqyvBOysBj2Znnqd5y7b7nOd78b8ujbPCU1hHAiCH0VT/l2yKPvZoe86Vvfcu6+I099bYJzOBsytRqSJyGY+ER/4IMfeP0bnvb0p2X9seVrf999qWs/+sC9H37gYfon13svbDvlY88NpXWdHU0dI83VY8b04zZ2ls935vO+Od1R2VfZ8bpXZzdP9PT1jHv2mN08sxvoPH380WJU60rPV/To6kvPX/bSjDf8sMnXPjnp995kdI957d7tClQeAuLDF4y3o1w76JIBgHRQQ8ZL4YkeeRkIhhJjFwVqFqVYBcVoFH+mkdpKLn63I1rJ0OB90dicF4cG0eyhVMuwaSiRVhlJGbwvlyi8HfIs2lDO6L1UlFbPvHM9i9asgWZsft4LB7+ND18Uv5LlJBU/KLl/+30NhNp166j66hVPwe+zfX77KVrAtDB3sULE57d8u4gY6xhG5zC27azjOF2OYatbHU1l49jOdgOGPG7QayxzghiIMmTfJWfsvFY/2xmfn/eiS0vyc7Myc6L4c4vNis6JDHUyih+srS4vFoRnKhG5AQyMKMNJKH6w6JLF05T4kyGGIfNduYAY41lRmZHaSVYJOMQDqq+/hLPe1Yjmf9sRxu8Afvqkd/8Vrv2e6P939d9rbxoPgIWClwr8vRRFHRCpH9kBAm+21QFz4ZDpSXy8VBCTNyKAn1N8vBAHRQkLPB94V3goNgLY7GAg2g98TrxbDyFZ8noowiWxh0EzP+qhKeIdPUymWOlhUUCtDr80wx5XaZ9nXNJIuYTmTS7Yz+grpssSedNHoE8FepfyjtLDED1Ir7PmY7Y5UdLDrj7ZN5cywbZIX6vrdVrPIOuiuqK8LhWUEThKVtqEq7V5h3WuofWUPfabaXUp4EZJ1+9R3WcdpdSwteMNCvWOd9kw3Pk1HT6zdNNPU6fnR4uqT3c6sTMeS2Hf2hM3VxKgMo25TGWwvcCqKaXSxZgEfZBgs9SlfSqsvck2L5MFL0/pLvtk7JqNRG8q6WNB7JZtFjoq8a7rnLB72XE5Ox1IOq4tRMHHNPi6C5WA8Az8QA6fF4UhhmgxxbLaNy62b7Z91yf7gUB7AL6xMtBR7V/fvL7a/kdZQeGNqwK1DL6Pz03MPYi8YP5evoxf6+wBX8d7oaeWbIsidFMvfFIP6ia73MrXKZbl5FxwVo2qTqtGF6tMbd1NWMdH44ghglAcfGAR4lPMunipsq/5fgzoesiR54zP3XvPmcO0xQrK3mfjJ9A1n/KQz7p8wH4KolWKN6dyFX8CL3xaDasWq0IXqjRthRe9T4JDP/9BSRPfaW5ZdHUBAAA=\") format(\"woff2\"), url(\"data:font/woff;base64,d09GRgABAAAAAAWUAA4AAAAABvAAAQABAAAAAAAAAAAAAAAAAAAAAAAAAABHREVGAAABRAAAABYAAAAWABEABEdQT1MAAAFcAAAAHgAAAB5EdEx1R1NVQgAAAXwAAAAnAAAAKLj8uOpPUy8yAAABpAAAAFUAAABgYo+sRGNtYXAAAAH8AAAAQgAAAFxB0OJbZ2FzcAAAAkAAAAAIAAAACAAAABBnbHlmAAACSAAAAT0AAAFaNhXKIGhlYWQAAAOIAAAANgAAADYqgLJdaGhlYQAAA8AAAAAfAAAAJBAY8MdobXR4AAAD4AAAABkAAAAiEYUB02xvY2EAAAP8AAAAFAAAABQBUAHKbWF4cAAABBAAAAAcAAAAIAAjAQBuYW1lAAAELAAAARoAAAJuNApRAXBvc3QAAAVIAAAASwAAAF2B645zAAEAAAAMAAAAAAAAAAIAAQABAAMAAQAAAAEAAAAKABwAHAABREZMVAAIAAQAAAAA//8AAAAAAAB42mNgZGBg4GJQA0ImFzefEAahnMSSPAY+BhBgARH//4NIAFpJBVUAeNotxbENQEAYhuH3/87hwhA3g1KvEANQGcAoKolJJKLR2AwJT/OQaLIFD5o1AN23jVRWgwofnF4JkAHi1zctXMS4u+NOwW0WIrYCqNQJRPIH7S0K2QAAAHjaY2BgYAJiZiAWAZKMYJqFwQNI8zFwAOXYGBQYHBkWMBxkZFLY8v8/UByF///J/wP/U/87/me8HwTUjQIAZb8SQgAAAAEAAf//AA942mJgAvQ4zXARx1H8vd8x2zx8riX/lW3btt2SzS3M7VN7t4Qte7q2ptx++sVnvy9UABBHogURyAAUCgcFUiWOxjTcMzbhnHGKaA2NZJ5O+tLJHDopA0s6GaCSqZwYJ2RE+Bz3GdfwMKozLh81XV3R+VT0wwyT6WdDtEk0gAB0T2Yywu5/ff2/Lqe1XfrB2/RG8sgJuEAQgJOC51iNSimVqXieCXd1cZYxLoovlro4uzLhvMDYEpVSw7G8oPLGVceU6KR8cYF4vK12yLbUcE7CjS2WxRlpRViAsR3J/RNiaRoeeAcJybFcWXN7pUadlJHkqYpJT4yMLA/rrXbwswNAlJACvCePIKKJwMhQ0jC4TQq2tmgKO6QUT4gOrCg6hkIQGKmUItiJlhcXy6PFhYkJhUSXlJSWmAhmxutO9wAAAAABAAAAAQLRsUtkZV8PPPUADwPoAAAAAN9+te8AAAAA3362EvlE/vcTHAOxAAAABgACAAAAAAAAeNpjYGRgYN72n42BgSnrp8t7P2EZoAgq4AAAe9wE3gB42mPKYogAYjkkzADFMgwMjKwM8wFSaARoAAAAAAAAFQAuADoARgBGAEYAiACWAK142mNgZGBg4GTIZ2Bn6GfgAvMQgIOBEQAZTQEkeNqNkQVOREEQRB/uxIPEfgR3d3d3iKHr7rvhWpyCQ3AYKpN1T6emvbvSA7TjpImG5g7gt2E3bTcw2DCcthvpbehP201s8pe2mxnnJ2238Mhb2m5llOW03SsL3MQlYWKsMyOJYSOKR5G47GnBg186RBSX8jcccylE+ZQfwEFQlVfKB4Up7hVxkVDPJ1Ge5UXNDOWxmGOaWeYkG1hms5NPEtIh3HjMLItRkqZyVVgUVphiCbvwxVjJbiu73Sranr/thSPOpOtkXuRV3nkghPk2N3PhNrl5ZoV5WY+41WGV9E/lcb4lKu1Vxma698w93ObiMXON4j9y4TEVCb6YVleIgKIpTfCkX+X4JIgrz5rBWcIikGYx9g9ueGIvAAB42mNgYgCD/3MYjIAUIwM64ARiFYaTjEwMzIzMjCyMrIxsbI5JRallqeyleZkGBo4GINrIwMmEMzG5tCQ1OT83CSxjbGAGANg9D2UA\") format(\"woff\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "font-family": "\"Fragment Mono\"",
+   "font-style": "normal",
+   "font-display": "swap",
+   "font-weight": "400",
+   "src": "url(\"/_astro/fragment-mono-latin-ext-400-normal.BbKYyvR9.woff2\") format(\"woff2\"), url(\"/_astro/fragment-mono-latin-ext-400-normal.CT4YFKeK.woff\") format(\"woff\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://b150.ai/_astro/Layout.SlGQwCim.css",
+   "font-family": "\"Fragment Mono\"",
+   "font-style": "normal",
+   "font-display": "swap",
+   "font-weight": "400",
+   "src": "url(\"/_astro/fragment-mono-latin-400-normal.yxdJ5AmL.woff2\") format(\"woff2\"), url(\"/_astro/fragment-mono-latin-400-normal.BYwT3kSJ.woff\") format(\"woff\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "resolved": {
+  "dark": {
+   "--aspect-video": {
+    "raw": "16 / 9",
+    "kind": "other"
+   },
+   "--color-black": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--color-blue": {
+    "raw": "#59a0e2",
+    "kind": "color",
+    "value": "#59a0e2"
+   },
+   "--color-coral": {
+    "raw": "#fa725a",
+    "kind": "color",
+    "value": "#fa725a"
+   },
+   "--color-coral-deep": {
+    "raw": "#b83d26",
+    "kind": "color",
+    "value": "#b83d26"
+   },
+   "--color-cream": {
+    "raw": "#f7f5f1",
+    "kind": "color",
+    "value": "#f7f5f1"
+   },
+   "--color-green": {
+    "raw": "#769447",
+    "kind": "color",
+    "value": "#769447"
+   },
+   "--color-grey": {
+    "raw": "#616161",
+    "kind": "color",
+    "value": "#616161"
+   },
+   "--color-ink": {
+    "raw": "#1f1915",
+    "kind": "color",
+    "value": "#1f1915"
+   },
+   "--color-light": {
+    "raw": "#fffdf6",
+    "kind": "color",
+    "value": "#fffdf6"
+   },
+   "--color-lime": {
+    "raw": "#d4fd80",
+    "kind": "color",
+    "value": "#d4fd80"
+   },
+   "--color-muted": {
+    "raw": "#6d6d6d",
+    "kind": "color",
+    "value": "#6d6d6d"
+   },
+   "--color-paper": {
+    "raw": "#f2efe9",
+    "kind": "color",
+    "value": "#f2efe9"
+   },
+   "--color-red": {
+    "raw": "#fa4149",
+    "kind": "color",
+    "value": "#fa4149"
+   },
+   "--color-rule": {
+    "raw": "#e6e3dd",
+    "kind": "color",
+    "value": "#e6e3dd"
+   },
+   "--color-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--container-main": {
+    "raw": "1800px",
+    "kind": "dimension",
+    "value": "1800px"
+   },
+   "--default-font-family": {
+    "raw": "\"Geist Variable\", Geist, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+    "kind": "fontFamily",
+    "value": "\"Geist Variable\", Geist, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif"
+   },
+   "--default-mono-font-family": {
+    "raw": "\"Fragment Mono\", Monaco, Menlo, \"Ubuntu Mono\", Consolas, monospace",
+    "kind": "fontFamily",
+    "value": "\"Fragment Mono\", Monaco, Menlo, \"Ubuntu Mono\", Consolas, monospace"
+   },
+   "--default-transition-duration": {
+    "raw": ".15s",
+    "kind": "duration",
+    "value": "0.15s"
+   },
+   "--default-transition-timing-function": {
+    "raw": "cubic-bezier(.4, 0, .2, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4, 0, .2, 1)"
+   },
+   "--ease-in-out": {
+    "raw": "cubic-bezier(.4, 0, .2, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4, 0, .2, 1)"
+   },
+   "--ease-out-quart": {
+    "raw": "cubic-bezier(.25, 1, .5, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.25, 1, .5, 1)"
+   },
+   "--font-mono": {
+    "raw": "\"Fragment Mono\", Monaco, Menlo, \"Ubuntu Mono\", Consolas, monospace",
+    "kind": "fontFamily",
+    "value": "\"Fragment Mono\", Monaco, Menlo, \"Ubuntu Mono\", Consolas, monospace"
+   },
+   "--font-sans": {
+    "raw": "\"Geist Variable\", Geist, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+    "kind": "fontFamily",
+    "value": "\"Geist Variable\", Geist, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif"
+   },
+   "--font-weight-bold": {
+    "raw": "700",
+    "kind": "number",
+    "value": 700
+   },
+   "--font-weight-medium": {
+    "raw": "500",
+    "kind": "number",
+    "value": 500
+   },
+   "--font-weight-normal": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--font-weight-semibold": {
+    "raw": "600",
+    "kind": "number",
+    "value": 600
+   },
+   "--leading-normal": {
+    "raw": "1.5",
+    "kind": "number",
+    "value": 1.5
+   },
+   "--radius-card": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--radius-lg": {
+    "raw": ".5rem",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--radius-xl": {
+    "raw": ".75rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--spacing": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--text-body": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--text-body--line-height": {
+    "raw": "1.7",
+    "kind": "number",
+    "value": 1.7
+   },
+   "--text-h1": {
+    "raw": "120px",
+    "kind": "dimension",
+    "value": "120px"
+   },
+   "--text-h1--letter-spacing": {
+    "raw": "-8px",
+    "kind": "other"
+   },
+   "--text-h1--line-height": {
+    "raw": ".933",
+    "kind": "number",
+    "value": 0.933
+   },
+   "--text-h2": {
+    "raw": "96px",
+    "kind": "dimension",
+    "value": "96px"
+   },
+   "--text-h2--letter-spacing": {
+    "raw": "-3px",
+    "kind": "other"
+   },
+   "--text-h2--line-height": {
+    "raw": ".916",
+    "kind": "number",
+    "value": 0.916
+   },
+   "--text-h3": {
+    "raw": "64px",
+    "kind": "dimension",
+    "value": "64px"
+   },
+   "--text-h3--letter-spacing": {
+    "raw": "-2px",
+    "kind": "other"
+   },
+   "--text-h3--line-height": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--text-h4": {
+    "raw": "48px",
+    "kind": "dimension",
+    "value": "48px"
+   },
+   "--text-h4--letter-spacing": {
+    "raw": "-2px",
+    "kind": "other"
+   },
+   "--text-h4--line-height": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--text-h5": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--text-h5--letter-spacing": {
+    "raw": "-1px",
+    "kind": "other"
+   },
+   "--text-h5--line-height": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--text-h6": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--text-h6--letter-spacing": {
+    "raw": "-1px",
+    "kind": "other"
+   },
+   "--text-h6--line-height": {
+    "raw": "1.125",
+    "kind": "number",
+    "value": 1.125
+   },
+   "--text-h7": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--text-h7--line-height": {
+    "raw": "1.166",
+    "kind": "number",
+    "value": 1.166
+   },
+   "--text-h8": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--text-h8--letter-spacing": {
+    "raw": "-.3px",
+    "kind": "other"
+   },
+   "--text-h8--line-height": {
+    "raw": "1.1",
+    "kind": "number",
+    "value": 1.1
+   },
+   "--text-label": {
+    "raw": "10px",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--text-label--letter-spacing": {
+    "raw": ".3px",
+    "kind": "dimension",
+    "value": "0.296875px"
+   },
+   "--text-label--line-height": {
+    "raw": "1.333",
+    "kind": "number",
+    "value": 1.333
+   },
+   "--text-small": {
+    "raw": "10px",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--text-small--letter-spacing": {
+    "raw": "-.3px",
+    "kind": "other"
+   },
+   "--text-small--line-height": {
+    "raw": "1.5",
+    "kind": "number",
+    "value": 1.5
+   },
+   "--tracking-normal": {
+    "raw": "0em",
+    "kind": "dimension",
+    "value": "0px"
+   }
+  },
+  "light": {
+   "--aspect-video": {
+    "raw": "16 / 9",
+    "kind": "other"
+   },
+   "--color-black": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--color-blue": {
+    "raw": "#59a0e2",
+    "kind": "color",
+    "value": "#59a0e2"
+   },
+   "--color-coral": {
+    "raw": "#fa725a",
+    "kind": "color",
+    "value": "#fa725a"
+   },
+   "--color-coral-deep": {
+    "raw": "#b83d26",
+    "kind": "color",
+    "value": "#b83d26"
+   },
+   "--color-cream": {
+    "raw": "#f7f5f1",
+    "kind": "color",
+    "value": "#f7f5f1"
+   },
+   "--color-green": {
+    "raw": "#769447",
+    "kind": "color",
+    "value": "#769447"
+   },
+   "--color-grey": {
+    "raw": "#616161",
+    "kind": "color",
+    "value": "#616161"
+   },
+   "--color-ink": {
+    "raw": "#1f1915",
+    "kind": "color",
+    "value": "#1f1915"
+   },
+   "--color-light": {
+    "raw": "#fffdf6",
+    "kind": "color",
+    "value": "#fffdf6"
+   },
+   "--color-lime": {
+    "raw": "#d4fd80",
+    "kind": "color",
+    "value": "#d4fd80"
+   },
+   "--color-muted": {
+    "raw": "#6d6d6d",
+    "kind": "color",
+    "value": "#6d6d6d"
+   },
+   "--color-paper": {
+    "raw": "#f2efe9",
+    "kind": "color",
+    "value": "#f2efe9"
+   },
+   "--color-red": {
+    "raw": "#fa4149",
+    "kind": "color",
+    "value": "#fa4149"
+   },
+   "--color-rule": {
+    "raw": "#e6e3dd",
+    "kind": "color",
+    "value": "#e6e3dd"
+   },
+   "--color-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--container-main": {
+    "raw": "1800px",
+    "kind": "dimension",
+    "value": "1800px"
+   },
+   "--default-font-family": {
+    "raw": "\"Geist Variable\", Geist, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+    "kind": "fontFamily",
+    "value": "\"Geist Variable\", Geist, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif"
+   },
+   "--default-mono-font-family": {
+    "raw": "\"Fragment Mono\", Monaco, Menlo, \"Ubuntu Mono\", Consolas, monospace",
+    "kind": "fontFamily",
+    "value": "\"Fragment Mono\", Monaco, Menlo, \"Ubuntu Mono\", Consolas, monospace"
+   },
+   "--default-transition-duration": {
+    "raw": ".15s",
+    "kind": "duration",
+    "value": "0.15s"
+   },
+   "--default-transition-timing-function": {
+    "raw": "cubic-bezier(.4, 0, .2, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4, 0, .2, 1)"
+   },
+   "--ease-in-out": {
+    "raw": "cubic-bezier(.4, 0, .2, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4, 0, .2, 1)"
+   },
+   "--ease-out-quart": {
+    "raw": "cubic-bezier(.25, 1, .5, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.25, 1, .5, 1)"
+   },
+   "--font-mono": {
+    "raw": "\"Fragment Mono\", Monaco, Menlo, \"Ubuntu Mono\", Consolas, monospace",
+    "kind": "fontFamily",
+    "value": "\"Fragment Mono\", Monaco, Menlo, \"Ubuntu Mono\", Consolas, monospace"
+   },
+   "--font-sans": {
+    "raw": "\"Geist Variable\", Geist, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+    "kind": "fontFamily",
+    "value": "\"Geist Variable\", Geist, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif"
+   },
+   "--font-weight-bold": {
+    "raw": "700",
+    "kind": "number",
+    "value": 700
+   },
+   "--font-weight-medium": {
+    "raw": "500",
+    "kind": "number",
+    "value": 500
+   },
+   "--font-weight-normal": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--font-weight-semibold": {
+    "raw": "600",
+    "kind": "number",
+    "value": 600
+   },
+   "--leading-normal": {
+    "raw": "1.5",
+    "kind": "number",
+    "value": 1.5
+   },
+   "--radius-card": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--radius-lg": {
+    "raw": ".5rem",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--radius-xl": {
+    "raw": ".75rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--spacing": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--text-body": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--text-body--line-height": {
+    "raw": "1.7",
+    "kind": "number",
+    "value": 1.7
+   },
+   "--text-h1": {
+    "raw": "120px",
+    "kind": "dimension",
+    "value": "120px"
+   },
+   "--text-h1--letter-spacing": {
+    "raw": "-8px",
+    "kind": "other"
+   },
+   "--text-h1--line-height": {
+    "raw": ".933",
+    "kind": "number",
+    "value": 0.933
+   },
+   "--text-h2": {
+    "raw": "96px",
+    "kind": "dimension",
+    "value": "96px"
+   },
+   "--text-h2--letter-spacing": {
+    "raw": "-3px",
+    "kind": "other"
+   },
+   "--text-h2--line-height": {
+    "raw": ".916",
+    "kind": "number",
+    "value": 0.916
+   },
+   "--text-h3": {
+    "raw": "64px",
+    "kind": "dimension",
+    "value": "64px"
+   },
+   "--text-h3--letter-spacing": {
+    "raw": "-2px",
+    "kind": "other"
+   },
+   "--text-h3--line-height": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--text-h4": {
+    "raw": "48px",
+    "kind": "dimension",
+    "value": "48px"
+   },
+   "--text-h4--letter-spacing": {
+    "raw": "-2px",
+    "kind": "other"
+   },
+   "--text-h4--line-height": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--text-h5": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--text-h5--letter-spacing": {
+    "raw": "-1px",
+    "kind": "other"
+   },
+   "--text-h5--line-height": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--text-h6": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--text-h6--letter-spacing": {
+    "raw": "-1px",
+    "kind": "other"
+   },
+   "--text-h6--line-height": {
+    "raw": "1.125",
+    "kind": "number",
+    "value": 1.125
+   },
+   "--text-h7": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--text-h7--line-height": {
+    "raw": "1.166",
+    "kind": "number",
+    "value": 1.166
+   },
+   "--text-h8": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--text-h8--letter-spacing": {
+    "raw": "-.3px",
+    "kind": "other"
+   },
+   "--text-h8--line-height": {
+    "raw": "1.1",
+    "kind": "number",
+    "value": 1.1
+   },
+   "--text-label": {
+    "raw": "10px",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--text-label--letter-spacing": {
+    "raw": ".3px",
+    "kind": "dimension",
+    "value": "0.296875px"
+   },
+   "--text-label--line-height": {
+    "raw": "1.333",
+    "kind": "number",
+    "value": 1.333
+   },
+   "--text-small": {
+    "raw": "10px",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--text-small--letter-spacing": {
+    "raw": "-.3px",
+    "kind": "other"
+   },
+   "--text-small--line-height": {
+    "raw": "1.5",
+    "kind": "number",
+    "value": 1.5
+   },
+   "--tracking-normal": {
+    "raw": "0em",
+    "kind": "dimension",
+    "value": "0px"
+   }
+  }
+ }
+}
