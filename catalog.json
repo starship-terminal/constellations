@@ -154,7 +154,7 @@
         ],
         "durationMin": null,
         "durationNote": "wall-clock duration was not recorded for this capture",
-        "pr": "PENDING"
+        "pr": "472"
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the site's icons (the wordmark, search/account/wishlist/cart glyphs, socials) are visible in the crops and screenshots and on the fetched icon.png"
