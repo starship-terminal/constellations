@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 70,
-    "system_domains": 62,
-    "matched_domains": 38,
-    "missing_domains": 395,
+    "system_packages": 71,
+    "system_domains": 63,
+    "matched_domains": 39,
+    "missing_domains": 394,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -356,6 +356,23 @@
           "slug": "arcade",
           "name": "Arcade",
           "url": "https://www.arcade.software",
+          "name_match": true
+        }
+      ]
+    },
+    "arket.com": {
+      "catalog": [
+        {
+          "name": "ARKET",
+          "domain": "arket.com",
+          "id": 510
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "arket",
+          "name": "ARKET",
+          "url": "https://www.arket.com",
           "name_match": true
         }
       ]
@@ -718,13 +735,6 @@
         "name": "adidas",
         "domain": "adidas.com",
         "id": 46
-      }
-    ],
-    "arket.com": [
-      {
-        "name": "ARKET",
-        "domain": "arket.com",
-        "id": 510
       }
     ],
     "around.co": [
