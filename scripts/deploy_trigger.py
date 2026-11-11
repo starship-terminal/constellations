@@ -54,7 +54,7 @@ import time
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
-REPO = os.environ.get("DESIGNS_REPO", os.path.expanduser("~/dev/design-systems"))
+REPO = os.environ.get("DESIGNS_REPO", os.path.expanduser("~/dev/constellations"))
 DEPLOY = os.environ.get("DESIGNS_DEPLOY",
                         os.path.expanduser("~/services/design-systems/bin/deploy.sh"))
 STATE = os.environ.get("DESIGNS_STATE",
