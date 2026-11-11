@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bezi style guide</title>
+<meta name="description" content="Bezi (bezi.com) design tokens and the public site's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+  --color-orange-300: #ff8d63;
+  --color-orange-500: #ff6b36;
+  --color-orange-700: #e34a12;
+  --color-orange-alpha-35: rgba(248, 69, 3, 0.35);
+  --color-orange-100: #edc1af;
+  --color-orange-400: #ff7340;
+  --color-orange-600: #f84503;
+  --color-ink-950: #000000;
+  --color-ink-300: #c1c5c6;
+  --color-ink-200: #d9d9d9;
+  --color-ink-700: #424242;
+  --color-ink-0: #ffffff;
+  --color-ink-900: #141414;
+  --color-ink-800: #262626;
+  --color-ink-600: #595959;
+  --color-ink-100: #dedede;
+  --color-white-alpha-60: rgba(255, 255, 255, 0.6);
+  --color-white-alpha-10: rgba(255, 255, 255, 0.1);
+  --color-white-alpha-15: rgba(255, 255, 255, 0.15);
+  --color-white-alpha-80: rgba(255, 255, 255, 0.8);
+  --color-white-alpha-0: rgba(255, 255, 255, 0);
+  --color-white-alpha-5: rgba(255, 255, 255, 0.05);
+  --color-white-alpha-30: rgba(255, 255, 255, 0.3);
+  --color-white-alpha-20: rgba(255, 255, 255, 0.2);
+  --color-white-alpha-35: rgba(255, 255, 255, 0.35);
+  --color-white-alpha-25: rgba(255, 255, 255, 0.25);
+  --color-black-alpha-80: rgba(0, 0, 0, 0.8);
+  --color-black-alpha-60: rgba(0, 0, 0, 0.6);
+  --color-black-alpha-30: rgba(0, 0, 0, 0.3);
+  --color-pastel-sky: #7dadd1;
+  --color-pastel-indigo: #3c4276;
+  --color-pastel-blue: #34739b;
+  --color-pastel-lilac: #ce9fcc;
+  --color-pastel-periwinkle: #e3e3ff;
+  --color-pastel-pink: #fde4f9;
+  --color-pastel-mint: #f3ffe2;
+  --color-pastel-ice: #e3f2ff;
+  --color-pastel-lemon: #f6ff85;
+  --measured-cta-hover: #f84503;
+  --measured-viewall-fill: rgba(255, 255, 255, 0.2);
+  --measured-arrow-orange: #f84503;
+  --measured-plancta-fill: rgba(0, 0, 0, 0.84);
+  --measured-chip-text: #f2f1ec;
+  --page: #0d0d0d;
+  --surface: rgba(31, 31, 31, 0.84);
+  --text: var(--color-ink-0);
+  --muted: rgba(255, 255, 255, 0.5);
+  --accent: var(--color-orange-600);
+  --accentText: var(--color-ink-0);
+  --link: #f2f1ec;
+  --border: rgba(242, 241, 236, 0.32);
+  --chip: #1c1c1c;
+  --focus: #005fcc;
+  --component-control-heightNav: 38.4062px;
+  --component-control-heightCta: 39px;
+  --component-control-radiusPill: 144px;
+  --component-header-height: 80px;
+  --component-footer-height: 538.312px;
+  --sg-sans: "Inter", "Inter Placeholder", -apple-system, BlinkMacSystemFont, "SF Pro", system-ui, sans-serif;
+  --sg-display: "Inter Display", "Inter", -apple-system, BlinkMacSystemFont, "SF Pro", system-ui, sans-serif;
+  --sg-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #ffffff); background: var(--page, #0d0d0d); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 800 40px/1.2 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted, #808080); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-white-alpha-15, #262626); }
+.lead { max-width: 62ch; color: var(--muted, #808080); }
+.note { font-size: 13px; color: var(--muted, #808080); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #808080); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-white-alpha-15, #262626); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--muted, #808080); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--muted, #808080); }
+/* ---- site mock ---- */
+.mock { border: 1px solid var(--color-white-alpha-15, #262626); border-radius: 16px; overflow: hidden; background: var(--page, #0d0d0d); }
+.annc { display: flex; align-items: center; justify-content: center; gap: 8px; height: 32px; background: var(--chip, #1c1c1c); font: 500 12px/1 var(--sg-sans); color: var(--text, #ffffff); border-radius: 2px; margin: 10px 14px 0; }
+.annc .new { color: var(--color-orange-500, #ff6b36); font-weight: 700; font-size: 11px; letter-spacing: .04em; }
+.navbar { display: flex; align-items: center; gap: 22px; height: 56px; padding: 0 20px; margin: 12px; background: var(--surface, rgba(31,31,31,.84)); border-radius: var(--component-control-radiusPill, 144px); font-size: 14px; }
+.navbar .wm { font: 800 15px/1 var(--sg-display); letter-spacing: .14em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightCta, 39px); padding: 0 16px; border-radius: 103px; font-size: 13px; font-weight: 500; border: 1px solid transparent; letter-spacing: .04em; }
+.btn.primary { background: var(--accent, #f84503); color: var(--accentText, #ffffff); }
+.btn.ghost { background: var(--measured-viewall-fill, rgba(255,255,255,.2)); color: var(--text, #ffffff); }
+.hero { background: var(--page, #0d0d0d); color: var(--text, #fff); padding: 72px 40px; font: 800 52px/1.02 var(--sg-display); letter-spacing: -0.03em; text-align: center; }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); color: var(--muted, rgba(255,255,255,.5)); margin: 20px auto 26px; max-width: 46ch; letter-spacing: 0; }
+.hero .row { display: flex; gap: 10px; justify-content: center; }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; padding: 20px; }
+.plan { border: 1px solid var(--color-white-alpha-10, #262626); border-radius: 8px; padding: 20px; background: var(--color-ink-900, #141414); font-size: 13px; color: var(--text, #fff); }
+.plan .price { font: 800 28px/1.2 var(--sg-display); margin: 8px 0 14px; }
+.plan .btn { width: 100%; }
+.plan.free { background: var(--color-pastel-sky, #7dadd1); color: #0d0d0d; }
+.plan.free .btn { background: var(--measured-plancta-fill, rgba(0,0,0,.84)); color: #fff; }
+.chiprow { display: flex; gap: 10px; padding: 16px 20px; flex-wrap: wrap; }
+.tick { position: relative; padding: 10px 14px; font: 600 11px/1 var(--sg-mono); letter-spacing: .06em; color: var(--measured-chip-text, #f2f1ec); }
+.tick i { position: absolute; width: 19px; height: 19px; border: 0 solid var(--border, rgba(242,241,236,.32)); }
+.tick i:nth-child(1) { top: 0; left: 0; border-top-width: 1px; border-left-width: 1px; }
+.tick i:nth-child(2) { top: 0; right: 0; border-top-width: 1px; border-right-width: 1px; }
+.tick i:nth-child(3) { bottom: 0; left: 0; border-bottom-width: 1px; border-left-width: 1px; }
+.tick i:nth-child(4) { bottom: 0; right: 0; border-bottom-width: 1px; border-right-width: 1px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-white-alpha-15, #262626); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Bezi style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number.</p>
+
+  <h2 class="sh">Bezi, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the <code>--token-*</code> palette the Framer bundle declares on <code>body</code> (the orange CTA ramp, the dark ink neutrals, the translucent white/black alphas and the pastel accents) and the component values measured on the live pages. One dark theme; the bundle declares no light variant. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from www.bezi.com on 2026-11-11, signed out, in headless Chromium. No consent overlay mounts on the captured routes. The product is a desktop download — no sign-in surface was reached, and no link was followed, download started or form submitted.</p>
+
+  <h2 class="sh">The site chrome</h2>
+  <p class="lead">A dark strip carries the orange NEW chip and the announcement line under a floating 144px-radius pill bar: the BEZI mark, the nav (Studios, Product, Pricing, Blog, Docs, Discord) and the orange TRY FOR FREE pill.</p>
+  <div class="mock">
+    <div class="annc"><span class="new">NEW</span><span>Bezi for Unreal Engine is now publicly available.</span></div>
+    <div class="navbar"><span class="wm">BEZI</span><span class="sp"></span><span>Studios</span><span>Product</span><span>Pricing</span><span>Blog</span><span>Docs</span><span>Discord</span><span class="btn primary">TRY FOR FREE</span></div>
+    <div class="hero">AI for building real games,<br>not generating them.
+      <small>Bezi is an agentic workspace that sits on top of your engine, built for game developers who believe that the craft of building games could do with less friction.</small>
+      <div class="row"><span class="btn primary">TRY FOR FREE</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">The Free trial band is pastel sky with a near-black CTA; the paid plans are ink cards, the recommended one ringed in orange. The section index chips draw their box as four corner ticks.</p>
+  <div class="mock">
+    <div class="plans">
+      <div class="plan free"><b>Trial</b><div class="price">Free</div><span class="btn primary">TRY FOR FREE</span><p style="font-size:12px;margin-top:10px">100 credits, one workspace, no card required.</p></div>
+      <div class="plan"><b>Advanced</b><div class="price">$60/mo</div><span class="btn primary">TRY FOR FREE</span><p style="color:var(--muted,rgba(255,255,255,.5));font-size:12px;margin-top:10px">2400 credits monthly, unlimited workspaces.</p></div>
+    </div>
+    <div class="chiprow"><span class="tick"><i></i><i></i><i></i><i></i>02 CONNECTED TOOLS</span><span class="tick"><i></i><i></i><i></i><i></i>03 SESSION MEMORY</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The ground is <code>dark.page</code> #0d0d0d under a starfield, with <code>dark.surface</code> the header pill's translucent near-black. The CTA is <code>dark.accent</code> #f84503 (<code>color.orange.600</code>); the <code>color.orange</code> ramp covers its hover glow and the peach pale. <code>color.ink</code> builds cards and hairlines, the <code>white-alpha</code>/<code>black-alpha</code> steps the scrims and fills, and the <code>color.pastel</code> set accents the engine chips and the Free band.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the 38px nav controls, the 39px CTA pill, the 144px header corner, and the header and footer blocks at 1440px.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheet and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, toggle and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"orange":{"300":{"v":"#ff8d63","t":"color","s":"css-var --token-02ae8536-e632-4775-ab7e-88b26354851e"},"500":{"v":"#ff6b36","t":"color","s":"css-var --token-0f67bf32-48b3-4408-bffb-7509aa38579e"},"700":{"v":"#e34a12","t":"color","s":"css-var --token-4af090ad-db91-49ee-855e-79dc5046e841"},"alpha-35":{"v":"rgba(248, 69, 3, 0.35)","t":"color","s":"css-var --token-b029b348-26a9-4be3-84bb-f29fa9797cd7"},"100":{"v":"#edc1af","t":"color","s":"css-var --token-b5c15730-a920-48bd-9a8d-2d87596b28f1"},"400":{"v":"#ff7340","t":"color","s":"css-var --token-bbc5505b-b34c-476f-b3b8-4166c834b4bb"},"600":{"v":"#f84503","t":"color","s":"css-var --token-de2e516f-a4e0-40ed-8ea4-5531d3a3e2e4"}},"ink":{"950":{"v":"#000000","t":"color","s":"css-var --token-03286735-ee67-4ac8-8d63-f64153418b5e"},"300":{"v":"#c1c5c6","t":"color","s":"css-var --token-0e858600-fd8a-4242-a28b-394fdc734cbb"},"200":{"v":"#d9d9d9","t":"color","s":"css-var --token-1c3a7846-9a70-46a8-a69a-5726c4268095"},"700":{"v":"#424242","t":"color","s":"css-var --token-37112d4a-1f7b-488d-b978-a134e89c5a38"},"0":{"v":"#ffffff","t":"color","s":"css-var --token-44ceed80-9b71-400a-9059-1b7299c90f10"},"900":{"v":"#141414","t":"color","s":"css-var --token-4c1ece71-3db1-462f-a1ff-e50318477ee4"},"800":{"v":"#262626","t":"color","s":"css-var --token-8dc20134-78f7-438f-90ac-8e92497309c8"},"600":{"v":"#595959","t":"color","s":"css-var --token-b7a03190-c4d7-4908-acc7-3999e638b5ba"},"100":{"v":"#dedede","t":"color","s":"css-var --token-b8eada90-e26c-4070-b91c-a30e1fc8b2d2"}},"white-alpha":{"60":{"v":"rgba(255, 255, 255, 0.6)","t":"color","s":"css-var --token-10cdf536-e74e-4526-a334-9a932d58f2eb"},"10":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"css-var --token-139e3a73-74a0-4c0f-833c-3e8400517ed3"},"15":{"v":"rgba(255, 255, 255, 0.15)","t":"color","s":"css-var --token-15398510-2b01-4005-a3d2-771f20dcbd1b"},"80":{"v":"rgba(255, 255, 255, 0.8)","t":"color","s":"css-var --token-49ca07b2-81a6-4dc6-b0ca-e7c0ef0a8dba"},"0":{"v":"rgba(255, 255, 255, 0)","t":"color","s":"css-var --token-65dac16f-5573-4a4e-9891-ffcd5d8a284f"},"5":{"v":"rgba(255, 255, 255, 0.05)","t":"color","s":"css-var --token-6b0cc73d-6892-448d-9b63-4106b53df6c7"},"30":{"v":"rgba(255, 255, 255, 0.3)","t":"color","s":"css-var --token-83522440-4250-454b-b560-5546dba3a04e"},"20":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"css-var --token-8889595f-9d1e-4e08-a603-95486d82e181"},"35":{"v":"rgba(255, 255, 255, 0.35)","t":"color","s":"css-var --token-9cd81038-c3cc-48c7-aa44-744fa375e77e"},"25":{"v":"rgba(255, 255, 255, 0.25)","t":"color","s":"css-var --token-d05b7c96-fe70-4537-849f-092a9c6dfb7b"}},"black-alpha":{"80":{"v":"rgba(0, 0, 0, 0.8)","t":"color","s":"css-var --token-212cb81c-4f43-4394-ad1b-ccf6dc7f1242"},"60":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":"css-var --token-5eef58b9-4d17-434f-9205-831529305aad"},"30":{"v":"rgba(0, 0, 0, 0.3)","t":"color","s":"css-var --token-6cca908a-531b-4759-9ef8-858e748a8592"}},"pastel":{"sky":{"v":"#7dadd1","t":"color","s":"css-var --token-3f6c3f97-1e15-45c3-b47a-202ade190867"},"indigo":{"v":"#3c4276","t":"color","s":"css-var --token-8eb014e1-89ab-4b95-807f-829ed16b9d78"},"blue":{"v":"#34739b","t":"color","s":"css-var --token-a1c92fee-200b-42aa-a87b-bc7f99e4184b"},"lilac":{"v":"#ce9fcc","t":"color","s":"css-var --token-cc9e472c-4730-43e2-83e5-7476eaa73a47"},"periwinkle":{"v":"#e3e3ff","t":"color","s":"css-var --token-cfec7284-fa8a-454d-a130-9b98dd842eed"},"pink":{"v":"#fde4f9","t":"color","s":"css-var --token-de5f54ec-8db5-4d54-b764-17d747d4d37c"},"mint":{"v":"#f3ffe2","t":"color","s":"css-var --token-e3de6550-2c6e-499a-8b04-ef87a1cd2fee"},"ice":{"v":"#e3f2ff","t":"color","s":"css-var --token-e68bb55c-ff4b-448e-a222-e18c7d245fcf"},"lemon":{"v":"#f6ff85","t":"color","s":"css-var --token-f08b8e14-68c3-4811-a432-25afe58a0498"}}},"measured":{"cta-hover":{"v":"#f84503","t":"color","s":"computed paint.0.bg of cta hover (raw/components-computed.json)","d":"The CTA fill on hover."},"viewall-fill":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"computed backgroundColor of view-all default (raw/components-computed.json)","d":"The VIEW ALL chip's translucent white fill."},"arrow-orange":{"v":"#f84503","t":"color","s":"computed paint.2.bg of view-all default (raw/components-computed.json)","d":"The orange of the pixel-art arrow inside VIEW ALL."},"plancta-fill":{"v":"rgba(0, 0, 0, 0.84)","t":"color","s":"computed paint.0.bg of plan-cta default (raw/components-computed.json)","d":"The Free band's dark CTA fill on the light-blue card."},"chip-text":{"v":"#f2f1ec","t":"color","s":"computed color of tools-button default (raw/components-computed.json)","d":"The CONNECTED TOOLS chip's off-white."}}},"light":{},"dark":{"page":{"v":"#0d0d0d","t":"color","s":"computed backgroundColor of page-ground default (raw/components-computed.json)","d":"The near-black the whole page paints on (body's own fill)."},"surface":{"v":"rgba(31, 31, 31, 0.84)","t":"color","s":"computed paint.0.bg of header default (raw/components-computed.json)","d":"The floating header pill's fill, a translucent near-black over the starfield."},"text":{"v":"{color.ink.0}","t":"color","s":"computed color of hero-title default (raw/components-computed.json); same value as core.color.ink.0","d":"The display type's white."},"muted":{"v":"rgba(255, 255, 255, 0.5)","t":"color","s":"computed textStyle.color of hero-sub default (raw/components-computed.json)","d":"Secondary text under the hero, painted on the inner span."},"accent":{"v":"{color.orange.600}","t":"color","s":"computed paint.0.bg of cta default (raw/components-computed.json); same value as core.color.orange.600","d":"The orange CTA fill (painted by a layer inside the control)."},"accentText":{"v":"{color.ink.0}","t":"color","s":"computed textStyle.color of cta default (raw/components-computed.json); same value as core.color.ink.0","d":"Text painted on the orange CTA (the anchor itself keeps the UA link colour)."},"link":{"v":"#f2f1ec","t":"color","s":"computed color of footer-legal default (raw/components-computed.json)","d":"The muted legal/footer link colour."},"border":{"v":"rgba(242, 241, 236, 0.32)","t":"color","s":"computed paint.0.border of tools-button default (raw/components-computed.json)","d":"The hairline of the corner-tick chips, rgba(242,241,236,0.32)."},"chip":{"v":"#1c1c1c","t":"color","s":"computed backgroundColor of announcement default (raw/components-computed.json)","d":"The announcement strip's ground under the header."},"focus":{"v":"#005fcc","t":"color","s":"computed outlineColor of nav-link focus-visible (raw/components-computed.json)","d":"The keyboard-focus ring where one is drawn (the browser's default auto outline)."},"component":{"control":{"heightNav":{"v":"38.4062px","t":"dimension","s":"computed height of nav-link default (raw/components-computed.json)","d":"Nav controls are 38px."},"heightCta":{"v":"39px","t":"dimension","s":"computed height of cta default (raw/components-computed.json)","d":"The TRY FOR FREE pill height."},"radiusPill":{"v":"144px","t":"dimension","s":"computed paint.0.radius of header default (raw/components-computed.json)","d":"The header pill's corner, 144px."}},"header":{"height":{"v":"80px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The full header block at 1440px."}},"footer":{"height":{"v":"538.312px","t":"dimension","s":"computed height of footer default (raw/components-computed.json)","d":"The footer block at 1440px."}}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += `<div class="pal-h">dark roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.dark && TOK.dark.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+</script>
+</body>
+</html>

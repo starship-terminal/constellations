@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 72,
-    "system_domains": 64,
-    "matched_domains": 40,
-    "missing_domains": 393,
+    "system_packages": 73,
+    "system_domains": 65,
+    "matched_domains": 41,
+    "missing_domains": 392,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -428,6 +428,23 @@
         }
       ]
     },
+    "bezi.com": {
+      "catalog": [
+        {
+          "name": "Bezi",
+          "domain": "bezi.com",
+          "id": 523
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "bezi",
+          "name": "Bezi",
+          "url": "https://www.bezi.com",
+          "name_match": true
+        }
+      ]
+    },
     "bloomberg.com": {
       "catalog": [
         {
@@ -808,13 +825,6 @@
         "name": "Bento",
         "domain": "bento.me",
         "id": 284
-      }
-    ],
-    "bezi.com": [
-      {
-        "name": "Bezi",
-        "domain": "bezi.com",
-        "id": 523
       }
     ],
     "biosites.com": [
