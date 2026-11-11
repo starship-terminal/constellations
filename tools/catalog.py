@@ -515,14 +515,17 @@ def scan(folder: Path, redact: dict) -> list[str]:
 
 
 def find(words: list[str]) -> list[dict]:
-    """Packages ranked by how many query words they match; name and tag hits count double."""
+    """Packages ranked by how many query words they match; a tag hit outranks a name hit,
+    which outranks a goodFor/category/theme hit. Substring matching means "ios" can live
+    inside a slug like acnestudios, so name and tag hits are scored separately."""
     catalog = load_catalog()
     ranked = []
     for s in catalog["systems"]:
-        strong = " ".join([s["slug"], s["name"], *s.get("tags", [])]).lower()
+        name = " ".join([s["slug"], s["name"]]).lower()
+        tags = " ".join(s.get("tags", [])).lower()
         weak = " ".join([s["goodFor"], s["category"], catalog.get("categories", {}).get(s["category"], ""),
                          *s["themes"]]).lower()
-        score = sum(2 if w in strong else 1 if w in weak else 0 for w in (w.lower() for w in words))
+        score = sum(3 if w in tags else 2 if w in name else 1 if w in weak else 0 for w in (w.lower() for w in words))
         if score or not words:
             ranked.append((score, s))
     ranked.sort(key=lambda x: (-x[0], x[1]["slug"]))
