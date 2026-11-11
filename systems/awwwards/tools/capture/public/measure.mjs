@@ -17,7 +17,7 @@
 // are hidden before every measurement, never answered.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { BASE, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE , pickSiteDetail } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -296,15 +296,7 @@ async function site() {
   // Site of the Day winners have closed voting, so the vote button only
   // exists on some detail pages: walk up to four card links and land on the
   // first whose page still has one, else keep the first.
-  const hrefs = await page.evaluate(() => [...document.querySelectorAll('a.figure-rollover__link, a[href^="/sites/"]')].filter((x) => x.offsetParent).map((x) => x.getAttribute('href')).filter(Boolean).slice(0, 4));
-  let href = hrefs[0] || null;
-  for (const h of hrefs) {
-    await page.goto(/^https?:/.test(h) ? h : BASE + h, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-    await page.waitForTimeout(7000);
-    await closePromo(page);
-    const hasVote = await page.evaluate(() => [...document.querySelectorAll('a,button')].some((x) => x.offsetParent && /vote/i.test(x.innerText || '')));
-    if (hasVote) { href = h; break; }
-  }
+  const href = await pickSiteDetail(page);   // shared with public.mjs: same entry for shots and measurements
   if (href) {
     await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   }
@@ -358,11 +350,15 @@ async function footer() {
   // lazy-load, so scroll it into view first.
   await page.evaluate(() => scrollTo(0, document.body.scrollHeight));
   await page.waitForTimeout(1800);
-  const fl = q('footer a, .footer a, [class*="footer" i] a').filter({ hasText: /\w{3,}/ }).filter({ visible: true }).first();
+  // The page footer is a bare <footer> element holding .footer__menu /
+  // .footer__bottom; [class*="footer"] without the tag picks up
+  // card-course__footer inside the grid first, so the tag is required.
+  const footerEl = q('footer').filter({ visible: true }).first();
+  const fl = footerEl.locator('a').filter({ hasText: /\w{3,}/ }).filter({ visible: true }).first();
   if (await fl.count()) {
-    await S('footer', q('footer, [class*="footer" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Footer', sel: 'footer' });
+    await S('footer', footerEl, ['default'], { group: g, title: 'Footer', sel: 'footer' });
     await S('footer-link', fl, B4, { group: g, title: 'Footer link', sel: 'footer a' });
-    const nl = q('footer input[type="email"], .footer input[type="email"], [class*="footer" i] input[name*="email" i]').first();
+    const nl = footerEl.locator('input[type="email"], input[name*="email" i]').first();
     if (await nl.count()) await S('newsletter-input', nl, ['default', 'focused'], { group: g, title: 'Newsletter field', desc: 'Focused only; never subscribed.', sel: 'footer input[type="email"]' });
   }
   save();

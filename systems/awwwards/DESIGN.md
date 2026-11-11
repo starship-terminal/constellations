@@ -14,7 +14,7 @@ colors:
   neutral: "#ffffff"
   surface: "#f8f8f8"
   on-surface: "#222222"
-  on-surface-variant: "#c0ab3c"
+  on-surface-variant: "#222222"
   outline: "#ededed"
   accent-awards: "#502bd8"
   accent-blue: "#49b3fc"
@@ -70,7 +70,7 @@ The roles below are the catalog's swatches for the `light` theme. The front matt
 - **neutral (#ffffff):** `light.surface.page`
 - **surface (#f8f8f8):** `light.surface.subtle`
 - **on-surface (#222222):** `light.text.primary`
-- **on-surface-variant (#c0ab3c):** `core.color.accent.read`
+- **on-surface-variant (#222222):** `light.text.primary`
 - **outline (#ededed):** `light.border.default`
 
 ## Typography

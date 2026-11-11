@@ -1985,7 +1985,7 @@
    "states": {},
    "title": "Card action",
    "group": "Home",
-   "desc": "The \"Vote Now\" button revealed by hovering a site card. Measured, never clicked — voting records a score.",
+   "desc": "The \"Vote Now\" button revealed by hovering a site card; it stayed display:none under headless hover — see card-action on the site page instead.",
    "selector": ".figure-rollover__hover a.button",
    "page": "home",
    "run": "2026-11-11",
@@ -4597,21 +4597,21 @@
   "footer": {
    "states": {
     "default": {
-     "tag": "div",
-     "classes": "card-course__footer hidden-sm",
-     "text": "Instructor Daniele Buffa Score 4.9/5",
+     "tag": "footer",
+     "classes": "",
+     "text": "Websites Collections Elements Academy Jobs Market Directory Conferences FAQs Abo",
      "rect": {
-      "x": 52,
-      "y": 377.4,
-      "w": 432,
-      "h": 145
+      "x": 0,
+      "y": 492.9,
+      "w": 1440,
+      "h": 407.38
      },
      "style": {
       "display": "block",
       "position": "static",
       "boxSizing": "border-box",
-      "width": "432px",
-      "height": "145px",
+      "width": "1440px",
+      "height": "407.375px",
       "minWidth": "auto",
       "maxWidth": "none",
       "minHeight": "auto",
@@ -4655,7 +4655,7 @@
       "outlineColor": "rgb(34, 34, 34)",
       "outlineOffset": "0px",
       "fontFamily": "\"Inter Tight\"",
-      "fontSize": "15px",
+      "fontSize": "14px",
       "fontWeight": "300",
       "lineHeight": "28px",
       "letterSpacing": "normal",
@@ -4678,36 +4678,17 @@
      },
      "paint": [
       {
-       "node": "div.card-course__row",
-       "size": "432.0x60.0",
-       "border": "T:1px solid rgb(248, 248, 248) | B:1px solid rgb(248, 248, 248)"
-      },
-      {
-       "node": "div.box-score__wrap",
-       "size": "100.0x4.0",
-       "bg": "rgb(237, 237, 237)",
-       "radius": "4px"
-      },
-      {
-       "node": "div.box-score__bar",
-       "size": "98.0x4.0",
-       "bg": "rgb(255, 240, 131)"
-      }
-     ],
-     "ancestors": [
-      {
-       "up": 1,
-       "node": "div.card-course.card-academy",
-       "radius": "14px",
-       "bg": "rgba(255, 255, 255, 0.9)"
+       "node": "div.footer__bottom",
+       "size": "1336.0x71.2",
+       "bgImage": "linear-gradient(to right, rgb(34, 34, 34) 0px, rgb(34, 34, 34) 10%, rgba(255, 255, 255, 0) 10%)"
       }
      ],
      "textStyle": {
-      "node": "strong",
-      "text": "Instructor",
+      "node": "a",
+      "text": "Websites",
       "fontFamily": "\"Inter Tight\"",
-      "fontSize": "15px",
-      "lineHeight": "18px",
+      "fontSize": "14px",
+      "lineHeight": "14px",
       "fontWeight": "600",
       "letterSpacing": "normal",
       "color": "rgb(34, 34, 34)",
@@ -4715,8 +4696,8 @@
       "textTransform": "none"
      },
      "icon": {
-      "w": 20,
-      "h": 20,
+      "w": 30,
+      "h": 16,
       "fill": "rgb(34, 34, 34)",
       "stroke": "none",
       "color": "rgb(34, 34, 34)"
@@ -4737,12 +4718,12 @@
     "default": {
      "tag": "a",
      "classes": "",
-     "text": "View Product",
+     "text": "Websites",
      "rect": {
       "x": 52,
-      "y": 404.3,
-      "w": 432,
-      "h": 90
+      "y": 567.5,
+      "w": 58.77,
+      "h": 17
      },
      "style": {
       "display": "inline",
@@ -4793,9 +4774,9 @@
       "outlineColor": "rgb(34, 34, 34)",
       "outlineOffset": "0px",
       "fontFamily": "\"Inter Tight\"",
-      "fontSize": "15px",
-      "fontWeight": "300",
-      "lineHeight": "28px",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "lineHeight": "14px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(34, 34, 34)",
@@ -4813,32 +4794,6 @@
       "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div.card-academy__row",
-       "size": "432.0x90.0",
-       "border": "T:1px solid rgb(237, 237, 237)"
-      }
-     ],
-     "textStyle": {
-      "node": "strong",
-      "text": "View Product",
-      "fontFamily": "\"Inter Tight\"",
-      "fontSize": "13.9718px",
-      "lineHeight": "13.9718px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(34, 34, 34)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 20,
-      "h": 20,
-      "fill": "rgb(34, 34, 34)",
-      "stroke": "none",
-      "color": "rgb(34, 34, 34)"
      },
      "crop": "components/crops/footer-link-default.png",
      "via": "at rest"
@@ -4846,12 +4801,12 @@
     "hover": {
      "tag": "a",
      "classes": "",
-     "text": "View Product",
+     "text": "Websites",
      "rect": {
       "x": 52,
-      "y": 405.3,
-      "w": 432,
-      "h": 90
+      "y": 567.5,
+      "w": 58.77,
+      "h": 17
      },
      "style": {
       "display": "inline",
@@ -4902,9 +4857,9 @@
       "outlineColor": "rgb(34, 34, 34)",
       "outlineOffset": "0px",
       "fontFamily": "\"Inter Tight\"",
-      "fontSize": "15px",
-      "fontWeight": "300",
-      "lineHeight": "28px",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "lineHeight": "14px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(34, 34, 34)",
@@ -4917,37 +4872,11 @@
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
       "cursor": "pointer",
-      "opacity": "1",
+      "opacity": "0.75",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div.card-academy__row",
-       "size": "432.0x90.0",
-       "border": "T:1px solid rgb(237, 237, 237)"
-      }
-     ],
-     "textStyle": {
-      "node": "strong",
-      "text": "View Product",
-      "fontFamily": "\"Inter Tight\"",
-      "fontSize": "13.9718px",
-      "lineHeight": "13.9718px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(34, 34, 34)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 20,
-      "h": 20,
-      "fill": "rgb(34, 34, 34)",
-      "stroke": "none",
-      "color": "rgb(34, 34, 34)"
      },
      "crop": "components/crops/footer-link-hover.png",
      "via": "mouse hover"
@@ -4955,12 +4884,12 @@
     "focus-visible": {
      "tag": "a",
      "classes": "",
-     "text": "View Product",
+     "text": "Websites",
      "rect": {
       "x": 52,
-      "y": 405.3,
-      "w": 432,
-      "h": 90
+      "y": 567.5,
+      "w": 58.77,
+      "h": 17
      },
      "style": {
       "display": "inline",
@@ -5011,9 +4940,9 @@
       "outlineColor": "rgb(0, 95, 204)",
       "outlineOffset": "1px",
       "fontFamily": "\"Inter Tight\"",
-      "fontSize": "15px",
-      "fontWeight": "300",
-      "lineHeight": "28px",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "lineHeight": "14px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(34, 34, 34)",
@@ -5035,46 +4964,22 @@
      "paint": [
       {
        "node": "a",
-       "size": "432.0x90.0",
+       "size": "58.8x17.0",
        "outline": "1px auto rgb(0, 95, 204) offset 1px"
-      },
-      {
-       "node": "div.card-academy__row",
-       "size": "432.0x90.0",
-       "border": "T:1px solid rgb(237, 237, 237)"
       }
      ],
-     "textStyle": {
-      "node": "strong",
-      "text": "View Product",
-      "fontFamily": "\"Inter Tight\"",
-      "fontSize": "13.9718px",
-      "lineHeight": "13.9718px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(34, 34, 34)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 20,
-      "h": 20,
-      "fill": "rgb(34, 34, 34)",
-      "stroke": "none",
-      "color": "rgb(34, 34, 34)"
-     },
      "crop": "components/crops/footer-link-focus-visible.png",
      "via": "Shift+Tab, Tab"
     },
     "pressed": {
      "tag": "a",
      "classes": "",
-     "text": "View Product",
+     "text": "Websites",
      "rect": {
       "x": 52,
-      "y": 405.3,
-      "w": 432,
-      "h": 90
+      "y": 567.5,
+      "w": 58.77,
+      "h": 17
      },
      "style": {
       "display": "inline",
@@ -5125,9 +5030,9 @@
       "outlineColor": "rgb(34, 34, 34)",
       "outlineOffset": "0px",
       "fontFamily": "\"Inter Tight\"",
-      "fontSize": "15px",
-      "fontWeight": "300",
-      "lineHeight": "28px",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "lineHeight": "14px",
       "letterSpacing": "normal",
       "textTransform": "none",
       "color": "rgb(34, 34, 34)",
@@ -5140,37 +5045,11 @@
       "transitionTimingFunction": "ease",
       "transitionDelay": "0s",
       "cursor": "pointer",
-      "opacity": "1",
+      "opacity": "0.75",
       "transform": "none",
       "overflow": "visible",
       "zIndex": "auto",
       "top": "auto"
-     },
-     "paint": [
-      {
-       "node": "div.card-academy__row",
-       "size": "432.0x90.0",
-       "border": "T:1px solid rgb(237, 237, 237)"
-      }
-     ],
-     "textStyle": {
-      "node": "strong",
-      "text": "View Product",
-      "fontFamily": "\"Inter Tight\"",
-      "fontSize": "13.9718px",
-      "lineHeight": "13.9718px",
-      "fontWeight": "600",
-      "letterSpacing": "normal",
-      "color": "rgb(34, 34, 34)",
-      "textDecorationLine": "none",
-      "textTransform": "none"
-     },
-     "icon": {
-      "w": 20,
-      "h": 20,
-      "fill": "rgb(34, 34, 34)",
-      "stroke": "none",
-      "color": "rgb(34, 34, 34)"
      },
      "crop": "components/crops/footer-link-pressed.png",
      "via": "CDP forcePseudoState :active:hover"

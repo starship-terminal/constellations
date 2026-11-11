@@ -2334,9 +2334,9 @@
     "value": "54px"
    },
    "--pad-inner": {
-    "raw": "40px",
+    "raw": "52px",
     "kind": "dimension",
-    "value": "40px"
+    "value": "52px"
    },
    "--pad-input": {
     "raw": "16px",
@@ -2816,9 +2816,9 @@
     "value": "54px"
    },
    "--pad-inner": {
-    "raw": "40px",
+    "raw": "52px",
     "kind": "dimension",
-    "value": "40px"
+    "value": "52px"
    },
    "--pad-input": {
     "raw": "16px",

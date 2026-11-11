@@ -48,7 +48,7 @@ const sheets = [...bodies.entries()].concat(inline);
 await page.close();
 
 // ---- harvest: every rule with --* declarations ----
-const probe = await browser.newPage();
+const probe = await context.newPage();  // the 1440x900 context: resolved values must be the desktop ones
 const result = await probe.evaluate((sheets) => {
   const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const rules = [];

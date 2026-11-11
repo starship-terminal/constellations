@@ -594,8 +594,13 @@
     },
     {
       "referenceId": "systems:avnier",
-      "media": 95,
-      "assignedMedia": 38
+      "media": 96,
+      "assignedMedia": 39
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "media": 73,
+      "assignedMedia": 35
     },
     {
       "referenceId": "systems:ballpark",
@@ -25679,6 +25684,17 @@
     },
     {
       "referenceId": "systems:avnier",
+      "mediaId": "systems/avnier/components/crops/cart-drawer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:sidebar-drawer",
+          "rule": "ui-sidebar",
+          "reason": "Capture filename explicitly names sidebar & drawer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:avnier",
       "mediaId": "systems/avnier/components/crops/facet-checkbox-default.png",
       "terms": [
         {
@@ -25958,6 +25974,401 @@
           "termId": "web-ui-elements:checkbox-radio",
           "rule": "ui-checkbox-radio",
           "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/screenshots/home-light-arrival.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/screenshots/home-light-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/screenshots/websites-light-filter-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/coll-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/coll-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/filter-dropdown-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/filter-item-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/filter-item-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/filter-option-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/filter-option-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/grid-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/grid-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/grid-card-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/grid-card-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/m-menu-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/m-menu-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/m-site-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/plan-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/site-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/site-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/tag-chip-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/tag-chip-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/tag-chip-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/tag-chip-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/vote-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/vote-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/vote-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
         }
       ]
     },

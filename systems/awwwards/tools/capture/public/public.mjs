@@ -14,7 +14,7 @@
 // view is captured before anything is hidden.
 import fs from 'fs';
 import { screenshotWithMetadata } from '../screenshot.mjs';
-import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
+import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE, pickSiteDetail } from './lib.mjs';
 
 const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
 fs.mkdirSync(RAW, { recursive: true });
@@ -83,15 +83,13 @@ const desktop = {
     await S.full();
   } },
   site: { path: '/websites/', wait: 9000, run: async (p, S) => {
-    // The site-detail URL is discovered at run time: first entry on the
-    // winners grid. Voting is never clicked.
-    const href = await p.evaluate(() => {
-      const a = [...document.querySelectorAll('a.figure-rollover__link, a[href^="/sites/"]')].find((x) => x.offsetParent);
-      return a ? a.getAttribute('href') : null;
-    });
+    // The site-detail URL is discovered with the same rule measure.mjs uses
+    // (pickSiteDetail in lib.mjs): first card whose page still shows a Vote
+    // control, so screenshots and measurements describe the same entry.
+    // Voting is never clicked.
+    const href = await pickSiteDetail(p);
     if (!href) { log('  no site link found'); return; }
-    await p.goto(/^https?:/.test(href) ? href : BASE + href, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-    await clearChallenge(p); await wait(p, 9000);
+    await clearChallenge(p); await wait(p, 2000);
     await S.view('default');
     await S.full();
   } },

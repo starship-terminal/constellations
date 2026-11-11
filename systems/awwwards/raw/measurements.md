@@ -206,7 +206,7 @@ Crops: `site-card-default.png`, `site-card-hover.png`.
 
 #### card-cta
 
-Card action. The "Vote Now" button revealed by hovering a site card. Measured, never clicked — voting records a score.
+Card action. The "Vote Now" button revealed by hovering a site card; it stayed display:none under headless hover — see card-action on the site page instead.
 
 Page: home. Selector: `.figure-rollover__hover a.button`. States: .
 
@@ -667,21 +667,20 @@ Page: home. Selector: `footer`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 432 x 145 |
+| Size (w x h) | 1440 x 407.38 |
 | Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | Inter Tight 15px/28px 300 |
+| Font | Inter Tight 14px/28px 300 |
 | Letter spacing | normal |
 | Colour | #222222 |
-| Text node | strong: Inter Tight 15px/18px 600, #222222 |
+| Text node | a: Inter Tight 14px/14px 600, #222222 |
 | Transition | none |
-| Icon | 20 x 20, colour #222222 |
-| Painted layers | div.card-course__row 432.0x60.0 border T:1px solid #f8f8f8 / B:1px solid #f8f8f8; div.box-score__wrap 100.0x4.0 bg #ededed r 4px; div.box-score__bar 98.0x4.0 bg #fff083 |
-| Ancestor paint | 1 up div.card-course.card-academy bg #ffffff @ 0.9 |
+| Icon | 30 x 16, colour #222222 |
+| Painted layers | div.footer__bottom 1336.0x71.2 image linear-gradient(to right, #222222 0px, #222222 10%, #ffffff @ 0 10%) |
 | How | at rest |
 
 Crops: `footer-default.png`.
@@ -694,22 +693,21 @@ Page: home. Selector: `footer a`. States: default, hover, focus-visible, pressed
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 432 x 90 | = | = | = |
+| Size (w x h) | 58.77 x 17 | = | = | = |
 | Padding | 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 1px auto #005fcc offset 1px | = |
-| Font | Inter Tight 15px/28px 300 | = | = | = |
+| Font | Inter Tight 14px/14px 600 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #222222 | = | = | = |
-| Text node | strong: Inter Tight 13.9718px/13.9718px 600, #222222 | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 20 x 20, colour #222222 | = | = | = |
-| Painted layers | div.card-academy__row 432.0x90.0 border T:1px solid #ededed | = | a 432.0x90.0 outline 1px auto #005fcc offset 1px; div.card-academy__row 432.0x90.0 border T:1px solid #ededed | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+| Opacity | - | 0.75 | = | 0.75 |
+| Painted layers | - | = | a 58.8x17.0 outline 1px auto #005fcc offset 1px | = |
 
 Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`, `footer-link-pressed.png`.
 

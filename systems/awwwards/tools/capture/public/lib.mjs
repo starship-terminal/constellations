@@ -70,6 +70,32 @@ export async function clearChallenge(page, { tries = 12, step = 2000 } = {}) {
 
 // Hide (never click) any fixed overlay that mounts over the page: a promo or
 // announcement layer. REMOVE-ONLY: hiding never accepts or rejects anything.
+// The site-detail URL: walk up to four winners-grid card links and land on
+// the first whose page still shows a Vote control (Site of the Day winners
+// have closed voting). public.mjs and measure.mjs share this so screenshots
+// and measurements describe the same entry. Returns the href; leaves the page
+// on the href it returned (navigating back to the first card's page when no
+// page has a Vote control).
+export async function pickSiteDetail(page) {
+  const hrefs = await page.evaluate(() => [...document.querySelectorAll('a.figure-rollover__link, a[href^="/sites/"]')].filter((x) => x.offsetParent).map((x) => x.getAttribute('href')).filter(Boolean).slice(0, 4));
+  let href = hrefs[0] || null;
+  let landed = null;
+  for (const h of hrefs) {
+    await page.goto(/^https?:/.test(h) ? h : BASE + h, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+    await page.waitForTimeout(7000);
+    await closePromo(page);
+    const hasVote = await page.evaluate(() => [...document.querySelectorAll('a,button')].some((x) => x.offsetParent && /vote/i.test(x.innerText || '')));
+    landed = h;
+    if (hasVote) { href = h; break; }
+  }
+  if (href && landed !== href) {   // no page had a Vote control: measure/shoot the first card's page, which is what href names
+    await page.goto(/^https?:/.test(href) ? href : BASE + href, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+    await page.waitForTimeout(7000);
+    await closePromo(page);
+  }
+  return href;
+}
+
 export async function closePromo(page) {
   for (let i = 0; i < 4; i++) {
     const hit = await page.evaluate(() => {

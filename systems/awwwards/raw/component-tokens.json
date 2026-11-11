@@ -399,7 +399,7 @@
     "description": "The 20px page gutter."
    },
    "pad-inner": {
-    "value": "40px",
+    "value": "52px",
     "type": "dimension",
     "source": "css-var --pad-inner",
     "description": "The 40px inner padding."

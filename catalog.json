@@ -1863,7 +1863,7 @@
       "page": "light.surface.page",
       "surface": "light.surface.subtle",
       "text": "light.text.primary",
-      "muted": "core.color.accent.read",
+      "muted": "light.text.primary",
       "accent": "light.action.primary",
       "border": "light.border.default"
      }

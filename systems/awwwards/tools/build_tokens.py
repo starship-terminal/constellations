@@ -199,7 +199,7 @@ tokens = {
     "light": light,
     "$themes": [
         {"id": "light", "name": "Light", "selectedTokenSets": {"core": "source", "light": "enabled"},
-         "$description": "The only theme avnier.com paints; no dark theme is offered on any captured surface."},
+         "$description": "The only theme awwwards.com paints; no dark theme is offered on any captured surface."},
     ],
     "$metadata": {"tokenSetOrder": ["core", "light"]},
 }

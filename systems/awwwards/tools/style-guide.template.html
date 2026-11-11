@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Awwwards style guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300..800&display=swap">
 <meta name="description" content="Awwwards (awwwards.com) design tokens and the public directory's components, rendered from tokens.json with the measured values.">
 <style>
 :root {
@@ -32,7 +35,9 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .kv b { font-weight: 600; }
 .kv span { color: var(--text-secondary, #666); }
 /* ---- site mock ---- */
-.mock { border: 1px solid var(--border-default, #ededed); overflow: hidden; background: var(--surface-page, #fff); }
+.mock { border: 1px solid var(--border-default, #ededed); overflow-x: auto; overflow-y: hidden; background: var(--surface-page, #fff); }
+.navbar, .mock .row { flex-wrap: wrap; }
+@media (max-width: 480px) { .navbar { height: auto; row-gap: 8px; padding: 12px 16px; } }
 .navbar { display: flex; align-items: center; gap: 20px; height: 54px; padding: 0 24px; background: var(--surface-page, #fff); color: var(--text-primary, #222); font-size: 14px; border-bottom: 1px solid var(--border-default, #ededed); }
 .navbar .wm { font-weight: 800; font-size: 19px; letter-spacing: -.02em; }
 .navbar .tab { font-weight: 500; }
@@ -102,7 +107,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--border-default, #ededed); p
   <div id="spacing-out" class="kv"></div>
 
   <h2 class="sh">Shadows</h2>
-  <p class="lead">None measured — the directory is flat. Depth comes from fills and hairlines alone.</p>
+  <p class="lead">One measured exception: <code>filter-dropdown</code> paints a 6px soft shadow at 20% black. Every other component is flat — depth otherwise comes from fills and hairlines alone.</p>
   <div id="elev-out" class="kv"></div>
 
   <h2 class="sh">Measured extras</h2>

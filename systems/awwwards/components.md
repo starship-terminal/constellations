@@ -148,7 +148,7 @@ Child layers that carry the look: div 658x493.5 image linear-gradient(0deg, rgba
 ![Site card default](components/crops/site-card-default.png) ![Site card hover](components/crops/site-card-hover.png)
 
 #### Card action
-The "Vote Now" button revealed by hovering a site card. Measured, never clicked — voting records a score. Read as `card-cta` on the the home page page.
+The "Vote Now" button revealed by hovering a site card; it stayed display:none under headless hover — see card-action on the site page instead. Read as `card-cta` on the the home page page.
 
 Not on the page when it was captured.
 
@@ -327,9 +327,9 @@ The page footer and section links.
 #### Footer
 Read as `footer` on the the home page page.
 
-**Values (default).** size 432 x 145; background transparent; text Inter Tight 15/18 600, #222222 `color.neutral.buttonBorder`; icon 20 x 20, #222222 `color.neutral.buttonBorder`; layers div.card-course__row 432.0x60.0 T:1px solid rgb(248, 248, 248) / B:1px solid rgb(248, 248, 248); div.box-score__wrap 100.0x4.0 rgb(237, 237, 237) 4px; div.box-score__bar 98.0x4.0 rgb(255, 240, 131).
+**Values (default).** size 1440 x 407.38; background transparent; text Inter Tight 14/14 600, #222222 `color.neutral.buttonBorder`; icon 30 x 16, #222222 `color.neutral.buttonBorder`; layers div.footer__bottom 1336.0x71.2.
 
-Child layers that carry the look: div 432x60 border 1px solid #f8f8f8 `color.neutral.avatarBg`; div 100x4 background #ededed `color.neutral.fieldBorder` radius 4px; div 98x4 background #fff083 `color.neutral.warn`.
+Child layers that carry the look: div 1336x71.2 image linear-gradient(to right, #222222 `color.neutral.buttonBorder` 0px, #222222 `color.neutral.
 
 ![Footer default](components/crops/footer-default.png)
 
@@ -338,10 +338,10 @@ Read as `footer-link` on the the home page page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 432 x 90; background transparent; text Inter Tight 13.97/13.97 600, #222222 `color.neutral.buttonBorder`; icon 20 x 20, #222222 `color.neutral.buttonBorder`; layers div.card-academy__row 432.0x90.0 T:1px solid rgb(237, 237, 237) |
-| focus-visible | outline 1px auto #005fcc `measured.focus-ring`, offset 1px; layers a 432.0x90.0; div.card-academy__row 432.0x90.0 T:1px solid rgb(237, 237, 237) |
-
-Child layers that carry the look: div 432x90 border 1px solid #ededed `color.neutral.fieldBorder`.
+| default | size 58.77 x 17; background transparent; text Inter Tight 14/14 600, #222222 `color.neutral.buttonBorder` |
+| hover | opacity 0.75 |
+| focus-visible | outline 1px auto #005fcc `measured.focus-ring`, offset 1px; layers a 58.8x17.0 |
+| pressed | opacity 0.75 |
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
 
