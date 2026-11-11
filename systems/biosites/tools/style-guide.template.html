@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bio Sites style guide</title>
+<meta name="description" content="Bio Sites (biosites.com) design tokens and the public site's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Clarkson", system-ui, sans-serif;
+  --sg-display: "Canela", "Clarkson", Georgia, serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #000); background: var(--page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.15 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.03em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted, #6a6a6a); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, rgba(0,0,0,.2)); }
+.lead { max-width: 62ch; color: var(--muted, #6a6a6a); }
+.note { font-size: 13px; color: var(--muted, #6a6a6a); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #6a6a6a); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, rgba(0,0,0,.2)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--muted, #6a6a6a); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--muted, #6a6a6a); }
+/* ---- site mock ---- */
+.mock { border: 1px solid var(--border, rgba(0,0,0,.2)); border-radius: 24px; overflow: hidden; background: var(--page, #fff); }
+.navbar { display: flex; align-items: center; gap: 10px; height: var(--component-header-height, 97px); padding: 0 40px; background: var(--band, #000); font-size: 12px; }
+.navbar .wm { display: flex; align-items: center; gap: 6px; color: var(--textInverse, #fff); font: 700 22px/1 var(--sg-display); letter-spacing: -0.02em; margin-right: auto; }
+.navbar .wm i { width: 22px; height: 22px; border-radius: 50%; background: var(--textInverse, #fff); display: inline-block; }
+.pill { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 20px; border-radius: var(--component-control-radiusPill, 40px); font: 500 12px/1 var(--sg-sans); letter-spacing: .04em; text-transform: uppercase; }
+.pill.light { background: var(--surface, #fff); color: var(--text, #000); }
+.pill.dark { background: var(--surfaceInverse, #000); color: var(--textInverse, #fff); }
+.hero { background: var(--page, #fff); padding: 56px 40px; display: flex; align-items: flex-end; gap: 40px; }
+.hero .t { font: var(--typography-display, 500 35px/1 var(--sg-sans)); max-width: 12ch; }
+.hero .s { font: var(--typography-body, 400 21px/1.4 var(--sg-sans)); color: var(--muted, #6a6a6a); max-width: 34ch; }
+.cta { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightCta, 80px); padding: 0 32px; border-radius: var(--component-control-radiusCta, 46px); background: var(--accent, #000); color: var(--accentText, #fff); font: var(--typography-button, 400 21px/1 var(--sg-sans)); margin-left: auto; white-space: nowrap; }
+.band { background: var(--band, #000); padding: 28px 40px; }
+.band .lnk { font: var(--typography-marquee, 500 70px/1 var(--sg-sans)); color: var(--textInverse, #fff); text-transform: uppercase; letter-spacing: -0.03em; }
+.cards { display: flex; gap: 14px; padding: 28px 40px; }
+.card { width: 325px; height: 200px; border-radius: var(--component-control-radiusCard, 20px); background: var(--card, #4f566f); color: var(--textInverse, #fff); padding: 20px; font: 500 18px/1.2 var(--sg-sans); }
+.card .go { display: inline-flex; align-items: center; height: var(--component-control-heightCardCta, 46px); padding: 0 20px; margin-top: 88px; border-radius: var(--component-control-radiusCta, 46px); background: var(--scrim, rgba(0,0,0,.25)); font: 400 16px/1 var(--sg-sans); }
+.field { display: flex; align-items: center; gap: 10px; height: var(--component-control-heightField, 102px); max-width: 652px; border: 1px solid var(--border, rgba(0,0,0,.2)); border-radius: var(--component-control-radiusField, 50px); padding: 0 12px 0 30px; font-size: 20px; background: var(--page, #fff); }
+.field .pre { color: var(--text, #000); }
+.field .ph { color: var(--faint, #9c9c9c); flex: 1; }
+.field .sub { width: var(--component-control-heightSubmit, 53px); height: var(--component-control-heightSubmit, 53px); border-radius: 50%; background: var(--color-ink-42, #2a2a2a); color: var(--color-grey-230, #e6e6e6); display: inline-flex; align-items: center; justify-content: center; font-size: 20px; }
+.sp { border-top: 1px solid var(--border, rgba(0,0,0,.2)); padding: 14px 0 18px; }
+.sp-nm { font: 500 11px/1 var(--sg-mono); color: var(--muted, #6a6a6a); }
+.sp-vl { font: 400 11px/1.6 var(--sg-mono); color: var(--muted, #6a6a6a); margin: 2px 0 10px; }
+.sp-sample { overflow-wrap: anywhere; }
+@media (max-width: 700px) {
+  .navbar { flex-wrap: wrap; height: auto; padding: 12px 14px; gap: 6px; }
+  .navbar .wm { width: 100%; margin-bottom: 4px; }
+  .hero { flex-direction: column; align-items: flex-start; padding: 32px 20px; gap: 22px; }
+  .cta { margin-left: 0; }
+  .cards { flex-wrap: wrap; padding: 20px; }
+  .card { width: 100%; height: auto; min-height: 160px; }
+  .card .go { margin-top: 40px; }
+  .band { padding: 20px; }
+  .band .lnk { font-size: 36px; }
+  .field { height: auto; min-height: 80px; flex-wrap: wrap; padding: 14px 20px; border-radius: 30px; }
+}
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border, rgba(0,0,0,.2)); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Bio Sites style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number.</p>
+
+  <h2 class="sh">Bio Sites, measured</h2>
+  <p class="lead">Every value on this page is a computed-style measurement recorded in <code>tokens.json</code>: the site declares no design-token custom properties in its stylesheets, so nothing here resolves a variable — each token names the component and state it was read from. The look is monochrome: white surfaces over a black hero collage and black marquee bands, pills that invert on hover, Clarkson everywhere and a slate persona-card colour. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from biosites.com on 2026-11-11, signed out, in headless Chromium. A TrustArc consent mount stayed empty on the captured routes. The editor and an account were never signed into, and the username field was never submitted.</p>
+
+  <h2 class="sh">The site chrome</h2>
+  <p class="lead">The fixed navbar floats over the black hero band: the BIO.SITES mark left, and 40px-radius white pills right (they invert to black on hover) — LOG IN and SIGN UP FOR FREE among them. Below the band, the white page carries an 80px black CTA pill that inverts on hover.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm"><i></i>BIO.SITES</span><span class="pill light">Blog</span><span class="pill light">Log in</span><span class="pill light">Sign up for free</span></div>
+    <div class="hero"><div><div class="t">Your brand, your storefront, one link.</div><div class="s" style="margin-top:14px">A Bio Site is all you need to grow your brand and start selling.</div></div><span class="cta">Create a free Bio Site</span></div>
+    <div class="band"><span class="lnk">Stand out &middot; Sell &middot; Connect</span></div>
+    <div class="cards"><div class="card">Health &amp; Wellness<span class="go">Get started &#8599;</span></div><div class="card" style="background:var(--color-slate-500,#4f566f)">Musician<span class="go">Get started &#8599;</span></div></div>
+  </div>
+
+  <h2 class="sh">Claim (the signed-out editor)</h2>
+  <p class="lead">The /editor redirect's claim screen: a 50px-radius bordered pill holding the <code>bio.site/</code> prefix, the username field (placeholder <code>grey.156</code>) and the 53px circular <code>ink.42</code> submit. The Log In pill top right shows the browser's #005fcc focus ring.</p>
+  <div class="mock" style="padding:20px;background:var(--claimPage,#fafafa)">
+    <div class="field"><span class="pre">bio.site/</span><span class="ph">username</span><span class="sub">&#8250;</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">A monochrome set: <code>light.page</code> #ffffff surfaces, <code>light.band</code> #000000 bands, ink <code>light.text</code>, muted <code>light.muted</code> #6a6a6a and the one hue, <code>light.card</code> slate #4f566f on the persona cards. <code>light.accent</code> is black; the CTA inverts to <code>light.accentHover</code> white with a <code>light.borderHover</code> #e6e6e6 hairline.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Every style under <code>core.typography</code>, rendered at its own size, weight, line-height and tracking. All Clarkson; the guide falls back to its system stack when the webfont is absent.</p>
+  <div id="type-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the 40px nav pills, the 80px CTA, the 102px claim field shell, the 53px circular submit, the 40/46/50px pill corners and the 97px navbar block at 1440px.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read computed styles on the elements of the live page</td></tr><tr><td>No states</td><td>Hover, focus-visible and pressed (CDP-forced) states measured per component</td></tr><tr><td>No provenance</td><td>Every token names the measurement it came from; the site declares no CSS variables to alias</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v;
+    h += `<div class="sp"><div class="sp-nm">${esc(n)}</div><div class="sp-vl">${esc(v.fontFamily)} ${esc(v.fontWeight)} ${esc(v.fontSize)}/${esc(v.lineHeight)} · tracking ${esc(v.letterSpacing)}</div>`
+      + `<div class="sp-sample" style="font:var(${cssname(n)});font-family:${v.fontFamily}, var(--sg-sans);letter-spacing:${esc(v.letterSpacing)}">Your brand, your storefront, one link.</div></div>`;
+  }
+  $('#type-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.light && TOK.light.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+</script>
+</body>
+</html>

@@ -3,11 +3,11 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 81,
-    "system_domains": 73,
-    "matched_domains": 48,
-    "missing_domains": 385,
-    "system_domains_absent_from_catalog": 25
+    "system_packages": 83,
+    "system_domains": 75,
+    "matched_domains": 51,
+    "missing_domains": 382,
+    "system_domains_absent_from_catalog": 24
   },
   "matched": {
     "1password.com": {
@@ -479,6 +479,23 @@
         }
       ]
     },
+    "b150.ai": {
+      "catalog": [
+        {
+          "name": "B150",
+          "domain": "b150.ai",
+          "id": 753
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "b150",
+          "name": "B150",
+          "url": "https://b150.ai",
+          "name_match": true
+        }
+      ]
+    },
     "ballparkhq.com": {
       "catalog": [
         {
@@ -510,6 +527,40 @@
           "name": "Base44",
           "url": "https://base44.com",
           "name_match": true
+        }
+      ]
+    },
+    "bezi.com": {
+      "catalog": [
+        {
+          "name": "Bezi",
+          "domain": "bezi.com",
+          "id": 523
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "bezi",
+          "name": "Bezi",
+          "url": "https://www.bezi.com",
+          "name_match": true
+        }
+      ]
+    },
+    "biosites.com": {
+      "catalog": [
+        {
+          "name": "Bio Sites",
+          "domain": "biosites.com",
+          "id": 765
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "biosites",
+          "name": "Bio Sites",
+          "url": "https://biosites.com",
+          "name_match": false
         }
       ]
     },
@@ -897,32 +948,11 @@
         "id": 129
       }
     ],
-    "b150.ai": [
-      {
-        "name": "B150",
-        "domain": "b150.ai",
-        "id": 753
-      }
-    ],
     "bento.me": [
       {
         "name": "Bento",
         "domain": "bento.me",
         "id": 284
-      }
-    ],
-    "bezi.com": [
-      {
-        "name": "Bezi",
-        "domain": "bezi.com",
-        "id": 523
-      }
-    ],
-    "biosites.com": [
-      {
-        "name": "Bio Sites",
-        "domain": "biosites.com",
-        "id": 765
       }
     ],
     "buymeacoffee.com": [
@@ -3598,14 +3628,6 @@
         "slug": "arcsearch",
         "name": "Arc Search",
         "url": "https://arc.net/search",
-        "ios_guess": []
-      }
-    ],
-    "butter.video": [
-      {
-        "slug": "butter",
-        "name": "Butter",
-        "url": "https://www.butter.video",
         "ios_guess": []
       }
     ],

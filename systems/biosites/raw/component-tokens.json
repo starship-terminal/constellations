@@ -1,0 +1,439 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. biosites.com declares no custom properties in its stylesheets, so the whole palette is measured: the monochrome inks and greys, the slate persona-card surface, the alpha scrims and the UA focus ring, each with the component+state it was read from. The site paints one light theme; the black hero and marquee bands live inside it.",
+ "core": {
+  "color": {
+   "ink": {
+    "0": {
+     "type": "color",
+     "value": "#000000",
+     "source": "computed backgroundColor of page-ground default (raw/components-computed.json)"
+    },
+    "1": {
+     "type": "color",
+     "value": "#010101",
+     "source": "computed borderTopColor of cta default (raw/components-computed.json)"
+    },
+    "27": {
+     "type": "color",
+     "value": "#1b1b1b",
+     "source": "computed color of claim-title default (raw/components-computed.json)"
+    },
+    "42": {
+     "type": "color",
+     "value": "#2a2a2a",
+     "source": "computed backgroundColor of claim-submit default (raw/components-computed.json)"
+    }
+   },
+   "grey": {
+    "106": {
+     "type": "color",
+     "value": "#6a6a6a",
+     "source": "computed color of hero-sub default (raw/components-computed.json)"
+    },
+    "156": {
+     "type": "color",
+     "value": "#9c9c9c",
+     "source": "computed color of claim-legal default (raw/components-computed.json)"
+    },
+    "230": {
+     "type": "color",
+     "value": "#e6e6e6",
+     "source": "computed borderTopColor of cta hover (raw/components-computed.json)"
+    },
+    "250": {
+     "type": "color",
+     "value": "#fafafa",
+     "source": "computed backgroundColor of body on /editor (the claim screen)"
+    }
+   },
+   "white": {
+    "type": "color",
+    "value": "#ffffff",
+    "source": "computed backgroundColor of nav-link default (raw/components-computed.json)"
+   },
+   "slate": {
+    "500": {
+     "type": "color",
+     "value": "#4f566f",
+     "source": "computed backgroundColor of persona-card default (raw/components-computed.json)"
+    }
+   },
+   "alpha": {
+    "ink20": {
+     "type": "color",
+     "value": "rgba(0, 0, 0, 0.2)",
+     "source": "computed borderTopColor of claim-field-wrap default (raw/components-computed.json)"
+    },
+    "ink25": {
+     "type": "color",
+     "value": "rgba(0, 0, 0, 0.25)",
+     "source": "computed backgroundColor of card-cta default (raw/components-computed.json)"
+    }
+   },
+   "blue": {
+    "focus": {
+     "type": "color",
+     "value": "#005fcc",
+     "source": "computed outlineColor of claim-login focus-visible (raw/components-computed.json)"
+    }
+   }
+  },
+  "measured": {
+   "navpill-hover": {
+    "value": "#000000",
+    "type": "color",
+    "source": "computed backgroundColor of nav-link hover (raw/components-computed.json)",
+    "description": "The nav pill's black fill on hover."
+   },
+   "cta-hover": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "computed backgroundColor of cta hover (raw/components-computed.json)",
+    "description": "The CTA's white fill on hover."
+   },
+   "claim-submit-bg": {
+    "value": "#2a2a2a",
+    "type": "color",
+    "source": "computed backgroundColor of claim-submit default (raw/components-computed.json)",
+    "description": "The circular claim submit's grey fill."
+   },
+   "claim-submit-hover": {
+    "value": "#2a2a2a",
+    "type": "color",
+    "source": "computed backgroundColor of claim-submit hover (raw/components-computed.json)",
+    "description": "The claim submit on hover."
+   },
+   "login-pill": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "computed backgroundColor of claim-login default (raw/components-computed.json)",
+    "description": "The Log In pill on the claim screen."
+   }
+  },
+  "typography": {
+   "marquee": {
+    "$type": "typography",
+    "$value": {
+     "fontFamily": "Clarkson",
+     "fontSize": "70px",
+     "fontWeight": 500,
+     "lineHeight": "98px",
+     "letterSpacing": "-0.5px"
+    },
+    "$extensions": {
+     "source": "computed type of footer-cta default (raw/components-computed.json)"
+    },
+    "$description": "The giant 70px caps call (BIO.SITE/YOURNAME, the section links)."
+   },
+   "display": {
+    "$type": "typography",
+    "$value": {
+     "fontFamily": "Clarkson",
+     "fontSize": "35px",
+     "fontWeight": 500,
+     "lineHeight": "35px",
+     "letterSpacing": "-1px"
+    },
+    "$extensions": {
+     "source": "computed type of hero-title default (raw/components-computed.json)"
+    },
+    "$description": "The h1 headline (Clarkson medium, tight tracking)."
+   },
+   "title": {
+    "$type": "typography",
+    "$value": {
+     "fontFamily": "Clarkson",
+     "fontSize": "18px",
+     "fontWeight": 400,
+     "lineHeight": "25.2px",
+     "letterSpacing": "-0.5px"
+    },
+    "$extensions": {
+     "source": "computed type of section-title default (raw/components-computed.json)"
+    },
+    "$description": "An h2 section title."
+   },
+   "body": {
+    "$type": "typography",
+    "$value": {
+     "fontFamily": "Clarkson",
+     "fontSize": "21px",
+     "fontWeight": 400,
+     "lineHeight": "29px",
+     "letterSpacing": "-0.5px"
+    },
+    "$extensions": {
+     "source": "computed type of hero-sub default (raw/components-computed.json)"
+    },
+    "$description": "The paragraph under the hero."
+   },
+   "question": {
+    "$type": "typography",
+    "$value": {
+     "fontFamily": "Clarkson",
+     "fontSize": "21px",
+     "fontWeight": 400,
+     "lineHeight": "29.4px",
+     "letterSpacing": "-0.5px"
+    },
+    "$extensions": {
+     "source": "computed type of faq-item default (raw/components-computed.json)"
+    },
+    "$description": "An FAQ question row."
+   },
+   "label": {
+    "$type": "typography",
+    "$value": {
+     "fontFamily": "Clarkson",
+     "fontSize": "12px",
+     "fontWeight": 500,
+     "lineHeight": "13.2px",
+     "letterSpacing": "normal"
+    },
+    "$extensions": {
+     "source": "computed type of nav-link default (raw/components-computed.json)"
+    },
+    "$description": "Nav pill label type (Clarkson medium, caps)."
+   },
+   "button": {
+    "$type": "typography",
+    "$value": {
+     "fontFamily": "Clarkson",
+     "fontSize": "21px",
+     "fontWeight": 400,
+     "lineHeight": "23px",
+     "letterSpacing": "-0.5px"
+    },
+    "$extensions": {
+     "source": "computed type of cta default (raw/components-computed.json)"
+    },
+    "$description": "CTA label type."
+   },
+   "eyebrow": {
+    "$type": "typography",
+    "$value": {
+     "fontFamily": "Clarkson",
+     "fontSize": "18.72px",
+     "fontWeight": 500,
+     "lineHeight": "normal",
+     "letterSpacing": "normal"
+    },
+    "$extensions": {
+     "source": "computed type of eyebrow default (raw/components-computed.json)"
+    },
+    "$description": "The TRUSTED BY MILLIONS OF eyebrow."
+   }
+  }
+ },
+ "light": {
+  "page": {
+   "type": "color",
+   "description": "The white content surface the sections and footer paint.",
+   "value": "{color.white}",
+   "source": "computed backgroundColor of footer default (raw/components-computed.json); same value as core.color.white"
+  },
+  "band": {
+   "type": "color",
+   "description": "The black fill under the hero collage; the marquee bands paint it too.",
+   "value": "{color.ink.0}",
+   "source": "computed backgroundColor of page-ground default (raw/components-computed.json); same value as core.color.ink.0"
+  },
+  "surface": {
+   "type": "color",
+   "description": "The white pill surface of the nav controls.",
+   "value": "{color.white}",
+   "source": "computed backgroundColor of nav-link default (raw/components-computed.json); same value as core.color.white"
+  },
+  "surfaceInverse": {
+   "type": "color",
+   "description": "The black pill fill the nav controls invert to on hover, and the signup pill at rest.",
+   "value": "{color.ink.0}",
+   "source": "computed backgroundColor of nav-signup hover (raw/components-computed.json); same value as core.color.ink.0"
+  },
+  "card": {
+   "type": "color",
+   "description": "The slate persona card.",
+   "value": "{color.slate.500}",
+   "source": "computed backgroundColor of persona-card default (raw/components-computed.json); same value as core.color.slate.500"
+  },
+  "scrim": {
+   "type": "color",
+   "description": "The translucent black card-cta pill.",
+   "value": "{color.alpha.ink25}",
+   "source": "computed backgroundColor of card-cta default (raw/components-computed.json); same value as core.color.alpha.ink25"
+  },
+  "text": {
+   "type": "color",
+   "description": "Primary ink on the light surface.",
+   "value": "{color.ink.0}",
+   "source": "computed color of hero-title default (raw/components-computed.json); same value as core.color.ink.0"
+  },
+  "muted": {
+   "type": "color",
+   "description": "The grey subcopy/link colour.",
+   "value": "{color.grey.106}",
+   "source": "computed color of hero-sub default (raw/components-computed.json); same value as core.color.grey.106"
+  },
+  "faint": {
+   "type": "color",
+   "description": "The faint legal-grey small print.",
+   "value": "{color.grey.156}",
+   "source": "computed color of claim-legal default (raw/components-computed.json); same value as core.color.grey.156"
+  },
+  "textInverse": {
+   "type": "color",
+   "description": "White text on black fills (pills, CTA, dark bands).",
+   "value": "{color.white}",
+   "source": "computed color of cta default (raw/components-computed.json); same value as core.color.white"
+  },
+  "link": {
+   "type": "color",
+   "description": "Footer column links read muted grey, not a brand blue.",
+   "value": "{color.grey.106}",
+   "source": "computed color of footer-link default (raw/components-computed.json); same value as core.color.grey.106"
+  },
+  "accent": {
+   "type": "color",
+   "description": "The CTA's black fill — the site's accent is monochrome.",
+   "value": "{color.ink.0}",
+   "source": "computed backgroundColor of cta default (raw/components-computed.json); same value as core.color.ink.0"
+  },
+  "accentText": {
+   "type": "color",
+   "description": "White label on the black CTA.",
+   "value": "{color.white}",
+   "source": "computed color of cta default (raw/components-computed.json); same value as core.color.white"
+  },
+  "accentHover": {
+   "type": "color",
+   "description": "The CTA on hover inverts to white.",
+   "value": "{color.white}",
+   "source": "computed backgroundColor of cta hover (raw/components-computed.json); same value as core.color.white"
+  },
+  "accentHoverText": {
+   "type": "color",
+   "description": "The CTA label on hover reads black.",
+   "value": "{color.ink.1}",
+   "source": "computed color of cta hover (raw/components-computed.json); same value as core.color.ink.1"
+  },
+  "border": {
+   "type": "color",
+   "description": "The hairline on the claim field shell.",
+   "value": "{color.alpha.ink20}",
+   "source": "computed borderTopColor of claim-field-wrap default (raw/components-computed.json); same value as core.color.alpha.ink20"
+  },
+  "borderHover": {
+   "type": "color",
+   "description": "The hairline on the inverted CTA.",
+   "value": "{color.grey.230}",
+   "source": "computed borderTopColor of cta hover (raw/components-computed.json); same value as core.color.grey.230"
+  },
+  "focus": {
+   "type": "color",
+   "description": "The keyboard-focus ring the browser paints on the claim screen.",
+   "value": "{color.blue.focus}",
+   "source": "computed outlineColor of claim-login focus-visible (raw/components-computed.json); same value as core.color.blue.focus"
+  },
+  "claimPage": {
+   "type": "color",
+   "value": "{color.grey.250}",
+   "source": "computed backgroundColor of body on /editor (the claim screen); same value as core.color.grey.250",
+   "description": "The signed-out claim screen's ground, a whisper off pure white."
+  }
+ },
+ "dark": {},
+ "component": {
+  "control": {
+   "heightNav": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of nav-link default (raw/components-computed.json)",
+    "description": "The nav pill height."
+   },
+   "heightCta": {
+    "type": "dimension",
+    "value": "80px",
+    "source": "computed height of cta default (raw/components-computed.json)",
+    "description": "The big CTA pill height."
+   },
+   "heightCardCta": {
+    "type": "dimension",
+    "value": "45.5938px",
+    "source": "computed height of card-cta default (raw/components-computed.json)",
+    "description": "The card Get-started pill height."
+   },
+   "heightField": {
+    "type": "dimension",
+    "value": "100px",
+    "source": "computed height of claim-field-wrap default (raw/components-computed.json)",
+    "description": "The claim field shell height."
+   },
+   "heightSubmit": {
+    "type": "dimension",
+    "value": "53px",
+    "source": "computed height of claim-submit default (raw/components-computed.json)",
+    "description": "The circular claim submit."
+   },
+   "heightLogin": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of claim-login default (raw/components-computed.json)",
+    "description": "The claim screen's Log In pill."
+   },
+   "radiusPill": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed borderTopLeftRadius of nav-link default (raw/components-computed.json)",
+    "description": "The nav pills' corner."
+   },
+   "radiusCta": {
+    "type": "dimension",
+    "value": "46px",
+    "source": "computed borderTopLeftRadius of cta default (raw/components-computed.json)",
+    "description": "The CTA's corner."
+   },
+   "radiusField": {
+    "type": "dimension",
+    "value": "50px",
+    "source": "computed borderTopLeftRadius of claim-field-wrap default (raw/components-computed.json)",
+    "description": "The claim shell's corner."
+   },
+   "radiusCard": {
+    "type": "dimension",
+    "value": "20px",
+    "source": "computed borderTopLeftRadius of persona-card default (raw/components-computed.json)",
+    "description": "The persona card's corner."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "97px",
+    "source": "computed height of navbar default (raw/components-computed.json)",
+    "description": "The fixed navbar at 1440px."
+   },
+   "heightMobile": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "computed height of m-navbar default (raw/components-computed.json)",
+    "description": "The fixed navbar at 390px."
+   }
+  },
+  "footer": {
+   "height": {
+    "type": "dimension",
+    "value": "673.422px",
+    "source": "computed height of footer default (raw/components-computed.json)",
+    "description": "The footer band at 1440px."
+   }
+  },
+  "mobile": {
+   "ctaHeight": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "computed height of m-cta default (raw/components-computed.json)",
+    "description": "The CTA at 390px."
+   }
+  }
+ }
+}

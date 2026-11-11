@@ -1,0 +1,301 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. bezi.com is a Framer build: its --token-<uuid> palette is the product's own orange, ink, alpha and pastel colours (duplicated uuids folded onto the first one that resolves to the value). \"var\" leaves resolve through the live document; \"value\" leaves are measured.",
+ "core": {
+  "color": {
+   "orange": {
+    "300": {
+     "var": "--token-02ae8536-e632-4775-ab7e-88b26354851e",
+     "type": "color"
+    },
+    "500": {
+     "var": "--token-0f67bf32-48b3-4408-bffb-7509aa38579e",
+     "type": "color"
+    },
+    "700": {
+     "var": "--token-4af090ad-db91-49ee-855e-79dc5046e841",
+     "type": "color"
+    },
+    "alpha-35": {
+     "var": "--token-b029b348-26a9-4be3-84bb-f29fa9797cd7",
+     "type": "color"
+    },
+    "100": {
+     "var": "--token-b5c15730-a920-48bd-9a8d-2d87596b28f1",
+     "type": "color"
+    },
+    "400": {
+     "var": "--token-bbc5505b-b34c-476f-b3b8-4166c834b4bb",
+     "type": "color"
+    },
+    "600": {
+     "var": "--token-de2e516f-a4e0-40ed-8ea4-5531d3a3e2e4",
+     "type": "color"
+    }
+   },
+   "ink": {
+    "950": {
+     "var": "--token-03286735-ee67-4ac8-8d63-f64153418b5e",
+     "type": "color"
+    },
+    "300": {
+     "var": "--token-0e858600-fd8a-4242-a28b-394fdc734cbb",
+     "type": "color"
+    },
+    "200": {
+     "var": "--token-1c3a7846-9a70-46a8-a69a-5726c4268095",
+     "type": "color"
+    },
+    "700": {
+     "var": "--token-37112d4a-1f7b-488d-b978-a134e89c5a38",
+     "type": "color"
+    },
+    "0": {
+     "var": "--token-44ceed80-9b71-400a-9059-1b7299c90f10",
+     "type": "color"
+    },
+    "900": {
+     "var": "--token-4c1ece71-3db1-462f-a1ff-e50318477ee4",
+     "type": "color"
+    },
+    "800": {
+     "var": "--token-8dc20134-78f7-438f-90ac-8e92497309c8",
+     "type": "color"
+    },
+    "600": {
+     "var": "--token-b7a03190-c4d7-4908-acc7-3999e638b5ba",
+     "type": "color"
+    },
+    "100": {
+     "var": "--token-b8eada90-e26c-4070-b91c-a30e1fc8b2d2",
+     "type": "color"
+    }
+   },
+   "white-alpha": {
+    "60": {
+     "var": "--token-10cdf536-e74e-4526-a334-9a932d58f2eb",
+     "type": "color"
+    },
+    "10": {
+     "var": "--token-139e3a73-74a0-4c0f-833c-3e8400517ed3",
+     "type": "color"
+    },
+    "15": {
+     "var": "--token-15398510-2b01-4005-a3d2-771f20dcbd1b",
+     "type": "color"
+    },
+    "80": {
+     "var": "--token-49ca07b2-81a6-4dc6-b0ca-e7c0ef0a8dba",
+     "type": "color"
+    },
+    "0": {
+     "var": "--token-65dac16f-5573-4a4e-9891-ffcd5d8a284f",
+     "type": "color"
+    },
+    "5": {
+     "var": "--token-6b0cc73d-6892-448d-9b63-4106b53df6c7",
+     "type": "color"
+    },
+    "30": {
+     "var": "--token-83522440-4250-454b-b560-5546dba3a04e",
+     "type": "color"
+    },
+    "20": {
+     "var": "--token-8889595f-9d1e-4e08-a603-95486d82e181",
+     "type": "color"
+    },
+    "35": {
+     "var": "--token-9cd81038-c3cc-48c7-aa44-744fa375e77e",
+     "type": "color"
+    },
+    "25": {
+     "var": "--token-d05b7c96-fe70-4537-849f-092a9c6dfb7b",
+     "type": "color"
+    }
+   },
+   "black-alpha": {
+    "80": {
+     "var": "--token-212cb81c-4f43-4394-ad1b-ccf6dc7f1242",
+     "type": "color"
+    },
+    "60": {
+     "var": "--token-5eef58b9-4d17-434f-9205-831529305aad",
+     "type": "color"
+    },
+    "30": {
+     "var": "--token-6cca908a-531b-4759-9ef8-858e748a8592",
+     "type": "color"
+    }
+   },
+   "pastel": {
+    "sky": {
+     "var": "--token-3f6c3f97-1e15-45c3-b47a-202ade190867",
+     "type": "color"
+    },
+    "indigo": {
+     "var": "--token-8eb014e1-89ab-4b95-807f-829ed16b9d78",
+     "type": "color"
+    },
+    "blue": {
+     "var": "--token-a1c92fee-200b-42aa-a87b-bc7f99e4184b",
+     "type": "color"
+    },
+    "lilac": {
+     "var": "--token-cc9e472c-4730-43e2-83e5-7476eaa73a47",
+     "type": "color"
+    },
+    "periwinkle": {
+     "var": "--token-cfec7284-fa8a-454d-a130-9b98dd842eed",
+     "type": "color"
+    },
+    "pink": {
+     "var": "--token-de5f54ec-8db5-4d54-b764-17d747d4d37c",
+     "type": "color"
+    },
+    "mint": {
+     "var": "--token-e3de6550-2c6e-499a-8b04-ef87a1cd2fee",
+     "type": "color"
+    },
+    "ice": {
+     "var": "--token-e68bb55c-ff4b-448e-a222-e18c7d245fcf",
+     "type": "color"
+    },
+    "lemon": {
+     "var": "--token-f08b8e14-68c3-4811-a432-25afe58a0498",
+     "type": "color"
+    }
+   }
+  },
+  "measured": {
+   "cta-hover": {
+    "value": "#f84503",
+    "type": "color",
+    "source": "computed paint.0.bg of cta hover (raw/components-computed.json)",
+    "description": "The CTA fill on hover."
+   },
+   "viewall-fill": {
+    "value": "rgba(255, 255, 255, 0.2)",
+    "type": "color",
+    "source": "computed backgroundColor of view-all default (raw/components-computed.json)",
+    "description": "The VIEW ALL chip's translucent white fill."
+   },
+   "arrow-orange": {
+    "value": "#f84503",
+    "type": "color",
+    "source": "computed paint.2.bg of view-all default (raw/components-computed.json)",
+    "description": "The orange of the pixel-art arrow inside VIEW ALL."
+   },
+   "plancta-fill": {
+    "value": "rgba(0, 0, 0, 0.84)",
+    "type": "color",
+    "source": "computed paint.0.bg of plan-cta default (raw/components-computed.json)",
+    "description": "The Free band's dark CTA fill on the light-blue card."
+   },
+   "chip-text": {
+    "value": "#f2f1ec",
+    "type": "color",
+    "source": "computed color of tools-button default (raw/components-computed.json)",
+    "description": "The CONNECTED TOOLS chip's off-white."
+   }
+  }
+ },
+ "dark": {
+  "page": {
+   "type": "color",
+   "description": "The near-black the whole page paints on (body's own fill).",
+   "value": "#0d0d0d",
+   "source": "computed backgroundColor of page-ground default (raw/components-computed.json)"
+  },
+  "surface": {
+   "type": "color",
+   "description": "The floating header pill's fill, a translucent near-black over the starfield.",
+   "value": "rgba(31, 31, 31, 0.84)",
+   "source": "computed paint.0.bg of header default (raw/components-computed.json)"
+  },
+  "text": {
+   "type": "color",
+   "description": "The display type's white.",
+   "value": "{color.ink.0}",
+   "source": "computed color of hero-title default (raw/components-computed.json); same value as core.color.ink.0"
+  },
+  "muted": {
+   "type": "color",
+   "description": "Secondary text under the hero, painted on the inner span.",
+   "value": "rgba(255, 255, 255, 0.5)",
+   "source": "computed textStyle.color of hero-sub default (raw/components-computed.json)"
+  },
+  "accent": {
+   "type": "color",
+   "description": "The orange CTA fill (painted by a layer inside the control).",
+   "value": "{color.orange.600}",
+   "source": "computed paint.0.bg of cta default (raw/components-computed.json); same value as core.color.orange.600"
+  },
+  "accentText": {
+   "type": "color",
+   "description": "Text painted on the orange CTA (the anchor itself keeps the UA link colour).",
+   "value": "{color.ink.0}",
+   "source": "computed textStyle.color of cta default (raw/components-computed.json); same value as core.color.ink.0"
+  },
+  "link": {
+   "type": "color",
+   "description": "The muted legal/footer link colour.",
+   "value": "#f2f1ec",
+   "source": "computed color of footer-legal default (raw/components-computed.json)"
+  },
+  "border": {
+   "type": "color",
+   "description": "The hairline of the corner-tick chips, rgba(242,241,236,0.32).",
+   "value": "rgba(242, 241, 236, 0.32)",
+   "source": "computed paint.0.border of tools-button default (raw/components-computed.json)"
+  },
+  "chip": {
+   "type": "color",
+   "description": "The announcement strip's ground under the header.",
+   "value": "#1c1c1c",
+   "source": "computed backgroundColor of announcement default (raw/components-computed.json)"
+  },
+  "focus": {
+   "type": "color",
+   "description": "The keyboard-focus ring where one is drawn (the browser's default auto outline).",
+   "value": "#005fcc",
+   "source": "computed outlineColor of nav-link focus-visible (raw/components-computed.json)"
+  }
+ },
+ "component": {
+  "control": {
+   "heightNav": {
+    "type": "dimension",
+    "value": "38.4062px",
+    "source": "computed height of nav-link default (raw/components-computed.json)",
+    "description": "Nav controls are 38px."
+   },
+   "heightCta": {
+    "type": "dimension",
+    "value": "39px",
+    "source": "computed height of cta default (raw/components-computed.json)",
+    "description": "The TRY FOR FREE pill height."
+   },
+   "radiusPill": {
+    "type": "dimension",
+    "value": "144px",
+    "source": "computed paint.0.radius of header default (raw/components-computed.json)",
+    "description": "The header pill's corner, 144px."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "80px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The full header block at 1440px."
+   }
+  },
+  "footer": {
+   "height": {
+    "type": "dimension",
+    "value": "538.312px",
+    "source": "computed height of footer default (raw/components-computed.json)",
+    "description": "The footer block at 1440px."
+   }
+  }
+ }
+}

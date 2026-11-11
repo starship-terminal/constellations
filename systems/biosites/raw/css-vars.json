@@ -1,0 +1,125 @@
+{
+ "readAt": "2026-11-11",
+ "source": "biosites.com's frontsitev2 hashed chunks (served cross-origin from static.biosites.com, fetched over HTTP after the CSSOM sweep) plus inline <style> blocks, re-parsed in a probe document",
+ "sheets": [
+  {
+   "name": "https://static.biosites.com/frontsitev2/fonts/fonts.css",
+   "media": "",
+   "bytes": 1183
+  },
+  {
+   "name": "inline-1",
+   "media": "",
+   "bytes": 1362
+  },
+  {
+   "name": "https://static.biosites.com/frontsitev2/_next/static/css/48d0f3fb17905af3.css",
+   "media": "",
+   "bytes": 4115,
+   "fetched": true
+  },
+  {
+   "name": "https://static.biosites.com/frontsitev2/_next/static/css/cd8368a510ba7711.css",
+   "media": "",
+   "bytes": 29817,
+   "fetched": true
+  }
+ ],
+ "counts": {
+  "rules": 0,
+  "fonts": 10,
+  "names": {
+   "token": 0,
+   "app": 0,
+   "tw": 0,
+   "utility": 0
+  },
+  "bySelector": {}
+ },
+ "errors": [],
+ "token": [],
+ "app": [],
+ "tw": [],
+ "utility": [],
+ "fonts": [
+  {
+   "file": "https://static.biosites.com/frontsitev2/fonts/fonts.css",
+   "font-family": "Clarkson",
+   "src": "local(\"?\"), url(\"/frontsite/fonts/clarkson-400.woff2\") format(\"woff2\"), url(\"/frontsite/fonts/clarkson-400.woff\") format(\"woff\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://static.biosites.com/frontsitev2/fonts/fonts.css",
+   "font-family": "Clarkson",
+   "src": "local(\"?\"), url(\"/frontsite/fonts/clarkson-500.woff2\") format(\"woff2\"), url(\"/frontsite/fonts/clarkson-500.woff\") format(\"woff\")",
+   "font-weight": "500",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://static.biosites.com/frontsitev2/fonts/fonts.css",
+   "font-family": "Canela",
+   "src": "local(\"?\"), url(\"/frontsite/fonts/canela-light.woff2\") format(\"woff2\"), url(\"/frontsite/fonts/canela-light.woff\") format(\"woff\")",
+   "font-weight": "300",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://static.biosites.com/frontsitev2/fonts/fonts.css",
+   "font-family": "Canela",
+   "src": "local(\"?\"), url(\"/frontsite/fonts/canela-light-italic.woff2\") format(\"woff2\"), url(\"/frontsite/fonts/canela-light-italic.woff\") format(\"woff\")",
+   "font-weight": "300",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://static.biosites.com/frontsitev2/fonts/fonts.css",
+   "font-family": "\"Canela Text\"",
+   "src": "local(\"?\"), url(\"/frontsite/fonts/canela-text-regular.woff2\") format(\"woff2\"), url(\"/frontsite/fonts/canela-text-regular.woff\") format(\"woff\")",
+   "font-weight": "500",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-1",
+   "font-family": "Clarkson",
+   "src": "local(\"?\"), url(\"https://static.biosites.com/frontsitev2/fonts/clarkson-400.woff2\") format(\"woff2\"), url(\"https://static.biosites.com/frontsitev2/fonts/clarkson-400.woff\") format(\"woff\")",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "inline-1",
+   "font-family": "Clarkson",
+   "src": "local(\"?\"), url(\"https://static.biosites.com/frontsitev2/fonts/clarkson-500.woff2\") format(\"woff2\"), url(\"https://static.biosites.com/frontsitev2/fonts/clarkson-500.woff\") format(\"woff\")",
+   "font-weight": "500",
+   "font-style": "normal"
+  },
+  {
+   "file": "inline-1",
+   "font-family": "Canela",
+   "src": "local(\"?\"), url(\"https://static.biosites.com/frontsitev2/fonts/canela-light.woff2\") format(\"woff2\"), url(\"https://static.biosites.com/frontsitev2/fonts/canela-light.woff\") format(\"woff\")",
+   "font-weight": "300",
+   "font-style": "normal"
+  },
+  {
+   "file": "inline-1",
+   "font-family": "Canela",
+   "src": "local(\"?\"), url(\"https://static.biosites.com/frontsitev2/fonts/canela-light-italic.woff2\") format(\"woff2\"), url(\"https://static.biosites.com/frontsitev2/fonts/canela-light-italic.woff\") format(\"woff\")",
+   "font-weight": "300",
+   "font-style": "italic"
+  },
+  {
+   "file": "inline-1",
+   "font-family": "\"Canela Text\"",
+   "src": "local(\"?\"), url(\"https://static.biosites.com/frontsitev2/fonts/canela-text-regular\") format(\"woff2\"), url(\"https://static.biosites.com/frontsitev2/fonts/canela-text-regular\") format(\"woff\")",
+   "font-weight": "500",
+   "font-style": "normal"
+  }
+ ],
+ "resolved": {
+  "light": {},
+  "dark": {}
+ }
+}
