@@ -6252,7 +6252,8 @@
      "the search overlay was captured open; its results were never typed for",
      "icons: no standalone SVG set lifted this pass"
     ],
-    "durationMin": null
+    "durationMin": null,
+    "pr": "https://github.com/starship-terminal/constellations/pull/488"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the icons (the coffee-cup wordmark, heart and chevron glyphs, social icons, the payment brand marks) are visible in the crops and screenshots"
