@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 76,
-    "system_domains": 68,
-    "matched_domains": 44,
-    "missing_domains": 389,
+    "system_packages": 77,
+    "system_domains": 69,
+    "matched_domains": 45,
+    "missing_domains": 388,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -428,6 +428,23 @@
         }
       ]
     },
+    "awwwards.com": {
+      "catalog": [
+        {
+          "name": "Awwwards",
+          "domain": "awwwards.com",
+          "id": 285
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "awwwards",
+          "name": "Awwwards",
+          "url": "https://www.awwwards.com",
+          "name_match": true
+        }
+      ]
+    },
     "ballparkhq.com": {
       "catalog": [
         {
@@ -841,13 +858,6 @@
         "name": "Asana",
         "domain": "asana.com",
         "id": 69
-      }
-    ],
-    "awwwards.com": [
-      {
-        "name": "Awwwards",
-        "domain": "awwwards.com",
-        "id": 285
       }
     ],
     "b150.ai": [
