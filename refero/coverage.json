@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 75,
-    "system_domains": 67,
-    "matched_domains": 43,
-    "missing_domains": 390,
+    "system_packages": 78,
+    "system_domains": 70,
+    "matched_domains": 46,
+    "missing_domains": 387,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -360,6 +360,40 @@
         }
       ]
     },
+    "arket.com": {
+      "catalog": [
+        {
+          "name": "ARKET",
+          "domain": "arket.com",
+          "id": 510
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "arket",
+          "name": "ARKET",
+          "url": "https://www.arket.com",
+          "name_match": true
+        }
+      ]
+    },
+    "artboard.studio": {
+      "catalog": [
+        {
+          "name": "Artboard Studio",
+          "domain": "artboard.studio",
+          "id": 232
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "artboardstudio",
+          "name": "Artboard Studio",
+          "url": "https://artboard.studio",
+          "name_match": false
+        }
+      ]
+    },
     "asos.com": {
       "catalog": [
         {
@@ -390,6 +424,23 @@
           "slug": "attio",
           "name": "Attio",
           "url": "https://attio.com",
+          "name_match": true
+        }
+      ]
+    },
+    "avnier.com": {
+      "catalog": [
+        {
+          "name": "AVNIER",
+          "domain": "avnier.com",
+          "id": 896
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "avnier",
+          "name": "Avnier",
+          "url": "https://avnier.com",
           "name_match": true
         }
       ]
@@ -805,13 +856,6 @@
         "id": 46
       }
     ],
-    "arket.com": [
-      {
-        "name": "ARKET",
-        "domain": "arket.com",
-        "id": 510
-      }
-    ],
     "around.co": [
       {
         "name": "Around",
@@ -819,25 +863,11 @@
         "id": 129
       }
     ],
-    "artboard.studio": [
-      {
-        "name": "Artboard Studio",
-        "domain": "artboard.studio",
-        "id": 232
-      }
-    ],
     "asana.com": [
       {
         "name": "Asana",
         "domain": "asana.com",
         "id": 69
-      }
-    ],
-    "avnier.com": [
-      {
-        "name": "AVNIER",
-        "domain": "avnier.com",
-        "id": 896
       }
     ],
     "awwwards.com": [
