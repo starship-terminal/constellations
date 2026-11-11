@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Base44 style guide</title>
+<meta name="description" content="Base44 (base44.com) design tokens and the public site's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Geist", "WixMadeforText", system-ui, sans-serif;
+  --sg-display: "Dazzed", "Dazzed Fallback", system-ui, sans-serif;
+  --sg-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"] {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--foreground, #0f0f0f); background: var(--background, #f9f8f6); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 600 40px/1.15 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.03em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted-foreground, #232529); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, #d9d5ce); }
+.lead { max-width: 62ch; color: var(--muted-foreground, #232529); }
+.note { font-size: 13px; color: var(--muted-foreground, #232529); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted-foreground, #232529); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, #d9d5ce); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--muted-foreground, #232529); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--muted-foreground, #232529); }
+.mode { position: fixed; top: 14px; right: 18px; z-index: 5; font: 500 12px/1 var(--sg-sans); padding: 8px 12px; border-radius: var(--radius-sm, 8px); border: 1px solid var(--border, #d9d5ce); background: var(--card, #fff); color: var(--foreground, #0f0f0f); cursor: pointer; }
+/* ---- site mock ---- */
+.mock { border: 1px solid var(--border, #d9d5ce); border-radius: var(--radius-lg, 16px); overflow: hidden; background: var(--background, #f9f8f6); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--layout-headerBarHeight, 56px); padding: 0 20px; background: var(--background, #f9f8f6); border-bottom: 1px solid var(--border-soft, rgba(15,15,15,.08)); font-size: 15px; }
+.navbar .wm { font: 700 18px/1 var(--sg-display); letter-spacing: -0.02em; }
+.navbar .wm i { display: inline-block; width: 16px; height: 16px; border-radius: 50% 50% 50% 4px; background: var(--color-cta-orange, #ff773c); margin-right: 6px; vertical-align: -2px; }
+.navbar .sp { flex: 1; }
+.navbar .sa { color: var(--color-blue-500, #3b51e5); font-weight: 500; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightCta, 38px); padding: 0 16px; border-radius: var(--component-control-radiusCta, 8px); font-size: 14px; font-weight: 500; border: 1px solid transparent; }
+.btn.primary { background: var(--brand, #312f2f); color: #fff; }
+.btn.orange { background: var(--accent, #ff773c); color: var(--color-cta-orangeText, #181818); }
+.btn.ghost { background: var(--card, #fff); color: var(--foreground, #0f0f0f); border-color: var(--border, #d9d5ce); }
+.hero { background: var(--background, #f9f8f6); color: var(--foreground, #0f0f0f); padding: 72px 40px; font: 600 56px/1.05 var(--sg-display); letter-spacing: -0.033em; text-align: center; }
+.hero small { display: block; font: 400 17px/1.55 var(--sg-sans); color: var(--muted-foreground, #232529); margin: 20px auto 26px; max-width: 46ch; letter-spacing: 0; }
+.composer { background: var(--card, #fff); border-radius: var(--radius-sm, 8px); box-shadow: var(--elevation-md, 0 16px 30px rgba(0,0,0,.05)); max-width: 560px; margin: 0 auto; padding: 14px 14px 10px; text-align: left; }
+.composer .ta { font: 400 15px/1.5 var(--sg-sans); color: var(--color-text-placeholder, #8e8e8e); min-height: 48px; }
+.composer .row { display: flex; gap: 8px; align-items: center; }
+.composer .row .grow { flex: 1; }
+.iconbtn { width: 40px; height: 40px; border-radius: var(--radius-sm, 8px); display: inline-flex; align-items: center; justify-content: center; color: var(--foreground, #0f0f0f); }
+.tiles { display: flex; gap: 10px; justify-content: center; margin-top: 26px; }
+.tile { height: var(--component-control-heightTile, 66px); width: 120px; border: 1px solid var(--border-soft, rgba(15,15,15,.08)); border-radius: var(--radius-md, 10px); background: var(--card, #fff); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 13px; font-weight: 500; }
+.toggle { display: inline-flex; align-items: center; gap: 4px; height: var(--component-control-heightToggle, 56px); padding: 4px; border-radius: var(--component-control-radiusToggle, 12px); background: rgba(255,255,255,.6); }
+.toggle .on { background: var(--accent, #ff773c); color: var(--color-cta-orangeText, #181818); border-radius: var(--radius-sm, 8px); padding: 10px 16px; font-size: 15px; font-weight: 500; }
+.toggle .off { padding: 10px 16px; font-size: 15px; }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; padding: 20px; }
+.plan { border: 1px solid var(--border-soft, rgba(15,15,15,.08)); border-radius: var(--component-control-radiusCard, 0px); padding: 20px; background: var(--card, #fff); font-size: 13px; }
+.plan .price { font: 600 34px/1.2 var(--sg-display); letter-spacing: -0.03em; margin: 8px 0 14px; }
+.plan .btn { width: 100%; height: var(--component-control-heightSubmit, 50px); }
+.plan .badge { float: right; background: var(--color-blue-500, #3b51e5); color: #fff; border-radius: var(--component-control-radiusBadge, 4px); padding: 4px 8px; font-size: 12px; font-weight: 500; }
+.field { display: flex; align-items: center; height: var(--component-control-heightField, 36px); border: 1px solid var(--border, #d9d5ce); border-radius: var(--component-control-radiusField, 6px); padding: 0 12px; font-size: 14px; color: var(--color-text-placeholder, #8e8e8e); max-width: 420px; background: var(--card, #fff); margin-bottom: 8px; }
+.submit { border: 0; height: var(--component-control-heightSubmit, 36px); padding: 0 18px; border-radius: var(--component-control-radiusField, 6px); background: var(--measured-submit-disabled-bg, #ebebeb); color: #929292; font: 500 14px/1 var(--sg-sans); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border, #d9d5ce); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<button class="mode" id="mode">Dark (declared)</button>
+<main>
+  <h1>Base44 style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number.</p>
+
+  <h2 class="sh">Base44, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the shadcn channel roles (<code>--background</code>, <code>--primary</code> …) that carry the light/dark split, the named palette (<code>--ink-*</code>, <code>--blue-*</code>, <code>--orange-*</code>, <code>--cta-*</code>), the scales (<code>--radius-*</code>, <code>--space-*</code>, <code>--shadow-*</code>, <code>--dur-*</code>, <code>--ease-*</code>) and the component values measured on the live pages. The public routes paint light only; the dark set comes from the bundle's declared <code>.dark</code> block — flip the toggle to see it, and treat it as declared, not observed. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from base44.com on 2026-11-11, signed out, in headless Chromium. No consent overlay mounts on the captured routes. The app behind app.base44.com was never signed into — nothing was submitted, sent or signed into.</p>
+
+  <h2 class="sh">The site chrome</h2>
+  <p class="lead">A fixed transparent header on the warm paper ground: the orange-dot wordmark, nav menus and links, the blue dotted Superagents item, a language globe and the 38px near-black Start building pill (11px-radius look, 8px measured).</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm"><i></i>Base44</span><span>Product &#8964;</span><span>Use Cases &#8964;</span><span>Solutions &#8964;</span><span>Resources &#8964;</span><span>Pricing</span><span>Enterprise</span><span class="sa">&middot; Superagents &middot;</span><span class="sp"></span><span class="btn primary">Start building</span></div>
+    <div class="hero">Every builder needs a base
+      <small>Build your own apps, websites, products and AI agents on Base44 using your own words.</small>
+      <div class="composer">
+        <div class="ta">I want to build a dashboard that reports results to</div>
+        <div class="row"><span class="iconbtn">+</span><span class="grow"></span><span class="btn ghost" style="height:40px">Build &#8964;</span><span class="iconbtn">&#127908;</span><span class="btn orange" style="width:40px;padding:0">&#8599;</span></div>
+      </div>
+      <div class="tiles"><span class="tile">&#9638; App</span><span class="tile">&#9638; Dashboard</span><span class="tile">&#9638; Website</span><span class="tile">&#9638; Mobile app</span><span class="tile">&#9638; Online store</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">A 56px translucent Yearly/Monthly toggle (orange selected segment) over square-cornered white plan cards, each carrying a full-width 50px dark CTA; the Builder card wears the blue Popular chip.</p>
+  <div class="mock" style="padding:20px">
+    <div style="text-align:center;margin-bottom:14px"><span class="toggle"><span class="on">Yearly SAVE 20%</span><span class="off">Monthly</span></span></div>
+    <div class="plans">
+      <div class="plan"><b>Elite</b><div class="price">$160<span style="font-size:14px;color:var(--muted-foreground)">/mo</span></div><span class="btn primary">Start building</span></div>
+      <div class="plan"><b>Pro</b><div class="price">$80<span style="font-size:14px;color:var(--muted-foreground)">/mo</span></div><span class="btn primary">Start building</span></div>
+      <div class="plan"><span class="badge">Popular</span><b>Builder</b><div class="price">$40<span style="font-size:14px;color:var(--muted-foreground)">/mo</span></div><span class="btn primary">Start building</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Sign in</h2>
+  <p class="lead">36px OAuth buttons, a 36px bordered email field and the email submit, captured in its disabled state (empty field).</p>
+  <div class="mock" style="padding:20px">
+    <div class="field">Enter your email address</div>
+    <span class="submit" style="display:inline-flex;align-items:center;width:384px;justify-content:center">Continue with email</span>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The ground is <code>light.background</code> warm paper (#f9f8f6) with ink <code>light.foreground</code> #0f0f0f; CTAs are <code>color.cta.black</code> (#312f2f) and the accent orange is <code>color.cta.orange</code> (#ff773c). <code>color.blue.500</code> (#3b51e5) marks links, the Superagents item and badges; <code>color.text.*</code>/<code>color.surface.*</code> name the painted roles.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the 38px CTA, 36px fields and OAuth buttons, the 56px billing toggle, 66px build tiles, the 8px control corner and the header and footer blocks at 1440px.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheet and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, expanded and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+document.getElementById('mode').addEventListener('click', () => {
+  const d = document.documentElement;
+  d.setAttribute('data-mode', d.getAttribute('data-mode') === 'dark' ? '' : 'dark');
+});
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const theme of ['light', 'dark']) {
+    const roles = flat(TOK[theme] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (roles.length) {
+      h += `<div class="pal-h">${theme} roles</div><div class="pal">`;
+      for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+      h += '</div>';
+    }
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.light && TOK.light.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+</script>
+</body>
+</html>

@@ -1824,6 +1824,84 @@
    }
   },
   {
+   "slug": "blueapron",
+   "name": "Blue Apron",
+   "url": "https://blog.blueapron.com",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "Editorial and recipe surfaces: a #002856 navy promo strip and footer around a #f2f0e5 cream field, one #2959e0 action blue on 300px pill buttons, blue Ovo serif headlines over Almarai body text, and a chrome-free masonry guide grid",
+   "tags": [
+    "web",
+    "e-commerce",
+    "food",
+    "editorial",
+    "blog",
+    "squarespace",
+    "light",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-11",
+   "access": "signed out (every captured surface is public; the shop, sign-in and checkout on www.blueapron.com are edge-blocked for this client and were never reached)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/blueapron/README.md",
+   "tokens": "systems/blueapron/tokens.json",
+   "styleGuide": "systems/blueapron/style-guide.html",
+   "preview": {
+    "cover": "systems/blueapron/screenshots/home-light-default.png",
+    "icon": "systems/blueapron/icon.png",
+    "swatches": {
+     "light": {
+      "page": "core.color.brand.cream",
+      "surface": "core.color.brand.navy",
+      "text": "core.color.neutral.ink",
+      "muted": "core.color.neutral.ink",
+      "accent": "core.color.brand.accent",
+      "border": "core.color.neutral.line"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.body"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "blog.blueapron.com (Squarespace 7.1) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. www.blueapron.com hard-blocks this client at the Cloudflare edge (403 on every route incl. robots.txt, reproduced via curl, headless and headed Chromium and real Chrome; non-US egress on a US-only shop), so the Squarespace blog is the whole capturable surface and the shop is a documented boundary",
+    "timestamp": "2026-11-11T01:45:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/guides/category/Recipes",
+     "/guides/15-budget-friendly-quick-dinner-ideas-for-busy-weeknights",
+     "/guides/membership-autoship-faq",
+     "/cart",
+     "mobile / and guide article"
+    ],
+    "gaps": [
+     "www.blueapron.com entirely: the shop front end, menu, membership, gifts, cookbook, sign-in, checkout and account are behind the Cloudflare edge block; nothing there was measured",
+     "comments are not mounted on this site; the comments-toggle specs are recorded as missing",
+     "the captured guide is text-only; the lede-image spec is recorded as missing",
+     "the search field was filled and cleared; no query was run",
+     "the cart was captured empty; checkout was never reached",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 70,
+    "pr": "https://github.com/c-wenlong/designs/pull/470"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the site's icons (cart, search, social glyphs, the wordmark) are visible in the crops and screenshots"
+   }
+  },
+  {
    "slug": "boords",
    "name": "Boords",
    "url": "https://boords.com",
@@ -5190,6 +5268,90 @@
    },
    "layoutGaps": {
     "icons/": "Zed's icons are its own artwork and are not kept here (docs/RIGHTS.md)"
+   }
+  },
+  {
+   "slug": "base44",
+   "name": "Base44",
+   "url": "https://base44.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "AI-app-builder marketing: warm paper ground with Dazzed display type, near-black 38px CTA pills, an orange #ff773c action accent, a hero prompt composer, and a full named token system (shadcn channels + named palette + scales) in the bundle",
+   "tags": [
+    "web",
+    "ai",
+    "app-builder",
+    "marketing",
+    "light",
+    "tailwind",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-11",
+   "access": "signed out (every captured surface is public; the app behind app.base44.com was never signed into and no form was submitted)",
+   "themes": [
+    "light",
+    "dark (declared)"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/base44/README.md",
+   "tokens": "systems/base44/tokens.json",
+   "styleGuide": "systems/base44/style-guide.html",
+   "preview": {
+    "cover": "systems/base44/screenshots/home-light-default.png",
+    "icon": "systems/base44/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.background",
+      "surface": "light.card",
+      "text": "light.foreground",
+      "muted": "core.color.text.muted",
+      "accent": "core.color.cta.orange",
+      "border": "light.border"
+     }
+    },
+    "fonts": [
+     "core.fontFamily.display",
+     "core.fontFamily.body"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "base44.com in headless Chromium (Playwright), desktop 1440x900 and mobile 390x844 at 2x; computed styles and crops from the live DOM; CSS vars read from the same-origin stylesheet bodies and resolved in :root and .dark probes",
+    "timestamp": "2026-11-11T19:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/features",
+     "/use-cases",
+     "/enterprise",
+     "/blog",
+     "/superagents",
+     "app.base44.com/login",
+     "mobile /",
+     "mobile /pricing"
+    ],
+    "gaps": [
+     "the product behind app.base44.com: the builder, dashboards, billing and templates were never signed into",
+     "no form was submitted and no OAuth button was pressed; the email field was focused/filled then cleared; the prompt composer was never sent",
+     "the dark token set is the bundle's declared .dark block, never painted on the public routes",
+     "the app-side --sem-* semantic vars are referenced by utilities but declared only inside the product; they resolve empty on the marketing bundle",
+     "icons: no standalone SVG set lifted this pass",
+     "the selected billing segment's orange fill is a sliding indicator, not part of the button"
+    ],
+    "durationMin": null,
+    "durationNote": "wall-clock duration was not recorded for this capture",
+    "pr": "https://github.com/c-wenlong/designs/pull/469"
+   },
+   "layoutGaps": {
+    "icons/": "Base44's icons are its artwork and are not kept here (docs/RIGHTS.md); they are visible in the crops and screenshots"
    }
   }
  ]
