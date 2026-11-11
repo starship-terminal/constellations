@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asana style guide</title>
+<meta name="description" content="Asana (asana.com) design tokens and the public marketing site's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+  --amber: #7a4b00;
+  --black-100: #e7e7e7;
+  --black-1000: #0d0d0d;
+  --black-1100: #000000;
+  --black-20: #fafafa;
+  --black-200: #cfcfcf;
+  --black-300: #b6b6b6;
+  --black-400: #9e9e9e;
+  --black-50: #f3f3f3;
+  --black-500: #868686;
+  --black-600: #6e6e6e;
+  --black-700: #565656;
+  --black-800: #3d3d3d;
+  --black-900: #252525;
+  --black-950: #191919;
+  --black-980: #121212;
+  --blue-0: #cbefff;
+  --blue-100: #badbf1;
+  --blue-1000: #222875;
+  --blue-20: #c8ebfc;
+  --blue-200: #a9c7e3;
+  --blue-300: #98b3d6;
+  --blue-400: #879fc8;
+  --blue-50: #c3e5f8;
+  --blue-500: #778bba;
+  --blue-600: #6678ac;
+  --blue-700: #55649e;
+  --blue-800: #445091;
+  --blue-900: #333c83;
+  --blue-950: #2a327c;
+  --blue-980: #252c78;
+  --blue-v2-200: #9edcf2;
+  --blue-v2-700: #0071ff;
+  --border-radius: 3px;
+  --bright-blue-1: #b8e8fe;
+  --bright-blue-2: #ade6ff;
+  --bright-blue-3: #3c45b1;
+  --bright-blue-4: #2b328e;
+  --bright-coral-1: #ffdde1;
+  --bright-coral-2: #ffd7db;
+  --bright-coral-3: #911c51;
+  --bright-coral-4: #7e1444;
+  --bright-green-1: #b9f4ce;
+  --bright-green-2: #a7f4c2;
+  --bright-green-3: #09614b;
+  --bright-green-4: #0a4d3d;
+  --bright-purple-1: #fbccfb;
+  --bright-purple-2: #ffc4ff;
+  --bright-purple-3: #8a16a8;
+  --bright-purple-4: #780a94;
+  --chartreuse-200: #e8f552;
+  --chartreuse-700: #c6cd00;
+  --command-blue-400: #0071ff;
+  --command-grey-110: #f3f3f3;
+  --command-grey-140: #d9d9d9;
+  --command-grey-1500: #262626;
+  --command-grey-1800: #161616;
+  --command-grey-200: #b7b7b7;
+  --command-grey-400: #7f7f7f;
+  --coral-0: #ffeaec;
+  --coral-1: #ffedef;
+  --coral-100: #f0d3d9;
+  --coral-1000: #690031;
+  --coral-2: #ff9ca5;
+  --coral-20: #fce5e8;
+  --coral-200: #e1bbc7;
+  --coral-3: #ff7381;
+  --coral-300: #d2a4b4;
+  --coral-4: #ff5263;
+  --coral-400: #c38ca1;
+  --coral-5: #ed4758;
+  --coral-50: #f7dee3;
+  --coral-500: #b4758e;
+  --coral-600: #a55e7c;
+  --coral-700: #964669;
+  --coral-800: #872f56;
+  --coral-900: #781744;
+  --coral-950: #710c3a;
+  --coral-980: #6c0535;
+  --coral-v2-200: #ffcfc9;
+  --coral-v2-700: #ff584a;
+  --fontFamily-mono: "Consolas",monospace;
+  --fontFamily-print: "Georgia","Times New Roman","Times",serif;
+  --fontFamily-ui: "TWK Lausanne","Helvetica Neue",Helvetica,sans-serif;
+  --fontFamily-fallback: Helvetica,Arial,sans-serif;
+  --fontSize-base: 16px;
+  --fontSize-h1: 56;
+  --fontSize-h2: 56;
+  --fontSize-h3: 45;
+  --fontSize-h4: 31;
+  --fontSize-h5: 22;
+  --fontSize-h6: 16;
+  --fontSize-large: 35.1875px;
+  --fontSize-larger: 51.1875px;
+  --fontSize-medium: 32px;
+  --fontSize-regular: 25.5938px;
+  --fontSize-small: 22.3906px;
+  --fontSize-smaller: 19.1875px;
+  --fontSize-xl: 82;
+  --fontWeight-bold: 500;
+  --fontWeight-light: 300;
+  --fontWeight-medium: 400;
+  --fontWeight-semibold: 500;
+  --fontWeight-thin: 300;
+  --fuchsia-200: #ffc9ff;
+  --fuchsia-700: #fd3ffd;
+  --glow-blue: #4786ff;
+  --glow-coral: #ff584a;
+  --glow-gray: #0d0d0d;
+  --glow-green: #22b455;
+  --glow-purple: #df5dff;
+  --glow-white: #0d0d0d;
+  --gold-1: #fffede;
+  --gold-2: #fff78f;
+  --gold-3: #ffe01b;
+  --gold-4: #fcbd01;
+  --gold-5: #f2a100;
+  --google-sign-up-blue-default: #174ea6;
+  --google-sign-up-blue-light: #2568d4;
+  --gray-1: #f6f8f9;
+  --gray-10: #151b26;
+  --gray-1a: #f4f6f6;
+  --gray-2: #edf1f2;
+  --gray-3: #e0e6e8;
+  --gray-4: #d5dce0;
+  --gray-5: #b7bfc6;
+  --gray-6: #9ca6af;
+  --gray-7: #848f99;
+  --gray-8: #646f79;
+  --gray-9: #222b37;
+  --green-default: #0c6410;
+  --green-0: #c9fcdb;
+  --green-1: #e2fffa;
+  --green-100: #b5e9ca;
+  --green-1000: #004232;
+  --green-2: #b0fff1;
+  --green-20: #c5f8d8;
+  --green-200: #a1d7b9;
+  --green-3: #58f5d9;
+  --green-300: #8dc4a8;
+  --green-4: #25e8c8;
+  --green-400: #79b297;
+  --green-5: #00bf9c;
+  --green-50: #bff3d3;
+  --green-500: #659f86;
+  --green-600: #508c76;
+  --green-700: #3c7a65;
+  --green-800: #286754;
+  --green-900: #145543;
+  --green-950: #0a4b3a;
+  --green-980: #0a4b3a;
+  --green-v2-200: #9ef2a4;
+  --green-v2-700: #0fa042;
+  --grid-columns: 12;
+  --grid-gutter-width: 32px;
+  --media-large-default: 1120;
+  --media-large-max: cacl((1280 - 1) / 16px);
+  --media-large-min: cacl(1120 / 16px);
+  --media-medium-default: 960;
+  --media-medium-max: cacl((1120 - 1) / 16px);
+  --media-medium-min: cacl(960 / 16px);
+  --media-small-default: 768;
+  --media-small-max: cacl((960 - 1) / 16px);
+  --media-small-min: cacl(768 / 16px);
+  --media-xlarge-default: 1280;
+  --media-xlarge-max: cacl((1440 - 1) / 16px);
+  --media-xlarge-min: cacl(1280 / 16px);
+  --media-xsmall-default: 480;
+  --media-xsmall-max: cacl((768 - 1) / 16px);
+  --media-xsmall-min: cacl(480 / 16px);
+  --media-xxlarge-default: 1440;
+  --media-xxlarge-min: cacl(1440 / 16px);
+  --media-xxxlarge-default: 1920;
+  --media-xxxlarge-min: cacl(1920 / 16px);
+  --orange-1: #f9dc00;
+  --orange-2: #ffba00;
+  --orange-200: #ffb469;
+  --orange-3: #ff7f00;
+  --purple-0: #ffdcff;
+  --purple-1: #f0f0ff;
+  --purple-100: #f0c6f3;
+  --purple-1000: #6a0085;
+  --purple-2: #aba3ff;
+  --purple-20: #fcd8fd;
+  --purple-200: #e1b0e7;
+  --purple-3: #9287ff;
+  --purple-300: #d29ada;
+  --purple-4: #796eff;
+  --purple-400: #c384ce;
+  --purple-5: #635ac7;
+  --purple-50: #f8d1f9;
+  --purple-500: #b46ec2;
+  --purple-600: #a658b6;
+  --purple-700: #9742aa;
+  --purple-800: #882c9d;
+  --purple-900: #791691;
+  --purple-950: #710b8b;
+  --purple-980: #6d0487;
+  --purple-v2-200: #a999ff;
+  --red: #a82424;
+  --shadow-10: rgba(36, 50, 66, 0.2) 0px 3px 5px 0px;
+  --shadow-20: rgba(36, 50, 66, 0.12) 0px 11px 12px 0px;
+  --shadow-30: rgba(36, 50, 66, 0.14) 0px 20px 30px 0px;
+  --shadow-40: rgba(36, 50, 66, 0.15) 0px 50px 60px 0px;
+  --shadow-color: #243242;
+  --spacing-0: 0;
+  --spacing-1: 16px;
+  --spacing-10: 160px;
+  --spacing-1half: 8px;
+  --spacing-1plus: 24px;
+  --spacing-2: 32px;
+  --spacing-3: 48px;
+  --spacing-4: 64px;
+  --spacing-5: 80px;
+  --spacing-6: 96px;
+  --spacing-7: 112px;
+  --spacing-8: 128px;
+  --spacing-9: 144px;
+  --teal-1: #edf8ff;
+  --teal-2: #95e0ff;
+  --teal-3: #32c1ff;
+  --teal-4: #14aaf5;
+  --teal-5: #008ce3;
+  --transition-duration-default: 150ms;
+  --transition-duration-long: 300ms;
+  --transition-duration-med: 225ms;
+  --transition-duration-short: 75ms;
+  --transition-duration-xlong: 450ms;
+  --white: #ffffff;
+  --zIndex-1: 100;
+  --zIndex-10: 1000;
+  --zIndex-2: 200;
+  --zIndex-3: 300;
+  --zIndex-4: 400;
+  --zIndex-5: 500;
+  --zIndex-6: 600;
+  --zIndex-7: 700;
+  --zIndex-8: 800;
+  --zIndex-9: 900;
+  --typography-display: 300 102px/91.8px var(--fontFamily-ui);
+  --typography-heading: 300 54px/54px var(--fontFamily-ui);
+  --typography-body: 500 14px/21px var(--fontFamily-ui);
+  --typography-button: 500 14px/21px var(--fontFamily-ui);
+  --typography-small: 500 11px/16.5px var(--fontFamily-ui);
+  --a11y-focus-black: #0d0d0d;
+  --a11y-focus-primary: #879fc8;
+  --a11y-focus-white: #ffffff;
+  --accent-black: #0d0d0d;
+  --accent-blue-default: #badbf1;
+  --accent-blue-light: #cbefff;
+  --accent-gray-default: #f3f3f3;
+  --accent-gray-light: #f3f3f3;
+  --accent-green-default: #b5e9ca;
+  --accent-green-light: #b5e9ca;
+  --accent-orange-default: #f0d3d9;
+  --accent-orange-light: #f0d3d9;
+  --accent-purple-default: #f0c6f3;
+  --accent-purple-light: #f0c6f3;
+  --accent-red-default: #f0d3d9;
+  --accent-red-light: #f7dee3;
+  --accent-white: #ffffff;
+  --accent-yellow-default: #f0d3d9;
+  --accent-yellow-light: #f0d3d9;
+  --accent-default: #0d0d0d;
+  --accent-hover: #3d3d3d;
+  --bg-default: #ffffff;
+  --bg-active: #fafafa;
+  --bg-hover: #fafafa;
+  --bg-inverted: #fafafa;
+  --bg-med-default: #f3f3f3;
+  --bg-med-active: #e7e7e7;
+  --bg-med-hover: #e7e7e7;
+  --bg-strong-default: #f3f3f3;
+  --bg-strong-active: #b6b6b6;
+  --bg-strong-hover: #b6b6b6;
+  --border-default: #cfcfcf;
+  --border-active: #cfcfcf;
+  --border-hover: #9e9e9e;
+  --border-strong: #cfcfcf;
+  --border-weak: #f3f3f3;
+  --button-disabled: #9e9e9e;
+  --button-primary-default: #0d0d0d;
+  --button-primary-hover: #3d3d3d;
+  --button-secondary-default: #ffffff;
+  --button-secondary-hover: #6e6e6e;
+  --button-text-disabled: #ffffff;
+  --button-text-primary-default: #ffffff;
+  --button-text-primary-hover: #ffffff;
+  --button-text-secondary-default: #0d0d0d;
+  --button-text-secondary-hover: #ffffff;
+  --error: #a82424;
+  --icon-default: #0d0d0d;
+  --icon-disabled: #9e9e9e;
+  --icon-hover: #3d3d3d;
+  --inline-link-disabled: #9e9e9e;
+  --inline-link-hover: #0d0d0d;
+  --inline-link-text: #0d0d0d;
+  --link-disabled: #9e9e9e;
+  --link-hover: #0d0d0d;
+  --link-text-default: #0d0d0d;
+  --link-text-weak-default: #6e6e6e;
+  --link-text-weak-disabled: #9e9e9e;
+  --link-text-weak-hover: #6e6e6e;
+  --link-default: #0d0d0d;
+  --success: #0c6410;
+  --text-default: #3d3d3d;
+  --text-strong: #0d0d0d;
+  --text-weak: #6e6e6e;
+  --text-disabled: #9e9e9e;
+  --warning: #7a4b00;
+  --page: #ffffff;
+  --surface-default: #f3f3f3;
+  --surface-strong: #f3f3f3;
+  --surface-hover: #e7e7e7;
+  --muted: #6e6e6e;
+  --on-accent: #ffffff;
+  --danger: #a82424;
+  --focus-ring: #879fc8;
+  --field: #ffffff;
+  --disabled: #9e9e9e;
+  --component-control-height: 44px;
+  --component-control-buttonSecondary: 44px;
+  --component-control-radius: 100px;
+  --component-control-field: 50px;
+  --component-control-iconButton: 40px;
+  --component-nav-height: 44px;
+  --component-shell-header: 68px;
+  --component-plan-height: 974px;
+  --component-footer-linkHeight: 40px;
+  --component-menu-linkHeight: 61px;
+  --sg-sans: "Inter", "Inter Fallback", -apple-system, BlinkMacSystemFont, "SF Pro", system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"] {
+  --a11y-focus-black: #0d0d0d;
+  --a11y-focus-primary: #879fc8;
+  --a11y-focus-white: #ffffff;
+  --accent-black: #690031;
+  --accent-blue-default: #222875;
+  --accent-blue-dark: #222875;
+  --accent-gray-default: #690031;
+  --accent-gray-dark: #690031;
+  --accent-green-default: #004232;
+  --accent-green-dark: #004232;
+  --accent-orange-default: #690031;
+  --accent-orange-dark: #690031;
+  --accent-purple-default: #6a0085;
+  --accent-purple-dark: #6a0085;
+  --accent-red-default: #690031;
+  --accent-red-dark: #690031;
+  --accent-white: #ffffff;
+  --accent-yellow-default: #690031;
+  --accent-yellow-dark: #690031;
+  --accent-default: #f5f4f3;
+  --accent-hover: #f06a6a;
+  --bg-default: #1e1f21;
+  --bg-active: #4c4d4e;
+  --bg-hover: #38383a;
+  --bg-inverted: #ffffff;
+  --bg-med-default: #252628;
+  --bg-med-active: #525254;
+  --bg-med-hover: #3e3f41;
+  --bg-strong-default: #2a2b2d;
+  --bg-strong-active: #565658;
+  --bg-strong-hover: #434445;
+  --border-default: rgba(217, 217, 217, 0.3);
+  --border-active: rgba(217, 217, 217, 0.7);
+  --border-hover: rgba(217, 217, 217, 0.4);
+  --border-strong: #ffffff;
+  --border-weak: rgba(217, 217, 217, 0.2);
+  --button-disabled: #38393d;
+  --button-primary-default: #f5f4f3;
+  --button-primary-hover: #f06a6a;
+  --button-secondary-default: #0d0e10;
+  --button-secondary-hover: #f06a6a;
+  --button-text-disabled: #6a696a;
+  --button-text-primary-default: #0d0e10;
+  --button-text-primary-hover: #0d0e10;
+  --button-text-secondary-default: #f5f4f3;
+  --button-text-secondary-hover: #0d0e10;
+  --error: #a82424;
+  --icon-default: rgba(245, 244, 243, 0.6);
+  --icon-disabled: rgba(245, 244, 243, 0.15);
+  --icon-hover: #f5f4f3;
+  --inline-inline-link-text: #dbdbdb;
+  --inline-link-disabled: #6a696a;
+  --inline-link-hover: #f06a6a;
+  --link-disabled: #6a696a;
+  --link-hover: #f06a6a;
+  --link-text-default: #dbdbdb;
+  --link-text-weak-default: #989898;
+  --link-text-weak-disabled: #6a696a;
+  --link-text-weak-hover: #ffffff;
+  --link-default: #dbdbdb;
+  --success: #0c6410;
+  --text-default: rgba(255, 255, 255, 0.85);
+  --text-strong: #ffffff;
+  --text-weak: rgba(255, 255, 255, 0.55);
+  --text-disabled: #6a696a;
+  --warning: #7a4b00;
+  --page: #1e1f21;
+  --surface-default: #252628;
+  --surface-strong: #2a2b2d;
+  --surface-hover: #3e3f41;
+  --muted: rgba(255, 255, 255, 0.55);
+  --on-accent: #0d0e10;
+  --danger: #a82424;
+  --focus-ring: #879fc8;
+  --field: #0d0e10;
+  --disabled: #38393d;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-default, #3d3d3d); background: var(--page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted, #737373); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, #e5e7eb); }
+.lead { max-width: 62ch; color: var(--muted, #686868); }
+.note { font-size: 13px; color: var(--muted, #686868); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #686868); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, #e5e7eb); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--muted, #686868); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--muted, #686868); }
+/* ---- site mock ---- */
+.mock { border: 1px solid var(--border, #e5e7eb); border-radius: 16px; overflow: hidden; background: var(--page, #fff); }
+.navbar { display: flex; align-items: center; gap: 18px; height: var(--component-shell-header, 68px); padding: 0 20px; background: var(--page, #fff); border-bottom: 1px solid var(--border, #e5e7eb); font-size: 14px; color: var(--muted, rgba(0,0,0,.7)); }
+.navbar .wm { width: 22px; height: 22px; border-radius: 6px; background: var(--accent-default, #0d0d0d); display: inline-block; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 32px); padding: 0 14px; border-radius: var(--border-radius, 3px); font-size: 14px; font-weight: 500; border: 1px solid transparent; }
+.btn.primary { border-radius: var(--component-control-radius, 100px);  background: var(--accent-default, #0d0d0d); color: var(--on-accent, #fff); }
+.btn.big { height: var(--component-control-heightLarge, 42px); padding: 0 20px; border-radius: var(--border-radius, 3px); font-weight: 500; font-size: 14px; }
+.btn.ghost { background: transparent; color: var(--text, #000); border: 0; }
+.btn.trial { height: 42px; width: 100%; }
+.hero { background: var(--page, #fff); color: var(--text, #000); padding: 64px 40px; font: var(--typography-display, 400 56px/67.2px var(--sg-sans)); letter-spacing: -0.02em; text-align: center; }
+.hero small { display: block; font: var(--typography-body, 400 16px/24px var(--sg-sans)); color: var(--muted, rgba(0,0,0,.8)); margin: 16px auto 22px; max-width: 46ch; }
+.hero .row { display: flex; gap: 10px; justify-content: center; margin-top: 12px; }
+.chip { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: var(--border-radius, 3px); border: 1px solid rgba(0,0,0,.2); background: #fff; font-size: 12px; font-weight: 500; color: var(--chip-text, rgba(0,0,0,.6)); }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; padding: 20px; }
+.plan { border: 0; border-radius: var(--border-radius, 3px); padding: 22px; background: var(--surface, #f4f4f4); font-size: 13px; }
+.plan .price { font: var(--typography-price, 400 36px/36px var(--sg-sans)); margin: 8px 0 12px; }
+.plan .btn { width: 100%; }
+.field { display: flex; align-items: center; height: var(--component-control-field, 50px); border: 1px solid var(--surface, #f4f4f4); border-radius: var(--border-radius, 3px); padding: 0 12px; font-size: 14px; color: var(--muted, #666); max-width: 414px; background: var(--surface, #f4f4f4); margin-bottom: 8px; }
+.caps-eyebrow { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted, #6e6e6e); font-weight: 500; }
+.seg { display: inline-flex; gap: 2px; padding: 3px; border-radius: 8px; background: var(--border, #e5e7eb); font-size: 13px; }
+.tlist { border: 1px solid var(--border, #e5e7eb); border-radius: 12px; overflow: hidden; }
+.trow { display: flex; gap: 16px; align-items: baseline; padding: 10px 16px; border-bottom: 1px solid var(--border, #e5e7eb); }
+.trow:last-child { border-bottom: 0; }
+.tnm { font: 500 11px/1 var(--sg-mono); color: var(--muted, #666); min-width: 90px; text-transform: uppercase; letter-spacing: .06em; }
+.tspec { font-size: 22px; }
+.seg b { padding: 4px 12px; font-weight: 500; border-radius: 6px; }
+.seg b.on { background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border, #e5e7eb); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <button id="mode" style="float:right;margin-top:8px;padding:6px 14px;border:1px solid var(--border-default,#cfcfcf);border-radius:var(--border-radius,3px);background:var(--surface,#f3f3f3);color:var(--text-default,#3d3d3d);cursor:pointer;font:inherit">Dark</button>
+  <h1>Asana style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number.</p>
+
+  <h2 class="sh">Asana, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: Asana's full token layer — the colour ramps (<code>--black-20..1100</code>, <code>--blue-0..980</code>, <code>--coral-*</code>, <code>--bright-*</code>, <code>--gold/teal/glow-*</code>), the <code>--lightmode-*</code> semantic roles (and the declared <code>--darkmode-*</code> set), type/spacing/<code>--media-*</code>/grid/zIndex/<code>--shadow-*</code>/<code>--transition-*</code> scales, and the component values measured on the live pages. Light painted; dark declared. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from asana.com on 2026-11-11, signed out, in headless Chromium. The app behind sign-in was never reached — nothing was sent, submitted or signed into.</p>
+
+  <h2 class="sh">The site chrome</h2>
+  <p class="lead">A nav bar with the Asana mark, a Pricing link, a ghost Log in, outlined Contact sales and the near-black Get started pill. The hero is a big TWK Lausanne h1; CTAs are near-black #0d0d0d 3px-radius blocks that lift to #3d3d3d, on white with #f3f3f3 panels and #cfcfcf hairlines.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm"></span><span>Pricing</span><span class="sp"></span><span class="btn ghost">Log in</span><span class="btn ghost">Contact sales</span><span class="btn primary">Get started</span></div>
+    <div class="hero">The OS for<br>human-agent teams
+      <small>AI that works the way your team works.</small>
+      <div class="row"><span class="caps-eyebrow">Work management</span></div>
+      <div class="row" style="gap:10px"><span class="btn primary">Get started</span><span class="btn ghost">See pricing</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">Plan columns on white with near-black or outlined CTAs, the billing toggle, then hairline FAQ accordions.</p>
+  <div class="mock" style="padding:20px">
+    <div class="plans">
+      <div class="plan"><b>Personal</b><div class="price">Free</div><span class="btn ghost trial">Get started</span><p style="color:var(--muted,#666);font-size:12px;margin-top:10px">For individuals.</p></div>
+      <div class="plan"><b>Starter</b><div class="price">$13.49<span style="font-size:14px;color:var(--muted,#666)">/mo</span></div><span class="btn primary trial">Get started</span><p style="color:var(--muted,#666);font-size:12px;margin-top:10px">For growing teams.</p></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead"><code>--lightmode-*</code> carries every role: <code>bg</code> white and <code>bg-med</code> #f3f3f3, ink <code>text</code> #3d3d3d / <code>text-strong</code> #0d0d0d, <code>button-primary</code> near-black lifting to #3d3d3d, <code>error/success/warning</code> status, <code>a11y-focus-primary</code> #879fc8; the ramps feed them, <code>--darkmode-*</code> mirrors the same roles dark.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Layout metrics</h2>
+  <p class="lead">A real scale ships: <code>--spacing-0..10</code> on a 16px base, <code>--media-xsmall..xxxlarge</code> (480..1920) breakpoints, a 12-column grid with 32px gutters, <code>--zIndex-1..10</code>, <code>--border-radius</code> 3px and four <code>--shadow-*</code> levels.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Type styles</h2>
+  <p class="lead">TWK Lausanne (webfont, Helvetica Neue fallback) across the UI; <code>--fontSize-h1..h6</code> (56..16), <code>--fontSize-xl</code> 82, <code>--fontWeight-300..700</code>, <code>--fontFamily-mono/-print</code> for code and print.</p>
+  <div id="type-out" class="tlist"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheet and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, toggle and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"amber":{"v":"#7a4b00","t":"color","s":"css-var --amber (light)"},"black":{"100":{"v":"#e7e7e7","t":"color","s":"css-var --black-100 (light)"},"1000":{"v":"#0d0d0d","t":"color","s":"css-var --black-1000 (light)"},"1100":{"v":"#000000","t":"color","s":"css-var --black-1100 (light)"},"20":{"v":"#fafafa","t":"color","s":"css-var --black-20 (light)"},"200":{"v":"#cfcfcf","t":"color","s":"css-var --black-200 (light)"},"300":{"v":"#b6b6b6","t":"color","s":"css-var --black-300 (light)"},"400":{"v":"#9e9e9e","t":"color","s":"css-var --black-400 (light)"},"50":{"v":"#f3f3f3","t":"color","s":"css-var --black-50 (light)"},"500":{"v":"#868686","t":"color","s":"css-var --black-500 (light)"},"600":{"v":"#6e6e6e","t":"color","s":"css-var --black-600 (light)"},"700":{"v":"#565656","t":"color","s":"css-var --black-700 (light)"},"800":{"v":"#3d3d3d","t":"color","s":"css-var --black-800 (light)"},"900":{"v":"#252525","t":"color","s":"css-var --black-900 (light)"},"950":{"v":"#191919","t":"color","s":"css-var --black-950 (light)"},"980":{"v":"#121212","t":"color","s":"css-var --black-980 (light)"}},"blue":{"0":{"v":"#cbefff","t":"color","s":"css-var --blue-0 (light)"},"100":{"v":"#badbf1","t":"color","s":"css-var --blue-100 (light)"},"1000":{"v":"#222875","t":"color","s":"css-var --blue-1000 (light)"},"20":{"v":"#c8ebfc","t":"color","s":"css-var --blue-20 (light)"},"200":{"v":"#a9c7e3","t":"color","s":"css-var --blue-200 (light)"},"300":{"v":"#98b3d6","t":"color","s":"css-var --blue-300 (light)"},"400":{"v":"#879fc8","t":"color","s":"css-var --blue-400 (light)"},"50":{"v":"#c3e5f8","t":"color","s":"css-var --blue-50 (light)"},"500":{"v":"#778bba","t":"color","s":"css-var --blue-500 (light)"},"600":{"v":"#6678ac","t":"color","s":"css-var --blue-600 (light)"},"700":{"v":"#55649e","t":"color","s":"css-var --blue-700 (light)"},"800":{"v":"#445091","t":"color","s":"css-var --blue-800 (light)"},"900":{"v":"#333c83","t":"color","s":"css-var --blue-900 (light)"},"950":{"v":"#2a327c","t":"color","s":"css-var --blue-950 (light)"},"980":{"v":"#252c78","t":"color","s":"css-var --blue-980 (light)"},"v2":{"200":{"v":"#9edcf2","t":"color","s":"css-var --blue-v2-200 (light)"},"700":{"v":"#0071ff","t":"color","s":"css-var --blue-v2-700 (light)"}}},"border":{"radius":{"v":"3px","t":"dimension","s":"css-var --border-radius (light)"}},"bright":{"blue":{"1":{"v":"#b8e8fe","t":"color","s":"css-var --bright-blue-1 (light)"},"2":{"v":"#ade6ff","t":"color","s":"css-var --bright-blue-2 (light)"},"3":{"v":"#3c45b1","t":"color","s":"css-var --bright-blue-3 (light)"},"4":{"v":"#2b328e","t":"color","s":"css-var --bright-blue-4 (light)"}},"coral":{"1":{"v":"#ffdde1","t":"color","s":"css-var --bright-coral-1 (light)"},"2":{"v":"#ffd7db","t":"color","s":"css-var --bright-coral-2 (light)"},"3":{"v":"#911c51","t":"color","s":"css-var --bright-coral-3 (light)"},"4":{"v":"#7e1444","t":"color","s":"css-var --bright-coral-4 (light)"}},"green":{"1":{"v":"#b9f4ce","t":"color","s":"css-var --bright-green-1 (light)"},"2":{"v":"#a7f4c2","t":"color","s":"css-var --bright-green-2 (light)"},"3":{"v":"#09614b","t":"color","s":"css-var --bright-green-3 (light)"},"4":{"v":"#0a4d3d","t":"color","s":"css-var --bright-green-4 (light)"}},"purple":{"1":{"v":"#fbccfb","t":"color","s":"css-var --bright-purple-1 (light)"},"2":{"v":"#ffc4ff","t":"color","s":"css-var --bright-purple-2 (light)"},"3":{"v":"#8a16a8","t":"color","s":"css-var --bright-purple-3 (light)"},"4":{"v":"#780a94","t":"color","s":"css-var --bright-purple-4 (light)"}}},"chartreuse":{"200":{"v":"#e8f552","t":"color","s":"css-var --chartreuse-200 (light)"},"700":{"v":"#c6cd00","t":"color","s":"css-var --chartreuse-700 (light)"}},"command":{"blue":{"400":{"v":"#0071ff","t":"color","s":"css-var --command-blue-400 (light)"}},"grey":{"110":{"v":"#f3f3f3","t":"color","s":"css-var --command-grey-110 (light)"},"140":{"v":"#d9d9d9","t":"color","s":"css-var --command-grey-140 (light)"},"1500":{"v":"#262626","t":"color","s":"css-var --command-grey-1500 (light)"},"1800":{"v":"#161616","t":"color","s":"css-var --command-grey-1800 (light)"},"200":{"v":"#b7b7b7","t":"color","s":"css-var --command-grey-200 (light)"},"400":{"v":"#7f7f7f","t":"color","s":"css-var --command-grey-400 (light)"}}},"coral":{"0":{"v":"#ffeaec","t":"color","s":"css-var --coral-0 (light)"},"1":{"v":"#ffedef","t":"color","s":"css-var --coral-1 (light)"},"100":{"v":"#f0d3d9","t":"color","s":"css-var --coral-100 (light)"},"1000":{"v":"#690031","t":"color","s":"css-var --coral-1000 (light)"},"2":{"v":"#ff9ca5","t":"color","s":"css-var --coral-2 (light)"},"20":{"v":"#fce5e8","t":"color","s":"css-var --coral-20 (light)"},"200":{"v":"#e1bbc7","t":"color","s":"css-var --coral-200 (light)"},"3":{"v":"#ff7381","t":"color","s":"css-var --coral-3 (light)"},"300":{"v":"#d2a4b4","t":"color","s":"css-var --coral-300 (light)"},"4":{"v":"#ff5263","t":"color","s":"css-var --coral-4 (light)"},"400":{"v":"#c38ca1","t":"color","s":"css-var --coral-400 (light)"},"5":{"v":"#ed4758","t":"color","s":"css-var --coral-5 (light)"},"50":{"v":"#f7dee3","t":"color","s":"css-var --coral-50 (light)"},"500":{"v":"#b4758e","t":"color","s":"css-var --coral-500 (light)"},"600":{"v":"#a55e7c","t":"color","s":"css-var --coral-600 (light)"},"700":{"v":"#964669","t":"color","s":"css-var --coral-700 (light)"},"800":{"v":"#872f56","t":"color","s":"css-var --coral-800 (light)"},"900":{"v":"#781744","t":"color","s":"css-var --coral-900 (light)"},"950":{"v":"#710c3a","t":"color","s":"css-var --coral-950 (light)"},"980":{"v":"#6c0535","t":"color","s":"css-var --coral-980 (light)"},"v2":{"200":{"v":"#ffcfc9","t":"color","s":"css-var --coral-v2-200 (light)"},"700":{"v":"#ff584a","t":"color","s":"css-var --coral-v2-700 (light)"}}},"fontFamily":{"mono":{"v":"\"Consolas\",monospace","t":"fontFamily","s":"css-var --fontFamily-mono (light)"},"print":{"v":"\"Georgia\",\"Times New Roman\",\"Times\",serif","t":"fontFamily","s":"css-var --fontFamily-print (light)"},"ui":{"v":"\"TWK Lausanne\",\"Helvetica Neue\",Helvetica,sans-serif","t":"fontFamily","s":"computed fontFamily of the painted text (raw/components-computed.json); TWK Lausanne is a webfont loaded by the site's inline @font-face","d":"The painted UI stack (webfont + fallbacks)."},"fallback":{"v":"Helvetica,Arial,sans-serif","t":"fontFamily","s":"computed fontFamily painted on elements outside the Lausanne stack (raw/components-computed.json)","d":"The secondary painted stack."}},"fontSize":{"base":{"v":"16px","t":"dimension","s":"css-var --fontSize-base (light)"},"h1":{"v":56,"t":"number","s":"css-var --fontSize-h1 (light)"},"h2":{"v":56,"t":"number","s":"css-var --fontSize-h2 (light)"},"h3":{"v":45,"t":"number","s":"css-var --fontSize-h3 (light)"},"h4":{"v":31,"t":"number","s":"css-var --fontSize-h4 (light)"},"h5":{"v":22,"t":"number","s":"css-var --fontSize-h5 (light)"},"h6":{"v":16,"t":"number","s":"css-var --fontSize-h6 (light)"},"large":{"v":"35.1875px","t":"dimension","s":"css-var --fontSize-large (light)"},"larger":{"v":"51.1875px","t":"dimension","s":"css-var --fontSize-larger (light)"},"medium":{"v":"32px","t":"dimension","s":"css-var --fontSize-medium (light)"},"regular":{"v":"25.5938px","t":"dimension","s":"css-var --fontSize-regular (light)"},"small":{"v":"22.3906px","t":"dimension","s":"css-var --fontSize-small (light)"},"smaller":{"v":"19.1875px","t":"dimension","s":"css-var --fontSize-smaller (light)"},"xl":{"v":82,"t":"number","s":"css-var --fontSize-xl (light)"}},"fontWeight":{"bold":{"v":500,"t":"fontWeight","s":"css-var --fontWeight-bold (light)"},"light":{"v":300,"t":"fontWeight","s":"css-var --fontWeight-light (light)"},"medium":{"v":400,"t":"fontWeight","s":"css-var --fontWeight-medium (light)"},"semibold":{"v":500,"t":"fontWeight","s":"css-var --fontWeight-semibold (light)"},"thin":{"v":300,"t":"fontWeight","s":"css-var --fontWeight-thin (light)"}},"fuchsia":{"200":{"v":"#ffc9ff","t":"color","s":"css-var --fuchsia-200 (light)"},"700":{"v":"#fd3ffd","t":"color","s":"css-var --fuchsia-700 (light)"}},"glow":{"blue":{"v":"#4786ff","t":"color","s":"css-var --glow-blue (light)"},"coral":{"v":"#ff584a","t":"color","s":"css-var --glow-coral (light)"},"gray":{"v":"#0d0d0d","t":"color","s":"css-var --glow-gray (light)"},"green":{"v":"#22b455","t":"color","s":"css-var --glow-green (light)"},"purple":{"v":"#df5dff","t":"color","s":"css-var --glow-purple (light)"},"white":{"v":"#0d0d0d","t":"color","s":"css-var --glow-white (light)"}},"gold":{"1":{"v":"#fffede","t":"color","s":"css-var --gold-1 (light)"},"2":{"v":"#fff78f","t":"color","s":"css-var --gold-2 (light)"},"3":{"v":"#ffe01b","t":"color","s":"css-var --gold-3 (light)"},"4":{"v":"#fcbd01","t":"color","s":"css-var --gold-4 (light)"},"5":{"v":"#f2a100","t":"color","s":"css-var --gold-5 (light)"}},"google":{"sign":{"up":{"blue":{"default":{"v":"#174ea6","t":"color","s":"css-var --google-sign-up-blue (light)"},"light":{"v":"#2568d4","t":"color","s":"css-var --google-sign-up-blue-light (light)"}}}}},"gray":{"1":{"v":"#f6f8f9","t":"color","s":"css-var --gray-1 (light)"},"10":{"v":"#151b26","t":"color","s":"css-var --gray-10 (light)"},"1a":{"v":"#f4f6f6","t":"color","s":"css-var --gray-1a (light)"},"2":{"v":"#edf1f2","t":"color","s":"css-var --gray-2 (light)"},"3":{"v":"#e0e6e8","t":"color","s":"css-var --gray-3 (light)"},"4":{"v":"#d5dce0","t":"color","s":"css-var --gray-4 (light)"},"5":{"v":"#b7bfc6","t":"color","s":"css-var --gray-5 (light)"},"6":{"v":"#9ca6af","t":"color","s":"css-var --gray-6 (light)"},"7":{"v":"#848f99","t":"color","s":"css-var --gray-7 (light)"},"8":{"v":"#646f79","t":"color","s":"css-var --gray-8 (light)"},"9":{"v":"#222b37","t":"color","s":"css-var --gray-9 (light)"}},"green":{"default":{"v":"#0c6410","t":"color","s":"css-var --green (light)"},"0":{"v":"#c9fcdb","t":"color","s":"css-var --green-0 (light)"},"1":{"v":"#e2fffa","t":"color","s":"css-var --green-1 (light)"},"100":{"v":"#b5e9ca","t":"color","s":"css-var --green-100 (light)"},"1000":{"v":"#004232","t":"color","s":"css-var --green-1000 (light)"},"2":{"v":"#b0fff1","t":"color","s":"css-var --green-2 (light)"},"20":{"v":"#c5f8d8","t":"color","s":"css-var --green-20 (light)"},"200":{"v":"#a1d7b9","t":"color","s":"css-var --green-200 (light)"},"3":{"v":"#58f5d9","t":"color","s":"css-var --green-3 (light)"},"300":{"v":"#8dc4a8","t":"color","s":"css-var --green-300 (light)"},"4":{"v":"#25e8c8","t":"color","s":"css-var --green-4 (light)"},"400":{"v":"#79b297","t":"color","s":"css-var --green-400 (light)"},"5":{"v":"#00bf9c","t":"color","s":"css-var --green-5 (light)"},"50":{"v":"#bff3d3","t":"color","s":"css-var --green-50 (light)"},"500":{"v":"#659f86","t":"color","s":"css-var --green-500 (light)"},"600":{"v":"#508c76","t":"color","s":"css-var --green-600 (light)"},"700":{"v":"#3c7a65","t":"color","s":"css-var --green-700 (light)"},"800":{"v":"#286754","t":"color","s":"css-var --green-800 (light)"},"900":{"v":"#145543","t":"color","s":"css-var --green-900 (light)"},"950":{"v":"#0a4b3a","t":"color","s":"css-var --green-950 (light)"},"980":{"v":"#0a4b3a","t":"color","s":"css-var --green-980 (light)"},"v2":{"200":{"v":"#9ef2a4","t":"color","s":"css-var --green-v2-200 (light)"},"700":{"v":"#0fa042","t":"color","s":"css-var --green-v2-700 (light)"}}},"grid":{"columns":{"v":12,"t":"number","s":"css-var --grid-columns (light)"},"gutter":{"width":{"v":"32px","t":"dimension","s":"css-var --grid-gutter-width (light)"}}},"media":{"large":{"default":{"v":1120,"t":"number","s":"css-var --media-large (light)"},"max":{"v":"cacl((1280 - 1) / 16px)","t":"other","s":"css-var --media-large-max (light)"},"min":{"v":"cacl(1120 / 16px)","t":"other","s":"css-var --media-large-min (light)"}},"medium":{"default":{"v":960,"t":"number","s":"css-var --media-medium (light)"},"max":{"v":"cacl((1120 - 1) / 16px)","t":"other","s":"css-var --media-medium-max (light)"},"min":{"v":"cacl(960 / 16px)","t":"other","s":"css-var --media-medium-min (light)"}},"small":{"default":{"v":768,"t":"number","s":"css-var --media-small (light)"},"max":{"v":"cacl((960 - 1) / 16px)","t":"other","s":"css-var --media-small-max (light)"},"min":{"v":"cacl(768 / 16px)","t":"other","s":"css-var --media-small-min (light)"}},"xlarge":{"default":{"v":1280,"t":"number","s":"css-var --media-xlarge (light)"},"max":{"v":"cacl((1440 - 1) / 16px)","t":"other","s":"css-var --media-xlarge-max (light)"},"min":{"v":"cacl(1280 / 16px)","t":"other","s":"css-var --media-xlarge-min (light)"}},"xsmall":{"default":{"v":480,"t":"number","s":"css-var --media-xsmall (light)"},"max":{"v":"cacl((768 - 1) / 16px)","t":"other","s":"css-var --media-xsmall-max (light)"},"min":{"v":"cacl(480 / 16px)","t":"other","s":"css-var --media-xsmall-min (light)"}},"xxlarge":{"default":{"v":1440,"t":"number","s":"css-var --media-xxlarge (light)"},"min":{"v":"cacl(1440 / 16px)","t":"other","s":"css-var --media-xxlarge-min (light)"}},"xxxlarge":{"default":{"v":1920,"t":"number","s":"css-var --media-xxxlarge (light)"},"min":{"v":"cacl(1920 / 16px)","t":"other","s":"css-var --media-xxxlarge-min (light)"}}},"orange":{"1":{"v":"#f9dc00","t":"color","s":"css-var --orange-1 (light)"},"2":{"v":"#ffba00","t":"color","s":"css-var --orange-2 (light)"},"200":{"v":"#ffb469","t":"color","s":"css-var --orange-200 (light)"},"3":{"v":"#ff7f00","t":"color","s":"css-var --orange-3 (light)"}},"purple":{"0":{"v":"#ffdcff","t":"color","s":"css-var --purple-0 (light)"},"1":{"v":"#f0f0ff","t":"color","s":"css-var --purple-1 (light)"},"100":{"v":"#f0c6f3","t":"color","s":"css-var --purple-100 (light)"},"1000":{"v":"#6a0085","t":"color","s":"css-var --purple-1000 (light)"},"2":{"v":"#aba3ff","t":"color","s":"css-var --purple-2 (light)"},"20":{"v":"#fcd8fd","t":"color","s":"css-var --purple-20 (light)"},"200":{"v":"#e1b0e7","t":"color","s":"css-var --purple-200 (light)"},"3":{"v":"#9287ff","t":"color","s":"css-var --purple-3 (light)"},"300":{"v":"#d29ada","t":"color","s":"css-var --purple-300 (light)"},"4":{"v":"#796eff","t":"color","s":"css-var --purple-4 (light)"},"400":{"v":"#c384ce","t":"color","s":"css-var --purple-400 (light)"},"5":{"v":"#635ac7","t":"color","s":"css-var --purple-5 (light)"},"50":{"v":"#f8d1f9","t":"color","s":"css-var --purple-50 (light)"},"500":{"v":"#b46ec2","t":"color","s":"css-var --purple-500 (light)"},"600":{"v":"#a658b6","t":"color","s":"css-var --purple-600 (light)"},"700":{"v":"#9742aa","t":"color","s":"css-var --purple-700 (light)"},"800":{"v":"#882c9d","t":"color","s":"css-var --purple-800 (light)"},"900":{"v":"#791691","t":"color","s":"css-var --purple-900 (light)"},"950":{"v":"#710b8b","t":"color","s":"css-var --purple-950 (light)"},"980":{"v":"#6d0487","t":"color","s":"css-var --purple-980 (light)"},"v2":{"200":{"v":"#a999ff","t":"color","s":"css-var --purple-v2-200 (light)"}}},"red":{"v":"#a82424","t":"color","s":"css-var --red (light)"},"shadow":{"10":{"v":"rgba(36, 50, 66, 0.2) 0px 3px 5px 0px","t":"other","s":"css-var --shadow-10 (light)"},"20":{"v":"rgba(36, 50, 66, 0.12) 0px 11px 12px 0px","t":"other","s":"css-var --shadow-20 (light)"},"30":{"v":"rgba(36, 50, 66, 0.14) 0px 20px 30px 0px","t":"other","s":"css-var --shadow-30 (light)"},"40":{"v":"rgba(36, 50, 66, 0.15) 0px 50px 60px 0px","t":"other","s":"css-var --shadow-40 (light)"},"color":{"v":"#243242","t":"color","s":"css-var --shadow-color (light)"}},"spacing":{"0":{"v":0,"t":"number","s":"css-var --spacing-0 (light)"},"1":{"v":"16px","t":"dimension","s":"css-var --spacing-1 (light)"},"10":{"v":"160px","t":"dimension","s":"css-var --spacing-10 (light)"},"1half":{"v":"8px","t":"dimension","s":"css-var --spacing-1half (light)"},"1plus":{"v":"24px","t":"dimension","s":"css-var --spacing-1plus (light)"},"2":{"v":"32px","t":"dimension","s":"css-var --spacing-2 (light)"},"3":{"v":"48px","t":"dimension","s":"css-var --spacing-3 (light)"},"4":{"v":"64px","t":"dimension","s":"css-var --spacing-4 (light)"},"5":{"v":"80px","t":"dimension","s":"css-var --spacing-5 (light)"},"6":{"v":"96px","t":"dimension","s":"css-var --spacing-6 (light)"},"7":{"v":"112px","t":"dimension","s":"css-var --spacing-7 (light)"},"8":{"v":"128px","t":"dimension","s":"css-var --spacing-8 (light)"},"9":{"v":"144px","t":"dimension","s":"css-var --spacing-9 (light)"}},"teal":{"1":{"v":"#edf8ff","t":"color","s":"css-var --teal-1 (light)"},"2":{"v":"#95e0ff","t":"color","s":"css-var --teal-2 (light)"},"3":{"v":"#32c1ff","t":"color","s":"css-var --teal-3 (light)"},"4":{"v":"#14aaf5","t":"color","s":"css-var --teal-4 (light)"},"5":{"v":"#008ce3","t":"color","s":"css-var --teal-5 (light)"}},"transition":{"duration":{"default":{"v":"150ms","t":"duration","s":"css-var --transition-duration (light)"},"long":{"v":"300ms","t":"duration","s":"css-var --transition-duration-long (light)"},"med":{"v":"225ms","t":"duration","s":"css-var --transition-duration-med (light)"},"short":{"v":"75ms","t":"duration","s":"css-var --transition-duration-short (light)"},"xlong":{"v":"450ms","t":"duration","s":"css-var --transition-duration-xlong (light)"}}},"white":{"v":"#ffffff","t":"color","s":"css-var --white (light)"},"zIndex":{"1":{"v":100,"t":"number","s":"css-var --zIndex-1 (light)"},"10":{"v":1000,"t":"number","s":"css-var --zIndex-10 (light)"},"2":{"v":200,"t":"number","s":"css-var --zIndex-2 (light)"},"3":{"v":300,"t":"number","s":"css-var --zIndex-3 (light)"},"4":{"v":400,"t":"number","s":"css-var --zIndex-4 (light)"},"5":{"v":500,"t":"number","s":"css-var --zIndex-5 (light)"},"6":{"v":600,"t":"number","s":"css-var --zIndex-6 (light)"},"7":{"v":700,"t":"number","s":"css-var --zIndex-7 (light)"},"8":{"v":800,"t":"number","s":"css-var --zIndex-8 (light)"},"9":{"v":900,"t":"number","s":"css-var --zIndex-9 (light)"}},"typography":{"display":{"v":{"fontFamily":"{fontFamily.ui}","fontSize":"102px","lineHeight":"91.8px","fontWeight":300,"letterSpacing":"-2.55px"},"t":"typography","s":"computed type of hero-title default (raw/components-computed.json); the h1 display line"},"heading":{"v":{"fontFamily":"{fontFamily.ui}","fontSize":"54px","lineHeight":"54px","fontWeight":300,"letterSpacing":"-1.08px"},"t":"typography","s":"computed type of section-title default (raw/components-computed.json); the h2 section heading"},"body":{"v":{"fontFamily":"{fontFamily.ui}","fontSize":"14px","lineHeight":"21px","fontWeight":500,"letterSpacing":"0em"},"t":"typography","s":"computed type of nav-link default (raw/components-computed.json); the UI line"},"button":{"v":{"fontFamily":"{fontFamily.ui}","fontSize":"14px","lineHeight":"21px","fontWeight":500,"letterSpacing":"0em"},"t":"typography","s":"computed type of nav-cta default (raw/components-computed.json); the primary CTA label"},"small":{"v":{"fontFamily":"{fontFamily.ui}","fontSize":"11px","lineHeight":"16.5px","fontWeight":500,"letterSpacing":"0.44px"},"t":"typography","s":"computed type of caps-label default (raw/components-computed.json); the caps eyebrow label"}}},"light":{"a11y":{"focus":{"black":{"v":"#0d0d0d","t":"color","s":"css-var --lightmode-a11y-focus-black (light)"},"primary":{"v":"#879fc8","t":"color","s":"css-var --lightmode-a11y-focus-primary (light)"},"white":{"v":"#ffffff","t":"color","s":"css-var --lightmode-a11y-focus-white (light)"}}},"accent":{"black":{"v":"#0d0d0d","t":"color","s":"css-var --lightmode-accent-black (light)"},"blue":{"default":{"v":"#badbf1","t":"color","s":"css-var --lightmode-accent-blue (light)"},"light":{"v":"#cbefff","t":"color","s":"css-var --lightmode-accent-blue-light (light)"}},"gray":{"default":{"v":"#f3f3f3","t":"color","s":"css-var --lightmode-accent-gray (light)"},"light":{"v":"#f3f3f3","t":"color","s":"css-var --lightmode-accent-gray-light (light)"}},"green":{"default":{"v":"#b5e9ca","t":"color","s":"css-var --lightmode-accent-green (light)"},"light":{"v":"#b5e9ca","t":"color","s":"css-var --lightmode-accent-green-light (light)"}},"orange":{"default":{"v":"#f0d3d9","t":"color","s":"css-var --lightmode-accent-orange (light)"},"light":{"v":"#f0d3d9","t":"color","s":"css-var --lightmode-accent-orange-light (light)"}},"purple":{"default":{"v":"#f0c6f3","t":"color","s":"css-var --lightmode-accent-purple (light)"},"light":{"v":"#f0c6f3","t":"color","s":"css-var --lightmode-accent-purple-light (light)"}},"red":{"default":{"v":"#f0d3d9","t":"color","s":"css-var --lightmode-accent-red (light)"},"light":{"v":"#f7dee3","t":"color","s":"css-var --lightmode-accent-red-light (light)"}},"white":{"v":"#ffffff","t":"color","s":"css-var --lightmode-accent-white (light)"},"yellow":{"default":{"v":"#f0d3d9","t":"color","s":"css-var --lightmode-accent-yellow (light)"},"light":{"v":"#f0d3d9","t":"color","s":"css-var --lightmode-accent-yellow-light (light)"}},"default":{"v":"#0d0d0d","t":"color","s":"css-var --lightmode-button-primary (light)","d":"The action fill."},"hover":{"v":"#3d3d3d","t":"color","s":"css-var --lightmode-button-primary-hover (light)","d":"The lifted action fill."}},"bg":{"default":{"v":"#ffffff","t":"color","s":"css-var --lightmode-bg (light)"},"active":{"v":"#fafafa","t":"color","s":"css-var --lightmode-bg-active (light)"},"hover":{"v":"#fafafa","t":"color","s":"css-var --lightmode-bg-hover (light)"},"inverted":{"v":"#fafafa","t":"color","s":"css-var --lightmode-bg-inverted (light)"},"med":{"default":{"v":"#f3f3f3","t":"color","s":"css-var --lightmode-bg-med (light)"},"active":{"v":"#e7e7e7","t":"color","s":"css-var --lightmode-bg-med-active (light)"},"hover":{"v":"#e7e7e7","t":"color","s":"css-var --lightmode-bg-med-hover (light)"}},"strong":{"default":{"v":"#f3f3f3","t":"color","s":"css-var --lightmode-bg-strong (light)"},"active":{"v":"#b6b6b6","t":"color","s":"css-var --lightmode-bg-strong-active (light)"},"hover":{"v":"#b6b6b6","t":"color","s":"css-var --lightmode-bg-strong-hover (light)"}}},"border":{"default":{"v":"#cfcfcf","t":"color","s":"css-var --lightmode-border (light)","d":"Default hairline."},"active":{"v":"#cfcfcf","t":"color","s":"css-var --lightmode-border-active (light)"},"hover":{"v":"#9e9e9e","t":"color","s":"css-var --lightmode-border-hover (light)"},"strong":{"v":"#cfcfcf","t":"color","s":"css-var --lightmode-border-strong (light)","d":"Stronger hairline."},"weak":{"v":"#f3f3f3","t":"color","s":"css-var --lightmode-border-weak (light)"}},"button":{"disabled":{"v":"#9e9e9e","t":"color","s":"css-var --lightmode-button-disabled (light)"},"primary":{"default":{"v":"#0d0d0d","t":"color","s":"css-var --lightmode-button-primary (light)"},"hover":{"v":"#3d3d3d","t":"color","s":"css-var --lightmode-button-primary-hover (light)"}},"secondary":{"default":{"v":"#ffffff","t":"color","s":"css-var --lightmode-button-secondary (light)"},"hover":{"v":"#6e6e6e","t":"color","s":"css-var --lightmode-button-secondary-hover (light)"}},"text":{"disabled":{"v":"#ffffff","t":"color","s":"css-var --lightmode-button-text-disabled (light)"},"primary":{"default":{"v":"#ffffff","t":"color","s":"css-var --lightmode-button-text-primary (light)"},"hover":{"v":"#ffffff","t":"color","s":"css-var --lightmode-button-text-primary-hover (light)"}},"secondary":{"default":{"v":"#0d0d0d","t":"color","s":"css-var --lightmode-button-text-secondary (light)"},"hover":{"v":"#ffffff","t":"color","s":"css-var --lightmode-button-text-secondary-hover (light)"}}}},"error":{"v":"#a82424","t":"color","s":"css-var --lightmode-error (light)"},"icon":{"default":{"v":"#0d0d0d","t":"color","s":"css-var --lightmode-icon (light)","d":"Icon ink."},"disabled":{"v":"#9e9e9e","t":"color","s":"css-var --lightmode-icon-disabled (light)"},"hover":{"v":"#3d3d3d","t":"color","s":"css-var --lightmode-icon-hover (light)"}},"inline":{"link":{"disabled":{"v":"#9e9e9e","t":"color","s":"css-var --lightmode-inline-link-disabled (light)"},"hover":{"v":"#0d0d0d","t":"color","s":"css-var --lightmode-inline-link-hover (light)"},"text":{"v":"#0d0d0d","t":"color","s":"css-var --lightmode-inline-link-text (light)"}}},"link":{"disabled":{"v":"#9e9e9e","t":"color","s":"css-var --lightmode-link-disabled (light)"},"hover":{"v":"#0d0d0d","t":"color","s":"css-var --lightmode-link-hover (light)","d":"Link hover ink."},"text":{"default":{"v":"#0d0d0d","t":"color","s":"css-var --lightmode-link-text (light)"},"weak":{"default":{"v":"#6e6e6e","t":"color","s":"css-var --lightmode-link-text-weak (light)"},"disabled":{"v":"#9e9e9e","t":"color","s":"css-var --lightmode-link-text-weak-disabled (light)"},"hover":{"v":"#6e6e6e","t":"color","s":"css-var --lightmode-link-text-weak-hover (light)"}}},"default":{"v":"#0d0d0d","t":"color","s":"css-var --lightmode-link-text (light)","d":"Inline link ink."}},"success":{"v":"#0c6410","t":"color","s":"css-var --lightmode-success (light)","d":"Success green."},"text":{"default":{"v":"#3d3d3d","t":"color","s":"css-var --lightmode-text (light)","d":"Body ink."},"strong":{"v":"#0d0d0d","t":"color","s":"css-var --lightmode-text-strong (light)","d":"The strong ink."},"weak":{"v":"#6e6e6e","t":"color","s":"css-var --lightmode-text-weak (light)"},"disabled":{"v":"#9e9e9e","t":"color","s":"css-var --lightmode-link-disabled (light)","d":"Disabled ink."}},"warning":{"v":"#7a4b00","t":"color","s":"css-var --lightmode-warning (light)","d":"Warning amber."},"page":{"v":"#ffffff","t":"color","s":"css-var --lightmode-bg (light)","d":"The page field."},"surface":{"default":{"v":"#f3f3f3","t":"color","s":"css-var --lightmode-bg-med (light)","d":"The grey panel surface."},"strong":{"v":"#f3f3f3","t":"color","s":"css-var --lightmode-bg-strong (light)","d":"The stronger panel."},"hover":{"v":"#e7e7e7","t":"color","s":"css-var --lightmode-bg-med-hover (light)","d":"The hover wash on panels."}},"muted":{"v":"#6e6e6e","t":"color","s":"css-var --lightmode-text-weak (light)","d":"Secondary ink."},"on":{"accent":{"v":"#ffffff","t":"color","s":"css-var --lightmode-button-text-primary (light)","d":"Text on primary buttons."}},"danger":{"v":"#a82424","t":"color","s":"css-var --lightmode-error (light)","d":"Error red."},"focus":{"ring":{"v":"#879fc8","t":"color","s":"css-var --lightmode-a11y-focus-primary (light)","d":"The a11y focus ring colour."}},"field":{"v":"#ffffff","t":"color","s":"css-var --lightmode-button-secondary (light)","d":"The secondary fill (white fields/buttons)."},"disabled":{"v":"#9e9e9e","t":"color","s":"css-var --lightmode-button-disabled (light)","d":"Disabled control fill."},"component":{"control":{"height":{"v":"44px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"The primary CTA height."},"buttonSecondary":{"v":"44px","t":"dimension","s":"computed height of nav-sales default (raw/components-computed.json)","d":"The secondary CTA height."},"radius":{"v":"100px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"CTA corner radius."},"field":{"v":"50px","t":"dimension","s":"computed height of gate-field default (raw/components-computed.json)","d":"The gate field height."},"iconButton":{"v":"40px","t":"dimension","s":"computed height of m-menu-button default (raw/components-computed.json)","d":"The mobile menu button."}},"nav":{"height":{"v":"44px","t":"dimension","s":"computed height of nav-link default (raw/components-computed.json)","d":"Nav link height."}},"shell":{"header":{"v":"68px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The nav block at 1440."}},"plan":{"height":{"v":"974px","t":"dimension","s":"computed height of plan-card default (raw/components-computed.json)","d":"A pricing plan column."}},"footer":{"linkHeight":{"v":"40px","t":"dimension","s":"computed height of footer-link default (raw/components-computed.json)","d":"Footer link rows."}},"menu":{"linkHeight":{"v":"61px","t":"dimension","s":"computed height of m-nav-link default (raw/components-computed.json)","d":"Mobile menu rows."}}}},"dark":{"a11y":{"focus":{"black":{"v":"#0d0d0d","t":"color","s":"css-var --darkmode-a11y-focus-black (dark)"},"primary":{"v":"#879fc8","t":"color","s":"css-var --darkmode-a11y-focus-primary (dark)"},"white":{"v":"#ffffff","t":"color","s":"css-var --darkmode-a11y-focus-white (dark)"}}},"accent":{"black":{"v":"#690031","t":"color","s":"css-var --darkmode-accent-black (dark)"},"blue":{"default":{"v":"#222875","t":"color","s":"css-var --darkmode-accent-blue (dark)"},"dark":{"v":"#222875","t":"color","s":"css-var --darkmode-accent-blue-dark (dark)"}},"gray":{"default":{"v":"#690031","t":"color","s":"css-var --darkmode-accent-gray (dark)"},"dark":{"v":"#690031","t":"color","s":"css-var --darkmode-accent-gray-dark (dark)"}},"green":{"default":{"v":"#004232","t":"color","s":"css-var --darkmode-accent-green (dark)"},"dark":{"v":"#004232","t":"color","s":"css-var --darkmode-accent-green-dark (dark)"}},"orange":{"default":{"v":"#690031","t":"color","s":"css-var --darkmode-accent-orange (dark)"},"dark":{"v":"#690031","t":"color","s":"css-var --darkmode-accent-orange-dark (dark)"}},"purple":{"default":{"v":"#6a0085","t":"color","s":"css-var --darkmode-accent-purple (dark)"},"dark":{"v":"#6a0085","t":"color","s":"css-var --darkmode-accent-purple-dark (dark)"}},"red":{"default":{"v":"#690031","t":"color","s":"css-var --darkmode-accent-red (dark)"},"dark":{"v":"#690031","t":"color","s":"css-var --darkmode-accent-red-dark (dark)"}},"white":{"v":"#ffffff","t":"color","s":"css-var --darkmode-accent-white (dark)"},"yellow":{"default":{"v":"#690031","t":"color","s":"css-var --darkmode-accent-yellow (dark)"},"dark":{"v":"#690031","t":"color","s":"css-var --darkmode-accent-yellow-dark (dark)"}},"default":{"v":"#f5f4f3","t":"color","s":"css-var --darkmode-button-primary (dark)","d":"The action fill."},"hover":{"v":"#f06a6a","t":"color","s":"css-var --darkmode-button-primary-hover (dark)","d":"The lifted action fill."}},"bg":{"default":{"v":"#1e1f21","t":"color","s":"css-var --darkmode-bg (dark)"},"active":{"v":"#4c4d4e","t":"color","s":"css-var --darkmode-bg-active (dark)"},"hover":{"v":"#38383a","t":"color","s":"css-var --darkmode-bg-hover (dark)"},"inverted":{"v":"#ffffff","t":"color","s":"css-var --darkmode-bg-inverted (dark)"},"med":{"default":{"v":"#252628","t":"color","s":"css-var --darkmode-bg-med (dark)"},"active":{"v":"#525254","t":"color","s":"css-var --darkmode-bg-med-active (dark)"},"hover":{"v":"#3e3f41","t":"color","s":"css-var --darkmode-bg-med-hover (dark)"}},"strong":{"default":{"v":"#2a2b2d","t":"color","s":"css-var --darkmode-bg-strong (dark)"},"active":{"v":"#565658","t":"color","s":"css-var --darkmode-bg-strong-active (dark)"},"hover":{"v":"#434445","t":"color","s":"css-var --darkmode-bg-strong-hover (dark)"}}},"border":{"default":{"v":"rgba(217, 217, 217, 0.3)","t":"color","s":"css-var --darkmode-border (dark)","d":"Default hairline."},"active":{"v":"rgba(217, 217, 217, 0.7)","t":"color","s":"css-var --darkmode-border-active (dark)"},"hover":{"v":"rgba(217, 217, 217, 0.4)","t":"color","s":"css-var --darkmode-border-hover (dark)"},"strong":{"v":"#ffffff","t":"color","s":"css-var --darkmode-border-strong (dark)","d":"Stronger hairline."},"weak":{"v":"rgba(217, 217, 217, 0.2)","t":"color","s":"css-var --darkmode-border-weak (dark)"}},"button":{"disabled":{"v":"#38393d","t":"color","s":"css-var --darkmode-button-disabled (dark)"},"primary":{"default":{"v":"#f5f4f3","t":"color","s":"css-var --darkmode-button-primary (dark)"},"hover":{"v":"#f06a6a","t":"color","s":"css-var --darkmode-button-primary-hover (dark)"}},"secondary":{"default":{"v":"#0d0e10","t":"color","s":"css-var --darkmode-button-secondary (dark)"},"hover":{"v":"#f06a6a","t":"color","s":"css-var --darkmode-button-secondary-hover (dark)"}},"text":{"disabled":{"v":"#6a696a","t":"color","s":"css-var --darkmode-button-text-disabled (dark)"},"primary":{"default":{"v":"#0d0e10","t":"color","s":"css-var --darkmode-button-text-primary (dark)"},"hover":{"v":"#0d0e10","t":"color","s":"css-var --darkmode-button-text-primary-hover (dark)"}},"secondary":{"default":{"v":"#f5f4f3","t":"color","s":"css-var --darkmode-button-text-secondary (dark)"},"hover":{"v":"#0d0e10","t":"color","s":"css-var --darkmode-button-text-secondary-hover (dark)"}}}},"error":{"v":"#a82424","t":"color","s":"css-var --darkmode-error (dark)"},"icon":{"default":{"v":"rgba(245, 244, 243, 0.6)","t":"color","s":"css-var --darkmode-icon (dark)","d":"Icon ink."},"disabled":{"v":"rgba(245, 244, 243, 0.15)","t":"color","s":"css-var --darkmode-icon-disabled (dark)"},"hover":{"v":"#f5f4f3","t":"color","s":"css-var --darkmode-icon-hover (dark)"}},"inline":{"inline":{"link":{"text":{"v":"#dbdbdb","t":"color","s":"css-var --darkmode-inline-inline-link-text (dark)"}}},"link":{"disabled":{"v":"#6a696a","t":"color","s":"css-var --darkmode-inline-link-disabled (dark)"},"hover":{"v":"#f06a6a","t":"color","s":"css-var --darkmode-inline-link-hover (dark)"}}},"link":{"disabled":{"v":"#6a696a","t":"color","s":"css-var --darkmode-link-disabled (dark)"},"hover":{"v":"#f06a6a","t":"color","s":"css-var --darkmode-link-hover (dark)","d":"Link hover ink."},"text":{"default":{"v":"#dbdbdb","t":"color","s":"css-var --darkmode-link-text (dark)"},"weak":{"default":{"v":"#989898","t":"color","s":"css-var --darkmode-link-text-weak (dark)"},"disabled":{"v":"#6a696a","t":"color","s":"css-var --darkmode-link-text-weak-disabled (dark)"},"hover":{"v":"#ffffff","t":"color","s":"css-var --darkmode-link-text-weak-hover (dark)"}}},"default":{"v":"#dbdbdb","t":"color","s":"css-var --darkmode-link-text (dark)","d":"Inline link ink."}},"success":{"v":"#0c6410","t":"color","s":"css-var --darkmode-success (dark)","d":"Success green."},"text":{"default":{"v":"rgba(255, 255, 255, 0.85)","t":"color","s":"css-var --darkmode-text (dark)","d":"Body ink."},"strong":{"v":"#ffffff","t":"color","s":"css-var --darkmode-text-strong (dark)","d":"The strong ink."},"weak":{"v":"rgba(255, 255, 255, 0.55)","t":"color","s":"css-var --darkmode-text-weak (dark)"},"disabled":{"v":"#6a696a","t":"color","s":"css-var --darkmode-link-disabled (dark)","d":"Disabled ink."}},"warning":{"v":"#7a4b00","t":"color","s":"css-var --darkmode-warning (dark)","d":"Warning amber."},"page":{"v":"#1e1f21","t":"color","s":"css-var --darkmode-bg (dark)","d":"The page field."},"surface":{"default":{"v":"#252628","t":"color","s":"css-var --darkmode-bg-med (dark)","d":"The grey panel surface."},"strong":{"v":"#2a2b2d","t":"color","s":"css-var --darkmode-bg-strong (dark)","d":"The stronger panel."},"hover":{"v":"#3e3f41","t":"color","s":"css-var --darkmode-bg-med-hover (dark)","d":"The hover wash on panels."}},"muted":{"v":"rgba(255, 255, 255, 0.55)","t":"color","s":"css-var --darkmode-text-weak (dark)","d":"Secondary ink."},"on":{"accent":{"v":"#0d0e10","t":"color","s":"css-var --darkmode-button-text-primary (dark)","d":"Text on primary buttons."}},"danger":{"v":"#a82424","t":"color","s":"css-var --darkmode-error (dark)","d":"Error red."},"focus":{"ring":{"v":"#879fc8","t":"color","s":"css-var --darkmode-a11y-focus-primary (dark)","d":"The a11y focus ring colour."}},"field":{"v":"#0d0e10","t":"color","s":"css-var --darkmode-button-secondary (dark)","d":"The secondary fill (white fields/buttons)."},"disabled":{"v":"#38393d","t":"color","s":"css-var --darkmode-button-disabled (dark)","d":"Disabled control fill."}}};
+const $ = (s) => document.querySelector(s);
+$('#mode').addEventListener('click', () => {
+  const d = document.documentElement.dataset.mode === 'dark';
+  document.documentElement.dataset.mode = d ? '' : 'dark';
+  $('#mode').textContent = d ? 'Dark' : 'Light';
+});
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  // Colours sit flat under core (primary.600, neutral.200.201, card.bg.*,
+  // brand.50..900 plus bare names like gold, black, gray.800); group the
+  // flattened list by its first two segments where they form a family, else
+  // the first.
+  const colors = flat(TOK.core || {}, '').filter(([, t]) => t.t === 'color');
+  const groups = new Map();
+  for (const [n, t] of colors) {
+    const p = n.split('.');
+    const g = p.length > 2 ? p[0] + '.' + p[1] : p[0];
+    if (!groups.has(g)) groups.set(g, []);
+    groups.get(g).push([n, t]);
+  }
+  for (const [g, items] of groups) {
+    h += `<div class="pal-h">${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const g of ['media', 'grid', 'zIndex', 'border', 'shadow', 'transition', 'spacing'])
+    for (const [n, t] of flat(TOK.core[g] || {}, g + '.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.light.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+// Resolve a {path.to.token} alias against TOK.core so labels read the real
+// family names, not the alias braces.
+const resolveTok = (a, depth = 0) => {
+  const m = /^\{(.+)\}$/.exec(String(a || '').trim());
+  if (!m || depth > 4) return a;
+  let n = TOK.core;
+  for (const p of m[1].split('.')) n = n && n[p];
+  return n && n.v !== undefined ? resolveTok(n.v, depth + 1) : a;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v || {};
+    const fam = String(resolveTok(v.fontFamily) || 'inherit').replace(/"/g, "'");
+    const wt = String(v.fontWeight || 400).replace(/[^0-9]/g, '') || 400;
+    h += `<div class="trow"><div class="tnm">${esc(n)}</div><div class="tspec" style="font-family:${fam};font-weight:${wt};font-size:${esc(v.fontSize || '16px')};line-height:${esc(v.lineHeight || '1.4')}">${esc(fam.split(',')[0] || '')} ${esc(v.fontSize || '')}/${esc(v.lineHeight || '')}</div></div>`;
+  }
+  const el = $('#type-out'); if (el) el.innerHTML = h;
+})();
+</script>
+</body>
+</html>

@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 77,
-    "system_domains": 69,
-    "matched_domains": 45,
-    "missing_domains": 388,
+    "system_packages": 80,
+    "system_domains": 72,
+    "matched_domains": 48,
+    "missing_domains": 385,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -377,6 +377,40 @@
         }
       ]
     },
+    "artboard.studio": {
+      "catalog": [
+        {
+          "name": "Artboard Studio",
+          "domain": "artboard.studio",
+          "id": 232
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "artboardstudio",
+          "name": "Artboard Studio",
+          "url": "https://artboard.studio",
+          "name_match": false
+        }
+      ]
+    },
+    "asana.com": {
+      "catalog": [
+        {
+          "name": "Asana",
+          "domain": "asana.com",
+          "id": 69
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "asana",
+          "name": "Asana",
+          "url": "https://asana.com",
+          "name_match": true
+        }
+      ]
+    },
     "asos.com": {
       "catalog": [
         {
@@ -543,6 +577,23 @@
           "slug": "brilliant",
           "name": "Brilliant",
           "url": "https://brilliant.org",
+          "name_match": true
+        }
+      ]
+    },
+    "busuu.com": {
+      "catalog": [
+        {
+          "name": "Busuu",
+          "domain": "busuu.com",
+          "id": 191
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "busuu",
+          "name": "Busuu",
+          "url": "https://www.busuu.com",
           "name_match": true
         }
       ]
@@ -846,20 +897,6 @@
         "id": 129
       }
     ],
-    "artboard.studio": [
-      {
-        "name": "Artboard Studio",
-        "domain": "artboard.studio",
-        "id": 232
-      }
-    ],
-    "asana.com": [
-      {
-        "name": "Asana",
-        "domain": "asana.com",
-        "id": 69
-      }
-    ],
     "b150.ai": [
       {
         "name": "B150",
@@ -886,13 +923,6 @@
         "name": "Bio Sites",
         "domain": "biosites.com",
         "id": 765
-      }
-    ],
-    "busuu.com": [
-      {
-        "name": "Busuu",
-        "domain": "busuu.com",
-        "id": 191
       }
     ],
     "buymeacoffee.com": [
