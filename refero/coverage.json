@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 77,
-    "system_domains": 69,
-    "matched_domains": 45,
-    "missing_domains": 388,
+    "system_packages": 78,
+    "system_domains": 70,
+    "matched_domains": 46,
+    "missing_domains": 387,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -547,6 +547,23 @@
         }
       ]
     },
+    "busuu.com": {
+      "catalog": [
+        {
+          "name": "Busuu",
+          "domain": "busuu.com",
+          "id": 191
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "busuu",
+          "name": "Busuu",
+          "url": "https://www.busuu.com",
+          "name_match": true
+        }
+      ]
+    },
     "chatgpt.com": {
       "catalog": [
         {
@@ -886,13 +903,6 @@
         "name": "Bio Sites",
         "domain": "biosites.com",
         "id": 765
-      }
-    ],
-    "busuu.com": [
-      {
-        "name": "Busuu",
-        "domain": "busuu.com",
-        "id": 191
       }
     ],
     "buymeacoffee.com": [

@@ -1,0 +1,71 @@
+{
+ "readAt": "2026-11-11",
+ "source": "the stylesheet bodies read during a live home load on busuu.com (linked CSS bundles from network responses plus styled-components inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class, at 1440 x 900",
+ "sheets": [
+  "https://cdn.busuu.com/homepage/35.0.1/css/modular.css (143895 bytes)",
+  "inline-0 (9538 bytes)"
+ ],
+ "counts": {
+  "rules": 0,
+  "fonts": 5,
+  "names": {
+   "theme": 0,
+   "app": 0,
+   "skins": 0,
+   "vendor": 0,
+   "utility": 0,
+   "tailwind": 0
+  },
+  "bySelector": {}
+ },
+ "errors": [],
+ "theme": [],
+ "app": [],
+ "skins": [],
+ "vendor": [],
+ "utility": [],
+ "tailwind": [],
+ "fonts": [
+  {
+   "file": "https://cdn.busuu.com/homepage/35.0.1/css/modular.css",
+   "font-family": "Nista",
+   "src": "url(\"https://dkiiqzqghqrn.cloudfront.net/frontend/fonts/nista-400.woff2\") format(\"woff2\")",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://cdn.busuu.com/homepage/35.0.1/css/modular.css",
+   "font-family": "Nista",
+   "src": "url(\"https://dkiiqzqghqrn.cloudfront.net/frontend/fonts/nista-700.woff2\") format(\"woff2\")",
+   "font-weight": "700",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://cdn.busuu.com/homepage/35.0.1/css/modular.css",
+   "font-family": "Nista",
+   "src": "url(\"https://dkiiqzqghqrn.cloudfront.net/frontend/fonts/nista-800.woff2\") format(\"woff2\")",
+   "font-weight": "800",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://cdn.busuu.com/homepage/35.0.1/css/modular.css",
+   "font-family": "icomoon",
+   "src": "url(\"../fonts/author-bio/icomoon.woff?aizbyq\") format(\"woff\")",
+   "font-weight": "700",
+   "font-style": "normal",
+   "font-display": "block"
+  },
+  {
+   "file": "https://cdn.busuu.com/homepage/35.0.1/css/modular.css",
+   "font-family": "icomoon",
+   "src": "url(\"fonts/icomoon.ttf?aizbyq\") format(\"truetype\"), url(\"fonts/icomoon.woff?aizbyq\") format(\"woff\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "block"
+  }
+ ],
+ "resolved": {
+  "dark": {},
+  "light": {}
+ }
+}
