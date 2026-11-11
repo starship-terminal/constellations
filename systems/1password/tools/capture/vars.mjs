@@ -36,6 +36,7 @@ const result = await page.evaluate(() => {
   const rules = [];
   const fonts = [];
   const skipped = [];
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const walk = (list, ctx, file) => {
     for (const r of list) {
       if (r.type === CSSRule.FONT_FACE_RULE) {
@@ -58,7 +59,7 @@ const result = await page.evaluate(() => {
       let n = 0;
       for (let i = 0; i < r.style.length; i++) {
         const k = r.style[i];
-        if (k && k.startsWith('--')) { props[k] = r.style.getPropertyValue(k).trim(); n++; }
+        if (k && k.startsWith('--')) { props[k] = noUrl(r.style.getPropertyValue(k).trim()); n++; }
       }
       if (n) rules.push({ file, selector: (r.selectorText || '').slice(0, 160), context: ctx, properties: props });
       if (r.cssRules && r.cssRules.length) walk(r.cssRules, [...ctx, (r.selectorText || '').slice(0, 120)], file);
@@ -75,6 +76,7 @@ const result = await page.evaluate(() => {
 const want = [...new Set(result.rules.filter((r) => !r.context.includes('@layer properties')).flatMap((r) => Object.keys(r.properties)))]
   .filter((n) => !/^--(tw-|_|lightningcss-)/.test(n)).sort();
 const resolved = await page.evaluate((names) => {
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
   const probe = document.createElement('div');
   probe.style.cssText = 'position:absolute;left:0;top:0;visibility:hidden';
   document.body.appendChild(probe);
@@ -97,7 +99,7 @@ const resolved = await page.evaluate((names) => {
   };
   const out = {};
   for (const name of names) {
-    const raw = (getComputedStyle(document.documentElement).getPropertyValue(name) || getComputedStyle(probe).getPropertyValue(name)).trim();
+    const raw = (noUrl(getComputedStyle(document.documentElement).getPropertyValue(name)) || noUrl(getComputedStyle(probe).getPropertyValue(name))).trim();
     if (!raw) continue;
     const r = { raw: raw.length > 300 ? raw.slice(0, 300) + '…' : raw };
     probe.removeAttribute('style'); probe.style.cssText = 'position:absolute;left:0;top:0;visibility:hidden';
