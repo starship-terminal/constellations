@@ -273,6 +273,7 @@ what is open, with the evidence.
 | <img src="systems/sentry/icon.png" width="20" alt="sentry"> | [sentry](systems/sentry/README.md) | Dense monitoring dashboards, trace waterfalls, diagnostic tables, query builders and filters | 2026-10-31 | light, dark | 6 of 25 met, 15 partly, 4 missing | `components/`, `icons/` |
 | <img src="systems/attio/icon.png" width="20" alt="attio"> | [attio](systems/attio/README.md) | Dense CRM tables, configurable views, record panels and progressive onboarding with quiet neutral chrome and blue primary actions. | 2026-10-31 | light, dark | 5 of 25 met, 19 partly, 1 missing | `icons/` |
 | <img src="systems/supabase/icon.png" width="20" alt="supabase"> | [supabase](systems/supabase/README.md) | Developer dashboards, code editors, member tables, settings, log filters, invitations and responsive navigation; database editing gaps documented | 2026-10-31 | dark, light | 5 of 25 met, 18 partly, 2 missing | `icons/` |
+| <img src="systems/base44/icon.png" width="20" alt="base44"> | [base44](systems/base44/README.md) | AI-app-builder marketing: warm paper ground with Dazzed display type, near-black 38px CTA pills, an orange #ff773c action accent, a hero prompt composer, and a full named token system (shadcn channels + named palette + scales) in the bundle | 2026-11-11 | light, dark (declared) | not graded yet | `icons/` |
 
 <!-- catalog:end -->
 
