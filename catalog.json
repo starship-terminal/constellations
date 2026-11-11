@@ -1506,6 +1506,91 @@
    }
   },
   {
+   "slug": "arket",
+   "name": "ARKET",
+   "url": "https://www.arket.com",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "premium-minimal commerce: a white page with warm #faf8f3 beige bands, everything in the arketSansMono grotesque, 2px outlined controls that invert to black on hover, black 56px CTAs, a 538px drawer for menu/cart/filter/location",
+   "tags": [
+    "web",
+    "ecommerce",
+    "storefront",
+    "fashion",
+    "light",
+    "nextjs",
+    "tailwind",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-11",
+   "access": "signed out (every captured surface is public; the cookie-consent card and the 'Please confirm your location' dialog were measured as they arrive, then hidden, never answered; Akamai blocks headless Chromium and every /en-ww/product/* URL, so the capture ran in headed real Chrome and no PDP was reached)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/arket/README.md",
+   "tokens": "systems/arket/tokens.json",
+   "styleGuide": "systems/arket/style-guide.html",
+   "preview": {
+    "cover": "systems/arket/screenshots/women-light-default.png",
+    "icon": "systems/arket/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.page",
+      "surface": "light.surface",
+      "text": "light.text",
+      "muted": "light.muted",
+      "accent": "light.accent",
+      "border": "light.border"
+     }
+    },
+    "fonts": [
+     "core.font.family.ui",
+     "core.font.family.small-caps"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "arket.com (Next.js + Tailwind v4) in headed real Chrome (channel 'chrome'), desktop 1440x900 and mobile 390x844 at 2x; computed styles and crops from the live DOM; CSS vars from the @theme stylesheet layer resolved in a probe",
+    "timestamp": "2026-11-11T02:15:00Z",
+    "harness": "Devin",
+    "model": "Devin",
+    "route": "public-web",
+    "routes": [
+     "/en-ww/women/",
+     "/en-ww/women/new-arrivals/",
+     "/en-ww/women/clothing/",
+     "/en-ww/men/clothing/",
+     "/en-ww/gift-shop/",
+     "/en-ww/editorial/",
+     "/en-ww/customer-service/",
+     "/en-ww/account/",
+     "/en-ww/previous-collections/women/",
+     "mobile /en-ww/women/",
+     "mobile /en-ww/women/clothing/"
+    ],
+    "gaps": [
+     "Akamai serves Access Denied (403) to headless Chromium on every route and to every /en-ww/product/<slug>-<id>/ URL even headed (document and RSC fetch): no PDP was captured; PDP-looking values come from the listing cards",
+     "the /en-ww/ root is blocked the same way at capture time; the shell, dialogs and footer were measured on /en-ww/women/",
+     "the account behind the Login/Signup gate, checkout and the filled cart were never reached",
+     "no consent or location answer was given, nothing was added to the bag, no form was submitted",
+     "icons: no standalone SVG set lifted this pass",
+     "one light theme; nothing binds a dark class on the captured routes"
+    ],
+    "durationMin": null,
+    "durationNote": "wall-clock duration was not recorded for this capture",
+    "pr": "472"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the site's icons (the wordmark, search/account/wishlist/cart glyphs, socials) are visible in the crops and screenshots and on the fetched icon.png"
+   }
+  },
+  {
    "slug": "asos",
    "name": "ASOS",
    "url": "https://www.asos.com",
@@ -1732,7 +1817,8 @@
      "icons: no standalone SVG set lifted this pass"
     ],
     "durationMin": null,
-    "durationNote": "wall-clock duration was not recorded for this capture"
+    "durationNote": "wall-clock duration was not recorded for this capture",
+    "pr": "https://github.com/c-wenlong/designs/pull/473"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the site's icons (wordmark, nav icons) are visible in the crops and screenshots"
@@ -1821,6 +1907,90 @@
    }
   },
   {
+   "slug": "base44",
+   "name": "Base44",
+   "url": "https://base44.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "AI-app-builder marketing: warm paper ground with Dazzed display type, near-black 38px CTA pills, an orange #ff773c action accent, a hero prompt composer, and a full named token system (shadcn channels + named palette + scales) in the bundle",
+   "tags": [
+    "web",
+    "ai",
+    "app-builder",
+    "marketing",
+    "light",
+    "tailwind",
+    "signed-out",
+    "design-tokens"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-11",
+   "access": "signed out (every captured surface is public; the app behind app.base44.com was never signed into and no form was submitted)",
+   "themes": [
+    "light",
+    "dark (declared)"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/base44/README.md",
+   "tokens": "systems/base44/tokens.json",
+   "styleGuide": "systems/base44/style-guide.html",
+   "preview": {
+    "cover": "systems/base44/screenshots/home-light-default.png",
+    "icon": "systems/base44/icon.png",
+    "swatches": {
+     "light": {
+      "page": "light.background",
+      "surface": "light.card",
+      "text": "light.foreground",
+      "muted": "core.color.text.muted",
+      "accent": "core.color.cta.orange",
+      "border": "light.border"
+     }
+    },
+    "fonts": [
+     "core.fontFamily.display",
+     "core.fontFamily.body"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "base44.com in headless Chromium (Playwright), desktop 1440x900 and mobile 390x844 at 2x; computed styles and crops from the live DOM; CSS vars read from the same-origin stylesheet bodies and resolved in :root and .dark probes",
+    "timestamp": "2026-11-11T19:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/features",
+     "/use-cases",
+     "/enterprise",
+     "/blog",
+     "/superagents",
+     "app.base44.com/login",
+     "mobile /",
+     "mobile /pricing"
+    ],
+    "gaps": [
+     "the product behind app.base44.com: the builder, dashboards, billing and templates were never signed into",
+     "no form was submitted and no OAuth button was pressed; the email field was focused/filled then cleared; the prompt composer was never sent",
+     "the dark token set is the bundle's declared .dark block, never painted on the public routes",
+     "the app-side --sem-* semantic vars are referenced by utilities but declared only inside the product; they resolve empty on the marketing bundle",
+     "icons: no standalone SVG set lifted this pass",
+     "the selected billing segment's orange fill is a sliding indicator, not part of the button"
+    ],
+    "durationMin": null,
+    "durationNote": "wall-clock duration was not recorded for this capture",
+    "pr": "https://github.com/c-wenlong/designs/pull/469"
+   },
+   "layoutGaps": {
+    "icons/": "Base44's icons are its artwork and are not kept here (docs/RIGHTS.md); they are visible in the crops and screenshots"
+   }
+  },
+  {
    "slug": "bloomberg",
    "name": "Bloomberg",
    "url": "https://www.bloomberg.com",
@@ -1901,6 +2071,170 @@
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the site's icons (wordmark, search, market arrows) are visible in the crops and screenshots"
+   }
+  },
+  {
+   "slug": "blueapron",
+   "name": "Blue Apron",
+   "url": "https://blog.blueapron.com",
+   "category": "e-commerce",
+   "platform": "web",
+   "goodFor": "Editorial and recipe surfaces: a #002856 navy promo strip and footer around a #f2f0e5 cream field, one #2959e0 action blue on 300px pill buttons, blue Ovo serif headlines over Almarai body text, and a chrome-free masonry guide grid",
+   "tags": [
+    "web",
+    "e-commerce",
+    "food",
+    "editorial",
+    "blog",
+    "squarespace",
+    "light",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-11",
+   "access": "signed out (every captured surface is public; the shop, sign-in and checkout on www.blueapron.com are edge-blocked for this client and were never reached)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/blueapron/README.md",
+   "tokens": "systems/blueapron/tokens.json",
+   "styleGuide": "systems/blueapron/style-guide.html",
+   "preview": {
+    "cover": "systems/blueapron/screenshots/home-light-default.png",
+    "icon": "systems/blueapron/icon.png",
+    "swatches": {
+     "light": {
+      "page": "core.color.brand.cream",
+      "surface": "core.color.brand.navy",
+      "text": "core.color.neutral.ink",
+      "muted": "core.color.neutral.ink",
+      "accent": "core.color.brand.accent",
+      "border": "core.color.neutral.line"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.body"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "blog.blueapron.com (Squarespace 7.1) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. www.blueapron.com hard-blocks this client at the Cloudflare edge (403 on every route incl. robots.txt, reproduced via curl, headless and headed Chromium and real Chrome; non-US egress on a US-only shop), so the Squarespace blog is the whole capturable surface and the shop is a documented boundary",
+    "timestamp": "2026-11-11T01:45:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/guides/category/Recipes",
+     "/guides/15-budget-friendly-quick-dinner-ideas-for-busy-weeknights",
+     "/guides/membership-autoship-faq",
+     "/cart",
+     "mobile / and guide article"
+    ],
+    "gaps": [
+     "www.blueapron.com entirely: the shop front end, menu, membership, gifts, cookbook, sign-in, checkout and account are behind the Cloudflare edge block; nothing there was measured",
+     "comments are not mounted on this site; the comments-toggle specs are recorded as missing",
+     "the captured guide is text-only; the lede-image spec is recorded as missing",
+     "the search field was filled and cleared; no query was run",
+     "the cart was captured empty; checkout was never reached",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 70,
+    "pr": "https://github.com/c-wenlong/designs/pull/470"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the site's icons (cart, search, social glyphs, the wordmark) are visible in the crops and screenshots"
+   }
+  },
+  {
+   "slug": "boords",
+   "name": "Boords",
+   "url": "https://boords.com",
+   "category": "productivity",
+   "platform": "web",
+   "goodFor": "Pre-production tooling marketing: a floating white pill header, ink #121212 on white, a #f3f3e9 cream card field, an amber #e8aa42 CTA border, 9999px buttons, 24px cards and the single matter face from 64px display to 10px legal",
+   "tags": [
+    "web",
+    "productivity",
+    "video",
+    "storyboard",
+    "marketing",
+    "tailwind",
+    "nextjs",
+    "light",
+    "signed-out"
+   ],
+   "shape": "reference",
+   "captured": "2026-11-11",
+   "access": "signed out (every captured surface is public; the product on app.boords.com sits behind login and was never reached)",
+   "themes": [
+    "light"
+   ],
+   "widths": [
+    1440,
+    390
+   ],
+   "entry": "systems/boords/README.md",
+   "tokens": "systems/boords/tokens.json",
+   "styleGuide": "systems/boords/style-guide.html",
+   "preview": {
+    "cover": "systems/boords/screenshots/home-light-default.png",
+    "icon": "systems/boords/icon.png",
+    "swatches": {
+     "light": {
+      "page": "core.color.neutral.paper",
+      "surface": "core.color.neutral.cream",
+      "text": "core.color.neutral.ink",
+      "muted": "core.color.neutral.muted",
+      "accent": "core.color.brand.amber",
+      "border": "core.color.neutral.line"
+     }
+    },
+    "fonts": [
+     "core.font.family.display",
+     "core.font.family.body"
+    ]
+   },
+   "capture": {
+    "method": "public-web",
+    "source": "boords.com (Next.js/Tailwind) in headless Chromium (Playwright), desktop 1440x900 and a 390x844 mobile pass; computed styles and crops from the live DOM. The public site declares almost no :root design vars, so tokens are measured computed values rather than var aliases. app.boords.com (the product) sits behind login and is a documented boundary",
+    "timestamp": "2026-11-11T02:00:00Z",
+    "harness": "Devin",
+    "model": "SWE-2 Max",
+    "route": "public-web",
+    "routes": [
+     "/",
+     "/pricing",
+     "/ai-storyboard-generator",
+     "/storyboard-software",
+     "/collaborate",
+     "/customers",
+     "/customers/mobula",
+     "/docs",
+     "/script-timer",
+     "/login",
+     "/signup",
+     "/demo",
+     "mobile / and /script-timer"
+    ],
+    "gaps": [
+     "app.boords.com entirely: storyboards, animatics, shot lists, the script editor, projects, exports and every account surface are behind login and were never reached",
+     "/signup 404s on www (signup lives on the app host); the signup form specs are recorded as missing",
+     "/login renders its shell; no form fields mount for this client",
+     "the demo page embeds a scheduler widget; it was never interacted with",
+     "the script timer textarea was filled with a sample script and cleared; nothing was submitted",
+     "icons: no standalone SVG set lifted this pass"
+    ],
+    "durationMin": 55,
+    "pr": "https://github.com/c-wenlong/designs/pull/471"
+   },
+   "layoutGaps": {
+    "icons/": "the icon extraction pass was not run; the icons (menu, arrows, social glyphs, the wordmark) are visible in the crops and screenshots"
    }
   },
   {

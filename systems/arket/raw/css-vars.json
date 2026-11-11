@@ -1,0 +1,3422 @@
+{
+ "readAt": "2026-11-11",
+ "source": "the stylesheet bodies fetched during a live /en-ww/women/clothing/ load on arket.com (response bodies plus the page's inline <style> blocks, re-parsed with CSSStyleSheet) in headed Chrome (Akamai blocks headless); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class (unbound on this site), at 1440 x 900",
+ "sheets": [
+  "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css (115845 bytes)",
+  "inline-0 (134 bytes)",
+  "inline-1 (1458 bytes)",
+  "inline-2 (16475 bytes)",
+  "inline-3 (9015 bytes)",
+  "inline-4 (301 bytes)",
+  "inline-5 (170 bytes)"
+ ],
+ "counts": {
+  "rules": 119,
+  "fonts": 4,
+  "names": {
+   "theme": 124,
+   "app": 0,
+   "skins": 0,
+   "vendor": 42,
+   "utility": 0,
+   "tailwind": 58
+  },
+  "bySelector": {
+   "[tailwind] @layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))) *, ::before, ::after, ::backdrop": 58,
+   "[theme] @layer theme :root, :host": 122,
+   "[tailwind] @layer utilities .-translate-x-1\\/2": 1,
+   "[tailwind] @layer utilities .-translate-x-6": 1,
+   "[tailwind] @layer utilities .translate-x-full": 1,
+   "[tailwind] @layer utilities .-translate-y-1\\/2": 1,
+   "[tailwind] @layer utilities .-translate-y-8": 1,
+   "[tailwind] @layer utilities .-translate-y-30": 1,
+   "[tailwind] @layer utilities .-translate-y-\\[0\\.25rem\\]": 1,
+   "[tailwind] @layer utilities .translate-y-0": 1,
+   "[tailwind] @layer utilities .translate-y-30": 1,
+   "[tailwind] @layer utilities .scale-100": 3,
+   "[tailwind] @layer utilities .snap-mandatory": 1,
+   "[tailwind] @layer utilities :where(.space-y-8 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.space-y-12 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.space-y-16 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.space-y-24 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.space-x-8 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities .border-none": 1,
+   "[tailwind] @layer utilities .border-solid": 1,
+   "[tailwind] @layer utilities .bg-linear-to-r": 1,
+   "[tailwind] @layer utilities @supports (background-image:linear-gradient(in lab, red, red)) .bg-linear-to-r": 1,
+   "[tailwind] @layer utilities .bg-linear-to-t": 1,
+   "[tailwind] @layer utilities @supports (background-image:linear-gradient(in lab, red, red)) .bg-linear-to-t": 1,
+   "[tailwind] @layer utilities .from-grey-light": 2,
+   "[tailwind] @layer utilities .from-white": 2,
+   "[tailwind] @layer utilities .via-grey-mid": 3,
+   "[tailwind] @layer utilities .via-white\\/95": 3,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .via-white\\/95": 1,
+   "[tailwind] @layer utilities .to-grey-light": 2,
+   "[tailwind] @layer utilities .to-white\\/0": 2,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .to-white\\/0": 1,
+   "[tailwind] @layer utilities .leading-12": 1,
+   "[tailwind] @layer utilities .leading-14": 1,
+   "[tailwind] @layer utilities .leading-16": 1,
+   "[tailwind] @layer utilities .leading-20": 1,
+   "[tailwind] @layer utilities .leading-22": 1,
+   "[tailwind] @layer utilities .leading-24": 1,
+   "[tailwind] @layer utilities .leading-26": 1,
+   "[tailwind] @layer utilities .leading-28": 1,
+   "[tailwind] @layer utilities .leading-30": 1,
+   "[tailwind] @layer utilities .leading-32": 1,
+   "[tailwind] @layer utilities .leading-34": 1,
+   "[tailwind] @layer utilities .leading-40": 1,
+   "[tailwind] @layer utilities .leading-\\[4rem\\]": 1,
+   "[tailwind] @layer utilities .font-bold": 1,
+   "[tailwind] @layer utilities .font-normal": 1,
+   "[tailwind] @layer utilities .font-semibold": 1,
+   "[tailwind] @layer utilities .tracking-tighter": 1,
+   "[tailwind] @layer utilities .tracking-wide": 1,
+   "[tailwind] @layer utilities .shadow-card": 1,
+   "[tailwind] @layer utilities .shadow-drawer": 1,
+   "[tailwind] @layer utilities .shadow-toast": 1,
+   "[tailwind] @layer utilities .outline-hidden": 1,
+   "[tailwind] @layer utilities .drop-shadow-input": 2,
+   "[tailwind] @layer utilities .duration-0": 1,
+   "[tailwind] @layer utilities .duration-160": 1,
+   "[tailwind] @layer utilities .duration-200": 1,
+   "[tailwind] @layer utilities .duration-300": 1,
+   "[tailwind] @layer utilities .duration-320": 1,
+   "[tailwind] @layer utilities .ease-\\[cubic-bezier\\(0\\.2\\,0\\,0\\,1\\)\\]": 1,
+   "[tailwind] @layer utilities .ease-in": 1,
+   "[tailwind] @layer utilities .ease-in-out": 1,
+   "[tailwind] @layer utilities .ease-out": 1,
+   "[tailwind] @layer utilities .content-\\[\\\"\\\"\\]": 1,
+   "[tailwind] @layer utilities .outline-none": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\:translate-x-6:is(:where(.group):hover *)": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .group-hover\\/menuitem\\:translate-x-8:is(:where(.group\\/menuitem):hover *)": 1,
+   "[tailwind] @layer utilities .peer-placeholder-shown\\:translate-x-0:is(:where(.peer):placeholder-shown ~ *)": 1,
+   "[tailwind] @layer utilities .peer-placeholder-shown\\:scale-125:is(:where(.peer):placeholder-shown ~ *)": 3,
+   "[tailwind] @layer utilities .peer-focus\\:-translate-x-6:is(:where(.peer):focus ~ *)": 1,
+   "[tailwind] @layer utilities .peer-focus\\:-translate-y-8:is(:where(.peer):focus ~ *)": 1,
+   "[tailwind] @layer utilities .peer-focus\\:scale-100:is(:where(.peer):focus ~ *)": 3,
+   "[tailwind] @layer utilities .peer-focus\\:leading-16:is(:where(.peer):focus ~ *)": 1,
+   "[tailwind] @layer utilities .first\\:border-none:first-child": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:-translate-y-4:hover": 1,
+   "[tailwind] @layer utilities .focus\\:outline-hidden:focus": 1,
+   "[tailwind] @layer utilities @media not all and (min-width: 1025px) .max-desktop\\:-translate-y-1\\/2": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .desktop\\:snap-mandatory": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) :where(.desktop\\:space-y-16 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) :where(.desktop\\:space-y-32 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .desktop\\:border-none": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .desktop\\:leading-12": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .desktop\\:leading-16": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .desktop\\:leading-18": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .desktop\\:leading-20": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .desktop\\:leading-22": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .desktop\\:leading-26": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .desktop\\:leading-28": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .desktop\\:leading-30": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .desktop\\:leading-32": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .desktop\\:leading-34": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .desktop\\:leading-36": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .desktop\\:leading-40": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .desktop\\:leading-42": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .desktop\\:leading-44": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .desktop\\:leading-60": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .desktop\\:shadow-none": 1,
+   "[tailwind] @layer utilities .hocus\\:shadow-cardHover:hover, .hocus\\:shadow-cardHover:focus": 1,
+   "[tailwind] @layer utilities .\\[\\&_\\*\\]\\:leading-16 *": 1,
+   "[tailwind] @layer utilities .\\[\\&_b\\]\\:font-normal b": 1,
+   "[tailwind] @layer utilities .\\[\\&_strong\\]\\:font-normal strong": 1,
+   "[tailwind] @layer utilities @media (max-height: 300px) .\\[\\@media\\(max-height\\:300px\\)\\]\\:shadow-none": 1,
+   "[tailwind] .klarna-payments-button": 1,
+   "[tailwind] @media (min-width: 1025px) .klarna-payments-button": 1,
+   "[vendor] :root": 86,
+   "[vendor] .Toastify__toast": 2,
+   "[vendor] @media only screen and (max-width: 480px) .Toastify__toast": 2,
+   "[tailwind] .Toastify__toast": 1,
+   "[vendor] @media only screen and (max-width: 769px) :root": 1,
+   "[theme] .deeepG_variable": 1,
+   "[theme] .eFoP6a_variable": 1,
+   "[theme] :root": 2
+  }
+ },
+ "errors": [],
+ "theme": [
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ":root, :host",
+   "context": [
+    "@layer theme"
+   ],
+   "properties": {
+    "--container-xs": "20rem",
+    "--container-lg": "32rem",
+    "--container-xl": "36rem",
+    "--container-4xl": "56rem",
+    "--container-6xl": "72rem",
+    "--container-7xl": "80rem",
+    "--font-weight-normal": "400",
+    "--font-weight-semibold": "600",
+    "--font-weight-bold": "700",
+    "--tracking-tighter": "-.05em",
+    "--tracking-wide": ".025em",
+    "--ease-in": "cubic-bezier(.4, 0, 1, 1)",
+    "--ease-out": "cubic-bezier(0, 0, .2, 1)",
+    "--ease-in-out": "cubic-bezier(.4, 0, .2, 1)",
+    "--animate-spin": "spin 1s linear infinite",
+    "--animate-pulse": "pulse 2s cubic-bezier(.4, 0, .6, 1) infinite",
+    "--default-transition-duration": ".15s",
+    "--default-transition-timing-function": "cubic-bezier(.4, 0, .2, 1)",
+    "--color-alert-blue": "#396a8f",
+    "--color-alert-green": "#38793f",
+    "--color-alert-red": "#c12d0d",
+    "--color-alert-yellow": "#dbbc8e",
+    "--color-barbour-green": "#005c31",
+    "--color-beige": "#faf8f3",
+    "--color-black": "#000",
+    "--color-blue": "#0851bd",
+    "--color-green": "#389d47",
+    "--color-grey-dark": "#767676",
+    "--color-grey-light": "#f5f5f5",
+    "--color-grey-light-extra": "#f9f9f9",
+    "--color-grey-mid": "#eaeae8",
+    "--color-ingrid-border": "#b4b4b4",
+    "--color-laila-beige": "#fff4de",
+    "--color-laila-dark-navy": "#01143c",
+    "--color-laila-green": "#2d833c",
+    "--color-laila-light-blue": "#d1def1",
+    "--color-laila-pink": "#fde4e8",
+    "--color-laila-placid-blue": "#92b7fb",
+    "--color-laila-red": "#e42014",
+    "--color-laila-rose": "#fcd9dd",
+    "--color-overlay-beige": "#a49b7033",
+    "--color-overlay-peach": "#ffdabb80",
+    "--color-peach": "#fff3db",
+    "--color-red": "#d80404",
+    "--color-white": "#fff",
+    "--spacing-0": "0rem",
+    "--spacing-1": ".1rem",
+    "--spacing-2": ".2rem",
+    "--spacing-3": ".3rem",
+    "--spacing-4": ".4rem",
+    "--spacing-5": ".5rem",
+    "--spacing-6": ".6rem",
+    "--spacing-8": ".8rem",
+    "--spacing-10": "1rem",
+    "--spacing-12": "1.2rem",
+    "--spacing-14": "1.4rem",
+    "--spacing-16": "1.6rem",
+    "--spacing-18": "1.8rem",
+    "--spacing-20": "2rem",
+    "--spacing-22": "2.2rem",
+    "--spacing-24": "2.4rem",
+    "--spacing-26": "2.6rem",
+    "--spacing-28": "2.8rem",
+    "--spacing-30": "3rem",
+    "--spacing-32": "3.2rem",
+    "--spacing-34": "3.4rem",
+    "--spacing-36": "3.6rem",
+    "--spacing-38": "3.8rem",
+    "--spacing-40": "4rem",
+    "--spacing-42": "4.2rem",
+    "--spacing-44": "4.4rem",
+    "--spacing-48": "4.8rem",
+    "--spacing-56": "5.6rem",
+    "--spacing-64": "6.4rem",
+    "--spacing-72": "7.2rem",
+    "--spacing-80": "8rem",
+    "--spacing-96": "9.6rem",
+    "--spacing-104": "10.4rem",
+    "--spacing-120": "12rem",
+    "--spacing-128": "12.8rem",
+    "--spacing-144": "14.4rem",
+    "--spacing-160": "16rem",
+    "--spacing-210": "21rem",
+    "--spacing-248": "24.8rem",
+    "--spacing-680": "68rem",
+    "--text-12": "1.2rem",
+    "--text-16": "1.6rem",
+    "--text-18": "1.8rem",
+    "--text-20": "2rem",
+    "--text-22": "2.2rem",
+    "--text-24": "2.4rem",
+    "--text-26": "2.6rem",
+    "--text-28": "2.8rem",
+    "--text-32": "3.2rem",
+    "--text-36": "3.6rem",
+    "--text-40": "4rem",
+    "--text-60": "6rem",
+    "--leading-12": "1.2rem",
+    "--leading-14": "1.4rem",
+    "--leading-16": "1.6rem",
+    "--leading-18": "1.8rem",
+    "--leading-20": "2rem",
+    "--leading-22": "2.2rem",
+    "--leading-26": "2.6rem",
+    "--leading-28": "2.8rem",
+    "--leading-30": "3rem",
+    "--leading-32": "3.2rem",
+    "--leading-34": "3.4rem",
+    "--leading-36": "3.6rem",
+    "--leading-40": "4rem",
+    "--leading-42": "4.2rem",
+    "--leading-60": "6rem",
+    "--radius-1": ".1rem",
+    "--radius-4": ".4rem",
+    "--radius-6": ".6rem",
+    "--radius-8": ".8rem",
+    "--radius-12": "1.2rem",
+    "--radius-DEFAULT": ".2rem",
+    "--radius-full": "9999rem",
+    "--radius-none": "0rem",
+    "--drop-shadow-input": "0 .2rem .8rem #00000026",
+    "--animate-shimmer": "shimmer 3s infinite"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".deeepG_variable",
+   "context": [],
+   "properties": {
+    "--font-regular": "\"arketSansMono\", \"arketSansMono Fallback\""
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".eFoP6a_variable",
+   "context": [],
+   "properties": {
+    "--font-small-caps": "\"arketSCSansMono\", \"arketSCSansMono Fallback\""
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "inline-0",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--font-regular": "'arketSansMono', 'arketSansMono Fallback'",
+    "--font-small-caps": "'arketSCSansMono', 'arketSCSansMono Fallback'"
+   },
+   "bin": "theme"
+  }
+ ],
+ "app": [],
+ "skins": [],
+ "vendor": [
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--toastify-color-light": "#fff",
+    "--toastify-color-dark": "#121212",
+    "--toastify-color-info": "#3498db",
+    "--toastify-color-success": "#07bc0c",
+    "--toastify-color-warning": "#f1c40f",
+    "--toastify-color-error": "#e74d3c",
+    "--toastify-color-transparent": "#ffffffb3",
+    "--toastify-icon-color-info": "var(--toastify-color-info)",
+    "--toastify-icon-color-success": "var(--toastify-color-success)",
+    "--toastify-icon-color-warning": "var(--toastify-color-warning)",
+    "--toastify-icon-color-error": "var(--toastify-color-error)",
+    "--toastify-container-width": "fit-content",
+    "--toastify-toast-width": "320px",
+    "--toastify-toast-offset": "16px",
+    "--toastify-toast-top": "max(var(--toastify-toast-offset), env(safe-area-inset-top))",
+    "--toastify-toast-right": "max(var(--toastify-toast-offset), env(safe-area-inset-right))",
+    "--toastify-toast-left": "max(var(--toastify-toast-offset), env(safe-area-inset-left))",
+    "--toastify-toast-bottom": "max(var(--toastify-toast-offset), env(safe-area-inset-bottom))",
+    "--toastify-toast-background": "#fff",
+    "--toastify-toast-padding": "14px",
+    "--toastify-toast-min-height": "64px",
+    "--toastify-toast-max-height": "800px",
+    "--toastify-toast-bd-radius": "6px",
+    "--toastify-toast-shadow": "0px 4px 12px #0000001a",
+    "--toastify-font-family": "sans-serif",
+    "--toastify-z-index": "9999",
+    "--toastify-text-color-light": "#757575",
+    "--toastify-text-color-dark": "#fff",
+    "--toastify-text-color-info": "#fff",
+    "--toastify-text-color-success": "#fff",
+    "--toastify-text-color-warning": "#fff",
+    "--toastify-text-color-error": "#fff",
+    "--toastify-spinner-color": "#616161",
+    "--toastify-spinner-color-empty-area": "#e0e0e0",
+    "--toastify-color-progress-light": "linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55)",
+    "--toastify-color-progress-dark": "#bb86fc",
+    "--toastify-color-progress-info": "var(--toastify-color-info)",
+    "--toastify-color-progress-success": "var(--toastify-color-success)",
+    "--toastify-color-progress-warning": "var(--toastify-color-warning)",
+    "--toastify-color-progress-error": "var(--toastify-color-error)",
+    "--toastify-color-progress-bgo": ".2"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".Toastify__toast",
+   "context": [],
+   "properties": {
+    "--y": "0px"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".Toastify__toast",
+   "context": [
+    "@media only screen and (max-width: 480px)"
+   ],
+   "properties": {
+    "--toastify-toast-width": "100%"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--toastify-toast-width": "32rem",
+    "--toastify-toast-min-height": "4.8rem",
+    "--toastify-toast-bd-radius": "4px",
+    "--toastify-z-index": "18"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ":root",
+   "context": [
+    "@media only screen and (max-width: 769px)"
+   ],
+   "properties": {
+    "--toastify-toast-width": "calc(100vw - 2.4rem)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-2",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--toastify-color-light": "#fff",
+    "--toastify-color-dark": "#121212",
+    "--toastify-color-info": "#3498db",
+    "--toastify-color-success": "#07bc0c",
+    "--toastify-color-warning": "#f1c40f",
+    "--toastify-color-error": "hsl(6, 78%, 57%)",
+    "--toastify-color-transparent": "rgba(255, 255, 255, 0.7)",
+    "--toastify-icon-color-info": "var(--toastify-color-info)",
+    "--toastify-icon-color-success": "var(--toastify-color-success)",
+    "--toastify-icon-color-warning": "var(--toastify-color-warning)",
+    "--toastify-icon-color-error": "var(--toastify-color-error)",
+    "--toastify-container-width": "fit-content",
+    "--toastify-toast-width": "320px",
+    "--toastify-toast-offset": "16px",
+    "--toastify-toast-top": "max(var(--toastify-toast-offset), env(safe-area-inset-top))",
+    "--toastify-toast-right": "max(var(--toastify-toast-offset), env(safe-area-inset-right))",
+    "--toastify-toast-left": "max(var(--toastify-toast-offset), env(safe-area-inset-left))",
+    "--toastify-toast-bottom": "max(var(--toastify-toast-offset), env(safe-area-inset-bottom))",
+    "--toastify-toast-background": "#fff",
+    "--toastify-toast-padding": "14px",
+    "--toastify-toast-min-height": "64px",
+    "--toastify-toast-max-height": "800px",
+    "--toastify-toast-bd-radius": "6px",
+    "--toastify-toast-shadow": "0px 4px 12px rgba(0, 0, 0, 0.1)",
+    "--toastify-font-family": "sans-serif",
+    "--toastify-z-index": "9999",
+    "--toastify-text-color-light": "#757575",
+    "--toastify-text-color-dark": "#fff",
+    "--toastify-text-color-info": "#fff",
+    "--toastify-text-color-success": "#fff",
+    "--toastify-text-color-warning": "#fff",
+    "--toastify-text-color-error": "#fff",
+    "--toastify-spinner-color": "#616161",
+    "--toastify-spinner-color-empty-area": "#e0e0e0",
+    "--toastify-color-progress-light": "linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55)",
+    "--toastify-color-progress-dark": "#bb86fc",
+    "--toastify-color-progress-info": "var(--toastify-color-info)",
+    "--toastify-color-progress-success": "var(--toastify-color-success)",
+    "--toastify-color-progress-warning": "var(--toastify-color-warning)",
+    "--toastify-color-progress-error": "var(--toastify-color-error)",
+    "--toastify-color-progress-bgo": "0.2"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-2",
+   "selector": ".Toastify__toast",
+   "context": [],
+   "properties": {
+    "--y": "0px"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-2",
+   "selector": ".Toastify__toast",
+   "context": [
+    "@media only screen and (max-width: 480px)"
+   ],
+   "properties": {
+    "--toastify-toast-width": "100%"
+   },
+   "bin": "vendor"
+  }
+ ],
+ "utility": [],
+ "tailwind": [
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": "*, ::before, ::after, ::backdrop",
+   "context": [
+    "@layer properties",
+    "@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b))))"
+   ],
+   "properties": {
+    "--tw-translate-x": "0",
+    "--tw-translate-y": "0",
+    "--tw-translate-z": "0",
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1",
+    "--tw-scale-z": "1",
+    "--tw-rotate-x": "initial",
+    "--tw-rotate-y": "initial",
+    "--tw-rotate-z": "initial",
+    "--tw-skew-x": "initial",
+    "--tw-skew-y": "initial",
+    "--tw-scroll-snap-strictness": "proximity",
+    "--tw-space-y-reverse": "0",
+    "--tw-space-x-reverse": "0",
+    "--tw-border-style": "solid",
+    "--tw-gradient-position": "initial",
+    "--tw-gradient-from": "#0000",
+    "--tw-gradient-via": "#0000",
+    "--tw-gradient-to": "#0000",
+    "--tw-gradient-stops": "initial",
+    "--tw-gradient-via-stops": "initial",
+    "--tw-gradient-from-position": "0%",
+    "--tw-gradient-via-position": "50%",
+    "--tw-gradient-to-position": "100%",
+    "--tw-leading": "initial",
+    "--tw-font-weight": "initial",
+    "--tw-tracking": "initial",
+    "--tw-shadow": "0 0 #0000",
+    "--tw-shadow-color": "initial",
+    "--tw-shadow-alpha": "100%",
+    "--tw-inset-shadow": "0 0 #0000",
+    "--tw-inset-shadow-color": "initial",
+    "--tw-inset-shadow-alpha": "100%",
+    "--tw-ring-color": "initial",
+    "--tw-ring-shadow": "0 0 #0000",
+    "--tw-inset-ring-color": "initial",
+    "--tw-inset-ring-shadow": "0 0 #0000",
+    "--tw-ring-inset": "initial",
+    "--tw-ring-offset-width": "0px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-offset-shadow": "0 0 #0000",
+    "--tw-outline-style": "solid",
+    "--tw-blur": "initial",
+    "--tw-brightness": "initial",
+    "--tw-contrast": "initial",
+    "--tw-grayscale": "initial",
+    "--tw-hue-rotate": "initial",
+    "--tw-invert": "initial",
+    "--tw-opacity": "initial",
+    "--tw-saturate": "initial",
+    "--tw-sepia": "initial",
+    "--tw-drop-shadow": "initial",
+    "--tw-drop-shadow-color": "initial",
+    "--tw-drop-shadow-alpha": "100%",
+    "--tw-drop-shadow-size": "initial",
+    "--tw-duration": "initial",
+    "--tw-ease": "initial",
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".-translate-x-1\\/2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(calc(1 / 2 * 100%) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".-translate-x-6",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(var(--spacing-6) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".translate-x-full",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".-translate-y-1\\/2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(calc(1 / 2 * 100%) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".-translate-y-8",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(var(--spacing-8) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".-translate-y-30",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(var(--spacing-30) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".-translate-y-\\[0\\.25rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(.25rem * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".translate-y-0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "var(--spacing-0)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".translate-y-30",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "var(--spacing-30)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".scale-100",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "100%",
+    "--tw-scale-y": "100%",
+    "--tw-scale-z": "100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".snap-mandatory",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scroll-snap-strictness": "mandatory"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ":where(.space-y-8 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ":where(.space-y-12 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ":where(.space-y-16 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ":where(.space-y-24 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ":where(.space-x-8 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-x-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".border-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-border-style": "none"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".border-solid",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-border-style": "solid"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".bg-linear-to-r",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to right"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".bg-linear-to-r",
+   "context": [
+    "@layer utilities",
+    "@supports (background-image:linear-gradient(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to right in oklab"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".bg-linear-to-t",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to top"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".bg-linear-to-t",
+   "context": [
+    "@layer utilities",
+    "@supports (background-image:linear-gradient(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to top in oklab"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".from-grey-light",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "var(--color-grey-light)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".from-white",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "var(--color-white)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".via-grey-mid",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-via": "var(--color-grey-mid)",
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".via-white\\/95",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-via": "#fffffff2"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".via-white\\/95",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab, var(--color-white) 95%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".via-white\\/95",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".to-grey-light",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-to": "var(--color-grey-light)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".to-white\\/0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-to": "#0000"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".to-white\\/0",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab, var(--color-white) 0%, transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".to-white\\/0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".leading-12",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-12)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".leading-14",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-14)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".leading-16",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-16)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".leading-20",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-20)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".leading-22",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-22)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".leading-24",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--spacing-24)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".leading-26",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-26)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".leading-28",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-28)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".leading-30",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-30)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".leading-32",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-32)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".leading-34",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-34)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".leading-40",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-40)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".leading-\\[4rem\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "4rem"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".font-bold",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-bold)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".font-normal",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-normal)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".font-semibold",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-semibold)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".tracking-tighter",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "var(--tracking-tighter)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".tracking-wide",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "var(--tracking-wide)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".shadow-card",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 .2rem 1rem .2rem var(--tw-shadow-color,#0000001a)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".shadow-drawer",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 -.2rem 1.5rem 0 var(--tw-shadow-color,#0000001a)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".shadow-toast",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 .2rem 1rem .3rem var(--tw-shadow-color,#0000004d)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".outline-hidden",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-outline-style": "none"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".drop-shadow-input",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-drop-shadow-size": "drop-shadow(0 .2rem .8rem var(--tw-drop-shadow-color,#00000026))",
+    "--tw-drop-shadow": "drop-shadow(var(--drop-shadow-input))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".duration-0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": "0s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".duration-160",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".16s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".duration-200",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".2s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".duration-300",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".3s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".duration-320",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".32s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".ease-\\[cubic-bezier\\(0\\.2\\,0\\,0\\,1\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ease": "cubic-bezier(.2,0,0,1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".ease-in",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ease": "var(--ease-in)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".ease-in-out",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ease": "var(--ease-in-out)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".ease-out",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ease": "var(--ease-out)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".content-\\[\\\"\\\"\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".outline-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-outline-style": "none"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".group-hover\\:translate-x-6:is(:where(.group):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-translate-x": "var(--spacing-6)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".group-hover\\/menuitem\\:translate-x-8:is(:where(.group\\/menuitem):hover *)",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-translate-x": "var(--spacing-8)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".peer-placeholder-shown\\:translate-x-0:is(:where(.peer):placeholder-shown ~ *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "var(--spacing-0)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".peer-placeholder-shown\\:scale-125:is(:where(.peer):placeholder-shown ~ *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "125%",
+    "--tw-scale-y": "125%",
+    "--tw-scale-z": "125%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".peer-focus\\:-translate-x-6:is(:where(.peer):focus ~ *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(var(--spacing-6) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".peer-focus\\:-translate-y-8:is(:where(.peer):focus ~ *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(var(--spacing-8) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".peer-focus\\:scale-100:is(:where(.peer):focus ~ *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "100%",
+    "--tw-scale-y": "100%",
+    "--tw-scale-z": "100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".peer-focus\\:leading-16:is(:where(.peer):focus ~ *)",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-16)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".first\\:border-none:first-child",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-border-style": "none"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".hover\\:-translate-y-4:hover",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(var(--spacing-4) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".focus\\:outline-hidden:focus",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-outline-style": "none"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".max-desktop\\:-translate-y-1\\/2",
+   "context": [
+    "@layer utilities",
+    "@media not all and (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(calc(1 / 2 * 100%) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".desktop\\:snap-mandatory",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-scroll-snap-strictness": "mandatory"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ":where(.desktop\\:space-y-16 > :not(:last-child))",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ":where(.desktop\\:space-y-32 > :not(:last-child))",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".desktop\\:border-none",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-border-style": "none"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".desktop\\:leading-12",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-12)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".desktop\\:leading-16",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-16)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".desktop\\:leading-18",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-18)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".desktop\\:leading-20",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-20)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".desktop\\:leading-22",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-22)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".desktop\\:leading-26",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-26)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".desktop\\:leading-28",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-28)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".desktop\\:leading-30",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-30)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".desktop\\:leading-32",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-32)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".desktop\\:leading-34",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-34)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".desktop\\:leading-36",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-36)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".desktop\\:leading-40",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-40)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".desktop\\:leading-42",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-42)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".desktop\\:leading-44",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-leading": "var(--spacing-44)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".desktop\\:leading-60",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-60)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".desktop\\:shadow-none",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-shadow": "0 0 #0000"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".hocus\\:shadow-cardHover:hover, .hocus\\:shadow-cardHover:focus",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 .6rem 2rem .2rem var(--tw-shadow-color,#0003)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".\\[\\&_\\*\\]\\:leading-16 *",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-16)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".\\[\\&_b\\]\\:font-normal b",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-normal)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".\\[\\&_strong\\]\\:font-normal strong",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-normal)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".\\[\\@media\\(max-height\\:300px\\)\\]\\:shadow-none",
+   "context": [
+    "@layer utilities",
+    "@media (max-height: 300px)"
+   ],
+   "properties": {
+    "--tw-shadow": "0 0 #0000"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".klarna-payments-button",
+   "context": [],
+   "properties": {
+    "--tw-leading": "var(--leading-22)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".klarna-payments-button",
+   "context": [
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-28)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "selector": ".Toastify__toast",
+   "context": [],
+   "properties": {
+    "--tw-leading": "var(--leading-22)"
+   },
+   "bin": "tailwind"
+  }
+ ],
+ "fonts": [
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "font-family": "arketSansMono",
+   "src": "url(\"../media/ArketSansMono_Regular-s.p.1w9ywk21gg7eg.woff\") format(\"woff\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "font-family": "\"arketSansMono Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "92.07%",
+   "descent-override": "24.35%",
+   "line-gap-override": "2.52%",
+   "size-adjust": "103.07%"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "font-family": "arketSCSansMono",
+   "src": "url(\"../media/ArketSansSCMono_Regular-s.p.0ize19zvcyafh.woff\") format(\"woff\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.arket.com/_next/static/chunks/1zrmiuuvozye1.css",
+   "font-family": "\"arketSCSansMono Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "85.17%",
+   "descent-override": "22.53%",
+   "line-gap-override": "2.33%",
+   "size-adjust": "111.43%"
+  }
+ ],
+ "resolved": {
+  "dark": {
+   "--animate-pulse": {
+    "raw": "pulse 2s cubic-bezier(.4, 0, .6, 1) infinite",
+    "kind": "other"
+   },
+   "--animate-shimmer": {
+    "raw": "shimmer 3s infinite",
+    "kind": "other"
+   },
+   "--animate-spin": {
+    "raw": "spin 1s linear infinite",
+    "kind": "other"
+   },
+   "--color-alert-blue": {
+    "raw": "#396a8f",
+    "kind": "color",
+    "value": "#396a8f"
+   },
+   "--color-alert-green": {
+    "raw": "#38793f",
+    "kind": "color",
+    "value": "#38793f"
+   },
+   "--color-alert-red": {
+    "raw": "#c12d0d",
+    "kind": "color",
+    "value": "#c12d0d"
+   },
+   "--color-alert-yellow": {
+    "raw": "#dbbc8e",
+    "kind": "color",
+    "value": "#dbbc8e"
+   },
+   "--color-barbour-green": {
+    "raw": "#005c31",
+    "kind": "color",
+    "value": "#005c31"
+   },
+   "--color-beige": {
+    "raw": "#faf8f3",
+    "kind": "color",
+    "value": "#faf8f3"
+   },
+   "--color-black": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--color-blue": {
+    "raw": "#0851bd",
+    "kind": "color",
+    "value": "#0851bd"
+   },
+   "--color-green": {
+    "raw": "#389d47",
+    "kind": "color",
+    "value": "#389d47"
+   },
+   "--color-grey-dark": {
+    "raw": "#767676",
+    "kind": "color",
+    "value": "#767676"
+   },
+   "--color-grey-light": {
+    "raw": "#f5f5f5",
+    "kind": "color",
+    "value": "#f5f5f5"
+   },
+   "--color-grey-light-extra": {
+    "raw": "#f9f9f9",
+    "kind": "color",
+    "value": "#f9f9f9"
+   },
+   "--color-grey-mid": {
+    "raw": "#eaeae8",
+    "kind": "color",
+    "value": "#eaeae8"
+   },
+   "--color-ingrid-border": {
+    "raw": "#b4b4b4",
+    "kind": "color",
+    "value": "#b4b4b4"
+   },
+   "--color-laila-beige": {
+    "raw": "#fff4de",
+    "kind": "color",
+    "value": "#fff4de"
+   },
+   "--color-laila-dark-navy": {
+    "raw": "#01143c",
+    "kind": "color",
+    "value": "#01143c"
+   },
+   "--color-laila-green": {
+    "raw": "#2d833c",
+    "kind": "color",
+    "value": "#2d833c"
+   },
+   "--color-laila-light-blue": {
+    "raw": "#d1def1",
+    "kind": "color",
+    "value": "#d1def1"
+   },
+   "--color-laila-pink": {
+    "raw": "#fde4e8",
+    "kind": "color",
+    "value": "#fde4e8"
+   },
+   "--color-laila-placid-blue": {
+    "raw": "#92b7fb",
+    "kind": "color",
+    "value": "#92b7fb"
+   },
+   "--color-laila-red": {
+    "raw": "#e42014",
+    "kind": "color",
+    "value": "#e42014"
+   },
+   "--color-laila-rose": {
+    "raw": "#fcd9dd",
+    "kind": "color",
+    "value": "#fcd9dd"
+   },
+   "--color-overlay-beige": {
+    "raw": "#a49b7033",
+    "kind": "color",
+    "value": "rgba(164, 155, 112, 0.2)"
+   },
+   "--color-overlay-peach": {
+    "raw": "#ffdabb80",
+    "kind": "color",
+    "value": "rgba(255, 218, 187, 0.5)"
+   },
+   "--color-peach": {
+    "raw": "#fff3db",
+    "kind": "color",
+    "value": "#fff3db"
+   },
+   "--color-red": {
+    "raw": "#d80404",
+    "kind": "color",
+    "value": "#d80404"
+   },
+   "--color-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--container-4xl": {
+    "raw": "56rem",
+    "kind": "dimension",
+    "value": "560px"
+   },
+   "--container-6xl": {
+    "raw": "72rem",
+    "kind": "dimension",
+    "value": "720px"
+   },
+   "--container-7xl": {
+    "raw": "80rem",
+    "kind": "dimension",
+    "value": "800px"
+   },
+   "--container-lg": {
+    "raw": "32rem",
+    "kind": "dimension",
+    "value": "320px"
+   },
+   "--container-xl": {
+    "raw": "36rem",
+    "kind": "dimension",
+    "value": "360px"
+   },
+   "--container-xs": {
+    "raw": "20rem",
+    "kind": "dimension",
+    "value": "200px"
+   },
+   "--default-transition-duration": {
+    "raw": ".15s",
+    "kind": "duration",
+    "value": "0.15s"
+   },
+   "--default-transition-timing-function": {
+    "raw": "cubic-bezier(.4, 0, .2, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4, 0, .2, 1)"
+   },
+   "--drop-shadow-input": {
+    "raw": "0 .2rem .8rem #00000026",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.15) 0px 2px 8px 0px"
+   },
+   "--ease-in": {
+    "raw": "cubic-bezier(.4, 0, 1, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4, 0, 1, 1)"
+   },
+   "--ease-in-out": {
+    "raw": "cubic-bezier(.4, 0, .2, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4, 0, .2, 1)"
+   },
+   "--ease-out": {
+    "raw": "cubic-bezier(0, 0, .2, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(0, 0, .2, 1)"
+   },
+   "--font-regular": {
+    "raw": "'arketSansMono', 'arketSansMono Fallback'",
+    "kind": "fontFamily",
+    "value": "'arketSansMono', 'arketSansMono Fallback'"
+   },
+   "--font-small-caps": {
+    "raw": "'arketSCSansMono', 'arketSCSansMono Fallback'",
+    "kind": "fontFamily",
+    "value": "'arketSCSansMono', 'arketSCSansMono Fallback'"
+   },
+   "--font-weight-bold": {
+    "raw": "700",
+    "kind": "number",
+    "value": 700
+   },
+   "--font-weight-normal": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--font-weight-semibold": {
+    "raw": "600",
+    "kind": "number",
+    "value": 600
+   },
+   "--leading-12": {
+    "raw": "1.2rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--leading-14": {
+    "raw": "1.4rem",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--leading-16": {
+    "raw": "1.6rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--leading-18": {
+    "raw": "1.8rem",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--leading-20": {
+    "raw": "2rem",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--leading-22": {
+    "raw": "2.2rem",
+    "kind": "dimension",
+    "value": "22px"
+   },
+   "--leading-26": {
+    "raw": "2.6rem",
+    "kind": "dimension",
+    "value": "26px"
+   },
+   "--leading-28": {
+    "raw": "2.8rem",
+    "kind": "dimension",
+    "value": "28px"
+   },
+   "--leading-30": {
+    "raw": "3rem",
+    "kind": "dimension",
+    "value": "30px"
+   },
+   "--leading-32": {
+    "raw": "3.2rem",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--leading-34": {
+    "raw": "3.4rem",
+    "kind": "dimension",
+    "value": "34px"
+   },
+   "--leading-36": {
+    "raw": "3.6rem",
+    "kind": "dimension",
+    "value": "36px"
+   },
+   "--leading-40": {
+    "raw": "4rem",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--leading-42": {
+    "raw": "4.2rem",
+    "kind": "dimension",
+    "value": "42px"
+   },
+   "--leading-60": {
+    "raw": "6rem",
+    "kind": "dimension",
+    "value": "60px"
+   },
+   "--radius-1": {
+    "raw": ".1rem",
+    "kind": "dimension",
+    "value": "1px"
+   },
+   "--radius-12": {
+    "raw": "1.2rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--radius-4": {
+    "raw": ".4rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--radius-6": {
+    "raw": ".6rem",
+    "kind": "dimension",
+    "value": "6px"
+   },
+   "--radius-8": {
+    "raw": ".8rem",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--radius-DEFAULT": {
+    "raw": ".2rem",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--radius-full": {
+    "raw": "9999rem",
+    "kind": "dimension",
+    "value": "99990px"
+   },
+   "--radius-none": {
+    "raw": "0rem",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--spacing-0": {
+    "raw": "0rem",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--spacing-1": {
+    "raw": ".1rem",
+    "kind": "dimension",
+    "value": "1px"
+   },
+   "--spacing-10": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--spacing-104": {
+    "raw": "10.4rem",
+    "kind": "dimension",
+    "value": "104px"
+   },
+   "--spacing-12": {
+    "raw": "1.2rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--spacing-120": {
+    "raw": "12rem",
+    "kind": "dimension",
+    "value": "120px"
+   },
+   "--spacing-128": {
+    "raw": "12.8rem",
+    "kind": "dimension",
+    "value": "128px"
+   },
+   "--spacing-14": {
+    "raw": "1.4rem",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--spacing-144": {
+    "raw": "14.4rem",
+    "kind": "dimension",
+    "value": "144px"
+   },
+   "--spacing-16": {
+    "raw": "1.6rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--spacing-160": {
+    "raw": "16rem",
+    "kind": "dimension",
+    "value": "160px"
+   },
+   "--spacing-18": {
+    "raw": "1.8rem",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--spacing-2": {
+    "raw": ".2rem",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--spacing-20": {
+    "raw": "2rem",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--spacing-210": {
+    "raw": "21rem",
+    "kind": "dimension",
+    "value": "210px"
+   },
+   "--spacing-22": {
+    "raw": "2.2rem",
+    "kind": "dimension",
+    "value": "22px"
+   },
+   "--spacing-24": {
+    "raw": "2.4rem",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--spacing-248": {
+    "raw": "24.8rem",
+    "kind": "dimension",
+    "value": "248px"
+   },
+   "--spacing-26": {
+    "raw": "2.6rem",
+    "kind": "dimension",
+    "value": "26px"
+   },
+   "--spacing-28": {
+    "raw": "2.8rem",
+    "kind": "dimension",
+    "value": "28px"
+   },
+   "--spacing-3": {
+    "raw": ".3rem",
+    "kind": "dimension",
+    "value": "3px"
+   },
+   "--spacing-30": {
+    "raw": "3rem",
+    "kind": "dimension",
+    "value": "30px"
+   },
+   "--spacing-32": {
+    "raw": "3.2rem",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--spacing-34": {
+    "raw": "3.4rem",
+    "kind": "dimension",
+    "value": "34px"
+   },
+   "--spacing-36": {
+    "raw": "3.6rem",
+    "kind": "dimension",
+    "value": "36px"
+   },
+   "--spacing-38": {
+    "raw": "3.8rem",
+    "kind": "dimension",
+    "value": "38px"
+   },
+   "--spacing-4": {
+    "raw": ".4rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--spacing-40": {
+    "raw": "4rem",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--spacing-42": {
+    "raw": "4.2rem",
+    "kind": "dimension",
+    "value": "42px"
+   },
+   "--spacing-44": {
+    "raw": "4.4rem",
+    "kind": "dimension",
+    "value": "44px"
+   },
+   "--spacing-48": {
+    "raw": "4.8rem",
+    "kind": "dimension",
+    "value": "48px"
+   },
+   "--spacing-5": {
+    "raw": ".5rem",
+    "kind": "dimension",
+    "value": "5px"
+   },
+   "--spacing-56": {
+    "raw": "5.6rem",
+    "kind": "dimension",
+    "value": "56px"
+   },
+   "--spacing-6": {
+    "raw": ".6rem",
+    "kind": "dimension",
+    "value": "6px"
+   },
+   "--spacing-64": {
+    "raw": "6.4rem",
+    "kind": "dimension",
+    "value": "64px"
+   },
+   "--spacing-680": {
+    "raw": "68rem",
+    "kind": "dimension",
+    "value": "680px"
+   },
+   "--spacing-72": {
+    "raw": "7.2rem",
+    "kind": "dimension",
+    "value": "72px"
+   },
+   "--spacing-8": {
+    "raw": ".8rem",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--spacing-80": {
+    "raw": "8rem",
+    "kind": "dimension",
+    "value": "80px"
+   },
+   "--spacing-96": {
+    "raw": "9.6rem",
+    "kind": "dimension",
+    "value": "96px"
+   },
+   "--text-12": {
+    "raw": "1.2rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--text-16": {
+    "raw": "1.6rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--text-18": {
+    "raw": "1.8rem",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--text-20": {
+    "raw": "2rem",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--text-22": {
+    "raw": "2.2rem",
+    "kind": "dimension",
+    "value": "22px"
+   },
+   "--text-24": {
+    "raw": "2.4rem",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--text-26": {
+    "raw": "2.6rem",
+    "kind": "dimension",
+    "value": "26px"
+   },
+   "--text-28": {
+    "raw": "2.8rem",
+    "kind": "dimension",
+    "value": "28px"
+   },
+   "--text-32": {
+    "raw": "3.2rem",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--text-36": {
+    "raw": "3.6rem",
+    "kind": "dimension",
+    "value": "36px"
+   },
+   "--text-40": {
+    "raw": "4rem",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--text-60": {
+    "raw": "6rem",
+    "kind": "dimension",
+    "value": "60px"
+   },
+   "--toastify-color-dark": {
+    "raw": "#121212",
+    "kind": "color",
+    "value": "#121212"
+   },
+   "--toastify-color-error": {
+    "raw": "hsl(6, 78%, 57%)",
+    "kind": "color",
+    "value": "#e74d3c"
+   },
+   "--toastify-color-info": {
+    "raw": "#3498db",
+    "kind": "color",
+    "value": "#3498db"
+   },
+   "--toastify-color-light": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--toastify-color-progress-bgo": {
+    "raw": "0.2",
+    "kind": "number",
+    "value": 0.2
+   },
+   "--toastify-color-progress-dark": {
+    "raw": "#bb86fc",
+    "kind": "color",
+    "value": "#bb86fc"
+   },
+   "--toastify-color-progress-error": {
+    "raw": "hsl(6, 78%, 57%)",
+    "kind": "color",
+    "value": "#e74d3c"
+   },
+   "--toastify-color-progress-info": {
+    "raw": "#3498db",
+    "kind": "color",
+    "value": "#3498db"
+   },
+   "--toastify-color-progress-light": {
+    "raw": "linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55)",
+    "kind": "other"
+   },
+   "--toastify-color-progress-success": {
+    "raw": "#07bc0c",
+    "kind": "color",
+    "value": "#07bc0c"
+   },
+   "--toastify-color-progress-warning": {
+    "raw": "#f1c40f",
+    "kind": "color",
+    "value": "#f1c40f"
+   },
+   "--toastify-color-success": {
+    "raw": "#07bc0c",
+    "kind": "color",
+    "value": "#07bc0c"
+   },
+   "--toastify-color-transparent": {
+    "raw": "rgba(255, 255, 255, 0.7)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.7)"
+   },
+   "--toastify-color-warning": {
+    "raw": "#f1c40f",
+    "kind": "color",
+    "value": "#f1c40f"
+   },
+   "--toastify-container-width": {
+    "raw": "fit-content",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--toastify-font-family": {
+    "raw": "sans-serif",
+    "kind": "fontFamily",
+    "value": "sans-serif"
+   },
+   "--toastify-icon-color-error": {
+    "raw": "hsl(6, 78%, 57%)",
+    "kind": "color",
+    "value": "#e74d3c"
+   },
+   "--toastify-icon-color-info": {
+    "raw": "#3498db",
+    "kind": "color",
+    "value": "#3498db"
+   },
+   "--toastify-icon-color-success": {
+    "raw": "#07bc0c",
+    "kind": "color",
+    "value": "#07bc0c"
+   },
+   "--toastify-icon-color-warning": {
+    "raw": "#f1c40f",
+    "kind": "color",
+    "value": "#f1c40f"
+   },
+   "--toastify-spinner-color": {
+    "raw": "#616161",
+    "kind": "color",
+    "value": "#616161"
+   },
+   "--toastify-spinner-color-empty-area": {
+    "raw": "#e0e0e0",
+    "kind": "color",
+    "value": "#e0e0e0"
+   },
+   "--toastify-text-color-dark": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--toastify-text-color-error": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--toastify-text-color-info": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--toastify-text-color-light": {
+    "raw": "#757575",
+    "kind": "color",
+    "value": "#757575"
+   },
+   "--toastify-text-color-success": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--toastify-text-color-warning": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--toastify-toast-background": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--toastify-toast-bd-radius": {
+    "raw": "6px",
+    "kind": "dimension",
+    "value": "6px"
+   },
+   "--toastify-toast-bottom": {
+    "raw": "max(16px, 0px)",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--toastify-toast-left": {
+    "raw": "max(16px, 0px)",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--toastify-toast-max-height": {
+    "raw": "800px",
+    "kind": "dimension",
+    "value": "800px"
+   },
+   "--toastify-toast-min-height": {
+    "raw": "64px",
+    "kind": "dimension",
+    "value": "64px"
+   },
+   "--toastify-toast-offset": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--toastify-toast-padding": {
+    "raw": "14px",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--toastify-toast-right": {
+    "raw": "max(16px, 0px)",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--toastify-toast-shadow": {
+    "raw": "0px 4px 12px rgba(0, 0, 0, 0.1)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.1) 0px 4px 12px 0px"
+   },
+   "--toastify-toast-top": {
+    "raw": "max(16px, 0px)",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--toastify-toast-width": {
+    "raw": "320px",
+    "kind": "dimension",
+    "value": "320px"
+   },
+   "--toastify-z-index": {
+    "raw": "9999",
+    "kind": "number",
+    "value": 9999
+   },
+   "--tracking-tighter": {
+    "raw": "-.05em",
+    "kind": "other"
+   },
+   "--tracking-wide": {
+    "raw": ".025em",
+    "kind": "dimension",
+    "value": "0.25px"
+   }
+  },
+  "light": {
+   "--animate-pulse": {
+    "raw": "pulse 2s cubic-bezier(.4, 0, .6, 1) infinite",
+    "kind": "other"
+   },
+   "--animate-shimmer": {
+    "raw": "shimmer 3s infinite",
+    "kind": "other"
+   },
+   "--animate-spin": {
+    "raw": "spin 1s linear infinite",
+    "kind": "other"
+   },
+   "--color-alert-blue": {
+    "raw": "#396a8f",
+    "kind": "color",
+    "value": "#396a8f"
+   },
+   "--color-alert-green": {
+    "raw": "#38793f",
+    "kind": "color",
+    "value": "#38793f"
+   },
+   "--color-alert-red": {
+    "raw": "#c12d0d",
+    "kind": "color",
+    "value": "#c12d0d"
+   },
+   "--color-alert-yellow": {
+    "raw": "#dbbc8e",
+    "kind": "color",
+    "value": "#dbbc8e"
+   },
+   "--color-barbour-green": {
+    "raw": "#005c31",
+    "kind": "color",
+    "value": "#005c31"
+   },
+   "--color-beige": {
+    "raw": "#faf8f3",
+    "kind": "color",
+    "value": "#faf8f3"
+   },
+   "--color-black": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--color-blue": {
+    "raw": "#0851bd",
+    "kind": "color",
+    "value": "#0851bd"
+   },
+   "--color-green": {
+    "raw": "#389d47",
+    "kind": "color",
+    "value": "#389d47"
+   },
+   "--color-grey-dark": {
+    "raw": "#767676",
+    "kind": "color",
+    "value": "#767676"
+   },
+   "--color-grey-light": {
+    "raw": "#f5f5f5",
+    "kind": "color",
+    "value": "#f5f5f5"
+   },
+   "--color-grey-light-extra": {
+    "raw": "#f9f9f9",
+    "kind": "color",
+    "value": "#f9f9f9"
+   },
+   "--color-grey-mid": {
+    "raw": "#eaeae8",
+    "kind": "color",
+    "value": "#eaeae8"
+   },
+   "--color-ingrid-border": {
+    "raw": "#b4b4b4",
+    "kind": "color",
+    "value": "#b4b4b4"
+   },
+   "--color-laila-beige": {
+    "raw": "#fff4de",
+    "kind": "color",
+    "value": "#fff4de"
+   },
+   "--color-laila-dark-navy": {
+    "raw": "#01143c",
+    "kind": "color",
+    "value": "#01143c"
+   },
+   "--color-laila-green": {
+    "raw": "#2d833c",
+    "kind": "color",
+    "value": "#2d833c"
+   },
+   "--color-laila-light-blue": {
+    "raw": "#d1def1",
+    "kind": "color",
+    "value": "#d1def1"
+   },
+   "--color-laila-pink": {
+    "raw": "#fde4e8",
+    "kind": "color",
+    "value": "#fde4e8"
+   },
+   "--color-laila-placid-blue": {
+    "raw": "#92b7fb",
+    "kind": "color",
+    "value": "#92b7fb"
+   },
+   "--color-laila-red": {
+    "raw": "#e42014",
+    "kind": "color",
+    "value": "#e42014"
+   },
+   "--color-laila-rose": {
+    "raw": "#fcd9dd",
+    "kind": "color",
+    "value": "#fcd9dd"
+   },
+   "--color-overlay-beige": {
+    "raw": "#a49b7033",
+    "kind": "color",
+    "value": "rgba(164, 155, 112, 0.2)"
+   },
+   "--color-overlay-peach": {
+    "raw": "#ffdabb80",
+    "kind": "color",
+    "value": "rgba(255, 218, 187, 0.5)"
+   },
+   "--color-peach": {
+    "raw": "#fff3db",
+    "kind": "color",
+    "value": "#fff3db"
+   },
+   "--color-red": {
+    "raw": "#d80404",
+    "kind": "color",
+    "value": "#d80404"
+   },
+   "--color-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--container-4xl": {
+    "raw": "56rem",
+    "kind": "dimension",
+    "value": "560px"
+   },
+   "--container-6xl": {
+    "raw": "72rem",
+    "kind": "dimension",
+    "value": "720px"
+   },
+   "--container-7xl": {
+    "raw": "80rem",
+    "kind": "dimension",
+    "value": "800px"
+   },
+   "--container-lg": {
+    "raw": "32rem",
+    "kind": "dimension",
+    "value": "320px"
+   },
+   "--container-xl": {
+    "raw": "36rem",
+    "kind": "dimension",
+    "value": "360px"
+   },
+   "--container-xs": {
+    "raw": "20rem",
+    "kind": "dimension",
+    "value": "200px"
+   },
+   "--default-transition-duration": {
+    "raw": ".15s",
+    "kind": "duration",
+    "value": "0.15s"
+   },
+   "--default-transition-timing-function": {
+    "raw": "cubic-bezier(.4, 0, .2, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4, 0, .2, 1)"
+   },
+   "--drop-shadow-input": {
+    "raw": "0 .2rem .8rem #00000026",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.15) 0px 2px 8px 0px"
+   },
+   "--ease-in": {
+    "raw": "cubic-bezier(.4, 0, 1, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4, 0, 1, 1)"
+   },
+   "--ease-in-out": {
+    "raw": "cubic-bezier(.4, 0, .2, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4, 0, .2, 1)"
+   },
+   "--ease-out": {
+    "raw": "cubic-bezier(0, 0, .2, 1)",
+    "kind": "easing",
+    "value": "cubic-bezier(0, 0, .2, 1)"
+   },
+   "--font-regular": {
+    "raw": "'arketSansMono', 'arketSansMono Fallback'",
+    "kind": "fontFamily",
+    "value": "'arketSansMono', 'arketSansMono Fallback'"
+   },
+   "--font-small-caps": {
+    "raw": "'arketSCSansMono', 'arketSCSansMono Fallback'",
+    "kind": "fontFamily",
+    "value": "'arketSCSansMono', 'arketSCSansMono Fallback'"
+   },
+   "--font-weight-bold": {
+    "raw": "700",
+    "kind": "number",
+    "value": 700
+   },
+   "--font-weight-normal": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--font-weight-semibold": {
+    "raw": "600",
+    "kind": "number",
+    "value": 600
+   },
+   "--leading-12": {
+    "raw": "1.2rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--leading-14": {
+    "raw": "1.4rem",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--leading-16": {
+    "raw": "1.6rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--leading-18": {
+    "raw": "1.8rem",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--leading-20": {
+    "raw": "2rem",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--leading-22": {
+    "raw": "2.2rem",
+    "kind": "dimension",
+    "value": "22px"
+   },
+   "--leading-26": {
+    "raw": "2.6rem",
+    "kind": "dimension",
+    "value": "26px"
+   },
+   "--leading-28": {
+    "raw": "2.8rem",
+    "kind": "dimension",
+    "value": "28px"
+   },
+   "--leading-30": {
+    "raw": "3rem",
+    "kind": "dimension",
+    "value": "30px"
+   },
+   "--leading-32": {
+    "raw": "3.2rem",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--leading-34": {
+    "raw": "3.4rem",
+    "kind": "dimension",
+    "value": "34px"
+   },
+   "--leading-36": {
+    "raw": "3.6rem",
+    "kind": "dimension",
+    "value": "36px"
+   },
+   "--leading-40": {
+    "raw": "4rem",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--leading-42": {
+    "raw": "4.2rem",
+    "kind": "dimension",
+    "value": "42px"
+   },
+   "--leading-60": {
+    "raw": "6rem",
+    "kind": "dimension",
+    "value": "60px"
+   },
+   "--radius-1": {
+    "raw": ".1rem",
+    "kind": "dimension",
+    "value": "1px"
+   },
+   "--radius-12": {
+    "raw": "1.2rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--radius-4": {
+    "raw": ".4rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--radius-6": {
+    "raw": ".6rem",
+    "kind": "dimension",
+    "value": "6px"
+   },
+   "--radius-8": {
+    "raw": ".8rem",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--radius-DEFAULT": {
+    "raw": ".2rem",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--radius-full": {
+    "raw": "9999rem",
+    "kind": "dimension",
+    "value": "99990px"
+   },
+   "--radius-none": {
+    "raw": "0rem",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--spacing-0": {
+    "raw": "0rem",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--spacing-1": {
+    "raw": ".1rem",
+    "kind": "dimension",
+    "value": "1px"
+   },
+   "--spacing-10": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--spacing-104": {
+    "raw": "10.4rem",
+    "kind": "dimension",
+    "value": "104px"
+   },
+   "--spacing-12": {
+    "raw": "1.2rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--spacing-120": {
+    "raw": "12rem",
+    "kind": "dimension",
+    "value": "120px"
+   },
+   "--spacing-128": {
+    "raw": "12.8rem",
+    "kind": "dimension",
+    "value": "128px"
+   },
+   "--spacing-14": {
+    "raw": "1.4rem",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--spacing-144": {
+    "raw": "14.4rem",
+    "kind": "dimension",
+    "value": "144px"
+   },
+   "--spacing-16": {
+    "raw": "1.6rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--spacing-160": {
+    "raw": "16rem",
+    "kind": "dimension",
+    "value": "160px"
+   },
+   "--spacing-18": {
+    "raw": "1.8rem",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--spacing-2": {
+    "raw": ".2rem",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--spacing-20": {
+    "raw": "2rem",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--spacing-210": {
+    "raw": "21rem",
+    "kind": "dimension",
+    "value": "210px"
+   },
+   "--spacing-22": {
+    "raw": "2.2rem",
+    "kind": "dimension",
+    "value": "22px"
+   },
+   "--spacing-24": {
+    "raw": "2.4rem",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--spacing-248": {
+    "raw": "24.8rem",
+    "kind": "dimension",
+    "value": "248px"
+   },
+   "--spacing-26": {
+    "raw": "2.6rem",
+    "kind": "dimension",
+    "value": "26px"
+   },
+   "--spacing-28": {
+    "raw": "2.8rem",
+    "kind": "dimension",
+    "value": "28px"
+   },
+   "--spacing-3": {
+    "raw": ".3rem",
+    "kind": "dimension",
+    "value": "3px"
+   },
+   "--spacing-30": {
+    "raw": "3rem",
+    "kind": "dimension",
+    "value": "30px"
+   },
+   "--spacing-32": {
+    "raw": "3.2rem",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--spacing-34": {
+    "raw": "3.4rem",
+    "kind": "dimension",
+    "value": "34px"
+   },
+   "--spacing-36": {
+    "raw": "3.6rem",
+    "kind": "dimension",
+    "value": "36px"
+   },
+   "--spacing-38": {
+    "raw": "3.8rem",
+    "kind": "dimension",
+    "value": "38px"
+   },
+   "--spacing-4": {
+    "raw": ".4rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--spacing-40": {
+    "raw": "4rem",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--spacing-42": {
+    "raw": "4.2rem",
+    "kind": "dimension",
+    "value": "42px"
+   },
+   "--spacing-44": {
+    "raw": "4.4rem",
+    "kind": "dimension",
+    "value": "44px"
+   },
+   "--spacing-48": {
+    "raw": "4.8rem",
+    "kind": "dimension",
+    "value": "48px"
+   },
+   "--spacing-5": {
+    "raw": ".5rem",
+    "kind": "dimension",
+    "value": "5px"
+   },
+   "--spacing-56": {
+    "raw": "5.6rem",
+    "kind": "dimension",
+    "value": "56px"
+   },
+   "--spacing-6": {
+    "raw": ".6rem",
+    "kind": "dimension",
+    "value": "6px"
+   },
+   "--spacing-64": {
+    "raw": "6.4rem",
+    "kind": "dimension",
+    "value": "64px"
+   },
+   "--spacing-680": {
+    "raw": "68rem",
+    "kind": "dimension",
+    "value": "680px"
+   },
+   "--spacing-72": {
+    "raw": "7.2rem",
+    "kind": "dimension",
+    "value": "72px"
+   },
+   "--spacing-8": {
+    "raw": ".8rem",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--spacing-80": {
+    "raw": "8rem",
+    "kind": "dimension",
+    "value": "80px"
+   },
+   "--spacing-96": {
+    "raw": "9.6rem",
+    "kind": "dimension",
+    "value": "96px"
+   },
+   "--text-12": {
+    "raw": "1.2rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--text-16": {
+    "raw": "1.6rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--text-18": {
+    "raw": "1.8rem",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--text-20": {
+    "raw": "2rem",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--text-22": {
+    "raw": "2.2rem",
+    "kind": "dimension",
+    "value": "22px"
+   },
+   "--text-24": {
+    "raw": "2.4rem",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--text-26": {
+    "raw": "2.6rem",
+    "kind": "dimension",
+    "value": "26px"
+   },
+   "--text-28": {
+    "raw": "2.8rem",
+    "kind": "dimension",
+    "value": "28px"
+   },
+   "--text-32": {
+    "raw": "3.2rem",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--text-36": {
+    "raw": "3.6rem",
+    "kind": "dimension",
+    "value": "36px"
+   },
+   "--text-40": {
+    "raw": "4rem",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--text-60": {
+    "raw": "6rem",
+    "kind": "dimension",
+    "value": "60px"
+   },
+   "--toastify-color-dark": {
+    "raw": "#121212",
+    "kind": "color",
+    "value": "#121212"
+   },
+   "--toastify-color-error": {
+    "raw": "hsl(6, 78%, 57%)",
+    "kind": "color",
+    "value": "#e74d3c"
+   },
+   "--toastify-color-info": {
+    "raw": "#3498db",
+    "kind": "color",
+    "value": "#3498db"
+   },
+   "--toastify-color-light": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--toastify-color-progress-bgo": {
+    "raw": "0.2",
+    "kind": "number",
+    "value": 0.2
+   },
+   "--toastify-color-progress-dark": {
+    "raw": "#bb86fc",
+    "kind": "color",
+    "value": "#bb86fc"
+   },
+   "--toastify-color-progress-error": {
+    "raw": "hsl(6, 78%, 57%)",
+    "kind": "color",
+    "value": "#e74d3c"
+   },
+   "--toastify-color-progress-info": {
+    "raw": "#3498db",
+    "kind": "color",
+    "value": "#3498db"
+   },
+   "--toastify-color-progress-light": {
+    "raw": "linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55)",
+    "kind": "other"
+   },
+   "--toastify-color-progress-success": {
+    "raw": "#07bc0c",
+    "kind": "color",
+    "value": "#07bc0c"
+   },
+   "--toastify-color-progress-warning": {
+    "raw": "#f1c40f",
+    "kind": "color",
+    "value": "#f1c40f"
+   },
+   "--toastify-color-success": {
+    "raw": "#07bc0c",
+    "kind": "color",
+    "value": "#07bc0c"
+   },
+   "--toastify-color-transparent": {
+    "raw": "rgba(255, 255, 255, 0.7)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.7)"
+   },
+   "--toastify-color-warning": {
+    "raw": "#f1c40f",
+    "kind": "color",
+    "value": "#f1c40f"
+   },
+   "--toastify-container-width": {
+    "raw": "fit-content",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--toastify-font-family": {
+    "raw": "sans-serif",
+    "kind": "fontFamily",
+    "value": "sans-serif"
+   },
+   "--toastify-icon-color-error": {
+    "raw": "hsl(6, 78%, 57%)",
+    "kind": "color",
+    "value": "#e74d3c"
+   },
+   "--toastify-icon-color-info": {
+    "raw": "#3498db",
+    "kind": "color",
+    "value": "#3498db"
+   },
+   "--toastify-icon-color-success": {
+    "raw": "#07bc0c",
+    "kind": "color",
+    "value": "#07bc0c"
+   },
+   "--toastify-icon-color-warning": {
+    "raw": "#f1c40f",
+    "kind": "color",
+    "value": "#f1c40f"
+   },
+   "--toastify-spinner-color": {
+    "raw": "#616161",
+    "kind": "color",
+    "value": "#616161"
+   },
+   "--toastify-spinner-color-empty-area": {
+    "raw": "#e0e0e0",
+    "kind": "color",
+    "value": "#e0e0e0"
+   },
+   "--toastify-text-color-dark": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--toastify-text-color-error": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--toastify-text-color-info": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--toastify-text-color-light": {
+    "raw": "#757575",
+    "kind": "color",
+    "value": "#757575"
+   },
+   "--toastify-text-color-success": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--toastify-text-color-warning": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--toastify-toast-background": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--toastify-toast-bd-radius": {
+    "raw": "6px",
+    "kind": "dimension",
+    "value": "6px"
+   },
+   "--toastify-toast-bottom": {
+    "raw": "max(16px, 0px)",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--toastify-toast-left": {
+    "raw": "max(16px, 0px)",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--toastify-toast-max-height": {
+    "raw": "800px",
+    "kind": "dimension",
+    "value": "800px"
+   },
+   "--toastify-toast-min-height": {
+    "raw": "64px",
+    "kind": "dimension",
+    "value": "64px"
+   },
+   "--toastify-toast-offset": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--toastify-toast-padding": {
+    "raw": "14px",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--toastify-toast-right": {
+    "raw": "max(16px, 0px)",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--toastify-toast-shadow": {
+    "raw": "0px 4px 12px rgba(0, 0, 0, 0.1)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.1) 0px 4px 12px 0px"
+   },
+   "--toastify-toast-top": {
+    "raw": "max(16px, 0px)",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--toastify-toast-width": {
+    "raw": "320px",
+    "kind": "dimension",
+    "value": "320px"
+   },
+   "--toastify-z-index": {
+    "raw": "9999",
+    "kind": "number",
+    "value": 9999
+   },
+   "--tracking-tighter": {
+    "raw": "-.05em",
+    "kind": "other"
+   },
+   "--tracking-wide": {
+    "raw": ".025em",
+    "kind": "dimension",
+    "value": "0.25px"
+   }
+  }
+ }
+}

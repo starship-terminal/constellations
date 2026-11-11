@@ -1,0 +1,1119 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. base44.com is a Remix/Vite build: the shadcn channel vars carry the light/dark role split, the named palette and semantic paints are constants in core.color, and the radius/space/shadow/motion/type/layout scales sit under core. \"var\" leaves resolve through the live document; \"value\" leaves are measured.",
+ "core": {
+  "color": {
+   "ink": {
+    "100": {
+     "var": "--ink-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--ink-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--ink-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--ink-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--ink-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--ink-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--ink-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--ink-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--ink-900",
+     "type": "color"
+    }
+   },
+   "neutral": {
+    "100": {
+     "var": "--neutral-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--neutral-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--neutral-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--neutral-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--neutral-500",
+     "type": "color"
+    }
+   },
+   "blue": {
+    "100": {
+     "var": "--blue-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--blue-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--blue-300",
+     "type": "color"
+    },
+    "500": {
+     "var": "--blue-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--blue-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--blue-700",
+     "type": "color"
+    },
+    "default": {
+     "var": "--blue",
+     "type": "color"
+    },
+    "accent": {
+     "var": "--blue-accent",
+     "type": "color"
+    }
+   },
+   "green": {
+    "100": {
+     "var": "--green-100",
+     "type": "color"
+    },
+    "300": {
+     "var": "--green-300",
+     "type": "color"
+    },
+    "500": {
+     "var": "--green-500",
+     "type": "color"
+    },
+    "700": {
+     "var": "--green-700",
+     "type": "color"
+    }
+   },
+   "orange": {
+    "100": {
+     "var": "--orange-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--orange-200",
+     "type": "color"
+    },
+    "500": {
+     "var": "--orange-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--orange-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--orange-700",
+     "type": "color"
+    },
+    "default": {
+     "var": "--orange",
+     "type": "color"
+    }
+   },
+   "lime": {
+    "cta": {
+     "var": "--lime-cta",
+     "type": "color"
+    },
+    "ctaHover": {
+     "var": "--lime-cta-hover",
+     "type": "color"
+    },
+    "ctaLine": {
+     "var": "--lime-cta-line",
+     "type": "color"
+    }
+   },
+   "brand": {
+    "paper": {
+     "var": "--paper",
+     "type": "color"
+    },
+    "offwhite": {
+     "var": "--offwhite",
+     "type": "color"
+    },
+    "sand": {
+     "var": "--sand",
+     "type": "color"
+    },
+    "black": {
+     "var": "--black",
+     "type": "color"
+    },
+    "white": {
+     "var": "--white",
+     "type": "color"
+    },
+    "hairline": {
+     "var": "--hairline",
+     "type": "color"
+    },
+    "marketingCard": {
+     "var": "--marketing-card",
+     "type": "color"
+    },
+    "marketingCardStrong": {
+     "var": "--marketing-card-strong",
+     "type": "color"
+    }
+   },
+   "cta": {
+    "orange": {
+     "var": "--cta-orange",
+     "type": "color"
+    },
+    "orangeHover": {
+     "var": "--cta-orange-hover",
+     "type": "color"
+    },
+    "orangeText": {
+     "var": "--cta-orange-text",
+     "type": "color"
+    },
+    "black": {
+     "var": "--cta-black",
+     "type": "color"
+    },
+    "blackHover": {
+     "var": "--cta-black-hover",
+     "type": "color"
+    },
+    "blueHover": {
+     "var": "--cta-blue-hover",
+     "type": "color"
+    },
+    "whiteHover": {
+     "var": "--cta-white-hover",
+     "type": "color"
+    }
+   },
+   "text": {
+    "body": {
+     "var": "--text-body",
+     "type": "color"
+    },
+    "faint": {
+     "var": "--text-faint",
+     "type": "color"
+    },
+    "inverse": {
+     "var": "--text-inverse",
+     "type": "color"
+    },
+    "link": {
+     "var": "--text-link",
+     "type": "color"
+    },
+    "muted": {
+     "var": "--text-muted",
+     "type": "color"
+    },
+    "onBlue": {
+     "var": "--text-on-blue",
+     "type": "color"
+    },
+    "placeholder": {
+     "var": "--text-placeholder",
+     "type": "color"
+    },
+    "secondary": {
+     "var": "--text-secondary",
+     "type": "color"
+    },
+    "strong": {
+     "var": "--text-strong",
+     "type": "color"
+    }
+   },
+   "surface": {
+    "blue": {
+     "var": "--surface-blue",
+     "type": "color"
+    },
+    "canvas": {
+     "var": "--surface-canvas",
+     "type": "color"
+    },
+    "card": {
+     "var": "--surface-card",
+     "type": "color"
+    },
+    "cardWarm": {
+     "var": "--surface-card-warm",
+     "type": "color"
+    },
+    "grey": {
+     "var": "--surface-grey",
+     "type": "color"
+    },
+    "inverse": {
+     "var": "--surface-inverse",
+     "type": "color"
+    },
+    "main": {
+     "var": "--surface-main",
+     "type": "color"
+    },
+    "sunken": {
+     "var": "--surface-sunken",
+     "type": "color"
+    },
+    "warm": {
+     "var": "--surface-warm",
+     "type": "color"
+    }
+   },
+   "border": {
+    "warm": {
+     "var": "--border-warm",
+     "type": "color"
+    },
+    "mid": {
+     "var": "--border-mid",
+     "type": "color"
+    },
+    "soft": {
+     "var": "--border-soft",
+     "type": "color"
+    },
+    "strong": {
+     "var": "--border-strong",
+     "type": "color"
+    }
+   },
+   "icon": {
+    "blue": {
+     "var": "--icon-blue",
+     "type": "color"
+    },
+    "green": {
+     "var": "--icon-green",
+     "type": "color"
+    },
+    "orange": {
+     "var": "--icon-orange",
+     "type": "color"
+    }
+   },
+   "intent": {
+    "accent": {
+     "var": "--intent-accent",
+     "type": "color"
+    },
+    "danger": {
+     "var": "--intent-danger",
+     "type": "color"
+    },
+    "primary": {
+     "var": "--intent-primary",
+     "type": "color"
+    },
+    "primaryHover": {
+     "var": "--intent-primary-hover",
+     "type": "color"
+    },
+    "success": {
+     "var": "--intent-success",
+     "type": "color"
+    }
+   },
+   "misc": {
+    "disabled": {
+     "var": "--disabled",
+     "type": "color"
+    },
+    "invalid": {
+     "var": "--invalid",
+     "type": "color"
+    },
+    "focusRing": {
+     "var": "--focus-ring",
+     "type": "color"
+    },
+    "siteFocusRing": {
+     "var": "--site-focus-ring",
+     "type": "color"
+    }
+   }
+  },
+  "radius": {
+   "none": {
+    "var": "--radius-none",
+    "type": "dimension"
+   },
+   "xs": {
+    "var": "--radius-xs",
+    "type": "dimension"
+   },
+   "sm": {
+    "var": "--radius-sm",
+    "type": "dimension"
+   },
+   "md": {
+    "var": "--radius-md",
+    "type": "dimension"
+   },
+   "lg": {
+    "var": "--radius-lg",
+    "type": "dimension"
+   },
+   "xl": {
+    "var": "--radius-xl",
+    "type": "dimension"
+   },
+   "2xl": {
+    "var": "--radius-2xl",
+    "type": "dimension"
+   },
+   "cta": {
+    "var": "--radius-cta",
+    "type": "dimension"
+   },
+   "pill": {
+    "var": "--radius-pill",
+    "type": "dimension"
+   },
+   "default": {
+    "var": "--radius",
+    "type": "dimension"
+   }
+  },
+  "space": {
+   "1": {
+    "var": "--space-1",
+    "type": "dimension"
+   },
+   "2": {
+    "var": "--space-2",
+    "type": "dimension"
+   },
+   "3": {
+    "var": "--space-3",
+    "type": "dimension"
+   },
+   "4": {
+    "var": "--space-4",
+    "type": "dimension"
+   },
+   "5": {
+    "var": "--space-5",
+    "type": "dimension"
+   },
+   "6": {
+    "var": "--space-6",
+    "type": "dimension"
+   },
+   "7": {
+    "var": "--space-7",
+    "type": "dimension"
+   },
+   "8": {
+    "var": "--space-8",
+    "type": "dimension"
+   },
+   "9": {
+    "var": "--space-9",
+    "type": "dimension"
+   },
+   "gutter": {
+    "var": "--space-gutter",
+    "type": "dimension"
+   },
+   "blogBlock": {
+    "var": "--space-blog-block",
+    "type": "dimension"
+   }
+  },
+  "duration": {
+   "fast": {
+    "var": "--dur-fast",
+    "type": "duration"
+   },
+   "base": {
+    "var": "--dur-base",
+    "type": "duration"
+   },
+   "hover": {
+    "var": "--dur-hover",
+    "type": "duration"
+   },
+   "menu": {
+    "var": "--dur-menu",
+    "type": "duration"
+   }
+  },
+  "easing": {
+   "standard": {
+    "var": "--ease-standard",
+    "type": "cubicBezier"
+   },
+   "inOut": {
+    "var": "--ease-in-out",
+    "type": "cubicBezier"
+   },
+   "snap": {
+    "var": "--ease-snap",
+    "type": "cubicBezier"
+   }
+  },
+  "fontWeight": {
+   "light": {
+    "var": "--fw-light",
+    "type": "fontWeight"
+   },
+   "regular": {
+    "var": "--fw-regular",
+    "type": "fontWeight"
+   },
+   "medium": {
+    "var": "--fw-medium",
+    "type": "fontWeight"
+   },
+   "semibold": {
+    "var": "--fw-semibold",
+    "type": "fontWeight"
+   },
+   "bold": {
+    "var": "--fw-bold",
+    "type": "fontWeight"
+   }
+  },
+  "fontFamily": {
+   "display": {
+    "var": "--font-display",
+    "type": "fontFamily"
+   },
+   "displayVf": {
+    "var": "--font-display-vf",
+    "type": "fontFamily"
+   },
+   "body": {
+    "var": "--font-body",
+    "type": "fontFamily"
+   },
+   "ui": {
+    "var": "--font-ui",
+    "type": "fontFamily"
+   },
+   "mono": {
+    "var": "--font-mono",
+    "type": "fontFamily"
+   },
+   "base44": {
+    "var": "--font-family-base44",
+    "type": "fontFamily"
+   }
+  },
+  "layout": {
+   "maxwContent": {
+    "var": "--maxw-content",
+    "type": "dimension"
+   },
+   "maxwWide": {
+    "var": "--maxw-wide",
+    "type": "dimension"
+   },
+   "maxwProse": {
+    "var": "--maxw-prose",
+    "type": "dimension"
+   },
+   "maxwBlogArtifact": {
+    "var": "--maxw-blog-artifact",
+    "type": "dimension"
+   },
+   "maxwBlogArtifactWide": {
+    "var": "--maxw-blog-artifact-wide",
+    "type": "dimension"
+   },
+   "headerBarHeight": {
+    "var": "--header-bar-h",
+    "type": "dimension"
+   },
+   "headerMargin": {
+    "var": "--header-margin",
+    "type": "dimension"
+   },
+   "headerOffset": {
+    "var": "--header-offset",
+    "type": "dimension"
+   },
+   "pageInsetX": {
+    "var": "--page-inset-x",
+    "type": "dimension"
+   },
+   "pagePaddingX": {
+    "var": "--page-padding-x",
+    "type": "dimension"
+   },
+   "frameWidth": {
+    "var": "--frame-w",
+    "type": "dimension"
+   }
+  },
+  "elevation": {
+   "xs": {
+    "var": "--shadow-xs",
+    "type": "shadow"
+   },
+   "sm": {
+    "var": "--shadow-sm",
+    "type": "shadow"
+   },
+   "md": {
+    "var": "--shadow-md",
+    "type": "shadow"
+   },
+   "lg": {
+    "var": "--shadow-lg",
+    "type": "shadow"
+   },
+   "pop": {
+    "var": "--shadow-pop",
+    "type": "shadow"
+   },
+   "menu": {
+    "var": "--shadow-menu",
+    "type": "shadow"
+   }
+  },
+  "measured": {
+   "cta-hover": {
+    "value": "#433f3f",
+    "type": "color",
+    "source": "computed backgroundColor of nav-cta hover (raw/components-computed.json)",
+    "description": "Start building on hover."
+   },
+   "send-hover": {
+    "value": "#ff8f5c",
+    "type": "color",
+    "source": "computed backgroundColor of prompt-submit hover (raw/components-computed.json)",
+    "description": "The orange send on hover."
+   },
+   "send-pressed": {
+    "value": "#ff8f5c",
+    "type": "color",
+    "source": "computed backgroundColor of prompt-submit pressed (raw/components-computed.json)",
+    "description": "The send while pressed (CDP-forced)."
+   },
+   "toggle-shell": {
+    "value": "rgba(255, 255, 255, 0.6)",
+    "type": "color",
+    "source": "computed backgroundColor of billing-toggle default (raw/components-computed.json)",
+    "description": "The billing toggle's translucent track (the selected segment's orange fill rides on a sliding indicator, not the button)."
+   },
+   "submit-disabled-bg": {
+    "value": "#ebebeb",
+    "type": "color",
+    "source": "computed backgroundColor of signin-submit default (raw/components-computed.json)",
+    "description": "The email submit disabled for an empty field."
+   }
+  },
+  "typography": {
+   "display": {
+    "$type": "typography",
+    "$value": {
+     "fontFamily": "Dazzed",
+     "fontSize": "93.744px",
+     "fontWeight": 600,
+     "lineHeight": "98.4312px",
+     "letterSpacing": "-3.74976px"
+    },
+    "$extensions": {
+     "source": "computed type of hero-title default (raw/components-computed.json)"
+    },
+    "$description": "The h1 display face (Dazzed)."
+   },
+   "title": {
+    "$type": "typography",
+    "$value": {
+     "fontFamily": "Dazzed",
+     "fontSize": "57.024px",
+     "fontWeight": 600,
+     "lineHeight": "59.8752px",
+     "letterSpacing": "-2.28096px"
+    },
+    "$extensions": {
+     "source": "computed type of section-title default (raw/components-computed.json)"
+    },
+    "$description": "An h2 section title (Dazzed)."
+   },
+   "body": {
+    "$type": "typography",
+    "$value": {
+     "fontFamily": "Geist",
+     "fontSize": "21.024px",
+     "fontWeight": 400,
+     "lineHeight": "29.2234px",
+     "letterSpacing": "-0.21024px"
+    },
+    "$extensions": {
+     "source": "computed type of hero-sub default (raw/components-computed.json)"
+    },
+    "$description": "The paragraph under the hero (Geist)."
+   },
+   "label": {
+    "$type": "typography",
+    "$value": {
+     "fontFamily": "Dazzed",
+     "fontSize": "16px",
+     "fontWeight": 500,
+     "lineHeight": "24px",
+     "letterSpacing": "normal"
+    },
+    "$extensions": {
+     "source": "computed type of nav-link default (raw/components-computed.json)"
+    },
+    "$description": "Nav-item label type (Geist medium)."
+   },
+   "button": {
+    "$type": "typography",
+    "$value": {
+     "fontFamily": "Geist",
+     "fontSize": "16px",
+     "fontWeight": 600,
+     "lineHeight": "16px",
+     "letterSpacing": "-0.36px"
+    },
+    "$extensions": {
+     "source": "computed type of nav-cta default (raw/components-computed.json)"
+    },
+    "$description": "CTA label type."
+   },
+   "price": {
+    "$type": "typography",
+    "$value": {
+     "fontFamily": "Geist",
+     "fontSize": "48px",
+     "fontWeight": 400,
+     "lineHeight": "48px",
+     "letterSpacing": "normal"
+    },
+    "$extensions": {
+     "source": "computed type of price default (raw/components-computed.json)"
+    },
+    "$description": "A plan's price figure."
+   }
+  }
+ },
+ "light": {
+  "background": {
+   "var": "--background",
+   "type": "color"
+  },
+  "foreground": {
+   "var": "--foreground",
+   "type": "color"
+  },
+  "card": {
+   "var": "--card",
+   "type": "color"
+  },
+  "cardForeground": {
+   "var": "--card-foreground",
+   "type": "color"
+  },
+  "popover": {
+   "var": "--popover",
+   "type": "color"
+  },
+  "popoverForeground": {
+   "var": "--popover-foreground",
+   "type": "color"
+  },
+  "primary": {
+   "var": "--primary",
+   "type": "color"
+  },
+  "primaryForeground": {
+   "var": "--primary-foreground",
+   "type": "color"
+  },
+  "secondary": {
+   "var": "--secondary",
+   "type": "color"
+  },
+  "secondaryForeground": {
+   "var": "--secondary-foreground",
+   "type": "color"
+  },
+  "muted": {
+   "var": "--muted",
+   "type": "color"
+  },
+  "mutedForeground": {
+   "var": "--muted-foreground",
+   "type": "color"
+  },
+  "accent": {
+   "type": "color",
+   "description": "The orange send/button accent.",
+   "value": "{color.cta.orange}",
+   "source": "computed backgroundColor of prompt-submit default (raw/components-computed.json); same value as core.color.cta.orange"
+  },
+  "accentForeground": {
+   "var": "--accent-foreground",
+   "type": "color"
+  },
+  "destructive": {
+   "var": "--destructive",
+   "type": "color"
+  },
+  "destructiveForeground": {
+   "var": "--destructive-foreground",
+   "type": "color"
+  },
+  "border": {
+   "var": "--border",
+   "type": "color"
+  },
+  "input": {
+   "var": "--input",
+   "type": "color"
+  },
+  "ring": {
+   "var": "--ring",
+   "type": "color"
+  },
+  "chart": {
+   "1": {
+    "var": "--chart-1",
+    "type": "color"
+   },
+   "2": {
+    "var": "--chart-2",
+    "type": "color"
+   },
+   "3": {
+    "var": "--chart-3",
+    "type": "color"
+   },
+   "4": {
+    "var": "--chart-4",
+    "type": "color"
+   },
+   "5": {
+    "var": "--chart-5",
+    "type": "color"
+   }
+  },
+  "sidebar": {
+   "background": {
+    "var": "--sidebar-background",
+    "type": "color"
+   },
+   "foreground": {
+    "var": "--sidebar-foreground",
+    "type": "color"
+   },
+   "primary": {
+    "var": "--sidebar-primary",
+    "type": "color"
+   },
+   "primaryForeground": {
+    "var": "--sidebar-primary-foreground",
+    "type": "color"
+   },
+   "accent": {
+    "var": "--sidebar-accent",
+    "type": "color"
+   },
+   "accentForeground": {
+    "var": "--sidebar-accent-foreground",
+    "type": "color"
+   },
+   "border": {
+    "var": "--sidebar-border",
+    "type": "color"
+   },
+   "ring": {
+    "var": "--sidebar-ring",
+    "type": "color"
+   }
+  },
+  "brand": {
+   "type": "color",
+   "description": "The dark CTA fill on Start building.",
+   "value": "{color.cta.black}",
+   "source": "computed backgroundColor of nav-cta default (raw/components-computed.json); same value as core.color.cta.black"
+  },
+  "focus": {
+   "type": "color",
+   "description": "The keyboard-focus ring where one is drawn.",
+   "value": "{color.ink.800}",
+   "source": "computed outlineColor of nav-cta focus-visible (raw/components-computed.json); same value as core.color.ink.800"
+  },
+  "measured": {
+   "linkHover": {
+    "type": "color",
+    "description": "The Sign up link on hover.",
+    "value": "#3a3939",
+    "source": "computed color of signin-signup hover (raw/components-computed.json)"
+   }
+  }
+ },
+ "dark": {
+  "background": {
+   "var": "--background",
+   "type": "color"
+  },
+  "foreground": {
+   "var": "--foreground",
+   "type": "color"
+  },
+  "card": {
+   "var": "--card",
+   "type": "color"
+  },
+  "cardForeground": {
+   "var": "--card-foreground",
+   "type": "color"
+  },
+  "popover": {
+   "var": "--popover",
+   "type": "color"
+  },
+  "popoverForeground": {
+   "var": "--popover-foreground",
+   "type": "color"
+  },
+  "primary": {
+   "var": "--primary",
+   "type": "color"
+  },
+  "primaryForeground": {
+   "var": "--primary-foreground",
+   "type": "color"
+  },
+  "secondary": {
+   "var": "--secondary",
+   "type": "color"
+  },
+  "secondaryForeground": {
+   "var": "--secondary-foreground",
+   "type": "color"
+  },
+  "muted": {
+   "var": "--muted",
+   "type": "color"
+  },
+  "mutedForeground": {
+   "var": "--muted-foreground",
+   "type": "color"
+  },
+  "accent": {
+   "var": "--accent",
+   "type": "color"
+  },
+  "accentForeground": {
+   "var": "--accent-foreground",
+   "type": "color"
+  },
+  "destructive": {
+   "var": "--destructive",
+   "type": "color"
+  },
+  "destructiveForeground": {
+   "var": "--destructive-foreground",
+   "type": "color"
+  },
+  "border": {
+   "var": "--border",
+   "type": "color"
+  },
+  "input": {
+   "var": "--input",
+   "type": "color"
+  },
+  "ring": {
+   "var": "--ring",
+   "type": "color"
+  },
+  "chart": {
+   "1": {
+    "var": "--chart-1",
+    "type": "color"
+   },
+   "2": {
+    "var": "--chart-2",
+    "type": "color"
+   },
+   "3": {
+    "var": "--chart-3",
+    "type": "color"
+   },
+   "4": {
+    "var": "--chart-4",
+    "type": "color"
+   },
+   "5": {
+    "var": "--chart-5",
+    "type": "color"
+   }
+  },
+  "sidebar": {
+   "background": {
+    "var": "--sidebar-background",
+    "type": "color"
+   },
+   "foreground": {
+    "var": "--sidebar-foreground",
+    "type": "color"
+   },
+   "primary": {
+    "var": "--sidebar-primary",
+    "type": "color"
+   },
+   "primaryForeground": {
+    "var": "--sidebar-primary-foreground",
+    "type": "color"
+   },
+   "accent": {
+    "var": "--sidebar-accent",
+    "type": "color"
+   },
+   "accentForeground": {
+    "var": "--sidebar-accent-foreground",
+    "type": "color"
+   },
+   "border": {
+    "var": "--sidebar-border",
+    "type": "color"
+   },
+   "ring": {
+    "var": "--sidebar-ring",
+    "type": "color"
+   }
+  }
+ },
+ "component": {
+  "control": {
+   "heightCta": {
+    "type": "dimension",
+    "value": "38px",
+    "source": "computed height of nav-cta default (raw/components-computed.json)",
+    "description": "The Start building pill height."
+   },
+   "heightNav": {
+    "type": "dimension",
+    "value": "24px",
+    "source": "computed height of nav-link default (raw/components-computed.json)",
+    "description": "Nav link height."
+   },
+   "heightField": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed height of signin-field-wrap default (raw/components-computed.json)",
+    "description": "The email field shell height."
+   },
+   "heightOauth": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed height of signin-google default (raw/components-computed.json)",
+    "description": "The OAuth button height."
+   },
+   "heightSubmit": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed height of signin-submit default (raw/components-computed.json)",
+    "description": "The email submit height."
+   },
+   "heightToggle": {
+    "type": "dimension",
+    "value": "56px",
+    "source": "computed height of billing-toggle default (raw/components-computed.json)",
+    "description": "The billing toggle height."
+   },
+   "heightTile": {
+    "type": "dimension",
+    "value": "66px",
+    "source": "computed height of build-tile default (raw/components-computed.json)",
+    "description": "A build-type tile height."
+   },
+   "radiusCta": {
+    "type": "dimension",
+    "value": "8px",
+    "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)",
+    "description": "The CTA's corner."
+   },
+   "radiusField": {
+    "type": "dimension",
+    "value": "6px",
+    "source": "computed borderTopLeftRadius of signin-field-wrap default (raw/components-computed.json)",
+    "description": "The email shell's corner."
+   },
+   "radiusCard": {
+    "type": "dimension",
+    "value": "0px",
+    "source": "computed borderTopLeftRadius of plan-card default (raw/components-computed.json)",
+    "description": "The plan card's corner."
+   },
+   "radiusBadge": {
+    "type": "dimension",
+    "value": "4px",
+    "source": "computed borderTopLeftRadius of popular-badge default (raw/components-computed.json)",
+    "description": "The Popular chip's corner."
+   },
+   "radiusToggle": {
+    "type": "dimension",
+    "value": "12px",
+    "source": "computed borderTopLeftRadius of billing-toggle default (raw/components-computed.json)",
+    "description": "The toggle's corner."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "86px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The fixed header block at 1440px."
+   }
+  },
+  "footer": {
+   "height": {
+    "type": "dimension",
+    "value": "790px",
+    "source": "computed height of footer default (raw/components-computed.json)",
+    "description": "The footer block at 1440px."
+   }
+  },
+  "prompt": {
+   "height": {
+    "type": "dimension",
+    "value": "150px",
+    "source": "computed height of prompt-box default (raw/components-computed.json)",
+    "description": "The hero composer height."
+   }
+  }
+ }
+}

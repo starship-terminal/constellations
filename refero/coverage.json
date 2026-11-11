@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 72,
-    "system_domains": 64,
-    "matched_domains": 40,
-    "missing_domains": 393,
+    "system_packages": 76,
+    "system_domains": 68,
+    "matched_domains": 44,
+    "missing_domains": 389,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -360,6 +360,23 @@
         }
       ]
     },
+    "arket.com": {
+      "catalog": [
+        {
+          "name": "ARKET",
+          "domain": "arket.com",
+          "id": 510
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "arket",
+          "name": "ARKET",
+          "url": "https://www.arket.com",
+          "name_match": true
+        }
+      ]
+    },
     "asos.com": {
       "catalog": [
         {
@@ -428,6 +445,23 @@
         }
       ]
     },
+    "base44.com": {
+      "catalog": [
+        {
+          "name": "Base44",
+          "domain": "base44.com",
+          "id": 770
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "base44",
+          "name": "Base44",
+          "url": "https://base44.com",
+          "name_match": true
+        }
+      ]
+    },
     "bloomberg.com": {
       "catalog": [
         {
@@ -441,6 +475,40 @@
           "slug": "bloomberg",
           "name": "Bloomberg",
           "url": "https://www.bloomberg.com",
+          "name_match": true
+        }
+      ]
+    },
+    "blueapron.com": {
+      "catalog": [
+        {
+          "name": "Blue Apron",
+          "domain": "blueapron.com",
+          "id": 224
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "blueapron",
+          "name": "Blue Apron",
+          "url": "https://blog.blueapron.com",
+          "name_match": false
+        }
+      ]
+    },
+    "boords.com": {
+      "catalog": [
+        {
+          "name": "Boords",
+          "domain": "boords.com",
+          "id": 458
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "boords",
+          "name": "Boords",
+          "url": "https://boords.com",
           "name_match": true
         }
       ]
@@ -754,13 +822,6 @@
         "id": 46
       }
     ],
-    "arket.com": [
-      {
-        "name": "ARKET",
-        "domain": "arket.com",
-        "id": 510
-      }
-    ],
     "around.co": [
       {
         "name": "Around",
@@ -796,13 +857,6 @@
         "id": 753
       }
     ],
-    "base44.com": [
-      {
-        "name": "Base44",
-        "domain": "base44.com",
-        "id": 770
-      }
-    ],
     "bento.me": [
       {
         "name": "Bento",
@@ -822,20 +876,6 @@
         "name": "Bio Sites",
         "domain": "biosites.com",
         "id": 765
-      }
-    ],
-    "blueapron.com": [
-      {
-        "name": "Blue Apron",
-        "domain": "blueapron.com",
-        "id": 224
-      }
-    ],
-    "boords.com": [
-      {
-        "name": "Boords",
-        "domain": "boords.com",
-        "id": 458
       }
     ],
     "busuu.com": [
