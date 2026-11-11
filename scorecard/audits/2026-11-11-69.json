@@ -8899,6 +8899,134 @@
    "reviewedPlatform": "web"
   },
   {
+   "slug": "bezi",
+   "grades": {
+    "F1": {
+     "grade": "partly",
+     "evidence": "41 core.color tokens resolved from the bundle's --token-<uuid> declarations: an orange ramp (6 steps + a 35% scrim), a 9-step ink neutral ramp, 9 white-alpha and 3 black-alpha steps, and a 9-colour pastel accent set. The palette leads with brand orange rather than neutral-first, and the pastels are single values, not ramps — so the ramp coverage the rubric asks per hue is not there."
+    },
+    "F2": {
+     "grade": "partly",
+     "evidence": "dark.page #0d0d0d, dark.surface (the translucent header pill) and dark.chip #1c1c1c exist; card/scrim surfaces are measured on components only. No raised/overlay/scrim roles on the public surface."
+    },
+    "F3": {
+     "grade": "partly",
+     "evidence": "dark.text #ffffff, muted rgba(255,255,255,.5), accentText on the CTA, link #f2f1ec. No disabled or error text role on the captured surface."
+    },
+    "F4": {
+     "grade": "partly",
+     "evidence": "dark.border is the corner-tick hairline rgba(242,241,236,.32) measured on the index chips; a #005fcc focus outline is measured (the browser's auto ring; the tools chip draws its own 1px white ring at 8px offset). No strong border role."
+    },
+    "F5": {
+     "grade": "meets",
+     "evidence": "accent #f84503 with hover and pressed measured on cta/plan-cta (core.measured.cta-hover); the hover keeps the fill, recorded."
+    },
+    "F6": {
+     "grade": "missing",
+     "evidence": "No success/warning/danger/info roles exist on the public marketing surface; the orange ramp is brand, not status."
+    },
+    "F7": {
+     "grade": "meets",
+     "evidence": "The bundle declares one theme; every semantic role emitted exists for it and no second theme is declared to mismatch."
+    },
+    "F8": {
+     "grade": "partly",
+     "evidence": "The Future Medium, Inter, Inter Display, Space Mono, IBM Plex Mono, Fragment Mono and single faces named with fallback stacks (raw/css-vars.json fonts); sizes/weights measured per component (53/500 hero to 12px labels). No type-scale or named-role tokens."
+    },
+    "F9": {
+     "grade": "missing",
+     "evidence": "No spacing scale tokens; spacing exists only as measured per-component padding/gap values."
+    },
+    "F10": {
+     "grade": "meets",
+     "evidence": "component.control.radiusPill 144px token plus the plan card's radius and the corner-tick border widths measured on every entry."
+    },
+    "F11": {
+     "grade": "partly",
+     "evidence": "Control heights tokenised (heightNav 38.4px, heightCta 39px, radiusPill 144px, header/footer heights); the 14px menu glyph and 36px social buttons measured. Focus-ring width/offset not tokenised."
+    },
+    "F12": {
+     "grade": "partly",
+     "evidence": "The header pill's translucent fill and backdrop blur are measured on the component; no named elevation scale exists on the public surface."
+    },
+    "F13": {
+     "grade": "partly",
+     "evidence": "Transitions measured per component (0.18s ease color/opacity, 0.42s cubic-bezier transform on the chips); nothing on reduced motion."
+    },
+    "F14": {
+     "grade": "partly",
+     "evidence": "Header/footer/component boxes tokenised and 1440+390 widths captured; no breakpoints, grid or z-index tokens."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "~8 of 19 checklist components on the public surface: button, icon button (m-menu-button), link, menu (mobile sheet), card (plan-card), badge (NEW chip, RECOMMENDED tag), segmented control (Individual/Studio toggle). No text field/text area/select/checkbox/radio/switch/tabs/tooltip/dialog/toast/table/avatar."
+    },
+    "C2": {
+     "grade": "partly",
+     "evidence": "default, hover, focus-visible, pressed (CDP) and opened (mobile menu) captured for every interactive entry; the billing toggle's selected half shows on the pricing shot. No disabled, error or loading states surfaced."
+    },
+    "C3": {
+     "grade": "partly",
+     "evidence": "focus-visible measured and cropped on the interactive links/buttons (UA ring #005fcc; the tools chip draws a real 1px white ring at 8px offset; the cta's ring paints on its child anchor, now surfaced under child paint); plan-cta's keyboard focus could not be driven (focus failed, recorded)."
+    },
+    "C4": {
+     "grade": "partly",
+     "evidence": "every measured colour names its matching palette token and the dark roles alias core tokens; dimensions, radii and fills stay raw px where no scale exists."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "Five written patterns in patterns.md: shell, CTA vocabulary, hero/announcement, pricing, footer. Empty/loading/error, destructive, search and onboarding are absent from the public surface; no form exists to validate."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "No icons/ dir (declared layoutGaps: extraction pass not run; tool glyphs, the pixel arrow and the ghost mark are visible in the crops). Fonts named with fallback stacks; licences not stated."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "The README lists what was captured (routes, widths, theme), how (vars probe, measured components, screenshots) and a What to distrust section covering theme, uuid names, anchor colour, measured component tokens and quantised shots."
+    },
+    "F15": {
+     "grade": "meets",
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 5.16:1 dark muted (dark.muted) on surface (dark.surface)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 58 of 58 tokens name their source"
+    },
+    "K2": {
+     "grade": "partly",
+     "evidence": "Script: 8 rules, 6 linking an image (needs 3+, all linked)"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    },
+    "C5": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    }
+   },
+   "name": "Bezi",
+   "goodFor": "AI game-dev tooling marketing: a #0d0d0d starfield ground, a floating translucent 144px-radius pill header, one #f84503 orange CTA recipe, corner-tick index chips, pastel accents and the Framer --token-* palette",
+   "url": "https://www.bezi.com",
+   "captured": "2026-11-11",
+   "themes": [
+    "dark"
+   ],
+   "platform": "web",
+   "category": "AI agents",
+   "reviewed": "2026-11-11",
+   "reviewedPlatform": "web"
+  },
+  {
    "slug": "biosites",
    "grades": {
     "F1": {
