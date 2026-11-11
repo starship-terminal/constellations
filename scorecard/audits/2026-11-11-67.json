@@ -1,7 +1,7 @@
 {
  "date": "2026-11-11",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Read tokens.json, raw/components-computed.json, raw/css-vars.json, components.md, patterns.md and screenshots; graded each criterion against scorecard/criteria.json",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): review of PR 481 Greptile fixes; F13 re-evidenced against cursor-badge reduced-motion comparison",
  "systems": [
   {
    "slug": "brilliant",
@@ -10181,107 +10181,91 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "b150",
+   "slug": "butter",
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "The measured palette is a small warm set (cream #fffdf6 ink, near-black #000 surface, white #fff pill, #f2efe9/#e6e3dd hovers, #1f1915 on-accent) — no declared ramps exist because the site declares no design-token custom properties (Tailwind --tw-* internals only)."
+     "evidence": "A declared --butter-* palette plus measured greys: neutrals ink #0f0f0f, soft-ink #1e1e1e, paper, paper-warm #fafafa, off-white #f7f7f7, grey #ededed, grey-2 #e2e2e2, faint/hairline translucents, charcoal #3c3c3c; brand cyan #4dc5e5, green #63ad45, pink #f9abff, red #ff3333, yellow #e9d352; app-shell canvas #0a0909, card #151515, border #212121, raised #1d1d1d, active #252525, text #f5f5f5, muted #a1a1aa. Roles, not 10-step ramps; the site declares flat tokens, no per-hue steps exist to tokenise."
     },
     "F2": {
      "grade": "partly",
-     "evidence": "surface.page #000 verified on the footer and the dark home chrome; warm-cream inner surfaces appear in screenshots but no raised, overlay or scrim role was measured — no modal or scrim appeared."
+     "evidence": "light: surface.page (white), surface.grey (#ededed footer/plan cards/island), surface.chip (#fafafa); dark: surface.page #0a0909, surface.card #151515, surface.raised #1d1d1d, surface.active #252525. No overlay/scrim roles measured — the nav dropdown is a grey panel, not an overlay."
     },
     "F3": {
      "grade": "partly",
-     "evidence": "text.primary #fffdf6 verified on nav/footer/hero and text.inverse #1f1915 on the pills; no secondary/disabled/link role measured — link text is text.primary."
+     "evidence": "light: text.primary ink, text.secondary #1e1e1e, text.muted rgba(15,15,15,.5), text.on-dark #ebebeb; dark: text.primary #f5f5f5, text.muted #a1a1aa, text.on-action #0a0909. No disabled or link-specific roles measured."
     },
     "F4": {
      "grade": "partly",
-     "evidence": "No border-role tokens: borders live in Tailwind utilities on components; the focus ring is the browser #005fcc outline measured on nav-item/footer-link focus-visible."
+     "evidence": "border.field rgba(15,15,15,.15) hairline (feature rows, dropdown), dark border.card #212121, focus.ring #3c3c3c and the 3px #4dc5e5 CTA focus outline tokenised; no strong/default distinction exists on this surface."
     },
     "F5": {
      "grade": "partly",
-     "evidence": "action.primary #fffdf6 verified on hero-cta, action.hover #e6e3dd measured on its hover; pressed is a state capture, not a separate accent ramp."
+     "evidence": "The dark shell's controls transition background/opacity at 0.16s and cards scale ~0.98 on hover (measured rect diff). Marketing buttons keep the same fill across hover/pressed (the cyan layer is the interaction surface); pressed reads same-as-default via CDP."
     },
     "F6": {
      "grade": "missing",
-     "evidence": "No status fill, text or border was measured on any component; no alert, badge or toast exists on the captured public surface."
+     "evidence": "No success/warning/danger/info roles paint on the public surface (the declared red/green/yellow accents are artwork tokens, not status roles)."
     },
     "F7": {
-     "grade": "missing",
-     "evidence": "One painted theme only: a .dark probe resolves every custom property identically; tokens.json ships no dark set."
+     "grade": "partly",
+     "evidence": "Both painted surfaces are tokenised: 19 light roles + 9 dark roles. Dark is a separate public surface (the app shell), not a toggle, so parity is partial by construction — e.g. dark lacks an accent role because the shell paints monochrome."
     },
     "F8": {
      "grade": "partly",
-     "evidence": "Two families measured — Fragment Mono (nav/button/footer labels at 10px) and Geist Variable (body, 120px display titles) — with measured sizes 10-120px and weights 400/500; no declared type scale, line-height tokens or named text roles."
+     "evidence": "Three stacks with fallbacks (DieGrotesk, ABCDiatype, dieGroteskA + system fallbacks) and a measured ramp: 107.57 display / 60.4 h2+price / 56.73 mobile display / 24.48 lede / 20.75 subtitle / 18 body / 16 nav / 13.49 meta / 24,14,12 app-shell steps + lineHeight tokens. All measured weight 400; no code/weight roles exist on the surface."
     },
     "F9": {
-     "grade": "missing",
-     "evidence": "No spacing scale is declared; layout spacing is composed in Tailwind utilities per component — only component box sizes are recorded."
+     "grade": "partly",
+     "evidence": "No spacing scale is declared or measurable as tokens (styled-components compile it away); per-component paddings live in components.md."
     },
     "F10": {
-     "grade": "partly",
-     "evidence": "core.radius.*: fields/cards 8px, pills and CTAs calc(infinity * 1px) recorded as 3.35544e+07px — radius is a role (pill vs field), not a scale; border widths stay utility values."
+     "grade": "meets",
+     "evidence": "core.radius: 5px menu, 10px control, 12px nav-pill/badge, 16px button pill, 32px card, 42px tile — all measured on painted layers or borders; 1px hairlines on both surfaces tokenised."
     },
     "F11": {
      "grade": "partly",
-     "evidence": "Measured control heights: SIGN UP 40px, JOIN THE BETA 41px, contact fields 56px, header 65px desktop and mobile; no icon-size or focus-offset tokens."
+     "evidence": "component.control.height 50, button.height 39, plan-cta.height 70, navlink.height 39, sidebar.width 283, header.height 88/76.2 mobile; focus ring measured as 1px shadow + 3px offset cyan outline. No icon-size set."
     },
     "F12": {
-     "grade": "missing",
-     "evidence": "No shadow on any measured component — the site is flat; depth comes from surface tone and opacity."
+     "grade": "partly",
+     "evidence": "Nothing on the public surface paints a drop shadow — the only shadow is the focus ring itself (0/0/0/1 #3c3c3c). No 3-5 level scale exists to tokenise."
     },
     "F13": {
-     "grade": "partly",
-     "evidence": "Measured transitions per component (raw/components-computed.json style.transition* and _meta.sheets); Tailwind default durations/easings, no named motion vars; reduced-motion behaviour not probed."
+     "grade": "meets",
+     "evidence": "Declared --butter-ease-out/--butter-ease-in-out tokenised; measured 0.16s shell controls, 0.5s marketing fades. Reduced-motion comparison now targets a moving component, not the static header: the cursor badge (0.2s opacity/transform at no-preference) is re-read under prefers-reduced-motion: reduce and keeps the same 0.2s transition — the site does not reduce motion for it, recorded in raw/components-computed.json _meta.reducedMotion.home."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Component boxes measured in component.*; the 1440/390 split is evidenced by the mobile group; no breakpoint/grid token set exists on a Tailwind site."
+     "evidence": "Component geometry and chrome heights measured at 1440 and 390; breakpoints/z-layers are not tokenised."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "~30 components across shell, home, vibeathon, talent, resources, about, contact, footer and mobile: buttons, links, fields, menu, cards, nav. No select/checkbox/radio/switch/tabs/tooltip/dialog/toast/table/avatar/badge on the public signed-out surface."
+     "evidence": "~9 of 19: button (hero/nav/plan CTAs, d-login/d-signup/d-create), link (nav/menu/footer/mobile), tabs (billing toggle, MCP agent tabs), menu (nav dropdown + mobile menu), card (plan/feature/block), list row (feature-row, menu rows), accordion (faq-item), badge (cursor-badge). No text field/select/checkbox/radio/switch/tooltip/dialog/toast/table/avatar on the public surface."
     },
     "C2": {
      "grade": "partly",
-     "evidence": "default/hover/focus-visible/pressed on every interactive component (pressed via CDP); opened on the mobile menu. No disabled/error/loading state surfaced; the contact form was never submitted."
+     "evidence": "default/hover/focus-visible/pressed on every interactive entry (83 states over 36 components); opened states on the dropdown and mobile menu; selected on the billing toggle in screenshots. No disabled/loading/error exist on the surface."
     },
     "C3": {
-     "grade": "partly",
-     "evidence": "focus-visible measured on nav, login, signup, CTAs, contact fields, footer links and the mobile menu button (browser #005fcc ring)."
+     "grade": "meets",
+     "evidence": "A real keyboard focus is captured on 15 entries: nav-cta/hero-cta/plan-cta draw the 3px #4dc5e5 outline offset 3px on their inner layer, d-card a 1px #99c8ff auto outline; nav-link/nav-trigger/menu-link/billing-toggle/footer-link/social-icon/m-nav-item draw the 1px #3c3c3c shadow ring; the 4 dark-shell controls show no measured change (recorded)."
     },
     "C4": {
      "grade": "partly",
-     "evidence": "Component entries reference token names where colours match tokens.json; the tokens themselves are measured values — there is no declared token layer to cite."
+     "evidence": "Entries cite tokens where they exist (ink, grey, blue, app.card, focus-ring); the dark shell and painted-layer values are measured with provenance."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "patterns.md documents chrome, hero, cards per surface, the contact form, footer and mobile menu; no forms/validation, destructive-confirmation or feedback patterns on the public surface."
+     "evidence": "Six written patterns: header island, hero, pricing, dark shell galleries, footer, mobile. Forms/validation, destructive confirmation, feedback and onboarding do not exist on the signed-out surface."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "icon.png resized from the site's apple-touch-icon; Fragment Mono and Geist Variable named — loaded via Next.js font optimization, licence not stated on site; no standalone icons/ set lifted."
+     "evidence": "DieGrotesk, ABCDiatype and dieGroteskA named with CDN provenance and fallbacks; no icon index — extraction pass not run, glyphs visible in crops."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README documents what was captured, how (vars/measure/screenshots pipeline), what to distrust (measured-only tokens, the infinite radius, the app.b150.ai 429 boundary) and coverage."
-    },
-    "F15": {
-     "grade": "missing",
-     "evidence": "Script: primary text fails 1 pair; worst 1.00:1 light text (light.text.primary) on surface (light.text.primary)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 33 of 33 tokens name their source"
-    },
-    "K2": {
-     "grade": "partly",
-     "evidence": "Script: 8 rules, 6 linking an image (needs 3+, all linked)"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
+     "evidence": "README names every captured route and state, the usebutter.com redirect, the capture method and tooling, the what-to-distrust list and the signed-in boundary."
     },
     "C5": {
      "grade": "na",
@@ -10294,14 +10278,31 @@
     "V2": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "F15": {
+     "grade": "partly",
+     "evidence": "Script: primary text passes; secondary fails 2 pairs, worst 3.46:1 light muted (core.color.neutral.faint) on surface (core.color.neutral.grey)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 86 of 86 tokens name their source"
+    },
+    "K2": {
+     "grade": "partly",
+     "evidence": "Script: 8 rules, 6 linking an image (needs 3+, all linked)"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "B150",
-   "goodFor": "Gen-AI builders' network marketing site: Tailwind v4 utility styles with measured-only tokens, ink-on-paper palette, pill CTAs (SIGN UP / JOIN THE BETA), uppercase tracked .label nav, marketing sections for Vibeathon, Talent, Free Resources and a contact form",
-   "url": "https://b150.ai",
+   "name": "Butter",
+   "goodFor": "Video-editor product marketing with a restrained greyscale system: a declared --butter-* token layer, a floating #ededed header island, dark #1e1e1e pill buttons hiding a #4dc5e5 cyan accent layer, a 107px DieGrotesk display, 32px #ededed pricing cards, and a dark-only MUI app shell (#0a0909 canvas, #151515 cards, #f5f5f5 inverted buttons) that is public on /explore, /blocks and /templates",
+   "url": "https://www.butter.video",
    "captured": "2026-11-11",
    "themes": [
-    "light"
+    "light",
+    "dark"
    ],
    "platform": "web",
    "category": "Media",
@@ -10310,5 +10311,5 @@
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Read tokens.json, raw/components-computed.json, raw/css-vars.json, components.md, patterns.md and screenshots; graded each criterion against scorecard/criteria.json"
+ "reviewMethod": "review of PR 481 Greptile fixes; F13 re-evidenced against cursor-badge reduced-motion comparison"
 }

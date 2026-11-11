@@ -1,7 +1,7 @@
 {
  "date": "2026-11-11",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Post-Greptile re-review of the busuu capture: re-measured mislabeled selectors (logo, hero-cta, hero-sub, nav-link, m-nav-item, m-menu-button/open), fixed the token builder to read painted/ancestor fills instead of transparent wrappers, added textDecoration and focus-failure reporting, and downgraded C3 because three interactive components cannot hold a real keyboard focus.",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Read the capture's raw/css-vars.json, components-computed.json, measurements.md and components.md, the README coverage table and the boundary notes; graded each criterion against the web wording in scorecard/criteria.json.",
  "systems": [
   {
    "slug": "brilliant",
@@ -9922,136 +9922,8 @@
    "category": "Productivity",
    "reviewed": "2026-11-11",
    "reviewedPlatform": "web"
-  },
-  {
-   "slug": "busuu",
-   "grades": {
-    "F1": {
-     "grade": "partly",
-     "evidence": "A small measured palette: neutrals ink #252b2f, muted #666e7e, hairline #d6dee6, paper white; brand green #11ee92/#41f1a8, action blue #116eee, premium purple #5438dc, indigo #221658, footer mist #f2f7fd. Roles, not 10-step ramps; the site compiles Sass + styled-components, no per-hue steps exist to tokenise."
-    },
-    "F2": {
-     "grade": "partly",
-     "evidence": "surface.page (white), surface.mist (pale-blue footer) and surface.inverse (indigo upsell) mapped in light.*; no raised/overlay/scrim roles — the kebab dropdown is a white panel over the hero."
-    },
-    "F3": {
-     "grade": "partly",
-     "evidence": "text.primary (ink), text.muted and text.accent (action blue) roles exist; no secondary/disabled/on-accent text roles were measured on this surface."
-    },
-    "F4": {
-     "grade": "partly",
-     "evidence": "border.field #d6dee6 (footer select hairline), border.hover #116eee (card hover), the 1px #005fcc focus ring tokenised; no strong/default border role."
-    },
-    "F5": {
-     "grade": "partly",
-     "evidence": "green #11ee92 -> #41f1a8 hover measured on the CTAs; card hover takes a #116eee border + #f3f8fe label fill. Pressed reads the same as default on this surface (forced via CDP)."
-    },
-    "F6": {
-     "grade": "missing",
-     "evidence": "No success/warning/danger/info roles exist on the public surface."
-    },
-    "F7": {
-     "grade": "meets",
-     "evidence": "One theme is painted; every emitted role exists for it and no second theme is offered to mismatch."
-    },
-    "F8": {
-     "grade": "partly",
-     "evidence": "Two stacks (Nista marketing, NistaFonts app-shell) with fallback stacks and a measured ramp: 48 display / 40 hero+title / 32 subtitle / 30 mobile display / 18 price / 16 body+cta / 14 nav+meta. Named size roles exist; weights/lineHeights are empty sets and there are no code/caption roles."
-    },
-    "F9": {
-     "grade": "partly",
-     "evidence": "No spacing scale declared as tokens; Sass spacing is compiled, per-component paddings live in components.md."
-    },
-    "F10": {
-     "grade": "meets",
-     "evidence": "radius.pill 45.04px, radius.button 26px, radius.card 16px, radius.panel 8px tokenised; border widths measured (1px hairline, 1px hover blue, 2px green CTA)."
-    },
-    "F11": {
-     "grade": "partly",
-     "evidence": "component.control.height 48, button.height 48, option.height 147, header.height 40, card.radius and control.radius tokenised; the 1px focus ring measured with offset. No icon-size set."
-    },
-    "F12": {
-     "grade": "partly",
-     "evidence": "core.shadow.cta (the green pill's rgba(0,0,0,.3) 0/2/4) is the only measurable shadow; cards and the header paint without shadow, so no 3-5 level scale exists on this surface."
-    },
-    "F13": {
-     "grade": "partly",
-     "evidence": "Measured transitions (0.15s card background-color, 0.2s CTA all) in core.measured; no named ease tokens and no reduced-motion variant tokenised."
-    },
-    "F14": {
-     "grade": "partly",
-     "evidence": "Component geometry and chrome heights measured at 1440 and 390; breakpoints/z-layers are not tokenised."
-    },
-    "C1": {
-     "grade": "partly",
-     "evidence": "~10 of 19: button (green CTAs, Get Premium), icon button (kebab), link (nav login button, footer, mobile menu items), select (footer Display Language), tab (billing toggle), menu (kebab dropdown, captured open on desktop+mobile), card (flag/language/plan), list row (footer columns, mobile menu rows), text field (login Email/Password, in screenshots). No text area/checkbox/radio/switch/tooltip/dialog/toast/table/avatar on the public surface."
-    },
-    "C2": {
-     "grade": "partly",
-     "evidence": "default/hover/pressed on every interactive entry; focus-visible captured on 9 of 12 (nav-dropdown, period-toggle and language-item could not hold a real keyboard focus and are recorded as uncaptured); selected reads on the billing toggle in screenshots. No disabled/loading/error states exist on the surface."
-    },
-    "C3": {
-     "grade": "partly",
-     "evidence": "A real keyboard focus is captured on 9 interactive entries: flag-card, plan-cta, footer-link and m-nav-item draw the 1px #005fcc ring (m-nav-item #e59700); cta-signup and hero-cta change only their border; course-cta, social-icon and nav-link show no measured change. nav-dropdown, period-toggle and language-item could not hold a real keyboard focus, so their focus look is uncaptured and recorded as such."
-    },
-    "C4": {
-     "grade": "partly",
-     "evidence": "Entries cite tokens where they exist (ink, green, blue, mist, pill, focus ring); the compiled-styles stack means much of the spec is measured values with provenance."
-    },
-    "P1": {
-     "grade": "partly",
-     "evidence": "Eight written patterns: two shells, gradient hero, language picker, premium upsell, course page, login, footers, mobile. Forms/validation, destructive confirmation, feedback and onboarding past step 1 do not exist on the signed-out surface."
-    },
-    "A1": {
-     "grade": "partly",
-     "evidence": "Nista and NistaFonts named with CDN provenance and fallbacks; no icon index — extraction pass not run, glyphs visible in crops."
-    },
-    "K1": {
-     "grade": "meets",
-     "evidence": "README covers scope, capture method, the app.busuu.com login boundary and a What to distrust section."
-    },
-    "F15": {
-     "grade": "meets",
-     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 4.75:1 light muted (core.color.neutral.muted) on surface (core.color.brand.mist)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 48 of 48 tokens name their source"
-    },
-    "K2": {
-     "grade": "partly",
-     "evidence": "Script: 8 rules, 6 linking an image (needs 3+, all linked)"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
-    },
-    "C5": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V1": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V2": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    }
-   },
-   "name": "Busuu",
-   "goodFor": "Language-learning marketing and signup flow: a purple #6e00f8-to-#116eee gradient hero under a simplified header, one green #11ee92 Learn-for-free pill, the #116eee action blue riding on text and 1px borders, 16px flag cards, an indigo #221658 paywall surface with #5438dc pill CTAs, and two served faces (Nista on marketing, NistaFonts on the app-shell pages)",
-   "url": "https://www.busuu.com",
-   "captured": "2026-11-11",
-   "themes": [
-    "light"
-   ],
-   "platform": "web",
-   "category": "Learning",
-   "reviewed": "2026-11-11",
-   "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Post-Greptile re-review of the busuu capture: re-measured mislabeled selectors (logo, hero-cta, hero-sub, nav-link, m-nav-item, m-menu-button/open), fixed the token builder to read painted/ancestor fills instead of transparent wrappers, added textDecoration and focus-failure reporting, and downgraded C3 because three interactive components cannot hold a real keyboard focus."
+ "reviewMethod": "Read the capture's raw/css-vars.json, components-computed.json, measurements.md and components.md, the README coverage table and the boundary notes; graded each criterion against the web wording in scorecard/criteria.json."
 }

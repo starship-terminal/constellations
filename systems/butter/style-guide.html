@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Butter style guide</title>
+<meta name="description" content="Butter design tokens and the public marketing plus signed-out app-shell surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-marketing: 'DieGrotesk','DieGrotesk Fallback';
+  --font-family-meta: 'ABCDiatype','ABCDiatype Fallback';
+  --font-family-app: dieGroteskA, "dieGroteskA Fallback", system-ui, sans-serif;
+  --font-family-body: DieGrotesk, "DieGrotesk Fallback";
+  --font-size-display: 107.568px;
+  --font-size-h2: 60.4px;
+  --font-size-price: 60.4px;
+  --font-size-display-mobile: 56.7263px;
+  --font-size-lede: 24.4842px;
+  --font-size-subtitle: 20.7474px;
+  --font-size-body: 18px;
+  --font-size-nav: 16px;
+  --font-size-meta: 13.4947px;
+  --font-size-app-section: 24px;
+  --font-size-app-nav: 14px;
+  --font-size-app-meta: 12px;
+  --font-lineHeight-display: 106.708px;
+  --font-lineHeight-h2: 58.588px;
+  --font-lineHeight-nav: 20px;
+  --color-neutral-ink: #0f0f0f;
+  --color-neutral-soft-ink: #1e1e1e;
+  --color-neutral-paper-warm: #fafafa;
+  --color-neutral-off-white: #f7f7f7;
+  --color-neutral-grey: #ededed;
+  --color-neutral-grey-2: #e2e2e2;
+  --color-neutral-charcoal: #3c3c3c;
+  --color-neutral-hairline: rgba(15, 15, 15, 0.15);
+  --color-neutral-faint: rgba(15, 15, 15, 0.5);
+  --color-neutral-paper: #ffffff;
+  --color-brand-blue: #4dc5e5;
+  --color-brand-green: #63ad45;
+  --color-brand-pink: #f9abff;
+  --color-brand-red: #ff3333;
+  --color-brand-yellow: #e9d352;
+  --color-app-canvas: #0a0909;
+  --color-app-text: #f5f5f5;
+  --color-app-muted: #a1a1aa;
+  --color-app-card: #151515;
+  --color-app-card-border: #212121;
+  --color-app-raised: #1d1d1d;
+  --color-app-active: #252525;
+  --color-app-action-ink: #0a0909;
+  --radius-menu: 5px;
+  --radius-nav-pill: 12px;
+  --radius-control: 10px;
+  --radius-button: 16px;
+  --radius-card: 32px;
+  --radius-tile: 42px;
+  --easing-out: cubic-bezier(0.2, 0.715, 0.205, 0.99);
+  --easing-in-out: cubic-bezier(0.835, 0.12, 0.225, 0.77);
+  --measured-focus-ring: 0px 0px 0px 1px #3c3c3c;
+  --measured-card-border: #212121;
+  --measured-focus-outline: #4dc5e5;
+  --measured-control-transition: 160ms;
+  --measured-tile-transition: 160ms;
+  --measured-fade-transition: 500ms;
+  --measured-toggle-transition: 500ms;
+  --measured-card-hover-scale: 0.98;
+  --text-primary: var(--color-neutral-ink);
+  --text-secondary: var(--color-neutral-soft-ink);
+  --text-muted: var(--color-neutral-faint);
+  --text-on-dark: #ebebeb;
+  --surface-page: var(--color-neutral-paper);
+  --surface-grey: var(--color-neutral-grey);
+  --surface-chip: var(--color-neutral-paper-warm);
+  --action-primary: var(--color-neutral-soft-ink);
+  --action-accent: var(--color-brand-blue);
+  --border-field: var(--color-neutral-hairline);
+  --focus-ring: var(--color-neutral-charcoal);
+  --component-control-height: 50px;
+  --component-button-height: 39px;
+  --component-plan-cta-height: 70px;
+  --component-card-radius: 32px;
+  --component-navlink-height: 39px;
+  --component-sidebar-width: 283px;
+  --component-header-height: 88px;
+  --component-header-height-mobile: 76.2031px;
+  --sg-sans: DieGrotesk, dieGroteskA, ABCDiatype, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: DieGrotesk, dieGroteskA, ABCDiatype, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --text-primary: var(--color-app-text);
+  --text-muted: var(--color-app-muted);
+  --text-on-action: var(--color-app-action-ink);
+  --surface-page: var(--color-app-canvas);
+  --surface-card: var(--color-app-card);
+  --surface-raised: var(--color-app-raised);
+  --surface-active: var(--color-app-active);
+  --border-card: var(--color-app-card-border);
+  --action-primary: var(--color-app-text);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); background: var(--color-neutral-paper, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, #ddd); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #000); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, #ddd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, #ddd); overflow: hidden; background: var(--color-neutral-paper, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: 64px; padding: 0 12px 0 22px; font-size: 15px; background: var(--color-neutral-grey, #ededed); border-radius: var(--radius-button, 16px); }
+.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 50px); padding: 0 24px; font-size: 16px; font-weight: 400; border-radius: var(--radius-button, 16px); border: 1px solid transparent; }
+.btn.primary { background: var(--color-neutral-soft-ink, #1e1e1e); color: var(--text-on-dark, #ebebeb); }
+.btn.small { height: var(--component-button-height, 39px); border-radius: var(--radius-control, 10px); font-size: 15px; }
+.hero { color: var(--color-neutral-ink, #0f0f0f); padding: 72px 40px; font: 400 60px/1 var(--sg-serif); letter-spacing: .01em; text-align: center; }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); margin: 16px auto 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 14px; font-size: 13px; background: #fff; }
+.tile .img { height: 140px; background: #ddd; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: var(--color-neutral-grey, #ededed); border-radius: 999px; padding: 4px; gap: 4px; font-size: 15px; }
+.toggle span { padding: 8px 22px; border-radius: 999px; }
+.toggle .on { background: var(--color-neutral-soft-ink, #1e1e1e); color: var(--text-on-dark, #ebebeb); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Butter style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Butter, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared <code>--butter-*</code> palette (near-black #0f0f0f ink, #1e1e1e buttons and nav text, the #ededed grey fields, the #4dc5e5 cyan accent layer and the four bright accents), the DieGrotesk type ramp from the 107px display to the 13.5px meta, the 16px button pills and 10-42px card radii, and the dark app shell's measured #0a0909/#151515/#f5f5f5 roles. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from butter.video on 2026-11-11, signed out, in headless Chromium — reached via usebutter.com, which redirects to www.butter.video. The editor behind /login is a documented boundary; the /explore, /blocks and /templates galleries are public and paint the dark shell. DieGrotesk, ABCDiatype and dieGroteskA are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A floating light-grey island carries the wordmark, the Co-Create and Product dropdowns, plain links, Login and the dark Try-for-free pill. The same dark fill draws the hero's Get-Started pill; a cyan layer inside each button is the accent that surfaces on interaction. The light-grey footer closes every marketing page.</p>
+  <div class="mock" style="padding:20px">
+    <div class="navbar"><span class="wm">Butter</span><span>Co-Create</span><span>Product</span><span>Blocks</span><span>Templates</span><span>Pricing</span><span class="sp"></span><span>Login</span><span class="btn small primary">Try for free</span></div>
+    <div class="hero">Engineered for Creativity<small>Butter, the first video editor you can build on.</small><span class="btn primary">Get Started</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing centres a Monthly/Annually pill toggle above four light-grey plan cards; each card's name chip paints #fafafa and its Choose action is the dark 16px pill. A "Save 28%" tag sits by the toggle.</p>
+  <div class="mock" style="padding:20px">
+    <div style="text-align:center;margin-bottom:18px"><span class="toggle"><span>Monthly</span><span class="on">Annually</span></span> <span class="note" style="display:inline-block;background:var(--color-neutral-grey,#ededed);border-radius:8px;padding:4px 10px">Save 28%</span></div>
+    <div class="grid">
+      <div class="tile" style="border-radius:var(--radius-card,32px);background:var(--color-neutral-grey,#ededed);border:none;color:var(--color-neutral-ink,#0f0f0f)"><b>Free</b><span class="sub">Start making videos</span></div>
+      <div class="tile" style="border-radius:var(--radius-card,32px);background:var(--color-neutral-grey,#ededed);border:none;color:var(--color-neutral-ink,#0f0f0f)"><b>Pro</b><span class="sub">$18/month annually</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn primary">Choose Pro</span></div>
+  </div>
+
+  <h2 class="sh">The app shell</h2>
+  <p class="lead">/explore, /blocks and /templates paint a dark-only MUI shell signed out: a #0a0909 canvas, #151515 cards on #212121 hairlines, a #252525 active nav pill, and inverted #f5f5f5 buttons with #0a0909 labels.</p>
+  <div class="mock" style="padding:20px;background:var(--color-app-canvas,#0a0909);color:var(--color-app-text,#f5f5f5)">
+    <div class="grid">
+      <div class="tile" style="border-radius:var(--radius-card,32px);background:var(--color-app-card,#151515);border:1px solid var(--color-app-card-border,#212121);color:var(--color-app-text,#f5f5f5)"><b style="color:var(--color-app-text,#f5f5f5)">Meet Butter 2.0</b><span class="sub" style="color:var(--color-app-muted,#a1a1aa)">Our biggest release yet</span></div>
+      <div class="tile" style="border-radius:var(--radius-tile,42px);background:var(--color-app-card,#151515);border:none;color:var(--color-app-text,#f5f5f5)"><b style="color:var(--color-app-text,#f5f5f5)">Text Particles</b><span class="sub" style="color:var(--color-app-muted,#a1a1aa)">Butter Studio</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn" style="height:38px;border-radius:var(--radius-control,10px);background:var(--color-app-text,#f5f5f5);color:var(--color-app-action-ink,#0a0909);padding:0 18px;font-size:14px">Sign up</span> <span class="btn" style="height:38px;border-radius:var(--radius-control,10px);background:var(--color-app-raised,#1d1d1d);color:var(--color-app-text,#f5f5f5);padding:0 18px;font-size:14px">Log in</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared <code>--butter-*</code> layer carries the neutrals and the five accents; the measured <code>color.app.*</code> readings carry the dark shell. Light roles alias the palette, dark roles the app readings.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Buttons are 16px pills on marketing and 10px controls in the shell; nav items and badges sit on 12px, cards on 32px and the dark tiles on 42px. Borders are hairlines: 15%-black on light, #212121 on dark.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three served faces: <code>DieGrotesk</code> on the marketing pages, <code>ABCDiatype</code> on meta and label text, <code>dieGroteskA</code> in the dark app shell. Sizes are the measured steps; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --butter-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"marketing":{"v":"'DieGrotesk','DieGrotesk Fallback'","t":"fontFamily","s":"css-var --butter-font-primary (light)","d":"The marketing stack (DieGrotesk first), declared on butter.video."},"meta":{"v":"'ABCDiatype','ABCDiatype Fallback'","t":"fontFamily","s":"css-var --butter-font-secondary (light)","d":"The ABCDiatype stack used for meta/label text on the marketing pages."},"app":{"v":"dieGroteskA, \"dieGroteskA Fallback\", system-ui, sans-serif","t":"fontFamily","s":"computed fontFamily of d-sidebar default (raw/components-computed.json)","d":"The dark app-shell stack (dieGroteskA first)."},"body":{"v":"DieGrotesk, \"DieGrotesk Fallback\"","t":"fontFamily","s":"computed fontFamily of hero-sub default (raw/components-computed.json)","d":"Body/lede text (DieGrotesk first)."}},"size":{"display":{"v":"107.568px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The marketing display size (Engineered for Creativity)."},"h2":{"v":"60.4px","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"The marketing section-heading size."},"price":{"v":"60.4px","t":"dimension","s":"computed fontSize of plan-price default (raw/components-computed.json)","d":"The plan-card price figure."},"display-mobile":{"v":"56.7263px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The display size at 390px."},"lede":{"v":"24.4842px","t":"dimension","s":"computed fontSize of hero-sub default (raw/components-computed.json)","d":"The hero sub-copy / FAQ-question size."},"subtitle":{"v":"20.7474px","t":"dimension","s":"computed fontSize of footer-link default (raw/components-computed.json)","d":"Footer-link and billing-toggle text."},"body":{"v":"18px","t":"dimension","s":"computed fontSize of header default (raw/components-computed.json)","d":"The page base size."},"nav":{"v":"16px","t":"dimension","s":"computed fontSize of nav-link default (raw/components-computed.json)","d":"Nav link / button label size."},"meta":{"v":"13.4947px","t":"dimension","s":"computed fontSize of footer default (raw/components-computed.json)","d":"The ABCDiatype meta size."},"app-section":{"v":"24px","t":"dimension","s":"computed fontSize of d-section default (raw/components-computed.json)","d":"The dark shell's section heading."},"app-nav":{"v":"14px","t":"dimension","s":"computed fontSize of d-nav-link default (raw/components-computed.json)","d":"The dark shell's nav/button text."},"app-meta":{"v":"12px","t":"dimension","s":"computed fontSize of d-sidebar default (raw/components-computed.json)","d":"The dark shell's smallest label size."}},"lineHeight":{"display":{"v":"106.708px","t":"dimension","s":"computed lineHeight of hero-title default (raw/components-computed.json)","d":"Tight display leading (0.99x)."},"h2":{"v":"58.588px","t":"dimension","s":"computed lineHeight of section-h2 default (raw/components-computed.json)","d":"Tight heading leading."},"nav":{"v":"20px","t":"dimension","s":"computed lineHeight of nav-link default (raw/components-computed.json)","d":"Nav link leading."}}},"color":{"neutral":{"ink":{"v":"#0f0f0f","t":"color","s":"css-var --butter-true-black (light)","d":"The near-black ink #0f0f0f on hero and heading text."},"soft-ink":{"v":"#1e1e1e","t":"color","s":"css-var --butter-black (light)","d":"The softer black #1e1e1e on nav text, logos and the dark button fills."},"paper-warm":{"v":"#fafafa","t":"color","s":"css-var --butter-white (light)","d":"The declared white #fafafa on plan-card name chips."},"off-white":{"v":"#f7f7f7","t":"color","s":"css-var --butter-off-white (light)","d":"The declared off-white #f7f7f7."},"grey":{"v":"#ededed","t":"color","s":"css-var --butter-light-grey (light)","d":"The light grey #ededed footer, plan-card and dropdown-pill field."},"grey-2":{"v":"#e2e2e2","t":"color","s":"css-var --butter-dark-grey (light)","d":"The darker declared grey #e2e2e2."},"charcoal":{"v":"#3c3c3c","t":"color","s":"css-var --butter-charcoal (light)","d":"The charcoal #3c3c3c the 1px focus ring is drawn in."},"hairline":{"v":"rgba(15, 15, 15, 0.15)","t":"color","s":"computed borderTopColor of feature-row (raw/components-computed.json)","d":"The rgba(15,15,15,0.15) hairline under feature rows and the nav dropdown."},"faint":{"v":"rgba(15, 15, 15, 0.5)","t":"color","s":"computed textStyle color of footer default (raw/components-computed.json)","d":"The 50% black used for muted marketing text (footer secondary line)."},"paper":{"v":"#ffffff","t":"color","s":"body backgroundColor computes transparent; the marketing canvas paints white (verified against the screenshots)","d":"The white marketing page field."}},"brand":{"blue":{"v":"#4dc5e5","t":"color","s":"css-var --butter-blue (light)","d":"The cyan #4dc5e5 painted inside the buttons as the accent layer."},"green":{"v":"#63ad45","t":"color","s":"css-var --butter-green (light)","d":"The declared accent green #63ad45."},"pink":{"v":"#f9abff","t":"color","s":"css-var --butter-pink (light)","d":"The declared accent pink #f9abff."},"red":{"v":"#ff3333","t":"color","s":"css-var --butter-red (light)","d":"The declared accent red #ff3333."},"yellow":{"v":"#e9d352","t":"color","s":"css-var --butter-yellow (light)","d":"The declared accent yellow #e9d352."}},"app":{"canvas":{"v":"#0a0909","t":"color","s":"computed paint of d-sidebar default (raw/components-computed.json)","d":"The near-black #0a0909 app-shell canvas."},"text":{"v":"#f5f5f5","t":"color","s":"computed color of d-sidebar default (raw/components-computed.json)","d":"The #f5f5f5 app-shell text."},"muted":{"v":"#a1a1aa","t":"color","s":"computed textStyle-color of d-sidebar default (raw/components-computed.json)","d":"The #a1a1aa muted app-shell text."},"card":{"v":"#151515","t":"color","s":"computed backgroundColor of d-card default (raw/components-computed.json)","d":"The #151515 card fill."},"card-border":{"v":"#212121","t":"color","s":"computed borderTopColor of d-card default (raw/components-computed.json)","d":"The #212121 card border."},"raised":{"v":"#1d1d1d","t":"color","s":"computed backgroundColor of d-login default (raw/components-computed.json)","d":"The #1d1d1d raised button fill."},"active":{"v":"#252525","t":"color","s":"computed paint of d-nav-link default (raw/components-computed.json)","d":"The #252525 active nav-item pill."},"action-ink":{"v":"#0a0909","t":"color","s":"computed color of d-signup default (raw/components-computed.json)","d":"The #0a0909 text on the inverted light buttons."}}},"radius":{"menu":{"v":"5px","t":"dimension","s":"computed borderTopLeftRadius of m-menu-button default (raw/components-computed.json)","d":"The 5px menu-button radius."},"nav-pill":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of d-nav-link default (raw/components-computed.json)","d":"The 12px dark nav-item pill and cursor badge."},"control":{"v":"10px","t":"dimension","s":"computed borderTopLeftRadius of d-login default (raw/components-computed.json)","d":"The 10px dark control radius (also the header CTA's painted layer)."},"button":{"v":"16px","t":"dimension","s":"painted layer radius under hero-cta default (raw/components-computed.json)","d":"The 16px pill the button paint draws."},"card":{"v":"32px","t":"dimension","s":"computed borderTopLeftRadius of d-card default (raw/components-computed.json)","d":"The 32px card radius (plan cards and dark cards)."},"tile":{"v":"42px","t":"dimension","s":"computed borderTopLeftRadius of d-block-card default (raw/components-computed.json)","d":"The 42px dark tile radius."}},"easing":{"out":{"v":[0.2,0.715,0.205,0.99],"t":"cubicBezier","s":"css-var --butter-ease-out (light)","d":"The declared ease-out curve."},"in-out":{"v":[0.835,0.12,0.225,0.77],"t":"cubicBezier","s":"css-var --butter-ease-in-out (light)","d":"The declared ease-in-out curve."}},"measured":{"focus-ring":{"v":[{"color":"#3c3c3c","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px"}],"t":"shadow","s":"computed boxShadow of nav-cta focus-visible (raw/components-computed.json)","d":"The 1px #3c3c3c keyboard-focus ring every focused control draws as a zero-offset shadow."},"card-border":{"v":"#212121","t":"color","s":"computed borderTopColor of d-card default (raw/components-computed.json)","d":"The #212121 dark card border."},"focus-outline":{"v":"#4dc5e5","t":"color","s":"painted outline under hero-cta focus-visible (raw/components-computed.json)","d":"The 3px #4dc5e5 outline (offset 3px) a focused button's inner layer draws."},"control-transition":{"v":"160ms","t":"duration","s":"computed transition of d-login default (raw/components-computed.json)","d":"The dark shell controls' 0.16s transition. (opacity, background-color, border-color)"},"tile-transition":{"v":"160ms","t":"duration","s":"computed transition of d-block-card default (raw/components-computed.json)","d":"The dark tile's transform/background transition. (transform, background-color)"},"fade-transition":{"v":"500ms","t":"duration","s":"computed transition of nav-trigger default (raw/components-computed.json)","d":"The nav triggers' 0.5s opacity fade. (opacity)"},"toggle-transition":{"v":"500ms","t":"duration","s":"computed transition of billing-toggle default (raw/components-computed.json)","d":"The billing toggle's 0.5s colour/opacity change. (color, opacity)"},"card-hover-scale":{"v":0.98,"t":"number","s":"hover rect / default rect of d-card (raw/components-computed.json)","d":"The ~0.98 scale a dark card takes on hover."}}},"light":{"text":{"primary":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the core palette","d":"Body and heading ink."},"secondary":{"v":"{color.neutral.soft-ink}","t":"color","s":"role alias over the core palette","d":"Nav text and the dark button fills."},"muted":{"v":"{color.neutral.faint}","t":"color","s":"role alias over the core palette","d":"Muted marketing text (50% black)."},"on":{"dark":{"v":"#ebebeb","t":"color","s":"css-var --butter-light (light)","d":"The #ebebeb label on the dark buttons."}}},"surface":{"page":{"v":"{color.neutral.paper}","t":"color","s":"role alias over the core palette","d":"The white marketing page field."},"grey":{"v":"{color.neutral.grey}","t":"color","s":"role alias over the core palette","d":"The light-grey footer, plan-card and dropdown-pill field."},"chip":{"v":"{color.neutral.paper-warm}","t":"color","s":"role alias over the core palette","d":"The #fafafa chip fill inside plan cards."}},"action":{"primary":{"v":"{color.neutral.soft-ink}","t":"color","s":"role alias over the core palette","d":"The dark #1e1e1e button fill."},"accent":{"v":"{color.brand.blue}","t":"color","s":"role alias over the core palette","d":"The cyan accent layer inside the buttons."}},"border":{"field":{"v":"{color.neutral.hairline}","t":"color","s":"role alias over the core palette","d":"The 15%-black hairline."}},"focus":{"ring":{"v":"{color.neutral.charcoal}","t":"color","s":"role alias over the core palette","d":"The 1px #3c3c3c keyboard-focus ring (a box-shadow)."}},"component":{"control":{"height":{"v":"50px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)","d":"The marketing CTA height."}},"button":{"height":{"v":"39px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"The header Try-for-free height."}},"plan-cta":{"height":{"v":"70px","t":"dimension","s":"computed height of plan-cta default (raw/components-computed.json)","d":"The plan-card Choose-Pro height."}},"card":{"radius":{"v":"32px","t":"dimension","s":"computed borderTopLeftRadius of d-card default (raw/components-computed.json)","d":"Card corner radius."}},"navlink":{"height":{"v":"39px","t":"dimension","s":"computed height of d-nav-link default (raw/components-computed.json)","d":"A dark nav item's height."}},"sidebar":{"width":{"v":"283px","t":"dimension","s":"computed width of d-sidebar default (raw/components-computed.json)","d":"The app-shell sidebar width."}},"header":{"height":{"v":"88px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The marketing header height."},"height-mobile":{"v":"76.2031px","t":"dimension","s":"computed height of m-header default (raw/components-computed.json)","d":"The marketing header at 390px."}}}},"dark":{"text":{"primary":{"v":"{color.app.text}","t":"color","s":"role alias over the core palette","d":"App-shell text."},"muted":{"v":"{color.app.muted}","t":"color","s":"role alias over the core palette","d":"Muted app-shell text."},"on":{"action":{"v":"{color.app.action-ink}","t":"color","s":"role alias over the core palette","d":"Text on the inverted light buttons."}}},"surface":{"page":{"v":"{color.app.canvas}","t":"color","s":"role alias over the core palette","d":"The app-shell canvas."},"card":{"v":"{color.app.card}","t":"color","s":"role alias over the core palette","d":"The app-shell card fill."},"raised":{"v":"{color.app.raised}","t":"color","s":"role alias over the core palette","d":"The raised button fill."},"active":{"v":"{color.app.active}","t":"color","s":"role alias over the core palette","d":"The active nav-item pill."}},"border":{"card":{"v":"{color.app.card-border}","t":"color","s":"role alias over the core palette","d":"The card border."}},"action":{"primary":{"v":"{color.app.text}","t":"color","s":"role alias over the core palette","d":"The inverted light button fill."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (app shell)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Butter</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

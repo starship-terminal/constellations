@@ -3,11 +3,11 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 83,
-    "system_domains": 75,
+    "system_packages": 84,
+    "system_domains": 76,
     "matched_domains": 51,
     "missing_domains": 382,
-    "system_domains_absent_from_catalog": 24
+    "system_domains_absent_from_catalog": 25
   },
   "matched": {
     "1password.com": {
@@ -3628,6 +3628,14 @@
         "slug": "arcsearch",
         "name": "Arc Search",
         "url": "https://arc.net/search",
+        "ios_guess": []
+      }
+    ],
+    "butter.video": [
+      {
+        "slug": "butter",
+        "name": "Butter",
+        "url": "https://www.butter.video",
         "ios_guess": []
       }
     ],

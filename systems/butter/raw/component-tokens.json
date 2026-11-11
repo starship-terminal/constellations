@@ -1,0 +1,576 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. butter.video declares a --butter-* design-token layer in its stylesheets (raw/css-vars.json); the light marketing set is built from those declared variables plus measured computed styles, and the dark set from measured computed styles on the /explore app shell (raw/components-computed.json).",
+ "core": {
+  "font": {
+   "family": {
+    "marketing": {
+     "var": "--butter-font-primary",
+     "type": "fontFamily",
+     "description": "The marketing stack (DieGrotesk first), declared on butter.video."
+    },
+    "meta": {
+     "var": "--butter-font-secondary",
+     "type": "fontFamily",
+     "description": "The ABCDiatype stack used for meta/label text on the marketing pages."
+    },
+    "app": {
+     "value": "dieGroteskA, \"dieGroteskA Fallback\", system-ui, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of d-sidebar default (raw/components-computed.json)",
+     "description": "The dark app-shell stack (dieGroteskA first)."
+    },
+    "body": {
+     "value": "DieGrotesk, \"DieGrotesk Fallback\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-sub default (raw/components-computed.json)",
+     "description": "Body/lede text (DieGrotesk first)."
+    }
+   },
+   "size": {
+    "display": {
+     "type": "dimension",
+     "value": "107.568px",
+     "source": "computed fontSize of hero-title default (raw/components-computed.json)",
+     "description": "The marketing display size (Engineered for Creativity)."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "60.4px",
+     "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
+     "description": "The marketing section-heading size."
+    },
+    "price": {
+     "type": "dimension",
+     "value": "60.4px",
+     "source": "computed fontSize of plan-price default (raw/components-computed.json)",
+     "description": "The plan-card price figure."
+    },
+    "display-mobile": {
+     "type": "dimension",
+     "value": "56.7263px",
+     "source": "computed fontSize of m-hero default (raw/components-computed.json)",
+     "description": "The display size at 390px."
+    },
+    "lede": {
+     "type": "dimension",
+     "value": "24.4842px",
+     "source": "computed fontSize of hero-sub default (raw/components-computed.json)",
+     "description": "The hero sub-copy / FAQ-question size."
+    },
+    "subtitle": {
+     "type": "dimension",
+     "value": "20.7474px",
+     "source": "computed fontSize of footer-link default (raw/components-computed.json)",
+     "description": "Footer-link and billing-toggle text."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "18px",
+     "source": "computed fontSize of header default (raw/components-computed.json)",
+     "description": "The page base size."
+    },
+    "nav": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of nav-link default (raw/components-computed.json)",
+     "description": "Nav link / button label size."
+    },
+    "meta": {
+     "type": "dimension",
+     "value": "13.4947px",
+     "source": "computed fontSize of footer default (raw/components-computed.json)",
+     "description": "The ABCDiatype meta size."
+    },
+    "app-section": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "computed fontSize of d-section default (raw/components-computed.json)",
+     "description": "The dark shell's section heading."
+    },
+    "app-nav": {
+     "type": "dimension",
+     "value": "14px",
+     "source": "computed fontSize of d-nav-link default (raw/components-computed.json)",
+     "description": "The dark shell's nav/button text."
+    },
+    "app-meta": {
+     "type": "dimension",
+     "value": "12px",
+     "source": "computed fontSize of d-sidebar default (raw/components-computed.json)",
+     "description": "The dark shell's smallest label size."
+    }
+   },
+   "lineHeight": {
+    "display": {
+     "type": "dimension",
+     "value": "106.708px",
+     "source": "computed lineHeight of hero-title default (raw/components-computed.json)",
+     "description": "Tight display leading (0.99x)."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "58.588px",
+     "source": "computed lineHeight of section-h2 default (raw/components-computed.json)",
+     "description": "Tight heading leading."
+    },
+    "nav": {
+     "type": "dimension",
+     "value": "20px",
+     "source": "computed lineHeight of nav-link default (raw/components-computed.json)",
+     "description": "Nav link leading."
+    }
+   }
+  },
+  "color": {
+   "neutral": {
+    "ink": {
+     "var": "--butter-true-black",
+     "type": "color",
+     "description": "The near-black ink #0f0f0f on hero and heading text."
+    },
+    "soft-ink": {
+     "var": "--butter-black",
+     "type": "color",
+     "description": "The softer black #1e1e1e on nav text, logos and the dark button fills."
+    },
+    "paper-warm": {
+     "var": "--butter-white",
+     "type": "color",
+     "description": "The declared white #fafafa on plan-card name chips."
+    },
+    "off-white": {
+     "var": "--butter-off-white",
+     "type": "color",
+     "description": "The declared off-white #f7f7f7."
+    },
+    "grey": {
+     "var": "--butter-light-grey",
+     "type": "color",
+     "description": "The light grey #ededed footer, plan-card and dropdown-pill field."
+    },
+    "grey-2": {
+     "var": "--butter-dark-grey",
+     "type": "color",
+     "description": "The darker declared grey #e2e2e2."
+    },
+    "charcoal": {
+     "var": "--butter-charcoal",
+     "type": "color",
+     "description": "The charcoal #3c3c3c the 1px focus ring is drawn in."
+    },
+    "hairline": {
+     "value": "rgba(15, 15, 15, 0.15)",
+     "type": "color",
+     "source": "computed borderTopColor of feature-row (raw/components-computed.json)",
+     "description": "The rgba(15,15,15,0.15) hairline under feature rows and the nav dropdown."
+    },
+    "faint": {
+     "value": "rgba(15, 15, 15, 0.5)",
+     "type": "color",
+     "source": "computed textStyle color of footer default (raw/components-computed.json)",
+     "description": "The 50% black used for muted marketing text (footer secondary line)."
+    },
+    "paper": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "body backgroundColor computes transparent; the marketing canvas paints white (verified against the screenshots)",
+     "description": "The white marketing page field."
+    }
+   },
+   "brand": {
+    "blue": {
+     "var": "--butter-blue",
+     "type": "color",
+     "description": "The cyan #4dc5e5 painted inside the buttons as the accent layer."
+    },
+    "green": {
+     "var": "--butter-green",
+     "type": "color",
+     "description": "The declared accent green #63ad45."
+    },
+    "pink": {
+     "var": "--butter-pink",
+     "type": "color",
+     "description": "The declared accent pink #f9abff."
+    },
+    "red": {
+     "var": "--butter-red",
+     "type": "color",
+     "description": "The declared accent red #ff3333."
+    },
+    "yellow": {
+     "var": "--butter-yellow",
+     "type": "color",
+     "description": "The declared accent yellow #e9d352."
+    }
+   },
+   "app": {
+    "canvas": {
+     "value": "#0a0909",
+     "type": "color",
+     "source": "computed paint of d-sidebar default (raw/components-computed.json)",
+     "description": "The near-black #0a0909 app-shell canvas."
+    },
+    "text": {
+     "value": "#f5f5f5",
+     "type": "color",
+     "source": "computed color of d-sidebar default (raw/components-computed.json)",
+     "description": "The #f5f5f5 app-shell text."
+    },
+    "muted": {
+     "value": "#a1a1aa",
+     "type": "color",
+     "source": "computed textStyle-color of d-sidebar default (raw/components-computed.json)",
+     "description": "The #a1a1aa muted app-shell text."
+    },
+    "card": {
+     "value": "#151515",
+     "type": "color",
+     "source": "computed backgroundColor of d-card default (raw/components-computed.json)",
+     "description": "The #151515 card fill."
+    },
+    "card-border": {
+     "value": "#212121",
+     "type": "color",
+     "source": "computed borderTopColor of d-card default (raw/components-computed.json)",
+     "description": "The #212121 card border."
+    },
+    "raised": {
+     "value": "#1d1d1d",
+     "type": "color",
+     "source": "computed backgroundColor of d-login default (raw/components-computed.json)",
+     "description": "The #1d1d1d raised button fill."
+    },
+    "active": {
+     "value": "#252525",
+     "type": "color",
+     "source": "computed paint of d-nav-link default (raw/components-computed.json)",
+     "description": "The #252525 active nav-item pill."
+    },
+    "action-ink": {
+     "value": "#0a0909",
+     "type": "color",
+     "source": "computed color of d-signup default (raw/components-computed.json)",
+     "description": "The #0a0909 text on the inverted light buttons."
+    }
+   }
+  },
+  "radius": {
+   "menu": {
+    "value": "5px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of m-menu-button default (raw/components-computed.json)",
+    "description": "The 5px menu-button radius."
+   },
+   "nav-pill": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of d-nav-link default (raw/components-computed.json)",
+    "description": "The 12px dark nav-item pill and cursor badge."
+   },
+   "control": {
+    "value": "10px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of d-login default (raw/components-computed.json)",
+    "description": "The 10px dark control radius (also the header CTA's painted layer)."
+   },
+   "button": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "painted layer radius under hero-cta default (raw/components-computed.json)",
+    "description": "The 16px pill the button paint draws."
+   },
+   "card": {
+    "value": "32px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of d-card default (raw/components-computed.json)",
+    "description": "The 32px card radius (plan cards and dark cards)."
+   },
+   "tile": {
+    "value": "42px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of d-block-card default (raw/components-computed.json)",
+    "description": "The 42px dark tile radius."
+   }
+  },
+  "easing": {
+   "out": {
+    "var": "--butter-ease-out",
+    "type": "cubicBezier",
+    "description": "The declared ease-out curve."
+   },
+   "in-out": {
+    "var": "--butter-ease-in-out",
+    "type": "cubicBezier",
+    "description": "The declared ease-in-out curve."
+   }
+  },
+  "measured": {
+   "focus-ring": {
+    "value": [
+     {
+      "color": "#3c3c3c",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of nav-cta focus-visible (raw/components-computed.json)",
+    "description": "The 1px #3c3c3c keyboard-focus ring every focused control draws as a zero-offset shadow."
+   },
+   "card-border": {
+    "value": "#212121",
+    "type": "color",
+    "source": "computed borderTopColor of d-card default (raw/components-computed.json)",
+    "description": "The #212121 dark card border."
+   },
+   "focus-outline": {
+    "value": "#4dc5e5",
+    "type": "color",
+    "source": "painted outline under hero-cta focus-visible (raw/components-computed.json)",
+    "description": "The 3px #4dc5e5 outline (offset 3px) a focused button's inner layer draws."
+   },
+   "control-transition": {
+    "value": "0.16s",
+    "type": "duration",
+    "source": "computed transition of d-login default (raw/components-computed.json)",
+    "description": "The dark shell controls' 0.16s transition. (opacity, background-color, border-color)"
+   },
+   "tile-transition": {
+    "value": "0.16s",
+    "type": "duration",
+    "source": "computed transition of d-block-card default (raw/components-computed.json)",
+    "description": "The dark tile's transform/background transition. (transform, background-color)"
+   },
+   "fade-transition": {
+    "value": "0.5s",
+    "type": "duration",
+    "source": "computed transition of nav-trigger default (raw/components-computed.json)",
+    "description": "The nav triggers' 0.5s opacity fade. (opacity)"
+   },
+   "toggle-transition": {
+    "value": "0.5s",
+    "type": "duration",
+    "source": "computed transition of billing-toggle default (raw/components-computed.json)",
+    "description": "The billing toggle's 0.5s colour/opacity change. (color, opacity)"
+   },
+   "card-hover-scale": {
+    "value": 0.98,
+    "type": "number",
+    "source": "hover rect / default rect of d-card (raw/components-computed.json)",
+    "description": "The ~0.98 scale a dark card takes on hover."
+   }
+  }
+ },
+ "light": {
+  "text": {
+   "primary": {
+    "value": "{color.neutral.ink}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Body and heading ink."
+   },
+   "secondary": {
+    "value": "{color.neutral.soft-ink}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Nav text and the dark button fills."
+   },
+   "muted": {
+    "value": "{color.neutral.faint}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Muted marketing text (50% black)."
+   },
+   "on": {
+    "dark": {
+     "var": "--butter-light",
+     "type": "color",
+     "description": "The #ebebeb label on the dark buttons."
+    }
+   }
+  },
+  "surface": {
+   "page": {
+    "value": "{color.neutral.paper}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The white marketing page field."
+   },
+   "grey": {
+    "value": "{color.neutral.grey}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The light-grey footer, plan-card and dropdown-pill field."
+   },
+   "chip": {
+    "value": "{color.neutral.paper-warm}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #fafafa chip fill inside plan cards."
+   }
+  },
+  "action": {
+   "primary": {
+    "value": "{color.neutral.soft-ink}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The dark #1e1e1e button fill."
+   },
+   "accent": {
+    "value": "{color.brand.blue}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The cyan accent layer inside the buttons."
+   }
+  },
+  "border": {
+   "field": {
+    "value": "{color.neutral.hairline}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The 15%-black hairline."
+   }
+  },
+  "focus": {
+   "ring": {
+    "value": "{color.neutral.charcoal}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The 1px #3c3c3c keyboard-focus ring (a box-shadow)."
+   }
+  }
+ },
+ "dark": {
+  "text": {
+   "primary": {
+    "value": "{color.app.text}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "App-shell text."
+   },
+   "muted": {
+    "value": "{color.app.muted}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Muted app-shell text."
+   },
+   "on": {
+    "action": {
+     "value": "{color.app.action-ink}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "Text on the inverted light buttons."
+    }
+   }
+  },
+  "surface": {
+   "page": {
+    "value": "{color.app.canvas}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The app-shell canvas."
+   },
+   "card": {
+    "value": "{color.app.card}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The app-shell card fill."
+   },
+   "raised": {
+    "value": "{color.app.raised}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The raised button fill."
+   },
+   "active": {
+    "value": "{color.app.active}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The active nav-item pill."
+   }
+  },
+  "border": {
+   "card": {
+    "value": "{color.app.card-border}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The card border."
+   }
+  },
+  "action": {
+   "primary": {
+    "value": "{color.app.text}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The inverted light button fill."
+   }
+  }
+ },
+ "component": {
+  "control": {
+   "height": {
+    "type": "dimension",
+    "value": "50px",
+    "source": "computed height of hero-cta default (raw/components-computed.json)",
+    "description": "The marketing CTA height."
+   }
+  },
+  "button": {
+   "height": {
+    "type": "dimension",
+    "value": "39px",
+    "source": "computed height of nav-cta default (raw/components-computed.json)",
+    "description": "The header Try-for-free height."
+   }
+  },
+  "plan-cta": {
+   "height": {
+    "type": "dimension",
+    "value": "70px",
+    "source": "computed height of plan-cta default (raw/components-computed.json)",
+    "description": "The plan-card Choose-Pro height."
+   }
+  },
+  "card": {
+   "radius": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed borderTopLeftRadius of d-card default (raw/components-computed.json)",
+    "description": "Card corner radius."
+   }
+  },
+  "navlink": {
+   "height": {
+    "type": "dimension",
+    "value": "39px",
+    "source": "computed height of d-nav-link default (raw/components-computed.json)",
+    "description": "A dark nav item's height."
+   }
+  },
+  "sidebar": {
+   "width": {
+    "type": "dimension",
+    "value": "283px",
+    "source": "computed width of d-sidebar default (raw/components-computed.json)",
+    "description": "The app-shell sidebar width."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "88px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The marketing header height."
+   },
+   "height-mobile": {
+    "type": "dimension",
+    "value": "76.2031px",
+    "source": "computed height of m-header default (raw/components-computed.json)",
+    "description": "The marketing header at 390px."
+   }
+  }
+ }
+}
