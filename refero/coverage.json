@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 73,
-    "system_domains": 65,
-    "matched_domains": 41,
-    "missing_domains": 392,
+    "system_packages": 74,
+    "system_domains": 66,
+    "matched_domains": 42,
+    "missing_domains": 391,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -462,6 +462,23 @@
         }
       ]
     },
+    "boords.com": {
+      "catalog": [
+        {
+          "name": "Boords",
+          "domain": "boords.com",
+          "id": 458
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "boords",
+          "name": "Boords",
+          "url": "https://boords.com",
+          "name_match": true
+        }
+      ]
+    },
     "brilliant.org": {
       "catalog": [
         {
@@ -839,13 +856,6 @@
         "name": "Bio Sites",
         "domain": "biosites.com",
         "id": 765
-      }
-    ],
-    "boords.com": [
-      {
-        "name": "Boords",
-        "domain": "boords.com",
-        "id": 458
       }
     ],
     "busuu.com": [
