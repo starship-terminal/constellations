@@ -1,7 +1,7 @@
 {
  "date": "2026-11-11",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): component-by-component review against each package's raw/components-computed.json, raw/css-vars.json and captured screenshots/crops; every non-meets grade has written evidence",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Read the capture's raw/css-vars.json, components-computed.json, measurements.md and components.md, the README coverage table and the boundary notes; graded each criterion against the web wording in scorecard/criteria.json.",
  "systems": [
   {
    "slug": "brilliant",
@@ -9794,8 +9794,136 @@
    "category": "E-commerce",
    "reviewed": "2026-11-11",
    "reviewedPlatform": "web"
+  },
+  {
+   "slug": "artboardstudio",
+   "grades": {
+    "F1": {
+     "grade": "partly",
+     "evidence": "core.color-scheme-1..10 holds the Relume slots (text/background/foreground/border/accent) plus --mg-* greens and palette hexes. No hue ramp reaches 10 steps; the neutral ramp has 3 steps."
+    },
+    "F2": {
+     "grade": "partly",
+     "evidence": "light.page #fff, surface #eee, field #fff, hover-fill #f4f3f2. No raised/overlay/scrim roles exist."
+    },
+    "F3": {
+     "grade": "partly",
+     "evidence": "light.text #0d1400, muted #444, link-hover #aaa, on-ink #fff. No disabled or dedicated link role."
+    },
+    "F4": {
+     "grade": "meets",
+     "evidence": "light.border #0d1400 + border-primary #000 vars; focus-ring #4d65ff site style measured (most controls show the browser default, documented)."
+    },
+    "F5": {
+     "grade": "meets",
+     "evidence": "hover (#222 button lift, #aaa link fade, #f4f3f2 card fill) and CDP-pressed states measured on nav/CTA/tab/chip in raw/components-computed.json."
+    },
+    "F6": {
+     "grade": "missing",
+     "evidence": "No success/warning/danger/info set exists on the captured marketing surface."
+    },
+    "F7": {
+     "grade": "na",
+     "evidence": "One light theme; the .color-scheme-* classes are section washes, not themes."
+    },
+    "F8": {
+     "grade": "partly",
+     "evidence": "Vend Sans 300-700 on headings + generic sans stack; composites display/title/heading/body/button at measured px. No abstract scale steps; body uses the browser default sizes."
+    },
+    "F9": {
+     "grade": "missing",
+     "evidence": "No spacing scale declared: Webflow spacing is hand-set per component."
+    },
+    "F10": {
+     "grade": "partly",
+     "evidence": "Two measured radii (8 controls, 12 cards) + border widths per side; no radius scale exists."
+    },
+    "F11": {
+     "grade": "partly",
+     "evidence": "light.component control 42/48/50, field ~65, tile ~199, header 106. No icon-size scale; focus ring measured on the menu button."
+    },
+    "F12": {
+     "grade": "missing",
+     "evidence": "No shadow tokens: cards and nav sit on hairline borders and plain fills."
+    },
+    "F13": {
+     "grade": "missing",
+     "evidence": "No duration/easing vars declared and transitions were not measured as tokens."
+    },
+    "F14": {
+     "grade": "partly",
+     "evidence": "component.shell.header 106 + tile/card sizes measured; no breakpoint, grid or z-index tokens."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "8 of 19: button, icon button, link, text field, menu, tab, card, list row. No textarea, select, checkbox, radio, switch, tooltip, dialog, toast, table, avatar or accordion on the public surface."
+    },
+    "C2": {
+     "grade": "partly",
+     "evidence": "hover/focus-visible/pressed on controls, focused on the field, selected on the tab, opened on the mobile menu; disabled/loading/error/selected-variant never appear publicly."
+    },
+    "C3": {
+     "grade": "meets",
+     "evidence": "Keyboard focus driven onto every control; the site's #4d65ff ring and the browser default #005fcc both recorded."
+    },
+    "C4": {
+     "grade": "partly",
+     "evidence": "components.md names the matching token beside each measured value; entries are measured tables, not token-first specs."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "patterns.md covers shell, hero+tabs, library grid, CTAs, footer, mobile. No form-validation, empty/error, destructive or feedback patterns are reachable signed out."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "Vend Sans (Google Fonts OFL) + generic stacks named with licence/fallback notes; icon set not extracted (declared in layoutGaps)."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README documents scope, the inner-scroller boundary, the editor gate and What to distrust."
+    },
+    "F15": {
+     "grade": "meets",
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 8.39:1 light muted (light.muted) on surface (light.surface)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 59 of 59 tokens name their source"
+    },
+    "K2": {
+     "grade": "partly",
+     "evidence": "Script: 6 rules, 5 linking an image (needs 3+, all linked)"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    },
+    "C5": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    }
+   },
+   "name": "Artboard Studio",
+   "goodFor": "design-tool marketing + library surfaces: white page, near-black olive ink #0d1400, Vend Sans display lines, 42px near-black buttons, 8px control radii / 12px cards, pill tab bars, an inner-scrolled mockup grid, #aaff00 brand green kept for highlights",
+   "url": "https://artboard.studio",
+   "captured": "2026-11-11",
+   "themes": [
+    "light"
+   ],
+   "platform": "web",
+   "category": "Productivity",
+   "reviewed": "2026-11-11",
+   "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "component-by-component review against each package's raw/components-computed.json, raw/css-vars.json and captured screenshots/crops; every non-meets grade has written evidence"
+ "reviewMethod": "Read the capture's raw/css-vars.json, components-computed.json, measurements.md and components.md, the README coverage table and the boundary notes; graded each criterion against the web wording in scorecard/criteria.json."
 }
