@@ -1975,7 +1975,7 @@
         ],
         "durationMin": null,
         "durationNote": "wall-clock duration was not recorded for this capture",
-        "pr": "TBD"
+        "pr": "477"
       },
       "layoutGaps": {
         "icons/": "the icon extraction pass was not run; the site's icons (the wordmark, SSO glyphs, socials) are visible in the crops and screenshots and on the fetched icon.png"
