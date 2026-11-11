@@ -1,0 +1,407 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. artboard.studio is a Webflow + Relume marketing site: the --color-scheme-1..10 slot vars (text/background/foreground/border/accent, the ink #0d1400), the --mg-* editor palette (mg-gree #aaff00 brand green), the generic font stacks and a handful of palette hexes. The light set holds the site's roles; measured values that no variable declares (radii, control heights) come from raw/components-computed.json. \"var\" leaves resolve through the live document; \"value\" leaves are measured.",
+ "core": {
+  "4c657e": {
+   "var": "--4c657e",
+   "type": "color"
+  },
+  "background": {
+   "color": {
+    "": {
+     "background": {
+      "secondary": {
+       "var": "--background-color--background-secondary<deleted|relume-variable-background-color-2>",
+       "type": "color",
+       "note": "the var name carries a deleted Relume variable tombstone"
+      }
+     }
+    }
+   }
+  },
+  "base": {
+   "color": {
+    "neutral": {
+     "": {
+      "black": {
+       "var": "--base-color-neutral--black<deleted|relume-variable-color-neutral-1>",
+       "type": "color",
+       "note": "the var name carries a deleted Relume variable tombstone"
+      },
+      "neutral": {
+       "lightest": {
+        "var": "--base-color-neutral--neutral-lightest<deleted|relume-variable-color-neutral-3>",
+        "type": "color",
+        "note": "the var name carries a deleted Relume variable tombstone"
+       }
+      },
+      "white": {
+       "var": "--base-color-neutral--white<deleted|relume-variable-color-neutral-2>",
+       "type": "color",
+       "note": "the var name carries a deleted Relume variable tombstone"
+      }
+     }
+    }
+   }
+  },
+  "border": {
+   "color": {
+    "": {
+     "border": {
+      "primary": {
+       "var": "--border-color--border-primary<deleted|relume-variable-border-color-1>",
+       "type": "color",
+       "note": "the var name carries a deleted Relume variable tombstone"
+      }
+     }
+    }
+   }
+  },
+  "c5d4e8": {
+   "var": "--c5d4e8",
+   "type": "color"
+  },
+  "color": {
+   "scheme": {
+    "1": {
+     "": {
+      "accent": {
+       "var": "--color-scheme-1--accent",
+       "type": "color"
+      },
+      "background": {
+       "var": "--color-scheme-1--background",
+       "type": "color"
+      },
+      "border": {
+       "var": "--color-scheme-1--border",
+       "type": "color"
+      },
+      "foreground": {
+       "var": "--color-scheme-1--foreground",
+       "type": "color"
+      },
+      "text": {
+       "var": "--color-scheme-1--text",
+       "type": "color"
+      }
+     }
+    }
+   }
+  },
+  "dark": {
+   "text": {
+    "var": "--dark-text",
+    "type": "color"
+   }
+  },
+  "ecf1f7": {
+   "var": "--ecf1f7",
+   "type": "color"
+  },
+  "font": {
+   "monospace": {
+    "var": "--font-monospace",
+    "type": "fontFamily"
+   },
+   "sans": {
+    "serif": {
+     "var": "--font-sans-serif",
+     "type": "fontFamily"
+    }
+   },
+   "serif": {
+    "var": "--font-serif",
+    "type": "fontFamily"
+   },
+   "family": {
+    "heading": {
+     "value": "\"Vend Sans\", sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of h1/h2 headings (raw/components-computed.json); the Google-fonts Vend Sans face (300-700)",
+     "description": "The display face on headings."
+    },
+    "ui": {
+     "var": "--font-sans-serif",
+     "type": "fontFamily",
+     "description": "The generic sans stack the body and controls inherit."
+    },
+    "mono": {
+     "var": "--font-monospace",
+     "type": "fontFamily"
+    }
+   }
+  },
+  "mg": {
+   "border": {
+    "var": "--mg-border",
+    "type": "color"
+   },
+   "darkest": {
+    "var": "--mg-darkest",
+    "type": "color"
+   },
+   "gree": {
+    "var": "--mg-gree",
+    "type": "color"
+   },
+   "green": {
+    "hover": {
+     "var": "--mg-green-hover",
+     "type": "color"
+    }
+   },
+   "hover": {
+    "var": "--mg-hover",
+    "type": "color"
+   },
+   "white": {
+    "default": {
+     "var": "--mg-white",
+     "type": "color"
+    },
+    "50": {
+     "var": "--mg-white-50",
+     "type": "color"
+    }
+   }
+  },
+  "text": {
+   "color": {
+    "": {
+     "text": {
+      "alternate": {
+       "var": "--text-color--text-alternate<deleted|relume-variable-text-color-3>",
+       "type": "color",
+       "note": "the var name carries a deleted Relume variable tombstone"
+      }
+     }
+    }
+   }
+  },
+  "typography": {
+   "display": {
+    "$value": {
+     "fontFamily": "{font.family.heading}",
+     "fontSize": "60.8px",
+     "lineHeight": "72.96px",
+     "fontWeight": 600,
+     "letterSpacing": "-2px"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of hero-title default (raw/components-computed.json); the 60.8px h1"
+    }
+   },
+   "title": {
+    "$value": {
+     "fontFamily": "{font.family.heading}",
+     "fontSize": "56px",
+     "lineHeight": "67.2px",
+     "fontWeight": 700,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of lib-title default (raw/components-computed.json); the 56px library h1"
+    }
+   },
+   "heading": {
+    "$value": {
+     "fontFamily": "{font.family.heading}",
+     "fontSize": "19.2px",
+     "lineHeight": "23.04px",
+     "fontWeight": 600,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of section-title default (raw/components-computed.json); the 19.2px section h2"
+    }
+   },
+   "body": {
+    "$value": {
+     "fontFamily": "{font.family.ui}",
+     "fontSize": "16px",
+     "lineHeight": "16px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of nav-link default (raw/components-computed.json); the 16px UI line"
+    }
+   },
+   "button": {
+    "$value": {
+     "fontFamily": "{font.family.ui}",
+     "fontSize": "16px",
+     "lineHeight": "24px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of tab default (raw/components-computed.json); the 16px control label"
+    }
+   }
+  }
+ },
+ "light": {
+  "page": {
+   "var": "--color-scheme-1--background",
+   "type": "color",
+   "description": "The page field: pure white (Relume scheme-1 background)."
+  },
+  "surface": {
+   "var": "--color-scheme-1--foreground",
+   "type": "color",
+   "description": "The section wash (#eeeeee) the scheme classes swap in."
+  },
+  "field": {
+   "value": "#ffffff",
+   "type": "color",
+   "source": "computed backgroundColor of the library search field (raw/components-computed.json)",
+   "description": "The search field fill."
+  },
+  "text": {
+   "var": "--color-scheme-1--text",
+   "type": "color",
+   "description": "The ink #0d1400, a near-black olive."
+  },
+  "muted": {
+   "var": "--mg-border",
+   "type": "color",
+   "description": "Secondary ink #444444, the site's own dark grey."
+  },
+  "link-hover": {
+   "value": "#aaaaaa",
+   "type": "color",
+   "source": "computed color of nav-link/footer-link hover (raw/components-computed.json)",
+   "description": "Text links fade to #aaa on hover."
+  },
+  "accent": {
+   "var": "--color-scheme-1--accent",
+   "type": "color",
+   "description": "The accent slot — same near-black #0d1400 on this site."
+  },
+  "ink": {
+   "var": "--color-scheme-1--text",
+   "type": "color",
+   "description": "Button fills: near-black #0d1400."
+  },
+  "ink-hover": {
+   "value": "#222222",
+   "type": "color",
+   "source": "computed backgroundColor of button hover (raw/components-computed.json)",
+   "description": "Black buttons lift to #222 on hover."
+  },
+  "on-ink": {
+   "var": "--color-scheme-1--background",
+   "type": "color",
+   "description": "Text on the black buttons."
+  },
+  "border": {
+   "var": "--color-scheme-1--border",
+   "type": "color",
+   "description": "Control borders, near-black."
+  },
+  "hover-fill": {
+   "value": "#f4f3f2",
+   "type": "color",
+   "source": "computed backgroundColor of library-card hover (raw/components-computed.json)",
+   "description": "The warm grey row/card hover fill."
+  },
+  "brand": {
+   "var": "--mg-gree",
+   "type": "color",
+   "description": "The ARKET-bright brand green #aaff00 (the editor's accent, shown on the site in the logo and highlights)."
+  },
+  "brand-hover": {
+   "var": "--mg-green-hover",
+   "type": "color",
+   "description": "The green's hover tint #cfff6f."
+  },
+  "brand-dark": {
+   "var": "--mg-darkest",
+   "type": "color",
+   "description": "The dark green-black panel #2c2c2c."
+  },
+  "focus-ring": {
+   "value": "#4d65ff",
+   "type": "color",
+   "source": "computed outlineColor on keyboard focus of the menu button (raw/components-computed.json); most controls show the browser's default #005fcc, this indigo ring is the site's own Webflow focus style",
+   "description": "The site-styled 2px #4d65ff focus ring."
+  }
+ },
+ "dark": {},
+ "component": {
+  "control": {
+   "height": {
+    "type": "dimension",
+    "value": "42px",
+    "source": "computed height of nav-link default (raw/components-computed.json)",
+    "description": "Nav links and CTAs are 42px."
+   },
+   "tab": {
+    "type": "dimension",
+    "value": "50px",
+    "source": "computed height of tab default (raw/components-computed.json)",
+    "description": "Category tabs are 50px."
+   },
+   "chip": {
+    "type": "dimension",
+    "value": "50px",
+    "source": "computed height of filter-chip default (raw/components-computed.json)",
+    "description": "Library filter chips are 50px."
+   },
+   "field": {
+    "type": "dimension",
+    "value": "64.6875px",
+    "source": "computed height of search-field default (raw/components-computed.json)",
+    "description": "The library search field is ~65px."
+   },
+   "iconButton": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of m-menu-button default (raw/components-computed.json)",
+    "description": "Icon buttons are 48px."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "8px",
+    "source": "computed borderTopLeftRadius of nav-link default (raw/components-computed.json)",
+    "description": "Controls are 8px-radius."
+   }
+  },
+  "card": {
+   "radius": {
+    "type": "dimension",
+    "value": "12px",
+    "source": "computed borderTopLeftRadius of filter-chip default (raw/components-computed.json)",
+    "description": "Cards/chips are 12px-radius."
+   },
+   "size": {
+    "type": "dimension",
+    "value": "199.266px",
+    "source": "computed width of mockup-card default (raw/components-computed.json)",
+    "description": "Mockup tiles are ~199px squares."
+   }
+  },
+  "shell": {
+   "header": {
+    "type": "dimension",
+    "value": "106px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The nav block at 1440."
+   }
+  },
+  "footer": {
+   "linkHeight": {
+    "type": "dimension",
+    "value": "42px",
+    "source": "computed height of footer-link default (raw/components-computed.json)",
+    "description": "Footer link rows."
+   }
+  }
+ }
+}
