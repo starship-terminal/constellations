@@ -1908,7 +1908,7 @@
       "url": "https://asana.com",
       "category": "productivity",
       "platform": "web",
-      "goodFor": "SaaS marketing + product surfaces: near-white page, near-black #0d0d0d ink, Segoe UI, 3px control radii, near-black primary CTAs lifting to #3d3d3d, #f3f3f3 panels with #cfcfcf hairlines, and a full shipped token layer ; colour ramps, --lightmode-*/--darkmode-* roles, 16px spacing base, --media-* breakpoints, 12-col grid, --shadow-* and --transition-* scales",
+      "goodFor": "SaaS marketing + product surfaces: near-white page, near-black #0d0d0d ink, TWK Lausanne webfont, 3px control radii, near-black primary CTAs lifting to #3d3d3d, #f3f3f3 panels with #cfcfcf hairlines, and a full shipped token layer ; colour ramps, --lightmode-*/--darkmode-* roles, 16px spacing base, --media-* breakpoints, 12-col grid, --shadow-* and --transition-* scales",
       "tags": [
         "web",
         "saas",
@@ -1920,10 +1920,10 @@
       ],
       "shape": "reference",
       "captured": "2026-11-11",
-      "access": "signed out (every captured surface is public; the app on app.asana.com sits behind sign-in and was never reached; OneTrust consent banner was dismissed)",
+      "access": "signed out (every captured surface is public; the app on app.asana.com sits behind sign-in and was never reached; OneTrust consent banner was dismissed; the dark token set is declared in the shipped CSS but unbound on the captured routes)",
       "themes": [
         "light",
-        "dark (declared in the shipped CSS, unbound on the captured routes)"
+        "dark"
       ],
       "widths": [
         1440,
@@ -1938,11 +1938,11 @@
         "swatches": {
           "light": {
             "page": "light.page",
-            "surface": "light.surface",
-            "text": "light.text",
+            "surface": "light.surface.default",
+            "text": "light.text.default",
             "muted": "light.muted",
-            "accent": "light.accent",
-            "border": "light.border"
+            "accent": "light.accent.default",
+            "border": "light.border.default"
           }
         },
         "fonts": [

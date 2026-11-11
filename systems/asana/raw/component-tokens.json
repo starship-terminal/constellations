@@ -365,10 +365,16 @@
     "type": "fontFamily"
    },
    "ui": {
-    "value": "\"Segoe UI\",-apple-system,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",sans-serif",
+    "value": "\"TWK Lausanne\",\"Helvetica Neue\",Helvetica,sans-serif",
     "type": "fontFamily",
-    "source": "computed fontFamily of body/UI elements (raw/components-computed.json); the site paints Segoe UI",
-    "description": "The painted UI stack."
+    "source": "computed fontFamily of the painted text (raw/components-computed.json); TWK Lausanne is a webfont loaded by the site's inline @font-face",
+    "description": "The painted UI stack (webfont + fallbacks)."
+   },
+   "fallback": {
+    "value": "Helvetica,Arial,sans-serif",
+    "type": "fontFamily",
+    "source": "computed fontFamily painted on elements outside the Lausanne stack (raw/components-computed.json)",
+    "description": "The secondary painted stack."
    }
   },
   "fontSize": {
@@ -1105,10 +1111,10 @@
    "small": {
     "$value": {
      "fontFamily": "{fontFamily.ui}",
-     "fontSize": "30px",
-     "lineHeight": "36px",
-     "fontWeight": 400,
-     "letterSpacing": "0em"
+     "fontSize": "11px",
+     "lineHeight": "16.5px",
+     "fontWeight": 500,
+     "letterSpacing": "0.44px"
     },
     "$type": "typography",
     "$extensions": {
@@ -1135,9 +1141,94 @@
    }
   },
   "accent": {
-   "var": "--lightmode-button-primary",
-   "type": "color",
-   "description": "The action fill."
+   "black": {
+    "var": "--lightmode-accent-black",
+    "type": "color"
+   },
+   "blue": {
+    "default": {
+     "var": "--lightmode-accent-blue",
+     "type": "color"
+    },
+    "light": {
+     "var": "--lightmode-accent-blue-light",
+     "type": "color"
+    }
+   },
+   "gray": {
+    "default": {
+     "var": "--lightmode-accent-gray",
+     "type": "color"
+    },
+    "light": {
+     "var": "--lightmode-accent-gray-light",
+     "type": "color"
+    }
+   },
+   "green": {
+    "default": {
+     "var": "--lightmode-accent-green",
+     "type": "color"
+    },
+    "light": {
+     "var": "--lightmode-accent-green-light",
+     "type": "color"
+    }
+   },
+   "orange": {
+    "default": {
+     "var": "--lightmode-accent-orange",
+     "type": "color"
+    },
+    "light": {
+     "var": "--lightmode-accent-orange-light",
+     "type": "color"
+    }
+   },
+   "purple": {
+    "default": {
+     "var": "--lightmode-accent-purple",
+     "type": "color"
+    },
+    "light": {
+     "var": "--lightmode-accent-purple-light",
+     "type": "color"
+    }
+   },
+   "red": {
+    "default": {
+     "var": "--lightmode-accent-red",
+     "type": "color"
+    },
+    "light": {
+     "var": "--lightmode-accent-red-light",
+     "type": "color"
+    }
+   },
+   "white": {
+    "var": "--lightmode-accent-white",
+    "type": "color"
+   },
+   "yellow": {
+    "default": {
+     "var": "--lightmode-accent-yellow",
+     "type": "color"
+    },
+    "light": {
+     "var": "--lightmode-accent-yellow-light",
+     "type": "color"
+    }
+   },
+   "default": {
+    "var": "--lightmode-button-primary",
+    "type": "color",
+    "description": "The action fill."
+   },
+   "hover": {
+    "var": "--lightmode-button-primary-hover",
+    "type": "color",
+    "description": "The lifted action fill."
+   }
   },
   "bg": {
    "default": {
@@ -1186,9 +1277,28 @@
    }
   },
   "border": {
-   "var": "--lightmode-border",
-   "type": "color",
-   "description": "Default hairline."
+   "default": {
+    "var": "--lightmode-border",
+    "type": "color",
+    "description": "Default hairline."
+   },
+   "active": {
+    "var": "--lightmode-border-active",
+    "type": "color"
+   },
+   "hover": {
+    "var": "--lightmode-border-hover",
+    "type": "color"
+   },
+   "strong": {
+    "var": "--lightmode-border-strong",
+    "type": "color",
+    "description": "Stronger hairline."
+   },
+   "weak": {
+    "var": "--lightmode-border-weak",
+    "type": "color"
+   }
   },
   "button": {
    "disabled": {
@@ -1247,9 +1357,19 @@
    "type": "color"
   },
   "icon": {
-   "var": "--lightmode-icon",
-   "type": "color",
-   "description": "Icon ink."
+   "default": {
+    "var": "--lightmode-icon",
+    "type": "color",
+    "description": "Icon ink."
+   },
+   "disabled": {
+    "var": "--lightmode-icon-disabled",
+    "type": "color"
+   },
+   "hover": {
+    "var": "--lightmode-icon-hover",
+    "type": "color"
+   }
   },
   "inline": {
    "link": {
@@ -1268,9 +1388,40 @@
    }
   },
   "link": {
-   "var": "--lightmode-link-text",
-   "type": "color",
-   "description": "Inline link ink."
+   "disabled": {
+    "var": "--lightmode-link-disabled",
+    "type": "color"
+   },
+   "hover": {
+    "var": "--lightmode-link-hover",
+    "type": "color",
+    "description": "Link hover ink."
+   },
+   "text": {
+    "default": {
+     "var": "--lightmode-link-text",
+     "type": "color"
+    },
+    "weak": {
+     "default": {
+      "var": "--lightmode-link-text-weak",
+      "type": "color"
+     },
+     "disabled": {
+      "var": "--lightmode-link-text-weak-disabled",
+      "type": "color"
+     },
+     "hover": {
+      "var": "--lightmode-link-text-weak-hover",
+      "type": "color"
+     }
+    }
+   },
+   "default": {
+    "var": "--lightmode-link-text",
+    "type": "color",
+    "description": "Inline link ink."
+   }
   },
   "success": {
    "var": "--lightmode-success",
@@ -1278,9 +1429,25 @@
    "description": "Success green."
   },
   "text": {
-   "var": "--lightmode-text",
-   "type": "color",
-   "description": "Body ink."
+   "default": {
+    "var": "--lightmode-text",
+    "type": "color",
+    "description": "Body ink."
+   },
+   "strong": {
+    "var": "--lightmode-text-strong",
+    "type": "color",
+    "description": "The strong ink."
+   },
+   "weak": {
+    "var": "--lightmode-text-weak",
+    "type": "color"
+   },
+   "disabled": {
+    "var": "--lightmode-link-disabled",
+    "type": "color",
+    "description": "Disabled ink."
+   }
   },
   "warning": {
    "var": "--lightmode-warning",
@@ -1293,59 +1460,45 @@
    "description": "The page field."
   },
   "surface": {
-   "var": "--lightmode-bg-med",
-   "type": "color",
-   "description": "The grey panel surface."
-  },
-  "surface-strong": {
-   "var": "--lightmode-bg-strong",
-   "type": "color",
-   "description": "The stronger panel."
-  },
-  "surface-hover": {
-   "var": "--lightmode-bg-med-hover",
-   "type": "color",
-   "description": "The hover wash on panels."
-  },
-  "text-strong": {
-   "var": "--lightmode-text-strong",
-   "type": "color",
-   "description": "The strong ink."
+   "default": {
+    "var": "--lightmode-bg-med",
+    "type": "color",
+    "description": "The grey panel surface."
+   },
+   "strong": {
+    "var": "--lightmode-bg-strong",
+    "type": "color",
+    "description": "The stronger panel."
+   },
+   "hover": {
+    "var": "--lightmode-bg-med-hover",
+    "type": "color",
+    "description": "The hover wash on panels."
+   }
   },
   "muted": {
    "var": "--lightmode-text-weak",
    "type": "color",
    "description": "Secondary ink."
   },
-  "border-strong": {
-   "var": "--lightmode-border-strong",
-   "type": "color",
-   "description": "Stronger hairline."
-  },
-  "accent-hover": {
-   "var": "--lightmode-button-primary-hover",
-   "type": "color",
-   "description": "The lifted action fill."
-  },
-  "on-accent": {
-   "var": "--lightmode-button-text-primary",
-   "type": "color",
-   "description": "Text on primary buttons."
+  "on": {
+   "accent": {
+    "var": "--lightmode-button-text-primary",
+    "type": "color",
+    "description": "Text on primary buttons."
+   }
   },
   "danger": {
    "var": "--lightmode-error",
    "type": "color",
    "description": "Error red."
   },
-  "link-hover": {
-   "var": "--lightmode-link-hover",
-   "type": "color",
-   "description": "Link hover ink."
-  },
-  "focus-ring": {
-   "var": "--lightmode-a11y-focus-primary",
-   "type": "color",
-   "description": "The a11y focus ring colour."
+  "focus": {
+   "ring": {
+    "var": "--lightmode-a11y-focus-primary",
+    "type": "color",
+    "description": "The a11y focus ring colour."
+   }
   },
   "field": {
    "var": "--lightmode-button-secondary",
@@ -1356,11 +1509,6 @@
    "var": "--lightmode-button-disabled",
    "type": "color",
    "description": "Disabled control fill."
-  },
-  "text-disabled": {
-   "var": "--lightmode-link-disabled",
-   "type": "color",
-   "description": "Disabled ink."
   }
  },
  "dark": {
@@ -1384,10 +1532,112 @@
    }
   },
   "accent": {
-   "var": "--darkmode-button-primary",
-   "type": "color",
-   "description": "The action fill.",
-   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   "black": {
+    "var": "--darkmode-accent-black",
+    "type": "color",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "blue": {
+    "default": {
+     "var": "--darkmode-accent-blue",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    },
+    "dark": {
+     "var": "--darkmode-accent-blue-dark",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    }
+   },
+   "gray": {
+    "default": {
+     "var": "--darkmode-accent-gray",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    },
+    "dark": {
+     "var": "--darkmode-accent-gray-dark",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    }
+   },
+   "green": {
+    "default": {
+     "var": "--darkmode-accent-green",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    },
+    "dark": {
+     "var": "--darkmode-accent-green-dark",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    }
+   },
+   "orange": {
+    "default": {
+     "var": "--darkmode-accent-orange",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    },
+    "dark": {
+     "var": "--darkmode-accent-orange-dark",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    }
+   },
+   "purple": {
+    "default": {
+     "var": "--darkmode-accent-purple",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    },
+    "dark": {
+     "var": "--darkmode-accent-purple-dark",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    }
+   },
+   "red": {
+    "default": {
+     "var": "--darkmode-accent-red",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    },
+    "dark": {
+     "var": "--darkmode-accent-red-dark",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    }
+   },
+   "white": {
+    "var": "--darkmode-accent-white",
+    "type": "color",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "yellow": {
+    "default": {
+     "var": "--darkmode-accent-yellow",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    },
+    "dark": {
+     "var": "--darkmode-accent-yellow-dark",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    }
+   },
+   "default": {
+    "var": "--darkmode-button-primary",
+    "type": "color",
+    "description": "The action fill.",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "hover": {
+    "var": "--darkmode-button-primary-hover",
+    "type": "color",
+    "description": "The lifted action fill.",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   }
   },
   "bg": {
    "default": {
@@ -1446,10 +1696,33 @@
    }
   },
   "border": {
-   "var": "--darkmode-border",
-   "type": "color",
-   "description": "Default hairline.",
-   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   "default": {
+    "var": "--darkmode-border",
+    "type": "color",
+    "description": "Default hairline.",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "active": {
+    "var": "--darkmode-border-active",
+    "type": "color",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "hover": {
+    "var": "--darkmode-border-hover",
+    "type": "color",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "strong": {
+    "var": "--darkmode-border-strong",
+    "type": "color",
+    "description": "Stronger hairline.",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "weak": {
+    "var": "--darkmode-border-weak",
+    "type": "color",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   }
   },
   "button": {
    "disabled": {
@@ -1519,10 +1792,22 @@
    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
   },
   "icon": {
-   "var": "--darkmode-icon",
-   "type": "color",
-   "description": "Icon ink.",
-   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   "default": {
+    "var": "--darkmode-icon",
+    "type": "color",
+    "description": "Icon ink.",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "disabled": {
+    "var": "--darkmode-icon-disabled",
+    "type": "color",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "hover": {
+    "var": "--darkmode-icon-hover",
+    "type": "color",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   }
   },
   "inline": {
    "inline": {
@@ -1548,10 +1833,47 @@
    }
   },
   "link": {
-   "var": "--darkmode-link-text",
-   "type": "color",
-   "description": "Inline link ink.",
-   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   "disabled": {
+    "var": "--darkmode-link-disabled",
+    "type": "color",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "hover": {
+    "var": "--darkmode-link-hover",
+    "type": "color",
+    "description": "Link hover ink.",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "text": {
+    "default": {
+     "var": "--darkmode-link-text",
+     "type": "color",
+     "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+    },
+    "weak": {
+     "default": {
+      "var": "--darkmode-link-text-weak",
+      "type": "color",
+      "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+     },
+     "disabled": {
+      "var": "--darkmode-link-text-weak-disabled",
+      "type": "color",
+      "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+     },
+     "hover": {
+      "var": "--darkmode-link-text-weak-hover",
+      "type": "color",
+      "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+     }
+    }
+   },
+   "default": {
+    "var": "--darkmode-link-text",
+    "type": "color",
+    "description": "Inline link ink.",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   }
   },
   "success": {
    "var": "--darkmode-success",
@@ -1560,10 +1882,29 @@
    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
   },
   "text": {
-   "var": "--darkmode-text",
-   "type": "color",
-   "description": "Body ink.",
-   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   "default": {
+    "var": "--darkmode-text",
+    "type": "color",
+    "description": "Body ink.",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "strong": {
+    "var": "--darkmode-text-strong",
+    "type": "color",
+    "description": "The strong ink.",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "weak": {
+    "var": "--darkmode-text-weak",
+    "type": "color",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "disabled": {
+    "var": "--darkmode-link-disabled",
+    "type": "color",
+    "description": "Disabled ink.",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   }
   },
   "warning": {
    "var": "--darkmode-warning",
@@ -1578,28 +1919,24 @@
    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
   },
   "surface": {
-   "var": "--darkmode-bg-med",
-   "type": "color",
-   "description": "The grey panel surface.",
-   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
-  },
-  "surface-strong": {
-   "var": "--darkmode-bg-strong",
-   "type": "color",
-   "description": "The stronger panel.",
-   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
-  },
-  "surface-hover": {
-   "var": "--darkmode-bg-med-hover",
-   "type": "color",
-   "description": "The hover wash on panels.",
-   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
-  },
-  "text-strong": {
-   "var": "--darkmode-text-strong",
-   "type": "color",
-   "description": "The strong ink.",
-   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   "default": {
+    "var": "--darkmode-bg-med",
+    "type": "color",
+    "description": "The grey panel surface.",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "strong": {
+    "var": "--darkmode-bg-strong",
+    "type": "color",
+    "description": "The stronger panel.",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   },
+   "hover": {
+    "var": "--darkmode-bg-med-hover",
+    "type": "color",
+    "description": "The hover wash on panels.",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   }
   },
   "muted": {
    "var": "--darkmode-text-weak",
@@ -1607,23 +1944,13 @@
    "description": "Secondary ink.",
    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
   },
-  "border-strong": {
-   "var": "--darkmode-border-strong",
-   "type": "color",
-   "description": "Stronger hairline.",
-   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
-  },
-  "accent-hover": {
-   "var": "--darkmode-button-primary-hover",
-   "type": "color",
-   "description": "The lifted action fill.",
-   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
-  },
-  "on-accent": {
-   "var": "--darkmode-button-text-primary",
-   "type": "color",
-   "description": "Text on primary buttons.",
-   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  "on": {
+   "accent": {
+    "var": "--darkmode-button-text-primary",
+    "type": "color",
+    "description": "Text on primary buttons.",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   }
   },
   "danger": {
    "var": "--darkmode-error",
@@ -1631,17 +1958,13 @@
    "description": "Error red.",
    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
   },
-  "link-hover": {
-   "var": "--darkmode-link-hover",
-   "type": "color",
-   "description": "Link hover ink.",
-   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
-  },
-  "focus-ring": {
-   "var": "--darkmode-a11y-focus-primary",
-   "type": "color",
-   "description": "The a11y focus ring colour.",
-   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+  "focus": {
+   "ring": {
+    "var": "--darkmode-a11y-focus-primary",
+    "type": "color",
+    "description": "The a11y focus ring colour.",
+    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
+   }
   },
   "field": {
    "var": "--darkmode-button-secondary",
@@ -1653,12 +1976,6 @@
    "var": "--darkmode-button-disabled",
    "type": "color",
    "description": "Disabled control fill.",
-   "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
-  },
-  "text-disabled": {
-   "var": "--darkmode-link-disabled",
-   "type": "color",
-   "description": "Disabled ink.",
    "note": "declared in the shipped stylesheet; not bound on the captured marketing routes"
   }
  },

@@ -1,7 +1,7 @@
 {
  "date": "2026-11-11",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read tokens.json light/dark/core groups, raw/css-vars.json counts, raw/components-computed.json states, components.md/patterns.md and the screenshots; graded against the web wording",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read tokens.json light/dark/core groups, raw/css-vars.json counts, raw/components-computed.json states, components.md/patterns.md and the screenshots; graded against the web wording; revised after Greptile review",
  "systems": [
   {
    "slug": "brilliant",
@@ -9952,11 +9952,11 @@
     },
     "F7": {
      "grade": "meets",
-     "evidence": "The dark set mirrors every light semantic role (27 of 28 groups; the only diff is component sizes, light-only by design, and Asana's own var name --darkmode-inline-inline-link-text which adds one 'inline' segment). Dark is declared in the shipped CSS but unbound on every captured route — recorded as declared evidence, not a painted page."
+     "evidence": "The dark set mirrors every light semantic role (the only structural diff is component sizes, light-only by design; Asana's own var name --darkmode-inline-inline-link-text adds one 'inline' segment, kept verbatim). Dark is declared in the shipped CSS but unbound on every captured route — recorded as declared evidence, not a painted page."
     },
     "F8": {
-     "grade": "meets",
-     "evidence": "core.fontFamily.ui/mono/print, fontSize h1..h6 + base..xl, fontWeight 300..700, and composite core.typography display/heading/body/button/small with lineHeight and letterSpacing."
+     "grade": "partly",
+     "evidence": "core.fontFamily.ui (TWK Lausanne stack, measured painted)/fallback/mono/print, fontSize base..xl, fontWeight light..bold, and composite core.typography display/heading/body/button/small with lineHeight and letterSpacing. No caption or code text-style composite — a mono family alone is not a code style."
     },
     "F9": {
      "grade": "meets",
@@ -9984,7 +9984,7 @@
     },
     "C1": {
      "grade": "partly",
-     "evidence": "7 of 19: button, icon button (mobile menu), link, text field, select, menu (nav flyout), card (plan + link cards), plus an accordion (faq-open) outside the checklist. No textarea, checkbox, radio, switch, tabs, tooltip, dialog, toast, list row, table, avatar or badge on the public marketing surface."
+     "evidence": "7 of 19: button, icon button (mobile menu), link, text field, select, menu (nav flyout), card (plan + link cards), plus an accordion (faq-open) outside the checklist. No textarea, checkbox, radio, switch, tabs, tooltip, dialog, toast, list row, table, avatar or badge on the public marketing surface. 33 entries total, 32 measured — the create-account heading (gate-title) never resolved."
     },
     "C2": {
      "grade": "partly",
@@ -10004,23 +10004,23 @@
     },
     "A1": {
      "grade": "partly",
-     "evidence": "icon.png fetched from asana.com's favicon (48px frame upscaled to 128; brand.asana.biz 401'd for curl); fonts named (Segoe UI stack, mono, print fallbacks). No standalone SVG icon set lifted — declared under layoutGaps."
+     "evidence": "icon.png fetched from asana.com's favicon (48px frame upscaled to 128; brand.asana.biz 401'd for curl); fonts named (TWK Lausanne webfont stack + Helvetica fallback measured; Consolas/Georgia declared). No standalone SVG icon set lifted — declared under layoutGaps."
     },
     "K1": {
      "grade": "meets",
      "evidence": "README states what was captured (7 routes + mobile, 19 screenshots, 21 components), how (headless Chromium, computed styles, CSS-var harvest), and what to distrust (app behind sign-in, declared-only dark set, gate-title miss)."
     },
     "F15": {
-     "grade": "partly",
-     "evidence": "Script: all 4 checked pairs pass; lowest 4.59:1 light muted (light.muted) on surface (light.surface); dark (declared in the shipped CSS, unbound on the captured routes) not checked (no palette)"
+     "grade": "meets",
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 4.59:1 light muted (light.muted) on surface (light.surface.default)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 351 of 351 tokens name their source"
+     "evidence": "Script: 406 of 406 tokens name their source"
     },
     "K2": {
-     "grade": "missing",
-     "evidence": "Script: no \"Do and don't\" section in the README"
+     "grade": "partly",
+     "evidence": "Script: 6 rules, 5 linking an image (needs 3+, all linked)"
     },
     "K3": {
      "grade": "meets",
@@ -10040,12 +10040,12 @@
     }
    },
    "name": "Asana",
-   "goodFor": "SaaS marketing + product surfaces: near-white page, near-black #0d0d0d ink, Segoe UI, 3px control radii, near-black primary CTAs lifting to #3d3d3d, #f3f3f3 panels with #cfcfcf hairlines, and a full shipped token layer ; colour ramps, --lightmode-*/--darkmode-* roles, 16px spacing base, --media-* breakpoints, 12-col grid, --shadow-* and --transition-* scales",
+   "goodFor": "SaaS marketing + product surfaces: near-white page, near-black #0d0d0d ink, TWK Lausanne webfont, 3px control radii, near-black primary CTAs lifting to #3d3d3d, #f3f3f3 panels with #cfcfcf hairlines, and a full shipped token layer ; colour ramps, --lightmode-*/--darkmode-* roles, 16px spacing base, --media-* breakpoints, 12-col grid, --shadow-* and --transition-* scales",
    "url": "https://asana.com",
    "captured": "2026-11-11",
    "themes": [
     "light",
-    "dark (declared in the shipped CSS, unbound on the captured routes)"
+    "dark"
    ],
    "platform": "web",
    "category": "Productivity",
@@ -10054,5 +10054,5 @@
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "read tokens.json light/dark/core groups, raw/css-vars.json counts, raw/components-computed.json states, components.md/patterns.md and the screenshots; graded against the web wording"
+ "reviewMethod": "read tokens.json light/dark/core groups, raw/css-vars.json counts, raw/components-computed.json states, components.md/patterns.md and the screenshots; graded against the web wording; revised after Greptile review"
 }

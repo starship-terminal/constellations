@@ -37,7 +37,7 @@ Screenshots are named `{page}-light-{state}.png`: the site paints one light them
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 14 components were given a real keyboard focus (a further 1 could not be driven: `hero-cta`). 14 show a visible focus state: `nav-link` (2px solid #4786ff `glow.blue`, offset 2px), `nav-login` (2px solid #4786ff `glow.blue`, offset 2px), `nav-sales` (2px solid #4786ff `glow.blue`, offset 2px), `nav-cta` (2px solid #4786ff `glow.blue`, offset 2px), `flyout-trigger` (1px auto #005fcc, offset 0px), `billing-toggle` (2px solid #24a651, offset 2px), `plan-cta` (2px solid #4786ff `glow.blue`, offset 2px), `faq-question` (2px solid #4786ff `glow.blue`, offset 2px), `gate-cta` (2px solid #0d0d0d `black.1000`, offset 2px), `gate-sso` (1px auto #005fcc, offset 0px), `sales-select` (visible change in borderTopColor), `footer-link` (1px auto #005fcc, offset 1px), `footer-social` (1px auto #005fcc, offset 1px), `m-menu-button` (2px solid #4786ff `glow.blue`, offset 2px).
+**Focus.** 14 components were given a real keyboard focus (a further 1 could not be driven: `hero-cta`). 14 show a visible focus state: `nav-link` (2px solid #4786ff `glow.blue`, offset 2px), `nav-login` (2px solid #4786ff `glow.blue`, offset 2px), `nav-sales` (2px solid #4786ff `glow.blue`, offset 2px), `nav-cta` (2px solid #4786ff `glow.blue`, offset 2px), `flyout-trigger` (1px auto #005fcc, offset 0px), `billing-toggle` (2px solid #24a651, offset 2px), `plan-cta` (1px auto #005fcc, offset 1px), `faq-question` (2px solid #4786ff `glow.blue`, offset 2px), `gate-cta` (2px solid #0d0d0d `black.1000`, offset 2px), `gate-sso` (1px auto #005fcc, offset 0px), `sales-select` (visible change in borderTopColor), `footer-link` (1px auto #005fcc, offset 1px), `footer-social` (1px auto #005fcc, offset 1px), `m-menu-button` (2px solid #4786ff `glow.blue`, offset 2px).
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): nothing that would submit, sign in or navigate was pressed. Log in, Get started, plan CTAs and the form submits were measured, never followed.
 
@@ -45,12 +45,12 @@ Values that apply across entries, from the measurement files.
 
 | Duration | Easing | Property | Where |
 |---|---|---|---|
-| 0.15s | `ease` | background-color, border, none | faq-open, faq-question, gate-cta, gate-field, m-menu-button, m-menu-open, sales-field, sales-select |
+| 0.15s | `ease` | background-color, border, none | gate-cta, gate-field, m-menu-button, m-menu-open, sales-field, sales-select |
 | 0.15s | `ease-in-out` | color | gate-cta |
 | 0.2s | `ease` | color | billing-toggle |
 | 0.25s | `ease` | border-color | gate-sso |
-| 0.25s | `ease-in-out` | background-color | hero-cta |
-| 0.3s | `ease` | border, color, none | card, flyout-open, flyout-trigger, footer-link, footer-social, logo, m-nav-link, nav-cta and more |
+| 0.3s | `ease` | border, color, none | card, flyout-open, flyout-trigger, footer-link, footer-social, hero-cta, logo, m-nav-link and more |
+| 0.8s | `ease` | padding-bottom | faq-open, faq-question |
 
 **Card shapes.** Default-state values; the entries hold the states.
 
@@ -59,7 +59,7 @@ Values that apply across entries, from the measurement files.
 | [Header](#header) | 1440 x 68 | - | 6px | #ffffff `white` | rgba(0, 0, 0, 0.15) 0px 2px 8px 0px | 0 |
 | [Hero title](#hero-title) | 873.44 x 183.59 | - | - | - | none | 0 |
 | [Get started button](#get-started-button) | 104.56 x 44 | - | 100px | #0d0d0d `black.1000` | none | 0px 16px |
-| [Plan card](#plan-card) | 1288 x 974 | 1px solid transparent | 100px | #f3f3f3 `black.50` | none | 0 |
+| [Plan card](#plan-card) | 298 x 974 | 1px solid transparent | 100px | #f3f3f3 `black.50` | none | 32px |
 | [Gate field](#gate-field) | 251.33 x 50 | T: 1px solid #e0e6e8 `gray.3`; B: 1px solid #e0e6e8 `gray.3`; L: 1px solid #e0e6e8 `gray.3` | 3px 0px 0px 3px | #ffffff `white` | none | 0px 0px 0px 16px |
 | [Sales field](#sales-field) | 512 x 50 | 1px solid #cfcfcf `black.200` | 2px | #ffffff `white` | none | 10px 32px 10px 16px |
 | [Footer](#footer) | 1440 x 845.5 | - | - | #0d0d0d `black.1000` | none | 0 |
@@ -171,15 +171,14 @@ A hero action. Measured, never followed. Read as `hero-cta` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible) | size 628 x 142; padding 32px; radius 10px; background #ffffff `white`; text TWK Lausanne 30/36 400, #0d0d0d `black.1000`; transition background-color 0.25s ease-in-out; icon 32 x 32, #ffffff `white` |
-| pressed | background #f3f3f3 `black.50` |
+| default (same: hover, focus-visible, pressed) | size 167.81 x 64; padding 16px 32px; border 1px solid transparent; radius 100px; background #ffffff `white`; text TWK Lausanne 20/30 400, #0d0d0d `black.1000`; transition color 0.3s ease, border 0.3s ease |
 
 ![Hero CTA default](components/crops/hero-cta-default.png) ![Hero CTA hover](components/crops/hero-cta-hover.png) ![Hero CTA focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero CTA pressed](components/crops/hero-cta-pressed.png)
 
 #### Caps label
 A small-caps eyebrow label. Read as `caps-label` on the home page.
 
-**Values (default).** size 376 x 72; background transparent; text TWK Lausanne 30/36 400, #0d0d0d `black.1000`.
+**Values (default).** size 180.44 x 24.5; padding 4px 8px; radius 4px; background #f3f3f3 `black.50`; text TWK Lausanne 11/16.5 500, #0d0d0d `black.1000`.
 
 ![Caps label default](components/crops/caps-label-default.png)
 
@@ -215,7 +214,8 @@ The monthly/annual switch. Measured, never switched. Read as `billing-toggle` on
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 62.31 x 24; background transparent; text TWK Lausanne 16/24 500, #6e6e6e `black.600`; transition color 0.2s ease |
+| default | size 62.31 x 24; background transparent; text TWK Lausanne 16/24 500, #6e6e6e `black.600`; transition color 0.2s ease |
+| hover | background #f06a6a; text TWK Lausanne 16/24 500, #0d0d0d `black.1000` |
 | focus-visible | outline 2px solid #24a651, offset 2px |
 | pressed | background #f06a6a; text TWK Lausanne 16/24 500, #0d0d0d `black.1000` |
 
@@ -224,21 +224,18 @@ The monthly/annual switch. Measured, never switched. Read as `billing-toggle` on
 #### Plan card
 A pricing plan column. Read as `plan-card` on the pricing page.
 
-**Values (default).** size 1288 x 974; background transparent; text TWK Lausanne 36/36 400, #0d0d0d `black.1000`; icon 16 x 16, #0d0d0d `black.1000`.
-
-Child layers that carry the look: div 298x974 border 1px solid #cfcfcf `black.200` radius 16px; a 232x58 background #f3f3f3 `black.50` border 1px solid transparent radius 100px; div 209.9x113.5 background #3d3d3d `black.800` radius 6px shadow rgba(0, 0, 0, 0.15) 0px 2px 8px 0px.
+**Values (default).** size 298 x 974; padding 32px; border 1px solid #cfcfcf `black.200`; radius 16px; background transparent; text TWK Lausanne 36/36 400, #0d0d0d `black.1000`; icon 16 x 16, #0d0d0d `black.1000`.
 
 ![Plan card default](components/crops/plan-card-default.png)
 
 #### Plan CTA
-A plan action. Measured, never followed. Read as `plan-cta` on the pricing page.
+The plan column's action. Measured, never followed. Read as `plan-cta` on the pricing page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default | size 104.56 x 44; padding 0px 16px; radius 100px; background #0d0d0d `black.1000`; text TWK Lausanne 14/21 500, #ffffff `white`; transition none 0.3s ease |
-| hover | background #6e6e6e `black.600` |
-| focus-visible | outline 2px solid #4786ff `glow.blue`, offset 2px |
-| pressed | background #6e6e6e `black.600` |
+| default (same: pressed) | size 232 x 58; padding 16px 32px; border 1px solid transparent; radius 100px; background #f3f3f3 `black.50`; text TWK Lausanne 16/24 500, #0d0d0d `black.1000`; transition color 0.3s ease, border 0.3s ease |
+| hover | background #e7e7e7 `black.100` |
+| focus-visible | outline 1px auto #005fcc, offset 1px |
 
 ![Plan CTA default](components/crops/plan-cta-default.png) ![Plan CTA hover](components/crops/plan-cta-hover.png) ![Plan CTA focus-visible](components/crops/plan-cta-focus-visible.png) ![Plan CTA pressed](components/crops/plan-cta-pressed.png)
 
@@ -247,19 +244,19 @@ Read as `faq-question` on the pricing page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 44 x 44; radius 100px; background transparent; text TWK Lausanne 13/19.5 300, #0d0d0d `black.1000`; transition none 0.15s ease; icon 28 x 28, #ffffff `white` |
+| default (same: hover, pressed) | size 738 x 92.8; padding 32px 0px; background transparent; text TWK Lausanne 24/28.8 500, #0d0d0d `black.1000`; transition padding-bottom 0.8s ease; icon 26 x 13, #0d0d0d `black.1000` |
 | focus-visible | outline 2px solid #4786ff `glow.blue`, offset 2px |
 
-Child layers that carry the look: svg 28x28 border 4px solid transparent; div 209.9x55 background #ffffff `white` radius 6px shadow rgba(0, 0, 0, 0.15) 0px 2px 8px 0px; div::after 10pxx10px border 5px solid transparent.
+Child layers that carry the look: span 24x24 background #f3f3f3 `black.50` radius 100%.
 
 ![FAQ question default](components/crops/faq-question-default.png) ![FAQ question hover](components/crops/faq-question-hover.png) ![FAQ question focus-visible](components/crops/faq-question-focus-visible.png) ![FAQ question pressed](components/crops/faq-question-pressed.png)
 
 #### FAQ, open
 The row after its own toggle. Read as `faq-open` on the pricing page.
 
-**Values (opened).** size 44 x 44; radius 100px; background transparent; text TWK Lausanne 13/19.5 300, #0d0d0d `black.1000`; transition none 0.15s ease; icon 28 x 28, #ffffff `white`.
+**Values (opened).** size 738 x 76.8; padding 32px 0px 16px 0px; background transparent; text TWK Lausanne 24/28.8 500, #0d0d0d `black.1000`; transition padding-bottom 0.8s ease; icon 26 x 13, #0d0d0d `black.1000`.
 
-Child layers that carry the look: svg 28x28 border 4px solid transparent; div 209.9x55 background #ffffff `white` radius 6px shadow rgba(0, 0, 0, 0.15) 0px 2px 8px 0px; div::after 10pxx10px border 5px solid transparent.
+Child layers that carry the look: span 24x24 background #f3f3f3 `black.50` radius 100%.
 
 ![FAQ, open opened](components/crops/faq-open-opened.png)
 
@@ -445,13 +442,13 @@ The site paints light on every captured route; the --darkmode-* role vars are de
 
 ### Fonts
 
-- **The face** is Segoe UI across the UI (the declared --fontFamily-sans stack); --fontFamily-mono and -print ship for code and print. The style guide renders with system fallbacks.
+- **The face** is TWK Lausanne, a webfont the site loads via inline @font-face, falling back to Helvetica Neue/Helvetica; --fontFamily-mono (Consolas) and -print (Georgia) ship for code and print. The style guide renders with system fallbacks.
 - Product imagery and the Asana mark in the screenshots are Asana's property.
 
 ### Screenshots
 
 - Screenshots are stored as 256-colour PNGs; read exact colours from the tokens or the raw files.
-- The changelog page is 91,833 px tall; its -full shot is the whole page stitched from 7 tiles.
+- The -full shots are whole pages stitched from GPU-texture tiles; the tallest (pricing) is ~9,740 px. No captured page reports an unbounded height.
 
 ### Content left out
 

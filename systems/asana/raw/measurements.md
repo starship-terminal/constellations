@@ -1,6 +1,6 @@
 # Component measurements
 
-Computed styles read from arcade.software on 2026-11-11 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) in the site's one light theme (the Finsweet consent banner, the Intercom launcher and the custom play cursor were hidden, never clicked or answered), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
+Computed styles read from asana.com on 2026-11-11 by `tools/capture/public/measure.mjs`, signed out, in headless Chromium at 1440 x 900 (the Mobile group at 390 x 844) in the light theme every captured route paints (the OneTrust consent banner was dismissed, never clicked or answered beyond dismissal), and written here by `tools/capture/public/build-measurements.mjs` from [components-computed.json](components-computed.json). One table per component: a column per state, a row per property. A cell that repeats the first state's value reads `=`. Colours are hex, with `@ alpha` when translucent. "Painted layers" lists the first nodes inside the component that paint a fill, border, shadow or outline; "Ancestor paint" the same for its parents.
 
 States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab); `pressed` is forced with DevTools (`CSS.forcePseudoState` :active:hover), so no button was pressed; `focused` is a text field clicked into; `filled` is sample text typed and deleted again, with nothing sent; `opened`, `expanded` and the rest are resting states reached by the page or by a UI toggle.
 
@@ -250,21 +250,20 @@ Page: home. Selector: `hero CTA`. States: default, hover, focus-visible, pressed
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 628 x 142 | = | = | = |
-| Padding | 32px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 10px | = | = | = |
-| Background | #ffffff | = | = | #f3f3f3 |
+| Size (w x h) | 167.81 x 64 | = | = | = |
+| Padding | 16px 32px | = | = | = |
+| Gap | 8px | = | = | = |
+| Border | 1px solid #000000 @ 0 | = | = | = |
+| Radius | 100px | = | = | = |
+| Background | #ffffff | = | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | = | = |
-| Font | TWK Lausanne 16px/24px 500 | = | = | = |
+| Font | TWK Lausanne 20px/30px 400 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #0d0e10 | = | = | #cd4848 |
-| Text node | h4.css-rqx2h3.eq8x6k81: TWK Lausanne 30px/36px 400, #0d0d0d | = | = | = |
-| Transition | background-color 0.25s ease-in-out | = | = | = |
+| Colour | #0d0d0d | = | = | = |
+| Transition | color, border 0.3s ease | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 32 x 32, colour #ffffff, fill #0d0d0d | = | = | = |
-| Painted layers | a.css-1pf1mn9.eq8x6k84 628.0x142.0 bg #ffffff r 10px; div.css-kqmcno.eq8x6k82 59.0x59.0 bg #0d0d0d r 100% | = | = | a.css-1pf1mn9.eq8x6k84 628.0x142.0 bg #f3f3f3 r 10px; div.css-kqmcno.eq8x6k82 59.0x59.0 bg #0d0d0d r 100% |
+| Painted layers | a.css-9oncxd-link-3-link-2-link-1.e78bqlk1 167.8x64.0 bg #ffffff border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 100px | = | = | = |
 | How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
 
 Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`, `hero-cta-pressed.png`.
@@ -273,22 +272,24 @@ Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png
 
 Caps label. A small-caps eyebrow label.
 
-Page: home. Selector: `caps eyebrow`. States: default.
+Page: home. Selector: `span[class*=caps]`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 376 x 72 |
-| Padding | 0px |
+| Size (w x h) | 180.44 x 24.5 |
+| Padding | 4px 8px |
+| Gap | 4px |
 | Border | none |
-| Radius | 0px |
-| Background | transparent |
+| Radius | 4px |
+| Background | #f3f3f3 |
 | Box shadow | none |
 | Outline | none |
-| Font | TWK Lausanne 30px/36px 400 |
-| Letter spacing | normal |
+| Font | TWK Lausanne 11px/16.5px 500 |
+| Letter spacing | 0.44px |
 | Colour | #0d0d0d |
 | Transition | none |
 | Cursor | default |
+| Painted layers | span.css-1hpazh9-caps-small.ej34ex42 180.4x24.5 bg #f3f3f3 r 4px |
 | How | at rest |
 
 Crops: `caps-label-default.png`.
@@ -382,16 +383,16 @@ Page: pricing. Selector: `billing toggle`. States: default, hover, focus-visible
 | Padding | 0px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
-| Background | transparent | = | = | #f06a6a |
+| Background | transparent | #f06a6a | = | #f06a6a |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 2px solid #24a651 offset 2px | = |
 | Font | TWK Lausanne 16px/24px 500 | = | = | = |
 | Letter spacing | 0.4px | = | = | = |
-| Colour | #6e6e6e | = | = | #0d0d0d |
+| Colour | #6e6e6e | #0d0d0d | = | #0d0d0d |
 | Transition | color 0.2s ease | = | = | = |
 | Cursor | pointer | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | button.styles_billing-toggle__label__1mJ88 62.3x24.0 outline 2px solid #24a651 offset 2px | button.styles_billing-toggle__label__1mJ88 62.3x24.0 bg #f06a6a |
+| Painted layers | - | button.styles_billing-toggle__label__1mJ88 62.3x24.0 bg #f06a6a | button.styles_billing-toggle__label__1mJ88 62.3x24.0 outline 2px solid #24a651 offset 2px | button.styles_billing-toggle__label__1mJ88 62.3x24.0 bg #f06a6a |
 
 Crops: `billing-toggle-default.png`, `billing-toggle-hover.png`, `billing-toggle-focus-visible.png`, `billing-toggle-pressed.png`.
 
@@ -399,15 +400,14 @@ Crops: `billing-toggle-default.png`, `billing-toggle-hover.png`, `billing-toggle
 
 Plan card. A pricing plan column.
 
-Page: pricing. Selector: `plan card`. States: default.
+Page: pricing. Selector: `plan column`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 1288 x 974 |
-| Padding | 0px |
-| Gap | normal 32px |
-| Border | none |
-| Radius | 0px |
+| Size (w x h) | 298 x 974 |
+| Padding | 32px |
+| Border | 1px solid #cfcfcf |
+| Radius | 16px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
@@ -425,25 +425,25 @@ Crops: `plan-card-default.png`.
 
 #### plan-cta
 
-Plan CTA. A plan action. Measured, never followed.
+Plan CTA. The plan column's action. Measured, never followed.
 
-Page: pricing. Selector: `plan CTA`. States: default, hover, focus-visible, pressed.
+Page: pricing. Selector: `plan column CTA`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 104.56 x 44 | = | = | = |
-| Padding | 0px 16px | = | = | = |
-| Border | none | = | = | = |
+| Size (w x h) | 232 x 58 | = | = | = |
+| Padding | 16px 32px | = | = | = |
+| Border | 1px solid #000000 @ 0 | = | = | = |
 | Radius | 100px | = | = | = |
-| Background | #0d0d0d | #6e6e6e | = | #6e6e6e |
+| Background | #f3f3f3 | #e7e7e7 | = | = |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 2px solid #4786ff offset 2px | = |
-| Font | TWK Lausanne 14px/21px 500 | = | = | = |
+| Outline | none | = | 1px auto #005fcc offset 1px | = |
+| Font | TWK Lausanne 16px/24px 500 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | none 0.3s ease | = | = | = |
+| Colour | #0d0d0d | = | = | = |
+| Transition | color, border 0.3s ease | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.styles_button-cta__K_nHI.styles_hide-on-logged-in__71yBl 104.6x44.0 bg #0d0d0d r 100px | a.styles_button-cta__K_nHI.styles_hide-on-logged-in__71yBl 104.6x44.0 bg #6e6e6e r 100px | a.styles_button-cta__K_nHI.styles_hide-on-logged-in__71yBl 104.6x44.0 bg #0d0d0d r 100px outline 2px solid #4786ff offset 2px | a.styles_button-cta__K_nHI.styles_hide-on-logged-in__71yBl 104.6x44.0 bg #6e6e6e r 100px |
+| Painted layers | a.css-9oncxd-link-3-link-2-link-1.e78bqlk1 232.0x58.0 bg #f3f3f3 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 100px | a.css-9oncxd-link-3-link-2-link-1.e78bqlk1 232.0x58.0 bg #e7e7e7 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 100px | a.css-9oncxd-link-3-link-2-link-1.e78bqlk1 232.0x58.0 bg #f3f3f3 border T:1px solid #000000 @ 0 / R:1px solid #000000 @ 0 / B:1px solid #000000 @ 0 / L:1px solid #000000 @ 0 r 100px outline 1px auto #005fcc offset 1px | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-focus-visible.png`, `plan-cta-pressed.png`.
@@ -452,25 +452,25 @@ Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-focus-visible.png
 
 FAQ question.
 
-Page: pricing. Selector: `pricing FAQ`. States: default, hover, focus-visible, pressed.
+Page: pricing. Selector: `pricing FAQ accordion`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 44 x 44 | = | = | = |
-| Padding | 0px | = | = | = |
+| Size (w x h) | 738 x 92.8 | = | = | = |
+| Padding | 32px 0px | = | = | = |
+| Gap | 32px | = | = | = |
 | Border | none | = | = | = |
-| Radius | 100px | = | = | = |
+| Radius | 0px | = | = | = |
 | Background | transparent | = | = | = |
 | Box shadow | none | = | = | = |
 | Outline | none | = | 2px solid #4786ff offset 2px | = |
-| Font | TWK Lausanne 14px/36px 500 | = | = | = |
-| Letter spacing | 0.5px | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Text node | div.css-1sa3o1x-p3.e1huxitw1: TWK Lausanne 13px/19.5px 300, #0d0d0d, ls 0.26px | = | = | = |
-| Transition | none 0.15s, 0.15s ease, ease-in-out delay 0s, 0s | = | = | = |
+| Font | TWK Lausanne 24px/28.8px 500 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #0d0d0d | = | = | = |
+| Transition | padding-bottom 0.8s ease | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 28 x 28, colour #ffffff | = | = | = |
-| Painted layers | svg.styles_icon__VHmtA 28.0x28.0 border T:4px solid #000000 @ 0 / R:4px solid #000000 @ 0 / B:4px solid #000000 @ 0 / L:4px solid #000000 @ 0; div.css-1sa3o1x-p3.e1huxitw1 209.9x55.0 bg #ffffff r 6px shadow #000000 @ 0.15 0px 2px 8px 0px; div::after.css-1sa3o1x-p3.e1huxitw1 10pxx10px border T:5px solid #000000 @ 0 / R:5px solid #000000 @ 0 / B:5px solid #ffffff / L:5px solid #000000 @ 0 | = | button.styles_trigger__1aD2I 44.0x44.0 r 100px outline 2px solid #4786ff offset 2px; svg.styles_icon__VHmtA 28.0x28.0 border T:4px solid #000000 @ 0 / R:4px solid #000000 @ 0 / B:4px solid #000000 @ 0 / L:4px solid #000000 @ 0; div.css-1sa3o1x-p3.e1huxitw1 209.9x55.0 bg #ffffff r 6px shadow #000000 @ 0.15 0px 2px 8px 0px; div::after.css-1sa3o1x-p3.e1huxitw1 10pxx10px border T:5px solid #000000 @ 0 / R:5px solid #000000 @ 0 / B:5px solid #ffffff / L:5px solid #000000 @ 0 | = |
+| Icon | 26 x 13, colour #0d0d0d | = | = | = |
+| Painted layers | span.rebrand-styles_chevronCircle__uYFfP 24.0x24.0 bg #f3f3f3 r 100% | = | button.rebrand-styles_accordionTrigger__hoff_ 738.0x92.8 outline 2px solid #4786ff offset 2px; span.rebrand-styles_chevronCircle__uYFfP 24.0x24.0 bg #f3f3f3 r 100% | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `faq-question-default.png`, `faq-question-hover.png`, `faq-question-focus-visible.png`, `faq-question-pressed.png`.
@@ -479,25 +479,25 @@ Crops: `faq-question-default.png`, `faq-question-hover.png`, `faq-question-focus
 
 FAQ, open. The row after its own toggle.
 
-Page: pricing. Selector: `pricing FAQ`. States: opened.
+Page: pricing. Selector: `pricing FAQ accordion`. States: opened.
 
 | Property | opened |
 |---|---|
-| Size (w x h) | 44 x 44 |
-| Padding | 0px |
+| Size (w x h) | 738 x 76.8 |
+| Padding | 32px 0px 16px 0px |
+| Gap | 32px |
 | Border | none |
-| Radius | 100px |
+| Radius | 0px |
 | Background | transparent |
 | Box shadow | none |
 | Outline | none |
-| Font | TWK Lausanne 14px/36px 500 |
-| Letter spacing | 0.5px |
-| Colour | #ffffff |
-| Text node | div.css-1sa3o1x-p3.e1huxitw1: TWK Lausanne 13px/19.5px 300, #0d0d0d, ls 0.26px |
-| Transition | none 0.15s, 0.15s ease, ease-in-out delay 0s, 0s |
+| Font | TWK Lausanne 24px/28.8px 500 |
+| Letter spacing | normal |
+| Colour | #0d0d0d |
+| Transition | padding-bottom 0.8s ease |
 | Cursor | pointer |
-| Icon | 28 x 28, colour #ffffff |
-| Painted layers | svg.styles_icon__VHmtA 28.0x28.0 border T:4px solid #000000 @ 0 / R:4px solid #000000 @ 0 / B:4px solid #000000 @ 0 / L:4px solid #000000 @ 0; div.css-1sa3o1x-p3.e1huxitw1 209.9x55.0 bg #ffffff r 6px shadow #000000 @ 0.15 0px 2px 8px 0px; div::after.css-1sa3o1x-p3.e1huxitw1 10pxx10px border T:5px solid #000000 @ 0 / R:5px solid #000000 @ 0 / B:5px solid #ffffff / L:5px solid #000000 @ 0 |
+| Icon | 26 x 13, colour #0d0d0d |
+| Painted layers | span.rebrand-styles_chevronCircle__uYFfP 24.0x24.0 bg #f3f3f3 r 100% |
 | How | own toggle |
 
 Crops: `faq-open-opened.png`.

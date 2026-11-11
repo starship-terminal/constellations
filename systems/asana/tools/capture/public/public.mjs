@@ -1,14 +1,15 @@
-// Captures artboard.studio's public pages into RAW (full-colour PNGs); quantize.py turns them into screenshots/.
+// Captures asana.com's public pages into RAW (full-colour PNGs); quantize.py turns them into screenshots/.
 //
 //   RAW=/some/scratch/dir PLAYWRIGHT=/path/to/playwright/index.mjs node public.mjs [page,page,...]
 //
-// Names are {page}-light-{state}.png; mobile ones get a `mobile-` prefix. The site paints one light
-// theme. Desktop shots are 1440x900 at 1x, mobile 390x844 at 2x, `*-full` shots 1x. A page taller
-// than one GPU texture is saved as name.partN.png tiles, which quantize.py stitches back together;
-// an unbounded page truncates at 8 chunks and the log records the boundary.
-// artboard.studio is a Webflow marketing site; headless Chromium is not challenged. The editor on
-// app.artboard.studio sits behind sign-in and is a boundary. Nothing is sent or signed into: the
-// only presses are local UI toggles — the mockup-category tabs and the mobile menu.
+// Names are {page}-light-{state}.png; mobile ones get a `mobile-` prefix. Every captured route
+// paints light (the --darkmode-* set is declared, never bound). Desktop shots are 1440x900 at 1x,
+// mobile 390x844 at 2x, `*-full` shots 1x. A page taller than one GPU texture is saved as
+// name.partN.png tiles, which quantize.py stitches back together; an unbounded page truncates at
+// 8 chunks and the log records the boundary.
+// asana.com is a Next.js marketing site; headless Chromium is not challenged. The product on
+// app.asana.com sits behind sign-in and is a boundary. Nothing is sent or signed into: the
+// only presses are local UI toggles — the nav flyout, a pricing FAQ and the mobile menu.
 import fs from 'fs';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE, LAUNCH_OPTS } from './lib.mjs';

@@ -1,4 +1,4 @@
-// Shared helpers for the arket.com public captures (adapted from arcade's
+// Shared helpers for the asana.com public captures (adapted from arcade's
 // copy, which came from the kit). Run with PLAYWRIGHT pointing at a
 // Playwright install (index.mjs) when this directory has no node_modules.
 import fs from 'node:fs';
@@ -21,6 +21,23 @@ export const BASE = 'https://asana.com';
 export const HERE = path.dirname(new URL(import.meta.url).pathname);
 export const REF = path.resolve(HERE, '..', '..', '..'); // systems/<slug>, from tools/capture/public
 export const CROPS = path.join(REF, 'components', 'crops');
+// Clip a viewport screenshot from a measured rect when the element itself
+// re-renders between the style read and the crop (Next.js hydration swaps):
+// the locator can stop resolving, so the rect is the last stable evidence.
+export async function cropRect(page, rect, name, pad = 8) {
+  fs.mkdirSync(CROPS, { recursive: true });
+  const file = path.join(CROPS, `${name}.png`);
+  const vp = page.viewportSize();
+  const clip = {
+    x: Math.max(0, rect.x - pad),
+    y: Math.max(0, rect.y - pad),
+    width: Math.min(vp.width - Math.max(0, rect.x - pad), rect.w + 2 * pad),
+    height: Math.min(vp.height - Math.max(0, rect.y - pad), rect.h + 2 * pad),
+  };
+  await page.screenshot({ path: file, clip, animations: 'allow' });
+  quantize(file);
+  return path.relative(REF, file);
+}
 export const RAW = path.join(REF, 'raw');
 
 // asana.com is a Next.js marketing site in one light theme; headless
@@ -272,7 +289,18 @@ export async function crop(page, locator, name, pad = 8) {
     return n;
   }, STICKY);
   try {
-    const box = await locator.boundingBox();
+    // boundingBox waits for the element to stop moving; a perpetually
+    // animating element (entrance loops, live underlines) never settles, so
+    // fall back to an immediate getBoundingClientRect for the same clip.
+    let box;
+    try {
+      box = await locator.boundingBox({ timeout: 3000 });
+    } catch {
+      box = await locator.evaluate((el) => {
+        const r = el.getBoundingClientRect();
+        return { x: r.x, y: r.y, width: r.width, height: r.height };
+      });
+    }
     if (!box) throw new Error(`no box for ${name}`);
     const vp = page.viewportSize();
     const inView = box.y - pad >= 0 && box.y + box.height + pad <= vp.height && box.x >= 0 && box.x + box.width <= vp.width + 1;

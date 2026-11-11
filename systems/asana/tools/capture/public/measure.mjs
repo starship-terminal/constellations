@@ -1,22 +1,21 @@
-// Measures artboard.studio's public components in every state reachable without
+// Measures asana.com's public components in every state reachable without
 // signing in or submitting anything.
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node measure.mjs [page ...]
 //
-// Pages: home mockup figma mobile.
+// Pages: home pricing gate sales mobile footer.
 // Writes raw/components-computed.json (merged) and one crop per component and
 // state into components/crops/; raw/measurements.md is built by
 // build-measurements.mjs.
 //
-// artboard.studio is a Webflow marketing site in one light theme; components
-// are found by Webflow's semantic classes (button is-link, tab-button,
-// heading-*, w-nav-*), roles and stable text. Nothing is sent or signed
-// into: the only presses are local UI toggles — a mockup-category tab and
-// the mobile menu. "Signup", "Mockup Library" and every editor link are
-// measured, never followed.
+// asana.com is a Next.js marketing site; components are found by roles,
+// landmark scoping (main vs header/footer) and stable text. Nothing is sent
+// or signed into: the only presses are local UI toggles — the nav flyout, a
+// pricing FAQ and the mobile menu. Log in, Get started, the plan CTAs and
+// both forms are measured, never followed or submitted.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BASE, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { BASE, launch, patch, open, closePromo, domFind, styleOf, crop, cropRect, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -107,7 +106,15 @@ async function measure(key, state, target, opts = {}) {
     if (opts.crop !== false) {
       try {
         file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
-      } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
+      } catch (e) {
+        // The element re-rendered between the style read and the crop (Next.js
+        // hydration), so the locator no longer resolves: clip the viewport
+        // shot from the rect we just measured instead — same pixels, noted.
+        try {
+          file = s.rect && await cropRect(page, s.rect, `${key}-${state}`, opts.pad ?? 8);
+          if (file) s.cropVia = 'rect clip (element re-rendered)';
+        } catch (e2) { s.cropError = String(e.message || e).slice(0, 120); }
+      }
     }
     c.states[state] = { ...s, crop: file, via: opts.via };
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
@@ -241,9 +248,9 @@ async function home() {
 
   const h = G.home;
   await S('hero-title', q('h1').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero title', sel: 'h1' }, { noScroll: true });
-  const hcta = q('a').filter({ hasText: /Get started|Try free|See pricing/i }).filter({ visible: true }).nth(1);
+  const hcta = q('a').filter({ hasText: /^Get started$/ }).filter({ visible: true }).nth(1);
   await S('hero-cta', hcta, B4, { group: h, title: 'Hero CTA', desc: 'A hero action. Measured, never followed.', sel: 'hero CTA' });
-  await S('caps-label', q('[class*="caps"], h3, h4').filter({ hasText: /AI TEAMMATES|ASANA/i }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Caps label', desc: 'A small-caps eyebrow label.', sel: 'caps eyebrow' });
+  await S('caps-label', q('span[class*="caps" i]').filter({ visible: true }).first(), ['default'], { group: h, title: 'Caps label', desc: 'A small-caps eyebrow label.', sel: 'span[class*=caps]' });
   await S('section-title', q('h2').filter({ visible: true }).first(), ['default'], { group: h, title: 'Section heading', sel: 'h2' });
   const card = q('a').filter({ has: q('img') }).filter({ visible: true }).nth(2);
   await S('card', card, ['default', 'hover'], { group: h, title: 'Card', desc: 'A linked feature/customer card.', sel: 'card link' });
@@ -256,13 +263,13 @@ async function pricing() {
   await S('pricing-title', q('h1, h2').filter({ visible: true }).first(), ['default'], { group: g, title: 'Pricing title', sel: 'h1/h2' }, { noScroll: true });
   const toggle = q('button[role="switch"], [role="switch"], button[class*="toggle"], label[class*="toggle"]').filter({ visible: true }).first();
   if (await toggle.count()) await S('billing-toggle', toggle, B4, { group: g, title: 'Billing toggle', desc: 'The monthly/annual switch. Measured, never switched.', sel: 'billing toggle' }, { noScroll: true });
-  const plan = q('h3:has-text("Personal"), h3:has-text("Starter")').first().locator('xpath=ancestor::*[self::section or self::div][3]');
-  await S('plan-card', plan, ['default'], { group: g, title: 'Plan card', desc: 'A pricing plan column.', sel: 'plan card' });
-  const pcta = q('a, button').filter({ hasText: /Get started|Try for free|Buy now|Contact sales/i }).filter({ visible: true }).nth(1);
-  await S('plan-cta', pcta, B4, { group: g, title: 'Plan CTA', desc: 'A plan action. Measured, never followed.', sel: 'plan CTA' });
-  const faq = q('button[aria-expanded], details summary').filter({ visible: true }).first();
-  await S('faq-question', faq, B4, { group: g, title: 'FAQ question', sel: 'pricing FAQ' });
-  await S('faq-open', faq, ['opened'], { group: g, title: 'FAQ, open', desc: 'The row after its own toggle.', sel: 'pricing FAQ' }, { cropLoc: faq.locator('xpath=ancestor::*[self::details or self::li or self::section or self::div][1]') });
+  const plan = q('h3:has-text("Personal"), h3:has-text("Starter")').first().locator('xpath=ancestor::div[2]');
+  await S('plan-card', plan, ['default'], { group: g, title: 'Plan card', desc: 'A pricing plan column.', sel: 'plan column' });
+  const pcta = plan.locator('a, button').filter({ hasText: /Sign up|Get started|Try/i }).filter({ visible: true }).first();
+  await S('plan-cta', pcta, B4, { group: g, title: 'Plan CTA', desc: 'The plan column\'s action. Measured, never followed.', sel: 'plan column CTA' });
+  const faq = q('[class*="accordionItem" i] button[aria-expanded]').filter({ visible: true }).first();
+  await S('faq-question', faq, B4, { group: g, title: 'FAQ question', sel: 'pricing FAQ accordion' });
+  await S('faq-open', faq, ['opened'], { group: g, title: 'FAQ, open', desc: 'The row after its own toggle.', sel: 'pricing FAQ accordion' }, { cropLoc: faq.locator('xpath=ancestor::*[contains(@class,"accordionItem")][1]') });
   save();
 }
 

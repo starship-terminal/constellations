@@ -19,7 +19,7 @@ At 390 the links collapse behind a menu button opening a full-width panel
 
 ## The hero
 
-The landing is a large Segoe-UI h1 over a supporting line and a CTA pair —
+The landing is a large TWK Lausanne h1 over a supporting line and a CTA pair —
 a near-black primary and a ghost secondary — sitting on `#f3f3f3` or white
 panels with `#cfcfcf` hairlines ([home-light-default](screenshots/home-light-default.png),
 `hero-title`, `hero-cta`, `eyebrow`, `section-heading`, `card`).
@@ -55,5 +55,5 @@ submitted ([sales-light-default](screenshots/sales-light-default.png),
 ## The footer
 
 A multi-column link block: grouped headings, dense link lists and legal,
-on a light surface ([home-light-full](screenshots/home-light-full.png),
+on the near-black `#0d0d0d` surface the footer actually paints (white text) ([home-light-full](screenshots/home-light-full.png),
 `footer`).

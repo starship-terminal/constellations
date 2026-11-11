@@ -144,10 +144,14 @@ ROLES = [
     ("text-disabled", "link-disabled", "Disabled ink."),
 ]
 for key, slot, desc in ROLES:
-    SPEC["light"][key] = var("--lightmode-" + slot, "color", description=desc)
+    # emit(), not direct assignment: keys like accent/border/icon/link are
+    # already groups emitted from --lightmode-*-hover/-weak/-disabled, so the
+    # convenience role lands as the group's `default` child, preserving the
+    # captured state colours.
+    emit(SPEC["light"], "--" + key, var("--lightmode-" + slot, "color", description=desc))
     if "--darkmode-" + slot in R:
-        SPEC["dark"][key] = var("--darkmode-" + slot, "color", description=desc,
-                                note="declared in the shipped stylesheet; not bound on the captured marketing routes")
+        emit(SPEC["dark"], "--" + key, var("--darkmode-" + slot, "color", description=desc,
+                                note="declared in the shipped stylesheet; not bound on the captured marketing routes"))
 
 # ------------------------------------------------------------------ type
 
@@ -171,13 +175,17 @@ def tstyle(comp, state, desc):
 
 
 font = SPEC["core"].setdefault("fontFamily", {})
-if "fontFamily" not in font:
-    pass
-# the site's declared stacks live in --fontFamily-*; add the painted UI stack
-font["ui"] = {"value": "\"Segoe UI\",-apple-system,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",sans-serif",
+# the site's declared stacks live in --fontFamily-mono/-print; the painted UI
+# family is TWK Lausanne (a webfont, loaded via inline @font-face) falling
+# back to Helvetica Neue/Helvetica, measured from the live DOM
+font["ui"] = {"value": "\"TWK Lausanne\",\"Helvetica Neue\",Helvetica,sans-serif",
               "type": "fontFamily",
-              "source": "computed fontFamily of body/UI elements (raw/components-computed.json); the site paints Segoe UI",
-              "description": "The painted UI stack."}
+              "source": "computed fontFamily of the painted text (raw/components-computed.json); TWK Lausanne is a webfont loaded by the site's inline @font-face",
+              "description": "The painted UI stack (webfont + fallbacks)."}
+font["fallback"] = {"value": "Helvetica,Arial,sans-serif",
+                    "type": "fontFamily",
+                    "source": "computed fontFamily painted on elements outside the Lausanne stack (raw/components-computed.json)",
+                    "description": "The secondary painted stack."}
 
 typo = SPEC["core"].setdefault("typography", {})
 for key, comp, state, desc in [

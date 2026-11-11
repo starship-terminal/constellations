@@ -3,7 +3,7 @@
 //
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/vars.mjs
 //
-// asana.com is a Webflow marketing site; every stylesheet body is
+// asana.com is a Next.js marketing site; every stylesheet body is
 // captured from the network responses and re-parsed in the page with a
 // constructed CSSStyleSheet — the same parse the browser does — so inline
 // and external rules are handled alike. Every rule declaring a --* property

@@ -12,8 +12,12 @@
   --sg-sans: "Inter", "Inter Fallback", -apple-system, BlinkMacSystemFont, "SF Pro", system-ui, sans-serif;
   --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
 }
+[data-mode="dark"] {
+/*DARK*/
+  color-scheme: dark;
+}
 * { box-sizing: border-box; }
-body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #000); background: var(--page, #fff); }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-default, #3d3d3d); background: var(--page, #fff); }
 main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
 h1 { font: 700 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
 h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted, #737373); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, #e5e7eb); }
@@ -32,23 +36,24 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .kv span { color: var(--muted, #686868); }
 /* ---- site mock ---- */
 .mock { border: 1px solid var(--border, #e5e7eb); border-radius: 16px; overflow: hidden; background: var(--page, #fff); }
-.navbar { display: flex; align-items: center; gap: 18px; height: var(--layout-header-height, 72px); padding: 0 20px; background: var(--page, #fff); border-bottom: 1px solid var(--border, #e5e7eb); font-size: 14px; color: var(--muted, rgba(0,0,0,.7)); }
-.navbar .wm { width: 22px; height: 22px; border-radius: 6px; background: var(--ink, #000); display: inline-block; }
+.navbar { display: flex; align-items: center; gap: 18px; height: var(--component-shell-header, 68px); padding: 0 20px; background: var(--page, #fff); border-bottom: 1px solid var(--border, #e5e7eb); font-size: 14px; color: var(--muted, rgba(0,0,0,.7)); }
+.navbar .wm { width: 22px; height: 22px; border-radius: 6px; background: var(--accent-default, #0d0d0d); display: inline-block; }
 .navbar .sp { flex: 1; }
-.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 32px); padding: 0 14px; border-radius: var(--radius-control, 12px); font-size: 14px; font-weight: 500; border: 1px solid transparent; }
-.btn.primary { background: var(--ink, #000); color: var(--on-ink, #fff); }
-.btn.big { height: var(--component-control-heightLarge, 42px); padding: 0 20px; border-radius: var(--radius-card, 16px); font-weight: 500; font-size: 14px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 32px); padding: 0 14px; border-radius: var(--border-radius, 3px); font-size: 14px; font-weight: 500; border: 1px solid transparent; }
+.btn.primary { border-radius: var(--component-control-radius, 100px);  background: var(--accent-default, #0d0d0d); color: var(--on-accent, #fff); }
+.btn.big { height: var(--component-control-heightLarge, 42px); padding: 0 20px; border-radius: var(--border-radius, 3px); font-weight: 500; font-size: 14px; }
 .btn.ghost { background: transparent; color: var(--text, #000); border: 0; }
 .btn.trial { height: 42px; width: 100%; }
 .hero { background: var(--page, #fff); color: var(--text, #000); padding: 64px 40px; font: var(--typography-display, 400 56px/67.2px var(--sg-sans)); letter-spacing: -0.02em; text-align: center; }
 .hero small { display: block; font: var(--typography-body, 400 16px/24px var(--sg-sans)); color: var(--muted, rgba(0,0,0,.8)); margin: 16px auto 22px; max-width: 46ch; }
 .hero .row { display: flex; gap: 10px; justify-content: center; margin-top: 12px; }
-.chip { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: var(--radius-control, 12px); border: 1px solid rgba(0,0,0,.2); background: #fff; font-size: 12px; font-weight: 500; color: var(--chip-text, rgba(0,0,0,.6)); }
+.chip { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: var(--border-radius, 3px); border: 1px solid rgba(0,0,0,.2); background: #fff; font-size: 12px; font-weight: 500; color: var(--chip-text, rgba(0,0,0,.6)); }
 .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; padding: 20px; }
-.plan { border: 0; border-radius: var(--radius-panel, 24px); padding: 22px; background: var(--surface, #f4f4f4); font-size: 13px; }
+.plan { border: 0; border-radius: var(--border-radius, 3px); padding: 22px; background: var(--surface, #f4f4f4); font-size: 13px; }
 .plan .price { font: var(--typography-price, 400 36px/36px var(--sg-sans)); margin: 8px 0 12px; }
 .plan .btn { width: 100%; }
-.field { display: flex; align-items: center; height: var(--component-control-fieldHeight, 40px); border: 1px solid var(--surface, #f4f4f4); border-radius: var(--radius-field, 12px); padding: 0 12px; font-size: 14px; color: var(--muted, #666); max-width: 414px; background: var(--surface, #f4f4f4); margin-bottom: 8px; }
+.field { display: flex; align-items: center; height: var(--component-control-field, 50px); border: 1px solid var(--surface, #f4f4f4); border-radius: var(--border-radius, 3px); padding: 0 12px; font-size: 14px; color: var(--muted, #666); max-width: 414px; background: var(--surface, #f4f4f4); margin-bottom: 8px; }
+.caps-eyebrow { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted, #6e6e6e); font-weight: 500; }
 .seg { display: inline-flex; gap: 2px; padding: 3px; border-radius: 8px; background: var(--border, #e5e7eb); font-size: 13px; }
 .tlist { border: 1px solid var(--border, #e5e7eb); border-radius: 12px; overflow: hidden; }
 .trow { display: flex; gap: 16px; align-items: baseline; padding: 10px 16px; border-bottom: 1px solid var(--border, #e5e7eb); }
@@ -63,6 +68,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--border, #e5e7eb); padding: 
 </head>
 <body>
 <main>
+  <button id="mode" style="float:right;margin-top:8px;padding:6px 14px;border:1px solid var(--border-default,#cfcfcf);border-radius:var(--border-radius,3px);background:var(--surface,#f3f3f3);color:var(--text-default,#3d3d3d);cursor:pointer;font:inherit">Dark</button>
   <h1>Asana style guide</h1>
   <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number.</p>
 
@@ -71,12 +77,12 @@ table.cmp td, table.cmp th { border: 1px solid var(--border, #e5e7eb); padding: 
   <p class="note">Read from asana.com on 2026-11-11, signed out, in headless Chromium. The app behind sign-in was never reached — nothing was sent, submitted or signed into.</p>
 
   <h2 class="sh">The site chrome</h2>
-  <p class="lead">A nav bar with the Asana mark, a Pricing link, a ghost Log in, outlined Contact sales and the near-black Get started pill. The hero is a big Segoe-UI h1; CTAs are near-black #0d0d0d 3px-radius blocks that lift to #3d3d3d, on white with #f3f3f3 panels and #cfcfcf hairlines.</p>
+  <p class="lead">A nav bar with the Asana mark, a Pricing link, a ghost Log in, outlined Contact sales and the near-black Get started pill. The hero is a big TWK Lausanne h1; CTAs are near-black #0d0d0d 3px-radius blocks that lift to #3d3d3d, on white with #f3f3f3 panels and #cfcfcf hairlines.</p>
   <div class="mock">
     <div class="navbar"><span class="wm"></span><span>Pricing</span><span class="sp"></span><span class="btn ghost">Log in</span><span class="btn ghost">Contact sales</span><span class="btn primary">Get started</span></div>
     <div class="hero">The OS for<br>human-agent teams
       <small>AI that works the way your team works.</small>
-      <div class="row"><span class="seg"><b class="on">Most Popular</b><b>Device Mockups</b><b>Apparel Mockups</b></span></div>
+      <div class="row"><span class="caps-eyebrow">Work management</span></div>
       <div class="row" style="gap:10px"><span class="btn primary">Get started</span><span class="btn ghost">See pricing</span></div>
     </div>
   </div>
@@ -99,7 +105,7 @@ table.cmp td, table.cmp th { border: 1px solid var(--border, #e5e7eb); padding: 
   <div id="layout-out" class="kv"></div>
 
   <h2 class="sh">Type styles</h2>
-  <p class="lead">Segoe UI across the UI; <code>--fontSize-h1..h6</code> (56..16), <code>--fontSize-xl</code> 82, <code>--fontWeight-300..700</code>, <code>--fontFamily-mono/-print</code> for code and print.</p>
+  <p class="lead">TWK Lausanne (webfont, Helvetica Neue fallback) across the UI; <code>--fontSize-h1..h6</code> (56..16), <code>--fontSize-xl</code> 82, <code>--fontWeight-300..700</code>, <code>--fontFamily-mono/-print</code> for code and print.</p>
   <div id="type-out" class="tlist"></div>
 
   <h2 class="sh">Measured extras</h2>
@@ -111,6 +117,11 @@ table.cmp td, table.cmp th { border: 1px solid var(--border, #e5e7eb); padding: 
 <script>
 const TOK = /*TOKENS*/null;
 const $ = (s) => document.querySelector(s);
+$('#mode').addEventListener('click', () => {
+  const d = document.documentElement.dataset.mode === 'dark';
+  document.documentElement.dataset.mode = d ? '' : 'dark';
+  $('#mode').textContent = d ? 'Dark' : 'Light';
+});
 const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
 const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
@@ -145,11 +156,8 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
 
 (function layout() {
   let m = '';
-  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
-  for (const g of ['marginanim', 'progressive72xpadding', 'progressivelivepadding', 'progressiveplayml', 'progressiveplaymr', 'progressiverecpadding']) {
-    const t = TOK.core[g]; if (t && t.t) m += `<div><b>${esc(g)}</b> <span>${esc(t.v)}</span></div>`;
-  }
-  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const g of ['media', 'grid', 'zIndex', 'border', 'shadow', 'transition', 'spacing'])
+    for (const [n, t] of flat(TOK.core[g] || {}, g + '.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
   $('#layout-out').innerHTML = m;
 })();
 
