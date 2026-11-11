@@ -18,10 +18,10 @@ wordmark + "FROM SQUARESPACE" tagline left
 ([nav-login](components/crops/nav-login-default.png), 89 x 40) and SIGN UP FOR
 FREE ([nav-signup](components/crops/nav-signup-default.png), 155 x 40), all in
 Clarkson 12px/500 small caps. Every pill inverts on hover and press — white
-fill to black, black text to white. At 390px the bar shrinks to 64px, drops
-BLOG and LOG IN, and keeps a black "SIGN UP" pill
-([m-signup](components/crops/m-signup-default.png)); there is no hamburger and
-no menu to open.
+fill to black, black text to white. At 390px the bar shrinks to 64px and swaps
+the white pills for bare black text links — BLOG and LOG IN stay — beside a
+black "SIGN UP" pill ([m-signup](components/crops/m-signup-default.png));
+there is no hamburger and no menu to open.
 
 ## The page body
 
@@ -89,10 +89,13 @@ The field was never submitted.
 
 The FAQ is a static `<dl>` — every question row paints Clarkson 21/29 in
 black with its answer always visible; there is no accordion state to measure
-([faq-item](components/crops/faq-item-default.png)). The footer runs 673px of
-white: the "BUILD YOUR FREE LINK IN BIO PAGE" CTA, then the giant
-"BIO.SITE/YOURNAME ↗" call linking to /editor
-([footer-cta](components/crops/footer-cta-default.png), 777 x 98), link
-columns in Clarkson 18/500 ([footer-link](components/crops/footer-link-default.png))
-and muted legal links ([footer-legal](components/crops/footer-legal-default.png))
+([faq-item](components/crops/faq-item-default.png)). The footer is a 673px
+white wrapper carrying dark panels: the "BUILD YOUR FREE LINK IN BIO PAGE"
+CTA, then the giant "BIO.SITE/YOURNAME ↗" call linking to /editor
+([footer-cta](components/crops/footer-cta-default.png), 777 x 98) — white
+Clarkson 70/500 on the `rgb(1,1,1)` mega-link panel — and the link-hub
+columns on the second `rgb(1,1,1)` panel in muted `#6a6a6a` Clarkson
+([footer-link](components/crops/footer-link-default.png),
+[footer-legal](components/crops/footer-legal-default.png),
+[footer-social](components/crops/footer-social-default.png))
 under [footer](components/crops/footer-default.png).

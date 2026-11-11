@@ -152,7 +152,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 - **One painted theme.** Every captured route paints light; no dark variant is declared anywhere, so the semantic set is emitted under `light` and the `dark` set is empty.
 - **Every token is a measurement.** The stylesheets declare no design-token custom properties; `core.color.*` names the distinct computed values found across components and each `light.*` leaf's `$extensions.source` says which component/state it was read from. There is no variable layer to cross-check against.
-- **Anchor `color` reads `#0000ee`.** Anchor text paints on inner children; the anchor's own computed colour is the UA default. Text colours come from `textStyle` in the raw file, never the anchor alone.
+- **`light.link` is muted, not an accent.** Nav and footer links carry their own computed colour (black on the nav pills, `#6a6a6a` in the footer hub, `#9c9c9c` on claim legal); there is no coloured link style on the public surface.
 - **`component.*` tokens are measured**, not site variables.
 - **The browser's focus ring.** Keyboard focus draws Chromium's default `auto` outline (`rgb(0,95,204)`), not a designed ring — `light.focus` records it as measured on `claim-login`/`claim-legal`.
 - **Moving-marquee states.** `card-cta` default/hover/pressed read whichever card the carousel had in view; hover is CDP-forced because a pointer can never hold the moving card still.
@@ -166,5 +166,5 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 4. **Do pill the corners at the control's own scale.** Nav pills 40px radius on 40px height, the CTA 46px on 80px, the claim shell 50px on 102px — full-round ends, not a fixed radius step. See [claim-field-wrap-default](components/crops/claim-field-wrap-default.png).
 5. **Don't invent a dark theme or a colour accent.** The bundle declares no dark variant and the palette is monochrome; the only hue is `#4f566f` slate on the persona cards (plus the browser's `#005fcc` focus ring). See [persona-card-default](components/crops/persona-card-default.png).
 6. **Don't treat the FAQ as an accordion.** It is a static `<dl>`; answers always paint. See [faq-item-default](components/crops/faq-item-default.png).
-7. **Don't read link colour off the anchor.** Anchors keep the UA `#0000ee`; the painted text lives on inner children (`textStyle` in the raw JSON). See [footer-link-default](components/crops/footer-link-default.png).
+7. **Don't expect a coloured link.** Links are ink or muted grey — `#6a6a6a` in the footer hub, `#9c9c9c` on claim legal — never an accent colour; the accent is always a pill fill, never a text colour. See [footer-link-default](components/crops/footer-link-default.png).
 8. **Don't hold still for the carousel.** The persona-card strip never stops; `card-cta` states are CDP-forced readings of whichever card was in view. See [card-cta-hover](components/crops/card-cta-hover.png).

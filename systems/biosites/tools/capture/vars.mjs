@@ -4,10 +4,11 @@
 //   PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/vars.mjs
 //
 // biosites.com is a Next.js site (the `frontsitev2` build): the CSS ships as
-// same-origin hashed chunks on static.biosites.com plus an inline <style>,
-// so the CSSOM can read every rule on the live page. Every rule declaring a
-// --* property is kept with its selector and enclosing @media/@layer context,
-// and @font-face rules are kept too.
+// hashed chunks on static.biosites.com plus an inline <style>. The chunks are
+// cross-origin to the live page's CSSOM, so their bodies are fetched over
+// HTTP after the sweep and re-parsed in a probe document. Every rule
+// declaring a --* property is kept with its selector and enclosing
+// @media/@layer context, and @font-face rules are kept too.
 //
 // The public routes declare almost no custom properties — this site has no
 // token layer in CSS, so the file records what little exists (mostly none)
@@ -30,12 +31,27 @@ const { browser, context } = await launch();
 const page = await context.newPage();
 await page.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 90000 });
 await page.waitForTimeout(6000);
-// all sheets read via CSSOM (the chunks are same-origin, so every rule is readable)
+// Sheets the live page can read come through the CSSOM; the static.biosites.com
+// chunks are cross-origin to it, so their bodies are fetched over HTTP next —
+// an "empty" sweep without them would only show what the origin could see.
 const sheets = await page.evaluate(() => [...document.styleSheets].map((s, i) => {
   try { return { name: s.href || 'inline-' + i, media: s.media.mediaText || '', css: [...s.cssRules].map((r) => r.cssText).join('\n') }; }
   catch { return { name: s.href || 'sheet-' + i, media: '', css: '', unreadable: true }; }
 }));
 await page.close();
+for (const s of sheets) {
+  if (!s.unreadable || !/^https?:/.test(s.name)) continue;
+  try {
+    const res = await fetch(s.name);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    s.css = await res.text();
+    s.fetched = true;
+    delete s.unreadable;
+    console.log('fetched cross-origin sheet', s.name.slice(0, 120), s.css.length, 'bytes');
+  } catch (e) {
+    s.fetchError = String(e.message || e);
+  }
+}
 
 // ---- harvest: every rule with --* declarations ----
 const probe = await browser.newPage();
@@ -73,7 +89,7 @@ const result = await probe.evaluate((sheets) => {
     }
   };
   for (const s of sheets) {
-    if (!s.css) { if (s.unreadable) errors.push({ file: s.name, error: 'cross-origin to the CSSOM' }); continue; }
+    if (!s.css) { errors.push({ file: s.name, error: s.fetchError || 'cross-origin to the CSSOM and unfetchable' }); continue; }
     const ss = new CSSStyleSheet();
     try { ss.replaceSync(s.css); } catch (e) { errors.push({ file: s.name, error: String(e) }); continue; }
     walk(ss.cssRules, [], s.name);
@@ -168,8 +184,8 @@ for (const r of ok) {
 const names = (bin) => [...new Set(ok.filter((r) => r.bin === bin).flatMap((r) => Object.keys(r.properties)))].sort();
 const out = {
   readAt: new Date().toLocaleDateString('en-CA'),
-  source: 'biosites.com\'s frontsitev2 hashed chunks (served from static.biosites.com) plus inline <style> blocks, read through the CSSOM on the live home page and re-parsed in a probe document',
-  sheets: sheets.map(({ name, media, css }) => ({ name, media, bytes: css.length })),
+  source: 'biosites.com\'s frontsitev2 hashed chunks (served cross-origin from static.biosites.com, fetched over HTTP after the CSSOM sweep) plus inline <style> blocks, re-parsed in a probe document',
+  sheets: sheets.map(({ name, media, css, fetched }) => ({ name, media, bytes: css.length, ...(fetched ? { fetched: true } : {}) })),
   counts: {
     rules: ok.length,
     fonts: result.fonts.length,

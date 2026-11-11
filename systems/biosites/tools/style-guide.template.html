@@ -52,6 +52,22 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .field .pre { color: var(--text, #000); }
 .field .ph { color: var(--faint, #9c9c9c); flex: 1; }
 .field .sub { width: var(--component-control-heightSubmit, 53px); height: var(--component-control-heightSubmit, 53px); border-radius: 50%; background: var(--color-ink-42, #2a2a2a); color: var(--color-grey-230, #e6e6e6); display: inline-flex; align-items: center; justify-content: center; font-size: 20px; }
+.sp { border-top: 1px solid var(--border, rgba(0,0,0,.2)); padding: 14px 0 18px; }
+.sp-nm { font: 500 11px/1 var(--sg-mono); color: var(--muted, #6a6a6a); }
+.sp-vl { font: 400 11px/1.6 var(--sg-mono); color: var(--muted, #6a6a6a); margin: 2px 0 10px; }
+.sp-sample { overflow-wrap: anywhere; }
+@media (max-width: 700px) {
+  .navbar { flex-wrap: wrap; height: auto; padding: 12px 14px; gap: 6px; }
+  .navbar .wm { width: 100%; margin-bottom: 4px; }
+  .hero { flex-direction: column; align-items: flex-start; padding: 32px 20px; gap: 22px; }
+  .cta { margin-left: 0; }
+  .cards { flex-wrap: wrap; padding: 20px; }
+  .card { width: 100%; height: auto; min-height: 160px; }
+  .card .go { margin-top: 40px; }
+  .band { padding: 20px; }
+  .band .lnk { font-size: 36px; }
+  .field { height: auto; min-height: 80px; flex-wrap: wrap; padding: 14px 20px; border-radius: 30px; }
+}
 table.cmp { border-collapse: collapse; font-size: 14px; }
 table.cmp td, table.cmp th { border: 1px solid var(--border, rgba(0,0,0,.2)); padding: 6px 14px; text-align: left; }
 </style>
@@ -83,6 +99,10 @@ table.cmp td, table.cmp th { border: 1px solid var(--border, rgba(0,0,0,.2)); pa
   <h2 class="sh">Palette</h2>
   <p class="lead">A monochrome set: <code>light.page</code> #ffffff surfaces, <code>light.band</code> #000000 bands, ink <code>light.text</code>, muted <code>light.muted</code> #6a6a6a and the one hue, <code>light.card</code> slate #4f566f on the persona cards. <code>light.accent</code> is black; the CTA inverts to <code>light.accentHover</code> white with a <code>light.borderHover</code> #e6e6e6 hairline.</p>
   <div id="roles-out"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Every style under <code>core.typography</code>, rendered at its own size, weight, line-height and tracking. All Clarkson; the guide falls back to its system stack when the webfont is absent.</p>
+  <div id="type-out"></div>
 
   <h2 class="sh">Component metrics</h2>
   <p class="lead">Measured boxes: the 40px nav pills, the 80px CTA, the 102px claim field shell, the 53px circular submit, the 40/46/50px pill corners and the 97px navbar block at 1440px.</p>
@@ -117,6 +137,16 @@ const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) 
     h += '</div>';
   }
   $('#roles-out').innerHTML = h;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v;
+    h += `<div class="sp"><div class="sp-nm">${esc(n)}</div><div class="sp-vl">${esc(v.fontFamily)} ${esc(v.fontWeight)} ${esc(v.fontSize)}/${esc(v.lineHeight)} · tracking ${esc(v.letterSpacing)}</div>`
+      + `<div class="sp-sample" style="font:var(${cssname(n)});font-family:${v.fontFamily}, var(--sg-sans);letter-spacing:${esc(v.letterSpacing)}">Your brand, your storefront, one link.</div></div>`;
+  }
+  $('#type-out').innerHTML = h;
 })();
 
 (function layout() {

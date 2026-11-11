@@ -12,7 +12,7 @@ How to read an entry:
 
 ## Discovery list
 
-Screenshots are named `{page}-light-{state}.png`: the site paints one light theme. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x).
+Screenshots are named `{page}-light-{state}.png`: the site paints one light theme. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages (1x on desktop, 2x on mobile); mobile shots are `mobile-{page}-light-{state}.png`, 780 wide (390 at 2x).
 
 | Surface | URL | Screenshots |
 |---|---|---|
@@ -170,12 +170,12 @@ A template card in the sliding carousel ("Health & Wellness", "Musician", …) w
 ![Persona card default](components/crops/persona-card-default.png)
 
 #### Card CTA
-The "Get started ↗" link inside a persona card, straight to /editor (each state reads whichever card the marquee had in view; hover is CDP-forced because the moving card never sits still for a pointer). Measured, never followed. Read as `card-cta` on the home page.
+The "Get started ↗" link inside a persona card, straight to /editor (each state reads whichever card the marquee had in view; hover/pressed force :hover on the link and its card, because a pointer can never hold the moving card still). Measured, never followed. Read as `card-cta` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: focus-visible) | size 305 x 45.59; padding 14px; radius 46px; background rgba(0, 0, 0, 0.25) `color.alpha.ink25`; text Clarkson 16/17.6 400, #ffffff `color.white`; transition all 0.2s ease-out; opacity 0 |
-| hover, pressed | background rgba(0, 0, 0, 0.5) `color.alpha.ink50` |
+| hover, pressed | transition all 0.2s ease-in; opacity 1 |
 
 ![Card CTA default](components/crops/card-cta-default.png) ![Card CTA hover](components/crops/card-cta-hover.png) ![Card CTA focus-visible](components/crops/card-cta-focus-visible.png) ![Card CTA pressed](components/crops/card-cta-pressed.png)
 
@@ -247,7 +247,7 @@ The Privacy Policy link in the claim footer (squarespace.com). Measured, never f
 The build-your-link marquee and the link columns.
 
 #### Footer
-The bottom band: the "BUILD YOUR FREE LINK IN BIO PAGE" CTA, the BIO.SITE/YOURNAME marquee and the ABOUT/SUPPORT/CONTACT/LEGAL/SOCIAL columns. Read as `footer` on the home page.
+The bottom band: a white outer band holding the "BUILD YOUR FREE LINK IN BIO PAGE" CTA, with near-black (rgb(1,1,1)) inner panels painting the BIO.SITE/YOURNAME marquee and the ABOUT/SUPPORT/CONTACT/LEGAL/SOCIAL link hub. Read as `footer` on the home page.
 
 **Values (default).** size 1440 x 673.42; background #ffffff `color.white`; text Clarkson 18/19.8 500, #ffffff `color.white`; icon 49 x 40, #000000 `color.ink.0`.
 

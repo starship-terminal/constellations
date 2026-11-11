@@ -68,11 +68,6 @@
      "type": "color",
      "value": "rgba(0, 0, 0, 0.25)",
      "source": "computed backgroundColor of card-cta default (raw/components-computed.json)"
-    },
-    "ink50": {
-     "type": "color",
-     "value": "rgba(0, 0, 0, 0.5)",
-     "source": "computed backgroundColor of card-cta hover (raw/components-computed.json)"
     }
    },
    "blue": {
@@ -95,12 +90,6 @@
     "type": "color",
     "source": "computed backgroundColor of cta hover (raw/components-computed.json)",
     "description": "The CTA's white fill on hover."
-   },
-   "cardcta-hover": {
-    "value": "rgba(0, 0, 0, 0.5)",
-    "type": "color",
-    "source": "computed backgroundColor of card-cta hover (raw/components-computed.json)",
-    "description": "The card pill's scrim deepening on hover."
    },
    "claim-submit-bg": {
     "value": "#2a2a2a",

@@ -339,7 +339,7 @@ Crops: `persona-card-default.png`.
 
 #### card-cta
 
-Card CTA. The "Get started ↗" link inside a persona card, straight to /editor (each state reads whichever card the marquee had in view; hover is CDP-forced because the moving card never sits still for a pointer). Measured, never followed.
+Card CTA. The "Get started ↗" link inside a persona card, straight to /editor (each state reads whichever card the marquee had in view; hover/pressed force :hover on the link and its card, because a pointer can never hold the moving card still). Measured, never followed.
 
 Page: home. Selector: `a:has-text("Get started")`. States: default, hover, focus-visible, pressed.
 
@@ -349,7 +349,7 @@ Page: home. Selector: `a:has-text("Get started")`. States: default, hover, focus
 | Padding | 14px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 46px | = | = | = |
-| Background | #000000 @ 0.25 | #000000 @ 0.5 | = | #000000 @ 0.5 |
+| Background | #000000 @ 0.25 | = | = | = |
 | Box shadow | none | = | = | = |
 | Backdrop filter | blur(50px) | = | = | = |
 | Outline | none | = | = | = |
@@ -357,10 +357,10 @@ Page: home. Selector: `a:has-text("Get started")`. States: default, hover, focus
 | Letter spacing | -0.5px | = | = | = |
 | Colour | #ffffff | = | = | = |
 | Text node | span: Clarkson 16px/17.6px 400, #ffffff, ls -0.5px | = | = | = |
-| Transition | all 0.2s ease-out | = | = | = |
-| Opacity | 0 | = | = | = |
+| Transition | all 0.2s ease-out | all 0.2s ease-in | = | all 0.2s ease-in |
+| Opacity | 0 | - | = | - |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.index_getStartedBtn__GZirW 305.0x45.6 bg #000000 @ 0.25 r 46px | a.index_getStartedBtn__GZirW 305.0x45.6 bg #000000 @ 0.5 r 46px | = | a.index_getStartedBtn__GZirW 305.0x45.6 bg #000000 @ 0.5 r 46px |
+| Painted layers | a.index_getStartedBtn__GZirW 305.0x45.6 bg #000000 @ 0.25 r 46px | = | = | = |
 | How | marked the in-view instance | CDP forcePseudoState :hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `card-cta-default.png`, `card-cta-hover.png`, `card-cta-focus-visible.png`, `card-cta-pressed.png`.
@@ -393,7 +393,7 @@ Crops: `faq-item-default.png`.
 
 #### footer
 
-Footer. The bottom band: the "BUILD YOUR FREE LINK IN BIO PAGE" CTA, the BIO.SITE/YOURNAME marquee and the ABOUT/SUPPORT/CONTACT/LEGAL/SOCIAL columns.
+Footer. The bottom band: a white outer band holding the "BUILD YOUR FREE LINK IN BIO PAGE" CTA, with near-black (rgb(1,1,1)) inner panels painting the BIO.SITE/YOURNAME marquee and the ABOUT/SUPPORT/CONTACT/LEGAL/SOCIAL link hub.
 
 Page: home. Selector: `marked footer div`. States: default.
 

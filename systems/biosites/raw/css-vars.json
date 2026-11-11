@@ -1,6 +1,6 @@
 {
  "readAt": "2026-11-11",
- "source": "base44.com's same-origin hashed chunks (/assets/app-*.css is the 2,700-rule bundle, plus startup, branded-shell and page chunks) and inline <style> blocks, read through the CSSOM on the live home page and re-parsed in a probe document",
+ "source": "biosites.com's frontsitev2 hashed chunks (served cross-origin from static.biosites.com, fetched over HTTP after the CSSOM sweep) plus inline <style> blocks, re-parsed in a probe document",
  "sheets": [
   {
    "name": "https://static.biosites.com/frontsitev2/fonts/fonts.css",
@@ -15,12 +15,14 @@
   {
    "name": "https://static.biosites.com/frontsitev2/_next/static/css/48d0f3fb17905af3.css",
    "media": "",
-   "bytes": 0
+   "bytes": 4115,
+   "fetched": true
   },
   {
    "name": "https://static.biosites.com/frontsitev2/_next/static/css/cd8368a510ba7711.css",
    "media": "",
-   "bytes": 0
+   "bytes": 29817,
+   "fetched": true
   }
  ],
  "counts": {
@@ -34,16 +36,7 @@
   },
   "bySelector": {}
  },
- "errors": [
-  {
-   "file": "https://static.biosites.com/frontsitev2/_next/static/css/48d0f3fb17905af3.css",
-   "error": "cross-origin to the CSSOM"
-  },
-  {
-   "file": "https://static.biosites.com/frontsitev2/_next/static/css/cd8368a510ba7711.css",
-   "error": "cross-origin to the CSSOM"
-  }
- ],
+ "errors": [],
  "token": [],
  "app": [],
  "tw": [],

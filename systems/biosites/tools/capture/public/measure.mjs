@@ -28,12 +28,12 @@ out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 const URLS = { home: '/', claim: APP };
-let page, cdp, current, context, run;
+let page, cdp, current, view, context, run;
 const touched = new Set();
 const listed = new Map();
-// Pages that actually loaded this run (not blocked): readings may only be
-// pruned for components on one of these — a blocked route must not erase
-// evidence captured earlier.
+// Page+viewport visits that actually loaded this run (not blocked): readings
+// may only be pruned for components of one of these — a blocked mobile visit
+// must not erase evidence the desktop visit of the same route kept.
 const opened = new Set();
 
 async function blocked() {
@@ -45,6 +45,7 @@ async function blocked() {
 
 async function newPage(key, { mobile = false, wait = 8000 } = {}) {
   current = key;
+  view = mobile ? 'mobile' : 'desktop';
   const b = context.browser();
   const ctx = await b.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
@@ -59,7 +60,7 @@ async function newPage(key, { mobile = false, wait = 8000 } = {}) {
   const url = URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key];
   await open(page, url, { wait });
   if (await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); return false; }
-  opened.add(key);
+  opened.add(key + '|' + view);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   await closePromo(page);
   return true;
@@ -100,7 +101,7 @@ async function forcePseudo(loc, classes) {
 
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
-  Object.assign(c, { page: current, run, url: URLS[current] && (URLS[current].startsWith('http') ? URLS[current] : BASE + URLS[current]) }, meta);
+  Object.assign(c, { page: current, view, run, url: URLS[current] && (URLS[current].startsWith('http') ? URLS[current] : BASE + URLS[current]) }, meta);
   touched.add(key);
   c.states ??= {};
   return c;
@@ -111,13 +112,16 @@ async function measure(key, state, target, opts = {}) {
   const c = out.components[key];
   try {
     const s = await styleOf(loc);
+    const prev = c.states[state];
     let file;
     if (opts.crop !== false) {
       try {
         file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    // A failed crop keeps the previous state's image link rather than
+    // dropping it; the style reading is fresh, the crop is last good.
+    c.states[state] = { ...s, crop: file ?? (prev && prev.crop), via: opts.via, run };
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
@@ -133,11 +137,12 @@ async function measure(key, state, target, opts = {}) {
 
 async function S(key, target, list, meta = {}, opts = {}) {
   const prev = out.components[key];
-  const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
+  const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url, view: prev.view } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   if (!listed.has(key)) listed.set(key, new Set());
   for (const st of list) listed.get(key).add(st);
   delete out.components[key].missing;
+  delete out.components[key].recaptureMissed;
   if (opts.open) { await reset(); try { await opts.open(); } catch (e) { log('  ! open failed', key, String(e.message).slice(0, 80)); } }
   const loc = target.filter({ visible: true }).first();
   if (!(await loc.count())) {
@@ -159,6 +164,13 @@ async function S(key, target, list, meta = {}, opts = {}) {
       if (st === 'hover') {
         if (opts.forceHover) {
           undo = await forcePseudo((opts.hoverLoc || loc).filter({ visible: true }).first(), ['hover']);
+          if (opts.hoverAlso) {
+            // The control paints only while its card is hovered too (the
+            // card-cta fades in on card hover): force the card as well so the
+            // state a pointer user sees is what gets measured.
+            const u2 = await forcePseudo(opts.hoverAlso.filter({ visible: true }).first(), ['hover']);
+            const u1 = undo; undo = async () => { await u1(); await u2(); };
+          }
           via = 'CDP forcePseudoState :hover';
         } else {
           await (opts.hoverLoc || loc).filter({ visible: true }).first().hover({ timeout: 5000 }).catch(() => (opts.hoverLoc || loc).filter({ visible: true }).first().hover({ timeout: 5000, force: true }));
@@ -169,6 +181,10 @@ async function S(key, target, list, meta = {}, opts = {}) {
         via = await kbFocus((opts.focusLoc || loc).filter({ visible: true }).first());
       } else if (st === 'pressed') {
         undo = await forcePseudo((opts.pressLoc || loc).filter({ visible: true }).first(), ['active', 'hover']);
+        if (opts.pressAlso) {
+          const u2 = await forcePseudo(opts.pressAlso.filter({ visible: true }).first(), ['active', 'hover']);
+          const u1 = undo; undo = async () => { await u1(); await u2(); };
+        }
         via = 'CDP forcePseudoState :active:hover';
       } else if (st === 'focused') {
         const fld = (opts.fieldLoc || loc).filter({ visible: true }).first();
@@ -298,10 +314,12 @@ async function home() {
   await S('eyebrow', q('h3').filter({ hasText: /trusted by/i }).first(), ['default'], { group: h, title: 'Eyebrow label', desc: 'The "TRUSTED BY MILLIONS OF" small-caps label over the carousel.', sel: 'h3:has-text("Trusted by")' });
   await markCard();
   await S('persona-card', q('[data-m-card="1"]'), ['default'], { group: h, title: 'Persona card', desc: 'A template card in the sliding carousel ("Health & Wellness", "Musician", …) with a "Get started ↗" link.', sel: 'marked ancestor of a Get started link' });
-  // The marquee is JS-driven (the pause did not hold it): before every state,
-  // mark whichever "Get started" instance is inside the viewport at that
-  // moment — every card paints the same control — and aim the locator at the
-  // marked copy first.
+  // The marquee is JS-driven: before every state, mark whichever "Get
+  // started" instance is inside the viewport at that moment — every card
+  // paints the same control — and read ONLY the marked copy (an unmarked
+  // union locator picks an offscreen duplicate instead). The ancestors'
+  // running animations are paused so the marked card holds still for the
+  // read; the card's own state transitions stay live.
   const markInViewGs = async () => page.evaluate(() => {
     document.querySelectorAll('[data-m-gs]').forEach((x) => x.removeAttribute('data-m-gs'));
     const vh = innerHeight, vw = innerWidth;
@@ -312,11 +330,23 @@ async function home() {
     });
     if (!hit) return false;
     hit.setAttribute('data-m-gs', '1');
+    // Mark the marked link's persona-card ancestor too (the nearest ~325x480
+    // box): the card's own :hover is what reveals the button, so the
+    // hover/pressed reads force the card as well.
+    document.querySelectorAll('[data-m-gscard]').forEach((x) => x.removeAttribute('data-m-gscard'));
+    for (let el = hit.parentElement; el && el !== document.body; el = el.parentElement) {
+      const r = el.getBoundingClientRect();
+      if (r.width > 280 && r.height > 380) { el.setAttribute('data-m-gscard', '1'); break; }
+    }
+    for (let el = hit.parentElement; el && el !== document.body; el = el.parentElement) {
+      for (const a of el.getAnimations({ subtree: false })) a.pause();
+    }
     return true;
   });
-  const gsLoc = q('[data-m-gs="1"]').or(q('a').filter({ hasText: /^get started/i }).filter({ visible: true }).first());
-  const markGs = async () => { await markInViewGs(); return 'marked the in-view instance'; };
-  await S('card-cta', gsLoc, B4, { group: h, title: 'Card CTA', desc: 'The "Get started ↗" link inside a persona card, straight to /editor (each state reads whichever card the marquee had in view; hover is CDP-forced because the moving card never sits still for a pointer). Measured, never followed.', sel: 'a:has-text("Get started")' }, { forceHover: true, before: { default: markGs, hover: markGs, 'focus-visible': markGs, pressed: markGs } });
+  const gsLoc = q('[data-m-gs="1"]');
+  const gsCard = q('[data-m-gscard="1"]');
+  const markGs = async () => { const ok = await markInViewGs(); return ok ? 'marked the in-view instance' : 'no card in view'; };
+  await S('card-cta', gsLoc, B4, { group: h, title: 'Card CTA', desc: 'The "Get started ↗" link inside a persona card, straight to /editor (each state reads whichever card the marquee had in view; hover/pressed force :hover on the link and its card, because a pointer can never hold the moving card still). Measured, never followed.', sel: 'a:has-text("Get started")' }, { forceHover: true, open: markInViewGs, hoverAlso: gsCard, pressAlso: gsCard, before: { default: markGs, hover: markGs, 'focus-visible': markGs, pressed: markGs } });
   // The FAQ is a static <dl>: question h3s with always-visible answers, no
   // accordion to press.
   await S('faq-item', q('h3').filter({ hasText: /Why should I use a link in bio tool/ }).first(), ['default'], { group: h, title: 'FAQ item', desc: 'A question row of the static FAQ <dl>; answers are always painted, nothing to expand.', sel: 'h3:has-text("Why should I use")' });
@@ -324,7 +354,7 @@ async function home() {
   // Footer on the same page.
   const f = G.footer;
   if (await markFooter()) {
-    await S('footer', q('[data-m-footer="1"]'), ['default'], { group: f, title: 'Footer', desc: 'The bottom band: the "BUILD YOUR FREE LINK IN BIO PAGE" CTA, the BIO.SITE/YOURNAME marquee and the ABOUT/SUPPORT/CONTACT/LEGAL/SOCIAL columns.', sel: 'marked footer div' });
+    await S('footer', q('[data-m-footer="1"]'), ['default'], { group: f, title: 'Footer', desc: 'The bottom band: a white outer band holding the "BUILD YOUR FREE LINK IN BIO PAGE" CTA, with near-black (rgb(1,1,1)) inner panels painting the BIO.SITE/YOURNAME marquee and the ABOUT/SUPPORT/CONTACT/LEGAL/SOCIAL link hub.', sel: 'marked footer div' });
   }
   await S('footer-cta', q('h2').filter({ hasText: /bio\.site\/yourname/i }).first(), B4, { group: f, title: 'Footer marquee', desc: 'The giant "BIO.SITE/YOURNAME ↗" call; its ancestor links to /editor. Measured, never followed.', sel: 'h2:has-text("BIO.SITE/YOURNAME")' });
   await S('footer-link', q('a').filter({ hasText: /^Squarespace$/ }).filter({ visible: true }).first(), B4, { group: f, title: 'Footer link', desc: 'An ABOUT column link (Squarespace).', sel: 'a:has-text("Squarespace")' });
@@ -385,10 +415,15 @@ try {
   if (!pages.length || pages.includes('mobile')) await plan.mobile();
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
-    // Prune only components on a page that actually opened this run: a blocked
-    // or unvisited route keeps its earlier readings (write new captures first,
-    // prune old outputs only after a complete run).
-    if (!touched.has(key) && !pages.length) { if (opened.has(c.page)) delete out.components[key]; continue; }
+    // Prune only components whose page+viewport visit actually opened this
+    // run: a blocked route (or a blocked mobile pass of a route the desktop
+    // pass captured) keeps its earlier readings. Components saved before the
+    // view field existed fall back to the m- prefix for their variant.
+    if (!touched.has(key) && !pages.length) {
+      const cview = c.view || (key.startsWith('m-') ? 'mobile' : 'desktop');
+      if (opened.has(c.page + '|' + cview)) delete out.components[key];
+      continue;
+    }
     if (!touched.has(key)) continue;
     const want = listed.get(key);
     if (want) for (const st of Object.keys(c.states || {})) if (!want.has(st) && pages.length) delete c.states[st];

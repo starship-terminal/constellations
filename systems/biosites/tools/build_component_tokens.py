@@ -102,8 +102,7 @@ PALETTE = {
     "white":   ("nav-link", "default", "backgroundColor"),          # #ffffff
     "slate.500": ("persona-card", "default", "backgroundColor"),    # #4f566f the persona card
     "alpha.ink20": ("claim-field-wrap", "default", "borderTopColor"),  # rgba(0,0,0,.2) the field hairline
-    "alpha.ink25": ("card-cta", "default", "backgroundColor"),      # rgba(0,0,0,.25) the card pill
-    "alpha.ink50": ("card-cta", "hover", "backgroundColor"),        # rgba(0,0,0,.5) the card pill hover
+    "alpha.ink25": ("card-cta", "default", "backgroundColor"),      # rgba(0,0,0,.25) the card pill (unchanged on hover)
     "blue.focus": ("claim-login", "focus-visible", "outlineColor"), # #005fcc the UA focus ring
 }
 
@@ -194,7 +193,8 @@ meas = SPEC["core"].setdefault("measured", {})
 for comp, state, key, prop, desc in [
     ("nav-link", "hover", "navpill-hover", "backgroundColor", "The nav pill's black fill on hover."),
     ("cta", "hover", "cta-hover", "backgroundColor", "The CTA's white fill on hover."),
-    ("card-cta", "hover", "cardcta-hover", "backgroundColor", "The card pill's scrim deepening on hover."),
+    # card-cta keeps its rgba(0,0,0,.25) fill on hover; what changes is opacity
+    # (0 -> 1, driven by the card), which components.md's state table records.
     ("claim-submit", "default", "claim-submit-bg", "backgroundColor", "The circular claim submit's grey fill."),
     ("claim-submit", "hover", "claim-submit-hover", "backgroundColor", "The claim submit on hover."),
     ("claim-login", "default", "login-pill", "backgroundColor", "The Log In pill on the claim screen."),
