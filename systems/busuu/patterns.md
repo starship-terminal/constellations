@@ -69,8 +69,9 @@ where it lands was never followed.
 `/en/course/learn-spanish-online` is the app-shell long page
 ([course-light-full](screenshots/course-light-full.png)): a blue hero with
 phone screenshots (`Learn Spanish online for free`, a green
-`Get started for free` CTA — [course-cta](components/crops/course-cta-default.png),
-a ghost button whose blue `#116eee` rides on text and border, no fill), a
+`Get started for free` CTA — [course-cta](components/crops/course-cta-default.png):
+the anchor computes transparent, its child button paints a green `#11ee92`
+fill on a 100px radius over the blue hero band), a
 language chip row, `Courses for the basics and beyond` carousel cards, a stat
 band (510+ lessons · 120m+ learners · 5million reviews), a `Discover
 effective Spanish learning` feature band, numbered `How Busuu works` cards,

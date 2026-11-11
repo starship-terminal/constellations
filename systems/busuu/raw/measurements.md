@@ -36,25 +36,25 @@ Crops: `header-default.png`.
 
 #### logo
 
-Logo.
+Logo. The wordmark anchor (a.nav-dropdown__logo, a labelled svg), top-left of the nav bar.
 
-Page: home. Selector: `header logo`. States: default.
+Page: home. Selector: `a.nav-dropdown__logo`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 290 x 48 |
-| Padding | 12px 40px |
-| Border | 2px solid #11ee92 |
-| Radius | 45.04px |
-| Background | #11ee92 |
-| Box shadow | #000000 @ 0.3 0px 2px 4px 0px |
+| Size (w x h) | 127 x 40 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
 | Outline | none |
-| Font | Nista 16px/normal 700 |
+| Font | Nista 16px/27.2px 400 |
 | Letter spacing | normal |
-| Colour | #252b2f |
-| Transition | all 0.2s ease |
+| Colour | #0000ee |
+| Transition | none |
 | Cursor | pointer |
-| Painted layers | a.header-simplified__cta.btn 290.0x48.0 bg #11ee92 border T:2px solid #11ee92 / R:2px solid #11ee92 / B:2px solid #11ee92 / L:2px solid #11ee92 r 45.04px shadow #000000 @ 0.3 0px 2px 4px 0px |
+| Icon | 127 x 40, colour #0000ee, fill #000000 |
 | How | at rest |
 
 Crops: `logo-default.png`.
@@ -112,11 +112,28 @@ Crops: `nav-dropdown-default.png`, `nav-dropdown-hover.png`, `nav-dropdown-focus
 
 #### nav-link
 
-Nav link.
+Nav link. The nav's Log-in outline button (a.nav-dropdown__btn.btn--outline-default); measured, never followed.
 
-Page: home. Selector: `header a`. States: .
+Page: home. Selector: `.nav-dropdown__btn.btn--outline-default`. States: default, hover, focus-visible, pressed.
 
-Not found on the page at capture time.
+| Property | default | hover | focus-visible | pressed |
+|---|---|---|---|---|
+| Size (w x h) | 101 x 33 | = | = | = |
+| Padding | 6px 28px | = | = | = |
+| Border | 2px solid #ffffff | = | = | = |
+| Radius | 45.04px | = | = | = |
+| Background | transparent | = | = | = |
+| Box shadow | none | = | = | = |
+| Outline | none | = | = | = |
+| Font | Nista 14px/normal 700 | = | = | = |
+| Letter spacing | normal | = | = | = |
+| Colour | #ffffff | = | = | = |
+| Transition | all 0.2s ease | = | = | = |
+| Cursor | pointer | = | = | = |
+| Painted layers | a.btn.btn--s 101.0x33.0 border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 45.04px | = | = | = |
+| How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
+
+Crops: `nav-link-default.png`, `nav-link-hover.png`, `nav-link-focus-visible.png`, `nav-link-pressed.png`.
 
 ### Home
 
@@ -147,23 +164,23 @@ Crops: `hero-title-default.png`.
 
 Hero CTA. The hero action; measured never followed.
 
-Page: home. Selector: `.header-simplified__cta`. States: default, hover, focus-visible, pressed.
+Page: home. Selector: `hero CTA (main/section scope)`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 155.75 x 33 | = | = | = |
-| Padding | 6px 28px | = | = | = |
-| Border | 2px solid #ffffff | = | = | = |
+| Size (w x h) | 290 x 48 | = | = | = |
+| Padding | 12px 40px | = | = | = |
+| Border | 2px solid #11ee92 | 2px solid #41f1a8 | 2px solid #41f1a8 | 2px solid #41f1a8 |
 | Radius | 45.04px | = | = | = |
-| Background | #ffffff | transparent | transparent | transparent |
+| Background | #11ee92 | #41f1a8 | #41f1a8 | #41f1a8 |
 | Box shadow | none | = | = | = |
 | Outline | none | = | = | = |
-| Font | Nista 14px/normal 700 | = | = | = |
+| Font | Nista 16px/normal 700 | = | = | = |
 | Letter spacing | normal | = | = | = |
-| Colour | #116eee | #ffffff | #ffffff | #ffffff |
+| Colour | #252b2f | = | = | = |
 | Transition | all 0.2s ease | = | = | = |
 | Cursor | pointer | = | = | = |
-| Painted layers | a.btn.btn--s 155.8x33.0 bg #ffffff border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 45.04px | a.btn.btn--s 155.8x33.0 border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 45.04px | a.btn.btn--s 155.8x33.0 border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 45.04px | a.btn.btn--s 155.8x33.0 border T:2px solid #ffffff / R:2px solid #ffffff / B:2px solid #ffffff / L:2px solid #ffffff r 45.04px |
+| Painted layers | a.btn.btn--primary-lighter 290.0x48.0 bg #11ee92 border T:2px solid #11ee92 / R:2px solid #11ee92 / B:2px solid #11ee92 / L:2px solid #11ee92 r 45.04px | a.btn.btn--primary-lighter 290.0x48.0 bg #41f1a8 border T:2px solid #41f1a8 / R:2px solid #41f1a8 / B:2px solid #41f1a8 / L:2px solid #41f1a8 r 45.04px | a.btn.btn--primary-lighter 290.0x48.0 bg #41f1a8 border T:2px solid #41f1a8 / R:2px solid #41f1a8 / B:2px solid #41f1a8 / L:2px solid #41f1a8 r 45.04px | a.btn.btn--primary-lighter 290.0x48.0 bg #41f1a8 border T:2px solid #41f1a8 / R:2px solid #41f1a8 / B:2px solid #41f1a8 / L:2px solid #41f1a8 r 45.04px |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 
 Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png`, `hero-cta-pressed.png`.
@@ -172,12 +189,12 @@ Crops: `hero-cta-default.png`, `hero-cta-hover.png`, `hero-cta-focus-visible.png
 
 Hero copy. The lede under the headline.
 
-Page: home. Selector: `hero paragraph`. States: default.
+Page: home. Selector: `hero lede paragraph`. States: default.
 
 | Property | default |
 |---|---|
-| Size (w x h) | 680 x 8 |
-| Padding | 8px 0px 0px 0px |
+| Size (w x h) | 540 x 81.56 |
+| Padding | 0px |
 | Border | none |
 | Radius | 0px |
 | Background | transparent |
@@ -185,7 +202,7 @@ Page: home. Selector: `hero paragraph`. States: default.
 | Outline | none |
 | Font | Nista 16px/27.2px 400 |
 | Letter spacing | normal |
-| Colour | #000000 |
+| Colour | #252b2f |
 | Transition | none |
 | How | at rest |
 
@@ -503,7 +520,7 @@ Page: home. Selector: `.main-footer`. States: default.
 | Ancestor paint | 1 up div.main-footer bg #f2f7fd |
 | How | at rest |
 
-Crops: `footer-default.png`.
+Crops: none.
 
 #### footer-link
 
@@ -528,7 +545,7 @@ Page: home. Selector: `.main-footer a`. States: default, hover, focus-visible, p
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
 | Painted layers | - | = | a 145.6x17.0 outline 1px auto #005fcc offset 1px | = |
 
-Crops: `footer-link-default.png`, `footer-link-hover.png`, `footer-link-focus-visible.png`, `footer-link-pressed.png`.
+Crops: `footer-link-hover.png`, `footer-link-focus-visible.png`, `footer-link-pressed.png`.
 
 #### social-icon
 
@@ -586,43 +603,82 @@ Crops: `m-header-default.png`.
 
 #### m-menu-button
 
-Menu button.
+Menu button. The kebab toggle: an empty anchor wrapping span.responsive-nav__icon.
 
-Page: mobile. Selector: `responsive nav button`. States: .
+Page: mobile. Selector: `span.responsive-nav__icon`. States: default.
 
-Not found on the page at capture time.
+| Property | default |
+|---|---|
+| Size (w x h) | 23 x 23 |
+| Padding | 0px |
+| Border | none |
+| Radius | 0px |
+| Background | transparent |
+| Box shadow | none |
+| Outline | none |
+| Font | Nista 16px/27.2px 400 |
+| Letter spacing | normal |
+| Colour | #0000ee |
+| Transition | none |
+| Transform | matrix(0, 1, -1, 0, 0, 0) |
+| Cursor | pointer |
+| Icon | 23 x 23, colour #0000ee, fill #ffffff |
+| ::before | 100% x 3px, absolute, bg #116eee, radius 0px |
+| ::after | 65% x 3px, absolute, bg #116eee, radius 0px |
+| Painted layers | span::before.responsive-nav__icon.icon 100%x3px bg #116eee; span::after.responsive-nav__icon.icon 65%x3px bg #116eee |
+| How | at rest |
+
+Crops: `m-menu-button-default.png`.
 
 #### m-menu-open
 
-Mobile menu, open. The button after its own toggle; the opened menu shows in the crop.
+Mobile menu, open. The kebab dropdown, opened by its own toggle.
 
-Page: mobile. Selector: `responsive nav button`. States: .
+Page: mobile. Selector: `opened responsive nav list`. States: default.
 
-Not found on the page at capture time.
+| Property | default |
+|---|---|
+| Size (w x h) | 250 x 165.56 |
+| Padding | 0px |
+| Border | none |
+| Radius | 16px |
+| Background | #ffffff |
+| Box shadow | #000000 @ 0.15 1px 0px 10px 1px |
+| Outline | none |
+| Font | Nista 16px/27.2px 400 |
+| Letter spacing | normal |
+| Colour | #000000 |
+| Text node | span.main-nav-dropdown__link-text: Nista 14px/23.8px 700, #252b2f |
+| Transition | none |
+| Painted layers | ul.main-nav-dropdown__list 250.0x165.6 bg #ffffff r 16px shadow #000000 @ 0.15 1px 0px 10px 1px |
+| How | at rest |
+
+Crops: `m-menu-open-default.png`.
 
 #### m-nav-item
 
-Mobile nav item. A link inside the responsive nav.
+Mobile nav item. A link inside the opened responsive nav dropdown.
 
-Page: mobile. Selector: `responsive nav a`. States: default, hover, focus-visible, pressed.
+Page: mobile. Selector: `.main-nav-dropdown__link`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 101.88 x 32 | = | = | = |
-| Padding | 0px | = | = | = |
+| Size (w x h) | 250 x 55.19 | = | = | = |
+| Padding | 14px 20px | = | = | = |
 | Border | none | = | = | = |
 | Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
+| Background | transparent | #f2f7fd | #f2f7fd | #f2f7fd |
 | Box shadow | none | = | = | = |
-| Outline | none | = | 1px auto #e59700 offset 1px | = |
-| Font | Nista 16px/27.2px 400 | = | = | = |
+| Outline | none | = | = | = |
+| Font | Nista 16px/27.2px 700 | = | = | = |
 | Letter spacing | normal | = | = | = |
 | Colour | #0000ee | = | = | #ff0000 |
+| Text node | span.main-nav-dropdown__link-text: Nista 14px/23.8px 700, #252b2f | = | = | = |
 | Transition | none | = | = | = |
 | Cursor | pointer | = | = | = |
-| Icon | 101.88 x 32, colour #0000ee, fill #000000 | = | = | 101.88 x 32, colour #ff0000, fill #000000 |
+| Ancestor paint | 2 up ul.main-nav-dropdown__list bg #ffffff shadow #000000 @ 0.15 1px 0px 10px 1px | = | = | = |
 | How | at rest | mouse hover | Shift+Tab, Tab | CDP forcePseudoState :active:hover |
-| Painted layers | - | = | a.nav-dropdown__logo 101.9x32.0 outline 1px auto #e59700 offset 1px | = |
+| Painted layers | - | a.main-nav-dropdown__link 250.0x55.2 bg #f2f7fd | a.main-nav-dropdown__link 250.0x55.2 bg #f2f7fd | a.main-nav-dropdown__link 250.0x55.2 bg #f2f7fd |
 
 Crops: `m-nav-item-default.png`, `m-nav-item-hover.png`, `m-nav-item-focus-visible.png`, `m-nav-item-pressed.png`.
 

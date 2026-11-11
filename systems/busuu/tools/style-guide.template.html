@@ -39,7 +39,7 @@ code { font-family: var(--sg-mono); font-size: .9em; }
 .navbar .sp { flex: 1; }
 .btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 48px); padding: 0 28px; font-size: 16px; font-weight: 400; border-radius: var(--radius-pill, 45px); border: 1px solid transparent; }
 .btn.primary { background: var(--color-brand-green, #11ee92); color: var(--color-neutral-ink, #252b2f); }
-.btn.ghost { background: transparent; color: var(--color-brand-blue, #116eee); border-color: var(--color-brand-blue, #116eee); }
+.btn.ghost { background: #fff; color: var(--color-brand-purple, #5438dc); border-radius: var(--radius-button, 26px); }
 .hero { color: var(--color-brand-blue, #116eee); padding: 72px 40px; font: 400 44px/1.15 var(--sg-serif); letter-spacing: -0.02em; text-align: center; }
 .hero small { display: block; font: 400 15px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); margin: 16px auto 22px; max-width: 46ch; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
@@ -66,8 +66,8 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-line, #aaa); 
   <h2 class="sh">The chrome</h2>
   <p class="lead">A simplified header over the gradient hero: wordmark, a white Learn-for-free pill, an outlined Log-in and a kebab dropdown. The pale-blue footer closes every page.</p>
   <div class="mock" style="padding:20px">
-    <div class="navbar" style="background:linear-gradient(20.78deg,#6e00f8,#563ce9,#116eee);padding:0 18px"><span class="wm" style="font-size:18px;color:#fff">Busuu</span><span class="sp"></span><span class="btn" style="height:34px;background:#fff;color:var(--color-brand-blue,#116eee);border-radius:45px;padding:0 16px;font-size:14px;font-weight:700">Learn for free</span><span class="btn" style="height:34px;background:transparent;color:#fff;border:1px solid #fff;border-radius:45px;padding:0 16px;font-size:14px">Log in</span></div>
-    <div class="hero" style="color:#fff;background:linear-gradient(20.78deg,#6e00f8,#563ce9,#116eee);text-align:left;padding:48px 20px">Language skills for the conversations that count<small style="color:#fff;opacity:.85">Busuu understands what you know, where you get stuck, and your goal.</small><span class="btn" style="height:56px;background:var(--color-brand-green,#11ee92);color:var(--color-neutral-ink,#252b2f);border-radius:45px;padding:0 28px;font-weight:700">Learn for free</span></div>
+    <div class="navbar" style="background:linear-gradient(20.78deg,#6e00f8,#563ce9,#116eee);padding:0 18px"><span class="wm" style="font-size:18px;color:#fff">Busuu</span><span class="sp"></span><span class="btn" style="height:33px;background:#fff;color:var(--color-brand-blue,#116eee);padding:0 16px;font-size:14px;font-weight:700">Learn for free</span><span class="btn" style="height:33px;background:transparent;color:#fff;border:1px solid #fff;padding:0 16px;font-size:14px">Log in</span></div>
+    <div class="hero" style="color:#fff;background:linear-gradient(20.78deg,#6e00f8,#563ce9,#116eee);text-align:left;padding:48px 20px">Language skills for the conversations that count<small style="color:#fff;opacity:.85">Busuu understands what you know, where you get stuck, and your goal.</small><span class="btn" style="background:var(--color-brand-green,#11ee92);color:var(--color-neutral-ink,#252b2f);padding:0 28px;font-weight:700">Learn for free</span></div>
   </div>
 
   <h2 class="sh">The upsell</h2>
@@ -78,8 +78,8 @@ table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-line, #aaa); 
       <div class="tile" style="border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff"><b style="color:#fff">Premium Plus</b><span class="sub" style="color:rgba(255,255,255,.7)">SAVE 51%<br>$87.90 &middot; $7.33/month</span></div>
     </div>
     <div style="margin-top:18px;max-width:520px">
-      <span class="btn" style="height:48px;background:#fff;color:var(--color-brand-purple,#5438dc);border-radius:26px;padding:0 20px;font-size:16px;font-weight:700">Get Premium</span>
-      &nbsp; <span class="btn" style="height:48px;background:#fff;color:var(--color-brand-purple,#5438dc);border-radius:26px;padding:0 20px;font-size:16px;font-weight:700">Get Premium Plus</span>
+      <span class="btn ghost" style="padding:0 20px;font-weight:700">Get Premium</span>
+      &nbsp; <span class="btn ghost" style="padding:0 20px;font-weight:700">Get Premium Plus</span>
     </div>
   </div>
 

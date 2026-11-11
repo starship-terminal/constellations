@@ -248,16 +248,22 @@ const STICKY = ['header', 'nav[class*="sticky" i]', '[class*="sticky" i] header'
 export async function crop(page, locator, name, pad = 8) {
   fs.mkdirSync(CROPS, { recursive: true });
   const file = path.join(CROPS, `${name}.png`);
-  const hidden = await locator.evaluate((el, sel) => {
+  const hidden = await locator.evaluate((el, { sel, pad }) => {
     let n = 0;
+    const er = el.getBoundingClientRect();
     document.querySelectorAll(sel).forEach((s) => {
       if (s.contains(el) || el.contains(s)) return;
+      // A sticky layer painted behind the target supplies its backdrop (the
+      // gradient hero behind the floating nav); hiding it turns the crop white.
+      const sr = s.getBoundingClientRect();
+      const overlap = !(sr.right < er.left - pad || sr.left > er.right + pad || sr.bottom < er.top - pad || sr.top > er.bottom + pad);
+      if (overlap) return;
       s.setAttribute('data-m-hidden', '1');
       s.style.setProperty('visibility', 'hidden', 'important');
       n++;
     });
     return n;
-  }, STICKY);
+  }, { sel: STICKY, pad });
   try {
     const box = await locator.boundingBox();
     if (!box) throw new Error(`no box for ${name}`);

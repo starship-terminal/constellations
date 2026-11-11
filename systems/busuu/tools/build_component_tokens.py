@@ -8,7 +8,7 @@ every design token is a **measured computed value** from
 raw/components-computed.json:
 
   neutrals    ink #252b2f, grey #666e7e, hairline #d6dee6, white, black text
-  brand       green #11ee92/#41f1a8 CTAs, blue #116ee6 links, purple #5438dc
+  brand       green #11ee92/#41f1a8 CTAs, blue #116eee links, purple #5438dc
               premium buttons, indigo #221658 plan cards, mist #f2f7fd footer
   fonts       Nista (marketing) and NistaFonts (app pages) stacks
   ramp        measured 48/40/32/18/16/14 steps -> core.font.*
@@ -165,7 +165,7 @@ brand = SPEC["core"].setdefault("color", {}).setdefault("brand", {})
 for key, comp, state, prop, desc in [
     ("green", "cta-signup", "default", "backgroundColor", "The Busuu green on every Learn-for-free CTA."),
     ("green-hover", "cta-signup", "hover", "backgroundColor", "The green's lighter hover."),
-    ("blue", "course-cta", "default", "backgroundColor", "The action/link blue #116ee6."),
+    ("blue", "language-item", "default", "color", "The action/link blue #116eee (option text, course-cta text, hover borders)."),
     ("purple", "plan-cta", "default", "color", "The Premium purple #5438dc on button text/borders."),
 ]:
     if have(comp, state, prop):
@@ -174,9 +174,22 @@ for key, comp, state, prop, desc in [
             brand[key] = {"value": v, "type": "color",
                           "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)",
                           "description": desc}
+def ancestor_fill(comp, state):
+    """The band fill painted by a component's ancestor (the footer band lives
+    on .main-footer; the footer root's own children paint only the social-icon
+    circles)."""
+    try:
+        c = C[comp]["states"][state]
+    except KeyError:
+        return None
+    for n in c.get("ancestors") or []:
+        if n.get("bg"):
+            return n["bg"]
+    return None
+
+
 for key, comp, state, desc in [
     ("indigo", "plan-card", "default", "The deep indigo #221658 plan-card fill."),
-    ("mist", "footer", "default", "The pale blue #f2f7fd footer fill."),
 ]:
     v = norm_color(painted(comp, state) or "")
     if v and v != "transparent" and not v.startswith("rgba("):
@@ -190,6 +203,14 @@ if "indigo" not in brand and have("plan-card", "default", "backgroundColor"):
         brand["indigo"] = {"value": v, "type": "color",
                            "source": "computed backgroundColor of plan-card (raw/components-computed.json)",
                            "description": "The deep indigo #221658 plan-card fill."}
+# The footer band: the footer root computes transparent; div.main-footer (the
+# recorded ancestor) paints #f2f7fd. The #a7b0b7 social-icon circles inside it
+# are a separate paint, so a painted()-child read would return the icon grey.
+v = norm_color(ancestor_fill("footer", "default") or "")
+if v and v != "transparent" and not v.startswith("rgba("):
+    brand["mist"] = {"value": v, "type": "color",
+                     "source": "painted backgroundColor of the footer ancestor div.main-footer (raw/components-computed.json footer ancestors)",
+                     "description": "The pale blue #f2f7fd footer fill. The #a7b0b7 social-icon circles inside it are a separate paint."}
 
 # -------------------------------------------------------------------- roles
 
@@ -277,7 +298,6 @@ except KeyError:
 meas = SPEC["core"].setdefault("measured", {})
 for key, comp, state, prop, ty, desc in [
     ("focus-outline", "footer-link", "focus-visible", "outlineColor", "color", "The 1px keyboard-focus ring."),
-    ("option-hover-fill", "language-item", "hover", "backgroundColor", "color", "The pale-blue hover fill inside a language option."),
     ("option-hover-border", "language-item", "hover", "borderTopColor", "color", "The blue border a language option takes on hover."),
 ]:
     if have(comp, state, prop):
@@ -287,6 +307,13 @@ for key, comp, state, prop, ty, desc in [
         meas[key] = {"value": v, "type": ty,
                      "source": f"computed {prop} of {comp} {state} (raw/components-computed.json)",
                      "description": desc}
+# The option hover fill: the option's own box stays transparent in every
+# state; the painted label child (p.sc-hCPjZK) carries the #f3f8fe wash.
+v = norm_color(painted("language-item", "hover") or "")
+if v and v != "transparent" and not v.startswith("rgba("):
+    meas["option-hover-fill"] = {"value": v, "type": "color",
+                                 "source": "computed backgroundColor of language-item hover's painted label child (raw/components-computed.json; the option's own box stays transparent)",
+                                 "description": "The pale-blue hover fill inside a language option."}
 for key, comp, state, desc in [
     ("cta-transition", "cta-signup", "default", "The green CTA's 0.2s transition."),
     ("card-transition", "flag-card", "default", "The language card's 0.15s transition."),

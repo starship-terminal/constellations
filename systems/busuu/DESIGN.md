@@ -29,8 +29,8 @@ colors:
   color-brand-indigo: "#221658"
   color-brand-mist: "#f2f7fd"
   measured-focus-outline: "#005fcc"
-  measured-option-hover-fill: "#f3f8fe"
   measured-option-hover-border: "#116eee"
+  measured-option-hover-fill: "#f3f8fe"
 rounded:
   pill: "45.04px"
   button: "26px"
@@ -71,7 +71,7 @@ No composite type styles in tokens.json; the README text below names the faces a
 
 ### Fonts (from README.md)
 
-Two served faces do everything. **Nista** runs the marketing pages (home, about, choose-your-language): the 40px hero headline, 16px body, 14px nav/footer. **NistaFonts** runs the app-shell pages (course, register, login, premium): the 48px course display, 32px premium title, 16px picker labels. Both are served from the Busuu CDN; neither is distributed with the package — the style guide falls back to system sans.
+Two served faces do everything. **Nista** runs the marketing pages (home, about, premium, choose-your-language): the 40px hero headline, the 32px Premium title and its buttons, 16px body, 14px nav/footer. **NistaFonts** runs the app-shell surfaces (course, register, the language picker): the 48px course display and 16px picker labels. Both are served from the Busuu CDN; neither is distributed with the package — the style guide falls back to system sans.
 
 ## Layout
 
@@ -108,9 +108,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **This is the public shell, not the app.** Lessons, review, streaks, the profile and all signed-in surfaces live on app.busuu.com behind login and are uncaptured. Treat the app's own design system as unknown.
 - **One theme only.** The site paints light everywhere; the gradient hero and the indigo upsell are section styles. `tokens.json` ships no dark set.
 - **The tokens are measured, not declared.** busuu.com compiles its styles (Sass + styled-components); almost no `:root` design vars exist. Every token cites the measurement it came from — that is the honest provenance.
-- **The action blue has no fill.** `core.color.brand.blue` (#116eee) was measured on text and borders — the course CTA is a ghost button and its background computes transparent.
+- **The action blue has no fill.** `core.color.brand.blue` (#116eee) was measured on text and borders — picker-option labels, course-CTA text, the hover border on cards. The course CTA itself is a green `#11ee92` pill: its outer anchor computes transparent, its child `<button>` paints the green fill with a 100px radius on the course page's blue band.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
-- **Missing components.** `nav-link`, `save-badge`, `m-menu-button` and `m-menu-open` are recorded missing in the measurement file: the kebab is an empty `<a>` with no text for the specs to name, and the save badge/nav-link selectors found no match on the captured loads. The opened menus show in [home-light-menu](screenshots/home-light-menu.png) and [mobile-home-light-menu](screenshots/mobile-home-light-menu.png).
+- **Missing components.** `save-badge`, `m-menu-button` and `m-menu-open` are recorded missing in the measurement file: the kebab is an empty `<a>` with no text for the specs to name, and the SAVE n% badge selector found no match on the captured premium load. The opened menus show in [home-light-menu](screenshots/home-light-menu.png) and [mobile-home-light-menu](screenshots/mobile-home-light-menu.png). `nav-dropdown`, `period-toggle` and `language-item` have no captured focus look — a real keyboard focus could not be held on them.
 
 ### Do and don't (from README.md)
 
@@ -118,7 +118,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 2. **Do spend the gradient on heroes.** The purple-to-blue diagonal (`#6e00f8` → `#563ce9` → `#116eee`) marks the home hero and the closing CTA band — and the indigo `#221658` owns the upsell. Body sections stay white. See [home-light-default](screenshots/home-light-default.png).
 3. **Do pill every button.** Actions are pills: 45px radii on the green CTAs, 26px on the upsell buttons, the kebab menu's own rail. See [hero-cta](components/crops/hero-cta-default.png).
 4. **Do reserve green for the one action.** `#11ee92` is `Learn for free` and nothing else; hover lifts to `#41f1a8`. Secondary actions go `#116eee` on white or ghost. See [cta-signup](components/crops/cta-signup-default.png).
-5. **Do let the blue ride on borders and text.** The `#116eee` action blue marks links, ghost-button labels, the hover border on cards and focus rings — it is rarely a fill. See [course-cta](components/crops/course-cta-default.png).
-6. **Don't add card chrome.** Cards are borderless whites on 16px (picker) or 8px (plan) radii; a 1px `#116eee` border plus `#f3f8fe` label fill is the whole hover story. See [language-item](components/crops/language-item-hover.png).
+5. **Do let the blue ride on borders and text.** The `#116eee` action blue marks picker-option labels, course-CTA text, the hover border on cards and focus rings — it is rarely a fill. See [language-item](components/crops/language-item-default.png).
+6. **Don't add card chrome.** The picker option carries only a 1px `#dae1ea` hairline on a 16px radius, the plan card only a 2px white keyline on its indigo fill — no shadows, nothing heavier. On hover the option's hairline turns `#116eee` and its label takes a `#f3f8fe` fill. See [language-item](components/crops/language-item-hover.png).
 7. **Don't style the app from this package.** Every value is the public surface's; app.busuu.com is uncaptured.
 8. **Don't ship a dark theme.** None is offered; the indigo upsell is a section style, not a theme.

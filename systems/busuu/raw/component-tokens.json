@@ -130,8 +130,8 @@
     "blue": {
      "value": "#116eee",
      "type": "color",
-     "source": "computed color of course-cta default and hero-cta default; language-item hover borderTopColor (raw/components-computed.json)",
-     "description": "The action/link blue #116eee (Course CTAs are ghost buttons: the blue rides on text and borders, not on a fill)."
+     "source": "computed color of language-item default (raw/components-computed.json)",
+     "description": "The action/link blue #116eee (option text, course-cta text, hover borders)."
     },
     "purple": {
      "value": "#5438dc",
@@ -148,7 +148,7 @@
     "mist": {
      "value": "#f2f7fd",
      "type": "color",
-     "source": "the footer band's painted fill, sampled in screenshots/home-light-full.png and components/crops/footer-default.png (the footer root computes transparent; the band paints #f2f7fd)",
+     "source": "painted backgroundColor of the footer ancestor div.main-footer (raw/components-computed.json footer ancestors)",
      "description": "The pale blue #f2f7fd footer fill. The #a7b0b7 social-icon circles inside it are a separate paint."
     }
    }
@@ -202,17 +202,17 @@
     "source": "computed outlineColor of footer-link focus-visible (raw/components-computed.json)",
     "description": "The 1px keyboard-focus ring."
    },
-   "option-hover-fill": {
-    "value": "#f3f8fe",
-    "type": "color",
-    "source": "computed backgroundColor of language-item hover's painted label child (raw/components-computed.json; the option's own box stays transparent)",
-    "description": "The pale-blue hover fill inside a language option."
-   },
    "option-hover-border": {
     "value": "#116eee",
     "type": "color",
     "source": "computed borderTopColor of language-item hover (raw/components-computed.json)",
     "description": "The blue border a language option takes on hover."
+   },
+   "option-hover-fill": {
+    "value": "#f3f8fe",
+    "type": "color",
+    "source": "computed backgroundColor of language-item hover's painted label child (raw/components-computed.json; the option's own box stays transparent)",
+    "description": "The pale-blue hover fill inside a language option."
    },
    "cta-transition": {
     "value": "0.2s",

@@ -116,6 +116,8 @@ def props(v):
         o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'])}"
     else:
         o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'])}"
+    if s["textDecorationLine"] not in ("none", ""):
+        o["decoration"] = f"{s['textDecorationLine']} {s['textDecorationThickness']}, {colour(s['textDecorationColor'])}"
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
         durs = [x.strip() for x in s["transitionDuration"].split(",")]
@@ -159,13 +161,17 @@ def props(v):
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "transition", "transform", "opacity", "icon", "placeholder", "layers"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "text", "decoration", "transition", "transform", "opacity", "icon", "placeholder", "layers"]
 
 
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    # A state recorded `via: "focus failed"` kept its resting style: the element
+    # never took :focus-visible, so the reading is not focus evidence and must
+    # not be shown as a captured (or "same as default") state.
+    failed = [s for s in c["states"] if c["states"][s].get("via") == "focus failed"]
+    states = [s for s in c["states"] if "style" in c["states"][s] and s not in failed]
     if not states:
-        return [], states
+        return [], states, failed
     base = props(c["states"][states[0]])
     rows = [(states[0], base)]
     same = []
@@ -184,7 +190,7 @@ def state_rows(c):
             rows.append((st, diff))
     if same:
         rows[0] = (f"{states[0]} (same: {', '.join(same)})", base)
-    return rows, states
+    return rows, states, failed
 
 
 def fmt(d):
@@ -418,7 +424,7 @@ for g in groups:
         if c.get("missing"):
             W("Not on the page when it was captured.")
             continue
-        rows, states = state_rows(c)
+        rows, states, failed = state_rows(c)
         if len(states) == 1 and rows:
             W(f"**Values ({states[0]}).** {fmt(rows[0][1])}.")
             W()
@@ -427,6 +433,9 @@ for g in groups:
             W("|---|---|")
             for lab, d in rows:
                 W(f"| {lab} | {fmt(d)} |")
+            W()
+        if failed:
+            W(f"**Focus.** A real keyboard focus could not be held on this element at capture ({', '.join(failed)} failed), so its focus look is uncaptured.")
             W()
         cl = child_layers(c)
         if cl:
@@ -467,7 +476,8 @@ W()
 W("- **Pressed** was forced with DevTools on every control, so a state a script adds on mousedown (if any) is missing.")
 W("- **Disabled, error and loading states** were not seen on the public surface.")
 W("- **m-menu-button and m-menu-open** are recorded missing: the kebab is an empty <a> with no text, so the measurement specs could not label it; the opened menu shows in screenshots/mobile-home-light-menu.png and the m-nav-item measurements.")
-W("- **save-badge and nav-link** are recorded missing: the specs' selectors found no match on the captured loads.")
+W("- **save-badge** is recorded missing: its selector found no SAVE n% badge on the captured premium load.")
+W("- **nav-dropdown, period-toggle and language-item** have no captured focus look: a real keyboard focus could not be held on them, so only default/hover/pressed are recorded.")
 W()
 W("### Themes")
 W()
@@ -475,7 +485,7 @@ W("The site paints one light theme; the hero and the /en/premium upsell are grad
 W()
 W("### Fonts")
 W()
-W("- **Nista** (marketing pages) and **NistaFonts** (the app-shell pages: register, login, premium, course) are the served faces for everything. They are served from the Busuu CDN; the style guide falls back to system sans.")
+W("- **Nista** (marketing pages: home, premium, about, the nav and footer) and **NistaFonts** (the app-shell surfaces: course pages, register and the language picker) are the served faces for everything. They are served from the Busuu CDN; the style guide falls back to system sans.")
 W()
 W("### Screenshots")
 W()

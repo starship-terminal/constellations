@@ -266,14 +266,14 @@ async function home() {
   await chrome('home');
   const g = G.shell;
   await S('header', q('header, .main-header-simplified').filter({ visible: true }).first(), ['default'], { group: g, title: 'Header', desc: 'The marketing header: logo, Learn for free, Log in, For Educators/Businesses.', sel: 'header.main-header-simplified' }, { noScroll: true });
-  await S('logo', q('header [data-cy="HomePage__logo"], header img[alt*="Busuu" i], header a').filter({ visible: true }).first(), ['default'], { group: g, title: 'Logo', sel: 'header logo' }, { noScroll: true });
-  await S('nav-link', q('header a, .main-header-simplified a').filter({ hasText: /Log\s*in/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Nav link', sel: 'header a' }, { noScroll: true });
+  await S('logo', q('a.nav-dropdown__logo, nav a:has(svg), nav a:has(img)').filter({ visible: true }).first(), ['default'], { group: g, title: 'Logo', desc: 'The wordmark anchor (a.nav-dropdown__logo, a labelled svg), top-left of the nav bar.', sel: 'a.nav-dropdown__logo' }, { noScroll: true });
+  await S('nav-link', q('.nav-dropdown__btn, .responsive-nav a, nav a').filter({ hasText: /Log\s*in/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Nav link', desc: 'The nav\'s Log-in outline button (a.nav-dropdown__btn.btn--outline-default); measured, never followed.', sel: '.nav-dropdown__btn.btn--outline-default' }, { noScroll: true });
   await S('cta-signup', q('header a').filter({ hasText: /Learn for free|Get started/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Signup CTA', desc: 'The header CTA; links to signup, measured never followed.', sel: 'header signup CTA' }, { noScroll: true });
   await S('nav-dropdown', q('.nav-dropdown, [data-cy="HomePage__mainNav"]').filter({ visible: true }).first(), B4, { group: g, title: 'Nav dropdown', desc: 'The language/product dropdown in the header.', sel: '.nav-dropdown' }, { noScroll: true });
   const h = G.home;
   await S('hero-title', q('h1, .header-simplified__title').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero headline', sel: 'h1.header-simplified__title' }, { noScroll: true });
-  await S('hero-cta', q('.header-simplified__cta, [data-cy="HomePage__startLearningCTA"], a, button').filter({ hasText: /Start learning|Get started|Learn for free/i }).filter({ visible: true }).first(), B4, { group: h, title: 'Hero CTA', desc: 'The hero action; measured never followed.', sel: '.header-simplified__cta' });
-  await S('hero-sub', q('main p, section p, .header-simplified p').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero copy', desc: 'The lede under the headline.', sel: 'hero paragraph' });
+  await S('hero-cta', q('main a, main button, section a, section button').filter({ hasText: /Start learning|Get started|Learn for free/i }).filter({ visible: true }).first(), B4, { group: h, title: 'Hero CTA', desc: 'The hero action; measured never followed.', sel: 'hero CTA (main/section scope)' });
+  await S('hero-sub', q('main p, section p, .header-simplified p').filter({ hasText: /Busuu understands|another language|speak up|goal/i }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero copy', desc: 'The lede under the headline.', sel: 'hero lede paragraph' });
   await S('flag-card', q('[data-cy="HomePage__flagModule"] a, [data-cy="HomePage__flagModule"] li, [class*="flag" i] a').filter({ visible: true }).first(), B4, { group: h, title: 'Language card', desc: 'A language entry in the flag module.', sel: 'flag module item' });
   save();
 }
@@ -296,7 +296,7 @@ async function course() {
   if (!(await newPage('course', { url: BASE + '/en/course/learn-spanish-online', wait: 9000 }))) return;
   const g = G.course;
   await S('course-title', q('h2').filter({ hasText: /Discover|Spanish/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Course page title', desc: 'The visible display heading (the semantic h1 is clipped for accessibility).', sel: 'h2 course display heading' }, { noScroll: true });
-  await S('course-cta', q('main a, section a, main button').filter({ hasText: /Start|Learn|Try|Sign/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Course CTA', sel: 'course page CTA' });
+  await S('course-cta', q('main a, section a, main button').filter({ hasText: /Start|Learn|Try|Sign/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Course CTA', desc: 'The course page action: the anchor computes transparent and its child button paints the green fill on a 100px radius over the blue band; measured, never followed.', sel: 'course page CTA' });
   await S('course-section', q('main h2, section h2').filter({ visible: true }).first(), ['default'], { group: g, title: 'Section heading', sel: 'course page h2' });
   save();
 }
@@ -325,10 +325,18 @@ async function mobile() {
   await chrome('mobile');
   const g = G.mobile;
   await S('m-header', q('header, .main-header-simplified').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile header', sel: 'header at 390' }, { noScroll: true });
-  const menu = q('[data-cy="HomePage__responsiveNav"] button, header button[aria-label*="menu" i], header [class*="burger" i]').filter({ visible: true }).first();
-  await S('m-menu-button', menu, B4, { group: g, title: 'Menu button', sel: 'responsive nav button' }, { noScroll: true });
-  await S('m-menu-open', menu, ['opened'], { group: g, title: 'Mobile menu, open', desc: 'The button after its own toggle; the opened menu shows in the crop.', sel: 'responsive nav button' }, { noScroll: true });
-  await S('m-nav-item', q('[data-cy="HomePage__responsiveNav"] a, nav a, header a').filter({ hasText: /./ }).filter({ visible: true }).first(), B4, { group: g, title: 'Mobile nav item', desc: 'A link inside the responsive nav.', sel: 'responsive nav a' }, { noScroll: true });
+  // The kebab is an empty <a> wrapping span.responsive-nav__icon (the control
+  // fixup.mjs clicks for the menu shots); it is a local UI toggle.
+  const kebab = q('span.responsive-nav__icon').filter({ visible: true }).first();
+  await S('m-menu-button', kebab, ['default'], { group: g, title: 'Menu button', desc: 'The kebab toggle: an empty anchor wrapping span.responsive-nav__icon.', sel: 'span.responsive-nav__icon' }, { noScroll: true });
+  try {
+    if (await kebab.count()) {
+      await kebab.click({ timeout: 5000 }).catch(() => kebab.evaluate((el) => (el.closest('a') || el).click()));
+      await page.waitForTimeout(1600);
+    }
+  } catch (e) { log('  ! mobile menu toggle failed', String(e.message).split('\n')[0]); }
+  await S('m-menu-open', q('.main-nav-dropdown__list, .nav-dropdown__list, .responsive-nav nav, .responsive-nav ul').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile menu, open', desc: 'The kebab dropdown, opened by its own toggle.', sel: 'opened responsive nav list' }, { noScroll: true });
+  await S('m-nav-item', q('.main-nav-dropdown__link').filter({ hasText: /\S/ }).filter({ visible: true }).first(), B4, { group: g, title: 'Mobile nav item', desc: 'A link inside the opened responsive nav dropdown.', sel: '.main-nav-dropdown__link' }, { noScroll: true });
   await page.keyboard.press('Escape'); await page.waitForTimeout(500);
   await S('m-hero', q('h1, .header-simplified__title').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile headline', sel: 'h1 at 390' });
   save();
