@@ -1,0 +1,1023 @@
+{
+ "readAt": "2026-11-11",
+ "source": "the stylesheet bodies fetched during a live home load on www.asos.com (response bodies plus the page's inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class (unbound on this site), at 1440 x 900",
+ "sheets": [
+  "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.styles.d0b1aa66dcdc5781b5e9.css (43945 bytes)",
+  "https://www.asos.com/assets/uilib/content-ui-library-5.0.0-98-a5e21375.css (418870 bytes)",
+  "https://www.asos.com/assets/sitechromepublisher/vendors.d5a0fc154044f792fade.css (1817 bytes)",
+  "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css (88474 bytes)",
+  "https://use.fontawesome.com/7f85a56ba4.css (1033 bytes)",
+  "https://use.fontawesome.com/releases/v4.7.0/css/font-awesome-css.min.css (30344 bytes)",
+  "inline-0 (104 bytes)",
+  "inline-1 (762 bytes)",
+  "inline-2 (189 bytes)",
+  "inline-3 (433 bytes)",
+  "inline-4 (189 bytes)",
+  "inline-5 (1162 bytes)",
+  "inline-6 (189 bytes)",
+  "inline-7 (361 bytes)",
+  "inline-8 (76 bytes)",
+  "inline-9 (2243 bytes)",
+  "inline-10 (868 bytes)",
+  "inline-11 (442 bytes)",
+  "inline-12 (1106 bytes)",
+  "inline-13 (4408 bytes)",
+  "inline-14 (5047 bytes)",
+  "inline-15 (421 bytes)",
+  "inline-16 (253 bytes)",
+  "inline-17 (104331 bytes)",
+  "inline-18 (31553 bytes)"
+ ],
+ "counts": {
+  "rules": 41,
+  "fonts": 14,
+  "names": {
+   "generated": 43,
+   "app": 6,
+   "vendor": 1,
+   "utility": 0,
+   "tailwind": 0
+  },
+  "bySelector": {
+   "[generated] .BKBoO9a": 1,
+   "[generated] .dejKRrj": 1,
+   "[generated] .vQeUV7s": 1,
+   "[generated] .LpoEdV8": 1,
+   "[generated] .uszE8X4": 1,
+   "[generated] .hyfRt7i": 1,
+   "[generated] .id5mFie": 1,
+   "[generated] .vcYPeSL": 1,
+   "[app] :root": 2,
+   "[app] .swiper-lazy-preloader-white": 1,
+   "[app] .swiper-lazy-preloader-black": 1,
+   "[generated] .osdMOxg": 1,
+   "[generated] .pggyrBd": 1,
+   "[generated] .cWzaeb1": 1,
+   "[generated] .XB2vbjD": 1,
+   "[generated] .UFGk9wq": 1,
+   "[generated] .LjZGpn8": 1,
+   "[generated] .U_SkntT": 1,
+   "[generated] .OWBPpOL": 1,
+   "[generated] .BV8N_T4": 1,
+   "[generated] .jGEo64M": 1,
+   "[generated] .GzvTddI": 1,
+   "[generated] .v5YK0pq": 1,
+   "[generated] .jjEojay": 1,
+   "[generated] .ifZ1L2E": 1,
+   "[generated] .ANCLgSx": 1,
+   "[generated] .k0JZvlI": 1,
+   "[generated] .FpAFAwp": 1,
+   "[generated] .t57Rtsb": 1,
+   "[generated] .GN5doUF": 1,
+   "[generated] .Q85GjBI": 1,
+   "[generated] :root": 39,
+   "[app] .styles-module_progressIndicator__M5N-y": 1,
+   "[app] .styles-module_default__ETmRI": 2,
+   "[app] .styles-module_inverted__NLjXl": 2,
+   "[generated] .styles-module_small__N4rgu": 2,
+   "[generated] .styles-module_medium__ddBBV": 2,
+   "[generated] .styles-module_large__UXbGy": 2,
+   "[generated] .styles-module_large__UXbGy::after": 1,
+   "[vendor] #onetrust-pc-sdk.otPcCenter": 1
+  }
+ },
+ "errors": [],
+ "generated": [
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.styles.d0b1aa66dcdc5781b5e9.css",
+   "selector": ".BKBoO9a",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 14'%3E%3Cpath d='M0 0h18v2H0zm0 6h18v2H0zm0 6h18v2H0z'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.styles.d0b1aa66dcdc5781b5e9.css",
+   "selector": ".dejKRrj",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23fff' d='M14 6a4 4 0 1 0-8 0 4 4 0 0 0 8 0m2 0A6 6 0 1 1 4 6a6 6 0 0 1 12 0m-6 9c-3.068 0-5.67 1.223-7.035 3h14.07c-1.365-1.777-3.967-3-7.035-3m10 5H0c.553-4.006 4.819-7 10-7s9.447 2.994 10 7'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.styles.d0b1aa66dcdc5781b5e9.css",
+   "selector": ".vQeUV7s",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 18'%3E%3Cpath fill='%23fff' d='M10.618 15.474a21.3 21.3 0 0 0 3.137-2.076c2.697-2.166 4.249-4.619 4.245-7.299-.003-2.284-1.757-4.101-3.881-4.099-1.016 0-1.97.417-2.69 1.158l-1.43 1.467-1.432-1.463a3.75 3.75 0 0 0-2.695-1.151C3.749 2.013 1.998 3.837 2 6.12c.003 2.677 1.559 5.123 4.256 7.281a21.3 21.3 0 0 0 3.756 2.39q.287-.144.606-.318zM9.996 1.763l.203-.2A5.73 5.73 0 0 1 14.116 0c3.246-.004 5.88 2.725 5.884 6.097C20.01 13.845 10.014 18 10.014 18S.01 13.87 0 6.124C-.003 2.752 2.624.014 5.87.01a5.73 5.73 0 0 1 3.92 1.554l.205.199z'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.styles.d0b1aa66dcdc5781b5e9.css",
+   "selector": ".LpoEdV8",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23fff' d='M18 17.987V7H2v11zM4.077 5A5.996 5.996 0 0 1 10 0c2.973 0 5.562 2.162 6.038 5H20v14.986L0 20V5zm9.902-.005C13.531 3.275 11.86 2 10 2 8.153 2 6.604 3.294 6.144 4.995c.92 0 7.654.03 7.835 0'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.styles.d0b1aa66dcdc5781b5e9.css",
+   "selector": ".uszE8X4",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='21' viewBox='0 0 17 17'%3E%3Cpath d='M7.65 15.3a7.65 7.65 0 1 1 5.997-2.9c-.01.012 3.183 3.297 3.183 3.297l-1.22 1.18s-3.144-3.283-3.154-3.275A7.62 7.62 0 0 1 7.65 15.3m0-2a5.65 5.65 0 1 0 0-11.3 5.65 5.65 0 0 0 0 11.3'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.styles.d0b1aa66dcdc5781b5e9.css",
+   "selector": ".hyfRt7i",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23fff' d='M9.97 8.274 2.335.637.637 2.334 8.274 9.97.637 17.607l1.697 1.697 7.637-7.636 7.636 7.636 1.697-1.697-7.636-7.636 7.636-7.637L17.607.637z'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.styles.d0b1aa66dcdc5781b5e9.css",
+   "selector": ".id5mFie",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23fff' d='M9.97 8.274 2.335.637.637 2.334 8.274 9.97.637 17.607l1.697 1.697 7.637-7.636 7.636 7.636 1.697-1.697-7.636-7.636 7.636-7.637L17.607.637z'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.styles.d0b1aa66dcdc5781b5e9.css",
+   "selector": ".vcYPeSL",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23fff' d='M9.97 8.274 2.335.637.637 2.334 8.274 9.97.637 17.607l1.697 1.697 7.637-7.636 7.636 7.636 1.697-1.697-7.636-7.636 7.636-7.637L17.607.637z'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".osdMOxg",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23fff' d='M9.97 8.274 2.335.637.637 2.334 8.274 9.97.637 17.607l1.697 1.697 7.637-7.636 7.636 7.636 1.697-1.697-7.636-7.636 7.636-7.637L17.607.637z'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".pggyrBd",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23fff' d='M14 6a4 4 0 1 0-8 0 4 4 0 0 0 8 0m2 0A6 6 0 1 1 4 6a6 6 0 0 1 12 0m-6 9c-3.068 0-5.67 1.223-7.035 3h14.07c-1.365-1.777-3.967-3-7.035-3m10 5H0c.553-4.006 4.819-7 10-7s9.447 2.994 10 7'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".cWzaeb1",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cg fill='%232d2d2d' fill-rule='evenodd'%3E%3Cpath fill-rule='nonzero' d='M18 4.667 16 2H4L2 4.667V18h16zM0 4l3-4h14l3 4v16H0z'/%3E%3Cpath d='M0 4h20v2H0z'/%3E%3Cpath d='M9 1.111h2v4H9z'/%3E%3C/g%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".XB2vbjD",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%232d2d2d' d='m9.7 13 1.8 1.5-1.436 1.5L6 12l4-4 1.5 1.5L9.7 11H20v9H0V3.605L3 0h14l3 3.605V9h-2V6H2v12h16v-5zM2.5 4H9V2H4zm15 0L16 2h-5v2z'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".UFGk9wq",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ctitle%3E093E3C9E-7B94-45B6-BD6A-772FA08E5DBB@1.5x%3C/title%3E%3Cpath fill='%232d2d2d' fill-rule='evenodd' d='M10 0c5.523 0 10 4.477 10 10s-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0m0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16m-.348 10.308c.528 0 .936.408.936.936a.92.92 0 0 1-.936.936.92.92 0 0 1-.936-.936c0-.528.408-.936.936-.936M10 5.816c.624 0 1.248.12 1.752.612.336.324.624.852.624 1.656 0 .648-.204 1.14-.612 1.548-.3.3-.756.588-1.368.672v1.26H8.908V9.212c.144.036.3.048.468.048.468 0 .876-.156 1.128-.408.18-.192.312-.48.312-.804s-.108-.552-.252-.696c-.132-.132-.324-.24-.624-.24-.348 0-.54.144-.612.216-.132.12-.264.36-.264.78h-1.56c0-.624.264-1.26.6-1.62.324-.336.888-.672 1.896-.672'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".LjZGpn8",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cg fill='%232d2d2d' fill-rule='evenodd'%3E%3Cpath fill-rule='nonzero' d='M4.667 14h11.339c1.1 0 1.994-.9 1.994-2.009V4.01A2.003 2.003 0 0 0 16.006 2H3.994C2.894 2 2 2.9 2 4.009V16zm.666 2L0 20V4.009A4 4 0 0 1 3.994 0h12.012C18.215 0 20 1.8 20 4.009v7.982A4 4 0 0 1 16.006 16z'/%3E%3Cpath d='M6 8.333c-.552 0-1-.373-1-.833s.448-.833 1-.833S7 7.04 7 7.5s-.448.833-1 .833m4 0c-.552 0-1-.373-1-.833s.448-.833 1-.833 1 .373 1 .833-.448.833-1 .833m4 0c-.552 0-1-.373-1-.833s.448-.833 1-.833 1 .373 1 .833-.448.833-1 .833'/%3E%3C/g%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".U_SkntT",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9.1 10'%3E%3Cpath fill='%232d2d2d' fill-rule='evenodd' d='M7.6 7.7c-.8-.5-1.9-.9-3.1-.9s-2.3.3-3.1.9C.7 8.3.1 9.1 0 10h9.1c-.1-.9-.7-1.7-1.5-2.3m-.8-2.6-5-2v.4c0 1.6 1.2 2.8 2.7 2.8 1 .1 1.8-.4 2.3-1.2' clip-rule='evenodd'/%3E%3Cpath fill='%23d0021b' fill-rule='evenodd' d='M8.7 4.7s-.1-1.9-.6-3.1S6.4-.1 5.4 0C3.7.3 2.7.6 2.2 2.3l5 2c.2-.4.5-.8.5-1.5 0-.2.2 1.3.2 2 .1-.1.8-.1.8-.1' clip-rule='evenodd'/%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M9.1 5.2c0 .4-.3.7-.7.7s-.7-.3-.7-.7.3-.7.7-.7.7.4.7.7M7 4.5h-.3L2.3 2.7c-.4-.1-.6-.5-.4-.9.1-.4.5-.5.9-.4l4.5 1.8c.4.1.5.5.4.9-.1.3-.4.4-.7.4' clip-rule='evenodd'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".OWBPpOL",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 22'%3E%3Cpath fill='%232d2d2d' fill-rule='evenodd' d='M3 20c1.4-1.8 4-3 7-3s5.7 1.2 7 3zm13.7-3c-1.8-1.3-4.1-2-6.7-2s-5 .7-6.7 2c-1.8 1.2-3 3-3.3 5h20c-.3-2-1.5-3.8-3.3-5M10 14c2.1 0 3.9-1.1 5-2.7l-2-.8c-.7.8-1.8 1.4-3 1.4-2.2 0-4-1.9-4-4.1L4.1 7c-.1.3-.1.5-.1.8 0 3.4 2.7 6.2 6 6.2' clip-rule='evenodd'/%3E%3Cpath fill='%23d0021b' fill-rule='evenodd' d='M19.1 10.3s-.2-4.2-1.4-6.9S14-.3 11.8.1c-3.8.6-6 1.3-7 4.9l11 4.4c.6-1 1.2-1.8 1.2-3.4 0-.3.5 2.9.5 4.3z' clip-rule='evenodd'/%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M20 11.5c0 .8-.7 1.5-1.5 1.5s-1.5-.7-1.5-1.5.7-1.5 1.5-1.5 1.5.7 1.5 1.5M15.5 10c-.2 0-.4 0-.6-.1L5 6c-.8-.4-1.2-1.2-.9-2s1.2-1.2 2-.9L16 7c.8.3 1.2 1.2.9 2-.2.6-.8 1-1.4 1' clip-rule='evenodd'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".BV8N_T4",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 21 27'%3E%3Cdefs%3E%3Cpath id='a' d='m3 9-.877-7.89A1 1 0 0 1 3.117 0h9.766a1 1 0 0 1 .994 1.11L13 9h3v2H0V9z'/%3E%3C/defs%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath fill='%232d2d2d' fill-rule='nonzero' d='m14.745 11.591 1.748-1.01A6 6 0 0 1 6.16 16.548l1.748-1.009a4 4 0 0 0 6.837-3.947M11.001 22c-3.068 0-5.67 1.223-7.036 3h14.07c-1.364-1.777-3.967-3-7.034-3m10 5H1c.553-4.006 4.818-7 10-7 5.18 0 9.445 2.994 9.999 7z'/%3E%3Cg transform='rotate(-30 11.732 6.5)'%3E%3Cuse xlink:href='%23a' fill='%23007517'/%3E%3Cpath fill='%232d2d2d' d='M2 5h12v2H2z' mask='url(…)'/%3E%3Cpath fill='%23ffd132' d='M6 4h4v4H6zm1 1v2h2V5z' mask='url(…)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".jGEo64M",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 21 27'%3E%3Cdefs%3E%3Cpath id='a' d='m3 9-.877-7.89A1 1 0 0 1 3.117 0h9.766a1 1 0 0 1 .994 1.11L13 9h3v2H0V9z'/%3E%3C/defs%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath fill='%232d2d2d' fill-rule='nonzero' d='m6.16 16.547 10.333-5.965A6 6 0 0 1 6.16 16.548zM21 27H1c.554-4.006 4.819-7 10-7s9.446 2.994 10 7z'/%3E%3Cg transform='rotate(-30 11.732 6.5)'%3E%3Cuse xlink:href='%23a' fill='%23007517'/%3E%3Cpath fill='%232d2d2d' d='M2 5h12v2H2z' mask='url(…)'/%3E%3Cpath fill='%23ffd132' d='M6 4h4v4H6zm1 1v2h2V5z' mask='url(…)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".GzvTddI",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 21 28'%3E%3Cpath fill='%232d2d2d' fill-rule='nonzero' d='M10 23c-3.068 0-5.67 1.223-7.035 3h14.07c-1.365-1.777-3.967-3-7.035-3m10 5H0c.553-4.006 4.818-7 10-7 5.18 0 9.446 2.994 9.999 7zm-1-5a2 2 0 1 1 0-4 2 2 0 0 1 0 4m-4.34-7.798c0-2.209-1.791-5-4-5s-4 2.791-4 5 1.79 3 4 3 4-.79 4-3m3.542-10.06a8.8 8.8 0 0 1 1.086 2.091c.845 2.288-1.086 1.893-1.683 1.688-.945-.329-1.981-1.37-2.147-1.55-.473.327-.947 1.297-1.211 2.391 1.462 1.38 2.413 3.473 2.413 5.44 0 3.314-2.687 5-6 5s-6-1.686-6-5c0-2.014.995-4.16 2.518-5.538-.163-.582-.415-1.18-.878-1.96C5.35 6.098 3.448 5.31 2.59 3.32 1.734 1.331 1.34-.896 4.787.371c3.53 1.295 5.016 5.01 5.304 7.87a5 5 0 0 1 .57-.039c.183 0 .362.016.54.037.023-1.196.03-2.813.783-4.185 1.226-2.239 3.867-2.142 6.219 1.088M6.14 5.687c.444.478.932.798 1.39 1.87.248.58.387 1.025.477 1.472q.539-.345 1.129-.553c-.058-1.871-1.18-4.663-3.374-5.562-.293-.121-.81-.185-.932-.017-.148.173-.148.599.098 1.213.246.613.815 1.15 1.212 1.577m7.385 3.474c.25-.977.596-1.807 1.043-2.475-.555-.615-1-1.012-1.442-1.758-.358.464-.662 1.466-.774 2.276-.064.465-.085.92-.091 1.298q.668.244 1.264.66'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".v5YK0pq",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 21 28'%3E%3Cpath fill='%232d2d2d' fill-rule='nonzero' d='M20 28H0c.553-4.006 4.819-7 10-7s9.446 2.994 10 7zm-1-5a2 2 0 1 1 0-4 2 2 0 0 1 0 4m-.798-17.858a8.8 8.8 0 0 1 1.086 2.091c.845 2.288-1.086 1.893-1.683 1.688-.945-.329-1.98-1.37-2.147-1.55-.473.327-.947 1.297-1.21 2.391 1.461 1.38 2.412 3.473 2.412 5.44 0 3.314-2.687 5-6 5s-6-1.686-6-5c0-2.014.995-4.16 2.518-5.538-.163-.582-.415-1.18-.878-1.961-.95-1.604-2.852-2.392-3.709-4.382C1.733 1.33 1.341-.896 4.786.37c3.531 1.296 5.016 5.01 5.304 7.871a5 5 0 0 1 .57-.039c.183 0 .362.016.541.037.022-1.196.03-2.813.782-4.185 1.226-2.239 3.867-2.142 6.22 1.088M6.14 5.686c.444.478.932.798 1.391 1.871.247.58.386 1.024.476 1.471q.54-.345 1.13-.553c-.059-1.87-1.18-4.663-3.375-5.562-.293-.12-.809-.185-.932-.017-.148.173-.148.6.098 1.213s.815 1.15 1.212 1.577m7.385 3.475c.251-.977.596-1.807 1.043-2.475-.555-.615-1-1.012-1.442-1.758-.358.464-.662 1.466-.774 2.276-.064.465-.085.92-.09 1.298.443.163.867.382 1.263.659'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".jjEojay",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='21' viewBox='0 0 18 21'%3E%3Cg fill='%232d2d2d' transform='translate(1 1)'%3E%3Cpath d='M3.337 17.894c.02.036.47.041.5-.008.812-1.319 3.104-1.319 3.912-.003l.05.08c.03.05.476.05.506 0l.048-.077c.81-1.319 3.103-1.319 3.914 0 .03.05.48.044.5.008.72-1.276 1.156-2.616 1.294-3.943l.038-.55a152 152 0 0 0 .142-2.452c.04-.83.063-1.522.063-2.022 0-1.445-.3-3.193-1.023-4.662C12.253 2.177 10.549 1 7.882 1c-2.665 0-4.37 1.18-5.399 3.276-.722 1.47-1.022 3.22-1.022 4.65 0 .481.044 1.171.123 2.008a81 81 0 0 0 .348 2.953c.206 1.37.678 2.718 1.405 4.007m-1.404-4.003-.002-.01zm-1.98.287-.078-.58a83 83 0 0 1-.282-2.475 25 25 0 0 1-.132-2.196c0-1.71.349-3.745 1.227-5.533C2.038.645 4.414-1 7.882-1s5.844 1.64 7.193 4.382c.88 1.787 1.229 3.82 1.229 5.545 0 .538-.023 1.258-.065 2.118a116 116 0 0 1-.145 2.489c-.017.26-.03.454-.041.592-.17 1.636-.691 3.239-1.544 4.75-.773 1.372-3.123 1.398-3.946.057-.03-.048-.477-.048-.506 0l-.048.078c-.81 1.319-3.103 1.319-3.912.003l-.05-.08c-.03-.05-.476-.05-.506 0-.824 1.34-3.173 1.314-3.946-.057a13.7 13.7 0 0 1-1.642-4.699'/%3E%3Ccircle cx='5.5' cy='5.5' r='1.5'/%3E%3Ccircle cx='10.5' cy='5.5' r='1.5'/%3E%3C/g%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".ifZ1L2E",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='21' viewBox='0 0 16 21'%3E%3Cpath fill='%232d2d2d' fill-rule='evenodd' d='M.52 15.507S0 11.718 0 9.867C0 8.013.568 0 8 0s8 7.98 8 9.866-.265 5.634-.265 5.634c-.166 1.654-.683 3.28-1.53 4.82-.428.779-1.937.795-2.397.027-.453-.755-1.93-.755-2.382 0l-.052.086c-.453.756-1.929.756-2.382 0l-.052-.086c-.453-.755-1.928-.755-2.382 0-.46.768-1.969.752-2.397-.026A14.3 14.3 0 0 1 .52 15.507M5.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".ANCLgSx",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 20'%3E%3Cpath fill='%23666' fill-rule='evenodd' d='M0 5h16v2H0zm14 3.07v9.27c0 1.47-1.15 2.66-2.574 2.66H4.574C3.153 20 2 18.797 2 17.34V8.07zM4 17.15c0 .462.363.85.803.85h6.394c.446 0 .803-.381.803-.85V8.1H4zM6 9h1v8H6zm3 0h1v8H9zM7 0h2c1.656 0 3 1.339 3 3v1.038H4V3c0-1.656 1.339-3 3-3m3 3.999V3c0-.554-.446-1-1-1H7c-.554 0-1 .446-1 1v.999z'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".k0JZvlI",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23fff' d='M9.97 8.274 2.335.637.637 2.334 8.274 9.97.637 17.607l1.697 1.697 7.637-7.636 7.636 7.636 1.697-1.697-7.636-7.636 7.636-7.637L17.607.637z'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".FpAFAwp",
+   "context": [],
+   "properties": {
+    "--icon": "url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDE0IDE0Ij48cGF0aCBmaWxsPSIjZmZmIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01LjMwNCA2LjcxOCAwIDEyLjAyMmwxLjQxNCAxLjQxNCA1LjMwNC01LjMwNCA1LjMwMyA1LjMwMyAxLjQxNC0xLjQxNC01LjMwMy01LjMwMyA1LjMwMy01LjMwM0wxMi4wMjEuMDAxIDYuNzE4IDUuMzA0IDEuNDE0IDAgMCAxLjQxNHoiIGNsaXAtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==)"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".t57Rtsb",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' viewBox='0 0 12 12'%3E%3Cpath fill='%23252424' fill-rule='evenodd' d='M5.764 0 7.64 3.808l3.903.772L8.81 7.715 9.336 12l-3.572-1.871L2.207 12l.525-4.285L0 4.58l3.888-.772z' clip-rule='evenodd'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".GN5doUF",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23fff' d='M9.97 8.274 2.335.637.637 2.334 8.274 9.97.637 17.607l1.697 1.697 7.637-7.636 7.636 7.636 1.697-1.697-7.636-7.636 7.636-7.637L17.607.637z'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.deferred.fb3a2bc2c49aaa14e315.css",
+   "selector": ".Q85GjBI",
+   "context": [],
+   "properties": {
+    "--icon": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23fff' d='M9.97 8.274 2.335.637.637 2.334 8.274 9.97.637 17.607l1.697 1.697 7.637-7.636 7.636 7.636 1.697-1.697-7.636-7.636 7.636-7.637L17.607.637z'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "inline-1",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--11lcxa5": "#2d2d2d",
+    "--18bniqv": "45,45,45",
+    "--1fot7dv": "#000",
+    "--3pchel": "#fff",
+    "--1cripqf": "255,255,255",
+    "--4439lq": "#525050",
+    "--f1xms7": "#666",
+    "--10c6hzt": "#767676",
+    "--h1m6hk": "#929292",
+    "--na3s62": "#ddd",
+    "--1wwppwc": "#eee",
+    "--sm859b": "#f8f8f8",
+    "--6gu3az": "#f9f9f9",
+    "--1e93okh": "#018849",
+    "--14cp6y8": "#006637",
+    "--5eoeaa": "#cceede",
+    "--a5az0j": "#ff9c32",
+    "--fc982a": "#b6752f",
+    "--1njx4kw": "#ffebcc",
+    "--1cf22is": "#0770cf",
+    "--lzto1h": "#1862a5",
+    "--xes0jb": "#cde2f5",
+    "--1xvrmqx": "#d01345",
+    "--1j5f6ai": "#fae7ec",
+    "--1mii22u": "#ff3b30",
+    "--1ffq8ns": "#6f5cff",
+    "--stskl1": "#9797ff",
+    "--1lx7ll5": "#4f41c5",
+    "--1asa9bf": "#bfc9ff",
+    "--oyq41c": "#f1efff",
+    "--19qikbp": "#ff8753",
+    "--1gu65g4": "#f75a27",
+    "--rrfoye": "#ffd2bf",
+    "--cod972": "#79e69e",
+    "--173zcrj": "#5cd881",
+    "--19t30l9": "#d7ffdb",
+    "--45kpnl": "#212121",
+    "--198t7lw": "#1f1e1e",
+    "--19n3pjb": "#282828"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "inline-9",
+   "selector": ".styles-module_small__N4rgu",
+   "context": [],
+   "properties": {
+    "--size": "20px",
+    "--thickness": "3px"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "inline-9",
+   "selector": ".styles-module_medium__ddBBV",
+   "context": [],
+   "properties": {
+    "--size": "32px",
+    "--thickness": "3px"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "inline-9",
+   "selector": ".styles-module_large__UXbGy",
+   "context": [],
+   "properties": {
+    "--size": "56px",
+    "--thickness": "4px"
+   },
+   "bin": "generated"
+  },
+  {
+   "file": "inline-9",
+   "selector": ".styles-module_large__UXbGy::after",
+   "context": [],
+   "properties": {
+    "--image": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg width='48' height='48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.926 12.603v1.515c-2.043-1.435-4.26-2.105-6.658-2.117V12h-.067c-2.897.016-5.528.989-7.91 3.111-1.311 1.184-2.309 2.528-2.968 4.008-.654 1.474-.99 3.127-.99 4.903 0 1.659.295 3.214.875 4.62.581 1.405 1.464 2.706 2.628 3.865 1.163 1.16 2.464 2.042 3.864 2.62 1.37.567 2.88.86 4.484.872V36h.1v-.001c1.604-.012 3.114-.305 4.484-.871.75-.31 1.471-.708 2.158-1.188v1.456h5.003V12.603h-5.003ZM16.542 24.024c0-3.816 2.389-7.513 6.692-7.513 4.303 0 6.692 3.697 6.692 7.513 0 10.106-13.384 10.103-13.384 0Z'/%3E%3C/svg%3E\")"
+   },
+   "bin": "generated"
+  }
+ ],
+ "app": [
+  {
+   "file": "https://www.asos.com/assets/uilib/content-ui-library-5.0.0-98-a5e21375.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--swiper-theme-color": "#007aff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.asos.com/assets/uilib/content-ui-library-5.0.0-98-a5e21375.css",
+   "selector": ".swiper-lazy-preloader-white",
+   "context": [],
+   "properties": {
+    "--swiper-preloader-color": "#fff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.asos.com/assets/uilib/content-ui-library-5.0.0-98-a5e21375.css",
+   "selector": ".swiper-lazy-preloader-black",
+   "context": [],
+   "properties": {
+    "--swiper-preloader-color": "#000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.asos.com/assets/uilib/content-ui-library-5.0.0-98-a5e21375.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--swiper-navigation-size": "44px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-9",
+   "selector": ".styles-module_progressIndicator__M5N-y",
+   "context": [],
+   "properties": {
+    "--spin-duration-ms": "1000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-9",
+   "selector": ".styles-module_default__ETmRI",
+   "context": [],
+   "properties": {
+    "--foreground": "var(--1fot7dv)",
+    "--background": "var(--3pchel)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-9",
+   "selector": ".styles-module_inverted__NLjXl",
+   "context": [],
+   "properties": {
+    "--foreground": "var(--3pchel)",
+    "--background": "var(--1fot7dv)"
+   },
+   "bin": "app"
+  }
+ ],
+ "vendor": [
+  {
+   "file": "inline-17",
+   "selector": "#onetrust-pc-sdk.otPcCenter",
+   "context": [],
+   "properties": {
+    "--ot-footer-space": "160px"
+   },
+   "bin": "vendor"
+  }
+ ],
+ "utility": [],
+ "tailwind": [],
+ "fonts": [
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.styles.d0b1aa66dcdc5781b5e9.css",
+   "font-family": "FuturaStd",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"../MasterLayout/WebFonts/FTN45__W/FTN45__W.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.styles.d0b1aa66dcdc5781b5e9.css",
+   "font-family": "FuturaStd",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"../MasterLayout/WebFonts/FTN75__W/FTN75__W.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.styles.d0b1aa66dcdc5781b5e9.css",
+   "font-family": "FuturaStd",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(\"../MasterLayout/WebFonts/FTN46__W/FTN46__W.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.styles.d0b1aa66dcdc5781b5e9.css",
+   "font-family": "FuturaStd",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(\"../MasterLayout/WebFonts/FTN96__W/FTN96__W.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/client.sitechrome.styles.d0b1aa66dcdc5781b5e9.css",
+   "font-family": "FuturaStdBookOblique",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(\"../MasterLayout/WebFonts/FTN46__W/FTN46__W.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.asos.com/assets/uilib/content-ui-library-5.0.0-98-a5e21375.css",
+   "font-family": "VideoJS",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"data:application/font-woff;charset=utf-8;base64,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\") format(\"woff\")"
+  },
+  {
+   "file": "https://www.asos.com/assets/uilib/content-ui-library-5.0.0-98-a5e21375.css",
+   "font-family": "VideoJS",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"data:application/font-woff;charset=utf-8;base64,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\") format(\"woff\")"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/vendors.d5a0fc154044f792fade.css",
+   "font-display": "swap",
+   "font-family": "futura-pt",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(\"/assets/fonts/futura-pt/creative.1fc777b4.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/vendors.d5a0fc154044f792fade.css",
+   "font-display": "swap",
+   "font-family": "futura-pt",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(\"/assets/fonts/futura-pt/creativeBold.1f9423cd.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.asos.com/assets/sitechromepublisher/vendors.d5a0fc154044f792fade.css",
+   "font-display": "swap",
+   "font-family": "futura-pt",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"/assets/fonts/futura-pt/demi.18851e1e.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://use.fontawesome.com/7f85a56ba4.css",
+   "font-family": "FontAwesome",
+   "src": "url(\"//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff2\") format(\"woff2\"), url(\"//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff\") format(\"woff\"), url(\"//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.ttf\") format(\"truetype\")",
+   "font-weight": "normal",
+   "font-style": "normal"
+  },
+  {
+   "file": "inline-2",
+   "font-display": "swap",
+   "font-family": "futura-pt",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"https://www.asos.com/assets/fonts/futura-pt/book.1bb391ee.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "inline-4",
+   "font-display": "swap",
+   "font-family": "futura-pt",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"https://www.asos.com/assets/fonts/futura-pt/bold.11074381.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "inline-6",
+   "font-display": "swap",
+   "font-family": "futura-pt",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(\"https://www.asos.com/assets/fonts/futura-pt/demi.18851e1e.woff2\") format(\"woff2\")"
+  }
+ ],
+ "resolved": {
+  "dark": {
+   "--10c6hzt": {
+    "raw": "#767676",
+    "kind": "color",
+    "value": "#767676"
+   },
+   "--11lcxa5": {
+    "raw": "#2d2d2d",
+    "kind": "color",
+    "value": "#2d2d2d"
+   },
+   "--14cp6y8": {
+    "raw": "#006637",
+    "kind": "color",
+    "value": "#006637"
+   },
+   "--173zcrj": {
+    "raw": "#5cd881",
+    "kind": "color",
+    "value": "#5cd881"
+   },
+   "--18bniqv": {
+    "raw": "45,45,45",
+    "kind": "other"
+   },
+   "--198t7lw": {
+    "raw": "#1f1e1e",
+    "kind": "color",
+    "value": "#1f1e1e"
+   },
+   "--19n3pjb": {
+    "raw": "#282828",
+    "kind": "color",
+    "value": "#282828"
+   },
+   "--19qikbp": {
+    "raw": "#ff8753",
+    "kind": "color",
+    "value": "#ff8753"
+   },
+   "--19t30l9": {
+    "raw": "#d7ffdb",
+    "kind": "color",
+    "value": "#d7ffdb"
+   },
+   "--1asa9bf": {
+    "raw": "#bfc9ff",
+    "kind": "color",
+    "value": "#bfc9ff"
+   },
+   "--1cf22is": {
+    "raw": "#0770cf",
+    "kind": "color",
+    "value": "#0770cf"
+   },
+   "--1cripqf": {
+    "raw": "255,255,255",
+    "kind": "other"
+   },
+   "--1e93okh": {
+    "raw": "#018849",
+    "kind": "color",
+    "value": "#018849"
+   },
+   "--1ffq8ns": {
+    "raw": "#6f5cff",
+    "kind": "color",
+    "value": "#6f5cff"
+   },
+   "--1fot7dv": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--1gu65g4": {
+    "raw": "#f75a27",
+    "kind": "color",
+    "value": "#f75a27"
+   },
+   "--1j5f6ai": {
+    "raw": "#fae7ec",
+    "kind": "color",
+    "value": "#fae7ec"
+   },
+   "--1lx7ll5": {
+    "raw": "#4f41c5",
+    "kind": "color",
+    "value": "#4f41c5"
+   },
+   "--1mii22u": {
+    "raw": "#ff3b30",
+    "kind": "color",
+    "value": "#ff3b30"
+   },
+   "--1njx4kw": {
+    "raw": "#ffebcc",
+    "kind": "color",
+    "value": "#ffebcc"
+   },
+   "--1wwppwc": {
+    "raw": "#eee",
+    "kind": "color",
+    "value": "#eeeeee"
+   },
+   "--1xvrmqx": {
+    "raw": "#d01345",
+    "kind": "color",
+    "value": "#d01345"
+   },
+   "--3pchel": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--4439lq": {
+    "raw": "#525050",
+    "kind": "color",
+    "value": "#525050"
+   },
+   "--45kpnl": {
+    "raw": "#212121",
+    "kind": "color",
+    "value": "#212121"
+   },
+   "--5eoeaa": {
+    "raw": "#cceede",
+    "kind": "color",
+    "value": "#cceede"
+   },
+   "--6gu3az": {
+    "raw": "#f9f9f9",
+    "kind": "color",
+    "value": "#f9f9f9"
+   },
+   "--a5az0j": {
+    "raw": "#ff9c32",
+    "kind": "color",
+    "value": "#ff9c32"
+   },
+   "--cod972": {
+    "raw": "#79e69e",
+    "kind": "color",
+    "value": "#79e69e"
+   },
+   "--f1xms7": {
+    "raw": "#666",
+    "kind": "color",
+    "value": "#666666"
+   },
+   "--fc982a": {
+    "raw": "#b6752f",
+    "kind": "color",
+    "value": "#b6752f"
+   },
+   "--h1m6hk": {
+    "raw": "#929292",
+    "kind": "color",
+    "value": "#929292"
+   },
+   "--lzto1h": {
+    "raw": "#1862a5",
+    "kind": "color",
+    "value": "#1862a5"
+   },
+   "--na3s62": {
+    "raw": "#ddd",
+    "kind": "color",
+    "value": "#dddddd"
+   },
+   "--oyq41c": {
+    "raw": "#f1efff",
+    "kind": "color",
+    "value": "#f1efff"
+   },
+   "--rrfoye": {
+    "raw": "#ffd2bf",
+    "kind": "color",
+    "value": "#ffd2bf"
+   },
+   "--sm859b": {
+    "raw": "#f8f8f8",
+    "kind": "color",
+    "value": "#f8f8f8"
+   },
+   "--stskl1": {
+    "raw": "#9797ff",
+    "kind": "color",
+    "value": "#9797ff"
+   },
+   "--swiper-navigation-size": {
+    "raw": "44px",
+    "kind": "dimension",
+    "value": "44px"
+   },
+   "--swiper-theme-color": {
+    "raw": "#007aff",
+    "kind": "color",
+    "value": "#007aff"
+   },
+   "--xes0jb": {
+    "raw": "#cde2f5",
+    "kind": "color",
+    "value": "#cde2f5"
+   }
+  },
+  "light": {
+   "--10c6hzt": {
+    "raw": "#767676",
+    "kind": "color",
+    "value": "#767676"
+   },
+   "--11lcxa5": {
+    "raw": "#2d2d2d",
+    "kind": "color",
+    "value": "#2d2d2d"
+   },
+   "--14cp6y8": {
+    "raw": "#006637",
+    "kind": "color",
+    "value": "#006637"
+   },
+   "--173zcrj": {
+    "raw": "#5cd881",
+    "kind": "color",
+    "value": "#5cd881"
+   },
+   "--18bniqv": {
+    "raw": "45,45,45",
+    "kind": "other"
+   },
+   "--198t7lw": {
+    "raw": "#1f1e1e",
+    "kind": "color",
+    "value": "#1f1e1e"
+   },
+   "--19n3pjb": {
+    "raw": "#282828",
+    "kind": "color",
+    "value": "#282828"
+   },
+   "--19qikbp": {
+    "raw": "#ff8753",
+    "kind": "color",
+    "value": "#ff8753"
+   },
+   "--19t30l9": {
+    "raw": "#d7ffdb",
+    "kind": "color",
+    "value": "#d7ffdb"
+   },
+   "--1asa9bf": {
+    "raw": "#bfc9ff",
+    "kind": "color",
+    "value": "#bfc9ff"
+   },
+   "--1cf22is": {
+    "raw": "#0770cf",
+    "kind": "color",
+    "value": "#0770cf"
+   },
+   "--1cripqf": {
+    "raw": "255,255,255",
+    "kind": "other"
+   },
+   "--1e93okh": {
+    "raw": "#018849",
+    "kind": "color",
+    "value": "#018849"
+   },
+   "--1ffq8ns": {
+    "raw": "#6f5cff",
+    "kind": "color",
+    "value": "#6f5cff"
+   },
+   "--1fot7dv": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--1gu65g4": {
+    "raw": "#f75a27",
+    "kind": "color",
+    "value": "#f75a27"
+   },
+   "--1j5f6ai": {
+    "raw": "#fae7ec",
+    "kind": "color",
+    "value": "#fae7ec"
+   },
+   "--1lx7ll5": {
+    "raw": "#4f41c5",
+    "kind": "color",
+    "value": "#4f41c5"
+   },
+   "--1mii22u": {
+    "raw": "#ff3b30",
+    "kind": "color",
+    "value": "#ff3b30"
+   },
+   "--1njx4kw": {
+    "raw": "#ffebcc",
+    "kind": "color",
+    "value": "#ffebcc"
+   },
+   "--1wwppwc": {
+    "raw": "#eee",
+    "kind": "color",
+    "value": "#eeeeee"
+   },
+   "--1xvrmqx": {
+    "raw": "#d01345",
+    "kind": "color",
+    "value": "#d01345"
+   },
+   "--3pchel": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--4439lq": {
+    "raw": "#525050",
+    "kind": "color",
+    "value": "#525050"
+   },
+   "--45kpnl": {
+    "raw": "#212121",
+    "kind": "color",
+    "value": "#212121"
+   },
+   "--5eoeaa": {
+    "raw": "#cceede",
+    "kind": "color",
+    "value": "#cceede"
+   },
+   "--6gu3az": {
+    "raw": "#f9f9f9",
+    "kind": "color",
+    "value": "#f9f9f9"
+   },
+   "--a5az0j": {
+    "raw": "#ff9c32",
+    "kind": "color",
+    "value": "#ff9c32"
+   },
+   "--cod972": {
+    "raw": "#79e69e",
+    "kind": "color",
+    "value": "#79e69e"
+   },
+   "--f1xms7": {
+    "raw": "#666",
+    "kind": "color",
+    "value": "#666666"
+   },
+   "--fc982a": {
+    "raw": "#b6752f",
+    "kind": "color",
+    "value": "#b6752f"
+   },
+   "--h1m6hk": {
+    "raw": "#929292",
+    "kind": "color",
+    "value": "#929292"
+   },
+   "--lzto1h": {
+    "raw": "#1862a5",
+    "kind": "color",
+    "value": "#1862a5"
+   },
+   "--na3s62": {
+    "raw": "#ddd",
+    "kind": "color",
+    "value": "#dddddd"
+   },
+   "--oyq41c": {
+    "raw": "#f1efff",
+    "kind": "color",
+    "value": "#f1efff"
+   },
+   "--rrfoye": {
+    "raw": "#ffd2bf",
+    "kind": "color",
+    "value": "#ffd2bf"
+   },
+   "--sm859b": {
+    "raw": "#f8f8f8",
+    "kind": "color",
+    "value": "#f8f8f8"
+   },
+   "--stskl1": {
+    "raw": "#9797ff",
+    "kind": "color",
+    "value": "#9797ff"
+   },
+   "--swiper-navigation-size": {
+    "raw": "44px",
+    "kind": "dimension",
+    "value": "44px"
+   },
+   "--swiper-theme-color": {
+    "raw": "#007aff",
+    "kind": "color",
+    "value": "#007aff"
+   },
+   "--xes0jb": {
+    "raw": "#cde2f5",
+    "kind": "color",
+    "value": "#cde2f5"
+   }
+  }
+ }
+}

@@ -1,7 +1,7 @@
 {
  "date": "2026-11-11",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): manual review of the package against the web rubric in scorecard/criteria.json; every component entry and token compared to the measured evidence",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): agent rubric review over the generated package: read of tokens.json, components.md, README coverage table and measured raw files",
  "systems": [
   {
    "slug": "brilliant",
@@ -9025,136 +9025,8 @@
    "category": "Media",
    "reviewed": "2026-11-11",
    "reviewedPlatform": "web"
-  },
-  {
-   "slug": "blueapron",
-   "grades": {
-    "F1": {
-     "grade": "partly",
-     "evidence": "A real declared palette but a small one: brand.accent #2959e0 (declared --sqsp-palette-accent-color), brand.navy #002856 (declared --announcement-bar-background-color), brand.cream #f2f0e5 plus measured neutrals ink/white/line. Roles, not 10-step ramps; ten Squarespace section palettes harvested in css-vars.json but not tokenised per theme."
-    },
-    "F2": {
-     "grade": "partly",
-     "evidence": "surface-page (cream) and surface-inverse (navy) mapped in light.*; no raised/overlay/scrim roles on the public surface — the mobile menu overlay paints cream."
-    },
-    "F3": {
-     "grade": "partly",
-     "evidence": "text-primary (ink), text-inverse (white) and text-accent (blue) roles exist; no secondary/disabled/error text roles were measured on this surface."
-    },
-    "F4": {
-     "grade": "partly",
-     "evidence": "border-field #aaa hairline plus focus-ring (black on light, white on navy) roles; no strong border role on the captured surface."
-    },
-    "F5": {
-     "grade": "partly",
-     "evidence": "accent #2959e0 default; secondary button's transparent -> accent hover measured (measured.secondary-hover); no pressed recolour (pressed reads same fill)."
-    },
-    "F6": {
-     "grade": "missing",
-     "evidence": "No success/warning/danger/info roles exist on the blog surface; the palette is brand-only."
-    },
-    "F7": {
-     "grade": "meets",
-     "evidence": "One theme is painted; every emitted role exists for it and no second theme is offered to mismatch."
-    },
-    "F8": {
-     "grade": "partly",
-     "evidence": "Three stacks (Ovo display, Ivory serif, Almarai body) with fallbacks; declared --heading ramp (64/44.8/35.2/25.6px) plus measured display/title/base/small/nav/meta steps. Named type roles are partial — no code/caption roles."
-    },
-    "F9": {
-     "grade": "partly",
-     "evidence": "No spacing scale is declared as tokens; ~11px Squarespace grid gutter measured; per-component paddings in components.md."
-    },
-    "F10": {
-     "grade": "partly",
-     "evidence": "radius.pill 300px and component.card-image.radius tokenised; most elements are square — no radius scale and no border-width tokens."
-    },
-    "F11": {
-     "grade": "partly",
-     "evidence": "component.control.height 65px, field.height 43px, announcement/header heights and the 2px focus ring (offset via outline) tokenised; no icon-size set."
-    },
-    "F12": {
-     "grade": "missing",
-     "evidence": "No box-shadow measured on any captured component; the surface is flat."
-    },
-    "F13": {
-     "grade": "partly",
-     "evidence": "Measured transitions (0.1s opacity CTA fade, 0.25s menu fade) in core.measured; no named ease tokens and no reduced-motion variant observed."
-    },
-    "F14": {
-     "grade": "partly",
-     "evidence": "Component geometry and chrome heights measured at 1440 and 390; the Squarespace grid vars are harvested but breakpoints/z-layers are not tokenised."
-    },
-    "C1": {
-     "grade": "partly",
-     "evidence": "~7 of 19: button, link, text field, menu (mobile overlay), card, list row, pagination. No textarea/select/checkbox/radio/switch/tabs/tooltip/dialog/toast/table/avatar/badge on the blog surface."
-    },
-    "C2": {
-     "grade": "partly",
-     "evidence": "default/hover/focus-visible/pressed on every interactive entry, focused/filled on the field, opened on the menu. No selected/disabled/loading/error states exist on the surface."
-    },
-    "C4": {
-     "grade": "partly",
-     "evidence": "Entries cite tokens where they exist (accent, ink, cream, pill, focus rings); Squarespace internals mean much of the spec is measured values with provenance."
-    },
-    "P1": {
-     "grade": "partly",
-     "evidence": "Six written patterns: promo/header stack, masonry grid, guide page, navy footer, mobile menu, cart. Forms/validation, destructive confirmation, feedback and onboarding do not exist on the signed-out blog surface."
-    },
-    "A1": {
-     "grade": "partly",
-     "evidence": "Ovo/Ivory/Almarai named with CDN provenance and fallbacks; no icon index — extraction pass not run, glyphs visible in crops."
-    },
-    "K1": {
-     "grade": "meets",
-     "evidence": "README covers scope, capture method, the Cloudflare boundary and a What to distrust section."
-    },
-    "C3": {
-     "grade": "meets",
-     "evidence": "Every interactive entry carries a focus-visible reading; the 2px ring is black on cream and white on navy (announcement-close), tokenised as light.focus-ring / focus-ring-inverse."
-    },
-    "F15": {
-     "grade": "missing",
-     "evidence": "Script: primary text fails 1 pair; worst 1.43:1 light text (core.color.neutral.ink) on surface (core.color.brand.navy)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 51 of 51 tokens name their source"
-    },
-    "K2": {
-     "grade": "partly",
-     "evidence": "Script: 8 rules, 4 linking an image (needs 3+, all linked)"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
-    },
-    "C5": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V1": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "V2": {
-     "grade": "na",
-     "evidence": "Optional for a capture, and this product does not publish it."
-    }
-   },
-   "name": "Blue Apron",
-   "goodFor": "Editorial and recipe surfaces: a #002856 navy promo strip and footer around a #f2f0e5 cream field, one #2959e0 action blue on 300px pill buttons, blue Ovo serif headlines over Almarai body text, and a chrome-free masonry guide grid",
-   "url": "https://blog.blueapron.com",
-   "captured": "2026-11-11",
-   "themes": [
-    "light"
-   ],
-   "platform": "web",
-   "category": "E-commerce",
-   "reviewed": "2026-11-11",
-   "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "manual review of the package against the web rubric in scorecard/criteria.json; every component entry and token compared to the measured evidence"
+ "reviewMethod": "agent rubric review over the generated package: read of tokens.json, components.md, README coverage table and measured raw files"
 }

@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Base44 style guide</title>
+<meta name="description" content="Base44 (base44.com) design tokens and the public site's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+  --color-ink-100: #e3ded8;
+  --color-ink-200: #c9c7c5;
+  --color-ink-300: #a4a4a4;
+  --color-ink-400: #767676;
+  --color-ink-500: #555555;
+  --color-ink-600: #383838;
+  --color-ink-700: #252525;
+  --color-ink-800: #1e1e24;
+  --color-ink-900: #0f0f0f;
+  --color-neutral-100: #e1e1e1;
+  --color-neutral-200: #d8d7d6;
+  --color-neutral-300: #bababa;
+  --color-neutral-400: #8e8d8d;
+  --color-neutral-500: #6d6a67;
+  --color-blue-100: #e5e8fc;
+  --color-blue-200: #bfc7f7;
+  --color-blue-300: #9ca9ff;
+  --color-blue-500: #3b51e5;
+  --color-blue-600: #3243c9;
+  --color-blue-700: #2a3cb8;
+  --color-blue-default: #3b51e5;
+  --color-blue-accent: #3950e6;
+  --color-green-100: #ddf0cd;
+  --color-green-300: #56b22b;
+  --color-green-500: #134f25;
+  --color-green-700: #0c3a1a;
+  --color-orange-100: #ffe4d8;
+  --color-orange-200: #ffc4ac;
+  --color-orange-500: #ff6a00;
+  --color-orange-600: #e5571a;
+  --color-orange-700: #c2480f;
+  --color-orange-default: #ff6a00;
+  --color-lime-cta: #ebffb1;
+  --color-lime-ctaHover: #e0fe92;
+  --color-lime-ctaLine: #ade900;
+  --color-brand-paper: #faf9f7;
+  --color-brand-offwhite: #eeeceb;
+  --color-brand-sand: #e3ded8;
+  --color-brand-black: #1e1e24;
+  --color-brand-white: #ffffff;
+  --color-brand-hairline: #1e1e24;
+  --color-brand-marketingCard: #e5e3df;
+  --color-brand-marketingCardStrong: #bdbdbd;
+  --color-cta-orange: #ff773c;
+  --color-cta-orangeHover: #ff8e5d;
+  --color-cta-orangeText: #181818;
+  --color-cta-black: #312f2f;
+  --color-cta-blackHover: #433f3f;
+  --color-cta-blueHover: #4b62fa;
+  --color-cta-whiteHover: #f5f3f2;
+  --color-text-body: #232529;
+  --color-text-faint: #a4a4a4;
+  --color-text-inverse: #eeeceb;
+  --color-text-link: #3b51e5;
+  --color-text-muted: #767676;
+  --color-text-onBlue: #eeeceb;
+  --color-text-placeholder: #8e8e8e;
+  --color-text-secondary: #6d6a67;
+  --color-text-strong: #0f0f0f;
+  --color-surface-blue: #3b51e5;
+  --color-surface-canvas: #faf9f7;
+  --color-surface-card: #ffffff;
+  --color-surface-cardWarm: #f9f7f4;
+  --color-surface-grey: #bdbdbd;
+  --color-surface-inverse: #1e1e24;
+  --color-surface-main: #eeeceb;
+  --color-surface-sunken: #e3ded8;
+  --color-surface-warm: #e2ded7;
+  --color-border-warm: #ddd8d2;
+  --color-border-mid: rgba(15, 15, 15, 0.16);
+  --color-border-soft: rgba(15, 15, 15, 0.08);
+  --color-border-strong: rgba(15, 15, 15, 0.7);
+  --color-icon-blue: #9ca9ff;
+  --color-icon-green: #499c61;
+  --color-icon-orange: #ffae81;
+  --color-intent-accent: #3b51e5;
+  --color-intent-danger: #e5484d;
+  --color-intent-primary: #ff773c;
+  --color-intent-primaryHover: #ff8e5d;
+  --color-intent-success: #56b22b;
+  --color-misc-disabled: #bdbdbd;
+  --color-misc-invalid: #ff5100;
+  --color-misc-focusRing: #3b51e5;
+  --color-misc-siteFocusRing: #1e1e24;
+  --radius-none: 0px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 30px;
+  --radius-cta: 11px;
+  --radius-pill: 999px;
+  --radius-default: 12px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-gutter: 48px;
+  --space-blogBlock: 70px;
+  --duration-fast: 200ms;
+  --duration-base: 300ms;
+  --duration-hover: 200ms;
+  --duration-menu: 300ms;
+  --easing-standard: cubic-bezier(0.22, 1.0, 0.36, 1.0);
+  --easing-inOut: cubic-bezier(0.16, 1.0, 0.3, 1.0);
+  --easing-snap: cubic-bezier(0.34, 1.56, 0.64, 1.0);
+  --fontWeight-light: 300;
+  --fontWeight-regular: 400;
+  --fontWeight-medium: 500;
+  --fontWeight-semibold: 600;
+  --fontWeight-bold: 700;
+  --fontFamily-display: "Dazzed","Dazzed Fallback",system-ui,sans-serif;
+  --fontFamily-displayVf: "Dazzed VF","Dazzed","Dazzed Fallback",sans-serif;
+  --fontFamily-body: "Geist",system-ui,sans-serif;
+  --fontFamily-ui: "Geist",system-ui,sans-serif;
+  --fontFamily-mono: "JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --fontFamily-base44: "WixMadeforText", system-ui, sans-serif;
+  --layout-maxwContent: 1231px;
+  --layout-maxwWide: 1460px;
+  --layout-maxwProse: 720px;
+  --layout-maxwBlogArtifact: 750px;
+  --layout-maxwBlogArtifactWide: 940px;
+  --layout-headerBarHeight: 56px;
+  --layout-headerMargin: 20px;
+  --layout-headerOffset: 76px;
+  --layout-pageInsetX: 40px;
+  --layout-pagePaddingX: 67.5px;
+  --layout-frameWidth: 1920px;
+  --elevation-xs: 0px 1px 2px 0px rgba(15, 15, 15, 0.05);
+  --elevation-sm: 0px 6px 14px 0px rgba(0, 0, 0, 0.04);
+  --elevation-md: 0px 16px 30px 0px rgba(0, 0, 0, 0.05);
+  --elevation-lg: 0px 20px 60px -40px rgba(15, 15, 15, 0.24);
+  --elevation-pop: 0px 8px 24px -16px rgba(15, 15, 15, 0.18);
+  --elevation-menu: 0px 10px 20px 0px rgba(15, 14, 14, 0.06), 0px 0px 6px 0px rgba(15, 14, 14, 0.07);
+  --measured-cta-hover: #433f3f;
+  --measured-send-hover: #ff8f5c;
+  --measured-send-pressed: #ff8f5c;
+  --measured-toggle-shell: rgba(255, 255, 255, 0.6);
+  --measured-submit-disabled-bg: #ebebeb;
+  --typography-display: 600 93.744px/98.4312px Dazzed;
+  --typography-title: 600 57.024px/59.8752px Dazzed;
+  --typography-body: 400 21.024px/29.2234px Geist;
+  --typography-label: 500 16px/24px Dazzed;
+  --typography-button: 600 16px/16px Geist;
+  --typography-price: 400 48px/48px Geist;
+  --background: #f9f8f6;
+  --foreground: #0f0f0f;
+  --card: #ffffff;
+  --cardForeground: #0f0f0f;
+  --popover: #ffffff;
+  --popoverForeground: #0f0f0f;
+  --primary: #0f0f0f;
+  --primaryForeground: #fafafa;
+  --secondary: #f3f0ed;
+  --secondaryForeground: #0f0f0f;
+  --muted: #f3f0ed;
+  --mutedForeground: #232529;
+  --accent: var(--color-cta-orange);
+  --accentForeground: #0f0f0f;
+  --destructive: #ef4444;
+  --destructiveForeground: #fafafa;
+  --border: #d9d5ce;
+  --input: #d9d5ce;
+  --ring: #0f0f0f;
+  --chart-1: #e76e50;
+  --chart-2: #2a9d90;
+  --chart-3: #274754;
+  --chart-4: #e8c468;
+  --chart-5: #f4a462;
+  --sidebar-background: #fafafa;
+  --sidebar-foreground: #3f3f46;
+  --sidebar-primary: #18181b;
+  --sidebar-primaryForeground: #fafafa;
+  --sidebar-accent: #f4f4f5;
+  --sidebar-accentForeground: #18181b;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #3b82f6;
+  --brand: var(--color-cta-black);
+  --focus: var(--color-ink-800);
+  --measured-linkHover: #3a3939;
+  --component-control-heightCta: 38px;
+  --component-control-heightNav: 24px;
+  --component-control-heightField: 36px;
+  --component-control-heightOauth: 36px;
+  --component-control-heightSubmit: 36px;
+  --component-control-heightToggle: 56px;
+  --component-control-heightTile: 66px;
+  --component-control-radiusCta: 8px;
+  --component-control-radiusField: 6px;
+  --component-control-radiusCard: 0px;
+  --component-control-radiusBadge: 4px;
+  --component-control-radiusToggle: 12px;
+  --component-header-height: 86px;
+  --component-footer-height: 790px;
+  --component-prompt-height: 150px;
+  --sg-sans: "Geist", "WixMadeforText", system-ui, sans-serif;
+  --sg-display: "Dazzed", "Dazzed Fallback", system-ui, sans-serif;
+  --sg-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"] {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #09090b;
+  --cardForeground: #fafafa;
+  --popover: #09090b;
+  --popoverForeground: #fafafa;
+  --primary: #fafafa;
+  --primaryForeground: #18181b;
+  --secondary: #27272a;
+  --secondaryForeground: #fafafa;
+  --muted: #27272a;
+  --mutedForeground: #a1a1aa;
+  --accent: #27272a;
+  --accentForeground: #fafafa;
+  --destructive: #7f1d1d;
+  --destructiveForeground: #fafafa;
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #d4d4d8;
+  --chart-1: #2662d9;
+  --chart-2: #2eb88a;
+  --chart-3: #e88c30;
+  --chart-4: #af57db;
+  --chart-5: #e23670;
+  --sidebar-background: #18181b;
+  --sidebar-foreground: #f4f4f5;
+  --sidebar-primary: #1d4ed8;
+  --sidebar-primaryForeground: #ffffff;
+  --sidebar-accent: #27272a;
+  --sidebar-accentForeground: #f4f4f5;
+  --sidebar-border: #27272a;
+  --sidebar-ring: #3b82f6;
+  --component-control-heightCta: 38px;
+  --component-control-heightNav: 24px;
+  --component-control-heightField: 36px;
+  --component-control-heightOauth: 36px;
+  --component-control-heightSubmit: 36px;
+  --component-control-heightToggle: 56px;
+  --component-control-heightTile: 66px;
+  --component-control-radiusCta: 8px;
+  --component-control-radiusField: 6px;
+  --component-control-radiusCard: 0px;
+  --component-control-radiusBadge: 4px;
+  --component-control-radiusToggle: 12px;
+  --component-header-height: 86px;
+  --component-footer-height: 790px;
+  --component-prompt-height: 150px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--foreground, #0f0f0f); background: var(--background, #f9f8f6); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 600 40px/1.15 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.03em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted-foreground, #232529); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, #d9d5ce); }
+.lead { max-width: 62ch; color: var(--muted-foreground, #232529); }
+.note { font-size: 13px; color: var(--muted-foreground, #232529); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted-foreground, #232529); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, #d9d5ce); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--muted-foreground, #232529); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--muted-foreground, #232529); }
+.mode { position: fixed; top: 14px; right: 18px; z-index: 5; font: 500 12px/1 var(--sg-sans); padding: 8px 12px; border-radius: var(--radius-sm, 8px); border: 1px solid var(--border, #d9d5ce); background: var(--card, #fff); color: var(--foreground, #0f0f0f); cursor: pointer; }
+/* ---- site mock ---- */
+.mock { border: 1px solid var(--border, #d9d5ce); border-radius: var(--radius-lg, 16px); overflow: hidden; background: var(--background, #f9f8f6); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--layout-headerBarHeight, 56px); padding: 0 20px; background: var(--background, #f9f8f6); border-bottom: 1px solid var(--border-soft, rgba(15,15,15,.08)); font-size: 15px; }
+.navbar .wm { font: 700 18px/1 var(--sg-display); letter-spacing: -0.02em; }
+.navbar .wm i { display: inline-block; width: 16px; height: 16px; border-radius: 50% 50% 50% 4px; background: var(--color-cta-orange, #ff773c); margin-right: 6px; vertical-align: -2px; }
+.navbar .sp { flex: 1; }
+.navbar .sa { color: var(--color-blue-500, #3b51e5); font-weight: 500; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightCta, 38px); padding: 0 16px; border-radius: var(--component-control-radiusCta, 8px); font-size: 14px; font-weight: 500; border: 1px solid transparent; }
+.btn.primary { background: var(--brand, #312f2f); color: #fff; }
+.btn.orange { background: var(--accent, #ff773c); color: var(--color-cta-orangeText, #181818); }
+.btn.ghost { background: var(--card, #fff); color: var(--foreground, #0f0f0f); border-color: var(--border, #d9d5ce); }
+.hero { background: var(--background, #f9f8f6); color: var(--foreground, #0f0f0f); padding: 72px 40px; font: 600 56px/1.05 var(--sg-display); letter-spacing: -0.033em; text-align: center; }
+.hero small { display: block; font: 400 17px/1.55 var(--sg-sans); color: var(--muted-foreground, #232529); margin: 20px auto 26px; max-width: 46ch; letter-spacing: 0; }
+.composer { background: var(--card, #fff); border-radius: var(--radius-sm, 8px); box-shadow: var(--elevation-md, 0 16px 30px rgba(0,0,0,.05)); max-width: 560px; margin: 0 auto; padding: 14px 14px 10px; text-align: left; }
+.composer .ta { font: 400 15px/1.5 var(--sg-sans); color: var(--color-text-placeholder, #8e8e8e); min-height: 48px; }
+.composer .row { display: flex; gap: 8px; align-items: center; }
+.composer .row .grow { flex: 1; }
+.iconbtn { width: 40px; height: 40px; border-radius: var(--radius-sm, 8px); display: inline-flex; align-items: center; justify-content: center; color: var(--foreground, #0f0f0f); }
+.tiles { display: flex; gap: 10px; justify-content: center; margin-top: 26px; }
+.tile { height: var(--component-control-heightTile, 66px); width: 120px; border: 1px solid var(--border-soft, rgba(15,15,15,.08)); border-radius: var(--radius-md, 10px); background: var(--card, #fff); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; font-size: 13px; font-weight: 500; }
+.toggle { display: inline-flex; align-items: center; gap: 4px; height: var(--component-control-heightToggle, 56px); padding: 4px; border-radius: var(--component-control-radiusToggle, 12px); background: rgba(255,255,255,.6); }
+.toggle .on { background: var(--accent, #ff773c); color: var(--color-cta-orangeText, #181818); border-radius: var(--radius-sm, 8px); padding: 10px 16px; font-size: 15px; font-weight: 500; }
+.toggle .off { padding: 10px 16px; font-size: 15px; }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; padding: 20px; }
+.plan { border: 1px solid var(--border-soft, rgba(15,15,15,.08)); border-radius: var(--component-control-radiusCard, 0px); padding: 20px; background: var(--card, #fff); font-size: 13px; }
+.plan .price { font: 600 34px/1.2 var(--sg-display); letter-spacing: -0.03em; margin: 8px 0 14px; }
+.plan .btn { width: 100%; height: var(--component-control-heightSubmit, 50px); }
+.plan .badge { float: right; background: var(--color-blue-500, #3b51e5); color: #fff; border-radius: var(--component-control-radiusBadge, 4px); padding: 4px 8px; font-size: 12px; font-weight: 500; }
+.field { display: flex; align-items: center; height: var(--component-control-heightField, 36px); border: 1px solid var(--border, #d9d5ce); border-radius: var(--component-control-radiusField, 6px); padding: 0 12px; font-size: 14px; color: var(--color-text-placeholder, #8e8e8e); max-width: 420px; background: var(--card, #fff); margin-bottom: 8px; }
+.submit { border: 0; height: var(--component-control-heightSubmit, 36px); padding: 0 18px; border-radius: var(--component-control-radiusField, 6px); background: var(--measured-submit-disabled-bg, #ebebeb); color: #929292; font: 500 14px/1 var(--sg-sans); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border, #d9d5ce); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<button class="mode" id="mode">Dark (declared)</button>
+<main>
+  <h1>Base44 style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number.</p>
+
+  <h2 class="sh">Base44, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the shadcn channel roles (<code>--background</code>, <code>--primary</code> …) that carry the light/dark split, the named palette (<code>--ink-*</code>, <code>--blue-*</code>, <code>--orange-*</code>, <code>--cta-*</code>), the scales (<code>--radius-*</code>, <code>--space-*</code>, <code>--shadow-*</code>, <code>--dur-*</code>, <code>--ease-*</code>) and the component values measured on the live pages. The public routes paint light only; the dark set comes from the bundle's declared <code>.dark</code> block — flip the toggle to see it, and treat it as declared, not observed. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from base44.com on 2026-11-11, signed out, in headless Chromium. No consent overlay mounts on the captured routes. The app behind app.base44.com was never signed into — nothing was submitted, sent or signed into.</p>
+
+  <h2 class="sh">The site chrome</h2>
+  <p class="lead">A fixed transparent header on the warm paper ground: the orange-dot wordmark, nav menus and links, the blue dotted Superagents item, a language globe and the 38px near-black Start building pill (11px-radius look, 8px measured).</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm"><i></i>Base44</span><span>Product &#8964;</span><span>Use Cases &#8964;</span><span>Solutions &#8964;</span><span>Resources &#8964;</span><span>Pricing</span><span>Enterprise</span><span class="sa">&middot; Superagents &middot;</span><span class="sp"></span><span class="btn primary">Start building</span></div>
+    <div class="hero">Every builder needs a base
+      <small>Build your own apps, websites, products and AI agents on Base44 using your own words.</small>
+      <div class="composer">
+        <div class="ta">I want to build a dashboard that reports results to</div>
+        <div class="row"><span class="iconbtn">+</span><span class="grow"></span><span class="btn ghost" style="height:40px">Build &#8964;</span><span class="iconbtn">&#127908;</span><span class="btn orange" style="width:40px;padding:0">&#8599;</span></div>
+      </div>
+      <div class="tiles"><span class="tile">&#9638; App</span><span class="tile">&#9638; Dashboard</span><span class="tile">&#9638; Website</span><span class="tile">&#9638; Mobile app</span><span class="tile">&#9638; Online store</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">A 56px translucent Yearly/Monthly toggle (orange selected segment) over square-cornered white plan cards, each carrying a full-width 50px dark CTA; the Builder card wears the blue Popular chip.</p>
+  <div class="mock" style="padding:20px">
+    <div style="text-align:center;margin-bottom:14px"><span class="toggle"><span class="on">Yearly SAVE 20%</span><span class="off">Monthly</span></span></div>
+    <div class="plans">
+      <div class="plan"><b>Elite</b><div class="price">$160<span style="font-size:14px;color:var(--muted-foreground)">/mo</span></div><span class="btn primary">Start building</span></div>
+      <div class="plan"><b>Pro</b><div class="price">$80<span style="font-size:14px;color:var(--muted-foreground)">/mo</span></div><span class="btn primary">Start building</span></div>
+      <div class="plan"><span class="badge">Popular</span><b>Builder</b><div class="price">$40<span style="font-size:14px;color:var(--muted-foreground)">/mo</span></div><span class="btn primary">Start building</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Sign in</h2>
+  <p class="lead">36px OAuth buttons, a 36px bordered email field and the email submit, captured in its disabled state (empty field).</p>
+  <div class="mock" style="padding:20px">
+    <div class="field">Enter your email address</div>
+    <span class="submit" style="display:inline-flex;align-items:center;width:384px;justify-content:center">Continue with email</span>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The ground is <code>light.background</code> warm paper (#f9f8f6) with ink <code>light.foreground</code> #0f0f0f; CTAs are <code>color.cta.black</code> (#312f2f) and the accent orange is <code>color.cta.orange</code> (#ff773c). <code>color.blue.500</code> (#3b51e5) marks links, the Superagents item and badges; <code>color.text.*</code>/<code>color.surface.*</code> name the painted roles.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the 38px CTA, 36px fields and OAuth buttons, the 56px billing toggle, 66px build tiles, the 8px control corner and the header and footer blocks at 1440px.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheet and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, expanded and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+document.getElementById('mode').addEventListener('click', () => {
+  const d = document.documentElement;
+  d.setAttribute('data-mode', d.getAttribute('data-mode') === 'dark' ? '' : 'dark');
+});
+const TOK = {"core":{"color":{"ink":{"100":{"v":"#e3ded8","t":"color","s":"css-var --ink-100"},"200":{"v":"#c9c7c5","t":"color","s":"css-var --ink-200"},"300":{"v":"#a4a4a4","t":"color","s":"css-var --ink-300"},"400":{"v":"#767676","t":"color","s":"css-var --ink-400"},"500":{"v":"#555555","t":"color","s":"css-var --ink-500"},"600":{"v":"#383838","t":"color","s":"css-var --ink-600"},"700":{"v":"#252525","t":"color","s":"css-var --ink-700"},"800":{"v":"#1e1e24","t":"color","s":"css-var --ink-800"},"900":{"v":"#0f0f0f","t":"color","s":"css-var --ink-900"}},"neutral":{"100":{"v":"#e1e1e1","t":"color","s":"css-var --neutral-100"},"200":{"v":"#d8d7d6","t":"color","s":"css-var --neutral-200"},"300":{"v":"#bababa","t":"color","s":"css-var --neutral-300"},"400":{"v":"#8e8d8d","t":"color","s":"css-var --neutral-400"},"500":{"v":"#6d6a67","t":"color","s":"css-var --neutral-500"}},"blue":{"100":{"v":"#e5e8fc","t":"color","s":"css-var --blue-100"},"200":{"v":"#bfc7f7","t":"color","s":"css-var --blue-200"},"300":{"v":"#9ca9ff","t":"color","s":"css-var --blue-300"},"500":{"v":"#3b51e5","t":"color","s":"css-var --blue-500"},"600":{"v":"#3243c9","t":"color","s":"css-var --blue-600"},"700":{"v":"#2a3cb8","t":"color","s":"css-var --blue-700"},"default":{"v":"#3b51e5","t":"color","s":"css-var --blue"},"accent":{"v":"#3950e6","t":"color","s":"css-var --blue-accent"}},"green":{"100":{"v":"#ddf0cd","t":"color","s":"css-var --green-100"},"300":{"v":"#56b22b","t":"color","s":"css-var --green-300"},"500":{"v":"#134f25","t":"color","s":"css-var --green-500"},"700":{"v":"#0c3a1a","t":"color","s":"css-var --green-700"}},"orange":{"100":{"v":"#ffe4d8","t":"color","s":"css-var --orange-100"},"200":{"v":"#ffc4ac","t":"color","s":"css-var --orange-200"},"500":{"v":"#ff6a00","t":"color","s":"css-var --orange-500"},"600":{"v":"#e5571a","t":"color","s":"css-var --orange-600"},"700":{"v":"#c2480f","t":"color","s":"css-var --orange-700"},"default":{"v":"#ff6a00","t":"color","s":"css-var --orange"}},"lime":{"cta":{"v":"#ebffb1","t":"color","s":"css-var --lime-cta"},"ctaHover":{"v":"#e0fe92","t":"color","s":"css-var --lime-cta-hover"},"ctaLine":{"v":"#ade900","t":"color","s":"css-var --lime-cta-line"}},"brand":{"paper":{"v":"#faf9f7","t":"color","s":"css-var --paper"},"offwhite":{"v":"#eeeceb","t":"color","s":"css-var --offwhite"},"sand":{"v":"#e3ded8","t":"color","s":"css-var --sand"},"black":{"v":"#1e1e24","t":"color","s":"css-var --black"},"white":{"v":"#ffffff","t":"color","s":"css-var --white"},"hairline":{"v":"#1e1e24","t":"color","s":"css-var --hairline"},"marketingCard":{"v":"#e5e3df","t":"color","s":"css-var --marketing-card"},"marketingCardStrong":{"v":"#bdbdbd","t":"color","s":"css-var --marketing-card-strong"}},"cta":{"orange":{"v":"#ff773c","t":"color","s":"css-var --cta-orange"},"orangeHover":{"v":"#ff8e5d","t":"color","s":"css-var --cta-orange-hover"},"orangeText":{"v":"#181818","t":"color","s":"css-var --cta-orange-text"},"black":{"v":"#312f2f","t":"color","s":"css-var --cta-black"},"blackHover":{"v":"#433f3f","t":"color","s":"css-var --cta-black-hover"},"blueHover":{"v":"#4b62fa","t":"color","s":"css-var --cta-blue-hover"},"whiteHover":{"v":"#f5f3f2","t":"color","s":"css-var --cta-white-hover"}},"text":{"body":{"v":"#232529","t":"color","s":"css-var --text-body"},"faint":{"v":"#a4a4a4","t":"color","s":"css-var --text-faint"},"inverse":{"v":"#eeeceb","t":"color","s":"css-var --text-inverse"},"link":{"v":"#3b51e5","t":"color","s":"css-var --text-link"},"muted":{"v":"#767676","t":"color","s":"css-var --text-muted"},"onBlue":{"v":"#eeeceb","t":"color","s":"css-var --text-on-blue"},"placeholder":{"v":"#8e8e8e","t":"color","s":"css-var --text-placeholder"},"secondary":{"v":"#6d6a67","t":"color","s":"css-var --text-secondary"},"strong":{"v":"#0f0f0f","t":"color","s":"css-var --text-strong"}},"surface":{"blue":{"v":"#3b51e5","t":"color","s":"css-var --surface-blue"},"canvas":{"v":"#faf9f7","t":"color","s":"css-var --surface-canvas"},"card":{"v":"#ffffff","t":"color","s":"css-var --surface-card"},"cardWarm":{"v":"#f9f7f4","t":"color","s":"css-var --surface-card-warm"},"grey":{"v":"#bdbdbd","t":"color","s":"css-var --surface-grey"},"inverse":{"v":"#1e1e24","t":"color","s":"css-var --surface-inverse"},"main":{"v":"#eeeceb","t":"color","s":"css-var --surface-main"},"sunken":{"v":"#e3ded8","t":"color","s":"css-var --surface-sunken"},"warm":{"v":"#e2ded7","t":"color","s":"css-var --surface-warm"}},"border":{"warm":{"v":"#ddd8d2","t":"color","s":"css-var --border-warm"},"mid":{"v":"rgba(15, 15, 15, 0.16)","t":"color","s":"css-var --border-mid"},"soft":{"v":"rgba(15, 15, 15, 0.08)","t":"color","s":"css-var --border-soft"},"strong":{"v":"rgba(15, 15, 15, 0.7)","t":"color","s":"css-var --border-strong"}},"icon":{"blue":{"v":"#9ca9ff","t":"color","s":"css-var --icon-blue"},"green":{"v":"#499c61","t":"color","s":"css-var --icon-green"},"orange":{"v":"#ffae81","t":"color","s":"css-var --icon-orange"}},"intent":{"accent":{"v":"#3b51e5","t":"color","s":"css-var --intent-accent"},"danger":{"v":"#e5484d","t":"color","s":"css-var --intent-danger"},"primary":{"v":"#ff773c","t":"color","s":"css-var --intent-primary"},"primaryHover":{"v":"#ff8e5d","t":"color","s":"css-var --intent-primary-hover"},"success":{"v":"#56b22b","t":"color","s":"css-var --intent-success"}},"misc":{"disabled":{"v":"#bdbdbd","t":"color","s":"css-var --disabled"},"invalid":{"v":"#ff5100","t":"color","s":"css-var --invalid"},"focusRing":{"v":"#3b51e5","t":"color","s":"css-var --focus-ring"},"siteFocusRing":{"v":"#1e1e24","t":"color","s":"css-var --site-focus-ring"}}},"radius":{"none":{"v":"0px","t":"dimension","s":"css-var --radius-none"},"xs":{"v":"4px","t":"dimension","s":"css-var --radius-xs"},"sm":{"v":"8px","t":"dimension","s":"css-var --radius-sm"},"md":{"v":"10px","t":"dimension","s":"css-var --radius-md"},"lg":{"v":"16px","t":"dimension","s":"css-var --radius-lg"},"xl":{"v":"24px","t":"dimension","s":"css-var --radius-xl"},"2xl":{"v":"30px","t":"dimension","s":"css-var --radius-2xl"},"cta":{"v":"11px","t":"dimension","s":"css-var --radius-cta"},"pill":{"v":"999px","t":"dimension","s":"css-var --radius-pill"},"default":{"v":"12px","t":"dimension","s":"css-var --radius"}},"space":{"1":{"v":"4px","t":"dimension","s":"css-var --space-1"},"2":{"v":"8px","t":"dimension","s":"css-var --space-2"},"3":{"v":"12px","t":"dimension","s":"css-var --space-3"},"4":{"v":"16px","t":"dimension","s":"css-var --space-4"},"5":{"v":"24px","t":"dimension","s":"css-var --space-5"},"6":{"v":"32px","t":"dimension","s":"css-var --space-6"},"7":{"v":"48px","t":"dimension","s":"css-var --space-7"},"8":{"v":"64px","t":"dimension","s":"css-var --space-8"},"9":{"v":"96px","t":"dimension","s":"css-var --space-9"},"gutter":{"v":"48px","t":"dimension","s":"css-var --space-gutter"},"blogBlock":{"v":"70px","t":"dimension","s":"css-var --space-blog-block"}},"duration":{"fast":{"v":"200ms","t":"duration","s":"css-var --dur-fast"},"base":{"v":"300ms","t":"duration","s":"css-var --dur-base"},"hover":{"v":"200ms","t":"duration","s":"css-var --dur-hover"},"menu":{"v":"300ms","t":"duration","s":"css-var --dur-menu"}},"easing":{"standard":{"v":[0.22,1.0,0.36,1.0],"t":"cubicBezier","s":"css-var --ease-standard"},"inOut":{"v":[0.16,1.0,0.3,1.0],"t":"cubicBezier","s":"css-var --ease-in-out"},"snap":{"v":[0.34,1.56,0.64,1.0],"t":"cubicBezier","s":"css-var --ease-snap"}},"fontWeight":{"light":{"v":300,"t":"fontWeight","s":"css-var --fw-light"},"regular":{"v":400,"t":"fontWeight","s":"css-var --fw-regular"},"medium":{"v":500,"t":"fontWeight","s":"css-var --fw-medium"},"semibold":{"v":600,"t":"fontWeight","s":"css-var --fw-semibold"},"bold":{"v":700,"t":"fontWeight","s":"css-var --fw-bold"}},"fontFamily":{"display":{"v":"\"Dazzed\",\"Dazzed Fallback\",system-ui,sans-serif","t":"fontFamily","s":"css-var --font-display"},"displayVf":{"v":"\"Dazzed VF\",\"Dazzed\",\"Dazzed Fallback\",sans-serif","t":"fontFamily","s":"css-var --font-display-vf"},"body":{"v":"\"Geist\",system-ui,sans-serif","t":"fontFamily","s":"css-var --font-body"},"ui":{"v":"\"Geist\",system-ui,sans-serif","t":"fontFamily","s":"css-var --font-ui"},"mono":{"v":"\"JetBrains Mono\",ui-monospace,\"SF Mono\",Menlo,monospace","t":"fontFamily","s":"css-var --font-mono"},"base44":{"v":"\"WixMadeforText\", system-ui, sans-serif","t":"fontFamily","s":"css-var --font-family-base44"}},"layout":{"maxwContent":{"v":"1231px","t":"dimension","s":"css-var --maxw-content"},"maxwWide":{"v":"1460px","t":"dimension","s":"css-var --maxw-wide"},"maxwProse":{"v":"720px","t":"dimension","s":"css-var --maxw-prose"},"maxwBlogArtifact":{"v":"750px","t":"dimension","s":"css-var --maxw-blog-artifact"},"maxwBlogArtifactWide":{"v":"940px","t":"dimension","s":"css-var --maxw-blog-artifact-wide"},"headerBarHeight":{"v":"56px","t":"dimension","s":"css-var --header-bar-h"},"headerMargin":{"v":"20px","t":"dimension","s":"css-var --header-margin"},"headerOffset":{"v":"76px","t":"dimension","s":"css-var --header-offset"},"pageInsetX":{"v":"40px","t":"dimension","s":"css-var --page-inset-x"},"pagePaddingX":{"v":"67.5px","t":"dimension","s":"css-var --page-padding-x"},"frameWidth":{"v":"1920px","t":"dimension","s":"css-var --frame-w"}},"elevation":{"xs":{"v":[{"offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px","color":"rgba(15, 15, 15, 0.05)"}],"t":"shadow","s":"css-var --shadow-xs"},"sm":{"v":[{"offsetX":"0px","offsetY":"6px","blur":"14px","spread":"0px","color":"rgba(0, 0, 0, 0.04)"}],"t":"shadow","s":"css-var --shadow-sm"},"md":{"v":[{"offsetX":"0px","offsetY":"16px","blur":"30px","spread":"0px","color":"rgba(0, 0, 0, 0.05)"}],"t":"shadow","s":"css-var --shadow-md"},"lg":{"v":[{"offsetX":"0px","offsetY":"20px","blur":"60px","spread":"-40px","color":"rgba(15, 15, 15, 0.24)"}],"t":"shadow","s":"css-var --shadow-lg"},"pop":{"v":[{"offsetX":"0px","offsetY":"8px","blur":"24px","spread":"-16px","color":"rgba(15, 15, 15, 0.18)"}],"t":"shadow","s":"css-var --shadow-pop"},"menu":{"v":[{"offsetX":"0px","offsetY":"10px","blur":"20px","spread":"0px","color":"rgba(15, 14, 14, 0.06)"},{"offsetX":"0px","offsetY":"0px","blur":"6px","spread":"0px","color":"rgba(15, 14, 14, 0.07)"}],"t":"shadow","s":"css-var --shadow-menu"}},"measured":{"cta-hover":{"v":"#433f3f","t":"color","s":"computed backgroundColor of nav-cta hover (raw/components-computed.json)","d":"Start building on hover."},"send-hover":{"v":"#ff8f5c","t":"color","s":"computed backgroundColor of prompt-submit hover (raw/components-computed.json)","d":"The orange send on hover."},"send-pressed":{"v":"#ff8f5c","t":"color","s":"computed backgroundColor of prompt-submit pressed (raw/components-computed.json)","d":"The send while pressed (CDP-forced)."},"toggle-shell":{"v":"rgba(255, 255, 255, 0.6)","t":"color","s":"computed backgroundColor of billing-toggle default (raw/components-computed.json)","d":"The billing toggle's translucent track (the selected segment's orange fill rides on a sliding indicator, not the button)."},"submit-disabled-bg":{"v":"#ebebeb","t":"color","s":"computed backgroundColor of signin-submit default (raw/components-computed.json)","d":"The email submit disabled for an empty field."}},"typography":{"display":{"v":{"fontFamily":"Dazzed","fontSize":"93.744px","fontWeight":600,"lineHeight":"98.4312px","letterSpacing":"-3.74976px"},"t":"typography","s":"computed type of hero-title default (raw/components-computed.json)","d":"The h1 display face (Dazzed)."},"title":{"v":{"fontFamily":"Dazzed","fontSize":"57.024px","fontWeight":600,"lineHeight":"59.8752px","letterSpacing":"-2.28096px"},"t":"typography","s":"computed type of section-title default (raw/components-computed.json)","d":"An h2 section title (Dazzed)."},"body":{"v":{"fontFamily":"Geist","fontSize":"21.024px","fontWeight":400,"lineHeight":"29.2234px","letterSpacing":"-0.21024px"},"t":"typography","s":"computed type of hero-sub default (raw/components-computed.json)","d":"The paragraph under the hero (Geist)."},"label":{"v":{"fontFamily":"Dazzed","fontSize":"16px","fontWeight":500,"lineHeight":"24px","letterSpacing":"normal"},"t":"typography","s":"computed type of nav-link default (raw/components-computed.json)","d":"Nav-item label type (Geist medium)."},"button":{"v":{"fontFamily":"Geist","fontSize":"16px","fontWeight":600,"lineHeight":"16px","letterSpacing":"-0.36px"},"t":"typography","s":"computed type of nav-cta default (raw/components-computed.json)","d":"CTA label type."},"price":{"v":{"fontFamily":"Geist","fontSize":"48px","fontWeight":400,"lineHeight":"48px","letterSpacing":"normal"},"t":"typography","s":"computed type of price default (raw/components-computed.json)","d":"A plan's price figure."}}},"light":{"background":{"v":"#f9f8f6","t":"color","s":"css-var --background"},"foreground":{"v":"#0f0f0f","t":"color","s":"css-var --foreground"},"card":{"v":"#ffffff","t":"color","s":"css-var --card"},"cardForeground":{"v":"#0f0f0f","t":"color","s":"css-var --card-foreground"},"popover":{"v":"#ffffff","t":"color","s":"css-var --popover"},"popoverForeground":{"v":"#0f0f0f","t":"color","s":"css-var --popover-foreground"},"primary":{"v":"#0f0f0f","t":"color","s":"css-var --primary"},"primaryForeground":{"v":"#fafafa","t":"color","s":"css-var --primary-foreground"},"secondary":{"v":"#f3f0ed","t":"color","s":"css-var --secondary"},"secondaryForeground":{"v":"#0f0f0f","t":"color","s":"css-var --secondary-foreground"},"muted":{"v":"#f3f0ed","t":"color","s":"css-var --muted"},"mutedForeground":{"v":"#232529","t":"color","s":"css-var --muted-foreground"},"accent":{"v":"{color.cta.orange}","t":"color","s":"computed backgroundColor of prompt-submit default (raw/components-computed.json); same value as core.color.cta.orange","d":"The orange send/button accent."},"accentForeground":{"v":"#0f0f0f","t":"color","s":"css-var --accent-foreground"},"destructive":{"v":"#ef4444","t":"color","s":"css-var --destructive"},"destructiveForeground":{"v":"#fafafa","t":"color","s":"css-var --destructive-foreground"},"border":{"v":"#d9d5ce","t":"color","s":"css-var --border"},"input":{"v":"#d9d5ce","t":"color","s":"css-var --input"},"ring":{"v":"#0f0f0f","t":"color","s":"css-var --ring"},"chart":{"1":{"v":"#e76e50","t":"color","s":"css-var --chart-1"},"2":{"v":"#2a9d90","t":"color","s":"css-var --chart-2"},"3":{"v":"#274754","t":"color","s":"css-var --chart-3"},"4":{"v":"#e8c468","t":"color","s":"css-var --chart-4"},"5":{"v":"#f4a462","t":"color","s":"css-var --chart-5"}},"sidebar":{"background":{"v":"#fafafa","t":"color","s":"css-var --sidebar-background"},"foreground":{"v":"#3f3f46","t":"color","s":"css-var --sidebar-foreground"},"primary":{"v":"#18181b","t":"color","s":"css-var --sidebar-primary"},"primaryForeground":{"v":"#fafafa","t":"color","s":"css-var --sidebar-primary-foreground"},"accent":{"v":"#f4f4f5","t":"color","s":"css-var --sidebar-accent"},"accentForeground":{"v":"#18181b","t":"color","s":"css-var --sidebar-accent-foreground"},"border":{"v":"#e5e7eb","t":"color","s":"css-var --sidebar-border"},"ring":{"v":"#3b82f6","t":"color","s":"css-var --sidebar-ring"}},"brand":{"v":"{color.cta.black}","t":"color","s":"computed backgroundColor of nav-cta default (raw/components-computed.json); same value as core.color.cta.black","d":"The dark CTA fill on Start building."},"focus":{"v":"{color.ink.800}","t":"color","s":"computed outlineColor of nav-cta focus-visible (raw/components-computed.json); same value as core.color.ink.800","d":"The keyboard-focus ring where one is drawn."},"measured":{"linkHover":{"v":"#3a3939","t":"color","s":"computed color of signin-signup hover (raw/components-computed.json)","d":"The Sign up link on hover."}},"component":{"control":{"heightCta":{"v":"38px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"The Start building pill height."},"heightNav":{"v":"24px","t":"dimension","s":"computed height of nav-link default (raw/components-computed.json)","d":"Nav link height."},"heightField":{"v":"36px","t":"dimension","s":"computed height of signin-field-wrap default (raw/components-computed.json)","d":"The email field shell height."},"heightOauth":{"v":"36px","t":"dimension","s":"computed height of signin-google default (raw/components-computed.json)","d":"The OAuth button height."},"heightSubmit":{"v":"36px","t":"dimension","s":"computed height of signin-submit default (raw/components-computed.json)","d":"The email submit height."},"heightToggle":{"v":"56px","t":"dimension","s":"computed height of billing-toggle default (raw/components-computed.json)","d":"The billing toggle height."},"heightTile":{"v":"66px","t":"dimension","s":"computed height of build-tile default (raw/components-computed.json)","d":"A build-type tile height."},"radiusCta":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"The CTA's corner."},"radiusField":{"v":"6px","t":"dimension","s":"computed borderTopLeftRadius of signin-field-wrap default (raw/components-computed.json)","d":"The email shell's corner."},"radiusCard":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of plan-card default (raw/components-computed.json)","d":"The plan card's corner."},"radiusBadge":{"v":"4px","t":"dimension","s":"computed borderTopLeftRadius of popular-badge default (raw/components-computed.json)","d":"The Popular chip's corner."},"radiusToggle":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of billing-toggle default (raw/components-computed.json)","d":"The toggle's corner."}},"header":{"height":{"v":"86px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The fixed header block at 1440px."}},"footer":{"height":{"v":"790px","t":"dimension","s":"computed height of footer default (raw/components-computed.json)","d":"The footer block at 1440px."}},"prompt":{"height":{"v":"150px","t":"dimension","s":"computed height of prompt-box default (raw/components-computed.json)","d":"The hero composer height."}}}},"dark":{"background":{"v":"#09090b","t":"color","s":"css-var --background"},"foreground":{"v":"#fafafa","t":"color","s":"css-var --foreground"},"card":{"v":"#09090b","t":"color","s":"css-var --card"},"cardForeground":{"v":"#fafafa","t":"color","s":"css-var --card-foreground"},"popover":{"v":"#09090b","t":"color","s":"css-var --popover"},"popoverForeground":{"v":"#fafafa","t":"color","s":"css-var --popover-foreground"},"primary":{"v":"#fafafa","t":"color","s":"css-var --primary"},"primaryForeground":{"v":"#18181b","t":"color","s":"css-var --primary-foreground"},"secondary":{"v":"#27272a","t":"color","s":"css-var --secondary"},"secondaryForeground":{"v":"#fafafa","t":"color","s":"css-var --secondary-foreground"},"muted":{"v":"#27272a","t":"color","s":"css-var --muted"},"mutedForeground":{"v":"#a1a1aa","t":"color","s":"css-var --muted-foreground"},"accent":{"v":"#27272a","t":"color","s":"css-var --accent"},"accentForeground":{"v":"#fafafa","t":"color","s":"css-var --accent-foreground"},"destructive":{"v":"#7f1d1d","t":"color","s":"css-var --destructive"},"destructiveForeground":{"v":"#fafafa","t":"color","s":"css-var --destructive-foreground"},"border":{"v":"#27272a","t":"color","s":"css-var --border"},"input":{"v":"#27272a","t":"color","s":"css-var --input"},"ring":{"v":"#d4d4d8","t":"color","s":"css-var --ring"},"chart":{"1":{"v":"#2662d9","t":"color","s":"css-var --chart-1"},"2":{"v":"#2eb88a","t":"color","s":"css-var --chart-2"},"3":{"v":"#e88c30","t":"color","s":"css-var --chart-3"},"4":{"v":"#af57db","t":"color","s":"css-var --chart-4"},"5":{"v":"#e23670","t":"color","s":"css-var --chart-5"}},"sidebar":{"background":{"v":"#18181b","t":"color","s":"css-var --sidebar-background"},"foreground":{"v":"#f4f4f5","t":"color","s":"css-var --sidebar-foreground"},"primary":{"v":"#1d4ed8","t":"color","s":"css-var --sidebar-primary"},"primaryForeground":{"v":"#ffffff","t":"color","s":"css-var --sidebar-primary-foreground"},"accent":{"v":"#27272a","t":"color","s":"css-var --sidebar-accent"},"accentForeground":{"v":"#f4f4f5","t":"color","s":"css-var --sidebar-accent-foreground"},"border":{"v":"#27272a","t":"color","s":"css-var --sidebar-border"},"ring":{"v":"#3b82f6","t":"color","s":"css-var --sidebar-ring"}},"component":{"control":{"heightCta":{"v":"38px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"The Start building pill height."},"heightNav":{"v":"24px","t":"dimension","s":"computed height of nav-link default (raw/components-computed.json)","d":"Nav link height."},"heightField":{"v":"36px","t":"dimension","s":"computed height of signin-field-wrap default (raw/components-computed.json)","d":"The email field shell height."},"heightOauth":{"v":"36px","t":"dimension","s":"computed height of signin-google default (raw/components-computed.json)","d":"The OAuth button height."},"heightSubmit":{"v":"36px","t":"dimension","s":"computed height of signin-submit default (raw/components-computed.json)","d":"The email submit height."},"heightToggle":{"v":"56px","t":"dimension","s":"computed height of billing-toggle default (raw/components-computed.json)","d":"The billing toggle height."},"heightTile":{"v":"66px","t":"dimension","s":"computed height of build-tile default (raw/components-computed.json)","d":"A build-type tile height."},"radiusCta":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"The CTA's corner."},"radiusField":{"v":"6px","t":"dimension","s":"computed borderTopLeftRadius of signin-field-wrap default (raw/components-computed.json)","d":"The email shell's corner."},"radiusCard":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of plan-card default (raw/components-computed.json)","d":"The plan card's corner."},"radiusBadge":{"v":"4px","t":"dimension","s":"computed borderTopLeftRadius of popular-badge default (raw/components-computed.json)","d":"The Popular chip's corner."},"radiusToggle":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of billing-toggle default (raw/components-computed.json)","d":"The toggle's corner."}},"header":{"height":{"v":"86px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The fixed header block at 1440px."}},"footer":{"height":{"v":"790px","t":"dimension","s":"computed height of footer default (raw/components-computed.json)","d":"The footer block at 1440px."}},"prompt":{"height":{"v":"150px","t":"dimension","s":"computed height of prompt-box default (raw/components-computed.json)","d":"The hero composer height."}}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const theme of ['light', 'dark']) {
+    const roles = flat(TOK[theme] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (roles.length) {
+      h += `<div class="pal-h">${theme} roles</div><div class="pal">`;
+      for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+      h += '</div>';
+    }
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.light && TOK.light.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+</script>
+</body>
+</html>
