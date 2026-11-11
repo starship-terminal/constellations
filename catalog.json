@@ -2062,7 +2062,7 @@
     ],
     "durationMin": null,
     "durationNote": "capture ran in two passes in the same session (a first agent's run died mid-package; this agent finished the capture and the package)",
-    "pr": "TBD"
+    "pr": "https://github.com/c-wenlong/designs/pull/476"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the icons (flag artwork, social glyphs, the wordmark, the kebab) are visible in the crops and screenshots"
