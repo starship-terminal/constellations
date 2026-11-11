@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 79,
-    "system_domains": 71,
-    "matched_domains": 47,
-    "missing_domains": 386,
+    "system_packages": 81,
+    "system_domains": 73,
+    "matched_domains": 49,
+    "missing_domains": 384,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -394,6 +394,23 @@
         }
       ]
     },
+    "asana.com": {
+      "catalog": [
+        {
+          "name": "Asana",
+          "domain": "asana.com",
+          "id": 69
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "asana",
+          "name": "Asana",
+          "url": "https://asana.com",
+          "name_match": true
+        }
+      ]
+    },
     "asos.com": {
       "catalog": [
         {
@@ -441,6 +458,23 @@
           "slug": "avnier",
           "name": "Avnier",
           "url": "https://avnier.com",
+          "name_match": true
+        }
+      ]
+    },
+    "awwwards.com": {
+      "catalog": [
+        {
+          "name": "Awwwards",
+          "domain": "awwwards.com",
+          "id": 285
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "awwwards",
+          "name": "Awwwards",
+          "url": "https://www.awwwards.com",
           "name_match": true
         }
       ]
@@ -878,20 +912,6 @@
         "name": "Around",
         "domain": "around.co",
         "id": 129
-      }
-    ],
-    "asana.com": [
-      {
-        "name": "Asana",
-        "domain": "asana.com",
-        "id": 69
-      }
-    ],
-    "awwwards.com": [
-      {
-        "name": "Awwwards",
-        "domain": "awwwards.com",
-        "id": 285
       }
     ],
     "bento.me": [
