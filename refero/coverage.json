@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 72,
-    "system_domains": 64,
-    "matched_domains": 40,
-    "missing_domains": 393,
+    "system_packages": 73,
+    "system_domains": 65,
+    "matched_domains": 41,
+    "missing_domains": 392,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -445,6 +445,23 @@
         }
       ]
     },
+    "blueapron.com": {
+      "catalog": [
+        {
+          "name": "Blue Apron",
+          "domain": "blueapron.com",
+          "id": 224
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "blueapron",
+          "name": "Blue Apron",
+          "url": "https://blog.blueapron.com",
+          "name_match": false
+        }
+      ]
+    },
     "brilliant.org": {
       "catalog": [
         {
@@ -822,13 +839,6 @@
         "name": "Bio Sites",
         "domain": "biosites.com",
         "id": 765
-      }
-    ],
-    "blueapron.com": [
-      {
-        "name": "Blue Apron",
-        "domain": "blueapron.com",
-        "id": 224
       }
     ],
     "boords.com": [
