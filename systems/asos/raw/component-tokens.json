@@ -1,0 +1,582 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. asos.com declares its palette as hash-named custom properties on :root (css-vars.json's `generated` bin); they land under descriptive core.color families. The light set holds only roles a measurement verified — each resolves through a var whose value equals a colour read off a live component. The shop paints one light theme: a .dark probe resolves identically, so dark is empty. A leaf with \"var\" resolves through the live document; \"value\" leaves are measured on the running page.",
+ "core": {
+  "color": {
+   "neutral": {
+    "black": {
+     "var": "--1fot7dv",
+     "type": "color",
+     "source": "css-var --1fot7dv"
+    },
+    "grey": {
+     "100": {
+      "var": "--sm859b",
+      "type": "color",
+      "source": "css-var --sm859b"
+     },
+     "200": {
+      "var": "--1wwppwc",
+      "type": "color",
+      "source": "css-var --1wwppwc"
+     },
+     "300": {
+      "var": "--na3s62",
+      "type": "color",
+      "source": "css-var --na3s62"
+     },
+     "400": {
+      "var": "--h1m6hk",
+      "type": "color",
+      "source": "css-var --h1m6hk"
+     },
+     "50": {
+      "var": "--6gu3az",
+      "type": "color",
+      "source": "css-var --6gu3az"
+     },
+     "500": {
+      "var": "--10c6hzt",
+      "type": "color",
+      "source": "css-var --10c6hzt"
+     },
+     "600": {
+      "var": "--f1xms7",
+      "type": "color",
+      "source": "css-var --f1xms7"
+     },
+     "700": {
+      "var": "--4439lq",
+      "type": "color",
+      "source": "css-var --4439lq"
+     }
+    },
+    "ink": {
+     "800": {
+      "var": "--198t7lw",
+      "type": "color",
+      "source": "css-var --198t7lw"
+     },
+     "850": {
+      "var": "--19n3pjb",
+      "type": "color",
+      "source": "css-var --19n3pjb"
+     },
+     "870": {
+      "var": "--45kpnl",
+      "type": "color",
+      "source": "css-var --45kpnl"
+     },
+     "900": {
+      "var": "--11lcxa5",
+      "type": "color",
+      "source": "css-var --11lcxa5"
+     }
+    },
+    "white": {
+     "var": "--3pchel",
+     "type": "color",
+     "source": "css-var --3pchel"
+    }
+   },
+   "green": {
+    "bright": {
+     "var": "--173zcrj",
+     "type": "color",
+     "source": "css-var --173zcrj"
+    },
+    "dark": {
+     "var": "--14cp6y8",
+     "type": "color",
+     "source": "css-var --14cp6y8"
+    },
+    "default": {
+     "var": "--1e93okh",
+     "type": "color",
+     "source": "css-var --1e93okh"
+    },
+    "mint": {
+     "var": "--5eoeaa",
+     "type": "color",
+     "source": "css-var --5eoeaa"
+    },
+    "tint": {
+     "var": "--cod972",
+     "type": "color",
+     "source": "css-var --cod972"
+    },
+    "wash": {
+     "var": "--19t30l9",
+     "type": "color",
+     "source": "css-var --19t30l9"
+    }
+   },
+   "orange": {
+    "deep": {
+     "var": "--1gu65g4",
+     "type": "color",
+     "source": "css-var --1gu65g4"
+    },
+    "default": {
+     "var": "--a5az0j",
+     "type": "color",
+     "source": "css-var --a5az0j"
+    },
+    "light": {
+     "var": "--19qikbp",
+     "type": "color",
+     "source": "css-var --19qikbp"
+    },
+    "tint": {
+     "var": "--rrfoye",
+     "type": "color",
+     "source": "css-var --rrfoye"
+    },
+    "wash": {
+     "var": "--1njx4kw",
+     "type": "color",
+     "source": "css-var --1njx4kw"
+    }
+   },
+   "blue": {
+    "deep": {
+     "var": "--lzto1h",
+     "type": "color",
+     "source": "css-var --lzto1h"
+    },
+    "default": {
+     "var": "--1cf22is",
+     "type": "color",
+     "source": "css-var --1cf22is"
+    },
+    "tint": {
+     "var": "--1asa9bf",
+     "type": "color",
+     "source": "css-var --1asa9bf"
+    },
+    "wash": {
+     "var": "--xes0jb",
+     "type": "color",
+     "source": "css-var --xes0jb"
+    }
+   },
+   "red": {
+    "bright": {
+     "var": "--1mii22u",
+     "type": "color",
+     "source": "css-var --1mii22u"
+    },
+    "deep": {
+     "var": "--1xvrmqx",
+     "type": "color",
+     "source": "css-var --1xvrmqx"
+    },
+    "wash": {
+     "var": "--1j5f6ai",
+     "type": "color",
+     "source": "css-var --1j5f6ai"
+    }
+   },
+   "purple": {
+    "deep": {
+     "var": "--1lx7ll5",
+     "type": "color",
+     "source": "css-var --1lx7ll5"
+    },
+    "default": {
+     "var": "--1ffq8ns",
+     "type": "color",
+     "source": "css-var --1ffq8ns"
+    },
+    "light": {
+     "var": "--stskl1",
+     "type": "color",
+     "source": "css-var --stskl1"
+    },
+    "wash": {
+     "var": "--oyq41c",
+     "type": "color",
+     "source": "css-var --oyq41c"
+    }
+   },
+   "bronze": {
+    "default": {
+     "var": "--fc982a",
+     "type": "color",
+     "source": "css-var --fc982a"
+    }
+   },
+   "channel": {
+    "ink": {
+     "value": "rgb(45,45,45)",
+     "type": "color",
+     "source": "css-var --18bniqv (channel triplet, used inside rgb()/rgba() composition)"
+    },
+    "inverse": {
+     "value": "rgb(255,255,255)",
+     "type": "color",
+     "source": "css-var --1cripqf (channel triplet, used inside rgb()/rgba() composition)"
+    }
+   }
+  },
+  "font": {
+   "family": {
+    "primary": {
+     "value": "futura-pt, Tahoma, Geneva, Verdana, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of pdp-price (raw/components-computed.json); faces futura-pt 400/500/700 + FuturaStd 400/700 in css-vars.json",
+     "description": "Futura PT everywhere — the ASOS face."
+    },
+    "legacy": {
+     "value": "FuturaStd, \"Futura Std\", Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of promo-strip/promo-tab (raw/components-computed.json)",
+     "description": "The older FuturaStd stack on promo furniture."
+    }
+   },
+   "weight": {
+    "regular": {
+     "value": "400",
+     "type": "fontWeight",
+     "source": "computed fontWeight of body copy (pdp-title, tiles)"
+    },
+    "demi": {
+     "value": "500",
+     "type": "fontWeight",
+     "source": "futura-pt demi @font-face in css-vars.json"
+    },
+    "semibold": {
+     "value": "600",
+     "type": "fontWeight",
+     "source": "computed fontWeight of continue-button"
+    },
+    "bold": {
+     "value": "700",
+     "type": "fontWeight",
+     "source": "computed fontWeight of add-to-bag/promo-tab"
+    },
+    "heavy": {
+     "value": "900",
+     "type": "fontWeight",
+     "source": "computed fontWeight of nav-tab/load-more/m-nav-link"
+    }
+   },
+   "size": {
+    "xxs": {
+     "value": "10.5625px",
+     "type": "dimension",
+     "source": "computed fontSize of promo-tab (raw/components-computed.json)",
+     "description": "10.5625px on the promo-strip WOMEN/MEN tabs."
+    },
+    "xs": {
+     "value": "13px",
+     "type": "dimension",
+     "source": "computed fontSize of promo-strip (raw/components-computed.json)",
+     "description": "13px promo strip copy."
+    },
+    "sm": {
+     "value": "14px",
+     "type": "dimension",
+     "source": "computed fontSize of nav-item (raw/components-computed.json)",
+     "description": "14px on nav rows, footer links, styles-count."
+    },
+    "base": {
+     "value": "16px",
+     "type": "dimension",
+     "source": "computed fontSize of pdp-price (raw/components-computed.json)",
+     "description": "16px body — prices, fields, buttons."
+    },
+    "md": {
+     "value": "17.6px",
+     "type": "dimension",
+     "source": "computed fontSize of bag-title (raw/components-computed.json)",
+     "description": "17.6–18px on page/section titles."
+    },
+    "lg": {
+     "value": "24px",
+     "type": "dimension",
+     "source": "computed fontSize of plp-title (raw/components-computed.json)",
+     "description": "24px on collection and login titles."
+    }
+   },
+   "tracking": {
+    "tight": {
+     "value": "0.4px",
+     "type": "dimension",
+     "source": "computed letterSpacing of size-select (raw/components-computed.json)",
+     "description": "0.4px on fields and inputs."
+    },
+    "base": {
+     "value": "0.6px",
+     "type": "dimension",
+     "source": "computed letterSpacing of add-to-bag (raw/components-computed.json)",
+     "description": "0.6px on buttons and strip copy."
+    },
+    "wide": {
+     "value": "1px",
+     "type": "dimension",
+     "source": "computed letterSpacing of cat-pill (raw/components-computed.json)",
+     "description": "1px on pills and promo tabs."
+    },
+    "wider": {
+     "value": "1.7px",
+     "type": "dimension",
+     "source": "computed letterSpacing of plp-title (raw/components-computed.json)",
+     "description": "1.7px on the collection title."
+    },
+    "caps": {
+     "value": "2px",
+     "type": "dimension",
+     "source": "computed letterSpacing of hero-cta (raw/components-computed.json)",
+     "description": "2px on uppercase CTAs and menu rows."
+    },
+    "capsWide": {
+     "value": "2.5px",
+     "type": "dimension",
+     "source": "computed letterSpacing of bag-title (raw/components-computed.json)",
+     "description": "2.5px on the MY BAG title."
+    }
+   }
+  },
+  "measured": {
+   "focus-outline": {
+    "value": "#005fcc",
+    "type": "color",
+    "source": "computed outlineColor of nav-item focus-visible (raw/components-computed.json)",
+    "description": "The :focus-visible ring on chrome controls."
+   },
+   "focus-outline-alt": {
+    "value": "#0770cf",
+    "type": "color",
+    "source": "computed outlineColor of continue-button focus-visible (raw/components-computed.json)",
+    "description": "The #0770cf focus blue on my.asos.com (matches --1cf22is)."
+   },
+   "nav-hover": {
+    "value": "#051a6e",
+    "type": "color",
+    "source": "computed backgroundColor of nav-item hover (raw/components-computed.json)",
+    "description": "The deep-navy fill a category button takes on hover."
+   },
+   "anchor-inherit": {
+    "value": "#0000ee",
+    "type": "color",
+    "source": "computed color of tile-name hover (raw/components-computed.json)",
+    "description": "The wrapper anchor's unused inherited blue — the visible product link text is text.primary #2d2d2d."
+   },
+   "hover-wash": {
+    "value": "#f5f5f5",
+    "type": "color",
+    "source": "computed backgroundColor of cat-pill hover (raw/components-computed.json)",
+    "description": "#f5f5f5 pill hover wash."
+   },
+   "action-hover": {
+    "value": "#006637",
+    "type": "color",
+    "source": "computed backgroundColor of add-to-bag hover (raw/components-computed.json)",
+    "description": "The darker buy green on hover."
+   },
+   "ink-hover": {
+    "value": "#000000",
+    "type": "color",
+    "source": "computed backgroundColor of continue-button hover (raw/components-computed.json)",
+    "description": "The near-black button hover on my.asos.com."
+   }
+  }
+ },
+ "light": {
+  "action": {
+   "primary": {
+    "var": "--1e93okh",
+    "type": "color",
+    "source": "css-var --1e93okh",
+    "description": "The ASOS buy green — add-to-bag and bag CTA — resolved from --1e93okh."
+   },
+   "primaryHover": {
+    "var": "--14cp6y8",
+    "type": "color",
+    "source": "css-var --14cp6y8",
+    "description": "rgb(0,102,55) on add-to-bag :hover — resolved from --14cp6y8."
+   }
+  },
+  "border": {
+   "default": {
+    "var": "--na3s62",
+    "type": "color",
+    "source": "css-var --na3s62",
+    "description": "#dddddd hairline on pills, buttons, fields — resolved from --na3s62."
+   }
+  },
+  "surface": {
+   "inverse": {
+    "var": "--1fot7dv",
+    "type": "color",
+    "source": "css-var --1fot7dv",
+    "description": "The black header, nav, drawer and footer — resolved from --1fot7dv."
+   },
+   "page": {
+    "var": "--3pchel",
+    "type": "color",
+    "source": "css-var --3pchel",
+    "description": "The white page/field surface — resolved from --3pchel."
+   },
+   "promo": {
+    "var": "--xes0jb",
+    "type": "color",
+    "source": "css-var --xes0jb",
+    "description": "#cde2f5 light-blue promo band under the PDP price — resolved from --xes0jb."
+   },
+   "subtle": {
+    "var": "--sm859b",
+    "type": "color",
+    "source": "css-var --sm859b",
+    "description": "#f8f8f8 wash under grids — resolved from --sm859b."
+   },
+   "wash": {
+    "var": "--1wwppwc",
+    "type": "color",
+    "source": "css-var --1wwppwc",
+    "description": "#eeeeee on the save heart and mobile menu rows — resolved from --1wwppwc."
+   }
+  },
+  "text": {
+   "inverse": {
+    "var": "--3pchel",
+    "type": "color",
+    "source": "css-var --3pchel",
+    "description": "White text on black chrome — resolved from --3pchel."
+   },
+   "primary": {
+    "var": "--11lcxa5",
+    "type": "color",
+    "source": "css-var --11lcxa5",
+    "description": "rgb(45,45,45) on titles, prices, fields — resolved from --11lcxa5."
+   },
+   "secondary": {
+    "var": "--f1xms7",
+    "type": "color",
+    "source": "css-var --f1xms7",
+    "description": "rgb(102,102,102) on flyout links and support copy — resolved from --f1xms7."
+   }
+  }
+ },
+ "dark": {},
+ "component": {
+  "control": {
+   "height": {
+    "type": "dimension",
+    "value": "44px",
+    "source": "computed height of add-to-bag default (raw/components-computed.json)",
+    "description": "Buttons are 44px — add-to-bag, save heart, reviews CTA."
+   },
+   "heightLg": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of continue-button default (raw/components-computed.json)",
+    "description": "The login continue button is 48px."
+   },
+   "heightWide": {
+    "type": "dimension",
+    "value": "54.5px",
+    "source": "computed height of load-more default (raw/components-computed.json)",
+    "description": "LOAD MORE is 54.5px."
+   },
+   "fieldHeight": {
+    "type": "dimension",
+    "value": "38px",
+    "source": "computed height of size-select default (raw/components-computed.json)",
+    "description": "Fields and selects are 38px."
+   },
+   "pillHeight": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed height of cat-pill default (raw/components-computed.json)",
+    "description": "Category pills are 36px."
+   },
+   "heightBar": {
+    "type": "dimension",
+    "value": "43px",
+    "source": "computed height of sort-button default (raw/components-computed.json)",
+    "description": "Sort/Filter bar buttons are 43px."
+   }
+  },
+  "radius": {
+   "none": {
+    "type": "dimension",
+    "value": "0px",
+    "source": "computed borderTopLeftRadius of add-to-bag default (raw/components-computed.json)",
+    "description": "Corners are square — 0px on buttons, pills, fields."
+   },
+   "round": {
+    "type": "dimension",
+    "value": "100px",
+    "source": "computed borderTopLeftRadius of save-button default (raw/components-computed.json)",
+    "description": "Icon-only buttons are fully round."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "140px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The desktop header block is 140px."
+   }
+  },
+  "nav": {
+   "height": {
+    "type": "dimension",
+    "value": "50px",
+    "source": "computed height of nav-item default (raw/components-computed.json)",
+    "description": "The category nav row is 50px."
+   },
+   "tabHeight": {
+    "type": "dimension",
+    "value": "60px",
+    "source": "computed height of nav-tab default (raw/components-computed.json)",
+    "description": "WOMEN/MEN floor tabs are 60px."
+   }
+  },
+  "icon": {
+   "tapTarget": {
+    "type": "dimension",
+    "value": "50px",
+    "source": "computed width of account-icon default (raw/components-computed.json)",
+    "description": "Header icons get a 50x60 tap target."
+   },
+   "social": {
+    "type": "dimension",
+    "value": "30px",
+    "source": "computed width of footer-social default (raw/components-computed.json)",
+    "description": "Social icons are 30px."
+   },
+   "search": {
+    "type": "dimension",
+    "value": "38px",
+    "source": "computed width of search-button default (raw/components-computed.json)",
+    "description": "The inline search button is 38px."
+   }
+  },
+  "tile": {
+   "width": {
+    "type": "dimension",
+    "value": "335px",
+    "source": "computed width of product-tile default (raw/components-computed.json)",
+    "description": "Product tiles are ~335px at 1440 (4 across)."
+   }
+  },
+  "flyout": {
+   "width": {
+    "type": "dimension",
+    "value": "1302px",
+    "source": "computed width of nav-flyout default (raw/components-computed.json)",
+    "description": "The mega-menu panel is ~1302px."
+   }
+  },
+  "focus": {
+   "width": {
+    "type": "dimension",
+    "value": "5px",
+    "source": "computed outlineWidth of nav-item focus-visible (raw/components-computed.json)",
+    "description": "Focus rings run 1–5px; nav buttons take 5px."
+   }
+  }
+ }
+}
