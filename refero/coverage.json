@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 71,
-    "system_domains": 63,
-    "matched_domains": 39,
-    "missing_domains": 394,
+    "system_packages": 72,
+    "system_domains": 64,
+    "matched_domains": 40,
+    "missing_domains": 393,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -394,6 +394,23 @@
         }
       ]
     },
+    "avnier.com": {
+      "catalog": [
+        {
+          "name": "AVNIER",
+          "domain": "avnier.com",
+          "id": 896
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "avnier",
+          "name": "Avnier",
+          "url": "https://avnier.com",
+          "name_match": true
+        }
+      ]
+    },
     "ballparkhq.com": {
       "catalog": [
         {
@@ -763,13 +780,6 @@
         "name": "Asana",
         "domain": "asana.com",
         "id": 69
-      }
-    ],
-    "avnier.com": [
-      {
-        "name": "AVNIER",
-        "domain": "avnier.com",
-        "id": 896
       }
     ],
     "awwwards.com": [
