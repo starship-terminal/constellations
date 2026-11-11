@@ -1,0 +1,351 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. blog.blueapron.com is Squarespace, so declared names (var leaves) cover the palette and the type ramp where they exist; measured computed styles on the running pages (raw/components-computed.json) cover everything else. Semantic roles land in the light set (the only theme the site paints).",
+ "core": {
+  "font": {
+   "family": {
+    "display": {
+     "value": "Ovo",
+     "type": "fontFamily",
+     "source": "computed fontFamily of article-title default (raw/components-computed.json)",
+     "description": "The display serif on headlines and card titles (Ovo first)."
+    },
+    "serif": {
+     "value": "Ivory",
+     "type": "fontFamily",
+     "source": "computed fontFamily of faq-heading default (raw/components-computed.json)",
+     "description": "The editorial serif custom.css puts on h1-h4 (Ivory first)."
+    },
+    "body": {
+     "value": "Almarai",
+     "type": "fontFamily",
+     "source": "computed fontFamily of article-body default (raw/components-computed.json)",
+     "description": "The body/nav text stack (Almarai first)."
+    },
+    "announce": {
+     "value": "Almarai",
+     "type": "fontFamily",
+     "source": "computed fontFamily of announcement-bar default (raw/components-computed.json)",
+     "description": "The announcement-bar stack (Almarai first)."
+    }
+   },
+   "size": {
+    "h1": {
+     "var": "--heading-1-size",
+     "type": "dimension",
+     "description": "The declared h1 step."
+    },
+    "h2": {
+     "var": "--heading-2-size",
+     "type": "dimension",
+     "description": "The declared h2 step."
+    },
+    "h3": {
+     "var": "--heading-3-size",
+     "type": "dimension",
+     "description": "The declared h3 step."
+    },
+    "h4": {
+     "var": "--heading-4-size",
+     "type": "dimension",
+     "description": "The declared h4 step."
+    },
+    "base": {
+     "var": "--base-font-size",
+     "type": "dimension",
+     "description": "The declared body size."
+    },
+    "display": {
+     "type": "dimension",
+     "value": "67.84px",
+     "source": "computed fontSize of article-title default (raw/components-computed.json)",
+     "description": "The guide headline size at 1440."
+    },
+    "title": {
+     "type": "dimension",
+     "value": "36.736px",
+     "source": "computed fontSize of card-title default (raw/components-computed.json)",
+     "description": "The blog card title size."
+    },
+    "small": {
+     "type": "dimension",
+     "value": "14.272px",
+     "source": "computed fontSize of card-excerpt default (raw/components-computed.json)",
+     "description": "The excerpt/small size."
+    },
+    "announce": {
+     "type": "dimension",
+     "value": "14.272px",
+     "source": "computed fontSize of announcement-bar default (raw/components-computed.json)",
+     "description": "Announcement text size."
+    },
+    "nav": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of nav-link default (raw/components-computed.json)",
+     "description": "Nav link size."
+    },
+    "meta": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of card-meta default (raw/components-computed.json)",
+     "description": "Card meta (date/author) size."
+    },
+    "menu": {
+     "type": "dimension",
+     "value": "33.15px",
+     "source": "computed fontSize of m-nav-item default (raw/components-computed.json)",
+     "description": "The mobile menu's big nav size."
+    }
+   },
+   "lineHeight": {
+    "display": {
+     "type": "dimension",
+     "value": "81.408px",
+     "source": "computed lineHeight of article-title default (raw/components-computed.json)",
+     "description": "Guide headline line height."
+    },
+    "title": {
+     "type": "dimension",
+     "value": "44.0832px",
+     "source": "computed lineHeight of card-title default (raw/components-computed.json)",
+     "description": "Card title line height."
+    },
+    "small": {
+     "type": "dimension",
+     "value": "21.408px",
+     "source": "computed lineHeight of card-excerpt default (raw/components-computed.json)",
+     "description": "Excerpt line height."
+    },
+    "nav": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "computed lineHeight of nav-link default (raw/components-computed.json)",
+     "description": "Nav link line height."
+    }
+   },
+   "weight": {
+    "display": {
+     "type": "number",
+     "value": "400",
+     "source": "computed fontWeight of article-title default (raw/components-computed.json)",
+     "description": "Guide headline weight."
+    },
+    "announce": {
+     "type": "number",
+     "value": "700",
+     "source": "computed fontWeight of announcement-bar default (raw/components-computed.json)",
+     "description": "Announcement text weight."
+    }
+   }
+  },
+  "color": {
+   "neutral": {
+    "ink": {
+     "value": "#000000",
+     "type": "color",
+     "source": "computed color of article-body default (raw/components-computed.json)",
+     "description": "Body text."
+    },
+    "line": {
+     "value": "#aaaaaa",
+     "type": "color",
+     "source": "computed borderTopColor of search-field default (raw/components-computed.json)",
+     "description": "The 1px field hairline."
+    },
+    "white": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed color of header-cta default (raw/components-computed.json)",
+     "description": "Text on accent/navy fills."
+    }
+   },
+   "brand": {
+    "accent": {
+     "var": "--sqsp-palette-accent-color",
+     "type": "color",
+     "description": "The Blue Apron action blue: CTAs, links, headline accents."
+    },
+    "navy": {
+     "var": "--announcement-bar-background-color",
+     "type": "color",
+     "description": "The deep navy of the announcement bar and the dark-bold footer sections."
+    },
+    "cream": {
+     "value": "#f2f0e5",
+     "type": "color",
+     "source": "painted fill inside cart-page default (raw/components-computed.json)",
+     "description": "The cream page field (#f2f0e5)."
+    }
+   }
+  },
+  "radius": {
+   "pill": {
+    "value": "300px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of header-cta default (raw/components-computed.json)",
+    "description": "The 300px pill on every button."
+   }
+  },
+  "measured": {
+   "focus-outline": {
+    "value": "#000000",
+    "type": "color",
+    "source": "computed outlineColor of nav-link focus-visible (raw/components-computed.json)",
+    "description": "The 2px keyboard ring on light surfaces."
+   },
+   "focus-outline-inverse": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "computed outlineColor of announcement-close focus-visible (raw/components-computed.json)",
+    "description": "The 2px keyboard ring on navy."
+   },
+   "secondary-hover": {
+    "value": "#2959e0",
+    "type": "color",
+    "source": "computed backgroundColor of button-secondary hover (raw/components-computed.json)",
+    "description": "The secondary button's hover fill (transparent -> accent)."
+   },
+   "field-border": {
+    "value": "#aaaaaa",
+    "type": "color",
+    "source": "computed borderTopColor of search-field default (raw/components-computed.json)",
+    "description": "The 1px search-field border."
+   },
+   "cta-transition": {
+    "value": "0.1s",
+    "type": "duration",
+    "source": "computed transition of header-cta default (raw/components-computed.json)",
+    "description": "The CTA's 0.1s opacity fade. (opacity)"
+   },
+   "menu-transition": {
+    "value": "0.25s",
+    "type": "duration",
+    "source": "computed transition of m-nav-item default (raw/components-computed.json)",
+    "description": "The mobile menu's 0.25s fade. (opacity)"
+   }
+  }
+ },
+ "light": {
+  "text": {
+   "primary": {
+    "value": "{color.neutral.ink}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "Body and UI text."
+   },
+   "inverse": {
+    "value": "{color.neutral.white}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "Text on accent/navy fills."
+   },
+   "accent": {
+    "value": "{color.brand.accent}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "Links and headline accents."
+   }
+  },
+  "focus": {
+   "ring": {
+    "default": {
+     "value": "{color.neutral.ink}",
+     "type": "color",
+     "source": "the measured 2px focus outline on light surfaces",
+     "description": "The keyboard-focus ring on light surfaces."
+    },
+    "inverse": {
+     "value": "{color.neutral.white}",
+     "type": "color",
+     "source": "the measured 2px focus outline on the navy announcement bar",
+     "description": "The keyboard-focus ring on navy fills."
+    }
+   }
+  },
+  "action": {
+   "primary": {
+    "value": "{color.brand.accent}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "Primary CTAs (Shop Now, Learn more hover)."
+   }
+  },
+  "surface": {
+   "page": {
+    "value": "{color.brand.cream}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "The cream page field."
+   },
+   "inverse": {
+    "value": "{color.brand.navy}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "Announcement bar and dark-bold footer."
+   }
+  },
+  "border": {
+   "field": {
+    "value": "{color.neutral.line}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "The 1px search-field border."
+   }
+  }
+ },
+ "dark": {},
+ "component": {
+  "control": {
+   "height": {
+    "type": "dimension",
+    "value": "17px",
+    "source": "computed height of header-cta default (raw/components-computed.json)",
+    "description": "The Shop Now CTA height."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "300px",
+    "source": "computed borderTopLeftRadius of header-cta default (raw/components-computed.json)",
+    "description": "Button corner radius (300px pill)."
+   },
+   "padding": {
+    "type": "dimension",
+    "value": "35.2px",
+    "source": "computed paddingLeft of header-cta default (raw/components-computed.json)",
+    "description": "CTA horizontal padding."
+   }
+  },
+  "field": {
+   "height": {
+    "type": "dimension",
+    "value": "43px",
+    "source": "computed height of search-field default (raw/components-computed.json)",
+    "description": "The search field height."
+   }
+  },
+  "announcement": {
+   "height": {
+    "type": "dimension",
+    "value": "44.2188px",
+    "source": "computed height of announcement-bar default (raw/components-computed.json)",
+    "description": "The navy announcement strip height."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "166.812px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The header height (announcement + bar)."
+   }
+  },
+  "card-image": {
+   "radius": {
+    "type": "dimension",
+    "value": "0px",
+    "source": "computed borderTopLeftRadius of card-image default (raw/components-computed.json)",
+    "description": "Blog card image corner radius."
+   }
+  }
+ }
+}

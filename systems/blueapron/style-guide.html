@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blue Apron style guide</title>
+<meta name="description" content="Blue Apron (blog.blueapron.com) design tokens and the public editorial surface's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+  --font-family-display: Ovo;
+  --font-family-serif: Ivory;
+  --font-family-body: Almarai;
+  --font-family-announce: Almarai;
+  --font-size-h1: 64px;
+  --font-size-h2: 44.7969px;
+  --font-size-h3: 35.1875px;
+  --font-size-h4: 25.5938px;
+  --font-size-base: 16px;
+  --font-size-display: 67.84px;
+  --font-size-title: 36.736px;
+  --font-size-small: 14.272px;
+  --font-size-announce: 14.272px;
+  --font-size-nav: 16px;
+  --font-size-meta: 16px;
+  --font-size-menu: 33.15px;
+  --font-lineHeight-display: 81.408px;
+  --font-lineHeight-title: 44.0832px;
+  --font-lineHeight-small: 21.408px;
+  --font-lineHeight-nav: 24px;
+  --font-weight-display: 400;
+  --font-weight-announce: 700;
+  --color-neutral-ink: #000000;
+  --color-neutral-line: #aaaaaa;
+  --color-neutral-white: #ffffff;
+  --color-brand-accent: #2959e0;
+  --color-brand-navy: #002856;
+  --color-brand-cream: #f2f0e5;
+  --radius-pill: 300px;
+  --measured-focus-outline: #000000;
+  --measured-focus-outline-inverse: #ffffff;
+  --measured-secondary-hover: #2959e0;
+  --measured-field-border: #aaaaaa;
+  --measured-cta-transition: 100ms;
+  --measured-menu-transition: 250ms;
+  --text-primary: var(--color-neutral-ink);
+  --text-inverse: var(--color-neutral-white);
+  --text-accent: var(--color-brand-accent);
+  --focus-ring-default: var(--color-neutral-ink);
+  --focus-ring-inverse: var(--color-neutral-white);
+  --action-primary: var(--color-brand-accent);
+  --surface-page: var(--color-brand-cream);
+  --surface-inverse: var(--color-brand-navy);
+  --border-field: var(--color-neutral-line);
+  --component-control-height: 17px;
+  --component-control-radius: 300px;
+  --component-control-padding: 35.2px;
+  --component-field-height: 43px;
+  --component-announcement-height: 44.2188px;
+  --component-header-height: 166.812px;
+  --component-card-image-radius: 0px;
+  --sg-sans: Almarai, "proxima-nova", "Proxima Nova", Helvetica, Arial, sans-serif;
+  --sg-serif: Ovo, Ivory, Georgia, serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); background: var(--color-brand-cream, #f2f0e5); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-line, #aaa); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-line, #aaa); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #000); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-line, #aaa); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
+/* ---- blog mock ---- */
+.mock { border: 1px solid var(--color-neutral-line, #aaa); overflow: hidden; background: var(--color-brand-cream, #f2f0e5); }
+.promo { background: var(--color-brand-navy, #002856); color: #fff; font-size: 12px; letter-spacing: .02em; text-align: center; padding: 10px 16px; }
+.navbar { display: flex; align-items: center; gap: 22px; height: 84px; padding: 0 24px; background: var(--color-brand-cream, #f2f0e5); font-size: 15px; }
+.navbar .wm { font-weight: 700; font-size: 22px; letter-spacing: -0.02em; color: var(--color-brand-navy, #002856); }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 65px); padding: 0 28px; font-size: 16px; font-weight: 400; border-radius: var(--radius-pill, 300px); border: 1px solid transparent; }
+.btn.primary { background: var(--color-brand-accent, #2959e0); color: #fff; }
+.btn.ghost { background: transparent; color: var(--color-brand-accent, #2959e0); border-color: var(--color-brand-accent, #2959e0); }
+.hero { color: var(--color-brand-accent, #2959e0); padding: 72px 40px; font: 400 44px/1.15 var(--sg-serif); letter-spacing: -0.02em; text-align: center; }
+.hero small { display: block; font: 400 15px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); margin: 16px auto 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-neutral-line, #aaa); padding: 14px; font-size: 13px; background: #fff; }
+.tile .img { height: 140px; background: #ddd; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); color: var(--color-brand-accent, #2959e0); margin-bottom: 4px; }
+.tile .sub { color: var(--color-neutral-ink, #000); opacity: .65; font-size: 12px; }
+.field { display: flex; align-items: center; height: var(--component-field-height, 43px); border: 1px solid var(--color-neutral-line, #aaa); padding: 0 12px; font-size: 14px; color: var(--color-neutral-ink, #000); opacity: .7; max-width: 340px; margin-bottom: 8px; background: #fff; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-line, #aaa); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-line, #aaa); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Blue Apron style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Blue Apron, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the colours read from blog.blueapron.com's declared vars and computed styles (the #2959e0 action blue, the #002856 announcement/footer navy, the #f2f0e5 cream page field, black body text), the Squarespace heading ramp and measured type, the 300px button pills, and the component metrics. One light theme; the footer is a dark-bold section. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from blog.blueapron.com on 2026-11-11, signed out, in headless Chromium. www.blueapron.com (the shop, menu, sign-in and checkout) is hard-blocked at the Cloudflare edge for this client and is recorded as a boundary, not measured. Ovo, Ivory and Almarai are served faces and are not loaded here: samples fall back to Georgia/system.</p>
+
+  <h2 class="sh">The editorial chrome</h2>
+  <p class="lead">A navy promo strip, then the cream header: the navy Blue Apron wordmark, plain-text nav links, and a blue pill "Shop Now" CTA. The same navy returns as the dark-bold footer field.</p>
+  <div class="mock">
+    <div class="promo">Get $25 off your first 2 orders + Free Shipping with code WELCOME25. Terms Apply.</div>
+    <div class="navbar"><span class="wm">Blue Apron</span><span class="sp"></span><span>Blog</span><span>Blue Apron+</span><span>Subscribe &amp; Save</span><span class="btn primary" style="height:52px">Shop Now</span></div>
+    <div class="hero">Meet the <i>new</i> Blue Apron, now more convenient (and delicious) than ever.</div>
+  </div>
+
+  <h2 class="sh">Blog surfaces</h2>
+  <p class="lead">The masonry blog grid: a photo card per guide, a blue serif title link, a short excerpt and a date/author meta row. The article pages run the same blue headline over black body text; every action is a 300px pill.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><div class="img">Guide photo</div><b>15 Budget-Friendly Quick Dinner Ideas for Busy Weeknights</b><span class="sub">Recipes · Aug 26 · author meta row</span></div>
+      <div class="tile"><div class="img">Guide photo</div><b>Eggs, Your Way: Introducing Everyday Essentials</b><span class="sub">From the Kitchen · meta row</span></div>
+    </div>
+    <div style="margin-top:18px;max-width:420px">
+      <div class="field">Search</div>
+      <span class="btn ghost">Learn more</span> &nbsp; <span class="btn primary">Shop Now</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The palette is small and warm: cream paper, navy chrome, one action blue, black ink. Links and headline accents are the same blue as the buttons.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Buttons are full 300px pills; fields and cards keep small square corners. The Squarespace grid runs an ~11px gutter inside sections.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three served faces: <code>Ovo</code> display (headlines, card titles), <code>Ivory</code> the body-content serif (h1-h4 inside articles), <code>Almarai</code> body and nav text. Sizes are the declared --heading ramp plus measured steps; samples fall back to Georgia/system.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, focused and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"display":{"v":"Ovo","t":"fontFamily","s":"computed fontFamily of article-title default (raw/components-computed.json)","d":"The display serif on headlines and card titles (Ovo first)."},"serif":{"v":"Ivory","t":"fontFamily","s":"computed fontFamily of faq-heading default (raw/components-computed.json)","d":"The editorial serif custom.css puts on h1-h4 (Ivory first)."},"body":{"v":"Almarai","t":"fontFamily","s":"computed fontFamily of article-body default (raw/components-computed.json)","d":"The body/nav text stack (Almarai first)."},"announce":{"v":"Almarai","t":"fontFamily","s":"computed fontFamily of announcement-bar default (raw/components-computed.json)","d":"The announcement-bar stack (Almarai first)."}},"size":{"h1":{"v":"64px","t":"dimension","s":"css-var --heading-1-size (light)","d":"The declared h1 step."},"h2":{"v":"44.7969px","t":"dimension","s":"css-var --heading-2-size (light)","d":"The declared h2 step."},"h3":{"v":"35.1875px","t":"dimension","s":"css-var --heading-3-size (light)","d":"The declared h3 step."},"h4":{"v":"25.5938px","t":"dimension","s":"css-var --heading-4-size (light)","d":"The declared h4 step."},"base":{"v":"16px","t":"dimension","s":"css-var --base-font-size (light)","d":"The declared body size."},"display":{"v":"67.84px","t":"dimension","s":"computed fontSize of article-title default (raw/components-computed.json)","d":"The guide headline size at 1440."},"title":{"v":"36.736px","t":"dimension","s":"computed fontSize of card-title default (raw/components-computed.json)","d":"The blog card title size."},"small":{"v":"14.272px","t":"dimension","s":"computed fontSize of card-excerpt default (raw/components-computed.json)","d":"The excerpt/small size."},"announce":{"v":"14.272px","t":"dimension","s":"computed fontSize of announcement-bar default (raw/components-computed.json)","d":"Announcement text size."},"nav":{"v":"16px","t":"dimension","s":"computed fontSize of nav-link default (raw/components-computed.json)","d":"Nav link size."},"meta":{"v":"16px","t":"dimension","s":"computed fontSize of card-meta default (raw/components-computed.json)","d":"Card meta (date/author) size."},"menu":{"v":"33.15px","t":"dimension","s":"computed fontSize of m-nav-item default (raw/components-computed.json)","d":"The mobile menu's big nav size."}},"lineHeight":{"display":{"v":"81.408px","t":"dimension","s":"computed lineHeight of article-title default (raw/components-computed.json)","d":"Guide headline line height."},"title":{"v":"44.0832px","t":"dimension","s":"computed lineHeight of card-title default (raw/components-computed.json)","d":"Card title line height."},"small":{"v":"21.408px","t":"dimension","s":"computed lineHeight of card-excerpt default (raw/components-computed.json)","d":"Excerpt line height."},"nav":{"v":"24px","t":"dimension","s":"computed lineHeight of nav-link default (raw/components-computed.json)","d":"Nav link line height."}},"weight":{"display":{"v":400,"t":"number","s":"computed fontWeight of article-title default (raw/components-computed.json)","d":"Guide headline weight."},"announce":{"v":700,"t":"number","s":"computed fontWeight of announcement-bar default (raw/components-computed.json)","d":"Announcement text weight."}}},"color":{"neutral":{"ink":{"v":"#000000","t":"color","s":"computed color of article-body default (raw/components-computed.json)","d":"Body text."},"line":{"v":"#aaaaaa","t":"color","s":"computed borderTopColor of search-field default (raw/components-computed.json)","d":"The 1px field hairline."},"white":{"v":"#ffffff","t":"color","s":"computed color of header-cta default (raw/components-computed.json)","d":"Text on accent/navy fills."}},"brand":{"accent":{"v":"#2959e0","t":"color","s":"css-var --sqsp-palette-accent-color (light)","d":"The Blue Apron action blue: CTAs, links, headline accents."},"navy":{"v":"#002856","t":"color","s":"css-var --announcement-bar-background-color (light)","d":"The deep navy of the announcement bar and the dark-bold footer sections."},"cream":{"v":"#f2f0e5","t":"color","s":"painted fill inside cart-page default (raw/components-computed.json)","d":"The cream page field (#f2f0e5)."}}},"radius":{"pill":{"v":"300px","t":"dimension","s":"computed borderTopLeftRadius of header-cta default (raw/components-computed.json)","d":"The 300px pill on every button."}},"measured":{"focus-outline":{"v":"#000000","t":"color","s":"computed outlineColor of nav-link focus-visible (raw/components-computed.json)","d":"The 2px keyboard ring on light surfaces."},"focus-outline-inverse":{"v":"#ffffff","t":"color","s":"computed outlineColor of announcement-close focus-visible (raw/components-computed.json)","d":"The 2px keyboard ring on navy."},"secondary-hover":{"v":"#2959e0","t":"color","s":"computed backgroundColor of button-secondary hover (raw/components-computed.json)","d":"The secondary button's hover fill (transparent -> accent)."},"field-border":{"v":"#aaaaaa","t":"color","s":"computed borderTopColor of search-field default (raw/components-computed.json)","d":"The 1px search-field border."},"cta-transition":{"v":"100ms","t":"duration","s":"computed transition of header-cta default (raw/components-computed.json)","d":"The CTA's 0.1s opacity fade. (opacity)"},"menu-transition":{"v":"250ms","t":"duration","s":"computed transition of m-nav-item default (raw/components-computed.json)","d":"The mobile menu's 0.25s fade. (opacity)"}}},"light":{"text":{"primary":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the measured core palette","d":"Body and UI text."},"inverse":{"v":"{color.neutral.white}","t":"color","s":"role alias over the measured core palette","d":"Text on accent/navy fills."},"accent":{"v":"{color.brand.accent}","t":"color","s":"role alias over the measured core palette","d":"Links and headline accents."}},"focus":{"ring":{"default":{"v":"{color.neutral.ink}","t":"color","s":"the measured 2px focus outline on light surfaces","d":"The keyboard-focus ring on light surfaces."},"inverse":{"v":"{color.neutral.white}","t":"color","s":"the measured 2px focus outline on the navy announcement bar","d":"The keyboard-focus ring on navy fills."}}},"action":{"primary":{"v":"{color.brand.accent}","t":"color","s":"role alias over the measured core palette","d":"Primary CTAs (Shop Now, Learn more hover)."}},"surface":{"page":{"v":"{color.brand.cream}","t":"color","s":"role alias over the measured core palette","d":"The cream page field."},"inverse":{"v":"{color.brand.navy}","t":"color","s":"role alias over the measured core palette","d":"Announcement bar and dark-bold footer."}},"border":{"field":{"v":"{color.neutral.line}","t":"color","s":"role alias over the measured core palette","d":"The 1px search-field border."}},"component":{"control":{"height":{"v":"17px","t":"dimension","s":"computed height of header-cta default (raw/components-computed.json)","d":"The Shop Now CTA height."},"radius":{"v":"300px","t":"dimension","s":"computed borderTopLeftRadius of header-cta default (raw/components-computed.json)","d":"Button corner radius (300px pill)."},"padding":{"v":"35.2px","t":"dimension","s":"computed paddingLeft of header-cta default (raw/components-computed.json)","d":"CTA horizontal padding."}},"field":{"height":{"v":"43px","t":"dimension","s":"computed height of search-field default (raw/components-computed.json)","d":"The search field height."}},"announcement":{"height":{"v":"44.2188px","t":"dimension","s":"computed height of announcement-bar default (raw/components-computed.json)","d":"The navy announcement strip height."}},"header":{"height":{"v":"166.812px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The header height (announcement + bar)."}},"card-image":{"radius":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of card-image default (raw/components-computed.json)","d":"Blog card image corner radius."}}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Blue Apron</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>
