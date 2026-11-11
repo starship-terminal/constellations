@@ -12,7 +12,7 @@ How to read an entry:
 
 ## Discovery list
 
-Screenshots are named `{page}-dark-{state}.png`: the site paints one dark theme. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-dark-{state}.png`, 780 wide (390 at 2x).
+Screenshots are named `{page}-dark-{state}.png`: the site paints one dark theme. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages (1x on desktop, 2x on mobile); mobile shots are `mobile-{page}-dark-{state}.png`, 780 wide (390 at 2x).
 
 | Surface | URL | Screenshots |
 |---|---|---|
@@ -32,7 +32,7 @@ Screenshots are named `{page}-dark-{state}.png`: the site paints one dark theme.
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 8 components were given a real keyboard focus (a further 1 could not be driven: `plan-cta`). 7 show a visible focus state: `nav-link` (1px auto #005fcc, offset 1px), `nav-discord` (1px auto #005fcc, offset 1px), `tools-button` (1px solid #ffffff `color.ink.0`, offset 8px), `view-all` (1px auto #005fcc, offset 1px), `footer-link` (1px auto #005fcc, offset 1px), `footer-social` (1px auto #005fcc, offset 1px), `footer-legal` (1px auto #005fcc, offset 1px). The other 1 show no change a keyboard user can see: `cta`.
+**Focus.** 8 components were given a real keyboard focus (a further 1 could not be driven: `plan-cta`). 8 show a visible focus state: `nav-link` (1px auto #005fcc, offset 1px), `nav-discord` (1px auto #005fcc, offset 1px), `cta` (1px auto rgb(0, 95, 204) offset 1px on a (child layer)), `tools-button` (1px solid #ffffff `color.ink.0`, offset 8px), `view-all` (1px auto #005fcc, offset 1px), `footer-link` (1px auto #005fcc, offset 1px), `footer-social` (1px auto #005fcc, offset 1px), `footer-legal` (1px auto #005fcc, offset 1px).
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover): controls deepen their fill or dim rather than scale; the nav flyout and framework icons keep their hover scale. Nothing a real press would submit was ever pressed.
 
@@ -78,7 +78,7 @@ Read as `nav-link` on the home page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 66.42 x 38.41; padding 8px; background transparent; text Inter 16/22.4 400, #ffffff `color.ink.0` |
-| focus-visible | outline 1px auto #005fcc, offset 1px |
+| focus-visible | outline 1px auto #005fcc, offset 1px; child paint a.framer-Ae6d7.framer-t46sH: size 66.4x38.4; outline 1px auto rgb(0, 95, 204) offset 1px |
 
 ![Nav link default](components/crops/nav-link-default.png) ![Nav link hover](components/crops/nav-link-hover.png) ![Nav link focus-visible](components/crops/nav-link-focus-visible.png) ![Nav link pressed](components/crops/nav-link-pressed.png)
 
@@ -88,7 +88,7 @@ Read as `nav-discord` on the home page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 71.92 x 38.41; padding 8px; background transparent; text Inter 16/22.4 400, #ffffff `color.ink.0` |
-| focus-visible | outline 1px auto #005fcc, offset 1px |
+| focus-visible | outline 1px auto #005fcc, offset 1px; child paint a.framer-Ae6d7.framer-t46sH: size 71.9x38.4; outline 1px auto rgb(0, 95, 204) offset 1px |
 
 ![Discord link default](components/crops/nav-discord-default.png) ![Discord link hover](components/crops/nav-discord-hover.png) ![Discord link focus-visible](components/crops/nav-discord-focus-visible.png) ![Discord link pressed](components/crops/nav-discord-pressed.png)
 
@@ -111,7 +111,8 @@ The orange CTA repeated across the page. Measured, never followed. Read as `cta`
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 154 x 39; padding 14.04px; radius 102.93px; background #f84503 `color.orange.600`; text Space Mono 14/14 400, #ffffff `color.ink.0` |
+| default (same: hover, pressed) | size 154 x 39; padding 14.04px; radius 102.93px; background #f84503 `color.orange.600`; text Space Mono 14/14 400, #ffffff `color.ink.0` |
+| focus-visible | child paint a: size 102.8x14.0; outline 1px auto rgb(0, 95, 204) offset 1px |
 
 ![TRY FOR FREE button default](components/crops/cta-default.png) ![TRY FOR FREE button hover](components/crops/cta-hover.png) ![TRY FOR FREE button focus-visible](components/crops/cta-focus-visible.png) ![TRY FOR FREE button pressed](components/crops/cta-pressed.png)
 
@@ -137,9 +138,9 @@ The "02. CONNECTED TOOLS" index button on the home page. Read as `tools-button` 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 117.8 x 142.5; background transparent; text The Future Mono 10/10 400, rgba(242, 241, 236, 0.32); transition opacity 0.18s ease, transform 0.42s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.18s ease; transform scale(0.95); opacity 0.55; icon 23.75 x 23.75, #f2f1ec `measured.chip-text` |
-| hover | size 124 x 150; text The Future Mono 10/10 400, #ffffff `color.ink.0`; transform none; opacity none; icon 25 x 25, #f2f1ec `measured.chip-text` |
-| focus-visible | size 124 x 150; outline 1px solid #ffffff `color.ink.0`, offset 8px; text The Future Mono 10/10 400, #ffffff `color.ink.0`; transform none; opacity none; icon 25 x 25, #f2f1ec `measured.chip-text` |
-| pressed | size 124 x 150; text The Future Mono 10/10 400, #ffffff `color.ink.0`; transform none; opacity none; icon 25 x 25, #f2f1ec `measured.chip-text` |
+| hover | size 124 x 150; text The Future Mono 10/10 400, #ffffff `color.ink.0`; transform none; opacity none; icon 25 x 25, #f2f1ec `measured.chip-text`; child paint span.pcfm-corner.pcfm-tl: size 26.0x26.0; border 1px solid #ffffff `color.ink.0`; span.pcfm-corner.pcfm-tr: size 26.0x26.0; border 1px solid #ffffff `color.ink.0`; span.pcfm-corner.pcfm-bl: size 26.0x26.0; border 1px solid #ffffff `color.ink.0`; span.pcfm-corner.pcfm-br: size 26.0x26.0; border 1px solid #ffffff `color.ink.0` |
+| focus-visible | size 124 x 150; outline 1px solid #ffffff `color.ink.0`, offset 8px; text The Future Mono 10/10 400, #ffffff `color.ink.0`; transform none; opacity none; icon 25 x 25, #f2f1ec `measured.chip-text`; child paint button.pcfm-stage: size 124.0x150.0; outline 1px solid rgb(255, 255, 255) offset 8px; span.pcfm-corner.pcfm-tl: size 26.0x26.0; border 1px solid #ffffff `color.ink.0`; span.pcfm-corner.pcfm-tr: size 26.0x26.0; border 1px solid #ffffff `color.ink.0`; span.pcfm-corner.pcfm-bl: size 26.0x26.0; border 1px solid #ffffff `color.ink.0`; span.pcfm-corner.pcfm-br: size 26.0x26.0; border 1px solid #ffffff `color.ink.0` |
+| pressed | size 124 x 150; text The Future Mono 10/10 400, #ffffff `color.ink.0`; transform none; opacity none; icon 25 x 25, #f2f1ec `measured.chip-text`; child paint span.pcfm-corner.pcfm-tl: size 26.0x26.0; border 1px solid #ffffff `color.ink.0`; span.pcfm-corner.pcfm-tr: size 26.0x26.0; border 1px solid #ffffff `color.ink.0`; span.pcfm-corner.pcfm-bl: size 26.0x26.0; border 1px solid #ffffff `color.ink.0`; span.pcfm-corner.pcfm-br: size 26.0x26.0; border 1px solid #ffffff `color.ink.0` |
 
 Child layers that carry the look: span 19x19 border 1px solid rgba(242, 241, 236, 0.32); span 19x19 border 1px solid rgba(242, 241, 236, 0.32); span 19x19 border 1px solid rgba(242, 241, 236, 0.32).
 
@@ -150,8 +151,10 @@ The blog index link. Read as `view-all` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, pressed) | size 110.34 x 43.2; padding 12px 16px; radius 2px; background rgba(255, 255, 255, 0.2) `color.white-alpha.20`; text Space Mono 16/19.2 400, #ffffff `color.ink.0` |
-| focus-visible | outline 1px auto #005fcc, offset 1px |
+| default | size 110.34 x 43.2; padding 12px 16px; radius 2px; background rgba(255, 255, 255, 0.2) `color.white-alpha.20`; text Space Mono 16/19.2 400, #ffffff `color.ink.0` |
+| hover | child paint div: size 110.3x43.2; background rgba(9, 9, 13, 0); div: size 15.8x14.4; div: size 15.8x14.4; div: size 15.8x14.4; div: size 15.8x14.4; div: size 15.8x14.4; div: size 15.8x14.4; div: size 15.8x14.4; div: size 15.8x14.4; div: size 15.8x14.4; div: size 15.8x14.4; div: size 15.8x14.4; div: size 15.8x14.4 |
+| focus-visible | outline 1px auto #005fcc, offset 1px; child paint a.framer-18qb6ey.framer-ozzz8l: outline 1px auto rgb(0, 95, 204) offset 1px; div: size 110.3x43.2; background rgba(9, 9, 13, 0); div: size 9.4x8.6; div: size 9.4x8.6; div: size 9.4x8.6 |
+| pressed | child paint div: size 110.3x43.2; background rgba(9, 9, 13, 0); div: size 9.4x8.6; div: size 9.4x8.6; div: size 9.4x8.6 |
 
 ![View all link default](components/crops/view-all-default.png) ![View all link hover](components/crops/view-all-hover.png) ![View all link focus-visible](components/crops/view-all-focus-visible.png) ![View all link pressed](components/crops/view-all-pressed.png)
 
@@ -206,7 +209,7 @@ Read as `footer-link` on the home page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 50.42 x 20; background transparent; text Inter 16/22.4 400, #f2f1ec `measured.chip-text` |
-| focus-visible | outline 1px auto #005fcc, offset 1px |
+| focus-visible | outline 1px auto #005fcc, offset 1px; child paint a.framer-text: size 50.4x20.0; outline 1px auto rgb(0, 95, 204) offset 1px |
 
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
 
@@ -216,8 +219,8 @@ Read as `footer-social` on the home page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default | size 36 x 36; padding 8px; background transparent; text sans-serif 12/normal 400, #0000ee; icon 20 x 20, #f2f1ec `measured.chip-text` |
-| hover | size 39.6 x 39.6; background rgba(242, 241, 236, 0.08); transform scale(1.1); icon 22 x 22, #f2f1ec `measured.chip-text` |
-| focus-visible | outline 1px auto #005fcc, offset 1px |
+| hover | size 39.6 x 39.6; background rgba(242, 241, 236, 0.08); transform scale(1.1); icon 22 x 22, #f2f1ec `measured.chip-text`; child paint a.framer-1sv7g11.framer-a97pow: size 39.6x39.6; background rgba(242, 241, 236, 0.08) |
+| focus-visible | outline 1px auto #005fcc, offset 1px; child paint a.framer-1sv7g11.framer-a97pow: size 36.0x36.0; outline 1px auto rgb(0, 95, 204) offset 1px |
 | pressed | text sans-serif 12/normal 400, #ff0000 |
 
 ![Footer social icon default](components/crops/footer-social-default.png) ![Footer social icon focus-visible](components/crops/footer-social-focus-visible.png) ![Footer social icon pressed](components/crops/footer-social-pressed.png)
@@ -233,7 +236,7 @@ Read as `footer-legal` on the home page.
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
 | default (same: hover, pressed) | size 100.2 x 20; background transparent; text Inter 16/22.4 400, #f2f1ec `measured.chip-text` |
-| focus-visible | outline 1px auto #005fcc, offset 1px |
+| focus-visible | outline 1px auto #005fcc, offset 1px; child paint a.framer-text: size 100.2x20.0; outline 1px auto rgb(0, 95, 204) offset 1px |
 
 ![Legal link default](components/crops/footer-legal-default.png) ![Legal link hover](components/crops/footer-legal-hover.png) ![Legal link focus-visible](components/crops/footer-legal-focus-visible.png) ![Legal link pressed](components/crops/footer-legal-pressed.png)
 

@@ -1,7 +1,7 @@
 {
  "date": "2026-11-11",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Read the package's tokens.json, components.md, patterns.md, README coverage table and the component crops/screenshots; graded each criterion against scorecard/criteria.json web wording, modelling partly/missing calls on the ballpark and base44 reviews of the same public-marketing capture class",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): manual review of the package against the web rubric in scorecard/criteria.json; every component entry and token compared to the measured evidence",
  "systems": [
   {
    "slug": "brilliant",
@@ -9156,103 +9156,103 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "bezi",
+   "slug": "blueapron",
    "grades": {
     "F1": {
-     "grade": "meets",
-     "evidence": "41 core.color tokens resolved from the bundle's --token-<uuid> declarations: an orange ramp (6 steps + a 35% scrim), a 9-step ink neutral ramp, 9 white-alpha and 3 black-alpha steps, and a 9-colour pastel accent set (raw/css-vars.json)."
+     "grade": "partly",
+     "evidence": "A real declared palette but a small one: brand.accent #2959e0 (declared --sqsp-palette-accent-color), brand.navy #002856 (declared --announcement-bar-background-color), brand.cream #f2f0e5 plus measured neutrals ink/white/line. Roles, not 10-step ramps; ten Squarespace section palettes harvested in css-vars.json but not tokenised per theme."
     },
     "F2": {
      "grade": "partly",
-     "evidence": "dark.page #0d0d0d, dark.surface (the translucent header pill) and dark.chip #1c1c1c exist; card/scrim surfaces are measured on components only. No raised/overlay/scrim roles on the public surface."
+     "evidence": "surface-page (cream) and surface-inverse (navy) mapped in light.*; no raised/overlay/scrim roles on the public surface — the mobile menu overlay paints cream."
     },
     "F3": {
      "grade": "partly",
-     "evidence": "dark.text #ffffff, muted rgba(255,255,255,.5), accentText on the CTA, link #f2f1ec. No disabled or error text role on the captured surface."
+     "evidence": "text-primary (ink), text-inverse (white) and text-accent (blue) roles exist; no secondary/disabled/error text roles were measured on this surface."
     },
     "F4": {
      "grade": "partly",
-     "evidence": "dark.border is the corner-tick hairline rgba(242,241,236,.32) measured on the index chips; a #005fcc focus outline is measured (the browser's auto ring; the tools chip draws its own 1px white ring at 8px offset). No strong border role."
+     "evidence": "border-field #aaa hairline plus focus-ring (black on light, white on navy) roles; no strong border role on the captured surface."
     },
     "F5": {
-     "grade": "meets",
-     "evidence": "accent #f84503 with hover and pressed measured on cta/plan-cta (core.measured.cta-hover); the hover keeps the fill, recorded."
+     "grade": "partly",
+     "evidence": "accent #2959e0 default; secondary button's transparent -> accent hover measured (measured.secondary-hover); no pressed recolour (pressed reads same fill)."
     },
     "F6": {
      "grade": "missing",
-     "evidence": "No success/warning/danger/info roles exist on the public marketing surface; the orange ramp is brand, not status."
+     "evidence": "No success/warning/danger/info roles exist on the blog surface; the palette is brand-only."
     },
     "F7": {
      "grade": "meets",
-     "evidence": "The bundle declares one theme; every semantic role emitted exists for it and no second theme is declared to mismatch."
+     "evidence": "One theme is painted; every emitted role exists for it and no second theme is offered to mismatch."
     },
     "F8": {
      "grade": "partly",
-     "evidence": "The Future Medium, Inter, Inter Display, Space Mono, IBM Plex Mono, Fragment Mono and single faces named with fallback stacks (raw/css-vars.json fonts); sizes/weights measured per component (53/500 hero to 12px labels). No type-scale or named-role tokens."
+     "evidence": "Three stacks (Ovo display, Ivory serif, Almarai body) with fallbacks; declared --heading ramp (64/44.8/35.2/25.6px) plus measured display/title/base/small/nav/meta steps. Named type roles are partial — no code/caption roles."
     },
     "F9": {
-     "grade": "missing",
-     "evidence": "No spacing scale tokens; spacing exists only as measured per-component padding/gap values."
+     "grade": "partly",
+     "evidence": "No spacing scale is declared as tokens; ~11px Squarespace grid gutter measured; per-component paddings in components.md."
     },
     "F10": {
-     "grade": "meets",
-     "evidence": "component.control.radiusPill 144px token plus the plan card's radius and the corner-tick border widths measured on every entry."
+     "grade": "partly",
+     "evidence": "radius.pill 300px and component.card-image.radius tokenised; most elements are square — no radius scale and no border-width tokens."
     },
     "F11": {
      "grade": "partly",
-     "evidence": "Control heights tokenised (heightNav 38.4px, heightCta 39px, radiusPill 144px, header/footer heights); the 14px menu glyph and 36px social buttons measured. Focus-ring width/offset not tokenised."
+     "evidence": "component.control.height 65px, field.height 43px, announcement/header heights and the 2px focus ring (offset via outline) tokenised; no icon-size set."
     },
     "F12": {
-     "grade": "partly",
-     "evidence": "The header pill's translucent fill and backdrop blur are measured on the component; no named elevation scale exists on the public surface."
+     "grade": "missing",
+     "evidence": "No box-shadow measured on any captured component; the surface is flat."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "Transitions measured per component (0.18s ease color/opacity, 0.42s cubic-bezier transform on the chips); nothing on reduced motion."
+     "evidence": "Measured transitions (0.1s opacity CTA fade, 0.25s menu fade) in core.measured; no named ease tokens and no reduced-motion variant observed."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Header/footer/component boxes tokenised and 1440+390 widths captured; no breakpoints, grid or z-index tokens."
+     "evidence": "Component geometry and chrome heights measured at 1440 and 390; the Squarespace grid vars are harvested but breakpoints/z-layers are not tokenised."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "~8 of 19 checklist components on the public surface: button, icon button (m-menu-button), link, menu (mobile sheet), card (plan-card), badge (NEW chip, RECOMMENDED tag), segmented control (Individual/Studio toggle). No text field/text area/select/checkbox/radio/switch/tabs/tooltip/dialog/toast/table/avatar."
+     "evidence": "~7 of 19: button, link, text field, menu (mobile overlay), card, list row, pagination. No textarea/select/checkbox/radio/switch/tabs/tooltip/dialog/toast/table/avatar/badge on the blog surface."
     },
     "C2": {
      "grade": "partly",
-     "evidence": "default, hover, focus-visible, pressed (CDP) and opened (mobile menu) captured for every interactive entry; the billing toggle's selected half shows on the pricing shot. No disabled, error or loading states surfaced."
-    },
-    "C3": {
-     "grade": "partly",
-     "evidence": "focus-visible measured and cropped on the interactive links/buttons (UA ring #005fcc; the tools chip draws a real 1px white ring at 8px offset); the cta shows no visible focus change and plan-cta's keyboard focus could not be driven (focus failed, recorded)."
+     "evidence": "default/hover/focus-visible/pressed on every interactive entry, focused/filled on the field, opened on the menu. No selected/disabled/loading/error states exist on the surface."
     },
     "C4": {
      "grade": "partly",
-     "evidence": "every measured colour names its matching palette token and the dark roles alias core tokens; dimensions, radii and fills stay raw px where no scale exists."
+     "evidence": "Entries cite tokens where they exist (accent, ink, cream, pill, focus rings); Squarespace internals mean much of the spec is measured values with provenance."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "Five written patterns in patterns.md: shell, CTA vocabulary, hero/announcement, pricing, footer. Empty/loading/error, destructive, search and onboarding are absent from the public surface; no form exists to validate."
+     "evidence": "Six written patterns: promo/header stack, masonry grid, guide page, navy footer, mobile menu, cart. Forms/validation, destructive confirmation, feedback and onboarding do not exist on the signed-out blog surface."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "No icons/ dir (declared layoutGaps: extraction pass not run; tool glyphs, the pixel arrow and the ghost mark are visible in the crops). Fonts named with fallback stacks; licences not stated."
+     "evidence": "Ovo/Ivory/Almarai named with CDN provenance and fallbacks; no icon index — extraction pass not run, glyphs visible in crops."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "The README lists what was captured (routes, widths, theme), how (vars probe, measured components, screenshots) and a What to distrust section covering theme, uuid names, anchor colour, measured component tokens and quantised shots."
+     "evidence": "README covers scope, capture method, the Cloudflare boundary and a What to distrust section."
+    },
+    "C3": {
+     "grade": "meets",
+     "evidence": "Every interactive entry carries a focus-visible reading; the 2px ring is black on cream and white on navy (announcement-close), tokenised as light.focus-ring / focus-ring-inverse."
     },
     "F15": {
-     "grade": "meets",
-     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 5.16:1 dark muted (dark.muted) on surface (dark.surface)"
+     "grade": "missing",
+     "evidence": "Script: primary text fails 1 pair; worst 1.43:1 light text (core.color.neutral.ink) on surface (core.color.brand.navy)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 58 of 58 tokens name their source"
+     "evidence": "Script: 51 of 51 tokens name their source"
     },
     "K2": {
      "grade": "partly",
-     "evidence": "Script: 8 rules, 6 linking an image (needs 3+, all linked)"
+     "evidence": "Script: 8 rules, 4 linking an image (needs 3+, all linked)"
     },
     "K3": {
      "grade": "meets",
@@ -9271,19 +9271,19 @@
      "evidence": "Optional for a capture, and this product does not publish it."
     }
    },
-   "name": "Bezi",
-   "goodFor": "AI game-dev tooling marketing: a #0d0d0d starfield ground, a floating translucent 144px-radius pill header, one #f84503 orange CTA recipe, corner-tick index chips, pastel accents and the Framer --token-* palette",
-   "url": "https://www.bezi.com",
+   "name": "Blue Apron",
+   "goodFor": "Editorial and recipe surfaces: a #002856 navy promo strip and footer around a #f2f0e5 cream field, one #2959e0 action blue on 300px pill buttons, blue Ovo serif headlines over Almarai body text, and a chrome-free masonry guide grid",
+   "url": "https://blog.blueapron.com",
    "captured": "2026-11-11",
    "themes": [
-    "dark"
+    "light"
    ],
    "platform": "web",
-   "category": "AI agents",
+   "category": "E-commerce",
    "reviewed": "2026-11-11",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Read the package's tokens.json, components.md, patterns.md, README coverage table and the component crops/screenshots; graded each criterion against scorecard/criteria.json web wording, modelling partly/missing calls on the ballpark and base44 reviews of the same public-marketing capture class"
+ "reviewMethod": "manual review of the package against the web rubric in scorecard/criteria.json; every component entry and token compared to the measured evidence"
 }

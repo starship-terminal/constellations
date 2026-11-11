@@ -1,0 +1,797 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. arket.com is a Next.js + Tailwind v4 storefront declaring its whole design language in the @theme layer: the --color-* palette (beige, ink, grey ramp, alert and campaign hues), the --spacing-*/--text-*/--leading-*/--radius-*/--tracking-*/--container-* scales, the --ease-*/--default-transition-* motion tokens and the arketSansMono/arketSCSansMono families. The light set holds the site's roles; measured values that no variable declares (button and drawer sizes) come from raw/components-computed.json. \"var\" leaves resolve through the live document; \"value\" leaves are measured.",
+ "core": {
+  "animate": {
+   "pulse": {
+    "var": "--animate-pulse",
+    "type": "other"
+   },
+   "shimmer": {
+    "var": "--animate-shimmer",
+    "type": "other"
+   },
+   "spin": {
+    "var": "--animate-spin",
+    "type": "other"
+   }
+  },
+  "color": {
+   "alert": {
+    "blue": {
+     "var": "--color-alert-blue",
+     "type": "color"
+    },
+    "green": {
+     "var": "--color-alert-green",
+     "type": "color"
+    },
+    "red": {
+     "var": "--color-alert-red",
+     "type": "color"
+    },
+    "yellow": {
+     "var": "--color-alert-yellow",
+     "type": "color"
+    }
+   },
+   "barbour": {
+    "green": {
+     "var": "--color-barbour-green",
+     "type": "color"
+    }
+   },
+   "beige": {
+    "var": "--color-beige",
+    "type": "color"
+   },
+   "black": {
+    "var": "--color-black",
+    "type": "color"
+   },
+   "blue": {
+    "var": "--color-blue",
+    "type": "color"
+   },
+   "green": {
+    "var": "--color-green",
+    "type": "color"
+   },
+   "grey": {
+    "dark": {
+     "var": "--color-grey-dark",
+     "type": "color"
+    },
+    "light": {
+     "default": {
+      "var": "--color-grey-light",
+      "type": "color"
+     },
+     "extra": {
+      "var": "--color-grey-light-extra",
+      "type": "color"
+     }
+    },
+    "mid": {
+     "var": "--color-grey-mid",
+     "type": "color"
+    }
+   },
+   "ingrid": {
+    "border": {
+     "var": "--color-ingrid-border",
+     "type": "color"
+    }
+   },
+   "laila": {
+    "beige": {
+     "var": "--color-laila-beige",
+     "type": "color"
+    },
+    "dark": {
+     "navy": {
+      "var": "--color-laila-dark-navy",
+      "type": "color"
+     }
+    },
+    "green": {
+     "var": "--color-laila-green",
+     "type": "color"
+    },
+    "light": {
+     "blue": {
+      "var": "--color-laila-light-blue",
+      "type": "color"
+     }
+    },
+    "pink": {
+     "var": "--color-laila-pink",
+     "type": "color"
+    },
+    "placid": {
+     "blue": {
+      "var": "--color-laila-placid-blue",
+      "type": "color"
+     }
+    },
+    "red": {
+     "var": "--color-laila-red",
+     "type": "color"
+    },
+    "rose": {
+     "var": "--color-laila-rose",
+     "type": "color"
+    }
+   },
+   "overlay": {
+    "beige": {
+     "var": "--color-overlay-beige",
+     "type": "color"
+    },
+    "peach": {
+     "var": "--color-overlay-peach",
+     "type": "color"
+    }
+   },
+   "peach": {
+    "var": "--color-peach",
+    "type": "color"
+   },
+   "red": {
+    "var": "--color-red",
+    "type": "color"
+   },
+   "white": {
+    "var": "--color-white",
+    "type": "color"
+   }
+  },
+  "container": {
+   "4xl": {
+    "var": "--container-4xl",
+    "type": "dimension"
+   },
+   "6xl": {
+    "var": "--container-6xl",
+    "type": "dimension"
+   },
+   "7xl": {
+    "var": "--container-7xl",
+    "type": "dimension"
+   },
+   "lg": {
+    "var": "--container-lg",
+    "type": "dimension"
+   },
+   "xl": {
+    "var": "--container-xl",
+    "type": "dimension"
+   },
+   "xs": {
+    "var": "--container-xs",
+    "type": "dimension"
+   }
+  },
+  "default": {
+   "transition": {
+    "duration": {
+     "var": "--default-transition-duration",
+     "type": "duration"
+    },
+    "timing": {
+     "function": {
+      "var": "--default-transition-timing-function",
+      "type": "cubicBezier"
+     }
+    }
+   }
+  },
+  "drop": {
+   "shadow": {
+    "input": {
+     "var": "--drop-shadow-input",
+     "type": "other"
+    }
+   }
+  },
+  "ease": {
+   "in": {
+    "default": {
+     "var": "--ease-in",
+     "type": "cubicBezier"
+    },
+    "out": {
+     "var": "--ease-in-out",
+     "type": "cubicBezier"
+    }
+   },
+   "out": {
+    "var": "--ease-out",
+    "type": "cubicBezier"
+   }
+  },
+  "font": {
+   "family": {
+    "ui": {
+     "var": "--font-regular",
+     "type": "fontFamily",
+     "description": "arketSansMono: the one family the storefront paints, with an Arial-metric fallback."
+    },
+    "small-caps": {
+     "var": "--font-small-caps",
+     "type": "fontFamily",
+     "description": "arketSCSansMono: the small-caps mono used on chips and counts like the \"+2\" colour marker."
+    }
+   },
+   "weight": {
+    "bold": {
+     "var": "--font-weight-bold",
+     "type": "fontWeight"
+    },
+    "normal": {
+     "var": "--font-weight-normal",
+     "type": "fontWeight"
+    },
+    "semibold": {
+     "var": "--font-weight-semibold",
+     "type": "fontWeight"
+    }
+   }
+  },
+  "leading": {
+   "12": {
+    "var": "--leading-12",
+    "type": "dimension"
+   },
+   "14": {
+    "var": "--leading-14",
+    "type": "dimension"
+   },
+   "16": {
+    "var": "--leading-16",
+    "type": "dimension"
+   },
+   "18": {
+    "var": "--leading-18",
+    "type": "dimension"
+   },
+   "20": {
+    "var": "--leading-20",
+    "type": "dimension"
+   },
+   "22": {
+    "var": "--leading-22",
+    "type": "dimension"
+   },
+   "26": {
+    "var": "--leading-26",
+    "type": "dimension"
+   },
+   "28": {
+    "var": "--leading-28",
+    "type": "dimension"
+   },
+   "30": {
+    "var": "--leading-30",
+    "type": "dimension"
+   },
+   "32": {
+    "var": "--leading-32",
+    "type": "dimension"
+   },
+   "34": {
+    "var": "--leading-34",
+    "type": "dimension"
+   },
+   "36": {
+    "var": "--leading-36",
+    "type": "dimension"
+   },
+   "40": {
+    "var": "--leading-40",
+    "type": "dimension"
+   },
+   "42": {
+    "var": "--leading-42",
+    "type": "dimension"
+   },
+   "60": {
+    "var": "--leading-60",
+    "type": "dimension"
+   }
+  },
+  "radius": {
+   "1": {
+    "var": "--radius-1",
+    "type": "dimension"
+   },
+   "12": {
+    "var": "--radius-12",
+    "type": "dimension"
+   },
+   "4": {
+    "var": "--radius-4",
+    "type": "dimension"
+   },
+   "6": {
+    "var": "--radius-6",
+    "type": "dimension"
+   },
+   "8": {
+    "var": "--radius-8",
+    "type": "dimension"
+   },
+   "DEFAULT": {
+    "var": "--radius-DEFAULT",
+    "type": "dimension"
+   },
+   "full": {
+    "var": "--radius-full",
+    "type": "dimension"
+   },
+   "none": {
+    "var": "--radius-none",
+    "type": "dimension"
+   }
+  },
+  "spacing": {
+   "0": {
+    "var": "--spacing-0",
+    "type": "dimension"
+   },
+   "1": {
+    "var": "--spacing-1",
+    "type": "dimension"
+   },
+   "10": {
+    "var": "--spacing-10",
+    "type": "dimension"
+   },
+   "104": {
+    "var": "--spacing-104",
+    "type": "dimension"
+   },
+   "12": {
+    "var": "--spacing-12",
+    "type": "dimension"
+   },
+   "120": {
+    "var": "--spacing-120",
+    "type": "dimension"
+   },
+   "128": {
+    "var": "--spacing-128",
+    "type": "dimension"
+   },
+   "14": {
+    "var": "--spacing-14",
+    "type": "dimension"
+   },
+   "144": {
+    "var": "--spacing-144",
+    "type": "dimension"
+   },
+   "16": {
+    "var": "--spacing-16",
+    "type": "dimension"
+   },
+   "160": {
+    "var": "--spacing-160",
+    "type": "dimension"
+   },
+   "18": {
+    "var": "--spacing-18",
+    "type": "dimension"
+   },
+   "2": {
+    "var": "--spacing-2",
+    "type": "dimension"
+   },
+   "20": {
+    "var": "--spacing-20",
+    "type": "dimension"
+   },
+   "210": {
+    "var": "--spacing-210",
+    "type": "dimension"
+   },
+   "22": {
+    "var": "--spacing-22",
+    "type": "dimension"
+   },
+   "24": {
+    "var": "--spacing-24",
+    "type": "dimension"
+   },
+   "248": {
+    "var": "--spacing-248",
+    "type": "dimension"
+   },
+   "26": {
+    "var": "--spacing-26",
+    "type": "dimension"
+   },
+   "28": {
+    "var": "--spacing-28",
+    "type": "dimension"
+   },
+   "3": {
+    "var": "--spacing-3",
+    "type": "dimension"
+   },
+   "30": {
+    "var": "--spacing-30",
+    "type": "dimension"
+   },
+   "32": {
+    "var": "--spacing-32",
+    "type": "dimension"
+   },
+   "34": {
+    "var": "--spacing-34",
+    "type": "dimension"
+   },
+   "36": {
+    "var": "--spacing-36",
+    "type": "dimension"
+   },
+   "38": {
+    "var": "--spacing-38",
+    "type": "dimension"
+   },
+   "4": {
+    "var": "--spacing-4",
+    "type": "dimension"
+   },
+   "40": {
+    "var": "--spacing-40",
+    "type": "dimension"
+   },
+   "42": {
+    "var": "--spacing-42",
+    "type": "dimension"
+   },
+   "44": {
+    "var": "--spacing-44",
+    "type": "dimension"
+   },
+   "48": {
+    "var": "--spacing-48",
+    "type": "dimension"
+   },
+   "5": {
+    "var": "--spacing-5",
+    "type": "dimension"
+   },
+   "56": {
+    "var": "--spacing-56",
+    "type": "dimension"
+   },
+   "6": {
+    "var": "--spacing-6",
+    "type": "dimension"
+   },
+   "64": {
+    "var": "--spacing-64",
+    "type": "dimension"
+   },
+   "680": {
+    "var": "--spacing-680",
+    "type": "dimension"
+   },
+   "72": {
+    "var": "--spacing-72",
+    "type": "dimension"
+   },
+   "8": {
+    "var": "--spacing-8",
+    "type": "dimension"
+   },
+   "80": {
+    "var": "--spacing-80",
+    "type": "dimension"
+   },
+   "96": {
+    "var": "--spacing-96",
+    "type": "dimension"
+   }
+  },
+  "text": {
+   "12": {
+    "var": "--text-12",
+    "type": "dimension"
+   },
+   "16": {
+    "var": "--text-16",
+    "type": "dimension"
+   },
+   "18": {
+    "var": "--text-18",
+    "type": "dimension"
+   },
+   "20": {
+    "var": "--text-20",
+    "type": "dimension"
+   },
+   "22": {
+    "var": "--text-22",
+    "type": "dimension"
+   },
+   "24": {
+    "var": "--text-24",
+    "type": "dimension"
+   },
+   "26": {
+    "var": "--text-26",
+    "type": "dimension"
+   },
+   "28": {
+    "var": "--text-28",
+    "type": "dimension"
+   },
+   "32": {
+    "var": "--text-32",
+    "type": "dimension"
+   },
+   "36": {
+    "var": "--text-36",
+    "type": "dimension"
+   },
+   "40": {
+    "var": "--text-40",
+    "type": "dimension"
+   },
+   "60": {
+    "var": "--text-60",
+    "type": "dimension"
+   }
+  },
+  "tracking": {
+   "tighter": {
+    "var": "--tracking-tighter",
+    "type": "other"
+   },
+   "wide": {
+    "var": "--tracking-wide",
+    "type": "other"
+   }
+  },
+  "typography": {
+   "display": {
+    "$value": {
+     "fontFamily": "{font.family.ui}",
+     "fontSize": "28px",
+     "lineHeight": "34px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of plp-title default (raw/components-computed.json); the 28px category/hero heading"
+    }
+   },
+   "title": {
+    "$value": {
+     "fontFamily": "{font.family.ui}",
+     "fontSize": "22px",
+     "lineHeight": "28px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of tile-label default (raw/components-computed.json); the 22px campaign tile label"
+    }
+   },
+   "body": {
+    "$value": {
+     "fontFamily": "{font.family.ui}",
+     "fontSize": "16px",
+     "lineHeight": "24px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of nav-item default (raw/components-computed.json); the 16px UI line (nav, prices, buttons)"
+    }
+   },
+   "button": {
+    "$value": {
+     "fontFamily": "{font.family.ui}",
+     "fontSize": "20px",
+     "lineHeight": "16px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of consent-accept default (raw/components-computed.json); the 20px large-CTA label"
+    }
+   },
+   "small": {
+    "$value": {
+     "fontFamily": "{font.family.small-caps}",
+     "fontSize": "16px",
+     "lineHeight": "16px",
+     "fontWeight": 400,
+     "letterSpacing": "0em"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed type of more-colors default (raw/components-computed.json); the small-caps chip text (\"+2\")"
+    }
+   }
+  }
+ },
+ "light": {
+  "page": {
+   "var": "--color-white",
+   "type": "color",
+   "description": "The page field: pure white."
+  },
+  "surface": {
+   "var": "--color-beige",
+   "type": "color",
+   "description": "The warm ARKET beige (#faf8f3): notice and promo bands, editorial washes."
+  },
+  "surface-2": {
+   "var": "--color-grey-light",
+   "type": "color",
+   "description": "The light grey panel tone (#f5f5f5)."
+  },
+  "field": {
+   "var": "--color-grey-light-extra",
+   "type": "color",
+   "description": "The input fill (#f9f9f9), e.g. the header search field."
+  },
+  "text": {
+   "var": "--color-black",
+   "type": "color",
+   "description": "The ink: pure black text and black button fills."
+  },
+  "muted": {
+   "var": "--color-grey-dark",
+   "type": "color",
+   "description": "Secondary ink (#767676): field borders, placeholders-as-border, helper text."
+  },
+  "accent": {
+   "var": "--color-blue",
+   "type": "color",
+   "description": "The link/action blue (#0851bd), used sparingly."
+  },
+  "border": {
+   "var": "--color-grey-mid",
+   "type": "color",
+   "description": "The hairline (#eaeae8): nav drawers, dividers, footer rules."
+  },
+  "border-strong": {
+   "var": "--color-ingrid-border",
+   "type": "color",
+   "description": "The darker hairline (#b4b4b4) used on stronger dividers."
+  },
+  "ink": {
+   "var": "--color-black",
+   "type": "color",
+   "description": "Primary button fill (consent CTAs, filter hover, continue)."
+  },
+  "on-ink": {
+   "var": "--color-white",
+   "type": "color",
+   "description": "Text on the black buttons."
+  },
+  "danger": {
+   "var": "--color-red",
+   "type": "color",
+   "description": "Sale/error red (#d80404)."
+  },
+  "success": {
+   "var": "--color-green",
+   "type": "color",
+   "description": "Confirmation green (#389d47), e.g. the location notice check."
+  },
+  "info": {
+   "var": "--color-blue",
+   "type": "color",
+   "description": "Informational blue."
+  },
+  "focus-ring": {
+   "value": "#005fcc",
+   "type": "color",
+   "source": "computed outlineColor on keyboard focus (raw/components-computed.json); arket.com declares no :focus-visible style of its own, so this is the browser's default 1px auto ring, not a product token",
+   "description": "The browser-default 1px #005fcc auto outline every measured control shows on keyboard focus."
+  },
+  "overlay": {
+   "var": "--color-overlay-beige",
+   "type": "color",
+   "description": "The warm dimmer behind drawers and dialogs (rgba(164,155,112,0.2))."
+  },
+  "sale": {
+   "var": "--color-alert-red",
+   "type": "color",
+   "description": "Alert red (#c12d0d) alongside --color-red."
+  }
+ },
+ "dark": {},
+ "component": {
+  "control": {
+   "height": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed height of filter-button default (raw/components-computed.json)",
+    "description": "Outlined controls (Filter/Sort/View) are 32px."
+   },
+   "buttonLarge": {
+    "type": "dimension",
+    "value": "56px",
+    "source": "computed height of consent-accept default (raw/components-computed.json)",
+    "description": "The large consent CTA is 56px."
+   },
+   "field": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of search-field default (raw/components-computed.json)",
+    "description": "The header search field is 40px."
+   },
+   "gateField": {
+    "type": "dimension",
+    "value": "60px",
+    "source": "computed height of gate-field default (raw/components-computed.json)",
+    "description": "The account gate field is 60px."
+   },
+   "iconButton": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed height of card-img-prev default (raw/components-computed.json)",
+    "description": "The card carousel arrows are 36px."
+   }
+  },
+  "nav": {
+   "height": {
+    "type": "dimension",
+    "value": "30px",
+    "source": "computed height of nav-item default (raw/components-computed.json)",
+    "description": "Nav items are 30px."
+   }
+  },
+  "shell": {
+   "header": {
+    "type": "dimension",
+    "value": "120px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The sticky header block at 1440."
+   }
+  },
+  "drawer": {
+   "width": {
+    "type": "dimension",
+    "value": "538px",
+    "source": "computed width of cart-drawer default (raw/components-computed.json)",
+    "description": "Drawers (cart, filter, location) are 538px at 1440."
+   }
+  },
+  "consent": {
+   "width": {
+    "type": "dimension",
+    "value": "343px",
+    "source": "computed width of consent-card default (raw/components-computed.json)",
+    "description": "The consent card is ~344px."
+   }
+  },
+  "footer": {
+   "linkHeight": {
+    "type": "dimension",
+    "value": "28px",
+    "source": "computed height of footer-link default (raw/components-computed.json)",
+    "description": "Footer link rows."
+   }
+  },
+  "menu": {
+   "linkHeight": {
+    "type": "dimension",
+    "value": "52px",
+    "source": "computed height of m-nav-link default (raw/components-computed.json)",
+    "description": "The 52px mobile menu rows."
+   }
+  }
+ }
+}

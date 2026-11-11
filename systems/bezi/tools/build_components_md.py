@@ -162,7 +162,47 @@ def props(v):
     return o
 
 
-ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "wrapper", "text", "transition", "transform", "opacity", "icon", "placeholder"]
+ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow", "outline", "wrapper", "text", "transition", "transform", "opacity", "icon", "placeholder", "child paint"]
+
+
+def paint_sig(v):
+    """(node, bg, bgImage, border, radius, shadow, outline) per painted child or
+    pseudo layer — Framer repaints these on state changes without touching the
+    root's computed style, so they must join the state diff."""
+    return [
+        (p.get("node"), p.get("size"), p.get("bg"), p.get("bgImage"), p.get("border"), p.get("radius"), p.get("shadow"), p.get("outline"))
+        for p in (v.get("paint") or [])
+    ]
+
+
+def paint_diff(cur, base):
+    """Describe the painted layers that changed vs the base state, by node. A
+    layer that only exists in this state is listed with its attributes."""
+    bmap = {p[0]: p[1:] for p in base}
+    out = []
+    for node, *vals in cur:
+        old = bmap.get(node)
+        fields = ("size", "bg", "bgImage", "border", "radius", "shadow", "outline")
+        bits = []
+        if old is None:
+            vals_to_show = vals
+        else:
+            vals_to_show = tuple(nv if nv != bv else None for nv, bv in zip(vals, old))
+            if not any(vals_to_show):
+                continue
+        for f, nv in zip(fields, vals_to_show):
+            if not nv:
+                continue
+            if f == "bg":
+                bits.append("background " + colour(nv))
+            elif f == "border":
+                bits.append("border " + colour(str(nv).split(" | ")[0][2:]))
+            elif f == "outline":
+                bits.append("outline " + nv)
+            else:
+                bits.append(f"{f} {nv}")
+        out.append(f"{node}: " + "; ".join(bits or ["changed"]))
+    return "; ".join(out)
 
 
 def state_rows(c):
@@ -170,11 +210,15 @@ def state_rows(c):
     if not states:
         return [], states
     base = props(c["states"][states[0]])
+    base_paint = paint_sig(c["states"][states[0]])
     rows = [(states[0], base)]
     same = []
     for st in states[1:]:
         p = props(c["states"][st])
         diff = {k: p[k] for k in ORDER if k in p and p.get(k) != base.get(k)}
+        pd = paint_diff(paint_sig(c["states"][st]), base_paint)
+        if pd:
+            diff["child paint"] = pd
         for k in ORDER:
             if k in base and k not in p:
                 diff[k] = "none"
@@ -277,7 +321,7 @@ W(f"- Crops are images of the component read from the live page, in [components/
 W()
 W("## Discovery list")
 W()
-W("Screenshots are named `{page}-dark-{state}.png`: the site paints one dark theme. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at 1x; mobile shots are `mobile-{page}-dark-{state}.png`, 780 wide (390 at 2x).")
+W("Screenshots are named `{page}-dark-{state}.png`: the site paints one dark theme. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages (1x on desktop, 2x on mobile); mobile shots are `mobile-{page}-dark-{state}.png`, 780 wide (390 at 2x).")
 W()
 W("| Surface | URL | Screenshots |")
 W("|---|---|---|")
@@ -321,7 +365,16 @@ for k, c in C.items():
         changed = [f for f in ("boxShadow", "borderTopColor", "backgroundColor", "color") if s.get(f) != base.get(f)]
         foc.append((k, "visible change in " + "/".join(changed)))
     else:
-        foc.append((k, None))
+        # A child layer can paint the ring: the CTA's inner anchor picks up the
+        # browser's auto outline on focus-visible, so compare painted outlines
+        # between the focused and default states before calling it no-change.
+        def rings(v):
+            return {p.get("node"): p.get("outline") for p in ((v or {}).get("paint") or []) if p.get("outline")}
+        new = {n: o for n, o in rings(st).items() if rings(c["states"].get("default")).get(n) != o}
+        if new:
+            foc.append((k, "; ".join(f"{o} on {n}" for n, o in list(new.items())[:2]) + " (child layer)"))
+        else:
+            foc.append((k, None))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
 line = f"**Focus.** {len(foc)} components were given a real keyboard focus"

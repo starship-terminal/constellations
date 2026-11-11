@@ -1,0 +1,3380 @@
+{
+ "readAt": "2026-11-11",
+ "source": "the stylesheet bodies fetched during a live home load on www.avnier.com (response bodies plus the page's inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class (unbound on this site), at 1440 x 900",
+ "sheets": [
+  "https://avnier.com/cdn/shop/t/48/assets/base.css (38299 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/base_v2.css (31058 bytes)",
+  "https://unpkg.com/aos@2.3.1/dist/aos.css (26053 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/swiper.css (15645 bytes)",
+  "https://avnier.com/cdn/shopifycloud/portable-wallets/latest/accelerated-checkout-backwards-compat.css (13728 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/component-predictive-search.css (3470 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/w-header.css (5443 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/v2-slideshow.css (3214 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/component-rating.css (991 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/shipping-popup.css (1183 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/v2-sidecart.css (5254 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/component-list-menu.css (493 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/component-search.css (238 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/component-menu-drawer.css (10460 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/component-cart-notification.css (1733 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/component-toggle.css (5729 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/component-card.css (4802 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/v2-double-image-text.css (1036 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/v2-footer.css (5663 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/component-cart-items.css (4203 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/component-price.css (2198 bytes)",
+  "https://avnier.com/cdn/shop/t/48/assets/component-loading-overlay.css (1037 bytes)",
+  "https://fonts.googleapis.com/css2 (31957 bytes)",
+  "https://fonts.axept.io/fonts.googleapis.com/css (9468 bytes)",
+  "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css (27910 bytes)",
+  "inline-0 (51 bytes)",
+  "inline-1 (421 bytes)",
+  "inline-2 (2876 bytes)",
+  "inline-3 (2012 bytes)",
+  "inline-4 (2193 bytes)",
+  "inline-5 (7090 bytes)",
+  "inline-6 (4797 bytes)",
+  "inline-7 (11950 bytes)",
+  "inline-8 (180 bytes)",
+  "inline-9 (337 bytes)",
+  "inline-10 (785 bytes)",
+  "inline-11 (81 bytes)",
+  "inline-12 (135 bytes)",
+  "inline-13 (734 bytes)",
+  "inline-14 (523 bytes)",
+  "inline-15 (523 bytes)",
+  "inline-16 (466 bytes)",
+  "inline-17 (466 bytes)",
+  "inline-18 (37 bytes)",
+  "inline-19 (97 bytes)",
+  "inline-20 (1706 bytes)",
+  "inline-21 (1005 bytes)",
+  "inline-22 (2122 bytes)",
+  "inline-23 (0 bytes)",
+  "inline-24 (709 bytes)",
+  "inline-25 (709 bytes)",
+  "inline-26 (709 bytes)",
+  "inline-27 (709 bytes)",
+  "inline-28 (709 bytes)",
+  "inline-29 (709 bytes)",
+  "inline-30 (709 bytes)",
+  "inline-31 (709 bytes)",
+  "inline-32 (709 bytes)",
+  "inline-33 (709 bytes)",
+  "inline-34 (709 bytes)",
+  "inline-35 (709 bytes)",
+  "inline-36 (709 bytes)",
+  "inline-37 (709 bytes)",
+  "inline-38 (709 bytes)",
+  "inline-39 (709 bytes)",
+  "inline-40 (708 bytes)",
+  "inline-41 (236 bytes)",
+  "inline-42 (146 bytes)",
+  "inline-43 (146 bytes)",
+  "inline-44 (758 bytes)",
+  "inline-45 (1208 bytes)",
+  "inline-46 (66 bytes)"
+ ],
+ "counts": {
+  "rules": 66,
+  "fonts": 130,
+  "names": {
+   "generated": 1,
+   "app": 43,
+   "vendor": 80,
+   "utility": 0,
+   "tailwind": 55
+  },
+  "bySelector": {
+   "[app] :root, .color-background-1": 12,
+   "[app] .color-background-2": 2,
+   "[app] .color-inverse": 4,
+   "[app] .color-accent-1": 3,
+   "[app] .color-accent-2": 3,
+   "[app] .color-foreground-outline-button": 1,
+   "[app] .color-foreground-accent-1": 1,
+   "[app] .color-foreground-accent-2": 1,
+   "[app] .color-background-2, .color-inverse, .color-accent-1, .color-accent-2": 7,
+   "[app] .button--secondary": 3,
+   "[app] .color-background-2 .button--secondary, .color-inverse .button--secondary, .color-accent-1 .button--secondary, .color-accent-2 .button--secondary": 2,
+   "[app] .button--tertiary": 4,
+   "[app] .color-background-2 .button--tertiary, .color-inverse .button--tertiary, .color-accent-1 .button--tertiary, .color-accent-2 .button--tertiary": 2,
+   "[app] :root, .color-background-1, .color-background-2": 1,
+   "[app] .color-accent-1, .color-accent-2": 1,
+   "[app] :root, .color-icon-text": 1,
+   "[app] .color-icon-accent-1": 1,
+   "[app] .color-icon-accent-2": 1,
+   "[app] .color-icon-outline-button": 1,
+   "[app] :root": 27,
+   "[vendor] :root": 79,
+   "[vendor] .swiper-lazy-preloader-white": 1,
+   "[vendor] .swiper-lazy-preloader-black": 1,
+   "[app] .product .rating-star": 2,
+   "[app] .card-wrapper .rating-star": 2,
+   "[generated] .rating-star": 1,
+   "[tailwind] *, ::before, ::after": 51,
+   "[tailwind] ::backdrop": 51,
+   "[tailwind] ::before, ::after": 1,
+   "[tailwind] .-translate-x-1\\/2": 1,
+   "[tailwind] .-translate-x-full": 1,
+   "[tailwind] .-translate-y-1\\/2": 1,
+   "[tailwind] .rotate-180": 1,
+   "[tailwind] .divide-y > :not([hidden]) ~ :not([hidden])": 1,
+   "[tailwind] .bg-blue-600": 1,
+   "[tailwind] .bg-white": 1,
+   "[tailwind] .text-\\[\\#6D7175\\]": 1,
+   "[tailwind] .shadow-lg": 2,
+   "[tailwind] .blur": 1,
+   "[tailwind] .peer:focus-visible ~ .peer-focus-visible\\:ring-2": 2,
+   "[tailwind] .peer:focus-visible ~ .peer-focus-visible\\:ring-offset-1": 1,
+   "[vendor] .ll-dark-mode": 15,
+   "[vendor] @media (max-width: 900px) .loloyal-core-popup-overlay.device-desktop": 1,
+   "[vendor] @media (max-width: 800px) .loloyal-core-popup-overlay.device-desktop": 1,
+   "[vendor] @media (max-width: 700px) .loloyal-core-popup-overlay.device-desktop": 1,
+   "[vendor] @media (max-width: 550px) .loloyal-core-popup-overlay.device-desktop": 1,
+   "[vendor] @media (max-width: 400px) .loloyal-core-popup-overlay.device-desktop": 1,
+   "[vendor] @media (max-width: 350px) .loloyal-core-popup-overlay.device-mobile": 1,
+   "[vendor] @container mounted (width <= 799px) .loloyal-core-popup-overlay.mounted-mode.device-desktop .loloyal-core-popup-container": 1,
+   "[vendor] @container mounted (width <= 750px) .loloyal-core-popup-overlay.mounted-mode.device-desktop .loloyal-core-popup-container": 1,
+   "[vendor] @container mounted (width <= 700px) .loloyal-core-popup-overlay.mounted-mode.device-desktop .loloyal-core-popup-container": 1,
+   "[vendor] @container mounted (width <= 650px) .loloyal-core-popup-overlay.mounted-mode.device-desktop .loloyal-core-popup-container": 1,
+   "[vendor] @container mounted (width <= 585px) .loloyal-core-popup-overlay.mounted-mode.device-desktop .loloyal-core-popup-container": 1,
+   "[vendor] @container mounted (width <= 540px) .loloyal-core-popup-overlay.mounted-mode.device-desktop .loloyal-core-popup-container": 1,
+   "[vendor] @container mounted (width <= 400px) .loloyal-core-popup-overlay.mounted-mode.device-desktop .loloyal-core-popup-container": 1
+  }
+ },
+ "errors": [],
+ "generated": [
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/component-rating.css",
+   "selector": ".rating-star",
+   "context": [],
+   "properties": {
+    "--percent": "calc( ( var(--rating) / var(--rating-max) + var(--rating-decimal) * var(--font-size) / (var(--rating-max) * (var(--letter-spacing) + var(--font-size))) ) * 100% )"
+   },
+   "bin": "generated"
+  }
+ ],
+ "app": [
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ":root, .color-background-1",
+   "context": [],
+   "properties": {
+    "--color-foreground": "var(--color-base-text)",
+    "--color-background": "var(--color-base-background-1)",
+    "--gradient-background": "var(--gradient-base-background-1)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".color-background-2",
+   "context": [],
+   "properties": {
+    "--color-background": "var(--color-base-background-2)",
+    "--gradient-background": "var(--gradient-base-background-2)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".color-inverse",
+   "context": [],
+   "properties": {
+    "--color-foreground": "var(--color-base-background-1)",
+    "--color-background": "var(--color-base-text)",
+    "--gradient-background": "rgb(var(--color-base-text))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".color-accent-1",
+   "context": [],
+   "properties": {
+    "--color-foreground": "var(--color-base-solid-button-labels)",
+    "--color-background": "var(--color-base-accent-1)",
+    "--gradient-background": "var(--gradient-base-accent-1)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".color-accent-2",
+   "context": [],
+   "properties": {
+    "--color-foreground": "var(--color-base-solid-button-labels)",
+    "--color-background": "var(--color-base-accent-2)",
+    "--gradient-background": "var(--gradient-base-accent-2)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".color-foreground-outline-button",
+   "context": [],
+   "properties": {
+    "--color-foreground": "var(--color-base-outline-button-labels)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".color-foreground-accent-1",
+   "context": [],
+   "properties": {
+    "--color-foreground": "var(--color-base-accent-1)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".color-foreground-accent-2",
+   "context": [],
+   "properties": {
+    "--color-foreground": "var(--color-base-accent-2)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ":root, .color-background-1",
+   "context": [],
+   "properties": {
+    "--color-link": "var(--color-base-outline-button-labels)",
+    "--alpha-link": ".85"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".color-background-2, .color-inverse, .color-accent-1, .color-accent-2",
+   "context": [],
+   "properties": {
+    "--color-link": "var(--color-foreground)",
+    "--alpha-link": ".7"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ":root, .color-background-1",
+   "context": [],
+   "properties": {
+    "--color-button": "var(--color-base-accent-1)",
+    "--color-button-text": "var(--color-base-solid-button-labels)",
+    "--alpha-button-background": "1",
+    "--alpha-button-border": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".color-background-2, .color-inverse, .color-accent-1, .color-accent-2",
+   "context": [],
+   "properties": {
+    "--color-button": "var(--color-foreground)",
+    "--color-button-text": "var(--color-background)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".button--secondary",
+   "context": [],
+   "properties": {
+    "--color-button": "var(--color-base-outline-button-labels)",
+    "--color-button-text": "var(--color-base-outline-button-labels)",
+    "--alpha-button-background": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".color-background-2 .button--secondary, .color-inverse .button--secondary, .color-accent-1 .button--secondary, .color-accent-2 .button--secondary",
+   "context": [],
+   "properties": {
+    "--color-button": "var(--color-foreground)",
+    "--color-button-text": "var(--color-foreground)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".button--tertiary",
+   "context": [],
+   "properties": {
+    "--color-button": "var(--color-base-outline-button-labels)",
+    "--color-button-text": "var(--color-base-outline-button-labels)",
+    "--alpha-button-background": "0",
+    "--alpha-button-border": ".2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".color-background-2 .button--tertiary, .color-inverse .button--tertiary, .color-accent-1 .button--tertiary, .color-accent-2 .button--tertiary",
+   "context": [],
+   "properties": {
+    "--color-button": "var(--color-foreground)",
+    "--color-button-text": "var(--color-foreground)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ":root, .color-background-1",
+   "context": [],
+   "properties": {
+    "--color-badge-background": "var(--color-background)",
+    "--color-badge-border": "var(--color-foreground)",
+    "--alpha-badge-border": ".1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".color-background-2, .color-inverse, .color-accent-1, .color-accent-2",
+   "context": [],
+   "properties": {
+    "--color-badge-background": "var(--color-background)",
+    "--color-badge-border": "var(--color-background)",
+    "--alpha-badge-border": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ":root, .color-background-1, .color-background-2",
+   "context": [],
+   "properties": {
+    "--color-card-hover": "var(--color-base-text)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".color-inverse",
+   "context": [],
+   "properties": {
+    "--color-card-hover": "var(--color-base-background-1)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".color-accent-1, .color-accent-2",
+   "context": [],
+   "properties": {
+    "--color-card-hover": "var(--color-base-solid-button-labels)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ":root, .color-icon-text",
+   "context": [],
+   "properties": {
+    "--color-icon": "rgb(var(--color-base-text))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".color-icon-accent-1",
+   "context": [],
+   "properties": {
+    "--color-icon": "rgb(var(--color-base-accent-1))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".color-icon-accent-2",
+   "context": [],
+   "properties": {
+    "--color-icon": "rgb(var(--color-base-accent-2))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ".color-icon-outline-button",
+   "context": [],
+   "properties": {
+    "--color-icon": "rgb(var(--color-base-outline-button-labels))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--duration-short": ".1s",
+    "--duration-default": ".2s",
+    "--duration-long": ".5s"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/component-rating.css",
+   "selector": ".product .rating-star",
+   "context": [],
+   "properties": {
+    "--letter-spacing": ".8",
+    "--font-size": "1.7"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/component-rating.css",
+   "selector": ".card-wrapper .rating-star",
+   "context": [],
+   "properties": {
+    "--letter-spacing": ".7",
+    "--font-size": "1.4"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-2",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--font-body-family": "'Space Mono', monospace",
+    "--font-body-style": "normal",
+    "--font-body-weight": "normal",
+    "--font-heading-family": "'avnier-font'",
+    "--font-heading-style": "normal",
+    "--font-heading-weight": "400",
+    "--font-body-scale": "1.0",
+    "--font-heading-scale": "1.0",
+    "--color-base-text": "0, 0, 0",
+    "--color-base-background-1": "255, 255, 255",
+    "--color-base-background-2": "243, 243, 243",
+    "--color-base-solid-button-labels": "255, 255, 255",
+    "--color-base-outline-button-labels": "0, 0, 0",
+    "--color-base-accent-1": "0, 0, 0",
+    "--color-base-accent-2": "0, 0, 0",
+    "--payment-terms-background-color": "#FFFFFF",
+    "--PredictiveSearchHover": "#faf6b5",
+    "--gradient-base-background-1": "#FFFFFF",
+    "--gradient-base-background-2": "#f3f3f3",
+    "--gradient-base-accent-1": "#000000",
+    "--gradient-base-accent-2": "#000000",
+    "--page-width": "160rem",
+    "--page-width-margin": "2rem",
+    "--navigation-offset-height": "''"
+   },
+   "bin": "app"
+  }
+ ],
+ "vendor": [
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/swiper.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--swiper-theme-color": "#007aff"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/swiper.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--swiper-navigation-size": "44px"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/swiper.css",
+   "selector": ".swiper-lazy-preloader-white",
+   "context": [],
+   "properties": {
+    "--swiper-preloader-color": "#fff"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/swiper.css",
+   "selector": ".swiper-lazy-preloader-black",
+   "context": [],
+   "properties": {
+    "--swiper-preloader-color": "#000"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--ll-body-bg": "var(--ll-bg-primary)",
+    "--ll-gary-body-bg": "var(--ll-bg-secondary)",
+    "--ll-card-bg": "var(--ll-bg-primary)",
+    "--ll-font-color": "var(--ll-text-primary)",
+    "--ll-desc-font-color": "var(--ll-text-secondary)",
+    "--ll-svg-default-color": "var(--ll-fg-primary)",
+    "--ll-cell-box-border-color": "var(--ll-bg-tertiary)",
+    "--ll-activity-bg-color": "var(--ll-bg-tertiary)",
+    "--ll-cover-box-bg": "color-mix(in srgb,var(--ll-bg-primary)60%,transparent)",
+    "--ll-click-hover-color": "var(--ll-bg-tertiary)",
+    "--ll-click-active-color": "var(--ll-bg-tertiary)",
+    "--ll-cell-shadow-color": "var(--ll-bg-tertiary)",
+    "--ll-divider-color": "var(--ll-border-primary)",
+    "--ll-prod-card-bg": "var(--ll-bg-tertiary)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--ll-alpha-300": "#0000001a",
+    "--ll-alpha-400": "#0003",
+    "--ll-alpha-500": "#0006",
+    "--ll-fg-brand-primary": "#007bfe",
+    "--ll-fg-brand-secondary": "#007bfe40",
+    "--ll-fg-error-primary": "#ff453a",
+    "--ll-fg-success-primary": "#20cc87",
+    "--ll-gray-100": "#f6f6f6",
+    "--ll-gray-200": "#ebebeb",
+    "--ll-gray-300": "#d9d9d9",
+    "--ll-gray-400": "#cdcdcd",
+    "--ll-gray-500": "#bbb",
+    "--ll-gray-50": "#f8f8f8",
+    "--ll-gray-25": "#fff",
+    "--ll-gray-600": "#989898",
+    "--ll-gray-700": "#666",
+    "--ll-gray-800": "#303030",
+    "--ll-gray-900": "#212121",
+    "--ll-gray-950": "#000",
+    "--ll-size-0": "0px",
+    "--ll-size-025": "2px",
+    "--ll-size-050": "4px",
+    "--ll-size-100": "8px",
+    "--ll-size-150": "12px",
+    "--ll-size-200": "16px",
+    "--ll-size-300": "24px",
+    "--ll-size-400": "32px",
+    "--ll-size-500": "40px",
+    "--ll-size-600": "48px",
+    "--ll-size-700": "56px",
+    "--ll-size-800": "64px",
+    "--ll-size-900": "72px",
+    "--ll-size-950": "999px",
+    "--ll-bg-primary": "var(--ll-gray-25)",
+    "--ll-bg-secondary": "var(--ll-gray-100)",
+    "--ll-bg-tertiary": "var(--ll-gray-200)",
+    "--ll-border-primary": "var(--ll-alpha-300)",
+    "--ll-fg-primary": "var(--ll-gray-950)",
+    "--ll-fg-quaternary": "var(--ll-gray-25)",
+    "--ll-fg-quinary": "var(--ll-gray-400)",
+    "--ll-fg-secondary": "var(--ll-gray-700)",
+    "--ll-fg-senary": "var(--ll-gray-200)",
+    "--ll-fg-tertiary": "var(--ll-gray-600)",
+    "--ll-fg-hover": "var(--ll-gray-50)",
+    "--ll-text-primary": "var(--ll-gray-950)",
+    "--ll-text-quaternary": "var(--ll-gray-25)",
+    "--ll-text-secondary": "var(--ll-alpha-500)",
+    "--ll-text-tertiary": "var(--ll-alpha-400)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css",
+   "selector": ".ll-dark-mode",
+   "context": [],
+   "properties": {
+    "--ll-bg-primary": "var(--ll-gray-950)",
+    "--ll-bg-secondary": "var(--ll-gray-900)",
+    "--ll-bg-tertiary": "var(--ll-gray-800)",
+    "--ll-border-primary": "var(--ll-gray-800)",
+    "--ll-fg-primary": "var(--ll-gray-25)",
+    "--ll-fg-quaternary": "var(--ll-gray-25)",
+    "--ll-fg-quinary": "var(--ll-gray-700)",
+    "--ll-fg-secondary": "var(--ll-gray-700)",
+    "--ll-fg-senary": "var(--ll-gray-700)",
+    "--ll-fg-tertiary": "var(--ll-gray-700)",
+    "--ll-fg-hover": "var(--ll-gray-900)",
+    "--ll-text-primary": "var(--ll-gray-25)",
+    "--ll-text-quaternary": "var(--ll-gray-25)",
+    "--ll-text-secondary": "var(--ll-gray-600)",
+    "--ll-text-tertiary": "var(--ll-gray-500)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-7",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--ll-error-color": "#ff453a",
+    "--ll-title-color": "#000",
+    "--ll-desc-color": "#767676",
+    "--ll-border-color": "#0000001a",
+    "--ll-popup-bg": "#fff",
+    "--ll-popup-shape": "16px",
+    "--ll-popup-shadow": "#00000026",
+    "--ll-backdrop-bg": "#0009",
+    "--ll-backdrop-blur": "4px",
+    "--ll-close-btn-color": "gray",
+    "--ll-btn-disabled-bg": "#cdcdcd",
+    "--ll-popup-scale": "1",
+    "--ll-core-popup-layout-width": "800px",
+    "--ll-popup-layout-vertical-width": "800px",
+    "--ll-core-popup-content-container-width": "50%"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-7",
+   "selector": ".loloyal-core-popup-overlay.device-desktop",
+   "context": [
+    "@media (max-width: 900px)"
+   ],
+   "properties": {
+    "--ll-popup-scale": ".95"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-7",
+   "selector": ".loloyal-core-popup-overlay.device-desktop",
+   "context": [
+    "@media (max-width: 800px)"
+   ],
+   "properties": {
+    "--ll-popup-scale": ".85"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-7",
+   "selector": ".loloyal-core-popup-overlay.device-desktop",
+   "context": [
+    "@media (max-width: 700px)"
+   ],
+   "properties": {
+    "--ll-popup-scale": ".7"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-7",
+   "selector": ".loloyal-core-popup-overlay.device-desktop",
+   "context": [
+    "@media (max-width: 550px)"
+   ],
+   "properties": {
+    "--ll-popup-scale": ".9"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-7",
+   "selector": ".loloyal-core-popup-overlay.device-desktop",
+   "context": [
+    "@media (max-width: 400px)"
+   ],
+   "properties": {
+    "--ll-popup-scale": ".8"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-7",
+   "selector": ".loloyal-core-popup-overlay.device-mobile",
+   "context": [
+    "@media (max-width: 350px)"
+   ],
+   "properties": {
+    "--ll-popup-scale": ".9"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-7",
+   "selector": ".loloyal-core-popup-overlay.mounted-mode.device-desktop .loloyal-core-popup-container",
+   "context": [
+    "@container mounted (width <= 799px)"
+   ],
+   "properties": {
+    "--ll-popup-scale": ".9"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-7",
+   "selector": ".loloyal-core-popup-overlay.mounted-mode.device-desktop .loloyal-core-popup-container",
+   "context": [
+    "@container mounted (width <= 750px)"
+   ],
+   "properties": {
+    "--ll-popup-scale": ".85"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-7",
+   "selector": ".loloyal-core-popup-overlay.mounted-mode.device-desktop .loloyal-core-popup-container",
+   "context": [
+    "@container mounted (width <= 700px)"
+   ],
+   "properties": {
+    "--ll-popup-scale": ".8"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-7",
+   "selector": ".loloyal-core-popup-overlay.mounted-mode.device-desktop .loloyal-core-popup-container",
+   "context": [
+    "@container mounted (width <= 650px)"
+   ],
+   "properties": {
+    "--ll-popup-scale": ".75"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-7",
+   "selector": ".loloyal-core-popup-overlay.mounted-mode.device-desktop .loloyal-core-popup-container",
+   "context": [
+    "@container mounted (width <= 585px)"
+   ],
+   "properties": {
+    "--ll-popup-scale": ".65"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-7",
+   "selector": ".loloyal-core-popup-overlay.mounted-mode.device-desktop .loloyal-core-popup-container",
+   "context": [
+    "@container mounted (width <= 540px)"
+   ],
+   "properties": {
+    "--ll-popup-scale": ".5"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-7",
+   "selector": ".loloyal-core-popup-overlay.mounted-mode.device-desktop .loloyal-core-popup-container",
+   "context": [
+    "@container mounted (width <= 400px)"
+   ],
+   "properties": {
+    "--ll-popup-scale": ".4"
+   },
+   "bin": "vendor"
+  }
+ ],
+ "utility": [],
+ "tailwind": [
+  {
+   "file": "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css",
+   "selector": "*, ::before, ::after",
+   "context": [],
+   "properties": {
+    "--tw-border-spacing-x": "0",
+    "--tw-border-spacing-y": "0",
+    "--tw-translate-x": "0",
+    "--tw-translate-y": "0",
+    "--tw-rotate": "0",
+    "--tw-skew-x": "0",
+    "--tw-skew-y": "0",
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1",
+    "--tw-pan-x": "",
+    "--tw-pan-y": "",
+    "--tw-pinch-zoom": "",
+    "--tw-scroll-snap-strictness": "proximity",
+    "--tw-gradient-from-position": "",
+    "--tw-gradient-via-position": "",
+    "--tw-gradient-to-position": "",
+    "--tw-ordinal": "",
+    "--tw-slashed-zero": "",
+    "--tw-numeric-figure": "",
+    "--tw-numeric-spacing": "",
+    "--tw-numeric-fraction": "",
+    "--tw-ring-inset": "",
+    "--tw-ring-offset-width": "0px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-color": "#3b82f680",
+    "--tw-ring-offset-shadow": "0 0 #0000",
+    "--tw-ring-shadow": "0 0 #0000",
+    "--tw-shadow": "0 0 #0000",
+    "--tw-shadow-colored": "0 0 #0000",
+    "--tw-blur": "",
+    "--tw-brightness": "",
+    "--tw-contrast": "",
+    "--tw-grayscale": "",
+    "--tw-hue-rotate": "",
+    "--tw-invert": "",
+    "--tw-saturate": "",
+    "--tw-sepia": "",
+    "--tw-drop-shadow": "",
+    "--tw-backdrop-blur": "",
+    "--tw-backdrop-brightness": "",
+    "--tw-backdrop-contrast": "",
+    "--tw-backdrop-grayscale": "",
+    "--tw-backdrop-hue-rotate": "",
+    "--tw-backdrop-invert": "",
+    "--tw-backdrop-opacity": "",
+    "--tw-backdrop-saturate": "",
+    "--tw-backdrop-sepia": "",
+    "--tw-contain-size": "",
+    "--tw-contain-layout": "",
+    "--tw-contain-paint": "",
+    "--tw-contain-style": ""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css",
+   "selector": "::backdrop",
+   "context": [],
+   "properties": {
+    "--tw-border-spacing-x": "0",
+    "--tw-border-spacing-y": "0",
+    "--tw-translate-x": "0",
+    "--tw-translate-y": "0",
+    "--tw-rotate": "0",
+    "--tw-skew-x": "0",
+    "--tw-skew-y": "0",
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1",
+    "--tw-pan-x": "",
+    "--tw-pan-y": "",
+    "--tw-pinch-zoom": "",
+    "--tw-scroll-snap-strictness": "proximity",
+    "--tw-gradient-from-position": "",
+    "--tw-gradient-via-position": "",
+    "--tw-gradient-to-position": "",
+    "--tw-ordinal": "",
+    "--tw-slashed-zero": "",
+    "--tw-numeric-figure": "",
+    "--tw-numeric-spacing": "",
+    "--tw-numeric-fraction": "",
+    "--tw-ring-inset": "",
+    "--tw-ring-offset-width": "0px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-color": "#3b82f680",
+    "--tw-ring-offset-shadow": "0 0 #0000",
+    "--tw-ring-shadow": "0 0 #0000",
+    "--tw-shadow": "0 0 #0000",
+    "--tw-shadow-colored": "0 0 #0000",
+    "--tw-blur": "",
+    "--tw-brightness": "",
+    "--tw-contrast": "",
+    "--tw-grayscale": "",
+    "--tw-hue-rotate": "",
+    "--tw-invert": "",
+    "--tw-saturate": "",
+    "--tw-sepia": "",
+    "--tw-drop-shadow": "",
+    "--tw-backdrop-blur": "",
+    "--tw-backdrop-brightness": "",
+    "--tw-backdrop-contrast": "",
+    "--tw-backdrop-grayscale": "",
+    "--tw-backdrop-hue-rotate": "",
+    "--tw-backdrop-invert": "",
+    "--tw-backdrop-opacity": "",
+    "--tw-backdrop-saturate": "",
+    "--tw-backdrop-sepia": "",
+    "--tw-contain-size": "",
+    "--tw-contain-layout": "",
+    "--tw-contain-paint": "",
+    "--tw-contain-style": ""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css",
+   "selector": "::before, ::after",
+   "context": [],
+   "properties": {
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css",
+   "selector": ".-translate-x-1\\/2",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "-50%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css",
+   "selector": ".-translate-x-full",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "-100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css",
+   "selector": ".-translate-y-1\\/2",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-50%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css",
+   "selector": ".rotate-180",
+   "context": [],
+   "properties": {
+    "--tw-rotate": "180deg"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css",
+   "selector": ".divide-y > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-divide-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css",
+   "selector": ".bg-blue-600",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css",
+   "selector": ".bg-white",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css",
+   "selector": ".text-\\[\\#6D7175\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css",
+   "selector": ".shadow-lg",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 10px 15px -3px #0000001a,0 4px 6px -4px #0000001a",
+    "--tw-shadow-colored": "0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css",
+   "selector": ".blur",
+   "context": [],
+   "properties": {
+    "--tw-blur": "blur(8px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css",
+   "selector": ".peer:focus-visible ~ .peer-focus-visible\\:ring-2",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset)0 0 0 var(--tw-ring-offset-width)var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset)0 0 0 calc(2px + var(--tw-ring-offset-width))var(--tw-ring-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://static.loloyal.com/loloyal-cend/widget/static/css/index.e77885e7.css",
+   "selector": ".peer:focus-visible ~ .peer-focus-visible\\:ring-offset-1",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-width": "1px"
+   },
+   "bin": "tailwind"
+  }
+ ],
+ "fonts": [
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base_v2.css",
+   "font-family": "avnier-font",
+   "src": "url(\"https://cdn.shopify.com/s/files/1/0624/5895/3947/files/avnier-font.woff2?v=1645447115\") format(\"woff2\"), url(\"https://cdn.shopify.com/s/files/1/0624/5895/3947/files/avnier-font.woff?v=1645447115\") format(\"woff\"), url(\"https://cdn.shopify.com/s/files/1/0624/5895/3947/files/avnier-font.ttf?v=1645447115\") format(\"truetype\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base_v2.css",
+   "font-family": "\"Space Mono\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/spacemono/v11/i7dNIFZifjKcF5UAWdDRYERMSHK_MQacb0yG.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base_v2.css",
+   "font-family": "\"Space Mono\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/spacemono/v11/i7dNIFZifjKcF5UAWdDRYERMSXK_MQacb0yG.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-24F, U+259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base_v2.css",
+   "font-family": "\"Space Mono\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/spacemono/v11/i7dNIFZifjKcF5UAWdDRYERMR3K_MQacbw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base_v2.css",
+   "font-family": "\"Space Mono\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/spacemono/v11/i7dSIFZifjKcF5UAWdDRYERE_FeqEySRRXaPY-je.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base_v2.css",
+   "font-family": "\"Space Mono\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/spacemono/v11/i7dSIFZifjKcF5UAWdDRYERE_FeqEiSRRXaPY-je.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-24F, U+259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base_v2.css",
+   "font-family": "\"Space Mono\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/spacemono/v11/i7dSIFZifjKcF5UAWdDRYERE_FeqHCSRRXaPYw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base_v2.css",
+   "font-family": "\"Space Mono\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/spacemono/v11/i7dPIFZifjKcF5UAWdDRYE58RXi4EwSsbg.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base_v2.css",
+   "font-family": "\"Space Mono\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/spacemono/v11/i7dPIFZifjKcF5UAWdDRYE98RXi4EwSsbg.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-24F, U+259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base_v2.css",
+   "font-family": "\"Space Mono\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/spacemono/v11/i7dPIFZifjKcF5UAWdDRYEF8RXi4EwQ.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base_v2.css",
+   "font-family": "\"Space Mono\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/spacemono/v11/i7dMIFZifjKcF5UAWdDRaPpZUFqaHi6WZ3S_Yg.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base_v2.css",
+   "font-family": "\"Space Mono\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/spacemono/v11/i7dMIFZifjKcF5UAWdDRaPpZUFuaHi6WZ3S_Yg.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-24F, U+259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/base_v2.css",
+   "font-family": "\"Space Mono\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/spacemono/v11/i7dMIFZifjKcF5UAWdDRaPpZUFWaHi6WZ3Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://avnier.com/cdn/shop/t/48/assets/swiper.css",
+   "font-family": "swiper-icons",
+   "src": "url(\"data:application/font-woff;charset=utf-8;base64, d09GRgABAAAAAAZgABAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAGRAAAABoAAAAci6qHkUdERUYAAAWgAAAAIwAAACQAYABXR1BPUwAABhQAAAAuAAAANuAY7+xHU1VCAAAFxAAAAFAAAABm2fPczU9TLzIAAAHcAAAASgAAAGBP9V5RY21hcAAAAkQAAACIAAABYt6F0cBjdnQgAAACzAAAAAQAAAAEABEBRGdhc3AAAAWYAAAACAAAAAj//wADZ2x5ZgAAAywAAADMAAAD2MHtryVoZWFkAAABbAAAADAAAAA2E2+eoWhoZWEAAAGcAAAAHwAAACQC9gDzaG10eAAAAigAAAAZAAAArgJkABFsb2NhAAAC0AAAAFoAAABaFQAUGG1heHAAAAG8AAAAHwAAACAAcABAbmFtZQAAA/gAAAE5AAACXvFdBwlwb3N0AAAFNAAAAGIAAACE5s74hXjaY2BkYGAAYpf5Hu/j+W2+MnAzMYDAzaX6QjD6/4//Bxj5GA8AuRwMYGkAPywL13jaY2BkYGA88P8Agx4j+/8fQDYfA1AEBWgDAIB2BOoAeNpjYGRgYNBh4GdgYgABEMnIABJzYNADCQAACWgAsQB42mNgYfzCOIGBlYGB0YcxjYGBwR1Kf2WQZGhhYGBiYGVmgAFGBiQQkOaawtDAoMBQxXjg/wEGPcYDDA4wNUA2CCgwsAAAO4EL6gAAeNpj2M0gyAACqxgGNWBkZ2D4/wMA+xkDdgAAAHjaY2BgYGaAYBkGRgYQiAHyGMF8FgYHIM3DwMHABGQrMOgyWDLEM1T9/w8UBfEMgLzE////P/5//f/V/xv+r4eaAAeMbAxwIUYmIMHEgKYAYjUcsDAwsLKxc3BycfPw8jEQA/gZBASFhEVExcQlJKWkZWTl5BUUlZRVVNXUNTQZBgMAAMR+E+gAEQFEAAAAKgAqACoANAA+AEgAUgBcAGYAcAB6AIQAjgCYAKIArAC2AMAAygDUAN4A6ADyAPwBBgEQARoBJAEuATgBQgFMAVYBYAFqAXQBfgGIAZIBnAGmAbIBzgHsAAB42u2NMQ6CUAyGW568x9AneYYgm4MJbhKFaExIOAVX8ApewSt4Bic4AfeAid3VOBixDxfPYEza5O+Xfi04YADggiUIULCuEJK8VhO4bSvpdnktHI5QCYtdi2sl8ZnXaHlqUrNKzdKcT8cjlq+rwZSvIVczNiezsfnP/uznmfPFBNODM2K7MTQ45YEAZqGP81AmGGcF3iPqOop0r1SPTaTbVkfUe4HXj97wYE+yNwWYxwWu4v1ugWHgo3S1XdZEVqWM7ET0cfnLGxWfkgR42o2PvWrDMBSFj/IHLaF0zKjRgdiVMwScNRAoWUoH78Y2icB/yIY09An6AH2Bdu/UB+yxopYshQiEvnvu0dURgDt8QeC8PDw7Fpji3fEA4z/PEJ6YOB5hKh4dj3EvXhxPqH/SKUY3rJ7srZ4FZnh1PMAtPhwP6fl2PMJMPDgeQ4rY8YT6Gzao0eAEA409DuggmTnFnOcSCiEiLMgxCiTI6Cq5DZUd3Qmp10vO0LaLTd2cjN4fOumlc7lUYbSQcZFkutRG7g6JKZKy0RmdLY680CDnEJ+UMkpFFe1RN7nxdVpXrC4aTtnaurOnYercZg2YVmLN/d/gczfEimrE/fs/bOuq29Zmn8tloORaXgZgGa78yO9/cnXm2BpaGvq25Dv9S4E9+5SIc9PqupJKhYFSSl47+Qcr1mYNAAAAeNptw0cKwkAAAMDZJA8Q7OUJvkLsPfZ6zFVERPy8qHh2YER+3i/BP83vIBLLySsoKimrqKqpa2hp6+jq6RsYGhmbmJqZSy0sraxtbO3sHRydnEMU4uR6yx7JJXveP7WrDycAAAAAAAH//wACeNpjYGRgYOABYhkgZgJCZgZNBkYGLQZtIJsFLMYAAAw3ALgAeNolizEKgDAQBCchRbC2sFER0YD6qVQiBCv/H9ezGI6Z5XBAw8CBK/m5iQQVauVbXLnOrMZv2oLdKFa8Pjuru2hJzGabmOSLzNMzvutpB3N42mNgZGBg4GKQYzBhYMxJLMlj4GBgAYow/P/PAJJhLM6sSoWKfWCAAwDAjgbRAAB42mNgYGBkAIIbCZo5IPrmUn0hGA0AO8EFTQAA\")",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Caveat",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/caveat/v23/WnznHAc5bAfYB2QRah7pcpNvOx-pjfJ9eIipYT5Kmgq3s84t.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Caveat",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/caveat/v23/WnznHAc5bAfYB2QRah7pcpNvOx-pjfJ9eIGpYT5Kmgq3s84t.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Caveat",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/caveat/v23/WnznHAc5bAfYB2QRah7pcpNvOx-pjfJ9eIupYT5Kmgq3s84t.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Caveat",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/caveat/v23/WnznHAc5bAfYB2QRah7pcpNvOx-pjfJ9eIWpYT5Kmgq3sw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Montserrat",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw0aXp-p7K4KLjztg.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Montserrat",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw9aXp-p7K4KLjztg.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Montserrat",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw2aXp-p7K4KLjztg.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Montserrat",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw3aXp-p7K4KLjztg.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Montserrat",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXp-p7K4KLg.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "200",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t4R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "200",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7txR-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "200",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t6R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "200",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t7R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "200",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t1R-tQKr51.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t4R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7txR-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t6R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t7R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t1R-tQKr51.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t4R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7txR-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t6R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t7R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t1R-tQKr51.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t4R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7txR-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t6R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t7R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t1R-tQKr51.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t4R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7txR-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t6R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t7R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t1R-tQKr51.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "800",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t4R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "800",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7txR-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "800",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t6R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "800",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t7R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "800",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t1R-tQKr51.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "900",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t4R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "900",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7txR-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "900",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t6R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "900",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t7R-tQKr51pE8.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Nunito Sans\"",
+   "font-style": "normal",
+   "font-weight": "900",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/nunitosans/v19/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t1R-tQKr51.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "100",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiGyp8kv8JHgFVrLPTucXtAOvWDSHFF.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "100",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiGyp8kv8JHgFVrLPTufntAOvWDSHFF.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "100",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiGyp8kv8JHgFVrLPTucHtAOvWDSA.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "200",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLFj_Z11lFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "200",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLFj_Z1JlFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "200",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLFj_Z1xlFd2JQEk.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8Z11lFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8Z1JlFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8Z1xlFd2JQEk.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJbecnFHGPezSQ.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJnecnFHGPezSQ.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z11lFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1JlFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFd2JQEk.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z11lFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1JlFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFd2JQEk.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z11lFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1JlFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "800",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDD4Z11lFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "800",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDD4Z1JlFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "800",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDD4Z1xlFd2JQEk.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "900",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLBT5Z11lFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "900",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLBT5Z1JlFd2JQEl8qw.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "Poppins",
+   "font-style": "normal",
+   "font-weight": "900",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLBT5Z1xlFd2JQEk.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Space Mono\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/spacemono/v17/i7dPIFZifjKcF5UAWdDRYE58RXi4EwSsbg.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Space Mono\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/spacemono/v17/i7dPIFZifjKcF5UAWdDRYE98RXi4EwSsbg.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"Space Mono\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.gstatic.com/s/spacemono/v17/i7dPIFZifjKcF5UAWdDRYEF8RXi4EwQ.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wIaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wsaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wMaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wwaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wAaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wEaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3w8aZejf5Hc.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wIaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wsaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wMaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wwaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wAaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wEaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3w8aZejf5Hc.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wIaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wsaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wMaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wwaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wAaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wEaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3w8aZejf5Hc.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wIaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wsaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wMaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wwaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wAaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3wEaZejf5HdF8Q.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.axept.io/fonts.googleapis.com/css",
+   "font-family": "\"Axeptio Source Sans 3\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://fonts.axept.io/fonts.gstatic.com/s/sourcesans3/v20/nwpStKy2OAdR1K-IwhWudF-R3w8aZejf5Hc.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "inline-2",
+   "font-family": "Arimo",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap",
+   "src": "url(\"//avnier.com/cdn/fonts/arimo/arimo_n4.a7efb558ca22d2002248bbe6f302a98edee38e35.woff2\") format(\"woff2\"), url(\"//avnier.com/cdn/fonts/arimo/arimo_n4.0da809f7d1d5ede2a73be7094ac00741efdb6387.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline-2",
+   "font-family": "Arimo",
+   "font-weight": "700",
+   "font-style": "normal",
+   "font-display": "swap",
+   "src": "url(\"//avnier.com/cdn/fonts/arimo/arimo_n7.1d2d0638e6a1228d86beb0e10006e3280ccb2d04.woff2\") format(\"woff2\"), url(\"//avnier.com/cdn/fonts/arimo/arimo_n7.f4b9139e8eac4a17b38b8707044c20f54c3be479.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline-2",
+   "font-family": "Arimo",
+   "font-weight": "400",
+   "font-style": "italic",
+   "font-display": "swap",
+   "src": "url(\"//avnier.com/cdn/fonts/arimo/arimo_i4.438ddb21a1b98c7230698d70dc1a21df235701b2.woff2\") format(\"woff2\"), url(\"//avnier.com/cdn/fonts/arimo/arimo_i4.0e1908a0dc1ec32fabb5a03a0c9ee2083f82e3d7.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline-2",
+   "font-family": "Arimo",
+   "font-weight": "700",
+   "font-style": "italic",
+   "font-display": "swap",
+   "src": "url(\"//avnier.com/cdn/fonts/arimo/arimo_i7.b9f09537c29041ec8d51f8cdb7c9b8e4f1f82cb1.woff2\") format(\"woff2\"), url(\"//avnier.com/cdn/fonts/arimo/arimo_i7.ec659fc855f754fd0b1bd052e606bba1058f73da.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline-2",
+   "font-family": "Figtree",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap",
+   "src": "url(\"//avnier.com/cdn/fonts/figtree/figtree_n4.3c0838aba1701047e60be6a99a1b0a40ce9b8419.woff2\") format(\"woff2\"), url(\"//avnier.com/cdn/fonts/figtree/figtree_n4.c0575d1db21fc3821f17fd6617d3dee552312137.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline-3",
+   "font-family": "Kanit-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Kanit/latin/kanit_latin_italic_400.woff2\")",
+   "font-weight": "400",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-3",
+   "font-family": "Kanit-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Kanit/latin/kanit_latin_italic_700.woff2\")",
+   "font-weight": "700",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-3",
+   "font-family": "Kanit-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Kanit/latin/kanit_latin_regular_400.woff2\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-3",
+   "font-family": "Kanit-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Kanit/latin/kanit_latin_regular_700.woff2\")",
+   "font-weight": "700",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-3",
+   "font-family": "Poppins-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_italic_400.woff2\")",
+   "font-weight": "400",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-3",
+   "font-family": "Poppins-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_italic_700.woff2\")",
+   "font-weight": "700",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-3",
+   "font-family": "Poppins-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_regular_400_2.woff2\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-3",
+   "font-family": "Poppins-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_regular_700.woff2\")",
+   "font-weight": "700",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-6",
+   "font-family": "\"Axeptio CJK Fallback\"",
+   "src": "local(\"PingFang SC\"), local(\"PingFangSC-Regular\"), local(\"PingFang TC\"), local(\"Hiragino Sans\"), local(\"Hiragino Kaku Gothic ProN\"), local(\"Microsoft YaHei\"), local(\"Microsoft JhengHei\"), local(\"Yu Gothic\"), local(\"Meiryo\"), local(\"Malgun Gothic\"), local(\"Apple SD Gothic Neo\"), local(\"Noto Sans CJK SC\"), local(\"Noto Sans CJK TC\"), local(\"Noto Sans CJK JP\"), local(\"Noto Sans CJK KR\"), local(\"Noto Sans SC\"), local(\"Noto Sans TC\"), local(\"Noto Sans JP\"), local(\"Noto Sans KR\")",
+   "unicode-range": "U+1100-11FF, U+2E80-303F, U+3040-30FF, U+3130-318F, U+31F0-31FF, U+3200-33FF, U+3400-4DBF, U+4E00-9FFF, U+A960-A97F, U+AC00-D7FF, U+F900-FAFF, U+FE30-FE4F, U+FF00-FFEF, U+20000-2FFFD, U+30000-3FFFD",
+   "font-weight": "100 900"
+  }
+ ],
+ "resolved": {
+  "dark": {
+   "--PredictiveSearchHover": {
+    "raw": "#faf6b5",
+    "kind": "color",
+    "value": "#faf6b5"
+   },
+   "--alpha-badge-border": {
+    "raw": ".1",
+    "kind": "number",
+    "value": 0.1
+   },
+   "--alpha-button-background": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--alpha-button-border": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--alpha-link": {
+    "raw": ".85",
+    "kind": "number",
+    "value": 0.85
+   },
+   "--color-background": {
+    "raw": "255, 255, 255",
+    "kind": "other"
+   },
+   "--color-badge-background": {
+    "raw": "255, 255, 255",
+    "kind": "other"
+   },
+   "--color-badge-border": {
+    "raw": "0, 0, 0",
+    "kind": "other"
+   },
+   "--color-base-accent-1": {
+    "raw": "0, 0, 0",
+    "kind": "other"
+   },
+   "--color-base-accent-2": {
+    "raw": "0, 0, 0",
+    "kind": "other"
+   },
+   "--color-base-background-1": {
+    "raw": "255, 255, 255",
+    "kind": "other"
+   },
+   "--color-base-background-2": {
+    "raw": "243, 243, 243",
+    "kind": "other"
+   },
+   "--color-base-outline-button-labels": {
+    "raw": "0, 0, 0",
+    "kind": "other"
+   },
+   "--color-base-solid-button-labels": {
+    "raw": "255, 255, 255",
+    "kind": "other"
+   },
+   "--color-base-text": {
+    "raw": "0, 0, 0",
+    "kind": "other"
+   },
+   "--color-button": {
+    "raw": "0, 0, 0",
+    "kind": "other"
+   },
+   "--color-button-text": {
+    "raw": "255, 255, 255",
+    "kind": "other"
+   },
+   "--color-card-hover": {
+    "raw": "0, 0, 0",
+    "kind": "other"
+   },
+   "--color-foreground": {
+    "raw": "0, 0, 0",
+    "kind": "other"
+   },
+   "--color-icon": {
+    "raw": "rgb(0, 0, 0)",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--color-link": {
+    "raw": "0, 0, 0",
+    "kind": "other"
+   },
+   "--duration-default": {
+    "raw": ".2s",
+    "kind": "duration",
+    "value": "0.2s"
+   },
+   "--duration-long": {
+    "raw": ".5s",
+    "kind": "duration",
+    "value": "0.5s"
+   },
+   "--duration-short": {
+    "raw": ".1s",
+    "kind": "duration",
+    "value": "0.1s"
+   },
+   "--font-body-family": {
+    "raw": "'Space Mono', monospace",
+    "kind": "fontFamily",
+    "value": "'Space Mono', monospace"
+   },
+   "--font-body-scale": {
+    "raw": "1.0",
+    "kind": "number",
+    "value": 1
+   },
+   "--font-body-style": {
+    "raw": "normal",
+    "kind": "fontFamily",
+    "value": "normal"
+   },
+   "--font-body-weight": {
+    "raw": "normal",
+    "kind": "fontFamily",
+    "value": "normal"
+   },
+   "--font-heading-family": {
+    "raw": "'avnier-font'",
+    "kind": "fontFamily",
+    "value": "'avnier-font'"
+   },
+   "--font-heading-scale": {
+    "raw": "1.0",
+    "kind": "number",
+    "value": 1
+   },
+   "--font-heading-style": {
+    "raw": "normal",
+    "kind": "fontFamily",
+    "value": "normal"
+   },
+   "--font-heading-weight": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--gradient-background": {
+    "raw": "#FFFFFF",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--gradient-base-accent-1": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--gradient-base-accent-2": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--gradient-base-background-1": {
+    "raw": "#FFFFFF",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--gradient-base-background-2": {
+    "raw": "#f3f3f3",
+    "kind": "color",
+    "value": "#f3f3f3"
+   },
+   "--ll-activity-bg-color": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ll-alpha-300": {
+    "raw": "#0000001a",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.1)"
+   },
+   "--ll-alpha-400": {
+    "raw": "#0003",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.2)"
+   },
+   "--ll-alpha-500": {
+    "raw": "#0006",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.4)"
+   },
+   "--ll-backdrop-bg": {
+    "raw": "#0009",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.6)"
+   },
+   "--ll-backdrop-blur": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--ll-bg-primary": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--ll-bg-secondary": {
+    "raw": "#f6f6f6",
+    "kind": "color",
+    "value": "#f6f6f6"
+   },
+   "--ll-bg-tertiary": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ll-body-bg": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--ll-border-color": {
+    "raw": "#0000001a",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.1)"
+   },
+   "--ll-border-primary": {
+    "raw": "#0000001a",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.1)"
+   },
+   "--ll-btn-disabled-bg": {
+    "raw": "#cdcdcd",
+    "kind": "color",
+    "value": "#cdcdcd"
+   },
+   "--ll-card-bg": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--ll-cell-box-border-color": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ll-cell-shadow-color": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ll-click-active-color": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ll-click-hover-color": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ll-close-btn-color": {
+    "raw": "gray",
+    "kind": "color",
+    "value": "#808080"
+   },
+   "--ll-core-popup-content-container-width": {
+    "raw": "50%",
+    "kind": "other"
+   },
+   "--ll-core-popup-layout-width": {
+    "raw": "800px",
+    "kind": "dimension",
+    "value": "800px"
+   },
+   "--ll-cover-box-bg": {
+    "raw": "color-mix(in srgb,#fff/**/60%,transparent)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.6)"
+   },
+   "--ll-desc-color": {
+    "raw": "#767676",
+    "kind": "color",
+    "value": "#767676"
+   },
+   "--ll-desc-font-color": {
+    "raw": "#0006",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.4)"
+   },
+   "--ll-divider-color": {
+    "raw": "#0000001a",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.1)"
+   },
+   "--ll-error-color": {
+    "raw": "#ff453a",
+    "kind": "color",
+    "value": "#ff453a"
+   },
+   "--ll-fg-brand-primary": {
+    "raw": "#007bfe",
+    "kind": "color",
+    "value": "#007bfe"
+   },
+   "--ll-fg-brand-secondary": {
+    "raw": "#007bfe40",
+    "kind": "color",
+    "value": "rgba(0, 123, 254, 0.25)"
+   },
+   "--ll-fg-error-primary": {
+    "raw": "#ff453a",
+    "kind": "color",
+    "value": "#ff453a"
+   },
+   "--ll-fg-hover": {
+    "raw": "#f8f8f8",
+    "kind": "color",
+    "value": "#f8f8f8"
+   },
+   "--ll-fg-primary": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--ll-fg-quaternary": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--ll-fg-quinary": {
+    "raw": "#cdcdcd",
+    "kind": "color",
+    "value": "#cdcdcd"
+   },
+   "--ll-fg-secondary": {
+    "raw": "#666",
+    "kind": "color",
+    "value": "#666666"
+   },
+   "--ll-fg-senary": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ll-fg-success-primary": {
+    "raw": "#20cc87",
+    "kind": "color",
+    "value": "#20cc87"
+   },
+   "--ll-fg-tertiary": {
+    "raw": "#989898",
+    "kind": "color",
+    "value": "#989898"
+   },
+   "--ll-font-color": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--ll-gary-body-bg": {
+    "raw": "#f6f6f6",
+    "kind": "color",
+    "value": "#f6f6f6"
+   },
+   "--ll-gray-100": {
+    "raw": "#f6f6f6",
+    "kind": "color",
+    "value": "#f6f6f6"
+   },
+   "--ll-gray-200": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ll-gray-25": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--ll-gray-300": {
+    "raw": "#d9d9d9",
+    "kind": "color",
+    "value": "#d9d9d9"
+   },
+   "--ll-gray-400": {
+    "raw": "#cdcdcd",
+    "kind": "color",
+    "value": "#cdcdcd"
+   },
+   "--ll-gray-50": {
+    "raw": "#f8f8f8",
+    "kind": "color",
+    "value": "#f8f8f8"
+   },
+   "--ll-gray-500": {
+    "raw": "#bbb",
+    "kind": "color",
+    "value": "#bbbbbb"
+   },
+   "--ll-gray-600": {
+    "raw": "#989898",
+    "kind": "color",
+    "value": "#989898"
+   },
+   "--ll-gray-700": {
+    "raw": "#666",
+    "kind": "color",
+    "value": "#666666"
+   },
+   "--ll-gray-800": {
+    "raw": "#303030",
+    "kind": "color",
+    "value": "#303030"
+   },
+   "--ll-gray-900": {
+    "raw": "#212121",
+    "kind": "color",
+    "value": "#212121"
+   },
+   "--ll-gray-950": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--ll-popup-bg": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--ll-popup-layout-vertical-width": {
+    "raw": "800px",
+    "kind": "dimension",
+    "value": "800px"
+   },
+   "--ll-popup-scale": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--ll-popup-shadow": {
+    "raw": "#00000026",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.15)"
+   },
+   "--ll-popup-shape": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--ll-prod-card-bg": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ll-size-0": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--ll-size-025": {
+    "raw": "2px",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--ll-size-050": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--ll-size-100": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--ll-size-150": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--ll-size-200": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--ll-size-300": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--ll-size-400": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--ll-size-500": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--ll-size-600": {
+    "raw": "48px",
+    "kind": "dimension",
+    "value": "48px"
+   },
+   "--ll-size-700": {
+    "raw": "56px",
+    "kind": "dimension",
+    "value": "56px"
+   },
+   "--ll-size-800": {
+    "raw": "64px",
+    "kind": "dimension",
+    "value": "64px"
+   },
+   "--ll-size-900": {
+    "raw": "72px",
+    "kind": "dimension",
+    "value": "72px"
+   },
+   "--ll-size-950": {
+    "raw": "999px",
+    "kind": "dimension",
+    "value": "999px"
+   },
+   "--ll-svg-default-color": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--ll-text-primary": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--ll-text-quaternary": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--ll-text-secondary": {
+    "raw": "#0006",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.4)"
+   },
+   "--ll-text-tertiary": {
+    "raw": "#0003",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.2)"
+   },
+   "--ll-title-color": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--navigation-offset-height": {
+    "raw": "''",
+    "kind": "other"
+   },
+   "--page-width": {
+    "raw": "160rem",
+    "kind": "dimension",
+    "value": "1600px"
+   },
+   "--page-width-margin": {
+    "raw": "2rem",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--payment-terms-background-color": {
+    "raw": "#FFFFFF",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--swiper-navigation-size": {
+    "raw": "44px",
+    "kind": "dimension",
+    "value": "44px"
+   },
+   "--swiper-theme-color": {
+    "raw": "#007aff",
+    "kind": "color",
+    "value": "#007aff"
+   }
+  },
+  "light": {
+   "--PredictiveSearchHover": {
+    "raw": "#faf6b5",
+    "kind": "color",
+    "value": "#faf6b5"
+   },
+   "--alpha-badge-border": {
+    "raw": ".1",
+    "kind": "number",
+    "value": 0.1
+   },
+   "--alpha-button-background": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--alpha-button-border": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--alpha-link": {
+    "raw": ".85",
+    "kind": "number",
+    "value": 0.85
+   },
+   "--color-background": {
+    "raw": "255, 255, 255",
+    "kind": "other"
+   },
+   "--color-badge-background": {
+    "raw": "255, 255, 255",
+    "kind": "other"
+   },
+   "--color-badge-border": {
+    "raw": "0, 0, 0",
+    "kind": "other"
+   },
+   "--color-base-accent-1": {
+    "raw": "0, 0, 0",
+    "kind": "other"
+   },
+   "--color-base-accent-2": {
+    "raw": "0, 0, 0",
+    "kind": "other"
+   },
+   "--color-base-background-1": {
+    "raw": "255, 255, 255",
+    "kind": "other"
+   },
+   "--color-base-background-2": {
+    "raw": "243, 243, 243",
+    "kind": "other"
+   },
+   "--color-base-outline-button-labels": {
+    "raw": "0, 0, 0",
+    "kind": "other"
+   },
+   "--color-base-solid-button-labels": {
+    "raw": "255, 255, 255",
+    "kind": "other"
+   },
+   "--color-base-text": {
+    "raw": "0, 0, 0",
+    "kind": "other"
+   },
+   "--color-button": {
+    "raw": "0, 0, 0",
+    "kind": "other"
+   },
+   "--color-button-text": {
+    "raw": "255, 255, 255",
+    "kind": "other"
+   },
+   "--color-card-hover": {
+    "raw": "0, 0, 0",
+    "kind": "other"
+   },
+   "--color-foreground": {
+    "raw": "0, 0, 0",
+    "kind": "other"
+   },
+   "--color-icon": {
+    "raw": "rgb(0, 0, 0)",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--color-link": {
+    "raw": "0, 0, 0",
+    "kind": "other"
+   },
+   "--duration-default": {
+    "raw": ".2s",
+    "kind": "duration",
+    "value": "0.2s"
+   },
+   "--duration-long": {
+    "raw": ".5s",
+    "kind": "duration",
+    "value": "0.5s"
+   },
+   "--duration-short": {
+    "raw": ".1s",
+    "kind": "duration",
+    "value": "0.1s"
+   },
+   "--font-body-family": {
+    "raw": "'Space Mono', monospace",
+    "kind": "fontFamily",
+    "value": "'Space Mono', monospace"
+   },
+   "--font-body-scale": {
+    "raw": "1.0",
+    "kind": "number",
+    "value": 1
+   },
+   "--font-body-style": {
+    "raw": "normal",
+    "kind": "fontFamily",
+    "value": "normal"
+   },
+   "--font-body-weight": {
+    "raw": "normal",
+    "kind": "fontFamily",
+    "value": "normal"
+   },
+   "--font-heading-family": {
+    "raw": "'avnier-font'",
+    "kind": "fontFamily",
+    "value": "'avnier-font'"
+   },
+   "--font-heading-scale": {
+    "raw": "1.0",
+    "kind": "number",
+    "value": 1
+   },
+   "--font-heading-style": {
+    "raw": "normal",
+    "kind": "fontFamily",
+    "value": "normal"
+   },
+   "--font-heading-weight": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--gradient-background": {
+    "raw": "#FFFFFF",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--gradient-base-accent-1": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--gradient-base-accent-2": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--gradient-base-background-1": {
+    "raw": "#FFFFFF",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--gradient-base-background-2": {
+    "raw": "#f3f3f3",
+    "kind": "color",
+    "value": "#f3f3f3"
+   },
+   "--ll-activity-bg-color": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ll-alpha-300": {
+    "raw": "#0000001a",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.1)"
+   },
+   "--ll-alpha-400": {
+    "raw": "#0003",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.2)"
+   },
+   "--ll-alpha-500": {
+    "raw": "#0006",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.4)"
+   },
+   "--ll-backdrop-bg": {
+    "raw": "#0009",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.6)"
+   },
+   "--ll-backdrop-blur": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--ll-bg-primary": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--ll-bg-secondary": {
+    "raw": "#f6f6f6",
+    "kind": "color",
+    "value": "#f6f6f6"
+   },
+   "--ll-bg-tertiary": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ll-body-bg": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--ll-border-color": {
+    "raw": "#0000001a",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.1)"
+   },
+   "--ll-border-primary": {
+    "raw": "#0000001a",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.1)"
+   },
+   "--ll-btn-disabled-bg": {
+    "raw": "#cdcdcd",
+    "kind": "color",
+    "value": "#cdcdcd"
+   },
+   "--ll-card-bg": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--ll-cell-box-border-color": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ll-cell-shadow-color": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ll-click-active-color": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ll-click-hover-color": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ll-close-btn-color": {
+    "raw": "gray",
+    "kind": "color",
+    "value": "#808080"
+   },
+   "--ll-core-popup-content-container-width": {
+    "raw": "50%",
+    "kind": "other"
+   },
+   "--ll-core-popup-layout-width": {
+    "raw": "800px",
+    "kind": "dimension",
+    "value": "800px"
+   },
+   "--ll-cover-box-bg": {
+    "raw": "color-mix(in srgb,#fff/**/60%,transparent)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.6)"
+   },
+   "--ll-desc-color": {
+    "raw": "#767676",
+    "kind": "color",
+    "value": "#767676"
+   },
+   "--ll-desc-font-color": {
+    "raw": "#0006",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.4)"
+   },
+   "--ll-divider-color": {
+    "raw": "#0000001a",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.1)"
+   },
+   "--ll-error-color": {
+    "raw": "#ff453a",
+    "kind": "color",
+    "value": "#ff453a"
+   },
+   "--ll-fg-brand-primary": {
+    "raw": "#007bfe",
+    "kind": "color",
+    "value": "#007bfe"
+   },
+   "--ll-fg-brand-secondary": {
+    "raw": "#007bfe40",
+    "kind": "color",
+    "value": "rgba(0, 123, 254, 0.25)"
+   },
+   "--ll-fg-error-primary": {
+    "raw": "#ff453a",
+    "kind": "color",
+    "value": "#ff453a"
+   },
+   "--ll-fg-hover": {
+    "raw": "#f8f8f8",
+    "kind": "color",
+    "value": "#f8f8f8"
+   },
+   "--ll-fg-primary": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--ll-fg-quaternary": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--ll-fg-quinary": {
+    "raw": "#cdcdcd",
+    "kind": "color",
+    "value": "#cdcdcd"
+   },
+   "--ll-fg-secondary": {
+    "raw": "#666",
+    "kind": "color",
+    "value": "#666666"
+   },
+   "--ll-fg-senary": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ll-fg-success-primary": {
+    "raw": "#20cc87",
+    "kind": "color",
+    "value": "#20cc87"
+   },
+   "--ll-fg-tertiary": {
+    "raw": "#989898",
+    "kind": "color",
+    "value": "#989898"
+   },
+   "--ll-font-color": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--ll-gary-body-bg": {
+    "raw": "#f6f6f6",
+    "kind": "color",
+    "value": "#f6f6f6"
+   },
+   "--ll-gray-100": {
+    "raw": "#f6f6f6",
+    "kind": "color",
+    "value": "#f6f6f6"
+   },
+   "--ll-gray-200": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ll-gray-25": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--ll-gray-300": {
+    "raw": "#d9d9d9",
+    "kind": "color",
+    "value": "#d9d9d9"
+   },
+   "--ll-gray-400": {
+    "raw": "#cdcdcd",
+    "kind": "color",
+    "value": "#cdcdcd"
+   },
+   "--ll-gray-50": {
+    "raw": "#f8f8f8",
+    "kind": "color",
+    "value": "#f8f8f8"
+   },
+   "--ll-gray-500": {
+    "raw": "#bbb",
+    "kind": "color",
+    "value": "#bbbbbb"
+   },
+   "--ll-gray-600": {
+    "raw": "#989898",
+    "kind": "color",
+    "value": "#989898"
+   },
+   "--ll-gray-700": {
+    "raw": "#666",
+    "kind": "color",
+    "value": "#666666"
+   },
+   "--ll-gray-800": {
+    "raw": "#303030",
+    "kind": "color",
+    "value": "#303030"
+   },
+   "--ll-gray-900": {
+    "raw": "#212121",
+    "kind": "color",
+    "value": "#212121"
+   },
+   "--ll-gray-950": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--ll-popup-bg": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--ll-popup-layout-vertical-width": {
+    "raw": "800px",
+    "kind": "dimension",
+    "value": "800px"
+   },
+   "--ll-popup-scale": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--ll-popup-shadow": {
+    "raw": "#00000026",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.15)"
+   },
+   "--ll-popup-shape": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--ll-prod-card-bg": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ll-size-0": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--ll-size-025": {
+    "raw": "2px",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--ll-size-050": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--ll-size-100": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--ll-size-150": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--ll-size-200": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--ll-size-300": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--ll-size-400": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--ll-size-500": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--ll-size-600": {
+    "raw": "48px",
+    "kind": "dimension",
+    "value": "48px"
+   },
+   "--ll-size-700": {
+    "raw": "56px",
+    "kind": "dimension",
+    "value": "56px"
+   },
+   "--ll-size-800": {
+    "raw": "64px",
+    "kind": "dimension",
+    "value": "64px"
+   },
+   "--ll-size-900": {
+    "raw": "72px",
+    "kind": "dimension",
+    "value": "72px"
+   },
+   "--ll-size-950": {
+    "raw": "999px",
+    "kind": "dimension",
+    "value": "999px"
+   },
+   "--ll-svg-default-color": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--ll-text-primary": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--ll-text-quaternary": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--ll-text-secondary": {
+    "raw": "#0006",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.4)"
+   },
+   "--ll-text-tertiary": {
+    "raw": "#0003",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.2)"
+   },
+   "--ll-title-color": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--navigation-offset-height": {
+    "raw": "''",
+    "kind": "other"
+   },
+   "--page-width": {
+    "raw": "160rem",
+    "kind": "dimension",
+    "value": "1600px"
+   },
+   "--page-width-margin": {
+    "raw": "2rem",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--payment-terms-background-color": {
+    "raw": "#FFFFFF",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--swiper-navigation-size": {
+    "raw": "44px",
+    "kind": "dimension",
+    "value": "44px"
+   },
+   "--swiper-theme-color": {
+    "raw": "#007aff",
+    "kind": "color",
+    "value": "#007aff"
+   }
+  }
+ }
+}

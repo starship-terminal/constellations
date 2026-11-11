@@ -1,0 +1,336 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. boords.com declares almost no :root design vars; its Tailwind values are compiled, so the tree is built from measured computed styles on the running pages (raw/components-computed.json). Semantic roles land in the light set (the only theme the site paints).",
+ "core": {
+  "font": {
+   "family": {
+    "body": {
+     "value": "matter, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-sub default (raw/components-computed.json)",
+     "description": "The single matter stack used everywhere."
+    },
+    "display": {
+     "value": "matter, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-title default (raw/components-computed.json)",
+     "description": "The matter stack at display size."
+    }
+   },
+   "size": {
+    "display": {
+     "type": "dimension",
+     "value": "64px",
+     "source": "computed fontSize of hero-title default (raw/components-computed.json)",
+     "description": "The page/hero display size."
+    },
+    "cta": {
+     "type": "dimension",
+     "value": "20px",
+     "source": "computed fontSize of hero-cta default (raw/components-computed.json)",
+     "description": "Hero CTA size."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of timer-field default (raw/components-computed.json)",
+     "description": "Field/body size."
+    },
+    "nav": {
+     "type": "dimension",
+     "value": "14.4px",
+     "source": "computed fontSize of nav-link default (raw/components-computed.json)",
+     "description": "Nav/footer label size."
+    },
+    "meta": {
+     "type": "dimension",
+     "value": "10.4px",
+     "source": "computed fontSize of footer-link default (raw/components-computed.json)",
+     "description": "Small footer/meta size."
+    },
+    "price": {
+     "type": "dimension",
+     "value": "20px",
+     "source": "computed fontSize of plan-price default (raw/components-computed.json)",
+     "description": "Plan price size."
+    }
+   },
+   "lineHeight": {
+    "display": {
+     "type": "dimension",
+     "value": "66.56px",
+     "source": "computed lineHeight of hero-title default (raw/components-computed.json)",
+     "description": "Display line height."
+    }
+   },
+   "weight": {
+    "display": {
+     "type": "number",
+     "value": "600",
+     "source": "computed fontWeight of hero-title default (raw/components-computed.json)",
+     "description": "Display weight."
+    },
+    "nav": {
+     "type": "number",
+     "value": "400",
+     "source": "computed fontWeight of nav-link default (raw/components-computed.json)",
+     "description": "Nav label weight."
+    },
+    "price": {
+     "type": "number",
+     "value": "400",
+     "source": "computed fontWeight of plan-price default (raw/components-computed.json)",
+     "description": "Plan price weight."
+    }
+   }
+  },
+  "color": {
+   "neutral": {
+    "ink": {
+     "value": "#121212",
+     "type": "color",
+     "source": "computed color of hero-title default (raw/components-computed.json)",
+     "description": "Headline/button ink (#121212)."
+    },
+    "body": {
+     "value": "rgba(18, 18, 18, 0.6)",
+     "type": "color",
+     "source": "computed color of nav-link default (raw/components-computed.json)",
+     "description": "Nav/body text at 60% ink."
+    },
+    "muted": {
+     "value": "#7b7b7b",
+     "type": "color",
+     "source": "computed color of hero-sub default (raw/components-computed.json)",
+     "description": "The grey lede/meta text."
+    },
+    "line": {
+     "value": "rgba(18, 18, 18, 0.15)",
+     "type": "color",
+     "source": "computed borderTopColor of timer-toggle default (raw/components-computed.json)",
+     "description": "The 1px hairline on toggles/cards."
+    },
+    "paper": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed backgroundColor of plan-card default (raw/components-computed.json)",
+     "description": "The white page/card field."
+    },
+    "cream": {
+     "value": "#f3f3e9",
+     "type": "color",
+     "source": "painted fill of feature-card (raw/components-computed.json)",
+     "description": "The #f3f3e9 cream section/card fill."
+    }
+   },
+   "brand": {
+    "amber": {
+     "value": "#e8aa42",
+     "type": "color",
+     "source": "computed borderTopColor of hero-cta default (raw/components-computed.json)",
+     "description": "The amber CTA border (the hero action)."
+    },
+    "amber-hover": {
+     "value": "#d89b3c",
+     "type": "color",
+     "source": "computed borderTopColor of hero-cta hover (raw/components-computed.json)",
+     "description": "Amber border on hover."
+    }
+   }
+  },
+  "radius": {
+   "pill": {
+    "value": "9999px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of cta-demo default (raw/components-computed.json)",
+    "description": "The 9999px pill on header buttons/CTAs."
+   },
+   "card": {
+    "value": "24px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of plan-card default (raw/components-computed.json)",
+    "description": "The 24px card radius."
+   },
+   "media": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of timer-toggle default (raw/components-computed.json)",
+    "description": "The 16px media/inner radius."
+   }
+  },
+  "shadow": {
+   "card": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.04)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of plan-card default (raw/components-computed.json)",
+    "description": "A plan card's resting shadow."
+   },
+   "header": {
+    "value": [
+     {
+      "color": "#ffffff",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(18, 18, 18, 0.04)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px"
+     },
+     {
+      "color": "rgba(0, 0, 0, 0)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of header default (raw/components-computed.json)",
+    "description": "The floating header pill's shadow."
+   }
+  },
+  "measured": {
+   "focus-outline": {
+    "value": "#005fcc",
+    "type": "color",
+    "source": "computed outlineColor of nav-link focus-visible (raw/components-computed.json)",
+    "description": "The keyboard-focus ring on nav/footer links."
+   },
+   "hover-dim": {
+    "value": "rgba(18, 18, 18, 0.05)",
+    "type": "color",
+    "source": "computed backgroundColor of cta-demo hover (raw/components-computed.json)",
+    "description": "The 5% ink hover fill on header buttons."
+   },
+   "toggle-border": {
+    "value": "rgba(18, 18, 18, 0.15)",
+    "type": "color",
+    "source": "computed borderTopColor of timer-toggle default (raw/components-computed.json)",
+    "description": "The toggle hairline."
+   },
+   "cta-transition": {
+    "value": "0.15s",
+    "type": "duration",
+    "source": "computed transition of hero-cta default (raw/components-computed.json)",
+    "description": "The CTA's 0.15s ease transition. (all)"
+   },
+   "nav-transition": {
+    "value": "0.2s",
+    "type": "duration",
+    "source": "computed transition of nav-link default (raw/components-computed.json)",
+    "description": "The nav's 0.2s ease transition. (color, background-color, border-color, text-decoration-color, fill, stroke)"
+   }
+  }
+ },
+ "light": {
+  "text": {
+   "primary": {
+    "value": "{color.neutral.ink}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "Headline and button ink."
+   },
+   "secondary": {
+    "value": "{color.neutral.body}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "Nav and body text."
+   },
+   "muted": {
+    "value": "{color.neutral.muted}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "Lede and meta text."
+   }
+  },
+  "surface": {
+   "page": {
+    "value": "{color.neutral.paper}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "The white page field."
+   },
+   "card": {
+    "value": "{color.neutral.cream}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "The cream section/card fill."
+   }
+  },
+  "action": {
+   "outline": {
+    "value": "{color.brand.amber}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "The amber outlined-CTA border."
+   }
+  },
+  "border": {
+   "hairline": {
+    "value": "{color.neutral.line}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "The 1px toggle/card hairline."
+   }
+  }
+ },
+ "dark": {},
+ "component": {
+  "control": {
+   "height": {
+    "type": "dimension",
+    "value": "30px",
+    "source": "computed height of cta-demo default (raw/components-computed.json)",
+    "description": "The header CTA height."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "9999px",
+    "source": "computed borderTopLeftRadius of cta-demo default (raw/components-computed.json)",
+    "description": "Header pill radius."
+   }
+  },
+  "cta": {
+   "height": {
+    "type": "dimension",
+    "value": "56px",
+    "source": "computed height of hero-cta default (raw/components-computed.json)",
+    "description": "The hero CTA height."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The floating header height."
+   }
+  },
+  "field": {
+   "radius": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "computed borderTopLeftRadius of timer-field default (raw/components-computed.json)",
+    "description": "The script textarea radius."
+   },
+   "border": {
+    "type": "dimension",
+    "value": "1px",
+    "source": "computed borderTopWidth of timer-toggle default (raw/components-computed.json)",
+    "description": "Toggle border width."
+   }
+  }
+ }
+}

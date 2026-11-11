@@ -26,12 +26,12 @@ out.components ??= {};
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const save = () => fs.writeFileSync(OUT, JSON.stringify(out, null, 1) + '\n');
 const URLS = { home: '/', pricing: '/pricing', about: '/about' };
-let page, cdp, current, context, run;
+let page, cdp, current, view, context, run;
 const touched = new Set();
 const listed = new Map();
-// Pages that actually loaded this run (not blocked): readings may only be
-// pruned for components on one of these — a blocked route must not erase
-// evidence captured earlier.
+// Page+viewport visits that actually loaded this run (not blocked): readings
+// may only be pruned for components of one of these — a blocked mobile visit
+// must not erase evidence the desktop visit of the same route kept.
 const opened = new Set();
 
 async function blocked() {
@@ -43,6 +43,7 @@ async function blocked() {
 
 async function newPage(key, { mobile = false, wait = 8000 } = {}) {
   current = key;
+  view = mobile ? 'mobile' : 'desktop';
   const b = context.browser();
   const ctx = await b.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
@@ -56,7 +57,7 @@ async function newPage(key, { mobile = false, wait = 8000 } = {}) {
   log('open', key, mobile ? '(mobile)' : '');
   await open(page, BASE + URLS[key], { wait });
   if (await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); return false; }
-  opened.add(key);
+  opened.add(key + '|' + view);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   await closePromo(page);
   return true;
@@ -97,7 +98,7 @@ async function forcePseudo(loc, classes) {
 
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
-  Object.assign(c, { page: current, run, url: URLS[current] && BASE + URLS[current] }, meta);
+  Object.assign(c, { page: current, view, run, url: URLS[current] && BASE + URLS[current] }, meta);
   touched.add(key);
   c.states ??= {};
   return c;
@@ -108,13 +109,16 @@ async function measure(key, state, target, opts = {}) {
   const c = out.components[key];
   try {
     const s = await styleOf(loc);
+    const prev = c.states[state];
     let file;
     if (opts.crop !== false) {
       try {
         file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    // A failed crop keeps the previous state's image link rather than
+    // dropping it; the style reading is fresh, the crop is last good.
+    c.states[state] = { ...s, crop: file ?? (prev && prev.crop), via: opts.via, run };
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {
@@ -397,10 +401,15 @@ try {
   if (!pages.length || pages.includes('mobile')) await plan.mobile();
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
-    // Prune only components on a page that actually opened this run: a blocked
-    // or unvisited route keeps its earlier readings (write new captures first,
-    // prune old outputs only after a complete run).
-    if (!touched.has(key) && !pages.length) { if (opened.has(c.page)) delete out.components[key]; continue; }
+    // Prune only components whose page+viewport visit actually opened this
+    // run: a blocked route (or a blocked mobile pass of a route the desktop
+    // pass captured) keeps its earlier readings. Components saved before the
+    // view field existed fall back to the m- prefix for their variant.
+    if (!touched.has(key) && !pages.length) {
+      const cview = c.view || (key.startsWith('m-') ? 'mobile' : 'desktop');
+      if (opened.has(c.page + '|' + cview)) delete out.components[key];
+      continue;
+    }
     if (!touched.has(key)) continue;
     const want = listed.get(key);
     if (want) for (const st of Object.keys(c.states || {})) if (!want.has(st) && pages.length) delete c.states[st];

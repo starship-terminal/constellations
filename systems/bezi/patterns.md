@@ -38,8 +38,9 @@ building real games, / not generating them."
 ([hero-title](components/crops/hero-title-default.png)) — over an
 `rgba(255,255,255,0.5)` subtitle ([hero-sub](components/crops/hero-sub-default.png)),
 with the orange CTA below and an animated product-window mock under the fold.
-Section headlines stay compact at ~36px
-([section-title](components/crops/section-title-default.png)). Feature
+Section headlines stay compact at 19px/700 Inter
+([section-title](components/crops/section-title-default.png); the 35.9px box
+includes its padding and hairline). Feature
 sections are indexed by corner-tick chips — "02. CONNECTED TOOLS" and siblings
 — that draw their box as four 19px corner borders in
 `rgba(242,241,236,0.32)` ([tools-button](components/crops/tools-button-default.png)).

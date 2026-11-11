@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boords style guide</title>
+<meta name="description" content="Boords design tokens and the public marketing/tool surface's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+  --font-family-body: matter, ui-sans-serif, system-ui, -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-display: matter, ui-sans-serif, system-ui, -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-size-display: 64px;
+  --font-size-cta: 20px;
+  --font-size-body: 16px;
+  --font-size-nav: 14.4px;
+  --font-size-meta: 10.4px;
+  --font-size-price: 20px;
+  --font-lineHeight-display: 66.56px;
+  --font-weight-display: 600;
+  --font-weight-nav: 400;
+  --font-weight-price: 400;
+  --color-neutral-ink: #121212;
+  --color-neutral-body: rgba(18, 18, 18, 0.6);
+  --color-neutral-muted: #7b7b7b;
+  --color-neutral-line: rgba(18, 18, 18, 0.15);
+  --color-neutral-paper: #ffffff;
+  --color-neutral-cream: #f3f3e9;
+  --color-brand-amber: #e8aa42;
+  --color-brand-amber-hover: #d89b3c;
+  --radius-pill: 9999px;
+  --radius-card: 24px;
+  --radius-media: 16px;
+  --shadow-card: 0px 0px 0px 1px rgba(0, 0, 0, 0.04);
+  --shadow-header: 0px 0px 0px 0px #ffffff, 0px 0px 0px 1px rgba(18, 18, 18, 0.04), 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  --measured-focus-outline: #005fcc;
+  --measured-hover-dim: rgba(18, 18, 18, 0.05);
+  --measured-toggle-border: rgba(18, 18, 18, 0.15);
+  --measured-cta-transition: 150ms;
+  --measured-nav-transition: 200ms;
+  --text-primary: var(--color-neutral-ink);
+  --text-secondary: var(--color-neutral-body);
+  --text-muted: var(--color-neutral-muted);
+  --surface-page: var(--color-neutral-paper);
+  --surface-card: var(--color-neutral-cream);
+  --action-outline: var(--color-brand-amber);
+  --border-hairline: var(--color-neutral-line);
+  --component-control-height: 30px;
+  --component-control-radius: 9999px;
+  --component-cta-height: 56px;
+  --component-header-height: 64px;
+  --component-field-radius: 16px;
+  --component-field-border: 1px;
+  --sg-sans: matter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: matter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); background: var(--color-neutral-paper, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-line, #aaa); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-line, #aaa); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #000); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-line, #aaa); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
+/* ---- blog mock ---- */
+.mock { border: 1px solid var(--color-neutral-line, #aaa); overflow: hidden; background: var(--color-neutral-paper, #fff); }
+.promo { background: var(--color-brand-navy, #002856); color: #fff; font-size: 12px; letter-spacing: .02em; text-align: center; padding: 10px 16px; }
+.navbar { display: flex; align-items: center; gap: 22px; height: 84px; padding: 0 24px; background: var(--color-brand-cream, #f2f0e5); font-size: 15px; }
+.navbar .wm { font-weight: 700; font-size: 22px; letter-spacing: -0.02em; color: var(--color-brand-navy, #002856); }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 65px); padding: 0 28px; font-size: 16px; font-weight: 400; border-radius: var(--radius-pill, 300px); border: 1px solid transparent; }
+.btn.primary { background: var(--color-brand-accent, #2959e0); color: #fff; }
+.btn.ghost { background: transparent; color: var(--color-brand-accent, #2959e0); border-color: var(--color-brand-accent, #2959e0); }
+.hero { color: var(--color-brand-accent, #2959e0); padding: 72px 40px; font: 400 44px/1.15 var(--sg-serif); letter-spacing: -0.02em; text-align: center; }
+.hero small { display: block; font: 400 15px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); margin: 16px auto 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-neutral-line, #aaa); padding: 14px; font-size: 13px; background: #fff; }
+.tile .img { height: 140px; background: #ddd; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); color: var(--color-brand-accent, #2959e0); margin-bottom: 4px; }
+.tile .sub { color: var(--color-neutral-ink, #000); opacity: .65; font-size: 12px; }
+.field { display: flex; align-items: center; height: var(--component-field-height, 43px); border: 1px solid var(--color-neutral-line, #aaa); padding: 0 12px; font-size: 14px; color: var(--color-neutral-ink, #000); opacity: .7; max-width: 340px; margin-bottom: 8px; background: #fff; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-line, #aaa); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-line, #aaa); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Boords style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Boords, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the colours measured on boords.com (ink #121212 on white, the #f3f3e9 cream cards, the amber CTA border, the near-black footer), the matter type ramp, the 9999px pills and 24px cards, and the component metrics. One light theme; the footer is a dark section. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from boords.com on 2026-11-11, signed out, in headless Chromium. app.boords.com (the product) sits behind login and is a documented boundary; /signup 404s on www and lives on the app host. matter is a served face and is not loaded here: samples fall back to system sans.</p>
+  <p class="note">Read from blog.blueapron.com on 2026-11-11, signed out, in headless Chromium. www.blueapron.com (the shop, menu, sign-in and checkout) is hard-blocked at the Cloudflare edge for this client and is recorded as a boundary, not measured. Ovo, Ivory and Almarai are served faces and are not loaded here: samples fall back to Georgia/system.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A floating white pill header over a white page: wordmark, muted nav links and an ink-filled Book a demo CTA. The near-black footer closes every page.</p>
+  <div class="mock" style="padding:20px">
+    <div class="navbar" style="border-radius:9999px;border:1px solid var(--color-neutral-line,rgba(18,18,18,.15));background:#fff;padding:0 18px"><span class="wm" style="font-size:18px;color:var(--color-neutral-ink,#121212)">Boords</span><span class="sp"></span><span style="color:var(--color-neutral-body,rgba(18,18,18,.6));font-size:14px">Features&nbsp; Resources&nbsp; Pricing</span><span class="sp"></span><span class="btn" style="height:34px;background:var(--color-neutral-ink,#121212);color:#fff;border-radius:9999px;padding:0 16px;font-size:14px">Book a demo</span></div>
+    <div class="hero" style="color:var(--color-neutral-ink,#121212);text-align:left;padding:48px 20px">The all-in-one pre-production tool.<small style="color:var(--color-neutral-muted,#7b7b7b)">Storyboards, animatics, shot lists and script breakdowns your whole team can use.</small><span class="btn" style="height:56px;border:1px solid var(--color-brand-amber,#e8aa42);color:var(--color-neutral-ink,#121212);background:transparent;border-radius:9999px;padding:0 28px">Try Boords Free</span></div>
+  </div>
+
+  <h2 class="sh">Pricing and the timer</h2>
+  <p class="lead">Plan cards are white 24px cards; billing toggles between Monthly and Yearly; each tier CTA is a 3px-ink-bordered pill. The public script timer pairs a big textarea with option toggles.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile" style="border-radius:24px;background:var(--color-neutral-cream,#f3f3e9)"><b style="color:var(--color-neutral-ink,#121212)">Solo</b><span class="sub">$39 /month<br>Or $26/mo billed yearly</span></div>
+      <div class="tile" style="border-radius:24px"><b style="color:var(--color-neutral-ink,#121212)">Pro</b><span class="sub">$69 /month<br>Or $50/mo billed yearly</span></div>
+    </div>
+    <div style="margin-top:18px;max-width:520px">
+      <span class="btn" style="height:40px;border:3px solid var(--color-neutral-ink,#121212);color:var(--color-neutral-ink,#121212);background:transparent;border-radius:9999px;padding:0 20px;font-size:14px">Get Solo</span>
+      &nbsp; <span class="btn" style="height:40px;background:#fff;border:1px solid var(--color-neutral-line,rgba(18,18,18,.15));color:rgba(18,18,18,.7);border-radius:16px;padding:0 20px;font-size:14px">Minutes per page</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">Ink on white is the base: #121212 everywhere, a 60% nav ink, grey meta text, then the cream #f3f3e9 card fill, an amber CTA border and the near-black footer.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Buttons are 9999px pills; cards sit on a 24px radius and inner media/toggles on 16px. Borders are 1px hairlines, 1px amber on the hero CTA and a heavy 3px ink outline on plan CTAs.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">One served face, <code>matter</code>, does everything from the 64px display headline to 10.4px footer legal. Sizes are the measured steps; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, focused and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"body":{"v":"matter, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"","t":"fontFamily","s":"computed fontFamily of hero-sub default (raw/components-computed.json)","d":"The single matter stack used everywhere."},"display":{"v":"matter, ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"","t":"fontFamily","s":"computed fontFamily of hero-title default (raw/components-computed.json)","d":"The matter stack at display size."}},"size":{"display":{"v":"64px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The page/hero display size."},"cta":{"v":"20px","t":"dimension","s":"computed fontSize of hero-cta default (raw/components-computed.json)","d":"Hero CTA size."},"body":{"v":"16px","t":"dimension","s":"computed fontSize of timer-field default (raw/components-computed.json)","d":"Field/body size."},"nav":{"v":"14.4px","t":"dimension","s":"computed fontSize of nav-link default (raw/components-computed.json)","d":"Nav/footer label size."},"meta":{"v":"10.4px","t":"dimension","s":"computed fontSize of footer-link default (raw/components-computed.json)","d":"Small footer/meta size."},"price":{"v":"20px","t":"dimension","s":"computed fontSize of plan-price default (raw/components-computed.json)","d":"Plan price size."}},"lineHeight":{"display":{"v":"66.56px","t":"dimension","s":"computed lineHeight of hero-title default (raw/components-computed.json)","d":"Display line height."}},"weight":{"display":{"v":600,"t":"number","s":"computed fontWeight of hero-title default (raw/components-computed.json)","d":"Display weight."},"nav":{"v":400,"t":"number","s":"computed fontWeight of nav-link default (raw/components-computed.json)","d":"Nav label weight."},"price":{"v":400,"t":"number","s":"computed fontWeight of plan-price default (raw/components-computed.json)","d":"Plan price weight."}}},"color":{"neutral":{"ink":{"v":"#121212","t":"color","s":"computed color of hero-title default (raw/components-computed.json)","d":"Headline/button ink (#121212)."},"body":{"v":"rgba(18, 18, 18, 0.6)","t":"color","s":"computed color of nav-link default (raw/components-computed.json)","d":"Nav/body text at 60% ink."},"muted":{"v":"#7b7b7b","t":"color","s":"computed color of hero-sub default (raw/components-computed.json)","d":"The grey lede/meta text."},"line":{"v":"rgba(18, 18, 18, 0.15)","t":"color","s":"computed borderTopColor of timer-toggle default (raw/components-computed.json)","d":"The 1px hairline on toggles/cards."},"paper":{"v":"#ffffff","t":"color","s":"computed backgroundColor of plan-card default (raw/components-computed.json)","d":"The white page/card field."},"cream":{"v":"#f3f3e9","t":"color","s":"painted fill of feature-card (raw/components-computed.json)","d":"The #f3f3e9 cream section/card fill."}},"brand":{"amber":{"v":"#e8aa42","t":"color","s":"computed borderTopColor of hero-cta default (raw/components-computed.json)","d":"The amber CTA border (the hero action)."},"amber-hover":{"v":"#d89b3c","t":"color","s":"computed borderTopColor of hero-cta hover (raw/components-computed.json)","d":"Amber border on hover."}}},"radius":{"pill":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of cta-demo default (raw/components-computed.json)","d":"The 9999px pill on header buttons/CTAs."},"card":{"v":"24px","t":"dimension","s":"computed borderTopLeftRadius of plan-card default (raw/components-computed.json)","d":"The 24px card radius."},"media":{"v":"16px","t":"dimension","s":"computed borderTopLeftRadius of timer-toggle default (raw/components-computed.json)","d":"The 16px media/inner radius."}},"shadow":{"card":{"v":[{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px"}],"t":"shadow","s":"computed boxShadow of plan-card default (raw/components-computed.json)","d":"A plan card's resting shadow."},"header":{"v":[{"color":"#ffffff","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0px"},{"color":"rgba(18, 18, 18, 0.04)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px"},{"color":"rgba(0, 0, 0, 0)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0px"}],"t":"shadow","s":"computed boxShadow of header default (raw/components-computed.json)","d":"The floating header pill's shadow."}},"measured":{"focus-outline":{"v":"#005fcc","t":"color","s":"computed outlineColor of nav-link focus-visible (raw/components-computed.json)","d":"The keyboard-focus ring on nav/footer links."},"hover-dim":{"v":"rgba(18, 18, 18, 0.05)","t":"color","s":"computed backgroundColor of cta-demo hover (raw/components-computed.json)","d":"The 5% ink hover fill on header buttons."},"toggle-border":{"v":"rgba(18, 18, 18, 0.15)","t":"color","s":"computed borderTopColor of timer-toggle default (raw/components-computed.json)","d":"The toggle hairline."},"cta-transition":{"v":"150ms","t":"duration","s":"computed transition of hero-cta default (raw/components-computed.json)","d":"The CTA's 0.15s ease transition. (all)"},"nav-transition":{"v":"200ms","t":"duration","s":"computed transition of nav-link default (raw/components-computed.json)","d":"The nav's 0.2s ease transition. (color, background-color, border-color, text-decoration-color, fill, stroke)"}}},"light":{"text":{"primary":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the measured core palette","d":"Headline and button ink."},"secondary":{"v":"{color.neutral.body}","t":"color","s":"role alias over the measured core palette","d":"Nav and body text."},"muted":{"v":"{color.neutral.muted}","t":"color","s":"role alias over the measured core palette","d":"Lede and meta text."}},"surface":{"page":{"v":"{color.neutral.paper}","t":"color","s":"role alias over the measured core palette","d":"The white page field."},"card":{"v":"{color.neutral.cream}","t":"color","s":"role alias over the measured core palette","d":"The cream section/card fill."}},"action":{"outline":{"v":"{color.brand.amber}","t":"color","s":"role alias over the measured core palette","d":"The amber outlined-CTA border."}},"border":{"hairline":{"v":"{color.neutral.line}","t":"color","s":"role alias over the measured core palette","d":"The 1px toggle/card hairline."}},"component":{"control":{"height":{"v":"30px","t":"dimension","s":"computed height of cta-demo default (raw/components-computed.json)","d":"The header CTA height."},"radius":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of cta-demo default (raw/components-computed.json)","d":"Header pill radius."}},"cta":{"height":{"v":"56px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)","d":"The hero CTA height."}},"header":{"height":{"v":"64px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The floating header height."}},"field":{"radius":{"v":"16px","t":"dimension","s":"computed borderTopLeftRadius of timer-field default (raw/components-computed.json)","d":"The script textarea radius."},"border":{"v":"1px","t":"dimension","s":"computed borderTopWidth of timer-toggle default (raw/components-computed.json)","d":"Toggle border width."}}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Blue Apron</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>
