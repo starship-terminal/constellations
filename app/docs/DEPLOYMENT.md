@@ -21,7 +21,7 @@ Legacy browser bookmarks live in the old origin's `ds-saved` localStorage. A sha
 The existing Nix-managed Node 22.13+ and Corepack/pnpm 10 must be on PATH. No global package installation occurs. Create `~/services/design-research/runtime.env` with mode 0600 before installing:
 
 ```sh
-DESIGN_SYSTEMS_REPO=/home/USER/dev/design-systems
+DESIGN_SYSTEMS_REPO=/home/USER/dev/constellations
 DESIGN_SYSTEMS_MEDIA=/home/USER/services/design-systems/media/refero
 DESIGN_RESEARCH_DATA_DIR=/home/USER/services/design-research/data
 DESIGN_RESEARCH_PRIVATE_ORIGIN=https://HOST.TAILNET.ts.net:8108
