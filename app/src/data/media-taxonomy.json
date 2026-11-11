@@ -588,6 +588,11 @@
       "assignedMedia": 31
     },
     {
+      "referenceId": "systems:asana",
+      "media": 99,
+      "assignedMedia": 29
+    },
+    {
       "referenceId": "systems:asos",
       "media": 201,
       "assignedMedia": 94
@@ -601,6 +606,16 @@
       "referenceId": "systems:avnier",
       "media": 96,
       "assignedMedia": 39
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "media": 73,
+      "assignedMedia": 35
+    },
+    {
+      "referenceId": "systems:b150",
+      "media": 77,
+      "assignedMedia": 24
     },
     {
       "referenceId": "systems:ballpark",
@@ -636,6 +651,11 @@
       "referenceId": "systems:brilliant",
       "media": 416,
       "assignedMedia": 253
+    },
+    {
+      "referenceId": "systems:busuu",
+      "media": 83,
+      "assignedMedia": 31
     },
     {
       "referenceId": "systems:capy-desktop",
@@ -861,11 +881,6 @@
       "referenceId": "systems:zed-desktop",
       "media": 244,
       "assignedMedia": 244
-    },
-    {
-      "referenceId": "systems:busuu",
-      "media": 83,
-      "assignedMedia": 31
     }
   ],
   "assignments": [
@@ -24285,6 +24300,345 @@
       ]
     },
     {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/screenshots/home-light-flyout.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/screenshots/pricing-light-faq.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/billing-toggle-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/billing-toggle-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/billing-toggle-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/billing-toggle-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:billing-plans",
+          "rule": "ux-billing",
+          "reason": "Capture filename explicitly names billing & plans; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/faq-open-opened.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/faq-question-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/faq-question-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/faq-question-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/faq-question-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:faq",
+          "rule": "ux-faq",
+          "reason": "Capture filename explicitly names faq; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/footer-social-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/footer-social-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/footer-social-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/footer-social-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/m-menu-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/m-menu-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/m-menu-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:asana",
+      "mediaId": "systems/asana/components/crops/plan-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
       "referenceId": "systems:asos",
       "mediaId": "systems/asos/screenshots/account-light-default.png",
       "terms": [
@@ -26360,6 +26714,665 @@
           "termId": "web-ui-elements:checkbox-radio",
           "rule": "ui-checkbox-radio",
           "reason": "Capture filename explicitly names checkbox & radio; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/screenshots/home-light-arrival.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/screenshots/home-light-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/screenshots/websites-light-filter-open.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/coll-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/coll-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/filter-dropdown-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        },
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/filter-item-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/filter-item-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/filter-option-default.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/filter-option-hover.png",
+      "terms": [
+        {
+          "termId": "web-ux-patterns:filter-sorting",
+          "rule": "ux-filter-sort",
+          "reason": "Capture filename explicitly names filter & sorting; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/grid-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/grid-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/grid-card-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/grid-card-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/m-menu-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/m-menu-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/m-site-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/plan-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/site-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/site-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/tag-chip-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/tag-chip-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/tag-chip-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/tag-chip-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:tags-chips",
+          "rule": "ui-chips",
+          "reason": "Capture filename explicitly names tags & chips; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/vote-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/vote-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:awwwards",
+      "mediaId": "systems/awwwards/components/crops/vote-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/screenshots/about-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/screenshots/about-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/screenshots/contact-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/screenshots/contact-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:contacts",
+          "rule": "page-contacts",
+          "reason": "Capture filename explicitly names contacts; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/screenshots/home-light-arrival.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/components/crops/contact-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/components/crops/contact-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/components/crops/contact-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/components/crops/m-menu-button-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/components/crops/m-menu-button-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/components/crops/m-menu-button-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/components/crops/res-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/components/crops/res-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/components/crops/talent-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/components/crops/talent-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:b150",
+      "mediaId": "systems/b150/components/crops/vibe-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
         }
       ]
     },
@@ -31921,6 +32934,347 @@
           "termId": "web-ux-patterns:chat-messages",
           "rule": "ux-chat",
           "reason": "Capture filename explicitly names chat & messages; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/screenshots/about-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/screenshots/about-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:about",
+          "rule": "page-about",
+          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/screenshots/home-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/screenshots/home-light-full.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/screenshots/home-light-menu.png",
+      "terms": [
+        {
+          "termId": "web-page-types:home-page",
+          "rule": "page-home",
+          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/screenshots/login-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:log-in",
+          "rule": "page-login",
+          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/screenshots/register-light-default.png",
+      "terms": [
+        {
+          "termId": "web-page-types:sign-up",
+          "rule": "page-signup",
+          "reason": "Capture filename explicitly names sign up; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/flag-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/flag-card-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/flag-card-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/flag-card-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/footer-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/footer-link-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/footer-link-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/footer-link-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/footer-link-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:footer",
+          "rule": "ui-footer",
+          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/m-menu-button-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:button",
+          "rule": "ui-button",
+          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/nav-dropdown-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/nav-dropdown-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/nav-dropdown-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/nav-dropdown-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:dropdown",
+          "rule": "ui-dropdown",
+          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/period-toggle-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/period-toggle-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/period-toggle-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/period-toggle-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:switch-toggle",
+          "rule": "ui-toggle",
+          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/plan-card-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:cards-tiles",
+          "rule": "ui-cards",
+          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/save-badge-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:badge",
+          "rule": "ui-badge",
+          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/social-icon-default.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/social-icon-focus-visible.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/social-icon-hover.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
+        }
+      ]
+    },
+    {
+      "referenceId": "systems:busuu",
+      "mediaId": "systems/busuu/components/crops/social-icon-pressed.png",
+      "terms": [
+        {
+          "termId": "web-ui-elements:icon",
+          "rule": "ui-icon",
+          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
         }
       ]
     },
@@ -191551,347 +192905,6 @@
           "termId": "web-fonts:menlo",
           "rule": "font-primary",
           "reason": "Exact primary family Menlo from systems/zed-desktop/tokens.json#core.fontFamily.buffer. Inherited package evidence; fallback families excluded."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/screenshots/about-light-default.png",
-      "terms": [
-        {
-          "termId": "web-page-types:about",
-          "rule": "page-about",
-          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/screenshots/about-light-full.png",
-      "terms": [
-        {
-          "termId": "web-page-types:about",
-          "rule": "page-about",
-          "reason": "Capture filename explicitly names about; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/screenshots/home-light-default.png",
-      "terms": [
-        {
-          "termId": "web-page-types:home-page",
-          "rule": "page-home",
-          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/screenshots/home-light-full.png",
-      "terms": [
-        {
-          "termId": "web-page-types:home-page",
-          "rule": "page-home",
-          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/screenshots/home-light-menu.png",
-      "terms": [
-        {
-          "termId": "web-page-types:home-page",
-          "rule": "page-home",
-          "reason": "Capture filename explicitly names home page; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/screenshots/login-light-default.png",
-      "terms": [
-        {
-          "termId": "web-page-types:log-in",
-          "rule": "page-login",
-          "reason": "Capture filename explicitly names log in; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/screenshots/register-light-default.png",
-      "terms": [
-        {
-          "termId": "web-page-types:sign-up",
-          "rule": "page-signup",
-          "reason": "Capture filename explicitly names sign up; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/flag-card-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/flag-card-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/flag-card-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/flag-card-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/footer-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/footer-link-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/footer-link-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/footer-link-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/footer-link-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:footer",
-          "rule": "ui-footer",
-          "reason": "Capture filename explicitly names footer; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/m-menu-button-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:button",
-          "rule": "ui-button",
-          "reason": "Capture filename explicitly names button; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/nav-dropdown-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:dropdown",
-          "rule": "ui-dropdown",
-          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/nav-dropdown-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:dropdown",
-          "rule": "ui-dropdown",
-          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/nav-dropdown-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:dropdown",
-          "rule": "ui-dropdown",
-          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/nav-dropdown-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:dropdown",
-          "rule": "ui-dropdown",
-          "reason": "Capture filename explicitly names dropdown; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/period-toggle-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:switch-toggle",
-          "rule": "ui-toggle",
-          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/period-toggle-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:switch-toggle",
-          "rule": "ui-toggle",
-          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/period-toggle-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:switch-toggle",
-          "rule": "ui-toggle",
-          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/period-toggle-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:switch-toggle",
-          "rule": "ui-toggle",
-          "reason": "Capture filename explicitly names switch & toggle; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/plan-card-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:cards-tiles",
-          "rule": "ui-cards",
-          "reason": "Capture filename explicitly names cards & tiles; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/save-badge-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:badge",
-          "rule": "ui-badge",
-          "reason": "Capture filename explicitly names badge; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/social-icon-default.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:icon",
-          "rule": "ui-icon",
-          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/social-icon-focus-visible.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:icon",
-          "rule": "ui-icon",
-          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/social-icon-hover.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:icon",
-          "rule": "ui-icon",
-          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
-        }
-      ]
-    },
-    {
-      "referenceId": "systems:busuu",
-      "mediaId": "systems/busuu/components/crops/social-icon-pressed.png",
-      "terms": [
-        {
-          "termId": "web-ui-elements:icon",
-          "rule": "ui-icon",
-          "reason": "Capture filename explicitly names icon; local classification from recorded capture metadata."
         }
       ]
     }
