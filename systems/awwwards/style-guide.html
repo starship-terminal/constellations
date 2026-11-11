@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Awwwards style guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300..800&display=swap">
+<meta name="description" content="Awwwards (awwwards.com) design tokens and the public directory's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+  --color-neutral-avatarBg: #f8f8f8;
+  --color-neutral-buttonBorder: #222222;
+  --color-neutral-buttonInk: #222222;
+  --color-neutral-buttonLabel: #ffffff;
+  --color-neutral-chipBg: #e9e9e9;
+  --color-neutral-coal: #222222;
+  --color-neutral-featured: #f8f0ee;
+  --color-neutral-fieldBg: #ffffff;
+  --color-neutral-fieldBgHover: #f8f8f8;
+  --color-neutral-fieldBorder: #ededed;
+  --color-neutral-fieldText: #222222;
+  --color-neutral-hairline: #ededed;
+  --color-neutral-headFootBg: #f8f8f8;
+  --color-neutral-ink: #222222;
+  --color-neutral-mist: #ededed;
+  --color-neutral-oddRow: #f8f8f8;
+  --color-neutral-ok: #e0f4d9;
+  --color-neutral-paper: #ffffff;
+  --color-neutral-searchFieldBg: #ededed;
+  --color-neutral-warn: #fff083;
+  --color-neutral-wash: #f8f8f8;
+  --color-neutral-washAlt: #f8f8f8;
+  --color-accent-awards: #502bd8;
+  --color-accent-awards2: #6749d1;
+  --color-accent-awards3: #917eda;
+  --color-accent-blue: #49b3fc;
+  --color-accent-connect: #ff602c;
+  --color-accent-connect2: #ffae94;
+  --color-accent-connect3: #ffc5b1;
+  --color-accent-error: #fa5d29;
+  --color-accent-inspire: #aaeec4;
+  --color-accent-inspire2: #c8e4d3;
+  --color-accent-inspire3: #e2f4e9;
+  --color-accent-jobs: #74bcff;
+  --color-accent-jobs2: #99ccfc;
+  --color-accent-jobs3: #b4d7f8;
+  --color-accent-learn: #fff083;
+  --color-accent-learn2: #fff9d0;
+  --color-accent-learn3: #fffbe2;
+  --color-accent-orange: #fa5d29;
+  --color-accent-read: #c0ab3c;
+  --color-accent-read2: #cdc38b;
+  --color-accent-read3: #dbd6c0;
+  --font-family-primary: Inter Tight;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 800;
+  --font-size-small: 11px;
+  --font-size-primary: 14px;
+  --font-size-medium: 18px;
+  --font-size-large: 22px;
+  --font-size-xs: 14px;
+  --font-size-sm: 14px;
+  --font-size-base: 15px;
+  --font-size-md: 18px;
+  --font-size-lg: 20.6479px;
+  --font-size-xl: 41.8873px;
+  --font-size-display: 126.732px;
+  --radius-small: 4px;
+  --radius-normal: 8px;
+  --radius-large: 14px;
+  --radius-full: 72px;
+  --measured-action-award: #e3c352;
+  --measured-action-hover: #383838;
+  --measured-focus-ring: #005fcc;
+  --layout-page-width: 1816px;
+  --layout-gutter: 20px;
+  --layout-pad-inner: 52px;
+  --layout-header-var: 71px;
+  --layout-navFooter-height: 54px;
+  --layout-filter-height: 42px;
+  --layout-field-height: 48px;
+  --layout-button-height: 48px;
+  --layout-button-pad: 24px;
+  --layout-hairline: 0.5px;
+  --layout-field-pad: 16px;
+  --accent-awards: #502bd8;
+  --accent-blue: #49b3fc;
+  --accent-brand: #fa5d29;
+  --action-primary: #222222;
+  --action-primaryText: #ffffff;
+  --border-default: #ededed;
+  --border-field: #ededed;
+  --surface-mist: #ededed;
+  --surface-page: #ffffff;
+  --surface-subtle: #f8f8f8;
+  --text-inverse: #ffffff;
+  --text-primary: #222222;
+  --component-control-height: 60px;
+  --component-control-filterHeight: 42px;
+  --component-control-pillHeight: 48px;
+  --component-header-height: 54px;
+  --component-header-heightMobile: 54px;
+  --component-card-width: 658px;
+  --component-card-gridWidth: 432px;
+  --component-card-mobileWidth: 358px;
+  --component-score-width: 69.375px;
+  --component-dropdown-width: 280px;
+  --sg-sans: "Inter Tight", "Inter", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #222); background: var(--surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 800 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -.01em; }
+h2.sh { font: 600 12px/1 var(--sg-sans); letter-spacing: .18em; text-transform: uppercase; color: var(--text-secondary, #666); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-default, #ededed); }
+.lead { max-width: 62ch; color: var(--text-secondary, #666); }
+.note { font-size: 13px; color: var(--text-secondary, #666); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 600 11px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-secondary, #666); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-default, #ededed); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 600 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-secondary, #666); }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-default, #ededed); background: var(--surface-subtle, #f8f8f8); font: 600 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 600; }
+.kv span { color: var(--text-secondary, #666); }
+/* ---- site mock ---- */
+.mock { border: 1px solid var(--border-default, #ededed); overflow-x: auto; overflow-y: hidden; background: var(--surface-page, #fff); }
+.navbar, .mock .row { flex-wrap: wrap; }
+@media (max-width: 480px) { .navbar { height: auto; row-gap: 8px; padding: 12px 16px; } }
+.navbar { display: flex; align-items: center; gap: 20px; height: 54px; padding: 0 24px; background: var(--surface-page, #fff); color: var(--text-primary, #222); font-size: 14px; border-bottom: 1px solid var(--border-default, #ededed); }
+.navbar .wm { font-weight: 800; font-size: 19px; letter-spacing: -.02em; }
+.navbar .tab { font-weight: 500; }
+.navbar .tab.dim { font-weight: 400; color: var(--text-secondary, #666); }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 48px); padding: 0 24px; font-size: 14px; font-weight: 500; border-radius: var(--radius-normal, 8px); border: 1px solid transparent; }
+.btn.ink { background: var(--action-primary, #222); color: var(--action-primaryText, #fff); }
+.btn.outline { background: transparent; color: var(--text-primary, #222); border-color: var(--text-primary, #222); }
+.btn.gold { background: var(--measured-action-award, #e3c352); color: var(--text-primary, #222); height: 60px; padding: 0 34px; font-size: 13px; }
+.btn.pill { border-radius: var(--radius-full, 72px); border-color: var(--text-primary, #222); height: 48px; font-weight: 600; font-size: 18px; background: transparent; color: var(--text-primary, #222); }
+.hero { background: var(--surface-subtle, #f8f8f8); color: var(--text-primary, #222); padding: 64px 40px; font-size: 40px; line-height: 1.05; font-weight: 800; letter-spacing: -.02em; }
+.hero small { display: block; font-size: 14px; font-weight: 400; color: var(--text-secondary, #666); margin: 16px 0 22px; max-width: 46ch; }
+.filterbar { display: flex; gap: 8px; align-items: center; height: 54px; padding: 0 24px; background: var(--surface-subtle, #f8f8f8); font-size: 13.3px; font-weight: 500; }
+.filterbar .ftab { background: transparent; border: 1px solid var(--border-default, #ededed); border-radius: 8px; padding: 10px 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; padding: 16px 0 4px; }
+.tile { border: none; padding: 0; font-size: 15px; }
+.tile .img { height: 180px; background: var(--surface-mist, #ededed); border-radius: 14px; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; }
+.tile b { display: block; font-weight: 400; margin-bottom: 2px; font-size: 15px; }
+.tile .sub { color: var(--text-secondary, #666); font-size: 13px; }
+.score { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; width: 69px; height: 84px; border: 1px solid var(--border-default, #ededed); border-radius: 8px; font-size: 14px; }
+.field { display: flex; align-items: center; height: var(--component-control-fieldHeight, 48px); border: 1px solid var(--border-field, #ededed); padding: 0 16px; font-size: 14px; color: var(--text-secondary, #666); max-width: 340px; margin-bottom: 8px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-default, #ededed); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Awwwards style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Awwwards, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the palette awwwards.com declares as semantic custom properties on <code>:root</code> (ink <code>--color-primary</code> #222, the <code>--bg-*</code> whites and washes, the six category accent triads — connect/inspire/awards/read/learn/jobs — and the orange/blue brand accents), the roles a measurement verified (text, surfaces, the ink Be Pro action, the gold Vote button), the Inter Tight type ramp and the measured control sizes. One light theme. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from awwwards.com on 2026-11-11, signed out, in headless Chrome, with any consent or promo layer hidden (never answered). Voting was never clicked, /submit/ was never submitted, and Log in / Sign Up did not render on the captured loads — no public login page exists signed-out.</p>
+
+  <h2 class="sh">The directory chrome</h2>
+  <p class="lead">A 54px white bar: the wordmark, the Explore/Directory/Academy/Jobs/Market nav in 14px Inter Tight 500, then Be Pro (ink pill), the outlined Submit Website and the auth links. At phone width the bar keeps wordmark and the menu button; its own toggle opens the mobile menu.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm">awwwards.</span><span class="tab">Explore</span><span class="tab">Directory</span><span class="tab dim">Academy</span><span class="tab dim">Jobs</span><span class="tab dim">Market</span><span class="sp"></span><span class="tab dim">Log in</span><span class="tab dim">Sign Up</span><span class="btn ink" style="height:42px;padding:0 20px">Be Pro</span><span class="btn outline" style="height:42px;padding:0 20px">Submit Website</span></div>
+    <div class="filterbar"><span class="ftab">Awards</span><span class="ftab">Category</span><span class="ftab">Tag</span><span class="ftab">Technology</span></div>
+  </div>
+
+  <h2 class="sh">Site surfaces</h2>
+  <p class="lead">Cards are 14px-radius image+caption rows — screenshot, title, author — inside the 1816px page. A site detail stacks a ~127px display title, the 69px jury score box, the 60px gold Vote button and 48px fully-round tag chips. The Vote button was measured, never clicked.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><div class="img">SITE OF THE DAY</div><b>Creative Reference Library</b><span class="sub">by Bimo Tri · Score 7.44</span></div>
+      <div class="tile"><div class="img">NOMINEE</div><b>Zirka Interceptor</b><span class="sub">Vote for the latest websites</span></div>
+    </div>
+    <div style="display:flex;gap:18px;align-items:center;margin-top:18px;flex-wrap:wrap">
+      <span class="score"><b style="font-weight:600">7.44</b><small>/ 10</small></span>
+      <span class="btn gold">Vote for Awwwards Honors</span>
+      <span class="btn pill">Art &amp; Illustration</span>
+      <span class="btn pill">Culture &amp; Education</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The directory is near-achromatic — ink #222 on white, a #f8f8f8 wash on filter bars and the mobile header, #ededed hairlines and hovers — then the orange/blue brand accents and six category triads, plus the measured #e3c352 award gold no variable declares. Swatches list the declared var each alias resolves through.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Inter Tight everywhere — one family at declared weights 300–800 (<code>--font-light</code> to <code>--font-black</code>), four named sizes 11–22px on the UI, and display sizes measured on the components (the ~127px site title, ~42px page headings).</p>
+  <div id="type-out"></div>
+
+  <h2 class="sh">Radius, layout and controls</h2>
+  <p class="lead">Radius is the signature: 8px on buttons and the score box, 14px on site cards, 72px fully-round on tag chips. Controls run 42–60px: 42px filter tabs, 48px buttons and fields, the 60px Vote CTA.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <p class="lead">One measured exception: <code>filter-dropdown</code> paints a 6px soft shadow at 20% black. Every other component is flat — depth otherwise comes from fills and hairlines alone.</p>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <p class="lead">Colours no variable declares — the #e3c352 award gold, the #383838 hover fill on the outlined Submit Website, the #005fcc browser focus ring — plus the measured component dimensions.</p>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"neutral":{"avatarBg":{"v":"#f8f8f8","t":"color","s":"css-var --avatar-bg (#f8f8f8)"},"buttonBorder":{"v":"#222222","t":"color","s":"css-var --button-border-color (#222222)"},"buttonInk":{"v":"#222222","t":"color","s":"css-var --button-bg (#222222)"},"buttonLabel":{"v":"#ffffff","t":"color","s":"css-var --button-color (#ffffff)"},"chipBg":{"v":"#e9e9e9","t":"color","s":"css-var --ch-bg (#e9e9e9)"},"coal":{"v":"#222222","t":"color","s":"css-var --bg-secondary (#222222)"},"featured":{"v":"#f8f0ee","t":"color","s":"css-var --color-featured (#f8f0ee)"},"fieldBg":{"v":"#ffffff","t":"color","s":"css-var --bg-input (#ffffff)"},"fieldBgHover":{"v":"#f8f8f8","t":"color","s":"css-var --bg-input-hover (#f8f8f8)"},"fieldBorder":{"v":"#ededed","t":"color","s":"css-var --border-input (#ededed)"},"fieldText":{"v":"#222222","t":"color","s":"css-var --color-input (#222222)"},"hairline":{"v":"#ededed","t":"color","s":"css-var --border-gray (#ededed)"},"headFootBg":{"v":"#f8f8f8","t":"color","s":"css-var --hf-bg (#f8f8f8)"},"ink":{"v":"#222222","t":"color","s":"css-var --color-primary (#222222)"},"mist":{"v":"#ededed","t":"color","s":"css-var --bg-3rd (#ededed)"},"oddRow":{"v":"#f8f8f8","t":"color","s":"css-var --color-odd-rows (#f8f8f8)"},"ok":{"v":"#e0f4d9","t":"color","s":"css-var --alert-green (#e0f4d9)"},"paper":{"v":"#ffffff","t":"color","s":"css-var --color-white (#ffffff)"},"searchFieldBg":{"v":"#ededed","t":"color","s":"css-var --sf-bg (#ededed)"},"warn":{"v":"#fff083","t":"color","s":"css-var --alert-yellow (#fff083)"},"wash":{"v":"#f8f8f8","t":"color","s":"css-var --bg-primary (#f8f8f8)"},"washAlt":{"v":"#f8f8f8","t":"color","s":"css-var --bg-4rd (#f8f8f8)"}},"accent":{"awards":{"v":"#502bd8","t":"color","s":"css-var --color-awards (#502bd8)"},"awards2":{"v":"#6749d1","t":"color","s":"css-var --color-awards-2 (#6749d1)"},"awards3":{"v":"#917eda","t":"color","s":"css-var --color-awards-3 (#917eda)"},"blue":{"v":"#49b3fc","t":"color","s":"css-var --color-blue (#49b3fc)"},"connect":{"v":"#ff602c","t":"color","s":"css-var --color-connect (#ff602c)"},"connect2":{"v":"#ffae94","t":"color","s":"css-var --color-connect-2 (#ffae94)"},"connect3":{"v":"#ffc5b1","t":"color","s":"css-var --color-connect-3 (#ffc5b1)"},"error":{"v":"#fa5d29","t":"color","s":"css-var --color-errors (#fa5d29)"},"inspire":{"v":"#aaeec4","t":"color","s":"css-var --color-inspire (#aaeec4)"},"inspire2":{"v":"#c8e4d3","t":"color","s":"css-var --color-inspire-2 (#c8e4d3)"},"inspire3":{"v":"#e2f4e9","t":"color","s":"css-var --color-inspire-3 (#e2f4e9)"},"jobs":{"v":"#74bcff","t":"color","s":"css-var --color-jobs (#74bcff)"},"jobs2":{"v":"#99ccfc","t":"color","s":"css-var --color-jobs-2 (#99ccfc)"},"jobs3":{"v":"#b4d7f8","t":"color","s":"css-var --color-jobs-3 (#b4d7f8)"},"learn":{"v":"#fff083","t":"color","s":"css-var --color-learn (#fff083)"},"learn2":{"v":"#fff9d0","t":"color","s":"css-var --color-learn-2 (#fff9d0)"},"learn3":{"v":"#fffbe2","t":"color","s":"css-var --color-learn-3 (#fffbe2)"},"orange":{"v":"#fa5d29","t":"color","s":"css-var --color-orange (#fa5d29)"},"read":{"v":"#c0ab3c","t":"color","s":"css-var --color-read (#c0ab3c)"},"read2":{"v":"#cdc38b","t":"color","s":"css-var --color-read-2 (#cdc38b)"},"read3":{"v":"#dbd6c0","t":"color","s":"css-var --color-read-3 (#dbd6c0)"}}},"font":{"family":{"primary":{"v":"Inter Tight","t":"fontFamily","s":"--font-1 on :root; computed on every measured component","d":"Inter Tight everywhere — headings, UI and body."}},"weight":{"light":{"v":300,"t":"fontWeight","s":"css-var --font-light","d":"Inter Tight light (the declared --font-light)."},"regular":{"v":400,"t":"fontWeight","s":"css-var --font-normal","d":"Inter Tight regular (the declared --font-normal)."},"medium":{"v":500,"t":"fontWeight","s":"css-var --font-medium","d":"Inter Tight medium (the declared --font-medium)."},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-bold","d":"Inter Tight semibold (the declared --font-bold)."},"bold":{"v":700,"t":"fontWeight","s":"css-var --font-extrabold","d":"Inter Tight bold (the declared --font-extrabold)."},"black":{"v":800,"t":"fontWeight","s":"css-var --font-black","d":"Inter Tight black (the declared --font-black)."}},"size":{"small":{"v":"11px","t":"dimension","s":"css-var --text-size-small","d":"The 11px micro size."},"primary":{"v":"14px","t":"dimension","s":"css-var --text-size-primary","d":"The 14px UI/body size."},"medium":{"v":"18px","t":"dimension","s":"css-var --text-size-medium","d":"The 18px medium size."},"large":{"v":"22px","t":"dimension","s":"css-var --text-size-large","d":"The 22px large size."},"xs":{"v":"14px","t":"dimension","s":"computed fontSize of grid-title (raw/components-computed.json)","d":"13.3px filter-bar text."},"sm":{"v":"14px","t":"dimension","s":"computed fontSize of nav-item (raw/components-computed.json)","d":"14px header nav."},"base":{"v":"15px","t":"dimension","s":"computed fontSize of grid-card-link (raw/components-computed.json)","d":"15px card captions and footer links."},"md":{"v":"18px","t":"dimension","s":"computed fontSize of tag-chip (raw/components-computed.json)","d":"18px tag chips."},"lg":{"v":"20.6479px","t":"dimension","s":"computed fontSize of site-card (raw/components-computed.json)","d":"~20.6px card titles."},"xl":{"v":"41.8873px","t":"dimension","s":"computed fontSize of submit-title (raw/components-computed.json)","d":"~41.9px page headings."},"display":{"v":"126.732px","t":"dimension","s":"computed fontSize of site-title (raw/components-computed.json)","d":"~126.7px site-detail display title."}},"tracking":{}},"radius":{"small":{"v":"4px","t":"dimension","s":"css-var --rounded-small","d":"4px — grid cards."},"normal":{"v":"8px","t":"dimension","s":"css-var --rounded-normal","d":"8px — buttons, pills, score box."},"large":{"v":"14px","t":"dimension","s":"css-var --rounded-large","d":"14px — site cards."},"full":{"v":"72px","t":"dimension","s":"css-var --button-rounded-full","d":"72px — tag chips and fully-round pills."}},"measured":{"action-award":{"v":"#e3c352","t":"color","s":"computed backgroundColor of vote-button default (raw/components-computed.json)","d":"The #e3c352 gold fill of the Vote button — no var declares it."},"action-hover":{"v":"#383838","t":"color","s":"computed backgroundColor of submit-cta hover (raw/components-computed.json)","d":"The #383838 fill the outlined Submit Website button picks up on hover/pressed."},"focus-ring":{"v":"#005fcc","t":"color","s":"computed outlineColor of nav-item focus-visible (raw/components-computed.json)","d":"The #005fcc browser focus ring on header and footer links (outline auto 1px)."}},"layout":{"page-width":{"v":"1816px","t":"dimension","s":"css-var --innerWidth","d":"The 1816px max content width."},"gutter":{"v":"20px","t":"dimension","s":"css-var --gutter","d":"The 20px page gutter."},"pad-inner":{"v":"52px","t":"dimension","s":"css-var --pad-inner","d":"The 40px inner padding."},"header-var":{"v":"71px","t":"dimension","s":"css-var --header-height","d":"The declared 71px header height (the measured bar is 54px — see component.header)."},"navFooter-height":{"v":"54px","t":"dimension","s":"css-var --nf-height","d":"The 54px bar height the header actually paints."},"filter-height":{"v":"42px","t":"dimension","s":"css-var --sf-height","d":"The 42px filter/search field height."},"field-height":{"v":"48px","t":"dimension","s":"css-var --height-input","d":"The 48px input height."},"button-height":{"v":"48px","t":"dimension","s":"css-var --button-height","d":"The declared 48px button height."},"button-pad":{"v":"24px","t":"dimension","s":"css-var --button-pad","d":"The 24px horizontal button padding."},"hairline":{"v":"0.5px","t":"dimension","s":"css-var --border-thin","d":"The 0.5px hairline width."},"field-pad":{"v":"16px","t":"dimension","s":"css-var --pad-input","d":"The 16px field padding."}},"motion":{}},"light":{"accent":{"awards":{"v":"#502bd8","t":"color","s":"css-var --color-awards resolved (#502bd8)","d":"#502BD8 awards purple (the category triads live in core.color.accent) — resolved from --color-awards."},"blue":{"v":"#49b3fc","t":"color","s":"css-var --color-blue resolved (#49b3fc)","d":"#49B3FC blue accent — resolved from --color-blue."},"brand":{"v":"#fa5d29","t":"color","s":"css-var --color-orange resolved (#fa5d29)","d":"#FA5D29 orange — brand accent, links and error state — resolved from --color-orange."}},"action":{"primary":{"v":"#222222","t":"color","s":"css-var --button-bg resolved (#222222)","d":"#222 Be Pro pill; the Submit Website outline fills #383838 on hover — resolved from --button-bg."},"primaryText":{"v":"#ffffff","t":"color","s":"css-var --button-color resolved (#ffffff)","d":"White text on the ink actions — resolved from --button-color."}},"border":{"default":{"v":"#ededed","t":"color","s":"css-var --border-gray resolved (#ededed)","d":"#ededed hairlines — resolved from --border-gray."},"field":{"v":"#ededed","t":"color","s":"css-var --border-input resolved (#ededed)","d":"#ededed field borders — resolved from --border-input."}},"surface":{"mist":{"v":"#ededed","t":"color","s":"css-var --bg-3rd resolved (#ededed)","d":"#ededed hover fill inside the filter dropdown — resolved from --bg-3rd."},"page":{"v":"#ffffff","t":"color","s":"css-var --bg-white resolved (#ffffff)","d":"The white page surface — resolved from --bg-white."},"subtle":{"v":"#f8f8f8","t":"color","s":"css-var --bg-primary resolved (#f8f8f8)","d":"#f8f8f8 filter bar and mobile header — resolved from --bg-primary."}},"text":{"inverse":{"v":"#ffffff","t":"color","s":"css-var --button-color resolved (#ffffff)","d":"White labels on the ink buttons — resolved from --button-color."},"primary":{"v":"#222222","t":"color","s":"css-var --color-primary resolved (#222222)","d":"rgb(34,34,34) ink on every measured component — resolved from --color-primary."}},"component":{"control":{"height":{"v":"60px","t":"dimension","s":"computed height of vote-button default (raw/components-computed.json)","d":"The Vote CTA is 60px; declared --button-height is 48px."},"filterHeight":{"v":"42px","t":"dimension","s":"computed height of filter-item default (raw/components-computed.json)","d":"Filter tabs are 42px (= --sf-height)."},"pillHeight":{"v":"48px","t":"dimension","s":"computed height of tag-chip default (raw/components-computed.json)","d":"Tag chips are 48px."}},"header":{"height":{"v":"54px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The desktop header bar is 54px."},"heightMobile":{"v":"54px","t":"dimension","s":"computed height of m-header default (raw/components-computed.json)","d":"The mobile header is 54px."}},"card":{"width":{"v":"658px","t":"dimension","s":"computed width of site-card default (raw/components-computed.json)","d":"Home site cards are ~658px at 1440."},"gridWidth":{"v":"432px","t":"dimension","s":"computed width of grid-card default (raw/components-computed.json)","d":"Winners-grid cards are 432px."},"mobileWidth":{"v":"358px","t":"dimension","s":"computed width of m-site-card default (raw/components-computed.json)","d":"Mobile cards are ~358px."}},"score":{"width":{"v":"69.375px","t":"dimension","s":"computed width of score-box default (raw/components-computed.json)","d":"The jury score box is ~69px wide."}},"dropdown":{"width":{"v":"280px","t":"dimension","s":"computed width of filter-dropdown default (raw/components-computed.json)","d":"The filter dropdown is 280px."}}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  const f = TOK.core.font || {};
+  let h = '';
+  for (const [n, t] of flat(f.family || {}, 'font.family.')) h += `<div class="sw"><span class="dot" style="border-radius:4px"><i style="background:var(--text-primary,#222);border-radius:4px"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+  if (h) h = `<div class="pal-h">font.family</div><div class="pal">${h}</div>`;
+  let m = '';
+  for (const g of ['weight', 'size', 'tracking'])
+    for (const [n, t] of flat(f[g] || {}, `font.${g}.`)) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  h += `<div class="pal-h">font.weight / font.size / font.tracking</div><div class="kv">${m}</div>`;
+  const out = $('#type-out');
+  if (out) out.innerHTML = h;
+})();
+</script>
+</body>
+</html>
