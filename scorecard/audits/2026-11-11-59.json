@@ -1,7 +1,7 @@
 {
  "date": "2026-11-11",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Read tokens.json, raw/measurements.md and components.md against scorecard/criteria.json web wording; addressed Greptile review on PR #474 (paint diffs, measured mock values, F1 ramp coverage)",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Read tokens.json, raw/components-computed.json, raw/css-vars.json, components.md, patterns.md and screenshots; graded each criterion against scorecard/criteria.json",
  "systems": [
   {
    "slug": "brilliant",
@@ -8899,6 +8899,134 @@
    "reviewedPlatform": "web"
   },
   {
+   "slug": "bezi",
+   "grades": {
+    "F1": {
+     "grade": "partly",
+     "evidence": "41 core.color tokens resolved from the bundle's --token-<uuid> declarations: an orange ramp (6 steps + a 35% scrim), a 9-step ink neutral ramp, 9 white-alpha and 3 black-alpha steps, and a 9-colour pastel accent set. The palette leads with brand orange rather than neutral-first, and the pastels are single values, not ramps — so the ramp coverage the rubric asks per hue is not there."
+    },
+    "F2": {
+     "grade": "partly",
+     "evidence": "dark.page #0d0d0d, dark.surface (the translucent header pill) and dark.chip #1c1c1c exist; card/scrim surfaces are measured on components only. No raised/overlay/scrim roles on the public surface."
+    },
+    "F3": {
+     "grade": "partly",
+     "evidence": "dark.text #ffffff, muted rgba(255,255,255,.5), accentText on the CTA, link #f2f1ec. No disabled or error text role on the captured surface."
+    },
+    "F4": {
+     "grade": "partly",
+     "evidence": "dark.border is the corner-tick hairline rgba(242,241,236,.32) measured on the index chips; a #005fcc focus outline is measured (the browser's auto ring; the tools chip draws its own 1px white ring at 8px offset). No strong border role."
+    },
+    "F5": {
+     "grade": "meets",
+     "evidence": "accent #f84503 with hover and pressed measured on cta/plan-cta (core.measured.cta-hover); the hover keeps the fill, recorded."
+    },
+    "F6": {
+     "grade": "missing",
+     "evidence": "No success/warning/danger/info roles exist on the public marketing surface; the orange ramp is brand, not status."
+    },
+    "F7": {
+     "grade": "meets",
+     "evidence": "The bundle declares one theme; every semantic role emitted exists for it and no second theme is declared to mismatch."
+    },
+    "F8": {
+     "grade": "partly",
+     "evidence": "The Future Medium, Inter, Inter Display, Space Mono, IBM Plex Mono, Fragment Mono and single faces named with fallback stacks (raw/css-vars.json fonts); sizes/weights measured per component (53/500 hero to 12px labels). No type-scale or named-role tokens."
+    },
+    "F9": {
+     "grade": "missing",
+     "evidence": "No spacing scale tokens; spacing exists only as measured per-component padding/gap values."
+    },
+    "F10": {
+     "grade": "meets",
+     "evidence": "component.control.radiusPill 144px token plus the plan card's radius and the corner-tick border widths measured on every entry."
+    },
+    "F11": {
+     "grade": "partly",
+     "evidence": "Control heights tokenised (heightNav 38.4px, heightCta 39px, radiusPill 144px, header/footer heights); the 14px menu glyph and 36px social buttons measured. Focus-ring width/offset not tokenised."
+    },
+    "F12": {
+     "grade": "partly",
+     "evidence": "The header pill's translucent fill and backdrop blur are measured on the component; no named elevation scale exists on the public surface."
+    },
+    "F13": {
+     "grade": "partly",
+     "evidence": "Transitions measured per component (0.18s ease color/opacity, 0.42s cubic-bezier transform on the chips); nothing on reduced motion."
+    },
+    "F14": {
+     "grade": "partly",
+     "evidence": "Header/footer/component boxes tokenised and 1440+390 widths captured; no breakpoints, grid or z-index tokens."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "~8 of 19 checklist components on the public surface: button, icon button (m-menu-button), link, menu (mobile sheet), card (plan-card), badge (NEW chip, RECOMMENDED tag), segmented control (Individual/Studio toggle). No text field/text area/select/checkbox/radio/switch/tabs/tooltip/dialog/toast/table/avatar."
+    },
+    "C2": {
+     "grade": "partly",
+     "evidence": "default, hover, focus-visible, pressed (CDP) and opened (mobile menu) captured for every interactive entry; the billing toggle's selected half shows on the pricing shot. No disabled, error or loading states surfaced."
+    },
+    "C3": {
+     "grade": "partly",
+     "evidence": "focus-visible measured and cropped on the interactive links/buttons (UA ring #005fcc; the tools chip draws a real 1px white ring at 8px offset; the cta's ring paints on its child anchor, now surfaced under child paint); plan-cta's keyboard focus could not be driven (focus failed, recorded)."
+    },
+    "C4": {
+     "grade": "partly",
+     "evidence": "every measured colour names its matching palette token and the dark roles alias core tokens; dimensions, radii and fills stay raw px where no scale exists."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "Five written patterns in patterns.md: shell, CTA vocabulary, hero/announcement, pricing, footer. Empty/loading/error, destructive, search and onboarding are absent from the public surface; no form exists to validate."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "No icons/ dir (declared layoutGaps: extraction pass not run; tool glyphs, the pixel arrow and the ghost mark are visible in the crops). Fonts named with fallback stacks; licences not stated."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "The README lists what was captured (routes, widths, theme), how (vars probe, measured components, screenshots) and a What to distrust section covering theme, uuid names, anchor colour, measured component tokens and quantised shots."
+    },
+    "F15": {
+     "grade": "meets",
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 5.16:1 dark muted (dark.muted) on surface (dark.surface)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 58 of 58 tokens name their source"
+    },
+    "K2": {
+     "grade": "partly",
+     "evidence": "Script: 8 rules, 6 linking an image (needs 3+, all linked)"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    },
+    "C5": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    }
+   },
+   "name": "Bezi",
+   "goodFor": "AI game-dev tooling marketing: a #0d0d0d starfield ground, a floating translucent 144px-radius pill header, one #f84503 orange CTA recipe, corner-tick index chips, pastel accents and the Framer --token-* palette",
+   "url": "https://www.bezi.com",
+   "captured": "2026-11-11",
+   "themes": [
+    "dark"
+   ],
+   "platform": "web",
+   "category": "AI agents",
+   "reviewed": "2026-11-11",
+   "reviewedPlatform": "web"
+  },
+  {
    "slug": "bloomberg",
    "grades": {
     "F1": {
@@ -10052,99 +10180,99 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "bezi",
+   "slug": "b150",
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "41 core.color tokens resolved from the bundle's --token-<uuid> declarations: an orange ramp (6 steps + a 35% scrim), a 9-step ink neutral ramp, 9 white-alpha and 3 black-alpha steps, and a 9-colour pastel accent set. The palette leads with brand orange rather than neutral-first, and the pastels are single values, not ramps — so the ramp coverage the rubric asks per hue is not there."
+     "evidence": "The measured palette is a small warm set (cream #fffdf6 ink, near-black #000 surface, white #fff pill, #f2efe9/#e6e3dd hovers, #1f1915 on-accent) — no declared ramps exist because the site declares no design-token custom properties (Tailwind --tw-* internals only)."
     },
     "F2": {
      "grade": "partly",
-     "evidence": "dark.page #0d0d0d, dark.surface (the translucent header pill) and dark.chip #1c1c1c exist; card/scrim surfaces are measured on components only. No raised/overlay/scrim roles on the public surface."
+     "evidence": "surface.page #000 verified on the footer and the dark home chrome; warm-cream inner surfaces appear in screenshots but no raised, overlay or scrim role was measured — no modal or scrim appeared."
     },
     "F3": {
      "grade": "partly",
-     "evidence": "dark.text #ffffff, muted rgba(255,255,255,.5), accentText on the CTA, link #f2f1ec. No disabled or error text role on the captured surface."
+     "evidence": "text.primary #fffdf6 verified on nav/footer/hero and text.inverse #1f1915 on the pills; no secondary/disabled/link role measured — link text is text.primary."
     },
     "F4": {
      "grade": "partly",
-     "evidence": "dark.border is the corner-tick hairline rgba(242,241,236,.32) measured on the index chips; a #005fcc focus outline is measured (the browser's auto ring; the tools chip draws its own 1px white ring at 8px offset). No strong border role."
+     "evidence": "No border-role tokens: borders live in Tailwind utilities on components; the focus ring is the browser #005fcc outline measured on nav-item/footer-link focus-visible."
     },
     "F5": {
-     "grade": "meets",
-     "evidence": "accent #f84503 with hover and pressed measured on cta/plan-cta (core.measured.cta-hover); the hover keeps the fill, recorded."
+     "grade": "partly",
+     "evidence": "action.primary #fffdf6 verified on hero-cta, action.hover #e6e3dd measured on its hover; pressed is a state capture, not a separate accent ramp."
     },
     "F6": {
      "grade": "missing",
-     "evidence": "No success/warning/danger/info roles exist on the public marketing surface; the orange ramp is brand, not status."
+     "evidence": "No status fill, text or border was measured on any component; no alert, badge or toast exists on the captured public surface."
     },
     "F7": {
-     "grade": "meets",
-     "evidence": "The bundle declares one theme; every semantic role emitted exists for it and no second theme is declared to mismatch."
+     "grade": "missing",
+     "evidence": "One painted theme only: a .dark probe resolves every custom property identically; tokens.json ships no dark set."
     },
     "F8": {
      "grade": "partly",
-     "evidence": "The Future Medium, Inter, Inter Display, Space Mono, IBM Plex Mono, Fragment Mono and single faces named with fallback stacks (raw/css-vars.json fonts); sizes/weights measured per component (53/500 hero to 12px labels). No type-scale or named-role tokens."
+     "evidence": "Two families measured — Fragment Mono (nav/button/footer labels at 10px) and Geist Variable (body, 120px display titles) — with measured sizes 10-120px and weights 400/500; no declared type scale, line-height tokens or named text roles."
     },
     "F9": {
      "grade": "missing",
-     "evidence": "No spacing scale tokens; spacing exists only as measured per-component padding/gap values."
+     "evidence": "No spacing scale is declared; layout spacing is composed in Tailwind utilities per component — only component box sizes are recorded."
     },
     "F10": {
-     "grade": "meets",
-     "evidence": "component.control.radiusPill 144px token plus the plan card's radius and the corner-tick border widths measured on every entry."
+     "grade": "partly",
+     "evidence": "core.radius.*: fields/cards 8px, pills and CTAs calc(infinity * 1px) recorded as 3.35544e+07px — radius is a role (pill vs field), not a scale; border widths stay utility values."
     },
     "F11": {
      "grade": "partly",
-     "evidence": "Control heights tokenised (heightNav 38.4px, heightCta 39px, radiusPill 144px, header/footer heights); the 14px menu glyph and 36px social buttons measured. Focus-ring width/offset not tokenised."
+     "evidence": "Measured control heights: SIGN UP 40px, JOIN THE BETA 41px, contact fields 56px, header 65px desktop and mobile; no icon-size or focus-offset tokens."
     },
     "F12": {
-     "grade": "partly",
-     "evidence": "The header pill's translucent fill and backdrop blur are measured on the component; no named elevation scale exists on the public surface."
+     "grade": "missing",
+     "evidence": "No shadow on any measured component — the site is flat; depth comes from surface tone and opacity."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "Transitions measured per component (0.18s ease color/opacity, 0.42s cubic-bezier transform on the chips); nothing on reduced motion."
+     "evidence": "Measured transitions per component (raw/components-computed.json style.transition* and _meta.sheets); Tailwind default durations/easings, no named motion vars; reduced-motion behaviour not probed."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Header/footer/component boxes tokenised and 1440+390 widths captured; no breakpoints, grid or z-index tokens."
+     "evidence": "Component boxes measured in component.*; the 1440/390 split is evidenced by the mobile group; no breakpoint/grid token set exists on a Tailwind site."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "~8 of 19 checklist components on the public surface: button, icon button (m-menu-button), link, menu (mobile sheet), card (plan-card), badge (NEW chip, RECOMMENDED tag), segmented control (Individual/Studio toggle). No text field/text area/select/checkbox/radio/switch/tabs/tooltip/dialog/toast/table/avatar."
+     "evidence": "~30 components across shell, home, vibeathon, talent, resources, about, contact, footer and mobile: buttons, links, fields, menu, cards, nav. No select/checkbox/radio/switch/tabs/tooltip/dialog/toast/table/avatar/badge on the public signed-out surface."
     },
     "C2": {
      "grade": "partly",
-     "evidence": "default, hover, focus-visible, pressed (CDP) and opened (mobile menu) captured for every interactive entry; the billing toggle's selected half shows on the pricing shot. No disabled, error or loading states surfaced."
+     "evidence": "default/hover/focus-visible/pressed on every interactive component (pressed via CDP); opened on the mobile menu. No disabled/error/loading state surfaced; the contact form was never submitted."
     },
     "C3": {
      "grade": "partly",
-     "evidence": "focus-visible measured and cropped on the interactive links/buttons (UA ring #005fcc; the tools chip draws a real 1px white ring at 8px offset; the cta's ring paints on its child anchor, now surfaced under child paint); plan-cta's keyboard focus could not be driven (focus failed, recorded)."
+     "evidence": "focus-visible measured on nav, login, signup, CTAs, contact fields, footer links and the mobile menu button (browser #005fcc ring)."
     },
     "C4": {
      "grade": "partly",
-     "evidence": "every measured colour names its matching palette token and the dark roles alias core tokens; dimensions, radii and fills stay raw px where no scale exists."
+     "evidence": "Component entries reference token names where colours match tokens.json; the tokens themselves are measured values — there is no declared token layer to cite."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "Five written patterns in patterns.md: shell, CTA vocabulary, hero/announcement, pricing, footer. Empty/loading/error, destructive, search and onboarding are absent from the public surface; no form exists to validate."
+     "evidence": "patterns.md documents chrome, hero, cards per surface, the contact form, footer and mobile menu; no forms/validation, destructive-confirmation or feedback patterns on the public surface."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "No icons/ dir (declared layoutGaps: extraction pass not run; tool glyphs, the pixel arrow and the ghost mark are visible in the crops). Fonts named with fallback stacks; licences not stated."
+     "evidence": "icon.png resized from the site's apple-touch-icon; Fragment Mono and Geist Variable named — loaded via Next.js font optimization, licence not stated on site; no standalone icons/ set lifted."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "The README lists what was captured (routes, widths, theme), how (vars probe, measured components, screenshots) and a What to distrust section covering theme, uuid names, anchor colour, measured component tokens and quantised shots."
+     "evidence": "README documents what was captured, how (vars/measure/screenshots pipeline), what to distrust (measured-only tokens, the infinite radius, the app.b150.ai 429 boundary) and coverage."
     },
     "F15": {
-     "grade": "meets",
-     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 5.16:1 dark muted (dark.muted) on surface (dark.surface)"
+     "grade": "missing",
+     "evidence": "Script: primary text fails 1 pair; worst 1.00:1 light text (light.text.primary) on surface (light.text.primary)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 58 of 58 tokens name their source"
+     "evidence": "Script: 33 of 33 tokens name their source"
     },
     "K2": {
      "grade": "partly",
@@ -10167,19 +10295,19 @@
      "evidence": "Optional for a capture, and this product does not publish it."
     }
    },
-   "name": "Bezi",
-   "goodFor": "AI game-dev tooling marketing: a #0d0d0d starfield ground, a floating translucent 144px-radius pill header, one #f84503 orange CTA recipe, corner-tick index chips, pastel accents and the Framer --token-* palette",
-   "url": "https://www.bezi.com",
+   "name": "B150",
+   "goodFor": "Gen-AI builders' network marketing site: Tailwind v4 utility styles with measured-only tokens, ink-on-paper palette, pill CTAs (SIGN UP / JOIN THE BETA), uppercase tracked .label nav, marketing sections for Vibeathon, Talent, Free Resources and a contact form",
+   "url": "https://b150.ai",
    "captured": "2026-11-11",
    "themes": [
-    "dark"
+    "light"
    ],
    "platform": "web",
-   "category": "AI agents",
+   "category": "Media",
    "reviewed": "2026-11-11",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Read tokens.json, raw/measurements.md and components.md against scorecard/criteria.json web wording; addressed Greptile review on PR #474 (paint diffs, measured mock values, F1 ramp coverage)"
+ "reviewMethod": "Read tokens.json, raw/components-computed.json, raw/css-vars.json, components.md, patterns.md and screenshots; graded each criterion against scorecard/criteria.json"
 }
