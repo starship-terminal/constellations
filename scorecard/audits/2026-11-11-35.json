@@ -1,7 +1,7 @@
 {
  "date": "2026-11-11",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read every tokens.json value, every components.md entry, the screenshots and css-vars.json bins; graded each criterion against the measured evidence",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): public-web capture reviewed against the live site, raw/components-computed.json, the crops and screenshots",
  "systems": [
   {
    "slug": "brilliant",
@@ -8643,87 +8643,111 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "asos",
+   "slug": "ballpark",
    "grades": {
     "F1": {
-     "grade": "partly",
-     "evidence": "The declared palette is a 14-step neutral ramp (white..black) plus fragment accent families — green 6, orange 5, blue 4, purple 4, red 3, bronze 1 — hash-named on :root, not ~10-step ramps per hue."
+     "grade": "meets",
+     "evidence": "216 core.color tokens: the full Tailwind v3 ramps plus the product's own flame (11 steps), navy, pine and gray-alpha families, each resolved from a --token-* declaration in raw/css-vars.json."
     },
     "F2": {
      "grade": "partly",
-     "evidence": "surface.page/subtle/wash/inverse/promo all verified against measured components (header/footer black, #f8f8f8/#eee washes, #cde2f5 promo); no raised, overlay or scrim roles — the flyout and consent layer are plain fills."
+     "evidence": "light.page (white), light.chip (gray.50 band) and accent fills exist; card/ghost surfaces and scrims are measured on components only. No raised/overlay/scrim roles on the public surface."
     },
     "F3": {
      "grade": "partly",
-     "evidence": "text.primary #2d2d2d, text.secondary #666, text.inverse white all verified; no disabled or link roles (anchors stay default-anchor #0000ee, recorded under core.measured.link)."
+     "evidence": "foreground #111827, muted gray.600, accentText gray.50 on the CTA, link gray.600. No disabled or error text role on the captured surface."
     },
     "F4": {
      "grade": "partly",
-     "evidence": "border.default #dddddd verified on pills, buttons and fields; focus covered by measured.focus-outline #005fcc 1-5px; no strong border role."
+     "evidence": "default hairline gray.200 (nav-signin ::after), field border (oklab grey, measured.field-border) and a #005fcc focus ring measured. No strong border role."
     },
     "F5": {
-     "grade": "partly",
-     "evidence": "action.primary #018849 + action.primaryHover #006637 verified as a real repaint (add-to-bag); no pressed token — the CDP-forced press keeps the hover fill."
+     "grade": "meets",
+     "evidence": "accent gray.900, accentHover gray.800 and a pressed state measured on nav-cta/cta-request/plan-cta crops."
     },
     "F6": {
-     "grade": "partly",
-     "evidence": "status.error #ff3b30, status.sale #d01345 and accent.purple #6f5cff exist as single colours; no success/warning/info roles and no fill+text+border triples."
+     "grade": "missing",
+     "evidence": "No success/warning/danger/info roles exist on the public marketing surface; the flame ramp is brand, not status."
     },
     "F7": {
      "grade": "meets",
-     "evidence": "Single light theme on every captured route; a .dark probe resolves all 41 vars identically — verified nothing binds dark."
+     "evidence": "The bundle declares one theme; every semantic role emitted exists for it and no second theme is declared to mismatch."
     },
     "F8": {
      "grade": "partly",
-     "evidence": "core.font.family.primary (futura-pt + 5 fallbacks) plus a legacy FuturaStd stack, 5 weights (400-900), a 6-step size scale (10.5625-24px) and a 6-step tracking scale — all measured; no line-height tokens and no named roles (display/body/label)."
+     "evidence": "Inter Display, Inter, Source Serif 4 and five more faces named with fallback stacks (raw/css-vars.json fonts); sizes/weights measured per component (96/800 hero to 12px labels). No type-scale or named-role tokens."
     },
     "F9": {
      "grade": "missing",
-     "evidence": "No spacing tokens: the sitechrome sheets declare no spacing scale — layout spacing lives in component CSS (recorded honestly; component padding appears in measurements)."
+     "evidence": "No spacing scale tokens; spacing exists only as measured per-component padding/gap values."
     },
     "F10": {
-     "grade": "partly",
-     "evidence": "component.radius.none 0px records the verified square-corner rule (every measured button/pill/field/tile is 0) and radius.round the icon-button circle; no radius scale and no border-width tokens."
+     "grade": "meets",
+     "evidence": "component.control.radiusPill 7px, radiusField 6px, radiusCard 16px tokens plus a 24px plan card; border widths measured on every entry."
     },
     "F11": {
-     "grade": "meets",
-     "evidence": "Control heights tokenised (44/48/54.5/38/36/43px), icon sizes (social 30, search 38, tap target 50x60), header 140, nav 50/60, tile 335, flyout 1302, and component.focus.width 5px."
+     "grade": "partly",
+     "evidence": "Control heights tokenised (heightNav/heightCta 36px, fieldHeight 38px, heightSubmit 40px) and icon-button boxes measured (36px social, 48px launcher). Focus-ring width/offset not tokenised."
     },
     "F12": {
-     "grade": "missing",
-     "evidence": "Zero box-shadow measured on every captured component — the shop is flat by design; there is no elevation to tokenise (documented in README/components.md)."
+     "grade": "partly",
+     "evidence": "The plan card's layered natural shadow and the CTA ring shadow are measured on components; no named elevation scale exists on the public surface."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "Measured transitions recorded per component (nav-flyout min-height 0.2s, hero-cta 0.4s, promo-tab 0.8s); no duration/easing tokens exist and reduced-motion is unrecorded."
+     "evidence": "Transitions measured per component (0.15-0.3s cubic-bezier sets in components.md); nothing on reduced motion."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Component geometry tokenised (header 140, nav 50, flyout 1302, tile 335) and both widths captured; no breakpoint, content-width, grid-column or z-index tokens."
+     "evidence": "Header/footer/component boxes tokenised and 1440+390 widths captured; no breakpoints, grid or z-index tokens."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "~11 of 19: button, icon button (search/account/saved/bag/menu/chevrons), link, text field (search/email/newsletter), select (native size select, picked+restored), tabs (floor/promo/drawer tabs), menu (mega-menu flyout, mobile side panel), dialog (OneTrust consent), card, list row (drawer/flyout rows), badge (SELLING FAST/MORE COLOURS, star rating). Text area, checkbox, radio, switch, tooltip, toast, table, avatar not present on the public surface."
+     "evidence": "~10 of 19 checklist components on the public surface: button, icon button, link, text field, text area, menu (flyout + mobile sheet), card, badge (NEW chip), carousel dots. No select/checkbox/radio/switch/tabs/tooltip/dialog/toast/table/avatar."
     },
     "C2": {
      "grade": "meets",
-     "evidence": "Every state the public surface offers: hover, focus-visible, pressed (CDP), picked (size select, restored), opened (accordion, flyout, mobile drawer), focused/filled on the login email (typed, deleted, never sent). Disabled/error never surfaced."
+     "evidence": "default, hover, focus-visible, pressed (CDP), opened (menus), focused and filled (fields) captured for every interactive entry."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "A #005fcc ring (1-5px, #0770cf on my.asos.com) captured on 30 components; the one control where keyboard focus did not land (header search button) is recorded as an error state, not evidence."
+     "evidence": "focus-visible states measured and cropped for every interactive component; focus color tokenised (#005fcc)."
     },
     "C4": {
      "grade": "meets",
-     "evidence": "Component entries name tokens beside values ('#018849 light.action-primary', '#005fcc measured.focus-outline')."
+     "evidence": "components.md names the matching palette token beside every measured colour; roles alias core tokens."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "Six written patterns in patterns.md: shell, CTA vocabulary, hero, stories/coach, pricing, forms, footer. Empty/loading/error, destructive, search and onboarding are absent from the public surface; forms were never submitted."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "No icons/ dir (declared layoutGaps: extraction pass not run). Fonts named with fallback stacks; licences not stated."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README documents what was captured, the routes, how values were read, what to distrust (uuid token names, UA link colour, one theme) and the signed-in boundary."
+    },
+    "F15": {
+     "grade": "meets",
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 4.62:1 light muted (core.color.gray.500) on surface (core.color.gray.50)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 236 of 236 tokens name their source"
+    },
+    "K2": {
+     "grade": "partly",
+     "evidence": "Script: 8 rules, 6 linking an image (needs 3+, all linked)"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
     },
     "C5": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "P1": {
-     "grade": "partly",
-     "evidence": "Seven written patterns: shop chrome, button vocabulary, product surfaces, PDP, forms, mobile side panel, consent. Empty bag and saved lists captured signed-out; checkout, destructive confirmation, feedback and onboarding do not exist for a signed-out visitor; the login form was never submitted so validation is unseen."
     },
     "V1": {
      "grade": "na",
@@ -8732,45 +8756,21 @@
     "V2": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "A1": {
-     "grade": "partly",
-     "evidence": "Futura PT (400/500/700 + italics) and FuturaStd named with licence status (licensed, not distributed; system-sans fallback). No icon index: extraction pass not run; glyphs visible only in crops."
-    },
-    "K1": {
-     "grade": "meets",
-     "evidence": "README documents scope (Singapore geo, runtime-discovered PDP), the Akamai/headed boundary, hash-named vars and verified-only roles, the hidden home nav, honest focus misses, and quantisation caveats."
-    },
-    "F15": {
-     "grade": "meets",
-     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 4.94:1 light muted (light.text.secondary) on surface (light.surface.wash)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 96 of 96 tokens name their source"
-    },
-    "K2": {
-     "grade": "partly",
-     "evidence": "Script: 8 rules, 7 linking an image (needs 3+, all linked)"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "ASOS",
-   "goodFor": "Fashion e-commerce storefront: flat black-on-white chrome, square zero-radius controls, one buy-green action colour, Futura tracked-uppercase labels, hash-named CSS design tokens, mega-menu and mobile side-panel navigation",
-   "url": "https://www.asos.com",
-   "captured": "2026-11-10",
+   "name": "Ballpark",
+   "goodFor": "Product-research marketing: white-ground editorial SaaS surface with Inter Display headlines, one near-black 36px pill CTA recipe, hairline ghost buttons, a coral flame ramp reserved for the NEW chip, and the full Tailwind palette under Framer's --token-* vars",
+   "url": "https://ballparkhq.com",
+   "captured": "2026-11-11",
    "themes": [
     "light"
    ],
    "platform": "web",
-   "category": "E-commerce",
+   "category": "Productivity",
    "reviewed": "2026-11-11",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "read every tokens.json value, every components.md entry, the screenshots and css-vars.json bins; graded each criterion against the measured evidence"
+ "reviewMethod": "public-web capture reviewed against the live site, raw/components-computed.json, the crops and screenshots"
 }

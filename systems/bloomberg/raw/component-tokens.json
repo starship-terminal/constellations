@@ -1,0 +1,294 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. bloomberg.com declares almost no :root custom properties; its CSS-module values are inline, so the tree is built from measured computed styles on the running pages (raw/components-computed.json). Semantic roles land in the light set (the only theme the site paints).",
+ "core": {
+  "font": {
+   "family": {
+    "headline": {
+     "value": "BWHaasHead, \"Helvetica Neue\", Helvetica, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-headline default (raw/components-computed.json)",
+     "description": "The headline stack (BWHaasHead first)."
+    },
+    "ui": {
+     "value": "BWHaasGroteskWeb, BWHaasGroteskWeb-fallback, Helvetica, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of nav-link default (raw/components-computed.json)",
+     "description": "The UI/label stack (BWHaasGroteskWeb first)."
+    },
+    "body": {
+     "value": "BWHaasGroteskWeb, BWHaasGroteskWeb-fallback, Helvetica, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of dek default (raw/components-computed.json)",
+     "description": "The body-text stack (BWHaasGroteskWeb first)."
+    },
+    "utility": {
+     "value": "AvenirNextPForBBG, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of utility-bar default (raw/components-computed.json)",
+     "description": "The utility-strip stack (AvenirNextPForBBG first)."
+    }
+   },
+   "size": {
+    "hero": {
+     "type": "dimension",
+     "value": "32px",
+     "source": "computed fontSize of hero-headline default (raw/components-computed.json)",
+     "description": "The lead headline size."
+    },
+    "title": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of section-title default (raw/components-computed.json)",
+     "description": "A front-page module title."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "14px",
+     "source": "computed fontSize of dek default (raw/components-computed.json)",
+     "description": "Story dek size."
+    },
+    "label": {
+     "type": "dimension",
+     "value": "14px",
+     "source": "computed fontSize of nav-link default (raw/components-computed.json)",
+     "description": "Nav label size."
+    },
+    "caption": {
+     "type": "dimension",
+     "value": "18px",
+     "source": "computed fontSize of byline default (raw/components-computed.json)",
+     "description": "Byline/caption size."
+    },
+    "ticker": {
+     "type": "dimension",
+     "value": "14px",
+     "source": "computed fontSize of ticker-item default (raw/components-computed.json)",
+     "description": "Ticker quote size."
+    }
+   },
+   "lineHeight": {
+    "hero": {
+     "type": "dimension",
+     "value": "33.6px",
+     "source": "computed lineHeight of hero-headline default (raw/components-computed.json)",
+     "description": "Lead headline line height."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "18.2px",
+     "source": "computed lineHeight of dek default (raw/components-computed.json)",
+     "description": "Story dek line height."
+    }
+   },
+   "weight": {
+    "hero": {
+     "type": "number",
+     "value": "500",
+     "source": "computed fontWeight of hero-headline default (raw/components-computed.json)",
+     "description": "Lead headline weight."
+    },
+    "label": {
+     "type": "number",
+     "value": "500",
+     "source": "computed fontWeight of nav-link default (raw/components-computed.json)",
+     "description": "Nav label weight."
+    }
+   }
+  },
+  "color": {
+   "neutral": {
+    "ink": {
+     "value": "#000000",
+     "type": "color",
+     "source": "computed color of hero-headline default (raw/components-computed.json)",
+     "description": "Headline text."
+    },
+    "body": {
+     "value": "#3c3c3c",
+     "type": "color",
+     "source": "computed color of dek default (raw/components-computed.json)",
+     "description": "Body text."
+    },
+    "line": {
+     "value": "#b3b3b3",
+     "type": "color",
+     "source": "computed borderBottomColor of ticker-bar default (raw/components-computed.json)",
+     "description": "The 1px hairline rails (the ticker rail's edges; utility separators share it)."
+    },
+    "line-strong": {
+     "value": "#767676",
+     "type": "color",
+     "source": "computed borderTopColor of subscribe-nav default (raw/components-computed.json)",
+     "description": "The darker border on bordered buttons."
+    },
+    "paper": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed backgroundColor of plan-card default (raw/components-computed.json)",
+     "description": "The white surface (page and cards)."
+    },
+    "ticker": {
+     "value": "#1c1c1c",
+     "type": "color",
+     "source": "computed backgroundColor of ticker-pill default (raw/components-computed.json)",
+     "description": "The near-black ticker chip fill."
+    },
+    "chrome": {
+     "value": "#000000",
+     "type": "color",
+     "source": "painted fill inside/under logo-bar default (raw/components-computed.json)",
+     "description": "The black logo-bar / section-nav chrome."
+    },
+    "smoke": {
+     "value": "#efefef",
+     "type": "color",
+     "source": "painted fill inside claim-offer hover (raw/components-computed.json)",
+     "description": "The light grey hover fill on the paywall's Claim button."
+    }
+   },
+   "brand": {
+    "paywall": {
+     "value": "#1c1c1c",
+     "type": "color",
+     "source": "computed backgroundColor of paywall default (raw/components-computed.json)",
+     "description": "The paywall band's dark fill."
+    },
+    "accent": {
+     "value": "#3523ff",
+     "type": "color",
+     "source": "painted fill inside offer-cta default (raw/components-computed.json)",
+     "description": "The Bloomberg CTA blue (offer Continue)."
+    },
+    "accent-hover": {
+     "value": "#4f4fff",
+     "type": "color",
+     "source": "painted fill inside offer-cta hover (raw/components-computed.json)",
+     "description": "CTA blue on hover."
+    }
+   },
+   "market": {
+    "live-strong": {
+     "value": "#e51503",
+     "type": "color",
+     "source": "painted fill inside live-paywall default (raw/components-computed.json)",
+     "description": "The stronger live red on the player surface."
+    }
+   }
+  },
+  "measured": {
+   "gutter": {
+    "value": "0px",
+    "type": "dimension",
+    "source": "computed paddingLeft of hero-story default (raw/components-computed.json)",
+    "description": "The front grid's gutter."
+   },
+   "block-gap": {
+    "value": "0px",
+    "type": "dimension",
+    "source": "computed marginTop of story-secondary default (raw/components-computed.json)",
+    "description": "Gap between story blocks."
+   },
+   "focus-outline": {
+    "value": "#005fcc",
+    "type": "color",
+    "source": "computed outlineColor of nav-link focus-visible (raw/components-computed.json)",
+    "description": "The keyboard-focus ring on nav items."
+   },
+   "button-hover": {
+    "value": "#1c1c1c",
+    "type": "color",
+    "source": "computed backgroundColor of subscribe-nav hover (raw/components-computed.json)",
+    "description": "The Subscribe button's hover fill."
+   }
+  }
+ },
+ "light": {
+  "text": {
+   "primary": {
+    "value": "{color.neutral.ink}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "Body and headline text."
+   }
+  },
+  "surface": {
+   "chrome": {
+    "value": "{color.neutral.chrome}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "The black header chrome."
+   },
+   "page": {
+    "value": "{color.neutral.paper}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "The page background."
+   }
+  },
+  "border": {
+   "hairline": {
+    "value": "{color.neutral.line}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "Story-block hairlines."
+   }
+  },
+  "action": {
+   "primary": {
+    "value": "{color.brand.accent}",
+    "type": "color",
+    "source": "role alias over the measured core palette",
+    "description": "Primary CTAs (Continue, checkout)."
+   }
+  }
+ },
+ "dark": {},
+ "component": {
+  "control": {
+   "height": {
+    "type": "dimension",
+    "value": "30px",
+    "source": "computed height of subscribe-nav default (raw/components-computed.json)",
+    "description": "The Subscribe button height."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "4px",
+    "source": "computed borderTopLeftRadius of subscribe-nav default (raw/components-computed.json)",
+    "description": "Button corner radius."
+   }
+  },
+  "ticker": {
+   "height": {
+    "type": "dimension",
+    "value": "31.5px",
+    "source": "computed height of ticker-item default (raw/components-computed.json)",
+    "description": "Ticker chip height."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "52px",
+    "source": "computed height of logo-bar default (raw/components-computed.json)",
+    "description": "The black logo bar height."
+   }
+  },
+  "paywall": {
+   "padding": {
+    "type": "dimension",
+    "value": "0px",
+    "source": "computed paddingTop of paywall default (raw/components-computed.json)",
+    "description": "Paywall band vertical padding."
+   }
+  },
+  "plan-card": {
+   "radius": {
+    "type": "dimension",
+    "value": "0px",
+    "source": "computed borderTopLeftRadius of plan-card default (raw/components-computed.json)",
+    "description": "Plan card corner radius."
+   }
+  }
+ }
+}

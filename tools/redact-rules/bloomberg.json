@@ -1,0 +1,12 @@
+{
+ "_note": "Rules for systems/bloomberg. A fully public signed-out news capture: no owner data on any surface. The OCR email net is kept, with product-published and example addresses allowed.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@bloomberg\\.(com|net)$",
+   "@bloomberglaw\\.com$",
+   "@example\\.(com|org)$"
+  ]
+ },
+ "families": []
+}
