@@ -3036,7 +3036,8 @@
      "the mobile page forces a ~745px layout viewport (.comparison-grid min-width:700px): the hamburger sits outside the 390 visual viewport and the page pans",
      "icons: no standalone SVG set lifted this pass"
     ],
-    "durationMin": 90
+    "durationMin": 90,
+    "pr": "https://github.com/starship-terminal/constellations/pull/487"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the icons (the cake. wordmark, chevrons, the +/- accordion glyph, social glyphs, the product-UI artwork) are visible in the crops and screenshots"
