@@ -1903,7 +1903,7 @@
      "icons: no standalone SVG set lifted this pass"
     ],
     "durationMin": 55,
-    "pr": "https://github.com/c-wenlong/designs/pull/TBD"
+    "pr": "https://github.com/c-wenlong/designs/pull/471"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the icons (menu, arrows, social glyphs, the wordmark) are visible in the crops and screenshots"
