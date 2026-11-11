@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 70,
-    "system_domains": 62,
-    "matched_domains": 38,
-    "missing_domains": 395,
+    "system_packages": 71,
+    "system_domains": 63,
+    "matched_domains": 39,
+    "missing_domains": 394,
     "system_domains_absent_from_catalog": 24
   },
   "matched": {
@@ -394,6 +394,23 @@
         }
       ]
     },
+    "base44.com": {
+      "catalog": [
+        {
+          "name": "Base44",
+          "domain": "base44.com",
+          "id": 770
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "base44",
+          "name": "Base44",
+          "url": "https://base44.com",
+          "name_match": true
+        }
+      ]
+    },
     "bloomberg.com": {
       "catalog": [
         {
@@ -774,13 +791,6 @@
         "name": "B150",
         "domain": "b150.ai",
         "id": 753
-      }
-    ],
-    "base44.com": [
-      {
-        "name": "Base44",
-        "domain": "base44.com",
-        "id": 770
       }
     ],
     "bento.me": [

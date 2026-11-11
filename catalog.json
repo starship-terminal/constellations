@@ -4933,7 +4933,7 @@
     ],
     "durationMin": null,
     "durationNote": "wall-clock duration was not recorded for this capture",
-    "pr": null
+    "pr": "https://github.com/c-wenlong/designs/pull/469"
    },
    "layoutGaps": {
     "icons/": "Base44's icons are its artwork and are not kept here (docs/RIGHTS.md); they are visible in the crops and screenshots"
