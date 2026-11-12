@@ -3897,7 +3897,7 @@
     ],
     "durationMin": 180,
     "durationNote": "wall-clock for the capture session including adaptation of the kit, the stylesheet harvest, screenshot and measurement passes, the token/docs build and the rubric review",
-    "pr": "TBD"
+    "pr": "https://github.com/starship-terminal/constellations/pull/498"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the glyphs (the Cosmos mark, the social icons and the element imagery) are visible in the crops and screenshots"
