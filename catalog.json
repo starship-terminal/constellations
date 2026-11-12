@@ -6835,7 +6835,7 @@
     ],
     "durationMin": 240,
     "durationNote": "wall-clock for the capture session including adaptation of the kit, the stylesheet harvest, screenshot and measurement passes, the token/docs build and the rubric review",
-    "pr": ""
+    "pr": "https://github.com/starship-terminal/constellations/pull/501"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the glyphs (the Creative Market wordmark, the cart and hamburger glyphs and the social icons) are visible in the crops and screenshots"
