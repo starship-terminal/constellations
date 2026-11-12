@@ -526,5 +526,17 @@
     "groupId": "web-categories",
     "labels": ["Marketplace"],
     "reason": "catalog.json describes a textile brand's storefront and product surfaces."
+  },
+  {
+    "referenceId": "systems:calendly",
+    "groupId": "web-categories",
+    "labels": ["Scheduling Tools"],
+    "reason": "catalog.json describes a scheduling product: the public booking calendar and invitee flow are the captured workflows."
+  },
+  {
+    "referenceId": "systems:canva",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a design tool: template galleries and the marketing pages for the design editor, docs, whiteboards and presentations."
   }
 ]

@@ -1,7 +1,7 @@
 {
  "date": "2026-11-12",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Author reviewed the package against the web rubric wording (tools/grade.py --criteria cartesia): token file, components.md entries, screenshots and the raw harvest were read criterion by criterion; scripted F15/F16/K2/K3 left to the script; optional C5/V1/V2 not applicable for a capture.",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read the package (tokens.json, components.md, patterns.md, README), the raw readings and the 31 screenshots; graded against scorecard/criteria.json web wording",
  "systems": [
   {
    "slug": "brilliant",
@@ -11466,103 +11466,103 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "cartesia",
+   "slug": "canva",
    "grades": {
     "F1": {
-     "grade": "meets",
-     "evidence": "Declared ramps: full 11-step --color-cartesia-green/blue/orange-50-950 (verdant, growth, mist, memory, the warm accent), two neutral ramps (--cartesia-neutral-10-100 and --color-cartesia-neutral-50-950), plus the named brand set (verdant/growth/forest/canvas/field/mist/carbon/memory)."
+     "grade": "partly",
+     "evidence": "One real ramp: the measured purple action ramp #8b3dff -> #7630d7 -> #612dae (core.color.brand.purple*) plus a declared purple-deep #4a2e7e; the StyleX layer also declares the #00c4cc -> #7d2ae8 brand gradient and the error #db142c / warning-text #ad5a00 / info #3d8bff hues as single declared steps. The neutrals are a measured set — ink #0f1015, white, muted rgba(16,18,25,0.698), footer-fade #f6f7f8, the 6%/14% ink washes, the rgba(53,65,90,0.2) hairline and the 60% scrim — not a 10-step scale per hue."
     },
     "F2": {
      "grade": "partly",
-     "evidence": "light+dark: background (#fefefe/#171715), card, muted, accent, surface/raised (#f5f5f2/#262421), popover, field (white/white-4.5%), secondary, plus the sidebar group. No scrim/overlay role exists on the public surface — popover exists but nothing paints a scrim."
+     "evidence": "light: surface.page and surface.card white, surface.footer #f6f7f8, the declared rgba(19,22,32,0.6) scrim under the auth card; dark: surface.page #16171d (the darkest .dark-layer surface; the hero band itself is a gradient media layer). No distinct raised role — cards raise white on white and the auth card floats on the scrim."
     },
     "F3": {
      "grade": "partly",
-     "evidence": "foreground, muted-foreground (#525150/#a1a1a1), secondary/card/surface/sidebar-foreground, subtle-foreground, placeholder, primary-foreground (on-accent) and action.link-verdant (link role) in both themes. No disabled text role exists on the public surface."
+     "evidence": "light: text.primary ink #0f1015, text.muted rgba(16,18,25,0.698), text.on.action white on the purple fill; dark band: text.primary rgba(255,255,255,0.898), text.strong pure white, text.on.action ink. No disabled or link-specific roles on the public surface."
     },
     "F4": {
-     "grade": "meets",
-     "evidence": "Declared border (#e4e3db/white-10%), boundary hairline (#ededed/white-6%), input, popover-border, ring + focus (#a1a1a1/#737373) — light and dark, plus the measured 2px focus ring and the verdant voice-row ring."
+     "grade": "partly",
+     "evidence": "border.hairline rgba(53,65,90,0.2) is the single shared role — a 1px inset shadow ring on secondary buttons and fields (they carry no real border); dark.border.ghost the 20% white ring on dark ghosts. Focus is a real outline per surface: #99c8ff on the dark band, #005fcc on light, #e59700 amber in the mobile menu (measured.focus-ring-*). No default/strong scale beyond these."
     },
     "F5": {
      "grade": "meets",
-     "evidence": "Declared accent/muted hover fills; measured hover states on every interactive component (nav-link onto #f3f2ef, CTAs at 90% of the verdant fill — core.measured.hover-dim) and CDP-forced pressed rows across 63 components / 177 states."
+     "evidence": "All three states measured on every purple control (plan-cta, continue-button, m-signup): #8b3dff default -> #7630d7 hover -> #612dae pressed — the same ramp everywhere, plus the translucent secondary states on dark (90% white fill -> 100% hover -> 80% pressed)."
     },
     "F6": {
-     "grade": "partly",
-     "evidence": "Declared destructive + destructive-foreground (#e7000b/#ff6467), success + fg (#008235/#56da7d) and warning + fg (#bb4d00/#fe9a00) in both themes — fill and text roles, no status borders and no info role on the public surface."
+     "grade": "missing",
+     "evidence": "The StyleX layer declares error #db142c, warning-text #ad5a00 and info #3d8bff (css-var evidence in tokens.json), but no success hue and no fill/text/border status roles paint anywhere on the public surface — single declared hues, not a status set."
     },
     "F7": {
-     "grade": "meets",
-     "evidence": "The .dark scope re-binds exactly the 43 semantic colour roles + action.link-verdant the light set carries (verdant->growth, #e4e3db->white-10%, #a1a1a1->#737373); parity is full. component.* sits under light by package convention — theme-agnostic measured geometry, not a role gap."
+     "grade": "partly",
+     "evidence": "The painted surfaces are tokenised as light (27 roles) and the .theme.dark band's translucent-white roles as dark (12) — a surface subset, not a toggle; the StyleX layer's own .light/.dark redeclarations resolve in css-vars.json but nothing on the public surface switches them. Parity is partial by construction."
     },
     "F8": {
      "grade": "meets",
-     "evidence": "Five stacks with fallbacks (ABC Diatype sans, PP Kyoto display, IBM Plex Mono, Homemade Apple handwriting, Inter for the docs app); declared --text-* ramp 12-60px (10 steps) + --control-font-size-* (12-18px), --leading-*/--text-*--line-height, --tracking-* and --font-weight-* scales, plus measured hero 40px / section 26px / mobile 32px / docs-title 36px."
+     "evidence": "One family with a real fallback stack (Canva Sans -> IBM Plex Sans Arabic -> Noto Sans Variable -> Noto Sans -> system sans) and three measured weights (400 display/body, 500 menu/footer/price, 600 every control label), plus a named-role scale: display-hero 80/88, display 64/70.4, display-mobile 45, h2 56/61.6, card-title 28, price ~29, lede 24/33.6, menu-item 21, section-label 18, body 16/22, control 14/22, meta 12 — with line-height tokens where measured."
     },
     "F9": {
      "grade": "partly",
-     "evidence": "Declared --spacing 4px base unit (the Tailwind multiplier scale) plus --control-padding-* 8-32px and --field-padding-* 8-10px; section/page padding is painted (48px gutter, --site-gutter) rather than a named step scale."
+     "evidence": "No spacing scale is declared or measurable as tokens (StyleX compiles the utilities away); per-component paddings live in components.md (hero-cta 0/20, plan-cta 0/16, menu-link 4/12, tool-tab 16/24)."
     },
     "F10": {
-     "grade": "partly",
-     "evidence": "Radii: declared --radius-xs-4xl (2-24px) + full (9999px clamp) + 50% dots, matching painted radii (8px controls, 12px sign-in, 6px menu links). Border widths: the 1px hairline var + measured 2px focus ring; no declared border-width scale exists to tokenise."
+     "grade": "meets",
+     "evidence": "core.radius: 9999px pill (tabs, billing switch), 20px hero CTA, 16px card, 14px comparison row, 12px button/link/field, 10px header controls, 32px flyout-panel left corners — all measured; real border widths are 0px everywhere, the 1px inset hairline shadow standing in for borders."
     },
     "F11": {
-     "grade": "meets",
-     "evidence": "Declared --control-height-* 24-48px (xs-2xl), --control-icon-size-* 12-20px, --control-padding-* and --field-padding-*; measured component.* heights (36px buttons, 44px auth controls, 64px header/nav-height) and the 2px focus-ring-width."
+     "grade": "partly",
+     "evidence": "component.button.height 40, hero-cta 56, field 38/46, switch 24, header-control 32, header 80/80, flyout 478, plan-card 353, comparison-row 64, category-card 80, menu-row 42 mobile; focus rings measured 1px auto (offset 1) on most controls, 2px on the nav trigger. Icon sizes visible in paint layers (40px tool-tab icons) but no icon-size token set."
     },
     "F12": {
-     "grade": "missing",
-     "evidence": "No shadow scale paints or is declared on the captured surfaces — cards, menus and chips are flat on hairlines (the .dark scope uses surface steps, not shadows). Only the --blur-xs/sm/md backdrop-blur vars exist (4-12px). Honest absence: the public system has no elevation ramp to tokenise."
+     "grade": "partly",
+     "evidence": "Only two real shadows measured: the switch thumb's layered elevation (core.measured.switch-thumb-shadow) and the 1px inset hairline ring on secondary controls (core.measured.hairline); the white-fill buttons on dark carry a layered inset+drop shadow baked into the fill. No 3-5 level scale exists to tokenise."
     },
     "F13": {
      "grade": "partly",
-     "evidence": "Declared ramp: --motion-duration-* 100-200ms, --motion-ease-out/-layout curves, disclosure/feedback/overlay/panel/sidebar enter-exit pairs, Tailwind ease vars, --site-accordion 350ms and --site-reveal 700ms/60ms stagger, plus per-component measured transitions. Reduced-motion behaviour is not advertised on the surface, so nothing was captured for it."
+     "evidence": "Measured: 0.1s control transitions (background-color/box-shadow/color linear) plus a 0.07s ease transform and ~0.99 pressed scale, the sheets' own 0.2-0.3s moves recorded in components-computed.json _meta. No prefers-reduced-motion probe was run this pass — the gap is recorded."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Declared --site-content-max 1280px, --site-gutter 48px, --site-nav-height 64px, --breakpoint-sm 640px and the --container-xs-6xl scale (320-1152px); grid column templates and z-index layers are not tokenised."
+     "evidence": "Component geometry and the 80px chrome height measured at 1440 and 390 (mobile menu is exactly 390x844); breakpoints and z-layers are not tokenised."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "10 of 19: button (nav-cta/pd-cta/plan-cta/continue/play/word-play), icon button (voice-nav, globe-arrow, m-menu-button), link (nav/menu/footer/mobile/cta), text field (email-field, signup-field — measured, never filled), select (the /sonic voice picker popover), menu (mega-menu + mobile menu), card (product/story/plan/login/signup), list row (product-row, voice-row, globe-voice, docs-nav-item), badge/chip (usecase-chip, voice-chip, globe-dot), plus accordion/FAQ disclosures and the usage slider. No text area/checkbox/radio/switch/tabs/tooltip/dialog/toast/table/avatar paints on the public surface; plan-tab recorded missing."
+     "evidence": "~11 of 19: button (plan-cta/hero-cta/continue-button/m-signup/signup-cta), secondary button (oauth-button/email-continue), icon button (m-menu-button), link (login-link/explore-link/menu-link/footer-link/social-icon), text field (username-input/search-field), switch (billing-switch), tabs (tool-tab/plan-tab), menu (nav-dropdown + m-menu-open), dialog (auth-card), card (plan/feature/auth/category), list row (m-nav-item, feature-accordion). No textarea/select/checkbox/radio/tooltip/toast/table/avatar on the public surface."
     },
     "C2": {
      "grade": "partly",
-     "evidence": "default/hover/focus-visible/pressed on every interactive entry (177 states over 63 components) plus opened/toggled (mega-menu, mobile menu, voice picker, FAQ disclosures) and filled/selected states on fields and voice rows. Disabled, loading and error states do not paint on the public surface; plan-tab is an honest miss."
+     "evidence": "default/hover/focus-visible/pressed on every interactive entry (102 states over 39 components); opened/toggled states captured (Design mega-menu, mobile menu, tools tab, billing-switch Yearly, the auth email-step reveal, plan-tab's focus-activated Education switch). No disabled/loading/error states exist on the surface."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "Real keyboard focus was applied to every interactive component; the 2px solid #a1a1a1 (--ring) outline is captured on controls, and voice-list rows ring verdant #309d4b — both tokenised under core.measured.focus-ring*."
+     "evidence": "A real keyboard focus is captured on every interactive entry: visible outlines per surface — #99c8ff on the dark band, #005fcc on light, #e59700 amber inside the mobile menu — 1px auto mostly, 2px on the nav trigger; plan-tab's focus-visible honestly records the Education view auto-activating."
     },
     "C4": {
-     "grade": "meets",
-     "evidence": "components.md entries name the token for every colour that matches one (the builder maps values to token paths automatically); measured values carry their source path in tokens.json."
+     "grade": "partly",
+     "evidence": "Entries cite tokens where values match (color.neutral.ink/white/muted, measured.focus-ring-*, color.brand.purple steps, radius tokens auto-resolved in components.md); painted-layer values (wash fills, ghost rings, media-layer backgrounds) are measured with provenance."
     },
     "P1": {
      "grade": "partly",
-     "evidence": "Nine written patterns covering what exists on the surface: the chrome/mega-menu, home hero + voice orb, marketing sections, the /sonic and /voices demo surfaces, pricing, the sign-in boundary, the docs app, themes and mobile. Forms-with-validation, empty/loading/error, destructive confirmation and feedback patterns do not exist on the public surface."
+     "evidence": "Nine written patterns: the dark header+hero chrome, the tools showcase, S$ pricing, templates/gallery, the auth card, the light footer, mobile, the state signature (washes + hairline), and boundaries. Forms have no validation evidence; empty/loading/error, destructive confirmation, feedback and onboarding do not exist on the signed-out surface."
     },
     "A1": {
      "grade": "partly",
-     "evidence": "Five fonts named with served-face provenance and fallbacks (ABC Diatype, PP Kyoto, IBM Plex Mono, Homemade Apple, Inter). No icon index — the extraction pass was not run; declared under layoutGaps."
+     "evidence": "Canva Sans named with licensed/not-distributed provenance, the 400/500/600 faces and the full fallback stack; the @font-face blocks are in the cross-origin StyleX bundles, harvested with srcs in css-vars.json. No icon index — extraction pass not run; the wordmark, tool-tab icons, OAuth provider marks and social glyphs are visible in crops."
     },
     "K1": {
      "grade": "meets",
-     "evidence": "README states what was captured (route list, all three surfaces), how (vars.mjs stylesheet harvest + measure.mjs computed styles + public.mjs screenshots), and a full What-to-distrust section including the three-systems warning, the lab()/oklab() serialisation caveat and the signed-in boundary."
+     "evidence": "README names every captured route and state, the signed-out method and tooling, both widths, the Singapore/SGD region, the cookie-banner hiding, the chunk-cap and mobile stitching, the auto-closing mega-menu and focus-activating tabs, the 404 route, the auth-card boundary and what to distrust."
     },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 6.93:1 dark muted (dark.color.muted-foreground) on surface (dark.color.card)"
+     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 6.93:1 light muted (core.color.neutral.muted) on page (core.color.neutral.white)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 325 of 325 tokens name their source"
+     "evidence": "Script: 91 of 91 tokens name their source"
     },
     "K2": {
      "grade": "partly",
-     "evidence": "Script: 8 rules, 5 linking an image (needs 3+, all linked)"
+     "evidence": "Script: 8 rules, 6 linking an image (needs 3+, all linked)"
     },
     "K3": {
      "grade": "meets",
@@ -11581,20 +11581,20 @@
      "evidence": "Optional for a capture, and this product does not publish it."
     }
    },
-   "name": "Cartesia",
-   "goodFor": "Voice-AI product marketing with a disciplined warm-neutral system: a declared --cartesia-* palette (verdant #309d4b actions, growth #abd49e tints, forest #004e23) under a shadcn-style semantic layer, PP Kyoto display over ABC Diatype body, a 245px Talk-to-Skylar voice orb ringed by 59px chooser buttons, pill chips, 36px/8px controls, .dark islands that re-bind the roles, a Clerk sign-in boundary and a separate Mintlify docs app kept out of the export",
-   "url": "https://www.cartesia.ai",
+   "name": "Canva",
+   "goodFor": "Design-tool marketing pages and galleries: Canva Sans 80px display over a white/#0f1015 two-tone, one #8b3dff -> #7630d7 -> #612dae purple ramp for every action, state layers instead of borders (6%/14% ink washes on light, 7%/15% white on the dark hero band), a 1px inset rgba(53,65,90,0.2) hairline ring on secondary controls, 9999px pill tabs next to flat 12px control radii, a dark .theme header+hero band over a gradient media layer, plan-card pricing and a public /templates gallery",
+   "url": "https://www.canva.com",
    "captured": "2026-11-12",
    "themes": [
     "light",
     "dark"
    ],
    "platform": "web",
-   "category": "AI agents",
+   "category": "Productivity",
    "reviewed": "2026-11-12",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "Author reviewed the package against the web rubric wording (tools/grade.py --criteria cartesia): token file, components.md entries, screenshots and the raw harvest were read criterion by criterion; scripted F15/F16/K2/K3 left to the script; optional C5/V1/V2 not applicable for a capture."
+ "reviewMethod": "read the package (tokens.json, components.md, patterns.md, README), the raw readings and the 31 screenshots; graded against scorecard/criteria.json web wording"
 }
