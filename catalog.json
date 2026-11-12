@@ -6265,7 +6265,8 @@
      "icons: no standalone SVG set lifted this pass"
     ],
     "durationMin": 240,
-    "durationNote": "wall-clock for the capture session including adaptation of the kit, the stylesheet harvest, screenshot and measurement passes, and the offline build"
+    "durationNote": "wall-clock for the capture session including adaptation of the kit, the stylesheet harvest, screenshot and measurement passes, and the offline build",
+    "pr": "https://github.com/starship-terminal/constellations/pull/491"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the icons (the BYBORRE wordmark, the iconify Material-Design glyphs, the social glyphs and the textile photography) are visible in the crops and screenshots"
