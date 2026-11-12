@@ -6829,7 +6829,8 @@
      "icons: no standalone SVG set lifted this pass"
     ],
     "durationMin": 105,
-    "durationNote": "worktree creation to package-complete commit, 2026-11-12/13 UTC: docs, recon, shots and measurement in one pass, then the token/docs build and the rubric review"
+    "durationNote": "worktree creation to package-complete commit, 2026-11-12/13 UTC: docs, recon, shots and measurement in one pass, then the token/docs build and the rubric review",
+    "pr": "https://github.com/starship-terminal/constellations/pull/506"
    },
    "layoutGaps": {
     "icons/": "no standalone SVG icon set was lifted; the declared --icon-size vars (14/16/30/40px) are tokenised under light.component.icon.* and the glyphs (the dona ring-and-wordmark logo, social marks, play/close) are visible in the crops and screenshots"
