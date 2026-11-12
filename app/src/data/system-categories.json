@@ -538,5 +538,11 @@
     "groupId": "web-categories",
     "labels": ["Design & Media Editing", "Productivity"],
     "reason": "catalog.json describes a design tool: template galleries and the marketing pages for the design editor, docs, whiteboards and presentations."
+  },
+  {
+    "referenceId": "systems:care",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a caregiving-services marketplace: public caregiver listings, category landing pages and membership pricing."
   }
 ]
