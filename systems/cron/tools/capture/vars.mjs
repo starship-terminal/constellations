@@ -107,6 +107,7 @@ const resolved = {};
 for (const pass of ['light']) {
   // cron.com's two surfaces (dark home, light Next.js content pages) carry no
   // theme attribute and declare no second var set.
+  await probe.setContent(shell, { waitUntil: 'load' });
 resolved[pass] = await probe.evaluate((names) => {
     const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
     const box = document.createElement('div');
