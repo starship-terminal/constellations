@@ -6553,7 +6553,8 @@
      "icons: no standalone SVG set lifted this pass"
     ],
     "durationMin": 300,
-    "durationNote": "wall-clock for the capture session including adaptation of the kit, the stylesheet harvest, screenshot and measurement passes, the token/docs build and the rubric review"
+    "durationNote": "wall-clock for the capture session including adaptation of the kit, the stylesheet harvest, screenshot and measurement passes, the token/docs build and the rubric review",
+    "pr": "https://github.com/starship-terminal/constellations/pull/494"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the glyphs (the Canva wordmark, the tool-tab icons, the OAuth provider marks and the social icons) are visible in the crops and screenshots"
