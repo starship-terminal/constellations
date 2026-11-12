@@ -24,11 +24,14 @@ const legacyCategoryLabels: Record<string, string | string[]> = {
     "Music Streaming",
     "Magazines & Newspapers",
   ],
+  // The legacy media bucket also held creator tools and community products.
   media: [
     "Entertainment",
     "Video Streaming",
     "Music Streaming",
     "Magazines & Newspapers",
+    "Design & Media Editing",
+    "Social Networking",
   ],
   ai: "AI Tool",
   "ai-chat": "AI Tool",
@@ -55,6 +58,8 @@ const legacyCategoryLabels: Record<string, string | string[]> = {
   browser: "Utility",
   events: "Scheduling Tools",
   "super-app": ["Travel & Booking", "Food Delivery"],
+  travel: "Travel & Booking",
+  directory: ["Inspiration Board", "Reference"],
 };
 const categorySlug = (value: string) =>
   value
