@@ -649,19 +649,19 @@
         }
       ]
     },
-    "buymeacoffee.com": {
+    "cakeequity.com": {
       "catalog": [
         {
-          "name": "Buy Me a Coffee",
-          "domain": "buymeacoffee.com",
-          "id": 334
+          "name": "Cake Equity",
+          "domain": "cakeequity.com",
+          "id": 661
         }
       ],
       "pkgs": [
         {
-          "slug": "buymeacoffee",
-          "name": "Buy Me a Coffee",
-          "url": "https://buymeacoffee.com",
+          "slug": "cakeequity",
+          "name": "Cake Equity",
+          "url": "https://www.cakeequity.com",
           "name_match": false
         }
       ]
@@ -972,18 +972,18 @@
         "id": 284
       }
     ],
+    "buymeacoffee.com": [
+      {
+        "name": "Buy Me a Coffee",
+        "domain": "buymeacoffee.com",
+        "id": 334
+      }
+    ],
     "byborre.com": [
       {
         "name": "BYBORRE®",
         "domain": "byborre.com",
         "id": 455
-      }
-    ],
-    "cakeequity.com": [
-      {
-        "name": "Cake Equity",
-        "domain": "cakeequity.com",
-        "id": 661
       }
     ],
     "cal.com": [
