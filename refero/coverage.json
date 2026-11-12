@@ -3,10 +3,10 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 84,
-    "system_domains": 76,
-    "matched_domains": 51,
-    "missing_domains": 382,
+    "system_packages": 85,
+    "system_domains": 77,
+    "matched_domains": 52,
+    "missing_domains": 381,
     "system_domains_absent_from_catalog": 25
   },
   "matched": {
@@ -649,6 +649,23 @@
         }
       ]
     },
+    "byborre.com": {
+      "catalog": [
+        {
+          "name": "BYBORRE®",
+          "domain": "byborre.com",
+          "id": 455
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "byborre",
+          "name": "BYBORRE",
+          "url": "https://byborre.com",
+          "name_match": true
+        }
+      ]
+    },
     "chatgpt.com": {
       "catalog": [
         {
@@ -960,13 +977,6 @@
         "name": "Buy Me a Coffee",
         "domain": "buymeacoffee.com",
         "id": 334
-      }
-    ],
-    "byborre.com": [
-      {
-        "name": "BYBORRE®",
-        "domain": "byborre.com",
-        "id": 455
       }
     ],
     "cakeequity.com": [
