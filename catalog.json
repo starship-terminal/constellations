@@ -3892,7 +3892,7 @@
     ],
     "durationMin": 70,
     "durationNote": "worktree creation to package-complete commit, 2026-11-12",
-    "pr": "pending"
+    "pr": "https://github.com/starship-terminal/constellations/pull/497"
    },
    "layoutGaps": {
     "icons/": "the icon extraction pass was not run; the icons (the copy.ai wordmark, the Google/Microsoft provider glyphs, the social icons and the playbook/blog artwork) are visible in the crops and screenshots"
