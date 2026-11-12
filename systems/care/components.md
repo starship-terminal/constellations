@@ -8,7 +8,7 @@ How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (135 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (135 files, named `{component}-{state}.png`; 126 at 2x, 7 halved to 1x over the ~1.2-megapixel crop cap (per-crop sizes in [raw/crop-scales.json](raw/crop-scales.json))). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -58,7 +58,7 @@ Screenshots are named `{page}-{theme}-state.png`: every captured surface paints 
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 24 components were given a real keyboard focus. 3 draw an outline ring: `read-more` (3px auto #4d9380 `color.brand.green-focus`, offset 0px), `passwordless-link` (5px auto #005fcc, offset -2px), `social-icon` (1px auto #005fcc, offset 1px). 10 draw a focus ring as a shadow instead: `join-cta`, `search-cta`, `service-cta`, `city-button`, `filter-button`, `page-item`, `login-button`, `join-option`, `plan-cta`, `plan-alt`. 1 change only their border: `learn-more`. The other 10 show no measured change: `nav-trigger`, `login-link`, `menu-item`, `menu-link`, `cat-faq`, `provider-card`, `list-faq`, `pricing-faq`, `footer-link`, `m-nav-item`.
+**Focus.** 24 components were given a real keyboard focus. 3 draw an outline ring: `read-more` (3px auto #4d9380 `color.brand.green-focus`, offset 0px), `passwordless-link` (5px auto #005fcc, offset -2px), `social-icon` (1px auto #005fcc, offset 1px). 10 draw a focus ring as a shadow instead: `join-cta`, `search-cta`, `service-cta`, `city-button`, `filter-button`, `page-item`, `login-button`, `join-option`, `plan-cta`, `plan-alt`. 7 grow a border on a child layer: `nav-trigger`, `login-link`, `menu-item`, `menu-link`, `provider-card`, `footer-link`, `m-nav-item`. 2 paint a background wash: `cat-faq`, `list-faq`. The other 2 show no measured change: `learn-more`, `pricing-faq`.
 
 **Pressed.** Forced with DevTools (`CSS.forcePseudoState` :active:hover). Nothing a real press would submit was ever pressed.
 

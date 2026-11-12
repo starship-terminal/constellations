@@ -302,8 +302,8 @@ export async function crop(page, locator, name, pad = 8) {
   } finally {
     if (hidden) await page.evaluate(() => document.querySelectorAll('[data-m-hidden]').forEach((n) => { n.style.removeProperty('visibility'); n.removeAttribute('data-m-hidden'); }));
   }
-  quantize(file);
-  return path.relative(REF, file);
+  const q = quantize(file);
+  return { file: path.relative(REF, file), scale: q.scale, pixels: q.pixels };
 }
 
 export async function centre(locator) {
@@ -312,13 +312,19 @@ export async function centre(locator) {
 }
 
 // 256 colours, and a crop larger than about 1.2 megapixels (a whole sidebar or
-// section at 2x) is halved, so the folder stays small.
+// section at 2x) is halved, so the folder stays small. Reports the saved file's
+// pixel size and whether it was halved, so the reading records the real scale
+// instead of assuming 2x.
 export function quantize(file) {
-  execFileSync(PYTHON, [
+  const out = execFileSync(PYTHON, [
     '-c',
-    'import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert("RGB")\nif im.width*im.height>1200000: im=im.resize((im.width//2, im.height//2), Image.LANCZOS)\nim.quantize(256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(f, optimize=True)',
+    'import sys, json\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert("RGB")\nhalved=im.width*im.height>1200000\nif halved: im=im.resize((im.width//2, im.height//2), Image.LANCZOS)\nim.quantize(256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(f, optimize=True)\nprint(json.dumps({"pixels":[im.width,im.height],"halved":halved}))',
     file,
   ]);
+  const q = JSON.parse(out.toString().trim().split('\n').pop());
+  // deviceScaleFactor is 2 for every context this kit launches; a halved crop
+  // is effectively 1x.
+  return { pixels: q.pixels, scale: q.halved ? 1 : 2 };
 }
 
 export function slug(s) {

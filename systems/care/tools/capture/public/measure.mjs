@@ -139,13 +139,13 @@ async function measure(key, state, target, opts = {}) {
   const c = out.components[key];
   try {
     const s = await styleOf(loc);
-    let file;
+    let shot;
     if (opts.crop !== false) {
       try {
-        file = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
+        shot = await crop(page, (opts.cropLoc || loc).filter({ visible: true }).first(), `${key}-${state}`, opts.pad ?? 8);
       } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
     }
-    c.states[state] = { ...s, crop: file, via: opts.via };
+    c.states[state] = { ...s, crop: shot?.file, cropScale: shot?.scale, cropPixels: shot?.pixels, via: opts.via };
     if (opts.extra) c.states[state].extra = await opts.extra(loc);
     log('  ', key, state, s.rect.w + 'x' + s.rect.h);
   } catch (e) {

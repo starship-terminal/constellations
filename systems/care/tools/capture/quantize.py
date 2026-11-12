@@ -10,7 +10,7 @@ committed. Flat UI colours are exact, gradients and photographs band a little, s
 from raw/css-vars.json and raw/components-computed.json. Adapted from the Coursera kit.
 """
 from PIL import Image
-import pathlib, re, sys
+import json, pathlib, re, sys
 
 REF = pathlib.Path(__file__).resolve().parent.parent.parent
 RAW = pathlib.Path(sys.argv[1])
@@ -24,6 +24,17 @@ for f in RAW.glob('*.part*.png'):
         continue
     parts.setdefault(m.group(1), []).append((int(m.group(2)), f))
 for name, ps in parts.items():
+    # Only stitch a run public.mjs marked complete. A capture that dies
+    # mid-tiling leaves earlier part files behind; joining those would write
+    # a truncated page over name.png, including a good capture from before.
+    manifest = RAW / f'{name}.parts.json'
+    expected = None
+    if manifest.exists():
+        expected = json.load(open(manifest)).get('tiles')
+    present = {f.name for _, f in ps}
+    if expected is None or sorted(expected) != sorted(present):
+        print('skipped', name, '- tile set incomplete or unmarked (no parts manifest)')
+        continue
     ims = [Image.open(f).convert('RGB') for _, f in sorted(ps)]
     sheet = Image.new('RGB', (ims[0].width, sum(i.height for i in ims)))
     y = 0

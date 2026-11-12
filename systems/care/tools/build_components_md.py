@@ -302,7 +302,13 @@ W("How to read an entry:")
 W()
 W("- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.")
 W("- The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
-W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
+try:
+    SCALES = json.load(open("raw/crop-scales.json"))
+    _one = [k for k, v in SCALES.items() if v["scale"] == 1]
+    _sc = f"; {len(SCALES) - len(_one)} at 2x, {len(_one)} halved to 1x over the ~1.2-megapixel crop cap (per-crop sizes in [raw/crop-scales.json](raw/crop-scales.json))" if _one else f"; all {len(SCALES)} at 2x (per-crop sizes in [raw/crop-scales.json](raw/crop-scales.json))"
+except FileNotFoundError:
+    _sc = ""
+W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`{_sc}). Screenshots are in [screenshots/](screenshots).")
 W()
 W("## Discovery list")
 W()
@@ -334,13 +340,25 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
+def _node_key(n):
+    """Paint-node identity minus state classes: 'button::before.MuiButtonBase-root.Mui-focusVisible' -> 'button::before'."""
+    return (n.get("node") or "").split(".")[0]
+
+
+def _laid_border(n):
+    """A paint node carrying a real laid-out border line (not an auto-sized, unpainted ::before)."""
+    b = n.get("border") or ""
+    return bool(re.search(r"(0*[1-9][\d.]*)px (solid|dashed|double)", b)) and "auto" not in (n.get("size") or "auto")
+
+
 foc = []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
     if not st or "style" not in st or st.get("via") == "focus failed":
         continue
     s = st["style"]
-    base = next((v["style"] for v in c["states"].values() if "style" in v), s)
+    bst = next((v for v in c["states"].values() if "style" in v), st)
+    base = bst["style"]
     # A fully transparent outline paints nothing: several of Care's controls
     # carry an outline whose colour is rgba(0,0,0,0) at rest, so a transparent
     # outline must not count as a painted ring.
@@ -353,18 +371,36 @@ for k, c in C.items():
         s[f"border{d}{p}"] != base[f"border{d}{p}"]
         for d in ("Top", "Right", "Bottom", "Left")
         for p in ("Color", "Width", "Style")
+    ) and any(  # a border-*colour* restyle on a 0px border paints nothing
+        float(s[f"border{d}Width"].replace("px", "")) > 0 and s[f"border{d}Style"] not in ("none", "hidden")
+        for d in ("Top", "Right", "Bottom", "Left")
     )
+    # A border can appear on a child/pseudo layer (nav-trigger's ::before grows
+    # from an auto size to a laid-out green ring on focus). Compare paint nodes
+    # by their class-stripped name against the base state's.
+    base_paint = {_node_key(n): n for n in bst.get("paint", [])}
+    child_border = any(
+        _laid_border(n) and (_node_key(n) not in base_paint or not _laid_border(base_paint[_node_key(n)]))
+        for n in st.get("paint", [])
+    )
+    bg = s["backgroundColor"] != base["backgroundColor"]
     desc = f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else (f"on a child: {child_ring}" if child_ring else None)
-    foc.append((k, ring or bool(child_ring), shadow, border, desc))
-with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, r in foc if ring]
-with_shadow = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and sh]
-with_border = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and bd]
-without = [f"`{k}`" for k, ring, sh, bd, r in foc if not ring and not sh and not bd]
+    foc.append((k, ring or bool(child_ring), shadow, border, child_border, bg, desc))
+with_ring = [f"`{k}` ({r})" for k, ring, sh, bd, cb, bg, r in foc if ring]
+with_shadow = [f"`{k}`" for k, ring, sh, bd, cb, bg, r in foc if not ring and sh]
+with_border = [f"`{k}`" for k, ring, sh, bd, cb, bg, r in foc if not ring and not sh and bd]
+with_cborder = [f"`{k}`" for k, ring, sh, bd, cb, bg, r in foc if not ring and not sh and not bd and cb]
+with_bg = [f"`{k}`" for k, ring, sh, bd, cb, bg, r in foc if not ring and not sh and not bd and not cb and bg]
+without = [f"`{k}`" for k, ring, sh, bd, cb, bg, r in foc if not ring and not sh and not bd and not cb and not bg]
 parts = [f"{len(with_ring)} draw an outline ring: {', '.join(with_ring)}."]
 if with_shadow:
     parts.append(f"{len(with_shadow)} draw a focus ring as a shadow instead: {', '.join(with_shadow)}.")
 if with_border:
     parts.append(f"{len(with_border)} change only their border: {', '.join(with_border)}.")
+if with_cborder:
+    parts.append(f"{len(with_cborder)} grow a border on a child layer: {', '.join(with_cborder)}.")
+if with_bg:
+    parts.append(f"{len(with_bg)} paint a background wash: {', '.join(with_bg)}.")
 if without:
     parts.append(f"The other {len(without)} show no measured change: {', '.join(without)}.")
 W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {' '.join(parts)}")

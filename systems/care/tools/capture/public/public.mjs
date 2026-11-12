@@ -50,8 +50,20 @@ class Shooter {
     const MAXH = 8 * chunk;
     const hCap = Math.min(H, MAXH);
     if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
-    if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-    else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+    if (hCap <= chunk) {
+      await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
+    } else {
+      const tiles = [];
+      for (let i = 0, y = 0; y < hCap; i++, y += chunk) {
+        const tile = `${f}.part${i}.png`;
+        await screenshotWithMetadata(p, { path: tile, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
+        tiles.push(path.basename(tile));
+      }
+      // quantize.py only stitches a set marked complete: a run that dies
+      // mid-tiling leaves earlier tiles behind, and this manifest is written
+      // after the last one lands.
+      fs.writeFileSync(`${f}.parts.json`, JSON.stringify({ tiles }));
+    }
     this.count++; log('  shot', name, 'H=' + H);
     await p.evaluate(() => scrollTo(0, 0)); await wait(p, 500);
   }
