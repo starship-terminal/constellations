@@ -6851,7 +6851,7 @@
     ],
     "durationMin": 300,
     "durationNote": "wall-clock across the two capture sessions: public.mjs screenshot pass (50 shots over ~25 min at 20 s pacing) plus six measure.mjs runs around a DataDome challenge pause, the harness adaptation and the offline build",
-    "pr": ""
+    "pr": "https://github.com/starship-terminal/constellations/pull/495"
    },
    "layoutGaps": {
     "icons/": "no standalone icon extraction pass this capture; the Care.com wordmark, chevrons, rating stars and social glyphs are visible in the crops and screenshots"
