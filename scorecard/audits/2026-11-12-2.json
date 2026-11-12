@@ -1,7 +1,7 @@
 {
  "date": "2026-11-12",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): recovered from audit 2026-11-11-61.json: read tokens.json, raw/measurements.md and components.md against scorecard/criteria.json web wording; inspected screenshots and crops",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Agent rubric review of the built package: read tokens.json, components.md (44 components, 97 states), patterns.md, README.md and raw/components-computed.json against scorecard/criteria.json web wording; F15/F16/K2/K3 scripted",
  "systems": [
   {
    "slug": "brilliant",
@@ -10820,8 +10820,137 @@
    "category": "Learning",
    "reviewed": "2026-11-11",
    "reviewedPlatform": "web"
+  },
+  {
+   "slug": "cakeequity",
+   "grades": {
+    "F1": {
+     "grade": "partly",
+     "evidence": "A declared Webflow token layer with real steps: the blackberry ink alpha ramp (100/75/50/25/10), six named plum steps (bright/dark/new/100/light/lighter/lightest + contrast + 5-75 alphas), and each accent family (berry/lemon/lime/tangerine) at 100/highlight/light plus alpha washes; neutrals white/warm-white/grey/dark-grey/black plus white and grey alphas. Roles and per-hue accents, not uniform 10-step ramps — the site declares flat tokens, so no fuller ramp exists to tokenise."
+    },
+    "F2": {
+     "grade": "partly",
+     "evidence": "light: surface.page (white), surface.card, surface.muted (#ececf0), surface.warm (#fafaf8), surface.tint (#f5f4fb), surface.plan-top (#faf9ff), surface.dark (#18161a footer); dark: surface.page + surface.band (#0e0d12). No overlay/scrim roles measured — the mega-nav is a white 20px panel, not an overlay."
+    },
+    "F3": {
+     "grade": "partly",
+     "evidence": "light: text.primary (#18161a), text.secondary (#222), text.muted (50% ink), text.link (#4823ff), text.on-accent and text.on-dark (white), plus the auth-* text roles (#0f0f0f/#2b2b2b/#1c029d); dark: text.primary/muted/link-hover/eyebrow. No disabled text role paints on the public surface."
+    },
+    "F4": {
+     "grade": "meets",
+     "evidence": "border.field #d9d9e0 (select/toggle), border.field-focus #3898ec, border.subtle 10% ink (FAQ/plan hairlines), border.chip #ebe8f2, border.plan 25% plum (the featured card's strong border), dark.border.hairline rgba(244,244,244,.18); the 1px #005fcc focus ring is focus.ring. Default, strong and focus are all present."
+    },
+    "F5": {
+     "grade": "meets",
+     "evidence": "Measured on every primary control: #4823ff default -> #2b1599 hover -> #2b1599 pressed (nav-cta, hero-cta, plan-cta); the ghost fills #2b1599 on hover; Kinde's #5a38fd holds its fill across hover/pressed with #ebebeb->#dbdbdb on the OAuth buttons."
+    },
+    "F6": {
+     "grade": "partly",
+     "evidence": "Only a success fill paints: the mint #c6f0dc save-pill (light.accent.success) and the #ebffe9 now-live pill (lime.light); the declared lime/lemon/berry highlight hues exist as tokens but no warning, danger or info role is used anywhere on the public surface."
+    },
+    "F7": {
+     "grade": "partly",
+     "evidence": "The site ships one light theme; the two dark regions (footer, MCP band) are painted surfaces, not a toggle, and their 8 dark roles cover their own parts — parity is partial by construction (dark has no action/field roles because those surfaces paint none)."
+    },
+    "F8": {
+     "grade": "meets",
+     "evidence": "Three painted stacks with fallbacks (Exposure Light display, Inter body, the Kinde Inter/system auth stack) plus five served-but-unpainted faces recorded as declared; a measured ramp of 18 sizes (60 display to 13 badge), weights 300-600, line heights and tracking steps."
+    },
+    "F9": {
+     "grade": "partly",
+     "evidence": "No spacing scale is declared as variables or recoverable as one (Webflow utility classes compile it away); per-component paddings live in components.md."
+    },
+    "F10": {
+     "grade": "meets",
+     "evidence": "core.radius: 100px pills, 999px toggle, 50px nav-login, 20px dropdown/cards, 28px dark band, 16px cards, 8px Kinde controls, 4px menu button; border widths measured per component (1px fields/chips/hairlines)."
+    },
+    "F11": {
+     "grade": "meets",
+     "evidence": "component.* measured: control 58.8, button 44.2, plan-cta 49, field 48, header 74.2/68 mobile, plan-card 312w, login-card 496w, nav-dropdown 1008w, menu-button 48; the focus ring is 1px auto offset ~1px (marketing) and 2px solid offset 2px (Kinde), both tokenised."
+    },
+    "F12": {
+     "grade": "meets",
+     "evidence": "core.shadow holds four measured levels each tied to a use: nav (0/2/20/-19), dropdown (0/0/20/-5), card (0/2/5), faq-open (0/2/10/-8 with the -2px lift)."
+    },
+    "F13": {
+     "grade": "partly",
+     "evidence": "Durations measured per component (0.2s buttons, 0.4s ghost, 0.3s FAQ transform, 0.15s Kinde, 0.5s mega-nav grid) and Kinde's cubic-bezier(0.25,0,0.1,1) easing; marketing easings all resolve to 'ease' — no named curves exist, and reduced-motion behaviour was not captured."
+    },
+    "F14": {
+     "grade": "partly",
+     "evidence": "Component geometry, chrome heights and the ~745px forced mobile layout measured at 1440 and 390; breakpoints and z-index layers are not tokenised."
+    },
+    "C1": {
+     "grade": "partly",
+     "evidence": "~10 of 19: button (hero/nav/plan/auth CTAs), icon button (m-menu-button), link (nav/menu/footer/login), text field (login-field), select (country-select), switch (billing-toggle, a checkbox painted as a switch), menu (mega-nav + mobile menu), card (plan/story/collection/demo/login/announce), accordion (faq-item opened+closed), badge (plan-badge, save-pill, announce chip). No textarea/checkbox/radio/tooltip/toast/dialog/table/avatar paints on the public surface."
+    },
+    "C2": {
+     "grade": "meets",
+     "evidence": "default/hover/focus-visible/pressed on every interactive entry (97 states over 44 components); opened on the mega-nav, mobile menu and FAQ; focused on the select; toggled billing in screenshots. No disabled/loading/error states exist on the public surface."
+    },
+    "C3": {
+     "grade": "meets",
+     "evidence": "A real keyboard focus was measured on 16 components: 14 draw the 1px auto #005fcc ring (~1px offset), menu-link changes its wash, login controls draw Kinde's 2px solid #0054f0 ring offset 2px."
+    },
+    "C4": {
+     "grade": "meets",
+     "evidence": "components.md renders each colour with its matching token name inline (e.g. #005fcc `color.measured.focus`, #4823ff `color.plum.bright`); measured one-offs carry their own tokens."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "Eight written patterns: navbar, hero, dark band, pricing, blog/features/demo, hosted login, footer, mobile. Forms/validation, empty/loading/error, destructive and feedback patterns do not exist on the signed-out surface."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "Fonts named with fallbacks and CDN provenance (Exposure Light/Bold, Inter, Youth, Cabinetgrotesk, Inconsolata, Plus Jakarta Sans — painted vs declared marked); no icon set indexed — the extraction pass was not run (layoutGaps)."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README covers what was captured, how every value was read, the app boundary, and a What-to-distrust list (auth palette, mobile quirk, hidden calculator, quantised shots)."
+    },
+    "F15": {
+     "grade": "partly",
+     "evidence": "Script: primary text passes; secondary fails 2 pairs, worst 3.34:1 light muted (core.color.ink.50) on surface (core.color.plum.lightest)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 186 of 186 tokens name their source"
+    },
+    "K2": {
+     "grade": "partly",
+     "evidence": "Script: 8 rules, 6 linking an image (needs 3+, all linked)"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
+    },
+    "C5": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V1": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    },
+    "V2": {
+     "grade": "na",
+     "evidence": "Optional for a capture, and this product does not publish it."
+    }
+   },
+   "name": "Cake Equity",
+   "goodFor": "Startup equity-product marketing with a confident violet system: a declared --plum--*/--blackberry--* Webflow token layer, #4823ff pill buttons on 100px radii with #2b1599 hover, ghost-button twins, Exposure Light 60px display type over Inter, a mint #c6f0dc save pill, white plan cards with a 25%-plum featured border, the #0e0d12 Cake-MCP dark band with lemon eyebrows, and a Kinde-hosted login card on its own #5a38fd scale",
+   "url": "https://www.cakeequity.com",
+   "captured": "2026-11-11",
+   "themes": [
+    "light",
+    "dark"
+   ],
+   "platform": "web",
+   "category": "Productivity",
+   "reviewed": "2026-11-12",
+   "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "recovered from audit 2026-11-11-61.json: read tokens.json, raw/measurements.md and components.md against scorecard/criteria.json web wording; inspected screenshots and crops"
+ "reviewMethod": "Agent rubric review of the built package: read tokens.json, components.md (44 components, 97 states), patterns.md, README.md and raw/components-computed.json against scorecard/criteria.json web wording; F15/F16/K2/K3 scripted"
 }

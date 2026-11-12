@@ -1,7 +1,7 @@
 {
  "date": "2026-11-12",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read systems/cal/tokens.json, raw/css-vars.json, raw/measurements.md, raw/components-computed.json and components.md against scorecard/criteria.json web wording; inspected screenshots and crops",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Agent rubric review of the built package: read tokens.json, components.md (44 components, 97 states), patterns.md, README.md and raw/components-computed.json against scorecard/criteria.json web wording; F15/F16/K2/K3 scripted",
  "systems": [
   {
    "slug": "brilliant",
@@ -10822,87 +10822,111 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "cal",
+   "slug": "cakeequity",
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "Two declared layers resolved from the stylesheet harvest (raw/css-vars.json): the marketing --color-hp-* roles (ink #242424, ink-2 #292929, text #111111, body #374151, muted #6a6e78, subtle #5f6570, quiet #858993, surface greys page/#f9fafb/#f3f4f6/#e5e7eb, the single #cc4510 accent, #0f234b shadow tint) and the booker/auth --cal-* semantic roles (bg/text/border/brand resolving per theme), plus measured paints (#292929 booker-primary, #111111 footer, #262626/#696969 auth). Roles, not ramps: the surfaces paint flat role values, no ~10-step per-hue scale exists to tokenise."
+     "evidence": "A declared Webflow token layer with real steps: the blackberry ink alpha ramp (100/75/50/25/10), six named plum steps (bright/dark/new/100/light/lighter/lightest + contrast + 5-75 alphas), and each accent family (berry/lemon/lime/tangerine) at 100/highlight/light plus alpha washes; neutrals white/warm-white/grey/dark-grey/black plus white and grey alphas. Roles and per-hue accents, not uniform 10-step ramps — the site declares flat tokens, so no fuller ramp exists to tokenise."
     },
     "F2": {
      "grade": "partly",
-     "evidence": "light: surface.page/raised white, surface.sunken #f9fafb, field/chip #f3f4f6, well #e5e7eb, surface.bar the 72%-white glass, surface.dark #111111 footer; booker.surface.default/subtle/muted/emphasis over --cal-bg-*; dark: page #0f0f0f, subtle #262626, muted #171717, emphasis #404040, inverted #fafafa. No overlay or scrim role measured: the mega-menu is an anchored panel, no dialog or toast scrim paints on the public surface."
+     "evidence": "light: surface.page (white), surface.card, surface.muted (#ececf0), surface.warm (#fafaf8), surface.tint (#f5f4fb), surface.plan-top (#faf9ff), surface.dark (#18161a footer); dark: surface.page + surface.band (#0e0d12). No overlay/scrim roles measured — the mega-nav is a white 20px panel, not an overlay."
     },
     "F3": {
      "grade": "partly",
-     "evidence": "light: text.primary #242424, body #374151, muted #6a6e78, subtle #5f6570, quiet #858993, on.action white; booker.text default/emphasis/muted/subtle/inverted over --cal-text-*; dark: primary #d4d4d4, emphasis #fafafa, muted/subtle #a3a3a3, inverted #000000. No disabled or link-specific roles measured."
+     "evidence": "light: text.primary (#18161a), text.secondary (#222), text.muted (50% ink), text.link (#4823ff), text.on-accent and text.on-dark (white), plus the auth-* text roles (#0f0f0f/#2b2b2b/#1c029d); dark: text.primary/muted/link-hover/eyebrow. No disabled text role paints on the public surface."
     },
     "F4": {
      "grade": "meets",
-     "evidence": "border.default #e5e7eb, strong #dee1e6, hairline 7%-ink on marketing; booker.border.default #d1d5db / subtle #e5e7eb; dark default #4d4d4d, subtle #262626, emphasis #737373; the focus rings are tokenised (core.measured.focus-ring 1px white gap + 3px #9ca3af, booker-focus-ring 1px 20%-white + 2px 10%-black)."
+     "evidence": "border.field #d9d9e0 (select/toggle), border.field-focus #3898ec, border.subtle 10% ink (FAQ/plan hairlines), border.chip #ebe8f2, border.plan 25% plum (the featured card's strong border), dark.border.hairline rgba(244,244,244,.18); the 1px #005fcc focus ring is focus.ring. Default, strong and focus are all present."
     },
     "F5": {
-     "grade": "partly",
-     "evidence": "action.primary.default #242424 with hover tokenised as the 4%-ink veil (action.primary.hover); accent.default #cc4510 / accent.ink #a83a0c; the booker's #292929 paint covers today/Confirm and inverts to #f5f5f5 in dark (dark.action.primary). Pressed forced via CDP on every control: the slot draws an inset shadow (measured slot-pressed-shadow), most buttons paint little change beyond it."
+     "grade": "meets",
+     "evidence": "Measured on every primary control: #4823ff default -> #2b1599 hover -> #2b1599 pressed (nav-cta, hero-cta, plan-cta); the ghost fills #2b1599 on hover; Kinde's #5a38fd holds its fill across hover/pressed with #ebebeb->#dbdbdb on the OAuth buttons."
     },
     "F6": {
-     "grade": "missing",
-     "evidence": "No success/warning/danger/info roles paint on the public surface; the bk-badge 'Requires confirmation' is a neutral badge and the orange accent is decorative, not a status role."
+     "grade": "partly",
+     "evidence": "Only a success fill paints: the mint #c6f0dc save-pill (light.accent.success) and the #ebffe9 now-live pill (lime.light); the declared lime/lemon/berry highlight hues exist as tokens but no warning, danger or info role is used anywhere on the public surface."
     },
     "F7": {
      "grade": "partly",
-     "evidence": "Light covers both layers: 34 roles over --color-hp-* plus a booker.* subtree over --cal-*. Dark (15 roles) is the booker's ?theme=dark&embed=true surface only, re-resolving the same --cal-* variables: text/surface/border/action/brand all present. The marketing pages declare --color-hp-* dark overrides but never paint them signed out, so parity is partial by construction."
+     "evidence": "The site ships one light theme; the two dark regions (footer, MCP band) are painted surfaces, not a toggle, and their 8 dark roles cover their own parts — parity is partial by construction (dark has no action/field roles because those surfaces paint none)."
     },
     "F8": {
-     "grade": "partly",
-     "evidence": "Four stacks with fallbacks (calSans + calSans Fallback/system-ui/sans-serif; fontHeading + fallback; Inter + Inter Fallback; a mono stack); a measured ramp 80 display / 64 h1 / 56 h2 / 42 display-mobile / 22 h3 / 20 lede / 14 body+ui / 13 small / 11 tiny, with line-heights, weights 400-700 and letter-spacing tokens. Roles cover display/headings/body/small but no code or caption size role exists on the surface (mono family tokenised, unstyled)."
+     "grade": "meets",
+     "evidence": "Three painted stacks with fallbacks (Exposure Light display, Inter body, the Kinde Inter/system auth stack) plus five served-but-unpainted faces recorded as declared; a measured ramp of 18 sizes (60 display to 13 badge), weights 300-600, line heights and tracking steps."
     },
     "F9": {
      "grade": "partly",
-     "evidence": "No spacing scale is tokenised: the surfaces space with arbitrary Tailwind values and no core.spacing steps exist (README's coverage table records the absence); per-component paddings live in components.md and raw/components-computed.json."
+     "evidence": "No spacing scale is declared as variables or recoverable as one (Webflow utility classes compile it away); per-component paddings live in components.md."
     },
     "F10": {
      "grade": "meets",
-     "evidence": "core.radius sm 8 / md 10 / lg 12 / xl 14 / 2xl 18 / pill, measured on chips, controls, plan cards, day cells and the 18px glass bar; 1px borders plus the 7%-ink hairline tokenised."
+     "evidence": "core.radius: 100px pills, 999px toggle, 50px nav-login, 20px dropdown/cards, 28px dark band, 16px cards, 8px Kinde controls, 4px menu button; border widths measured per component (1px fields/chips/hairlines)."
     },
     "F11": {
-     "grade": "partly",
-     "evidence": "component.* dims tokenised: header 64 (both widths), nav button 36, hero button 64, control 36, slot 36, day cell 59.3, field 32, auth field 30 / button 40, menu card 200 wide, mobile navitem 48, card radius 14; focus ring width and offset measured (1px gap + 3px ring). No icon-size set: the icon extraction pass was not run."
+     "grade": "meets",
+     "evidence": "component.* measured: control 58.8, button 44.2, plan-cta 49, field 48, header 74.2/68 mobile, plan-card 312w, login-card 496w, nav-dropdown 1008w, menu-button 48; the focus ring is 1px auto offset ~1px (marketing) and 2px solid offset 2px (Kinde), both tokenised."
     },
     "F12": {
      "grade": "meets",
-     "evidence": "The declared --hp-shadow-* layer parsed to seven named levels each tied to a use: lift, raised (white inset top line + ring), well (inset), plate (inset ring), float, print/print-lift (the offset mock shadows), window; plus the measured focus rings and the slot's pressed inset in core.measured."
+     "evidence": "core.shadow holds four measured levels each tied to a use: nav (0/2/20/-19), dropdown (0/0/20/-5), card (0/2/5), faq-open (0/2/10/-8 with the -2px lift)."
     },
     "F13": {
-     "grade": "meets",
-     "evidence": "Declared --ease-hp-*/--ease-out curves tokenised (hp, hp-fly, hp-quad, out, in-out) plus measured durations (menu 0.1s, control/navitem 0.15s, slot 0.2s, --default-transition-duration 150ms). Reduced motion is recorded: under prefers-reduced-motion: reduce the nav button's animation computes to none (raw/components-computed.json _meta.reducedMotion.home) - the site cuts it."
+     "grade": "partly",
+     "evidence": "Durations measured per component (0.2s buttons, 0.4s ghost, 0.3s FAQ transform, 0.15s Kinde, 0.5s mega-nav grid) and Kinde's cubic-bezier(0.25,0,0.1,1) easing; marketing easings all resolve to 'ease' — no named curves exist, and reduced-motion behaviour was not captured."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Chrome geometry recorded at 1440 and 390 in raw/components-computed.json _meta.chrome (sticky nav z-40, 1320x64 inset 60px; sticky blocks z-10; the mega-menu a body-level Base UI panel anchored to the bar). Breakpoints, content widths and a z-layer scale are not tokenised."
+     "evidence": "Component geometry, chrome heights and the ~745px forced mobile layout measured at 1440 and 390; breakpoints and z-index layers are not tokenised."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "~11 of 19: button (nav-cta, hero-google/microsoft, plan-cta, sales-cta, continue-btn, sso-google, signup-google/email, bk-confirm), icon button (m-menu-button), link (nav-link, menu-link, footer-link, forgot-link, saml-link, hero-email, m-nav-item), text field (email-field, pass-field, bk-field), select (bk-meta timezone + 12h/24h toggle), tabs (plan-tab), switch-like toggle (billing-toggle), menu (nav-dropdown mega-menu, m-menu-open drawer), card (plan-card, auth-card, signup-card, bk-form), list row (bk-slot rows, menu-link), accordion (feature-accordion, measured closed), badge (changelog, bk-badge). No textarea/checkbox/radio/tooltip/dialog/toast/table/avatar on the public surface."
+     "evidence": "~10 of 19: button (hero/nav/plan/auth CTAs), icon button (m-menu-button), link (nav/menu/footer/login), text field (login-field), select (country-select), switch (billing-toggle, a checkbox painted as a switch), menu (mega-nav + mobile menu), card (plan/story/collection/demo/login/announce), accordion (faq-item opened+closed), badge (plan-badge, save-pill, announce chip). No textarea/checkbox/radio/tooltip/toast/dialog/table/avatar paints on the public surface."
     },
     "C2": {
-     "grade": "partly",
-     "evidence": "139 states over 59 components: default/hover/focus-visible/pressed (CDP-forced) on every interactive entry, focused/filled on the auth fields, opened states on the mega-menu, the mobile drawer, the pricing Teams tab and YEARLY switch, and the booker day-to-slot-to-form chain, plus the whole dark booker. Disabled/error/loading states do not exist on the surface (past days only hint at disabled in the grid)."
+     "grade": "meets",
+     "evidence": "default/hover/focus-visible/pressed on every interactive entry (97 states over 44 components); opened on the mega-nav, mobile menu and FAQ; focused on the select; toggled billing in screenshots. No disabled/loading/error states exist on the public surface."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "A real keyboard focus is captured on 25 components: 8 draw a 1px auto outline (rgba(156,162,174,.5) or rgba(160,160,160,.5), offset 0-1px) and 17 draw the shadow ring tokenised as core.measured.focus-ring / booker-focus-ring - nav-trigger/nav-link/nav-signin/nav-cta, hero-google/microsoft, changelog, sales-cta, bk-slot, bk-confirm, bkd-slot, sso-google, continue-btn, saml-link, signup-google, signup-email, m-nav-item."
+     "evidence": "A real keyboard focus was measured on 16 components: 14 draw the 1px auto #005fcc ring (~1px offset), menu-link changes its wash, login controls draw Kinde's 2px solid #0054f0 ring offset 2px."
     },
     "C4": {
+     "grade": "meets",
+     "evidence": "components.md renders each colour with its matching token name inline (e.g. #005fcc `color.measured.focus`, #4823ff `color.plum.bright`); measured one-offs carry their own tokens."
+    },
+    "P1": {
      "grade": "partly",
-     "evidence": "Entries cite token paths where a token carries the value (#e5e7eb color.hp.line-2 and so on through components.md); measured-only paints (the #292929 booker brand, the auth lab()/oklab() fills) carry a paint token or recorded provenance rather than a semantic role."
+     "evidence": "Eight written patterns: navbar, hero, dark band, pricing, blog/features/demo, hosted login, footer, mobile. Forms/validation, empty/loading/error, destructive and feedback patterns do not exist on the signed-out surface."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "Fonts named with fallbacks and CDN provenance (Exposure Light/Bold, Inter, Youth, Cabinetgrotesk, Inconsolata, Plus Jakarta Sans — painted vs declared marked); no icon set indexed — the extraction pass was not run (layoutGaps)."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README covers what was captured, how every value was read, the app boundary, and a What-to-distrust list (auth palette, mobile quirk, hidden calculator, quantised shots)."
+    },
+    "F15": {
+     "grade": "partly",
+     "evidence": "Script: primary text passes; secondary fails 2 pairs, worst 3.34:1 light muted (core.color.ink.50) on surface (core.color.plum.lightest)"
+    },
+    "F16": {
+     "grade": "meets",
+     "evidence": "Script: 186 of 186 tokens name their source"
+    },
+    "K2": {
+     "grade": "partly",
+     "evidence": "Script: 8 rules, 6 linking an image (needs 3+, all linked)"
+    },
+    "K3": {
+     "grade": "meets",
+     "evidence": "Script: DESIGN.md matches a fresh generation"
     },
     "C5": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "P1": {
-     "grade": "partly",
-     "evidence": "patterns.md writes the glass bar + mega-menu, the hero, pricing (tabs + billing switch), the booker's three zones and its dark mode, the auth cards, the footer and mobile. Forms/validation, destructive confirmation, feedback, search/filtering and onboarding do not exist on the signed-out surface."
     },
     "V1": {
      "grade": "na",
@@ -10911,35 +10935,11 @@
     "V2": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "A1": {
-     "grade": "partly",
-     "evidence": "Four served faces named with their fallbacks (calSans + metric-matched calSans Fallback, fontSans/fontHeading, Inter + Inter Fallback), all served from Cal.com's CDN and none distributed; no icon index - the extraction pass was not run, layoutGaps declare it and the glyphs are visible in the crops."
-    },
-    "K1": {
-     "grade": "meets",
-     "evidence": "The README names the three public hosts and every captured route and state, the headless method and tooling, a what-to-distrust list (two token layers, one-brand booker, dark = booker only, quantised screenshots, wide-gamut auth serialisation, the hero rect), the fonts note, a coverage table and the app.cal.com signed-in boundary."
-    },
-    "F15": {
-     "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 4.63:1 light muted (core.color.hp.muted) on surface (core.color.hp.field)"
-    },
-    "F16": {
-     "grade": "meets",
-     "evidence": "Script: 179 of 179 tokens name their source"
-    },
-    "K2": {
-     "grade": "partly",
-     "evidence": "Script: 9 rules, 7 linking an image (needs 3+, all linked)"
-    },
-    "K3": {
-     "grade": "meets",
-     "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "Cal.com",
-   "goodFor": "Scheduling-product marketing and booking flows: a floating 72%-white glass header bar with a mega-menu, an 80px calSans display, dark #242424 buttons with a white inset top line on 10-18px radii, a declared --color-hp-* marketing palette (#242424 ink, #6a6e78 muted, #e5e7eb/#dee1e6 hairlines, #cc4510 accent, #0f234b-tinted shadows), the declared --cal-* semantic layer on the public booker and auth cards (#3c3e44 text, #d1d5db borders, Inter and fontSans), and the booker's supported dark mode (#0f0f0f canvas, #4d4d4d borders, #d4d4d4 text, #f5f5f5 inverted buttons)",
-   "url": "https://cal.com",
+   "name": "Cake Equity",
+   "goodFor": "Startup equity-product marketing with a confident violet system: a declared --plum--*/--blackberry--* Webflow token layer, #4823ff pill buttons on 100px radii with #2b1599 hover, ghost-button twins, Exposure Light 60px display type over Inter, a mint #c6f0dc save pill, white plan cards with a 25%-plum featured border, the #0e0d12 Cake-MCP dark band with lemon eyebrows, and a Kinde-hosted login card on its own #5a38fd scale",
+   "url": "https://www.cakeequity.com",
    "captured": "2026-11-11",
    "themes": [
     "light",
@@ -10952,5 +10952,5 @@
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "read systems/cal/tokens.json, raw/css-vars.json, raw/measurements.md, raw/components-computed.json and components.md against scorecard/criteria.json web wording; inspected screenshots and crops"
+ "reviewMethod": "Agent rubric review of the built package: read tokens.json, components.md (44 components, 97 states), patterns.md, README.md and raw/components-computed.json against scorecard/criteria.json web wording; F15/F16/K2/K3 scripted"
 }

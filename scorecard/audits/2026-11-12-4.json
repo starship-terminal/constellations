@@ -1,7 +1,7 @@
 {
  "date": "2026-11-12",
  "rubric": "4",
- "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): read systems/cal/tokens.json, raw/css-vars.json, raw/measurements.md, raw/components-computed.json and components.md against scorecard/criteria.json web wording; inspected screenshots and crops",
+ "method": "Grades marked \"Script:\" were recomputed by tools/grade.py from the packages as they are now (contrast, token provenance, the README's Do and don't list, and DESIGN.md freshness). Criteria optional for a capture (see each criterion) count only where the product publishes them and are otherwise graded not applicable. Every other grade comes from the review that last set it (each package's reviewed date, else the 2026-10-16 review): Read the package end to end: raw/measurements.md (1650 lines), components.md (62 components, 151 states), tokens.json (66 core + 22 light), all 29 screenshots and crop set; verified every token carries $extensions.source, every components.md crop link resolves, and contrast pairs pass 4.5:1; graded against scorecard/criteria.json web wording with butter's public-web review as the calibration.",
  "systems": [
   {
    "slug": "brilliant",
@@ -10822,87 +10822,95 @@
    "reviewedPlatform": "web"
   },
   {
-   "slug": "cal",
+   "slug": "buymeacoffee",
    "grades": {
     "F1": {
      "grade": "partly",
-     "evidence": "Two declared layers resolved from the stylesheet harvest (raw/css-vars.json): the marketing --color-hp-* roles (ink #242424, ink-2 #292929, text #111111, body #374151, muted #6a6e78, subtle #5f6570, quiet #858993, surface greys page/#f9fafb/#f3f4f6/#e5e7eb, the single #cc4510 accent, #0f234b shadow tint) and the booker/auth --cal-* semantic roles (bg/text/border/brand resolving per theme), plus measured paints (#292929 booker-primary, #111111 footer, #262626/#696969 auth). Roles, not ramps: the surfaces paint flat role values, no ~10-step per-hue scale exists to tokenise."
+     "evidence": "A fully measured palette (the site declares no token layer beyond three layout vars): neutrals ink #222222, ink-v2 #151515, grey #717171, cream #faf8f0, field #f0f0f0, divider #e5e5e5, paper #ffffff, hover/search translucents (5% and 3% black); brand yellow #ffdd00 + hover #ffc800; the creator theme set #ff813f + hover #ff6b1c + alpha steps 25/10/08/05 read verbatim from the inline --theme-color* vars; focus #2563eb and browser-blue #005fcc. Roles and hue steps where they exist, not 10-step ramps — the site paints a flat palette, no per-hue steps exist to tokenise."
     },
     "F2": {
      "grade": "partly",
-     "evidence": "light: surface.page/raised white, surface.sunken #f9fafb, field/chip #f3f4f6, well #e5e7eb, surface.bar the 72%-white glass, surface.dark #111111 footer; booker.surface.default/subtle/muted/emphasis over --cal-bg-*; dark: page #0f0f0f, subtle #262626, muted #171717, emphasis #404040, inverted #fafafa. No overlay or scrim role measured: the mega-menu is an anchored panel, no dialog or toast scrim paints on the public surface."
+     "evidence": "light: surface.page cream #faf8f0, surface.paper #ffffff (creator app, cards, footer), surface.field #f0f0f0, hover-fill rgba(0,0,0,.05) and search-fill rgba(0,0,0,.03) translucents. No raised/overlay/scrim roles measured — the search overlay and menus are white panels, not scrims."
     },
     "F3": {
      "grade": "partly",
-     "evidence": "light: text.primary #242424, body #374151, muted #6a6e78, subtle #5f6570, quiet #858993, on.action white; booker.text default/emphasis/muted/subtle/inverted over --cal-text-*; dark: primary #d4d4d4, emphasis #fafafa, muted/subtle #a3a3a3, inverted #000000. No disabled or link-specific roles measured."
+     "evidence": "light: text.primary ink #222222, text.muted grey #717171, text.on-accent #ffffff (yellow pills, accent buttons), accent-coloured tab/count text #ff813f. No disabled or link-specific roles exist on the public surface."
     },
     "F4": {
-     "grade": "meets",
-     "evidence": "border.default #e5e7eb, strong #dee1e6, hairline 7%-ink on marketing; booker.border.default #d1d5db / subtle #e5e7eb; dark default #4d4d4d, subtle #262626, emphasis #737373; the focus rings are tokenised (core.measured.focus-ring 1px white gap + 3px #9ca3af, booker-focus-ring 1px 20%-white + 2px 10%-black)."
+     "grade": "partly",
+     "evidence": "border.divider #e5e5e5 (footer, social buttons), field focus borders measured (2px #151515 on the login email field, 2px theme accent on the creator name field), focus.ring #2563eb 4px ring + Chromium's 1px #005fcc auto outline both tokenised; no strong/default distinction exists on this surface."
     },
     "F5": {
      "grade": "partly",
-     "evidence": "action.primary.default #242424 with hover tokenised as the 4%-ink veil (action.primary.hover); accent.default #cc4510 / accent.ink #a83a0c; the booker's #292929 paint covers today/Confirm and inverts to #f5f5f5 in dark (dark.action.primary). Pressed forced via CDP on every control: the slot draws an inset shadow (measured slot-pressed-shadow), most buttons paint little change beyond it."
+     "evidence": "Both accents have default and hover measured: l-cta #ffdd00 -> #ffc800, c-support/c-join #ff813f -> #ff6b1c. The marketing pills keep the same #ffdd00 fill across hover/pressed — the visible hover is a ::before layer growing a dark-5% pill (documented in components.md); pressed reads same-as-default via CDP."
     },
     "F6": {
      "grade": "missing",
-     "evidence": "No success/warning/danger/info roles paint on the public surface; the bk-badge 'Requires confirmation' is a neutral badge and the orange accent is decorative, not a status role."
+     "evidence": "No success/warning/danger/info roles paint on the public surface; the form-validation states that would show them were never triggered (nothing was submitted)."
     },
     "F7": {
-     "grade": "partly",
-     "evidence": "Light covers both layers: 34 roles over --color-hp-* plus a booker.* subtree over --cal-*. Dark (15 roles) is the booker's ?theme=dark&embed=true surface only, re-resolving the same --cal-* variables: text/surface/border/action/brand all present. The marketing pages declare --color-hp-* dark overrides but never paint them signed out, so parity is partial by construction."
+     "grade": "meets",
+     "evidence": "The product ships one painted theme: light. Every semantic role in tokens.json exists in the light set; `dark` is an intentionally empty set (recorded as such). The per-creator --theme-color* accent is a theming mechanism tokenised under color.theme.*, not a second theme."
     },
     "F8": {
      "grade": "partly",
-     "evidence": "Four stacks with fallbacks (calSans + calSans Fallback/system-ui/sans-serif; fontHeading + fallback; Inter + Inter Fallback; a mono stack); a measured ramp 80 display / 64 h1 / 56 h2 / 42 display-mobile / 22 h3 / 20 lede / 14 body+ui / 13 small / 11 tiny, with line-heights, weights 400-700 and letter-spacing tokens. Roles cover display/headings/body/small but no code or caption size role exists on the surface (mono family tokenised, unstyled)."
+     "evidence": "Six stacks: Circular Bold/Regular/Medium/Book (each single-face, no fallback declared) + Borel Regular + the app ui-sans-serif stack with 6 fallbacks. Measured ramp: 96 display / 64 h2 / 48 faq-title and mobile display / 24 lede and widget title / 22 tagline / 20 question / 18 body / 17 button / 16 base / 15 tab, with line heights, tracking (-2.4/-2/-1.2px, eyebrow +2px) and weight roles via the named Circular faces. No code role; four of six stacks carry no declared fallback."
     },
     "F9": {
      "grade": "partly",
-     "evidence": "No spacing scale is tokenised: the surfaces space with arbitrary Tailwind values and no core.spacing steps exist (README's coverage table records the absence); per-component paddings live in components.md and raw/components-computed.json."
+     "evidence": "No spacing scale is declared or measurable as tokens (Tailwind utilities compile it away); per-component paddings and gaps live in components.md and raw/measurements.md."
     },
     "F10": {
      "grade": "meets",
-     "evidence": "core.radius sm 8 / md 10 / lg 12 / xl 14 / 2xl 18 / pill, measured on chips, controls, plan cards, day cells and the 18px glass bar; 1px borders plus the 7%-ink hairline tokenised."
+     "evidence": "core.radius: 9999 pill (buttons, quantity), 40 bmc-pill (the ::before hover pill, FAQ cta), 24 card (widget, tweets), 16 tile (creator tiles), 12 field/panel (inputs, dropdowns), 10 item (menu rows), 8 tab, 6 check — all measured on painted borders/layers; 1px hairlines and 2px focus borders tokenised."
     },
     "F11": {
      "grade": "partly",
-     "evidence": "component.* dims tokenised: header 64 (both widths), nav button 36, hero button 64, control 36, slot 36, day cell 59.3, field 32, auth field 30 / button 40, menu card 200 wide, mobile navitem 48, card radius 14; focus ring width and offset measured (1px gap + 3px ring). No icon-size set: the icon extraction pass was not run."
+     "evidence": "component.* heights/widths measured: control 48px (buttons, fields, quantity, social buttons), hero-cta 74, tab 31.5, slide 40x40, menu row 36, header 76 desktop / 65 mobile / 64 creator, widget 500, tier 420x262, footer 144. Focus ring measured: 4px #2563eb outer + 2px white. No icon-size set — the icon extraction pass was not run."
     },
     "F12": {
      "grade": "meets",
-     "evidence": "The declared --hp-shadow-* layer parsed to seven named levels each tied to a use: lift, raised (white inset top line + ring), well (inset), plate (inset ring), float, print/print-lift (the offset mock shadows), window; plus the measured focus rings and the slot's pressed inset in core.measured."
+     "evidence": "Three measured shadow levels tied to uses plus the focus ring: core.shadow.menu (three-layer, dropdowns/menus/popovers), core.shadow.card (0 1px 4px — tweet/tier cards), core.shadow.header (0 1px 1px, 6% black — creator sticky bar), core.shadow.focus-ring (0 0 0 2px white + 0 0 0 4px #2563eb)."
     },
     "F13": {
-     "grade": "meets",
-     "evidence": "Declared --ease-hp-*/--ease-out curves tokenised (hp, hp-fly, hp-quad, out, in-out) plus measured durations (menu 0.1s, control/navitem 0.15s, slot 0.2s, --default-transition-duration 150ms). Reduced motion is recorded: under prefers-reduced-motion: reduce the nav button's animation computes to none (raw/components-computed.json _meta.reducedMotion.home) - the site cuts it."
+     "grade": "partly",
+     "evidence": "Measured durations and easings: 0.3s cubic-bezier(0.4,0,0.2,1) mobile-menu slide, 0.8s section reveal, the ::before pill-grow hover and ~10% social-icon scale. No declared easing vars exist; a prefers-reduced-motion comparison was not captured."
     },
     "F14": {
      "grade": "partly",
-     "evidence": "Chrome geometry recorded at 1440 and 390 in raw/components-computed.json _meta.chrome (sticky nav z-40, 1320x64 inset 60px; sticky blocks z-10; the mega-menu a body-level Base UI panel anchored to the bar). Breakpoints, content widths and a z-layer scale are not tokenised."
+     "evidence": "Component geometry and chrome heights measured at 1440 and 390 (widget 500px column, headers, hero); breakpoints and z-index layers are not tokenised."
     },
     "C1": {
      "grade": "partly",
-     "evidence": "~11 of 19: button (nav-cta, hero-google/microsoft, plan-cta, sales-cta, continue-btn, sso-google, signup-google/email, bk-confirm), icon button (m-menu-button), link (nav-link, menu-link, footer-link, forgot-link, saml-link, hero-email, m-nav-item), text field (email-field, pass-field, bk-field), select (bk-meta timezone + 12h/24h toggle), tabs (plan-tab), switch-like toggle (billing-toggle), menu (nav-dropdown mega-menu, m-menu-open drawer), card (plan-card, auth-card, signup-card, bk-form), list row (bk-slot rows, menu-link), accordion (feature-accordion, measured closed), badge (changelog, bk-badge). No textarea/checkbox/radio/tooltip/dialog/toast/table/avatar on the public surface."
+     "evidence": "~12 of 19: button (hero-cta, nav-cta, l-cta, c-support, c-join, f-cta), icon button (m-menu-button, c-more, r-slide), link (nav-link, menu-link, footer-link, c-follow, c-share, m-nav-item), text field (l-email, c-name, c-amount, nav-search), text area (c-message), checkbox (c-monthly, c-private), radio (c-qty-* coffee-count pills), tabs (c-tab), menu (nav-dropdown, c-context, footer-menu, m-menu-open), card (creator-card, r-tweet, c-tier, login card), list row (c-supporter), and the search overlay as a light dialog. No select, switch, tooltip, toast, table, avatar or badge measured on the public surface."
     },
     "C2": {
      "grade": "partly",
-     "evidence": "139 states over 59 components: default/hover/focus-visible/pressed (CDP-forced) on every interactive entry, focused/filled on the auth fields, opened states on the mega-menu, the mobile drawer, the pricing Teams tab and YEARLY switch, and the booker day-to-slot-to-form chain, plus the whole dark booker. Disabled/error/loading states do not exist on the surface (past days only hint at disabled in the grid)."
+     "evidence": "default/hover/focus-visible/pressed on every interactive entry (151 states over 62 components, pressed via CDP); opened on the Apps dropdown, search overlay, footer drop-ups, creator more-options menu and mobile menu; toggled on the quantity pills and monthly/private checkboxes (screenshots creator-light-three/-monthly). No disabled/loading/error states exist on the public surface — validation never ran."
     },
     "C3": {
      "grade": "meets",
-     "evidence": "A real keyboard focus is captured on 25 components: 8 draw a 1px auto outline (rgba(156,162,174,.5) or rgba(160,160,160,.5), offset 0-1px) and 17 draw the shadow ring tokenised as core.measured.focus-ring / booker-focus-ring - nav-trigger/nav-link/nav-signin/nav-cta, hero-google/microsoft, changelog, sales-cta, bk-slot, bk-confirm, bkd-slot, sso-google, continue-btn, saml-link, signup-google, signup-email, m-nav-item."
+     "evidence": "A real keyboard focus is captured: c-name draws the 4px #2563eb ring with a white field and 2px accent border; l-email focuses to white with a 2px #151515 border; marketing links/triggers carry Chromium's 1px #005fcc auto outline; focus-visible crops recorded for every interactive component."
     },
     "C4": {
      "grade": "partly",
-     "evidence": "Entries cite token paths where a token carries the value (#e5e7eb color.hp.line-2 and so on through components.md); measured-only paints (the #292929 booker brand, the auth lab()/oklab() fills) carry a paint token or recorded provenance rather than a semantic role."
+     "evidence": "Component entries cite token paths where they exist (ink, grey, cream, paper, brand.yellow, theme.*) and the rest are measured values with provenance (source per token in tokens.json $extensions.source); painted ::before layers recorded separately from the wrapper's computed fill."
+    },
+    "P1": {
+     "grade": "partly",
+     "evidence": "Six written patterns in patterns.md: the marketing header, the hero and section grammar, the creator page and support widget, the login card, wall-of-love/FAQ/footer, mobile. Forms/validation, destructive confirmation, feedback and onboarding do not exist on the signed-out surface."
+    },
+    "A1": {
+     "grade": "partly",
+     "evidence": "Circular Regular/Book/Medium/Bold/Black and Borel Regular named with CDN provenance (buymeacoffee.com/_nuxt, cdn.buymeacoffee.com) and fallbacks; no icon index — the extraction pass was not run, glyphs visible in crops (declared under layoutGaps)."
+    },
+    "K1": {
+     "grade": "meets",
+     "evidence": "README names every captured route and safe state, both frontends (Nuxt marketing + Vite creator app), the method and tooling, the what-to-distrust list, the per-creator accent caveat and the signed-in/checkout boundaries."
     },
     "C5": {
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
-    },
-    "P1": {
-     "grade": "partly",
-     "evidence": "patterns.md writes the glass bar + mega-menu, the hero, pricing (tabs + billing switch), the booker's three zones and its dark mode, the auth cards, the footer and mobile. Forms/validation, destructive confirmation, feedback, search/filtering and onboarding do not exist on the signed-out surface."
     },
     "V1": {
      "grade": "na",
@@ -10912,45 +10920,36 @@
      "grade": "na",
      "evidence": "Optional for a capture, and this product does not publish it."
     },
-    "A1": {
-     "grade": "partly",
-     "evidence": "Four served faces named with their fallbacks (calSans + metric-matched calSans Fallback, fontSans/fontHeading, Inter + Inter Fallback), all served from Cal.com's CDN and none distributed; no icon index - the extraction pass was not run, layoutGaps declare it and the glyphs are visible in the crops."
-    },
-    "K1": {
-     "grade": "meets",
-     "evidence": "The README names the three public hosts and every captured route and state, the headless method and tooling, a what-to-distrust list (two token layers, one-brand booker, dark = booker only, quantised screenshots, wide-gamut auth serialisation, the hero rect), the fonts note, a coverage table and the app.cal.com signed-in boundary."
-    },
     "F15": {
      "grade": "meets",
-     "evidence": "Script: all 8 pairs pass 4.5:1 across 2 themes; lowest 4.63:1 light muted (core.color.hp.muted) on surface (core.color.hp.field)"
+     "evidence": "Script: all 4 pairs pass 4.5:1 across 1 themes; lowest 4.59:1 light muted (core.color.neutral.grey) on page (core.color.neutral.cream)"
     },
     "F16": {
      "grade": "meets",
-     "evidence": "Script: 179 of 179 tokens name their source"
+     "evidence": "Script: 88 of 88 tokens name their source"
     },
     "K2": {
      "grade": "partly",
-     "evidence": "Script: 9 rules, 7 linking an image (needs 3+, all linked)"
+     "evidence": "Script: 8 rules, 6 linking an image (needs 3+, all linked)"
     },
     "K3": {
      "grade": "meets",
      "evidence": "Script: DESIGN.md matches a fresh generation"
     }
    },
-   "name": "Cal.com",
-   "goodFor": "Scheduling-product marketing and booking flows: a floating 72%-white glass header bar with a mega-menu, an 80px calSans display, dark #242424 buttons with a white inset top line on 10-18px radii, a declared --color-hp-* marketing palette (#242424 ink, #6a6e78 muted, #e5e7eb/#dee1e6 hairlines, #cc4510 accent, #0f234b-tinted shadows), the declared --cal-* semantic layer on the public booker and auth cards (#3c3e44 text, #d1d5db borders, Inter and fontSans), and the booker's supported dark mode (#0f0f0f canvas, #4d4d4d borders, #d4d4d4 text, #f5f5f5 inverted buttons)",
-   "url": "https://cal.com",
+   "name": "Buy Me a Coffee",
+   "goodFor": "Creator-monetisation marketing plus a real public product surface: a Nuxt marketing site (Circular faces on a #faf8f0 cream field, #222 ink, the #ffdd00 yellow pill CTAs whose ::before grows on hover) and the Vite-built public creator page and login card on white; the support widget with its quantity pills, fields and checkboxes themed per creator by inline --theme-color* vars (#ff813f on /cara.app), plus Tailwind's #2563eb focus ring",
+   "url": "https://buymeacoffee.com",
    "captured": "2026-11-11",
    "themes": [
-    "light",
-    "dark"
+    "light"
    ],
    "platform": "web",
-   "category": "Productivity",
+   "category": "E-commerce",
    "reviewed": "2026-11-12",
    "reviewedPlatform": "web"
   }
  ],
  "base": "2026-10-16",
- "reviewMethod": "read systems/cal/tokens.json, raw/css-vars.json, raw/measurements.md, raw/components-computed.json and components.md against scorecard/criteria.json web wording; inspected screenshots and crops"
+ "reviewMethod": "Read the package end to end: raw/measurements.md (1650 lines), components.md (62 components, 151 states), tokens.json (66 core + 22 light), all 29 screenshots and crop set; verified every token carries $extensions.source, every components.md crop link resolves, and contrast pairs pass 4.5:1; graded against scorecard/criteria.json web wording with butter's public-web review as the calibration."
 }
